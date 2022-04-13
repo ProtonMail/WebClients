@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Добавить PayPal"
       ],
-      "Add PayPal payment method": [
-        "Добавить способ оплаты PayPal"
-      ],
-      "Add screenshot(s)": [
-        "Добавить снимки экрана"
-      ],
       "Add sieve filter": [
         "Добавить sieve-фильтр"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Применить"
+      ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
       ],
       "Authenticate": [
         "Аутентифицировать"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Выберите файл или перетащите его сюда"
       ],
-      "Clear": [
-        "Очистить"
-      ],
       "Clear all formatting": [
         "Очистить форматирование"
       ],
@@ -198,6 +192,9 @@
       ],
       "Continue import": [
         "Продолжить импорт"
+      ],
+      "Continue to ${ name }": [
+        "Продолжить с ${ name }"
       ],
       "Continue with": [
         "Продолжить с"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Удалить ссылку"
       ],
+      "Delete permanently": [
+        "Удалить безвозвратно"
+      ],
       "Delete record": [
         "Удалить запись"
+      ],
+      "Delete without exporting": [
+        "Удалить без экспорта"
       ],
       "Delete your account": [
         "Удалить учётную запись"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Включить многопользовательский режим"
       ],
+      "Encrypt and export": [
+        "Зашифровать и экспортировать"
+      ],
       "Export": [
         "Экспортировать"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Экспортировать ключ"
       ],
+      "Export key before deleting": [
+        "Экспортировать ключ перед удалением"
+      ],
       "Extend": [
-        ""
+        "Продлить"
       ],
       "Font": [
         "Шрифт"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Скрыть папки"
-      ],
-      "Hide info": [
-        "Скрыть информацию"
       ],
       "Hide labels": [
         "Скрыть ярлыки"
@@ -664,9 +670,6 @@
       "Show folders": [
         "Показать папки"
       ],
-      "Show info": [
-        "Показать информацию"
-      ],
       "Show labels": [
         "Показать ярлыки"
       ],
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Все равно уничтожить"
       ],
-      "Warning": [
-        "Предупреждение"
-      ],
       "Wipe": [
         "Стереть"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Бесплатный пробный период 30 дней"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Выбрать"
       ]
     },
     "Addon": {
@@ -961,22 +956,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Если выйти сейчас, импорт некоторых событий не завершится"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Удаление ваших ключей необратимо. Чтобы иметь возможность доступа к любому зашифрованному этим ключом сообщению, вам может пригодиться резервная копия этого ключа."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Если не сделать резервную копию вашего ключа, то в будущем вы можете столкнуться с необратимой потерей данных."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Ключ для вашего адреса удаляется."
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Это приведет к отключению всех маршрутизаторов и клиентов, использующих данный сертификат."
       ]
     },
     "Apps dropdown": {
@@ -1365,6 +1349,14 @@
         "Неделя"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Закрыть"
+      ],
+      "Open": [
+        "Открыть"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "начинается с"
@@ -1395,17 +1387,6 @@
       ],
       "matches": [
         "совпадает с"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Вы уверены, что хотите удалить этот ключ без сохранения его резервной копии?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Вы уверены, что хотите безвозвратно удалить этот ключ?"
-      ],
-      "Do you want to export your key?": [
-        "Вы хотите экспортировать ваш ключ?"
       ]
     },
     "Confirm modal title": {
@@ -3144,7 +3125,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Сертификат ${ name } не найден или уже отозван"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Пометка не может быть снята одновременно с имени и фамилии"
@@ -4739,9 +4720,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Импортируйте свою электронную почту, календари и контакты из другой службы в Proton. Мы будем помогать вам на каждом шагу и шифровать ваши данные по мере их переноса. Добро пожаловать в мир конфиденциальности."
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "ВАЖНО: Скачивание ваших закрытых ключей и их рассылка или хранение их на незащищённых носителях может подвергнуть опасности защиту вашей учётной записи!"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы можете навсегда потерять доступ к своей учётной записи, если потеряете своё устройство для двухфакторной аутентификации."
       ],
@@ -4817,8 +4795,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Сохраняйте эти записи в вашем DNS на все время использования DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Ключ с отпечатком ${ fp } удалён."
+      "Key deletion is irreversible!": [
+        "Удаление ключа необратимо!"
       ],
       "Label all imported messages as": [
         "Назначить всем импортированным сообщениям ярлык"
@@ -5039,9 +5017,6 @@
       "Plan upgrade required": [
         "Требуется улучшение плана"
       ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Пожалуйста, введите пароль, которым будет зашифрован ваш закрытый ключ перед экспортом."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
@@ -5177,14 +5152,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Снимок(ки) экрана во вложении"
-      ],
       "See all plans": [
         "Посмотреть все тарифы"
       ],
       "Select a service provider to start": [
         "Выберите поставщика услуг для начала работы"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Выберите \"Продолжить\" с ${ name }, чтобы открыть приложение. Это также создаст аккаунт ${ name } с вашим адресом ${ MAIL_APP_NAME }, чтобы в будущем вы могли войти одним нажатием."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -5234,6 +5209,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Храните этот пароль и файл в надежном месте. Они понадобятся вам снова для импорта ключа."
+      ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
       ],
@@ -5279,6 +5257,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Эти конфигурации предоставляются для работы с маршрутизаторами WireGuard и официальными клиентами."
+      ],
       "This 30-day free trial is not available any other way.": [
         "Этот 30-дневный бесплатный пробный период не доступен никаким другим способом."
       ],
@@ -5293,9 +5274,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Этот адрес эл. почты будет использоваться только для целей восстановления."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Эта функция предназначена только для опытных пользователей! После удаления этого ключа вы не сможете расшифровать зашифрованные им сообщения. Это может привести к потере данных."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Это фраза из 12 слов, которую вам было предложено задать."
@@ -5333,6 +5311,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Это отключит вашу текущую фразу восстановления. Вы не сможете использовать ее для доступа к своему аккаунту или для расшифровки данных."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "В результате будет загружен файл, содержащий ваш закрытый ключ. Защитите этот файл, зашифровав его паролем."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Это позволит вам оплачивать подписку на Proton через PayPal. Мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед тем, как продолжить."
       ],
@@ -5350,6 +5331,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем сделать это, так как двухфакторная аутентификация повышает безопасность учётной записи."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Чтобы избежать потери данных, удаляйте его только в том случае, если вы знаете, что делаете, или экспортировали копию."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Для подтверждения введите имя пользователя, которого вы хотите удалить."
@@ -5654,6 +5638,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Вам следует экспортировать резервную копию этого ключа на случай, если вам понадобится восстановить зашифрованные им данные."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Вам по-прежнему нужно отвечать на приглашения, чтобы приглашающая сторона увидела ваш ответ."
       ],
@@ -5662,6 +5649,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Скоро Вы будете перенаправлены на сайт вашего банка для проверки оплаты."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "Вы НЕ сможете расшифровать сообщения, файлы и другие данные, зашифрованные с помощью этого ключа."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на сайт PayPal для подтверждения вашего платежа."
@@ -5831,8 +5821,8 @@
       "Billed": [
         "Счёт выставлен"
       ],
-      "Cancelled": [
-        "Отменено"
+      "Gifted": [
+        "Подарочный"
       ],
       "Paid": [
         "Оплачено"
@@ -6248,6 +6238,9 @@
       "Attach public key": [
         "Присоединить публичный ключ"
       ],
+      "Attach screenshot(s)": [
+        "Вложить снимок(ки) экрана"
+      ],
       "Auto reply": [
         "Автоматический ответ"
       ],
@@ -6261,10 +6254,10 @@
         "Блокировать отслеживание электронной почты"
       ],
       "Block malware only": [
-        ""
+        "Блокировать только вредоносные программы"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Блокировать вредоносные программы, рекламу и трекеры"
       ],
       "bonus storage": [
         "бонусное хранилище"
@@ -6297,7 +6290,7 @@
         "Категория"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Выберите имя для созданного файла сертификата"
       ],
       "Code": [
         "Код"
@@ -6324,7 +6317,7 @@
         "Условия"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Конфигурация для подключения к ${ serverName }"
       ],
       "Confirm link URLs": [
         "Подтвердить адреса ссылки"
@@ -6364,6 +6357,9 @@
       ],
       "Country": [
         "Страна"
+      ],
+      "Create password": [
+        "Создать пароль"
       ],
       "Credits pending": [
         "Кредиты на рассмотрении"
@@ -6426,7 +6422,7 @@
         "Описание"
       ],
       "Device/certificate name": [
-        ""
+        "Имя устройства/сертификата"
       ],
       "Digits": [
         "Цифры"
@@ -6585,7 +6581,7 @@
         "Только за последний месяц"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Уровень для фильтрации блокировщика NetShield"
       ],
       "Login password": [
         "Пароль для входа"
@@ -6609,7 +6605,7 @@
         "Сообщение"
       ],
       "Moderate NAT": [
-        ""
+        "Умеренное NAT"
       ],
       "Move to": [
         "Переместить в"
@@ -6633,13 +6629,13 @@
         "Новый пароль"
       ],
       "No filter": [
-        ""
+        "Без фильтра"
       ],
       "No label found": [
         "Ярлыки не найдены"
       ],
       "Non-standard ports": [
-        ""
+        "Нестандартные порты"
       ],
       "Notification": [
         "Уведомление"
@@ -7050,11 +7046,6 @@
       ],
       "Row": [
         "Список"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Приложить снимки экрана"
       ]
     },
     "Label/folder modal": {
@@ -7577,6 +7568,9 @@
       "A disabled address cannot be primary": [
         "Отключённый адрес не может быть основным"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Ключ с отпечатком ${ fp } удален."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Учётные данные OpenVPN / IKEv2 обновлены"
       ]
@@ -7949,12 +7943,6 @@
       "Address": [
         "Адрес"
       ],
-      "Browser name": [
-        "Название браузера"
-      ],
-      "Browser version": [
-        "Версия браузера"
-      ],
       "Choose a name": [
         "Задайте название"
       ],
@@ -7988,12 +7976,6 @@
       "Name": [
         "Название"
       ],
-      "OS name": [
-        "Название ОС"
-      ],
-      "OS version": [
-        "Версия ОС"
-      ],
       "Other": [
         "Другое"
       ],
@@ -8012,14 +7994,14 @@
       "Postal code": [
         "Почтовый индекс"
       ],
-      "Proton username": [
-        "Имя пользователя в Proton"
-      ],
       "Search settings": [
         "Искать настройки"
       ],
       "Search users": [
         "Поиск пользователей"
+      ],
+      "Select": [
+        "Выбрать"
       ],
       "Select a reason": [
         "Выберите причину"
@@ -8644,16 +8626,16 @@
         "Адрес включён"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Сертификат ${ name } отозван"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Сертификат продлен до ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Конфигурация \"${ name }\" создана, обратите внимание, что закрытый ключ не хранится и не будет показан снова, вам следует скопировать или загрузить эту конфигурацию."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Создание файла конфигурации для ${ serverName }"
       ],
       "Filter removed": [
         "Фильтр удалён"
@@ -8761,7 +8743,7 @@
         "(настоятельно рекомендуется)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Дайте имя генерируемой конфигурации"
       ],
       "1. Select platform": [
         "1. Выберите платформу"
@@ -8779,10 +8761,10 @@
         "3. Выберите файл конфигурации и скачайте"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Выберите параметры VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Выберите сервер для подключения"
       ],
       "Account and password": [
         "Аккаунт и пароль"
@@ -8964,6 +8946,9 @@
       "Confirm phone number": [
         "Подтвердите номер телефона"
       ],
+      "Connect ${ name }": [
+        "Подключить ${ name }"
+      ],
       "Contact encryption keys": [
         "Ключи шифрования контакта"
       ],
@@ -9036,8 +9021,8 @@
       "Delete ${ email }": [
         "Удалить ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Удалить ${ filter.Name }"
+      "Delete ${ filterName }": [
+        "Удалить ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
         "Удалить папку ${ label.Name }"
@@ -9051,8 +9036,8 @@
       "Delete calendar": [
         "Удалить календарь"
       ],
-      "Delete key": [
-        "Удалить ключ"
+      "Delete key permanently?": [
+        "Удалить ключ навсегда?"
       ],
       "Delete logs": [
         "Удалить записи журнала"
@@ -9370,7 +9355,7 @@
         "Восстановить права администратора"
       ],
       "Revoke certificate": [
-        ""
+        "Отозвать сертификат"
       ],
       "Secure email based in Switzerland": [
         "Безопасная почта, находящаяся в Швейцарии"
@@ -9532,7 +9517,7 @@
         "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "Конфигурация WireGuard"
       ],
       "Your ${ domain } address is active": [
         "Ваш адрес ${ domain } активен"

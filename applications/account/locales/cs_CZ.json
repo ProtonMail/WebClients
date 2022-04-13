@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Přidat PayPal"
       ],
-      "Add PayPal payment method": [
-        "Přidat PayPal jako způsob platby"
-      ],
-      "Add screenshot(s)": [
-        "Přidat snímek/snímky obrazovky"
-      ],
       "Add sieve filter": [
         "Přidat filtr Sieve"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Použít"
+      ],
+      "Attach screenshot(s)": [
+        "Přiložit snímek/snímky obrazovky"
       ],
       "Authenticate": [
         "Ověřit"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Vyberte soubor nebo jej sem přetáhněte"
       ],
-      "Clear": [
-        "Vyčistit"
-      ],
       "Clear all formatting": [
         "Vymazat veškeré formátování"
       ],
@@ -199,6 +193,9 @@
       "Continue import": [
         "Pokračovat v importu"
       ],
+      "Continue to ${ name }": [
+        ""
+      ],
       "Continue with": [
         "Pokračujte jako"
       ],
@@ -215,7 +212,7 @@
         "Kopírovat odkaz"
       ],
       "Create": [
-        ""
+        "Vytvořit"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
@@ -256,8 +253,14 @@
       "Delete link": [
         "Odstranit odkaz"
       ],
+      "Delete permanently": [
+        ""
+      ],
       "Delete record": [
         "Smazat záznam"
+      ],
+      "Delete without exporting": [
+        ""
       ],
       "Delete your account": [
         "Smazat účet"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Zapnout podporu pro více uživatelů"
       ],
+      "Encrypt and export": [
+        ""
+      ],
       "Export": [
         "Export"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Exportovat klíč"
       ],
-      "Extend": [
+      "Export key before deleting": [
         ""
+      ],
+      "Extend": [
+        "Rozšířit"
       ],
       "Font": [
         "Písmo"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Skrýt složky"
-      ],
-      "Hide info": [
-        "Skrýt informace"
       ],
       "Hide labels": [
         "Skrýt popisky"
@@ -428,7 +434,7 @@
         "označit e-maily jako"
       ],
       "Load more": [
-        ""
+        "Načíst více"
       ],
       "Loading verification": [
         "Načítání ověření"
@@ -602,10 +608,10 @@
         "Zkontrolovat"
       ],
       "Revoke": [
-        ""
+        "Zrušit"
       ],
       "Revoke ${ name }": [
-        ""
+        "Zrušit ${ name }"
       ],
       "Revoke all other sessions": [
         "Odhlásit ze všech ostatních relací"
@@ -663,9 +669,6 @@
       ],
       "Show folders": [
         "Zobrazit složky"
-      ],
-      "Show info": [
-        "Zobrazit informace"
       ],
       "Show labels": [
         "Zobrazit popisky"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Přesto zrušit"
       ],
-      "Warning": [
-        "Upozornění"
-      ],
       "Wipe": [
         "Vymazat"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Vyzkoušejte zdarma na 30 dní"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vybrat"
       ]
     },
     "Addon": {
@@ -961,17 +956,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "Pokud teď odejdete, některé události nebudou naimportovány"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Smazání Vašich klíčů se nedá vrátit zpět. Pro přístup ke zprávám zašifrovaným pomocí tohoto klíče by jste si měli udělat jeho záložní kopii pro případné pozdější použití."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Pokud nebudete svůj klíč zálohovat, může to mít za následek trvalou ztrátu dat."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Klíč pro vaši adresu se nyní odstraňuje."
       ]
     },
     "Alter": {
@@ -1365,6 +1349,14 @@
         "Týden"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Zavřít"
+      ],
+      "Open": [
+        "Otevřít"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "začíná na"
@@ -1395,17 +1387,6 @@
       ],
       "matches": [
         "se shoduje"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Opravdu chcete smazat tento klíč bez zálohování?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Opravdu chcete nevratně smazat tento klíč?"
-      ],
-      "Do you want to export your key?": [
-        "Chcete exportovat svůj klíč?"
       ]
     },
     "Confirm modal title": {
@@ -4182,7 +4163,7 @@
         "Svobodný a necenzurovaný internet by měl být přístupný všem."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4596,7 +4577,7 @@
         "Platnost vypršela"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "vyprší ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Načtení záznamů selhalo."
@@ -4739,9 +4720,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importujte e-maily, kalendáře a kontakty z jiné služby do služby Proton. Budeme vás provázet každým krokem a vaše data při přesunu zašifrujeme. Vítejte ve světě soukromí."
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "DŮLEŽITÉ: Stažení Vašich privátních klíčů a jejich odeslání nebo uložení na nezabezpečeném uložišti ohrožuje bezpečnost vašeho účtu!"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Důležité: Ujistěte se, že jste si uložili kódy pro obnovení. V opačném případě se již nikdy nebudete moci přihlásit, pokud ztratíte zařízení určené pro 2FA."
       ],
@@ -4817,8 +4795,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Uchovávejte tyto záznamy ve Vaší DNS tak dlouho, jak dlouho chcete používat DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Klíč s otiskem ${ fp } byl odstraněn."
+      "Key deletion is irreversible!": [
+        "Smazání klíče je nevratné!"
       ],
       "Label all imported messages as": [
         "Označit všechny importované zprávy jako"
@@ -4980,7 +4958,7 @@
         "Pouze vy můžete vidět štítky."
       ],
       "Or select a particular server:": [
-        ""
+        "Nebo vyberte konkrétní server:"
       ],
       "Organization keys activated": [
         "Klíče organizace byly aktivovány"
@@ -5038,9 +5016,6 @@
       ],
       "Plan upgrade required": [
         "Požadováno předplatné"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Před exportem prosím zadejte heslo k zašifrování Vašeho soukromého klíče."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
@@ -5154,7 +5129,7 @@
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Zrušit certifikát ${ name }"
       ],
       "Right to Left": [
         "Zprava doleva"
@@ -5177,14 +5152,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Snímek/snímky byly připojeny"
-      ],
       "See all plans": [
         "Zobrazit všechny předplatné"
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -5234,6 +5209,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Heslo a soubor uschovejte na bezpečném místě. Budete je znovu potřebovat k importu klíče."
+      ],
       "Support for 1 custom email domain": [
         "Podpora 1 vlastní e-mailové domény"
       ],
@@ -5279,6 +5257,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Tyto konfigurační soubory vám umožní vybrat, ke kterému ${ VPN_APP_NAME } serveru se připojíte, pokud používáte alternativní VPN aplikace nebo nastavujete VPN na routeru."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Tyto konfigurace jsou určeny pro práci se routery WireGuard a oficiálními klienty."
+      ],
       "This 30-day free trial is not available any other way.": [
         "Tato 30denní bezplatná zkušební verze není k dispozici žádným jiným způsobem."
       ],
@@ -5293,9 +5274,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Tato e -mailová adresa bude použita pouze pro účely obnovení."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Tato funkce je určena pouze pro pokročilé uživatele. Po odstranění tohoto klíče nebudete moci dešifrovat žádnou zprávu, která s ním byla zašifrována. Může to vést ke ztrátě dat."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráze, kterou jste byli vyzváni k nastavení."
@@ -5333,6 +5311,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Tím zakážete aktuální frázi pro obnovení. Nebudete ji moci použít pro přístup ke svému účtu ani pro dešifrování dat."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Tímto se stáhne soubor obsahující soukromý klíč. Chraňte tento soubor zašifrováním pomocí hesla."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Toto umožní použít Paypal pro platby Proton předplatného. Přesměrujeme vás na Váš PayPal v nové záložce prohlížeče. Pokud máte nastaveno blokování vyskakovacích oken, vypněte jej prosím pro než budete pokračovat."
       ],
@@ -5350,6 +5331,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Tento průvodce zapne dvoufázové ověřování (2FA) na vašem Proton účtu. Doporučujeme 2FA zapnout, zajistí vám bezpečnější Proton účet."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Abyste předešli ztrátě dat, klíč smažte pouze v případě, že víte, co děláte, nebo pokud máte klíč zálohovaný."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Chcete-li potvrdit, zadejte jméno uživatele, kterého chcete odstranit."
@@ -5463,7 +5447,7 @@
         "Použijte automatické odpovědi k informovanosti kontaktů, že jste mimo kancelář a jinak nemůžete odpovědět."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Při připojování k serverům ${ VPN_APP_NAME } bez aplikace použijte následující přihlašovací údaje. Příklady použití zahrnují: Tunnelblick na macOS, OpenVPN na GNU/Linux."
@@ -5654,6 +5638,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste 100% kapacity Vašeho úložiště. Nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Měli byste exportovat zálohu tohoto klíče pro případ, že budete potřebovat obnovit zašifrovaná data."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Aby host viděl vaši odpověď, musíte stále odpovídat na pozvánky."
       ],
@@ -5662,6 +5649,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Pro ověření platby budete brzy přesměrováni na stránky Vaší banky."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "NEBUDETE moci dešifrovat zprávy, soubory a další data zašifrovaná tímto klíčem."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Za účelem ověření platby budete přesměrováni na PayPal."
@@ -5831,8 +5821,8 @@
       "Billed": [
         "Zaúčtováno"
       ],
-      "Cancelled": [
-        "Zrušeno"
+      "Gifted": [
+        ""
       ],
       "Paid": [
         "Zaplaceno"
@@ -6248,6 +6238,9 @@
       "Attach public key": [
         "Připojit veřejný klíč"
       ],
+      "Attach screenshot(s)": [
+        "Přiložit snímek/snímky obrazovky"
+      ],
       "Auto reply": [
         "Automatická odpověď"
       ],
@@ -6261,10 +6254,10 @@
         "Blokovat sledování emailů"
       ],
       "Block malware only": [
-        ""
+        "Blokovat pouze malware"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Blokovat malware, reklamy a sledovače"
       ],
       "bonus storage": [
         "bonusové úložiště"
@@ -6364,6 +6357,9 @@
       ],
       "Country": [
         "Země"
+      ],
+      "Create password": [
+        ""
       ],
       "Credits pending": [
         "Kredity čekající na schválení"
@@ -6609,7 +6605,7 @@
         "Zpráva"
       ],
       "Moderate NAT": [
-        ""
+        "Moderate NAT"
       ],
       "Move to": [
         "Přesunout do"
@@ -6885,7 +6881,7 @@
         "Ověřovací kód"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "VPN připojení"
@@ -7050,11 +7046,6 @@
       ],
       "Row": [
         "Řádek"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
       ]
     },
     "Label/folder modal": {
@@ -7577,6 +7568,9 @@
       "A disabled address cannot be primary": [
         "Zakázaná adresa nemůže být primární"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        ""
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
       ]
@@ -7949,12 +7943,6 @@
       "Address": [
         "Adresa"
       ],
-      "Browser name": [
-        "Název prohlížeče"
-      ],
-      "Browser version": [
-        "Verze prohlížeče"
-      ],
       "Choose a name": [
         "Zvolte název"
       ],
@@ -7988,12 +7976,6 @@
       "Name": [
         "Jméno"
       ],
-      "OS name": [
-        "Název OS"
-      ],
-      "OS version": [
-        "Verze OS"
-      ],
       "Other": [
         "Ostatní"
       ],
@@ -8012,14 +7994,14 @@
       "Postal code": [
         "Poštovní směrovací číslo"
       ],
-      "Proton username": [
-        "Proton uživatelské jméno"
-      ],
       "Search settings": [
         "Nastavení vyhledávání"
       ],
       "Search users": [
         "Vyhledat uživatele"
+      ],
+      "Select": [
+        "Vybrat"
       ],
       "Select a reason": [
         "Vyberte důvod"
@@ -8964,6 +8946,9 @@
       "Confirm phone number": [
         "Potvrzení telefonního čísla"
       ],
+      "Connect ${ name }": [
+        ""
+      ],
       "Contact encryption keys": [
         "Šifrovací klíče kontaktu"
       ],
@@ -9036,8 +9021,8 @@
       "Delete ${ email }": [
         "Odstranit ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Smazat ${ filter.Name }"
+      "Delete ${ filterName }": [
+        ""
       ],
       "Delete ${ label.Name } folder": [
         "Smazat ${ label.Name } složku"
@@ -9051,8 +9036,8 @@
       "Delete calendar": [
         "Odstranit kalendář"
       ],
-      "Delete key": [
-        "Odstranit klíč"
+      "Delete key permanently?": [
+        ""
       ],
       "Delete logs": [
         "Odstranit záznamy"
@@ -9370,7 +9355,7 @@
         "Obnovit oprávnění správce"
       ],
       "Revoke certificate": [
-        ""
+        "Zrušit certifikát"
       ],
       "Secure email based in Switzerland": [
         "Bezpečný e-mail se sídlem ve Švýcarsku"
@@ -9529,10 +9514,10 @@
         "Co je nového"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "Konfigurace WireGuard"
       ],
       "Your ${ domain } address is active": [
         "Vaše ${ domain } adresa je aktivní"

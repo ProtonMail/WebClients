@@ -45,7 +45,7 @@
         "Aplicar"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s) de pantalla"
       ],
       "Back": [
         "Atrás"
@@ -60,10 +60,10 @@
         "Cancelar todo"
       ],
       "Cancel all downloads": [
-        ""
+        "Cancelar todas las descargas"
       ],
       "Cancel all uploads": [
-        ""
+        "Cancelar todas las subidas"
       ],
       "Cancel download": [
         "Cancelar descarga"
@@ -84,7 +84,7 @@
         "Limpiar"
       ],
       "Clear browser data": [
-        ""
+        "Borrar datos del navegador"
       ],
       "Clear data": [
         "Limpiar datos"
@@ -120,7 +120,7 @@
         "Confirmar"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Confirmar la apertura del enlace ${ linkToShow }"
       ],
       "Contact group": [
         "Grupo de contactos"
@@ -176,7 +176,7 @@
         "Detalles"
       ],
       "Didn't receive the code?": [
-        ""
+        "¿No has recibido el código?"
       ],
       "Done": [
         "Hecho"
@@ -184,8 +184,11 @@
       "Download": [
         "Descargar"
       ],
+      "Download anyway": [
+        "Descargar de todos modos"
+      ],
       "Drive Locked": [
-        ""
+        "Unidad bloqueada"
       ],
       "Edit": [
         "Editar"
@@ -200,7 +203,7 @@
         "Editar número de teléfono"
       ],
       "Edit sign-in details": [
-        ""
+        "Editar datos de inicio de sesión"
       ],
       "Email settings": [
         "Ajustes del correo electrónico"
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "habilitar las notificaciones de escritorio"
+      ],
+      "Enable drive search": [
+        "Activar la búsqueda de unidades"
       ],
       "Expand folder": [
         "Ampliar carpeta"
@@ -227,7 +233,7 @@
         "Reenviar como adjunto"
       ],
       "Get link": [
-        ""
+        "Obtener enlace"
       ],
       "Get started": [
         "Comenzar"
@@ -236,19 +242,19 @@
         "Obtener código de verificación"
       ],
       "Go to label": [
-        ""
+        "Ir a la etiqueta"
       ],
       "Go to panel ${ index }": [
         "Ir al panel ${ index }"
       ],
       "Go to parent": [
-        ""
+        "Ir a enviados"
       ],
       "Go to settings": [
         "Ir a la configuración"
       ],
       "Got it": [
-        ""
+        "Entendido"
       ],
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
@@ -272,7 +278,7 @@
         "Importar desde .csv o vCard"
       ],
       "Learn more": [
-        ""
+        "Más información"
       ],
       "Load image": [
         "Cargar imagen"
@@ -281,7 +287,7 @@
         "Iniciar sesión "
       ],
       "Manage link": [
-        ""
+        "Gestionar enlace"
       ],
       "Mark for deletion": [
         "Marcar para eliminar"
@@ -359,7 +365,7 @@
         "Recuperar datos"
       ],
       "Refer a friend": [
-        ""
+        "Recomendar a un amigo"
       ],
       "refresh the page": [
         "actualiza la página"
@@ -401,7 +407,7 @@
         "Restaurar desde la papelera"
       ],
       "Resume all": [
-        ""
+        "Reanudar todo"
       ],
       "Resume download": [
         "Reanudar descarga"
@@ -413,16 +419,16 @@
         "Guardar"
       ],
       "Search": [
-        ""
+        "Buscar"
       ],
       "Search drive": [
-        ""
+        "Buscar en unidad"
       ],
       "Select all": [
         "Seleccionar todo"
       ],
       "Set recovery phrase": [
-        ""
+        "Establecer una frase de recuperación"
       ],
       "Share": [
         "Compartir"
@@ -431,7 +437,7 @@
         "Compartir archivo"
       ],
       "Share item": [
-        ""
+        "Compartir elemento"
       ],
       "Share options": [
         "Opciones de compartición"
@@ -452,7 +458,7 @@
         "Mostrar etiquetas"
       ],
       "Show preview": [
-        ""
+        "Mostrar vista previa"
       ],
       "Sign out": [
         "Cerrar sesión"
@@ -497,7 +503,7 @@
         "Deshacer"
       ],
       "Unlock data": [
-        ""
+        "Desbloquear datos"
       ],
       "Unmark for deletion": [
         "Desmarcar para eliminar"
@@ -506,16 +512,16 @@
         "Desconfiar"
       ],
       "Update recovery file": [
-        ""
+        "Actualizar archivo de recuperación"
       ],
       "Update recovery phrase": [
-        ""
+        "Actualizar frase de recuperación"
       ],
       "Upgrade": [
         "Actualizar"
       ],
       "Upload anyway": [
-        ""
+        "Subir de todos modos"
       ],
       "Upload file": [
         "Subir archivo"
@@ -536,10 +542,10 @@
         "Verificar"
       ],
       "Verify account": [
-        ""
+        "Verificar cuenta"
       ],
       "Verify email": [
-        ""
+        "Verificar correo"
       ],
       "View": [
         "Visualizar"
@@ -589,7 +595,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "El Acceso Beta te permite usar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que se pongan a disposición del público. De este modo puedes ser el primero en probar nuevos productos, obtener nuevas actualizaciones y usar nuevas funciones."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
@@ -764,7 +770,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuar usando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -777,7 +783,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "No se ha podido descifrar el calendario"
       ],
       "Calendar is syncing": [
         "El calendario se está sincronizando"
@@ -792,26 +798,26 @@
         "El enlace del calendario no está accesible temporalmente"
       ],
       "Failed to sync calendar": [
-        ""
+        "Error al sincronizar el calendario"
       ],
       "More than 12 hours passed since last update": [
         "Han pasado más de 12 horas desde la última actualización"
       ],
       "Unsupported calendar format": [
-        ""
+        "Formato de calendario no soportado"
       ]
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Cerrar"
       ],
       "Open": [
-        ""
+        "Abrir"
       ]
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "¿Salir de la importación de personalización?"
       ]
     },
     "Contact field label": {
@@ -898,7 +904,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "Abjasia"
       ],
       "Afghanistan": [
         "Afganistán"
@@ -937,7 +943,7 @@
         "Aruba"
       ],
       "Ascension Island": [
-        ""
+        "Isla Ascensión"
       ],
       "Australia": [
         "Australia"
@@ -949,10 +955,10 @@
         "Azerbaiyán"
       ],
       "Bahamas": [
-        ""
+        "Bahamas"
       ],
       "Bahrain": [
-        ""
+        "Bahrain"
       ],
       "Bangladesh": [
         "Bangladesh"
@@ -961,79 +967,79 @@
         "Barbados"
       ],
       "Belarus": [
-        ""
+        "Bielorrusia"
       ],
       "Belgium": [
         "Bélgica"
       ],
       "Belize": [
-        ""
+        "Belice"
       ],
       "Benin": [
-        ""
+        "Benín"
       ],
       "Bermuda": [
-        ""
+        "Bermuda"
       ],
       "Bhutan": [
-        ""
+        "Bután"
       ],
       "Bolivia": [
-        ""
+        "Bolivia"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "Caribe Neerlandés"
       ],
       "Bosnia and Herzegovina": [
         "Bosnia Herzegovina"
       ],
       "Botswana": [
-        ""
+        "Botsuana"
       ],
       "Bouvet Island": [
-        ""
+        "Isla Bouvet"
       ],
       "Brazil": [
-        ""
+        "Brasil"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "Territorio Británico del Océano Índico"
       ],
       "Brunei Darussalam": [
-        ""
+        "Brunéi"
       ],
       "Bulgaria": [
-        ""
+        "Bulgaria"
       ],
       "Burkina Faso": [
-        ""
+        "Burkina Faso"
       ],
       "Burma": [
-        ""
+        "Myanmar"
       ],
       "Burundi": [
-        ""
+        "Burundi"
       ],
       "Cambodia": [
-        ""
+        "Camboya"
       ],
       "Cameroon": [
         "Camerún"
       ],
       "Canada": [
-        ""
+        "Canadá"
       ],
       "Cape Verde": [
         "Cabo Verde"
       ],
       "Cayman Islands": [
-        ""
+        "Islas Caimán"
       ],
       "Central African Republic": [
         "República Centroafricana"
       ],
       "Chad": [
-        ""
+        "Chad"
       ],
       "Chile": [
         "Chile"
@@ -1045,19 +1051,19 @@
         "Isla de Navidad"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "Islas Cocos"
       ],
       "Colombia": [
         "Colombia"
       ],
       "Comoros": [
-        ""
+        "Comores"
       ],
       "Congo": [
         "Congo"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "Congo, República Democrática del"
       ],
       "Cook Islands": [
         "Islas Cook"
@@ -1069,7 +1075,7 @@
         "Costa de Marfil"
       ],
       "Croatia": [
-        ""
+        "Croacia"
       ],
       "Cuba": [
         "Cuba"
@@ -1102,7 +1108,7 @@
         "Egipto"
       ],
       "El Salvador": [
-        ""
+        "El Salvador"
       ],
       "Equatorial Guinea": [
         "Guinea Ecuatorial"
@@ -1117,16 +1123,16 @@
         "Etiopía"
       ],
       "Falkland Islands": [
-        ""
+        "Islas Malvinas"
       ],
       "Faroe Islands": [
         "Islas Faroe"
       ],
       "Federated States of Micronesia": [
-        ""
+        "Estados Federados de Micronesia"
       ],
       "Fiji": [
-        ""
+        "Fiyi"
       ],
       "Finland": [
         "Finlandia"
@@ -1141,7 +1147,7 @@
         "Polinesia Francesa"
       ],
       "French Southern Territories": [
-        ""
+        "Territorios Australes Franceses"
       ],
       "Gabon": [
         "Gabón"
@@ -1174,10 +1180,10 @@
         "Guadalupe"
       ],
       "Guam": [
-        ""
+        "Guam"
       ],
       "Guatemala": [
-        ""
+        "Guatemala"
       ],
       "Guernsey": [
         "Guernsey"
@@ -1186,115 +1192,115 @@
         "Guinea"
       ],
       "Guinea-Bissau": [
-        ""
+        "Guinea-Bisáu"
       ],
       "Guyana": [
-        ""
+        "Guyana"
       ],
       "Haiti": [
-        ""
+        "Haití"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "Islas Heard y McDonald"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Ciudad del Vaticano"
       ],
       "Honduras": [
-        ""
+        "Honduras"
       ],
       "Hong Kong": [
-        ""
+        "Hong Kong"
       ],
       "Hungary": [
-        ""
+        "Hungría"
       ],
       "Iceland": [
-        ""
+        "Islandia"
       ],
       "India": [
-        ""
+        "India"
       ],
       "Indonesia": [
-        ""
+        "Indonesia"
       ],
       "International": [
-        ""
+        "Internacional"
       ],
       "Iran": [
-        ""
+        "Irán"
       ],
       "Iraq": [
-        ""
+        "Irak"
       ],
       "Ireland": [
-        ""
+        "Irlanda"
       ],
       "Isle of Man": [
-        ""
+        "Isla de Man"
       ],
       "Israel": [
-        ""
+        "Israel"
       ],
       "Italy": [
-        ""
+        "Italia"
       ],
       "Jamaica": [
-        ""
+        "Jamaica"
       ],
       "Japan": [
-        ""
+        "Japón"
       ],
       "Jersey": [
-        ""
+        "Jersey"
       ],
       "Jordan": [
-        ""
+        "Jordania"
       ],
       "Kazakhstan": [
-        ""
+        "Kazajistán"
       ],
       "Kenya": [
-        ""
+        "Kenia"
       ],
       "Kiribati": [
-        ""
+        "Kiribati"
       ],
       "Kosovo": [
-        ""
+        "Kosovo"
       ],
       "Kuwait": [
-        ""
+        "Kuwait"
       ],
       "Kyrgyzstan": [
-        ""
+        "Kirguistán"
       ],
       "Laos": [
-        ""
+        "Laos"
       ],
       "Latvia": [
-        ""
+        "Letonia"
       ],
       "Lebanon": [
-        ""
+        "Líbano"
       ],
       "Lesotho": [
-        ""
+        "Lesoto"
       ],
       "Liberia": [
-        ""
+        "Liberia"
       ],
       "Libya": [
-        ""
+        "Libia"
       ],
       "Liechtenstein": [
-        ""
+        "Liechtenstein"
       ],
       "Lithuania": [
-        ""
+        "Lituania"
       ],
       "Luxembourg": [
-        ""
+        "Luxemburgo"
       ],
       "Macao": [
         "Macao"
@@ -1321,7 +1327,7 @@
         "Islas Marshall"
       ],
       "Martinique": [
-        ""
+        "Martinica"
       ],
       "Mauritania": [
         "Mauritania"
@@ -1330,7 +1336,7 @@
         "Mauricio, islas"
       ],
       "Mayotte": [
-        ""
+        "Mayotte"
       ],
       "Mexico": [
         "México"
@@ -1351,7 +1357,7 @@
         "Montserrat"
       ],
       "Morocco": [
-        ""
+        "Marruecos"
       ],
       "Mozambique": [
         "Mozambique"
@@ -1360,7 +1366,7 @@
         "Namibia"
       ],
       "Nauru": [
-        ""
+        "Nauru"
       ],
       "Nepal": [
         "Nepal"
@@ -1384,19 +1390,19 @@
         "Nigeria"
       ],
       "Niue": [
-        ""
+        "Niue"
       ],
       "Norfolk Island": [
         "Isla Norfolk"
       ],
       "North Korea": [
-        ""
+        "Corea del Norte"
       ],
       "North Macedonia": [
         "Macedonia del Norte"
       ],
       "Northern Mariana Islands": [
-        ""
+        "Islas Marianas del Norte"
       ],
       "Norway": [
         "Noruega"
@@ -1420,7 +1426,7 @@
         "Papua Nueva Guinea"
       ],
       "Paraguay": [
-        ""
+        "Paraguay"
       ],
       "Peru": [
         "Perú"
@@ -1429,7 +1435,7 @@
         "Filipinas"
       ],
       "Pitcairn": [
-        ""
+        "Pitcairn"
       ],
       "Poland": [
         "Polonia"
@@ -1441,31 +1447,31 @@
         "Puerto Rico"
       ],
       "Qatar": [
-        ""
+        "Qatar"
       ],
       "Reunion": [
-        ""
+        "Reunión"
       ],
       "Romania": [
-        ""
+        "Rumanía"
       ],
       "Russia": [
-        ""
+        "Rusia"
       ],
       "Rwanda": [
-        ""
+        "Ruanda"
       ],
       "Saint Barthélemy": [
-        ""
+        "San Bartolomé"
       ],
       "Saint Helena": [
-        ""
+        "Santa Helena"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "San Cristóbal y Nieves"
       ],
       "Saint Lucia": [
-        ""
+        "Santa Lucía"
       ],
       "Saint Martin (French Part)": [
         "San Martín (parte francesa)"
@@ -1474,136 +1480,136 @@
         "San Pedro y Miquelón"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "San Vicente y las Granadinas"
       ],
       "Samoa": [
-        ""
+        "Samoa"
       ],
       "San Marino": [
-        ""
+        "San Marino"
       ],
       "Sao Tome and Principe": [
-        ""
+        "Santo Tomé y Príncipe"
       ],
       "Saudi Arabia": [
-        ""
+        "Arabia Saudita"
       ],
       "Senegal": [
-        ""
+        "Senegal"
       ],
       "Serbia": [
-        ""
+        "Serbia"
       ],
       "Seychelles": [
-        ""
+        "Seychelles"
       ],
       "Sierra Leone": [
-        ""
+        "Sierra Leona"
       ],
       "Singapore": [
-        ""
+        "Singapur"
       ],
       "Sint Maarten": [
-        ""
+        "San Martín"
       ],
       "Slovakia": [
-        ""
+        "Eslovaquia"
       ],
       "Slovenia": [
-        ""
+        "Eslovenia"
       ],
       "Solomon Islands": [
-        ""
+        "Islas Salomón"
       ],
       "Somalia": [
-        ""
+        "Somalia"
       ],
       "South Africa": [
-        ""
+        "Sudáfrica"
       ],
       "South Georgia and the South Sandwich Islands": [
         "Georgia del sur y las Islas Sandwich del sur"
       ],
       "South Korea": [
-        ""
+        "Corea del Sur"
       ],
       "South Ossetia": [
-        ""
+        "Osetia del Sur"
       ],
       "South Sudan": [
-        ""
+        "Sudán del Sur"
       ],
       "Spain": [
         "España"
       ],
       "Sri Lanka": [
-        ""
+        "Sri Lanka"
       ],
       "Sudan": [
-        ""
+        "Sudán"
       ],
       "Suriname": [
-        ""
+        "Surinam"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "Svalbard y Jan Mayen"
       ],
       "Swaziland": [
-        ""
+        "Suazilandia"
       ],
       "Sweden": [
-        ""
+        "Suecia"
       ],
       "Switzerland": [
         "Suiza"
       ],
       "Syria": [
-        ""
+        "Siria"
       ],
       "Taiwan": [
         "Taiwán"
       ],
       "Tajikistan": [
-        ""
+        "Tayikistán"
       ],
       "Tanzania": [
         "Tanzania"
       ],
       "Thailand": [
-        ""
+        "Tailandia"
       ],
       "Timor-Leste": [
-        ""
+        "Timor Oriental"
       ],
       "Togo": [
-        ""
+        "Togo"
       ],
       "Tokelau": [
-        ""
+        "Tokelau"
       ],
       "Tonga": [
-        ""
+        "Tonga"
       ],
       "Trinidad and Tobago": [
-        ""
+        "Trinidad y Tobago"
       ],
       "Tristan da Cunha": [
-        ""
+        "Tristán de Acuña"
       ],
       "Tunisia": [
-        ""
+        "Túnez"
       ],
       "Turkey": [
-        ""
+        "Turquía"
       ],
       "Turkmenistan": [
-        ""
+        "Turkmenistán"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "Islas Turcas y Caicos"
       ],
       "Tuvalu": [
-        ""
+        "Tuvalu"
       ],
       "Uganda": [
         "Uganda"
@@ -1621,16 +1627,16 @@
         "Estados Unidos"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "Islas Ultramarinas Menores de Estados Unidos"
       ],
       "Uruguay": [
         "Uruguay"
       ],
       "Uzbekistan": [
-        ""
+        "Uzbekistán"
       ],
       "Vanuatu": [
-        ""
+        "Vanuatu"
       ],
       "Venezuela": [
         "Venezuela"
@@ -1639,25 +1645,25 @@
         "Vietnam"
       ],
       "Virgin Islands, British": [
-        ""
+        "Islas Vírgenes Británicas"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "Islas Vírgenes de EE. UU."
       ],
       "Wallis and Futuna": [
-        ""
+        "Wallis y Futuna"
       ],
       "Western Sahara": [
         "Sáhara Occidental"
       ],
       "Yemen": [
-        ""
+        "Yemen"
       ],
       "Zambia": [
-        ""
+        "Zambia"
       ],
       "Zimbabwe": [
-        ""
+        "Zimbabue"
       ],
       "Åland Islands": [
         "Islas Aland"
@@ -1728,7 +1734,7 @@
         "Ya existe un grupo con este nombre"
       ],
       "A problem occurred, please try again": [
-        ""
+        "Ha ocurrido un problema, inténtalo de nuevo"
       ],
       "Authentication canceled.": [
         "Autenticación cancelada."
@@ -1749,7 +1755,7 @@
         "Firma del contacto no verificada"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        ""
+        "La búsqueda de contenido no puede ser habilitada en este navegador. Por favor, salga del modo de navegación privada o utilice otro navegador."
       ],
       "Could not find address ${ email }.": [
         "No se ha podido encontrar la dirección ${ email }."
@@ -1772,28 +1778,28 @@
         "Introduce 6 dígitos"
       ],
       "Failed to download a file": [
-        ""
+        "La descarga del archivo falló"
       ],
       "Failed to download a folder": [
-        ""
+        "La descarga de la carpeta falló"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "El archivo \"${ item.name }\" no se puede cargar debido al error \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "El archivo \"${ name }\" ya se está descargando"
       ],
       "File cannot be merged with folder": [
-        ""
+        "Un archivo no puede unirse con un directorio"
       ],
       "File has no contents to preview": [
         "El archivo no tiene contenido para previsualizar"
       ],
       "File selection is already downloading": [
-        ""
+        "La selección de archivos está descargándose actualmente"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "El directorio \"${ name }\" ya se está descargando"
       ],
       "Folder name cannot be empty": [
         "El nombre de la carpeta no puede estar vacío"
@@ -1802,13 +1808,13 @@
         "Error al cargar la imagen"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Credenciales de acceso incorrectas. Por favor, inténtalo de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Credenciales de acceso incorrectas. Por favor, inténtalo de nuevo."
       ],
       "Incorrect password. Please try again.": [
-        "Contraseña incorrecta. Por favor, inténtalo de nuevo."
+        "Contraseña incorrecta. Por favor, inténtelo de nuevo."
       ],
       "Invalid name": [
         "Nombre no válido"
@@ -1823,11 +1829,11 @@
         "El nombre de la etiqueta no puede estar vacío"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
+        "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
         "Fusionar al menos ${ calendarToFixCount } calendarios con los calendarios existentes de Proton"
       ],
       "Missing key packet": [
-        ""
+        "Paquete de claves desaparecido"
       ],
       "Missing signature": [
         "No se ha encontrado la firma"
@@ -1853,7 +1859,7 @@
         "Las contraseñas no coinciden"
       ],
       "Please activate your content search again": [
-        ""
+        "Por favor, activa de nuevo tu búsqueda de contenido"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Por favor, arregle el conflicto resaltado para proceder.",
@@ -1872,7 +1878,7 @@
         "Tiempo de espera agotado"
       ],
       "Search failed": [
-        ""
+        "La búsqueda falló"
       ],
       "Signature not verified": [
         "Firma no verificada"
@@ -1890,7 +1896,7 @@
         "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifica el importe para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
@@ -1902,13 +1908,13 @@
         "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "La nueva revisión del archivo original aún no se ha cargado, por favor, vuelva a intentarlo más tarde"
       ],
       "The original file has missing active revision": [
-        ""
+        "El archivo original no tiene revisión activa"
       ],
       "The original file has missing hash key": [
-        ""
+        "No se encuentra la clave hash del archivo original"
       ],
       "The original file has missing session key": [
         "Al archivo original le falta una clave de sesión"
@@ -1920,7 +1926,7 @@
         "No se encontró la carpeta original"
       ],
       "The original folder or file not found": [
-        ""
+        "No se encontró la carpeta o el fichero original"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Hay demasiadas carpetas en tu cuenta externa. Por favor, personaliza la importación para eliminar algunas carpetas."
@@ -2297,10 +2303,10 @@
         "(${ memberCount } miembros)"
       ],
       "5 email addresses": [
-        ""
+        "5 direcciones de correo electrónico"
       ],
       "5 GB storage": [
-        ""
+        "5 GB de almacenamiento"
       ],
       "A number will be added to the filename": [
         "Se añadirá un número al nombre del archivo"
@@ -2332,16 +2338,16 @@
         "Cualquiera que tenga este enlace puede acceder a tu archivo."
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "Cualquiera en posesión de este enlace puede acceder a su directorio."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "¿Estás seguro de que quieres vaciar la papelera y eliminar permanentemente todos los elementos?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        ""
+        "¿Está seguro de que quiere eliminar \"${ itemName }\" de la papelera de forma permanente?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        ""
+        "¿Está seguro de que quiere eliminar los elementos seleccionados de la papelera de forma permanente?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Como ${ appName } está cifrado de extremo a extremo, no podemos acceder o descifrar tus archivos por ti. Para desbloquear su unidad después de un restablecimiento de la contraseña, debe tener uno de los siguientes:"
@@ -2356,19 +2362,19 @@
         "Verificando contacto: ${ progress } de ${ max }..."
       ],
       "Checking signatures": [
-        ""
+        "Verificando firmas"
       ],
       "Clear data": [
-        ""
+        "Borrar datos"
       ],
       "Clear encrypted search data": [
-        ""
+        "Limpiar datos de búsqueda cifrada"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "Limpiar los datos del navegador limpiará el índice de búsqueda en este dispositivo. Todos los ficheros necesitarán ser reindexados nuevamente al usar la búsqueda."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Borra los datos del navegador relacionados con la búsqueda cifrada."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -2389,7 +2395,7 @@
         "Continúa usando ${ appName } y desbloquea la unidad más tarde"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Continuar con ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Crear ${ calendarsToBeCreated } calendario nuevo",
@@ -2414,7 +2420,7 @@
         "Crea tu primera carpeta y comienza a mover tus archivos."
       ],
       "Creating": [
-        ""
+        "Creando"
       ],
       "Creating link to file": [
         "Creando enlace al archivo"
@@ -2429,17 +2435,17 @@
         "Se admiten archivos CSV de Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora y algunas otras aplicaciones, así como los formatos vCard 3.1 y 4.0 (codificación UTF-8)."
       ],
       "Delete drive": [
-        "Borrar la unidad",
-        "Borrar unidades"
+        "Eliminar unidad",
+        "Eliminar unidades"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Firma digital verificada. Este archivo ha sido cargado de forma segura por ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Firma digital verificada. Este directorio ha sido cargado de forma segura por ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "La descarga de ${ downloadFileName } será abortada"
       ],
       "Downloaded": [
         "Descargado"
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Clave duplicada actualizada"
       ],
+      "Enable drive search": [
+        "Activar la búsqueda de unidades"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
@@ -2466,31 +2475,31 @@
         "Se ha producido un error al generar un enlace seguro. Por favor, inténtalo de nuevo más tarde."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        ""
+        "No se pudo abrir un enlace seguro. El motivo es: ${ error }"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "No se ha encontrado la firma del archivo. No hemos podido verificar que ${ emailAddress } haya cargado ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "No se ha encontrado la firma del archivo. No hemos podido verificar quién ha cargado ${ fileName }."
       ],
       "File will not be uploaded": [
-        ""
+        "El archivo no se cargará"
       ],
       "Finalizing": [
         "Finalizando"
       ],
       "Folder contents will merge into a single folder": [
-        ""
+        "El contenido de los directorios se unirá en un solo directorio"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "No se ha encontrado la firma del directorio. No hemos podido verificar que ${ emailAddress } haya cargado ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "No se ha encontrado la firma del directorio. No hemos podido verificar quién ha cargado ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        ""
+        "El directorio no se cargará"
       ],
       "Free up some space or add more storage space.": [
         "Libera algo de espacio o añade más espacio de almacenamiento."
@@ -2517,7 +2526,7 @@
         "Si no encuentras el correo electrónico en tu bandeja de entrada, por favor, comprueba tu carpeta de spam."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
-        ""
+        "Si tiene uno de estos, continúe con la configuración de la cuenta de Proton para continuar con el proceso de desbloqueo."
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Importar ${ contactsFragment } y ${ contactsGroupsFragment }"
@@ -2533,10 +2542,10 @@
         "Importación en progreso"
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
-        ""
+        "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
       "Indexing search results…": [
-        ""
+        "Indexando resultados de búsqueda…"
       ],
       "Inherited from parent folder": [
         "Heredado de la carpeta principal"
@@ -2554,7 +2563,7 @@
         "Se ha restablecido la conexión a Internet."
       ],
       "Just confirm your selection and we'll do the rest.": [
-        ""
+        "Simplemente confirme su selección y nosotros haremos el resto."
       ],
       "Key fingerprint": [
         "Huella digital de la clave"
@@ -2566,7 +2575,7 @@
         "Más información"
       ],
       "Link copied to clipboard": [
-        ""
+        "Enlace copiado al portapapeles"
       ],
       "Link expires: ": [
         "El enlace expira el: "
@@ -2581,10 +2590,10 @@
         "Cargando previsualización"
       ],
       "Loading share": [
-        ""
+        "Cargando recurso compartido"
       ],
       "Merged": [
-        ""
+        "Combinado"
       ],
       "More": [
         "Más"
@@ -2605,7 +2614,7 @@
         "Nuevo"
       ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
+        "A continuación necesitará iniciar sesión en su cuenta de Google y permitirnos acceder a sus datos."
       ],
       "No": [
         "No"
@@ -2629,7 +2638,7 @@
         "No se han encontrado resultados"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        ""
+        "Ninguna de las claves cargadas es válida para cifrado. El cifrado se ha deshabilitado automáticamente."
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ appName }."
@@ -2641,19 +2650,19 @@
         "Una de sus unidades encriptadas está bloqueada. Lo más probable es que se deba a un reciente restablecimiento de la contraseña.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Sólo se permiten ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Modifique esta configuración únicamente si está usando PGP con destinatarios no-${ BRAND_NAME }."
       ],
       "Only the people with the link and the password can access this file.": [
-        ""
+        "Sólo las personas en posesión del enlace y la contraseña pueden acceder a este archivo."
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "Sólo las personas en posesión del enlace y la contraseña tienen acceso a este directorio."
       ],
       "Other options": [
-        ""
+        "Otras opciones"
       ],
       "Paused": [
         "Pausado"
@@ -2662,10 +2671,10 @@
         "Borra permanentemente todos los archivos de tu disco"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "PGP/Inline sólo es compatible con texto sin formato. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "PGP/MIME envía automáticamente el mensaje usando el modo de composición actual. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ten en cuenta que las direcciones asignadas a este grupo NO se eliminarán."
@@ -2695,10 +2704,13 @@
         "Principal"
       ],
       "Priority support": [
-        ""
+        "Soporte prioritario"
       ],
       "Queued": [
         "En cola"
+      ],
+      "recommended browser": [
+        "navegador recomendado"
       ],
       "Recovery process might take some time.": [
         "El proceso de recuperación puede llevar algún tiempo."
@@ -2707,16 +2719,16 @@
         "Actualizar la página o ${ link } resolverá automáticamente la mayoría de los problemas."
       ],
       "Search cannot be enabled in this browser": [
-        ""
+        "No se puede habilitar la búsqueda en este navegador"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        ""
+        "Seleccione un archivo o directorio cargado para crear un enlace al mismo."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que deseas utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "Seleccione qué calendarios quiere importar. Se creará un nuevo calendario por cada uno importado, hasta alcanzar el límite de 20 calendarios."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
@@ -2725,16 +2737,16 @@
         "Sesión agotada"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "La configuración de PGP permite el envío de correos cifrados de extremo a extremo con un usuario no-${ BRAND_NAME } que use un servicio PGP compatible."
       ],
       "Share files with links": [
         "Compartir archivos con enlaces"
       ],
       "Signature check will be ignored": [
-        ""
+        "La comprobación de firma será ignorada"
       ],
       "Signature issue": [
-        ""
+        "Problema de firma"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Algunos de tus archivos ya no son accesibles. Restablece el acceso a tus archivos. ${ StartRecoveryButton }"
@@ -2746,19 +2758,19 @@
         "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Soporte para 1 dominio de correo personalizado"
       ],
       "support team": [
         "equipo de soporte"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "La cuenta puede tener una nueva clave o los siguientes elementos pueden haber sido manipulados: ${ items }. Abrir sólo si son de su confianza."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "La aplicación necesita descifrar localmente tus contactos antes de poder exportarlos. Al final del proceso se generará un archivo VCF y podrás descargarlo."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Los siguientes elementos pueden haber sido manipulados: ${ items }. Abrir sólo si son de su confianza."
       ],
       "There are no files yet": [
         "Aún no hay archivos"
@@ -2779,29 +2791,29 @@
         "Este enlace puede ser un ataque homógrafo. Por favor, verifica que este es el enlace que quieres visitar o no lo abras."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "Este enlace fue creado en una versión anterior y no puede ser modificado. Elimine el enlace y cree uno nuevo para hacer cambios en la configuración."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Este enlace se desactivará permanentemente. Nadie con este enlace podrá acceder a tu archivo. Para volver a compartir el archivo, necesitarás un nuevo enlace."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        ""
+        "Este enlace será deshabilitado de forma permanente. Nadie en posesión de este enlace tendrá acceso a su directorio. Necesitará un enlace nuevo para volver a compartir el directorio."
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "",
-        ""
+        "Esta acción eliminará el enlace e impedirá el acceso al archivo a cualquier persona que lo tuviera.",
+        "Esta acción eliminará los enlaces e impedirá el acceso a los archivos a cualquier persona que los tuviera."
       ],
       "This will overwrite the existing file": [
-        ""
+        "Esta acción sobreescribirá el archivo existente"
       ],
       "This will overwrite the existing folder": [
-        ""
+        "Esta acción sobreescribirá el directorio existente"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
+        "Para habilitar la búsqueda auténticamente privada ${ DRIVE_APP_NAME } necesita indexar sus archivos localmente."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        ""
+        "Para permitir una búsqueda verdaderamente privada, ${ DRIVE_APP_NAME } debe indexar sus archivos localmente. Puedes seguir utilizando ${ DRIVE_APP_NAME } normalmente - te avisaremos cuando la indexación haya terminado."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
@@ -2816,28 +2828,28 @@
         "Para utilizar la verificación de dirección, debes confiar en una o más claves públicas disponibles, incluida la que deseas utilizar para el envío. Esto evita que las claves de cifrado sean falsificadas."
       ],
       "Transfer canceled for file \"${ name }\"": [
-        ""
+        "Se ha cancelado la transferencia del archivo \"${ name }\""
       ],
       "Transfer canceled for folder \"${ name }\"": [
-        ""
+        "Se ha cancelado la transferencia del directorio \"${ name }\""
       ],
       "Transfer skipped for file \"${ file.name }\"": [
-        ""
+        "Se ha omitido la transferencia del archivo \"${ file.name }\""
       ],
       "Transfer skipped for folder \"${ folderName }\"": [
-        ""
+        "Se ha omitido la transferencia del directorio \"${ folderName }\""
       ],
       "Trash": [
         "Papelera"
       ],
       "Try different keywords": [
-        ""
+        "Pruebe diferentes palabras clave"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Carpetas, etiquetas y filtros ilimitados"
       ],
       "Unlimited messages": [
-        ""
+        "Mensajes ilimitados"
       ],
       "Unlock drive to recover files": [
         "Desbloquear la unidad para recuperar los archivos"
@@ -2846,7 +2858,7 @@
         "Archivo no soportado"
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Actualiza hoy para evitar perder los beneficios de ${ appName } ${ planName }."
       ],
       "Uploaded": [
         "Subido"
@@ -2858,13 +2870,13 @@
         "Subir cientos de archivos a la vez puede tener un impacto en el rendimiento."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "No se pudo verificar que ${ emailAddress } haya cargado ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "No se pudo verificar quién ha cargado ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
-        ""
+        "Le avisaremos cuando la importación haya terminado."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
@@ -2873,7 +2885,7 @@
         "Semana"
       ],
       "What do you want to do?": [
-        ""
+        "¿Qué quiere hacer?"
       ],
       "What do you want to import from your Google account?": [
         "¿Qué quieres importar de tu cuenta de Google?"
@@ -2885,7 +2897,7 @@
         "¿Te gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "¿Desea recibir un código de verificación nuevo?"
       ],
       "Would you like to restore your files?": [
         "¿Te gustaría restaurar tus archivos?"
@@ -2903,7 +2915,7 @@
         "Puede fusionar calendarios importados con calendarios existentes en Proton."
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
+        "Puede comprobar el progreso ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puedes activar las notificaciones para recibir alertas cuando lleguen mensajes de correo electrónico nuevos a esta carpeta."
@@ -2926,17 +2938,20 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Tu cuenta tiene al menos una factura atrasada. Tu acceso pronto será restringido. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Tu navegador actual no soporta la descarga de archivos grandes por no disponer de trabajadores de servicio. La descarga de archivos grandes puede congelar o dejar sin respuesta al navegador. Por favor, usa la última versión de ${ recommendedBrowser } e inténtalo de nuevo."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        ""
+        "Sus datos están listos para ser importados desde ${ importedEmailAddressStrong } hasta su cuenta Proton."
       ],
       "Your download has been canceled.": [
-        ""
+        "Tu descarga ha sido cancelada."
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
       "Your file failed to download.": [
-        ""
+        "La descarga del archivo falló."
       ],
       "Your file has finished downloading.": [
         "Tu archivo ha terminado de descargarse."
@@ -2951,22 +2966,22 @@
         "Tus archivos serán cifrados y posteriormente guardados."
       ],
       "Your folder failed to download.": [
-        ""
+        "La descarga de su carpeta falló al descargar."
       ],
       "Your folder has finished downloading.": [
-        ""
+        "Su carpeta ha terminado de descargarse."
       ],
       "Your folder is being downloaded.": [
-        ""
+        "Tu carpeta está siendo descargada."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono sólo se utilizará para esta verificación única."
       ],
       "Your previous password": [
-        "Su contraseña anterior"
+        "Tu contraseña anterior"
       ],
       "Your previous recovery phrase": [
-        "Su frase de recuperación anterior"
+        "Tu frase de recuperación anterior"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Tu cuenta de Proton está actualmente en espera. Para continuar usando tu cuenta, por favor abona cualquier factura atrasada."
@@ -2987,22 +3002,22 @@
     },
     "Item": {
       "file attributes": [
-        ""
+        "atributos del archivo"
       ],
       "file data": [
-        ""
+        "datos del archivo"
       ],
       "keys": [
-        ""
+        "claves"
       ],
       "name": [
-        ""
+        "nombre"
       ],
       "name hash": [
         ""
       ],
       "thumbnail": [
-        ""
+        "miniatura"
       ]
     },
     "Key badge": {
@@ -3027,13 +3042,13 @@
     },
     "Label": {
       "# of accesses": [
-        ""
+        "# de accesos"
       ],
       "(Expired)": [
         "(Expirado)"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(No disponible temporalmente. Vuelva a comprobarlo más tarde.)"
       ],
       "Add email address": [
         "Agregar dirección de correo electrónico"
@@ -3045,16 +3060,16 @@
         "Agregar al grupo"
       ],
       "Apply to all duplicated files": [
-        ""
+        "Aplicar a todos los archivos duplicados"
       ],
       "Apply to all duplicated folders": [
-        ""
+        "Aplicar a todas las carpetas duplicadas"
       ],
       "Apply to all unverified items": [
-        ""
+        "Aplicar a todos los elementos no verificados"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s) de pantalla"
       ],
       "Audio file": [
         "Archivo de audio"
@@ -3072,7 +3087,7 @@
         "Calendarios"
       ],
       "Cancel download": [
-        ""
+        "Cancelar descarga"
       ],
       "Category": [
         "Categoría"
@@ -3081,7 +3096,7 @@
         "Ciudad"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "El código es de 6 dígitos sin espacios"
       ],
       "Contacts": [
         "Contactos"
@@ -3096,14 +3111,14 @@
         "Creado"
       ],
       "Delete": [
-        ""
+        "Eliminar"
       ],
       "Delete drive?": [
-        "",
-        ""
+        "¿Eliminar unidad?",
+        "¿Eliminar unidades?"
       ],
       "Deleted": [
-        ""
+        "Eliminado"
       ],
       "Display name": [
         "Nombre a mostrar"
@@ -3112,7 +3127,7 @@
         "No volver a preguntar"
       ],
       "Download anyway": [
-        ""
+        "Descargar de todos modos"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Habilitar acceso beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Activación de la búsqueda de unidades"
       ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
@@ -3205,10 +3220,10 @@
         "Gestionar etiquetas"
       ],
       "Merge a folder": [
-        ""
+        "Fusionar una carpeta"
       ],
       "Modified": [
-        ""
+        "Modificado"
       ],
       "Name": [
         "Nombre"
@@ -3274,7 +3289,7 @@
         "Tamaño"
       ],
       "Skip file": [
-        ""
+        "Omitir archivo"
       ],
       "Skip folder": [
         "Omitir carpeta"
@@ -3304,7 +3319,7 @@
         "Archivo desconocido"
       ],
       "Unlock drive": [
-        ""
+        "Desbloquear unidad"
       ],
       "Unlock drive (recommended)": [
         "Desbloquear la unidad (recomendado)"
@@ -3313,13 +3328,13 @@
         "Desbloquear más tarde"
       ],
       "Upload anyway": [
-        ""
+        "Subir de todos modos"
       ],
       "Upload picture": [
         "Cargar imagen"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nombre de usuario o correo de ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificación"
@@ -3397,7 +3412,7 @@
         "Ya casi está"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "Cantidad de calendarios creados: ${ createdCalendars } de ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
         "Creando calendarios nuevos"
@@ -3406,7 +3421,7 @@
         "Obteniendo tus datos"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Estamos recopilando datos de tu proveedor"
       ],
       "Your import is starting": [
         "Tu importación está comenzando"
@@ -3424,7 +3439,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Su periodo de prueba gratuito ha terminado. El acceso a su cuenta pronto será deshabilitado. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3453,84 +3468,84 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        ""
+        "\"${ name }\" ha sido creado con éxito"
       ],
       "\"${ name }\" deleted permanently from trash": [
-        ""
+        "\"${ name }\" ha sido eliminado permanentemente de la papelera"
       ],
       "\"${ name }\" failed to be created": [
-        ""
+        "No se ha podido crear \"${ name }\""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
+        "El elemento \"${ name }\" no pudo ser eliminado de forma permanente de la papelera"
       ],
       "\"${ name }\" failed to be moved": [
-        ""
+        "\"${ name }\" no se ha podido mover"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        ""
+        "\"${ name }\" no se pudo mover a la papelera"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        ""
+        "No se pudo restaurar \"${ name }\" desde la papelera"
       ],
       "\"${ name }\" moved to trash": [
-        ""
+        "\"${ name }\" se ha movido a la papelera"
       ],
       "\"${ name }\" restored from trash": [
-        ""
+        "\"${ name }\" restaurado desde la papelera"
       ],
       "\"${ name }\" successfully moved": [
-        ""
+        "\"${ name }\" fue movido con éxito"
       ],
       "\"${ newName }\" failed to be renamed": [
-        ""
+        "No se pudo renombrar \"${ newName }\""
       ],
       "\"${ newName }\" renamed successfully": [
-        ""
+        "${ newName }\" fue renombrado con éxito"
       ],
       "${ count } item failed to be decrypted": [
-        "",
-        ""
+        "El elemento ${ count } no pudo ser descifrado",
+        "Los elementos ${ count } no pudieron ser descifrados"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "",
-        ""
+        "El elemento ${ numberOfItems } ha sido eliminado de la papelera de forma permanente",
+        "Los elementos ${ numberOfItems } han sido eliminados de la papelera de forma permanente"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "",
-        ""
+        "El elemento \"${ numberOfItems }\" no pudo ser eliminado de forma permanente de la papelera",
+        "Los elementos \"${ numberOfItems }\" no pudieron ser eliminados de forma permanente de la papelera"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "",
-        ""
+        "No se pudo mover el elemento ${ numberOfItems }",
+        "No se pudieron mover los elementos ${ numberOfItems }"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "",
-        ""
+        "El elemento ${ numberOfItems } no se pudo mover a la papelera",
+        "Los elementos ${ numberOfItems } no se pudieron mover a la papelera"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "",
-        ""
+        "El elemento ${ numberOfItems } no se pudo restaurar desde la papelera",
+        "Los elementos ${ numberOfItems } no se pudieron restaurar desde la papelera"
       ],
       "${ numberOfItems } item moved to trash": [
-        "",
-        ""
+        "El elemento ${ numberOfItems } se ha movido a la papelera",
+        "Los elementos ${ numberOfItems } se han movido a la papelera"
       ],
       "${ numberOfItems } item restored from trash": [
-        "",
-        ""
+        "El elemento ${ numberOfItems } se ha restaurado desde la papelera",
+        "Los elementos ${ numberOfItems } se han restaurado desde la papelera"
       ],
       "${ numberOfItems } item successfully moved": [
-        "",
-        ""
+        "El elemento ${ numberOfItems } fue movido con éxito",
+        "Los elementos ${ numberOfItems } fueron movidos con éxito"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "",
-        ""
+        "No se pudo eliminar en enlace ${ numberOfItems } a tu elemento",
+        "No se pudieron eliminar los enlaces ${ numberOfItems } a tus elementos"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "",
-        ""
+        "El enlace ${ numberOfItems } a tu elemento ha sido eliminado",
+        "Los enlaces ${ numberOfItems } a tu elemento han sido eliminados"
       ],
       "All items will soon be permanently deleted from trash": [
         "Todos los elementos serán eliminados permanentemente de la papelera"
@@ -3542,32 +3557,32 @@
         "Grupo de contactos actualizado"
       ],
       "Encrypted search activated": [
-        ""
+        "Búsqueda cifrada activada"
       ],
       "Failed to download files: ${ err }": [
-        ""
+        "No se pudieron descargar los archivos: ${ err }"
       ],
       "Failed to move, please try again": [
         "Se ha producido un error al mover. Por favor, inténtalo de nuevo"
       ],
       "Failed to upload files: ${ err }": [
-        ""
+        "No se pudieron cargar los archivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "",
-        ""
+        "El archivo o directorio \"${ filename }\" y ${ count } otros se están cargando"
       ],
       "File or folder \"${ filename }\" is already uploading": [
-        ""
+        "El archivo o directorio \"${ filename }\" ya se está cargando"
       ],
       "File or folder is missing a name": [
-        ""
+        "No se encuentra un nombre del archivo o directorio"
       ],
       "Item failed to be verified": [
-        ""
+        "No se pudo verificar el elemento"
       ],
       "Link failed to be loaded": [
-        ""
+        "No se pudo cargar el enlace"
       ],
       "Move ${ itemsToMoveCount } file": [
         "Mover ${ itemsToMoveCount } archivo",
@@ -3594,40 +3609,40 @@
         "Mover ${ movingCount } elementos"
       ],
       "Next page failed to be loaded": [
-        ""
+        "No se pudo cargar la siguiente página"
       ],
       "Not enough space to upload ${ formattedTotal }": [
-        ""
+        "No hay espacio suficiente para cargar ${ formattedTotal }"
       ],
       "Root folder failed to be loaded": [
-        ""
+        "No se pudo cargar el directorio raíz"
       ],
       "Subfolder failed to be loaded": [
-        ""
+        "No se pudo cargar el subdirectorio"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        ""
+        "No se pudo eliminar el enlace a \"${ name }\""
       ],
       "The link to \"${ name }\" was deleted": [
-        ""
+        "El enlace a \"${ name }\" ha sido eliminado"
       ],
       "The link to your item failed to be deleted": [
-        ""
+        "No se pudo eliminar el enlace a tu elemento"
       ],
       "The link to your item was deleted": [
-        ""
+        "El enlace a su elemento ha sido eliminado"
       ],
       "Trash failed to be emptied": [
-        ""
+        "No se pudo vaciar la papelera"
       ],
       "Your old files will be deleted in 72 hours": [
-        "Tus archivos antiguos se borrarán en 72 horas"
+        "Sus archivos antiguos serán eliminados en 72 horas"
       ],
       "Your settings failed to be saved": [
-        ""
+        "No se pudo guardar su configuración"
       ],
       "Your settings have been changed successfully": [
-        ""
+        "Su configuración ha sido modificada con éxito"
       ]
     },
     "Oauth instructions": {
@@ -3643,15 +3658,15 @@
         "Comienza a usar ${ appName }"
       ],
       "Upgrade account": [
-        ""
+        "Mejorar cuenta"
       ]
     },
     "Onboarding Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        ""
+        "${ appName } se encuentra en fase de acceso anticipado y sólo está disponible para usuarios con un plan de pago."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
-        ""
+        "${ appName } sólo está disponible si habilitas el acceso Beta."
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
         "Protege todos tus archivos con un cifrado de extremo a extremo. Utiliza ${ appName } para almacenar y compartir tus archivos de forma segura."
@@ -3697,7 +3712,7 @@
         "Conoce su nuevo almacenamiento de archivos seguro"
       ],
       "Upgrade to access ${ appName }": [
-        ""
+        "Actualizar para acceder a ${ appName }"
       ]
     },
     "Option": {
@@ -3711,7 +3726,7 @@
         "Ignorar grupo"
       ],
       "No parent folder": [
-        ""
+        "No hay carpeta principal"
       ]
     },
     "Option group label": {
@@ -3719,7 +3734,7 @@
         "Crear un calendario nuevo"
       ],
       "Merge with calendar": [
-        ""
+        "Unir con el calendario"
       ]
     },
     "PGP key encryption warning": {
@@ -3761,7 +3776,7 @@
         "Nuevo nombre"
       ],
       "Password": [
-        ""
+        "Contraseña"
       ],
       "Please describe the problem and include any error messages": [
         "Por favor, describe el problema e incluye cualquier mensaje de error"
@@ -3773,7 +3788,7 @@
         "Buscar por nombre o correo electrónico"
       ],
       "Select": [
-        ""
+        "Seleccionar"
       ],
       "Start typing an email address": [
         "Comienza a escribir una dirección de correo electrónico"
@@ -3850,10 +3865,10 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Consigue gratis hasta 18 meses de ${ appName } ${ planName }"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "¡Invita a tus amigos y gana recompensas!"
       ]
     },
     "Storage": {
@@ -3907,10 +3922,10 @@
         "Preferencias guardadas"
       ],
       "Recovery has started": [
-        ""
+        "La recuperación ha comenzado"
       ],
       "The link to your file was successfully copied": [
-        ""
+        "El enlace a su archivo se ha copiado con éxito"
       ],
       "Verification successful": [
         "Verificación completada con éxito"
@@ -3988,7 +4003,7 @@
         "Tamaño"
       ],
       "Uploaded": [
-        ""
+        "Subido"
       ],
       "Values": [
         "Valores"
@@ -4064,6 +4079,9 @@
       ],
       "Beta Access": [
         "Acceso beta"
+      ],
+      "Browser might run out of memory": [
+        "El navegador podría quedarse sin memoria"
       ],
       "Cancel all active transfers": [
         "Cancelar todas las transferencias activas"
@@ -4146,10 +4164,10 @@
         "Descarga fallida"
       ],
       "Download unverified file?": [
-        ""
+        "¿Descargar archivo no verificado?"
       ],
       "Download unverified folder?": [
-        ""
+        "¿Descargar carpeta no verificada?"
       ],
       "Downloading": [
         "Descargando"
@@ -4161,10 +4179,10 @@
         "Arrastrar para subir"
       ],
       "Duplicate file found": [
-        ""
+        "Archivo duplicado encontrado"
       ],
       "Duplicate folder found": [
-        ""
+        "Carpeta duplicada encontrada"
       ],
       "Edit contact": [
         "Editar contacto"
@@ -4187,17 +4205,17 @@
       "Empty trash": [
         "Vaciar papelera"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Activar la búsqueda de unidades"
       ],
       "Enter password to download": [
-        ""
+        "Introduce la contraseña para descargar"
       ],
       "Enter your password": [
         "Introduce tu contraseña"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Ingresa tu nombre de usuario o su dirección de correo de ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Exportando contactos"
@@ -4218,7 +4236,11 @@
         "Detalles de la carpeta"
       ],
       "Folders details": [
-        ""
+        "Detalles de carpetas"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } resultado encontrado",
+        "${ searchView.numberOfResults } resultados encontrados"
       ],
       "Groups": [
         "Grupos"
@@ -4236,7 +4258,7 @@
         "Código de verificación no válido"
       ],
       "Items details": [
-        ""
+        "Detalles del elemento"
       ],
       "Link confirmation": [
         "Confirmación de enlace"
@@ -4248,7 +4270,7 @@
         "Gestionar enlace seguro"
       ],
       "Manage share": [
-        ""
+        "Gestionar recursos compartidos"
       ],
       "Merge contacts": [
         "Combinar contactos"
@@ -4266,22 +4288,22 @@
         "Mis archivos"
       ],
       "My files ${ date }.zip": [
-        ""
+        "Mis archivos ${ date }.zip"
       ],
       "Name": [
         "Nombre"
       ],
       "No results found": [
-        ""
+        "No se han encontrado resultados"
       ],
       "Number of files": [
         "Número de archivos"
       ],
       "Number of folders": [
-        ""
+        "Número de carpetas"
       ],
       "Number of items": [
-        ""
+        "Número de elementos"
       ],
       "Open actions dropdown": [
         "Abrir acciones desplegables"
@@ -4299,7 +4321,7 @@
         "Otros nombres"
       ],
       "Performance might be affected": [
-        ""
+        "El rendimiento puede verse afectado"
       ],
       "Phone numbers": [
         "Números de teléfono"
@@ -4329,13 +4351,10 @@
         "Restaurar tus archivos"
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        ""
+        "Resultados de búsqueda"
       ],
       "Searching…": [
-        ""
+        "Buscando…"
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -4353,7 +4372,7 @@
         "Selecciona la hora de expiración del enlace"
       ],
       "Select permissions": [
-        ""
+        "Seleccionar permisos"
       ],
       "Select what to import": [
         "Selecciona qué importar"
@@ -4398,10 +4417,10 @@
         "No se pudo cargar el enlace"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Este archivo tiene una firma que falta o no es válida. Vaya a Menú (⋮) → Detalles para obtener información."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Esta carpeta tiene una firma que falta o no es válida. Vaya a Menú (⋮) → Detalles para obtener información."
       ],
       "Total size": [
         "Tamaño total"
@@ -4416,7 +4435,7 @@
         "Actualización necesaria"
       ],
       "Uploaded": [
-        ""
+        "Subido"
       ],
       "Uploaded by": [
         "Subido por"
@@ -4443,10 +4462,10 @@
         "El archivo está listo para ser descargado"
       ],
       "Your folder is ready to be downloaded": [
-        ""
+        "Su carpeta está lista para ser descargada"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Su prueba gratuita termina pronto, en ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -4462,13 +4481,13 @@
         "Firmar correos digitalmente ayuda a autenticar que los mensajes son enviados por ti"
       ],
       "Each imported email will have this label": [
-        ""
+        "Cada correo electrónico importado tendrá esta etiqueta"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "El cifrado del correo electrónico obliga a la firma del correo electrónico a ayudar a autenticar tus mensajes enviados"
       ],
       "Encrypted data": [
-        ""
+        "Datos cifrados"
       ],
       "Encrypted data with verified digital signature": [
         "Datos cifrados con firma digital verificada"
@@ -4477,10 +4496,10 @@
         "Selecciona el esquema PGP a utilizar para firmar o cifrar a un usuario. Ten en cuenta que PGP/Inline obliga a mensajes de texto plano"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Los subdirectorios del sistema se mostrarán como directorios separados en ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "La importación comenzará con los mensajes más recientes."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
         "Sube una clave pública para permitir el envío de correos electrónicos cifrados de extremo a extremo a este correo electrónico"
@@ -4517,10 +4536,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Haz click para volver a reproducir el vídeo"
       ],
       "Replay video": [
-        ""
+        "Volver a reproducir el vídeo"
       ]
     },
     "Warning": {
@@ -4545,10 +4564,10 @@
         "Si no recuerdas tu contraseña, es imposible volver a activar tu clave. Podemos ayudarte a desactivar la alerta pero en el proceso perderás permanentemente el acceso a todos los datos cifrados con esa clave."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "El chat en vivo es una función premium disponible solo para usuarios con planes de pago de ${ VPN_APP_NAME }. Abre un ticket en su lugar."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "Proton unirá todos los directorios con el mismo nombre. Para evitarlo, cambie los nombres antes de importarlos."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Los informes no están cifrados de extremo a extremo, no envíes ninguna información confidencial."
@@ -4578,13 +4597,13 @@
         "Esta función requiere una cuenta de pago de Proton"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Desafortunadamente no estamos en línea en este momento. Complete el siguiente formulario para explicar su problema, lo analizaremos y nos pondremos en contacto con usted cuando volvamos a estar en línea."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Se perderá cualquier configuración personalizada que haya realizado hasta ahora."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Su periodo de prueba termina el ${ textDate }. ${ action }"
       ]
     }
   }

@@ -45,7 +45,7 @@
         "Применить"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Вложить снимок(ки) экрана"
       ],
       "Back": [
         "Назад"
@@ -188,6 +188,9 @@
       "Download": [
         "Скачать"
       ],
+      "Download anyway": [
+        "Все равно скачать"
+      ],
       "Drive Locked": [
         "Хранилище заблокировано"
       ],
@@ -214,6 +217,9 @@
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
+      ],
+      "Enable drive search": [
+        "Включить поиск по хранилищу"
       ],
       "Expand folder": [
         "Развернуть папку"
@@ -807,10 +813,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Закрыть"
       ],
       "Open": [
-        ""
+        "Открыть"
       ]
     },
     "Confirm modal title": {
@@ -2538,6 +2544,9 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
+      "Enable drive search": [
+        "Включить поиск по хранилищу"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
@@ -2725,7 +2734,7 @@
         "Одно из ваших зашифрованных хранилищ заблокировано. Скорее всего, это связано с недавним сбросом пароля.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Максимальное количество символов: ${ MAX_CUSTOM_PASSWORD_LENGTH }"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
@@ -2783,6 +2792,9 @@
       ],
       "Queued": [
         "Поставлено в очередь"
+      ],
+      "recommended browser": [
+        "рекомендуемый браузер"
       ],
       "Recovery process might take some time.": [
         "Восстановление может занять некоторое время."
@@ -2917,7 +2929,7 @@
         "Корзина"
       ],
       "Try different keywords": [
-        "Попробуйте разные ключевые слова"
+        "Попробуйте другие ключевые слова"
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, меток и фильтров"
@@ -3011,6 +3023,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ваша учетная запись имеет по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
+      ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Ваш текущий браузер не поддерживает загрузку больших файлов из-за недоступности сервисных служб. Загрузка больших файлов может стать причиной зависания браузера. Пожалуйста, воспользуйтесь последней версией ${ recommendedBrowser } и попробуйте снова."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
@@ -3140,7 +3155,7 @@
         "Применить ко всем непроверенным элементам"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Вложить снимок(ки) экрана"
       ],
       "Audio file": [
         "Аудиофайл"
@@ -3182,7 +3197,7 @@
         "Создано"
       ],
       "Delete": [
-        ""
+        "Удалить"
       ],
       "Delete drive?": [
         "Удалить хранилище?",
@@ -3214,8 +3229,8 @@
       "Enable Beta Access": [
         "Включить доступ к бета-версии"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Включается поиск по хранилищу"
       ],
       "Encrypt emails": [
         "Шифровать письма"
@@ -3901,7 +3916,7 @@
         "Поиск имени или эл. почты"
       ],
       "Select": [
-        ""
+        "Выбрать"
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
@@ -4209,6 +4224,9 @@
       "Beta Access": [
         "Бета-доступ"
       ],
+      "Browser might run out of memory": [
+        "У браузера могла закончиться память"
+      ],
       "Cancel all active transfers": [
         "Отменить все текущие операции по передаче данных"
       ],
@@ -4335,8 +4353,8 @@
       "Empty trash": [
         "Очистить корзину"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Включить поиск по хранилищу"
       ],
       "Enter password to download": [
         "Введите пароль для скачивания"
@@ -4367,6 +4385,12 @@
       ],
       "Folders details": [
         "Информация о папке"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Найден ${ searchView.numberOfResults } результат",
+        "Найдено ${ searchView.numberOfResults } результата",
+        "Найдено ${ searchView.numberOfResults } результатов",
+        "Найдено ${ searchView.numberOfResults } результата"
       ],
       "Groups": [
         "Группы"
@@ -4478,9 +4502,6 @@
       ],
       "Search results": [
         "Результаты поиска"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Результаты поиска: найдено ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Поиск…"

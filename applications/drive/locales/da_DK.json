@@ -184,6 +184,9 @@
       "Download": [
         "Hent"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Drev låst"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "aktivér skrivebordsmeddelelser"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "Udvid mappe"
@@ -2356,7 +2362,7 @@
         "Tjekker kontakt ${ progress } af ${ max }..."
       ],
       "Checking signatures": [
-        "Kontrollere signatur"
+        "Kontrollerer signaturer"
       ],
       "Clear data": [
         ""
@@ -2455,6 +2461,9 @@
       ],
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -2700,6 +2709,9 @@
       "Queued": [
         "Sat i kø"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "Gendannelsesprocessen kan tage noget tid."
       ],
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
       ],
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Aktivér beta-adgang"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Beta-adgang"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Annuller alle aktive overførsler"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Tøm Papirkurv"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "Indtast adgangskode for at downloade"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Mappedetaljer"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
+        ""
       ],
       "Groups": [
         "Grupper"
@@ -4329,9 +4351,6 @@
         "Gendan dine filer"
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
         ""
       ],
       "Searching…": [

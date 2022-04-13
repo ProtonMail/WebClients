@@ -45,7 +45,7 @@
         "Εφαρμογή"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
       "Back": [
         "Πίσω"
@@ -184,6 +184,9 @@
       "Download": [
         "Λήψη"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Αρχειοθήκη Κλειδωμένη"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "Ανάπτυξη φακέλου"
@@ -803,10 +809,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Κλείσιμο"
       ],
       "Open": [
-        ""
+        "Άνοιγμα"
       ]
     },
     "Confirm modal title": {
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
       ],
@@ -2641,7 +2650,7 @@
         "Μία από τις κρυπτογραφημένες αρχειοθήκες σας είναι κλειδωμένη. Αυτό πιθανότατα οφείλεται σε μια πρόσφατη επαναφορά κωδικού πρόσβασης.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
@@ -2700,6 +2709,9 @@
       "Queued": [
         "Σε ουρά"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "Η διαδικασία ανάκτησης ίσως πάρει κάποια ώρα."
       ],
@@ -2743,7 +2755,7 @@
         "Κάτι πήγε στραβά, παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         ""
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Ο λογαριασμός σας έχει τουλάχιστον ένα εκπρόθεσμο τιμολόγιο. Η πρόσβαση σας σύντομα θα περιοριστεί. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
       ],
@@ -3054,7 +3069,7 @@
         "Εφαρμογή σε όλα τα μη επαληθευμένα στοιχεία"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
       "Audio file": [
         "Αρχείο ήχου"
@@ -3096,7 +3111,7 @@
         "Δημιουργήθηκε"
       ],
       "Delete": [
-        ""
+        "Διαγραφή"
       ],
       "Delete drive?": [
         "Διαγραφή αρχειοθήκης;",
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Ενεργοποίηση πρόσβασης Beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
@@ -3773,7 +3788,7 @@
         "Αναζήτηση βάσει ονόματος ή ηλ. διεύθυνσης"
       ],
       "Select": [
-        ""
+        "Επιλογή"
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Beta Πρόσβαση"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Ακυρώστε όλες τις ενεργές μεταφορές"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Εκκαθάριση Διαγραμμένων"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "Εισάγετε τον κωδικό για λήψη"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Λεπτομέρειες φακέλου"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
+        ""
       ],
       "Groups": [
         "Ομάδες"
@@ -4330,9 +4352,6 @@
       ],
       "Search results": [
         "Αποτελέσματα αναζήτησης"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Αποτελέσματα αναζήτησης: βρέθηκαν ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Γίνεται αναζήτηση…"

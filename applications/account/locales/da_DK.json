@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Tilføj PayPal"
       ],
-      "Add PayPal payment method": [
-        "Tilføj PayPal-betalingsmetode"
-      ],
-      "Add screenshot(s)": [
-        "Tilføj screenshot(s)"
-      ],
       "Add sieve filter": [
         "Tilføj Sieve-filter"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Anvend"
+      ],
+      "Attach screenshot(s)": [
+        "Vedhæft skærmfoto(s)"
       ],
       "Authenticate": [
         "Godkend"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Vælg en fil eller træk den hertil"
       ],
-      "Clear": [
-        "Ryd"
-      ],
       "Clear all formatting": [
         "Ryd al formatering"
       ],
@@ -199,6 +193,9 @@
       "Continue import": [
         "Fortsæt import"
       ],
+      "Continue to ${ name }": [
+        "Fortsæt til ${ name }"
+      ],
       "Continue with": [
         "Fortsæt med"
       ],
@@ -215,10 +212,10 @@
         "Kopiér link"
       ],
       "Create": [
-        ""
+        "Opret"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
-        ""
+        "Opret en sikker ${ MAIL_APP_NAME }-adresse i stedet"
       ],
       "Create address": [
         "Opret adresse"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Slet link"
       ],
+      "Delete permanently": [
+        "Slet permanent"
+      ],
       "Delete record": [
         "Slet post"
+      ],
+      "Delete without exporting": [
+        "Slet uden at eksportere"
       ],
       "Delete your account": [
         "Slet din konto"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
       ],
+      "Encrypt and export": [
+        "Krypter og eksporter"
+      ],
       "Export": [
         "Exportér"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Eksportér nøgle"
       ],
+      "Export key before deleting": [
+        "Eksporter nøgle før sletning"
+      ],
       "Extend": [
-        ""
+        "Forlæng"
       ],
       "Font": [
         "Skrifttype"
@@ -356,7 +365,7 @@
         "Opret gendannelsessætning"
       ],
       "Get ${ vpnPlus }": [
-        ""
+        "Få ${ vpnPlus }"
       ],
       "Get started": [
         "Kom godt i gang"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Skjul mapper"
-      ],
-      "Hide info": [
-        "Skjul info"
       ],
       "Hide labels": [
         "Skjul etiketter"
@@ -428,7 +434,7 @@
         "giv e-mails etiketten"
       ],
       "Load more": [
-        ""
+        "Indlæs flere"
       ],
       "Loading verification": [
         "Indlæser verifikation"
@@ -602,10 +608,10 @@
         "Gennemse"
       ],
       "Revoke": [
-        ""
+        "Tilbagekald"
       ],
       "Revoke ${ name }": [
-        ""
+        "Tilbagekald ${ name }"
       ],
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
@@ -664,9 +670,6 @@
       "Show folders": [
         "Vis mapper"
       ],
-      "Show info": [
-        "Vis info"
-      ],
       "Show labels": [
         "Vis etiketter"
       ],
@@ -677,7 +680,7 @@
         "Vis mere"
       ],
       "Show preview": [
-        ""
+        "Vis en forhåndsvisning"
       ],
       "sign in": [
         "log ind"
@@ -791,7 +794,7 @@
         "Brug to-faktor-godkendelseskode"
       ],
       "Use your current email address instead": [
-        ""
+        "Brug din aktuelle e-mailadresse i stedet"
       ],
       "Use “${ label }” setting": [
         "Brug “${ label }” indstilling"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Ugyldiggør alligevel"
       ],
-      "Warning": [
-        "Advarsel"
-      ],
       "Wipe": [
         "Ryd"
       ],
@@ -846,15 +846,10 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "Nej tak"
       ],
       "Try free for 30 days": [
-        ""
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Vælg"
+        "Prøv gratis i 30 dage"
       ]
     },
     "Addon": {
@@ -943,22 +938,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Ved at forlade nu, vil nogle begivenheder måske ikke blive importeret"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Sletning af dine nøgler er irreversibelt. For at kunne tilgå beskeder krypteret med denne nøgle bør du sikkerhedskopiere den til fremtidig brug."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Du vil stå over for et permanent tab af data ved ikke at lave en sikkerhedskopi af din nøgle."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Nøglen til din adresse bliver nu slettet."
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Dette vil afbryde forbindelsen til alle routere og klienter, der bruger dette certifikat."
       ]
     },
     "Apps dropdown": {
@@ -994,7 +978,7 @@
     },
     "Auto import invitations setting": {
       "Add invitations to calendar and mark as pending": [
-        ""
+        "Tilføj invitationer til kalender, og marker dem som afventende"
       ]
     },
     "Autoresponse": {
@@ -1223,22 +1207,22 @@
     },
     "Button": {
       "Add link to your email footer": [
-        ""
+        "Tilføj link til bunden af din e-mail"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ],
       "Copy": [
-        ""
+        "Kopiér"
       ],
       "Invite": [
-        ""
+        "Inviter"
       ],
       "Send": [
-        ""
+        "Send"
       ],
       "Tweet": [
-        ""
+        "Tweet"
       ]
     },
     "Calendar feature": {
@@ -1345,6 +1329,14 @@
         "Uge"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Luk"
+      ],
+      "Open": [
+        "Åbn"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "begynder med"
@@ -1375,17 +1367,6 @@
       ],
       "matches": [
         "matchninger"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Er du sikker på, at du vil slette denne nøgle uden at sikkerhedskopiere den?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Er du sikker på, at du vil slette denne nøgle permanent?"
-      ],
-      "Do you want to export your key?": [
-        "Vil du eksportere din nøgle?"
       ]
     },
     "Confirm modal title": {
@@ -2346,13 +2327,13 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
-        ""
+        "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder af ${ appName } ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        ""
+        "Få op til 3 måneders ${ mailPlus } gratis for hver ven, der abonnerer på ${ MAIL_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
@@ -2362,10 +2343,10 @@
         "Filen skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have\nop til ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, bedes du opdele den i mindre filer."
       ],
       "Track how many people click on your link, sign up, and become paid subscribers. Watch your free months add up.": [
-        ""
+        "Følg hvor mange der klikker på dit link, tilmelder sig og bliver betalende abonnenter. Se dine gratis måneder hobe sig op."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        ""
+        "Du kan fortsætte med at invitere venner, men du vil ikke kunne optjene flere kreditter"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, så opdel den venligst i mindre filer."
@@ -2675,10 +2656,10 @@
         "Flet mindst ${ calendarToFixCount } kalendere med eksisterende Proton-kalendere"
       ],
       "Missing key packet": [
-        ""
+        "Manglende nøglepakke"
       ],
       "Name does not match": [
-        ""
+        "Navn matcher ikke"
       ],
       "Name on card required": [
         "Navn på kort kræves"
@@ -2784,13 +2765,13 @@
         "Nogle af dine mappenavne er ikke tilgængelige. Tilpas importen for at redigere disse navne."
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Nogle af dine mappenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne er ikke tilgængelige. Tilpas venligst importen for at redigere disse navne."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Nogle af dine etikettenavne overskrider den maksimale tegngrænse i ${ MAIL_APP_NAME }. Tilpas venligst importen for at ændre disse navne."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du fortsat denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
@@ -3102,7 +3083,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certifikat ${ name } ikke fundet eller allerede tilbagekaldt"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "For- og efternavn kan ikke afmarkeres samtidig"
@@ -3220,8 +3201,8 @@
     },
     "Feature": {
       "${ MaxVPN } VPN connection": [
-        "",
-        ""
+        "${ MaxVPN } VPN-forbindelse",
+        "${ MaxVPN } VPN-forbindelser"
       ],
       "Access to all countries": [
         "Adgang til alle lande"
@@ -3921,22 +3902,22 @@
         "${ emailAddress } er ugyldig"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
+        "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
       ],
       "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        ""
+        "${ MAIL_APP_NAME } giver dig mulighed for at oprette e-mailadresser for andre personer. Dette er perfekt til virksomheder, familier eller grupper."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "${ MAIL_APP_NAME } understøtter DKIM signatur for egne domæner. For at anvende DKIM autentificering, tilføj følgende CNAME optegnelse i dine DNS indstillinger for eget domæne. Det gøres normalt via kontrolpanelet hos din domæne udbyder."
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Free"
       ],
       "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
-        ""
+        "${ mailPlus } er begrænset til én bruger og starter med 5 GB lagerplads."
       ],
       "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        ""
+        "${ mailProfessional } starter med én bruger, og hver bruger føjer 5 GB og 5 e-mailadresser til organisationens pulje."
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -4015,14 +3996,14 @@
         "${ vpnAppName } Free"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
+        "${ vpnBasic }, ${ vpnPlus } eller ${ visionary } kræves til forbindelse på landeniveau."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "",
-        ""
+        "${ vpnPlus } inkluderer ${ maxVpn } VPN-forbindelse.",
+        "${ vpnPlus } inkluderer ${ maxVpn } VPN-forbindelser."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
+        "${ vpnPlus } eller ${ visionary } påkrævet for at få Secure Core-funktion."
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } medlem)",
@@ -4044,8 +4025,8 @@
         "+${ bonusSpace } bonus lagerplads"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "",
-        ""
+        "+${ organization.BonusVPN }-forbindelse til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)",
+        "+${ organization.BonusVPN }-forbindelser til ${ VPN_APP_NAME } (tillader dig at forbinde flere enheder til VPN)"
       ],
       "1. Invite friends to Proton": [
         "1. Inviter venner til Proton"
@@ -4072,7 +4053,7 @@
         "Et gratis og ucensureret internet bør være tilgængeligt for alle."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Et navn, så du kan fastslå, hvor du bruger den, så du nemt kan tilbagekalde den eller forlænge den senere."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4099,7 +4080,7 @@
         "Opdatering af konto lykkedes"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        ""
+        "Tilføj en @pm.me-adresse til din konto. Dette enkle, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Privat Message me.\""
       ],
       "Add a recovery email address": [
         "Tilføj en e-mailadresse til gendannelse"
@@ -4237,7 +4218,7 @@
         "Basic, Plus eller Visionary abonnement kræves"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "Inden du kan modtage e-mails til dine tilpassede domæneadresser i ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Inden du kan begynde at sende og modtage e-mails fra dine nye adresser, skal du oprette krypteringsnøgler til dem."
@@ -4322,7 +4303,7 @@
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        ""
+        "Opret e-mailadresser til andre personer, administrer ${ MAIL_APP_NAME } for en virksomhed, skole eller gruppe. Kom i gang med at tilføje dit organisationsnavn og brugerdefinerede domæne (f.eks. @ditfirma.com). "
       ],
       "Create in": [
         "Opret i"
@@ -4361,7 +4342,7 @@
         "Data låst"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        ""
+        "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
       ],
       "Delete link?": [
         "Slet link?"
@@ -4395,7 +4376,7 @@
         "Færdig! Vi sendte en kode til ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
-        ""
+        "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
       "Download recovery file": [
         "Download gendannelsesfil"
@@ -4476,7 +4457,7 @@
         "Udløbet"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "udløber ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
@@ -4554,7 +4535,7 @@
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        ""
+        "Hvis du har et brugerdefineret domæne med ${ MAIL_APP_NAME }, kan du angive en catch-all (fang-alle) e- mailadresse, der vil modtage beskeder sendt til dit domæne men til en ugyldig e-mailadresse (f.eks. stavefejl)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
@@ -4575,13 +4556,13 @@
         "Mister du din to-faktor-aktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede 2FA-kode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        ""
+        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME }, herunder ekstra lagerplads og filtre."
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "Hvis du for nylig har nulstillet din adgangskode, kan du bruge en datagendannelsesmetode til at låse dine data op"
@@ -4616,9 +4597,6 @@
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importer dine e-mails, kalendere og kontakter fra en anden tjeneste til Proton. Vi vejleder dig hele vejen igennem og krypterer dine data, mens de flyttes. Velkommen til en verden med privatliv."
-      ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "VIGTIGT: Download af dine private nøgler og afsendelse eller lagring af dem på/via usikre medier kan kompromittere din kontosikkerhed!"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Vigtigt: Sørg for at du har gemt gendannelseskoderne. Ellers risikerer du at miste adgangen til din konto permanent, hvis du mister din 2FA-enhed."
@@ -4669,8 +4647,8 @@
         "Internetforbindelse genoprettet."
       ],
       "Invite successfully sent": [
-        "",
-        ""
+        "Invitation sendt",
+        "Invitationer sendt"
       ],
       "Invited via email": [
         "Inviteret via e-mail"
@@ -4693,8 +4671,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Behold disse poster i din DNS, så længe du ønsker at bruge DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Nøgle med fingeraftryk ${ fp } slettet."
+      "Key deletion is irreversible!": [
+        "Sletning af nøgle er uigenkaldelig!"
       ],
       "Label all imported messages as": [
         "Mærk alle importerede beskeder som"
@@ -4739,7 +4717,7 @@
         "Indlæser forhåndsvisning"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
+        "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "Logger omfatter godkendelsesforsøg for alle Proton-tjenester, som benytter dine ProtonMail-akkreditiver."
@@ -4850,13 +4828,13 @@
         "Én konto til alle Proton-tjenester"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
       "Only you can see the labels.": [
         "Kun du kan se etiketterne."
       ],
       "Or select a particular server:": [
-        ""
+        "Eller vælg en bestemt server:"
       ],
       "Organization keys activated": [
         "Organisationsnøgler aktiveret"
@@ -4912,9 +4890,6 @@
       ],
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Angiv en adgangskode til kryptering af din private nøgle inden du eksporterer."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Indtast 12-ords gendannelsessætningen, der er knyttet til din konto."
@@ -5028,7 +5003,7 @@
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Tilbagekald certifikat ${ name }"
       ],
       "Right to Left": [
         "Højre mod venstre"
@@ -5051,14 +5026,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Skan denne kode med din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Screenshot(s) vedhæftet"
-      ],
       "See all plans": [
         "Se alle abonnementer"
       ],
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Vælg Fortsæt til ${ name } for at åbne appen. Dette opretter også en ${ name }-konto med din ${ MAIL_APP_NAME }-adresse, så du fremover kan logge ind med ét klik."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -5097,7 +5072,7 @@
         "Nogle nøgler er genaktiveret med succes"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "SPF benyttes til at angive, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ${ MAIL_APP_NAME } i din SPF-post. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i webkontrolpanelet hos din domæneudbyder."
       ],
       "Starter VPN service with P2P support.": [
         "Grundlæggende VPN-tjeneste med P2P-understøttelse."
@@ -5106,7 +5081,10 @@
         "Lager GB"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
       ],
       "Support for 1 custom email domain": [
         "Understøttelse af 1 brugerdefineret e-mail-domæne"
@@ -5151,7 +5129,10 @@
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
+        "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller opsætter en VPN-forbindelse på en router."
+      ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Disse konfigurationer er beregnet til at fungere med WireGuard-routere og officielle klienter."
       ],
       "This 30-day free trial is not available any other way.": [
         "Denne 30-dages gratis prøveperiode er ikke tilgængelig på nogen anden måde."
@@ -5167,9 +5148,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Denne e-mailadresse vil kun blive brugt til gendannelsesformål."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Denne funktion er kun tilsigtet avancerede brugere! Efter sletning af denne nøgle vil du IKKE længere kunne dekryptere en besked, som er krypteret med denne nøgle. Dette kan medføre datatab."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Dette er en 12-ords sætning, som du blev bedt om at indstille."
@@ -5207,6 +5185,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dette deaktiverer din nuværende gendannelsessætning. Du vil ikke kunne bruge den til at få adgang til din konto eller dekryptere dine data."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Dette vil downloade en fil med din private nøgle. Beskyt denne fil ved at kryptere den med en adgangskode."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dette gør det muligt at benytte PayPal til betaling af dit Proton-abonnement. Du omdirigeres til PayPal i en ny browserfane. Benytter du pop-up blockers, så deaktivér disse for at fortsætte."
       ],
@@ -5224,6 +5205,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Denne hjælper aktiverer to-faktor-godkendelse (2FA) på din ProtonMail-konto. 2FA vil gøre din ProtonMail-konto mere sikker, så du anbefales at aktivere det."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "For at undgå tab af data skal du kun slette den, hvis du ved, hvad du gør, eller hvis du har eksporteret en kopi."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
@@ -5319,7 +5303,7 @@
         "Opgrader til et ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } eller ${ PLAN_NAMES[PLANS.PLUS] } abonnement for at aktivere automatiske svar, når du er væk fra kontoret."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
-        ""
+        "Opgrader til et betalt abonnement for at låse op for IMAP/SMTP-understøttelse via ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
@@ -5337,7 +5321,7 @@
         "Brug automatiske svar til at informere kontakter om, at du ikke er på kontoret eller på anden måde ikke er i stand til at svare."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
@@ -5418,7 +5402,7 @@
         "Når deaktiveret, forhindrer dette billedfiler i at indlæse på din enhed uden din viden.\t"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         "Når de abonnerer på et betalt abonnement, vil 1 til 3 måneder af ${ appName } ${ planName } blive krediteret din konto."
@@ -5478,7 +5462,7 @@
         "Du kan aktivere notifikationer for at få alarmer, når nye e-mails ankommer i denne mappe."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        ""
+        "Du kan bruge ${ MAIL_APP_NAME } med enhver desktop e-mail-klient, der understøtter IMAP/SMTP, herunder Outlook, Apple Mail, og Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kan bruge følgende legitimationsoplysninger til at oprette forbindelse til en ${ VPN_APP_NAME }-server ved hjælp af en tredjeparts, open source VPN-app, såsom Tunnelblick til macOS eller OpenVPN til GNU/Linux."
@@ -5502,7 +5486,7 @@
         "Du skal aktivere din organisations private nøgle med den backup-organisationsnøgleadgangskode, som din organisationsadministrator har givet dig."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        ""
+        "Du skal deaktivere eller fjerne eventuelle yderligere ${ MAIL_APP_NAME }-brugere, adresser og brugerdefinerede domæner, før du kan nedgradere."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto for at tilføje den som en betalingsmetode."
@@ -5528,6 +5512,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt 100% af din lagerkapacitet. Du kan ikke sende eller modtage nye e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at gendanne data, som den krypterede nøgle har krypteret."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Du skal stadig svare på invitationer, for at værten kan se dit svar."
       ],
@@ -5536,6 +5523,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Du omdirigeres snart til din bank for at bekræfte din betaling."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "Du vil IKKE kunne dekryptere beskeder, filer og andre data, der er krypteret med denne nøgle."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
@@ -5553,7 +5543,7 @@
         "Din ${ BRAND_NAME } konto er tilknyttet ${ externalEmailAddress }. For at bruge ${ toAppName } skal du oprette en adresse."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
+        "Dine ${ VPN_APP_NAME } og ${ MAIL_APP_NAME }-konti er forbundne. For at slette dem begge, så log ind på ${ loginLink } og slet din konto dér."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Din konto har mindst én forfalden faktura. Din adgang er blevet begrænset. ${ payInvoiceLink }"
@@ -5639,7 +5629,7 @@
         "Nøgle ${ fingerprint } er allerede blevet uploadet"
       ],
       "Track your referral link activities here": [
-        ""
+        "Tjek aktiviteten på dine henvisningslinks her"
       ]
     },
     "Info - folder colouring feature": {
@@ -5649,7 +5639,7 @@
     },
     "Info concerning plan features": {
       "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "${ MAIL_APP_NAME } kan ikke benyttes til masse-mailing eller spam. Legitime e-mails er ubegrænsede."
       ],
       "Customizable features": [
         "Justérbare funktioner"
@@ -5705,8 +5695,8 @@
       "Billed": [
         "Faktureret"
       ],
-      "Cancelled": [
-        ""
+      "Gifted": [
+        "Gave"
       ],
       "Paid": [
         "Betalt"
@@ -5860,7 +5850,7 @@
         "Gå til Papirkurv"
       ],
       "Insert link": [
-        ""
+        "Indsæt link"
       ],
       "Jump to first": [
         "Gå til første"
@@ -6030,14 +6020,14 @@
         " og ${ l }"
       ],
       "${ MAIL_APP_NAME } address": [
-        ""
+        "${ MAIL_APP_NAME }-adresse"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "${ MAIL_APP_NAME } sidefod"
       ],
       "${ monthsRewarded } month credited": [
-        "",
-        ""
+        "${ monthsRewarded } måned krediteret",
+        "${ monthsRewarded } måneder krediteret"
       ],
       "${ n } VPN connection available": [
         "${ n } VPN-forbindelse tilgængelig",
@@ -6065,7 +6055,7 @@
         "Handlinger"
       ],
       "Activity": [
-        ""
+        "Aktivitet"
       ],
       "Address": [
         "Adresse"
@@ -6112,6 +6102,9 @@
       "Attach public key": [
         "Vedhæft offentlig nøgle"
       ],
+      "Attach screenshot(s)": [
+        "Vedhæft skærmfoto(s)"
+      ],
       "Auto reply": [
         "Autosvar"
       ],
@@ -6125,10 +6118,10 @@
         "Bloker sporing af e-mail"
       ],
       "Block malware only": [
-        ""
+        "Blokér kun malware"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Blokér malware, reklamer og trackere"
       ],
       "bonus storage": [
         "bonuslagerplads"
@@ -6161,7 +6154,7 @@
         "Kategori"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Vælg et navn til den genererede certifikatfil"
       ],
       "Code": [
         "Kode"
@@ -6188,10 +6181,10 @@
         "Betingelser"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Konfiguration for at forbinde med ${ serverName }"
       ],
       "Confirm link URLs": [
-        ""
+        "Bekræft link-URLs"
       ],
       "Confirm login password": [
         "Bekræft adgangskode til login"
@@ -6229,8 +6222,11 @@
       "Country": [
         "Land"
       ],
+      "Create password": [
+        "Opret adgangskode"
+      ],
       "Credits pending": [
-        ""
+        "Kreditter afventer"
       ],
       "Credits used": [
         "Kredit forbrugt"
@@ -6248,7 +6244,7 @@
         "Daglige e-mailnotifikationer"
       ],
       "Date": [
-        ""
+        "Dato"
       ],
       "Date format": [
         "Datoformat"
@@ -6290,7 +6286,7 @@
         "Beskrivelse"
       ],
       "Device/certificate name": [
-        ""
+        "Enhed/certifikatnavn"
       ],
       "Digits": [
         "Cifre"
@@ -6416,7 +6412,7 @@
         "Interval"
       ],
       "Invite via email": [
-        ""
+        "Inviter via e-mail"
       ],
       "Keep me signed in": [
         "Hold mig logget ind"
@@ -6449,7 +6445,7 @@
         "Kun seneste måned"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Niveau for NetShield-blokkerfiltrering"
       ],
       "Login password": [
         "Login-adgangskode"
@@ -6473,7 +6469,7 @@
         "Besked"
       ],
       "Moderate NAT": [
-        ""
+        "Moderat NAT"
       ],
       "Move to": [
         "Flyt til"
@@ -6497,13 +6493,13 @@
         "Ny adgangskode"
       ],
       "No filter": [
-        ""
+        "Intet filter"
       ],
       "No label found": [
         "Ingen etikette fundet"
       ],
       "Non-standard ports": [
-        ""
+        "Ikke-standard porte"
       ],
       "Notification": [
         "Notifikation"
@@ -6632,7 +6628,7 @@
         "Send auto-svar"
       ],
       "Send invitations in": [
-        ""
+        "Send invitation på"
       ],
       "Show secondary time zone": [
         "Vis sekundær tidszone"
@@ -6665,7 +6661,7 @@
         "Udsagn"
       ],
       "Sticky labels": [
-        ""
+        "Klæbende etiketter"
       ],
       "Subtotal": [
         "Subtotal"
@@ -6749,7 +6745,7 @@
         "Bekræftelseskode"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "VPN-forbindelser"
@@ -6758,7 +6754,7 @@
         "VPN-forbindelser"
       ],
       "Waiting for subscription": [
-        ""
+        "Venter på abonnement"
       ],
       "Want to add": [
         "Ønsker at tilføje"
@@ -6806,10 +6802,10 @@
         "Din adgangskode (admin)"
       ],
       "Your referral link": [
-        ""
+        "Dit henvisningslink"
       ],
       "Your reward": [
-        ""
+        "Din belønning"
       ],
       "ZIP": [
         "Postnummer"
@@ -6825,7 +6821,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Tilføj et domæne du ejer til din ${ MAIL_APP_NAME }-konto."
       ]
     },
     "Label for domain modal": {
@@ -6914,11 +6910,6 @@
       ],
       "Row": [
         "Række"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Vedhæft screenshot(s)"
       ]
     },
     "Label/folder modal": {
@@ -7014,7 +7005,7 @@
         "Betingelser"
       ],
       "Terms and conditions": [
-        ""
+        "Vilkår og betingelser"
       ],
       "Upgrade": [
         "Opgradér"
@@ -7086,7 +7077,7 @@
         "Kontaktgrupper"
       ],
       "Custom domains": [
-        ""
+        "Brugerdomæner"
       ],
       "Custom filters": [
         "Tilpassede filtre"
@@ -7203,7 +7194,7 @@
         "Opgrader til et af de betalte abonnementer for at kunne bruge brugerdefinerede domæner og låse op for premium-funktioner"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Din gratis prøveperiode er afsluttet. Adgang til din konto vil snart blive deaktiveret. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -7430,6 +7421,9 @@
       ],
       "A disabled address cannot be primary": [
         "En deaktiveret adresse kan ikke være primær"
+      ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Nøgle med fingeraftryk ${ fp } slettet."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2-legitimationsoplysninger regenereret"
@@ -7795,12 +7789,6 @@
       "Address": [
         "Adresse"
       ],
-      "Browser name": [
-        "Browsernavn"
-      ],
-      "Browser version": [
-        "Browser-version"
-      ],
       "Choose a name": [
         "Vælg et navn"
       ],
@@ -7834,12 +7822,6 @@
       "Name": [
         "Navn"
       ],
-      "OS name": [
-        "OS-navn"
-      ],
-      "OS version": [
-        "OS-version"
-      ],
       "Other": [
         "Andet"
       ],
@@ -7853,19 +7835,19 @@
         "Beskriv problemet og inkludér evt. fejlmeddelelser"
       ],
       "Please insert link first": [
-        ""
+        "Indsæt link først"
       ],
       "Postal code": [
         "Postnummer"
-      ],
-      "Proton username": [
-        "Proton-brugernavn"
       ],
       "Search settings": [
         "Søg indstillinger"
       ],
       "Search users": [
         "Søg brugere"
+      ],
+      "Select": [
+        "Vælg"
       ],
       "Select a reason": [
         "Vælg en årsag"
@@ -7952,7 +7934,7 @@
         "Indbygget Adblocker (Netshield)"
       ],
       "Custom domains": [
-        ""
+        "Brugerdomæner"
       ],
       "Early access to new products": [
         "Tidlig adgang til nye produkter"
@@ -8234,16 +8216,16 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Få op til 18 måneder med ${ appName } ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Inviter venner, og optjen belønninger!"
       ],
       "No more missed appointments": [
-        ""
+        "Ikke flere glemte aftaler"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
       ]
     },
     "State": {
@@ -8307,7 +8289,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Den privatlivsorienterede Mail- og kalenderløsning til dine daglige kommunikationsbehov."
       ]
     },
     "Success": {
@@ -8488,16 +8470,16 @@
         "Adresse aktiveret"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Certifikate ${ name } tilbagekaldt"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certifikat forlænget indtil ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Konfiguration \"${ name }\" oprettet. Bemærk, at den private nøgle ikke gemmes og ikke vil blive vist igen. Du bør derfor kopiere eller downloade denne konfiguration."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Opretter konfigurationsfil for ${ serverName }"
       ],
       "Filter removed": [
         "Filter fjernet"
@@ -8586,7 +8568,7 @@
     },
     "Title": {
       "${ appName } ${ planName } Trial": [
-        ""
+        "${ appName } ${ planName } Prøve"
       ],
       "${ appName } customization": [
         "${ appName } tilpasning"
@@ -8595,19 +8577,19 @@
         "${ appName } Tastaturgenveje"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        ""
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "(highly recommended)": [
         "(stærkt anbefalet)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Giv et navn til den konfiguration, der skal genereres"
       ],
       "1. Select platform": [
         "1. Vælg platform"
       ],
       "2. Select platform": [
-        ""
+        "2. Vælg platform"
       ],
       "2. Select protocol": [
         "2. Vælg protokol"
@@ -8619,10 +8601,10 @@
         "3. Vælg konfigurationsfil og download"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Vælg VPN-indstillinger"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Vælg en server at oprette forbindelse til"
       ],
       "Account and password": [
         "Konto og adgangskode"
@@ -8790,7 +8772,7 @@
         "Ryd"
       ],
       "Composing": [
-        ""
+        "Skrivning"
       ],
       "Confirm address": [
         "Bekræft adresse"
@@ -8803,6 +8785,9 @@
       ],
       "Confirm phone number": [
         "Bekræft telefonnummer"
+      ],
+      "Connect ${ name }": [
+        "Forbind ${ name }"
       ],
       "Contact encryption keys": [
         "Kontakt-krypteringsnøgler"
@@ -8874,16 +8859,16 @@
         "Slet ${ domain.DomainName }"
       ],
       "Delete ${ email }": [
-        ""
+        "Slet ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Slet ${ filter.Name }"
+      "Delete ${ filterName }": [
+        "Slet ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
-        ""
+        "Slet ${ label.Name }-mappe"
       ],
       "Delete ${ label.Name } label": [
-        ""
+        "Slet ${ label.Name }-etikette"
       ],
       "Delete account": [
         "Slet konto"
@@ -8891,8 +8876,8 @@
       "Delete calendar": [
         "Slet kalender"
       ],
-      "Delete key": [
-        "Slet nøgle"
+      "Delete key permanently?": [
+        "Slet nøgle permanent?"
       ],
       "Delete logs": [
         "Slet logs"
@@ -8904,7 +8889,7 @@
         "Slet bruger"
       ],
       "Disable ${ email }": [
-        ""
+        "Deaktiver ${ email }"
       ],
       "Disable two-factor authentication": [
         "Deaktivér to-faktor-godkendelse"
@@ -9000,16 +8985,16 @@
         "Opret ny gendannelsessætning?"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        ""
+        "Få ${ vpnPlus } for at få adgang til alle servere"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+        "Få op til 18 måneder med ${ appName } ${ planName } gratis"
       ],
       "Gift code": [
         "Gavekode"
       ],
       "How does it work?": [
-        ""
+        "Hvordan fungerer det?"
       ],
       "Human verification": [
         "Menneskelig bekræftelse"
@@ -9058,7 +9043,7 @@
         "Fakturaer"
       ],
       "Keyboard shortcuts": [
-        ""
+        "Tastaturgenveje"
       ],
       "Labels": [
         "Etiketter"
@@ -9079,7 +9064,7 @@
         "Beskeder"
       ],
       "Messages and composing": [
-        ""
+        "Beskeder og skrivning"
       ],
       "Multi-user support": [
         "Flerbrugerunderstøttelse"
@@ -9181,10 +9166,10 @@
         "Gendannelsesfil"
       ],
       "Refer a friend": [
-        ""
+        "Henvis en ven"
       ],
       "Referral tracker": [
-        ""
+        "Sporing af henvisning"
       ],
       "Remove calendar": [
         "Fjern kalender"
@@ -9208,10 +9193,10 @@
         "Gendan administratorprivilegier"
       ],
       "Revoke certificate": [
-        ""
+        "Tilbagekald certifikat"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "Sikker e-mail-tjeneste baseret i Schweiz"
       ],
       "Security": [
         "Sikkerhed"
@@ -9331,7 +9316,7 @@
         "Total (månedlig)"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
+        "Prøv det bedste af ${ MAIL_APP_NAME } gratis"
       ],
       "Two-factor authentication": [
         "To-faktor-godkendelse"
@@ -9367,16 +9352,16 @@
         "Nyheder"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "WireGuard konfiguration"
       ],
       "Your ${ domain } address is active": [
-        ""
+        "Din ${ domain }-adresse er aktiv"
       ],
       "Your account’s usage": [
-        ""
+        "Din kontos forbrug"
       ],
       "Your calendar link": [
         "Dit kalender link"
@@ -9385,7 +9370,7 @@
         "Dit nuværende abonnement"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
       ],
       "Your plan": [
         "Dit abonnement"
@@ -9394,7 +9379,7 @@
         "Din gendannelsesstatus"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "Du er blevet inviteret til at prøve ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "Postnummer"
@@ -9418,7 +9403,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "${ MAIL_APP_NAME } faktura"
       ]
     },
     "Title header": {
@@ -9484,7 +9469,7 @@
     },
     "Tooltip": {
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        ""
+        "Brugere af ${ MAIL_APP_NAME } vil som standard bruge denne nøgle til afsendelse"
       ],
       "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
         "Få adgang til geo-blokeret indhold (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube etc) uanset hvor du er."
@@ -9526,7 +9511,7 @@
         "Aktivering af avancerede logoptegnelser registrerer IP-adressen for hver begivenhed i sikkerhedsloggen."
       ],
       "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
+        "Få adgang til alle de betalte funktioner i både ${ VPN_APP_NAME } og ${ MAIL_APP_NAME } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
       ],
       "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Få adgang til alle de betalte funktioner i ${ vpnAppName } og ${ mailAppName } (den krypterede e-mail-tjeneste, som millioner bruger til at beskytte deres data) med ét abonnement."
@@ -9559,7 +9544,7 @@
         "Indstil standardlayout for din indbakke."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Indstiller følgende sidefod i de e-mails, du sender: ${ signature } Linket peger på dit henvisningslink. Sidefoden vises under din signatur. Du kan til enhver tid tilpasse din signatur i indstillingerne."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Signaturer genereret af denne nøgle behandles som ugyldige, og denne nøgle kan ikke benyttes til kryptering"
@@ -9568,7 +9553,7 @@
         "Understøttelse af fildelingsprotokoller såsom BitTorrent."
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
@@ -9598,7 +9583,7 @@
         "Brug den personlige adresse brugernavn@pm.me til at sende e-mails"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Brug dine egne brugerdefinerede e-mail-domæneadresser, f.eks. dig@ditnavn.com"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi fandt et problem med din DNS-konfiguration. Sørg for, at dine poster matcher instruktionerne nedenfor. Hvis problemet fortsætter, er vi nødt til at slå DKIM-signering fra."
@@ -9616,7 +9601,7 @@
         "Du har dekrypteres denne nøgle lokalt"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
-        ""
+        "Din indbakke i ${ MAIL_APP_NAME } er næsten fuld"
       ],
       "Your DKIM signing is working.": [
         "Din DKIM-signering fungerer."
@@ -9632,12 +9617,12 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
+        "Vælg de PGP-standardindstillinger, der bruges til at signere eller kryptere beskeder med brugere, som ikke benytter ${ BRAND_NAME }. Bemærk at Inline PGP fremtvinger almindelige tekstbeskeder. Læs mere"
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        ""
+        "Når du modtager en e-mail fra en anden bruger af ${ MAIL_APP_NAME }, som ikke har betroede nøgler i dine kontakter, vil et banner vil spørge, om du vil aktivere betroede nøgler."
       ]
     },
     "Tooltip sign external messages": {
@@ -9889,13 +9874,13 @@
         "Hvis du annullerer denne import, vil du ikke kunne genoptage den. Proton gemte alle fremskridt på din konto. Annuller alligevel?"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Live chat er en premium-funktion, der kun er tilgængelig for dem, der har betalte ${ VPN_APP_NAME }-abonnementer. Åbn venligst en sag i stedet."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Bemærk venligst at ved at vælge denne betalingsmetode kan din konto ikke opgraderes med det samme. Vi opdaterer din konto, når betalingen er gået igennem."
       ],
       "Please provide at least one recipient": [
-        ""
+        "Angiv mindst én modtager"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton vil sammenflette alle mapper med samme navn. For at undgå dette, skal du ændre navnene før importen."
@@ -9910,7 +9895,7 @@
         "Dato- og tidsindstillingerne på din enhed er ikke synkroniseret. ${ learnMore }"
       ],
       "This feature is only available for ${ mailProfessional } plans or higher": [
-        ""
+        "Denne funktion er kun tilgængelig med ${ mailProfessional }-abonnementer eller højere"
       ],
       "This import may exceed the storage capacity currently available in your Proton account. Please consider customizing your import.": [
         "Denne import kan overstige den lagerkapacitet, der i øjeblikket er tilgængelig på din Proton-konto. Overvej venligst at tilpasse din import."
@@ -9931,7 +9916,7 @@
         "Du vil ikke længere se denne import-postering på listen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Din gendannelsesfil er forældet. Den kan ikke gendanne nye data, hvis du nulstiller din konto igen."

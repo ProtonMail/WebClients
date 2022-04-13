@@ -60,7 +60,7 @@
         "Cancelar tudo"
       ],
       "Cancel all downloads": [
-        ""
+        "Cancelar todos os downloads"
       ],
       "Cancel all uploads": [
         "Cancelar todos os envios"
@@ -184,6 +184,9 @@
       "Download": [
         "Baixar"
       ],
+      "Download anyway": [
+        "Baixar mesmo assim"
+      ],
       "Drive Locked": [
         "Unidade bloqueada"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "ativar notificações na área de trabalho"
+      ],
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
       ],
       "Expand folder": [
         "Expandir pasta"
@@ -272,7 +278,7 @@
         "Importar de .csv ou vCard"
       ],
       "Learn more": [
-        ""
+        "Saiba mais"
       ],
       "Load image": [
         "Carregar imagem"
@@ -452,7 +458,7 @@
         "Mostrar marcadores"
       ],
       "Show preview": [
-        ""
+        "Mostrar pré-visualização"
       ],
       "Sign out": [
         "Encerrar Sessão"
@@ -2356,7 +2362,7 @@
         "Verificando o contato ${ progress } de ${ max }..."
       ],
       "Checking signatures": [
-        ""
+        "Verificando assinaturas"
       ],
       "Clear data": [
         "Limpar dados"
@@ -2433,13 +2439,13 @@
         "Excluir drives"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Assinatura digital verificada. Esse arquivo foi enviado seguramente por ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Assinatura digital verificada. Essa pasta foi enviada seguramente por ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "Download de ${ downloadFileName } será abortado"
       ],
       "Downloaded": [
         "Transferido"
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Chave duplicada atualizada"
       ],
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
       ],
@@ -2469,10 +2478,10 @@
         "Falha ao abrir um link seguro. O motivo é: ${ error }"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Arquivo está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Arquivo está sem assinatura. Não pudemos verificar quem enviou ${ fileName }."
       ],
       "File will not be uploaded": [
         "O arquivo não será enviado"
@@ -2484,10 +2493,10 @@
         "O conteúdo da pasta será mesclado em uma única pasta"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Pasta está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Pasta está sem assinatura. Não pudemos verificar quem enviou ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "A pasta não será enviada"
@@ -2641,7 +2650,7 @@
         "Um dos seus drives criptografados está bloqueado. Isso provavelmente se deve a uma recente redefinição de senha.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "É permitido apenas ${ MAX_CUSTOM_PASSWORD_LENGTH } caracteres"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
@@ -2700,6 +2709,9 @@
       "Queued": [
         "Na fila"
       ],
+      "recommended browser": [
+        "navegador recomendado"
+      ],
       "Recovery process might take some time.": [
         "O processo de recuperação pode levar algum tempo."
       ],
@@ -2731,10 +2743,10 @@
         "Compartilhar arquivos com links"
       ],
       "Signature check will be ignored": [
-        ""
+        "Verificação de assinatura será ignorada"
       ],
       "Signature issue": [
-        ""
+        "Problema de assinatura"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alguns de seus arquivos não estão mais acessíveis. Restaure o acesso aos seus arquivos. ${ StartRecoveryButton }"
@@ -2752,13 +2764,13 @@
         "equipe de suporte"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "A conta pode ter uma chave nova, ou os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "O aplicativo precisa descriptografar localmente seus contatos antes que eles possam ser exportados. Ao final do processo, um arquivo VCF será gerado e você poderá baixá-lo."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Os seguintes podem ter sido adulterados: ${ items }. Abra apenas se você confiar."
       ],
       "There are no files yet": [
         "Ainda não há arquivos"
@@ -2798,10 +2810,10 @@
         "Isto irá sobrescrever a pasta existente"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
+        "Para ativar a pesquisa verdadeiramente privada, o ${ DRIVE_APP_NAME } precisa indexar seus arquivos localmente."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        ""
+        "Para ativar a pesquisa verdadeiramente privada, o ${ DRIVE_APP_NAME } precisa indexar seus arquivos localmente. Você ainda pode usar o ${ DRIVE_APP_NAME } normalmente - vamos te dizer quando a indexação estiver concluída."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -2858,10 +2870,10 @@
         "Enviar centenas de arquivos de uma só vez pode ter impacto no desempenho."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Não pudemos verificar quem enviou ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Nós te avisaremos quando a importação estiver concluída."
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura vencida. O seu acesso será restringido em breve. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Seu navegador atual não suporta o download de arquivos grandes devido à indisponibilidade de agentes de serviços. O download de arquivos grandes pode congelar ou deixar o navegador sem resposta. Use as versões mais recentes de um ${ recommendedBrowser } e tente novamente."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Seus dados estão prontos para importação de ${ importedEmailAddressStrong } para sua conta Proton."
       ],
@@ -2987,10 +3002,10 @@
     },
     "Item": {
       "file attributes": [
-        ""
+        "atributos do arquivo"
       ],
       "file data": [
-        ""
+        "dados do arquivo"
       ],
       "keys": [
         "chaves"
@@ -2999,10 +3014,10 @@
         "nome"
       ],
       "name hash": [
-        ""
+        "hash do nome"
       ],
       "thumbnail": [
-        ""
+        "miniatura"
       ]
     },
     "Key badge": {
@@ -3051,7 +3066,7 @@
         "Aplicar a todas as pastas duplicadas"
       ],
       "Apply to all unverified items": [
-        ""
+        "Aplicar a todos os itens não verificados"
       ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
@@ -3072,7 +3087,7 @@
         "Calendários"
       ],
       "Cancel download": [
-        ""
+        "Cancelar download"
       ],
       "Category": [
         "Categoria"
@@ -3112,7 +3127,7 @@
         "Não pergunte novamente"
       ],
       "Download anyway": [
-        ""
+        "Baixar mesmo assim"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Habilitar acesso beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Ativando pesquisa de drive"
       ],
       "Encrypt emails": [
         "Criptografar e-mails"
@@ -3319,7 +3334,7 @@
         "Carregar imagem"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nome de usuário ou endereço ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificação"
@@ -3564,7 +3579,7 @@
         "Arquivo ou pasta sem nome"
       ],
       "Item failed to be verified": [
-        ""
+        "Item falhou ao ser verificado"
       ],
       "Link failed to be loaded": [
         "Falha ao carregar o link"
@@ -3643,7 +3658,7 @@
         "Começar a usar o ${ appName }"
       ],
       "Upgrade account": [
-        ""
+        "Fazer upgrade na conta"
       ]
     },
     "Onboarding Info": {
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Acesso beta"
       ],
+      "Browser might run out of memory": [
+        "O navegador pode ficar sem memória"
+      ],
       "Cancel all active transfers": [
         "Cancelar todas as transferências ativas"
       ],
@@ -4146,10 +4164,10 @@
         "Falha no download"
       ],
       "Download unverified file?": [
-        ""
+        "Baixar arquivo não verificado?"
       ],
       "Download unverified folder?": [
-        ""
+        "Baixar pasta não verificada?"
       ],
       "Downloading": [
         "Baixando"
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Esvaziar lixeira"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Ativar pesquisa de drive"
       ],
       "Enter password to download": [
         "Digite a senha para baixar"
@@ -4197,7 +4215,7 @@
         "Digite sua senha"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Insira seu nome de usuário ou endereço de e-mail ${ MAIL_APP_NAME }"
       ],
       "Exporting contacts": [
         "Exportando contatos"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Detalhes da pastas"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Encontrados ${ searchView.numberOfResults } resultados",
+        "Encontrandos ${ searchView.numberOfResults } resultados"
       ],
       "Groups": [
         "Grupos"
@@ -4331,9 +4353,6 @@
       "Search results": [
         "Resultados da pesquisa"
       ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Resultados de pesquisa: ${ searchView.numberOfResults } encontrado"
-      ],
       "Searching…": [
         "Pesquisando…"
       ],
@@ -4398,10 +4417,10 @@
         "O link falhou ao carregar"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "O arquivo tem assinatura ausente ou inválida. Vá em Menu (⋮) → Detalhes para informações."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "A pasta tem assinatura ausente ou inválida. Vá em Menu (⋮) → Detalhes para informações."
       ],
       "Total size": [
         "Tamanho total"

@@ -52,9 +52,6 @@
       "Add PayPal": [
         "PayPal hinzufügen"
       ],
-      "Add PayPal payment method": [
-        "PayPal als Zahlungsmethode hinzufügen"
-      ],
       "annual billing": [
         "jährlicher Zahlweise"
       ],
@@ -113,7 +110,7 @@
         "E-Mail-Adresse in Zwischenablage kopieren"
       ],
       "Create": [
-        ""
+        "Erstellen"
       ],
       "Create account": [
         "Konto erstellen"
@@ -179,7 +176,7 @@
         "Desktop-Benachrichtigungen zu aktivieren"
       ],
       "Extend": [
-        ""
+        "Erweitern"
       ],
       "Get ${ vpnPlus }": [
         "Hol dir ${ vpnPlus }"
@@ -218,7 +215,7 @@
         "Mein ${ BRAND_NAME } ${ currentPlanName }-Konto behalten"
       ],
       "Load more": [
-        ""
+        "Weitere laden"
       ],
       "Loading verification": [
         "Überprüfung wird geladen"
@@ -308,10 +305,10 @@
         "Wiederholen"
       ],
       "Revoke": [
-        ""
+        "Widerrufen"
       ],
       "Revoke ${ name }": [
-        ""
+        "${ name } widerrufen"
       ],
       "Save": [
         "Speichern"
@@ -485,7 +482,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Dadurch werden alle Router und Clients, die dieses Zertifikat verwenden, getrennt."
       ]
     },
     "Apps dropdown": {
@@ -1791,7 +1788,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Zertifikat ${ name } nicht gefunden oder bereits widerrufen"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2043,7 +2040,7 @@
         "Ein freies und unzensiertes Internet sollte für alle möglich sein."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Greifen Sie auf gesperrte Inhalte wie soziale Medien, Nachrichten, Wikipedia, YouTube und viele andere zu, unabhängig Ihres derzeitigen Aufenthaltsortes."
@@ -2178,7 +2175,7 @@
         "Abgelaufen"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "verfällt ${ expirationDate }"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Für Familien und kleine Teams. Beinhaltet sowohl Mail als auch VPN."
@@ -2340,7 +2337,7 @@
         "Sobald Sie auf „Zurückstufen” klicken, kann es einige Minuten dauern, bis Ihr Konto auf ein kostenfreies Paket herabgestuft wird. "
       ],
       "Or select a particular server:": [
-        ""
+        "Oder wähle einen bestimmten Server aus:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
@@ -2406,7 +2403,7 @@
         "Das Zurücksetzen deines Passworts setzt deine Verschlüsselungscodes für alle Proton-bezogenen Dienste (Mail und VPN) zurück. Du wirst deine bestehenden Nachrichten nicht mehr lesen können. Wenn du deine ${ MAIL_APP_NAME }-Anmeldeinformationen kennst, setze diese NICHT zurück. Du kannst dich damit ${ hereLink } anmelden."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Zertifikat ${ name } widerrufen"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Leiten Sie Ihren Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
@@ -2553,7 +2550,7 @@
         "Jetzt upgraden"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Verwende den besten Server je nach aktueller Auslastung und Position: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick” unter macOS, „OpenVPN” unter GNU/Linux."
@@ -2745,8 +2742,8 @@
       "Billed": [
         "Abgerechnet"
       ],
-      "Cancelled": [
-        "Abgebrochen"
+      "Gifted": [
+        "Geschenkt"
       ],
       "Paid": [
         "Bezahlt"
@@ -2847,7 +2844,7 @@
         "Nur Malware sperren"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Schadsoftware, Werbung und Tracker sperren"
       ],
       "bonus storage": [
         "Zusätzlicher Speicherplatz"
@@ -2877,13 +2874,13 @@
         "Kategorie"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Wähle einen Namen für die erzeugte Zertifikatsdatei"
       ],
       "Code is 6 digits without spaces": [
         "Der Code ist 6-stellig ohne Leerzeichen"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Konfiguration zur Verbindung mit ${ serverName }"
       ],
       "Confirm login password": [
         "Anmeldepasswort bestätigen"
@@ -2934,7 +2931,7 @@
         "Löschen"
       ],
       "Device/certificate name": [
-        ""
+        "Name des Geräts/Zertifikats"
       ],
       "Digits": [
         "Ziffern"
@@ -2982,7 +2979,7 @@
         "Schlüssel"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Stufe für NetShield-Blocker-Filterung"
       ],
       "Login password": [
         "Anmeldepasswort"
@@ -3009,7 +3006,7 @@
         "Neues Passwort"
       ],
       "No filter": [
-        ""
+        "Kein Filter"
       ],
       "Non-standard ports": [
         "Nicht standardisierte Ports"
@@ -3439,7 +3436,7 @@
         "Android"
       ],
       "Captcha": [
-        "Captcha"
+        "CAPTCHA"
       ],
       "Country configs": [
         "Länderkonfigurationen"
@@ -3925,16 +3922,16 @@
     },
     "Success notification": {
       "Certificate ${ name } revoked": [
-        ""
+        "Zertifikat ${ name } widerrufen"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Zertifikat verlängert bis am ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Konfiguration \"${ name }\" erstellt, beachte, dass der private Schlüssel nicht gespeichert wird und nicht mehr angezeigt wird, du solltest daher diese Konfiguration kopieren oder herunterladen."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Konfigurationsdatei für ${ serverName } wird erstellt"
       ]
     },
     "Suffix": {
@@ -3990,13 +3987,13 @@
         "${ VPN_APP_NAME } Abonnement vergleichen"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Gib der zu erstellenden Konfiguration einen Namen"
       ],
       "1. Select platform": [
         "1.) Plattform auswählen"
       ],
       "2. Select platform": [
-        ""
+        "2. Plattform auswählen"
       ],
       "2. Select protocol": [
         "2.) Protokoll auswählen"
@@ -4008,10 +4005,10 @@
         "3.) Konfigurationsdatei auswählen und herunterladen"
       ],
       "3. Select VPN options": [
-        ""
+        "3. VPN-Optionen auswählen"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Wähle einen Server aus, mit dem du dich verbinden möchtest"
       ],
       "Account": [
         "Konto"
@@ -4290,7 +4287,7 @@
         "Passwort zurücksetzen?"
       ],
       "Revoke certificate": [
-        ""
+        "Zertifikat widerrufen"
       ],
       "Secure Core Servers": [
         "„Secure Core”‐Server"
@@ -4359,7 +4356,7 @@
         "Neue Funktionen"
       ],
       "WireGuard configuration": [
-        ""
+        "WireGuard-Konfiguration"
       ],
       "You already have a Proton account": [
         "Sie verfügen bereits über ein Proton-Konto"
