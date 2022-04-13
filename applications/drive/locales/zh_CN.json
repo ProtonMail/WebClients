@@ -45,7 +45,7 @@
         "应用"
       ],
       "Attach screenshot(s)": [
-        "附截图"
+        "添加截图"
       ],
       "Back": [
         "后退"
@@ -1772,12 +1772,6 @@
       "Enter 6 digits": [
         "请输入 6 位验证码"
       ],
-      "Failed to download a file": [
-        "下载文件失败"
-      ],
-      "Failed to download a folder": [
-        "下载文件夹失败"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "由于“${ error }”错误，文件“${ item.name }”无法上传"
       ],
@@ -2436,6 +2430,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "无法打开安全链接，原因是：${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "文件缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
       ],
@@ -2447,6 +2444,9 @@
       ],
       "Finalizing": [
         "即将完成"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "文件夹内容将合并为一个文件夹"
@@ -4330,6 +4330,9 @@
         "停止对所有人的分享？"
       ],
       "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The internet connection was interrupted": [
         ""
       ],
       "The link does not exist": [

@@ -1782,12 +1782,6 @@
       "Enter 6 digits": [
         "Introduceți 6 cifre"
       ],
-      "Failed to download a file": [
-        "Nu s-a reușit descărcarea unui fișier"
-      ],
-      "Failed to download a folder": [
-        "Nu s-a reușit descărcarea unui folder"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Fișierul „${ item.name }” nu poate fi încărcat din cauza erorii „${ error }”."
       ],
@@ -2518,6 +2512,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "A eșuat deschiderea unei legături securizate. Motivul este: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Lipsește semnătura fișierului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
       ],
@@ -2529,6 +2526,9 @@
       ],
       "Finalizing": [
         "Finalizare"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Conținutul folderelor se va îmbina într-unul singur."
@@ -4481,6 +4481,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Fișierul sau folderul nu a putut fi descărcat"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Legătura nu există"

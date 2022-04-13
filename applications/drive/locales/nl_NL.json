@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "Voer 6 cijfers in"
       ],
-      "Failed to download a file": [
-        "Downloaden van een bestand mislukt"
-      ],
-      "Failed to download a folder": [
-        "Downloaden van een map mislukt"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Bestand \"${ item.name }\" kan niet worden geüpload vanwege \"${ error }\" fout"
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        "Bestand \"${ name }\" werd verwijderd tijdens download"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Handtekening van bestand ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Afronden"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        "Map \"${ link.name }\" werd verwijderd tijdens download"
       ],
       "Folder contents will merge into a single folder": [
         "De inhoud van de mappen wordt samengevoegd tot één enkele map"
@@ -2939,7 +2939,7 @@
         "Uw account heeft minstens één onbetaalde factuur. Uw toegang wordt binnenkort beperkt. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Uw huidige browser ondersteunt het downloaden van grote bestanden niet wegens de onbeschikbaarheid van service workers. Het downloaden van grote bestanden kan ervoor zorgen dat uw browser vastloopt of niet langer reageert. Gebruik de meest recente versie van een ${ recommendedBrowser } en probeer het opnieuw."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
@@ -4081,7 +4081,7 @@
         "Bèta toegang"
       ],
       "Browser might run out of memory": [
-        ""
+        "Browser valt mogelijk zonder geheugen"
       ],
       "Cancel all active transfers": [
         "Annuleer alle actieve overschrijvingen"
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Het bestand of de map kon niet worden gedownload"
+      ],
+      "The internet connection was interrupted": [
+        "De internetverbinding werd onderbroken"
       ],
       "The link does not exist": [
         "De link bestaat niet"
