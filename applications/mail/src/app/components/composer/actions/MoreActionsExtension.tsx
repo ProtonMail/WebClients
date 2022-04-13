@@ -92,7 +92,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
             {editorMetadata.supportPlainText && [
                 <DropdownMenuButton
                     key={3}
-                    className="text-left flex flex-nowrap border-bottom-none"
+                    className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={() => {
                         if (editorMetadata.isPlainText !== false) {
                             handleChangeMetadata({ isPlainText: false });
@@ -100,12 +100,12 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-html"
                 >
-                    <span className="ml0-25 mtauto mbauto flex-item-fluid">{c('Info').t`Rich text`}</span>
-                    <Icon name="checkmark" className={classnames(['mt0-25', getClassname(!editorMetadata.isPlainText)])} />
+                    <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Rich text`}</span>
+                    <Icon name="checkmark" className={classnames(['ml1', getClassname(!editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={4}
-                    className="text-left flex flex-nowrap"
+                    className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={() => {
                         if (editorMetadata.isPlainText !== true) {
                             handleChangeMetadata({ isPlainText: true });
@@ -113,12 +113,15 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     }}
                     data-testid="editor-to-plaintext"
                 >
-                    <span className="ml0-25 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
-                    <Icon name="checkmark" className={classnames(['mt0-25', getClassname(editorMetadata.isPlainText)])} />
+                    <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Plain text`}</span>
+                    <Icon name="checkmark" className={classnames(['ml1', getClassname(editorMetadata.isPlainText)])} />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-more-options" />,
             ]}
-            <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={handleTogglePublicKey}>
+            <DropdownMenuButton
+                className="text-left flex flex-nowrap flex-align-items-center"
+                onClick={handleTogglePublicKey}
+            >
                 <span className="mtauto mbauto flex-item-fluid pl0-25">{c('Info').t`Attach public key`}</span>
                 <Icon name="checkmark" className={classnames(['ml1', getClassname(isAttachPublicKey)])} />
             </DropdownMenuButton>

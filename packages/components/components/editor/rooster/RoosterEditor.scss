@@ -3,13 +3,9 @@
 .simple-editor.editor {
 	overflow: hidden;
 	min-block-size: 14em;
-	background: white; // hardcoded until we un-hardcode it in squire.
 }
 
 .editor {
-	border: 1px solid var(--field-norm);
-	padding: 0.5em;
-
 	&:hover {
 		border-color: var(--field-hover);
 	}

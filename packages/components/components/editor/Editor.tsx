@@ -121,6 +121,7 @@ const Editor = ({
                             showModalLink={modalLink.showCallback}
                             onFocus={onFocus}
                             mailSettings={mailSettings}
+                            className={simple ? 'border rounded' : ''}
                         />
                     )}
                 </div>
