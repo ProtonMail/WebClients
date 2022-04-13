@@ -186,6 +186,9 @@
       "Download": [
         "Descărcare"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Unitate blocată"
       ],
@@ -212,6 +215,9 @@
       ],
       "enable desktop notifications": [
         "activare notificări pe desktop"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "Extindere folder"
@@ -2497,6 +2503,9 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
       ],
@@ -2683,7 +2692,7 @@
         "Una dintre unitățile criptate este blocată. Cel mai probabil, acest lucru se datorează unei resetări recente a parolei.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Sunt permise doar ${ MAX_CUSTOM_PASSWORD_LENGTH } caractere."
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
@@ -2741,6 +2750,9 @@
       ],
       "Queued": [
         "În așteptare"
+      ],
+      "recommended browser": [
+        ""
       ],
       "Recovery process might take some time.": [
         "Procesul de recuperare ar putea dura ceva timp."
@@ -2969,6 +2981,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
       ],
@@ -3170,8 +3185,8 @@
       "Enable Beta Access": [
         "Activare acces la Beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Criptare mesaje"
@@ -4137,6 +4152,9 @@
       "Beta Access": [
         "Acces la Beta"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Anulare toate transferurile active"
       ],
@@ -4261,8 +4279,8 @@
       "Empty trash": [
         "Golire gunoi"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "Introduceți parola pentru a descărca"
@@ -4293,6 +4311,11 @@
       ],
       "Folders details": [
         "Detalii foldere"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
+        "",
+        ""
       ],
       "Groups": [
         "Grupuri"
@@ -4404,9 +4427,6 @@
       ],
       "Search results": [
         "Rezultate căutare"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Rezultate căutare: s-au găsit ${ searchView.numberOfResults }"
       ],
       "Searching…": [
         "Se caută…"

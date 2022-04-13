@@ -45,7 +45,7 @@
         "应用"
       ],
       "Attach screenshot(s)": [
-        ""
+        "附截图"
       ],
       "Back": [
         "后退"
@@ -182,6 +182,9 @@
       "Download": [
         "下載"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "网盘已锁定"
       ],
@@ -207,7 +210,10 @@
         "清空回收站"
       ],
       "enable desktop notifications": [
-        "启用桌面通知"
+        "开启推送通知"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         "展开文件夹"
@@ -2323,7 +2329,7 @@
         "清除数据"
       ],
       "Clear encrypted search data": [
-        ""
+        "清除加密的搜索数据"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
         "清除浏览器数据将清除此设备上的搜索索引，再次搜索时需要对所有文件进行重新索引。"
@@ -2415,6 +2421,9 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
@@ -2428,10 +2437,10 @@
         "无法打开安全链接，原因是：${ error }"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "文件缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "文件缺少签名，我们无法验证 ${ fileName } 由谁上传。"
       ],
       "File will not be uploaded": [
         "将不会上传文件"
@@ -2443,10 +2452,10 @@
         "文件夹内容将合并为一个文件夹"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "文件夹缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "文件夹缺少签名，我们无法验证 ${ fileName } 由谁上传。"
       ],
       "Folder will not be uploaded": [
         "将不会上传文件夹"
@@ -2602,7 +2611,7 @@
         ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
       ],
       "Only the people with the link and the password can access this file.": [
         "只有同时知道链接和密码的人才能访问此文件。"
@@ -2658,6 +2667,9 @@
       "Queued": [
         "等待中"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "恢复过程可能需要一些时间。"
       ],
@@ -2701,7 +2713,7 @@
         "出错了，请稍后再试。"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "存储空间由 ${ MAIL_APP_NAME }，${ CALENDAR_APP_NAME } 和 ${ DRIVE_APP_NAME } 共享"
       ],
       "Support for 1 custom email domain": [
         "支持 1 个自有域名"
@@ -2755,10 +2767,10 @@
         "这将覆盖现有文件夹"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
+        "要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        ""
+        "要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。在此期间您仍然可以正常使用 ${ DRIVE_APP_NAME } - 索引完成后我们会立即通知您。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用，请验证您是人类。"
@@ -2882,6 +2894,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "您的账户有逾期未支付的账单，很快将被限制使用。${ payInvoiceLink }"
+      ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
@@ -3011,7 +3026,7 @@
         "适用于所有未验证的项目"
       ],
       "Attach screenshot(s)": [
-        ""
+        "附截图"
       ],
       "Audio file": [
         "音频文件"
@@ -3053,7 +3068,7 @@
         "创建时间"
       ],
       "Delete": [
-        ""
+        "删除"
       ],
       "Delete drive?": [
         "删除网盘?"
@@ -3082,8 +3097,8 @@
       "Enable Beta Access": [
         "启用测试版功能"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "发送加密邮件"
@@ -3709,7 +3724,7 @@
         "搜索名称或电子邮件地址"
       ],
       "Select": [
-        ""
+        "选择"
       ],
       "Start typing an email address": [
         "开始输入电子邮件地址"
@@ -3993,6 +4008,9 @@
       "Beta Access": [
         "测试版功能"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "取消所有活动传输"
       ],
@@ -4113,8 +4131,8 @@
       "Empty trash": [
         "清空回收站"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         "请输入密码进行下载"
@@ -4145,6 +4163,9 @@
       ],
       "Folders details": [
         "文件夹详细信息"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        ""
       ],
       "Groups": [
         "群组"
@@ -4255,9 +4276,6 @@
         "恢复您的文件"
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
         ""
       ],
       "Searching…": [

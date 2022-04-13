@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Ajouter PayPal"
       ],
-      "Add PayPal payment method": [
-        "Ajouter PayPal comme mode de paiement"
-      ],
-      "Add screenshot(s)": [
-        "Ajouter une ou des capture(s) d'écran"
-      ],
       "Add sieve filter": [
         "Ajouter un filtre Sieve"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Appliquer"
+      ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
       ],
       "Authenticate": [
         "S'authentifier"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Choisissez un fichier ou faites-le glisser ici"
       ],
-      "Clear": [
-        "Effacer"
-      ],
       "Clear all formatting": [
         "Effacer toute mise en forme"
       ],
@@ -198,6 +192,9 @@
       ],
       "Continue import": [
         "Continuer l'importation"
+      ],
+      "Continue to ${ name }": [
+        "Continuer vers ${ name }"
       ],
       "Continue with": [
         "Continuer avec"
@@ -256,8 +253,14 @@
       "Delete link": [
         "Supprimer le lien"
       ],
+      "Delete permanently": [
+        "Supprimer définitivement"
+      ],
       "Delete record": [
         "Supprimer l'enregistrement"
+      ],
+      "Delete without exporting": [
+        "Supprimer sans exporter"
       ],
       "Delete your account": [
         "Supprimer votre compte"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Activer la prise en charge du multiutilisateur"
       ],
+      "Encrypt and export": [
+        "Chiffrer et exporter"
+      ],
       "Export": [
         "Exporter"
       ],
@@ -339,6 +345,9 @@
       ],
       "Export key": [
         "Exporter une clé"
+      ],
+      "Export key before deleting": [
+        "Exporter la clé avant de supprimer"
       ],
       "Extend": [
         "Prolonger"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Masquer les dossiers"
-      ],
-      "Hide info": [
-        "Masquer les infos"
       ],
       "Hide labels": [
         "Masquer les labels"
@@ -664,9 +670,6 @@
       "Show folders": [
         "Afficher les dossiers"
       ],
-      "Show info": [
-        "Afficher les infos"
-      ],
       "Show labels": [
         "Afficher les labels"
       ],
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Annuler quand même"
       ],
-      "Warning": [
-        "Attention"
-      ],
       "Wipe": [
         "Effacer"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Essayez gratuitement pendant 30 jours"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Sélectionner"
       ]
     },
     "Addon": {
@@ -943,17 +938,6 @@
       ],
       "By leaving now, some events may not be imported": [
         "En quittant maintenant, certains événements pourraient ne pas être importés"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Supprimer vos clés est irréversible. Afin de pouvoir accéder aux messages chiffrés avec cette clé, vous devriez effectuer une sauvegarde de cette clé pour un usage ultérieur."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Vous allez faire face à une perte de données définitive en ne faisant pas de sauvegarde de votre clé."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "La clé de votre adresse est en cours de suppression."
       ]
     },
     "Alter": {
@@ -1345,6 +1329,14 @@
         "Semaine"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Fermer"
+      ],
+      "Open": [
+        "Ouvrir"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "commence par"
@@ -1375,17 +1367,6 @@
       ],
       "matches": [
         "correspond à"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Êtes-vous sûr de vouloir supprimer cette clé sans la sauvegarder ?"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Êtes-vous sûr de vouloir supprimer définitivement cette clé ?"
-      ],
-      "Do you want to export your key?": [
-        "Voulez-vous exporter votre clé ?"
       ]
     },
     "Confirm modal title": {
@@ -4015,7 +3996,7 @@
         "${ vpnAppName } Free"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        "${ vpnBasic }, ${ vpnPlus } ou ${ visionary } est requis pour la connexion aux serveurs de pays."
+        "${ vpnBasic }, ${ vpnPlus } ou ${ visionary } sont requis pour la connexion aux serveurs de pays."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
         "${ vpnPlus } inclut ${ maxVpn } connexion VPN.",
@@ -4072,7 +4053,7 @@
         "Un Internet libre et non censuré devrait être disponible pour tous."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        "Un nom pour vous aider à identifier où vous l'utilisez afin de pouvoir le révoquer ou le prolonger facilement plus tard."
+        "Un nom pour vous aider à identifier l'endroit où vous l'utilisez afin de pouvoir facilement le révoquer ou le prolonger ultérieurement."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4617,9 +4598,6 @@
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Importez vos e-mails, calendriers et contacts d'un autre service vers Proton. Nous vous guiderons à chaque étape et chiffrerons vos données au fur et à mesure de leur déplacement. Bienvenue dans le monde de la confidentialité."
       ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "IMPORTANT : le téléchargement de vos clés privées et leur envoi ou leur stockage sur des supports non sécurisés peuvent compromettre la sécurité de votre compte !"
-      ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Important : veuillez vous assurer de sauvegarder les codes de récupération. Sinon, vous pouvez perdre définitivement l'accès à votre compte si vous égarez votre appareil d'authentification à deux facteurs."
       ],
@@ -4693,8 +4671,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Conservez cet enregistrement dans votre DNS aussi longtemps que vous souhaiterez utiliser DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "La clé avec l'empreinte ${ fp } a été supprimée."
+      "Key deletion is irreversible!": [
+        "La suppression de clé est irréversible !"
       ],
       "Label all imported messages as": [
         "Labelliser tous les messages importés comme"
@@ -4913,9 +4891,6 @@
       "Plan upgrade required": [
         "Offre supérieure requise"
       ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Veuillez saisir un mot de passe pour chiffrer votre clé privée avant d'exporter."
-      ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Veuillez saisir la phrase de récupération de 12 mots associée à votre compte."
       ],
@@ -5051,14 +5026,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Scannez ce code avec votre périphérique d'authentication à deux facteurs pour configurer votre compte. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Capture(s) d'écran jointe(s)"
-      ],
       "See all plans": [
         "Voir tous les abonnements"
       ],
       "Select a service provider to start": [
         "Sélectionnez un fournisseur de services pour commencer"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        "Sélectionnez « Se connecter à ${ name } » pour ouvrir l'application. Cela va également créer un compte ${ name } avec votre adresse ${ MAIL_APP_NAME } afin que vous puissiez vous connecter en un clic la prochaine fois."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -5108,6 +5083,9 @@
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Conservez ce mot de passe et ce fichier dans un endroit sûr. Vous en aurez à nouveau besoin pour importer votre clé."
+      ],
       "Support for 1 custom email domain": [
         "Prise en charge d'un nom de domaine personnalisé"
       ],
@@ -5153,6 +5131,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ces fichiers de configuration vous permettent de choisir le serveur ${ VPN_APP_NAME } auquel vous vous connectez lorsque vous utilisez une application VPN tierce ou que vous configurez une connexion VPN sur un routeur."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Ces configurations sont fournies pour fonctionner avec les routeurs WireGuard et les clients officiels."
+      ],
       "This 30-day free trial is not available any other way.": [
         "L'essai gratuit de 30 jours n'est disponible nulle part ailleurs."
       ],
@@ -5167,9 +5148,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Cette adresse électronique sera utilisée uniquement à des fins de récupération."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Cette fonctionnalité est destinée aux utilisateurs avancés uniquement. Après avoir supprimé cette clé, vous ne pourrez PLUS déchiffrer les messages qui ont été envoyés avec celle-ci. Cela peut entraîner une perte de données."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Il s'agit d'une phrase de 12 mots que vous avez été invité à définir."
@@ -5207,6 +5185,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Cela désactivera votre phrase de récupération actuelle. Vous ne pourrez pas l'utiliser pour accéder à votre compte ou déchiffrer vos données."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Ceci téléchargera un fichier contenant votre clé privée. Protégez ce fichier en le chiffrant avec un mot de passe."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ceci permettra d'utiliser PayPal pour payer votre abonnement Proton. Nous vous redirigerons vers PayPal dans un nouvel onglet du navigateur. Si vous utilisez des bloqueurs de pop-up, veuillez les désactiver pour continuer."
       ],
@@ -5224,6 +5205,9 @@
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Cet assistant activera l'authentification à deux facteurs (A2F/2FA) sur votre compte Proton. L'authentification à deux facteurs rendra votre compte Proton plus sécurisé. Nous vous recommandons donc de l'activer."
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Pour éviter la perte de données, ne les supprimez que si vous savez ce que vous faites ou si vous avez exporté une copie."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Pour confirmer, veuillez saisir le nom de l'utilisateur que vous souhaitez supprimer."
@@ -5528,6 +5512,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint 100 % de votre capacité de stockage. Vous ne pouvez pas envoyer ou recevoir de nouveaux e-mails. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Vous devriez exporter une sauvegarde de cette clé au cas où vous auriez besoin de restaurer des données chiffrées avec."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Vous devez encore répondre aux invitations pour que l'organisateur voit votre réponse."
       ],
@@ -5536,6 +5523,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Vous serez bientôt redirigé vers votre banque pour vérifier votre paiement."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "Vous ne pourrez PAS déchiffrer les messages, fichiers et autres données chiffrés avec cette clé."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Vous serez bientôt redirigé vers PayPal pour vérifier votre paiement."
@@ -5705,8 +5695,8 @@
       "Billed": [
         "Facturée"
       ],
-      "Cancelled": [
-        "Annulé"
+      "Gifted": [
+        "Offert"
       ],
       "Paid": [
         "Payée"
@@ -6112,6 +6102,9 @@
       "Attach public key": [
         "Joindre une clé publique"
       ],
+      "Attach screenshot(s)": [
+        "Joindre une ou plusieurs captures d’écran"
+      ],
       "Auto reply": [
         "Réponses automatiques"
       ],
@@ -6228,6 +6221,9 @@
       ],
       "Country": [
         "Pays"
+      ],
+      "Create password": [
+        "Créer un mot de passe"
       ],
       "Credits pending": [
         "Crédits en attente"
@@ -6916,11 +6912,6 @@
         "Ligne"
       ]
     },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Joindre une ou des capture(s) d'écran"
-      ]
-    },
     "Label/folder modal": {
       "Create folder": [
         "Créer un dossier"
@@ -7431,6 +7422,9 @@
       "A disabled address cannot be primary": [
         "Une adresse désactivée ne peut pas être principale"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "La clé avec l'empreinte ${ fp } a été supprimée."
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Identifiants OpenVPN/IKEv2 regénérés"
       ]
@@ -7795,12 +7789,6 @@
       "Address": [
         "Adresse"
       ],
-      "Browser name": [
-        "Nom du navigateur"
-      ],
-      "Browser version": [
-        "Version du navigateur"
-      ],
       "Choose a name": [
         "Choisir un nom"
       ],
@@ -7834,12 +7822,6 @@
       "Name": [
         "Nom"
       ],
-      "OS name": [
-        "Nom du système d'exploitation"
-      ],
-      "OS version": [
-        "Version du système d'exploitation"
-      ],
       "Other": [
         "Autre"
       ],
@@ -7858,14 +7840,14 @@
       "Postal code": [
         "Code postal"
       ],
-      "Proton username": [
-        "Nom d'utilisateur Proton"
-      ],
       "Search settings": [
         "Paramètres de recherche"
       ],
       "Search users": [
         "Rechercher des utilisateurs"
+      ],
+      "Select": [
+        "Sélectionner"
       ],
       "Select a reason": [
         "Sélectionnez une raison"
@@ -8494,7 +8476,7 @@
         "Certificat prolongé jusqu'au ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        "La configuration \"${ name }\" a été créée, veuillez noter que la clé privée n'est pas stockée et ne pourra plus être affichée à nouveau, vous devriez copier ou télécharger cette configuration."
+        "La configuration « ${ name } » a été créée, veuillez noter que la clé privée n'est pas stockée et ne pourra plus être affichée à nouveau, vous devriez copier ou télécharger cette configuration."
       ],
       "Creating config file for ${ serverName }": [
         "Fichier de configuration créé pour ${ serverName }"
@@ -8804,6 +8786,9 @@
       "Confirm phone number": [
         "Confirmer le numéro de téléphone"
       ],
+      "Connect ${ name }": [
+        "Se connecter à ${ name }"
+      ],
       "Contact encryption keys": [
         "Clés de chiffrement de contact"
       ],
@@ -8876,8 +8861,8 @@
       "Delete ${ email }": [
         "Supprimer ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Supprimer ${ filter.Name }"
+      "Delete ${ filterName }": [
+        "Supprimer ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
         "Supprimer le dossier ${ label.Name }"
@@ -8891,8 +8876,8 @@
       "Delete calendar": [
         "Supprimer le calendrier"
       ],
-      "Delete key": [
-        "Supprimer la clé"
+      "Delete key permanently?": [
+        "Supprimer la clé définitivement ?"
       ],
       "Delete logs": [
         "Supprimer les journaux"

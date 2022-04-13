@@ -1099,7 +1099,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "O acesso beta permite que você use as versões beta do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME } antes do lançamento ao público. Assim, você pode ser o primeiro a testar novos produtos, receber novas atualizações e usar novos recursos."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Se você tiver problemas, você pode sempre desativar o Acesso beta."
@@ -1274,7 +1274,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuar usando ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } ou ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } endereço de e-mail",
         "${ addressCount } endereços de e-mail"
@@ -3718,7 +3721,7 @@
         "${ groupCounts } grupo(s) encontrado(s)"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } tambem pode proteger seus negócios."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } mensagem não pôde ser movida.",
@@ -4059,10 +4062,10 @@
         "imagens incorporadas"
       ],
       "Encrypt for non-${ BRAND_NAME } users": [
-        ""
+        "Criptografar para usuários não-${ BRAND_NAME }"
       ],
       "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+        "Mensagens criptografadas para destinatários não-${ BRAND_NAME } irão expirar em 28 dias, a menos que um tempo menor de validade seja definido."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Digite o código de verificação que foi enviado para ${ destinationText }."
@@ -4147,7 +4150,7 @@
         "Se você estiver tendo problemas para criar sua conta, solicite um convite e nós responderemos no prazo de um dia útil."
       ],
       "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
+        "Se você está enviando essa mensagem para uma pessoa que não usa o ${ MAIL_APP_NAME }, se certifique de definir uma senha para sua mensagem."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se você acredita que seja um erro, entre em contato conosco ${ contactLink }."
@@ -4212,6 +4215,9 @@
       ],
       "Learn more": [
         "Saiba mais"
+      ],
+      "learn more": [
+        "saiba mais"
       ],
       "Left to Right": [
         "Esquerda para direita"
@@ -4334,7 +4340,7 @@
         "de"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
       ],
       "Other options": [
         "Outras opções"
@@ -4346,7 +4352,7 @@
         ""
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "O PGP/MIME envia automaticamente a mensagem usando o modo de composição atual. Por favor, note que o ${ MAIL_APP_NAME } sempre assina mensagens criptografadas"
       ],
       "Phone number": [
         "Número do telefone"
@@ -4466,13 +4472,13 @@
         "Sessão expirada"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        ""
+        "Defina o ${ MAIL_APP_NAME } como sua aplicação padrão de e-mails nesse navegador. ${ MAIL_APP_NAME } será aberto automaticamente quando você clicar em um link de e-mail."
       ],
       "Set a recovery phrase": [
         "Definir uma frase de recuperação"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "Configurar o PGP permite o envio de e-mails com criptografia de ponta-a-ponta com um usuário não-${ BRAND_NAME } que usa um serviço compatível com PGP."
       ],
       "Show original message": [
         "Exibir mensagem original"
@@ -4484,7 +4490,7 @@
         "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Armazene e compartilhe arquivos seguramente com ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Assunto"
@@ -4695,7 +4701,7 @@
         "Atualize para oferecer suporte à privacidade e obter mais recursos."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
+        "Atualize para usar o ${ MAIL_APP_NAME } com clientes de desktop de terceiros."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Atualize hoje para evitar perder os seguintes benefícios do ${ appName } ${ planName }."
@@ -4785,7 +4791,7 @@
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
+        "Você pode usar o ${ VPN_APP_NAME } de graça hoje."
       ],
       "You cannot reply from the invited address.": [
         "Você não pode responder a partir do endereço convidado."
@@ -5483,7 +5489,7 @@
         "Carregar imagem"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nome de usuário ou endereço ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Código de verificação"
@@ -6009,13 +6015,13 @@
         ""
       ],
       "Available on iOS and Android.": [
-        ""
+        "Disponível para iOS e Android."
       ],
       "Get the ${ appName } mobile app": [
-        ""
+        "Obter o aplicativo móvel ${ appName }"
       ],
       "Import your messages": [
-        ""
+        "Importe suas mensagens"
       ],
       "Meet your encrypted mailbox": [
         ""
@@ -6024,7 +6030,7 @@
         "Próximo"
       ],
       "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        ""
+        "O nosso Assistente de Importação transfere rapidamente todos os seus e-mails para sua nova caixa de entrada criptografada."
       ]
     },
     "Onboarding Proton": {
@@ -6304,7 +6310,7 @@
         "Mensagem assinada pelo PGP. Falha na verificação do remetente"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Enviado pelo ${ MAIL_APP_NAME } com criptografia de acesso zero"
       ],
       "Stored with zero-access encryption": [
         "Armazenado com criptografia de acesso zero"
@@ -6384,16 +6390,16 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
+        "Criptografado pelo ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "Criptografado pelo ${ MAIL_APP_NAME } para destinatário PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
+        "Criptografado pelo ${ MAIL_APP_NAME } para destinatário PGP verificado"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
+        "Criptografado pelo ${ MAIL_APP_NAME } para destinatário verificado"
       ],
       "End-to-end encrypted": [
         "Criptografado de ponta a ponta"
@@ -6411,11 +6417,11 @@
         "Assinado com PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Enviado pelo ${ MAIL_APP_NAME } com criptografia de acesso zero"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "",
-        ""
+        "Enviado pelo ${ MAIL_APP_NAME } com criptografia de acesso zero para destinatário verificado",
+        "Enviado pelo ${ MAIL_APP_NAME } com criptografia de acesso zero para destinatários verificados"
       ],
       "Sent by you with end-to-end encryption": [
         "Enviado por você com criptografia de ponta a ponta"
@@ -7327,7 +7333,7 @@
         "Selecione o esquema PGP a ser usado durante a assinatura ou criptografia de um usuário. Observe que o PGP/Incorporado força o envio de mensagens de texto sem formatação"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "As subpastas do sistema aparecerão como pastas separadas no ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "A importação começará com as mensagens mais recentes."

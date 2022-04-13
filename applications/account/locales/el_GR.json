@@ -88,12 +88,6 @@
       "Add PayPal": [
         "Προσθήκη PayPal"
       ],
-      "Add PayPal payment method": [
-        "Προσθέστε μία μέθοδο πληρωμής PayPal"
-      ],
-      "Add screenshot(s)": [
-        "Προσθήκη στιγμιοτύπου/ων οθόνης"
-      ],
       "Add sieve filter": [
         "Προσθήκη φίλτρου sieve"
       ],
@@ -117,6 +111,9 @@
       ],
       "Apply": [
         "Εφαρμογή"
+      ],
+      "Attach screenshot(s)": [
+        "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
       "Authenticate": [
         "Ταυτοποίηση"
@@ -157,9 +154,6 @@
       "Choose a file or drag it here": [
         "Επιλέξτε ένα αρχείο ή σύρετέ το εδώ"
       ],
-      "Clear": [
-        "Καθαρισμός"
-      ],
       "Clear all formatting": [
         "Απαλοιφή μορφοποιήσεων"
       ],
@@ -199,6 +193,9 @@
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
+      "Continue to ${ name }": [
+        ""
+      ],
       "Continue with": [
         "Συνέχεια με"
       ],
@@ -215,7 +212,7 @@
         "Αντιγραφή συνδέσμου"
       ],
       "Create": [
-        ""
+        "Δημιουργία"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
         ""
@@ -256,8 +253,14 @@
       "Delete link": [
         "Διαγραφή συνδέσμου"
       ],
+      "Delete permanently": [
+        ""
+      ],
       "Delete record": [
         "Διαγραφή εγγραφής"
+      ],
+      "Delete without exporting": [
+        ""
       ],
       "Delete your account": [
         "Διαγραφή του λογαριασμού σας"
@@ -331,6 +334,9 @@
       "Enable multi-user support": [
         "Ενεργοποίηση υποστήριξης πολλαπλών χρηστών"
       ],
+      "Encrypt and export": [
+        ""
+      ],
       "Export": [
         "Εξαγωγή"
       ],
@@ -340,8 +346,11 @@
       "Export key": [
         "Εξαγωγή κλειδιού"
       ],
-      "Extend": [
+      "Export key before deleting": [
         ""
+      ],
+      "Extend": [
+        "Επέκταση"
       ],
       "Font": [
         "Γραμματοσειρά"
@@ -375,9 +384,6 @@
       ],
       "Hide folders": [
         "Απόκρυψη φακέλων"
-      ],
-      "Hide info": [
-        "Απόκρυψη πληροφοριών"
       ],
       "Hide labels": [
         "Απόκρυψη ετικετών"
@@ -428,7 +434,7 @@
         "ορίστε ετικέτα στα email ως"
       ],
       "Load more": [
-        ""
+        "Φόρτωση περισσοτέρων"
       ],
       "Loading verification": [
         "Αναμονή για επαλήθευση"
@@ -602,10 +608,10 @@
         "Αναθεώρηση"
       ],
       "Revoke": [
-        ""
+        "Ανάκληση"
       ],
       "Revoke ${ name }": [
-        ""
+        "Ανάκληση ${ name }"
       ],
       "Revoke all other sessions": [
         "Αποσυνδεθείτε από όλες τις άλλες συνεδρίες"
@@ -663,9 +669,6 @@
       ],
       "Show folders": [
         "Εμφάνιση φακέλων"
-      ],
-      "Show info": [
-        "Εμφάνιση πληροφοριών"
       ],
       "Show labels": [
         "Εμφάνιση ετικετών"
@@ -823,9 +826,6 @@
       "Void anyway": [
         "Ακύρωση οπωσδήποτε"
       ],
-      "Warning": [
-        "Προειδοποίηση"
-      ],
       "Wipe": [
         "Εκκαθάριση"
       ],
@@ -850,11 +850,6 @@
       ],
       "Try free for 30 days": [
         "Δωρεάν δοκιμή για 30 ημέρες"
-      ]
-    },
-    "Action to select a title for the bug report modal": {
-      "Select": [
-        "Επιλέξτε"
       ]
     },
     "Addon": {
@@ -943,22 +938,11 @@
       ],
       "By leaving now, some events may not be imported": [
         "Φεύγοντας τώρα, κάποια γεγονότα μπορεί να μην εισαχθούν"
-      ],
-      "Deleting your keys is irreversible. To be able to access any message encrypted with this, you might want to make a backup of this key for later use.": [
-        "Η διαγραφή των κλειδιών είναι μη αναστρέψιμη. Για να μπορείτε να αποκτήσετε πρόσβαση σε οποιοδήποτε μήνυμα κρυπτογραφημένο με αυτό το κλειδί, ίσως θα θέλατε να δημιουργήσετε αντίγραφο ασφαλείας αυτού του κλειδιού για μελλοντική χρήση."
-      ],
-      "You will face a permanent data loss by not making a backup of your key.": [
-        "Θα αντιμετωπίσετε μια μόνιμη απώλεια δεδομένων με το να μην κάνετε ένα αντίγραφο ασφαλείας του κλειδιού σας."
-      ]
-    },
-    "alert": {
-      "The key for your address is now being deleted.": [
-        "Το κλειδί για τη διεύθυνση σας διαγράφεται τώρα."
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Αυτό θα αποσυνδέσει όλους τους δρομολογητές και πελάτες που χρησιμοποιούν αυτό το πιστοποιητικό."
       ]
     },
     "Apps dropdown": {
@@ -1249,6 +1233,14 @@
         "Εβδομάδα"
       ]
     },
+    "Collapsible tooltip": {
+      "Close": [
+        "Κλείσιμο"
+      ],
+      "Open": [
+        "Άνοιγμα"
+      ]
+    },
     "Condition for custom filter": {
       "begins with": [
         "αρχίζει από"
@@ -1279,17 +1271,6 @@
       ],
       "matches": [
         "ταιριάζει με"
-      ]
-    },
-    "Confirm": {
-      "Are you sure you want to delete this key without backing it up?": [
-        "Θέλετε σίγουρα να διαγράψετε αυτό το κλειδί χωρίς να κρατήσετε αντίγραφο ασφαλείας;"
-      ],
-      "Are you sure you want to permanently delete this key?": [
-        "Θέλετε σίγουρα να διαγράψετε οριστικά αυτό το κλειδί;"
-      ],
-      "Do you want to export your key?": [
-        "Θέλετε να εξάγετε το κλειδί σας;"
       ]
     },
     "Confirm modal title": {
@@ -3006,7 +2987,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Το πιστοποιητικό ${ name } είτε δεν βρέθηκε είτε ανακλήθηκε ήδη"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Το όνομα και το επώνυμο δεν μπορούν να είναι απο-επιλεγμένα και τα δύο ταυτόχρονα"
@@ -3919,14 +3900,14 @@
         "${ vpnAppName } Δωρεάν"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
+        "Απαιτείται ${ vpnBasic }, ${ vpnPlus } ή ${ visionary } για σύνδεση επιπέδου Χώρας."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
         "Το ${ vpnPlus } περιλαμβάνει ${ maxVpn } σύνδεση VPN.",
         "Το ${ vpnPlus } περιλαμβάνει ${ maxVpn } συνδέσεις VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
+        "Απαιτείται ${ vpnPlus } ή ${ visionary } λειτουργίες Secure Core."
       ],
       "(${ memberCount } member)": [
         "",
@@ -3976,7 +3957,7 @@
         "Ένα δωρεάν και χωρίς λογοκρισία Internet θα πρέπει να είναι διαθέσιμο σε όλους."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Ένα όνομα που σας βοηθά να αναγνωρίζετε πού το χρησιμοποιείτε, ώστε αργότερα να μπορείτε εύκολα να το ανακαλέσετε ή επεκτείνετε."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4003,7 +3984,7 @@
         "Ο λογαριασμός ενημερώθηκε επιτυχώς"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        ""
+        "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στο λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\""
       ],
       "Add a recovery email address": [
         "Προσθήκη ηλ. διεύθυνσης ανάκτησης"
@@ -4380,7 +4361,7 @@
         "Ληγμένο"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "λήγει στις ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "Αποτυχία ανάκτησης αρχείων καταγραφής."
@@ -4479,7 +4460,7 @@
         "Εάν χάσετε τη συσκευή σας με δύο παράγοντες, αυτοί οι κωδικοί μπορούν να χρησιμοποιηθούν αντί για τον 6-ψήφιο κωδικό ελέγχου ταυτότητας δύο παραγόντων για να συνδεθείτε στο λογαριασμό σας. Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
+        "Εάν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα ${ MAIL_APP_NAME } και ${ VPN_APP_NAME } χαρακτηριστικά επί πληρωμή."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
         ""
@@ -4520,9 +4501,6 @@
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
         "Εισάγετε τα email σας, τα ημερολόγια, και τις επαφές σας από μια άλλη υπηρεσία στην Proton. Θα σας καθοδηγήσουμε σε κάθε βήμα της διαδικασίας και θα κρυπτογραφήσουμε τα δεδομένα κατά τη μετακίνηση. Καλώς ήρθατε στον κόσμο της ιδιωτικότητας."
-      ],
-      "IMPORTANT: Downloading your private keys and sending them over or storing them on insecure media can jeopardise the security of your account!": [
-        "ΣΗΜΑΝΤΙΚΟ: η λήψη των ιδιωτικών σας κλειδιών και η αποστολή τους ή η αποθήκευσή τους σε μη ασφαλή πολυμέσα μπορεί να θέσουν σε κίνδυνο την ασφάλεια του λογαριασμού σας!"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Σημαντικό: Βεβαιωθείτε ότι έχετε αποθηκεύσει τους κωδικούς ανάκτησης. Διαφορετικά, μπορείτε να χάσετε μόνιμα την πρόσβαση στο λογαριασμό σας αν χάσετε τη συσκευή ελέγχου ταυτότητας δύο παραγόντων."
@@ -4597,8 +4575,8 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "Διατηρήστε αυτές τις εγγραφές στο DNS σας για όσο διάστημα θέλετε να χρησιμοποιήσετε το DKIM."
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Το κλειδί με δακτυλικό αποτύπωμα ${ fp } διαγράφηκε."
+      "Key deletion is irreversible!": [
+        "Η διαγραφή του κλειδιού είναι αμετάκλητη!"
       ],
       "Label all imported messages as": [
         "Επισήμανση όλων των εισαγόμενων μηνυμάτων ως"
@@ -4760,7 +4738,7 @@
         "Μόνο εσύ μπορείς να δεις αυτές τις ετικέτες."
       ],
       "Or select a particular server:": [
-        ""
+        "Ή επιλέξτε συγκεκριμένο διακομιστή:"
       ],
       "Organization keys activated": [
         "Τα κλειδιά οργανισμού ενεργοποιήθηκαν"
@@ -4775,7 +4753,7 @@
         "Άλλες επιλογές"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
         "Ο νέος μας τομέας ${ domain } είναι μια βολική επιλογή για αποστολή και λήψη μηνυμάτων. Θα συνεχίσει να είναι δυνατή η χρήση της αρχικής διεύθυνσής σας ${ protonMailAppName }."
@@ -4793,8 +4771,8 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "",
-        ""
+        "Πληρώστε για ${ rewardMonths } μήνα πλάνου",
+        "Πληρώστε για ${ rewardMonths } μήνες πλάνου"
       ],
       "Paid for a monthly plan": [
         "Πλήρωσε για μηνιαίο πλάνο"
@@ -4816,9 +4794,6 @@
       ],
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
-      ],
-      "Please enter a password to encrypt your private key with before exporting.": [
-        "Παρακαλώ πληκτρολογήστε έναν κωδικό πρόσβασης για την κρυπτογράφηση του ιδιωτικού κλειδιού σας πριν από την εξαγωγή."
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
         "Παρακαλούμε εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
@@ -4926,13 +4901,13 @@
         "Η φράση ανάκτησης δεν σχετίζεται με κάποιο παρωχημένο κλειδί."
       ],
       "Referral link copied to your clipboard": [
-        ""
+        "Ο σύνδεσμος παραπομπής αντιγράφηκε στο πρόχειρό σας"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Ανάκληση πιστοποιητικού ${ name }"
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
@@ -4955,14 +4930,14 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Σαρώστε αυτόν τον κωδικό με τη συσκευή ελέγχου ταυτότητας δύο παραγόντων για να ρυθμίσετε το λογαριασμό σας. ${ switchButton }."
       ],
-      "Screenshot(s) attached": [
-        "Το στιγμιότυπο/α οθόνης έχει επισυναφθεί"
-      ],
       "See all plans": [
-        ""
+        "Δείτε όλα τα πλάνα"
       ],
       "Select a service provider to start": [
         "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
+      ],
+      "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
@@ -5010,7 +4985,10 @@
         "Αποθήκευση GB"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "Αποθηκεύστε αυτόν τον κωδικό και το αρχείο σε ένα ασφαλές μέρος. Θα το χρειαστείτε ξανά για να εισάγετε το κλειδί σας."
       ],
       "Support for 1 custom email domain": [
         "Υποστήριξη για 1 παραμετροποιημένο τομέα email"
@@ -5057,6 +5035,9 @@
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Αυτά τα αρχεία παραμετροποίησης επιτρέπουν την επιλογή διακομιστή σύνδεσης ${ VPN_APP_NAME } για χρήση από εφαρμογές VPN τρίτων ή ρύθμιση σύνδεσης VPN σε δρομολογητή."
       ],
+      "These configurations are provided to work with WireGuard routers and official clients.": [
+        "Αυτές οι διαμορφώσεις παρέχονται για δρομολογητές WireGuard και επίσημους πελάτες."
+      ],
       "This 30-day free trial is not available any other way.": [
         "Η δωρεάν δοκιμή 30-ημερών δεν είναι διαθέσιμη με κανέναν άλλον τρόπο."
       ],
@@ -5071,9 +5052,6 @@
       ],
       "This email address will only be used for recovery purposes.": [
         "Αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου θα χρησιμοποιηθεί μόνο για σκοπούς ανάκτησης."
-      ],
-      "This feature is intended for advanced users only. After deleting this key, you will NOT be able to decrypt any message that has been encrypted with it. It may lead to data loss.": [
-        "Αυτή η δυνατότητα προορίζεται μόνο για προχωρημένους χρήστες. Μετά τη διαγραφή αυτού του κλειδιού, ΔΕΝ θα είστε σε θέση να αποκρυπτογραφήσετε οποιοδήποτε μήνυμα έχει κρυπτογραφηθεί με αυτό. Μπορεί να οδηγήσει σε απώλεια δεδομένων."
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Αυτή είναι μια 12-λεκτη φράση που σας είχε ζητηθεί να ορίσετε."
@@ -5111,6 +5089,9 @@
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Αυτό θα απενεργοποιήσει την τρέχουσα φράση σας ανάκτησης. Δεν θα μπορείτε να τη χρησιμοποιήσετε για πρόσβαση στον λογαριασμό σας ή αποκρυπτογράφηση των δεδομένων σας."
       ],
+      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
+        "Αυτό θα κατεβάσει ένα αρχείο που θα περιέχει το ιδιωτικό σας κλειδί. Προστατέψτε αυτό το αρχείο κρυπτογραφώντας το με έναν κωδικό."
+      ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Αυτό θα επιτρέψει στο PayPal να χρησιμοποιηθεί για να πληρώσει τη συνδρομή σας στο Proton. Θα σας ανακατευθύνουμε στο PayPal σε μια νέα καρτέλα προγράμματος περιήγησης. Εάν έχετε ενεργοποιημένο τον αποκλεισμό αναδυόμενων παραθύρων, παρακαλώ απενεργοποιήστε τον για να συνεχίσετε."
       ],
@@ -5129,6 +5110,9 @@
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Αυτός ο οδηγός θα ενεργοποιήσει τον έλεγχο ταυτότητας δύο παραγόντων (2FA) στον λογαριασμό σας Proton. Ο έλεγχος ταυτότητας δύο παραγόντων (2FA) θα κάνει τον λογαριασμό σας Proton πιο ασφαλή, γι αυτό συνιστούμε να τον ενεργοποιήσετε."
       ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "Για να αποφύγετε την απώλεια δεδομένων, διαγράψτε το μονάχα άμα ξέρετε τι κάνετε ή έχετε εξάγει ένα αντίγραφο."
+      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Για επιβεβαίωση, παρακαλώ εισάγετε το όνομα του χρήστη που θέλετε να διαγράψετε."
       ],
@@ -5136,7 +5120,7 @@
         "για συνέχιση στο ${ toAppName }"
       ],
       "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
-        ""
+        "Για να συνεχίσετε να χρησιμοποιείτε ${ appName } με πληρωμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
         "Για να αποκρυπτογραφήσετε και να δείτε τα email και άλλα δεδομένα, χρειάζεστε ένα αρχείο ανάκτησης."
@@ -5241,7 +5225,7 @@
         "Χρησιμοποιήστε τις αυτόματες απαντήσεις για να ενημερώνετε τις επαφές σας ότι βρίσκεστε εκτός γραφείου ή ότι δεν μπορείτε να απαντήσετε με άλλο τρόπο."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή, όπως μέσω Tunnelblick για macOS ή OpenVPN για GNU/Linux."
@@ -5268,7 +5252,7 @@
         "VPN + ${ mailAppName } πακέτο για οικογένειες και μικρές επιχειρήσεις."
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        ""
+        "Θέλετε να ρυθμίσετε το ${ addressToCreate } ως την προεπιλεγμένη διεύθυνση για αποστολή μηνυμάτων;"
       ],
       "Warning:": [
         "Προειδοποίηση:"
@@ -5391,7 +5375,7 @@
         "Δεν μπορείτε να αποστέλλετε περισσότερα από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
       ],
       "You cannot refer ${ appName } users": [
-        ""
+        "Δεν μπορείτε να προτείνετε ${ appName } χρήστες"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Δεν μπορείτε να χρησιμοποιήσετε τα διαπιστευτήρια OpenVPN / IKEv2 για να εισέλθετε σε εφαρμογές του ${ VPN_APP_NAME } ή στον πίνακα ελέγχου του. ${ learnMore }"
@@ -5432,6 +5416,9 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Φτάσατε στο 100% της χωρητικότητας αποθήκευσης. Δεν μπορείτε να στείλετε ή να λάβετε νέα μηνύματα ηλεκτρονικού ταχυδρομείου. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You should export a backup of this key in case you need to restore data it encrypted.": [
+        "Θα πρέπει να εξάγετε ένα αντίγραφο ασφαλείας του κλειδιού αυτού στην περίπτωση που θελήσετε να ανακτήσετε τα δεδομένα που έχει κρυπτογραφήσει."
+      ],
       "You still need to reply to invitations for the host to see your response.": [
         "Χρειάζεται ακόμα να απαντήσετε στις προσκλήσεις για να βλέπει ο διοργανωτής τις απαντήσεις σας."
       ],
@@ -5440,6 +5427,9 @@
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στην τράπεζα σας, για να επαληθεύσετε την πληρωμή σας."
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
+        "ΔΕΝ θα δύνασθε να αποκρυπτογραφήσετε οποιαδήποτε μηνύματα, αρχεία και άλλα δεδομένα που έχουν κρυπτογραφηθεί με αυτό το κλειδί."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
@@ -5451,7 +5441,7 @@
         "Η είσοδός σας θα διατηρηθεί ακόμα και μετά το κλείσιμο του περιηγητή."
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
-        ""
+        "Θα εξακολουθείτε να μπορείτε να στέλνετε και λαμβάνεται μηνύματα με την υπάρχουσα-ες διευθύνσεις ηλεκτρονικού ταχυδρομείου."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
         "Ο λογαριασμός σας ${ BRAND_NAME } συνδέεται με ${ externalEmailAddress }. Για να χρησιμοποιήσετε ${ toAppName }, παρακαλώ δημιουργήστε μια διεύθυνση."
@@ -5529,7 +5519,7 @@
         "Η συνδρομή σας διαχειρίζεται απο το Mozilla. Επικοινωνήστε με την υποστήριξη του Mozilla."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
+        "Η δοκιμαστική σας περίοδος λήγει ${ formattedTrialExpirationDate }"
       ]
     },
     "info": {
@@ -5609,8 +5599,8 @@
       "Billed": [
         "Χρεωμένο"
       ],
-      "Cancelled": [
-        "Ακυρωμένο"
+      "Gifted": [
+        ""
       ],
       "Paid": [
         "Πληρωμένο"
@@ -6016,6 +6006,9 @@
       "Attach public key": [
         "Επισυνάψτε το δημόσιο κλειδί"
       ],
+      "Attach screenshot(s)": [
+        "Επισύναψη στιγμιότυπου/ων οθόνης"
+      ],
       "Auto reply": [
         "Αυτόματη απάντηση"
       ],
@@ -6029,10 +6022,10 @@
         "Φραγή ιχνηλάτησης μηνυμάτων"
       ],
       "Block malware only": [
-        ""
+        "Αποκλεισμός μόνο κακόβουλου λογισμικού"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Αποκλεισμός κακόβουλου λογισμικού, διαφημίσεων και ιχνηλατών"
       ],
       "bonus storage": [
         "μπόνους αποθηκευτικός χώρος"
@@ -6065,7 +6058,7 @@
         "Κατηγορία"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Επιλέξτε όνομα για το παραγόμενο αρχείο διαμόρφωσης"
       ],
       "Code": [
         "Κωδικός"
@@ -6092,7 +6085,7 @@
         "Προϋποθέσεις"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Διαμόρφωση για σύνδεση σε ${ serverName }"
       ],
       "Confirm link URLs": [
         "Επιβεβαίωση διευθύνσεων συνδέσμων"
@@ -6133,8 +6126,11 @@
       "Country": [
         "Χώρα"
       ],
-      "Credits pending": [
+      "Create password": [
         ""
+      ],
+      "Credits pending": [
+        "Εκκρεμούν πιστώσεις"
       ],
       "Credits used": [
         "Χρησιμοποιημένες μονάδες"
@@ -6194,7 +6190,7 @@
         "Περιγραφή"
       ],
       "Device/certificate name": [
-        ""
+        "Όνομα συσκευής/πιστοποιητικού"
       ],
       "Digits": [
         "Ψηφία"
@@ -6401,13 +6397,13 @@
         "Νέος κωδικός"
       ],
       "No filter": [
-        ""
+        "Χωρίς φίλτρο"
       ],
       "No label found": [
         "Δεν βρέθηκε ετικέτα"
       ],
       "Non-standard ports": [
-        ""
+        "Μη τυποποιημένες θύρες"
       ],
       "Notification": [
         "Ειδοποίηση"
@@ -6653,7 +6649,7 @@
         "Κωδικός επαλήθευσης"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN Accelerator"
       ],
       "VPN Connections": [
         "Συνδέσεις VPN"
@@ -6818,11 +6814,6 @@
       ],
       "Row": [
         "Σειρά"
-      ]
-    },
-    "Label, make it short please": {
-      "Attach screenshot(s)": [
-        "Επισύναψη στιγμιοτύπου/ων οθόνης"
       ]
     },
     "Label/folder modal": {
@@ -7335,6 +7326,9 @@
       "A disabled address cannot be primary": [
         "Μια απενεργοποιημένη διεύθυνση δεν μπορεί να είναι κύρια"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        ""
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
       ]
@@ -7639,7 +7633,7 @@
     },
     "Option protection mode": {
       "Load content via proxy (recommended)": [
-        "Φόρτωση περιεχομένου μέσω ενδιάμεσου (συστήνεται)"
+        "Φόρτωση περιεχομένου μέσω διαμεσολαβητή (συστήνεται)"
       ],
       "Load content via proxy and store as attachments": [
         "Φόρτωση περιεχομένου μέσω διαμεσολαβητή και αποθήκευση ως συνημμένου"
@@ -7699,12 +7693,6 @@
       "Address": [
         "Διεύθυνση"
       ],
-      "Browser name": [
-        "Όνομα Περιηγητή (Browser)"
-      ],
-      "Browser version": [
-        "Έκδοση προγράμματος περιήγησης"
-      ],
       "Choose a name": [
         "Επιλέξτε ένα όνομα"
       ],
@@ -7738,12 +7726,6 @@
       "Name": [
         "Όνομα"
       ],
-      "OS name": [
-        "Όνομα Λειτουργικού Συστήματος (OS)"
-      ],
-      "OS version": [
-        "Έκδοση Λειτουργικού Συστήματος"
-      ],
       "Other": [
         "Άλλο"
       ],
@@ -7762,14 +7744,14 @@
       "Postal code": [
         "Ταχυδρομικός κώδικας"
       ],
-      "Proton username": [
-        "Όνομα χρήστη Proton"
-      ],
       "Search settings": [
         "Ρυθμίσεις αναζήτησης"
       ],
       "Search users": [
         "Αναζήτηση χρηστών"
+      ],
+      "Select": [
+        "Επιλογή"
       ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
@@ -8392,16 +8374,16 @@
         "Η διεύθυνση ενεργοποιήθηκε"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Το πιστοποιητικό ${ name } ανακλήθηκε"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Το πιστοποιητικό επεκτάθηκε μέχρι ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Η διαμόρφωση \"${ name }\" δημιουργήθηκε. Σημειώστε ότι το ιδιωτικό κλειδί δεν αποθηκεύτηκε και δεν θα εμφανιστεί ξανά. Πρέπει να αντιγράψετε ή κατεβάσετε αυτήν τη διαμόρφωση."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Παραγωγή αρχείου διαμόρφωσης για ${ serverName }"
       ],
       "Filter removed": [
         "Το φίλτρο αφαιρέθηκε"
@@ -8505,13 +8487,13 @@
         "(προτείνεται ιδιαίτερα)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Δώστε όνομα στην παραγόμενη διαμόρφωση"
       ],
       "1. Select platform": [
         "1. Επιλέξτε πλατφόρμα"
       ],
       "2. Select platform": [
-        ""
+        "2. Επιλέξτε πλατφόρμα"
       ],
       "2. Select protocol": [
         "2. Επιλέξτε πρωτόκολλο"
@@ -8523,10 +8505,10 @@
         "3. Επιλέξτε αρχείο ρυθμίσεων και λήψη"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Ορίστε επιλογές VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Επιλέξτε διακομιστή σύνδεσης"
       ],
       "Account and password": [
         "Λογαριασμός και κωδικός πρόσβασης"
@@ -8708,6 +8690,9 @@
       "Confirm phone number": [
         "Επιβεβαίωση αριθμού τηλεφώνου"
       ],
+      "Connect ${ name }": [
+        ""
+      ],
       "Contact encryption keys": [
         "Κλειδιά κρυπτογράφησης επαφής"
       ],
@@ -8780,8 +8765,8 @@
       "Delete ${ email }": [
         "Διαγραφή ${ email }"
       ],
-      "Delete ${ filter.Name }": [
-        "Διαγραφή ${ filter.Name }"
+      "Delete ${ filterName }": [
+        ""
       ],
       "Delete ${ label.Name } folder": [
         "Διαγραφή φακέλου ${ label.Name }"
@@ -8795,8 +8780,8 @@
       "Delete calendar": [
         "Διαγραφή ημερολογίου"
       ],
-      "Delete key": [
-        "Διαγραφή κλειδιού"
+      "Delete key permanently?": [
+        ""
       ],
       "Delete logs": [
         "Διαγραφή αρχείων καταγραφής"
@@ -9112,7 +9097,7 @@
         "Επαναφορά δικαιωμάτων διαχειριστή"
       ],
       "Revoke certificate": [
-        ""
+        "Ανάκληση πιστοποιητικού"
       ],
       "Secure email based in Switzerland": [
         ""
@@ -9271,10 +9256,10 @@
         "Τι νέο υπάρχει"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
-        ""
+        "Διαμόρφωση WireGuard"
       ],
       "Your ${ domain } address is active": [
         "Η διεύθυνσή σας τομέα ${ domain } είναι ενεργή"

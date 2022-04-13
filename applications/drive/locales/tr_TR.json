@@ -45,7 +45,7 @@
         "Uygula"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Ekran görüntüsü ekle"
       ],
       "Back": [
         "Geri"
@@ -184,6 +184,9 @@
       "Download": [
         "İndir"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         "Drive kilitlendi"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
+      ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
       ],
       "Expand folder": [
         "Klasörü genişlet"
@@ -803,10 +809,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Kapat"
       ],
       "Open": [
-        ""
+        "Aç"
       ]
     },
     "Confirm modal title": {
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
@@ -2641,7 +2650,7 @@
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum büyük olasılıkla yakın zamanda yapılmış bir parola sıfırlama işleminden kaynaklanıyor.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "En fazla ${ MAX_CUSTOM_PASSWORD_LENGTH } karakter yazılabilir"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
@@ -2699,6 +2708,9 @@
       ],
       "Queued": [
         "Sıraya alındı"
+      ],
+      "recommended browser": [
+        ""
       ],
       "Recovery process might take some time.": [
         "Kurtarma işlemi biraz zaman alabilir."
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
       ],
@@ -3054,7 +3069,7 @@
         "Tüm doğrulanmamış ögelere uygula"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Ekran görüntüsü ekle"
       ],
       "Audio file": [
         "Ses dosyası"
@@ -3096,7 +3111,7 @@
         "Oluşturulma"
       ],
       "Delete": [
-        ""
+        "Sil"
       ],
       "Delete drive?": [
         "Sürücü silinsin mi?",
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Beta erişimini etkinleştir"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Drive araması etkinleştiriliyor"
       ],
       "Encrypt emails": [
         "E-postaları şifrele"
@@ -3773,7 +3788,7 @@
         "Ad veya e-posta adresi ile arayın"
       ],
       "Select": [
-        ""
+        "Seçin"
       ],
       "Start typing an email address": [
         "Bir e-posta adresi yazmaya başlayın"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Beta erişimi"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Tüm etkin aktarımları iptal et"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Çöp kutusunu boşalt"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Drive aramasını etkinleştir"
       ],
       "Enter password to download": [
         "İndirmek için parolayı yazın"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Klasörlerin bilgileri"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } sonuç bulundu",
+        "${ searchView.numberOfResults } sonuç bulundu"
       ],
       "Groups": [
         "Gruplar"
@@ -4330,9 +4352,6 @@
       ],
       "Search results": [
         "Arama sonuçları"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Arama sonucu: ${ searchView.numberOfResults } eşleşme bulundu"
       ],
       "Searching…": [
         "Aranıyor…"

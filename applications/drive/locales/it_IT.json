@@ -184,6 +184,9 @@
       "Download": [
         "Scarica"
       ],
+      "Download anyway": [
+        "Scarica comunque"
+      ],
       "Drive Locked": [
         "Spazio Bloccato"
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
+      ],
+      "Enable drive search": [
+        "Abilita la ricerca di unità"
       ],
       "Expand folder": [
         "Espandi cartella"
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
       ],
+      "Enable drive search": [
+        "Abilita la ricerca di unità"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
@@ -2641,7 +2650,7 @@
         "Una delle tue unità crittografate è bloccata. Ciò è probabilmente dovuto a una recente reimpostazione della password.${ BrElement }\n${ BrElement }\n${ questionText }"
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Sono consentiti solo ${ MAX_CUSTOM_PASSWORD_LENGTH } caratteri"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Cambia queste impostazioni solo se stai usando PGP con destinatari non-${ BRAND_NAME }."
@@ -2699,6 +2708,9 @@
       ],
       "Queued": [
         "Accodato"
+      ],
+      "recommended browser": [
+        "browser consigliato"
       ],
       "Recovery process might take some time.": [
         "Il processo di recupero potrebbe richiedere del tempo."
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Il tuo account ha una fattura scaduta. Il tuo accesso sarà presto limitato. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        "Il tuo browser attuale non supporta il download di file di grandi dimensioni a causa dell'indisponibilità degli operatori del servizio. Il download di file di grandi dimensioni potrebbe bloccarsi o lasciare che il browser non risponda. Utilizza le versioni più recenti di un ${ recommendedBrowser } e riprova."
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account Proton."
       ],
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Abilita Accesso Beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        "Abilitazione della ricerca di unità"
       ],
       "Encrypt emails": [
         "Email criptate"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Accesso Beta"
       ],
+      "Browser might run out of memory": [
+        "Il browser potrebbe esaurire la memoria"
+      ],
       "Cancel all active transfers": [
         "Annulla tutti i trasferimenti attivi"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Svuota il cestino"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        "Abilita la ricerca di unità"
       ],
       "Enter password to download": [
         "Inserisci la password per scaricare"
@@ -4219,6 +4237,10 @@
       ],
       "Folders details": [
         "Dettagli cartelle"
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Trovato ${ searchView.numberOfResults } risultato",
+        "Trovati ${ searchView.numberOfResults } risultati"
       ],
       "Groups": [
         "Gruppi"
@@ -4330,9 +4352,6 @@
       ],
       "Search results": [
         "Risultati di ricerca"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Risultati della ricerca: ${ searchView.numberOfResults } trovati"
       ],
       "Searching…": [
         "Ricerca…"

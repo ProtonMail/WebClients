@@ -934,7 +934,7 @@
         "Sken iqeṛṛa"
       ],
       "View HTML": [
-        ""
+        "Wali HTML"
       ],
       "View invoice": [
         "Wali tafaturt"
@@ -1060,7 +1060,7 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Afaylu ICS ilem"
       ],
       "Invalid event": [
         "Tadyant d tarameɣtut"
@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } neɣ ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } n tansa n yimayl",
         "${ addressCount } n tansiwin n yimayl"
@@ -3812,10 +3815,10 @@
         "/aggur."
       ],
       "5 email addresses": [
-        ""
+        "5 n tansiwin n yimayl"
       ],
       "5 GB storage": [
-        ""
+        "5 GAṬ n weḥraz"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Tafyirt n tririt d yiwen gar yiberdan iɣellsanen n ummesten n unekcum ɣer umiḍan-ik·im. Tzemreḍ ad tt-tesqedceḍ akkenad tkecmeḍɣer umiḍan-ik·im, daɣen, ad d-terreḍ isefka-inek·inem iwgelhanen ma tettuḍ awal-ik·im uffir."
@@ -4212,6 +4215,9 @@
       ],
       "Learn more": [
         "Issin ugar"
+      ],
+      "learn more": [
+        "issin ugar"
       ],
       "Left to Right": [
         "Seg uzelmad s ayeffus"
@@ -4659,7 +4665,7 @@
         ""
       ],
       "Unlimited messages": [
-        ""
+        "Iznan war talast"
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -5183,7 +5189,7 @@
         "Lqem n yiminig"
       ],
       "Calendar": [
-        ""
+        "Awitay"
       ],
       "Calendars": [
         "Iwitayen"
@@ -5225,7 +5231,7 @@
         "Azemz:"
       ],
       "Delete": [
-        ""
+        "Kkes"
       ],
       "Display name": [
         "Isem ittwaseknen"
@@ -5321,7 +5327,7 @@
         "Ayyure-nni kan ineggura"
       ],
       "Location": [
-        ""
+        "Adeg"
       ],
       "Mailbox password": [
         "Awal uffir n tnaka n yimayl"
@@ -5695,7 +5701,7 @@
         "S yitran"
       ],
       "Terms": [
-        ""
+        "Tiwtilin"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
         "Afaylu-a ICS yegber ugar n tedyant. Ttxil sader-it-id tketreḍ tidyanin deg ${ calendarAppName }"
@@ -6195,7 +6201,7 @@
         "Nadi isem, imayl neɣ agraw"
       ],
       "Select": [
-        ""
+        "Fren"
       ],
       "Start date": [
         "Azemz n tazwara"
@@ -6819,7 +6825,7 @@
         ""
       ],
       "the last month": [
-        ""
+        "aggur aneggaru"
       ]
     },
     "Time unit": {

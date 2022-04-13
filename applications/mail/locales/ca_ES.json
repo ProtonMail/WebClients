@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        ""
+      ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
         "${ addressCount } adreces de correu electrònic"
@@ -4212,6 +4215,9 @@
       ],
       "Learn more": [
         "Més informació"
+      ],
+      "learn more": [
+        ""
       ],
       "Left to Right": [
         "Esquerra a Dreta"

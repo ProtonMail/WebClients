@@ -184,6 +184,9 @@
       "Download": [
         "Descarregar"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         ""
       ],
@@ -211,6 +214,9 @@
       "enable desktop notifications": [
         "activar les notificacions d'escriptori"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Expand folder": [
         ""
       ],
@@ -227,7 +233,7 @@
         "Reenviar com a adjunt"
       ],
       "Get link": [
-        ""
+        "Obtenir l'enllaç"
       ],
       "Get started": [
         "Començar"
@@ -281,7 +287,7 @@
         "Inicia la sessió"
       ],
       "Manage link": [
-        ""
+        "Gestiona l'enllaç"
       ],
       "Mark for deletion": [
         "Marcar per eliminar"
@@ -413,7 +419,7 @@
         "Desar"
       ],
       "Search": [
-        ""
+        "Cerca"
       ],
       "Search drive": [
         ""
@@ -431,7 +437,7 @@
         "Compartir arxius"
       ],
       "Share item": [
-        ""
+        "Compartiu l'element"
       ],
       "Share options": [
         "Opcions per a compartir"
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
       ],
@@ -2700,6 +2709,9 @@
       "Queued": [
         "En cua"
       ],
+      "recommended browser": [
+        ""
+      ],
       "Recovery process might take some time.": [
         "El procés de recuperació pot trigar una estona."
       ],
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "El vostre compte té almenys una factura en retard. El vostre accés aviat quedarà restringit. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Activar Accés Beta"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Accés Beta"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Cancel·leu totes les transferències actives"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Buidar paperera"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         ""
@@ -4218,6 +4236,10 @@
         "Detalls de la carpeta"
       ],
       "Folders details": [
+        ""
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
         ""
       ],
       "Groups": [
@@ -4329,9 +4351,6 @@
         "Restaureu els vostres fitxers"
       ],
       "Search results": [
-        ""
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
         ""
       ],
       "Searching…": [

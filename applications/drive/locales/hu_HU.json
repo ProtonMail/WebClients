@@ -45,7 +45,7 @@
         "Alkalmazás"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Képernyőkép(ek) csatolása"
       ],
       "Back": [
         "Vissza"
@@ -184,6 +184,9 @@
       "Download": [
         "Letöltés"
       ],
+      "Download anyway": [
+        ""
+      ],
       "Drive Locked": [
         ""
       ],
@@ -210,6 +213,9 @@
       ],
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
+      ],
+      "Enable drive search": [
+        ""
       ],
       "Expand folder": [
         ""
@@ -803,10 +809,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Bezárás"
       ],
       "Open": [
-        ""
+        "Megnyitás"
       ]
     },
     "Confirm modal title": {
@@ -2456,6 +2462,9 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
+      "Enable drive search": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
@@ -2641,7 +2650,7 @@
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
-        "Csak ${ MAX_CUSTOM_PASSWORD_LENGTH } számú karakter engedélyezett"
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
@@ -2699,6 +2708,9 @@
       ],
       "Queued": [
         "Sorba állítva"
+      ],
+      "recommended browser": [
+        ""
       ],
       "Recovery process might take some time.": [
         "A helyreállítás eltarthat egy ideig."
@@ -2926,6 +2938,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
       ],
+      "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
+        ""
+      ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
@@ -3054,7 +3069,7 @@
         "Alkalmazás az összes ellenőrizetlen elemre"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Képernyőkép(ek) csatolása"
       ],
       "Audio file": [
         "Hangfájl"
@@ -3096,7 +3111,7 @@
         ""
       ],
       "Delete": [
-        ""
+        "Törlés"
       ],
       "Delete drive?": [
         "",
@@ -3126,8 +3141,8 @@
       "Enable Beta Access": [
         "Béta hozzáférés engedélyezése"
       ],
-      "Enabling Drive Search": [
-        "Enabling drive search"
+      "Enabling drive search": [
+        ""
       ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
@@ -3773,7 +3788,7 @@
         "Név vagy e-mail cím keresése"
       ],
       "Select": [
-        ""
+        "Kiválasztás"
       ],
       "Start typing an email address": [
         "Kezdjen el írni egy e-mail címet"
@@ -4065,6 +4080,9 @@
       "Beta Access": [
         "Béta hozzáférés"
       ],
+      "Browser might run out of memory": [
+        ""
+      ],
       "Cancel all active transfers": [
         "Minden folyamatban lévő átvitel megszakítása"
       ],
@@ -4187,8 +4205,8 @@
       "Empty trash": [
         "Lomtár kiürítése"
       ],
-      "Enable Drive Search": [
-        "Enable drive search"
+      "Enable drive search": [
+        ""
       ],
       "Enter password to download": [
         ""
@@ -4218,6 +4236,10 @@
         "Mappa adatai"
       ],
       "Folders details": [
+        ""
+      ],
+      "Found ${ searchView.numberOfResults } result": [
+        "",
         ""
       ],
       "Groups": [
@@ -4330,9 +4352,6 @@
       ],
       "Search results": [
         "Keresési eredmények"
-      ],
-      "Search results: ${ searchView.numberOfResults } found": [
-        "Keresés eredményei: ${ searchView.numberOfResults } találat"
       ],
       "Searching…": [
         "Keresés…"

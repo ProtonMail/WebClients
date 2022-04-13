@@ -84,7 +84,7 @@
         "Archiveren"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Schermafdruk(ken) toevoegen"
       ],
       "Attachment": [
         "Bijlage"
@@ -392,7 +392,7 @@
         "Ik heb een vraag"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "Afbeeldingen zullen worden ingeladen zonder proxy"
       ],
       "import": [
         "importeren"
@@ -447,7 +447,7 @@
         "Meer informatie"
       ],
       "Less search options": [
-        ""
+        "Minder zoekopties"
       ],
       "Load": [
         "Laden"
@@ -573,7 +573,7 @@
         "Nee"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking."
       ],
       "No, I won't attend": [
         "Nee, ik zal niet aanwezig zijn"
@@ -780,7 +780,7 @@
         "Minder weergeven"
       ],
       "Show less search options": [
-        ""
+        "Minder zoekopties weergeven"
       ],
       "Show messages": [
         "Toon berichten"
@@ -972,7 +972,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "Doorzoek berichten"
       ]
     },
     "Actions message": {
@@ -3666,6 +3666,9 @@
       ]
     },
     "Info": {
+      "${ activateLink } or ${ learnMoreLink }.": [
+        "${ activateLink } of ${ learnMoreLink }."
+      ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailadres",
         "${ addressCount } e-mailadressen"
@@ -4213,6 +4216,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "learn more": [
+        "meer informatie"
+      ],
       "Left to Right": [
         "Van links naar rechts"
       ],
@@ -4319,7 +4325,7 @@
         "Geen resultaten gevonden"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
+        "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
@@ -4481,7 +4487,7 @@
         "Sorry, dit bericht bestaat niet of is al verlopen"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Opslagruimte is gedeeld doorheen ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, en ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "Bewaar en deel bestanden veilig met ${ DRIVE_APP_NAME }."
@@ -5162,7 +5168,7 @@
         "ELK"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Schermafbeelding(en) toevoegen"
       ],
       "Attachments": [
         "Bijlagen"
@@ -5225,7 +5231,7 @@
         "Datum:"
       ],
       "Delete": [
-        ""
+        "Verwijderen"
       ],
       "Display name": [
         "Weergavenaam"
@@ -5519,10 +5525,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "Van"
       ],
       "To": [
-        ""
+        "Naar"
       ]
     },
     "Label to change composer mode": {
@@ -6195,7 +6201,7 @@
         "Zoek op naam, e-mailadres of groep"
       ],
       "Select": [
-        ""
+        "Selecteer"
       ],
       "Start date": [
         "Begindatum"
