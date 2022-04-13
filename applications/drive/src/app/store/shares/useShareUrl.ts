@@ -77,8 +77,14 @@ export default function useShareUrl() {
         return decryptSessionKey({ message: await getMessage(keyPacket), passwords: [password] });
     };
 
-    const decryptShareUrl = async ({ Password, SharePassphraseKeyPacket, SharePasswordSalt, ...rest }: ShareURL) => {
-        const privateKeys = (await driveCrypto.getPrimaryAddressKeys()).map(({ privateKey }) => privateKey);
+    const decryptShareUrl = async ({
+        CreatorEmail,
+        Password,
+        SharePassphraseKeyPacket,
+        SharePasswordSalt,
+        ...rest
+    }: ShareURL) => {
+        const privateKeys = await driveCrypto.getPrivateAddressKeys(CreatorEmail);
         const decryptedPassword = await decryptUnsigned({
             armoredMessage: Password,
             privateKey: privateKeys,
@@ -97,6 +103,7 @@ export default function useShareUrl() {
         return {
             ShareURL: {
                 ...rest,
+                CreatorEmail,
                 Password: decryptedPassword,
                 SharePassphraseKeyPacket,
                 SharePasswordSalt,
@@ -133,6 +140,15 @@ export default function useShareUrl() {
             email,
             password,
         };
+    };
+
+    const reencryptShareUrlPassword = async (decryptedPassword: string, creatorEmail: string) => {
+        const { publicKey } = await driveCrypto.getPrivatePrimaryAddressKeys(creatorEmail);
+        const password = await encryptUnsigned({
+            message: stringToUint8Array(encodeUtf8(decryptedPassword)),
+            publicKey,
+        });
+        return password;
     };
 
     const createShareUrl = async (
@@ -309,6 +325,7 @@ export default function useShareUrl() {
 
     const getFieldsToUpdateForPassword = async (
         newPassword: string,
+        creatorEmail: string,
         flags: number,
         keyInfo: SharedURLSessionKeyPayload
     ): Promise<Partial<UpdateSharedURL>> => {
@@ -316,7 +333,7 @@ export default function useShareUrl() {
 
         const [
             SharePassphraseKeyPacket,
-            { password: Password },
+            Password,
             {
                 Auth: { Salt: UrlPasswordSalt, Verifier: SRPVerifier, ModulusID: SRPModulusID },
             },
@@ -324,7 +341,7 @@ export default function useShareUrl() {
             computeKeyPassword(newPassword, sharePasswordSalt).then((sharedLinkPassword) =>
                 encryptSymmetricSessionKey(shareSessionKey, sharedLinkPassword)
             ),
-            encryptShareUrlPassword(newPassword),
+            reencryptShareUrlPassword(newPassword, creatorEmail),
             srpGetVerify({
                 api,
                 credentials: { password: newPassword },
@@ -344,6 +361,7 @@ export default function useShareUrl() {
 
     const updateShareUrl = async (
         shareUrlInfo: {
+            creatorEmail: string;
             shareId: string;
             shareUrlId: string;
             flags: number;
@@ -352,7 +370,7 @@ export default function useShareUrl() {
         newDuration?: number | null,
         newPassword?: string
     ) => {
-        const { shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
+        const { creatorEmail, shareId, shareUrlId, flags, keyInfo } = shareUrlInfo;
         let fieldsToUpdate: Partial<UpdateSharedURL> = {};
 
         if (newDuration !== undefined) {
@@ -360,7 +378,12 @@ export default function useShareUrl() {
         }
 
         if (newPassword !== undefined) {
-            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(newPassword, flags, keyInfo);
+            const fieldsToUpdateForPassword = await getFieldsToUpdateForPassword(
+                newPassword,
+                creatorEmail,
+                flags,
+                keyInfo
+            );
             fieldsToUpdate = {
                 ...fieldsToUpdate,
                 ...fieldsToUpdateForPassword,
@@ -461,6 +484,7 @@ export default function useShareUrl() {
         loadShareUrlNumberOfAccesses,
         updateShareUrl: (
             shareUrlInfo: {
+                creatorEmail: string;
                 shareId: string;
                 shareUrlId: string;
                 flags: number;
