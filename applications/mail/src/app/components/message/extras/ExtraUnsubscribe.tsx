@@ -176,8 +176,8 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     }
 
     const handleSubmit = async () => {
-        await submit();
         unsubscribeModalProps.onClose();
+        await submit();
         await api(markAsUnsubscribed([messageID]));
         await call();
         createNotification({ text: c('Success').t`Mail list unsubscribed` });
