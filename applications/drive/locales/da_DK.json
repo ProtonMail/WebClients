@@ -45,7 +45,7 @@
         "Anvend"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Vedhæft skærmbillede(r)"
       ],
       "Back": [
         "Tilbage"
@@ -57,10 +57,10 @@
         "Annullér"
       ],
       "Cancel all": [
-        ""
+        "Stop alle"
       ],
       "Cancel all downloads": [
-        ""
+        "Afbryd alle downloads"
       ],
       "Cancel all uploads": [
         "Annullér alle uploads"
@@ -185,7 +185,7 @@
         "Hent"
       ],
       "Download anyway": [
-        ""
+        "Download alligevel"
       ],
       "Drive Locked": [
         "Drev låst"
@@ -215,7 +215,7 @@
         "aktivér skrivebordsmeddelelser"
       ],
       "Enable drive search": [
-        ""
+        "Aktiver søgning på drev"
       ],
       "Expand folder": [
         "Udvid mappe"
@@ -242,7 +242,7 @@
         "Få bekræftelseskode"
       ],
       "Go to label": [
-        ""
+        "Gå til etikette"
       ],
       "Go to panel ${ index }": [
         "Gå til panel ${ index }"
@@ -254,7 +254,7 @@
         "Gå til indstillinger"
       ],
       "Got it": [
-        ""
+        "Forstået"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -278,7 +278,7 @@
         "Importer fra .csv eller vCard"
       ],
       "Learn more": [
-        ""
+        "Få mere at vide"
       ],
       "Load image": [
         "Indlæs billede"
@@ -335,7 +335,7 @@
         "Åbn navigation"
       ],
       "Pause all": [
-        ""
+        "Pause alle"
       ],
       "Pause download": [
         "Sæt download på pause"
@@ -395,7 +395,7 @@
         "Nulstil zoom"
       ],
       "Restart all": [
-        ""
+        "Genstart alle"
       ],
       "Restart download": [
         "Genstart download"
@@ -407,7 +407,7 @@
         "Gendan fra papirkurven"
       ],
       "Resume all": [
-        ""
+        "Genoptag alle"
       ],
       "Resume download": [
         "Genoptag download"
@@ -458,7 +458,7 @@
         "Vis etiketter"
       ],
       "Show preview": [
-        ""
+        "Vis forhåndsvisning"
       ],
       "Sign out": [
         "Log ud"
@@ -521,7 +521,7 @@
         "Opgradér"
       ],
       "Upload anyway": [
-        ""
+        "Upload alligevel"
       ],
       "Upload file": [
         "Upload fil"
@@ -595,7 +595,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        ""
+        "Beta-adgang giver dig mulighed for at bruge betaversionen af ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }, før de frigives til offentligheden. Det betyder, at du kan være den første til at prøve nye produkter, få nye opdateringer og bruge nye funktioner."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Hvis du støder på problemer, kan du altid deaktivere beta-adgang."
@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "Indtast 6 cifre"
       ],
-      "Failed to download a file": [
-        "Kunne ikke downloade en fil"
-      ],
-      "Failed to download a folder": [
-        "Kunne ikke downloade en mappe"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Filen \"${ item.name }\" kan ikke uploades på grund af \"${ error }\" fejl"
       ],
@@ -2439,10 +2433,10 @@
         "Slet drev"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Digital signatur verificeret. Denne fil blev uploaded sikkert af ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
         ""
@@ -2477,11 +2471,14 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Kunne ikke åbne et sikkert link. Årsagen er: ${ error }"
       ],
-      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+      "File \"${ name }\" was deleted during download": [
         ""
       ],
+      "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
+        "Filen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
+      ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Filen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
       ],
       "File will not be uploaded": [
         "Fil vil ikke blive uploadet"
@@ -2489,14 +2486,17 @@
       "Finalizing": [
         "Færdiggører"
       ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
+      ],
       "Folder contents will merge into a single folder": [
         "Mappeindhold vil blive flettet sammen til én enkelt mappe"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Mappen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Mappen mangler sin signatur. Vi kunne ikke verificere, hvem der uploadede ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Mappen vil ikke blive uploadet"
@@ -2545,7 +2545,7 @@
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "Indexing search results…": [
-        ""
+        "Indexerer søgeresultater…"
       ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
@@ -2719,7 +2719,7 @@
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
       "Search cannot be enabled in this browser": [
-        ""
+        "Søgning kan ikke aktiveres i denne browser"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
@@ -3002,22 +3002,22 @@
     },
     "Item": {
       "file attributes": [
-        ""
+        "filegenskaber"
       ],
       "file data": [
-        ""
+        "fildata"
       ],
       "keys": [
-        ""
+        "nøgler"
       ],
       "name": [
-        ""
+        "navn"
       ],
       "name hash": [
-        ""
+        "navne hash"
       ],
       "thumbnail": [
-        ""
+        "miniature"
       ]
     },
     "Key badge": {
@@ -3066,10 +3066,10 @@
         "Anvend på alle dubletmapper"
       ],
       "Apply to all unverified items": [
-        ""
+        "Anvend på alle uverificerede objekter"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Vedhæft skærmbillede(r)"
       ],
       "Audio file": [
         "Lydfil"
@@ -3087,7 +3087,7 @@
         "Kalendere"
       ],
       "Cancel download": [
-        ""
+        "Afbryd download"
       ],
       "Category": [
         "Kategori"
@@ -3111,7 +3111,7 @@
         "Oprettet"
       ],
       "Delete": [
-        ""
+        "Slet"
       ],
       "Delete drive?": [
         "Slet drev?",
@@ -3127,7 +3127,7 @@
         "Spørg ikke igen"
       ],
       "Download anyway": [
-        ""
+        "Download alligevel"
       ],
       "Email address": [
         "E-mailadresse"
@@ -3471,13 +3471,13 @@
         ""
       ],
       "\"${ name }\" deleted permanently from trash": [
-        ""
+        "\"${ name }\" permanent slettet fra papirkurven"
       ],
       "\"${ name }\" failed to be created": [
         ""
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        ""
+        "\"${ name }\" kunne ikke slettes permanent fra papirkurven"
       ],
       "\"${ name }\" failed to be moved": [
         ""
@@ -3508,12 +3508,12 @@
         "${ count } emner kunne ikke dekrypteres"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
-        "",
-        ""
+        "${ numberOfItems } element permanent slettet fra papirkurven",
+        "${ numberOfItems } elementer permanent slettet fra papirkurven"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "",
-        ""
+        "${ numberOfItems } element kunne ikke fjernes permanent fra papirkurven",
+        "${ numberOfItems } elementer kunne ikke fjernes permanent fra papirkurven"
       ],
       "${ numberOfItems } item failed to be moved": [
         "",
@@ -3540,12 +3540,12 @@
         ""
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "",
-        ""
+        "${ numberOfItems } link til din fil kunne ikke slettes",
+        "${ numberOfItems } links til din fil kunne ikke slettes"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "",
-        ""
+        "${ numberOfItems } link til din fil blev slettet",
+        "${ numberOfItems } links til din fil blev slettet"
       ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
@@ -3621,16 +3621,16 @@
         "Undermappe kunne ikke indlæses"
       ],
       "The link to \"${ name }\" failed to be deleted": [
-        ""
+        "Linket til \"${ name }\" kune ikke slettes"
       ],
       "The link to \"${ name }\" was deleted": [
-        ""
+        "Linket til \"${ name }\" blev slettet"
       ],
       "The link to your item failed to be deleted": [
-        ""
+        "Linket til din fil kunne ikke slettes"
       ],
       "The link to your item was deleted": [
-        ""
+        "Linket til din fil blev slettet"
       ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
@@ -3639,7 +3639,7 @@
         "Dine gamle filer vil blive slettet om 72 timer"
       ],
       "Your settings failed to be saved": [
-        ""
+        "Dine indstillinger kunne ikke gemmes"
       ],
       "Your settings have been changed successfully": [
         "Dine indstillinger er blevet ændret"
@@ -3652,24 +3652,24 @@
     },
     "Onboarding Action": {
       "Enable Beta Access": [
-        ""
+        "Aktiver Betaadgang"
       ],
       "Start using ${ appName }": [
-        ""
+        "Begynd at bruge ${ appName }"
       ],
       "Upgrade account": [
-        ""
+        "Opgrader konto"
       ]
     },
     "Onboarding Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        ""
+        "${ appName } er i øjeblikket i 'tidlig adgang' og er kun tilgængelig for brugere med et betalt abonnement."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
-        ""
+        "${ appName } er i øjeblikket kun tilgængelig, hvis du aktiverer betaadgang."
       ],
       "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        ""
+        "Beskyt alle dine filer med ende-til-ende-kryptering. Brug ${ appName } til at gemme og dele dine filer sikkert."
       ]
     },
     "Onboarding Proton": {
@@ -3706,13 +3706,13 @@
     },
     "Onboarding Title": {
       "${ appName } is in Beta": [
-        ""
+        "${ appName } er i Beta"
       ],
       "Meet your new secure file storage": [
-        ""
+        "Mød dit nye sikre fillager"
       ],
       "Upgrade to access ${ appName }": [
-        ""
+        "Opgrader for at få adgang til ${ appName }"
       ]
     },
     "Option": {
@@ -4053,7 +4053,7 @@
         "Konto suspenderet"
       ],
       "Active": [
-        ""
+        "Aktiv"
       ],
       "Add contact group name": [
         "Tilføj kontaktgruppenavn"
@@ -4072,7 +4072,7 @@
         "Adresser"
       ],
       "All": [
-        ""
+        "Alle"
       ],
       "Back": [
         "Tilbage"
@@ -4081,7 +4081,7 @@
         "Beta-adgang"
       ],
       "Browser might run out of memory": [
-        ""
+        "Browseren løber måske tør for hukommelse"
       ],
       "Cancel all active transfers": [
         "Annuller alle aktive overførsler"
@@ -4093,7 +4093,7 @@
         "Rydder data"
       ],
       "Completed": [
-        ""
+        "Fuldført"
       ],
       "Contact details": [
         "Kontaktdetaljer"
@@ -4164,10 +4164,10 @@
         "Download mislykkedes"
       ],
       "Download unverified file?": [
-        ""
+        "Hent ubekræftet fil?"
       ],
       "Download unverified folder?": [
-        ""
+        "Hent ubekræftet mappe?"
       ],
       "Downloading": [
         "Downloader"
@@ -4206,7 +4206,7 @@
         "Tøm Papirkurv"
       ],
       "Enable drive search": [
-        ""
+        "Aktiver søgning på drev"
       ],
       "Enter password to download": [
         "Indtast adgangskode for at downloade"
@@ -4215,13 +4215,13 @@
         "Indtast din adgangskode"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Indtast dit brugernavn eller ${ MAIL_APP_NAME } e-mailadresse"
       ],
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
       "Failed": [
-        ""
+        "Mislykkedes"
       ],
       "File details": [
         "Fildetaljer"
@@ -4239,8 +4239,8 @@
         "Mappedetaljer"
       ],
       "Found ${ searchView.numberOfResults } result": [
-        "",
-        ""
+        "Fandt ${ searchView.numberOfResults } resultat",
+        "Fandt ${ searchView.numberOfResults } resultater"
       ],
       "Groups": [
         "Grupper"
@@ -4294,7 +4294,7 @@
         "Navn"
       ],
       "No results found": [
-        ""
+        "Ingen resultater fundet"
       ],
       "Number of files": [
         "Antal filer"
@@ -4321,7 +4321,7 @@
         "Andre navne"
       ],
       "Performance might be affected": [
-        ""
+        "Ydeevnen kan blive påvirket"
       ],
       "Phone numbers": [
         "Telefonnumre"
@@ -4351,10 +4351,10 @@
         "Gendan dine filer"
       ],
       "Search results": [
-        ""
+        "Søgeresultater"
       ],
       "Searching…": [
-        ""
+        "Søger…"
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -4407,14 +4407,17 @@
       "The file or folder failed to be downloaded": [
         ""
       ],
-      "The link does not exist": [
+      "The internet connection was interrupted": [
         ""
+      ],
+      "The link does not exist": [
+        "Linket eksisterer ikke"
       ],
       "The link either does not exist or has expired": [
         "Linket findes enten ikke eller er udløbet"
       ],
       "The link failed to be loaded": [
-        ""
+        "Linket kunne ikke indlæses"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         ""
@@ -4465,7 +4468,7 @@
         "Din mappe er klar til download"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Din gratis prøveperiode udløber snart, ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {

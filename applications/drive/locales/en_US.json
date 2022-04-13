@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         ""
       ],
-      "Failed to download a file": [
-        ""
-      ],
-      "Failed to download a folder": [
-        ""
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         ""
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         ""
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
       ],
@@ -2487,6 +2484,9 @@
         ""
       ],
       "Finalizing": [
+        ""
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
         ""
       ],
       "Folder contents will merge into a single folder": [
@@ -4405,6 +4405,9 @@
         ""
       ],
       "The file or folder failed to be downloaded": [
+        ""
+      ],
+      "The internet connection was interrupted": [
         ""
       ],
       "The link does not exist": [

@@ -1787,12 +1787,6 @@
       "Enter 6 digits": [
         "Введите 6 цифр"
       ],
-      "Failed to download a file": [
-        "Не удалось скачать файл"
-      ],
-      "Failed to download a folder": [
-        "Не удалось скачать папку"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Файл \"${ item.name }\" не может быть загружен из-за \"${ error }\" ошибки"
       ],
@@ -2559,6 +2553,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не удалось открыть защищенную ссылку. Причина: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "У файла отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
       ],
@@ -2570,6 +2567,9 @@
       ],
       "Finalizing": [
         "Завершение"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Содержимое папки объединяется в одну папку"
@@ -4556,6 +4556,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Не удалось скачать файл или папку"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Ссылка не существует"

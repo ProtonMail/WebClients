@@ -1,6 +1,6 @@
 {
   "headers": {
-    "plural-forms": "nplurals=1; plural=0;",
+    "plural-forms": "nplurals=2; plural=(n != 1);",
     "language": "es_LA"
   },
   "contexts": {
@@ -59,7 +59,7 @@
         "Aplicar"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s)"
       ],
       "Back": [
         "Volver"
@@ -110,7 +110,7 @@
         "Copiar correo al portapapeles"
       ],
       "Create": [
-        ""
+        "Crear"
       ],
       "Create account": [
         "Crear una cuenta"
@@ -176,7 +176,7 @@
         "habilitar las notificaciones de escritorio"
       ],
       "Extend": [
-        ""
+        "Ampliar"
       ],
       "Get ${ vpnPlus }": [
         "Obtener ${ vpnPlus }"
@@ -215,7 +215,7 @@
         "Mantener mi cuenta ${ BRAND_NAME } ${ currentPlanName }"
       ],
       "Load more": [
-        ""
+        "Cargar más"
       ],
       "Loading verification": [
         "Cargando verificación"
@@ -305,10 +305,10 @@
         "Reintentar"
       ],
       "Revoke": [
-        ""
+        "Revocar"
       ],
       "Revoke ${ name }": [
-        ""
+        "Revocar ${ name }"
       ],
       "Save": [
         "Guardar"
@@ -439,41 +439,50 @@
     },
     "Addon": {
       "+ ${ addresses } email address": [
-        "+ ${ addresses } dirección de correo"
+        "+ ${ addresses } dirección de correo",
+        "+ ${ addresses } direcciones de correo"
       ],
       "+ ${ domains } custom domain": [
+        "+ ${ domains } dominio personalizado",
         "+ ${ domains } dominio personalizado"
       ],
       "+ ${ members } user": [
+        "+ ${ members } usuario",
         "+ ${ members } usuario"
       ],
       "+ ${ storage } storage": [
         "+ ${ storage } de almacenamiento"
       ],
       "+ ${ vpn } connection": [
+        "+ ${ vpn } conexión",
         "+ ${ vpn } conexión"
       ]
     },
     "Addon unit for subscription": {
       "${ addressAddon.MaxAddresses } address": [
+        "${ addressAddon.MaxAddresses } dirección",
         "${ addressAddon.MaxAddresses } dirección"
       ],
       "${ domainAddon.MaxDomains } domain": [
+        "${ domainAddon.MaxDomains } dominio",
         "${ domainAddon.MaxDomains } dominio"
       ],
       "${ memberAddon.MaxMembers } user": [
+        "${ memberAddon.MaxMembers } usuario",
         "${ memberAddon.MaxMembers } usuario"
       ],
       "${ vpnAddon.MaxVPN } connection": [
+        "${ vpnAddon.MaxVPN } conexión",
         "${ vpnAddon.MaxVPN } conexión"
       ],
       "${ vpnBonus } connection": [
-        "${ vpnBonus } conexión"
+        "${ vpnBonus } conexión",
+        "${ vpnBonus } conexiones"
       ]
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Esto desconectará todos los routers y clientes que usen este certificado."
       ]
     },
     "Apps dropdown": {
@@ -658,7 +667,7 @@
         "Cerrar"
       ],
       "Open": [
-        ""
+        "Abrir"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -673,10 +682,12 @@
     },
     "Countdown unit": {
       "${ days } day": [
+        "",
         ""
       ],
       "${ monthsWithYears } month": [
-        "${ monthsWithYears } mes"
+        "${ monthsWithYears } mes",
+        "${ monthsWithYears } meses"
       ]
     },
     "Country name": {
@@ -1681,7 +1692,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certificado ${ name } no encontrado o ya revocado"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -1694,7 +1705,8 @@
         "Acceso a todos los países"
       ],
       "Connection for up to ${ plusVpnConnections } device": [
-        "Conexión para hasta ${ plusVpnConnections } dispositivo"
+        "Conexión para hasta ${ plusVpnConnections } dispositivo",
+        "Conexión para hasta ${ plusVpnConnections } dispositivos"
       ],
       "Fastest VPN servers": [
         "Servidores VPN más rápidos"
@@ -1868,10 +1880,12 @@
         "${ mailProfessional } comienza con un usuario, cada usuario añade 5 GB y 5 direcciones a la cuota de la organización."
       ],
       "${ number } city": [
-        "${ number } ciudad"
+        "${ number } ciudad",
+        "${ number } ciudades"
       ],
       "${ number } server": [
-        "${ number } servidor"
+        "${ number } servidor",
+        "${ number } servidores"
       ],
       "${ planName } plan": [
         "Plan ${ planName }"
@@ -1892,7 +1906,8 @@
         "Se requiere de ${ vpnBasic }, ${ vpnPlus } or ${ visionary } para la conexión a nivel país."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "${ vpnPlus } incluye ${ maxVpn } conexión VPN."
+        "${ vpnPlus } incluye ${ maxVpn } conexión VPN.",
+        "${ vpnPlus } incluye ${ maxVpn } conexiones VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Se requiere ${ vpnPlus } o ${ visionary } para la función de Secure Core."
@@ -1907,7 +1922,8 @@
         "+${ bonusSpace } almacenamiento adicional"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
+        "Más de ${ organization.BonusVPN } conexión para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)",
+        "Más de ${ organization.BonusVPN } conexiones para ${ VPN_APP_NAME } (le permite conectar más dispositivos a la VPN)"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a su suscripción con el cupón ${ code }"
@@ -1928,7 +1944,7 @@
         "Una Internet libre y sin censura debería estar disponible para todos."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Un nombre que le ayude a identificar dónde lo usa para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
       "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
         "Acceda a contenidos bloqueados, como medios sociales, noticias, Wikipedia, YouTube, y muchos otros, sin importar dónde esté."
@@ -2063,7 +2079,7 @@
         "Expirado"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "expira el ${ expirationDate }"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para familias y pequeños equipos; incluye correo y VPN."
@@ -2225,7 +2241,7 @@
         "Una vez que haga clic en \"Degradar\", puede tardar unos minutos en degradar su cuenta a un plan gratuito. "
       ],
       "Or select a particular server:": [
-        ""
+        "O seleccione un servidor en particular:"
       ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "De lo contrario, el acceso a su cuenta será limitado y la cuenta eventualmente deshabilitada."
@@ -2291,7 +2307,7 @@
         "Al restablecer su contraseña, se restablecerán sus claves de cifrado para todos los servicios relacionados con Proton (Correo y VPN). No podrá leer sus mensajes existentes. Si conoce sus credenciales de ${ MAIL_APP_NAME }, NO reinicie. Puede iniciar sesión con ellas ${ hereLink }."
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "Revocar certificado ${ name }"
       ],
       "Route your Internet traffic through the Tor network with a single click.": [
         "Envía todo su tráfico de internet a través de la red Tor con un solo clic."
@@ -2336,7 +2352,7 @@
         "Almacenamiento GB"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "El espacio de almacenamiento se comparte entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Soporte para 1 dominio de correo personalizado"
@@ -2360,7 +2376,7 @@
         "Estos archivos de configuración le permiten elegir a qué servidor de ${ VPN_APP_NAME } se conecta cuando usa una aplicación VPN de terceros o configura una conexión VPN en un enrutador."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
+        "Estas configuraciones son brindadas para funcionar con ruteadores WireGuard y clientes oficiales."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida por una posible violación de la política."
@@ -2438,7 +2454,7 @@
         "Actualizar ahora"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "Use el mejor servidor según la carga actual y la ubicación: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -2631,7 +2647,7 @@
         "Facturada"
       ],
       "Gifted": [
-        ""
+        "Regalía"
       ],
       "Paid": [
         "Pagada"
@@ -2680,16 +2696,20 @@
         "Dirección de ${ MAIL_APP_NAME }"
       ],
       "${ n } VPN connection available": [
-        "${ n } conexión VPN disponible"
+        "${ n } conexión VPN disponible",
+        "${ n } conexiones VPN disponibles"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo"
+        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
+        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } de ${ MaxDomains } dominio personalizado"
+        "${ UsedDomains } de ${ MaxDomains } dominio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } dominios personalizados"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } de ${ MaxMembers } usuario"
+        "${ UsedMembers } de ${ MaxMembers } usuario",
+        "${ UsedMembers } de ${ MaxMembers } usuarios"
       ],
       "1 month": [
         "Un mes"
@@ -2719,7 +2739,7 @@
         "Descuento anual (${ discountPercentage }%)"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjuntar captura(s)"
       ],
       "Back to:": [
         "Volver a:"
@@ -2728,7 +2748,7 @@
         "Bloquear malware solamente"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "Bloquear malware, anuncios y rastreadores"
       ],
       "bonus storage": [
         "almacenamiento adicional"
@@ -2758,13 +2778,13 @@
         "Categoría"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Elija un nombre para el archivo de certificado generado"
       ],
       "Code is 6 digits without spaces": [
         "El código es de 6 dígitos sin espacios"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Configurar para conectarse a ${ serverName }"
       ],
       "Confirm login password": [
         "Confirmar contraseña de inicio de sesión"
@@ -2815,7 +2835,7 @@
         "Eliminar"
       ],
       "Device/certificate name": [
-        ""
+        "Nombre del dispositivo/certificado"
       ],
       "Digits": [
         "Dígitos"
@@ -2863,7 +2883,7 @@
         "Clave"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Nivel de filtrado del bloqueador NetShield"
       ],
       "Login password": [
         "Contraseña de inicio de sesión"
@@ -2890,7 +2910,7 @@
         "Contraseña nueva"
       ],
       "No filter": [
-        ""
+        "Sin filtro"
       ],
       "Non-standard ports": [
         "Puertos no estándar"
@@ -3659,7 +3679,8 @@
     },
     "Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
+        "Aún tiene ${ daysRemaining } día disponible en la cuenta ${ BRAND_NAME } ${ currentPlanName }.",
+        "Aún tiene ${ daysRemaining } días disponibles en la cuenta ${ BRAND_NAME } ${ currentPlanName }."
       ]
     },
     "Plan upsell": {
@@ -3805,16 +3826,16 @@
     },
     "Success notification": {
       "Certificate ${ name } revoked": [
-        ""
+        "Certificado ${ name } revocado"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certificado ampliado hasta el ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Configuración \"${ name }\" creada, tome en cuenta que la clave privada no se almacena y no se mostrará de nuevo, debe copiar o descargar esta configuración."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Creando archivo de configuración para ${ serverName }"
       ]
     },
     "Suffix": {
@@ -3870,13 +3891,13 @@
         "Comparación de planes de ${ VPN_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Dar un nombre a la configuración que se va a generar"
       ],
       "1. Select platform": [
         "1. Seleccionar plataforma"
       ],
       "2. Select platform": [
-        ""
+        "2. Seleccionar la plataforma"
       ],
       "2. Select protocol": [
         "2. Seleccionar protocolo"
@@ -3888,10 +3909,10 @@
         "3. Seleccionar archivo de configuración y descargar"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Seleccionar las opciones de VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Seleccionar un servidor al que conectarse"
       ],
       "Account": [
         "Cuenta"
@@ -4170,7 +4191,7 @@
         "¿Restablecer contraseña?"
       ],
       "Revoke certificate": [
-        ""
+        "Revocar certificado"
       ],
       "Secure Core Servers": [
         "Servidores Secure Core"
@@ -4239,7 +4260,7 @@
         "Novedades"
       ],
       "WireGuard configuration": [
-        ""
+        "Configuración de WireGuard"
       ],
       "You already have a Proton account": [
         "Ya tiene una cuenta en Proton"
@@ -4348,7 +4369,8 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "La contraseña debe tener al menos ${ length } caracter"
+        "La contraseña debe tener al menos ${ length } caracter",
+        "La contraseña debe tener al menos ${ length } caracteres"
       ]
     },
     "VerificationType": {
@@ -4466,13 +4488,16 @@
     },
     "VPN Plan Feature": {
       "${ n } server": [
-        "${ n } servidor"
+        "${ n } servidor",
+        "${ n } servidores"
       ],
       "${ n } VPN connection": [
-        "${ n } conexión VPN"
+        "${ n } conexión VPN",
+        "${ n } conexiones VPN"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfServers } en ${ numberOfCountries } país"
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en ${ numberOfCountries } países"
       ]
     },
     "VPN upsell feature": {
