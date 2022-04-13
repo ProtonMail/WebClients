@@ -221,7 +221,7 @@ const DownloadSharedContainer = () => {
         content = (
             <DownloadSharedInfo
                 name={linkInfo.name}
-                size={linkInfo.linkType === LinkType.FILE ? linkInfo.size : null}
+                size={linkInfo.linkType === LinkType.FILE ? linkInfo.size : transferSize}
                 MIMEType={linkInfo.mimeType}
                 expirationTime={linkInfo.expirationTime}
                 downloadThumbnail={downloadLinkThumbnail}
