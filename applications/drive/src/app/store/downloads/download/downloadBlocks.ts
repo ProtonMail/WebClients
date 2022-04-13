@@ -167,6 +167,7 @@ export default function initDownloadBlocks(
             activeIndex = blockQueue[0].Index;
 
             const retryDownload = async (activeIndex: number) => {
+                abortController = new AbortController();
                 const newBlocks = await getBlocks(abortController.signal, {
                     FromBlockIndex: fromBlockIndex,
                     PageSize: BATCH_REQUEST_SIZE,
@@ -175,7 +176,6 @@ export default function initDownloadBlocks(
                     throw new Error('Unexpected Uint8Array block data');
                 }
                 revertProgress();
-                abortController = new AbortController();
                 blocksOrBuffer = newBlocks;
                 blocks = newBlocks;
 
@@ -297,9 +297,6 @@ export default function initDownloadBlocks(
                         return;
                     }
 
-                    if (!isTransferCancelError(e)) {
-                        fsWriter.abort(e).catch(logError);
-                    }
                     throw e;
                 }
 
