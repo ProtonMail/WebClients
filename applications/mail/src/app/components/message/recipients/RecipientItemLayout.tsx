@@ -15,6 +15,7 @@ interface Props {
     showAddress?: boolean;
     address?: ReactNode;
     title?: string;
+    ariaLabelTitle?: string;
     icon?: ReactNode;
     isLoading?: boolean;
     isNarrow?: boolean;
@@ -40,6 +41,7 @@ const RecipientItemLayout = ({
     showAddress = true,
     address,
     title,
+    ariaLabelTitle,
     icon,
     isLoading = false,
     isNarrow,
@@ -96,7 +98,7 @@ const RecipientItemLayout = ({
     };
 
     // translator: Example: More details about "Jack <email>"
-    const labelMessageRecipientButton = c('Action').t`More details about ${title}`;
+    const labelMessageRecipientButton = c('Action').t`More details about ${ariaLabelTitle}`;
 
     // had to use span instead of button, otherwise ellipsis can't work
     return (
@@ -112,6 +114,7 @@ const RecipientItemLayout = ({
             ref={combinedRef}
             aria-label={labelMessageRecipientButton}
             aria-expanded={isDropdownOpen}
+            title={title}
         >
             <span
                 className={classnames([
