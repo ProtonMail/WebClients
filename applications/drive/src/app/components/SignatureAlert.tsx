@@ -66,6 +66,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
         hash: c('Item').t`name hash`,
         name: c('Item').t`name`,
         xattrs: c('Item').t`file attributes`,
+        contentKeyPacket: c('Item').t`file data key`,
         blocks: c('Item').t`file data`,
         thumbnail: c('Item').t`thumbnail`,
     };
