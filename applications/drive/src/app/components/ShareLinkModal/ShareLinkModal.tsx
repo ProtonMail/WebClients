@@ -117,6 +117,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         const update = async () => {
             const res = await updateShareUrl(
                 {
+                    creatorEmail: shareUrlInfo.ShareURL.CreatorEmail,
                     shareId: shareUrlInfo.ShareURL.ShareID,
                     shareUrlId: shareUrlInfo.ShareURL.ShareURLID,
                     flags: shareUrlInfo.ShareURL.Flags,
