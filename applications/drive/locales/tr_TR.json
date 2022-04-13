@@ -185,7 +185,7 @@
         "İndir"
       ],
       "Download anyway": [
-        ""
+        "Yine de indir"
       ],
       "Drive Locked": [
         "Drive kilitlendi"
@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "6 rakam yazın"
       ],
-      "Failed to download a file": [
-        "Bir dosya indirilemedi"
-      ],
-      "Failed to download a folder": [
-        "Bir klasör indirilemedi"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "\"${ item.name }\" dosyası \"${ error }\" hatası nedeniyle yüklenemedi"
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        "\"${ name }\" klasörü indirme sırasında silindi"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Dosya imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Tamamlanıyor"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        "\"${ link.name }\" klasörü indirme sırasında silindi"
       ],
       "Folder contents will merge into a single folder": [
         "Klasör içeriği tek bir klasörde birleştirilsin"
@@ -2710,7 +2710,7 @@
         "Sıraya alındı"
       ],
       "recommended browser": [
-        ""
+        "önerilen web tarayıcı"
       ],
       "Recovery process might take some time.": [
         "Kurtarma işlemi biraz zaman alabilir."
@@ -2939,7 +2939,7 @@
         "Hesabınızda zamanında ödenmemiş en az bir fatura var. Erişiminiz yakında kısıtlanacak. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Hizmet çalışanları kullanılamadığından kullandığınız web tarayıcı büyük dosyaların indirilmesini desteklemiyor. Büyük dosyaları indirmek web tarayıcının donmasına ya da yanıt vermemesine neden olabilir. Lütfen güncel ${ recommendedBrowser } sürümünü kullanarak yeniden deneyin."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
@@ -4081,7 +4081,7 @@
         "Beta erişimi"
       ],
       "Browser might run out of memory": [
-        ""
+        "Web tarayıcı için bellek yetersiz olabilir"
       ],
       "Cancel all active transfers": [
         "Tüm etkin aktarımları iptal et"
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Dosya ya da klasör indirilemedi"
+      ],
+      "The internet connection was interrupted": [
+        "İnternet bağlantısı kesildi"
       ],
       "The link does not exist": [
         "Bağlantı bulunamadı"

@@ -1777,12 +1777,6 @@
       "Enter 6 digits": [
         "Insira 6 dígitos"
       ],
-      "Failed to download a file": [
-        "Falha ao baixar um arquivo"
-      ],
-      "Failed to download a folder": [
-        "Falha ao baixar uma pasta"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "O arquivo \"${ item.name }\" não pôde ser enviado devido ao erro \"${ error }\""
       ],
@@ -2477,6 +2471,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Falha ao abrir um link seguro. O motivo é: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        "Arquivo \"${ name }\" foi deletado durante o download"
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Arquivo está sem assinatura. Não pudemos verificar que ${ emailAddress } enviou ${ fileName }."
       ],
@@ -2488,6 +2485,9 @@
       ],
       "Finalizing": [
         "Finalizando"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        "Pasta \"${ link.name }\" foi deletada durante o download"
       ],
       "Folder contents will merge into a single folder": [
         "O conteúdo da pasta será mesclado em uma única pasta"
@@ -4406,6 +4406,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Falha ao baixar o arquivo ou a pasta"
+      ],
+      "The internet connection was interrupted": [
+        "A conexão com a internet foi interrompida"
       ],
       "The link does not exist": [
         "O link não existe"

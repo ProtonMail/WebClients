@@ -1787,12 +1787,6 @@
       "Enter 6 digits": [
         "Введіть 6 цифр"
       ],
-      "Failed to download a file": [
-        "Не вдалося завантажити файл"
-      ],
-      "Failed to download a folder": [
-        "Не вдалося завантажити теку"
-      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "Не вдалося вивантажити файл \"${ item.name }\" через помилку \"${ error }\""
       ],
@@ -2559,6 +2553,9 @@
       "Failed to open a secure link. The reason is: ${ error }": [
         "Не вдалося відкрити захищене посилання. Причина: ${ error }"
       ],
+      "File \"${ name }\" was deleted during download": [
+        ""
+      ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "У файлі відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
       ],
@@ -2570,6 +2567,9 @@
       ],
       "Finalizing": [
         "Завершення"
+      ],
+      "Folder \"${ link.name }\" was deleted during download": [
+        ""
       ],
       "Folder contents will merge into a single folder": [
         "Вміст тек об’єднається в одну теку"
@@ -4556,6 +4556,9 @@
       ],
       "The file or folder failed to be downloaded": [
         "Не вдалося завантажити файл або теку"
+      ],
+      "The internet connection was interrupted": [
+        ""
       ],
       "The link does not exist": [
         "Такого посилання не існує"
