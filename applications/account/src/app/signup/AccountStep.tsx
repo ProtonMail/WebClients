@@ -1,8 +1,11 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { c } from 'ttag';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
+    AlertModal,
     Button,
+    ButtonLike,
     captureChallengeMessage,
     Challenge,
     ChallengeError,
@@ -10,14 +13,18 @@ import {
     ChallengeResult,
     Href,
     InputFieldTwo,
+    ModalProps,
     Option,
     PasswordInputTwo,
     SelectTwo,
     UnderlineButton,
     useFormErrors,
     useLoading,
+    useModalState,
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
+import { Link } from 'react-router-dom';
 import {
     confirmPasswordValidator,
     emailValidator,
@@ -34,6 +41,23 @@ import Main from '../public/Main';
 import Loader from './Loader';
 
 import './AccountStep.scss';
+
+const SignInPromptModal = ({ email, ...rest }: ModalProps & { email: string }) => {
+    return (
+        <AlertModal
+            title={c('Title').t`You already have a Proton account`}
+            buttons={[
+                <ButtonLike as={Link} color="norm" shape="solid" to="/login">{c('Action')
+                    .t`Go to sign in`}</ButtonLike>,
+                <Button shape="outline" color="weak" onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...rest}
+        >
+            {c('Info')
+                .t`Your existing ${BRAND_NAME} account can be used to access all ${BRAND_NAME} services. Please sign in with ${email}.`}
+        </AlertModal>
+    );
+};
 
 interface Props {
     onBack?: () => void;
@@ -86,6 +110,7 @@ const AccountStep = ({
     const [maybeDomain, setDomain] = useState(domains?.[0] || ''); // This is set while domains are loading
     const defaultSignupType = maybeDefaultSignupType || SignupType.Username;
     const [signupType, setSignupType] = useState<SignupType>(defaultSignupType || defaultSignupType);
+    const [loginModal, setLoginModal, renderLoginModal] = useModalState();
 
     const trimmedUsername = username.trim();
 
@@ -104,6 +129,10 @@ const AccountStep = ({
 
     const handleSubmit = () => {
         if (loading || !onFormSubmit()) {
+            return;
+        }
+        if (signupType === SignupType.VPN && hasProtonDomain(recoveryEmail)) {
+            setLoginModal(true);
             return;
         }
         withLoading(run()).catch(noop);
@@ -202,6 +231,7 @@ const AccountStep = ({
 
     return (
         <Main>
+            {renderLoginModal && <SignInPromptModal email={recoveryEmail} {...loginModal} />}
             <Header title={title} subTitle={subTitle} onBack={onBack} />
             <Content>
                 {isLoadingView && (
