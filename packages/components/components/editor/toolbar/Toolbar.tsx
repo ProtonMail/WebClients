@@ -38,7 +38,7 @@ const Toolbar = ({ config, metadata, mailSettings, className }: ToolbarProps) =>
     }
 
     return (
-        <ButtonGroup className={classnames(['editor-toolbar overflow-hidden', className])}>
+        <ButtonGroup className={classnames(['editor-toolbar overflow-hidden mb0-5', className])}>
             <ToolbarFontFaceDropdown
                 value={config.fontFace.value}
                 setValue={config.fontFace.setValue}
