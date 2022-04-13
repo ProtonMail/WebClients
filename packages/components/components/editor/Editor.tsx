@@ -18,6 +18,8 @@ import InsertLinkModal from './modals/InsertLinkModal';
 
 interface Props {
     className?: string;
+    editorToolbarClassname?: string;
+    editorClassname?: string;
     placeholder?: string;
     metadata?: Partial<EditorMetadata>;
     onChange: (value: string) => void;
@@ -35,10 +37,13 @@ interface Props {
      * at same time component is first rendered
      */
     mailSettings?: MailSettings;
+    isPlainText?: boolean;
 }
 
 const Editor = ({
     className,
+    editorClassname,
+    editorToolbarClassname,
     placeholder,
     metadata: metadataProp,
     onChange = noop,
@@ -51,6 +56,7 @@ const Editor = ({
     onBlockquoteToggleClick = noop,
     onAddAttachments,
     mailSettings,
+    isPlainText,
 }: Props) => {
     /**
      * Set to true when editor setContent is called by parent components
@@ -90,8 +96,10 @@ const Editor = ({
             >
                 <div
                     className={classnames([
-                        'w100 h100 flex-item-fluid flex flex-column relative',
+                        'h100 flex-item-fluid flex flex-column relative',
                         disabled && 'editor--disabled',
+                        isPlainText ? '' : 'composer-content--rich-edition',
+                        editorClassname,
                     ])}
                 >
                     {metadata.isPlainText ? (
@@ -122,6 +130,7 @@ const Editor = ({
                     metadata={metadata}
                     onChangeMetadata={onChangeMetadata}
                     mailSettings={mailSettings}
+                    className={editorToolbarClassname}
                 />
             </div>
             {modalDefaultFont.render && metadata.supportDefaultFontSelector && (

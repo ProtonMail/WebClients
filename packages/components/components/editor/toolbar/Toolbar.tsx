@@ -22,9 +22,10 @@ interface ToolbarProps {
     metadata: EditorMetadata;
     onChangeMetadata: (metadata: Partial<EditorMetadata>) => void;
     mailSettings: MailSettings | undefined;
+    className?: string;
 }
 
-const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarProps) => {
+const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings, className }: ToolbarProps) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || isNarrow;
@@ -32,7 +33,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
     if (metadata.isPlainText) {
         return (
             <Button
-                className="mlauto"
+                className={classnames(['mlauto', className])}
                 onClick={() => onChangeMetadata({ isPlainText: false })}
                 data-testid="editor-to-html"
             >{c('Action').t`Switch to rich text`}</Button>
@@ -44,7 +45,7 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings }: ToolbarPr
     }
 
     return (
-        <ButtonGroup className="editor-toolbar overflow-hidden">
+        <ButtonGroup className={classnames(['editor-toolbar overflow-hidden', className])}>
             <ToolbarFontFaceDropdown
                 value={config.fontFace.value}
                 setValue={config.fontFace.setValue}
