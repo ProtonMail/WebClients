@@ -5,7 +5,7 @@ import { Vr } from '@proton/atoms';
 
 import { classnames } from '../../../helpers';
 import Icon from '../../icon/Icon';
-import { ButtonGroup, Button } from '../../button';
+import { ButtonGroup } from '../../button';
 import { useActiveBreakpoint } from '../../../hooks';
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
@@ -20,24 +20,17 @@ import ToolbarMoreDropdown from './ToolbarMoreDropdown';
 interface ToolbarProps {
     config: ToolbarConfig | undefined;
     metadata: EditorMetadata;
-    onChangeMetadata: (metadata: Partial<EditorMetadata>) => void;
     mailSettings: MailSettings | undefined;
     className?: string;
 }
 
-const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings, className }: ToolbarProps) => {
+const Toolbar = ({ config, metadata, mailSettings, className }: ToolbarProps) => {
     const { isNarrow } = useActiveBreakpoint();
 
     const showMoreDropdown = metadata.supportRightToLeft || metadata.supportPlainText || isNarrow;
 
     if (metadata.isPlainText) {
-        return (
-            <Button
-                className={classnames(['mlauto', className])}
-                onClick={() => onChangeMetadata({ isPlainText: false })}
-                data-testid="editor-to-html"
-            >{c('Action').t`Switch to rich text`}</Button>
-        );
+        return null;
     }
 
     if (!config) {
@@ -162,7 +155,6 @@ const Toolbar = ({ config, metadata, onChangeMetadata, mailSettings, className }
                 <ToolbarMoreDropdown
                     config={config}
                     metadata={metadata}
-                    onChangeMetadata={onChangeMetadata}
                     isNarrow={isNarrow}
                 />
             )}

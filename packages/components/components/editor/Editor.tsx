@@ -128,7 +128,6 @@ const Editor = ({
                 <EditorToolbar
                     config={toolbarConfig}
                     metadata={metadata}
-                    onChangeMetadata={onChangeMetadata}
                     mailSettings={mailSettings}
                     className={editorToolbarClassname}
                 />

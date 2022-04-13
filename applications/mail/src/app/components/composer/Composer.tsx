@@ -8,17 +8,19 @@ import {
     RefObject,
     forwardRef,
     useImperativeHandle,
+    useMemo,
 } from 'react';
 import { c } from 'ttag';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients } from '@proton/shared/lib/mail/messages';
+import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import {
     classnames,
     useNotifications,
     useHandler,
     useSubscribeEventManager,
     useMailSettings,
-    useAddresses,
+    EditorTextDirection,
+    EditorMetadata,
 } from '@proton/components';
 import noop from '@proton/utils/noop';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
@@ -98,7 +100,6 @@ const Composer = (
     const getMessage = useGetMessage();
     const { createNotification } = useNotifications();
     const [mailSettings] = useMailSettings();
-    const [addresses] = useAddresses();
 
     const bodyRef = useRef<HTMLDivElement>(null);
     const [hasVerticalScroll] = useHasScroll(bodyRef);
@@ -162,6 +163,26 @@ const Composer = (
         pause: pauseAutoSave,
         restart: restartAutoSave,
     } = useAutoSave({ onMessageAlreadySent });
+
+    const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
+
+    const isPlainText = testIsPlainText(modelMessage.data);
+    const rightToLeft = modelMessage.data?.RightToLeft
+        ? EditorTextDirection.RightToLeft
+        : EditorTextDirection.LeftToRight;
+    const metadata: EditorMetadata = useMemo(
+        () => ({
+            supportPlainText: true,
+            isPlainText,
+            supportRightToLeft: true,
+            rightToLeft,
+            supportImages: true,
+            supportDefaultFontSelector: true,
+            blockquoteExpanded,
+            setBlockquoteExpanded,
+        }),
+        [isPlainText, rightToLeft, blockquoteExpanded, setBlockquoteExpanded]
+    );
 
     // Manage existing draft initialization
     useEffect(() => {
@@ -611,7 +632,7 @@ const Composer = (
                         onRemoveUpload={handleRemoveUpload}
                         pendingUploads={pendingUploads}
                         mailSettings={mailSettings}
-                        addresses={addresses}
+                        editorMetadata={metadata}
                     />
                 </div>
                 <ComposerActions
@@ -631,6 +652,8 @@ const Composer = (
                     attachmentTriggerRef={attachmentTriggerRef}
                     loadingScheduleCount={loadingScheduleCount}
                     onChangeFlag={handleChangeFlag}
+                    editorActionsRef={editorActionsRef}
+                    editorMetadata={metadata}
                     onChange={handleChange}
                 />
             </div>

@@ -1,9 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 
 import noop from '@proton/utils/noop';
-import { useHandler } from '@proton/components';
-import { eoDefaultAddress, eoDefaultMailSettings, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
+import { EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
+import { eoDefaultMailSettings, eoDefaultUserSettings } from '@proton/shared/lib/mail/eo/constants';
+import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 
 import ComposerContent from '../../composer/ComposerContent';
 import { MessageState, OutsideKey } from '../../../logic/messages/messagesTypes';
@@ -57,6 +58,26 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
     const contentFocusRef = useRef<() => void>(noop);
 
     const lock = opening;
+
+    const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
+
+    const isPlainText = testIsPlainText(modelMessage.data);
+    const rightToLeft = modelMessage.data?.RightToLeft
+        ? EditorTextDirection.RightToLeft
+        : EditorTextDirection.LeftToRight;
+    const metadata: EditorMetadata = useMemo(
+        () => ({
+            supportPlainText: false,
+            isPlainText,
+            supportRightToLeft: true,
+            rightToLeft,
+            supportImages: true,
+            supportDefaultFontSelector: false,
+            blockquoteExpanded,
+            setBlockquoteExpanded,
+        }),
+        [isPlainText, rightToLeft, blockquoteExpanded, setBlockquoteExpanded]
+    );
 
     useEffect(() => {
         if (editorReady) {
@@ -125,10 +146,9 @@ const EOComposer = ({ referenceMessage, id, publicKey, outsideKey, numberOfRepli
                     onChangeContent={handleChangeContent}
                     onAddAttachments={handleAddAttachments}
                     onRemoveAttachment={handleRemoveAttachment}
-                    isOutside
                     outsideKey={outsideKey}
                     mailSettings={eoDefaultMailSettings}
-                    addresses={eoDefaultAddress}
+                    editorMetadata={metadata}
                 />
             </div>
             <EOReplyFooter
