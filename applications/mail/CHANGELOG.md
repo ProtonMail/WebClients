@@ -1,3 +1,17 @@
+# Release 4.0.20 - Apr 27, 2022
+
+### Improvements
+
+-   Updated the UI of the main search bar
+-   Updated the UI of specific modals
+-   Added the option to edit expiration time from the expiration banner inside the composer directly
+
+### Bug fixes
+
+-   Fixed an issue where the "Try again" option on messages with decryption error would not behave correctly
+-   Fixed an issue where pasting content with <> brackets inside the composer would not behave correctly
+-   Fixed some minor display & alignment issues
+
 ## Release 4.0.19 - Apr 06, 2022
 
 ### Improvements
