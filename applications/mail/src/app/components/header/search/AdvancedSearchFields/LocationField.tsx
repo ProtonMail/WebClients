@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { c } from 'ttag';
-import { useHistory } from 'react-router-dom';
 import { Button, Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
@@ -16,8 +14,7 @@ const { INBOX, ALL_MAIL, SENT, DRAFTS, ALL_SENT, ALL_DRAFTS } = MAILBOX_LABEL_ID
 const LOCATION_FIELD_MAIN_OPTIONS: string[] = [ALL_MAIL, INBOX, DRAFTS, SENT, ALL_SENT, ALL_DRAFTS];
 
 const LocationField = ({ value, onChange }: Props) => {
-    const { all: options, isDefaultFolder } = useLocationFieldOptions();
-    const history = useHistory();
+    const { all: options } = useLocationFieldOptions();
     const firstOptions = options.filter(({ value }) => LOCATION_FIELD_MAIN_OPTIONS.includes(value));
     const { findItemByValue } = useLocationFieldOptions();
 
@@ -25,17 +22,6 @@ const LocationField = ({ value, onChange }: Props) => {
         value !== undefined && LOCATION_FIELD_MAIN_OPTIONS.every((optionValue) => optionValue !== value);
     const customValueText = isCustomValue ? findItemByValue(value)?.text : undefined;
     const showCustomValue = isCustomValue === true && customValueText !== undefined;
-
-    useEffect(() => {
-        const selectedValueFromUrl = options.reduce((acc, option) => {
-            if (isDefaultFolder(option) && history.location.pathname.includes(option.url)) {
-                return option.value;
-            }
-            return acc;
-        }, value);
-
-        window.setTimeout(() => onChange(selectedValueFromUrl), 0);
-    }, []);
 
     return (
         <>
