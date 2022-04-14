@@ -220,7 +220,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                 <Button
                     size="small"
                     color="weak"
-                    shape="solid"
+                    shape="outline"
                     className="on-mobile-w100 py0-25"
                     onClick={handleTrustKey}
                     disabled={loading}
