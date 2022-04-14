@@ -344,6 +344,11 @@
 		--button-active-text-color: inherit;
 	}
 
+	// Remove padding if in print modal
+	&-print {
+		padding-block-start: 0;
+	}
+
 	&-loading-placeholder {
 		position: relative;
 

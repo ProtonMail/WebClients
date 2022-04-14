@@ -9,9 +9,10 @@ interface Props {
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
     showDropdown?: boolean;
+    isPrintModal?: boolean;
 }
 
-const MailRecipientList = ({ list, mapStatusIcons, isLoading, showDropdown }: Props) => {
+const MailRecipientList = ({ list, mapStatusIcons, isLoading, showDropdown, isPrintModal }: Props) => {
     const { getRecipientsOrGroups } = useRecipientLabel();
 
     const recipientsOrGroup = getRecipientsOrGroups(list);
@@ -22,6 +23,7 @@ const MailRecipientList = ({ list, mapStatusIcons, isLoading, showDropdown }: Pr
             isLoading={isLoading}
             recipientsOrGroup={recipientsOrGroup}
             showDropdown={showDropdown}
+            isPrintModal={isPrintModal}
         />
     );
 };
