@@ -167,7 +167,7 @@ describe('MailHeader', () => {
 
             const history = getHistory();
             expect(history.length).toBe(2);
-            expect(history.location.pathname).toBe('/inbox');
+            expect(history.location.pathname).toBe('/all-mail');
             expect(history.location.hash).toBe(`#keyword=${searchTerm}`);
 
             await rerender(<MailHeader {...props} />);
