@@ -68,7 +68,8 @@ const RecipientItemSingle = ({
             labelHasIcon={!!isActionLabel}
             showAddress={showAddress}
             address={`<${recipient.Address}>`}
-            title={`${label} <${recipient.Address}>`}
+            title={recipient.Address}
+            ariaLabelTitle={`${label} <${recipient.Address}>`}
             icon={
                 icon && (
                     <span className="inline-flex flex-item-noshrink message-recipient-item-lockIcon mr0-25">
