@@ -69,7 +69,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                 <Button
                     size="small"
                     color="weak"
-                    shape="solid"
+                    shape="outline"
                     className="on-mobile-w100 py0-25"
                     onClick={handleClick}
                 >{c('Action').t`Verify`}</Button>
