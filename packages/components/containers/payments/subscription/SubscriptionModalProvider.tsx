@@ -66,7 +66,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
             {render &&
                 subscriptionProps.current &&
                 (paymentsDisabledFeature.feature?.Value === true ? (
-                    <SubscriptionModalDisabled mode="pre-version" {...modalState} />
+                    <SubscriptionModalDisabled {...modalState} />
                 ) : (
                     <SubscriptionModal {...subscriptionProps.current} {...modalState} />
                 ))}
