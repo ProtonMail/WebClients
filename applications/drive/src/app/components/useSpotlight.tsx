@@ -3,9 +3,9 @@ import { createContext, ReactNode, useContext, useEffect, useMemo, useState } fr
 import { FeatureCode, useSpotlightOnFeature, useSpotlightShow } from '@proton/components';
 
 import { DriveFolder } from '../hooks/drive/useActiveShare';
-import { useLinksListing } from '../store/links';
-import { useDefaultShare } from '../store/shares';
-import { reportError } from '../store/utils';
+import { useLinksListing } from '../store/_links';
+import { useDefaultShare } from '../store/_shares';
+import { reportError } from '../store/_utils';
 
 const SEARCH_DISCOVERY_FILES_THRESHOLD = 5;
 
