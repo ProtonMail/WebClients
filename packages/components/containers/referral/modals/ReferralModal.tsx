@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import { c } from 'ttag';
-import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import emptyMailboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 import {
@@ -15,7 +15,6 @@ import {
     useFeature,
     useSettingsLink,
 } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { useEffect } from 'react';
 
 interface Props extends ModalProps<'div'> {
@@ -23,8 +22,7 @@ interface Props extends ModalProps<'div'> {
 }
 
 const ReferralModal = ({ endDate, ...rest }: Props) => {
-    const appName = getAppName(APPS.PROTONMAIL);
-    const planName = PLAN_NAMES[PLANS.PLUS];
+    const planName = PLAN_NAMES[PLANS.MAIL];
     const settingsLink = useSettingsLink();
     const { feature, update } = useFeature(FeatureCode.SeenReferralModal);
 
@@ -58,7 +56,7 @@ const ReferralModal = ({ endDate, ...rest }: Props) => {
             <ModalTwoContent>
                 <p>{
                     // translator: complete sentence would be "Upgrade today to avoid losing the following Mail Plus benefits"
-                    c('Info').t`Upgrade today to avoid losing the following ${appName} ${planName} benefits.`
+                    c('Info').t`Upgrade today to avoid losing the following ${planName} benefits.`
                 }</p>
                 <div className="flex flex-justify-center">
                     <img src={emptyMailboxSvg} alt="Mailbox image" />
@@ -70,7 +68,7 @@ const ReferralModal = ({ endDate, ...rest }: Props) => {
                 <Button
                     onClick={() => {
                         rest.onClose?.();
-                        handlePlan(PLANS.PLUS, 'compare');
+                        handlePlan(PLANS.MAIL, 'compare');
                     }}
                     shape="outline"
                 >{c('Info').t`Other options`}</Button>
@@ -78,7 +76,7 @@ const ReferralModal = ({ endDate, ...rest }: Props) => {
                     color="norm"
                     onClick={() => {
                         rest.onClose?.();
-                        handlePlan(PLANS.PLUS, 'checkout');
+                        handlePlan(PLANS.MAIL, 'checkout');
                     }}
                 >{
                     // translator: full sentence could be "Continue with Plus"

@@ -1,8 +1,7 @@
 import { c } from 'ttag';
 
 import { Loader, SettingsSectionWide, Card } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import RewardsProgress from './RewardsProgress';
@@ -17,8 +16,7 @@ const RewardSection = () => {
     } = useReferralInvitesContext();
 
     const dedupReferrals = getDeduplicatedReferrals(referrals, invitedReferrals);
-    const appName = getAppName(APPS.PROTONMAIL);
-    const plusPlanName = PLAN_NAMES[PLANS.PLUS];
+    const plusPlanName = PLAN_NAMES[PLANS.MAIL];
 
     const showRewardSection = rewards > 0 || total > 0;
     const reachedRewardLimit = rewards === rewardsLimit && total > 0;
@@ -32,7 +30,7 @@ const RewardSection = () => {
             {reachedRewardLimit ? (
                 <Card className="text-center mb2">
                     <strong>{c('Description')
-                        .t`Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${appName} ${plusPlanName}`}</strong>
+                        .t`Congratulations! You've earned the maximum of ${rewardsLimit} free months of ${plusPlanName}`}</strong>
                     <br />
                     {c('Description').t`You can continue to invite friends, but you wont be able to earn more credits`}
                 </Card>
