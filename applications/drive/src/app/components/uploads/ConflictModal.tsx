@@ -13,7 +13,7 @@ import {
     PrimaryButton,
 } from '@proton/components';
 
-import { TransferConflictStrategy } from '../../store/uploads/interface';
+import { TransferConflictStrategy } from '../../store';
 
 export interface ConflictModalProps {
     name: string;

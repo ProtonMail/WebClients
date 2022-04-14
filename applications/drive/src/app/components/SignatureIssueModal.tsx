@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { FormModal, Radio, Checkbox, Row } from '@proton/components';
 
 import { SignatureIssues } from '../store';
-import { TransferSignatureIssueStrategy } from '../store/downloads/interface';
+import { TransferSignatureIssueStrategy } from '../store';
 import { SignatureAlertBody } from './SignatureAlert';
 
 export interface ConflictModalProps {
