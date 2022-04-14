@@ -58,8 +58,11 @@ const ExtraSpamScore = ({ message }: Props) => {
         };
 
         return (
-            <div className="bg-norm border rounded px0-5 py0-25 mb0-85 flex flex-nowrap" data-testid="phishing-banner">
-                <Icon name="circle-exclamation-filled" className="flex-item-noshrink ml0-2 mt0-4 color-danger" />
+            <div
+                className="bg-danger border rounded px0-5 py0-25 mb0-85 flex flex-nowrap"
+                data-testid="phishing-banner"
+            >
+                <Icon name="circle-exclamation-filled" className="flex-item-noshrink ml0-2 mt0-4" />
                 <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
