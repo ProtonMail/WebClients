@@ -139,14 +139,14 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Button
             shape="solid"
             color="norm"
-            className="ml1 w25"
+            className="ml1 w90p"
             onClick={() => resumeIndexing()}
             disabled={disablePauseResumeButton}
         >
             {c('Action').t`Resume`}
         </Button>
     ) : (
-        <Button className="ml1 w25" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
+        <Button className="ml1 w90p" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
             {c('Action').t`Pause`}
         </Button>
     );
@@ -159,7 +159,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
     return (
         <div className="pt0">
             <div className="flex flex-column">
-                <div className="flex flex-nowrap mb0-5 flex-align-items-center">
+                <div className="flex flex-nowrap flex-align-items-center mb1">
                     {esHeader}
                     {esCTA}
                     <AlertModal
@@ -174,12 +174,12 @@ const EncryptedSearchField = ({ esState }: Props) => {
                             .t`This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.`}
                     </AlertModal>
                 </div>
-                {showSubTitleSection && subTitleSection}
             </div>
+            {showSubTitleSection && <div className="mb1">{subTitleSection}</div>}
             {showProgress && (
-                <div className="mt0-5 flex flex-column">
+                <div className="mt0-5 mb1 flex flex-column">
                     <span
-                        className="color-weak relative advanced-search-progress-status mb0-5"
+                        className="color-weak relative advanced-search-progress-status"
                         aria-live="polite"
                         aria-atomic="true"
                     >
@@ -194,7 +194,7 @@ const EncryptedSearchField = ({ esState }: Props) => {
                         aria-live="polite"
                         aria-atomic="true"
                         className={classnames([
-                            'color-weak relative advanced-search-time-remaining mt0-5',
+                            'color-weak relative advanced-search-time-remaining',
                             isEstimating || getES.Pause(user.ID) ? 'visibility-hidden' : undefined,
                         ])}
                     >
