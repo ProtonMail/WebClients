@@ -106,7 +106,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                     <Button
                         size="small"
                         color="weak"
-                        shape="solid"
+                        shape="outline"
                         className="on-mobile-w100 py0-25"
                         onClick={() => setEditScheduleModalOpen(true)}
                         data-testid="message:schedule-banner-edit-button"
