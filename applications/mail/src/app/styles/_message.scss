@@ -257,7 +257,7 @@
 	outline: 0; // yes, in this case, I know what I'm doing
 
 	&:hover,
-	&:focus-within,
+	&:focus-visible,
 	&[aria-expanded='true'] {
 		// hide coma, as requested :D
 		+ .message-recipient-item-separator {
