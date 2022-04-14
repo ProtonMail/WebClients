@@ -81,7 +81,8 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, i
     return (
         <RecipientItemLayout
             label={label}
-            title={`${labelText} ${addresses}`}
+            title={addresses}
+            ariaLabelTitle={`${labelText} ${addresses}`}
             showDropdown={showDropdown}
             dropdrownAnchorRef={anchorRef}
             dropdownToggle={toggle}
