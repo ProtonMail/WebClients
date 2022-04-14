@@ -93,7 +93,7 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
                         onClick={onLoadImages}
                         size="small"
                         color="weak"
-                        shape="solid"
+                        shape="outline"
                         className="on-mobile-w100 py0-25"
                         data-testid="remote-content:load"
                     >
