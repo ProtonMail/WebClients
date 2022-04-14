@@ -10,10 +10,10 @@ import useNavigate from '../../../hooks/drive/useNavigate';
 import { SearchDropdown } from './SearchDropdown';
 import { useSearchParams } from './useSearchParams';
 import { useSpotlight } from '../../useSpotlight';
+import { reportError } from '../../../store/_utils';
+import { useSearchResults } from '../../../store/_search';
 
 import './SearchField.scss';
-import { reportError } from '../../../store/utils';
-import { useSearchResults } from '../../../store/search';
 
 export const SearchField = () => {
     const indexingDropdownAnchorRef = useRef<HTMLDivElement>(null);

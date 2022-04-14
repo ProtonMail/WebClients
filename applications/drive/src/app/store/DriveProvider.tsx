@@ -1,11 +1,11 @@
-import { DriveEventManagerProvider } from './events';
-import { DownloadsProvider } from './downloads';
-import { DownloadSignatureIssueModal } from './downloads/interface';
-import { LinksProvider } from './links';
-import { SearchProvider } from './search';
-import { SharesProvider } from './shares';
-import { UploadProvider } from './uploads';
-import { UploadConflictModal } from './uploads/interface';
+import { DriveEventManagerProvider } from './_events';
+import { DownloadsProvider } from './_downloads';
+import { DownloadSignatureIssueModal } from './_downloads/interface';
+import { LinksProvider } from './_links';
+import { SearchProvider } from './_search';
+import { SharesProvider } from './_shares';
+import { UploadProvider } from './_uploads';
+import { UploadConflictModal } from './_uploads/interface';
 
 interface Props {
     DownloadSignatureIssueModal: DownloadSignatureIssueModal;

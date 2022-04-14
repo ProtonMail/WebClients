@@ -4,7 +4,7 @@ import { useLocation } from 'react-router';
 import { PrivateMainArea } from '@proton/components';
 
 import { useSearchView } from '../../../store';
-import { extractSearchParameters } from '../../../store/search/utils'; // TODO: handle with container
+import { extractSearchParameters } from '../../../store/_search/utils'; // TODO: handle with container
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { mapDecryptedLinksToChildren } from '../helpers';
 import DriveToolbar from '../Drive/DriveToolbar';

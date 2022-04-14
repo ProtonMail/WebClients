@@ -1,9 +1,9 @@
 export { default as DriveProvider } from './DriveProvider';
-export { useActions } from './actions';
-export { useDownloadProvider as useDownload, useThumbnailsDownload } from './downloads';
-export { useDriveEventManager } from './events';
-export { validateLinkNameField, formatLinkName, splitLinkName } from './links';
-export { useUserSettings, SettingsProvider } from './settings';
+export { useActions } from './_actions';
+
+export { useDriveEventManager } from './_events';
+export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
+export { useUserSettings, SettingsProvider } from './_settings';
 export {
     useDefaultShare,
     useLockedVolume,
@@ -14,8 +14,12 @@ export {
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
     getSharedLink,
-} from './shares';
-export { useUpload, useFileUploadInput, useFolderUploadInput } from './uploads';
-export * from './links/interface';
-export * from './shares/interface';
-export * from './views';
+} from './_shares';
+export { useUpload, useFileUploadInput, useFolderUploadInput } from './_uploads';
+export * from './_uploads/interface';
+export { useDownloadProvider as useDownload, useThumbnailsDownload } from './_downloads';
+export * from './_downloads/interface';
+export * from './_links/interface';
+export * from './_shares/interface';
+export * from './_views';
+export { useSearchLibrary } from './_search';
