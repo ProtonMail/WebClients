@@ -39,7 +39,7 @@ const InviteShareLink = () => {
                         url={encodeURI(
                             'https://twitter.com/intent/tweet?text=' +
                                 c('Info')
-                                    .t`I’ve been using ${appName} and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${referrerLink}`
+                                    .t`I’ve been using ${appName} and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${referrerLink}`
                         )}
                         target="_blank"
                     >
