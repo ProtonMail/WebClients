@@ -24,6 +24,7 @@ interface UseLinkHandlerOptions {
     onMailTo?: (src: string) => void;
     startListening?: boolean;
     isOutside?: boolean;
+    isPhishingAttempt?: boolean;
 }
 type UseLinkHandler = (
     wrapperRef: RefObject<HTMLDivElement | undefined>,
@@ -37,7 +38,7 @@ const defaultOptions: UseLinkHandlerOptions = {
 export const useLinkHandler: UseLinkHandler = (
     wrapperRef,
     mailSettings,
-    { onMailTo, startListening, isOutside } = defaultOptions
+    { onMailTo, startListening, isOutside, isPhishingAttempt } = defaultOptions
 ) => {
     const { createNotification } = useNotifications();
     const [link, setLink] = useState<string>();
@@ -164,7 +165,7 @@ export const useLinkHandler: UseLinkHandler = (
         }
 
         if (
-            askForConfirmation &&
+            (askForConfirmation || isPhishingAttempt) &&
             isExternal(src.raw) &&
             ![...PROTON_DOMAINS, currentDomain]
                 .filter(isTruthy) // currentDomain can be null
@@ -193,7 +194,14 @@ export const useLinkHandler: UseLinkHandler = (
         };
     }, [startListening, wrapperRef.current]);
 
-    const modal = <LinkConfirmationModal link={link} isOutside={isOutside} {...linkConfirmationModalProps} />;
+    const modal = (
+        <LinkConfirmationModal
+            link={link}
+            isOutside={isOutside}
+            isPhishingAttempt={isPhishingAttempt}
+            {...linkConfirmationModalProps}
+        />
+    );
 
     return { modal };
 };

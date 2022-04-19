@@ -5,6 +5,8 @@ import { hasAttachments } from '@proton/shared/lib/mail/messages';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { classnames, Tooltip, Icon } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { useMailboxContainerContext } from '../../containers/mailbox/MailboxContainerProvider';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
@@ -87,6 +89,7 @@ const MessageBodyIframe = ({
         onMailTo,
         startListening: initStatus === 'done' && iframeRootDivRef.current !== undefined,
         isOutside,
+        isPhishingAttempt: hasBit(message.data?.Flags, MESSAGE_FLAGS.FLAG_PHISHING_AUTO),
     });
 
     useIframeDispatchEvents(initStatus, iframeRef);
