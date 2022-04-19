@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href, Searchbox, Spotlight, usePopperAnchor } from '@proton/components';
@@ -13,11 +13,14 @@ import { useSpotlight } from '../../useSpotlight';
 
 import './SearchField.scss';
 import { reportError } from '../../../store/utils';
+import { useSearchResults } from '../../../store/search';
 
 export const SearchField = () => {
     const indexingDropdownAnchorRef = useRef<HTMLDivElement>(null);
     const indexingDropdownControl = usePopperAnchor<HTMLButtonElement>();
     const { searchSpotlight } = useSpotlight();
+    const { dbExists } = useSearchResults();
+    const [shouldInsertDropdown, setShouldInsertDropdown] = useState(!dbExists);
 
     const navigation = useNavigate();
     const { searchEnabled, isBuilding, isDisabled, disabledReason, prepareSearchData } = useSearchControl();
@@ -39,8 +42,18 @@ export const SearchField = () => {
     }, [isBuilding]);
 
     const handleFocus = () => {
+        if (dbExists) {
+            return prepareSearchData();
+        }
+
         searchSpotlight.close();
+        setShouldInsertDropdown(true);
         prepareSearchData(() => indexingDropdownControl.open()).catch(reportError);
+    };
+
+    const handleClosedDropdown = () => {
+        setShouldInsertDropdown(false);
+        indexingDropdownControl.close();
     };
 
     if (!searchEnabled) {
@@ -89,12 +102,12 @@ export const SearchField = () => {
                         disabled={isDisabled}
                         onFocus={handleFocus}
                         advanced={
-                            indexingDropdownControl.isOpen && (
+                            shouldInsertDropdown && (
                                 <SearchDropdown
                                     isOpen={indexingDropdownControl.isOpen}
                                     anchorRef={indexingDropdownAnchorRef}
                                     onClose={indexingDropdownControl.close}
-                                    onClosed={indexingDropdownControl.close}
+                                    onClosed={handleClosedDropdown}
                                 />
                             )
                         }
