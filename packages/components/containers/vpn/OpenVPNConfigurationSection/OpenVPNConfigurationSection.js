@@ -115,7 +115,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
             ...first,
             isUpgradeRequired: isUpgradeRequiredForCountries,
             Load: Number.isNaN(load) ? 0 : Math.round(load),
-            Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.com`, // Forging domain
+            Domain: `${first.EntryCountry.toLowerCase()}.protonvpn.net`, // Forging domain
             Servers: groups.reduce((acc, { Servers = [] }) => {
                 acc.push(...Servers);
                 return acc;
