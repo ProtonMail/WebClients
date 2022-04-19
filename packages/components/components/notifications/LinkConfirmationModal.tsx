@@ -14,12 +14,14 @@ import { Form } from '../form';
 interface Props extends ModalProps {
     link?: string;
     isOutside?: boolean;
+    isPhishingAttempt?: boolean;
 }
 
-const LinkConfirmationModal = ({ link = '', isOutside = false, ...rest }: Props) => {
+const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt = false, ...rest }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [dontAskAgain, setDontAskAgain] = useState(false);
+    const [understandRisk, setUnderstandRisk] = useState(false);
 
     const { onClose } = rest;
 
@@ -47,32 +49,52 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, ...rest }: Props)
         onClose?.();
     };
 
+    const content = isPhishingAttempt ? (
+        <>
+            {`${c('Info')
+                .t`This link leads to a website that might be trying to steal your information, such as passwords and credit card details.`} `}
+            <br />
+            <span className="text-bold text-break">{linkToShow}</span>
+
+            <Label className="flex">
+                <Checkbox checked={understandRisk} onChange={() => setUnderstandRisk(!understandRisk)} />
+                {c('Label').t`I understand the risk`}
+            </Label>
+        </>
+    ) : (
+        <>
+            {`${c('Info').t`You are about to open another browser tab and visit:`} `}
+            <span className="text-bold text-break">{linkToShow}</span>
+
+            {punyCodeLink && (
+                <>
+                    {`${punyCodeLinkText} `}
+                    <Href
+                        url="https://protonmail.com/support/knowledge-base/homograph-attacks/"
+                        title="What are homograph attacks?"
+                    >
+                        {c('Info').t`Learn more`}
+                    </Href>
+                </>
+            )}
+
+            {!isOutside && (
+                <Label className="flex">
+                    <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
+                    {c('Label').t`Do not ask again`}
+                </Label>
+            )}
+        </>
+    );
+
     return (
         <ModalTwo size="large" as={Form} onSubmit={handleConfirm} {...rest}>
-            <ModalTwoHeader title={c('Title').t`Link confirmation`} />
-            <ModalTwoContent>
-                {`${c('Info').t`You are about to open another browser tab and visit:`} `}
-                <span className="text-bold text-break">{linkToShow}</span>
-
-                {punyCodeLink && (
-                    <>
-                        {`${punyCodeLinkText} `}
-                        <Href
-                            url="https://protonmail.com/support/knowledge-base/homograph-attacks/"
-                            title="What are homograph attacks?"
-                        >
-                            {c('Info').t`Learn more`}
-                        </Href>
-                    </>
-                )}
-
-                {!isOutside && (
-                    <Label className="flex">
-                        <Checkbox checked={dontAskAgain} onChange={() => setDontAskAgain(!dontAskAgain)} />
-                        {c('Label').t`Do not ask again`}
-                    </Label>
-                )}
-            </ModalTwoContent>
+            <ModalTwoHeader
+                title={
+                    isPhishingAttempt ? c('Title').t`Warning: suspected fake website` : c('Title').t`Link confirmation`
+                }
+            />
+            <ModalTwoContent>{content}</ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                 {/* translator: this string is only for blind people, it will be vocalized: confirm opening of link https://link.com */}
@@ -81,6 +103,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, ...rest }: Props)
                     type="submit"
                     autoFocus
                     aria-label={c('Action').t`Confirm opening of link ${linkToShow}`}
+                    disabled={isPhishingAttempt && !understandRisk}
                 >
                     {c('Action').t`Confirm`}
                 </Button>
