@@ -1,4 +1,4 @@
-# Release 4.0.20 - Apr 27, 2022
+## Release 4.0.20 - Apr 27, 2022
 
 ### Improvements
 
