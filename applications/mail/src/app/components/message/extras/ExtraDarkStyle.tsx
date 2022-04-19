@@ -1,5 +1,6 @@
 import { Icon, Button, useApi, Tooltip } from '@proton/components';
-import { sendMetricsReport } from '@proton/shared/lib/api/metrics';
+import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
+import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -10,8 +11,6 @@ interface Props {
     message: MessageState;
 }
 
-const LOG_ID = 'dark_styles';
-
 const ExtraDarkStyle = ({ message }: Props) => {
     const dispatch = useDispatch();
     const api = useApi();
@@ -19,9 +18,7 @@ const ExtraDarkStyle = ({ message }: Props) => {
 
     useEffect(() => {
         if (showBanner) {
-            void api(
-                sendMetricsReport({ Log: LOG_ID, Title: 'Apply dark styles', Data: { action: 'apply-dark-styles' } })
-            );
+            void sendMetricsReport(api, METRICS_LOG.DARK_STYLES, 'Apply dark styles', { action: 'apply-dark-styles' });
         }
     }, [showBanner]);
 
@@ -31,9 +28,7 @@ const ExtraDarkStyle = ({ message }: Props) => {
 
     const handleClick = () => {
         dispatch(removeDarkStyle({ ID: message.localID, noDarkStyle: true }));
-        void api(
-            sendMetricsReport({ Log: LOG_ID, Title: 'Remove dark styles', Data: { action: 'remove-dark-styles' } })
-        );
+        void sendMetricsReport(api, METRICS_LOG.DARK_STYLES, 'Remove dark styles', { action: 'remove-dark-styles' });
     };
 
     return (

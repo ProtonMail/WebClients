@@ -1,10 +1,12 @@
+import { METRICS_LOG } from '../constants';
+
 interface SendMetricsReportPayload {
-    Log: string;
+    Log: METRICS_LOG;
     Title?: string;
     Data?: any;
 }
 
-export const sendMetricsReport = ({ Log, Title, Data }: SendMetricsReportPayload) => ({
+export const metrics = ({ Log, Title, Data }: SendMetricsReportPayload) => ({
     method: 'post',
     url: 'metrics',
     data: { Log, Title, Data },
