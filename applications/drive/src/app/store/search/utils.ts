@@ -18,6 +18,7 @@ export const generateOrder = async (ID: string) => {
     const numericalID = ID.split('').map((char) => char.charCodeAt(0));
     const digest = await unsafeMD5(Uint8Array.from(numericalID));
     const orderArray = new Uint32Array(digest.buffer);
+
     return orderArray[0];
 };
 
