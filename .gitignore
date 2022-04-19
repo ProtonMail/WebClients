@@ -15,6 +15,7 @@ tsconfig.tsbuildinfo
 !.yarn/plugins
 !.yarn/sdks
 !.yarn/versions
+!.yarn/patches
 .pnp.*
 .netlify
 storybook-static
