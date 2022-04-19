@@ -6,6 +6,5 @@ export default function useSearchEnabledFeature() {
     const [user] = useUser();
     const { feature } = useFeature(FeatureCode.DriveSearchEnabled);
 
-    const showEncryptedSearch = !isMobile() && !!feature?.Value && !!isPaid(user);
-    return showEncryptedSearch;
+    return !isMobile() && !!feature?.Value && !!isPaid(user);
 }
