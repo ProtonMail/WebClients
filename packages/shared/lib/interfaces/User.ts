@@ -36,6 +36,7 @@ export interface User {
     DriveEarlyAccess: number;
     ToMigrate: 0 | 1;
     MnemonicStatus: MNEMONIC_STATUS;
+    Idle: 0 | 1;
 }
 
 export interface UserModel extends User {
