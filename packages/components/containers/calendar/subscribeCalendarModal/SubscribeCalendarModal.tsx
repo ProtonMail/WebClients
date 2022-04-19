@@ -153,6 +153,7 @@ ${kbLink}
                             label={c('Subscribe to calendar modal').t`Calendar URL`}
                             value={calendarURL}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => setCalendarURL(e.target.value.trim())}
+                            data-test-id="input:calendar-subscription"
                         />
                     </>
                 )
