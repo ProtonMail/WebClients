@@ -9,7 +9,6 @@ import { useMemo } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
 import {
     Button,
-    classnames,
     Href,
     Icon,
     InlineLinkButton,
@@ -151,7 +150,6 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
         : undefined;
     const bePinnedPublicKey = messageVerification?.signingPublicKey || firstAttachedPublicKey;
     const loading = loadingDisablePromptPin || !senderAddress || (isPinUnseen && !contactID) || !bePinnedPublicKey;
-    const bannerColorClassName = isPinUnseen ? 'bg-warning' : 'bg-norm';
 
     // Prevent to propose an already pinned key even if for a strange reason,
     // the suggested key is already pinned yet the verification still fails
@@ -186,12 +184,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     };
 
     return (
-        <div
-            className={classnames([
-                'rounded border px0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column',
-                bannerColorClassName,
-            ])}
-        >
+        <div className="rounded border px0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column bg-norm">
             <div className="flex flex-nowrap pr1 on-mobile-mb0-5">
                 <Icon name="circle-exclamation-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
                 <div>
