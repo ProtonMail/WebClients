@@ -53,7 +53,7 @@ export const load = createAsyncThunk<{ result: QueryResults; taskRunning: TaskRu
             }, 1000);
             throw error;
         }
-        const taskLabels = Object.keys(result.TasksRunning);
+        const taskLabels = Object.keys(result.TasksRunning || {});
         const taskRunning = { ...(getState() as RootState).elements.taskRunning };
         if (taskLabels.length) {
             taskRunning.labelIDs = unique([...taskRunning.labelIDs, ...taskLabels]);
