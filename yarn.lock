@@ -3300,10 +3300,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@noble/ed25519@npm:^1.6.0":
+"@noble/ed25519@npm:1.6.0":
   version: 1.6.0
   resolution: "@noble/ed25519@npm:1.6.0"
   checksum: cca5b412819529d983b09d7394ff2f506fb8100cba333cd6df23316bee7596813d1c5b38d3895bd46369ca70f7ac54d860521df80dcb19805892284930ac9d4a
+  languageName: node
+  linkType: hard
+
+"@noble/ed25519@patch:@noble/ed25519@npm:1.6.0#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0::locator=root%40workspace%3A.":
+  version: 1.6.0
+  resolution: "@noble/ed25519@patch:@noble/ed25519@npm%3A1.6.0#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0::version=1.6.0&hash=47d349&locator=root%40workspace%3A."
+  checksum: 4aa33e4ffc22ed2eca9e6a1b00949dd502d900213fb7ef2fcb4e6326aa57addfe6e2cba8949550b6783a0dca9339cf032812aec7f60051a457411ce4f2a029af
   languageName: node
   linkType: hard
 
@@ -3593,7 +3600,7 @@ __metadata:
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
     "@babel/preset-typescript": ^7.16.7
-    "@noble/ed25519": ^1.6.0
+    "@noble/ed25519": 1.6.0
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/shared": "workspace:packages/shared"
@@ -3740,7 +3747,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/key-transparency@workspace:packages/key-transparency"
   dependencies:
-    "@noble/ed25519": ^1.6.0
+    "@noble/ed25519": 1.6.0
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
     "@types/jasmine": ^3.10.3
