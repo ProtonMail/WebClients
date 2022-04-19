@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Href, Searchbox, Spotlight, usePopperAnchor } from '@proton/components';
 // TODO: replace this with placeholders/star.svg icon after April 2022
-import esSpotlightIcon from '@proton/styles/assets/img/onboarding/drive-search-spotlight.svg';
+import esSpotlightIcon from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 import { useSearchControl } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
