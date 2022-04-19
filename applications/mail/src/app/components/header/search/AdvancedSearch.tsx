@@ -188,12 +188,13 @@ const AdvancedSearch = ({
                 {showEncryptedSearch && (
                     <EncryptedSearchField esState={esState} showMore={showMore} toggleShowMore={toggleShowMore} />
                 )}
-                <div className="pb0-5 border-bottom">
+                <div>
                     <LocationField
                         value={model.labelID}
                         onChange={(nextLabelId) => updateModel({ ...model, labelID: nextLabelId })}
                     />
                 </div>
+                <hr className="my1" />
                 {showMore && (
                     <>
                         <div className="mt1">
