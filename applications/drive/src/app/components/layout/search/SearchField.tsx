@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback, useState } from 'react';
+import React, { useEffect, useRef, useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { Href, Searchbox, Spotlight, usePopperAnchor } from '@proton/components';
@@ -41,18 +41,20 @@ export const SearchField = () => {
         }
     }, [isBuilding]);
 
-    const handleFocus = () => {
-        if (dbExists) {
+    const handleInputClick = () => {
+        if (dbExists && !isBuilding) {
             return prepareSearchData();
         }
 
         searchSpotlight.close();
         setShouldInsertDropdown(true);
-        prepareSearchData(() => indexingDropdownControl.open()).catch(reportError);
+        prepareSearchData().catch(reportError);
+        indexingDropdownControl.open();
     };
 
-    const handleClosedDropdown = () => {
-        setShouldInsertDropdown(false);
+    const handleClosedDropdown = (e?: Event) => {
+        // Prevent handleInputClick from execution
+        e?.stopPropagation();
         indexingDropdownControl.close();
     };
 
@@ -91,7 +93,7 @@ export const SearchField = () => {
                     </div>
                 }
             >
-                <div>
+                <div onClick={handleInputClick}>
                     <Searchbox
                         delay={0}
                         className="w100"
@@ -100,13 +102,12 @@ export const SearchField = () => {
                         onSearch={handleSearch}
                         onChange={setSearchParams}
                         disabled={isDisabled}
-                        onFocus={handleFocus}
                         advanced={
                             shouldInsertDropdown && (
                                 <SearchDropdown
                                     isOpen={indexingDropdownControl.isOpen}
                                     anchorRef={indexingDropdownAnchorRef}
-                                    onClose={indexingDropdownControl.close}
+                                    onClose={handleClosedDropdown}
                                     onClosed={handleClosedDropdown}
                                 />
                             )
