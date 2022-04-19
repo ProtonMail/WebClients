@@ -82,7 +82,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		background-color: var(--email-item-read-background-color);
 		color: var(--email-item-read-text-color);
 
-		.item-icon {
+		.item-icon,
+		.item-icon-compact:hover {
 			background-color: var(--email-item-read-icon-background-color);
 			color: var(--email-item-read-icon-text-color);
 		}
@@ -100,7 +101,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			font-weight: var(--font-weight-bold);
 		}
 
-		.item-icon {
+		.item-icon,
+		.item-icon-compact:hover {
 			background-color: var(--email-item-unread-icon-background-color);
 			color: var(--email-item-unread-icon-text-color);
 		}
@@ -126,7 +128,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			border-inline-start-color: var(--email-item-selected-focus-marker-color);
 		}
 
-		.item-icon {
+		.item-icon,
+		.item-icon-compact:hover {
 			background-color: var(--email-item-selected-icon-background-color);
 			color: var(--email-item-selected-icon-text-color);
 		}
@@ -137,7 +140,8 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		background-color: var(--email-item-unread-background-color);
 		color: var(--email-item-unread-text-color);
 
-		.item-icon {
+		.item-icon,
+		.item-icon-compact:hover {
 			background-color: var(--email-item-unread-icon-background-color);
 			color: var(--email-item-unread-icon-text-color);
 		}
@@ -315,11 +319,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	block-size: rem($conversation-icon-size);
 	border-radius: 50%;
 	font-size: rem(12);
-	transition: background 0.25s ease;
-
-	&:hover {
-		background: var(--background-strong);
-	}
+	transition: background-color 0.25s ease-out;
 
 	&::after {
 		content: '';
