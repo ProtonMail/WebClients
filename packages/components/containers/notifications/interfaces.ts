@@ -9,6 +9,7 @@ export interface NotificationOptions {
     type: NotificationType;
     isClosing: boolean;
     disableAutoClose?: boolean;
+    deduplicate?: boolean;
 }
 
 export interface CreateNotificationOptions extends Omit<NotificationOptions, 'id' | 'type' | 'isClosing' | 'key'> {
