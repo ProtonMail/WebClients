@@ -65,7 +65,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
     return (
         <>
             <label className="text-semibold block" htmlFor={id}>
-                <span className="mr0-5">{c('Label').t`Attach screenshot(s)`}</span>
+                <span className="mr0-5 align-middle">{c('Label').t`Attach screenshot(s)`}</span>
                 <Info url="https://protonmail.com/support/knowledge-base/screenshot-reporting-bugs/" />
             </label>
             <div>
