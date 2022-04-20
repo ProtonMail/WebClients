@@ -131,6 +131,12 @@ const DownloadSharedContainer = () => {
             return;
         }
 
+        // for the cases link doesn't have a generated password included
+        if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
+            setWithCustomPassword(true);
+            return;
+        }
+
         // Any other message from API, for example "Volume is not available".
         if (apiError.message) {
             setError(apiError.message);
