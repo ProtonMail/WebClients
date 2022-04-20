@@ -76,7 +76,7 @@ const RequestNewCodeModal = ({ open, verificationModel, onEdit, onResend, onClos
                 }
                 if (verificationModel.method === 'email') {
                     return c('Info')
-                        .jt`Click "Request new code" to have a new verification code sent to ${strong}. If this email address is incorrect, click "Edit" to correct it.`;
+                        .jt`Before requesting a new verification code, check your spam folder and check that ${strong} is the correct address.`;
                 }
                 if (verificationModel.method === 'sms') {
                     return c('Info')
