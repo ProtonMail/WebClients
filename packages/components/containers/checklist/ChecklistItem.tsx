@@ -16,10 +16,7 @@ const ChecklistItem = ({ icon, text, complete, onClick }: ChecklistItemProps) =>
         complete ? 'text-strike color-weak' : 'checklist-item_root--incomplete',
     ]);
 
-    const mainIconClassName = classnames([
-        'mt0-25 mr1-5 flex-item-noshrink',
-        complete ? 'color-success' : 'color-primary',
-    ]);
+    const mainIconClassName = classnames(['mr1-5 flex-item-noshrink', complete ? 'color-success' : 'color-primary']);
 
     const listItemContent = (
         <>
