@@ -56,6 +56,7 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
         type = 'success',
         text,
         disableAutoClose,
+        deduplicate = type === 'error',
         ...rest
     }: CreateNotificationOptions) => {
         if (intervalIds.has(id)) {
@@ -67,7 +68,7 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
         }
 
         if (key === undefined) {
-            key = typeof text === 'string' ? text : id;
+            key = typeof text === 'string' && deduplicate ? text : id;
         }
 
         if (typeof text === 'string') {
@@ -97,7 +98,8 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
                 ...rest,
                 isClosing: false,
             };
-            if (type !== 'success' && key !== undefined) {
+
+            if (deduplicate) {
                 const duplicateOldNotification = oldNotifications.find(
                     (oldNotification) => oldNotification.key === key
                 );

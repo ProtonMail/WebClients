@@ -21,57 +21,173 @@ describe('notification manager', () => {
     });
 
     describe('deduplication', () => {
-        it('should not deduplicate a success notification', () => {
-            const { result } = renderHook(() => useState<NotificationOptions[]>([]));
-            const [, setState] = result.current;
+        describe('when deduplicate true', () => {
+            it('should remove duplicate notifications', () => {
+                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const [, setState] = result.current;
 
-            const manager = createNotificationManager(setState);
-            act(() => {
-                manager.createNotification({
-                    text: 'foo',
-                    type: 'success',
+                const manager = createNotificationManager(setState);
+                act(() => {
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'success',
+                        deduplicate: true,
+                    });
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'success',
+                        deduplicate: true,
+                    });
+                    manager.createNotification({
+                        text: 'bar',
+                        type: 'success',
+                    });
                 });
-                manager.createNotification({
-                    text: 'foo',
-                    type: 'success',
-                });
-                manager.createNotification({
-                    text: 'bar',
-                    type: 'success',
-                });
+
+                expect(result.current[0]).toStrictEqual([
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'bar' }),
+                ]);
             });
-
-            expect(result.current[0]).toStrictEqual([
-                expect.objectContaining({ text: 'foo' }),
-                expect.objectContaining({ text: 'foo' }),
-                expect.objectContaining({ text: 'bar' }),
-            ]);
         });
 
-        it('should deduplicate an error notification', () => {
-            const { result } = renderHook(() => useState<NotificationOptions[]>([]));
-            const [, setState] = result.current;
+        describe('when deduplicate false', () => {
+            it('should not remove duplicate notifications', () => {
+                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const [, setState] = result.current;
 
-            const manager = createNotificationManager(setState);
-            act(() => {
-                manager.createNotification({
-                    text: 'foo',
-                    type: 'error',
+                const manager = createNotificationManager(setState);
+                act(() => {
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'error',
+                        deduplicate: false,
+                    });
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'error',
+                    });
+                    manager.createNotification({
+                        text: 'bar',
+                        type: 'error',
+                    });
                 });
-                manager.createNotification({
-                    text: 'foo',
-                    type: 'error',
+
+                expect(result.current[0]).toStrictEqual([
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'bar' }),
+                ]);
+            });
+        });
+
+        describe('when deduplicate is undefined', () => {
+            it('should not deduplicate a success notification', () => {
+                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const [, setState] = result.current;
+
+                const manager = createNotificationManager(setState);
+                act(() => {
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'success',
+                    });
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'success',
+                    });
+                    manager.createNotification({
+                        text: 'bar',
+                        type: 'success',
+                    });
                 });
-                manager.createNotification({
-                    text: 'bar',
-                    type: 'error',
-                });
+
+                expect(result.current[0]).toStrictEqual([
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'bar' }),
+                ]);
             });
 
-            expect(result.current[0]).toStrictEqual([
-                expect.objectContaining({ text: 'foo' }),
-                expect.objectContaining({ text: 'bar' }),
-            ]);
+            it('should not deduplicate a warning notification', () => {
+                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const [, setState] = result.current;
+
+                const manager = createNotificationManager(setState);
+                act(() => {
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'warning',
+                    });
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'warning',
+                    });
+                    manager.createNotification({
+                        text: 'bar',
+                        type: 'warning',
+                    });
+                });
+
+                expect(result.current[0]).toStrictEqual([
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'bar' }),
+                ]);
+            });
+
+            it('should not deduplicate a info notification', () => {
+                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const [, setState] = result.current;
+
+                const manager = createNotificationManager(setState);
+                act(() => {
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'info',
+                    });
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'info',
+                    });
+                    manager.createNotification({
+                        text: 'bar',
+                        type: 'info',
+                    });
+                });
+
+                expect(result.current[0]).toStrictEqual([
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'bar' }),
+                ]);
+            });
+
+            it('should deduplicate an error notification', () => {
+                const { result } = renderHook(() => useState<NotificationOptions[]>([]));
+                const [, setState] = result.current;
+
+                const manager = createNotificationManager(setState);
+                act(() => {
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'error',
+                    });
+                    manager.createNotification({
+                        text: 'foo',
+                        type: 'error',
+                    });
+                    manager.createNotification({
+                        text: 'bar',
+                        type: 'error',
+                    });
+                });
+
+                expect(result.current[0]).toStrictEqual([
+                    expect.objectContaining({ text: 'foo' }),
+                    expect.objectContaining({ text: 'bar' }),
+                ]);
+            });
         });
 
         it('should deduplicate react elements using the provided key', () => {
