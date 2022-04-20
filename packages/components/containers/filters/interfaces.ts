@@ -82,6 +82,7 @@ export interface SimpleFilterModalModel extends FilterModalModelBase {
     statement: FilterStatement;
     actions: Actions;
     conditions: Condition[];
+    apply: boolean;
 }
 
 export interface ErrorsSieve {
