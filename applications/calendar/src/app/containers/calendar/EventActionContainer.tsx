@@ -206,7 +206,7 @@ const EventActionContainer = ({ tzid, addresses, calendars, eventTargetActionRef
             history.replace('/');
         };
 
-        run();
+        void run();
     }, []);
 
     return <LoaderPage />;

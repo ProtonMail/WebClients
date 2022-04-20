@@ -28,7 +28,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     };
 
     const handleSubmit = () => {
-        withLoading(handleUpdateTimezone(localTzid));
+        void withLoading(handleUpdateTimezone(localTzid));
     };
 
     return (
