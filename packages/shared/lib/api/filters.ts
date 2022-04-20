@@ -71,8 +71,8 @@ export const applyAllFilters = ({ AllowList = 0, BlockList = 0 }: ApplyFiltersPa
     data: { AllFilters: 1, AllowList, BlockList },
 });
 
-export const applyFilters = (filterIds: string[], { AllowList = 0, BlockList = 0 }: ApplyFiltersParams = {}) => ({
+export const applyFilters = (FilterIDs: string[], { AllowList = 0, BlockList = 0 }: ApplyFiltersParams = {}) => ({
     method: 'post',
     url: 'mail/v4/messages/apply-filters',
-    data: { AllFilters: 0, filterIds, AllowList, BlockList },
+    data: { AllFilters: 0, FilterIDs, AllowList, BlockList },
 });

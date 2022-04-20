@@ -6,5 +6,6 @@ export { default as StorageLimitTopBanner } from './StorageLimitTopBanner';
 export { default as SubUserTopBanner } from './SubUserTopBanner';
 export { default as TimeOutOfSyncTopBanner } from './TimeOutOfSyncTopBanner';
 export { default as NewDomainTopBanner } from './NewDomainTopBanner';
+export { default as FilterRunningTopBanner } from './FilterRunningTopBanner/FilterRunningTopBanner';
 export { default as TopBanners } from './TopBanners';
 export { default as TopBanner } from './TopBanner';

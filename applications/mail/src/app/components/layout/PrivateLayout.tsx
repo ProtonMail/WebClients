@@ -1,5 +1,11 @@
 import { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
-import { PrivateAppContainer, NewDomainTopBanner, TopBanners, useSideApp } from '@proton/components';
+import {
+    PrivateAppContainer,
+    NewDomainTopBanner,
+    TopBanners,
+    useSideApp,
+    FilterRunningTopBanner,
+} from '@proton/components';
 import SideAppIframe from '@proton/components/components/sideApp/SideAppIframe';
 import { useLocation } from 'react-router-dom';
 import MailHeader from '../header/MailHeader';
@@ -32,6 +38,7 @@ const PrivateLayout = (
     const top = (
         <TopBanners>
             <NewDomainTopBanner />
+            <FilterRunningTopBanner />
         </TopBanners>
     );
 

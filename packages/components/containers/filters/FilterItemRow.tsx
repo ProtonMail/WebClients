@@ -1,7 +1,6 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { c } from 'ttag';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/utils/isTruthy';
 import { toggleEnable, deleteFilter } from '@proton/shared/lib/api/filters';
 
 import { Toggle, DropdownActions, OrderableTableRow, useModalState } from '../../components';
@@ -13,18 +12,23 @@ import AdvancedFilterModal from './modal/advanced/AdvancedFilterModal';
 import { Filter } from './interfaces';
 import { isSieve } from './utils';
 import DeleteFilterModal from './modal/DeleteFilterModal';
+import FilterWarningModal from './FilterWarningModal';
+import { DropdownActionProps } from '../../components/dropdown/DropdownActions';
 
 interface Props {
     filter: Filter;
     index: number;
+    onApplyFilter: (filterID: string) => void;
+    canApplyFilters: boolean;
 }
 
-function FilterItemRow({ filter, index, ...rest }: Props) {
+function FilterItemRow({ filter, index, onApplyFilter, canApplyFilters, ...rest }: Props) {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
+    const [applyFilterModalOpen, setApplyFilterModalOpen] = useState(false);
     const [filterModalProps, setFilterModalOpen, renderFilterModal] = useModalState();
     const [advancedFilterModalProps, setAdvancedFilterModalOpen, renderAdvancedFilterModal] = useModalState();
     const [deleteFilterModalProps, setDeleteFilterModalOpen, renderDeleteFilterModal] = useModalState();
@@ -53,21 +57,28 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
         }
     };
 
-    const list = [
-        !isSieve(filter) && {
-            text: c('Action').t`Edit`,
-            onClick: handleEdit(),
-        },
-        {
-            text: c('Action').t`Edit sieve`,
-            onClick: handleEdit('sieve'),
-        },
-        {
-            text: c('Action').t`Delete`,
-            actionType: 'delete',
-            onClick: () => setDeleteFilterModalOpen(true),
-        } as const,
-    ].filter(isTruthy);
+    const editAction: DropdownActionProps = {
+        text: c('Action').t`Edit`,
+        onClick: handleEdit(),
+    };
+    const editSieveAction: DropdownActionProps = {
+        text: c('Action').t`Edit sieve`,
+        onClick: handleEdit('sieve'),
+    };
+    const applyFilterAction: DropdownActionProps = {
+        text: c('Action').t`Apply to existing message`,
+        onClick: () => setApplyFilterModalOpen(true),
+    };
+
+    const deleteFilterAction: DropdownActionProps = {
+        text: c('Action').t`Delete`,
+        actionType: 'delete',
+        onClick: () => setDeleteFilterModalOpen(true),
+    };
+
+    const list: DropdownActionProps[] = isSieve(filter)
+        ? [editSieveAction, ...(canApplyFilters ? [applyFilterAction] : []), deleteFilterAction]
+        : [editAction, ...(canApplyFilters ? [applyFilterAction] : []), editSieveAction, deleteFilterAction];
 
     return (
         <>
@@ -95,6 +106,16 @@ function FilterItemRow({ filter, index, ...rest }: Props) {
             {renderDeleteFilterModal && (
                 <DeleteFilterModal {...deleteFilterModalProps} filterName={filter.Name} handleDelete={handleRemove} />
             )}
+            <FilterWarningModal
+                open={applyFilterModalOpen}
+                onClose={() => {
+                    setApplyFilterModalOpen(false);
+                }}
+                onConfirm={() => {
+                    setApplyFilterModalOpen(false);
+                    onApplyFilter(filter.ID);
+                }}
+            />
         </>
     );
 }
