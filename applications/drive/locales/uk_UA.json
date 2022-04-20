@@ -2541,6 +2541,9 @@
       "Enable drive search": [
         "Увімкнути пошук на диску"
       ],
+      "Encrypted search is here": [
+        "Зашифрований пошук уже тут"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
@@ -2554,7 +2557,7 @@
         "Не вдалося відкрити захищене посилання. Причина: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Файл \"${ name }\" було видалено під час завантаження"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "У файлі відсутній підпис. Ми не можемо підтвердити, що ${ emailAddress } вивантажив ${ fileName }."
@@ -2569,7 +2572,7 @@
         "Завершення"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Теку \"${ link.name }\" було видалено під час завантаження"
       ],
       "Folder contents will merge into a single folder": [
         "Вміст тек об’єднається в одну теку"
@@ -2597,6 +2600,9 @@
       ],
       "here": [
         "тут"
+      ],
+      "How does encrypted search work?": [
+        "Як працює зашифрований пошук?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
@@ -3996,11 +4002,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Зашифрований пошук уже тут"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
       ]
     },
     "Storage": {
@@ -4558,7 +4570,7 @@
         "Не вдалося завантажити файл або теку"
       ],
       "The internet connection was interrupted": [
-        ""
+        "З'єднання з Інтернетом було перервано"
       ],
       "The link does not exist": [
         "Такого посилання не існує"

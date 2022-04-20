@@ -2418,6 +2418,9 @@
       "Enable drive search": [
         ""
       ],
+      "Encrypted search is here": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
       ],
@@ -2431,7 +2434,7 @@
         "開啟安全連結失敗。原因：${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "檔案 \"${ name }\" 在下載時已刪除"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -2446,7 +2449,7 @@
         "即將完成"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "資料夾 \"${ link.name }\" 在下載時已刪除"
       ],
       "Folder contents will merge into a single folder": [
         "資料夾內容將合併為單一個資料夾"
@@ -2474,6 +2477,9 @@
       ],
       "here": [
         "這裡"
+      ],
+      "How does encrypted search work?": [
+        ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳戶時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
@@ -3798,10 +3804,16 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        ""
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
         ""
       ]
     },
@@ -4333,7 +4345,7 @@
         "檔案或資料夾下載失敗"
       ],
       "The internet connection was interrupted": [
-        ""
+        "網路連線已中斷"
       ],
       "The link does not exist": [
         "連結不存在"

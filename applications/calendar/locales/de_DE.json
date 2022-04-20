@@ -968,7 +968,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        "Abkhazia"
+        "Abchasien"
       ],
       "Afghanistan": [
         "Afghanistan"
@@ -2127,7 +2127,7 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können.",
-        "Bitte behebe den hervorgehobenen Konflikt, um fortfahren zu können."
+        "Bitte behebe die hervorgehobenen Konflikte, um fortfahren zu können."
       ],
       "Preferences could not be saved": [
         "Einstellungen konnten nicht gespeichert werden"
@@ -2635,7 +2635,7 @@
       ],
       "This file contains an event invitation:": [
         "Diese Datei enthält eine Einladung zu einem Termin:",
-        "Diese Datei enthält Antworten auf eine Einladung:"
+        "Diese Datei enthält Einladungen zum Termin:"
       ],
       "This file contains an invitation response:": [
         "Diese Datei enthält eine Antwort auf eine Einladung:",
@@ -2901,7 +2901,7 @@
         "Zweitschlüssel aktualisiert"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "Gib den an ${ destinationText } gesendeten Bestätigungsschlüssel ein."
+        "Gib den an ${ destinationText } gesendeten Verifizierungscode ein."
       ],
       "Existent and added participants will be notified.": [
         "Vorhandene und hinzugefügte Teilnehmer werden benachrichtigt."
@@ -2941,7 +2941,7 @@
       ],
       "Import ${ selectedCalendarsCount } of ${ totalCalendarsCount } calendar": [
         "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren",
-        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalender importieren"
+        "${ selectedCalendarsCount }/${ totalCalendarsCount } Kalendern importieren"
       ],
       "Import from": [
         "Importieren aus"
@@ -3046,7 +3046,7 @@
         "Bitte beachte, dass die dieser Gruppe zugewiesenen E-Mail-Adressen NICHT gelöscht werden."
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
-        "Bitte beachten Sie, dass dieser Vorgang (je nach Größe Ihres Adressbuchs) einige Zeit dauern kann."
+        "Bitte beachte, dass dieser Vorgang (je nach Größe deines Adressbuchs) einige Zeit dauern kann."
       ],
       "Please remove the duplicates and try again.": [
         "Bitte entferne die Duplikate und versuche es erneut."
@@ -4051,7 +4051,7 @@
         "Organisation einrichten"
       ],
       "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dies ist das, was andere sehen werden, wenn du diesen eine E-Mail sendest, sie zu einer Veranstaltung einlädtst oder eine Datei mit ihnen teilst."
+        "Dies ist das, was andere sehen werden, wenn du diesen eine E-Mail sendest, sie zu einer Veranstaltung einlädst oder eine Datei mit ihnen teilst."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Verwende die App-Auswahl oben links, um auf andere Proton-Dienste zuzugreifen, einschließlich VPN, Kalender und Drive."
@@ -4956,7 +4956,7 @@
         "„Automatisch” zeigt an, dass das Format im Verfassen-Fenster verwendet wird, um an diesen Benutzer zu senden. Klartext bedeutet, dass die Nachricht beim Senden immer in Reintext umgewandelt wird."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Das digitale Signieren von E-Mails hilft dabei, zu bestätigen, dass die Nachrichten von dir gesendet wurde"
+        "Das digitale Signieren von E-Mails hilft dabei, zu bestätigen, dass die Nachrichten von dir gesendet wurden"
       ],
       "Each imported email will have this label": [
         "Alle importierten Nachrichten werden dieser Kategorie zugeordnet"
@@ -5010,7 +5010,7 @@
         "Möchtest du wirklich ${ count } Kontakte dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
-        "Möchten du diese Kontaktgruppe wirklich dauerhaft löschen?"
+        "Möchtest du diese Kontaktgruppe wirklich dauerhaft löschen?"
       ],
       "Are you sure you want to permanently delete this contact?": [
         "Möchtest du diesen Kontakt wirklich dauerhaft löschen?"
@@ -5049,7 +5049,7 @@
         "Das Überprüfen der Signatur der Kontaktdaten ist fehlgeschlagen."
       ],
       "This action is irreversible. Please enter the word ${ boldDanger } in the field to proceed.": [
-        "Diese Aktion kann NICHT widerrufen werden. Bitte geben Sie das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
+        "Diese Aktion kann NICHT widerrufen werden. Bitte gib das Wort ${ boldDanger } in das Feld ein, um fortzufahren."
       ],
       "This feature requires a paid Proton account": [
         "Diese Funktion steht nur in einem kostenpflichtigen Proton-Konto zur Verfügung"

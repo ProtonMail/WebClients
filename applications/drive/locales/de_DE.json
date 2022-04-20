@@ -1796,7 +1796,7 @@
         "Der Ordner \"${ name }\" wird bereits heruntergeladen"
       ],
       "Folder name cannot be empty": [
-        "Bitte Namen des Ordners angeben"
+        "Name des Ordners muss angegeben werden"
       ],
       "Image upload failed": [
         "Hochladen des Bildes fehlgeschlagen"
@@ -1824,7 +1824,7 @@
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen",
-        "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen"
+        "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen"
       ],
       "Missing key packet": [
         "Fehlendes Schlüsselpaket"
@@ -1893,7 +1893,7 @@
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn Ihnen diese Fehlermeldung weiterhin angezeigt wird, wenden Sie sich bitte an unser ${ supportTeam }."
+        "Ein Problem ist aufgetreten. Bitte ${ refresh }, um fortzufahren. Wenn dir diese Fehlermeldung weiterhin angezeigt wird, wende dich bitte an unser ${ supportTeam }."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Der Name des Ordners ist zu lang. Bitte wählen Sie einen kürzeren Namen."
@@ -1959,7 +1959,7 @@
         "Ihr Browser unterstützt kein Hochladen von Ordnern"
       ],
       "Your import will not be processed.": [
-        "Ihr Importauftrag konnte nicht verarbeitet werden."
+        "Dein Importauftrag konnte nicht verarbeitet werden."
       ]
     },
     "Error importing calendar": {
@@ -2459,6 +2459,9 @@
       "Enable drive search": [
         "Suche in Drive aktivieren"
       ],
+      "Encrypted search is here": [
+        "Die verschlüsselte Suche ist hier"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Bitte den an ${ destinationText } gesendeten Verifizierungscode eingeben."
       ],
@@ -2472,7 +2475,7 @@
         "Sicherer Link konnte nicht geöffnet werden. Fehler: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Die Datei \"${ name }\" wurde während dem herunterladen gelöscht"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Bei der Datei fehlt die Signatur. Wir konnten nicht verifizieren, dass ${ emailAddress } ${ fileName } hochgeladen hat."
@@ -2487,7 +2490,7 @@
         "Wird abgeschlossen"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Der Ordner \"${ link.name }\" wurde während dem herunterladen gelöscht"
       ],
       "Folder contents will merge into a single folder": [
         "Die Inhalte der Ordner werden in einem einzigen Ordner zusammengeführt"
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "hier"
+      ],
+      "How does encrypted search work?": [
+        "Wie funktioniert die verschlüsselte Suche?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Arbeitstages antworten."
@@ -3014,7 +3020,7 @@
         "Name"
       ],
       "name hash": [
-        ""
+        "hash name"
       ],
       "thumbnail": [
         "Vorschaubild"
@@ -3864,11 +3870,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Die verschlüsselte Suche ist hier"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Erhalte bis zu 18 Monate ${ appName } ${ planName } kostenlos"
       ],
       "Invite friends and earn rewards!": [
         "Lade Freunde ein und verdiene Belohnungen!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Jetzt kannst du Drive-Dateien ganz einfach durchsuchen, währenddessen deine Daten in Sicherheit sind."
       ]
     },
     "Storage": {
@@ -4408,7 +4420,7 @@
         "Die Datei oder der Ordner konnte nicht heruntergeladen werden"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Die Internetverbindung wurde unterbrochen"
       ],
       "The link does not exist": [
         "Der Link existiert nicht"

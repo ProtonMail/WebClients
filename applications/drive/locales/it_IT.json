@@ -2459,6 +2459,9 @@
       "Enable drive search": [
         "Abilita la ricerca di unità"
       ],
+      "Encrypted search is here": [
+        "La ricerca crittografata è qui"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "qui"
+      ],
+      "How does encrypted search work?": [
+        "Come funziona la ricerca crittografata?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
@@ -3864,11 +3870,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "La ricerca crittografata è qui"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Ricevi fino a 18 mesi di ${ appName } ${ planName } gratuitamente"
       ],
       "Invite friends and earn rewards!": [
         "Invita gli amici e guadagna ricompense!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
       ]
     },
     "Storage": {
@@ -4408,7 +4420,7 @@
         "Impossibile scaricare il file o la cartella"
       ],
       "The internet connection was interrupted": [
-        ""
+        "La connessione a Internet è stata interrotta"
       ],
       "The link does not exist": [
         "Il collegamento non esiste"
