@@ -4853,7 +4853,7 @@
         "Silakan pilih folder yang ingin Anda impor:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
-        "Silakan pilih jenis tautan yang mau Anda sisipkan dan isikan di semua bidang."
+        "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi seluruh kolom yang tertera."
       ],
       "Please try again, use a different payment method, or call your bank for assistance.": [
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi bank Anda untuk mendapatkan bantuan."
@@ -4970,7 +4970,7 @@
         "Pilih layanan email yang Anda gunakan untuk memulai"
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        ""
+        "Pilih Lanjut ke ${ name } untuk membuka aplikasi yang bersangkutan. Tindakan ini juga akan membuat akun ${ name } dengan alamat ${ MAIL_APP_NAME } Anda sehingga Anda akan dapat masuk hanya dengan sekali klik ke depannya."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -5021,7 +5021,7 @@
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        ""
+        "Simpan kata sandi dan berkas ini di tempat yang aman. Anda akan membutuhkan keduanya untuk mengimpor kunci Anda."
       ],
       "Support for 1 custom email domain": [
         "Dukungan 1 alamat email dengan domain khusus"
@@ -5123,7 +5123,7 @@
         "Tindakan ini akan menonaktifkan frasa pemulihan Anda saat ini. Anda tidak akan lagi dapat menggunakan frasa pemulihan tersebut untuk mengakses akun Anda atau mendekripsi data-data Anda."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        ""
+        "Tindakan ini akan mengunduh berkas yang mengandung kunci pribadi Anda. Lindungi berkas ini dengan mengenkripsinya melalui kata sandi."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Dengan ini, PayPal dapat dipakai untuk membayar langganan Proton Anda. Kami akan membuka PayPal di tab baru. Jika Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
@@ -5144,7 +5144,7 @@
         "Proses ini akan mengaktifkan Otentikasi Dua Faktor (2FA) di akun Proton Anda. Otentikasi Dua Faktor akan membuat akun Proton Anda lebih aman sehingga kami sarankan untuk mengaktifkannya."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        ""
+        "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda telah benar-benar paham akan segala resikonya atau apabila Anda telah mengekspor kunci duplikatnya."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "Untuk mengonfirmasi, harap masukkan nama pengguna yang ingin Anda hapus."
@@ -5258,7 +5258,7 @@
         "Gunakan pesan balasan otomatis untuk memberitahu kontak-kontak Anda bahwa Anda sedang tidak berada di kantor atau sedang tidak dapat menanggapi email-email yang masuk."
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        "Gunakan server terbaik berdasarkan muatan dan posisi saat ini: ${ formattedBestServerName }"
+        "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda hendak terhubung ke server ${ VPN_APP_NAME } tanpa aplikasi. Beberapa contoh situasi yang demikian meliputi: Tunnelblick di macOS, OpenVPN di GNU/Linux."
@@ -5450,7 +5450,7 @@
         "Kapasitas penyimpanan Anda mencapai 100%. Anda tidak dapat mengirim atau menerima pesan baru. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        ""
+        "Anda disarankan untuk mengekspor cadangan dari kunci ini untuk berjaga-jaga apabila di kemudian waktu Anda perlu untuk memulihkan data yang terenkripsi oleh kunci ini."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Anda tetap harus membalas undangan ini agar pihak penyelenggara acara dapat melihat respon Anda."
@@ -5462,7 +5462,7 @@
         "Anda akan dialihkan ke situs bank untuk menyelesaikan verifikasi pembayaran."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        ""
+        "Anda TIDAK akan dapat mendekripsi pesan, berkas, atau data apapun yang terenkripsi dengan kunci ini."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Anda akan segera dialihkan menuju PayPal untuk memverifikasi pembayaran anda."

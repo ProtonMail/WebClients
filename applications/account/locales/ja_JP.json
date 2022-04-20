@@ -32,7 +32,7 @@
         "${ BRAND_NAME } ショップ"
       ],
       "activate": [
-        "アクティベート"
+        "有効化"
       ],
       "Activate": [
         "有効化"
@@ -4016,7 +4016,7 @@
         "請求書未払いのためにアクセスが制限されています。管理者に問い合わせてください。"
       ],
       "account recovery and data recovery method": [
-        "アカウントの回復とデータの復元手段"
+        "アカウント回復とデータの回復手段"
       ],
       "account recovery method": [
         "アカウントの回復手段"
@@ -4298,7 +4298,7 @@
         "このパスワードを紛失しないように注意してください。紛失した場合、組織を管理できなくなります。"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 資格情報を使用しないでください。${ learnMore }"
+        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 認証情報を使用しないでください。${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "現在のセッション以外のすべてのセッションを取り消しますか?"
@@ -4505,7 +4505,7 @@
         "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "最近パスワードをリセットのであれば、回復手段を使ってデータのロックを解除することができます"
+        "最近、パスワードをリセットしたのであれば、回復手段を使ってデータのロックを解除することができます"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         ""
@@ -4619,7 +4619,7 @@
         "巨大なインポートは数日かかる場合があります。"
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        "サードパーティアプリケーションで ${ VPN_APP_NAME } にログインする方法を学ぶ"
+        "サードパーティの VPN アプリケーションで ${ VPN_APP_NAME } にログインする方法を学ぶ"
       ],
       "Learn more": [
         "より詳しく"
@@ -4700,7 +4700,7 @@
         "次に Google アカウントにログインし、データへのアクセスを許可します。"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "アカウントの回復手段は設定されていません。アカウントにアクセスできなくなる危険性があります。"
+        "アカウントの回復手段が設定されていません。アカウントにアクセスできなくなる危険性があります。"
       ],
       "No action selected": [
         "アクションが選択されていません"
@@ -4715,7 +4715,7 @@
         "クレジットカードは必要ありません"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "データの回復手段は設定されていません。データにアクセスできなくなる危険性があります。"
+        "データの回復手段が設定されていません。データにアクセスできなくなる危険性があります。"
       ],
       "No folder selected": [
         "フォルダーが選択されていません"
@@ -4796,7 +4796,7 @@
         "古い回復ファイルです。アップデートして確実にデータにアクセスできるようにします"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "古い回復手段です。アップデートして確実にデータにアクセスできるようにします"
+        "古い回復手段です。アップデートして確実にデータにアクセスできるようにしてください"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
         "古い回復フレーズです。アップデートして確実にデータにアクセスできるようにします"
@@ -4832,7 +4832,7 @@
         "アカウントに関連付けられた 12 単語の回復フレーズ入力してください。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
+        "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "アドレスを削除すると、このアドレスでメールを送受信できなくなります。"
@@ -5165,10 +5165,10 @@
         "メールなどのデータを復号するには、回復フレーズが必要です。"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "パスワードのリセット後に復号してロックされたデータを表示するには、回復手段を選択します。"
+        "パスワードをリセットしたあともロックされたデータを復号して表示できるようにするために、回復手段を選択してください。"
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "アカウントに確実にアクセスし続けるには、アカウントの回復手段を設定します"
+        "アカウントに確実にアクセスし続けるには、アカウントの回復手段を設定してください"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -5180,7 +5180,7 @@
         ""
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロード、インストールし、${ VPN_APP_NAME } サーバーに接続します。"
+        "インターネット接続を保護するには、${ VPN_APP_NAME } アプリケーションをダウンロード・インストールして、${ VPN_APP_NAME } サーバーに接続してください。"
       ],
       "To use ${ toAppName }, please create an address.": [
         "${ toAppName } を利用するには、アドレスを作成します。"
@@ -5261,7 +5261,7 @@
         "負荷や所在地を考慮した最適なサーバーを使用: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "アプリケーションを使用しないで ${ VPN_APP_NAME } に接続する時には、次の資格情報を使用してください。(例: macOS や GNU/Linux 上の OpenVPN)"
+        "macOS で Tunnelblick や GNU/Linux で OpenVPN を使用する場合など、アプリケーションを使用しないで ${ VPN_APP_NAME } に接続するときは、次の認証情報を使用してください。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "独自ドメインのメールアドレス (例: you@yourname.com) を使用する"
@@ -5339,7 +5339,7 @@
         "無効にすると、知らないうちに画像が読み込まれることを防ぎます。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "通知を有効にすると、${ MAIL_APP_NAME } アカウント内に新しいメッセージがある場合に回復メールアドレスにアラートを送信します。"
+        "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスにアラートを送信します。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
         ""
@@ -5402,7 +5402,7 @@
         "Outlook、メール (Apple)、Thunderbird などの IMAP/SMTP をサポートするデスクトップ向けメールクライアントでも ${ MAIL_APP_NAME } を使うことができます。"
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        "以下の資格情報を使用することで、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティ製、オープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
+        "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         ""
@@ -5411,10 +5411,10 @@
         "${ appName } のユーザーは招待できません"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 資格情報を使うことはできません。${ learnMore }"
+        "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 認証情報を使用することはできません。${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "回復手段を設定していないため、パスワードを忘れた場合にはアカウントの復旧はできません。回復手段を設定しないまま続行しますか?"
+        "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
       ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
@@ -5492,7 +5492,7 @@
         "アカウントをアップグレード中です。30 秒程お待ち下さい。"
       ],
       "Your account recovery method is set": [
-        "アカウントの回復手段は設定されています"
+        "アカウントの回復手段が設定されています"
       ],
       "Your account will be updated once the payment is cleared.": [
         "支払いが完了すると、アカウントは更新されます。"
@@ -5510,7 +5510,7 @@
         "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
       ],
       "Your data recovery method is set": [
-        "データの回復手段は設定されています"
+        "データの回復手段が設定されています"
       ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
@@ -5525,7 +5525,7 @@
         "インポート完了後、ログイン情報は保存されません。"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復コードとしても使用しますので、このパスワードは厳重に保管してください。"
+        "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復コードとしても使用しますので、このパスワードは安全な場所に保管してください。"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         ""
@@ -6952,7 +6952,7 @@
         "UDP と TCP という 2 つのプロトコルの違いは何ですか？"
       ],
       "Why set recovery methods?": [
-        "回復手段を設定しませんか?"
+        "回復手段を設定しませんか？"
       ]
     },
     "Loading info": {
@@ -8542,7 +8542,7 @@
         "アクション"
       ],
       "Activate organization key": [
-        "組織の鍵をアクティベート"
+        "組織の鍵を有効化する"
       ],
       "Add a recovery method": [
         "回復手段の追加"
@@ -9001,7 +9001,7 @@
         "次へ"
       ],
       "No recovery method": [
-        "リカバリ方法がありません"
+        "回復手段がありません"
       ],
       "Open actions dropdown": [
         "アクションドロップダウンを開く"
@@ -9106,7 +9106,7 @@
         "パスワードをリセット"
       ],
       "Reset password?": [
-        "パスワードをリセット?"
+        "パスワードをリセットしますか？"
       ],
       "Restore administrator privileges": [
         "管理者権限を修復"

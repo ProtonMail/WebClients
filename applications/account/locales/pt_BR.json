@@ -215,7 +215,7 @@
         "Criar"
       ],
       "Create a secure ${ MAIL_APP_NAME } address instead": [
-        ""
+        "Ao invés disso, crie um endereço seguro do ${ MAIL_APP_NAME }"
       ],
       "Create address": [
         "Criar endereço"
@@ -365,7 +365,7 @@
         "Gerar frase de recuperação"
       ],
       "Get ${ vpnPlus }": [
-        ""
+        "Obtenha o ${ vpnPlus }"
       ],
       "Get started": [
         "Começar"
@@ -3902,13 +3902,13 @@
         "${ emailAddress } é inválido"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
+        "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de login e de acesso à caixa de email. Para habilitar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
       "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        ""
+        "O ${ MAIL_APP_NAME } te permite criar endereços de email para outras pessoas. Isso é perfeito para negócios, famílias, ou grupos."
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "O ${ MAIL_APP_NAME } suporta assinatura DKIM para domínios personalizados. Para usar autenticação DKIM, por favor adicione o seguinte registro CNAME nas suas configurações de DNS para este domínio. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
       "${ mailAppName } Free": [
         "${ mailAppName } Gratuito"
@@ -4053,7 +4053,7 @@
         "Todos devem dispor de uma Internet livre e sem censura."
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Um nome para te ajudar a identificar onde irá usá-lo, podendo facilmente revogar ou extender depois."
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4218,7 +4218,7 @@
         "É necessária a assinatura Basic, Plus ou Visionary"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "Antes de começar a receber emails em endereços de domínio personalizados no ${ MAIL_APP_NAME }, você precisa adicionar o seguinte registro MX ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
@@ -4303,7 +4303,7 @@
         "Criar e gerenciar subcontas além de atribuir a elas endereços de e-mail em seu domínio personalizado."
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        ""
+        "Crie endereços de email para outras pessoas, gerencie ${ MAIL_APP_NAME } para um negócio, escola, ou grupo. Comece adicionando o nome e domínio personalizado da sua organização (ex. @suaempresa.com). "
       ],
       "Create in": [
         "Criar em"
@@ -4342,7 +4342,7 @@
         "Dados bloqueados"
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
-        ""
+        "Exclua quaisquer outros registros MX ou certifique-se que a Prioridade do ${ MAIL_APP_NAME } é o número mais baixo."
       ],
       "Delete link?": [
         "Deletar link?"
@@ -4535,7 +4535,7 @@
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
-        ""
+        "Se você tem um domínio personalizado com o ${ MAIL_APP_NAME }, você pode definir um email pega tudo (catch-all) que receberá mensagens enviadas para o seu domínio, mas com um endereço de email inválido (ex. erros de digitação)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se você tem um vale-presente, insira-o abaixo para aplicar o desconto."
@@ -4828,7 +4828,7 @@
         "Uma conta para todos os serviços da Proton"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Somente você pode ver as etiquetas."
@@ -5072,7 +5072,7 @@
         "Algumas chaves foram reativadas com sucesso"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "O SPF é usado para especificar quem tem permissão de enviar emails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
       "Starter VPN service with P2P support.": [
         "Serviço Starter VPN com suporte P2P e bloqueador de anúncios."
@@ -5303,7 +5303,7 @@
         "Faça upgrade para um plano ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } ou ${ PLAN_NAMES[PLANS.PLUS] } para habilitar respostas automáticas quando você estiver fora do escritório."
       ],
       "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
-        ""
+        "Faça o upgrade para um plano pago para desbloquear suporte a IMAP/SMTP através do ${ MAIL_APP_NAME } Bridge."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Atualize hoje para evitar perder os seguintes benefícios do ${ appName } ${ planName }."
@@ -5462,7 +5462,7 @@
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        ""
+        "Você pode usar o ${ MAIL_APP_NAME } no computador com qualquer cliente de e-mail que suporte IMAP/SMTP, incluindo Outlook, Apple Mail, e Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Você pode usar as seguintes credenciais para se conectar a um servidor do ${ VPN_APP_NAME } usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
@@ -5543,7 +5543,7 @@
         "A sua conta ${ BRAND_NAME } está associada com ${ externalEmailAddress }. Para usar o ${ toAppName }, por favor, crie um endereço."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
+        "Suas contas ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } estão conectadas. Para excluir ambas, por favor acesse sua conta em ${ loginLink } e exclua sua conta lá."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Sua conta tem pelo menos uma fatura em atraso. Seu acesso foi restringido. ${ payInvoiceLink }"
@@ -6445,7 +6445,7 @@
         "Apenas no mês passado"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Nível de filtragem de bloqueio NetShield"
       ],
       "Login password": [
         "Senha do login"
@@ -8577,7 +8577,7 @@
         "${ appName } Teclas de Atalho"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        ""
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "(highly recommended)": [
         "(altamente recomendado)"
@@ -8985,7 +8985,7 @@
         "Gerar nova frase de recuperação?"
       ],
       "Get ${ vpnPlus } to access all servers": [
-        ""
+        "Obtenha o ${ vpnPlus } para acessar todos os servidores"
       ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Obtenha até 18 meses de ${ appName } ${ planName } gratuitamente"

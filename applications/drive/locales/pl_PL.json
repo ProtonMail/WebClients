@@ -2446,7 +2446,7 @@
         "Wyczyszczenie pamięci podręcznej przeglądarki spowoduje wyczyszczenie indeksu wyszukiwania na tym urządzeniu. Aby włączyć tę opcję, musisz ponownie zaindeksować wszystkie pliki."
       ],
       "Clears browser data related to the encrypted search.": [
-        "Wyczyszczenie pamięci podręcznej przeglądarki wpływa na funkcję wyszukiwania zawartości wiadomości."
+        "Wyczyszczenie pamięci podręcznej przeglądarki wpływa na funkcję wyszukiwania zawartości."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na adres e-mail ${ strong }. Jeśli adres jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
@@ -2541,6 +2541,9 @@
       "Enable drive search": [
         "Włącz wyszukiwanie dysku"
       ],
+      "Encrypted search is here": [
+        "Wyszukiwanie zawartości jest tutaj"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
       ],
@@ -2597,6 +2600,9 @@
       ],
       "here": [
         "tutaj"
+      ],
+      "How does encrypted search work?": [
+        "Jak działa wyszukiwanie zawartości?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jeśli masz problem z utworzeniem konta, poproś o zaproszenie, a my odpowiemy w ciągu jednego dnia roboczego."
@@ -3671,7 +3677,7 @@
         "Grupa kontaktów została zaktualizowana"
       ],
       "Encrypted search activated": [
-        "Wyszukiwanie zawartości wiadomości zostało włączone"
+        "Wyszukiwanie zawartości zostało włączone"
       ],
       "Failed to download files: ${ err }": [
         "Nie udało się pobrać plików: ${ err }"
@@ -3996,11 +4002,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Wyszukiwanie zawartości jest tutaj"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Uzyskaj do 18 miesięcy planu ${ appName } ${ planName } za darmo"
       ],
       "Invite friends and earn rewards!": [
         "Zaproś znajomych i zarabiaj nagrody!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Możesz łatwo wyszukiwać pliki, zachowując bezpieczeństwo danych."
       ]
     },
     "Storage": {

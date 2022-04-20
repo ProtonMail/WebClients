@@ -183,7 +183,7 @@
         "Unduh"
       ],
       "Download anyway": [
-        ""
+        "Tetap unduh"
       ],
       "Drive Locked": [
         "Drive Terkunci"
@@ -213,7 +213,7 @@
         "aktifkan notifikasi desktop"
       ],
       "Enable drive search": [
-        ""
+        "Aktifkan pencarian drive"
       ],
       "Expand folder": [
         "Lebarkan folder"
@@ -2416,7 +2416,10 @@
         "Kunci ganda diperbarui"
       ],
       "Enable drive search": [
-        ""
+        "Aktifkan pencarian drive"
+      ],
+      "Encrypted search is here": [
+        "Pencarian terenkripsi kini telah hadir"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
@@ -2431,7 +2434,7 @@
         "Gagal membuka tautan terenkripsi. Sebab: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Berkas \"${ name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Berkas ini tidak ditandatangani. Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
@@ -2446,7 +2449,7 @@
         "Finalisasi"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Folder \"${ link.name }\" telah dihapus pada saat pengunduhan sedang berlangsung"
       ],
       "Folder contents will merge into a single folder": [
         "Konten folder akan digabungkan jadi satu folder"
@@ -2474,6 +2477,9 @@
       ],
       "here": [
         "di sini"
+      ],
+      "How does encrypted search work?": [
+        "Bagaimana cara pencarian terenkripsi bekerja?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Jika Anda menemui masalah saat membuat akun, silakan minta undangan dan kami akan meresponnya satu hari kerja."
@@ -2668,7 +2674,7 @@
         "Ditempatkan dalam antrian"
       ],
       "recommended browser": [
-        ""
+        "browser yang disarankan"
       ],
       "Recovery process might take some time.": [
         "Proses pemulihan mungkin membutuhkan waktu."
@@ -2896,7 +2902,7 @@
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Browser Anda saat ini tidak dapat digunakan untuk mengunduh berkas yang berukuran besar karena tidak tersedianya dukungan service worker yang memadai. Mengunduh berkas yang berukuran besar dapat membekukan layar atau menonaktifkan browser Anda sepenuhnya. Mohon gunakan versi terbaru dari ${ recommendedBrowser } dan coba lagi."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Data-data Anda telah siap untuk diimpor dari ${ importedEmailAddressStrong } ke akun Proton Anda."
@@ -3098,7 +3104,7 @@
         "Aktifkan Akses Beta"
       ],
       "Enabling drive search": [
-        ""
+        "Mengaktifkan pencarian drive"
       ],
       "Encrypt emails": [
         "Enkripsi surel"
@@ -3798,11 +3804,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Pencarian terenkripsi kini telah hadir"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara cuma-cuma"
       ],
       "Invite friends and earn rewards!": [
         "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Kini Anda dapat mencari berkas Drive dengan mudah seraya menjaga data Anda tetap aman."
       ]
     },
     "Storage": {
@@ -4009,7 +4021,7 @@
         "Akses Beta"
       ],
       "Browser might run out of memory": [
-        ""
+        "Memori browser Anda tidak mencukupi"
       ],
       "Cancel all active transfers": [
         "Batalkan semua transfer yang aktif"
@@ -4132,7 +4144,7 @@
         "Kosongkan sampah"
       ],
       "Enable drive search": [
-        ""
+        "Aktifkan pencarian drive"
       ],
       "Enter password to download": [
         "Masukkan kata sandi untuk mengunduh"
@@ -4165,7 +4177,7 @@
         "Rincian folder"
       ],
       "Found ${ searchView.numberOfResults } result": [
-        ""
+        "${ searchView.numberOfResults } hasil pencarian ditemukan"
       ],
       "Groups": [
         "Grup"
@@ -4333,7 +4345,7 @@
         "Berkas atau folder ini gagal diunduh"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Koneksi internet Anda terganggu"
       ],
       "The link does not exist": [
         "Tautan tidak ada"

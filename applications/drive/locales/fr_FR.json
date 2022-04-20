@@ -2459,6 +2459,9 @@
       "Enable drive search": [
         "Activer la recherche dans Drive"
       ],
+      "Encrypted search is here": [
+        "La recherche chiffrée se trouve ici"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
@@ -2472,7 +2475,7 @@
         "Échec de l'ouverture d'un lien sécurisé. La raison est : ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Le fichier \"${ name }\" a été supprimé pendant le téléchargement"
+        "Le fichier « ${ name } » a été supprimé pendant le téléchargement"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Signature du fichier manquante. Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -2487,7 +2490,7 @@
         "Finalisation en cours"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "Le dossier \"${ link.name }\" a été supprimé pendant le téléchargement"
+        "Le dossier « ${ link.name } » a été supprimé pendant le téléchargement"
       ],
       "Folder contents will merge into a single folder": [
         "Le contenu du dossier sera fusionné dans un dossier unique"
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "ici"
+      ],
+      "How does encrypted search work?": [
+        "Comment la recherche chiffrée fonctionne-t-elle ?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvré."
@@ -3864,11 +3870,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "La recherche chiffrée se trouve ici"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ appName } ${ planName } gratuitement"
       ],
       "Invite friends and earn rewards!": [
         "Invitez des amis et gagnez des récompenses !"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Vous pouvez maintenant facilement rechercher des fichiers Drive tout en gardant vos données en sécurité."
       ]
     },
     "Storage": {
