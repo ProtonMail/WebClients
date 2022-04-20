@@ -254,13 +254,13 @@
         "Odstranit odkaz"
       ],
       "Delete permanently": [
-        ""
+        "Navždy smazat"
       ],
       "Delete record": [
         "Smazat záznam"
       ],
       "Delete without exporting": [
-        ""
+        "Smazat bez exportování"
       ],
       "Delete your account": [
         "Smazat účet"
@@ -335,7 +335,7 @@
         "Zapnout podporu pro více uživatelů"
       ],
       "Encrypt and export": [
-        ""
+        "Zašifrovat a exportovat"
       ],
       "Export": [
         "Export"
@@ -347,7 +347,7 @@
         "Exportovat klíč"
       ],
       "Export key before deleting": [
-        ""
+        "Před smazáním exportovat klíč"
       ],
       "Extend": [
         "Rozšířit"
@@ -960,7 +960,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "Tím se odpojí všechny směrovače a klienti, kteří používají tento certifikát."
       ]
     },
     "Apps dropdown": {
@@ -3125,7 +3125,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "Certifikát ${ name } nebyl nalezen nebo byl již odvolán"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Křestní jméno a příjmení nelze zrušit současně"
@@ -6290,7 +6290,7 @@
         "Kategorie"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "Zvolte název vygenerovaného souboru certifikátu"
       ],
       "Code": [
         "Kód"
@@ -6317,7 +6317,7 @@
         "Podmínky"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "Nastavení pro připojení k ${ serverName }"
       ],
       "Confirm link URLs": [
         ""
@@ -6359,7 +6359,7 @@
         "Země"
       ],
       "Create password": [
-        ""
+        "Vytvořit heslo"
       ],
       "Credits pending": [
         "Kredity čekající na schválení"
@@ -6422,7 +6422,7 @@
         "Popis"
       ],
       "Device/certificate name": [
-        ""
+        "Název zařízení/certifikátu"
       ],
       "Digits": [
         "Číslice"
@@ -6581,7 +6581,7 @@
         "Pouze minulý měsíc"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Úroveň pro filtrování blokátorů NetShield"
       ],
       "Login password": [
         "Přihlašovací heslo"
@@ -6629,13 +6629,13 @@
         "Nové heslo"
       ],
       "No filter": [
-        ""
+        "Žádný filtr"
       ],
       "No label found": [
         "Nebyl nalezen žádný štítek"
       ],
       "Non-standard ports": [
-        ""
+        "Nestandardní porty"
       ],
       "Notification": [
         "Upozornění"
@@ -7569,7 +7569,7 @@
         "Zakázaná adresa nemůže být primární"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
-        ""
+        "Klíč s otiskem ${ fp } byl odstraněn."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 údaje byly obnoveny"
@@ -8626,16 +8626,16 @@
         "Adresa aktivována"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "Certifikát ${ name } odvolán"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "Certifikát prodloužen až do ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "Konfigurace \"${ name }\" vytvořena, všimněte si, že soukromý klíč není uložen a nebude znovu zobrazen, měli byste si tuto konfiguraci zkopírovat nebo stáhnout."
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "Vytvoření konfiguračního souboru pro ${ serverName }"
       ],
       "Filter removed": [
         "Filtr odstraněn"
@@ -8743,13 +8743,13 @@
         "(silně doporučováno)"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Pojmenujte konfiguraci, která se má vygenerovat"
       ],
       "1. Select platform": [
         "1. Vyberte platformu"
       ],
       "2. Select platform": [
-        ""
+        "2. Vyberte platformu"
       ],
       "2. Select protocol": [
         "2. Vyberte protokol"
@@ -8761,10 +8761,10 @@
         "3. Vyberte konfigurační soubor a stáhněte jej"
       ],
       "3. Select VPN options": [
-        ""
+        "3. Vyberte možnosti VPN"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. Vyberte server, ke kterému se chcete připojit"
       ],
       "Account and password": [
         "Účet a heslo"
@@ -9022,7 +9022,7 @@
         "Odstranit ${ email }"
       ],
       "Delete ${ filterName }": [
-        ""
+        "Smazat ${ filterName }"
       ],
       "Delete ${ label.Name } folder": [
         "Smazat ${ label.Name } složku"
@@ -9037,7 +9037,7 @@
         "Odstranit kalendář"
       ],
       "Delete key permanently?": [
-        ""
+        "Navždy smazat klíč?"
       ],
       "Delete logs": [
         "Odstranit záznamy"

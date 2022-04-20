@@ -2418,6 +2418,9 @@
       "Enable drive search": [
         ""
       ],
+      "Encrypted search is here": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
       ],
@@ -2474,6 +2477,9 @@
       ],
       "here": [
         "こちら"
+      ],
+      "How does encrypted search work?": [
+        ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
@@ -2647,7 +2653,7 @@
         "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "非アクティブなキーで暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
+        "無効な鍵で暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
       ],
       "Preparing link to file": [
         "ファイルへのリンクを準備中"
@@ -3798,11 +3804,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        ""
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "${ appName } ${ planName } が最大 18 か月無料"
       ],
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        ""
       ]
     },
     "Storage": {

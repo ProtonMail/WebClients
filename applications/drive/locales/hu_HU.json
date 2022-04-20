@@ -185,7 +185,7 @@
         "Letöltés"
       ],
       "Download anyway": [
-        ""
+        "Letöltés mindenképpen"
       ],
       "Drive Locked": [
         ""
@@ -215,7 +215,7 @@
         "asztali értesítések engedélyezése"
       ],
       "Enable drive search": [
-        ""
+        "Felhőtárban Keresés Engedélyezése"
       ],
       "Expand folder": [
         ""
@@ -2457,7 +2457,10 @@
         "Duplikált kulcs frissítve"
       ],
       "Enable drive search": [
-        ""
+        "Felhőtárban Keresés Engedélyezése"
+      ],
+      "Encrypted search is here": [
+        "A titkosított keresés megérkezett"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -2472,7 +2475,7 @@
         ""
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "\"${ name }\" fájl törölve lett letöltés közben"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
@@ -2487,7 +2490,7 @@
         "Befejezés"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "\"${ link.name }\" mappa törölve lett letöltés közben"
       ],
       "Folder contents will merge into a single folder": [
         ""
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "ide"
+      ],
+      "How does encrypted search work?": [
+        "Hogyan működik a titkosított keresés?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -2710,7 +2716,7 @@
         "Sorba állítva"
       ],
       "recommended browser": [
-        ""
+        "ajánlott böngésző"
       ],
       "Recovery process might take some time.": [
         "A helyreállítás eltarthat egy ideig."
@@ -2939,7 +2945,7 @@
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "A jelenlegi böngészője nem támogatja a nagy fájlok letöltését a szervízmunkások elérhetetlensége miatt. A nagy fájlok letöltésétől lefagyhat a böngésző, vagy nem reagálhat. Kérjük, használja a(z) ${ recommendedBrowser } legújabb verzióját és próbálja újra."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -3142,7 +3148,7 @@
         "Béta hozzáférés engedélyezése"
       ],
       "Enabling drive search": [
-        ""
+        "Felhőtárban Keresés Engedélyezése"
       ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
@@ -3864,11 +3870,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "A titkosított keresés megérkezett"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Szerezzen akár 18 hónapnyi ${ appName } ${ planName } elérést ingyen"
       ],
       "Invite friends and earn rewards!": [
         ""
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
       ]
     },
     "Storage": {
@@ -4081,7 +4093,7 @@
         "Béta hozzáférés"
       ],
       "Browser might run out of memory": [
-        ""
+        "A böngésző kifuthat memóriából"
       ],
       "Cancel all active transfers": [
         "Minden folyamatban lévő átvitel megszakítása"
@@ -4206,7 +4218,7 @@
         "Lomtár kiürítése"
       ],
       "Enable drive search": [
-        ""
+        "Felhőtárban Keresés Engedélyezése"
       ],
       "Enter password to download": [
         ""
@@ -4239,8 +4251,8 @@
         ""
       ],
       "Found ${ searchView.numberOfResults } result": [
-        "",
-        ""
+        "${ searchView.numberOfResults } találat találva",
+        "${ searchView.numberOfResults } találat találva"
       ],
       "Groups": [
         "Csoportok"
@@ -4408,7 +4420,7 @@
         "A fájlt vagy mappát nem sikerült letölteni"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Az internetkapcsolat megszakadt"
       ],
       "The link does not exist": [
         "A hivatkozás nem létezik"
