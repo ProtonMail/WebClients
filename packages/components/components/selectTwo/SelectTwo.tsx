@@ -160,6 +160,11 @@ const SelectTwo = <V extends any>({
             return;
         }
 
+        if (key === ' ') {
+            open();
+            return;
+        }
+
         const isAlphanumeric = /^[A-Za-z0-9]$/.test(key);
 
         if (isAlphanumeric && isSearchable) {
