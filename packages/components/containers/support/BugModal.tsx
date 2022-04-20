@@ -281,6 +281,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 {model.OSArtificial && OSAndOSVersionFields}
 
                 <Collapsible
+                    className="mt1"
                     headerContent={
                         <div className="flex flex-align-items-center">
                             <label className="text-semibold">{c('Label').t`System information`}</label>
