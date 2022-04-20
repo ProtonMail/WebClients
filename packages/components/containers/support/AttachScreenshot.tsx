@@ -5,7 +5,7 @@ import { toBlob, resize } from '@proton/shared/lib/helpers/image';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/array';
 import { useNotifications } from '../../hooks';
-import { Button, CircleLoader, FileInput, Icon, Info, Table, TableBody, TableRow } from '../../components';
+import { Button, FileInput, Icon, Info, Table, TableBody, TableCell, TableRow } from '../../components';
 
 export interface Screenshot {
     name: string;
@@ -75,27 +75,26 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                     id={id}
                     onChange={handleChange}
                     disabled={uploading || disabled}
+                    loading={uploading}
                     color="norm"
                     shape="underline"
-                >{c('Action').t`Attach screenshot(s)`}</FileInput>
-                {uploading && <CircleLoader className="icon-16p ml1" />}
+                >
+                    {c('Action').t`Attach screenshot(s)`}
+                </FileInput>
             </div>
-            <Table className="simple-table--has-actions">
-                <TableBody>
-                    {screenshots.map((screenshot) => {
-                        return (
-                            <TableRow
-                                key={screenshot.name}
-                                cells={[
-                                    <div
-                                        key={1}
-                                        className="flex flex-row flex-nowrap flex-align-items-center flex-justify-space-between"
-                                    >
-                                        <span className="max-w100 inline-block text-ellipsis" title={screenshot.name}>
+            {screenshots.length > 0 && (
+                <Table className="simple-table--has-actions">
+                    <TableBody>
+                        {screenshots.map((screenshot) => {
+                            return (
+                                <TableRow key={screenshot.name}>
+                                    <TableCell>
+                                        <div key={1} className="text-ellipsis" title={screenshot.name}>
                                             {screenshot.name}
-                                        </span>
+                                        </div>
+                                    </TableCell>
+                                    <TableCell className="w4e">
                                         <Button
-                                            className="ml0-5"
                                             icon
                                             color="weak"
                                             shape="outline"
@@ -103,14 +102,13 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                                         >
                                             <Icon name="trash" alt={c('Label').t`Delete`} />
                                         </Button>
-                                    </div>,
-                                ]}
-                                className="on-mobile-hide-td2 on-tiny-mobile-hide-td3"
-                            />
-                        );
-                    })}
-                </TableBody>
-            </Table>
+                                    </TableCell>
+                                </TableRow>
+                            );
+                        })}
+                    </TableBody>
+                </Table>
+            )}
         </>
     );
 };
