@@ -4,7 +4,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 
 import { Spotlight, useSpotlightShow } from '../../components';
-import { useConfig, useSpotlightOnFeature, useUserSettings } from '../../hooks';
+import { useActiveBreakpoint, useConfig, useSpotlightOnFeature, useUserSettings } from '../../hooks';
 import { FeatureCode } from '../features';
 import AppsDropdown from './AppsDropdown';
 
@@ -21,6 +21,8 @@ const AppsDropdownWithDiscoverySpotlight = () => {
 
     const initialShow = isMail && !!Mail.length && !!initialUserSettings && !Calendar.length && !Drive.length;
 
+    const { isNarrow } = useActiveBreakpoint();
+
     useLayoutEffect(() => {
         if (!initialUserSettings.current && userSettings) {
             initialUserSettings.current = userSettings;
@@ -31,7 +33,7 @@ const AppsDropdownWithDiscoverySpotlight = () => {
         show,
         onDisplayed,
         onClose: onCloseSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.SpotlightDiscoverProtonServices, initialShow);
+    } = useSpotlightOnFeature(FeatureCode.SpotlightDiscoverProtonServices, initialShow && !isNarrow);
 
     const shouldShowSpotlight = useSpotlightShow(show);
 
