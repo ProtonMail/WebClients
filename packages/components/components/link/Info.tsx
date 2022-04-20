@@ -17,9 +17,9 @@ interface Props {
     questionMark?: boolean;
 }
 const Info = ({
+    originalPlacement = 'top',
     url,
     title = undefined,
-    originalPlacement = 'top',
     buttonClass = 'inline-flex color-inherit',
     buttonTabIndex,
     className = '',
@@ -65,7 +65,8 @@ const Info = ({
                 role={url ? 'link' : undefined}
             >
                 <Icon
-                    className={classnames(['icon-16p color-primary', className])}
+                    className={classnames(['color-primary', className])}
+                    size={16}
                     name={questionMark ? 'circle-question' : 'circle-info'}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
