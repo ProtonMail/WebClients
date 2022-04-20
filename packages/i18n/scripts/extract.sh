@@ -11,15 +11,15 @@ set -eo pipefail
 getFileList() {
   # Remove what we do not need to filter + it makes find more complex
   rm -rf node_modules | true
-  rm -rf rm -rf webpack:/*/webpack | true
+  rm -rf webpack:/*/webpack | true
+  rm -rf webpack:/*/locales | true
 
   # can't use the iregex flag,
   # it doesn't work on PopOS 20.04 (wtf) and on MacOS as the find utility
   # is too old. -> can't even run find --version
   find * \
     -type f \
-    -o -name "*.ts" -o -name "*.tsx" \
-    -o -name "*.js" -o -name "*.jsx"
+    -name "*.ts" -o -name "*.tsx" -o -name "*.js" -o -name "*.jsx"
   # -not -path does not work
 }
 
@@ -73,7 +73,10 @@ function main {
   # Use direct relative path instead of npx or dlx since it doesn't resolve to the installed dependencies
   (
     cd i18n-js;
-    ../../../node_modules/.bin/ttag extract $(getFileList) -o "../${1}";
+    echo "Running ttag extract"
+    # Output from ttag extract is full of babel errors, silence it
+    ../../../node_modules/.bin/ttag extract $(getFileList) -o "../${1}" > /dev/null 2>&1;
+    echo "done"
   )
 
   # Remove useless path
