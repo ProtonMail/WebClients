@@ -1,4 +1,5 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
+import { unary } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
@@ -117,7 +118,7 @@ export const getDeleteRecurringEventActions = async ({
         // Any single edits after the date in the recurrence chain.
         const singleEditRecurrencesAfter = getRecurrenceEventsAfter(singleEditRecurrences, recurrence.localStart);
 
-        const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
+        const deleteOperations = singleEditRecurrencesAfter.map(unary(getDeleteSyncOperation));
         const updateOperation = getUpdateSyncOperation({
             veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
             calendarEvent: originalEvent,
@@ -170,7 +171,7 @@ export const getDeleteRecurringEventActions = async ({
             isInvitation && !deleteSingleEdits
                 ? [originalEvent].concat(singleEditRecurrences.filter((event) => getIsEventCancelled(event)))
                 : recurrences;
-        const deleteOperations = eventsToDelete.map(getDeleteSyncOperation);
+        const deleteOperations = eventsToDelete.map(unary(getDeleteSyncOperation));
         const resetPartstatOperations: UpdatePartstatOperation[] = [];
         const dropPersonalPartOperations: UpdatePersonalPartOperation[] = [];
         if (selfAttendeeToken) {
