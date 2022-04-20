@@ -80,14 +80,6 @@ const mockedGetHasUserReachedCalendarLimit = getHasUserReachedCalendarLimit as j
     ReturnType<typeof getHasUserReachedCalendarLimit>
 >;
 
-window.ResizeObserver =
-    window.ResizeObserver ||
-    jest.fn().mockImplementation(() => ({
-        disconnect: jest.fn(),
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-    }));
-
 const mockCalendar: VisualCalendar = {
     ID: 'id3',
     Name: 'calendar3',
