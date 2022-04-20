@@ -3,9 +3,11 @@ import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { Api } from '@proton/shared/lib/interfaces';
+import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
+import { METRICS_LOG } from '@proton/shared/lib/constants';
 import { ESIndexMetrics, ESProgressBlob, ESSearchMetrics } from './interfaces';
 import { DIACRITICS_REGEXP, ES_MAX_PARALLEL_ITEMS } from './constants';
-import { apiHelper, indexKeyExists } from './esHelpers';
+import { indexKeyExists } from './esHelpers';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -261,28 +263,10 @@ export const requestPersistence = async () => {
 };
 
 /**
- * Delay an operation by a random number of seconds between 1 second and 3 minutes, expressed in milliseconds
- */
-export const deferSending = async () => {
-    await wait(1000 * Math.floor(180 * Math.random() + 1));
-};
-
-/**
  * Send metrics about encrypted search
  */
-export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetrics | ESIndexMetrics) => {
-    await deferSending();
-    return apiHelper<{ Code: number }>(
-        api,
-        undefined,
-        {
-            method: 'post',
-            url: 'metrics',
-            data: { Log: 'encrypted_search', Title, Data },
-        },
-        'metrics'
-    );
-};
+export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetrics | ESIndexMetrics) =>
+    sendMetricsReport(api, METRICS_LOG.ENCRYPTED_SEARCH, Title, Data);
 
 /**
  * Remove diacritics and apply other transforms to the NFKD decomposed string

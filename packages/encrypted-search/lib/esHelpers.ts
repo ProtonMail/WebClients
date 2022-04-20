@@ -4,10 +4,10 @@ import { Api } from '@proton/shared/lib/interfaces/Api';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { randomDelay } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {
     addESTimestamp,
-    deferSending,
     getES,
     getNumItemsDB,
     getOldestTimePoint,
@@ -241,7 +241,7 @@ export const testKeywords = (normalizedKeywords: string[], stringsToSearch: stri
 export const sendSlowSearchReport = async (userID: string, storeName: string) => {
     const numItemsIndexed = await getNumItemsDB(userID, storeName);
 
-    await deferSending();
+    await randomDelay();
 
     esSentryReport('Search is taking too long', { numItemsIndexed });
 };
