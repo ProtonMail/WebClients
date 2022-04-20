@@ -84,7 +84,7 @@
         "存档"
       ],
       "Attach screenshot(s)": [
-        ""
+        "添加截图"
       ],
       "Attachment": [
         "上传为附件"
@@ -342,7 +342,7 @@
         "转到首页"
       ],
       "Go to label": [
-        ""
+        "转至标签"
       ],
       "Go to last page": [
         "转到末页"
@@ -390,7 +390,7 @@
         "我有疑问"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "图像载入时不会借助代理服务器"
       ],
       "import": [
         "导入"
@@ -444,7 +444,7 @@
         "了解详情"
       ],
       "Less search options": [
-        ""
+        "更少的搜索选项"
       ],
       "Load": [
         "加载"
@@ -509,8 +509,8 @@
       "More": [
         "更多"
       ],
-      "More details about ${ title }": [
-        "${ title } 详情"
+      "More details about ${ ariaLabelTitle }": [
+        "关于 ${ ariaLabelTitle } 的更多细节"
       ],
       "More info: ${ safeTitle }": [
         "更多信息：${ safeTitle }"
@@ -570,7 +570,7 @@
         "否"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "没有检测到跟踪器，但跟踪器防护可能导致某些图像无法加载。"
       ],
       "No, I won't attend": [
         "不，我不会参加"
@@ -777,7 +777,7 @@
         "显示更少"
       ],
       "Show less search options": [
-        ""
+        "减少搜索选项"
       ],
       "Show messages": [
         "显示邮件"
@@ -786,7 +786,7 @@
         "展开搜索选项"
       ],
       "Show preview": [
-        ""
+        "显示预览"
       ],
       "Sign out": [
         "退出"
@@ -968,7 +968,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "搜索邮件"
       ]
     },
     "Actions message": {
@@ -5149,7 +5149,7 @@
         "日期："
       ],
       "Delete": [
-        ""
+        "删除"
       ],
       "Display name": [
         "对外名称"
@@ -5443,10 +5443,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "发件人"
       ],
       "To": [
-        ""
+        "收件人"
       ]
     },
     "Label to change composer mode": {
@@ -6025,7 +6025,7 @@
         "发送邮件"
       ],
       "Set up a recovery method": [
-        ""
+        "设置恢复方法"
       ]
     },
     "Participant name": {
@@ -6114,7 +6114,7 @@
         "搜索名称、电子邮件或群组"
       ],
       "Select": [
-        ""
+        "选择"
       ],
       "Start date": [
         "开始日期"

@@ -453,7 +453,7 @@
         "Více informací"
       ],
       "Less search options": [
-        ""
+        "Méně možností vyhledávaní"
       ],
       "Load": [
         "Nahrát"
@@ -518,8 +518,8 @@
       "More": [
         "Více"
       ],
-      "More details about ${ title }": [
-        "Více informací o ${ title }"
+      "More details about ${ ariaLabelTitle }": [
+        "Více informací o ${ ariaLabelTitle }"
       ],
       "More info: ${ safeTitle }": [
         "Více informací: ${ safeTitle }"
@@ -786,7 +786,7 @@
         "Zobrazit méně"
       ],
       "Show less search options": [
-        ""
+        "Skrýt možnosti vyhledávání"
       ],
       "Show messages": [
         "Zobrazit zprávy"
@@ -980,7 +980,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "Prohledat zprávy"
       ]
     },
     "Actions message": {
@@ -3723,7 +3723,7 @@
     },
     "Info": {
       "${ activateLink } or ${ learnMoreLink }.": [
-        ""
+        "${ activateLink } nebo ${ learnMoreLink }."
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mailová adresa",
@@ -4359,7 +4359,7 @@
         "Zjistěte více"
       ],
       "learn more": [
-        ""
+        "více informací"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -5689,10 +5689,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "Od"
       ],
       "To": [
-        ""
+        "Komu"
       ]
     },
     "Label to change composer mode": {

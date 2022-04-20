@@ -254,13 +254,13 @@
         "Hivatkozás törlése"
       ],
       "Delete permanently": [
-        ""
+        "Végleges törlés"
       ],
       "Delete record": [
         "Elem törlése"
       ],
       "Delete without exporting": [
-        ""
+        "Törlés exportálás nélkül"
       ],
       "Delete your account": [
         "Fiók törlése"
@@ -335,7 +335,7 @@
         "Többfelhasználós mód engedélyezése"
       ],
       "Encrypt and export": [
-        ""
+        "Titkosítás és exportálás"
       ],
       "Export": [
         "Exportálás"
@@ -347,7 +347,7 @@
         "Kulcs exportálása"
       ],
       "Export key before deleting": [
-        ""
+        "Kulcs exportálása törlés előtt"
       ],
       "Extend": [
         "Kiterjesztés"
@@ -4672,7 +4672,7 @@
         "Tartsa meg ezt a DNS beállítást mindaddig amíg a DKIM-et használni szeretné."
       ],
       "Key deletion is irreversible!": [
-        ""
+        "A kulcs törlése visszafordíthatatlan!"
       ],
       "Label all imported messages as": [
         "Az importált üzenetek megjelölése mint"
@@ -5084,7 +5084,7 @@
         "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        ""
+        "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később kulcsa importálásához."
       ],
       "Support for 1 custom email domain": [
         "Egy saját domain név használata"
@@ -5186,7 +5186,7 @@
         "Ez kikapcsolja a jelenlegi helyreállító jelmondatát. Nem fogja tudni használni a fiók elérésnek helyreállításához vagy titkosított adatai visszafejtéséhez."
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        ""
+        "Ez le fog tölteni egy fájlt, amiben a privát kulcsa van. Védje ezt a fájlt azzal, hogy titkosítja egy jelszóval."
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "Ez lehetővé teszi, hogy a Proton előfizetését PayPallal fizesse. Most átirányítjuk a PayPalhoz egy új böngészőfülön. Amennyiben letiltotta a felugró ablakokat, kérjük engedélyezze a folytatáshoz."
@@ -5207,7 +5207,7 @@
         "Ezzel a funkcióval bekapcsolhatja a kétlépcsős hitelesítést (2FA). A kétlépcsős hitelesítés biztonságosabbá teszi a Proton fiókját, ezért javasolt engedélyezni."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        ""
+        "Az adatvesztés elkerülése érdekében csak akkor töröljön, ha tudja, mit csinál, vagy már exportált egy másolatot."
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "A jóváhagyáshoz írja be a törölni kívánt felhasználó nevét."
@@ -5513,7 +5513,7 @@
         "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        ""
+        "Exportáljon egy biztonsági mentést erről a kulcsról, abban az esetben, ha szüksége lenne visszaállítani azokat az adatokat, amelyeket titkosított vele."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "Még válaszolnia kell a meghívókra, hogy a házigazda lássa a válaszát."
@@ -5525,7 +5525,7 @@
         "A kifizetés ellenőrzéséhez átirányítjuk a bankjához."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        ""
+        "Nem lesz képes visszafejteni bármilyen üzenetet, fájlt vagy akármilyen más adatot, amit ezzel a kulccsal titkosított."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
@@ -6223,7 +6223,7 @@
         "Ország"
       ],
       "Create password": [
-        ""
+        "Jelszó létrehozása"
       ],
       "Credits pending": [
         "Függőben lévő kreditek"
@@ -7423,7 +7423,7 @@
         "Egy kikapcsolt cím nem lehet elsődleges"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
-        ""
+        "Kulcs törölve ezzel az ujjlenyomattal: ${ fp }."
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 azonosító frissítve"
@@ -8877,7 +8877,7 @@
         "Naptár törlése"
       ],
       "Delete key permanently?": [
-        ""
+        "Végleges törlés?"
       ],
       "Delete logs": [
         "Naplók törlése"
