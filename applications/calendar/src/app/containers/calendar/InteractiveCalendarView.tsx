@@ -712,12 +712,13 @@ const InteractiveCalendarView = ({
                 }
 
                 const normalizedStart = start;
-                const normalizedEnd =
-                    action === ACTIONS.CREATE_UP
-                        ? isFromAllDay
-                            ? start
-                            : new Date(normalizedStart.getTime() + eventDuration)
-                        : end;
+                const normalizedEnd = (() => {
+                    if (action === ACTIONS.CREATE_UP) {
+                        return isFromAllDay ? start : new Date(normalizedStart.getTime() + eventDuration);
+                    }
+
+                    return end;
+                })();
 
                 if (!newTemporaryModel || !newTemporaryEvent) {
                     return;

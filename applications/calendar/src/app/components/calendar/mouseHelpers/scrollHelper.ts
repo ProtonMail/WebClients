@@ -1,12 +1,11 @@
-const keys: { [key: number]: number } = { 37: 1, 38: 1, 39: 1, 40: 1 };
+const keys: { [key: string]: number } = { ArrowLeft: 1, ArrowUp: 1, ArrowRight: 1, ArrowDown: 1 };
 
 const preventDefault = (e: Event) => {
     e.preventDefault();
-    e.returnValue = false;
 };
 
 function preventDefaultForScrollKeys(e: KeyboardEvent) {
-    if (keys[e.keyCode]) {
+    if (keys[e.key]) {
         preventDefault(e);
         return false;
     }
