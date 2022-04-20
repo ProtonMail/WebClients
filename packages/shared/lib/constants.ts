@@ -832,3 +832,10 @@ export const AES256 = 'aes256';
 export const PRODUCT_NAMES = {
     EASY_SWITCH: 'Easy Switch',
 };
+
+// Allowed Log parameters of the /metrics route
+export enum METRICS_LOG {
+    SIGNUP = 'signup',
+    ENCRYPTED_SEARCH = 'encrypted_search',
+    DARK_STYLES = 'dark_styles',
+}
