@@ -130,7 +130,16 @@ const SelectTwo = <V extends any>({
         const indexOfMatchedOption = searchableItems.findIndex((v) => v.startsWith(search));
 
         if (indexOfMatchedOption !== -1) {
-            setFocusedIndex(indexOfMatchedOption);
+            if (isOpen) {
+                setFocusedIndex(indexOfMatchedOption);
+            } else {
+                const matchedValue = optionValues[indexOfMatchedOption];
+                onChange?.({
+                    value: matchedValue,
+                    selectedIndex: indexOfMatchedOption,
+                });
+                onValue?.(matchedValue);
+            }
         }
     }, [search]);
 
@@ -142,7 +151,7 @@ const SelectTwo = <V extends any>({
         }
     };
 
-    const handleMenuKeydown = (e: KeyboardEvent<HTMLUListElement>) => {
+    const handleKeydown = (e: KeyboardEvent<HTMLElement>) => {
         if (e.key === 'Escape') {
             close();
             anchorRef.current?.focus();
@@ -178,6 +187,7 @@ const SelectTwo = <V extends any>({
                 isOpen={isOpen}
                 onOpen={open}
                 onClick={handleAnchorClick}
+                onKeyDown={handleKeydown}
                 aria-label={ariaLabel}
                 ref={anchorRef}
                 {...rest}
@@ -196,7 +206,7 @@ const SelectTwo = <V extends any>({
                 sameAnchorWidth
                 disableDefaultArrowNavigation
             >
-                <SelectOptions selected={selectedIndex} onKeyDown={handleMenuKeydown} onChange={handleChange}>
+                <SelectOptions selected={selectedIndex} onKeyDown={handleKeydown} onChange={handleChange}>
                     {children}
                 </SelectOptions>
             </Dropdown>
