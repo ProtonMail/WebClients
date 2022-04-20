@@ -297,7 +297,7 @@
         "Пометить для удаления"
       ],
       "Maximize transfers": [
-        "Развернуть окно с загрузками"
+        "Развернуть окно скачиваний"
       ],
       "Merge": [
         "Объединить"
@@ -402,7 +402,7 @@
         "Перезапустить все"
       ],
       "Restart download": [
-        "Перезапустить закачку"
+        "Перезапустить скачивание"
       ],
       "Restart upload": [
         "Перезапустить загрузку"
@@ -2541,6 +2541,9 @@
       "Enable drive search": [
         "Включить поиск по хранилищу"
       ],
+      "Encrypted search is here": [
+        "Зашифрованный поиск тут"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
@@ -2554,7 +2557,7 @@
         "Не удалось открыть защищенную ссылку. Причина: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Файл \"${ name }\" был удален во время загрузки"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "У файла отсутствует подпись. Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
@@ -2569,7 +2572,7 @@
         "Завершение"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Папка \"${ link.name }\" была удалена во время загрузки"
       ],
       "Folder contents will merge into a single folder": [
         "Содержимое папки объединяется в одну папку"
@@ -2597,6 +2600,9 @@
       ],
       "here": [
         "здесь"
+      ],
+      "How does encrypted search work?": [
+        "Как работает зашифрованный поиск?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
@@ -3230,7 +3236,7 @@
         "Включить доступ к бета-версии"
       ],
       "Enabling drive search": [
-        "Включается поиск по хранилищу"
+        "Включаем поиск по хранилищу"
       ],
       "Encrypt emails": [
         "Шифровать письма"
@@ -3996,11 +4002,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Зашифрованный поиск тут"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Теперь вы легко можете искать файлы в хранилище, сохраняя при этом свои данные в безопасности."
       ]
     },
     "Storage": {
@@ -4558,7 +4570,7 @@
         "Не удалось скачать файл или папку"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Подключение к Интернету было прервано"
       ],
       "The link does not exist": [
         "Ссылка не существует"

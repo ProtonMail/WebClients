@@ -3950,7 +3950,7 @@
         "${ vpnPlus } 允许 ${ maxVpn } 台设备同时接入 VPN。"
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
+        "安全核心功能需升级为 ${ vpnPlus } 或 ${ visionary }。"
       ],
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
@@ -4298,7 +4298,7 @@
         "不要忘记这个密码：如果您忘记了这个密码，您将无法管理您的机构。"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "您不能使用 OpenVPN / IKEv2 凭证登录 ${ VPN_APP_NAME } 客户端或 ${ VPN_APP_NAME } 总览。${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "确定要让本机以外的所有设备退出此账户吗？"
@@ -4619,7 +4619,7 @@
         "大批量的导入可能需要几天才能完成。"
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
+        "了解如何使用第三方 VPN 客户端登录到 ${ VPN_APP_NAME }。"
       ],
       "Learn more": [
         "了解详情"
@@ -5066,7 +5066,7 @@
         "您的用户登录后即可看到机构名称。"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
+        "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ${ VPN_APP_NAME } 服务器。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         ""
@@ -5180,7 +5180,7 @@
         "要想继续，请选择一种账户恢复方法用于验证请求。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
+        "若需要保护与互联网之间的连接，下载并安装 ${ VPN_APP_NAME } 应用程序并连接至 ${ VPN_APP_NAME } 服务器。"
       ],
       "To use ${ toAppName }, please create an address.": [
         "创建一个地址以使用${ toAppName }。"
@@ -5261,7 +5261,7 @@
         ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
+        "在没有客户端时，请使用以下凭证连接到 ${ VPN_APP_NAME } 服务器。示例包括：macOS 下的 Tunnelblick, GNU/Linux 下的 OpenVPN。"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "在邮箱地址中使用您自己的域名（如 you@yourname.com）"
@@ -5294,7 +5294,7 @@
         "警告：这是永久性删除，同时也会移除所有已连接服务的访问权限并删除您的所有联系人。"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
+        "我们建议您尽可能使用官方 ${ VPN_APP_NAME } 客户端。"
       ],
       "We recommend using your recovery phrase instead.": [
         "我们建议您改为使用恢复密语。"
@@ -5402,7 +5402,7 @@
         ""
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
+        "您可以使用以下凭证通过第三方开源 VPN 客户端连接到 ${ VPN_APP_NAME } 服务器，例如 macOS 下的 Tunnelblick 或 GNU/Linux 下的 OpenVPN。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "未来 24 小时内您最多只能发送 ${ emailSendLimitNumber } 封邀请邮件"
@@ -5411,7 +5411,7 @@
         ""
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "您不能使用 OpenVPN / IKEv2 凭证登录 ${ VPN_APP_NAME } 客户端或 ${ VPN_APP_NAME } 总览。${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"

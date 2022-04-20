@@ -2950,7 +2950,7 @@
         "Ваш файл ${ formattedFilename } содержит более ${ MAX_IMPORT_EVENTS_STRING } событий."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
-        "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
+        "Ваш файл ${ formattedFilename } имеет недопустимый формат и не может быть импортирован."
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
         "Ваш файл ${ formattedFilename } не содержит событий для импорта."
@@ -5123,7 +5123,7 @@
         "Фраза восстановления не связана ни с одним устаревшим ключем."
       ],
       "Referral link copied to your clipboard": [
-        "Реферальная ссылка скопирована"
+        "Реферальная ссылка скопирована в буфер обмена"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большинство проблем."
@@ -10090,7 +10090,7 @@
         "Вы больше не увидите в списке эту запись об импорте."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Ваша бесплатная пробная версия заканчивается ${ textDate }. ${ action }"
+        "Ваша бесплатный пробный период заканчивается ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "Ваш файл восстановления устарел. Он не сможет восстановить новые данные, если вы снова сбросите учетную запись."

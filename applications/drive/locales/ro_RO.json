@@ -187,7 +187,7 @@
         "Descărcare"
       ],
       "Download anyway": [
-        ""
+        "Descărcare așa"
       ],
       "Drive Locked": [
         "Unitate blocată"
@@ -217,7 +217,7 @@
         "activare notificări pe desktop"
       ],
       "Enable drive search": [
-        ""
+        "Activare căutare în unitate"
       ],
       "Expand folder": [
         "Extindere folder"
@@ -2498,7 +2498,10 @@
         "Cheie duplicat actualizată"
       ],
       "Enable drive search": [
-        ""
+        "Activare căutare în unitate"
+      ],
+      "Encrypted search is here": [
+        "Căutarea criptată este aici"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -2513,7 +2516,7 @@
         "A eșuat deschiderea unei legături securizate. Motivul este: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Fișierul „${ name }” a fost șters în timpul descărcării."
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Lipsește semnătura fișierului. Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
@@ -2528,7 +2531,7 @@
         "Finalizare"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Folderul „${ link.name }” a fost șters în timpul descărcării."
       ],
       "Folder contents will merge into a single folder": [
         "Conținutul folderelor se va îmbina într-unul singur."
@@ -2556,6 +2559,9 @@
       ],
       "here": [
         "aici"
+      ],
+      "How does encrypted search work?": [
+        "Cum funcționează căutarea criptată?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
@@ -2752,7 +2758,7 @@
         "În așteptare"
       ],
       "recommended browser": [
-        ""
+        "navigator recomandat"
       ],
       "Recovery process might take some time.": [
         "Procesul de recuperare ar putea dura ceva timp."
@@ -2982,7 +2988,7 @@
         "Acest cont are cel puțin o factură restantă. În curând accesul va fi restricționat. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Navigatorul web actual nu acceptă descărcarea de fișiere de mari dimensiuni din cauza indisponibilității unui prestator de servicii. Descărcarea de fișiere mari poate îngheța sau poate face ca navigatorul să nu răspundă. Utilizați cele mai recente versiuni ale unui ${ recommendedBrowser } și reîncercați."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Datele vă sunt pregătite pentru importare din ${ importedEmailAddressStrong } în contul Proton."
@@ -3186,7 +3192,7 @@
         "Activare acces la Beta"
       ],
       "Enabling drive search": [
-        ""
+        "Activare căutare în unitate"
       ],
       "Encrypt emails": [
         "Criptare mesaje"
@@ -3930,11 +3936,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Căutarea criptată este aici"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Obțineți gratuit până la 18 luni de ${ appName } ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         "Invitați pe alții și câștigați recompense!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Acum puteți căuta cu ușurință fișierele din unitate, păstrând în același timp datele în siguranță."
       ]
     },
     "Storage": {
@@ -4153,7 +4165,7 @@
         "Acces la Beta"
       ],
       "Browser might run out of memory": [
-        ""
+        "Navigatorul ar putea rămâne fără memorie"
       ],
       "Cancel all active transfers": [
         "Anulare toate transferurile active"
@@ -4280,7 +4292,7 @@
         "Golire gunoi"
       ],
       "Enable drive search": [
-        ""
+        "Activare căutare în unitate"
       ],
       "Enter password to download": [
         "Introduceți parola pentru a descărca"
@@ -4313,9 +4325,9 @@
         "Detalii foldere"
       ],
       "Found ${ searchView.numberOfResults } result": [
-        "",
-        "",
-        ""
+        "S-a găsit un rezultat",
+        "S-au găsit ${ searchView.numberOfResults } rezultate",
+        "S-au găsit ${ searchView.numberOfResults } de rezultate"
       ],
       "Groups": [
         "Grupuri"
@@ -4483,7 +4495,7 @@
         "Fișierul sau folderul nu a putut fi descărcat"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Conexiunea la internet a fost întreruptă"
       ],
       "The link does not exist": [
         "Legătura nu există"
