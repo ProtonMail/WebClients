@@ -152,24 +152,17 @@ const SelectTwo = <V extends any>({
     };
 
     const handleKeydown = (e: KeyboardEvent<HTMLElement>) => {
-        if (e.key === 'Escape') {
+        const { key } = e;
+
+        if (key === 'Escape') {
             close();
             anchorRef.current?.focus();
             return;
         }
 
-        const isAlphanumeric = /^[a-z0-9]+$/i.test(e.key);
+        const isAlphanumeric = /^[A-Za-z0-9]$/.test(key);
 
-        /*
-         * The e.key.length === 1 thing is super hacky and is supposed
-         * to prevent event keys such as 'Shift' / 'ArrowUp' etc. from
-         * being tracked here.
-         *
-         * A better solution might be needed.
-         */
-        if (isAlphanumeric && isSearchable && e.key.length === 1) {
-            const { key } = e;
-
+        if (isAlphanumeric && isSearchable) {
             setSearch((s) => s + key);
         }
     };
