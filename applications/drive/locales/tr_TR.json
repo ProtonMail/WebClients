@@ -2459,6 +2459,9 @@
       "Enable drive search": [
         "Drive aramasını etkinleştir"
       ],
+      "Encrypted search is here": [
+        "Şifrelenmiş aramayı deneyimleyin"
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
       ],
@@ -2472,7 +2475,7 @@
         "Güvenli bağlantı açılamadı. Nedeni: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "\"${ name }\" klasörü indirme sırasında silindi"
+        "\"${ name }\" dosyası indirme sırasında silindi"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Dosya imzası eksik. ${ fileName } ögesini ${ emailAddress } kullanıcısının yüklediği doğrulanamadı."
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "buraya"
+      ],
+      "How does encrypted search work?": [
+        "Şifrelenmiş arama nasıl çalışır?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
@@ -3864,11 +3870,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "Şifrelenmiş aramayı deneyimleyin"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "18 aya kadar ücretsiz ${ appName } ${ planName } edinin"
       ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı çağırarak ödül kazanın!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
       ]
     },
     "Storage": {

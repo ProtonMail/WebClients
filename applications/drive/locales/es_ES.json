@@ -111,7 +111,7 @@
         "Cerrar transferencias"
       ],
       "Collapse folder": [
-        "Colapsar carpeta"
+        "Contraer carpeta"
       ],
       "Compose": [
         "Redactar"
@@ -215,10 +215,10 @@
         "habilitar las notificaciones de escritorio"
       ],
       "Enable drive search": [
-        "Activar la búsqueda de unidades"
+        "Activar la búsqueda en almacenamiento"
       ],
       "Expand folder": [
-        "Ampliar carpeta"
+        "Expandir carpeta"
       ],
       "Export": [
         "Exportar"
@@ -1051,7 +1051,7 @@
         "Isla de Navidad"
       ],
       "Cocos (Keeling) Islands": [
-        "Islas Cocos"
+        "Islas Cocos (Keeling)"
       ],
       "Colombia": [
         "Colombia"
@@ -2457,7 +2457,10 @@
         "Clave duplicada actualizada"
       ],
       "Enable drive search": [
-        "Activar la búsqueda de unidades"
+        "Activar la búsqueda en almacenamiento"
+      ],
+      "Encrypted search is here": [
+        "La búsqueda cifrada está aquí"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
@@ -2472,7 +2475,7 @@
         "No se pudo abrir un enlace seguro. El motivo es: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "El archivo \"${ name }\" fue eliminado durante la descarga"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "No se ha encontrado la firma del archivo. No hemos podido verificar que ${ emailAddress } haya cargado ${ fileName }."
@@ -2487,7 +2490,7 @@
         "Finalizando"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "El directorio \"${ link.name }\" fue eliminado durante la descarga"
       ],
       "Folder contents will merge into a single folder": [
         "El contenido de los directorios se unirá en un solo directorio"
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "aquí"
+      ],
+      "How does encrypted search work?": [
+        "¿Cómo funciona la búsqueda cifrada?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si estás teniendo problemas para crear tu cuenta, solicita una invitación y te responderemos en un día hábil."
@@ -3280,7 +3286,7 @@
         "Mostrar contraseña"
       ],
       "Set expiration date": [
-        "Establecer fecha de caducidad"
+        "Establecer fecha de expiración"
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
@@ -3569,8 +3575,8 @@
         "No se pudieron cargar los archivos: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "",
-        "El archivo o directorio \"${ filename }\" y ${ count } otros se están cargando"
+        "El archivo o directorio \"${ filename }\" y otros ${ count } se están cargando actualmente",
+        "El archivo o directorio \"${ filename }\" y otros ${ count } se están cargando actualmente"
       ],
       "File or folder \"${ filename }\" is already uploading": [
         "El archivo o directorio \"${ filename }\" ya se está cargando"
@@ -3864,11 +3870,17 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        "La búsqueda cifrada es aquí"
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         "Consigue gratis hasta 18 meses de ${ appName } ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         "¡Invita a tus amigos y gana recompensas!"
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
+        "Ahora puedes buscar fácilmente archivos de Drive mientras mantienes tus datos seguros."
       ]
     },
     "Storage": {
@@ -4206,7 +4218,7 @@
         "Vaciar papelera"
       ],
       "Enable drive search": [
-        "Activar la búsqueda de unidades"
+        "Activar la búsqueda en almacenamiento"
       ],
       "Enter password to download": [
         "Introduce la contraseña para descargar"
@@ -4408,7 +4420,7 @@
         "No se ha podido descargar el archivo o la carpeta"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Se interrumpió la conexión a internet"
       ],
       "The link does not exist": [
         "El enlace no existe"

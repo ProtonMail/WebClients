@@ -2418,6 +2418,9 @@
       "Enable drive search": [
         ""
       ],
+      "Encrypted search is here": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
       ],
@@ -2431,7 +2434,7 @@
         "无法打开安全链接，原因是：${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "文件“${ name }”在下载过程中被删除"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "文件缺少签名，我们无法验证 ${ fileName } 由 ${ emailAddress } 上传。"
@@ -2446,7 +2449,7 @@
         "即将完成"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "文件夹“${ link.name }”在下载过程中被删除"
       ],
       "Folder contents will merge into a single folder": [
         "文件夹内容将合并为一个文件夹"
@@ -2474,6 +2477,9 @@
       ],
       "here": [
         "这里"
+      ],
+      "How does encrypted search work?": [
+        ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -2728,7 +2734,7 @@
         "应用程序需要在本地解密您的联系人，然后才能导出。 在进程结束时，将生成一个 VCF 文件，您将能够下载它。"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "以下内容可能已被篡改：${ items }，请确认后打开。"
       ],
       "There are no files yet": [
         "还没有文件"
@@ -3798,10 +3804,16 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        ""
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
         ""
       ]
     },

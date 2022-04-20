@@ -809,10 +809,10 @@
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Luk"
       ],
       "Open": [
-        ""
+        "Åbn"
       ]
     },
     "Confirm modal title": {
@@ -2359,7 +2359,7 @@
         "Kontrollerer signaturer"
       ],
       "Clear data": [
-        ""
+        "Ryd data"
       ],
       "Clear encrypted search data": [
         ""
@@ -2439,7 +2439,7 @@
         "Digital signatur verificeret. Denne mappe blev uploaded sikkert af ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "Hentning af ${ downloadFileName } vil blive afbrudt"
       ],
       "Downloaded": [
         "Downloadet"
@@ -2457,6 +2457,9 @@
         "Duplikeret nøgle opdateret"
       ],
       "Enable drive search": [
+        "Aktivér søgning på drev"
+      ],
+      "Encrypted search is here": [
         ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
@@ -2472,7 +2475,7 @@
         "Kunne ikke åbne et sikkert link. Årsagen er: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Filen \"${ name }\" blev slettet under download"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Filen mangler sin signatur. Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
@@ -2487,7 +2490,7 @@
         "Færdiggører"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Mappe \"${ link.name }\" blev slettet under download"
       ],
       "Folder contents will merge into a single folder": [
         "Mappeindhold vil blive flettet sammen til én enkelt mappe"
@@ -2515,6 +2518,9 @@
       ],
       "here": [
         "her"
+      ],
+      "How does encrypted search work?": [
+        ""
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -2710,7 +2716,7 @@
         "Sat i kø"
       ],
       "recommended browser": [
-        ""
+        "anbefalet browser"
       ],
       "Recovery process might take some time.": [
         "Gendannelsesprocessen kan tage noget tid."
@@ -2743,7 +2749,7 @@
         "Del filer med links"
       ],
       "Signature check will be ignored": [
-        ""
+        "Tjek af signatur ignoreres"
       ],
       "Signature issue": [
         "Signatur problem"
@@ -2764,13 +2770,13 @@
         "supportteam"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Kontoen kan have fået en ny nøgle, eller følgende kan være blevet manipuleret: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Applikationen skal dekryptere dine kontakter lokalt, før de kan eksporteres. Ved afslutningen af processen vil en VCF-fil blive genereret, og du har mulighed for at downloade denne."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Der kan være blevet manipuleret med følgende: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
       "There are no files yet": [
         "Der er ingen filer endnu"
@@ -2810,7 +2816,7 @@
         "Dette vil overskrive den eksisterende mappe"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
+        "For at aktivere rigtig privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         ""
@@ -2843,7 +2849,7 @@
         "Papirkurv"
       ],
       "Try different keywords": [
-        ""
+        "Prøv forskellige nøgleord"
       ],
       "Unlimited folders, labels, and filters": [
         "Ubegrænsede mapper, etiketter og filtre"
@@ -2870,10 +2876,10 @@
         "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Vi kunne ikke bekræfte, hvem der uploadede ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -3788,7 +3794,7 @@
         "Søg efter navn eller e-mail"
       ],
       "Select": [
-        ""
+        "Vælg"
       ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
@@ -3864,10 +3870,16 @@
       ]
     },
     "Spotlight": {
+      "Encrypted search is here": [
+        ""
+      ],
       "Get up to 18 months of ${ appName } ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "Now you can easily search Drive files while keeping your data secure.": [
         ""
       ]
     },

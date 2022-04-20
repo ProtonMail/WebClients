@@ -509,8 +509,8 @@
       "More": [
         "その他"
       ],
-      "More details about ${ title }": [
-        "${ title } についての詳細"
+      "More details about ${ ariaLabelTitle }": [
+        "${ ariaLabelTitle } についての詳細"
       ],
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
@@ -777,7 +777,7 @@
         "詳細を非表示"
       ],
       "Show less search options": [
-        ""
+        "検索オプションの詳細を閉じる"
       ],
       "Show messages": [
         "メッセージを表示"
@@ -936,7 +936,7 @@
         "請求書を参照する"
       ],
       "View keys": [
-        "キーを表示"
+        "鍵を表示"
       ],
       "View message": [
         "メッセージを表示"
@@ -2951,7 +2951,7 @@
         "公開鍵を信頼できません"
       ],
       "re-activate the previous key": [
-        "以前のキーを再アクティブ化"
+        "以前の鍵をもう一度有効化"
       ],
       "Removed duplicate recipient: ${ recipents }": [
         "競合した宛先を削除しました: ${ recipents }"
@@ -2990,10 +2990,10 @@
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "Proton はメッセージを復号できません。すべてのキーがアクティブか確認してください。"
+        "Proton はメッセージを復号できません。すべての鍵が有効か確認してください。"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "いくつかの添付ファイルは復号できませんでした。\n関連するプライベートキーを持っている場合は、GnuPG などのプログラムを使ってファイルを復号できます。"
+        "いくつかの添付ファイルは復号できませんでした。\n関連する公開鍵を持っている場合は、GnuPG などのプログラムを使ってファイルを復号できます。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "フォルダー名が長すぎます。別の名前を選択してください。"
@@ -3071,10 +3071,10 @@
         "名前を設定してください"
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
-        "最近パスワードをリセットしたためメールを復号できません。以前のパスワードが思い出せるなら、メッセージにアクセスするために ${ reActivateKeyLink } することができます。${ learnMoreLink }"
+        "最近、パスワードをリセットしたため電子メールを復号できません。以前のパスワードを記憶している場合、 ${ reActivateKeyLink } してメッセージにアクセスすることができます。${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "パスワードをリセットしたためメールを復号できません。${ learnMoreLink }"
+        "電子メールを復号できません。パスワードをリセットしたためかもしれません。${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "インポートできませんでした。"
@@ -3481,7 +3481,7 @@
         "メッセージを送信する"
       ],
       "Set up a recovery method": [
-        "リカバリー手段の追加"
+        "回復手段を設定する"
       ]
     },
     "Get started checklist spotlight": {
@@ -3948,7 +3948,7 @@
         "とにかく添付ファイルをダウンロードしますか?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "連絡先の詳細を再署名して、これらのフィンガープリントを持ったキーを信頼してよろしいですか?"
+        "連絡先の詳細を再署名して、これらのフィンガープリントの鍵を信頼してよろしいですか？"
       ],
       "Do you want to re-sign the contact details?": [
         "連絡先の詳細に再署名しますか?"
@@ -3975,7 +3975,7 @@
         "アップロードするファイルをここにドロップしてください"
       ],
       "Duplicate key updated": [
-        "重複したキーはアップデートされました"
+        "重複した鍵がアップデートされました"
       ],
       "Email address": [
         "メールアドレス"
@@ -4254,10 +4254,10 @@
         "該当する項目がありません"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
+        "トラッカーは見つかりませんでしたが、いくつかの画像はトラッカー保護により読み込まれませんでした"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "メモ: アップロードされたキーは暗号化に利用できます。暗号化は自動的に無効化されます。"
+        "メモ: アップロードされた鍵は暗号化に利用できます。暗号化は自動的に無効化されます。"
       ],
       "Normal": [
         "標準"
@@ -4293,7 +4293,7 @@
         "少なくとも 1 件の宛先を追加してください。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "安全に保ってください。これはパスワードをリセットしたときに、アカウントにアクセスしたりデータを復元するのに使われます。"
+        "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "グループに割り当てられたアドレスは削除されません。"
@@ -4311,7 +4311,7 @@
         "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "非アクティブなキーで暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
+        "無効な鍵で暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
       ],
       "Preview": [
         "プレビュー"
@@ -4467,10 +4467,10 @@
         "送信者は、開封確認を要求しています。"
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
-        "${ contactName } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットことが原因です。\n${ contactAddress } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
+        "${ contactName } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddress } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
       ],
       "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
-        "${ contactNames } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットことが原因です。\n${ contactAddresses } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
+        "${ contactNames } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddresses } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
       ],
       "Themes can give your inbox a new look.": [
         "テーマは受信箱を新しい見た目にします。"
@@ -4557,10 +4557,10 @@
         "このメッセージの有効期限は明日の ${ formattedTime } までです"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "このパブリックキーは自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
+        "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
       ],
       "This sender's public key has not been trusted yet.": [
-        "この送信者の公開キーはまだ信頼されていません。"
+        "この送信者の公開鍵はまだ信頼されていません。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -4569,7 +4569,7 @@
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先暗号化キーを再度有効にする必要があります。 したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
+        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         ""
@@ -4578,7 +4578,7 @@
         ""
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "アドレスの検証を利用するには、送信で使うキーを含む 1 つ以上のパブリックキーを信頼する必要があります。これにより、暗号キーの偽装を防ぐことができます。"
+        "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         ""
@@ -4662,7 +4662,7 @@
         ""
       ],
       "We could not verify the sender's trusted keys.": [
-        "送信者の信頼されたキーの検証ができませんでした。"
+        "送信者の信頼された鍵を検証できませんでした。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -6300,7 +6300,7 @@
         "${ MAIL_APP_NAME } による暗号化"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "PGP 宛先へ、${ MAIL_APP_NAME } によって送信された、暗号化されたメッセージ"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
         ""
@@ -6324,10 +6324,10 @@
         "PGP 署名付き (暗号化なし)"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        ""
+        "検証済みの宛先へ、${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
       ],
       "Sent by you with end-to-end encryption": [
         "あなたによって送信された、エンドツーエンド暗号化されたメッセージ"

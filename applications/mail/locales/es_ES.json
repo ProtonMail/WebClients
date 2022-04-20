@@ -512,8 +512,8 @@
       "More": [
         "Más"
       ],
-      "More details about ${ title }": [
-        "Más detalles sobre ${ title }"
+      "More details about ${ ariaLabelTitle }": [
+        "Más detalles sobre ${ ariaLabelTitle }"
       ],
       "More info: ${ safeTitle }": [
         "Más información: ${ safeTitle }"
@@ -2782,7 +2782,7 @@
         "Elija una fecha en el futuro."
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        "Elija una fecha dentro del siguiente día ${ SCHEDULED_MAX_DATE_DAYS }.",
+        "Elija una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días.",
         "Elija una fecha dentro de los siguientes ${ SCHEDULED_MAX_DATE_DAYS } días."
       ],
       "Condition incomplete": [
@@ -5273,10 +5273,10 @@
         "Frecuencia"
       ],
       "From": [
-        "Desde"
+        "De"
       ],
       "From:": [
-        "Desde:"
+        "De:"
       ],
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
@@ -5471,7 +5471,7 @@
         "Hora"
       ],
       "To": [
-        "Hasta"
+        "Para"
       ],
       "To:": [
         "Para:"
