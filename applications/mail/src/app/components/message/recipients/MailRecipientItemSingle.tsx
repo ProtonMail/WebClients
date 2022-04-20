@@ -60,7 +60,7 @@ const MailRecipientItemSingle = ({
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
-    const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen] = useModalState();
+    const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
 
     const { ContactID } = getContactEmail(contactsMap, recipient.Address) || {};
     const label = getRecipientLabel(recipient, true);
@@ -166,7 +166,7 @@ const MailRecipientItemSingle = ({
                 isRecipient={isRecipient}
                 isExpanded={isExpanded}
             />
-            <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
+            {renderTrustPublicKeyModal && <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />}
         </>
     );
 };
