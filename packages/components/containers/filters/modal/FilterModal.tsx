@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
+import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import {
@@ -14,6 +14,7 @@ import {
     Form,
     useModalState,
     ModalProps,
+    Checkbox,
 } from '../../../components';
 import {
     useLoading,
@@ -24,6 +25,7 @@ import {
     useFilters,
     useEventManager,
     useApiWithoutResult,
+    useFeature,
 } from '../../../hooks';
 
 import HeaderFilterModal from './HeaderFilterModal';
@@ -52,6 +54,7 @@ import { computeFromTree, convertModel } from '../utils';
 import { generateUID } from '../../../helpers';
 import { getDefaultFolders } from '../constants';
 import CloseFilterModal from './CloseFilterModal';
+import { FeatureCode } from '../../features';
 
 interface Props extends ModalProps {
     filter?: Filter;
@@ -111,6 +114,7 @@ const modelHasChanged = (a: SimpleFilterModalModel, b: SimpleFilterModalModel): 
 };
 
 const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
+    const { feature: applyFiltersFeature } = useFeature(FeatureCode.ApplyFilters);
     const { isNarrow } = useActiveBreakpoint();
     const [filters = []] = useFilters();
     const [labels = [], loadingLabels] = useLabels();
@@ -162,6 +166,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
             id: filter?.ID,
             statement: Operator?.value || FilterStatement.ALL,
             name: filter?.Name || '',
+            apply: false,
             conditions:
                 Conditions?.map((cond) => ({
                     type: cond.Type.value,
@@ -207,6 +212,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
 
     const reqCreate = useApiWithoutResult<{ Filter: Filter }>(addTreeFilter);
     const reqUpdate = useApiWithoutResult<{ Filter: Filter }>(updateFilter);
+    const reqApply = useApiWithoutResult<{ Filter: Filter }>(applyFilters);
 
     const handleCloseModal = () => {
         onCloseCustomAction?.();
@@ -219,12 +225,18 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
             createNotification({
                 text: c('Notification').t`${Filter.Name} created`,
             });
+
+            return Filter;
         } finally {
             // Some failed request will add the filter but in disabled mode
             // So we have to refresh the list in both cases
             await call();
             handleCloseModal();
         }
+    };
+
+    const applyFilter = async (filterId: string) => {
+        await reqApply.request([filterId]);
     };
 
     const editFilter = async (filter: Filter) => {
@@ -234,6 +246,8 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
             text: c('Filter notification').t`Filter ${Filter.Name} updated`,
         });
         handleCloseModal();
+
+        return Filter;
     };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -254,12 +268,17 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
 
         event.preventDefault();
 
+        let apiResult: Filter | undefined = undefined;
+
         if (isEdit) {
-            await editFilter(convertModel(newModel));
-            return;
+            apiResult = await editFilter(convertModel(newModel));
+        } else {
+            apiResult = await createFilter(convertModel(newModel));
         }
 
-        await createFilter(convertModel(newModel));
+        if (newModel.apply && apiResult) {
+            await applyFilter(apiResult.ID);
+        }
     };
 
     const handleClose = () => {
@@ -327,6 +346,17 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                         onChange={(newModel) => setModel(newModel as SimpleFilterModalModel)}
                     />
                     {loadingLabels || loadingFolders ? <Loader /> : renderStep()}
+                    {applyFiltersFeature?.Value === true && [Step.ACTIONS, Step.PREVIEW].includes(model.step) && (
+                        <div className="mt1">
+                            <Checkbox
+                                id="applyfilter"
+                                onChange={(event) => setModel({ ...model, apply: !!event.target.checked })}
+                                checked={model.apply}
+                            >
+                                {c('Label').t`Apply filter to existing emails`}
+                            </Checkbox>
+                        </div>
+                    )}
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <FooterFilterModal

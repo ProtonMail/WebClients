@@ -1,19 +1,32 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { arrayMove, ContainerGetter, SortEndHandler } from 'react-sortable-hoc';
-import { updateFilterOrder } from '@proton/shared/lib/api/filters';
+import { applyFilters, updateFilterOrder } from '@proton/shared/lib/api/filters';
 
 import { Loader } from '../../components';
-import { useFilters, useApiWithoutResult, useEventManager } from '../../hooks';
-import FilterSortableList from './SortableList';
+import { useFilters, useApiWithoutResult, useEventManager, useNotifications, useApi, useFeature } from '../../hooks';
+import FilterSortableList from './FilterSortableList';
 import ActionsFilterToolbar from './ActionsFilterToolbar';
 import { Filter } from './interfaces';
 import { SettingsSection, SettingsParagraph } from '../account';
+import { FeatureCode } from '../features';
 
 function FiltersSection() {
+    const { feature: applyFiltersFeature } = useFeature(FeatureCode.ApplyFilters);
     const { call } = useEventManager();
     const [filters, loading] = useFilters();
     const orderRequest = useApiWithoutResult(updateFilterOrder);
+    const { createNotification } = useNotifications();
+    const api = useApi();
+    const handleApplyFilter = async (filterId: string) => {
+        // Handle Filter API call
+        await api(applyFilters([filterId]));
+
+        createNotification({
+            text: c('Action').t`Filters are being applied. This might take a few minutes.`,
+            type: 'success',
+        });
+    };
 
     const [list, setFilters] = useState<Filter[]>(() => filters || []);
 
@@ -28,9 +41,11 @@ function FiltersSection() {
 
     const onSortEnd: SortEndHandler = async ({ oldIndex, newIndex }) => {
         try {
-            const newList: Filter[] = arrayMove(list, oldIndex, newIndex);
-            setFilters(newList);
-            await orderRequest.request(newList.map(({ ID }) => ID));
+            const nextFilters: Filter[] = arrayMove(list, oldIndex, newIndex);
+            setFilters(nextFilters);
+
+            const filterIds = nextFilters.map(({ ID }) => ID);
+            await orderRequest.request(filterIds);
             await call();
         } catch (e: any) {
             setFilters(filters);
@@ -41,8 +56,15 @@ function FiltersSection() {
         if (loading) {
             return <Loader />;
         }
+
         return list.length ? (
-            <FilterSortableList getContainer={getScrollContainer} items={list} onSortEnd={onSortEnd} />
+            <FilterSortableList
+                getContainer={getScrollContainer}
+                items={list}
+                onSortEnd={onSortEnd}
+                onApplyFilter={handleApplyFilter}
+                canApplyFilters={applyFiltersFeature?.Value === true}
+            />
         ) : null;
     };
 

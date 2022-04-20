@@ -9,9 +9,11 @@ interface Props {
     items: Filter[];
     getContainer: ContainerGetter;
     onSortEnd: SortEndHandler;
+    onApplyFilter: (filterID: string) => void;
+    canApplyFilters: boolean;
 }
 
-const FilterSortableList = ({ items, ...rest }: Props) => (
+const FilterSortableList = ({ items, onApplyFilter, canApplyFilters, ...rest }: Props) => (
     <OrderableTable className="border-none border-collapse mt1 simple-table--has-actions" {...rest}>
         <caption className="sr-only">{c('Settings/filters').t`Filters`}</caption>
         <OrderableTableHeader>
@@ -30,7 +32,13 @@ const FilterSortableList = ({ items, ...rest }: Props) => (
         </OrderableTableHeader>
         <OrderableTableBody colSpan={0}>
             {items.map((filter, index) => (
-                <FilterItemRow key={`item-${index}`} index={index} filter={filter} />
+                <FilterItemRow
+                    key={`item-${index}`}
+                    index={index}
+                    filter={filter}
+                    onApplyFilter={onApplyFilter}
+                    canApplyFilters={canApplyFilters}
+                />
             ))}
         </OrderableTableBody>
     </OrderableTable>

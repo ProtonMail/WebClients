@@ -25,7 +25,7 @@ const wrapTooltip = (text: string | ReactNode, tooltip?: string) => {
     );
 };
 
-interface DropdownActionProps extends DropdownMenuButtonProps {
+export interface DropdownActionProps extends DropdownMenuButtonProps {
     key?: string;
     text: string | ReactNode;
     tooltip?: string;
