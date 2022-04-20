@@ -135,7 +135,7 @@ const getSaveSingleEventActions = async ({
             calendarEvent: oldEvent,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
         });
-        const deleteOperation = getDeleteSyncOperation(oldEvent);
+        const deleteOperation = getDeleteSyncOperation(oldEvent, isSwitchCalendar);
         const multiSyncActions = [
             {
                 calendarID: newCalendarID,

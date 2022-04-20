@@ -221,7 +221,7 @@ const getSaveRecurringEventActions = async ({
 
         // These occurrences have to be deleted, even if the time was not changed, because a new chain with a new UID is created
         // So potentially instead of deleting, we could update all the events to be linked to the new UID but this is easier
-        const deleteOperations = singleEditRecurrencesAfter.map(getDeleteSyncOperation);
+        const deleteOperations = singleEditRecurrencesAfter.map(unary(getDeleteSyncOperation));
         const updateOperation = getUpdateSyncOperation({
             veventComponent: deleteFutureRecurrence(
                 originalVeventWithSequence,
@@ -256,7 +256,7 @@ const getSaveRecurringEventActions = async ({
         // Any single edits in the recurrence chain.
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
-        const deleteOperations = isInvitation ? [] : singleEditRecurrences.map(getDeleteSyncOperation);
+        const deleteOperations = isInvitation ? [] : singleEditRecurrences.map(unary(getDeleteSyncOperation));
         if (selfAttendeeToken && invitePartstat) {
             // the attendee changes answer
             const { updatePartstatActions, updatePersonalPartActions, sendActions } = await getChangePartstatActions({
@@ -370,7 +370,7 @@ const getSaveRecurringEventActions = async ({
         const hasStartChanged = getHasStartChanged(updatedVeventComponent, originalVeventComponent);
 
         if (isSwitchCalendar) {
-            const deleteOriginalOperation = getDeleteSyncOperation(originalEvent);
+            const deleteOriginalOperation = getDeleteSyncOperation(originalEvent, isSwitchCalendar);
             return {
                 multiSyncActions: [
                     {
