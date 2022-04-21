@@ -18,6 +18,7 @@ import {
     APPS,
     PLAN_NAMES,
     MAIL_APP_NAME,
+    SSO_PATHS,
 } from '@proton/shared/lib/constants';
 import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { c } from 'ttag';
@@ -496,7 +497,9 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
                 await api({ ...checkReferrer(referrer), silence: true });
                 setModelDiff({ isReferred: true });
             } catch (error) {
-                // Do nothing
+                if (location.pathname === SSO_PATHS.REFER) {
+                    history.replace(SSO_PATHS.SIGNUP);
+                }
             }
         };
         if (signupParameters?.referrer) {
