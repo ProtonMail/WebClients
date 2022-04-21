@@ -3,23 +3,38 @@ import { Organization } from '@proton/shared/lib/interfaces';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { Alert, ConfirmModal, ConfirmModalProps, ErrorButton, Paragraph } from '../../components';
+import { AlertModal, ModalProps, Button } from '../../components';
 
-interface Props extends ConfirmModalProps {
+interface Props extends ModalProps {
     organization: Organization;
+    onConfirm: () => void;
 }
 
-const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
+const LossLoyaltyModal = ({ organization, onConfirm, onClose, ...rest }: Props) => {
     const bonusSpace = organization.BonusSpace && humanSize(organization.BonusSpace, 'GB');
+
     return (
-        <ConfirmModal
+        <AlertModal
             title={c('Title').t`Confirm loss of Proton bonuses`}
-            confirm={<ErrorButton type="submit">{c('Action').t`Remove bonuses`}</ErrorButton>}
+            buttons={[
+                <Button
+                    onClick={() => {
+                        onConfirm();
+                        onClose?.();
+                    }}
+                    color="danger"
+                >
+                    {c('Action').t`Remove bonuses`}
+                </Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            onClose={onClose}
             {...rest}
         >
-            <Paragraph>{c('Info')
-                .t`Since you're a loyal user, your account has additional features enabled.`}</Paragraph>
-            <Alert className="mb1" type="warning">
+            <div className="mb1">
+                {c('Info').t`Since you're a loyal user, your account has additional features enabled.`}
+            </div>
+            <div>
                 {c('Info')
                     .t`By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.`}
                 <ul>
@@ -34,8 +49,8 @@ const LossLoyaltyModal = ({ organization, ...rest }: Props) => {
                         </li>
                     ) : null}
                 </ul>
-            </Alert>
-        </ConfirmModal>
+            </div>
+        </AlertModal>
     );
 };
 
