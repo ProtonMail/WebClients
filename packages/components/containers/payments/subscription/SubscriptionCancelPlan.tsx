@@ -18,7 +18,7 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
             </h3>
             <p className="text-lg subscription-cancel-plan-info">{info}</p>
             {features.length ? (
-                <ul className="unstyled m0">
+                <ul className="unstyled mt1">
                     {features.map((feature) => {
                         return (
                             <li key={feature.featureName} className="flex flex-nowrap mb0-5">

@@ -14,6 +14,7 @@ import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constan
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 import { unary } from '@proton/shared/lib/helpers/function';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import {
@@ -45,7 +46,7 @@ import PlanCustomization from './PlanCustomization';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import MemberDowngradeModal from '../MemberDowngradeModal';
-import PlanLossWarningModal from './PlanLossWarningModal';
+import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 
 interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     step?: SUBSCRIPTION_STEPS;
@@ -132,15 +133,27 @@ const SubscriptionModal = ({
     const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
-        const calendars: Calendar[] = await getCalendars(api);
-        const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
-        const hasLinks = !!(
-            await Promise.all(
-                personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
-            )
-        ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
+        // Start promise early
+        const calendarPromise = (async () => {
+            const calendars: Calendar[] = await getCalendars(api);
+            const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
 
-        if (personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
+            const hasLinks = !!(
+                await Promise.all(
+                    personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
+                )
+            ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
+
+            return personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks;
+        })();
+
+        if (hasMigrationDiscount(subscription)) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<DiscountWarningModal type="downgrade" onClose={reject} onConfirm={resolve} />);
+            });
+        }
+
+        if (await calendarPromise) {
             await new Promise<void>((resolve, reject) => {
                 const handleClose = () => {
                     onClose?.();
@@ -149,16 +162,19 @@ const SubscriptionModal = ({
                 createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={handleClose} />);
             });
         }
+
         if (hasBonuses(organization)) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<LossLoyaltyModal organization={organization} onConfirm={resolve} onClose={reject} />);
             });
         }
+
         if (organization.UsedMembers > 1) {
             await new Promise<void>((resolve, reject) => {
                 createModal(<MemberDowngradeModal organization={organization} onConfirm={resolve} onClose={reject} />);
             });
         }
+
         await api(deleteSubscription());
         await call();
         onClose?.();
@@ -166,19 +182,18 @@ const SubscriptionModal = ({
     };
 
     const handlePlanWarnings = async (planIDs: PlanIDs) => {
-        const currentPlan = subscription?.Plans?.find(({ Type }) => Type === PLAN_TYPES.PLAN);
-        const currentPlanName = currentPlan?.Name;
         const newPlanName = Object.keys(planIDs).find((planName) =>
             plans.find((plan) => plan.Type === PLAN_TYPES.PLAN && plan.Name === planName)
         );
-        if (currentPlanName !== newPlanName && subscription?.CouponCode?.startsWith('MIGRATION')) {
+        if (hasNewVisionary(subscription) && PLANS.NEW_VISIONARY !== newPlanName) {
             await new Promise<void>((resolve, reject) => {
-                createModal(<PlanLossWarningModal onClose={reject} onConfirm={resolve} />);
-            });
-        }
-        if (currentPlanName === PLANS.NEW_VISIONARY && currentPlanName !== newPlanName) {
-            await new Promise<void>((resolve, reject) => {
-                createModal(<PlanLossWarningModal type="visionary" onClose={reject} onConfirm={resolve} />);
+                createModal(
+                    <NewVisionaryWarningModal
+                        type={!newPlanName ? 'downgrade' : 'switch'}
+                        onClose={reject}
+                        onConfirm={resolve}
+                    />
+                );
             });
         }
     };
