@@ -45,7 +45,12 @@ export const hasLifetime = (subscription: Subscription | undefined) => {
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 };
 
-export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, NEW_VISIONARY);
+export const hasMigrationDiscount = (subscription: Subscription) => {
+    return subscription?.CouponCode?.startsWith('MIGRATION');
+};
+
+export const hasVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, VISIONARY);
+export const hasNewVisionary = (subscription: Subscription | undefined) => hasSomePlan(subscription, NEW_VISIONARY);
 export const hasVPN = (subscription: Subscription | undefined) => hasSomePlan(subscription, VPN);
 export const hasMail = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL);
 export const hasMailPro = (subscription: Subscription | undefined) => hasSomePlan(subscription, MAIL_PRO);

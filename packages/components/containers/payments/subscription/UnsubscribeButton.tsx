@@ -8,6 +8,7 @@ import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/ca
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -18,12 +19,15 @@ import {
     useEventManager,
     useOrganization,
     usePlans,
+    useSubscription,
 } from '../../../hooks';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
-import SubscriptionCancelModal, { SubscriptionCancelModel } from './SubscriptionCancelModal';
+import HighlightPlanDowngradeModal from './HighlightPlanDowngradeModal';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
+import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
+import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
 
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
     children: ReactNode;
@@ -31,6 +35,7 @@ interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
 
 const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const [plans] = usePlans();
     const { createNotification, hideNotification } = useNotifications();
@@ -39,11 +44,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
 
-    /*
-     * subscriptionCancelData is undefined if the user skipped
-     * the cancel-subscription-form step
-     */
-    const handleUnsubscribe = async (subscriptionCancelData: SubscriptionCancelModel) => {
+    const handleUnsubscribe = async (data: FeedbackDowngradeData) => {
         const downgradeNotificationId = createNotification({
             type: 'info',
             text: c('State').t`Downgrading your account, please wait`,
@@ -51,7 +52,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
         });
 
         try {
-            await api(deleteSubscription(subscriptionCancelData));
+            await api(deleteSubscription(data));
             await call();
             createNotification({ text: c('Success').t`You have successfully unsubscribed` });
         } finally {
@@ -64,28 +65,41 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             return createNotification({ type: 'error', text: c('Info').t`You already have a free account` });
         }
 
-        const calendars: Calendar[] = await getCalendars(api);
-        const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
+        // Start promise early
+        const calendarPromise = (async () => {
+            const calendars: Calendar[] = await getCalendars(api);
+            const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
 
-        const hasLinks = !!(
-            await Promise.all(
-                personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
-            )
-        ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
+            const hasLinks = !!(
+                await Promise.all(
+                    personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
+                )
+            ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
 
-        if (personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
+            return personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks;
+        })();
+
+        if (hasMigrationDiscount(subscription)) {
             await new Promise<void>((resolve, reject) => {
-                createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={reject} />);
+                createModal(<DiscountWarningModal type="downgrade" onClose={reject} onConfirm={resolve} />);
             });
         }
 
-        const subscriptionCancelData = await new Promise<SubscriptionCancelModel>((resolve, reject) => {
-            createModal(<SubscriptionCancelModal user={user} plans={plans} onSubmit={resolve} onClose={reject} />);
-        });
+        if (hasNewVisionary(subscription)) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<NewVisionaryWarningModal type="downgrade" onClose={reject} onConfirm={resolve} />);
+            });
+        }
 
         await new Promise<void>((resolve, reject) => {
-            createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
+            createModal(<HighlightPlanDowngradeModal user={user} plans={plans} onConfirm={resolve} onClose={reject} />);
         });
+
+        if (await calendarPromise) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<CalendarDowngradeModal onConfirm={reject} onClose={reject} />);
+            });
+        }
 
         if (hasBonuses(organization)) {
             await new Promise<void>((resolve, reject) => {
@@ -99,7 +113,15 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        return handleUnsubscribe(subscriptionCancelData);
+        await new Promise<void>((resolve, reject) => {
+            createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
+        });
+
+        const data = await new Promise<FeedbackDowngradeData>((resolve, reject) => {
+            createModal(<FeedbackDowngradeModal user={user} onSubmit={resolve} onClose={reject} />);
+        });
+
+        return handleUnsubscribe(data);
     };
 
     return (
