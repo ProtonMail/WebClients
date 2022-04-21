@@ -135,7 +135,7 @@ const SubscriptionModal = ({
                     onClose?.();
                     reject();
                 };
-                createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={handleClose} />);
+                createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={handleClose} />);
             });
         }
         if (hasBonuses(organization)) {
