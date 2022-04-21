@@ -1,7 +1,13 @@
 import { c } from 'ttag';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
 import { APPS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
-import { getHasB2BPlan, hasFree, hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    getHasB2BPlan,
+    hasFree,
+    hasMailProfessional,
+    hasNewVisionary,
+    hasVisionary,
+} from '@proton/shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 
 import { Button, ButtonLike, Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
@@ -26,7 +32,12 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
         return <Loader />;
     }
 
-    if (!hasMailProfessional(subscription) && !hasVisionary(subscription) && !getHasB2BPlan(subscription)) {
+    if (
+        !hasMailProfessional(subscription) &&
+        !hasVisionary(subscription) &&
+        !hasNewVisionary(subscription) &&
+        !getHasB2BPlan(subscription)
+    ) {
         return (
             <SettingsSectionWide>
                 <SettingsParagraph>

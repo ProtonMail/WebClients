@@ -5,7 +5,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { range } from '@proton/shared/lib/helpers/array';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { StepDots, StepDot, Button, useSettingsLink, ModalTwo } from '../../components';
 import { useApi, useOrganization, useSubscription, useUser, useUserSettings, useWelcomeFlags } from '../../hooks';
@@ -42,6 +42,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
         organization.MaxMembers > 1 &&
         organization.UsedMembers === 1 &&
         !organization.HasKeys &&
+        !hasNewVisionary(subscription) &&
         !hasVisionary(subscription);
 
     const [step, setStep] = useState(0);
