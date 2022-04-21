@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import percentage from '@proton/shared/lib/helpers/percentage';
-import { hasMailProfessional, hasVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { SettingsLink } from '../link';
 import { Meter, getMeterColor } from '../progress';
@@ -58,7 +58,7 @@ const Sidebar = ({
         if (isMember) {
             return false;
         }
-        if (hasVisionary(subscription) || hasMailProfessional(subscription)) {
+        if (hasNewVisionary(subscription) || hasVisionary(subscription) || hasMailProfessional(subscription)) {
             return false;
         }
         return true;
