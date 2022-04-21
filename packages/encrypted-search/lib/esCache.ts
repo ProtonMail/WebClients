@@ -144,6 +144,10 @@ export const addToESCache = <ESItem>(
     getTimePoint: (item: ESItem) => [number, number],
     itemSize?: number
 ) => {
+    if (!esCacheRef.current.esCache.length && !esCacheRef.current.isCacheReady) {
+        return false;
+    }
+
     let itemAdded = false;
 
     if (esCacheRef.current.cacheSize < ES_MAX_CACHE) {
