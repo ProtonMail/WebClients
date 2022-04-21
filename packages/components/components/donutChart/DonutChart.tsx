@@ -1,5 +1,7 @@
 import percentOf from '@proton/shared/lib/helpers/percentOf';
 
+import useUid from '../../hooks/useUid';
+
 export interface DonutChartProps {
     /**
      * Array of "number, string" tuples that represent the individual
@@ -22,7 +24,9 @@ export interface DonutChartProps {
     gap?: number;
 }
 
-const DonutChart = ({ chunks, gap = 4 }: DonutChartProps) => {
+const DonutChart = ({ chunks, gap = 8 }: DonutChartProps) => {
+    const uid = useUid('straight-gaps');
+
     const box = 200;
 
     const width = box / 6;
@@ -54,16 +58,38 @@ const DonutChart = ({ chunks, gap = 4 }: DonutChartProps) => {
 
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${box} ${box}`}>
-            <g>
+            {gap > 0 && (
+                <defs>
+                    <mask id={uid}>
+                        <rect x="0" y="0" width={box} height={box} fill="white" />
+
+                        {allChunks.map((_, i) => {
+                            const angle = scale * percentOf(runningSumOfAllChunks[i - 1] || 0, 360) - 90;
+
+                            return (
+                                <rect
+                                    transform={`rotate(${angle} ${box / 2} ${box / 2})`}
+                                    x={box / 2}
+                                    y={box / 2 - gap / 2}
+                                    width={box / 2 + 1}
+                                    height={gap}
+                                    fill="black"
+                                />
+                            );
+                        })}
+                    </mask>
+                </defs>
+            )}
+
+            <g mask={gap > 0 ? `url(#${uid})` : undefined}>
                 {allChunks.map(([percent, color], i) => {
-                    const arcLength = Math.max(0, percentOf(percent, circumference) - gap) * scale;
+                    const arcLength = scale * Math.max(0, percentOf(percent, circumference));
 
                     const strokeDashOffset =
-                        offset - percentOf(runningSumOfAllChunks[i - 1] || 0, circumference) * scale;
+                        offset - scale * percentOf(runningSumOfAllChunks[i - 1] || 0, circumference);
 
                     return (
                         <circle
-                            style={{ transition: '0.2s' }}
                             fill="none"
                             cx={box / 2}
                             cy={box / 2}
