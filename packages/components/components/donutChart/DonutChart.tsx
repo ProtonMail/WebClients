@@ -5,6 +5,14 @@ export interface DonutChartProps {
      * Array of "number, string" tuples that represent the individual
      * segments of the donut chart, consisting of:
      * `[ percentage (number), color (string)  ]`
+     *
+     * If the sum of all percentages is less than 100, the DonutChart
+     * will display an additional, auto-generated segment using a neutral
+     * color to represent an empty or remaining amount. If all percentages
+     * sum up to more than 100, the DonutChart will scale all segments
+     * relative to the sum of all percentages. It's possible to create a
+     * remaining amount manually even if the sum exceeds 100, by creating
+     * a custom last chunk with a neutral background.
      */
     chunks: [number, string][];
     /**
@@ -36,15 +44,22 @@ const DonutChart = ({ chunks, gap = 4 }: DonutChartProps) => {
 
     const allChunks = [...chunks, remaining];
 
+    /**
+     * Make sure arc segments scale relative to either 100 percent or the sum of
+     * all chunks should it be greater than 100. Chunk percentages should ideally
+     * never add up to more than 100, however if they do all arc segments need to
+     * be scaled down to avoid overflow beyond one rotation of the donut.
+     */
+    const scale = sumOfAllChunks > 100 ? 100 / sumOfAllChunks : 1;
+
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox={`0 0 ${box} ${box}`}>
             <g>
                 {allChunks.map(([percent, color], i) => {
-                    const arcLength = Math.max(0, percentOf(percent, circumference) - gap);
+                    const arcLength = Math.max(0, percentOf(percent, circumference) - gap) * scale;
 
-                    const strokeDashOffset = offset - percentOf(runningSumOfAllChunks[i - 1] || 0, circumference);
-
-                    console.log(arcLength);
+                    const strokeDashOffset =
+                        offset - percentOf(runningSumOfAllChunks[i - 1] || 0, circumference) * scale;
 
                     return (
                         <circle
