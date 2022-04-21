@@ -29,7 +29,7 @@ export const Basic = () => {
 };
 
 export const WithSlider = () => {
-    const [success, setSuccess] = useState(15);
+    const [success, setSuccess] = useState(20);
 
     return (
         <div>
@@ -39,15 +39,15 @@ export const WithSlider = () => {
                 type="range"
                 value={success}
                 min={0}
-                max={100 - 30}
+                max={200}
                 onInput={(e: ChangeEvent<HTMLInputElement>) => setSuccess(Number(e.target.value))}
             />
 
             <div style={{ width: 200, height: 200 }}>
                 <DonutChart
                     chunks={[
-                        [20, 'var(--signal-danger)'],
-                        [10, 'var(--signal-warning)'],
+                        [40, 'var(--signal-danger)'],
+                        [20, 'var(--signal-warning)'],
                         [success, 'var(--signal-success)'],
                     ]}
                 />
