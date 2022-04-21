@@ -4,7 +4,6 @@ import {
     MouseEvent as ReactMouseEvent,
     TouchEvent as ReactTouchEvent,
     useState,
-    useLayoutEffect,
     ChangeEvent,
 } from 'react';
 
@@ -13,7 +12,7 @@ import percentage from '@proton/shared/lib/helpers/percentage';
 
 import useSynchronizingState from '../../hooks/useSynchronizingState';
 import { classnames } from '../../helpers';
-import { usePrevious } from '../../hooks';
+import { ButtonLike } from '../button';
 import { Icon } from '../icon';
 import SliderMark from './SliderMark';
 import './Slider.scss';
@@ -36,6 +35,13 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
      */
     step?: number;
     /**
+     * Allows for custom formatting of the value that is displayed in the
+     * Slider's label. By default, unless `step` is specified the number shown
+     * is formatted using Math.round, however internally the actual number can
+     * be decimal.
+     */
+    getDisplayedValue?: (value: number) => number | string;
+    /**
      * Emits the number selected via the Slider on change.
      * Change in this context is defined as the number selected at the
      * moment of the thumb drag ending. (same as `<input type="range" />`)
@@ -49,20 +55,27 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
     onInput?: (value: number) => void;
 }
 
-const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }: SliderProps) => {
+const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, onInput, ...rest }: SliderProps) => {
     const [internalValue, setInternalValue] = useSynchronizingState(value || min);
     const [dragging, setDragging] = useState(false);
 
     const rootRef = useRef<HTMLDivElement>(null);
-    const thumbRef = useRef<HTMLInputElement>(null);
-
-    const previousDragging = usePrevious(dragging);
-
-    useLayoutEffect(() => {
-        if (!previousDragging && dragging) {
-            thumbRef.current?.focus();
-        }
-    }, []);
+    const thumbInputRef = useRef<HTMLInputElement>(null);
+    /**
+     * The "touches" property of the TouchEvent emitted on "touchend" is an empty array
+     * (at least in the case of dealing with a single touch). Since we're using touches
+     * to computed the value from the clientX of any given touch, we run into a problem
+     * where we don't have a value to emit a commit (change) with on touchend.
+     *
+     * We also don't have access to the current "internalValue" state since our touchend
+     * handler dissapears inside document.addEventListener with a stale closure over
+     * internalValue.
+     *
+     * To solve this we manually track the most recent touch event in a mutative,
+     * pointer-referenced manner via this react ref and consume it on touchend.
+     *
+     */
+    const latestTouchRef = useRef<TouchEvent | null>(null);
 
     const clampInsideInterval = (n: number) => clamp(n || min, min, max);
 
@@ -114,6 +127,22 @@ const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }:
         handleCommit(getValueFromXCoordinate(x));
     };
 
+    const handleStart = (e: ReactMouseEvent | ReactTouchEvent, x: number) => {
+        /*
+         * Prevents text from being selected while user
+         * is mousemoving after a mousedown event.
+         *
+         * Implementation taken from react material-ui.
+         */
+        e.preventDefault();
+
+        thumbInputRef.current?.focus();
+
+        handleXCoordinateInput(x);
+
+        setDragging(true);
+    };
+
     const handleMouseMove = (e: MouseEvent) => {
         handleXCoordinateInput(e.clientX);
     };
@@ -127,39 +156,50 @@ const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }:
         setDragging(false);
     };
 
-    const handleMouseDown = ({ nativeEvent }: ReactMouseEvent) => {
-        handleXCoordinateInput(nativeEvent.clientX);
+    const handleMouseDown = (e: ReactMouseEvent) => {
+        const { nativeEvent } = e;
 
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', handleMouseUp);
 
-        setDragging(true);
-    };
-
-    const handleMouseLeave = () => {
-        thumbRef.current?.blur();
+        handleStart(e, nativeEvent.clientX);
     };
 
     const handleTouchMove = (e: TouchEvent) => {
+        latestTouchRef.current = e;
+
         handleXCoordinateInput(e.touches[0].clientX);
     };
 
-    const handleTouchEnd = (e: TouchEvent) => {
-        handleXCoordinateCommit(e.touches[0].clientX);
+    const handleTouchEnd = () => {
+        const latestClientXTouch = latestTouchRef.current?.touches[0].clientX;
+
+        /**
+         * Since both handleTouchStart & hadleTouchMove set latestTouchRef.current
+         * to the most recent touch event, it shouldn't ever be possible for this
+         * to actually be undefined. Still I'm not 100% sure a touchend event can't
+         * fire without a prior touchstart, so just in case this is a little physical
+         * safeguard instead of a typecast.
+         */
+        if (latestClientXTouch) {
+            handleXCoordinateCommit(latestClientXTouch);
+        }
 
         document.removeEventListener('touchmove', handleTouchMove);
         document.removeEventListener('touchend', handleTouchEnd);
+
+        thumbInputRef.current?.blur();
 
         setDragging(false);
     };
 
     const handleTouchStart = (e: ReactTouchEvent) => {
-        handleXCoordinateInput(e.nativeEvent.touches[0].clientX);
+        latestTouchRef.current = e.nativeEvent;
+
+        handleStart(e, e.nativeEvent.touches[0].clientX);
 
         document.addEventListener('touchmove', handleTouchMove);
         document.addEventListener('touchend', handleTouchEnd);
-
-        setDragging(true);
     };
 
     /* as in handle the onInput event of the <input /> element */
@@ -171,10 +211,26 @@ const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }:
         handleCommit(Number(e.target.value));
     };
 
-    const valueInPercent = percentage(interval, clampedInternalValue - min);
+    const renderDisplayedValue = () => {
+        if (getDisplayedValue) {
+            return getDisplayedValue(clampedInternalValue);
+        }
 
-    // const styleSliderMarkMin =
-    // const sliderMarkMin = getCustomSizingClasses(styleSliderMarkMin);
+        /**
+         * If "step" is specified, render the displayed value with
+         * padded zeros based on the decimals of the step value.
+         * There are no decimals if "step" is an integer to begin with.
+         */
+        if (step && step !== Math.floor(step)) {
+            const [, decimals] = String(step).split('.');
+
+            return clampedInternalValue.toFixed(decimals.length);
+        }
+
+        return Math.round(clampedInternalValue);
+    };
+
+    const valueInPercent = percentage(interval, clampedInternalValue - min);
 
     return (
         <div ref={rootRef} className="slider relative" onMouseDown={handleMouseDown} onTouchStart={handleTouchStart}>
@@ -190,23 +246,21 @@ const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }:
                 {max}
             </SliderMark>
 
-            <span
+            <ButtonLike
+                icon
+                color="weak"
+                shape="outline"
+                as="span"
                 style={{ left: `${valueInPercent}%` }}
-                className={classnames(['slider-thumb', dragging && 'slider-thumb-dragging'])}
-                onMouseLeave={handleMouseLeave}
+                className={classnames(['slider-thumb shadow-norm relative', dragging && 'slider-thumb-dragging'])}
             >
-                <div
-                    className="slider-thumb-tooltip absolute tooltip tooltip--top"
-                    style={{ bottom: 'calc(100% + 16px)' }}
-                >
-                    {clampedInternalValue.toFixed(2)}
-                </div>
-
                 <input
                     type="range"
-                    ref={thumbRef}
+                    ref={thumbInputRef}
+                    value={value}
                     min={min}
                     max={max}
+                    step={step}
                     aria-orientation="horizontal"
                     className="sr-only slider-thumb-input"
                     onChange={handleInputChange}
@@ -214,8 +268,10 @@ const Slider = ({ value, min = 0, max = 100, step, onChange, onInput, ...rest }:
                     {...rest}
                 />
 
+                <div className="slider-thumb-tooltip absolute tooltip tooltip--top">{renderDisplayedValue()}</div>
+
                 <Icon name="arrows-left-right" />
-            </span>
+            </ButtonLike>
         </div>
     );
 };

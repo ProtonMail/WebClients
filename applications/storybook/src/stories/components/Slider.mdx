@@ -10,7 +10,9 @@ import { Canvas, Story, ArgsTable, Primary, PRIMARY_STORY } from '@storybook/add
 
 The Slider is configurable to only allow values that round to a nearest "step" via the `step` property.
 If set, the thumb of the Slider won't move until the pointer that is dragging it is closer to a different
-step-point than the one where it currently is.
+step-point than the one where it currently is. In this configuration, the slider displays the real internal
+value of the slider as opposed to defaulting to `Math.round`, formatted based on the number of decimals found
+in the specified `step` value.
 
 <Canvas>
   <Story id="components-slider--step" />
@@ -23,6 +25,17 @@ The `min` & `max` properties allow specifying in which numeric interval the Slid
 <Canvas>
   <Story id="components-slider--min-max" />
 </Canvas>
+
+## Custom value display format
+
+The `getDisplayedValue` prop allows you to apply custom formatting to the real internal value of the slider.
+In the case where no step is specified, this value is a decimal as opposed to an integer value, however by
+default `Math.round` is used to format the real internal value for display.
+
+<Canvas>
+  <Story id="components-slider--custom-value-display-format" />
+</Canvas>
+
 
 ## Props
 
