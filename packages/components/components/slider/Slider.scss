@@ -4,6 +4,13 @@ $height-track: 16 !default;
 $size-track-thumb: 36 !default;
 
 .slider {
+	/**
+	 * Prevent scroll while interacting with slider on mobile.
+	 * Support on iOS safari for this CSS property starts on version 13.
+	 *
+	 * TODO: may have to add support for iOS safari < 13 for this behaviour.
+	 */
+	touch-action: none;
 	block-size: rem($height-track);
 
 	&-rail,
@@ -26,20 +33,20 @@ $size-track-thumb: 36 !default;
 	&-thumb {
 		block-size: rem($size-track-thumb);
 		inline-size: rem($size-track-thumb);
-		border: 1px solid black; // LATER
-		background: white; // LATER
-		border-radius: var(--border-radius-md);
 		transform: translateX(-50%) translateY(-10px);
+		transition: none;
+		user-select: none;
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		// transition: .2s;
 
 		&-tooltip {
 			opacity: 0;
 			transition: 0.2s;
 			transform: scale(0);
 			word-break: initial;
+			inset-block-end: calc(100% + 16px);
 		}
 
 		&:active,
@@ -55,6 +62,12 @@ $size-track-thumb: 36 !default;
 		&-input {
 			width: 100%;
 			height: 100%;
+
+			&:active + .slider-thumb-tooltip,
+			&:focus + .slider-thumb-tooltip {
+				opacity: 1;
+				transform: scale(1);
+			}
 		}
 	}
 }
