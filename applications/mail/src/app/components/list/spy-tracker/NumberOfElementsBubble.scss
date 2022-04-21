@@ -1,17 +1,23 @@
-@use "sass:math";
+@use 'sass:math';
 @import '~@proton/styles/scss/config';
 
 $size-tracker: 1rem !default;
 .number-of-elements {
 	&-link {
-		height: 1.3rem; // just a trick to avoid tooltip positionned on the bubble
+		block-size: 1.3rem; // just a trick to avoid tooltip positionned on the bubble
 	}
+
 	&-icon-bubble {
-		width: $size-tracker;
-		height: $size-tracker;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		inline-size: $size-tracker;
+		block-size: $size-tracker;
 		// container is a bit higher than the usual icon size, this is why positionned from bottom
 		inset-block-end: #{math.div($size-tracker, 2) + rem(1)}; // visual trick for better display
 		inset-inline-start: 50%;
+		font-variant: tabular-nums;
+
 		&--9plus {
 			letter-spacing: -0.1rem; // for 9+ case
 		}
