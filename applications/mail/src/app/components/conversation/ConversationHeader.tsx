@@ -25,7 +25,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
     return (
         <header
             className={classnames([
-                'max-w100 message-conversation-summary upper-layer py1 px0-5 mx1 flex-item-noshrink',
+                'max-w100 message-conversation-summary upper-layer pt1-5 pb0-5 px0-5 mx1 flex-item-noshrink',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}
