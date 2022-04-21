@@ -4,38 +4,59 @@ import { MAIL_APP_NAME, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/c
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { UserModel } from '@proton/shared/lib/interfaces';
 
-import { ConfirmModal, Alert } from '../../components';
+import { Alert, AlertModal, Button, ModalProps } from '../../components';
 
-interface Props {
+interface Props extends ModalProps {
     user: UserModel;
-    onClose: () => void;
     onConfirm: () => void;
 }
 
 const { MAIL, VPN } = PLAN_SERVICES;
 
-const DowngradeModal = ({ user, ...rest }: Props) => {
-    const title = c('Title').t`Confirm downgrade`;
-    const confirm = c('Action').t`Downgrade`;
+const DowngradeModal = ({ user, onConfirm, onClose, ...rest }: Props) => {
     const hasMail = hasBit(user.Services, MAIL);
     const hasVpn = hasBit(user.Services, VPN);
     const hasBundle = hasMail && hasVpn;
 
     return (
-        <ConfirmModal title={title} confirm={confirm} {...rest}>
-            <Alert className="mb1">{c('Info')
-                .t`Once you click "Downgrade", it may take a few minutes to downgrade your account to a Free plan. `}</Alert>
+        <AlertModal
+            title={c('Title').t`Confirm downgrade`}
+            buttons={[
+                <Button
+                    onClick={() => {
+                        onConfirm();
+                        onClose?.();
+                    }}
+                    color="norm"
+                >
+                    {c('Action').t`Downgrade`}
+                </Button>,
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            onClose={onClose}
+            {...rest}
+        >
+            <div className="mb1">
+                {c('Info')
+                    .t`Once you click "Downgrade", it may take a few minutes to downgrade your account to a Free plan. `}
+            </div>
             <Alert className="mb1" type="error">
-                {hasBundle
-                    ? c('Info')
-                          .t`If you proceed with the downgrade, you will lose access to ${MAIL_APP_NAME} and ${VPN_APP_NAME} paid features.`
-                    : hasMail
-                    ? c('Info')
-                          .t`If you proceed with the downgrade, you will lose access to ${MAIL_APP_NAME} paid features, including additional storage and filters.`
-                    : c('Info')
-                          .t`If you proceed with the downgrade, you will lose access to ${VPN_APP_NAME} paid features.`}
+                {(() => {
+                    if (hasBundle) {
+                        return c('Info')
+                            .t`If you proceed with the downgrade, you will lose access to ${MAIL_APP_NAME} and ${VPN_APP_NAME} paid features.`;
+                    }
+
+                    if (hasMail) {
+                        return c('Info')
+                            .t`If you proceed with the downgrade, you will lose access to ${MAIL_APP_NAME} paid features, including additional storage and filters.`;
+                    }
+
+                    return c('Info')
+                        .t`If you proceed with the downgrade, you will lose access to ${VPN_APP_NAME} paid features.`;
+                })()}
             </Alert>
-            <Alert className="mb1" type="warning">
+            <Alert type="warning">
                 {[
                     hasMail &&
                         c('Info')
@@ -45,7 +66,7 @@ const DowngradeModal = ({ user, ...rest }: Props) => {
                     .filter(Boolean)
                     .join(' ')}
             </Alert>
-        </ConfirmModal>
+        </AlertModal>
     );
 };
 

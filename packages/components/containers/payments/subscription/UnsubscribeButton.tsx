@@ -73,7 +73,7 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
 
         if (personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks) {
             await new Promise<void>((resolve, reject) => {
-                createModal(<CalendarDowngradeModal onSubmit={resolve} onClose={reject} />);
+                createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={reject} />);
             });
         }
 

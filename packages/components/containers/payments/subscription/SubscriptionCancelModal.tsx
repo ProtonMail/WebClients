@@ -15,13 +15,18 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     Alert,
     Button,
-    FormModal,
     InputFieldTwo,
     Loader,
-    SelectTwo,
+    ModalProps,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
     Option,
+    SelectTwo,
     TextAreaTwo,
     useFormErrors,
+    Form,
 } from '../../../components';
 import { useConfig, useSubscription, useUser, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 
@@ -78,8 +83,7 @@ export interface SubscriptionCancelModel {
     ReasonDetails?: string;
     Context?: 'vpn' | 'mail';
 }
-interface Props {
-    onClose: () => void;
+interface Props extends Omit<ModalProps, 'onSubmit'> {
     onSubmit: (model: SubscriptionCancelModel) => void;
 }
 
@@ -161,7 +165,18 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
         return shuffle(reasons);
     });
 
-    const { section, ...modalProps } = (() => {
+    const {
+        title,
+        section,
+        footer,
+        ...modalStepProps
+    }: {
+        title: string;
+        section: ReactNode;
+        footer: ReactNode;
+        onSubmit?: () => void;
+        size?: ModalProps['size'];
+    } = (() => {
         if (step === STEPS.CONFIRM) {
             const planInfo = getPlanInfo(isVpnPlan);
 
@@ -187,6 +202,7 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
 
             return {
                 title: c('Title').t`Downgrade account`,
+                size: 'large',
                 section: loadingSubscription ? (
                     <Loader />
                 ) : (
@@ -215,7 +231,7 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                     </>
                 ),
                 footer: (
-                    <div className="flex w100 flex-justify-space-between on-mobile-flex-column">
+                    <>
                         <Button
                             disabled={loadingSubscription}
                             className="on-mobile-w100 on-mobile-mb1"
@@ -226,14 +242,14 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                             {downgradeButtonString}
                         </Button>
                         <Button
-                            disabled={loadingSubscription}
                             className="on-mobile-w100"
+                            disabled={loadingSubscription}
                             color="norm"
                             onClick={onClose}
                         >
                             {keepButtonString}
                         </Button>
-                    </div>
+                    </>
                 ),
             };
         }
@@ -330,17 +346,15 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                 const shouldSendReasonDetails = reasonDetails.some(({ forReason }) => model.Reason === forReason);
 
                 onSubmit({ ...model, ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '' });
-                onClose();
+                onClose?.();
             };
 
             return {
                 title: c('Downgrade modal exit survey title').t`Help us improve!`,
-                submit: c('Action').t`Submit`,
                 onSubmit: handleSubmit,
                 section: (
-                    <div className="w75 on-mobile-w100">
+                    <>
                         <InputFieldTwo
-                            rootClassName="mb0-5"
                             as={SelectTwo}
                             label={c('Label').t`What is the main reason you are cancelling?`}
                             placeholder={c('Placeholder').t`Select a reason`}
@@ -371,7 +385,15 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
                             value={model.Feedback}
                             onValue={(value: string) => setModel({ ...model, Feedback: value })}
                         />
-                    </div>
+                    </>
+                ),
+                footer: (
+                    <>
+                        <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                        <Button type="submit" color="norm">
+                            {c('Action').t`Submit`}
+                        </Button>
+                    </>
                 ),
             };
         }
@@ -380,9 +402,11 @@ const SubscriptionCancelModal = ({ onSubmit, onClose, ...rest }: Props) => {
     })();
 
     return (
-        <FormModal className="subscription-cancel-modal" onClose={onClose} {...rest} {...modalProps}>
-            {section}
-        </FormModal>
+        <Modal as={Form} onClose={onClose} {...modalStepProps} {...rest}>
+            <ModalHeader title={title} />
+            <ModalContent>{section}</ModalContent>
+            <ModalFooter>{footer}</ModalFooter>
+        </Modal>
     );
 };
 
