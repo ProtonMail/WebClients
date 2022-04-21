@@ -26,11 +26,11 @@ export const Basic = () => {
 };
 
 export const Step = () => {
-    const [value, setValue] = useState(20);
+    const [value, setValue] = useState(0.2);
 
     return (
         <div className="p2">
-            <Slider step={1} value={value} onChange={setValue} />
+            <Slider step={0.01} min={0} max={1} value={value} onChange={setValue} />
         </div>
     );
 };
@@ -41,6 +41,16 @@ export const MinMax = () => {
     return (
         <div className="p2">
             <Slider min={1000} max={10000} value={value} onChange={setValue} />
+        </div>
+    );
+};
+
+export const CustomValueDisplayFormat = () => {
+    const [value, setValue] = useState(20);
+
+    return (
+        <div className="p2">
+            <Slider value={value} onChange={setValue} getDisplayedValue={(v) => `${v.toFixed(2)}px`} />
         </div>
     );
 };
