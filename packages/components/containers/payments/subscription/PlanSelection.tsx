@@ -4,7 +4,6 @@ import { toMap } from '@proton/shared/lib/helpers/object';
 import { CYCLE, PLAN_NAMES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { CalendarLogo, DriveLogo, MailLogo, Tabs, VpnLogo, Icon } from '../../../components';
@@ -69,7 +68,6 @@ const PlanSelection = ({
         selectedProductPlans[Audience.B2C] === PLANS.VPN && plansMap[PLANS.VPN],
         // selectedProductPlans[Audience.B2C] === PLANS.DRIVE && plansMap[PLANS.DRIVE],
         plansMap[PLANS.BUNDLE],
-        subscription && hasVisionary(subscription) ? plansMap[PLANS.NEW_VISIONARY] : null,
     ].filter(isTruthy);
 
     const B2BPlans = [
