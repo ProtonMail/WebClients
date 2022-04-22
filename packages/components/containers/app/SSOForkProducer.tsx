@@ -15,6 +15,7 @@ import { getApiError, getApiErrorMessage, getIs401Error } from '@proton/shared/l
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getOAuthClientInfo, OAuthClientInfo } from '@proton/shared/lib/api/oauth';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useApi, useErrorHandler } from '../../hooks';
 import LoaderPage from './LoaderPage';
@@ -194,8 +195,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
         return (
             <StandardErrorPage>
                 {c('Error message').jt`Too many child sessions, please clear your cookies and sign back in.`}
-                <Href href="https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/">{c('Info')
-                    .t`More Info`}</Href>
+                <Href href={getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies/')}>{c('Info').t`More Info`}</Href>
             </StandardErrorPage>
         );
     }

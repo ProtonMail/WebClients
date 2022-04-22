@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { Alert, ErrorButton } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ComposerPasswordModal from './ComposerPasswordModal';
 import ComposerExpirationModal from './ComposerExpirationModal';
 import ComposerScheduleSendModal from './ComposerScheduleSendModal';
@@ -104,7 +105,7 @@ const ComposerInnerModals = ({
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
                 >
-                    <Alert learnMore="https://protonmail.com/support/knowledge-base/attachment-reminders/">
+                    <Alert learnMore={getKnowledgeBaseUrl('/attachment-reminders/')}>
                         {c('Info')
                             .t`You wrote “${attachmentsFoundKeyword}”, but no attachment has been added. Do you want to send your message anyway?`}
                     </Alert>

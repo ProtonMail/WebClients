@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import {
     getAppVersion,
@@ -37,19 +38,16 @@ const Footer = ({ className, version }: { className: string; version: string }) 
             <div className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</div>
             <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
                 <span className="auto-tiny-mobile">
-                    <Href
-                        key="terms"
-                        className="signup-footer-link"
-                        href="https://protonmail.com/terms-and-conditions"
-                    >{c('Link').t`Terms`}</Href>
+                    <Href key="terms" className="signup-footer-link" href={getStaticURL('/terms-and-conditions')}>{c(
+                        'Link'
+                    ).t`Terms`}</Href>
                 </span>
                 <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
                     |
                 </span>
                 <span className="auto-tiny-mobile">
-                    <Href key="privacy" className="signup-footer-link" href="https://protonmail.com/privacy-policy">{c(
-                        'Link'
-                    ).t`Privacy policy`}</Href>
+                    <Href key="privacy" className="signup-footer-link" href={getStaticURL('/privacy-policy')}>{c('Link')
+                        .t`Privacy policy`}</Href>
                 </span>
                 <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
                     |
@@ -85,7 +83,7 @@ const Layout = ({ children, hasDecoration, topRight, bottomRight, hasBackButton 
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
             <PublicTopBanners />
             <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink ml2 mr2 mt1 mb2 pb2 on-mobile-m0 on-mobile-pt1 on-mobile-pb1">
-                <Href href="https://proton.me">
+                <Href href={getStaticURL('')}>
                     <ProtonLogo className={classnames([hasBackButton && 'on-mobile-ml3-5'])} />
                 </Href>
                 {topRight}

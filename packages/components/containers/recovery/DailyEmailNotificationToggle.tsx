@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { updateNotifyEmail } from '@proton/shared/lib/api/settings';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
 import { useLoading, useNotifications, useUserSettings, useApi, useEventManager } from '../../hooks';
 import { Toggle, Info } from '../../components';
@@ -38,7 +39,7 @@ export const DailyEmailNotificationToggleLabel = () => (
     <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
         <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
         <Info
-            url="https://protonmail.com/blog/notification-emails/"
+            url={getBlogURL('/notification-emails/')}
             title={c('Info')
                 .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
         />

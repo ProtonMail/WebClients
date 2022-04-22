@@ -8,6 +8,7 @@ import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import {
     usePopperAnchor,
     Dropdown,
@@ -307,7 +308,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                 href={
                                     APP_NAME === PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/'
-                                        : 'https://protonmail.com/support/'
+                                        : getStaticURL('/support/')
                                 }
                                 // eslint-disable-next-line react/jsx-no-target-blank
                                 target="_blank"
@@ -337,7 +338,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
                     <DropdownMenuLink
                         className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                        href="https://shop.protonmail.com"
+                        href={getShopURL()}
                         target="_blank"
                         data-testid="userdropdown:link:shop"
                     >

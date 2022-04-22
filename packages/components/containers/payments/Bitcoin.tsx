@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { createBitcoinPayment, createBitcoinDonation } from '@proton/shared/lib/api/payments';
 import { MIN_BITCOIN_AMOUNT, APPS } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Price, Button, Loader, Bordered, Href } from '../../components';
 import { useConfig, useApi, useLoading } from '../../hooks';
@@ -90,7 +91,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
                                 url={
                                     APP_NAME === APPS.PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'
-                                        : 'https://protonmail.com/support/knowledge-base/paying-with-bitcoin'
+                                        : getKnowledgeBaseUrl('/paying-with-bitcoin')
                                 }
                             >{c('Link').t`Learn more`}</Href>
                         </div>

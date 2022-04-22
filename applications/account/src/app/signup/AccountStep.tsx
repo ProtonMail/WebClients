@@ -24,6 +24,7 @@ import {
 } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { Link } from 'react-router-dom';
 import {
     confirmPasswordValidator,
@@ -225,7 +226,7 @@ const AccountStep = ({
     }
 
     const terms = (
-        <Href key="terms" url="https://protonmail.com/privacy-policy">{c('new_plans: signup')
+        <Href key="terms" url={getStaticURL('/privacy-policy')}>{c('new_plans: signup')
             .t`Proton's terms and conditions`}</Href>
     );
 

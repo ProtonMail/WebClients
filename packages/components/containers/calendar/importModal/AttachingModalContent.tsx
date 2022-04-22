@@ -8,6 +8,7 @@ import {
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '@proton/shared/lib/calendar/constants';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Bordered, FileInput, Alert, Label, Field, Row, AttachedFile, Dropzone, LearnMore } from '../../../components';
 import CalendarSelect from '../../../components/calendarSelect/CalendarSelect';
@@ -54,7 +55,7 @@ const AttachingModalContent = ({
             {c('Description')
                 .t`You can import events in iCal format (ICS file). The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_EVENTS_STRING} events. If your file is bigger, please split it into smaller files.`}
             <div>
-                <LearnMore url={IMPORT_CALENDAR_FAQ_URL} />
+                <LearnMore url={getKnowledgeBaseUrl(IMPORT_CALENDAR_FAQ_URL)} />
             </div>
         </div>
     );

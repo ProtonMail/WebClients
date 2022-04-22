@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Info } from '../../../components';
 import { useMailSettings } from '../../../hooks';
@@ -16,7 +17,7 @@ const ContactsSection = () => {
             <SettingsLayoutLeft>
                 <label htmlFor="saveContactToggle" data-testid="contacts:save-contact-label">
                     <span className="mr0-5 text-semibold">{c('Label').t`Automatically save contacts`}</span>
-                    <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
+                    <Info url={getKnowledgeBaseUrl('/autosave-contact-list/')} />
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight className="pt0-5 relative">

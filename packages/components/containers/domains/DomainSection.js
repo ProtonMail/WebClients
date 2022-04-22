@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Row, Label, Input, Field } from '../../components';
 
@@ -17,7 +18,7 @@ const DomainSection = ({ domain, onChange }) => {
 
     return (
         <>
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/custom-domains/">
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domains/')}>
                 {c('Label for adding a new custom domain')
                     .t`Add a domain that you own to your ${MAIL_APP_NAME} account.`}
             </Alert>

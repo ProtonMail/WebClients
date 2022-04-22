@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { BRAND_NAME, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { updateAttachPublicKey, updatePGPScheme, updateSign } from '@proton/shared/lib/api/mailSettings';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Info, Toggle, AlertModal, Button, useModalState, AlertModalProps } from '../../components';
 import { useMailSettings, useEventManager, useApi, useLoading, useNotifications } from '../../hooks';
@@ -93,7 +94,7 @@ const ExternalPGPSettingsSection = () => {
                     {...automaticallySignModalProps}
                 />
             )}
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/how-to-use-pgp/">
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/how-to-use-pgp/')}>
                 {c('Info').t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}
             </SettingsParagraph>
 
@@ -102,7 +103,7 @@ const ExternalPGPSettingsSection = () => {
                     <label htmlFor="signToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Sign external messages`}</span>
                         <Info
-                            url="https://protonmail.com/support/knowledge-base/what-is-a-digital-signature/"
+                            url={getKnowledgeBaseUrl('/what-is-a-digital-signature/')}
                             title={c('Tooltip sign external messages')
                                 .t`Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.`}
                         />
@@ -124,7 +125,7 @@ const ExternalPGPSettingsSection = () => {
                     <label htmlFor="attachPublicKeyToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Attach public key`}</span>
                         <Info
-                            url="https://protonmail.com/support/knowledge-base/how-to-use-pgp"
+                            url={getKnowledgeBaseUrl('/how-to-use-pgp')}
                             title={c('Tooltip automatically attach public key')
                                 .t`This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.`}
                         />
@@ -151,7 +152,7 @@ const ExternalPGPSettingsSection = () => {
                     <label htmlFor="PGPSchemeSelect" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Default PGP scheme`}</span>
                         <Info
-                            url="https://protonmail.com/support/knowledge-base/pgp-mime-pgp-inline/"
+                            url={getKnowledgeBaseUrl('/pgp-mime-pgp-inline/')}
                             title={c('Tooltip default pgp scheme')
                                 .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages. Learn more`}
                         />

@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Href } from '../../../link';
 
 const DefaultContactsInstructions = () => {
     // translator: full sentence: "To import contacts to Proton, you need a CSV file. Download this before you start the import process."
     const knowledgeBaseLink = (
-        <Href
-            url="https://protonmail.com/support/knowledge-base/exporting-contacts-from-other-mail-providers/"
-            key="knowledgeBaseLink"
-        >
+        <Href url={getKnowledgeBaseUrl('/exporting-contacts-from-other-mail-providers/')} key="knowledgeBaseLink">
             {c('Import instructions link').t`CSV file`}
         </Href>
     );

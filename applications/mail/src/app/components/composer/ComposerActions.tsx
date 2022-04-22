@@ -19,6 +19,7 @@ import {
     useSpotlightShow,
 } from '@proton/components';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { formatSimpleDate } from '../../helpers/date';
 import AttachmentsButton from '../attachment/AttachmentsButton';
@@ -178,10 +179,7 @@ const ComposerActions = ({
                         <>
                             {c('Spotlight').t`You can now schedule your messages to be sent later`}
                             <br />
-                            <Href
-                                url="https://protonmail.com/support/knowledge-base/scheduled-send/"
-                                title="Scheduled send"
-                            >
+                            <Href url={getKnowledgeBaseUrl('/scheduled-send/')} title="Scheduled send">
                                 {c('Info').t`Learn more`}
                             </Href>
                         </>

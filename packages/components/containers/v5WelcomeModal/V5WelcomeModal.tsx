@@ -14,6 +14,7 @@ import {
     useFeature,
     VpnLogo,
 } from '@proton/components';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import mailSVG from './assets/Mail.svg';
 import calendarSVG from './assets/Calendar.svg';
 import driveSVG from './assets/Drive.svg';
@@ -68,7 +69,7 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
                         <>
                             {c('new_plans: info')
                                 .t`Introducing Proton’s refreshed look. Many services, one mission. Welcome to an Internet where privacy is the default.`}{' '}
-                            <Href url="https://proton.me/news/updated-proton">{c('Info').t`Learn more`}</Href>
+                            <Href url={getStaticURL('/news/updated-proton')}>{c('Info').t`Learn more`}</Href>
                         </>
                     }
                 />

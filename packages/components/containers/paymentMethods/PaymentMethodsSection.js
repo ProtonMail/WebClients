@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { APPS, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useModals, useSubscription, useConfig, usePaymentMethods } from '../../hooks';
 import { Button, Loader } from '../../components';
 
@@ -36,7 +37,7 @@ const PaymentMethodsSection = () => {
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/payment-options/'
-            : 'https://protonmail.com/support/knowledge-base/payment';
+            : getKnowledgeBaseUrl('/payment');
 
     return (
         <SettingsSection>

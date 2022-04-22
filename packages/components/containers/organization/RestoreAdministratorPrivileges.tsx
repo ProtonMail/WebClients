@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Alert, Block, ButtonLike, LearnMore, SettingsLink } from '../../components';
 import { useOrganization, useOrganizationKey } from '../../hooks';
 import { getActivationText } from './helper';
@@ -32,7 +33,7 @@ const RestoreAdministratorPrivileges = () => {
                 <ButtonLike as={SettingsLink} path="/organization-keys" color="norm" className="mr1">
                     {c('Action').t`Restore administrator privileges`}
                 </ButtonLike>
-                <LearnMore className="inline-block" url="https://protonmail.com/support/knowledge-base/business/" />
+                <LearnMore className="inline-block" url={getKnowledgeBaseUrl('/business/')} />
             </Block>
         );
     }

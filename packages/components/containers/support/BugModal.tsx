@@ -7,6 +7,7 @@ import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import AttachScreenshot, { Screenshot } from './AttachScreenshot';
 import { getReportInfo, getClientName } from '../../helpers/report';
@@ -53,7 +54,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     const isDrive = APP_NAME === APPS.PROTONDRIVE;
     const clearCacheLink = isVpn
         ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
-        : 'https://protonmail.com/support/knowledge-base/how-to-clean-cache-and-cookies/';
+        : getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies/');
     const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();

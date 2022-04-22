@@ -7,6 +7,7 @@ import { OrganizationModel } from '@proton/shared/lib/models';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Alert,
     Button,
@@ -54,7 +55,7 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
 
         if (mode === 'reactivate') {
             const learnMore = (
-                <Href key={1} url="https://protonmail.com/support/knowledge-base/restore-administrator/">
+                <Href key={1} url={getKnowledgeBaseUrl('/restore-administrator/')}>
                     {c('Link').t`Learn more`}
                 </Href>
             );
