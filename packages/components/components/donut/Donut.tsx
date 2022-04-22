@@ -24,7 +24,7 @@ export interface DonutProps {
     gap?: number;
 }
 
-const Donut = ({ chunks, gap = 8 }: DonutProps) => {
+const Donut = ({ chunks, gap = 4 }: DonutProps) => {
     const uid = useUid('straight-gaps');
 
     const box = 200;
