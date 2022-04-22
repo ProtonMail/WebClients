@@ -91,7 +91,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     useClearPaidCookie();
 
     const signupSearchParams = useMemo(() => {
-        return location.pathname.includes(SSO_PATHS.SIGNUP)
+        return location.pathname.includes(SSO_PATHS.SIGNUP) || location.pathname.includes(SSO_PATHS.REFER)
             ? getSignupSearchParams(history.location.search)
             : undefined;
     }, []);
@@ -114,7 +114,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             SSO_PATHS.LOGIN,
             SSO_PATHS.SIGNUP,
             SSO_PATHS.AUTHORIZE,
-            SSO_PATHS.SIGNUP,
+            SSO_PATHS.REFER,
             SSO_PATHS.FORGOT_USERNAME,
             SSO_PATHS.FORK,
             SSO_PATHS.RESET_PASSWORD,
@@ -220,6 +220,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             [
                 SSO_PATHS.SWITCH,
                 SSO_PATHS.SIGNUP,
+                SSO_PATHS.REFER,
                 SSO_PATHS.RESET_PASSWORD,
                 SSO_PATHS.FORGOT_USERNAME,
                 SSO_PATHS.INVITE,
@@ -345,7 +346,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 onAddAccount={handleAddAccount}
                                             />
                                         </Route>
-                                        <Route path={SSO_PATHS.SIGNUP}>
+                                        <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
                                             <SignupContainer
                                                 toApp={toApp}
                                                 toAppName={toAppName}
