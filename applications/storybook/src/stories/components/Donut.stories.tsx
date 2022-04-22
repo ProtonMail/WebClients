@@ -1,11 +1,11 @@
-import { DonutChart } from '@proton/components';
+import { Donut } from '@proton/components';
 import { ChangeEvent, useState } from 'react';
 
 import { getTitle } from '../../helpers/title';
-import mdx from './DonutChart.mdx';
+import mdx from './Donut.mdx';
 
 export default {
-    component: DonutChart,
+    component: Donut,
     title: getTitle(__filename, false),
     parameters: {
         docs: {
@@ -17,7 +17,7 @@ export default {
 export const Basic = () => {
     return (
         <div style={{ width: 200, height: 200 }}>
-            <DonutChart
+            <Donut
                 chunks={[
                     [20, 'var(--signal-danger)'],
                     [10, 'var(--signal-warning)'],
@@ -44,7 +44,7 @@ export const WithSlider = () => {
             />
 
             <div style={{ width: 200, height: 200 }}>
-                <DonutChart
+                <Donut
                     chunks={[
                         [40, 'var(--signal-danger)'],
                         [20, 'var(--signal-warning)'],

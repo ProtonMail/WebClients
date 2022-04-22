@@ -15,7 +15,7 @@ export * from './color';
 export * from './container';
 export * from './contextMenu';
 export * from './countdown';
-export * from './donutChart';
+export * from './donut';
 export * from './dragMoveContainer';
 export * from './dropdown';
 export * from './dropzone';
