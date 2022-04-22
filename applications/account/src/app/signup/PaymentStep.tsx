@@ -106,6 +106,7 @@ const PaymentStep = ({
                 <Content>
                     <div className="text-bold mb1">{c('new_plans: signup').jt`Your selected plan: ${planName}`}</div>
                     <SubscriptionCycleSelector
+                        mode="buttons"
                         cycle={subscriptionData.cycle}
                         currency={subscriptionData.currency}
                         onChangeCycle={onChangeCycle}
