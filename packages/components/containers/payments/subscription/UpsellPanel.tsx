@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { format } from 'date-fns';
+import { format, fromUnixTime } from 'date-fns';
 import {
     CYCLE,
     DEFAULT_CURRENCY,
@@ -78,7 +78,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
     // Trial upsell
     if (isTrial(subscription) && subscription.PeriodEnd) {
         const mailPlanName = PLAN_NAMES[PLANS.MAIL];
-        const formattedTrialExpirationDate = format(subscription.PeriodEnd || 0, 'MMMM d, y');
+        const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'MMMM d, y');
         const calendarAppName = getAppName(APPS.PROTONCALENDAR);
         const handleUpgrade = () =>
             openSubscriptionModal({
@@ -143,9 +143,14 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
                     'new_plans: Action'
                 ).t`Upgrade now`}</Button>
-                <Button onClick={handleExplorePlans} size="large" color="norm" shape="ghost" fullWidth>{c(
-                    'new_plans: Action'
-                ).t`Explore all ${BRAND_NAME} plans`}</Button>
+                <Button
+                    onClick={handleExplorePlans}
+                    size="large"
+                    color="norm"
+                    shape="ghost"
+                    className="mt0-5"
+                    fullWidth
+                >{c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`}</Button>
             </div>
         );
     }
