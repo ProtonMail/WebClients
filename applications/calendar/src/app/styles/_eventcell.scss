@@ -154,8 +154,11 @@
 	}
 
 	&-inner.isLoaded &-circle {
-		margin-block-start: 0.125em;
 		color: var(--color-main);
+	}
+
+	&-lock-icon {
+		transform: translateY(-0.125em); // Magic number to visually align it -_-v
 	}
 
 	&-time {
