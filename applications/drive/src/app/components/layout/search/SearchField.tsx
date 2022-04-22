@@ -56,6 +56,7 @@ export const SearchField = () => {
         // Prevent handleInputClick from execution
         e?.stopPropagation();
         indexingDropdownControl.close();
+        setShouldInsertDropdown(false);
     };
 
     if (!searchEnabled) {
