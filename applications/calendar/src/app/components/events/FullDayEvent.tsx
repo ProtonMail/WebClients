@@ -76,7 +76,7 @@ const FullDayEvent = ({
             {!isAllDay ? (
                 <Icon
                     className="mr0-5 flex-item-noshrink calendar-dayeventcell-circle"
-                    size={10}
+                    size={16}
                     name="circle-filled"
                 />
             ) : null}
