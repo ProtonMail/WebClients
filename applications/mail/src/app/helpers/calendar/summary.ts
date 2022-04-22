@@ -1,5 +1,4 @@
 import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
-import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
 import { c } from 'ttag';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
@@ -479,9 +478,8 @@ export const getOrganizerSummaryText = (model: RequireSome<InvitationModel, 'inv
 
 export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
     const { invitationIcs, invitationApi, isOutdated } = model;
-    const { method, attendee: attendeeIcs, vevent: veventIcs } = invitationIcs;
+    const { method, attendee: attendeeIcs } = invitationIcs;
     const { vevent: veventApi, attendee: attendeeApi } = invitationApi || {};
-    const veventIcsTitle = getDisplayTitle(veventIcs.summary?.value);
 
     if (method === REQUEST) {
         if (!veventApi) {
@@ -531,6 +529,8 @@ export const getAttendeeSummaryText = (model: RequireSome<InvitationModel, 'invi
             return c('Calendar invite info').t`This invitation is out of date. The event has been updated.`;
         }
 
-        return c('Calendar invite info').t`An occurrence has been added to the event ${veventIcsTitle}`;
+        // Adding occurrences is not supported for the moment. When we do we can recover the text
+        // return c('Calendar invite info').t`An occurrence has been added to the event ${veventIcsTitle}`;
+        return null;
     }
 };
