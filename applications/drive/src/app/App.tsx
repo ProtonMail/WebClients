@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { ProtonApp, StandardPublicApp, StandardSetup, ModalsChildren, ProminentContainer } from '@proton/components';
+import { ProtonApp, StandardPublicApp, StandardSetup, ProminentContainer } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
@@ -15,7 +15,6 @@ import './app.scss';
 const PublicDriveLinkContainer = () => {
     return (
         <>
-            <ModalsChildren />
             <DownloadSharedContainer />
         </>
     );

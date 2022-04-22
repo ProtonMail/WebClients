@@ -19,8 +19,8 @@ import usePublicSharing, {
 import DownloadSharedInfo from './DownloadSharedInfo';
 import EnterPasswordInfo from './EnterPasswordInfo';
 import LinkError from './LinkError';
+import ReportAbuseButton from './ReportAbuseButton';
 
-const REPORT_ABUSE_EMAIL = 'abuse@protonmail.com';
 const ERROR_CODE_INVALID_TOKEN = 2501;
 
 const calcTransferProgressPercentage = (progressInBytes?: number, transferSize?: number) => {
@@ -45,6 +45,7 @@ const DownloadSharedContainer = () => {
     const [progress, setProgress] = useState<number>();
     const [transferSize, setTransferSize] = useState<number | undefined>(undefined);
     const [transferState, setTransferState] = useState<TransferStatePublic>();
+    const [sharedURLPassword, setSharedURLPassword] = useState<string | undefined>(undefined);
 
     const token = useMemo(() => pathname.replace(/\/urls\/?/, ''), [pathname]);
     const urlPassword = useMemo(() => hash.replace('#', ''), [hash]);
@@ -160,6 +161,7 @@ const DownloadSharedContainer = () => {
                     .initSession(token, password, handshakeInfoNew)
                     .then(() => {
                         setHandshakeInfo(handshakeInfoNew);
+                        setSharedURLPassword(password);
                         return getShareURLInfo(token, password);
                     })
                     .catch((error) => {
@@ -246,6 +248,17 @@ const DownloadSharedContainer = () => {
 
     const getAccountLabel = c('Label').t`Get your own ${appName}`;
 
+    const shouldRenderReportButton = () => {
+        if (Boolean(linkInfo) || (!error && token)) {
+            if (!withCustomPassword || sharedURLPassword) {
+                return true;
+            }
+            return false;
+        }
+
+        return false;
+    };
+
     return (
         content && (
             <>
@@ -268,13 +281,9 @@ const DownloadSharedContainer = () => {
                     </div>
                     <div className="color-weak flex flex-item-noshrink flex-justify-self-end flex-align-items-end on-mobile-pt1">
                         <div className="text-center opacity-50 mb0-5 mt0-5">
-                            <a
-                                className="text-sm signup-footer-link"
-                                href={`mailto:${REPORT_ABUSE_EMAIL}`}
-                                title={c('Label').t`Report abuse`}
-                            >
-                                {c('Label').t`Report abuse`}
-                            </a>
+                            {shouldRenderReportButton() && (
+                                <ReportAbuseButton linkInfo={linkInfo!} password={sharedURLPassword || urlPassword} />
+                            )}
                         </div>
                     </div>
                 </div>
