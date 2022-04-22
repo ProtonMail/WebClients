@@ -2,16 +2,16 @@ import percentOf from '@proton/shared/lib/helpers/percentOf';
 
 import useUid from '../../hooks/useUid';
 
-export interface DonutChartProps {
+export interface DonutProps {
     /**
      * Array of "number, string" tuples that represent the individual
      * segments of the donut chart, consisting of:
      * `[ percentage (number), color (string)  ]`
      *
-     * If the sum of all percentages is less than 100, the DonutChart
+     * If the sum of all percentages is less than 100, the Donut
      * will display an additional, auto-generated segment using a neutral
      * color to represent an empty or remaining amount. If all percentages
-     * sum up to more than 100, the DonutChart will scale all segments
+     * sum up to more than 100, the Donut will scale all segments
      * relative to the sum of all percentages. It's possible to create a
      * remaining amount manually even if the sum exceeds 100, by creating
      * a custom last chunk with a neutral background.
@@ -24,7 +24,7 @@ export interface DonutChartProps {
     gap?: number;
 }
 
-const DonutChart = ({ chunks, gap = 8 }: DonutChartProps) => {
+const Donut = ({ chunks, gap = 8 }: DonutProps) => {
     const uid = useUid('straight-gaps');
 
     const box = 200;
@@ -106,4 +106,4 @@ const DonutChart = ({ chunks, gap = 8 }: DonutChartProps) => {
     );
 };
 
-export default DonutChart;
+export default Donut;
