@@ -319,9 +319,7 @@ const ExtraEvent = ({
                 action={
                     canTryAgain && (
                         <span className="flex-item-noshrink flex">
-                            <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
-                                {c('Action').t`Try again`}
-                            </InlineLinkButton>
+                            <InlineLinkButton onClick={handleRetry}>{c('Action').t`Try again`}</InlineLinkButton>
                         </span>
                     )
                 }

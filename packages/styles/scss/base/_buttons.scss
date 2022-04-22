@@ -13,6 +13,7 @@
 	background-color: var(--button-default-background-color, transparent);
 	color: var(--button-default-text-color, inherit);
 	text-align: center;
+	cursor: pointer; // In case of a tag different from a or button
 	transition: 0.15s easing(easeOutQuint), background-position 0s;
 
 	@supports selector(:focus-visible) {

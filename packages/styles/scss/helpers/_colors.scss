@@ -1,27 +1,39 @@
 @each $color in (primary, danger, warning, success, info) {
-	$prefix: '';
-	@if $color != 'primary' {
-		$prefix: 'signal-';
-	}
+	$prefix: if($color != 'primary', 'signal', '');
 
 	.bg-#{$color} {
-		background-color: var(--#{$prefix + $color});
-		color: var(--#{$prefix + $color}-contrast);
+		background-color: var(--#{dash-join($prefix, $color)});
+		color: var(--#{dash-join($prefix, $color, 'contrast')});
 
 		a,
 		.link,
 		.button-link,
-		.button {
+		[class*='button-ghost'],
+		[class*='button-underline'],
+		[class*='button-outline'] {
 			@extend .color-inherit;
+		}
+
+		[class*='button-outline'] {
+			--button-default-border-color: currentColor;
+			--button-hover-border-color: currentColor;
+			--button-active-border-color: currentColor;
+		}
+
+		// Set same backgrounds as solid shape
+		[class*='button-outline-#{$color}'] {
+			--button-default-background-color: var(--#{dash-join($prefix, $color)});
+			--button-hover-background-color: var(--#{dash-join($prefix, $color, 'major-1')});
+			--button-active-background-color: var(--#{dash-join($prefix, $color, 'major-2')});
 		}
 	}
 
 	.color-#{$color} {
-		color: var(--#{$prefix + $color});
+		color: var(--#{dash-join($prefix, $color)});
 	}
 
 	.fill-#{$color} {
-		fill: var(--#{$prefix + $color});
+		fill: var(--#{dash-join($prefix, $color)});
 	}
 }
 
@@ -48,23 +60,15 @@
 .color-inherit {
 	color: inherit;
 
-	&[class*='button-outline'],
+	a#{&},
+	&.link,
+	&.button-link,
 	&[class*='button-ghost'],
-	&.button-link {
-		--button-default-text-color: inherit;
-		--button-hover-text-color: inherit;
-		--button-active-text-color: inherit;
-	}
-
+	&[class*='button-underline'],
 	&[class*='button-outline'] {
-		--button-default-border-color: currentColor;
-		--button-hover-border-color: currentColor;
-		--button-active-border-color: currentColor;
-	}
-
-	&.link {
 		&:hover,
-		&:focus {
+		&:focus,
+		&:active {
 			color: inherit;
 		}
 	}

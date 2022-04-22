@@ -52,7 +52,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
     };
 
     return (
-        <div className="bg-norm rounded border px0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml0-2 mt0-4 color-danger" />
                 <span className="pl0-5 pr0-5 mt0 flex-item-fluid flex-align-self-center">
@@ -70,7 +70,8 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                     size="small"
                     color="weak"
                     shape="outline"
-                    className="on-mobile-w100 py0-25"
+                    fullWidth
+                    className="rounded-sm"
                     onClick={handleClick}
                 >{c('Action').t`Verify`}</Button>
             </span>
