@@ -9,6 +9,7 @@ import {
     hasVisionary,
 } from '@proton/shared/lib/helpers/subscription';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Button, ButtonLike, Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';
@@ -68,7 +69,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
     if (!organization.HasKeys) {
         return (
             <>
-                <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/business/">
+                <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/business/')}>
                     {c('Info').t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}
                 </SettingsParagraph>
                 <PrimaryButton

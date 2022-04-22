@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { ButtonLike, SettingsLink } from '../../components';
@@ -15,10 +16,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
         <SettingsSection>
             {!isPMAddressActive ? (
                 <>
-                    <SettingsParagraph
-                        className="mb1"
-                        learnMoreUrl="https://protonmail.com/support/knowledge-base/pm-me-addresses/"
-                    >
+                    <SettingsParagraph className="mb1" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses/')}>
                         {c('Info')
                             .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}
                     </SettingsParagraph>

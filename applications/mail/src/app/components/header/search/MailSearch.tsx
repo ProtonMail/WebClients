@@ -20,6 +20,7 @@ import {
 } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import SearchOverlay from './SearchOverlay';
 import AdvancedSearch from './AdvancedSearch';
 import SearchInput from './SearchInput';
@@ -109,10 +110,7 @@ const MailSearch = ({ breakpoints }: Props) => {
                         <div className="text-bold text-lg mauto">{c('Spotlight').t`Message Content Search`}</div>
                         {c('Spotlight').t`You can now search the content of your encrypted emails.`}
                         <br />
-                        <Href
-                            url="https://protonmail.com/support/knowledge-base/search-message-content/"
-                            title="Message Content Search"
-                        >
+                        <Href url={getKnowledgeBaseUrl('/search-message-content/')} title="Message Content Search">
                             {c('Info').t`Learn more`}
                         </Href>
                     </>

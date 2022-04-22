@@ -24,6 +24,7 @@ import {
 } from '@proton/components/containers/resetPassword/resetActions';
 import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import Main from '../public/Main';
 import Header from '../public/Header';
@@ -180,7 +181,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                url="https://protonmail.com/support-form"
+                                url={getStaticURL('/support-form')}
                                 target="_self"
                                 fullWidth
                                 className="mt0-5"
@@ -298,7 +299,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
                             color="norm"
                             shape="ghost"
                             size="large"
-                            url="https://protonmail.com/support-form"
+                            url={getStaticURL('/support-form')}
                             target="_self"
                             fullWidth
                             className="mt0-5"

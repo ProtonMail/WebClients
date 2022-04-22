@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { BasicModal, Button, PrimaryButton } from '@proton/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 type Props = {
     open?: boolean;
@@ -16,7 +17,7 @@ export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, ope
     };
 
     const recommendedBrowser = (
-        <a href="https://protonmail.com/support/knowledge-base/recommended-browsers/" target="_blank">
+        <a href={getKnowledgeBaseUrl('/recommended-browsers/')} target="_blank">
             {c('Info').t`recommended browser`}
         </a>
     );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Button, Info, Loader, Toggle } from '../../components';
 import useModalState from '../../components/modalTwo/useModalState';
@@ -75,7 +76,7 @@ const PasswordsSection = () => {
                                 <label htmlFor="passwordModeToggle" className="text-semibold">
                                     <span className="mr0-5">{c('Label').t`Two-password mode`}</span>
                                     <Info
-                                        url="https://protonmail.com/support/knowledge-base/single-password"
+                                        url={getKnowledgeBaseUrl('/single-password')}
                                         title={c('Info')
                                             .t`Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)`}
                                     />
@@ -99,7 +100,7 @@ const PasswordsSection = () => {
                                 <SettingsLayoutLeft>
                                     <label htmlFor="passwordModeToggle" className="text-semibold">
                                         <span className="mr0-5">{c('Label').t`Mailbox password`}</span>
-                                        <Info url="https://protonmail.com/support/knowledge-base/single-password" />
+                                        <Info url={getKnowledgeBaseUrl('/single-password')} />
                                     </label>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight>

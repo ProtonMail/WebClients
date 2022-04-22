@@ -7,6 +7,7 @@ import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/c
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { AlertModal, Button, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
@@ -152,9 +153,8 @@ const SubscribedCalendarsSection = ({
                         {c('Subscribed calendar section description')
                             .t`Add public, external, or shared calendars using a URL.`}
                         <br />
-                        <Href url="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
-                            'Knowledge base link label'
-                        ).t`Here's how`}</Href>
+                        <Href url={getKnowledgeBaseUrl('/calendar-subscribe')}>{c('Knowledge base link label')
+                            .t`Here's how`}</Href>
                     </SettingsParagraph>
                 }
                 onAdd={handleCreate}

@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { AlertModal, Button, Href } from '../../components';
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const AbuseModal = ({ message, open, onClose }: Props) => {
     const contactLink = (
-        <Href url="https://protonmail.com/abuse" key={1}>
+        <Href url={getStaticURL('/abuse')} key={1}>
             {c('Info').t`here`}
         </Href>
     );

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Info, Toggle, useModalState } from '../../components';
 import { useConfig, useUserSettings } from '../../hooks';
 
@@ -30,7 +31,7 @@ const TwoFactorSection = () => {
     const twoFactorAuthLink =
         APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/two-factor-authentication'
-            : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
+            : getKnowledgeBaseUrl('/two-factor-authentication');
 
     return (
         <>

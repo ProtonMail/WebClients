@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href, Loader } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import MessageDecryptForm from './MessageDecryptForm';
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
@@ -47,7 +48,7 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
                 )}
             </div>
             <div className="border-top flex p1 mlauto">
-                <Href className="mlauto mrauto" href="https://protonmail.com/support">{c('Action').t`Need help?`}</Href>
+                <Href className="mlauto mrauto" href={getStaticURL('/support')}>{c('Action').t`Need help?`}</Href>
             </div>
         </main>
     );

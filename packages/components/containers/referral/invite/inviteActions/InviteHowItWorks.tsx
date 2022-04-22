@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Button, Href, Icon } from '@proton/components';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface Props {
     handleClose: () => void;
@@ -42,8 +43,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
                 </li>
             </ol>
             <p className="text-small mb0">
-                <Href href="https://protonmail.com/support/knowledge-base/referral-program">{c('Link')
-                    .t`Terms and conditions`}</Href>
+                <Href href={getKnowledgeBaseUrl('/referral-program')}>{c('Link').t`Terms and conditions`}</Href>
             </p>
         </div>
     );

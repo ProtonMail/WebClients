@@ -3,6 +3,7 @@ import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { APPS, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { FormModal, Button, Price, Info, Href, CircleLoader } from '../../../components';
@@ -294,7 +295,9 @@ const BlackFridayModal = ({ offer, onSelect, ...rest }: Props) => {
                                                         </strong>
                                                         <Info
                                                             buttonClass="inline-flex color-inherit ml0-25 mb0-1"
-                                                            url="https://protonmail.com/support/knowledge-base/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&utm_source=webmail&utm_medium=app_ad&utm_content=tooltip_v4"
+                                                            url={getKnowledgeBaseUrl(
+                                                                '/protondrive-early-access/?utm_campaign=ww-en-2c-mail-coms_inapp-protondrive_learn_more&utm_source=webmail&utm_medium=app_ad&utm_content=tooltip_v4'
+                                                            )}
                                                         />
                                                     </p>
                                                 </>

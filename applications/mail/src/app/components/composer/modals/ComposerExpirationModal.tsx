@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { Href, generateUID, useNotifications } from '@proton/components';
 import { range } from '@proton/shared/lib/helpers/array';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { MAX_EXPIRATION_TIME } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -111,7 +112,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                 {c('Info')
                     .t`If you are sending this message to a non ${MAIL_APP_NAME} user, please be sure to set a password for your message.`}
                 <br />
-                <Href url="https://protonmail.com/support/knowledge-base/expiration/">{c('Info').t`Learn more`}</Href>
+                <Href url={getKnowledgeBaseUrl('/expiration/')}>{c('Info').t`Learn more`}</Href>
             </p>
             <div className="flex flex-column flex-nowrap mt1 mb1">
                 <span className="sr-only" id={`composer-expiration-string-${uid}`}>

@@ -1,11 +1,12 @@
 // eslint-disable-next-line import/no-unresolved
 import unsupportedBrowser from '@proton/styles/assets/img/errors/unsupported-browser.svg';
+import { getKnowledgeBaseUrl } from '../helpers/url';
 
 const showUnsupported = () => {
     const isProtonVPN = (document.location.origin || document.location.href).indexOf('protonvpn') !== -1;
     const kbUrl = isProtonVPN
         ? 'https://protonvpn.com/support/browsers-supported/'
-        : 'https://protonmail.com/support/knowledge-base/browsers-supported/';
+        : getKnowledgeBaseUrl('/browsers-supported/');
 
     document.body.innerHTML = `
         <div class="w50 p2 mt2 center big automobile text-center">

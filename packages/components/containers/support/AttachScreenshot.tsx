@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { toBlob, resize } from '@proton/shared/lib/helpers/image';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { removeItem } from '@proton/shared/lib/helpers/array';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useNotifications } from '../../hooks';
 import { Button, FileInput, Icon, Info, Table, TableBody, TableCell, TableRow } from '../../components';
 
@@ -66,7 +67,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
         <>
             <label className="text-semibold block" htmlFor={id}>
                 <span className="mr0-5 align-middle">{c('Label').t`Attach screenshot(s)`}</span>
-                <Info url="https://protonmail.com/support/knowledge-base/screenshot-reporting-bugs/" />
+                <Info url={getKnowledgeBaseUrl('/screenshot-reporting-bugs/')} />
             </label>
             <div>
                 <FileInput

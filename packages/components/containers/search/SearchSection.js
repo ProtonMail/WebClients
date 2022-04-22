@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { updateAutoWildcardSearch } from '@proton/shared/lib/api/mailSettings';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Row, Label, Info, Toggle, Field } from '../../components';
 import { useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';
 
@@ -13,7 +14,7 @@ const SearchSection = () => {
             <Row>
                 <Label htmlFor="exactMatchToggle">
                     <span className="mr0-5">{c('Label').t`Require exact match`}</span>
-                    <Info url="https://protonmail.com/support/knowledge-base/search/" />
+                    <Info url={getKnowledgeBaseUrl('/search/')} />
                 </Label>
                 <Field className="pt0-5">
                     <Toggle

@@ -20,6 +20,8 @@ import {
     useLocalState,
 } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+
 import Loader from '../signup/Loader';
 import { defaultPersistentKey } from '../public/helper';
 
@@ -76,7 +78,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
         <Href
             className="color-inherit"
             key="learn-more"
-            url="https://protonmail.com/support/knowledge-base/how-to-access-protonmail-in-private-incognito-mode/"
+            url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode/')}
         >{c('Info').t`Learn more`}</Href>
     );
 
