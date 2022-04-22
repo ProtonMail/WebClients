@@ -15,13 +15,7 @@ RewriteRule ^eo/.* /eo.html [NC,L]
 RewriteRule ^.*?\.git.* /index.html [NC,L]
 
 RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
-RewriteRule ^help/reset-login-password https://account.%1/reset-password [R=302,L]
-
-RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
 RewriteRule ^create/new https://account.%1/signup [R=302,L]
-
-RewriteCond %{HTTP_HOST} ^[^\.]+\.(.*)$
-RewriteRule ^pre-invite/(.*)$ https://account.%1/pre-invite/$1 [R=302,L]
 
 RewriteCond %{REQUEST_FILENAME} -s [OR]
 RewriteCond %{REQUEST_FILENAME} -l [OR]
