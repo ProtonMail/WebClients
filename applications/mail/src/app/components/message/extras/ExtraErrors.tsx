@@ -54,7 +54,7 @@ const ExtraErrors = ({ message }: Props) => {
                 return (
                     <div
                         key={errorType}
-                        className="bg-norm border rounded px0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column"
+                        className="bg-norm border rounded pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column"
                         data-testid="errors-banner"
                     >
                         <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
@@ -72,7 +72,8 @@ const ExtraErrors = ({ message }: Props) => {
                                     size="small"
                                     color="weak"
                                     shape="outline"
-                                    className="on-mobile-w100 py0-25"
+                                    fullWidth
+                                    className="rounded-sm"
                                     onClick={handleReload}
                                 >{c('Action').t`Try again`}</Button>
                             </span>

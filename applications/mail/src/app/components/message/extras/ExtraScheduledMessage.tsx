@@ -96,18 +96,22 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     };
 
     return (
-        <div className="bg-info rounded px0-5 py0-25 mb0-85 flex flex-nowrap" data-testid="message:schedule-banner">
+        <div
+            className="bg-info rounded border border-info pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap"
+            data-testid="message:schedule-banner"
+        >
             <Icon name="clock" className="mt0-4 ml0-2 flex-item-noshrink" />
             <span className={classnames(['pl0-5 pr0-5 flex-item-fluid mt0-25', isScheduleSentShortly && 'mb0-25'])}>
                 {getScheduleBannerMessage()}
             </span>
             {!isScheduleSentShortly ? (
-                <span className="flex-item-noshrink flex-align-items-start flex color-norm">
+                <span className="flex-item-noshrink flex-align-items-start flex">
                     <Button
                         size="small"
-                        color="weak"
+                        color="info"
                         shape="outline"
-                        className="on-mobile-w100 py0-25"
+                        fullWidth
+                        className="rounded-sm"
                         onClick={() => setEditScheduleModalOpen(true)}
                         data-testid="message:schedule-banner-edit-button"
                     >{c('Action').t`Edit`}</Button>
