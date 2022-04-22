@@ -447,6 +447,7 @@ const SubscriptionModal = ({
                                         <h2 className="text-2xl text-bold mb1">{c('Label').t`Subscription options`}</h2>
                                         <div className="mb2">
                                             <SubscriptionCycleSelector
+                                                mode="select"
                                                 plans={plans}
                                                 planIDs={model.planIDs}
                                                 cycle={model.cycle}
