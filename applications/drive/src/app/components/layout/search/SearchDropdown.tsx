@@ -49,7 +49,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                     </div>
                     {showProgress && <SearchIndexingProgress />}
                     <div className="flex flex-justify-end mt1">
-                        <Button shape="ghost" onClick={onClose}>{c('Action').t`Got it`}</Button>
+                        <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
                     </div>
                 </div>
             </Dropdown>
