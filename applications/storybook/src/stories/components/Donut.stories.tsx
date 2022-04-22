@@ -55,3 +55,37 @@ export const WithSlider = () => {
         </div>
     );
 };
+
+export const Accessibility = () => {
+    const used = 40;
+    const alreadyAllocated = 20;
+    const allocated = 30;
+
+    const labelledChunks = [
+        { label: 'Already used', value: [used, 'var(--signal-danger)'] },
+        { label: 'Already allocated', value: [alreadyAllocated, 'var(--signal-warning)'] },
+        { label: 'Allocated', value: [allocated, 'var(--signal-success)'] },
+    ];
+
+    return (
+        <div className="flex flex-align-items-center">
+            <div className="mr2" style={{ width: 160, height: 160 }}>
+                <Donut chunks={labelledChunks.map(({ value }) => value as [number, string])} />
+            </div>
+            <div>
+                {labelledChunks.map(({ label, value: [share, color] }) => (
+                    <div className="mb1 flex flex-align-items-center">
+                        <span
+                            className="inline-block mr1"
+                            style={{ width: 36, height: 24, borderRadius: 8, background: color }}
+                        />
+                        <strong>
+                            <span className="sr-only">{share} GB</span>
+                            {label}
+                        </strong>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
