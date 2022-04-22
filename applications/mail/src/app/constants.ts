@@ -13,6 +13,7 @@ export const PAGE_SIZE = 50;
 export const ELEMENTS_CACHE_REQUEST_SIZE = 100;
 export const DEFAULT_PLACEHOLDERS_COUNT = PAGE_SIZE;
 export const ATTACHMENT_MAX_SIZE = 25000000; // bytes -> 25MB
+export const ATTACHMENT_MAX_COUNT = 100;
 export const LARGE_KEY_SIZE = 50 * 1024;
 export const LOAD_RETRY_COUNT = 3;
 export const LOAD_RETRY_DELAY = 3000; // in ms => 3s

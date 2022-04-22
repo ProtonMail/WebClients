@@ -1,6 +1,5 @@
 import { RefObject, useState } from 'react';
 import { OpenPGPKey } from 'pmcrypto';
-import { c } from 'ttag';
 
 import { useHandler, useNotifications } from '@proton/components';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -16,7 +15,7 @@ import {
 } from '../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../helpers/message/messageImages';
 import { MessageChange } from '../../components/composer/Composer';
-import { ATTACHMENT_ACTION, checkSize, uploadEO } from '../../helpers/attachment/attachmentUploader';
+import { ATTACHMENT_ACTION, checkSizeAndLength, uploadEO } from '../../helpers/attachment/attachmentUploader';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
 
 interface Props {
@@ -75,21 +74,14 @@ export const useEOAttachments = ({ message, onChange, editorActionsRef, publicKe
         const embeddable = files.every((file) => isEmbeddable(file.type));
         const plainText = isPlainText(message.data);
 
-        const numAttachmentsAlreadyLinkedToMessage = message.data?.Attachments.length || 0;
+        const hasReachedLimits = checkSizeAndLength({
+            createNotification,
+            message,
+            files,
+            attachmentsCountLimit: EO_REPLY_NUM_ATTACHMENTS_LIMIT,
+        });
 
-        if (numAttachmentsAlreadyLinkedToMessage + files.length > EO_REPLY_NUM_ATTACHMENTS_LIMIT) {
-            /*
-             * translator: EO_REPLY_NUM_ATTACHMENTS_LIMIT is the number of attachments maximum that we can have in an encrypted outside message
-             * Currently it's 10 written in digits
-             */
-            createNotification({
-                text: c('Error').t`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded.`,
-                type: 'error',
-            });
-            return;
-        }
-
-        if (checkSize(createNotification, message, files)) {
+        if (hasReachedLimits) {
             return;
         }
 
