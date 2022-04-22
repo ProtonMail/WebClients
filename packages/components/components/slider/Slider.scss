@@ -33,13 +33,18 @@ $size-track-thumb: 36 !default;
 	&-thumb {
 		block-size: rem($size-track-thumb);
 		inline-size: rem($size-track-thumb);
-		transform: translateX(-50%) translateY(-10px);
 		transition: none;
 		user-select: none;
 
 		display: flex;
 		align-items: center;
 		justify-content: center;
+
+		transform: translateX(-50%) translateY(-10px);
+
+		[dir='rtl'] & {
+			transform: translateX(50%) translateY(-10px);
+		}
 
 		&-tooltip {
 			opacity: 0;
@@ -60,8 +65,8 @@ $size-track-thumb: 36 !default;
 		}
 
 		&-input {
-			width: 100%;
-			height: 100%;
+			inline-size: 100%;
+			block-size: 100%;
 
 			&:active + .slider-thumb-tooltip,
 			&:focus + .slider-thumb-tooltip {
