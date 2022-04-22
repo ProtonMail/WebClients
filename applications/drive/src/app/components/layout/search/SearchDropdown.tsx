@@ -1,19 +1,27 @@
 import * as React from 'react';
 import { c } from 'ttag';
 
-import { Button, Dropdown, Loader } from '@proton/components';
+import { Button, Dropdown, useUser } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
+import { indexKeyExists, isDBReadyAfterBuilding } from '@proton/encrypted-search';
 
 import './SearchDropdown.scss';
+import { useSearchLibrary } from '../../../store/search';
+import { SearchIndexingProgress } from './SearchIndexingProgress';
 
 interface Props {
     isOpen: boolean;
     anchorRef: React.RefObject<HTMLDivElement>;
-    onClose: () => void;
+    onClose: (e: any) => void;
     onClosed: () => void;
 }
 
 export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) => {
+    const [user] = useUser();
+    const { getESDBStatus } = useSearchLibrary();
+    const { isRefreshing, esEnabled } = getESDBStatus();
+    const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
+
     return (
         <>
             <Dropdown
@@ -32,16 +40,16 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                 <div className="pl1-5 pr1-5 pt1-5 pb1">
                     <div className="flex">
                         <div className="flex">
-                            <Loader className="inline-flex" />
-                            <span className="inline-flex ml1 text-bold">{c('Label').t`Enabling drive search`}</span>
+                            <span className="inline-flex text-bold text-lg">{c('Label').t`Enabling drive search`}</span>
                         </div>
                         <p className="mb0">
                             {c('Info')
                                 .t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we’ll let you know when indexing is done.`}
                         </p>
                     </div>
+                    {showProgress && <SearchIndexingProgress />}
                     <div className="flex flex-justify-end mt1">
-                        <Button type="submit" onClick={onClose}>{c('Action').t`Got it`}</Button>
+                        <Button shape="ghost" onClick={onClose}>{c('Action').t`Got it`}</Button>
                     </div>
                 </div>
             </Dropdown>

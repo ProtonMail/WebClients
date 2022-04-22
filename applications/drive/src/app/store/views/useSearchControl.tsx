@@ -11,7 +11,7 @@ export default function useSearchControl() {
      * prepareSearchData loads data from db to memory if db exists, otherwise
      * it starts initial sync to create db.
      */
-    const prepareSearchData = async (indexingCallback?: () => void) => {
+    const prepareSearchData = async () => {
         if (!esSupported) {
             return;
         }
@@ -25,7 +25,6 @@ export default function useSearchControl() {
             return;
         }
 
-        indexingCallback?.();
         await resumeIndexing();
     };
 
