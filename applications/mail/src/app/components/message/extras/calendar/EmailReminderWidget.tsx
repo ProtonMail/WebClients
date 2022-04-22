@@ -257,7 +257,6 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     const whyNotLink = (
                         <Href
                             url="https://protonmail.com/support/knowledge-base/restoring-encrypted-calendar/"
-                            className="link align-baseline"
                             key="learn-more"
                         >
                             {c('Action').t`Why not?`}
