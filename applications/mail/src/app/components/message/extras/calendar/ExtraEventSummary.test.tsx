@@ -336,7 +336,7 @@ describe('ExtraEventSummary', () => {
                 });
             });
 
-            it('displays the occurrence added message when the event is not outdated and is available from the API', () => {
+            it('does not display the occurrence added message when the event is not outdated and is available from the API', () => {
                 renderComponent({
                     props: {
                         invitationApi: {
@@ -348,7 +348,9 @@ describe('ExtraEventSummary', () => {
                     method: ICAL_METHOD.ADD,
                 });
 
-                expect(screen.getByText(/An occurrence has been added to the event \(no title\)/)).toBeInTheDocument();
+                expect(
+                    screen.queryByText(/An occurrence has been added to the event \(no title\)/)
+                ).not.toBeInTheDocument();
             });
         });
     });
