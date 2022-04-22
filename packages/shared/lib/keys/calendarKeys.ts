@@ -14,7 +14,6 @@ import getRandomValues from '@proton/get-random-values';
 import { c } from 'ttag';
 
 import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
-import { normalize } from '../helpers/string';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';
 import { DecryptedCalendarKey, CalendarKey as tsKey, CalendarMember, CalendarKeyFlags } from '../interfaces/calendar';
@@ -165,20 +164,6 @@ export const getDecryptedCalendarKeys = async (
     return Promise.all(Keys.map(process)).then((result) => {
         return result.filter(isTruthy);
     });
-};
-
-/**
- * Convert a map of email -> value to the corresponding member id -> value
- */
-export const getKeysMemberMap = <T>(Members: CalendarMember[] = [], emailMap: { [key: string]: T } = {}) => {
-    return Object.keys(emailMap).reduce<{ [key: string]: T }>((acc, email) => {
-        const { ID: memberID } = Members.find(({ Email }) => normalize(Email) === normalize(email)) || {};
-        if (!memberID) {
-            throw new Error(c('Error').t`Could not find address ${email}.`);
-        }
-        acc[memberID] = emailMap[email];
-        return acc;
-    }, {});
 };
 
 export const isCalendarSetupData = (
