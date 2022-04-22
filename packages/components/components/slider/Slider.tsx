@@ -11,6 +11,7 @@ import { clamp } from '@proton/shared/lib/helpers/math';
 import percentage from '@proton/shared/lib/helpers/percentage';
 
 import useSynchronizingState from '../../hooks/useSynchronizingState';
+import { useRightToLeft } from '../../containers/rightToLeft';
 import { classnames } from '../../helpers';
 import { ButtonLike } from '../button';
 import { Icon } from '../icon';
@@ -56,6 +57,7 @@ interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 
 }
 
 const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, onInput, ...rest }: SliderProps) => {
+    const [rtl] = useRightToLeft();
     const [internalValue, setInternalValue] = useSynchronizingState(value || min);
     const [dragging, setDragging] = useState(false);
 
@@ -92,7 +94,7 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
 
         const intervalInPx = rootRect.right - rootRect.left;
 
-        const distanceToStart = x - rootRect.left;
+        const distanceToStart = rtl ? rootRect.right - x : x - rootRect.left;
 
         const pxToValueRatio = intervalInPx / interval;
 
@@ -233,7 +235,13 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
     const valueInPercent = percentage(interval, clampedInternalValue - min);
 
     return (
-        <div ref={rootRef} className="slider relative" onMouseDown={handleMouseDown} onTouchStart={handleTouchStart}>
+        <div
+            dir={rtl ? 'rtl' : 'ltr'}
+            ref={rootRef}
+            className="slider relative"
+            onMouseDown={handleMouseDown}
+            onTouchStart={handleTouchStart}
+        >
             <div className="slider-rail" />
 
             <div style={{ width: `${valueInPercent}%` }} className="slider-track" />
@@ -251,8 +259,11 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
                 color="weak"
                 shape="outline"
                 as="span"
-                style={{ left: `${valueInPercent}%` }}
-                className={classnames(['slider-thumb shadow-norm relative', dragging && 'slider-thumb-dragging'])}
+                style={{ '--left-custom': `${valueInPercent}%` }}
+                className={classnames([
+                    'slider-thumb left-custom shadow-norm relative',
+                    dragging && 'slider-thumb-dragging',
+                ])}
             >
                 <input
                     type="range"
