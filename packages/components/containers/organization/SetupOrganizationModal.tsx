@@ -116,7 +116,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                 title: c('Title').t`Set organization keys`,
                 section: (
                     <>
-                        <div>
+                        <div className="mb1">
                             {c('Info')
                                 .t`This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.`}
                         </div>
