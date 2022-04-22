@@ -85,7 +85,9 @@ const Layout = ({ children, hasDecoration, topRight, bottomRight, hasBackButton 
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
             <PublicTopBanners />
             <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink ml2 mr2 mt1 mb2 pb2 on-mobile-m0 on-mobile-pt1 on-mobile-pb1">
-                <ProtonLogo className={classnames([hasBackButton && 'on-mobile-ml3-5'])} />
+                <Href href="https://proton.me">
+                    <ProtonLogo className={classnames([hasBackButton && 'on-mobile-ml3-5'])} />
+                </Href>
                 {topRight}
             </header>
             <div className="sign-layout-container flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between">
