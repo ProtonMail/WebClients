@@ -29,6 +29,9 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
         hasPinnedKeys &&
         !model.publicKeys.pinnedKeys.some((publicKey) => getIsValidForSending(publicKey.getFingerprint(), model));
     const askForPinning = hasPinnedKeys && hasApiKeys && (noPinnedKeyCanSend || !isPrimaryPinned);
+    const hasCompromisedPinnedKeys = model.publicKeys.pinnedKeys.some((key) =>
+        model.compromisedFingerprints.has(key.getFingerprint())
+    );
 
     /**
      * Add / update keys to model
@@ -90,6 +93,10 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
             {!!model.publicKeys.pinnedKeys.length && askForPinning && (
                 <Alert className="mb1" type="error">{c('Info')
                     .t`Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.`}</Alert>
+            )}
+            {hasCompromisedPinnedKeys && (
+                <Alert className="mb1" type="warning">{c('Info')
+                    .t`One or more of your trusted keys were marked "compromised" by their owner. We recommend that you "untrust" these keys.`}</Alert>
             )}
             {model.pgpAddressDisabled && (
                 <Alert className="mb1" type="warning">{c('Info')

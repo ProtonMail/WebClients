@@ -10,6 +10,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Badge, DropdownActions, ContactKeyWarningIcon, Table, TableBody, TableRow } from '../../components';
 import useActiveBreakpoint from '../../hooks/useActiveBreakpoint';
 import { classnames } from '../../helpers';
@@ -164,6 +165,15 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     }) => {
                         const creation = new Date(creationTime);
                         const expiration = new Date(expirationTime);
+                        const untrustKeyText = c('PGP Key info').t`We recommend that you "untrust" this key.`;
+                        const obsoleteTooltipText = c('PGP Key info')
+                            .t`${emailAddress} has marked this key as obsolete. This key can only be used for signature verification.`;
+                        let compromisedTooltipText = c('PGP Key info')
+                            .t`${emailAddress} has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.`;
+                        if (isTrusted) {
+                            compromisedTooltipText += ' ' + untrustKeyText;
+                        }
+
                         const list = [
                             {
                                 text: c('Action').t`Download`,
@@ -308,9 +318,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isObsolete && !isCompromised ? (
                                     <Badge
                                         type="warning"
-                                        url="https://protonmail.com/support/knowledge-base/download-public-private-key/"
-                                        tooltip={c('PGP Key info')
-                                            .t`${emailAddress} has marked this key as obsolete. This key can only be used for signature verification`}
+                                        url={getKnowledgeBaseUrl('/download-public-private-key')}
+                                        tooltip={obsoleteTooltipText}
                                     >
                                         {c('Key badge').t`Obsolete`}
                                     </Badge>
@@ -318,9 +327,8 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 {isCompromised ? (
                                     <Badge
                                         type="error"
-                                        url="https://protonmail.com/support/knowledge-base/download-public-private-key/"
-                                        tooltip={c('PGP Key info')
-                                            .t`${emailAddress} has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification`}
+                                        url={getKnowledgeBaseUrl('/download-public-private-key')}
+                                        tooltip={compromisedTooltipText}
                                     >
                                         {c('Key badge').t`Compromised`}
                                     </Badge>
