@@ -1,3 +1,19 @@
+[4.0.0-beta.27] - 2022-05-04
+
+## Added
+
+-   Enable abuse form
+
+## Improved
+
+-   Show folder size when downloading helping users estimate time and storage requirements
+-   Show folder/file name in tab title to help users find the right tab quickly
+
+## Fixed
+
+-   Improved messaging for download failures caused when user edits folder during download
+-   Fixed issues related to users unable to edit links after changing default addresses
+
 # [4.0.0-beta.26] - 2022-04-06
 
 ## Added
