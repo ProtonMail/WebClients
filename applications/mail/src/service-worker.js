@@ -28,8 +28,13 @@ const pagesStrategy = new NetworkFirst({
 
 // Cache page navigations (html) with a Network First strategy
 registerRoute(
-    // Check to see if the request is a navigation to a new page
-    ({ request }) => request.mode === 'navigate',
+    ({ url, request }) => {
+        return (
+            request.mode === 'navigate' && // The request is a navigation to a new page
+            !url.searchParams.has('no-cache') && // Ignore urls with ?no-cache query parameter
+            !['/create'].some((path) => url.pathname.startsWith(path)) // Ignore urls from .htaccess
+        );
+    },
     // Use a Network First caching strategy
     ({ url, event }) => {
         const path = url.pathname.startsWith('/eo') ? '/eo.html' : '/index.html';
