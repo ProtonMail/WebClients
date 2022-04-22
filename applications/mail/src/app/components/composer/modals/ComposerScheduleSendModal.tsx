@@ -16,6 +16,7 @@ import {
 } from 'date-fns';
 import { c, msgid } from 'ttag';
 import { DateInput, ErrorZone, generateUID, Label, TimeInput, Href } from '@proton/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import ComposerInnerModal from './ComposerInnerModal';
 import { SCHEDULED_MAX_DATE_DAYS } from '../../../constants';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -32,6 +33,7 @@ const formatDateInput = (value: Date, locale: Locale) => {
 
     return format(value, 'PP', { locale });
 };
+
 interface Props {
     message: MessageState;
     onClose: () => void;
@@ -153,10 +155,8 @@ const ComposerScheduleSendModal = ({ message, onClose, onSubmit }: Props) => {
         >
             <div className="mb1 flex">
                 <span>{c('Info').t`When do you want your message to be sent?`}</span>
-                <Href
-                    className="underline inline-block"
-                    url="https://protonmail.com/support/knowledge-base/schedule-email-send/"
-                >{c('Link').t`Learn more`}</Href>
+                <Href className="underline inline-block" url={getKnowledgeBaseUrl('/schedule-email-send/')}>{c('Link')
+                    .t`Learn more`}</Href>
             </div>
             <div className="flex flex-gap-0-5 flex-row flex">
                 <div className="flex-item-fluid flex flex-column flex-nowrap">

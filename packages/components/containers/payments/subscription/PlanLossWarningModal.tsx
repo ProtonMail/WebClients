@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AlertModal, AlertModalProps, Button, Href } from '../../../components';
 
 interface Props extends Omit<AlertModalProps, 'children' | 'title' | 'buttons'> {
@@ -80,7 +81,7 @@ export const NewVisionaryWarningModal = ({
                         .t`If you delete your account, you lose all ${visionary} plan benefits and it won’t be available if you create a new account.`;
                 }
             })()}{' '}
-            <Href url="https://proton.me/support/upgrading-to-new-proton-plan/#switch-from-visionary">{c('Info')
+            <Href url={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan/#switch-from-visionary')}>{c('Info')
                 .t`Learn more`}</Href>
         </AlertModal>
     );

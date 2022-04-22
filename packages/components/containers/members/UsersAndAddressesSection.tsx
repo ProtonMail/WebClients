@@ -6,6 +6,7 @@ import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 import { Organization as tsOrganization, Domain, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Table,
     TableCell,
@@ -174,7 +175,7 @@ const UsersAndAddressesSection = () => {
                 <>
                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                     <span className="no-mobile">
-                        <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
+                        <Info url={getKnowledgeBaseUrl('/member-roles/')} />
                     </span>
                 </>
             ),
@@ -331,7 +332,7 @@ const UsersAndAddressesSection = () => {
                                 <div className="text-bold min-w7e mr1">
                                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                                     <span className="no-mobile">
-                                        <Info url="https://protonmail.com/support/knowledge-base/member-roles/" />
+                                        <Info url={getKnowledgeBaseUrl('/member-roles/')} />
                                     </span>
                                 </div>
                                 <div className="flex-item-fluid">

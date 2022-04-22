@@ -3,6 +3,7 @@ import { c } from 'ttag';
 
 import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { updateStickyLabels, updateViewMode } from '@proton/shared/lib/api/mailSettings';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Info } from '../../components';
 import { useApi, useEventManager, useFeature, useLoading, useMailSettings, useNotifications } from '../../hooks';
@@ -65,7 +66,7 @@ const MessagesSection = () => {
                         <label htmlFor="remoteToggle" className="text-semibold">
                             <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
                             <Info
-                                url="https://protonmail.com/support/knowledge-base/images-by-default/"
+                                url={getKnowledgeBaseUrl('/images-by-default/')}
                                 title={c('Info')
                                     .t`Prevents content from the sender's server from loading without your permission.`}
                             />
@@ -81,7 +82,7 @@ const MessagesSection = () => {
                     <label htmlFor="embeddedToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Auto-load embedded images`}</span>
                         <Info
-                            url="https://protonmail.com/support/knowledge-base/images-by-default/"
+                            url={getKnowledgeBaseUrl('/images-by-default/')}
                             title={c('Info')
                                 .t`When disabled, this prevents image files from loading on your device without your knowledge.`}
                         />

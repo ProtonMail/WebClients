@@ -1,10 +1,9 @@
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { AlertModal, AlertModalProps, Button, Href } from '../../../components';
 
 const SubscriptionModalDisabled = (props: Omit<AlertModalProps, 'title' | 'buttons' | 'children'>) => {
-    const learnMore = (
-        <Href url="https://proton.me/support/upgrading-to-new-proton-plan">{c('Link').t`Learn more`}</Href>
-    );
+    const learnMore = <Href url={getKnowledgeBaseUrl('/upgrading-to-new-proton-plan')}>{c('Link').t`Learn more`}</Href>;
     return (
         <AlertModal
             {...props}

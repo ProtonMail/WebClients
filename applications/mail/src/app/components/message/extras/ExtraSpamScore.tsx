@@ -14,6 +14,7 @@ import {
 import { c } from 'ttag';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { markAsHam } from '@proton/shared/lib/api/messages';
+import { getBlogURL, getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
@@ -36,7 +37,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 <span className="pl0-5 pr0-5 pb0-25 mt0-2 flex-item-fluid">
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!`}{' '}
-                    <Href url="https://protonmail.com/support/knowledge-base/email-has-failed-its-domains-authentication-requirements-warning/">
+                    <Href url={getKnowledgeBaseUrl('/email-has-failed-its-domains-authentication-requirements-warning/')}>
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>
@@ -63,7 +64,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                    <Href className="pl0-5 pr0-5" url="https://protonmail.com/blog/prevent-phishing-attacks/">
+                    <Href className="pl0-5 pr0-5" url={getBlogURL('/prevent-phishing-attacks/')}>
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>

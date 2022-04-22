@@ -18,6 +18,7 @@ import {
 } from '@proton/components';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import { forceSend } from '@proton/shared/lib/api/messages';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useDispatch } from 'react-redux';
 import { useDraft } from '../useDraft';
 import { isDirtyAddress } from '../../helpers/addresses';
@@ -89,8 +90,7 @@ export const useCompose = (
             {c('Info')
                 .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}
             <br />
-            <Href href="https://protonmail.com/support/knowledge-base/increase-my-storage-space/">{c('Link')
-                .t`Learn more`}</Href>
+            <Href href={getKnowledgeBaseUrl('/increase-my-storage-space/')}>{c('Link').t`Learn more`}</Href>
         </AlertModal>
     );
 

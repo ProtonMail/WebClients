@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Button, LearnMore } from '../../../components';
 import useLoading from '../../../hooks/useLoading';
@@ -141,7 +142,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
+                        <LearnMore url={getKnowledgeBaseUrl('/human-verification/')} />
                     </Text>
                     <PhoneMethodForm
                         isEmbedded={isEmbedded}
@@ -166,7 +167,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your email will only be used for this one-time verification.`} </span>
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
+                        <LearnMore url={getKnowledgeBaseUrl('/human-verification/')} />
                     </Text>
                     <EmailMethodForm
                         api={api}

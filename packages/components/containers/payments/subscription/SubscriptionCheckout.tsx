@@ -5,6 +5,7 @@ import { compare } from '@proton/shared/lib/helpers/array';
 import { ADDON_NAMES, APPS, CYCLE, MEMBER_PLAN_MAPPING, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getTimeRemaining } from '@proton/shared/lib/date/date';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Additions,
     Currency,
@@ -335,7 +336,7 @@ const SubscriptionCheckout = ({
                                                 url={
                                                     isVPN
                                                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                                                        : 'https://protonmail.com/support/knowledge-base/credit-proration/'
+                                                        : getKnowledgeBaseUrl('/credit-proration/')
                                                 }
                                             />
                                         </>

@@ -2,6 +2,7 @@ import { c } from 'ttag';
 import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
 import { Link } from 'react-router-dom';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import SupportDropdown from '../public/SupportDropdown';
 
 const LoginSupportDropdown = () => {
@@ -30,7 +31,7 @@ const LoginSupportDropdown = () => {
                     {c('Link').t`Forgot username?`}
                 </Link>
                 <DropdownMenuLink
-                    href="https://protonmail.com/support/knowledge-base/common-login-problems/"
+                    href={getKnowledgeBaseUrl('/common-login-problems/')}
                     target="_blank"
                     className="text-left"
                 >

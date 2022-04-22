@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { classnames, Icon, Tooltip, ButtonLike, Button, AlertModal, useModalState, Href } from '@proton/components';
 import { useExpiration } from '../../../hooks/useExpiration';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -43,8 +44,7 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
                     {...expirationModalProps}
                 >
                     <div className="mr0-5">{expireOnMessage}</div>
-                    <Href href={'https://protonmail.com/support/knowledge-base/expiration/'}>{c('Link')
-                        .t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/expiration/')}>{c('Link').t`Learn more`}</Href>
                 </AlertModal>
             </>
         );

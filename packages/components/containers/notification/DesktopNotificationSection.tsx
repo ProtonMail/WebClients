@@ -1,11 +1,9 @@
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Row, Label, Info } from '../../components';
 import DesktopNotificationPanel, { Props } from './DesktopNotificationPanel';
 
-const DesktopNotificationSection = ({
-    onTest,
-    infoURL = 'https://protonmail.com/support/knowledge-base/desktop-notifications/',
-}: Props) => {
+const DesktopNotificationSection = ({ onTest, infoURL = getKnowledgeBaseUrl('/desktop-notifications/') }: Props) => {
     return (
         <Row>
             <Label>
