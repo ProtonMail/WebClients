@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { Sidebar, SidebarNav, SidebarList, SidebarBackButton } from '@proton/components';
-import { APPS, APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import AccountSidebarVersion from './AccountSidebarVersion';
 import { Routes } from './routes';
@@ -23,17 +24,18 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
     };
 
     const backButtonTitle = backButtonCopy[app as keyof typeof backButtonCopy];
-    const backButtonText = APPS_CONFIGURATION[app].name;
+    const backButtonText = getAppName(app);
     const prefix = `/${appSlug}`;
 
     return (
         <Sidebar
             primary={
-                backButtonText ? (
+                backButtonTitle &&
+                backButtonText && (
                     <SidebarBackButton to="/" toApp={app} target="_self" title={backButtonTitle}>
-                        {APPS_CONFIGURATION[app].name}
+                        {backButtonText}
                     </SidebarBackButton>
-                ) : null
+                )
             }
             logo={logo}
             expanded={expanded}
