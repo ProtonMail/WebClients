@@ -2,11 +2,11 @@
 
 This project is a monorepo hosting the proton web clients. It includes the web applications, their dependencies & shared modules as well as all tooling surrounding development of the web clients (as well as some additional miscellaneous things).
 
--   <img src="./applications/mail/src/assets/mail.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">ProtonMail</span>
--   <img src="./applications/calendar/src/assets/protoncalendar.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Calendar</span>
--   <img src="./applications/drive/src/assets/protondrive.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Drive</span>
--   <img src="./applications/account/src/assets/protonaccount.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Account</span>
--   <img src="./applications/vpn-settings/src/assets/vpn.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">ProtonVPN Account</span>
+-   <img src="./applications/mail/src/assets/favicon-mail-32.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">ProtonMail</span>
+-   <img src="./applications/calendar/src/assets/favicon-calendar-static-32.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Calendar</span>
+-   <img src="./applications/drive/src/assets/favicon-drive-32.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Drive</span>
+-   <img src="./applications/account/src/assets/favicon-proton-32.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Account</span>
+-   <img src="./applications/vpn-settings/src/assets/favicon-vpn-32.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">ProtonVPN Account</span>
 
 Technically, this monorepo is based on Yarn 2 & Yarn Workspaces, with unified versioning for all packages inside.
 
