@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { Sidebar, SidebarNav, SidebarList, SidebarBackButton } from '@proton/components';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 
 import AccountSidebarVersion from './AccountSidebarVersion';
 import { Routes } from './routes';
@@ -22,15 +22,16 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
         [APPS.PROTONDRIVE]: c('Navigation').t`Back to Drive`,
     };
 
-    const backButtonText = backButtonCopy[app as keyof typeof backButtonCopy];
+    const backButtonTitle = backButtonCopy[app as keyof typeof backButtonCopy];
+    const backButtonText = APPS_CONFIGURATION[app].name;
     const prefix = `/${appSlug}`;
 
     return (
         <Sidebar
             primary={
                 backButtonText ? (
-                    <SidebarBackButton to="/" toApp={app} target="_self">
-                        {backButtonText}
+                    <SidebarBackButton to="/" toApp={app} target="_self" title={backButtonTitle}>
+                        {APPS_CONFIGURATION[app].name}
                     </SidebarBackButton>
                 ) : null
             }
