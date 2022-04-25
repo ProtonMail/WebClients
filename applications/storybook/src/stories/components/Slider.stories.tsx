@@ -45,6 +45,16 @@ export const MinMax = () => {
     );
 };
 
+export const MinMaxInverted = () => {
+    const [value, setValue] = useState(-10);
+
+    return (
+        <div className="p2">
+            <Slider min={20} max={-20} value={value} onChange={setValue} />
+        </div>
+    );
+};
+
 export const CustomValueDisplayFormat = () => {
     const [value, setValue] = useState(20);
 

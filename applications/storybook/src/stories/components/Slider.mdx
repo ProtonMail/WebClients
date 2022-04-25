@@ -26,6 +26,13 @@ The `min` & `max` properties allow specifying in which numeric interval the Slid
   <Story id="components-slider--min-max" />
 </Canvas>
 
+Although it doesn't fit the semantics of the concept of `min` & `max`, it is technically possible
+to have `max` be smaller than `min` if one wishes to invert the directionality of the `Slider`.
+
+<Canvas>
+  <Story id="components-slider--min-max-inverted" />
+</Canvas>
+
 ## Custom value display format
 
 The `getDisplayedValue` prop allows you to apply custom formatting to the real internal value of the slider.
