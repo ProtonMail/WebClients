@@ -177,7 +177,6 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                 silentApi<{ Plans: Plan[] }>(
                     queryPlans({
                         Currency: DEFAULT_CURRENCY,
-                        State: 1,
                     })
                 ).then(({ Plans }) => Plans),
             ]);
