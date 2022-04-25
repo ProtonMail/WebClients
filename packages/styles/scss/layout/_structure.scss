@@ -123,6 +123,7 @@ html,
 	@include respond-to($breakpoint-small) {
 		margin-inline-end: 0;
 		border-radius: 0;
+		border-inline-start-width: 0;
 	}
 }
 
