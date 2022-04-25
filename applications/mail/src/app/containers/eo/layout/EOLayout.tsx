@@ -25,7 +25,7 @@ export interface Props {
 }
 
 const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
-    const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
+    const { APP_VERSION } = useConfig();
     const termsLink = (
         <Href key="terms" className="eo-footer-link" href={getStaticURL('/terms-and-conditions')}>{c('Link')
             .t`Terms`}</Href>
@@ -39,7 +39,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
             .t`Previous version`}</Href>
     );
 
-    const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
+    const appVersion = getAppVersion(APP_VERSION);
 
     return (
         <ProminentContainer className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">
