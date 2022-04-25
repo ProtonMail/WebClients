@@ -17,6 +17,7 @@ interface Props {
 const envMap = {
     alpha: 'α',
     beta: 'β',
+    relaunch: 'δ',
 };
 
 const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, changelog }: Props) => {

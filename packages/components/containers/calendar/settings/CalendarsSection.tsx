@@ -63,7 +63,7 @@ const CalendarsSection = ({
                             MAX_CALENDARS_PER_USER
                         )}
                     </p>
-                    <ButtonLike as={SettingsLink} path="/dashboard" color="norm" shape="solid" size="small">
+                    <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
                         {c('Action').t`Upgrade`}
                     </ButtonLike>
                 </div>

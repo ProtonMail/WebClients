@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { APP_NAMES } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import {
     getAppVersion,
@@ -26,11 +27,11 @@ export interface Props {
 const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
     const termsLink = (
-        <Href key="terms" className="eo-footer-link" href="https://protonmail.com/terms-and-conditions">{c('Link')
+        <Href key="terms" className="eo-footer-link" href={getStaticURL('/terms-and-conditions')}>{c('Link')
             .t`Terms`}</Href>
     );
     const privacyLink = (
-        <Href key="privacy" className="eo-footer-link" href="https://protonmail.com/privacy-policy">{c('Link')
+        <Href key="privacy" className="eo-footer-link" href={getStaticURL('/privacy-policy')}>{c('Link')
             .t`Privacy policy`}</Href>
     );
     const OldVersionLink = (
@@ -54,7 +55,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                         </span>
                     )}
                     <div className="ml1 on-mobile-ml0">
-                        <Href key="terms" className="button button-solid-norm" href="https://protonmail.com/signup">
+                        <Href key="terms" className="button button-solid-norm" href={getStaticURL('/signup')}>
                             {c('Link').t`Sign up for free`}
                         </Href>
                     </div>

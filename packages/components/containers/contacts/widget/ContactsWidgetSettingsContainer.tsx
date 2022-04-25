@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Label, Field, Info, CircleLoader } from '@proton/components';
 import { useContacts, useMailSettings } from '@proton/components/hooks';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
 import ContactsWidgetSettingsContainerExport from './ContactsWidgetSettingsContainerExport';
@@ -30,7 +31,7 @@ const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
                         <Label htmlFor="saveContactToggle">
                             <span className="mr0-5 text-semibold" role="heading" aria-level={2}>{c('Label')
                                 .t`Automatically save contacts`}</span>
-                            <Info url="https://protonmail.com/support/knowledge-base/autosave-contact-list/" />
+                            <Info url={getKnowledgeBaseUrl('/autosave-contact-list/')} />
                         </Label>
                         <Field className="pt0-5">
                             <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />

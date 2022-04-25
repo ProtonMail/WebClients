@@ -131,7 +131,7 @@ export const getMailAppRoutes = ({
                 ],
             },
             autoReply: <SectionConfig>{
-                text: c('Title').t`Auto reply`,
+                text: c('Title').t`Auto-reply`,
                 to: '/auto-reply',
                 icon: 'envelope-arrow-up-and-right',
                 subsections: [{ id: 'auto-reply' }],

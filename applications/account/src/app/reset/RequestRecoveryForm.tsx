@@ -1,8 +1,10 @@
-import { c } from 'ttag';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { c } from 'ttag';
 import { Button, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 interface Props {
     onSubmit: (username: string) => Promise<void>;
@@ -12,6 +14,7 @@ interface Props {
 
 const RequestRecoveryForm = ({ onSubmit, defaultUsername = '', loading: outerLoading }: Props) => {
     const [innerLoading, withLoading] = useLoading();
+    const history = useHistory();
     const [username, setUsername] = useState(defaultUsername);
 
     const { validator, onFormSubmit } = useFormErrors();
@@ -40,6 +43,14 @@ const RequestRecoveryForm = ({ onSubmit, defaultUsername = '', loading: outerLoa
             />
             <Button size="large" color="norm" loading={loading} type="submit" fullWidth className="mt1-75">{c('Action')
                 .t`Next`}</Button>
+            <Button
+                size="large"
+                color="norm"
+                shape="ghost"
+                fullWidth
+                className="mt0-5"
+                onClick={() => history.push(SSO_PATHS.LOGIN)}
+            >{c('Action').t`Return to sign in`}</Button>
         </form>
     );
 };

@@ -18,65 +18,69 @@
 
 .plan-selection {
 	display: grid;
-	grid-gap: 1em;
+	grid-gap: 1.5em;
 	grid-template-columns: repeat(var(--plan-selection-number, 4), 1fr);
 	& &-plan {
 		// specificity ^^
 		border-radius: var(--border-radius-lg);
 	}
+	// dirty, but to avoid inserting content in tabs
+	&-currency-selector {
+		margin-block-end: -2.5em;
+	}
+
+	&-suffix {
+		min-block-size: rem(22); // just to keep elements aligned
+		&:empty {
+			@include respond-to($breakpoint-small) {
+				min-block-size: 0;
+			}
+		}
+		@include respond-to(1250) {
+			// to check with l10n issues
+			min-inline-size: 100%;
+		}
+	}
 
 	.plan-selection {
-		&-plan-current {
-			background-color: var(--primary);
-			color: var(--primary-contrast);
-			position: absolute;
-			inset-block-end: 100%;
-			inset-inline: -1px;
-			border-start-start-radius: var(--border-radius-lg);
-			border-start-end-radius: var(--border-radius-lg);
-			border-end-end-radius: 0;
-			border-end-start-radius: 0;
-			padding: 0.35em; // Design wants 28px height ^^
-			&-card {
-				border-color: var(--primary);
-				border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
-				border-start-start-radius: 0;
-				border-start-end-radius: 0;
-				border-end-end-radius: var(--border-radius-lg);
-				border-end-start-radius: var(--border-radius-lg);
+		&-plan-recommended {
+			border-width: 2px;
+			&-pill {
+				&-container {
+					position: absolute;
+					inset-block-end: calc(100% - 1em);
+					inset-inline: 0;
+				}
+
+				border-radius: 5em;
+			}
+		}
+
+		&-title {
+			.select {
+				border: 0;
+				padding: 0;
+				display: inline-block;
+				text-align: start;
+				block-size: auto;
+				background: transparent;
+				svg {
+					inline-size: rem(16);
+					block-size: rem(16);
+				}
 			}
 		}
 
 		&-info {
-			min-block-size: 4em;
+			min-block-size: 5em;
 			@include respond-to(1100) {
-				min-block-size: 5.5em;
-			}
-			@include respond-to(1000) {
-				min-block-size: 6.5em;
+				min-block-size: 6em;
 			}
 			@include respond-to($breakpoint-medium) {
+				// min-block-size: 5em;
+			}
+			@include respond-to($breakpoint-small) {
 				min-block-size: 0;
-			}
-		}
-
-		&-main-price {
-			.amount,
-			.currency {
-				font-size: 2em;
-				@include respond-to(1000) {
-					font-size: 1.8em;
-				}
-				@include respond-to(950) {
-					font-size: 1.6em;
-				}
-				@include respond-to($breakpoint-medium) {
-					font-size: 2em;
-				}
-				line-height: 1.2; // font only takes the place for characters ^^
-			}
-			.suffix {
-				opacity: 0.5; // while waiting for new taxonomy
 			}
 		}
 	}
@@ -87,15 +91,25 @@
 	@include respond-to($breakpoint-small) {
 		grid-template-columns: repeat(1, 1fr);
 	}
+
+	// special case for b2b, put suffix on the line, not enough space
+	&--b2b {
+		.plan-selection-suffix {
+			min-inline-size: 100%;
+		}
+	}
 }
 
-.subscriptionCheckout-column {
-	inline-size: 22em;
-	@include respond-to($breakpoint-medium) {
-		inline-size: 18em;
-	}
-	@include respond-to($breakpoint-small) {
-		inline-size: 100%;
+.subscriptionCheckout {
+	&-column {
+		inline-size: rem(360); // as design request
+
+		@include respond-to($breakpoint-medium) {
+			inline-size: rem(300); // to avoid left content shrinking too much
+		}
+		@include respond-to(800) {
+			inline-size: 100%; // a bit earlier than mobile breakpoint, same reason as above
+		}
 	}
 }
 

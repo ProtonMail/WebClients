@@ -12,6 +12,7 @@ import {
 } from '@proton/components';
 import { clearBit, setBit } from '@proton/shared/lib/helpers/bitset';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import ComposerInnerModal from './ComposerInnerModal';
 import { MessageChange } from '../Composer';
@@ -110,9 +111,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 {c('Info')
                     .t`Encrypted messages to non-${BRAND_NAME} recipients will expire in 28 days unless a shorter expiration time is set.`}
                 <br />
-                <Href url="https://protonmail.com/support/knowledge-base/encrypt-for-outside-users/">
-                    {c('Info').t`Learn more`}
-                </Href>
+                <Href url={getKnowledgeBaseUrl('/encrypt-for-outside-users/')}>{c('Info').t`Learn more`}</Href>
             </p>
 
             <InputFieldTwo

@@ -45,7 +45,10 @@ export const withUIDHeaders = (UID: string, config: any) => mergeHeaders(config,
 export const withLocaleHeaders = (localeCode: string, config: any) =>
     mergeHeaders(config, getLocaleHeaders(localeCode));
 
-export const getVerificationHeaders = (token?: string, tokenType?: HumanVerificationMethodType) => {
+export const getVerificationHeaders = (
+    token: string | undefined,
+    tokenType: HumanVerificationMethodType | undefined
+) => {
     if (!token || !tokenType) {
         return {};
     }
@@ -53,4 +56,12 @@ export const getVerificationHeaders = (token?: string, tokenType?: HumanVerifica
         'x-pm-human-verification-token': token,
         'x-pm-human-verification-token-type': tokenType,
     };
+};
+
+export const withVerificationHeaders = (
+    token: string | undefined,
+    tokenType: HumanVerificationMethodType | undefined,
+    config: any
+) => {
+    return mergeHeaders(config, getVerificationHeaders(token, tokenType));
 };

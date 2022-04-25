@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import Icon from '../../components/icon/Icon';
 import Href from '../../components/link/Href';
 import { Button } from '../../components';
@@ -123,7 +124,7 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
                 <span className="mr0-5">{text}</span>
                 <Href
                     className="underline inline-block color-inherit"
-                    url="https://protonmail.com/support/knowledge-base/encrypted-contacts/"
+                    url={getKnowledgeBaseUrl('/encrypted-contacts/')}
                 >{c('Link').t`Learn more`}</Href>
             </span>
             <span className="flex-item-noshrink flex">

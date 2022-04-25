@@ -172,13 +172,13 @@ export const addLinkPrefix = (input = '', type: LINK_TYPES) => {
 
 // Note: This function makes some heavy assumptions on the hostname. Only intended to work on proton-domains.
 export const getSecondLevelDomain = (hostname: string) => {
-    return hostname.substr(hostname.indexOf('.') + 1);
+    return hostname.slice(hostname.indexOf('.') + 1);
 };
 
 export const getRelativeApiHostname = (hostname: string) => {
     const idx = hostname.indexOf('.');
-    const first = hostname.substr(0, idx);
-    const second = hostname.substr(idx + 1);
+    const first = hostname.slice(0, idx);
+    const second = hostname.slice(idx + 1);
     return `${first}-api.${second}`;
 };
 
@@ -198,7 +198,7 @@ export const getAppUrlFromApiUrl = (apiUrl: string, appName: APP_NAMES) => {
     const url = new URL(apiUrl);
     const { hostname } = url;
     const index = hostname.indexOf('.');
-    const tail = hostname.substr(index + 1);
+    const tail = hostname.slice(index + 1);
     url.pathname = '';
     url.hostname = `${subdomain}.${tail}`;
     return url;
@@ -211,4 +211,33 @@ export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) =>
     segments[0] = subdomain;
     url.hostname = segments.join('.');
     return url;
+};
+
+let cache = '';
+export const getStaticURL = (path: string) => {
+    cache = cache || getSecondLevelDomain(window.location.hostname);
+    // We create a relative URL to support the TOR domain
+    const hostname = cache;
+    return `https://${hostname}${path}`;
+};
+
+export const getBlogURL = (path: string) => {
+    return getStaticURL(`/blog${path}`);
+};
+
+export const getKnowledgeBaseUrl = (path: string) => {
+    // On protonmail, the KBs are prefixed with /support/knowledge-base/path
+    if (window.location.hostname.includes('protonmail.com')) {
+        return getStaticURL(`/support/knowledge-base${path}`);
+    }
+    // On proton.me, it's just /support/path
+    const pathname = `/support${path}`;
+    if (window.location.hostname.includes('protonvpn.com')) {
+        return `https://proton.me${pathname}`;
+    }
+    return getStaticURL(pathname);
+};
+
+export const getShopURL = () => {
+    return `https://shop.proton.me`;
 };

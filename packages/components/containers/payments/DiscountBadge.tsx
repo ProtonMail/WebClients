@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { COUPON_CODES, BLACK_FRIDAY, APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -9,9 +10,11 @@ const { BUNDLE, PROTONTEAM, BLACK_FRIDAY_2018, BLACK_FRIDAY_2019, BLACK_FRIDAY_2
 
 interface Props {
     code: string;
+    description?: string;
+    children: ReactNode;
 }
 
-const DiscountBadge = ({ code }: Props) => {
+const DiscountBadge = ({ code, description, children }: Props) => {
     if (code === BUNDLE) {
         return (
             <Badge type="success" tooltip={c('Info').t`20% discount applied to your subscription with coupon ${code}`}>
@@ -62,8 +65,11 @@ const DiscountBadge = ({ code }: Props) => {
     }
 
     return (
-        <Badge type="success" tooltip={c('Info').t`Discount applied to your subscription with coupon ${code}`}>
-            {code}
+        <Badge
+            type="success"
+            tooltip={description || c('Info').t`Discount applied to your subscription with coupon ${code}`}
+        >
+            {children}
         </Badge>
     );
 };

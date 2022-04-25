@@ -15,7 +15,7 @@ import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/
 import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@proton/shared/lib/constants';
 import { getFeatures } from '@proton/shared/lib/api/features';
 
-import { useApi, useCache, useConfig } from '../../hooks';
+import { getWelcomeFlagsValue, useApi, useCache, useConfig, WELCOME_FLAGS_CACHE_KEY } from '../../hooks';
 
 import {
     CalendarModelEventManagerProvider,
@@ -101,6 +101,8 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
 
         const setupPromise = loadModels(models, loadModelsArgs).then((result: any) => {
             const [userSettings, user] = result as [UserSettings, User];
+
+            cache.set(WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue(userSettings));
 
             const hasNonDelinquentRequirement = REQUIRES_NONDELINQUENT.includes(APP_NAME);
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);

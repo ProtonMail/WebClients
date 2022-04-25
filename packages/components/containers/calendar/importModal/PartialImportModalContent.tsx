@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { CALENDAR_APP_NAME, IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL } from '@proton/shared/lib/calendar/constants';
 import { ImportCalendarModel } from '@proton/shared/lib/interfaces/calendar/Import';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Alert, AttachedFile } from '../../../components';
 
 import ErrorDetails from './ErrorDetails';
@@ -17,7 +18,7 @@ const PartialImportModalContent = ({ model }: Props) => {
     const totalEventsDiscarded = visibleErrors.filter((e) => e.component === 'vevent').length;
     const totalEvents = totalToImport + totalEventsDiscarded;
 
-    const learnMore = failure ? '' : IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL;
+    const learnMore = failure ? '' : getKnowledgeBaseUrl(IMPORT_CALENDAR_UNSUPPORTED_FAQ_URL);
     const summary =
         totalEventsDiscarded === totalEvents
             ? c('Import warning').t`No event can be imported. Expand for details.`

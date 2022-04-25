@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy } from '../../components';
 import { useNotifications } from '../../hooks';
 
@@ -9,7 +10,7 @@ const VerifySection = ({ domain }) => {
     const domainName = domain.DomainName;
     return (
         <>
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/dns-records/')}>
                 {c('Info for domain modal')
                     .t`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>

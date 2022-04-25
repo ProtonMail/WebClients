@@ -6,6 +6,7 @@ import {
     getOrganizationKeyInfo,
 } from '@proton/shared/lib/organization/helper';
 import { Organization } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Block, Button, Loader, Table, TableBody, TableHeader, TableRow } from '../../components';
 import { useMembers, useModals, useNotifications, useOrganizationKey, useUser } from '../../hooks';
@@ -109,7 +110,7 @@ const OrganizationPasswordSection = ({ organization, onceRef }: Props) => {
 
     return (
         <SettingsSection>
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/organization-key">
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/organization-key')}>
                 {c('Info')
                     .t`Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.`}
             </SettingsParagraph>

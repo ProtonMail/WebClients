@@ -8,6 +8,7 @@ import {
     Importer,
     NormalizedImporter,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useImporters, useImportReports } from '../../hooks';
 import { Href, Alert, Loader, Table, TableCell, TableBody } from '../../components';
@@ -160,10 +161,7 @@ const ImportListSection = () => {
     });
 
     const bandwithLimitLink = (
-        <Href
-            key="bandwithLimitLink"
-            url="https://protonmail.com/support/knowledge-base/import-assistant/#delayed-import"
-        >
+        <Href key="bandwithLimitLink" url={getKnowledgeBaseUrl('/import-assistant/#delayed-import')}>
             {c('Import error link').t`bandwidth limit`}
         </Href>
     );

@@ -3,7 +3,7 @@ import { uint8ArrayToString, base64StringToUint8Array } from './encoding';
 /**
  * Convert file to encoded base 64 string
  */
-export const toBase64 = async (file: File, isValid: (file: File) => boolean = () => true) => {
+export const toBase64 = async (file: Blob, isValid: (file: Blob) => boolean = () => true) => {
     if (file && !isValid(file)) {
         throw new Error('Invalid file format');
     }

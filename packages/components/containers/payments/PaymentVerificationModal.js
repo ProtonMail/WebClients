@@ -6,7 +6,7 @@ import { ADD_CARD_MODE, PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constant
 import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 
 import { useNotifications } from '../../hooks';
-import { FormModal, Alert, Loader, Button, PrimaryButton, DoNotWindowOpenAlertError } from '../../components';
+import { FormModal, Loader, Button, PrimaryButton, DoNotWindowOpenAlertError } from '../../components';
 
 import { toParams } from './paymentTokenToParams';
 import PaymentVerificationImage from './PaymentVerificationImage';
@@ -111,12 +111,12 @@ const PaymentVerificationModal = ({
                             <p className="text-center">
                                 <PaymentVerificationImage payment={payment} type={type} />
                             </p>
-                            <Alert className="mb1">
+                            <div className="mb1">
                                 {isAddCard
                                     ? c('Info')
                                           .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
                                     : c('Info').t`Verification will open a new tab, please disable any popup blockers.`}
-                            </Alert>
+                            </div>
                         </>
                     ),
                     [STEPS.REDIRECTING]: (
@@ -127,8 +127,8 @@ const PaymentVerificationModal = ({
                                     : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
                             </p>
                             <Loader />
-                            <Alert className="mb1">{c('Info')
-                                .t`Verification will open a new tab, please disable any popup blockers.`}</Alert>
+                            <div className="mb1">{c('Info')
+                                .t`Verification will open a new tab, please disable any popup blockers.`}</div>
                         </>
                     ),
                     [STEPS.REDIRECTED]: (
@@ -142,11 +142,11 @@ const PaymentVerificationModal = ({
                             <p className="text-center">
                                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
                             </p>
-                            <Alert className="mb1">
+                            <div className="mb1">
                                 {isAddCard && isPayPal
                                     ? c('Info').t`Verification can take a few minutes.`
                                     : c('Info').t`Payment can take a few minutes to fully verify.`}
-                            </Alert>
+                            </div>
                         </>
                     ),
                     [STEPS.DO_NOT_WINDOW_OPEN]: (

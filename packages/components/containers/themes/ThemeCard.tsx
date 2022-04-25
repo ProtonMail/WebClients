@@ -31,7 +31,7 @@ const ThemeCard = ({ label, id, src, selected, onChange, disabled }: Props) => {
         >
             <span className="flex flex-nowrap flex-column flex-align-items-center">
                 <img alt="" src={src} className="mb0-5 theme-card-image on-rtl-mirror" />
-                {label}
+                <div className="py0-25">{label}</div>
             </span>
         </Button>
     );

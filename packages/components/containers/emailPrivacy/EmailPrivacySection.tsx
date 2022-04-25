@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import { Info } from '../../components/link';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -39,7 +40,7 @@ const EmailPrivacySection = () => {
                     <label htmlFor="remoteToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
                         <Info
-                            url="https://protonmail.com/support/knowledge-base/images-by-default/"
+                            url={getKnowledgeBaseUrl('/images-by-default/')}
                             title={c('Info')
                                 .t`Prevents content from the sender's server from loading without your permission.`}
                         />
@@ -61,7 +62,7 @@ const EmailPrivacySection = () => {
                             <label htmlFor="preventTrackingToggle" className="text-semibold">
                                 <span className="mr0-5">{c('Label').t`Block email tracking`}</span>
                                 <Info
-                                    url="https://protonmail.com/support/email-tracker-protection"
+                                    url={getKnowledgeBaseUrl('/email-tracker-protection')}
                                     title={c('Info').t`Blocks senders from seeing if and when you opened a message.`}
                                 />
                             </label>
@@ -80,7 +81,7 @@ const EmailPrivacySection = () => {
                                 <label htmlFor="protectiontModeToggle" className="text-semibold">
                                     <span className="mr0-5">{c('Label').t`Protection mode`}</span>
                                     <Info
-                                        url="https://protonmail.com/support/email-tracker-protection"
+                                        url={getKnowledgeBaseUrl('/email-tracker-protection')}
                                         title={c('Info')
                                             .t`Hides identifying information by loading remote content through a proxy. Option to store content as attachments.`}
                                     />

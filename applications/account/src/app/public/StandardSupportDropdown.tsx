@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import SupportDropdown from './SupportDropdown';
 
 const StandardSupportDropdown = () => {
@@ -15,7 +16,7 @@ const StandardSupportDropdown = () => {
             <SupportDropdown>
                 <DropdownMenuLink
                     className="flex flex-nowrap text-left"
-                    href="https://protonmail.com/support/"
+                    href={getStaticURL('/support/')}
                     target="_blank"
                 >
                     <Icon className="mt0-25 mr0-5" name="question-circle" />

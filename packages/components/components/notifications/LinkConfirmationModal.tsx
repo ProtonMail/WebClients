@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { isEdge, isIE11, openNewTab } from '@proton/shared/lib/helpers/browser';
 import { updateConfirmLink } from '@proton/shared/lib/api/mailSettings';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { rtlSanitize } from '@proton/shared/lib/helpers/string';
 import { useApi, useEventManager } from '../../hooks';
 import { Button } from '../button';
@@ -69,10 +70,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
             {punyCodeLink && (
                 <>
                     {`${punyCodeLinkText} `}
-                    <Href
-                        url="https://protonmail.com/support/knowledge-base/homograph-attacks/"
-                        title="What are homograph attacks?"
-                    >
+                    <Href url={getKnowledgeBaseUrl('/homograph-attacks/')} title="What are homograph attacks?">
                         {c('Info').t`Learn more`}
                     </Href>
                 </>

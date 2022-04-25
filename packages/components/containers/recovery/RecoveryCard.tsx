@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Card, Href, Loader } from '../../components';
 import {
     useHasOutdatedRecoveryFile,
@@ -187,7 +188,7 @@ const RecoveryCard = ({ ids }: Props) => {
                       c('Info')
                           .jt`If you lose your login details and need to reset your account, ${boldImperative} that you have an ${boldAccountRecovery} in place.`}
                 <br />
-                <Href url="https://protonmail.com/support/knowledge-base/set-account-recovery-methods">
+                <Href url={getKnowledgeBaseUrl('/set-account-recovery-methods')}>
                     {c('Link').t`Why set recovery methods?`}
                 </Href>
             </p>

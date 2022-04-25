@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Api, HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Button, LearnMore } from '../../../components';
 import useLoading from '../../../hooks/useLoading';
@@ -26,7 +27,7 @@ interface Props {
     defaultPhone?: string;
     defaultEmail?: string;
     isEmbedded?: boolean;
-    onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
+    onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel: VerificationModel) => void;
     verificationModelCacheRef: MutableRefObject<VerificationModel | undefined>;
 }
 
@@ -62,12 +63,13 @@ const CodeMethod = ({
         onChangeStep(HumanVerificationSteps.ENTER_DESTINATION);
     };
 
-    const handleCode = async (code: string, tokenType: 'sms' | 'email' | 'ownership-email' | 'ownership-sms') => {
+    const handleCode = async (code: string, verificationModel: VerificationModel) => {
+        const tokenType = verificationModel.method;
         if (tokenType !== 'email' && tokenType !== 'sms') {
             throw new Error('Invalid verification model');
         }
         try {
-            await onSubmit(code, tokenType);
+            await onSubmit(code, tokenType, verificationModel);
         } catch (error: any) {
             const { code } = getApiError(error);
 
@@ -140,7 +142,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
+                        <LearnMore url={getKnowledgeBaseUrl('/human-verification/')} />
                     </Text>
                     <PhoneMethodForm
                         isEmbedded={isEmbedded}
@@ -165,7 +167,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your email will only be used for this one-time verification.`} </span>
-                        <LearnMore url="https://protonmail.com/support/knowledge-base/human-verification/" />
+                        <LearnMore url={getKnowledgeBaseUrl('/human-verification/')} />
                     </Text>
                     <EmailMethodForm
                         api={api}

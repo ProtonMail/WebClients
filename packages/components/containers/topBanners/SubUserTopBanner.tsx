@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useUser } from '../../hooks';
 import TopBanner from './TopBanner';
@@ -15,8 +16,7 @@ const SubUserTopBanner = () => {
         <TopBanner className="bg-info">
             {c('Info').t`You are currently signed in as ${user.Name} (${user.Email}).`}
             {` `}
-            <Href url="https://protonmail.com/support/knowledge-base/manage-public-users-organization/">{c('Link')
-                .t`Learn more`}</Href>
+            <Href url={getKnowledgeBaseUrl('/manage-public-users-organization/')}>{c('Link').t`Learn more`}</Href>
         </TopBanner>
     );
 };

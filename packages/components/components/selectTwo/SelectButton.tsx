@@ -35,7 +35,7 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 aria-atomic="true"
                 className={classnames([
                     !unstyled && 'select field',
-                    'outline-none w100 flex flex-justify-space-between flex-align-items-center flex-nowrap',
+                    'outline-none w100 flex flex-justify-space-between flex-align-items-center flex-nowrap no-pointer-events-children',
                     className,
                 ])}
                 {...rest}

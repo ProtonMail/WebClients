@@ -11,6 +11,8 @@ export interface Pricing {
 
 export type MaxKeys = 'MaxDomains' | 'MaxAddresses' | 'MaxSpace' | 'MaxMembers' | 'MaxVPN' | 'MaxTier';
 
+export type Quantity = number;
+
 export interface Plan {
     ID: string;
     Type: PLAN_TYPES;
@@ -22,13 +24,15 @@ export interface Plan {
     MaxDomains: number;
     MaxAddresses: number;
     MaxSpace: number;
+    MaxCalendars: number;
     MaxMembers: number;
     MaxVPN: number;
     MaxTier: number;
     Services: number;
     Features: number;
-    Quantity: number;
+    Quantity: Quantity;
     Pricing: Pricing;
+    State: number;
 }
 
 export interface Subscription {
@@ -47,16 +51,26 @@ export interface SubscriptionModel extends Subscription {
     isManagedByMozilla: boolean;
 }
 
-export type PlanIDs = {
-    [planID: string]: number;
-};
+export type PlanIDs = Partial<{
+    [planName in PLANS | ADDON_NAMES]: Quantity;
+}>;
+
+export type PlansMap = Partial<{
+    [planName in PLANS | ADDON_NAMES]: Plan;
+}>;
 
 export interface Additions {
     [ADDON_NAMES.ADDRESS]?: number;
     [ADDON_NAMES.DOMAIN]?: number;
+    [ADDON_NAMES.DOMAIN_ENTERPRISE]?: number;
+    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]?: number;
     [ADDON_NAMES.MEMBER]?: number;
     [ADDON_NAMES.SPACE]?: number;
     [ADDON_NAMES.VPN]?: number;
+    [ADDON_NAMES.MEMBER_MAIL_PRO]?: number;
+    [ADDON_NAMES.MEMBER_DRIVE_PRO]?: number;
+    [ADDON_NAMES.MEMBER_BUNDLE_PRO]?: number;
+    [ADDON_NAMES.MEMBER_ENTERPRISE]?: number;
 }
 
 export interface SubscriptionCheckResponse {
@@ -75,4 +89,9 @@ export interface SubscriptionCheckResponse {
     Gift?: number;
     Additions: null | Additions;
     PeriodEnd: number;
+}
+
+export enum Audience {
+    B2C = 0,
+    B2B = 1,
 }

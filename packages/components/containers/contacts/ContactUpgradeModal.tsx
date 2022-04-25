@@ -14,7 +14,7 @@ const UpgradeModal = ({ onConfirm = noop, onClose = noop, ...rest }: Props) => {
         <ConfirmModal
             title={c('Title').t`Upgrade required`}
             onConfirm={() => {
-                goToSettings('/dashboard');
+                goToSettings('/upgrade');
                 onConfirm();
             }}
             onClose={onClose}

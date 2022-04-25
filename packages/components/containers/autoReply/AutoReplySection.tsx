@@ -2,20 +2,20 @@ import { useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { updateAutoresponder } from '@proton/shared/lib/api/mailSettings';
-import { AutoReplyDuration, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { AutoReplyDuration, BRAND_NAME, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 import {
-    useMailSettings,
-    useLoading,
     useApi,
-    useNotifications,
+    useErrorHandler,
     useEventManager,
     useHotkeys,
+    useLoading,
+    useMailSettings,
+    useNotifications,
     useUser,
-    useErrorHandler,
 } from '../../hooks';
-import { Toggle, Button, Editor, EditorActions } from '../../components';
+import { Button, Editor, EditorActions, Toggle } from '../../components';
 
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
@@ -169,17 +169,20 @@ const AutoReplySection = () => {
         </form>
     );
 
+    const plus = PLAN_NAMES[PLANS.MAIL];
+    const bundle = PLAN_NAMES[PLANS.BUNDLE];
+
     return (
         <SettingsSectionWide className="no-scroll">
             <SettingsParagraph className="mt0 mb1">
-                {c('Info')
-                    .t`Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.`}
+                {c('new_plans: info')
+                    .t`Set automatic replies to inform contacts you are out of the office or unable to respond.`}
             </SettingsParagraph>
 
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label htmlFor="autoReplyToggle" className="on-mobile-pb0 on-mobile-border-none text-semibold">
-                        {c('Label').t`Auto reply`}
+                        {c('Label').t`Auto-reply`}
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">
@@ -198,9 +201,7 @@ const AutoReplySection = () => {
                 isEnabled && renderForm()
             ) : (
                 <UpgradeBanner className="mt2">
-                    {c('Info').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]}, ${PLAN_NAMES[PLANS.PROFESSIONAL]} or ${
-                        PLAN_NAMES[PLANS.PLUS]
-                    } plan to enable automatic replies for when you are out of the office.`}
+                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>

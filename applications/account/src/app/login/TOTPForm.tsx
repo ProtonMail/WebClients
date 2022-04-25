@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
 
-import { Button, useLoading, useFormErrors, InputFieldTwo, UnderlineButton } from '@proton/components';
+import { Button, useLoading, useFormErrors, InputFieldTwo } from '@proton/components';
 
 interface Props {
     onSubmit: (totp: string) => Promise<void>;
@@ -53,25 +53,27 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     autoComplete="one-time-code"
                     value={totp}
                     onValue={setTotp}
+                    inputMode="numeric"
                 />
             )}
-            <div className="text-center">
-                <UnderlineButton
-                    onClick={() => {
-                        if (loading) {
-                            return;
-                        }
-                        setTotp('');
-                        setIsRecovery(!isTotpRecovery);
-                    }}
-                >
-                    {isTotpRecovery
-                        ? c('Action').t`Use two-factor authentication code`
-                        : c('Action').t`Use recovery code`}
-                </UnderlineButton>
-            </div>
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                 {c('Action').t`Authenticate`}
+            </Button>
+            <Button
+                size="large"
+                color="norm"
+                shape="ghost"
+                fullWidth
+                className="mt0-5"
+                onClick={() => {
+                    if (loading) {
+                        return;
+                    }
+                    setTotp('');
+                    setIsRecovery(!isTotpRecovery);
+                }}
+            >
+                {isTotpRecovery ? c('Action').t`Use two-factor authentication code` : c('Action').t`Use recovery code`}
             </Button>
         </form>
     );

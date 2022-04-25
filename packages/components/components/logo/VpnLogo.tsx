@@ -5,9 +5,9 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants'
 
 import { LogoProps } from './Logo'
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant'>;
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
 
-const VpnLogo = ({ variant = 'with-wordmark', className, ...rest }: Props) => {
+const VpnLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -21,7 +21,7 @@ const VpnLogo = ({ variant = 'with-wordmark', className, ...rest }: Props) => {
             width={logoWidth}
             height="36"
             fill="none"
-            className={classnames(['logo', variant, className])}
+            className={classnames(['logo', size && `icon-${size}p`, variant, className])}
             aria-labelledby={`{${uid}}-title`}
             {...rest}
         >

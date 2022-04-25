@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import PropTypes from 'prop-types';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Table, TableHeader, TableBody, TableRow, Info } from '../../components';
 import { useEventManager } from '../../hooks';
 
@@ -33,7 +34,7 @@ const AddressesTable = ({ domain, domainAddresses }) => {
                     c('Title header for addresses domain table').t`Status`,
                     <span className="inline-flex flex-align-items-center">
                         {c('Title header for addresses domain table').t`Catch-All`}
-                        <Info className="ml0-5" url="https://protonmail.com/support/knowledge-base/catch-all/" />
+                        <Info className="ml0-5" url={getKnowledgeBaseUrl('/catch-all/')} />
                     </span>,
                 ]}
             />

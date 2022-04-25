@@ -10,9 +10,10 @@ interface Props {
     amount: number;
     coupon: string;
     flow: PaymentMethodFlows;
+    paymentMethodStatus?: PaymentMethodStatus;
 }
 
-const useMethods = ({ amount, coupon, flow }: Props) => {
+const useMethods = ({ paymentMethodStatus: maybePaymentMethodsStatus, amount, coupon, flow }: Props) => {
     const api = useApi();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -28,7 +29,7 @@ const useMethods = ({ amount, coupon, flow }: Props) => {
     useEffect(() => {
         const run = async () => {
             const [paymentMethodsStatus, paymentMethods] = await Promise.all([
-                api<PaymentMethodStatus>(getPaymentMethodStatus()),
+                maybePaymentMethodsStatus || api<PaymentMethodStatus>(getPaymentMethodStatus()),
                 isAuthenticated
                     ? api<{ PaymentMethods: PaymentMethod[] }>(queryPaymentMethods()).then(
                           ({ PaymentMethods = [] }) => PaymentMethods

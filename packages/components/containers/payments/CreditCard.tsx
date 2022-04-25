@@ -46,7 +46,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
             <div className="flex flex-justify-space-between on-tiny-mobile-flex-column">
                 <div className="flex-item-fluid mr0-5 on-tiny-mobile-mr0">
                     <InputFieldTwo
-                        label={c('Label').t`Expiry date`}
+                        label={c('Label').t`Expiration date`}
                         id="exp"
                         as={ExpInput}
                         month={card.month}
@@ -63,7 +63,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                     <InputFieldTwo
                         label={
                             <>
-                                <span className="mr0-25">{c('Label').t`CVV code`}</span>
+                                <span className="mr0-25">{c('Label').t`Security code`}</span>
                                 <Info
                                     title={c('Info')
                                         .t`For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.`}
@@ -96,7 +96,7 @@ const CreditCard = ({ card, errors, onChange, loading = false }: Props) => {
                 </div>
                 <div className="flex-item-fluid ml0-5 on-tiny-mobile-ml0">
                     <InputFieldTwo
-                        label={card.country === 'US' ? c('Label').t`ZIP` : c('Label').t`Postal code`}
+                        label={card.country === 'US' ? c('Label').t`ZIP code` : c('Label').t`Postal code`}
                         id="postalcode"
                         autoComplete="postal-code"
                         value={card.zip}

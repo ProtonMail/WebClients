@@ -1,14 +1,13 @@
 import { createContext, ReactNode, useContext, useRef } from 'react';
-import { Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interfaces';
+import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useModalState } from '../../../components';
-import { useFeature, useOrganization, usePlans, useSubscription } from '../../../hooks';
-import { FeatureCode } from '../../features';
+import { usePlans, useSubscription } from '../../../hooks';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionModal from './SubscriptionModal';
@@ -16,18 +15,18 @@ import SubscriptionModalDisabled from './SubscriptionModalDisabled';
 
 interface OpenCallbackProps {
     step: SUBSCRIPTION_STEPS;
+    defaultAudience?: Audience;
     plan?: PLANS;
     planIDs?: PlanIDs;
-    service?: PLAN_SERVICES;
     cycle?: Cycle;
     currency?: Currency;
     coupon?: string;
-    disableBackButton?: boolean;
+    disablePlanSelection?: boolean;
 }
 
-type OpenCallback = (props: OpenCallbackProps) => void;
+export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
 
-type ContextProps = [OpenCallback, boolean];
+type ContextProps = [OpenSubscriptionModalCallback, boolean];
 
 const SubscriptionModalContext = createContext<ContextProps>([noop, false]);
 
@@ -41,22 +40,19 @@ interface Props {
 
 const SubscriptionModalProvider = ({ children }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
-    const [organization, loadingOrganisation] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
-    const paymentsDisabledFeature = useFeature(FeatureCode.PaymentsDisabled);
     const [modalState, setModalState, render] = useModalState();
     const subscriptionProps = useRef<{
         planIDs: PlanIDs;
+        defaultAudience?: Audience;
         step: SUBSCRIPTION_STEPS;
         currency?: Currency;
         cycle?: Cycle;
         coupon?: string;
-        disableBackButton?: boolean;
+        disablePlanSelection?: boolean;
     } | null>(null);
 
-    const loading = Boolean(
-        loadingOrganisation || loadingSubscription || loadingPlans || paymentsDisabledFeature.loading
-    );
+    const loading = Boolean(loadingSubscription || loadingPlans);
 
     const plansMap = toMap(plans, 'Name');
     const subscriptionPlanIDs = getPlanIDs(subscription);
@@ -65,7 +61,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         <>
             {render &&
                 subscriptionProps.current &&
-                (paymentsDisabledFeature.feature?.Value === true ? (
+                (getHasLegacyPlans(subscription) ? (
                     <SubscriptionModalDisabled {...modalState} />
                 ) : (
                     <SubscriptionModal {...subscriptionProps.current} {...modalState} />
@@ -76,11 +72,11 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         planIDs: maybePlanIDs,
                         plan,
                         step,
-                        service = PLAN_SERVICES.MAIL,
                         currency,
                         cycle,
                         coupon,
-                        disableBackButton,
+                        defaultAudience,
+                        disablePlanSelection,
                     }) => {
                         if (loading || render) {
                             return;
@@ -89,17 +85,18 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                             planIDs: plan
                                 ? switchPlan({
                                       planIDs: subscriptionPlanIDs,
-                                      plans,
-                                      planID: plansMap[plan].ID,
-                                      service,
-                                      organization,
+                                      planID: plansMap[plan].Name,
                                   })
                                 : maybePlanIDs || subscriptionPlanIDs,
                             step,
                             currency: currency || subscription.Currency,
                             cycle: cycle || subscription.Cycle,
                             coupon: coupon || subscription.CouponCode || undefined,
-                            disableBackButton,
+                            defaultAudience:
+                                defaultAudience || (plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)
+                                    ? Audience.B2B
+                                    : Audience.B2C,
+                            disablePlanSelection,
                         };
                         setModalState(true);
                     },

@@ -2,6 +2,7 @@ import { VERIFICATION_STATUS } from 'pmcrypto';
 import { c } from 'ttag';
 
 import { Alert, TextLoader } from '@proton/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { SignatureIssues, SignatureIssueLocation } from '../store';
 
@@ -107,7 +108,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
             &nbsp;
             {textWarning}
             &nbsp;
-            <a href="https://protonmail.com/support/knowledge-base/drive-signature-management/" target="_blank">
+            <a href={getKnowledgeBaseUrl('/drive-signature-management/')} target="_blank">
                 {c('Action').t`Learn more`}
             </a>
         </>

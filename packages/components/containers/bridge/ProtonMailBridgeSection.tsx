@@ -1,6 +1,6 @@
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
+import { PLAN_NAMES, PLANS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { Select, Icon, ButtonLike, IconName } from '../../components';
 import { useUser } from '../../hooks';
@@ -137,6 +137,9 @@ const ProtonMailBridgeSection = () => {
         );
     };
 
+    const plus = PLAN_NAMES[PLANS.MAIL];
+    const bundle = PLAN_NAMES[PLANS.BUNDLE];
+
     return (
         <SettingsSectionWide>
             <SettingsParagraph
@@ -150,7 +153,7 @@ const ProtonMailBridgeSection = () => {
                 <div className="mt2 bridge-grid">{bridgeClients.map(renderBox)}</div>
             ) : (
                 <UpgradeBanner>
-                    {c('Info').t`Upgrade to a paid plan to unlock IMAP/SMTP support through ${MAIL_APP_NAME} Bridge.`}
+                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>

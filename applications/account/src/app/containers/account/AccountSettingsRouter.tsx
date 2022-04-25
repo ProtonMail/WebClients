@@ -1,5 +1,6 @@
 import { ReactNode, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
+import { c } from 'ttag';
 
 import {
     AccountEasySwitchSection,
@@ -27,6 +28,8 @@ import {
     YourPlanSection,
     SubscriptionModalProvider,
     AutomaticSubscriptionModal,
+    PrivateMainArea,
+    SettingsPageTitle,
 } from '@proton/components';
 import { InviteSection, ReferralInvitesContextProvider, RewardSection } from '@proton/components/containers/referral';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
@@ -60,7 +63,7 @@ const AccountSettingsRouter = ({
     const location = useLocation();
 
     const {
-        routes: { dashboard, easySwitch, referral, recovery, security, password, language },
+        routes: { dashboard, upgrade, easySwitch, referral, recovery, security, password, language },
     } = accountAppRoutes;
 
     return (
@@ -70,7 +73,6 @@ const AccountSettingsRouter = ({
                     <SubscriptionModalProvider>
                         <AutomaticSubscriptionModal />
                         <PrivateMainSettingsArea location={location} config={dashboard}>
-                            <PlansSection />
                             <YourPlanSection />
                             <BillingSection />
                             <PaymentMethodsSection />
@@ -80,6 +82,21 @@ const AccountSettingsRouter = ({
                             <EmailSubscriptionSection />
                             <CancelSubscriptionSection />
                         </PrivateMainSettingsArea>
+                    </SubscriptionModalProvider>
+                </Route>
+            )}
+            {getIsSectionAvailable(upgrade) && (
+                <Route path={getSectionPath(path, upgrade)}>
+                    <SubscriptionModalProvider>
+                        <PrivateMainArea>
+                            <div className="container-section-sticky">
+                                <div className="text-center">
+                                    <SettingsPageTitle className="mt1-5 mb1-5">{c('new_plans: title')
+                                        .t`Unlock premium features by upgrading`}</SettingsPageTitle>
+                                </div>
+                                <PlansSection />
+                            </div>
+                        </PrivateMainArea>
                     </SubscriptionModalProvider>
                 </Route>
             )}

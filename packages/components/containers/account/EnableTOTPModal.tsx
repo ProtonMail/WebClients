@@ -8,6 +8,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
     Alert,
@@ -85,7 +86,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             const twoFactorAuthLink =
                 APP_NAME === APPS.PROTONVPN_SETTINGS
                     ? 'https://protonvpn.com/support/two-factor-authentication'
-                    : 'https://protonmail.com/support/knowledge-base/two-factor-authentication';
+                    : getKnowledgeBaseUrl('/two-factor-authentication');
 
             // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
             const guideButton = (
