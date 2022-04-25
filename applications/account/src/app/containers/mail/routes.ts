@@ -35,7 +35,7 @@ export const getMailAppRoutes = ({
             general: <SectionConfig>{
                 text: c('Title').t`Messages and composing`,
                 to: '/general',
-                icon: 'grid',
+                icon: 'grid-2',
                 subsections: [
                     {
                         text: c('Title').t`Short domain (@pm.me)`,
@@ -66,7 +66,7 @@ export const getMailAppRoutes = ({
             identity: <SectionConfig>{
                 text: c('Title').t`Identity and addresses`,
                 to: '/identity-addresses',
-                icon: 'address-card',
+                icon: 'card-identity',
                 subsections: [
                     {
                         text: `@${newDomain}`,
@@ -133,7 +133,7 @@ export const getMailAppRoutes = ({
             autoReply: <SectionConfig>{
                 text: c('Title').t`Auto reply`,
                 to: '/auto-reply',
-                icon: 'envelope-fast',
+                icon: 'envelope-arrow-up-and-right',
                 subsections: [{ id: 'auto-reply' }],
             },
             domainNames: <SectionConfig>{
@@ -186,7 +186,7 @@ export const getMailAppRoutes = ({
             backup: <SectionConfig>{
                 text: c('Title').t`Backup and export`,
                 to: '/backup-export',
-                icon: 'arrow-up-from-screen',
+                icon: 'arrow-up-from-square',
                 available: !user.isFree,
                 subsections: [
                     {

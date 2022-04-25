@@ -14,7 +14,7 @@ export default function SignatureIcon({ item, className }: { item: FileBrowserIt
 
     return (
         <Tooltip title={title}>
-            <Icon name="lock-triangle-exclamation-filled" className={className} />
+            <Icon name="lock-exclamation-filled" className={className} />
         </Tooltip>
     );
 }

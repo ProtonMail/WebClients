@@ -11,8 +11,8 @@ import {
 } from 'react';
 import { c } from 'ttag';
 
-import discoverIllustration from '@proton/styles/assets/img/shared/discover.svg';
-import newIllustration from '@proton/styles/assets/img/shared/new.svg';
+import discoverIllustration from '@proton/styles/assets/img/illustrations/spotlight-binoculars.svg';
+import newIllustration from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import Portal from '../portal/Portal';
@@ -139,7 +139,7 @@ const Spotlight = ({
                             title={closeText}
                             onClick={close}
                         >
-                            <Icon name="xmark" alt={closeText} />
+                            <Icon name="cross" alt={closeText} />
                         </Button>
                     )}
                 </div>

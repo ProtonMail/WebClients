@@ -6,7 +6,7 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { EMAIL_PLACEHOLDER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
-import { FullLoader, Input, Label, UnderlineButton, PasswordInput, PrimaryButton } from '../../components';
+import { Input, Label, UnderlineButton, PasswordInput, PrimaryButton, CircleLoader } from '../../components';
 import { OnLoginCallback } from '../app/interface';
 import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 
@@ -140,7 +140,7 @@ const LoginForm = ({
         <>
             {challengeLoading && (
                 <div className="text-center">
-                    <FullLoader className="color-primary" size={100} />
+                    <CircleLoader className="color-primary" size="large" />
                 </div>
             )}
             <form

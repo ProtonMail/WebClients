@@ -65,9 +65,8 @@ const Info = ({
                 role={url ? 'link' : undefined}
             >
                 <Icon
-                    className={classnames(['color-primary', className])}
-                    size={16}
-                    name={questionMark ? 'circle-question' : 'circle-info'}
+                    className={classnames(['icon-16p color-primary', className])}
+                    name={questionMark ? 'question-circle' : 'info-circle'}
                     alt={c('Action').t`More info: ${safeTitle}`}
                     {...rest}
                 />

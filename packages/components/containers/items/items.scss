@@ -2,7 +2,7 @@
 	position: absolute;
 	background-color: white;
 	color: black;
-	font-weight: bold;
+	font-weight: var(--font-weight-bold);
 
 	z-index: -1;
 	inset-block-start: 0;

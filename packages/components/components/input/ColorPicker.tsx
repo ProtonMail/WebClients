@@ -27,14 +27,14 @@ const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, c
             <DropdownButton
                 as="button"
                 type="button"
-                className={classnames([className, !rest.as && 'field select'])}
+                className={classnames([className, !rest.as && 'field select flex flex-align-items-center py0 pl0-5'])}
                 hasCaret
                 {...rest}
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
             >
-                <Icon className="flex-item-noshrink" name="circle-filled" color={iconColor} />
+                <Icon className="flex-item-noshrink" name="circle-filled" size={28} color={iconColor} />
             </DropdownButton>
             <Dropdown
                 id={uid}

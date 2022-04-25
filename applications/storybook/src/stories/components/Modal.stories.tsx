@@ -156,7 +156,7 @@ export const HeaderActions = () => {
                     actions={[
                         <Tooltip title="Get help">
                             <Button icon shape="ghost">
-                                <Icon name="circle-question" />
+                                <Icon name="question-circle" />
                             </Button>
                         </Tooltip>,
                         <Tooltip title="Refresh">

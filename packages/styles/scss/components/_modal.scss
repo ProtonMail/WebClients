@@ -87,8 +87,8 @@ $modal-tiny-width: em(288) !default;
 	inline-size: $modal-max-width;
 	max-block-size: $modal-max-height;
 	max-inline-size: $modal-max-width;
-	background: var(--background-norm);
-	color: var(--text-norm);
+	background: var(--modal-background-color);
+	color: var(--modal-text-color);
 	padding: 0;
 	overflow: hidden;
 	border-radius: var(--border-radius-lg);
@@ -247,7 +247,7 @@ $modal-tiny-width: em(288) !default;
 	padding-block: 0;
 	padding-inline: rem(30);
 
-	background: var(--background-norm) no-repeat;
+	background: var(--modal-background-color) no-repeat;
 
 	& > p:first-child {
 		margin-block-start: 0;

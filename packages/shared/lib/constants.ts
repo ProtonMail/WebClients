@@ -24,12 +24,12 @@ export const EMAIL_PLACEHOLDER = 'john.doe@example.com';
 export const USERNAME_PLACEHOLDER = 'john.doe';
 
 export const BRAND_NAME = 'Proton';
-export const MAIL_APP_NAME = 'ProtonMail';
-export const CALENDAR_APP_NAME = 'ProtonCalendar';
-export const DRIVE_APP_NAME = 'ProtonDrive';
-export const VPN_APP_NAME = 'ProtonVPN';
+export const MAIL_APP_NAME = 'Proton Mail';
+export const CALENDAR_APP_NAME = 'Proton Calendar';
+export const DRIVE_APP_NAME = 'Proton Drive';
+export const VPN_APP_NAME = 'Proton VPN';
 export const ACCOUNT_APP_NAME = 'Proton Account';
-export const VERIFY_APP_NAME = 'ProtonVerify';
+export const VERIFY_APP_NAME = 'Proton Verify';
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',
@@ -49,7 +49,7 @@ export const APPS_CONFIGURATION = {
         name: ACCOUNT_APP_NAME,
         bareName: 'Account',
         clientID: 'web-account',
-        icon: 'brand-proton-account',
+        icon: 'brand-proton',
         settingsSlug: 'account',
     },
     [APPS.PROTONACCOUNTLITE]: {
@@ -58,7 +58,7 @@ export const APPS_CONFIGURATION = {
         name: ACCOUNT_APP_NAME,
         bareName: 'Account',
         clientID: 'web-account-lite',
-        icon: 'brand-proton-account',
+        icon: 'brand-proton',
         settingsSlug: 'account',
     },
     [APPS.PROTONMAIL]: {
@@ -76,7 +76,7 @@ export const APPS_CONFIGURATION = {
         name: 'ProtonContacts',
         bareName: 'Contacts',
         clientID: 'web-contacts',
-        icon: 'brand-proton-mail',
+        icon: 'brand-proton',
         settingsSlug: 'contacts',
     },
     [APPS.PROTONDRIVE]: {
@@ -112,7 +112,7 @@ export const APPS_CONFIGURATION = {
         name: '',
         bareName: 'Admin',
         clientID: 'web-admin',
-        icon: 'brand-proton-mail',
+        icon: 'brand-proton',
         settingsSlug: '',
     },
     [APPS.PROTONVERIFICATION]: {
@@ -121,7 +121,7 @@ export const APPS_CONFIGURATION = {
         name: VERIFY_APP_NAME,
         bareName: 'Verify',
         clientID: 'web-verify',
-        icon: 'brand-proton-mail',
+        icon: 'brand-proton',
         settingsSlug: '',
     },
 } as const;
@@ -499,37 +499,19 @@ export enum LABEL_EXCLUSIVE {
     LABEL = 0,
 }
 
-export const LABEL_COLORS = [
-    '#7272a7',
-    '#8989ac',
-
-    '#cf5858',
-    '#cf7e7e',
-
-    '#c26cc7',
-    '#c793ca',
-
-    '#7569d1',
-    '#9b94d1',
-
-    '#69a9d1',
-    '#a8c4d5',
-
-    '#5ec7b7',
-    '#97c9c1',
-
-    '#72bb75',
-    '#9db99f',
-
-    '#c3d261',
-    '#c6cd97',
-
-    '#e6c04c',
-    '#e7d292',
-
-    '#e6984c',
-    '#dfb286',
+export const ACCENT_COLORS = [
+    '#8080FF',
+    '#DB60D6',
+    '#EC3E7C',
+    '#F78400',
+    '#936D58',
+    '#415DF0',
+    '#179FD9',
+    '#1DA583',
+    '#3CBB3A',
+    '#B4A40E',
 ];
+
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
 export const DARK_MODE_CLASS = 'isDarkMode';

@@ -34,7 +34,7 @@ select {
 	}
 
 	&-label-text {
-		font-weight: 600;
+		font-weight: var(--font-weight-semibold);
 	}
 
 	&-suffix,
@@ -70,7 +70,8 @@ select {
 		&:focus,
 		&.focus,
 		&:focus-within {
-			border-color: var(--interaction-norm);
+			border-color: var(--field-focus);
+			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 			background-color: var(--field-focus-background-color);
 			color: var(--field-focus-text-color);
 		}
@@ -115,7 +116,7 @@ select {
 			&-label-text,
 			&-assist {
 				color: var(--signal-danger);
-				font-weight: 600;
+				font-weight: var(--font-weight-semibold);
 			}
 
 			&-field {
@@ -133,7 +134,7 @@ select {
 			&-label-text,
 			&-assist {
 				color: var(--signal-warning);
-				font-weight: 600;
+				font-weight: var(--font-weight-semibold);
 			}
 		}
 	}

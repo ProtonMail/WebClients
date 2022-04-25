@@ -15,7 +15,7 @@
 	box-shadow: var(--shadow-lifted);
 	color: var(--text-norm);
 
-	transition: 0.15s easing(easeOutQuint);
+	transition: 0.15s easing(easeOutQuint), transform 0s;
 
 	transform: translateX(var(--composer-drag-offset));
 
@@ -236,6 +236,9 @@
 			margin-inline-start: 0;
 			padding-block: 1px 0;
 		}
+		.composer-to-ccbcc-buttons {
+			padding-block-start: 0.4em; // to avoid shifts
+		}
 	}
 
 	// remove left padding on mobile to align properly everything
@@ -339,7 +342,7 @@
 			}
 			&-title {
 				font-size: em(16);
-				font-weight: bold;
+				font-weight: var(--font-weight-bold);
 			}
 		}
 	}
@@ -384,6 +387,7 @@
 
 		.field {
 			border: none;
+			box-shadow: none;
 			padding: 0;
 			min-inline-size: rem(100);
 			block-size: auto;
@@ -426,23 +430,7 @@
 	&--is-maximized {
 		@include respond-to($breakpoint-medium-landscape, 'min') {
 			.message-attachmentList-item-container {
-				inline-size: 33%;
-
-				&:first-child,
-				&:nth-child(2),
-				&:nth-child(3) {
-					margin-block-start: 0;
-				}
-				&:nth-child(even) {
-					padding-inline-start: 0;
-				}
-				&:nth-child(odd) {
-					padding-inline-end: 0;
-				}
-				&:nth-child(3n-1),
-				&:nth-child(3n) {
-					padding-inline-start: 1em;
-				}
+				inline-size: calc((100% / 3) - (1em / 3));
 			}
 		}
 	}

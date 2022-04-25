@@ -9,7 +9,7 @@ export const getVpnAppRoutes = () => {
             downloads: <SectionConfig>{
                 text: c('Title').t`VPN apps`,
                 to: '/vpn-apps',
-                icon: 'arrow-down-to-rectangle',
+                icon: 'arrow-down-line',
                 subsections: [
                     {
                         text: '',
@@ -39,7 +39,7 @@ export const getVpnAppRoutes = () => {
             wireguard: <SectionConfig>{
                 text: c('Title').t`WireGuard`,
                 to: '/WireGuard',
-                icon: 'wireguard',
+                icon: 'brand-wireguard',
                 subsections: [
                     {
                         text: c('Title').t`WireGuard configuration`,

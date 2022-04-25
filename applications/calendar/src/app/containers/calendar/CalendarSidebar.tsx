@@ -142,7 +142,7 @@ const CalendarSidebar = ({
                 toApp={APPS.PROTONACCOUNT}
                 to="/calendar/calendars"
                 target="_self"
-                icon="gear"
+                icon="cog-wheel"
                 info={c('Link').t`Calendars`}
             />
         </Tooltip>
@@ -156,41 +156,38 @@ const CalendarSidebar = ({
                 right={
                     <div className="flex flex-nowrap flex-align-items-center">
                         {enabled ? (
-                            <SimpleDropdown
-                                as="button"
-                                type="button"
-                                hasCaret={false}
-                                content={
-                                    <div className="navigation-link-header-group-control flex cursor-pointer">
-                                        <Tooltip title={addCalendarText}>
-                                            <Icon name="plus" className="navigation-icon" alt={addCalendarText} />
-                                        </Tooltip>
-                                    </div>
-                                }
-                            >
-                                <DropdownMenu>
-                                    <DropdownMenuButton
-                                        className="text-left"
-                                        onClick={() => handleCreatePersonalCalendar()}
-                                    >
-                                        {c('Action').t`Create calendar`}
-                                    </DropdownMenuButton>
-                                    <DropdownMenuButton
-                                        className="text-left"
-                                        onClick={() =>
-                                            unavailable
-                                                ? createNotification({
-                                                      type: 'error',
-                                                      text: c('Subscribed calendar feature unavailable error')
-                                                          .t`Subscribing to a calendar is unavailable at the moment`,
-                                                  })
-                                                : handleCreateSubscribedCalendar()
-                                        }
-                                    >
-                                        {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
-                                    </DropdownMenuButton>
-                                </DropdownMenu>
-                            </SimpleDropdown>
+                            <Tooltip title={addCalendarText}>
+                                <SimpleDropdown
+                                    as="button"
+                                    type="button"
+                                    hasCaret={false}
+                                    className="navigation-link-header-group-control flex"
+                                    content={<Icon name="plus" className="navigation-icon" alt={addCalendarText} />}
+                                >
+                                    <DropdownMenu>
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() => handleCreatePersonalCalendar()}
+                                        >
+                                            {c('Action').t`Create calendar`}
+                                        </DropdownMenuButton>
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() =>
+                                                unavailable
+                                                    ? createNotification({
+                                                          type: 'error',
+                                                          text: c('Subscribed calendar feature unavailable error')
+                                                              .t`Subscribing to a calendar is unavailable at the moment`,
+                                                      })
+                                                    : handleCreateSubscribedCalendar()
+                                            }
+                                        >
+                                            {c('Calendar sidebar dropdown item').t`Add calendar from URL`}
+                                        </DropdownMenuButton>
+                                    </DropdownMenu>
+                                </SimpleDropdown>
+                            </Tooltip>
                         ) : (
                             <div className="navigation-link-header-group-control flex cursor-pointer">
                                 <Tooltip title={addCalendarText}>

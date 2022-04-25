@@ -44,7 +44,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 title={c('Action').t`Previous page`}
                 onClick={onPrevious}
                 className="no-tablet no-mobile on-rtl-mirror"
-                icon={<Icon className="rotateZ-90" name="angle-down" alt={c('Action').t`Previous page`} />}
+                icon={<Icon name="chevron-left" alt={c('Action').t`Previous page`} />}
                 data-testid="toolbar:previous-page"
             />
             <ToolbarDropdown
@@ -80,7 +80,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 title={c('Action').t`Next page`}
                 onClick={onNext}
                 className="no-tablet no-mobile on-rtl-mirror"
-                icon={<Icon className="rotateZ-270" name="angle-down" alt={c('Action').t`Next page`} />}
+                icon={<Icon name="chevron-right" alt={c('Action').t`Next page`} />}
                 data-testid="toolbar:next-page"
             />
         </>

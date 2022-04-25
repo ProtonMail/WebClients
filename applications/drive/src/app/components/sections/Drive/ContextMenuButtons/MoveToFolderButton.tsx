@@ -17,7 +17,7 @@ const MoveToFolderButton = ({ shareId, items, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Move to folder`}
-            icon="arrows-up-down-left-right"
+            icon="arrows-cross"
             testId="context-menu-move"
             action={() => openMoveToFolder(shareId, items)}
             close={close}

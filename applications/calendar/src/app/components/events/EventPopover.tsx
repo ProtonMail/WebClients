@@ -151,7 +151,7 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="pen" />
+                <Icon name="pen" alt={c('Event edit button tooltip').t`Edit event`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -165,7 +165,7 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="trash" />
+                <Icon name="trash" alt={c('Event delete button tooltip').t`Delete event`} />
             </ButtonLike>
         </Tooltip>
     );
@@ -179,7 +179,7 @@ const EventPopover = ({
                 icon
                 size="small"
             >
-                <Icon name="copy" />
+                <Icon name="squares" alt={c('Event duplicate button tooltip').t`Duplicate event`} />
             </ButtonLike>
         </Tooltip>
     );

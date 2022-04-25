@@ -16,7 +16,7 @@ const DeletePermanentlyButton = ({ shareId, items, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Delete permanently`}
-            icon="circle-xmark"
+            icon="cross-circle"
             testId="context-menu-delete"
             action={() =>
                 deletePermanently(

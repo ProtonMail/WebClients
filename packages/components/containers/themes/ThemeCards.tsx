@@ -6,8 +6,9 @@ import { classnames } from '../../helpers';
 export interface Theme {
     label: string;
     identifier: ThemeTypes;
-    src: string;
+    src: { medium: string; small: string };
 }
+
 interface Props {
     themeIdentifier: ThemeTypes;
     className?: string;
@@ -15,9 +16,10 @@ interface Props {
     onChange: (themeType: ThemeTypes) => void;
     disabled?: boolean;
     list: Theme[];
+    size?: 'small' | 'medium';
 }
 
-const ThemeCards = ({ themeIdentifier, onChange, disabled, className, liClassName, list }: Props) => {
+const ThemeCards = ({ themeIdentifier, onChange, disabled, className, liClassName, list, size = 'medium' }: Props) => {
     return (
         <ul className={classnames(['unstyled m0', className])}>
             {list.map(({ identifier, label, src }) => {
@@ -27,7 +29,7 @@ const ThemeCards = ({ themeIdentifier, onChange, disabled, className, liClassNam
                         <ThemeCard
                             label={label}
                             id={id}
-                            src={src}
+                            src={src[size]}
                             selected={themeIdentifier === identifier}
                             onChange={() => onChange(identifier)}
                             disabled={disabled}

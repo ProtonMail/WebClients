@@ -2,7 +2,7 @@ import { useState, ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
 import { diff } from '@proton/shared/lib/helpers/array';
-import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
@@ -54,7 +54,7 @@ const ContactGroupModal = ({
         color:
             contactGroupID && contactGroup
                 ? contactGroup.Color
-                : LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                : ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
         contactEmails: contactGroupID ? existingContactEmails : selectedContactEmails,
     });
     const contactEmailIDs = model.contactEmails.map(({ ID }: ContactEmail) => ID);
@@ -156,7 +156,7 @@ const ContactGroupModal = ({
             <Row>
                 <Label htmlFor="contactGroupColor">{c('Label for contact group color').t`Color`}</Label>
                 <Field>
-                    <ColorPicker color={model.color} onChange={handleChangeColor} />
+                    <ColorPicker id="contactGroupColor" color={model.color} onChange={handleChangeColor} />
                 </Field>
             </Row>
             {contactsAutocompleteItems.length ? (

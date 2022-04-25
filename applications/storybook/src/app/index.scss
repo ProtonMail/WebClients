@@ -1,3 +1,4 @@
+@import '~@proton/colors/themes/duotone.theme.css';
 @import '~@proton/styles/scss/proton-ui-storybook';
 
 body {
@@ -90,6 +91,7 @@ table {
 
 .sbdocs-h2 {
 	margin-block-start: 2em !important;
+	border: none !important;
 }
 
 // Fix weird margin on auto scroll
@@ -99,7 +101,7 @@ table {
 
 .icon-grid {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
 	gap: 1em;
 }
 

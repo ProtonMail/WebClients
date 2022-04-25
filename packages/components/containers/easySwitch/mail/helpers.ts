@@ -1,4 +1,4 @@
-import { LABEL_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 
@@ -31,7 +31,7 @@ export const escapeSlashes = (s = '') => splitEscaped(s).join('\\/');
 
 export const unescapeSlashes = (s = '') => s.split('\\/').join('/');
 
-export const getRandomLabelColor = () => LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)];
+export const getRandomLabelColor = () => ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)];
 
 export const mappingHasFoldersTooLong = (mapping: MailImportMapping[]) => {
     return mapping.some((m) => {

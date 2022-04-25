@@ -74,7 +74,7 @@
 	&.is-unread {
 		background-color: var(--email-item-unread-background-color);
 		color: var(--email-item-unread-text-color);
-		font-weight: bold;
+		font-weight: var(--font-weight-bold);
 	}
 
 	&.is-loading {
@@ -159,7 +159,7 @@
 	padding-block-start: 0.65em; // value to avoid shifts on right icons
 
 	.message-header-expand-button {
-		margin-inline-end: -0.35em;
+		margin-inline-end: #{em(5) * -1};
 		// aligned with tracker protection icon
 	}
 
@@ -167,8 +167,9 @@
 		margin-block-end: 0.5em;
 	}
 	.message-header-from-container {
-		.message-recipient-item-lockIcon {
-			vertical-align: text-bottom;
+		.message-recipient-item-lock-icon {
+			transform: translateY(#{em(2)}); // Magic number for visual alignment
+			vertical-align: baseline;
 		}
 
 		.message-recipient-item-label-address {
@@ -225,14 +226,17 @@
 
 .message-recipient-expanded {
 	.container-to {
+		margin-block-start: 0.1em;
 		padding-block-start: 0.2em;
 	}
 	.message-recipient-item-expanded-content {
+		margin-block-start: 0.1em;
 		display: flex;
 		flex-direction: column;
 	}
-	.message-recipient-item-lockIcon {
-		vertical-align: text-bottom;
+	.message-recipient-item-lock-icon {
+		transform: translateY(#{em(2)}); // Magic number for visual alignment
+		vertical-align: baseline;
 	}
 }
 
@@ -316,7 +320,8 @@
 
 .trashed-messages:focus,
 .message-container.is-focused {
-	border-color: var(--interaction-norm);
+	border-color: var(--field-focus);
+	box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 }
 
 .message-content {

@@ -4,7 +4,7 @@ import { DragEvent, useState, DragEventHandler } from 'react';
 import { c } from 'ttag';
 import { classnames, EllipsisLoader } from '@proton/components';
 import { Address, MailSettings } from '@proton/shared/lib/interfaces';
-import dragAndDrop from '@proton/styles/assets/img/placeholders/drag-and-drop-img.svg';
+import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import { isDragFile } from '../../helpers/dom';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';

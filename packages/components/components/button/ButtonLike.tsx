@@ -49,13 +49,13 @@ interface ButtonLikeOwnProps {
      */
     icon?: boolean;
     /**
-     * If true, same padding-inline as padding-block.
-     */
-    square?: boolean;
-    /**
      * If true, this button is part of a button group.
      */
     group?: boolean;
+    /**
+     * For a selected item inside a group.
+     */
+    selected?: boolean;
 }
 
 export type ButtonLikeProps<E extends ElementType> = PolymorphicComponentProps<E, ButtonLikeOwnProps>;
@@ -77,8 +77,8 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
                 fullWidth,
                 pill,
                 icon,
-                square = false,
                 group,
+                selected = false,
                 ...restProps
             }: ButtonLikeProps<E>,
             ref: typeof restProps.ref
@@ -87,18 +87,16 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
 
             const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
 
-            const actualShape = group ? 'ghost' : shape;
-            const actualColor = group ? 'weak' : color;
-            const isUnderlineShape = actualShape === 'underline';
+            const isUnderlineShape = shape === 'underline';
 
             const buttonClassName = classnames([
                 isUnderlineShape ? 'button-underline' : 'button',
                 !isUnderlineShape && pill && 'button-pill',
                 !isUnderlineShape && icon && 'button-for-icon',
                 group && 'button-group-item',
-                square && 'button-square',
+                group && selected && 'is-selected',
                 size !== 'medium' && `button-${size}`,
-                `button-${actualShape}-${actualColor}`,
+                `button-${shape}-${color}`,
                 restProps.as !== 'button' ? 'inline-block text-center' : '',
                 !isUnderlineShape && fullWidth && 'w100',
                 className,

@@ -225,7 +225,7 @@ const CustomizeMailImportModal = ({
                     <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Label messages as`}
                         <Tooltip title={c('Tooltip').t`Each imported email will have this label`}>
-                            <Icon name="circle-info" className="ml0-5" />
+                            <Icon name="info-circle" className="ml0-5" />
                         </Tooltip>
                     </FormLabel>
                     <Field className="wauto flex flex-align-items-center flex-nowrap">
@@ -284,7 +284,7 @@ const CustomizeMailImportModal = ({
                     <FormLabel className="flex flex-align-items-center">
                         {c('Label').t`Import interval`}
                         <Tooltip title={c('Tooltip').t`The import will start with the most recent messages.`}>
-                            <Icon name="circle-info" className="ml0-5" />
+                            <Icon name="info-circle" className="ml0-5" />
                         </Tooltip>
                     </FormLabel>
                     <Field>

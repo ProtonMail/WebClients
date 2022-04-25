@@ -1,3 +1,5 @@
+import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 import { fireEvent } from '@testing-library/dom';
 import {
     clearAll,
@@ -47,9 +49,11 @@ describe('PageContainer', () => {
         it('should open hotkeys modal on ?', async () => {
             const { questionMark, getByText } = await setup();
 
+            const appName = getAppName(APPS.PROTONMAIL);
+
             questionMark();
 
-            getByText('ProtonMail Keyboard Shortcuts');
+            getByText(`${appName} Keyboard Shortcuts`);
         });
 
         it('should focus element list on Tab', async () => {

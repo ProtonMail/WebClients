@@ -199,7 +199,7 @@ const CustomizeCalendarImportModal = ({
                         <div className={classnames(['flex', calendarLimitReached ? 'color-danger' : 'color-weak'])}>
                             {calendarLimitReached && (
                                 <Icon
-                                    name="circle-exclamation-filled"
+                                    name="exclamation-circle-filled"
                                     className="color-danger flex-align-self-center mr0-5"
                                 />
                             )}

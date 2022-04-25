@@ -33,7 +33,7 @@
 
 	// no style for this case
 	&-row-th {
-		font-weight: normal;
+		font-weight: var(--font-weight-normal);
 	}
 
 	/* alternate bg for rows */

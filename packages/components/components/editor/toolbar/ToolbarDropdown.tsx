@@ -51,14 +51,12 @@ const ToolbarDropdown = ({
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={handleClick}
-                    hasCaret
                     disabled={disabled}
                     caretClassName="editor-toolbar-icon"
                     className={classnames([
                         'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w100 flex flex-align-items-center flex-nowrap',
                         className,
                     ])}
-                    tabIndex={-1}
                     title={title}
                     {...rest}
                 >

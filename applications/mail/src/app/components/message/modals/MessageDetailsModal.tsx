@@ -128,7 +128,7 @@ const MessageDetailsModal = ({ labelID, message, messageViewIcons, mailSettings,
                     )}
                     <div className="mb0-5 flex flex-nowrap">
                         <span className="mr0-5 flex">
-                            <Icon name="calendar-days" className="mauto" alt={c('Label').t`Date:`} />
+                            <Icon name="calendar-grid" className="mauto" alt={c('Label').t`Date:`} />
                         </span>
                         <span className="pl0-25 flex-item-fluid text-ellipsis">
                             <ItemDate element={message.data} labelID={labelID} mode="full" />

@@ -480,16 +480,16 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
         return 'lock-filled';
     }
     if (fill === CHECKMARK) {
-        return isEncrypted ? 'lock-check-filled' : 'unlock-check-filled';
+        return isEncrypted ? 'lock-check-filled' : 'lock-open-check-filled';
     }
     if (fill === SIGN) {
-        return isEncrypted ? 'lock-pen-filled' : 'unlock-pen-filled';
+        return isEncrypted ? 'lock-pen-filled' : 'lock-open-pen-filled';
     }
     if (fill === WARNING) {
-        return isEncrypted ? 'lock-triangle-exclamation-filled' : 'unlock-triangle-exclamation-filled';
+        return isEncrypted ? 'lock-exclamation-filled' : 'lock-open-exclamation-filled';
     }
     if (fill === FAIL) {
-        return 'triangle-exclamation';
+        return 'exclamation-circle';
     }
     return '';
 };

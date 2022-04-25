@@ -1,19 +1,28 @@
 import { c } from 'ttag';
-import { classnames } from '../../helpers';
+import { classnames, generateUID } from '../../helpers';
+
+export type Size = 'small' | 'medium' | 'large';
 
 interface Props {
+    size?: Size;
     className?: string;
 }
-const CircleLoader = ({ className }: Props) => {
+
+const CircleLoader = ({ size, className }: Props) => {
+    const uid = generateUID('circle-loader');
+
     return (
         <>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={classnames(['circle-loader', className])}
-                viewBox="0 0 200 200"
+                className={classnames(['circle-loader', size && `is-${size}`, className])}
+                viewBox="0 0 16 16"
             >
-                <circle cx="100" cy="100" r="70" className="circle-loader-track" />
-                <circle cx="100" cy="100" r="70" className="circle-loader-circle" />
+                <defs>
+                    <circle id={uid} cx="8" cy="8" r="7" />
+                </defs>
+                <use href={`#${uid}`} className="circle-loader-track" />
+                <use href={`#${uid}`} className="circle-loader-circle" />
             </svg>
             <span className="sr-only">{c('Info').t`Loading`}</span>
         </>

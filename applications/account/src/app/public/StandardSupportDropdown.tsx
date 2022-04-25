@@ -18,7 +18,7 @@ const StandardSupportDropdown = () => {
                     href="https://protonmail.com/support/"
                     target="_blank"
                 >
-                    <Icon className="mt0-25 mr0-5" name="circle-question" />
+                    <Icon className="mt0-25 mr0-5" name="question-circle" />
                     {c('Action').t`I have a question`}
                 </DropdownMenuLink>
                 <DropdownMenuButton className="flex flex-nowrap text-left" onClick={handleBugReportClick}>

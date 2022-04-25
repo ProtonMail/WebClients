@@ -95,13 +95,13 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
 
         const errorElement = error && typeof error !== 'boolean' && (
             <>
-                <Icon name="circle-exclamation-filled" className="aligntop mr0-25" />
+                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
                 <span>{error}</span>
             </>
         );
         const warningElement = warning && typeof warning !== 'boolean' && (
             <>
-                <Icon name="circle-exclamation-filled" className="aligntop mr0-25" />
+                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
                 <span>{warning}</span>
             </>
         );
@@ -119,7 +119,7 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
                         anchorOffset={{ y: -4, x: 0 }}
                         isOpen={isFocused && !rest.value}
                     >
-                        <Icon name="circle-exclamation-filled" className={iconClassName} />
+                        <Icon name="exclamation-circle-filled" className={iconClassName} />
                     </Tooltip>
                 );
             }

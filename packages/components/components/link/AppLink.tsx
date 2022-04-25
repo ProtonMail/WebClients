@@ -7,12 +7,12 @@ import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string'
 import { useAuthentication, useConfig } from '../../hooks';
 import Tooltip from '../tooltip/Tooltip';
 
-export interface Props extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
+export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
     to: string;
     toApp?: APP_NAMES;
 }
 
-const AppLink = ({ to, toApp, children, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
+const AppLink = ({ to, toApp, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
 
@@ -72,4 +72,4 @@ const AppLink = ({ to, toApp, children, ...rest }: Props, ref: Ref<HTMLAnchorEle
     );
 };
 
-export default forwardRef<HTMLAnchorElement, Props>(AppLink);
+export default forwardRef<HTMLAnchorElement, AppLinkProps>(AppLink);

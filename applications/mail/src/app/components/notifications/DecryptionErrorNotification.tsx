@@ -58,7 +58,7 @@ const DecryptionErrorNotification = ({ onDiscard, keyFound = false }: Props) => 
                 onClick={onDiscard}
                 title={c('Action').t`Close this banner`}
             >
-                <Icon name="xmark" alt={c('Action').t`Close this banner`} />
+                <Icon name="cross" alt={c('Action').t`Close this banner`} />
             </Button>
         </>
     );

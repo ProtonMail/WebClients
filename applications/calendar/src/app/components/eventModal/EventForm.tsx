@@ -161,7 +161,7 @@ const EventForm = ({
     );
 
     const locationRow = (
-        <IconRow icon="map-marker" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
+        <IconRow icon="map-pin" title={c('Label').t`Location`} id={LOCATION_INPUT_ID}>
             <InputTwo
                 id={LOCATION_INPUT_ID}
                 placeholder={c('Placeholder').t`Add location`}
@@ -174,7 +174,7 @@ const EventForm = ({
 
     const descriptionRow = (
         <IconRow
-            icon="align-left"
+            icon="text-align-left"
             iconClassName="on-rtl-mirror"
             title={c('Label').t`Description`}
             id={DESCRIPTION_INPUT_ID}
@@ -240,7 +240,7 @@ const EventForm = ({
     );
 
     const participantsRow = (
-        <IconRow icon="user-group" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
+        <IconRow icon="users" title={c('Label').t`Participants`} id={PARTICIPANTS_INPUT_ID}>
             <ParticipantsInput
                 placeholder={c('Placeholder').t`Add participants`}
                 id={PARTICIPANTS_INPUT_ID}
@@ -262,7 +262,7 @@ const EventForm = ({
             return <CalendarSelectIcon className="mt0-25" color={model.calendar.color} />;
         }
 
-        return 'calendar-days';
+        return 'calendar-grid';
     };
 
     const calendarRow = (

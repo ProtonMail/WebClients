@@ -12,7 +12,7 @@ const TopNavbarListItemSearchButton = forwardRef(
                 ref={ref}
                 as="button"
                 type="button"
-                icon={<Icon name="magnifying-glass" />}
+                icon={<Icon name="magnifier" />}
                 title={c('Header').t`Search`}
                 text={c('Header').t`Search`}
             />

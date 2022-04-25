@@ -43,7 +43,7 @@ const InviteShareLink = () => {
                         )}
                         target="_blank"
                     >
-                        <Icon name="brand-twitter-filled" /> {c('Button').t`Tweet`}
+                        <Icon name="brand-twitter" /> {c('Button').t`Tweet`}
                     </TwitterButton>
                 </div>
             </div>

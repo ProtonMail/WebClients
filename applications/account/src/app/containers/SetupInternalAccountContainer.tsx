@@ -14,7 +14,7 @@ import {
     useModalState,
     useTheme,
 } from '@proton/components';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getAppHref, getAppName } from '@proton/shared/lib/apps/helper';
@@ -98,7 +98,7 @@ const SetupInternalAccountContainer = () => {
             }
 
             // Special case to reset the user's theme since it's logged in at this point. Does not care about resetting it back since it always redirects back to the application.
-            setTheme(ThemeTypes.Default);
+            setTheme(PROTON_DEFAULT_THEME);
 
             toAppRef.current = app;
             generateInternalAddressRef.current = {

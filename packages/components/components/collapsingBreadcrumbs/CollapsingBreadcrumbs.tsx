@@ -65,7 +65,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs }: Props) => {
                         )}
                         {!isLast && (
                             <li className="on-rtl-mirror flex-item-noshrink" aria-hidden="true">
-                                <Icon size={16} name="angle-down" rotate={270} />
+                                <Icon size={16} name="chevron-right" />
                             </li>
                         )}
                     </Fragment>

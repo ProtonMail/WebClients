@@ -33,7 +33,7 @@ $breakpoint-topnav-text-adaptation: 1320 !default; // used to display or not tex
 }
 
 // code to collapse all elements except upgrade button (topnav-listItem--noCollapse)
-@mixin collapse-all-except-upgrade {
+@mixin collapse-all-four-except-upgrade {
 	.topnav-list--four-elements {
 		.topnav-listItem:not(.topnav-listItem--noCollapse) {
 			// we collapse text as general case
@@ -61,7 +61,7 @@ $breakpoint-topnav-text-adaptation: 1320 !default; // used to display or not tex
 }
 
 // code to collapse all elements with NO exception
-@mixin collapse-all-no-exception {
+@mixin collapse-all-four-no-exception {
 	.topnav-list--four-elements {
 		.topnav-link {
 			padding-inline: rem(5);
@@ -88,22 +88,57 @@ $breakpoint-topnav-text-adaptation: 1320 !default; // used to display or not tex
 	}
 }
 
+@mixin collapse-all-items-no-exception {
+	.topnav-link {
+		// Specificity -_-v
+		&#{&} {
+			padding-inline: rem(5);
+		}
+	}
+	.navigation-title {
+		// collapse for ALL without any exception
+		// equivalent of .sr-only, but impossible to extend in a breakpoint
+		border: 0;
+		clip: rect(0 0 0 0);
+		block-size: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		inline-size: 1px;
+	}
+	.topnav-icon {
+		&#{&} {
+			// Specificity -_-v
+			margin-inline-end: 0;
+		}
+	}
+
+	.topnav-link--blackfriday::before {
+		inset-inline-start: calc(#{rem(5)} + #{rem(15)});
+	}
+}
+
 @include respond-to($breakpoint-topnav-text-adaptation) {
-	@include collapse-all-except-upgrade;
+	@include collapse-all-four-except-upgrade;
 }
 
 // special fix for Hungarian looooooooong text
 [lang='hu'] {
 	@include respond-to(1550) {
-		@include collapse-all-except-upgrade;
+		@include collapse-all-four-except-upgrade;
 	}
 	@include respond-to(1050) {
-		@include collapse-all-no-exception;
+		@include collapse-all-four-no-exception;
 	}
 }
 
 @include respond-to(940) {
-	@include collapse-all-no-exception;
+	@include collapse-all-four-no-exception;
+}
+
+@include respond-to(800) {
+	@include collapse-all-items-no-exception;
 }
 
 @include respond-to($breakpoint-small) {
@@ -111,8 +146,22 @@ $breakpoint-topnav-text-adaptation: 1320 !default; // used to display or not tex
 		// Specificity -_-v
 		&#{&} {
 			inline-size: rem(24);
-			block-size: rem(24);
+			block-size: rem(19); // to align with user drop down
+			margin-inline-end: 0;
 		}
+	}
+
+	.navigation-title {
+		// collapse for ALL without any exception
+		// equivalent of .sr-only, but impossible to extend in a breakpoint
+		border: 0;
+		clip: rect(0 0 0 0);
+		block-size: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		inline-size: 1px;
 	}
 
 	.topnav-list--four-elements .topnav-link {

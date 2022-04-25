@@ -1,8 +1,10 @@
 import { c } from 'ttag';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import noResultSearchSvg from '@proton/styles/assets/img/placeholders/empty-search.svg';
-import noResultInboxSvg from '@proton/styles/assets/img/placeholders/empty-mailbox.svg';
+import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
+import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
+import noSpamSvg from '@proton/styles/assets/img/illustrations/no-messages-in-spam.svg';
+import noUnreadSvg from '@proton/styles/assets/img/illustrations/no-unread-messages.svg';
 import { Button, EmptyViewContainer } from '@proton/components';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { MESSAGE_ACTIONS } from '../../constants';
@@ -10,12 +12,14 @@ import { MESSAGE_ACTIONS } from '../../constants';
 interface Props {
     labelID: string;
     isSearch: boolean;
+    isUnread: boolean;
 }
 
-const EmptyView = ({ labelID, isSearch }: Props) => {
+const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
     const isScheduled = labelID === MAILBOX_LABEL_IDS.SCHEDULED && !isSearch;
-    const isFolder = !isInbox && !isScheduled && !isSearch;
+    const isSpam = labelID === MAILBOX_LABEL_IDS.SPAM && !isSearch;
+    const isFolder = !isInbox && !isScheduled && !isSearch && !isSpam;
 
     const onCompose = useOnCompose();
 
@@ -26,6 +30,12 @@ const EmptyView = ({ labelID, isSearch }: Props) => {
     );
 
     const imageProps = (() => {
+        if (isSpam) {
+            return { src: noSpamSvg, alt: c('Search - no results').t`No messages found` };
+        }
+        if (isUnread) {
+            return { src: noUnreadSvg, alt: c('Search - no results').t`No unread messages found` };
+        }
         if (isSearch) {
             return { src: noResultSearchSvg, alt: c('Search - no results').t`No results found` };
         }

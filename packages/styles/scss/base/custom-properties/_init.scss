@@ -1,14 +1,42 @@
+@use 'sass:math';
+
 /*
  * Static variables that keep the same between each visual theme
  */
 
-:root {
-	--shadow-norm: 0 calc(var(--px)) calc(var(--px) * 4) rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
-	--shadow-lifted: 0 calc(var(--px) * 8) calc(var(--px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
+// Colors mapping
+:root,
+.ui-standard,
+.ui-prominent {
+	--signal-danger-hover: var(--signal-danger-major-1);
+	--signal-danger-active: var(--signal-danger-major-2);
 
-	--border-radius-sm: calc(0.5 * var(--border-radius) * var(--px));
-	--border-radius-md: calc(var(--border-radius) * var(--px));
-	--border-radius-lg: calc(1.5 * var(--border-radius) * var(--px));
-	--border-radius-xl: calc(2 * var(--border-radius) * var(--px));
+	--signal-warning-hover: var(--signal-warning-major-1);
+	--signal-warning-active: var(--signal-warning-major-2);
+
+	--signal-success-hover: var(--signal-success-major-1);
+	--signal-success-active: var(--signal-success-major-2);
+
+	--signal-info-hover: var(--signal-info-major-1);
+	--signal-info-active: var(--signal-info-major-2);
+
+	--interaction-norm-hover: var(--interaction-norm-major-1);
+	--interaction-norm-active: var(--interaction-norm-major-2);
+
+	--interaction-weak-hover: var(--interaction-weak-major-1);
+	--interaction-weak-active: var(--interaction-weak-major-2);
+}
+
+// Other mappings
+:root {
+	--1px: #{math.div(1rem, 16)}; // Assumed 16px browser base font size
+
+	--shadow-norm: 0 calc(var(--1px)) calc(var(--1px) * 4) rgb(0 0 0 / var(--shadow-norm-opacity, 0.1));
+	--shadow-lifted: 0 calc(var(--1px) * 8) calc(var(--1px) * 24) rgb(0 0 0 / var(--shadow-lifted-opacity, 0.2));
+
+	--border-radius-sm: calc(0.5 * var(--border-radius) * var(--1px));
+	--border-radius-md: calc(var(--border-radius) * var(--1px));
+	--border-radius-lg: calc(1.5 * var(--border-radius) * var(--1px));
+	--border-radius-xl: calc(2 * var(--border-radius) * var(--1px));
 	--border-radius-full: 9999em;
 }

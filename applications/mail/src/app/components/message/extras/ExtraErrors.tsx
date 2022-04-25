@@ -54,15 +54,15 @@ const ExtraErrors = ({ message }: Props) => {
                 return (
                     <div
                         key={errorType}
-                        className="bg-norm border rounded px0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column"
+                        className="bg-norm border rounded pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column"
                         data-testid="errors-banner"
                     >
                         <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
                             <Icon
-                                name="circle-exclamation-filled"
+                                name="exclamation-circle-filled"
                                 className="flex-item-noshrink mt0-4 ml0-2 color-danger"
                             />
-                            <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
+                            <span className="pl0-5 mt0-25 pr0-5 flex-item-fluid">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>
@@ -72,7 +72,8 @@ const ExtraErrors = ({ message }: Props) => {
                                     size="small"
                                     color="weak"
                                     shape="outline"
-                                    className="on-mobile-w100 py0-25"
+                                    fullWidth
+                                    className="rounded-sm"
                                     onClick={handleReload}
                                 >{c('Action').t`Try again`}</Button>
                             </span>

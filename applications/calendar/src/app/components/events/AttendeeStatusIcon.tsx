@@ -7,18 +7,18 @@ const iconContainerClassName = 'inline-flex rounded-50 flex-align-items-center f
 const iconClassName = '';
 
 const IconYes = () => (
-    <span className={`${iconContainerClassName} bg-success`}>
-        <Icon name="check" className={iconClassName} size={12} />
+    <span className={`${iconContainerClassName} color-success`}>
+        <Icon name="checkmark-circle-filled" className={iconClassName} size={12} />
     </span>
 );
 const IconMaybe = () => (
-    <span className={`${iconContainerClassName} bg-warning`}>
-        <Icon name="question" className={iconClassName} size={12} />
+    <span className={`${iconContainerClassName} color-warning`}>
+        <Icon name="question-circle-filled" className={iconClassName} size={12} />
     </span>
 );
 const IconNo = () => (
-    <span className={`${iconContainerClassName} bg-danger`}>
-        <Icon name="xmark" className={iconClassName} size={12} />
+    <span className={`${iconContainerClassName} color-danger`}>
+        <Icon name="cross-circle-filled" className={iconClassName} size={12} />
     </span>
 );
 const IconNeedsAction = () => null;
@@ -37,22 +37,22 @@ interface Props {
 const ParticipantStatusIcon = ({ partstat }: Props) => {
     if (partstat === ACCEPTED) {
         return (
-            <span className={`${iconContainerClassName} bg-success`}>
-                <Icon name="check" className={iconClassName} size={12} />
+            <span className={`${iconContainerClassName} color-success`}>
+                <Icon name="checkmark-circle-filled" className={iconClassName} size={16} />
             </span>
         );
     }
     if (partstat === TENTATIVE) {
         return (
-            <span className={`${iconContainerClassName} bg-warning`}>
-                <Icon name="question" className={iconClassName} size={12} />
+            <span className={`${iconContainerClassName} color-warning`}>
+                <Icon name="question-circle-filled" className={iconClassName} size={16} />
             </span>
         );
     }
     if (partstat === DECLINED) {
         return (
-            <span className={`${iconContainerClassName} bg-danger`}>
-                <Icon name="xmark" className={iconClassName} size={12} />
+            <span className={`${iconContainerClassName} color-danger`}>
+                <Icon name="cross-circle-filled" className={iconClassName} size={16} />
             </span>
         );
     }

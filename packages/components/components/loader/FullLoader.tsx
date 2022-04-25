@@ -7,6 +7,10 @@ interface Props {
     color?: string;
     className?: string;
 }
+
+/**
+ * @deprecated please use Loader or CircleLoader instead
+ */
 const FullLoader = ({ size = 50, color, className }: Props) => {
     const isSmall = size < 50;
     const isMedium = size >= 50 && size < 150;

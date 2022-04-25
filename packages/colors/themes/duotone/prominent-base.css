@@ -1,0 +1,53 @@
+.ui-prominent {
+	--primary: #8A6EFF;
+	--primary-contrast: white;
+
+	--signal-danger: #F5385A;
+
+	--signal-warning: #FF9900;
+
+	--signal-success: #1EA885;
+
+	--signal-info: #239ECE;
+
+	--interaction-norm: #6D4AFF;
+
+	--interaction-weak: #4A398F;
+
+	--text-norm: white;
+	--text-weak: #9282D4;
+	--text-hint: #544399;
+	--text-disabled: #4A398F;
+	--text-invert: #1B1340;
+
+	--field-norm: #9282D4;
+	--field-hover: #7C5CFF;
+	--field-disabled: #38277A;
+	--field-focus: #6D4AFF;
+	--field-highlight: rgb(109 74 255 / 0.3);
+
+	--border-norm: #413085;
+	--border-weak: #3C2B80;
+
+	--background-norm: #1B1340;
+	--background-weak: #271C57;
+	--background-strong: #38277A;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(74 54 143 / 0.3);
+	--interaction-default-active: rgb(74 57 143 / 0.4);
+
+	--shadow-norm-opacity: 0.32;
+	--shadow-lifted-opacity: 0.40;
+
+	--backdrop-norm: rgb(0 0 0 / 0.32);
+
+	/* Optional colors */
+
+	--scrollbar-thumb-color: #413085;
+	--scrollbar-thumb-hover-color: #4A398F;
+
+	--optional-link-norm: var(--interaction-norm-major-1);
+	--optional-link-hover: var(--interaction-norm-major-2);
+	--optional-link-active: var(--interaction-norm-major-3);
+}

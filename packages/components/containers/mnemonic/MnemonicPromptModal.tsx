@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { reactivateMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { generateMnemonicPayload, generateMnemonicWithSalt, MnemonicData } from '@proton/shared/lib/mnemonic';
-import userPromptSvg from '@proton/styles/assets/img/mnemonic/user-prompt.svg';
+import userPromptSvg from '@proton/styles/assets/img/illustrations/passphrase-recover.svg';
 import {
     Button,
     Href,

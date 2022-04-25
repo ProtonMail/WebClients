@@ -170,7 +170,7 @@ const LogsSection = () => {
 
             <div className="flex flex-justify-space-between flex-align-items-start mt2 mb1">
                 {logAuth !== DISABLE && (
-                    <div className="on-mobile-mb1">
+                    <div className="mb0-5">
                         <Button
                             shape="outline"
                             className="mr1 inline-flex flex-align-items-center"
@@ -194,7 +194,7 @@ const LogsSection = () => {
                     </div>
                 )}
 
-                <div>
+                <div className="mb0-5">
                     <Pagination
                         onNext={onNext}
                         onPrevious={onPrevious}

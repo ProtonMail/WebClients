@@ -17,7 +17,7 @@
 
 	padding-block: 0.125em;
 	padding-inline: 0.25em;
-	border-radius: var(--border-radius-md);
+	border-radius: var(--border-radius-sm);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
 	line-height: 1.25;
@@ -154,8 +154,11 @@
 	}
 
 	&-inner.isLoaded &-circle {
-		margin-block-start: 0.125em;
 		color: var(--color-main);
+	}
+
+	&-lock-icon {
+		transform: translateY(-0.125em); // Magic number to visually align it -_-v
 	}
 
 	&-time {
@@ -163,7 +166,7 @@
 	}
 
 	&-title {
-		font-weight: 500;
+		font-weight: var(--font-weight-semibold);
 	}
 }
 
@@ -182,7 +185,7 @@
 		-webkit-box-orient: vertical;
 		overflow: hidden;
 		-webkit-line-clamp: max(calc(var(--line-number) - 1), 1);
-		font-weight: 500;
+		font-weight: var(--font-weight-semibold);
 		word-break: break-word;
 	}
 

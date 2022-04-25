@@ -13,11 +13,11 @@ const ExtraAutoReply = ({ message }: Props) => {
     }
 
     return (
-        <div className="bg-norm rounded border px0-5 py0-25 mb0-85 flex flex-nowrap">
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap">
             <Icon name="robot" className="flex-item-noshrink ml0-2 mt0-3" />
             <span className="pl0-5 pr0-5 mt0-25 pb0-25 flex-item-fluid">
                 {c('Info').t`This message is automatically generated as a response to a previous message.`}{' '}
-                <Href className="text-underline" href="https://protonmail.com/support/knowledge-base/autoresponder/">
+                <Href href="https://protonmail.com/support/knowledge-base/autoresponder/">
                     {c('Info').t`Learn more`}
                 </Href>
             </span>

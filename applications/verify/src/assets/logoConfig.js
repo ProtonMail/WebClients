@@ -1,9 +1,9 @@
 module.exports = {
     logo: 'src/assets/mail.svg',
     favicons: {
-        appName: 'ProtonMail',
+        appName: 'Proton Mail',
         appDescription:
-            "ProtonMail is the world's largest secure email service, developed by CERN and MIT scientists. We are open source and protected by Swiss privacy law",
+            "Proton Mail is the world's largest secure email service, developed by CERN and MIT scientists. We are open source and protected by Swiss privacy law",
         developerName: 'Proton AG',
         developerURL: 'https://github.com/ProtonMail/WebClients',
         background: '#1c223d',

@@ -241,7 +241,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                                     >
                                         <div className="flex flex-align-items-center">
                                             <span className="mr0-75">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
-                                            <Icon name="arrow-up-right-from-square" />
+                                            <Icon name="arrow-out-square" />
                                         </div>
                                     </ButtonLike>
                                 }
@@ -257,7 +257,6 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     const whyNotLink = (
                         <Href
                             url="https://protonmail.com/support/knowledge-base/restoring-encrypted-calendar/"
-                            className="link align-baseline"
                             key="learn-more"
                         >
                             {c('Action').t`Why not?`}
@@ -265,7 +264,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     );
 
                     setError(
-                        <Banner icon="circle-exclamation" backgroundColor={BannerBackgroundColor.DANGER}>
+                        <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.DANGER}>
                             {c('Email reminder decryption error').jt`Event details cannot be decrypted. ${whyNotLink}`}
                         </Banner>
                     );
@@ -275,7 +274,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                 if (error.message === EVENT_NOT_FOUND_ERROR) {
                     setError(
-                        <Banner icon="circle-exclamation" backgroundColor={BannerBackgroundColor.DANGER}>
+                        <Banner icon="exclamation-circle" backgroundColor={BannerBackgroundColor.DANGER}>
                             {c('Email reminder error').t`Event is no longer in your calendar`}
                         </Banner>
                     );
@@ -357,7 +356,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const labelClassName = 'inline-flex pt0-25';
 
     return (
-        <div className="calendar-widget" ref={eventReminderRef}>
+        <div className="calendar-widget mb0-75" ref={eventReminderRef}>
             <EventReminderBanner
                 startDate={startDate}
                 endDate={endDate}
@@ -366,7 +365,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 isOutdated={isOutdated}
             />
             {!isOutdated && (
-                <div className="rounded border bg-norm mb0-5 scroll-if-needed">
+                <div className="rounded border bg-norm scroll-if-needed">
                     <div className="p1-5">
                         <h2 className="h3 mb0-25 text-bold">{getDisplayTitle(summary?.value)}</h2>
                         <CalendarEventDateHeader
@@ -388,16 +387,12 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             {Name}
                         </IconRow>
                         {!!sanitizedAndUrlifiedLocation && (
-                            <IconRow title={c('Label').t`Location`} icon="map-marker" labelClassName={labelClassName}>
+                            <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName={labelClassName}>
                                 <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                             </IconRow>
                         )}
                         {!!participantsList.length && (
-                            <IconRow
-                                title={c('Label').t`Participants`}
-                                icon="user-group"
-                                labelClassName={labelClassName}
-                            >
+                            <IconRow title={c('Label').t`Participants`} icon="users" labelClassName={labelClassName}>
                                 <ExtraEventParticipants list={participantsList} />
                             </IconRow>
                         )}

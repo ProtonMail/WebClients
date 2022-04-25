@@ -1,12 +1,11 @@
 import { c } from 'ttag';
-import FullLoader from '../../components/loader/FullLoader';
-import TextLoader from '../../components/loader/TextLoader';
+import { TextLoader, CircleLoader } from '../../components';
 
 const PreviewLoader = () => {
     return (
         <div className="file-preview-container">
             <div className="absolute-center text-center w100">
-                <FullLoader size={100} />
+                <CircleLoader size="large" />
                 <TextLoader>{c('Info').t`Loading preview`}</TextLoader>
             </div>
         </div>

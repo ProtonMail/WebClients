@@ -67,15 +67,15 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                 {() => (
                     <DropdownMenu>
                         <DropdownMenuButton
-                            className="text-left"
+                            className="flex flex-align-items-center text-left"
                             onClick={handleAll(true)}
                             data-testid="toolbar:select-all"
                         >
-                            <Icon name="check-triple" className="mr0-5" />
+                            <Icon name="checkmark-triple" className="mr0-5" />
                             {c('Action').t`Select All`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left"
+                            className="flex flex-align-items-center text-left"
                             onClick={handleRead(true)}
                             data-testid="toolbar:all-read"
                         >
@@ -83,7 +83,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             {c('Action').t`All Read`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left"
+                            className="flex flex-align-items-center text-left"
                             onClick={handleRead(false)}
                             data-testid="toolbar:all-unread"
                         >
@@ -91,7 +91,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             {c('Action').t`All Unread`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left"
+                            className="flex flex-align-items-center text-left"
                             onClick={handleStarred(true)}
                             data-testid="toolbar:all-starred"
                         >
@@ -99,7 +99,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             {c('Action').t`All Starred`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left"
+                            className="flex flex-align-items-center text-left"
                             onClick={handleStarred(false)}
                             data-testid="toolbar:all-unstarred"
                         >

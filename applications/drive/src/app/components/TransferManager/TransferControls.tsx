@@ -87,7 +87,7 @@ function TransferControls<T extends TransferType>({ transfer, type }: TransferPr
                 onClick: () => transferControls.cancel(transfer, type),
                 title: cancelText,
                 disabled: isFinalizing,
-                iconName: 'xmark',
+                iconName: 'cross',
                 testId: testIdPrefix + 'cancel',
             });
         }

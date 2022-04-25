@@ -16,7 +16,7 @@ const TopNavbarListItemFeedbackButton = ({ modal }: Props) => {
             type="button"
             title={c('Title').t`Send feedback`}
             onClick={() => createModal(modal)}
-            icon={<Icon name="messages" />}
+            icon={<Icon name="speech-bubble" />}
             text={c('Title').t`Feedback`}
         />
     );

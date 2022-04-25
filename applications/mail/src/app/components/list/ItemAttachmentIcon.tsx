@@ -12,7 +12,7 @@ interface Props {
     icon?: IconName;
 }
 
-const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paperclip' }: Props) => {
+const ItemAttachmentIcon = ({ element, className, onClick, icon = 'paper-clip' }: Props) => {
     const numAttachments = element ? getNumAttachments(element) : 0;
     const isButton = onClick !== undefined;
 

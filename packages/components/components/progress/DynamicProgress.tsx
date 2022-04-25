@@ -30,7 +30,7 @@ const DynamicProgress = ({
         ? {
               icon: (
                   <span className="inline-flex bg-success rounded-50 p0-5">
-                      <Icon name="check" size={24} />
+                      <Icon name="checkmark" size={24} />
                   </span>
               ),
               progressClassname: 'progress-bar--success',
@@ -39,7 +39,7 @@ const DynamicProgress = ({
         ? {
               icon: (
                   <span className="inline-flex bg-warning rounded-50 p0-5">
-                      <Icon name="xmark" size={24} />
+                      <Icon name="cross" size={24} />
                   </span>
               ),
               progressClassname: 'progress-bar--warning',
@@ -47,7 +47,7 @@ const DynamicProgress = ({
         : {
               icon: (
                   <span className="inline-flex bg-danger rounded-50 p0-5">
-                      <Icon name="xmark" size={24} />
+                      <Icon name="cross" size={24} />
                   </span>
               ),
               progressClassname: 'progress-bar--error',

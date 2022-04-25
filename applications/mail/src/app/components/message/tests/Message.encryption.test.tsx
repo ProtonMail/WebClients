@@ -290,7 +290,7 @@ describe('MessageView encryption', () => {
 
             const icon = await findByTestId('encryption-icon');
 
-            assertIcon(icon, 'lock-triangle-exclamation-filled', 'color-info');
+            assertIcon(icon, 'lock-exclamation-filled', 'color-info');
         });
     });
 });

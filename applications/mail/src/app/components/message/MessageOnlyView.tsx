@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useLabels, classnames, useHotkeys, Scroll } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -35,8 +35,6 @@ const MessageOnlyView = ({
     isComposerOpened,
 }: Props) => {
     const [labels = []] = useLabels();
-
-    const [hasScrollShadow, setHasScrollShadow] = useState(false);
 
     const { message, messageLoaded, bodyLoaded } = useMessage(messageID);
     const load = useLoadMessage(message.data || ({ ID: messageID } as Message));
@@ -85,11 +83,10 @@ const MessageOnlyView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={!messageLoaded}
                 element={message.data}
-                hasScrollShadow={hasScrollShadow}
             />
-            <Scroll className={classnames([hidden && 'hidden'])} setHasScrollShadow={setHasScrollShadow}>
+            <Scroll className={classnames([hidden && 'hidden'])}>
                 <div
-                    className="flex-item-fluid pt1 pr1 pl1 max-w100 outline-none"
+                    className="flex-item-fluid px1 mt1-25 max-w100 outline-none"
                     ref={messageContainerRef}
                     tabIndex={-1}
                 >
