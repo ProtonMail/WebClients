@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { useLoad, usePlans, useSubscription, useSubscriptionModal } from '@proton/components';
 import { Currency, Plan, Subscription } from '@proton/shared/lib/interfaces';
-import { CURRENCIES, CYCLE, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { CURRENCIES, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 
 const getParameters = (search: string, plans: Plan[], subscription: Subscription) => {
@@ -36,7 +36,7 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
         plan,
         coupon,
         cycle: parsedCycle || subscription.Cycle || DEFAULT_CYCLE,
-        currency: parsedCurrency || subscription.Currency || plans[0].Currency,
+        currency: parsedCurrency || subscription.Currency || plans[0]?.Currency || DEFAULT_CURRENCY,
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: edit === 'disable',
     };
