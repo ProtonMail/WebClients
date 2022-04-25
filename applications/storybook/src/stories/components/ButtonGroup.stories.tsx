@@ -37,7 +37,7 @@ type ButtonGroupProps = React.ComponentProps<typeof ButtonGroup>;
 
 const shapes: Required<ButtonGroupProps>['shape'][] = ['solid', 'outline', 'ghost'];
 
-const colors: Required<ButtonGroupProps>['color'][] = ['norm', 'weak', 'danger', 'warning', 'success', 'info'];
+const colors: Required<ButtonGroupProps>['color'][] = ['norm', 'weak'];
 
 const sizes: Required<ButtonGroupProps>['size'][] = ['small', 'medium', 'large'];
 

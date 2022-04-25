@@ -205,12 +205,18 @@ const ItemRow = ({
                 )}
 
                 {columns.includes('share_options') && (
-                    <TableCell className="m0 file-browser-list--icon-column" data-testid="column-share-options">
+                    <TableCell
+                        className="m0 file-browser-list--icon-column flex flex-align-items-center"
+                        data-testid="column-share-options"
+                    >
                         <CopyLinkIcon shareId={shareId} item={item} />
                     </TableCell>
                 )}
 
-                <TableCell className="m0 file-browser-list--icon-column" data-testid="column-options">
+                <TableCell
+                    className="m0 file-browser-list--icon-column flex flex-align-items-center"
+                    data-testid="column-options"
+                >
                     <Button
                         shape="ghost"
                         size="small"
@@ -218,7 +224,7 @@ const ItemRow = ({
                         className={contextMenu.isOpen ? 'file-browser--options-focus' : 'opacity-on-hover-only-desktop'}
                         {...optionsHandlers}
                     >
-                        <Icon name="ellipsis-vertical" alt={c('Action').t`More options`} />
+                        <Icon name="three-dots-vertical" alt={c('Action').t`More options`} />
                     </Button>
                 </TableCell>
             </TableRow>

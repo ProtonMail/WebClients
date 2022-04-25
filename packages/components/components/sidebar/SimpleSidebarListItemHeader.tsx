@@ -60,7 +60,7 @@ const SimpleSidebarListItemHeader = ({
                 >
                     {hasCaret && (
                         <Icon
-                            name="angle-down"
+                            name="chevron-down"
                             className={classnames(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
                         />
                     )}

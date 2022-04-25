@@ -75,7 +75,7 @@ import { useGetCalendarKeys } from '@proton/components/hooks/useGetDecryptedPass
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
 import { serverTime } from 'pmcrypto';
-import eventImport from '@proton/styles/assets/img/calendar/event-import.svg';
+import eventImport from '@proton/styles/assets/img/illustrations/event-import.svg';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/reencrypt';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';

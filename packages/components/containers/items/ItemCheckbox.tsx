@@ -53,7 +53,7 @@ const ItemCheckbox = ({ ID = '', name = '', compactClassName, normalClassName, c
             >
                 <span className="mauto item-abbr">{getInitials(name)}</span>
                 <span className="item-icon-fakecheck mauto">
-                    <Icon name="check" className="item-icon-fakecheck-icon" />
+                    <Icon name="checkmark" className="item-icon-fakecheck-icon" />
                 </span>
             </span>
         </label>

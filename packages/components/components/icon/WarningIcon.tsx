@@ -12,7 +12,7 @@ const WarningIcon = ({ warning, className }: Props) => {
         return null;
     }
 
-    const icon = <Icon name="triangle-exclamation" className={classnames([className, 'color-warning'])} />;
+    const icon = <Icon name="exclamation-circle" className={classnames([className, 'color-warning'])} />;
     return <Tooltip title={warning}>{icon}</Tooltip>;
 };
 

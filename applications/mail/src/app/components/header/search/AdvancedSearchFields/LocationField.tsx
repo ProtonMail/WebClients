@@ -56,7 +56,7 @@ const LocationField = ({ value, onChange }: Props) => {
                         title={c('Action').t`Remove`}
                     >
                         <span className="text-ellipsis">{customValueText}</span>
-                        <Icon name="xmark" className="ml0-5 flex-item-noshrink" size={12} />
+                        <Icon name="cross-small" className="ml0-5 flex-item-noshrink" />
                     </Button>
                 ) : null}
             </div>

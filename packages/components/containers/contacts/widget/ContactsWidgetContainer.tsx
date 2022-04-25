@@ -4,7 +4,7 @@ import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { FullLoader, SearchInput } from '@proton/components';
+import { CircleLoader, SearchInput } from '@proton/components';
 import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
 
 import MergeModal from '../merge/MergeModal';
@@ -223,7 +223,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, customActions }
             <div className="flex-item-fluid w100">
                 {loading ? (
                     <div className="flex h100">
-                        <FullLoader className="mauto color-primary" />
+                        <CircleLoader className="mauto color-primary" size="large" />
                     </div>
                 ) : null}
                 {showPlaceholder ? (

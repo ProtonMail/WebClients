@@ -98,7 +98,7 @@ const AddressesGroupItem = ({
             >
                 <span className="interactive flex flex-row flex-nowrap">
                     <span className="inline-flex composer-addresses-item-icon pl0-5 ml0-1 pr0-25 no-pointer-events-children h100">
-                        <Icon name="user-group" size={12} color={recipientGroup?.group?.Color} className="mauto" />
+                        <Icon name="users" size={12} color={recipientGroup?.group?.Color} className="mauto" />
                     </span>
                     <Tooltip title={c('Info').t`Click to view group details`}>
                         <span
@@ -117,7 +117,7 @@ const AddressesGroupItem = ({
                         className="composer-addresses-item-remove inline-flex p0-5 no-pointer-events-children h100 interactive"
                         onClick={handleRemove}
                     >
-                        <Icon name="xmark" size={12} className="mauto" />
+                        <Icon name="cross" size={12} className="mauto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -138,20 +138,23 @@ const AddressesGroupItem = ({
                 anchorRef={itemRef}
             >
                 <DropdownMenu>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
-                        <Icon name="copy" className="mr0-5 mt0-25" />
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap flex-align-items-center"
+                        onClick={handleCopy}
+                    >
+                        <Icon name="squares" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={() => showModalCallback(true)}>
-                        <Icon name="user" className="mr0-5 mt0-25" />
+                    <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={() => showModalCallback(true)}>
+                        <Icon name="user" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap"
+                        className="text-left flex flex-nowrap flex-align-items-center"
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >
-                        <Icon name="circle-xmark" className="mr0-5 mt0-25" />
+                        <Icon name="cross-circle" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>

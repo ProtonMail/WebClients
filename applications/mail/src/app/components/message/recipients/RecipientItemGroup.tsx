@@ -44,8 +44,8 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, i
     const labelText = getGroupLabel(group, true);
 
     const label = (
-        <div className="text-left flex flex-nowrap">
-            <Icon name="user-group" className="mr0-25 mt0-25" />
+        <div className="text-left flex flex-nowrap flex-align-items-center">
+            <Icon name="users" className="mr0-25" />
             <span>{labelText}</span>
         </div>
     );
@@ -108,16 +108,25 @@ const RecipientItemGroup = ({ group, mapStatusIcons, globalIcon, showDropdown, i
                             );
                         })}
                         <hr className="my0-5" />
-                        <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCompose}>
-                            <Icon name="envelope" className="mr0-5 mt0-25" />
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-align-items-center"
+                            onClick={handleCompose}
+                        >
+                            <Icon name="envelope" className="mr0-5" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
-                        <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleCopy}>
-                            <Icon name="copy" className="mr0-5 mt0-25" />
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-align-items-center"
+                            onClick={handleCopy}
+                        >
+                            <Icon name="squares" className="mr0-5" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
-                        <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleRecipients}>
-                            <Icon name="user" className="mr0-5 mt0-25" />
+                        <DropdownMenuButton
+                            className="text-left flex flex-nowrap flex-align-items-center"
+                            onClick={handleRecipients}
+                        >
+                            <Icon name="user" className="mr0-5" />
                             <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                         </DropdownMenuButton>
                     </DropdownMenu>

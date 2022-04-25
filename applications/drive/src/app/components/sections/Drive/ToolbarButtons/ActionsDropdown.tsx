@@ -44,7 +44,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
         {
             hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
             name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
-            icon: 'user-group',
+            icon: 'users',
             testId: 'actions-dropdown-share',
             action: () => openSharing(shareId, selectedItems[0]),
         },
@@ -58,28 +58,28 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
         {
             hidden: false,
             name: c('Action').t`Move to folder`,
-            icon: 'arrows-up-down-left-right',
+            icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
             action: () => openMoveToFolder(shareId, selectedItems),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
-            icon: 'note-pen',
+            icon: 'pen-square',
             testId: 'actions-dropdown-rename',
             action: () => openRename(shareId, selectedItems[0]),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
-            icon: 'circle-info',
+            icon: 'info-circle',
             testId: 'actions-dropdown-details',
             action: () => openDetails(shareId, selectedItems[0]),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
             name: c('Action').t`Details`,
-            icon: 'circle-info',
+            icon: 'info-circle',
             testId: 'actions-dropdown-details',
             action: () => openFilesDetails(selectedItems),
         },
@@ -103,7 +103,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
         {
             hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
             name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
-            icon: 'user-group',
+            icon: 'users',
             testId: 'actions-dropdown-share',
             action: () => openSharing(shareId, selectedItems[0]),
         },
@@ -144,7 +144,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
                 ref={anchorRef}
                 aria-expanded={isOpen}
                 onClick={toggle}
-                icon={<Icon name="angle-down" rotate={isOpen ? 180 : 0} />}
+                icon={<Icon name="chevron-down-filled" rotate={isOpen ? 180 : 0} />}
                 data-testid="actions-dropdown"
                 title={c('Title').t`Show actions`}
             />

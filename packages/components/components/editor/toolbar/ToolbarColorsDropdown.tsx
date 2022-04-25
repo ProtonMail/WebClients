@@ -19,26 +19,18 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
     const tabs = [
         {
             title: c('Info').t`Text color`,
-            content: (
-                <>
-                    <ColorSelector selected={fontColor} onChange={setFontColor} colors={FONT_COLORS} />
-                </>
-            ),
+            content: <ColorSelector selected={fontColor} onChange={setFontColor} colors={FONT_COLORS} />,
         },
         {
             title: c('Info').t`Background color`,
-            content: (
-                <>
-                    <ColorSelector selected={bgColor} onChange={setBgColor} colors={FONT_COLORS} />
-                </>
-            ),
+            content: <ColorSelector selected={bgColor} onChange={setBgColor} colors={FONT_COLORS} />,
         },
     ];
 
     return (
         <ToolbarDropdown
             noMaxSize
-            content={<Icon name="color" alt={c('Action').t`Color`} />}
+            content={<Icon name="circle-half-filled" alt={c('Action').t`Color`} />}
             className="flex-item-noshrink"
             title={c('Action').t`Color`}
         >

@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import {
     classnames,
-    FullLoader,
     Field,
     useApi,
     Row,
@@ -17,6 +16,7 @@ import {
     PasswordInputTwo,
     InputFieldTwo,
     useFormErrors,
+    CircleLoader,
 } from '@proton/components';
 import { c } from 'ttag';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
@@ -126,7 +126,7 @@ const AccountForm = ({ model, onSubmit }) => {
         <>
             {challengeLoading ? (
                 <div className="text-center mb2">
-                    <FullLoader className="color-primary" size={200} />
+                    <CircleLoader className="color-primary" size="large" />
                 </div>
             ) : null}
             <form

@@ -76,7 +76,7 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
             // Only cancelled/failed/finalizing/done transfers -> cancel button disabled
             disabled: entries.map(extractTransferFromEntry).every(isInvalidForCancellation),
             title: c('Action').t`Cancel all`,
-            iconName: 'xmark',
+            iconName: 'cross',
             testId: testIdPrefix + 'cancel',
         },
         {

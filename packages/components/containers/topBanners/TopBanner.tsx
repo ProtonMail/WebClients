@@ -24,11 +24,11 @@ const TopBanner = ({ children, className, onClose }: Props) => {
                 <Button
                     icon
                     shape="ghost"
-                    className="flex-item-noshrink"
+                    className="flex-item-noshrink rounded-none"
                     onClick={onClose}
                     title={c('Action').t`Close this banner`}
                 >
-                    <Icon name="xmark" alt={c('Action').t`Close this banner`} />
+                    <Icon name="cross" alt={c('Action').t`Close this banner`} />
                 </Button>
             ) : null}
         </div>

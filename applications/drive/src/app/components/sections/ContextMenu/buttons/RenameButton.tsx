@@ -16,7 +16,7 @@ const RenameButton = ({ shareId, item, close }: Props) => {
     return (
         <ContextMenuButton
             name={c('Action').t`Rename`}
-            icon="note-pen"
+            icon="pen-square"
             testId="context-menu-rename"
             action={() => openRename(shareId, item)}
             close={close}

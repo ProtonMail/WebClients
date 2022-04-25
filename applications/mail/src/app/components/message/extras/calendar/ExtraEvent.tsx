@@ -315,13 +315,11 @@ const ExtraEvent = ({
         return (
             <Banner
                 backgroundColor={BannerBackgroundColor.DANGER}
-                icon="triangle-exclamation"
+                icon="exclamation-circle"
                 action={
                     canTryAgain && (
                         <span className="flex-item-noshrink flex">
-                            <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
-                                {c('Action').t`Try again`}
-                            </InlineLinkButton>
+                            <InlineLinkButton onClick={handleRetry}>{c('Action').t`Try again`}</InlineLinkButton>
                         </span>
                     )
                 }
@@ -336,9 +334,9 @@ const ExtraEvent = ({
     }
 
     return (
-        <div className="calendar-widget">
+        <div className="calendar-widget mb0-75">
             <ExtraEventTimeStatus model={model} />
-            <div className="rounded border bg-norm mb0-5 scroll-if-needed">
+            <div className="rounded border bg-norm scroll-if-needed">
                 <div className="p1-5">
                     <ExtraEventSummary model={model} />
                     <ExtraEventHeader model={model} />

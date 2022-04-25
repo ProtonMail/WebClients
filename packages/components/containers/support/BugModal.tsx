@@ -141,7 +141,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 return acc;
             }, {});
 
-            const Title = [!isVpn && '[V4]', `[${Client}] Bug [${location.pathname}]`, model.Title]
+            const Title = [!isVpn && '[V5]', `[${Client}] Bug [${location.pathname}]`, model.Title]
                 .filter(Boolean)
                 .join(' ');
 
@@ -281,6 +281,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 {model.OSArtificial && OSAndOSVersionFields}
 
                 <Collapsible
+                    className="mt1"
                     headerContent={
                         <div className="flex flex-align-items-center">
                             <label className="text-semibold">{c('Label').t`System information`}</label>

@@ -35,9 +35,17 @@ const Banner = ({ backgroundColor = BannerBackgroundColor.NORM, icon, iconColor,
         return <Icon name={icon} className={classnames(['mr0-75 ml0-2 flex-item-noshrink', `color-${iconColor}`])} />;
     };
 
+    const borderColor =
+        backgroundColor === BannerBackgroundColor.INFO ||
+        backgroundColor === BannerBackgroundColor.WARNING ||
+        backgroundColor === BannerBackgroundColor.DANGER ||
+        backgroundColor === BannerBackgroundColor.SUCCESS
+            ? `border-${backgroundColor}`
+            : null;
+
     return (
         <div
-            className={`bg-${backgroundColor} rounded px0-5 py0-25 mb0-75 flex flex-align-items-center flex-nowrap border`}
+            className={`bg-${backgroundColor} border ${borderColor} rounded px0-5 py0-25 mb0-75 flex flex-align-items-center flex-nowrap`}
         >
             {getIcon()}
             <span className={classnames([!!action && 'mr1'])}>{children}</span>

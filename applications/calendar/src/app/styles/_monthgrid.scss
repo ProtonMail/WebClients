@@ -25,7 +25,7 @@
 				.calendar-monthgrid-day-number {
 					color: var(--primary);
 					border-color: var(--primary);
-					font-weight: bold;
+					font-weight: var(--font-weight-bold);
 				}
 
 				&:hover,
@@ -50,7 +50,7 @@
 				&[aria-pressed='true'] &-number {
 					background-color: var(--primary);
 					color: var(--primary-contrast);
-					font-weight: bold;
+					font-weight: var(--font-weight-bold);
 				}
 			}
 		}

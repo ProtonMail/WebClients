@@ -66,7 +66,7 @@ const AttachingModalContent = ({
                 {model.fileAttached ? (
                     <AttachedFile
                         file={model.fileAttached}
-                        iconName="calendar-days"
+                        iconName="calendar-grid"
                         clear={c('Action').t`Delete`}
                         onClear={onClear}
                     />

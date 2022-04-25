@@ -82,9 +82,9 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
     }
 
     return (
-        <div className="bg-norm rounded border px0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
             <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
-                <Icon name={couldLoadDirect ? 'shield' : 'image'} className="mt0-3 flex-item-noshrink ml0-2" />
+                <Icon name={couldLoadDirect ? 'shield' : 'image'} className="mt0-4 flex-item-noshrink ml0-2" />
                 <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">{text}</span>
             </div>
             <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
@@ -94,7 +94,8 @@ const ExtraImages = ({ message, type, onLoadImages, mailSettings }: Props) => {
                         size="small"
                         color="weak"
                         shape="outline"
-                        className="on-mobile-w100 py0-25"
+                        fullWidth
+                        className="rounded-sm"
                         data-testid="remote-content:load"
                     >
                         {actionText}

@@ -21,7 +21,7 @@ const DetailsButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Details`}
-            icon={<Icon name="circle-info" />}
+            icon={<Icon name="info-circle" />}
             onClick={() => {
                 if (selectedItems.length === 1) {
                     openDetails(shareId, selectedItems[0]);

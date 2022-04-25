@@ -2,13 +2,13 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const path = require('path');
 
-const RAW_TEXT = /.*theme\.scss|.raw\.scss$/;
+const RAW_TEXT = /.*\.theme\.css|.raw\.scss$/;
 
 const SASS_VARIABLES_FILEPATH = path.resolve('./src/app/variables.scss');
 const SASS_VARIABLES = fs.existsSync(SASS_VARIABLES_FILEPATH) ? fs.readFileSync(SASS_VARIABLES_FILEPATH) : '';
 // Set up the variables to the design system so that files are resolved properly.
 const PREPEND_SASS = `
-$path-images: "~@proton/styles/assets/img/shared/";
+$path-images: "~@proton/styles/assets/img/illustrations/";
 ${SASS_VARIABLES}
 `;
 
@@ -63,6 +63,7 @@ module.exports = ({ browserslist }) => {
     return [
         {
             test: /\.css$/,
+            exclude: /.*\.theme\.css/,
             use: [
                 miniLoader,
                 {

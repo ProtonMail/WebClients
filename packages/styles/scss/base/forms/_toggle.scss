@@ -60,6 +60,7 @@ $toggle-width-button: em(24) !default;
 			inset: 0;
 			z-index: 1;
 			display: flex;
+			color: var(--interaction-norm-contrast);
 			animation: 0.25s easing(easeOutCubic) forwards anime-toggle-label-loader-fade-in;
 
 			@keyframes anime-toggle-label-loader-fade-in {

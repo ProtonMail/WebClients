@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Spotlight, SettingsLink } from '@proton/components';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import starImg from '@proton/styles/assets/img/placeholders/star.svg';
+import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
 interface Props {

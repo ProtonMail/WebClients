@@ -1,81 +1,103 @@
 // @ts-nocheck Disable import errors from ds
-import themeDefaultSvg from '@proton/styles/assets/img/themes/theme-default.svg';
-import defaultTheme from '@proton/styles/scss/themes/default-theme.scss';
+import themeDuotoneSvg from '@proton/styles/assets/img/themes/theme-thumb-duotone.svg';
+import themeDuotoneSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-duotone-small.svg';
+import duotoneTheme from '@proton/colors/themes/duotone.theme.css';
 
-import themeDarkSvg from '@proton/styles/assets/img/themes/theme-dark.svg';
-import darkTheme from '@proton/styles/scss/themes/dark-theme.scss';
+import themeCarbonSvg from '@proton/styles/assets/img/themes/theme-thumb-carbon.svg';
+import themeCarbonSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-carbon-small.svg';
+import carbonTheme from '@proton/colors/themes/carbon.theme.css';
 
-import themeLightSvg from '@proton/styles/assets/img/themes/theme-light.svg';
-import lightTheme from '@proton/styles/scss/themes/light-theme.scss';
+import themeMonokaiSvg from '@proton/styles/assets/img/themes/theme-thumb-monokai.svg';
+import themeMonokaiSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-monokai-small.svg';
+import monokaiTheme from '@proton/colors/themes/monokai.theme.css';
 
-import themeMonokaiSvg from '@proton/styles/assets/img/themes/theme-monokai.svg';
-import monokaiTheme from '@proton/styles/scss/themes/monokai-theme.scss';
+import themeSnowSvg from '@proton/styles/assets/img/themes/theme-thumb-snow.svg';
+import themeSnowSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-snow-small.svg';
+import snowTheme from '@proton/colors/themes/snow.theme.css';
 
-import themeContrastSvg from '@proton/styles/assets/img/themes/theme-contrast.svg';
-import contrastTheme from '@proton/styles/scss/themes/contrast-theme.scss';
+import themeContrastSvg from '@proton/styles/assets/img/themes/theme-thumb-contrast.svg';
+import themeContrastSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-contrast-small.svg';
+import contrastTheme from '@proton/colors/themes/contrast.theme.css';
 
-import themeLegacySvg from '@proton/styles/assets/img/themes/theme-legacy.svg';
-import legacyTheme from '@proton/styles/scss/themes/legacy-theme.scss';
-
-export enum HistoricThemeTypes {}
+import themeLegacySvg from '@proton/styles/assets/img/themes/theme-thumb-legacy.svg';
+import themeLegacySvgSmall from '@proton/styles/assets/img/themes/theme-thumb-legacy-small.svg';
+import legacyTheme from '@proton/colors/themes/legacy.theme.css';
 
 export enum ThemeTypes {
-    Default = 0,
-    Dark = 1,
-    Light = 2,
+    Duotone = 0,
+    Carbon = 1,
+    Snow = 2,
     Monokai = 3,
     Contrast = 4,
     Legacy = 5,
 }
 
-export const ThemeMigrationMap: Partial<{ [key in HistoricThemeTypes]: ThemeTypes | HistoricThemeTypes }> = {};
+export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
 
 export const PROTON_THEMES_MAP = {
-    [ThemeTypes.Default]: {
+    [ThemeTypes.Duotone]: {
         label: 'Proton',
-        identifier: ThemeTypes.Default,
-        src: themeDefaultSvg,
-        theme: defaultTheme.toString(),
+        identifier: ThemeTypes.Duotone,
+        src: {
+            medium: themeDuotoneSvg,
+            small: themeDuotoneSvgSmall,
+        },
+        theme: duotoneTheme.toString(),
     },
-    [ThemeTypes.Dark]: {
+    [ThemeTypes.Carbon]: {
         label: 'Carbon',
-        identifier: ThemeTypes.Dark,
-        src: themeDarkSvg,
-        theme: darkTheme.toString(),
-    },
-    [ThemeTypes.Light]: {
-        label: 'Snow',
-        identifier: ThemeTypes.Light,
-        src: themeLightSvg,
-        theme: lightTheme.toString(),
+        identifier: ThemeTypes.Carbon,
+        src: {
+            medium: themeCarbonSvg,
+            small: themeCarbonSvgSmall,
+        },
+        theme: carbonTheme.toString(),
     },
     [ThemeTypes.Monokai]: {
         label: 'Monokai',
         identifier: ThemeTypes.Monokai,
-        src: themeMonokaiSvg,
+        src: {
+            medium: themeMonokaiSvg,
+            small: themeMonokaiSvgSmall,
+        },
         theme: monokaiTheme.toString(),
+    },
+    [ThemeTypes.Snow]: {
+        label: 'Snow',
+        identifier: ThemeTypes.Snow,
+        src: {
+            medium: themeSnowSvg,
+            small: themeSnowSvgSmall,
+        },
+        theme: snowTheme.toString(),
     },
     [ThemeTypes.Contrast]: {
         label: 'Contrast',
         identifier: ThemeTypes.Contrast,
-        src: themeContrastSvg,
+        src: {
+            medium: themeContrastSvg,
+            small: themeContrastSvgSmall,
+        },
         theme: contrastTheme.toString(),
     },
     [ThemeTypes.Legacy]: {
         label: 'Legacy',
         identifier: ThemeTypes.Legacy,
-        src: themeLegacySvg,
+        src: {
+            medium: themeLegacySvg,
+            small: themeLegacySvgSmall,
+        },
         theme: legacyTheme.toString(),
     },
 } as const;
 
-export const DARK_THEMES = [ThemeTypes.Dark, ThemeTypes.Monokai];
+export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai];
 
 export const PROTON_THEMES = [
-    ThemeTypes.Default,
-    ThemeTypes.Dark,
-    ThemeTypes.Light,
+    ThemeTypes.Duotone,
+    ThemeTypes.Carbon,
     ThemeTypes.Monokai,
+    ThemeTypes.Snow,
     ThemeTypes.Contrast,
     ThemeTypes.Legacy,
 ].map((id) => PROTON_THEMES_MAP[id]);

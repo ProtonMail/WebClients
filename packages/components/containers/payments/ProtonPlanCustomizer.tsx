@@ -79,7 +79,7 @@ const ButtonNumberInput = ({
                     onChange?.(newValue);
                 }}
             >
-                <Icon name="dash" alt={c('Action').t`Decrease`} className="mauto" />
+                <Icon name="minus" alt={c('Action').t`Decrease`} className="mauto" />
             </button>
             {disabled ? (
                 <div className="mt0-5 flex mb0-5">

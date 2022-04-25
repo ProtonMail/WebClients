@@ -1,9 +1,11 @@
 .ellipsis-loader {
 	display: inline-block;
-	inline-size: 1.75em;
+	inline-size: 1.3em;
 	font-family: $font-family-monospace;
+	letter-spacing: -0.2em;
 	vertical-align: baseline;
 	text-align: start;
+	pointer-events: none;
 
 	&::before {
 		content: '\00a0';

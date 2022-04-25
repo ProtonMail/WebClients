@@ -24,8 +24,7 @@ const Favicon = () => {
 
     return (
         <Helmet>
-            <link rel="icon" type="image/svg+xml" href={favicons[date][0]} />
-            <link rel="alternate icon" href={favicons[date][1]} />
+            <link rel="icon" type="image/png" href={favicons[date]} />
         </Helmet>
     );
 };

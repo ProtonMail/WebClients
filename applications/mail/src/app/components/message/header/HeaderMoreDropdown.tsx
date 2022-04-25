@@ -255,7 +255,7 @@ const HeaderMoreDropdown = ({
                     disabled={!messageLoaded}
                     autoClose
                     title={c('Title').t`More`}
-                    content={<Icon name="ellipsis" className="caret-like" alt={c('Title').t`More options`} />}
+                    content={<Icon name="three-dots-horizontal" alt={c('Title').t`More options`} />}
                     additionalDropdowns={additionalDropdowns}
                     data-testid="message-header-expanded:more-dropdown"
                     noMaxHeight
@@ -265,123 +265,132 @@ const HeaderMoreDropdown = ({
                         closeDropdown.current = onClose;
                         return (
                             <DropdownMenu>
-                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleStar}>
-                                    <Icon name={isStarred ? 'star-remove' : 'star'} className="mr0-5 mt0-25" />
+                                <DropdownMenuButton
+                                    className="text-left flex flex-nowrap flex-align-items-center"
+                                    onClick={handleStar}
+                                >
+                                    <Icon name={isStarred ? 'star-slash' : 'star'} className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{staringText}</span>
                                 </DropdownMenuButton>
 
                                 <hr className="my0-5" />
 
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
+                                    className="text-left flex flex-nowrap flex-align-items-center"
                                     onClick={handleMove(ARCHIVE, fromFolderID)}
                                 >
-                                    <Icon name="box-archive" className="mr0-5 mt0-25" />
+                                    <Icon name="archive-box" className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Archive`}</span>
                                 </DropdownMenuButton>
                                 {isNarrow && (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onOpenAdditionnal(0)}
                                     >
-                                        <Icon name="filter" className="mr0-5 mt0-25" />
+                                        <Icon name="filter" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`Filter on...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isNarrow && (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onOpenAdditionnal(1)}
                                     >
-                                        <Icon name="folder" className="mr0-5 mt0-25" />
+                                        <Icon name="folder" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`Move to...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isNarrow && (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onOpenAdditionnal(2)}
                                     >
-                                        <Icon name="tag" className="mr0-5 mt0-25" />
+                                        <Icon name="tag" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`Label as...`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isSpam ? (
-                                    <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleUnread}>
-                                        <Icon name="eye-slash" className="mr0-5 mt0-25" />
+                                    <DropdownMenuButton
+                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        onClick={handleUnread}
+                                    >
+                                        <Icon name="eye-slash" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`Mark as unread`}</span>
                                     </DropdownMenuButton>
                                 ) : (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={handleMove(SPAM, fromFolderID)}
                                     >
-                                        <Icon name="fire" className="mr0-5 mt0-25" />
+                                        <Icon name="fire" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`Move to spam`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {isInTrash ? (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => setMessagePermanentDeleteModalOpen(true)}
                                     >
-                                        <Icon name="circle-xmark" className="mr0-5 mt0-25" />
+                                        <Icon name="cross-circle" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Delete`}</span>
                                     </DropdownMenuButton>
                                 ) : null}
 
                                 <hr className="my0-5" />
 
-                                <DropdownMenuButton className="text-left flex flex-nowrap" onClick={handleExport}>
-                                    <Icon name="arrow-up-from-screen" className="mr0-5 mt0-25" />
+                                <DropdownMenuButton
+                                    className="text-left flex flex-nowrap flex-align-items-center"
+                                    onClick={handleExport}
+                                >
+                                    <Icon name="arrow-up-from-square" className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Export`}</span>
                                 </DropdownMenuButton>
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
+                                    className="text-left flex flex-nowrap flex-align-items-center"
                                     onClick={() => setMessagePrintModalOpen(true)}
                                 >
-                                    <Icon name="printer" className="mr0-5 mt0-25" />
+                                    <Icon name="printer" className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Print`}</span>
                                 </DropdownMenuButton>
 
                                 <hr className="my0-5" />
 
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
+                                    className="text-left flex flex-nowrap flex-align-items-center"
                                     onClick={() => setMessageDetailsModalOpen(true)}
                                 >
-                                    <Icon name="list" className="mr0-5 mt0-25" />
+                                    <Icon name="list-bullets" className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`View message details`}</span>
                                 </DropdownMenuButton>
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap"
+                                    className="text-left flex flex-nowrap flex-align-items-center"
                                     onClick={() => setMessageHeaderModalOpen(true)}
                                 >
-                                    <Icon name="window-terminal" className="mr0-5 mt0-25" />
+                                    <Icon name="window-terminal" className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View headers`}</span>
                                 </DropdownMenuButton>
                                 {!sourceMode && (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onSourceMode(true)}
                                     >
-                                        <Icon name="code" className="mr0-5 mt0-25" />
+                                        <Icon name="code" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`View HTML`}</span>
                                     </DropdownMenuButton>
                                 )}
                                 {sourceMode && (
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap"
+                                        className="text-left flex flex-nowrap flex-align-items-center"
                                         onClick={() => onSourceMode(false)}
                                     >
-                                        <Icon name="window-image" className="mr0-5 mt0-25" />
+                                        <Icon name="window-image" className="mr0-5" />
                                         <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                             .t`View rendered HTML`}</span>
                                     </DropdownMenuButton>
@@ -390,10 +399,10 @@ const HeaderMoreDropdown = ({
                                 <hr className="my0-5" />
 
                                 <DropdownMenuButton
-                                    className="text-left flex flex-nowrap color-danger"
+                                    className="text-left flex flex-nowrap flex-align-items-center color-danger"
                                     onClick={() => setMessagePhishingModalOpen(true)}
                                 >
-                                    <Icon name="hook" className="mr0-5 mt0-25" />
+                                    <Icon name="hook" className="mr0-5" />
                                     <span className="flex-item-fluid mtauto mbauto">{c('Action')
                                         .t`Report phishing`}</span>
                                 </DropdownMenuButton>

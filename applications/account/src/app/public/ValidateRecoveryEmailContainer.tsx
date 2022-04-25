@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
-import { FullLoader, GenericError, useApi, useLoading } from '@proton/components';
+import { CircleLoader, GenericError, useApi, useLoading } from '@proton/components';
 import { postVerifyValidate } from '@proton/shared/lib/api/verify';
 
 import PublicLayout from '../components/PublicLayout';
@@ -31,8 +31,7 @@ const ValidateRecoveryEmailContainer = () => {
         return (
             <GenericError>
                 <span>{c('Recovery Email').t`There was a problem verifying your email address.`}</span>
-                <span>{c('Recovery Email')
-                    .jt`Please ${signIn} to resend a recovery email verification request.`}</span>
+                <span>{c('Recovery Email').jt`Please ${signIn} to resend a recovery email verification request.`}</span>
             </GenericError>
         );
     }
@@ -41,7 +40,7 @@ const ValidateRecoveryEmailContainer = () => {
         <main className="main-area">
             {loading ? (
                 <div className="absolute-center text-center">
-                    <FullLoader size={200} />
+                    <CircleLoader size="large" />
                 </div>
             ) : (
                 <PublicLayout

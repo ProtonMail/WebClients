@@ -29,8 +29,7 @@ export default function ExpandButton({ className, expanded, onClick }: Props) {
             title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
         >
             <Icon
-                name="angle-down"
-                className={classnames([!expanded && 'rotateZ-270'])}
+                name={expanded ? 'chevron-down' : 'chevron-right'}
                 alt={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
             />
         </Button>

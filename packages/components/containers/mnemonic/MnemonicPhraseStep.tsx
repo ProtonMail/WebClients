@@ -15,7 +15,7 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
             <p className="mt0">{c('Info').t`Your recovery phrase is a series of 12 words in a specific order.`}</p>
 
             <p className="color-warning">
-                <Icon className="mr0-5 float-left mt0-25" name="circle-exclamation-filled" />
+                <Icon className="mr0-5 float-left mt0-25" name="exclamation-circle-filled" />
 
                 {c('Info')
                     .t`Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.`}

@@ -60,7 +60,7 @@ const Collapsible = ({
                                 onClick?.(e);
                             }}
                         >
-                            <Icon name="angle-down" className="caret-like" />
+                            <Icon name="chevron-down" className="caret-like" />
                             <span className="sr-only">{tooltipText}</span>
                         </ButtonLike>
                     </Tooltip>

@@ -13,7 +13,7 @@ const InnerModalModalCloseButton = ({ closeTextModal, onClose }: InnerModalModal
 
     return (
         <Button icon shape="ghost" size="small" className="inner-modal-close" title={closeText} onClick={onClose}>
-            <Icon className="inner-modal-close-icon" name="xmark" alt={closeText} />
+            <Icon className="inner-modal-close-icon" name="cross-big" alt={closeText} />
         </Button>
     );
 };

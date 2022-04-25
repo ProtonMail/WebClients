@@ -47,7 +47,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 onClick={onPrev}
                 title={c('Action').t`Previous`}
             >
-                <Icon name="angle-down" rotate={90} size={16} alt={c('Action').t`Previous`} />
+                <Icon name="chevron-left" size={16} alt={c('Action').t`Previous`} />
             </Button>
             <span className="ml0-5 mr0-5">
                 <span>{current}</span>
@@ -62,7 +62,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 onClick={onNext}
                 title={c('Action').t`Next`}
             >
-                <Icon name="angle-down" rotate={-90} size={16} alt={c('Action').t`Next`} />
+                <Icon name="chevron-right" size={16} alt={c('Action').t`Next`} />
             </Button>
         </div>
     );

@@ -13,9 +13,9 @@ import EncryptedIcon from './EncryptedIcon';
 const ICONS: { [key: string]: IconName } = {
     fn: 'user',
     email: 'envelope',
-    tel: 'phone-rotary',
-    adr: 'map-marker',
-    other: 'circle-info',
+    tel: 'phone',
+    adr: 'map-pin',
+    other: 'info-circle',
 };
 
 interface Props {
@@ -134,7 +134,7 @@ const ContactModalProperties = (
             {canAdd && (
                 <div className="flex flex-nowrap flex-item-noshrink">
                     <div className="mr0-5 flex flex-align-items-center flex-item-noshrink">
-                        <Icon name="align-justify" className="visibility-hidden" />
+                        <Icon name="text-align-justify" className="visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w95">
                         <Button

@@ -52,7 +52,7 @@ const IdentitySection = () => {
     };
 
     return (
-        <SettingsSectionWide className="no-scroll">
+        <SettingsSectionWide>
             {loading || !Array.isArray(addresses) ? (
                 <Loader />
             ) : (

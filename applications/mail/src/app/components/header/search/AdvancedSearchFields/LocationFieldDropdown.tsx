@@ -95,7 +95,6 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                 {isLabel(item) && (
                                                     <Icon
                                                         name="circle-filled"
-                                                        size={12}
                                                         color={item.color}
                                                         className="flex-item-noshrink mr0-5"
                                                     />
@@ -104,7 +103,10 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                     <Icon name={item.icon} className="flex-item-noshrink mr0-5" />
                                                 )}
                                                 {isCustomFolder(item) && (
-                                                    <FolderIcon folder={item.folderEntity} className="mr0-5" />
+                                                    <FolderIcon
+                                                        folder={item.folderEntity}
+                                                        className="flex-item-noshrink mr0-5"
+                                                    />
                                                 )}
                                                 <span className="text-ellipsis">
                                                     <Mark value={search}>{item.text}</Mark>

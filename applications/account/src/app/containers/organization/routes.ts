@@ -12,7 +12,7 @@ export const getOrganizationAppRoutes = ({ user, organization }: { user: UserMod
             users: <SectionConfig>{
                 text: c('Title').t`Users and addresses`,
                 to: '/users-addresses',
-                icon: 'people',
+                icon: 'users',
                 available: hasOrganization && user.isAdmin && !user.isSubUser,
                 subsections: [
                     {
@@ -56,7 +56,7 @@ export const getOrganizationAppRoutes = ({ user, organization }: { user: UserMod
             setup: <SectionConfig>{
                 text: c('Title').t`Multi-user support`,
                 to: '/multi-user-support',
-                icon: 'people',
+                icon: 'users',
                 available: !hasOrganization && canHaveOrganization,
                 subsections: [
                     {

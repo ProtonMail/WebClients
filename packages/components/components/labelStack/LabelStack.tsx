@@ -15,20 +15,33 @@ interface Props {
     labels: LabelDescription[];
     showDelete?: boolean;
     isStacked?: boolean;
+    /**
+     * Reverses stacking order when isStacked is true.
+     * Has no effect when isStacked is false.
+     */
+    leftToRight?: boolean;
     maxNumber?: number;
     className?: string;
     showDropDown?: boolean;
 }
 
-const LabelStack = ({ labels, showDelete = false, isStacked = false, maxNumber, showDropDown, className }: Props) => {
+const LabelStack = ({
+    labels,
+    showDelete = false,
+    isStacked = false,
+    leftToRight = false,
+    maxNumber,
+    showDropDown,
+    className,
+}: Props) => {
     const labelsToShow = labels.slice(0, maxNumber);
     const labelsOverflow = labels.slice(maxNumber || labels.length);
 
     return (
         <ul
             className={classnames([
-                'label-stack unstyled m0 inline-flex max-w100 flex-row flex-align-items-center stop-propagation',
-                isStacked && 'is-stacked',
+                'label-stack unstyled m0 inline-flex flex-align-items-center stop-propagation',
+                isStacked ? `is-stacked ${leftToRight ? 'flex-row-reverse' : 'flex-row'}` : 'flex-row',
                 className,
             ])}
         >

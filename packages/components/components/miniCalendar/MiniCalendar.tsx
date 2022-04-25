@@ -140,7 +140,7 @@ const MiniCalendar = ({
                             disabled={(min && +now < +min) || (max && +now > +max)}
                             data-testid="minicalendar:today"
                         >
-                            <Icon name="calendar-day" className="minicalendar-icon" alt={todayTitle} />
+                            <Icon name="calendar-today" className="minicalendar-icon" alt={todayTitle} />
                         </Button>
                     </Tooltip>
                 ) : null}
@@ -158,7 +158,7 @@ const MiniCalendar = ({
                                 onClick={() => handleSwitchMonth(-1)}
                                 data-testid="minicalendar:previous-month"
                             >
-                                <Icon name="angle-down" className="rotateZ-90 minicalendar-icon" alt={prevMonth} />
+                                <Icon name="chevron-left" className="minicalendar-icon" alt={prevMonth} />
                             </Button>
                         </Tooltip>
                         <Tooltip title={nextMonth}>
@@ -172,7 +172,7 @@ const MiniCalendar = ({
                                 onClick={() => handleSwitchMonth(1)}
                                 data-testid="minicalendar:next-month"
                             >
-                                <Icon name="angle-down" className="rotateZ-270 minicalendar-icon" alt={nextMonth} />
+                                <Icon name="chevron-right" className="minicalendar-icon" alt={nextMonth} />
                             </Button>
                         </Tooltip>
                     </>

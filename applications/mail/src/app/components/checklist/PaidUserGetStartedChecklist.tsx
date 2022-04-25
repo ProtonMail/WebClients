@@ -25,7 +25,7 @@ const PaidUserGetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelecti
             {
                 key: ChecklistKey.Import,
                 text: c('Paid user checklist item').t`Import contacts or emails`,
-                icon: 'arrow-down-to-screen',
+                icon: 'arrow-down-to-square',
             },
             {
                 key: ChecklistKey.SendMessage,

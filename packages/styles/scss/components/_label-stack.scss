@@ -1,9 +1,12 @@
+@use 'sass:math';
+
 .label-stack {
 	--item-wide: 10em;
-	--item-narrow: 1.25em;
-	--item-scale: 0.7;
+	--item-narrow: 1.5em;
+	--item-scale: #{math.div(2, 3)}; // 0.666…
 
-	font-weight: normal; // Overrides when unread email context
+	font-size: em(12);
+	font-weight: var(--font-weight-semibold); // Overrides when unread email context
 
 	&.max-w100 {
 		--item-wide: 100%;
@@ -12,32 +15,49 @@
 	&-item,
 	&-overflow-count {
 		border-radius: 1em;
-		line-height: 1;
+		line-height: 1.5;
 	}
 
 	&-item {
 		max-inline-size: var(--item-wide);
 		margin: 0.125em;
-		background-color: var(--background, var(--background-strong));
+		overflow: hidden;
+		background-color: var(--label-bg, var(--background-strong));
+		color: white;
 
-		&-button,
-		&-delete {
-			color: var(--foreground, var(--text-norm));
+		&-inner {
+			padding-inline: em(8, 12);
+			text-align: start;
+
+			&.with-delete {
+				padding-inline-end: em(4, 12);
+			}
+		}
+
+		&-inner:not(#{&}-button) &-text {
+			cursor: default;
+			user-select: all;
 		}
 
 		&-button {
-			// values are "magic ones" for optically
-			// centering best as we could to Fit ALL cases (emoji/lowercase/etc.)
-			padding-block: em(1) em(2.4);
-			padding-inline: 0.5em;
-			text-align: start;
+			transition: 0.15s easing(easeOutQuint);
+
+			&:hover,
+			&:focus {
+				background-color: var(--label-bg-hover, var(--background-strong));
+			}
+
+			&:active {
+				background-color: var(--label-bg-active, var(--background-strong));
+			}
 		}
 
 		&-delete {
-			margin-inline-end: 0.5em;
+			padding-inline: 0 em(2, 12);
 
 			& &-icon {
 				display: block;
+				margin: auto;
 			}
 		}
 	}
@@ -51,19 +71,12 @@
 			display: block;
 			padding-block: 0.125em;
 			padding-inline: 0.25em 0.375em;
-			color: var(--foreground, var(--text-norm));
+			color: var(--text-norm);
 		}
 	}
 
 	&:not(.is-stacked) {
 		margin: -0.125em;
-
-		.label-stack-item {
-			&:hover,
-			&:focus-within {
-				box-shadow: var(--shadow-norm);
-			}
-		}
 	}
 
 	&.is-stacked {
@@ -88,21 +101,14 @@
 				transform: scale(var(--item-scale));
 			}
 
-			&-button,
+			&-inner,
 			&-delete-icon {
-				transition: opacity 0.2s 0.1s easing(easeOutQuart);
-			}
-
-			&-button {
 				opacity: var(--button-opacity, 1);
+				transition: opacity 0.2s 0.1s easing(easeOutQuart);
 			}
 
 			&-delete {
 				overflow: hidden;
-
-				&-icon {
-					opacity: var(--button-opacity, 1);
-				}
 			}
 		}
 
@@ -116,7 +122,7 @@
 			&:hover,
 			&:focus-within {
 				.label-stack-item {
-					// Avoid gitch effect on first-child
+					// Avoid glitch effect on first-child
 					&:first-child:not(:hover):not(:focus-within) {
 						--button-opacity: 0;
 						max-inline-size: var(--item-narrow);
