@@ -22,12 +22,8 @@ const PublicDriveLinkContainer = () => {
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
-const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0-beta.27',
-    ...config,
-};
-newVersionUpdater(enhancedConfig);
-sentry(enhancedConfig);
+newVersionUpdater(config);
+sentry(config);
 
 const App = () => {
     const [hasInitialAuth] = useState(() => {
@@ -35,7 +31,7 @@ const App = () => {
     });
 
     return (
-        <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
+        <ProtonApp config={config} hasInitialAuth={hasInitialAuth}>
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
