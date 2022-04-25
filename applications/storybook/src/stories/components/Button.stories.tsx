@@ -151,7 +151,7 @@ export const Variants = () => {
                                     </Button>
                                     {shape !== 'underline' && (
                                         <Button icon shape={shape} color={color}>
-                                            <Icon name="brand-proton-mail" />
+                                            <Icon name="brand-proton-mail" alt="Lorem" />
                                         </Button>
                                     )}
                                 </div>
