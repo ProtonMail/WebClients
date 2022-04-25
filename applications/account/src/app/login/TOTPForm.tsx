@@ -53,6 +53,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                     autoComplete="one-time-code"
                     value={totp}
                     onValue={setTotp}
+                    inputMode="numeric"
                 />
             )}
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
