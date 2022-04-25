@@ -44,9 +44,13 @@ export default class ConcurrentIterator {
             } else {
                 await waitUntil(
                     () =>
-                        this.loadSize < FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS_LOAD &&
-                        this.fileControlers.size < MAX_DOWNLOADING_FILES_LOAD
+                        (this.loadSize < FILE_CHUNK_SIZE * MAX_DOWNLOADING_BLOCKS_LOAD &&
+                            this.fileControlers.size < MAX_DOWNLOADING_FILES_LOAD) ||
+                        this.canceled
                 );
+                if (this.canceled) {
+                    return;
+                }
 
                 const uniqueId = generateUID();
                 const controls = initDownloadLinkFile(link, {
