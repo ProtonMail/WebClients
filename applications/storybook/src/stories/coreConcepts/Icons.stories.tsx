@@ -22,20 +22,23 @@ export const PrimaryIcons = () => {
     const [selectedSize, setSelectedSize] = useState<Required<IconProps>['size']>(40);
     const primaryIconNames: IconName[] = iconSvg.match(/id="ic-([^"]+)/g).map((x: string) => x.replace('id="ic-', ''));
     const [search, setSearch] = useState('');
+
     const iconResults = useMemo(() => {
         if (search.length <= 1) {
             return primaryIconNames;
         }
         return primaryIconNames.filter((x) => x.toLowerCase().includes(search.toLocaleLowerCase()));
     }, [search]);
+
     return (
         <>
             <div className="flex flex-nowrap flex-gap-1">
                 <InputTwo
-                    placeholder={`Seach by name in those ${primaryIconNames.length} icons…`}
+                    prefix={<Icon className="ml0-5" name="magnifier" />}
+                    placeholder={`Search ${primaryIconNames.length} icons by name…`}
                     value={search}
                     onChange={({ target: { value } }) => setSearch(value)}
-                    className="flex-item-fluid"
+                    className="flex-item-fluid pl0"
                 />
                 <ButtonGroup>
                     {sizes.map((size) => (
