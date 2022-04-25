@@ -51,7 +51,6 @@ resetHistory();
 export const config = {
     APP_NAME: APPS.PROTONMAIL,
     APP_VERSION: 'test-version',
-    APP_VERSION_DISPLAY: 'test-version-display',
     DATE_VERSION: 'test-date-version',
 } as ProtonConfig;
 
