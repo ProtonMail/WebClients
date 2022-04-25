@@ -5,7 +5,7 @@ import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { addDays } from 'date-fns';
-import { useConfig, useForceRefresh, DropdownMenu, DropdownMenuButton, Icon, SimpleDropdown } from '@proton/components';
+import { useConfig, useForceRefresh, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
 
 interface Props {
     className?: string;
@@ -27,22 +27,16 @@ const LanguageSelect = ({ className, locales = {} }: Props) => {
         });
         forceRefresh();
     };
-    const languages = Object.keys(LOCALES).map((value) => (
-        <DropdownMenuButton className="text-left" key={value} onClick={() => handleChange(value)}>
-            {LOCALES[value]}
-        </DropdownMenuButton>
-    ));
-
-    const selectedLanguage = (
-        <>
-            <Icon name="earth" />
-            <span className="ml0-5">{LOCALES[localeCode]}</span>
-        </>
-    );
 
     return (
-        <SimpleDropdown as="button" type="button" hasCaret={false} content={selectedLanguage} className={className}>
-            <DropdownMenu>{languages}</DropdownMenu>
+        <SimpleDropdown as="button" type="button" content={LOCALES[localeCode]} className={className}>
+            <DropdownMenu>
+                {Object.keys(LOCALES).map((value) => (
+                    <DropdownMenuButton className="text-left" key={value} onClick={() => handleChange(value)}>
+                        {LOCALES[value]}
+                    </DropdownMenuButton>
+                ))}
+            </DropdownMenu>
         </SimpleDropdown>
     );
 };

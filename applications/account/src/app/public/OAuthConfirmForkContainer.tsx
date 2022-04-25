@@ -4,6 +4,8 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import Main from './Main';
 import Header from './Header';
 import Content from './Content';
+import Layout from './Layout';
+import Text from './Text';
 
 interface Props {
     name: string;
@@ -14,7 +16,7 @@ interface Props {
 
 const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) => {
     const [loading, withLoading] = useLoading();
-    return (
+    const children = (
         <Main>
             <Header
                 title={
@@ -23,13 +25,13 @@ const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) 
                 }
             />
             <Content>
-                <p className="mt0 oauth-confirm-fork-details">
+                <Text>
                     {
                         // translator: variable here is the name of the service to login to. Complete sentence: "Select Continue to SimpleLogin to open the app. This also creates a SimpleLogin account with your ProtonMail address so you can sign in with one click in the future."
                         c('Info')
                             .t`Select Continue to ${name} to open the app. This also creates a ${name} account with your ${MAIL_APP_NAME} address so you can sign in with one click in the future.`
                     }
-                </p>
+                </Text>
                 {image && <img src={`data:image/svg+xml;base64,${image}`} alt="" className="w100 mb1-5" />}
                 <Button
                     className="mb0-5"
@@ -44,11 +46,12 @@ const OAuthConfirmForkContainer = ({ name, image, onConfirm, onCancel }: Props) 
                         c('Action').t`Continue to ${name}`
                     }
                 </Button>
-                <Button shape="ghost" fullWidth size="large" onClick={onCancel} disabled={loading}>{c('Action')
+                <Button shape="ghost" color="norm" fullWidth size="large" onClick={onCancel} disabled={loading}>{c('Action')
                     .t`Cancel`}</Button>
             </Content>
         </Main>
     );
+    return <Layout hasDecoration={false}>{children}</Layout>;
 };
 
 export default OAuthConfirmForkContainer;

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { LoaderPage, StandardLoadErrorPage, useApi, useErrorHandler, useNotifications } from '@proton/components';
 import { checkInvitation } from '@proton/shared/lib/api/invites';
-import { INVITE_TYPES } from '@proton/shared/lib/constants';
+import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InviteData } from './interfaces';
@@ -10,9 +10,10 @@ import { InviteData } from './interfaces';
 interface Props {
     onInvalid: () => void;
     onValid: ({ selector, token }: InviteData) => void;
+    clientType: CLIENT_TYPES;
 }
 
-const SignupInviteContainer = ({ onInvalid, onValid }: Props) => {
+const SignupInviteContainer = ({ onInvalid, onValid, clientType }: Props) => {
     const { createNotification } = useNotifications();
     const { token, selector } = useParams<{ token: string; selector: string }>();
     const [error, setError] = useState<{ message?: string } | null>(null);
@@ -35,7 +36,7 @@ const SignupInviteContainer = ({ onInvalid, onValid }: Props) => {
                 checkInvitation({
                     Selector: selector,
                     Token: token,
-                    Type: INVITE_TYPES.MAIL,
+                    Type: clientType,
                 })
             );
             if (!Valid) {

@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { updateComposerMode, updateViewLayout } from '@proton/shared/lib/api/mailSettings';
 import { updateDensity } from '@proton/shared/lib/api/settings';
 import { DENSITY, VIEW_LAYOUT, COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Info, Loader } from '../../components';
 import { useNotifications, useUserSettings, useMailSettings, useEventManager, useLoading, useApi } from '../../hooks';
@@ -52,7 +53,7 @@ const LayoutsSection = () => {
                         <span className="mb1 text-semibold">
                             <span className="mr0-5" id="layoutMode_desc">{c('Label').t`Inbox`}</span>
                             <Info
-                                url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
+                                url={getKnowledgeBaseUrl('/change-inbox-layout/')}
                                 title={c('Tooltip').t`Set the default layout for your Inbox.`}
                             />
                         </span>
@@ -68,7 +69,7 @@ const LayoutsSection = () => {
                         <span className="mb1 text-semibold">
                             <span className="mr0-5" id="composerMode_desc">{c('Label').t`Composer`}</span>
                             <Info
-                                url="https://protonmail.com/support/knowledge-base/composer/"
+                                url={getKnowledgeBaseUrl('/composer/')}
                                 title={c('Tooltip').t`Set the default Composer popup size as small or full screen.`}
                             />
                         </span>
@@ -85,7 +86,7 @@ const LayoutsSection = () => {
                         <span className="mb1 text-semibold">
                             <span className="mr0-5" id="densityMode_desc">{c('Label').t`Density`}</span>
                             <Info
-                                url="https://protonmail.com/support/knowledge-base/change-inbox-layout/"
+                                url={getKnowledgeBaseUrl('/change-inbox-layout/')}
                                 title={c('Tooltip').t`Set how your list of messages looks like by default.`}
                             />
                         </span>

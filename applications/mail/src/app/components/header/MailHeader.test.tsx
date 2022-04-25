@@ -144,7 +144,7 @@ describe('MailHeader', () => {
 
             const upgradeLabel = getByText('Upgrade');
 
-            assertAppLink(upgradeLabel, '/mail/dashboard');
+            assertAppLink(upgradeLabel, '/mail/upgrade');
         });
 
         it('should show upgrade button', async () => {
@@ -152,7 +152,7 @@ describe('MailHeader', () => {
 
             const upgradeLabel = getByText('Upgrade');
 
-            assertAppLink(upgradeLabel, '/mail/dashboard');
+            assertAppLink(upgradeLabel, '/mail/upgrade');
         });
     });
 

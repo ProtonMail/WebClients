@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import Text from './Text';
 
 import { Alert, Href, Tabs } from '../../../components';
@@ -13,8 +14,8 @@ import './HumanVerificationModal.scss';
 import OwnershipMethod from './OwnershipMethod';
 import CodeMethod from './CodeMethod';
 
-interface Props {
-    onSubmit: (token: string, tokenType: HumanVerificationMethodType) => void;
+export interface HumanVerificationFormProps {
+    onSubmit: (token: string, tokenType: HumanVerificationMethodType, verificationModel?: VerificationModel) => void;
     onClose: () => void;
     onLoaded?: () => void;
     onError?: (error: unknown) => void;
@@ -45,7 +46,7 @@ const HumanVerificationForm = ({
     step,
     isEmbedded,
     onChangeStep,
-}: Props) => {
+}: HumanVerificationFormProps) => {
     const api = useApi();
 
     const availableMethods = getAvailableMethods(methods);
@@ -146,7 +147,7 @@ const HumanVerificationForm = ({
                 <Text>
                     {c('Info')
                         .t`If you are having trouble creating your account, please request an invitation and we will respond within one business day.`}{' '}
-                    <Href url="https://protonmail.com/support-form">{c('Link').t`Request an invite`}</Href>
+                    <Href url={getStaticURL('/support-form')}>{c('Link').t`Request an invite`}</Href>
                 </Text>
             ),
         } as const,

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { useNotifications } from '../../hooks';
 import { Alert, Label, Table, TableHeader, TableBody, TableRow, Copy, Input } from '../../components';
@@ -13,7 +14,7 @@ const DMARCSection = () => {
     const [value, setValue] = useState(dmarcValue);
     return (
         <>
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/anti-spoofing/">
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/anti-spoofing/')}>
                 {c('Info')
                     .t`If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.`}
             </Alert>

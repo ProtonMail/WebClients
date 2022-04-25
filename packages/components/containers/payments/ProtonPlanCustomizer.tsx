@@ -1,38 +1,37 @@
-import { ComponentPropsWithoutRef } from 'react';
-import { c, msgid } from 'ttag';
+import { ComponentPropsWithoutRef, ReactElement, useState } from 'react';
 import { Cycle, Currency, Plan, Organization, PlanIDs } from '@proton/shared/lib/interfaces';
-import {
-    PLANS,
-    PLAN_SERVICES,
-    APPS,
-    ADDON_NAMES,
-    MAX_SPACE_ADDON,
-    MAX_MEMBER_ADDON,
-    MAX_DOMAIN_PRO_ADDON,
-    MAX_ADDRESS_ADDON,
-    MAX_VPN_ADDON,
-    GIGA,
-    PLAN_NAMES,
-    MAIL_APP_NAME,
-    VPN_APP_NAME,
-} from '@proton/shared/lib/constants';
-import { range } from '@proton/shared/lib/helpers/array';
-import { switchPlan, getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
-import { getAppName } from '@proton/shared/lib/apps/helper';
+import { c } from 'ttag';
 
-import { InlineLinkButton, Icon, Info, Price } from '../../components';
+import {
+    ADDON_NAMES,
+    GIGA,
+    MAX_ADDRESS_ADDON,
+    MAX_DOMAIN_PRO_ADDON,
+    MAX_MEMBER_ADDON,
+    MAX_SPACE_ADDON,
+    MAX_VPN_ADDON,
+} from '@proton/shared/lib/constants';
+import { getSupportedAddons, setQuantity } from '@proton/shared/lib/helpers/planIDs';
+
+import { Icon, Info, Price } from '../../components';
 
 import { classnames } from '../../helpers';
 
-const MailAddons: ADDON_NAMES[] = [ADDON_NAMES.MEMBER, ADDON_NAMES.SPACE, ADDON_NAMES.ADDRESS, ADDON_NAMES.DOMAIN];
-const VPNAddons: ADDON_NAMES[] = [ADDON_NAMES.VPN];
 const AddonKey = {
     [ADDON_NAMES.ADDRESS]: 'MaxAddresses',
     [ADDON_NAMES.MEMBER]: 'MaxMembers',
     [ADDON_NAMES.DOMAIN]: 'MaxDomains',
+    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 'MaxDomains',
+    [ADDON_NAMES.DOMAIN_ENTERPRISE]: 'MaxDomains',
     [ADDON_NAMES.VPN]: 'MaxVPN',
     [ADDON_NAMES.SPACE]: 'MaxSpace',
+    [ADDON_NAMES.MEMBER_MAIL_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_DRIVE_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 'MaxMembers',
+    [ADDON_NAMES.MEMBER_ENTERPRISE]: 'MaxMembers',
 } as const;
+
+export type CustomiserMode = 'signup' | undefined;
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
     cycle: Cycle;
@@ -42,10 +41,9 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     onChangePlanIDs: (planIDs: PlanIDs) => void;
     plans: Plan[];
     plansMap: { [key: string]: Plan };
-    plansNameMap: { [key: string]: Plan };
     organization?: Organization;
-    service: PLAN_SERVICES;
     loading?: boolean;
+    mode?: CustomiserMode;
 }
 
 const ButtonNumberInput = ({
@@ -56,7 +54,6 @@ const ButtonNumberInput = ({
     max = 999,
     step = 1,
     disabled = false,
-    divider = 1,
 }: {
     step?: number;
     id: string;
@@ -64,55 +61,75 @@ const ButtonNumberInput = ({
     max?: number;
     value: number;
     disabled?: boolean;
-    divider?: number;
     onChange?: (newValue: number) => void;
 }) => {
+    const [tmpValue, setTmpValue] = useState<number | undefined>(value);
+
+    const getIsValidValue = (newValue?: number) => {
+        return newValue !== undefined && newValue >= min && newValue <= max && newValue % step === 0;
+    };
+
+    const isDecDisabled = disabled || !getIsValidValue((tmpValue || 0) - step);
+    const isIncDisabled = disabled || !getIsValidValue((tmpValue || 0) + step);
+
+    const isValidTmpValue = getIsValidValue(tmpValue);
+
     return (
         <div className="border rounded flex-item-noshrink flex flex-nowrap">
             <button
                 type="button"
                 title={c('Action').t`Decrease`}
-                className={classnames(['p0-5 flex', (disabled || value - step < min) && 'color-disabled'])}
-                disabled={disabled || value - step < min}
+                className={classnames(['p0-5 flex', isDecDisabled && 'color-disabled'])}
+                disabled={isDecDisabled}
                 onClick={() => {
-                    const newValue = value - step;
+                    if (!isValidTmpValue || tmpValue === undefined) {
+                        return;
+                    }
+                    const newValue = tmpValue - step;
+                    setTmpValue?.(newValue);
                     onChange?.(newValue);
                 }}
             >
                 <Icon name="minus" alt={c('Action').t`Decrease`} className="mauto" />
             </button>
-            {disabled ? (
-                <div className="mt0-5 flex mb0-5">
-                    <span className="w6e border-left border-right text-center color-disabled">{value / divider}</span>
-                </div>
-            ) : (
-                <label htmlFor={id} className="mt0-5 flex mb0-5">
-                    <select
-                        value={value}
-                        disabled={disabled}
-                        id={id}
-                        className="w6e border-left border-right text-center"
-                        onChange={({ target: { value: newValue } }) => {
-                            onChange?.(+newValue);
-                        }}
-                    >
-                        {range(min, max + 1, step).map((quantity) => {
-                            return (
-                                <option key={quantity} value={quantity}>
-                                    {`${quantity / divider}`}
-                                </option>
-                            );
-                        })}
-                    </select>
-                </label>
-            )}
+            <label htmlFor={id} className="mt0-5 flex mb0-5">
+                <input
+                    autoComplete="off"
+                    min={min}
+                    max={max}
+                    value={tmpValue}
+                    id={id}
+                    className="w6e border-left border-right text-center"
+                    onBlur={() => {
+                        if (!isValidTmpValue) {
+                            // Revert to the latest valid value upon blur
+                            setTmpValue(value);
+                        }
+                    }}
+                    onChange={({ target: { value: newValue } }) => {
+                        if (newValue === '') {
+                            setTmpValue?.(undefined);
+                            return;
+                        }
+                        const newIntValue = parseInt(newValue, 10);
+                        setTmpValue?.(newIntValue);
+                        if (getIsValidValue(newIntValue)) {
+                            onChange?.(newIntValue);
+                        }
+                    }}
+                />
+            </label>
             <button
                 type="button"
                 title={c('Action').t`Increase`}
-                className={classnames(['p0-5 flex', (disabled || value + step > max) && 'color-disabled'])}
-                disabled={disabled || value + step > max}
+                className={classnames(['p0-5 flex', isIncDisabled && 'color-disabled'])}
+                disabled={isIncDisabled}
                 onClick={() => {
-                    const newValue = value + step;
+                    if (!isValidTmpValue || tmpValue === undefined) {
+                        return;
+                    }
+                    const newValue = tmpValue + step;
+                    setTmpValue?.(newValue);
                     onChange?.(newValue);
                 }}
             >
@@ -126,105 +143,125 @@ const addonLimit = {
     [ADDON_NAMES.SPACE]: MAX_SPACE_ADDON,
     [ADDON_NAMES.MEMBER]: MAX_MEMBER_ADDON,
     [ADDON_NAMES.DOMAIN]: MAX_DOMAIN_PRO_ADDON,
+    [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: MAX_DOMAIN_PRO_ADDON,
+    [ADDON_NAMES.DOMAIN_ENTERPRISE]: MAX_DOMAIN_PRO_ADDON,
     [ADDON_NAMES.ADDRESS]: MAX_ADDRESS_ADDON,
     [ADDON_NAMES.VPN]: MAX_VPN_ADDON,
+    [ADDON_NAMES.MEMBER_MAIL_PRO]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_DRIVE_PRO]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_BUNDLE_PRO]: MAX_MEMBER_ADDON,
+    [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
 } as const;
+
+const AccountSizeCustomiser = ({
+    addon,
+    maxUsers,
+    price,
+    input,
+    mode,
+}: {
+    addon: Plan;
+    maxUsers: number;
+    price: ReactElement;
+    input: ReactElement;
+    mode?: CustomiserMode;
+}) => {
+    const contactMailToLink = <a key={1} href="mailto:ProtonForBusiness@proton.me">{c('Action').t`contact`}</a>;
+    return (
+        <div className="mb2">
+            {mode !== 'signup' && (
+                <>
+                    <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
+                    <div className="mb1">
+                        {c('Info')
+                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Customer Success team.`}
+                    </div>
+                </>
+            )}
+            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
+                <label
+                    htmlFor={addon.Name}
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
+                >
+                    {c('Info').t`Number of users`}
+                    <Info
+                        className="ml0-5"
+                        title={c('Info').t`A user is an account associated with a single username, mailbox, and person`}
+                    />
+                </label>
+                {input}
+            </div>
+        </div>
+    );
+};
+const AdditionalOptionsCustomiser = ({
+    addon,
+    price,
+    input,
+    mode,
+}: {
+    addon: Plan;
+    price: ReactElement;
+    input: ReactElement;
+    mode: CustomiserMode;
+}) => {
+    return (
+        <>
+            {mode !== 'signup' && (
+                <>
+                    <h2 className="text-2xl text-bold mb1">{c('Info').t`Additional options`}</h2>
+                    <div className="mb1">
+                        {c('Info')
+                            .jt`Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${price}.`}
+                    </div>
+                </>
+            )}
+            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
+                <label
+                    htmlFor={addon.Name}
+                    className="min-w14e flex-item-fluid plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
+                >
+                    {c('Info').t`Custom email domains`}
+                    <Info
+                        className="ml0-5"
+                        title={c('Info')
+                            .t`Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.`}
+                    />
+                </label>
+                {input}
+            </div>
+        </>
+    );
+};
 
 const ProtonPlanCustomizer = ({
     cycle,
+    mode,
     currency,
     onChangePlanIDs,
     planIDs,
     plansMap,
-    plansNameMap,
     plans,
     currentPlan,
     organization,
-    service,
     loading,
     className,
     ...rest
 }: Props) => {
-    const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
-    const mailAppName = getAppName(APPS.PROTONMAIL);
-
-    const isVpn = service === PLAN_SERVICES.VPN;
-    const appName = isVpn ? vpnAppName : mailAppName;
-    const addonsToShow = isVpn ? VPNAddons : MailAddons;
-    const supportedAddons = getSupportedAddons(planIDs, plans);
-
-    const professionalPlan = (
-        <InlineLinkButton
-            key="professional-plan"
-            onClick={() => {
-                onChangePlanIDs(
-                    switchPlan({ planIDs, plans, planID: plansNameMap[PLANS.PROFESSIONAL].ID, service, organization })
-                );
-            }}
-        >
-            {mailAppName} Professional
-        </InlineLinkButton>
-    );
-
-    const addonLabel = {
-        [ADDON_NAMES.SPACE]: c('Info').t`Storage GB`,
-        [ADDON_NAMES.MEMBER]: c('Info').t`Users`,
-        [ADDON_NAMES.DOMAIN]: c('Info').t`Domains`,
-        [ADDON_NAMES.ADDRESS]: c('Info').t`Addresses`,
-        [ADDON_NAMES.VPN]: c('Info').t`Connections`,
-    } as const;
-
-    const infoTooltip = {
-        [ADDON_NAMES.SPACE]: '',
-        [ADDON_NAMES.MEMBER]: '',
-        [ADDON_NAMES.DOMAIN]: c('Info').t`Use your own custom email domain addresses, e.g., you@yourname.com`,
-        [ADDON_NAMES.ADDRESS]: c('Info').t`Add additional addresses to your account like user2@protonmail.com`,
-        [ADDON_NAMES.VPN]: c('Info')
-            .t`Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.`,
-    } as const;
-
-    const mailPlus = `${MAIL_APP_NAME} Plus`;
-    const mailProfessional = `${MAIL_APP_NAME} Professional`;
-    const vpnPlus = `${VPN_APP_NAME} ${PLAN_NAMES[PLANS.VPNPLUS]}`;
-    const maxVpn = plansNameMap[PLANS.VPNPLUS].MaxVPN;
+    const supportedAddons = getSupportedAddons(planIDs);
 
     return (
         <div className={classnames(['plan-customiser', className])} {...rest}>
-            <h2 className="text-2xl text-bold">{c('Title').t`${appName} customization`}</h2>
-            {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PLUS].ID] ? (
-                <p>
-                    {c('Info').t`${mailPlus} is limited to one user and starts with 5 GB of storage.`}
-                    <br />
-                    {c('Info').jt`Switch to ${professionalPlan} to add more users.`}
-                </p>
-            ) : null}
-            {service === PLAN_SERVICES.VPN && planIDs[plansNameMap[PLANS.VPNPLUS].ID] ? (
-                <p>
-                    {c('Info').ngettext(
-                        msgid`${vpnPlus} includes ${maxVpn} VPN connection.`,
-                        `${vpnPlus} includes ${maxVpn} VPN connections.`,
-                        maxVpn
-                    )}
-                    <br />
-                    {planIDs[plansNameMap[PLANS.PROFESSIONAL].ID]
-                        ? c('Info').t`Each additional connection can be assigned to users in your organization.`
-                        : c('Info').jt`Switch to ${professionalPlan} to add more connections.`}
-                </p>
-            ) : null}
-            {service === PLAN_SERVICES.MAIL && planIDs[plansNameMap[PLANS.PROFESSIONAL].ID] ? (
-                <p>{c('Info')
-                    .t`${mailProfessional} starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.`}</p>
-            ) : null}
-            {addonsToShow.map((addonName) => {
-                const addon = plansNameMap[addonName];
+            {Object.entries(supportedAddons).map(([addonName]) => {
+                const addon = plansMap[addonName];
 
                 if (!addon) {
                     return null;
                 }
 
                 const addonNameKey = addon.Name as ADDON_NAMES;
-                const infoTooltipText = infoTooltip[addonNameKey];
-                const quantity = planIDs[addon.ID] ?? 0;
+                const quantity = planIDs[addon.Name] ?? 0;
+
                 const isSupported = !!supportedAddons[addonNameKey];
                 const addonMaxKey = AddonKey[addonNameKey];
                 const addonMultiplier = addon[addonMaxKey] ?? 1;
@@ -234,56 +271,73 @@ const ProtonPlanCustomizer = ({
                 const value = isSupported
                     ? min + quantity * addonMultiplier
                     : Object.entries(planIDs).reduce(
-                          (acc, [planID, quantity]) => acc + plansMap[planID][addonMaxKey] * quantity,
+                          (acc, [planName, quantity]) => acc + plansMap[planName][addonMaxKey] * quantity,
                           0
                       );
                 const divider = addonNameKey === ADDON_NAMES.SPACE ? GIGA : 1;
+                const maxTotal = max / divider;
 
-                return (
-                    <div
-                        className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap"
-                        key={addon.ID}
-                    >
-                        <label
-                            htmlFor={addon.ID}
-                            className="min-w14e plan-customiser-addon-label text-bold pr0-5 on-mobile-w100"
-                        >
-                            {addonLabel[addonNameKey]}
-                        </label>
-                        {isSupported ? (
-                            <ButtonNumberInput
-                                id={addon.ID}
-                                value={value}
-                                min={min}
-                                max={max}
-                                divider={divider}
-                                disabled={loading || !isSupported}
-                                onChange={(newQuantity) => {
-                                    onChangePlanIDs(
-                                        setQuantity(planIDs, addon.ID, (newQuantity - min) / addonMultiplier)
-                                    );
-                                }}
-                                step={addonMultiplier}
-                            />
-                        ) : (
-                            <ButtonNumberInput id={addon.ID} disabled value={value} divider={divider} />
-                        )}
-                        {infoTooltipText && (
-                            <div className="flex-item-noshrink ml1">
-                                <Info title={infoTooltipText} />
-                            </div>
-                        )}
-                        <div className="mlauto text-right text-cut pl0-5 on-tiny-mobile-w100 on-tiny-mobile-text-left on-tiny-mobile-pl0">
-                            {isSupported && quantity ? (
-                                <Price currency={currency} prefix="+" suffix={c('Suffix for price').t`/ month`}>
-                                    {(quantity * addon.Pricing[cycle]) / cycle}
-                                </Price>
-                            ) : null}
-                            {isSupported && !quantity ? <span>{c('Info').t`Included`}</span> : null}
-                            {!isSupported && <span className="color-hint">{c('Info').t`Not customizable`}</span>}
-                        </div>
-                    </div>
+                const addonPriceInline = (
+                    <Price key={`${addon.Name}-1`} currency={currency} suffix={c('Suffix for price').t`per month`}>
+                        {addon.Pricing[cycle] / cycle}
+                    </Price>
                 );
+                const input = (
+                    <ButtonNumberInput
+                        key={`${addon.Name}-input`}
+                        id={addon.Name}
+                        value={value / divider}
+                        min={min / divider}
+                        max={maxTotal}
+                        disabled={loading || !isSupported}
+                        onChange={(newQuantity) => {
+                            onChangePlanIDs(
+                                setQuantity(planIDs, addon.Name, (newQuantity * divider - min) / addonMultiplier)
+                            );
+                        }}
+                        step={addonMultiplier}
+                    />
+                );
+
+                if (
+                    [
+                        ADDON_NAMES.MEMBER,
+                        ADDON_NAMES.MEMBER_BUNDLE_PRO,
+                        ADDON_NAMES.MEMBER_DRIVE_PRO,
+                        ADDON_NAMES.MEMBER_MAIL_PRO,
+                        ADDON_NAMES.MEMBER_ENTERPRISE,
+                    ].includes(addonNameKey)
+                ) {
+                    return (
+                        <AccountSizeCustomiser
+                            key={`${addon.Name}-size`}
+                            addon={addon}
+                            price={addonPriceInline}
+                            input={input}
+                            maxUsers={maxTotal}
+                            mode={mode}
+                        />
+                    );
+                }
+
+                if (
+                    mode !== 'signup' &&
+                    [ADDON_NAMES.DOMAIN, ADDON_NAMES.DOMAIN_BUNDLE_PRO, ADDON_NAMES.DOMAIN_ENTERPRISE].includes(
+                        addonNameKey
+                    )
+                ) {
+                    return (
+                        <AdditionalOptionsCustomiser
+                            key={`${addon.Name}-options`}
+                            addon={addon}
+                            price={addonPriceInline}
+                            input={input}
+                            mode={mode}
+                        />
+                    );
+                }
+
+                return null;
             })}
         </div>
     );

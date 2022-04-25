@@ -15,12 +15,14 @@ import { useLoading, useNotifications } from '../../../hooks';
 
 import RequestNewCodeModal from './RequestNewCodeModal';
 import VerifyCodeForm from './VerifyCodeForm';
+import Text from './Text';
 import {
     OwnershipCache,
     OwnershipVerificationModel,
     VerificationDataResult,
     VerificationTokenResult,
     HumanVerificationSteps,
+    VerificationModel,
 } from './interface';
 
 const formatMessage = (text: string, embolden: string) => {
@@ -119,13 +121,13 @@ const OwnershipMethod = ({
         };
     }, [method]);
 
-    const handleCode = async (code: string, tokenType: 'sms' | 'email' | 'ownership-email' | 'ownership-sms') => {
-        if (tokenType !== 'ownership-email' && tokenType !== 'ownership-sms') {
+    const handleCode = async (code: string, verificationModel: VerificationModel) => {
+        if (verificationModel.method !== 'ownership-email' && verificationModel.method !== 'ownership-sms') {
             throw new Error('Invalid verification model');
         }
         try {
             const { Token } = await api<VerificationTokenResult>(verifyVerificationCode(token, code));
-            await onSubmit(Token, tokenType);
+            await onSubmit(Token, verificationModel.method);
         } catch (error: any) {
             const { code } = getApiError(error);
 
@@ -178,9 +180,9 @@ const OwnershipMethod = ({
             />
             <VerifyCodeForm
                 description={
-                    <div className="text-pre-wrap mb2">
+                    <Text className="text-pre-wrap">
                         {formatMessage(verificationModel.description, verificationModel.value)}
-                    </div>
+                    </Text>
                 }
                 verification={verificationModel}
                 onSubmit={handleCode}

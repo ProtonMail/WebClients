@@ -36,10 +36,6 @@ const DowngradeModal = ({ user, onConfirm, onClose, ...rest }: Props) => {
             onClose={onClose}
             {...rest}
         >
-            <div className="mb1">
-                {c('Info')
-                    .t`Once you click "Downgrade", it may take a few minutes to downgrade your account to a Free plan. `}
-            </div>
             <Alert className="mb1" type="error">
                 {(() => {
                     if (hasBundle) {

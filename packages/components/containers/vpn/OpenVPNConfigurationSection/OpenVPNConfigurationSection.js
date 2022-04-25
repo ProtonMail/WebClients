@@ -48,7 +48,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
     const { result: vpnResult, loading: vpnLoading, fetch: fetchUserVPN } = useUserVPN();
     const [{ hasPaidVpn }] = useUser();
     const userVPN = vpnResult?.VPN || {};
-    const isBasicVPN = userVPN?.PlanName === 'vpnbasic';
+    const isBasicVPN = userVPN?.PlanName === PLANS.VPNBASIC;
     const maxTier = userVPN?.MaxTier || 0;
     const [category, setCategory] = useState(CATEGORY.FREE);
     const excludeCategoryMap = excludedCategories.reduce((map, excludedCategory) => {
@@ -141,7 +141,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
         fetchLogicals(30_000);
     }, []);
 
-    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPNPLUS)?.MaxVPN;
+    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPN)?.MaxVPN || 0;
 
     const vpnPlus = `${VPN_APP_NAME} Plus`;
     const vpnBasic = `${VPN_APP_NAME} Basic`;
@@ -258,7 +258,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                             <SettingsParagraph>
                                 <span className="block">{c('Info')
                                     .t`${vpnPlus} or ${visionary} required for Secure Core feature.`}</span>
-                                <SettingsLink path="/dashboard">{c('Link').t`Learn more`}</SettingsLink>
+                                <SettingsLink path="/upgrade">{c('Link').t`Learn more`}</SettingsLink>
                             </SettingsParagraph>
                         )}
                         <ConfigsTable
@@ -387,11 +387,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     </li>
                                 </ul>
                                 <div>
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        color="norm"
-                                        path={`/dashboard?plan=${PLANS.VPNPLUS}`}
-                                    >
+                                    <ButtonLike as={SettingsLink} color="norm" path={`/dashboard?plan=${PLANS.VPN}`}>
                                         {c('Action').t`Get ${vpnPlus}`}
                                     </ButtonLike>
                                 </div>

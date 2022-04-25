@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLAN_NAMES, PLANS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SettingsSectionWide, SettingsParagraph, UpgradeBanner } from '../account';
 import { useUser } from '../../hooks';
 
@@ -7,17 +8,18 @@ const CatchAllSection = () => {
     const [{ isAdmin, isSubUser }] = useUser();
     const hasPermission = isAdmin && !isSubUser;
 
+    const plus = PLAN_NAMES[PLANS.MAIL];
+    const bundle = PLAN_NAMES[PLANS.BUNDLE];
+
     return (
         <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/catch-all/">
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/catch-all/')}>
                 {c('Info')
-                    .t`If you have a custom domain with ${MAIL_APP_NAME}, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).`}
+                    .t`If you have a custom domain with ${MAIL_APP_NAME}, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).`}
             </SettingsParagraph>
             {!hasPermission && (
                 <UpgradeBanner>
-                    {c('Message').t`Upgrade to a ${PLAN_NAMES[PLANS.VISIONARY]} or ${
-                        PLAN_NAMES[PLANS.PROFESSIONAL]
-                    } plan to use a catch-all address and unlock premium features`}
+                    {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
                 </UpgradeBanner>
             )}
         </SettingsSectionWide>

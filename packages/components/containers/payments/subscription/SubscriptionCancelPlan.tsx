@@ -1,12 +1,12 @@
-import { Icon } from '../../../components';
+import { Icon, Info } from '../../../components';
 import { classnames } from '../../../helpers';
-import { PlanFeature } from './PlanSelection';
+import { PlanCardFeatureDefinition } from '../features/interface';
 import './SubscriptionCancelPlan.scss';
 
 interface Props {
     name: string;
     info: string;
-    features: PlanFeature[];
+    features: PlanCardFeatureDefinition[];
     downgrade?: boolean;
 }
 
@@ -18,21 +18,19 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
             </h3>
             <p className="text-lg subscription-cancel-plan-info">{info}</p>
             {features.length ? (
-                <ul className="unstyled m0">
-                    {features.map(({ notIncluded, content, info }) => {
-                        if (notIncluded) {
-                            return;
-                        }
-
+                <ul className="unstyled mt1">
+                    {features.map((feature) => {
                         return (
-                            <li key={content?.toString()} className="flex flex-nowrap mb0-5">
+                            <li key={feature.featureName} className="flex flex-nowrap mb0-5">
                                 <span className={classnames(['flex-item-noshrink mr1', downgrade && 'color-weak'])}>
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
                                 <span className={classnames(['mr0-25', downgrade && 'text-strike color-weak'])}>
-                                    {content}
+                                    {feature.featureName}
                                 </span>
-                                <span>{info}</span>
+                                <span>
+                                    {feature.tooltip ? <Info className="ml0-5" title={feature.tooltip} /> : null}
+                                </span>
                             </li>
                         );
                     })}

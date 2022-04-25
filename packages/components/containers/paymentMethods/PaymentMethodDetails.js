@@ -43,7 +43,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
     if (type === PAYMENT_METHOD_TYPES.CARD) {
         const bankIcon = getBankSvg(BANKS[Brand]);
         return (
-            <Bordered className="bg-weak inline-flex flex-column w100 pl2 pr2 pb2">
+            <Bordered className="bg-weak rounded inline-flex flex-column w100 p2">
                 {bankIcon ? <img width="70" src={bankIcon} alt={Brand} className="mb1" /> : null}
                 <span className="block mb1 opacity-40">{c('Label').t`Card number`}</span>
                 <div className="ratio-container-5-1 text-center">
@@ -77,7 +77,7 @@ const PaymentMethodDetails = ({ type, details = {} }) => {
     if (type === PAYMENT_METHOD_TYPES.PAYPAL) {
         const bankIcon = getBankSvg('paypal');
         return (
-            <Bordered className="p2">
+            <Bordered className="p2 rounded">
                 <div>
                     <img width="70" src={bankIcon} alt="PayPal" className="mb1" />
                 </div>

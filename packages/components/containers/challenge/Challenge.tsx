@@ -12,6 +12,8 @@ import { ChallengeLog } from './interface';
 interface Props extends Omit<ChallengeProps, 'src' | 'onError' | 'onSuccess'> {
     type: number;
     name: string;
+    iframeClassName?: string;
+    noLoader?: boolean;
     onSuccess: (challengeLog: ChallengeLog[]) => void;
     onError: (challengeLog: ChallengeLog[]) => void;
 }
@@ -21,7 +23,9 @@ const Challenge = ({
     style,
     onSuccess,
     onError,
+    noLoader,
     bodyClassName,
+    iframeClassName,
     loaderClassName,
     name,
     type,
@@ -47,8 +51,8 @@ const Challenge = ({
     const errorTimeout = (15 + errorRetry * 5 - jitter) * 1000;
 
     return (
-        <div style={style}>
-            {isLoading ? <Loader className={loaderClassName} /> : null}
+        <>
+            {isLoading && !noLoader ? <Loader className={loaderClassName} /> : null}
 
             {hasError ? (
                 <ChallengeError />
@@ -57,7 +61,7 @@ const Challenge = ({
                     key={errorRetry}
                     src={challengeSrc}
                     errorTimeout={errorTimeout}
-                    className="w100"
+                    className={iframeClassName ? iframeClassName : 'w100'}
                     bodyClassName={classnames(['color-norm bg-norm', bodyClassName])}
                     style={style}
                     onSuccess={() => {
@@ -79,7 +83,7 @@ const Challenge = ({
                     {children}
                 </ChallengeFrame>
             )}
-        </div>
+        </>
     );
 };
 

@@ -9,6 +9,7 @@ import { produceFork, produceOAuthFork } from '@proton/shared/lib/authentication
 import {
     APPS,
     APPS_CONFIGURATION,
+    CLIENT_TYPES,
     isSSOMode,
     REQUIRES_INTERNAL_EMAIL_ADDRESS,
     SSO_PATHS,
@@ -17,7 +18,7 @@ import {
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { FeaturesProvider, ModalsChildren, SSOForkProducer, useApi, useClearPaidCookie } from '@proton/components';
+import { FeaturesProvider, ModalsChildren, SSOForkProducer, useApi } from '@proton/components';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -29,20 +30,29 @@ import { getOAuthLastAccess, OAuthLastAccess } from '@proton/shared/lib/api/oaut
 import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import AccountPublicApp from './AccountPublicApp';
 import EmailUnsubscribeContainer from '../public/EmailUnsubscribeContainer';
-import SwitchAccountContainer, { getSearchParams as getSwitchSearchParams } from '../public/SwitchAccountContainer';
+import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import OAuthConfirmForkContainer from '../public/OAuthConfirmForkContainer';
-import SignupContainer, { getSearchParams as getSignupSearchParams } from '../signup/SignupContainer';
+import SignupContainer from '../signup/SignupContainer';
 import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import ForgotUsernameContainer from '../public/ForgotUsernameContainer';
 import LoginContainer from '../login/LoginContainer';
-import Layout from '../public/Layout';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
+import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
 import Unauthenticated from './Unauthenticated';
 import { getToAppName } from '../public/helper';
 
 const getPathFromLocation = (location: H.Location) => {
     return [location.pathname, location.search, location.hash].join('');
+};
+
+export const getSearchParams = (search: string) => {
+    const searchParams = new URLSearchParams(search);
+
+    const maybeService = (searchParams.get('service') || searchParams.get('product')) as SERVICES_KEYS | undefined;
+    const service = maybeService ? SERVICES[maybeService] : undefined;
+
+    return { service };
 };
 
 const getLocalRedirect = (pathname?: string) => {
@@ -73,6 +83,11 @@ const getLocalRedirect = (pathname?: string) => {
     };
 };
 
+const UNAUTHENTICATED_ROUTES = {
+    UNSUBSCRIBE: '/unsubscribe',
+    VERIFY_EMAIL: '/verify-email',
+};
+
 interface Props {
     onLogin: ProtonLoginCallback;
     locales: TtagLocaleMap;
@@ -89,21 +104,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
-    useClearPaidCookie();
 
-    const signupSearchParams = useMemo(() => {
-        return location.pathname.includes(SSO_PATHS.SIGNUP) || location.pathname.includes(SSO_PATHS.REFER)
-            ? getSignupSearchParams(history.location.search)
-            : undefined;
+    const { service: toTargetService } = useMemo(() => {
+        return getSearchParams(location.search);
     }, []);
-
-    const switchSearchParams = useMemo(() => {
-        return location.pathname.includes(SSO_PATHS.SWITCH)
-            ? getSwitchSearchParams(history.location.search)
-            : undefined;
-    }, []);
-
-    const toTargetService = signupSearchParams?.service || switchSearchParams?.service;
 
     const [localRedirect] = useState(() => {
         // Handle special case going for internal vpn on account settings.
@@ -119,7 +123,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             SSO_PATHS.FORGOT_USERNAME,
             SSO_PATHS.FORK,
             SSO_PATHS.RESET_PASSWORD,
-            '/unsubscribe',
+            SSO_PATHS.INVITE,
+            SSO_PATHS.OAUTH_AUTHORIZE,
+            SSO_PATHS.OAUTH_CONFIRM_FORK,
+            ...Object.values(UNAUTHENTICATED_ROUTES),
         ].includes(location.pathname)
             ? undefined
             : location;
@@ -135,13 +142,6 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         (forkState?.type === SSOType.internal && forkState.payload?.app) || localRedirect?.toApp || toTargetService;
     // Require internal setup if an app is specified
     const shouldSetupInternalAddress = maybeTargetApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybeTargetApp);
-    // Or just default
-    const toApp = maybeTargetApp || DEFAULT_APP;
-    const toOAuthName =
-        forkState?.type === SSOType.oauth
-            ? forkState.payload.clientInfo.Name
-            : confirmForkData?.payload.clientInfo.Name;
-    const toAppName = toOAuthName || getToAppName(toApp);
 
     const handleProduceFork = async (data: ProduceForkData) => {
         if (data.type === SSOType.internal) {
@@ -163,7 +163,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const { keyPassword, UID, User, LocalID, persistent } = args;
+        const { keyPassword, UID, User, LocalID, persistent, toApp: maybeSelectedApp } = args;
+        const toApp = maybeSelectedApp || maybeTargetApp || DEFAULT_APP;
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
@@ -192,7 +193,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         if (localRedirect || !isSSOMode) {
             return onLogin({
                 ...args,
-                path: localRedirect?.pathname || '',
+                path:
+                    args.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS
+                        ? `${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}/vpn-apps?prompt`
+                        : localRedirect?.pathname || '',
             });
         }
         const pathname = toApp === APPS.PROTONMAIL ? '/inbox' : '/';
@@ -271,16 +275,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         history.push('/login');
     };
 
+    const toOAuthName =
+        forkState?.type === SSOType.oauth
+            ? forkState.payload.clientInfo.Name
+            : confirmForkData?.payload.clientInfo.Name;
+    const toInternalAppName = maybeTargetApp && getToAppName(maybeTargetApp);
+    const toAppName = toOAuthName || toInternalAppName;
+
     return (
         <>
             <ModalsChildren />
             <Switch>
-                <Route path="/unsubscribe/:subscriptions">
+                <Route path={`${UNAUTHENTICATED_ROUTES.UNSUBSCRIBE}/:subscriptions`}>
                     <Unauthenticated>
                         <EmailUnsubscribeContainer />
                     </Unauthenticated>
                 </Route>
-                <Route path="/verify-email">
+                <Route path={UNAUTHENTICATED_ROUTES.VERIFY_EMAIL}>
                     <Unauthenticated>
                         <ValidateRecoveryEmailContainer />
                     </Unauthenticated>
@@ -303,6 +314,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
                     <SignupInviteContainer
+                        clientType={CLIENT_TYPES.MAIL}
                         onValid={(inviteData) =>
                             history.replace({
                                 pathname: '/signup',
@@ -321,65 +333,63 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     >
                         <FeaturesProvider>
                             <ForceRefreshContext.Provider value={refresh}>
-                                <Layout toApp={toApp}>
-                                    <Unauthenticated>
-                                        <Switch location={location}>
-                                            {confirmForkData && (
-                                                <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
-                                                    <OAuthConfirmForkContainer
-                                                        name={toAppName}
-                                                        image={confirmForkData.payload.clientInfo.Logo}
-                                                        onConfirm={() => {
-                                                            return produceOAuthFork({
-                                                                api,
-                                                                ...confirmForkData.payload,
-                                                            });
-                                                        }}
-                                                        onCancel={() => {
-                                                            setForkState(undefined);
-                                                            setConfirmForkState(undefined);
-                                                        }}
-                                                    />
-                                                </Route>
-                                            )}
-                                            <Route path={SSO_PATHS.SWITCH}>
-                                                <SwitchAccountContainer
-                                                    activeSessions={activeSessions}
-                                                    toAppName={toAppName}
-                                                    onLogin={handleLogin}
-                                                    onSignOut={handleSignOut}
-                                                    onSignOutAll={handleSignOutAll}
-                                                    onAddAccount={handleAddAccount}
+                                <Unauthenticated>
+                                    <Switch location={location}>
+                                        {confirmForkData && toAppName && (
+                                            <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                                <OAuthConfirmForkContainer
+                                                    name={toAppName}
+                                                    image={confirmForkData.payload.clientInfo.Logo}
+                                                    onConfirm={() => {
+                                                        return produceOAuthFork({
+                                                            api,
+                                                            ...confirmForkData.payload,
+                                                        });
+                                                    }}
+                                                    onCancel={() => {
+                                                        // Force a hard refresh to get active sessions to refresh when signing up
+                                                        window.location.pathname = '/switch';
+                                                    }}
                                                 />
                                             </Route>
-                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
-                                                <SignupContainer
-                                                    toApp={toApp}
-                                                    toAppName={toAppName}
-                                                    onLogin={handleLogin}
-                                                    onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
-                                                    signupParameters={signupSearchParams}
-                                                />
-                                            </Route>
-                                            <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                                <ResetPasswordContainer onLogin={handleLogin} />
-                                            </Route>
-                                            <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                                <ForgotUsernameContainer />
-                                            </Route>
-                                            <Route path={SSO_PATHS.LOGIN}>
-                                                <LoginContainer
-                                                    toAppName={toAppName}
-                                                    showContinueTo={!!toOAuthName}
-                                                    shouldSetupInternalAddress={shouldSetupInternalAddress}
-                                                    onLogin={handleLogin}
-                                                    onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
-                                                />
-                                            </Route>
-                                            <Redirect to={SSO_PATHS.LOGIN} />
-                                        </Switch>
-                                    </Unauthenticated>
-                                </Layout>
+                                        )}
+                                        <Route path={SSO_PATHS.SWITCH}>
+                                            <SwitchAccountContainer
+                                                activeSessions={activeSessions}
+                                                toAppName={toAppName}
+                                                onLogin={handleLogin}
+                                                onSignOut={handleSignOut}
+                                                onSignOutAll={handleSignOutAll}
+                                                onAddAccount={handleAddAccount}
+                                            />
+                                        </Route>
+                                        <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
+                                            <SignupContainer
+                                                clientType={CLIENT_TYPES.MAIL}
+                                                toApp={maybeTargetApp}
+                                                toAppName={toAppName}
+                                                onLogin={handleLogin}
+                                                onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
+                                            />
+                                        </Route>
+                                        <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                            <ResetPasswordContainer onLogin={handleLogin} />
+                                        </Route>
+                                        <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                            <ForgotUsernameContainer />
+                                        </Route>
+                                        <Route path={SSO_PATHS.LOGIN}>
+                                            <LoginContainer
+                                                toAppName={toAppName}
+                                                showContinueTo={!!toOAuthName}
+                                                shouldSetupInternalAddress={shouldSetupInternalAddress}
+                                                onLogin={handleLogin}
+                                                onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
+                                            />
+                                        </Route>
+                                        <Redirect to={SSO_PATHS.LOGIN} />
+                                    </Switch>
+                                </Unauthenticated>
                             </ForceRefreshContext.Provider>
                         </FeaturesProvider>
                     </AccountPublicApp>

@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import { Children, isValidElement } from 'react';
 
 interface StrippedListProps {
     children: React.ReactNode;
@@ -7,12 +7,8 @@ interface StrippedListProps {
 const StrippedList = ({ children }: StrippedListProps) => (
     <ul className="bg-weak-even unstyled">
         {Children.map(children, (child) => {
-            if (React.isValidElement(child)) {
-                return (
-                    <li className="px1 py0-5">
-                        <child.type {...child.props} />
-                    </li>
-                );
+            if (isValidElement(child)) {
+                return child;
             }
             return null;
         })}

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -6,18 +6,21 @@ import {
     useActiveBreakpoint,
     TopNavbarListItemContactsDropdown,
     TopNavbarListItemSettingsDropdown,
+    UserDropdown,
+    useModalState,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { SearchField } from './search/SearchField';
 import ClearSearchDataButton from './search/ClearSearchDataButton';
+import DriveOnboardingModal from '../onboarding/DriveOnboardingModal';
 
 interface Props {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
-    floatingPrimary: React.ReactNode;
-    logo: React.ReactNode;
-    searchBox?: React.ReactNode;
+    floatingPrimary: ReactNode;
+    logo: ReactNode;
+    searchBox?: ReactNode;
     title?: string;
 }
 
@@ -30,23 +33,28 @@ export const DriveHeader = ({
     searchBox,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
+    const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
     return (
-        <PrivateHeader
-            logo={logo}
-            title={title}
-            contactsButton={<TopNavbarListItemContactsDropdown />}
-            settingsButton={
-                <TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT}>
-                    <ClearSearchDataButton />
-                </TopNavbarListItemSettingsDropdown>
-            }
-            expanded={isHeaderExpanded}
-            onToggleExpand={toggleHeaderExpanded}
-            isNarrow={isNarrow}
-            floatingButton={floatingPrimary}
-            searchBox={searchBox}
-        />
+        <>
+            {renderOnboardingModal && <DriveOnboardingModal showGenericSteps {...onboardingModal} />}
+            <PrivateHeader
+                userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
+                logo={logo}
+                title={title}
+                contactsButton={<TopNavbarListItemContactsDropdown />}
+                settingsButton={
+                    <TopNavbarListItemSettingsDropdown to="/drive" toApp={APPS.PROTONACCOUNT}>
+                        <ClearSearchDataButton />
+                    </TopNavbarListItemSettingsDropdown>
+                }
+                expanded={isHeaderExpanded}
+                onToggleExpand={toggleHeaderExpanded}
+                isNarrow={isNarrow}
+                floatingButton={floatingPrimary}
+                searchBox={searchBox}
+            />
+        </>
     );
 };
 

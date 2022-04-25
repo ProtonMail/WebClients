@@ -4,6 +4,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { getParsedHeadersFirstValue, inSigningPeriod } from '@proton/shared/lib/mail/messages';
 import { c, msgid } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MessageState, MessageVerification } from '../../logic/messages/messagesTypes';
 import { MapStatusIcons, STATUS_ICONS_FILLS, StatusIcon, X_PM_HEADERS } from '../../models/crypto';
 
@@ -496,10 +497,10 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
 
 export const getSendIconHref = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {
     if (fill === CHECKMARK || fill === WARNING) {
-        return 'https://protonmail.com/support/knowledge-base/digital-signature/';
+        return getKnowledgeBaseUrl('/digital-signature/');
     }
     if (isEncrypted) {
         return undefined;
     }
-    return 'https://protonmail.com/support/knowledge-base/what-is-encrypted/';
+    return getKnowledgeBaseUrl('/what-is-encrypted/');
 };

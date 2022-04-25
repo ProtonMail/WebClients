@@ -4,6 +4,7 @@
 	&-button {
 		&#{&} {
 			background-color: transparent;
+			padding: rem(4); // Custom padding for theme cards so that the svg takes the full width
 		}
 	}
 

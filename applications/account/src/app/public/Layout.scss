@@ -4,16 +4,71 @@
 @import '~@proton/styles/scss/config';
 
 .sign-layout {
-	// nice mountains image
 	&-bg {
-		background: url(./bg-mountains.svg) 0 0 no-repeat;
-		background-size: cover;
-		background-position: bottom;
+		background-color: var(--background-norm);
 
 		@include respond-to($breakpoint-small, 'max') {
-			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151b38 89.91%);
-			background-position: top;
+			padding-inline: 1em;
 		}
+
+		@include respond-to($breakpoint-tiny, 'min') {
+			background: top center / cover no-repeat #f7f5ff;
+		}
+
+		/*
+		 * Here we are optimizing the loading of the big background image
+		 * depending on viewport width and orientation
+		 */
+
+		@media (orientation: landscape)
+			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-landscape.jpg);
+		}
+
+		@media (orientation: portrait)
+			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-portrait.jpg);
+		}
+
+		@media (orientation: landscape)
+			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-landscape.jpg);
+		}
+
+		@media (orientation: portrait)
+			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-portrait.jpg);
+		}
+
+		@media (orientation: landscape)
+			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-landscape.jpg);
+		}
+
+		@media (orientation: portrait)
+			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-portrait.jpg);
+		}
+
+		@media (min-width: #{em($breakpoint-medium-landscape + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-large, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1500.jpg);
+		}
+
+		@media (min-width: #{em($breakpoint-large + 1, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-2000.jpg);
+		}
+	}
+
+	h1,
+	.h1 {
+		font-family: 'Arizona Flare', var(--font-family);
 	}
 
 	// main content
@@ -22,27 +77,67 @@
 	border-radius: var(--border-radius-lg);
 
 	// fix for plans, same as in subscription flow
-	&:not(.mw30r) {
+	&:not([class*='mw']) {
 		max-inline-size: rem(1500);
 	}
 
+	// had to add this adaptation because not enough space for back button as we increased size of main content
+	@include respond-to(1120) {
+		&-two-column {
+			&#{&} {
+				flex-direction: column;
+				align-items: center;
+
+				.sign-layout {
+					margin-block-end: 2em;
+				}
+			}
+		}
+	}
+
 	&-backbutton {
-		inset-block-start: 1em;
-		inset-inline-start: 1em;
+		inset-block-start: 12em; // fixed height to avoid shifts
+		inset-inline-start: -4em;
+
+		@include respond-to($breakpoint-small) {
+			inset-block-start: calc(-2em - 1.5em);
+			inset-inline-start: calc(50% - 50vw + 1em);
+		}
 	}
 
 	&-header {
-		padding-inline: em(48);
+		padding-inline: em(44);
 		padding-block: 0.5em 0;
-	}
-	&-title {
-		font-size: em(16);
-	}
-	&-main-content {
-		padding-inline: em(48);
-		padding-block: em(24) em(48);
+
 		@include respond-to($breakpoint-small) {
 			padding-inline: em(20);
+		}
+
+		@include respond-to($breakpoint-tiny, 'max') {
+			padding-inline: 0;
+		}
+	}
+
+	&-title {
+		font-size: em(28);
+		font-weight: normal;
+
+		@include respond-to($breakpoint-tiny, 'max') {
+			padding-inline: 0;
+		}
+	}
+
+	&-main-content {
+		padding-inline: em(44);
+		padding-block: em(24) em(44);
+
+		@include respond-to($breakpoint-small) {
+			padding-inline: em(20);
+			padding-block-start: 0;
+		}
+
+		@include respond-to($breakpoint-tiny, 'max') {
+			padding-inline: 0;
 		}
 	}
 
@@ -59,6 +154,7 @@
 	.payment-left {
 		inline-size: 15em;
 	}
+
 	.payment-right {
 		inline-size: rem(460);
 		margin-inline: auto;
@@ -83,12 +179,15 @@
 		@include respond-to(768) {
 			grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 		}
+
 		@include respond-to(720) {
 			grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 		}
+
 		@include respond-to($breakpoint-small) {
 			grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 		}
+
 		@include respond-to($breakpoint-tiny) {
 			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 		}
@@ -100,12 +199,15 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 	grid-gap: 1em;
+
 	@include respond-to(768) {
 		grid-template-columns: repeat(auto-fill, minmax(8em, 1fr));
 	}
+
 	@include respond-to($breakpoint-small) {
 		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
 	}
+
 	@include respond-to($breakpoint-tiny) {
 		grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 	}
@@ -116,6 +218,7 @@
 .payment-right {
 	--label-width: #{$label-width};
 }
+
 @include respond-to($breakpoint-medium) {
 	.payment-container {
 		--label-width: 45%;
@@ -138,12 +241,12 @@
 	}
 }
 
-.signup-footer-link {
-	&:focus,
-	&:hover {
-		color: rgb(255 255 255 / 0.5);
-	}
-}
+// .signup-footer-link {
+// 	&:focus,
+// 	&:hover {
+// 		color: rgb(255 255 255 / 0.5);
+// 	}
+// }
 
 .old-link::before {
 	position: absolute;

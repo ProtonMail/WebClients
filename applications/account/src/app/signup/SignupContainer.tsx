@@ -1,513 +1,239 @@
 import { useEffect, useRef, useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
-import * as History from 'history';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
-import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import {
     APP_NAMES,
-    CYCLE,
-    PAYMENT_METHOD_TYPES,
-    PLAN_SERVICES,
-    PLAN_TYPES,
-    PLANS,
-    TOKEN_TYPES,
-    ADDON_NAMES,
-    COUPON_CODES,
     APPS,
-    PLAN_NAMES,
-    MAIL_APP_NAME,
+    BRAND_NAME,
+    CLIENT_TYPES,
+    CYCLE,
+    DEFAULT_CURRENCY,
+    PLANS,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
-import { checkSubscription, subscribe } from '@proton/shared/lib/api/payments';
+import { getPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { c } from 'ttag';
 import {
     Api,
     Currency,
     Cycle,
     HumanVerificationMethodType,
+    PaymentMethodStatus,
     Plan,
-    SubscriptionCheckResponse,
-    User,
-    User as tsUser,
 } from '@proton/shared/lib/interfaces';
-import { getAllAddresses } from '@proton/shared/lib/api/addresses';
-import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import { updateLocale } from '@proton/shared/lib/api/settings';
-import { noop } from '@proton/shared/lib/helpers/function';
-import { handleSetupAddress, handleSetupKeys } from '@proton/shared/lib/keys';
-import { localeCode } from '@proton/shared/lib/i18n';
-import { getUser } from '@proton/shared/lib/api/user';
 import {
-    Button,
-    ChallengeResult,
+    ButtonLike,
     FeatureCode,
-    HumanVerificationForm,
     HumanVerificationSteps,
     OnLoginCallback,
-    Payment as PaymentComponent,
-    PlanSelection,
-    SubscriptionCheckout,
     useApi,
-    useConfig,
-    useLoading,
-    useModals,
-    useMyLocation,
-    usePayment,
-    usePlans,
-    useVPNCountriesCount,
-    useLocalState,
+    useErrorHandler,
     useFeature,
-    ReferralFeaturesList,
+    useLoading,
+    useLocalState,
+    useMyLocation,
+    useVPNCountriesCount,
+    useVPNServersCount,
 } from '@proton/components';
-import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
-import { handlePaymentToken } from '@proton/components/containers/payments/paymentTokenHelper';
-import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
-import { getHasPlanType, hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import BackButton from '../public/BackButton';
-import CreateAccountForm from './CreateAccountForm';
-import RecoveryForm from './RecoveryForm';
 import {
-    HumanVerificationError,
     InviteData,
     PlanIDs,
-    SERVICES,
-    SERVICES_KEYS,
     SIGNUP_STEPS,
+    SignupActionResponse,
+    SignupCacheResult,
     SignupModel,
+    SignupType,
+    SubscriptionData,
 } from './interfaces';
 import { DEFAULT_SIGNUP_MODEL } from './constants';
-import { defaultPersistentKey, getHasAppExternalSignup, getToAppName } from '../public/helper';
-import createHumanApi from './helpers/humanApi';
-import CreatingAccount from './CreatingAccount';
-import handleCreateUser from './helpers/handleCreateUser';
-import handleCreateExternalUser from './helpers/handleCreateExternalUser';
-import createAuthApi from './helpers/authApi';
-import Header from '../public/Header';
-import Content from '../public/Content';
-import Main from '../public/Main';
-import Footer from '../public/Footer';
+import { defaultPersistentKey, getHasAppExternalSignup } from '../public/helper';
 import SignupSupportDropdown from './SignupSupportDropdown';
-import VerificationCodeForm from './VerificationCodeForm';
-import CheckoutButton from './CheckoutButton';
+import Layout from '../public/Layout';
+import {
+    handleCreateAccount,
+    handleDisplayName,
+    handleDone,
+    handleHumanVerification,
+    handlePayment,
+    handleSaveRecovery,
+    handleSelectPlan,
+    handleSetupUser,
+} from './signupActions';
+import { getPlanIDsFromParams, getSignupSearchParams, SignupParameters } from './searchParams';
+import { getPlanFromPlanIDs, getSubscriptionPrices } from './helper';
+import AccountStep from './AccountStep';
+import RecoveryStep from './RecoveryStep';
+import ReferralStep from './ReferralStep';
+import UpsellStep from './UpsellStep';
+import LoadingStep from './LoadingStep';
+import CongratulationsStep from './CongratulationsStep';
+import PaymentStep from './PaymentStep';
+import VerificationStep from './VerificationStep';
+import ExploreStep from './ExploreStep';
 
 const {
     ACCOUNT_CREATION_USERNAME,
     NO_SIGNUP,
-    RECOVERY_EMAIL,
-    RECOVERY_PHONE,
-    VERIFICATION_CODE,
-    PLANS: PLANS_STEP,
+    SAVE_RECOVERY,
+    CONGRATULATIONS,
+    UPSELL,
     TRIAL_PLAN,
-    CUSTOMISATION,
     PAYMENT,
     HUMAN_VERIFICATION,
     CREATING_ACCOUNT,
+    EXPLORE,
 } = SIGNUP_STEPS;
-
-interface CacheRef {
-    payload?: { [key: string]: string };
-}
-
-export const getSearchParams = (search: History.Search) => {
-    const searchParams = new URLSearchParams(search);
-
-    const maybeCurrency = searchParams.get('currency') as Currency | undefined;
-    const currency = maybeCurrency && ['EUR', 'CHF', 'USD'].includes(maybeCurrency) ? maybeCurrency : undefined;
-
-    const maybeCycle = Number(searchParams.get('billing')) || Number(searchParams.get('cycle'));
-    const cycle = [CYCLE.MONTHLY, CYCLE.YEARLY, CYCLE.TWO_YEARS].includes(maybeCycle) ? maybeCycle : undefined;
-
-    const maybeUsers = Number(searchParams.get('users'));
-    const users = maybeUsers >= 1 && maybeUsers <= 5000 ? maybeUsers : undefined;
-    const maybeDomains = Number(searchParams.get('domains'));
-    const domains = maybeDomains >= 1 && maybeDomains <= 100 ? maybeDomains : undefined;
-
-    const maybeService = searchParams.get('service') as SERVICES_KEYS | undefined;
-    const service = maybeService ? SERVICES[maybeService] : undefined;
-
-    // plan is validated by comparing plans after it's loaded
-    const maybePreSelectedPlan = searchParams.get('plan');
-    // static sites use 'business' for pro plan
-    const preSelectedPlan = maybePreSelectedPlan === 'business' ? 'professional' : maybePreSelectedPlan;
-
-    const referrer = searchParams.get('referrer') || undefined; // referral ID
-    const invite = searchParams.get('invite') || undefined;
-
-    return { currency, cycle, preSelectedPlan, service, users, domains, referrer, invite };
-};
-
-const getPlanIDsFromParams = (plans: Plan[], signupParameters: ReturnType<typeof getSearchParams>) => {
-    if (!signupParameters.preSelectedPlan) {
-        return;
-    }
-
-    if (signupParameters.preSelectedPlan === 'free') {
-        return {};
-    }
-
-    const plan = plans.find(({ Name, Type }) => {
-        return Name === signupParameters.preSelectedPlan && Type === PLAN_TYPES.PLAN;
-    });
-
-    if (!plan) {
-        return;
-    }
-
-    const planIDs = { [plan.ID]: 1 };
-
-    if (plan.Name === PLANS.PROFESSIONAL) {
-        if (signupParameters.users !== undefined) {
-            const usersAddon = plans.find(({ Name }) => Name === ADDON_NAMES.MEMBER);
-            const amount = signupParameters.users - plan.MaxMembers;
-            if (usersAddon && amount > 0) {
-                planIDs[usersAddon.ID] = amount;
-            }
-        }
-
-        if (signupParameters.domains !== undefined) {
-            const domainsAddon = plans.find(({ Name }) => Name === ADDON_NAMES.DOMAIN);
-            const amount = signupParameters.domains - plan.MaxDomains;
-            if (domainsAddon && amount > 0) {
-                planIDs[domainsAddon.ID] = amount;
-            }
-        }
-    }
-
-    return planIDs;
-};
-
-const getCardPayment = async ({
-    api,
-    createModal,
-    currency,
-    checkResult,
-    paymentParameters,
-}: {
-    createModal: (modal: JSX.Element) => void;
-    api: Api;
-    currency: string;
-    paymentParameters: PaymentParameters;
-    checkResult: SubscriptionCheckResponse;
-}) => {
-    return handlePaymentToken({
-        params: {
-            ...paymentParameters,
-            Amount: checkResult.AmountDue,
-            Currency: currency,
-        },
-        api,
-        createModal,
-        mode: '',
-    });
-};
 
 interface Props {
     onLogin: OnLoginCallback;
     toApp?: APP_NAMES;
     toAppName?: string;
     onBack?: () => void;
-    signupParameters?: ReturnType<typeof getSearchParams>;
+    clientType: CLIENT_TYPES;
 }
 
-const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBack, signupParameters }: Props) => {
-    const api = useApi();
-    const location = useLocation<{ invite?: InviteData }>();
+const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Props) => {
+    const normalApi = useApi();
     const history = useHistory();
-    const inviteRef = useRef(location.state?.invite);
-    const { createModal } = useModals();
-    const { CLIENT_TYPE } = useConfig();
-    const [plans = []] = usePlans();
+    const location = useLocation<{ invite?: InviteData }>();
+    const [signupParameters] = useState(() => {
+        return getSignupSearchParams(location.search);
+    });
+    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
+    const ignoreHumanApi = <T,>(config: any) =>
+        silentApi<T>({
+            ...config,
+            ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
+        });
     const [myLocation] = useMyLocation();
-    const [loading, withLoading] = useLoading();
     const [vpnCountries] = useVPNCountriesCount();
+    const [vpnServers] = useVPNServersCount();
+    const [loading, withLoading] = useLoading();
     const externalSignupFeature = useFeature(FeatureCode.ExternalSignup);
     const mailAppName = getAppName(APPS.PROTONMAIL);
+    const [[steps, step], setStep] = useState<[SIGNUP_STEPS[], SIGNUP_STEPS]>([
+        [],
+        SIGNUP_STEPS.ACCOUNT_CREATION_USERNAME,
+    ]);
+    const [humanVerificationStep, setHumanVerificationStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
+
+    const errorHandler = useErrorHandler();
+    const cacheRef = useRef<SignupCacheResult | undefined>(undefined);
 
     const [persistent] = useLocalState(true, defaultPersistentKey);
 
-    const cacheRef = useRef<CacheRef>({});
-    const [humanApi] = useState(() => createHumanApi({ api, createModal }));
-
-    const addChallengePayload = (payload: ChallengeResult) => {
-        const oldPayload = cacheRef.current.payload || {};
-        cacheRef.current.payload = {
-            ...oldPayload,
-            ...payload,
-        };
-    };
-
-    const [model, setModel] = useState<SignupModel>({
-        ...DEFAULT_SIGNUP_MODEL,
-        ...(signupParameters?.currency ? { currency: signupParameters?.currency } : {}),
-        ...(signupParameters?.cycle ? { cycle: signupParameters?.cycle } : {}),
-        checkResult: getFreeCheckResult(signupParameters?.currency, signupParameters?.cycle),
-    });
+    const [model, setModel] = useState<SignupModel>(DEFAULT_SIGNUP_MODEL);
 
     const setModelDiff = (diff: Partial<SignupModel>) => {
         return setModel((model) => ({
             ...model,
             ...diff,
-            // Never add last step into the history
-            ...(diff.step && !diff.stepHistory && model.step !== CREATING_ACCOUNT && diff.step !== model.step
-                ? // Filter out self from history, can happen for human verification
-                  { stepHistory: [...model.stepHistory.filter((x) => x !== model.step), model.step] }
-                : undefined),
         }));
     };
 
-    const isInternalSignup = !!model.username;
-
-    const {
-        card,
-        setCard,
-        handleCardSubmit,
-        cardErrors,
-        method,
-        setMethod,
-        parameters: paymentParameters,
-        canPay,
-        paypal,
-        paypalCredit,
-    } = usePayment({
-        amount: model.checkResult.AmountDue,
-        currency: model.currency,
-        onPay({ Payment }: PaymentParameters) {
-            if (!Payment) {
-                throw new Error('Missing payment details');
-            }
-            if (isInternalSignup && 'Token' in Payment?.Details) {
-                humanApi.setToken(Payment.Details.Token, TOKEN_TYPES.PAYMENT);
-            }
-            // eslint-disable-next-line @typescript-eslint/no-use-before-define
-            handleFinalizeSignup({ payment: Payment }).catch(noop);
-        },
-    });
-
-    const handleFinalizeSignup = async ({
-        planIDs = model.planIDs,
-        payment,
-    }: { planIDs?: PlanIDs; payment?: Payment } = {}) => {
-        const isBuyingPaidPlan = hasPlanIDs(planIDs);
-
-        let actualPayment = payment;
-        const {
-            checkResult,
-            step: oldStep,
-            username,
-            password,
-            email,
-            recoveryEmail,
-            recoveryPhone,
-            isReferred,
-            domains,
-            currency,
-            cycle,
-        } = model;
-
-        if (isBuyingPaidPlan && method === PAYMENT_METHOD_TYPES.CARD) {
-            const { Payment } = await getCardPayment({
-                currency,
-                createModal,
-                api,
-                paymentParameters,
-                checkResult,
-            });
-            if (isInternalSignup && Payment && 'Token' in Payment.Details) {
-                // Use payment token to prove humanity for internal paid account
-                humanApi.setToken(Payment.Details.Token, TOKEN_TYPES.PAYMENT);
-            }
-            actualPayment = Payment;
-        }
-
-        const invite = inviteRef.current;
-        if (isInternalSignup && !humanApi.hasToken() && invite) {
-            humanApi.setToken(`${invite.selector}:${invite.token}`, 'invite');
-        }
-
-        const handleCreate = async (): Promise<{ User: User }> => {
-            const sharedCreationProps = {
-                api: humanApi.api,
-                clientType: CLIENT_TYPE,
-                payload: cacheRef.current.payload,
-                password,
-            };
-            if (!isInternalSignup) {
-                return handleCreateExternalUser({ ...sharedCreationProps, email });
-            }
-            const referralProps = isReferred
-                ? { invite: signupParameters?.invite, referrer: signupParameters?.referrer }
-                : {};
-            try {
-                return await handleCreateUser({
-                    ...sharedCreationProps,
-                    ...referralProps,
-                    username,
-                    recoveryEmail,
-                    recoveryPhone,
-                });
-            } catch (error) {
-                const { code, details } = getApiError(error);
-                if (code === API_CUSTOM_ERROR_CODES.USER_CREATE_TOKEN_INVALID && humanApi.getTokenType() === 'invite') {
-                    inviteRef.current = undefined;
-                    humanApi.clearToken();
-                    // Remove state from history
-                    history.replace(location.pathname);
-                    // Retry the creation without the invite tokens
-                    return handleCreate();
-                }
-                if (code === API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED) {
-                    const { HumanVerificationMethods = [], HumanVerificationToken = '' } = details || {};
-                    throw new HumanVerificationError(HumanVerificationMethods, HumanVerificationToken);
-                }
-                throw error;
-            }
-        };
-
-        try {
-            await handleCreate();
-        } catch (error: any) {
-            if (error instanceof HumanVerificationError) {
-                return setModelDiff({
-                    step: HUMAN_VERIFICATION,
-                    humanVerificationMethods: error.methods,
-                    humanVerificationToken: error.token,
-                });
-            }
-            setModelDiff({ step: oldStep, stepHistory: model.stepHistory });
-            throw error;
-        }
-
-        setModelDiff({ step: CREATING_ACCOUNT });
-
-        try {
-            const authApi = await createAuthApi({
-                api,
-                username: username || email,
-                password,
-            });
-
-            if (hasPlanIDs(planIDs)) {
-                const paymentProps = isReferred
-                    ? { Codes: [COUPON_CODES.REFERRAL], Amount: 0 }
-                    : { Payment: actualPayment };
-                await authApi.api(
-                    subscribe({
-                        Amount: checkResult.AmountDue,
-                        PlanIDs: planIDs,
-                        Currency: currency,
-                        Cycle: cycle,
-                        ...paymentProps, // Overriding Amount
-                    })
-                );
-            }
-
-            const addresses = username
-                ? await handleSetupAddress({ api: authApi.api, domains, username })
-                : await getAllAddresses(authApi.api);
-
-            const keyPassword = addresses.length
-                ? await handleSetupKeys({
-                      api: authApi.api,
-                      addresses,
-                      password,
-                      hasAddressKeyMigrationGeneration: true,
-                  })
-                : undefined;
-
-            const authResponse = authApi.getAuthResponse();
-            const User = await authApi.api<{ User: tsUser }>(getUser()).then(({ User }) => User);
-            await authApi.api(updateLocale(localeCode)).catch(noop);
-            await persistSession({ ...authResponse, User, keyPassword, api, persistent });
-            await onLogin({ ...authResponse, User, keyPassword, flow: 'signup', persistent });
-        } catch (error: any) {
-            // TODO: If any of these requests fail we should probably handle it differently
-            return setModelDiff({ step: oldStep, stepHistory: model.stepHistory });
-        }
-    };
-
     useEffect(() => {
-        const fetchDependencies = async () => {
-            try {
-                const [{ Domains: domains }] = await Promise.all([
-                    api<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                ]);
-                setModelDiff({ domains });
-            } catch (error: any) {
-                return setModelDiff({ step: NO_SIGNUP });
-            }
+        const getSubscriptionData = async (
+            api: Api,
+            plans: Plan[],
+            signupParameters: SignupParameters
+        ): Promise<SubscriptionData> => {
+            const planIDs = getPlanIDsFromParams(plans, signupParameters);
+            const checkResult = await getSubscriptionPrices(
+                api,
+                planIDs || {},
+                signupParameters.currency,
+                signupParameters.cycle,
+                signupParameters.coupon
+            );
+            return {
+                cycle: signupParameters.cycle,
+                currency: signupParameters.currency,
+                checkResult,
+                planIDs: planIDs || {},
+                skipUpsell: !!planIDs,
+            };
         };
-        void withLoading(fetchDependencies());
-    }, []);
 
-    const getSubscriptionPrices = async (planIDs: PlanIDs, currency: Currency, cycle: Cycle, couponCode?: string) => {
-        if (!hasPlanIDs(planIDs)) {
-            return getFreeCheckResult(currency, cycle);
-        }
-        return humanApi.api<SubscriptionCheckResponse>(
-            checkSubscription({
-                PlanIDs: planIDs,
-                Currency: currency,
-                Cycle: cycle,
-                CouponCode: couponCode,
+        const fetchDependencies = async () => {
+            const { referrer, invite } = signupParameters;
+
+            const [{ Domains: domains }, paymentMethodStatus, referralData, Plans] = await Promise.all([
+                normalApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
+                silentApi<PaymentMethodStatus>(getPaymentMethodStatus()),
+                referrer
+                    ? await silentApi(checkReferrer(referrer))
+                          .then(() => ({
+                              referrer: referrer || '',
+                              invite: invite || '',
+                          }))
+                          .catch(() => undefined)
+                    : undefined,
+                silentApi<{ Plans: Plan[] }>(
+                    queryPlans({
+                        Currency: DEFAULT_CURRENCY,
+                        State: 1,
+                    })
+                ).then(({ Plans }) => Plans),
+            ]);
+
+            if (location.pathname === SSO_PATHS.REFER && !referralData) {
+                history.replace(SSO_PATHS.SIGNUP);
+            }
+
+            const subscriptionData = await getSubscriptionData(silentApi, Plans, signupParameters);
+
+            setModelDiff({
+                domains,
+                plans: Plans,
+                paymentMethodStatus,
+                referralData,
+                subscriptionData,
+                inviteData: location.state?.invite,
+            });
+        };
+
+        withLoading(
+            fetchDependencies().catch(() => {
+                setStep([[], NO_SIGNUP]);
             })
         );
-    };
 
-    const preSelectedPlanRunRef = useRef(false);
-    useEffect(() => {
-        if (
-            preSelectedPlanRunRef.current ||
-            !Array.isArray(plans) ||
-            !plans.length ||
-            !signupParameters?.preSelectedPlan
-        ) {
-            return;
-        }
-        preSelectedPlanRunRef.current = true;
-        const planIDs = getPlanIDsFromParams(plans, signupParameters);
-        if (!planIDs) {
-            return;
-        }
-        // Specifically selecting free plan
-        if (planIDs && !hasPlanIDs(planIDs)) {
-            setModelDiff({ planIDs, skipPlanStep: true });
-            return;
-        }
-        const run = async () => {
-            const checkResult = await getSubscriptionPrices(planIDs, model.currency, model.cycle);
-            setModelDiff({ checkResult, planIDs, skipPlanStep: true });
+        return () => {
+            cacheRef.current = undefined;
         };
-        void run();
-    }, [plans]);
-
-    useEffect(() => {
-        if (model.step === PLANS_STEP) {
-            setCard('cvc', '');
-        }
-    }, [model.step]);
-
-    useEffect(() => {
-        const check = async (referrer: string) => {
-            try {
-                await api({ ...checkReferrer(referrer), silence: true });
-                setModelDiff({ isReferred: true });
-            } catch (error) {
-                if (location.pathname === SSO_PATHS.REFER) {
-                    history.replace(SSO_PATHS.SIGNUP);
-                }
-            }
-        };
-        if (signupParameters?.referrer) {
-            void withLoading(check(signupParameters.referrer));
-        }
     }, []);
 
-    const { step } = model;
+    const handleBack = () => {
+        if (!steps.length) {
+            return;
+        }
+        const newSteps = [...steps];
+        const newStep = newSteps.pop()!;
+        setStep([newSteps, newStep]);
+    };
+
+    const handleStep = (to: SIGNUP_STEPS) => {
+        setStep([[...steps, step], to]);
+    };
+
+    const handleResult = (result: SignupActionResponse) => {
+        if (result.to === SIGNUP_STEPS.DONE) {
+            return onLogin(result.session);
+        }
+        cacheRef.current = result.cache;
+        handleStep(result.to);
+    };
+    const handleError = (error: any) => {
+        errorHandler(error);
+    };
+
+    const cache = cacheRef.current;
 
     if (step === NO_SIGNUP) {
         throw new Error('Missing dependencies');
@@ -517,454 +243,349 @@ const SignupContainer = ({ toApp, toAppName = getToAppName(toApp), onLogin, onBa
 
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
-    const [humanVerificationStep, setHumanVerificationStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
-
-    const getHasCustomisationStep = (planIDs: PlanIDs) => {
-        return hasPlanIDs(planIDs) && getHasPlanType(planIDs, plans, PLANS.PROFESSIONAL);
-    };
-
-    const handlePrePlanStep = (diff?: Partial<SignupModel>) => {
-        if (!model.skipPlanStep) {
-            setModelDiff({
-                ...diff,
-                step: PLANS_STEP,
-            });
-            return;
-        }
-
-        if (hasPlanIDs(model.planIDs)) {
-            if (model.isReferred) {
-                // Previous step was recovery method
-                // Subscribing to plus plan with referrer token
-                return handleFinalizeSignup().catch(noop);
-            }
-
-            if (getHasCustomisationStep(model.planIDs)) {
-                setModelDiff({
-                    ...diff,
-                    step: CUSTOMISATION,
-                });
-                return;
-            }
-
-            setModelDiff({
-                ...diff,
-                step: PAYMENT,
-            });
-            return;
-        }
-
-        setModelDiff({
-            ...diff,
-            checkResult: getFreeCheckResult(model.currency, model.cycle),
-            step: CREATING_ACCOUNT,
-        });
-
-        return handleFinalizeSignup().catch(noop);
-    };
-
-    const updateCheckResultTogether = async (
-        planIDs: PlanIDs,
-        currency: Currency,
-        cycle: Cycle,
-        couponCode?: string
-    ) => {
-        setModelDiff({
+    const handleChangeCurrency = async (currency: Currency) => {
+        const checkResult = await getSubscriptionPrices(
+            silentApi,
+            model.subscriptionData.planIDs,
             currency,
+            model.subscriptionData.cycle,
+            model.subscriptionData.checkResult.Coupon?.Code
+        );
+        setModelDiff({
+            subscriptionData: {
+                ...model.subscriptionData,
+                currency,
+                checkResult,
+            },
+        });
+    };
+
+    const handleChangeCycle = async (cycle: Cycle) => {
+        const checkResult = await getSubscriptionPrices(
+            silentApi,
+            model.subscriptionData.planIDs,
+            model.subscriptionData.currency,
             cycle,
+            model.subscriptionData.checkResult.Coupon?.Code
+        );
+        setModelDiff({
+            subscriptionData: {
+                ...model.subscriptionData,
+                cycle,
+                checkResult,
+            },
+        });
+    };
+
+    const handleChangePlanIDs = async (planIDs: PlanIDs) => {
+        const checkResult = await getSubscriptionPrices(
+            silentApi,
             planIDs,
-            checkResult: await getSubscriptionPrices(planIDs, currency, cycle, couponCode),
-        });
-    };
-
-    const handleChangeCurrency = (currency: Currency) => {
+            model.subscriptionData.currency,
+            model.subscriptionData.cycle,
+            model.subscriptionData.checkResult.Coupon?.Code
+        );
         setModelDiff({
-            currency,
-        });
-        void withLoading(updateCheckResultTogether(model.planIDs, currency, model.cycle));
-    };
-
-    const handleChangeCycle = (cycle: Cycle) => {
-        setModelDiff({
-            cycle,
-        });
-        void withLoading(updateCheckResultTogether(model.planIDs, model.currency, cycle));
-    };
-
-    const handleChangePlanIDs = (planIDs: PlanIDs) => {
-        setModelDiff({
-            planIDs,
-        });
-        void withLoading(updateCheckResultTogether(planIDs, model.currency, model.cycle));
-    };
-
-    const handleFinalizePlanIDs = async (planIDs: PlanIDs, step: SIGNUP_STEPS) => {
-        setModelDiff({
-            planIDs,
-            checkResult: await getSubscriptionPrices(planIDs, model.currency, model.cycle),
-            step,
+            subscriptionData: {
+                ...model.subscriptionData,
+                planIDs,
+                checkResult,
+            },
         });
     };
 
-    const selectTrialPlan = () => {
-        const { ID = '' } = plans.find((plan) => plan.Name === PLANS.PLUS) || {};
-        const planIDs = { [ID]: 1 };
-        const cycle = CYCLE.MONTHLY;
-        setModelDiff({
-            planIDs,
-            cycle,
-            checkResult: getFreeCheckResult(model.currency, model.cycle),
-            step: RECOVERY_EMAIL,
-            skipPlanStep: true,
-        });
-    };
-
-    const selectFreePlan = () => {
-        const planIDs = {};
-        setModelDiff({
-            planIDs,
-            checkResult: getFreeCheckResult(model.currency, model.cycle),
-            step: RECOVERY_EMAIL,
-            skipPlanStep: true,
-        });
-    };
-
-    const subscriptionCheckout = (
-        <div className="subscriptionCheckout-column bg-weak on-mobile-w100">
-            <div className="subscriptionCheckout-container">
-                <SubscriptionCheckout
-                    submit={
-                        model.step === CUSTOMISATION ? (
-                            <Button
-                                type="submit"
-                                loading={loading}
-                                color="norm"
-                                onClick={() => {
-                                    // Ensure that the check result is up to date.
-                                    void withLoading(handleFinalizePlanIDs(model.planIDs, PAYMENT));
-                                }}
-                                fullWidth
-                            >{c('Action').t`Proceed to checkout`}</Button>
-                        ) : (
-                            <CheckoutButton
-                                loading={loading}
-                                canPay={canPay}
-                                paypal={paypal}
-                                method={method}
-                                checkResult={model.checkResult}
-                                className="w100"
-                            />
-                        )
-                    }
-                    plans={plans}
-                    checkResult={model.checkResult}
-                    loading={loading}
-                    service={PLAN_SERVICES.MAIL}
-                    currency={model.currency}
-                    cycle={model.cycle}
-                    planIDs={model.planIDs}
-                    onChangeCurrency={handleChangeCurrency}
-                    onChangeCycle={handleChangeCycle}
-                />
-            </div>
-        </div>
-    );
-
-    const getBackDiff = () => {
-        if (!model.stepHistory.length) {
-            return {};
+    const handlePlanSelectionCallback = async (subscriptionDataDiff: Partial<SubscriptionData>) => {
+        if (!cache) {
+            throw new Error('Missing cache');
         }
-        const newStepHistory = [...model.stepHistory];
-        const newStep = newStepHistory.pop();
-        return {
-            step: newStep,
-            stepHistory: newStepHistory,
+        const subscriptionData = {
+            ...model.subscriptionData,
+            ...subscriptionDataDiff,
         };
+        setModelDiff({
+            subscriptionData,
+        });
+        return handleSelectPlan({ cache, api: ignoreHumanApi, subscriptionData }).then(handleResult).catch(handleError);
     };
 
-    const handleBack = () => {
-        setModelDiff(getBackDiff());
-    };
+    const planName = getPlanFromPlanIDs(model.plans, model.subscriptionData.planIDs)?.Title;
+    const verificationModel = cache?.humanVerificationResult?.verificationModel;
 
-    const getCreateAccountTitle = () => {
-        if (model.isReferred) {
-            return c('Title').t`You’ve been invited to try ${mailAppName}`;
+    const handleBackStep = (() => {
+        if (step === ACCOUNT_CREATION_USERNAME) {
+            return onBack && !model.referralData ? onBack : undefined;
         }
-
-        return c('Title').t`Create your Proton Account`;
-    };
-
-    const getCreateAccountSubtitle = () => {
-        if (model.isReferred) {
-            return c('Title').t`Secure email based in Switzerland`;
+        if (step === HUMAN_VERIFICATION) {
+            return () => {
+                if (humanVerificationStep === HumanVerificationSteps.ENTER_DESTINATION) {
+                    handleBack();
+                } else {
+                    setHumanVerificationStep(HumanVerificationSteps.ENTER_DESTINATION);
+                }
+            };
         }
-
-        if (toAppName) {
-            return c('Info').t`to continue to ${toAppName}`;
+        if ([PAYMENT, UPSELL, TRIAL_PLAN, SAVE_RECOVERY].includes(step)) {
+            return handleBack;
         }
+    })();
 
-        return undefined;
-    };
+    const signupType =
+        clientType === CLIENT_TYPES.VPN || toApp === APPS.PROTONVPN_SETTINGS ? SignupType.VPN : SignupType.Username;
+    const upsellPlanName = signupType === SignupType.VPN ? PLANS.VPN : PLANS.BUNDLE;
 
-    return (
-        <Main larger={[PLANS_STEP, CUSTOMISATION, PAYMENT].includes(step)}>
+    const accountData = cache?.accountData;
+
+    const children = (
+        <>
             {step === ACCOUNT_CREATION_USERNAME && (
-                <>
-                    <Header
-                        title={getCreateAccountTitle()}
-                        subTitle={getCreateAccountSubtitle()}
-                        left={onBack && !model.isReferred ? <BackButton onClick={onBack} /> : null}
-                    />
-                    <Content>
-                        <CreateAccountForm
-                            model={model}
-                            onChange={setModelDiff}
-                            humanApi={humanApi}
-                            domains={model.domains}
-                            onSubmit={async (payload) => {
-                                if (payload) {
-                                    addChallengePayload(payload);
-                                }
-                                if (model.signupType === 'email') {
-                                    return handlePrePlanStep();
-                                }
-                                if (model.isReferred) {
-                                    setModelDiff({ step: TRIAL_PLAN });
-                                    return;
-                                }
-                                setModelDiff({ step: RECOVERY_EMAIL });
-                            }}
-                            hasChallenge={!cacheRef.current.payload || !Object.keys(cacheRef.current.payload).length}
-                            hasExternalSignup={hasAppExternalSignup}
-                            loading={externalSignupFeature.loading}
-                        />
-                    </Content>
-                </>
-            )}
-            {(step === RECOVERY_EMAIL || step === RECOVERY_PHONE) && (
-                <>
-                    <Header
-                        title={c('Title').t`Add a recovery method`}
-                        subTitle={c('Title').t`(highly recommended)`}
-                        left={<BackButton onClick={handleBack} />}
-                    />
-                    <Content>
-                        <RecoveryForm
-                            model={model}
-                            onChange={setModelDiff}
-                            defaultCountry={defaultCountry}
-                            hasChallenge={!cacheRef.current.payload || Object.keys(cacheRef.current.payload).length < 2}
-                            onSubmit={(payload) => {
-                                addChallengePayload(payload);
-                                void handlePrePlanStep();
-                            }}
-                            onSkip={(payload) => {
-                                addChallengePayload(payload);
-                                void handlePrePlanStep({ recoveryEmail: '', recoveryPhone: '' });
-                            }}
-                        />
-                    </Content>
-                </>
-            )}
-            {step === VERIFICATION_CODE && (
-                <>
-                    <Header title={c('Title').t`Account verification`} left={<BackButton onClick={handleBack} />} />
-                    <Content>
-                        <VerificationCodeForm
-                            clientType={CLIENT_TYPE}
-                            model={model}
-                            onSubmit={() => {
-                                void handlePrePlanStep();
-                            }}
-                            onBack={handleBack}
-                            humanApi={humanApi}
-                        />
-                    </Content>
-                </>
-            )}
-            {step === PLANS_STEP && (
-                <>
-                    <Header title={c('Title').t`Plan selection`} left={<BackButton onClick={handleBack} />} />
-                    <Content>
-                        <PlanSelection
-                            mode="signup"
-                            loading={loading}
-                            plans={plans || []}
-                            currency={model.currency}
-                            cycle={model.cycle}
-                            planIDs={model.planIDs}
-                            service={PLAN_SERVICES.MAIL}
-                            vpnCountries={vpnCountries}
-                            onChangePlanIDs={async (planIDs) => {
-                                if (!hasPlanIDs(planIDs)) {
-                                    setModelDiff({
-                                        planIDs,
-                                        checkResult: getFreeCheckResult(model.currency, model.cycle),
-                                        step: CREATING_ACCOUNT,
-                                    });
-                                    return handleFinalizeSignup({ planIDs }).catch(noop);
-                                }
-                                return withLoading(
-                                    handleFinalizePlanIDs(
-                                        planIDs,
-                                        getHasCustomisationStep(planIDs) ? CUSTOMISATION : PAYMENT
-                                    )
-                                );
-                            }}
-                            onChangeCurrency={handleChangeCurrency}
-                            onChangeCycle={handleChangeCycle}
-                        />
-                    </Content>
-                </>
-            )}
-            {step === TRIAL_PLAN && (
-                <>
-                    <Header
-                        title={c('Title').t`Try the best of ${MAIL_APP_NAME} for free`}
-                        left={<BackButton onClick={handleBack} />}
-                    />
-                    <Content>
-                        <h1>
-                            {getAppName(APPS.PROTONMAIL)} {PLAN_NAMES[PLANS.PLUS]}
-                        </h1>
-                        <p>{c('Subtitle for trial plan')
-                            .t`The privacy-first Mail and Calendar solution for your everyday communications needs.`}</p>
-                        <ReferralFeaturesList />
-
-                        <Button color="norm" shape="solid" className="mb0-5" onClick={selectTrialPlan} fullWidth>{c(
-                            'Action in trial plan'
-                        ).t`Try free for 30 days`}</Button>
-                        <p className="text-center mt0 mb0-5">
-                            <small className="color-weak">{c('Info').t`No credit card required`}</small>
-                        </p>
-                        <Button color="norm" shape="ghost" onClick={selectFreePlan} fullWidth>{c('Action in trial plan')
-                            .t`No, thanks`}</Button>
-                    </Content>
-                </>
-            )}
-            {step === CUSTOMISATION && (
-                <>
-                    <Header title={c('Title').t`Customize your plan`} left={<BackButton onClick={handleBack} />} />
-                    <Content>
-                        <div className="flex-no-min-children on-mobile-flex-column">
-                            <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
-                                <div className="mlauto mrauto max-w50e divide-y">
-                                    <PlanCustomization
-                                        plans={plans}
-                                        loading={loading}
-                                        currency={model.currency}
-                                        cycle={model.cycle}
-                                        planIDs={model.planIDs}
-                                        service={PLAN_SERVICES.MAIL}
-                                        hasMailPlanPicker={false}
-                                        onChangePlanIDs={handleChangePlanIDs}
-                                        onChangeCycle={handleChangeCycle}
-                                    />
-                                </div>
-                            </div>
-                            {subscriptionCheckout}
-                        </div>
-                    </Content>
-                </>
-            )}
-            {step === PAYMENT && (
-                <>
-                    <Header title={c('Title').t`Checkout`} left={<BackButton onClick={handleBack} />} />
-                    <Content>
-                        <form
-                            name="payment-form"
-                            onSubmit={(event) => {
-                                event.preventDefault();
-                                if (!handleCardSubmit()) {
-                                    return;
-                                }
-                                withLoading(handleFinalizeSignup()).catch(noop);
-                            }}
-                            method="post"
-                        >
-                            <div className="flex-no-min-children on-mobile-flex-column">
-                                <div className="flex-item-fluid on-mobile-w100 on-tablet-landscape-pr1 on-mobile-pr0">
-                                    <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
-                                        {model.checkResult?.AmountDue ? (
-                                            <PaymentComponent
-                                                type="signup"
-                                                paypal={paypal}
-                                                paypalCredit={paypalCredit}
-                                                method={method}
-                                                amount={model.checkResult.AmountDue}
-                                                currency={model.currency}
-                                                card={card}
-                                                onMethod={setMethod}
-                                                onCard={setCard}
-                                                cardErrors={cardErrors}
-                                            />
-                                        ) : (
-                                            <div className="mb1">{c('Info')
-                                                .t`No payment is required at this time.`}</div>
-                                        )}
-                                    </div>
-                                </div>
-                                {subscriptionCheckout}
-                            </div>
-                        </form>
-                    </Content>
-                </>
+                <AccountStep
+                    onBack={handleBackStep}
+                    title={(() => {
+                        if (model.referralData) {
+                            return c('Title').t`You’ve been invited to try ${mailAppName}`;
+                        }
+                        return c('Title').t`Create your ${BRAND_NAME} Account`;
+                    })()}
+                    subTitle={(() => {
+                        if (model.referralData) {
+                            return c('Title').t`Secure email based in Switzerland`;
+                        }
+                        if (toAppName) {
+                            return c('Info').t`to continue to ${toAppName}`;
+                        }
+                        return c('Info').t`One account for all ${BRAND_NAME} services.`;
+                    })()}
+                    defaultEmail={accountData?.email}
+                    defaultUsername={accountData?.username}
+                    defaultSignupType={accountData?.signupType || signupType}
+                    defaultRecovery={(accountData?.signupType === SignupType.VPN && accountData?.recoveryEmail) || ''}
+                    domains={model.domains}
+                    onSubmit={async ({ username, email, recoveryEmail, domain, password, signupType, payload }) => {
+                        const accountData = {
+                            username,
+                            email,
+                            password,
+                            recoveryEmail,
+                            signupType,
+                            payload,
+                            domain,
+                        };
+                        const subscriptionData = {
+                            ...model.subscriptionData,
+                        };
+                        const cache: SignupCacheResult = {
+                            toApp,
+                            // Internal app or oauth app or vpn
+                            ignoreExplore: Boolean(toApp || toAppName || signupType === SignupType.VPN),
+                            generateKeys: clientType === CLIENT_TYPES.MAIL,
+                            accountData,
+                            subscriptionData,
+                            inviteData: model.inviteData,
+                            referralData: model.referralData,
+                            persistent,
+                            clientType,
+                        };
+                        return handleCreateAccount({
+                            cache,
+                            api: ignoreHumanApi,
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                    hasChallenge={!accountData?.payload || !Object.keys(accountData.payload).length}
+                    hasExternalSignup={hasAppExternalSignup}
+                    loading={loading || externalSignupFeature.loading}
+                />
             )}
             {step === HUMAN_VERIFICATION && (
-                <>
-                    <Header
-                        title={c('Title').t`Are you human?`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    humanApi.clearToken();
-                                    if (humanVerificationStep === HumanVerificationSteps.ENTER_DESTINATION) {
-                                        handleBack();
-                                    } else {
-                                        setHumanVerificationStep(HumanVerificationSteps.ENTER_DESTINATION);
-                                    }
-                                }}
-                            />
+                <VerificationStep
+                    onBack={handleBackStep}
+                    defaultCountry={defaultCountry}
+                    defaultEmail={accountData?.signupType === SignupType.VPN ? accountData.recoveryEmail : ''}
+                    token={cache?.humanVerificationData?.token || ''}
+                    methods={cache?.humanVerificationData?.methods || []}
+                    step={humanVerificationStep}
+                    onChangeStep={setHumanVerificationStep}
+                    onClose={() => {
+                        handleBack();
+                    }}
+                    onSubmit={(token: string, tokenType: HumanVerificationMethodType, verificationModel) => {
+                        if (!cache) {
+                            throw new Error('Missing cache');
                         }
-                    />
-
-                    <Content>
-                        <HumanVerificationForm
-                            defaultCountry={defaultCountry}
-                            defaultEmail={model.recoveryEmail}
-                            defaultPhone={model.recoveryPhone}
-                            token={model.humanVerificationToken}
-                            methods={model.humanVerificationMethods}
-                            step={humanVerificationStep}
-                            onChangeStep={setHumanVerificationStep}
-                            onClose={() => {
-                                humanApi.clearToken();
-                                handleBack();
-                            }}
-                            onSubmit={(token: string, tokenType: HumanVerificationMethodType) => {
-                                humanApi.setToken(token, tokenType);
-                                return handleFinalizeSignup();
-                            }}
-                        />
-                    </Content>
-                </>
+                        return handleHumanVerification({
+                            api: ignoreHumanApi,
+                            verificationModel,
+                            cache,
+                            token,
+                            tokenType,
+                        })
+                            .then(handleResult)
+                            .catch((e) => {
+                                handleError(e);
+                                // Important this is thrown so that the human verification form can handle it
+                                throw e;
+                            });
+                    }}
+                />
             )}
-
+            {step === TRIAL_PLAN && (
+                <ReferralStep
+                    onBack={handleBackStep}
+                    onPlan={async (planIDs) => {
+                        // Referral is always free even if there's a plan, and 1 month cycle
+                        const cycle = CYCLE.MONTHLY;
+                        const checkResult = getFreeCheckResult(model.subscriptionData.currency, cycle);
+                        return handlePlanSelectionCallback({ checkResult, planIDs, cycle });
+                    }}
+                />
+            )}
+            {step === UPSELL && (
+                <UpsellStep
+                    onBack={handleBackStep}
+                    currency={model.subscriptionData.currency}
+                    cycle={model.subscriptionData.cycle}
+                    plans={model.plans}
+                    upsellPlanName={upsellPlanName}
+                    onChangeCurrency={handleChangeCurrency}
+                    vpnCountries={vpnCountries}
+                    vpnServers={vpnServers}
+                    onPlan={async (planIDs) => {
+                        const checkResult = await getSubscriptionPrices(
+                            silentApi,
+                            planIDs,
+                            model.subscriptionData.currency,
+                            model.subscriptionData.cycle,
+                            model.subscriptionData.checkResult.Coupon?.Code
+                        );
+                        return handlePlanSelectionCallback({ checkResult, planIDs });
+                    }}
+                />
+            )}
+            {step === PAYMENT && model.paymentMethodStatus && (
+                <PaymentStep
+                    onBack={handleBackStep}
+                    api={normalApi}
+                    paymentMethodStatus={model.paymentMethodStatus}
+                    plans={model.plans}
+                    planName={planName}
+                    subscriptionData={model.subscriptionData}
+                    onChangeCurrency={handleChangeCurrency}
+                    onChangeCycle={handleChangeCycle}
+                    onChangePlanIDs={handleChangePlanIDs}
+                    onPay={(payment) => {
+                        if (!cache) {
+                            throw new Error('Missing cache');
+                        }
+                        const subscriptionData = {
+                            ...model.subscriptionData,
+                            payment,
+                        };
+                        return handlePayment({
+                            api: silentApi,
+                            cache,
+                            subscriptionData,
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                />
+            )}
             {step === CREATING_ACCOUNT && (
-                <>
-                    <Header title={c('Title').t`Creating account`} />
-                    <Content>
-                        <CreatingAccount model={model} />
-                    </Content>
-                </>
+                <LoadingStep
+                    hasPayment={
+                        hasPlanIDs(model.subscriptionData.planIDs) && model.subscriptionData.checkResult.AmountDue > 0
+                    }
+                    onSetup={async () => {
+                        if (!cache) {
+                            throw new Error('Missing cache');
+                        }
+                        return handleSetupUser({ cache, api: silentApi })
+                            .then(handleResult)
+                            .catch((error) => {
+                                handleBack();
+                                handleError(error);
+                            });
+                    }}
+                />
             )}
+            {step === CONGRATULATIONS && (
+                <CongratulationsStep
+                    defaultName={cache?.accountData.username}
+                    planName={planName}
+                    onSubmit={({ displayName }) => {
+                        if (!cache) {
+                            throw new Error('Missing cache');
+                        }
+                        return handleDisplayName({
+                            displayName,
+                            cache,
+                            api: silentApi,
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                />
+            )}
+            {step === SAVE_RECOVERY && (
+                <RecoveryStep
+                    onBack={handleBackStep}
+                    defaultCountry={defaultCountry}
+                    defaultEmail={verificationModel?.method === 'email' ? verificationModel?.value : ''}
+                    defaultPhone={verificationModel?.method === 'sms' ? verificationModel?.value : ''}
+                    onSubmit={({ recoveryEmail, recoveryPhone }) => {
+                        if (!cache) {
+                            throw new Error('Missing cache');
+                        }
+                        return handleSaveRecovery({ cache, api: silentApi, recoveryEmail, recoveryPhone })
+                            .then(handleResult)
+                            .catch(handleError);
+                    }}
+                />
+            )}
+            {step === EXPLORE && (
+                <ExploreStep
+                    onExplore={async (app) => {
+                        if (!cache) {
+                            throw new Error('Missing cache');
+                        }
+                        return handleDone({ cache, toApp: app }).then(handleResult).catch(handleError);
+                    }}
+                />
+            )}
+        </>
+    );
 
-            {[PLANS_STEP, CUSTOMISATION, PAYMENT, CREATING_ACCOUNT].includes(step) ? null : (
-                <Footer>
-                    <SignupSupportDropdown />
-                </Footer>
-            )}
-        </Main>
+    const loginLink = (
+        <ButtonLike
+            as={Link}
+            className="ml0-5 text-semibold"
+            color="norm"
+            shape="outline"
+            pill
+            key="loginLink"
+            to="/login"
+        >{c('Link').t`Sign in`}</ButtonLike>
+    );
+    const hasDecoration = [ACCOUNT_CREATION_USERNAME].includes(step);
+    return (
+        <Layout
+            hasBackButton={!!handleBackStep}
+            topRight={
+                hasDecoration && (
+                    <div>
+                        <div className="text-center">
+                            <span className="no-tiny-mobile">{c('Info').t`Already have an account?`}</span>
+                            <span>{loginLink}</span>
+                        </div>
+                    </div>
+                )
+            }
+            bottomRight={<SignupSupportDropdown />}
+            hasDecoration={hasDecoration}
+        >
+            {children}
+        </Layout>
     );
 };
 

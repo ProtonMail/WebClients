@@ -51,11 +51,5 @@ export type ResetActionResponse =
       }
     | {
           cache: ResetCacheResult;
-          to:
-              | STEPS.REQUEST_RESET_TOKEN
-              | STEPS.REQUEST_RECOVERY_METHODS
-              | STEPS.VALIDATE_RESET_TOKEN
-              | STEPS.DANGER_VERIFICATION
-              | STEPS.NEW_PASSWORD
-              | STEPS.ERROR;
+          to: Exclude<STEPS, STEPS.DONE | STEPS.NO_RECOVERY_METHODS>;
       };

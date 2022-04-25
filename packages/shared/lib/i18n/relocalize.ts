@@ -1,10 +1,10 @@
 import { addLocale as ttagAddLocale, useLocale as ttagUseLocale } from 'ttag';
-import { UserSettings } from '../interfaces';
 import { getBrowserLocale, getClosestLocaleCode } from './helper';
 import { browserDateLocale, dateLocale, dateLocaleCode, defaultDateLocale, localeCode, setDateLocales } from './index';
 import { loadDateLocale } from './loadLocale';
 import { locales } from './locales';
 import { DEFAULT_LOCALE } from '../constants';
+import { Options } from './dateFnLocale';
 
 export const relocalizeText = async ({
     getLocalizedText,
@@ -15,7 +15,7 @@ export const relocalizeText = async ({
     getLocalizedText: () => string;
     newLocaleCode?: string;
     relocalizeDateFormat?: boolean;
-    userSettings: UserSettings;
+    userSettings?: Options;
 }) => {
     const currentLocaleCode = localeCode;
     const [currentDefaultDateLocale, currentBrowserDateLocale, currentDateLocale, currentDateLocaleCode] = [

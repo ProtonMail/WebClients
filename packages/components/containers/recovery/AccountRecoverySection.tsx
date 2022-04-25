@@ -1,17 +1,8 @@
 import { c } from 'ttag';
 import { updateResetEmail, updateResetPhone } from '@proton/shared/lib/api/settings';
-import { APPS } from '@proton/shared/lib/constants';
 
 import { Loader, Toggle } from '../../components';
-import {
-    useConfig,
-    useEventManager,
-    useLoading,
-    useModals,
-    useMyLocation,
-    useNotifications,
-    useUserSettings,
-} from '../../hooks';
+import { useEventManager, useLoading, useModals, useMyLocation, useNotifications, useUserSettings } from '../../hooks';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
 import AuthModal from '../password/AuthModal';
@@ -21,8 +12,6 @@ import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 
-const { PROTONVPN_SETTINGS } = APPS;
-
 const AccountRecoverySection = () => {
     const { createModal } = useModals();
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -30,7 +19,6 @@ const AccountRecoverySection = () => {
     const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
-    const { APP_NAME } = useConfig();
     const [myLocation, loadingMyLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
@@ -61,11 +49,8 @@ const AccountRecoverySection = () => {
         await call();
     };
 
-    const canUsePhoneRecovery = APP_NAME !== PROTONVPN_SETTINGS;
-
-    const text = canUsePhoneRecovery
-        ? c('Info').t`In case you lose your login details, we’ll send you recovery instructions via email or SMS.`
-        : c('Info').t`In case you lose your login details, we’ll send you recovery instructions via email.`;
+    const text = c('Info')
+        .t`In case you lose your login details, we’ll send you recovery instructions via email or SMS.`;
 
     return (
         <SettingsSection>
@@ -100,41 +85,37 @@ const AccountRecoverySection = () => {
                 </SettingsLayoutRight>
             </SettingsLayout>
 
-            {canUsePhoneRecovery && (
-                <>
-                    <hr className="mb2 mt2" />
+            <hr className="mb2 mt2" />
 
-                    <SettingsLayout>
-                        <SettingsLayoutLeft>
-                            <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="phoneInput">
-                                {c('label').t`Recovery phone number`}
-                            </label>
-                        </SettingsLayoutLeft>
-                        <SettingsLayoutRight className="flex-item-fluid">
-                            <RecoveryPhone
-                                className="mb0 on-mobile-mb1"
-                                defaultCountry={defaultCountry}
-                                phone={userSettings.Phone.Value}
-                                hasReset={!!userSettings.Phone.Reset}
-                            />
-                            <div className="flex flex-align-items-center">
-                                <Toggle
-                                    className="mr0-5"
-                                    loading={loadingPhoneReset}
-                                    checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
-                                    id="passwordPhoneResetToggle"
-                                    onChange={({ target: { checked } }) =>
-                                        withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked))
-                                    }
-                                />
-                                <label htmlFor="passwordPhoneResetToggle" className="flex-item-fluid">
-                                    {c('Label').t`Allow recovery by phone`}
-                                </label>
-                            </div>
-                        </SettingsLayoutRight>
-                    </SettingsLayout>
-                </>
-            )}
+            <SettingsLayout>
+                <SettingsLayoutLeft>
+                    <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="phoneInput">
+                        {c('label').t`Recovery phone number`}
+                    </label>
+                </SettingsLayoutLeft>
+                <SettingsLayoutRight className="flex-item-fluid">
+                    <RecoveryPhone
+                        className="mb0 on-mobile-mb1"
+                        defaultCountry={defaultCountry}
+                        phone={userSettings.Phone.Value}
+                        hasReset={!!userSettings.Phone.Reset}
+                    />
+                    <div className="flex flex-align-items-center">
+                        <Toggle
+                            className="mr0-5"
+                            loading={loadingPhoneReset}
+                            checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
+                            id="passwordPhoneResetToggle"
+                            onChange={({ target: { checked } }) =>
+                                withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked))
+                            }
+                        />
+                        <label htmlFor="passwordPhoneResetToggle" className="flex-item-fluid">
+                            {c('Label').t`Allow recovery by phone`}
+                        </label>
+                    </div>
+                </SettingsLayoutRight>
+            </SettingsLayout>
         </SettingsSection>
     );
 };

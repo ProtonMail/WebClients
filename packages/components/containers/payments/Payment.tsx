@@ -7,7 +7,7 @@ import {
     DEFAULT_CURRENCY,
     PAYMENT_METHOD_TYPES,
 } from '@proton/shared/lib/constants';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Currency, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../helpers';
 
@@ -37,6 +37,7 @@ interface Props {
     onCard: (key: string, value: string) => void;
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
+    paymentMethodStatus?: PaymentMethodStatus;
 }
 
 const Payment = ({
@@ -47,6 +48,7 @@ const Payment = ({
     coupon = '',
     paypal,
     paypalCredit,
+    paymentMethodStatus,
     method,
     onMethod,
     card,
@@ -54,7 +56,7 @@ const Payment = ({
     cardErrors,
     noMaxWidth = false,
 }: Props) => {
-    const { paymentMethods, options, loading } = useMethods({ amount, coupon, flow: type });
+    const { paymentMethods, options, loading } = useMethods({ amount, paymentMethodStatus, coupon, flow: type });
     const lastCustomMethod = [...options]
         .reverse()
         .find(
@@ -124,8 +126,8 @@ const Payment = ({
                     noMaxWidth === false && 'max-w37e on-mobile-max-w100 ',
                 ])}
             >
-                <div className="mr1 on-mobile-mr0 border-bottom pb2">
-                    <h2 className="text-2xl text-bold">{c('Label').t`Select a method`}</h2>
+                <div className="mr1 on-mobile-mr0">
+                    {type !== 'signup' && <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment method`}</h2>}
                     <PaymentMethodSelector
                         options={options}
                         method={method}
@@ -134,11 +136,10 @@ const Payment = ({
                     />
                 </div>
                 <div className="mt2">
-                    <h2 className="text-2xl text-bold">{c('Title').t`Payment details`}</h2>
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <CreditCard card={card} errors={cardErrors} onChange={onCard} />
-                            <Alert3DS />
+                            {type !== 'signup' && <Alert3DS />}
                         </>
                     )}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}

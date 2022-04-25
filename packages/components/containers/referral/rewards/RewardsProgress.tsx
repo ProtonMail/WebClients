@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 import { Meter } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 interface Props {
     rewards: number;
@@ -9,13 +8,12 @@ interface Props {
 }
 
 const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
-    const appName = getAppName(APPS.PROTONMAIL);
-    const planName = PLAN_NAMES[PLANS.PLUS];
+    const planName = PLAN_NAMES[PLANS.MAIL];
 
     return (
         <div className="flex flex-justify-space-between flex-align-items-center flex-gap-1 on-tablet-flex-column">
             <div className="flex-item-fluid">
-                <b>{c('Info').t`${appName} ${planName} credits earned`}</b>
+                <b>{c('Info').t`${planName} credits earned`}</b>
             </div>
             <div className="flex-item-fluid">
                 {rewards > 0 && (
@@ -23,7 +21,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
                         value={rewards}
                         max={rewardsLimit}
                         // translator: The months are free months of mailplus subscription. Full sentence can be something like this : "Earned 5 of 18 Mail Plus months"
-                        title={c('Info').t`Earned ${rewards} of ${rewardsLimit} ${appName} ${planName} months.`}
+                        title={c('Info').t`Earned ${rewards} of ${rewardsLimit} ${planName} months.`}
                     />
                 )}
             </div>

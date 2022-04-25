@@ -1,13 +1,6 @@
-import {
-    clearPlanIDs,
-    getHasPlanType,
-    hasPlanIDs,
-    removeService,
-    setQuantity,
-    switchPlan,
-} from '../../lib/helpers/planIDs';
+import { clearPlanIDs, getHasPlanType, hasPlanIDs, setQuantity, switchPlan } from '../../lib/helpers/planIDs';
 import { ADDON_NAMES, PLAN_SERVICES, PLANS } from '../../lib/constants';
-import { Organization, Plan } from '../../lib/interfaces';
+import { Plan } from '../../lib/interfaces';
 
 const MOCK_PLANS = [
     {
@@ -55,20 +48,6 @@ const MOCK_PLANS = [
     { Name: ADDON_NAMES.SPACE, ID: ADDON_NAMES.SPACE, Services: PLAN_SERVICES.MAIL, MaxSpace: 1073741824 },
     { Name: ADDON_NAMES.VPN, ID: ADDON_NAMES.VPN, Services: PLAN_SERVICES.VPN, MaxVPN: 1 },
 ] as Plan[];
-
-describe('removeService', () => {
-    it('should remove visionary', () => {
-        expect(removeService({ visionary: 1 }, MOCK_PLANS, PLAN_SERVICES.VPN)).toEqual({});
-    });
-
-    it('should keep mail', () => {
-        expect(removeService({ plus: 1 }, MOCK_PLANS, PLAN_SERVICES.VPN)).toEqual({ plus: 1 });
-    });
-
-    it('should remove mail', () => {
-        expect(removeService({ plus: 1 }, MOCK_PLANS, PLAN_SERVICES.MAIL)).toEqual({});
-    });
-});
 
 describe('hasPlanType', () => {
     it('should return true if plan type is set', () => {
@@ -185,143 +164,37 @@ describe('clearPlanIDs', () => {
 });
 
 describe('switchPlan', () => {
-    it('should remove same service when switching plans', () => {
+    it('should remove previous plan', () => {
         const planIDs = { [PLANS.VISIONARY]: 1 };
-        const planID = PLANS.PROFESSIONAL;
-        const service = PLAN_SERVICES.MAIL;
-        expect(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service })).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
+        const planID = PLANS.NEW_VISIONARY;
+        expect(switchPlan({ planIDs, planID })).toEqual({
+            [PLANS.NEW_VISIONARY]: 1,
         });
     });
 
-    it('should remove Visionary plan', () => {
-        const planIDs = { [PLANS.VISIONARY]: 1 };
-        const planID = undefined;
-        const service = PLAN_SERVICES.MAIL;
-        expect(switchPlan({ planIDs, planID, plans: MOCK_PLANS, service })).toEqual({});
-    });
-
-    it('should add correct domain add-on', () => {
-        const planIDs = { [PLANS.VISIONARY]: 1 };
-        const planID = PLANS.PROFESSIONAL;
-        const service = PLAN_SERVICES.MAIL;
-        const organization = {
-            UsedDomains: 4,
-        } as Organization;
-        expect(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization })).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [ADDON_NAMES.DOMAIN]: 2,
+    it('should transfer addons', () => {
+        const planIDs = { [PLANS.PROFESSIONAL]: 1, [ADDON_NAMES.DOMAIN]: 5 };
+        const planID = PLANS.BUNDLE_PRO;
+        expect(switchPlan({ planIDs, planID })).toEqual({
+            [PLANS.BUNDLE_PRO]: 1,
+            [ADDON_NAMES.DOMAIN_BUNDLE_PRO]: 5,
         });
     });
 
-    it('should add correct member add-on', () => {
-        const planIDs = { [PLANS.VISIONARY]: 1 };
-        const planID = PLANS.PROFESSIONAL;
-        const service = PLAN_SERVICES.MAIL;
-        const organization = {
-            UsedAddresses: 11,
-        } as Organization;
-        expect(switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization })).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [ADDON_NAMES.MEMBER]: 1,
+    it('should transfer member addons', () => {
+        const planIDs = { [PLANS.PROFESSIONAL]: 1, [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5 };
+        const planID = PLANS.BUNDLE_PRO;
+        expect(switchPlan({ planIDs, planID })).toEqual({
+            [PLANS.BUNDLE_PRO]: 1,
+            [ADDON_NAMES.MEMBER_BUNDLE_PRO]: 5,
         });
     });
 
-    it('should convert active VPN connections when switching from Visionary to Professional', () => {
-        const planIDs = { [PLANS.VISIONARY]: 1 };
-        const planID = PLANS.PROFESSIONAL;
-        const service = PLAN_SERVICES.MAIL;
-        const organization = {
-            UsedVPN: 11,
-        } as Organization;
-        const result = switchPlan({ planIDs, plans: MOCK_PLANS, planID, service, organization });
-        expect(result).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [PLANS.VPNPLUS]: 1,
-            [ADDON_NAMES.VPN]: 1,
-        });
-    });
-
-    it('should keep Proton VPN Plus if already selected when selecting ProtonMail Professional', () => {
-        const result = switchPlan({
-            planIDs: { [PLANS.VPNPLUS]: 1 },
-            plans: MOCK_PLANS,
-            planID: PLANS.PROFESSIONAL,
-            service: PLAN_SERVICES.MAIL,
-        });
-        expect(result).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [PLANS.VPNPLUS]: 1,
-        });
-    });
-
-    it('should keep the Proton VPN Basic plan when selecting ProtonMail Professional', () => {
-        const organization = {
-            UsedVPN: 2,
-            MaxVPN: 2,
-        } as Organization;
-        const result = switchPlan({
-            planIDs: { [PLANS.VPNBASIC]: 1 },
-            plans: MOCK_PLANS,
-            planID: PLANS.PROFESSIONAL,
-            service: PLAN_SERVICES.MAIL,
-            organization,
-        });
-        expect(result).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [PLANS.VPNBASIC]: 1,
-        });
-    });
-
-    it('should keep the Proton VPN Basic plan and Mail plan when selecting ProtonMail Professional', () => {
-        const organization = {
-            UsedVPN: 2,
-            MaxVPN: 2,
-        } as Organization;
-        const result = switchPlan({
-            planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNBASIC]: 1 },
-            plans: MOCK_PLANS,
-            planID: PLANS.PROFESSIONAL,
-            service: PLAN_SERVICES.MAIL,
-            organization,
-        });
-        expect(result).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [PLANS.VPNBASIC]: 1,
-        });
-    });
-
-    it('should keep the Proton VPN Plus plan when selecting ProtonMail Professional', () => {
-        expect(
-            switchPlan({
-                planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1 },
-                plans: MOCK_PLANS,
-                planID: PLANS.PROFESSIONAL,
-                service: PLAN_SERVICES.MAIL,
-            })
-        ).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [PLANS.VPNPLUS]: 1,
-        });
-    });
-
-    it('should handle transfer addons - bonuses', () => {
-        const organization = {
-            UsedVPN: 18,
-            BonusVPN: 2,
-        } as Organization;
-        expect(
-            switchPlan({
-                planIDs: { [PLANS.PLUS]: 1, [PLANS.VPNPLUS]: 1, [ADDON_NAMES.VPN]: 6 },
-                plans: MOCK_PLANS,
-                planID: PLANS.PROFESSIONAL,
-                service: PLAN_SERVICES.MAIL,
-                organization,
-            })
-        ).toEqual({
-            [PLANS.PROFESSIONAL]: 1,
-            [PLANS.VPNPLUS]: 1,
-            [ADDON_NAMES.VPN]: 6,
+    it('should not transfer addons', () => {
+        const planIDs = { [PLANS.PROFESSIONAL]: 1, [ADDON_NAMES.DOMAIN]: 5 };
+        const planID = PLANS.MAIL;
+        expect(switchPlan({ planIDs, planID })).toEqual({
+            [PLANS.MAIL]: 1,
         });
     });
 });

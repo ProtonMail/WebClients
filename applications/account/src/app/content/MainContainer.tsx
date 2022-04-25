@@ -21,6 +21,7 @@ import {
     useIsDataRecoveryAvailable,
     useNewDomainOptIn,
     useOrganization,
+    UserDropdown,
     useRecoveryNotification,
     useToggle,
     useUser,
@@ -75,7 +76,6 @@ const MainContainer = () => {
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.CalendarSubscription,
-        FeatureCode.PaymentsDisabled,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
         features;
@@ -127,6 +127,7 @@ const MainContainer = () => {
 
     const header = (
         <PrivateHeader
+            userDropdown={<UserDropdown />}
             logo={logo}
             title={c('Title').t`Settings`}
             expanded={expanded}

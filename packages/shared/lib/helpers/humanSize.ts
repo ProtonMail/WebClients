@@ -29,7 +29,7 @@ const transformTo = (bytes: number, unit: SizeUnits, withoutUnit: boolean, fract
     return value + suffix;
 };
 
-const humanSize = (input = 0, forceUnit?: SizeUnits, withoutUnit = false) => {
+const humanSize = (input = 0, forceUnit?: SizeUnits, withoutUnit = false, fractionDigits?: number) => {
     const bytes = input;
 
     if (forceUnit) {
@@ -37,18 +37,18 @@ const humanSize = (input = 0, forceUnit?: SizeUnits, withoutUnit = false) => {
     }
 
     if (bytes < units.KB) {
-        return transformTo(bytes, 'B', withoutUnit, 0);
+        return transformTo(bytes, 'B', withoutUnit, fractionDigits === undefined ? 0 : fractionDigits);
     }
 
     if (bytes < units.MB) {
-        return transformTo(bytes, 'KB', withoutUnit);
+        return transformTo(bytes, 'KB', withoutUnit, fractionDigits);
     }
 
     if (bytes < units.GB) {
-        return transformTo(bytes, 'MB', withoutUnit);
+        return transformTo(bytes, 'MB', withoutUnit, fractionDigits);
     }
 
-    return transformTo(bytes, 'GB', withoutUnit);
+    return transformTo(bytes, 'GB', withoutUnit, fractionDigits);
 };
 
 export default humanSize;

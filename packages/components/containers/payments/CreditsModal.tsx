@@ -9,6 +9,7 @@ import {
     PAYMENT_METHOD_TYPES,
 } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {
     ModalTwo,
@@ -101,7 +102,7 @@ const CreditsModal = (props: ModalProps) => {
                     learnMore={
                         APP_NAME === APPS.PROTONVPN_SETTINGS
                             ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                            : 'https://protonmail.com/support/knowledge-base/credit-proration/'
+                            : getKnowledgeBaseUrl('/credit-proration/')
                     }
                 >{c('Info')
                     .jt`Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${i18nCurrency} spent.`}</Alert>

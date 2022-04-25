@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { useState } from 'react';
+import { ReactNode, useState } from 'react';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { Button, Icon, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -11,6 +11,16 @@ import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
 import MnemonicResetPasswordConfirmModal from './MnemonicResetPasswordConfirmModal';
+import Text from '../public/Text';
+
+const BorderedWarningText = ({ children }: { children: ReactNode }) => {
+    return (
+        <div className="mb1 p1 border border-weak rounded">
+            <Icon className="color-danger mr0-5 float-left mt0-25" name="exclamation-circle-filled" size={14} />
+            {children}
+        </div>
+    );
+};
 
 interface Props {
     onSubmit: (value: { method: RecoveryMethod; value: string }) => Promise<void>;
@@ -112,23 +122,24 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                 }
 
                 return (
-                    <div className="mb1-75">
+                    <Text margin="small">
                         {!recoveryMethods.length
                             ? c('Info').t`Unfortunately there is no recovery method saved for this account.`
                             : c('Info').t`To proceed, select an account recovery method so we can verify the request.`}
-                    </div>
+                    </Text>
                 );
             })()}
             <Tabs
+                fullWidth
                 tabs={[
                     recoveryMethods.includes('mnemonic') && {
                         title: c('Recovery method').t`Phrase`,
                         content: (
                             <>
-                                <div className="mb1">
+                                <Text margin="small">
                                     {c('Info')
                                         .t`Please enter the 12-word recovery phrase associated with your account.`}
-                                </div>
+                                </Text>
                                 <MnemonicInputField
                                     disableChange={loading}
                                     value={mnemonic}
@@ -147,18 +158,13 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                         title: c('Recovery method').t`Email`,
                         content: (
                             <>
-                                <div className="mb1">
+                                <Text margin="small">
                                     {c('Info')
                                         .t`We’ll send a reset code to the email address you provided for account recovery.`}
-                                </div>
-                                <div className="mb1">
-                                    <Icon
-                                        className="color-danger mr0-5 float-left mt0-25"
-                                        name="exclamation-circle-filled"
-                                        size={14}
-                                    />
+                                </Text>
+                                <BorderedWarningText>
                                     {warningText} {recommendRecoveryPhraseText}
-                                </div>
+                                </BorderedWarningText>
                                 <InputFieldTwo
                                     key="email"
                                     id="email"
@@ -178,18 +184,13 @@ const RequestResetTokenForm = ({ onSubmit, defaultCountry, methods, defaultMetho
                         title: c('Recovery method').t`Phone number`,
                         content: (
                             <>
-                                <div className="mb1">
+                                <div className="mb1 color-weak">
                                     {c('Info')
                                         .t`We’ll send a reset code to the phone number you provided for account recovery.`}
                                 </div>
-                                <div className="mb1">
-                                    <Icon
-                                        className="color-danger mr0-5 float-left mt0-25"
-                                        name="exclamation-circle-filled"
-                                        size={14}
-                                    />
+                                <BorderedWarningText>
                                     {warningText} {recommendRecoveryPhraseText}
-                                </div>
+                                </BorderedWarningText>
                                 <InputFieldTwo
                                     key="phone"
                                     as={PhoneInput}

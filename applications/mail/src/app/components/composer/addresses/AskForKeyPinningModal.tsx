@@ -1,3 +1,4 @@
+import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
@@ -6,8 +7,8 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from '@proton/components';
-import { c, msgid } from 'ttag';
 
 interface Params {
     contact: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>;
@@ -15,6 +16,7 @@ interface Params {
     publicKeys: OpenPGPKey[];
     privateKeys: OpenPGPKey[];
 }
+
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: Params) => {
     const { contactID, isInternal, emailAddress, bePinnedPublicKey } = contact;
     const {
@@ -38,6 +40,7 @@ interface Props {
     onNotTrust: () => void;
     onError: () => void;
 }
+
 const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError, ...rest }: Props) => {
     const api = useApi();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -77,7 +80,7 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
             loading={loading || loadingUserKeys}
             {...rest}
         >
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/address-verification">
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>
                 {c('Key pinning').ngettext(
                     msgid`You have enabled Address Verification with Trusted Keys for this email address,
                         but no active encryption key has been trusted.

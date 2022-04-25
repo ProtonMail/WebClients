@@ -6,11 +6,10 @@ import { handleSetupKeys } from './setupKeys';
 interface SetupAddressArgs {
     api: Api;
     username: string;
-    domains: string[];
+    domain: string;
 }
 
-export const handleSetupAddress = async ({ api, username, domains }: SetupAddressArgs) => {
-    const [domain = ''] = domains;
+export const handleSetupAddress = async ({ api, username, domain }: SetupAddressArgs) => {
     if (!domain) {
         throw new Error('Missing domain');
     }
@@ -45,7 +44,7 @@ export const handleSetupAddressKeys = async ({
     const addressesToUse =
         availableAddresses?.length > 0
             ? availableAddresses
-            : await handleSetupAddress({ api, domains: availableDomains, username });
+            : await handleSetupAddress({ api, domain: availableDomains[0], username });
 
     return handleSetupKeys({ api, addresses: addressesToUse, password, hasAddressKeyMigrationGeneration });
 };

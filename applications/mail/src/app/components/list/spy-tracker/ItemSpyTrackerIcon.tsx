@@ -10,6 +10,7 @@ import {
     useSpotlightShow,
     useModalState,
 } from '@proton/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import SpyTrackerIcon from './SpyTrackerIcon';
@@ -56,7 +57,7 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
                 <>
                     {c('Spotlight').t`To protect your privacy, Proton blocked email trackers in this message`}
                     <br />
-                    <Href url="https://protonmail.com/support/email-tracker-protection" title="Tracker protection">
+                    <Href url={getKnowledgeBaseUrl('/email-tracker-protection')} title="Tracker protection">
                         {c('Info').t`Learn more`}
                     </Href>
                 </>

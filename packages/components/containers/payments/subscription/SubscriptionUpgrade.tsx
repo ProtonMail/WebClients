@@ -4,7 +4,7 @@ import { CircleLoader } from '../../../components';
 const SubscriptionUpgrade = () => {
     return (
         <>
-            <CircleLoader size="large" className="center flex color-primary" />
+            <CircleLoader size="large" className="center flex color-primary mb0-5" />
             <h1 className="text-xl text-bold mb0">{c('Title').t`Processing`}</h1>
             <p className="text-center mt0-5">{c('Info')
                 .t`Your account is being upgraded, this may take up to 30 seconds.`}</p>

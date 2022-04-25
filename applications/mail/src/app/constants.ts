@@ -1,6 +1,8 @@
 import { defaultESContext } from '@proton/encrypted-search';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl, getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { EncryptedSearchFunctionsMail } from './models/encryptedSearch';
 
 export const MAIN_ROUTE_PATH = '/:labelID?/:elementID?/:messageID?';
@@ -165,19 +167,18 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
 };
 
 export const WELCOME_PANE_OPTIONS_URLS = {
-    plansSelection: '/dashboard',
-    protonShop: 'https://shop.protonmail.com',
-    proton2FA: 'https://protonmail.com/support/knowledge-base/two-factor-authentication/',
-    protonBusiness: 'https://protonmail.com/business/',
-    calendar: 'https://calendar.protonmail.com',
-    vpn: 'https://account.protonmail.com/u/6/vpn/vpn-apps',
+    plansSelection: '/upgrade',
+    protonShop: getShopURL(),
+    proton2FA: getKnowledgeBaseUrl('/two-factor-authentication/'),
+    protonBusiness: getStaticURL('/business/'),
+    calendar: getAppHref('/', APPS.PROTONCALENDAR),
+    vpn: getAppHref('/vpn/vpn-apps', APPS.PROTONACCOUNT),
 };
 
-export const restoringEncryptedMessagesURL =
-    'https://protonmail.com/support/knowledge-base/restoring-encrypted-mailbox/';
+export const restoringEncryptedMessagesURL = getKnowledgeBaseUrl('/restoring-encrypted-mailbox/');
 export const reActivateKeySettingsURL = '/encryption-keys';
 
-export const emailTrackerProtectionURL = 'https://protonmail.com/support/email-tracker-protection';
+export const emailTrackerProtectionURL = getKnowledgeBaseUrl('/email-tracker-protection');
 
 // Used for main action such as "label as", "move to" and "mark as read/unread"
 export const SUCCESS_NOTIFICATION_EXPIRATION = 7500;

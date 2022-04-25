@@ -8,6 +8,7 @@ import {
     NormalizedImporter,
     NON_OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
@@ -239,8 +240,8 @@ const ImportStartStep = ({
         }
 
         const learnMoreLink = isReconnect
-            ? 'https://protonmail.com/support/knowledge-base/import-assistant/#reconnection-errors'
-            : 'https://protonmail.com/support/knowledge-base/import-assistant/#common-questions-and-import-errors';
+            ? getKnowledgeBaseUrl('/import-assistant/#reconnection-errors')
+            : getKnowledgeBaseUrl('/import-assistant/#common-questions-and-import-errors');
 
         return (
             <Alert className="mb1" type="error" learnMore={isRateLimitError ? undefined : learnMoreLink}>

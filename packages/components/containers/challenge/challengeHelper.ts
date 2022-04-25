@@ -2,6 +2,7 @@ import ReactTestUtils from 'react-dom/test-utils';
 import { getBrowserLocale } from '@proton/shared/lib/i18n/helper';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { toBase64 } from '@proton/shared/lib/helpers/file';
 import { Severity } from '@sentry/types';
 
 import { ChallengeLog } from './interface';
@@ -72,7 +73,26 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
             if (trimmedText[0] === '<') {
                 throw new Error(`Invalid data ${styleSrcUrls} ${trimmedText.slice(0, 10)}`);
             }
-            return trimmedText;
+            return Promise.all(
+                [...trimmedText.matchAll(/url\(\/(assets\/[^.]+\.(woff|woff2))\)/g)].map(async (matchArray) => {
+                    const [all, match] = matchArray;
+                    const response = await fetch(match);
+                    const blob = await response.blob();
+                    const dataUrl = await toBase64(blob);
+                    return {
+                        all,
+                        dataUrl,
+                    };
+                })
+            )
+                .then((fontData) => {
+                    return fontData.reduce((acc, cur) => {
+                        return acc.replace(cur.all, `url(${cur.dataUrl})`);
+                    }, trimmedText);
+                })
+                .catch(() => {
+                    return trimmedText;
+                });
         })
     ).then((results) => {
         return results.join('');

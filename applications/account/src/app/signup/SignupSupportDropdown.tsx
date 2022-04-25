@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { BugModal, DropdownMenuButton, DropdownMenuLink, Icon, useModalState } from '@proton/components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import SupportDropdown from '../public/SupportDropdown';
 
 const SignupSupportDropdown = () => {
@@ -14,7 +15,7 @@ const SignupSupportDropdown = () => {
             {render && <BugModal {...bugReportModal} />}
             <SupportDropdown>
                 <DropdownMenuLink
-                    href="https://protonmail.com/support/knowledge-base/common-sign-up-problems-and-solutions/"
+                    href={getKnowledgeBaseUrl('/common-sign-up-problems-and-solutions/')}
                     target="_blank"
                     className="text-left"
                 >

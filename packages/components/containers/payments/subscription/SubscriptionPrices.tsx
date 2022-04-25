@@ -1,7 +1,7 @@
 import { CYCLE } from '@proton/shared/lib/constants';
 import { Currency, Cycle, Plan } from '@proton/shared/lib/interfaces';
 import { c } from 'ttag';
-import { FREE_MAIL_PLAN } from '@proton/shared/lib/subscription/freePlans';
+import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Price } from '../../../components';
 
@@ -12,7 +12,7 @@ interface Props {
     suffix?: string;
 }
 
-const SubscriptionPrices = ({ cycle, currency, plan = FREE_MAIL_PLAN, suffix = c('Suffix').t`/month` }: Props) => {
+const SubscriptionPrices = ({ cycle, currency, plan = FREE_PLAN, suffix = c('Suffix').t`per month` }: Props) => {
     const billedAmount = (
         <Price key="billed-amount" currency={currency}>
             {plan.Pricing[cycle]}

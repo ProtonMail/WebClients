@@ -1,6 +1,7 @@
 import { Icon, Href } from '@proton/components';
 import { c } from 'ttag';
 import { isAutoReply } from '@proton/shared/lib/mail/messages';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
@@ -17,7 +18,7 @@ const ExtraAutoReply = ({ message }: Props) => {
             <Icon name="robot" className="flex-item-noshrink ml0-2 mt0-3" />
             <span className="pl0-5 pr0-5 mt0-25 pb0-25 flex-item-fluid">
                 {c('Info').t`This message is automatically generated as a response to a previous message.`}{' '}
-                <Href href="https://protonmail.com/support/knowledge-base/autoresponder/">
+                <Href href={getKnowledgeBaseUrl('/autoresponder/')}>
                     {c('Info').t`Learn more`}
                 </Href>
             </span>

@@ -1,0 +1,37 @@
+@import '~@proton/styles/scss/config';
+
+.price--large {
+	.amount,
+	.currency {
+		font-size: em(48);
+		line-height: 1.2; // font only takes the place for characters ^^
+	}
+
+	.suffix {
+		color: var(--text-weak);
+	}
+}
+
+// need to adapt fonts for subscription modal... not enough place
+.subscription-modal {
+	.price--large {
+		.amount,
+		.currency {
+			@include respond-to(1050) {
+				font-size: em(36); // not enough space
+			}
+			@include respond-to($breakpoint-medium) {
+				font-size: em(48);
+			}
+			@include respond-to(800) {
+				font-size: em(36); // not enough space
+			}
+			@include respond-to($breakpoint-small) {
+				font-size: em(48);
+			}
+			@include respond-to($breakpoint-tiny) {
+				font-size: em(36); // not enough space
+			}
+		}
+	}
+}

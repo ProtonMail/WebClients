@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { querySessions, revokeOtherSessions, revokeSession } from '@proton/shared/lib/api/auth';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Button,
     Table,
@@ -77,7 +78,7 @@ const SessionsSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl="https://protonmail.com/support/knowledge-base/log-out-all-other-sessions/">
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/log-out-all-other-sessions/')}>
                 {c('Info')
                     .t`Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.`}
             </SettingsParagraph>

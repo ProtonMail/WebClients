@@ -20,6 +20,10 @@
 	block-size: 100vh;
 }
 
+.min-h23r {
+	min-block-size: rem(23);
+}
+
 // .w50 { width: 50%; }
 /* prettier-ignore */
 @each $width in (0, 1, 2, 3, 5, 10, 15, 18, 20, 25, 30, math.div(100,3), 35, 40, 45, 49, 50, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
@@ -86,7 +90,7 @@
 }
 
 // .min-w50e { min-inline-size: 50em; }
-@each $min-width in (1.4, 3, 5, 7, 14, 35) {
+@each $min-width in (1.4, 2, 3, 5, 7, 14, 35) {
 	// inspect to convert to string
 	$fragment-class: str-replace(inspect($min-width), '.', '-');
 
