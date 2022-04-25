@@ -7,6 +7,13 @@ import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import { splitLinkName, adjustName, adjustWindowsLinkName } from '../../links';
 import { StartedNestedLinkDownload } from './interface';
 
+type Entry = {
+    directory?: boolean;
+    name: string;
+    lastModified?: Date;
+    stream?: () => ReadableStream<Uint8Array>;
+};
+
 function getPathString(path: string[]): string {
     return path.length > 0 ? `/${path.join('/')}` : '';
 }
@@ -18,16 +25,7 @@ function getPathString(path: string[]): string {
 export default class ArchiveGenerator {
     stream: ReadableStream<Uint8Array>;
 
-    private writer: {
-        write: (entry: {
-            directory?: boolean;
-            name: string;
-            lastModified?: Date;
-            stream?: () => ReadableStream<Uint8Array>;
-        }) => Promise<void>;
-        close: () => void;
-        abort: (reason?: any) => void;
-    };
+    private writer: WritableStreamDefaultWriter<Entry>;
 
     private canceled: boolean;
 
@@ -37,8 +35,10 @@ export default class ArchiveGenerator {
 
     private originalToAdjustedPath: Map<string, string>;
 
-    constructor() {
-        const { readable, writable } = new ZipWriter();
+    constructor(
+        initZipWriter = (): { readable: ReadableStream<Uint8Array>; writable: WritableStream<Entry> } => new ZipWriter()
+    ) {
+        const { readable, writable } = initZipWriter();
         const writer = writable.getWriter();
 
         this.stream = readable;
@@ -93,7 +93,12 @@ export default class ArchiveGenerator {
             const adjustedName = `${adjustName(index, fixedName)}`;
             const adjustedPath = `${parentPath}/${adjustedName}`;
 
-            if (this.includedFolderPaths.has(adjustedPath.toLowerCase())) {
+            if (
+                this.includedFiles.some(
+                    (file) => file.path === parentPath && file.name.toLowerCase() === adjustedName.toLowerCase()
+                ) ||
+                this.includedFolderPaths.has(adjustedPath.toLowerCase())
+            ) {
                 return deduplicate(index + 1);
             }
             this.originalToAdjustedPath.set(fullPath, adjustedPath);
@@ -114,7 +119,8 @@ export default class ArchiveGenerator {
             if (
                 this.includedFiles.some(
                     (file) => file.path === parentPath && file.name.toLowerCase() === adjustedName.toLowerCase()
-                )
+                ) ||
+                this.includedFolderPaths.has(`${parentPath}/${adjustedName}`)
             ) {
                 return deduplicate(index + 1);
             }
