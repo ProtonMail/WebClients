@@ -13,14 +13,14 @@
     "dependencies": {
         "@noble/ed25519": "1.6.0",
         "@proton/shared": "workspace:packages/shared",
-        "@types/pkijs": "0.0.12",
+        "@types/pkijs": "0.0.13",
         "pkijs": "^2.3.0",
         "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1"
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@types/jasmine": "^3.10.6",
-        "eslint": "^8.13.0",
+        "eslint": "^8.14.0",
         "jasmine": "4.1.0",
         "jasmine-core": "4.1.0",
         "karma": "^6.3.19",
