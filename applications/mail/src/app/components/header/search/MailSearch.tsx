@@ -28,9 +28,10 @@ import { Breakpoints } from '../../../models/utils';
 import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import useEncryptedSearchToggleState from '../useEncryptedSearchToggleState';
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
+import { useClickMailContent } from '../../../hooks/useClickMailContent';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 
 import './Search.scss';
-import { useClickMailContent } from '../../../hooks/useClickMailContent';
 
 interface Props {
     breakpoints: Breakpoints;
@@ -98,6 +99,17 @@ const MailSearch = ({ breakpoints }: Props) => {
         FeatureCode.SpotlightEncryptedSearch,
         showEncryptedSearch && !welcomeFlags.isWelcomeFlow && !isOpen
     );
+
+    // Listen to close events from composer or iframes
+    useEffect(() => {
+        document.addEventListener('dropdownclose', close);
+        document.addEventListener(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, close);
+
+        return () => {
+            document.removeEventListener('dropdownclose', close);
+            document.removeEventListener(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, close);
+        };
+    }, [close]);
 
     return (
         <>
