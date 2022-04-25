@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 import { Icon, Button, classnames, TableRowBusy, FileIcon, FileNameDisplay } from '@proton/components';
-
+import { c } from 'ttag';
 import { DecryptedLink } from '../../store';
 
 interface Props {
@@ -58,7 +58,7 @@ const ExpandableRow = ({
                                 toggleExpand(link.linkId);
                             }}
                         >
-                            <Icon size={12} name="chevron-down" className={isExpanded ? 'rotateX-180' : undefined} />
+                            <Icon size={12} name="chevron-down" alt={isExpanded ? c('Action').t`Collapse` : c('Action').t`Expand`} className={isExpanded ? 'rotateX-180' : undefined} />
                         </Button>
                     </div>
                     <div

@@ -22,11 +22,7 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
         <StandardContainer>
             <div className="absolute-center text-center">
                 <div>
-                    <img
-                        className={classnames(['w10e', loaderClassName])}
-                        src={protonSpinner}
-                        alt={c('Info').t`Proton loading spinner`}
-                    />
+                    <img className={classnames(['w10e', loaderClassName])} src={protonSpinner} />
                 </div>
                 <TextLoader className="color-weak">{textToDisplay}</TextLoader>
             </div>
