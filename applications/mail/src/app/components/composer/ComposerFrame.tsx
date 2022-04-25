@@ -11,7 +11,7 @@ import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import ComposerTitleBar from './ComposerTitleBar';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import { WindowSize, Breakpoints } from '../../models/utils';
-import { DRAG_ADDRESS_KEY } from '../../constants';
+import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT, DRAG_ADDRESS_KEY } from '../../constants';
 import Composer, { ComposerAction } from './Composer';
 import useComposerDrag from '../../hooks/composer/useComposerDrag';
 
@@ -90,6 +90,8 @@ const ComposerFrame = ({
     };
 
     const handleClick = () => {
+        document.dispatchEvent(new CustomEvent(ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT));
+
         if (minimized && !isDragging) {
             toggleMinimized();
         }
