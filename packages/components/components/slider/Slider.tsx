@@ -79,7 +79,18 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
      */
     const latestTouchRef = useRef<TouchEvent | null>(null);
 
-    const clampInsideInterval = (n: number) => clamp(n || min, min, max);
+    /**
+     * Doesn't fit semantically to have max smaller than min, however this allows
+     * it to be technically possible to do. Slider would then start with the higher
+     * number and end with the lower number if considered from left-to-right e.g.:
+     *
+     *  |-----------|
+     * 10         -10
+     *
+     * Without this the component is not functional should min be larger than max.
+     * Also potentially useful for dynamic min max props which might accidentally be inverted.
+     */
+    const clampInsideInterval = min < max ? (n: number) => clamp(n, min, max) : (n: number) => clamp(n, max, min);
 
     const clampedInternalValue = clampInsideInterval(internalValue);
 
