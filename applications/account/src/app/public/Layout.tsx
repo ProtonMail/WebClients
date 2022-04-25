@@ -76,8 +76,8 @@ export interface Props {
 }
 
 const Layout = ({ children, hasDecoration, topRight, bottomRight, hasBackButton }: Props) => {
-    const { APP_VERSION, APP_VERSION_DISPLAY } = useConfig();
-    const appVersion = getAppVersion(APP_VERSION_DISPLAY || APP_VERSION);
+    const { APP_VERSION } = useConfig();
+    const appVersion = getAppVersion(APP_VERSION);
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">

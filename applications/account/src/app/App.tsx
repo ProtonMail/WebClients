@@ -16,15 +16,10 @@ import './app.scss';
 
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
-const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.12',
-    ...config,
-};
-
 initMainHost();
-newVersionUpdater(enhancedConfig);
-sentry(enhancedConfig);
-setVcalProdId(getProdId(enhancedConfig));
+newVersionUpdater(config);
+sentry(config);
+setVcalProdId(getProdId(config));
 
 const App = () => {
     const [hasInitialAuth] = useState(() => {
@@ -32,7 +27,7 @@ const App = () => {
     });
 
     return (
-        <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
+        <ProtonApp config={config} hasInitialAuth={hasInitialAuth}>
             <ErrorBoundary component={<StandardErrorPage />}>
                 <Switch>
                     <Route path={G_OAUTH_REDIRECT_PATH}>

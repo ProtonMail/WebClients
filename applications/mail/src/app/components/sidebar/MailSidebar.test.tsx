@@ -157,7 +157,7 @@ describe('MailSidebar', () => {
         setupTest();
 
         const { getByText } = await render(<MailSidebar {...props} />, false);
-        const appVersion = getAppVersion(config.APP_VERSION_DISPLAY || config.APP_VERSION);
+        const appVersion = getAppVersion(config.APP_VERSION);
 
         const appVersionButton = getByText(appVersion);
 

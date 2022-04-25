@@ -34,7 +34,6 @@ import broadcast, { MessageType } from './broadcast';
 initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0',
     ...config,
     APP_NAME: APPS.PROTONACCOUNTLITE,
 };
