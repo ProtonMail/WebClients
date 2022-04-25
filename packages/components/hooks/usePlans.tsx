@@ -9,7 +9,7 @@ import useCache from './useCache';
 const KEY = 'plans';
 
 const getPlans = (api: Api, Currency?: string) =>
-    api<{ Plans: Plan[] }>(queryPlans({ Currency, State: 1 })).then(({ Plans }) => Plans);
+    api<{ Plans: Plan[] }>(queryPlans({ Currency })).then(({ Plans }) => Plans);
 
 /**
  * Requests available plans information
