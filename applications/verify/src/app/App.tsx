@@ -18,11 +18,6 @@ import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';
 import './app.scss';
 
-const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.0',
-    ...config,
-};
-
 const App = () => {
     const handleNotificationCreate = (options: CreateNotificationOptions) => {
         const { type = 'success', text } = options;
@@ -36,7 +31,7 @@ const App = () => {
     };
 
     return (
-        <ConfigProvider config={enhancedConfig}>
+        <ConfigProvider config={config}>
             <Router>
                 <RightToLeftProvider>
                     <Icons />

@@ -21,12 +21,12 @@ const envMap = {
 };
 
 const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, changelog }: Props) => {
-    const { APP_NAME, APP_VERSION, APP_VERSION_DISPLAY, DATE_VERSION } = useConfig();
+    const { APP_NAME, APP_VERSION, DATE_VERSION } = useConfig();
     const { currentEnvironment } = useEarlyAccess();
     const [changelogModal, setChangelogModalOpen, render] = useModalState();
 
     const appName = maybeAppName || APPS_CONFIGURATION[APP_NAME]?.name;
-    const appVersion = getAppVersion(maybeAppVersion || APP_VERSION_DISPLAY || APP_VERSION);
+    const appVersion = getAppVersion(maybeAppVersion || APP_VERSION);
     const className = 'app-infos-version text-xs m0';
     const title = DATE_VERSION;
     const children = (

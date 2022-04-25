@@ -11,17 +11,13 @@ import './app.scss';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
-const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.9',
-    ...config,
-};
-newVersionUpdater(enhancedConfig);
-sentry(enhancedConfig);
-setVcalProdId(getProdId(enhancedConfig));
+newVersionUpdater(config);
+sentry(config);
+setVcalProdId(getProdId(config));
 
 const App = () => {
     return (
-        <ProtonApp config={enhancedConfig}>
+        <ProtonApp config={config}>
             <StandardSetup PrivateApp={PrivateApp} locales={locales} />
         </ProtonApp>
     );
