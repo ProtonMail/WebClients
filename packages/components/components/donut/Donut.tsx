@@ -63,11 +63,12 @@ const Donut = ({ chunks, gap = 4 }: DonutProps) => {
                     <mask id={uid}>
                         <rect x="0" y="0" width={box} height={box} fill="white" />
 
-                        {allChunks.map((_, i) => {
+                        {allChunks.map(([, color], i) => {
                             const angle = scale * percentOf(runningSumOfAllChunks[i - 1] || 0, 360) - 90;
 
                             return (
                                 <rect
+                                    key={color}
                                     transform={`rotate(${angle} ${box / 2} ${box / 2})`}
                                     x={box / 2}
                                     y={box / 2 - gap / 2}
@@ -90,6 +91,7 @@ const Donut = ({ chunks, gap = 4 }: DonutProps) => {
 
                     return (
                         <circle
+                            key={color}
                             fill="none"
                             cx={box / 2}
                             cy={box / 2}
