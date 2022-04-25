@@ -17,14 +17,9 @@ import { registerMailToProtocolHandler } from './helpers/url';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
-const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.0.20',
-    ...config,
-};
-
-newVersionUpdater(enhancedConfig);
-sentry(enhancedConfig);
-setVcalProdId(getProdId(enhancedConfig));
+newVersionUpdater(config);
+sentry(config);
+setVcalProdId(getProdId(config));
 
 // If the browser is Chromium based, register automatically the mailto protocol handler
 if ('chrome' in window) {
@@ -37,7 +32,7 @@ const App = () => {
     });
 
     return (
-        <ProtonApp config={enhancedConfig} hasInitialAuth={hasInitialAuth}>
+        <ProtonApp config={config} hasInitialAuth={hasInitialAuth}>
             <Switch>
                 <Route path={G_OAUTH_REDIRECT_PATH}>
                     <LoaderPage />
