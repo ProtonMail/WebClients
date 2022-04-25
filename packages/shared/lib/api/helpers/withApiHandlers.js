@@ -4,7 +4,7 @@ import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLIN
 import { createOnceHandler } from '../../apiHandlers';
 import { wait } from '../../helpers/promise';
 import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
-import { withUIDHeaders } from '../../fetch/headers';
+import { getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
 import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
 import { noop, randomIntFromInterval } from '../../helpers/function';
@@ -252,8 +252,7 @@ export default ({ call, UID, onUnlock, onVerification }) => {
                                       ],
                             headers: {
                                 ...options.headers,
-                                'x-pm-human-verification-token': token,
-                                'x-pm-human-verification-token-type': tokenType,
+                                ...getVerificationHeaders(token, tokenType),
                             },
                         });
                     };

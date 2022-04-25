@@ -19,7 +19,6 @@ import './app.scss';
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 const enhancedConfig = {
-    APP_VERSION_DISPLAY: '4.1.49',
     ...config,
 };
 

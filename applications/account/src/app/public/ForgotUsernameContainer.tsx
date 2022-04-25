@@ -17,12 +17,12 @@ import {
     useMyLocation,
     InputFieldTwo,
 } from '@proton/components';
-import BackButton from './BackButton';
+import { SSO_PATHS } from '@proton/shared/lib/constants';
 import Content from './Content';
 import Main from './Main';
 import Header from './Header';
-import Footer from './Footer';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
+import Layout from './Layout';
 
 type Method = 'email' | 'phone';
 const ForgotUsernameForm = ({
@@ -36,6 +36,7 @@ const ForgotUsernameForm = ({
     method: Method;
     defaultCountry?: string;
 }) => {
+    const history = useHistory();
     const [loading, withLoading] = useLoading();
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -55,12 +56,13 @@ const ForgotUsernameForm = ({
             method="post"
         >
             <Tabs
+                fullWidth
                 tabs={[
                     {
                         title: c('Title').t`Email`,
                         content: (
                             <>
-                                <div className="mb1">
+                                <div className="mb1 color-weak">
                                     {c('Info')
                                         .t`Enter your recovery email address and we will send you your username or email address.`}
                                 </div>
@@ -82,7 +84,7 @@ const ForgotUsernameForm = ({
                         title: c('Title').t`Phone`,
                         content: (
                             <>
-                                <div className="mb1">
+                                <div className="mb1 color-weak">
                                     {c('Info')
                                         .t`Enter your recovery phone number and we will send you your username or email address.`}
                                 </div>
@@ -109,6 +111,14 @@ const ForgotUsernameForm = ({
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                 {c('Action').t`Send my username`}
             </Button>
+            <Button
+                size="large"
+                color="norm"
+                shape="ghost"
+                fullWidth
+                className="mt0-5"
+                onClick={() => history.push(SSO_PATHS.LOGIN)}
+            >{c('Action').t`Return to sign in`}</Button>
         </form>
     );
 };
@@ -127,21 +137,18 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();
 
-    return (
+    const handleBackStep = (() => {
+        return (
+            onBack ||
+            (() => {
+                history.push('/login');
+            })
+        );
+    })();
+
+    const children = (
         <Main>
-            <Header
-                title={c('Title').t`Find email or username`}
-                left={
-                    <BackButton
-                        onClick={
-                            onBack ||
-                            (() => {
-                                history.push('/login');
-                            })
-                        }
-                    />
-                }
-            />
+            <Header title={c('Title').t`Find email or username`} onBack={handleBackStep} />
             <Content>
                 <ForgotUsernameForm
                     method={method}
@@ -165,10 +172,12 @@ const ForgotUsernameContainer = ({ onBack }: Props) => {
                     }}
                 />
             </Content>
-            <Footer>
-                <LoginSupportDropdown />
-            </Footer>
         </Main>
+    );
+    return (
+        <Layout hasBackButton={!!handleBackStep} bottomRight={<LoginSupportDropdown />} hasDecoration={true}>
+            {children}
+        </Layout>
     );
 };
 

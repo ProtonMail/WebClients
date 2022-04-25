@@ -8,9 +8,10 @@ import { Button, useFormErrors, InputFieldTwo } from '../../../components';
 import { useLoading } from '../../../hooks';
 import { VerificationModel } from './interface';
 import { getFormattedCode } from './helper';
+import Text from './Text';
 
 interface Props {
-    onSubmit: (code: string, tokenType: 'email' | 'sms' | 'ownership-email' | 'ownership-sms') => void;
+    onSubmit: (code: string, verificationModel: VerificationModel) => void;
     onNoReceive: () => void;
     verification: VerificationModel;
     description?: ReactNode;
@@ -27,7 +28,7 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
             return;
         }
         const formattedCode = getFormattedCode(verification, code);
-        return onSubmit(formattedCode, verification.method);
+        return onSubmit(formattedCode, verification);
     };
 
     const destinationText = <strong key="destination">{verification.value}</strong>;
@@ -35,12 +36,12 @@ const VerifyCodeForm = ({ onSubmit, onNoReceive, verification, description }: Pr
     return (
         <>
             {description || (
-                <div className="mb2 text-break">
+                <Text>
                     {c('Info').jt`Enter the verification code that was sent to ${destinationText}.`}{' '}
                     {verification.method === 'email'
                         ? c('Info').t`If you don't find the email in your inbox, please check your spam folder.`
                         : null}
-                </div>
+                </Text>
             )}
             <InputFieldTwo
                 id="verification"

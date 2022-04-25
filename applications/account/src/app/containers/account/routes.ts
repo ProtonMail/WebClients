@@ -27,11 +27,6 @@ export const getAccountAppRoutes = ({
                 available: isFree || canPay || !isMember || (isPaid && canPay),
                 subsections: [
                     {
-                        text: c('Title').t`Select plan`,
-                        id: 'select-plan',
-                        available: isFree,
-                    },
-                    {
                         text: isFree ? c('Title').t`Your current plan` : c('Title').t`Your plan`,
                         id: 'your-plan',
                         available: canPay,
@@ -70,6 +65,18 @@ export const getAccountAppRoutes = ({
                         text: c('Title').t`Downgrade account`,
                         id: 'downgrade-account',
                         available: isPaid && canPay,
+                    },
+                ],
+            },
+            upgrade: <SectionConfig>{
+                text: c('Title').t`Upgrade plan`,
+                to: '/upgrade',
+                icon: 'arrow-up-big-line',
+                available: canPay && isFree,
+                subsections: [
+                    {
+                        text: '',
+                        id: 'upgrade',
                     },
                 ],
             },

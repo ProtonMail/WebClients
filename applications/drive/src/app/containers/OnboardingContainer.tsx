@@ -1,7 +1,3 @@
-import { useEffect } from 'react';
-
-import { useModals } from '@proton/components';
-
 import DriveOnboardingModal from '../components/onboarding/DriveOnboardingModal';
 import DriveContainerBlurred from './DriveContainerBlurred';
 
@@ -10,12 +6,11 @@ interface Props {
 }
 
 const OnboardingContainer = ({ onDone }: Props) => {
-    const { createModal } = useModals();
-
-    useEffect(() => {
-        createModal(<DriveOnboardingModal onDone={onDone} />);
-    }, []);
-
-    return <DriveContainerBlurred />;
+    return (
+        <>
+            <DriveContainerBlurred />
+            <DriveOnboardingModal open onDone={onDone} />
+        </>
+    );
 };
 export default OnboardingContainer;

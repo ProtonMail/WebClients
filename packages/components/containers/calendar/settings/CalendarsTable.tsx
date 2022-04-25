@@ -8,6 +8,7 @@ import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shar
 import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import React from 'react';
 import { Badge, DropdownActions, Info, Table, TableBody, TableHeader, TableRow, Tooltip } from '../../../components';
@@ -28,6 +29,7 @@ interface Props {
     loadingMap: SimpleMap<boolean>;
     actionsDisabled: boolean;
 }
+
 const CalendarsTable = ({
     calendars = [],
     defaultCalendarID,
@@ -49,7 +51,7 @@ const CalendarsTable = ({
                     c('Header').t`Name`,
                     <div className="flex flex-align-items-center">
                         <span className="mr0-5">{c('Header').t`Status`}</span>
-                        <Info url="https://protonmail.com/support/knowledge-base/calendar-status" />
+                        <Info url={getKnowledgeBaseUrl('/calendar-status')} />
                     </div>,
                     c('Header').t`Actions`,
                 ]}

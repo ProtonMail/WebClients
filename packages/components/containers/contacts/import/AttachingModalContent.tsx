@@ -7,6 +7,7 @@ import {
     MAX_IMPORT_CONTACTS,
 } from '@proton/shared/lib/contacts/constants';
 import { ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Bordered, FileInput, Alert, AttachedFile, Dropzone } from '../../../components';
 import { classnames } from '../../../helpers';
@@ -20,6 +21,7 @@ interface Props {
     onDragEnter: (event: DragEvent) => void;
     onDragLeave: (event: DragEvent) => void;
 }
+
 const AttachingModalContent = ({
     model,
     onAttach,
@@ -34,7 +36,7 @@ const AttachingModalContent = ({
             {model.failure?.message}
         </Alert>
     ) : (
-        <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/adding-contacts/">
+        <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/adding-contacts/')}>
             {c('Description').ngettext(
                 msgid`The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contact. If your file is bigger, please split it into smaller files.`,
                 `The file should have a maximum size of ${MAX_IMPORT_FILE_SIZE_STRING} and have up to ${MAX_IMPORT_CONTACTS_STRING} contacts. If your file is bigger, please split it into smaller files.`,

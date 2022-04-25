@@ -14,12 +14,10 @@ export interface VPNCountry {
 
 export interface VPNCountries {
     free_vpn: VPNCountry;
-    [PLANS.VPNBASIC]: VPNCountry;
-    [PLANS.VPNPLUS]: VPNCountry;
+    [PLANS.VPN]: VPNCountry;
 }
 
 export interface VPNServers {
     free_vpn: number;
-    [PLANS.VPNBASIC]: number;
-    [PLANS.VPNPLUS]: number;
+    [PLANS.VPN]: number;
 }

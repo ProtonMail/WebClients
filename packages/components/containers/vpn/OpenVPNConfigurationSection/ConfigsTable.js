@@ -148,7 +148,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                                         as={SettingsLink}
                                         color="norm"
                                         size="small"
-                                        path={`/dashboard${hasPaidVpn ? '?plan=vpnplus' : ''}`}
+                                        path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN}` : '/upgrade'}
                                     >{c('Action').t`Upgrade`}</ButtonLike>
                                 </Tooltip>
                             ) : onSelect ? (

@@ -9,6 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { noop } from '@proton/shared/lib/helpers/function';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { getReportInfo, getClientName } from '../../helpers/report';
@@ -165,11 +166,7 @@ const DeleteAccountModal = (props: Props) => {
         >
             {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} />}
             <ModalTwoContent>
-                <Alert
-                    className="mb1"
-                    type="warning"
-                    learnMore="https://protonmail.com/support/knowledge-base/combine-accounts/"
-                >
+                <Alert className="mb1" type="warning" learnMore={getKnowledgeBaseUrl('/combine-accounts/')}>
                     <div className="text-bold text-uppercase">
                         {c('Info')
                             .t`Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.`}

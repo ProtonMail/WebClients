@@ -7,9 +7,9 @@ describe('getPlanIDs', () => {
         expect(
             getPlanIDs({
                 Plans: [
-                    { ID: 'a', Quantity: 1 },
-                    { ID: 'a', Quantity: 1 },
-                    { ID: 'b', Quantity: 3 },
+                    { Name: 'a', Quantity: 1 },
+                    { Name: 'a', Quantity: 1 },
+                    { Name: 'b', Quantity: 3 },
                 ],
             })
         ).toEqual({

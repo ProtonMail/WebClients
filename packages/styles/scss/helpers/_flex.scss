@@ -29,7 +29,7 @@
 	}
 }
 
-@each $align in (start, center, end, baseline, stretch) {
+@each $align in (baseline, start, center, end, baseline, stretch) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: '';
 	@if $align == start or $align == end {
@@ -103,6 +103,9 @@
 }
 .flex-gap-1 {
 	gap: 1em;
+}
+.flex-gap-2 {
+	gap: 2em;
 }
 
 .flex-item-noflex {

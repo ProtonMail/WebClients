@@ -1,0 +1,201 @@
+import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
+import { noop } from '@proton/shared/lib/helpers/function';
+import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
+import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
+import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
+import Alert3ds from '@proton/components/containers/payments/Alert3ds';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import {
+    Button,
+    CurrencySelector,
+    Icon,
+    Price,
+    Payment as PaymentComponent,
+    useLoading,
+    useModals,
+    usePayment,
+    StyledPayPalButton,
+} from '@proton/components';
+import PlanCustomization from '@proton/components/containers/payments/subscription/PlanCustomization';
+import { c } from 'ttag';
+import { getCardPayment } from './helper';
+import { PlanIDs, SubscriptionData } from './interfaces';
+import Header from '../public/Header';
+import Main from '../public/Main';
+import Content from '../public/Content';
+
+interface Props {
+    subscriptionData: SubscriptionData;
+    plans: Plan[];
+    api: Api;
+    onBack?: () => void;
+    onPay: (payment: Payment | undefined) => Promise<void>;
+    onChangePlanIDs: (planIDs: PlanIDs) => void;
+    onChangeCurrency: (currency: Currency) => void;
+    onChangeCycle: (cycle: Cycle) => void;
+    planName: string | undefined;
+    paymentMethodStatus: PaymentMethodStatus | undefined;
+}
+
+const PaymentStep = ({
+    api,
+    onBack,
+    onPay,
+    onChangeCycle,
+    onChangeCurrency,
+    onChangePlanIDs,
+    plans,
+    planName: planNameString,
+    paymentMethodStatus,
+    subscriptionData,
+}: Props) => {
+    const [loading, withLoading] = useLoading();
+    const paymentMethods = [
+        paymentMethodStatus?.Card && PAYMENT_METHOD_TYPES.CARD,
+        paymentMethodStatus?.Paypal && PAYMENT_METHOD_TYPES.PAYPAL,
+    ].filter(isTruthy);
+    const {
+        card,
+        setCard,
+        cardErrors,
+        method,
+        setMethod,
+        handleCardSubmit,
+        parameters: paymentParameters,
+        paypal,
+        paypalCredit,
+    } = usePayment({
+        defaultMethod: paymentMethods[0],
+        amount: subscriptionData.checkResult.AmountDue,
+        currency: subscriptionData.currency,
+        onPay({ Payment }: PaymentParameters) {
+            return onPay(Payment);
+        },
+    });
+
+    const { createModal } = useModals();
+
+    const planName = (
+        <span key="plan-name" className="color-primary">
+            {planNameString}
+        </span>
+    );
+
+    const price = (
+        <Price key="price" currency={subscriptionData.currency}>
+            {subscriptionData.checkResult.AmountDue}
+        </Price>
+    );
+
+    return (
+        <div className="sign-layout-two-column w100 flex flex-align-items-start flex-justify-center flex-gap-2">
+            <Main center={false}>
+                <Header
+                    onBack={onBack}
+                    title={c('new_plans: signup').t`Subscription`}
+                    right={
+                        <div className="inline-block mt2 on-mobile-mt1">
+                            <CurrencySelector
+                                mode="select-two"
+                                currency={subscriptionData.currency}
+                                onSelect={onChangeCurrency}
+                            />
+                        </div>
+                    }
+                />
+                <Content>
+                    <div className="text-bold mb1">{c('new_plans: signup').jt`Your selected plan: ${planName}`}</div>
+                    <SubscriptionCycleSelector
+                        mode="buttons"
+                        cycle={subscriptionData.cycle}
+                        currency={subscriptionData.currency}
+                        onChangeCycle={onChangeCycle}
+                        plans={plans}
+                        planIDs={subscriptionData.planIDs}
+                    />
+                    <PlanCustomization
+                        mode="signup"
+                        plans={plans}
+                        loading={false}
+                        currency={subscriptionData.currency}
+                        cycle={subscriptionData.cycle}
+                        planIDs={subscriptionData.planIDs}
+                        onChangePlanIDs={onChangePlanIDs}
+                    />
+                    <div className="flex flex-nowrap color-weak mb0-5 text-sm">
+                        <span className="flex-item-noshrink mr0-5">
+                            <Icon name="shield" />
+                        </span>
+                        <span className="flex-item-fluid pt0-1">{c('Info')
+                            .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
+                    </div>
+                </Content>
+            </Main>
+            <Main center={false}>
+                <Header title={c('new_plans: signup').t`Payment details`} />
+                <Content>
+                    <form
+                        name="payment-form"
+                        onSubmit={async (event) => {
+                            event.preventDefault();
+                            const handle = async () => {
+                                if (!handleCardSubmit()) {
+                                    return;
+                                }
+                                if (method === PAYMENT_METHOD_TYPES.CARD) {
+                                    const { Payment } = await getCardPayment({
+                                        currency: subscriptionData.currency,
+                                        createModal,
+                                        api,
+                                        paymentParameters,
+                                        checkResult: subscriptionData.checkResult,
+                                    });
+                                    return onPay(Payment);
+                                }
+                                throw new Error('Unknown form submit');
+                            };
+                            withLoading(handle()).catch(noop);
+                        }}
+                        method="post"
+                    >
+                        {subscriptionData.checkResult?.AmountDue ? (
+                            <PaymentComponent
+                                type="signup"
+                                paypal={paypal}
+                                paypalCredit={paypalCredit}
+                                paymentMethodStatus={paymentMethodStatus}
+                                method={method}
+                                amount={subscriptionData.checkResult.AmountDue}
+                                currency={subscriptionData.currency}
+                                card={card}
+                                onMethod={setMethod}
+                                onCard={setCard}
+                                cardErrors={cardErrors}
+                            />
+                        ) : (
+                            <div className="mb1">{c('Info').t`No payment is required at this time.`}</div>
+                        )}
+                        {method === PAYMENT_METHOD_TYPES.PAYPAL ? (
+                            <StyledPayPalButton
+                                paypal={paypal}
+                                flow="signup"
+                                amount={subscriptionData.checkResult.AmountDue}
+                            />
+                        ) : (
+                            <>
+                                <Button type="submit" size="large" loading={loading} color="norm" fullWidth>
+                                    {subscriptionData.checkResult.AmountDue > 0
+                                        ? c('Action').jt`Pay ${price}`
+                                        : c('Action').t`Confirm`}
+                                </Button>
+                                <Alert3ds />
+                            </>
+                        )}
+                    </form>
+                </Content>
+            </Main>
+        </div>
+    );
+};
+
+export default PaymentStep;

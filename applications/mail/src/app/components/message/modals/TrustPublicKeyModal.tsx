@@ -22,6 +22,7 @@ import { pinKeyCreateContact, pinKeyUpdateContact } from '@proton/shared/lib/con
 import { Api } from '@proton/shared/lib/interfaces';
 import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import SimplePublicKeyTable from './SimplePublicKeyTable';
 
@@ -31,6 +32,7 @@ interface ParamsUpdate {
     publicKeys: OpenPGPKey[];
     privateKeys: OpenPGPKey[];
 }
+
 const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }: ParamsUpdate) => {
     const { contactID, emailAddress, bePinnedPublicKey, isInternal } = contact;
     const {
@@ -68,6 +70,7 @@ interface ParamsCreate {
     api: Api;
     privateKeys: OpenPGPKey[];
 }
+
 const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCreate) => {
     const { emailAddress, name, isInternal, bePinnedPublicKey } = contact;
     const contactCards = await pinKeyCreateContact({
@@ -85,6 +88,7 @@ const createContactPinnedKeys = async ({ contact, api, privateKeys }: ParamsCrea
 interface Props extends ModalProps {
     contact: ContactWithBePinnedPublicKey;
 }
+
 const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
     const api = useApi();
     const getUserKeys = useGetUserKeys();
@@ -143,16 +147,13 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
             <ModalTwoContent>
                 <div className="mb1">
                     {alertMessage}
-                    <Href
-                        href="https://protonmail.com/support/knowledge-base/address-verification"
-                        className="ml0-5"
-                    >{c('Link').t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/address-verification')} className="ml0-5">{c('Link')
+                        .t`Learn more`}</Href>
                 </div>
                 <div className="mb1">
                     {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
-                    <Href href="https://protonmail.com/support/knowledge-base/how-to-use-pgp/" className="ml0-5">{c(
-                        'Link'
-                    ).t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/how-to-use-pgp/')} className="ml0-5">{c('Link')
+                        .t`Learn more`}</Href>
                 </div>
                 <div>
                     <SimplePublicKeyTable contact={contact} />

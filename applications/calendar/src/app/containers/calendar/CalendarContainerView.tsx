@@ -23,6 +23,8 @@ import {
     useFeature,
     FeatureCode,
     TopBanners,
+    UserDropdown,
+    useModalState,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { differenceInCalendarDays } from 'date-fns';
@@ -45,6 +47,7 @@ import ViewSelector from '../../components/ViewSelector';
 
 import getDateDiff from './getDateDiff';
 import getDateRangeText from '../../components/getDateRangeText';
+import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -115,6 +118,7 @@ const CalendarContainerView = ({
     const [groups = []] = useContactGroups();
     const { feature: featureCalendarFeedbackEnabled } = useFeature(FeatureCode.CalendarFeedbackEnabled);
     const calendarAppName = getAppName(APPS.PROTONCALENDAR);
+    const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
 
     const localNowDate = useMemo(() => {
         return new Date(utcDefaultDate.getUTCFullYear(), utcDefaultDate.getUTCMonth(), utcDefaultDate.getUTCDate());
@@ -326,74 +330,85 @@ const CalendarContainerView = ({
     const logo = <MainLogo to="/" />;
 
     const header = (
-        <PrivateHeader
-            logo={logo}
-            settingsButton={<TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />}
-            floatingButton={
-                <FloatingButton onClick={() => onCreateEvent?.()}>
-                    <Icon size={24} name="plus" className="mauto" />
-                </FloatingButton>
-            }
-            contactsButton={
-                <TopNavbarListItemContactsDropdown
-                    customActions={[
-                        {
-                            render: ({ contactList, groupsEmailsMap, recipients, noSelection, onClose, selected }) => {
-                                const onClick = getHandleCreateEventFromWidget({
+        <>
+            {renderOnboardingModal && <CalendarOnboardingModal showGenericSteps {...onboardingModal} />}
+            <PrivateHeader
+                userDropdown={<UserDropdown onOpenIntroduction={() => setOnboardingModal(true)} />}
+                logo={logo}
+                settingsButton={<TopNavbarListItemSettingsDropdown to="/calendar" toApp={APPS.PROTONACCOUNT} />}
+                floatingButton={
+                    <FloatingButton onClick={() => onCreateEvent?.()}>
+                        <Icon size={24} name="plus" className="mauto" />
+                    </FloatingButton>
+                }
+                contactsButton={
+                    <TopNavbarListItemContactsDropdown
+                        customActions={[
+                            {
+                                render: ({
                                     contactList,
                                     groupsEmailsMap,
                                     recipients,
+                                    noSelection,
                                     onClose,
                                     selected,
-                                });
+                                }) => {
+                                    const onClick = getHandleCreateEventFromWidget({
+                                        contactList,
+                                        groupsEmailsMap,
+                                        recipients,
+                                        onClose,
+                                        selected,
+                                    });
 
-                                if (!onClick) {
-                                    return null;
-                                }
+                                    if (!onClick) {
+                                        return null;
+                                    }
 
-                                return (
-                                    <Tooltip key="createEvent" title={c('Action').t`Create event`}>
-                                        <Button
-                                            icon
-                                            className="mr0-5 inline-flex pt0-5 pb0-5"
-                                            onClick={onClick}
-                                            disabled={noSelection || !onCreateEvent}
-                                            title={c('Action').t`Create event`}
-                                        >
-                                            <Icon name="calendar-grid" alt={c('Action').t`Create event`} />
-                                        </Button>
-                                    </Tooltip>
-                                );
+                                    return (
+                                        <Tooltip key="createEvent" title={c('Action').t`Create event`}>
+                                            <Button
+                                                icon
+                                                className="mr0-5 inline-flex pt0-5 pb0-5"
+                                                onClick={onClick}
+                                                disabled={noSelection || !onCreateEvent}
+                                                title={c('Action').t`Create event`}
+                                            >
+                                                <Icon name="calendar-grid" alt={c('Action').t`Create event`} />
+                                            </Button>
+                                        </Tooltip>
+                                    );
+                                },
+                                tabs: [CONTACT_WIDGET_TABS.CONTACTS, CONTACT_WIDGET_TABS.GROUPS],
                             },
-                            tabs: [CONTACT_WIDGET_TABS.CONTACTS, CONTACT_WIDGET_TABS.GROUPS],
-                        },
-                    ]}
-                />
-            }
-            feedbackButton={
-                featureCalendarFeedbackEnabled?.Value ? (
-                    <TopNavbarListItemFeedbackButton
-                        modal={
-                            <FeedbackModal
-                                feedbackType="calendar_launch"
-                                description={c('Info')
-                                    .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
-                                scaleTitle={c('Label')
-                                    .t`How likely are you to recommend ${calendarAppName} to a friend or colleague?`}
-                                scaleProps={{
-                                    fromLabel: c('Label').t`0 - Not likely`,
-                                    toLabel: c('Label').t`10 - Extremely likely`,
-                                }}
-                            />
-                        }
+                        ]}
                     />
-                ) : null
-            }
-            title={c('Title').t`Calendar`}
-            expanded={expanded}
-            onToggleExpand={onToggleExpand}
-            isNarrow={isNarrow}
-        />
+                }
+                feedbackButton={
+                    featureCalendarFeedbackEnabled?.Value ? (
+                        <TopNavbarListItemFeedbackButton
+                            modal={
+                                <FeedbackModal
+                                    feedbackType="calendar_launch"
+                                    description={c('Info')
+                                        .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
+                                    scaleTitle={c('Label')
+                                        .t`How likely are you to recommend ${calendarAppName} to a friend or colleague?`}
+                                    scaleProps={{
+                                        fromLabel: c('Label').t`0 - Not likely`,
+                                        toLabel: c('Label').t`10 - Extremely likely`,
+                                    }}
+                                />
+                            }
+                        />
+                    ) : null
+                }
+                title={c('Title').t`Calendar`}
+                expanded={expanded}
+                onToggleExpand={onToggleExpand}
+                isNarrow={isNarrow}
+            />
+        </>
     );
 
     const sidebar = (

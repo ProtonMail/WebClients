@@ -2,6 +2,7 @@ import { c } from 'ttag';
 import { useLoading, Button } from '@proton/components';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import Text from '../public/Text';
 
 interface Props {
     onSubmit: () => Promise<void>;
@@ -26,10 +27,10 @@ const GenerateInternalAddressConfirmForm = ({ onSubmit, address, recoveryAddress
             }}
             method="post"
         >
-            <div className="mb1-75 text-break">
+            <Text>
                 {c('Info')
                     .jt`${strongAddressAvailable} You will use this email address to sign into all ${BRAND_NAME} services.`}
-            </div>
+            </Text>
             {recoveryAddress && (
                 <div className="p1 mb1-75 text-center bg-weak rounded text-break">
                     <div className="text-bold">{c('Info').t`Your recovery email address:`}</div>

@@ -139,7 +139,7 @@ const CalendarSettingsRouter = ({
                                     </p>
                                     <ButtonLike
                                         as={SettingsLink}
-                                        path="/dashboard"
+                                        path="/upgrade"
                                         color="norm"
                                         shape="solid"
                                         size="small"

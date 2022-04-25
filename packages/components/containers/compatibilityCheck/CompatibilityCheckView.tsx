@@ -1,6 +1,7 @@
 import unsupportedBrowserSettings from '@proton/styles/assets/img/errors/unsupported-browser.svg';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useAppTitle } from '../../hooks';
 import { Href } from '../../components';
 
@@ -14,7 +15,7 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
     const isVPN = appName === APPS.PROTONVPN_SETTINGS;
     const kbUrl = isVPN
         ? 'https://protonvpn.com/support/browsers-supported/'
-        : 'https://protonmail.com/support/knowledge-base/browsers-supported/';
+        : getKnowledgeBaseUrl('/browsers-supported/');
 
     useAppTitle('Compatibility check');
 

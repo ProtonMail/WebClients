@@ -4,6 +4,7 @@ import { Address, Domain } from '@proton/shared/lib/interfaces';
 import { c, msgid } from 'ttag';
 import { DomainsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
+import { BRAND_NAME, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     Button,
     DropdownActions,
@@ -30,7 +31,7 @@ const DomainsSectionText = () => {
             learnMoreUrl="https://protonmail.com/support/categories/custom-domains/"
         >
             {c('Message')
-                .t`Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.`}
+                .t`Connect your custom domain to ${BRAND_NAME} to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.`}
         </SettingsParagraph>
     );
 };
@@ -162,11 +163,13 @@ const DomainsSectionInternal = () => {
 };
 
 const DomainsSectionUpgrade = () => {
+    const plus = PLAN_NAMES[PLANS.MAIL];
+    const bundle = PLAN_NAMES[PLANS.BUNDLE];
     return (
         <SettingsSectionWide>
             <DomainsSectionText />
             <UpgradeBanner>
-                {c('Message').t`Upgrade to any paid plan to use custom domains and unlock premium features`}
+                {c('new_plans: upgrade').t`Included with ${plus}, ${bundle}, and ${BRAND_NAME} for Business.`}
             </UpgradeBanner>
         </SettingsSectionWide>
     );

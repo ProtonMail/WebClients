@@ -4,6 +4,7 @@ import { Button, RequestNewCodeModal, useFormErrors, useLoading, InputFieldTwo }
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { noop } from '@proton/shared/lib/helpers/function';
+import Text from '../public/Text';
 
 import ValidateResetTokenConfirmModal from './ValidateResetTokenConfirmModal';
 
@@ -61,7 +62,7 @@ const ValidateResetTokenForm = ({ onSubmit, onBack, onRequest, method, value }: 
                     onResend={onRequest}
                 />
             )}
-            <div className="mb1-75">{subTitle}</div>
+            <Text>{subTitle}</Text>
             <InputFieldTwo
                 id="reset-token"
                 bigger

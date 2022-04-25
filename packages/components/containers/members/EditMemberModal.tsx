@@ -1,7 +1,7 @@
 import { FormEvent, useMemo, useState } from 'react';
 import { c } from 'ttag';
 import { privatizeMember, updateName, updateQuota, updateRole, updateVPN } from '@proton/shared/lib/api/members';
-import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER } from '@proton/shared/lib/constants';
+import { GIGA, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_SUBSCRIBER, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Member } from '@proton/shared/lib/interfaces';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
@@ -22,7 +22,6 @@ import { useApi, useNotifications, useEventManager, useOrganization, useLoading,
 import Addresses from '../addresses/Addresses';
 
 import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
-import MemberVPNSelector, { getVPNRange } from './MemberVPNSelector';
 
 interface Props extends ModalProps<'form'> {
     member: Member;
@@ -38,7 +37,7 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
         () => ({
             name: member.Name,
             storage: member.MaxSpace,
-            vpn: member.MaxVPN,
+            vpn: !!member.MaxVPN,
             private: !!member.Private,
             admin: member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN,
         }),
@@ -69,8 +68,8 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
             await api(updateQuota(member.ID, +model.storage));
         }
 
-        if (hasVPN) {
-            await api(updateVPN(member.ID, +model.vpn));
+        if (hasVPN && initialModel.vpn !== model.vpn) {
+            await api(updateVPN(member.ID, model.vpn ? VPN_CONNECTIONS : 0));
         }
 
         if (canMakePrivate && model.private && model.private !== initialModel.private) {
@@ -113,7 +112,6 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
     };
 
     const storageRange = getStorageRange(member, organization);
-    const vpnRange = getVPNRange(member, organization);
 
     const handleClose = submitting ? undefined : rest.onClose;
 
@@ -155,13 +153,14 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
                 </div>
 
                 {hasVPN ? (
-                    <div className="mb1-5">
-                        <div className="text-semibold mb0-25">{c('Label').t`VPN connections`}</div>
-                        <MemberVPNSelector
-                            value={model.vpn}
-                            step={1}
-                            range={vpnRange}
-                            onChange={(vpn) => updatePartialModel({ vpn })}
+                    <div className="flex flex-align-center mb1-5">
+                        <label className="text-semibold mr1" htmlFor="vpn-toggle">
+                            {c('Label for new member').t`VPN connections`}
+                        </label>
+                        <Toggle
+                            id="vpn-toggle"
+                            checked={model.vpn}
+                            onChange={({ target }) => updatePartialModel({ vpn: target.checked })}
                         />
                     </div>
                 ) : null}

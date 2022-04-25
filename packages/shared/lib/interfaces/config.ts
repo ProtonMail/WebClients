@@ -1,7 +1,7 @@
 import { APP_NAMES, CLIENT_TYPES } from '../constants';
 
 export interface ProtonConfig {
-    CLIENT_TYPE: typeof CLIENT_TYPES[keyof typeof CLIENT_TYPES];
+    CLIENT_TYPE: CLIENT_TYPES;
     CLIENT_SECRET: string;
     APP_VERSION: string;
     APP_VERSION_DISPLAY?: string;

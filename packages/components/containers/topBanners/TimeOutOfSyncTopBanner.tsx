@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { HOUR } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Severity } from '@sentry/types';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import TopBanner from './TopBanner';
 import LearnMore from '../../components/link/LearnMore';
 
@@ -44,7 +45,7 @@ const TimeOutOfSyncTopBanner = () => {
         return null;
     }
 
-    const learnMore = <LearnMore url="https://protonmail.com/support/knowledge-base/device-time-warning/" />;
+    const learnMore = <LearnMore url={getKnowledgeBaseUrl('/device-time-warning/')} />;
 
     return (
         <TopBanner onClose={() => setIgnore(true)} className="bg-warning">

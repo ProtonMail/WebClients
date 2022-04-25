@@ -6,6 +6,7 @@ import { Alert, ConfirmModal, FeatureCode, useApi, useFeature, useModals } from 
 import { c, msgid } from 'ttag';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {
     Download,
     formatDownload,
@@ -33,9 +34,7 @@ const useShowConfirmModal = () => {
                 const title = senderVerificationFailed
                     ? c('Title').t`Verification error`
                     : c('Title').t`Decryption error`;
-                const learnMore = senderVerificationFailed
-                    ? 'https://protonmail.com/support/knowledge-base/digital-signature/'
-                    : undefined;
+                const learnMore = senderVerificationFailed ? getKnowledgeBaseUrl('/digital-signature/') : undefined;
                 const warningContent = senderVerificationFailed
                     ? c('Warning').ngettext(
                           msgid`The attachment's signature failed verification.

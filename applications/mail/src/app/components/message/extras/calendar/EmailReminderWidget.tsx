@@ -43,6 +43,7 @@ import { getOccurrencesBetween } from '@proton/shared/lib/calendar/recurring';
 import getPaginatedEventsByUID from '@proton/shared/lib/calendar/integration/getPaginatedEventsByUID';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { getEventLocalStartEndDates } from '../../../../helpers/calendar/emailReminder';
 import EventReminderBanner from './EventReminderBanner';
@@ -220,7 +221,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     if (shouldShowAction) {
                         const learnMoreLink = (
                             <Href
-                                url="https://protonmail.com/support/knowledge-base/restoring-encrypted-calendar/"
+                                url={getKnowledgeBaseUrl('/restoring-encrypted-calendar/')}
                                 className="link align-baseline"
                                 key="learn-more"
                             >
@@ -256,7 +257,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                     const whyNotLink = (
                         <Href
-                            url="https://protonmail.com/support/knowledge-base/restoring-encrypted-calendar/"
+                            url={getKnowledgeBaseUrl('/restoring-encrypted-calendar/')}
                             key="learn-more"
                         >
                             {c('Action').t`Why not?`}

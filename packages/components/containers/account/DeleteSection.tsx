@@ -1,5 +1,8 @@
 import { APPS, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { c } from 'ttag';
+
+import { DiscountWarningModal, NewVisionaryWarningModal } from '../payments/subscription/PlanLossWarningModal';
 import { Href, Button, Loader } from '../../components';
 import { useAddresses, useConfig, useSubscription } from '../../hooks';
 import { useModalState } from '../../components/modalTwo';
@@ -12,7 +15,9 @@ const DeleteSection = () => {
     const [addresses, loadingAddresses] = useAddresses();
     const [subscription, loadingSubscription] = useSubscription();
     const { APP_NAME } = useConfig();
-    const [deleteAccountModalProps, setDeleteAccountModalOpen] = useModalState();
+    const [deleteAccountModalProps, setDeleteAccountModalOpen, renderDeleteAccountModal] = useModalState();
+    const [migrationDiscountModalProps, setMigrationDiscountModal, renderDiscountModal] = useModalState();
+    const [visionaryLossModalProps, setVisionaryLossModal, renderVisionaryLossModal] = useModalState();
 
     if (loadingAddresses || loadingSubscription) {
         return <Loader />;
@@ -39,12 +44,49 @@ const DeleteSection = () => {
 
     return (
         <>
-            <DeleteAccountModal {...deleteAccountModalProps} />
+            {renderDiscountModal && (
+                <DiscountWarningModal
+                    type="delete"
+                    {...migrationDiscountModalProps}
+                    onConfirm={() => {
+                        if (hasNewVisionary(subscription)) {
+                            setVisionaryLossModal(true);
+                            return;
+                        }
+                        setDeleteAccountModalOpen(true);
+                    }}
+                />
+            )}
+            {renderVisionaryLossModal && (
+                <NewVisionaryWarningModal
+                    type="delete"
+                    {...visionaryLossModalProps}
+                    onConfirm={() => {
+                        setDeleteAccountModalOpen(true);
+                    }}
+                />
+            )}
+            {renderDeleteAccountModal && <DeleteAccountModal {...deleteAccountModalProps} />}
             <SettingsParagraph>
                 {c('Info')
                     .t`This will permanently delete your account and all of its data. You will not be able to reactivate this account.`}
             </SettingsParagraph>
-            <Button color="danger" shape="outline" id="deleteButton" onClick={() => setDeleteAccountModalOpen(true)}>
+            <Button
+                color="danger"
+                shape="outline"
+                id="deleteButton"
+                onClick={() => {
+                    if (hasMigrationDiscount(subscription)) {
+                        setMigrationDiscountModal(true);
+                        return;
+                    }
+                    if (hasNewVisionary(subscription)) {
+                        setVisionaryLossModal(true);
+                        return;
+                    }
+                    setDeleteAccountModalOpen(true);
+                }}
+            >
                 {c('Action').t`Delete your account`}
             </Button>
         </>

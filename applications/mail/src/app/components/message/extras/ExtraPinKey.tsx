@@ -21,6 +21,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import { c } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getContactEmail } from '../../../helpers/addresses';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { MessageVerification } from '../../../logic/messages/messagesTypes';
@@ -41,6 +42,7 @@ interface Params {
     addresses: Address[];
     senderAddress: string;
 }
+
 const getPromptKeyPinningType = ({
     messageVerification,
     mailSettings = {},
@@ -198,7 +200,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                                 {c('Action').t`Never show`}
                             </InlineLinkButton>
                         ) : (
-                            <Href url="https://protonmail.com/support/knowledge-base/address-verification/">
+                            <Href  url={getKnowledgeBaseUrl('/address-verification/')}>
                                 {c('Link').t`Learn more`}
                             </Href>
                         )}

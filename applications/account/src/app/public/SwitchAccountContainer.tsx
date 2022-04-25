@@ -1,6 +1,5 @@
 import { Fragment, MouseEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
-import * as History from 'history';
 
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { resumeSession, getActiveSessions } from '@proton/shared/lib/authentication/persistedSessionHelper';
@@ -14,7 +13,6 @@ import { revoke } from '@proton/shared/lib/api/auth';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import {
-    UnderlineButton,
     Loader,
     CircleLoader,
     OnLoginCallbackArguments,
@@ -31,24 +29,14 @@ import {
 } from '@proton/components';
 import Main from './Main';
 import Header from './Header';
-import Footer from './Footer';
 import Content from './Content';
-import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
 
 import './SwitchAccountContainer.scss';
-
-export const getSearchParams = (search: History.Search) => {
-    const searchParams = new URLSearchParams(search);
-
-    const maybeService = searchParams.get('service') as SERVICES_KEYS | undefined;
-    const service = maybeService ? SERVICES[maybeService] : undefined;
-
-    return { service };
-};
+import Layout from './Layout';
 
 interface Props {
     onLogin: (data: OnLoginCallbackArguments) => Promise<void>;
-    toAppName: string;
+    toAppName?: string;
     activeSessions?: LocalSessionResponse[];
     onSignOut: (updatedActiveSessions?: LocalSessionResponse[]) => void;
     onSignOutAll: () => void;
@@ -188,7 +176,7 @@ const SwitchAccountContainer = ({
                     <Fragment key={LocalID}>
                         <div
                             className={classnames([
-                                'account-button interactive flex flex-align-items-start w100 text-left rounded-bigger relative',
+                                'account-button p1 interactive flex flex-align-items-start w100 text-left rounded relative',
                                 isLoading && 'is-loading',
                             ])}
                         >
@@ -197,7 +185,7 @@ const SwitchAccountContainer = ({
                                     {initials}
                                 </span>
                             </span>
-                            <div className="account-button-content ml1 flex-item-fluid">
+                            <div className="account-button-content mx1 flex-item-fluid">
                                 <button
                                     type="button"
                                     className="text-left increase-click-surface"
@@ -218,14 +206,18 @@ const SwitchAccountContainer = ({
                                         {c('Action').t`Sign out`}
                                     </InlineLinkButton>
                                 </div>
-                                {isLoading ? (
-                                    <div className="account-button-icon flex text-lg">
-                                        <CircleLoader />
-                                    </div>
-                                ) : (
-                                    <Icon className="account-button-icon" name="arrow-right" aria-hidden="true" />
-                                )}
                             </div>
+                            {isLoading ? (
+                                <div className="account-button-icon flex text-lg mtauto mbauto">
+                                    <CircleLoader />
+                                </div>
+                            ) : (
+                                <Icon
+                                    className="account-button-icon  mtauto mbauto"
+                                    name="arrow-right"
+                                    aria-hidden="true"
+                                />
+                            )}
                         </div>
                         {index !== localActiveSessions.length - 1 && <hr className="my0-5" />}
                     </Fragment>
@@ -234,7 +226,7 @@ const SwitchAccountContainer = ({
         );
     };
 
-    return (
+    const children = (
         <Main>
             <Header
                 title={c('Title').t`Choose an account`}
@@ -244,16 +236,18 @@ const SwitchAccountContainer = ({
                 <div className="w100 max-h-custom" style={{ '--max-height-custom': '25em' }}>
                     <Scroll>{inner()}</Scroll>
                 </div>
-                <div className="w100 text-center">
-                    <Button className="mt1" onClick={onAddAccount}>{c('Action').t`Add ${BRAND_NAME} account`}</Button>
+                <div className="w100 text-center mt2 mb0-5">
+                    <Button size="large" color="weak" shape="outline" fullWidth onClick={onAddAccount}>{c('Action')
+                        .t`Add ${BRAND_NAME} Account`}</Button>
+                </div>
+                <div className="w100 text-center mb0-5">
+                    <Button size="large" color="norm" shape="ghost" fullWidth onClick={handleSignOutAll}>{c('Action')
+                        .t`Sign out all accounts`}</Button>
                 </div>
             </Content>
-            <Footer>
-                <UnderlineButton className="mlauto mrauto" onClick={handleSignOutAll}>{c('Action')
-                    .t`Sign out all accounts`}</UnderlineButton>
-            </Footer>
         </Main>
     );
+    return <Layout>{children}</Layout>;
 };
 
 export default SwitchAccountContainer;

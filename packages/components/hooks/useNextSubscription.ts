@@ -19,7 +19,7 @@ const useNextSubscription = () => {
         // Without any coupon
         const next = await api<SubscriptionCheckResponse>(
             checkSubscription({
-                PlanIDs: getPlanIDs(subscription),
+                Plans: getPlanIDs(subscription),
                 Currency: subscription.Currency,
                 Cycle: subscription.Cycle,
             })

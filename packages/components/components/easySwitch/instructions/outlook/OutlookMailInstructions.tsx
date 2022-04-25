@@ -1,14 +1,12 @@
 import { c } from 'ttag';
 
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Href } from '../../../link';
 
 const OutlookMailInstructions = () => {
     // translator: full sentence: "To import emails to Proton, you need an app password from Outlook. Get it by following these steps:"
     const appPasswordLink = (
-        <Href
-            url="https://protonmail.com/support/knowledge-base/allowing-imap-access-and-entering-imap-details/"
-            key="appPasswordLink"
-        >
+        <Href url={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details/')} key="appPasswordLink">
             {c('Import instructions link').t`app password`}
         </Href>
     );

@@ -24,6 +24,7 @@ export const queryCreateOldUser = (data: {
 
 export const queryCreateUser = (data: {
     Username: string;
+    Domain?: string;
     Email?: string;
     Phone?: string;
     Type: 1 | 2; // 1 = mail, 2 = VPN
@@ -110,10 +111,10 @@ export const queryVerificationCode = (
     data: { Type, Destination },
 });
 
-export const queryCheckUsernameAvailability = (Name: string) => ({
+export const queryCheckUsernameAvailability = (Name: string, ParseDomain?: boolean) => ({
     url: 'users/available',
     method: 'get',
-    params: { Name },
+    params: { Name, ParseDomain: ParseDomain ? 1 : 0 },
 });
 
 export const queryCheckEmailAvailability = (Name: string) => ({

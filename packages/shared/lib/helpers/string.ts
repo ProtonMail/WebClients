@@ -164,8 +164,7 @@ export const getInitials = (fullName = '') => {
 };
 
 export const hasProtonDomain = (email = '') => {
-    const protonmailRegex = /@(protonmail\.(com|ch)|pm\.me|)$/i;
-    return protonmailRegex.test(email);
+    return /@(protonmail\.(com|ch)|proton\.(me|ch)|pm\.me|)$/i.test(email);
 };
 
 const getMatchingCharacters = (string: string, substring: string) => {

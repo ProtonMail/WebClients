@@ -1,5 +1,4 @@
-import { forwardRef, memo, Ref, useEffect, useRef } from 'react';
-import { APPS } from '@proton/shared/lib/constants';
+import { forwardRef, memo, Ref } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 import {
     useMailSettings,
@@ -7,33 +6,23 @@ import {
     useLabels,
     useFolders,
     useWelcomeFlags,
-    useModals,
     LocationErrorBoundary,
     MailShortcutsModal,
     useModalState,
-    ReferralModal,
-    useSubscription,
-    useUser,
-    useFeature,
-    FeatureCode,
-    getShouldOpenReferralModal,
-    useAddresses,
-    getShouldOpenMnemonicModal,
 } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import PrivateLayout from '../components/layout/PrivateLayout';
 import MailboxContainer from './mailbox/MailboxContainer';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { Breakpoints } from '../models/utils';
 import { useDeepMemo } from '../hooks/useDeepMemo';
-import MailOnboardingModal from '../components/onboarding/MailOnboardingModal';
 import { MailUrlParams } from '../helpers/mailboxUrl';
 import { useContactsListener } from '../hooks/contact/useContactsListener';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useConversationsEvent } from '../hooks/events/useConversationsEvents';
 import { useMessagesEvents } from '../hooks/events/useMessagesEvents';
+import MailStartupModals from './MailStartupModals';
 
 interface Props {
     params: MailUrlParams;
@@ -45,54 +34,10 @@ const PageContainer = (
     { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const [user] = useUser();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
-    const [subscription] = useSubscription();
-    const [addresses] = useAddresses();
-
-    const { createModal } = useModals();
-
-    const seenMnemonicFeature = useFeature<boolean>(FeatureCode.SeenMnemonicPrompt);
-    const [mnemonicPromptModal, setMnemonicPromptModalOpen, renderMnemonicModal] = useModalState();
-    const shouldOpenMnemonicModal = getShouldOpenMnemonicModal({
-        user,
-        addresses,
-        feature: seenMnemonicFeature.feature,
-        app: APPS.PROTONMAIL,
-    });
-
-    const seenReferralModal = useFeature<boolean>(FeatureCode.SeenReferralModal);
-    const [referralModal, setReferralModal, renderReferralModal] = useModalState();
-    const shouldOpenReferralModal = getShouldOpenReferralModal({ subscription, feature: seenReferralModal.feature });
-
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
-    const onceRef = useRef(false);
-
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-
-    useEffect(() => {
-        if (onceRef.current) {
-            return;
-        }
-
-        if (welcomeFlags.isWelcomeFlow) {
-            onceRef.current = true;
-            createModal(
-                <MailOnboardingModal
-                    onDone={() => {
-                        setWelcomeFlagsDone();
-                    }}
-                />
-            );
-        } else if (shouldOpenMnemonicModal) {
-            onceRef.current = true;
-            setMnemonicPromptModalOpen(true);
-        } else if (shouldOpenReferralModal.open) {
-            onceRef.current = true;
-            setReferralModal(true);
-        }
-    }, [shouldOpenMnemonicModal, shouldOpenReferralModal.open]);
 
     useContactsListener();
     useConversationsEvent();
@@ -112,8 +57,10 @@ const PageContainer = (
             elementID={elementID}
             breakpoints={breakpoints}
         >
-            {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
-            {renderMnemonicModal && <MnemonicPromptModal {...mnemonicPromptModal} />}
+            <MailStartupModals
+                onboardingOpen={!!welcomeFlags.isWelcomeFlow}
+                onOnboardingDone={() => setWelcomeFlagsDone()}
+            />
             <LocationErrorBoundary>
                 <MailboxContainer
                     labelID={labelID}

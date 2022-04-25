@@ -1,14 +1,14 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
-import { classnames, generateUID } from '@proton/components';
+import { classnames, generateUID, LogoProps } from '@proton/components';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 type Version = 'full' | 'glyph-only';
 
-interface Props extends ComponentPropsWithoutRef<'svg'> {
+interface Props extends ComponentPropsWithoutRef<'svg'>, Pick<LogoProps, 'size'> {
     variant?: Version;
 }
 
-const ProtonLogo = ({ variant = 'full', className, ...rest }: Props) => {
+const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -20,7 +20,7 @@ const ProtonLogo = ({ variant = 'full', className, ...rest }: Props) => {
             width="96"
             height="36"
             fill="none"
-            className={classnames(['logo', variant, className])}
+            className={classnames(['logo', size && `icon-${size}p`, variant, className])}
             aria-labelledby={`{${uid}}-title`}
             {...rest}
         >
@@ -59,7 +59,7 @@ const ProtonLogo = ({ variant = 'full', className, ...rest }: Props) => {
             width="36"
             height="36"
             fill="none"
-            className={classnames(['logo', variant, className])}
+            className={classnames(['logo', size && `icon-${size}p`, variant, className])}
             aria-labelledby={`{${uid}}-title`}
             {...rest}
         >

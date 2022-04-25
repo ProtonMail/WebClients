@@ -23,13 +23,15 @@ import {
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
 import { ResetActionResponse, ResetCacheResult, STEPS } from '@proton/components/containers/resetPassword/interface';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import BackButton from '../public/BackButton';
 import Main from '../public/Main';
 import Header from '../public/Header';
+import Text from '../public/Text';
 import Content from '../public/Content';
 import LoginSupportDropdown from '../login/LoginSupportDropdown';
-import Footer from '../public/Footer';
+import Layout from '../public/Layout';
 import { defaultPersistentKey } from '../public/helper';
 
 import RequestRecoveryForm from './RequestRecoveryForm';
@@ -39,10 +41,9 @@ import SetPasswordForm from '../login/SetPasswordForm';
 
 interface Props {
     onLogin: OnLoginCallback;
-    onBack?: () => void;
 }
 
-const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
+const ResetPasswordContainer = ({ onLogin }: Props) => {
     const history = useHistory();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
@@ -126,14 +127,28 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
 
     const cache = cacheRef.current;
 
-    return (
+    const handleBackStep = (() => {
+        if (step === STEPS.REQUEST_RECOVERY_METHODS) {
+            return handleBack;
+        }
+        if (step === STEPS.NO_RECOVERY_METHODS) {
+            return handleBack;
+        }
+        if (step === STEPS.VALIDATE_RESET_TOKEN && cache) {
+            return () => {
+                setStep(cache.Methods?.includes('login') ? STEPS.REQUEST_RECOVERY_METHODS : STEPS.REQUEST_RESET_TOKEN);
+            };
+        }
+        return handleCancel;
+    })();
+
+    const children = (
         <Main>
             {step === STEPS.REQUEST_RECOVERY_METHODS && (
                 <>
-                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={onBack || handleBack} />} />
+                    <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
-                        <div className="mb1-75">{c('Info')
-                            .t`Enter your Proton account email address or username.`}</div>
+                        <Text>{c('Info').t`Enter your ${BRAND_NAME} Account email address or username.`}</Text>
                         {/* key to trigger a refresh so that it renders a default username */}
                         <RequestRecoveryForm
                             key={automaticVerification.username}
@@ -155,19 +170,18 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             )}
             {step === STEPS.NO_RECOVERY_METHODS && (
                 <>
-                    <Header title={c('Title').t`No recovery method`} left={<BackButton onClick={handleBack} />} />
+                    <Header title={c('Title').t`No recovery method`} onBack={handleBackStep} />
                     <Content>
+                        <Text>{c('Info').t`Unfortunately there is no recovery method saved for this account.`}</Text>
                         <form>
-                            <div className="mb1-75">{c('Info')
-                                .t`Unfortunately there is no recovery method saved for this account.`}</div>
                             <Button color="norm" size="large" onClick={handleBack} fullWidth>{c('Action')
-                                .t`Return to login`}</Button>
+                                .t`Return to sign in`}</Button>
                             <ButtonLike
                                 as={Href}
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                url="https://protonmail.com/support-form"
+                                url={getStaticURL('/support-form')}
                                 target="_self"
                                 fullWidth
                                 className="mt0-5"
@@ -178,7 +192,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             )}
             {step === STEPS.REQUEST_RESET_TOKEN && cache && (
                 <>
-                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={handleCancel} />} />
+                    <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
                         <RequestResetTokenForm
                             defaultCountry={defaultCountry}
@@ -205,20 +219,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             )}
             {step === STEPS.VALIDATE_RESET_TOKEN && cache?.method && cache?.value && (
                 <>
-                    <Header
-                        title={c('Title').t`Reset password`}
-                        left={
-                            <BackButton
-                                onClick={() => {
-                                    setStep(
-                                        cache.Methods?.includes('login')
-                                            ? STEPS.REQUEST_RECOVERY_METHODS
-                                            : STEPS.REQUEST_RESET_TOKEN
-                                    );
-                                }}
-                            />
-                        }
-                    />
+                    <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
                         <ValidateResetTokenForm
                             method={cache.method}
@@ -255,7 +256,7 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             )}
             {step === STEPS.NEW_PASSWORD && cache && (
                 <>
-                    <Header title={c('Title').t`Reset password`} left={<BackButton onClick={handleCancel} />} />
+                    <Header title={c('Title').t`Reset password`} onBack={handleBackStep} />
                     <Content>
                         <SetPasswordForm
                             onSubmit={async (newPassword: string) => {
@@ -288,17 +289,17 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
             )}
             {step === STEPS.ERROR && (
                 <>
-                    <Header title={c('Title').t`Error`} left={<BackButton onClick={handleCancel} />} />
+                    <Header title={c('Title').t`Error`} onBack={handleBackStep} />
                     <Content>
                         <GenericError />
                         <Button color="norm" size="large" onClick={handleBack} fullWidth className="mt1-75">{c('Action')
-                            .t`Return to login`}</Button>
+                            .t`Return to sign in`}</Button>
                         <ButtonLike
                             as={Href}
                             color="norm"
                             shape="ghost"
                             size="large"
-                            url="https://protonmail.com/support-form"
+                            url={getStaticURL('/support-form')}
                             target="_self"
                             fullWidth
                             className="mt0-5"
@@ -306,10 +307,16 @@ const ResetPasswordContainer = ({ onLogin, onBack }: Props) => {
                     </Content>
                 </>
             )}
-            <Footer>
-                <LoginSupportDropdown />
-            </Footer>
         </Main>
+    );
+    return (
+        <Layout
+            hasDecoration={step === STEPS.REQUEST_RECOVERY_METHODS}
+            hasBackButton={!!handleBackStep}
+            bottomRight={<LoginSupportDropdown />}
+        >
+            {children}
+        </Layout>
     );
 };
 

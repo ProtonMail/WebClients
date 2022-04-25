@@ -67,6 +67,7 @@ export enum FeatureCode {
     DriveSearchSpotlight = 'DriveSearchSpotlight',
     MailServiceWorker = 'MailServiceWorker',
     NewDomainOptIn = 'NewDomainOptIn',
+    SeenV5WelcomeModal = 'SeenV5WelcomeModal',
 }
 
 export interface FeaturesContextValue {

@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { isURL } from '@proton/shared/lib/helpers/validators';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import { Href, InputFieldTwo, Loader, Button, BasicModal, Form } from '../../../components';
 import { useLoading } from '../../../hooks';
@@ -106,7 +107,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
     })();
 
     const kbLink = (
-        <Href key="kbLink" href="https://protonmail.com/support/knowledge-base/calendar-subscribe">{c(
+        <Href key="kbLink" href={getKnowledgeBaseUrl('/calendar-subscribe')}>{c(
             'Subscribe to calendar modal description'
         ).t`Learn how to get a private calendar link.`}</Href>
     );

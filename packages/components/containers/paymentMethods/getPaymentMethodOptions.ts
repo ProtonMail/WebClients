@@ -96,7 +96,9 @@ export const getPaymentMethodOptions = ({
         paymentMethodsStatus?.Card && {
             icon: 'credit-card' as const,
             value: PAYMENT_METHOD_TYPES.CARD,
-            text: c('Payment method option').t`New credit/debit card`,
+            text: isSignup
+                ? c('Payment method option').t`Credit/debit card`
+                : c('Payment method option').t`New credit/debit card`,
         },
         paymentMethodsStatus?.Paypal &&
             !alreadyHavePayPal &&

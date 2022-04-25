@@ -146,17 +146,15 @@ const SetupInternalAccountContainer = () => {
     }
 
     return (
-        <Layout toApp={toApp} hasLanguageSelect={false}>
+        <Layout hasDecoration={false}>
             <Main>
                 <GenerateInternalAddressStep
+                    onBack={handleBack}
                     api={silentApi}
                     mailAppName={mailAppName}
                     toAppName={toAppName}
                     availableDomains={generateInternalAddress.availableDomains}
                     externalEmailAddress={externalEmailAddress}
-                    onBack={() => {
-                        handleBack();
-                    }}
                     onSubmit={async (payload) => {
                         try {
                             await handleCreateInternalAddressAndKey({

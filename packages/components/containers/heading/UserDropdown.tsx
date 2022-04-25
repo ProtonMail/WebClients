@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, PLAN_SERVICES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { getPlanName, hasLifetime } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
+import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import {
     usePopperAnchor,
     Dropdown,
@@ -22,7 +23,6 @@ import {
     Copy,
     useAuthentication,
     useConfig,
-    useModals,
     useNotifications,
     useOrganization,
     useRecoveryNotification,
@@ -38,14 +38,14 @@ import {
 
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
-import { OnboardingModal } from '../onboarding';
 import { AuthenticatedBugModal } from '../support';
 
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
+    onOpenIntroduction?: () => void;
 }
 
-const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
+const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
     const { APP_NAME } = useConfig();
     const [organization] = useOrganization();
     const { Name: organizationName } = organization || {};
@@ -59,7 +59,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
     const { logout } = useAuthentication();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { createModal } = useModals();
     const [bugReportModal, setBugReportModal, render] = useModalState();
 
     const recoveryNotification = useRecoveryNotification(true);
@@ -99,7 +98,6 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         close();
     };
 
-    const { MAIL, VPN } = PLAN_SERVICES;
     const { PROTONVPN_SETTINGS } = APPS;
 
     let planName;
@@ -108,17 +106,9 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
         if (hasLifetime(subscription)) {
             planName = 'Lifetime';
         } else {
-            planName = getPlanName(subscription, MAIL) || getPlanName(subscription, VPN);
-        }
-
-        if (APP_NAME === PROTONVPN_SETTINGS) {
-            planName = getPlanName(subscription, VPN);
+            planName = getPlan(subscription)?.Title;
         }
     }
-
-    const handleTourClick = () => {
-        createModal(<OnboardingModal showGenericSteps allowClose hideDisplayName />);
-    };
 
     const handleBugReportClick = () => {
         setBugReportModal(true);
@@ -257,10 +247,13 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
                     <hr className="mt0-5 mb0-5" />
 
-                    {APP_NAME !== APPS.PROTONVPN_SETTINGS && (
+                    {onOpenIntroduction && (
                         <DropdownMenuButton
                             className="text-left"
-                            onClick={handleTourClick}
+                            onClick={() => {
+                                close();
+                                onOpenIntroduction();
+                            }}
                             data-testid="userdropdown:button:introduction"
                         >
                             {c('Action').t`${BRAND_NAME} introduction`}
@@ -315,7 +308,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
                                 href={
                                     APP_NAME === PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/'
-                                        : 'https://protonmail.com/support/'
+                                        : getStaticURL('/support/')
                                 }
                                 // eslint-disable-next-line react/jsx-no-target-blank
                                 target="_blank"
@@ -345,7 +338,7 @@ const UserDropdown = ({ onOpenChat, ...rest }: Props) => {
 
                     <DropdownMenuLink
                         className="text-left flex flex-nowrap flex-justify-space-between flex-align-items-center"
-                        href="https://shop.protonmail.com"
+                        href={getShopURL()}
                         target="_blank"
                         data-testid="userdropdown:link:shop"
                     >

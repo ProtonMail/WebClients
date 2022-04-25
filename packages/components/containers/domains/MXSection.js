@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { Alert, Label, Table, TableHeader, TableBody, TableRow } from '../../components';
 
@@ -8,7 +9,7 @@ const MXSection = () => {
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
     return (
         <>
-            <Alert className="mb1" learnMore="https://protonmail.com/support/knowledge-base/dns-records/">
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/dns-records/')}>
                 {c('Info')
                     .t`Before you can receive emails for your custom domain addresses at ${MAIL_APP_NAME}, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>

@@ -1,88 +1,42 @@
 import { c } from 'ttag';
 import onboardingMailWelcome from '@proton/styles/assets/img/onboarding/mail-welcome.svg';
-import onboardingImportAssistant from '@proton/styles/assets/img/onboarding/import-assistant.svg';
 import {
+    Button,
     OnboardingContent,
     OnboardingModal,
     OnboardingStep,
     OnboardingStepRenderCallback,
-    useSettingsLink,
-    QRCode,
-    useFeature,
-    useImporters,
-    FeatureCode,
-    useUser,
 } from '@proton/components';
-import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-const MailOnboardingModal = (props: any) => {
-    const appName = getAppName(APPS.PROTONMAIL);
-    const [user] = useUser();
-    const goToSettings = useSettingsLink();
-    const link = <strong key="link">pm.me/app</strong>;
-    const [imports, importsLoading] = useImporters();
-    const hasAlreadyImported = !importsLoading && imports.length;
-    const { feature: usedMailMobileAppFeature } = useFeature(FeatureCode.UsedMailMobileApp);
+interface Props {
+    showGenericSteps?: boolean;
+    onDone?: () => void;
+    open?: boolean;
+}
 
+const MailOnboardingModal = (props: Props) => {
+    const appName = MAIL_APP_NAME;
     return (
         <OnboardingModal {...props}>
             {[
-                ({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) =>
-                    displayGenericSteps ? null : (
-                        <OnboardingStep submit={c('Onboarding').t`Next`} onSubmit={onNext} close={null}>
-                            <OnboardingContent
-                                img={
-                                    <img
-                                        src={onboardingMailWelcome}
-                                        alt={c('Onboarding').t`Meet your encrypted mailbox`}
-                                    />
-                                }
-                                title={c('Onboarding').t`Meet your encrypted mailbox`}
-                                description={c('Onboarding')
-                                    .t`${appName} is now more modern and customizable while still protecting your data with advanced encryption.`}
-                            />
-                        </OnboardingStep>
-                    ),
-                ({ onNext }: OnboardingStepRenderCallback) =>
-                    usedMailMobileAppFeature === undefined || usedMailMobileAppFeature.Value || user.isFree ? null : (
-                        <OnboardingStep submit={c('Onboarding').t`Next`} onSubmit={onNext} close={null}>
-                            <OnboardingContent
-                                title={c('Onboarding').t`Get the ${appName} mobile app`}
-                                description={c('Onboarding').t`Available on iOS and Android.`}
-                            >
-                                <div className="text-center">
-                                    <QRCode value="https://pm.me/app?type=qr" size={200} />
-                                </div>
-                                <p className="text-center">{c('Info')
-                                    .jt`Using your mobile device, scan this QR-Code or visit ${link}.`}</p>
-                            </OnboardingContent>
-                        </OnboardingStep>
-                    ),
-                ({ onNext }: OnboardingStepRenderCallback) =>
-                    hasAlreadyImported || user.isFree ? null : (
-                        <OnboardingStep
-                            submit={c('Action').t`Import messages`}
-                            onSubmit={() => {
-                                goToSettings('/easy-switch', APPS.PROTONMAIL, true);
-                                onNext();
-                            }}
-                            onClose={onNext}
-                            close={c('Action').t`Start using ${appName}`}
-                        >
-                            <OnboardingContent
-                                img={
-                                    <img
-                                        src={onboardingImportAssistant}
-                                        alt={c('Onboarding').t`Import your messages`}
-                                    />
-                                }
-                                title={c('Onboarding').t`Import your messages`}
-                                description={c('Onboarding')
-                                    .t`Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.`}
-                            />
-                        </OnboardingStep>
-                    ),
+                ({ onNext, displayGenericSteps }: OnboardingStepRenderCallback) => (
+                    <OnboardingStep>
+                        <OnboardingContent
+                            img={<img src={onboardingMailWelcome} alt={c('Onboarding').t`Welcome to ${appName}`} />}
+                            title={c('Onboarding').t`Welcome to ${appName}`}
+                            description={c('Onboarding')
+                                .t`Where privacy and security meet productivity and ease of use.`}
+                        />
+                        <footer>
+                            <Button size="large" color="norm" fullWidth onClick={onNext}>
+                                {displayGenericSteps
+                                    ? c('Onboarding Action').t`Next`
+                                    : c('Onboarding Action').t`Start using ${appName}`}
+                            </Button>
+                        </footer>
+                    </OnboardingStep>
+                ),
             ]}
         </OnboardingModal>
     );

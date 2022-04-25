@@ -2,7 +2,27 @@ import { forwardRef } from 'react';
 
 import { classnames } from '../../helpers';
 
-export type IconSize = 6 | 8 | 10 | 11 | 12 | 14 | 16 | 18 | 20 | 22 | 24 | 28 | 40 | 42 | 48 | 56 | 60 | 100 | 110;
+export type IconSize =
+    | 6
+    | 8
+    | 10
+    | 11
+    | 12
+    | 14
+    | 16
+    | 18
+    | 20
+    | 22
+    | 24
+    | 28
+    | 40
+    | 42
+    | 48
+    | 56
+    | 60
+    | 70
+    | 100
+    | 110;
 
 export type IconName =
     | 'alias'
