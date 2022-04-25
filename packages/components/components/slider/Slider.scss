@@ -1,0 +1,78 @@
+@import '~@proton/styles/scss/config';
+
+$height-track: 16 !default;
+$size-track-thumb: 36 !default;
+
+.slider {
+	/**
+	 * Prevent scroll while interacting with slider on mobile.
+	 * Support on iOS safari for this CSS property starts on version 13.
+	 *
+	 * TODO: may have to add support for iOS safari < 13 for this behaviour.
+	 */
+	touch-action: none;
+	block-size: rem($height-track);
+
+	&-rail,
+	&-track,
+	&-thumb {
+		position: absolute;
+	}
+
+	&-rail {
+		background: var(--background-strong);
+		inline-size: 100%;
+		block-size: 100%;
+	}
+
+	&-track {
+		background: var(--signal-success);
+		block-size: 100%;
+	}
+
+	&-thumb {
+		block-size: rem($size-track-thumb);
+		inline-size: rem($size-track-thumb);
+		transition: none;
+		user-select: none;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transform: translateX(-50%) translateY(-10px);
+
+		[dir='rtl'] & {
+			transform: translateX(50%) translateY(-10px);
+		}
+
+		&-tooltip {
+			opacity: 0;
+			transition: 0.2s;
+			transform: scale(0);
+			word-break: initial;
+			inset-block-end: calc(100% + 16px);
+		}
+
+		&:active,
+		&:focus,
+		&:hover,
+		&-dragging {
+			.slider-thumb-tooltip {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+
+		&-input {
+			inline-size: 100%;
+			block-size: 100%;
+
+			&:active + .slider-thumb-tooltip,
+			&:focus + .slider-thumb-tooltip {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}
