@@ -84,6 +84,23 @@ describe('SelectTwo component', () => {
         expect(getList(output)).toBeInTheDocument();
     });
 
+    it(`should select "two" when typing "t"`, () => {
+        const spy = jest.fn();
+
+        const output = render(
+            <SelectTwo onChange={spy} data-testid="dropdown-button">
+                <Option title="one" value="one" />
+                <Option title="two" value="two" />
+            </SelectTwo>
+        );
+
+        fireEvent.keyDown(getAnchor(output), { key: 't' });
+
+        const [[{ value }]] = spy.mock.calls;
+
+        expect(value).toBe('two');
+    });
+
     it('should focus the first element when opened and no option is selected', () => {
         const output = renderBasicSelect();
 

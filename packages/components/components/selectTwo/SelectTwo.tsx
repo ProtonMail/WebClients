@@ -130,7 +130,16 @@ const SelectTwo = <V extends any>({
         const indexOfMatchedOption = searchableItems.findIndex((v) => v.startsWith(search));
 
         if (indexOfMatchedOption !== -1) {
-            setFocusedIndex(indexOfMatchedOption);
+            if (isOpen) {
+                setFocusedIndex(indexOfMatchedOption);
+            } else {
+                const matchedValue = optionValues[indexOfMatchedOption];
+                onChange?.({
+                    value: matchedValue,
+                    selectedIndex: indexOfMatchedOption,
+                });
+                onValue?.(matchedValue);
+            }
         }
     }, [search]);
 
@@ -142,25 +151,23 @@ const SelectTwo = <V extends any>({
         }
     };
 
-    const handleMenuKeydown = (e: KeyboardEvent<HTMLUListElement>) => {
-        if (e.key === 'Escape') {
+    const handleKeydown = (e: KeyboardEvent<HTMLElement>) => {
+        const { key } = e;
+
+        if (key === 'Escape') {
             close();
             anchorRef.current?.focus();
             return;
         }
 
-        const isAlphanumeric = /^[a-z0-9]+$/i.test(e.key);
+        if (key === ' ') {
+            open();
+            return;
+        }
 
-        /*
-         * The e.key.length === 1 thing is super hacky and is supposed
-         * to prevent event keys such as 'Shift' / 'ArrowUp' etc. from
-         * being tracked here.
-         *
-         * A better solution might be needed.
-         */
-        if (isAlphanumeric && isSearchable && e.key.length === 1) {
-            const { key } = e;
+        const isAlphanumeric = /^[A-Za-z0-9]$/.test(key);
 
+        if (isAlphanumeric && isSearchable) {
             setSearch((s) => s + key);
         }
     };
@@ -178,6 +185,7 @@ const SelectTwo = <V extends any>({
                 isOpen={isOpen}
                 onOpen={open}
                 onClick={handleAnchorClick}
+                onKeyDown={handleKeydown}
                 aria-label={ariaLabel}
                 ref={anchorRef}
                 {...rest}
@@ -196,7 +204,7 @@ const SelectTwo = <V extends any>({
                 sameAnchorWidth
                 disableDefaultArrowNavigation
             >
-                <SelectOptions selected={selectedIndex} onKeyDown={handleMenuKeydown} onChange={handleChange}>
+                <SelectOptions selected={selectedIndex} onKeyDown={handleKeydown} onChange={handleChange}>
                     {children}
                 </SelectOptions>
             </Dropdown>
