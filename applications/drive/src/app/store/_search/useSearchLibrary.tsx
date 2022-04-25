@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useRef } from 'react';
 import { c } from 'ttag';
 
 import { useEncryptedSearch } from '@proton/encrypted-search';
@@ -34,7 +34,6 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const { getSharePrivateKey } = useShare();
     const { getDefaultShare } = useDefaultShare();
     const searchEnabled = useSearchEnabledFeature();
-    const [isInitialized, setIsInitialized] = useState(false);
 
     const handlerId = useRef<string>();
     const driveEventManager = useDriveEventManager();
@@ -66,11 +65,10 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     });
 
     useEffect(() => {
-        if (searchEnabled && !isInitialized) {
-            setIsInitialized(true);
+        if (searchEnabled) {
             void esFunctions.initializeES();
         }
-    }, [searchEnabled, isInitialized]);
+    }, []);
 
     useEffect(() => {
         if (!esFunctions.getESDBStatus().dbExists) {
