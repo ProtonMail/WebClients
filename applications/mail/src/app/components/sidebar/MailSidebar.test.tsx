@@ -59,7 +59,7 @@ describe('MailSidebar', () => {
         const { getByTestId, queryByTestId } = await render(<MailSidebar {...props} />, false);
 
         const folderElement = getByTestId(`navigation-link:${folder.Name}`);
-        const folderIcon = folderElement.querySelector('svg');
+        const folderIcon = folderElement.querySelector('svg:not(.navigation-icon--expand)');
 
         expect(folderElement.textContent).toContain(folder.Name);
         expect((folderIcon?.firstChild as Element).getAttribute('xlink:href')).toBe('#ic-folders');
@@ -226,6 +226,7 @@ describe('MailSidebar', () => {
             const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, false);
 
             const sidebar = container.querySelector('nav > div') as HTMLDivElement;
+            const More = getByTitle('More');
             const Folders = getByTitle('Folders');
             const Labels = getByTitle('Labels');
 
@@ -243,7 +244,10 @@ describe('MailSidebar', () => {
             assertFocus(Inbox);
             down();
             assertFocus(Drafts);
-            range(0, 8).forEach(down);
+            range(0, 4).forEach(down);
+            assertFocus(More);
+            range(0, 5).forEach(down);
+
             assertFocus(Folders);
             down();
             assertFocus(Folder);
@@ -258,7 +262,7 @@ describe('MailSidebar', () => {
             assertFocus(Folder);
             up();
             assertFocus(Folders);
-            range(0, 9).forEach(up);
+            range(0, 10).forEach(up);
             assertFocus(Inbox);
 
             ctrlDown();
