@@ -360,7 +360,7 @@ const CalendarContainerView = ({
                                             disabled={noSelection || !onCreateEvent}
                                             title={c('Action').t`Create event`}
                                         >
-                                            <Icon name="calendar-grid" />
+                                            <Icon name="calendar-grid" alt={c('Action').t`Create event`} />
                                         </Button>
                                     </Tooltip>
                                 );

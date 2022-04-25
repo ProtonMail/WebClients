@@ -6,7 +6,8 @@
 
 		&-link {
 			inset-block-start: 1px;
-			padding: 0.5em 0.75em;
+			padding-block: 0.5em; 
+                        padding-inline: 0.75em;
 			border-block-end: 2px solid transparent;
 			color: var(--text-weak);
 			transition: 0.15s easing(easeOutQuint);

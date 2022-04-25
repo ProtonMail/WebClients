@@ -185,7 +185,7 @@ const ContactGroupDropdown = ({
                                 className="flex flex-align-items-center"
                                 data-prevent-arrow-navigation
                             >
-                                <Icon name="users" /> +
+                                <Icon name="users" alt={c('Action').t`Create a new contact group`} /> +
                             </Button>
                         </Tooltip>
                     </div>

@@ -15,7 +15,7 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
     return (
         <div className="relative border rounded-lg p2 bg-primary">
             <Button className="absolute top right" shape="ghost" onClick={handleClose}>
-                <Icon name="cross" />
+                <Icon name="cross" alt={c('Action').t`Close`} />
             </Button>
             <h2 className="text-bold">{
                 // translator: full sentense would be "Get up to 18 months of Mail Plus for free"
