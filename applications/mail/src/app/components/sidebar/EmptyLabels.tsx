@@ -8,7 +8,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
-import { LABEL_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
@@ -22,7 +22,7 @@ const EmptyLabels = ({ onFocus }: Props) => {
 
     const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
         Name: '',
-        Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
         Type: LABEL_TYPE.MESSAGE_LABEL,
     };
 

@@ -16,7 +16,7 @@ const DeletePermanentlyButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Delete permanently`}
-            icon={<Icon name="circle-xmark" />}
+            icon={<Icon name="cross-circle" />}
             onClick={() =>
                 deletePermanently(
                     new AbortController().signal,

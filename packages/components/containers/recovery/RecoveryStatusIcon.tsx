@@ -7,27 +7,27 @@ interface Props extends Omit<IconProps, 'name' | 'size'> {
 
 const RecoveryStatusIcon = ({ type, className, ...rest }: Props) => {
     let config: { name: IconName; className: string } = {
-        name: 'circle-info-filled',
+        name: 'info-circle-filled',
         className: 'color-info',
     };
 
     if (type === 'success') {
         config = {
-            name: 'circle-check-filled',
+            name: 'checkmark-circle-filled',
             className: 'color-success',
         };
     }
 
     if (type === 'warning') {
         config = {
-            name: 'circle-exclamation-filled',
+            name: 'exclamation-circle-filled',
             className: 'color-warning',
         };
     }
 
     if (type === 'danger') {
         config = {
-            name: 'circle-exclamation-filled',
+            name: 'exclamation-circle-filled',
             className: 'color-danger',
         };
     }

@@ -36,7 +36,7 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                 onClick={onOpen}
                 data-shorcut-target="searchbox-button"
             >
-                <Icon name="magnifying-glass" size={16} className="mauto" />
+                <Icon name="magnifier" size={16} className="mauto" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
             <div

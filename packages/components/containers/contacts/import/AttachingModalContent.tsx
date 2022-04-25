@@ -50,7 +50,7 @@ const AttachingModalContent = ({
                 {model.fileAttached ? (
                     <AttachedFile
                         file={model.fileAttached}
-                        iconName="user-group"
+                        iconName="users"
                         clear={c('Action').t`Delete`}
                         onClear={onClear}
                     />

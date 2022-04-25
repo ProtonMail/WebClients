@@ -19,7 +19,7 @@
 	&-day {
 		@media not print {
 			&[aria-current='true'] {
-				font-weight: bold;
+				font-weight: var(--font-weight-bold);
 				color: var(--primary);
 			}
 		}

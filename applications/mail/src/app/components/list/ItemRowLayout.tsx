@@ -135,7 +135,7 @@ const ItemRowLayout = ({
 
             <span className="flex w2e ml0-5 text-center">
                 <ItemAttachmentIcon
-                    icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                     element={element}
                     className="flex-item-noshrink"
                 />

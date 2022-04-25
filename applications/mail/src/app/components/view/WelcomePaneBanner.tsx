@@ -3,7 +3,7 @@ import * as React from 'react';
 import { c } from 'ttag';
 import { Href, MailShortcutsModal, Price, SettingsLink, useModals, useModalState } from '@proton/components';
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
@@ -213,7 +213,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
                 </span>
             ),
         },
-        theme === ThemeTypes.Default && {
+        theme === PROTON_DEFAULT_THEME && {
             id: 12,
             text: c('Info').t`Themes can give your inbox a new look.`,
             cta: (

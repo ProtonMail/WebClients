@@ -85,8 +85,7 @@ const NavigationControls = ({
                 className="no-tablet no-mobile"
                 icon={
                     <Icon
-                        className="rotateZ-90"
-                        name="angle-down"
+                        name="chevron-left"
                         alt={conversationMode ? c('Action').t`Previous conversation` : c('Action').t`Previous message`}
                     />
                 }
@@ -98,8 +97,7 @@ const NavigationControls = ({
                 className="no-tablet no-mobile"
                 icon={
                     <Icon
-                        className="rotateZ-270"
-                        name="angle-down"
+                        name="chevron-right"
                         alt={conversationMode ? c('Action').t`Next conversation` : c('Action').t`Next message`}
                     />
                 }

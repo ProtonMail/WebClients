@@ -107,16 +107,16 @@ const AttachmentItem = ({
     };
 
     const actionIcon = {
-        [AttachmentAction.Download]: 'arrow-down-to-rectangle',
-        [AttachmentAction.Preview]: 'arrow-up-right-and-arrow-down-left-from-center',
-        [AttachmentAction.Remove]: 'xmark',
+        [AttachmentAction.Download]: 'arrow-down-line',
+        [AttachmentAction.Preview]: 'arrows-from-center',
+        [AttachmentAction.Remove]: 'cross',
     } as const;
 
     return (
         <div className="message-attachmentList-item-container" data-testid="attachment-item">
             <div
                 className={classnames([
-                    'message-attachmentList-item flex border flex-nowrap pm_button p0 rounded',
+                    'message-attachmentList-item flex border flex-nowrap pm_button p0 rounded overflow-hidden',
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >
@@ -165,7 +165,7 @@ const AttachmentItem = ({
                         </span>
                         <span className="message-attachmentSecondaryAction-download flex">
                             {loading ? (
-                                <CircleLoader className="icon-16p mauto" />
+                                <CircleLoader className="mauto" size="small" />
                             ) : (
                                 <Icon name={actionIcon[secondaryAction]} className="mauto" alt={secondaryActionTitle} />
                             )}

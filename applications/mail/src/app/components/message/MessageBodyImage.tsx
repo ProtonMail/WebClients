@@ -114,7 +114,7 @@ const MessageBodyImage = ({
         ? errorMessage
         : c('Message image').t`Image has not been loaded in order to protect your privacy.`;
 
-    const icon = error ? 'circle-xmark' : 'file-shapes';
+    const icon = error ? 'cross-circle' : 'file-shapes';
 
     const style = extractStyle(image.original, iframeRef.current?.contentWindow?.innerWidth);
 

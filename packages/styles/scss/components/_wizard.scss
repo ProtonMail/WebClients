@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 $height-wizard: rem(6) !default;
 $size-current-pin: rem(16) !default;
 
@@ -120,7 +120,7 @@ $size-current-pin: rem(16) !default;
 
 		&[aria-current='step'] {
 			font-size: 1em;
-			font-weight: 600;
+			font-weight: var(--font-weight-semibold);
 		}
 	}
 }

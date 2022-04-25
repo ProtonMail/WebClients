@@ -1,28 +1,30 @@
-import { APPS_CONFIGURATION, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import { APPS, APPS_CONFIGURATION, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
 import { useConfig, useApps } from '../../hooks';
 import MobileNavServices from './MobileNavServices';
 import Href from '../link/Href';
-import Icon from '../icon/Icon';
-import MobileNavLink from './MobileNavLink';
+import { AppLink, Logo, VpnLogo } from '..';
 
 const MobileAppsLinks = () => {
     const { APP_NAME } = useConfig();
     const applications = useApps();
     const apps = applications.map((app) => ({
         toApp: app,
-        icon: APPS_CONFIGURATION[app].icon,
         title: APPS_CONFIGURATION[app].name,
     }));
 
     return (
         <MobileNavServices>
-            {apps.map(({ toApp, icon }, index) => {
+            {apps.map(({ toApp, title }, index) => {
                 const isCurrent = toApp === APP_NAME;
-                return <MobileNavLink key={index} to="/" toApp={toApp} icon={icon} current={isCurrent} />;
+                return (
+                    <AppLink key={index} to="/" to-app={toApp} target="_self" title={title} aria-current={isCurrent}>
+                        <Logo appName={toApp} variant="standalone" />
+                    </AppLink>
+                );
             })}
-            <Href url={`https://${VPN_HOSTNAME}/login`} className="flex aside-link">
-                <Icon name="brand-proton-vpn" className="aside-link-icon mauto" />
+            <Href url={`https://${VPN_HOSTNAME}/login`} title={APPS_CONFIGURATION[APPS.PROTONVPN_SETTINGS].name}>
+                <VpnLogo variant="standalone" />
             </Href>
         </MobileNavServices>
     );

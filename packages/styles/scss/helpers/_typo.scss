@@ -1,3 +1,7 @@
+.text-monospace {
+	font-family: $font-family-monospace;
+}
+
 @if $use-other-typo-helpers==true {
 	@each $name, $size in (2xs: 9, xs: 10, sm: 12, rg: $base-font-size, lg: 16, xl: 18, 2xl: 20, 3xl: 22, 4xl: 24) {
 		.text-#{$name} {
@@ -125,19 +129,29 @@
 
 .text-strong,
 .text-bold {
-	font-weight: bold;
+	font-weight: var(--font-weight-bold);
 }
 
 .text-no-bold {
-	font-weight: normal;
+	font-weight: var(--font-weight-normal);
 }
 
 .text-semibold {
-	font-weight: 600;
+	font-weight: var(--font-weight-semibold);
 }
 
 .text-italic {
 	font-style: italic;
+
+	// Specific for Arizona font
+	font-variation-settings: 'slnt' var(--font-style-italic);
+}
+
+.text-no-italic {
+	font-style: normal;
+
+	// Specific for Arizona font
+	font-variation-settings: 'slnt' var(--font-style-normal);
 }
 
 .text-strike {

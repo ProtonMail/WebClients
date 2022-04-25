@@ -1,4 +1,4 @@
-import { useEffect, memo, useRef, useState } from 'react';
+import { useEffect, memo, useRef } from 'react';
 import * as React from 'react';
 import { useLabels, useToggle, classnames, Scroll } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -83,8 +83,6 @@ const ConversationView = ({
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
-    const [hasScrollShadow, setHasScrollShadow] = useState(false);
-
     const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
 
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
@@ -143,11 +141,9 @@ const ConversationView = ({
                 className={classnames([hidden && 'hidden'])}
                 loading={loadingConversation}
                 element={conversation}
-                hasScrollShadow={hasScrollShadow}
             />
             <Scroll
                 className={classnames([hidden && 'hidden'])}
-                setHasScrollShadow={setHasScrollShadow}
                 customContainerRef={containerRef}
             >
                 <div ref={wrapperRef} className="flex-item-fluid pt1 pr1 pl1 w100">

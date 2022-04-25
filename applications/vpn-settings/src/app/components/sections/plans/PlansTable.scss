@@ -112,7 +112,7 @@ $nb-plans-max: 4 !default;
 				background-color: var(--primary);
 				color: var(--primary-contrast);
 				text-align: center;
-				font-weight: bold;
+				font-weight: var(--font-weight-bold);
 				text-transform: uppercase;
 				font-size: rem(12);
 				padding: 0.25em;

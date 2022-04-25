@@ -2,10 +2,10 @@ import { c } from 'ttag';
 import { PLANS, PLAN_TYPES, CYCLE, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { Info } from '@proton/components';
 
-import freePlanSvg from '@proton/styles/assets/img/pv-images/plans/free.svg';
-import basicPlanSvg from '@proton/styles/assets/img/pv-images/plans/basic.svg';
-import plusPlanSvg from '@proton/styles/assets/img/pv-images/plans/plus.svg';
-import visionaryPlanSvg from '@proton/styles/assets/img/pv-images/plans/visionary.svg';
+import freePlanSvg from '@proton/styles/assets/img/vpn/plans/free.svg';
+import basicPlanSvg from '@proton/styles/assets/img/vpn/plans/basic.svg';
+import plusPlanSvg from '@proton/styles/assets/img/vpn/plans/plus.svg';
+import visionaryPlanSvg from '@proton/styles/assets/img/vpn/plans/visionary.svg';
 import { getBasicServers, getFreeServers, getPlusServers, getVpnConnections } from '@proton/shared/lib/vpn/features';
 
 export const PLAN = {

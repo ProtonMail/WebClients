@@ -6,52 +6,77 @@
 	@extend .flex-align-items-stretch;
 
 	border-radius: var(--border-radius-md);
-	background-color: var(--button-group-background-color, var(--background-norm));
+	background-color: var(--background-norm);
 	vertical-align: middle;
+
+	&-item {
+		&.is-selected {
+			pointer-events: none;
+		}
+	}
 
 	/*
 	 * Solid variant
 	 */
 
+	// medium item
 	&[class*='button-group-solid'] &-item {
 		padding-inline: em(12);
+
+		&:not(:first-child) {
+			border-start-start-radius: 0;
+			border-end-start-radius: 0;
+		}
+
+		&:not(:last-child) {
+			border-start-end-radius: 0;
+			border-end-end-radius: 0;
+		}
 	}
 
+	// small item
 	&-small[class*='button-group-solid'] &-item {
 		padding-inline: em(7);
 	}
 
+	// large item
 	&-large[class*='button-group-solid'] &-item {
-		padding-inline: em(17);
+		padding-inline: em(17, 16);
 	}
 
 	/*
 	 * Ghost variant
 	 */
 
+	// medium vr
 	&[class*='button-group-ghost'] .vr {
 		margin-block: em(6);
 		margin-inline: em(3);
 	}
 
+	// small vr
 	&-small[class*='button-group-ghost'] .vr {
 		margin-block: em(4);
 		margin-inline: em(3);
 	}
 
+	// large vr
 	&-large[class*='button-group-ghost'] .vr {
 		margin-block: em(8);
 		margin-inline: em(3);
 	}
 
+	// medium item
 	&[class*='button-group-ghost'] &-item {
 		padding-inline: em(10);
 	}
 
+	// small item
 	&-small[class*='button-group-ghost'] &-item {
 		padding-inline: em(5);
 	}
 
+	// large item
 	&-large[class*='button-group-ghost'] &-item {
 		padding-inline: em(15);
 	}
@@ -60,6 +85,7 @@
 	 * Outline variant
 	 */
 
+	// medium
 	&[class*='button-group-outline'] {
 		padding: em(3);
 		border: 1px solid var(--button-group-border-color, transparent);
@@ -70,17 +96,29 @@
 		}
 	}
 
+	// medium item
 	&[class*='button-group-outline'] &-item {
 		padding-block: em(3);
 		padding-inline: em(8);
 		border-radius: var(--border-radius-sm);
 
 		&.button-for-icon {
-			padding-block: em(5.5);
-			padding-inline: em(6);
+			padding: em(6);
+		}
+
+		&[aria-expanded='true']:not([aria-controls]) {
+			border-color: transparent;
+		}
+
+		&[disabled],
+		&.is-disabled {
+			&:not([aria-busy='true']) {
+				background-color: var(--button-default-background-color, transparent);
+			}
 		}
 	}
 
+	// small
 	&-small[class*='button-group-outline'] {
 		padding: em(2);
 
@@ -89,16 +127,17 @@
 		}
 	}
 
+	// small item
 	&-small[class*='button-group-outline'] &-item {
-		padding-block: em(1);
+		padding-block: 0;
 		padding-inline: em(4);
-		line-height: $base-line-height * 0.8;
 
 		&.button-for-icon {
 			padding: em(2);
 		}
 	}
 
+	// large
 	&-large[class*='button-group-outline'] {
 		padding: em(4);
 
@@ -108,12 +147,13 @@
 		}
 	}
 
+	// large item
 	&-large[class*='button-group-outline'] &-item {
-		padding-block: em(4.5);
-		padding-inline: em(12);
+		padding-block: em(4, 16);
+		padding-inline: em(12, 16);
 
 		&.button-for-icon {
-			padding: em(7);
+			padding: em(7, 16);
 		}
 	}
 }
@@ -122,71 +162,36 @@
  * Button group color variants
  */
 
-@each $color in (norm, weak, danger, warning, success, info) {
+@each $color in (norm, weak) {
 	// Initialize namespace
-	$group: 'signal-';
-	@if $color == 'norm' or $color == 'weak' {
-		$group: 'interaction-';
+	$group: 'interaction';
+
+	.button-group-solid-#{$color},
+	.button-group-outline-#{$color},
+	.button-group-ghost-#{$color} {
+		// For vertical rule
+		--border-norm: var(--#{dash-join($group, $color, 'major-1')});
 	}
 
 	.button-group-solid-#{$color} {
-		--button-group-background-color: var(--#{$group + $color});
-		--border-norm: var(--#{$group + $color}-hover); // For vertical rule
-
-		.button-group-item {
-			--button-default-background-color: transparent;
-			--button-default-text-color: var(--#{$group + $color}-contrast);
-
-			@each $state in (hover, active) {
-				--button-#{$state}-background-color: var(--#{$group + $color}-#{$state});
-
-				@if $color == 'weak' {
-					--border-norm: var(--text-norm); // For vertical rule
-				} @else {
-					--button-#{$state}-text-color: var(--#{$group + $color}-contrast); // For vertical rule
-				}
-			}
-
-			&.is-selected {
-				background-color: var(--#{$group + $color}-active);
-			}
+		.button-group-item.is-selected:not([disabled], .is-disabled) {
+			background-color: var(--#{dash-join($group, $color, 'major-2')});
 		}
 	}
 
 	.button-group-outline-#{$color} {
-		--button-group-border-color: var(--#{$group + $color});
+		--button-group-border-color: var(--#{dash-join($group, $color, 'major-1')});
+
+		.button-group-item {
+			border-color: transparent;
+		}
 	}
 
 	.button-group-outline-#{$color},
 	.button-group-ghost-#{$color} {
-		--border-norm: var(--#{$group + $color}); // For vertical rule
-
-		.button-group-item {
-			--button-default-background-color: transparent;
-
-			@if $color == 'weak' {
-				--button-default-text-color: var(--text-norm);
-			} @else {
-				--button-default-text-color: var(--#{$group + $color});
-			}
-
-			@each $state in (hover, active) {
-				@if $color == 'weak' {
-					--button-#{$state}-text-color: var(--text-norm);
-				} @else {
-					--button-#{$state}-text-color: var(--#{$group + $color}-#{$state});
-				}
-			}
-
-			&.is-selected {
-				@if $color == 'weak' {
-					background-color: var(--interaction-norm);
-					color: var(--interaction-norm-contrast);
-				} @else {
-					background-color: var(--#{$group + $color});
-					color: var(--#{$group + $color}-contrast);
-				}
-			}
+		.button-group-item.is-selected:not([disabled], .is-disabled) {
+			background-color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color))});
+			color: var(--#{dash-join($group, if($color == 'weak', 'norm', $color), 'contrast')});
 		}
 	}
 }

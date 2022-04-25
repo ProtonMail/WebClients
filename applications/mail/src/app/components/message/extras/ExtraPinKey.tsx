@@ -184,37 +184,34 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     };
 
     return (
-        <div className="rounded border px0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column bg-norm">
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column">
             <div className="flex flex-nowrap pr1 on-mobile-mb0-5">
-                <Icon name="circle-exclamation-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
+                <Icon name="exclamation-circle-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
                 <div>
                     <span className="pr0-5 flex flex-item-fluid mt0-25">
                         <span className="mr0-25">{getBannerMessage(promptKeyPinningType)}</span>
                         {promptKeyPinningType === PROMPT_KEY_PINNING_TYPE.AUTOPROMPT ? (
                             <InlineLinkButton
-                                className="color-inherit text-underline"
                                 disabled={loadingDisablePromptPin}
                                 onClick={() => withLoadingDisablePromptPin(handleDisablePromptPin())}
                             >
                                 {c('Action').t`Never show`}
                             </InlineLinkButton>
                         ) : (
-                            <Href
-                                className="color-inherit"
-                                href="https://protonmail.com/support/knowledge-base/address-verification/"
-                            >
+                            <Href url="https://protonmail.com/support/knowledge-base/address-verification/">
                                 {c('Link').t`Learn more`}
                             </Href>
                         )}
                     </span>
                 </div>
             </div>
-            <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt0-1 color-norm">
+            <span className="flex-align-items-start flex-item-noshrink on-mobile-w100 pt0-1">
                 <Button
                     size="small"
                     color="weak"
                     shape="outline"
-                    className="on-mobile-w100 py0-25"
+                    fullWidth
+                    className="rounded-sm"
                     onClick={handleTrustKey}
                     disabled={loading}
                 >

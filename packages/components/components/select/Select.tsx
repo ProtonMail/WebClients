@@ -97,7 +97,7 @@ const Select = forwardRef<HTMLSelectElement, Props>(
                         >
                             {hasGroup ? buildGroupedOptions(options) : buildOptions(options)}
                         </select>
-                        <Icon name="angle-down" className="absolute no-pointer-events right-icon" />
+                        <Icon name="chevron-down-filled" className="absolute no-pointer-events right-icon" />
                     </span>
 
                     {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}

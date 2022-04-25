@@ -43,7 +43,7 @@ const ServerDown = () => (
     <span className="ml0-5">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex-vcenter">
-                <Icon className="color-danger" size={20} name="triangle-exclamation" />
+                <Icon className="color-danger" size={20} name="exclamation-circle" />
             </div>
         </Tooltip>
     </span>
@@ -167,7 +167,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                                             text: (
                                                 <div className="flex flex-nowrap flex-align-items-center flex-justify-space-between">
                                                     <span className="mr0-5">{server.Domain}</span>
-                                                    <Icon name="copy" title={c('Action').t`Copy`} />
+                                                    <Icon name="squares" title={c('Action').t`Copy`} />
                                                 </div>
                                             ),
                                             onClick(event) {

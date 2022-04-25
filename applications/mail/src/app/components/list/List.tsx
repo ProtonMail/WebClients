@@ -182,7 +182,7 @@ const List = (
                     />
                     {showESSlowToolbar && <ESSlowToolbar />}
                     {elements.length === 0 ? (
-                        <EmptyView labelID={labelID} isSearch={isSearch} />
+                        <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (
                         <>
                             {elements.map((element, index) => (

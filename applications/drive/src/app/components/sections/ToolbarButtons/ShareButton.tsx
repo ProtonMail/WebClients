@@ -24,7 +24,7 @@ const ShareButton = ({ shareId, selectedItems }: Props) => {
     return (
         <ToolbarButton
             title={hasShare ? c('Action').t`Share options` : c('Action').t`Share`}
-            icon={<Icon name="user-group" />}
+            icon={<Icon name="users" />}
             onClick={() => openSharing(shareId, selectedItems[0])}
             data-testid="toolbar-share"
         />

@@ -1,6 +1,7 @@
 import { act } from '@testing-library/react';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { APPS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { getAppName } from '@proton/shared/lib/apps/helper';
 import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
 import { OnCompose } from '../hooks/composer/useCompose';
 import { Breakpoints } from '../models/utils';
@@ -18,6 +19,8 @@ const Sender = {
     Name: 'sender',
     Address: 'sender@test.com',
 };
+
+const protonmailAppName = getAppName(APPS.PROTONMAIL);
 
 describe('ComposerContainer', () => {
     afterEach(clearAll);
@@ -73,7 +76,7 @@ with a link -> https://protonmail.com/`;
 
 
 ${Signature}
-Sent with ProtonMail secure email.
+Sent with ${protonmailAppName} secure email.
 ------- Original Message -------
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 

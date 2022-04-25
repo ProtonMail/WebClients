@@ -22,6 +22,7 @@ const ThemesModal = (props: ModalProps) => {
                 <ThemeCards
                     className="theme-modal-list"
                     list={PROTON_THEMES}
+                    size="small"
                     themeIdentifier={theme}
                     onChange={handleThemeChange}
                 />

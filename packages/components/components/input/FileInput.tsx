@@ -10,17 +10,26 @@ export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputEl
     disabled?: boolean;
     shape?: Shape;
     color?: Color;
+    loading?: boolean;
 }
 
 const FileInput = (
-    { children, id = 'fileInput', className, onChange, disabled, shape, color, ...rest }: Props,
+    { children, id = 'fileInput', className, onChange, disabled, shape, color, loading, ...rest }: Props,
     ref: Ref<HTMLInputElement>
 ) => {
     const inputRef = useRef<HTMLInputElement>(null);
     const combinedRef = useCombinedRefs(inputRef, ref);
 
     return (
-        <ButtonLike as="label" htmlFor={id} className={className} disabled={disabled} shape={shape} color={color}>
+        <ButtonLike
+            as="label"
+            htmlFor={id}
+            className={className}
+            disabled={disabled}
+            shape={shape}
+            color={color}
+            loading={loading}
+        >
             <input
                 id={id}
                 type="file"

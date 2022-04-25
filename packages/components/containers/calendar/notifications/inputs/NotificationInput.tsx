@@ -110,7 +110,7 @@ const NotificationInput = ({
             )}
             <span className="flex flex-nowrap flex-item-fluid">
                 {hasValueInput && (
-                    <span className="flex-item-noshrink mr0-5 w5e">
+                    <span className="flex-item-noshrink mr0-5 w6e">
                         <IntegerInput
                             id={NOTIFICATION_INPUT_ID}
                             data-test-id="notification-time-input"

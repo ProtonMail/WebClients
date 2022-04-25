@@ -6,7 +6,7 @@ const MobileRedirectionStep = ({ model }) => {
     return (
         <div className="pt2 mb2 text-center">
             <SubTitle>{c('Title').t`Account created`}</SubTitle>
-            <Icon name="check" className="mb2 color-success" size={100} />
+            <Icon name="checkmark" className="mb2 color-success" size={100} />
             <div className="pt1 pb1 mb2">
                 {c('Info')
                     .t`Your account has been successfully created. Please press the "Close" button to be taken back to the app.`}

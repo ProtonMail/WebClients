@@ -17,7 +17,7 @@
 .signup-title {
 	display: flex;
 	inline-size: 100%;
-	font-weight: bold;
+	font-weight: var(--font-weight-bold);
 	font-size: rem(22);
 
 	&::before,

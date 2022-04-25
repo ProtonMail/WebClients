@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/components';
 
-import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';
+import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 
 interface Props {
     onCreate: () => void;

@@ -5,7 +5,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Location } from 'history';
 
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
-import conversationSvg from '@proton/styles/assets/img/placeholders/selected-emails.svg';
+import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
 
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';

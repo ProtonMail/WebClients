@@ -1,7 +1,7 @@
 import { addContacts, labelContactEmails, labelContacts } from '@proton/shared/lib/api/contacts';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { createContactGroup } from '@proton/shared/lib/api/labels';
-import { API_CODES, HOUR, LABEL_COLORS } from '@proton/shared/lib/constants';
+import { API_CODES, HOUR, ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareContact } from '@proton/shared/lib/contacts/encrypt';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
@@ -168,7 +168,7 @@ export const submitCategories = async (categories: ImportCategories[], api: Api)
                 } = await api<{ Label: Label }>(
                     createContactGroup({
                         Name: targetName,
-                        Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+                        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
                     })
                 );
                 newLabelIDsMap[targetName] = ID;

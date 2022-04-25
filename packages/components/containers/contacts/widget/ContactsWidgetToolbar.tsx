@@ -75,7 +75,7 @@ const ContactsWidgetToolbar = ({
                             title={c('Action').t`Compose`}
                             data-testid="contacts:compose"
                         >
-                            <Icon name="envelope" />
+                            <Icon name="envelope" alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                     <Tooltip title={c('Action').t`Forward as attachment`}>
@@ -87,7 +87,7 @@ const ContactsWidgetToolbar = ({
                             title={c('Action').t`Forward as attachment`}
                             data-testid="contacts:forward-attachment"
                         >
-                            <Icon name="arrow-right-big" />
+                            <Icon name="arrow-right" alt={c('Action').t`Forward as attachment`} />
                         </Button>
                     </Tooltip>
                 </>
@@ -102,7 +102,7 @@ const ContactsWidgetToolbar = ({
                     title={c('Action').t`Merge contacts`}
                     data-testid="contacts:merge-contacts"
                 >
-                    <Icon name="merge" />
+                    <Icon name="users-merge" alt={c('Action').t`Merge contacts`} />
                 </Button>
             </Tooltip>
             <Tooltip title={deleteText}>

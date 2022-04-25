@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 
-import composerPopUpSvg from '@proton/styles/assets/img/pm-images/composer-popup.svg';
-import composerMaximizedSvg from '@proton/styles/assets/img/pm-images/composer-maximized.svg';
+import composerPopUpSvg from '@proton/styles/assets/img/layout/layout-thumb-composer-normal.svg';
+import composerMaximizedSvg from '@proton/styles/assets/img/layout/layout-thumb-composer-maximized.svg';
 
 import { LayoutCards } from '../../components';
 

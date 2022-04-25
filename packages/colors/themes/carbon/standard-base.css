@@ -1,0 +1,56 @@
+:root,
+.ui-standard {
+	--primary: #8A6EFF;
+	--primary-contrast: white;
+
+	--signal-danger: #F5385A;
+
+	--signal-warning: #FF9900;
+
+	--signal-success: #1EA885;
+
+	--signal-info: #239ECE;
+
+	--interaction-norm: #6D4AFF;
+
+	--interaction-weak: #4A4658;
+
+	--text-norm: white;
+	--text-weak: #A7A4B5;
+	--text-hint: #6D697D;
+	--text-disabled: #5B576B;
+	--text-invert: #1C1B24;
+
+	--field-norm: #5B576B;
+	--field-hover: #6D697D;
+	--field-disabled: #3F3B4C;
+	--field-focus: #6D4AFF;
+	--field-highlight: rgb(109 74 255 / 0.3);
+
+	--border-norm: #4A4658;
+	--border-weak: #343140;
+
+	--background-norm: #1C1B24;
+	--background-weak: #292733;
+	--background-strong: #3F3B4C;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(91 87 107 / 0.2);
+	--interaction-default-active: rgb(91 87 107 / 0.4);
+
+	--shadow-norm-opacity: 0.5;
+	--shadow-lifted-opacity: 0.75;
+
+	--backdrop-norm: rgb(0 0 0 / 0.48);
+
+	/* Optional colors */
+
+	--optional-scrollbar-thumb-color: #4A4658;
+	--optional-scrollbar-thumb-hover-color: #5B576B;
+
+	--optional-link-norm: var(--interaction-norm-major-1);
+	--optional-link-hover: var(--interaction-norm-major-2);
+	--optional-link-active: var(--interaction-norm-major-3);
+
+	--optional-email-item-read-background-color: #16141C;
+}

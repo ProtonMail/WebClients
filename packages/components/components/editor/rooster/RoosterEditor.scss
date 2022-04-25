@@ -1,23 +1,24 @@
 @import '~@proton/styles/scss/config';
 
 .simple-editor.editor {
+	overflow: hidden;
 	min-block-size: 14em;
 	background: white; // hardcoded until we un-hardcode it in squire.
 }
 
 .editor {
-	border: 1px solid var(--border-norm);
-	padding-block: 0.5em;
-	padding-inline: 1em;
+	border: 1px solid var(--field-norm);
+	padding: 0.5em;
 
-	textarea {
-		color: currentColor;
+	&:hover {
+		border-color: var(--field-hover);
 	}
 
 	.editor-toolbar-button {
 		padding-block: 0.3em;
 		padding-inline: 0.5em;
 		min-block-size: 2.1em;
+		border-radius: var(--border-radius-sm);
 	}
 
 	.composer-toolbar-fontDropDown {
@@ -63,14 +64,11 @@
 }
 
 .editor-toolbar-dropdown .color-selector-container {
-	max-inline-size: rem(210);
+	max-inline-size: em((28 * 7) + (8 * 6)); // items + gaps
 }
 
 .editor-toolbar-dropdown .color-selector-item {
-	block-size: rem(28);
-	inline-size: rem(28);
-	margin-block: 0 rem(2);
-	margin-inline: 0 rem(2);
+	font-size: 0.7em; // Decrease size from 40px to 28px
 }
 
 .editor--disabled::after {

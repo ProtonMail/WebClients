@@ -40,9 +40,18 @@ export const Tabs = ({
 
     return (
         <div className={classnames(['tabs', className])}>
-            <nav className={classnames(['tabs-container', stickyTabs && 'sticky-top', containerClassName])}>
+            <nav
+                className={classnames([
+                    'tabs-container border-bottom border-weak',
+                    stickyTabs && 'sticky-top bg-norm',
+                    containerClassName,
+                ])}
+            >
                 <ul
-                    className={classnames(['tabs-list', fullWidth && 'tabs-list--fullWidth'])}
+                    className={classnames([
+                        'tabs-list unstyled flex relative m0 p0',
+                        fullWidth && 'tabs-list--fullWidth',
+                    ])}
                     role="tablist"
                     ref={containerRef}
                     style={{ '--translate': translate, '--scale': scale }}
@@ -59,7 +68,7 @@ export const Tabs = ({
                                         onChange(index);
                                     }}
                                     type="button"
-                                    className="tabs-list-link"
+                                    className="tabs-list-link flex flex-justify-center relative text-semibold"
                                     id={label}
                                     role="tab"
                                     aria-controls={key}

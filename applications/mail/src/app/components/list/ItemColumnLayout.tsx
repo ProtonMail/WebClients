@@ -130,7 +130,7 @@ const ItemColumnLayout = ({
                         showDropdown={false}
                     />
                     <ItemAttachmentIcon
-                        icon={hasOnlyIcsAttachments ? 'calendar-days' : undefined}
+                        icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                         element={element}
                         className="ml0-5 flex-align-self-center"
                     />

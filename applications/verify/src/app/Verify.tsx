@@ -9,7 +9,7 @@ import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
-import { ThemeTypes } from '@proton/shared/lib/themes/themes';
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
@@ -181,7 +181,7 @@ const Verify = () => {
 
     const hv = (
         <HumanVerificationForm
-            theme={theme === ThemeTypes.Dark || theme === ThemeTypes.Monokai ? 'dark' : 'light'}
+            theme={theme && DARK_THEMES.includes(theme) ? 'dark' : 'light'}
             step={step}
             onChangeStep={setStep}
             onSubmit={handleSubmit}

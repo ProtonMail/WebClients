@@ -17,7 +17,7 @@ function LabelSortableList({ items, ...rest }: Props) {
             <OrderableTableHeader>
                 <tr>
                     <th scope="col" className="w5">
-                        <Icon name="arrows-up-down-left-right" />
+                        <Icon name="arrows-cross" />
                     </th>
                     <th scope="col" className="w70">
                         {c('Settings/labels - table').t`Labels`}

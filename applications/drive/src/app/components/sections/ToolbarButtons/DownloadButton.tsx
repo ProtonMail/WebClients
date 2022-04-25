@@ -37,7 +37,7 @@ const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Download`}
-            icon={<Icon name="arrow-down-to-rectangle" />}
+            icon={<Icon name="arrow-down-line" />}
             onClick={onClick}
             data-testid="toolbar-download"
         />

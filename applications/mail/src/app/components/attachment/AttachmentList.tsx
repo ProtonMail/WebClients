@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { Icon, classnames, CircleLoader, useFeature, FeatureCode, Button, Tooltip } from '@proton/components';
+import { Icon, classnames, useFeature, FeatureCode, Button, Tooltip } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import AttachmentItem from './AttachmentItem';
@@ -213,24 +213,17 @@ const AttachmentList = ({
                                 shape="ghost"
                                 onClick={handleDownloadAll}
                                 disabled={!message.messageDocument?.initialized}
-                                square
                                 className="ml0-5"
+                                loading={showLoader}
                             >
-                                {showLoader ? (
-                                    <CircleLoader className="icon-16p ml0-5" />
-                                ) : (
-                                    <Icon
-                                        name="arrow-down-to-rectangle"
-                                        alt={c('Download attachments').t`Download all`}
-                                    />
-                                )}
+                                <Icon name="arrow-down-line" alt={c('Download attachments').t`Download all`} />
                             </Button>
                         </Tooltip>
                     </div>
                 )}
             </div>
             {expanded && ( // composer-attachments-expand pt1 pb0-5
-                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList pb0-5">
+                <div tabIndex={-1} className="flex flex-row flex-wrap message-attachmentList flex-gap-0-5 py0-5">
                     {attachmentsToShow.map((attachment) => (
                         <AttachmentItem
                             key={attachment.ID}

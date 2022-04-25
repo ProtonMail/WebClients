@@ -66,7 +66,7 @@ const Searchbox = ({
                 title={c('Action').t`Search`}
                 disabled={disabled}
             >
-                <Icon name="magnifying-glass" size={22} className="mauto searchbox-search-button-icon" />
+                <Icon name="magnifier" size={22} className="mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
             {value.length ? (
@@ -78,7 +78,7 @@ const Searchbox = ({
                     className="searchbox-advanced-search-button flex"
                     disabled={disabled}
                 >
-                    <Icon name="xmark" className="mauto searchbox-search-button-icon" />
+                    <Icon name="cross" className="mauto searchbox-search-button-icon" />
                     <span className="sr-only">{c('Action').t`Clear`}</span>
                 </Button>
             ) : null}

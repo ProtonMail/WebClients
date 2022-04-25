@@ -87,7 +87,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                 Name: c('Mailbox').t`Inbox`,
                 icon: 'inbox',
             },
-            { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'box-archive' },
+            { ID: ARCHIVE, Name: c('Mailbox').t`Archive`, icon: 'archive-box' },
             canMoveToSpam && {
                 ID: SPAM,
                 Name: c('Mailbox').t`Spam`,

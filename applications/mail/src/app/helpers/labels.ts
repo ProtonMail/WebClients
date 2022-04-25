@@ -81,7 +81,7 @@ export const getStandardFolders = (): FolderMap => ({
         to: '/spam',
     },
     [ARCHIVE]: {
-        icon: 'box-archive',
+        icon: 'archive-box',
         name: c('Mailbox').t`Archive`,
         to: '/archive',
     },

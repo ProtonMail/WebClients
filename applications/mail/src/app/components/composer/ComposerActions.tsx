@@ -259,7 +259,7 @@ const ComposerActions = ({
                             className="button button-for-icon composer-more-dropdown"
                             content={
                                 <Icon
-                                    name="ellipsis"
+                                    name="three-dots-horizontal"
                                     alt={titleMoreOptions}
                                     className={classnames([isExpiration && 'color-primary'])}
                                 />
@@ -268,13 +268,16 @@ const ComposerActions = ({
                             {toolbarExtension}
                             <div className="dropdown-item-hr" key="hr-more-options" />
                             <DropdownMenuButton
-                                className={classnames(['text-left flex flex-nowrap', isExpiration && 'color-primary'])}
+                                className={classnames([
+                                    'text-left flex flex-nowrap flex-align-items-center',
+                                    isExpiration && 'color-primary',
+                                ])}
                                 onClick={onExpiration}
                                 aria-pressed={isExpiration}
                                 disabled={lock}
                                 data-testid="composer:expiration-button"
                             >
-                                <Icon name="hourglass-empty" className="mt0-25" />
+                                <Icon name="hourglass" />
                                 <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action')
                                     .t`Set expiration time`}</span>
                             </DropdownMenuButton>

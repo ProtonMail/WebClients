@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { EmptyViewContainer, usePopperAnchor } from '@proton/components';
 
-import noContentSvg from '@proton/styles/assets/img/placeholders/empty-folder.svg';
+import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 import { UploadButton } from './UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 

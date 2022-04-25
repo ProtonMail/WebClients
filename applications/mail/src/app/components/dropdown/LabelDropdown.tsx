@@ -14,7 +14,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
-import { LABEL_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
 import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
@@ -104,7 +104,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
 
     const newLabel: Pick<Label, 'Name' | 'Color' | 'Type'> = {
         Name: search,
-        Color: LABEL_COLORS[randomIntFromInterval(0, LABEL_COLORS.length - 1)],
+        Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
         Type: LABEL_TYPE.MESSAGE_LABEL,
     };
 
@@ -251,7 +251,7 @@ const LabelDropdown = ({ selectedIDs, labelID, labels = [], onClose, onLock, bre
                             >
                                 <Icon
                                     name="circle-filled"
-                                    size={12}
+                                    size={16}
                                     color={Color}
                                     className="flex-item-noshrink relative ml0-25 mr0-5"
                                     onClick={handleClickIcon(ID)}
