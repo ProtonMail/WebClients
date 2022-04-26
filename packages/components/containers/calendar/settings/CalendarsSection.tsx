@@ -1,13 +1,13 @@
 import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
+
 import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
-
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
-import { Alert, ButtonLike, Card, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
+import { Card } from '@proton/atoms';
 
+import { Alert, ButtonLike, PrimaryButton, SettingsLink, Tooltip } from '../../../components';
 import { SettingsSection } from '../../account';
-
 import CalendarsTable from './CalendarsTable';
 
 export interface CalendarsSectionProps {

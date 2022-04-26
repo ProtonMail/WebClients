@@ -7,6 +7,8 @@ import { Organization as tsOrganization, Domain, CachedOrganizationKey, Member }
 import { removeMember, updateRole } from '@proton/shared/lib/api/members';
 import { revokeSessions } from '@proton/shared/lib/api/memberSessions';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { Avatar } from '@proton/atoms';
+
 import {
     Table,
     TableCell,
@@ -29,7 +31,6 @@ import {
     useApi,
     useEventManager,
 } from '../../hooks';
-
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
 import MemberFeatures from './MemberFeatures';
@@ -37,7 +38,6 @@ import MemberRole from './MemberRole';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import MemberModal from './MemberModal';
 import useDomainsAddresses from '../../hooks/useDomainsAddresses';
-import Avatar from '../../components/avatar';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 import { AddressModal } from '../addresses';

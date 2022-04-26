@@ -118,7 +118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.4, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.17.9, @babel/core@npm:^7.5.5, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
+"@babel/core@npm:>=7.9.0, @babel/core@npm:^7.1.0, @babel/core@npm:^7.11.1, @babel/core@npm:^7.11.4, @babel/core@npm:^7.12.10, @babel/core@npm:^7.12.3, @babel/core@npm:^7.16.7, @babel/core@npm:^7.17.9, @babel/core@npm:^7.5.5, @babel/core@npm:^7.7.2, @babel/core@npm:^7.7.5, @babel/core@npm:^7.8.0":
   version: 7.17.9
   resolution: "@babel/core@npm:7.17.9"
   dependencies:
@@ -3607,6 +3607,48 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@proton/atoms@workspace:packages/atoms":
+  version: 0.0.0-use.local
+  resolution: "@proton/atoms@workspace:packages/atoms"
+  dependencies:
+    "@babel/core": ^7.16.7
+    "@babel/preset-react": ^7.16.7
+    "@babel/preset-typescript": ^7.16.7
+    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/pack": "workspace:packages/pack"
+    "@proton/shared": "workspace:packages/shared"
+    "@proton/styles": "workspace:packages/styles"
+    "@storybook/addon-actions": ^6.4.22
+    "@storybook/addon-essentials": ^6.4.22
+    "@storybook/addon-links": ^6.4.22
+    "@storybook/addon-storysource": ^6.4.22
+    "@storybook/builder-webpack5": ^6.4.22
+    "@storybook/manager-webpack5": ^6.4.22
+    "@storybook/react": ^6.4.22
+    "@storybook/source-loader": ^6.4.22
+    "@testing-library/jest-dom": ^5.16.1
+    "@testing-library/react": ^12.1.2
+    "@types/jest": ^27.4.0
+    "@types/react": ^17.0.38
+    "@types/react-dom": ^17.0.11
+    babel-loader: ^8.2.5
+    cross-env: ^7.0.3
+    eslint: ^8.6.0
+    eslint-plugin-storybook: ^0.5.11
+    jest: ^27.4.7
+    lodash.startcase: ^4.4.0
+    netlify-cli: ^8.6.20
+    prettier: ^2.6.2
+    prop-types: 15.8.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-polymorphic-box: ^3.0.3
+    ts-loader: ^9.2.8
+    typescript: ^4.6.3
+    webpack: ^5.65.0
+  languageName: unknown
+  linkType: soft
+
 "@proton/colors@workspace:^, @proton/colors@workspace:packages/colors":
   version: 0.0.0-use.local
   resolution: "@proton/colors@workspace:packages/colors"
@@ -5685,7 +5727,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/jest-dom@npm:^5.16.4":
+"@testing-library/jest-dom@npm:^5.16.1, @testing-library/jest-dom@npm:^5.16.4":
   version: 5.16.4
   resolution: "@testing-library/jest-dom@npm:5.16.4"
   dependencies:
@@ -5738,7 +5780,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react@npm:^12.1.5":
+"@testing-library/react@npm:^12.1.2, @testing-library/react@npm:^12.1.5":
   version: 12.1.5
   resolution: "@testing-library/react@npm:12.1.5"
   dependencies:
@@ -14100,7 +14142,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.14.0":
+"eslint@npm:^8.14.0, eslint@npm:^8.6.0":
   version: 8.14.0
   resolution: "eslint@npm:8.14.0"
   dependencies:
@@ -19003,7 +19045,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jest@npm:^27.5.1":
+"jest@npm:^27.4.7, jest@npm:^27.5.1":
   version: 27.5.1
   resolution: "jest@npm:27.5.1"
   dependencies:
@@ -21688,7 +21730,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"netlify-cli@npm:^8.19.3":
+"netlify-cli@npm:^8.19.3, netlify-cli@npm:^8.6.20":
   version: 8.19.3
   resolution: "netlify-cli@npm:8.19.3"
   dependencies:
@@ -25559,6 +25601,15 @@ fsevents@^1.2.7:
   version: 3.0.4
   resolution: "react-lifecycles-compat@npm:3.0.4"
   checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
+  languageName: node
+  linkType: hard
+
+"react-polymorphic-box@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "react-polymorphic-box@npm:3.0.3"
+  peerDependencies:
+    react: ">=16.3"
+  checksum: 3c1e91d737faf9590f6e76d750c7a5db0df54356509cddb4f7609148b055de2bc1a3a670e1c642048707123c19cee839e09b7400e4b49ad97204aa5416efb731
   languageName: node
   linkType: hard
 
@@ -31153,7 +31204,7 @@ typescript@^3.9.7:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.72.0, webpack@npm:^5.9.0":
+"webpack@npm:^5.65.0, webpack@npm:^5.72.0, webpack@npm:^5.9.0":
   version: 5.72.0
   resolution: "webpack@npm:5.72.0"
   dependencies:
