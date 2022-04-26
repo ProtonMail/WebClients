@@ -185,25 +185,34 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     };
 
     return (
-        <>
-            <Tooltip title={c('Info').t`This message is from a mailing list.`}>
-                <Button
-                    onClick={() => setUnsubscribeModalOpen(true)}
-                    className="inline-flex flex-align-items-center on-mobile-w100 on-mobile-flex-justify-center mr0-5 on-mobile-mr0 mb0-85 px0-5"
-                    data-testid="unsubscribe-banner"
-                >
-                    <Icon name="envelope" className="flex-item-noshrink ml0-2" />
-                    <span className="ml0-5">
-                        {isUnsubscribed(message.data)
-                            ? c('Status').t`Unsubscribed from mailing list`
-                            : loading
-                            ? c('Status').t`Unsubscribing from mailing list...`
-                            : loading
-                            ? c('Action').t`Unsubscribing`
-                            : c('Action').t`Unsubscribe from mailing list`}
-                    </span>
-                </Button>
-            </Tooltip>
+        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap on-mobile-flex-column">
+            <div className="flex-item-fluid flex flex-nowrap on-mobile-mb0-5">
+                <Icon name="envelope" className="mt0-4 flex-item-noshrink ml0-2" />
+                <span className="pl0-5 pr0-5 flex flex-item-fluid flex-align-items-center">{c('Status')
+                    .t`This message is from a mailing list.`}</span>
+            </div>
+            <span className="flex-item-noshrink flex-align-items-start flex on-mobile-w100 pt0-1">
+                <Tooltip title={c('Info').t`This message is from a mailing list.`}>
+                    <Button
+                        onClick={() => setUnsubscribeModalOpen(true)}
+                        size="small"
+                        color="weak"
+                        shape="outline"
+                        fullWidth
+                        className="rounded-sm"
+                        data-testid="unsubscribe-banner"
+                        disabled={loading || isUnsubscribed(message.data)}
+                    >
+                        <span className="ml0-5">
+                            {isUnsubscribed(message.data)
+                                ? c('Status').t`Unsubscribed`
+                                : loading
+                                ? c('Action').t`Unsubscribing`
+                                : c('Action').t`Unsubscribe`}
+                        </span>
+                    </Button>
+                </Tooltip>
+            </span>
 
             <ModalTwo className="pm-modal--shorterLabels" {...unsubscribeModalProps}>
                 <ModalTwoHeader title={c('Title').t`Unsubscribe`} />
@@ -216,7 +225,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                     >{c('Action').t`Unsubscribe`}</PrimaryButton>
                 </ModalTwoFooter>
             </ModalTwo>
-        </>
+        </div>
     );
 };
 
