@@ -12,8 +12,14 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
     const planName = PLAN_NAMES[PLANS.MAIL];
 
     return (
-        <div className="relative border rounded-lg p2 bg-primary">
-            <Button className="absolute top right" shape="ghost" onClick={handleClose}>
+        <div className="relative rounded p2 bg-primary">
+            <Button
+                className="absolute top right"
+                icon
+                shape="ghost"
+                onClick={handleClose}
+                title={c('Action').t`Close`}
+            >
                 <Icon name="cross" alt={c('Action').t`Close`} />
             </Button>
             <h2 className="text-bold">{

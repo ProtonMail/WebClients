@@ -43,10 +43,14 @@ select {
 	}
 
 	@at-root input#{&}-field {
-		height: rem($default-height-fields-inputforms);
+		block-size: rem($default-height-fields-inputforms);
+		min-block-size: rem(
+			$default-height-fields-inputforms
+		); // To ensure minimum size when overriding block-size to 'auto'
 	}
+
 	&-field {
-		padding-block: em(6); // design want 34px height (actually 35 to avoid .5px)
+		padding-block: em(7); // 36px height, same as buttons
 		padding-inline: em(16);
 		border-radius: var(--border-radius-md);
 		border: 1px solid var(--field-norm);
@@ -144,10 +148,14 @@ select {
 	&-suffix-container {
 		@extend .inputform-field; // added focus-within inside on inputform-field for this fake-field :)
 		padding: 0;
-		height: rem($default-height-fields-inputforms);
+		block-size: rem($default-height-fields-inputforms);
+		min-block-size: rem(
+			$default-height-fields-inputforms
+		); // To ensure minimum size when overriding block-size to 'auto'
 
 		input.inputform-field {
 			block-size: 100%;
+			min-block-size: initial;
 		}
 
 		.inputform-field {

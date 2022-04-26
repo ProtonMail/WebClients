@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { TwitterButton, Button, InputTwo, Icon, useNotifications } from '@proton/components';
+import { TwitterButton, Button, Icon, useNotifications } from '@proton/components';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { useUserSettings } from '@proton/components/hooks';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -27,13 +27,18 @@ const InviteShareLink = () => {
     return (
         <div>
             <h3 className="text-bold">{c('Label').t`Your referral link`}</h3>
-            <div className="invite-section-share-link flex flex-gap-1">
-                <div className="flex-item-fluid">
-                    <InputTwo value={referrerLink} readOnly className="color-weak pl0-25 pr0-25" />
+            <div className="invite-section-share-link flex flex-align-items-stretch flex-gap-0-5">
+                <div
+                    className="flex-item-fluid flex flex-align-items-center p0-5 user-select border rounded"
+                    title={referrerLink}
+                >
+                    <span className="text-ellipsis">{referrerLink}</span>
                 </div>
-                <div className="flex flex-gap-1 flex-nowrap flex-justify-end">
+                <div className="flex flex-gap-0-5 flex-nowrap flex-justify-end">
                     <Button color="norm" onClick={onCopyButtonClick}>
-                        <Icon name="link" /> {c('Button').t`Copy`}
+                        <span className="flex flex-nowrap flex-align-items-center">
+                            <Icon name="link" className="mr0-25 flex-item-noshrink" /> {c('Button').t`Copy`}
+                        </span>
                     </Button>
                     <TwitterButton
                         url={encodeURI(
@@ -43,7 +48,9 @@ const InviteShareLink = () => {
                         )}
                         target="_blank"
                     >
-                        <Icon name="brand-twitter" /> {c('Button').t`Tweet`}
+                        <span className="flex flex-nowrap flex-align-items-center">
+                            <Icon name="brand-twitter" className="mr0-25 flex-item-noshrink" /> {c('Button').t`Tweet`}
+                        </span>
                     </TwitterButton>
                 </div>
             </div>

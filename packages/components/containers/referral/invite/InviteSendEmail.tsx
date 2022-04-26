@@ -109,10 +109,10 @@ const InviteSendEmail = () => {
     return (
         <div>
             <h3 className="text-bold">{c('Label').t`Invite via email`}</h3>
-            <div className="flex flex-gap-1 flex-nowrap flex-align-items-end rounded">
-                <div className="flex-item-fluid flex-item-fluid-auto">
+            <div className="flex flex-gap-0-5 flex-nowrap flex-align-items-end on-mobile-flex-column rounded">
+                <div className="flex-item-fluid-auto">
                     <div
-                        className="addresses-wrapper border rounded-lg flex"
+                        className="addresses-wrapper field hauto flex flex-gap-0-5 px0-5"
                         onClick={() => {
                             anchorRef.current?.focus();
                         }}
@@ -145,7 +145,7 @@ const InviteSendEmail = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex-item-noshrink">
+                <div className="flex-item-noshrink text-right">
                     <Button
                         title={c('Button').t`Invite`}
                         color="norm"
@@ -153,7 +153,9 @@ const InviteSendEmail = () => {
                         loading={apiLoading || contactEmailIsLoading}
                         disabled={hasInvalidRecipients}
                     >
-                        <Icon name="paper-plane" /> {c('Button').t`Send`}
+                        <span className="flex flex-nowrap flex-align-items-center">
+                            <Icon name="paper-plane" className="mr0-25 flex-item-noshrink" /> {c('Button').t`Send`}
+                        </span>
                     </Button>
                 </div>
             </div>
