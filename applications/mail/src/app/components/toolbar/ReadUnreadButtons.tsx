@@ -1,6 +1,6 @@
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
+import { Icon, useLoading, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
 
 import { useMarkAs, MARK_AS_STATUS } from '../../hooks/useMarkAs';
@@ -17,11 +17,10 @@ interface Props {
 
 const ReadUnreadButtons = ({ labelID, mailSettings, selectedIDs, onBack }: Props) => {
     // INFO MessageButtons cannot be changed in setting anymore but we keep the logic for people using it
-    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
+    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD, Shortcuts = 0 } = mailSettings;
     const [loading, withLoading] = useLoading();
     const markAs = useMarkAs();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
     const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === UNREAD;

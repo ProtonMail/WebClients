@@ -4,7 +4,7 @@ import { generateUID } from '../../helpers';
 import { Dropdown } from '../dropdown';
 import { CORNERS_ONLY_PLACEMENTS, Position } from '../popper/utils';
 
-interface Props {
+export interface ContextMenuProps {
     anchorRef: RefObject<HTMLElement>;
     isOpen: boolean;
     children: ReactNode;
@@ -25,7 +25,7 @@ const ContextMenu = ({
     close,
     autoClose = true,
     noMaxHeight = false,
-}: Props) => {
+}: ContextMenuProps) => {
     const [uid] = useState(generateUID('context-menu'));
 
     useEffect(() => {

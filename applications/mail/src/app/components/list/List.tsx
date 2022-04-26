@@ -56,6 +56,7 @@ interface Props {
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onCheckOne: (event: ChangeEvent, ID: string) => void;
     onClick: (elementID: string | undefined) => void;
+    onContextMenu: (event: React.MouseEvent<HTMLDivElement>, element: Element) => void;
     onFocus: (number: number) => void;
     conversationMode: boolean;
     isSearch: boolean;
@@ -88,6 +89,7 @@ const List = (
         checkedIDs = defaultCheckedIDs,
         onCheck,
         onClick,
+        onContextMenu,
         conversationMode,
         isSearch,
         breakpoints,
@@ -198,6 +200,7 @@ const List = (
                                     checked={checkedIDs.includes(element.ID || '')}
                                     onCheck={onCheckOne}
                                     onClick={onClick}
+                                    onContextMenu={onContextMenu}
                                     mailSettings={mailSettings}
                                     onDragStart={handleDragStart}
                                     onDragEnd={handleDragEnd}

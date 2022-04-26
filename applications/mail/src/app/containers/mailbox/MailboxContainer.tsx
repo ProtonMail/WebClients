@@ -14,6 +14,7 @@ import { VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Sort, Filter, SearchParameters } from '../../models/tools';
+import { Element } from '../../models/element';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
@@ -44,6 +45,7 @@ import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
+import ItemContextMenu from '../../components/list/ItemContextMenu';
 
 interface Props {
     labelID: string;
@@ -66,7 +68,8 @@ const MailboxContainer = ({
 }: Props) => {
     const location = useLocation();
     const history = useHistory();
-
+    const [isContextMenuOpen, setIsOpen] = useState(false);
+    const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const getElementsFromIDs = useGetElementsFromIDs();
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
@@ -205,6 +208,24 @@ const MailboxContainer = ({
         [onCompose, isConversationContentView, labelID]
     );
 
+    const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
+    const openContextMenu = useCallback(() => (console.log('d'), setIsOpen(true)), [setIsOpen]);
+
+    const handleContextMenu = useCallback(
+        (e: React.MouseEvent<HTMLDivElement>, element: Element) => {
+            e.stopPropagation();
+            e.preventDefault();
+
+            if (!checkedIDs.length) {
+                handleCheckOnlyOne(element.ID);
+            }
+
+            setContextMenuPosition({ top: e.clientY, left: e.clientX });
+            openContextMenu();
+        },
+        [checkedIDs]
+    );
+
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, moveScheduledModal, permanentDeleteModal } = useMailboxHotkeys(
@@ -292,6 +313,7 @@ const MailboxContainer = ({
                             checkedIDs={checkedIDs}
                             onCheck={handleCheck}
                             onClick={handleElement}
+                            onContextMenu={handleContextMenu}
                             userSettings={userSettings}
                             isSearch={isSearch}
                             breakpoints={breakpoints}
@@ -361,6 +383,17 @@ const MailboxContainer = ({
             </div>
             {permanentDeleteModal}
             {moveScheduledModal}
+            <ItemContextMenu
+                onBack={handleBack}
+                mailSettings={mailSettings}
+                anchorRef={listRef}
+                isOpen={isContextMenuOpen}
+                checkedIDs={checkedIDs}
+                labelID={labelID}
+                open={openContextMenu}
+                close={closeContextMenu}
+                position={contextMenuPosition}
+            />
         </MailboxContainerContextProvider>
     );
 };
