@@ -46,7 +46,7 @@ const ItemContextMenu = ({ checkedIDs, labelID, mailSettings, onBack, ...rest }:
             testId="context-menu-unread"
             icon="eye-slash"
             name={c('Action').t`Mark as unread`}
-            action={() => handleMarkAs(MARK_AS_STATUS.READ)}
+            action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
         />,
     ];
 
