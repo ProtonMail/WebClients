@@ -1,35 +1,39 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { Member } from '@proton/shared/lib/interfaces';
+import { MEMBER_TYPE } from '@proton/shared/lib/constants';
 
-import { useApi, useLoading, useUser, useDomains, usePremiumDomains } from '../../hooks';
+import { useApi, useDomains, useLoading, usePremiumDomains, useUser } from '../../hooks';
 
 const useAddressDomains = (member: Member) => {
     const api = useApi();
     const [user] = useUser();
-    const [domains, loadingDomains] = useDomains();
-    const [premiumDomains, loadingPremiumDomains] = usePremiumDomains();
+    const [customDomains, loadingDomains] = useDomains();
+    const [premiumProtonDomains, loadingPremiumDomains] = usePremiumDomains();
     const [loading, withLoading] = useLoading(true);
 
-    const [selfAvailable, setSelfDomains] = useState<string[]>([]);
+    const [protonDomains, setProtonDomains] = useState<string[]>([]);
+
+    const hasProtonDomains = member.Type === MEMBER_TYPE.PROTON;
 
     useEffect(() => {
+        // Ignore if already fetched
+        if (protonDomains.length) {
+            return;
+        }
         const queryDomains = async () => {
-            const available =
-                member.Self && member.Subscriber
-                    ? await api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains)
-                    : [];
-            setSelfDomains(available);
+            const available = hasProtonDomains
+                ? await api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains)
+                : [];
+            setProtonDomains(available);
         };
         withLoading(queryDomains());
-    }, [member, domains, premiumDomains]);
+    }, [hasProtonDomains]);
 
     const allDomains = [
-        ...(member.Self && member.Subscriber ? selfAvailable : []),
-        ...(Array.isArray(domains) ? domains.map(({ DomainName }) => DomainName) : []),
-        ...(member.Self && member.Subscriber && user.hasPaidMail && Array.isArray(premiumDomains)
-            ? premiumDomains
-            : []),
+        ...(hasProtonDomains ? protonDomains : []),
+        ...(Array.isArray(customDomains) ? customDomains.map(({ DomainName }) => DomainName) : []),
+        ...(hasProtonDomains && user.hasPaidMail && Array.isArray(premiumProtonDomains) ? premiumProtonDomains : []),
     ];
 
     return [allDomains, loading || loadingDomains || loadingPremiumDomains] as const;
