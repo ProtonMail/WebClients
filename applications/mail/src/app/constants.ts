@@ -18,6 +18,8 @@ export const LOAD_RETRY_COUNT = 3;
 export const LOAD_RETRY_DELAY = 3000; // in ms => 3s
 export const PREVENT_CANCEL_SEND_INTERVAL = 30000; // Prevent form cancelling a message about to be sent 30s before
 
+export const ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT = 'advancedsearchclose';
+
 export const UNDO_SEND_DELAY = 5000;
 
 export const SCHEDULED_MESSAGES_LIMIT = 100;
