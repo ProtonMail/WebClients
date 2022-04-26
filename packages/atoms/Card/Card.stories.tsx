@@ -1,24 +1,22 @@
-import Card, { CardProps } from '@proton/components/components/card/Card';
 import { Button } from '@proton/components';
-import { getTitle } from '../../helpers/title';
+
+import Card, { CardProps } from './Card';
 
 import mdx from './Card.mdx';
 
 export default {
     component: Card,
-    title: getTitle(__filename, false),
-    parameters: {
-        docs: {
-            page: mdx,
-        },
-    },
+    title: 'components/Card',
+    parameters: { docs: { page: mdx } },
 };
 
 export const Playground = ({ ...args }) => <Card {...args} />;
-const args: CardProps = {
+
+const args: CardProps<'div'> = {
     children:
         'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?',
 };
+
 Playground.args = args;
 
 export const Basic = () => (
