@@ -6,7 +6,9 @@ import {
     PrivateMainArea,
     useCalendars,
     useCalendarUserSettings,
+    useFolders,
     useItemsSelection,
+    useLabels,
 } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
@@ -68,6 +70,8 @@ const MailboxContainer = ({
 }: Props) => {
     const location = useLocation();
     const history = useHistory();
+    const [labels] = useLabels();
+    const [folders] = useFolders();
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const getElementsFromIDs = useGetElementsFromIDs();
@@ -308,6 +312,7 @@ const MailboxContainer = ({
                             placeholderCount={placeholderCount}
                             columnLayout={columnLayout}
                             mailSettings={mailSettings}
+                            labels={labels}
                             elementID={elementIDForList}
                             elements={elements}
                             checkedIDs={checkedIDs}
@@ -384,6 +389,9 @@ const MailboxContainer = ({
             {permanentDeleteModal}
             {moveScheduledModal}
             <ItemContextMenu
+                elementID={elementID}
+                labels={labels}
+                folders={folders}
                 onBack={handleBack}
                 mailSettings={mailSettings}
                 anchorRef={listRef}
