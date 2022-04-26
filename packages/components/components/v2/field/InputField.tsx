@@ -95,13 +95,13 @@ export const InputField: <E extends ElementType = typeof defaultElement>(
 
         const errorElement = error && typeof error !== 'boolean' && (
             <>
-                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
+                <Icon name="exclamation-circle-filled" className="flex-item-noshrink aligntop mr0-25" />
                 <span>{error}</span>
             </>
         );
         const warningElement = warning && typeof warning !== 'boolean' && (
             <>
-                <Icon name="exclamation-circle-filled" className="aligntop mr0-25" />
+                <Icon name="exclamation-circle-filled" className="flex-item-noshrink aligntop mr0-25" />
                 <span>{warning}</span>
             </>
         );
