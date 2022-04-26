@@ -2,8 +2,10 @@ import { memo } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from '@proton/components';
+import { Icon, useMailSettings, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
@@ -39,6 +41,8 @@ interface Props {
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     location: Location;
+    labels?: Label[];
+    folders?: Folder[];
 }
 
 const Toolbar = ({
@@ -62,9 +66,9 @@ const Toolbar = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     location,
+    labels,
+    folders,
 }: Props) => {
-    const [labels] = useLabels();
-    const [folders] = useFolders();
     const listInView = columnMode || !elementID;
 
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
