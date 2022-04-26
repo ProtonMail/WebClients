@@ -8,7 +8,7 @@ import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/ca
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
-import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { getHasLegacyPlans, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -91,9 +91,14 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        await new Promise<void>((resolve, reject) => {
-            createModal(<HighlightPlanDowngradeModal user={user} plans={plans} onConfirm={resolve} onClose={reject} />);
-        });
+        // We only show the plan downgrade plan modal for users with new plans because we don't have the feature list for legacy plans.
+        if (!getHasLegacyPlans(subscription)) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(
+                    <HighlightPlanDowngradeModal user={user} plans={plans} onConfirm={resolve} onClose={reject} />
+                );
+            });
+        }
 
         if (await calendarPromise) {
             await new Promise<void>((resolve, reject) => {
