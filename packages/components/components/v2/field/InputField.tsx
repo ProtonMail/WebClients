@@ -105,17 +105,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                 ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
                 : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
 
-            return (
-                <Tooltip
-                    title={title}
-                    type={tooltipType}
-                    anchorOffset={{ y: -4, x: 0 }}
-                    isOpen={isFocused && !rest.value}
-                >
-                    <Icon name="exclamation-circle-filled" className={iconClassName} />
-                </Tooltip>
-            );
-        }
+                return (
+                    <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
+                        <Icon name="exclamation-circle-filled" className={iconClassName} />
+                    </Tooltip>
+                );
+            }
 
         return rest.icon;
     };
@@ -146,7 +141,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     disabled={disabled}
                     aria-describedby={assistiveUid}
                     {...rest}
-                    icon={getIcon()}
+                    suffix={getIcon()}
                 />
             </div>
             <div className={classes.assistContainer} id={assistiveUid}>

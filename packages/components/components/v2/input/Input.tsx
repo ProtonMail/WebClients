@@ -4,26 +4,15 @@ import { classnames } from '../../../helpers';
 
 export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix'> {
     error?: ReactNode | boolean;
-    suffix?: ReactNode;
     prefix?: ReactNode;
-    icon?: ReactNode;
+    suffix?: ReactNode;
     containerRef?: Ref<HTMLDivElement>;
     disableChange?: boolean;
     onValue?: (value: string) => void;
 }
 
 const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
-    const {
-        error,
-        icon,
-        suffix,
-        prefix,
-        className: classNameProp,
-        onValue,
-        disableChange,
-        containerRef,
-        ...rest
-    } = props;
+    const { error, prefix, suffix, className: classNameProp, onValue, disableChange, containerRef, ...rest } = props;
 
     const className = classnames([classNameProp, 'w100 inputform-field', Boolean(error) && 'error']);
 
@@ -51,22 +40,16 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
         <div
             className={classnames([
                 'flex flex-nowrap flex-align-items-center flex-item-fluid relative',
-                Boolean(icon) && 'text-left relative inputform-icon-container',
-                (suffix || prefix) && 'inputform-suffix-container',
+                Boolean(prefix) && 'inputform-adornment-container--prefix',
+                Boolean(suffix) && 'inputform-adornment-container--suffix',
             ])}
             ref={containerRef}
         >
-            {prefix && <div className="inputform-prefix pr0-5 flex">{prefix}</div>}
+            {prefix && <div className="inputform-adornment pl0-5 flex">{prefix}</div>}
 
             <div className="flex-item-fluid">{inputElement}</div>
 
-            {icon && <span className="right-icon absolute flex">{icon}</span>}
-
-            {suffix && (
-                <div className="inputform-suffix right-icon pr0-5 flex">
-                    <span className="mauto flex">{suffix}</span>
-                </div>
-            )}
+            {suffix && <div className="inputform-adornment pr0-5 flex">{suffix}</div>}
         </div>
     );
 };
