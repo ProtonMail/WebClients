@@ -8,10 +8,13 @@ import {
     ReactElement,
     ReactNode,
 } from 'react';
+
+import { ThemeColor } from '@proton/colors';
+
 import { classnames } from '../../helpers';
 import { Vr } from '../vr';
 
-export type Color = 'norm' | 'weak';
+export type Color = `${ThemeColor.Norm | ThemeColor.Weak}`;
 
 export type Shape = 'solid' | 'outline' | 'ghost';
 
