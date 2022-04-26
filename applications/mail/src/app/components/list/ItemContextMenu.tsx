@@ -1,14 +1,20 @@
 import { c } from 'ttag';
 import { RefObject } from 'react';
-import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
+import { MESSAGE_BUTTONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { ContextMenu, ContextSeparator, ContextMenuButton } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { useMoveToFolder } from '../../hooks/useApplyLabels';
+import { getFolderName } from '../../helpers/labels';
 
 interface Props {
     mailSettings: MailSettings;
     checkedIDs: string[];
+    labels?: Label[];
+    folders?: Folder[];
+    elementID?: string;
     labelID: string;
     anchorRef: RefObject<HTMLElement>;
     isOpen: boolean;
@@ -21,10 +27,21 @@ interface Props {
     close: () => void;
 }
 
-const ItemContextMenu = ({ checkedIDs, labelID, mailSettings, onBack, ...rest }: Props) => {
+const ItemContextMenu = ({
+    checkedIDs,
+    elementID,
+    labelID,
+    labels = [],
+    folders = [],
+    mailSettings,
+    onBack,
+    ...rest
+}: Props) => {
     const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
     const markAs = useMarkAs();
+    const moveToFolder = useMoveToFolder();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const labelIDs = labels.map(({ ID }) => ID);
 
     const handleMarkAs = async (status: MARK_AS_STATUS) => {
         const isUnread = status === MARK_AS_STATUS.UNREAD;
@@ -33,6 +50,16 @@ const ItemContextMenu = ({ checkedIDs, labelID, mailSettings, onBack, ...rest }:
             onBack();
         }
         await markAs(elements, labelID, status);
+    };
+
+    const handleMove = async (LabelID: string) => {
+        const folderName = getFolderName(LabelID, folders);
+        const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+        const elements = getElementsFromIDs(checkedIDs);
+        await moveToFolder(elements, LabelID, folderName, fromLabelID);
+        if (checkedIDs.includes(elementID || '')) {
+            onBack();
+        }
     };
 
     const readButtons = [
@@ -60,25 +87,25 @@ const ItemContextMenu = ({ checkedIDs, labelID, mailSettings, onBack, ...rest }:
                 testId="context-menu-inbox"
                 icon="inbox"
                 name={c('Action').t`Move to inbox`}
-                action={() => console.log('Inbox')}
+                action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
             />
             <ContextMenuButton
                 testId="context-menu-archive"
                 icon="archive-box"
                 name={c('Action').t`Move to archive`}
-                action={() => console.log('Archive')}
+                action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE)}
             />
             <ContextMenuButton
                 testId="context-menu-trash"
                 icon="trash"
                 name={c('Action').t`Move to trash`}
-                action={() => console.log('Trash')}
+                action={() => handleMove(MAILBOX_LABEL_IDS.TRASH)}
             />
             <ContextMenuButton
                 testId="context-menu-spam"
                 icon="fire"
                 name={c('Action').t`Move to spam`}
-                action={() => console.log('Spam')}
+                action={() => handleMove(MAILBOX_LABEL_IDS.SPAM)}
             />
             <ContextSeparator />
             {readButtons}
