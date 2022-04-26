@@ -7,10 +7,8 @@ module.exports = {
     core: {
         builder: 'webpack5',
     },
-    stories: [
-        '../src/stories/**/*.stories.@(mdx|js|jsx|ts|tsx)',
-        '../../../packages/atoms/**/*.stories.@(js|jsx|ts|tsx)',
-    ],
+    staticDirs: [],
+    stories: ['../**/*.stories.mdx', '../**/*.stories.@(js|jsx|ts|tsx)'],
     addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
     typescript: {
         check: false,
