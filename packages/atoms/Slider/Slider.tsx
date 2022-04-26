@@ -16,6 +16,7 @@ import Icon from '@proton/components/components/icon/Icon';
 
 import clsx from '../clsx';
 import SliderMark from './SliderMark';
+
 import './Slider.scss';
 
 interface SliderProps extends Omit<ComponentPropsWithoutRef<'input'>, 'value' | 'onChange' | 'onInput'> {
@@ -257,11 +258,11 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
 
             <div style={{ width: `${valueInPercent}%` }} className="slider-track" />
 
-            <SliderMark className="slider-mark-min" aria-hidden="true">
+            <SliderMark className="slider-mark-min" aria-hidden="true" data-testid="slider-mark-min">
                 {min}
             </SliderMark>
 
-            <SliderMark className="slider-mark-max" aria-hidden="true">
+            <SliderMark className="slider-mark-max" aria-hidden="true" data-testid="slider-mark-max">
                 {max}
             </SliderMark>
 
@@ -271,6 +272,7 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
                 shape="outline"
                 as="span"
                 style={{ '--left-custom': `${valueInPercent}%` }}
+                data-testid="slider-thumb"
                 className={clsx(['slider-thumb left-custom shadow-norm relative', dragging && 'slider-thumb-dragging'])}
             >
                 <input
@@ -280,14 +282,18 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
                     min={min}
                     max={max}
                     step={step}
+                    aria-valuenow={clampedInternalValue}
                     aria-orientation="horizontal"
+                    data-testid="slider-input"
                     className="sr-only slider-thumb-input"
                     onChange={handleInputChange}
                     onInput={handleInputInput}
                     {...rest}
                 />
 
-                <div className="slider-thumb-tooltip absolute tooltip tooltip--top">{renderDisplayedValue()}</div>
+                <div className="slider-thumb-tooltip absolute tooltip tooltip--top" data-testid="slider-tooltip">
+                    {renderDisplayedValue()}
+                </div>
 
                 <Icon name="arrows-left-right" />
             </ButtonLike>
