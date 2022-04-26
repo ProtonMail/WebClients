@@ -78,7 +78,10 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                             email.Value &&
                             (email.Status === SETTINGS_STATUS.UNVERIFIED ? (
                                 <>
-                                    <Icon className="color-danger aligntop mr0-25" name="exclamation-circle-filled" />
+                                    <Icon
+                                        className="color-danger flex-item-noshrink aligntop mr0-25"
+                                        name="exclamation-circle-filled"
+                                    />
                                     <span className="color-norm mr0-5">{c('Recovery Email')
                                         .t`Email address not yet verified.`}</span>
                                     <button
@@ -91,7 +94,10 @@ const RecoveryEmail = ({ email, hasReset, hasNotify, className }: Props) => {
                                 </>
                             ) : (
                                 <>
-                                    <Icon className="color-success aligntop mr0-25" name="checkmark-circle-filled" />
+                                    <Icon
+                                        className="color-success flex-item-noshrink aligntop mr0-25"
+                                        name="checkmark-circle-filled"
+                                    />
                                     <span className="mr0-5">{c('Recovery Email')
                                         .t`Email address has been verified.`}</span>
                                 </>

@@ -139,14 +139,14 @@ const EncryptedSearchField = ({ esState }: Props) => {
         <Button
             shape="solid"
             color="norm"
-            className="ml1 w90p"
+            className="ml1"
             onClick={() => resumeIndexing()}
             disabled={disablePauseResumeButton}
         >
             {c('Action').t`Resume`}
         </Button>
     ) : (
-        <Button className="ml1 w90p" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
+        <Button className="ml1" onClick={pauseIndexing} disabled={disablePauseResumeButton}>
             {c('Action').t`Pause`}
         </Button>
     );
