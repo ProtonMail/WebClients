@@ -1,10 +1,11 @@
 import { Key } from './Key';
+import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
 
 export interface Member {
     ID: string;
-    Role: number;
-    Private: number;
-    Type: number;
+    Role: MEMBER_ROLE;
+    Private: MEMBER_PRIVATE;
+    Type: MEMBER_TYPE;
     ToMigrate: 0 | 1;
     MaxSpace: number;
     MaxVPN: number;
