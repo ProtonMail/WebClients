@@ -3,12 +3,13 @@ import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
 import { useApi, useNotifications, useEventManager, useLabels, classnames } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
-import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { getConversation, labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
+import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import { PAGE_SIZE } from '../constants';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { isMessage as testIsMessage } from '../helpers/elements';
@@ -324,6 +325,45 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         }
     };
 
+    const searchForUnsubscribable = async (folderID: string, isMessage: boolean, elements: Element[]) => {
+        if (folderID === SPAM) {
+            const unsubscribableIDs = [];
+
+            if (isMessage) {
+                unsubscribableIDs.push(
+                    ...(elements as Message[])
+                        .filter((element) => isUnsubscribable(element))
+                        .map((element) => element.ID)
+                );
+            } else {
+                await Promise.all(
+                    (elements as Conversation[]).map(async (element) => {
+                        const conversation = getConversationFromStore(element.ID);
+
+                        if (conversation && conversation.Messages) {
+                            unsubscribableIDs.push(
+                                ...conversation.Messages.filter((message) => isUnsubscribable(message)).map(
+                                    (message) => message.ID
+                                )
+                            );
+                        } else {
+                            const { Conversation } = await api(getConversation(element.ID));
+                            unsubscribableIDs.push(
+                                ...Conversation.Messages.filter((message) => isUnsubscribable(message)).map(
+                                    (message) => message.ID
+                                )
+                            );
+                        }
+                    })
+                );
+            }
+
+            if (unsubscribableIDs.length > 0) {
+                // Display the modal
+            }
+        }
+    };
+
     const moveToFolder = useCallback(
         async (elements: Element[], folderID: string, folderName: string, fromLabelID: string, silent = false) => {
             if (!elements.length) {
@@ -334,8 +374,12 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             const isMessage = testIsMessage(elements[0]);
 
-            // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
-            await searchForScheduled(folderID, isMessage, elements);
+            await Promise.all([
+                // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
+                searchForScheduled(folderID, isMessage, elements),
+                // Open a modal when moving unsubscribable messages/conversations to spam to propose to unsubscribe them
+                searchForUnsubscribable(folderID, isMessage, elements),
+            ]);
 
             const action = isMessage ? labelMessages : labelConversations;
             const authorizedToMove = isMessage
