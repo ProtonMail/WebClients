@@ -44,6 +44,8 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
         }
     }, []);
 
+    const br = <br key="1" />;
+
     return (
         <Modal size="small" {...rest}>
             <div className="p2">
@@ -67,8 +69,11 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
                     title={c('new_plans: title').t`Updated Proton, unified protection`}
                     description={
                         <>
-                            {c('new_plans: info')
-                                .t`Introducing Proton’s refreshed look. Many services, one mission. Welcome to an Internet where privacy is the default.`}{' '}
+                            {
+                                // translator: ${br} is just a break line, please keep the variable at the same place.
+                                c('new_plans: info')
+                                    .jt`Introducing Proton’s refreshed look.${br} Many services, one mission. Welcome to an Internet where privacy is the default.`
+                            }{' '}
                             <Href url={getStaticURL('/news/updated-proton')}>{c('Info').t`Learn more`}</Href>
                         </>
                     }
