@@ -24,20 +24,24 @@ const InviteSendEmailRecipient = ({ recipient, onDeleteRecipient, isValid }: Pro
     const emailAddress = recipient.Address;
 
     return (
-        <Tooltip title={!isValid ? getErrorMessage(emailAddress) : undefined}>
-            <div
-                className={classnames([
-                    'm0-25 p0-25 flex flex-nowrap',
-                    isValid ? 'bg-weak' : 'bg-danger text-white opacity-65',
-                ])}
-                key={recipient.Address}
-            >
-                <span className="text-no-wrap pr0-5 text-ellipsis">{recipient.Address}</span>
-                <span className="cursor-pointer" onClick={onDeleteRecipient}>
-                    <Icon name="cross" />
+        <div
+            className={classnames([
+                'flex flex-nowrap flex-row flex-align-items-stretch max-w100 rounded-sm bg-weak overflow-hidden',
+                !isValid && 'color-danger',
+            ])}
+            key={recipient.Address}
+        >
+            <Tooltip title={!isValid ? getErrorMessage(emailAddress) : undefined}>
+                <span className="flex flex-align-items-center pr0-25 pl0-5">
+                    <span className="text-ellipsis">{recipient.Address}</span>
                 </span>
-            </div>
-        </Tooltip>
+            </Tooltip>
+            <Tooltip title={c('Action').t`Remove`}>
+                <button onClick={onDeleteRecipient} className="flex flex-item-noshrink px0-25 interactive">
+                    <Icon name="cross-small" className="mauto" />
+                </button>
+            </Tooltip>
+        </div>
     );
 };
 
