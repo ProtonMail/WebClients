@@ -174,6 +174,7 @@ export enum API_CODES {
     GLOBAL_SUCCESS = 1001,
     SINGLE_SUCCESS = 1000,
 }
+
 export const GET_VTIMEZONES_API_LIMIT = 10;
 export const GET_CANONICAL_EMAILS_API_LIMIT = 100;
 
@@ -214,12 +215,15 @@ export enum EVENT_ACTIONS {
     UPDATE_DRAFT = 2,
     UPDATE_FLAGS = 3,
 }
+
 export enum USER_ROLES {
     FREE_ROLE = 0,
     MEMBER_ROLE = 1,
     ADMIN_ROLE = 2,
 }
+
 export const ELEMENTS_PER_PAGE = 10;
+
 export enum INVOICE_OWNER {
     USER = 0,
     ORGANIZATION = 1,
@@ -232,6 +236,7 @@ export const MIN_DONATION_AMOUNT = 100;
 export const MIN_CREDIT_AMOUNT = 500;
 export const MIN_BITCOIN_AMOUNT = 500;
 export const DEFAULT_CREDITS_AMOUNT = 5000;
+
 export enum INVOICE_TYPE {
     OTHER = 0,
     SUBSCRIPTION = 1,
@@ -244,6 +249,7 @@ export enum INVOICE_TYPE {
     MODIFICATION = 8,
     ADDITION = 9,
 }
+
 export enum INVOICE_STATE {
     UNPAID = 0,
     PAID = 1,
@@ -264,8 +270,8 @@ export const BASE_SIZE = 1024;
 export const GIGA = BASE_SIZE ** 3;
 
 export enum MEMBER_TYPE {
-    MEMBER = 0,
-    SUB_MEMBER = 1,
+    PROTON = 0,
+    MANAGED = 1,
 }
 
 export enum DOMAIN_STATE {
@@ -484,6 +490,7 @@ export const PRODUCT_PAYER = {
 
 export const MIN_PAYPAL_AMOUNT = 500;
 export const MAX_PAYPAL_AMOUNT = 99999900;
+
 export enum NEWS {
     ANNOUNCEMENTS = 1,
     FEATURES = 2,
@@ -674,7 +681,9 @@ export enum FILTER_STATUS {
     ENABLED = 1,
     DISABLED = 0,
 }
+
 export const VCARD_VERSION = '4.0';
+
 export enum CONTACT_CARD_TYPE {
     ENCRYPTED_AND_SIGNED = 3,
     SIGNED = 2,
@@ -687,6 +696,7 @@ export enum LABEL_TYPE {
     CONTACT_GROUP = 2,
     MESSAGE_FOLDER = 3,
 }
+
 export const DEFAULT_LOCALE = 'en_US';
 
 export enum PASSWORD_MODE {
@@ -766,6 +776,7 @@ export enum AutoReplyDuration {
 export const ADD_CARD_MODE = 'add-card';
 export const DKIM_RSA_1024 = 0;
 export const DKIM_RSA_2048 = 1;
+
 export enum DKIM_KEY_STATUS {
     ACTIVE = 0,
     PENDING = 1,
