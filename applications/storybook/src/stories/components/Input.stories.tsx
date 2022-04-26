@@ -41,7 +41,10 @@ export const Basic = () => {
             </div>
 
             <div className="mb1 mt1">
-                <InputTwo icon={<img src={ccIcon} width="16" className="mauto" alt="Reveal password" />} {...shared} />
+                <InputTwo
+                    suffix={<img src={ccIcon} width="16" className="mauto" alt="Reveal password" />}
+                    {...shared}
+                />
             </div>
 
             <div className="mt1">
