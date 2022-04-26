@@ -34,11 +34,11 @@ export const PrimaryIcons = () => {
         <>
             <div className="flex flex-nowrap flex-gap-1">
                 <InputTwo
-                    prefix={<Icon className="ml0-5" name="magnifier" />}
+                    prefix={<Icon name="magnifier" />}
                     placeholder={`Search ${primaryIconNames.length} icons by name…`}
                     value={search}
                     onChange={({ target: { value } }) => setSearch(value)}
-                    className="flex-item-fluid pl0"
+                    className="flex-item-fluid"
                 />
                 <ButtonGroup>
                     {sizes.map((size) => (

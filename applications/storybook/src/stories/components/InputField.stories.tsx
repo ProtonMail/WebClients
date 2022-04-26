@@ -120,24 +120,16 @@ export const Validation = () => {
 export const Adornments = () => {
     return (
         <>
+            <InputFieldTwo label="Input with icon prefix" prefix={<Icon name="magnifier" />} />
+            <InputFieldTwo label="Input with text prefix" prefix="Prefix" />
             <InputFieldTwo
-                label="Input with icon"
+                label="Input with icon suffix"
                 placeholder="**** **** **** ****"
-                icon={<Icon name="credit-card" />}
+                suffix={<Icon name="credit-card" />}
             />
+            <InputFieldTwo label="Input with text suffix" placeholder="username" suffix="@protonmail.com" />
             <InputFieldTwo
-                label="Input with prefix icon"
-                className="pl0"
-                prefix={<Icon className="ml0-5" name="magnifier" />}
-            />
-            <InputFieldTwo
-                label="Input with prefix text"
-                className="pl0"
-                prefix={<span className="ml0-5">Prefix</span>}
-            />
-            <InputFieldTwo label="Input with suffix" placeholder="username" suffix="@protonmail.com" />
-            <InputFieldTwo
-                label="Input with suffix (select)"
+                label="Input with select suffix"
                 placeholder="username"
                 suffix={
                     <SelectTwo unstyled value="pm.me">

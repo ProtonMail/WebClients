@@ -127,7 +127,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                         onValue={setSearch}
                         autoFocus={!embedded}
                         placeholder="Country"
-                        icon={<Icon name="magnifier" />}
+                        prefix={<Icon name="magnifier" alt={c('Action').t`Search countries`} />}
                     />
                 </form>
 

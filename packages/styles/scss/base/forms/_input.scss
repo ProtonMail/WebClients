@@ -37,8 +37,7 @@ select {
 		font-weight: var(--font-weight-semibold);
 	}
 
-	&-suffix,
-	&-prefix {
+	&-adornment {
 		color: var(--text-weak);
 	}
 
@@ -143,9 +142,7 @@ select {
 		}
 	}
 
-	// field icon container
-	&-icon-container,
-	&-suffix-container {
+	&-adornment-container {
 		@extend .inputform-field; // added focus-within inside on inputform-field for this fake-field :)
 		padding: 0;
 		block-size: rem($default-height-fields-inputforms);
@@ -165,11 +162,6 @@ select {
 			&:focus {
 				border: 0;
 				outline: 0;
-			}
-
-			&[type='tel'] {
-				inline-size: 100%;
-				padding-inline-start: 0.5em;
 			}
 		}
 
@@ -196,22 +188,26 @@ select {
 			}
 		}
 	}
-	&-icon-container {
+	&-adornment-container--prefix {
+		@extend .inputform-adornment-container;
+
 		.inputform-field {
-			&,
-			&:focus {
-				inline-size: calc(100% - 1.5em);
-			}
+			padding-inline-start: 0.5em;
+		}
+	}
+	&-adornment-container--suffix {
+		@extend .inputform-adornment-container;
+
+		.inputform-field {
+			padding-inline-end: 0.5em;
 		}
 	}
 
 	// bigger inputs
 	&-container--bigger {
-		.right-icon,
 		input.inputform-field,
 		.select,
-		.inputform-icon-container,
-		.inputform-suffix-container {
+		.inputform-adornment-container {
 			block-size: rem($bigger-height-fields-inputforms);
 		}
 
@@ -222,8 +218,7 @@ select {
 			}
 		}
 
-		.inputform-icon-container,
-		.inputform-suffix-container {
+		.inputform-adornment-container {
 			&-empty {
 				// for drive, to keep the same height
 				min-block-size: calc(#{rem($bigger-height-fields-inputforms)} + 2px);
@@ -241,7 +236,7 @@ select {
 		& .inputform-field,
 		& .inputform-label-hint,
 		& .inputform-assist,
-		& .inputform-prefix {
+		& .inputform-adornment {
 			color: var(--field-disabled-text-color);
 			cursor: auto;
 		}
