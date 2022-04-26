@@ -2,7 +2,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const fs = require('fs');
 const path = require('path');
 
-const RAW_TEXT = /.*\.theme\.css|.raw\.scss$/;
+const RAW_TEXT = /.*\.theme\.css|\.raw\.scss$/;
 
 const SASS_VARIABLES_FILEPATH = path.resolve('./src/app/variables.scss');
 const SASS_VARIABLES = fs.existsSync(SASS_VARIABLES_FILEPATH) ? fs.readFileSync(SASS_VARIABLES_FILEPATH) : '';
