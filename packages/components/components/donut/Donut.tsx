@@ -1,12 +1,17 @@
 import percentOf from '@proton/shared/lib/helpers/percentOf';
+import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
 
 import useUid from '../../hooks/useUid';
+
+export type DonutSegmentColor = ThemeColor | string;
+
+const themeColors = Object.values(ThemeColor);
 
 export interface DonutProps {
     /**
      * Array of "number, string" tuples that represent the individual
      * segments of the donut chart, consisting of:
-     * `[ percentage (number), color (string)  ]`
+     * `[ percentage (number), color (ThemeColor | string)  ]`
      *
      * If the sum of all percentages is less than 100, the Donut
      * will display an additional, auto-generated segment using a neutral
@@ -16,7 +21,7 @@ export interface DonutProps {
      * remaining amount manually even if the sum exceeds 100, by creating
      * a custom last chunk with a neutral background.
      */
-    chunks: [number, string][];
+    segments: [number, DonutSegmentColor][];
     /**
      * Gap in absolute viewbox units to apply between individual
      * arc segments of the donut chart.
@@ -24,7 +29,7 @@ export interface DonutProps {
     gap?: number;
 }
 
-const Donut = ({ chunks, gap = 4 }: DonutProps) => {
+const Donut = ({ segments, gap = 4 }: DonutProps) => {
     const uid = useUid('straight-gaps');
 
     const box = 200;
@@ -37,16 +42,24 @@ const Donut = ({ chunks, gap = 4 }: DonutProps) => {
 
     const offset = percentOf(25, circumference);
 
-    const sumOfAllChunks = chunks.reduce((sum, [n]) => sum + n, 0);
+    const sumOfAllChunks = segments.reduce((sum, [n]) => sum + n, 0);
 
-    const runningSumOfAllChunks = chunks.reduce(
+    const runningSumOfAllChunks = segments.reduce(
         (runningSum, [n], i) => [...runningSum, (runningSum[i - 1] || 0) + n],
         [] as number[]
     );
 
     const remaining = [100 - sumOfAllChunks, 'var(--background-strong)'] as const;
 
-    const allChunks = [...chunks, remaining];
+    const allChunks = [...segments, remaining].map((chunk) => {
+        const [percentage, color] = chunk;
+
+        if (themeColors.includes(color as ThemeColor)) {
+            return [percentage, `var(${getVariableFromThemeColor(color as ThemeColor)})`] as const;
+        }
+
+        return chunk;
+    });
 
     /**
      * Make sure arc segments scale relative to either 100 percent or the sum of
@@ -83,8 +96,8 @@ const Donut = ({ chunks, gap = 4 }: DonutProps) => {
             )}
 
             <g mask={gap > 0 ? `url(#${uid})` : undefined}>
-                {allChunks.map(([percent, color], i) => {
-                    const arcLength = scale * Math.max(0, percentOf(percent, circumference));
+                {allChunks.map(([percentage, color], i) => {
+                    const arcLength = scale * Math.max(0, percentOf(percentage, circumference));
 
                     const strokeDashOffset =
                         offset - scale * percentOf(runningSumOfAllChunks[i - 1] || 0, circumference);
