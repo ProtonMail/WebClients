@@ -31,6 +31,7 @@ interface Props {
     checked?: boolean;
     onCheck: (event: ChangeEvent, elementID: string) => void;
     onClick: (elementID: string | undefined) => void;
+    onContextMenu: (event: React.MouseEvent<HTMLDivElement>, element: Element) => void;
     onDragStart: (event: DragEvent, element: Element) => void;
     onDragEnd: (event: DragEvent) => void;
     dragged: boolean;
@@ -51,6 +52,7 @@ const Item = ({
     checked = false,
     onCheck,
     onClick,
+    onContextMenu,
     onDragStart,
     onDragEnd,
     dragged,
@@ -117,6 +119,7 @@ const Item = ({
 
     return (
         <div
+            onContextMenu={(event) => onContextMenu(event, element)}
             onClick={handleClick}
             draggable
             onDragStart={(event) => onDragStart(event, element)}
