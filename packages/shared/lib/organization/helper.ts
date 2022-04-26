@@ -1,8 +1,8 @@
-import { USER_ROLES } from '../constants';
+import { MEMBER_ROLE } from '../constants';
 import { CachedOrganizationKey, Member, Organization } from '../interfaces';
 
 export const getHasOtherAdmins = (members: Member[]) =>
-    members.some(({ Role, Self }) => Self !== 1 && Role === USER_ROLES.ADMIN_ROLE);
+    members.some(({ Role, Self }) => Self !== 1 && Role === MEMBER_ROLE.ORGANIZATION_ADMIN);
 
 export const getNonPrivateMembers = (members: Member[]) => members.filter(({ Private }) => Private === 0);
 
