@@ -17,6 +17,10 @@ const useAddressDomains = (member: Member) => {
     const hasProtonDomains = member.Type === MEMBER_TYPE.PROTON;
 
     useEffect(() => {
+        // Ignore if already fetched
+        if (protonDomains.length) {
+            return;
+        }
         const queryDomains = async () => {
             const available = hasProtonDomains
                 ? await api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains)
@@ -24,10 +28,10 @@ const useAddressDomains = (member: Member) => {
             setProtonDomains(available);
         };
         withLoading(queryDomains());
-    }, []);
+    }, [hasProtonDomains]);
 
     const allDomains = [
-        ...protonDomains,
+        ...(hasProtonDomains ? protonDomains : []),
         ...(Array.isArray(customDomains) ? customDomains.map(({ DomainName }) => DomainName) : []),
         ...(hasProtonDomains && user.hasPaidMail && Array.isArray(premiumProtonDomains) ? premiumProtonDomains : []),
     ];
