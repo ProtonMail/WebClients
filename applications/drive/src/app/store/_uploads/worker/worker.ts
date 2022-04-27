@@ -35,7 +35,7 @@ async function generateKeys(addressPrivateKey: OpenPGPKey, parentPrivateKey: Ope
             sessionKey,
             ContentKeyPacket: contentKeyPacket,
             ContentKeyPacketSignature: contentKeyPacketSignature,
-        } = await generateContentKeys(privateKey, addressPrivateKey);
+        } = await generateContentKeys(privateKey);
 
         if (!contentKeyPacket) {
             uploadWorker.postError('Could not generate file keys');
