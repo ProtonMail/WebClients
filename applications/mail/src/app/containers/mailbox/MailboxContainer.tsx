@@ -293,6 +293,8 @@ const MailboxContainer = ({
                             labelDropdownToggleRef={labelDropdownToggleRef}
                             moveDropdownToggleRef={moveDropdownToggleRef}
                             location={location}
+                            labels={labels}
+                            folders={folders}
                         />
                     </ErrorBoundary>
                 )}
