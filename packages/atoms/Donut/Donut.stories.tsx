@@ -1,14 +1,13 @@
 import { ChangeEvent, useState } from 'react';
 
 import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
-import { Donut } from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
+import Donut from './Donut';
 import mdx from './Donut.mdx';
 
 export default {
     component: Donut,
-    title: getTitle(__filename, false),
+    title: 'components/Donut',
     parameters: {
         docs: {
             page: mdx,
