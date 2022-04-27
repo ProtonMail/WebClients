@@ -20,7 +20,11 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
         case ImportStatus.PAUSED:
             return (
                 <>
-                    <Badge type="warning">{c('Import status').t`Paused`}</Badge>
+                    <Badge type="warning">
+                        {percentageValue
+                            ? c('Import status').t`${percentageValue}% paused`
+                            : c('Import status').t`Paused`}
+                    </Badge>
 
                     {errorCode === ImportError.ERROR_CODE_IMAP_CONNECTION && (
                         <Tooltip title={c('Tooltip').t`Account is disconnected`}>
