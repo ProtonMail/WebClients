@@ -125,10 +125,16 @@ const Editor = ({
                 />
             </div>
             {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
-                <DefaultFontModal {...modalDefaultFont.props} />
+                <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />
             )}
-            {modalImage.render && <InsertImageModal {...modalImage.props} />}
-            {modalLink.render && <InsertLinkModal {...modalLink.props} />}
+            {modalImage.render && <InsertImageModal {...modalImage.props} {...modalImage.modalsStateProps} />}
+            {modalLink.render && modalLink.props && (
+                <InsertLinkModal
+                    {...modalLink.props}
+                    mailSettings={mailSettings}
+                    modalStateProps={modalLink.modalsStateProps}
+                />
+            )}
         </>
     );
 };

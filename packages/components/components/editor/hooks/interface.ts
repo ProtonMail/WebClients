@@ -1,7 +1,8 @@
+import { IEditor } from 'roosterjs-editor-types';
+
 export interface ModalLinkProps {
-    linkLabel: string | undefined;
-    linkUrl: string | undefined;
-    onSubmit: (title: string, url: string) => void;
+    editor: IEditor;
+    createLink: (editor: IEditor, link: string, altText?: string, displayText?: string) => void;
 }
 
 export interface ModalImageProps {
