@@ -1,14 +1,15 @@
-import { UserModel } from '@proton/shared/lib/interfaces';
 import { ReactNode, useMemo } from 'react';
 import { Switch, Route, useRouteMatch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
+
+import { UserModel } from '@proton/shared/lib/interfaces';
+import { Card } from '@proton/atoms';
 import {
     ButtonLike,
     CalendarImportSection,
     CalendarLayoutSection,
     CalendarShareSection,
     CalendarTimeSection,
-    Card,
     PersonalCalendarsSection,
     PrivateMainSettingsArea,
     SettingsLink,
