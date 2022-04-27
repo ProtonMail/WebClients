@@ -9,6 +9,35 @@ const isLocalhost = (host: string) => host.startsWith('localhost');
 const isProduction = (host: string) =>
     host.endsWith('.protonmail.com') || host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
+const getContentTypeHeaders = (input: RequestInfo): HeadersInit => {
+    const url = input.toString();
+    /**
+     * The sentry library does not append the content-type header to requests. The documentation states
+     * what routes accept what content-type. Those content-type headers are also expected through our sentry tunnel.
+     */
+    if (url.includes('/envelope/')) {
+        return {
+            'content-type': 'application/x-sentry-envelope',
+        };
+    }
+    if (url.includes('/store/')) {
+        return {
+            'content-type': 'application/json',
+        };
+    }
+    return {};
+};
+
+const sentryFetch = (input: RequestInfo, init?: RequestInit) => {
+    return window.fetch(input, {
+        ...init,
+        headers: {
+            ...init?.headers,
+            ...getContentTypeHeaders(input),
+        },
+    });
+};
+
 class Transport extends Sentry.Transports.FetchTransport {
     constructor(options: TransportOptions) {
         super(options, sentryFetch);
