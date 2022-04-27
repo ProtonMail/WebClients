@@ -165,10 +165,10 @@ export const generateContentHash = async (content: Uint8Array) => {
     return { HashType: 'sha256', BlockHash: data };
 };
 
-export const generateContentKeys = async (nodeKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
+export const generateContentKeys = async (nodeKey: OpenPGPKey) => {
     const publicKey = nodeKey.toPublic();
     const sessionKey = await createSessionKey(publicKey);
-    const sessionKeySignature = await sign(sessionKey.data, addressPrivateKey);
+    const sessionKeySignature = await sign(sessionKey.data, nodeKey);
     const contentKeys = await getEncryptedSessionKey(sessionKey, publicKey);
     const ContentKeyPacket = uint8ArrayToBase64String(contentKeys);
     return { sessionKey, ContentKeyPacket, ContentKeyPacketSignature: sessionKeySignature };
