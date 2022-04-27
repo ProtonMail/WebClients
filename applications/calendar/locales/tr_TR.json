@@ -2836,14 +2836,14 @@
       "At most 100 participants are allowed per invitation": [
         "Bir davette en fazla 100 katılımcı olabilir"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Parolanızı hatırlayamıyor musunuz? Uyarıyı kaldırmak için bu anahtarla şifrelenmiş tüm kişilerin şifrelenmiş verilerini silmenize yardımcı olabiliriz."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Kişi denetleniyor ${ progress }/${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" seçeneğine tıklayın."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" seçeneğine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" seçeneğine tıklayın."
@@ -3149,6 +3149,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Bu etkinlik güncellendi. Davet edilen adresten e-posta gönderemeyeceğiniz için bu etkinliğin düzenleyicisine daveti reddettiğiniz bildirilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Internet Explorer ya da Edge tarayıcıları ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
@@ -3472,6 +3475,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "${ calendarAppName } uygulamasını bir arkadaşınıza veya iş arkadaşınıza önerme olasılığınız nedir?"
+      ],
+      "I understand the risk": [
+        "Riski anladım"
       ],
       "Import all messages": [
         "Tüm iletileri içe aktar"
@@ -4930,6 +4936,9 @@
       ],
       "Warning": [
         "Uyarı"
+      ],
+      "Warning: suspected fake website": [
+        "Uyarı: Şüpheli sahte web sitesi"
       ],
       "What's new": [
         "Yenilikler"

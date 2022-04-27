@@ -84,7 +84,7 @@
         "アーカイブ"
       ],
       "Attach screenshot(s)": [
-        "スクリーンショットの添付"
+        "スクリーンショットを添付"
       ],
       "Attachment": [
         "添付ファイル"
@@ -333,7 +333,7 @@
         "リカバリーフレーズを生成"
       ],
       "Get started": [
-        "始めましょう"
+        "利用開始"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -792,7 +792,7 @@
         "サインアウト"
       ],
       "Signing out": [
-        "サインアウトしています"
+        "サインアウト中"
       ],
       "Size": [
         "サイズ"
@@ -819,7 +819,7 @@
         "送信"
       ],
       "Switch account": [
-        "アカウントの切り替え"
+        "アカウントを切り替え"
       ],
       "Switch to rich text": [
         "リッチテキストに切り替え"
@@ -2771,7 +2771,7 @@
         "未来の日付を入力してください。"
       ],
       "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
-        ""
+        "次の ${ SCHEDULED_MAX_DATE_DAYS } 日から日付を選択してください。"
       ],
       "Condition incomplete": [
         "条件が不完全です"
@@ -2790,9 +2790,6 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
-      ],
-      "Could not find address ${ email }.": [
-        "メールアドレス ${ email } が見つかりませんでした。"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
@@ -3491,7 +3488,7 @@
     },
     "Get started checklist title": {
       "Get started": [
-        "始めましょう"
+        "利用開始"
       ]
     },
     "Group": {
@@ -3768,7 +3765,7 @@
         "回復フレーズはアカウントへのアクセスを保護するための 1 つの手段です。これを使うことでアカウントにアクセスすることができ、パスワードを忘れた場合でも暗号化されたデータを復元することができます。"
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
-        ""
+        "メーリングリストの購読解除のリクエストがニュースレターの差出人に送信され、自動で処理されます"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
@@ -3854,6 +3851,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         ""
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Body: ": [
         "本文: "
       ],
@@ -3874,9 +3874,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -4505,6 +4502,9 @@
       "This invitation is saved in a disabled calendar.": [
         "招待は無効化されたカレンダーに保存されました。"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
       ],
@@ -4527,7 +4527,7 @@
         "このメッセージはまだ信頼されていない鍵で署名されています。"
       ],
       "This message is signed by the key attached, that has not been trusted yet.": [
-        ""
+        "このメッセージはまだ信頼されていない添付された鍵で署名されています。"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         ""
@@ -5086,7 +5086,7 @@
         "いずれか"
       ],
       "Attach screenshot(s)": [
-        "スクリーンショットの添付"
+        "スクリーンショットを添付"
       ],
       "Attachments": [
         "添付ファイル"
@@ -5204,6 +5204,9 @@
       ],
       "Hide password": [
         "パスワードを隠す"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "IF": [
         "もし"
@@ -7159,6 +7162,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "Welcome": [
         "ようこそ"

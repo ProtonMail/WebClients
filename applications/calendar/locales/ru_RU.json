@@ -24,7 +24,7 @@
         "Добавить контакт"
       ],
       "Add email": [
-        "Добавить эл. почту"
+        "Добавить адресата"
       ],
       "Add group": [
         "Добавить группу"
@@ -896,10 +896,10 @@
         "Годовщина"
       ],
       "Birthday": [
-        "День рождения"
+        "Дата рождения"
       ],
       "Email": [
-        "Эл. почта"
+        "Электронная почта"
       ],
       "Gender": [
         "Пол"
@@ -917,10 +917,10 @@
         "Участник"
       ],
       "Name": [
-        "Имя"
+        "Имя адресата"
       ],
       "Note": [
-        "Примечание"
+        "Ремарка"
       ],
       "Organization": [
         "Организация"
@@ -938,7 +938,7 @@
         "Часовой пояс"
       ],
       "Title": [
-        "Должность"
+        "Звание"
       ],
       "URL": [
         "URL"
@@ -2930,14 +2930,14 @@
       "At most 100 participants are allowed per invitation": [
         "Для одного приглашения разрешено не более 100 участников"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Перед запросом новой верификации, проверьте ваши фильтры спама, и убедитесь, что ${ strong } является корректным адресом запроса."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты недействителен, выберите \"Изменить\" для обновления."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона недействителен, выберите \"Изменить\" для обновления."
@@ -3247,6 +3247,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Событие было обновлено. Организатор не будет уведомлен о том, что вы отклонили приглашение, поскольку вы не можете отправлять письма с приглашенного адреса. Вы хотите удалить это событие?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
@@ -3570,6 +3573,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Насколько вероятно, что вы порекомендуете ${ calendarAppName } другу или коллеге?"
+      ],
+      "I understand the risk": [
+        "Я понимаю риск"
       ],
       "Import all messages": [
         "Импортировать все сообщения"
@@ -5110,6 +5116,9 @@
       ],
       "Warning": [
         "Предупреждение"
+      ],
+      "Warning: suspected fake website": [
+        "Предупреждение: предполагаемый поддельный сайт"
       ],
       "What's new": [
         "Что нового"

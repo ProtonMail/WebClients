@@ -48,7 +48,7 @@
         "適用"
       ],
       "Attach screenshot(s)": [
-        ""
+        "スクリーンショットを添付"
       ],
       "Back": [
         "戻る"
@@ -189,7 +189,7 @@
         "添付ファイルとして転送"
       ],
       "Get started": [
-        "はじめましょう"
+        "利用開始"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -387,7 +387,7 @@
         "サインアウト"
       ],
       "Signing out": [
-        "サインアウトしています"
+        "サインアウト中"
       ],
       "Skip": [
         "スキップ"
@@ -405,7 +405,7 @@
         "送信"
       ],
       "Switch account": [
-        "アカウントの切り替え"
+        "アカウントを切り替え"
       ],
       "Theme": [
         "テーマ"
@@ -2789,14 +2789,14 @@
       "At most 100 participants are allowed per invitation": [
         ""
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "パスワードを覚えていませんか？ この鍵で暗号化されたすべての連絡先の暗号化されたデータを消去し、アラートを消去する手助けをします。"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "${ max } のうち ${ progress } の連絡先を確認しています..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -3101,6 +3101,9 @@
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "イベントが更新されました。招待されたアドレスからメールを送信できないため、このイベントの主催者に招待を拒否したことが通知されません。 このイベントを削除しますか？"
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
       ],
@@ -3314,7 +3317,7 @@
         "終日"
       ],
       "Attach screenshot(s)": [
-        ""
+        "スクリーンショットを添付"
       ],
       "Automatically save contacts": [
         "連絡先への宛先の自動追加"
@@ -3368,7 +3371,7 @@
         ""
       ],
       "Delete": [
-        ""
+        "削除"
       ],
       "Description": [
         "詳細"
@@ -3422,6 +3425,9 @@
         "パスワードを非表示"
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "I understand the risk": [
         ""
       ],
       "Import all messages": [
@@ -4840,6 +4846,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "新着情報"

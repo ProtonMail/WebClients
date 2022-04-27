@@ -491,6 +491,9 @@
       "Submit": [
         "Wyślij"
       ],
+      "Submit report": [
+        "Wyślij raport"
+      ],
       "Switch account": [
         "Przełącz konto"
       ],
@@ -1763,9 +1766,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Nie można włączyć wyszukiwania zawartości w tej przeglądarce. Wyjdź z trybu prywatnego przeglądarki lub spróbuj użyć innej."
       ],
-      "Could not find address ${ email }.": [
-        "Adres e-mail ${ email } nie został znaleziony."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarToFixCount } kalendarz",
         "Odznacz co najmniej ${ calendarToFixCount } kalendarze",
@@ -1885,6 +1885,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Główny klucz adresu nie został odszyfrowany."
+      ],
+      "Report failed to be sent": [
+        "Wysłanie raportu nie powiodło się"
       ],
       "Request timed out": [
         "Upłynął limit czasu żądania"
@@ -2424,6 +2427,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Ponieważ ${ appName } jest szyfrowany end-to-end, nie możemy\nodszyfrować Twoich plików. Aby odblokować dysk po zresetowaniu hasła,\nmusisz posiadać jeden z następujących elementów:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
+      ],
       "Canceled": [
         "Anulowano"
       ],
@@ -2447,9 +2453,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Wyczyszczenie pamięci podręcznej przeglądarki wpływa na funkcję wyszukiwania zawartości."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na adres e-mail ${ strong }. Jeśli adres jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
@@ -2529,6 +2532,9 @@
       "Downloading": [
         "Pobieranie"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Pobieranie elementów (${ esProgress }/${ totalProgressToShow })"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Wybierz plik lub przeciągnij i upuść go tutaj, aby przesłać."
       ],
@@ -2546,6 +2552,18 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Wpisz kod weryfikacyjny wysłany do ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Szacowany pozostały czas: ${ estimatedMinutes } minuta",
+        "Szacowany pozostały czas: ${ estimatedMinutes } minuty",
+        "Szacowany pozostały czas: ${ estimatedMinutes } minut",
+        "Szacowany pozostały czas: ${ estimatedMinutes } minuty"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Szacowany pozostały czas: mniej niż minuta"
+      ],
+      "Estimating time remaining...": [
+        "Szacowanie pozostałego czasu..."
       ],
       "Failed": [
         "Niepowodzenie"
@@ -2578,10 +2596,10 @@
         "Zawartość folderu zostanie scalona do pojedynczego folderu"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "Brak podpisu folderu. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał folder ${ fileName }."
+        "Brak podpisu folderu. Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        "Brak podpisu folderu. Nie możemy zweryfikować, kto przesłał folder ${ fileName }."
+        "Brak podpisu folderu. Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Folder nie zostanie przesłany"
@@ -2808,6 +2826,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Odświeżenie strony lub ${ link } rozwiąże automatycznie większość problemów."
       ],
+      "Report has been sent": [
+        "Raport został wysłany"
+      ],
       "Search cannot be enabled in this browser": [
         "Nie można włączyć wyszukiwania w tej przeglądarce"
       ],
@@ -2873,6 +2894,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Internet Explorer lub Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
@@ -2949,6 +2973,9 @@
       "Unsupported file": [
         "Plik jest nieobsługiwany"
       ],
+      "Updating drive search...": [
+        "Aktualizacja wyszukiwania dysku..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Ulepsz konto, aby uniknąć utraty planu ${ appName } ${ planName }."
       ],
@@ -2961,11 +2988,14 @@
       "Uploading hundreds of files at once may have a performance impact.": [
         "Przesyłanie dużej liczby plików na raz może wpłynąć na wydajność."
       ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Użyj tego formularza, aby powiadomić nas o nieodpowiednich, nielegalnych lub złośliwych plikach. Zamierzasz zgłosić:"
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Nie możemy zweryfikować, czy adres ${ emailAddress } przesłał plik ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Nie możemy zweryfikować, kto przesłał plik ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Powiadomimy Cię, kiedy proces importowania danych zostanie zakończony."
@@ -3184,17 +3214,26 @@
       "Category": [
         "Kategoria"
       ],
+      "Child sexual abuse material": [
+        "Materiały dotyczące seksualnego wykorzystywania dzieci"
+      ],
       "City": [
         "Miasto"
       ],
       "Code is 6 digits without spaces": [
         "Kod to 6 cyfr bez spacji"
       ],
+      "Comment": [
+        "Komentarz"
+      ],
       "Contacts": [
         "Kontakty"
       ],
       "Copy": [
         "Kopiuj"
+      ],
+      "Copyright infringement": [
+        "Naruszenie praw autorskich"
       ],
       "Country": [
         "Kraj"
@@ -3222,6 +3261,9 @@
       ],
       "Download anyway": [
         "Pobierz mimo to"
+      ],
+      "Email": [
+        "Adres e-mail"
       ],
       "Email address": [
         "Adres e-mail"
@@ -3277,6 +3319,9 @@
       "Hide password": [
         "Ukryj hasło"
       ],
+      "I understand the risk": [
+        "Rozumiem ryzyko"
+      ],
       "Image": [
         "Obraz"
       ],
@@ -3307,6 +3352,9 @@
       "Mailbox password": [
         "Hasło skrzynki pocztowej"
       ],
+      "Malware": [
+        "Złośliwe oprogramowanie"
+      ],
       "Manage folders": [
         "Zarządzaj folderami"
       ],
@@ -3334,6 +3382,9 @@
       "Operating system version": [
         "Wersja systemu operacyjnego"
       ],
+      "Other": [
+        "Inny"
+      ],
       "Password": [
         "Hasło"
       ],
@@ -3342,6 +3393,9 @@
       ],
       "Phone number": [
         "Numer telefonu"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "Wpisz szczegóły, abyśmy mogli podjąć odpowiednie działania"
       ],
       "Post office box": [
         "Skrytka pocztowa"
@@ -3367,11 +3421,14 @@
       "Replace folder": [
         "Zastąp folder"
       ],
-      "Report abuse": [
+      "Report Abuse": [
         "Zgłoś nadużycie"
       ],
       "Reveal password": [
         "Pokaż hasło"
+      ],
+      "Select type of abuse": [
+        "Wybierz typ nadużycia"
       ],
       "Set expiration date": [
         "Ustaw datę wygaśnięcia"
@@ -3387,6 +3444,12 @@
       ],
       "Skip folder": [
         "Pomiń folder"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Stolen data": [
+        "Skradzione dane"
       ],
       "Street address": [
         "Ulica"
@@ -3893,6 +3956,9 @@
       ],
       "Enter a new folder name": [
         "Wpisz nową nazwę folderu"
+      ],
+      "Enter your email address": [
+        "Wpisz adres e-mail"
       ],
       "Filter groups": [
         "Filtruj grupy"
@@ -4610,6 +4676,9 @@
       ],
       "Warning": [
         "Ostrzeżenie"
+      ],
+      "Warning: suspected fake website": [
+        "Ostrzeżenie: podejrzana strona internetowa"
       ],
       "What's new": [
         "Co nowego"

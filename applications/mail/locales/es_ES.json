@@ -2803,9 +2803,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La búsqueda de contenido no puede ser habilitada en este navegador. Por favor, salga del modo de navegación privada o utilice otro navegador."
       ],
-      "Could not find address ${ email }.": [
-        "No se ha podido encontrar la dirección ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Error de descifrado: el descifrado del contenido de este mensaje ha fallado."
       ],
@@ -2866,10 +2863,10 @@
         "La subida de la imagen ha fallado"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Credenciales incorrectas. Por favor, inténtelo de nuevo."
+        "Credenciales de acceso incorrectas. Por favor, inténtelo de nuevo."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Contraseña del buzón incorrecta. Por favor, intenta de nuevo."
+        "Contraseña de buzón incorrecta. Por favor, inténtelo de nuevo."
       ],
       "Invalid expiration time": [
         "Tiempo de caducidad inválido"
@@ -2997,7 +2994,7 @@
         "Algunos contactos no se pudieron eliminar"
       ],
       "Some groups could not be deleted": [
-        "Algunos grupos no se pueden eliminar"
+        "Algunos grupos no pueden ser eliminados"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiquetas no están disponibles. Por favor, personaliza la importación para editar estos nombres."
@@ -3006,7 +3003,7 @@
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Por favor, modifica el importe para editar estos nombres."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
-        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
+        "Algo salió mal, por favor ${ refresh } para continuar. Si aún ve este mensaje de error, póngase en contacto con nuestro ${ supportTeam }."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
         "Lo sentimos, Proton no puede descifrar tu mensaje. Comprueba que todas tus claves están activas."
@@ -3915,6 +3912,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navegación básica y las acciones siguen estando disponibles independientemente de que los atajos de teclado estén habilitados o no en los ajustes."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de solicitar un nuevo código de verificación revisa tu carpeta de spam y comprueba que ${ strong } es la dirección correcta."
+      ],
       "Body: ": [
         "Cuerpo: "
       ],
@@ -3935,9 +3935,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Borra los datos del navegador relacionados con la búsqueda de contenido de los mensajes, incluidos los mensajes descargados"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
@@ -4576,6 +4573,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario deshabilitado."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Este enlace conduce a un sitio web que podría estar intentando robar su información, como contraseñas y datos de tarjetas de crédito."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este enlace puede ser un ataque homógrafo y no puede abrirse por los navegadores Internet Explorer y Edge. Si estás seguro de que el enlace es legítimo, utiliza un navegador diferente para abrirlo."
@@ -5286,6 +5286,9 @@
       ],
       "Hide password": [
         "Ocultar contraseña"
+      ],
+      "I understand the risk": [
+        "Entiendo el riesgo"
       ],
       "IF": [
         "SI"
@@ -7291,6 +7294,9 @@
       ],
       "Warning": [
         "Advertencia"
+      ],
+      "Warning: suspected fake website": [
+        "Advertencia: sospecha de sitio web falso"
       ],
       "Welcome": [
         "Bienvenido/a"

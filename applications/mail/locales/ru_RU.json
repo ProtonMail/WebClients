@@ -2827,9 +2827,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
       ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ошибка расшифровки: при расшифровке зашифрованного содержимого этого сообщения произошёл сбой."
       ],
@@ -4037,6 +4034,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Основные клавиши для навигации и действий остаются доступными независимо от того, включены ли сочетания клавиш в настройках."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
       "Body: ": [
         "Текст сообщения: "
       ],
@@ -4057,9 +4057,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Очищает данные браузера, связанные с поиском содержимого сообщений, включая загруженные сообщения"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, выберите «Изменить» для обновления."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона неверный, выберите «Изменить» для обновления."
@@ -4720,6 +4717,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Это приглашение сохранено в неактивном календаре."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
@@ -5450,6 +5450,9 @@
       ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "I understand the risk": [
+        "Я понимаю риск"
       ],
       "IF": [
         "ЕСЛИ"
@@ -7555,6 +7558,9 @@
       ],
       "Warning": [
         "Предупреждение"
+      ],
+      "Warning: suspected fake website": [
+        "Предупреждение: предполагаемый поддельный сайт"
       ],
       "Welcome": [
         "Добро пожаловать"

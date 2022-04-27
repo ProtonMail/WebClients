@@ -2883,14 +2883,14 @@
       "At most 100 participants are allowed per invitation": [
         "Cel mult 100 de participanți sunt autorizați per invitație."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nu vă puteți aminti parola? Vă putem ajuta să ștergeți datele criptate ale tuturor contactelor criptate cu această cheie și pe parcursul procesului să eliminați alerta."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Se verifică contactul ${ progress } din ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -3198,6 +3198,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Acest eveniment a fost actualizat. Organizatorul nu va fi notificat că refuzați invitația deoarece nu puteți trimite e-mailuri de la adresa invitată. Doriți totuși să ștergeți acest eveniment?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
@@ -3521,6 +3524,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
+      ],
+      "I understand the risk": [
+        "Înțeleg riscul"
       ],
       "Import all messages": [
         "Importare toate mesajele"
@@ -5020,6 +5026,9 @@
       ],
       "Warning": [
         "Avertizare"
+      ],
+      "Warning: suspected fake website": [
+        "Avertisment: suspectare site fals"
       ],
       "What's new": [
         "Ce este nou"

@@ -2803,9 +2803,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser."
       ],
-      "Could not find address ${ email }.": [
-        "Impossibile trovare l'indirizzo ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Errore di decriptazione: decriptazione del contenuto cifrato di questo messaggio fallita."
       ],
@@ -3915,6 +3912,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "La navigazione di base e le azioni rimangono disponibili indipendentemente dal fatto che le scorciatoie da tastiera siano attive o meno nelle impostazioni."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
+      ],
       "Body: ": [
         "Corpo: "
       ],
@@ -3935,9 +3935,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Cancella i dati del browser relativi alla ricerca del contenuto dei messaggi, compresi i messaggi scaricati"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica su ${ strong }. Se questo indirizzo email non è corretto, clicca \"Modifica\" per correggerlo."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
@@ -4576,6 +4573,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Questo invito è salvato in un calendario disabilitato."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografo e non può essere aperto dai browser Internet Explorer ed Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -5286,6 +5286,9 @@
       ],
       "Hide password": [
         "Nascondi la password"
+      ],
+      "I understand the risk": [
+        "Comprendo i rischi"
       ],
       "IF": [
         "SE"
@@ -7291,6 +7294,9 @@
       ],
       "Warning": [
         "Attenzione"
+      ],
+      "Warning: suspected fake website": [
+        "Attenzione: sospetto sito web falso"
       ],
       "Welcome": [
         "Benvenuto/a"

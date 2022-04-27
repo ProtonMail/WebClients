@@ -2836,14 +2836,14 @@
       "At most 100 participants are allowed per invitation": [
         "São permitidos no máximo 100 participantes por convite"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Não se lembra da senha? Podemos ajudá-lo a limpar os dados encriptados de todos os contactos encriptados com esta chave e, no processo, descartar o alerta."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "A verificar contacto ${ progress } de ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o endereço estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorrecto, clique em \"Editar\" para o corrigir."
@@ -3149,6 +3149,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Este evento foi actualizado. O organizador não será notificado de que recusou o convite por não poder enviar correio desse endereço. Deseja eliminar este evento mesmo assim?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Esta ligação pode ser um ataque homográfico e não pode ser aberto pelos navegadores Internet Explorer e Edge. Se tem a certeza de que a ligação é legítima, por favor use um navegador diferente para a abrir."
@@ -3472,6 +3475,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Qual a probabilidade de recomendar o ${ calendarAppName } a um amigo ou colega?"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "Import all messages": [
         ""
@@ -4930,6 +4936,9 @@
       ],
       "Warning": [
         "Aviso"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "O que há de novo"
