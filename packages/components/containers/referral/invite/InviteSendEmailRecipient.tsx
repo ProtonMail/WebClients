@@ -38,7 +38,7 @@ const InviteSendEmailRecipient = ({ recipient, onDeleteRecipient, isValid }: Pro
             </Tooltip>
             <Tooltip title={c('Action').t`Remove`}>
                 <button onClick={onDeleteRecipient} className="flex flex-item-noshrink px0-25 interactive">
-                    <Icon name="cross-small" className="mauto" />
+                    <Icon name="cross-small" className="mauto" alt={c('Action').t`Remove`} />
                 </button>
             </Tooltip>
         </div>
