@@ -6,7 +6,8 @@ import { VPN_HOSTNAME } from '../constants';
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
 
-const isProduction = (host: string) => host.endsWith('.protonmail.com') || host === VPN_HOSTNAME;
+const isProduction = (host: string) =>
+    host.endsWith('.protonmail.com') || host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
 class Transport extends Sentry.Transports.FetchTransport {
     constructor(options: TransportOptions) {
