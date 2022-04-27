@@ -296,7 +296,7 @@ export function useLinkInner(
                     : decryptSigned({
                           armoredMessage: encryptedLink.name,
                           privateKey: await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
-                          publicKey: await getVerificationKey(encryptedLink.signatureAddress),
+                          publicKey: await getVerificationKey(encryptedLink.nameSignatureAddress),
                       }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
                 const fileModifyTimePromise = !encryptedLink.xAttr

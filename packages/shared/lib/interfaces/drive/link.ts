@@ -40,6 +40,7 @@ interface DriveLink {
     ParentLinkID: string;
     Type: LinkType;
     Name: string;
+    NameSignatureEmail: string;
     EncryptedName: string;
     Size: number;
     MIMEType: string;

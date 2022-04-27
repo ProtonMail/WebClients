@@ -52,8 +52,8 @@ interface Link {
             token: string;
         };
     };
-    // Address used for signature checks of names and keys.
-    signatureAddress: string;
+    signatureAddress: string; // Addresss used for key signatures.
+    nameSignatureAddress: string; // Address used for name signature.
     // If there is no issue, the value should be undefined.
     signatureIssues?: SignatureIssues;
 }
