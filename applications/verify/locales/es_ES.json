@@ -843,7 +843,7 @@
         "Las contraseñas no coinciden"
       ],
       "Request timed out": [
-        ""
+        "Tiempo de espera de la petición agotado"
       ],
       "This field is required": [
         "Este campo es obligatorio"
@@ -857,22 +857,22 @@
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "Espera un tiempo hasta que arreglemos el error."
+        "Espere a que arreglemos el error."
       ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
-        "Oops, algo ha salido mal"
+        "Ups, algo ha salido mal"
       ],
       "Please ${ refresh } or check your connection.": [
         "Por favor ${ refresh } o comprueba tu conexión."
       ],
       "There was a problem connecting to Proton.": [
-        ""
+        "Hubo un problema al conectarse a Proton."
       ],
       "You may also ${ refresh } or try again later.": [
-        "También puedes ${ refresh } o intentarlo de nuevo más tarde."
+        "También puede ${ refresh } o intentarlo de nuevo más tarde."
       ]
     },
     "Human verification method": {
@@ -893,23 +893,23 @@
       ]
     },
     "Info": {
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Haz clic en \"Solicitar nuevo código\" para enviarte un nuevo código de verificación a ${ strong }. Si esta dirección de correo electrónico es incorrecta, haz clic en \"Editar\" para corregirla."
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de solicitar un nuevo código de verificación, revise su carpeta de spam y comprueba que ${ strong } es la dirección correcta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "Haz clic en \"Solicitar un nuevo código\" para recibir un nuevo código de verificación en ${ strong }. Si este número de teléfono es incorrecto, haz clic en \"Editar\" para corregirlo."
+        "Haga clic en \"Solicitar nuevo código\" para recibir un nuevo código de verificación en ${ strong }. Si este número de teléfono es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduce el código de verificación que se ha enviado a ${ destinationText }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "Si estás teniendo problemas para crear tu cuenta, solicita una invitación y te responderemos en un día hábil."
+        "Si está teniendo problemas para crear su cuenta, por favor solicite una invitación y le responderemos como máximo en un día hábil."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en su bandeja de entrada, por favor, compruebe su carpeta de spam."
       ],
       "Internet connection lost": [
-        ""
+        "Se ha perdido la conexión a Internet"
       ],
       "Loading": [
         "Cargando"
@@ -918,31 +918,31 @@
         "No se han encontrado resultados"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "No se puede acceder a los servidores. Por favor, inténtelo de nuevo en unos minutos"
       ],
       "Session timed out": [
-        ""
+        "El tiempo de sesión ha expirado"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifica que eres humano."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Enviaremos un nuevo código de verificación a ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Le gustaría recibir un nuevo código de verificación o utilizar un método de verificación alternativo?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "¿Desea recibir un nuevo código de verificación?"
       ],
       "Your email will only be used for this one-time verification.": [
         "Tu correo electrónico sólo se utilizará para esta verificación."
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "Tu número de teléfono sólo se utilizará para esta verificación única."
+        "Su número de teléfono se utilizará únicamente para esta verificación."
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "Tu cuenta de Proton está actualmente en espera. Para continuar usando tu cuenta, por favor abona cualquier factura atrasada."
+        "Su cuenta de Proton está actualmente suspendida. Para continuar usando su cuenta, por favor abone cualquier factura atrasada."
       ]
     },
     "Label": {
@@ -997,7 +997,7 @@
         "Código de verificación no válido"
       ],
       "Request new code": [
-        ""
+        "Solicitar nuevo código"
       ],
       "Sign in again to continue": [
         "Inicia sesión de nuevo para continuar"

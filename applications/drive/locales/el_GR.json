@@ -185,7 +185,7 @@
         "Λήψη"
       ],
       "Download anyway": [
-        ""
+        "Λήψη οπωσδήποτε"
       ],
       "Drive Locked": [
         "Αρχειοθήκη Κλειδωμένη"
@@ -486,6 +486,9 @@
       ],
       "Submit": [
         "Υποβολή"
+      ],
+      "Submit report": [
+        "Υποβολή αναφοράς"
       ],
       "Switch account": [
         "Αλλαγή λογαριασμού"
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
-      "Could not find address ${ email }.": [
-        "Δεν ήταν δυνατή η εύρεση της διεύθυνσης ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγιο",
         "Αποεπιλέξτε τουλάχιστον ${ calendarToFixCount } ημερολόγια"
@@ -1867,6 +1867,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Το πρωτεύον κλειδί διεύθυνσης δεν είναι αποκρυπτογραφημένο."
+      ],
+      "Report failed to be sent": [
+        "Αποτυχία αποστολής αναφοράς"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Επειδή το ${ appName } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση\nή να αποκρυπτογραφήσουμε τα αρχεία για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά από επαναφορά κωδικού πρόσβασης,\nπρέπει να έχετε ένα από τα παρακάτω:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
       "Canceled": [
         "Ακυρωμένες"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Εκκαθάριση δεδομένων περιηγητή σχετικών με την κρυπτογραφημένη αναζήτηση."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης σε ${ strong }. Εάν αυτή η διεύθυνση ηλεκτρονικού ταχυδρομείου είναι λανθασμένη, κάντε κλικ στο \"Επεξεργασία\" για να τη διορθώσετε."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
@@ -2447,6 +2450,9 @@
       "Downloading": [
         "Λήψη"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Λήψη στοιχείων ${ esProgress } από ${ totalProgressToShow }"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
       ],
@@ -2465,6 +2471,16 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Εισάγετε τον κωδικό επαλήθευσης στον οποίο εστάλη ${ destinationText }."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Εκτιμώμενος απομένων χρόνος: Κάτω του λεπτού"
+      ],
+      "Estimating time remaining...": [
+        "Γίνεται εκτίμηση απομένοντος χρόνου..."
+      ],
       "Failed": [
         "Απέτυχε"
       ],
@@ -2475,7 +2491,7 @@
         "Αποτυχία ανοίγματος ασφαλούς συνδέσμου. Η αιτία είναι: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Το αρχείο \"${ name }\" διαγράφηκε κατά τη λήψη"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Το αρχείο στερείται υπογραφής. Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
@@ -2490,7 +2506,7 @@
         "Οριστικοποιείται"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Ο φάκελος \"${ link.name }\" διαγράφηκε κατά τη λήψη"
       ],
       "Folder contents will merge into a single folder": [
         "Τα περιεχόμενα των φακέλων θα συγχωνευθούν σε έναν μοναδικό φάκελο"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Η ανανέωση της σελίδας ή ${ link } θα επιλύσει αυτόματα τα περισσότερα προβλήματα."
       ],
+      "Report has been sent": [
+        "Η αναφορά στάλθηκε"
+      ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
       ],
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ο περιηγητής δεν υποστηρίζει προεπισκόπηση PDF αρχείων. Παρακαλούμε κατεβάστε το αρχείο."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Αυτός ο σύνδεσμος οδηγεί σε μια ιστοσελίδα που ενδέχεται να επιχειρήσει να υποκλέψει πληροφορίες σας, όπως κωδικούς πρόσβασης και στοιχεία πιστωτικών καρτών."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας και δεν μπορεί να ανοίξει από προγράμματα περιήγησης Internet Explorer και Edge. Εάν είστε βέβαιοι ότι ο σύνδεσμος είναι αυθεντικός, χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης για να το ανοίξετε."
@@ -2863,8 +2885,11 @@
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
+      "Updating drive search...": [
+        "Ενημέρωση τοπικής αναζήτησης..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ appName } ${ planName }."
       ],
       "Uploaded": [
         "Ανέβηκε"
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Το ανέβασμα εκατοντάδων αρχείων με τη μία ενδέχεται να μειώσει τις επιδόσεις."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι το ${ fileName } ανέβηκε από ${ emailAddress }."
@@ -3098,17 +3126,26 @@
       "Category": [
         "Κατηγορία"
       ],
+      "Child sexual abuse material": [
+        "Υλικό παιδικής πορνογραφίας"
+      ],
       "City": [
         "Πόλη"
       ],
       "Code is 6 digits without spaces": [
         "Ο κωδικός είναι 6 ψηφία χωρίς κενά"
       ],
+      "Comment": [
+        "Σχόλιο"
+      ],
       "Contacts": [
         "Επαφές"
       ],
       "Copy": [
         "Αντιγραφή"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Χώρα"
@@ -3134,6 +3171,9 @@
       ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
+      ],
+      "Email": [
+        ""
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
       ],
+      "I understand the risk": [
+        "Καταλαβαίνω τον κίνδυνο"
+      ],
       "Image": [
         "Εικόνα"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "Κωδικός Θυρίδας"
       ],
+      "Malware": [
+        "Κακόβουλο λογισμικό"
+      ],
       "Manage folders": [
         "Διαχείριση φακέλων"
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Έκδοση λειτουργικού συστήματος (Os Version)"
       ],
+      "Other": [
+        "Άλλο"
+      ],
       "Password": [
         "Κωδικός"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Ταχυδρομική θυρίδα"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         "Αντικατάσταση φακέλου"
       ],
-      "Report abuse": [
-        "Αναφορά κατάχρησης"
+      "Report Abuse": [
+        "Αναφορά Κατάχρησης"
       ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
+      ],
+      "Select type of abuse": [
+        "Επιλογή τύπου κατάχρησης"
       ],
       "Set expiration date": [
         "Ορισμός ημερομηνίας λήξης"
@@ -3299,6 +3354,12 @@
       ],
       "Skip folder": [
         "Παράλειψη φακέλου"
+      ],
+      "Spam": [
+        "Ενοχλητικό"
+      ],
+      "Stolen data": [
+        "Κλεμμένα δεδομένα"
       ],
       "Street address": [
         "Οδός"
@@ -3389,7 +3450,7 @@
         "εκκαθάριση της προσωρινής μνήμης του Browser"
       ],
       "Go to subscription plans": [
-        "Μετάβαση στα πακέτα συνδρομής"
+        "Μετάβαση στα προγράμματα συνδρομής"
       ],
       "Learn more": [
         "Μάθετε περισσότερα"
@@ -3669,7 +3730,7 @@
     },
     "Onboarding Info": {
       "${ appName } is currently in early access and only available to users with a paid plan.": [
-        ""
+        "Το ${ appName } βρίσκεται σε πρώιμη πρόσβαση και διατίθεται μόνο σε χρήστες προγράμματος επί πληρωμή."
       ],
       "${ appName } is currently only available if you enable Beta Access.": [
         "Η ${ appName } είναι διαθέσιμη προς το παρόν μόνο εάν ενεργοποιήσετε την Πρόσβαση Beta."
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Παρακαλώ εισάγετε ένα νέο όνομα φακέλου"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
@@ -4093,7 +4157,7 @@
         "Beta Πρόσβαση"
       ],
       "Browser might run out of memory": [
-        ""
+        "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
       ],
       "Cancel all active transfers": [
         "Ακυρώστε όλες τις ενεργές μεταφορές"
@@ -4420,7 +4484,7 @@
         "Αποτυχία λήψης του αρχείου ή φακέλου"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Η σύνδεση στο διαδίκτυο διακόπηκε"
       ],
       "The link does not exist": [
         "Ο σύνδεσμος δεν υπάρχει"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Προειδοποίηση"
+      ],
+      "Warning: suspected fake website": [
+        "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
       ],
       "What's new": [
         "Τι νέο υπάρχει"

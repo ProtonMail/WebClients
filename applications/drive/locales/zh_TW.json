@@ -485,6 +485,9 @@
       "Submit": [
         "提交"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "切換帳號"
       ],
@@ -1754,9 +1757,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
-      "Could not find address ${ email }.": [
-        "找不到電子郵件地址 ${ email }。"
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "請取消選取至少 ${ calendarToFixCount } 個行事曆"
       ],
@@ -1858,6 +1858,9 @@
       ],
       "Primary address key is not decrypted.": [
         "主要地址金鑰並未被解密"
+      ],
+      "Report failed to be sent": [
+        ""
       ],
       "Request timed out": [
         "請求逾時"
@@ -2307,6 +2310,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "由於${ appName } 是端到端加密的，因此我們無法為您解密或存取您的資料。為了確保密碼重設後您仍能解鎖雲端硬碟，您必須具備以下條件之一："
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "已取消"
       ],
@@ -2330,9 +2336,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電子郵件地址不正確，請按一下「編輯」作出修正。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電話號碼不正確，請按一下「編輯」作出修正。"
@@ -2406,6 +2409,9 @@
       "Downloading": [
         "正在下載"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "拖放檔案到此處上載，或選擇您要上載的檔案。"
       ],
@@ -2423,6 +2429,15 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "失敗"
@@ -2682,6 +2697,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         ""
       ],
@@ -2747,6 +2765,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載檔案。"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -2820,6 +2841,9 @@
       "Unsupported file": [
         "不支援的檔案"
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "現在就升級，以免錯失 ${ appName } ${ planName } 福利。"
       ],
@@ -2831,6 +2855,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同一時間上載數以百計的檔案或會有礙效能。"
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -3055,17 +3082,26 @@
       "Category": [
         "類別"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "城市"
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
       ],
+      "Comment": [
+        ""
+      ],
       "Contacts": [
         "通訊錄"
       ],
       "Copy": [
         "複製"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "國家"
@@ -3089,6 +3125,9 @@
         "不要再詢問"
       ],
       "Download anyway": [
+        ""
+      ],
+      "Email": [
         ""
       ],
       "Email address": [
@@ -3145,6 +3184,9 @@
       "Hide password": [
         "隱藏密碼"
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         "圖片"
       ],
@@ -3175,6 +3217,9 @@
       "Mailbox password": [
         "郵箱密碼"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         "管理資料夾"
       ],
@@ -3202,6 +3247,9 @@
       "Operating system version": [
         "作業系統版本"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "密碼"
       ],
@@ -3210,6 +3258,9 @@
       ],
       "Phone number": [
         "電話號碼"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "郵政信箱"
@@ -3235,11 +3286,14 @@
       "Replace folder": [
         "取代資料夾"
       ],
-      "Report abuse": [
-        "檢舉濫用"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "顯示密碼"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "設定到期日"
@@ -3255,6 +3309,12 @@
       ],
       "Skip folder": [
         "略過資料夾"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "街道地址"
@@ -3701,6 +3761,9 @@
       ],
       "Enter a new folder name": [
         "請輸入新的資料夾名稱"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "篩選群組"
@@ -4385,6 +4448,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "最新消息"

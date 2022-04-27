@@ -487,6 +487,9 @@
       "Submit": [
         ""
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         ""
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
-      "Could not find address ${ email }.": [
-        ""
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "",
         ""
@@ -1866,6 +1866,9 @@
         ""
       ],
       "Primary address key is not decrypted.": [
+        ""
+      ],
+      "Report failed to be sent": [
         ""
       ],
       "Request timed out": [
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         ""
       ],
@@ -2368,9 +2374,6 @@
         ""
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
         ""
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
@@ -2447,6 +2450,9 @@
       "Downloading": [
         ""
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         ""
       ],
@@ -2463,6 +2469,16 @@
         ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
+        ""
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
         ""
       ],
       "Failed": [
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         ""
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         ""
       ],
@@ -2788,6 +2807,9 @@
         ""
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
+        ""
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         ""
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
@@ -2873,6 +2898,9 @@
         ""
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
+        ""
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
         ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
@@ -3098,16 +3126,25 @@
       "Category": [
         ""
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         ""
       ],
       "Code is 6 digits without spaces": [
         ""
       ],
+      "Comment": [
+        ""
+      ],
       "Contacts": [
         ""
       ],
       "Copy": [
+        ""
+      ],
+      "Copyright infringement": [
         ""
       ],
       "Country": [
@@ -3133,6 +3170,9 @@
         ""
       ],
       "Download anyway": [
+        ""
+      ],
+      "Email": [
         ""
       ],
       "Email address": [
@@ -3189,6 +3229,9 @@
       "Hide password": [
         ""
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         ""
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         ""
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         ""
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         ""
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         ""
       ],
@@ -3253,6 +3302,9 @@
         ""
       ],
       "Phone number": [
+        ""
+      ],
+      "Please provide full details to help us take appropriate action": [
         ""
       ],
       "Post office box": [
@@ -3279,10 +3331,13 @@
       "Replace folder": [
         ""
       ],
-      "Report abuse": [
+      "Report Abuse": [
         ""
       ],
       "Reveal password": [
+        ""
+      ],
+      "Select type of abuse": [
         ""
       ],
       "Set expiration date": [
@@ -3298,6 +3353,12 @@
         ""
       ],
       "Skip folder": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
         ""
       ],
       "Street address": [
@@ -3764,6 +3825,9 @@
         ""
       ],
       "Enter a new folder name": [
+        ""
+      ],
+      "Enter your email address": [
         ""
       ],
       "Filter groups": [
@@ -4459,6 +4523,9 @@
         ""
       ],
       "Warning": [
+        ""
+      ],
+      "Warning: suspected fake website": [
         ""
       ],
       "What's new": [

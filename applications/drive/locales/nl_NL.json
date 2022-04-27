@@ -487,6 +487,9 @@
       "Submit": [
         "Versturen"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Account wisselen"
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
       ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deselecteer tenminste één agenda",
         "Deselecteer tenminste ${ calendarToFixCount } agenda's"
@@ -1867,6 +1867,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet gedecodeerd."
+      ],
+      "Report failed to be sent": [
+        ""
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Omdat ${ appName } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "Geannuleerd"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Wist browsergegevens gerelateerd aan het versleuteld zoeken."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -2447,6 +2450,9 @@
       "Downloading": [
         "Downloaden"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Sleep een bestand hierheen of kies om te uploaden."
       ],
@@ -2464,6 +2470,16 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "Mislukt"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
       ],
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         "Niet-ondersteund bestand"
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
       ],
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
@@ -3098,17 +3126,26 @@
       "Category": [
         "Categorie"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "Plaats"
       ],
       "Code is 6 digits without spaces": [
         "Code is 6 cijfers zonder spaties"
       ],
+      "Comment": [
+        ""
+      ],
       "Contacts": [
         "Contactpersonen"
       ],
       "Copy": [
         "Kopieer"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Land"
@@ -3134,6 +3171,9 @@
       ],
       "Download anyway": [
         "Toch downloaden"
+      ],
+      "Email": [
+        ""
       ],
       "Email address": [
         "E-mailadres"
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Wachtwoord verbergen"
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         "Afbeelding"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "Mailboxwachtwoord"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         "Mappen beheren"
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Versie van besturingssysteem"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Wachtwoord"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Telefoonnummer"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Postbus"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         "Map vervangen"
       ],
-      "Report abuse": [
-        "Rapporteer misbruik"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Wachtwoord tonen"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Vervaldatum instellen"
@@ -3299,6 +3354,12 @@
       ],
       "Skip folder": [
         "Sla map over"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "Straatnaam"
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Voer een nieuwe naam in"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Groepen filteren"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Waarschuwing"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Wat is er nieuw"

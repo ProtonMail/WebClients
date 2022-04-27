@@ -487,6 +487,9 @@
       "Submit": [
         "Envoyer"
       ],
+      "Submit report": [
+        "Envoyer le rapport"
+      ],
       "Switch account": [
         "Changer de compte"
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La recherche de contenu ne peut pas être activée dans ce navigateur. Veuillez quitter la navigation privée ou essayer avec un autre navigateur."
       ],
-      "Could not find address ${ email }.": [
-        "Impossible de trouver l'adresse ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarToFixCount } calendrier",
         "Désélectionnez au moins ${ calendarToFixCount } calendriers"
@@ -1867,6 +1867,9 @@
       ],
       "Primary address key is not decrypted.": [
         "La clé d'adresse principale n'est pas déchiffrée."
+      ],
+      "Report failed to be sent": [
+        "Échec d'envoi du rapport"
       ],
       "Request timed out": [
         "La requête a expiré"
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+      ],
       "Canceled": [
         "Annulé"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Efface les données du navigateur liées à la recherche chiffrée."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
@@ -2447,6 +2450,9 @@
       "Downloading": [
         "Téléchargement en cours"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Téléchargement de l'objet ${ esProgress } sur ${ totalProgressToShow }"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Glissez et déposez un fichier ici ou choisissez de le téléverser."
       ],
@@ -2464,6 +2470,16 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Temps restant estimé: ${ estimatedMinutes } minute",
+        "Temps restant estimé: ${ estimatedMinutes } minutes"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Temps restant estimé: moins d'une minute"
+      ],
+      "Estimating time remaining...": [
+        "Estimation du temps restant…"
       ],
       "Failed": [
         "Échec"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Rafraîchir la page ou ${ link } résoudra automatiquement la plupart des problèmes."
       ],
+      "Report has been sent": [
+        "Le rapport a été envoyé"
+      ],
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur"
       ],
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Veuillez télécharger le fichier."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         "Fichier non pris en charge"
       ],
+      "Updating drive search...": [
+        "Actualisation de la recherche dans Drive..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Passez à l'offre supérieure dès aujourd'hui pour conserver les avantages suivants de ${ appName } ${ planName }."
       ],
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Le téléversement de centaines de fichiers en même temps peut avoir un impact sur les performances."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Utilisez ce formulaire pour nous signaler des fichiers partagés inappropriés, illégaux ou tout autre fichier partagé malveillant. Vous êtes sur le point de signaler:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nous n'avons pas pu vérifier que ${ emailAddress } a chargé le fichier ${ fileName }."
@@ -3098,17 +3126,26 @@
       "Category": [
         "Catégorie"
       ],
+      "Child sexual abuse material": [
+        "Contenu pédopornographique"
+      ],
       "City": [
         "Ville"
       ],
       "Code is 6 digits without spaces": [
         "Le code est composé de 6 chiffres sans espaces"
       ],
+      "Comment": [
+        "Commentaire"
+      ],
       "Contacts": [
         "Contacts"
       ],
       "Copy": [
         "Copier"
+      ],
+      "Copyright infringement": [
+        "Violation des droits d'auteur"
       ],
       "Country": [
         "Pays"
@@ -3134,6 +3171,9 @@
       ],
       "Download anyway": [
         "Télécharger quand même"
+      ],
+      "Email": [
+        "Courriel"
       ],
       "Email address": [
         "Adresse courriel"
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Masquer le mot de passe"
       ],
+      "I understand the risk": [
+        "Je comprends le risque"
+      ],
       "Image": [
         "Image"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "Mot de passe de messagerie"
       ],
+      "Malware": [
+        "Logiciel malveillant"
+      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Version du système d'exploitation"
       ],
+      "Other": [
+        "Autres"
+      ],
       "Password": [
         "Mot de passe"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Numéro de téléphone"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "Veuillez indiquer le maximum de détails pour nous aider à prendre les actions appropriées"
       ],
       "Post office box": [
         "Boîte postale"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         "Remplacer le dossier"
       ],
-      "Report abuse": [
+      "Report Abuse": [
         "Signaler un abus"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
+      ],
+      "Select type of abuse": [
+        "Sélectionnez un type d'abus"
       ],
       "Set expiration date": [
         "Définir la date d'expiration"
@@ -3299,6 +3354,12 @@
       ],
       "Skip folder": [
         "Ignorer le dossier"
+      ],
+      "Spam": [
+        "Indésirables"
+      ],
+      "Stolen data": [
+        "Données volées"
       ],
       "Street address": [
         "Adresse postale"
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Entrez un nouveau nom de dossier"
+      ],
+      "Enter your email address": [
+        "Saisissez votre adresse électronique"
       ],
       "Filter groups": [
         "Filtrer les groupes"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Attention"
+      ],
+      "Warning: suspected fake website": [
+        "Attention: site Web potentiellement faux"
       ],
       "What's new": [
         "Nouveautés"

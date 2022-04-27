@@ -487,6 +487,9 @@
       "Submit": [
         "Azen"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Beddel amiḍan"
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
-      "Could not find address ${ email }.": [
-        "Ur nezmir ara ad d-naf tansa ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "",
         ""
@@ -1867,6 +1867,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara."
+      ],
+      "Report failed to be sent": [
+        ""
       ],
       "Request timed out": [
         ""
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "Yettwasefsex"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma tansa n imayl-agi ur teɣti ara, tekki ɣef \"Ẓreg\" akken ad tt-tseɣtiḍ."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Tekki ɣef \"Suter tangalt tamaynut\" akken tangalt n usenqed tamaynut ad tettwaznen ɣer ${ strong }. Ma uṭṭun-agi n tilifun ur yeɣti ara, tekki ɣef \"Ẓreg\" akken ad t-seɣtiḍ."
@@ -2447,6 +2450,9 @@
       "Downloading": [
         "Asider"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Ẓuɣer neɣ sers afaylu da neɣ fren asali."
       ],
@@ -2464,6 +2470,16 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Sekcem tangalt n usenged i yettwaznen ɣer ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "Yecceḍ"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Asmiren n usebter neɣ  ${ link } ad frun tugget n wuguren s wudem awurman."
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         ""
       ],
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Iminig-a ur yessefrak ara tamuɣli n yisemliyen PDF. Ttxil sader afaylu."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph, ulamek yeldi s yimingen Internet Explorer d Edge. Ma yella tetḥeqqeḍ belli aseɣwen-a iṣeḥḥa, ttxil-k·m seqdec iminig-nniḍen akken ad teldiḍ."
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         "Afaylu ur yettwasefrak ara"
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Asili n tmiḍa n yifuyla ɣef tikkelt yezmer ad iḍur tamellit."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -3098,10 +3126,16 @@
       "Category": [
         "Taggayt"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "Tamdint"
       ],
       "Code is 6 digits without spaces": [
+        ""
+      ],
+      "Comment": [
         ""
       ],
       "Contacts": [
@@ -3109,6 +3143,9 @@
       ],
       "Copy": [
         "Nɣel"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Tamurt"
@@ -3133,6 +3170,9 @@
         "Ur steqsay ara tikkelt-nniḍen"
       ],
       "Download anyway": [
+        ""
+      ],
+      "Email": [
         ""
       ],
       "Email address": [
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Ffer awal uffir"
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         "Tugna"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "Awal n uɛeddi n tenkult imayl"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         ""
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Lqem n unagraw n wammud"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Awal uffir"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Tanaka n lpusṭa"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         "Semselsi akaram"
       ],
-      "Report abuse": [
-        "Azen yir aseqdec"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Sken-d awal uffir"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Sbadu azemz n taggara"
@@ -3299,6 +3354,12 @@
       ],
       "Skip folder": [
         "Zgel akaram"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "Tansa n uxxam"
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Sekcem isem n ukaram amaynut"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Sti igrawen"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Ɣur-k"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "D acu i d amaynut"
