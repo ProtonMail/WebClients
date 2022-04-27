@@ -260,6 +260,50 @@ describe('useLinksState', () => {
         expect(result1.shareId.links.linkId9.encrypted.trashedByParent).toBeFalsy();
     });
 
+    it('updates trashed folder and adds files to it', () => {
+        const result1 = addOrUpdate(state, 'shareId', [
+            {
+                encrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                    trashed: 12345678,
+                } as EncryptedLink,
+            },
+            {
+                encrypted: {
+                    linkId: 'linkId7a',
+                    name: 'linkId7a',
+                    parentLinkId: 'linkId7',
+                } as EncryptedLink,
+            },
+        ]);
+        // Children of trashed parent is added to tree structure.
+        expect(result1.shareId.tree.linkId7).toMatchObject(['linkId8', 'linkId9', 'linkId7a']);
+        // Trashed parent trashes automatically also children.
+        expect(result1.shareId.links.linkId7.encrypted.trashed).toBe(12345678);
+        expect(result1.shareId.links.linkId7.encrypted.trashedByParent).toBeFalsy();
+        expect(result1.shareId.links.linkId7a.encrypted.trashed).toBe(12345678);
+        expect(result1.shareId.links.linkId7a.encrypted.trashedByParent).toBeTruthy();
+
+        // Restoring from trash re-adds link back to its parent.
+        const result2 = addOrUpdate(result1, 'shareId', [
+            {
+                encrypted: {
+                    linkId: 'linkId7',
+                    name: 'linkId7',
+                    parentLinkId: 'linkId0',
+                    trashed: null,
+                } as EncryptedLink,
+            },
+        ]);
+        // Trashed parent trashes automatically also children.
+        expect(result2.shareId.links.linkId7.encrypted.trashed).toBe(null);
+        expect(result2.shareId.links.linkId7.encrypted.trashedByParent).toBeFalsy();
+        expect(result2.shareId.links.linkId7a.encrypted.trashed).toBe(null);
+        expect(result2.shareId.links.linkId7a.encrypted.trashedByParent).toBeFalsy();
+    });
+
     it('updates encrypted link with signature issue', () => {
         // First, it sets signature issue.
         const result1 = addOrUpdate(state, 'shareId', [
