@@ -52,14 +52,14 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     pickRef.current = false;
                     setIsOpen(!isOpen);
                 }}
-                className="ml0-5 unstyled inputform-prefix-phone border-right pr0-5"
+                className="unstyled inputform-prefix-phone border-right pr0-5"
                 ref={anchorRef}
                 caretClassName="mtauto mbauto"
                 aria-live="assertive"
                 aria-atomic="true"
                 aria-label={value?.countryName}
             >
-                <span className="mr0-5">
+                <span className="flex mr0-5">
                     {!value ? (
                         <Icon name="globe" className="align-middle inline-flex" />
                     ) : (
