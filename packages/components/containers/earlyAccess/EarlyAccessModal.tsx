@@ -2,6 +2,7 @@ import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 
 import {
     Button,
@@ -15,7 +16,6 @@ import {
 } from '../../components';
 
 import useEarlyAccess from '../../hooks/useEarlyAccess';
-import useSynchronizingState from '../../hooks/useSynchronizingState';
 
 const EarlyAccessModal = ({ onClose, ...rest }: ModalProps) => {
     const earlyAccess = useEarlyAccess();
