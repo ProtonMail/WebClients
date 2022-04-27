@@ -1,6 +1,8 @@
-import { useCallback } from 'react';
+import { Dispatch, DragEvent, SetStateAction, useCallback } from 'react';
+import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 
 import { classnames } from '../../helpers';
 
@@ -15,6 +17,7 @@ import InsertImageModal from './modals/InsertImageModal';
 import useEditorModal from './hooks/useEditorModal';
 import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './hooks/interface';
 import InsertLinkModal from './modals/InsertLinkModal';
+import { onlyDragFiles } from '../dropzone';
 
 interface Props {
     className?: string;
@@ -38,6 +41,8 @@ interface Props {
      */
     mailSettings?: MailSettings;
     isPlainText?: boolean;
+    fileHover?: boolean;
+    setFileHover?: Dispatch<SetStateAction<boolean>>;
 }
 
 const Editor = ({
@@ -57,6 +62,8 @@ const Editor = ({
     onAddAttachments,
     mailSettings,
     isPlainText,
+    fileHover,
+    setFileHover,
 }: Props) => {
     /**
      * Set to true when editor setContent is called by parent components
@@ -74,6 +81,29 @@ const Editor = ({
         showModalDefaultFont: modalDefaultFont.showCallback,
         onChangeMetadata,
         onAddAttachments,
+    });
+
+    const handleDrop = onlyDragFiles((event: DragEvent) => {
+        event.preventDefault();
+        event.stopPropagation();
+        setFileHover?.(false);
+        onAddAttachments?.([...event.dataTransfer.files]);
+    });
+
+    /**
+     * Listening for entering on the whole section
+     * But for leaving only on the overlay to prevent any interception by the editor
+     */
+    const handleDragLeave = onlyDragFiles((event) => {
+        event.stopPropagation();
+        setFileHover?.(false);
+    });
+
+    const handleDragOver = onlyDragFiles((event) => {
+        // In order to allow drop we need to preventDefault
+        event.preventDefault();
+        event.stopPropagation();
+        setFileHover?.(true);
     });
 
     const onPasteImage = useCallback(
@@ -101,6 +131,7 @@ const Editor = ({
                         isPlainText ? '' : 'composer-content--rich-edition',
                         editorClassname,
                     ])}
+                    onDragOver={handleDragOver}
                 >
                     {metadata.isPlainText ? (
                         <PlainTextEditor
@@ -123,6 +154,23 @@ const Editor = ({
                             mailSettings={mailSettings}
                             className={simple ? 'border rounded' : ''}
                         />
+                    )}
+
+                    {fileHover && (
+                        <div
+                            onDragLeave={handleDragLeave}
+                            onDropCapture={handleDrop}
+                            className={classnames([
+                                'composer-editor-dropzone absolute-cover flex flex-justify-center flex-align-items-center rounded-xl',
+                                /*!isOutside && */ 'mr1-75 ml1-75',
+                            ])}
+                        >
+                            <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
+                                <img src={dragAndDrop} alt="" className="mb1" />
+                                <br />
+                                {c('Info').t`Drop a file here to upload`}
+                            </span>
+                        </div>
                     )}
                 </div>
 

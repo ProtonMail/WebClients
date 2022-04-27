@@ -1,11 +1,12 @@
-import { classnames, Icon } from '@proton/components';
+import { classnames, EditorMetadata, Icon } from '@proton/components';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { c } from 'ttag';
-import { useMemo } from 'react';
+import { MutableRefObject, useMemo } from 'react';
 import ComposerMoreOptionsDropdown from './ComposerMoreOptionsDropdown';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MessageChange, MessageChangeFlag } from '../Composer';
 import MoreActionsExtension from './MoreActionsExtension';
+import { ExternalEditorActions } from '../editor/EditorWrapper';
 
 interface Props {
     isExpiration: boolean;
@@ -13,14 +14,33 @@ interface Props {
     onExpiration: () => void;
     lock: boolean;
     onChangeFlag: MessageChangeFlag;
+    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
+    editorMetadata: EditorMetadata;
     onChange: MessageChange;
 }
 
-const ComposerMoreActions = ({ isExpiration, message, onExpiration, lock, onChangeFlag, onChange }: Props) => {
+const ComposerMoreActions = ({
+    isExpiration,
+    message,
+    onExpiration,
+    lock,
+    onChangeFlag,
+    editorActionsRef,
+    editorMetadata,
+    onChange,
+}: Props) => {
     const titleMoreOptions = c('Title').t`More options`;
 
     const toolbarExtension = useMemo(
-        () => <MoreActionsExtension message={message.data} onChangeFlag={onChangeFlag} />,
+        () => (
+            <MoreActionsExtension
+                message={message}
+                onChangeFlag={onChangeFlag}
+                editorActionsRef={editorActionsRef}
+                editorMetadata={editorMetadata}
+                onChange={onChange}
+            />
+        ),
         [message.data, onChangeFlag]
     );
 
