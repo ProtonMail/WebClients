@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
+import { Button } from '../../button';
 
 import Icon from '../../icon/Icon';
 import InputTwo, { InputTwoProps } from './Input';
@@ -25,16 +26,18 @@ const PasswordInputTwo = ({ disabled, defaultType = 'password', ...rest }: Props
             type={type}
             disabled={disabled}
             suffix={
-                <button
+                <Button
                     title={type === 'password' ? c('Label').t`Reveal password` : c('Label').t`Hide password`}
                     className="inline-flex flex-item-noshrink"
                     tabIndex={-1}
                     disabled={disabled}
-                    type="button"
                     onClick={toggle}
+                    shape="ghost"
+                    size="small"
+                    icon
                 >
                     <Icon className="mauto" name={type === 'password' ? 'eye' : 'eye-slash'} />
-                </button>
+                </Button>
             }
         />
     );
