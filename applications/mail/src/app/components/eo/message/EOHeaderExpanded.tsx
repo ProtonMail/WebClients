@@ -56,7 +56,7 @@ const EOHeaderExpanded = ({
             ])}
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
-            <div className="flex flex-nowrap flex-align-items-center mx1 mb0-85">
+            <div className="flex flex-nowrap flex-align-items-center mx2 mb0-85 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
                 <span className="flex flex-item-fluid flex-nowrap mr0-5">
                     <div className={classnames(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
                         <RecipientType
@@ -95,7 +95,7 @@ const EOHeaderExpanded = ({
                     {!messageLoaded && <span className="message-header-metas ml0-5 inline-flex" />}
                 </div>
             </div>
-            <div className="flex flex-nowrap flex-align-items-center m1 mt0 on-mobile-flex-wrap">
+            <div className="flex flex-nowrap flex-align-items-center mx2 mt0 mb1 on-mobile-flex-wrap on-tiny-mobile-ml0 on-tiny-mobile-mr0">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -106,7 +106,7 @@ const EOHeaderExpanded = ({
                 />
             </div>
             {showDetails && (
-                <div className="m0-5 mx1 flex flex-nowrap color-weak">
+                <div className="m0-5 mx2 flex flex-nowrap color-weak">
                     <span className="flex-align-self-center mr0-5 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
@@ -114,7 +114,7 @@ const EOHeaderExpanded = ({
             )}
 
             {!showDetails && isNarrow && (
-                <div className="flex flex-justify-space-between flex-align-items-center mx1 border-top pt0-5 mb0-5">
+                <div className="flex flex-justify-space-between flex-align-items-center mx2 border-top pt0-5 mb0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
                     {messageLoaded ? (
                         <>
                             <div className="flex flex-nowrap flex-align-items-center">
@@ -128,7 +128,7 @@ const EOHeaderExpanded = ({
                 </div>
             )}
 
-            <section className="message-header-extra border-top pt0-5 mx1">
+            <section className="message-header-extra border-top pt0-5 mx2 on-tiny-mobile-ml0 on-tiny-mobile-mr0">
                 <div className="mt0-5 flex flex-row">
                     {messageLoaded && <ExtraExpirationTime message={message} displayAsButton />}
                     <ExtraImages

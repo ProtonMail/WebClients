@@ -45,11 +45,11 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
     return (
         <div
             className={classnames([
-                'flex flex-align-items-center border-bottom p1',
+                'flex flex-align-items-center border-bottom px2 py1-5 on-tiny-mobile-pl0 on-tiny-mobile-pr0',
                 !canReply && 'flex-justify-space-between',
             ])}
         >
-            <h1 className="text-ellipsis m0" title={subject}>
+            <h1 className="text-ellipsis m0 eo-layout-title" title={subject}>
                 {subject}
             </h1>
             {canReply ? (
