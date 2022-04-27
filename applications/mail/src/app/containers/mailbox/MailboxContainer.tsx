@@ -220,8 +220,8 @@ const MailboxContainer = ({
             e.stopPropagation();
             e.preventDefault();
 
-            if (!checkedIDs.length) {
-                handleCheckOnlyOne(element.ID);
+            if (!checkedIDs.includes(element.ID)) {
+                handleCheck([element.ID], true, true);
             }
 
             setContextMenuPosition({ top: e.clientY, left: e.clientX });
