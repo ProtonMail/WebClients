@@ -234,7 +234,7 @@ export function useLinkInner(
             });
 
             if (encryptedLink.contentKeyPacketSignature) {
-                const publicKeys = await getVerificationKey(encryptedLink.signatureAddress);
+                const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureAddress))];
                 const { verified } = await verifyMessage({
                     message: createMessage(sessionKey.data),
                     publicKeys,
