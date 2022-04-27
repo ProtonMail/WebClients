@@ -1,5 +1,8 @@
 import { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, ReactNode, Ref, useRef } from 'react';
-import { ButtonLike, Color, Shape } from '../button';
+
+import { ThemeColorUnion } from '@proton/colors';
+
+import { ButtonLike, Shape } from '../button';
 import { useCombinedRefs } from '../../hooks';
 
 export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
@@ -9,7 +12,7 @@ export interface Props extends DetailedHTMLProps<InputHTMLAttributes<HTMLInputEl
     onChange: (e: ChangeEvent<HTMLInputElement>) => void;
     disabled?: boolean;
     shape?: Shape;
-    color?: Color;
+    color?: ThemeColorUnion;
     loading?: boolean;
 }
 

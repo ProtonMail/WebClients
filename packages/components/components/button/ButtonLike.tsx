@@ -1,11 +1,12 @@
 import { ElementType, forwardRef, ReactElement } from 'react';
+
+import { ThemeColorUnion } from '@proton/colors';
+
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { CircleLoader } from '../loader';
 
 export type Shape = 'solid' | 'outline' | 'ghost' | 'underline';
-
-export type Color = 'norm' | 'weak' | 'danger' | 'warning' | 'success' | 'info';
 
 export type Size = 'small' | 'medium' | 'large';
 
@@ -27,7 +28,7 @@ interface ButtonLikeOwnProps {
      * Controls the colors of the button.
      * Exact styles applied depend on the chosen shape as well.
      */
-    color?: Color;
+    color?: ThemeColorUnion;
     /**
      * Controls how large the button should be.
      */
@@ -127,4 +128,5 @@ const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonL
     );
 
 (ButtonLike as any).displayName = 'ButtonLike';
+
 export default ButtonLike;
