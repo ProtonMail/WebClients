@@ -487,6 +487,9 @@
       "Submit": [
         "Küldés"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Fiók váltása"
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
       ],
-      "Could not find address ${ email }.": [
-        "A(z) ${ email } e-mail cím nem található."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "",
         ""
@@ -1866,6 +1866,9 @@
         ""
       ],
       "Primary address key is not decrypted.": [
+        ""
+      ],
+      "Report failed to be sent": [
         ""
       ],
       "Request timed out": [
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "Megszakítva"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Törli a böngésző adatait a titkosított keresésre vonatkozólag."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
@@ -2439,13 +2442,16 @@
         "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        "${ downloadFileName } letöltésének megszakítása"
+        "${ downloadFileName } letöltése megszakításra kerül"
       ],
       "Downloaded": [
         "Letöltve"
       ],
       "Downloading": [
         "Letöltés"
+      ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
       ],
       "Drag and drop a file here or choose to upload.": [
         "Ejtsen ide fájlokat vagy válassza a feltöltést."
@@ -2464,6 +2470,16 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "Sikertelen"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
       ],
@@ -2770,13 +2789,13 @@
         "ügyfélszolgálat"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "A fióknak, lehet, hogy új kulcs van, vagy az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne/bennük."
+        "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Az alkalmazásnak helyben kell visszafejtenie a névjegyeket az exportáláshoz. A folyamat végén egy VCF fájl fog létrejönni, amelyet letölthet."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne/bennük."
+        "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
       "There are no files yet": [
         "Még nincsenek fájlok"
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ez a link egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -2819,7 +2841,7 @@
         "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait. Továbbra is tudja a ${ DRIVE_APP_NAME }-ot használni - szólunk, ha az indexelés befejeződött."
+        "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait. Továbbra is használhatja a ${ DRIVE_APP_NAME }-ot - jelezzük, ha az indexelés befejeződött."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "A visszaélések és a levélszemét megakadályozására kérjük bizonyítsa, hogy nem robot."
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         "Nem támogatott fájltípus"
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyök elvesztését."
       ],
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
@@ -3020,7 +3048,7 @@
         "név"
       ],
       "name hash": [
-        "név hash"
+        "név ellenőrzőösszeg"
       ],
       "thumbnail": [
         "miniatűr"
@@ -3098,10 +3126,16 @@
       "Category": [
         "Kategória"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "Település"
       ],
       "Code is 6 digits without spaces": [
+        ""
+      ],
+      "Comment": [
         ""
       ],
       "Contacts": [
@@ -3109,6 +3143,9 @@
       ],
       "Copy": [
         "Másolás"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Ország"
@@ -3134,6 +3171,9 @@
       ],
       "Download anyway": [
         "Letöltés mindenképpen"
+      ],
+      "Email": [
+        ""
       ],
       "Email address": [
         "E-mail cím"
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Jelszó elrejtése"
       ],
+      "I understand the risk": [
+        "Megértettem a kockázatot"
+      ],
       "Image": [
         "Kép"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "E-mail jelszó"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         ""
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Az operációs rendszer verziója"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Jelszó"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Telefonszám"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Postafiók"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         ""
       ],
-      "Report abuse": [
-        "Visszaélés jelentése"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Jelszó felfedése"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Lejárati dátum beállítása"
@@ -3298,6 +3353,12 @@
         ""
       ],
       "Skip folder": [
+        ""
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
         ""
       ],
       "Street address": [
@@ -3340,7 +3401,7 @@
         "Kép feltöltése"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } emailjének felhasználóneve"
+        "Felhasználónév vagy ${ MAIL_APP_NAME } cím"
       ],
       "Verification code": [
         "Ellenőrző kód"
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Adja meg az új mappa nevét"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Csoportok szűrése"
@@ -4227,7 +4291,7 @@
         "Adja meg a jelszavát"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Írja be ${ MAIL_APP_NAME } emailjének felhasználónevét"
+        "Írja be a felhasználónevét vagy ${ MAIL_APP_NAME } e-mail címét"
       ],
       "Exporting contacts": [
         "Névjegyek exportálása"
@@ -4432,10 +4496,10 @@
         "A hivatkozást nem sikerült betölteni"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "A fájl aláírása hiányzik vagy hibás. Menjen a Menü (⋮) → Részletek fülbe további információért."
+        "A fájl aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        "A mappa aláírása hiányzik vagy hibás. Menjen a Menü (⋮) → Részletek fülbe további információért."
+        "A mappa aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
       ],
       "Total size": [
         "Teljes méret"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Figyelem"
+      ],
+      "Warning: suspected fake website": [
+        "Figyelem: gyanítottan hamis weboldal"
       ],
       "What's new": [
         "Újdonságok"

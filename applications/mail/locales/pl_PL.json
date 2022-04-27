@@ -723,7 +723,7 @@
         "Przeszukaj ${ option.text }"
       ],
       "Search message content": [
-        "Szukaj zawartości wiadomości"
+        "Wyszukiwanie zawartości wiadomości"
       ],
       "Select all": [
         "Zaznacz wszystkie"
@@ -2827,9 +2827,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Nie można włączyć wyszukiwania zawartości w tej przeglądarce. Wyjdź z trybu prywatnego przeglądarki lub spróbuj użyć innej."
       ],
-      "Could not find address ${ email }.": [
-        "Adres e-mail ${ email } nie został znaleziony."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Błąd odszyfrowywania: odszyfrowanie tej wiadomości nie powiodło się."
       ],
@@ -4037,6 +4034,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Skróty klawiszowe podstawowej nawigacji i akcji są zawsze włączone."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Przed poproszeniem o nowy kod weryfikacyjny, sprawdź folder Spam i poprawność adresu ${ strong }."
+      ],
       "Body: ": [
         "Treść: "
       ],
@@ -4057,9 +4057,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Wyczyszczenie pamięci podręcznej przeglądarki wpływa na funkcję wyszukiwania zawartości wiadomości, w tym na pobrane wiadomości"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na adres e-mail ${ strong }. Jeśli adres jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
@@ -4720,6 +4717,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Zaproszenie zostało zapisane w wyłączonym kalendarzu."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Link prowadzi do strony internetowej, która może próbować wykraść informacje, takie jak hasła i dane karty płatniczej."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ten link może być atakiem homograficznym i nie może zostać otwarty przez przeglądarkę Internet Explorer lub Edge. Upewnij się, że link, który chcesz odwiedzić jest wiarygodny i otwórz go za pomocą innej przeglądarki."
@@ -5450,6 +5450,9 @@
       ],
       "Hide password": [
         "Ukryj hasło"
+      ],
+      "I understand the risk": [
+        "Rozumiem ryzyko"
       ],
       "IF": [
         "JEŚLI"
@@ -7555,6 +7558,9 @@
       ],
       "Warning": [
         "Ostrzeżenie"
+      ],
+      "Warning: suspected fake website": [
+        "Ostrzeżenie: podejrzana strona internetowa"
       ],
       "Welcome": [
         "Witaj"

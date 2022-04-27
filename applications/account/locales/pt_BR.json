@@ -526,6 +526,9 @@
       "Refer a friend": [
         "Indicar um amigo"
       ],
+      "Refresh browser": [
+        "Atualizar navegador"
+      ],
       "Refresh status": [
         "Atualizar status"
       ],
@@ -977,8 +980,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Adicionar convites ao calendário e marcar como pendentes"
+      "Add to calendar and mark as pending": [
+        "Adicionar ao calendário e marcar como pendentes"
       ]
     },
     "Autoresponse": {
@@ -1210,7 +1213,7 @@
         "Adicione o link para o seu rodapé do e-mail"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuar usando ${ MAIL_APP_NAME }."
       ],
       "Copy": [
         "Copiar"
@@ -4217,6 +4220,9 @@
       "Basic, Plus or Visionary subscription required": [
         "É necessária a assinatura Basic, Plus ou Visionary"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Antes de começar a receber emails em endereços de domínio personalizados no ${ MAIL_APP_NAME }, você precisa adicionar o seguinte registro MX ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
@@ -4267,9 +4273,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Escolha a aparência do aplicativo."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse endereço de e-mail estiver incorreto, clique em \"Editar\" para corrigi-lo."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se este número de telefone estiver incorreto, clique em \"Editar\" para corrigi-lo."
@@ -4501,6 +4504,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Gerar uma nova frase de recuperação desativará a antiga."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        ""
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Forneça sua chave pública aos seus amigos, ou publique online, para que todos possam te enviar e-mails criptografados de ponta a ponta!"
       ],
@@ -4659,8 +4665,8 @@
       "it’s imperative": [
         "é obrigatório"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Estou usando ${ appName } e achei que você poderia gostar. É um serviço de e-mail seguro que protege sua privacidade. Inscreva-se com este link para obter 1 mês grátis: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Estou usando ${ appName } e achei que você poderia gostar. É um serviço de e-mail seguro que protege sua privacidade. Inscreva-se com este link para obter 1 mês de recursos premium de graça: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Apenas confirme sua seleção e faremos o restante."
@@ -5161,6 +5167,9 @@
       "This is the password you used before the password reset.": [
         "Esta é a senha que você usava antes da redefinição de senha."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Esse link leva a um site que pode estar tentando roubar suas informações, como senhas e detalhes de cartão de crédito."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Este link pode ser um ataque homógrafo e não pode ser aberto pelos navegadores Internet Explorer e Edge. Se você tiver certeza de que o link é legítimo, use um navegador diferente para abri-lo."
       ],
@@ -5494,8 +5503,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Você deve ter um cartão de crédito ou uma conta bancária vinculada à sua conta do PayPal. Se a sua conta do PayPal não tem isso, por favor clique no botão abaixo."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Você deve remover qualquer calendário adicional e qualquer link de calendário compartilhado antes de cancelar sua assinatura. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Você deve remover todos os calendários pessoais adicionais e quaisquer links de calendário compartilhados antes de cancelar sua assinatura."
       ],
       "You need to have a personal calendar to create a link.": [
         "Você precisa ter um calendário para criar um link."
@@ -5639,7 +5648,7 @@
     },
     "Info concerning plan features": {
       "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
+        "O ${ MAIL_APP_NAME } não pode ser usado para e-mails em massa ou \"spam\". E-mails legítimos são ilimitados."
       ],
       "Customizable features": [
         "Recursos personalizáveis"
@@ -6384,6 +6393,9 @@
       "Hide password": [
         "Ocultar senha"
       ],
+      "I understand the risk": [
+        "Eu entendo o risco"
+      ],
       "IF": [
         "SE"
       ],
@@ -6627,8 +6639,8 @@
       "Send auto-reply": [
         "Enviar resposta automática"
       ],
-      "Send invitations in": [
-        "Envie convites em"
+      "Send in": [
+        ""
       ],
       "Show secondary time zone": [
         "Mostrar fuso horário secundário"
@@ -6821,7 +6833,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        ""
+        "Adicione um domínio que você possui na sua conta ${ MAIL_APP_NAME }."
       ]
     },
     "Label for domain modal": {
@@ -9171,6 +9183,9 @@
       "Referral tracker": [
         "Rastreador de referência"
       ],
+      "Refresh your browser": [
+        "Atualizar seu navegador"
+      ],
       "Remove calendar": [
         "Excluir calendário"
       ],
@@ -9344,6 +9359,9 @@
       ],
       "Warning!": [
         "Atenção!"
+      ],
+      "Warning: suspected fake website": [
+        "Aviso: Site suspeito de ser falso"
       ],
       "What would you like to import?": [
         "O que você gostaria de importar?"
@@ -9617,12 +9635,12 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
+        "Selecione as configurações PGP básicas usadas para assinar ou criptografar mensagens com não usuários ${ BRAND_NAME } ou PGP. Observe que o Inline PGP força mensagens em texto simples. Leia mais"
       ]
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        ""
+        "Ao receber um e-mail de outro usuário do ${ MAIL_APP_NAME } que não tem chaves confiáveis em seus contatos, um banner perguntará se você deseja habilitar as chaves confiáveis."
       ]
     },
     "Tooltip sign external messages": {

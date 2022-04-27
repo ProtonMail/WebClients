@@ -2827,9 +2827,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
       ],
-      "Could not find address ${ email }.": [
-        "Nenalezena adresa ${ email }"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této zprávy se nezdařilo."
       ],
@@ -4037,6 +4034,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Body: ": [
         "Tělo: "
       ],
@@ -4057,9 +4057,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Vymaže data prohlížeče související s vyhledáváním obsahu zpráv včetně stažených zpráv"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
@@ -4720,6 +4717,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Tato pozvánka je uložena v zakázaném kalendáři."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -5450,6 +5450,9 @@
       ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "IF": [
         "JESTLI"
@@ -7555,6 +7558,9 @@
       ],
       "Warning": [
         "Upozornění"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "Welcome": [
         "Vítejte"

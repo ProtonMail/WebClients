@@ -305,7 +305,7 @@
         "Download alle opsætninger"
       ],
       "Download recovery file": [
-        "Download genoprettelsesfil"
+        "Download gendannelsesfil"
       ],
       "Download the Import-Export app": [
         "Download Import-eksport-appen"
@@ -525,6 +525,9 @@
       ],
       "Refer a friend": [
         "Henvis en ven"
+      ],
+      "Refresh browser": [
+        "Genopfrisk browseren"
       ],
       "Refresh status": [
         "Opdater status"
@@ -818,10 +821,10 @@
         "Vis faktura"
       ],
       "Void all recovery files": [
-        "Ugyldiggør alle genoprettelsesfiler"
+        "Ugyldiggør alle gendannelsesfiler"
       ],
       "Void all recovery files?": [
-        "Ugyldiggør alle genoprettelsesfiler?"
+        "Ugyldiggør alle gendannelsesfiler?"
       ],
       "Void anyway": [
         "Ugyldiggør alligevel"
@@ -977,8 +980,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Tilføj invitationer til kalender, og marker dem som afventende"
+      "Add to calendar and mark as pending": [
+        "Føj til kalender og markér som afventende"
       ]
     },
     "Autoresponse": {
@@ -2858,7 +2861,7 @@
         "Forkert bekræftelseskode. Sørg for, at du har kopieret bekræftelseskoden korrekt og forsøg igen. Det kan tage op til 24 timer, før ændringerne effektueres."
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du har mistet adgangen til dine organisationsnøgler. Uden genoprettelse kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
+        "Du har mistet adgangen til dine organisationsnøgler. Uden gendannelse kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
       ],
       "You have no invoices.": [
         "Du har ingen fakturaer."
@@ -4071,10 +4074,10 @@
         "Kontoadgang begrænset grundet ubetalte fakturaer. Kontakt venligst din administrator."
       ],
       "account recovery and data recovery method": [
-        "kontogenoprettelse og metode til gendannelse af data"
+        "kontogendannelse og metode til gendannelse af data"
       ],
       "account recovery method": [
-        "metode til kontogenoprettelse"
+        "metode til kontogendannelse"
       ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
@@ -4217,6 +4220,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic, Plus eller Visionary abonnement kræves"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Inden du kan modtage e-mails til dine tilpassede domæneadresser i ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster til din DNS. Dette kan typisk gøres via et webkontrolpanel hos din domæneudbyder."
       ],
@@ -4267,9 +4273,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Vælg applikationens udseende."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -4501,6 +4504,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Oprettelse af en ny gendannelsessætning vil deaktivere din gamle."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Få den seneste version af ${ BRAND_NAME } og alle rellevante opdateringer ved at genopfriske din browser."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Giv din offentlige nøgle til dine venner, eller offentliggør den online, så alle kan sende dig end-to-end krypterede e-mails!"
       ],
@@ -4608,10 +4614,10 @@
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "Hvis du mister dine loginoplysninger, sender vi dig en vejledning til genoprettelse via e-mail eller sms."
+        "Hvis du mister dine loginoplysninger, sender vi dig en vejledning til gendannelse via e-mail eller sms."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "Hvis du mister dine loginoplysninger, sender vi dig en vejledning til genoprettelse via e-mail."
+        "Hvis du mister dine loginoplysninger, sender vi dig en vejledning til gendannelse via e-mail."
       ],
       "Included": [
         "Inkluderet"
@@ -4659,8 +4665,8 @@
       "it’s imperative": [
         "er det afgørende"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Jeg har brugt ${ appName } og tror du vil kunne lide den. Det er en sikker e-mailtjeneste, der beskytter dit privatliv. Tilmeld dig med dette link for at få 1 måned gratis: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Jeg har brugt ${ appName } og tror, at du også vil kunne lide den. Det er en sikker e-mailtjeneste, der beskytter dit privatliv. Tilmeld dig med dette link for at få 1 måned med premium-funktioner gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Du skal blot bekræfte dit valg, så klarer vi resten."
@@ -4762,7 +4768,7 @@
         "Derefter skal du logge ind på din Google-konto og give os adgang til dine data."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Ingen metode til genoprettelse indstillet. Du risikerer at miste adgang til din konto"
+        "Ingen metode til gendannelse indstillet. Du risikerer at miste adgang til din konto"
       ],
       "No action selected": [
         "Ingen handling valgt"
@@ -4976,7 +4982,7 @@
         "Gendannelsesfil downloadet"
       ],
       "Recovery files have been voided": [
-        "Genoprettelsesfiler er blevet ugyldiggjort"
+        "Gendannelsesfiler er blevet ugyldiggjort"
       ],
       "recovery method": [
         "gendannelsesmetode"
@@ -5161,6 +5167,9 @@
       "This is the password you used before the password reset.": [
         "Dette er den adgangskode, du brugte før adgangskodenulstillingen."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Er du sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
       ],
@@ -5240,7 +5249,7 @@
         "For at holde dig ajour med den seneste udvikling hos Protonmail, kan du abonnere på vores forskellige nyhedsbreve og fra tid til anden besøge vores blog."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "For at fortsætte skal du vælge en metode til kontogenoprettelse, så vi kan bekræfte anmodningen."
+        "For at fortsætte skal du vælge en metode til kontogendannelse, så vi kan bekræfte anmodningen."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ${ VPN_APP_NAME }-applikationen til din enhed og oprette forbindelse til en ${ VPN_APP_NAME }-server."
@@ -5270,10 +5279,10 @@
         "To-adgangskodetilstand benytter separate adgangskoder til indlogning og postkassedekryptering. Dette giver en lille sikkerhedsfordel i visse situationer, men brug af en-adgangskodetilstand anbefales til de fleste brugere. Angiv først én adgangskode til indlogning og dernæst én til postkassen for at skifte til to-adgangskodtilstand."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "Kan ikke verificere signaturen for genoprettelsesfilen. Kontakt venligst support."
+        "Kan ikke verificere signaturen for gendannelsesfilen. Kontakt venligst support."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "Desværre er der ingen genoprettelsesmetode gemt for denne konto."
+        "Desværre er der ingen gendannelsesmetode gemt for denne konto."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Medmindre du logger ud eller ændrer din adgangskode, forbliver din session aktiv. Sessioner udløber efter 60 dages inaktivitet."
@@ -5372,7 +5381,7 @@
         "Vi sender en kode til dette telefonnummer, hvis du glemmer din adgangskode eller bliver låst ude af din konto."
       ],
       "We will send you a recovery link to this email address if you forget your password or get locked out of your account.": [
-        "Vi vil sende dig et genoprettelseslink til denne e-mailadresse, hvis du glemmer din adgangskode eller bliver låst ude af din konto."
+        "Vi vil sende dig et gendannelseslink til denne e-mailadresse, hvis du glemmer din adgangskode eller bliver låst ude af din konto."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -5494,8 +5503,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du skal have et kreditkort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Du skal fjerne eventuelle ekstra personlige kalendere og delte kalenderlinks, før du kan annullere dit abonnement. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Du skal fjerne eventuelle ekstra personlige kalendere og delte kalenderlinks, før du kan annullere dit abonnement."
       ],
       "You need to have a personal calendar to create a link.": [
         "Du skal have en personlig kalender for at oprette et link."
@@ -5531,7 +5540,7 @@
         "Du omdirigeres snart til PayPal for at bekræfte din betaling."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "Du vil ikke kunne gendanne krypterede data efter en kontonulstilling ved hjælp af dine downloadede genoprettelsesfiler."
+        "Du vil ikke kunne gendanne krypterede data efter en kontonulstilling ved hjælp af dine downloadede gendannelsesfiler."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Du vil forblive logget på selv efter du lukker browseren."
@@ -5555,7 +5564,7 @@
         "Din konto opgraderes. Dette kan tage op til 30 sekunder."
       ],
       "Your account recovery method is set": [
-        "Din metode til kontogenoprettelse er indstillet"
+        "Din metode til kontogendannelse er indstillet"
       ],
       "Your account will be updated once the payment is cleared.": [
         "Din konto vil blive opdateret, når betalingen er godkendt."
@@ -6384,6 +6393,9 @@
       "Hide password": [
         "Skjul adgangskode"
       ],
+      "I understand the risk": [
+        "Jeg er indforstået med risikoen"
+      ],
       "IF": [
         "IF"
       ],
@@ -6627,8 +6639,8 @@
       "Send auto-reply": [
         "Send auto-svar"
       ],
-      "Send invitations in": [
-        "Send invitation på"
+      "Send in": [
+        "Send i"
       ],
       "Show secondary time zone": [
         "Vis sekundær tidszone"
@@ -9171,6 +9183,9 @@
       "Referral tracker": [
         "Sporing af henvisning"
       ],
+      "Refresh your browser": [
+        "Genopfrisk din browser"
+      ],
       "Remove calendar": [
         "Fjern kalender"
       ],
@@ -9344,6 +9359,9 @@
       ],
       "Warning!": [
         "Advarsel!"
+      ],
+      "Warning: suspected fake website": [
+        "Advarsel: mistanke om falsk websted"
       ],
       "What would you like to import?": [
         "Hvad vil du gerne importere?"

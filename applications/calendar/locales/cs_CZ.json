@@ -2930,14 +2930,14 @@
       "At most 100 participants are allowed per invitation": [
         "Na jednu pozvánku je povoleno maximálně 100 účastníků"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na helso? Můžeme Vám pomoci vyčistit šifrovaná data od všech šifrovaných kontaktů s tímto klíčem a v tomto procesu zavřete upozornění."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vyhledávání kontaktu ${ progress } o ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na „Požádat o nový kód“ pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko „Upravit“ pro její opravu."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
@@ -3247,6 +3247,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Tato událost byla aktualizována. Organizátor nebude informován o tom, že jste pozvánku odmítli, protože z pozvané adresy nelze odesílat e-maily. Chcete tuto událost přesto smazat?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -3570,6 +3573,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Jaká je pravděpodobnost, že doporučíte ${ calendarAppName } příteli nebo kolegovi?"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -5110,6 +5116,9 @@
       ],
       "Warning": [
         "Upozornění"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Co je nového"

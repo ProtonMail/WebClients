@@ -2803,9 +2803,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Bu tarayıcıda içerik araması etkinleştirilemiyor. Lütfen gizli/özel tarayıcı kipinden çıkın ya da farklı bir tarayıcı deneyin."
       ],
-      "Could not find address ${ email }.": [
-        "${ email } adresi bulunamadı."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Şifre çözme hatası: Bu iletinin şifrelenmiş içeriğinin şifresi çözülemedi."
       ],
@@ -3915,6 +3912,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Temel gezinme ve işlemler, ayarlardaki klavye kısayollarının etkin olup olmadığından bağımsız olarak kullanılabilir kalır."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
+      ],
       "Body: ": [
         "İçerik: "
       ],
@@ -3935,9 +3935,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "İndirilen iletileri ve ileti içeriği aramasıyla ilgili tarayıcı verilerini temizler"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Yeni bir doğrulama kodunun ${ strong } adresine gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu e-posta adresi yanlışsa, düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
@@ -4576,6 +4573,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, devre dışı bırakılmış bir takvime kaydedilmiş."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir web sitesine gidiyor olabilir."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir ve Internet Explorer ya da Edge tarayıcıları ile açılamaz. Bağlantının göründüğü gibi olduğundan eminseniz, açmak için farklı bir web tarayıcısı kullanın."
@@ -5286,6 +5286,9 @@
       ],
       "Hide password": [
         "Parolayı gizle"
+      ],
+      "I understand the risk": [
+        "Riski anladım"
       ],
       "IF": [
         "EĞER"
@@ -7291,6 +7294,9 @@
       ],
       "Warning": [
         "Uyarı"
+      ],
+      "Warning: suspected fake website": [
+        "Uyarı: Şüpheli sahte web sitesi"
       ],
       "Welcome": [
         "Hoş geldin"

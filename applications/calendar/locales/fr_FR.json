@@ -2836,14 +2836,14 @@
       "At most 100 participants are allowed per invitation": [
         "Un maximum de 100 participants est autorisé par invitation"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Vous ne vous souvenez pas de votre mot de passe ? Nous pouvons vous aider à effacer les données chiffrées de tous les contacts chiffrés avec cette clé et, par la même occasion, à supprimer l’alerte."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Vérification des contacts : ${ progress } sur ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour qu’un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
@@ -3149,6 +3149,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Cet événement a été mis à jour. L’organisateur ne sera pas informé que vous refusez l’invitation, car vous ne pouvez pas envoyer de messages depuis l’adresse invitée. Voulez-vous tout de même supprimer cet événement ?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
@@ -3472,6 +3475,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Quelle est la probabilité que vous recommandiez ${ calendarAppName } à un ami ou à un collègue ?"
+      ],
+      "I understand the risk": [
+        "Je comprends le risque"
       ],
       "Import all messages": [
         "Importer tous les messages"
@@ -4930,6 +4936,9 @@
       ],
       "Warning": [
         "Attention"
+      ],
+      "Warning: suspected fake website": [
+        "Attention : site Web potentiellement faux"
       ],
       "What's new": [
         "Nouveautés"

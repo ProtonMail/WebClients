@@ -489,6 +489,9 @@
       "Submit": [
         "Pošalji"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Promijeni račun"
       ],
@@ -1760,9 +1763,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "",
         "",
@@ -1875,6 +1875,9 @@
         ""
       ],
       "Primary address key is not decrypted.": [
+        ""
+      ],
+      "Report failed to be sent": [
         ""
       ],
       "Request timed out": [
@@ -2385,6 +2388,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         ""
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "Poništeno"
       ],
@@ -2408,9 +2414,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -2488,6 +2491,9 @@
       "Downloading": [
         "Preuzimanje"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Ovdje povucite i ispustite datoteku ili odaberite za učitavanje."
       ],
@@ -2505,6 +2511,17 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "Neuspješno"
@@ -2766,6 +2783,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Osvježavanje stranice ili ${ link } će automatski riješiti većinu problema."
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         ""
       ],
@@ -2831,6 +2851,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ovaj preglednik ne podržava pregled PDF dokumenata. Preuzmite datoteku."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
@@ -2906,6 +2929,9 @@
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         ""
       ],
@@ -2917,6 +2943,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Učitavanje stotina datoteka odjednom može utjecati na performanse."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -3141,10 +3170,16 @@
       "Category": [
         "Kategorija"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "Grad"
       ],
       "Code is 6 digits without spaces": [
+        ""
+      ],
+      "Comment": [
         ""
       ],
       "Contacts": [
@@ -3152,6 +3187,9 @@
       ],
       "Copy": [
         "Kopiraj"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Država"
@@ -3177,6 +3215,9 @@
         "Ne pitaj ponovno"
       ],
       "Download anyway": [
+        ""
+      ],
+      "Email": [
         ""
       ],
       "Email address": [
@@ -3233,6 +3274,9 @@
       "Hide password": [
         "Sakrij lozinku"
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         "Slika"
       ],
@@ -3263,6 +3307,9 @@
       "Mailbox password": [
         "Lozinka sandučića e-pošte"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         ""
       ],
@@ -3290,6 +3337,9 @@
       "Operating system version": [
         "Verzija operativnog sustava"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Lozinka"
       ],
@@ -3298,6 +3348,9 @@
       ],
       "Phone number": [
         "Broj telefona"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Poštanski sandučić"
@@ -3323,11 +3376,14 @@
       "Replace folder": [
         "Zamijeni mapu"
       ],
-      "Report abuse": [
-        "Prijavi zlouporabu"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Prikaži lozinku"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Postavi datum isteka"
@@ -3343,6 +3399,12 @@
       ],
       "Skip folder": [
         "Preskoči mapu"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "Adresa"
@@ -3829,6 +3891,9 @@
       ],
       "Enter a new folder name": [
         "Unesite novi naziv mape"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Filtrirajte grupe"
@@ -4535,6 +4600,9 @@
       ],
       "Warning": [
         "Upozorenje"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Što je novo"

@@ -2930,14 +2930,14 @@
       "At most 100 participants are allowed per invitation": [
         "Для одного запрошення дозволяється не більше 100 учасників"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Не можете згадати свій пароль? Ми можемо допомогти вам стерти зашифровані дані в усіх контактах, які були зашифровані цим ключем, а також в процесі відхилити попередження."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Перевірка контактів ${ progress } з ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо ця адреса е-пошти неправильна, натисніть \"Змінити\" для її виправлення."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
@@ -3247,6 +3247,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Ця подія була оновлена. Організатор не отримає сповіщення про те, що ви відхиляєте запрошення, оскільки ви не можете надсилати листи з адреси запрошення. Усе одно бажаєте видалити цю подію?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Це посилання веде на вебсайт, який, можливо, намагається викрасти ваші дані, як-от паролі та дані кредитної картки."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Це посилання може бути гомографічною атакою і його не можна відкрити в браузерах Internet Explorer чи Edge. Якщо ви впевнені, що це надійне посилання, відкрийте його в іншому браузері."
@@ -3570,6 +3573,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Яка ймовірність, що ви порадите ${ calendarAppName } другові або колезі?"
+      ],
+      "I understand the risk": [
+        "Я розумію ризик"
       ],
       "Import all messages": [
         "Імпортувати всі повідомлення"
@@ -5110,6 +5116,9 @@
       ],
       "Warning": [
         "Попередження"
+      ],
+      "Warning: suspected fake website": [
+        "Попередження: імовірно підроблений вебсайт"
       ],
       "What's new": [
         "Що нового"

@@ -487,6 +487,9 @@
       "Submit": [
         "Indsend"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Skift konto"
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Fravælg mindst ${ calendarToFixCount } kalender",
         "Fravælg mindst ${ calendarToFixCount } kalendere"
@@ -1867,6 +1867,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
+      ],
+      "Report failed to be sent": [
+        "Anmeldelse kunne ikke sendes"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Fordi ${ appName } er end-to-end krypteret, kan vi ikke få adgang til eller dekryptere dine filer for dig. For at låse dit drev op efter en nulstilling af adgangskode, skal du have en af følgende:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
+      ],
       "Canceled": [
         "Annulleret"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -2447,6 +2450,9 @@
       "Downloading": [
         "Downloader"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Downloader emner ${ esProgress } ud af ${ totalProgressToShow }"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Træk og slip en fil her eller vælg at uploade."
       ],
@@ -2464,6 +2470,16 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Anslået resterende tid: ${ estimatedMinutes } minut",
+        "Anslået resterende tid: ${ estimatedMinutes } minutter"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Anslået resterende tid: Mindre end et minut"
+      ],
+      "Estimating time remaining...": [
+        "Estimerer resterende tid..."
       ],
       "Failed": [
         "Mislykkedes"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Opfriskning af siden eller ${ link } vil automatisk løse de fleste problemer."
       ],
+      "Report has been sent": [
+        "Anmeldelse sendt"
+      ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
       ],
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Er du sikker på, at linket er legitimt, så benyt en anden browser til at åbne det."
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         "Ikke-understøttet fil"
       ],
+      "Updating drive search...": [
+        "Opdaterer drevsøgning..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
       ],
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Upload af hundredvis af filer på én gang kan have en effekt på ydeevnen."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Brug denne formular til at give os besked om upassende, ulovlige,\neller på anden måde skadelige delte filer. Du er ved at anmelde:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Vi kunne ikke verficere at ${ emailAddress } uploadede ${ fileName }."
@@ -3098,17 +3126,26 @@
       "Category": [
         "Kategori"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "By"
       ],
       "Code is 6 digits without spaces": [
         "Kode er på 6 cifre uden mellemrum"
       ],
+      "Comment": [
+        ""
+      ],
       "Contacts": [
         "Kontakter"
       ],
       "Copy": [
         "Kopiér"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Land"
@@ -3134,6 +3171,9 @@
       ],
       "Download anyway": [
         "Download alligevel"
+      ],
+      "Email": [
+        ""
       ],
       "Email address": [
         "E-mailadresse"
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Skjul adgangskode"
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         "Billede"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "Postkasseadgangskode"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         "Administrer mapper"
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Operativsystemversion"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Adgangskode"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Telefonnummer"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Postboks"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         "Erstat mappe"
       ],
-      "Report abuse": [
-        "Anmeld misbrug"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Afslør adgangskode"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Angiv en udløbsdato"
@@ -3299,6 +3354,12 @@
       ],
       "Skip folder": [
         "Spring mappe over"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "Adresse"
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Indtast et nyt mappenavn"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Filtrér grupper"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Advarsel"
+      ],
+      "Warning: suspected fake website": [
+        "Advarsel: mistanke om falsk websted"
       ],
       "What's new": [
         "Nyheder"

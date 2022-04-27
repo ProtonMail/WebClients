@@ -2836,14 +2836,14 @@
       "At most 100 participants are allowed per invitation": [
         "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Contactpersoon ${ progress } van ${ max } controleren..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -3149,6 +3149,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Deze afspraak is bijgewerkt. De organisator zal niet op de hoogte worden gebracht dat u de uitnodiging weigert omdat u geen e-mails van het uitgenodigde adres kunt verzenden. Wilt u deze afspraak toch verwijderen?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -3472,6 +3475,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Hoe waarschijnlijk is het dat u ${ calendarAppName } aan een vriend of collega zult aanbevelen?"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -4930,6 +4936,9 @@
       ],
       "Warning": [
         "Waarschuwing"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Wat is er nieuw"

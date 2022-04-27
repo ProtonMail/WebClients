@@ -526,6 +526,9 @@
       "Refer a friend": [
         "Recomandați pe cineva"
       ],
+      "Refresh browser": [
+        "Reîmprospătare pagină"
+      ],
       "Refresh status": [
         "Actualizare stare"
       ],
@@ -986,8 +989,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Adăugare invitații în calendar și marcare ca fiind în așteptare"
+      "Add to calendar and mark as pending": [
+        "Adăugare în calendar și marcare ca fiind în așteptare"
       ]
     },
     "Autoresponse": {
@@ -4275,6 +4278,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Este necesar abonamentul „Basic”,„Plus” sau „Visionary”"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Înainte de a putea primi mesaje pentru domeniul personal la ${ MAIL_APP_NAME }, trebuie să adăugați următoarele înregistrări MX în DNS. Această operație poate fi făcută de obicei în panoul de control disponibil unde ați înregistrat domeniul."
       ],
@@ -4325,9 +4331,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Alegeți aspectul și organizarea aplicației."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -4561,6 +4564,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generarea unei fraze de recuperare o va dezactiva pe cea veche."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Obțineți ultima versiune a ${ BRAND_NAME } și toate actualizările relevante prin reîmprospătarea paginii."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Partajați cheia publică prietenilor sau publicați-o online, astfel încât oricine să vă poată trimite mesaje criptate în ambele părți!"
       ],
@@ -4721,8 +4727,8 @@
       "it’s imperative": [
         "este imperativ"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Am folosit ${ appName } și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea cu această legătură oferă o lună gratuită pentru planul cu plată: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Am folosit ${ appName } și mi s-a părut practic și sigur. Este un serviciu de e-mail securizat care protejează confidențialitatea. Înscrierea cu această legătură oferă o lună gratuită: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Doar confirmați selecția aleasă, restul se va face automat."
@@ -5224,6 +5230,9 @@
       "This is the password you used before the password reset.": [
         "Aceasta este parola pe care ați utilizat-o înainte de resetarea parolei."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
@@ -5557,8 +5566,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Trebuie să aveți un card de credit sau cont bancar asociat la contul de PayPal. Dacă contul de PayPal nu are așa ceva, atunci faceţi clic pe butonul de mai jos."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Trebuie să eliminați toate calendarele personale suplimentare și toate legăturile din calendar partajate înainte de a putea anula abonamentul."
       ],
       "You need to have a personal calendar to create a link.": [
         "Trebuie să aveți un calendar personal pentru a crea o legătură."
@@ -6452,6 +6461,9 @@
       "Hide password": [
         "Ascundere parolă"
       ],
+      "I understand the risk": [
+        "Înțeleg riscul"
+      ],
       "IF": [
         "DACĂ"
       ],
@@ -6695,8 +6707,8 @@
       "Send auto-reply": [
         "Trimitere autorăspuns"
       ],
-      "Send invitations in": [
-        "Trimitere invitații în"
+      "Send in": [
+        "Trimitere în"
       ],
       "Show secondary time zone": [
         "Afișare fus orar secundar"
@@ -9252,6 +9264,9 @@
       "Referral tracker": [
         "Statistică recomandări"
       ],
+      "Refresh your browser": [
+        "Reîmprospătați-vă pagina"
+      ],
       "Remove calendar": [
         "Eliminare calendar"
       ],
@@ -9425,6 +9440,9 @@
       ],
       "Warning!": [
         "Avertizare!"
+      ],
+      "Warning: suspected fake website": [
+        "Avertisment: suspectare site fals"
       ],
       "What would you like to import?": [
         "Ce ați dori să importați?"
