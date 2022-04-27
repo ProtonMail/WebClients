@@ -26,6 +26,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLi
         // to simple boolean property.
         isFile: link.Type === LinkType.FILE,
         name: link.Name,
+        nameSignatureAddress: link.NameSignatureEmail,
         mimeType: link.MIMEType,
         size: link.Size,
         activeRevision: link.FileProperties?.ActiveRevision
