@@ -1,10 +1,13 @@
 import { useRef, useEffect, forwardRef, ReactNode, Ref } from 'react';
 import { c } from 'ttag';
-import { parseKeyFiles } from '@proton/shared/lib/keys';
 import { OpenPGPKey } from 'pmcrypto';
+
+import { ThemeColorUnion } from '@proton/colors';
+import { parseKeyFiles } from '@proton/shared/lib/keys';
+
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
-import { Color, Shape } from '../../../components/button';
+import { Shape } from '../../../components/button';
 
 interface Props {
     onUpload: (keys: OpenPGPKey[]) => void;
@@ -14,7 +17,7 @@ interface Props {
     children?: ReactNode;
     disabled?: boolean;
     shape?: Shape;
-    color?: Color;
+    color?: ThemeColorUnion;
 }
 
 const SelectKeyFiles = (
