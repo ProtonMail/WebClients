@@ -487,6 +487,9 @@
       "Submit": [
         "Invia"
       ],
+      "Submit report": [
+        "Invia segnalazione"
+      ],
       "Switch account": [
         "Cambia account"
       ],
@@ -1757,9 +1760,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La ricerca del contenuto non può essere abilitata in questo browser. Per favore esci dalla modalità in incognito o usa un altro browser."
       ],
-      "Could not find address ${ email }.": [
-        "Impossibile trovare l'indirizzo ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deseleziona almeno ${ calendarToFixCount } calendario",
         "Deseleziona almeno ${ calendarToFixCount } calendari"
@@ -1867,6 +1867,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Chiave dell'indirizzo principale non decriptata."
+      ],
+      "Report failed to be sent": [
+        "Impossibile inviare la segnalazione"
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -2346,6 +2349,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Poiché ${ appName } è crittografato end-to-end, non possiamo accedere\no decrittografa i tuoi file per te. Per sbloccare l'unità dopo la reimpostazione della password,\ndevi avere uno dei seguenti:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
+      ],
       "Canceled": [
         "Annullato"
       ],
@@ -2369,9 +2375,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Cancella i dati del browser relativi alla ricerca crittografata."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica su ${ strong }. Se questo indirizzo email non è corretto, clicca \"Modifica\" per correggerlo."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
@@ -2447,6 +2450,9 @@
       "Downloading": [
         "Scaricamento"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Scaricando l'elemento ${ esProgress } di ${ totalProgressToShow }"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Trascina e rilascia un file qui o scegli di caricarlo."
       ],
@@ -2465,6 +2471,16 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Tempo rimanente stimato: ${ estimatedMinutes } minuto",
+        "Tempo rimanente stimato: ${ estimatedMinutes } minuti"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Tempo rimanente stimato: Meno di un minuto"
+      ],
+      "Estimating time remaining...": [
+        "Stimando il tempo rimanente..."
+      ],
       "Failed": [
         "Errore"
       ],
@@ -2475,7 +2491,7 @@
         "Impossibile aprire un collegamento sicuro. Il motivo è: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Il file \"${ name }\" è stato eliminato durante il download"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Firma mancante nel file. Non è stato possibile verificare che ${ emailAddress } abbia caricato ${ fileName }."
@@ -2490,7 +2506,7 @@
         "Finalizzare"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "La cartella \"${ link.name }\" è stata eliminata durante il download"
       ],
       "Folder contents will merge into a single folder": [
         "Il contenuto della cartella si unirà in una singola cartella"
@@ -2724,6 +2740,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Aggiornando la pagina o ${ link } si risolveranno automaticamente la maggior parte dei problemi."
       ],
+      "Report has been sent": [
+        "La segnalazione è stata inviata"
+      ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
       ],
@@ -2789,6 +2808,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografo e non può essere aperto dai browser Internet Explorer ed Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
@@ -2863,6 +2885,9 @@
       "Unsupported file": [
         "File non supportato"
       ],
+      "Updating drive search...": [
+        "Aggiornamento della ricerca di unità in corso..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Esegui l'upgrade oggi per evitare di perdere i seguenti vantaggi di ${ appName } ${ planName }."
       ],
@@ -2874,6 +2899,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Caricare centinaia di file in una sola volta può avere un impatto sulle prestazioni."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Utilizza questo modulo per informarci di contenuti inappropriati, illegali,\no altri file condivisi dannosi. Stai per segnalare:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Non è stato possibile verificare che ${ emailAddress } abbia caricato ${ fileName }."
@@ -3098,17 +3126,26 @@
       "Category": [
         "Categoria"
       ],
+      "Child sexual abuse material": [
+        "Materiale pedopornografico"
+      ],
       "City": [
         "Città"
       ],
       "Code is 6 digits without spaces": [
         "Il codice è di 6 cifre senza spazi"
       ],
+      "Comment": [
+        "Commento"
+      ],
       "Contacts": [
         "Contatti"
       ],
       "Copy": [
         "Copia"
+      ],
+      "Copyright infringement": [
+        "Violazione del copyright"
       ],
       "Country": [
         "Paese"
@@ -3134,6 +3171,9 @@
       ],
       "Download anyway": [
         "Scarica comunque"
+      ],
+      "Email": [
+        "Email"
       ],
       "Email address": [
         "Indirizzo email"
@@ -3189,6 +3229,9 @@
       "Hide password": [
         "Nascondi la password"
       ],
+      "I understand the risk": [
+        "Comprendo i rischi"
+      ],
       "Image": [
         "Immagine"
       ],
@@ -3219,6 +3262,9 @@
       "Mailbox password": [
         "Password della casella email"
       ],
+      "Malware": [
+        "Malware"
+      ],
       "Manage folders": [
         "Gestisci cartelle"
       ],
@@ -3246,6 +3292,9 @@
       "Operating system version": [
         "Versione del sistema operativo"
       ],
+      "Other": [
+        "Altro"
+      ],
       "Password": [
         "Password"
       ],
@@ -3254,6 +3303,9 @@
       ],
       "Phone number": [
         "Numero di telefono"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "Si prega di fornire tutti i dettagli per aiutarci a prendere le misure appropriate"
       ],
       "Post office box": [
         "Casella postale"
@@ -3279,11 +3331,14 @@
       "Replace folder": [
         "Sostituisci cartella"
       ],
-      "Report abuse": [
+      "Report Abuse": [
         "Segnala abuso"
       ],
       "Reveal password": [
         "Rivela la password"
+      ],
+      "Select type of abuse": [
+        "Selezione tipo di abuso"
       ],
       "Set expiration date": [
         "Imposta data di scadenza"
@@ -3299,6 +3354,12 @@
       ],
       "Skip folder": [
         "Ignora cartella"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Stolen data": [
+        "Dati rubati"
       ],
       "Street address": [
         "Indirizzo"
@@ -3765,6 +3826,9 @@
       ],
       "Enter a new folder name": [
         "Inserisci un nuovo nome del file"
+      ],
+      "Enter your email address": [
+        "Inserisci il tuo indirizzo email"
       ],
       "Filter groups": [
         "Filtra gruppi"
@@ -4460,6 +4524,9 @@
       ],
       "Warning": [
         "Attenzione"
+      ],
+      "Warning: suspected fake website": [
+        "Attenzione: sospetto sito web falso"
       ],
       "What's new": [
         "Cosa c'è di nuovo"

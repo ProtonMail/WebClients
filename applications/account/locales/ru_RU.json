@@ -526,6 +526,9 @@
       "Refer a friend": [
         "Порекомендуйте другу"
       ],
+      "Refresh browser": [
+        "Обновить браузер"
+      ],
       "Refresh status": [
         "Обновить статус"
       ],
@@ -995,8 +998,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Добавляйте приглашения в календарь и отмечайте их как ожидающие рассмотрения"
+      "Add to calendar and mark as pending": [
+        "Добавить в календарь и отметить, как ожидающие рассмотрения"
       ]
     },
     "Autoresponse": {
@@ -4333,6 +4336,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедтесь, что ${ strong } - это корректный адрес."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Прежде чем вы сможете получать электронную почту для своих доменных адресов на ${ MAIL_APP_NAME }, вам необходимо добавить следующие записи MX в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
@@ -4383,9 +4389,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Выберите внешний вид приложения."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
@@ -4621,6 +4624,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерирование новой фразы восстановления приведет к деактивации старой."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Получите последнюю версию ${ BRAND_NAME } и все соответствующие обновления, обновив браузер."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Поделитесь своим публичным ключом с друзьями или опубликуйте его в Интернете, чтобы каждый мог отправлять вам письма со сквозным шифрованием!"
       ],
@@ -4783,8 +4789,8 @@
       "it’s imperative": [
         "это обязательно"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Я использую ${ appName } и подумал, что оно может вам понравиться. Это безопасная служба электронной почты, которая защищает вашу конфиденциальность. Зарегистрируйтесь по этой ссылке, чтобы получить 1 месяц бесплатно: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Я использую ${ appName } и подумал, что оно может вам понравиться. Это безопасная служба электронной почты, которая защищает вашу конфиденциальность. Зарегистрируйтесь по этой ссылке, чтобы получить платные функции на 1 месяц бесплатно: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -5287,6 +5293,9 @@
       "This is the password you used before the password reset.": [
         "Это пароль, который вы использовали до сброса пароля."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого, и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
       ],
@@ -5620,8 +5629,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Вы должны удалить все дополнительные личные календари и все общие ссылки календаря, прежде чем можно будет отменить подписку. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календаря, прежде чем вы сможете отменить подписку."
       ],
       "You need to have a personal calendar to create a link.": [
         "У вас должен быть календарь, чтобы создать ссылку."
@@ -6520,6 +6529,9 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "I understand the risk": [
+        "Я понимаю риск"
+      ],
       "IF": [
         "ЕСЛИ"
       ],
@@ -6763,8 +6775,8 @@
       "Send auto-reply": [
         "Отправить автоответ"
       ],
-      "Send invitations in": [
-        "Отправить приглашение через"
+      "Send in": [
+        "Отправить"
       ],
       "Show secondary time zone": [
         "Отображать дополнительный часовой пояс"
@@ -9333,6 +9345,9 @@
       "Referral tracker": [
         "Отслеживание рефералов"
       ],
+      "Refresh your browser": [
+        "Обновите ваш браузер"
+      ],
       "Remove calendar": [
         "Удалить календарь"
       ],
@@ -9506,6 +9521,9 @@
       ],
       "Warning!": [
         "Предупреждение!"
+      ],
+      "Warning: suspected fake website": [
+        "Предупреждение: предполагаемый поддельный сайт"
       ],
       "What would you like to import?": [
         "Что бы вы хотели импортировать?"

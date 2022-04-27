@@ -259,6 +259,9 @@
       "Refer a friend": [
         "Indicar um amigo"
       ],
+      "Refresh browser": [
+        "Atualizar navegador"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -2002,8 +2005,8 @@
         "O ${ vpnBasic }, ${ vpnPlus } ou ${ visionary } é necessário para conexão ao nível do país."
       ],
       "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "",
-        ""
+        "O ${ vpnPlus } inclui ${ maxVpn } conexão VPN.",
+        "O ${ vpnPlus } inclui ${ maxVpn } conexões VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "É necessário o plano ${ vpnPlus } ou ${ visionary } para usar o recurso Secure Core."
@@ -2136,7 +2139,7 @@
         "NÃO se esqueça da sua senha. Se você a esquecê-la, você não será capaz de iniciar a sessão ou descriptografar suas mensagens."
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "Não use as credenciais do OpenVPN / IKEv2 nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Domains": [
         "Domínios"
@@ -2175,7 +2178,7 @@
         "Expirado"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "expira em ${ expirationDate }"
       ],
       "For families and small teams; includes both Mail and VPN.": [
         "Para famílias e equipes pequenas; inclui o e-mail e a VPN."
@@ -2203,6 +2206,9 @@
       ],
       "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
         "Tenha acesso a todos os recursos pagos para ambos ${ VPN_APP_NAME } e ${ MAIL_APP_NAME } (o serviço de e-mail criptografado que milhões de pessoas usam para proteger seus dados) com um único plano."
+      ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        ""
       ],
       "here": [
         "aqui"
@@ -2301,10 +2307,10 @@
         "Carregamento de visualização"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
+        "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        ""
+        "Certifique-se de lembrar a senha para fazer login e descriptografar e-mails. ${ boldAlert } Nós recomendamos adicionar um ${ recoveryLink } primeiro."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Insira estas informações manualmente no seu dispositivo de autenticação de dois fatores para configurar a sua conta. ${ _switchButton }."
@@ -2448,7 +2454,7 @@
         "Armazenamento GB"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Suporte para 1 domínio de e-mail personalizado"
@@ -2472,7 +2478,7 @@
         "Estes arquivos de configuração permitem escolher qual servidor ${ VPN_APP_NAME } será conectado ao usar um aplicativo de VPN de terceiros ou ao configurar uma conexão de VPN em um roteador."
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
+        "Essas configurações são fornecidas para operar com roteadores WireGuard e clientes oficiais."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta conta foi suspensa devido a uma potencial violação da política."
@@ -2502,7 +2508,7 @@
         "Este assistente habilitará a autenticação de dois fatores (2FA) em sua conta Proton. A autenticação de dois fatores tornará sua conta Proton mais segura, portanto, recomendamos ativá-la."
       ],
       "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
-        ""
+        "Para continuar a usar o ${ appName } com recursos extras, escolha sua assinatura e opções de pagamento."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -2979,7 +2985,7 @@
         "Chave"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Nível de filtragem de bloqueio NetShield"
       ],
       "Login password": [
         "Senha do login"
@@ -3987,7 +3993,7 @@
         ""
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. Dê um nome à configuração a ser gerada"
       ],
       "1. Select platform": [
         "1. Selecione a plataforma"
@@ -4270,6 +4276,9 @@
       ],
       "Redeem your coupon and start protecting your online privacy": [
         "Resgate seu cupom e comece a proteger sua privacidade online"
+      ],
+      "Refresh your browser": [
+        "Atualizar seu navegador"
       ],
       "Report a problem": [
         "Relatar um problema"

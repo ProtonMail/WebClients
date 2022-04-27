@@ -526,6 +526,9 @@
       "Refer a friend": [
         "Parrainer un ami"
       ],
+      "Refresh browser": [
+        "Actualiser le navigateur"
+      ],
       "Refresh status": [
         "Actualiser le statut"
       ],
@@ -977,8 +980,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Ajouter les invitations au calendrier et marquer comme en attente"
+      "Add to calendar and mark as pending": [
+        "Ajouter au calendrier et marquer comme en attente"
       ]
     },
     "Autoresponse": {
@@ -4217,6 +4220,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Abonnement Basic, Plus ou Visionary requis"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Avant de pouvoir recevoir des e-mails sur les adresses de vos domaines personnels depuis ${ MAIL_APP_NAME }, vous devez ajouter les valeurs MX suivantes à votre DNS. Cet ajout peut généralement être fait depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
       ],
@@ -4267,9 +4273,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Choisissez l'apparence de l'application."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Cliquez sur « Demander un nouveau code » pour qu'un nouveau code de vérification soit envoyé à ${ strong }. Si cette adresse électronique est incorrecte, cliquez sur « Modifier » pour la corriger."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur « Demander un nouveau code » pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone est incorrect, cliquez sur « Modifier » pour le corriger."
@@ -4501,6 +4504,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "La génération d’une nouvelle phrase de récupération désactivera l’ancienne."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Obtenez la dernière version de ${ BRAND_NAME } et les mises à jour correspondantes en actualisant votre navigateur."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Donnez votre clé publique à vos amis, ou publiez-la en ligne, afin que chacun puisse vous envoyer un e-mail chiffré de bout en bout !"
       ],
@@ -4659,8 +4665,8 @@
       "it’s imperative": [
         "il est impératif"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "J'utilise ${ appName } et je pense que tu pourrais l'aimer. C'est une messagerie sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour obtenir 1 mois gratuit : ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "J'utilise ${ appName } et je pense que tu pourrais l'aimer. C'est une messagerie sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour obtenir 1 mois de fonctionnalités premium gratuitement : ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -5161,6 +5167,9 @@
       "This is the password you used before the password reset.": [
         "Il s'agit du mot de passe que vous avez utilisé avant la réinitialisation du mot de passe."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ce lien mène à un site Web qui pourrait essayer de voler vos informations, comme les mots de passe et les détails de carte de crédit."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ce lien pourrait être une attaque homographique et ne peut pas être ouvert avec les navigateurs Internet Explorer et Edge. Si vous êtes certain de la légitimité de ce lien, veuillez utiliser un autre navigateur pour l'ouvrir."
       ],
@@ -5494,8 +5503,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Vous devez avoir une carte de crédit ou un compte bancaire lié à votre compte PayPal. Si votre compte PayPal n'en dispose pas, veuillez cliquer sur le lien ci-dessous."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Vous devez supprimer tout calendrier personnel supplémentaire et tout lien de calendrier partagé avant de pouvoir annuler votre abonnement."
       ],
       "You need to have a personal calendar to create a link.": [
         "Vous devez avoir un calendrier personnel pour créer un lien."
@@ -6384,6 +6393,9 @@
       "Hide password": [
         "Masquer le mot de passe"
       ],
+      "I understand the risk": [
+        "Je comprends le risque"
+      ],
       "IF": [
         "SI"
       ],
@@ -6627,8 +6639,8 @@
       "Send auto-reply": [
         "Envoyer une réponse automatique"
       ],
-      "Send invitations in": [
-        "Envoyer les invitations en"
+      "Send in": [
+        "Envoyer dans"
       ],
       "Show secondary time zone": [
         "Afficher le fuseau horaire secondaire"
@@ -9171,6 +9183,9 @@
       "Referral tracker": [
         "Suivi des parrainages"
       ],
+      "Refresh your browser": [
+        "Actualisez votre navigateur"
+      ],
       "Remove calendar": [
         "Retirer un calendrier"
       ],
@@ -9344,6 +9359,9 @@
       ],
       "Warning!": [
         "Attention !"
+      ],
+      "Warning: suspected fake website": [
+        "Attention : site Web potentiellement faux"
       ],
       "What would you like to import?": [
         "Que voudriez-vous importer ?"

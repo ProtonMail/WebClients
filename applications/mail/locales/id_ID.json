@@ -387,7 +387,7 @@
         "Sembunyikan pesan"
       ],
       "I have a question": [
-        "Saya memiliki sebuah pertanyaan"
+        "Saya memiliki pertanyaan"
       ],
       "Images will be loaded without a proxy": [
         "Gambar akan dimuat tanpa proksi"
@@ -675,7 +675,7 @@
         "Balas secara aman"
       ],
       "Report a problem": [
-        "Laporkan sebuah masalah"
+        "Laporkan masalah"
       ],
       "Report phishing": [
         "Laporkan pengelabuan"
@@ -2741,7 +2741,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "${ error.message } untuk <${ email }>. Anda dapat menambahkan kunci baru atau menonaktifkan enkripsi kontak ini agar masalah ini selesai."
+        "${ error.message } untuk <${ email }>. Anda dapat menambahkan kunci baru atau menonaktifkan enkripsi pada kontak yang bersangkutan untuk menyelesaikan masalah ini."
       ],
       "A group with this name already exists": [
         "Grup dengan nama ini sudah ada"
@@ -2790,9 +2790,6 @@
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Pencarian konten tidak dapat dilangsungkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
-      ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Kesalahan dekripsi: dekripsi isi pesan terenkripsi gagal."
@@ -3461,7 +3458,7 @@
         "Impor kontak-kontak atau pesan-pesan Anda"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Pindahkan kontak-kontak dan email-email Anda dari layanan penyedia email lainnya secara mudah dan cepat dengan alat bantu impor Easy Switch kami."
+        "Pindahkan kontak dan email Anda dari layanan penyedia email lainnya secara mudah dan cepat dengan alat bantu impor Easy Switch kami."
       ],
       "Sign into the mobile app to complete the action": [
         "Harap masuk ke aplikasi mobile Anda untuk merampungkan tindakan ini"
@@ -3854,6 +3851,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigasi dan tindakan dasar tetap tersedia terlepas pintasan papan ketik aktif atau tidak di pengaturan."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+      ],
       "Body: ": [
         "Tubuh: "
       ],
@@ -3874,9 +3874,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Membersihkan data peramban yang terkait dengan pencarian konten pesan, termasuk pesan yang dimuat"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila alamat email ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
@@ -4059,7 +4056,7 @@
         "Dari"
       ],
       "Get more storage and premium features.": [
-        "Dapatkan kuota penyimpanan tambahan dan fitur-fitur premium lainnya."
+        "Dapatkan kuota penyimpanan tambahan dan berbagai fitur premium lainnya."
       ],
       "Group assignment applied": [
         "Penugasan grup diterapkan"
@@ -4308,10 +4305,10 @@
         "Silakan pilih jenis tautan yang hendak Anda sisipkan dan isi semua kolom di bawah ini."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Mohon tunggu, sementara kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
+        "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "Mohon tunggu saat kami sedang memeriksa kontak yang berisi data terenkripsi dengan kunci tidak aktif."
+        "Mohon tunggu selagi kami memeriksa kontak yang mengandung data yang terenkripsi dengan kunci yang sudah tidak lagi aktif."
       ],
       "Preview": [
         "Pratinjau"
@@ -4395,7 +4392,7 @@
         "Dikirim melalui layanan email aman <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
@@ -4504,6 +4501,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tautan ini mungkin serangan homograf dan tidak dapat dibuka dengan Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, mohon buka dengan peramban lain."
@@ -4907,7 +4907,7 @@
         "Ke Spam"
       ],
       "Go to Starred": [
-        "Ke Bintang"
+        "Ke Dibintangi"
       ],
       "Go to Trash": [
         "Ke Tempat Sampah"
@@ -5204,6 +5204,9 @@
       ],
       "Hide password": [
         "Sembunyikan kata sandi"
+      ],
+      "I understand the risk": [
+        "Saya paham akan resikonya"
       ],
       "IF": [
         "JIKA"
@@ -5616,7 +5619,7 @@
         "Spam"
       ],
       "Starred": [
-        "Bintang"
+        "Dibintangi"
       ],
       "Terms": [
         "Ketentuan"
@@ -5957,7 +5960,7 @@
         "Telusuri seluruh layanan yang Proton tawarkan"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
+        "Misi kami adalah membangun internet di mana kendali atas data dan privasi yang Anda miliki sepenuhnya berada di tangan Anda. Kami baru saja memutakhirkan Proton - selamat datang di internet yang aman."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -5969,13 +5972,13 @@
         "Ini adalah apa yang akan dilihat oleh orang lain pada saat Anda mengirim email, memberi undangan, atau berbagi berkas dengan mereka."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Gunakan menu aplikasi di atas kiri untuk akses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
+        "Gunakan menu aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
       ],
       "Welcome to Proton": [
         "Selamat datang di Proton"
       ],
       "You can change this anytime in your settings.": [
-        "Anda dapat mengubah ini kapanpun di pengaturan Anda."
+        "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
       ]
     },
     "Option": {
@@ -7159,6 +7162,9 @@
       ],
       "Warning": [
         "Peringatan"
+      ],
+      "Warning: suspected fake website": [
+        "Peringatan: situs web ini terindikasi palsu"
       ],
       "Welcome": [
         "Selamat datang"

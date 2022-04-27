@@ -2803,9 +2803,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
       ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Ontsleutelingsfout: decodering van de gecodeerde inhoud van dit bericht is mislukt."
       ],
@@ -3915,6 +3912,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Body: ": [
         "Tekst: "
       ],
@@ -3935,9 +3935,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Wist browsergegevens met betrekking tot het zoeken naar berichtinhoud, inclusief gedownloade berichten"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit e-mailadres onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -4576,6 +4573,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -5286,6 +5286,9 @@
       ],
       "Hide password": [
         "Wachtwoord verbergen"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "IF": [
         "ALS"
@@ -7291,6 +7294,9 @@
       ],
       "Warning": [
         "Waarschuwing"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "Welcome": [
         "Welkom"

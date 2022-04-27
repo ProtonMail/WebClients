@@ -2789,14 +2789,14 @@
       "At most 100 participants are allowed per invitation": [
         "每一邀請允許最多 100 個參與者"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "在要求一個新的驗證碼前，檢查你的垃圾郵件資料夾，然後檢查 ${ strong } 的地址是否正確。"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "記不起您的密碼嗎？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "正在檢查 ${ progress } 個 (共 ${ max } 個) 聯絡人..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電子郵件地址不正確，請按一下「編輯」作出修正。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
@@ -3100,6 +3100,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "此事件已更新。此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -3423,6 +3426,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
+      ],
+      "I understand the risk": [
+        "我了解風險"
       ],
       "Import all messages": [
         "匯入全部郵件"
@@ -4840,6 +4846,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Warning: suspected fake website": [
+        "警告：疑似假冒網站"
       ],
       "What's new": [
         "最近更新"

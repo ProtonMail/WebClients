@@ -461,7 +461,7 @@
         "In Sperrliste verschieben"
       ],
       "Need help?": [
-        "Benötigen Sie Hilfe?"
+        "Benötigst du Hilfe?"
       ],
       "Next": [
         "Weiter"
@@ -524,7 +524,10 @@
         "Daten wiederherstellen"
       ],
       "Refer a friend": [
-        "Einem Freund empfehlen"
+        "Einen Freund einladen"
+      ],
+      "Refresh browser": [
+        "Browser aktualisieren"
       ],
       "Refresh status": [
         "Status aktualisieren"
@@ -698,7 +701,7 @@
         "Abmelden von"
       ],
       "Signing in": [
-        "Anmelden"
+        "Anmeldung erfolgt"
       ],
       "Signing out": [
         "Abmelden"
@@ -977,8 +980,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Einladungen zum Kalender hinzufügen und als ausstehend markieren"
+      "Add to calendar and mark as pending": [
+        "Zum Kalender hinzufügen und als ausstehend markieren"
       ]
     },
     "Autoresponse": {
@@ -1260,8 +1263,8 @@
         "Sie haben die maximale Anzahl von persönlichen Kalendern erreicht, die Sie in Ihrem Paket erstellen können."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Sie haben die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonnierter Kalender erreicht.",
-        "Sie haben die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonnierten Kalendern erreicht."
+        "Du hast die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonnierten Kalender erreicht.",
+        "Du hast die maximale Anzahl von ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonnierten Kalendern erreicht."
       ]
     },
     "Calendar link purpose update success message": {
@@ -2545,7 +2548,7 @@
         "Max. Anzahl von Kalendern erreicht"
       ],
       "Can't check username, try again later": [
-        "Benutzername konnte nicht überprüft werden, bitte versuchen Sie es später erneut"
+        "Benutzername konnte nicht überprüft werden, bitte versuche es später erneut"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
         "Es können keine neuen Kalender für alle importierten Kalender erstellt werden, da die Anzahl der persönlichen Kalender begrenzt ist."
@@ -2810,7 +2813,7 @@
         "Der Organisationsschlüssel muss zuerst aktiviert werden."
       ],
       "The session has expired. Please sign in again.": [
-        "Die Sitzung ist abgelaufen. Bitte melden Sie sich erneut an."
+        "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "In Ihrem externen Konto gibt es zu viele Ordner. Bitte passen Sie den Import so an, dass einige Ordner gelöscht werden."
@@ -2852,7 +2855,7 @@
         "Es konnte keine Verbindung zu Ihrem Dienstanbieter aufgebaut werden."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Wiederherstellungsphrase ungültig. Versuchen Sie es erneut oder verwenden Sie eine andere Wiederherstellungsmethode."
+        "Wiederherstellungsphrase ungültig. Versuche es erneut oder verwende eine andere Wiederherstellungsmethode."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Ungültiger Bestätigungscode. Bitte stelle sicher, dass du den Bestätigungscode korrekt kopiert hast und versuche es erneut. Es kann bis zu 24 Stunden dauern, bis Änderungen wirksam werden."
@@ -3140,7 +3143,7 @@
         "Das Ereignis konnte nicht in Ihrem Kalender aktualisiert werden"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Ihre Antwort wurde gesendet, aber das Ereignis konnte Ihrem Kalender nicht hinzugefügt werden"
+        "Deine Antwort wurde gesendet, aber der Termin konnte nicht in deinen Kalender eingetragen werden"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "Deine Antwort wurde gesendet, aber der Termin konnte nicht in deinem Kalender aktualisiert werden"
@@ -4217,6 +4220,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Basic-, Plus‐ oder Visionary‐Abonnement benötigt"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Bevor du einen neuen Bestätigungscode anforderst, überprüfe deinen Spam-Ordner und stelle sicher, dass ${ strong } die richtige Adresse ist."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Bevor du E-Mails unter deinen eigenen Domain-Adressen in ${ MAIL_APP_NAME } erhalten kannst, musst du zuerst folgenden MX-Eintrag zu deiner DNS-Zone hinzufügen. Dies kann üblicherweise im Control-Panel deines Domain-Registrars vorgenommen werden."
       ],
@@ -4267,9 +4273,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Wähle das Erscheinungsbild der Anwendung."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche E-Mail-Adresse ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicken Sie auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese die falsche Rufnummer ist, klicken Sie auf „Bearbeiten”, um sie zu korrigieren."
@@ -4501,6 +4504,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "Wenn Sie eine neue Wiederherstellungsphrase erstellen, wird damit Ihre bisherige Phrase deaktiviert."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Hol dir die neueste Version von ${ BRAND_NAME } und alle relevanten Updates, indem du das Browserfenster aktualisierst."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Gib deinen öffentlichen Schlüssel an deine Freunde weiter oder veröffentliche ihn online, so dass dir jeder Ende-zu-Ende verschlüsselte E-Mails senden kann!"
       ],
@@ -4659,8 +4665,8 @@
       "it’s imperative": [
         "zwingend erforderlich"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Ich benutze ${ appName } und dachte, es könnte dir gefallen. Es ist ein sicherer E-Mail-Dienst, der deine Privatsphäre schützt. Registriere dich über diesen Link und erhalte 1 Monat kostenlos: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Ich benutze ${ appName } und dachte, es könnte dir gefallen. Es ist ein sicherer E-Mail-Dienst, der deine Privatsphäre schützt. Registriere dich über diesen Link und erhalte kostenlos für 1 Monat lang die Premium-Funktionen: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Bestätigen Sie einfach Ihre Auswahl und ProtonMail übernimmt den Rest."
@@ -5161,6 +5167,9 @@
       "This is the password you used before the password reset.": [
         "Es handelt sich dabei um das Passwort, das Sie vor dem Zurücksetzen des Passworts verwendet haben."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Dieser Link führt zu einer Website, die möglicherweise versucht, deine Informationen wie Passwörter und Kreditkartendaten zu stehlen."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dieser Link ist möglicherweise ein homographischer Angriff (Vortäuschung einer falschen Identität) und kann von den Browsern Internet Explorer und Edge nicht geöffnet werden. Wenn Sie sicher sind, dass der Link seriös ist, verwenden Sie einen anderen Browser, um ihn zu öffnen."
       ],
@@ -5243,7 +5252,7 @@
         "Um fortzufahren, wählen Sie eine Kontenwiederherstellungsmethode aus, damit wir die Anfrage überprüfen können."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        "Um deine Internetverbindung zu schützen, lade die App ${ VPN_APP_NAME } für dein Gerät herunter, installiere diese und verbinde dich mit einem ${ VPN_APP_NAME }-Server."
+        "Um deine Internetverbindung zu schützen, lade die ${ VPN_APP_NAME } App für dein Gerät herunter und verbinde dich mit einem ${ VPN_APP_NAME }-Server."
       ],
       "To use ${ toAppName }, please create an address.": [
         "Um ${ toAppName } zu verwenden, erstelle bitte eine E-Mail-Adresse."
@@ -5494,8 +5503,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Es muss eine Kreditkarte oder ein Bankkonto mit deinem PayPal-Konto verknüpft sein. Um dies nachzuholen, klicke bitte auf die nachfolgende Schaltfläche."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Sie müssen alle hinzugefügten persönlichen Kalender und alle Verknüpfungen zu freigegebenen Kalendern aufheben, bevor Sie Ihr Abonnement kündigen können. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Du musst jegliche zusätzliche persönliche Kalender und alle freigegebenen Kalender-Links löschen, bevor du dein Abonnement kündigen kannst."
       ],
       "You need to have a personal calendar to create a link.": [
         "Sie benötigen einen persönlichen Kalender, um eine Verknüpfung erstellen zu können."
@@ -6042,8 +6051,8 @@
         "${ UsedDomains }/${ MaxDomains } eigene Domains"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers }/${ MaxMembers } Nutzer",
-        "${ UsedMembers }/${ MaxMembers } Nutzern"
+        "${ UsedMembers }/${ MaxMembers } Benutzer",
+        "${ UsedMembers }/${ MaxMembers } Benutzern"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -6384,6 +6393,9 @@
       "Hide password": [
         "Passwort ausblenden"
       ],
+      "I understand the risk": [
+        "Ich bin mir des Risikos bewusst"
+      ],
       "IF": [
         "WENN"
       ],
@@ -6627,8 +6639,8 @@
       "Send auto-reply": [
         "Automatische Antwort senden"
       ],
-      "Send invitations in": [
-        "Sprache der Einladung"
+      "Send in": [
+        "Senden in"
       ],
       "Show secondary time zone": [
         "Zweite Zeitzone anzeigen"
@@ -6739,7 +6751,7 @@
         "Benutzername"
       ],
       "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "${ humanUsedSpace }/${ humanMaxSpace } wird verwendet"
+        "${ humanUsedSpace }/${ humanMaxSpace } werden verwendet"
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -6984,10 +6996,10 @@
         "Rechnung bezahlen"
       ],
       "Previous version": [
-        "Vorgängerversion"
+        "Vorherige Version"
       ],
       "Privacy policy": [
-        "Datenschutzrichtlinien"
+        "Datenschutzerklärung"
       ],
       "Request an invite": [
         "Einladung anfordern"
@@ -8271,12 +8283,12 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Erfahren Sie, wie Sie einen privaten Kalenderlink abrufen können."
+        "Erfahre, wie du einen privaten Kalenderlink abrufen kannst."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Wenn Sie diesen Link verwenden, wird der abonnierte Kalender durch Google öffentlich zugänglich"
+        "Wenn du diesen Link verwendest, wird der abonnierte Kalender durch Google öffentlich zugänglich"
       ],
       "This link might be wrong": [
         "Dieser Link könnte ungültig sein"
@@ -8284,7 +8296,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Fügt öffentliche, externe oder gemeinsame Kalender über eine URL hinzu."
+        "Füge öffentliche, externe oder gemeinsame Kalender über eine URL hinzu."
       ]
     },
     "Subtitle for trial plan": {
@@ -8670,7 +8682,7 @@
         "E-Mail-Adresse verfügbar"
       ],
       "Address verification": [
-        "Adressüberprüfung"
+        "Adressbestätigung"
       ],
       "Addresses": [
         "E-Mail-Adressen"
@@ -9171,6 +9183,9 @@
       "Referral tracker": [
         "Empfehlungs-Tracker"
       ],
+      "Refresh your browser": [
+        ""
+      ],
       "Remove calendar": [
         "Kalender entfernen"
       ],
@@ -9344,6 +9359,9 @@
       ],
       "Warning!": [
         "Warnhinweis!"
+      ],
+      "Warning: suspected fake website": [
+        "Warnung: Verdacht auf gefälschte Website"
       ],
       "What would you like to import?": [
         "Was möchtest du importieren?"
