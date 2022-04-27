@@ -2,18 +2,17 @@ import { ComponentType, Dispatch, ReactNode, SetStateAction, useRef } from 'reac
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { removeItem, uniqueBy } from '@proton/shared/lib/helpers/array';
-import { Button, Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
 
+import { Button, ButtonProps, Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';
 import DecryptFileKeyModal from '../shared/DecryptFileKeyModal';
-import { Color, Shape } from '../../../components/button';
 
 interface FileInputProps {
     multiple?: boolean;
     onUpload: (keys: OpenPGPKey[]) => void;
     disabled?: boolean;
-    shape?: Shape;
-    color?: Color;
+    shape?: ButtonProps['shape'];
+    color?: ButtonProps['color'];
     children: ReactNode;
 }
 

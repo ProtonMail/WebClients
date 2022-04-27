@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { Color } from '@proton/components';
+import { ThemeColorUnion } from '@proton/colors';
 import { Referral, ReferralState } from '@proton/shared/lib/interfaces';
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 const RewardCell = ({ referral, hasReachedRewardLimit }: Props) => {
     let reward: string | React.ReactNode = '-';
-    let textColor: Color | undefined;
+    let textColor: ThemeColorUnion | undefined;
 
     const monthsRewarded = referral.RewardMonths || 0;
 
