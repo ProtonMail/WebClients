@@ -29,8 +29,8 @@ const AppLogos = ({ className, size }: { className?: string; size: IconSize }) =
         <div className={className}>
             <MailLogo variant="glyph-only" size={size} className="mx0-5" />
             <CalendarLogo variant="glyph-only" size={size} className="mx0-5" />
-            <VpnLogo variant="glyph-only" size={size} className="mx0-5" />
             <DriveLogo variant="glyph-only" size={size} className="mx0-5" />
+            <VpnLogo variant="glyph-only" size={size} className="mx0-5" />
         </div>
     );
 };
