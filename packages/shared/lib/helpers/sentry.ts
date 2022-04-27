@@ -1,4 +1,5 @@
 import * as Sentry from '@sentry/browser';
+import { TransportOptions } from '@sentry/types';
 
 import { ProtonConfig } from '../interfaces';
 import { VPN_HOSTNAME } from '../constants';
@@ -6,6 +7,12 @@ import { VPN_HOSTNAME } from '../constants';
 const isLocalhost = (host: string) => host.startsWith('localhost');
 
 const isProduction = (host: string) => host.endsWith('.protonmail.com') || host === VPN_HOSTNAME;
+
+class Transport extends Sentry.Transports.FetchTransport {
+    constructor(options: TransportOptions) {
+        super(options, sentryFetch);
+    }
+}
 
 function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>) {
     const { host } = window.location;
@@ -24,6 +31,7 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
         release: isProduction(host) ? APP_VERSION : COMMIT,
         environment: host.split('.').splice(1).join('.'),
         normalizeDepth: 5,
+        transport: Transport,
         beforeSend(event, hint) {
             const error = hint?.originalException;
             const stack = typeof error === 'string' ? error : error?.stack;
