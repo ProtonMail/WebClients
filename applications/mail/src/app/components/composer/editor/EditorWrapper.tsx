@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, useCallback, memo } from 'react';
+import { useEffect, useState, useRef, useCallback, memo, SetStateAction, Dispatch } from 'react';
 import { c } from 'ttag';
 
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -41,6 +41,8 @@ interface Props {
     isOutside?: boolean;
     mailSettings?: MailSettings;
     editorMetadata: EditorMetadata;
+    fileHover?: boolean;
+    setFileHover?: Dispatch<SetStateAction<boolean>>;
 }
 
 const EditorWrapper = ({
@@ -54,6 +56,8 @@ const EditorWrapper = ({
     onFocus,
     mailSettings,
     editorMetadata,
+    fileHover,
+    setFileHover,
 }: Props) => {
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
@@ -282,6 +286,8 @@ const EditorWrapper = ({
             mailSettings={mailSettings}
             onAddAttachments={onAddAttachments}
             isPlainText={isPlainText}
+            fileHover={fileHover}
+            setFileHover={setFileHover}
         />
     ) : null;
 };
