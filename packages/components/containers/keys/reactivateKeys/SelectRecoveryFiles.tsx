@@ -8,7 +8,7 @@ import { OpenPGPKey } from 'pmcrypto';
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 import FileInput from '../../../components/input/FileInput';
 import useCombinedRefs from '../../../hooks/useCombinedRefs';
-import { Color, Shape } from '../../../components/button';
+import { ButtonProps } from '../../../components';
 import { useNotifications } from '../../../hooks';
 
 const RECOVERY_FILE_EXPR = /-----BEGIN PGP MESSAGE-----(?:(?!-----)[\s\S])*-----END PGP MESSAGE-----/g;
@@ -24,8 +24,8 @@ export interface Props {
     className?: string;
     children?: ReactNode;
     disabled?: boolean;
-    shape?: Shape;
-    color?: Color;
+    shape?: ButtonProps['shape'];
+    color?: ButtonProps['color'];
 }
 
 const SelectRecoveryFiles = (
