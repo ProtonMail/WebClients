@@ -8,7 +8,6 @@ export * from './banner';
 export * from './breadcrumb';
 export * from './button';
 export * from './calendarEventDateHeader';
-export * from './card';
 export * from './collapsible';
 export * from './collapsingBreadcrumbs';
 export * from './color';

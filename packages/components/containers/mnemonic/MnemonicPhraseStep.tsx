@@ -1,7 +1,10 @@
 import { c } from 'ttag';
+
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
+import { Card } from '@proton/atoms';
+
 import { useNotifications } from '../../hooks';
-import { Button, Card, Copy, Icon, Loader } from '../../components';
+import { Button, Copy, Icon, Loader } from '../../components';
 
 export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: string; loading?: boolean }) => {
     const { createNotification } = useNotifications();
@@ -28,7 +31,7 @@ export const MnemonicPhraseStepContent = ({ mnemonic, loading }: { mnemonic?: st
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
                     <Card
                         className="mt0-5 flex flex-justify-space-between flex-align-items-center flex-nowrap"
-                        border={false}
+                        bordered={false}
                         rounded
                     >
                         <span className="mr0-5" data-testid="account:recovery:generatedRecoveryPhrase">
