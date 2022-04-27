@@ -58,13 +58,21 @@ class Transport extends Sentry.Transports.FetchTransport {
     }
 }
 
-function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>) {
+interface Arguments {
+    sessionTracking?: boolean;
+    config: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>;
+    uid?: string;
+}
+
+function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTracking = false }: Arguments) {
     const { host } = window.location;
 
     // No need to configure it if we don't load the DSN
     if (!SENTRY_DSN || isLocalhost(host)) {
         return;
     }
+
+    setUID(uid);
 
     // Assumes SENTRY_DSN is: https://111b3eeaaec34cae8e812df705690a36@sentry/11
     // To get https://111b3eeaaec34cae8e812df705690a36@protonmail.com/api/core/v4/reports/sentry/11
@@ -76,6 +84,7 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
         environment: host.split('.').splice(1).join('.'),
         normalizeDepth: 5,
         transport: Transport,
+        autoSessionTracking: sessionTracking,
         beforeSend(event, hint) {
             const error = hint?.originalException;
             const stack = typeof error === 'string' ? error : error?.stack;
