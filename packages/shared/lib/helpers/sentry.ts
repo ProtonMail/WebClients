@@ -3,11 +3,24 @@ import { TransportOptions } from '@sentry/types';
 
 import { ProtonConfig } from '../interfaces';
 import { VPN_HOSTNAME } from '../constants';
+import { getUIDHeaders } from '../fetch/headers';
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
 
 const isProduction = (host: string) =>
     host.endsWith('.protonmail.com') || host.endsWith('.proton.me') || host === VPN_HOSTNAME;
+
+let authHeaders: { [key: string]: string } = {};
+
+export const setUID = (uid: string | undefined) => {
+    if (!uid) {
+        authHeaders = {};
+        return;
+    }
+    authHeaders = {
+        ...getUIDHeaders(uid),
+    };
+};
 
 const getContentTypeHeaders = (input: RequestInfo): HeadersInit => {
     const url = input.toString();
@@ -34,6 +47,7 @@ const sentryFetch = (input: RequestInfo, init?: RequestInit) => {
         headers: {
             ...init?.headers,
             ...getContentTypeHeaders(input),
+            ...authHeaders,
         },
     });
 };
