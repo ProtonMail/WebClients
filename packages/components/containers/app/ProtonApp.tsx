@@ -22,6 +22,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import * as sentry from '@proton/shared/lib/helpers/sentry';
 
 import { Icons } from '../../components';
 import Signout from './Signout';
@@ -134,6 +135,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             persistent,
             path,
         }: OnLoginCallbackArguments) => {
+            sentry.setUID(newUID);
             authentication.setUID(newUID);
             authentication.setPassword(keyPassword);
             authentication.setPersistent(persistent);
@@ -182,6 +184,7 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
     );
 
     const handleFinalizeLogout = useCallback(() => {
+        sentry.setUID(undefined);
         authentication.setUID(undefined);
         authentication.setPassword(undefined);
         authentication.setPersistent(undefined);
