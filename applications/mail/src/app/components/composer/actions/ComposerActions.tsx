@@ -22,17 +22,15 @@ import {
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { formatSimpleDate } from '../../helpers/date';
-import AttachmentsButton from '../attachment/AttachmentsButton';
-import SendActions from './SendActions';
-import { getAttachmentCounts } from '../../helpers/message/messages';
-import EditorToolbarExtension from './editor/EditorToolbarExtension';
-import { MessageChange, MessageChangeFlag } from './Composer';
-import ComposerMoreOptionsDropdown from './editor/ComposerMoreOptionsDropdown';
-import { MessageState } from '../../logic/messages/messagesTypes';
-import { ExternalEditorActions } from './editor/EditorWrapper';
 import ComposerPasswordActions from './ComposerPasswordActions';
 import ComposerMoreActions from './ComposerMoreActions';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange, MessageChangeFlag } from '../Composer';
+import { ExternalEditorActions } from '../editor/EditorWrapper';
+import { getAttachmentCounts } from '../../../helpers/message/messages';
+import { formatSimpleDate } from '../../../helpers/date';
+import SendActions from '../SendActions';
+import AttachmentsButton from '../../attachment/AttachmentsButton';
 
 interface Props {
     className?: string;
@@ -239,6 +237,8 @@ const ComposerActions = ({
                             onExpiration={onExpiration}
                             onChangeFlag={onChangeFlag}
                             lock={lock}
+                            editorActionsRef={editorActionsRef}
+                            editorMetadata={editorMetadata}
                             onChange={onChange}
                         />
                     </div>

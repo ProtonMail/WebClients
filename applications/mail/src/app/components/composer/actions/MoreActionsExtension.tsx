@@ -20,7 +20,7 @@ import { c } from 'ttag';
 import { MessageChange, MessageChangeFlag } from '../Composer';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { exportPlainText, plainTextToHTML, setDocumentContent } from '../../../helpers/message/messageContent';
-import { ExternalEditorActions } from './EditorWrapper';
+import { ExternalEditorActions } from '../editor/EditorWrapper';
 
 const { FLAG_PUBLIC_KEY, FLAG_RECEIPT_REQUEST } = MESSAGE_FLAGS;
 
