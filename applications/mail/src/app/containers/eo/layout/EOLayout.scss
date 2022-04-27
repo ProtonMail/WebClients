@@ -4,15 +4,57 @@
 @import '~@proton/styles/scss/config';
 
 .eo-layout {
-	// nice mountains image
+	// nice mountains image has left :'-(
 	&-bg {
-		background: url(./bg-mountains.svg) 0 0 no-repeat;
-		background-size: cover;
-		background-position: bottom;
+		background-color: var(--background-norm);
 
-		@include respond-to($breakpoint-small, 'max') {
-			background: linear-gradient(180deg, #263163 2.81%, #263163 43.71%, #151b38 89.91%);
-			background-position: top;
+		@include respond-to($breakpoint-tiny, 'min') {
+			background: top center / cover no-repeat #f7f5ff;
+		}
+
+		@media (orientation: landscape)
+				and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-landscape.jpg);
+		}
+
+		@media (orientation: portrait)
+				and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-portrait.jpg);
+		}
+
+		@media (orientation: landscape)
+				and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-landscape.jpg);
+		}
+
+		@media (orientation: portrait)
+				and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-portrait.jpg);
+		}
+
+		@media (orientation: landscape)
+				and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-landscape.jpg);
+		}
+
+		@media (orientation: portrait)
+				and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-portrait.jpg);
+		}
+
+		@media (min-width: #{em($breakpoint-medium-landscape + 1, $root-default-font-size)})
+				and (max-width: #{em($breakpoint-large, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1500.jpg);
+		}
+
+		@media (min-width: #{em($breakpoint-large + 1, $root-default-font-size)}) {
+			background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-2000.jpg);
 		}
 	}
 
@@ -20,6 +62,11 @@
 	transition: max-inline-size 0.15s easing(easeIn);
 	//min-block-size: 30em;// was here to limitate shifts
 	border-radius: var(--border-radius-lg);
+
+	h1,
+	.h1 {
+		font-family: 'Arizona Flare', var(--font-family);
+	}
 
 	// fix for plans, same as in subscription flow
 	&:not([class*='mw']) {
@@ -31,18 +78,38 @@
 		padding-block: 0.5em 0;
 	}
 	&-title {
-		font-size: em(16);
+		font-size: 2em;
+		font-weight: normal;
 	}
 	&-main-content {
 		padding-inline: em(48);
-		padding-block: em(24) em(48);
+		padding-block: em(24);
 		@include respond-to($breakpoint-small) {
 			padding-inline: em(20);
+		}
+		@include respond-to($breakpoint-tiny) {
+			padding-inline: 2px;
+			padding-block: 0;
 		}
 	}
 
 	&-container-challenge {
 		min-block-size: rem(100);
+	}
+
+	.message-attachments {
+		margin-inline: 2em;
+		@include respond-to($breakpoint-tiny) {
+			margin-inline: 0;
+		}
+	}
+	@include respond-to($breakpoint-tiny) {
+		.message-attachmentList-item-container {
+			max-inline-size: 100%;
+		}
+		.composer-attachment-list-wrapper {
+			flex-wrap: nowrap;
+		}
 	}
 }
 

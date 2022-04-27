@@ -73,7 +73,7 @@ const EOReplyFooter = ({ id, onAddAttachments, message, publicKeys, outsideKey, 
     );
 
     return (
-        <div className="flex flex-justify-space-between border-top p1">
+        <div className="flex flex-justify-space-between border-top px2 py1 on-tiny-mobile-pl0 on-tiny-mobile-pr0">
             <Button size="large" color="weak" type="button" onClick={handleCancel}>
                 {c('Action').t`Cancel`}
             </Button>
