@@ -15,7 +15,7 @@ const StrippedItem = ({ icon, children, tooltip }: StrippedItemProps) => {
                 <div className="mr1 color-success">
                     <Icon size={24} name={icon} />
                 </div>
-                <div className="flex-item-fluid">
+                <div className="flex-item-fluid pt0-25">
                     {children}
                     {tooltip ? <Info className="ml0-5" title={tooltip} /> : null}
                 </div>
