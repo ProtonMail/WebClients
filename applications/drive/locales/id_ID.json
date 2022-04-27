@@ -264,7 +264,7 @@
         "Sembunyikan label"
       ],
       "I have a question": [
-        "Saya memiliki sebuah pertanyaan"
+        "Saya memiliki pertanyaan"
       ],
       "import": [
         "impor"
@@ -484,6 +484,9 @@
       ],
       "Submit": [
         "Kirim"
+      ],
+      "Submit report": [
+        "Kirim laporan"
       ],
       "Switch account": [
         "Ganti akun"
@@ -1754,9 +1757,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Pencarian konten tidak dapat diaktifkan pada browser ini. Mohon keluar dari mode private browsing atau gunakan browser lain."
       ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Hapus setidaknya ${ calendarToFixCount } kalender dari pilihan"
       ],
@@ -1858,6 +1858,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Kunci alamat utama tidak didekripsi."
+      ],
+      "Report failed to be sent": [
+        "Laporan gagal dikirm"
       ],
       "Request timed out": [
         "Waktu permintaan habis"
@@ -2307,6 +2310,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Karena ${ appName } terenkripsi secara end-to-end, kami tidak dapat mengakses atau mendekripsi data-data Anda. Untuk dapat kembali masuk ke dalam drive milik Anda yang kata sandinya telah diatur ulang, Anda harus memiliki setidaknya salah satu hal berikut:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+      ],
       "Canceled": [
         "Dibatalkan"
       ],
@@ -2330,9 +2336,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Menghapus data browser yang berhubungan dengan pencarian terenkripsi."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirimkan ke ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaikinya."
@@ -2406,6 +2409,9 @@
       "Downloading": [
         "Sedang mengunduh"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Mengunduh item ke-${ esProgress } dari ${ totalProgressToShow }"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Seret berkas ke sini atau pilih berkas yang ingin diunggah."
       ],
@@ -2423,6 +2429,15 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Masukkan kode verifikasi yang dikirim ke ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Perkiraan waktu yang tersisa: ${ estimatedMinutes } menit"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Perkiraan waktu yang tersisa: Kurang dari satu menit"
+      ],
+      "Estimating time remaining...": [
+        "Memperkirakan waktu yang tersisa..."
       ],
       "Failed": [
         "Gagal"
@@ -2650,7 +2665,7 @@
         "Harap pilih folder-folder yang hendak Anda impor:"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "Mohon tunggu, sementara kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
+        "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
         "Mohon tunggu selagi kami memeriksa kontak-kontak yang mengandung data-data yang terenkripsi dengan kunci yang sudah tidak lagi aktif."
@@ -2682,6 +2697,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Memuat ulang halaman atau ${ link } akan mengatasi sebagian masalah secara otomatis."
       ],
+      "Report has been sent": [
+        "Laporan telah dikirim"
+      ],
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan pada browser ini"
       ],
@@ -2695,7 +2713,7 @@
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
@@ -2747,6 +2765,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Peramban web ini tidak mendukung untuk melakukan pratinjau dokumen PDF. Silahkan unduh berkas tersebut."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tautan ini mungkin adalah sebuah serangan homograf dan tidak dapat dibuka oleh Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, silahkan gunakan peramban lain untuk membukanya."
@@ -2820,6 +2841,9 @@
       "Unsupported file": [
         "File tidak didukung"
       ],
+      "Updating drive search...": [
+        "Memperbarui pencarian drive..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
       ],
@@ -2831,6 +2855,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Mengunggah ratusan berkas sekaligus dapat berdampak pada kinerja."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Gunakan formulir berikut untuk melaporkan berkas yang berisikan hal-hal yang\ntidak pantas, ilegal, ataupun berbahaya kepada kami. Anda akan melaporkan:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Kami tidak dapat memverifikasi bahwa ${ fileName } diunggah oleh ${ emailAddress }."
@@ -3055,17 +3082,26 @@
       "Category": [
         "Kategori"
       ],
+      "Child sexual abuse material": [
+        "Konten tidak senonoh terhadap anak di bawah umur"
+      ],
       "City": [
         "Kota"
       ],
       "Code is 6 digits without spaces": [
         "Kode tersusun atas 6 digit angka tanpa spasi"
       ],
+      "Comment": [
+        "Komentar"
+      ],
       "Contacts": [
         "Kontak"
       ],
       "Copy": [
         "Salin"
+      ],
+      "Copyright infringement": [
+        "Pelanggaran hak cipta"
       ],
       "Country": [
         "Negara"
@@ -3090,6 +3126,9 @@
       ],
       "Download anyway": [
         "Tetap unduh"
+      ],
+      "Email": [
+        "Email"
       ],
       "Email address": [
         "Alamat surel"
@@ -3145,6 +3184,9 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
+      "I understand the risk": [
+        "Saya paham akan resikonya"
+      ],
       "Image": [
         "Gambar"
       ],
@@ -3175,6 +3217,9 @@
       "Mailbox password": [
         "Kata sandi kotak pesan"
       ],
+      "Malware": [
+        "Malware"
+      ],
       "Manage folders": [
         "Kelola folder"
       ],
@@ -3202,6 +3247,9 @@
       "Operating system version": [
         "Versi sistem operasi"
       ],
+      "Other": [
+        "Lainnya"
+      ],
       "Password": [
         "Kata sandi"
       ],
@@ -3210,6 +3258,9 @@
       ],
       "Phone number": [
         "Nomor telepon"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "Harap sertakan rincian yang selengkap-lengkapnya agar kami dapat mengambil tindakan yang sesuai"
       ],
       "Post office box": [
         "Kotak pos"
@@ -3235,11 +3286,14 @@
       "Replace folder": [
         "Ganti folder"
       ],
-      "Report abuse": [
-        "Laporkan penyalahgunaan"
+      "Report Abuse": [
+        "Laporkan Penyalahgunaan"
       ],
       "Reveal password": [
         "Tampilkan kata sandi"
+      ],
+      "Select type of abuse": [
+        "Pilih bentuk penyalahgunaan yang terkait"
       ],
       "Set expiration date": [
         "Atur tanggal kedaluwarsa"
@@ -3255,6 +3309,12 @@
       ],
       "Skip folder": [
         "Lewati folder"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Stolen data": [
+        "Data yang dicuri"
       ],
       "Street address": [
         "Alamat rumah"
@@ -3625,7 +3685,7 @@
         "Telusuri seluruh layanan yang Proton tawarkan"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
+        "Misi kami adalah membangun internet di mana kendali atas data dan privasi yang Anda miliki sepenuhnya berada di tangan Anda. Kami baru saja memutakhirkan Proton - selamat datang di internet yang aman."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -3637,13 +3697,13 @@
         "Ini adalah apa yang orang akan lihat ketika Anda mengirim surel, mengundang ke acara, atau berbagi berkas."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Gunakan menu aplikasi di atas kiri untuk akses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
+        "Gunakan menu aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
       ],
       "Welcome to Proton": [
         "Selamat datang di Proton"
       ],
       "You can change this anytime in your settings.": [
-        "Anda dapat mengubah ini kapanpun di pengaturan Anda."
+        "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
       ]
     },
     "Onboarding Title": {
@@ -3701,6 +3761,9 @@
       ],
       "Enter a new folder name": [
         "Masukkan nama folder baru"
+      ],
+      "Enter your email address": [
+        "Masukkan alamat email Anda"
       ],
       "Filter groups": [
         "Filter grup"
@@ -4385,6 +4448,9 @@
       ],
       "Warning": [
         "Peringatan"
+      ],
+      "Warning: suspected fake website": [
+        "Peringatan: situs web ini terindikasi palsu"
       ],
       "What's new": [
         "Apa yang baru"

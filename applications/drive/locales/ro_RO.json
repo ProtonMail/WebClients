@@ -489,6 +489,9 @@
       "Submit": [
         "Trimite"
       ],
+      "Submit report": [
+        "Trimitere raport"
+      ],
       "Switch account": [
         "Comutare cont"
       ],
@@ -1760,9 +1763,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Căutarea în conținutul mesajelor nu poate fi activată în acest navigator. Închideți modul de navigare privat sau folosiți alt navigator."
       ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Deselectați cel puțin un calendar.",
         "Deselectați cel puțin ${ calendarToFixCount } calendare.",
@@ -1876,6 +1876,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Cheia primară a adresei nu este decriptată."
+      ],
+      "Report failed to be sent": [
+        "Raportul nu a putut fi trimis."
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -2385,6 +2388,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Deoarece ${ appName } este criptat de la un capăt la altul, nu putem accesa\nsau decripta fișierele pentru dvs. Pentru a vă debloca unitatea după o resetare a parolei,\ntrebuie să aveți una dintre următoarele:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+      ],
       "Canceled": [
         "Anulat"
       ],
@@ -2408,9 +2414,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Se șterg datele din navigator legate de căutarea criptată."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -2488,6 +2491,9 @@
       "Downloading": [
         "Se descarcă"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Se descarcă ${ esProgress } mesaje din ${ totalProgressToShow }"
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Trageți și plasați un fișier aici sau încărcați-l."
       ],
@@ -2505,6 +2511,17 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Timp estimat rămas: un minut",
+        "Timp estimat rămas: ${ estimatedMinutes } minute",
+        "Timp estimat rămas: ${ estimatedMinutes } de minute"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "Timp estimat rămas: mai puțin de un minut"
+      ],
+      "Estimating time remaining...": [
+        "Se estimează timpul rămas..."
       ],
       "Failed": [
         "Eșuat"
@@ -2766,6 +2783,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Reîmprospătați pagina sau ${ link } pentru a rezolva majoritatea problemelor."
       ],
+      "Report has been sent": [
+        "Raportul a fost trimis."
+      ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
       ],
@@ -2831,6 +2851,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
@@ -2906,6 +2929,9 @@
       "Unsupported file": [
         "Fişier nesuportat"
       ],
+      "Updating drive search...": [
+        "Actualizare căutare în unitate..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ appName } ${ planName }."
       ],
@@ -2917,6 +2943,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Încărcarea simultană a sute de fișiere poate avea un impact asupra performanței."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        "Folosiți acest formular pentru a ne anunța despre fișierele partajate nepotrivite, ilegale sau în vreun fel malițioase. Urmează să raportați:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nu am putut verifica dacă ${ emailAddress } a încărcat ${ fileName }."
@@ -3141,17 +3170,26 @@
       "Category": [
         "Categoria"
       ],
+      "Child sexual abuse material": [
+        "Material de abuz sexual asupra copiilor"
+      ],
       "City": [
         "Oraş"
       ],
       "Code is 6 digits without spaces": [
         "Codul este format din 6 cifre fără spații"
       ],
+      "Comment": [
+        "Comentariu"
+      ],
       "Contacts": [
         "Contacte"
       ],
       "Copy": [
         "Copiere"
+      ],
+      "Copyright infringement": [
+        "Încălcare drepturi de autor"
       ],
       "Country": [
         "Țara"
@@ -3178,6 +3216,9 @@
       ],
       "Download anyway": [
         "Descărcare așa"
+      ],
+      "Email": [
+        "E-mail"
       ],
       "Email address": [
         "Adresă e-mail"
@@ -3233,6 +3274,9 @@
       "Hide password": [
         "Ascundere parolă"
       ],
+      "I understand the risk": [
+        "Înțeleg riscul"
+      ],
       "Image": [
         "Imagine"
       ],
@@ -3263,6 +3307,9 @@
       "Mailbox password": [
         "Parolă mesaje"
       ],
+      "Malware": [
+        "Malware"
+      ],
       "Manage folders": [
         "Gestionare foldere"
       ],
@@ -3290,6 +3337,9 @@
       "Operating system version": [
         "Versiune sistem de operare"
       ],
+      "Other": [
+        "Alt motiv"
+      ],
       "Password": [
         "Parola"
       ],
@@ -3298,6 +3348,9 @@
       ],
       "Phone number": [
         "Număr de telefon"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        "Furnizați-ne mai multe detalii pentru a ne ajuta să luăm măsurile potrivite."
       ],
       "Post office box": [
         "Cutie poștală"
@@ -3323,11 +3376,14 @@
       "Replace folder": [
         "Înlocuire folder"
       ],
-      "Report abuse": [
+      "Report Abuse": [
         "Raportare abuz"
       ],
       "Reveal password": [
         "Afișare parolă"
+      ],
+      "Select type of abuse": [
+        "Selectați tipul de abuz"
       ],
       "Set expiration date": [
         "Setare dată de expirare"
@@ -3343,6 +3399,12 @@
       ],
       "Skip folder": [
         "Omitere folder"
+      ],
+      "Spam": [
+        "Spam"
+      ],
+      "Stolen data": [
+        "Date furate"
       ],
       "Street address": [
         "Strada"
@@ -3829,6 +3891,9 @@
       ],
       "Enter a new folder name": [
         "Introducere nume folder nou"
+      ],
+      "Enter your email address": [
+        "Introduceți adresa de e-mail"
       ],
       "Filter groups": [
         "Filtrare grupuri"
@@ -4535,6 +4600,9 @@
       ],
       "Warning": [
         "Avertizare"
+      ],
+      "Warning: suspected fake website": [
+        "Avertisment: suspectare site fals"
       ],
       "What's new": [
         "Ce este nou"

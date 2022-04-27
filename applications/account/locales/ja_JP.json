@@ -23,10 +23,10 @@
         "${ address } は利用可能です。"
       ],
       "${ boldSave } by switching to annual billing": [
-        "1年プランに変更すると、${ boldSave } の割引が適用されます"
+        "1 年プランに変更すると、${ boldSave } の割引が適用されます"
       ],
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } の紹介"
+        "${ BRAND_NAME } のご紹介"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } ショップ"
@@ -68,7 +68,7 @@
         "クレジット・デビットカードを追加"
       ],
       "Add credits": [
-        "クレジットの追加"
+        "クレジットを追加"
       ],
       "Add domain": [
         "ドメインを追加"
@@ -113,7 +113,7 @@
         "適用"
       ],
       "Attach screenshot(s)": [
-        "スクリーンショットの添付"
+        "スクリーンショットを添付"
       ],
       "Authenticate": [
         "認証"
@@ -296,7 +296,7 @@
         "アカウントをダウングレード"
       ],
       "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        "${ BRAND_NAME }${ downgradedPlanName } へダウングレード"
+        "${ BRAND_NAME } ${ downgradedPlanName } へダウングレード"
       ],
       "Download": [
         "ダウンロード"
@@ -305,7 +305,7 @@
         "すべての設定ファイルをダウンロード"
       ],
       "Download recovery file": [
-        "ファイルをダウンロード"
+        "回復ファイルをダウンロード"
       ],
       "Download the Import-Export app": [
         "Import-Export アプリをダウンロード"
@@ -350,13 +350,13 @@
         "削除の前に鍵をエクスポート"
       ],
       "Extend": [
-        ""
+        "延長"
       ],
       "Font": [
         "フォント"
       ],
       "Generate key": [
-        "キーを生成"
+        "鍵を生成"
       ],
       "Generate new recovery phrase": [
         "新しい回復フレーズを生成"
@@ -368,7 +368,7 @@
         "${ vpnPlus } を入手"
       ],
       "Get started": [
-        "はじめましょう"
+        "利用開始"
       ],
       "Get verification code": [
         "認証コードを取得"
@@ -404,7 +404,7 @@
         "メールをインポート"
       ],
       "Import from .ics": [
-        ".jcs からインポート"
+        ".ics からインポート"
       ],
       "Import key": [
         "鍵をインポート"
@@ -428,7 +428,7 @@
         "保持"
       ],
       "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        "${ BRAND_NAME }${ currentPlanName } を継続"
+        "${ BRAND_NAME } ${ currentPlanName } アカウントを継続"
       ],
       "label emails as": [
         "電子メールにラベル付け"
@@ -526,6 +526,9 @@
       "Refer a friend": [
         "友達を招待"
       ],
+      "Refresh browser": [
+        ""
+      ],
       "Refresh status": [
         "状態を更新"
       ],
@@ -608,10 +611,10 @@
         "レビュー"
       ],
       "Revoke": [
-        "取り消す"
+        "失効させる"
       ],
       "Revoke ${ name }": [
-        ""
+        "${ name } を失効させる"
       ],
       "Revoke all other sessions": [
         "他の全てのセッションを取り消す"
@@ -620,7 +623,7 @@
         "保存"
       ],
       "Save address": [
-        "アドレスをセーブ"
+        "メールアドレスを保存"
       ],
       "Save ICS file": [
         "ICS ファイルを保存"
@@ -701,7 +704,7 @@
         "サインイン中"
       ],
       "Signing out": [
-        "サインアウトしています"
+        "サインアウト中"
       ],
       "Size": [
         "サイズ"
@@ -728,7 +731,7 @@
         "サポート"
       ],
       "Switch account": [
-        "アカウントの切り替え"
+        "アカウントを切り替え"
       ],
       "Switch to rich text": [
         "リッチテキストに切り替え"
@@ -755,7 +758,7 @@
         "箇条書き"
       ],
       "Unsubscribe": [
-        "退会"
+        "登録解除"
       ],
       "Update": [
         "更新"
@@ -824,7 +827,7 @@
         "全ての回復ファイルを無効にしますか？"
       ],
       "Void anyway": [
-        "このまま送信"
+        "無効化する"
       ],
       "Wipe": [
         "抹消"
@@ -841,7 +844,7 @@
     },
     "Action for user session": {
       "Revoke": [
-        "取り消す"
+        "失効させる"
       ]
     },
     "Action in trial plan": {
@@ -968,7 +971,7 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
+      "Add to calendar and mark as pending": [
         ""
       ]
     },
@@ -2479,13 +2482,13 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from Proton?": [
-        "Proton からどのようなメールを受信したいですか?"
+        "Proton からどのようなメールを受信したいですか？"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        ""
+        "${ categoriesJsx } のメールを再購読しました"
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        ""
+        "${ categoriesJsx } のメールを購読停止しました"
       ]
     },
     "Email Unsubscribe Categories": {
@@ -3998,7 +4001,7 @@
         "すべての人が検閲がなく無制限のインターネットを利用できるべきです。"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        "名前をつけることで、どのデバイスで使われているか判別し、簡単に失効したり期限を延長することができます。"
+        "名前をつけることで何に使用しているか判別しやすくなり、簡単に失効させたり期限を延長したりできます。"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4159,6 +4162,9 @@
       "Basic, Plus or Visionary subscription required": [
         "BASIC 、PLUS または VISIONARY プランが必要です"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } で独自ドメイン宛のメールを受信するには、まず次の MX レコードを DNS に追加する必要があります。 これは通常、ドメイン名登録のコントロールパネルから行うことができます。"
       ],
@@ -4209,9 +4215,6 @@
       ],
       "Choose the look and feel of the application.": [
         "アプリケーションの外観を変更できます。"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -4301,7 +4304,7 @@
         "${ VPN_APP_NAME } アプリケーションや ${ VPN_APP_NAME } ダッシュボードで OpenVPN / IKEv2 認証情報を使用しないでください。${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "現在のセッション以外のすべてのセッションを取り消しますか?"
+        "現在のセッション以外のすべてのセッションを失効させますか？"
       ],
       "domain used": [
         "ドメインが使用済み"
@@ -4440,6 +4443,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "新たな回復フレーズを生成すると古いものは無効化されます。"
+      ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
@@ -4597,8 +4603,8 @@
       "it’s imperative": [
         "必須です"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "私は ${ appName } を使用しており、あなたに気に入ってもらえると思いました。これはプライバシーを保護できる安全なメールサービスです。このリンクを使ってサインアップすると 1 か月間、無料で使うことができます。${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        ""
       ],
       "Just confirm your selection and we'll do the rest.": [
         "あとは、選択を確認するだけです。"
@@ -4634,7 +4640,7 @@
         "限定ビュー: 多忙な場合は他のユーザーが確認できます。フルビュー: 名前、場所、参加者を含むすべてのイベント詳細が表示されます。"
       ],
       "Link copied to clipboard": [
-        "リンクをクリップボードにコピーしました。"
+        "リンクをクリップボードにコピーしました"
       ],
       "Link created": [
         "リンクが作成されました"
@@ -4940,7 +4946,7 @@
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
       ],
       "Revoke certificate ${ name }": [
-        "証明書 ${ name } を取り消し"
+        "証明書 ${ name } を失効させる"
       ],
       "Right to Left": [
         "右から左"
@@ -5069,7 +5075,7 @@
         "これらの設定ファイルは、サードパーティ製の VPN アプリを使用する際や、ルーターで VPN 接続を設定する際に、どの ${ VPN_APP_NAME } サーバーに接続するかを選択するためのものです。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "この構成ファイルは WireGuard ルーターや公式クライアントで動作するように提供されています。"
+        "この設定ファイルを WireGuard ルーターや公式クライアントで使用できます。"
       ],
       "This 30-day free trial is not available any other way.": [
         "何らかの原因で 30 日のトライアルは利用できません。"
@@ -5097,6 +5103,9 @@
       ],
       "This is the password you used before the password reset.": [
         "これは以前パスワードリセットに使ったパスワードです。"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -5431,8 +5440,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちではない場合はこちらのボタンをクリックしてください。"
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "サブスクリプションをキャンセルするには、追加のカレンダーと共有中のカレンダーのリンクを削除する必要があります。${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        ""
       ],
       "You need to have a personal calendar to create a link.": [
         "リンクを作成するには個人用カレンダーが必要です。"
@@ -6035,7 +6044,7 @@
         "公開鍵の添付"
       ],
       "Attach screenshot(s)": [
-        "スクリーンショットの添付"
+        "スクリーンショットを添付"
       ],
       "Auto reply": [
         "自動返信"
@@ -6113,7 +6122,7 @@
         "条件"
       ],
       "Config to connect to ${ serverName }": [
-        "${ serverName } に接続する構成"
+        "${ serverName } に接続する"
       ],
       "Confirm link URLs": [
         ""
@@ -6315,6 +6324,9 @@
       ],
       "Hide password": [
         "パスワードを非表示"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "IF": [
         "条件"
@@ -6559,7 +6571,7 @@
       "Send auto-reply": [
         "自動返信を送信"
       ],
-      "Send invitations in": [
+      "Send in": [
         ""
       ],
       "Show secondary time zone": [
@@ -6771,7 +6783,7 @@
     },
     "Label for news": {
       "Proton announcements": [
-        "Proton 発表"
+        "Proton からのお知らせ"
       ],
       "Proton Beta": [
         "Proton ベータ"
@@ -7099,7 +7111,7 @@
         "編集"
       ],
       "Revoke sessions": [
-        "セッションを取り消す"
+        "セッションを失効させる"
       ],
       "Sign in": [
         "サインイン"
@@ -8050,7 +8062,7 @@
         "プライバシーが保護される環境に、簡単かつ確実に移行します。"
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグアンドドロップしてください。"
+        "1 つのメッセージに複数のラベルを付けることはできますが、1 つのメッセージを複数のフォルダーに入れることはできません。フォルダーやラベルを並び替えるには、ドラッグ＆ドロップしてください。"
       ]
     },
     "Settings section title": {
@@ -8152,7 +8164,7 @@
     },
     "State": {
       "Downgrading your account, please wait": [
-        "アカウントをダウングレードしています･･･お待ちください"
+        "アカウントをダウングレードしています。お待ちください"
       ]
     },
     "Step in filter modal": {
@@ -8330,10 +8342,10 @@
         "インポートを再開"
       ],
       "Session revoked": [
-        "セッションが取り消されました"
+        "セッションが失効させられました"
       ],
       "Sessions revoked": [
-        "セッションが取り消されました"
+        "セッションが失効させられました"
       ],
       "SPF value copied to clipboard": [
         "SPF値がクリップボードにコピーされました"
@@ -8354,7 +8366,7 @@
         "検証に成功しました"
       ],
       "You have successfully unsubscribed": [
-        "退会手続きが正常に行なわれました。"
+        "サブスクリプションをキャンセルしました"
       ]
     },
     "Success message": {
@@ -8362,7 +8374,7 @@
         "ドメインを削除しました"
       ],
       "Sessions revoked": [
-        "セッションが取り消されました"
+        "セッションが失効させられました"
       ],
       "User deleted": [
         "ユーザーが削除されました。"
@@ -8392,7 +8404,7 @@
         "アドレスが有効になりました"
       ],
       "Certificate ${ name } revoked": [
-        "証明書 ${ name } を失効しました"
+        "証明書 ${ name } を失効させました"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
         ""
@@ -8401,7 +8413,7 @@
         ""
       ],
       "Creating config file for ${ serverName }": [
-        "${ serverName } の構成ファイルを作成しています"
+        "${ serverName } の設定ファイルを作成しています"
       ],
       "Filter removed": [
         "フィルターが削除されました。"
@@ -8560,7 +8572,7 @@
         "クレジット・デビットカードの追加"
       ],
       "Add credits": [
-        "クレジットの追加"
+        "クレジットを追加"
       ],
       "Add domain": [
         "ドメインを追加"
@@ -9090,6 +9102,9 @@
       "Referral tracker": [
         ""
       ],
+      "Refresh your browser": [
+        ""
+      ],
       "Remove calendar": [
         "カレンダーを削除"
       ],
@@ -9112,7 +9127,7 @@
         "管理者権限を修復"
       ],
       "Revoke certificate": [
-        "証明書を失効"
+        "証明書を失効させる"
       ],
       "Secure email based in Switzerland": [
         "スイスに拠点を置くセキュアな電子メール"
@@ -9264,6 +9279,9 @@
       "Warning!": [
         "警告!"
       ],
+      "Warning: suspected fake website": [
+        ""
+      ],
       "What would you like to import?": [
         "何をインポートしたいですか？"
       ],
@@ -9274,7 +9292,7 @@
         "WireGuard"
       ],
       "WireGuard configuration": [
-        "WireGuard 構成ファイル"
+        "WireGuard 設定ファイル"
       ],
       "Your ${ domain } address is active": [
         "${ domain } アドレスはアクティブです"

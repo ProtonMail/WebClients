@@ -2791,9 +2791,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其他瀏覽器。"
       ],
-      "Could not find address ${ email }.": [
-        "找不到電子郵件地址 ${ email }。"
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
       ],
@@ -3854,6 +3851,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "不論在設定中是否啟用鍵盤快捷鍵，基本導覽及動作仍然可用。"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Body: ": [
         "內文："
       ],
@@ -3874,9 +3874,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "清除關於訊息內容搜尋的瀏覽器資料，其中包含已下載的訊息"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電子郵件地址不正確，請按一下「編輯」作出修正。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電話號碼不正確，請按一下「編輯」作出修正。"
@@ -4504,6 +4501,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀請儲存於一個已停用的行事曆。"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -5204,6 +5204,9 @@
       ],
       "Hide password": [
         "隱藏密碼"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "IF": [
         "如"
@@ -7159,6 +7162,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "Welcome": [
         "歡迎"

@@ -491,6 +491,9 @@
       "Submit": [
         "Отправить"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Переключить учетную запись"
       ],
@@ -1763,9 +1766,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Поиск содержимого невозможен в этом браузере. Пожалуйста, выйдите из режима приватного просмотра или используйте другой браузер."
       ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Отмените выбор по крайней мере ${ calendarToFixCount } календаря",
         "Отмените выбор по крайней мере ${ calendarToFixCount } календарей",
@@ -1885,6 +1885,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Основной ключ адреса не расшифрован."
+      ],
+      "Report failed to be sent": [
+        "Не удалось отправить отчёт"
       ],
       "Request timed out": [
         "Время запроса истекло"
@@ -2424,6 +2427,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Поскольку ${ appName } зашифрован из конца в конец, мы не можем получить доступ\nили расшифровать ваши файлы. Чтобы разблокировать диск после сброса пароля,\nвы должны иметь одно из следующих устройств:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
+      ],
       "Canceled": [
         "Отменено"
       ],
@@ -2447,9 +2453,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Очищает данные браузера, связанные с зашифрованным поиском."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты недействителен, выберите «Изменить» и обновите его."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите «Запросить новый код», и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона недействителен, выберите «Изменить» и обновите его."
@@ -2529,6 +2532,9 @@
       "Downloading": [
         "Скачивание"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Для загрузки файлов перетащите их сюда или выберите через диалоговое окно."
       ],
@@ -2546,6 +2552,18 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        "Оценка оставшегося времени..."
       ],
       "Failed": [
         "Завершено с ошибкой"
@@ -2808,6 +2826,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
       ],
@@ -2873,6 +2894,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предпросмотр PDF-документов. Пожалуйста, скачайте файл."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Эта ссылка ведет на сайт, который может пытаться украсть вашу информацию, например, пароли и данные кредитной карты."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого, и не может быть открыта браузерами Internet Explorer и Edge. Если вы уверены, что ссылка безопасна, то, пожалуйста, воспользуйтесь другим браузером для её открытия."
@@ -2949,6 +2973,9 @@
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
+      "Updating drive search...": [
+        "Обновляем поиск по хранилищу..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Улучшите сегодня, чтобы не потерять следующие преимущества: ${ appName } ${ planName }."
       ],
@@ -2960,6 +2987,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Загрузка сотен файлов сразу может повлиять на производительность."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
@@ -3184,17 +3214,26 @@
       "Category": [
         "Категория"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "Город"
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
       ],
+      "Comment": [
+        ""
+      ],
       "Contacts": [
         "Контакты"
       ],
       "Copy": [
         "Копировать"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Страна"
@@ -3222,6 +3261,9 @@
       ],
       "Download anyway": [
         "Все равно скачать"
+      ],
+      "Email": [
+        ""
       ],
       "Email address": [
         "Адрес электронной почты"
@@ -3277,6 +3319,9 @@
       "Hide password": [
         "Скрыть пароль"
       ],
+      "I understand the risk": [
+        "Я понимаю риск"
+      ],
       "Image": [
         "Изображение"
       ],
@@ -3307,6 +3352,9 @@
       "Mailbox password": [
         "Пароль почтового ящика"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         "Управление папками"
       ],
@@ -3334,6 +3382,9 @@
       "Operating system version": [
         "Версия операционной системы"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Пароль"
       ],
@@ -3342,6 +3393,9 @@
       ],
       "Phone number": [
         "Номер телефона"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "Почтовый ящик"
@@ -3367,11 +3421,14 @@
       "Replace folder": [
         "Заменить папку"
       ],
-      "Report abuse": [
-        "Сообщить о злоупотреблении"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Показать пароль"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Задать срок действия"
@@ -3387,6 +3444,12 @@
       ],
       "Skip folder": [
         "Пропустить папку"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "Адрес улицы"
@@ -3893,6 +3956,9 @@
       ],
       "Enter a new folder name": [
         "Введите имя новой папки"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Фильтр групп"
@@ -4610,6 +4676,9 @@
       ],
       "Warning": [
         "Предупреждение"
+      ],
+      "Warning: suspected fake website": [
+        "Предупреждение: предполагаемый поддельный сайт"
       ],
       "What's new": [
         "Список изменений"
