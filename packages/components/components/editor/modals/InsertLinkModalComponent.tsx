@@ -1,10 +1,9 @@
-import { useState, ChangeEvent, useRef } from 'react';
+import { useState, ChangeEvent, useRef, useMemo } from 'react';
 import { c } from 'ttag';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LINK_TYPES } from '@proton/shared/lib/constants';
 import { linkToType, addLinkPrefix } from '@proton/shared/lib/helpers/url';
 import { PrimaryButton } from '../../button';
-import Alert from '../../alert/Alert';
 import Row from '../../container/Row';
 import Label from '../../label/Label';
 import Field from '../../container/Field';
@@ -16,19 +15,38 @@ import { Form } from '../../form';
 import { InputTwo } from '../../v2';
 import { useLinkHandler } from '../../../hooks/useLinkHandler';
 
-interface Props {
-    linkLabel: string | undefined;
-    linkUrl: string | undefined;
+export interface InsertLinkModalProps {
+    selectionRangeFragment: DocumentFragment;
+    cursorLinkElement: HTMLLinkElement | undefined;
     mailSettings?: MailSettings;
-    onSubmit: (title: string | undefined, url: string) => void;
+    onSubmit: (url: string, altAttribute: string | undefined, textToDisplay?: string) => void;
     modalStateProps: ModalStateProps;
 }
 
-const InsertLinkModalComponent = ({ linkLabel = '', linkUrl = '', onSubmit, mailSettings, modalStateProps }: Props) => {
-    const [url, setUrl] = useState(linkUrl);
-    const [label, setLabel] = useState(linkLabel);
-    const [type, setType] = useState(linkToType(linkUrl) || LINK_TYPES.WEB);
+const InsertLinkModalComponent = ({
+    selectionRangeFragment,
+    cursorLinkElement,
+    onSubmit,
+    mailSettings,
+    modalStateProps,
+}: InsertLinkModalProps) => {
     const modalContentRef = useRef<HTMLDivElement>(null);
+
+    const { hasImageInSelection, hasOnlyImageInSelection, cursorLinkHrefAttr, cursorLinkTitleAttr } = useMemo(() => {
+        const hasImageInSelection = selectionRangeFragment.querySelector('img') !== null;
+        const hasOnlyImageInSelection = selectionRangeFragment.textContent === '' && hasImageInSelection;
+        const cursorLinkHrefAttr = cursorLinkElement?.getAttribute('href') || undefined;
+        const cursorLinkTitleAttr = cursorLinkElement?.getAttribute('title') || undefined;
+
+        return { hasImageInSelection, hasOnlyImageInSelection, cursorLinkHrefAttr, cursorLinkTitleAttr };
+    }, []);
+
+    const [type, setType] = useState(linkToType(cursorLinkHrefAttr) || LINK_TYPES.WEB);
+    const [url, setUrl] = useState(cursorLinkHrefAttr || '');
+    const [label, setLabel] = useState<string>(
+        selectionRangeFragment.textContent || cursorLinkElement?.textContent || cursorLinkTitleAttr || ''
+    );
+    const canSubmit = hasImageInSelection ? !!url : !!(label && url);
 
     const { modal: linkModal } = useLinkHandler(modalContentRef, mailSettings);
 
@@ -59,24 +77,24 @@ const InsertLinkModalComponent = ({ linkLabel = '', linkUrl = '', onSubmit, mail
 
     const handleUrlChange = (event: ChangeEvent<HTMLInputElement>) => {
         setUrl(event.target.value);
-        if (url === label) {
+        if (url === label && !hasImageInSelection) {
             setLabel(event.target.value);
         }
     };
 
     const handleSubmit = () => {
-        onSubmit?.(label, addLinkPrefix(url, type));
-        modalStateProps.onClose?.();
+        onSubmit(addLinkPrefix(url, type), label, !hasImageInSelection ? label : undefined);
+        modalStateProps.onClose();
     };
 
     return (
         <>
             <ModalTwo as={Form} onSubmit={handleSubmit} size="large" {...modalStateProps}>
-                <ModalTwoHeader title={c('Info').t`Insert link`} />
+                <ModalTwoHeader title={cursorLinkHrefAttr ? c('Info').t`Edit link` : c('Info').t`Insert link`} />
                 <ModalTwoContent>
                     <div ref={modalContentRef}>
-                        <Alert className="mb1">{c('Info')
-                            .t`Please select the type of link you want to insert and fill in all the fields.`}</Alert>
+                        <div className="mb1">{c('Info')
+                            .t`Please select the type of link you want to insert and fill in all the fields.`}</div>
                         <Row>
                             <Label htmlFor="link-modal-type" className="flex flex-column">
                                 {c('Info').t`Link type`}
@@ -106,37 +124,46 @@ const InsertLinkModalComponent = ({ linkLabel = '', linkUrl = '', onSubmit, mail
                                 />
                             </Field>
                         </Row>
-                        <Row>
-                            <Label htmlFor="link-modal-label" className="flex flex-column">
-                                {c('Info').t`Text to display`}
-                            </Label>
-                            <Field>
-                                <InputTwo
-                                    id="link-modal-label"
-                                    value={label}
-                                    onChange={(event: ChangeEvent<HTMLInputElement>) => setLabel(event.target.value)}
-                                    placeholder={c('Placeholder').t`Text`}
-                                    required
-                                />
-                            </Field>
-                        </Row>
-                        <Row>
-                            <Label>{c('Info').t`Test link`}</Label>
-                            <Field className="pt0-5 text-ellipsis">
-                                {url && label ? (
-                                    <Href url={addLinkPrefix(url, type)} title={label}>
-                                        {label}
-                                    </Href>
-                                ) : (
-                                    <span className="placeholder">{c('Placeholder').t`Please insert link first`}</span>
-                                )}
-                            </Field>
-                        </Row>
+                        {(!hasImageInSelection || hasOnlyImageInSelection) && (
+                            <Row>
+                                <Label htmlFor="link-modal-label" className="flex flex-column">
+                                    {hasOnlyImageInSelection
+                                        ? c('Info').t`Image description`
+                                        : c('Info').t`Text to display`}
+                                </Label>
+                                <Field>
+                                    <InputTwo
+                                        id="link-modal-label"
+                                        value={label}
+                                        onChange={(event: ChangeEvent<HTMLInputElement>) =>
+                                            setLabel(event.target.value)
+                                        }
+                                        placeholder={c('Placeholder').t`Text`}
+                                        required={!hasOnlyImageInSelection}
+                                    />
+                                </Field>
+                            </Row>
+                        )}
+                        {!hasImageInSelection && (
+                            <Row>
+                                <Label>{c('Info').t`Test link`}</Label>
+                                <Field className="pt0-5 text-ellipsis">
+                                    {url && label ? (
+                                        <Href url={addLinkPrefix(url, type)} title={label}>
+                                            {label}
+                                        </Href>
+                                    ) : (
+                                        <span className="placeholder">{c('Placeholder')
+                                            .t`Please insert link first`}</span>
+                                    )}
+                                </Field>
+                            </Row>
+                        )}
                     </div>
                 </ModalTwoContent>
                 <ModalTwoFooter>
                     <Button onClick={modalStateProps.onClose}>{c('Action').t`Cancel`}</Button>
-                    <PrimaryButton type="submit" disabled={!label || !url}>
+                    <PrimaryButton type="submit" disabled={!canSubmit}>
                         {c('Action').t`Insert`}
                     </PrimaryButton>
                 </ModalTwoFooter>

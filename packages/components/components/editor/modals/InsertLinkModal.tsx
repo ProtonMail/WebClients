@@ -1,10 +1,10 @@
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 
 import { ModalStateProps } from '../../modalTwo';
 import { ModalLinkProps } from '../hooks/interface';
 
-import InsertLinkModalComponent from './InsertLinkModalComponent';
+import InsertLinkModalComponent, { InsertLinkModalProps } from './InsertLinkModalComponent';
 
 interface Props extends ModalLinkProps {
     modalStateProps: ModalStateProps;
@@ -12,34 +12,28 @@ interface Props extends ModalLinkProps {
 }
 
 const InsertLinkModal = ({ editor, createLink, modalStateProps, mailSettings }: Props) => {
-    const values = useMemo<{ linkLabel: string | undefined; linkUrl: string | undefined }>(() => {
+    const values = useMemo<Pick<InsertLinkModalProps, 'cursorLinkElement' | 'selectionRangeFragment'>>(() => {
         if (!editor.hasFocus()) {
             editor.focus();
         }
 
-        const selectionRange = editor.getSelectionRange();
-
-        if (selectionRange === null) {
-            return { linkLabel: undefined, linkUrl: undefined };
-        }
-
-        const selectedText = editor.getSelectionRange().toString();
-        const cursorEl = editor.getElementAtCursor('a[href]') as HTMLElement | null;
+        const selectionRangeFragment = editor.getSelectionRange().cloneContents();
+        const cursorLinkElement = (editor.getElementAtCursor('a[href]') as HTMLLinkElement) || undefined;
 
         return {
-            linkLabel: selectedText || cursorEl?.innerText || undefined,
-            linkUrl: selectedText ? undefined : cursorEl?.getAttribute('href') || undefined,
+            selectionRangeFragment,
+            cursorLinkElement,
         };
     }, []);
 
-    const handleSubmit = useCallback((nextTitle, nextUrl) => {
-        createLink(editor, nextUrl, undefined, nextTitle);
-    }, []);
+    const handleSubmit = (url: string, altAttribute: string | undefined, textToDisplay?: string | undefined) => {
+        createLink(editor, url, altAttribute, textToDisplay);
+    };
 
     return (
         <InsertLinkModalComponent
-            linkLabel={values.linkLabel}
-            linkUrl={values.linkUrl}
+            selectionRangeFragment={values.selectionRangeFragment}
+            cursorLinkElement={values.cursorLinkElement}
             onSubmit={handleSubmit}
             modalStateProps={modalStateProps}
             mailSettings={mailSettings}
