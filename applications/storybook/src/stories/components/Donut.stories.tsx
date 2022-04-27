@@ -1,5 +1,7 @@
-import { Donut } from '@proton/components';
 import { ChangeEvent, useState } from 'react';
+
+import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
+import { Donut } from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Donut.mdx';
@@ -18,10 +20,12 @@ export const Basic = () => {
     return (
         <div style={{ width: 200, height: 200 }}>
             <Donut
-                chunks={[
-                    [20, 'var(--signal-danger)'],
-                    [10, 'var(--signal-warning)'],
-                    [15, 'var(--signal-success)'],
+                segments={[
+                    [20, ThemeColor.Danger],
+                    [10, ThemeColor.Warning],
+                    [15, ThemeColor.Success],
+                    [10, ThemeColor.Norm],
+                    [5, ThemeColor.Weak],
                 ]}
             />
         </div>
@@ -45,10 +49,10 @@ export const WithSlider = () => {
 
             <div style={{ width: 200, height: 200 }}>
                 <Donut
-                    chunks={[
-                        [40, 'var(--signal-danger)'],
-                        [20, 'var(--signal-warning)'],
-                        [success, 'var(--signal-success)'],
+                    segments={[
+                        [40, ThemeColor.Danger],
+                        [20, ThemeColor.Warning],
+                        [success, ThemeColor.Success],
                     ]}
                 />
             </div>
@@ -61,23 +65,28 @@ export const Accessibility = () => {
     const alreadyAllocated = 20;
     const allocated = 30;
 
-    const labelledChunks = [
-        { label: 'Already used', value: [used, 'var(--signal-danger)'] },
-        { label: 'Already allocated', value: [alreadyAllocated, 'var(--signal-warning)'] },
-        { label: 'Allocated', value: [allocated, 'var(--signal-success)'] },
-    ];
+    const labelledSegments = [
+        { label: 'Already used', value: [used, ThemeColor.Danger] },
+        { label: 'Already allocated', value: [alreadyAllocated, ThemeColor.Warning] },
+        { label: 'Allocated', value: [allocated, ThemeColor.Success] },
+    ] as const;
 
     return (
         <div className="flex flex-align-items-center">
             <div className="mr2" style={{ width: 160, height: 160 }}>
-                <Donut chunks={labelledChunks.map(({ value }) => value as [number, string])} />
+                <Donut segments={labelledSegments.map(({ value }) => value as [number, string])} />
             </div>
             <div>
-                {labelledChunks.map(({ label, value: [share, color] }) => (
+                {labelledSegments.map(({ label, value: [share, color] }) => (
                     <div className="mb1 flex flex-align-items-center">
                         <span
                             className="inline-block mr1"
-                            style={{ width: 36, height: 24, borderRadius: 8, background: color }}
+                            style={{
+                                width: 36,
+                                height: 24,
+                                borderRadius: 8,
+                                background: `var(${getVariableFromThemeColor(color)})`,
+                            }}
                         />
                         <strong>
                             <span className="sr-only">{share} GB</span>
