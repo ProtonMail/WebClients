@@ -2815,9 +2815,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         ""
       ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Pogreška pri dešifriranju: dešifriranje sadržaja šifriranja ove poruke nije uspjelo."
       ],
@@ -3976,6 +3973,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Osnovna navigacija i radnje ostaju dostupni bez obzira jesu li tipkovni prečaci aktivni ili ne u postavkama."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Body: ": [
         "Sadržaj: "
       ],
@@ -3996,9 +3996,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kôd\" da biste novi potvrdni kôd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -4648,6 +4645,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ova pozivnica je spremljena u onemogućeni kalendar."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
@@ -5368,6 +5368,9 @@
       ],
       "Hide password": [
         "Sakrij lozinku"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "IF": [
         "AKO"
@@ -7423,6 +7426,9 @@
       ],
       "Warning": [
         "Upozorenje"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "Welcome": [
         "Dobrodošli"

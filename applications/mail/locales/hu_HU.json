@@ -2803,9 +2803,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
       ],
-      "Could not find address ${ email }.": [
-        "Nem található a cím: ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Visszafejtési hiba: Az üzenet titkosított tartalmának visszafejtése sikertelen."
       ],
@@ -3915,6 +3912,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Body: ": [
         "Szöveg: "
       ],
@@ -3935,9 +3935,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } címre új ellenőrzési kódot küldjünk. Ha hibás ez a cím, kattintson a Szerkesztés gombra."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
@@ -4472,7 +4469,7 @@
         ""
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Állítsa be a ${ MAIL_APP_NAME }t az alapértelmezett email-alkalmazásának ebben a böngészőben. A ${ MAIL_APP_NAME } automatikusan meg fog nyílni, amikor egy email linket megnyit."
+        "Állítsa be, hogy a ${ MAIL_APP_NAME } legyen az alapértelmezett e-mail alkalmazás ebben a böngészőben. A ${ MAIL_APP_NAME } automatikusan meg fog nyílni, amikor egy e-mail hivatkozást megnyit."
       ],
       "Set a recovery phrase": [
         "Helyreállító jelmondat beállítása"
@@ -4576,6 +4573,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Ez a meghívó egy letiltott naptárban van."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Ez a link egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -4701,7 +4701,7 @@
         ""
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        "Frissítsen, hogy tudja a ${ MAIL_APP_NAME }t használni harmadik féltől származó asztali kliensekkel."
+        "Váltson nagyobb csomagra, a ${ MAIL_APP_NAME } harmadik féltől származó, asztali levelezőprogramokkal való használatához."
       ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyöket."
@@ -5286,6 +5286,9 @@
       ],
       "Hide password": [
         "Jelszó elrejtése"
+      ],
+      "I understand the risk": [
+        "Megértettem a kockázatot"
       ],
       "IF": [
         "HA"
@@ -7291,6 +7294,9 @@
       ],
       "Warning": [
         "Figyelem"
+      ],
+      "Warning: suspected fake website": [
+        "Figyelem: gyanítottan hamis weboldal"
       ],
       "Welcome": [
         "Üdvözöljük"

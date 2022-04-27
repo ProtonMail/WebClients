@@ -389,7 +389,7 @@
         "Sembunyikan label"
       ],
       "I have a question": [
-        "Saya memiliki sebuah pertanyaan"
+        "Saya memiliki pertanyaan"
       ],
       "Import": [
         "Impor"
@@ -526,6 +526,9 @@
       "Refer a friend": [
         "Rujuk teman"
       ],
+      "Refresh browser": [
+        "Muat ulang browser"
+      ],
       "Refresh status": [
         "Muat ulang status"
       ],
@@ -614,7 +617,7 @@
         "Cabut ${ name }"
       ],
       "Revoke all other sessions": [
-        "Batalkan semua sesi lainnya"
+        "Cabut semua sesi lainnya"
       ],
       "Save": [
         "Simpan"
@@ -968,8 +971,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Tambah undangan ke kalender dan tandai sebagai menunggu balasan"
+      "Add to calendar and mark as pending": [
+        "Tambahkan ke kalender dan tandai sebagai menunggu balasan"
       ]
     },
     "Autoresponse": {
@@ -2522,7 +2525,7 @@
         "Kesalahan otentikasi."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Pesan balasan otomatis merupakan fitur yang hanya tersedia bagi para pengguna akun berbayar. Silakan tingkatkan akun Anda ke akun berbayar untuk dapat menggunakan fitur ini."
+        "Pesan balasan otomatis merupakan fitur berbayar. Silakan tingkatkan akun Anda ke akun berbayar untuk dapat menggunakan fitur ini."
       ],
       "Calendar limit reached": [
         "Batas kalender tercapai"
@@ -2840,7 +2843,7 @@
         "Anda telah kehilangan akses ke kunci organisasi Anda. Tanpa pemulihan Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
       "You have no invoices.": [
-        "Tidak ada tagihan."
+        "Anda tidak memiliki tagihan."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
@@ -4046,13 +4049,13 @@
         "alamat"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "Verifikasi alamat adalah fitur keamanan tingkat lanjut. Aktifkan ini jika Anda benar-benar tahu fungsinya."
+        "Verifikasi alamat merupakan fitur keamanan tingkat lanjut. Kami menyarankan Anda untuk mengaktifkan fitur ini hanya apabila Anda benar-benar tahu fungsinya."
       ],
       "Addresses": [
         "Alamat"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Setelah kata sandi Anda diatur ulang, data-data Anda akan dikunci dan dienkripsi secara otomatis agar tetap aman."
+        "Setelah kata sandi Anda diatur ulang, data Anda akan dikunci dan dienkripsi secara otomatis agar tetap aman."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Usai melakukan pembayaran dengan Bitcoin, harap ikuti instruksi di bawah untuk meningkatkan."
@@ -4159,6 +4162,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Dibutuhkan langganan Basic, Plus atau Visionary"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Sebelum Anda dapat menerima email pada alamat domain khusus ${ MAIL_APP_NAME } Anda, Anda harus terlebih dahulu menambahkan data MX berikut ke DNS Anda. Hal ini pada umumnya dapat dilakukan melalui panel kontrol registrar nama domain Anda."
       ],
@@ -4209,9 +4215,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Pilih tampilan aplikasi."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang dikirim ke ${ strong }. Jika alamat email ini salah, klik \"Edit\" untuk memperbaikinya."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru di ${ strong }. Jika nomor telepon ini salah, klik \"Edit\" untuk memperbaiki."
@@ -4415,7 +4418,7 @@
         "Untuk memulai pengiriman surel dengan privat dan aman."
       ],
       "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Untuk para individu yang membutuhkan sebuah kotak surat berfitur lengkap dengan perlindungan keamanan mutakhir."
+        "Untuk para individu yang membutuhkan sebuah kotak surat yang lengkap dengan perlindungan keamanan mutakhir."
       ],
       "For professionals that need secure business communications.": [
         "Untuk para profesional yang membutuhkan komunikasi bisnis yang aman."
@@ -4440,6 +4443,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
+      ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Dapatkan versi terbaru dari ${ BRAND_NAME } dan segala pembaruan yang terkait dengan memuat ulang browser Anda."
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Berikan kunci publik Anda kepada teman, atau sebarkan secara daring, sehingga setiap orang dapat mengirimi Anda dengan pesan terenkripsi end-to-end!"
@@ -4481,7 +4487,7 @@
         "Apabila Anda memiliki kode hadiah yang valid, masukkan kode tersebut pada kolom di bawah ini untuk mendapatkan diskon Anda."
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "Jika Anda belum pernah menggunakan otentikasi dua faktor, sangat kami anjurkan Anda ${ guideButton }."
+        "Apabila Anda belum pernah menggunakan otentikasi dua faktor sebelumnya, kami sangat menyarankan Anda untuk ${ guideButton }."
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         "Jika Anda telah menyetel SPF dan DKIM, DMARC memungkinkan Anda untuk menentukan bagaimana layanan email lain harus mengirimkan email untuk domain Anda jika pemeriksaan SPF dan DKIM gagal. Hal ini dapat mempersulit pelaku spam yang berpura-pura menjadi Anda, tetapi juga dapat menyebabkan masalah pengiriman jika tidak dilakukan dengan benar."
@@ -4490,10 +4496,10 @@
         "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountRecovery } yang aktif."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda tidak lagi akan dapat mengakses email-email, kontak-kontak, atau berkas-berkas yang Anda miliki setelah akun Anda disetel ulang."
+        "Apabila Anda kehilangan rincian login Anda dan perlu untuk menyetel ulang akun, ${ boldImperative } bagi Anda untuk memiliki ${ boldAccountAndRecovery } yang aktif. Apabila tidak, Anda tidak lagi akan dapat mengakses seluruh email, kontak, serta berkas yang Anda miliki setelahnya."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "Jika Anda kehilangan perangkat berkemampuan dua-faktor, kode ini dapat menggantikan kode 6 digit otentikasi dua faktor untuk masuk ke akun Anda. Setiap kode hanya dapat digunakan sekali."
+        "Apabila Anda kehilangan perangkat yang Anda gunakan untuk proses otentikasi dua faktor, kode-kode berikut akan dapat digunakan sebagai pengganti kode otentikasi dua faktor agar Anda dapat masuk ke akun Anda. Masing-masing kode hanya dapat digunakan sekali."
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Apabila Anda menurunkan jenis akun Anda, Anda tidak akan lagi dapat menggunakan berbagai fitur berbayar milik ${ MAIL_APP_NAME } dan ${ VPN_APP_NAME }."
@@ -4535,7 +4541,7 @@
         "Impor kotak surat"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Pindahkan email-email, kalender-kalender, dan kontak-kontak Anda dari layanan email Anda terdahulu ke Proton. Kami akan menuntun Anda untuk dapat memindahkan dan mengenkripsi data-data Anda selangkah demi selangkah. Selamat datang di dunia privasi."
+        "Pindahkan email, kalender, dan kontak yang Anda miliki dari layanan email Anda terdahulu ke Proton. Kami akan menuntun Anda untuk dapat memindahkan dan mengenkripsi data Anda selangkah demi selangkah. Selamat datang di dunia privasi."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Penting: Pastikan Anda menyimpan kode pemulihan. Jika tidak, Anda dapat kehilangan akses ke akun Anda secara permanen jika kehilangan perangkat otentikasi dua faktor Anda."
@@ -4597,8 +4603,8 @@
       "it’s imperative": [
         "sangat penting"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Saya telah menggunakan ${ appName } dan saya pikir Anda juga akan menyukainya. Layanan ini merupakan layanan email aman yang melindungi privasi Anda. Daftar sekarang juga melalui tautan berikut dan dapatkan 1 bulan gratis: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Saya telah menggunakan ${ appName } dan saya pikir Anda juga akan menyukainya. Layanan ini merupakan layanan email aman yang melindungi privasi Anda. Daftar sekarang juga melalui tautan berikut dan nikmati berbagai fitur premium selama 1 bulan secara gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Anda hanya perlu menentukan pilihan Anda -- biarkan kami yang mengurus sisanya."
@@ -4670,7 +4676,7 @@
         "Pastikan Anda mengingat kata sandi yang Anda gunakan untuk masuk dan mendekripsi email. ${ boldAlert } Kami menyarankan Anda untuk terlebih dahulu menambahkan ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
-        "Masukkan informasi ini secara manual ke perangkat autentikasi dua faktor Anda untuk menyiapkan akun Anda. ${ _switchButton }."
+        "Masukkan informasi berikut secara manual ke perangkat otentikasi dua faktor yang Anda miliki untuk menyiapkan akun Anda. ${ _switchButton }."
       ],
       "Merged": [
         "Tergabung"
@@ -4961,7 +4967,7 @@
         "Pindai kode QR"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "Pindai kode ini dengan perangkat autentikasi dua faktor untuk mengatur akun Anda. ${ switchButton }."
+        "Pindai kode berikut dengan perangkat otentikasi dua faktor yang Anda miliki untuk mengatur akun Anda. ${ switchButton }."
       ],
       "See all plans": [
         "Lihat seluruh paket"
@@ -4985,7 +4991,7 @@
         "Beban server"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Server-server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
+        "Server kami sedang tidak dapat dijangkau. Silakan coba lagi dalam beberapa menit"
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
@@ -5098,6 +5104,9 @@
       "This is the password you used before the password reset.": [
         "Berikut ini adalah kata sandi yang Anda gunakan sebelum kata sandi Anda diatur ulang."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Tautan ini tertuju pada situs web yang dapat mencuri informasi pribadi Anda, seperti kata sandi dan rincian kartu kredit yang Anda miliki."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tautan ini mungkin adalah sebuah serangan homograf dan tidak dapat dibuka oleh peramban Internet Explorer dan Edge. Jika Anda yakin tautan tersebut absah, silahkan gunakan peramban lain untuk membukanya."
       ],
@@ -5111,7 +5120,7 @@
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        "Dengan ini, otentikasi dua langkah untuk akun ini akan dinonaktifkan."
+        "Dengan ini, otentikasi dua faktor untuk akun ini akan dinonaktifkan."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
@@ -5141,7 +5150,7 @@
         "Tindakan ini akan mengeluarkan Anda dari seluruh sesi yang aktif dan menonaktifkan otentikasi dua faktor."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (2FA) di akun Proton Anda. Otentikasi Dua Faktor akan membuat akun Proton Anda lebih aman sehingga kami sarankan untuk mengaktifkannya."
+        "Proses ini akan mengaktifkan Otentikasi Dua Faktor (Two-Factor Authentication/2FA) pada akun Proton Anda. Kami menyarankan Anda untuk mengaktifkan otentikasi dua faktor mengingat hal ini akan membuat akun Proton Anda lebih aman."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Untuk mencegah hilangnya data, mohon hapus kunci ini hanya apabila Anda telah benar-benar paham akan segala resikonya atau apabila Anda telah mengekspor kunci duplikatnya."
@@ -5156,16 +5165,16 @@
         "Untuk dapat tetap menggunakan ${ appName } beserta fitur-fitur premium lainnya, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh berkas keamanan."
+        "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan berkas keamanan."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "Untuk dapat mendekripsi dan mengakses kembali email-email Anda, Anda akan membutuhkan frasa atau berkas keamanan."
+        "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan frasa atau berkas keamanan."
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "Untuk dapat mendekripsi dan mengakses email-email Anda kembali setelahnya, Anda akan butuh frasa keamanan."
+        "Untuk dapat mendekripsi dan mengakses kembali seluruh email dan data lainnya yang Anda miliki, Anda akan membutuhkan frasa keamanan."
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "Untuk dapat mendekripsi dan mengakses data-data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
+        "Untuk dapat mendekripsi dan mengakses data Anda yang terkunci setelah pengaturan ulang kata sandi, pilih metode pemulihan yang Anda kehendaki."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "Agar akun Anda dapat selalu diakses sepanjang waktu, tentukan metode pemulihan akun"
@@ -5192,10 +5201,10 @@
         "Tor"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Otentikasi dua faktor menambahkan lapisan keamanan ekstra ke akun Anda jika kata sandi Anda dipakai secara tidak benar."
+        "Otentikasi dua faktor akan menambahkan lapisan keamanan ekstra pada akun Anda di kala kata sandi Anda jatuh ke tangan pihak yang tidak bertanggung jawab."
       ],
       "Two-factor authentication disabled": [
-        "Autentikasi dua-faktor dinonaktifkan"
+        "Oentikasi dua faktor dinonaktifkan"
       ],
       "Two-factor authentication enabled": [
         "Otentikasi dua faktor diaktifkan"
@@ -5431,8 +5440,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memilikinya, silakan klik tombol di bawah."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Anda harus menghapus seluruh kalender tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda membatalkan langganan Anda. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
       ],
       "You need to have a personal calendar to create a link.": [
         "Anda harus punya kalender pribadi supaya bisa membuat tautan."
@@ -5781,7 +5790,7 @@
         "Ke Spam"
       ],
       "Go to Starred": [
-        "Ke Bintang"
+        "Ke Dibintangi"
       ],
       "Go to Trash": [
         "Ke Sampah"
@@ -6316,6 +6325,9 @@
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
+      "I understand the risk": [
+        "Saya paham akan resikonya"
+      ],
       "IF": [
         "JIKA"
       ],
@@ -6559,8 +6571,8 @@
       "Send auto-reply": [
         "Kirim pesan balasan otomatis"
       ],
-      "Send invitations in": [
-        "Kirim undangan pada"
+      "Send in": [
+        "Kirim"
       ],
       "Show secondary time zone": [
         "Tampilkan zona waktu sekunder"
@@ -6777,10 +6789,10 @@
         "Proton Beta"
       ],
       "Proton beta announcements": [
-        "Pengumuman Beta Proton"
+        "Pengumuman akses beta Proton"
       ],
       "Proton company announcements": [
-        "Pengumuman Perusahaan Proton"
+        "Pengumuman perusahaan Proton"
       ],
       "Proton for business": [
         "Proton untuk bisnis"
@@ -6798,7 +6810,7 @@
         "Penawaran dan promosi Proton"
       ],
       "Proton product announcements": [
-        "Pengumuman Produk Proton"
+        "Pengumuman produk Proton"
       ]
     },
     "Label in domain modal": {
@@ -7112,7 +7124,7 @@
     },
     "Message": {
       "Are you sure you want to disable two-factor authentication?": [
-        "Yakin ingin menonaktifkan otentikasi dua-faktor?"
+        "Apakah Anda yakin ingin menonaktifkan otentikasi dua faktor?"
       ],
       "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
         "Siapkan sebuah alamat email domain khusus (mis. you@yourcompany.com). Hanya perlu beberapa menit, dan wisaya kami akan memandu Anda melalui proses tersebut."
@@ -7121,7 +7133,7 @@
         "Aktifkan paket ${ PLAN_NAMES[PLANS.VISIONARY] } atau ${ PLAN_NAMES[PLANS.PROFESSIONAL] } agar bisa menikmati alamat seragam dan fitur-fitur premium"
       ],
       "Upgrade to any paid plan to use custom domains and unlock premium features": [
-        "Aktifkan paket berbayar agar bisa menikmati domain khusus dan fitur-fitur premium"
+        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat menggunakan domain khusus dan berbagai fitur premium lainnya"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Masa uji coba gratis Anda telah berakhir. Akses menuju akun Anda akan segera dinonaktifkan. ${ action }"
@@ -7405,7 +7417,7 @@
         "Telusuri seluruh layanan yang Proton tawarkan"
       ],
       "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
+        "Misi kami adalah membangun internet di mana kendali atas data dan privasi yang Anda miliki sepenuhnya berada di tangan Anda. Kami baru saja memutakhirkan Proton - selamat datang di internet yang aman."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -7417,13 +7429,13 @@
         "Ini adalah apa yang orang akan lihat ketika Anda mengirim surel, mengundang ke acara, atau berbagi berkas."
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Gunakan menu aplikasi di atas kiri untuk akses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
+        "Gunakan menu aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
       ],
       "Welcome to Proton": [
         "Selamat datang di Proton"
       ],
       "You can change this anytime in your settings.": [
-        "Anda dapat mengubah ini kapanpun di pengaturan Anda."
+        "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
       ]
     },
     "Option": {
@@ -7884,7 +7896,7 @@
         "Dukungan layanan tontonan"
       ],
       "Unlimited folders / labels": [
-        "Folder / label tak terbatas"
+        "Tanpa batasan folder / label"
       ]
     },
     "Plan info": {
@@ -8710,7 +8722,7 @@
         "Hubungkan ${ name }"
       ],
       "Contact encryption keys": [
-        "Kunci-kunci enkripsi kontak"
+        "Kunci enkripsi kontak"
       ],
       "Continue with partial import?": [
         "Lanjut impor walau hanya sebagian?"
@@ -8734,7 +8746,7 @@
         "Kredensial"
       ],
       "Credits": [
-        "Kredit"
+        "Saldo"
       ],
       "Currency": [
         "Mata uang"
@@ -8812,7 +8824,7 @@
         "Nonaktifkan ${ email }"
       ],
       "Disable two-factor authentication": [
-        "Nonaktifkan otentikasi dua-faktor"
+        "Nonaktifkan otentikasi dua faktor"
       ],
       "Display name and signature": [
         "Nama tampilan dan tanda tangan"
@@ -8827,10 +8839,10 @@
         "Turunkan jenis akun"
       ],
       "Edit Allow List": [
-        "Edit Daftar Izin"
+        "Sunting Daftar Izin"
       ],
       "Edit Block List": [
-        "Edit Daftar Blokir"
+        "Sunting Daftar Blokir"
       ],
       "Edit calendar": [
         "Sunting kalender"
@@ -8842,10 +8854,10 @@
         "Ubah domain"
       ],
       "Edit filter": [
-        "Ubah filter"
+        "Sunting filter"
       ],
       "Edit Sieve filter": [
-        "Edit filter Sieve"
+        "Sunting filter Sieve"
       ],
       "Edit user": [
         "Ubah pengguna"
@@ -9025,7 +9037,7 @@
         "Organisasi dan kunci"
       ],
       "Password": [
-        "Kata Sandi"
+        "Kata sandi"
       ],
       "Password and keys": [
         "Kata sandi dan kunci"
@@ -9089,6 +9101,9 @@
       ],
       "Referral tracker": [
         "Pelacak rujukan"
+      ],
+      "Refresh your browser": [
+        "Muat ulang browser Anda"
       ],
       "Remove calendar": [
         "Hapus kalender"
@@ -9220,7 +9235,7 @@
         "Beralih ke mode dua kata sandi"
       ],
       "Take precautions to avoid data loss!": [
-        "Bersiagalah agar data-data Anda tidak hilang!"
+        "Bersiagalah agar data Anda tidak hilang!"
       ],
       "Theme": [
         "Tema"
@@ -9232,7 +9247,7 @@
         "Zona waktu"
       ],
       "Total (monthly)": [
-        "Total (perbulan)"
+        "Total (per bulan)"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         "Nikmati berbagai fitur unggulan ${ MAIL_APP_NAME } secara gratis"
@@ -9263,6 +9278,9 @@
       ],
       "Warning!": [
         "Peringatan!"
+      ],
+      "Warning: suspected fake website": [
+        "Peringatan: situs web ini terindikasi palsu"
       ],
       "What would you like to import?": [
         "Hal-hal apa saja yang hendak Anda impor?"
@@ -9514,7 +9532,7 @@
         "Ketika Anda menambahkan label ke sebuah pesan dalam percakapan, itu akan secara otomatis diterapkan pada semua pesan mendatang yang Anda kirim atau terima dalam percakapan itu."
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "Ketika Anda mengklik sebuah tautan, fitur anti-phishing ini akan meminta Anda untuk mengkonfirmasi alamat URL dari halaman web yang bersangkutan."
+        "Ketika Anda mengklik sebuah tautan, fitur anti-phishing ini akan meminta Anda untuk mengonfirmasi alamat URL dari halaman web yang bersangkutan."
       ],
       "You have locally decrypted this key": [
         "Anda mendekripsi kunci ini secara lokal"
@@ -9726,10 +9744,10 @@
         "Akses konten yang diblokir secara geografis (Netflix, Youtube, dll.)"
       ],
       "Higher speed servers (up to 10Gbps)": [
-        "Server-server berkecepatan lebih tinggi (hingga 10Gbps)"
+        "Dukungan server berkecepatan lebih tinggi (hingga 10Gbps)"
       ],
       "Unlock advanced VPN features": [
-        "Buka kunci fitur VPN lanjutan"
+        "Gunakan berbagai fitur VPN mutakhir"
       ]
     },
     "VPNClient": {

@@ -2836,14 +2836,14 @@
       "At most 100 participants are allowed per invitation": [
         "Es permet un màxim de 100 participants per invitació"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "No podeu recordar la vostra contrasenya? Us podem ajudar a netejar les dades xifrades de tots els contactes xifrats amb aquesta clau i en el procés desactivar l'alerta."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Comprovant contacte ${ progress } de ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquesta adreça de correu electrònic és incorrecta, feu clic a \"Editar\" per corregir-la."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
@@ -3149,6 +3149,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Aquest esdeveniment s'ha actualitzat. No es notificarà a l'organitzador d'aquest esdeveniment que rebutgeu la invitació perquè no podeu enviar correus des de l'adreça electrònica convidada. Voleu suprimir aquest esdeveniment de totes maneres?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Aquest enllaç podria ser un atac homògraf i no es pot obrir amb els navegadors Internet Explorer i Edge. Si esteu segurs de que aquest enllaç és legítim, feu servir un navegador diferent per obrir-lo."
@@ -3472,6 +3475,9 @@
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
         "Recomanaríeu ${ calendarAppName } a un amic o col·lega?"
+      ],
+      "I understand the risk": [
+        ""
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -4930,6 +4936,9 @@
       ],
       "Warning": [
         "Advertència"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Novetats"

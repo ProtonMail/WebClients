@@ -2803,9 +2803,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Indholdssøgning kan ikke aktiveres i denne browser. Afslut privat browsing eller brug en anden browser."
       ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne beskeds indhold mislykkedes."
       ],
@@ -3915,6 +3912,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Grundlæggende navigation og handlinger forbliver tilgængelige, uanset om tastaturgenveje er aktive eller ej i indstillingerne."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
+      ],
       "Body: ": [
         "Indhold: "
       ],
@@ -3935,9 +3935,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Rydder browserdata relateret til søgning efter beskedindhold, herunder downloadede beskeder"
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis denne e-mailadresse er forkert, skal du klikke på \"Redigér\" for at rette den."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -4576,6 +4573,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Denne invitation er gemt i en deaktiveret kalender."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Dette link fører til et websted, som måske forsøger at stjæle dine oplysninger, f.eks. adgangskoder og kreditkortoplysninger."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Dette link kan være et homografisk angreb og kan ikke åbnes af Internet Explorer og Edge browsere. Benyt en anden browser til at åbne linket, hvis du er sikker på, at det er legitimt."
@@ -5286,6 +5286,9 @@
       ],
       "Hide password": [
         "Skjul adgangskode"
+      ],
+      "I understand the risk": [
+        "Jeg er indforstået med risikoen"
       ],
       "IF": [
         "IF"
@@ -7291,6 +7294,9 @@
       ],
       "Warning": [
         "Advarsel"
+      ],
+      "Warning: suspected fake website": [
+        "Advarsel: mistanke om falsk websted"
       ],
       "Welcome": [
         "Velkommen"

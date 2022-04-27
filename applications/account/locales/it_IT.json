@@ -526,6 +526,9 @@
       "Refer a friend": [
         "Segnala un amico"
       ],
+      "Refresh browser": [
+        "Aggiorna il browser"
+      ],
       "Refresh status": [
         "Aggiorna stato"
       ],
@@ -977,8 +980,8 @@
       ]
     },
     "Auto import invitations setting": {
-      "Add invitations to calendar and mark as pending": [
-        "Aggiungi inviti al calendario e contrassegna come in attesa"
+      "Add to calendar and mark as pending": [
+        "Aggiungi al calendario e contrassegna come in attesa"
       ]
     },
     "Autoresponse": {
@@ -4217,6 +4220,9 @@
       "Basic, Plus or Visionary subscription required": [
         "Abbonamento Base, Plus o Visionary richiesto"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Prima di poter ricevere messaggi di posta per i tuoi domini personalizzati su ${ MAIL_APP_NAME }, devi aggiungere il seguente record MX sul tuo DNS. Questo può essere generalmente fatto dal pannello di controllo del registrar del tuo dominio."
       ],
@@ -4267,9 +4273,6 @@
       ],
       "Choose the look and feel of the application.": [
         "Scegli l'aspetto dell'applicazione."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica su ${ strong }. Se questo indirizzo email non è corretto, clicca \"Modifica\" per correggerlo."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clicca \"Richiedi nuovo codice\" per ricevere un nuovo codice di verifica al ${ strong }. Se questo numero telefonico è incorretto, clicca su \"Modifica\" per correggerlo."
@@ -4501,6 +4504,9 @@
       "Generating a new recovery phrase will deactivate your old one.": [
         "La generazione di una nuova frase di ripristino disattiverà quella vecchia."
       ],
+      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
+        "Ottieni l'ultima versione di ${ BRAND_NAME } e tutti gli aggiornamenti pertinenti aggiornando il browser."
+      ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "Dai la tua chiave pubblica ai tuoi amici, o pubblicala online, in modo che tutti possano inviarti email crittografate end-to-end!"
       ],
@@ -4659,8 +4665,8 @@
       "it’s imperative": [
         "è obbligatorio"
       ],
-      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month free: ${ referrerLink }": [
-        "Ho usato ${ appName } e ho pensato che ti sarebbe piaciuto. È un servizio di posta elettronica sicuro che protegge la tua privacy. Iscriviti con questo link per ottenere 1 mese gratis: ${ referrerLink }"
+      "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
+        "Ho usato ${ appName } e ho pensato che ti sarebbe piaciuto. È un servizio di posta elettronica sicuro che protegge la tua privacy. Iscriviti con questo link per ottenere 1 mese di funzioni premium gratis: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Basta confermare la tua selezione e noi faremo il resto."
@@ -5161,6 +5167,9 @@
       "This is the password you used before the password reset.": [
         "Questa è la password che hai usato prima della reimpostazione della password."
       ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Questo collegamento porta a un sito web che potrebbe tentare di rubare le tue informazioni, come password e dettagli della carta di credito."
+      ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Questo link potrebbe essere un attacco omografo e non può essere aperto dai browser Internet Explorer ed Edge. Se sei sicuro che il link sia legittimo, utilizza un browser diverso per aprirlo."
       ],
@@ -5494,8 +5503,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Devi avere una carta di credito o un conto bancario collegato al tuo conto PayPal. Se il tuo account PayPal non lo ha, clicca sul pulsante qui sotto."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        "Devi rimuovere ogni calendario personale aggiuntivo e ogni link del calendario condiviso prima di poter annullare il tuo abbonamento."
       ],
       "You need to have a personal calendar to create a link.": [
         "Devi avere un calendario personale per creare un collegamento."
@@ -6384,6 +6393,9 @@
       "Hide password": [
         "Nascondi password"
       ],
+      "I understand the risk": [
+        "Comprendo i rischi"
+      ],
       "IF": [
         "SE"
       ],
@@ -6627,8 +6639,8 @@
       "Send auto-reply": [
         "Invia risposta automatica"
       ],
-      "Send invitations in": [
-        "Invia gli inviti in"
+      "Send in": [
+        "Invio in"
       ],
       "Show secondary time zone": [
         "Mostra fuso orario secondario"
@@ -9171,6 +9183,9 @@
       "Referral tracker": [
         "Tracker per Referral"
       ],
+      "Refresh your browser": [
+        "Aggiorna il tuo browser"
+      ],
       "Remove calendar": [
         "Rimuovi calendario"
       ],
@@ -9344,6 +9359,9 @@
       ],
       "Warning!": [
         "Attenzione!"
+      ],
+      "Warning: suspected fake website": [
+        "Attenzione: sospetto sito web falso"
       ],
       "What would you like to import?": [
         "Cosa vorresti importare?"

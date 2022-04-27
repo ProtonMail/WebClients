@@ -45,7 +45,7 @@
         "適用"
       ],
       "Attach screenshot(s)": [
-        "スクリーンショットの添付"
+        "スクリーンショットを添付"
       ],
       "Back": [
         "戻る"
@@ -183,7 +183,7 @@
         "ダウンロード"
       ],
       "Download anyway": [
-        ""
+        "ダウンロード"
       ],
       "Drive Locked": [
         "ドライブはロックされています"
@@ -213,7 +213,7 @@
         "デスクトップ通知を有効化する"
       ],
       "Enable drive search": [
-        ""
+        "ドライブ検索を有効化"
       ],
       "Expand folder": [
         "フォルダーを展開"
@@ -234,7 +234,7 @@
         "リンクを作成"
       ],
       "Get started": [
-        "はじめましょう"
+        "利用開始"
       ],
       "Get verification code": [
         "検証コードを取得"
@@ -462,7 +462,7 @@
         "サインアウト"
       ],
       "Signing out": [
-        "サインアウトしています"
+        "サインアウト中"
       ],
       "Skip": [
         "スキップ"
@@ -485,8 +485,11 @@
       "Submit": [
         "送信"
       ],
+      "Submit report": [
+        "レポートを送信"
+      ],
       "Switch account": [
-        "アカウントの切り替え"
+        "アカウントを切り替え"
       ],
       "Theme": [
         "テーマ"
@@ -1754,9 +1757,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "このブラウザーでは、内容の検索を有効にできません。プライベートブラウジングモードを閉じるか別のブラウザーを使用してください。"
       ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "${ calendarToFixCount } 件のカレンダーの選択を解除"
       ],
@@ -1858,6 +1858,9 @@
       ],
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
+      ],
+      "Report failed to be sent": [
+        ""
       ],
       "Request timed out": [
         "リクエストはタイムアウトしました"
@@ -2307,6 +2310,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "${ appName } はエンドツーエンド暗号化を利用しているため、あなたのファイルにアクセスしたり、復号したりできません。パスワードをリセットしたあとにドライブのロックを解除するには、以下の手順に従う必要があります:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -2330,9 +2336,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         ""
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。メールアドレスが違う場合、「編集」をクリックして修正します。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -2406,6 +2409,9 @@
       "Downloading": [
         "ダウンロード中"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "ここにファイルをドラッグアンドドロップするか、「新規アップロード」を選択してください。"
       ],
@@ -2416,13 +2422,22 @@
         "重複したキーはアップデートされました"
       ],
       "Enable drive search": [
-        ""
+        "ドライブ検索を有効化"
       ],
       "Encrypted search is here": [
         ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "推定残り時間: ${ estimatedMinutes } 分"
+      ],
+      "Estimated time remaining: Less than a minute": [
+        "推定残り時間: まもなく完了します"
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "失敗"
@@ -2674,13 +2689,16 @@
         "処理待ち"
       ],
       "recommended browser": [
-        ""
+        "おすすめのブラウザー"
       ],
       "Recovery process might take some time.": [
         "復元処理には少々時間がかかります。"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
+      ],
+      "Report has been sent": [
+        "レポートは送信されました"
       ],
       "Search cannot be enabled in this browser": [
         "このブラウザーでは検索は有効にすることができません"
@@ -2747,6 +2765,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "このブラウザーは PDF ドキュメントのプレビューをサポートしていません。ファイルをダウンロードしてください。"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -2820,6 +2841,9 @@
       "Unsupported file": [
         "非対応のファイル"
       ],
+      "Updating drive search...": [
+        "ドライブ検索を更新中..."
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "次の ${ appName } ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
@@ -2831,6 +2855,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "同時にたくさんのファイルをアップロードするとパフォーマンスが低下する可能性があります。"
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "${ emailAddress } がアップロードした ${ fileName } を検証できませんでした。"
@@ -2991,7 +3018,7 @@
         "プライマリー"
       ],
       "Revoked": [
-        "取り消し済み"
+        "失効済み"
       ],
       "Trusted": [
         "信頼済み"
@@ -3032,7 +3059,7 @@
         "すべての未検証のアイテムに適用"
       ],
       "Attach screenshot(s)": [
-        "スクリーンショットの添付"
+        "スクリーンショットを添付"
       ],
       "Audio file": [
         "音声ファイル"
@@ -3055,17 +3082,26 @@
       "Category": [
         "カテゴリー"
       ],
+      "Child sexual abuse material": [
+        "児童虐待に関するファイル"
+      ],
       "City": [
         "市町村"
       ],
       "Code is 6 digits without spaces": [
         "コードは空白なしの 6 桁の数字です"
       ],
+      "Comment": [
+        "コメント"
+      ],
       "Contacts": [
         "連絡先"
       ],
       "Copy": [
         "コピー"
+      ],
+      "Copyright infringement": [
+        "著作権侵害"
       ],
       "Country": [
         "国"
@@ -3090,6 +3126,9 @@
       ],
       "Download anyway": [
         "とにかくダウンロード"
+      ],
+      "Email": [
+        "メール"
       ],
       "Email address": [
         "メールアドレス"
@@ -3145,6 +3184,9 @@
       "Hide password": [
         "パスワードを非表示"
       ],
+      "I understand the risk": [
+        "リスクを承知しました"
+      ],
       "Image": [
         "画像"
       ],
@@ -3175,6 +3217,9 @@
       "Mailbox password": [
         "メールボックスのパスワード"
       ],
+      "Malware": [
+        "マルウェア"
+      ],
       "Manage folders": [
         "フォルダーを管理"
       ],
@@ -3202,6 +3247,9 @@
       "Operating system version": [
         "OS のバージョン"
       ],
+      "Other": [
+        "その他"
+      ],
       "Password": [
         "パスワード"
       ],
@@ -3210,6 +3258,9 @@
       ],
       "Phone number": [
         "電話番号"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "私書箱"
@@ -3235,11 +3286,14 @@
       "Replace folder": [
         "フォルダーを置き換え"
       ],
-      "Report abuse": [
-        "不正利用を報告"
+      "Report Abuse": [
+        "不正利用の報告"
       ],
       "Reveal password": [
         "パスワードを表示"
+      ],
+      "Select type of abuse": [
+        "違反の種類を選択"
       ],
       "Set expiration date": [
         "有効期限を設定"
@@ -3255,6 +3309,12 @@
       ],
       "Skip folder": [
         "フォルダーをスキップ"
+      ],
+      "Spam": [
+        "スパム"
+      ],
+      "Stolen data": [
+        "盗難されたデータ"
       ],
       "Street address": [
         "番地"
@@ -3702,6 +3762,9 @@
       "Enter a new folder name": [
         "フォルダー名を入力"
       ],
+      "Enter your email address": [
+        "メールアドレスを入力"
+      ],
       "Filter groups": [
         "グループの検索"
       ],
@@ -4144,7 +4207,7 @@
         "ごみ箱を空にする"
       ],
       "Enable drive search": [
-        ""
+        "ドライブ検索を有効化"
       ],
       "Enter password to download": [
         "パスワードを入力してダウンロード"
@@ -4177,7 +4240,7 @@
         "フォルダーの詳細"
       ],
       "Found ${ searchView.numberOfResults } result": [
-        ""
+        "${ searchView.numberOfResults } 件見つかりました"
       ],
       "Groups": [
         "グループ"
@@ -4385,6 +4448,9 @@
       ],
       "Warning": [
         "警告"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "更新情報"

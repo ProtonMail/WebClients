@@ -2815,9 +2815,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Căutarea în conținutul mesajelor nu poate fi activată în acest navigator. Închideți modul de navigare privat sau folosiți alt navigator."
       ],
-      "Could not find address ${ email }.": [
-        "Nu s-a putut găsi adresa ${ email }."
-      ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Eroare decriptare: decriptarea conținutului criptat al acestui mesaj a eșuat."
       ],
@@ -3976,6 +3973,9 @@
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Navigarea de bază și acțiunile rămân disponibile indiferent de combinațiile de taste care sunt active sau nu în setări."
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
+      ],
       "Body: ": [
         "Conținut: "
       ],
@@ -3996,9 +3996,6 @@
       ],
       "Clears browser data related to message content search including downloaded messages": [
         "Se şterg datele din navigator legate de căutarea conținutului mesajelor, inclusiv mesajele descărcate."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această adresă de e-mail nu este corectă, apăsați pe «Editare» pentru a o corecta."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
@@ -4648,6 +4645,9 @@
       ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă sunteți sigur că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
@@ -5368,6 +5368,9 @@
       ],
       "Hide password": [
         "Ascundere parolă"
+      ],
+      "I understand the risk": [
+        "Înțeleg riscul"
       ],
       "IF": [
         "DACĂ"
@@ -7423,6 +7426,9 @@
       ],
       "Warning": [
         "Avertizare"
+      ],
+      "Warning: suspected fake website": [
+        "Avertisment: suspectare site fals"
       ],
       "Welcome": [
         "Bun venit"

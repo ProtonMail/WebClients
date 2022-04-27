@@ -491,6 +491,9 @@
       "Submit": [
         "Odeslat"
       ],
+      "Submit report": [
+        ""
+      ],
       "Switch account": [
         "Přepnout účet"
       ],
@@ -1763,9 +1766,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "V tomto prohlížeči nelze povolit vyhledávání obsahu. Ukončete prosím režim soukromého režim prohlížeče, nebo vyzkoušejte jiný prohlížeč."
       ],
-      "Could not find address ${ email }.": [
-        "Nelze najít adresu ${ email }."
-      ],
       "Deselect at least ${ calendarToFixCount } calendar": [
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendáře",
         "Zrušte výběr nejméně ${ calendarToFixCount } kalendářů",
@@ -1885,6 +1885,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Klíč hlavní adresy není dešifrován."
+      ],
+      "Report failed to be sent": [
+        ""
       ],
       "Request timed out": [
         "Vypršel časový limit žádosti"
@@ -2424,6 +2427,9 @@
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Vzhledem k tomu že ${ appName } je end-to-end zašifrovaná, tak nemáme přístup\na nemůžeme za Vás dekryptovat Vaše soubory. K odemknutí Vašeho disku po resetování hesla\nmusíte mít jedno z následujících:"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Canceled": [
         "Zrušeno"
       ],
@@ -2447,9 +2453,6 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Vymaže data prohlížeče související se šifrovaným vyhledáváním."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je tato e-mailová adresa nesprávná, klikněte na tlačítko \"Upravit\" pro její opravu."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
@@ -2529,6 +2532,9 @@
       "Downloading": [
         "Stahování"
       ],
+      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Drag and drop a file here or choose to upload.": [
         "Zachyťte a přetáhněte soubor sem nebo vyberte soubor nahrát."
       ],
@@ -2546,6 +2552,18 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Estimated time remaining: Less than a minute": [
+        ""
+      ],
+      "Estimating time remaining...": [
+        ""
       ],
       "Failed": [
         "Selhalo"
@@ -2808,6 +2826,9 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
+      "Report has been sent": [
+        ""
+      ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze povolit vyhledávání"
       ],
@@ -2873,6 +2894,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Tento prohlížeč nepodporuje náhled PDF dokumentů. Soubor si stáhněte."
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -2949,6 +2973,9 @@
       "Unsupported file": [
         "Nepodporovaný soubor"
       ],
+      "Updating drive search...": [
+        ""
+      ],
       "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
         "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
       ],
@@ -2960,6 +2987,9 @@
       ],
       "Uploading hundreds of files at once may have a performance impact.": [
         "Nahrávání stovky souboru najednou může zapříčinit dopad na výkon."
+      ],
+      "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
+        ""
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -3184,17 +3214,26 @@
       "Category": [
         "Kategorie"
       ],
+      "Child sexual abuse material": [
+        ""
+      ],
       "City": [
         "Město"
       ],
       "Code is 6 digits without spaces": [
         "Kód má 6 číslic bez mezer"
       ],
+      "Comment": [
+        ""
+      ],
       "Contacts": [
         "Kontakty"
       ],
       "Copy": [
         "Kopírovat"
+      ],
+      "Copyright infringement": [
+        ""
       ],
       "Country": [
         "Země"
@@ -3222,6 +3261,9 @@
       ],
       "Download anyway": [
         "Přesto stáhnout"
+      ],
+      "Email": [
+        ""
       ],
       "Email address": [
         "E-mailová adresa"
@@ -3277,6 +3319,9 @@
       "Hide password": [
         "Skrýt heslo"
       ],
+      "I understand the risk": [
+        ""
+      ],
       "Image": [
         "Obrázek"
       ],
@@ -3307,6 +3352,9 @@
       "Mailbox password": [
         "Heslo k e-mailové schránce"
       ],
+      "Malware": [
+        ""
+      ],
       "Manage folders": [
         "Správa složek"
       ],
@@ -3334,6 +3382,9 @@
       "Operating system version": [
         "Verze operačního systému"
       ],
+      "Other": [
+        ""
+      ],
       "Password": [
         "Heslo"
       ],
@@ -3342,6 +3393,9 @@
       ],
       "Phone number": [
         "Telefonní číslo"
+      ],
+      "Please provide full details to help us take appropriate action": [
+        ""
       ],
       "Post office box": [
         "PSČ"
@@ -3367,11 +3421,14 @@
       "Replace folder": [
         "Nahradit složku"
       ],
-      "Report abuse": [
-        "Nahlásit zneužití"
+      "Report Abuse": [
+        ""
       ],
       "Reveal password": [
         "Zobrazit heslo"
+      ],
+      "Select type of abuse": [
+        ""
       ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
@@ -3387,6 +3444,12 @@
       ],
       "Skip folder": [
         "Přeskočit složku"
+      ],
+      "Spam": [
+        ""
+      ],
+      "Stolen data": [
+        ""
       ],
       "Street address": [
         "Ulice a č. p"
@@ -3893,6 +3956,9 @@
       ],
       "Enter a new folder name": [
         "Zadejte nový název složky"
+      ],
+      "Enter your email address": [
+        ""
       ],
       "Filter groups": [
         "Filtrovat skupiny"
@@ -4610,6 +4676,9 @@
       ],
       "Warning": [
         "Varování"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Co je nového"

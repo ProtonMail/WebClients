@@ -2883,14 +2883,14 @@
       "At most 100 participants are allowed per invitation": [
         "Dopušteno je najviše 100 sudionika po pozivnici"
       ],
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Ne možete se sjetiti lozinke? Možemo vam pomoći da izbrišete šifrirane podatke od svih kontakata koji su šifrirani ovim ključem i da u tom procesu odbacite upozorenje."
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Provjera kontakta ${ progress } od ${ max }..."
-      ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ova adresa e-pošte netočan, pritisnite \"Uredi\" da biste je ispravili."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Pritisnite \"Zatraži novi kȏd\" da biste novi potvrdni kȏd poslali na ${ strong }. Ako je ovaj telefonski broj netočan, pritisnite \"Uredi\" da biste ga ispravili."
@@ -3198,6 +3198,9 @@
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
         "Događaj je ažuriran. Organizator neće biti obaviješten da odbijate pozivnicu jer ne možete poslati e-poštu s pozvane adrese. Želite li ipak izbrisati ovaj događaj?"
+      ],
+      "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
+        ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ova poveznica može biti homografski napad i ne može je otvoriti preglednik Internet Explorer i Edge. Ako ste sigurni da je poveznica legitimna, upotrijebite drugi preglednik da biste je otvorili."
@@ -3520,6 +3523,9 @@
         "Sakrij lozinku"
       ],
       "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+        ""
+      ],
+      "I understand the risk": [
         ""
       ],
       "Import all messages": [
@@ -5020,6 +5026,9 @@
       ],
       "Warning": [
         "Upozorenje"
+      ],
+      "Warning: suspected fake website": [
+        ""
       ],
       "What's new": [
         "Što je novo"
