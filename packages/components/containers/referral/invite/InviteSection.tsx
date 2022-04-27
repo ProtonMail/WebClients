@@ -7,7 +7,7 @@ import InviteShareLink from './InviteShareLink';
 import './InviteSection.scss';
 
 const BorderedBox = ({ children, className }: { children: React.ReactNode; className?: string }) => (
-    <div className={classnames([className, 'border rounded-lg p1-5'])}>{children}</div>
+    <div className={classnames([className, 'border rounded p1-25'])}>{children}</div>
 );
 
 const InviteSection = () => {
