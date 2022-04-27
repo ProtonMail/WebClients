@@ -20,6 +20,7 @@ $field-container: rem(260) !default;
 
 .field {
 	block-size: rem($default-height-fields);
+	min-block-size: rem($default-height-fields); // To ensure minimum size when overriding block-size to 'auto'
 
 	@at-root {
 		details & {

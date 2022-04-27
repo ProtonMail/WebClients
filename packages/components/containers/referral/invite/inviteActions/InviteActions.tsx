@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { useEffect, useState } from 'react';
-import { classnames, Button, useFeature, FeatureCode } from '@proton/components';
+import { classnames, InlineLinkButton, useFeature, FeatureCode } from '@proton/components';
 
 import InviteHowItWorks from './InviteHowItWorks';
 import ReferralSignatureToggle from './ReferralSignatureToggle';
@@ -27,20 +27,22 @@ const InviteActions = () => {
 
     return (
         <>
-            <div className={classnames(['flex flex-justify-space-between', showHowItWorksSection && 'mb2'])}>
+            <div
+                className={classnames([
+                    'flex flex-justify-space-between flex-align-items-center',
+                    showHowItWorksSection && 'mb2',
+                ])}
+            >
                 <ReferralSignatureToggle />
                 {!showHowItWorksSection && (
-                    <div className="flex-item-fluid text-right">
-                        <Button
-                            className="p0"
-                            shape="underline"
-                            color="norm"
+                    <div className="mlauto pl1">
+                        <InlineLinkButton
                             onClick={() => {
                                 setShowHowItWorksSection(true);
                             }}
                         >
                             {c('Title').t`How does it work?`}
-                        </Button>
+                        </InlineLinkButton>
                     </div>
                 )}
             </div>
