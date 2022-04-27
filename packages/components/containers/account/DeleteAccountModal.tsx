@@ -260,11 +260,13 @@ const DeleteAccountModal = (props: Props) => {
                     checked={model.check}
                     disabled={loading}
                     onChange={({ target }) => setModel({ ...model, check: target.checked })}
-                >{c('Label').t`Yes, I want to permanently delete this account and all its data.`}</Checkbox>
+                >
+                    {c('Label').t`Yes, I want to permanently delete this account and all its data.`}
+                </Checkbox>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
-                <ErrorButton loading={loading} disabled={!model.check} type="submit">
+                <ErrorButton loading={loading} type="submit">
                     {c('Action').t`Delete`}
                 </ErrorButton>
             </ModalTwoFooter>
