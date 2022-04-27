@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { ButtonLike, Card, SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
+import { Card } from '@proton/atoms';
+import { ButtonLike, SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
 
 const VpnUpgradeSection = () => {
     const [plans, loadingPlans] = usePlans();

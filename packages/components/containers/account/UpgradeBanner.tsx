@@ -2,7 +2,9 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { PLANS } from '@proton/shared/lib/constants';
-import { ButtonLike, Card, SettingsLink } from '../../components';
+import { Card } from '@proton/atoms';
+
+import { ButtonLike, SettingsLink } from '../../components';
 import { classnames } from '../../helpers';
 
 interface Props {

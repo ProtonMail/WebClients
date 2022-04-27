@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Loader, SettingsSectionWide, Card } from '@proton/components';
+import { Card } from '@proton/atoms';
+import { Loader, SettingsSectionWide } from '@proton/components';
 import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
