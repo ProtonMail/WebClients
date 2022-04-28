@@ -1,11 +1,11 @@
 import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { useNotifications, usePreventLeave, useModals } from '@proton/components';
+import { useNotifications, usePreventLeave, useModals, useOnline } from '@proton/components';
 import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
-import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
+import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
 import { bufferToStream } from '../../../utils/stream';
 import { logError, reportError } from '../../_utils';
 import { SignatureIssues } from '../../_links';
@@ -19,6 +19,7 @@ import useDownloadControl from './useDownloadControl';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
 export default function useDownloadProvider(DownloadSignatureIssueModal: DownloadSignatureIssueModal) {
+    const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
     const { createModal } = useModals();
@@ -138,6 +139,13 @@ export default function useDownloadProvider(DownloadSignatureIssueModal: Downloa
                 })
         );
     }, [queue.nextDownload, queue.downloads]);
+
+    useEffect(() => {
+        if (onlineStatus) {
+            const ids = queue.downloads.filter(isTransferPausedByConnection).map(({ id }) => id);
+            control.resumeDownloads(({ id }) => ids.includes(id));
+        }
+    }, [onlineStatus]);
 
     return {
         downloads: queue.downloads,
