@@ -9,8 +9,10 @@ import { getEventErrorMessage, getEventLoadingMessage } from './error';
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
 import getEventInformation from './getEventInformation';
 
+export type EventSize = 'sm' | 'xs' | '2xs';
+
 interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
-    isTiny?: boolean;
+    size?: EventSize;
     isSelected?: boolean;
     isUnanswered?: boolean;
     isCancelled?: boolean;
@@ -20,7 +22,17 @@ interface PartDayEventViewProps extends ComponentPropsWithoutRef<'div'> {
     children?: ReactNode;
 }
 export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps>(function PartDayEventViewComponent(
-    { isTiny, isSelected, isUnanswered, isCancelled, isPast, isLoaded, className, children, ...rest }: PartDayEventViewProps,
+    {
+        size,
+        isSelected,
+        isUnanswered,
+        isCancelled,
+        isPast,
+        isLoaded,
+        className,
+        children,
+        ...rest
+    }: PartDayEventViewProps,
     ref: Ref<HTMLDivElement>
 ) {
     return (
@@ -34,7 +46,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
                 isSelected && 'isSelected',
                 isUnanswered && 'isUnanswered',
                 isCancelled && 'isCancelled',
-                isTiny && 'calendar-eventcell--tiny',
+                size && `calendar-eventcell--${size}`,
                 className,
             ])}
             ref={ref}
@@ -46,7 +58,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
 });
 
 interface Props {
-    isTiny?: boolean;
+    size?: EventSize;
     style: CSSProperties;
     formatTime: (date: Date) => string;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
@@ -57,7 +69,7 @@ interface Props {
     isEventPartLessThanAnHour: boolean;
 }
 const PartDayEvent = ({
-    isTiny,
+    size,
     style,
     formatTime,
     event,
@@ -120,7 +132,7 @@ const PartDayEvent = ({
                     {titleString}
                 </div>
                 <div
-                    className={classnames(['text-ellipsis calendar-eventcell-timestring', shouldHideTime && 'hidden'])}
+                    className={classnames(['text-ellipsis calendar-eventcell-timestring', shouldHideTime && 'sr-only'])}
                 >
                     {timeString}
                 </div>
@@ -130,7 +142,7 @@ const PartDayEvent = ({
 
     return (
         <PartDayEventView
-            isTiny={isTiny}
+            size={size}
             style={eventStyle}
             isLoaded={!isEventReadLoading}
             isPast={!isEventReadLoading && isBeforeNow}
