@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react';
 
-import { useTheme } from '@proton/components';
 import { PROTON_DEFAULT_THEME } from '@proton/shared/lib/themes/themes';
+import { useTheme } from '../themes';
 
 /*
  * Meant to wrap portions of ui that we know are for certain only
