@@ -21,6 +21,7 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { clamp } from '@proton/shared/lib/helpers/math';
 import { setupMemberKey } from '@proton/shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses, useLoading } from '../../hooks';
 import {
@@ -38,10 +39,8 @@ import {
     useFormErrors,
 } from '../../components';
 
-import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
+import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
-
-const FIVE_GIGA = 5 * GIGA;
 
 interface Props extends ModalProps {
     organization: Organization;
@@ -55,6 +54,7 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
     const { call } = useEventManager();
     const api = useApi();
     const getAddresses = useGetAddresses();
+    const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
 
     const hasVPN = !!organization.MaxVPN;
@@ -68,7 +68,7 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
         address: '',
         domain: domains[0].DomainName,
         vpn: hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
-        storage: Math.min(storageRange[1], FIVE_GIGA),
+        storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
 
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
@@ -178,6 +178,7 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
         >
             <ModalHeader title={c('Title').t`Add user`} />
             <ModalContent>
+                <p>{c('Info').t`Create a new account and share the email address and password with the user.`}</p>
                 <InputFieldTwo
                     autoFocus
                     id="name"
@@ -247,11 +248,12 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
                 )}
 
                 <div className="mb1-5">
-                    <div className="text-semibold mb0-25">{c('Label').t`Account storage`}</div>
+                    <div className="text-semibold mb0-5">{c('Label').t`Account storage`}</div>
                     <MemberStorageSelector
                         value={model.storage}
-                        step={GIGA}
+                        sizeUnit={storageSizeUnit}
                         range={storageRange}
+                        totalStorage={getTotalStorage({}, organization)}
                         onChange={handleChange('storage')}
                     />
                 </div>
