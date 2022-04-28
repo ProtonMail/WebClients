@@ -225,34 +225,34 @@ const MailboxContainer = ({
     const handleMarkAs = useCallback(
         async (status: MARK_AS_STATUS) => {
             const isUnread = status === MARK_AS_STATUS.UNREAD;
-            const elements = getElementsFromIDs(checkedIDs);
+            const elements = getElementsFromIDs(selectedIDs);
             if (isUnread) {
                 handleBack();
             }
             await markAs(elements, labelID, status);
         },
-        [checkedIDs, labelID, handleBack]
+        [selectedIDs, labelID, handleBack]
     );
 
     const handleMove = useCallback(
         async (LabelID: string) => {
             const folderName = getFolderName(LabelID, folders);
             const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
-            const elements = getElementsFromIDs(checkedIDs);
+            const elements = getElementsFromIDs(selectedIDs);
             await moveToFolder(elements, LabelID, folderName, fromLabelID);
-            if (checkedIDs.includes(elementID || '')) {
+            if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }
         },
-        [checkedIDs, elementID, labelID, labelIDs, folders, handleBack]
+        [selectedIDs, elementID, labelID, labelIDs, folders, handleBack]
     );
 
     const handleDelete = useCallback(async () => {
-        await permanentDelete(checkedIDs);
-    }, [checkedIDs, permanentDelete]);
+        await permanentDelete(selectedIDs);
+    }, [selectedIDs, permanentDelete]);
 
     const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
-    const openContextMenu = useCallback(() => (console.log('d'), setIsOpen(true)), [setIsOpen]);
+    const openContextMenu = useCallback(() => setIsOpen(true), [setIsOpen]);
 
     const handleContextMenu = useCallback(
         (e: React.MouseEvent<HTMLDivElement>, element: Element) => {
