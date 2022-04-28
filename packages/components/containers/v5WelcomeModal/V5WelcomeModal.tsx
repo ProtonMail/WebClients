@@ -72,7 +72,7 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
                             {
                                 // translator: ${br} is just a break line, please keep the variable at the same place.
                                 c('new_plans: info')
-                                    .jt`Introducing Proton’s refreshed look.${br} Many services, one mission. Welcome to an Internet where privacy is the default.`
+                                    .jt`Introducing Proton’s refreshed look.${br} Many services, one mission. Welcome to an internet where privacy is the default.`
                             }{' '}
                             <Href url={getStaticURL('/news/updated-proton')}>{c('Info').t`Learn more`}</Href>
                         </>
