@@ -1,12 +1,11 @@
 import { useState, useCallback, useRef, useMemo, useEffect, Fragment, ReactNode } from 'react';
 import { Router } from 'react-router';
 import { History, createBrowserHistory as createHistory } from 'history';
-import createAuthentication from '@proton/shared/lib/authentication/createAuthenticationStore';
+import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import { AddressesModel } from '@proton/shared/lib/models';
 import { formatUser, UserModel } from '@proton/shared/lib/models/userModel';
 import { STATUS } from '@proton/shared/lib/models/cache';
-import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import { isSSOMode, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
 import { noop } from '@proton/shared/lib/helpers/function';
@@ -22,6 +21,7 @@ import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
+import * as sentry from '@proton/shared/lib/helpers/sentry';
 
 import { Icons } from '../../components';
 import Signout from './Signout';
@@ -98,13 +98,13 @@ interface AuthState {
 }
 
 interface Props {
+    authentication: AuthenticationStore;
     config: ProtonConfig;
     children: ReactNode;
     hasInitialAuth?: boolean;
 }
 
-const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
-    const authentication = useInstance(() => createAuthentication(createSecureSessionStorage()));
+const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) => {
     const pathRef = useRef<string | undefined>();
     const cacheRef = useRef<Cache<string, any>>();
     if (!cacheRef.current) {
@@ -243,6 +243,10 @@ const ProtonApp = ({ config, children, hasInitialAuth }: Props) => {
             logout: handleLogout,
             onLogout: logoutListener.subscribe,
         };
+    }, [UID]);
+
+    useEffect(() => {
+        sentry.setUID(UID);
     }, [UID]);
 
     const [, setRerender] = useState<any>();

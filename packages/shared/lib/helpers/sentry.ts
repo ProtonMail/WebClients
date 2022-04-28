@@ -1,19 +1,78 @@
 import * as Sentry from '@sentry/browser';
+import { TransportOptions } from '@sentry/types';
 
 import { ProtonConfig } from '../interfaces';
 import { VPN_HOSTNAME } from '../constants';
+import { getUIDHeaders } from '../fetch/headers';
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
 
-const isProduction = (host: string) => host.endsWith('.protonmail.com') || host === VPN_HOSTNAME;
+const isProduction = (host: string) =>
+    host.endsWith('.protonmail.com') || host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
-function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>) {
+let authHeaders: { [key: string]: string } = {};
+
+export const setUID = (uid: string | undefined) => {
+    if (!uid) {
+        authHeaders = {};
+        return;
+    }
+    authHeaders = {
+        ...getUIDHeaders(uid),
+    };
+};
+
+const getContentTypeHeaders = (input: RequestInfo): HeadersInit => {
+    const url = input.toString();
+    /**
+     * The sentry library does not append the content-type header to requests. The documentation states
+     * what routes accept what content-type. Those content-type headers are also expected through our sentry tunnel.
+     */
+    if (url.includes('/envelope/')) {
+        return {
+            'content-type': 'application/x-sentry-envelope',
+        };
+    }
+    if (url.includes('/store/')) {
+        return {
+            'content-type': 'application/json',
+        };
+    }
+    return {};
+};
+
+const sentryFetch = (input: RequestInfo, init?: RequestInit) => {
+    return window.fetch(input, {
+        ...init,
+        headers: {
+            ...init?.headers,
+            ...getContentTypeHeaders(input),
+            ...authHeaders,
+        },
+    });
+};
+
+class Transport extends Sentry.Transports.FetchTransport {
+    constructor(options: TransportOptions) {
+        super(options, sentryFetch);
+    }
+}
+
+interface Arguments {
+    sessionTracking?: boolean;
+    config: Pick<ProtonConfig, 'SENTRY_DSN' | 'COMMIT' | 'APP_VERSION'>;
+    uid?: string;
+}
+
+function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTracking = false }: Arguments) {
     const { host } = window.location;
 
     // No need to configure it if we don't load the DSN
     if (!SENTRY_DSN || isLocalhost(host)) {
         return;
     }
+
+    setUID(uid);
 
     // Assumes SENTRY_DSN is: https://111b3eeaaec34cae8e812df705690a36@sentry/11
     // To get https://111b3eeaaec34cae8e812df705690a36@protonmail.com/api/core/v4/reports/sentry/11
@@ -24,6 +83,8 @@ function main({ SENTRY_DSN, COMMIT, APP_VERSION }: Pick<ProtonConfig, 'SENTRY_DS
         release: isProduction(host) ? APP_VERSION : COMMIT,
         environment: host.split('.').splice(1).join('.'),
         normalizeDepth: 5,
+        transport: Transport,
+        autoSessionTracking: sessionTracking,
         beforeSend(event, hint) {
             const error = hint?.originalException;
             const stack = typeof error === 'string' ? error : error?.stack;
