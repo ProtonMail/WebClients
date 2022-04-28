@@ -6,7 +6,7 @@ import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import { indexKeyExists, isDBReadyAfterBuilding } from '@proton/encrypted-search';
 
 import './SearchDropdown.scss';
-import { useSearchLibrary } from '../../../store/search';
+import { useSearchLibrary } from '../../../store';
 import { SearchIndexingProgress } from './SearchIndexingProgress';
 
 interface Props {

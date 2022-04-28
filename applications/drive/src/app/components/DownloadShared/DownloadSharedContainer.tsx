@@ -11,7 +11,7 @@ import { APPS, HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../../store';
-import { reportError, isValidationError } from '../../store/utils';
+import { reportError, isValidationError } from '../../store/_utils';
 import usePublicSharing, {
     ERROR_CODE_INVALID_SRP_PARAMS,
     SharedURLInfoDecrypted,

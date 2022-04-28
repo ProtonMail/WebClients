@@ -5,8 +5,8 @@ import { classnames, Progress, useUser } from '@proton/components';
 import { getESCurrentProgress, getESTotal } from '@proton/encrypted-search';
 
 import './SearchDropdown.scss';
-import useSearchState from './useSearchState';
-import { useSearchLibrary } from '../../../store/search';
+import { useSearchLibrary } from '../../../store';
+import useSearchState from '../../../store/_search/useSearchState';
 
 export const SearchIndexingProgress = () => {
     const [user] = useUser();
