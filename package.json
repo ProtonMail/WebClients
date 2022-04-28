@@ -29,12 +29,12 @@
     },
     "devDependencies": {
         "husky": "^7.0.4",
-        "lint-staged": "^12.4.0",
+        "lint-staged": "^12.4.1",
         "prettier": "^2.6.2",
         "sort-package-json": "^1.55.0"
     },
     "engines": {
-        "node": ">= v16.14.2"
+        "node": ">= v16.15.0"
     },
     "packageManager": "yarn@3.2.0"
 }
