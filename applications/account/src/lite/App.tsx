@@ -16,15 +16,15 @@ import {
     NotificationsChildren,
     NotificationsHijack,
     CreateNotificationOptions,
+    getSessionTrackingEnabled,
 } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { APPS } from '@proton/shared/lib/constants';
 
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
-import createAuthentication from '@proton/shared/lib/authentication/createAuthenticationStore';
-import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import createCache from '@proton/shared/lib/helpers/cache';
 import { noop } from '@proton/shared/lib/helpers/function';
+import authentication from '@proton/shared/lib/authentication/authentication';
 
 import * as config from '../app/config';
 import '../app/app.scss';
@@ -38,9 +38,8 @@ const enhancedConfig = {
     APP_NAME: APPS.PROTONACCOUNTLITE,
 };
 
-sentry(enhancedConfig);
+sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 
-const authentication = createAuthentication(createSecureSessionStorage());
 const cache = createCache<string, any>();
 
 const App = () => {

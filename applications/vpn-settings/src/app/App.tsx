@@ -5,10 +5,12 @@ import {
     PrivateAuthenticationStore,
     ErrorBoundary,
     StandardErrorPage,
+    getSessionTrackingEnabled,
 } from '@proton/components';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
+import authentication from '@proton/shared/lib/authentication/authentication';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';
@@ -18,12 +20,8 @@ import './app.scss';
 
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
-const enhancedConfig = {
-    ...config,
-};
-
-newVersionUpdater(enhancedConfig);
-sentry(enhancedConfig);
+newVersionUpdater(config);
+sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 
 const Setup = () => {
     const { UID, login, logout } = useAuthentication() as PublicAuthenticationStore & PrivateAuthenticationStore;
@@ -35,7 +33,7 @@ const Setup = () => {
 
 const App = () => {
     return (
-        <ProtonApp config={enhancedConfig}>
+        <ProtonApp authentication={authentication} config={config}>
             <ErrorBoundary component={<StandardErrorPage />}>
                 <Setup />
             </ErrorBoundary>

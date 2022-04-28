@@ -19,6 +19,7 @@ import {
     NotificationsProvider,
     CacheProvider,
     StandardPublicApp,
+    getSessionTrackingEnabled,
 } from '@proton/components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -32,7 +33,7 @@ import EOContainer from './containers/eo/EOContainer';
 const locales = initLocales(require.context('../../locales', true, /.json$/, 'lazy'));
 
 newVersionUpdater(config);
-sentry(config);
+sentry({ config, sessionTracking: getSessionTrackingEnabled() });
 setVcalProdId(getProdId(config));
 
 // If the browser is Chromium based, register automatically the mailto protocol handler
