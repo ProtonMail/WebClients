@@ -2,7 +2,7 @@ import { isSameDay, eachDayOfInterval, startOfDay, endOfDay, min, max } from '@p
 import { CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 
-const MIN_DURATION = 18; // In minutes
+const MIN_DURATION = 15; // In minutes
 
 export const getKey = (date: Date) => {
     const year = date.getUTCFullYear();
