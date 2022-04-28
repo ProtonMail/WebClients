@@ -24,11 +24,11 @@
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-polymorphic-box": "^3.0.3",
-        "ts-loader": "^9.2.8",
+        "ts-loader": "^9.2.9",
         "typescript": "^4.6.3"
     },
     "devDependencies": {
-        "@babel/core": "^7.16.7",
+        "@babel/core": "^7.17.9",
         "@babel/preset-react": "^7.16.7",
         "@babel/preset-typescript": "^7.16.7",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -40,16 +40,16 @@
         "@storybook/manager-webpack5": "^6.4.22",
         "@storybook/react": "^6.4.22",
         "@storybook/source-loader": "^6.4.22",
-        "@testing-library/jest-dom": "^5.16.1",
-        "@testing-library/react": "^12.1.2",
-        "@types/jest": "^27.4.0",
-        "@types/react": "^17.0.38",
-        "@types/react-dom": "^17.0.11",
+        "@testing-library/jest-dom": "^5.16.4",
+        "@testing-library/react": "^12.1.5",
+        "@types/jest": "^27.4.1",
+        "@types/react": "^17.0.44",
+        "@types/react-dom": "^17.0.16",
         "babel-loader": "^8.2.5",
-        "eslint": "^8.6.0",
+        "eslint": "^8.14.0",
         "eslint-plugin-storybook": "^0.5.11",
-        "jest": "^27.4.7",
-        "netlify-cli": "^8.6.20",
-        "webpack": "^5.65.0"
+        "jest": "^27.5.1",
+        "netlify-cli": "^8.19.3",
+        "webpack": "^5.72.0"
     }
 }
