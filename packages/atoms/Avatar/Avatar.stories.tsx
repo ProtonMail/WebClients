@@ -4,7 +4,7 @@ import mdx from './Avatar.mdx';
 
 export default {
     component: Avatar,
-    title: 'Avatar',
+    title: 'components/Avatar',
     parameters: { docs: { page: mdx } },
 };
 

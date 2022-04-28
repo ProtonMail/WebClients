@@ -10,6 +10,7 @@ import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getHasLegacyPlans, getPlan, getPrimaryPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { NotificationDot } from '@proton/atoms'
 import {
     Button,
     ButtonLike,
@@ -22,7 +23,6 @@ import {
     SettingsLink,
     FeatureCode,
     Icon,
-    NotificationDot,
     ReferralSpotlight,
     useAuthentication,
     useConfig,

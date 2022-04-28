@@ -1,8 +1,8 @@
 import { ButtonHTMLAttributes, DetailedHTMLProps, forwardRef, Ref } from 'react';
+
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-
-import { NotificationDot, NotificationDotColor } from '../../components';
+import { NotificationDot, NotificationDotColor } from '@proton/atoms';
 
 export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
