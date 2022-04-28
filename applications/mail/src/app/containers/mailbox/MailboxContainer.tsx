@@ -12,7 +12,7 @@ import {
 } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
-import { VIEW_MODE } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Sort, Filter, SearchParameters } from '../../models/tools';
@@ -48,6 +48,10 @@ import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
 import ItemContextMenu from '../../components/list/ItemContextMenu';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
+import { useMoveToFolder } from '../../hooks/useApplyLabels';
+import { usePermanentDelete } from '../../hooks/usePermanentDelete';
+import { getFolderName } from '../../helpers/labels';
 
 interface Props {
     labelID: string;
@@ -75,12 +79,14 @@ const MailboxContainer = ({
     const [isContextMenuOpen, setIsOpen] = useState(false);
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const getElementsFromIDs = useGetElementsFromIDs();
+    const markAs = useMarkAs();
+    const moveToFolder = useMoveToFolder();
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
     const columnMode = columnModeSetting && !forceRowMode;
     const columnLayout = columnModeSetting || forceRowMode;
-
+    const labelIDs = (labels || []).map(({ ID }) => ID);
     const messageContainerRef = useRef<HTMLElement>(null);
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const resizeAreaRef = useRef<HTMLButtonElement>(null);
@@ -140,6 +146,7 @@ const MailboxContainer = ({
     };
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
+    const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
     useApplyEncryptedSearch(elementsParams);
 
     const handleBack = useCallback(() => history.push(setParamsInLocation(history.location, { labelID })), [labelID]);
@@ -211,6 +218,29 @@ const MailboxContainer = ({
         },
         [onCompose, isConversationContentView, labelID]
     );
+
+    const handleMarkAs = async (status: MARK_AS_STATUS) => {
+        const isUnread = status === MARK_AS_STATUS.UNREAD;
+        const elements = getElementsFromIDs(checkedIDs);
+        if (isUnread) {
+            handleBack();
+        }
+        await markAs(elements, labelID, status);
+    };
+
+    const handleMove = async (LabelID: string) => {
+        const folderName = getFolderName(LabelID, folders);
+        const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+        const elements = getElementsFromIDs(checkedIDs);
+        await moveToFolder(elements, LabelID, folderName, fromLabelID);
+        if (checkedIDs.includes(elementID || '')) {
+            handleBack();
+        }
+    };
+
+    const handleDelete = async () => {
+        await permanentDelete(checkedIDs);
+    };
 
     const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
     const openContextMenu = useCallback(() => (console.log('d'), setIsOpen(true)), [setIsOpen]);
@@ -295,6 +325,9 @@ const MailboxContainer = ({
                             location={location}
                             labels={labels}
                             folders={folders}
+                            onMarkAs={handleMarkAs}
+                            onMove={handleMove}
+                            onDelete={handleDelete}
                         />
                     </ErrorBoundary>
                 )}
@@ -390,11 +423,11 @@ const MailboxContainer = ({
             </div>
             {permanentDeleteModal}
             {moveScheduledModal}
+            {deleteModal}
             <ItemContextMenu
                 elementID={elementID}
                 labels={labels}
                 folders={folders}
-                onBack={handleBack}
                 mailSettings={mailSettings}
                 anchorRef={listRef}
                 isOpen={isContextMenuOpen}
@@ -403,6 +436,9 @@ const MailboxContainer = ({
                 open={openContextMenu}
                 close={closeContextMenu}
                 position={contextMenuPosition}
+                onMarkAs={handleMarkAs}
+                onMove={handleMove}
+                onDelete={handleDelete}
             />
         </MailboxContainerContextProvider>
     );
