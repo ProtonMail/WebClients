@@ -18,7 +18,7 @@ import {
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { FeaturesProvider, ModalsChildren, SSOForkProducer, useApi } from '@proton/components';
+import { FeaturesProvider, ModalsChildren, SSOForkProducer, Unauthenticated, useApi } from '@proton/components';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -39,7 +39,6 @@ import LoginContainer from '../login/LoginContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import ValidateRecoveryEmailContainer from '../public/ValidateRecoveryEmailContainer';
 import { SERVICES, SERVICES_KEYS } from '../signup/interfaces';
-import Unauthenticated from './Unauthenticated';
 import { getToAppName } from '../public/helper';
 
 const getPathFromLocation = (location: H.Location) => {
