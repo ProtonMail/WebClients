@@ -70,4 +70,3 @@ export * from './v2';
 export * from './version';
 export * from './videoInstructions';
 export * from './vr';
-export * from './notificationDot';

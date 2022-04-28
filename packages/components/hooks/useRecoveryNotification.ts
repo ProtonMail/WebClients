@@ -3,7 +3,7 @@ import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import getOverallStatus from '../containers/recovery/getOverallStatus';
 import { FeatureCode } from '../containers/features/FeaturesContext';
-import { NotificationDotColor } from '../components/notificationDot/NotificationDot';
+import { NotificationDotColor } from '@proton/atoms/NotificationDot/NotificationDot';
 import getLikelyHasKeysToReactivate from '../containers/keys/reactivateKeys/getLikelyHasKeysToReactivate';
 
 import useRecoveryStatus from './useRecoveryStatus';

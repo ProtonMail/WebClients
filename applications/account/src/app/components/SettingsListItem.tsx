@@ -1,9 +1,9 @@
 import * as React from 'react';
 
+import { NotificationDot, NotificationDotColor } from '@proton/atoms'
+
 import {
     IconName,
-    NotificationDot,
-    NotificationDotColor,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,

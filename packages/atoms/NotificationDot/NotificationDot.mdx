@@ -1,0 +1,29 @@
+import { Canvas, Story, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
+
+# NotificationDot
+
+The NotificationDot is simple which can be colored. It takes no opinion on its positioning.
+
+<Canvas withSource="open">
+    <Story id="components-notificationdot--basic" />
+</Canvas>
+
+## Colors
+
+`warning` or `danger` can be used to color the dot.
+
+<Canvas>
+    <Story id="components-notificationdot--colors" />
+</Canvas>
+
+## Position helper
+
+A `notification-dot--top-right` css class to align the center of the dot to the top right of the container.
+
+<Canvas>
+    <Story id="components-notificationdot--position-helper" />
+</Canvas>
+
+## Props
+
+<ArgsTable story={PRIMARY_STORY} />
