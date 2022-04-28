@@ -12,6 +12,11 @@ $size-track-thumb: 36 !default;
 	 */
 	touch-action: none;
 	block-size: rem($height-track);
+	/**
+	 * Inline-block and 100% width prevents the bottom margin from collapsing in parent.
+	 */
+	inline-size: 100%;
+	display: inline-block;
 
 	/**
 	 * Combined height of slider mark (12) + slider mark label line height (20).
