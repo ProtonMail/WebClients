@@ -1,6 +1,7 @@
+import { ThemeColor } from '@proton/colors';
 import * as H from 'history';
 
-import { IconName, NotificationDotColor } from '../../components';
+import { IconName } from '../../components';
 
 export interface SettingsPropsShared {
     location: H.Location;
@@ -21,7 +22,7 @@ export interface SectionConfig {
     description?: string;
     subsections: SubSectionConfig[];
     available?: boolean;
-    notification?: NotificationDotColor;
+    notification?: ThemeColor;
 }
 
 export interface SidebarConfig {

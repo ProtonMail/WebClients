@@ -1,5 +1,6 @@
 import { c } from 'ttag';
-import { NotificationDotColor, SectionConfig } from '@proton/components';
+import { SectionConfig } from '@proton/components';
+import { ThemeColor } from '@proton/colors';
 import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { recoveryIds } from './recoveryIds';
@@ -13,7 +14,7 @@ export const getAccountAppRoutes = ({
     user: UserModel;
     isDataRecoveryAvailable: boolean;
     isReferralProgramEnabled: boolean;
-    recoveryNotification?: NotificationDotColor;
+    recoveryNotification?: ThemeColor;
 }) => {
     const { isFree, canPay, isPaid, isPrivate, isMember } = user;
     const mailPlus = `${MAIL_APP_NAME} Plus`;
