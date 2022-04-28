@@ -3,9 +3,11 @@ import { useLocation, useHistory } from 'react-router-dom';
 import {
     classnames,
     ErrorBoundary,
+    FeatureCode,
     PrivateMainArea,
     useCalendars,
     useCalendarUserSettings,
+    useFeature,
     useFolders,
     useItemsSelection,
     useLabels,
@@ -81,6 +83,7 @@ const MailboxContainer = ({
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
     const moveToFolder = useMoveToFolder();
+    const { feature: mailContextMenuFeature } = useFeature<boolean>(FeatureCode.MailContextMenu);
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -219,28 +222,34 @@ const MailboxContainer = ({
         [onCompose, isConversationContentView, labelID]
     );
 
-    const handleMarkAs = async (status: MARK_AS_STATUS) => {
-        const isUnread = status === MARK_AS_STATUS.UNREAD;
-        const elements = getElementsFromIDs(checkedIDs);
-        if (isUnread) {
-            handleBack();
-        }
-        await markAs(elements, labelID, status);
-    };
+    const handleMarkAs = useCallback(
+        async (status: MARK_AS_STATUS) => {
+            const isUnread = status === MARK_AS_STATUS.UNREAD;
+            const elements = getElementsFromIDs(checkedIDs);
+            if (isUnread) {
+                handleBack();
+            }
+            await markAs(elements, labelID, status);
+        },
+        [checkedIDs, labelID, handleBack]
+    );
 
-    const handleMove = async (LabelID: string) => {
-        const folderName = getFolderName(LabelID, folders);
-        const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
-        const elements = getElementsFromIDs(checkedIDs);
-        await moveToFolder(elements, LabelID, folderName, fromLabelID);
-        if (checkedIDs.includes(elementID || '')) {
-            handleBack();
-        }
-    };
+    const handleMove = useCallback(
+        async (LabelID: string) => {
+            const folderName = getFolderName(LabelID, folders);
+            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
+            const elements = getElementsFromIDs(checkedIDs);
+            await moveToFolder(elements, LabelID, folderName, fromLabelID);
+            if (checkedIDs.includes(elementID || '')) {
+                handleBack();
+            }
+        },
+        [checkedIDs, elementID, labelID, labelIDs, folders, handleBack]
+    );
 
-    const handleDelete = async () => {
+    const handleDelete = useCallback(async () => {
         await permanentDelete(checkedIDs);
-    };
+    }, [checkedIDs, permanentDelete]);
 
     const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
     const openContextMenu = useCallback(() => (console.log('d'), setIsOpen(true)), [setIsOpen]);
@@ -424,22 +433,24 @@ const MailboxContainer = ({
             {permanentDeleteModal}
             {moveScheduledModal}
             {deleteModal}
-            <ItemContextMenu
-                elementID={elementID}
-                labels={labels}
-                folders={folders}
-                mailSettings={mailSettings}
-                anchorRef={listRef}
-                isOpen={isContextMenuOpen}
-                checkedIDs={checkedIDs}
-                labelID={labelID}
-                open={openContextMenu}
-                close={closeContextMenu}
-                position={contextMenuPosition}
-                onMarkAs={handleMarkAs}
-                onMove={handleMove}
-                onDelete={handleDelete}
-            />
+            {mailContextMenuFeature?.Value ? (
+                <ItemContextMenu
+                    elementID={elementID}
+                    labels={labels}
+                    folders={folders}
+                    mailSettings={mailSettings}
+                    anchorRef={listRef}
+                    isOpen={isContextMenuOpen}
+                    checkedIDs={checkedIDs}
+                    labelID={labelID}
+                    open={openContextMenu}
+                    close={closeContextMenu}
+                    position={contextMenuPosition}
+                    onMarkAs={handleMarkAs}
+                    onMove={handleMove}
+                    onDelete={handleDelete}
+                />
+            ) : null}
         </MailboxContainerContextProvider>
     );
 };
