@@ -36,6 +36,7 @@ import {
     CreateImportPayload,
     EASY_SWITCH_SOURCE,
     EasySwitchFeatureFlag,
+    ImportedCalendar,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, ACCENT_COLORS } from '@proton/shared/lib/constants';
@@ -200,7 +201,7 @@ const EasySwitchOauthModal = ({
         }
 
         const newMapping = await Promise.all(
-            calendarsToBeCreated.map(async ({ Source, Destination }) => {
+            calendarsToBeCreated.map(async ({ Source, Destination, Description }) => {
                 const Name = Destination.replace(CALENDAR_TO_BE_CREATED_PREFIX, '').slice(
                     0,
                     MAX_LENGTHS_API.CALENDAR_NAME
@@ -210,7 +211,7 @@ const EasySwitchOauthModal = ({
                     createCalendar({
                         Name,
                         Color: ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)],
-                        Description: '',
+                        Description,
                         Display: 1,
                         AddressID: addressID,
                         IsImport: 1,
@@ -226,7 +227,7 @@ const EasySwitchOauthModal = ({
 
                 setCreatedCalendarsCount(createdCalendarsCount + 1);
 
-                return { Source, Destination: Calendar.ID };
+                return { Source, Destination: Calendar.ID, Description };
             })
         );
 
@@ -318,7 +319,9 @@ const EasySwitchOauthModal = ({
                                 }
 
                                 if (importType === CALENDAR) {
-                                    const { Calendars } = await api(getCalendarImportData(ImporterID));
+                                    const { Calendars } = await api<{ Code: number; Calendars: ImportedCalendar[] }>(
+                                        getCalendarImportData(ImporterID)
+                                    );
 
                                     return {
                                         importType,

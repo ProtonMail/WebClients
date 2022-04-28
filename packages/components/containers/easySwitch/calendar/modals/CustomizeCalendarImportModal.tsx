@@ -83,9 +83,10 @@ const CustomizeCalendarImportModal = ({
     const selectedCalendarsTotal = selectedCalendars.length;
 
     const handleSubmit = () => {
-        const Mapping = selectedCalendars.map<CalendarImportMapping>(({ ID }) => ({
+        const Mapping = selectedCalendars.map<CalendarImportMapping>(({ ID, Description }) => ({
             Source: ID,
             Destination: calendarMapping[ID],
+            Description,
         }));
 
         onUpdateCalendarMapping(Mapping);
