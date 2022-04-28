@@ -1,6 +1,7 @@
 import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
 import { Button, InputFieldTwo, PasswordInputTwo } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 interface Props {
     onSubmit: (password: string) => void;
@@ -15,7 +16,8 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
 
     return (
         <form onSubmit={(e) => e.preventDefault()}>
-            <h2 className="h3 text-center">{c('Info').t`Decrypt message`}</h2>
+            <h1 className="eo-layout-title mb0 on-mobile-mt0-5">{c('Info').t`Decrypt message`}</h1>
+            <div className="mt0-25 color-weak mb2">{MAIL_APP_NAME}</div>
             <InputFieldTwo
                 autoFocus
                 id="password"

@@ -3,7 +3,6 @@ import { useRouteMatch } from 'react-router';
 import { c } from 'ttag';
 
 import { Href, Loader } from '@proton/components';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import MessageDecryptForm from './MessageDecryptForm';
@@ -34,11 +33,9 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
     }
 
     return (
-        <main className="ui-standard color-norm bg-norm relative no-scroll w100 max-w100 center eo-layout mw30r">
+        <main className="ui-standard shadow-lifted on-tiny-mobile-no-box-shadow color-norm bg-norm relative no-scroll w100 max-w100 center eo-layout mw30r">
             <div className="eo-layout-header">
-                <h1 className="eo-layout-title text-center mt1 mb0-5">
-                    <strong>{isError ? c('Title').t`Error` : MAIL_APP_NAME}</strong>
-                </h1>
+                {isError && <h1 className="eo-layout-title">{c('Title').t`Error`}</h1>}
             </div>
             <div className="eo-layout-main-content">
                 {isError ? (
@@ -47,7 +44,7 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
                     <MessageDecryptForm onSubmit={handleTryUnlock} />
                 )}
             </div>
-            <div className="border-top flex p1 mlauto">
+            <div className="flex p1 mlauto mb2">
                 <Href className="mlauto mrauto" href={getStaticURL('/support')}>{c('Action').t`Need help?`}</Href>
             </div>
         </main>

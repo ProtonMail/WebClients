@@ -4,6 +4,7 @@
 .eo {
 	&-message-header {
 		border-radius: 0;
+		padding-block-end: 1em;
 		.message-recipient-expanded .message-recipient-item-expanded-content {
 			padding-block-start: 0.2em;
 		}
@@ -12,15 +13,20 @@
 	&-composer {
 		// need to size it, because EO does not have dimensions like the composer container
 		block-size: em(300);
+		margin-inline: 1em;
+		@include respond-to($breakpoint-tiny) {
+			margin-inline: 0;
+		}
 
 		.composer-content {
 			margin-block-end: 0;
 		}
 		.editor {
-			border-block-start: 0;
-			border-inline: 0;
-			border-radius: 0;
+			border: 0;
 			padding-inline: 0.5em;
+			@include respond-to($breakpoint-tiny) {
+				padding-inline: 0;
+			}
 		}
 
 		&-attachments-list {
