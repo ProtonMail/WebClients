@@ -13,6 +13,13 @@ $size-track-thumb: 36 !default;
 	touch-action: none;
 	block-size: rem($height-track);
 
+	/**
+	 * Combined height of slider mark (12) + slider mark label line height (20).
+	 * If we don't provide a bottom margin anything added underneath the Slider
+	 * collapses into the marks / labels.
+	 */
+	margin-block-end: rem(32);
+
 	&-rail,
 	&-track,
 	&-thumb {
