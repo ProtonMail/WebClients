@@ -17,6 +17,7 @@ import LabelDropdown from '../dropdown/LabelDropdown';
 import PagingControls from './PagingControls';
 import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -43,6 +44,9 @@ interface Props {
     location: Location;
     labels?: Label[];
     folders?: Folder[];
+    onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
+    onMove: (labelID: string) => Promise<void>;
+    onDelete: () => Promise<void>;
 }
 
 const Toolbar = ({
@@ -68,6 +72,9 @@ const Toolbar = ({
     location,
     labels,
     folders,
+    onMarkAs,
+    onMove,
+    onDelete,
 }: Props) => {
     const listInView = columnMode || !elementID;
 
@@ -112,21 +119,17 @@ const Toolbar = ({
                     />
                 )}
                 <ToolbarSeparator />
-                <ReadUnreadButtons
-                    mailSettings={mailSettings}
-                    selectedIDs={selectedIDs}
-                    onBack={onBack}
-                    labelID={labelID}
-                />
+                <ReadUnreadButtons mailSettings={mailSettings} selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
                 <ToolbarSeparator />
                 <MoveButtons
                     labelID={labelID}
-                    elementID={elementID}
                     labels={labels}
                     folders={folders}
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
-                    onBack={onBack}
+                    onMove={onMove}
+                    onDelete={onDelete}
+                    mailSettings={mailSettings}
                 />
                 <ToolbarSeparator />
                 <ToolbarDropdown
