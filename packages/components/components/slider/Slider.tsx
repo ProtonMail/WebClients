@@ -9,8 +9,8 @@ import {
 
 import { clamp } from '@proton/shared/lib/helpers/math';
 import percentage from '@proton/shared/lib/helpers/percentage';
+import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 
-import useSynchronizingState from '../../hooks/useSynchronizingState';
 import { useRightToLeft } from '../../containers/rightToLeft';
 import { classnames } from '../../helpers';
 import { ButtonLike } from '../button';
