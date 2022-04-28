@@ -2,53 +2,74 @@ import { c } from 'ttag';
 
 import { BASE_SIZE } from '../constants';
 
-export type SizeUnits = 'B' | 'KB' | 'MB' | 'GB';
-
-const units = {
+export const sizeUnits = {
     B: 1,
     KB: BASE_SIZE,
     MB: BASE_SIZE * BASE_SIZE,
     GB: BASE_SIZE * BASE_SIZE * BASE_SIZE,
 };
 
-const i18nSuffix = (key: SizeUnits) => {
-    const map = {
-        B: c('file size format').t`bytes`,
-        KB: c('file size format').t`KB`,
-        MB: c('file size format').t`MB`,
-        GB: c('file size format').t`GB`,
-    };
+export type SizeUnits = keyof typeof sizeUnits;
 
-    return map[key];
+export const getSizeFormat = (key: SizeUnits) => {
+    if (key === 'B') {
+        return c('file size format').t`bytes`;
+    }
+    if (key === 'KB') {
+        return c('file size format').t`KB`;
+    }
+    if (key === 'MB') {
+        return c('file size format').t`MB`;
+    }
+    if (key === 'GB') {
+        return c('file size format').t`GB`;
+    }
+    throw new Error('Unknown unit');
+};
+
+export const getLongSizeFormat = (key: SizeUnits) => {
+    if (key === 'B') {
+        return c('file size format, long').t`Bytes`;
+    }
+    if (key === 'KB') {
+        return c('file size format, long').t`Kilobytes`;
+    }
+    if (key === 'MB') {
+        return c('file size format, long').t`Megabytes`;
+    }
+    if (key === 'GB') {
+        return c('file size format, long').t`Gigabytes`;
+    }
+    throw new Error('Unknown unit');
+};
+
+export const getUnit = (bytes: number): SizeUnits => {
+    if (bytes < sizeUnits.KB) {
+        return 'B';
+    }
+
+    if (bytes < sizeUnits.MB) {
+        return 'KB';
+    }
+
+    if (bytes < sizeUnits.GB) {
+        return 'MB';
+    }
+
+    return 'GB';
 };
 
 const transformTo = (bytes: number, unit: SizeUnits, withoutUnit: boolean, fractionDigits = 2) => {
-    const value = (bytes / units[unit]).toFixed(fractionDigits);
-    const suffix = withoutUnit ? '' : ` ${i18nSuffix(unit)}`;
+    const value = (bytes / sizeUnits[unit]).toFixed(fractionDigits);
+    const suffix = withoutUnit ? '' : ` ${getSizeFormat(unit)}`;
 
     return value + suffix;
 };
 
-const humanSize = (input = 0, forceUnit?: SizeUnits, withoutUnit = false, fractionDigits?: number) => {
-    const bytes = input;
-
-    if (forceUnit) {
-        return transformTo(bytes, forceUnit, withoutUnit);
-    }
-
-    if (bytes < units.KB) {
-        return transformTo(bytes, 'B', withoutUnit, fractionDigits === undefined ? 0 : fractionDigits);
-    }
-
-    if (bytes < units.MB) {
-        return transformTo(bytes, 'KB', withoutUnit, fractionDigits);
-    }
-
-    if (bytes < units.GB) {
-        return transformTo(bytes, 'MB', withoutUnit, fractionDigits);
-    }
-
-    return transformTo(bytes, 'GB', withoutUnit, fractionDigits);
+const humanSize = (bytes = 0, forceUnit?: SizeUnits, withoutUnit = false, maybeFractionDigits?: number) => {
+    const unit = forceUnit || getUnit(bytes);
+    const fractionDigits = maybeFractionDigits === undefined && unit === 'B' ? 0 : maybeFractionDigits;
+    return transformTo(bytes, unit, withoutUnit, fractionDigits);
 };
 
 export default humanSize;

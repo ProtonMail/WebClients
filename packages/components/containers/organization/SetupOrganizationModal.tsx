@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { GIGA, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
-import { range } from '@proton/shared/lib/helpers/array';
-import humanSize from '@proton/shared/lib/helpers/humanSize';
 import {
     updateOrganizationName,
     updateOrganizationKeysLegacy,
@@ -16,6 +14,7 @@ import {
     getMinPasswordLengthMessage,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
+import { clamp } from '@proton/shared/lib/helpers/math';
 
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import {
@@ -27,9 +26,7 @@ import {
     ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
-    Option,
     PasswordInputTwo,
-    SelectTwo,
     Form,
     useFormErrors,
 } from '../../components';
@@ -46,6 +43,7 @@ import {
 } from '../../hooks';
 
 import SelectEncryption from '../keys/addKey/SelectEncryption';
+import MemberStorageSelector, { getStorageRange, getTotalStorage } from '../members/MemberStorageSelector';
 
 enum STEPS {
     NAME,
@@ -64,15 +62,17 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const [members = []] = useMembers();
     const [loading, withLoading] = useLoading();
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
-    const [{ MaxSpace }] = useOrganization();
+    const [organization] = useOrganization();
     const [step, setStep] = useState<STEPS>(STEPS.NAME);
-    const storageOptions = range(0, MaxSpace, GIGA).map((value) => ({ text: `${humanSize(value, 'GB')}`, value }));
+    const storageSizeUnit = GIGA;
     const [{ hasPaidVpn }] = useUser();
+    const selfMember = members.find(({ Self }) => !!Self);
+    const storageRange = getStorageRange(selfMember, organization);
     const [model, setModel] = useState({
         name: '',
         password: '',
         confirm: '',
-        storage: Math.min(storageOptions[storageOptions.length - 1].value ?? 0, 5 * GIGA),
+        storage: -1,
     });
     const { validator, onFormSubmit, reset } = useFormErrors();
 
@@ -80,7 +80,9 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
         return (value: any) => setModel({ ...model, [key]: value });
     };
 
-    const { ID: currentMemberID } = members.find(({ Self }) => Self) || {};
+    const selfMemberID = selfMember?.ID;
+    // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
+    const storageValue = model.storage === -1 ? clamp(5 * GIGA, storageRange.min, storageRange.max) : model.storage;
 
     const { title, onSubmit, section } = (() => {
         if (step === STEPS.NAME) {
@@ -99,12 +101,12 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     />
                 ),
                 async onSubmit() {
-                    if (!currentMemberID) {
+                    if (!selfMemberID) {
                         throw new Error('Missing member id');
                     }
                     // NOTE: By default the admin gets allocated all of the VPN connections. Here we artificially set the admin to the default value
                     // So that other users can get connections allocated.
-                    await (hasPaidVpn && api(updateVPN(currentMemberID, VPN_CONNECTIONS)));
+                    await (hasPaidVpn && api(updateVPN(selfMemberID, VPN_CONNECTIONS)));
                     await Promise.all([api(updateOrganizationName(model.name))]);
                     setStep(STEPS.KEYS);
                 },
@@ -216,25 +218,22 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                             {c('Info')
                                 .t`Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.`}
                         </div>
-                        <InputFieldTwo
-                            id="storage"
-                            as={SelectTwo}
-                            label={c('Label').t`Account storage`}
-                            value={model.storage}
-                            onValue={handleChange('storage')}
-                            error={validator([requiredValidator(model.storage)])}
-                        >
-                            {storageOptions.map(({ value, text }) => (
-                                <Option key={value} value={value} title={text} />
-                            ))}
-                        </InputFieldTwo>
+                        <MemberStorageSelector
+                            className="mb1"
+                            value={storageValue}
+                            sizeUnit={storageSizeUnit}
+                            totalStorage={getTotalStorage(selfMember, organization)}
+                            range={storageRange}
+                            onChange={handleChange('storage')}
+                            mode="init"
+                        />
                     </>
                 ),
                 async onSubmit() {
-                    if (!currentMemberID) {
+                    if (!selfMemberID) {
                         throw new Error('Missing member id');
                     }
-                    await api(updateQuota(currentMemberID, +model.storage));
+                    await api(updateQuota(selfMemberID, storageValue));
 
                     await call();
                     createNotification({ text: c('Success').t`Organization activated` });
