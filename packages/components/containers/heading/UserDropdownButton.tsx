@@ -2,13 +2,14 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, forwardRef, Ref } from 'react'
 
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getInitials } from '@proton/shared/lib/helpers/string';
-import { NotificationDot, NotificationDotColor } from '@proton/atoms';
+import { NotificationDot } from '@proton/atoms';
+import { ThemeColor } from '@proton/colors';
 
 export interface Props extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
     user: UserModel;
     className?: string;
     isOpen?: boolean;
-    notification?: NotificationDotColor;
+    notification?: ThemeColor;
 }
 
 const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref: Ref<HTMLButtonElement>) => {

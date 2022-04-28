@@ -1,3 +1,5 @@
+import { ThemeColor } from '@proton/colors';
+
 import NotificationDot from './NotificationDot';
 import { Card } from '..';
 
@@ -9,12 +11,13 @@ export default {
     parameters: { docs: { page: mdx } },
 };
 
-export const Basic = () => <NotificationDot color="warning" />;
+export const Basic = () => <NotificationDot />;
 
 export const Colors = () => (
     <div className="flex">
-        <NotificationDot color="warning" className="mr1" />
-        <NotificationDot color="danger" />
+        {Object.values(ThemeColor).map((color) => (
+            <NotificationDot className="mr1" color={color} />
+        ))}
     </div>
 );
 
@@ -22,11 +25,11 @@ export const PositionHelper = () => (
     <>
         <Card className="relative mb1">
             With helper
-            <NotificationDot className="absolute top right notification-dot--top-right" color="warning" />
+            <NotificationDot className="absolute top right notification-dot--top-right" />
         </Card>
         <Card className="relative">
             Without helper
-            <NotificationDot className="absolute top right" color="warning" />
+            <NotificationDot className="absolute top right" />
         </Card>
     </>
 );
