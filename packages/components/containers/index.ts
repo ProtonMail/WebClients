@@ -2,6 +2,7 @@ export * from './account';
 export * from './addresses';
 export * from './api';
 export * from './app';
+export * from './authentication';
 export * from './autoReply';
 export * from './bridge';
 export * from './cache';
