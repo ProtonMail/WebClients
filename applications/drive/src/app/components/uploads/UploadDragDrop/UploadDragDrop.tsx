@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components/hooks';
 import dragdropImageSvg from '@proton/styles/assets/img/illustrations/drag-and-drop.svg';
 
 import { useUpload } from '../../../store';
-import { UploadFileList } from '../../../store/uploads/interface';
+import { UploadFileList } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { isTransferCancelError } from '../../../utils/transfer';
 

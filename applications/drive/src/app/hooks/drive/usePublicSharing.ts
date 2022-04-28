@@ -19,10 +19,10 @@ import {
 } from '@proton/shared/lib/api/drive/sharing';
 
 import { DecryptedLink, EncryptedLink } from '../../store';
-import { linkMetaToEncryptedLink } from '../../store/api/transformers';
-import { DownloadControls, DownloadEventCallbacks, LinkDownload, Pagination } from '../../store/downloads/interface';
-import downloadThumbnailPure from '../../store/downloads/download/downloadThumbnail';
-import initDownloadPure from '../../store/downloads/download/download';
+import { linkMetaToEncryptedLink } from '../../store/_api/transformers';
+import { DownloadControls, DownloadEventCallbacks, LinkDownload, Pagination } from '../../store';
+import downloadThumbnailPure from '../../store/_downloads/download/downloadThumbnail';
+import initDownloadPure from '../../store/_downloads/download/download';
 import usePublicSession from '../../components/DownloadShared/usePublicSession';
 import retryOnError from '../../utils/retryOnError';
 

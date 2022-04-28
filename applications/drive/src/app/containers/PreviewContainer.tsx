@@ -14,7 +14,7 @@ import { SignatureAlertBody } from '../components/SignatureAlert';
 import SignatureIcon from '../components/SignatureIcon';
 
 // TODO: ideally not use here
-import useSearchResults from '../store/search/useSearchResults';
+import useSearchResults from '../store/_search/useSearchResults';
 
 const getSharedStatus = (link?: DecryptedLink) => {
     if (!link?.isShared) {
