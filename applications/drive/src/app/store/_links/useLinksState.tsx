@@ -186,6 +186,39 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
 
         const original = state[shareId].links[linkId];
         const originalTrashed = original?.encrypted.trashed;
+
+        // Backend does not return trashed property set for children of trashed
+        // parent. For example, file can have trashed equal to null even if its
+        // in the folder which is trashed. Its heavy operation on backend and
+        // because client needs to load all the parents to get keys anyway, we
+        // can calculate it here.
+        // Note this can be problematic in the future once we dont keep the full
+        // cache from memory consuption reasons. That will need more thoughts
+        // how to tackle this problem to keep the trashed property just fine.
+        if (!link.encrypted.trashed) {
+            const parentLinkTrashed = getParentTrashed(state, shareId, parentLinkId);
+            let trashedProps;
+            if (parentLinkTrashed) {
+                trashedProps = {
+                    trashed: parentLinkTrashed,
+                    trashedByParent: true,
+                };
+            } else if (original?.encrypted.trashedByParent) {
+                // If the link do not belong under trashed tree anymore, and
+                // the link is trashed by parent, we can reset it back.
+                trashedProps = {
+                    trashed: null,
+                    trashedByParent: false,
+                };
+            }
+            if (trashedProps) {
+                link = {
+                    encrypted: { ...link.encrypted, ...trashedProps },
+                    decrypted: link.decrypted ? { ...link.decrypted, ...trashedProps } : undefined,
+                };
+            }
+        }
+
         if (original) {
             const originalParentId = original.encrypted.parentLinkId;
             if (originalParentId !== parentLinkId) {
@@ -221,14 +254,21 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
 
         // Only root link has no parent ID.
         if (parentLinkId) {
-            const parent = state[shareId].tree[parentLinkId];
-            if (parent) {
-                if (link.encrypted.trashed) {
-                    state[shareId].tree[parentLinkId] = parent.filter((childId) => childId !== linkId);
+            const parentChildIds = state[shareId].tree[parentLinkId];
+            if (parentChildIds) {
+                // If the parent is trashed, we keep the tree structure, so we
+                // can update properly trashed flag for all children after
+                // parent is restored.
+                if (link.encrypted.trashedByParent) {
+                    if (!parentChildIds.includes(linkId)) {
+                        state[shareId].tree[parentLinkId] = [...parentChildIds, linkId];
+                    }
+                } else if (link.encrypted.trashed) {
+                    state[shareId].tree[parentLinkId] = parentChildIds.filter((childId) => childId !== linkId);
                     recursivelyTrashChildren(state, shareId, linkId, link.encrypted.trashed);
                 } else {
-                    if (!parent.includes(linkId)) {
-                        parent.push(linkId);
+                    if (!parentChildIds.includes(linkId)) {
+                        state[shareId].tree[parentLinkId] = [...parentChildIds, linkId];
                     }
                     if (originalTrashed) {
                         recursivelyRestoreChildren(state, shareId, linkId, originalTrashed);
@@ -244,18 +284,45 @@ export function addOrUpdate(state: LinksState, shareId: string, links: Link[]): 
 }
 
 /**
+ * getParentTrashed finds closest parent which is trashed and returns its
+ * trashed property, or returns null if link is not belonging under trashed
+ * folder.
+ */
+function getParentTrashed(state: LinksState, shareId: string, linkId: string): number | null {
+    while (linkId) {
+        const link = state[shareId].links[linkId];
+        if (!link) {
+            return null;
+        }
+        if (link.encrypted.trashed) {
+            return link.encrypted.trashed;
+        }
+        linkId = link.encrypted.parentLinkId;
+    }
+    return null;
+}
+
+/**
  * recursivelyTrashChildren sets trashed flag to all children of the parent.
  * When parent is trashed, API do not create event for every child, therefore
  * we need to update trashed flag the same way for all of them in our cache.
  */
 function recursivelyTrashChildren(state: LinksState, shareId: string, linkId: string, trashed: number) {
     recursivelyUpdateLinks(state, shareId, linkId, (link) => {
-        link.encrypted.trashed ||= trashed;
-        link.encrypted.trashedByParent = true;
-        if (link.decrypted) {
-            link.decrypted.trashed ||= trashed;
-            link.decrypted.trashedByParent = true;
-        }
+        return {
+            encrypted: {
+                ...link.encrypted,
+                trashed: link.encrypted.trashed || trashed,
+                trashedByParent: true,
+            },
+            decrypted: link.decrypted
+                ? {
+                      ...link.decrypted,
+                      trashed: link.decrypted.trashed || trashed,
+                      trashedByParent: true,
+                  }
+                : undefined,
+        };
     });
 }
 
@@ -269,14 +336,23 @@ function recursivelyTrashChildren(state: LinksState, shareId: string, linkId: st
  */
 function recursivelyRestoreChildren(state: LinksState, shareId: string, linkId: string, originalTrashed: number) {
     recursivelyUpdateLinks(state, shareId, linkId, (link) => {
-        if (link.encrypted.trashed === originalTrashed) {
-            link.encrypted.trashed = null;
-            link.encrypted.trashedByParent = false;
-            if (link.decrypted) {
-                link.decrypted.trashed = null;
-                link.decrypted.trashedByParent = false;
-            }
+        if (link.encrypted.trashed !== originalTrashed) {
+            return link;
         }
+        return {
+            encrypted: {
+                ...link.encrypted,
+                trashed: null,
+                trashedByParent: false,
+            },
+            decrypted: link.decrypted
+                ? {
+                      ...link.decrypted,
+                      trashed: null,
+                      trashedByParent: false,
+                  }
+                : undefined,
+        };
     });
 }
 
@@ -288,14 +364,14 @@ function recursivelyUpdateLinks(
     state: LinksState,
     shareId: string,
     linkId: string,
-    updateCallback: (link: Link) => void
+    updateCallback: (link: Link) => Link
 ) {
     state[shareId].tree[linkId]?.forEach((linkId) => {
         const child = state[shareId].links[linkId];
         if (!child) {
             return;
         }
-        updateCallback(child);
+        state[shareId].links[linkId] = updateCallback(child);
         recursivelyUpdateLinks(state, shareId, child.encrypted.linkId, updateCallback);
     });
 }
