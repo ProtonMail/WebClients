@@ -85,7 +85,9 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const mustActivateOrganizationKey =
         currentMember?.Private === MEMBER_PRIVATE.READABLE && !organizationKey?.privateKey;
 
-    const activateLink = <SettingsLink path="/organization-keys">{c('Action').t`activate`}</SettingsLink>;
+    const activateLink = (
+        <SettingsLink path="/organization-keys" key="activate">{c('Action').t`activate`}</SettingsLink>
+    );
 
     const children = (
         <>

@@ -21,7 +21,7 @@ import {
 import { useApi, useNotifications, useEventManager, useOrganization, useLoading, useModals } from '../../hooks';
 import Addresses from '../addresses/Addresses';
 
-import MemberStorageSelector, { getStorageRange } from './MemberStorageSelector';
+import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalProps<'form'> {
     member: Member;
@@ -29,6 +29,7 @@ interface Props extends ModalProps<'form'> {
 
 const EditMemberModal = ({ member, ...rest }: Props) => {
     const [organization] = useOrganization();
+    const storageSizeUnit = GIGA;
     const { call } = useEventManager();
     const { createModal } = useModals();
     const { validator, onFormSubmit } = useFormErrors();
@@ -65,7 +66,7 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
         }
 
         if (initialModel.storage !== model.storage) {
-            await api(updateQuota(member.ID, +model.storage));
+            await api(updateQuota(member.ID, model.storage));
         }
 
         if (hasVPN && initialModel.vpn !== model.vpn) {
@@ -111,8 +112,6 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
         createNotification({ text: c('Success').t`User updated` });
     };
 
-    const storageRange = getStorageRange(member, organization);
-
     const handleClose = submitting ? undefined : rest.onClose;
 
     return (
@@ -143,11 +142,13 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
                 />
 
                 <div className="mb1-5">
-                    <div className="text-semibold mb0-25">{c('Label').t`Account storage`}</div>
+                    <h2 className="text-strong h3">{c('Label').t`Account storage`}</h2>
                     <MemberStorageSelector
+                        className="mb1"
                         value={model.storage}
-                        step={GIGA}
-                        range={storageRange}
+                        sizeUnit={storageSizeUnit}
+                        totalStorage={getTotalStorage(member, organization)}
+                        range={getStorageRange(member, organization)}
                         onChange={(storage) => updatePartialModel({ storage })}
                     />
                 </div>
@@ -190,7 +191,7 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
                     </div>
                 )}
                 <div>
-                    <div className="pt0-5">{c('Label').t`Addresses`}</div>
+                    <h3 className="text-strong">{c('Label').t`Addresses`}</h3>
                     <div>
                         <Addresses organization={organization} memberID={member.ID} />
                     </div>
