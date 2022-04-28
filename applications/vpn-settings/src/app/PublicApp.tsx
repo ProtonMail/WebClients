@@ -1,7 +1,6 @@
 import { useCallback, useState } from 'react';
-import Unauthenticated from 'proton-account/src/app/content/Unauthenticated';
 import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
-import { FeaturesProvider, ProtonLoginCallback, StandardPublicApp } from '@proton/components';
+import { FeaturesProvider, ProtonLoginCallback, StandardPublicApp, Unauthenticated } from '@proton/components';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { CLIENT_TYPES } from '@proton/shared/lib/constants';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
