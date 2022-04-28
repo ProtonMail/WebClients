@@ -18,7 +18,7 @@ export const NoSearchResultsView = () => {
                 <div className="flex flex-justify-center">
                     <PrimaryButton
                         size="large"
-                        className="text-bold w13e"
+                        className="text-bold"
                         onClick={() => prepareSearchData()}
                         loading={isBuilding}
                         disabled={isBuilding || hasData}
