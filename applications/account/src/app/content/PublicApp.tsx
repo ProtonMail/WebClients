@@ -108,20 +108,9 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     }, []);
 
     const [maybeLocalRedirect] = useState(() => {
-        const localLocation = [
-            SSO_PATHS.SWITCH,
-            SSO_PATHS.LOGIN,
-            SSO_PATHS.SIGNUP,
-            SSO_PATHS.AUTHORIZE,
-            SSO_PATHS.REFER,
-            SSO_PATHS.FORGOT_USERNAME,
-            SSO_PATHS.FORK,
-            SSO_PATHS.RESET_PASSWORD,
-            SSO_PATHS.INVITE,
-            SSO_PATHS.OAUTH_AUTHORIZE,
-            SSO_PATHS.OAUTH_CONFIRM_FORK,
-            ...Object.values(UNAUTHENTICATED_ROUTES),
-        ].includes(location.pathname)
+        const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
+            location.pathname
+        )
             ? undefined
             : location;
         if (!localLocation) {
@@ -254,15 +243,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         // Ignore the automatic login
         if (
             ignoreAutoRef.current ||
-            [
-                SSO_PATHS.SWITCH,
-                SSO_PATHS.SIGNUP,
-                SSO_PATHS.REFER,
-                SSO_PATHS.RESET_PASSWORD,
-                SSO_PATHS.FORGOT_USERNAME,
-                SSO_PATHS.INVITE,
-                SSO_PATHS.OAUTH_CONFIRM_FORK,
-            ].includes(location.pathname as any)
+            // All SSO paths except login
+            (Object.values(SSO_PATHS).includes(location.pathname as any) && location.pathname !== SSO_PATHS.LOGIN)
         ) {
             setActiveSessions(sessions);
             if (sessions.length >= 1) {
