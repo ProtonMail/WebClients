@@ -156,7 +156,7 @@ export const useLinkHandler: UseLinkHandler = (
             if (wrapperRef.current) {
                 const elementInMail = wrapperRef.current.querySelector(`a[name="${id}"], a[id="${id}"]`);
                 if (elementInMail) {
-                    elementInMail.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    elementInMail.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             }
             event.preventDefault();
