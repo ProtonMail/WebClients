@@ -186,7 +186,7 @@
 	&-editor-cc,
 	&-editor-bcc {
 		.composer-addresses-container {
-			max-height: rem(100);
+			max-block-size: rem(100);
 		}
 	}
 
@@ -272,7 +272,7 @@
 		padding: 0;
 	}
 	.editor-toolbar {
-		max-width: em(640);
+		max-inline-size: em(640);
 	}
 
 	&-editor-dropzone {
