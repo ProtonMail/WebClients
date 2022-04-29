@@ -51,7 +51,8 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                     type="button"
                     shape="ghost"
                     color="weak"
-                    className="flex"
+                    size="small"
+                    className="flex mtauto mbauto mr0-1"
                     title={c('Action').t`Clear`}
                     onClick={handleClear}
                 >
