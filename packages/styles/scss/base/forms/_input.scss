@@ -39,6 +39,16 @@ select {
 
 	&-adornment {
 		color: var(--text-weak);
+
+		.button:not([class*='button-underline']) {
+			&:first-child {
+				margin-inline-start: -0.25em;
+			}
+
+			&:last-child {
+				margin-inline-end: -0.25em;
+			}
+		}
 	}
 
 	@at-root input#{&}-field {
