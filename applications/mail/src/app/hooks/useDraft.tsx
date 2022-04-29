@@ -1,11 +1,7 @@
 import { useEffect, useCallback } from 'react';
-import { c } from 'ttag';
 import {
     useCache,
     generateUID,
-    useModals,
-    ConfirmModal,
-    Alert,
     useGetMailSettings,
     useGetAddresses,
     useGetUser,
@@ -13,6 +9,7 @@ import {
     useMailSettings,
     useUserSettings,
 } from '@proton/components';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { useDispatch } from 'react-redux';
 import { createNewDraft, cloneDraft } from '../helpers/message/messageDraft';
@@ -21,38 +18,28 @@ import { MESSAGE_ACTIONS } from '../constants';
 import { useGetAttachment } from './useAttachment';
 import { MessageState, MessageStateWithData, PartialMessageState } from '../logic/messages/messagesTypes';
 import { createDraft as createDraftAction } from '../logic/messages/draft/messagesDraftActions';
+import SendingFromDefaultAddressModal from '../components/composer/modals/SendingFromDefaultAddressModal';
 
 const CACHE_KEY = 'Draft';
 
 export const useDraftVerifications = () => {
     const getAddresses = useGetAddresses();
     const getUser = useGetUser();
-    const { createModal } = useModals();
+    const [sendingFromDefaultAddressModal, handleShowModal] = useModalTwo(SendingFromDefaultAddressModal);
 
-    return useCallback(
+    const handleDraftVerifications = useCallback(
         async (action: MESSAGE_ACTIONS, referenceMessage?: PartialMessageState) => {
             const [user, addresses] = await Promise.all([getUser(), getAddresses()]);
 
             if (!isPaid(user) && findSender(addresses, referenceMessage?.data)?.Email.endsWith('@pm.me')) {
                 const email = findSender(addresses, referenceMessage?.data, true)?.Email;
-                await new Promise((resolve) => {
-                    createModal(
-                        <ConfirmModal
-                            onConfirm={() => resolve(undefined)}
-                            cancel={null}
-                            onClose={() => resolve(undefined)}
-                            title={c('Title').t`Sending notice`}
-                            confirm={c('Action').t`OK`}
-                        >
-                            <Alert className="mb1">{c('Info')
-                                .t`Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${email}`}</Alert>
-                        </ConfirmModal>
-                    );
-                });
+                await handleShowModal({ email });
             }
         },
         [getUser, getAddresses]
     );
+
+    return { handleDraftVerifications, sendingFromDefaultAddressModal };
 };
 
 /**
@@ -64,7 +51,7 @@ export const useDraft = () => {
     const getMailSettings = useGetMailSettings();
     const getAddresses = useGetAddresses();
     const dispatch = useDispatch();
-    const draftVerifications = useDraftVerifications();
+    const { handleDraftVerifications: draftVerifications, sendingFromDefaultAddressModal } = useDraftVerifications();
     const [addresses] = useAddresses();
     const [mailSettings] = useMailSettings();
     const [userSettings] = useUserSettings();
@@ -116,5 +103,5 @@ export const useDraft = () => {
         [cache, getMailSettings, getAddresses, draftVerifications]
     );
 
-    return createDraft;
+    return { createDraft, sendingFromDefaultAddressModal };
 };

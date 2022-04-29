@@ -8,7 +8,21 @@ import { ContactCard, ContactWithBePinnedPublicKey } from '@proton/shared/lib/in
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Alert, classnames, FormModal, useApi, useLoading, useNotifications, useUserKeys } from '@proton/components';
+import {
+    Button,
+    classnames,
+    Href,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PrimaryButton,
+    useApi,
+    useLoading,
+    useNotifications,
+    useUserKeys,
+} from '@proton/components';
 
 interface Params {
     contact: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>;
@@ -33,15 +47,15 @@ const updateContactPinnedKeys = async ({ contact, api, publicKeys, privateKeys }
     await api(updateContact(contactID, { Cards: updatedContactCards }));
 };
 
-interface Props {
+interface Props extends ModalProps {
     contacts: RequireSome<ContactWithBePinnedPublicKey, 'contactID'>[];
-    onTrust: () => void;
-    onClose: () => void;
     onNotTrust: () => void;
     onError: () => void;
+    onResolve: () => void;
+    onReject: () => void;
 }
 
-const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError, ...rest }: Props) => {
+const AskForKeyPinningModal = ({ contacts, onNotTrust, onError, onResolve, onReject, ...rest }: Props) => {
     const api = useApi();
     const [userKeysList, loadingUserKeys] = useUserKeys();
     const [loading, withLoading] = useLoading(false);
@@ -51,6 +65,8 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
 
     const totalContacts = contacts.length;
 
+    const { onClose } = rest;
+
     const handleSubmit = async () => {
         try {
             const requests = contacts.map(
@@ -58,29 +74,24 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
             );
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);
-            onTrust();
+            onResolve();
         } catch (error: any) {
             createNotification({ text: error.message, type: 'error' });
             onError();
         } finally {
-            onClose();
+            onClose?.();
         }
     };
     const handleClose = () => {
         onNotTrust();
-        onClose();
+        onReject();
+        onClose?.();
     };
 
     return (
-        <FormModal
-            title={c('Title').ngettext(msgid`Trust new key?`, `Trust new keys?`, contacts.length)}
-            submit={c('Action').ngettext(msgid`Trust key`, `Trust keys`, totalContacts)}
-            onSubmit={() => withLoading(handleSubmit())}
-            onClose={handleClose}
-            loading={loading || loadingUserKeys}
-            {...rest}
-        >
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>
+        <ModalTwo size="large" {...rest} onClose={handleClose} onSubmit={() => withLoading(handleSubmit())}>
+            <ModalTwoHeader title={c('Title').ngettext(msgid`Trust new key?`, `Trust new keys?`, contacts.length)} />
+            <ModalTwoContent>
                 {c('Key pinning').ngettext(
                     msgid`You have enabled Address Verification with Trusted Keys for this email address,
                         but no active encryption key has been trusted.
@@ -90,25 +101,34 @@ const AskForKeyPinningModal = ({ contacts, onTrust, onClose, onNotTrust, onError
                         You must trust keys valid for sending in order to send a message to these email addresses.`,
                     totalContacts
                 )}
-            </Alert>
-            <div>
-                {c('Key pinning').ngettext(
-                    msgid`Do you want to trust the primary public key with the following fingerprint?`,
-                    `Do you want to trust the primary public keys with the following fingerprints?`,
-                    totalContacts
-                )}
-                <ul>
-                    {contacts.map(({ contactID, emailAddress, bePinnedPublicKey }, index) => {
-                        const fingerprint = bePinnedPublicKey.getFingerprint();
-                        return (
-                            <li key={contactID} className={classnames([index !== totalContacts && 'mb0-5'])}>
-                                <span className="block max-w100 text-ellipsis">{`${emailAddress}: ${fingerprint}`}</span>
-                            </li>
-                        );
-                    })}
-                </ul>
-            </div>
-        </FormModal>
+                <br />
+                <Href href={getKnowledgeBaseUrl('/address-verification')}>{c('Link')
+                    .t`Learn more`}</Href>
+                <div>
+                    {c('Key pinning').ngettext(
+                        msgid`Do you want to trust the primary public key with the following fingerprint?`,
+                        `Do you want to trust the primary public keys with the following fingerprints?`,
+                        totalContacts
+                    )}
+                    <ul>
+                        {contacts.map(({ contactID, emailAddress, bePinnedPublicKey }, index) => {
+                            const fingerprint = bePinnedPublicKey.getFingerprint();
+                            return (
+                                <li key={contactID} className={classnames([index !== totalContacts && 'mb0-5'])}>
+                                    <span className="block max-w100 text-ellipsis">{`${emailAddress}: ${fingerprint}`}</span>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={handleClose}>{c('Action').t`Close`}</Button>
+                <PrimaryButton type="submit" loading={loading || loadingUserKeys}>
+                    {c('Action').ngettext(msgid`Trust key`, `Trust keys`, totalContacts)}
+                </PrimaryButton>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

@@ -16,7 +16,7 @@ interface Props extends ModalProps {
 
 const MessagePhishingModal = ({ message, onBack, ...rest }: Props) => {
     const api = useApi();
-    const moveToFolder = useMoveToFolder();
+    const { moveToFolder } = useMoveToFolder();
     const { createNotification } = useNotifications();
 
     const { onClose } = rest;
