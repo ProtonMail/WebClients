@@ -100,7 +100,7 @@
 		inset-inline-start: -4em;
 
 		@include respond-to($breakpoint-small) {
-			inset-block-start: calc(-2em - 1.5em);
+			inset-block-start: -4em;
 			inset-inline-start: calc(50% - 50vw + 1em);
 		}
 	}
