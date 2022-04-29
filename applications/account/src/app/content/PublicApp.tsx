@@ -98,7 +98,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const api = useApi();
     const [forkState, setForkState] = useState<ActiveSessionData>();
-    const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.oauth }>>();
+    const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.OAuth }>>();
     const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
@@ -133,19 +133,20 @@ const PublicApp = ({ onLogin, locales }: Props) => {
 
     // Either another app wants to fork, or a specific route is requested on this app
     const maybePreAppIntent =
-        (forkState?.type === SSOType.internal && forkState.payload?.app) ||
+        (forkState?.type === SSOType.Proton && forkState.payload?.app) ||
         maybeLocalRedirect?.toApp ||
         maybeQueryAppIntent;
+
     // Require internal setup if an app is specified
     const maybeShouldSetupInternalAddress =
         maybePreAppIntent && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybePreAppIntent);
 
     const handleProduceFork = async (data: ProduceForkData) => {
-        if (data.type === SSOType.internal) {
+        if (data.type === SSOType.Proton) {
             return produceFork({ api, ...data.payload });
         }
 
-        if (data.type === SSOType.oauth) {
+        if (data.type === SSOType.OAuth) {
             const {
                 Access: { Accepted },
             } = await api<{ Access: OAuthLastAccess }>(
@@ -178,14 +179,14 @@ const PublicApp = ({ onLogin, locales }: Props) => {
             });
         }
 
-        if (forkState?.type === SSOType.oauth) {
-            await handleProduceFork({ type: SSOType.oauth, payload: { ...forkState.payload, UID } });
+        if (forkState?.type === SSOType.OAuth) {
+            await handleProduceFork({ type: SSOType.OAuth, payload: { ...forkState.payload, UID } });
             return;
         }
 
         // If the user signed up and there is an active fork, purposefully ignore it so that it
         // triggers a page load with the query parameters
-        if (forkState?.type === SSOType.internal && args.flow !== 'signup') {
+        if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
             await produceFork({ api, UID, keyPassword, ...forkState.payload, persistent });
             return;
         }
@@ -307,7 +308,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const toOAuthName =
-        forkState?.type === SSOType.oauth
+        forkState?.type === SSOType.OAuth
             ? forkState.payload.clientInfo.Name
             : confirmForkData?.payload.clientInfo.Name;
     const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
@@ -329,7 +330,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <SSOForkProducer
-                        type={SSOType.oauth}
+                        type={SSOType.OAuth}
                         onProduceFork={handleProduceFork}
                         onInvalidFork={handleInvalidFork}
                         onActiveSessions={handleActiveSessionsFork}
@@ -337,7 +338,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={SSO_PATHS.AUTHORIZE}>
                     <SSOForkProducer
-                        type={SSOType.internal}
+                        type={SSOType.Proton}
                         onProduceFork={handleProduceFork}
                         onInvalidFork={handleInvalidFork}
                         onActiveSessions={handleActiveSessionsFork}

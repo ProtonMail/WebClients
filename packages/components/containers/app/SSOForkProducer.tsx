@@ -35,8 +35,8 @@ const getProduceOAuthForkParameters = () => {
 };
 
 export enum SSOType {
-    oauth,
-    internal,
+    OAuth,
+    Proton,
 }
 
 export type OAuthData = OAuthProduceForkParameters & {
@@ -45,21 +45,21 @@ export type OAuthData = OAuthProduceForkParameters & {
 
 export type ActiveSessionData =
     | {
-          type: SSOType.internal;
+          type: SSOType.Proton;
           payload: ProduceForkParameters;
       }
     | {
-          type: SSOType.oauth;
+          type: SSOType.OAuth;
           payload: OAuthData;
       };
 
 export type ProduceForkData =
     | {
-          type: SSOType.internal;
+          type: SSOType.Proton;
           payload: ProduceForkParameters & { UID: string; keyPassword?: string; persistent: boolean };
       }
     | {
-          type: SSOType.oauth;
+          type: SSOType.OAuth;
           payload: OAuthData & { UID: string };
       };
 
@@ -95,7 +95,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                 const { UID } = session;
 
                 await onProduceFork({
-                    type: SSOType.oauth,
+                    type: SSOType.OAuth,
                     payload: {
                         UID,
                         clientInfo: Info,
@@ -108,7 +108,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
 
             onActiveSessions(
                 {
-                    type: SSOType.oauth,
+                    type: SSOType.OAuth,
                     payload: {
                         clientInfo: Info,
                         clientID,
@@ -133,7 +133,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                 if (session && sessions.length === 1 && type !== FORK_TYPE.SWITCH) {
                     const { UID, keyPassword, persistent } = session;
                     await onProduceFork({
-                        type: SSOType.internal,
+                        type: SSOType.Proton,
                         payload: {
                             UID,
                             keyPassword,
@@ -145,7 +145,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                     return;
                 }
 
-                onActiveSessions({ type: SSOType.internal, payload: { state, app, type } }, activeSessionsResult);
+                onActiveSessions({ type: SSOType.Proton, payload: { state, app, type } }, activeSessionsResult);
             };
 
             if (localID === undefined) {
@@ -158,7 +158,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
                 // Resume session and produce the fork
                 const validatedSession = await resumeSession(silentApi, localID);
                 await onProduceFork({
-                    type: SSOType.internal,
+                    type: SSOType.Proton,
                     payload: {
                         keyPassword: validatedSession.keyPassword,
                         UID: validatedSession.UID,
@@ -177,7 +177,7 @@ const SSOForkProducer = ({ type, onActiveSessions, onInvalidFork, onProduceFork 
             }
         };
 
-        (type === SSOType.internal ? runInternal() : runOAuth()).catch((e) => {
+        (type === SSOType.Proton ? runInternal() : runOAuth()).catch((e) => {
             const { code } = getApiError(error);
             if (code === API_CUSTOM_ERROR_CODES.TOO_MANY_CHILDREN) {
                 setTooManyChildSessionsError(true);
