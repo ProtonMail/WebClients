@@ -53,6 +53,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         labelContainerClassName,
         assistContainerClassName,
         warning,
+        suffix,
         ...rest
     }: InputFieldProps<E>,
     ref: typeof rest.ref
@@ -99,21 +100,19 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         </>
     );
 
-    const getIcon = () => {
+    const denseSuffix = (() => {
         if (isDense && (error || warning)) {
             const { tooltipType, iconClassName, title } = error
                 ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
                 : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
 
-                return (
-                    <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
-                        <Icon name="exclamation-circle-filled" className={iconClassName} />
-                    </Tooltip>
-                );
-            }
-
-        return rest.icon;
-    };
+            return (
+                <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
+                    <Icon name="exclamation-circle-filled" className={iconClassName} />
+                </Tooltip>
+            );
+        }
+    })();
 
     return (
         <label
@@ -141,7 +140,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     disabled={disabled}
                     aria-describedby={assistiveUid}
                     {...rest}
-                    suffix={getIcon()}
+                    suffix={
+                        <>
+                            {denseSuffix}
+                            {suffix}
+                        </>
+                    }
                 />
             </div>
             <div className={classes.assistContainer} id={assistiveUid}>
