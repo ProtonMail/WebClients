@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
 import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, SSO_PATHS } from '@proton/shared/lib/constants';
+import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -16,6 +17,7 @@ import {
     DropdownMenu,
     DropdownMenuButton,
     Button,
+    ButtonLike,
     SimpleDropdown,
     SettingsLink,
     DropdownMenuLink,
@@ -82,17 +84,6 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
         });
     };
 
-    const handleSwitchAccount = () => {
-        if (APP_NAME === APPS.PROTONACCOUNT) {
-            const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
-            const settingsApp = getAppFromPathnameSafe(window.location.pathname);
-            const settingsSlug = settingsApp ? getSlugFromApp(settingsApp) : undefined;
-            const searchParams = settingsSlug ? `?service=${settingsSlug}` : '';
-            return document.location.assign(`${href}${searchParams}`);
-        }
-        return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
-    };
-
     const handleLogout = () => {
         logout();
         close();
@@ -133,6 +124,13 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
         if (location.pathname.includes('/referral')) {
             setRedDotReferral(false);
         }
+    }, [location.pathname]);
+
+    const switchHref = useMemo(() => {
+        const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
+        const toApp = APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) : APP_NAME;
+        const search = `?product=${getSlugFromApp(toApp || APPS.PROTONMAIL)}`;
+        return `${href}${search}`;
     }, [location.pathname]);
 
     return (
@@ -350,15 +348,27 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
                     {isSSOMode ? (
                         <div className="px1 pt0-5 pb0-75">
-                            <Button
+                            <ButtonLike
+                                as="a"
+                                href={switchHref}
+                                target="_self"
                                 shape="outline"
                                 color="weak"
                                 className="w100"
-                                onClick={handleSwitchAccount}
+                                onClick={(event: MouseEvent<HTMLAnchorElement>) => {
+                                    if (
+                                        APP_NAME !== APPS.PROTONACCOUNT &&
+                                        event.button === 0 &&
+                                        !getIsEventModified(event.nativeEvent)
+                                    ) {
+                                        event.preventDefault();
+                                        return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
+                                    }
+                                }}
                                 data-testid="userdropdown:button:switch-account"
                             >
                                 {c('Action').t`Switch account`}
-                            </Button>
+                            </ButtonLike>
                         </div>
                     ) : null}
 
