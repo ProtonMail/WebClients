@@ -8,7 +8,7 @@ import {
     BRAND_NAME,
     VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
-import { getHasB2BPlan, getPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
+import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
     Subscription,
     Organization,
@@ -63,8 +63,8 @@ const SubscriptionPanel = ({
 
     const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
-    const plan = getPlan(subscription) || FREE_PLAN;
-    const planTitle = PLAN_NAMES[plan.Name as PLANS];
+    const primaryPlan = getPrimaryPlan(subscription, APP_NAME);
+    const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
     const amount = (subscription?.Amount ?? 0) / cycle;

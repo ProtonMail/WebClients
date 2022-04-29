@@ -1,31 +1,32 @@
 import { c, msgid } from 'ttag';
-import { PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
+import { PLANS, VPN_CONNECTIONS } from '@proton/shared/lib/constants';
 import { Card } from '@proton/atoms';
 import { ButtonLike, SettingsLink, SettingsSectionWide, usePlans, useUserVPN } from '@proton/components';
 
 const VpnUpgradeSection = () => {
     const [plans, loadingPlans] = usePlans();
-    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPN)?.MaxVPN || 10;
+    const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN);
+    const n = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
     const { result } = useUserVPN();
     const userVPN = result?.VPN;
-    const planName = userVPN?.PlanName;
-    const shouldUpgrade = planName === PLANS.VPNBASIC || planName === PLANS.FREE;
+    const currentPlanName = userVPN?.PlanName;
+    const shouldUpgrade = currentPlanName === PLANS.VPNBASIC || currentPlanName === PLANS.FREE;
 
-    if (loadingPlans || !shouldUpgrade) {
+    if (loadingPlans || !shouldUpgrade || !vpnPlan) {
         return null;
     }
 
-    const vpnPlanName = `${PLAN_NAMES[PLANS.VPN]}`;
+    const planName = vpnPlan.Title;
 
     return (
         <SettingsSectionWide>
             <Card className="flex flex-align-items-center" rounded>
                 <p className="m0 mr2 flex-item-fluid">
                     {c('Upgrade').ngettext(
-                        msgid`Upgrade to ${vpnPlanName} to connect up to ${plusVpnConnections} device to the VPN at once`,
-                        `Upgrade to ${vpnPlanName} to connect up to ${plusVpnConnections} devices to the VPN at once`,
-                        plusVpnConnections
+                        msgid`Upgrade to ${planName} to connect up to ${n} device to the VPN at once`,
+                        `Upgrade to ${planName} to connect up to ${n} devices to the VPN at once`,
+                        n
                     )}
                 </p>
 

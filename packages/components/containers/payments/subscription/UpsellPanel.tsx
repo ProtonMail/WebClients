@@ -4,7 +4,6 @@ import {
     CYCLE,
     DEFAULT_CURRENCY,
     PLANS,
-    PLAN_NAMES,
     APPS,
     BRAND_NAME,
     VPN_CONNECTIONS,
@@ -76,8 +75,9 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
     }
 
     // Trial upsell
-    if (isTrial(subscription) && subscription.PeriodEnd) {
-        const mailPlanName = PLAN_NAMES[PLANS.MAIL];
+    const mailPlan = plans.find(({ Name }) => Name === PLANS.MAIL);
+    if (isTrial(subscription) && subscription.PeriodEnd && mailPlan) {
+        const mailPlanName = mailPlan.Title;
         const formattedTrialExpirationDate = format(fromUnixTime(subscription.PeriodEnd || 0), 'MMMM d, y');
         const calendarAppName = getAppName(APPS.PROTONCALENDAR);
         const handleUpgrade = () =>
@@ -157,7 +157,6 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
 
     const cycle = CYCLE.TWO_YEARS;
 
-    const vpnPlanName = PLAN_NAMES[PLANS.VPN];
     const vpnPlan = plans.find(({ Name }) => Name === PLANS.VPN);
     // VPN app only upsell
     if (user.isFree && isVpnApp && vpnPlan) {
@@ -200,7 +199,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{getUpgradeText(vpnPlanName)}</strong>
+                    <strong>{getUpgradeText(plan.Title)}</strong>
                 </h3>
                 <p>{c('new_plans: Info')
                     .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
@@ -216,7 +215,6 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         );
     }
 
-    const bundlePlanName = PLAN_NAMES[PLANS.BUNDLE];
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Bundle upsell
@@ -269,7 +267,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{getUpgradeText(bundlePlanName)}</strong>
+                    <strong>{getUpgradeText(plan.Title)}</strong>
                 </h3>
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
@@ -289,7 +287,6 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         );
     }
 
-    const businessPlanName = PLAN_NAMES[PLANS.BUNDLE_PRO];
     const businessPlan = plans.find(({ Name }) => Name === PLANS.BUNDLE_PRO);
     const businessStorage = humanSize(businessPlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Mail pro upsell
@@ -332,7 +329,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
         return (
             <div className="border rounded px2 py1-5 pt0-5">
                 <h3>
-                    <strong>{getUpgradeText(businessPlanName)}</strong>
+                    <strong>{getUpgradeText(plan.Title)}</strong>
                 </h3>
                 <p className="color-weak">{c('new_plans: Info')
                     .t`Upgrade to the business pack with access to all premium Proton services.`}</p>

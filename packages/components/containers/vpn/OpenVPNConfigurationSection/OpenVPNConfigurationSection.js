@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { groupWith } from '@proton/shared/lib/helpers/array';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_HOSTNAME } from '@proton/shared/lib/constants';
+import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
 import {
     Href,
@@ -141,9 +141,10 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
         fetchLogicals(30_000);
     }, []);
 
-    const plusVpnConnections = plans?.find(({ Name }) => Name === PLANS.VPN)?.MaxVPN || 0;
+    const vpnPlan = plans?.find(({ Name }) => Name === PLANS.VPN);
+    const plusVpnConnections = vpnPlan?.MaxVPN || VPN_CONNECTIONS;
 
-    const vpnPlus = `${VPN_APP_NAME} Plus`;
+    const vpnPlus = vpnPlan?.Title;
     const vpnBasic = `${VPN_APP_NAME} Basic`;
     const visionary = 'Visionary';
 
@@ -344,7 +345,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     .t`Download all configurations`}</Button>
                             )}
                         </div>
-                        {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && (
+                        {!loadingPlans && (userVPN.PlanName === 'trial' || !hasPaidVpn) && vpnPlus && (
                             <div className="border p2 text-center">
                                 <h3 className="color-primary mt0 mb1">{c('Title')
                                     .t`Get ${vpnPlus} to access all servers`}</h3>
