@@ -167,14 +167,13 @@ const AdvancedSearch = ({
                     value={model.keyword}
                     onChange={({ target }) => updateModel({ ...model, keyword: target.value })}
                     onSubmit={handleSubmit}
-                    showEncryptedSearch={showEncryptedSearch}
                     showSearchIcon={false}
                 />
                 {isSearch ? (
                     <Button
                         shape="ghost"
                         color="weak"
-                        className="flex mtauto mbauto"
+                        className="flex mtauto mbauto mr0-25"
                         size="small"
                         disabled={!Object.keys(model).length}
                         type="reset"

@@ -6,12 +6,11 @@ interface Props {
     onSubmit: MouseEventHandler<HTMLButtonElement>;
     onChange: ChangeEventHandler<HTMLInputElement>;
     value: string;
-    showEncryptedSearch: boolean;
     showSearchIcon?: boolean;
 }
 
-const SearchField = ({ onSubmit, onChange, value, showEncryptedSearch, showSearchIcon = true }: Props) => (
-    <div className={classnames(['relative flex-item-fluid', showEncryptedSearch ? 'mb0-5NON' : 'mb1-5NON'])}>
+const SearchField = ({ onSubmit, onChange, value, showSearchIcon = true }: Props) => (
+    <div className="relative flex-item-fluid">
         <Label className="advanced-search-label p0" htmlFor="search-keyword" title={c('Label').t`Keyword`}>
             <InputTwo
                 id="search-keyword"
