@@ -12,7 +12,7 @@ import {
 import { withAuthHeaders, withVerificationHeaders } from '@proton/shared/lib/fetch/headers';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
-import { APP_NAMES, COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
+import { COUPON_CODES, TOKEN_TYPES } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { handleSetupKeys } from '@proton/shared/lib/keys';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
@@ -22,6 +22,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 import { auth } from '@proton/shared/lib/api/auth';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';
+import { AppIntent } from '@proton/components/containers/login/interface';
 import {
     HumanVerificationData,
     HumanVerificationTrigger,
@@ -50,10 +51,10 @@ const hvHandler = (error: any, trigger: HumanVerificationData['trigger']): Human
 
 export const handleDone = async ({
     cache,
-    toApp = cache.toApp,
+    appIntent = cache.appIntent,
 }: {
     cache: SignupCacheResult;
-    toApp?: APP_NAMES;
+    appIntent?: AppIntent;
 }): Promise<SignupActionResponse> => {
     const { persistent, setupData } = cache;
     if (!setupData?.authResponse) {
@@ -62,11 +63,11 @@ export const handleDone = async ({
     return {
         session: {
             ...setupData.authResponse,
-            toApp,
             persistent,
             User: setupData.user,
             keyPassword: setupData.keyPassword,
             flow: 'signup',
+            appIntent: appIntent,
         },
         to: SIGNUP_STEPS.DONE,
     };
@@ -103,7 +104,7 @@ export const handleSaveRecovery = async ({
         if (!setupData?.authResponse) {
             throw new Error('Missing auth response');
         }
-        return handleDone({ cache, toApp: cache.toApp });
+        return handleDone({ cache, appIntent: cache.appIntent });
     }
 
     return {
@@ -231,7 +232,7 @@ export const handleSetupUser = async ({
 
     // Ignore the rest of the steps for VPN because we don't create an address and ask for recovery email at the start
     if (signupType === SignupType.VPN) {
-        return handleDone({ cache: newCache, toApp: cache.toApp });
+        return handleDone({ cache: newCache, appIntent: cache.appIntent });
     }
 
     return {

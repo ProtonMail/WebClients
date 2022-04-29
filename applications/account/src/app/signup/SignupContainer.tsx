@@ -373,7 +373,11 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                             ...model.subscriptionData,
                         };
                         const cache: SignupCacheResult = {
-                            toApp,
+                            appIntent: toApp
+                                ? {
+                                      app: toApp,
+                                  }
+                                : undefined,
                             // Internal app or oauth app or vpn
                             ignoreExplore: Boolean(toApp || toAppName || signupType === SignupType.VPN),
                             generateKeys: clientType === CLIENT_TYPES.MAIL,
@@ -548,7 +552,12 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                         if (!cache) {
                             throw new Error('Missing cache');
                         }
-                        return handleDone({ cache, toApp: app }).then(handleResult).catch(handleError);
+                        return handleDone({
+                            cache,
+                            appIntent: { app, ref: 'product-switch' },
+                        })
+                            .then(handleResult)
+                            .catch(handleError);
                     }}
                 />
             )}
