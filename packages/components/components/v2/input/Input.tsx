@@ -45,11 +45,15 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
             ])}
             ref={containerRef}
         >
-            {prefix && <div className="inputform-adornment pl0-5 flex">{prefix}</div>}
+            {prefix && (
+                <div className="inputform-adornment pl0-5 flex flex-align-items-center flex-gap-0-5">{prefix}</div>
+            )}
 
             <div className="flex-item-fluid">{inputElement}</div>
 
-            {suffix && <div className="inputform-adornment pr0-5 flex">{suffix}</div>}
+            {suffix && (
+                <div className="inputform-adornment pr0-5 flex flex-align-items-center flex-gap-0-5">{suffix}</div>
+            )}
         </div>
     );
 };

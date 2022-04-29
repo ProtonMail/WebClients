@@ -160,36 +160,12 @@ export const Sizes = () => {
 };
 
 export const Dense = () => {
-    const [values, setValues] = useState({ warning: '', error: '', assistive: '' });
-    const handleChange = (key: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
-        setValues((prev) => ({
-            ...prev,
-            [key]: e.target.value,
-        }));
-
     return (
         <>
-            <InputFieldTwo
-                dense
-                value={values.warning}
-                onChange={handleChange('warning')}
-                label="Warning"
-                warning="I'm a warning"
-            />
-            <InputFieldTwo
-                dense
-                value={values.error}
-                onChange={handleChange('error')}
-                label="Error"
-                error="I'm an error"
-            />
-            <InputFieldTwo
-                dense
-                value={values.assistive}
-                onChange={handleChange('assistive')}
-                label="Assistive text"
-                assistiveText="I'm invisible"
-            />
+            <InputFieldTwo dense label="Warning" warning="I'm a warning" />
+            <InputFieldTwo dense label="Error" error="I'm an error" />
+            <InputFieldTwo dense label="Assistive text" assistiveText="I'm invisible" />
+            <InputFieldTwo dense label="Error with suffix" error="I'm an error" as={PasswordInputTwo} />
         </>
     );
 };
