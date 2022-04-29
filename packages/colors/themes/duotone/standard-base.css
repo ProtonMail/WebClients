@@ -48,6 +48,11 @@
 	--optional-scrollbar-thumb-color: #D1CFCD;
 	--optional-scrollbar-thumb-hover-color: #C2BFBC;
 
+	/* Reset to default because prominent part overrides those colors */
+	--optional-link-norm: var(--interaction-norm);
+	--optional-link-hover: var(--interaction-norm-major-1);
+	--optional-link-active: var(--interaction-norm-major-2);
+
 	--optional-main-border-color: transparent;
 
 	--optional-email-item-read-text-color: #474544;
