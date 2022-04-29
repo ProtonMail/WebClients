@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { CYCLE, PLAN_NAMES, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -87,7 +87,7 @@ const PlanSelection = ({
         const isRecommended = [PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as PLANS);
         const canSelect = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].includes(plan.Name as PLANS);
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
-        const planTitle = PLAN_NAMES[plan.Name as PLANS];
+        const planTitle = plan.Title;
         const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnCountries, vpnServers);
 
