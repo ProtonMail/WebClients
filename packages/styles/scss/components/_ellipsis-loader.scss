@@ -5,17 +5,18 @@
 	letter-spacing: -0.2em;
 	vertical-align: baseline;
 	text-align: start;
+	white-space: pre;
 	pointer-events: none;
 
 	&::before {
-		content: '\00a0';
+		content: ' ';
 		animation: anime-ellipsis-loading 1s steps(1, start) infinite;
 	}
 }
 
 @keyframes anime-ellipsis-loading {
 	0% {
-		content: '\00a0';
+		content: ' ';
 	}
 	25% {
 		content: '.';
