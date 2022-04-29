@@ -91,7 +91,7 @@ const AddressesGroupItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation cursor-grab rounded',
+                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation cursor-grab rounded',
                     dragged && 'composer-addresses-item-dragged',
                 ])}
                 draggable
@@ -149,7 +149,10 @@ const AddressesGroupItem = ({
                         <Icon name="squares" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
-                    <DropdownMenuButton className="text-left flex flex-nowrap flex-align-items-center" onClick={() => showModalCallback(true)}>
+                    <DropdownMenuButton
+                        className="text-left flex flex-nowrap flex-align-items-center"
+                        onClick={() => showModalCallback(true)}
+                    >
                         <Icon name="user" className="mr0-5" />
                         <span className="flex-item-fluid mtauto mbauto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
