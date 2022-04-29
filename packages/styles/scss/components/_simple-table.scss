@@ -101,12 +101,6 @@
 			}
 		}
 	}
-
-	/* simple dirty fix */
-	a svg {
-		@extend .relative;
-		inset-block-start: -0.15em;
-	}
 }
 
 .alternate-table-bg-row-rounded {
