@@ -166,7 +166,7 @@ const AddressesRecipientItem = ({
         <>
             <div
                 className={classnames([
-                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 stop-propagation rounded',
+                    'composer-addresses-item mt0-25 mb0-25 mr0-5 flex flex-nowrap flex-row max-w100 overflow-hidden stop-propagation rounded',
                     !valid && 'invalid',
                     cannotSend && 'color-danger invalid',
                     dragged && 'composer-addresses-item-dragged',
