@@ -50,7 +50,7 @@ const SimpleSidebarListItemHeader = ({
             <div className="flex flex-nowrap">
                 <button
                     ref={buttonRef}
-                    className="text-uppercase flex-item-fluid text-left navigation-link-header-group-link"
+                    className="text-uppercase flex flex-align-items-center flex-item-fluid text-left navigation-link-header-group-link"
                     type="button"
                     onClick={() => onToggle(!toggle)}
                     title={title}
