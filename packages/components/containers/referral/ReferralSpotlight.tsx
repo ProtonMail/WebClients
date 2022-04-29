@@ -1,11 +1,12 @@
 import { c } from 'ttag';
+import { ReactElement, RefObject } from 'react';
 import { Spotlight, SettingsLink } from '@proton/components';
 import { APPS, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import starImg from '@proton/styles/assets/img/illustrations/spotlight-stars.svg';
 
 interface Props {
-    children: React.ReactElement;
-    anchorRef: React.RefObject<HTMLElement>;
+    children: ReactElement;
+    anchorRef: RefObject<HTMLElement>;
     show: boolean;
     onDisplayed: () => void;
     onClose: () => void;
