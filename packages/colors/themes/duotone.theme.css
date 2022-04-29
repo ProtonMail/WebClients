@@ -67,6 +67,9 @@
   --backdrop-norm: rgb(38 42 51 / 0.48);
   --optional-scrollbar-thumb-color: #d1cfcd;
   --optional-scrollbar-thumb-hover-color: #c2bfbc;
+  --optional-link-norm: var(--interaction-norm);
+  --optional-link-hover: var(--interaction-norm-major-1);
+  --optional-link-active: var(--interaction-norm-major-2);
   --optional-main-border-color: transparent;
   --optional-email-item-read-text-color: #474544;
 }
