@@ -47,8 +47,8 @@ const AttachmentList = ({
     className,
     outsideKey,
 }: Props) => {
-    const download = useDownload();
-    const downloadAll = useDownloadAll();
+    const { handleDownload: download, confirmDownloadModal } = useDownload();
+    const { handleDownloadAll: downloadAll, confirmDownloadModal: confirmDownloadAllModal } = useDownloadAll();
 
     const [showLoader, setShowLoader] = useState(false);
 
@@ -247,6 +247,8 @@ const AttachmentList = ({
                     ))}
                 </div>
             )}
+            {confirmDownloadModal}
+            {confirmDownloadAllModal}
         </div>
     );
 };

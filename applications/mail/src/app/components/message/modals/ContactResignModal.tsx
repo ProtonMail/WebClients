@@ -2,15 +2,20 @@ import { LoadingMap } from '@proton/shared/lib/interfaces/utils';
 import { useState, useEffect } from 'react';
 import * as React from 'react';
 import {
-    Alert,
     Loader,
-    FormModal,
     useGetEncryptionPreferences,
     useApi,
     useLoading,
     useGetUserKeys,
     PrimaryButton,
     useNotifications,
+    ModalProps,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Button,
+    Form,
 } from '@proton/components';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { resignCards } from '@proton/shared/lib/contacts/resign';
@@ -19,15 +24,16 @@ import { updateContact, getContact } from '@proton/shared/lib/api/contacts';
 import { ContactEmail, ContactCard } from '@proton/shared/lib/interfaces/contacts';
 import { c } from 'ttag';
 
-interface Props {
+interface Props extends ModalProps {
     title: string;
     contacts: { contactID: string }[];
     children: React.ReactNode;
     submit?: string;
-    onResign: () => void;
+    onResign?: () => void;
     onNotResign?: () => void;
     onError?: () => void;
-    onClose?: () => void;
+    onResolve?: () => void;
+    onReject?: () => void;
 }
 const ContactResignModal = ({
     title,
@@ -37,6 +43,8 @@ const ContactResignModal = ({
     onResign,
     onNotResign,
     onError,
+    onResolve,
+    onReject,
     onClose,
     ...rest
 }: Props) => {
@@ -110,16 +118,19 @@ const ContactResignModal = ({
             );
             // the routes called in requests support 100 calls every 10 seconds
             await processApiRequestsSafe(requests, 100, 10 * 1000);
-            onResign();
+            onResign?.();
+            onResolve?.();
         } catch (error: any) {
             createNotification({ text: error.message, type: 'error' });
             onError?.();
         } finally {
+            onReject?.();
             onClose?.();
         }
     };
     const handleClose = () => {
         onNotResign?.();
+        onReject?.();
         onClose?.();
     };
 
@@ -148,17 +159,13 @@ const ContactResignModal = ({
 
     const loadingContacts = Object.values(loadingMap).some((loading) => loading === true);
     const emailsWithKeys = Object.values(contactFingerprintsByEmailMap);
-    const renderSubmit = (
-        <PrimaryButton disabled={loadingContacts} loading={loadingResign} type="submit" data-testid="resign-contact">
-            {submit}
-        </PrimaryButton>
-    );
+
     const content = emailsWithKeys.length ? (
         <>
-            <Alert className="mb1" type="info">
+            <div>
                 {c('Info')
                     .t`Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?`}
-            </Alert>
+            </div>
             {loadingContacts ? (
                 <Loader />
             ) : (
@@ -168,21 +175,34 @@ const ContactResignModal = ({
             )}
         </>
     ) : (
-        <Alert className="mb1" type="info">{c('Info').t`Do you want to re-sign the contact details?`}</Alert>
+        <div>{c('Info').t`Do you want to re-sign the contact details?`}</div>
     );
 
     return (
-        <FormModal
-            title={title}
+        <ModalTwo
+            size="large"
+            as={Form}
+            {...rest}
             onSubmit={() => withLoadingResign(handleSubmit())}
             onClose={handleClose}
-            loading={loadingResign}
-            submit={renderSubmit}
-            {...rest}
         >
-            {children}
-            {content}
-        </FormModal>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                {children}
+                {content}
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                <PrimaryButton
+                    disabled={loadingContacts}
+                    loading={loadingResign}
+                    type="submit"
+                    data-testid="resign-contact"
+                >
+                    {submit}
+                </PrimaryButton>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

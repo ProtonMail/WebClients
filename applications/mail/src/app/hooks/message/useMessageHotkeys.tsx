@@ -79,7 +79,7 @@ export const useMessageHotkeys = (
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
     const markAs = useMarkAs();
-    const moveToFolder = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
     const star = useStar();
 
     const [hasFocus, setHasFocus] = useState(false);
@@ -339,5 +339,6 @@ export const useMessageHotkeys = (
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         filterDropdownToggleRef,
+        moveScheduledModal,
     };
 };

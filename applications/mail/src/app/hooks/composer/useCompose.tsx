@@ -2,9 +2,6 @@ import { c, msgid } from 'ttag';
 import {
     useHandler,
     useNotifications,
-    useModals,
-    ConfirmModal,
-    Alert,
     useAddresses,
     useGetUser,
     useApi,
@@ -18,6 +15,7 @@ import {
 } from '@proton/components';
 import { isOutbox, isScheduledSend } from '@proton/shared/lib/mail/messages';
 import { forceSend } from '@proton/shared/lib/api/messages';
+import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useDispatch } from 'react-redux';
 import { useDraft } from '../useDraft';
@@ -26,6 +24,7 @@ import { MESSAGE_ACTIONS } from '../../constants';
 import { MessageState, PartialMessageState } from '../../logic/messages/messagesTypes';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { openDraft } from '../../logic/messages/draft/messagesDraftActions';
+import SendingOriginalMessageModal from '../../components/composer/modals/SendingOriginalMessageModal';
 
 export interface ComposeExisting {
     existingDraft: MessageState;
@@ -67,9 +66,8 @@ export const useCompose = (
     const getUser = useGetUser();
     const [addresses = []] = useAddresses();
     const { createNotification } = useNotifications();
-    const { createModal } = useModals();
     const dispatch = useDispatch();
-    const createDraft = useDraft();
+    const { createDraft, sendingFromDefaultAddressModal } = useDraft();
     const goToSettings = useSettingsLink();
     const api = useApi();
     const { call } = useEventManager();
@@ -77,6 +75,7 @@ export const useCompose = (
     const getMessage = useGetMessage();
 
     const [storageCapacityModalProps, setStorageCapacityModalOpen] = useModalState();
+    const [sendingOriginalMessageModal, handleSendingOriginalMessage] = useModalTwo(SendingOriginalMessageModal);
 
     const storageCapacityModal = (
         <AlertModal
@@ -169,19 +168,8 @@ export const useCompose = (
                     return;
                 }
 
-                await new Promise<void>((resolve, reject) => {
-                    createModal(
-                        <ConfirmModal
-                            onConfirm={resolve}
-                            onClose={reject}
-                            title={c('Title').t`Sending original message`}
-                            confirm={c('Action').t`OK`}
-                        >
-                            <Alert className="mb1">{c('Info')
-                                .t`The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.`}</Alert>
-                        </ConfirmModal>
-                    );
-                });
+                await handleSendingOriginalMessage({});
+
                 await api(forceSend(message?.ID));
                 await call();
             }
@@ -193,5 +181,5 @@ export const useCompose = (
         }
     });
 
-    return { handleCompose, storageCapacityModal };
+    return { handleCompose, storageCapacityModal, sendingFromDefaultAddressModal, sendingOriginalMessageModal };
 };
