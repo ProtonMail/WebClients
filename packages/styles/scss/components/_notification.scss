@@ -29,23 +29,9 @@
 	overflow: hidden;
 	border-radius: var(--border-radius-lg);
 	box-shadow: var(--shadow-lifted);
-
-	a,
-	.link,
-	.button-link,
-	.button {
-		@extend .color-inherit;
-	}
 }
 
 .notification {
-	@each $color in (danger, warning, success, info) {
-		&-#{$color} {
-			background-color: var(--signal-#{$color});
-			color: var(--signal-#{$color}-contrast);
-		}
-	}
-
 	&--in {
 		animation-duration: 1s;
 		animation-fill-mode: forwards;
@@ -89,5 +75,5 @@
 }
 
 .global-loader {
-    z-index: $layer-notifications;
+	z-index: $layer-notifications;
 }

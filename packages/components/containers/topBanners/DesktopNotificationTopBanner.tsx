@@ -35,7 +35,7 @@ const DesktopNotificationTopBanner = () => {
     const enableDesktopNotifications = (
         <button
             key="enable-desktop-notifications"
-            className="link align-baseline text-left color-inherit"
+            className="link align-baseline text-left"
             type="button"
             onClick={handleEnable}
         >{c('Action').t`enable desktop notifications`}</button>
