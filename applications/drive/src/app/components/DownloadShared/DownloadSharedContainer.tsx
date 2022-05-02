@@ -2,7 +2,7 @@ import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { c } from 'ttag';
 
-import { useLoading, LoaderPage, Icon, usePreventLeave, useNotifications } from '@proton/components';
+import { MainLogo, useLoading, LoaderPage, usePreventLeave, useNotifications } from '@proton/components';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SRPHandshakeInfo, TransferStatePublic } from '@proton/shared/lib/interfaces/drive/sharing';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
@@ -265,12 +265,7 @@ const DownloadSharedContainer = () => {
                 <div className="ui-standard flex flex-column flex-nowrap flex-item-noshrink flex-align-items-center scroll-if-needed h100v p1">
                     <div className="bg-norm color-norm flex flex-align-items-center flex-item-noshrink w100 max-w37e mbauto mtauto border rounded">
                         <div className="flex flex-column flex-nowrap flex-align-items-center text-center p2 pb0 w100">
-                            <h3>
-                                <span className="flex flex-nowrap flex-align-items-center">
-                                    <Icon name="brand-proton-drive" className="mr0-25" size={20} />
-                                    <b>{appName}</b>
-                                </span>
-                            </h3>
+                            <MainLogo to="/" className="mb1" />
                             {content}
                         </div>
                         <div className="flex flex-justify-center w100 m1-5">
