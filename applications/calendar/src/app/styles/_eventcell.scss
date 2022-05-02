@@ -93,25 +93,6 @@
 			border-inline-start-color: var(--color-alt);
 		}
 	}
-
-	&--sm,
-	&--xs,
-	&--2xs {
-		padding-block: 0;
-		line-height: calc(var(--line-height) * 1px - 2px); // 2px for borders
-	}
-
-	&--sm &-title {
-		font-size: em(13);
-	}
-
-	&--xs &-title {
-		font-size: em(12);
-	}
-
-	&--2xs &-title {
-		font-size: em(10);
-	}
 }
 
 @keyframes loadingEvent {
@@ -213,5 +194,32 @@
 		&-timestring {
 			font-size: rem(12);
 		}
+	}
+
+	/*
+	 * Adaptations for small sizes, meaning below 30 minutes events
+	 */
+	$line-height: calc(var(--line-height) * 1px - 2px); // 2px for borders
+
+	&:is(#{&}--sm, #{&}--xs, #{&}--2xs) {
+		padding-block: 0;
+		line-height: $line-height;
+	}
+
+	&:is(#{&}--sm, #{&}--xs, #{&}--2xs) &-lock-icon {
+		width: min(#{$line-height}, #{rem(16)});
+		height: min(#{$line-height}, #{rem(16)});
+	}
+
+	&--sm &-title {
+		font-size: em(13);
+	}
+
+	&--xs &-title {
+		font-size: em(12);
+	}
+
+	&--2xs &-title {
+		font-size: em(10);
 	}
 }
