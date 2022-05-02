@@ -110,7 +110,7 @@ const IASelectImportTypeStep = ({
 
     const topParagraphRenderer = () => {
         if (!oauthProps) {
-            return <div>{c('Info').t`What do you want to import from your Google account?`}</div>;
+            return <div>{c('Info').t`Select what you want to move from Google.`}</div>;
         }
 
         return (
@@ -671,12 +671,6 @@ const IASelectImportTypeStep = ({
                 {calendarRowRenderer()}
                 {/* driveRowRenderer() */}
             </div>
-
-            {!oauthProps && (
-                <div className="pt1 pb1">
-                    {c('Info').t`Next you'll need to log in to your Google account and allow us to access your data.`}
-                </div>
-            )}
         </>
     );
 };
