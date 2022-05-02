@@ -132,6 +132,7 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
             'TransferCancel', // User action to interrupt upload or download in Drive.
             'UploadConflictError', // User uploading the same file again in Drive.
             'UploadUserError', // Upload error on user's side in Drive.
+            'ValidationError', // Validation error on user's side in Drive.
             'ChunkLoadError', // WebPack loading source code.
             /ResizeObserver loop/, // Chromium bug https://stackoverflow.com/questions/49384120/resizeobserver-loop-limit-exceeded
         ],
