@@ -17,7 +17,7 @@ export enum CANONIZE_SCHEME {
     PROTON,
 }
 
-export const PROTONMAIL_DOMAINS = ['protonmail.com', 'protonmail.ch', 'pm.me'];
+export const PROTONMAIL_DOMAINS = ['protonmail.com', 'protonmail.ch', 'pm.me', 'proton.me'];
 
 export const validateLocalPart = (localPart: string) => {
     // remove comments first
