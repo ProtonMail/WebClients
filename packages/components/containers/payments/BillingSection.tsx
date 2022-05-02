@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { APPS, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
+import { PLANS } from '@proton/shared/lib/constants';
 import { unique } from '@proton/shared/lib/helpers/array';
 import {
     getBaseAmount,
@@ -8,7 +8,6 @@ import {
     getCycleDiscount,
 } from '@proton/shared/lib/helpers/subscription';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { getAppName } from '@proton/shared/lib/apps/helper';
 import { Plan } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
@@ -28,9 +27,6 @@ const getRenewalText = (periodEnd: number) => {
     const formattedEndTime = <Time key="time-text">{periodEnd}</Time>;
     return c('Billing cycle').jt`Renews automatically on ${formattedEndTime}`;
 };
-
-const mailAppName = getAppName(APPS.PROTONMAIL);
-const vpnAppName = getAppName(APPS.PROTONVPN_SETTINGS);
 
 const BillingSection = () => {
     const [{ hasPaidMail, hasPaidVpn }] = useUser();
@@ -79,8 +75,6 @@ const BillingSection = () => {
     const usersText = maxUsers
         ? c('Title').ngettext(msgid`${maxUsers} user`, `${maxUsers} users`, maxUsers)
         : undefined;
-
-    const planNameText = plan ? PLAN_NAMES[plan.Name as keyof typeof PLAN_NAMES] : '';
 
     const addons = (
         <>
@@ -176,7 +170,7 @@ const BillingSection = () => {
         <SettingsSection>
             {!hasLegacyPlans && plan ? (
                 <div className="border-bottom on-mobile-pb1">
-                    <div className={classnames([priceRowClassName, 'text-bold'])}>{planNameText}</div>
+                    <div className={classnames([priceRowClassName, 'text-bold'])}>{plan.Title}</div>
                     <div className={weakRowClassName}>
                         <div className={priceLabelClassName}>
                             {usersText}
@@ -201,7 +195,7 @@ const BillingSection = () => {
                     {mailPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {`${mailAppName} ${PLAN_NAMES[mailPlan.Name as keyof typeof PLAN_NAMES]}`}
+                                {mailPlan.Title}
                                 {getCycleBadge(mailPlan)}
                             </div>
                             <div className="text-right">
@@ -221,7 +215,7 @@ const BillingSection = () => {
                     {vpnPlan ? (
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>
-                                {`${vpnAppName} ${PLAN_NAMES[vpnPlan.Name as keyof typeof PLAN_NAMES]}`}
+                                {vpnPlan.Title}
                                 {getCycleBadge(vpnPlan)}
                             </div>
                             <div className="text-right">

@@ -15,7 +15,6 @@ import {
     SSO_PATHS,
     UNPAID_STATE,
 } from '@proton/shared/lib/constants';
-import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { FeaturesProvider, ModalsChildren, SSOForkProducer, Unauthenticated, useApi } from '@proton/components';
@@ -99,34 +98,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const refresh = useCallback(() => setState((i) => i + 1), []);
     const api = useApi();
     const [forkState, setForkState] = useState<ActiveSessionData>();
-    const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.oauth }>>();
+    const [confirmForkData, setConfirmForkState] = useState<Extract<ProduceForkData, { type: SSOType.OAuth }>>();
     const [activeSessions, setActiveSessions] = useState<LocalSessionResponse[]>();
     const ignoreAutoRef = useRef(false);
     const [hasBackToSwitch, setHasBackToSwitch] = useState(false);
 
-    const { service: toTargetService } = useMemo(() => {
+    const { service: maybeQueryAppIntent } = useMemo(() => {
         return getSearchParams(location.search);
     }, []);
 
-    const [localRedirect] = useState(() => {
-        // Handle special case going for internal vpn on account settings.
-        if (toTargetService === APPS.PROTONVPN_SETTINGS) {
-            return getLocalRedirect(APPS_CONFIGURATION[toTargetService].settingsSlug);
-        }
-        const localLocation = [
-            SSO_PATHS.SWITCH,
-            SSO_PATHS.LOGIN,
-            SSO_PATHS.SIGNUP,
-            SSO_PATHS.AUTHORIZE,
-            SSO_PATHS.REFER,
-            SSO_PATHS.FORGOT_USERNAME,
-            SSO_PATHS.FORK,
-            SSO_PATHS.RESET_PASSWORD,
-            SSO_PATHS.INVITE,
-            SSO_PATHS.OAUTH_AUTHORIZE,
-            SSO_PATHS.OAUTH_CONFIRM_FORK,
-            ...Object.values(UNAUTHENTICATED_ROUTES),
-        ].includes(location.pathname)
+    const [maybeLocalRedirect] = useState(() => {
+        const localLocation = [...Object.values(SSO_PATHS), ...Object.values(UNAUTHENTICATED_ROUTES)].includes(
+            location.pathname
+        )
             ? undefined
             : location;
         if (!localLocation) {
@@ -137,17 +121,21 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     });
 
     // Either another app wants to fork, or a specific route is requested on this app
-    const maybeTargetApp =
-        (forkState?.type === SSOType.internal && forkState.payload?.app) || localRedirect?.toApp || toTargetService;
+    const maybePreAppIntent =
+        (forkState?.type === SSOType.Proton && forkState.payload?.app) ||
+        maybeLocalRedirect?.toApp ||
+        maybeQueryAppIntent;
+
     // Require internal setup if an app is specified
-    const shouldSetupInternalAddress = maybeTargetApp && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybeTargetApp);
+    const maybeShouldSetupInternalAddress =
+        maybePreAppIntent && REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(maybePreAppIntent);
 
     const handleProduceFork = async (data: ProduceForkData) => {
-        if (data.type === SSOType.internal) {
+        if (data.type === SSOType.Proton) {
             return produceFork({ api, ...data.payload });
         }
 
-        if (data.type === SSOType.oauth) {
+        if (data.type === SSOType.OAuth) {
             const {
                 Access: { Accepted },
             } = await api<{ Access: OAuthLastAccess }>(
@@ -162,8 +150,16 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const handleLogin = async (args: OnLoginCallbackArguments) => {
-        const { keyPassword, UID, User, LocalID, persistent, toApp: maybeSelectedApp } = args;
-        const toApp = maybeSelectedApp || maybeTargetApp || DEFAULT_APP;
+        const { keyPassword, UID, User, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
+        const toApp = maybeFlowAppIntent?.app || maybePreAppIntent || DEFAULT_APP;
+
+        // Handle special case going for internal vpn on account settings.
+        const localRedirect =
+            maybeLocalRedirect ||
+            (toApp === APPS.PROTONVPN_SETTINGS ? getLocalRedirect(APPS_CONFIGURATION[toApp].settingsSlug) : undefined);
+
+        const shouldSetupInternalAddress = REQUIRES_INTERNAL_EMAIL_ADDRESS.includes(toApp);
+
         // Upon login, if user is delinquent, the fork is aborted and the user is redirected to invoices
         if (User.Delinquent >= UNPAID_STATE.DELINQUENT) {
             return onLogin({
@@ -171,17 +167,19 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 path: `${getSlugFromApp(toApp)}${getInvoicesPathname(toApp)}`,
             });
         }
-        if (forkState) {
-            if (forkState.type === SSOType.oauth) {
-                await handleProduceFork({ type: SSOType.oauth, payload: { ...forkState.payload, UID } });
-                return;
-            }
-            if (forkState.type === SSOType.internal) {
-                const type = args.flow === 'signup' ? FORK_TYPE.SIGNUP : undefined;
-                await produceFork({ api, UID, keyPassword, ...forkState.payload, persistent, type });
-                return;
-            }
+
+        if (forkState?.type === SSOType.OAuth) {
+            await handleProduceFork({ type: SSOType.OAuth, payload: { ...forkState.payload, UID } });
+            return;
         }
+
+        // If the user signed up and there is an active fork, purposefully ignore it so that it
+        // triggers a page load with the query parameters
+        if (forkState?.type === SSOType.Proton && args.flow !== 'signup') {
+            await produceFork({ api, UID, keyPassword, ...forkState.payload, persistent });
+            return;
+        }
+
         // Special case for external users to redirect to VPN until more apps are supported
         if (User.Type === UserType.EXTERNAL && !shouldSetupInternalAddress) {
             return onLogin({
@@ -189,18 +187,42 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 path: `${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}`,
             });
         }
-        if (localRedirect || !isSSOMode) {
+
+        const url = (() => {
+            let pathname;
+
+            if (localRedirect) {
+                if (args.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS) {
+                    pathname = `/${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}/vpn-apps?prompt=true`;
+                } else {
+                    pathname = localRedirect.pathname || '';
+                }
+                return new URL(getAppHref(pathname, APPS.PROTONACCOUNT, LocalID));
+            }
+
+            if (toApp === APPS.PROTONMAIL) {
+                pathname = '/inbox';
+            } else {
+                pathname = '/';
+            }
+            return new URL(getAppHref(pathname, toApp, LocalID));
+        })();
+
+        if (args.flow === 'signup') {
+            url.searchParams.append('welcome', 'true');
+            if (maybeFlowAppIntent?.ref !== undefined) {
+                url.searchParams.append('ref', maybeFlowAppIntent.ref);
+            }
+        }
+
+        if (url.hostname === window.location.hostname || !isSSOMode) {
             return onLogin({
                 ...args,
-                path:
-                    args.flow === 'signup' && toApp === APPS.PROTONVPN_SETTINGS
-                        ? `${getSlugFromApp(APPS.PROTONVPN_SETTINGS)}/vpn-apps?prompt`
-                        : localRedirect?.pathname || '',
+                path: `${url.pathname}${url.search}${url.hash}`,
             });
         }
-        const pathname = toApp === APPS.PROTONMAIL ? '/inbox' : '/';
-        const search = args.flow === 'signup' ? '?welcome=true' : '';
-        return replaceUrl(getAppHref(`${pathname}${search}`, toApp, LocalID));
+
+        return replaceUrl(url.toString());
     };
 
     const handleActiveSessionsFork = (newForkState: ActiveSessionData, { sessions }: GetActiveSessionsResult) => {
@@ -221,15 +243,8 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         // Ignore the automatic login
         if (
             ignoreAutoRef.current ||
-            [
-                SSO_PATHS.SWITCH,
-                SSO_PATHS.SIGNUP,
-                SSO_PATHS.REFER,
-                SSO_PATHS.RESET_PASSWORD,
-                SSO_PATHS.FORGOT_USERNAME,
-                SSO_PATHS.INVITE,
-                SSO_PATHS.OAUTH_CONFIRM_FORK,
-            ].includes(location.pathname as any)
+            // All SSO paths except login
+            (Object.values(SSO_PATHS).includes(location.pathname as any) && location.pathname !== SSO_PATHS.LOGIN)
         ) {
             setActiveSessions(sessions);
             if (sessions.length >= 1) {
@@ -275,10 +290,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     };
 
     const toOAuthName =
-        forkState?.type === SSOType.oauth
+        forkState?.type === SSOType.OAuth
             ? forkState.payload.clientInfo.Name
             : confirmForkData?.payload.clientInfo.Name;
-    const toInternalAppName = maybeTargetApp && getToAppName(maybeTargetApp);
+    const toInternalAppName = maybePreAppIntent && getToAppName(maybePreAppIntent);
     const toAppName = toOAuthName || toInternalAppName;
 
     return (
@@ -297,7 +312,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={SSO_PATHS.OAUTH_AUTHORIZE}>
                     <SSOForkProducer
-                        type={SSOType.oauth}
+                        type={SSOType.OAuth}
                         onProduceFork={handleProduceFork}
                         onInvalidFork={handleInvalidFork}
                         onActiveSessions={handleActiveSessionsFork}
@@ -305,7 +320,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                 </Route>
                 <Route path={SSO_PATHS.AUTHORIZE}>
                     <SSOForkProducer
-                        type={SSOType.internal}
+                        type={SSOType.Proton}
                         onProduceFork={handleProduceFork}
                         onInvalidFork={handleInvalidFork}
                         onActiveSessions={handleActiveSessionsFork}
@@ -365,7 +380,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                         <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
                                             <SignupContainer
                                                 clientType={CLIENT_TYPES.MAIL}
-                                                toApp={maybeTargetApp}
+                                                toApp={maybePreAppIntent}
                                                 toAppName={toAppName}
                                                 onLogin={handleLogin}
                                                 onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
@@ -381,7 +396,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                             <LoginContainer
                                                 toAppName={toAppName}
                                                 showContinueTo={!!toOAuthName}
-                                                shouldSetupInternalAddress={shouldSetupInternalAddress}
+                                                shouldSetupInternalAddress={maybeShouldSetupInternalAddress}
                                                 onLogin={handleLogin}
                                                 onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
                                             />

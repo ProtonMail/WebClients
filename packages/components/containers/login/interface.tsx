@@ -30,6 +30,11 @@ export interface AuthCacheResult {
 
 export type AuthFlows = 'signup' | 'reset' | 'switch' | undefined;
 
+export interface AppIntent {
+    app: APP_NAMES;
+    ref?: 'product-switch';
+}
+
 export interface AuthSession {
     UID: string;
     User: tsUser;
@@ -39,7 +44,7 @@ export interface AuthSession {
     LocalID?: number;
     path?: string;
     flow?: AuthFlows;
-    toApp?: APP_NAMES;
+    appIntent?: AppIntent;
     persistent: boolean;
 }
 

@@ -1,44 +1,61 @@
-import { useEffect, useState } from 'react';
+import { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { addDays, fromUnixTime } from 'date-fns';
 import { useLocation } from 'react-router';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, APP_NAMES, isSSOMode, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APP_NAMES, APPS, BRAND_NAME, isSSOMode, SSO_PATHS } from '@proton/shared/lib/constants';
+import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
-import { getPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
+import { getHasLegacyPlans, getPlan, getPrimaryPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 import {
-    usePopperAnchor,
-    Dropdown,
-    Icon,
-    DropdownMenu,
-    DropdownMenuButton,
     Button,
+    ButtonLike,
+    Copy,
+    Dropdown,
+    DropdownMenu,
+    DropdownMenuLink,
+    DropdownMenuButton,
     SimpleDropdown,
     SettingsLink,
-    DropdownMenuLink,
+    FeatureCode,
+    Icon,
     NotificationDot,
-    Copy,
+    ReferralSpotlight,
     useAuthentication,
     useConfig,
+    useFeature,
+    useModalState,
     useNotifications,
     useOrganization,
+    usePopperAnchor,
     useRecoveryNotification,
+    useSpotlightOnFeature,
     useSubscription,
     useUser,
     useUserSettings,
-    useFeature,
-    useSpotlightOnFeature,
-    FeatureCode,
-    ReferralSpotlight,
-    useModalState,
 } from '@proton/components';
+import { Subscription } from '@proton/shared/lib/interfaces';
 
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 import { AuthenticatedBugModal } from '../support';
+
+const getPlanTitle = (subscription: Subscription, app: APP_NAMES) => {
+    if (!subscription) {
+        return '';
+    }
+    if (hasLifetime(subscription)) {
+        return 'Lifetime';
+    }
+    const primaryPlan = getPrimaryPlan(subscription, app);
+    if (getHasLegacyPlans(subscription)) {
+        return primaryPlan?.Name || '';
+    }
+    return getPlan(subscription)?.Title || '';
+};
 
 interface Props extends Omit<UserDropdownButtonProps, 'user' | 'isOpen' | 'onClick'> {
     onOpenChat?: () => void;
@@ -82,33 +99,12 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
         });
     };
 
-    const handleSwitchAccount = () => {
-        if (APP_NAME === APPS.PROTONACCOUNT) {
-            const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
-            const settingsApp = getAppFromPathnameSafe(window.location.pathname);
-            const settingsSlug = settingsApp ? getSlugFromApp(settingsApp) : undefined;
-            const searchParams = settingsSlug ? `?service=${settingsSlug}` : '';
-            return document.location.assign(`${href}${searchParams}`);
-        }
-        return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
-    };
-
     const handleLogout = () => {
         logout();
         close();
     };
 
-    const { PROTONVPN_SETTINGS } = APPS;
-
-    let planName;
-
-    if (subscription) {
-        if (hasLifetime(subscription)) {
-            planName = 'Lifetime';
-        } else {
-            planName = getPlan(subscription)?.Title;
-        }
-    }
+    const planName = getPlanTitle(subscription, APP_NAME);
 
     const handleBugReportClick = () => {
         setBugReportModal(true);
@@ -133,6 +129,13 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
         if (location.pathname.includes('/referral')) {
             setRedDotReferral(false);
         }
+    }, [location.pathname]);
+
+    const switchHref = useMemo(() => {
+        const href = getAppHref(SSO_PATHS.SWITCH, APPS.PROTONACCOUNT);
+        const toApp = APP_NAME === APPS.PROTONACCOUNT ? getAppFromPathnameSafe(location.pathname) : APP_NAME;
+        const search = `?product=${getSlugFromApp(toApp || APPS.PROTONMAIL)}`;
+        return `${href}${search}`;
     }, [location.pathname]);
 
     return (
@@ -306,7 +309,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                             <DropdownMenuLink
                                 className="text-left"
                                 href={
-                                    APP_NAME === PROTONVPN_SETTINGS
+                                    APP_NAME === APPS.PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/'
                                         : getStaticURL('/support/')
                                 }
@@ -350,15 +353,27 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
 
                     {isSSOMode ? (
                         <div className="px1 pt0-5 pb0-75">
-                            <Button
+                            <ButtonLike
+                                as="a"
+                                href={switchHref}
+                                target="_self"
                                 shape="outline"
                                 color="weak"
                                 className="w100"
-                                onClick={handleSwitchAccount}
+                                onClick={(event: MouseEvent<HTMLAnchorElement>) => {
+                                    if (
+                                        APP_NAME !== APPS.PROTONACCOUNT &&
+                                        event.button === 0 &&
+                                        !getIsEventModified(event.nativeEvent)
+                                    ) {
+                                        event.preventDefault();
+                                        return requestFork(APP_NAME, undefined, FORK_TYPE.SWITCH);
+                                    }
+                                }}
                                 data-testid="userdropdown:button:switch-account"
                             >
                                 {c('Action').t`Switch account`}
-                            </Button>
+                            </ButtonLike>
                         </div>
                     ) : null}
 
