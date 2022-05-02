@@ -1,15 +1,19 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, classnames } from '@proton/components';
-import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
-import { getConversation, labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
+import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
+import { labelMessages, unlabelMessages, unsubscribeMessages } from '@proton/shared/lib/api/messages';
+import {
+    labelConversations,
+    unlabelConversations,
+    unsubscribeConversations,
+} from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
-import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
+
 import { PAGE_SIZE } from '../constants';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { isMessage as testIsMessage } from '../helpers/elements';
@@ -23,6 +27,7 @@ import MoveAllButton from '../components/notifications/MoveAllButton';
 import { isLabel } from '../helpers/labels';
 import MoveScheduledModal from '../components/message/modals/MoveScheduledModal';
 import { useMoveAll } from './useMoveAll';
+import MoveToSpamModal from '../components/message/modals/MoveToSpamModal';
 
 const { SPAM, TRASH, SCHEDULED, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -294,6 +299,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const { moveAll, modal: moveAllModal } = useMoveAll();
 
     const [moveScheduledModal, handleShowModal] = useModalTwo(MoveScheduledModal);
+    const [moveToSpamModal, handleShowSpamModal] = useModalTwo(MoveToSpamModal);
 
     /*
      * Opens a modal when finding scheduled messages that are moved to trash.
@@ -327,39 +333,17 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
     const searchForUnsubscribable = async (folderID: string, isMessage: boolean, elements: Element[]) => {
         if (folderID === SPAM) {
-            const unsubscribableIDs = [];
+            const unsubscribe = await handleShowSpamModal({ isMessage, elements });
 
-            if (isMessage) {
-                unsubscribableIDs.push(
-                    ...(elements as Message[])
-                        .filter((element) => isUnsubscribable(element))
-                        .map((element) => element.ID)
-                );
-            } else {
-                await Promise.all(
-                    (elements as Conversation[]).map(async (element) => {
-                        const conversation = getConversationFromStore(element.ID);
+            if (unsubscribe) {
+                const elementIDs = elements.map((element) => element.ID);
 
-                        if (conversation && conversation.Messages) {
-                            unsubscribableIDs.push(
-                                ...conversation.Messages.filter((message) => isUnsubscribable(message)).map(
-                                    (message) => message.ID
-                                )
-                            );
-                        } else {
-                            const { Conversation } = await api(getConversation(element.ID));
-                            unsubscribableIDs.push(
-                                ...Conversation.Messages.filter((message) => isUnsubscribable(message)).map(
-                                    (message) => message.ID
-                                )
-                            );
-                        }
-                    })
-                );
-            }
-
-            if (unsubscribableIDs.length > 0) {
-                // Display the modal
+                // no await on these API calls since we don't have to wait to proceed
+                if (isMessage) {
+                    api(unsubscribeMessages(elementIDs));
+                } else {
+                    api(unsubscribeConversations(elementIDs));
+                }
             }
         }
     };
@@ -499,7 +483,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         [labels]
     );
 
-    return { moveToFolder, moveScheduledModal, moveAllModal };
+    return { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal };
 };
 
 export const useStar = () => {
