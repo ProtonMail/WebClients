@@ -133,8 +133,8 @@ export const buildLink = ({
     passphraseKey: Nullable<Uint8Array>;
     cacheKey: string;
 }) => {
-    // calendar.protonmail.com must be hardcoded here as using getAppHref would produce links that wouldn't work
-    const baseURL = `https://calendar.protonmail.com/api/calendar/v1/url/${urlID}/calendar.ics`;
+    // calendar.proton.me must be hardcoded here as using getAppHref would produce links that wouldn't work
+    const baseURL = `https://calendar.proton.me/api/calendar/v1/url/${urlID}/calendar.ics`;
     const encodedCacheKey = encodeURIComponent(cacheKey);
 
     if (accessLevel === ACCESS_LEVEL.FULL && passphraseKey) {
