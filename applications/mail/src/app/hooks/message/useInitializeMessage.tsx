@@ -99,7 +99,7 @@ export const useInitializeMessage = (localID: string, labelID?: string) => {
                 // If the attachment disposition is inline and has the header content-id it's an embedded image
                 if (Headers) {
                     const contentDisposition = extractContentValue(Headers['content-disposition']);
-                    return Headers && !(contentDisposition === 'inline') && !('content-id' in Headers);
+                    return Headers && !(contentDisposition === 'inline' && 'content-id' in Headers);
                 }
                 return true;
             });
