@@ -3,10 +3,10 @@ import { classnames } from '../../helpers';
 import { NotificationType } from './interfaces';
 
 const TYPES_CLASS = {
-    error: 'notification-danger',
-    warning: 'notification-warning',
-    info: 'notification-info',
-    success: 'notification-success',
+    error: 'bg-danger',
+    warning: 'bg-warning',
+    info: 'bg-info',
+    success: 'bg-success',
 };
 
 const CLASSES = {
