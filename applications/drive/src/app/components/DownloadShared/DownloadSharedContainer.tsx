@@ -132,7 +132,7 @@ const DownloadSharedContainer = () => {
             return;
         }
 
-        // for the cases link doesn't have a generated password included
+        // for the cases when user removes generated password from shared url
         if (apiError.code === ERROR_CODE_INVALID_SRP_PARAMS) {
             setWithCustomPassword(true);
             return;
