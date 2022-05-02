@@ -9,6 +9,7 @@ import { ImportedMailFolder, MailImportMapping } from '@proton/shared/lib/interf
 import { FolderRelationshipsMap } from './interfaces';
 
 const SEPARATOR_SPLIT_TOKEN = `##**${Date.now()}**##`;
+export const RESERVED_NAMES = ['scheduled'];
 
 export const splitEscaped = (s = '', separator = '/') => {
     if (separator !== '/') {
@@ -64,6 +65,13 @@ export const mappingHasUnavailableNames = (
         .filter(isTruthy);
 
     return destinations.some((dest) => nameAlreadyExists(dest, collection));
+};
+
+export const mappingHasReservedNames = (mapping: MailImportMapping[]) => {
+    return mapping.some((m) => {
+        const splitted = splitEscaped(m.Destinations.FolderPath);
+        return m.checked && splitted.some((s) => RESERVED_NAMES.includes(s.toLowerCase()));
+    });
 };
 
 export const getLevel = (name: string, separator: string, folders: ImportedMailFolder[]) => {

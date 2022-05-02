@@ -177,6 +177,7 @@ export enum MailImportPayloadError {
     FOLDER_NAMES_TOO_LONG = 'Folder names too long',
     LABEL_NAMES_TOO_LONG = 'Label names too long',
     UNAVAILABLE_NAMES = 'Unavailable names',
+    RESERVED_NAMES = 'Reserved names',
 }
 
 export enum CustomFieldsBitmap {
