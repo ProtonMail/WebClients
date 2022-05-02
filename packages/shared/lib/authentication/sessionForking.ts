@@ -44,6 +44,7 @@ export const requestFork = (fromApp: APP_NAMES, localID?: number, type?: FORK_TY
 
     return replaceUrl(getAppHref(`${SSO_PATHS.AUTHORIZE}?${searchParams.toString()}`, APPS.PROTONACCOUNT));
 };
+
 export interface OAuthProduceForkParameters {
     clientID: string;
     oaSession: string;
@@ -175,25 +176,22 @@ interface ConsumeForkArguments {
     selector: string;
     state: string;
     key: Uint8Array;
-    type?: FORK_TYPE;
     persistent: boolean;
 }
 
-export const consumeFork = async ({ selector, api, state, key, type, persistent }: ConsumeForkArguments) => {
+export const consumeFork = async ({ selector, api, state, key, persistent }: ConsumeForkArguments) => {
     const stateData = getForkStateData(sessionStorage.getItem(`f${state}`));
     if (!stateData) {
         throw new InvalidForkConsumeError(`Missing state ${state}`);
     }
-    const { url } = stateData;
-    if (!url) {
+    const { url: previousUrl } = stateData;
+    if (!previousUrl) {
         throw new InvalidForkConsumeError('Missing url');
     }
-    const { pathname, search, hash } = new URL(url);
-    const path = `${pathname}${search}${hash}`;
+    const url = new URL(previousUrl);
+    const path = `${url.pathname}${url.search}${url.hash}`;
 
     const { UID, RefreshToken, Payload, LocalID } = await api<PullForkResponse>(pullForkSession(selector));
-
-    const flow = type === FORK_TYPE.SIGNUP ? 'signup' : undefined;
 
     try {
         // Resume and use old session if it exists
@@ -201,7 +199,6 @@ export const consumeFork = async ({ selector, api, state, key, type, persistent 
         return {
             ...validatedSession,
             path,
-            flow,
         } as const;
     } catch (e: any) {
         // If existing session is invalid. Fall through to continue using the new fork.
@@ -242,6 +239,5 @@ export const consumeFork = async ({ selector, api, state, key, type, persistent 
     return {
         ...result,
         path,
-        flow,
     } as const;
 };

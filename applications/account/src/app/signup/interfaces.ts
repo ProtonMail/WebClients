@@ -8,10 +8,10 @@ import {
     SubscriptionCheckResponse,
     User,
 } from '@proton/shared/lib/interfaces';
-import { APP_NAMES, APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import { AuthSession } from '@proton/components/containers/login/interface';
+import { AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { Payment } from '@proton/components/containers/payments/interface';
@@ -136,7 +136,7 @@ export interface UserData {
 }
 
 export interface SignupCacheResult {
-    toApp?: APP_NAMES;
+    appIntent?: AppIntent;
     userData?: UserData;
     setupData?: SetupData;
     accountData: AccountData;

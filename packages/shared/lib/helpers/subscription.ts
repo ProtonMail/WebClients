@@ -1,5 +1,5 @@
 import { addWeeks, fromUnixTime, isBefore } from 'date-fns';
-import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES } from '../constants';
+import { PLAN_TYPES, PLAN_SERVICES, PLANS, CYCLE, ADDON_NAMES, COUPON_CODES, APPS, APP_NAMES } from '../constants';
 import { Subscription, PlanIDs, Cycle, PlansMap } from '../interfaces';
 import { hasBit } from './bitset';
 
@@ -78,6 +78,24 @@ export const getHasB2BPlan = (subscription: Subscription | undefined) => {
 
 export const getHasLegacyPlans = (subscription: Subscription | undefined) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsLegacyPlan(Name));
+};
+
+export const getPrimaryPlan = (subscription: Subscription | undefined, app: APP_NAMES) => {
+    if (!subscription) {
+        return;
+    }
+    if (getHasLegacyPlans(subscription)) {
+        const mailPlan = getPlan(subscription, PLAN_SERVICES.MAIL);
+        const vpnPlan = getPlan(subscription, PLAN_SERVICES.VPN);
+
+        if (app === APPS.PROTONVPN_SETTINGS) {
+            return vpnPlan || mailPlan;
+        }
+
+        return mailPlan || vpnPlan;
+    }
+
+    return getPlan(subscription);
 };
 
 export const getBaseAmount = (
