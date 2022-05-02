@@ -12,7 +12,7 @@ import {
     ICAL_METHOD,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
-import { API_CODES, APPS, ACCENT_COLORS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, API_CODES, APPS } from '@proton/shared/lib/constants';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
@@ -74,6 +74,24 @@ const dummyCalendarUserSettings = {
     AutoImportInvite: 0,
 };
 const dummyMemberID = 'member-id';
+const dummyCalendar = {
+    ID: dummyCalendarID,
+    Name: dummyCalendarName,
+    Description: '',
+    Flags: CALENDAR_FLAGS.ACTIVE,
+    Type: CALENDAR_TYPE.PERSONAL,
+    Members: [
+        {
+            ID: dummyMemberID,
+            AddressID: dummyUserPrimaryAddressID,
+            Permissions: 127,
+            Email: dummyUserEmailAddress,
+            CalendarID: dummyCalendarID,
+            Color: ACCENT_COLORS[1],
+            Display: CalendarDisplay.HIDDEN,
+        },
+    ],
+};
 const dummyAttachmentID = 'attachment-id';
 const dummyCalendarKeyID = 'calendar-key-id';
 const dummyEventID = 'event-id';
@@ -92,7 +110,7 @@ const getSetup = async ({
     emailSubject = 'A new invitation',
     userAddressKey,
     userPrimaryAddressID = dummyUserPrimaryAddressID,
-    userCalendars = [],
+    userCalendars = [dummyCalendar],
     userCalendarSettings = dummyCalendarUserSettings,
     defaultCalendarID = dummyCalendarID,
     eventCalendarID,
@@ -110,7 +128,7 @@ const getSetup = async ({
     emailSubject?: string;
     userAddressKey?: GeneratedKey;
     userPrimaryAddressID?: string;
-    userCalendars: CalendarWithMembers[];
+    userCalendars?: CalendarWithMembers[];
     userCalendarSettings?: CalendarUserSettings;
     defaultCalendarID?: string | null;
     eventCalendarID?: string;
@@ -307,29 +325,10 @@ X-PM-SHARED-EVENT-ID:CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4l
 X-PM-SESSION-KEY:IAhhZBd+KXKPm95M2QRJK7WgGHovpnVdJZb2mMoiwMM=
 END:VEVENT
 END:VCALENDAR`;
-        const defaultCalendar = {
-            ID: dummyCalendarID,
-            Name: dummyCalendarName,
-            Description: '',
-            Flags: CALENDAR_FLAGS.ACTIVE,
-            Type: CALENDAR_TYPE.PERSONAL,
-            Members: [
-                {
-                    ID: dummyMemberID,
-                    Email: dummyUserEmailAddress,
-                    Permissions: 127,
-                    AddressID: dummyUserPrimaryAddressID,
-                    Color: ACCENT_COLORS[1],
-                    Display: CalendarDisplay.HIDDEN,
-                    CalendarID: dummyCalendarID,
-                },
-            ],
-        };
 
         const message = await getSetup({
             attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
             methodInMimeType: ICAL_METHOD.REQUEST,
-            userCalendars: [defaultCalendar],
             userCalendarSettings: dummyCalendarUserSettings,
         });
         await render(<ExtraEvents message={message} />, false);
@@ -426,30 +425,10 @@ END:VCALENDAR`;
                 },
             ],
         };
-        const defaultCalendar = {
-            ID: dummyCalendarID,
-            Name: dummyCalendarName,
-            Description: '',
-            Flags: CALENDAR_FLAGS.ACTIVE,
-            Type: CALENDAR_TYPE.PERSONAL,
-            Members: [
-                {
-                    ID: dummyMemberID,
-                    Email: dummyUserEmailAddress,
-                    Permissions: 127,
-                    AddressID: dummyUserPrimaryAddressID,
-                    Color: ACCENT_COLORS[1],
-                    Display: CalendarDisplay.HIDDEN,
-                    CalendarID: dummyCalendarID,
-                },
-            ],
-        };
 
         const message = await getSetup({
             attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
             methodInMimeType: ICAL_METHOD.REQUEST,
-            userCalendars: [defaultCalendar],
-            userCalendarSettings: dummyCalendarUserSettings,
             veventsApi: [eventComponent],
             eventCalendarID: dummyCalendarID,
         });
@@ -494,29 +473,9 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummy
 DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
-        const defaultCalendar = {
-            ID: dummyCalendarID,
-            Name: dummyCalendarName,
-            Description: '',
-            Flags: CALENDAR_FLAGS.ACTIVE,
-            Type: CALENDAR_TYPE.PERSONAL,
-            Members: [
-                {
-                    ID: dummyMemberID,
-                    Email: dummyUserEmailAddress,
-                    Permissions: 127,
-                    AddressID: dummyUserPrimaryAddressID,
-                    Color: ACCENT_COLORS[1],
-                    Display: CalendarDisplay.HIDDEN,
-                    CalendarID: dummyCalendarID,
-                },
-            ],
-        };
 
         const message = await getSetup({
             attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-            userCalendars: [defaultCalendar],
-            userCalendarSettings: dummyCalendarUserSettings,
             veventsApi: [],
             eventCalendarID: dummyCalendarID,
         });
@@ -548,32 +507,12 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummy
 DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
-        const defaultCalendar = {
-            ID: dummyCalendarID,
-            Name: dummyCalendarName,
-            Description: '',
-            Flags: CALENDAR_FLAGS.ACTIVE,
-            Type: CALENDAR_TYPE.PERSONAL,
-            Members: [
-                {
-                    ID: dummyMemberID,
-                    Email: dummyUserEmailAddress,
-                    Permissions: 127,
-                    AddressID: dummyUserPrimaryAddressID,
-                    Color: ACCENT_COLORS[1],
-                    Display: CalendarDisplay.HIDDEN,
-                    CalendarID: dummyCalendarID,
-                },
-            ],
-        };
 
         const message = await getSetup({
             attachments: [
                 { attachmentID: 'attachment-id-1', filename: 'invite.ics', ics },
                 { attachmentID: 'attachment-id-2', filename: 'calendar.ics', ics },
             ],
-            userCalendars: [defaultCalendar],
-            userCalendarSettings: dummyCalendarUserSettings,
             veventsApi: [],
             eventCalendarID: dummyCalendarID,
         });
@@ -607,7 +546,6 @@ END:VCALENDAR`;
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 userCalendars: [],
-                userCalendarSettings: dummyCalendarUserSettings,
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
                 userEmailAddress: dummyUserEmailAddress,
@@ -643,15 +581,6 @@ DTSTAMP:20211013T144456Z
 DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
-            const defaultCalendar = {
-                ID: dummyCalendarID,
-                Name: dummyCalendarName,
-                Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
-                Flags: CALENDAR_FLAGS.ACTIVE,
-                Type: CALENDAR_TYPE.PERSONAL,
-            };
 
             // random event not matching ICS (doesn't matter for the decryption error case)
             const eventComponent: VcalVeventComponent = {
@@ -686,8 +615,6 @@ END:VCALENDAR`;
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 methodInMimeType: ICAL_METHOD.REQUEST,
-                userCalendars: [defaultCalendar],
-                userCalendarSettings: dummyCalendarUserSettings,
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
                 alternativeCalendarKeysAndPassphrasePromise,
@@ -723,20 +650,9 @@ DTSTAMP:20211013T144456Z
 DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
-            const defaultCalendar = {
-                ID: dummyCalendarID,
-                Name: dummyCalendarName,
-                Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
-                Flags: CALENDAR_FLAGS.ACTIVE,
-                Type: CALENDAR_TYPE.PERSONAL,
-            };
 
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-                userCalendars: [defaultCalendar],
-                userCalendarSettings: dummyCalendarUserSettings,
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
                 userEmailAddress: dummyUserEmailAddress,
@@ -770,15 +686,6 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummy
 DTSTAMP:${nextYear}1013T144456Z
 END:VEVENT
 END:VCALENDAR`;
-            const defaultCalendar = {
-                ID: dummyCalendarID,
-                Name: dummyCalendarName,
-                Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
-                Flags: CALENDAR_FLAGS.ACTIVE,
-                Type: CALENDAR_TYPE.PERSONAL,
-            };
 
             const eventComponent: VcalVeventComponent = {
                 component: 'vevent',
@@ -811,8 +718,6 @@ END:VCALENDAR`;
 
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-                userCalendars: [defaultCalendar],
-                userCalendarSettings: dummyCalendarUserSettings,
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
             });
@@ -846,15 +751,6 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=ACCEPTED;X-PM-TOKEN=${dummyToke
 DTSTAMP:${nextYear}1013T144456Z
 END:VEVENT
 END:VCALENDAR`;
-            const defaultCalendar = {
-                ID: dummyCalendarID,
-                Name: dummyCalendarName,
-                Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
-                Flags: CALENDAR_FLAGS.ACTIVE,
-                Type: CALENDAR_TYPE.PERSONAL,
-            };
 
             const eventComponent: VcalVeventComponent = {
                 component: 'vevent',
@@ -887,8 +783,6 @@ END:VCALENDAR`;
 
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-                userCalendars: [defaultCalendar],
-                userCalendarSettings: dummyCalendarUserSettings,
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
             });
@@ -955,10 +849,19 @@ END:VCALENDAR`;
                 ID: dummyCalendarID,
                 Name: dummyCalendarName,
                 Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
                 Flags: CALENDAR_FLAGS.ACTIVE,
                 Type: CALENDAR_TYPE.PERSONAL,
+                Members: [
+                    {
+                        ID: dummyMemberID,
+                        AddressID: dummyUserPrimaryAddressID,
+                        Permissions: 127,
+                        Email: dummyUserEmailAddress,
+                        CalendarID: dummyCalendarID,
+                        Color: '#f00',
+                        Display: CalendarDisplay.HIDDEN,
+                    },
+                ],
             };
 
             const message = await getSetup({
@@ -1080,15 +983,6 @@ END:VCALENDAR`;
                     'CDr63-NYMQl8L_dbp9qzbaSXmb9e6L8shmaxZfF3hWz9vVD3FX0j4lkmct4zKnoOX7KgYBPbcZFccjIsD34lAZXTuO99T1XXd7WE8B36T7s=',
                 calendarID: dummyCalendarID,
             });
-            const defaultCalendar = {
-                ID: dummyCalendarID,
-                Name: dummyCalendarName,
-                Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
-                Flags: CALENDAR_FLAGS.ACTIVE,
-                Type: CALENDAR_TYPE.PERSONAL,
-            };
 
             // @ts-ignore
             inviteApi.createCalendarEventFromInvitation.mockReturnValueOnce(
@@ -1103,8 +997,6 @@ END:VCALENDAR`;
 
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-                userCalendars: [defaultCalendar],
-                userCalendarSettings: dummyCalendarUserSettings,
             });
 
             await render(<ExtraEvents message={message} />, false);
@@ -1137,20 +1029,9 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummy
 DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
-            const defaultCalendar = {
-                ID: dummyCalendarID,
-                Name: dummyCalendarName,
-                Description: '',
-                Display: CalendarDisplay.HIDDEN,
-                Color: LABEL_COLORS[1],
-                Flags: CALENDAR_FLAGS.ACTIVE,
-                Type: CALENDAR_TYPE.PERSONAL,
-            };
 
             const message = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
-                userCalendars: [defaultCalendar],
-                userCalendarSettings: dummyCalendarUserSettings,
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
             });
