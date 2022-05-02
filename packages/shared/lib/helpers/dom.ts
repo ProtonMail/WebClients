@@ -128,3 +128,7 @@ export const checkContrast = (node: ChildNode, window: Window): boolean => {
     }
     return [...node.childNodes].every((node) => checkContrast(node, window));
 };
+
+export const getIsEventModified = (event: MouseEvent) => {
+    return event.metaKey || event.altKey || event.ctrlKey || event.shiftKey;
+};
