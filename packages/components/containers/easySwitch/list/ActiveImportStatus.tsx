@@ -21,9 +21,7 @@ const ActiveImportStatus = ({ processed, total, state, errorCode }: Props) => {
             return (
                 <>
                     <Badge type="warning">
-                        {Number.isNaN(percentage)
-                            ? c('Import status').t`Paused`
-                            : c('Import status').t`${percentageValue}% paused`}
+                        {total === 0 ? c('Import status').t`Paused` : c('Import status').t`${percentageValue}% paused`}
                     </Badge>
 
                     {errorCode === ImportError.ERROR_CODE_IMAP_CONNECTION && (
