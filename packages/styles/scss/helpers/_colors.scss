@@ -5,13 +5,8 @@
 		background-color: var(--#{dash-join($prefix, $color)});
 		color: var(--#{dash-join($prefix, $color, 'contrast')});
 
-		a,
-		.link,
-		.button-link,
-		[class*='button-ghost'],
-		[class*='button-underline'],
-		[class*='button-outline'] {
-			@extend .color-inherit;
+		*:is(a, .link, .button-link, [class*='button-ghost'], [class*='button-underline'], [class*='button-outline']) {
+			color: inherit;
 		}
 
 		[class*='button-outline'] {
@@ -60,12 +55,7 @@
 .color-inherit {
 	color: inherit;
 
-	a#{&},
-	&.link,
-	&.button-link,
-	&[class*='button-ghost'],
-	&[class*='button-underline'],
-	&[class*='button-outline'] {
+	&:is(a, .link, .button-link, [class*='button-ghost'], [class*='button-underline'], [class*='button-outline']) {
 		&:hover,
 		&:focus,
 		&:active {
