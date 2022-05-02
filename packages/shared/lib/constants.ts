@@ -817,6 +817,7 @@ export const PROTON_DOMAINS = [
     'protonvpn.net',
     'pm.me',
     'protonirockerxow.onion',
+    'proton.me',
 ];
 
 export enum LINK_TYPES {
