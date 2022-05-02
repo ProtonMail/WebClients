@@ -117,3 +117,9 @@ export const unlabelConversations = ({ LabelID, IDs }: LabelConversationsProps) 
     url: 'mail/v4/conversations/unlabel',
     data: { LabelID, IDs },
 });
+
+export const unsubscribeConversations = (IDs = []) => ({
+    method: 'post',
+    url: 'mail/v4/conversations/unsubscribe',
+    data: { IDs },
+});

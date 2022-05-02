@@ -247,3 +247,9 @@ export const forceSend = (messageID: string) => ({
     method: 'post',
     url: `mail/v4/messages/${messageID}/force_send`,
 });
+
+export const unsubscribeMessages = (IDs: string[]) => ({
+    method: 'post',
+    url: 'mail/v4/messages/unsubscribe',
+    data: { IDs },
+});
