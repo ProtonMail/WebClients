@@ -296,7 +296,17 @@ export function useLinkInner(
                     : decryptSigned({
                           armoredMessage: encryptedLink.name,
                           privateKey: await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
-                          publicKey: await getVerificationKey(encryptedLink.nameSignatureAddress),
+                          // nameSignatureAddress is missing for some old files.
+                          // Fallback to signatureAddress might result in failed
+                          // signature check, but no one reported it so far so
+                          // we should be good. Important is that user can access
+                          // the file and the verification do not hard fail.
+                          // If we find out that it doesnt work for some user,
+                          // we could skip the verification instead. But the best
+                          // would be to fix it properly in the database.
+                          publicKey: await getVerificationKey(
+                              encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
+                          ),
                       }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
                 const fileModifyTimePromise = !encryptedLink.xAttr
