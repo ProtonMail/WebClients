@@ -14,14 +14,14 @@ const OutlookMailInstructions = () => {
     const outlookAppPasswordMessage = c('Import instructions')
         .jt`To import emails to Proton, you need an ${appPasswordLink} from Outlook. Get it by following these steps:`;
 
-    // translator: full sentence: "Go to Outlook.com security settings"
+    // translator: full sentence: "Go to Outlook security settings"
     const securitySettingsLink = (
         <Href url="https://account.live.com/proofs/manage/additional/" key="securitySettingsLink">
             {c('Import instructions link').t`security settings`}
         </Href>
     );
-    // translator: full sentence: "Go to Outlook.com security settings"
-    const step1 = c('Import instructions').jt`Go to Outlook.com ${securitySettingsLink}`;
+    // translator: full sentence: "Go to Outlook security settings"
+    const step1 = c('Import instructions').jt`Go to Outlook ${securitySettingsLink}`;
 
     const step2 = c('Import instructions').t`If 2-step verification is off, turn it on`;
 
