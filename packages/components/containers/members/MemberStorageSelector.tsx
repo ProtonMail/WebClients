@@ -145,7 +145,7 @@ const MemberStorageSelector = ({
         }
         const safeValue = clamp(value, min, max);
         setTmpValue(getDisplayedValue(safeValue, precision));
-        onChange(Math.floor(getValueInBytes(safeValue, sizeUnit)));
+        onChange(clamp(Math.floor(getValueInBytes(safeValue, sizeUnit)), range.min, range.max));
     };
 
     const sizeElementWidth = 1;
