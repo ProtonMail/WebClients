@@ -17,11 +17,12 @@ import {
     mappingHasFoldersTooLong,
     mappingHasLabelsTooLong,
     mappingHasUnavailableNames,
+    mappingHasReservedNames,
     splitEscaped,
 } from '../mail/helpers';
 import { MAX_FOLDER_LIMIT } from '../constants';
 
-const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED } =
+const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED, RESERVED_NAMES } =
     MailImportPayloadError;
 
 interface LabelColorMap {
@@ -174,6 +175,7 @@ const useIAMailPayload = ({
         mappingHasUnavailableNames(mapping, isLabelMapping ? folders : labels, isLabelMapping);
     const hasFoldersTooLongError = (mapping: MailImportMapping[]) => mappingHasFoldersTooLong(mapping);
     const hasLabelsTooLongError = (mapping: MailImportMapping[]) => mappingHasLabelsTooLong(mapping);
+    const hasReservedNamesError = (mapping: MailImportMapping[]) => mappingHasReservedNames(mapping);
 
     const getMailMappingErrors = (mapping: MailImportMapping[]): MailImportPayloadError[] => {
         const errors = [];
@@ -189,6 +191,9 @@ const useIAMailPayload = ({
         }
         if (hasUnavailableNamesError(mapping)) {
             errors.push(UNAVAILABLE_NAMES);
+        }
+        if (hasReservedNamesError(mapping)) {
+            errors.push(RESERVED_NAMES);
         }
 
         return errors;
