@@ -110,6 +110,9 @@
       "Close transfers": [
         "Aktarımları kapat"
       ],
+      "Collapse": [
+        "Daralt"
+      ],
       "Collapse folder": [
         "Klasörü daralt"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Oluştur"
+      ],
+      "Create a new contact group": [
+        "Yeni bir kişi grubu oluştur"
       ],
       "Create link": [
         "Bağlantı oluştur"
@@ -216,6 +222,9 @@
       ],
       "Enable drive search": [
         "Drive aramasını etkinleştir"
+      ],
+      "Expand": [
+        "Genişlet"
       ],
       "Expand folder": [
         "Klasörü genişlet"
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } uygulamasına git"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } uygulamasına git"
-      ],
       "Proton applications": [
         "Proton uygulamaları"
       ]
@@ -636,15 +639,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Tekliften yararlan"
       ],
       "Get the deal now": [
         "Tekliften şimdi yararlan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -652,7 +650,7 @@
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- %${ percentage }"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2057,6 +2055,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bayt"
+      ],
+      "Gigabytes": [
+        "Gigabayt"
+      ],
+      "Kilobytes": [
+        "Kilobayt"
+      ],
+      "Megabytes": [
+        "Megabayt"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } güncellendi"
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } depolama alanı"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kişi güncellendi.",
         "${ updated } kişi güncellendi."
@@ -2301,9 +2316,6 @@
       ],
       "5 email addresses": [
         "5 e-posta adresi"
-      ],
-      "5 GB storage": [
-        "5 GB depolama alanı"
       ],
       "A number will be added to the filename": [
         "Dosya adına bir numara eklensin"
@@ -2888,8 +2900,8 @@
       "Updating drive search...": [
         "Drive araması güncelleniyor..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "${ appName } ${ planName } fırsatlarını kaçırmamak için hesabınızı bugün yükseltin."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "${ planName } faydalarını kaybetmemek için bugün yükseltin."
       ],
       "Uploaded": [
         "Yüklendi"
@@ -3162,9 +3174,6 @@
       ],
       "Deleted": [
         "Silinme"
-      ],
-      "Display name": [
-        "Görüntülenecek ad"
       ],
       "Do not ask again": [
         "Bir daha sorma"
@@ -3721,6 +3730,9 @@
       "Enable Beta Access": [
         "Beta erişimini etkinleştir"
       ],
+      "Next": [
+        "Sonraki"
+      ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
       ],
@@ -3735,22 +3747,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } uygulamasını şu anda yalnızca Beta erişimini etkinleştirerek kullanabilirsiniz."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Tüm dosyalarınızı uçtan uca şifreleme ile koruyun. Dosyalarınızı güvenli bir şekilde depolamak ve paylaşmak için ${ appName } uygulamasını kullanın."
+      "Your trusty online vault for vital documents and precious memories.": [
+        "Yaşamsal belgelerinizin ve kıymetli anılarınızın güvende olduğu yer."
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Görüntülenecek adı yazın"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
       ],
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misyonumuz, verilerinizin ve kişisel gizliliğinizin kontrolunuz altında olacağı bir internet oluşturmaktır. Proton yakın zamanda güncellendi, güvenli internete hoş geldiniz."
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -3758,14 +3764,8 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "İnsanlar bunu bir e-posta gönderdiğinizde, bir etkinliğe davet ettiğinizde ya da bir dosya paylaştığınızda görür."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
-      ],
-      "Welcome to Proton": [
-        "Proton'a hoş geldiniz"
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
@@ -3775,11 +3775,11 @@
       "${ appName } is in Beta": [
         "${ appName } Beta aşamasında"
       ],
-      "Meet your new secure file storage": [
-        "Yeni güvenli dosya depolama alanınızla tanışın"
-      ],
       "Upgrade to access ${ appName }": [
         "${ appName } uygulamasına erişmek için yükseltin"
+      ],
+      "Welcome to ${ appName }": [
+        "${ appName } hoş geldiniz"
       ]
     },
     "Option": {
@@ -3817,9 +3817,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Sizinle iletişim kurmak için bir yol"
-      ],
-      "e.g. Julia Smith": [
-        "Örnekğin, Ayşe Yılmaz"
       ],
       "E.g., ": [
         "Örneğin, "
@@ -3937,8 +3934,8 @@
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ appName } ${ planName } edinin"
+      "Get up to 18 months of ${ planName } for free": [
+        "18 aya kadar ücretsiz ${ planName } edinin"
       ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı çağırarak ödül kazanın!"
@@ -4008,8 +4005,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ ay"
+      "/month": [
+        "/ay"
       ]
     },
     "Table header": {

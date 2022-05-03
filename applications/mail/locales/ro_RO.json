@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
+      "Create a new contact group": [
+        "Creare grup de contacte"
+      ],
       "Create folder": [
         "Creare folder"
       ],
@@ -815,9 +818,6 @@
       "Start setup": [
         "Pornire configurare"
       ],
-      "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
-      ],
       "Stay": [
         "Nu închide"
       ],
@@ -1053,12 +1053,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Salt la ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Accesare ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplicații Proton"
       ]
@@ -1145,12 +1139,7 @@
         "Obțineți oferta"
       ],
       "Get the deal now": [
-        "Obțineți oferta acum"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Obțineți oferta"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3367,6 +3356,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Baiți"
+      ],
+      "Gigabytes": [
+        "Gigabaiți"
+      ],
+      "Kilobytes": [
+        "Kilobaiți"
+      ],
+      "Megabytes": [
+        "Megabaiți"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arhivă"
@@ -3810,6 +3813,9 @@
         "S-au selectat ${ selectedFoldersCount } etichete",
         "S-au selectat ${ selectedFoldersCount } de etichete"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } spațiu"
+      ],
       "${ total } conversation": [
         "o conversație",
         "${ total } conversații",
@@ -3864,14 +3870,8 @@
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
-      "/month.": [
-        "/lună."
-      ],
       "5 email addresses": [
         "5 adrese de e-mail"
-      ],
-      "5 GB storage": [
-        "5 GB de spațiu"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "O frază de recuperare este una dintre cele mai sigure modalități de a vă proteja accesul la cont. O puteți folosi pentru a vă accesa contul și pentru a vă recupera datele criptate dacă vă uitați vreodată parola."
@@ -4416,6 +4416,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemul nostru a marcat acest mesaj ca o încercare de înșelăciune. Verificați dacă este legitim."
       ],
+      "per month.": [
+        "pe lună."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
       ],
@@ -4599,8 +4602,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Mesajul original pe care încercați să-l redirecționați / să-i răspundeți este în curs de a fi trimis. Dacă continuați, nu veți mai putea anula trimiterea mesajului original."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Expeditorul original al acestui mesaj nu mai este valid. Mesajul va fi trimis de la adresa implicită ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Expeditorul original al acestui mesaj nu mai este valabil. Mesajul dvs. va fi trimis de la adresa implicită ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
         "Expeditorul a solicitat o confirmare de primire a citirii."
@@ -4775,8 +4778,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Treceţi la alt plan pentru a utiliza ${ MAIL_APP_NAME } cu clienți desktop de la terți."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ planName }."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -4792,9 +4795,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilizați combinaţiile de taste pentru a vă gestiona mai rapid mesajele."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Folosind dispozitivul mobil, scanați acest cod QR sau vizitați ${ link }."
       ],
       "Version ${ appVersion }": [
         "Versiunea ${ appVersion }"
@@ -5315,9 +5315,6 @@
       "Delete": [
         "Ștergere"
       ],
-      "Display name": [
-        "Nume afișat"
-      ],
       "Do not ask again": [
         "Nu mă mai întreba"
       ],
@@ -5737,6 +5734,9 @@
       "Manage your labels": [
         "Gestionare etichete"
       ],
+      "More": [
+        "Detalii"
+      ],
       "More about recovery": [
         "Mai multe despre recuperare"
       ],
@@ -5905,11 +5905,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Imaginea nu s-a încărcat deoarece identitatea certificatului serverului la distanță nu este valid."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Imaginea nu a fost încărcată pentru a vă proteja intimitatea."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Navigatorul nu a putut verifica identitatea serverului de la distanță. Imaginea poate că e găzduită folosind protocolul http."
       ]
     },
     "Message notification": {
@@ -6101,40 +6101,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } este acum mai modern și personalizabil, protejându-vă în același timp datele prin criptare avansată."
+      "Welcome to ${ appName }": [
+        "Bun venit la ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Disponibilă pe iOS și Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Obțineți aplicația mobilă ${ appName }"
-      ],
-      "Import your messages": [
-        "Importați-vă mesajele"
-      ],
-      "Meet your encrypted mailbox": [
-        "Începeți să folosiți cutia poștală criptată"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "Unde confidențialitatea și securitatea se întâlnesc cu productivitatea și ușurința utilizării."
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Înainte"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Programul „Import Asistant” vă poate transfera rapid toate mesajele către noua adresă de e-mail criptată."
+      "Start using ${ appName }": [
+        "Începeți să utilizați ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Alegeți un nume de afișat"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configurați-vă organizația, asociați un nume de domeniu și creați conturi pentru a vă asigura că toți membrii organizației vă sunt protejați."
       ],
       "Discover all Proton services": [
         "Descoperiți toate serviciile Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misiunea noastră este să construim un Internet în care aveți controlul și confidențialitatea datelor personale. Am actualizat recent Proton - bine ați venit la un Internet securizat."
       ],
       "Select a theme": [
         "Selectaţi o temă"
@@ -6142,14 +6129,8 @@
       "Set up your organization": [
         "Setați organizația"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aceasta e ceea ce vor vedea ceilalți când le trimiteți un e-mail, îi veți invita la un eveniment sau când le veți partaja un fișier."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilizați selectorul de aplicații din stânga sus pentru a accesa alte servicii Proton, inclusiv VPN, Calendar și Drive."
-      ],
-      "Welcome to Proton": [
-        "Bine ați venit la ProtonMail"
       ],
       "You can change this anytime in your settings.": [
         "Puteți modifica oricând aceasta în setări."
@@ -6226,9 +6207,6 @@
       ],
       "Confirm password": [
         "Confirmare parolă"
-      ],
-      "e.g. Julia Smith": [
-        "ex: Iulia Sandu"
       ],
       "E.g., ": [
         "Ex.: "
@@ -6439,6 +6417,9 @@
       ],
       "No results found": [
         "Nu s-au găsit rezultate"
+      ],
+      "No unread messages found": [
+        "Nu au fost găsite mesaje necitite"
       ]
     },
     "Select files": {
@@ -6570,8 +6551,8 @@
       "Discover all Proton services": [
         "Descoperiți toate serviciile Proton"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Obțineți gratuit până la 18 luni de ${ appName } ${ planName }"
+      "Get up to 18 months of ${ planName } for free": [
+        "Obțineți gratuit până la 18 luni de ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         "Invitați pe alții și câștigați recompense!"
@@ -6869,8 +6850,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ lună"
+      "/month": [
+        "/lună"
       ]
     },
     "Table header": {

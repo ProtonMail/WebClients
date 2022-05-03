@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
+      "Create a new contact group": [
+        "Neue Kontaktgruppe erstellen"
+      ],
       "Create folder": [
         "Ordner erstellen"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Einrichtung starten"
       ],
-      "Start using ${ appName }": [
-        "Beginnen, ${ appName } zu verwenden"
-      ],
       "Stay": [
         "Nicht schließen"
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Wechseln zu ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Zu ${ vpnName } gehen"
-      ],
       "Proton applications": [
         "Proton-Anwendungen"
       ]
@@ -1121,7 +1115,7 @@
         "Regulärer Preis: ${ regularPrice }"
       ],
       "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Dieses Abonnement verlängert sich alle zwei Jahre automatisch, bis es gekündigt wird."
+        "Dieses Abonnement verlängert sich nach zwei Jahren automatisch, bis es gekündigt wird."
       ]
     },
     "blackfriday Title": {
@@ -1132,7 +1126,7 @@
         "Am beliebtesten"
       ],
       "Save more when combining Mail and VPN": [
-        "Spare weitere % durch die Kombination von Mail und VPN"
+        "Spare noch mehr durch die Kombination von Mail und VPN"
       ]
     },
     "blackfriday: VPNspecialoffer Action": {
@@ -1141,11 +1135,6 @@
       ],
       "Get the deal now": [
         "Jetzt zugreifen"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        "${ vpnAppName } Plus Sonderangebot 2021 Rabatt wurde angerechnet"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archiv"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } Kategorie ausgewählt",
         "${ selectedFoldersCount } Kategorien ausgewählt"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } Speicherplatz"
+      ],
       "${ total } conversation": [
         "${ total } Unterhaltung",
         "${ total } Unterhaltungen"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Keine Empfänger)"
       ],
-      "/month.": [
-        "/Monat."
-      ],
       "5 email addresses": [
         "5 E-Mail-Adressen"
-      ],
-      "5 GB storage": [
-        "5 GB Speicherplatz"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Unser System hat diese Nachricht als Phishing-Versuch gekennzeichnet. Bitte überprüfe, ob sie seriös ist."
       ],
+      "per month.": [
+        "pro Monat."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline ist nur mit unformatiertem Reintext kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
       ],
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Die ursprüngliche Nachricht, die du weiterleiten/beantworten möchtest, wird gerade gesendet. Wenn du fortfährst, kann das Senden der Originalnachricht nicht mehr widerrufen werden."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultAddress.Email } gesendet."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultEmail } gesendet."
       ],
       "The sender has requested a read receipt.": [
         "Der Absender hat eine Lesebestätigung angefordert."
@@ -4703,8 +4706,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Um ${ MAIL_APP_NAME } mit Desktop-Clients von Drittanbietern zu verwenden, ist ein Upgrade nötig."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgrade noch heute, um die folgenden ${ appName } ${ planName } Vorteile nicht zu verlieren."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Führe noch heute ein Upgrade durch, um die folgenden ${ planName } Vorteile nicht zu verlieren."
       ],
       "Upload picture": [
         "Bild hochladen"
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Nutzen Sie Tastaturkürzel, um E-Mails schneller zu verwalten."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Lesen Sie mit Ihrem mobilen Gerät diesen QR-Code ein oder besuchen Sie ${ link }."
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Löschen"
       ],
-      "Display name": [
-        "Anzeigename"
-      ],
       "Do not ask again": [
         "Nicht mehr fragen"
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Kategorien verwalten"
       ],
+      "More": [
+        "Mehr"
+      ],
       "More about recovery": [
         "Mehr über die Wiederherstellung erfahren"
       ],
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Die Grafik konnte nicht geladen werden, da das Identitätszertifikat des externen Servers ungültig ist."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Zum Schutz Ihrer Privatsphäre wurde die Grafik nicht geladen."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Dein Browser konnte die Identität des Remote-Servers nicht verifizieren. Das Bild wird möglicherweise über das http-Protokoll gehostet."
       ]
     },
     "Message notification": {
@@ -5994,6 +5994,16 @@
         "Name der Kategorie"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Verbessertes Proton, einheitlicher Schutz"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } erstellt"
@@ -6014,40 +6024,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } ist jetzt moderner und anpassbar, während deine Daten weiterhin durch fortschrittliche Verschlüsselung geschützt werden."
+      "Welcome to ${ appName }": [
+        "Willkommen bei ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Verfügbar für iOS und Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Hol dir die mobile App von ${ appName }"
-      ],
-      "Import your messages": [
-        "Importiere deine Nachrichten"
-      ],
-      "Meet your encrypted mailbox": [
-        "Entdecke dein verschlüsseltes Postfach"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "Wo Datenschutz und Sicherheit auf Produktivität und Benutzerfreundlichkeit treffen."
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Weiter"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Unser Import-Assistent überträgt alle deine E-Mails schnell in dein neues verschlüsseltes Postfach."
+      "Start using ${ appName }": [
+        "Beginne, ${ appName } zu verwenden"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Anzeigenamen wählen"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurieren Sie Ihre Organisation, verknüpfen Sie Ihren Domainnamen und erstellen Sie Konten, um sicherzustellen, dass alle Mitglieder Ihrer Organisation geschützt sind."
       ],
       "Discover all Proton services": [
         "Alle Proton-Dienste kennenlernen"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Unsere Zielsetzung ist es, ein Internet aufzubauen, in dem du die Kontrolle über deine Daten und deine Privatsphäre hast. Wir haben Proton kürzlich aktualisiert - Willkommen im sicheren Internet."
       ],
       "Select a theme": [
         "Farbschema auswählen"
@@ -6055,14 +6052,8 @@
       "Set up your organization": [
         "Organisation einrichten"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dies ist, was andere sehen, wenn du ihnen eine E-Mail sendest, sie zu einer Veranstaltung einlädst oder eine Datei mit ihnen teilst."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Nutze die App-Auswahl oben links, um auf andere Proton-Dienste wie VPN, Calendar und Drive zuzugreifen."
-      ],
-      "Welcome to Proton": [
-        "Willkommen bei Proton"
       ],
       "You can change this anytime in your settings.": [
         "Dies kann jederzeit in den Einstellungen geändert werden."
@@ -6139,9 +6130,6 @@
       ],
       "Confirm password": [
         "Passwort bestätigen"
-      ],
-      "e.g. Julia Smith": [
-        "z. B. Hans Müller"
       ],
       "E.g., ": [
         "Z. B. "
@@ -6350,6 +6338,9 @@
       ],
       "No results found": [
         "Keine Ergebnisse"
+      ],
+      "No unread messages found": [
+        "Keine ungelesenen Nachrichten gefunden"
       ]
     },
     "Select files": {
@@ -6475,8 +6466,8 @@
       "Discover all Proton services": [
         "Alle Proton Dienste kennenlernen"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Erhalte bis zu 18 Monate ${ appName } ${ planName } kostenlos"
+      "Get up to 18 months of ${ planName } for free": [
+        "Erhalte bis zu 18 Monate ${ planName } kostenlos"
       ],
       "Invite friends and earn rewards!": [
         "Lade Freunde ein und verdiene Belohnungen!"
@@ -6751,7 +6742,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         "/Monat"
       ]
     },

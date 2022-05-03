@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
+      "Create a new contact group": [
+        "Створити нову групу контактів"
+      ],
       "Create calendar": [
         "Створити календар"
       ],
@@ -208,6 +211,9 @@
       ],
       "Go to settings": [
         "Перейти до налаштувань"
+      ],
+      "Got it": [
+        "Зрозуміло"
       ],
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
@@ -568,12 +574,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Перейти до ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти до ${ vpnName }"
-      ],
       "Proton applications": [
         "Програми Proton"
       ]
@@ -646,12 +646,7 @@
         "Скористатися пропозицією"
       ],
       "Get the deal now": [
-        "Скористатися пропозицією зараз"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Скористатися пропозицією"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2015,9 +2010,6 @@
       "Contact signature not verified": [
         "Підпис контакту не перевірено"
       ],
-      "Could not find address ${ email }.": [
-        "Неможливо знайти адресу ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Помилка розшифрування: Не вдалося розшифрувати вміст цієї події."
       ],
@@ -2570,6 +2562,20 @@
         "МБ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Байтів"
+      ],
+      "Gigabytes": [
+        "Гігабайтів"
+      ],
+      "Kilobytes": [
+        "Кілобайтів"
+      ],
+      "Megabytes": [
+        "Мегабайтів"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } оновлено"
@@ -2867,6 +2873,9 @@
         "${ selectedFoldersCount } вибраних міток",
         "${ selectedFoldersCount } вибрані мітки"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -2881,9 +2890,6 @@
       ],
       "5 email addresses": [
         "5 адрес е-пошти"
-      ],
-      "5 GB storage": [
-        "5 ГБ сховища"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Лист про скасування буде надіслано вилученим учасникам."
@@ -3278,8 +3284,8 @@
       "Update recurring event": [
         "Оновити повторювану подію"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Оновіть тарифний план сьогодні, щоб не втрати ці переваги ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Ми сповістимо вас, коли імпорт буде завершено."
@@ -3525,9 +3531,6 @@
       ],
       "Display": [
         "Вигляд"
-      ],
-      "Display name": [
-        "Показуване ім'я"
       ],
       "Do not ask again": [
         "Не питати знову"
@@ -4174,31 +4177,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Календар — це щоденник вашого життя. Зберігайте його в безпеці та приватності з ${ appName }."
+      "Welcome to ${ appName }": [
+        "Вітаємо у ${ appName }"
       ],
-      "Import events": [
-        "Імпорт подій"
-      ],
-      "Meet your new encrypted calendar": [
-        "Зустрічайте свій новий зашифрований календар"
+      "Where you can take control of your time and your data.": [
+        "Тут ви можете взяти під контроль свій час та свої дані."
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        "Далі"
       ],
       "Start using ${ appName }": [
         "Розпочніть користування ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Виберіть ім'я для показу"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
       ],
       "Discover all Proton services": [
         "Ознайомтеся з усіма можливостями Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Наша місія - створити Інтернет, в якому ви контролюєте свої дані та приватність. Ми нещодавно оновили Proton, тож ласкаво просимо до безпечного Інтернету."
       ],
       "Select a theme": [
         "Виберіть тему"
@@ -4206,14 +4205,8 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ось, що побачать люди, коли ви надішлете їм лист, запросите на подію, чи поділитесь доступом до файлу."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Користуйтеся вибором програм зліва вгорі для доступу до програм Proton, включаючи VPN, календар та Drive."
-      ],
-      "Welcome to Proton": [
-        "Вітаємо в Proton"
       ],
       "You can change this anytime in your settings.": [
         "Ви можете змінити це будь-коли в налаштуваннях."
@@ -4341,9 +4334,6 @@
       ],
       "Add title": [
         "Додати заголовок"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -4476,8 +4466,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
+      "Get up to 18 months of ${ planName } for free": [
+        "Отримайте до 18 місяців ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
@@ -4671,8 +4661,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ місяць"
+      "/month": [
+        "/місяць"
       ]
     },
     "Table header": {

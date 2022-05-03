@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         "建立資料夾"
       ],
@@ -809,9 +812,6 @@
       "Start setup": [
         "開始設置"
       ],
-      "Start using ${ appName }": [
-        "開始使用 ${ appName }"
-      ],
       "Stay": [
         "停留"
       ],
@@ -1043,12 +1043,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "前往 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "前往 ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton 應用程式"
       ]
@@ -1136,11 +1130,6 @@
       ],
       "Get the deal now": [
         "立即取得優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3325,6 +3314,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "位元組"
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "封存"
@@ -3716,6 +3719,9 @@
       "${ selectedFoldersCount } label selected": [
         "已選取 ${ selectedFoldersCount } 個標籤"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } 儲存量"
+      ],
       "${ total } conversation": [
         "${ total } 個會話"
       ],
@@ -3752,14 +3758,8 @@
       "(No Recipient)": [
         "(無收件人)"
       ],
-      "/month.": [
-        "/月。"
-      ],
       "5 email addresses": [
         "5 個電子郵件地址"
-      ],
-      "5 GB storage": [
-        ""
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "復原短語是保護帳號存取權限最安全的方法之一。如果您忘記了您的密碼，您可以用它來存取您的帳號並還原您的加密資料。"
@@ -4274,6 +4274,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
       ],
+      "per month.": [
+        ""
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
       ],
@@ -4457,8 +4460,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在嘗試轉寄/回覆的原始郵件仍有待傳送。若您繼續，您將自此刻起無法再取消傳送原始郵件。"
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "此郵件的原寄件者已無效，您的訊息將會從預設電子郵件${ defaultAddress.Email }發出。"
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "寄件人要求發送讀取回條。"
@@ -4631,8 +4634,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "現在就升級，以免錯失 ${ appName } ${ planName } 福利。"
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Upload picture": [
         "上載圖片"
@@ -4648,9 +4651,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用鍵盤快捷鍵來更快管理您的電子郵件。"
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "請以您的行動裝置，掃描此二維碼，或瀏覽 ${ link }。"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -5151,9 +5151,6 @@
       "Delete": [
         ""
       ],
-      "Display name": [
-        "顯示名稱"
-      ],
       "Do not ask again": [
         "不要再詢問"
       ],
@@ -5573,6 +5570,9 @@
       "Manage your labels": [
         "管理您的標籤"
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         "更多有關於備援部份"
       ],
@@ -5737,11 +5737,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "圖片未載入，因為遠端伺服器憑證無效。"
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "為了保護您的隱私，不會載入圖片."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        ""
       ]
     },
     "Message notification": {
@@ -5927,40 +5927,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Available on iOS and Android.": [
+      "Where privacy and security meet productivity and ease of use.": [
         ""
-      ],
-      "Get the ${ appName } mobile app": [
-        ""
-      ],
-      "Import your messages": [
-        ""
-      ],
-      "Meet your encrypted mailbox": [
-        ""
-      ],
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
-        "下一步"
+        ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+      "Start using ${ appName }": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "選擇顯示名稱"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "設置您的組織、連結您的網域名稱，並建立各個帳戶以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 服務"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "我們的使命是構建一個網際網路，讓您可以置身其中並掌控自己的資料和隱私。我們最近已更新 Proton - 歡迎來到安全的網際網路。"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -5968,14 +5955,8 @@
       "Set up your organization": [
         "設定您的組織"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "當您傳送電子郵件、活動邀請函或分享檔案時，對方將會看到此名稱。"
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "請點擊左上方的應用程式選擇器以使用其他 Proton 服務，包括 VPN、行事曆和雲端硬碟。"
-      ],
-      "Welcome to Proton": [
-        "歡迎使用 Proton"
       ],
       "You can change this anytime in your settings.": [
         "您隨時都可以在設定中變更。"
@@ -6052,9 +6033,6 @@
       ],
       "Confirm password": [
         "確認密碼"
-      ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
       ],
       "E.g., ": [
         "例如： "
@@ -6261,6 +6239,9 @@
       ],
       "No results found": [
         "找不到相符的結果"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6380,7 +6361,7 @@
       "Discover all Proton services": [
         "探索所有 Proton 服務"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -6633,8 +6614,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ 月"
+      "/month": [
+        ""
       ]
     },
     "Table header": {
