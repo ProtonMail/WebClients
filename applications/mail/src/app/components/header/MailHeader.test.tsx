@@ -34,7 +34,7 @@ const user = {
     Email: 'Email',
     DisplayName: 'DisplayName',
     Name: 'Name',
-    hasPaidMail: false,
+    isFree: true,
     UsedSpace: 10,
     MaxSpace: 100,
 };
