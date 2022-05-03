@@ -138,7 +138,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             authentication.setPassword(keyPassword);
             authentication.setPersistent(persistent);
 
-            if (newLocalID !== undefined) {
+            if (newLocalID !== undefined && isSSOMode) {
                 authentication.setLocalID(newLocalID);
             }
 
@@ -172,10 +172,16 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             cacheRef.current = cache;
             pathRef.current = getPath(window.location.href, path);
 
+            const authData = !isSSOMode
+                ? {
+                      UID: newUID,
+                      localID: undefined,
+                  }
+                : { UID: newUID, localID: newLocalID };
+
             setAuthData({
-                UID: newUID,
-                localID: newLocalID,
-                history: createHistory({ basename: getBasename(newLocalID) }),
+                ...authData,
+                history: createHistory({ basename: getBasename(authData.localID) }),
             });
         },
         []

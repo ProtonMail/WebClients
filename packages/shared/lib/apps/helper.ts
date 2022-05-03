@@ -1,7 +1,7 @@
 import { APP_NAMES, APPS, APPS_CONFIGURATION, VPN_HOSTNAME } from '../constants';
 import isTruthy from '../helpers/isTruthy';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
-import { getLocalIDPath } from '../authentication/pathnameHelper';
+import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
 
 interface TargetLocation {
     hostname: string;
@@ -40,7 +40,7 @@ export const getAppHref = (
         targetDomain + targetPort,
         stripLeadingAndTrailingSlash(''),
         getLocalIDPath(localID),
-        stripLeadingAndTrailingSlash(to),
+        stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(to)),
     ]
         .filter(isTruthy)
         .join('/');
