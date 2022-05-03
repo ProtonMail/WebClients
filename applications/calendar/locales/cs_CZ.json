@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         "Vytvořit kalendář"
       ],
@@ -208,6 +211,9 @@
       ],
       "Go to settings": [
         "Přejít do nastavení"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilá nastavení PGP"
@@ -568,12 +574,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton aplikace"
       ]
@@ -647,11 +647,6 @@
       ],
       "Get the deal now": [
         "Objednat nyní"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2015,9 +2010,6 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
-      "Could not find address ${ email }.": [
-        "Nelze najít adresu ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Chyba dešifrování: Dešifrování obsahu této události selhalo."
       ],
@@ -2570,6 +2562,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bajty"
+      ],
+      "Gigabytes": [
+        "Gigabajty"
+      ],
+      "Kilobytes": [
+        "Kilobajty"
+      ],
+      "Megabytes": [
+        "Megabajty"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } byl aktualizován"
@@ -2867,6 +2873,9 @@
         "${ selectedFoldersCount } vybraných štítků",
         "${ selectedFoldersCount } vybraných štítků"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt byl úspěšně aktualizován.",
         "${ updated } kontaktů úspěšně aktualizováno.",
@@ -2881,9 +2890,6 @@
       ],
       "5 email addresses": [
         "5 e-mailových adres"
-      ],
-      "5 GB storage": [
-        "5 GB uložiště"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Odvolaným účastníkům bude zaslán e-mail o zrušení účasti."
@@ -3278,8 +3284,8 @@
       "Update recurring event": [
         "Aktualizovat opakující se událost"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -3525,9 +3531,6 @@
       ],
       "Display": [
         "Zobrazení"
-      ],
-      "Display name": [
-        "Zobrazované jméno"
       ],
       "Do not ask again": [
         "Příště se neptat"
@@ -4174,31 +4177,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Kalendář je záznamem vašeho života. Udržujte svůj život v bezpečí a soukromí pomocí ${ appName }."
+      "Welcome to ${ appName }": [
+        ""
       ],
-      "Import events": [
-        "Import událostí"
-      ],
-      "Meet your new encrypted calendar": [
-        "Seznamte se se svým novým šifrovaným kalendářem"
+      "Where you can take control of your time and your data.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        ""
       ],
       "Start using ${ appName }": [
-        "Začněte používat ${ appName }"
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Vyber zobrazení jména"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Proveďte konfiguraci své organizace, odkaz na doménové jméno, a vytvořte si účty tak, aby všichni členové Vaší organizace byli zajištěni a chráněni."
       ],
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naše poslání je postavi internet kde Vy máte pod kontrolou svá data a své soukromí. Nedávno jsme aktualizovali Proton - vítejte na bezpečném internetu."
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -4206,14 +4205,8 @@
       "Set up your organization": [
         "Nastavení organizace"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Tohle uvidí lidé, když jim pošlete e-mail, pozvete je na událost nebo s nimi sdílíte soubor."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Použijte vybranou aplikaci vlevo nahoře pro přístup k dalším Proton službám, zahrnující VPN, Kalendář a Disk."
-      ],
-      "Welcome to Proton": [
-        "Vítejte v Proton"
       ],
       "You can change this anytime in your settings.": [
         "Toto můžete později změnit v nastavení."
@@ -4341,9 +4334,6 @@
       ],
       "Add title": [
         "Přidat titulek"
-      ],
-      "e.g. Julia Smith": [
-        "např. Julia Smith"
       ],
       "E.g., ": [
         "Např., "
@@ -4476,8 +4466,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Získejte ${ appName } ${ planName } až na 18 měsíců zdarma"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
@@ -4671,8 +4661,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ měsíc"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

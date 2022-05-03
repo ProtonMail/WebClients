@@ -110,6 +110,9 @@
       "Close transfers": [
         ""
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         ""
       ],
@@ -138,6 +141,9 @@
         ""
       ],
       "Create": [
+        ""
+      ],
+      "Create a new contact group": [
         ""
       ],
       "Create link": [
@@ -215,6 +221,9 @@
         ""
       ],
       "Enable drive search": [
+        ""
+      ],
+      "Expand": [
         ""
       ],
       "Expand folder": [
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        ""
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ],
       "Proton applications": [
         ""
       ]
@@ -639,11 +642,6 @@
         ""
       ],
       "Get the deal now": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
         ""
       ]
     },
@@ -2057,6 +2055,20 @@
         ""
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "",
         ""
@@ -2300,9 +2315,6 @@
         ""
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A number will be added to the filename": [
@@ -2888,7 +2900,7 @@
       "Updating drive search...": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3161,9 +3173,6 @@
         ""
       ],
       "Deleted": [
-        ""
-      ],
-      "Display name": [
         ""
       ],
       "Do not ask again": [
@@ -3721,6 +3730,9 @@
       "Enable Beta Access": [
         ""
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         ""
       ],
@@ -3735,21 +3747,15 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         ""
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+      "Your trusty online vault for vital documents and precious memories.": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        ""
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         ""
       ],
       "Discover all Proton services": [
-        ""
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         ""
       ],
       "Select a theme": [
@@ -3758,13 +3764,7 @@
       "Set up your organization": [
         ""
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
         ""
       ],
       "You can change this anytime in your settings.": [
@@ -3775,10 +3775,10 @@
       "${ appName } is in Beta": [
         ""
       ],
-      "Meet your new secure file storage": [
+      "Upgrade to access ${ appName }": [
         ""
       ],
-      "Upgrade to access ${ appName }": [
+      "Welcome to ${ appName }": [
         ""
       ]
     },
@@ -3816,9 +3816,6 @@
     },
     "Placeholder": {
       "A way to contact you": [
-        ""
-      ],
-      "e.g. Julia Smith": [
         ""
       ],
       "E.g., ": [
@@ -3937,7 +3934,7 @@
       "Encrypted search is here": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4008,7 +4005,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         ""
       ]
     },

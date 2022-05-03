@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Αντιγραφή μηνύματος στο πρόχειρο"
       ],
+      "Create a new contact group": [
+        "Δημιουργία νέας ομάδας επαφών"
+      ],
       "Create folder": [
         "Δημιουργία φακέλου"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Ρύθμιση εκκίνησης"
       ],
-      "Start using ${ appName }": [
-        "Ξεκινήστε να χρησιμοποιείτε το ${ appName }"
-      ],
       "Stay": [
         "Παραμονή"
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Πάντε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Πηγαίνετε στο ${ vpnName }"
-      ],
       "Proton applications": [
         "Εφαρμογές Proton"
       ]
@@ -1143,17 +1137,12 @@
         "Αποκτήστε την προσφορά τώρα"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Αρχειοθετημένα"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } επιλεγμένη ετικέτα",
         "${ selectedFoldersCount } επιλεγμένες ετικέτες"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } αποθηκευτικός χώρος"
+      ],
       "${ total } conversation": [
         "${ total } συνομιλία",
         "${ total } συνομιλίες"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Κανένας παραλήπτης)"
       ],
-      "/month.": [
-        "/μήνα."
-      ],
       "5 email addresses": [
         ""
-      ],
-      "5 GB storage": [
-        "5 GB αποθηκευτικός χώρος"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Μια φράση ανάκτησης είναι ένας από τους ασφαλέστερους τρόπους για να προστατεύσετε την πρόσβαση στον λογαριασμό σας. Μπορείτε να τη χρησιμοποιήσετε για να αποκτήσετε πρόσβαση στο λογαριασμό σας και να ανακτήσετε τα κρυπτογραφημένα δεδομένα σας εάν ξεχάσετε ποτέ τον κωδικό πρόσβασής σας."
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Το σύστημά μας επισήμανε αυτό το μήνυμα ως απόπειρα ηλεκτρονικού ψαρέματος. Ελέγξτε ότι είναι νόμιμο."
       ],
+      "per month.": [
+        "ανά μήνα."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "Το PGP/Inline είναι συμβατό μόνο με τη μορφή Σκέτου Κειμένου. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα."
       ],
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Το αρχικό μήνυμα στο οποίο προσπαθείτε να προωθήσετε / απαντήσετε βρίσκεται στη διαδικασία αποστολής. Εάν συνεχίσετε, δεν θα μπορείτε πλέον να αναιρέσετε την αποστολή του αρχικού μηνύματος."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        ""
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Ο αρχικός αποστολέας αυτού του μηνύματος δεν είναι πλέον έγκυρος. Το μήνυμά σας θα αποσταλεί από την προεπιλεγμένη σας διεύθυνση ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
         "Ο αποστολέας έχει ζητήσει αποδεικτικό ανάγνωσης."
@@ -4703,8 +4706,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        ""
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
       ],
       "Upload picture": [
         "Μεταφόρτωση Εικόνας"
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Χρησιμοποιήστε συντομεύσεις πληκτρολογίου για να διαχειριστείτε το ηλεκτρονικό ταχυδρομείο σας γρηγορότερα."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Χρησιμοποιώντας την κινητή συσκευή σας, σαρώστε αυτόν τον κωδικό QR ή επισκεφθείτε το σύνδεσμο ${ link }."
       ],
       "Version ${ appVersion }": [
         "'Εκδοση ${ appVersion }"
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Διαγραφή"
       ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
-      ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Διαχείρηση των ετικετών σας"
       ],
+      "More": [
+        "Περισσότερα"
+      ],
       "More about recovery": [
         "Περισσότερα περί ανάκτησης"
       ],
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Η εικόνα δεν φορτώνεται επειδή το πιστοποιητικό ταυτότητας του απομακρυσμένου διακομιστή δεν είναι έγκυρο."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Η εικόνα δεν έχει φορτωθεί για την προστασία του απορρήτου σας."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Ο περιηγητής σας δεν μπόρεσε να επαληθεύσει την ταυτότητα του απομακρυσμένου περιηγητή. Η εικόνα ίσως φιλοξενείται με χρήση πρωτοκόλλου http."
       ]
     },
     "Message notification": {
@@ -6014,40 +6014,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "Το ${ appName } είναι τώρα πιο σύγχρονο και προσαρμόσιμο, εξακολουθώντας να προστατεύει τα δεδομένα σας με προηγμένη κρυπτογράφηση."
+      "Welcome to ${ appName }": [
+        "Καλώς ήρθατε στο ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Διαθέσιμο για iOS και Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Αποκτήστε την εφαρμογή ${ appName } για κινητά"
-      ],
-      "Import your messages": [
-        "Εισαγωγή των μηνυμάτων σας"
-      ],
-      "Meet your encrypted mailbox": [
-        "Γνωρίστε την κρυπτογραφημένη θυρίδα σας"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Επόμενο"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Ο Βοηθός Eισαγωγής μεταφέρει γρήγορα όλα τα μηνύματά σας στη νέα κρυπτογραφημένη θυρίδα σας."
+      "Start using ${ appName }": [
+        "Έναρξη χρήσης του ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Επιλέξτε ένα εμφανιζόμενο όνομα"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Η αποστολή μας είναι να δημιουργήσουμε ένα διαδίκτυο όπου θα έχετε τον έλεγχο των δεδομένων σας και της ιδιωτικής σας ζωής. Πρόσφατα ενημερώσαμε το Proton - καλώς ήρθατε στο ασφαλές διαδίκτυο."
       ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
@@ -6055,14 +6042,8 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Αυτό θα βλέπουν οι χρήστες όταν τους στέλνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου, τους προσκαλείτε σε μια εκδήλωση ή κάνετε κοινή χρήση ενός αρχείου μαζί τους."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Χρησιμοποιήστε τον επιλογέα εφαρμογών πάνω αριστερά για να αποκτήσετε πρόσβαση σε άλλες υπηρεσίες Proton, συμπεριλαμβανομένων του VPN, του Ημερολογίου και του Χώρου Αποθήκευσης στο cloud."
-      ],
-      "Welcome to Proton": [
-        "Καλώς ήρθατε στο Proton"
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
@@ -6139,9 +6120,6 @@
       ],
       "Confirm password": [
         "Επιβεβαίωση κωδικού πρόσβασης"
-      ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
       ],
       "E.g., ": [
         "Για παράδειγμα, "
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         "Κανένα αποτέλεσμα"
+      ],
+      "No unread messages found": [
+        "Δεν βρέθηκαν μη διαβασμένα μηνύματα"
       ]
     },
     "Select files": {
@@ -6475,8 +6456,8 @@
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+      "Get up to 18 months of ${ planName } for free": [
+        "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -6732,7 +6713,7 @@
         "Το ηλεκτρονικό ψάρεμα (phising) αναφέρθηκε"
       ],
       "Phone number copied to clipboard": [
-        "Το τηλέφωνο αντιγράφηκε στο πρόχειρο"
+        "Ο αριθμός τηλεφώνου αντιγράφηκε στο πρόχειρο"
       ],
       "Preference saved": [
         "Η προτίμηση αποθηκεύτηκε"
@@ -6751,8 +6732,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ μήνα"
+      "/month": [
+        "/μήνα"
       ]
     },
     "Table header": {

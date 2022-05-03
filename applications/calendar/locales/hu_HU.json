@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         "Naptár létrehozása"
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Ugrás a Beállításokhoz"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Haladó PGP beállítások elrejtése"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } megnyitása"
-      ],
-      "Go to ${ vpnName }": [
-        "Menjen ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton alkalmazások"
       ]
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Érdekel az ajánlat"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
       ],
-      "Could not find address ${ email }.": [
-        "A(z) ${ email }. e-mail cím nem található."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Hiba: Az esemény tartalmának visszafejtése sikertelen."
       ],
@@ -2532,6 +2524,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } frissítve"
@@ -2781,6 +2787,9 @@
         "${ selectedFoldersCount } címke kiválasztva",
         "${ selectedFoldersCount } címke kiválasztva"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegyek sikeresen frissítve."
@@ -2790,9 +2799,6 @@
         "(${ memberCount } tagok)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3180,7 +3186,7 @@
       "Update recurring event": [
         "Ismétlődő esemény frissítése"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3427,9 +3433,6 @@
       ],
       "Display": [
         "Megjelenítés"
-      ],
-      "Display name": [
-        "Megjelenített név"
       ],
       "Do not ask again": [
         "Ne kérdezze újra"
@@ -4024,13 +4027,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -4038,17 +4043,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Válasszon egy megjelenített nevet"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
       ],
       "Discover all Proton services": [
         "Fedezze fel a Proton szolgáltatásokat"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -4056,14 +4055,8 @@
       "Set up your organization": [
         "Állítsa be szervezete adatait"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
-      ],
-      "Welcome to Proton": [
-        "Üdvözöljük a Protonnál"
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
@@ -4183,9 +4176,6 @@
       ],
       "Add title": [
         "Cím megadása"
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
       ],
       "E.g., ": [
         "Pl., "
@@ -4314,7 +4304,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4505,8 +4495,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ hó"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

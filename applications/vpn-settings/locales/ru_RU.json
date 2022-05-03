@@ -4,41 +4,15 @@
     "language": "ru_RU"
   },
   "contexts": {
-    "About": {
-      "Defend your Internet connection with AES-256, the highest strength encryption.": [
-        "Защитите свое Интернет-подключение с помощью AES-256, наивысшего шифрования."
-      ],
-      "Defend yourself against advanced network-based attacks by routing your traffic through hardened servers": [
-        "Защитите себя от сложных сетевых атак путем маршрутизации вашего трафика через усиленные серверы"
-      ],
-      "Keep your browsing history private - we do not keep any records of our users' online activity": [
-        "Держите вашу историю браузера в секрете - мы не храним никаких записей о активности наших пользователей в сети"
-      ],
-      "Keep your data secure even if you are disconnected from your VPN server": [
-        "Защита данных даже в случае отключения от VPN-сервера"
-      ],
-      "Prevent your DNS requests from revealing your browsing history by encrypting all your DNS queries": [
-        "Предотвратите обнаружение и запись ваших DNS запросов, полностью зашифровав их"
-      ],
-      "Protect your data with Swiss privacy laws, some of the strongest in the world": [
-        "Защитите ваши данные с помощью Швейцарских законов о конфиденциальности - одних из самых сильных в мире"
-      ]
-    },
     "Action": {
-      "${ boldSave } by switching to annual billing": [
-        "${ boldSave } переключившись на ежегодную оплату"
+      "${ address } is available.": [
+        ""
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } введение"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } магазин"
-      ],
-      "Activate": [
-        "Активировать"
-      ],
-      "Activate my coupon": [
-        "Активировать мой купон"
       ],
       "Activate recovery": [
         "Активировать восстановление"
@@ -52,14 +26,14 @@
       "Add PayPal": [
         "Добавить PayPal"
       ],
-      "annual billing": [
-        "ежегодная оплата"
-      ],
       "Apply": [
         "Применить"
       ],
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
+      ],
+      "Authenticate": [
+        "Аутентифицировать"
       ],
       "Back": [
         "Назад"
@@ -88,17 +62,14 @@
       "Close this banner": [
         "Закрыть этот баннер"
       ],
-      "Compare all features": [
-        "Сравнить все функции"
-      ],
-      "Compare plans": [
-        "Сравнить тарифные планы"
-      ],
       "Confirm": [
         "Подтвердить"
       ],
-      "Confirm payment": [
-        "Подтверждение платежа"
+      "contact": [
+        "связаться"
+      ],
+      "Contact support": [
+        "Связаться с поддержкой"
       ],
       "Continue": [
         "Продолжить"
@@ -112,14 +83,26 @@
       "Create": [
         "Создать"
       ],
+      "Create a secure ProtonMail address instead": [
+        ""
+      ],
       "Create account": [
         "Создать учетную запись"
+      ],
+      "Create address": [
+        ""
+      ],
+      "Create free account": [
+        ""
+      ],
+      "Current plan": [
+        ""
       ],
       "Customize": [
         "Настроить"
       ],
-      "Customize subscription": [
-        "Настроить подписку"
+      "Customize plan": [
+        ""
       ],
       "Decrease": [
         "Уменьшить"
@@ -133,8 +116,8 @@
       "Details": [
         "Подробнее"
       ],
-      "Did not receive the code?": [
-        "Не получили код?"
+      "Didn't receive a code?": [
+        ""
       ],
       "Didn't receive the code?": [
         "Не получили код?"
@@ -148,17 +131,20 @@
       "Downgrade account": [
         "Понизить учетную запись"
       ],
-      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        "Понизить до ${ BRAND_NAME } ${ downgradedPlanName }"
-      ],
       "Download": [
         "Скачать"
       ],
       "Download all configurations": [
         "Скачать все конфигурации"
       ],
+      "Download on another platform": [
+        ""
+      ],
       "Edit": [
         "Редактировать"
+      ],
+      "Edit billing details": [
+        ""
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -169,11 +155,14 @@
       "Edit sign-in details": [
         "Изменить информацию для входа"
       ],
-      "Email me my username(s)": [
-        "Отправить мне имя моего пользователя"
+      "Edit subscription": [
+        ""
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
+      ],
+      "Explore other ${ BRAND_NAME } plans": [
+        ""
       ],
       "Extend": [
         "Продлить"
@@ -181,29 +170,14 @@
       "Get ${ vpnPlus }": [
         "Получить ${ vpnPlus }"
       ],
-      "Get a new password": [
-        "Получить новый пароль"
-      ],
-      "Get started": [
-        "Приступить к работе"
-      ],
       "Get verification code": [
         "Получить проверочный код"
       ],
-      "Go to login": [
-        "Перейти ко входу"
-      ],
-      "Go to panel ${ index }": [
-        "Перейти к панели ${ index }"
+      "Go to sign in": [
+        ""
       ],
       "Hide": [
         "Скрыть"
-      ],
-      "Hide additional features": [
-        "Скрыть дополнительные функции"
-      ],
-      "Homepage": [
-        "Домашняя страница"
       ],
       "I have a question": [
         "У меня есть вопрос"
@@ -211,23 +185,23 @@
       "Increase": [
         "Увеличить"
       ],
-      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        "Сохранить мою учетную запись ${ BRAND_NAME } ${ currentPlanName }"
-      ],
       "Load more": [
         "Подробнее"
       ],
       "Loading verification": [
         "Загружается проверка"
       ],
-      "Log in": [
-        "Войти"
-      ],
       "Mark as default": [
         "Установить по умолчанию"
       ],
+      "Maybe later": [
+        ""
+      ],
       "More info: ${ safeTitle }": [
         "Дополнительная информация: ${ safeTitle }"
+      ],
+      "Need help?": [
+        "Нужна помощь?"
       ],
       "Next": [
         "Далее"
@@ -250,17 +224,14 @@
       "Pay": [
         "Оплатить"
       ],
-      "Pay annually and save 20%": [
-        "Платите ежегодно и сэкономьте 20%"
+      "Pay ${ price }": [
+        ""
       ],
       "Previous": [
         "Пред."
       ],
       "Refer a friend": [
         "Порекомендуйте другу"
-      ],
-      "Refresh browser": [
-        "Обновить браузер"
       ],
       "Refresh the page": [
         "Обновить страницу"
@@ -277,26 +248,14 @@
       "Report a problem": [
         "Сообщить о проблеме"
       ],
-      "Report bug": [
-        "Сообщить об ошибке"
-      ],
       "Request a feature": [
         "Предложить идею"
       ],
       "Request new code": [
         "Запросить новый код"
       ],
-      "Resend": [
-        "Отправить заново"
-      ],
-      "Reset": [
-        "Сбросить"
-      ],
       "Reset credentials": [
         "Сбросить учётные данные"
-      ],
-      "Reset my password": [
-        "Сбросить мой пароль"
       ],
       "Reset password": [
         "Сбросить пароль"
@@ -307,6 +266,9 @@
       "Retry": [
         "Повторить"
       ],
+      "Return to sign in": [
+        ""
+      ],
       "Revoke": [
         "Отозвать"
       ],
@@ -316,14 +278,17 @@
       "Save": [
         "Сохранить"
       ],
-      "Select": [
-        "Выбрать"
+      "Save selected": [
+        ""
       ],
-      "Select plan": [
-        "Выберите тарифный план"
+      "Select ${ planTitle }": [
+        ""
       ],
-      "Send": [
-        "Отправить"
+      "Send code": [
+        ""
+      ],
+      "Send my username": [
+        ""
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
@@ -340,20 +305,23 @@
       "Show preview": [
         "Предварительный просмотр"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Sign out": [
         "Выйти из учетной записи"
+      ],
+      "Signing in": [
+        ""
       ],
       "Signing out": [
         "Производится выход"
       ],
-      "Skip": [
-        "Пропустить"
-      ],
-      "Start setup": [
-        "Приступить к настройкам"
-      ],
       "Submit": [
         "Отправить"
+      ],
+      "Support": [
+        "Поддержка"
       ],
       "Switch account": [
         "Сменить аккаунт"
@@ -361,20 +329,17 @@
       "Top up": [
         "Пополнить"
       ],
-      "Try ${ upsellPlan.title } for only ${ totalMonthlyText }": [
-        "Попробуйте ${ upsellPlan.title } всего за ${ totalMonthlyText }"
-      ],
       "Try again": [
         "Попробовать ещё раз"
       ],
       "Try another method": [
         "Попробуйте другой способ"
       ],
+      "Unlock": [
+        ""
+      ],
       "Unlock data": [
         "Разблокировать данные"
-      ],
-      "Update": [
-        "Обновить"
       ],
       "Update recovery file": [
         "Обновить файл восстановления"
@@ -385,23 +350,20 @@
       "Upgrade": [
         "Улучшить"
       ],
-      "Upgrade to Plus": [
-        "Улучшить до Plus"
-      ],
-      "Upgrade to Professional": [
-        "Улучшить до Professional"
-      ],
-      "Use ${ label } theme": [
-        "Используйте ${ label } тему"
-      ],
       "Use a different card": [
         "Использовать другую карту"
       ],
       "Use a different payment method": [
         "Использовать другой способ оплаты"
       ],
-      "Use another verification method": [
-        "Использовать другой способ проверки"
+      "Use recovery code": [
+        ""
+      ],
+      "Use two-factor authentication code": [
+        ""
+      ],
+      "Use your current email address instead": [
+        ""
       ],
       "User": [
         "Пользователь"
@@ -424,11 +386,11 @@
       "View": [
         "Просмотр"
       ],
-      "View full plan comparison": [
-        "Посмотреть полное сравнение планов"
-      ],
       "View invoice": [
         "Просмотр счета"
+      ],
+      "View plans details": [
+        ""
       ],
       "Yes": [
         "Да"
@@ -440,33 +402,26 @@
         "Отдалить"
       ]
     },
+    "Action in trial plan": {
+      "No, thanks": [
+        ""
+      ],
+      "Try free for 30 days": [
+        ""
+      ]
+    },
     "Addon": {
-      "+ ${ addresses } email address": [
-        "+ ${ addresses } адрес электронной почты",
-        "+ ${ addresses } адреса электронной почты",
-        "+ ${ addresses } адресов электронной почты",
-        "+ ${ addresses } адресов электронной почты"
+      "+ ${ _users } user": [
+        "",
+        "",
+        "",
+        ""
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } свой домен",
         "+ ${ domains } своих домена",
         "+ ${ domains } своих доменов",
         "+ ${ domains } своих доменов"
-      ],
-      "+ ${ members } user": [
-        "+ ${ members } пользователь",
-        "+ ${ members } пользователя",
-        "+ ${ members } пользователей",
-        "+ ${ members } пользователей"
-      ],
-      "+ ${ storage } storage": [
-        "+ ${ storage } хранилища"
-      ],
-      "+ ${ vpn } connection": [
-        "+ ${ vpn } подключение",
-        "+ ${ vpn } подключения",
-        "+ ${ vpn } подключений",
-        "+ ${ vpn } подключений"
       ]
     },
     "Addon unit for subscription": {
@@ -507,42 +462,44 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Перейти к ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Открыть ${ vpnName }"
-      ],
       "Proton applications": [
         "Приложения Proton"
       ]
     },
+    "Badge": {
+      "5 users": [
+        ""
+      ]
+    },
     "Billing cycle": {
-      "2-year billing (Renewal on ${ formattedEndTime })": [
-        "Оплата на 2 года (след. платёж ${ formattedEndTime })"
+      "Payable every 12 months": [
+        ""
       ],
-      "Billing (Renewal on ${ formattedEndTime })": [
-        "Оплата (след. платёж ${ formattedEndTime })"
+      "Payable every 24 months": [
+        ""
       ],
-      "Monthly billing (Renewal on ${ formattedEndTime })": [
-        "Ежемесячный платеж (след. платёж ${ formattedEndTime })"
+      "Payable every month": [
+        ""
       ],
-      "Yearly billing (Renewal on ${ formattedEndTime })": [
-        "Ежегодный платёж (след. платёж ${ formattedEndTime })"
+      "Renews automatically on ${ formattedEndTime }": [
+        ""
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        "1 месяц"
+      ],
+      "12 months": [
+        ""
+      ],
+      "24 months": [
+        ""
+      ],
       "Annually": [
         "Ежегодно"
       ],
-      "Annually SAVE 20%": [
-        "Ежегодно ЭКОНОМЬТЕ 20%"
-      ],
       "Monthly": [
         "Ежемесячно"
-      ],
-      "Two years SAVE 33%": [
-        "Двухлетняя ЭКОНОМИЯ 33%"
       ],
       "Two-year": [
         "Каждые 2 года"
@@ -587,8 +544,8 @@
       ]
     },
     "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        "Применена скидка за спецпредложение ${ vpnAppName } Plus 2021 года"
+      "${ vpnPlus } Special Offer 2021 discount has been applied": [
+        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -596,7 +553,7 @@
         "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "Экономия ${ percentage }%"
+        "– ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         "Условия специального предложения"
@@ -609,7 +566,7 @@
     },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
-        "Oсобые условия"
+        "Спецпредложение"
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
@@ -720,31 +677,6 @@
         "Продолжить, используя ${ MAIL_APP_NAME }."
       ]
     },
-    "Calendar feature": {
-      "Calendar import": [
-        "Импорт календаря"
-      ],
-      "Invitations": [
-        "Приглашения"
-      ],
-      "Multiple calendars": [
-        "Несколько календарей"
-      ],
-      "Recurring events": [
-        "Повторяющиеся события"
-      ],
-      "Share Calendar via link": [
-        "Отправка записей в календаре с помощью ссылки"
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        "20/на пользователя"
-      ],
-      "20 / user *": [
-        "20/на пользователя *"
-      ]
-    },
     "Calendar status": {
       "Not synced": [
         "Не синхронизировано"
@@ -777,6 +709,20 @@
       ],
       "Unsupported calendar format": [
         "Неподдерживаемый формат календаря"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Total for ${ n } month": [
+        "",
+        "",
+        "",
+        ""
       ]
     },
     "Collapsible tooltip": {
@@ -1583,19 +1529,27 @@
         "(через ${ entryCountryName })"
       ]
     },
+    "Coupon": {
+      "Coupon applied: ${ CouponCode }": [
+        ""
+      ]
+    },
     "Credits": {
       "Unused credits": [
         "Неиспользованные кредиты"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/месяц"
+      ],
+      "/user per month": [
+        ""
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Просроченный счёт"
-      ]
-    },
-    "Disney": {
-      "Disney+": [
-        "Disney+"
       ]
     },
     "Downgrade account reason": {
@@ -1629,22 +1583,6 @@
         "Помогите нам совершенствоваться!"
       ]
     },
-    "Drive feature": {
-      "Access via Web": [
-        "Доступ через браузер"
-      ],
-      "Share files via link": [
-        "Отправка файлов с помощью ссылки"
-      ],
-      "Upload / download files": [
-        "Загрузка/скачивание файлов"
-      ]
-    },
-    "Dropdown button": {
-      "Need help?": [
-        "Нужна помощь?"
-      ]
-    },
     "Error": {
       "Amount above the maximum.": [
         "Сумма выше допустимого максимума."
@@ -1661,8 +1599,8 @@
       "Code wrong or not valid anymore": [
         "Неверный или недействительный код"
       ],
-      "Email address invalid": [
-        "Недействительный адрес эл. почты"
+      "Domain not available, try again later": [
+        ""
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -1733,9 +1671,6 @@
       "Payments are currently not available, please try again later": [
         "Платежи в настоящее время не доступны, пожалуйста, повторите попытку позже"
       ],
-      "Please enter '${ dangerWord }'": [
-        "Пожалуйста, введите '${ dangerWord }'"
-      ],
       "Please generate keys before you try to change your password": [
         "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ],
@@ -1783,6 +1718,9 @@
       ],
       "Unknown payment token status": [
         "Неизвестный статус платёжного токена"
+      ],
+      "Wrong recovery phrase. Try again or use another recovery method.": [
+        ""
       ],
       "You have no invoices.": [
         "У вас нет счетов."
@@ -1858,14 +1796,18 @@
         "МБ"
       ]
     },
-    "Footer": {
-      "Based in Switzerland, available globally.": [
-        "Находится в Швейцарии, доступно по всему миру."
-      ]
-    },
-    "Free price": {
-      "Free": [
-        "Бесплатно"
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
       ]
     },
     "Frequency of news": {
@@ -1897,53 +1839,8 @@
       ]
     },
     "Header": {
-      "30-day money-back guarantee": [
-        "30-дневная гарантия возврата денег"
-      ],
-      "Access blocked content": [
-        "Обход блокировок"
-      ],
-      "Advanced encryption": [
-        "Расширенное шифрование"
-      ],
-      "Apps for Android / Linux / iOS / Windows": [
-        "Приложения для Android / Linux / iOS / Windows"
-      ],
-      "Countries": [
-        "Страны"
-      ],
       "Get help": [
         "Получить помощь"
-      ],
-      "Help": [
-        "Справка"
-      ],
-      "Kill Switch / Always-on": [
-        "Kill Switch / Всегда включен"
-      ],
-      "No data limits": [
-        "Нет ограничений на объем данных"
-      ],
-      "No logs policy": [
-        "Политика отсутствия журналов активности"
-      ],
-      "P2P filesharing/BitTorrent support": [
-        "Поддержка P2P файлообмена / BitTorrent"
-      ],
-      "Secure Core VPN": [
-        "Secure Core VPN"
-      ],
-      "Simultaneous connections": [
-        "Одновременные подключения"
-      ],
-      "Speed": [
-        "Скорость"
-      ],
-      "Streaming service support": [
-        "Поддержка стриминговых сервисов"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
       ]
     },
     "Human verification method": {
@@ -1963,44 +1860,18 @@
         "SMS"
       ]
     },
-    "Image alt": {
-      "DNS leak prevention": [
-        "Предотвращение утечки DNS"
-      ],
-      "Kill switch to prevent IP exposure": [
-        "Kill Switch предотвращает утечку IP"
-      ],
-      "Laptop & smartphone shown connected to ${ VPN_APP_NAME } network.": [
-        "Ноутбук и смартфон показаны подключенными к сети ${ VPN_APP_NAME }."
-      ],
-      "No logs": [
-        "Нет журналов активности"
-      ],
-      "Secure Core servers": [
-        "Серверы Secure Core"
-      ],
-      "Strong encryption": [
-        "Сильное шифрование"
-      ],
-      "Swiss based": [
-        "В Швейцарии"
-      ]
-    },
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение на ${ enableDesktopNotifications }."
       ],
+      "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
+        ""
+      ],
+      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
+        ""
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
-      ],
-      "${ mailAppName } Free": [
-        "Бесплатная версия ${ mailAppName }"
-      ],
-      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
-        "${ mailPlus } ограничен одним пользователем и начинается с 5 Гб хранилища."
-      ],
-      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
-        "${ mailProfessional } начинается с одного пользователя, и каждый пользователь добавляет 5 ГБ и 5 адресов электронной почты в фонд организации."
       ],
       "${ number } city": [
         "${ number } город",
@@ -2014,29 +1885,14 @@
         "${ number } серверов",
         "${ number } серверов"
       ],
-      "${ planName } plan": [
-        "Тариф ${ planName }"
+      "${ storageSize } storage": [
+        ""
       ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        "${ save20 } для вашей подписки, переключившись на ${ annualBilling }"
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        "${ saveExtra20 } на Почту и VPN, добавив подписку на почту."
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
-        "${ saveExtra20 } на VPN и почте, добавив подписку на VPN."
-      ],
-      "${ vpnAppName } Free": [
-        "Бесплатная версия ${ vpnAppName }"
+      "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
+        ""
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Для подключения на уровне страны требуется ${ vpnBasic }, ${ vpnPlus } или ${ visionary }."
-      ],
-      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "${ vpnPlus } включает ${ maxVpn } подключение к VPN.",
-        "${ vpnPlus } включает ${ maxVpn } подключения к VPN.",
-        "${ vpnPlus } включает ${ maxVpn } подключений к VPN.",
-        "${ vpnPlus } включает ${ maxVpn } подключения к VPN."
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
         "Для использования функции Secure Core нужны ${ vpnPlus } или ${ visionary }."
@@ -2044,8 +1900,17 @@
       "(Mail + VPN)": [
         "(Почта + VPN)"
       ],
-      "* Customizable features": [
-        "* Настраиваемые функции"
+      "* No credit card required.": [
+        ""
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-months subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-months subscription. Other subscription options available at checkout.": [
+        ""
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуса к вашему хранилищу"
@@ -2059,65 +1924,50 @@
       "20% discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
-      "30 days money-back guarantee.": [
-        "Гарантия возврата денег в течение 30 дней."
-      ],
-      "30-days money back guarantee": [
-        "30-дневная гарантия возврата денег"
+      "30-day money-back guarantee.": [
+        ""
       ],
       "5 email addresses": [
         "5 адресов электронной почты"
       ],
-      "5 GB storage": [
-        "5 ГБ хранилища"
-      ],
-      "A free and uncensored Internet should be available to all.": [
-        "Всем должен быть доступен свободный интернет без цензуры."
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        "Получите доступ к заблокированному контенту, например социальным сетям, новостям, Википедии, YouTube и многому другому независимо от того, где вы находитесь."
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
-        "Доступ к стриминговым сервисам, таким как ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, независимо от того, где вы находитесь."
+      "A user is an account associated with a single username, mailbox, and person": [
+        ""
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
+      "Account size": [
+        ""
+      ],
       "Account successfully updated": [
         "Учетная запись успешно обновлена"
       ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        "Добавьте дополнительные адреса в свой аккаунт, например user2@protonmail.com"
-      ],
-      "Addresses": [
-        "Адреса"
+      "Additional options": [
+        ""
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
       ],
-      "All plans support: ${ supportedOS }": [
-        "Все тарифные планы поддерживают: ${ supportedOS }"
-      ],
-      "ALL YOUR DATA WILL BE LOST!": [
-        "ВСЕ ВАШИ ДАННЫЕ БУДУТ УТЕРЯНЫ!"
+      "Already have an account?": [
+        ""
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже минимальной (${ amount })."
       ],
+      "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        ""
+      ],
+      "Based in Switzerland, available globally": [
+        ""
+      ],
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
       ],
-      "billed as ${ billedPrice }": [
-        "оплачивается в сумме ${ billedPrice }"
-      ],
-      "Billed as ${ billedPrice } every 2 years": [
-        "Оплачивается ${ billedPrice } за 2 года"
-      ],
-      "Billed as ${ billedPrice } per year": [
-        "Оплачивается ${ billedPrice } в год"
+      "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
+        ""
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Счет выставляется в конце текущего платежного цикла (продлевается ${ renewalDate })"
@@ -2134,9 +1984,6 @@
       "Black Friday 2020 newcomer discount has been applied": [
         "Скидка для новых пользователей на черную пятница 2020 была применена"
       ],
-      "By clicking Create account you agree to abide by our ${ termsOfServiceLink } and ${ privacyPolicyLink }.": [
-        "Нажав на кнопку Создать аккаунт, вы соглашаетесь соблюдать наши ${ termsOfServiceLink } и ${ privacyPolicyLink }."
-      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Перейдя на бесплатный тарифный план, вы навсегда потеряете эти преимущества, даже если в будущем вы снова улучшите его."
       ],
@@ -2146,38 +1993,29 @@
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
-      "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this email address is incorrect, click \"Edit\" to correct it.": [
-        "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот адрес электронной почты неверный, то выберите \"Изменить\" для обновления."
-      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
       ],
-      "Click below to resend the code to ${ destinationText }. If ${ destinationType } is incorrect, please click \"${ editI18n }\".": [
-        "Нажмите ниже, чтобы повторно отправить код на ${ destinationText }. Если ${ destinationType } неправильный, пожалуйста, нажмите \"${ editI18n }\"."
-      ],
-      "Connections": [
-        "Подключения"
+      "Continue anyway?": [
+        ""
       ],
       "Creating your account": [
         "Создание учетной записи"
       ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Защищает от угроз конфиденциальности VPN, передавая ваш интернет-трафик через несколько серверов."
+      "Credits, proration, and any applicable coupons are applied at checkout": [
+        ""
+      ],
+      "Custom email domains": [
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка"
       ],
-      "Do NOT forget this password. If you forget it, you will not be able to login or decrypt your messages.": [
-        "НЕ забывайте данный пароль. Если вы его забудете, то не сможете входить в почту или расшифровывать свои сообщения."
-      ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Не используйте учетные данные OpenVPN / IKEv2 в приложениях ${ VPN_APP_NAME } или в панели управления ${ VPN_APP_NAME }. ${ learnMore }"
       ],
-      "Domains": [
-        "Домены"
-      ],
-      "Done! We sent a code to ${ destination }": [
-        "Готово! Мы отправили код на ${ destination }"
+      "Done! We sent a code to ${ destination }.": [
+        ""
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными службам ${ VPN_APP_NAME } будут прерваны."
@@ -2185,8 +2023,11 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Скачайте ваше любимое приложение сегодня и берите конфиденциальность с собой, куда бы вы ни пошли."
       ],
-      "Each additional connection can be assigned to users in your organization.": [
-        "Каждое дополнительное соединение может быть назначено пользователям вашей организации."
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        ""
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
+        ""
       ],
       "Emailing preference saved": [
         "Настройки отправки почты обновлены"
@@ -2194,8 +2035,20 @@
       "Enter key manually instead": [
         "Ввести ключ вручную"
       ],
+      "Enter the code sent to your phone number ${ phone }.": [
+        ""
+      ],
+      "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
+        ""
+      ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
+      ],
+      "Enter your ${ BRAND_NAME } Account details.": [
+        ""
+      ],
+      "Enter your ${ BRAND_NAME } Account email address or username.": [
+        ""
       ],
       "Enter your login password to confirm your identity.": [
         "Для подтверждения своей личности введите пароль для входа."
@@ -2203,8 +2056,11 @@
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
         "Введите свой собственный пароль (как администратора организации) и новый пароль для пользователя ${ Name } (${ Email })."
       ],
-      "Enter your recovery email address, and we'll send you your username(s). (This is usually the email address you provided during signup.)": [
-        "Введите свой резервный адрес электронной почты, и мы отправим вам имя вашего пользователя. (Обычно это тот адрес, который вы давали при регистрации.)"
+      "Enter your recovery email address and we will send you your username or email address.": [
+        ""
+      ],
+      "Enter your recovery phone number and we will send you your username or email address.": [
+        ""
       ],
       "Expired": [
         "Истек"
@@ -2212,20 +2068,11 @@
       "expires ${ expirationDate }": [
         "истекает ${ expirationDate }"
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        "Для семей и небольших команд. Версия включает как почту, так и VPN."
-      ],
-      "For getting started with private and secure emailing.": [
-        "Для начала работы с безопасной и надежной электронной почтой."
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        "Для пользователей, которым нужен почтовый ящик с полным набором функций и дополнительной защитой."
-      ],
-      "For professionals that need secure business communications.": [
-        "Для специалистов, которые хотят безопасно общаться с коллегами и клиентами."
-      ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "Для Visa и MasterCard - три цифры на обратной стороне карты. Для American Express - 4 цифры на лицевой стороне карты."
+      ],
+      "Free": [
+        "Бесплатно"
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места."
@@ -2233,29 +2080,17 @@
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
       ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        "Полнофункциональный VPN со скоростью до 10 Гбит/с."
-      ],
-      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Получите доступ ко всем платным функциям, как для ${ VPN_APP_NAME }, так и для ${ MAIL_APP_NAME } (служба зашифрованной электронной почты, которую миллионы людей используют для защиты своих данных) по одному тарифу."
-      ],
-      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
-        "Получите последнюю версию ${ BRAND_NAME } и все соответствующие обновления, обновив браузер."
+      "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        ""
       ],
       "here": [
         "здесь"
-      ],
-      "If you are a ${ MAIL_APP_NAME } user you can use your Proton account to log in to ${ VPN_APP_NAME }.": [
-        "Если вы являетесь пользователем ${ MAIL_APP_NAME }, вы можете использовать свой аккаунт Proton для входа в ${ VPN_APP_NAME }."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием учетной записи, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
-      ],
-      "If you don't find the email in your inbox, please check your ${ spamFolder }.": [
-        "Если вы не нашли письмо в своем почтовом ящике, проверьте ${ spamFolder }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
@@ -2278,26 +2113,14 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Если вы продолжите переход на более дешевую версию, то вы потеряете доступ к платным функциям ${ VPN_APP_NAME }."
       ],
-      "If you remember your old password later, you can recover your existing messages.": [
-        "Если позже вы вспомните свой старый пароль, то сможете восстановить свои существующие сообщения."
-      ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
-      ],
-      "IMPORTANT: Do not close or navigate away from this page. You will need to enter the reset code into the field below once you receive it.": [
-        "ВАЖНО: Не закрывайте эту страницу и не уходите с неё. Вам потребуется ввести код сброса в поле ниже, как только вы его получите."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Важно: пожалуйста, убедитесь, что вы сохранили коды восстановления. Иначе вы навсегда потеряете доступ к своей учётной записи при утере вашего устройства двухфакторной аутентификации."
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
         "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту или через SMS."
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        "В случае, если вы потеряете информацию для входа, мы отправим вам инструкцию на электронную почту."
-      ],
-      "Included": [
-        "Включено"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Установите конфигурационный файл страны для подключения к произвольному серверу в выбранной стране."
@@ -2320,9 +2143,6 @@
       "Internet connection restored.": [
         "Соединение с интернет восстановлено."
       ],
-      "Keep this password safe, it cannot be recovered.": [
-        "Храните этот пароль в надёжном месте. Он не может быть восстановлен."
-      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как пользоваться ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
@@ -2341,14 +2161,20 @@
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
       ],
+      "lose access to all current encrypted data": [
+        ""
+      ],
+      "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
+        ""
+      ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         "Убедитесь, что вы помните пароль для входа и расшифровки писем. ${ boldAlert } Мы рекомендуем сначала добавить ${ recoveryLink }."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
       ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
+      "No credit card required": [
+        ""
       ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
@@ -2359,26 +2185,23 @@
       "No results found": [
         "Результаты не найдены"
       ],
-      "Not customizable": [
-        "Не настраивается"
-      ],
       "Not set": [
         "Не задано"
       ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
-        "Количество VPN-соединений, которые могут быть назначены пользователям. Каждое подключенное устройство использует одно VPN-соединение."
+      "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
+        ""
+      ],
+      "Number of users": [
+        ""
       ],
       "of": [
         "из"
       ],
-      "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
-        "После нажатия на «Понизить» может потребоваться несколько минут, чтобы перевести вашу учетную запись на бесплатный план. "
+      "One account for all ${ BRAND_NAME } services.": [
+        ""
       ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к учетной записи будет ограничен, и впоследствии учётная запись будет отключена."
       ],
       "P2P": [
         "P2P"
@@ -2392,8 +2215,8 @@
       "Plan upgrade required": [
         "Требуется улучшение плана"
       ],
-      "Please make sure to check your ${ spamFolder }.": [
-        "Пожалуйста, убедитесь, что вы проверили ${ spamFolder }."
+      "Please enter the 12-word recovery phrase associated with your account.": [
+        ""
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Пожалуйста, учтите, что после нажатия на кнопку Подтвердить в аккаунте останется ${ creditsRemaining } кредитов."
@@ -2412,9 +2235,6 @@
       ],
       "Please verify the card in the new tab which was opened.": [
         "Пожалуйста, подтвердите карту в новой вкладке, которая была открыта."
-      ],
-      "Please verify the payment in the new tab.": [
-        "Пожалуйста, подтвердите платёж в новой вкладке."
       ],
       "Plus or Visionary subscription required": [
         "Требуется подписка Plus или Visionary"
@@ -2437,20 +2257,8 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решает большинство проблем."
       ],
-      "Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${ MAIL_APP_NAME } credentials, do NOT reset. You can log in with them ${ hereLink }.": [
-        "Сброс пароля приведет к сбросу ключей шифрования для всех служб, связанных с Proton (почта и VPN). Вы не сможете прочитать существующие сообщения. Если вы знаете свои учетные данные ${ MAIL_APP_NAME }, НЕ сбрасывайте пароль. Вы можете войти с ними ${ hereLink }."
-      ],
       "Revoke certificate ${ name }": [
         "Отозвать сертификат ${ name }"
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Отправьте Ваш интернет-трафик через сеть Tor одним щелчком."
-      ],
-      "Save 20%": [
-        "Скидка 20%"
-      ],
-      "Save extra 20%": [
-        "Сэкономьте дополнительно 20%"
       ],
       "Scan QR code instead": [
         "Сканировать QR-код"
@@ -2458,8 +2266,11 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
-      "See all plans": [
-        "Посмотреть все тарифы"
+      "Securing your account": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
+        ""
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -2476,35 +2287,20 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Вы постоянный пользователь, поэтому вам доступны дополнительные функции."
       ],
-      "spam folder": [
-        "папку со спамом"
-      ],
-      "Starter VPN service with P2P support.": [
-        "Сервис VPN начального уровня с поддержкой P2P."
-      ],
-      "Storage GB": [
-        "Хранилище Гбайт"
-      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Support for 1 custom email domain": [
         "Поддержка 1 пользовательского домена электронной почты"
       ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Поддержка протоколов обмена файлами, таких как Bittorrent."
-      ],
       "support team": [
         "команда поддержки"
       ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        "Переключитесь на ${ professionalPlan } , чтобы добавить больше подключений."
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
-        "Переключиться на ${ professionalPlan } , чтобы добавить больше пользователей."
-      ],
       "Thank you for supporting our mission.": [
         "Спасибо за поддержку нашей миссии."
+      ],
+      "The securest way to browse, stream, and be online.": [
+        ""
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -2521,8 +2317,8 @@
       "This can take a few seconds or a few minutes depending on your device": [
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
       ],
-      "This plan is temporarily disabled": [
-        "Этот тариф временно отключён"
+      "This will also disable any two-factor authentication method associated with this account.": [
+        ""
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Это действие отменит текущую платную подписку, и вы потеряете все накопленные вами льготы. Остаток вашей подписки будет возвращен в виде остатка на счету."
@@ -2533,14 +2329,17 @@
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "Это навсегда удалит ваш аккаунт и все его данные. Вы не сможете восстановить эту учетную запись."
       ],
-      "This will void your password, and you won't be able to use it to sign in to your account.": [
-        "Это приведет к аннулированию пароля, и вы не сможете использовать его для входа в свой аккаунт."
+      "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
+        ""
+      ],
+      "This will sign you out of any active sessions and disable 2-factor authentication.": [
+        ""
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем включать двухфакторную аутентификацию, т. к. она повышает безопасность учётной записи."
       ],
-      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ appName } с платными функциями, выберите подписку и способ оплаты."
+      "to continue to ${ toAppName }": [
+        ""
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -2548,11 +2347,14 @@
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Чтобы быть в курсе последних разработок продуктов Proton, вы можете подписаться на наши различные рассылки и время от времени посещать наш блог."
       ],
-      "To prevent misuse, please verify you are human. Please do not close this tab until you have verified your account.": [
-        "Чтобы предотвратить неправильное использование, пожалуйста, подтвердите, что вы являетесь человеком. Пожалуйста, не закрывайте эту вкладку, пока не подтвердите свой аккаунт."
+      "To proceed, select an account recovery method so we can verify the request.": [
+        ""
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Чтобы защитить ваше интернет-соединение, скачайте и установите приложение ${ VPN_APP_NAME } для вашего устройства и подключитесь к серверу ${ VPN_APP_NAME }."
+      ],
+      "To use ${ toAppName }, please create an address.": [
+        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Пополняйте свой счёт кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
@@ -2575,6 +2377,9 @@
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
         "Режим двойного пароля позволяет использовать отдельные пароли для входа в систему и расшифровки почтового ящика. Это обеспечивает незначительные преимущества безопасности в некоторых ситуациях, однако для большинства пользователей мы рекомендуем использовать режим единого пароля. Чтобы переключиться на использование режима двух паролей, сначала установите пароль для входа, а затем пароль на почтовый ящик."
       ],
+      "Unfortunately there is no recovery method saved for this account.": [
+        ""
+      ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, меток и фильтров"
       ],
@@ -2584,20 +2389,11 @@
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Используйте следующие учетные данные для подключения к ${ VPN_APP_NAME } через сторонние приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Используйте адреса эл. почты со своим собственным почтовым доменом, например, you@yourname.com"
-      ],
-      "Users": [
-        "Пользователи"
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -2608,8 +2404,14 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         "Для подтверждения оплаты откроется новая вкладка. Пожалуйста, отключите любые блокировщики всплывающих окон. Снятия ваших средств не произойдёт. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
-        "Набор VPN + ${ mailAppName } для семей и малых предприятий."
+      "Verifying your payment": [
+        ""
+      ],
+      "Version ${ version }": [
+        ""
+      ],
+      "Warning:": [
+        ""
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Внимание: удаление безвозвратно. Это также отключит доступ ко всем подключенным службам и удалит все ваши контакты."
@@ -2617,20 +2419,26 @@
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
       ],
+      "We recommend using your recovery phrase instead.": [
+        ""
+      ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Для завершения этой транзакции мы перенаправим вас на сайт PayPal в новой вкладке браузера. Если вы пользуетесь какими-нибудь блокировщиками всплывающих окон, пожалуйста, временно отключите их перед продолжением."
       ],
-      "We will send a reset code to your recovery email to reset your password.": [
-        "Мы отправим код для сброса пароля на указанный вами резервный адрес эл. почты."
-      ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
-      "We've sent a reset code to your recovery email, valid for one hour or until you request a new code. Enter it below to continue.": [
-        "Мы отправили на вашу резервную эл. почту код сброса, действующий в течение часа или до запроса вами нового кода. Введите его ниже для продолжения."
+      "We’ll send a reset code to the email address you provided for account recovery.": [
+        ""
+      ],
+      "We’ll send a reset code to the phone number you provided for account recovery.": [
+        ""
+      ],
+      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
+        ""
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении Вашей подписки, сначала мы используем любые доступные кредиты, а потом списываем недостающую сумму через вышеуказанный метод оплаты."
@@ -2641,17 +2449,17 @@
       "Would you like to receive a new verification code?": [
         "Хотите ли вы получить новый код подтверждения?"
       ],
+      "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
+        ""
+      ],
+      "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
+        ""
+      ],
       "You already have a free account": [
         "У вас уже есть бесплатный аккаунт"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "В настоящее время вы вошли как ${ user.Name } (${ user.Email })."
-      ],
-      "You are saving 20% with an annual plan": [
-        "Вы экономите 20% с годовом планом"
-      ],
-      "You are saving 33% with an two-year plan": [
-        "Вы экономите 33% с двухлетним планом"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Вы можете настраивать и скачивать свои счета, чтобы вести учёт расходов."
@@ -2665,6 +2473,9 @@
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Вы не можете использовать учетные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
+        ""
+      ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
       ],
@@ -2677,8 +2488,8 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "У вас должна быть кредитная карта или банковский счет, связанный с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
       ],
-      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription. ${ linkButton }": [
-        "Вы должны удалить все дополнительные личные календари и все общие ссылки календаря, прежде чем можно будет отменить подписку. ${ linkButton }"
+      "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
+        ""
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -2686,11 +2497,20 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
       ],
+      "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
+        ""
+      ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Вскоре вы будете перенаправлены в ваш банк для подтверждения вашего платежа."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Скоро вы будете перенаправлены на PayPal, чтобы проверить ваш платеж."
+      ],
+      "You'll stay signed in even after you close the browser.": [
+        ""
+      ],
+      "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
+        ""
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить их оба, войдите в систему по ссылке: ${ loginLink } и удалите там свой аккаунт."
@@ -2700,9 +2520,6 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Для вашей учетной записи есть по крайней мере один просроченный счет. Ваш доступ скоро будет ограничен. ${ payInvoiceLink }"
-      ],
-      "Your account has been successfully created. Please press the \"Close\" button to be taken back to the app.": [
-        "Ваша учетная запись успешно создана. Пожалуйста, нажмите кнопку \"Закрыть\", чтобы вернуться в приложение."
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
         "Ваша учётная запись улучшается, это может занять до 30 секунд."
@@ -2716,11 +2533,8 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован для этой разовой проверки."
       ],
-      "Your existing Proton account can be used to access all Proton services. Please login with ${ email }": [
-        "Ваш аккаунт Proton может быть использован для доступа ко всем сервисам Proton. Пожалуйста, войдите с ${ email }"
-      ],
-      "Your payment details are protected with TLS encryption and Swiss laws": [
-        "Ваши платежные данные защищены шифрованием TLS и законами Швейцарии"
+      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
+        ""
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и швейцарскими законами о конфиденциальности."
@@ -2731,24 +2545,11 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
       ],
+      "Your recovery email address:": [
+        ""
+      ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
-    "info": {
-      "(beta)": [
-        "(бета)"
-      ]
-    },
-    "Info concerning plan features": {
-      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        "${ MAIL_APP_NAME } не может быть использован для массовых рассылок или спама. Для законных электронных писем ограничений нет."
-      ],
-      "Customizable features": [
-        "Настраиваемые функции"
       ]
     },
     "Info for cash payment method": {
@@ -2769,11 +2570,6 @@
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "Чтобы избежать перерыва в обслуживании из-за неоплаченных счетов, пожалуйста, убедитесь, что в любой момент времени у Вас сохраняется как минимум 1 работающий способ оплаты."
-      ]
-    },
-    "information": {
-      "Included": [
-        "Включено"
       ]
     },
     "Invoice state display as badge": {
@@ -2826,44 +2622,17 @@
       ]
     },
     "Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        ""
+      ],
       "${ MAIL_APP_NAME } address": [
         "Адрес ${ MAIL_APP_NAME }"
       ],
-      "${ n } VPN connection available": [
-        "${ n } подключение к VPN доступно",
-        "${ n } подключения к VPN доступно",
-        "${ n } подключений к VPN доступно",
-        "${ n } подключений к VPN доступно"
-      ],
-      "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
-        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "${ UsedDomains } из ${ MaxDomains } своего домена",
-        "${ UsedDomains } из ${ MaxDomains } своих доменов",
-        "${ UsedDomains } из ${ MaxDomains } своих доменов",
-        "${ UsedDomains } из ${ MaxDomains } своих доменов"
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } из ${ MaxMembers } пользователя",
-        "${ UsedMembers } из ${ MaxMembers } пользователей",
-        "${ UsedMembers } из ${ MaxMembers } пользователей",
-        "${ UsedMembers } из ${ MaxMembers } пользователей"
-      ],
-      "1 month": [
-        "1 месяц"
-      ],
-      "12 months": [
-        "12 месяцев"
-      ],
-      "24 months": [
-        "24 месяца"
-      ],
-      "6-digit code": [
-        "6-значный код"
+      "${ n } month": [
+        "",
+        "",
+        "",
+        ""
       ],
       "Allow recovery by email": [
         "Разрешить восстановление по эл. почте"
@@ -2877,14 +2646,11 @@
       "Amount due": [
         "К оплате"
       ],
-      "Annual discount (${ discountPercentage }%)": [
-        "Годовая скидка (${ discountPercentage }%)"
-      ],
       "Attach screenshot(s)": [
         "Приложить снимки экрана"
       ],
-      "Back to:": [
-        "Назад к:"
+      "Billing cycle": [
+        "Оплачиваемый период"
       ],
       "Block malware only": [
         "Блокировать только вредоносные программы"
@@ -2921,6 +2687,9 @@
       ],
       "Choose a name for the generated certificate file": [
         "Выберите имя для созданного файла сертификата"
+      ],
+      "Code": [
+        "Код"
       ],
       "Code is 6 digits without spaces": [
         "Код состоит из 6 цифр без пробелов"
@@ -2964,12 +2733,6 @@
       "Customize invoices": [
         "Настройка счетов"
       ],
-      "CVV code": [
-        "CVV-код"
-      ],
-      "Danger": [
-        "Ненадежный"
-      ],
       "Default language": [
         "Язык по умолчанию"
       ],
@@ -2985,17 +2748,14 @@
       "Discount": [
         "Скидка"
       ],
-      "Display name": [
-        "Отображаемое имя"
-      ],
       "Do you have any suggestions for our team?": [
         "Есть ли у вас какие-либо предложения для нашей команды?"
       ],
-      "Email": [
-        "Эл. почта"
-      ],
       "Email address": [
         "Адрес эл. почты"
+      ],
+      "Email or username": [
+        ""
       ],
       "Enter organization name to confirm": [
         "Введите название организации для подтверждения"
@@ -3003,11 +2763,11 @@
       "Enter the code displayed on your TV": [
         "Введите код, отображаемый на вашем ТВ"
       ],
+      "Expiration date": [
+        ""
+      ],
       "Expires": [
         "Истекает"
-      ],
-      "Expiry date": [
-        "Срок действия"
       ],
       "extra storage": [
         "доп. хранилище"
@@ -3020,6 +2780,9 @@
       ],
       "Interval": [
         "Интервал"
+      ],
+      "Keep me signed in": [
+        ""
       ],
       "Key": [
         "Ключ"
@@ -3087,8 +2850,17 @@
       "Payer": [
         "Плательщик"
       ],
+      "Payment details": [
+        ""
+      ],
+      "Payment method": [
+        ""
+      ],
       "Phone number": [
         "Номер телефона"
+      ],
+      "Phrase consists of 12 unique words in a specific order": [
+        ""
       ],
       "Postal code": [
         "Почтовый индекс"
@@ -3099,41 +2871,38 @@
       "Proton username": [
         "Имя пользователя Proton"
       ],
+      "Recovery code": [
+        ""
+      ],
       "Recovery email address": [
         "Электронная почта для восстановления"
+      ],
+      "Recovery phone number": [
+        "Номер телефона для восстановления"
+      ],
+      "Recovery phrase": [
+        ""
+      ],
+      "Repeat password": [
+        ""
       ],
       "Reveal password": [
         "Показать пароль"
       ],
-      "Select a method": [
-        "Выберите метод"
+      "Security code": [
+        ""
       ],
       "Select your country": [
         "Выберите вашу страну"
       ],
-      "Subtotal": [
-        "Подытог"
+      "Subscription options": [
+        ""
       ],
       "System information": [
         "Сведения о системе"
       ],
-      "Token": [
-        "Токен"
-      ],
-      "Total": [
-        "Всего"
-      ],
       "Total (${ countdown })": [
         "Всего (${ countdown })"
-      ],
-      "Total price": [
-        "Общая цена"
-      ],
-      "Total price (annually)": [
-        "Общая цена (за год)"
-      ],
-      "Total price (two-year)": [
-        "Общая цена (два года)"
       ],
       "Two-factor authentication": [
         "Двухфакторная аутентификация"
@@ -3144,26 +2913,14 @@
       "Two-password mode": [
         "Режим двух паролей"
       ],
-      "Two-year discount (${ discountPercentage }%)": [
-        "Двухлетняя скидка (${ discountPercentage }%)"
-      ],
       "User's new password": [
         "Новый пароль пользователя"
       ],
       "Username": [
         "Имя пользователя"
       ],
-      "Username or ${ MAIL_APP_NAME } address": [
-        "Имя пользователя или адрес ${ MAIL_APP_NAME }"
-      ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
-      ],
       "Verification code": [
         "Проверочный код"
-      ],
-      "Verification method": [
-        "Способ подтверждения"
       ],
       "VPN Accelerator": [
         "VPN Accelerator"
@@ -3186,8 +2943,8 @@
       "Your password (admin)": [
         "Ваш пароль (admin)"
       ],
-      "ZIP": [
-        "ZIP"
+      "ZIP code": [
+        ""
       ]
     },
     "label": {
@@ -3227,26 +2984,17 @@
       "Add a gift code": [
         "Добавить подарочный код"
       ],
-      "Back to login": [
-        "Назад к форме входа"
-      ],
       "clearing your browser cache": [
         "очистка кэша вашего браузера"
       ],
       "click here": [
         "нажмите здесь"
       ],
-      "Close": [
-        "Закрыть"
+      "Common sign in issues": [
+        "Частые проблемы при входе"
       ],
-      "Common login problems": [
-        "Распространённые проблемы входа"
-      ],
-      "Contact support": [
-        "Связаться с поддержкой"
-      ],
-      "Don't have an account yet? Sign up for free!": [
-        "У вас еще нет аккаунта? Зарегистрируйтесь бесплатно!"
+      "Common sign up issues": [
+        ""
       ],
       "Forgot username?": [
         "Забыли имя пользователя?"
@@ -3254,14 +3002,8 @@
       "Go to subscription plans": [
         "Перейти на страницу подписки"
       ],
-      "here": [
-        "здесь"
-      ],
       "Learn more": [
         "Узнать больше"
-      ],
-      "Log in": [
-        "Войти"
       ],
       "Not activated": [
         "Не активировано"
@@ -3269,11 +3011,8 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
-      "Privacy Policy": [
+      "Privacy policy": [
         "Политика конфиденциальности"
-      ],
-      "protonvpn.com": [
-        "protonvpn.com"
       ],
       "Request an invite": [
         "Запросить приглашение"
@@ -3281,11 +3020,11 @@
       "Reset password": [
         "Сбросить пароль"
       ],
-      "Sign up for free": [
-        "Зарегистрируйтесь бесплатно"
+      "Sign in": [
+        "Войти"
       ],
-      "Terms of Service": [
-        "Условия использования"
+      "Terms": [
+        ""
       ],
       "Upgrade": [
         "Улучшить"
@@ -3298,103 +3037,6 @@
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Какова разница между протоколами UDP и TCP?"
-      ]
-    },
-    "Mail feature": {
-      "0.5 GB": [
-        "0.5 ГБ"
-      ],
-      "20 GB": [
-        "20 ГБ"
-      ],
-      "Address verification": [
-        "Проверка адреса"
-      ],
-      "Addresses": [
-        "Адреса"
-      ],
-      "Autoresponder": [
-        "Автоответчик"
-      ],
-      "Catch-All email": [
-        "Получение писем всех адресов домена"
-      ],
-      "Contact groups": [
-        "Группы контактов"
-      ],
-      "Custom domains": [
-        "Свои домены"
-      ],
-      "Custom filters": [
-        "Настраиваемые фильтры"
-      ],
-      "Encrypted contacts": [
-        "Зашифрованные контакты"
-      ],
-      "Folders / labels": [
-        "Папки / ярлыки"
-      ],
-      "IMAP / SMTP": [
-        "IMAP/SMTP"
-      ],
-      "Limited": [
-        "Ограничено"
-      ],
-      "Messages per day": [
-        "Сообщений в день"
-      ],
-      "Multi-user support": [
-        "Многопользовательский режим"
-      ],
-      "Priority": [
-        "Приоритет"
-      ],
-      "Storage": [
-        "Хранилище"
-      ],
-      "Support": [
-        "Поддержка"
-      ],
-      "Use @pm.me address": [
-        "Доменное имя @pm.me"
-      ],
-      "Users": [
-        "Пользователи"
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        "5 ГБ *"
-      ],
-      "5 GB / user *": [
-        "5 Гб / пользователь *"
-      ],
-      "Unlimited": [
-        "Без ограничений"
-      ],
-      "Unlimited **": [
-        "Без ограничений **"
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        "5 / пользователя *"
-      ]
-    },
-    "Mail upsell feature": {
-      "Create separate logins for each user": [
-        "Создать отдельные логины для каждого пользователя"
-      ],
-      "Get Multi-user support": [
-        "Многопользовательский режим"
-      ],
-      "Host emails for your organization": [
-        "Используйте для работы с почтой вашей организации"
-      ]
-    },
-    "Many Others": {
-      "and many others": [
-        "и многих другие"
       ]
     },
     "Member downgrade modal": {
@@ -3426,69 +3068,701 @@
         "Швейцарский франк"
       ]
     },
-    "Netflix": {
-      "Netflix": [
-        "Netflix"
+    "new_plans": {
+      "Highest VPN speed": [
+        "Максимальная скорость VPN"
+      ],
+      "Keep your inbox organized with folders": [
+        "Поддерживайте порядок в почтовом ящике с помощью папок"
+      ],
+      "Medium VPN speed": [
+        "Средняя скорость VPN"
+      ]
+    },
+    "new_plans: action": {
+      "Continue with free": [
+        "Продолжить использовать бесплатно"
+      ],
+      "Delete account": [
+        "Удалить аккаунт"
+      ],
+      "Downgrade account": [
+        "Понизить версию аккаунта"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Получить ${ BRAND_NAME } бесплатно"
+      ],
+      "Get ${ planName }": [
+        "Получить ${ planName }"
+      ],
+      "Get ${ upsellShortPlan.title }": [
+        "Получить ${ upsellShortPlan.title }"
+      ],
+      "Got it": [
+        "ОК"
+      ],
+      "Keep ${ plan }": [
+        "Сохранить ${ plan }"
+      ],
+      "Keep account": [
+        "Сохранить аккаунт"
+      ],
+      "Switch plan": [
+        "Сменить тариф"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизить версию до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ _price }": [
+        "От: ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "От ${ _price2 } за пользователя"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Сохранить мой тариф ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
+    "new_plans: attribute": {
+      "Access to streaming services globally": [
+        "Доступ к стриминговым сервисам по всему миру"
+      ],
+      "Built-in ad blocker (NetShield)": [
+        "Встроенный блокировщик рекламы (NetShield)"
+      ],
+      "Get ${ connections } high-speed VPN connection": [
+        "Получите ${ connections } высокоскоростное VPN-подключение",
+        "Получите ${ connections } высокоскоростных VPN-подключения",
+        "Получите ${ connections } высокоскоростных VPN-подключений",
+        "Получите ${ connections } высокоскоростных VPN-подключения"
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "Получите ${ connections } высокоскоростное VPN-подключение на пользователя",
+        "Получите ${ connections } высокоскоростных VPN-подключения на пользователя",
+        "Получите ${ connections } высокоскоростных VPN-подключений на пользователя",
+        "Получите ${ connections } высокоскоростных VPN-подключения на пользователя"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Высокоскоростная сеть VPN на ${ maxVpn } устройстве",
+        "Высокоскоростная сеть VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная сеть VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная сеть VPN на ${ maxVpn } устройствах"
+      ]
+    },
+    "new_plans: feature": {
+      "${ DRIVE_APP_NAME } (web beta)": [
+        "${ DRIVE_APP_NAME } (бета-версия для браузера)"
+      ],
+      "${ n } custom email domain": [
+        "${ n } пользовательский домен электронной почты",
+        "${ n } пользовательских домена электронной почты",
+        "${ n } пользовательских доменов электронной почты",
+        "Пользовательских доменов электронной почты: ${ n }"
+      ],
+      "${ n } email address": [
+        "${ n } адрес электронной почты",
+        "${ n } адреса электронной почты",
+        "${ n } адресов электронной почты",
+        "Адресов электронной почты/алиасов: ${ n }"
+      ],
+      "${ n } email address per user": [
+        "${ n } адрес электронной почты на пользователя",
+        "${ n } адреса электронной почты на пользователя",
+        "${ n } адресов электронной почты на пользователя",
+        "Адресов электронной почты на пользователя: ${ n }"
+      ],
+      "${ n } filter": [
+        "${ n } фильтр",
+        "${ n } фильтра",
+        "${ n } фильтров",
+        "Фильтров: ${ n }"
+      ],
+      "${ n } folder": [
+        "${ n } папка",
+        "${ n } папки",
+        "${ n } папок",
+        "Папок: ${ n }"
+      ],
+      "${ n } folder and label": [
+        "${ n } папка и ярлык",
+        "${ n } папки и ярлыка",
+        "${ n } папок и ярлыков",
+        "Папок и ярлыков: ${ n }"
+      ],
+      "${ n } label": [
+        "${ n } ярлык",
+        "${ n } ярлыка",
+        "${ n } ярлыков",
+        "Ярлыков: ${ n }"
+      ],
+      "${ n } message per day": [
+        "${ n } сообщение в день",
+        "${ n } сообщения в день",
+        "${ n } сообщений в день",
+        "Сообщений в день: ${ n }"
+      ],
+      "${ n } personal calendar": [
+        "${ n } личный календарь",
+        "${ n } личных календаря",
+        "${ n } личных календарей",
+        "Личных календарей: ${ n }"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-подключение",
+        "${ n } VPN-подключения",
+        "${ n } VPN-подключений",
+        "VPN-подключений: ${ n }"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-подключение на пользователя",
+        "${ n } VPN-подключения на пользователя",
+        "${ n } VPN-подключений на пользователя",
+        "VPN-подключений на пользователя: ${ n }"
+      ],
+      "${ size } attachment size": [
+        "Размер вложения: ${ size }"
+      ],
+      "${ size } storage per user": [
+        "Объем хранилища на пользователя: ${ size }"
+      ],
+      "${ size } total storage": [
+        "Общий объем хранилища: ${ size }"
+      ],
+      "99.95% SLA": [
+        "99,95% по соглашению о качестве услуг"
+      ],
+      "Admin console": [
+        "Панель администратора"
+      ],
+      "Advanced sharing security": [
+        "Дополнительная безопасность при обмене данными"
+      ],
+      "Auto-reply": [
+        "Автоответчик"
+      ],
+      "Catch-all": [
+        "Прием всей почты домена"
+      ],
+      "Centralized billing": [
+        "Централизованная оплата"
+      ],
+      "Contact groups": [
+        "Группы контактов"
+      ],
+      "Contact groups management": [
+        "Управление группами контактов"
+      ],
+      "Custom email domains": [
+        "Пользовательские домены электронной почты"
+      ],
+      "DNS leak prevention": [
+        "Предотвращение утечки DNS"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Редакторы документов (текстовых документов, электронных таблиц, слайдов)"
+      ],
+      "Easy Switch import assistant": [
+        "Помощник по импорту Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Поддержка почтовых клиентов (через IMAP/SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "Обеспечение соответствия HIPAA"
+      ],
+      "Encrypted contact details": [
+        "Зашифрованная контактная информация"
+      ],
+      "Encrypted VPN servers": [
+        "Зашифрованные серверы VPN"
+      ],
+      "End-to-end encryption": [
+        "Сквозное шифрование"
+      ],
+      "Free VPN on a single device": [
+        "Бесплатная сеть VPN на одном устройстве"
+      ],
+      "GDPR data processing agreement": [
+        "Соглашение об обработке данных согласно GDPR"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Высокоскоростная сеть VPN на ${ n } устройстве",
+        "Высокоскоростная сеть VPN на ${ n } устройствах",
+        "Высокоскоростная сеть VPN на ${ n } устройствах",
+        "Высокоскоростная сеть VPN на ${ n } устройствах"
+      ],
+      "HTML signatures": [
+        "Подписи HTML"
+      ],
+      "Kill switch/always-on VPN": [
+        "Kill Switch и постоянная VPN"
+      ],
+      "Limited support": [
+        "Ограниченная поддержка"
+      ],
+      "Multiple admin roles": [
+        "Несколько администраторов"
+      ],
+      "NetShield malware and ad-blocker": [
+        "Блокировщик вредоносных программ и рекламы NetShield"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
+      "Password-protected Emails": [
+        "Защита писем паролем"
+      ],
+      "Phone support (6+ users)": [
+        "Поддержка по телефону (6+ пользователей)"
+      ],
+      "Priority email support": [
+        "Приоритетная поддержка по электронной почте"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ],
+      "Router support": [
+        "Поддержка маршрутизаторов"
+      ],
+      "Secure Core servers": [
+        "Серверы Secure Core"
+      ],
+      "Send & receive invitations": [
+        "Отправка и получение приглашений"
+      ],
+      "Share calendar via link": [
+        "Отправка записей в календаре с помощью ссылки"
+      ],
+      "Share files and folders via link": [
+        "Отправка файлов и папок с помощью ссылки"
+      ],
+      "Sign in as user": [
+        "Вход в роли пользователя"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Раздельное туннелирование (Android и Windows)"
+      ],
+      "Strict no-logs policy": [
+        "Строгая политика отсутствия журналов активности"
+      ],
+      "Team management": [
+        "Управление командами"
+      ],
+      "Tor over VPN": [
+        "Tor через VPN"
+      ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
+      ],
+      "Unlimited filters": [
+        "Неограниченное количество фильтров"
+      ],
+      "Unlimited folders": [
+        "Неограниченное количество папок"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Unlimited labels": [
+        "Неограниченное количество ярлыков"
+      ],
+      "Unlimited messages per day": [
+        "Неограниченное количество сообщений в день"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Неограниченный объем данных и пропускная способность"
+      ],
+      "Up to ${ totalStorageSize } total storage": [
+        "Общий объем хранилища: до ${ totalStorageSize }"
+      ],
+      "User credential management": [
+        "Управление учетными данными пользователей"
+      ],
+      "User session management": [
+        "Управление сессиями пользователей"
+      ],
+      "Worldwide streaming services": [
+        "Стриминговые сервисы со всего мира"
+      ]
+    },
+    "new_plans: forgot links": {
+      "Forgot password": [
+        "Забыли пароль?"
+      ],
+      "username": [
+        "имя пользователя"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Поддержка"
+      ],
+      "Team management": [
+        "Управление командами"
+      ]
+    },
+    "new_plans: info": {
+      "Comprehensive privacy and security with all Proton services combined.": [
+        "Комплексные конфиденциальность и безопасность, обеспеченные сочетанием всех сервисов Proton."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Если вы удалите аккаунт, то потеряете все преимущества тарифа ${ visionary }. Кроме того, этот тариф нельзя будет выбрать при создании нового аккаунта."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Если вы перейдете на более дешевую версию аккаунта, то потеряете все преимущества тарифа ${ visionary }. При этом повторно подписаться на него вы не сможете."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Если вы перейдете на другой тариф, то потеряете все преимущества тарифа ${ visionary } и больше не сможете вернуться к ${ visionary }."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Тариф ${ visionary } больше недоступен новым подписчикам, поскольку предназначен для пользователей со стороны ${ BRAND_NAME } и предусматривает для них специальные функции и преимущества."
+      ],
+      "Popular": [
+        "Популярно"
+      ],
+      "Privacy and security suite for businesses, including all premium Proton services.": [
+        "Пакет всех платных услуг Proton, которые обеспечивают компаниям конфиденциальность и безопасность."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "Защищенные электронная почта и календарь для отдельных пользователей и компаний."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Защищенная электронная почта с дополнительными возможностями для повседневного общения."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ без ограничений в Интернет."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Бесплатный стартовый аккаунт для всех, кому важна конфиденциальность."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Текущий тариф доступен вам по специальной цене. Если вы удалите аккаунт, то больше не сможете пользоваться этим преимуществом, в том числе при создании нового аккаунта."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Текущий тариф доступен вам по специальной цене. Если вы перейдете на более дешевую версию аккаунта, то больше не сможете пользоваться этим преимуществом или повторно подписаться на тариф."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к аккаунту будет ограничен, а затем аккаунт будет отключен."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ без ограничений в Интернет."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Улучшите подписку до набора для бизнеса с доступом ко всем платным сервисам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите подписку до полного пакета с обеспечением конфиденциальности и доступом ко всем платным сервисам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Пробный период заканчивается ${ formattedTrialExpirationDate }."
+      ]
+    },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } из ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/месяц"
+      ]
+    },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } день.",
+        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дня.",
+        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дней.",
+        "Тариф ${ currentPlanName } в вашем аккаунте действует еще ${ daysRemaining } дня."
+      ]
+    },
+    "new_plans: signup": {
+      "Creating the account means you accept ${ terms }. ": [
+        "Если вы создаете аккаунт, то принимаете ${ terms }. "
+      ],
+      "Payment details": [
+        "Платежные реквизиты"
+      ],
+      "Proton's terms and conditions": [
+        "Условия использования Proton"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "Сохраните адрес электронной почты или номер телефона, чтобы использовать их для проверки при сбросе аккаунта."
+      ],
+      "Subscription": [
+        "Подписка"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Чтобы начать работу, выберите псевдоним. Именно его увидят люди, когда вы отправите им письмо, приглашение на событие или поделитесь с ними файлом."
+      ],
+      "Your ${ planName } subscription is now active.": [
+        "Ваша подписка на тариф ${ planName } теперь активна."
+      ],
+      "Your selected plan: ${ planName }": [
+        "Выбранный тариф: ${ planName }"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Удалить аккаунт?"
+      ],
+      "Downgrade account?": [
+        "Понизить версию аккаунта?"
+      ],
+      "Improved plans coming soon!": [
+        "Скоро появятся улучшенные тарифы!"
+      ],
+      "Start exploring the Proton universe": [
+        "Начните знакомство с сервисами Proton"
+      ],
+      "Switch plans?": [
+        "Сменить тариф?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Пробная версия ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшение до тарифа ${ planName }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Получайте доступ к контенту стриминговых сервисов, включая Netflix, Disney+ и Amazon Prime Video, из любой точки мира"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "В адресах есть полный функционал для отправки и получения сообщений. Одному пользователю можно назначить несколько адресов, однако один адрес нельзя назначить разным пользователям"
+      ],
+      "Advanced security VPN with global network": [
+        "VPN с повышенным уровнем безопасности при работе в глобальной сети"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Открывает одновременный доступ к нескольким сетям. Например, вы можете смотреть в Интернете фильм из другой страны и при этом получать местные результаты на поисковой запрос"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Позволяет настраивать автоматические ответы (автоответчик) для входящих сообщений"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Массовая рассылка, рекламная или с помощью программных средств, сейчас не поддерживается. Рекомендуем для таких случаев использовать специального поставщика услуг электронной почты"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
+        "Создавайте разные адреса электронной почты под соответствующие личные данные в Интернете. Например, IvanPokupki@proton.me для аккаунтов, связанных с покупками, и IvanNovosti@proton.me для подписки на новости"
+      ],
+      "Create up to ${ n } custom calendar.": [
+        "Создайте до ${ n } пользовательского календаря.",
+        "Создайте до ${ n } пользовательских календарей.",
+        "Создайте до ${ n } пользовательских календарей.",
+        "Создайте до ${ n } пользовательского календаря."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Защищает конфиденциальность VPN от угроз, передавая ваш Интернет-трафик через несколько серверов"
+      ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        "Без труда делитесь ссылками на свои календари с коллегами, родственниками и друзьями"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        "Без труда делитесь ссылками на свои календари с родственниками, друзьями и коллегами"
+      ],
+      "End-to-end encrypted calendar": [
+        "Календарь, зашифрованный сквозным методом"
+      ],
+      "End-to-end encrypted file storage": [
+        "Файлы в хранилище зашифрованы сквозным методом"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Гарантирует, что вы получите все письма, отправленные на ваш домен, даже если адрес электронной почты не существует, его больше нет или в нем допущена ошибка"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Принудительно завершайте сеансы пользователей, если предполагается, что их учетные данные раскрыты"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Поддержка IMAP ограничена использованием приложений для ПК (Outlook, Apple Mail, Thunderbird и др.) через ${ MAIL_APP_NAME } Bridge. Облачные средства интеграции IMAP сейчас не поддерживаются"
+      ],
+      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
+        "Защищает вас, блокируя все подключения к сети при случайном отключении от нашего сервера VPN"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Ярлыки — это простые теги, которые можно добавлять к сообщениям. С их помощью удобнее находить нужные письма и применять фильтры"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Управляйте подпиской и настраивайте тариф по своему усмотрению. Вам доступна оплата банковской картой, криптовалютой, банковским переводом и через PayPal."
+      ],
+      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
+        "В рабочие дни команда поддержки клиентов Proton поможет вам в течение 24 часов после получения запроса"
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        "Еще вы можете добавить до 5 календарей от коллег, организаций, родственников и друзей"
+      ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Еще вы можете добавить до 5 календарей от друзей, родственников, коллег и организаций"
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+        "Одно VPN-подключение позволяет одному устройству в любое время подключаться к Proton VPN. Например, для одновременного подключения к Proton VPN телефона и ноутбука вам потребуется два VPN-подключения."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Возможность просматривать публичные папки со входящими сообщениями пользователей, включая полный текст писем и контактную информацию"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Инструмент управления для организаций, с помощью которого администраторы могут добавлять и удалять пользователей, выделять место в хранилище, настраивать домены и выполнять другие задачи"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "Наша надежная инфраструктура гарантирует вам постоянный доступ к аккаунту"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Жесткие диски наших серверов полностью зашифрованы с помощью нескольких уровней паролей. Благодаря этому ваши данные останутся под защитой даже если безопасность нашего оборудования будет нарушена"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Персонализируйте свою подпись в электронных письмах с помощью логотипов, изображений, значков социальных сетей, ссылок на контактную информацию и не только"
+      ],
+      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
+        "Клиенты, у которых 6 и более пользователей, могут обратиться за помощью к команде поддержки Proton по телефону в рабочее время согласно европейскому графику"
+      ],
+      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
+        "Предотвращает перехват отправленных сообщений и сторонний доступ к ним ${ MAIL_APP_NAME } и других служб электронной почты. Читать сообщения могут только отправитель и получатель"
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Защитите каждое устройство, подключенное к сети Wi-Fi. Это также будет полезно, если у вас есть устройства, которые не поддерживают настройки VPN напрямую"
+      ],
+      "Quickly set up out-of-office messages": [
+        "Быстро настраивайте сообщения о своем отсутствии"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Быстро переносите данные электронной почты, календари и контакты из любых сервисов"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "Для входа в систему нужно ввести код, отправленный на мобильный телефон. Благодаря этому аккаунт остается защищенным, даже если пароль раскрыт."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Сбрасывайте пароли и двухфакторную аутентификацию для пользователей"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Направляйте свой Интернет-трафик через сеть Tor одним щелчком мыши"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
+        "Храните информацию о контактах в безопасности, например номера телефонов, адреса, даты рождения и личные заметки. Шифрование нулевого доступа гарантирует, что эти данные будут недоступны даже Proton"
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Быстро и легко отправляйте электронные письма большим группам, создавая необходимое количество групп контактов (до 100 контактов в каждой группе)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Настройте фильтры для автоматического ответа на письма, их сортировки и/или добавления ярлыков"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Делитесь файлами и папками с кем угодно, используя ссылки для безопасного доступа"
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Специально разработанная функция NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы"
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Начните с ${ freeStorageSize } и постепенно увеличивайте размер хранилища. Его объемы распределяются между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Объемы хранилища распределяются между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Объемы хранилища распределяются между ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }. Администраторы могут выделять различные объемы для пользователей в пределах их организации"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "Поддержка протоколов обмена файлами, таких как BitTorrent"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Используйте адреса электронной почты с собственным почтовым доменом, например sebe@yourname.com"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "Мы не ведем журналы с вашими действиями в Интернете во время сессий, а также не записываем метаданные, которые могут нарушить вашу конфиденциальность"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "Мы считаем своим долгом помогать пользователям в соответствии с правовыми нормами HIPAA/HITECH в отношении охраняемой информации о состоянии здоровья (PHI). Подписанные соглашения между деловыми партнерами доступны для всех клиентов ${ BRAND_NAME } для бизнеса."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "При подключении к нашей сети VPN ваши запросы DNS проходят через зашифрованный туннель VPN, что повышает уровень конфиденциальности и безопасности в Интернете"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
+        "При отправке сообщений другим пользователям ${ MAIL_APP_NAME } шифрование выполняется автоматически. Если вы отправляете письмо пользователю вне ${ MAIL_APP_NAME }, сначала установите на нем пароль."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "У вас может быть несколько администраторов. Они все могут добавлять пользователей и управлять ими, но только основной администратор контролирует оплату."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "Общий объем хранилища: ${ storageSize }"
+      ],
+      "10 email addresses/aliases": [
+        "10 адресов электронной почты/алиасов"
+      ],
+      "Access advanced VPN features": [
+        "Получите доступ к дополнительным функциям VPN"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Добавьте индивидуальности: 15 электронных адресов и поддержка 3 пользовательских доменов электронной почты"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Увеличьте общий объем хранилища до ${ bundleStorage }"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "Увеличьте объем хранилища до ${ businessStorage } на пользователя"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+        "Создайте до ${ numberOfPersonalCalendars } личного календаря",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей",
+        "Создайте до ${ numberOfPersonalCalendars } личных календарей"
+      ],
+      "Get 5 additional email addresses per user": [
+        "Получите 5 дополнительных адресов электронной почты на пользователя"
+      ],
+      "Priority support": [
+        "Приоритетная поддержка"
+      ],
+      "Support for 1 custom email domain": [
+        "Поддержка 1 пользовательского домена электронной почты"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Неограниченное количество папок, ярлыков и фильтров"
+      ],
+      "Unlimited messages": [
+        "Неограниченное количество сообщений"
       ]
     },
     "Notification": {
-      "Coupons are temporarily disabled": [
-        "Купоны временно отключены"
-      ],
-      "Invites are temporarily disabled": [
-        "Приглашения временно отключены"
-      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Учётные данные OpenVPN / IKEv2 обновлены"
-      ],
-      "Verification code successfully sent to ${ destination }": [
-        "Проверочный код успешно отправлен на ${ destination }"
       ]
     },
-    "Onboarding Proton": {
-      "Choose a display name": [
-        "Задайте отображаемое имя"
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "Настройте свою организацию, привяжите свое доменное имя и создайте учетные записи, чтобы обеспечить защиту всех членов вашей организации."
-      ],
-      "Discover all Proton services": [
-        "Откройте для себя все сервисы Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Наша миссия состоит в создании интернета, в котором вы контролируете ваши данные и вашу конфиденциальность. Мы недавно обновили Proton - добро пожаловать в безопасный интернет."
-      ],
-      "Select a theme": [
-        "Выберите тему"
-      ],
-      "Set up your organization": [
-        "Настройка организации"
-      ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Это то, что люди увидят, когда получат ваше письмо, пригласите их на событие или поделитесь с ними файлом."
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "Используйте селектор приложений в верхнем левом углу для доступа к другим службам Proton, включая VPN, календарь и диск."
-      ],
-      "Welcome to Proton": [
-        "Добро пожаловать в Proton"
-      ],
-      "You can change this anytime in your settings.": [
-        "Вы можете изменить это в любой момент в настройках."
+    "Onboarding": {
+      "Welcome to ${ VPN_APP_NAME }": [
+        ""
       ]
     },
     "Option": {
       "Android": [
         "Android"
       ],
-      "Captcha": [
-        "CAPTCHA"
-      ],
       "Country configs": [
         "Конфигурации стран"
-      ],
-      "Email address": [
-        "Адрес эл. почты"
       ],
       "Free server configs": [
         "Конфигурации бесплатных серверов"
@@ -3523,9 +3797,6 @@
       "Secure Core configs": [
         "Конфигурации Secure Core"
       ],
-      "SMS": [
-        "SMS"
-      ],
       "Standard server configs": [
         "Стандартные конфигурации сервера"
       ],
@@ -3539,14 +3810,12 @@
         "Windows"
       ]
     },
-    "Password": {
-      "Confirm new password": [
-        "Подтвердите новый пароль"
-      ]
-    },
     "Payment method option": {
       "Bitcoin": [
         "Bitcoin"
+      ],
+      "Credit/debit card": [
+        ""
       ],
       "New credit/debit card": [
         "Новая кредитная или дебетовая карта"
@@ -3562,38 +3831,17 @@
       "Add gift code": [
         "Добавить подарочный код"
       ],
-      "Choose a new password": [
-        "Задайте новый пароль"
-      ],
       "Confirm": [
         "Подтвердить"
       ],
-      "Confirm password": [
-        "Подтвердите пароль"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
-      ],
-      "Email": [
-        "Эл. почта"
-      ],
       "Email address": [
         "Адрес эл. почты"
-      ],
-      "Enter coupon code": [
-        "Введите код купона"
-      ],
-      "Enter the word '${ dangerWord }' here": [
-        "Введите здесь слово '${ dangerWord }'"
       ],
       "Feedback": [
         "Обратная связь"
       ],
       "Gift code": [
         "Подарочный код"
-      ],
-      "Mailbox password": [
-        "Пароль почтового ящика"
       ],
       "Other": [
         "Другое"
@@ -3607,12 +3855,6 @@
       "Postal code": [
         "Почтовый индекс"
       ],
-      "Recovery email address": [
-        "Электронная почта для восстановления"
-      ],
-      "Reset code": [
-        "Код для сброса"
-      ],
       "Select": [
         "Выбрать"
       ],
@@ -3621,9 +3863,6 @@
       ],
       "Two-factor authentication code": [
         "Код двухфакторной аутентификации"
-      ],
-      "Username": [
-        "Имя пользователя"
       ],
       "ZIP": [
         "Почтовый индекс"
@@ -3634,229 +3873,9 @@
         "Добавьте ваше имя (или название компании) и адрес в ваши счета"
       ]
     },
-    "Plan": {
-      "${ mailAppName } Free": [
-        "Бесплатная версия ${ mailAppName }"
-      ],
-      "Free": [
-        "Free"
-      ]
-    },
-    "Plan Action": {
-      "Get ${ plan.title }": [
-        "Получить ${ plan.title }"
-      ]
-    },
-    "Plan Description": {
-      "Advanced security features": [
-        "Расширенные функции безопасности"
-      ],
-      "Basic privacy features": [
-        "Основные функции конфиденциальности"
-      ],
-      "Bundle plan": [
-        "Пакетный тарифный план"
-      ],
-      "Privacy and security for everyone": [
-        "Конфиденциальность и безопасность для всех"
-      ],
-      "The complete privacy suite": [
-        "Полный набор конфиденциальности"
-      ]
-    },
-    "Plan details": {
-      "High": [
-        "Высокая"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Наивысшая скорость (10 Гбит/с)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Наивысшая скорость (до 10 Гбит/с)"
-      ],
-      "Medium": [
-        "Средняя"
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        "0.5 ГБ хранилища"
-      ],
-      "1 - 5000 users *": [
-        "1 - 5000 пользователей *"
-      ],
-      "1 address": [
-        "1 адрес"
-      ],
-      "1 user": [
-        "1 пользователь"
-      ],
-      "20 GB storage": [
-        "20 ГБ хранилища"
-      ],
-      "200 folders / labels": [
-        "200 папок / ярлыков"
-      ],
-      "3 folders / labels": [
-        "3 папки / ярлыка"
-      ],
-      "5 addresses": [
-        "5 адресов"
-      ],
-      "5 addresses / user": [
-        "5 адресов на пользователя"
-      ],
-      "5 GB storage *": [
-        "5 ГБ хранилища *"
-      ],
-      "5 GB storage / user": [
-        "5 ГБ хранилища на пользователя"
-      ],
-      "50 addresses": [
-        "50 адресов"
-      ],
-      "6 users": [
-        "6 пользователей"
-      ],
-      "Access blocked content": [
-        "Обход блокировок"
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        "Доступ к ${ driveAppName } (бета)"
-      ],
-      "Adblocker (NetShield)": [
-        "Блокировщик рекламы (NetShield)"
-      ],
-      "All ${ PLAN_NAMES[PLAN.PLUS] } plan features": [
-        "Все ${ PLAN_NAMES[PLAN.PLUS] } функции тарифного плана"
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        "Все функции тарифного плана ${ PLAN_NAMES[PLANS.VPNPLUS] }"
-      ],
-      "Built-in Adblocker (NetShield)": [
-        "Встроенный блокировщик рекламы (NetShield)"
-      ],
-      "Custom domains": [
-        "Свои домены"
-      ],
-      "Early access to new products": [
-        "Ранний доступ к новым продуктам"
-      ],
-      "High speed": [
-        "Высокая скорость"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Наивысшая скорость (до 10 Гбит/с)"
-      ],
-      "Includes 6 user accounts": [
-        "Включает 6 учетных записей"
-      ],
-      "Includes Proton Visionary": [
-        "Включает Proton Visionary"
-      ],
-      "Medium speed": [
-        "Средняя скорость"
-      ],
-      "P2P filesharing/BitTorrent support": [
-        "Поддержка P2P файлообмена / BitTorrent"
-      ],
-      "P2P/BitTorrent support": [
-        "Поддержка P2P/BitTorrent"
-      ],
-      "Secure Core servers": [
-        "Серверы Secure Core"
-      ],
-      "Secure Core VPN": [
-        "Secure Core VPN"
-      ],
-      "Streaming service support": [
-        "Поддержка стриминговых сервисов"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
-      ],
-      "Unlimited folders / labels": [
-        "Безлимитные папки / ярлыки"
-      ]
-    },
-    "Plan Feature": {
-      "${ mailPlus } account": [
-        "Аккаунт ${ mailPlus }"
-      ],
-      "${ mailVisionary } account": [
-        "Аккаунт ${ mailVisionary }"
-      ],
-      "All advanced security features": [
-        "Все расширенные функции безопасности"
-      ],
-      "Filesharing/P2P support": [
-        "Обмен файлами/Поддержка P2P"
-      ],
-      "High speed": [
-        "Высокая скорость"
-      ],
-      "Highest speed (10 Gbps)": [
-        "Наивысшая скорость (10 Гбит/с)"
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        "Наивысшая скорость (до 10 Гбит/с)"
-      ],
-      "Medium speed": [
-        "Средняя скорость"
-      ],
-      "Streaming service support": [
-        "Поддержка стриминговых сервисов"
-      ],
-      "Strict no-logs policy": [
-        "Строгая политика отсутствия журналов активности"
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        "(текущий план)"
-      ],
-      "Most popular": [
-        "Самый популярный"
-      ]
-    },
-    "Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "У вас остался еще ${ daysRemaining } день на аккаунте ${ currentPlanName } ${ BRAND_NAME }.",
-        "У вас осталось еще ${ daysRemaining } дня на аккаунте ${ currentPlanName } ${ BRAND_NAME }.",
-        "У вас осталось еще ${ daysRemaining } дней на аккаунте ${ currentPlanName } ${ BRAND_NAME }.",
-        "У вас осталось еще ${ daysRemaining } дней на аккаунте ${ currentPlanName } ${ BRAND_NAME }."
-      ]
-    },
-    "Plan upsell": {
-      "Monthly plan": [
-        "Ежемесячный тарифный план"
-      ],
-      "Yearly plan": [
-        "Годовой тарифный план"
-      ]
-    },
-    "PlanPrice": {
-      "${ totalMonthlyPriceText } / mo": [
-        "${ totalMonthlyPriceText } / мес"
-      ],
-      "Billed as ${ totalBilledText }": [
-        "К оплате ${ totalBilledText }"
-      ],
-      "SAVE ${ discountText }": [
-        "СКИДКА ${ discountText }"
-      ]
-    },
     "Price": {
       "Free": [
         "Free"
-      ],
-      "FREE": [
-        "БЕСПЛАТНАЯ"
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
-        "Prime Video"
       ]
     },
     "Recovery Email": {
@@ -3885,9 +3904,31 @@
         "Проверка адреса электронной почты повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
       ]
     },
+    "Recovery method": {
+      "Email": [
+        "Эл. почта"
+      ],
+      "Phone number": [
+        "Номер телефона"
+      ],
+      "Phrase": [
+        ""
+      ]
+    },
+    "Signup label": {
+      "Display name": [
+        ""
+      ],
+      "Email": [
+        "Эл. почта"
+      ],
+      "Username": [
+        "Имя пользователя"
+      ]
+    },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
@@ -3907,6 +3948,113 @@
       ],
       "Your current storage:": [
         "Текущее хранилище:"
+      ]
+    },
+    "Subscription attribute": {
+      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } high-speed VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "${ n } подключение к VPN",
+        "${ n } подключения к VPN",
+        "${ n } подключений к VPN",
+        "${ n } подключений к VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedAddresses } address": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedCalendars } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "1 email address": [
+        ""
+      ],
+      "1 VPN connection": [
+        ""
+      ],
+      "Access to streaming services globally": [
+        ""
+      ],
+      "Built-in ad blocker (NetShield)": [
+        ""
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "Subscription price": {
+      "For": [
+        ""
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
+        "Сохранить"
+      ]
+    },
+    "Subtitle for trial plan": {
+      "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
+        ""
       ]
     },
     "Success": {
@@ -3934,8 +4082,11 @@
       "Gift code applied": [
         "Подарочный код применён"
       ],
-      "If you entered a valid notification email we will send you an email with your usernames in the next minute": [
-        "Если вы указали действительный адрес электронной почты, мы отправим вам письмо с вашими именами пользователей в течение следующей минуты"
+      "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
+        ""
+      ],
+      "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
+        ""
       ],
       "Invoice customized": [
         "Счёт настроен"
@@ -3983,22 +4134,27 @@
       ]
     },
     "Suffix": {
-      "/ month": [
-        "/ месяц"
-      ],
-      "/2-year": [
-        "/2 года"
-      ],
       "/month": [
         "/месяц"
       ],
-      "/year": [
-        "/год"
+      "/user per month": [
+        ""
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ месяц"
+      "/month": [
+        "/месяц"
+      ],
+      "per month": [
+        "в месяц"
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        ""
+      ],
+      "For individuals": [
+        ""
       ]
     },
     "TableHeader": {
@@ -4019,20 +4175,14 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } Trial": [
-        "Пробная версия ${ appName } ${ planName }"
-      ],
-      "${ appName } customization": [
-        "Настройка ${ appName }"
-      ],
-      "${ title } plan details": [
-        "Подробности плана ${ title }"
+      "${ maxUsers } user": [
+        "",
+        "",
+        "",
+        ""
       ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
-      ],
-      "${ VPN_APP_NAME } plan comparison": [
-        "Сравнение тарифов ${ VPN_APP_NAME }"
       ],
       "1. Give a name to the config to be generated": [
         "1. Дайте имя генерируемой конфигурации"
@@ -4061,9 +4211,6 @@
       "Account": [
         "Аккаунт"
       ],
-      "Account created": [
-        "Аккаунт создан"
-      ],
       "Account suspended": [
         "Аккаунт заблокирован"
       ],
@@ -4082,8 +4229,8 @@
       "Add PayPal payment method": [
         "Добавление способа оплаты PayPal"
       ],
-      "Already have a Proton account?": [
-        "У вас уже есть аккаунт Proton?"
+      "Address is available": [
+        ""
       ],
       "Amount": [
         "Сумма"
@@ -4093,9 +4240,6 @@
       ],
       "Apply gift code": [
         "Применить подарочный код"
-      ],
-      "Are you human?": [
-        "Вы человек?"
       ],
       "Back": [
         "Назад"
@@ -4121,12 +4265,6 @@
       "Change password": [
         "Изменение пароля"
       ],
-      "Checking invitation parameters": [
-        "Проверка параметров приглашения"
-      ],
-      "Checkout": [
-        "Расчет"
-      ],
       "Confirm address": [
         "Подтвердите адрес"
       ],
@@ -4139,20 +4277,20 @@
       "Confirm phone number": [
         "Подтвердите номер телефона"
       ],
-      "Coupon discount": [
-        "Скидка по купону"
+      "Congratulations on choosing privacy!": [
+        ""
       ],
-      "Create an account": [
-        "Создание аккаунта"
+      "Create a ${ mailAppName } address": [
+        ""
+      ],
+      "Create your ${ BRAND_NAME } Account": [
+        ""
       ],
       "Credits": [
         "Кредиты"
       ],
       "Currency": [
         "Валюта"
-      ],
-      "Current plan": [
-        "Текущий тариф"
       ],
       "Customize your plan": [
         "Настройте ваш тариф"
@@ -4178,11 +4316,11 @@
       "Disable two-factor authentication": [
         "Отключение двухфакторной аутентификации"
       ],
-      "DNS leak prevention": [
-        "Предотвращение утечки DNS"
-      ],
       "Downgrade account": [
         "Понизить учетную запись"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        ""
       ],
       "Downloads": [
         "Загрузки"
@@ -4190,23 +4328,17 @@
       "Edit credit/debit card": [
         "Изменение данных банковской карты"
       ],
+      "Email": [
+        "Эл. почта"
+      ],
       "Email subscriptions": [
         "Подписки на рассылки"
-      ],
-      "Enter verification code": [
-        "Введите код подтверждения"
-      ],
-      "Enter your password": [
-        "Введите свой пароль"
-      ],
-      "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "Введите свое имя пользователя или адрес электронной почты ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Ошибка"
       ],
-      "Forgot username": [
-        "Забыли имя пользователя"
+      "Find email or username": [
+        ""
       ],
       "General": [
         "Общие положения"
@@ -4226,20 +4358,11 @@
       "Invoices": [
         "Счета"
       ],
-      "Kill Switch": [
-        "Kill Switch"
-      ],
       "Language": [
         "Язык"
       ],
-      "Log in": [
-        "Войти"
-      ],
       "Login password": [
         "Пароль для входа"
-      ],
-      "My subscription": [
-        "Моя подписка"
       ],
       "Network error": [
         "Ошибка сети"
@@ -4247,8 +4370,8 @@
       "Next": [
         "Следующий"
       ],
-      "No Logs": [
-        "Нет журналов активности"
+      "No recovery method": [
+        ""
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -4274,9 +4397,6 @@
       "Pay invoice": [
         "Оплатить счёт"
       ],
-      "Payment details": [
-        "Реквизиты платежа"
-      ],
       "Payment methods": [
         "Способы оплаты"
       ],
@@ -4291,6 +4411,9 @@
       ],
       "PayPal verification failed": [
         "Сбой проверки PayPal"
+      ],
+      "Phone": [
+        ""
       ],
       "Plan summary": [
         "Сводка по тарифу"
@@ -4307,29 +4430,17 @@
       "Processing...": [
         "Обработка..."
       ],
-      "Provide payment details": [
-        "Укажите платежные реквизиты"
+      "Recommended": [
+        "Рекомендованное"
       ],
       "Recovery": [
         "Восстановление"
-      ],
-      "Redeem coupon": [
-        "Активировать купон"
-      ],
-      "Redeem your coupon and start protecting your online privacy": [
-        "Активируйте купон и начните защищать вашу конфиденциальность в сети"
-      ],
-      "Refresh your browser": [
-        "Обновите ваш браузер"
       ],
       "Report a problem": [
         "Сообщить о проблеме"
       ],
       "Request new code": [
         "Запросить новый код"
-      ],
-      "Resend code": [
-        "Отправить код повторно"
       ],
       "Reset password": [
         "Сбросить пароль"
@@ -4340,14 +4451,20 @@
       "Revoke certificate": [
         "Отозвать сертификат"
       ],
-      "Secure Core Servers": [
-        "Сервера Secure Core"
+      "Save contact details": [
+        ""
+      ],
+      "Secure email based in Switzerland": [
+        ""
       ],
       "Select a plan": [
         "Выбор тарифного плана"
       ],
-      "Select an account verification method": [
-        "Выберите метод проверки аккаунта"
+      "Select subscription and pay": [
+        ""
+      ],
+      "Set new password": [
+        ""
       ],
       "Set up two-factor authentication": [
         "Настройка двухфакторной аутентификации"
@@ -4355,26 +4472,14 @@
       "Settings": [
         "Настройки"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Sign in again to continue": [
         "Войдите снова, чтобы продолжить"
       ],
-      "Sign up": [
-        "Зарегистрироваться"
-      ],
       "Status": [
         "Состояние"
-      ],
-      "Strong encryption": [
-        "Сильное шифрование"
-      ],
-      "Subtotal": [
-        "Подытог"
-      ],
-      "Summary": [
-        "Сводка"
-      ],
-      "Swiss Based": [
-        "Находимся в Швейцарии"
       ],
       "Switch to one-password mode": [
         "Переключить в режим с одним паролем"
@@ -4382,26 +4487,38 @@
       "Switch to two-password mode": [
         "Переключить в режим с двумя паролями"
       ],
-      "Total (monthly)": [
-        "Всего (ежемесячно)"
+      "This address might compromise your privacy.": [
+        ""
+      ],
+      "Try the best of ${ MAIL_APP_NAME } for free": [
+        ""
       ],
       "TV log in": [
         "Вход на ТВ"
       ],
+      "Two-factor authentication": [
+        "Двухфакторная аутентификация"
+      ],
       "Type": [
         "Тип"
+      ],
+      "Unlock your mailbox": [
+        ""
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
       ],
-      "Upgrade and get more": [
-        "Улучшить и получить больше"
-      ],
-      "User log in": [
-        "Вход пользователя"
-      ],
       "Username": [
         "Имя пользователя"
+      ],
+      "Verification": [
+        ""
+      ],
+      "Warning": [
+        "Внимание"
+      ],
+      "Warning!": [
+        ""
       ],
       "What's new": [
         "Что нового"
@@ -4412,14 +4529,14 @@
       "You already have a Proton account": [
         "У вас уже есть аккаунт Proton"
       ],
-      "Your account’s usage": [
-        "Использование вашего аккаунта"
-      ],
       "Your current plan": [
         "Текущий тарифный план"
       ],
       "Your plan": [
         "Ваш тариф"
+      ],
+      "You’ve been invited to try ${ mailAppName }": [
+        ""
       ],
       "ZIP / postal code": [
         "Почтовый индекс"
@@ -4442,68 +4559,14 @@
       ]
     },
     "Tooltip": {
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        "Доступ к содержимому заблокированному по географическому признаку (Netflix, Amazon Prime Video, BBC iPlayer, Википедии, Facebook, YouTube и т. д.) независимо от того, где вы находитесь."
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
-        "Создайте несколько адресов электронной почты и свяжите их с одним аккаунтом. Вам может подойти такой формат: username2@protonmail.com"
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
-        "Защищает конфиденциальность VPN от угроз, передавая ваш интернет-трафик через несколько серверов."
-      ],
       "Discount applied for annual billing cycle": [
         "Скидка для годового платежного цикла"
       ],
       "Discount applied for two-year billing cycle": [
         "Скидка для двухлетнего платёжного цикла"
       ],
-      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Получите доступ ко всем платным функциям, как для ${ VPN_APP_NAME }, так и для ${ MAIL_APP_NAME } (служба зашифрованной электронной почты, которую миллионы людей используют для защиты своих данных) по одному тарифу."
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        "Получите доступ ко всем платным функциям ${ vpnAppName } и ${ mailAppName } (сервис электронной почты с шифрованием, который миллионы пользователей используют для защиты своих данных) в рамках одного тарифного плана."
-      ],
-      "If you forget your password, you will no longer have access to your account or your data. Please save it someplace safe.": [
-        "Если забудете пароль, у вас больше не будет доступа к вашей учетной записи или вашей информации. Пожалуйста, сохраните его в надёжном месте."
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Если вы купили подарочный код или получили его от нашей службы поддержки, вы можете ввести его здесь."
-      ],
-      "Includes ${ MAIL_APP_NAME } encrypted email with all features": [
-        "Включает зашифрованную почту ${ MAIL_APP_NAME } со всеми функциями"
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        "Поддержка нескольких пользователей возможна только для тарифов с 2 или более пользователями"
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield защищает ваше устройство и ускоряет загрузку страниц, блокируя рекламу, трекеры и вредоносные программы."
-      ],
-      "Provides additional protection against VPN server compromise by routing connections through our Secure Core network": [
-        "Предоставляет дополнительную защиту от компрометации VPN-сервера, направляя соединения через нашу сеть Secure Core"
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
-        "Отправляет весь ваш трафик через сеть Tor одним щелчком."
-      ],
-      "Save 20% when billed annually": [
-        "Сэкономьте 20% при ежегодной оплате"
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
-        "Поддержка протоколов обмена файлами, таких как Bittorrent."
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        "Используйте несколько адресов / псевдонимов, связанных с вашей учетной записью, например username2@protonmail.com"
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        "Чтобы отправлять письма, используйте адрес формата username@pm.me"
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Используйте ваши собственные доменны в адресах электронной почты, например, you@yourname.com"
-      ],
-      "Username which is used for all Proton services. This can also be used later to create a secure ${ MAIL_APP_NAME } account.": [
-        "Имя пользователя, которое используется для всех служб Proton. Оно также может быть использовано позже для создания безопасного аккаунта ${ MAIL_APP_NAME }."
-      ],
-      "Your email is not shared with third parties and is only used for recovery and account-related questions or communication.": [
-        "Ваш email не передается третьим лицам и используется только для уведомлений и вопросов, связанных с аккаунтом, и для восстановления доступа."
       ]
     },
     "Tor out of date": {
@@ -4520,114 +4583,6 @@
         "Пароль должен включать по меньшей мере ${ length } символа",
         "Пароль должен включать по меньшей мере ${ length } символов",
         "Пароль должен включать по меньшей мере ${ length } символов"
-      ]
-    },
-    "VerificationType": {
-      "email": [
-        "эл. почта"
-      ],
-      "phone": [
-        "телефон"
-      ]
-    },
-    "VPN feature": {
-      "30-days money-back guarantee": [
-        "гарантия возврата денег в течение 30 дней"
-      ],
-      "Access blocked content": [
-        "Обход блокировок"
-      ],
-      "Adblocker (NetShield)": [
-        "Блокировщик рекламы (NetShield)"
-      ],
-      "Custom connection profiles": [
-        "Пользовательские профили подключения"
-      ],
-      "DNS leak prevention": [
-        "Предотвращение утечки DNS"
-      ],
-      "Full Disk Encryption on Servers": [
-        "Полное шифрование дисков на серверах"
-      ],
-      "Jurisdiction": [
-        "Юрисдикция"
-      ],
-      "Kill Switch / Always-on VPN": [
-        "Kill Switch / Постоянный VPN"
-      ],
-      "Languages supported": [
-        "Поддерживаемые языки"
-      ],
-      "Locations/Countries": [
-        "Места/Страны"
-      ],
-      "Open Source & audited apps": [
-        "Открытый исходный код и проверенные приложения"
-      ],
-      "P2P/BitTorrent": [
-        "P2P/BitTorrent"
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        "Защита от чтения назад (PFS)"
-      ],
-      "Platforms supported": [
-        "Поддерживаемые платформы"
-      ],
-      "Router support": [
-        "Поддержка маршрутизаторов"
-      ],
-      "Secure Core servers": [
-        "Серверы Secure Core"
-      ],
-      "Speed": [
-        "Скорость"
-      ],
-      "Split tunneling": [
-        "Раздельное туннелирование"
-      ],
-      "Streaming service support": [
-        "Поддержка стриминговых сервисов"
-      ],
-      "Strict no-logs policy": [
-        "Строгая политика отсутствия журналов активности"
-      ],
-      "Tor over VPN": [
-        "Tor через VPN"
-      ],
-      "User data monetization": [
-        "Монетизация пользовательских данных"
-      ],
-      "Volume/bandwidth cap": [
-        "Ограничение объема данных или полосы пропускания"
-      ],
-      "VPN Connections": [
-        "VPN подключений"
-      ],
-      "VPN servers": [
-        "VPN-серверы"
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        "(Только Android и Windows)"
-      ],
-      "High": [
-        "Высокая"
-      ],
-      "Highest (up to 10 Gbps)": [
-        "Наивысшая (до 10 Гбит/с)"
-      ],
-      "Medium": [
-        "Средняя"
-      ],
-      "None": [
-        "Нет"
-      ],
-      "Switzerland": [
-        "Швейцария"
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast"
       ]
     },
     "VPN info": {
@@ -4653,17 +4608,6 @@
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах",
         "${ numberOfServers } в ${ numberOfCountries } странах"
-      ]
-    },
-    "VPN upsell feature": {
-      "Access geo-blocked content (Netflix, YouTube, etc.)": [
-        "Доступ к заблокированному контенту (Netflix, YouTube, и т. д.)"
-      ],
-      "Higher speed servers (up to 10Gbps)": [
-        "Самая высокая скорость серверов (10 Гбит/с)"
-      ],
-      "Unlock advanced VPN features": [
-        "Разблокировать расширенные возможности VPN"
       ]
     },
     "VPNClient": {
