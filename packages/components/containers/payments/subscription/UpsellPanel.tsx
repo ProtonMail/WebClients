@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { format, fromUnixTime } from 'date-fns';
 import {
@@ -9,6 +10,7 @@ import {
     VPN_CONNECTIONS,
     MAIL_APP_NAME,
 } from '@proton/shared/lib/constants';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     hasMailPro,
     hasMail,
@@ -23,10 +25,41 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
-import { StrippedList, StrippedItem, Button, Price, IconName } from '../../../components';
+import { StrippedList, StrippedItem, Button, Price, IconName, Icon } from '../../../components';
 import { useConfig } from '../../../hooks';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
+import './UpsellPanel.scss';
+
+interface UpsellBoxProps {
+    title: string;
+    children?: ReactNode;
+    items: Item[];
+    actions: ReactNode;
+    description?: ReactNode;
+}
+
+const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxProps) => {
+    return (
+        <div className="border border-primary rounded px2 py1-5 pt0-5 upsell-box">
+            <h3>
+                <strong>{title}</strong>
+            </h3>
+            {children}
+            {description && <div className="color-weak text-lg">{description}</div>}
+            <StrippedList>
+                {items.map((item) => {
+                    return (
+                        <StrippedItem key={item.text} left={<Icon className="color-warning" name="fire" size={20} />}>
+                            {item.text}
+                        </StrippedItem>
+                    );
+                })}
+            </StrippedList>
+            {actions}
+        </div>
+    );
+};
 
 interface Item {
     icon: IconName;
@@ -122,36 +155,35 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             },
         ];
         return (
-            <div className="border rounded px2 py1-5 pt0-5">
-                <h3>
-                    <strong>{c('new_plans: Title').t`${mailPlanName} Trial`}</strong>
-                </h3>
+            <UpsellBox
+                title={c('new_plans: Title').t`${mailPlanName} Trial`}
+                items={items}
+                actions={
+                    <>
+                        <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
+                            'new_plans: Action'
+                        ).t`Upgrade now`}</Button>
+                        <Button
+                            onClick={handleExplorePlans}
+                            size="large"
+                            color="norm"
+                            shape="ghost"
+                            className="mt0-5"
+                            fullWidth
+                        >{c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`}</Button>
+                    </>
+                }
+            >
                 <h4>{c('new_plans: Info').t`Your trial ends ${formattedTrialExpirationDate}`}</h4>
-                <p className="color-weak">{c('new_plans: Info')
-                    .t`To continue to use ${MAIL_APP_NAME} with premium features, choose your subscription and payment options.`}</p>
-                <p className="color-weak">{c('new_plans: Info')
-                    .t`Otherwise access to your account will be limited, and your account will eventually be disabled.`}</p>
-                <StrippedList>
-                    {items.map((item) => {
-                        return (
-                            <StrippedItem key={item.text} icon={item.icon}>
-                                {item.text}
-                            </StrippedItem>
-                        );
-                    })}
-                </StrippedList>
-                <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
-                    'new_plans: Action'
-                ).t`Upgrade now`}</Button>
-                <Button
-                    onClick={handleExplorePlans}
-                    size="large"
-                    color="norm"
-                    shape="ghost"
-                    className="mt0-5"
-                    fullWidth
-                >{c('new_plans: Action').t`Explore all ${BRAND_NAME} plans`}</Button>
-            </div>
+                <div className="color-weak">
+                    {c('new_plans: Info')
+                        .t`To continue to use ${MAIL_APP_NAME} with premium features, choose your subscription and payment options.`}
+                    <br />
+                    <br />
+                    {c('new_plans: Info')
+                        .t`Otherwise access to your account will be limited, and your account will eventually be disabled.`}
+                </div>
+            </UpsellBox>
         );
     }
 
@@ -197,21 +229,17 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             },
         ];
         return (
-            <div className="border rounded px2 py1-5 pt0-5">
-                <h3>
-                    <strong>{getUpgradeText(plan.Title)}</strong>
-                </h3>
-                <p>{c('new_plans: Info')
-                    .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}</p>
-                <StrippedList>
-                    {items.map((item) => {
-                        return <StrippedItem icon={item.icon}>{item.text}</StrippedItem>;
-                    })}
-                </StrippedList>
-                <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
-                    'new_plans: Action'
-                ).jt`From ${price}`}</Button>
-            </div>
+            <UpsellBox
+                title={getUpgradeText(plan.Title)}
+                description={c('new_plans: Info')
+                    .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}
+                items={items}
+                actions={
+                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                        {c('new_plans: Action').jt`From ${price}`}
+                    </Button>
+                }
+            />
         );
     }
 
@@ -237,7 +265,7 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 disablePlanSelection: true,
             });
         const numberOfPersonalCalendars = MAX_CALENDARS_PER_USER;
-        const items: Item[] = [
+        const items: (Item | undefined)[] = [
             {
                 icon: 'storage',
                 text: c('new_plans: Upsell attribute').t`Boost your storage space to ${bundleStorage} total`,
@@ -247,14 +275,16 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
                 text: c('new_plans: Upsell attribute')
                     .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
             },
-            {
-                icon: 'calendar-checkmark',
-                text: c('new_plans: Upsell attribute').ngettext(
-                    msgid`Create up to ${numberOfPersonalCalendars} personal calendar`,
-                    `Create up to ${numberOfPersonalCalendars} personal calendars`,
-                    numberOfPersonalCalendars
-                ),
-            },
+            !hasMail(subscription)
+                ? {
+                      icon: 'calendar-checkmark',
+                      text: c('new_plans: Upsell attribute').ngettext(
+                          msgid`Create up to ${numberOfPersonalCalendars} personal calendar`,
+                          `Create up to ${numberOfPersonalCalendars} personal calendars`,
+                          numberOfPersonalCalendars
+                      ),
+                  }
+                : undefined,
             {
                 icon: 'brand-proton-vpn',
                 text: getHighSpeedVPN(VPN_CONNECTIONS),
@@ -265,25 +295,17 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             },
         ];
         return (
-            <div className="border rounded px2 py1-5 pt0-5">
-                <h3>
-                    <strong>{getUpgradeText(plan.Title)}</strong>
-                </h3>
-                <p className="color-weak">{c('new_plans: Info')
-                    .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}</p>
-                <StrippedList>
-                    {items.map((item) => {
-                        return (
-                            <StrippedItem key={item.text} icon={item.icon}>
-                                {item.text}
-                            </StrippedItem>
-                        );
-                    })}
-                </StrippedList>
-                <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
-                    'new_plans: Action'
-                ).jt`From ${price}`}</Button>
-            </div>
+            <UpsellBox
+                title={getUpgradeText(plan.Title)}
+                description={c('new_plans: Info')
+                    .t`Upgrade to the ultimate privacy pack and access all premium Proton services.`}
+                items={items.filter(isTruthy)}
+                actions={
+                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                        {c('new_plans: Action').jt`From ${price}`}
+                    </Button>
+                }
+            />
         );
     }
 
@@ -327,25 +349,17 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
             },
         ];
         return (
-            <div className="border rounded px2 py1-5 pt0-5">
-                <h3>
-                    <strong>{getUpgradeText(plan.Title)}</strong>
-                </h3>
-                <p className="color-weak">{c('new_plans: Info')
-                    .t`Upgrade to the business pack with access to all premium Proton services.`}</p>
-                <StrippedList>
-                    {items.map((item) => {
-                        return (
-                            <StrippedItem key={item.text} icon={item.icon}>
-                                {item.text}
-                            </StrippedItem>
-                        );
-                    })}
-                </StrippedList>
-                <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>{c(
-                    'new_plans: Action'
-                ).jt`From ${price} per user`}</Button>
-            </div>
+            <UpsellBox
+                title={getUpgradeText(plan.Title)}
+                description={c('new_plans: Info')
+                    .t`Upgrade to the business pack with access to all premium Proton services.`}
+                items={items}
+                actions={
+                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                        {c('new_plans: Action').jt`From ${price} per user`}
+                    </Button>
+                }
+            />
         );
     }
 

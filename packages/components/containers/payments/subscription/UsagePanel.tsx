@@ -5,7 +5,7 @@ import percentage from '@proton/shared/lib/helpers/percentage';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
-import { StrippedList, StrippedItem, Meter, IconName } from '../../../components';
+import { StrippedList, StrippedItem, Meter, IconName, Icon } from '../../../components';
 
 interface Item {
     icon: IconName;
@@ -67,7 +67,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
                 <strong>{c('new_plans: Title').t`Your account's usage`}</strong>
             </h3>
             <StrippedList>
-                <StrippedItem icon="storage">
+                <StrippedItem left={<Icon className="color-success" name="storage" size={20} />}>
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
                         .t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter
@@ -78,7 +78,7 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
                 </StrippedItem>
                 {items.filter(isTruthy).map((item) => {
                     return (
-                        <StrippedItem key={item.text} icon={item.icon}>
+                        <StrippedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
                             {item.text}
                         </StrippedItem>
                     );
