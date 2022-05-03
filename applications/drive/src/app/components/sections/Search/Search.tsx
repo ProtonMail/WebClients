@@ -27,9 +27,6 @@ export const Search = ({ shareId, searchView }: Props) => {
 
     const handleClick = useCallback(
         async (item: FileBrowserItem) => {
-            if (!item.IsFile) {
-                return;
-            }
             document.getSelection()?.removeAllRanges();
             navigateToLink(shareId, item.LinkID, item.IsFile);
         },
