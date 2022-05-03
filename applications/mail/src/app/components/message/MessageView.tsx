@@ -1,4 +1,16 @@
-import { useEffect, useMemo, useRef, useState, memo, forwardRef, Ref, useImperativeHandle } from 'react';
+import {
+    useEffect,
+    useMemo,
+    useRef,
+    useState,
+    memo,
+    forwardRef,
+    Ref,
+    useImperativeHandle,
+    FocusEventHandler,
+    RefObject,
+    FocusEvent,
+} from 'react';
 import { hasAttachments, isDraft, isSent, isOutbox } from '@proton/shared/lib/mail/messages';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { classnames } from '@proton/components';
@@ -40,7 +52,9 @@ interface Props {
     conversationID?: string;
     onBack: () => void;
     breakpoints: Breakpoints;
-    onFocus?: (index: number) => void;
+    hasFocus?: boolean;
+    onFocus?: (messageId: number) => void;
+    onBlur?: (event: FocusEvent<HTMLElement>, messageRef: RefObject<HTMLElement>) => void;
     onMessageReady?: () => void;
     columnLayout?: boolean;
     isComposerOpened: boolean;
@@ -66,7 +80,9 @@ const MessageView = (
         conversationID,
         onBack,
         breakpoints,
+        hasFocus,
         onFocus = noop,
+        onBlur = noop,
         onMessageReady,
         columnLayout = false,
         isComposerOpened,
@@ -268,37 +284,38 @@ const MessageView = (
         }
     }, [hasProcessingErrors]);
 
-    const {
-        hasFocus,
-        handleFocus,
-        handleBlur,
-        labelDropdownToggleRef,
-        moveDropdownToggleRef,
-        filterDropdownToggleRef,
-        moveScheduledModal
-    } = useMessageHotkeys(
-        elementRef,
-        {
-            labelID,
-            conversationIndex,
-            message,
-            bodyLoaded,
-            expanded,
-            messageLoaded,
-            draft,
-            conversationMode,
-            mailSettings,
-            messageRef: elementRef,
-        },
-        {
-            onFocus,
-            setExpanded,
-            toggleOriginalMessage,
-            handleLoadRemoteImages,
-            handleLoadEmbeddedImages,
-            onBack,
-        }
-    );
+    const { labelDropdownToggleRef, moveDropdownToggleRef, filterDropdownToggleRef, moveScheduledModal } =
+        useMessageHotkeys(
+            elementRef,
+            {
+                labelID,
+                conversationIndex,
+                message,
+                bodyLoaded,
+                expanded,
+                messageLoaded,
+                draft,
+                conversationMode,
+                mailSettings,
+                messageRef: elementRef,
+            },
+            {
+                hasFocus: !!hasFocus,
+                setExpanded,
+                toggleOriginalMessage,
+                handleLoadRemoteImages,
+                handleLoadEmbeddedImages,
+                onBack,
+            }
+        );
+
+    const handleFocus = () => {
+        onFocus(conversationIndex);
+    };
+
+    const handleBlur: FocusEventHandler<HTMLElement> = (event) => {
+        onBlur(event, elementRef);
+    };
 
     return (
         <article
@@ -351,6 +368,7 @@ const MessageView = (
                         originalMessageMode={originalMessageMode}
                         toggleOriginalMessage={toggleOriginalMessage}
                         onMessageReady={onMessageReady}
+                        onFocusIframe={handleFocus}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
                 </>

@@ -83,7 +83,7 @@ const ConversationView = ({
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
 
-    const { focusIndex, handleFocus, getFocusedId } = useConversationFocus(messagesToShow);
+    const { focusIndex, handleFocus, handleBlur, getFocusedId } = useConversationFocus(messagesToShow);
 
     const expandMessage = (messageID: string | undefined, scrollTo = false) => {
         messageViewsRefs.current[messageID || '']?.expand();
@@ -142,10 +142,7 @@ const ConversationView = ({
                 loading={loadingConversation}
                 element={conversation}
             />
-            <Scroll
-                className={classnames([hidden && 'hidden'])}
-                customContainerRef={containerRef}
-            >
+            <Scroll className={classnames([hidden && 'hidden'])} customContainerRef={containerRef}>
                 <div ref={wrapperRef} className="flex-item-fluid pt1 pr1 pl1 w100">
                     <div className="outline-none" ref={elementRef} tabIndex={-1}>
                         {showMessagesError ? (
@@ -176,6 +173,8 @@ const ConversationView = ({
                                 onBack={onBack}
                                 breakpoints={breakpoints}
                                 onFocus={handleFocus}
+                                onBlur={handleBlur}
+                                hasFocus={index === focusIndex}
                                 onMessageReady={onMessageReady}
                                 columnLayout={columnLayout}
                                 isComposerOpened={isComposerOpened}
