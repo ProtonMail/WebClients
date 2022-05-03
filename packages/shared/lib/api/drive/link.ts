@@ -51,7 +51,7 @@ export const queryEmptyTrashOfShare = (ShareID: string) => ({
 
 export const queryLinkMetaBatch = (shareId: string, linksIds: string[]) => ({
     method: 'post',
-    url: `/drive/shares/${shareId}/links/fetch_metadata`,
+    url: `drive/shares/${shareId}/links/fetch_metadata`,
     data: { LinkIDs: linksIds, Thumbnails: 1 },
 });
 
