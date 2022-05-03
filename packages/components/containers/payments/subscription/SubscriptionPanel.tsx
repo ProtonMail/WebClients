@@ -25,7 +25,7 @@ import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
 import { useConfig } from '../../../hooks';
-import { Price, StrippedList, StrippedItem, Meter, Button, IconName } from '../../../components';
+import { Price, StrippedList, StrippedItem, Meter, Button, IconName, Icon } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 import {
@@ -129,7 +129,7 @@ const SubscriptionPanel = ({
                     ] as Item[]
                 ).map((item) => {
                     return (
-                        <StrippedItem key={item.text} icon={item.icon}>
+                        <StrippedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
                             {item.text}
                         </StrippedItem>
                     );
@@ -166,7 +166,7 @@ const SubscriptionPanel = ({
             <StrippedList>
                 {items.map((item) => {
                     return (
-                        <StrippedItem key={item.text} icon={item.icon}>
+                        <StrippedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
                             {item.text}
                         </StrippedItem>
                     );
@@ -246,13 +246,13 @@ const SubscriptionPanel = ({
         ];
         return (
             <StrippedList>
-                <StrippedItem icon="storage">
+                <StrippedItem left={<Icon className="color-success" name="storage" size={20} />}>
                     <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
                 </StrippedItem>
                 {items.filter(isTruthy).map((item) => {
                     return (
-                        <StrippedItem key={item.text} icon={item.icon}>
+                        <StrippedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
                             {item.text}
                         </StrippedItem>
                     );
