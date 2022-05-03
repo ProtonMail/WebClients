@@ -74,7 +74,7 @@ export const getStyleSrcsData = (styleSrcUrls: string[]) => {
                 throw new Error(`Invalid data ${styleSrcUrls} ${trimmedText.slice(0, 10)}`);
             }
             return Promise.all(
-                [...trimmedText.matchAll(/url\(\/(assets\/[^.]+\.(woff|woff2))\)/g)].map(async (matchArray) => {
+                [...trimmedText.matchAll(/url\(\/(assets\/[^.]+\.(woff|woff2)[^)]*)\)/g)].map(async (matchArray) => {
                     const [all, match] = matchArray;
                     const response = await fetch(match);
                     const blob = await response.blob();
