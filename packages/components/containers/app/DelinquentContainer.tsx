@@ -1,11 +1,10 @@
 import DelinquentModal from '../api/DelinquentModal';
-import { ProminentContainer } from '../../components';
 
 const DelinquentContainer = () => {
     return (
-        <ProminentContainer>
+        <div className="h100 ui-prominent bg-norm">
             <DelinquentModal open />
-        </ProminentContainer>
+        </div>
     );
 };
 
