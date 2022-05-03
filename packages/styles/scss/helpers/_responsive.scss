@@ -70,6 +70,10 @@
 	);
 
 	.on-tablet {
+		&-static {
+			position: static;
+		}
+
 		&-text-left {
 			text-align: start;
 		}
