@@ -17,16 +17,16 @@ export const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
         <ul className="bg-weak-odd unstyled mt1 mb2">
             {features.map((feature) => {
                 return (
-                    <li key={feature.featureName} className="px0-5 py0-5 flex rounded">
+                    <li key={feature.featureName} className="px0-75 py0-5 flex rounded">
                         <div
                             className={classnames([
                                 'flex-no-min-children flex-nowrap',
                                 !feature.included && 'color-hint',
                             ])}
                         >
-                            <span className="w2e pl0-25 mx0-1 flex flex-item-noshrink min-h23r">
+                            <span className="flex flex-item-noshrink mr0-75">
                                 {feature.fire ? (
-                                    <>🔥</>
+                                    <Icon size={20} name="fire" className="color-warning" />
                                 ) : feature.included ? (
                                     <span className="color-success">
                                         {icon && feature.icon ? (

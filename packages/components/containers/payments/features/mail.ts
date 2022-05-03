@@ -244,7 +244,10 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getNAddressesFeature({ n: plansMap[PLANS.DRIVE]?.MaxAddresses || 1 }),
                 [PLANS.FAMILY]: getNAddressesFeature({ n: plansMap[PLANS.FAMILY]?.MaxAddresses || 75 }),
                 [PLANS.MAIL_PRO]: getNAddressesFeatureB2B({ n: plansMap[PLANS.MAIL_PRO]?.MaxAddresses || 10 }),
-                [PLANS.BUNDLE_PRO]: getNAddressesFeatureB2B({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxAddresses || 15 }),
+                [PLANS.BUNDLE_PRO]: getNAddressesFeatureB2B({
+                    n: plansMap[PLANS.BUNDLE_PRO]?.MaxAddresses || 15,
+                    fire: true,
+                }),
             },
         },
         {
@@ -257,7 +260,7 @@ export const getMailFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.DRIVE]: getNDomainsFeature({ n: plansMap[PLANS.DRIVE]?.MaxDomains ?? 0 }),
                 [PLANS.FAMILY]: getNDomainsFeature({ n: plansMap[PLANS.FAMILY]?.MaxDomains ?? 5 }),
                 [PLANS.MAIL_PRO]: getNDomainsFeature({ n: plansMap[PLANS.MAIL_PRO]?.MaxDomains ?? 3 }),
-                [PLANS.BUNDLE_PRO]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxDomains ?? 10 }),
+                [PLANS.BUNDLE_PRO]: getNDomainsFeature({ n: plansMap[PLANS.BUNDLE_PRO]?.MaxDomains ?? 10, fire: true }),
             },
         },
         {
