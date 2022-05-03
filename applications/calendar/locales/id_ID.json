@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Salin email ke papan klip"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         ""
       ],
@@ -202,6 +205,9 @@
       ],
       "Go to settings": [
         "Ke pengaturan"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Sembunyikan pengaturan PGP lanjutan"
@@ -562,12 +568,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplikasi Proton"
       ]
@@ -641,11 +641,6 @@
       ],
       "Get the deal now": [
         "Dapatkan penawaran sekarang"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1979,9 +1974,6 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
-      "Could not find address ${ email }.": [
-        "Tidak dapat menemukan alamat ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Kesalahan dekripsi: Dekripsi isi acara gagal."
       ],
@@ -2513,6 +2505,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2738,6 +2744,9 @@
       "${ selectedFoldersCount } label selected": [
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -2745,9 +2754,6 @@
         "(${ memberCount } anggota)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3131,7 +3137,7 @@
       "Update recurring event": [
         "Perbarui acara berulang"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3378,9 +3384,6 @@
       ],
       "Display": [
         "Tampilan"
-      ],
-      "Display name": [
-        "Nama tampilan"
       ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
@@ -3949,13 +3952,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -3963,17 +3968,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Pilih nama tampilan"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
         "Temukan semua layanan Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misi kami adalah membangun internet dimana Anda memegang kendali data dan privasi Anda. Kami baru saja memutakhirkan Proton - Selamat datang di internet aman."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -3981,14 +3980,8 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ini adalah apa yang orang akan lihat ketika Anda mengirim surel, mengundang ke acara, atau berbagi berkas."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gunakan menu aplikasi di atas kiri untuk akses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
-      ],
-      "Welcome to Proton": [
-        "Selamat datang di Proton"
       ],
       "You can change this anytime in your settings.": [
         "Anda dapat mengubah ini kapanpun di pengaturan Anda."
@@ -4104,9 +4097,6 @@
       ],
       "Add title": [
         "Tambah judul"
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
       ],
       "E.g., ": [
         "Misalnya "
@@ -4233,7 +4223,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4422,8 +4412,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ bulan"
+      "/month": [
+        ""
       ]
     },
     "Table header": {
@@ -4569,7 +4559,7 @@
         "Membersihkan data"
       ],
       "Contact details": [
-        ""
+        "Rincian kontak"
       ],
       "Contact Details": [
         "Rincian Kontak"
@@ -4596,13 +4586,13 @@
         "Mata uang"
       ],
       "Customize and confirm": [
-        ""
+        "Sesuaikan dan konfirmasi"
       ],
       "Customize calendar import": [
-        ""
+        "Sesuaikan kalender impor"
       ],
       "Customize your mail import": [
-        ""
+        "Sesuaikan impor email Anda"
       ],
       "Delete ${ count } contact": [
         "Hapus ${ count } kontak"
@@ -4650,7 +4640,7 @@
         "Masukkan sandi Anda"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Masukkan nama pengguna atau alamat email ${ MAIL_APP_NAME } Anda"
       ],
       "Error": [
         "Galat"
@@ -4749,7 +4739,7 @@
         "Laporkan sebuah masalah"
       ],
       "Request new code": [
-        ""
+        "Minta kode baru"
       ],
       "Reset calendar keys": [
         "Atur ulang kunci kalender"
@@ -4857,7 +4847,7 @@
         "Anda telah mengundang peserta dengan surel yang sama"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Uji coba gratis Anda segera berakhir pada ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

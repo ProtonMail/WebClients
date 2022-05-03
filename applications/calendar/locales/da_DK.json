@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
+      "Create a new contact group": [
+        "Opret en ny kontaktgruppe"
+      ],
       "Create calendar": [
         "Opret kalender"
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Gå til indstillinger"
+      ],
+      "Got it": [
+        "Forstået"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton-applikationer"
       ]
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Gør brug af tilduddet nu"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Kontaktsignatur ikke bekræftet"
       ],
-      "Could not find address ${ email }.": [
-        "Kunne ikke finde adresse ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfejl: Dekryptering af denne begivenheds indhold mislykkedes."
       ],
@@ -2532,6 +2524,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } opdateret"
@@ -2781,6 +2787,9 @@
         "${ selectedFoldersCount } etikette valgt",
         "${ selectedFoldersCount } etiketter valgt"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagerplads"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -2791,9 +2800,6 @@
       ],
       "5 email addresses": [
         "5 e-mailadresser"
-      ],
-      "5 GB storage": [
-        "5 GB lagerplads"
       ],
       "A cancellation email will be sent to removed participants.": [
         "En aflysningsmail vil blive sendt til fjernede deltagere."
@@ -3180,8 +3186,8 @@
       "Update recurring event": [
         "Opdater tilbagevendende begivenhed"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
       ],
       "We'll notify you when the import is done.": [
         "Vi giver dig besked, når importen er færdig."
@@ -3427,9 +3433,6 @@
       ],
       "Display": [
         "Vis"
-      ],
-      "Display name": [
-        "Vist navn"
       ],
       "Do not ask again": [
         "Spørg ikke igen"
@@ -4024,31 +4027,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "En kalender er en registrering af dit liv. Hold dit liv sikkert og privat med ${ appName }."
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
       ],
-      "Import events": [
-        "Importer begivenheder"
-      ],
-      "Meet your new encrypted calendar": [
-        "Mød din nye krypterede kalender"
+      "Where you can take control of your time and your data.": [
+        "Hvor du kan tage kontrol over din tid og dine data."
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        "Næste"
       ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Vælg et visningsnavn"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
       "Discover all Proton services": [
         "Udforsk alle Proton-tjenester"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Vores mission er at opbygge et internet, hvor du har kontrol over dine data og dit privatliv. Vi har for nylig opdateret Proton - velkommen til det sikre internet."
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -4056,14 +4055,8 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dette er, hvad folk vil se, når du sender dem en e-mail, invitere dem til en begivenhed, eller dele en fil med dem."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Brug app-vælgeren øverst til venstre for at få adgang til andre Proton-tjenester, herunder VPN, kalender og drev."
-      ],
-      "Welcome to Proton": [
-        "Velkommen til Proton"
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
@@ -4183,9 +4176,6 @@
       ],
       "Add title": [
         "Tilføj titel"
-      ],
-      "e.g. Julia Smith": [
-        "f.eks. Anne Jensen"
       ],
       "E.g., ": [
         "F.eks., "
@@ -4314,8 +4304,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Få op til 18 måneder med ${ appName } ${ planName } gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Inviter venner, og optjen belønninger!"
@@ -4505,8 +4495,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ måned"
+      "/month": [
+        "/måned"
       ]
     },
     "Table header": {

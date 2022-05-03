@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         ""
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Ddu s iɣewwaren"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Ffer iɣewwaren n PGP leqqayen"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ddu ɣer ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ddu ɣer ${ vpnName }"
-      ],
       "Proton applications": [
         "Isnasen n Proton"
       ]
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Faṛes tagnit"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Azmul n unermis ur yettwasenqed ara"
       ],
-      "Could not find address ${ email }.": [
-        "Ur nezmir ara ad d-naff tansa ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Tuccḍa di tukksa n uwgelhen: tukksa n uwgelhen n tedyanin-agi tecceḍ."
       ],
@@ -2532,6 +2524,20 @@
         "KAṬ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2781,6 +2787,9 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n unermis yettwaleqqem akken iwata."
@@ -2790,9 +2799,6 @@
         "(${ memberCount } n yiɛeggalen)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3180,7 +3186,7 @@
       "Update recurring event": [
         "Leqqem tadyant d-ittuɣalen"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3427,9 +3433,6 @@
       ],
       "Display": [
         "Sken"
-      ],
-      "Display name": [
-        "Isem ara d-yettwaskanen"
       ],
       "Do not ask again": [
         "Ur sutur ara tikelt-nniḍen"
@@ -4024,13 +4027,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -4038,17 +4043,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Fren isem ara d-yettwaseknen"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Swel tuddsa-k•m, qqen isem n taɣult-ik•im, rnu snulfu-d imiḍanen akken ad tḍemneḍ\ni yimttekkiyen n tuddsa-k•m dakken ttwemmsetnen."
       ],
       "Discover all Proton services": [
         "Issin imeẓluyen meṛṛa n Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Tuɣdaḍt-nneɣ d lebni n internet anda ara d asenqad n yisefka-k·m d tbaḍnit-ik·im. Melmi kan i nleqqem Proton - ansuf ɣer internet aɣellsan."
       ],
       "Select a theme": [
         "Fren asentel"
@@ -4056,14 +4055,8 @@
       "Set up your organization": [
         "Sbadu tuddsa-ik•im"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aya d ayen ara walin yimdanen mi ara asen-tazneḍ imayl, ad ten-tnecdeḍ ɣer tedyant neɣ ad tebḍuḍ afaylu yid-sen."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Seqdec afran n yisnasen i yellan deg ufella deg tama taẓelmaḍt akken ad tkecmeḍ ɣer yimeẓluyen n Proton, gar-asen VPN, awitay d Drive."
-      ],
-      "Welcome to Proton": [
-        "Ansuf ɣer Proton"
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
@@ -4183,9 +4176,6 @@
       ],
       "Add title": [
         "Rnu azwel"
-      ],
-      "e.g. Julia Smith": [
-        "md. Julia Smith"
       ],
       "E.g., ": [
         "D am., "
@@ -4314,7 +4304,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4505,8 +4495,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ ayyur"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

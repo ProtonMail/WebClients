@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
+      "Create a new contact group": [
+        "Yeni bir kişi grubu oluştur"
+      ],
       "Create folder": [
         "Klasör oluştur"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Kurulumu başlat"
       ],
-      "Start using ${ appName }": [
-        "${ appName } kullanmaya başlayın"
-      ],
       "Stay": [
         "Kal"
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } uygulamasına git"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } uygulamasına git"
-      ],
       "Proton applications": [
         "Proton uygulamaları"
       ]
@@ -1137,15 +1131,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Tekliften yararlanın"
+        "Tekliften yararlan"
       ],
       "Get the deal now": [
         "Tekliften şimdi yararlan"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1153,7 +1142,7 @@
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- %${ percentage }"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bayt"
+      ],
+      "Gigabytes": [
+        "Gigabayt"
+      ],
+      "Kilobytes": [
+        "Kilobayt"
+      ],
+      "Megabytes": [
+        "Megabayt"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arşiv"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } etiket seçildi",
         "${ selectedFoldersCount } etiket seçildi"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } depolama alanı"
+      ],
       "${ total } conversation": [
         "${ total } yazışma",
         "${ total } yazışma"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Alıcı yok)"
       ],
-      "/month.": [
-        "/ay."
-      ],
       "5 email addresses": [
         "5 e-posta adresi"
-      ],
-      "5 GB storage": [
-        "5 GB depolama alanı"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistemimiz bu iletiyi bir kimlik avı girişimi olarak işaretledi. Lütfen göründüğü gibi olup olmadığını kontrol edin."
       ],
+      "per month.": [
+        "aylık."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
       ],
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "İletmeye ya da yanıtlamaya çalıştığınız iletinin aslı hala gönderiliyor. Devam ederseniz asıl iletinin gönderilmesini geri alamazsınız."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Bu iletinin ilk göndericisi artık geçersiz. İletiniz varsayılan ${ defaultAddress.Email } adresinizden gönderilecek."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Bu iletinin ilk göndericisi artık geçersiz. İletiniz varsayılan ${ defaultEmail } adresinizden gönderilecek."
       ],
       "The sender has requested a read receipt.": [
         "Gönderici okundu bilgisi istedi."
@@ -4703,8 +4706,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Üçüncü taraf masaüstü uygulamaları ile ${ MAIL_APP_NAME } kullanmak için yükseltin."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "${ appName } ${ planName } fırsatlarını kaçırmamak için hesabınızı bugün yükseltin."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "${ planName } faydalarını kaybetmemek için bugün yükseltin."
       ],
       "Upload picture": [
         "Görsel yükle"
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "E-postanızı daha hızlı yönetmek için klavye kısayollarını kullanın."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Mobil aygıtınızı kullanarak, bu karekodu tarayın veya ${ link } adresine gidin."
       ],
       "Version ${ appVersion }": [
         "Sürüm ${ appVersion }"
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Sil"
       ],
-      "Display name": [
-        "Görüntülenecek ad"
-      ],
       "Do not ask again": [
         "Bir daha sorma"
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Etiketlerinizi yönetin"
       ],
+      "More": [
+        "Diğer"
+      ],
       "More about recovery": [
         "Kurtarma hakkında ayrıntılı bilgi"
       ],
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Görsel, uzak sunucunun kimlik sertifikası geçersiz olduğundan yüklenmedi."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Görsel kişisel gizliliğinizi korumak için yüklenmedi."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Web tarayıcınız uzak sunucunun kimliğini doğrulayamadı. Görsel, http iletişim kuralı ile sunuluyor olabilir."
       ]
     },
     "Message notification": {
@@ -6014,40 +6014,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } verilerinizi gelişmiş şifreleme ile korumaya devam ederken daha modern ve özelleştirilebilir oldu."
+      "Welcome to ${ appName }": [
+        "${ appName } hoş geldiniz"
       ],
-      "Available on iOS and Android.": [
-        "iOS ve Android ile kullanılabilir."
-      ],
-      "Get the ${ appName } mobile app": [
-        "${ appName } mobil uygulamasını alın"
-      ],
-      "Import your messages": [
-        "İletilerinizi içe aktarın"
-      ],
-      "Meet your encrypted mailbox": [
-        "Şifrelenmiş posta kutunuzla tanışın"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "Kişisel gizililik ve güvenliğin üretkenlik ile bir arada kolayca kullanıldığı yerdesiniz."
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Sonraki"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "İçe aktarma yardımcımız, tüm e-postalarınızı şifrelenmiş posta kutunuza hızlıca aktarır."
+      "Start using ${ appName }": [
+        "${ appName } kullanmaya başlayın"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Görüntülenecek adı yazın"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar oluşturun."
       ],
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misyonumuz, verilerinizin ve kişisel gizliliğinizin kontrolunuz altında olacağı bir internet oluşturmaktır. Proton yakın zamanda güncellendi, güvenli internete hoş geldiniz."
       ],
       "Select a theme": [
         "Bir tema seçin"
@@ -6055,14 +6042,8 @@
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "İnsanlara e-posta gönderdiğinizde, bir etkinliğe davet ettiğinizde ya da bir dosya paylaştığınızda bu bilgi görüntülenir."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "VPN, Calendar ve Drive gibi diğer Proton hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın."
-      ],
-      "Welcome to Proton": [
-        "Proton'a hoş geldiniz"
       ],
       "You can change this anytime in your settings.": [
         "Bunu istediğiniz zaman ayarlarınızdan değiştirebilirsiniz."
@@ -6139,9 +6120,6 @@
       ],
       "Confirm password": [
         "Parola onayı"
-      ],
-      "e.g. Julia Smith": [
-        "örneğin Ayşe Kaya"
       ],
       "E.g., ": [
         "Örneğin, "
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
+      ],
+      "No unread messages found": [
+        "Okunmamış bir ileti bulunamadı"
       ]
     },
     "Select files": {
@@ -6475,8 +6456,8 @@
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ appName } ${ planName } edinin"
+      "Get up to 18 months of ${ planName } for free": [
+        "18 aya kadar ücretsiz ${ planName } edinin"
       ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı davet edin ve ödül kazanın!"
@@ -6751,8 +6732,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ ay"
+      "/month": [
+        "/ay"
       ]
     },
     "Table header": {

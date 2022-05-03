@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         ""
       ],
@@ -206,6 +209,9 @@
       ],
       "Go to settings": [
         "Idi na postavke"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
@@ -566,12 +572,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton aplikacije"
       ]
@@ -645,11 +645,6 @@
       ],
       "Get the deal now": [
         "Ugrabite ponudu sada"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2003,9 +1998,6 @@
       "Contact signature not verified": [
         "Potpis kontakta nije potvrđen"
       ],
-      "Could not find address ${ email }.": [
-        "Ne mogu pronaći adresu ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Pogreška pri dešifriranju: Dešifriranje sadržaja ovog događaja nije uspjelo."
       ],
@@ -2551,6 +2543,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2824,6 +2830,9 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
         "${ updated } kontakta su uspješno ažurirana.",
@@ -2835,9 +2844,6 @@
         "(${ memberCount } članova)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3229,7 +3235,7 @@
       "Update recurring event": [
         "Ažuriraj ponavljajući događaj"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3476,9 +3482,6 @@
       ],
       "Display": [
         "Zaslon"
-      ],
-      "Display name": [
-        "Zaslonski naziv"
       ],
       "Do not ask again": [
         "Ne pitaj ponovno"
@@ -4099,13 +4102,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -4113,17 +4118,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Odaberite zaslonsko ime"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ],
       "Discover all Proton services": [
         "Otkrijte sve Proton usluge"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naša je misija izgraditi internet na kojem ćete kontrolirati svoje podatke i svoju privatnost. Nedavno smo ažurirali Proton - dobrodošli na sigurni internet."
       ],
       "Select a theme": [
         "Odaberi temu"
@@ -4131,14 +4130,8 @@
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Dobro došli u Proton"
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
@@ -4262,9 +4255,6 @@
       ],
       "Add title": [
         "Dodaj naslov"
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
       ],
       "E.g., ": [
         "Npr. "
@@ -4395,7 +4385,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4588,8 +4578,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ mjesečno"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

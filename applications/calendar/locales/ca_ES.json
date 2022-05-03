@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         "Crear calendari"
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Anar a la configuració"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Amagar configuració PGP avançada"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ves a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Anar a ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplicacions de Proton"
       ]
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Obteniu l’oferta ara"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Signatura del contacte no verificada"
       ],
-      "Could not find address ${ email }.": [
-        "No s'ha pogut trobar l'adreça de correu electrònic ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Error de desxifrat: el desxifrat del contingut d'encriptació d'aquest esdeveniment a fallat."
       ],
@@ -2532,6 +2524,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualitzada"
@@ -2781,6 +2787,9 @@
         "${ selectedFoldersCount } etiqueta seleccionada",
         "${ selectedFoldersCount } etiquetes seleccionades"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat satisfactòriament.",
         "${ updated } contactes actualitzats satisfactòriament."
@@ -2790,9 +2799,6 @@
         "(${ memberCount } membres)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3180,7 +3186,7 @@
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3427,9 +3433,6 @@
       ],
       "Display": [
         "Mostrar"
-      ],
-      "Display name": [
-        "Mostrar el nom"
       ],
       "Do not ask again": [
         "No m'ho torneu a preguntar"
@@ -4024,13 +4027,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -4038,17 +4043,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Trieu un nom de visualització"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
       ],
       "Discover all Proton services": [
         "Descobriu tots els serveis de Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "La nostra missió és construir una internet on tingueu el control de les vostres dades i la vostra privacitat. Hem actualitzat Proton recentment - benvinguts a una internet segura."
       ],
       "Select a theme": [
         "Seleccioneu un tema"
@@ -4056,14 +4055,8 @@
       "Set up your organization": [
         "Configureu la vostra organització"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Benvingut/da a Proton"
       ],
       "You can change this anytime in your settings.": [
         "Podeu canviar-ho en qualsevol moment a les preferències."
@@ -4183,9 +4176,6 @@
       ],
       "Add title": [
         "Afegir títol"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Julia Smith"
       ],
       "E.g., ": [
         "Ex., "
@@ -4314,7 +4304,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4505,8 +4495,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ mes"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

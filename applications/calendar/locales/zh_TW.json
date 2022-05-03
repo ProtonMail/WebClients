@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "複製電子郵件至剪貼簿"
       ],
+      "Create a new contact group": [
+        "建立新的聯絡人群組"
+      ],
       "Create calendar": [
         "建立行事曆"
       ],
@@ -202,6 +205,9 @@
       ],
       "Go to settings": [
         "前往設定"
+      ],
+      "Got it": [
+        "了解"
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
@@ -562,12 +568,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "前往 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "前往 ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton 應用程式"
       ]
@@ -641,11 +641,6 @@
       ],
       "Get the deal now": [
         "立即取得優惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1979,9 +1974,6 @@
       "Contact signature not verified": [
         "連絡人簽章未驗證"
       ],
-      "Could not find address ${ email }.": [
-        "找不到地址 ${ email } 。"
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失敗：此事件內容解密失敗。"
       ],
@@ -2513,6 +2505,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "位元組"
+      ],
+      "Gigabytes": [
+        "十億位元組"
+      ],
+      "Kilobytes": [
+        "千位元組"
+      ],
+      "Megabytes": [
+        "百萬位元組"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 已更新"
@@ -2738,6 +2744,9 @@
       "${ selectedFoldersCount } label selected": [
         "已選取 ${ selectedFoldersCount } 個標籤"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } 儲存空間"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 個聯絡人已成功更新。"
       ],
@@ -2746,9 +2755,6 @@
       ],
       "5 email addresses": [
         "5 個電子郵件地址"
-      ],
-      "5 GB storage": [
-        "5 GB 儲存空間"
       ],
       "A cancellation email will be sent to removed participants.": [
         "取消函將發送給已移除的參與者。"
@@ -3131,8 +3137,8 @@
       "Update recurring event": [
         "更新週期性事件"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "現在就升級，以免錯失 ${ appName } ${ planName } 福利。"
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "現在就升級，以免錯失 ${ planName } 福利。"
       ],
       "We'll notify you when the import is done.": [
         "匯入完成時，我們便會通知您。"
@@ -3378,9 +3384,6 @@
       ],
       "Display": [
         "顯示"
-      ],
-      "Display name": [
-        "顯示名稱"
       ],
       "Do not ask again": [
         "不要再詢問"
@@ -3949,31 +3952,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "行事曆是您活著的印記。使用 ${ appName } 保持您的生活保密與私密。"
+      "Welcome to ${ appName }": [
+        "歡迎使用 ${ appName }"
       ],
-      "Import events": [
-        "匯入事件"
-      ],
-      "Meet your new encrypted calendar": [
-        "迎接您全新的加密行事曆"
+      "Where you can take control of your time and your data.": [
+        "您可以在哪裡控制您的時間與資料。"
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        "下一個"
       ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "選擇一個顯示名稱"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 服務"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "我們的使命是建構一個網際網路，讓您置身其中掌控您的數據和您的隱私。我們最近已更新 Proton - 歡迎來到安全的網際網路。"
       ],
       "Select a theme": [
         "選擇佈景主題"
@@ -3981,14 +3980,8 @@
       "Set up your organization": [
         "設定您的組織"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "當您寄送電子郵件、發出事件邀請或共享檔案給其他人時，對方會看到您這個名稱。"
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "用左上方的應用程式選擇器存取其他 Proton 服務，包括 VPN、行事曆和 Drive。"
-      ],
-      "Welcome to Proton": [
-        "歡迎使用 Proton"
       ],
       "You can change this anytime in your settings.": [
         "您可以隨時在設定中變更。"
@@ -4104,9 +4097,6 @@
       ],
       "Add title": [
         "新增標題"
-      ],
-      "e.g. Julia Smith": [
-        "範例：衛梓祐"
       ],
       "E.g., ": [
         "範例："
@@ -4233,8 +4223,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "免費取得最多18個月的 ${ appName } ${ planName }"
+      "Get up to 18 months of ${ planName } for free": [
+        "免費取得最多18個月的 ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         "邀請朋友並賺取獎勵！"
@@ -4422,8 +4412,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ 月"
+      "/month": [
+        "/月"
       ]
     },
     "Table header": {

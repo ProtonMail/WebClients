@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Nɣel imayl ɣef afus"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         "Snulfu-d akaram"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Bdu tawila"
       ],
-      "Start using ${ appName }": [
-        "Bdu aseqdec n ${ appName }"
-      ],
       "Stay": [
         "Qqim"
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ddu ɣer ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ddu ɣer ${ vpnName }"
-      ],
       "Proton applications": [
         "Isnasen n Proton"
       ]
@@ -1141,11 +1135,6 @@
       ],
       "Get the deal now": [
         "Faṛes tagnit"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3346,6 +3335,20 @@
         "KAṬ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Tarcivt"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } n tebzimt yettwafernen",
         "${ selectedFoldersCount } n tebzimin yettwafernen"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ total } conversation": [
         "${ total } udiwenni",
         "${ total } n yidienniyen"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Ulac iɣerwaḍen)"
       ],
-      "/month.": [
-        "/aggur."
-      ],
       "5 email addresses": [
         "5 n tansiwin n yimayl"
-      ],
-      "5 GB storage": [
-        "5 GAṬ n weḥraz"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Tafyirt n tririt d yiwen gar yiberdan iɣellsanen n ummesten n unekcum ɣer umiḍan-ik·im. Tzemreḍ ad tt-tesqedceḍ akkenad tkecmeḍɣer umiḍan-ik·im, daɣen, ad d-terreḍ isefka-inek·inem iwgelhanen ma tettuḍ awal-ik·im uffir."
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Anagraw-nneɣ yecreḍ izen-agi am uneɛruḍ n ukellex. Ttxil-k m senqed belli izen-agi iṣeḥḥa."
       ],
+      "per month.": [
+        ""
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
       ],
@@ -4528,7 +4531,7 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Izen-a anaṣli i tettaεraḍeḍ ad tazneḍ/ad terreḍ fell-as ha-t-an deg ukala n tuzna. Ma yella tkemmleḍ, ur tettizmireḍ ara akk ad tesfesxeḍ tuzna n yizen anaṣli."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         ""
       ],
       "The sender has requested a read receipt.": [
@@ -4703,7 +4706,7 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Seqdec inegzumen n unasiw akken ad tesferkeḍ Imaylen-ik·im s tɣawla."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "S yibenk-ik•im aziraz, smiḍen tangalt-a QR-Code neɣ rzu ɣer ${ link }."
       ],
       "Version ${ appVersion }": [
         "Lqem ${ appVersion }"
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Kkes"
       ],
-      "Display name": [
-        "Isem ittwaseknen"
-      ],
       "Do not ask again": [
         "Ur sutur ara tikelt-nniḍen"
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Sefrek tibzimin-ik·im"
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         ""
       ],
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        ""
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Tugna ur d-tuli ara iwakken ad tettwaḥrez tbaḍnit-ik•ik."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        ""
       ]
     },
     "Message notification": {
@@ -6014,40 +6014,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Available on iOS and Android.": [
+      "Where privacy and security meet productivity and ease of use.": [
         ""
-      ],
-      "Get the ${ appName } mobile app": [
-        ""
-      ],
-      "Import your messages": [
-        ""
-      ],
-      "Meet your encrypted mailbox": [
-        ""
-      ],
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
-        "Γer zdat"
+        ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+      "Start using ${ appName }": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Fren isem ara d-yettwaseknen"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Swel tuddsa-k•m, qqen isem n taɣult-ik•im, rnu snulfu-d imiḍanen akken ad tḍemneḍ\ni yimttekkiyen n tuddsa-k•m dakken ttwemmsetnen."
       ],
       "Discover all Proton services": [
         "Issin imeẓluyen meṛṛa n Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Tuɣdaḍt-nneɣ d lebni n internet anda ara d asenqad n yisefka-k·m d tbaḍnit-ik·im. Melmi kan i nleqqem Proton - ansuf ɣer internet aɣellsan."
       ],
       "Select a theme": [
         "Fren asentel"
@@ -6055,14 +6042,8 @@
       "Set up your organization": [
         "Sbadu tuddsa-ik•im"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aya d ayen ara walin yimdanen mi ara asen-tazneḍ imayl, ad ten-tnecdeḍ ɣer tedyant neɣ ad tebḍuḍ afaylu yid-sen."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Seqdec afran n yisnasen i yellan deg ufella deg tama taẓelmaḍt akken ad tkecmeḍ ɣer yimeẓluyen n Proton, gar-asen VPN, awitay d Drive."
-      ],
-      "Welcome to Proton": [
-        "Ansuf ɣer Proton"
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
@@ -6139,9 +6120,6 @@
       ],
       "Confirm password": [
         "Sentem awal uffir"
-      ],
-      "e.g. Julia Smith": [
-        "md. Julia Smith"
       ],
       "E.g., ": [
         "D am., "
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         "Ulac igmaḍ yettwafen"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6475,7 +6456,7 @@
       "Discover all Proton services": [
         "Issin imeẓluyen meṛṛa n Proton"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -6751,8 +6732,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ ayyur"
+      "/month": [
+        ""
       ]
     },
     "Table header": {
