@@ -55,6 +55,7 @@ export const eoDefaultMailSettings = {
     FontFace: null,
     FontSize: null,
     PMSignatureReferralLink: 0,
+    SpamAction: null,
 } as MailSettings;
 
 export const eoDefaultAddress = {} as Address[];
