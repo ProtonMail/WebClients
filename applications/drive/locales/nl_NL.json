@@ -110,6 +110,9 @@
       "Close transfers": [
         "Overdrachten sluiten"
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         "Map samenvouwen"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Aanmaken"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create link": [
         "Link aanmaken"
@@ -216,6 +222,9 @@
       ],
       "Enable drive search": [
         "Drive doorzoeken inschakelen"
+      ],
+      "Expand": [
+        ""
       ],
       "Expand folder": [
         "Map uitklappen"
@@ -488,7 +497,7 @@
         "Versturen"
       ],
       "Submit report": [
-        ""
+        "Rapport indienen"
       ],
       "Switch account": [
         "Account wisselen"
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ga naar ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ga naar ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton-applicaties"
       ]
@@ -642,17 +645,12 @@
         "Pak nu deze deal"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -1869,7 +1867,7 @@
         "Primaire adressleutel is niet gedecodeerd."
       ],
       "Report failed to be sent": [
-        ""
+        "Rapport kon niet verzonden worden"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -2055,6 +2053,20 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
         "${ updated } contacten bijgewerkt."
@@ -2301,9 +2316,6 @@
       ],
       "5 email addresses": [
         "5 e-mailadressen"
-      ],
-      "5 GB storage": [
-        "5 GB opslag"
       ],
       "A number will be added to the filename": [
         "Een nummer wordt toegevoegd aan de bestandsnaam"
@@ -2350,7 +2362,7 @@
         "Omdat ${ appName } end-to-end versleuteld is, kunnen we geen toegang krijgen\nof uw bestanden voor u decoderen. Om uw schijf te ontgrendelen na een wachtwoord reset,\nmoet u een van de volgende dingen hebben:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
       "Canceled": [
         "Geannuleerd"
@@ -2451,7 +2463,7 @@
         "Downloaden"
       ],
       "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
+        "Item ${ esProgress } van ${ totalProgressToShow } aan het downloaden"
       ],
       "Drag and drop a file here or choose to upload.": [
         "Sleep een bestand hierheen of kies om te uploaden."
@@ -2472,14 +2484,14 @@
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "",
-        ""
+        "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
+        "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
       ],
       "Estimated time remaining: Less than a minute": [
-        ""
+        "Geschatte resterende tijd: minder dan een minuut"
       ],
       "Estimating time remaining...": [
-        ""
+        "Resterende tijd inschatten..."
       ],
       "Failed": [
         "Mislukt"
@@ -2741,7 +2753,7 @@
         "Vernieuwen van de pagina of ${ link } zal automatisch de meeste problemen oplossen."
       ],
       "Report has been sent": [
-        ""
+        "Rapport werd verzonden"
       ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
@@ -2810,7 +2822,7 @@
         "Deze browser ondersteunt geen voorbeeld PDF-documenten. Download het bestand."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -2886,10 +2898,10 @@
         "Niet-ondersteund bestand"
       ],
       "Updating drive search...": [
-        ""
+        "Drive doorzoeken updaten..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Uploaded": [
         "Geüpload"
@@ -2901,7 +2913,7 @@
         "Het uploaden van honderden bestanden in één keer kan een prestatieeffect hebben."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        ""
+        "Gebruik dit formulier om ons in te lichten over ongepaste, illegale of op een andere manier schadelijke bestanden. U staat op het punt om te melden:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
@@ -3127,7 +3139,7 @@
         "Categorie"
       ],
       "Child sexual abuse material": [
-        ""
+        "Kinderpornografisch materiaal"
       ],
       "City": [
         "Plaats"
@@ -3136,7 +3148,7 @@
         "Code is 6 cijfers zonder spaties"
       ],
       "Comment": [
-        ""
+        "Reactie"
       ],
       "Contacts": [
         "Contactpersonen"
@@ -3145,7 +3157,7 @@
         "Kopieer"
       ],
       "Copyright infringement": [
-        ""
+        "Copyrightschending"
       ],
       "Country": [
         "Land"
@@ -3163,9 +3175,6 @@
       "Deleted": [
         "Verwijderd"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
       "Do not ask again": [
         "Vraag niet opnieuw"
       ],
@@ -3173,7 +3182,7 @@
         "Toch downloaden"
       ],
       "Email": [
-        ""
+        "E-mailadres"
       ],
       "Email address": [
         "E-mailadres"
@@ -3230,7 +3239,7 @@
         "Wachtwoord verbergen"
       ],
       "I understand the risk": [
-        ""
+        "Ik begrijp het risico"
       ],
       "Image": [
         "Afbeelding"
@@ -3263,7 +3272,7 @@
         "Mailboxwachtwoord"
       ],
       "Malware": [
-        ""
+        "Malware"
       ],
       "Manage folders": [
         "Mappen beheren"
@@ -3293,7 +3302,7 @@
         "Versie van besturingssysteem"
       ],
       "Other": [
-        ""
+        "Overig"
       ],
       "Password": [
         "Wachtwoord"
@@ -3305,7 +3314,7 @@
         "Telefoonnummer"
       ],
       "Please provide full details to help us take appropriate action": [
-        ""
+        "Verstrek volledige details om ons te helpen de gepaste actie uit te voeren"
       ],
       "Post office box": [
         "Postbus"
@@ -3332,13 +3341,13 @@
         "Map vervangen"
       ],
       "Report Abuse": [
-        ""
+        "Meld misbruik"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
       ],
       "Select type of abuse": [
-        ""
+        "Selecteer soort misbruik"
       ],
       "Set expiration date": [
         "Vervaldatum instellen"
@@ -3356,10 +3365,10 @@
         "Sla map over"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Stolen data": [
-        ""
+        "Gestolen gegevens"
       ],
       "Street address": [
         "Straatnaam"
@@ -3531,6 +3540,16 @@
       ],
       "Label name": [
         "Labelnaam"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Vernieuwde Proton, uniforme beveiliging"
       ]
     },
     "Notification": {
@@ -3721,6 +3740,9 @@
       "Enable Beta Access": [
         "Bèta-toegang inschakelen"
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
       ],
@@ -3735,22 +3757,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } is momenteel alleen beschikbaar als je Bèta Toegang inschakelt."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Bescherm al uw bestanden met end-to-end versleuteling. Gebruik ${ appName } om uw bestanden veilig op te slaan en te delen."
+      "Your trusty online vault for vital documents and precious memories.": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Kies een weergavenaam"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ],
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Onze missie is om een internet te bouwen waar u controle hebt over uw gegevens en uw privacy. We hebben Proton onlangs een facelift gegeven - welkom op het veilige internet."
       ],
       "Select a theme": [
         "Kies een thema"
@@ -3758,14 +3774,8 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dit is wat mensen zien wanneer u hen een e-mail stuurt, uitnodigt voor een afspraak, of een bestand deelt."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gebruik het app-menu linksboven om toegang te krijgen tot andere Proton-diensten, waaronder VPN, Calendar en Drive."
-      ],
-      "Welcome to Proton": [
-        "Welkom bij Proton"
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
@@ -3775,11 +3785,11 @@
       "${ appName } is in Beta": [
         "${ appName } is in bèta"
       ],
-      "Meet your new secure file storage": [
-        "Maak kennis met de nieuwe beveiligde bestandsopslag"
-      ],
       "Upgrade to access ${ appName }": [
         "Upgrade om toegang te krijgen tot ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -3818,9 +3828,6 @@
       "A way to contact you": [
         "Een manier om contact met u op te nemen"
       ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
-      ],
       "E.g., ": [
         "Bijv., "
       ],
@@ -3828,7 +3835,7 @@
         "Voer een nieuwe naam in"
       ],
       "Enter your email address": [
-        ""
+        "Voer uw e-mailadres in"
       ],
       "Filter groups": [
         "Groepen filteren"
@@ -3937,8 +3944,8 @@
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Krijg tot 18 maanden ${ appName } ${ planName } gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
@@ -4008,8 +4015,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ maand"
+      "/month": [
+        ""
       ]
     },
     "Table header": {
@@ -4526,7 +4533,7 @@
         "Waarschuwing"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Waarschuwing: vermoedelijk valse website"
       ],
       "What's new": [
         "Wat is er nieuw"

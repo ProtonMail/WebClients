@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Copiar mensagem para a área de transferência"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         ""
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Ir para as definições"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Ocultar definições de PGP avançadas"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ir para ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ir para ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplicações Proton"
       ]
@@ -620,10 +620,10 @@
         "Inclui"
       ],
       "Standard price: ${ regularPrice }": [
-        "Preço padrão: ${ regularPrice }"
+        ""
       ],
       "This subscription will automatically renew after 2 years at the same rate until it is cancelled.": [
-        "Esta assinatura será renovada automaticamente após 2 anos com a mesma taxa, até que seja cancelada."
+        ""
       ]
     },
     "blackfriday Title": {
@@ -631,7 +631,7 @@
         ""
       ],
       "Most popular": [
-        "Mais populares"
+        "Mais popular"
       ],
       "Save more when combining Mail and VPN": [
         ""
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Obtenha a promoção já"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Assinatura do contacto não verificada"
       ],
-      "Could not find address ${ email }.": [
-        "Impossível encontrar o endereço ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erro de desencriptação: a desencriptação do conteúdo deste evento falhou."
       ],
@@ -2532,6 +2524,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2781,6 +2787,9 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado com sucesso.",
         "${ updated } contactos actualizados com sucesso."
@@ -2790,9 +2799,6 @@
         "(${ memberCount } membros)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3180,7 +3186,7 @@
       "Update recurring event": [
         "Actualizar evento recorrente"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3427,9 +3433,6 @@
       ],
       "Display": [
         "Mostrar"
-      ],
-      "Display name": [
-        "Nome a mostrar"
       ],
       "Do not ask again": [
         "Não perguntar novamente"
@@ -4024,13 +4027,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -4038,17 +4043,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Escolha um nome a mostrar"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure a sua organização, vincule o seu nome de domínio e crie contas para garantir que todos os membros da sua organização estão protegidos."
       ],
       "Discover all Proton services": [
         "Descubra todos os serviços Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "A nossa missão é construir uma Internet onde controla os seus dados e a sua privacidade. Actualizámos o Proton recentemente - boas vindas à Internet segura."
       ],
       "Select a theme": [
         "Seleccionar um tema"
@@ -4056,14 +4055,8 @@
       "Set up your organization": [
         "Configure a sua organização"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Isto é o que as pessoas verão quando lhes enviar uma mensagem, convidar para um evento ou partilhar um ficheiro."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Use o selector de aplicações no canto superior esquerdo para aceder a outros serviços Proton, incluindo VPN, Calendar e Drive."
-      ],
-      "Welcome to Proton": [
-        "Boas vindas ao Proton"
       ],
       "You can change this anytime in your settings.": [
         "Pode alterar isto a qualquer momento nas definições."
@@ -4183,9 +4176,6 @@
       ],
       "Add title": [
         "Adicionar título"
-      ],
-      "e.g. Julia Smith": [
-        "e.g. Júlia Silva"
       ],
       "E.g., ": [
         "E.g., "
@@ -4314,7 +4304,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4505,8 +4495,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/mês"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

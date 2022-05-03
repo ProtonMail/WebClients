@@ -110,6 +110,9 @@
       "Close transfers": [
         "Zamknij listę transferów"
       ],
+      "Collapse": [
+        "Zwiń"
+      ],
       "Collapse folder": [
         "Zwiń folder"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Utwórz"
+      ],
+      "Create a new contact group": [
+        "Utwórz nową grupę kontaktów"
       ],
       "Create link": [
         "Utwórz link"
@@ -220,6 +226,9 @@
       ],
       "Enable drive search": [
         "Włącz wyszukiwanie dysku"
+      ],
+      "Expand": [
+        "Rozwiń"
       ],
       "Expand folder": [
         "Rozwiń folder"
@@ -590,12 +599,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Przejdź do ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Przejdź do ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplikacje Proton"
       ]
@@ -646,17 +649,12 @@
         "Skorzystaj z oferty"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2075,6 +2073,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "Etykieta ${ Label.Name } została zaktualizowana"
@@ -2358,6 +2370,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } przestrzeni dyskowej"
+      ],
       "${ updated } contact updated successfully.": [
         "Kontakt został zaktualizowany.",
         "${ updated } kontakty zostały zaktualizowane.",
@@ -2375,9 +2390,6 @@
       ],
       "5 email addresses": [
         "5 adresów e-mail"
-      ],
-      "5 GB storage": [
-        "5 GB przestrzeni dyskowej"
       ],
       "A number will be added to the filename": [
         "Do nazwy pliku zostanie dodany numer"
@@ -2976,8 +2988,8 @@
       "Updating drive search...": [
         "Aktualizacja wyszukiwania dysku..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Ulepsz konto, aby uniknąć utraty planu ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Ulepsz konto, aby uniknąć utraty planu ${ planName }."
       ],
       "Uploaded": [
         "Przesłano"
@@ -3252,9 +3264,6 @@
       ],
       "Deleted": [
         "Usunięty"
-      ],
-      "Display name": [
-        "Nazwa wyświetlana"
       ],
       "Do not ask again": [
         "Nie pytaj ponownie"
@@ -3627,6 +3636,16 @@
         "Nazwa etykiety"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Zaktualizowany Proton, ujednolicona ochrona"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "Folder \"${ name }\" został utworzony"
@@ -3851,6 +3870,9 @@
       "Enable Beta Access": [
         "Włącz dostęp beta"
       ],
+      "Next": [
+        "Dalej"
+      ],
       "Start using ${ appName }": [
         "Zacznij korzystać z aplikacji ${ appName }"
       ],
@@ -3865,22 +3887,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "Dysk ${ appName } jest obecnie dostępny tylko po włączeniu dostępu beta."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Chroń wszystkie swoje pliki z szyfrowaniem end-to-end. Użyj aplikacji ${ appName }, aby bezpiecznie przechowywać i udostępniać pliki."
+      "Your trusty online vault for vital documents and precious memories.": [
+        "Twój niezawodny sejf dla ważnych dokumentów i cennych wspomnień."
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Wpisz nazwę wyświetlaną"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ustaw swoją organizację, połącz nazwę domeny i utwórz konta, aby zapewnić ochronę wszystkim użytkownikom organizacji."
       ],
       "Discover all Proton services": [
         "Poznaj wszystkie usługi Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naszą misją jest zbudowanie Internetu, w którym masz kontrolę nad swoimi danymi i prywatnością. Ostatnio zaktualizowaliśmy aplikację Proton. Witaj w bezpiecznym Internecie."
       ],
       "Select a theme": [
         "Wybierz motyw"
@@ -3888,14 +3904,8 @@
       "Set up your organization": [
         "Skonfiguruj swoją organizację"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Tę nazwę zobaczą odbiorcy Twoich wiadomości, zaproszeń do wydarzeń i udostępnionych plików."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do innych usług Proton, w tym VPN, kalendarza i dysku."
-      ],
-      "Welcome to Proton": [
-        "Witaj w Proton"
       ],
       "You can change this anytime in your settings.": [
         "Motyw możesz zmienić w ustawieniach."
@@ -3905,11 +3915,11 @@
       "${ appName } is in Beta": [
         "Aplikacja ${ appName } jest w wersji beta"
       ],
-      "Meet your new secure file storage": [
-        "Poznaj swój nowy, bezpieczny dysk internetowy"
-      ],
       "Upgrade to access ${ appName }": [
         "Ulepsz plan, aby uzyskać dostęp do aplikacji ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        "Witaj w ${ appName }"
       ]
     },
     "Option": {
@@ -3947,9 +3957,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Preferowana metoda kontaktu"
-      ],
-      "e.g. Julia Smith": [
-        "np. Julia Nowak"
       ],
       "E.g., ": [
         "Np. "
@@ -4071,8 +4078,8 @@
       "Encrypted search is here": [
         "Wyszukiwanie zawartości jest tutaj"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Uzyskaj do 18 miesięcy planu ${ appName } ${ planName } za darmo"
+      "Get up to 18 months of ${ planName } for free": [
+        "Uzyskaj do 18 miesięcy planu ${ planName } za darmo"
       ],
       "Invite friends and earn rewards!": [
         "Zaproś znajomych i zarabiaj nagrody!"
@@ -4146,7 +4153,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         "/ miesiąc"
       ]
     },

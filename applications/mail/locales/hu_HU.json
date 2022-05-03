@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         "Mappa létrehozása"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Beállítás megkezdése"
       ],
-      "Start using ${ appName }": [
-        "${ appName } használatának megkezdése"
-      ],
       "Stay": [
         ""
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } megnyitása"
-      ],
-      "Go to ${ vpnName }": [
-        "Menjen ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton alkalmazások"
       ]
@@ -1143,17 +1137,12 @@
         "Érdekel az ajánlat"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archívum"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } címke kiválasztva",
         "${ selectedFoldersCount } címke kiválasztva"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ total } conversation": [
         "${ total } beszélgetés",
         "${ total } beszélgetés"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Nincs címzett)"
       ],
-      "/month.": [
-        "/hó."
-      ],
       "5 email addresses": [
         "5 e-mail cím"
-      ],
-      "5 GB storage": [
-        "5 GB tárhely"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         ""
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
       ],
+      "per month.": [
+        ""
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Az eredeti levél amelyre válaszolna vagy továbbítaná, éppen kiküldés alatt áll. Ha folytatja, már nem lesz lehetősége a kiküldés alatt álló levél elküldésének megszakítására."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Az üzenet eredeti feladója már érvénytelen. Az üzenet a jelenlegi alapértelmezett címével kerül elküldésre: ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "A feladó olvasási visszaigazolást kért."
@@ -4703,8 +4706,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Váltson nagyobb csomagra, a ${ MAIL_APP_NAME } harmadik féltől származó, asztali levelezőprogramokkal való használatához."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyöket."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         ""
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "A mobil eszközével olvassa be a QR kódot vagy nyissa meg a címet: ${ link }."
       ],
       "Version ${ appVersion }": [
         ""
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Törlés"
       ],
-      "Display name": [
-        "Megjelenített név"
-      ],
       "Do not ask again": [
         "Ne kérdezze újra"
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Címkék kezelése"
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         ""
       ],
@@ -5821,10 +5821,10 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
+      "Image has not been loaded in order to protect your privacy.": [
         ""
       ],
-      "Image has not been loaded in order to protect your privacy.": [
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
         ""
       ]
     },
@@ -6014,40 +6014,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } most még modernebb és testre szabhatóbb, miközben továbbra is fejlett titkosítással védi az adatait."
+      "Welcome to ${ appName }": [
+        ""
       ],
-      "Available on iOS and Android.": [
-        "Android és iOS változatokban érhető el."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Töltse le a ${ appName } mobil alkalmazást"
-      ],
-      "Import your messages": [
-        "Importálja az üzeneteit"
-      ],
-      "Meet your encrypted mailbox": [
-        "Ismerje meg a titkosított e-mail fiókját"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
-        "Következő"
+        ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Az Import Assistant segítségével gyorsan áthozhatja a leveleit az új titkosított e-mail fiókjába."
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Válasszon egy megjelenített nevet"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
       ],
       "Discover all Proton services": [
         "Fedezze fel a Proton szolgáltatásokat"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -6055,14 +6042,8 @@
       "Set up your organization": [
         "Állítsa be a szervezet adatait"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ezt fogják látni a címzettek ha e-mailt küld, esemény meghívót küld vagy fájlokat oszt meg."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
-      ],
-      "Welcome to Proton": [
-        "Üdvözöljük a Protonnál"
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
@@ -6139,9 +6120,6 @@
       ],
       "Confirm password": [
         ""
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
       ],
       "E.g., ": [
         "Pl., "
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         "Nincs találat"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6475,8 +6456,8 @@
       "Discover all Proton services": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyit ebből: ${ appName } ${ planName } ingyen"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Hívja meg barátait és szerezzen nyereményeket!"
@@ -6751,8 +6732,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ hó"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         "创建日历"
       ],
@@ -202,6 +205,9 @@
       ],
       "Go to settings": [
         "前往设置"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
@@ -562,12 +568,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "前往 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "转至 ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton 应用"
       ]
@@ -629,7 +629,7 @@
         ""
       ],
       "Most popular": [
-        "最受欢迎"
+        "人气最高"
       ],
       "Save more when combining Mail and VPN": [
         ""
@@ -641,11 +641,6 @@
       ],
       "Get the deal now": [
         "立即享受优惠"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1979,9 +1974,6 @@
       "Contact signature not verified": [
         "未验证联系人签名"
       ],
-      "Could not find address ${ email }.": [
-        "找不到邮箱 ${ email }。"
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "解密失败：无法解密此日程的内容。"
       ],
@@ -2513,6 +2505,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } 标签已更改"
@@ -2738,6 +2744,9 @@
       "${ selectedFoldersCount } label selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 位联系人更新成功"
       ],
@@ -2745,9 +2754,6 @@
         "(${ memberCount } 位成员)"
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3131,7 +3137,7 @@
       "Update recurring event": [
         "更新循环周期性日程"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3378,9 +3384,6 @@
       ],
       "Display": [
         "显示"
-      ],
-      "Display name": [
-        "显示名称"
       ],
       "Do not ask again": [
         "不再询问"
@@ -3949,13 +3952,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -3963,17 +3968,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "选择显示名称"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 系列服务"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "我们的宗旨是建立一个由您来管控您自己的数据和隐私的网络。我们最近更新了 Proton ―― 畅享安全的互联网吧！"
       ],
       "Select a theme": [
         "选择主题"
@@ -3981,14 +3980,8 @@
       "Set up your organization": [
         "填写机构信息"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "这是当您向他们发送电子邮件、邀请他们参加活动或与他们共享文件时他们会看到的内容"
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "使用左上角的应用选择器访问其他 Proton 服务，包括 VPN, 日历和云盘"
-      ],
-      "Welcome to Proton": [
-        "欢迎使用 Proton"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改"
@@ -4104,9 +4097,6 @@
       ],
       "Add title": [
         "添加标题"
-      ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
       ],
       "E.g., ": [
         "例如： "
@@ -4233,7 +4223,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4422,8 +4412,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/月"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

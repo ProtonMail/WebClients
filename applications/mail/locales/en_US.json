@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         ""
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         ""
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         ""
       ],
-      "Start using ${ appName }": [
-        ""
-      ],
       "Stay": [
         ""
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        ""
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ],
       "Proton applications": [
         ""
       ]
@@ -1140,11 +1134,6 @@
         ""
       ],
       "Get the deal now": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
         ""
       ]
     },
@@ -3346,6 +3335,20 @@
         ""
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         ""
@@ -3763,6 +3766,9 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ total } conversation": [
         "",
         ""
@@ -3808,13 +3814,7 @@
       "(No Recipient)": [
         ""
       ],
-      "/month.": [
-        ""
-      ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         ""
       ],
+      "per month.": [
+        ""
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
       ],
@@ -4528,7 +4531,7 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         ""
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         ""
       ],
       "The sender has requested a read receipt.": [
@@ -4703,7 +4706,7 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -4719,9 +4722,6 @@
         ""
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        ""
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
         ""
       ],
       "Version ${ appVersion }": [
@@ -5233,9 +5233,6 @@
       "Delete": [
         ""
       ],
-      "Display name": [
-        ""
-      ],
       "Do not ask again": [
         ""
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         ""
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         ""
       ],
@@ -5821,10 +5821,10 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
+      "Image has not been loaded in order to protect your privacy.": [
         ""
       ],
-      "Image has not been loaded in order to protect your privacy.": [
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
         ""
       ]
     },
@@ -6014,39 +6014,26 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Available on iOS and Android.": [
+      "Where privacy and security meet productivity and ease of use.": [
         ""
-      ],
-      "Get the ${ appName } mobile app": [
-        ""
-      ],
-      "Import your messages": [
-        ""
-      ],
-      "Meet your encrypted mailbox": [
-        ""
-      ],
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+      "Start using ${ appName }": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        ""
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         ""
       ],
       "Discover all Proton services": [
-        ""
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         ""
       ],
       "Select a theme": [
@@ -6055,13 +6042,7 @@
       "Set up your organization": [
         ""
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
         ""
       ],
       "You can change this anytime in your settings.": [
@@ -6138,9 +6119,6 @@
         ""
       ],
       "Confirm password": [
-        ""
-      ],
-      "e.g. Julia Smith": [
         ""
       ],
       "E.g., ": [
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         ""
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6475,7 +6456,7 @@
       "Discover all Proton services": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -6751,7 +6732,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         ""
       ]
     },

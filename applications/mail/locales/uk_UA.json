@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
+      "Create a new contact group": [
+        "Створити нову групу контактів"
+      ],
       "Create folder": [
         "Створити теку"
       ],
@@ -818,9 +821,6 @@
       "Start setup": [
         "Почати налаштування"
       ],
-      "Start using ${ appName }": [
-        "Розпочніть використання ${ appName }"
-      ],
       "Stay": [
         "Залишитися"
       ],
@@ -1058,12 +1058,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Перейти до ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти до ${ vpnName }"
-      ],
       "Proton applications": [
         "Додатки Proton"
       ]
@@ -1125,7 +1119,7 @@
         ""
       ],
       "Includes": [
-        "Включає в себе"
+        "Включає"
       ],
       "Standard price: ${ regularPrice }": [
         ""
@@ -1150,12 +1144,7 @@
         "Скористатися пропозицією"
       ],
       "Get the deal now": [
-        "Скористатися пропозицією зараз"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Скористатися пропозицією"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3388,6 +3377,20 @@
         "МБ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Байтів"
+      ],
+      "Gigabytes": [
+        "Гігабайтів"
+      ],
+      "Kilobytes": [
+        "Кілобайтів"
+      ],
+      "Megabytes": [
+        "Мегабайтів"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Архів"
@@ -3857,6 +3860,9 @@
         "${ selectedFoldersCount } вибраних міток",
         "${ selectedFoldersCount } вибраних міток"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "${ total } conversation": [
         "${ total } розмова",
         "${ total } розмови",
@@ -3920,14 +3926,8 @@
       "(No Recipient)": [
         "(Немає отримувача)"
       ],
-      "/month.": [
-        "/місяць."
-      ],
       "5 email addresses": [
         "5 адрес е-пошти"
-      ],
-      "5 GB storage": [
-        "5 ГБ сховища"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза відновлення є одним із найнадійніших способів захисту вашого облікового запису. Ви можете використати її для доступу до свого облікового запису та відновлення зашифрованих даних у випадку втрати пароля."
@@ -4487,6 +4487,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Наша система позначила це повідомлення спробою шахрайства. Переконайтеся, що воно надійне."
       ],
+      "per month.": [
+        "на місяць."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
       ],
@@ -4670,8 +4673,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Оригінальне повідомлення, яке ви намагаєтеся переслати / відповісти, знаходиться в процесі надсилання. Якщо ви продовжите, ви не зможете скасувати надсилання оригінального повідомлення."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Початковий відправник цього повідомлення більше недійсний. Ваше повідомлення буде надіслано з типової адреси ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Початковий відправник цього повідомлення більше недійсний. Ваше повідомлення буде надіслано з типової адреси ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
         "Відправник запитує підтвердження прочитання."
@@ -4847,8 +4850,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Передплатіть тарифний план, щоб використовувати ${ MAIL_APP_NAME } зі сторонніми комп'ютерними клієнтами."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
       ],
       "Upload picture": [
         "Вивантажити зображення"
@@ -4864,9 +4867,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Користуйтесь комбінаціями клавіш для ефективнішої роботи з поштою."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Скануйте цей QR-код за допомогою свого мобільного пристрою, або відвідайте ${ link }."
       ],
       "Version ${ appVersion }": [
         "Версія ${ appVersion }"
@@ -5397,9 +5397,6 @@
       "Delete": [
         "Видалити"
       ],
-      "Display name": [
-        "Показуване ім'я"
-      ],
       "Do not ask again": [
         "Не питати знову"
       ],
@@ -5819,6 +5816,9 @@
       "Manage your labels": [
         "Керувати мітками"
       ],
+      "More": [
+        "Більше"
+      ],
       "More about recovery": [
         "Докладніше про відновлення"
       ],
@@ -5989,11 +5989,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Зображення не завантажилося, оскільки сертифікат ідентифікації віддаленого сервера недійсний."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "З метою захисту вашої приватності, зображення не було завантажено."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Ваш браузер не міг перевірити справжність віддаленого сервера. Зображення може бути розміщене за допомогою протоколу http."
       ]
     },
     "Message notification": {
@@ -6188,40 +6188,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } тепер сучасніший та гнучкіший з надійним захистом ваших даних за допомогою вдосконаленого шифрування."
+      "Welcome to ${ appName }": [
+        "Вітаємо у ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Доступно на iOS та Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Отримайте мобільний застосунок ${ appName }"
-      ],
-      "Import your messages": [
-        "Імпортуйте свої повідомлення"
-      ],
-      "Meet your encrypted mailbox": [
-        "Зустрічайте свою зашифровану поштову скриньку"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "Тут приватність і безпека поєднуються зі швидкодією роботи та простотою користування."
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Далі"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Наш помічник з імпорту швидко перемістить усі ваші листи до нової зашифрованої поштової скриньки."
+      "Start using ${ appName }": [
+        "Розпочніть користуватися ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Виберіть ім'я для показу"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
       ],
       "Discover all Proton services": [
         "Ознайомтеся з усіма службами Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Наша місія - створити Інтернет, в якому ви контролюєте свої дані та приватність. Ми нещодавно оновили Proton, тож ласкаво просимо до безпечного Інтернету."
       ],
       "Select a theme": [
         "Виберіть тему"
@@ -6229,14 +6216,8 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ось, що побачать люди, коли ви надішлете їм лист, запросите на подію, чи поділитесь доступом до файлу."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Користуйтеся вибором програм зліва вгорі для доступу до програм Proton, включаючи VPN, календар та Drive."
-      ],
-      "Welcome to Proton": [
-        "Вітаємо в Proton"
       ],
       "You can change this anytime in your settings.": [
         "Ви можете змінити це будь-коли в налаштуваннях."
@@ -6313,9 +6294,6 @@
       ],
       "Confirm password": [
         "Підтвердити пароль"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -6528,6 +6506,9 @@
       ],
       "No results found": [
         "Результатів не знайдено"
+      ],
+      "No unread messages found": [
+        "Непрочитаних повідомлень не знайдено"
       ]
     },
     "Select files": {
@@ -6665,8 +6646,8 @@
       "Discover all Proton services": [
         "Ознайомтеся з усіма службами Proton"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
+      "Get up to 18 months of ${ planName } for free": [
+        "Отримайте до 18 місяців ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
@@ -6987,8 +6968,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ місяць"
+      "/month": [
+        "/місяць"
       ]
     },
     "Table header": {

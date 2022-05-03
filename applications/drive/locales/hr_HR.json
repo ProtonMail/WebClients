@@ -110,6 +110,9 @@
       "Close transfers": [
         "Zatvori prijenose"
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         ""
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Stvori"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create link": [
         "Stvori poveznicu"
@@ -217,6 +223,9 @@
         "omogući obavijesti radne površine"
       ],
       "Enable drive search": [
+        ""
+      ],
+      "Expand": [
         ""
       ],
       "Expand folder": [
@@ -588,12 +597,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton aplikacije"
       ]
@@ -644,17 +647,12 @@
         "Ugrabite ponudu sada"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2066,6 +2064,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2323,6 +2335,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt je uspješno ažuriran.",
         "${ updated } kontakta su uspješno ažurirana.",
@@ -2337,9 +2352,6 @@
         ""
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A number will be added to the filename": [
@@ -2932,7 +2944,7 @@
       "Updating drive search...": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3207,9 +3219,6 @@
       ],
       "Deleted": [
         ""
-      ],
-      "Display name": [
-        "Zaslonski naziv"
       ],
       "Do not ask again": [
         "Ne pitaj ponovno"
@@ -3786,6 +3795,9 @@
       "Enable Beta Access": [
         ""
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         ""
       ],
@@ -3800,22 +3812,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         ""
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+      "Your trusty online vault for vital documents and precious memories.": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Odaberite zaslonsko ime"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ],
       "Discover all Proton services": [
         "Otkrijte sve Proton usluge"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naša je misija izgraditi internet na kojem ćete kontrolirati svoje podatke i svoju privatnost. Nedavno smo ažurirali Proton - dobrodošli na sigurni internet."
       ],
       "Select a theme": [
         "Odaberi temu"
@@ -3823,14 +3829,8 @@
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Dobro došli u Proton"
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
@@ -3840,10 +3840,10 @@
       "${ appName } is in Beta": [
         ""
       ],
-      "Meet your new secure file storage": [
+      "Upgrade to access ${ appName }": [
         ""
       ],
-      "Upgrade to access ${ appName }": [
+      "Welcome to ${ appName }": [
         ""
       ]
     },
@@ -3882,9 +3882,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Način kako da vas kontaktiramo"
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
       ],
       "E.g., ": [
         "Npr. "
@@ -4004,7 +4001,7 @@
       "Encrypted search is here": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4077,8 +4074,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ mjesečno"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

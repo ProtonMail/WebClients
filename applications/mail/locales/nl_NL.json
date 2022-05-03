@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
+      "Create a new contact group": [
+        "Nieuwe contactgroep maken"
+      ],
       "Create folder": [
         "Map aanmaken"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Installatie starten"
       ],
-      "Start using ${ appName }": [
-        "Begin met ${ appName }"
-      ],
       "Stay": [
         "Blijf"
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ga naar ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ga naar ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton-applicaties"
       ]
@@ -1143,17 +1137,12 @@
         "Pak nu deze deal"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archiveren"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } label geselecteerd",
         "${ selectedFoldersCount } labels geselecteerd"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
       "${ total } conversation": [
         "${ total } gesprek",
         "${ total } gesprekken"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Geen ontvanger)"
       ],
-      "/month.": [
-        "/maand."
-      ],
       "5 email addresses": [
         "5 e-mailadressen"
-      ],
-      "5 GB storage": [
-        "5 GB opslag"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw versleutelde gegevens te herstellen als u ooit uw wachtwoord vergeet."
@@ -3913,7 +3913,7 @@
         "Basisnavigatie en -acties blijven beschikbaar, ongeacht de sneltoetsen die actief zijn of niet in de instellingen."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
       "Body: ": [
         "Tekst: "
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Ons systeem heeft dit bericht gemarkeerd als phishing poging. Controleer of het legitiem is."
       ],
+      "per month.": [
+        "per maand."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
       ],
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Het oorspronkelijke bericht dat u probeert door te sturen/te reageren, is in het proces van verzonden worden. Als u doorgaat, kunt u het oorspronkelijke bericht niet meer ongedaan maken."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "De originele afzender van dit bericht is niet langer geldig. Uw bericht zal verstuurd worden vanaf uw standaardmailadres ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "De zender heeft om een leesbevestiging gevraagd."
@@ -4575,7 +4578,7 @@
         "Deze uitnodiging is opgeslagen in een uitgeschakelde agenda."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -4703,8 +4706,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Upgrade om ${ MAIL_APP_NAME } te gebruiken met desktop clients van derden."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gebruik sneltoetsen om uw e-mails sneller te beheren."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Met uw mobiele apparaat, scan deze QR-Code of bezoek ${ link }."
       ],
       "Version ${ appVersion }": [
         "Versie ${ appVersion }"
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Verwijderen"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
       "Do not ask again": [
         "Niet opnieuw vragen"
       ],
@@ -5288,7 +5285,7 @@
         "Wachtwoord verbergen"
       ],
       "I understand the risk": [
-        ""
+        "Ik begrijp het risico"
       ],
       "IF": [
         "ALS"
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Labels beheren"
       ],
+      "More": [
+        "Meer"
+      ],
       "More about recovery": [
         "Meer weten over herstel"
       ],
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Het beeld werd niet geladen omdat het identiteitscertificaat van de externe server ongeldig is."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Afbeelding is niet geladen om uw privacy te beschermen."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        ""
       ]
     },
     "Message notification": {
@@ -5994,6 +5994,16 @@
         "Labelnaam"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Vernieuwde Proton, uniforme beveiliging"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } aangemaakt"
@@ -6014,40 +6024,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } is nu moderner en aanpasbaarder terwijl uw gegevens nog steeds beschermd worden met geavanceerde versleuteling."
+      "Welcome to ${ appName }": [
+        "Welkom bij ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Beschikbaar op iOS en Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Download de ${ appName } mobiele app"
-      ],
-      "Import your messages": [
-        "Berichten importeren"
-      ],
-      "Meet your encrypted mailbox": [
-        "Ontmoet uw versleutelde mailbox"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
-        "Volgende"
+        ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Onze Import Assistant verplaatst snel al uw e-mails naar uw nieuwe versleutelde mailbox."
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Kies een weergavenaam"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ],
       "Discover all Proton services": [
         "Ontdek alle Proton services"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Onze missie is om een internet te bouwen waar u controle hebt over uw gegevens en uw privacy. We hebben onlangs Proton bijgewerkt - welkom op het veilige internet."
       ],
       "Select a theme": [
         "Selecteer een thema"
@@ -6055,14 +6052,8 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dit is wat mensen zien wanneer u hen een e-mail stuurt, hen uitnodigt voor een evenement, of een bestand met hen deelt."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gebruik de app-selector in de linkerbovenhoek om toegang te krijgen tot andere Proton diensten, waaronder VPN, Calendar en Drive."
-      ],
-      "Welcome to Proton": [
-        "Welkom bij Proton"
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
@@ -6139,9 +6130,6 @@
       ],
       "Confirm password": [
         "Bevestig wachtwoord"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
       ],
       "E.g., ": [
         "Bijv., "
@@ -6350,6 +6338,9 @@
       ],
       "No results found": [
         "Geen resultaten"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6475,8 +6466,8 @@
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Krijg tot 18 maanden ${ appName } ${ planName } gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
@@ -6751,8 +6742,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ maand"
+      "/month": [
+        "/maand"
       ]
     },
     "Table header": {
@@ -7296,7 +7287,7 @@
         "Waarschuwing"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Waarschuwing: vermoedelijk valse website"
       ],
       "Welcome": [
         "Welkom"

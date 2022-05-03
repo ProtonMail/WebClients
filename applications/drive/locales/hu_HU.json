@@ -110,6 +110,9 @@
       "Close transfers": [
         "Le- és feltöltések bezárása"
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         ""
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Létrehozás"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create link": [
         "Hivatkozás létrehozása"
@@ -216,6 +222,9 @@
       ],
       "Enable drive search": [
         "Felhőtárban Keresés Engedélyezése"
+      ],
+      "Expand": [
+        ""
       ],
       "Expand folder": [
         ""
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } megnyitása"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } megnyitása"
-      ],
       "Proton applications": [
         "Proton alkalmazások"
       ]
@@ -642,17 +645,12 @@
         "Érdekel az ajánlat"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2057,6 +2055,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         "${ speed }/mp"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
@@ -2301,9 +2316,6 @@
       ],
       "5 email addresses": [
         "5 e-mail cím"
-      ],
-      "5 GB storage": [
-        "5 GB tárhely"
       ],
       "A number will be added to the filename": [
         ""
@@ -2888,8 +2900,8 @@
       "Updating drive search...": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Frissítsen ma, hogy elkerülje az alábbi ${ appName } ${ planName } előnyök elvesztését."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Uploaded": [
         "Feltöltve"
@@ -3162,9 +3174,6 @@
       ],
       "Deleted": [
         ""
-      ],
-      "Display name": [
-        "Megjelenített név"
       ],
       "Do not ask again": [
         "Ne kérdezze újra"
@@ -3721,6 +3730,9 @@
       "Enable Beta Access": [
         "Béta hozzáférés engedélyezése"
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         "${ appName } használatának megkezdése"
       ],
@@ -3735,22 +3747,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "A ${ appName } jelenleg csak úgy érhető el, ha Béta hozzáférésre vált."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Védje meg a fájljait végpontok közti titkosítással. Fájljai biztonságos tárolásához és megosztásához használja a ${ appName } alkalmazást."
+      "Your trusty online vault for vital documents and precious memories.": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Válasszon egy megjelenített nevet"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Állítsa be a saját szervezete adatait, irányítsa át a domain nevét, hozza létre a fiókokat, hogy a szervezet minden tagja élhessen a védelemmel."
       ],
       "Discover all Proton services": [
         "Fedezze fel a Proton szolgáltatásokat"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Célunk egy olyan internet felépítése, ahol az adatai és a magánszférája a saját kezében van. A közelmúltban frissítettük a Protont - üdvözöljük a biztonságos interneten."
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -3758,14 +3764,8 @@
       "Set up your organization": [
         "Állítsa be szervezete adatait"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ezt fogják látni a címzettek, ha e-mailt küld, esemény meghívót küld, vagy fájlokat oszt meg."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Használja a bal felső sarokban található alkalmazás választót a Proton szolgáltatások eléréshez, mint például a VPN, Calendar vagy a Drive."
-      ],
-      "Welcome to Proton": [
-        "Üdvözöljük a Protonnál"
       ],
       "You can change this anytime in your settings.": [
         "Ezt a beállításoknál bármikor megváltoztathatja."
@@ -3775,11 +3775,11 @@
       "${ appName } is in Beta": [
         "A ${ appName } jelenleg béta verzió"
       ],
-      "Meet your new secure file storage": [
-        "Ismerje meg az új, biztonságos tárhelyét"
-      ],
       "Upgrade to access ${ appName }": [
         "Váltson nagyobb csomagra a ${ appName } használatához"
+      ],
+      "Welcome to ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -3817,9 +3817,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Kapcsolatfelvételi lehetőség"
-      ],
-      "e.g. Julia Smith": [
-        "pl. Kovács János"
       ],
       "E.g., ": [
         "Pl., "
@@ -3937,8 +3934,8 @@
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Szerezzen akár 18 hónapnyi ${ appName } ${ planName } elérést ingyen"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -4008,8 +4005,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ hó"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

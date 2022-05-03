@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         "Создать календарь"
       ],
@@ -208,6 +211,9 @@
       ],
       "Go to settings": [
         "Перейти в настройки"
+      ],
+      "Got it": [
+        ""
       ],
       "Hide advanced PGP settings": [
         "Скрыть расширенные настройки PGP"
@@ -568,12 +574,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Перейти к ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти к ${ vpnName }"
-      ],
       "Proton applications": [
         "Приложения Proton"
       ]
@@ -649,17 +649,12 @@
         "Получить скидку"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        "Применена скидка за спецпредложение ${ vpnAppName } Plus 2021 года"
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         "Скидки рассчитываются исходя из стандартной платы за 1 месяц в размере ${ standardMonthlyPricing }"
       ],
       "Save ${ percentage }%": [
-        "Экономия ${ percentage }%"
+        "– ${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         "Условия специального предложения"
@@ -672,7 +667,7 @@
     },
     "blackfriday: VPNspecialoffer Promo title, need to be short": {
       "Special offer": [
-        "Oсобые условия"
+        "Спецпредложение"
       ]
     },
     "blackfriday: VPNspecialoffer Title": {
@@ -2015,9 +2010,6 @@
       "Contact signature not verified": [
         "Подпись контакта не проверена"
       ],
-      "Could not find address ${ email }.": [
-        "Не могу найти адрес ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
       ],
@@ -2570,6 +2562,20 @@
         "МБ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } обновлён"
@@ -2867,6 +2873,9 @@
         "${ selectedFoldersCount } ярлыков выбрано",
         "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
         "${ updated } контакта успешно обновлено.",
@@ -2881,9 +2890,6 @@
       ],
       "5 email addresses": [
         "5 адресов электронной почты"
-      ],
-      "5 GB storage": [
-        "5 ГБ хранилища"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Сообщение об отмене будет отправлено удаленным участникам."
@@ -3278,8 +3284,8 @@
       "Update recurring event": [
         "Обновление повторяющегося события"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Уличшите сегодня, чтобы не потерять следующие преимущества ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "We'll notify you when the import is done.": [
         "Мы уведомим вас, когда импорт будет завершен."
@@ -3525,9 +3531,6 @@
       ],
       "Display": [
         "Отображение"
-      ],
-      "Display name": [
-        "Отображаемое имя"
       ],
       "Do not ask again": [
         "Больше не спрашивать"
@@ -4003,6 +4006,16 @@
         "Название ярлыка"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Proton: обновления и комплексная защита"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Группа контактов создана"
@@ -4174,31 +4187,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Календарь - это запись вашей жизни. Сохраните свою жизнь в безопасности и конфиденциальности с помощью ${ appName }."
+      "Welcome to ${ appName }": [
+        ""
       ],
-      "Import events": [
-        "Импортировать события"
-      ],
-      "Meet your new encrypted calendar": [
-        "Познакомьтесь с вашим новым зашифрованным календарем"
+      "Where you can take control of your time and your data.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        ""
       ],
       "Start using ${ appName }": [
-        "Начать использовать ${ appName }"
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Задайте отображаемое имя"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Настройте свою организацию, привяжите свое доменное имя и создайте учётные записи, чтобы обеспечить защиту всех членов организации."
       ],
       "Discover all Proton services": [
         "Откройте для себя все сервисы Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Мы стремимся создать интернет-пространство, в котором вы сами контролируете свои данные и конфиденциальность. Недавно мы обновили Proton. Добро пожаловать в безопасный интернет!"
       ],
       "Select a theme": [
         "Выберите тему"
@@ -4206,14 +4215,8 @@
       "Set up your organization": [
         "Настройка организации"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Вот что увидит адресат, когда получит ваше письмо, приглашение на событие или файл."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Для доступа к другим службам Proton, включая VPN, календарь и диск, используйте меню приложений в левом верхнем углу экрана."
-      ],
-      "Welcome to Proton": [
-        "Добро пожаловать в Proton"
       ],
       "You can change this anytime in your settings.": [
         "Вы можете изменить это в любой момент в настройках."
@@ -4341,9 +4344,6 @@
       ],
       "Add title": [
         "Добавить название"
-      ],
-      "e.g. Julia Smith": [
-        "например, Джулия Смит"
       ],
       "E.g., ": [
         "Например, "
@@ -4476,8 +4476,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Получите до 18 месяцев ${ appName } ${ planName } бесплатно"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
@@ -4671,8 +4671,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "в месяц"
+      "/month": [
+        ""
       ]
     },
     "Table header": {
