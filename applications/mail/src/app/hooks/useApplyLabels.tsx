@@ -1,18 +1,16 @@
 import { Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
-import { labelMessages, unlabelMessages, unsubscribeMessages } from '@proton/shared/lib/api/messages';
-import {
-    labelConversations,
-    unlabelConversations,
-    unsubscribeConversations,
-} from '@proton/shared/lib/api/conversations';
+import { useApi, useNotifications, useEventManager, useLabels, useMailSettings } from '@proton/components';
+import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
+import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import isTruthy from '@proton/utils/isTruthy';
+import { SpamAction } from '@proton/shared/lib/interfaces';
+import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 
 import { PAGE_SIZE } from '../constants';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
@@ -222,7 +220,9 @@ export const useApplyLabels = () => {
                             rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
                             try {
                                 const action = changes[LabelID] ? labelAction : unlabelAction;
-                                const { UndoToken } = await api(action({ LabelID, IDs: elementIDs }));
+                                const { UndoToken } = await api(
+                                    action({ LabelID, IDs: elementIDs, OneClickUnsubscribe: undefined })
+                                );
                                 return UndoToken.Token;
                             } catch (error: any) {
                                 rollbacks[LabelID]();
@@ -293,13 +293,17 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
     const optimisticApplyLabels = useOptimisticApplyLabels();
+    const [mailSettings] = useMailSettings();
     const dispatch = useDispatch();
     let canUndo = true; // Used to not display the Undo button if moving only scheduled messages/conversations to trash
 
     const { moveAll, modal: moveAllModal } = useMoveAll();
 
     const [moveScheduledModal, handleShowModal] = useModalTwo(MoveScheduledModal);
-    const [moveToSpamModal, handleShowSpamModal] = useModalTwo(MoveToSpamModal);
+    const [moveToSpamModal, handleShowSpamModal] = useModalTwo<
+        { isMessage: boolean; elements: Element[] },
+        { unsubscribe: boolean; remember: boolean }
+    >(MoveToSpamModal);
 
     /*
      * Opens a modal when finding scheduled messages that are moved to trash.
@@ -331,21 +335,18 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         }
     };
 
-    const searchForUnsubscribable = async (folderID: string, isMessage: boolean, elements: Element[]) => {
-        if (folderID === SPAM) {
-            const unsubscribe = await handleShowSpamModal({ isMessage, elements });
+    const askToUnsubscribe = async (folderID: string, isMessage: boolean, elements: Element[]) => {
+        if (folderID === SPAM && mailSettings?.SpamAction === null) {
+            const { unsubscribe, remember } = await handleShowSpamModal({ isMessage, elements });
 
-            if (unsubscribe) {
-                const elementIDs = elements.map((element) => element.ID);
-
-                // no await on these API calls since we don't have to wait to proceed
-                if (isMessage) {
-                    api(unsubscribeMessages(elementIDs));
-                } else {
-                    api(unsubscribeConversations(elementIDs));
-                }
+            if (remember) {
+                api(updateSpamAction(unsubscribe ? SpamAction.SpamAndUnsub : SpamAction.JustSpam)).then(call);
             }
+
+            return unsubscribe;
         }
+
+        return !!mailSettings?.SpamAction;
     };
 
     const moveToFolder = useCallback(
@@ -358,11 +359,11 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             const isMessage = testIsMessage(elements[0]);
 
-            await Promise.all([
+            const [, unsubscribe] = await Promise.all([
                 // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
                 searchForScheduled(folderID, isMessage, elements),
-                // Open a modal when moving unsubscribable messages/conversations to spam to propose to unsubscribe them
-                searchForUnsubscribable(folderID, isMessage, elements),
+                // Open a modal when moving items to spam to propose to unsubscribe them
+                askToUnsubscribe(folderID, isMessage, elements),
             ]);
 
             const action = isMessage ? labelMessages : labelConversations;
@@ -412,7 +413,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     stop();
                     dispatch(backendActionStarted());
                     rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
-                    const { UndoToken } = await api(action({ LabelID: folderID, IDs: elementIDs }));
+                    const { UndoToken } = await api(
+                        action({ LabelID: folderID, IDs: elementIDs, OneClickUnsubscribe: +unsubscribe })
+                    );
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
                 } catch (error: any) {
@@ -509,7 +512,13 @@ export const useStar = () => {
             stop();
             dispatch(backendActionStarted());
             rollback = optimisticApplyLabels(elements, { [MAILBOX_LABEL_IDS.STARRED]: value });
-            await api(action({ LabelID: MAILBOX_LABEL_IDS.STARRED, IDs: elements.map((element) => element.ID) }));
+            await api(
+                action({
+                    LabelID: MAILBOX_LABEL_IDS.STARRED,
+                    IDs: elements.map((element) => element.ID),
+                    OneClickUnsubscribe: undefined,
+                })
+            );
         } catch (error: any) {
             rollback();
             throw error;

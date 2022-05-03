@@ -105,21 +105,16 @@ export const deleteConversations = (IDs: string[], LabelID: string) => ({
 interface LabelConversationsProps {
     LabelID: string;
     IDs: string[];
+    OneClickUnsubscribe?: number;
 }
-export const labelConversations = ({ LabelID, IDs }: LabelConversationsProps) => ({
+export const labelConversations = ({ LabelID, IDs, OneClickUnsubscribe }: LabelConversationsProps) => ({
     method: 'put',
     url: 'mail/v4/conversations/label',
-    data: { LabelID, IDs },
+    data: { LabelID, IDs, OneClickUnsubscribe },
 });
 
 export const unlabelConversations = ({ LabelID, IDs }: LabelConversationsProps) => ({
     method: 'put',
     url: 'mail/v4/conversations/unlabel',
     data: { LabelID, IDs },
-});
-
-export const unsubscribeConversations = (IDs = []) => ({
-    method: 'post',
-    url: 'mail/v4/conversations/unsubscribe',
-    data: { IDs },
 });
