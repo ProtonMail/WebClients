@@ -110,6 +110,9 @@
       "Close transfers": [
         "Uzavření transferů"
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         "Sbalit složku"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Vytvořit"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create link": [
         "Vytvořit odkaz"
@@ -219,6 +225,9 @@
         "povolit oznámení na ploše"
       ],
       "Enable drive search": [
+        ""
+      ],
+      "Expand": [
         ""
       ],
       "Expand folder": [
@@ -590,12 +599,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton aplikace"
       ]
@@ -646,17 +649,12 @@
         "Objednat nyní"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2075,6 +2073,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bajty"
+      ],
+      "Gigabytes": [
+        "Gigabajty"
+      ],
+      "Kilobytes": [
+        "Kilobajty"
+      ],
+      "Megabytes": [
+        "Megabajty"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } byl aktualizován"
@@ -2358,6 +2370,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt byl úspěšně aktualizován.",
         "${ updated } kontakty byly úspěšně aktualizovány.",
@@ -2375,9 +2390,6 @@
       ],
       "5 email addresses": [
         "5 e-mailových adres"
-      ],
-      "5 GB storage": [
-        "5 GB úložiště"
       ],
       "A number will be added to the filename": [
         "K názvu souboru bude přidáno číslo"
@@ -2976,8 +2988,8 @@
       "Updating drive search...": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Uploaded": [
         "Nahrané"
@@ -3252,9 +3264,6 @@
       ],
       "Deleted": [
         "Odstraněno"
-      ],
-      "Display name": [
-        "Zobrazované jméno"
       ],
       "Do not ask again": [
         "Příště se neptat"
@@ -3851,6 +3860,9 @@
       "Enable Beta Access": [
         "Zapnout přístup do beta verze"
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
       ],
@@ -3865,22 +3877,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } je v současné době k dispozici pouze v případě, že povolíte přístup do betaverze."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Chraňte všechny své soubory pomocí šifrování end-to-end. Pomocí ${ appName } můžete bezpečně ukládat a sdílet své soubory."
+      "Your trusty online vault for vital documents and precious memories.": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Vyberte jméno, které chcete zobrazovat"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Proveďte konfiguraci své organizace, odkaz na doménové jméno, a vytvořte si účty tak, aby všichni členové Vaší organizace byli zajištěni a chráněni."
       ],
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naším posláním je vytvořit internet, kde budete mít kontrolu nad svými daty a soukromím. Nedávno jsme aktualizovali Proton - vítejte na bezpečném internetu."
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -3888,14 +3894,8 @@
       "Set up your organization": [
         "Nastavte svou organizaci"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Tohle uvidí lidé, když jim pošlete e-mail, pozvete je na událost nebo s nimi sdílíte soubor."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Pomocí voliče aplikací v levém horním rohu získáte přístup k dalším službám Protonu, včetně VPN, Kalendáře a Disku."
-      ],
-      "Welcome to Proton": [
-        "Vítejte v Protonu"
       ],
       "You can change this anytime in your settings.": [
         "Toto můžete později změnit v nastavení."
@@ -3905,11 +3905,11 @@
       "${ appName } is in Beta": [
         "${ appName } je ve verzi Beta"
       ],
-      "Meet your new secure file storage": [
-        "Seznamte se s novým zabezpečeným úložištěm souborů"
-      ],
       "Upgrade to access ${ appName }": [
         "Rozšířit pro přístup k ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -3947,9 +3947,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
-      ],
-      "e.g. Julia Smith": [
-        "například Julia Smith"
       ],
       "E.g., ": [
         "Například., "
@@ -4071,8 +4068,8 @@
       "Encrypted search is here": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Získejte ${ appName } ${ planName } až na 18 měsíců zdarma"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
@@ -4146,8 +4143,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ měsíc"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

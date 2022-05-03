@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
       ],
+      "Create a new contact group": [
+        "新規連絡先グループを作成"
+      ],
       "Create folder": [
         "フォルダーを作成"
       ],
@@ -809,9 +812,6 @@
       "Start setup": [
         "セットアップを開始"
       ],
-      "Start using ${ appName }": [
-        "${ appName } の使用を開始する"
-      ],
       "Stay": [
         "終了しない"
       ],
@@ -1043,12 +1043,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } へ移動"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } へ移動"
-      ],
       "Proton applications": [
         "Proton アプリケーション"
       ]
@@ -1132,15 +1126,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "割引価格で入手"
+        "割引を入手"
       ],
       "Get the deal now": [
         "今すぐ割引を入手"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1148,7 +1137,7 @@
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage }%割引"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -1479,10 +1468,10 @@
         ""
       ],
       "Event refreshing is not supported for the moment": [
-        ""
+        "イベントの再リフレッシュは現在サポートされていません"
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
+        "イベントの再スケジュールは現在サポートされていません"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
         ""
@@ -2741,7 +2730,7 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        ""
+        "${ error.message } (${ email }) この連絡先にほかのキーを追加するか、暗号化を無効にすることで問題は解決します。"
       ],
       "A group with this name already exists": [
         "この名前のグループは既に存在します"
@@ -3143,7 +3132,7 @@
         "カレンダーのタイムゾーンはサポートされていません"
       ],
       "Component with wrong format": [
-        ""
+        "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
         "独自のタイムゾーン"
@@ -3323,6 +3312,20 @@
       ],
       "MB": [
         "MB"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "バイト"
+      ],
+      "Gigabytes": [
+        "ギガバイト"
+      ],
+      "Kilobytes": [
+        "キロバイト"
+      ],
+      "Megabytes": [
+        "メガバイト"
       ]
     },
     "Filter Actions": {
@@ -3716,6 +3719,9 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } ストレージ"
+      ],
       "${ total } conversation": [
         "${ total } 件の会話"
       ],
@@ -3752,14 +3758,8 @@
       "(No Recipient)": [
         "(宛先なし)"
       ],
-      "/month.": [
-        "/月."
-      ],
       "5 email addresses": [
         "5 件のメールアドレス"
-      ],
-      "5 GB storage": [
-        "5 GB のストレージ"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "回復フレーズはアカウントへのアクセスを保護するための 1 つの手段です。これを使うことでアカウントにアクセスすることができ、パスワードを忘れた場合でも暗号化されたデータを復元することができます。"
@@ -4274,6 +4274,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "システムはこのメッセージを迷惑メールとしてフラグを立てました。これが正当なものであるか確認してください。"
       ],
+      "per month.": [
+        "毎月。"
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
       ],
@@ -4398,7 +4401,7 @@
         "セッションがタイムアウトしました"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "${ MAIL_APP_NAME } をこのブラウザーの規定メールアプリケーションに設定します。メールリンクをクリックしたとき、${ MAIL_APP_NAME } が自動的に開かれます。"
+        "${ MAIL_APP_NAME } をこのブラウザの既定のメールアプリに設定すると、メールのリンクをクリックした際に自動で ${ MAIL_APP_NAME } が開かれます。"
       ],
       "Set a recovery phrase": [
         "リカバリーフレーズを設定"
@@ -4457,7 +4460,7 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         ""
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         ""
       ],
       "The sender has requested a read receipt.": [
@@ -4503,7 +4506,7 @@
         "招待は無効化されたカレンダーに保存されました。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -4631,8 +4634,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "アップグレードしてサードパーティのデスクトップクライアントで ${ MAIL_APP_NAME } を使用します。"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "次の ${ appName } ${ planName } 特典を失わないために今すぐアップグレードしてください。"
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -4648,9 +4651,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "キーボードショートカットを使ってメールを素早く管理します。"
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "モバイル端末で利用するには、この QR コードを使うか、${ link } を参照します。"
       ],
       "Version ${ appVersion }": [
         "バージョン ${ appVersion }"
@@ -4840,7 +4840,7 @@
         "「鍵を信頼する」をクリックするとこの公開鍵をこの送信者に関連付け、このアドレスからのメールに対して暗号検証が自動的に行なわれます。"
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        ""
+        "「キーを信頼」をクリックすることにより、連絡先が作成され、この送信者の公開鍵に関連付けられます。このアドレスから送信されるメールは自動的に暗号の検証が行われます。"
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "次のフィンガープリントをもつプライマリーキーを信頼しますか?"
@@ -5151,9 +5151,6 @@
       "Delete": [
         "削除"
       ],
-      "Display name": [
-        "表示名"
-      ],
       "Do not ask again": [
         "今後表示しない"
       ],
@@ -5206,7 +5203,7 @@
         "パスワードを隠す"
       ],
       "I understand the risk": [
-        ""
+        "リスクを承知しました"
       ],
       "IF": [
         "もし"
@@ -5538,7 +5535,7 @@
         "下書き"
       ],
       "Enable an email address linked to one of your calendars.": [
-        ""
+        "カレンダーにリンクされたメールアドレスを有効にします"
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
         ""
@@ -5572,6 +5569,9 @@
       ],
       "Manage your labels": [
         "ラベルを管理"
+      ],
+      "More": [
+        "さらに"
       ],
       "More about recovery": [
         "回復について"
@@ -5737,11 +5737,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "リモートサーバーの証明書が無効なため画像は読み込まれませんでした。"
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "プライバシーを保護するために画像は読み込まれませんでした。"
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "ブラウザーはサーバーの識別子を検証することができませんでした。この画像は HTTP プロトコルを使用してホストしているようです。"
       ]
     },
     "Message notification": {
@@ -5927,40 +5927,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } はさらにモダンになり高度なデータ保護を備えながらもカスタマイズすることができます。"
+      "Welcome to ${ appName }": [
+        "${ appName } へようこそ"
       ],
-      "Available on iOS and Android.": [
-        "iOS または Android で利用可能です。"
-      ],
-      "Get the ${ appName } mobile app": [
-        "${ appName } のモバイルアプリを入手"
-      ],
-      "Import your messages": [
-        "メッセージをインポート"
-      ],
-      "Meet your encrypted mailbox": [
-        "あなたのための暗号化されたメールボックス"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "次へ"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Import Assistant は簡単にメールを新しい暗号化された受信箱に転送することができます。"
+      "Start using ${ appName }": [
+        "${ appName } の使用を開始する"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "表示名を選択"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
       "Discover all Proton services": [
         "全ての Proton サービスがここに"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "私たちの使命は、あなたが自分のデータとプライバシーを自分で管理できるインターネットを作ることです。今回、Proton はアップデートされました。安全なインターネットへようこそ。"
       ],
       "Select a theme": [
         "テーマを選択"
@@ -5968,14 +5955,8 @@
       "Set up your organization": [
         "組織のための設定"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "これはメールを送信するとき、イベントに招待するとき、ファイルをシェアするときに表示されるものです。"
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "左上のアプリセレクターを使用して VPN、Calendar、Drive などの Proton サービスにアクセスできます。"
-      ],
-      "Welcome to Proton": [
-        "Proton へようこそ"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -6052,9 +6033,6 @@
       ],
       "Confirm password": [
         "パスワードの確認"
-      ],
-      "e.g. Julia Smith": [
-        "例: Julia Smith"
       ],
       "E.g., ": [
         "例: "
@@ -6261,6 +6239,9 @@
       ],
       "No results found": [
         "該当する項目がありません"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6380,8 +6361,8 @@
       "Discover all Proton services": [
         "全ての Proton サービスがここに"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "${ appName } ${ planName } が最大 18 か月無料"
+      "Get up to 18 months of ${ planName } for free": [
+        "${ planName } が最大 18 か月無料"
       ],
       "Invite friends and earn rewards!": [
         "友だちを招待して報酬を手に入れよう!"
@@ -6633,7 +6614,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         "/月"
       ]
     },
@@ -7164,7 +7145,7 @@
         "警告"
       ],
       "Warning: suspected fake website": [
-        ""
+        "警告: 偽のウェブサイトの疑いがあります"
       ],
       "Welcome": [
         "ようこそ"

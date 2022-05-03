@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         "Vytvořit složku"
       ],
@@ -818,9 +821,6 @@
       "Start setup": [
         "Spustit nastavení"
       ],
-      "Start using ${ appName }": [
-        "Začněte užívat ${ appName }"
-      ],
       "Stay": [
         "Zůstat"
       ],
@@ -1058,12 +1058,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Přejít na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Přejít na ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton aplikace"
       ]
@@ -1153,17 +1147,12 @@
         "Objednat nyní"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3388,6 +3377,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bajty"
+      ],
+      "Gigabytes": [
+        "Gigabajty"
+      ],
+      "Kilobytes": [
+        "Kilobajty"
+      ],
+      "Megabytes": [
+        "Megabajty"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Archiv"
@@ -3857,6 +3860,9 @@
         "${ selectedFoldersCount } vybraných štítků",
         "${ selectedFoldersCount } vybraných štítků"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ total } conversation": [
         "${ total } konverzace",
         "${ total } konverzace",
@@ -3920,14 +3926,8 @@
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
-      "/month.": [
-        "/měsíc."
-      ],
       "5 email addresses": [
         "5 e-mailových adres"
-      ],
-      "5 GB storage": [
-        "5 GB úložiště"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Fráze pro obnovení účtu je jedním z nejbezpečnějších způsobů ochrany samotného účtu. Můžete ji použít pro přístup k účtu a obnovení zašifrovaných dat, pokud někdy zapomenete heslo."
@@ -4487,6 +4487,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Náš systém označil tuto zprávu jako pokus o phishing. Potvrďte prosím, že se jedná o legitimní zprávu."
       ],
+      "per month.": [
+        ""
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
       ],
@@ -4670,8 +4673,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Originál zprávy, který se snažíte přeposlat / odpovědět je v procesu zaslání. Jestlíže budete pokračovat, nebudete už více moci vrátit rozeslanou zprávu."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Původní odesílatel této zprávy již není platný. Vaše zpráva bude odeslána z Vaší výchozí adresy ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Původní odesílatel této zprávy již není platný. Vaše zpráva bude odeslána z Vaší výchozí adresy ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
         "Odesílatel požádal o potvrzení o přečtení."
@@ -4847,8 +4850,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Vylepšete tím, že ${ MAIL_APP_NAME } propojíte s třetí stranou plochy počítače."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -4864,9 +4867,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Použijte klávesové zkratky pro rychlejší správu Vašeho e-mailu."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Svým mobilním zařízením naskenujte QR kód nebo navštivte odkaz ${ link }."
       ],
       "Version ${ appVersion }": [
         "Verze ${ appVersion }"
@@ -5397,9 +5397,6 @@
       "Delete": [
         "Odstranit"
       ],
-      "Display name": [
-        "Zobrazované jméno"
-      ],
       "Do not ask again": [
         "Příště se neptat"
       ],
@@ -5819,6 +5816,9 @@
       "Manage your labels": [
         "Spravovat štítky"
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         "Více o obnově"
       ],
@@ -5989,11 +5989,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Obrázek nebyl načten, protože identifikační certifikát vzdáleného serveru je neplatný."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Kvůli ochraně Vašeho soukromí nebyl obrázek nahrán."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        ""
       ]
     },
     "Message notification": {
@@ -6188,40 +6188,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } je více moderní a přizpůsobitelné zatím co chrání Vaše data s pokročilým šifrováním."
+      "Welcome to ${ appName }": [
+        ""
       ],
-      "Available on iOS and Android.": [
-        "K dispozici pro iOS a Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Získat mobilní aplikaci ${ appName }"
-      ],
-      "Import your messages": [
-        "Importovat zprávy"
-      ],
-      "Meet your encrypted mailbox": [
-        "Poznej svou šifrovací poštovní schránku"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
-        "Další"
+        ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Import Assistant rychle přenese všechny zprávy do nové zašifrované poštovní schránky."
+      "Start using ${ appName }": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Vyberte jméno, které chcete zobrazovat"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Proveďte konfiguraci své organizace, odkaz na doménové jméno, a vytvořte si účty tak, aby všichni členové Vaší organizace byli zajištěni a chráněni."
       ],
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naše poslání je postavi internet kde Vy máte pod kontrolou svá data a své soukromí. My jsme nedávno aktualizovali Proton - vítejte na bezpečném internetu."
       ],
       "Select a theme": [
         "Vyberte motiv"
@@ -6229,14 +6216,8 @@
       "Set up your organization": [
         "Nastavení organizace"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Tohle uvidí lidé, když jim pošlete e-mail, pozvete je na událost nebo s nimi sdílíte soubor."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Použijte vybranou aplikaci vlevo nahoře pro přístup k dalším Proton službám, zahrnující VPN, Kalendář a Disk."
-      ],
-      "Welcome to Proton": [
-        "Vítejte v Proton"
       ],
       "You can change this anytime in your settings.": [
         "Toto můžete později změnit v nastavení."
@@ -6313,9 +6294,6 @@
       ],
       "Confirm password": [
         "Potvrdit heslo"
-      ],
-      "e.g. Julia Smith": [
-        "např. Julie Nováková"
       ],
       "E.g., ": [
         "Např., "
@@ -6528,6 +6506,9 @@
       ],
       "No results found": [
         "Nenalezen žádný výsledek"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6665,8 +6646,8 @@
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Získejte ${ appName } ${ planName } až na 18 měsíců zdarma"
+      "Get up to 18 months of ${ planName } for free": [
+        ""
       ],
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
@@ -6987,8 +6968,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ měsíc"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

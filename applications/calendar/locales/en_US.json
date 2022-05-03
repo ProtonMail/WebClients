@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         ""
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create calendar": [
         ""
       ],
@@ -203,6 +206,9 @@
         ""
       ],
       "Go to settings": [
+        ""
+      ],
+      "Got it": [
         ""
       ],
       "Hide advanced PGP settings": [
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        ""
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ],
       "Proton applications": [
         ""
       ]
@@ -642,11 +642,6 @@
         ""
       ],
       "Get the deal now": [
-        ""
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
         ""
       ]
     },
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         ""
       ],
-      "Could not find address ${ email }.": [
-        ""
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         ""
       ],
@@ -2532,6 +2524,20 @@
         ""
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2781,6 +2787,9 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "",
         ""
@@ -2790,9 +2799,6 @@
         ""
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -3180,7 +3186,7 @@
       "Update recurring event": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3426,9 +3432,6 @@
         ""
       ],
       "Display": [
-        ""
-      ],
-      "Display name": [
         ""
       ],
       "Do not ask again": [
@@ -4024,13 +4027,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -4038,16 +4043,10 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        ""
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         ""
       ],
       "Discover all Proton services": [
-        ""
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
         ""
       ],
       "Select a theme": [
@@ -4056,13 +4055,7 @@
       "Set up your organization": [
         ""
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
         ""
       ],
       "You can change this anytime in your settings.": [
@@ -4182,9 +4175,6 @@
         ""
       ],
       "Add title": [
-        ""
-      ],
-      "e.g. Julia Smith": [
         ""
       ],
       "E.g., ": [
@@ -4314,7 +4304,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4505,7 +4495,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         ""
       ]
     },

@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
       ],
+      "Create a new contact group": [
+        "Nieuwe contactgroep maken"
+      ],
       "Create calendar": [
         "Agenda aanmaken"
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Ga naar instellingen"
+      ],
+      "Got it": [
+        "Begrepen"
       ],
       "Hide advanced PGP settings": [
         "Verberg geavanceerde PGP-instellingen"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ga naar ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ga naar ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton-applicaties"
       ]
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Pak nu deze deal"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Handtekening van contact niet geverifieerd"
       ],
-      "Could not find address ${ email }.": [
-        "Kon adres ${ email } niet vinden."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Decoderingsfout: Inhoud van deze afspraak decoderen is mislukt."
       ],
@@ -2532,6 +2524,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } bijgewerkt"
@@ -2781,6 +2787,9 @@
         "${ selectedFoldersCount } label geselecteerd",
         "${ selectedFoldersCount } labels geselecteerd"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } opslagruimte"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contactpersoon bijgewerkt.",
         "${ updated } contactpersonen bijgewerkt."
@@ -2791,9 +2800,6 @@
       ],
       "5 email addresses": [
         "5 e-mailadressen"
-      ],
-      "5 GB storage": [
-        "5 GB opslag"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Een annuleringsmail wordt verzonden naar de verwijderde deelnemers."
@@ -2837,7 +2843,7 @@
         "Maximaal 100 deelnemers zijn toegestaan per uitnodiging"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Weet u uw wachtwoord niet? We kunnen u helpen de versleutelde gegevens van alle contactpersonen te wissen die versleuteld zijn met deze sleutel en in het proces kunt u de melding negeren."
@@ -3151,7 +3157,7 @@
         "Deze afspraak is bijgewerkt. De organisator zal niet op de hoogte worden gebracht dat u de uitnodiging weigert omdat u geen e-mails van het uitgenodigde adres kunt verzenden. Wilt u deze afspraak toch verwijderen?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Deze link leidt naar een website die mogelijk uw informatie, zoals wachtwoorden en kredietkaartgegevens, tracht te stelen."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Deze link kan een homografie-aanval zijn en kan niet geopend worden in Internet Explorer en Edge. Als u zeker bent dat de link legitiem is, gebruik dan een andere browser om het te bezoeken."
@@ -3180,8 +3186,8 @@
       "Update recurring event": [
         "Terugkerende afspraak updaten"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Upgrade vandaag om geen van volgende ${ appName } ${ planName } voordelen te verliezen."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "We'll notify you when the import is done.": [
         "We laten het u weten als de import klaar is."
@@ -3428,9 +3434,6 @@
       "Display": [
         "Tonen"
       ],
-      "Display name": [
-        "Weergavenaam"
-      ],
       "Do not ask again": [
         "Vraag niet opnieuw"
       ],
@@ -3477,7 +3480,7 @@
         "Hoe waarschijnlijk is het dat u ${ calendarAppName } aan een vriend of collega zult aanbevelen?"
       ],
       "I understand the risk": [
-        ""
+        "Ik begrijp het risico"
       ],
       "Import all messages": [
         "Alle berichten importeren"
@@ -3893,6 +3896,16 @@
         "Labelnaam"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Vernieuwde Proton, uniforme beveiliging"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Contactgroep aangemaakt"
@@ -4024,31 +4037,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Een agenda is een verslag van je leven. Houd uw leven veilig en privé met ${ appName }."
+      "Welcome to ${ appName }": [
+        "Welkom bij ${ appName }"
       ],
-      "Import events": [
-        "Afspraken importeren"
-      ],
-      "Meet your new encrypted calendar": [
-        "Ontmoet uw nieuwe versleutelde agenda"
+      "Where you can take control of your time and your data.": [
+        "Waar u controle neemt over uw tijd en uw gegevens."
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        "Volgende"
       ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Kies een weergavenaam"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureer uw organisatie, koppel uw domeinnaam, en maak accounts aan om ervoor te zorgen dat alle leden van uw organisatie beveiligd zijn."
       ],
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Onze missie is om een internet te bouwen waar u controle hebt over uw gegevens en uw privacy. We hebben Proton onlangs een facelift gegeven - welkom op het veilige internet."
       ],
       "Select a theme": [
         "Kies een thema"
@@ -4056,14 +4065,8 @@
       "Set up your organization": [
         "Stel uw organisatie in"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dit is wat mensen zien wanneer u hen een e-mail stuurt, uitnodigt voor een afspraak, of een bestand deelt."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gebruik het app-menu linksboven om toegang te krijgen tot andere Proton-diensten, waaronder VPN, Calendar en Drive."
-      ],
-      "Welcome to Proton": [
-        "Welkom bij Proton"
       ],
       "You can change this anytime in your settings.": [
         "U kunt dit op elk gewenst moment wijzigen in uw instellingen."
@@ -4183,9 +4186,6 @@
       ],
       "Add title": [
         "Titel toevoegen"
-      ],
-      "e.g. Julia Smith": [
-        "bijv. Julia Smith"
       ],
       "E.g., ": [
         "Bijv., "
@@ -4314,8 +4314,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Krijg tot 18 maanden ${ appName } ${ planName } gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
@@ -4505,8 +4505,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ maand"
+      "/month": [
+        "/maand"
       ]
     },
     "Table header": {
@@ -4938,7 +4938,7 @@
         "Waarschuwing"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Waarschuwing: vermoedelijk valse website"
       ],
       "What's new": [
         "Wat is er nieuw"

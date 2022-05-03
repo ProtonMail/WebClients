@@ -110,6 +110,9 @@
       "Close transfers": [
         "Mdel asiweḍ"
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         ""
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Asnulfu"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create link": [
         "Rnu aseɣwen"
@@ -215,6 +221,9 @@
         "rmed talɣutin n tnarit"
       ],
       "Enable drive search": [
+        ""
+      ],
+      "Expand": [
         ""
       ],
       "Expand folder": [
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ddu ɣer ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ddu ɣer ${ vpnName }"
-      ],
       "Proton applications": [
         "Isnasen n Proton"
       ]
@@ -640,11 +643,6 @@
       ],
       "Get the deal now": [
         "Faṛes tagnit"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2057,6 +2055,20 @@
         "KAṬ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } n unermis yettwaleqqem akken iwata.",
         "${ updated } n unermis yettwaleqqem akken iwata."
@@ -2301,9 +2316,6 @@
       ],
       "5 email addresses": [
         "5 n tansiwin n yimayl"
-      ],
-      "5 GB storage": [
-        "5 GAṬ n weḥraz"
       ],
       "A number will be added to the filename": [
         "Ad yernu umḍan ɣer yisem n ufaylu"
@@ -2888,7 +2900,7 @@
       "Updating drive search...": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Uploaded": [
@@ -3162,9 +3174,6 @@
       ],
       "Deleted": [
         ""
-      ],
-      "Display name": [
-        "Isem n uskan"
       ],
       "Do not ask again": [
         "Ur steqsay ara tikkelt-nniḍen"
@@ -3721,6 +3730,9 @@
       "Enable Beta Access": [
         ""
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         ""
       ],
@@ -3735,22 +3747,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         ""
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
+      "Your trusty online vault for vital documents and precious memories.": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Fren isem ara d-yettwaseknen"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Swel tuddsa-k•m, qqen isem n taɣult-ik•im, rnu snulfu-d imiḍanen akken ad tḍemneḍ\ni yimttekkiyen n tuddsa-k•m dakken ttwemmsetnen."
       ],
       "Discover all Proton services": [
         "Issin imeẓluyen meṛṛa n Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Tuɣdaḍt-nneɣ d lebni n internet anda ara d asenqad n yisefka-k·m d tbaḍnit-ik·im. Melmi kan i nleqqem Proton - ansuf ɣer internet aɣellsan."
       ],
       "Select a theme": [
         "Fren asentel"
@@ -3758,14 +3764,8 @@
       "Set up your organization": [
         "Sbadu tuddsa-ik•im"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Aya d ayen ara walin yimdanen mi ara asen-tazneḍ imayl, ad ten-tnecdeḍ ɣer tedyant neɣ ad tebḍuḍ afaylu yid-sen."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Seqdec afran n yisnasen i yellan deg ufella deg tama taẓelmaḍt akken ad tkecmeḍ ɣer yimeẓluyen n Proton, gar-asen VPN, awitay d Drive."
-      ],
-      "Welcome to Proton": [
-        "Ansuf ɣer Proton"
       ],
       "You can change this anytime in your settings.": [
         "Tzemreḍ ad tbeddeleḍ aya melmi tebɣiḍ deg yiɣewwaren."
@@ -3775,10 +3775,10 @@
       "${ appName } is in Beta": [
         ""
       ],
-      "Meet your new secure file storage": [
+      "Upgrade to access ${ appName }": [
         ""
       ],
-      "Upgrade to access ${ appName }": [
+      "Welcome to ${ appName }": [
         ""
       ]
     },
@@ -3817,9 +3817,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Ttawil akken ad ken-nermes"
-      ],
-      "e.g. Julia Smith": [
-        "md. Julia Smith"
       ],
       "E.g., ": [
         "Md., "
@@ -3937,7 +3934,7 @@
       "Encrypted search is here": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4008,8 +4005,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ ayyur"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

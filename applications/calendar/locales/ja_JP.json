@@ -99,7 +99,7 @@
         "確認"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "リンク ${ linkToShow } を確認"
       ],
       "Contact group": [
         "連絡先グループ"
@@ -115,6 +115,9 @@
       ],
       "Copy email to clipboard": [
         "メールをクリップボードにコピー"
+      ],
+      "Create a new contact group": [
+        "新規連絡先グループを作成"
       ],
       "Create calendar": [
         "カレンダーを作成"
@@ -144,7 +147,7 @@
         "選択を全て解除"
       ],
       "Didn't receive the code?": [
-        ""
+        "コードを受け取っていませんか?"
       ],
       "Discard": [
         "破棄"
@@ -195,13 +198,16 @@
         "認証コードを取得"
       ],
       "Go to label": [
-        ""
+        "ラベルへ移動"
       ],
       "Go to panel ${ index }": [
         "パネル ${ index } へ移動"
       ],
       "Go to settings": [
         "設定を開く"
+      ],
+      "Got it": [
+        "了解"
       ],
       "Hide advanced PGP settings": [
         "拡張 PGP 設定を非表示"
@@ -225,7 +231,7 @@
         "インポート"
       ],
       "Import events": [
-        ""
+        "予定をインポート"
       ],
       "Import from .csv or vCard": [
         ".csv または vCard からインポート"
@@ -378,7 +384,7 @@
         "詳細を非表示"
       ],
       "Show more": [
-        ""
+        "さらに表示"
       ],
       "Show time zones": [
         "タイムゾーンを表示"
@@ -399,7 +405,7 @@
         "セットアップを開始"
       ],
       "Stay": [
-        ""
+        "終了しない"
       ],
       "Submit": [
         "送信"
@@ -562,12 +568,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "${ title } へ移動"
-      ],
-      "Go to ${ vpnName }": [
-        "${ vpnName } へ移動"
-      ],
       "Proton applications": [
         "Proton アプリケーション"
       ]
@@ -641,11 +641,6 @@
       ],
       "Get the deal now": [
         "今すぐ割引を入手"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1979,9 +1974,6 @@
       "Contact signature not verified": [
         "連絡先の署名が確認されていません"
       ],
-      "Could not find address ${ email }.": [
-        "${ email } というメールアドレスが見つかりませんでした。"
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "復号エラー：この予定の内容の復号に失敗しました。"
       ],
@@ -2513,6 +2505,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "バイト"
+      ],
+      "Gigabytes": [
+        "ギガバイト"
+      ],
+      "Kilobytes": [
+        "キロバイト"
+      ],
+      "Megabytes": [
+        "メガバイト"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         ""
@@ -2738,6 +2744,9 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } 件のラベルが選択済み"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } 連絡先が正常に更新されました。"
       ],
@@ -2746,9 +2755,6 @@
       ],
       "5 email addresses": [
         "5 件のメールアドレス"
-      ],
-      "5 GB storage": [
-        "5 GB のストレージ"
       ],
       "A cancellation email will be sent to removed participants.": [
         ""
@@ -3131,7 +3137,7 @@
       "Update recurring event": [
         "定期的な予定の更新"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "We'll notify you when the import is done.": [
@@ -3378,9 +3384,6 @@
       ],
       "Display": [
         "表示"
-      ],
-      "Display name": [
-        "表示名"
       ],
       "Do not ask again": [
         "今後表示しない"
@@ -3949,13 +3952,15 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Import events": [
+      "Where you can take control of your time and your data.": [
         ""
-      ],
-      "Meet your new encrypted calendar": [
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
         ""
       ],
       "Start using ${ appName }": [
@@ -3963,17 +3968,11 @@
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "表示名を選択"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
       "Discover all Proton services": [
         "全ての Proton サービスがここに"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "私たちの使命は、あなたが自分のデータとプライバシーを自分で管理できるインターネットを作ることです。今回、Proton はアップデートされました。安全なインターネットへようこそ。"
       ],
       "Select a theme": [
         "テーマを選択"
@@ -3981,14 +3980,8 @@
       "Set up your organization": [
         "組織のための設定"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "これはメールを送信するとき、イベントに招待するとき、ファイルをシェアするときに表示されるものです。"
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "左上のアプリセレクターを使用して VPN、Calendar、Drive などの Proton サービスにアクセスできます。"
-      ],
-      "Welcome to Proton": [
-        "Proton へようこそ"
       ],
       "You can change this anytime in your settings.": [
         "この設定はいつでも変更できます。"
@@ -4104,9 +4097,6 @@
       ],
       "Add title": [
         "タイトルを入力"
-      ],
-      "e.g. Julia Smith": [
-        "例: Julia Smith"
       ],
       "E.g., ": [
         "例: "
@@ -4233,7 +4223,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4422,8 +4412,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/月"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

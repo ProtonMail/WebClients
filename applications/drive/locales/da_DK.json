@@ -110,6 +110,9 @@
       "Close transfers": [
         "Luk overførsel"
       ],
+      "Collapse": [
+        ""
+      ],
       "Collapse folder": [
         "Luk mappe sammen"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Opret"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create link": [
         "Opret link"
@@ -216,6 +222,9 @@
       ],
       "Enable drive search": [
         "Aktiver søgning på drev"
+      ],
+      "Expand": [
+        ""
       ],
       "Expand folder": [
         "Udvid mappe"
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton-applikationer"
       ]
@@ -636,15 +639,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Gør brug af tilbuddet"
+        "Få tilbuddet"
       ],
       "Get the deal now": [
         "Gør brug af tilduddet nu"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2057,6 +2055,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } opdateret"
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
         "${ updated } kontakter blev opdateret."
@@ -2301,9 +2316,6 @@
       ],
       "5 email addresses": [
         "5 e-mailadresser"
-      ],
-      "5 GB storage": [
-        "5 GB lagerplads"
       ],
       "A number will be added to the filename": [
         "Et nummer vil blive tilføjet filnavnet"
@@ -2888,8 +2900,8 @@
       "Updating drive search...": [
         "Opdaterer drevsøgning..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        ""
       ],
       "Uploaded": [
         "Uploadet"
@@ -3162,9 +3174,6 @@
       ],
       "Deleted": [
         "Slettet"
-      ],
-      "Display name": [
-        "Vist navn"
       ],
       "Do not ask again": [
         "Spørg ikke igen"
@@ -3721,6 +3730,9 @@
       "Enable Beta Access": [
         "Aktiver Betaadgang"
       ],
+      "Next": [
+        ""
+      ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
       ],
@@ -3735,22 +3747,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } er i øjeblikket kun tilgængelig, hvis du aktiverer betaadgang."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Beskyt alle dine filer med ende-til-ende-kryptering. Brug ${ appName } til at gemme og dele dine filer sikkert."
+      "Your trusty online vault for vital documents and precious memories.": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Vælg et visningsnavn"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
       "Discover all Proton services": [
         "Udforsk alle Proton-tjenester"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Vores mission er at opbygge et internet, hvor du har kontrol over dine data og dit privatliv. Vi har for nylig opdateret Proton - velkommen til det sikre internet."
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -3758,14 +3764,8 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dette er, hvad folk vil se, når du sender dem en e-mail, invitere dem til en begivenhed, eller dele en fil med dem."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Brug app-vælgeren øverst til venstre for at få adgang til andre Proton-tjenester, herunder VPN, kalender og drev."
-      ],
-      "Welcome to Proton": [
-        "Velkommen til Proton"
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
@@ -3775,11 +3775,11 @@
       "${ appName } is in Beta": [
         "${ appName } er i Beta"
       ],
-      "Meet your new secure file storage": [
-        "Mød dit nye sikre fillager"
-      ],
       "Upgrade to access ${ appName }": [
         "Opgrader for at få adgang til ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        ""
       ]
     },
     "Option": {
@@ -3817,9 +3817,6 @@
     "Placeholder": {
       "A way to contact you": [
         "En måde at kontakte dig på"
-      ],
-      "e.g. Julia Smith": [
-        "f.eks. Anne Jensen"
       ],
       "E.g., ": [
         "F.eks., "
@@ -3937,7 +3934,7 @@
       "Encrypted search is here": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -4008,8 +4005,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ måned"
+      "/month": [
+        ""
       ]
     },
     "Table header": {
