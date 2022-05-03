@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
+      "Create a new contact group": [
+        "Opret en ny kontaktgruppe"
+      ],
       "Create folder": [
         "Opret mappe"
       ],
@@ -812,9 +815,6 @@
       "Start setup": [
         "Start opsætning"
       ],
-      "Start using ${ appName }": [
-        "Begynd at bruge ${ appName }"
-      ],
       "Stay": [
         "Bliv her"
       ],
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Gå til ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Gå til ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton-applikationer"
       ]
@@ -1137,15 +1131,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Gør brug af tilbuddet"
+        "Få tilbuddet"
       ],
       "Get the deal now": [
         "Gør brug af tilduddet nu"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arkiv"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } etikette valgt",
         "${ selectedFoldersCount } etiketter valgt"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } lagerplads"
+      ],
       "${ total } conversation": [
         "${ total } samtale",
         "${ total } samtaler"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Ingen modtager)"
       ],
-      "/month.": [
-        "/måned."
-      ],
       "5 email addresses": [
         "5 e-mailadresser"
-      ],
-      "5 GB storage": [
-        "5 GB lagerplads"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
@@ -4345,6 +4345,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Vores system markerede denne besked som et phishing-forsøg. Kontroller, at den er legitim."
       ],
+      "per month.": [
+        "pr. måned."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
       ],
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Den oprindelige meddelelse du forsøger at videresende / besvare til er i færd med at blive sendt. Hvis du fortsætter, vil du ikke være i stand til at fortryde afsendelse af den oprindelige besked længere."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Den originale afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "Afsenderen har anmodet om en læsekvittering."
@@ -4703,8 +4706,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Opgrader for at bruge ${ MAIL_APP_NAME } med tredjeparts desktopklienter."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Opgrader i dag for at undgå at miste følgende ${ appName } ${ planName } fordele."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
       ],
       "Upload picture": [
         "Upload billede"
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Brug tastaturgenveje for at håndtere dine e-mails hurtigere."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Skan QR-koden eller besøg ${ link } ved hjælp af din mobilenhed."
       ],
       "Version ${ appVersion }": [
         "Version ${ appVersion }"
@@ -5233,9 +5233,6 @@
       "Delete": [
         "Slet"
       ],
-      "Display name": [
-        "Visningsnavn"
-      ],
       "Do not ask again": [
         "Spørg ikke igen"
       ],
@@ -5655,6 +5652,9 @@
       "Manage your labels": [
         "Administrer dine etiketter"
       ],
+      "More": [
+        "Mere"
+      ],
       "More about recovery": [
         "Mere om gendannelse"
       ],
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Billede blev ikke indlæst da den eksterne servers identitetscertifikat er ugyldigt."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Billede er ikke blevet indlæst for at beskytte dit privatliv."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Din browser kunne ikke verificere fjernserverens identitet. Billedet er muligvis hostet ved hjælp af http-protokollen."
       ]
     },
     "Message notification": {
@@ -6014,40 +6014,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } er nu mere moderne og kan tilpasses, samtidig med at du stadig beskytter dine data med avanceret kryptering."
+      "Welcome to ${ appName }": [
+        "Velkommen til ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Tilgængelig på iOS og Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Hent mobilappen til ${ appName }"
-      ],
-      "Import your messages": [
-        "Importer dine beskeder"
-      ],
-      "Meet your encrypted mailbox": [
-        "Mød din krypterede postkasse"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "Hvor privatlivsbeskyttelse og sikkerhed kombineres med effektivitet og brugervenlighed."
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Næste"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Vores importassistent overfører hurtigt alle dine e-mails til din nye krypterede postkasse."
+      "Start using ${ appName }": [
+        "Begynd at bruge ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Vælg et visningsnavn"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurer din organisation, link dit domænenavn og opret konti for at sikre, at alle medlemmer af din organisation er beskyttet."
       ],
       "Discover all Proton services": [
         "Udforsk alle Proton-tjenester"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Vores mission er at opbygge et internet, hvor du har kontrol over dine data og dit privatliv. Vi har for nylig opdateret Proton - velkommen til det sikre internet."
       ],
       "Select a theme": [
         "Vælg et tema"
@@ -6055,14 +6042,8 @@
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Dette er, hvad folk vil se, når du sender dem en e-mail, invitere dem til en begivenhed, eller dele en fil med dem."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Brug app-vælgeren øverst til venstre for at få adgang til andre Proton-tjenester, herunder VPN, kalender og drev."
-      ],
-      "Welcome to Proton": [
-        "Velkommen til Proton"
       ],
       "You can change this anytime in your settings.": [
         "Du kan altid ændre dette i dine indstillingerne."
@@ -6139,9 +6120,6 @@
       ],
       "Confirm password": [
         "Bekræft adgangskode"
-      ],
-      "e.g. Julia Smith": [
-        "f.eks. Anne Jensen"
       ],
       "E.g., ": [
         "F.eks., "
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         "Ingen resultater fundet"
+      ],
+      "No unread messages found": [
+        "Ingen ulæste beskeder fundet"
       ]
     },
     "Select files": {
@@ -6475,8 +6456,8 @@
       "Discover all Proton services": [
         "Udforsk alle Proton-tjenester"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Få op til 18 måneder med ${ appName } ${ planName } gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Inviter venner, og optjen belønninger!"
@@ -6751,8 +6732,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ måned"
+      "/month": [
+        "/måned"
       ]
     },
     "Table header": {

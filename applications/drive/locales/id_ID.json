@@ -110,6 +110,9 @@
       "Close transfers": [
         "Tutup transfer"
       ],
+      "Collapse": [
+        "Ciutkan"
+      ],
       "Collapse folder": [
         "Ciutkan folder"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Buat"
+      ],
+      "Create a new contact group": [
+        "Buat grup kontak baru"
       ],
       "Create link": [
         "Buat tautan"
@@ -214,6 +220,9 @@
       ],
       "Enable drive search": [
         "Aktifkan pencarian drive"
+      ],
+      "Expand": [
+        "Lebarkan"
       ],
       "Expand folder": [
         "Lebarkan folder"
@@ -584,12 +593,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplikasi Proton"
       ]
@@ -640,17 +643,12 @@
         "Dapatkan penawaran sekarang"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2048,6 +2046,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Byte"
+      ],
+      "Gigabytes": [
+        "Gigabyte"
+      ],
+      "Kilobytes": [
+        "Kilobyte"
+      ],
+      "Megabytes": [
+        "Megabyte"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } diperbarui"
@@ -2253,6 +2265,9 @@
       "${ speed }/s": [
         "${ speed }/dtk"
       ],
+      "${ storageSize } storage": [
+        "Kuota penyimpanan ${ storageSize }"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontak berhasil diperbarui."
       ],
@@ -2264,9 +2279,6 @@
       ],
       "5 email addresses": [
         "5 alamat email"
-      ],
-      "5 GB storage": [
-        "Kuota penyimpanan 5 GB"
       ],
       "A number will be added to the filename": [
         "Nomor akan ditambahkan ke nama berkas"
@@ -2844,8 +2856,8 @@
       "Updating drive search...": [
         "Memperbarui pencarian drive..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
       ],
       "Uploaded": [
         "Diunggah"
@@ -2908,7 +2920,7 @@
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "Anda dapat mengaktifkan notifikasi untuk mendapat tanda ketika email baru masuk ke folder ini."
+        "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan setiap kali terdapat email baru yang masuk ke folder ini."
       ],
       "You cannot undo this action.": [
         "Anda tidak bisa membatalkannya."
@@ -3117,9 +3129,6 @@
       ],
       "Deleted": [
         "Dihapus"
-      ],
-      "Display name": [
-        "Nama tampilan"
       ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
@@ -3656,6 +3665,9 @@
       "Enable Beta Access": [
         "Aktifkan Akses Beta"
       ],
+      "Next": [
+        "Selanjutnya"
+      ],
       "Start using ${ appName }": [
         "Mulai gunakan ${ appName }"
       ],
@@ -3670,22 +3682,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } saat ini hanya tersedia apabila Anda mengaktifkan Akses Beta."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Lindungi seluruh berkas Anda dengan enkripsi end-to-end. Gunakan ${ appName } untuk menyimpan dan membagikan berkas Anda dengan aman."
+      "Your trusty online vault for vital documents and precious memories.": [
+        "Brankas online terpercaya untuk berbagai dokumen penting dan momen berharga Anda."
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Pilih nama tampilan"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
         "Telusuri seluruh layanan yang Proton tawarkan"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misi kami adalah membangun internet di mana kendali atas data dan privasi yang Anda miliki sepenuhnya berada di tangan Anda. Kami baru saja memutakhirkan Proton - selamat datang di internet yang aman."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -3693,14 +3699,8 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ini adalah apa yang orang akan lihat ketika Anda mengirim surel, mengundang ke acara, atau berbagi berkas."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gunakan menu aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
-      ],
-      "Welcome to Proton": [
-        "Selamat datang di Proton"
       ],
       "You can change this anytime in your settings.": [
         "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
@@ -3710,11 +3710,11 @@
       "${ appName } is in Beta": [
         "${ appName } sedang dalam versi Beta"
       ],
-      "Meet your new secure file storage": [
-        "Sambut media penyimpanan berkas aman Anda yang baru"
-      ],
       "Upgrade to access ${ appName }": [
         "Tingkatkan akun Anda untuk dapat mengakses ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        "Selamat datang di ${ appName }"
       ]
     },
     "Option": {
@@ -3752,9 +3752,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Cara menghubungi Anda"
-      ],
-      "e.g. Julia Smith": [
-        "cth. Dewi Sartika"
       ],
       "E.g., ": [
         "Mis., "
@@ -3870,8 +3867,8 @@
       "Encrypted search is here": [
         "Pencarian terenkripsi kini telah hadir"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara cuma-cuma"
+      "Get up to 18 months of ${ planName } for free": [
+        "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
       ],
       "Invite friends and earn rewards!": [
         "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
@@ -3939,8 +3936,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ bulan"
+      "/month": [
+        "/bulan"
       ]
     },
     "Table header": {

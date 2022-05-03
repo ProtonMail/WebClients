@@ -22,9 +22,6 @@
       "${ address } is available.": [
         ""
       ],
-      "${ boldSave } by switching to annual billing": [
-        ""
-      ],
       "${ BRAND_NAME } introduction": [
         ""
       ],
@@ -32,9 +29,6 @@
         ""
       ],
       "activate": [
-        ""
-      ],
-      "Activate": [
         ""
       ],
       "Activate ${ addressToCreate }": [
@@ -52,7 +46,7 @@
       "Add": [
         ""
       ],
-      "Add ${ BRAND_NAME } account": [
+      "Add ${ BRAND_NAME } Account": [
         ""
       ],
       "Add address": [
@@ -106,9 +100,6 @@
       "Alignment": [
         ""
       ],
-      "annual billing": [
-        ""
-      ],
       "Apply": [
         ""
       ],
@@ -128,9 +119,6 @@
         ""
       ],
       "Cancel import": [
-        ""
-      ],
-      "Change email": [
         ""
       ],
       "Change mailbox password": [
@@ -172,16 +160,13 @@
       "Color": [
         ""
       ],
-      "Compare all features": [
-        ""
-      ],
-      "Compare plans": [
-        ""
-      ],
       "Confirm": [
         ""
       ],
       "Confirm opening of link ${ linkToShow }": [
+        ""
+      ],
+      "contact": [
         ""
       ],
       "Contact support": [
@@ -214,7 +199,10 @@
       "Create": [
         ""
       ],
-      "Create a secure ${ MAIL_APP_NAME } address instead": [
+      "Create a secure ProtonMail address instead": [
+        ""
+      ],
+      "Create account": [
         ""
       ],
       "Create address": [
@@ -226,10 +214,16 @@
       "Create folder": [
         ""
       ],
+      "Create free account": [
+        ""
+      ],
       "Create label": [
         ""
       ],
       "Create link": [
+        ""
+      ],
+      "Current plan": [
         ""
       ],
       "Customize": [
@@ -238,7 +232,7 @@
       "Customize import": [
         ""
       ],
-      "Customize subscription": [
+      "Customize plan": [
         ""
       ],
       "Decrease": [
@@ -295,13 +289,13 @@
       "Downgrade account": [
         ""
       ],
-      "Downgrade to ${ BRAND_NAME } ${ downgradedPlanName }": [
-        ""
-      ],
       "Download": [
         ""
       ],
       "Download all configurations": [
+        ""
+      ],
+      "Download on another platform": [
         ""
       ],
       "Download recovery file": [
@@ -311,6 +305,9 @@
         ""
       ],
       "Edit": [
+        ""
+      ],
+      "Edit billing details": [
         ""
       ],
       "Edit email address": [
@@ -328,6 +325,9 @@
       "Edit sign-in details": [
         ""
       ],
+      "Edit subscription": [
+        ""
+      ],
       "enable desktop notifications": [
         ""
       ],
@@ -335,6 +335,9 @@
         ""
       ],
       "Encrypt and export": [
+        ""
+      ],
+      "Explore other ${ BRAND_NAME } plans": [
         ""
       ],
       "Export": [
@@ -367,16 +370,13 @@
       "Get ${ vpnPlus }": [
         ""
       ],
-      "Get started": [
-        ""
-      ],
       "Get verification code": [
         ""
       ],
       "Go to label": [
         ""
       ],
-      "Go to panel ${ index }": [
+      "Go to sign in": [
         ""
       ],
       "Hide": [
@@ -427,9 +427,6 @@
       "Keep": [
         ""
       ],
-      "Keep my ${ BRAND_NAME } ${ currentPlanName } account": [
-        ""
-      ],
       "label emails as": [
         ""
       ],
@@ -443,6 +440,9 @@
         ""
       ],
       "mark emails as": [
+        ""
+      ],
+      "Maybe later": [
         ""
       ],
       "More": [
@@ -496,6 +496,9 @@
       "Pay": [
         ""
       ],
+      "Pay ${ price }": [
+        ""
+      ],
       "Preview": [
         ""
       ],
@@ -503,9 +506,6 @@
         ""
       ],
       "Previous month": [
-        ""
-      ],
-      "Proceed to checkout": [
         ""
       ],
       "Quit": [
@@ -524,9 +524,6 @@
         ""
       ],
       "Refer a friend": [
-        ""
-      ],
-      "Refresh browser": [
         ""
       ],
       "Refresh status": [
@@ -601,9 +598,6 @@
       "Retry": [
         ""
       ],
-      "Return to login": [
-        ""
-      ],
       "Return to sign in": [
         ""
       ],
@@ -628,6 +622,12 @@
       "Save ICS file": [
         ""
       ],
+      "Save selected": [
+        ""
+      ],
+      "Select ${ planTitle }": [
+        ""
+      ],
       "Select calendar view": [
         ""
       ],
@@ -635,9 +635,6 @@
         ""
       ],
       "Select language for invitation emails": [
-        ""
-      ],
-      "Select plan": [
         ""
       ],
       "Select timezone": [
@@ -709,16 +706,10 @@
       "Size": [
         ""
       ],
-      "Skip": [
-        ""
-      ],
       "Sort": [
         ""
       ],
       "Start import": [
-        ""
-      ],
-      "Start setup": [
         ""
       ],
       "Stay": [
@@ -772,12 +763,6 @@
       "Upgrade": [
         ""
       ],
-      "Upgrade to Plus": [
-        ""
-      ],
-      "Upgrade to Professional": [
-        ""
-      ],
       "Upload picture": [
         ""
       ],
@@ -820,6 +805,9 @@
       "View invoice": [
         ""
       ],
+      "View plans details": [
+        ""
+      ],
       "Void all recovery files": [
         ""
       ],
@@ -856,22 +844,11 @@
       ]
     },
     "Addon": {
-      "+ ${ addresses } email address": [
+      "+ ${ _users } user": [
         "",
         ""
       ],
       "+ ${ domains } custom domain": [
-        "",
-        ""
-      ],
-      "+ ${ members } user": [
-        "",
-        ""
-      ],
-      "+ ${ storage } storage": [
-        ""
-      ],
-      "+ ${ vpn } connection": [
         "",
         ""
       ]
@@ -949,12 +926,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        ""
-      ],
-      "Go to ${ vpnName }": [
-        ""
-      ],
       "Proton applications": [
         ""
       ]
@@ -989,6 +960,11 @@
         ""
       ]
     },
+    "Badge": {
+      "5 users": [
+        ""
+      ]
+    },
     "Badge for domain": {
       "Disabled": [
         ""
@@ -1006,30 +982,33 @@
       ]
     },
     "Billing cycle": {
-      "2-year billing (Renewal on ${ formattedEndTime })": [
+      "Payable every 12 months": [
         ""
       ],
-      "Billing (Renewal on ${ formattedEndTime })": [
+      "Payable every 24 months": [
         ""
       ],
-      "Monthly billing (Renewal on ${ formattedEndTime })": [
+      "Payable every month": [
         ""
       ],
-      "Yearly billing (Renewal on ${ formattedEndTime })": [
+      "Renews automatically on ${ formattedEndTime }": [
         ""
       ]
     },
     "Billing cycle option": {
+      "1 month": [
+        ""
+      ],
+      "12 months": [
+        ""
+      ],
+      "24 months": [
+        ""
+      ],
       "Annually": [
         ""
       ],
-      "Annually SAVE 20%": [
-        ""
-      ],
       "Monthly": [
-        ""
-      ],
-      "Two years SAVE 33%": [
         ""
       ],
       "Two-year": [
@@ -1075,7 +1054,7 @@
       ]
     },
     "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
+      "${ vpnPlus } Special Offer 2021 discount has been applied": [
         ""
       ]
     },
@@ -1228,31 +1207,6 @@
         ""
       ]
     },
-    "Calendar feature": {
-      "Calendar import": [
-        ""
-      ],
-      "Invitations": [
-        ""
-      ],
-      "Multiple calendars": [
-        ""
-      ],
-      "Recurring events": [
-        ""
-      ],
-      "Share Calendar via link": [
-        ""
-      ]
-    },
-    "Calendar feature option": {
-      "20 / user": [
-        ""
-      ],
-      "20 / user *": [
-        ""
-      ]
-    },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
         ""
@@ -1329,6 +1283,16 @@
         ""
       ],
       "Week": [
+        ""
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "",
+        ""
+      ],
+      "Total for ${ n } month": [
+        "",
         ""
       ]
     },
@@ -2260,8 +2224,21 @@
         ""
       ]
     },
+    "Coupon": {
+      "Coupon applied: ${ CouponCode }": [
+        ""
+      ]
+    },
     "Credits": {
       "Unused credits": [
+        ""
+      ]
+    },
+    "Cycle": {
+      "/month": [
+        ""
+      ],
+      "/user per month": [
         ""
       ]
     },
@@ -2329,7 +2306,7 @@
       ]
     },
     "Description": {
-      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ appName } ${ plusPlanName }": [
+      "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
         ""
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
@@ -2360,11 +2337,6 @@
         ""
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
-        ""
-      ]
-    },
-    "Disney": {
-      "Disney+": [
         ""
       ]
     },
@@ -2406,17 +2378,6 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
-      ]
-    },
-    "Drive feature": {
-      "Access via Web": [
-        ""
-      ],
-      "Share files via link": [
-        ""
-      ],
-      "Upload / download files": [
         ""
       ]
     },
@@ -2557,9 +2518,6 @@
         ""
       ],
       "Condition incomplete": [
-        ""
-      ],
-      "Could not find address ${ email }.": [
         ""
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
@@ -2737,10 +2695,10 @@
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         ""
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to get multi-user support": [
+      "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         ""
       ],
-      "Please upgrade to a Professional plan with more than 1 user, or a Visionary account, to manage multiple users.": [
+      "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         ""
       ],
       "Primary address key is not decrypted": [
@@ -3241,6 +3199,20 @@
         ""
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         ""
@@ -3317,11 +3289,6 @@
     },
     "Font Size Default": {
       "Default": [
-        ""
-      ]
-    },
-    "Free price": {
-      "Free": [
         ""
       ]
     },
@@ -3877,9 +3844,6 @@
       "${ addressToCreate } is now active": [
         ""
       ],
-      "${ appName } ${ planName } credits earned": [
-        ""
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         ""
       ],
@@ -3904,22 +3868,13 @@
       "${ emailAddress } is invalid": [
         ""
       ],
+      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
+        ""
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         ""
       ],
-      "${ MAIL_APP_NAME } lets you create email addresses for other people. This is perfect for businesses, families, or groups.": [
-        ""
-      ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        ""
-      ],
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "${ mailPlus } is limited to one user and starts with 5 GB of storage.": [
-        ""
-      ],
-      "${ mailProfessional } starts with one user, and each user adds 5 GB and 5 email addresses to the organization’s pool.": [
         ""
       ],
       "${ n } address": [
@@ -3949,7 +3904,7 @@
         "",
         ""
       ],
-      "${ planName } plan": [
+      "${ planName } credits earned": [
         ""
       ],
       "${ providerFoldersNumLocalized } folder found": [
@@ -3961,15 +3916,6 @@
         ""
       ],
       "${ rewards } of ${ rewardsLimit } months": [
-        ""
-      ],
-      "${ save20 } on your subscription by switching to ${ annualBilling }": [
-        ""
-      ],
-      "${ saveExtra20 } on both Mail and VPN by adding a Mail subscription.": [
-        ""
-      ],
-      "${ saveExtra20 } on both VPN and Mail by adding a VPN subscription.": [
         ""
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
@@ -3992,17 +3938,13 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         ""
       ],
-      "${ vpnAppName } Free": [
-        ""
-      ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
-      ],
-      "${ vpnPlus } includes ${ maxVpn } VPN connection.": [
-        "",
         ""
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
@@ -4021,7 +3963,16 @@
       "(Mail + VPN)": [
         ""
       ],
-      "* Customizable features": [
+      "* No credit card required.": [
+        ""
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-months subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-months subscription. Other subscription options available at checkout.": [
         ""
       ],
       "+${ bonusSpace } bonus storage": [
@@ -4034,7 +3985,7 @@
       "1. Invite friends to Proton": [
         ""
       ],
-      "2. They try ${ appName } ${ planName }": [
+      "2. They try ${ planName }": [
         ""
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
@@ -4043,16 +3994,10 @@
       "3. You earn credits": [
         ""
       ],
-      "30 days money-back guarantee.": [
+      "30-day money-back guarantee.": [
         ""
       ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
-        ""
-      ],
-      "A free and uncensored Internet should be available to all.": [
         ""
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -4064,10 +4009,7 @@
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
         ""
       ],
-      "Access blocked content, like social media, news, Wikipedia, YouTube, and many others, no matter where you are.": [
-        ""
-      ],
-      "Access your streaming services, like ${ netflix }, ${ disney }, ${ primeVideo }, ${ many }, no matter where you are.": [
+      "A user is an account associated with a single username, mailbox, and person": [
         ""
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
@@ -4077,6 +4019,9 @@
         ""
       ],
       "account recovery method": [
+        ""
+      ],
+      "Account size": [
         ""
       ],
       "Account successfully updated": [
@@ -4091,13 +4036,13 @@
       "Add a recovery phone number": [
         ""
       ],
-      "Add additional addresses to your account like user2@protonmail.com": [
-        ""
-      ],
       "Add image URL": [
         ""
       ],
       "Add label": [
+        ""
+      ],
+      "Additional options": [
         ""
       ],
       "address": [
@@ -4107,7 +4052,7 @@
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
         ""
       ],
-      "Addresses": [
+      "Admin account allocation": [
         ""
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
@@ -4136,13 +4081,22 @@
       "All your changes will be lost.": [
         ""
       ],
+      "Allocated": [
+        ""
+      ],
       "Allow recovery by email": [
         ""
       ],
       "Allow recovery by phone": [
         ""
       ],
-      "Already have an account? ${ loginLink }": [
+      "Already allocated": [
+        ""
+      ],
+      "Already have an account?": [
+        ""
+      ],
+      "Already used": [
         ""
       ],
       "Amount below minimum (${ amount }).": [
@@ -4229,12 +4183,6 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         ""
       ],
-      "Billed as ${ billedPrice } every 2 years": [
-        ""
-      ],
-      "Billed as ${ billedPrice } per year": [
-        ""
-      ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         ""
       ],
@@ -4280,9 +4228,6 @@
       "Close this screen to exit.": [
         ""
       ],
-      "Connections": [
-        ""
-      ],
       "Continue anyway?": [
         ""
       ],
@@ -4302,6 +4247,9 @@
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
         ""
       ],
+      "Create a new account and share the email address and password with the user.": [
+        ""
+      ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         ""
       ],
@@ -4311,19 +4259,22 @@
       "Create in": [
         ""
       ],
-      "Creating your Proton account": [
+      "Creating your account": [
+        ""
+      ],
+      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
-        ""
-      ],
-      "Currently all available VPN connections are allocated to the administrator account. Please select the number of connections you want to reserve for additional users.": [
         ""
       ],
       "Custom": [
         ""
       ],
       "Custom daily": [
+        ""
+      ],
+      "Custom email domains": [
         ""
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
@@ -4369,9 +4320,6 @@
         "",
         ""
       ],
-      "Domains": [
-        ""
-      ],
       "Done": [
         ""
       ],
@@ -4393,16 +4341,19 @@
       "Drop the file here to upload": [
         ""
       ],
-      "Each additional connection can be assigned to users in your organization.": [
-        ""
-      ],
-      "Earned ${ rewards } of ${ rewardsLimit } ${ appName } ${ planName } months.": [
+      "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         ""
       ],
       "Edit label": [
         ""
       ],
       "Email address": [
+        ""
+      ],
+      "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
+        ""
+      ],
+      "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
         ""
       ],
       "Emailing preference saved": [
@@ -4438,13 +4389,16 @@
       "Enter the verification code that was sent to ${ destinationText }.": [
         ""
       ],
+      "Enter your ${ BRAND_NAME } Account details.": [
+        ""
+      ],
+      "Enter your ${ BRAND_NAME } Account email address or username.": [
+        ""
+      ],
       "Enter your login password to confirm your identity.": [
         ""
       ],
       "Enter your own password (as organization admin) and new password for this user ${ Name } (${ Email }).": [
-        ""
-      ],
-      "Enter your Proton account email address or username.": [
         ""
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
@@ -4471,22 +4425,10 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         ""
       ],
-      "For families and small teams; includes both Mail and VPN.": [
-        ""
-      ],
-      "For getting started with private and secure emailing.": [
-        ""
-      ],
-      "For individuals that need a fully-featured mailbox with advanced protection.": [
-        ""
-      ],
-      "For professionals that need secure business communications.": [
-        ""
-      ],
-      "For security reasons, please verify that you are not a robot.": [
-        ""
-      ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
+        ""
+      ],
+      "Free": [
         ""
       ],
       "Free up some space or add more storage space.": [
@@ -4498,13 +4440,7 @@
       "free up space by deleting older messages or other data": [
         ""
       ],
-      "Full-featured VPN with speed up to 10 Gbps.": [
-        ""
-      ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        ""
-      ],
-      "Get the latest version of ${ BRAND_NAME } and all relevant updates by refreshing your browser.": [
         ""
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
@@ -4540,7 +4476,7 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         ""
       ],
-      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address that will receive messages sent to your domain but to an invalid email address (e.g., typos).": [
+      "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         ""
       ],
       "If you have a gift code, enter it below to apply your discount.": [
@@ -4614,12 +4550,6 @@
         ""
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        ""
-      ],
-      "In case you lose your login details, we’ll send you recovery instructions via email.": [
-        ""
-      ],
-      "Included": [
         ""
       ],
       "Inherited from parent folder": [
@@ -4761,9 +4691,6 @@
       "New": [
         ""
       ],
-      "New to ${ BRAND_NAME }? ${ signupLink }": [
-        ""
-      ],
       "Next you'll need to log in to your Google account and allow us to access your data.": [
         ""
       ],
@@ -4812,25 +4739,19 @@
       "Not a valid URL": [
         ""
       ],
-      "Not customizable": [
-        ""
-      ],
       "Not set": [
         ""
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         ""
       ],
-      "Number of VPN connections which can be assigned to users. Each connected device consumes one VPN connection.": [
+      "Number of users": [
         ""
       ],
       "of": [
         ""
       ],
-      "Once you click \"Downgrade\", it may take a few minutes to downgrade your account to a Free plan. ": [
-        ""
-      ],
-      "One account for all Proton services": [
+      "One account for all ${ BRAND_NAME } services.": [
         ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
@@ -4852,9 +4773,6 @@
         ""
       ],
       "Other options": [
-        ""
-      ],
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
@@ -4936,12 +4854,6 @@
       "Please verify the card in the new tab which was opened.": [
         ""
       ],
-      "Please verify the payment in the new tab.": [
-        ""
-      ],
-      "Please wait...": [
-        ""
-      ],
       "Plus or Visionary subscription required": [
         ""
       ],
@@ -5014,12 +4926,6 @@
       "Right to Left": [
         ""
       ],
-      "Save 20%": [
-        ""
-      ],
-      "Save extra 20%": [
-        ""
-      ],
       "Save your password somewhere safe.": [
         ""
       ],
@@ -5032,13 +4938,16 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         ""
       ],
-      "See all plans": [
+      "Securing your account": [
         ""
       ],
       "Select a service provider to start": [
         ""
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -5080,13 +4989,19 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         ""
       ],
-      "Starter VPN service with P2P support.": [
+      "Storage allocated to other users in this organisation": [
         ""
       ],
-      "Storage GB": [
+      "Storage allocated to this user": [
+        ""
+      ],
+      "Storage for users": [
         ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
+      ],
+      "Storage used by this user": [
         ""
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
@@ -5096,12 +5011,6 @@
         ""
       ],
       "support team": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more connections.": [
-        ""
-      ],
-      "Switch to ${ professionalPlan } to add more users.": [
         ""
       ],
       "Temporarily unavailable. Please check back later.": [
@@ -5134,6 +5043,9 @@
       "The name will be visible to your users while they are logged in.": [
         ""
       ],
+      "The securest way to browse, stream, and be online.": [
+        ""
+      ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         ""
       ],
@@ -5150,9 +5062,6 @@
         ""
       ],
       "This can take a few seconds or a few minutes depending on your device": [
-        ""
-      ],
-      "This email address will only be used for recovery purposes.": [
         ""
       ],
       "This is a 12-word phrase that you were prompted to set.": [
@@ -5174,9 +5083,6 @@
         ""
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        ""
-      ],
-      "This phone number will only be used for recovery purposes.": [
         ""
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
@@ -5222,9 +5128,6 @@
         ""
       ],
       "to continue to ${ toAppName }": [
-        ""
-      ],
-      "To continue to use ${ appName } with premium features, choose your subscription and payment options.": [
         ""
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
@@ -5302,19 +5205,7 @@
       "Update recovery phrase": [
         ""
       ],
-      "Upgrade now": [
-        ""
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to get started.": [
-        ""
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] }, ${ PLAN_NAMES[PLANS.PROFESSIONAL] } or ${ PLAN_NAMES[PLANS.PLUS] } plan to enable automatic replies for when you are out of the office.": [
-        ""
-      ],
-      "Upgrade to a paid plan to unlock IMAP/SMTP support through ${ MAIL_APP_NAME } Bridge.": [
-        ""
-      ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -5326,19 +5217,10 @@
       "URL link": [
         ""
       ],
-      "Use automatic replies to inform contacts you are out of the office or otherwise unable to respond.": [
-        ""
-      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         ""
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
-      ],
-      "Users": [
         ""
       ],
       "Verification can take a few minutes.": [
@@ -5350,10 +5232,10 @@
       "Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.": [
         ""
       ],
-      "Version ${ appVersion }": [
+      "Verifying your payment": [
         ""
       ],
-      "VPN + ${ mailAppName } bundle for families and small businesses.": [
+      "Version ${ version }": [
         ""
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
@@ -5377,12 +5259,6 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         ""
       ],
-      "We will send a code to this phone number if you forget your password or get locked out of your account.": [
-        ""
-      ],
-      "We will send you a recovery link to this email address if you forget your password or get locked out of your account.": [
-        ""
-      ],
       "We'll notify you when the import is done.": [
         ""
       ],
@@ -5404,6 +5280,9 @@
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         ""
       ],
+      "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
+        ""
+      ],
       "What do you want to import from your Google account?": [
         ""
       ],
@@ -5413,7 +5292,7 @@
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         ""
       ],
-      "When they subscribe to a paid plan, 1 to 3 months of ${ appName } ${ planName } will be credited to your account.": [
+      "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         ""
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
@@ -5587,6 +5466,9 @@
       "Your email will only be used for this one-time verification.": [
         ""
       ],
+      "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
+        ""
+      ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         ""
       ],
@@ -5622,15 +5504,9 @@
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
       ]
     },
     "info": {
-      "(beta)": [
-        ""
-      ],
       "Additional duplicate keys detected. Please upload individually for more information.": [
         ""
       ],
@@ -5643,14 +5519,6 @@
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        ""
-      ]
-    },
-    "Info concerning plan features": {
-      "${ MAIL_APP_NAME } cannot be used for mass emailing or spamming. Legitimate emails are unlimited.": [
-        ""
-      ],
-      "Customizable features": [
         ""
       ]
     },
@@ -5692,11 +5560,6 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        ""
-      ]
-    },
-    "information": {
-      "Included": [
         ""
       ]
     },
@@ -6028,6 +5891,9 @@
       " and ${ l }": [
         ""
       ],
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        ""
+      ],
       "${ MAIL_APP_NAME } address": [
         ""
       ],
@@ -6038,19 +5904,11 @@
         "",
         ""
       ],
-      "${ n } VPN connection available": [
+      "${ n } month": [
         "",
         ""
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
-      ],
-      "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
-      ],
-      "${ UsedMembers } of ${ MaxMembers } user": [
         "",
         ""
       ],
@@ -6114,13 +5972,16 @@
       "Attach screenshot(s)": [
         ""
       ],
-      "Auto reply": [
-        ""
-      ],
       "Auto-detect primary time zone": [
         ""
       ],
       "Auto-load embedded images": [
+        ""
+      ],
+      "Auto-reply": [
+        ""
+      ],
+      "Billing cycle": [
         ""
       ],
       "Block email tracking": [
@@ -6246,9 +6107,6 @@
       "Customize invoices": [
         ""
       ],
-      "CVV code": [
-        ""
-      ],
       "Daily email notifications": [
         ""
       ],
@@ -6357,10 +6215,10 @@
       "Enter the password for key with fingerprint: ${ fingerprintCode }": [
         ""
       ],
-      "Expires": [
+      "Expiration date": [
         ""
       ],
-      "Expiry date": [
+      "Expires": [
         ""
       ],
       "extra storage": [
@@ -6561,7 +6419,10 @@
       "Payer": [
         ""
       ],
-      "Phone": [
+      "Payment details": [
+        ""
+      ],
+      "Payment method": [
         ""
       ],
       "Phone number": [
@@ -6630,7 +6491,7 @@
       "Reveal password": [
         ""
       ],
-      "Select a method": [
+      "Security code": [
         ""
       ],
       "Select your country": [
@@ -6675,7 +6536,7 @@
       "Sticky labels": [
         ""
       ],
-      "Subtotal": [
+      "Subscription options": [
         ""
       ],
       "System information": [
@@ -6709,9 +6570,6 @@
         ""
       ],
       "To: ${ PMEmailAddress }": [
-        ""
-      ],
-      "Total": [
         ""
       ],
       "Total (${ countdown })": [
@@ -6750,19 +6608,10 @@
       "Username": [
         ""
       ],
-      "Using ${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
-      ],
       "Verification code": [
         ""
       ],
       "VPN Accelerator": [
-        ""
-      ],
-      "VPN Connections": [
-        ""
-      ],
-      "VPN connections": [
         ""
       ],
       "Waiting for subscription": [
@@ -6819,7 +6668,7 @@
       "Your reward": [
         ""
       ],
-      "ZIP": [
+      "ZIP code": [
         ""
       ]
     },
@@ -6846,6 +6695,9 @@
         ""
       ],
       "Private": [
+        ""
+      ],
+      "VPN connections": [
         ""
       ]
     },
@@ -6968,9 +6820,6 @@
       "Common sign up issues": [
         ""
       ],
-      "Create an account": [
-        ""
-      ],
       "Encryption and keys": [
         ""
       ],
@@ -6993,9 +6842,6 @@
         ""
       ],
       "Pay invoice": [
-        ""
-      ],
-      "Previous version": [
         ""
       ],
       "Privacy policy": [
@@ -7066,87 +6912,6 @@
         ""
       ]
     },
-    "Mail feature": {
-      "0.5 GB": [
-        ""
-      ],
-      "20 GB": [
-        ""
-      ],
-      "Address verification": [
-        ""
-      ],
-      "Addresses": [
-        ""
-      ],
-      "Autoresponder": [
-        ""
-      ],
-      "Catch-All email": [
-        ""
-      ],
-      "Contact groups": [
-        ""
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Custom filters": [
-        ""
-      ],
-      "Encrypted contacts": [
-        ""
-      ],
-      "Folders / labels": [
-        ""
-      ],
-      "IMAP / SMTP": [
-        ""
-      ],
-      "Limited": [
-        ""
-      ],
-      "Messages per day": [
-        ""
-      ],
-      "Multi-user support": [
-        ""
-      ],
-      "Priority": [
-        ""
-      ],
-      "Storage": [
-        ""
-      ],
-      "Support": [
-        ""
-      ],
-      "Use @pm.me address": [
-        ""
-      ],
-      "Users": [
-        ""
-      ]
-    },
-    "Mail feature option": {
-      "5 GB *": [
-        ""
-      ],
-      "5 GB / user *": [
-        ""
-      ],
-      "Unlimited": [
-        ""
-      ],
-      "Unlimited **": [
-        ""
-      ]
-    },
-    "Mail feature option: 5 email addresses / user": {
-      "5 / user *": [
-        ""
-      ]
-    },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
@@ -7154,22 +6919,6 @@
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
         "",
-        ""
-      ]
-    },
-    "Mail upsell feature": {
-      "Create separate logins for each user": [
-        ""
-      ],
-      "Get Multi-user support": [
-        ""
-      ],
-      "Host emails for your organization": [
-        ""
-      ]
-    },
-    "Many Others": {
-      "and many others": [
         ""
       ]
     },
@@ -7196,13 +6945,7 @@
       "Are you sure you want to disable two-factor authentication?": [
         ""
       ],
-      "Set up a custom domain email address (e.g., you@yourcompany.com). It only takes a few minutes, and our wizard will guide you through the process.": [
-        ""
-      ],
-      "Upgrade to a ${ PLAN_NAMES[PLANS.VISIONARY] } or ${ PLAN_NAMES[PLANS.PROFESSIONAL] } plan to use a catch-all address and unlock premium features": [
-        ""
-      ],
-      "Upgrade to any paid plan to use custom domains and unlock premium features": [
+      "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         ""
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
@@ -7401,6 +7144,9 @@
       ]
     },
     "Navigation": {
+      "Back": [
+        ""
+      ],
       "Back to Calendar": [
         ""
       ],
@@ -7408,11 +7154,6 @@
         ""
       ],
       "Back to Mail": [
-        ""
-      ]
-    },
-    "Netflix": {
-      "Netflix": [
         ""
       ]
     },
@@ -7483,35 +7224,8 @@
         ""
       ]
     },
-    "Onboarding Proton": {
-      "Choose a display name": [
-        ""
-      ],
-      "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        ""
-      ],
-      "Discover all Proton services": [
-        ""
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        ""
-      ],
-      "Select a theme": [
-        ""
-      ],
-      "Set up your organization": [
-        ""
-      ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        ""
-      ],
-      "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        ""
-      ],
-      "Welcome to Proton": [
-        ""
-      ],
-      "You can change this anytime in your settings.": [
+    "Onboarding": {
+      "Welcome to ${ VPN_APP_NAME }": [
         ""
       ]
     },
@@ -7773,6 +7487,9 @@
       "Bitcoin": [
         ""
       ],
+      "Credit/debit card": [
+        ""
+      ],
       "New credit/debit card": [
         ""
       ],
@@ -7811,9 +7528,6 @@
         ""
       ],
       "Confirm password": [
-        ""
-      ],
-      "e.g. Julia Smith": [
         ""
       ],
       "E.g., ": [
@@ -7885,108 +7599,6 @@
         ""
       ]
     },
-    "Plan": {
-      "${ mailAppName } Free": [
-        ""
-      ],
-      "Free": [
-        ""
-      ]
-    },
-    "Plan feature": {
-      "0.5 GB storage": [
-        ""
-      ],
-      "1 - 5000 users *": [
-        ""
-      ],
-      "1 address": [
-        ""
-      ],
-      "1 user": [
-        ""
-      ],
-      "20 GB storage": [
-        ""
-      ],
-      "200 folders / labels": [
-        ""
-      ],
-      "3 folders / labels": [
-        ""
-      ],
-      "5 addresses": [
-        ""
-      ],
-      "5 addresses / user": [
-        ""
-      ],
-      "5 GB storage *": [
-        ""
-      ],
-      "5 GB storage / user": [
-        ""
-      ],
-      "50 addresses": [
-        ""
-      ],
-      "6 users": [
-        ""
-      ],
-      "Access blocked content": [
-        ""
-      ],
-      "Access to ${ driveAppName } (beta)": [
-        ""
-      ],
-      "All ${ PLAN_NAMES[PLANS.VPNPLUS] } plan features": [
-        ""
-      ],
-      "Built-in Adblocker (NetShield)": [
-        ""
-      ],
-      "Custom domains": [
-        ""
-      ],
-      "Early access to new products": [
-        ""
-      ],
-      "High speed": [
-        ""
-      ],
-      "Highest speed (up to 10 Gbps)": [
-        ""
-      ],
-      "Includes 6 user accounts": [
-        ""
-      ],
-      "Includes Proton Visionary": [
-        ""
-      ],
-      "Medium speed": [
-        ""
-      ],
-      "Secure Core servers": [
-        ""
-      ],
-      "Streaming service support": [
-        ""
-      ],
-      "Unlimited folders / labels": [
-        ""
-      ]
-    },
-    "Plan info": {
-      "(current plan)": [
-        ""
-      ]
-    },
-    "Plan time remaining": {
-      "You still have ${ daysRemaining } day left on your ${ BRAND_NAME } ${ currentPlanName } account.": [
-        "",
-        ""
-      ]
-    },
     "Price": {
       "Free": [
         ""
@@ -7997,11 +7609,6 @@
         ""
       ],
       "Secondary time zone": [
-        ""
-      ]
-    },
-    "Prime Video": {
-      "Prime Video": [
         ""
       ]
     },
@@ -8189,6 +7796,9 @@
       ]
     },
     "Signup label": {
+      "Display name": [
+        ""
+      ],
       "Email": [
         ""
       ],
@@ -8227,7 +7837,7 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -8296,6 +7906,82 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
+        ""
+      ]
+    },
+    "Subscription attribute": {
+      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+        "",
+        ""
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } high-speed VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } VPN connection per user": [
+        "",
+        ""
+      ],
+      "${ UsedAddresses } address": [
+        "",
+        ""
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "",
+        ""
+      ],
+      "${ UsedCalendars } calendar": [
+        "",
+        ""
+      ],
+      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
+        "",
+        ""
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "",
+        ""
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "",
+        ""
+      ],
+      "1 email address": [
+        ""
+      ],
+      "1 VPN connection": [
+        ""
+      ],
+      "Access to streaming services globally": [
+        ""
+      ],
+      "Built-in ad blocker (NetShield)": [
+        ""
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "",
+        ""
+      ]
+    },
+    "Subscription price": {
+      "For": [
+        ""
+      ]
+    },
+    "Subscription saving": {
+      "Save": [
         ""
       ]
     },
@@ -8501,12 +8187,18 @@
       ]
     },
     "Suffix": {
-      "/ month": [
+      "/month": [
+        ""
+      ],
+      "/user per month": [
         ""
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
+        ""
+      ],
+      "per month": [
         ""
       ]
     },
@@ -8517,6 +8209,14 @@
     },
     "Tab in domain modal": {
       "Addresses": [
+        ""
+      ]
+    },
+    "Tab subscription modal": {
+      "For businesses": [
+        ""
+      ],
+      "For individuals": [
         ""
       ]
     },
@@ -8579,19 +8279,14 @@
       ]
     },
     "Title": {
-      "${ appName } ${ planName } Trial": [
-        ""
-      ],
-      "${ appName } customization": [
-        ""
-      ],
       "${ appName } Keyboard Shortcuts": [
         ""
       ],
       "${ MAIL_APP_NAME } Bridge": [
         ""
       ],
-      "(highly recommended)": [
+      "${ maxUsers } user": [
+        "",
         ""
       ],
       "1. Give a name to the config to be generated": [
@@ -8627,16 +8322,10 @@
       "Account suspended": [
         ""
       ],
-      "Account verification": [
-        ""
-      ],
       "Action": [
         ""
       ],
       "Activate organization key": [
-        ""
-      ],
-      "Add a recovery method": [
         ""
       ],
       "Add address": [
@@ -8690,9 +8379,6 @@
       "Allocate storage": [
         ""
       ],
-      "Allocate VPN connections": [
-        ""
-      ],
       "Allow List": [
         ""
       ],
@@ -8711,13 +8397,10 @@
       "Apply gift code": [
         ""
       ],
-      "Are you human?": [
-        ""
-      ],
       "Are you sure you want to close?": [
         ""
       ],
-      "Auto reply": [
+      "Auto-reply": [
         ""
       ],
       "Automatically sign outgoing messages?": [
@@ -8774,9 +8457,6 @@
       "Change role": [
         ""
       ],
-      "Checkout": [
-        ""
-      ],
       "Choose an account": [
         ""
       ],
@@ -8798,6 +8478,9 @@
       "Confirm phone number": [
         ""
       ],
+      "Congratulations on choosing privacy!": [
+        ""
+      ],
       "Connect ${ name }": [
         ""
       ],
@@ -8807,19 +8490,13 @@
       "Continue with partial import?": [
         ""
       ],
-      "Coupon discount": [
-        ""
-      ],
       "Create a ${ mailAppName } address": [
         ""
       ],
       "Create calendar": [
         ""
       ],
-      "Create your Proton Account": [
-        ""
-      ],
-      "Creating account": [
+      "Create your ${ BRAND_NAME } Account": [
         ""
       ],
       "Credentials": [
@@ -8832,9 +8509,6 @@
         ""
       ],
       "Current and past imports": [
-        ""
-      ],
-      "Current plan": [
         ""
       ],
       "Custom filters": [
@@ -8918,6 +8592,9 @@
       "Downgrade account": [
         ""
       ],
+      "Download ${ VPN_APP_NAME }": [
+        ""
+      ],
       "Edit Allow List": [
         ""
       ],
@@ -8999,7 +8676,7 @@
       "Get ${ vpnPlus } to access all servers": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Gift code": [
@@ -9129,9 +8806,6 @@
       "Pay invoice": [
         ""
       ],
-      "Payment details": [
-        ""
-      ],
       "Payment methods": [
         ""
       ],
@@ -9147,9 +8821,6 @@
       "Phone": [
         ""
       ],
-      "Plan selection": [
-        ""
-      ],
       "Plan summary": [
         ""
       ],
@@ -9163,6 +8834,9 @@
         ""
       ],
       "Proton Logo": [
+        ""
+      ],
+      "Recommended": [
         ""
       ],
       "Reconnect your account": [
@@ -9181,9 +8855,6 @@
         ""
       ],
       "Referral tracker": [
-        ""
-      ],
-      "Refresh your browser": [
         ""
       ],
       "Remove calendar": [
@@ -9210,6 +8881,9 @@
       "Revoke certificate": [
         ""
       ],
+      "Save contact details": [
+        ""
+      ],
       "Secure email based in Switzerland": [
         ""
       ],
@@ -9231,7 +8905,7 @@
       "Select permissions": [
         ""
       ],
-      "Select plan": [
+      "Select subscription and pay": [
         ""
       ],
       "Select the time to send this notification": [
@@ -9303,9 +8977,6 @@
       "Subscribed calendars": [
         ""
       ],
-      "Subtotal": [
-        ""
-      ],
       "Success": [
         ""
       ],
@@ -9327,9 +8998,6 @@
       "Time zone": [
         ""
       ],
-      "Total (monthly)": [
-        ""
-      ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
         ""
       ],
@@ -9345,10 +9013,16 @@
       "Unsupported browser": [
         ""
       ],
+      "Upgrade plan": [
+        ""
+      ],
       "Username": [
         ""
       ],
       "Users and addresses": [
+        ""
+      ],
+      "Verification": [
         ""
       ],
       "VPN apps": [
@@ -9375,10 +9049,10 @@
       "WireGuard configuration": [
         ""
       ],
-      "Your ${ domain } address is active": [
+      "You already have a Proton account": [
         ""
       ],
-      "Your account’s usage": [
+      "Your ${ domain } address is active": [
         ""
       ],
       "Your calendar link": [
@@ -9489,22 +9163,13 @@
       "${ MAIL_APP_NAME } users will use this key by default for sending": [
         ""
       ],
-      "Access geo-blocked content (Netflix, Amazon Prime Video, BBC iPlayer, Wikipedia, Facebook, YouTube, etc) no matter where you are.": [
-        ""
-      ],
       "Account is disconnected": [
-        ""
-      ],
-      "Create multiple email addresses linked to your account, e.g. username2@protonmail.com": [
         ""
       ],
       "Customize import to reduce the number of folders": [
         ""
       ],
       "Customize import to reduce the number of labels": [
-        ""
-      ],
-      "Defends against threats to VPN privacy by passing your Internet traffic through multiple servers.": [
         ""
       ],
       "Discount applied for annual billing cycle": [
@@ -9528,12 +9193,6 @@
       "Enabling advanced logs records the IP address for each event in the security log.": [
         ""
       ],
-      "Get access to all the paid features for both ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
-      ],
-      "Get access to all the paid features for both ${ vpnAppName } and ${ mailAppName } (the encrypted email service that millions use to protect their data) with one plan.": [
-        ""
-      ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
         ""
       ],
@@ -9541,15 +9200,6 @@
         ""
       ],
       "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        ""
-      ],
-      "Multi-user support is only applicable to plans with 2 or more users": [
-        ""
-      ],
-      "NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware.": [
-        ""
-      ],
-      "Route your Internet traffic through the Tor network with a single click.": [
         ""
       ],
       "Set how your list of messages looks like by default.": [
@@ -9565,9 +9215,6 @@
         ""
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        ""
-      ],
-      "Support for file sharing protocols such as BitTorrent.": [
         ""
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
@@ -9592,15 +9239,6 @@
         ""
       ],
       "This key is encrypted with an old password": [
-        ""
-      ],
-      "Use multiple addresses / aliases linked to your account, e.g. username2@protonmail.com": [
-        ""
-      ],
-      "Use the personal address username@pm.me to send emails": [
-        ""
-      ],
-      "Use your own custom email domain addresses, e.g., you@yourname.com": [
         ""
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
@@ -9668,7 +9306,7 @@
       ]
     },
     "Upgrade": {
-      "Upgrade to ${ protonVpnName } ${ PLAN_NAMES[PLANS.VPNPLUS] } to connect up to ${ plusVpnConnections } device to the VPN at once": [
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "",
         ""
       ]
@@ -9707,106 +9345,6 @@
         ""
       ]
     },
-    "VPN feature": {
-      "30-days money-back guarantee": [
-        ""
-      ],
-      "Access blocked content": [
-        ""
-      ],
-      "Adblocker (NetShield)": [
-        ""
-      ],
-      "Custom connection profiles": [
-        ""
-      ],
-      "DNS leak prevention": [
-        ""
-      ],
-      "Full Disk Encryption on Servers": [
-        ""
-      ],
-      "Jurisdiction": [
-        ""
-      ],
-      "Kill Switch / Always-on VPN": [
-        ""
-      ],
-      "Languages supported": [
-        ""
-      ],
-      "Locations/Countries": [
-        ""
-      ],
-      "Open Source & audited apps": [
-        ""
-      ],
-      "P2P/BitTorrent": [
-        ""
-      ],
-      "Perfect Forward Secrecy (PFS)": [
-        ""
-      ],
-      "Platforms supported": [
-        ""
-      ],
-      "Router support": [
-        ""
-      ],
-      "Secure Core servers": [
-        ""
-      ],
-      "Speed": [
-        ""
-      ],
-      "Split tunneling": [
-        ""
-      ],
-      "Streaming service support": [
-        ""
-      ],
-      "Strict no-logs policy": [
-        ""
-      ],
-      "Tor over VPN": [
-        ""
-      ],
-      "User data monetization": [
-        ""
-      ],
-      "Volume/bandwidth cap": [
-        ""
-      ],
-      "VPN Connections": [
-        ""
-      ],
-      "VPN servers": [
-        ""
-      ]
-    },
-    "VPN feature option": {
-      "(Android & Windows only)": [
-        ""
-      ],
-      "High": [
-        ""
-      ],
-      "Highest (up to 10 Gbps)": [
-        ""
-      ],
-      "Medium": [
-        ""
-      ],
-      "None": [
-        ""
-      ],
-      "Switzerland": [
-        ""
-      ],
-      "Windows, macOS, iOS, Linux, Android, Android TV, Chromebook, Chromecast": [
-        ""
-      ]
-    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         ""
@@ -9823,17 +9361,6 @@
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
         "",
-        ""
-      ]
-    },
-    "VPN upsell feature": {
-      "Access geo-blocked content (Netflix, YouTube, etc.)": [
-        ""
-      ],
-      "Higher speed servers (up to 10Gbps)": [
-        ""
-      ],
-      "Unlock advanced VPN features": [
         ""
       ]
     },

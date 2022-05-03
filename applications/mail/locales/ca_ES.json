@@ -81,10 +81,10 @@
         "Aplicar"
       ],
       "Archive": [
-        ""
+        "Arxiva"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjunta captura(es) de pantalla"
       ],
       "Attachment": [
         "Adjuntar"
@@ -190,6 +190,9 @@
       ],
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
+      ],
+      "Create a new contact group": [
+        ""
       ],
       "Create folder": [
         "Crear carpeta"
@@ -651,7 +654,7 @@
         "Recuperar dades"
       ],
       "Refer a friend": [
-        ""
+        "Recomana a un amic"
       ],
       "Refine it": [
         "Afina"
@@ -789,7 +792,7 @@
         "Mostrar més opcions de cerca"
       ],
       "Show preview": [
-        ""
+        "Mostra visualització prèvia"
       ],
       "Sign out": [
         "Tancar la sessió"
@@ -804,16 +807,13 @@
         "Ometre"
       ],
       "Star": [
-        ""
+        "Destaca"
       ],
       "Start import": [
         "Començar importació"
       ],
       "Start setup": [
         "Començar la configuració"
-      ],
-      "Start using ${ appName }": [
-        "Començar a utilitzar ${ appName }"
       ],
       "Stay": [
         "Mantenir"
@@ -1048,12 +1048,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ves a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Anar a ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplicacions de Proton"
       ]
@@ -1137,15 +1131,10 @@
     },
     "blackfriday: VPNspecialoffer Action": {
       "Get the deal": [
-        "Obteniu l'oferta"
+        "Obteniu l’oferta"
       ],
       "Get the deal now": [
         "Obteniu l’oferta ara"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3346,6 +3335,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arxivar"
@@ -3763,6 +3766,9 @@
         "${ selectedFoldersCount } etiqueta seleccionada",
         "${ selectedFoldersCount } etiquetes seleccionades"
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ total } conversation": [
         "${ total } conversa",
         "${ total } converses"
@@ -3808,14 +3814,8 @@
       "(No Recipient)": [
         "(Cap Destinatari)"
       ],
-      "/month.": [
-        "/mes."
-      ],
       "5 email addresses": [
         "5 adreces de correu electrònic"
-      ],
-      "5 GB storage": [
-        "5 GB d'emmagatzematge"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperació és una de les formes més segures de protegir el vostre compte. La podeu utilitzar per accedir al vostre compte i recuperar les vostres dades xifrades si mai oblideu la contrasenya."
@@ -4214,7 +4214,7 @@
         "Més informació"
       ],
       "learn more": [
-        ""
+        "més informació"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -4344,6 +4344,9 @@
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
+      ],
+      "per month.": [
+        ""
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
@@ -4528,8 +4531,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "El missatge original que esteu intentant reenviar o respondre està en procés d'enviament. Si continueu, ja no podreu desfer l'enviament del missatge original."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "El remitent original d'aquest missatge ja no és vàlid. El vostre missatge s'enviarà des de la vostra adreça predeterminada ${ defaultAddress.Email }."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "L'emissor ha sol·licitat una confirmació de lectura."
@@ -4662,7 +4665,7 @@
         "Activeu-ho per cercar el contingut dels missatges"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Carpetes, etiquetes, i filtres il·limitats"
       ],
       "Unlimited messages": [
         "Missatges il·limitats"
@@ -4703,7 +4706,7 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -4720,9 +4723,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Utilitzant el vostre dispositiu mòbil, escanegeu aquest codi QR o visiteu ${ link }."
       ],
       "Version ${ appVersion }": [
         "Versió ${ appVersion }"
@@ -4995,7 +4995,7 @@
         "Vés a la Paperera"
       ],
       "Insert link": [
-        ""
+        "Insereix enllaç"
       ],
       "Jump to first": [
         "Moure a primera posició"
@@ -5177,7 +5177,7 @@
         "Desar contactes automàticament"
       ],
       "BCC": [
-        ""
+        "CCO"
       ],
       "Blind Carbon Copy": [
         "Copia Carbó Amagada"
@@ -5201,7 +5201,7 @@
         "Categoria"
       ],
       "CC": [
-        ""
+        "CC"
       ],
       "City": [
         "Ciutat"
@@ -5231,10 +5231,7 @@
         "Data:"
       ],
       "Delete": [
-        ""
-      ],
-      "Display name": [
-        "Nom a mostrar"
+        "Elimina"
       ],
       "Do not ask again": [
         "No tornis a preguntar"
@@ -5528,10 +5525,10 @@
     },
     "Label Recipient": {
       "From": [
-        ""
+        "De"
       ],
       "To": [
-        ""
+        "Per a"
       ]
     },
     "Label to change composer mode": {
@@ -5587,7 +5584,7 @@
     },
     "Link": {
       "Activate": [
-        ""
+        "Activa"
       ],
       "Add folder": [
         "Afegir carpeta"
@@ -5654,6 +5651,9 @@
       ],
       "Manage your labels": [
         "Gestioneu les vostres etiquetes"
+      ],
+      "More": [
+        ""
       ],
       "More about recovery": [
         "Més sobre la recuperació"
@@ -5821,11 +5821,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "La imatge no s'ha carregat perquè el certificat d'identitat del servidor remot no és vàlid."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "La imatge no s'ha carregat per tal de protegir la vostra privacitat."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        ""
       ]
     },
     "Message notification": {
@@ -6014,40 +6014,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Available on iOS and Android.": [
+      "Where privacy and security meet productivity and ease of use.": [
         ""
-      ],
-      "Get the ${ appName } mobile app": [
-        ""
-      ],
-      "Import your messages": [
-        ""
-      ],
-      "Meet your encrypted mailbox": [
-        ""
-      ],
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Següent"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+      "Start using ${ appName }": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Trieu un nom de visualització"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
       ],
       "Discover all Proton services": [
         "Descobriu tots els serveis de Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "La nostra missió és construir una internet on tingueu el control de les vostres dades i la vostra privacitat. Hem actualitzat Proton recentment - benvinguts a una internet segura."
       ],
       "Select a theme": [
         "Seleccioneu un tema"
@@ -6055,14 +6042,8 @@
       "Set up your organization": [
         "Configureu la vostra organització"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Això és el que la gent veurà quan els envieu un correu electrònic, els convideu a un esdeveniment o hi compartiu un arxiu."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Utilitzeu el selector d'aplicació a dalt a l'esquerra per accedir a altres serveis de Proton, incloent VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Benvingut/da a Proton"
       ],
       "You can change this anytime in your settings.": [
         "Podeu canviar-ho en qualsevol moment a les preferències."
@@ -6139,9 +6120,6 @@
       ],
       "Confirm password": [
         "Confirmar la contrasenya"
-      ],
-      "e.g. Julia Smith": [
-        "ex. Julia Smith"
       ],
       "E.g., ": [
         "Ex., "
@@ -6350,6 +6328,9 @@
       ],
       "No results found": [
         "No s'han trobat resultats"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6475,7 +6456,7 @@
       "Discover all Proton services": [
         "Descobriu tots els serveis de Proton"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -6751,8 +6732,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ mes"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

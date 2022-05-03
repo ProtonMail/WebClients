@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Salin email ke clipboard"
       ],
+      "Create a new contact group": [
+        "Buat grup kontak baru"
+      ],
       "Create folder": [
         "Buat folder"
       ],
@@ -809,9 +812,6 @@
       "Start setup": [
         "Mulai penyetelan"
       ],
-      "Start using ${ appName }": [
-        "Mulai gunakan ${ appName }"
-      ],
       "Stay": [
         "Tinggal"
       ],
@@ -1043,12 +1043,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Kunjungi ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ke ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplikasi Proton"
       ]
@@ -1135,12 +1129,7 @@
         "Dapatkan penawaran"
       ],
       "Get the deal now": [
-        "Dapatkan penawaran ini sekarang juga"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Dapatkan penawaran sekarang"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1148,7 +1137,7 @@
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "${ percentage } %"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3325,6 +3314,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Byte"
+      ],
+      "Gigabytes": [
+        "Gigabyte"
+      ],
+      "Kilobytes": [
+        "Kilobyte"
+      ],
+      "Megabytes": [
+        "Megabyte"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arsip"
@@ -3716,6 +3719,9 @@
       "${ selectedFoldersCount } label selected": [
         "${ selectedFoldersCount } label terpilih"
       ],
+      "${ storageSize } storage": [
+        "Kuota penyimpanan ${ storageSize }"
+      ],
       "${ total } conversation": [
         "${ total } percakapan"
       ],
@@ -3752,14 +3758,8 @@
       "(No Recipient)": [
         "(Tidak Ada Penerima)"
       ],
-      "/month.": [
-        "/bulan."
-      ],
       "5 email addresses": [
         "5 alamat email"
-      ],
-      "5 GB storage": [
-        "Kuota penyimpanan 5 GB"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Frasa pemulihan merupakan salah satu cara teraman untuk melindungi akun Anda. Seandainya Anda lupa kata sandi, fitur ini akan dapat digunakan untuk mengakses akun dan memulihkan data terenkripsi Anda."
@@ -4014,7 +4014,7 @@
         "Waktu kedaluwarsa"
       ],
       "Expiration Time": [
-        "Waktu kedaluwarsa"
+        "Waktu Kedaluwarsa"
       ],
       "Expires": [
         "Akan kedaluwarsa"
@@ -4080,7 +4080,7 @@
         "Apabila Anda hendak mengirim pesan ini ke pengguna non-${ MAIL_APP_NAME }, mohon pastikan Anda telah mengatur kata sandi untuk pesan Anda."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Jika Anda yakin ini adalah kesalahan, harap hubungi kami ${ contactLink }."
+        "Apabila Anda merasa ini adalah sebuah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
@@ -4274,6 +4274,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Sistem kami menandai pesan ini sebagai phishing. Mohon periksa keabsahan pesan."
       ],
+      "per month.": [
+        "per bulan."
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "Enkripsi PGP/Inline hanya dapat dibubuhkan pada pesan yang ditulis dalam format Plain Text. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
       ],
@@ -4457,8 +4460,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Pesan asli yang Anda coba teruskan / balas dalam proses dikirim. Jika lanjut, Anda tidak akan dapat mengurungkan pengiriman pesan asli lebih lama lagi."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "Alamat pengirim pesan sudah tidak lagi valid. Pesan ini akan dikirim melalui ${ defaultAddress.Email } yang merupakan alamat default Anda."
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        "Alamat pengirim pesan sudah tidak lagi valid. Pesan ini akan dikirim melalui ${ defaultEmail } yang merupakan alamat default Anda."
       ],
       "The sender has requested a read receipt.": [
         "Pengirim pesan meminta bukti yang membenarkan bahwa Anda telah membaca pesan ini."
@@ -4476,7 +4479,7 @@
         "Ada kesalahan pada tanda tangan yang dipakai untuk memverifikasi rincian kontak, yang mungkin disebabkan oleh atur ulang kata sandi."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Akun ini telah ditangguhkan karena kemungkinan pelanggaran kebijakan."
+        "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
@@ -4631,8 +4634,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Tingkatkan jenis akun Anda untuk dapat mengakses ${ MAIL_APP_NAME } melalui klien desktop terpisah milik pihak ketiga."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ appName } ${ planName } berikut."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
       ],
       "Upload picture": [
         "Unggah gambar"
@@ -4648,9 +4651,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Gunakan pintasan kibor untuk mempersingkat waktu."
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Gunakan perangkat bergerak Anda, pindai kode QR ini atau kunjungi ${ link }."
       ],
       "Version ${ appVersion }": [
         "Versi ${ appVersion }"
@@ -5151,9 +5151,6 @@
       "Delete": [
         "Hapus"
       ],
-      "Display name": [
-        "Nama tampilan"
-      ],
       "Do not ask again": [
         "Jangan tanyakan lagi"
       ],
@@ -5573,6 +5570,9 @@
       "Manage your labels": [
         "Kelola label Anda"
       ],
+      "More": [
+        "Lainnya"
+      ],
       "More about recovery": [
         "Lebih lanjut seputar pemulihan"
       ],
@@ -5737,11 +5737,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "Gambar tidak termuat karena sertifikat identitas milik remote server tidak valid."
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "Gambar tidak dimuat demi melindungi privasi Anda."
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        "Browser Anda tidak dapat memverifikasi identitas remote server. Gambar ini mungkin berasal dari situs yang dienkripsi dengan protokol http standar."
       ]
     },
     "Message notification": {
@@ -5927,40 +5927,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } kini hadir lebih modern, lebih dapat disesuaikan, dan lebih melindungi data Anda dengan teknologi enkripsi mutakhir."
+      "Welcome to ${ appName }": [
+        "Selamat datang di ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "Tersedia di iOS dan Android."
-      ],
-      "Get the ${ appName } mobile app": [
-        "Dapatkan aplikasi mobile ${ appName }"
-      ],
-      "Import your messages": [
-        "Impor pesan Anda"
-      ],
-      "Meet your encrypted mailbox": [
-        "Temui kotak surat terenkripsi Anda"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        "Di mana privasi dan keamanan saling berpadu dengan produktivitas dan kemudahan penggunaan."
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "Selanjutnya"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "Fitur Import Assistant kami dapat secara cepat memindahkan seluruh email lama Anda ke kotak surat terenkripsi Anda yang baru."
+      "Start using ${ appName }": [
+        "Mulai gunakan ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Pilih nama tampilan"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Konfigurasi organisasi Anda, tautkan nama domain, dan membuat akun untuk memastikan seluruh anggota organisasi Anda terlindungi."
       ],
       "Discover all Proton services": [
         "Telusuri seluruh layanan yang Proton tawarkan"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Misi kami adalah membangun internet di mana kendali atas data dan privasi yang Anda miliki sepenuhnya berada di tangan Anda. Kami baru saja memutakhirkan Proton - selamat datang di internet yang aman."
       ],
       "Select a theme": [
         "Pilih tema"
@@ -5968,14 +5955,8 @@
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ini adalah apa yang akan dilihat oleh orang lain pada saat Anda mengirim email, memberi undangan, atau berbagi berkas dengan mereka."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Gunakan menu aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses layanan Proton lainnya, termasuk VPN, Calendar dan Drive."
-      ],
-      "Welcome to Proton": [
-        "Selamat datang di Proton"
       ],
       "You can change this anytime in your settings.": [
         "Anda dapat mengubah tema yang aktif kapan pun melalui beranda pengaturan Anda."
@@ -6052,9 +6033,6 @@
       ],
       "Confirm password": [
         "Konfirmasi kata sandi"
-      ],
-      "e.g. Julia Smith": [
-        "cth. Julia Smith"
       ],
       "E.g., ": [
         "Misalnya "
@@ -6261,6 +6239,9 @@
       ],
       "No results found": [
         "Tidak ada hasil"
+      ],
+      "No unread messages found": [
+        "Tidak ada pesan yang belum dibaca yang ditemukan"
       ]
     },
     "Select files": {
@@ -6380,8 +6361,8 @@
       "Discover all Proton services": [
         "Telusuri seluruh layanan yang Proton tawarkan"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Dapatkan langganan ${ appName } ${ planName } hingga 18 bulan secara gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        "Dapatkan langganan ${ planName } hingga 18 bulan secara gratis"
       ],
       "Invite friends and earn rewards!": [
         "Undang teman-teman Anda dan dapatkan berbagai keuntungan!"
@@ -6633,8 +6614,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ bulan"
+      "/month": [
+        "/bulan"
       ]
     },
     "Table header": {
@@ -6674,7 +6655,7 @@
         "Alamat"
       ],
       "CSV field": [
-        "kolom CSV"
+        "Kolom CSV"
       ],
       "Import": [
         "Impor"
@@ -6686,7 +6667,7 @@
         "Nilai"
       ],
       "vCard field": [
-        "kolom vCard"
+        "Kolom vCard"
       ]
     },
     "Text": {

@@ -116,6 +116,9 @@
       "Copy email to clipboard": [
         "Copiar correo al portapapeles"
       ],
+      "Create a new contact group": [
+        "Crear un nuevo grupo de contactos"
+      ],
       "Create calendar": [
         "Crear calendario"
       ],
@@ -204,6 +207,9 @@
       ],
       "Go to settings": [
         "Ir a los ajustes"
+      ],
+      "Got it": [
+        "Entendido"
       ],
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
@@ -564,12 +570,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Ir a ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Ir a ${ vpnName }"
-      ],
       "Proton applications": [
         "Aplicaciones de Proton"
       ]
@@ -643,11 +643,6 @@
       ],
       "Get the deal now": [
         "Obtener la oferta ahora"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -1991,9 +1986,6 @@
       "Contact signature not verified": [
         "Firma del contacto no verificada"
       ],
-      "Could not find address ${ email }.": [
-        "No se pudo encontrar la dirección ${ email }."
-      ],
       "Decryption error: Decryption of this event's content failed.": [
         "Error de descifrado: falló el descifrado del contenido de este evento."
       ],
@@ -2532,6 +2524,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } actualizado"
@@ -2781,6 +2787,9 @@
         "${ selectedFoldersCount } etiqueta seleccionada",
         "${ selectedFoldersCount } etiquetas seleccionadas"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } de almacenamiento"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacto actualizado con éxito.",
         "${ updated } contacto actualizado con éxito."
@@ -2791,9 +2800,6 @@
       ],
       "5 email addresses": [
         "5 direcciones de correo"
-      ],
-      "5 GB storage": [
-        "5 GB de almacenamiento"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Se enviará un correo de cancelación a los participantes eliminados."
@@ -3180,8 +3186,8 @@
       "Update recurring event": [
         "Actualizar evento recurrente"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Actualice hoy y evite perder los beneficios de ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Actualice hoy y evite perder los beneficios de ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Le avisaremos cuando la importación esté terminada."
@@ -3427,9 +3433,6 @@
       ],
       "Display": [
         "Mostrar"
-      ],
-      "Display name": [
-        "Nombre a mostrar"
       ],
       "Do not ask again": [
         "No volver a preguntar"
@@ -3893,6 +3896,16 @@
         "Nombre de la etiqueta"
       ]
     },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Nuevo diseño, protección unificada"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Grupo de contacto creado"
@@ -4024,31 +4037,27 @@
       ]
     },
     "Onboarding": {
-      "A calendar is a record of your life. Keep your life secure and private with ${ appName }.": [
-        "Un calendario es un registro de su vida. Mantenga su vida segura y privada con ${ appName }."
+      "Welcome to ${ appName }": [
+        "Bienvenido/a a ${ appName }"
       ],
-      "Import events": [
-        "Importar eventos"
-      ],
-      "Meet your new encrypted calendar": [
-        "Conozca su calendario cifrado nuevo"
+      "Where you can take control of your time and your data.": [
+        "Donde puede tomar el control de su tiempo y de sus datos."
+      ]
+    },
+    "Onboarding Action": {
+      "Next": [
+        "Siguiente"
       ],
       "Start using ${ appName }": [
         "Comenzar con ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Elija un nombre para mostrar"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configure su organización, vincule su nombre de dominio y cree cuentas para asegurarse de que todos los miembros de su organización estén protegidos."
       ],
       "Discover all Proton services": [
         "Descubra todos los servicios de Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Nuestra misión es construir un Internet donde tenga el control de sus datos y de su privacidad. Hemos actualizado recientemente Proton. Bienvenido a un Internet seguro."
       ],
       "Select a theme": [
         "Seleccionar un tema"
@@ -4056,14 +4065,8 @@
       "Set up your organization": [
         "Configure su organización"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Esto es lo que la gente verá cuando les envíe un correo electrónico, les invite a un evento, o comparta un archivo."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Use el selector de aplicaciones en la parte superior izquierda para acceder a otros servicios de Proton, incluyendo VPN, Calendario y Drive."
-      ],
-      "Welcome to Proton": [
-        "Bienvenido a Proton"
       ],
       "You can change this anytime in your settings.": [
         "Puede cambiar esto en cualquier momento en los ajustes."
@@ -4183,9 +4186,6 @@
       ],
       "Add title": [
         "Añadir título"
-      ],
-      "e.g. Julia Smith": [
-        "ej. Julia Smith"
       ],
       "E.g., ": [
         "Ej., "
@@ -4314,8 +4314,8 @@
       ]
     },
     "Spotlight": {
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Obtenga hasta 18 meses de ${ appName } ${ planName } gratis"
+      "Get up to 18 months of ${ planName } for free": [
+        "Obtenga hasta 18 meses de ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "¡Invite a sus amigos y gane recompensas!"
@@ -4505,7 +4505,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         "/mes"
       ]
     },

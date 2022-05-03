@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Kopiraj adresu e-pošte u međuspremnik"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         "Stvori mapu"
       ],
@@ -815,9 +818,6 @@
       "Start setup": [
         "Započni postavljanje"
       ],
-      "Start using ${ appName }": [
-        "Započnite koristiti ${ appName }"
-      ],
       "Stay": [
         ""
       ],
@@ -1053,12 +1053,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Idi na ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Idi na ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton aplikacije"
       ]
@@ -1148,17 +1142,12 @@
         "Ugrabite ponudu sada"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -3367,6 +3356,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        ""
+      ],
+      "Gigabytes": [
+        ""
+      ],
+      "Kilobytes": [
+        ""
+      ],
+      "Megabytes": [
+        ""
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "Arhiva"
@@ -3810,6 +3813,9 @@
         "",
         ""
       ],
+      "${ storageSize } storage": [
+        ""
+      ],
       "${ total } conversation": [
         "${ total } razgovor",
         "${ total } razgovora",
@@ -3864,13 +3870,7 @@
       "(No Recipient)": [
         "(Nema primatelja)"
       ],
-      "/month.": [
-        "/mjesečno."
-      ],
       "5 email addresses": [
-        ""
-      ],
-      "5 GB storage": [
         ""
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
@@ -4416,6 +4416,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "Naš je sustav ovu e-poruku označio kao pokušaj krađe identiteta. Molimo provjerite je li legitimna poruka."
       ],
+      "per month.": [
+        ""
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
       ],
@@ -4599,7 +4602,7 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "Izvorna poruka koju pokušavate proslijediti/odgovoriti je u procesu slanja. Ako nastavite, više nećete moći poništiti slanje izvorne poruke."
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         ""
       ],
       "The sender has requested a read receipt.": [
@@ -4775,7 +4778,7 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         ""
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
       ],
       "Upload picture": [
@@ -4792,9 +4795,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         ""
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "Pomoću mobilnog uređaja skenirajte ovaj QR kôd ili posjetite ${ link }."
       ],
       "Version ${ appVersion }": [
         ""
@@ -5315,9 +5315,6 @@
       "Delete": [
         ""
       ],
-      "Display name": [
-        "Zaslonski naziv"
-      ],
       "Do not ask again": [
         "Ne pitaj ponovno"
       ],
@@ -5737,6 +5734,9 @@
       "Manage your labels": [
         "Upravljanje oznakama"
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         ""
       ],
@@ -5905,10 +5905,10 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
+      "Image has not been loaded in order to protect your privacy.": [
         ""
       ],
-      "Image has not been loaded in order to protect your privacy.": [
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
         ""
       ]
     },
@@ -6101,40 +6101,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
+      "Welcome to ${ appName }": [
         ""
       ],
-      "Available on iOS and Android.": [
+      "Where privacy and security meet productivity and ease of use.": [
         ""
-      ],
-      "Get the ${ appName } mobile app": [
-        ""
-      ],
-      "Import your messages": [
-        ""
-      ],
-      "Meet your encrypted mailbox": [
-        ""
-      ],
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
-        "Sljedeće"
+        ""
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
+      "Start using ${ appName }": [
         ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Odaberite zaslonsko ime"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Postavite vašu organizaciju, povežite naziv domene i stvorite račune kako biste osigurali zaštitu svih članova vaše organizacije."
       ],
       "Discover all Proton services": [
         "Otkrijte sve Proton usluge"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Naša je misija izgraditi internet na kojem ćete kontrolirati svoje podatke i svoju privatnost. Nedavno smo ažurirali Proton - dobrodošli na sigurni internet."
       ],
       "Select a theme": [
         "Odaberi temu"
@@ -6142,14 +6129,8 @@
       "Set up your organization": [
         "Postavite vašu organizaciju"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ovo će ljudi vidjeti kada im pošaljete e-poštu, pozovete ih na događaj ili podijelite datoteku s njima."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Koristite birač aplikacija u gornjem lijevom kutu za pristup ostalim Proton uslugama, uključujući VPN, Calendar i Drive."
-      ],
-      "Welcome to Proton": [
-        "Dobro došli u Proton"
       ],
       "You can change this anytime in your settings.": [
         "Možete promijeniti bilo kada u vašim postavkama."
@@ -6226,9 +6207,6 @@
       ],
       "Confirm password": [
         ""
-      ],
-      "e.g. Julia Smith": [
-        "npr. Ana Horvat"
       ],
       "E.g., ": [
         "Npr. "
@@ -6439,6 +6417,9 @@
       ],
       "No results found": [
         "Nema rezultata"
+      ],
+      "No unread messages found": [
+        ""
       ]
     },
     "Select files": {
@@ -6570,7 +6551,7 @@
       "Discover all Proton services": [
         ""
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
+      "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
@@ -6869,8 +6850,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ mjesečno"
+      "/month": [
+        ""
       ]
     },
     "Table header": {

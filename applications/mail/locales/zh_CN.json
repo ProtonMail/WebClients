@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "复制邮箱地址"
       ],
+      "Create a new contact group": [
+        ""
+      ],
       "Create folder": [
         "创建文件夹"
       ],
@@ -809,9 +812,6 @@
       "Start setup": [
         "开始设置"
       ],
-      "Start using ${ appName }": [
-        "开始使用 ${ appName }"
-      ],
       "Stay": [
         "留在此页"
       ],
@@ -1043,12 +1043,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "转到 ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "跳转到 ${ vpnName }"
-      ],
       "Proton applications": [
         "Proton 产品"
       ]
@@ -1124,7 +1118,7 @@
         ""
       ],
       "Most popular": [
-        "最受欢迎"
+        "人气最高"
       ],
       "Save more when combining Mail and VPN": [
         ""
@@ -1135,12 +1129,7 @@
         "立即享受优惠"
       ],
       "Get the deal now": [
-        "立即享受优惠活动"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "立即享受优惠"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -3325,6 +3314,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "字节"
+      ],
+      "Gigabytes": [
+        "GB"
+      ],
+      "Kilobytes": [
+        "KB"
+      ],
+      "Megabytes": [
+        "MB"
+      ]
+    },
     "Filter Actions": {
       "Archive": [
         "存档"
@@ -3716,6 +3719,9 @@
       "${ selectedFoldersCount } label selected": [
         "已选择 ${ selectedFoldersCount } 个标签"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } 存储空间"
+      ],
       "${ total } conversation": [
         "${ total } 条会话"
       ],
@@ -3752,14 +3758,8 @@
       "(No Recipient)": [
         "(无收件人)"
       ],
-      "/month.": [
-        "/月。"
-      ],
       "5 email addresses": [
         "5 个邮箱地址"
-      ],
-      "5 GB storage": [
-        "5 GB 存储空间"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "“恢复密语”是保护账户访问权限的最安全方法之一。如果您忘记了密码，您可以用它来访问账户并恢复加密数据。"
@@ -3852,7 +3852,7 @@
         "基本的导航和操作快捷键始终可以使用，不受该选项控制。"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
       ],
       "Body: ": [
         "正文： "
@@ -4274,6 +4274,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "我们的系统已将此邮件认定为欺诈邮件，请确认其内容真实性。"
       ],
+      "per month.": [
+        "/月。"
+      ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
       ],
@@ -4413,7 +4416,7 @@
         "对不起，此邮件不存在或已过期"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
         "使用 ${ DRIVE_APP_NAME } 可以安全地存储、分享文件。"
@@ -4457,8 +4460,8 @@
       "The original message you are trying to forward / reply to is in the process of being sent. If you continue, you will not be able to undo sending of the original message any longer.": [
         "您正在转发或回复的原始邮件还在发送中，如果继续，您将无法再撤回原始邮件。"
       ],
-      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultAddress.Email }.": [
-        "此邮件原先的发件地址已不再有效，邮件将由您的默认地址 ${ defaultAddress.Email } 发送。"
+      "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
+        ""
       ],
       "The sender has requested a read receipt.": [
         "发件人请您寄回执。"
@@ -4503,7 +4506,7 @@
         "此邀请被保存到一个禁用的日历。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "此链接指向的网站可能会窃取您的密码、信用卡等信息。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此链接可能使用了欺骗性域名，Internet Explorer 和 Edge 浏览器无法打开。若您确认链接可靠，可使用其他浏览器打开。"
@@ -4631,8 +4634,8 @@
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "开通付费账户即可通过第三方客户端使用 ${ MAIL_APP_NAME }。"
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "立即升级账户即可继续享有下列 ${ appName } ${ planName } 权益。"
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "Upload picture": [
         "上传图片"
@@ -4648,9 +4651,6 @@
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "使用键盘快捷键让邮件操作更加迅捷。"
-      ],
-      "Using your mobile device, scan this QR-Code or visit ${ link }.": [
-        "使用移动设备扫描此二维码或打开 ${ link }。"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -5086,7 +5086,7 @@
         "或"
       ],
       "Attach screenshot(s)": [
-        ""
+        "截图"
       ],
       "Attachments": [
         "附件"
@@ -5151,9 +5151,6 @@
       "Delete": [
         "删除"
       ],
-      "Display name": [
-        "对外名称"
-      ],
       "Do not ask again": [
         "不再询问"
       ],
@@ -5206,7 +5203,7 @@
         "隐藏密码"
       ],
       "I understand the risk": [
-        ""
+        "风险已知悉"
       ],
       "IF": [
         "如果"
@@ -5573,6 +5570,9 @@
       "Manage your labels": [
         "管理标签"
       ],
+      "More": [
+        ""
+      ],
       "More about recovery": [
         "详细了解账户恢复"
       ],
@@ -5737,11 +5737,11 @@
       ]
     },
     "Message image": {
-      "Image did not load because the remote server’s identity certificate is invalid.": [
-        "图像未能加载，因为远程服务器的身份证书无效。"
-      ],
       "Image has not been loaded in order to protect your privacy.": [
         "为了保护您的隐私，图像未被加载。"
+      ],
+      "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
+        ""
       ]
     },
     "Message notification": {
@@ -5927,40 +5927,27 @@
       ]
     },
     "Onboarding": {
-      "${ appName } is now more modern and customizable while still protecting your data with advanced encryption.": [
-        "${ appName } 的现代化和可定制程度现已大幅提高，并将继续通过高等级加密技术保障您的数据安全。"
+      "Welcome to ${ appName }": [
+        "欢迎来到 ${ appName }"
       ],
-      "Available on iOS and Android.": [
-        "支持 iOS 与 Android 设备。"
-      ],
-      "Get the ${ appName } mobile app": [
-        "下载 ${ appName } 移动应用"
-      ],
-      "Import your messages": [
-        "导入您已有的邮件"
-      ],
-      "Meet your encrypted mailbox": [
-        "欢迎进入您的加密邮箱"
-      ],
+      "Where privacy and security meet productivity and ease of use.": [
+        ""
+      ]
+    },
+    "Onboarding Action": {
       "Next": [
         "下一步"
       ],
-      "Our Import Assistant quickly transfers all your emails to your new encrypted mailbox.": [
-        "我们的导入助手能够迅速将您的所有邮件转移至加密邮箱中。"
+      "Start using ${ appName }": [
+        "开始使用 ${ appName }"
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "填写对外名称"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "配置您的机构信息、链接您的域名、创建账户以确保您机构的所有成员都受到保护。"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 系列服务"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "我们的宗旨是建立一个由您来管控您自己的数据和隐私的网络。我们最近更新了 Proton ―― 畅享安全的互联网吧！"
       ],
       "Select a theme": [
         "选择配色"
@@ -5968,14 +5955,8 @@
       "Set up your organization": [
         "填写机构信息"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "这是当您向他人发送电子邮件、邀请他人参加活动或与之共享文件时对方会看到的内容。"
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "使用左上角的应用选择器访问其他 Proton 服务，包括 VPN, 日历和云盘。"
-      ],
-      "Welcome to Proton": [
-        "欢迎使用 Proton"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -6052,9 +6033,6 @@
       ],
       "Confirm password": [
         "确认密码"
-      ],
-      "e.g. Julia Smith": [
-        "例如：Julia Smith"
       ],
       "E.g., ": [
         "例如："
@@ -6261,6 +6239,9 @@
       ],
       "No results found": [
         "搜索无结果"
+      ],
+      "No unread messages found": [
+        "没有未读邮件"
       ]
     },
     "Select files": {
@@ -6380,8 +6361,8 @@
       "Discover all Proton services": [
         "探索所有 Proton 服务"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "免费获得最长 18 个月的 ${ appName } ${ planName } 使用权"
+      "Get up to 18 months of ${ planName } for free": [
+        "免费获得最长 18 个月的 ${ planName } 使用权"
       ],
       "Invite friends and earn rewards!": [
         "邀请好友注册赢取奖励！"
@@ -6633,7 +6614,7 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
+      "/month": [
         "/月"
       ]
     },

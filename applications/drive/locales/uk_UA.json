@@ -110,6 +110,9 @@
       "Close transfers": [
         "Закрити передавання"
       ],
+      "Collapse": [
+        "Згорнути"
+      ],
       "Collapse folder": [
         "Згорнути теку"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Створити"
+      ],
+      "Create a new contact group": [
+        "Створити нову групу контактів"
       ],
       "Create link": [
         "Створити посилання"
@@ -220,6 +226,9 @@
       ],
       "Enable drive search": [
         "Увімкнути пошук на диску"
+      ],
+      "Expand": [
+        "Розгорнути"
       ],
       "Expand folder": [
         "Розгорнути теку"
@@ -590,12 +599,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Перейти до ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Перейти до ${ vpnName }"
-      ],
       "Proton applications": [
         "Програми Proton"
       ]
@@ -618,7 +621,7 @@
         ""
       ],
       "Includes": [
-        "Включає в себе"
+        "Включає"
       ],
       "Standard price: ${ regularPrice }": [
         ""
@@ -643,12 +646,7 @@
         "Скористатися пропозицією"
       ],
       "Get the deal now": [
-        "Скористатися пропозицією зараз"
-      ]
-    },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
+        "Скористатися пропозицією"
       ]
     },
     "blackfriday: VPNspecialoffer Info": {
@@ -2075,6 +2073,20 @@
         "МБ"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Байтів"
+      ],
+      "Gigabytes": [
+        "Гігабайтів"
+      ],
+      "Kilobytes": [
+        "Кілобайтів"
+      ],
+      "Megabytes": [
+        "Мегабайтів"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } оновлено"
@@ -2358,6 +2370,9 @@
       "${ speed }/s": [
         "${ speed }/с"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } сховища"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успішно оновлений.",
         "${ updated } контакти успішно оновлені.",
@@ -2375,9 +2390,6 @@
       ],
       "5 email addresses": [
         "5 адрес е-пошти"
-      ],
-      "5 GB storage": [
-        "5 ГБ сховища"
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -2554,13 +2566,13 @@
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
-        "Приблизний час до завершення: ${ estimatedMinutes } хвилини",
-        "Приблизний час до завершення: ${ estimatedMinutes } хвилин",
-        "Приблизний час до завершення: ${ estimatedMinutes } хвилини"
+        "Приблизно залишилося часу: ${ estimatedMinutes } хвилина",
+        "Приблизно залишилося часу: ${ estimatedMinutes } хвилини",
+        "Приблизно залишилося часу: ${ estimatedMinutes } хвилин",
+        "Приблизно залишилося часу: ${ estimatedMinutes } хвилини"
       ],
       "Estimated time remaining: Less than a minute": [
-        "Приблизний час до завершення: менше хвилини"
+        "Приблизно залишилося часу: менш як хвилина"
       ],
       "Estimating time remaining...": [
         "Приблизно лишилося часу..."
@@ -2976,8 +2988,8 @@
       "Updating drive search...": [
         "Оновлення пошуку на диску..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Оновіть тарифний план сьогодні, щоб уникнути втрати цих переваг ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Оновіть тарифний план сьогодні, щоб не втратити ці переваги ${ planName }."
       ],
       "Uploaded": [
         "Вивантажено"
@@ -3253,9 +3265,6 @@
       "Deleted": [
         "Видалено"
       ],
-      "Display name": [
-        "Показуване ім'я"
-      ],
       "Do not ask again": [
         "Не питати знову"
       ],
@@ -3353,7 +3362,7 @@
         "Пароль поштової скриньки"
       ],
       "Malware": [
-        "Шкідливі програми"
+        "Зловмисні програми"
       ],
       "Manage folders": [
         "Керувати теками"
@@ -3851,6 +3860,9 @@
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
       ],
+      "Next": [
+        "Далі"
+      ],
       "Start using ${ appName }": [
         "Розпочніть користуватися ${ appName }"
       ],
@@ -3865,22 +3877,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "${ appName } наразі доступний лише через бета-доступ."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Захистіть усі свої файли наскрізним шифруванням. Користуйтеся ${ appName } , щоб безпечно зберігати свої файли."
+      "Your trusty online vault for vital documents and precious memories.": [
+        "Ваше надійне онлайн-сховище для життєво важливих документів і дорогоцінних спогадів."
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Виберіть ім'я для показу"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Налаштуйте свою організацію, прив'яжіть свій домен, а також створіть захищені облікові записи для всіх учасників організації."
       ],
       "Discover all Proton services": [
         "Ознайомтеся з усіма можливостями Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Наша місія - створити Інтернет, в якому ви контролюєте свої дані та приватність. Ми нещодавно оновили Proton, тож ласкаво просимо до безпечного Інтернету."
       ],
       "Select a theme": [
         "Виберіть тему"
@@ -3888,14 +3894,8 @@
       "Set up your organization": [
         "Налаштуйте свою організацію"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Ось, що побачать люди, коли ви надішлете їм лист, запросите на подію, чи поділитесь доступом до файлу."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Користуйтеся вибором програм зліва вгорі для доступу до програм Proton, включаючи VPN, календар та Drive."
-      ],
-      "Welcome to Proton": [
-        "Вітаємо в Proton"
       ],
       "You can change this anytime in your settings.": [
         "Ви можете змінити це будь-коли в налаштуваннях."
@@ -3905,11 +3905,11 @@
       "${ appName } is in Beta": [
         "${ appName } у бета-версії"
       ],
-      "Meet your new secure file storage": [
-        "Зустрічайте нове захищене сховище файлів"
-      ],
       "Upgrade to access ${ appName }": [
         "Передплатіть для доступу до ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        "Вітаємо у ${ appName }"
       ]
     },
     "Option": {
@@ -3947,9 +3947,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Спосіб зв'язку з вами"
-      ],
-      "e.g. Julia Smith": [
-        "наприклад, Джулія Сміт"
       ],
       "E.g., ": [
         "Наприклад, "
@@ -4071,8 +4068,8 @@
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        "Отримайте до 18 місяців ${ appName } ${ planName } безплатно"
+      "Get up to 18 months of ${ planName } for free": [
+        "Отримайте до 18 місяців ${ planName } безплатно"
       ],
       "Invite friends and earn rewards!": [
         "Запрошуйте друзів та отримуйте винагороди!"
@@ -4146,8 +4143,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ місяць"
+      "/month": [
+        "/місяць"
       ]
     },
     "Table header": {

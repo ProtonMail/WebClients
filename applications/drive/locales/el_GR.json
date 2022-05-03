@@ -110,6 +110,9 @@
       "Close transfers": [
         "Κείσιμο μεταφορών"
       ],
+      "Collapse": [
+        "Σύμπτυξη"
+      ],
       "Collapse folder": [
         "Σύμπτυξη φακέλου"
       ],
@@ -139,6 +142,9 @@
       ],
       "Create": [
         "Δημιουργία"
+      ],
+      "Create a new contact group": [
+        "Δημιουργία νέας ομάδας επαφών"
       ],
       "Create link": [
         "Δημιουργία συνδέσμου"
@@ -216,6 +222,9 @@
       ],
       "Enable drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
+      ],
+      "Expand": [
+        "Ανάπτυξη"
       ],
       "Expand folder": [
         "Ανάπτυξη φακέλου"
@@ -586,12 +595,6 @@
       ]
     },
     "Apps dropdown": {
-      "Go to ${ title }": [
-        "Πάντε στο ${ title }"
-      ],
-      "Go to ${ vpnName }": [
-        "Πηγαίνετε στο ${ vpnName }"
-      ],
       "Proton applications": [
         "Εφαρμογές Proton"
       ]
@@ -642,17 +645,12 @@
         "Αποκτήστε την προσφορά τώρα"
       ]
     },
-    "blackfriday: VPNspecialoffer Badge popup": {
-      "${ vpnAppName } Plus Special Offer 2021 discount has been applied": [
-        ""
-      ]
-    },
     "blackfriday: VPNspecialoffer Info": {
       "Discounts are based on standard monthly pricing of ${ standardMonthlyPricing }": [
         ""
       ],
       "Save ${ percentage }%": [
-        "${ percentage }%"
+        "- ${ percentage }%"
       ],
       "Special offer Terms and Conditions": [
         ""
@@ -2057,6 +2055,20 @@
         "MB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Bytes"
+      ],
+      "Gigabytes": [
+        "Gigabytes"
+      ],
+      "Kilobytes": [
+        "Kilobytes"
+      ],
+      "Megabytes": [
+        "Megabytes"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "Η ${ Label.Name } ενημερώθηκε"
@@ -2288,6 +2300,9 @@
       "${ speed }/s": [
         "${ speed }/δ"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } αποθηκευτικός χώρος"
+      ],
       "${ updated } contact updated successfully.": [
         "${ updated } επαφή ενημερώθηκε επιτυχώς.",
         "${ updated } επαφές ενημερώθηκαν επιτυχώς."
@@ -2301,9 +2316,6 @@
       ],
       "5 email addresses": [
         ""
-      ],
-      "5 GB storage": [
-        "5 GB αποθηκευτικός χώρος"
       ],
       "A number will be added to the filename": [
         "Το όνομα του αρχείου θα επεκταθεί με έναν αριθμό"
@@ -2888,8 +2900,8 @@
       "Updating drive search...": [
         "Ενημέρωση τοπικής αναζήτησης..."
       ],
-      "Upgrade today to avoid losing the following ${ appName } ${ planName } benefits.": [
-        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ appName } ${ planName }."
+      "Upgrade today to avoid losing the following ${ planName } benefits.": [
+        "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
       ],
       "Uploaded": [
         "Ανέβηκε"
@@ -3162,9 +3174,6 @@
       ],
       "Deleted": [
         "Διαγράφηκαν"
-      ],
-      "Display name": [
-        "Εμφανιζόμενο Όνομα"
       ],
       "Do not ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -3603,8 +3612,8 @@
         "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
       ],
       "${ numberOfItems } item successfully moved": [
-        "",
-        ""
+        "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν επιτυχώς"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
         "",
@@ -3721,6 +3730,9 @@
       "Enable Beta Access": [
         "Ενεργοποίηση Πρόσβασης Beta"
       ],
+      "Next": [
+        "Επόμενο"
+      ],
       "Start using ${ appName }": [
         "Έναρξη χρήσης του ${ appName }"
       ],
@@ -3735,22 +3747,16 @@
       "${ appName } is currently only available if you enable Beta Access.": [
         "Η ${ appName } είναι διαθέσιμη προς το παρόν μόνο εάν ενεργοποιήσετε την Πρόσβαση Beta."
       ],
-      "Protect all your files with end-to-end encryption. Use ${ appName } to store and share your files securely.": [
-        "Προστατέψτε όλα τα αρχεία σας με κρυπτογράφηση από άκρο σε άκρο. Χρησιμοποιήστε την ${ appName } για διασφαλισμένη αποθήκευση και κοινοποίηση των αρχείων σας."
+      "Your trusty online vault for vital documents and precious memories.": [
+        ""
       ]
     },
     "Onboarding Proton": {
-      "Choose a display name": [
-        "Επιλέξτε ένα εμφανιζόμενο όνομα"
-      ],
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ρυθμίστε τις παραμέτρους του οργανισμού σας, συνδέστε το όνομα τομέα σας και δημιουργήστε λογαριασμούς για να διασφαλίσετε ότι όλα τα μέλη του οργανισμού σας προστατεύονται."
       ],
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
-      ],
-      "Our mission is to build an internet where you are in control of your data and your privacy. We have recently updated Proton - welcome to the secure internet.": [
-        "Η αποστολή μας είναι να δημιουργήσουμε ένα διαδίκτυο όπου θα έχετε τον έλεγχο των δεδομένων σας και της ιδιωτικής σας ζωής. Πρόσφατα ενημερώσαμε το Proton - καλώς ήρθατε στο ασφαλές διαδίκτυο."
       ],
       "Select a theme": [
         "Επιλέξτε ένα θέμα"
@@ -3758,14 +3764,8 @@
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "This is what people will see when you send them an email, invite them to an event, or share a file with them.": [
-        "Αυτό θα βλέπουν οι χρήστες όταν τους στέλνετε ένα μήνυμα ηλεκτρονικού ταχυδρομείου, τους προσκαλείτε σε μια εκδήλωση ή κάνετε κοινή χρήση ενός αρχείου μαζί τους."
-      ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
         "Χρησιμοποιήστε τον επιλογέα εφαρμογών πάνω αριστερά για να αποκτήσετε πρόσβαση σε άλλες υπηρεσίες Proton, συμπεριλαμβανομένων του VPN, του Ημερολογίου και του Χώρου Αποθήκευσης στο cloud."
-      ],
-      "Welcome to Proton": [
-        "Καλώς ήρθατε στο Proton"
       ],
       "You can change this anytime in your settings.": [
         "Μπορείτε να το αλλάξετε αυτό οποιαδήποτε στιγμή στις ρυθμίσεις σας."
@@ -3775,11 +3775,11 @@
       "${ appName } is in Beta": [
         "Το ${ appName } βρίσκεται σε Beta"
       ],
-      "Meet your new secure file storage": [
-        "Υποδεχθείτε τη νέα σας διασφαλισμένη αρχειοθήκη"
-      ],
       "Upgrade to access ${ appName }": [
         "Αναβαθμίστε για πρόσβαση στο ${ appName }"
+      ],
+      "Welcome to ${ appName }": [
+        "Καλώς ήρθατε στο ${ appName }"
       ]
     },
     "Option": {
@@ -3817,9 +3817,6 @@
     "Placeholder": {
       "A way to contact you": [
         "Ένας τρόπος να επικοινωνήσουμε μαζί σας"
-      ],
-      "e.g. Julia Smith": [
-        "π.χ. Julia Smith"
       ],
       "E.g., ": [
         "Π.χ., "
@@ -3937,8 +3934,8 @@
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
       ],
-      "Get up to 18 months of ${ appName } ${ planName } for free": [
-        ""
+      "Get up to 18 months of ${ planName } for free": [
+        "Λάβετε δωρεάν έως 18 μήνες του ${ planName }"
       ],
       "Invite friends and earn rewards!": [
         ""
@@ -4008,8 +4005,8 @@
       ]
     },
     "Suffix for price": {
-      "/ month": [
-        "/ μήνα"
+      "/month": [
+        "/μήνα"
       ]
     },
     "Table header": {
@@ -4400,7 +4397,7 @@
         "Ίσως επηρεαστεί η απόδοση"
       ],
       "Phone numbers": [
-        "Αριθμοί Τηλεφώνου"
+        "Αριθμοί τηλεφώνου"
       ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
