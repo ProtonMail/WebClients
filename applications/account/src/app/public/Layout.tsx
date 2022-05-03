@@ -104,7 +104,7 @@ const Layout = ({ children, hasDecoration, topRight, bottomRight, hasBackButton 
                         className="flex-item-noshrink text-center p1 on-mobile-pt0 on-mobile-pb0"
                         version={appVersion}
                     />
-                    <div className="fixed m2 bottom right on-mobile-m0 on-mobile-mb1 on-mobile-text-center on-mobile-static">
+                    <div className="fixed m2 mb1-5 bottom right on-tablet-m0 on-tablet-mb1 on-tablet-text-center on-tablet-static">
                         {bottomRight}
                     </div>
                 </>
