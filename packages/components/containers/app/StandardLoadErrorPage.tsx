@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 import { c } from 'ttag';
 import GenericError from '../error/GenericError';
-import { InlineLinkButton, ProminentContainer } from '../../components';
+import { InlineLinkButton } from '../../components';
 import { useDocumentTitle } from '../../hooks';
 
 interface Props {
     errorMessage?: string;
 }
+
 const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     useDocumentTitle(c('Error message').t`Oops, something went wrong`);
 
@@ -33,7 +34,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     );
 
     return (
-        <ProminentContainer className="flex flex-align-items-center pb4 scroll-if-needed">
+        <div className="h100 flex flex-align-items-center pb4 scroll-if-needed">
             <GenericError>
                 <span>{c('Error message').t`There was a problem connecting to Proton.`}</span>
                 <span>{c('Error message').jt`Please ${refresh} or check your connection.`}</span>
@@ -41,7 +42,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
                     <div className="mt1 p0-5 color-weak">{c('Error message').t`Error: ${errorMessage}`}</div>
                 )}
             </GenericError>
-        </ProminentContainer>
+        </div>
     );
 };
 
