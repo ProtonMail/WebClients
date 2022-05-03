@@ -54,7 +54,7 @@ const CalendarsSection = ({
             </Alert>
         )}
         {user.isFree && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
-            <Card className="mb1">
+            <Card rounded className="mb1">
                 <div className="flex flex-nowrap flex-align-items-center">
                     <p className="flex-item-fluid mt0 mb0 pr2">
                         {c('Upgrade notice').ngettext(
