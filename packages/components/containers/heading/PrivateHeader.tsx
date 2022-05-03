@@ -47,7 +47,7 @@ const PrivateHeader = ({
     onToggleExpand,
     title,
 }: Props) => {
-    const [{ hasPaidMail, hasPaidVpn }] = useUser();
+    const [user] = useUser();
     const { APP_NAME } = useConfig();
     const offer = usePromotionOffer();
 
@@ -89,7 +89,7 @@ const PrivateHeader = ({
                             <TopNavbarListItemBlackFridayButton offer={offer} />
                         </TopNavbarListItem>
                     ) : null}
-                    {hasPaidMail || isVPN ? null : (
+                    {user.isFree && (
                         <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={SettingsLink}
@@ -97,18 +97,7 @@ const PrivateHeader = ({
                                 color="norm"
                                 text={c('Link').t`Upgrade`}
                                 icon={<Icon name="arrow-up-big-line" />}
-                                path="/upgrade"
-                                title={c('Link').t`Go to subscription plans`}
-                            />
-                        </TopNavbarListItem>
-                    )}
-                    {hasPaidVpn || !isVPN || (isVPN && offer) ? null : (
-                        <TopNavbarListItem noShrink collapsedOnDesktop={false}>
-                            <TopNavbarListItemButton
-                                as={AppLink}
-                                text={c('Link').t`Upgrade`}
-                                icon={<Icon name="arrow-up-big-line" />}
-                                to="/dashboard"
+                                path={isVPN ? '/dashboard' : '/upgrade'}
                                 title={c('Link').t`Go to subscription plans`}
                             />
                         </TopNavbarListItem>
