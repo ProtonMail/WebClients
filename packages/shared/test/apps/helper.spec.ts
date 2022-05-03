@@ -72,4 +72,18 @@ describe('sso app href', () => {
         };
         expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.protonmail.com/u/2`);
     });
+
+    it('should produce links stripping previous local id basenames', () => {
+        const location = {
+            hostname: 'account.protonmail.com',
+            protocol: 'https:',
+            port: '',
+        };
+        expect(getAppHref('/u/0/mail', APPS.PROTONACCOUNT, 2, location)).toBe(
+            `https://account.protonmail.com/u/2/mail`
+        );
+        expect(getAppHref('/u/0/mail', APPS.PROTONACCOUNT, 0, location)).toBe(
+            `https://account.protonmail.com/u/0/mail`
+        );
+    });
 });
