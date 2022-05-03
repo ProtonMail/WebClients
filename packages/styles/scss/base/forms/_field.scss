@@ -58,6 +58,7 @@ $field-container: rem(260) !default;
 	&:focus,
 	&.focus,
 	&:focus-within,
+	&:focus-visible, // might seem useless for inputs like text (they DO trigger focus-visible), but will be useful for "fake" select (selectV2)
 	&[aria-expanded='true']:not([aria-controls]) {
 		border-color: var(--field-focus);
 		box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
@@ -102,6 +103,11 @@ $field-container: rem(260) !default;
 
 	&.select {
 		padding-inline-end: rem(6);
+		&:focus-visible {
+			&#{&} {
+				outline: 0; // focus is provided by input fields
+			}
+		}
 
 		.mauto {
 			display: flex;
