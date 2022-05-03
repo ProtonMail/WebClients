@@ -1,5 +1,6 @@
 import { c, msgid } from 'ttag';
-import { AlertModal, Button, ModalProps } from '@proton/components';
+import { useState } from 'react';
+import { AlertModal, Button, Checkbox, Label, ModalProps } from '@proton/components';
 
 import { useMemo } from 'react';
 import { Element } from '../../../models/element';
@@ -12,20 +13,22 @@ interface Props extends ModalProps {
 }
 
 const MoveToSpamModal = ({ isMessage, elements, onResolve, onReject, ...rest }: Props) => {
+    const [checked, setChecked] = useState(false);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => setChecked(e.target.checked);
     const text = useMemo(() => {
         const elementsCount = elements.length;
 
         if (isMessage) {
             return c('Info').ngettext(
-                msgid`If this message contains a newletter, would you like to unsubscribe and stop receiving email?`,
-                `If these messages contain newletters, would you like to unsubscribe and stop receiving email?`,
+                msgid`This message will be marked as spam. Would like to unsubscribe from it?`,
+                `These messages will be marked as spam. Would like to unsubscribe from them?`,
                 elementsCount
             );
         }
 
         return c('Info').ngettext(
-            msgid`If this conversation contains a newletter, would you like to unsubscribe and stop receiving email?`,
-            `If these conversations contain newletters, would you like to unsubscribe and stop receiving email?`,
+            msgid`This message will be marked as spam. Would like to unsubscribe from it?`,
+            `These conversations will be marked as spam. Would like to unsubscribe from them?`,
             elementsCount
         );
     }, [isMessage, elements]);
@@ -41,7 +44,11 @@ const MoveToSpamModal = ({ isMessage, elements, onResolve, onReject, ...rest }: 
             ]}
             {...rest}
         >
-            {text}
+            <p>{text}</p>
+            <Label htmlFor="remember-me">
+                <Checkbox id="remember-me" checked={checked} onChange={handleChange} />
+                {c('Label').t`Remember my choice`}
+            </Label>
         </AlertModal>
     );
 };
