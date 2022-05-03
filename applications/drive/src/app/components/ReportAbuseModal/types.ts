@@ -1,9 +1,18 @@
 import { SharedURLInfoDecrypted } from '../../hooks/drive/usePublicSharing';
 
+export type ReportAbuseRequestPayload = {
+    abuseCategory: AbuseCateroryType;
+    shareURL: string;
+    password: string;
+    nodePassphrase: string;
+    reporterEmail?: string;
+    reporterMessage?: string;
+};
+
 export interface AbuseFormProps {
     onClose?: () => void;
     linkInfo: SharedURLInfoDecrypted;
-    password?: string;
+    password: string;
     onSubmit: (params: {
         abuseCategory: string;
         reporterEmail?: string;
