@@ -235,7 +235,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getVPNConnections(1),
                 [PLANS.FAMILY]: getVPNConnections(VPN_CONNECTIONS),
                 [PLANS.MAIL_PRO]: getVPNConnections(1),
-                [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS),
+                [PLANS.BUNDLE_PRO]: getVPNConnections(VPN_CONNECTIONS, true),
             },
         },
         {
@@ -275,7 +275,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getVPNSpeed('medium'),
                 [PLANS.FAMILY]: getVPNSpeed('highest'),
                 [PLANS.MAIL_PRO]: getVPNSpeed('medium'),
-                [PLANS.BUNDLE_PRO]: getVPNSpeed('highest'),
+                [PLANS.BUNDLE_PRO]: getVPNSpeed('highest', true),
             },
         },
         {
@@ -288,7 +288,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getNetShield(false),
                 [PLANS.FAMILY]: getNetShield(true),
                 [PLANS.MAIL_PRO]: getNetShield(false),
-                [PLANS.BUNDLE_PRO]: getNetShield(true),
+                [PLANS.BUNDLE_PRO]: getNetShield(true, true),
             },
         },
         {
@@ -301,7 +301,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getStreaming(false),
                 [PLANS.FAMILY]: getStreaming(true),
                 [PLANS.MAIL_PRO]: getStreaming(false),
-                [PLANS.BUNDLE_PRO]: getStreaming(true),
+                [PLANS.BUNDLE_PRO]: getStreaming(true, true),
             },
         },
         {
@@ -314,7 +314,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getP2P(false),
                 [PLANS.FAMILY]: getP2P(true),
                 [PLANS.MAIL_PRO]: getP2P(false),
-                [PLANS.BUNDLE_PRO]: getP2P(true),
+                [PLANS.BUNDLE_PRO]: getP2P(true, true),
             },
         },
         {
@@ -327,7 +327,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getSecureCore(false),
                 [PLANS.FAMILY]: getSecureCore(true),
                 [PLANS.MAIL_PRO]: getSecureCore(false),
-                [PLANS.BUNDLE_PRO]: getSecureCore(true),
+                [PLANS.BUNDLE_PRO]: getSecureCore(true, true),
             },
         },
         {
@@ -340,7 +340,7 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
                 [PLANS.DRIVE]: getTor(false),
                 [PLANS.FAMILY]: getTor(true),
                 [PLANS.MAIL_PRO]: getTor(false),
-                [PLANS.BUNDLE_PRO]: getTor(true),
+                [PLANS.BUNDLE_PRO]: getTor(true, true),
             },
         },
         {
