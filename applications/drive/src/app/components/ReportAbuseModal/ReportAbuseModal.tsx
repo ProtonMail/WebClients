@@ -21,7 +21,7 @@ import {
 } from '@proton/components';
 
 import { FileCard } from './FileCard';
-import { AbuseCategory, AbuseCateroryType, AbuseFormProps } from './types';
+import { AbuseCategory, AbuseCateroryType, AbuseFormProps, ReportAbuseRequestPayload } from './types';
 
 const ABUSE_CATEGORIES: AbuseCategory[] = [
     {
@@ -80,15 +80,22 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, password, onSubmit, open }
         }
 
         try {
-            await onSubmit({
-                reporterEmail: model.Email,
-                reporterMessage: model.Comment,
+            const payload: ReportAbuseRequestPayload = {
                 abuseCategory: model.Category!,
                 shareURL: window.location.href,
                 password,
                 nodePassphrase: linkInfo.nodePassphrase,
-            });
+            };
 
+            if (model.Email) {
+                payload.reporterEmail = model.Email;
+            }
+
+            if (model.Comment) {
+                payload.reporterMessage = model.Comment;
+            }
+
+            await onSubmit(payload);
             createNotification({ text: c('Info').t`Report has been sent` });
             onClose?.();
         } catch (e) {
