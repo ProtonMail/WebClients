@@ -1,10 +1,10 @@
-import { Children, isValidElement } from 'react';
+import { Children, isValidElement, ReactNode } from 'react';
 
-interface StrippedListProps {
-    children: React.ReactNode;
+interface StripedListProps {
+    children: ReactNode;
 }
 
-const StrippedList = ({ children }: StrippedListProps) => (
+const StripedList = ({ children }: StripedListProps) => (
     <ul className="bg-weak-even unstyled">
         {Children.map(children, (child) => {
             if (isValidElement(child)) {
@@ -15,4 +15,4 @@ const StrippedList = ({ children }: StrippedListProps) => (
     </ul>
 );
 
-export default StrippedList;
+export default StripedList;

@@ -333,6 +333,8 @@ const SubscriptionCheckout = ({
                                             <span className="mr0-5">{c('Label').t`Proration`}</span>
                                             <Info
                                                 buttonClass="mb0-5"
+                                                title={c('Info')
+                                                    .t`Credit for the unused portion of your previous plan subscription`}
                                                 url={
                                                     isVPN
                                                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
