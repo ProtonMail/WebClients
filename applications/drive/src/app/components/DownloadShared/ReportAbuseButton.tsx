@@ -7,7 +7,7 @@ import usePublicSharing, { SharedURLInfoDecrypted } from '../../hooks/drive/useP
 
 interface Props {
     linkInfo: SharedURLInfoDecrypted;
-    password?: string;
+    password: string;
 }
 
 export default function ReportAbuseButton({ linkInfo, password }: Props) {
