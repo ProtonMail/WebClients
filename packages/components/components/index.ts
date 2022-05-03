@@ -55,7 +55,7 @@ export * from './slider';
 export * from './spotlight';
 export * from './stepDot';
 export * from './stepDots';
-export * from './strippedList';
+export * from './stripedList';
 export * from './table';
 export * from './tabs';
 export * from './text';

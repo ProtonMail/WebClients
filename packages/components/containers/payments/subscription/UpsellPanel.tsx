@@ -25,7 +25,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { getPlusServers } from '@proton/shared/lib/vpn/features';
-import { StrippedList, StrippedItem, Button, Price, IconName, Icon } from '../../../components';
+import { StripedList, StripedItem, Button, Price, IconName, Icon } from '../../../components';
 import { useConfig } from '../../../hooks';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -47,15 +47,15 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
             </h3>
             {children}
             {description && <div className="color-weak text-lg">{description}</div>}
-            <StrippedList>
+            <StripedList>
                 {items.map((item) => {
                     return (
-                        <StrippedItem key={item.text} left={<Icon className="color-warning" name="fire" size={20} />}>
+                        <StripedItem key={item.text} left={<Icon className="color-warning" name="fire" size={20} />}>
                             {item.text}
-                        </StrippedItem>
+                        </StripedItem>
                     );
                 })}
-            </StrippedList>
+            </StripedList>
             {actions}
         </div>
     );
