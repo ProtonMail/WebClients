@@ -132,7 +132,7 @@ const CalendarSettingsRouter = ({
                     />
                     {user.isFree ? (
                         <SettingsSection>
-                            <Card className="mb1" data-test-id="card:upgrade">
+                            <Card rounded className="mb1" data-test-id="card:upgrade">
                                 <div className="flex flex-nowrap flex-align-items-center">
                                     <p className="flex-item-fluid mt0 mb0 pr2">
                                         {c('Upgrade notice')
