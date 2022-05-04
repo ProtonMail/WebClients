@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import {
     getAppVersion,
@@ -24,10 +25,34 @@ import './Layout.scss';
 const AppLogos = ({ className, size }: { className: string; size: IconSize }) => {
     return (
         <div className={className}>
-            <MailLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-            <CalendarLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-            <DriveLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-            <VpnLogo variant="glyph-only" size={size} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
+            <Href
+                href={getStaticURL('/mail')}
+                className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                title={MAIL_APP_NAME}
+            >
+                <MailLogo variant="glyph-only" size={size} />
+            </Href>
+            <Href
+                href={getStaticURL('/calendar')}
+                className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                title={CALENDAR_APP_NAME}
+            >
+                <CalendarLogo variant="glyph-only" size={size} />
+            </Href>
+            <Href
+                href={getStaticURL('/drive')}
+                className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                title={DRIVE_APP_NAME}
+            >
+                <DriveLogo variant="glyph-only" size={size} />
+            </Href>
+            <Href
+                href="https://protonvpn.com"
+                className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                title={VPN_APP_NAME}
+            >
+                <VpnLogo variant="glyph-only" size={size} />
+            </Href>
         </div>
     );
 };
