@@ -45,6 +45,9 @@ export const isTransferManuallyPaused = ({ state }: { state: TransferState }) =>
 export const isTransferPaused = ({ state }: { state: TransferState }) =>
     state === TransferState.Paused || state === TransferState.NetworkError;
 
+export const isTransferPausedByConnection = ({ state }: { state: TransferState }) =>
+    state === TransferState.NetworkError;
+
 export const isTransferPending = ({ state }: { state: TransferState }) => state === TransferState.Pending;
 
 export const isTransferFinalizing = ({ state }: { state: TransferState }) => state === TransferState.Finalizing;
