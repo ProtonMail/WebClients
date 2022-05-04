@@ -224,6 +224,10 @@ jest.mock('@proton/components/hooks/useCalendars', () =>
         ],
     ])
 );
+jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+    __esModule: true,
+    loadCryptoWorker: jest.fn(),
+}));
 
 function renderComponent() {
     return (
