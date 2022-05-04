@@ -12,71 +12,71 @@ export interface ThemeConfig {
 
 const config: ThemeConfig[] = [
     {
-        output: './themes/snow.theme.css',
+        output: './themes/dist/snow.theme.css',
         files: [
             {
-                path: './themes/snow/standard-base.css',
+                path: './themes/src/snow/standard-base.css',
                 type: 'light',
             },
         ],
     },
     {
-        output: './themes/carbon.theme.css',
+        output: './themes/dist/carbon.theme.css',
         files: [
             {
-                path: './themes/carbon/standard-base.css',
+                path: './themes/src/carbon/standard-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/carbon/prominent-base.css',
+                path: './themes/src/carbon/prominent-base.css',
                 type: 'dark',
             },
         ],
     },
     {
-        output: './themes/contrast.theme.css',
+        output: './themes/dist/contrast.theme.css',
         files: [
             {
-                path: './themes/contrast/standard-base.css',
+                path: './themes/src/contrast/standard-base.css',
                 type: 'light',
             },
         ],
     },
     {
-        output: './themes/duotone.theme.css',
+        output: './themes/dist/duotone.theme.css',
         files: [
             {
-                path: './themes/duotone/standard-base.css',
+                path: './themes/src/duotone/standard-base.css',
                 type: 'light',
             },
             {
-                path: './themes/duotone/prominent-base.css',
+                path: './themes/src/duotone/prominent-base.css',
                 type: 'dark',
             },
         ],
     },
     {
-        output: './themes/legacy.theme.css',
+        output: './themes/dist/legacy.theme.css',
         files: [
             {
-                path: './themes/legacy/standard-base.css',
+                path: './themes/src/legacy/standard-base.css',
                 type: 'light',
             },
             {
-                path: './themes/legacy/prominent-base.css',
+                path: './themes/src/legacy/prominent-base.css',
                 type: 'dark',
             },
         ],
     },
     {
-        output: './themes/monokai.theme.css',
+        output: './themes/dist/monokai.theme.css',
         files: [
             {
-                path: './themes/monokai/standard-base.css',
+                path: './themes/src/monokai/standard-base.css',
                 type: 'dark',
             },
             {
-                path: './themes/monokai/prominent-base.css',
+                path: './themes/src/monokai/prominent-base.css',
                 type: 'dark',
             },
         ],
