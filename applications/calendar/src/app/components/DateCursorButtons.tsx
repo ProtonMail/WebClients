@@ -1,10 +1,12 @@
 import { useMemo } from 'react';
 import { c } from 'ttag';
-import { Icon, TodayIcon, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { format } from 'date-fns';
-import { dateLocale } from '@proton/shared/lib/i18n';
 
+import { Icon, TodayIcon, ToolbarButton } from '@proton/components';
+import { Vr } from '@proton/atoms';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
+
 import { getNavigationArrowsText } from '../helpers/i18n';
 
 interface Props {
@@ -15,6 +17,7 @@ interface Props {
     onNext: () => void;
     currentRange: string;
 }
+
 const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }: Props) => {
     const todayTitle = useMemo(() => {
         return format(now, 'PP', { locale: dateLocale });
@@ -33,7 +36,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
             >
                 <span className="ml0-5 mtauto mbauto no-mobile">{c('Action').t`Today`}</span>
             </ToolbarButton>
-            <ToolbarSeparator />
+            <Vr />
             <ToolbarButton
                 data-test-id="calendar-toolbar:previous"
                 title={previous}
@@ -50,7 +53,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
             >
                 <span className="sr-only">{next}</span>
             </ToolbarButton>
-            <ToolbarSeparator />
+            <Vr />
             <span className="pl1 pr0-5 mtauto mbauto flex-item-noshrink">{currentRange}</span>
         </>
     );

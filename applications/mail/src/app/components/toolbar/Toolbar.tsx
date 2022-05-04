@@ -2,7 +2,8 @@ import { memo } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon, useMailSettings, ToolbarButton, ToolbarSeparator } from '@proton/components';
+import { Vr } from '@proton/atoms';
+import { Icon, useMailSettings, ToolbarButton } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
@@ -118,9 +119,9 @@ const Toolbar = ({
                         data-testid="toolbar:back-button"
                     />
                 )}
-                <ToolbarSeparator />
+                <Vr />
                 <ReadUnreadButtons mailSettings={mailSettings} selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
-                <ToolbarSeparator />
+                <Vr />
                 <MoveButtons
                     labelID={labelID}
                     labels={labels}
@@ -131,7 +132,7 @@ const Toolbar = ({
                     onDelete={onDelete}
                     mailSettings={mailSettings}
                 />
-                <ToolbarSeparator />
+                <Vr />
                 <ToolbarDropdown
                     autoClose={false}
                     noMaxSize

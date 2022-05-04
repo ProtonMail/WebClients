@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
-import { Toolbar, ToolbarSeparator } from '@proton/components';
+import { Toolbar } from '@proton/components';
+import { Vr } from '@proton/atoms';
 
 interface Props {
     dateCursorButtons: ReactNode;
@@ -11,9 +12,9 @@ const CalendarToolbar = ({ dateCursorButtons, timezoneSelector, viewSelector }: 
     return (
         <Toolbar>
             {dateCursorButtons}
-            <ToolbarSeparator className="mlauto" />
+            <Vr className="mlauto" />
             <span className="flex no-tablet no-mobile w24e">{timezoneSelector}</span>
-            <ToolbarSeparator className="no-tablet no-mobile" />
+            <Vr className="no-tablet no-mobile" />
             <span className="no-mobile flex flex-item-noshrink">{viewSelector}</span>
         </Toolbar>
     );

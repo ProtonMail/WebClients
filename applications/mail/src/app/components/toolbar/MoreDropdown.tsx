@@ -1,8 +1,10 @@
 import { c } from 'ttag';
-import { Icon, DropdownMenu, DropdownMenuButton, ToolbarSeparator, useLoading } from '@proton/components';
+import { useLocation } from 'react-router-dom';
+
+import { Vr } from '@proton/atoms';
+import { Icon, DropdownMenu, DropdownMenuButton, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { useLocation } from 'react-router-dom';
 import ToolbarDropdown from './ToolbarDropdown';
 import { useEmptyLabel } from '../../hooks/useEmptyLabel';
 import { labelIncludes } from '../../helpers/labels';
@@ -64,7 +66,7 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
                     </DropdownMenu>
                 )}
             </ToolbarDropdown>
-            <ToolbarSeparator />
+            <Vr />
             {deleteAllModal}
         </>
     );

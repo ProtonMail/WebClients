@@ -1,4 +1,5 @@
-import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton, ToolbarSeparator } from '@proton/components';
+import { Vr } from '@proton/atoms';
+import { Icon, useLoading, useLabels, useMailSettings, ToolbarButton } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 import { c } from 'ttag';
@@ -56,7 +57,7 @@ const EmptyButton = ({ labelID = '', breakpoints, elementIDs }: Props) => {
 
     return (
         <>
-            <ToolbarSeparator />
+            <Vr />
             <ToolbarButton
                 disabled={loading || !elementIDs.length}
                 title={titleEmpty}
