@@ -1,6 +1,8 @@
 import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
 import { addMonths, endOfMonth, startOfMonth, isSameMonth } from 'date-fns';
 
+import { Vr } from '@proton/atoms';
+
 import { useElementRect } from '../../hooks';
 import { getDaysInMonth, getDateTupleFromMonday } from './helper';
 import { classnames } from '../../helpers';
@@ -11,7 +13,6 @@ import Icon from '../icon/Icon';
 import { DateTuple, WeekStartsOn } from './index.d';
 import { Button } from '../button';
 import { Tooltip } from '../tooltip';
-import { Vr } from '../vr';
 import { TodayIcon } from '../icon';
 
 export interface Props {

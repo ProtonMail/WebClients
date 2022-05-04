@@ -10,9 +10,9 @@ import {
 } from 'react';
 
 import { ThemeColor } from '@proton/colors';
+import { Vr } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
-import { Vr } from '../vr';
 
 export type Color = `${ThemeColor.Norm | ThemeColor.Weak}`;
 
