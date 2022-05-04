@@ -62,7 +62,7 @@
 }
 
 // .max-w500p { max-inline-size: 500px; }
-@each $max-width in (100, 650) {
+@each $max-width in (100, 400, 650) {
 	.max-w#{$max-width}p {
 		max-inline-size: #{$max-width}px;
 	}
