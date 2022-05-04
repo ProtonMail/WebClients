@@ -72,12 +72,15 @@
 		}
 
 		&-info {
-			min-block-size: 5em;
+			min-block-size: 6em;
 			@include respond-to(1100) {
-				min-block-size: 6em;
+				min-block-size: 7em;
+			}
+			@include respond-to(970) {
+				min-block-size: 8.5em;
 			}
 			@include respond-to($breakpoint-medium) {
-				// min-block-size: 5em;
+				min-block-size: 7em;
 			}
 			@include respond-to($breakpoint-small) {
 				min-block-size: 0;
