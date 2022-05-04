@@ -28,7 +28,7 @@ const App = () => {
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
-                        <div className="ui-prominent bg-norm color-norm h100v">
+                        <div className="ui-prominent h100v">
                             <DownloadSharedContainer />
                         </div>
                     </StandardPublicApp>
