@@ -14,15 +14,15 @@ const YahooMailInstructions = () => {
     const yahooAppPasswordMessage = c('Import instructions')
         .jt`To import emails to Proton, you need an ${appPasswordLink} from Yahoo. Get it by following these steps:`;
 
-    // translator: full sentence: "Go to account info under your profile in Yahoo Mail"
+    // translator: full sentence: "Go to account info under your profile in Yahoo"
     const boldAccountInfo = <strong key="boldAccountInfo">{c('Import instructions emphasis').t`Account info`}</strong>;
-    // translator: full sentence: "Go to account info under your profile in Yahoo Mail"
+    // translator: full sentence: "Go to account info under your profile in Yahoo"
     const yahooMailLink = (
         <Href url="https://mail.yahoo.com/" key="yahooMailLink">
-            {c('Import instructions link').t`Yahoo Mail`}
+            {c('Import instructions link').t`Yahoo`}
         </Href>
     );
-    // translator: full sentence: "Go to account info under your profile in Yahoo Mail"
+    // translator: full sentence: "Go to account info under your profile in Yahoo"
     const step1 = c('Import instructions').jt`Go to ${boldAccountInfo} under your profile in ${yahooMailLink}`;
 
     // translator: full sentence: "Go to Account security"

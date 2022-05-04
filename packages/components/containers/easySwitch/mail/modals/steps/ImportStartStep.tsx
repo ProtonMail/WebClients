@@ -149,7 +149,7 @@ const ImportStartStep = ({
                         <>
                             <div className="mb1">
                                 {c('Import error')
-                                    .t`Proton can't connect to your Yahoo Mail account. Please make sure that:`}
+                                    .t`Proton can't connect to your Yahoo account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
@@ -161,7 +161,7 @@ const ImportStartStep = ({
 
                 if (isIMAPError) {
                     message = c('Import error')
-                        .t`Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.`;
+                        .t`Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.`;
                 }
 
                 if (isAuthError) {
