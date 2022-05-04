@@ -78,8 +78,8 @@ const EasySwitchDefaultModal = ({
     ...rest
 }: Props) => {
     const isEasySwitchMailEnabled = featureMap?.OtherMail;
-    const isEasySwitchContactsEnabled = featureMap?.OtherCalendar;
-    const isEasySwitchCalendarEnabled = featureMap?.OtherContacts;
+    const isEasySwitchCalendarEnabled = featureMap?.OtherCalendar;
+    const isEasySwitchContactsEnabled = featureMap?.OtherContacts;
 
     const { createModal } = useModals();
 
