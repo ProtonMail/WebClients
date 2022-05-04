@@ -7,6 +7,8 @@ import {
     CYCLE,
     BRAND_NAME,
     VPN_CONNECTIONS,
+    MAX_CALENDARS_FREE,
+    MAX_CALENDARS_PAID,
 } from '@proton/shared/lib/constants';
 import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -74,8 +76,6 @@ const SubscriptionPanel = ({
     const {
         UsedDomains = 0,
         MaxDomains = 0,
-        MaxCalendars = 1,
-        UsedCalendars = 0,
         UsedSpace = user.UsedSpace,
         MaxSpace = user.MaxSpace,
         UsedAddresses: OrganizationUsedAddresses,
@@ -207,25 +207,16 @@ const SubscriptionPanel = ({
             {
                 icon: 'calendar-checkmark',
                 text: (() => {
-                    if (MaxCalendars === 1) {
-                        return c('Subscription attribute').ngettext(
-                            msgid`${UsedCalendars} calendar`,
-                            `${UsedCalendars} calendars`,
-                            UsedCalendars
-                        );
-                    }
                     if (MaxMembers > 1) {
+                        const n = MAX_CALENDARS_PER_USER;
                         return c('Subscription attribute').ngettext(
-                            msgid`${MAX_CALENDARS_PER_USER} calendar per user`,
-                            `${MAX_CALENDARS_PER_USER} calendars per user`,
-                            MAX_CALENDARS_PER_USER
+                            msgid`${n} calendar per user`,
+                            `${n} calendars per user`,
+                            n
                         );
                     }
-                    return c('Subscription attribute').ngettext(
-                        msgid`${UsedCalendars} of ${MaxCalendars} calendar`,
-                        `${UsedCalendars} of ${MaxCalendars} calendars`,
-                        MaxCalendars
-                    );
+                    const n = user.isFree ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
+                    return c('Subscription attribute').ngettext(msgid`${n} calendar`, `${n} calendars`, n);
                 })(),
             },
             {
