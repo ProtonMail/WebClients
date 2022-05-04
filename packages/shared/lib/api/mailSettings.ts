@@ -1,3 +1,4 @@
+import { SpamAction } from '../interfaces';
 import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
 
 export const getMailSettings = () => ({
@@ -191,7 +192,7 @@ export const updateImageProxy = (ImageProxy: number, Action: 'add' | 'remove') =
     data: { ImageProxy, Action: Action === 'add' ? 1 : 0 },
 });
 
-export const updateSpamAction = (SpamAction: number) => ({
+export const updateSpamAction = (SpamAction: SpamAction | null) => ({
     url: 'mail/v4/settings/spamaction',
     method: 'put',
     data: { SpamAction },
