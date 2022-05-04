@@ -41,7 +41,20 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
     };
 
     const handleCreateLabel = (label: LabelModel) => {
-        handleChangeModel({ labels: [...labelAs.labels, label.Name] });
+        if (label.Path) {
+            handleChangeModel({ labels: [...labelAs.labels, label.Path] });
+        }
+    };
+
+    const handleCheckLabel = (checkedLabel: Label) => {
+        const isLabelCheck = labelAs.labels.indexOf(checkedLabel.Path) === -1;
+
+        let nextLabels = [...labelAs.labels];
+        nextLabels = isLabelCheck
+            ? [...nextLabels, checkedLabel.Path]
+            : nextLabels.filter((labelPath) => checkedLabel.Path !== labelPath);
+
+        handleChangeModel({ labels: nextLabels });
     };
 
     const renderClosed = () => {
@@ -85,20 +98,12 @@ const FilterActionsFormLabelsRow = ({ actions, isNarrow, handleUpdateActions, la
                     <>
                         <div className="w100">
                             {labels.length ? (
-                                labels.map((label: Label) => (
-                                    <div className="mb0-5 inline-block text-ellipsis" key={label.Name}>
+                                labels.map((label) => (
+                                    <div className="mb0-5 inline-block text-ellipsis" key={label.Path}>
                                         <Checkbox
                                             className="mr1 flex-nowrap"
-                                            checked={labelAs.labels.includes(label.Name)}
-                                            onChange={() => {
-                                                const index = labelAs.labels.indexOf(label.Name);
-                                                if (index >= 0) {
-                                                    labelAs.labels.splice(index, 1);
-                                                    handleChangeModel({ labels: [...labelAs.labels] });
-                                                } else {
-                                                    handleChangeModel({ labels: [...labelAs.labels, label.Name] });
-                                                }
-                                            }}
+                                            checked={labelAs.labels.includes(label.Path)}
+                                            onChange={() => handleCheckLabel(label)}
                                             labelOnClick={(e) => e.stopPropagation()}
                                         >
                                             <span className="inline-flex align-middle">
