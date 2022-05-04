@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import {
     CONTACT_MIME_TYPES,
     MIME_TYPES,
@@ -11,60 +11,36 @@ import {
 import { MailSettings, SelfSend } from '../../lib/interfaces';
 import extractEncryptionPreferences, { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '../../lib/mail/encryptionPreferences';
 
-const fakeKey1: OpenPGPKey = {
+const fakeKey1: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey1';
     },
-    users: [
-        {
-            userId: {
-                userid: '<user@pm.me>',
-            },
-        },
-    ],
+    getUserIDs: () => ['<user@pm.me>'],
 } as any;
-const pinnedFakeKey1: OpenPGPKey = {
+const pinnedFakeKey1: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey1';
     },
-    users: [
-        {
-            userId: {
-                userid: '<user@pm.me>',
-            },
-        },
-    ],
+    getUserIDs: () => ['<user@pm.me>'],
 } as any;
-const fakeKey2: OpenPGPKey = {
+const fakeKey2: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey2';
     },
-    users: [
-        {
-            userId: {
-                userid: '<user@tatoo.me>',
-            },
-        },
-    ],
+    getUserIDs: () => ['<user@tatoo.me>'],
 } as any;
-const pinnedFakeKey2: OpenPGPKey = {
+const pinnedFakeKey2: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey2';
     },
-    users: [
-        {
-            userId: {
-                userid: '<user@tatoo.me>',
-            },
-        },
-    ],
+    getUserIDs: () => ['<user@tatoo.me>'],
 } as any;
-const fakeKey3: OpenPGPKey = {
+const fakeKey3: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey3';
     },
 } as any;
-const pinnedFakeKey3: OpenPGPKey = {
+const pinnedFakeKey3: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey3';
     },
@@ -97,8 +73,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
 
     it('should extract the primary API key when the email address does not belong to any contact', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
-        const pinnedKeys = [] as OpenPGPKey[];
-        const verifyingPinnedKeys = [] as OpenPGPKey[];
+        const pinnedKeys = [] as PublicKeyReference[];
+        const verifyingPinnedKeys = [] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             isContact: false,
@@ -133,8 +109,8 @@ describe('extractEncryptionPreferences for an internal user', () => {
 
     it('should extract the primary API key when there are no pinned keys', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
-        const pinnedKeys = [] as OpenPGPKey[];
-        const verifyingPinnedKeys = [] as OpenPGPKey[];
+        const pinnedKeys = [] as PublicKeyReference[];
+        const verifyingPinnedKeys = [] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -201,7 +177,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give a warning for keyid mismatch', () => {
         const apiKeys = [fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey2];
-        const verifyingPinnedKeys = [] as OpenPGPKey[];
+        const verifyingPinnedKeys = [] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -216,7 +192,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give an error when the API gave emailAddress errors', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
-        const verifyingPinnedKeys = [pinnedFakeKey1] as OpenPGPKey[];
+        const verifyingPinnedKeys = [pinnedFakeKey1] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -273,7 +249,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
     });
 
     it('should give an error if the API returned no keys', () => {
-        const apiKeys = [] as OpenPGPKey[];
+        const apiKeys = [] as PublicKeyReference[];
         const pinnedKeys = [pinnedFakeKey1];
         const verifyingPinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
@@ -290,7 +266,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give an error if the API returned no keys valid for sending', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
-        const verifyingPinnedKeys = [] as OpenPGPKey[];
+        const verifyingPinnedKeys = [] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -346,8 +322,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
 
     it('should extract the primary API key when the email address does not belong to any contact', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
-        const pinnedKeys = [] as OpenPGPKey[];
-        const verifyingPinnedKeys = [] as OpenPGPKey[];
+        const pinnedKeys = [] as PublicKeyReference[];
+        const verifyingPinnedKeys = [] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             isContact: false,
@@ -382,8 +358,8 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
 
     it('should extract the primary API key when there are no pinned keys', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
-        const pinnedKeys = [] as OpenPGPKey[];
-        const verifyingPinnedKeys = [] as OpenPGPKey[];
+        const pinnedKeys = [] as PublicKeyReference[];
+        const verifyingPinnedKeys = [] as PublicKeyReference[];
         const publicKeyModel = {
             ...model,
             publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
@@ -644,7 +620,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     });
 
     it('should pick the first pinned key', () => {
-        const apiKeys = [] as OpenPGPKey[];
+        const apiKeys = [] as PublicKeyReference[];
         const pinnedKeys = [pinnedFakeKey2, pinnedFakeKey3];
         const verifyingPinnedKeys = [pinnedFakeKey2, pinnedFakeKey3];
         const publicKeyModel = {
@@ -722,8 +698,8 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
 
 describe('extractEncryptionPreferences for an own address', () => {
     const apiKeys = [fakeKey1, fakeKey2];
-    const pinnedKeys = [] as OpenPGPKey[];
-    const verifyingPinnedKeys = [] as OpenPGPKey[];
+    const pinnedKeys = [] as PublicKeyReference[];
+    const verifyingPinnedKeys = [] as PublicKeyReference[];
     const model = {
         emailAddress: 'user@pm.me',
         publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },

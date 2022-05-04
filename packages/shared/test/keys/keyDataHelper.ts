@@ -1,4 +1,4 @@
-import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, toPublicKeyReference, PrivateKeyReference } from '@proton/crypto';
 import { generateAddressKey, generateAddressKeyTokens, generateUserKey } from '../../lib/keys';
 import { Key } from '../../lib/interfaces';
 import { ENCRYPTION_CONFIGS, ENCRYPTION_TYPES } from '../../lib/constants';
@@ -14,7 +14,7 @@ export const getUserKey = async (ID: string, keyPassword: string, version = 3) =
         key: {
             ID,
             privateKey,
-            publicKey: privateKey.toPublic(),
+            publicKey: await toPublicKeyReference(privateKey),
         },
         Key: {
             ID,
@@ -24,14 +24,22 @@ export const getUserKey = async (ID: string, keyPassword: string, version = 3) =
     };
 };
 
-export const getAddressKeyHelper = async (ID: string, userKey: OpenPGPKey, privateKey: OpenPGPKey, version = 3) => {
+export const getAddressKeyHelper = async (
+    ID: string,
+    userKey: PrivateKeyReference,
+    privateKey: PrivateKeyReference,
+    version = 3
+) => {
     const result = await generateAddressKeyTokens(userKey);
-    const privateKeyArmored = await encryptPrivateKey(privateKey, result.token);
+    const privateKeyArmored = await CryptoProxy.exportPrivateKey({
+        privateKey,
+        passphrase: result.token,
+    });
     return {
         key: {
             ID,
             privateKey,
-            publicKey: privateKey.toPublic(),
+            publicKey: await toPublicKeyReference(privateKey),
         },
         Key: {
             ID,
@@ -44,7 +52,7 @@ export const getAddressKeyHelper = async (ID: string, userKey: OpenPGPKey, priva
     };
 };
 
-export const getAddressKey = async (ID: string, userKey: OpenPGPKey, email: string, version?: number) => {
+export const getAddressKey = async (ID: string, userKey: PrivateKeyReference, email: string, version?: number) => {
     const key = await generateAddressKey({
         email,
         passphrase: 'tmp',
@@ -63,7 +71,7 @@ export const getLegacyAddressKey = async (ID: string, password: string, email: s
         key: {
             ID,
             privateKey: key.privateKey,
-            publicKey: key.privateKey.toPublic(),
+            publicKey: await toPublicKeyReference(key.privateKey),
         },
         Key: {
             ID,
