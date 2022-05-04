@@ -72,7 +72,10 @@ function createNotificationManager(setNotifications: Dispatch<SetStateAction<Not
         }
 
         if (typeof text === 'string') {
-            const sanitizedElement = DOMPurify.sanitize(text, { RETURN_DOM: true });
+            const sanitizedElement = DOMPurify.sanitize(text, {
+                RETURN_DOM: true,
+                FORBID_TAGS: ['script', 'style', 'link', 'meta', 'iframe', 'object', 'embed', 'img', 'video', 'audio'],
+            });
             const containsHTML =
                 sanitizedElement?.childNodes && Array.from(sanitizedElement.childNodes).some(isElement);
             if (containsHTML) {
