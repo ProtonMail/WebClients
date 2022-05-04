@@ -38,7 +38,7 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
             height: 44,
         },
         [YAHOO]: {
-            name: 'Yahoo Mail',
+            name: 'Yahoo',
             logo: yahooLogo,
             width: 76,
             height: 22,
