@@ -27,6 +27,11 @@ jest.mock('@proton/components/hooks/useModals', () => ({
     default: jest.fn(() => ({ createModal: jest.fn() })),
 }));
 
+jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+    __esModule: true,
+    loadCryptoWorker: jest.fn(),
+}));
+
 jest.mock('@proton/components/hooks/useEventManager', () => ({
     __esModule: true,
     default: jest.fn(() => ({

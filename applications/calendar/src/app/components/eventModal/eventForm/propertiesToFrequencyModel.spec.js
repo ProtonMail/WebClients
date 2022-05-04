@@ -2,6 +2,11 @@ import { END_TYPE, FREQUENCY, MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/l
 import { getInitialFrequencyModel } from './state';
 import { propertiesToFrequencyModel } from './propertiesToFrequencyModel';
 
+jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
+    __esModule: true,
+    loadCryptoWorker: jest.fn(),
+}));
+
 const startModel = {
     date: new Date(2020, 0, 20),
 };
