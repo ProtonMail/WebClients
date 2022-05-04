@@ -1,4 +1,5 @@
-import { Toolbar, ToolbarSeparator } from '@proton/components';
+import { Vr } from '@proton/atoms';
+import { Toolbar } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import {
@@ -31,10 +32,10 @@ const SharedLinksToolbar = ({ shareId, selectedItems }: Props) => {
             <>
                 <PreviewButton shareId={shareId} selectedItems={selectedItems} />
                 <DownloadButton shareId={shareId} selectedItems={selectedItems} />
-                <ToolbarSeparator />
+                <Vr />
                 <RenameButton shareId={shareId} selectedItems={selectedItems} />
                 <DetailsButton shareId={shareId} selectedItems={selectedItems} />
-                <ToolbarSeparator />
+                <Vr />
                 <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
                 <StopSharingButton shareId={shareId} selectedItems={selectedItems} />
             </>

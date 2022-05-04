@@ -1,4 +1,5 @@
-import { Toolbar, ToolbarSeparator } from '@proton/components';
+import { Vr } from '@proton/atoms';
+import { Toolbar } from '@proton/components';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
@@ -19,9 +20,9 @@ const TrashToolbar = ({ shareId, selectedItems }: Props) => {
             <>
                 <PreviewButton shareId={shareId} selectedItems={selectedItems} />
                 <DownloadButton shareId={shareId} selectedItems={selectedItems} disabledFolders />
-                <ToolbarSeparator />
+                <Vr />
                 <DetailsButton shareId={shareId} selectedItems={selectedItems} />
-                <ToolbarSeparator />
+                <Vr />
                 <RestoreFromTrashButton shareId={shareId} selectedItems={selectedItems} />
                 <DeletePermanentlyButton shareId={shareId} selectedItems={selectedItems} />
             </>
