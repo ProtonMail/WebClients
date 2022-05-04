@@ -583,11 +583,11 @@ const EasySwitchOauthModal = ({
 
         switch (modalModel.step) {
             case AUTHENTICATION:
-                return c('Title').t`Select what to import`;
+                return c('Title').t`What would you like to import?`;
             case SELECT_IMPORT_TYPE:
                 return c('Title').t`Customize and confirm`;
             case OAUTH_INSTRUCTIONS:
-                return c('Title').t`Select permissions`;
+                return c('Title').t`Sign in and grant access`;
             case SUCCESS:
                 return null;
             default:
@@ -615,7 +615,7 @@ const EasySwitchOauthModal = ({
                 />
             ) : (
                 <>
-                    {modalModel.step === OAUTH_INSTRUCTIONS && <IAOauthInstructionsStep />}
+                    {modalModel.step === OAUTH_INSTRUCTIONS && <IAOauthInstructionsStep modalModel={modalModel} />}
                     {[SELECT_IMPORT_TYPE, AUTHENTICATION].includes(modalModel.step) && (
                         <IASelectImportTypeStep
                             checkedTypes={checkedTypes}
