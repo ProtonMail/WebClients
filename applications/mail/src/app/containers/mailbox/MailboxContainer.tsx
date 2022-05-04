@@ -82,7 +82,7 @@ const MailboxContainer = ({
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
-    const moveToFolder = useMoveToFolder();
+    const { moveToFolder } = useMoveToFolder();
     const { feature: mailContextMenuFeature } = useFeature<boolean>(FeatureCode.MailContextMenu);
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
@@ -271,32 +271,33 @@ const MailboxContainer = ({
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
-    const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, moveScheduledModal, permanentDeleteModal } = useMailboxHotkeys(
-        {
-            labelID,
-            elementID,
-            messageID,
-            elementIDs,
-            checkedIDs,
-            selectedIDs,
-            focusIndex,
-            columnLayout,
-            isMessageOpening,
-            location,
-        },
-        {
-            focusOnLastMessage,
-            getFocusedId,
-            handleBack,
-            handleCheck,
-            handleCheckOnlyOne,
-            handleCheckRange,
-            handleElement,
-            handleFilter,
-            handleCheckAll,
-            setFocusIndex,
-        }
-    );
+    const { elementRef, labelDropdownToggleRef, moveDropdownToggleRef, moveScheduledModal, permanentDeleteModal } =
+        useMailboxHotkeys(
+            {
+                labelID,
+                elementID,
+                messageID,
+                elementIDs,
+                checkedIDs,
+                selectedIDs,
+                focusIndex,
+                columnLayout,
+                isMessageOpening,
+                location,
+            },
+            {
+                focusOnLastMessage,
+                getFocusedId,
+                handleBack,
+                handleCheck,
+                handleCheckOnlyOne,
+                handleCheckRange,
+                handleElement,
+                handleFilter,
+                handleCheckAll,
+                setFocusIndex,
+            }
+        );
 
     return (
         <MailboxContainerContextProvider
