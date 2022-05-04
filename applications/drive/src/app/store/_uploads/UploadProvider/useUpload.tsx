@@ -1,12 +1,19 @@
 import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { useGetUser, useEventManager, useNotifications, usePreventLeave, useModals } from '@proton/components';
+import {
+    useGetUser,
+    useEventManager,
+    useNotifications,
+    usePreventLeave,
+    useModals,
+    useOnline,
+} from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_SAFE_UPLOADING_FILE_COUNT } from '@proton/shared/lib/drive/constants';
 import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
-import { isTransferCancelError, isTransferProgress } from '../../../utils/transfer';
+import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
 import { reportError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';
 import { UploadConflictModal, UploadFileList, UploadFileItem } from '../interface';
@@ -19,6 +26,7 @@ import useUploadControl from './useUploadControl';
 import { FileThresholdModal } from '../../../components/uploads/FileThresholdModal';
 
 export default function useUpload(UploadConflictModal: UploadConflictModal) {
+    const onlineStatus = useOnline();
     const getUser = useGetUser();
     const { call } = useEventManager();
     const { createModal } = useModals();
@@ -224,6 +232,13 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
         // often (every time). Dependency to allUploads is a good compromise.
         queue.allUploads,
     ]);
+
+    useEffect(() => {
+        if (onlineStatus) {
+            const ids = queue.allUploads.filter(isTransferPausedByConnection).map(({ id }) => id);
+            control.resumeUploads(({ id }) => ids.includes(id));
+        }
+    }, [onlineStatus]);
 
     return {
         uploads: queue.allUploads,
