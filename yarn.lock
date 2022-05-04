@@ -3726,7 +3726,7 @@ __metadata:
     react-sortable-hoc: ^2.0.0
     react-virtualized: ^9.22.3
     resize-observer: ^1.0.4
-    roosterjs: ^8.13.0
+    roosterjs: ^8.21.1
     tabbable: ^5.3.1
     tinycolor2: ^1.4.2
     ttag: ^1.7.24
@@ -26950,85 +26950,75 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"roosterjs-color-utils@npm:1.0.0":
-  version: 1.0.0
-  resolution: "roosterjs-color-utils@npm:1.0.0"
+"roosterjs-color-utils@npm:1.0.1":
+  version: 1.0.1
+  resolution: "roosterjs-color-utils@npm:1.0.1"
   dependencies:
     color: ^3.0.0
-    roosterjs-editor-types: 8.2.8
-  checksum: b051eec2b286e03aa9abe1bac4780bab28b5e1a052991fbb93722a0879bab74fee1209b7ab3e0d4508886653ecd40c8ddc41dff5bb853bbbd851777c391001b0
+  checksum: 0731bd4c3d6dffe1b76e20a44daf9aec31294f16e1f5490ae543e0a4207865ef1646fbd184134c89278e900779c889b03b911d2e02d5f3546b2b53d857b5b47d
   languageName: node
   linkType: hard
 
-"roosterjs-editor-api@npm:8.13.0":
-  version: 8.13.0
-  resolution: "roosterjs-editor-api@npm:8.13.0"
+"roosterjs-editor-api@npm:8.21.1":
+  version: 8.21.1
+  resolution: "roosterjs-editor-api@npm:8.21.1"
   dependencies:
-    roosterjs-editor-dom: 8.13.0
-    roosterjs-editor-types: 8.13.0
-  checksum: 7122e1b3467ed9d4801f6c347cf2f72784a9220d230f95cde122cd1ab51433f0e9a0c9acf2aed81b9b9ce24b92869d3a6048df28509808e4da7aecfa5d02c11a
+    roosterjs-editor-dom: 8.21.1
+    roosterjs-editor-types: 8.21.1
+  checksum: 179645a18b06e86e0f9e70d7c60b3eb45d77f466c19fc0dbeb245f77f8ba3d4fc63fd405473223575ce15335934784a052904263a86e75d82ffda8dffd2721c4
   languageName: node
   linkType: hard
 
-"roosterjs-editor-core@npm:8.13.0":
-  version: 8.13.0
-  resolution: "roosterjs-editor-core@npm:8.13.0"
+"roosterjs-editor-core@npm:8.21.1":
+  version: 8.21.1
+  resolution: "roosterjs-editor-core@npm:8.21.1"
   dependencies:
-    roosterjs-editor-dom: 8.13.0
-    roosterjs-editor-types: 8.13.0
-  checksum: 39630b6d50d855f099f081212f90a2a0808025071081cd2677ffb969bffcd6e3a18f8322949a2ea3114eaa02caaf8a541ea67498a30d6eee353dd7b984e71a57
+    roosterjs-editor-dom: 8.21.1
+    roosterjs-editor-types: 8.21.1
+  checksum: 1bced6483711f5a449781b5c88f2cd198068ced1e5e963650ae6773f0e0bb2879f767e3cd8baa753526586853a0d686c1e8e4c87d698a08157e5535bd028583f
   languageName: node
   linkType: hard
 
-"roosterjs-editor-dom@npm:8.13.0":
-  version: 8.13.0
-  resolution: "roosterjs-editor-dom@npm:8.13.0"
+"roosterjs-editor-dom@npm:8.21.1":
+  version: 8.21.1
+  resolution: "roosterjs-editor-dom@npm:8.21.1"
   dependencies:
-    roosterjs-editor-types: 8.13.0
-  checksum: b7068f3c4cb36cc77141224cc8c4f8019c2b4729d82e3f5b28d8f751c4b347ad4b49ead27354564f2aa31381b9dbcad7cdaec43737f39c59b137ad5ec22362df
+    roosterjs-editor-types: 8.21.1
+  checksum: 145c54f81af7d0583b6a87b668d2c19f8d7d2e36e4952fc0377c129a6b8a8efe58acd96a03eeb39909658e91117e234412aa3a837028ff0c82d429f6131bd321
   languageName: node
   linkType: hard
 
-"roosterjs-editor-plugins@npm:8.13.0":
-  version: 8.13.0
-  resolution: "roosterjs-editor-plugins@npm:8.13.0"
+"roosterjs-editor-plugins@npm:8.21.1":
+  version: 8.21.1
+  resolution: "roosterjs-editor-plugins@npm:8.21.1"
   dependencies:
-    roosterjs-editor-api: 8.13.0
-    roosterjs-editor-dom: 8.13.0
-    roosterjs-editor-types: 8.13.0
-  checksum: 703bb33b6de757c163713dd073d588aec476453a7a7b3028a2230aa10c1d7a245877216fac28d765275999d06a1f92018c50d00d2082b7197fe4f3219ed7c028
+    roosterjs-editor-api: 8.21.1
+    roosterjs-editor-dom: 8.21.1
+    roosterjs-editor-types: 8.21.1
+  checksum: 612ab7826418ad5c542d723d3368e27456430d65a86b0d9008638cd760ff86cdd2e600bf4774a25f6c3a0cbed126b4d0977272552deadf4939a4866033d05f08
   languageName: node
   linkType: hard
 
-"roosterjs-editor-types@npm:8.13.0":
-  version: 8.13.0
-  resolution: "roosterjs-editor-types@npm:8.13.0"
-  dependencies:
-    "@types/dom-inputevent": ^1.0.3
-  checksum: 42b12edd73c388b96cea6ac8450725ccca0c790e14e6d85714fef8ed3172e61df436fe54ff0ecf165a21db1df0f239ad96db6060af6d840a820d426e590aa8b4
-  languageName: node
-  linkType: hard
-
-"roosterjs-editor-types@npm:8.2.8":
-  version: 8.2.8
-  resolution: "roosterjs-editor-types@npm:8.2.8"
+"roosterjs-editor-types@npm:8.21.1":
+  version: 8.21.1
+  resolution: "roosterjs-editor-types@npm:8.21.1"
   dependencies:
     "@types/dom-inputevent": ^1.0.3
-  checksum: 088a073e0e6c2c9bb5704486c6823970473aeaa035971f3625a70a38565ab84869c9323f23d60fd0ef7acd53745ac202e9d2a262d3b5bd4cebe885d89fec86cc
+  checksum: b9cef5372bcf38449846c94cd2b83565933671609016df7727ff42c1dc5879c307544f92fd7fcad67ecaf7600b77f8157475c292f4a4b587b6e083b30bbe44b5
   languageName: node
   linkType: hard
 
-"roosterjs@npm:^8.13.0":
-  version: 8.13.0
-  resolution: "roosterjs@npm:8.13.0"
+"roosterjs@npm:^8.21.1":
+  version: 8.21.1
+  resolution: "roosterjs@npm:8.21.1"
   dependencies:
-    roosterjs-color-utils: 1.0.0
-    roosterjs-editor-api: 8.13.0
-    roosterjs-editor-core: 8.13.0
-    roosterjs-editor-dom: 8.13.0
-    roosterjs-editor-plugins: 8.13.0
-    roosterjs-editor-types: 8.13.0
-  checksum: 772b8f8fe42a0bae0e1d332fb41ddf1e63467af81eb4243c49be6344d0647ca08efb405595febde88a551bc87de247c1ffc8505bd2fa56ba2826b7c4f3ae4df3
+    roosterjs-color-utils: 1.0.1
+    roosterjs-editor-api: 8.21.1
+    roosterjs-editor-core: 8.21.1
+    roosterjs-editor-dom: 8.21.1
+    roosterjs-editor-plugins: 8.21.1
+    roosterjs-editor-types: 8.21.1
+  checksum: e66508474f3da04ae15848f4bdf65a01c759f829e478c957d36d0d54df3e73f0f8713004bbf1aab1bfe113483b09de77c1971dbfc5ea3599ab2d73a3f15b6898
   languageName: node
   linkType: hard
 

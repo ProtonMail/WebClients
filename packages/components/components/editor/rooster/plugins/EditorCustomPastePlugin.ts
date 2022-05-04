@@ -60,7 +60,7 @@ class EditorCustomPastePlugin implements EditorPlugin {
             // Check if image type is supported
             const isSupportedFileType = EMBEDDABLE_TYPES.includes(image.type);
             if (isSupportedFileType && this.onPasteImage) {
-                this.onPasteImage(event.clipboardData.image);
+                this.onPasteImage(image);
             }
         }
     }
