@@ -6,6 +6,7 @@ $alert-block-border-width: 3px !default;
 	color: var(--text-norm);
 	border-inline-start-width: $alert-block-border-width;
 	border-inline-start-style: solid;
+	overflow-wrap: break-word;
 }
 
 @each $color in (info, danger, warning, success) {
