@@ -1,4 +1,4 @@
-import { getKeys, OpenPGPKey } from 'pmcrypto';
+import { CryptoProxy, PublicKeyReference } from '@proton/crypto';
 import { ValidPublicKey, ExpiredPublicKey, SignOnlyPublicKey } from './keys.data';
 import { getContactPublicKeyModel, sortApiKeys, sortPinnedKeys } from '../../lib/keys/publicKeys';
 
@@ -12,7 +12,7 @@ describe('get contact public key model', () => {
     };
 
     it('should mark valid key as capable of encryption', async () => {
-        const [publicKey] = await getKeys(ValidPublicKey);
+        const publicKey = await CryptoProxy.importPublicKey({ armoredKey: ValidPublicKey });
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             pinnedKeysConfig: {
@@ -25,7 +25,7 @@ describe('get contact public key model', () => {
     });
 
     it('should mark expired key as incapable of encryption', async () => {
-        const [publicKey] = await getKeys(ExpiredPublicKey);
+        const publicKey = await CryptoProxy.importPublicKey({ armoredKey: ExpiredPublicKey });
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             pinnedKeysConfig: {
@@ -38,7 +38,7 @@ describe('get contact public key model', () => {
     });
 
     it('should mark sign-only as incapable of encryption', async () => {
-        const [publicKey] = await getKeys(SignOnlyPublicKey);
+        const publicKey = await CryptoProxy.importPublicKey({ armoredKey: SignOnlyPublicKey });
         const contactModel = await getContactPublicKeyModel({
             ...publicKeyConfig,
             pinnedKeysConfig: {
@@ -57,7 +57,7 @@ describe('sortApiKeys', () => {
             getFingerprint() {
                 return fingerprint;
             },
-        } as OpenPGPKey);
+        } as PublicKeyReference);
     it('sort keys as expected', () => {
         const fingerprints = [
             'trustedObsoleteNotCompromised',
@@ -109,7 +109,7 @@ describe('sortPinnedKeys', () => {
             getFingerprint() {
                 return fingerprint;
             },
-        } as OpenPGPKey);
+        } as PublicKeyReference);
     it('sort keys as expected', () => {
         const fingerprints = [
             'cannotEncryptObsoleteNotCompromised',

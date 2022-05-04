@@ -1,4 +1,4 @@
-import { decryptPrivateKey, generateKey } from 'pmcrypto';
+import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
 import { upgradeV2KeysHelper } from '../../lib/keys/upgradeKeysV2';
 import { Modulus } from '../authentication/login.data';
 import { User as tsUser, Address as tsAddress } from '../../lib/interfaces';
@@ -8,12 +8,19 @@ import { getAddressKey, getUserKey } from './keyDataHelper';
 const DEFAULT_EMAIL = 'test@test.com';
 const DEFAULT_KEYPASSWORD = '1';
 
-const getKey = (email = DEFAULT_EMAIL, keyPassword = DEFAULT_KEYPASSWORD) => {
-    return generateKey({
-        userIds: [{ name: email, email }],
-        passphrase: keyPassword,
+const getKey = async (email = DEFAULT_EMAIL, keyPassword = DEFAULT_KEYPASSWORD) => {
+    const privateKey = await CryptoProxy.generateKey({
+        userIDs: [{ name: email, email }],
         curve: 'ed25519',
     });
+
+    return {
+        privateKey,
+        privateKeyArmored: await CryptoProxy.exportPrivateKey({
+            privateKey,
+            passphrase: keyPassword,
+        }),
+    };
 };
 
 describe('upgrade keys v2', () => {
@@ -68,9 +75,9 @@ describe('upgrade keys v2', () => {
                 decryptedUserKeys,
                 ''
             );
-            expect(decryptedUserKeys.every((key) => key.privateKey.isDecrypted())).toBe(true);
+            expect(decryptedUserKeys.every((key) => key.privateKey.isPrivate())).toBe(true);
             expect(decryptedUserKeys.length).toBe(2 as any);
-            expect(decryptedAddressesKeys.every((key) => key.privateKey.isDecrypted())).toBe(true);
+            expect(decryptedAddressesKeys.every((key) => key.privateKey.isPrivate())).toBe(true);
             expect(decryptedAddressesKeys.length).toBe(3 as any);
             expect(newKeysArgs).toEqual({
                 url: 'keys/private/upgrade',
@@ -153,13 +160,13 @@ describe('upgrade keys v2', () => {
             }
             expect(api.calls.all().length).toBe(2);
             const newKeysArgs = api.calls.all()[1].args[0];
-            const decryptedKeys = await Promise.all(
+            const decryptedKeys: PrivateKeyReference[] = await Promise.all(
                 newKeysArgs.data.Keys.map(({ PrivateKey }: any) => {
-                    return decryptPrivateKey(PrivateKey, newKeyPassword);
+                    return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: newKeyPassword });
                 })
             );
-            expect(decryptedKeys.every((key: any) => key.isDecrypted())).toBe(true);
-            expect(decryptedKeys.length).toBe(5 as any);
+            expect(decryptedKeys.every((key) => key.isPrivate())).toBe(true);
+            expect(decryptedKeys.length).toBe(5);
             expect(newKeysArgs.data.Keys[0].PrivateKey);
             expect(newKeysArgs).toEqual({
                 url: 'keys/private/upgrade',
@@ -227,13 +234,13 @@ describe('upgrade keys v2', () => {
                 throw new Error('Missing password');
             }
             const newKeysArgs = api.calls.all()[0].args[0];
-            const decryptedKeys = await Promise.all(
+            const decryptedKeys: PrivateKeyReference[] = await Promise.all(
                 newKeysArgs.data.Keys.map(({ PrivateKey }: any) => {
-                    return decryptPrivateKey(PrivateKey, newKeyPassword);
+                    return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: newKeyPassword });
                 })
             );
-            expect(decryptedKeys.length).toBe(4 as any);
-            expect(decryptedKeys.every((key: any) => key.isDecrypted())).toBe(true);
+            expect(decryptedKeys.length).toBe(4);
+            expect(decryptedKeys.every((key) => key.isPrivate())).toBe(true);
             expect(newKeysArgs.data.Keys[0].PrivateKey);
             expect(newKeysArgs).toEqual({
                 url: 'keys/private/upgrade',
@@ -300,13 +307,13 @@ describe('upgrade keys v2', () => {
             }
             expect(api.calls.all().length).toBe(1);
             const newKeysArgs = api.calls.all()[0].args[0];
-            const decryptedKeys = await Promise.all(
+            const decryptedKeys: PrivateKeyReference[] = await Promise.all(
                 newKeysArgs.data.Keys.map(({ PrivateKey }: any) => {
-                    return decryptPrivateKey(PrivateKey, newKeyPassword);
+                    return CryptoProxy.importPrivateKey({ armoredKey: PrivateKey, passphrase: newKeyPassword });
                 })
             );
-            expect(decryptedKeys.length).toBe(4 as any);
-            expect(decryptedKeys.every((key: any) => key.isDecrypted())).toBe(true);
+            expect(decryptedKeys.length).toBe(4);
+            expect(decryptedKeys.every((key) => key.isPrivate())).toBe(true);
             expect(newKeysArgs.data.Keys[0].PrivateKey);
             expect(newKeysArgs).toEqual({
                 url: 'keys/private/upgrade',
