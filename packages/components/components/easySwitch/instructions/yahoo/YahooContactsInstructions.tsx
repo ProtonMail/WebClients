@@ -14,13 +14,13 @@ const YahooContactsInstructions = () => {
     const yahooCalendarMessage = c('Import instructions')
         .jt`To import contacts to Proton, you need a ${knowledgeBaseLink}. Download it from Yahoo in 3 easy steps:`;
 
-    // translator: full sentence: "Open your Yahoo Mail contacts":
+    // translator: full sentence: "Open your Yahoo contacts":
     const yahooMailLink = (
         <Href url="https://mail.yahoo.com/" key="yahooMailLink">
-            {c('Import instructions link').t`Yahoo Mail`}
+            {c('Import instructions link').t`Yahoo`}
         </Href>
     );
-    // translator: full sentence: "Open your Yahoo Mail contacts"
+    // translator: full sentence: "Open your Yahoo contacts"
     const step1 = c('Import instructions').jt`Open your ${yahooMailLink} contacts`;
 
     const step2 = c('Import instructions').t`Expand the dropdown menu by clicking on the 3 dots (...)`;

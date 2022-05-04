@@ -14,14 +14,14 @@ const YahooCalendarInstructions = () => {
     const yahooCalendarMessage = c('Import instructions')
         .jt`To import a calendar to Proton, you need the ${knowledgeBaseLink}. Download it from Yahoo in 3 easy steps:`;
 
-    // translator: full sentence: "Go to full calendar view in Yahoo Mail"
+    // translator: full sentence: "Go to full calendar view in Yahoo"
     const calendarViewLink = (
         <Href url="https://calendar.yahoo.com/" key="calendarViewLink">
             {c('Import instructions link').t`full calendar view`}
         </Href>
     );
-    // translator: full sentence: "Go to full calendar view in Yahoo Mail"
-    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} in Yahoo Mail`;
+    // translator: full sentence: "Go to full calendar view in Yahoo"
+    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} in Yahoo`;
 
     const step2 = c('Import instructions step')
         .t`Mouse over the calendar you want to import and open the dropdown menu`;
