@@ -6,27 +6,34 @@ import {
     getOrganizerSummaryText,
 } from '../../../../helpers/calendar/summary';
 
-export const getSummaryContent = (firstLine?: string, secondLine?: string) => {
-    if (!firstLine && !secondLine) {
+export const getSummaryContent = (hasBeenUpdatedText?: string, summaryText?: string) => {
+    if (!hasBeenUpdatedText && !summaryText) {
         return null;
     }
     const content =
-        firstLine && secondLine ? (
+        hasBeenUpdatedText && summaryText ? (
             <>
-                <span>{firstLine}</span>
-                <span>{secondLine}</span>
+                <span>{hasBeenUpdatedText}</span>
+                <span>{summaryText}</span>
             </>
         ) : (
-            <span>{firstLine || secondLine}</span>
+            <span>{hasBeenUpdatedText || summaryText}</span>
         );
 
-    return <div className="mt0-5 mb0-5 rounded border bg-weak p0-5 flex flex-column text-break">{content}</div>;
+    return (
+        <div
+            data-testid="ics-widget-summary"
+            className="mt0-5 mb0-5 rounded border bg-weak p0-5 flex flex-column text-break"
+        >
+            {content}
+        </div>
+    );
 };
 
-interface Props {
+export interface ExtraEventSummaryProps {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
 }
-const ExtraEventSummary = ({ model }: Props) => {
+const ExtraEventSummary = ({ model }: ExtraEventSummaryProps) => {
     const { isImport, hideSummary, isOrganizerMode } = model;
     const summaryText = isOrganizerMode ? getOrganizerSummaryText(model) : getAttendeeSummaryText(model);
     const hasBeenUpdatedText = getHasBeenUpdatedText(model);
