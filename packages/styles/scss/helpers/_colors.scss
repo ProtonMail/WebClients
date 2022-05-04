@@ -13,10 +13,8 @@
 			--button-default-border-color: currentColor;
 			--button-hover-border-color: currentColor;
 			--button-active-border-color: currentColor;
-		}
 
-		// Set same backgrounds as solid shape
-		[class*='button-outline-#{$color}'] {
+			// Force same backgrounds as solid shape of same color
 			--button-default-background-color: var(--#{dash-join($prefix, $color)});
 			--button-hover-background-color: var(--#{dash-join($prefix, $color, 'major-1')});
 			--button-active-background-color: var(--#{dash-join($prefix, $color, 'major-2')});
