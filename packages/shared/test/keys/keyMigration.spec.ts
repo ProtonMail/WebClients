@@ -5,9 +5,9 @@ import {
     decryptAddressKeyToken,
     getDecryptedAddressKeysHelper,
     getDecryptedUserKeysHelper,
-    getOldUserIDEmailHelper,
     splitKeys,
 } from '../../lib/keys';
+import { extractEmailFromUserID } from '../../lib/helpers/email';
 
 const DEFAULT_KEYPASSWORD = '123';
 
@@ -103,7 +103,7 @@ describe('key migration', () => {
 
         decryptedMigratedKeys.forEach((keys, i) => {
             keys.forEach((key) => {
-                expect(getOldUserIDEmailHelper(key.privateKey)).toEqual(Addresses[i].Email);
+                expect(extractEmailFromUserID(key.privateKey.getUserIDs()[0])).toEqual(Addresses[i].Email);
             });
         });
     };
