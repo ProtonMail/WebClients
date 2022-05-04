@@ -76,7 +76,7 @@ const AccountEasySwitchSection = () => {
             calendars: memoizedCalendars,
             activeCalendars: getProbablyActiveCalendars(memoizedCalendars),
         };
-    }, [calendars]);
+    }, [memoizedCalendars]);
 
     const [personalActiveCalendars] = partition<VisualCalendar>(activeCalendars, getIsPersonalCalendar);
 
