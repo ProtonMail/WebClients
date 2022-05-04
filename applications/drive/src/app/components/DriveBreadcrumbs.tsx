@@ -45,10 +45,10 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         richText: (
                             <span className="flex flex-align-items-center flex-nowrap flex-item-fluid">
                                 <SignatureIcon item={mapDecryptedLinksToChildren([link])[0]} className="mr0-25" />
-                                {name}
+                                <span className="text-pre text-ellipsis">{name}</span>
                             </span>
                         ),
-                        noShrink: isRoot,
+                        noShrink: !isRoot, // Keep root (My files) to be always fully visible.
                         highlighted: dropTarget === linkId,
                         collapsedText: name,
                         onClick:
