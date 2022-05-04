@@ -128,7 +128,7 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
                 >{c('Link').t`Learn more`}</Href>
             </span>
             <span className="flex-item-noshrink flex">
-                <Button size="small" onClick={handleAction}>
+                <Button size="small" shape="outline" onClick={handleAction}>
                     {buttonText}
                 </Button>
             </span>
