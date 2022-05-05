@@ -129,7 +129,10 @@ const SubscriptionPanel = ({
                     ] as Item[]
                 ).map((item) => {
                     return (
-                        <StripedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
+                        <StripedItem
+                            key={item.icon}
+                            left={<Icon className="color-success" name={item.icon} size={20} />}
+                        >
                             {item.text}
                         </StripedItem>
                     );
@@ -166,7 +169,10 @@ const SubscriptionPanel = ({
             <StripedList>
                 {items.map((item) => {
                     return (
-                        <StripedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
+                        <StripedItem
+                            key={item.icon}
+                            left={<Icon className="color-success" name={item.icon} size={20} />}
+                        >
                             {item.text}
                         </StripedItem>
                     );
@@ -243,7 +249,10 @@ const SubscriptionPanel = ({
                 </StripedItem>
                 {items.filter(isTruthy).map((item) => {
                     return (
-                        <StripedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
+                        <StripedItem
+                            key={item.icon}
+                            left={<Icon className="color-success" name={item.icon} size={20} />}
+                        >
                             {item.text}
                         </StripedItem>
                     );
