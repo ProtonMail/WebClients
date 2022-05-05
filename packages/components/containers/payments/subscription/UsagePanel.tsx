@@ -78,7 +78,10 @@ const UsagePanel = ({ addresses, calendars, organization, user }: Props) => {
                 </StripedItem>
                 {items.filter(isTruthy).map((item) => {
                     return (
-                        <StripedItem left={<Icon className="color-success" name={item.icon} size={20} />}>
+                        <StripedItem
+                            key={item.icon}
+                            left={<Icon className="color-success" name={item.icon} size={20} />}
+                        >
                             {item.text}
                         </StripedItem>
                     );
