@@ -32,7 +32,7 @@ describe('Encrypted Outside Unlock', () => {
         const { getByText } = await EORender(<EOUnlock {...props} />);
 
         getByText('Error');
-        getByText('Sorry, this message does not exist or has already expired');
+        getByText('Sorry, this message does not exist or has already expired.');
     });
 
     it('should display an error if the EO id is invalid', async () => {
@@ -43,7 +43,7 @@ describe('Encrypted Outside Unlock', () => {
         const { getByText } = await EORender(<EOUnlock {...props} />, '/eo/:id');
 
         getByText('Error');
-        getByText('Sorry, this message does not exist or has already expired');
+        getByText('Sorry, this message does not exist or has already expired.');
     });
 
     it('should see the form if the EO id is valid and an error if password is invalid', async () => {
