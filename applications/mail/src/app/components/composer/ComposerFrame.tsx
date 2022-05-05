@@ -1,12 +1,5 @@
 import { useEffect, DragEvent, useState, useRef } from 'react';
-import {
-    classnames,
-    useToggle,
-    useMailSettings,
-    useHandler,
-    ErrorBoundary,
-    getCustomSizingClasses,
-} from '@proton/components';
+import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
 import ComposerTitleBar from './ComposerTitleBar';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
@@ -48,19 +41,26 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
-    const style = computeComposerStyle(index, count, minimized, maximized, breakpoints.isNarrow, windowSize);
-    const customClassnames = getCustomSizingClasses(style);
+    const { style, customClasses } = computeComposerStyle({
+        index,
+        count,
+        minimized,
+        maximized,
+        isNarrow: breakpoints.isNarrow,
+        windowHeight: windowSize.height,
+        windowWidth: windowSize.width,
+    });
+
     const {
         start: handleStartDragging,
         offset: dragOffset,
         isDragging,
     } = useComposerDrag({
         composerIndex: index,
-        isNarrow: breakpoints.isNarrow,
         maximized,
         minimized,
-        windowWidth: windowSize.width,
         totalComposers: count,
+        windowWidth: windowSize.width,
     });
 
     // onClose handler can be called in a async handler
@@ -102,7 +102,7 @@ const ComposerFrame = ({
         <div
             ref={composerFrameRef}
             className={classnames([
-                `composer rounded flex flex-column outline-none ${customClassnames}`,
+                `composer rounded flex flex-column outline-none ${customClasses}`,
                 !focus && 'composer--is-blur',
                 minimized && 'composer--is-minimized',
                 maximized && 'composer--is-maximized',
