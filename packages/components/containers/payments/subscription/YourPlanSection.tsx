@@ -55,8 +55,6 @@ const YourPlanSection = () => {
                 subscription={subscription}
                 plans={plans}
                 user={user}
-                vpnCountries={vpnCountries}
-                vpnServers={vpnServers}
                 openSubscriptionModal={openSubscriptionModal}
             />
             <UsagePanel addresses={addresses} calendars={calendars} organization={organization} user={user} />
