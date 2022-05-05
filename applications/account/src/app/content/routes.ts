@@ -1,5 +1,5 @@
 import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
-import { NotificationDotColor } from '@proton/components';
+import { ThemeColor } from '@proton/colors';
 import { getAccountAppRoutes } from '../containers/account/routes';
 import { getMailAppRoutes } from '../containers/mail/routes';
 import { getCalendarAppRoutes } from '../containers/calendar/routes';
@@ -16,7 +16,7 @@ interface Arguments {
     isReferralProgramEnabled: boolean;
     isUnsubscribeCalendarEnabled: boolean;
     isDataRecoveryAvailable: boolean;
-    recoveryNotification?: NotificationDotColor;
+    recoveryNotification?: ThemeColor;
     newDomain?: string;
 }
 
