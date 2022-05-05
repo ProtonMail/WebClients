@@ -111,8 +111,6 @@ const ChallengeFrame = ({
             onSuccess?.();
         };
 
-        const themeNodeData = document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '';
-        const iconsNodeData = document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '';
         const stylesPromise = getStyleSrcsData(getStyleSrcUrls());
 
         const cb = (event: MessageEvent) => {
@@ -149,6 +147,9 @@ const ChallengeFrame = ({
                             addLog('Load iframe error', undefined, 'error');
                             handleError();
                         }, errorTimeout);
+
+                        const themeNodeData = document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '';
+                        const iconsNodeData = document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '';
 
                         setStage('load');
                         addLog(
