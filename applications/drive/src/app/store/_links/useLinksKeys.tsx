@@ -20,7 +20,7 @@ type FolderLinkKeys = {
     passphrase?: string;
     passphraseSessionKey?: SessionKey;
     privateKey?: OpenPGPKey;
-    hashKey?: string;
+    hashKey?: Uint8Array;
 };
 
 /**
@@ -50,7 +50,7 @@ export class LinksKeys {
         return this.keys[shareId]?.[linkId]?.sessionKey;
     }
 
-    getHashKey(shareId: string, linkId: string): string | undefined {
+    getHashKey(shareId: string, linkId: string): Uint8Array | undefined {
         return this.keys[shareId]?.[linkId]?.hashKey;
     }
 
@@ -78,7 +78,7 @@ export class LinksKeys {
         });
     }
 
-    setHashKey(shareId: string, linkId: string, hashKey: string) {
+    setHashKey(shareId: string, linkId: string, hashKey: Uint8Array) {
         this.setKey(shareId, linkId, (keys: LinkKeys) => {
             keys.hashKey = hashKey;
         });
