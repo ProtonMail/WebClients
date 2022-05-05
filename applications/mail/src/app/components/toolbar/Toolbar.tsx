@@ -2,8 +2,10 @@ import { memo } from 'react';
 import * as React from 'react';
 import { c } from 'ttag';
 import { Location } from 'history';
-import { Icon, useMailSettings, useLabels, useFolders, ToolbarButton, ToolbarSeparator } from '@proton/components';
+import { Icon, useMailSettings, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Label } from '@proton/shared/lib/interfaces/Label';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 
 import ReadUnreadButtons from './ReadUnreadButtons';
 import ToolbarDropdown from './ToolbarDropdown';
@@ -15,6 +17,7 @@ import LabelDropdown from '../dropdown/LabelDropdown';
 import PagingControls from './PagingControls';
 import { Breakpoints } from '../../models/utils';
 import NavigationControls from './NavigationControls';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -39,6 +42,11 @@ interface Props {
     labelDropdownToggleRef: React.MutableRefObject<() => void>;
     moveDropdownToggleRef: React.MutableRefObject<() => void>;
     location: Location;
+    labels?: Label[];
+    folders?: Folder[];
+    onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
+    onMove: (labelID: string) => Promise<void>;
+    onDelete: () => Promise<void>;
 }
 
 const Toolbar = ({
@@ -62,9 +70,12 @@ const Toolbar = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
     location,
+    labels,
+    folders,
+    onMarkAs,
+    onMove,
+    onDelete,
 }: Props) => {
-    const [labels] = useLabels();
-    const [folders] = useFolders();
     const listInView = columnMode || !elementID;
 
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
@@ -108,21 +119,17 @@ const Toolbar = ({
                     />
                 )}
                 <ToolbarSeparator />
-                <ReadUnreadButtons
-                    mailSettings={mailSettings}
-                    selectedIDs={selectedIDs}
-                    onBack={onBack}
-                    labelID={labelID}
-                />
+                <ReadUnreadButtons mailSettings={mailSettings} selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
                 <ToolbarSeparator />
                 <MoveButtons
                     labelID={labelID}
-                    elementID={elementID}
                     labels={labels}
                     folders={folders}
                     breakpoints={breakpoints}
                     selectedIDs={selectedIDs}
-                    onBack={onBack}
+                    onMove={onMove}
+                    onDelete={onDelete}
+                    mailSettings={mailSettings}
                 />
                 <ToolbarSeparator />
                 <ToolbarDropdown

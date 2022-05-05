@@ -1,22 +1,17 @@
-import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
-import { metaKey } from '@proton/shared/lib/helpers/browser';
 import { c } from 'ttag';
-
-import { usePermanentDelete } from '../../hooks/usePermanentDelete';
+import { Icon, useLoading, ToolbarButton } from '@proton/components';
+import { metaKey } from '@proton/shared/lib/helpers/browser';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    labelID: string;
     selectedIDs: string[];
+    mailSettings: MailSettings;
+    onDelete: () => Promise<void>;
 }
 
-const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
+const DeleteButton = ({ onDelete, selectedIDs = [], mailSettings }: Props) => {
     const [loading, withLoading] = useLoading();
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
-    const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
-
-    const handleDelete = async () => {
-        await permanentDelete(selectedIDs);
-    };
+    const { Shortcuts = 0 } = mailSettings || {};
 
     const titleDelete = Shortcuts ? (
         <>
@@ -29,16 +24,13 @@ const DeleteButton = ({ labelID = '', selectedIDs = [] }: Props) => {
     );
 
     return (
-        <>
-            <ToolbarButton
-                title={titleDelete}
-                onClick={() => withLoading(handleDelete())}
-                disabled={loading || !selectedIDs.length}
-                data-testid="toolbar:deletepermanently"
-                icon={<Icon name="cross-circle" alt={c('Action').t`Delete permanently`} />}
-            />
-            {deleteModal}
-        </>
+        <ToolbarButton
+            title={titleDelete}
+            onClick={() => withLoading(onDelete())}
+            disabled={loading || !selectedIDs.length}
+            data-testid="toolbar:deletepermanently"
+            icon={<Icon name="cross-circle" alt={c('Action').t`Delete permanently`} />}
+        />
     );
 };
 
