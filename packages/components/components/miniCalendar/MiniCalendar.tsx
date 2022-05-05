@@ -1,6 +1,5 @@
 import { useMemo, useState, useEffect, FormEvent, useRef } from 'react';
 import { addMonths, endOfMonth, startOfMonth, isSameMonth } from 'date-fns';
-import { c } from 'ttag';
 
 import { useElementRect } from '../../hooks';
 import { getDaysInMonth, getDateTupleFromMonday } from './helper';
@@ -13,6 +12,7 @@ import { DateTuple, WeekStartsOn } from './index.d';
 import { Button } from '../button';
 import { Tooltip } from '../tooltip';
 import { Vr } from '../vr';
+import { TodayIcon } from '../icon';
 
 export interface Props {
     hasCursors?: boolean;
@@ -36,6 +36,7 @@ export interface Props {
     numberOfDays?: number;
     fixedSize?: boolean;
     preventLeaveFocus?: boolean;
+    todayTitle?: string;
 }
 
 const MiniCalendar = ({
@@ -73,6 +74,7 @@ const MiniCalendar = ({
     displayWeekNumbers = false,
     fixedSize = false,
     preventLeaveFocus = false,
+    todayTitle,
 }: Props) => {
     const [temporaryDate, setTemporaryDate] = useState<Date | undefined>();
     const cellRef = useRef<HTMLLIElement>(null);
@@ -88,8 +90,6 @@ const MiniCalendar = ({
     const monthLabel = useMemo(() => {
         return `${months[activeDate.getMonth()]} ${activeDate.getFullYear()}`;
     }, [activeDate, months]);
-
-    const todayTitle = c('Today icon tooltip in mini calendar').t`Today`;
 
     const handleSwitchMonth = (direction: -1 | 1) => {
         const newDate = addMonths(activeDate, direction);
@@ -140,7 +140,7 @@ const MiniCalendar = ({
                             disabled={(min && +now < +min) || (max && +now > +max)}
                             data-testid="minicalendar:today"
                         >
-                            <Icon name="calendar-today" className="minicalendar-icon" alt={todayTitle} />
+                            <TodayIcon todayDate={now.getDate()} />
                         </Button>
                     </Tooltip>
                 ) : null}

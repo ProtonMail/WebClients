@@ -1,4 +1,4 @@
-import { classnames } from '@proton/components';
+import { classnames, ToolbarButton } from '@proton/components';
 import { c } from 'ttag';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -26,17 +26,17 @@ const ViewSelector = ({ range, loading = false, disabled = false, view, onChange
             {options.map(({ text, value }) => {
                 const v = range ? CUSTOM : value;
                 return (
-                    <button
+                    <ToolbarButton
                         key={value}
-                        type="button"
+                        title={c('Calendar view selector').t`Change time range to`}
                         disabled={loading || disabled}
-                        className={classnames(['toolbar-button color-inherit', v === view && 'is-active'])}
+                        className={classnames(['color-inherit', v === view && 'is-active'])}
                         aria-pressed={v === view ? true : undefined}
                         onClick={() => onChange(value)}
                         {...rest}
                     >
                         <span className="mauto">{text}</span>
-                    </button>
+                    </ToolbarButton>
                 );
             })}
         </>
