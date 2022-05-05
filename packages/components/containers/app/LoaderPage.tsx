@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
 import { useConfig, useDocumentTitle } from '../../hooks';
-import { StandardContainer, TextLoader } from '../../components';
+import { TextLoader } from '../../components';
 import { classnames } from '../../helpers';
 
 interface Props {
@@ -19,14 +19,14 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
     useDocumentTitle(appName);
 
     return (
-        <StandardContainer>
+        <div className="h100">
             <div className="absolute-center text-center">
                 <div>
                     <img className={classnames(['w10e', loaderClassName])} src={protonSpinner} />
                 </div>
                 <TextLoader className="color-weak">{textToDisplay}</TextLoader>
             </div>
-        </StandardContainer>
+        </div>
     );
 };
 
