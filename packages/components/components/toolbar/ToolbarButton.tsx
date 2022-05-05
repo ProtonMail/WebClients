@@ -4,7 +4,7 @@ import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 
 interface Props extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'title'> {
-    icon: ReactElement;
+    icon?: ReactElement;
     children?: ReactNode;
     title?: ReactNode;
 }
@@ -23,9 +23,10 @@ const ToolbarButton = (
             ref={ref}
             {...rest}
         >
-            {cloneElement(icon, {
-                className: classnames([icon.props.className, 'toolbar-icon mauto']),
-            })}
+            {icon &&
+                cloneElement(icon, {
+                    className: classnames([icon.props.className, 'toolbar-icon mauto']),
+                })}
             {children}
         </button>
     );

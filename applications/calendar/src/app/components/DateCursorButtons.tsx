@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { c } from 'ttag';
-import { Icon } from '@proton/components';
+import { Icon, TodayIcon, ToolbarButton, ToolbarSeparator } from '@proton/components';
 import { format } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
@@ -41,38 +41,32 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
 
     return (
         <>
-            <button
-                type="button"
-                data-test-id="calendar-toolbar:today"
-                className="toolbar-button color-inherit flex-item-noshrink"
+            <ToolbarButton
+                className="flex-item-noshrink"
                 title={todayTitle}
                 onClick={onToday}
+                icon={<TodayIcon todayDate={now.getDate()} />}
             >
-                <Icon name="calendar-today" className="flex-item-noshrink mtauto mbauto toolbar-icon" />
                 <span className="ml0-5 mtauto mbauto no-mobile">{c('Action').t`Today`}</span>
-            </button>
-            <span className="toolbar-separator flex-item-noshrink" />
-            <button
-                type="button"
+            </ToolbarButton>
+            <ToolbarSeparator />
+            <ToolbarButton
                 data-test-id="calendar-toolbar:previous"
-                className="toolbar-button flex-item-noshrink on-rtl-mirror"
                 title={previous}
                 onClick={onPrev}
+                icon={<Icon name="chevron-left" className="mauto toolbar-icon" />}
             >
-                <Icon name="chevron-left" className="mauto toolbar-icon" />
                 <span className="sr-only">{previous}</span>
-            </button>
-            <button
-                type="button"
+            </ToolbarButton>
+            <ToolbarButton
                 data-test-id="calendar-toolbar:next"
-                className="toolbar-button flex-item-noshrink on-rtl-mirror"
                 title={next}
                 onClick={onNext}
+                icon={<Icon name="chevron-right" className="mauto toolbar-icon" />}
             >
-                <Icon name="chevron-right" className="mauto toolbar-icon" />
                 <span className="sr-only">{next}</span>
-            </button>
-            <span className="toolbar-separator flex-item-noshrink" />
+            </ToolbarButton>
+            <ToolbarSeparator />
             <span className="pl1 pr0-5 mtauto mbauto flex-item-noshrink">{currentRange}</span>
         </>
     );
