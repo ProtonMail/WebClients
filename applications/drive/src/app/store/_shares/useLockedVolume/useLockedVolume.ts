@@ -134,7 +134,7 @@ export function useLockedVolumeInner({
     const restoreVolume = async (
         parentVolumeID: string,
         privateKey: OpenPGPKey,
-        hashKey: string,
+        hashKey: Uint8Array,
         addressKey: OpenPGPKey,
         address: Address,
         lockedVolumeId: string,
