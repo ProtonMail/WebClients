@@ -52,9 +52,9 @@ const getOwnershipData = async ({
     const cache = cacheRef.current[method];
     if (cache.promise === undefined) {
         const promise = Promise.all([
-            api<VerificationDataResult>({ ...getVerificationDataRoute(token), silence: true }),
+            api<VerificationDataResult>({ ...getVerificationDataRoute(token, method), silence: true }),
             // Automatically send the code the first time.
-            api<null>(sendVerificationCode(token)),
+            api<null>(sendVerificationCode(token, method)),
         ]);
         cache.promise = promise;
     }
@@ -126,7 +126,7 @@ const OwnershipMethod = ({
             throw new Error('Invalid verification model');
         }
         try {
-            const { Token } = await api<VerificationTokenResult>(verifyVerificationCode(token, code));
+            const { Token } = await api<VerificationTokenResult>(verifyVerificationCode(token, method, code));
             await onSubmit(Token, verificationModel.method);
         } catch (error: any) {
             const { code } = getApiError(error);
@@ -138,7 +138,7 @@ const OwnershipMethod = ({
     };
 
     const handleSendCode = async (verificationModel: OwnershipVerificationModel) => {
-        await api(sendVerificationCode(token));
+        await api(sendVerificationCode(token, method));
         const methodTo = verificationModel.value;
         createNotification({ text: c('Success').t`Code sent to ${methodTo}` });
         onChangeStep(HumanVerificationSteps.ENTER_DESTINATION);
