@@ -69,6 +69,6 @@ export const constructMime = (
         body,
     });
 
-    // this trailing line space is important: if it's not there outlook.com adds it and breaks pgp/mime signatures.
+    // this trailing line space is important: if it's not there Outlook adds it and breaks pgp/mime signatures.
     return `${msgentity.toString()}\r\n`;
 };
