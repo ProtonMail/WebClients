@@ -19,14 +19,12 @@ import {
     isTrial,
     getHasLegacyPlans,
 } from '@proton/shared/lib/helpers/subscription';
-import { Plan, Subscription, UserModel, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
+import { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { getPlusServers } from '@proton/shared/lib/vpn/features';
 import { StripedList, StripedItem, Button, Price, IconName, Icon } from '../../../components';
-import { useConfig } from '../../../hooks';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 import './UpsellPanel.scss';
@@ -69,8 +67,6 @@ interface Item {
 interface Props {
     subscription?: Subscription;
     plans: Plan[];
-    vpnCountries?: VPNCountries;
-    vpnServers?: VPNServers;
     user: UserModel;
     openSubscriptionModal: OpenSubscriptionModalCallback;
 }
@@ -95,10 +91,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, openSubscriptionModal }: Props) => {
-    const { APP_NAME } = useConfig();
-    const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
-
+const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -188,60 +181,6 @@ const UpsellPanel = ({ subscription, plans, vpnServers, vpnCountries, user, open
     }
 
     const cycle = CYCLE.TWO_YEARS;
-
-    const vpnPlan = plans.find(({ Name }) => Name === PLANS.VPN);
-    // VPN app only upsell
-    if (user.isFree && isVpnApp && vpnPlan) {
-        const plan = vpnPlan;
-        const price = (
-            <Price key="plan-price" currency={DEFAULT_CURRENCY} suffix={c('new_plans: Plan frequency').t`/month`}>
-                {(plan.Pricing[cycle] || 0) / cycle}
-            </Price>
-        );
-        const handleUpgrade = () =>
-            openSubscriptionModal({
-                cycle,
-                plan: PLANS.VPN,
-                step: SUBSCRIPTION_STEPS.CHECKOUT,
-                disablePlanSelection: true,
-            });
-        const maxVpn = 10;
-        const items: Item[] = [
-            {
-                icon: 'brand-proton-vpn',
-                text: c('new_plans: attribute').ngettext(
-                    msgid`High-speed VPN on ${maxVpn} device`,
-                    `High-speed VPN on ${maxVpn} devices`,
-                    maxVpn
-                ),
-            },
-            {
-                icon: 'shield',
-                text: c('new_plans: attribute').t`Built-in ad blocker (NetShield)`,
-            },
-            {
-                icon: 'play',
-                text: c('new_plans: attribute').t`Access to streaming services globally`,
-            },
-            {
-                icon: 'earth',
-                text: getPlusServers(vpnServers?.[PLANS.VPN], vpnCountries?.[PLANS.VPN].count),
-            },
-        ];
-        return (
-            <UpsellBox
-                title={getUpgradeText(plan.Title)}
-                description={c('new_plans: Info')
-                    .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`}
-                items={items}
-                actions={
-                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
-                        {c('new_plans: Action').jt`From ${price}`}
-                    </Button>
-                }
-            />
-        );
-    }
 
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
