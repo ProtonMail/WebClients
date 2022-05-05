@@ -5,7 +5,7 @@ import { HOUR } from '@proton/shared/lib/constants';
 import { layout, LayoutEvent } from '../layout';
 import { toPercent } from '../mouseHelpers/mathHelpers';
 import getIsBeforeNow from '../getIsBeforeNow';
-import PartDayEvent from '../../events/PartDayEvent';
+import PartDayEvent, { EventSize } from '../../events/PartDayEvent';
 import { CalendarViewEvent, TargetEventData } from '../../../containers/calendar/interface';
 
 /**
@@ -27,6 +27,23 @@ const getIsEventPartLessThanAnHour = ({ start, end, colEnd }: { start: Date; end
     }
 
     return +eventPartEnd - +eventPartStart < HOUR;
+};
+
+/**
+ * Returns a size flag only for small sizes, meaning below 30 minutes events
+ * to decrease font size
+ */
+const getSize = (duration: number): EventSize | undefined => {
+    if (duration < 30 && duration >= 25) {
+        return 'sm';
+    }
+    if (duration < 25 && duration >= 20) {
+        return 'xs';
+    }
+    if (duration < 20) {
+        return '2xs';
+    }
+    // MIN_DURATION is 15, so don't need to get lower
 };
 
 interface Props {
@@ -60,13 +77,15 @@ const DayEvents = ({
             const { start, end } = eventsInDay[i];
 
             const top = start / totalMinutes;
-            const height = (end - start) / totalMinutes;
+            const duration = end - start;
+            const height = duration / totalMinutes;
 
             const width = 1 / columns;
             const left = column * width;
 
             return {
                 height,
+                size: getSize(duration),
                 style: {
                     top: toPercent(top),
                     left: toPercent(left),
@@ -86,7 +105,7 @@ const DayEvents = ({
         const event = events[idx];
         const { start, end } = event;
 
-        const { style, height: eventHeight } = eventsLaidOut[i];
+        const { style, height: eventHeight, size } = eventsLaidOut[i];
 
         const isTemporary = event.id === 'tmp';
         const isSelected = targetEventData ? event.id === targetEventData.id : false;
@@ -110,12 +129,17 @@ const DayEvents = ({
             <PartDayEvent
                 isEventPartLessThanAnHour={isEventPartLessThanAnHour}
                 event={event}
-                style={{ ...style, '--line-number': lineNumber || 1 }}
+                style={{
+                    ...style,
+                    '--line-number': lineNumber || 1,
+                    '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
+                }}
                 key={event.id}
                 formatTime={formatTime}
                 eventRef={eventRef}
                 isSelected={isSelected}
                 isBeforeNow={isBeforeNow}
+                size={size}
                 tzid={tzid}
             />
         );
