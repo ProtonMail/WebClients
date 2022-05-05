@@ -1,11 +1,8 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { noop } from '@proton/shared/lib/helpers/function';
-import { APPS } from '@proton/shared/lib/constants';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
-
-import { useConfig } from '../../hooks';
 
 export const THEME_ID = 'theme-root';
 
@@ -28,8 +25,6 @@ const THEME_COOKIE_NAME = 'Theme';
 const storedTheme = getCookie(THEME_COOKIE_NAME);
 
 const ThemeProvider = ({ children }: Props) => {
-    const { APP_NAME } = useConfig();
-
     const [theme, setThemeBase] = useState<ThemeTypes>(storedTheme ? Number(storedTheme) : PROTON_DEFAULT_THEME);
 
     useEffect(() => {
@@ -46,7 +41,7 @@ const ThemeProvider = ({ children }: Props) => {
         setThemeBase(Object.values(ThemeTypes).includes(nextTheme) ? nextTheme : PROTON_DEFAULT_THEME);
     };
 
-    const style = getThemeStyle(APP_NAME === APPS.PROTONVPN_SETTINGS ? PROTON_DEFAULT_THEME : theme);
+    const style = getThemeStyle(theme);
 
     return (
         <ThemeContext.Provider value={[theme, setTheme]}>
