@@ -1,19 +1,20 @@
 import * as React from 'react';
 
+import { NotificationDot } from '@proton/atoms';
+
 import {
     IconName,
-    NotificationDot,
-    NotificationDotColor,
     SidebarListItem,
     SidebarListItemContent,
     SidebarListItemContentIcon,
     SidebarListItemLink,
 } from '@proton/components';
+import { ThemeColor } from '@proton/colors';
 
 interface Props {
     to: string;
     icon: IconName;
-    notification?: NotificationDotColor;
+    notification?: ThemeColor;
     children: React.ReactNode;
 }
 
