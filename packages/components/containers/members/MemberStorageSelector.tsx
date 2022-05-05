@@ -5,7 +5,8 @@ import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/sh
 import { clamp } from '@proton/shared/lib/helpers/math';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
-import { Donut, Slider, Tooltip } from '../../components';
+import { Donut } from '@proton/atoms';
+import { Slider, Tooltip } from '../../components';
 import InputField from '../../components/v2/field/InputField';
 import { useElementRect } from '../../hooks';
 

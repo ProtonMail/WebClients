@@ -1,9 +1,9 @@
+import { ThemeColor } from '@proton/colors';
 import { c } from 'ttag';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import getOverallStatus from '../containers/recovery/getOverallStatus';
 import { FeatureCode } from '../containers/features/FeaturesContext';
-import { NotificationDotColor } from '../components/notificationDot/NotificationDot';
 import getLikelyHasKeysToReactivate from '../containers/keys/reactivateKeys/getLikelyHasKeysToReactivate';
 
 import useRecoveryStatus from './useRecoveryStatus';
@@ -17,7 +17,7 @@ import useHasOutdatedRecoveryFile from './useHasOutdatedRecoveryFile';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean
-): { path: string; text: string; color: NotificationDotColor } | undefined => {
+): { path: string; text: string; color: ThemeColor } | undefined => {
     const { feature: hasVisitedRecoveryPage } = useFeature(FeatureCode.VisitedRecoveryPage);
     const [user] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
@@ -53,7 +53,7 @@ const useRecoveryNotification = (
         return {
             path: '/recovery#data',
             text: c('Action').t`Update recovery phrase`,
-            color: 'danger',
+            color: ThemeColor.Danger,
         };
     }
 
@@ -61,7 +61,7 @@ const useRecoveryNotification = (
         return {
             path: '/recovery#data',
             text: c('Action').t`Update recovery file`,
-            color: 'danger',
+            color: ThemeColor.Danger,
         };
     }
 
@@ -73,7 +73,7 @@ const useRecoveryNotification = (
         return {
             path: '/recovery?action=recover-data',
             text: c('Action').t`Unlock data`,
-            color: 'danger',
+            color: ThemeColor.Danger,
         };
     }
 
@@ -87,14 +87,14 @@ const useRecoveryNotification = (
         return {
             path: '/recovery?action=generate-recovery-phrase',
             text: c('Action').t`Set recovery phrase`,
-            color: 'warning',
+            color: ThemeColor.Warning,
         };
     }
 
     return {
         path: '/recovery',
         text: c('Action').t`Activate recovery`,
-        color: 'warning',
+        color: ThemeColor.Warning,
     };
 };
 

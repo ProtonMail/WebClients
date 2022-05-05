@@ -10,6 +10,7 @@ import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getHasLegacyPlans, getPlan, getPrimaryPlan, hasLifetime } from '@proton/shared/lib/helpers/subscription';
 import { getAppFromPathnameSafe, getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { getShopURL, getStaticURL } from '@proton/shared/lib/helpers/url';
+import { NotificationDot } from '@proton/atoms';
 import {
     Button,
     ButtonLike,
@@ -22,7 +23,6 @@ import {
     SettingsLink,
     FeatureCode,
     Icon,
-    NotificationDot,
     ReferralSpotlight,
     useAuthentication,
     useConfig,
@@ -38,6 +38,7 @@ import {
     useUserSettings,
 } from '@proton/components';
 import { Subscription } from '@proton/shared/lib/interfaces';
+import { ThemeColor } from '@proton/colors';
 
 import { classnames, generateUID } from '../../helpers';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
@@ -274,7 +275,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                 data-testid="userdropdown:button:referral"
                             >
                                 {c('Action').t`Refer a friend`}
-                                {redDotReferral ? <NotificationDot color="danger" /> : <span />}
+                                {redDotReferral ? <NotificationDot color={ThemeColor.Danger} /> : <span />}
                             </DropdownMenuLink>
                         )}
 
