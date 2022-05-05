@@ -4,11 +4,10 @@ import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/compon
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { Breakpoints } from '../../models/utils';
-import { getFolderName, isCustomFolder, isCustomLabel } from '../../helpers/labels';
-import { useMoveToFolder } from '../../hooks/useApplyLabels';
-import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
+import { isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import DeleteButton from './DeleteButton';
 
 const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL, SCHEDULED } =
@@ -16,38 +15,27 @@ const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED
 
 interface Props {
     labelID: string;
-    elementID: string | undefined;
     labels?: Label[];
     folders?: Folder[];
     breakpoints: Breakpoints;
     selectedIDs: string[];
-    onBack: () => void;
+    onMove: (labelID: string) => Promise<void>;
+    onDelete: () => Promise<void>;
+    mailSettings: MailSettings;
 }
 
 const MoveButtons = ({
     labelID = '',
-    elementID,
     labels = [],
     folders = [],
     breakpoints,
     selectedIDs = [],
-    onBack,
+    mailSettings,
+    onMove,
+    onDelete,
 }: Props) => {
     const [loading, withLoading] = useLoading();
-    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
-    const labelIDs = labels.map(({ ID }) => ID);
-    const getElementsFromIDs = useGetElementsFromIDs();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
-
-    const handleMove = async (LabelID: string) => {
-        const folderName = getFolderName(LabelID, folders);
-        const fromLabelID = labelIDs.includes(labelID) ? INBOX : labelID;
-        const elements = getElementsFromIDs(selectedIDs);
-        await moveToFolder(elements, LabelID, folderName, fromLabelID);
-        if (selectedIDs.includes(elementID || '')) {
-            onBack();
-        }
-    };
 
     const titleInbox = Shortcuts ? (
         <>
@@ -63,7 +51,7 @@ const MoveButtons = ({
         <ToolbarButton
             key="inbox"
             title={titleInbox}
-            onClick={() => withLoading(handleMove(INBOX))}
+            onClick={() => withLoading(onMove(INBOX))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetoinbox"
             icon={<Icon name="inbox" alt={c('Action').t`Move to inbox`} />}
@@ -84,7 +72,7 @@ const MoveButtons = ({
         <ToolbarButton
             key="archive"
             title={titleArchive}
-            onClick={() => withLoading(handleMove(ARCHIVE))}
+            onClick={() => withLoading(onMove(ARCHIVE))}
             disabled={!selectedIDs.length}
             data-testid="toolbar:movetoarchive"
             icon={<Icon name="archive-box" alt={c('Action').t`Move to archive`} />}
@@ -105,7 +93,7 @@ const MoveButtons = ({
         <ToolbarButton
             key="spam"
             title={titleSpam}
-            onClick={() => withLoading(handleMove(SPAM))}
+            onClick={() => withLoading(onMove(SPAM))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetospam"
             icon={<Icon name="fire" alt={c('Action').t`Move to spam`} />}
@@ -126,7 +114,7 @@ const MoveButtons = ({
         <ToolbarButton
             key="nospam"
             title={titleNoSpam}
-            onClick={() => withLoading(handleMove(INBOX))}
+            onClick={() => withLoading(onMove(INBOX))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetonospam"
             icon={<Icon name="fire-slash" alt={c('Action').t`Move to inbox (not spam)`} />}
@@ -147,14 +135,16 @@ const MoveButtons = ({
         <ToolbarButton
             key="trash"
             title={titleTrash}
-            onClick={() => withLoading(handleMove(TRASH))}
+            onClick={() => withLoading(onMove(TRASH))}
             disabled={loading || !selectedIDs.length}
             data-testid="toolbar:movetotrash"
             icon={<Icon name="trash" alt={c('Action').t`Move to trash`} />}
         />
     );
 
-    const deleteButton = <DeleteButton key="delete" labelID={labelID} selectedIDs={selectedIDs} />;
+    const deleteButton = (
+        <DeleteButton key="delete" mailSettings={mailSettings} selectedIDs={selectedIDs} onDelete={onDelete} />
+    );
 
     let buttons: ReactNode[] = [];
 
@@ -192,7 +182,6 @@ const MoveButtons = ({
     return (
         <>
             {buttons}
-            {moveScheduledModal}
         </>
     ); // TS limitation
 };

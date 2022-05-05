@@ -1,7 +1,6 @@
 import { ChangeEvent, Ref, memo, forwardRef } from 'react';
 import { c, msgid } from 'ttag';
 import {
-    useLabels,
     classnames,
     MnemonicPromptModal,
     PaginationRow,
@@ -14,7 +13,7 @@ import {
     getCanReactiveMnemonic,
     useEventManager,
 } from '@proton/components';
-import { ChecklistKey, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { ChecklistKey, Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
 
 import Item from './Item';
@@ -56,6 +55,7 @@ interface Props {
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onCheckOne: (event: ChangeEvent, ID: string) => void;
     onClick: (elementID: string | undefined) => void;
+    onContextMenu: (event: React.MouseEvent<HTMLDivElement>, element: Element) => void;
     onFocus: (number: number) => void;
     conversationMode: boolean;
     isSearch: boolean;
@@ -72,6 +72,7 @@ interface Props {
     resetWidth: () => void;
     showContentPanel: boolean;
     scrollBarWidth: number;
+    labels?: Label[];
 }
 
 const List = (
@@ -88,6 +89,7 @@ const List = (
         checkedIDs = defaultCheckedIDs,
         onCheck,
         onClick,
+        onContextMenu,
         conversationMode,
         isSearch,
         breakpoints,
@@ -105,10 +107,10 @@ const List = (
         resetWidth,
         showContentPanel,
         scrollBarWidth,
+        labels,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
-    const [labels] = useLabels();
     const { shouldHighlight } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
@@ -198,6 +200,7 @@ const List = (
                                     checked={checkedIDs.includes(element.ID || '')}
                                     onCheck={onCheckOne}
                                     onClick={onClick}
+                                    onContextMenu={onContextMenu}
                                     mailSettings={mailSettings}
                                     onDragStart={handleDragStart}
                                     onDragEnd={handleDragEnd}
