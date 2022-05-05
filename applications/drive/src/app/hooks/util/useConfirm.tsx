@@ -7,6 +7,7 @@ const useConfirm = () => {
     const { createModal } = useModals();
 
     const openConfirmModal = ({
+        cancel,
         confirm,
         message,
         onCancel,
@@ -16,6 +17,7 @@ const useConfirm = () => {
         size,
     }: {
         title: string;
+        cancel?: string;
         confirm: string;
         message: string;
         onConfirm: () => Promise<any>;
@@ -32,7 +34,14 @@ const useConfirm = () => {
         );
 
         createModal(
-            <ConfirmationModal title={title} submitText={confirm} size={size} onSubmit={onConfirm} onClose={onCancel}>
+            <ConfirmationModal
+                title={title}
+                cancelText={cancel}
+                submitText={confirm}
+                size={size}
+                onSubmit={onConfirm}
+                onClose={onCancel}
+            >
                 {content}
             </ConfirmationModal>
         );

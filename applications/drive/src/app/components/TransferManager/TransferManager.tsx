@@ -146,10 +146,13 @@ const TransferManager = ({
     const handleCloseClick = () => {
         if (hasActiveTransfer) {
             openConfirmModal({
-                title: c('Title').t`Cancel all active transfers`,
-                confirm: c('Action').t`Confirm`,
-                message: c('Info').t`Closing transfer manager will cancel all active transfers, are you sure?`,
+                title: c('Title').t`Stop transfers?`,
+                cancel: c('Action').t`Continue transfers`,
+                confirm: c('Action').t`Stop transfers`,
+                message: c('Info')
+                    .t`There are files that still need to be transferred. Closing the transfer manager will end all operations.`,
                 onConfirm: async () => onClear(),
+                canUndo: true,
             });
         } else {
             onClear();
