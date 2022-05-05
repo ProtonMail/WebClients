@@ -27,8 +27,16 @@ const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: Rec
                         return (
                             <li key={text} className="flex flex-align-items-center flex-nowrap">
                                 <span className="mr0-5">{text}</span>
-                                <ButtonLike as={SettingsLink} icon path={path} shape="ghost" color="norm" size="small">
-                                    <Icon name="arrow-right" />
+                                <ButtonLike
+                                    as={SettingsLink}
+                                    icon
+                                    path={path}
+                                    shape="ghost"
+                                    color="norm"
+                                    size="small"
+                                    title={text}
+                                >
+                                    <Icon name="arrow-right" alt={text} />
                                 </ButtonLike>
                             </li>
                         );
