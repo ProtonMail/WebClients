@@ -68,6 +68,7 @@ export enum FeatureCode {
     MailServiceWorker = 'MailServiceWorker',
     NewDomainOptIn = 'NewDomainOptIn',
     SeenV5WelcomeModal = 'SeenV5WelcomeModal',
+    MailContextMenu = 'MailContextMenu',
 }
 
 export interface FeaturesContextValue {
