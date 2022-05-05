@@ -4,6 +4,7 @@ import { TransportOptions } from '@sentry/types';
 import { ProtonConfig } from '../interfaces';
 import { VPN_HOSTNAME } from '../constants';
 import { getUIDHeaders } from '../fetch/headers';
+import { ApiError } from '../fetch/ApiError';
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
 
@@ -90,6 +91,11 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
             const stack = typeof error === 'string' ? error : error?.stack;
             // Filter out broken ferdi errors
             if (stack && stack.match(/ferdi|franz/i)) {
+                return null;
+            }
+
+            // Not interested in uncaught API errors
+            if (error instanceof ApiError) {
                 return null;
             }
 
