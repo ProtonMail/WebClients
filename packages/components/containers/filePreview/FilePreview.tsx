@@ -1,6 +1,5 @@
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { forwardRef, ReactNode, Ref, useRef, useState } from 'react';
-import { c } from 'ttag';
 import { isSupportedImage, isSupportedVideo, isSupportedText, isPDF } from '@proton/shared/lib/helpers/mimetype';
 import Header, { SharedStatus } from './Header';
 import ImagePreview from './ImagePreview';
@@ -71,16 +70,12 @@ const FilePreview = (
             );
         }
 
-        if (!mimeType || !isPreviewAvailable(mimeType, fileSize)) {
+        if (!contents || !mimeType || !isPreviewAvailable(mimeType, fileSize)) {
             return (
                 <div className="file-preview-container">
                     <UnsupportedPreview onSave={onSave} />
                 </div>
             );
-        }
-
-        if (!contents) {
-            throw new Error(c('Error').t`File has no contents to preview`);
         }
 
         if (isSupportedImage(mimeType)) {
