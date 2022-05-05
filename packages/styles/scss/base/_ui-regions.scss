@@ -1,0 +1,12 @@
+/*
+ * When applying a ui region class, we need to re-apply
+ * default background and text colors as well as they changed,
+ * so adding the overrides here will avoid the necessity
+ * of adding two classes each time
+ */
+
+.ui-standard,
+.ui-prominent {
+	background-color: var(--background-norm);
+	color: var(--text-norm);
+}
