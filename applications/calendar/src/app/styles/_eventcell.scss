@@ -15,12 +15,12 @@
 	border-inline-start-width: 5px;
 	border-inline-end-width: 1px;
 
-	padding-block: 0.125em;
-	padding-inline: 0.25em;
+	padding-block: em(2);
+	padding-inline: em(3);
 	border-radius: var(--border-radius-sm);
 	background-color: var(--background-strong);
 	color: var(--text-norm);
-	line-height: 1.25;
+	line-height: em(18);
 	cursor: pointer;
 	opacity: var(--opacity);
 	transition: all 0.1s ease-out, opacity 0.5s ease-out, background-color 0.15s ease-in-out;
@@ -194,5 +194,32 @@
 		&-timestring {
 			font-size: rem(12);
 		}
+	}
+
+	/*
+	 * Adaptations for small sizes, meaning below 30 minutes events
+	 */
+	$line-height: calc(var(--line-height) * 1px - 2px); // 2px for borders
+
+	&:is(#{&}--sm, #{&}--xs, #{&}--2xs) {
+		padding-block: 0;
+		line-height: $line-height;
+	}
+
+	&:is(#{&}--sm, #{&}--xs, #{&}--2xs) &-lock-icon {
+		width: min(#{$line-height}, #{rem(16)});
+		height: min(#{$line-height}, #{rem(16)});
+	}
+
+	&--sm &-title {
+		font-size: em(13);
+	}
+
+	&--xs &-title {
+		font-size: em(12);
+	}
+
+	&--2xs &-title {
+		font-size: em(10);
 	}
 }
