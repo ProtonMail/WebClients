@@ -630,10 +630,13 @@ const IASelectImportTypeStep = ({
         }
 
         if (modalModel.data[CALENDAR]) {
-            const calendarDefaultMapping = modalModel.data[CALENDAR].providerCalendars.map(({ ID, Source }) => ({
-                Source: ID,
-                Destination: `${CALENDAR_TO_BE_CREATED_PREFIX}${Source}`,
-            }));
+            const calendarDefaultMapping = modalModel.data[CALENDAR].providerCalendars.map(
+                ({ ID, Source, Description }) => ({
+                    Source: ID,
+                    Destination: `${CALENDAR_TO_BE_CREATED_PREFIX}${Source}`,
+                    Description,
+                })
+            );
 
             payload[CALENDAR] = {
                 Mapping: calendarDefaultMapping,

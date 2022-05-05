@@ -1,10 +1,16 @@
 import { PaginationParams } from '../../api/interface';
 import { Nullable, RequireSome } from '../utils';
-import { Calendar, CalendarDisplay, VisualCalendar } from './Calendar';
+import { Calendar, CalendarDisplay } from './Calendar';
 import { Attendee, CalendarEventData } from './Event';
 import { ACCESS_LEVEL } from './Link';
 
-export type CalendarCreateData = Omit<VisualCalendar, 'Flags' | 'ID' | 'Type' | 'Members'> & { URL?: string };
+export type CalendarCreateData = {
+    Name: string;
+    Description: string;
+    Color: string;
+    Display: CalendarDisplay;
+    URL?: string;
+};
 export type CalendarUpdateData = Partial<Pick<Calendar, 'Name' | 'Description'>>;
 
 export enum DELETION_REASON {
