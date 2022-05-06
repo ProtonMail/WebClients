@@ -50,12 +50,17 @@ const ExtraScheduledMessage = ({ message }: Props) => {
     }, []);
 
     const handleUnscheduleMessage = async () => {
+        const messageID = message.data?.ID;
+        if (!messageID) {
+            return;
+        }
+
         /* Reset the load retry so that if the user schedules again the message and clicks on the view message link,
            the body of message can be loaded. Without the reset, the message can have a loadRetry > 3, which will block
            the loading of the mail body.
          */
         await dispatch(cancelScheduled(message.localID));
-        await api(cancelSend(message.data?.ID));
+        await api(cancelSend(messageID));
         await call();
         createNotification({
             text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
