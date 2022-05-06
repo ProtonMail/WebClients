@@ -241,3 +241,15 @@ export const getKnowledgeBaseUrl = (path: string) => {
 export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
+
+export const isValidHttpUrl = (string: string) => {
+    let url;
+
+    try {
+        url = new URL(string);
+    } catch (_) {
+        return false;
+    }
+
+    return url.protocol === 'http:' || url.protocol === 'https:';
+};
