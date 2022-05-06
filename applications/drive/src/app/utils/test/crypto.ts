@@ -1,6 +1,7 @@
 import * as openpgp from 'openpgp';
 import { init } from 'pmcrypto/lib/pmcrypto';
 import { getKeys, generateSessionKey as realGenerateSessionKey, OpenPGPKey, SessionKey } from 'pmcrypto';
+import { Address, Key } from '@proton/shared/lib/interfaces';
 
 init(openpgp);
 
@@ -35,3 +36,10 @@ export async function generateSessionKey(algorithm = 'aes256'): Promise<SessionK
         algorithm,
     };
 }
+
+export const generateAddress = async (keys: Key[], email = 'test@pm.me'): Promise<Address> => {
+    return {
+        Email: email,
+        Keys: keys,
+    } as Address;
+};
