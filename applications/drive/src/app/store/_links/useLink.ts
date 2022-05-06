@@ -1,6 +1,14 @@
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
-import { OpenPGPKey, SessionKey, decryptPrivateKey as pmcryptoDecryptPrivateKey, VERIFICATION_STATUS } from 'pmcrypto';
+import {
+    OpenPGPKey,
+    SessionKey,
+    decryptPrivateKey as pmcryptoDecryptPrivateKey,
+    VERIFICATION_STATUS,
+    verifyMessage,
+    createMessage,
+    getSignature,
+} from 'pmcrypto';
 
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
@@ -224,6 +232,31 @@ export function useLinkInner(
                 data: blockKeys,
                 privateKeys: privateKey,
             });
+
+            if (encryptedLink.contentKeyPacketSignature) {
+                const publicKeys = [privateKey, ...(await getVerificationKey(encryptedLink.signatureAddress))];
+                const { verified } = await verifyMessage({
+                    message: createMessage(sessionKey.data),
+                    publicKeys,
+                    signature: await getSignature(encryptedLink.contentKeyPacketSignature),
+                });
+                // iOS signed content key instead of session key in the past.
+                // Therefore we need to check that as well until we migrate
+                // old files.
+                if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    const { verified: blockKeysVerified } = await verifyMessage({
+                        message: createMessage(blockKeys),
+                        publicKeys,
+                        signature: await getSignature(encryptedLink.contentKeyPacketSignature),
+                    });
+                    if (blockKeysVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                        // If even fall back solution does not succeed, report
+                        // the original verified status of the session key as
+                        // that one is the one we want to verify here.
+                        handleSignatureCheck(shareId, encryptedLink, 'contentKeyPacket', verified);
+                    }
+                }
+            }
 
             linksKeys.setSessionKey(shareId, linkId, sessionKey);
             return sessionKey;

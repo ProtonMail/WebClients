@@ -79,6 +79,7 @@ export function isEncryptedLinkSame(original: EncryptedLink, newLink: EncryptedL
         original.nodePassphraseSignature === newLink.nodePassphraseSignature &&
         original.nodeHashKey === newLink.nodeHashKey &&
         original.contentKeyPacket === newLink.contentKeyPacket &&
+        original.contentKeyPacketSignature === newLink.contentKeyPacketSignature &&
         original.signatureAddress === newLink.signatureAddress &&
         isDecryptedLinkSame(original, newLink)
     );
