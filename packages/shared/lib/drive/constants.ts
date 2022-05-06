@@ -150,6 +150,7 @@ export enum SupportedMimeTypes {
     xlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
     xml = 'text/xml',
     zip = 'application/zip',
+    vdnMicrosoftIcon = 'image/vnd.microsoft.icon',
 }
 
 export const EXTRA_EXTENSION_TYPES: { [ext: string]: string } = {
@@ -183,7 +184,7 @@ export const fileDescriptions: { [type: string]: string } = {
     'audio/3gpp2': '3GPP2 audio/video container',
     'audio/webm': 'WEBM audio',
     'audio/x-midi': 'Musical Instrument Digital Interface (MIDI)',
-    'image/vnd.microsoft.icon': 'Icon format',
+    [SupportedMimeTypes.vdnMicrosoftIcon]: 'Icon format',
     'text/calendar': 'iCalendar format',
     'text/css': 'Cascading Style Sheets (CSS)',
     'text/csv': 'Comma-separated values (CSV)',
