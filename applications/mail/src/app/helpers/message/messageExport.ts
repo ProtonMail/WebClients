@@ -11,6 +11,7 @@ import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isPlainText } from '@proton/shared/lib/mail/messages';
 import { getSessionKey } from '@proton/shared/lib/mail/send/attachments';
+import { CREATE_DRAFT_MESSAGE_ACTION } from '@proton/shared/lib/interfaces/message';
 import { getDocumentContent, getPlainTextContent } from './messageContent';
 import { constructMimeFromSource } from '../send/sendMimeBuilder';
 import { splitMail, combineHeaders } from '../mail';
@@ -114,9 +115,17 @@ export const createMessage = async (
         );
     }
 
+    const getMessageAction = (action: MESSAGE_ACTIONS | undefined): CREATE_DRAFT_MESSAGE_ACTION | undefined => {
+        if (action !== MESSAGE_ACTIONS.NEW && action !== undefined) {
+            return action as unknown as CREATE_DRAFT_MESSAGE_ACTION;
+        }
+
+        return undefined;
+    };
+
     const { Message: updatedMessage } = await api(
         createDraft({
-            Action: message.draftFlags?.action !== MESSAGE_ACTIONS.NEW ? message.draftFlags?.action : undefined,
+            Action: getMessageAction(message.draftFlags?.action),
             Message: { ...message.data, Body, ...removePasswordFromRequests },
             ParentID: message.draftFlags?.ParentID,
             AttachmentKeyPackets,

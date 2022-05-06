@@ -76,6 +76,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         );
 
         submit = async () => {
+            // TS guard - To impprove
+            if (!messageID) {
+                return;
+            }
             await api(oneClickUnsubscribe(messageID));
         };
     } else if (unsubscribeMethods.Mailto) {
@@ -177,6 +181,10 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     }
 
     const handleSubmit = async () => {
+        if (!messageID) {
+            return;
+        }
+
         unsubscribeModalProps.onClose();
         await submit();
         await api(markAsUnsubscribed([messageID]));
