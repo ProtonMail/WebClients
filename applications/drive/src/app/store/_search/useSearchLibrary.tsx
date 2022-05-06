@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useContext, useEffect, useRef } from 'react';
+import { createContext, ReactNode, useContext, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useEncryptedSearch } from '@proton/encrypted-search';
@@ -35,6 +35,7 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     const { getDefaultShare } = useDefaultShare();
     const searchEnabled = useSearchEnabledFeature();
 
+    const [isInitialized, setIsInitialize] = useState(false);
     const handlerId = useRef<string>();
     const driveEventManager = useDriveEventManager();
 
@@ -65,10 +66,13 @@ export const SearchLibraryProvider = ({ children }: Props) => {
     });
 
     useEffect(() => {
-        if (searchEnabled) {
+        // Feature flags come in asyncronously (false back to `false` initially),
+        // thus we need to observe their changes
+        if (searchEnabled && !isInitialized) {
             void esFunctions.initializeES();
+            setIsInitialize(true);
         }
-    }, []);
+    }, [searchEnabled, isInitialized]);
 
     useEffect(() => {
         if (!esFunctions.getESDBStatus().dbExists) {
