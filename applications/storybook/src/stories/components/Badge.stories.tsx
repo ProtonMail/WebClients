@@ -13,7 +13,9 @@ export default {
     },
 };
 
-export const Basic = () => (
+export const Basic = () => <Badge type="primary">Primary</Badge>;
+
+export const Colors = () => (
     <>
         <Badge>Badge</Badge>
         <Badge type="primary">Primary</Badge>
