@@ -26,7 +26,7 @@ export default function useLinkActions() {
     const { preventLeave } = usePreventLeave();
     const debouncedRequest = useDebouncedRequest();
     const events = useDriveEventManager();
-    const { getLink, getLinkPrivateKey, getLinkHashKey } = useLink();
+    const { getLink, getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { getPrimaryAddressKey } = useDriveCrypto();
 
     const createFolder = async (
@@ -137,7 +137,9 @@ export default function useLinkActions() {
             // Decrypts passphrase.
             getLinkPrivateKey(abortSignal, shareId, linkId),
         ]);
-        if (!link.isFile) {
+        if (link.isFile) {
+            await getLinkSessionKey(abortSignal, shareId, linkId);
+        } else {
             await getLinkHashKey(abortSignal, shareId, linkId);
         }
         // Get latest link with signature updates.
