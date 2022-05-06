@@ -24,8 +24,12 @@ const MessagePermanentDeleteModal = ({ message, ...rest }: Props) => {
     const { onClose } = rest;
 
     const handleDelete = async () => {
+        const messageID = message.data?.ID;
+        if (!messageID) {
+            return;
+        }
         onClose?.();
-        await api(deleteMessages([message.data?.ID]));
+        await api(deleteMessages([messageID]));
         await call();
         createNotification({ text: getNotificationText(false, false, 1) });
     };
