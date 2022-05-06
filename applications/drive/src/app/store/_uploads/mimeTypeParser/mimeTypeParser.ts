@@ -45,6 +45,10 @@ export async function mimeTypeFromFile(input: File, extensionFallback = true) {
             return SupportedMimeTypes.svg;
         }
 
+        /*
+            .apk has the same file signature as .zip, and since  mimeTypeFromSignature has the highest
+            priority later in the code, we have to check for .apk separately here.
+        */
         if (extension.toLocaleLowerCase() === 'apk') {
             return SupportedMimeTypes.apk;
         }
