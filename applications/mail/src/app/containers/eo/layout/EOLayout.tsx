@@ -2,7 +2,13 @@ import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { APP_NAMES } from '@proton/shared/lib/constants';
+import {
+    APP_NAMES,
+    CALENDAR_APP_NAME,
+    DRIVE_APP_NAME,
+    MAIL_APP_NAME,
+    VPN_APP_NAME,
+} from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import {
@@ -45,6 +51,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     );
 
     const appVersion = getAppVersion(APP_VERSION);
+    const size = 70;
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 eo-layout-bg scroll-if-needed">
@@ -69,10 +76,34 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
             <div className="pl2 pr2 eo-layout-container flex-item-fluid flex flex-nowrap flex-column">
                 <div>{children}</div>
                 <div className="center mt2">
-                    <MailLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-                    <CalendarLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-                    <DriveLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
-                    <VpnLogo variant="glyph-only" size={70} className="mx0-5 on-mobile-m0 on-tiny-mobile-w25" />
+                    <Href
+                        href={getStaticURL('/mail')}
+                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        title={MAIL_APP_NAME}
+                    >
+                        <MailLogo variant="glyph-only" size={size} />
+                    </Href>
+                    <Href
+                        href={getStaticURL('/calendar')}
+                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        title={CALENDAR_APP_NAME}
+                    >
+                        <CalendarLogo variant="glyph-only" size={size} />
+                    </Href>
+                    <Href
+                        href={getStaticURL('/drive')}
+                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        title={DRIVE_APP_NAME}
+                    >
+                        <DriveLogo variant="glyph-only" size={size} />
+                    </Href>
+                    <Href
+                        href="https://protonvpn.com"
+                        className="inline-block mx0-5 on-mobile-m0 on-tiny-mobile-w25"
+                        title={VPN_APP_NAME}
+                    >
+                        <VpnLogo variant="glyph-only" size={size} />
+                    </Href>
                 </div>
             </div>
             <footer className="flex-item-noshrink text-center p1">
