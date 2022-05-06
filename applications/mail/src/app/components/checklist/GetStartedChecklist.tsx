@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { c, msgid } from 'ttag';
-import { ButtonLike, ChecklistItem, Countdown, SettingsLink, useApi, Loader, classnames } from '@proton/components';
+
+import { useDateCountdown } from '@proton/hooks';
+import { ButtonLike, ChecklistItem, SettingsLink, useApi, Loader, classnames } from '@proton/components';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 import { APPS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -56,6 +58,7 @@ interface GetStartedChecklistProps {
 
 const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: GetStartedChecklistProps) => {
     const { expires, checklist, loading, rewardInGb } = useGetStartedChecklist();
+    const { expired, days } = useDateCountdown(expires);
 
     const checklistItems = (
         [
@@ -136,28 +139,23 @@ const GetStartedChecklist = ({ limitedMaxWidth, onDismiss, onItemSelection }: Ge
                 </div>
             </div>
             <div>
-                <Countdown
-                    end={expires}
-                    render={({ expired, days }) => (
-                        <div className="color-weak">
-                            {(() => {
-                                if (expired) {
-                                    return c('Get started checklist incentive').t`Expires soon`;
-                                }
+                <div className="color-weak">
+                    {(() => {
+                        if (expired) {
+                            return c('Get started checklist incentive').t`Expires soon`;
+                        }
 
-                                if (days > 0) {
-                                    return c('Get started checklist incentive').ngettext(
-                                        msgid`Only ${days} day left`,
-                                        `Only ${days} days left`,
-                                        days
-                                    );
-                                }
+                        if (days > 0) {
+                            return c('Get started checklist incentive').ngettext(
+                                msgid`Only ${days} day left`,
+                                `Only ${days} days left`,
+                                days
+                            );
+                        }
 
-                                return c('Get started checklist incentive').t`Expires today`;
-                            })()}
-                        </div>
-                    )}
-                />
+                        return c('Get started checklist incentive').t`Expires today`;
+                    })()}
+                </div>
             </div>
         </div>
     );
