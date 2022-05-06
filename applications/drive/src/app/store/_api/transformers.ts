@@ -64,6 +64,7 @@ export function linkMetaToEncryptedLink(link: LinkMetaWithShareURL): EncryptedLi
         nodePassphraseSignature: link.NodePassphraseSignature,
         nodeHashKey: link.FolderProperties?.NodeHashKey,
         contentKeyPacket: link.FileProperties?.ContentKeyPacket,
+        contentKeyPacketSignature: link.FileProperties?.ContentKeyPacketSignature,
         signatureAddress: link.SignatureAddress,
         xAttr: link.XAttr,
     };
