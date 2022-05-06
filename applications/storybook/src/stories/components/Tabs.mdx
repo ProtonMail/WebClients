@@ -1,5 +1,5 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { Tabs } from "@proton/components"
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Tabs } from '@proton/components'
 
 # Tabs
 
@@ -9,12 +9,10 @@ Simple responsive horizontal navigation tabs. `Tabs` organize and allow navigati
 - The use of `role="tablist/presentation/tab/tabpanel"`.
 - A selected tab has `aria-selected="true"`, `aria-selected="false"` if not.
 
-### Basic
-
-A simple example with no frills.
-
-<Canvas>
+<Canvas withSource="open">
     <Story id="components-tabs--basic" />
 </Canvas>
+
+### Props
 
 <ArgsTable of={Tabs} />
