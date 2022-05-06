@@ -36,12 +36,20 @@ export const SearchField = () => {
 
     const handleInputClick = () => {
         if (dbExists && !isBuilding) {
-            return prepareSearchData();
+            return;
         }
 
         searchSpotlight.close();
-        prepareSearchData().catch(reportError);
+
+        if (indexingDropdownControl.isOpen) {
+            indexingDropdownControl.close();
+            return;
+        }
         indexingDropdownControl.open();
+    };
+
+    const handleFieldFocus = () => {
+        return prepareSearchData().catch(reportError);
     };
 
     const handleClosedDropdown = (e?: Event) => {
@@ -88,6 +96,11 @@ export const SearchField = () => {
                         value={searchParams}
                         onSearch={handleSearch}
                         onChange={setSearchParams}
+                        // this handler had to be passed with `onFocus` prop, as before it used to trigger
+                        // caching twice in certain cases (the focus stayed on the searchbar after
+                        // indexing, the prepareSearchData is not called until the user hits enter
+                        // to do the search.)
+                        onFocus={handleFieldFocus}
                         disabled={isDisabled}
                         advanced={
                             indexingDropdownControl.isOpen && (
