@@ -1,7 +1,6 @@
 import { Button } from '@proton/components';
 
-import Card, { CardProps } from './Card';
-
+import Card from './Card';
 import mdx from './Card.mdx';
 
 export default {
@@ -9,15 +8,6 @@ export default {
     title: 'components/Card',
     parameters: { docs: { page: mdx } },
 };
-
-export const Playground = ({ ...args }) => <Card {...args} />;
-
-const args: CardProps<'div'> = {
-    children:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?',
-};
-
-Playground.args = args;
 
 export const Basic = () => (
     <Card>
