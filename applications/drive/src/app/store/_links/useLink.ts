@@ -240,7 +240,22 @@ export function useLinkInner(
                     publicKeys,
                     signature: await getSignature(encryptedLink.contentKeyPacketSignature),
                 });
-                handleSignatureCheck(shareId, encryptedLink, 'contentKeyPacket', verified);
+                // iOS signed content key instead of session key in the past.
+                // Therefore we need to check that as well until we migrate
+                // old files.
+                if (verified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                    const { verified: blockKeysVerified } = await verifyMessage({
+                        message: createMessage(blockKeys),
+                        publicKeys,
+                        signature: await getSignature(encryptedLink.contentKeyPacketSignature),
+                    });
+                    if (blockKeysVerified !== VERIFICATION_STATUS.SIGNED_AND_VALID) {
+                        // If even fall back solution does not succeed, report
+                        // the original verified status of the session key as
+                        // that one is the one we want to verify here.
+                        handleSignatureCheck(shareId, encryptedLink, 'contentKeyPacket', verified);
+                    }
+                }
             }
 
             linksKeys.setSessionKey(shareId, linkId, sessionKey);
