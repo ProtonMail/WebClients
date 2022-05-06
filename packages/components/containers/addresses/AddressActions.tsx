@@ -1,16 +1,16 @@
 import { c } from 'ttag';
-import { deleteAddress, enableAddress, disableAddress } from '@proton/shared/lib/api/addresses';
+
+import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
+import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 import { DropdownActions, useModalState } from '../../components';
 import { useApi, useEventManager, useLoading, useNotifications } from '../../hooks';
-
-import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
-import { AddressPermissions } from './helper';
 import DeleteAddressModal from './DeleteAddressModal';
 import DisableAddressModal from './DisableAddressModal';
+import { AddressPermissions } from './helper';
+import CreateMissingKeysAddressModal from './missingKeys/CreateMissingKeysAddressModal';
 
 interface Props {
     address: Address;
@@ -65,6 +65,10 @@ const AddressActions = ({
         savingIndex !== undefined
             ? [savingIndex === addressIndex ? { text: c('Address action').t`Saving` } : null].filter(isTruthy)
             : [
+                  permissions.canGenerate && {
+                      text: c('Address action').t`Generate missing keys`,
+                      onClick: () => setMissingKeysAddressModalOpen(true),
+                  },
                   permissions.canMakeDefault &&
                       onSetDefault && {
                           text: c('Address action').t`Make default`,
@@ -77,10 +81,6 @@ const AddressActions = ({
                   permissions.canDisable && {
                       text: c('Address action').t`Disable`,
                       onClick: () => setDisableAddressModalOpen(true),
-                  },
-                  permissions.canGenerate && {
-                      text: c('Address action').t`Generate missing keys`,
-                      onClick: () => setMissingKeysAddressModalOpen(true),
                   },
                   permissions.canDelete &&
                       ({
