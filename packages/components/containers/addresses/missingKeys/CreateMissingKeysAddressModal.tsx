@@ -1,28 +1,42 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
+import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
     DEFAULT_ENCRYPTION_CONFIG,
     ENCRYPTION_CONFIGS,
     ENCRYPTION_TYPES,
     MEMBER_PRIVATE,
 } from '@proton/shared/lib/constants';
-import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
+import {
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
+import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import {
+    getShouldSetupMemberKeys,
+    missingKeysMemberProcess,
+    missingKeysSelfProcess,
+    setupMemberKeys,
+} from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
-import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
-import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 
 import {
-    Alert,
-    Table,
-    TableHeader,
-    TableBody,
-    TableRow,
-    ModalTwoHeader,
-    ModalTwoFooter,
     Button,
+    InputFieldTwo,
+    ModalProps,
     ModalTwo,
     ModalTwoContent,
-    ModalProps,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    PasswordInputTwo,
+    Table,
+    TableBody,
+    TableHeader,
+    TableRow,
+    useFormErrors,
 } from '../../../components';
 import {
     useApi,
@@ -33,7 +47,6 @@ import {
     useLoading,
     useNotifications,
 } from '../../../hooks';
-
 import SelectEncryption from '../../keys/addKey/SelectEncryption';
 import MissingKeysStatus from './MissingKeysStatus';
 import { AddressWithStatus, Status } from './interface';
@@ -66,6 +79,9 @@ const getStatus = (text: 'ok' | 'loading' | 'error') => {
 const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizationKey, ...rest }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const { validator, onFormSubmit } = useFormErrors();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -81,6 +97,8 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
         }))
     );
 
+    const shouldSetupMemberKeys = getShouldSetupMemberKeys(member);
+
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
 
     const processMember = async (member: Member) => {
@@ -88,32 +106,54 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
             createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
             return;
         }
-        const memberAddresses = await getAllMemberAddresses(api, member.ID);
         try {
-            const addresses = await getAddresses();
+            const [memberAddresses, addresses] = await Promise.all([
+                getAllMemberAddresses(api, member.ID),
+                getAddresses(),
+            ]);
 
-            await missingKeysMemberProcess({
-                api,
-                encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-                ownerAddresses: addresses,
-                memberAddressesToGenerate: addressesToGenerate,
-                member,
-                memberAddresses,
-                onUpdate: (addressID, event) => {
-                    setFormattedAddresses((oldState) => {
-                        return updateAddress(oldState, addressID, {
-                            status: {
-                                type: getStatus(event.status),
-                                tooltip: event.result,
-                            },
-                        });
+            const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
+
+            const handleUpdate = (
+                addressID: string,
+                event: { status: 'loading' | 'ok' | 'error'; result?: string }
+            ) => {
+                setFormattedAddresses((oldState) => {
+                    return updateAddress(oldState, addressID, {
+                        status: {
+                            type: getStatus(event.status),
+                            tooltip: event.result,
+                        },
                     });
-                },
-                organizationKey: organizationKey.privateKey,
-            });
+                });
+            };
+
+            if (shouldSetupMemberKeys && password) {
+                await setupMemberKeys({
+                    ownerAddresses: addresses,
+                    encryptionConfig,
+                    organizationKey: organizationKey.privateKey,
+                    member,
+                    memberAddresses,
+                    password,
+                    api,
+                });
+                addressesToGenerate.forEach((address) => handleUpdate(address.ID, { status: 'ok' }));
+            } else {
+                await missingKeysMemberProcess({
+                    api,
+                    encryptionConfig,
+                    ownerAddresses: addresses,
+                    memberAddressesToGenerate: addressesToGenerate,
+                    member,
+                    memberAddresses,
+                    onUpdate: handleUpdate,
+                    organizationKey: organizationKey.privateKey,
+                });
+            }
             await call();
         } catch (e: any) {
-            createNotification({ text: e.message });
+            createNotification({ text: e.message, type: 'error' });
         }
     };
 
@@ -141,36 +181,73 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
     };
 
     const handleSubmit = () => {
-        if (step === STEPS.INIT) {
-            withLoading(
-                (!member || (member.Self && member.Private === MEMBER_PRIVATE.UNREADABLE)
-                    ? processSelf()
-                    : processMember(member)
-                )
-                    .then(() => setStep(STEPS.DONE))
-                    .catch(() => setStep(STEPS.ERROR))
-            );
-        } else {
-            rest.onClose?.();
-        }
+        return (
+            !member || (member.Self && member.Private === MEMBER_PRIVATE.UNREADABLE)
+                ? processSelf()
+                : processMember(member)
+        )
+            .then(() => setStep(STEPS.DONE))
+            .catch(() => setStep(STEPS.ERROR));
     };
 
-    const submitText = (() => {
-        if (step === STEPS.DONE) {
-            return c('Action').t`Done`;
-        }
-        if (step === STEPS.ERROR) {
-            return c('Action').t`Close`;
-        }
-        return c('Action').t`Submit`;
-    })();
-
     return (
-        <ModalTwo {...rest}>
-            <ModalTwoHeader title={c('Title').t`Generate missing keys`} />
+        <ModalTwo
+            {...rest}
+            as="form"
+            onSubmit={(event: FormEvent) => {
+                event.preventDefault();
+                event.stopPropagation();
+                if (!onFormSubmit()) {
+                    return;
+                }
+                withLoading(handleSubmit());
+            }}
+        >
+            <ModalTwoHeader
+                title={
+                    shouldSetupMemberKeys
+                        ? c('Title').t`Activate account and generate keys`
+                        : c('Title').t`Generate missing keys`
+                }
+            />
             <ModalTwoContent>
-                <Alert className="mb1">{c('Info')
-                    .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}</Alert>
+                <p className="color-weak">
+                    {shouldSetupMemberKeys
+                        ? c('Info')
+                              .t`Before enabling the account you need to provide a password and create encryption keys for the new addresses.`
+                        : c('Info')
+                              .t`Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.`}
+                </p>
+                {shouldSetupMemberKeys && (
+                    <>
+                        <InputFieldTwo
+                            required
+                            autoFocus
+                            id="password"
+                            as={PasswordInputTwo}
+                            value={password}
+                            error={validator([passwordLengthValidator(password), requiredValidator(password)])}
+                            onValue={setPassword}
+                            label={c('Label').t`Password`}
+                            placeholder={c('Placeholder').t`Password`}
+                            autoComplete="new-password"
+                        />
+                        <InputFieldTwo
+                            id="confirmPassword"
+                            as={PasswordInputTwo}
+                            label={c('Label').t`Confirm password`}
+                            placeholder={c('Placeholder').t`Confirm`}
+                            value={confirmPassword}
+                            onValue={setConfirmPassword}
+                            error={validator([
+                                passwordLengthValidator(confirmPassword),
+                                confirmPasswordValidator(confirmPassword, password),
+                            ])}
+                            autoComplete="new-password"
+                        />
+                    </>
+                )}
+                <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
                 <SelectEncryption
                     encryptionType={encryptionType}
                     setEncryptionType={step === STEPS.INIT ? setEncryptionType : noop}
@@ -196,9 +273,21 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={rest.onClose} disabled={loading}>{c('Action').t`Close`}</Button>
-                <Button color="norm" loading={loading} onClick={handleSubmit}>
-                    {submitText}
-                </Button>
+                {step === STEPS.INIT && (
+                    <Button color="norm" loading={loading} type="submit">
+                        {c('Action').t`Submit`}
+                    </Button>
+                )}
+                {step === STEPS.ERROR && (
+                    <Button loading={loading} type="button" onClick={rest.onClose}>
+                        {c('Action').t`Close`}
+                    </Button>
+                )}
+                {step === STEPS.DONE && (
+                    <Button loading={loading} type="button" onClick={rest.onClose}>
+                        {c('Action').t`Done`}
+                    </Button>
+                )}
             </ModalTwoFooter>
         </ModalTwo>
     );
