@@ -1,12 +1,8 @@
-import { Canvas, Story } from '@storybook/addon-docs';
+import { Canvas, Story, ArgsTable, PRIMARY_STORY } from '@storybook/addon-docs';
 
 # Toggle
 
 `Toggle` is a simple component used for activating one of two predefined options. Commonly used as an on/off button.
-
-### Basic
-
-`checked` and `onChange` let you control the state of the `Toggle` component.
 
 <Canvas withSource="open">
     <Story id="components-toggle--basic" />
@@ -30,8 +26,12 @@ Add the `disabled` prop to the `Toggle` component to automatically style and blo
 
 ### InputField
 
-The Toggle component can be uses as an [input for InputField](/docs/components-inputfield--basic#custom-elements).
+The Toggle component can be used as an [input for InputField](/docs/components-inputfield--basic#custom-elements).
 
 <Canvas>
     <Story id="components-toggle--as-input-field" />
 </Canvas>
+
+### Props
+
+<ArgsTable story={PRIMARY_STORY} />

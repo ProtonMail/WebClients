@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Checkbox, InputFieldTwo } from '@proton/components';
-import { getTitle } from '../../helpers/title';
+import { Checkbox, InputFieldTwo, Label } from '@proton/components';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Checkbox.mdx';
 
 export default {
@@ -17,7 +17,23 @@ export default {
 export const Basic = () => {
     const [isChecked, setIsChecked] = useState(false);
 
-    return <Checkbox checked={isChecked} onChange={() => setIsChecked(!isChecked)} />;
+    return (
+        <div>
+            Whachu wanna eat?
+            <Label htmlFor="chicken" className="block mb1 mt1">
+                <Checkbox id="chicken" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+                Chicken
+            </Label>
+            <Label htmlFor="spaghetti" className="block mb1">
+                <Checkbox id="spaghetti" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+                Spaghetti
+            </Label>
+            <Label htmlFor="upsetti">
+                <Checkbox id="upsetti" checked={isChecked} onChange={() => setIsChecked(!isChecked)} />
+                Upsetti
+            </Label>
+        </div>
+    );
 };
 
 export const AsInputField = () => {

@@ -1,5 +1,5 @@
-import { Canvas, Story, ArgsTable } from "@storybook/addon-docs";
-import { Autocomplete } from "@proton/components"
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs';
+import { Autocomplete } from '@proton/components'
 
 # Autocomplete
 
@@ -9,16 +9,16 @@ This component allows a user to select a value from a list of options by suggest
 
 Technically, this is a wrapper around `Dropdown` together with `Option`s proving autocomplete functionality & exposing it via a generic autocomplete component and lower-level hooks.
 
-### Single value
-
-<Canvas>
-    <Story id="components-autocomplete--string" />
+<Canvas withSource="open">
+    <Story id="components-autocomplete--basic" />
 </Canvas>
 
-### Complex values
+### Simple
+
+There is a convenience variant of the Autocomplete called `SimpleAutocomplete` which wraps the `Autocomplete` component, providing it with a sensible default configuration, mainly assuming that the options array input will consist of strings only.
 
 <Canvas>
-    <Story id="components-autocomplete--complex" />
+    <Story id="components-autocomplete--simple" />
 </Canvas>
 
 ### Hooks API
@@ -34,5 +34,7 @@ The hook api returns props to spread on the input and option elements.
 ### Accessibility
 
 Since this is a component where focus persists inside the anchor even while keyboard navigating through the elements inside its dropdown, accessibility can't be managed via native focus and has to be artifically created via aria attributes. It is for that reason that the `id` prop, which is used internally to link the dropdown contents to it's anchor, is required.
+
+### Props
 
 <ArgsTable of={Autocomplete} />
