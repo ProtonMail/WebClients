@@ -13,14 +13,12 @@ export default {
     },
 };
 
-export const Basic = ({ ...args }) => (
-    <Alert {...args}>
+export const Basic = () => (
+    <Alert>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati
         enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?
     </Alert>
 );
-
-Basic.args = {};
 
 export const Types = () => (
     <>
