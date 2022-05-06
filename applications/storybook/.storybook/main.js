@@ -12,6 +12,7 @@ module.exports = {
         '../../../packages/atoms/**/*.stories.@(js|jsx|ts|tsx)',
     ],
     addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
+    staticDirs: ['../src/assets', '../src/assets/favicons'],
     typescript: {
         check: false,
         checkOptions: {},

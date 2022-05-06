@@ -11,8 +11,8 @@ import {
     Icon,
     IconName,
 } from '@proton/components';
-import { getTitle } from '../../helpers/title';
 
+import { getTitle } from '../../helpers/title';
 import mdx from './Autocomplete.mdx';
 
 export default {
@@ -25,28 +25,7 @@ export default {
     },
 };
 
-export const String = () => {
-    const options = [
-        'henlo',
-        'benlo',
-        'schmenlo',
-        'henlo and benlo',
-        'benlo and schmenlo',
-        'schmenlo and schmenlo',
-        'renlo',
-        'kenlo',
-        'schmenlo',
-        'henlo and kenlo',
-        'lenlo and schmenlo',
-        'achmenlo and lchmenlo',
-    ];
-
-    const [value, setValue] = useState(options[0]);
-
-    return <SimpleAutocomplete id="autocomplete" value={value} options={options} onChange={setValue} />;
-};
-
-export const Complex = () => {
+export const Basic = () => {
     const [value, setValue] = useState('');
 
     const options = [
@@ -68,6 +47,27 @@ export const Complex = () => {
             getData={({ label }) => label}
         />
     );
+};
+
+export const Simple = () => {
+    const options = [
+        'henlo',
+        'benlo',
+        'schmenlo',
+        'henlo and benlo',
+        'benlo and schmenlo',
+        'schmenlo and schmenlo',
+        'renlo',
+        'kenlo',
+        'schmenlo',
+        'henlo and kenlo',
+        'lenlo and schmenlo',
+        'achmenlo and lchmenlo',
+    ];
+
+    const [value, setValue] = useState(options[0]);
+
+    return <SimpleAutocomplete id="autocomplete" value={value} options={options} onChange={setValue} />;
 };
 
 interface ServiceOption {

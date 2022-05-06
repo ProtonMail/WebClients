@@ -1,14 +1,8 @@
-import { Meta } from '@storybook/addon-docs';
+import { Meta, Description } from '@storybook/addon-docs';
+
+import readme from '../../README.md';
 import { getTitle } from '../helpers/title';
 
 <Meta title={getTitle(__filename)} />
 
-# Hey! 🤘
-
-Here in front of your amazed eyes is the almighty Proton Design System documentation!
-
-This documentation is made by developers, for developers, so let's own this to make it as you want it to be: complete, up to date and easy to reach.
-
-## How to contribute?
-
-Lorem…
+<Description>{readme}</Description>

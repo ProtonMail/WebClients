@@ -9,11 +9,29 @@ import { useAutocomplete, useAutocompleteFilter } from './useAutocomplete';
 export interface Props<T> extends Omit<InputProps, 'value' | 'onChange' | 'onSelect'> {
     id: string;
     value: string;
+    /**
+     * Change handler for the underlying input element of the Autocomplete
+     */
     onChange: (value: string) => void;
+    /**
+     * Select handler for a selection from the Autocomplete's dropdown
+     */
     onSelect: (value: T) => void;
     options: T[];
+    /**
+     * Limits the number of search results that the dropdown will display.
+     */
     limit?: number;
+    /**
+     * Maps a value from the "options" array prop to its human-readable
+     * display value as well as the value used to determine source for
+     * autocompletion filtering.
+     */
     getData: (value: T) => string;
+    /**
+     * Determines the minumum number of characters from which to consider
+     * an input into the autocomplete input-field as a search.
+     */
     searchMinLength?: number;
 }
 
