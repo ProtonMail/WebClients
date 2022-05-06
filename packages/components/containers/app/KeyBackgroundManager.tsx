@@ -10,6 +10,7 @@ import {
     getDecryptedUserKeysHelper,
     migrateUser,
     restoreBrokenSKL,
+    getSentryError,
 } from '@proton/shared/lib/keys';
 import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
 import { User } from '@proton/shared/lib/interfaces';
@@ -146,11 +147,17 @@ const KeyBackgroundManager = ({
                 hasMemberKeyMigration
                     ? runMigration()
                           .catch((e) => {
-                              captureMessage('Key migration error', { extra: { error: e } });
+                              const error = getSentryError(e);
+                              if (error) {
+                                  captureMessage('Key migration error', { extra: { error } });
+                              }
                           })
                           .then(runBrokenSKLRestoration)
                           .catch((e) => {
-                              captureMessage('Key SKL restoration error', { extra: { error: e } });
+                              const error = getSentryError(e);
+                              if (error) {
+                                  captureMessage('Key SKL restoration error', { extra: { error } });
+                              }
                           })
                     : undefined
             )
