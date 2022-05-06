@@ -1,6 +1,7 @@
 import { useState, ChangeEvent } from 'react';
 import { c } from 'ttag';
 
+import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 
@@ -13,20 +14,39 @@ interface Props {
     onSubmit: (image: string) => void;
 }
 
+enum ImageState {
+    Initial,
+    Error,
+    Ok,
+}
+
 const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }: Props) => {
-    const [url, setUrl] = useState(initialUrl);
+    const [imageUrl, setImageUrl] = useState(initialUrl);
     const { createNotification } = useNotifications();
 
     const title = c('Title').t`Edit image`;
-    const isBase64Str = url.startsWith('data:image');
+    const isBase64Str = imageUrl.startsWith('data:image');
+
+    const imageState = (() => {
+        if (!imageUrl) {
+            return ImageState.Initial;
+        } else {
+            if (isValidHttpUrl(imageUrl)) {
+                return ImageState.Ok;
+            } else {
+                return ImageState.Error;
+            }
+        }
+    })();
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         // Remove parameters from URL otherwise the image is broken
-        setUrl(e.target.value.split('?')[0]);
+        const urlWithoutParams = e.target.value.split('?')[0];
+        setImageUrl(urlWithoutParams);
     };
 
     const handleSubmit = () => {
-        onSubmit(url);
+        onSubmit(imageUrl);
         onClose?.();
     };
 
@@ -60,15 +80,23 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
     };
 
     return (
-        <FormModal title={title} onSubmit={handleSubmit} submit={c('Action').t`Save`} onClose={onClose} {...rest}>
+        <FormModal
+            title={title}
+            onSubmit={handleSubmit}
+            submit={c('Action').t`Save`}
+            onClose={onClose}
+            submitProps={{ disabled: imageState === ImageState.Error }}
+            {...rest}
+        >
             <Row>
                 <Label htmlFor="contactImageModal-input-url">{c('Label').t`Add image URL`}</Label>
                 <Field>
                     <Input
                         id="contactImageModal-input-url"
-                        value={isBase64Str ? '' : url}
+                        value={isBase64Str ? '' : imageUrl}
                         onChange={handleChange}
                         placeholder={c('Placeholder').t`Image URL`}
+                        error={imageState !== ImageState.Ok ? c('Info').t`Not a valid URL` : undefined}
                     />
                 </Field>
             </Row>
