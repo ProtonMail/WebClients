@@ -15,6 +15,17 @@ import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members'
 import { noop } from '../helpers/function';
 import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
 import isTruthy from '../helpers/isTruthy';
+import { ApiError } from '../fetch/ApiError';
+import { getApiError } from '../api/helpers/apiErrorHelper';
+
+export const getSentryError = (e: any): any => {
+    // Only interested in api errors where the API gave a valid error response, or run time errors.
+    if (e instanceof ApiError) {
+        const { message, code } = getApiError(e);
+        return message && code >= 400 && code < 500 ? message : null;
+    }
+    return e;
+};
 
 export const getHasMigratedAddressKey = ({ Token, Signature }: { Token?: string; Signature?: string }): boolean => {
     return !!Token && !!Signature;

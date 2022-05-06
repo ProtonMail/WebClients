@@ -18,7 +18,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { handleSetupAddressKeys } from '@proton/shared/lib/keys/setupAddressKeys';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { migrateUser } from '@proton/shared/lib/keys';
+import { getSentryError, migrateUser } from '@proton/shared/lib/keys';
 
 import { ChallengeResult } from '../challenge';
 import { getAuthTypes, handleUnlockKey } from './loginHelper';
@@ -104,7 +104,10 @@ const handleKeyMigration = async ({
             user: User,
             addresses: Addresses,
         }).catch((e) => {
-            captureMessage('Key migration error', { extra: { error: e } });
+            const error = getSentryError(e);
+            if (error) {
+                captureMessage('Key migration error', { extra: { error } });
+            }
             return false;
         });
     }
@@ -156,7 +159,10 @@ const handleKeyUpgrade = async ({
             isOnePasswordMode,
             api: authApi,
         }).catch((e) => {
-            captureMessage('Key upgrade error', { extra: { error: e } });
+            const error = getSentryError(e);
+            if (error) {
+                captureMessage('Key upgrade error', { extra: { error } });
+            }
             return undefined;
         });
         if (newKeyPassword !== undefined) {
