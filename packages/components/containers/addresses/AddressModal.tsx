@@ -1,44 +1,56 @@
 import { FormEvent, useState } from 'react';
+
 import { c } from 'ttag';
+
 import { createAddress } from '@proton/shared/lib/api/addresses';
+import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
     ADDRESS_TYPE,
     DEFAULT_ENCRYPTION_CONFIG,
     ENCRYPTION_CONFIGS,
     MEMBER_PRIVATE,
 } from '@proton/shared/lib/constants';
-import { Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
-import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
-import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
-    SelectTwo,
-    Option,
-    ModalProps,
-    ModalTwo as Modal,
-    ModalTwoFooter as ModalFooter,
-    ModalTwoContent as ModalContent,
-    ModalTwoHeader as ModalHeader,
-    InputFieldTwo,
+    confirmPasswordValidator,
+    passwordLengthValidator,
+    requiredValidator,
+} from '@proton/shared/lib/helpers/formValidators';
+import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import {
+    getShouldSetupMemberKeys,
+    missingKeysMemberProcess,
+    missingKeysSelfProcess,
+    setupMemberKeys,
+} from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
+
+import {
     Button,
-    useFormErrors,
+    InputFieldTwo,
     Loader,
+    ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalTwoHeader as ModalHeader,
+    ModalProps,
+    Option,
+    PasswordInputTwo,
+    SelectTwo,
+    useFormErrors,
 } from '../../components';
 import {
+    useAddresses,
+    useApi,
+    useAuthentication,
+    useEventManager,
+    useGetUserKeys,
     useLoading,
     useNotifications,
-    useEventManager,
-    useApi,
-    useAddresses,
     usePremiumDomains,
     useUser,
-    useAuthentication,
-    useGetUserKeys,
 } from '../../hooks';
-
-import useAddressDomains from './useAddressDomains';
 import SelectEncryption from '../keys/addKey/SelectEncryption';
+import useAddressDomains from './useAddressDomains';
 
 interface Props extends ModalProps<'form'> {
     member?: Member;
@@ -52,6 +64,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const [addresses] = useAddresses();
     const [premiumDomains] = usePremiumDomains();
     const [premiumDomain = ''] = premiumDomains || [];
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
     const api = useApi();
     const initialMember = member || members[0];
     const [encryptionType, setEncryptionType] = useState(DEFAULT_ENCRYPTION_CONFIG);
@@ -77,6 +91,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
 
     const shouldGenerateKeys =
         !selectedMember || selectedMember.Self || selectedMember.Private === MEMBER_PRIVATE.READABLE;
+
+    const shouldSetupMemberKeys = shouldGenerateKeys && getShouldSetupMemberKeys(selectedMember);
 
     const handleSubmit = async () => {
         if (!selectedMember) {
@@ -110,6 +126,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
             })
         );
 
+        const encryptionConfig = ENCRYPTION_CONFIGS[encryptionType];
+
         if (shouldGenerateKeys) {
             if (shouldGenerateSelfKeys) {
                 await missingKeysSelfProcess({
@@ -118,23 +136,36 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                     addresses,
                     addressesToGenerate: [Address],
                     password: authentication.getPassword(),
-                    encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
+                    encryptionConfig,
                     onUpdate: noop,
                 });
             } else {
                 if (!organizationKey?.privateKey) {
                     throw new Error('Missing org key');
                 }
-                await missingKeysMemberProcess({
-                    api,
-                    encryptionConfig: ENCRYPTION_CONFIGS[encryptionType],
-                    ownerAddresses: addresses,
-                    memberAddressesToGenerate: [Address],
-                    member: selectedMember,
-                    memberAddresses: await getAllMemberAddresses(api, selectedMember.ID),
-                    onUpdate: noop,
-                    organizationKey: organizationKey.privateKey,
-                });
+                const memberAddresses = await getAllMemberAddresses(api, selectedMember.ID);
+                if (shouldSetupMemberKeys && password) {
+                    await setupMemberKeys({
+                        ownerAddresses: addresses,
+                        encryptionConfig,
+                        organizationKey: organizationKey.privateKey,
+                        member: selectedMember,
+                        memberAddresses,
+                        password,
+                        api,
+                    });
+                } else {
+                    await missingKeysMemberProcess({
+                        api,
+                        encryptionConfig,
+                        ownerAddresses: addresses,
+                        memberAddressesToGenerate: [Address],
+                        member: selectedMember,
+                        memberAddresses,
+                        onUpdate: noop,
+                        organizationKey: organizationKey.privateKey,
+                    });
+                }
             }
         }
 
@@ -217,6 +248,38 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
                     placeholder={c('Placeholder').t`Choose display name`}
                     data-testid="settings:identity-section:add-address:display-name"
                 />
+                {shouldSetupMemberKeys && (
+                    <>
+                        <div className="mb1 color-weak">
+                            {c('Info')
+                                .t`Before creating this address you need to provide a password and create encryption keys for it.`}
+                        </div>
+                        <InputFieldTwo
+                            required
+                            id="password"
+                            as={PasswordInputTwo}
+                            value={password}
+                            error={validator([passwordLengthValidator(password), requiredValidator(password)])}
+                            onValue={setPassword}
+                            label={c('Label').t`Password`}
+                            placeholder={c('Placeholder').t`Password`}
+                            autoComplete="new-password"
+                        />
+                        <InputFieldTwo
+                            id="confirmPassword"
+                            as={PasswordInputTwo}
+                            label={c('Label').t`Confirm password`}
+                            placeholder={c('Placeholder').t`Confirm`}
+                            value={confirmPassword}
+                            onValue={setConfirmPassword}
+                            error={validator([
+                                passwordLengthValidator(confirmPassword),
+                                confirmPasswordValidator(confirmPassword, password),
+                            ])}
+                            autoComplete="new-password"
+                        />
+                    </>
+                )}
                 {shouldGenerateKeys && (
                     <div className="mb1-5">
                         <div className="text-semibold mb0-25">{c('Label').t`Key strength`}</div>
