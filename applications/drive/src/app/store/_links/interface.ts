@@ -76,7 +76,14 @@ export type SignatureIssues = {
     [day in SignatureIssueLocation]?: VERIFICATION_STATUS;
 };
 
-export type SignatureIssueLocation = 'passphrase' | 'hash' | 'name' | 'xattrs' | 'blocks' | 'thumbnail';
+export type SignatureIssueLocation =
+    | 'passphrase'
+    | 'hash'
+    | 'name'
+    | 'xattrs'
+    | 'contentKeyPacket'
+    | 'blocks'
+    | 'thumbnail';
 
 export interface EncryptedLink extends Link {
     nodeKey: string;
@@ -84,6 +91,7 @@ export interface EncryptedLink extends Link {
     nodePassphraseSignature: string;
     nodeHashKey?: string;
     contentKeyPacket?: string;
+    contentKeyPacketSignature?: string;
     xAttr: string;
 }
 

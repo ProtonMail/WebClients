@@ -15,6 +15,7 @@ export type SharedUrlInfo = {
 
 interface FileProperties {
     ContentKeyPacket: string;
+    ContentKeyPacketSignature: string;
     ActiveRevision: {
         ID: string;
         CreateTime: number;
