@@ -48,7 +48,10 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
             <StripedList>
                 {items.map((item) => {
                     return (
-                        <StripedItem key={item.text} left={<Icon className="color-warning" name="fire" size={20} />}>
+                        <StripedItem
+                            key={item.text}
+                            left={<Icon className="color-success" name="checkmark" size={20} />}
+                        >
                             {item.text}
                         </StripedItem>
                     );

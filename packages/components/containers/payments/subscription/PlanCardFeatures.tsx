@@ -10,9 +10,10 @@ import { classnames } from '../../../helpers';
 interface FeatureListProps {
     features: PlanCardFeatureDefinition[];
     icon?: boolean;
+    fire?: boolean;
 }
 
-export const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
+export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureListProps) => {
     return (
         <ul className="bg-weak-odd unstyled mt1 mb2">
             {features.map((feature) => {
@@ -25,7 +26,7 @@ export const PlanCardFeatureList = ({ features, icon }: FeatureListProps) => {
                             ])}
                         >
                             <span className="flex flex-item-noshrink mr0-75">
-                                {feature.fire ? (
+                                {feature.fire && fire ? (
                                     <Icon size={20} name="fire" className="color-warning" />
                                 ) : feature.included ? (
                                     <span className="color-success">
