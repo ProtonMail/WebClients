@@ -45,10 +45,6 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
         <Href key="privacy" className="eo-footer-link" href={getStaticURL('/privacy-policy')}>{c('Link')
             .t`Privacy policy`}</Href>
     );
-    const OldVersionLink = (
-        <Href key="oldVersion" className="eo-footer-link" href="https://old.protonmail.com/">{c('Link')
-            .t`Previous version`}</Href>
-    );
 
     const appVersion = getAppVersion(APP_VERSION);
     const size = 70;
@@ -114,10 +110,6 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                         |
                     </span>
                     <span className="auto-mobile">{privacyLink}</span>
-                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
-                        |
-                    </span>
-                    <span className="auto-mobile">{OldVersionLink}</span>
                     <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
                         |
                     </span>
