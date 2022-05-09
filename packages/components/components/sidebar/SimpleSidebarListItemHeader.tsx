@@ -46,7 +46,12 @@ const SimpleSidebarListItemHeader = ({
     useHotkeys(buttonRef, shortcutHandlers);
 
     return (
-        <SidebarListItem className="navigation-link-header-group">
+        <SidebarListItem
+            className={classnames([
+                'navigation-link-header-group',
+                hasCaret && 'navigation-link-header-group--expandable',
+            ])}
+        >
             <div className="flex flex-nowrap">
                 <button
                     ref={buttonRef}
@@ -59,10 +64,12 @@ const SimpleSidebarListItemHeader = ({
                     data-shortcut-target={id}
                 >
                     {hasCaret && (
-                        <Icon
-                            name="chevron-down"
-                            className={classnames(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
-                        />
+                        <span className="button button-for-icon button-small button-ghost-weak">
+                            <Icon
+                                name="chevron-down"
+                                className={classnames(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
+                            />
+                        </span>
                     )}
                     <span className="ml0-5 text-sm">{text}</span>
                 </button>

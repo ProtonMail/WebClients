@@ -8,6 +8,10 @@ $padding-inline-start-link: rem(20) !default;
 	display: block;
 }
 
+.navigation-link-header-group--expandable {
+	padding-block: 0; // no padding for this case, it's in the element to avoid shift
+}
+
 .navigation-icon {
 	color: var(--text-weak);
 }
@@ -58,6 +62,8 @@ $padding-inline-start-link: rem(20) !default;
 
 // labels/folders sections
 .navigation-link-header-group-link {
+	padding-block: 0.45em; // this padding is there to avoid a shift between opened/close menu
+	margin-inline-start: -0.5em; // negative margin to align caret icon with other menu entries
 	outline: none;
 	@supports selector(:focus-visible) {
 		// had to do this because of Safari
