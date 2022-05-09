@@ -20,30 +20,82 @@ body.embedded {
 	}
 }
 
-body.vpn {
-	&,
-	& .ui-prominent,
-	& .ui-standard {
-		--primary: #4da358 !important;
-		--primary-contrast: white !important;
-
-		--interaction-norm: #4da358 !important;
-		--interaction-norm-hover: #3e8447 !important;
-		--interaction-norm-active: #2e7037 !important;
-		--interaction-norm-contrast: white !important;
-	}
-}
-
 .hv {
-	background: url(./mountains.svg) 0 0 no-repeat;
-	background-size: cover;
-	background-position: bottom;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	background-color: var(--background-norm);
+
+	@include respond-to($breakpoint-small, 'max') {
+		padding-inline: 1em;
+	}
+
+	@include respond-to($breakpoint-tiny, 'min') {
+		background: top center / cover no-repeat #f7f5ff;
+	}
+
+	/*
+		 * Here we are optimizing the loading of the big background image
+		 * depending on viewport width and orientation
+		 */
+
+	@media (orientation: landscape)
+			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-landscape.jpg);
+	}
+
+	@media (orientation: portrait)
+			and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-small, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-680-portrait.jpg);
+	}
+
+	@media (orientation: landscape)
+			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-landscape.jpg);
+	}
+
+	@media (orientation: portrait)
+			and (min-width: #{em($breakpoint-small + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-910-portrait.jpg);
+	}
+
+	@media (orientation: landscape)
+			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-landscape.jpg);
+	}
+
+	@media (orientation: portrait)
+			and (min-width: #{em($breakpoint-medium + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-medium-landscape, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1100-portrait.jpg);
+	}
+
+	@media (min-width: #{em($breakpoint-medium-landscape + 1, $root-default-font-size)})
+			and (max-width: #{em($breakpoint-large, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-1500.jpg);
+	}
+
+	@media (min-width: #{em($breakpoint-large + 1, $root-default-font-size)}) {
+		background-image: url(~@proton/styles/assets/img/backgrounds/proton-wave-2000.jpg);
+	}
 }
 
 .hv-container {
-	padding: em(24) em(48) em(48);
+	padding-inline: em(44);
+	padding-block: 2em 2.5em;
 	border-radius: var(--border-radius-lg);
+
+	@include respond-to($breakpoint-small) {
+		padding-inline: em(20);
+	}
+
+	@include respond-to($breakpoint-tiny, 'max') {
+		padding-inline: 2px;
+	}
 }
