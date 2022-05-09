@@ -21,7 +21,7 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
             height="36"
             fill="none"
             className={classnames(['logo', size && `icon-${size}p`, variant, className])}
-            aria-labelledby={`{${uid}}-title`}
+            aria-labelledby={`${uid}-title`}
             {...rest}
         >
             <path
@@ -49,7 +49,7 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
                     <stop offset="1" stopColor="#1C0554" />
                 </linearGradient>
             </defs>
-            <title id={`{${uid}}-title`}>{BRAND_NAME}</title>
+            <title id={`${uid}-title`}>{BRAND_NAME}</title>
         </svg>
     ) : (
         <svg
@@ -60,7 +60,7 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
             height="36"
             fill="none"
             className={classnames(['logo', size && `icon-${size}p`, variant, className])}
-            aria-labelledby={`{${uid}}-title`}
+            aria-labelledby={`${uid}-title`}
             {...rest}
         >
             <path
@@ -95,7 +95,7 @@ const ProtonLogo = ({ variant = 'full', size, className, ...rest }: Props) => {
                     <stop offset="1" stopColor="#1C0554" />
                 </linearGradient>
             </defs>
-            <title id={`{${uid}}-title`}>{BRAND_NAME}</title>
+            <title id={`${uid}-title`}>{BRAND_NAME}</title>
         </svg>
     );
 };
