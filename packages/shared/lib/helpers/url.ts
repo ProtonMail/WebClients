@@ -249,6 +249,14 @@ export const getDomainsSupportURL = () => {
     }
     return `${url}/support/mail/custom-email-domain`;
 };
+export const getEasySwitchURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/import-export`;
+    }
+    return `${url}/easyswitch`;
+};
+
 export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
