@@ -44,7 +44,9 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
                 data-testid="search-keyword"
                 onClick={onOpen}
             >
-                {searchParams.keyword ? searchParams.keyword : <span className="placeholder">{placeholder}</span>}
+                <span className="text-ellipsis">
+                    {searchParams.keyword ? searchParams.keyword : <span className="placeholder">{placeholder}</span>}
+                </span>
             </div>
             {isSearch ? (
                 <Button
