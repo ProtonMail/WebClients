@@ -39,9 +39,19 @@ export async function mimeTypeFromFile(input: File, extensionFallback = true) {
     const defaultType = 'application/octet-stream';
 
     const extension = input.name.split('.').pop();
-    const isSVG = extension && extension.toLowerCase() === 'svg';
-    if (isSVG) {
-        return 'image/svg+xml';
+
+    if (extension) {
+        if (extension.toLowerCase() === 'svg') {
+            return SupportedMimeTypes.svg;
+        }
+
+        /*
+            .apk has the same file signature as .zip, and since  mimeTypeFromSignature has the highest
+            priority later in the code, we have to check for .apk separately here.
+        */
+        if (extension.toLocaleLowerCase() === 'apk') {
+            return SupportedMimeTypes.apk;
+        }
     }
 
     const reader = new ChunkFileReader(input, minimumBytesToCheck);
