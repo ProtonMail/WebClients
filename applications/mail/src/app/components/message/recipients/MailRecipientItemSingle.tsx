@@ -130,7 +130,8 @@ const MailRecipientItemSingle = ({
 
             history.push(
                 changeSearchParams(newPathname, history.location.hash, {
-                    from: recipient.Address,
+                    from: isRecipient ? undefined : recipient.Address,
+                    to: isRecipient ? recipient.Address : undefined,
                     page: undefined,
                     sort: undefined,
                 })
@@ -169,7 +170,11 @@ const MailRecipientItemSingle = ({
                 onClick={handleClickSearch}
             >
                 <Icon name="magnifier" className="mr0-5" />
-                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Show contact messages`}</span>
+                <span className="flex-item-fluid mtauto mbauto">
+                    {isRecipient
+                        ? c('Action').t`Show messages from recipient`
+                        : c('Action').t`Show messages from sender`}
+                </span>
             </DropdownMenuButton>
             {showTrustPublicKey && (
                 <DropdownMenuButton
