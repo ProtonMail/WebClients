@@ -1,0 +1,11 @@
+import { ComponentPropsWithoutRef } from 'react';
+
+import './{{atomName}}.scss';
+
+export interface {{atomName}}Props extends ComponentPropsWithoutRef<'{{rootHtmlTag}}'> {}
+
+const {{atomName}} = (props: {{atomName}}Props) => {
+    return <{{rootHtmlTag}} {...props} />;
+};
+
+export default {{atomName}};
