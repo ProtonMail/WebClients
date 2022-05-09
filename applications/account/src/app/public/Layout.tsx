@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 import { CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import {
@@ -63,15 +63,13 @@ const Footer = ({ className, version }: { className: string; version: string }) 
             <div className="auto-mobile">{c('Info').t`Based in Switzerland, available globally`}</div>
             <div className="text-center text-sm m0 pt1 pb0-5 flex-item-noshrink">
                 <span className="auto-tiny-mobile">
-                    <Href key="terms" className="signup-footer-link" href={getStaticURL('/terms-and-conditions')}>{c(
-                        'Link'
-                    ).t`Terms`}</Href>
+                    <Href key="terms" className="signup-footer-link" href={getTermsURL()}>{c('Link').t`Terms`}</Href>
                 </span>
                 <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
                     |
                 </span>
                 <span className="auto-tiny-mobile">
-                    <Href key="privacy" className="signup-footer-link" href={getStaticURL('/privacy-policy')}>{c('Link')
+                    <Href key="privacy" className="signup-footer-link" href={getPrivacyPolicyURL()}>{c('Link')
                         .t`Privacy policy`}</Href>
                 </span>
                 <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
