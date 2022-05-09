@@ -3659,21 +3659,24 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^12.1.5
     "@types/jest": ^27.5.0
+    "@types/mustache": ^4.1.2
+    "@types/node": ^17.0.31
     "@types/react": ^17.0.44
     "@types/react-dom": ^17.0.16
     babel-loader: ^8.2.5
-    cross-env: ^7.0.3
+    chalk: ^4.1.2
+    commander: ^9.2.0
     eslint: ^8.14.0
     eslint-plugin-storybook: ^0.5.11
     jest: ^27.5.1
-    lodash.startcase: ^4.4.0
+    mustache: ^4.2.0
     netlify-cli: ^8.19.3
     prettier: ^2.6.2
-    prop-types: 15.8.1
     react: ^17.0.2
     react-dom: ^17.0.2
     react-polymorphic-box: ^3.0.3
     ts-loader: ^9.3.0
+    ts-node: ^10.7.0
     typescript: ^4.6.4
     webpack: ^5.72.0
   languageName: unknown
@@ -6468,6 +6471,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/mustache@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@types/mustache@npm:4.1.2"
+  checksum: 1f37849aae39b3188dbeac71734393586db80faa798795ea730db8e40d393c1d4d6a65ad8735a5ccf6dfc8b920d0792af1e6ef13e3ed2e02d204259678545240
+  languageName: node
+  linkType: hard
+
 "@types/node-fetch@npm:^2.1.6, @types/node-fetch@npm:^2.5.7":
   version: 2.5.10
   resolution: "@types/node-fetch@npm:2.5.10"
@@ -6503,6 +6513,13 @@ __metadata:
   version: 16.11.33
   resolution: "@types/node@npm:16.11.33"
   checksum: 5c86d3f1e3b996607b41405d368d2e19d410eee0054595cef73d230368a609a2863926e75ad19f5091f0fd742cd018b667d54c51292018dd8020a202a5b29fa9
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.31":
+  version: 17.0.31
+  resolution: "@types/node@npm:17.0.31"
+  checksum: 704618350f8420d5c47db0f7778398e821b7724369946f5c441a7e6b9343295553936400eb8309f0b07d5e39c240988ab3456b983712ca86265dabc9aee4ad3d
   languageName: node
   linkType: hard
 
@@ -21708,6 +21725,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"mustache@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "mustache@npm:4.2.0"
+  bin:
+    mustache: bin/mustache
+  checksum: 928fcb63e3aa44a562bfe9b59ba202cccbe40a46da50be6f0dd831b495be1dd7e38ca4657f0ecab2c1a89dc7bccba0885eab7ee7c1b215830da765758c7e0506
+  languageName: node
+  linkType: hard
+
 "mute-stream@npm:0.0.7":
   version: 0.0.7
   resolution: "mute-stream@npm:0.0.7"
@@ -29843,6 +29869,44 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"ts-node@npm:^10.7.0":
+  version: 10.7.0
+  resolution: "ts-node@npm:10.7.0"
+  dependencies:
+    "@cspotcode/source-map-support": 0.7.0
+    "@tsconfig/node10": ^1.0.7
+    "@tsconfig/node12": ^1.0.7
+    "@tsconfig/node14": ^1.0.0
+    "@tsconfig/node16": ^1.0.2
+    acorn: ^8.4.1
+    acorn-walk: ^8.1.1
+    arg: ^4.1.0
+    create-require: ^1.1.0
+    diff: ^4.0.1
+    make-error: ^1.1.1
+    v8-compile-cache-lib: ^3.0.0
+    yn: 3.1.1
+  peerDependencies:
+    "@swc/core": ">=1.2.50"
+    "@swc/wasm": ">=1.2.50"
+    "@types/node": "*"
+    typescript: ">=2.7"
+  peerDependenciesMeta:
+    "@swc/core":
+      optional: true
+    "@swc/wasm":
+      optional: true
+  bin:
+    ts-node: dist/bin.js
+    ts-node-cwd: dist/bin-cwd.js
+    ts-node-esm: dist/bin-esm.js
+    ts-node-script: dist/bin-script.js
+    ts-node-transpile-only: dist/bin-transpile.js
+    ts-script: dist/bin-script-deprecated.js
+  checksum: 2a379e43f7478d0b79e1e63af91fe222d83857727957df4bd3bdf3c0a884de5097b12feb9bbf530074526b8874c0338b0e6328cf334f3a5e2c49c71e837273f7
+  languageName: node
+  linkType: hard
+
 "ts-pnp@npm:^1.1.6":
   version: 1.2.0
   resolution: "ts-pnp@npm:1.2.0"
@@ -30723,6 +30787,13 @@ typescript@^3.9.7:
   bin:
     uuid: dist/bin/uuid
   checksum: 5575a8a75c13120e2f10e6ddc801b2c7ed7d8f3c8ac22c7ed0c7b2ba6383ec0abda88c905085d630e251719e0777045ae3236f04c812184b7c765f63a70e58df
+  languageName: node
+  linkType: hard
+
+"v8-compile-cache-lib@npm:^3.0.0":
+  version: 3.0.1
+  resolution: "v8-compile-cache-lib@npm:3.0.1"
+  checksum: 78089ad549e21bcdbfca10c08850022b22024cdcc2da9b168bcf5a73a6ed7bf01a9cebb9eac28e03cd23a684d81e0502797e88f3ccd27a32aeab1cfc44c39da0
   languageName: node
   linkType: hard
 

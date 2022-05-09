@@ -10,6 +10,7 @@
     ],
     "scripts": {
         "config-app": "(packages/config/install 2>/dev/null) || true",
+        "create-atom": "yarn workspace @proton/atoms create-atom",
         "postinstall": "is-ci || (husky install; yarn run config-app)",
         "start-all": "cd utilities/local-sso && bash ./run.sh",
         "version": "yarn workspace scripts run version:applications"
@@ -33,8 +34,8 @@
         "prettier": "^2.6.2",
         "sort-package-json": "^1.57.0"
     },
+    "packageManager": "yarn@3.2.0",
     "engines": {
         "node": ">= v16.15.0"
-    },
-    "packageManager": "yarn@3.2.0"
+    }
 }
