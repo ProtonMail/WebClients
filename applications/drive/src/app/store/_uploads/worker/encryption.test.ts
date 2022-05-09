@@ -1,11 +1,23 @@
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
-import { generatePrivateKey, generateSessionKey, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
+import {
+    setupCryptoProxyForTesting,
+    releaseCryptoProxy,
+    generatePrivateKey,
+    generateSessionKey,
+} from '../../../utils/test/crypto';
 import { asyncGeneratorToArray } from '../../../utils/test/generator';
 import generateBlocks from './encryption';
 
 describe('block generator', () => {
-    const setupPromise = async () => {
+    beforeAll(async () => {
         await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
+    const setupPromise = async () => {
         const privateKey = await generatePrivateKey();
         const sessionKey = await generateSessionKey();
         return {
