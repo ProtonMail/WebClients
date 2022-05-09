@@ -1,9 +1,9 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
 
 import { classnames, generateUID } from '@proton/components';
-import { VPN_APP_NAME } from '@proton/shared/lib/constants'
+import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
-import { LogoProps } from './Logo'
+import { LogoProps } from './Logo';
 
 type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
 
@@ -22,7 +22,7 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props)
             height="36"
             fill="none"
             className={classnames(['logo', size && `icon-${size}p`, variant, className])}
-            aria-labelledby={`{${uid}}-title`}
+            aria-labelledby={`${uid}-title`}
             {...rest}
         >
             {variant === 'with-wordmark' && (
@@ -88,7 +88,7 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props)
                     <stop offset="1" stopColor="#6d4aff" />
                 </linearGradient>
             </defs>
-            <title id={`{${uid}}-title`}>{VPN_APP_NAME}</title>
+            <title id={`${uid}-title`}>{VPN_APP_NAME}</title>
         </svg>
     );
 };
