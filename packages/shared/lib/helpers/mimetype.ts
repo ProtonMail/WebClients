@@ -1,5 +1,6 @@
 import { getBrowser } from '@proton/shared/lib/helpers/browser';
 import { MIME_TYPES } from '../constants';
+import { SupportedMimeTypes } from '../drive/constants';
 
 const isWebpSupported = () => {
     const { name, version } = getBrowser();
@@ -24,20 +25,20 @@ export const isFont = (mimeType: string) => mimeType.startsWith('font/');
 
 export const isSupportedImage = (mimeType: string) =>
     [
-        'image/apng',
-        'image/bmp',
-        'image/gif',
-        'image/x-icon',
-        'image/vnd.microsoft.icon',
-        'image/jpeg',
-        'image/png',
-        'image/svg+xml',
-        isWebpSupported() && 'image/webp',
+        SupportedMimeTypes.apng,
+        SupportedMimeTypes.bmp,
+        SupportedMimeTypes.gif,
+        SupportedMimeTypes.ico,
+        SupportedMimeTypes.vdnMicrosoftIcon,
+        SupportedMimeTypes.jpg,
+        SupportedMimeTypes.png,
+        SupportedMimeTypes.svg,
+        isWebpSupported() && SupportedMimeTypes.webp,
     ]
         .filter(Boolean)
-        .includes(mimeType);
+        .includes(mimeType as SupportedMimeTypes);
 
-export const isSVG = (mimeType: string) => mimeType === 'image/svg+xml';
+export const isSVG = (mimeType: string) => mimeType === SupportedMimeTypes.svg;
 
 export const isICS = (mimeType: string) =>
     mimeType.startsWith(MIME_TYPES.ICS) || mimeType.includes(MIME_TYPES.APPLICATION_ICS);
