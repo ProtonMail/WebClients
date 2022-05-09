@@ -1280,9 +1280,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Esta nova proposta de horário não coincide com os detalhes do seu convite. Por favor, verifique os detalhes do convite na sua agenda."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Esta resposta não coincide com os detalhes do convite. Por favor, verifique os detalhes do convite na sua agenda."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         ""
       ],
@@ -1315,6 +1312,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } pediu as últimas actualizações de um evento que já não existe na sua agenda."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         ""
@@ -1469,9 +1469,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         ""
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "Foi adicionada uma ocorrência ao evento ${ veventIcsTitle }"
-      ],
       "Event refreshing is not supported for the moment": [
         ""
       ],
@@ -1496,11 +1493,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Este convite está fora de prazo. O evento foi actualizado."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
+      ],
+      "This response is out of date.": [
+        ""
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Esta resposta está desactualizada. O evento já não existe na sua agenda."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Esta resposta está desactualizada. Este evento foi actualizado."
       ],
       "This response is out of date. You have no calendars.": [
         "Esta resposta está desactualizada. Não tem agendamentos."
@@ -2839,9 +2839,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "Falha ao encriptar o anexo. Por favor, tente novamente."
       ],
-      "File has no contents to preview": [
-        "O ficheiro não tem conteúdo para antever"
-      ],
       "Filter with this name already exists": [
         "Já existe um filtro com este nome"
       ],
@@ -3652,11 +3649,6 @@
         "Falha ao criar evento de calendário"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactos não serão importados. Clique para detalhes"
@@ -4282,9 +4274,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No action selected": [
         "Nenhuma acção seleccionada"
       ],
@@ -4450,6 +4439,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione o formato de email predefinido a utilizar para este endereço de email."
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
@@ -4483,7 +4475,7 @@
       "Show original message": [
         "Mostrar mensagem original"
       ],
-      "Sorry, this message does not exist or has already expired": [
+      "Sorry, this message does not exist or has already expired.": [
         ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
@@ -4747,9 +4739,6 @@
       ],
       "Week": [
         "Semana"
-      ],
-      "What do you want to import from your Google account?": [
-        ""
       ],
       "When do you want your message to be sent?": [
         ""
@@ -6009,7 +5998,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -7200,12 +7194,6 @@
       "Select contact group": [
         "Seleccionar grupo de contactos"
       ],
-      "Select permissions": [
-        ""
-      ],
-      "Select what to import": [
-        ""
-      ],
       "Send email": [
         "Enviar email"
       ],
@@ -7235,6 +7223,9 @@
       ],
       "Sign in again to continue": [
         "Reinicie sessão para continuar"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort conversations": [
         "Ordenar conversas"
@@ -7284,6 +7275,9 @@
       ],
       "Welcome ${ userName }": [
         "Boas vindas ${ userName }"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "O que há de novo"

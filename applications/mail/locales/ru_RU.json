@@ -1290,9 +1290,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Предложение о новом времени не соответствует вашим сведениям о приглашении. Пожалуйста, проверьте сведения о приглашении в календаре."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Этот ответ не соответствует вашим сведениям о приглашении. Проверьте сведения о приглашении в календаре."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } принял приглашение и предложил новое время для одного повтора события."
       ],
@@ -1325,6 +1322,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } запросил последние обновления события, которое больше не существует в вашем календаре."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } отклонил приглашение и предложил новое время для одного повтора этого события."
@@ -1479,9 +1479,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "Добавление повторов к событию в настоящее время не поддерживается"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "К событию «${ veventIcsTitle }» был добавлен повтор"
-      ],
       "Event refreshing is not supported for the moment": [
         "Обновление события в настоящее время не поддерживается"
       ],
@@ -1506,11 +1503,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Приглашение устарело. Событие было обновлено."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
+      ],
+      "This response is out of date.": [
+        ""
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Этот ответ устарел. События больше нет в вашем календаре."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Этот ответ устарел. Событие было обновлено."
       ],
       "This response is out of date. You have no calendars.": [
         "Этот ответ устарел. У вас нет календарей."
@@ -2867,9 +2867,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "Не удалось зашифровать вложение. Попробуйте еще раз."
       ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
       "Filter with this name already exists": [
         "Фильтр с таким именем уже существует"
       ],
@@ -3708,11 +3705,6 @@
         "Не удалось создать событие календаря"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "на следующем шаге необходимо выбрать все разрешения"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -4424,9 +4416,6 @@
       "New": [
         "Новый"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
-      ],
       "No action selected": [
         "Действие не выбрано"
       ],
@@ -4592,6 +4581,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
@@ -4625,8 +4617,8 @@
       "Show original message": [
         "Показать исходное сообщение"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "Извините, это сообщение не существует или срок его действия уже истек"
+      "Sorry, this message does not exist or has already expired.": [
+        ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
@@ -4891,9 +4883,6 @@
       ],
       "Week": [
         "Неделя"
-      ],
-      "What do you want to import from your Google account?": [
-        "Что вы хотите импортировать из своего аккаунта Google?"
       ],
       "When do you want your message to be sent?": [
         "Когда вы хотите, чтобы ваше сообщение было отправлено?"
@@ -6170,7 +6159,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Мы освежили внешний вид Proton.${ br } У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
       ]
     },
     "new_plans: title": {
@@ -6193,8 +6182,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -7472,12 +7466,6 @@
       "Select contact group": [
         "Выбор группы контактов"
       ],
-      "Select permissions": [
-        "Выберите разрешения"
-      ],
-      "Select what to import": [
-        "Виберете что импортировать"
-      ],
       "Send email": [
         "Отправить электронное письмо"
       ],
@@ -7507,6 +7495,9 @@
       ],
       "Sign in again to continue": [
         "Чтобы продолжить, повторно войдите ещё раз"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort conversations": [
         "Сортировка цепочек писем"
@@ -7558,6 +7549,9 @@
       ],
       "Welcome ${ userName }": [
         "Добро пожаловать, ${ userName }"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Что нового"

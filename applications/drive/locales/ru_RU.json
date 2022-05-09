@@ -131,6 +131,9 @@
       "Continue": [
         "Продолжить"
       ],
+      "Continue transfers": [
+        ""
+      ],
       "Continue with Google": [
         "Продолжить с Google"
       ],
@@ -496,6 +499,9 @@
       ],
       "Stop sharing": [
         "Закрыть доступ"
+      ],
+      "Stop transfers": [
+        ""
       ],
       "Submit": [
         "Отправить"
@@ -1794,9 +1800,6 @@
       "File cannot be merged with folder": [
         "Файл не может быть объединен с папкой"
       ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
       "File selection is already downloading": [
         "Выбранные файлы уже скачиваются"
       ],
@@ -2209,11 +2212,6 @@
         "ProtonContacts не поддерживает ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "на следующем шаге необходимо выбрать все разрешения"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности"
@@ -2471,9 +2469,6 @@
       ],
       "Close this screen to exit.": [
         "Закройте этот экран, чтобы выйти."
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Вы уверены? Если закрыть менеджера передачи, то вся передача информации будет прервана."
       ],
       "Conflict": [
         "Конфликт"
@@ -2733,9 +2728,6 @@
       "New": [
         "Новый"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
-      ],
       "No": [
         "Нет"
       ],
@@ -2760,14 +2752,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ни один из загруженных ключей не подходит для шифрования. Шифрование автоматически отключено."
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Примечание: Данные могут быть все еще доступны локально на устройствах, на которых вы установили ${ appName }."
       ],
       "of": [
         "из"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "Одно из ваших зашифрованных хранилищ заблокировано. Скорее всего, это связано с недавним сбросом пароля.${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2850,6 +2845,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
       ],
@@ -2894,6 +2892,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Возможно, следующие элементы были взломаны: ${ items }. Открывайте их только в том случае, если вы им доверяете."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        ""
       ],
       "There are no files yet": [
         "Пока здесь пусто"
@@ -3021,9 +3022,6 @@
       "What do you want to do?": [
         "Что вы хотите сделать?"
       ],
-      "What do you want to import from your Google account?": [
-        "Что вы хотите импортировать из своего аккаунта Google?"
-      ],
       "What would you like to do?": [
         "Что вы хотели бы сделать?"
       ],
@@ -3120,8 +3118,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Ссылка для безопасного доступа к ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        ""
       ]
     },
     "Info on errors": {
@@ -3140,6 +3138,9 @@
       ],
       "file data": [
         "данные файла"
+      ],
+      "file data key": [
+        ""
       ],
       "keys": [
         "ключи"
@@ -3638,12 +3639,12 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Мы освежили внешний вид Proton.${ br } У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
       ]
     },
     "new_plans: title": {
       "Updated Proton, unified protection": [
-        "Обновленный Proton и комплексная защита"
+        "Proton: обновления и комплексная защита"
       ]
     },
     "Notification": {
@@ -3862,8 +3863,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding Action": {
@@ -4312,9 +4318,6 @@
       "Browser might run out of memory": [
         "У браузера могла закончиться память"
       ],
-      "Cancel all active transfers": [
-        "Отменить все текущие операции по передаче данных"
-      ],
       "Change layout": [
         "Изменить отображение"
       ],
@@ -4606,12 +4609,6 @@
       "Select link expiration time": [
         "Выберите время окончания действия ссылки"
       ],
-      "Select permissions": [
-        "Выберите разрешения"
-      ],
-      "Select what to import": [
-        "Виберете что импортировать"
-      ],
       "Settings": [
         "Настройки"
       ],
@@ -4627,6 +4624,9 @@
       "Sign in again to continue": [
         "Войдите снова, чтобы продолжить"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         "Размер"
       ],
@@ -4638,6 +4638,9 @@
       ],
       "Stop sharing with everyone?": [
         "Закрыть доступ всем?"
+      ],
+      "Stop transfers?": [
+        ""
       ],
       "The file or folder failed to be downloaded": [
         "Не удалось скачать файл или папку"
@@ -4686,6 +4689,9 @@
       ],
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Список изменений"

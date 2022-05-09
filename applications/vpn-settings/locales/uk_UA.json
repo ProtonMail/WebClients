@@ -1611,9 +1611,6 @@
       "Error connecting to the Bitcoin API.": [
         "Помилка підключення до Bitcoin API."
       ],
-      "File has no contents to preview": [
-        "Файл не має вмісту для перегляду"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Якщо час на вашому телевізорі завершився, натисніть Оновити на телевізорі та введіть код знову."
       ],
@@ -2002,6 +1999,9 @@
       "Creating your account": [
         "Створення облікового запису"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Кредит на невикористану частину попередньої передплати тарифного плану"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Кредити, розподілення, а також будь-які відповідні купони застосовуються при оформленні замовлення"
       ],
@@ -2072,7 +2072,7 @@
         "Для Visa та MasterCard — 3 цифри на зворотній стороні картки. Для American Express — 4 цифри на лицьовій стороні картки."
       ],
       "Free": [
-        "Безплатно"
+        "Безплатний"
       ],
       "Free up some space or add more storage space.": [
         "Звільніть місце або збільште обсяг сховища."
@@ -3272,17 +3272,23 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } календар на користувача",
-        "${ MAX_CALENDARS_PER_USER } календарі на користувача",
-        "${ MAX_CALENDARS_PER_USER } календарів на користувача",
-        "${ MAX_CALENDARS_PER_USER } календарів на користувача"
+      "${ _n } calendar per user": [
+        "${ _n } календар на користувача",
+        "${ _n } календарі на користувача",
+        "${ _n } календарів на користувача",
+        "${ _n } календарі на користувача"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } високошвидкісне VPN-з'єднання",
         "${ maxVpn } високошвидкісні VPN-з'єднання",
         "${ maxVpn } високошвидкісних VPN-з'єднань",
         "${ maxVpn } високошвидкісних VPN-з'єднань"
+      ],
+      "${ n } calendar": [
+        "${ n } календар",
+        "${ n } календарі",
+        "${ n } календарів",
+        "${ n } календарі"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } високошвидкісне VPN-з'єднання",
@@ -3325,12 +3331,6 @@
         "${ UsedCalendars } календарі",
         "${ UsedCalendars } календарів",
         "${ UsedCalendars } календаря"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } з ${ MaxCalendars } календар",
-        "${ UsedCalendars } з ${ MaxCalendars } календарі",
-        "${ UsedCalendars } з ${ MaxCalendars } календарів",
-        "${ UsedCalendars } з ${ MaxCalendars } календарів"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } з ${ MaxDomains } власного домену",

@@ -30,7 +30,7 @@
         "取得驗證碼"
       ],
       "refresh the page": [
-        "刷新此頁"
+        "重新整理此頁面"
       ],
       "Request new code": [
         "請求新驗證碼"
@@ -92,7 +92,7 @@
         "亞美尼亞"
       ],
       "Aruba": [
-        "阿路巴"
+        "阿魯巴"
       ],
       "Ascension Island": [
         "亞森欣島"
@@ -104,7 +104,7 @@
         "奧地利"
       ],
       "Azerbaijan": [
-        "亞塞拜然"
+        "阿塞拜疆"
       ],
       "Bahamas": [
         "巴哈馬"
@@ -140,16 +140,16 @@
         "玻利維亞"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "博內爾島、聖尤斯特歇斯島和薩巴島"
+        "博奈爾、聖尤斯特歇斯和薩巴"
       ],
       "Bosnia and Herzegovina": [
-        "波希尼亞及赫塞哥維那"
+        "波士尼亞及赫塞哥維納"
       ],
       "Botswana": [
-        "布維島"
+        "波札那"
       ],
       "Bouvet Island": [
-        "布維島"
+        "波維特島"
       ],
       "Brazil": [
         "巴西"
@@ -158,13 +158,13 @@
         "英屬印度洋領地"
       ],
       "Brunei Darussalam": [
-        "汶萊"
+        "汶萊達魯薩蘭國"
       ],
       "Bulgaria": [
         "保加利亞"
       ],
       "Burkina Faso": [
-        "有吉納法索"
+        "布吉納法索"
       ],
       "Burma": [
         "緬甸"
@@ -272,7 +272,7 @@
         "愛沙尼亞"
       ],
       "Ethiopia": [
-        "衣索匹亞"
+        "衣索比亞"
       ],
       "Falkland Islands": [
         "福克蘭群島"
@@ -359,7 +359,7 @@
         "聖座（梵蒂岡城國）"
       ],
       "Honduras": [
-        "宏都拉斯"
+        "洪都拉斯"
       ],
       "Hong Kong": [
         "香港"
@@ -614,7 +614,7 @@
         "盧安達"
       ],
       "Saint Barthélemy": [
-        "聖巴泰勒米"
+        "聖巴瑟米"
       ],
       "Saint Helena": [
         "聖赫勒拿"
@@ -770,7 +770,7 @@
         "烏克蘭"
       ],
       "United Arab Emirates": [
-        "阿拉伯聯合酋長國"
+        "阿聯酋"
       ],
       "United Kingdom": [
         "英國"
@@ -806,7 +806,7 @@
         "瓦利斯和富圖那"
       ],
       "Western Sahara": [
-        "西薩摩亞"
+        "西撒哈拉"
       ],
       "Yemen": [
         "葉門"
@@ -831,16 +831,16 @@
         "電子郵件無效"
       ],
       "Enter 6 digits": [
-        "請輸入 6 位數字"
+        "請輸入 6 位驗證碼"
       ],
       "Invalid verification code": [
-        "無效的驗證碼"
+        "驗證碼無效"
       ],
       "Not a valid number": [
         "號碼無效"
       ],
       "Passwords do not match": [
-        "密碼不正確"
+        "密碼不相符"
       ],
       "Request timed out": [
         "請求逾時"
@@ -852,12 +852,12 @@
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "Unknown error": [
-        "未知的錯誤"
+        "未知錯誤"
       ]
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們就去處理一下。"
+        "不好意思，這個錯誤有待修正。我們將會處理，請耐心等待。"
       ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
@@ -915,10 +915,10 @@
         "載入中"
       ],
       "No results found": [
-        "查無結果"
+        "找不到相符的結果"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "無法連線至伺服器。請過幾分鐘後再試"
+        "無法連線至伺服器。請在幾分鐘後再試一次"
       ],
       "Session timed out": [
         "工作階段已逾時"
@@ -1005,7 +1005,7 @@
     },
     "Validation": {
       "Password must contain at least ${ length } character": [
-        "密碼至少必須包含 ${ length } 個字元"
+        "密碼必須包含至少 ${ length } 個字元"
       ]
     }
   }

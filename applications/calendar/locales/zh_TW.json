@@ -859,6 +859,11 @@
         "週"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        "將時間範圍更改為"
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "關閉"
@@ -997,19 +1002,19 @@
         "亞美尼亞"
       ],
       "Aruba": [
-        "阿路巴"
+        "阿魯巴"
       ],
       "Ascension Island": [
         "亞森欣島"
       ],
       "Australia": [
-        "澳大利亞"
+        "澳洲"
       ],
       "Austria": [
         "奧地利"
       ],
       "Azerbaijan": [
-        "亞塞拜然"
+        "阿塞拜疆"
       ],
       "Bahamas": [
         "巴哈馬"
@@ -1045,16 +1050,16 @@
         "玻利維亞"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "博內爾島、聖尤斯特歇斯島和薩巴島"
+        "博奈爾、聖尤斯特歇斯和薩巴"
       ],
       "Bosnia and Herzegovina": [
-        "波希尼亞及赫塞哥維那"
+        "波士尼亞及赫塞哥維納"
       ],
       "Botswana": [
-        "布維島"
+        "波札那"
       ],
       "Bouvet Island": [
-        "布維島"
+        "波維特島"
       ],
       "Brazil": [
         "巴西"
@@ -1063,13 +1068,13 @@
         "英屬印度洋領地"
       ],
       "Brunei Darussalam": [
-        "汶萊"
+        "汶萊達魯薩蘭國"
       ],
       "Bulgaria": [
         "保加利亞"
       ],
       "Burkina Faso": [
-        "有吉納法索"
+        "布吉納法索"
       ],
       "Burma": [
         "緬甸"
@@ -1156,10 +1161,10 @@
         "多米尼克"
       ],
       "Dominican Republic": [
-        "多明尼加"
+        "多明尼加共和國"
       ],
       "Ecuador": [
-        "厄瓜多爾"
+        "厄瓜多"
       ],
       "Egypt": [
         "埃及"
@@ -1177,7 +1182,7 @@
         "愛沙尼亞"
       ],
       "Ethiopia": [
-        "衣索匹亞"
+        "衣索比亞"
       ],
       "Falkland Islands": [
         "福克蘭群島"
@@ -1264,7 +1269,7 @@
         "聖座（梵蒂岡城國）"
       ],
       "Honduras": [
-        "宏都拉斯"
+        "洪都拉斯"
       ],
       "Hong Kong": [
         "香港"
@@ -1519,7 +1524,7 @@
         "盧安達"
       ],
       "Saint Barthélemy": [
-        "聖巴泰勒米"
+        "聖巴瑟米"
       ],
       "Saint Helena": [
         "聖赫勒拿"
@@ -1675,7 +1680,7 @@
         "烏克蘭"
       ],
       "United Arab Emirates": [
-        "阿拉伯聯合酋長國"
+        "阿聯酋"
       ],
       "United Kingdom": [
         "英國"
@@ -1711,7 +1716,7 @@
         "瓦利斯和富圖那"
       ],
       "Western Sahara": [
-        "西薩摩亞"
+        "西撒哈拉"
       ],
       "Yemen": [
         "葉門"
@@ -2664,11 +2669,6 @@
         "ProtonContacts ${ forNow }不支援："
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "在下一個步驟中，您必須選取所有的權限"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 個聯絡人之中，有 ${ totalContactsDiscarded } 個將不會匯入。按一下以取得詳細資料"
@@ -2960,9 +2960,6 @@
       "New": [
         "新增"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "接下來，您將需要登入您的 Google 帳戶並允許我們存取您的資料。"
-      ],
       "No contacts added yet": [
         "未新增任何聯絡人"
       ],
@@ -2980,6 +2977,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上傳的金鑰都無法用於加密。加密將會自動停用。"
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "召集人先前更新的事件將會保留，但您的某些回答將會遺失。"
@@ -3034,6 +3034,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
+      ],
+      "Select what you want to move from Google.": [
+        "選取您要從 Google 移動的項目"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新的行事曆，上限為 20 個行事曆。"
@@ -3148,9 +3151,6 @@
       ],
       "Week": [
         "週"
-      ],
-      "What do you want to import from your Google account?": [
-        "您想從您的 Google 帳號匯入甚麼？"
       ],
       "Which event would you like to delete?": [
         "您要刪除哪一個事件？"
@@ -3947,8 +3947,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "需要注意的是 ${ boldNextStep } 以開始您的匯入程序。"
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "接下來，您將必須登入您的 Google 帳號並允許我們存取您的資料。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "為了讓匯入正常運作，您必須選取所有請求的項目，如 GIF 中所示。"
       ]
     },
     "Onboarding": {
@@ -4780,9 +4785,6 @@
       "Select event's last date": [
         "請選擇事件的最後一日"
       ],
-      "Select permissions": [
-        "選取權限"
-      ],
       "Select the time to send this notification": [
         "請選擇此通知發送的時間"
       ],
@@ -4794,9 +4796,6 @@
       ],
       "Select the way to send this notification": [
         "請選擇此通知發送的方式"
-      ],
-      "Select what to import": [
-        "選取匯入內容"
       ],
       "Select when this event will stop happening": [
         "請選擇此事件發生到何時為止"
@@ -4822,6 +4821,9 @@
       "Sign in again to continue": [
         "請重新登入以繼續"
       ],
+      "Sign in and grant access": [
+        "登入並授予存取權"
+      ],
       "Update event": [
         "更新事件"
       ],
@@ -4839,6 +4841,9 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
+      ],
+      "What would you like to import?": [
+        "您想匯入什麼？"
       ],
       "What's new": [
         "最近更新"

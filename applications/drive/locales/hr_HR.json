@@ -131,6 +131,9 @@
       "Continue": [
         "Nastavi"
       ],
+      "Continue transfers": [
+        ""
+      ],
       "Continue with Google": [
         "Nastavi s Googleom"
       ],
@@ -494,6 +497,9 @@
       ],
       "Stop sharing": [
         "Zaustavi dijeljenje"
+      ],
+      "Stop transfers": [
+        ""
       ],
       "Submit": [
         "Pošalji"
@@ -1789,9 +1795,6 @@
       "File cannot be merged with folder": [
         ""
       ],
-      "File has no contents to preview": [
-        "Datoteka nema sadržaja za pregled"
-      ],
       "File selection is already downloading": [
         ""
       ],
@@ -2195,11 +2198,6 @@
         "ProtonContacts ne podržava ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -2432,9 +2430,6 @@
       ],
       "Close this screen to exit.": [
         ""
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Zatvaranjem upravitelja prijenosa otkazat će se svi aktivni prijenosi, jeste li sigurni?"
       ],
       "Conflict": [
         "Sukob"
@@ -2690,9 +2685,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No": [
         "Ne"
       ],
@@ -2717,13 +2709,16 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
       "of": [
         "od"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
@@ -2807,6 +2802,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
@@ -2850,6 +2848,9 @@
         "Aplikacija mora lokalno dešifrirati vaše kontakte prije nego što se mogu izvesti. Na kraju postupka generirat će se VCF datoteka i moći ćete je preuzeti."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         ""
       ],
       "There are no files yet": [
@@ -2977,9 +2978,6 @@
       "What do you want to do?": [
         "Što želite učiniti?"
       ],
-      "What do you want to import from your Google account?": [
-        ""
-      ],
       "What would you like to do?": [
         ""
       ],
@@ -3076,8 +3074,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Vaša sigurna, dijeljiva poveznica za ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        ""
       ]
     },
     "Info on errors": {
@@ -3095,6 +3093,9 @@
         ""
       ],
       "file data": [
+        ""
+      ],
+      "file data key": [
         ""
       ],
       "keys": [
@@ -3787,7 +3788,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -4229,9 +4235,6 @@
       "Browser might run out of memory": [
         ""
       ],
-      "Cancel all active transfers": [
-        "Otkaži sve aktivne prijenose"
-      ],
       "Change layout": [
         "Promijeni izgled"
       ],
@@ -4520,12 +4523,6 @@
       "Select link expiration time": [
         "Odaberite vrijeme isteka poveznice"
       ],
-      "Select permissions": [
-        ""
-      ],
-      "Select what to import": [
-        ""
-      ],
       "Settings": [
         "Postavke"
       ],
@@ -4541,6 +4538,9 @@
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         "Veličina"
       ],
@@ -4552,6 +4552,9 @@
       ],
       "Stop sharing with everyone?": [
         "Zaustavi dijeljenje s svima?"
+      ],
+      "Stop transfers?": [
+        ""
       ],
       "The file or folder failed to be downloaded": [
         ""
@@ -4599,6 +4602,9 @@
         "Upozorenje"
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

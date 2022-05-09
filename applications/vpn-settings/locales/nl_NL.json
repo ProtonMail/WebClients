@@ -459,16 +459,16 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Betaalbaar elke 12 maanden"
       ],
       "Payable every 24 months": [
-        ""
+        "Betaalbaar elke 24 maanden"
       ],
       "Payable every month": [
-        ""
+        "Betaalbaar elke maand"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Vernieuwd automatisch op ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -1509,7 +1509,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Kortingscode toegepast: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -1588,9 +1588,6 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Fout bij het verbinden met de Bitcoin-API."
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te tonen"
       ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Als de tijd op uw TV is verlopen, klik op vernieuwen op uw TV en voer uw code opnieuw in."
@@ -1876,13 +1873,13 @@
         "* Green kredietkaart vereist."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Met 1-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Met 12-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Met 24-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -1904,7 +1901,7 @@
         "Een naam om u te helpen identificeren waar u het gebruikt zodat u het later eenvoudig kan intrekken of verlengen."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Account toegang beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
@@ -1972,8 +1969,11 @@
       "Creating your account": [
         "Account aan het aanmaken"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Tegoed voor het ongebruikte deel van uw vorig abonnement"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
+        "Tegoeden, aftrekken en andere toepasbare kortingscodes worden toegepast bij het afrekenen"
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
@@ -1994,7 +1994,7 @@
         "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar je gaat."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via Proton. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
@@ -2015,7 +2015,7 @@
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "Voer uw ${ BRAND_NAME } Accountgegevens in."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
@@ -2042,7 +2042,7 @@
         "Voor Visa, MasterCard en Discover zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free": [
-        "Gratis"
+        "Free"
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -2237,10 +2237,10 @@
         "Scan deze Qr-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
       ],
       "Securing your account": [
-        ""
+        "Beveiliging van uw account"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Selecter het aantal inbegrepen gebruikers in uw abonnement. Elke extra gebruiker kost ${ price }. Heeft u meer dan ${ maxUsers } gebruikersaccount nodig, ${ contactMailToLink } dan ons Klantensuccesteam."
       ],
       "Server is currently down": [
         "Server is momenteel offline"
@@ -2408,7 +2408,7 @@
         "We sturen een resetcode naar het telefoonnummer dat u hebt opgegeven voor het herstel van uw account."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -2504,7 +2504,7 @@
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Uw bestaande ${ BRAND_NAME }-account kan gebruikt worden voor alle ${ BRAND_NAME }-diensten. Log in met ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Uw betalingsgegevens zijn beschermd met TLS encryptie en Zwitserse privacywetten."
@@ -3086,11 +3086,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
-      "From ${ _price }": [
-        "Vanaf ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Vanaf ${ _price2 } per gebruiker"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
@@ -3103,12 +3100,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Wereldwijde toegang tot streamingdiensten"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Ingebouwde adblocker (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Gebruik ${ connections } high-speed VPN-verbinding",
         "Gebruik ${ connections } high-speed VPN-verbindingen"
@@ -3116,10 +3107,6 @@
       "Get ${ connections } high-speed VPN connection per user": [
         "Gebruik ${ connections } high-speed VPN-verbinding per gebruiker",
         "Gebruik ${ connections } high-speed VPN-verbindingen per gebruiker"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "High-speed VPN op ${ maxVpn } apparaat",
-        "High-speed VPN op ${ maxVpn } apparaten"
       ]
     },
     "new_plans: feature": {
@@ -3394,9 +3381,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot je account worden beperkt en wordt je account uiteindelijk uitgeschakeld."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "De speciale VPN-oplossing voor veilige, onbeperkte en snelle toegang tot internet."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kies je je abonnement en betaalwijze."
@@ -3686,7 +3670,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        ""
+        "Welkom bij ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -3747,7 +3731,7 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        ""
+        "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/debetkaart"
@@ -3844,7 +3828,7 @@
         "Telefoonnummer"
       ],
       "Phrase": [
-        ""
+        "Zin"
       ]
     },
     "Signup label": {
@@ -3860,7 +3844,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
@@ -3883,53 +3867,53 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "",
-        ""
+      "${ _n } calendar per user": [
+        "${ _n } agenda per gebruiker",
+        "${ _n } agenda's per gebruiker"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } supersnelle VPN-verbinding",
         "${ maxVpn } supersnelle VPN-verbindingen"
       ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
       "${ n } high-speed VPN connection": [
-        "",
-        ""
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        ""
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-verbinding",
         "${ n } VPN-verbindingen"
       ],
       "${ n } VPN connection per user": [
-        "",
-        ""
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adres",
         "${ UsedAddresses } adressen"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadres",
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadressen"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } agenda",
         "${ UsedCalendars } agenda's"
       ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "",
-        ""
-      ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } van de ${ MaxDomains } eigen domein",
+        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers }/${ MaxMembers } gebruiker",
+        "${ UsedMembers }/${ MaxMembers } gebruikers"
       ],
       "1 email address": [
         "1 e-mailadres"
@@ -3938,19 +3922,19 @@
         "1 VPN-verbinding"
       ],
       "Access to streaming services globally": [
-        ""
+        "Wereldwijde toegang tot streamingdiensten"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Ingebouwde adblocker (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
+        "Suppersnelle VPN op ${ maxVpn } apparaat",
+        "Suppersnelle VPN op ${ maxVpn } apparaten"
       ]
     },
     "Subscription price": {
       "For": [
-        ""
+        "Voor"
       ]
     },
     "Subscription saving": {
@@ -4188,7 +4172,7 @@
         "Maak een ${ mailAppName } adres"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Maak uw ${ BRAND_NAME }-account"
       ],
       "Credits": [
         "Tegoed"

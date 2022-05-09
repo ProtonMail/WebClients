@@ -863,6 +863,11 @@
         "săptămână"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Schimbare interval timp la"
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Închidere"
@@ -2724,11 +2729,6 @@
         "ProtonContacts nu acceptă ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "în pasul următor trebuie să selectați toate permisiunile"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
@@ -3058,9 +3058,6 @@
       "New": [
         "Nou"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "În continuare, va trebui să vă conectați la contul Google personal și să ne permiteți să vă accesăm datele."
-      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
@@ -3078,6 +3075,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Evenimentele actualizate anterior de organizator vor fi păstrate, dar unele din răspunsurile dvs. vor fi pierdute."
@@ -3132,6 +3132,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
+      ],
+      "Select what you want to move from Google.": [
+        "Selectați ce doriți să importați din Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
@@ -3246,9 +3249,6 @@
       ],
       "Week": [
         "Săptămâna"
-      ],
-      "What do you want to import from your Google account?": [
-        "Ce doriți să importați din contul Google personal?"
       ],
       "Which event would you like to delete?": [
         "Ce eveniment doriți să ștergeți?"
@@ -4097,8 +4097,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Rețineți că ${ boldNextStep } solicitate de către aplicație pentru a începe importarea."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google personal și să permiteți ca Proton să vă acceseze datele."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Pentru ca importarea să funcționeze, trebuie să selectați toate elementele solicitate așa cum e arătat în imagine."
       ]
     },
     "Onboarding": {
@@ -4960,9 +4965,6 @@
       "Select event's last date": [
         "Selectați ultima dată a evenimentului"
       ],
-      "Select permissions": [
-        "Selectare permisiuni"
-      ],
       "Select the time to send this notification": [
         "Selectați timpul când să fie trimisă această notificare"
       ],
@@ -4974,9 +4976,6 @@
       ],
       "Select the way to send this notification": [
         "Selectați modul de trimitere a acestei notificări"
-      ],
-      "Select what to import": [
-        "Selectare date de importat"
       ],
       "Select when this event will stop happening": [
         "Selectați când acest eveniment se va opri"
@@ -5002,6 +5001,9 @@
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
       ],
+      "Sign in and grant access": [
+        "Conectați-vă și acordați acces"
+      ],
       "Update event": [
         "Actualizare eveniment"
       ],
@@ -5019,6 +5021,9 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "What would you like to import?": [
+        "Ce ați dori să importați?"
       ],
       "What's new": [
         "Ce este nou"

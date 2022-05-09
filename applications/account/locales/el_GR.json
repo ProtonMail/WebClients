@@ -458,7 +458,7 @@
         "Μετακίνηση στη λίστα επιτρεπόμενων"
       ],
       "Move to Block List": [
-        "Μετακίνηση στη λίστα αποκλεισμένων"
+        "Μετακίνηση στη Λίστα Φραγμένων"
       ],
       "Need help?": [
         "Χρειάζεστε βοήθεια;"
@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Αποτυχία λήψης ενεργών συνεδριών. Παρακαλούμε ${ refresh } ή δοκιμάστε ξανά αργότερα."
       ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
-      ],
       "Filter with this name already exist": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
@@ -3279,7 +3276,7 @@
         "Εφαρμόστε κανόνες ανεπιθύμητων για συγκεκριμένους αποστολείς. Τα μηνύματα από διευθύνσεις ή τομείς στη Λίστα Επιτρεπόμενων πηγαίνουν πάντα στα Εισερχόμενα, ενώ τα μηνύματα από διευθύνσεις ή τομείς στη Λίστα Αποκλεισμού πηγαίνουν πάντα στα Ανεπιθύμητα. Η επισήμανση ενός μηνύματος ως ανεπιθύμητου προσθέτει τη διεύθυνσή του στη Λίστα Αποκλεισμού. Η επισήμανση ενός μηνύματος ως μη ανεπιθύμητου προσθέτει τη διεύθυνσή του στη Λίστα Επιτρεπόμενων."
       ],
       "Search in Allow List and Block List": [
-        "Αναζήτηση σε λίστα επιθυμητών και λίστα ανεπιθύμητων"
+        "Αναζήτηση στη Λίστα Επιτρεπτών και στη Λίστα Φραγμένων"
       ]
     },
     "Font Face Default": {
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Gmail. Βεβαιωθείτε ότι η διεύθυνση του διακομιστή αλληλογραφίας και ο αριθμός θύρας είναι σωστές."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Yahoo Mail. Βεβαιωθείτε ότι η διεύθυνση του διακομιστή αλληλογραφίας και ο αριθμός θύρας είναι σωστές."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε ελέγξτε για σωστή διεύθυνση και αριθμό θύρας του διακομιστή αλληλογραφίας."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Το Proton δεν μπορεί να συνδεθεί στον λογαριασμό σας στο Yahoo Mail. Βεβαιωθείτε ότι:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Αδυναμία σύνδεσης του Proton στον λογαριασμό σας Yahoo. Παρακαλούμε βεβαιωθείτε ότι:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Πηγαίντε στο ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        ""
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Μετάβαση στο Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         ""
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "στο επόμενο βήμα χρειάζεται να επιλέξετε όλες τις άδειες"
-      ],
       "Manage": [
         "Διαχείριση"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "κοινόχρηστα ημερολόγια"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         ""
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        ""
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Μετάβαση στο ${ calendarLink } στις ρυθμίσεις του Outlook"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        ""
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Μετάβαση στο ${ calendarViewLink } στη Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         ""
@@ -3967,13 +3961,13 @@
         "* Δεν απαιτείται πιστωτική κάρτα."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Με μηνιαία συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Με ετήσια συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Με διετή συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
@@ -3986,7 +3980,7 @@
         "1. Προσκαλέστε φίλους στο Proton"
       ],
       "2. They try ${ planName }": [
-        ""
+        "2. Έπειτα δοκιμάστε ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Εφαρμόζεται 20% έκπτωση για τη συνδρομή σας, με το κουπόνι ${ code }"
@@ -4262,6 +4256,9 @@
       "Creating your account": [
         "Δημιουργία του λογαριασμού σας"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Πιστώσεις, προμήθεια και τυχόν ενεργά κουπόνια συνυπολογίζονται κατά την εξόφληση"
       ],
@@ -4474,7 +4471,7 @@
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
+        "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Αν έχετε έναν ιδιαίτερο τομέα με το ${ MAIL_APP_NAME }, μπορείτε να ορίσετε μια διεύθυνση παραλειπομένων για λήψη μηνυμάτων προς μη έγκυρες διευθύνσεις εντός του τομέα σας (π.χ. λόγω τυπογραφικών λαθών)."
@@ -4691,9 +4688,6 @@
       "New": [
         "Νέο"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Δεν έχει οριστεί μέθοδος ανάκτησης λογαριασμού. Διακινδυνεύεται απώλεια πρόσβασης στον λογαριασμό σας"
       ],
@@ -4707,7 +4701,7 @@
         "Δεν υπάρχουν κλειδιά κρυπτογράφησης επαφών"
       ],
       "No credit card required": [
-        ""
+        "Δεν απαιτείται πιστωτική κάρτα"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
         "Δεν έχει οριστεί μέθοδος ανάκτησης δεδομένων. Διακινδυνεύεται απώλεια πρόσβασης στα δεδομένα σας"
@@ -4950,11 +4944,14 @@
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         "Επιλέξτε το πλήθος των χρηστών που θα περιλάβετε στο πρόγραμμά σας. Κάθε πρόσθετος χρήστης έχει κόστος ${ price }. Σε περίπτωση που θα χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμούς χρηστών, παρακαλούμε επικοινωνήστε με την ομάδα Εξυπηρέτησης Πελατών ${ contactMailToLink }."
       ],
+      "Select what you want to move from Google.": [
+        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        ""
+        "Στάλθηκε με διασφαλισμένο ταχυδρομείο <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "Ο διακομιστής είναι προσωρινά εκτός"
@@ -5283,9 +5280,6 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Αναβαθμίζουμε το τρέχον πρόγραμμά σας με ένα βελτιωμένο πρόγραμμα που προσφέρει περισσότερα με το ίδιο κόστος. Κατά τη διάρκεια της αναβάθμισης των συστημάτων μας, δεν θα μπορείτε να πραγματοποιήσετε αλλαγές σε αυτό. Θα σας ειδοποιήσουμε μέσω email μόλις ολοκληρωθεί."
       ],
-      "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισάγετε από τον λογαριασμό σας στο Google;"
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Όταν είναι απενεργοποιημένο, εμποδίζει τη φόρτωση αρχείων εικόνας στη συσκευή σας εν αγνοία σας."
       ],
@@ -5467,7 +5461,7 @@
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή τη εφάπαξ επαλήθευση."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Ο υπάρχων λογαριασμός σας ${ BRAND_NAME } μπορεί να χρησιμοποιηθεί για πρόσβαση σε όλες τις υπηρεσίες ${ BRAND_NAME }. Παρακαλούμε εισέλθετε στο ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Η εισαγωγή σας από το ${ delayedImport.Account } καθυστερεί προσωρινά."
@@ -7220,8 +7214,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Παρακαλούμε σημειώστε ότι, για να εκκινήσει η εισαγωγή, ${ boldNextStep } που ζητά η εφαρμογή."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Στη συνέχεια θα πρέπει να εισέλθετε στον λογαριασμό σας Google και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Για να επιτευχθεί η εισαγωγή, πρέπει να επιλέξετε όλα τα απαιτούμενα στοιχεία, όπως φαίνεται στο GIF."
       ]
     },
     "Onboarding": {
@@ -7910,13 +7909,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "",
-        ""
+      "${ _n } calendar per user": [
+        "${ _n } ημερολόγιο ανά χρήστη",
+        "${ _n } ημερολόγια ανά χρήστη"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "",
         ""
+      ],
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
       ],
       "${ n } high-speed VPN connection": [
         "",
@@ -7943,10 +7946,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],
@@ -8599,7 +8598,7 @@
         "Επεξεργασία λίστας επιθυμητών"
       ],
       "Edit Block List": [
-        "Επεξεργασία λίστας ανεπιθύμητων"
+        "Επεξεργασία Λίστας Φραγμένων"
       ],
       "Edit calendar": [
         "Επεξεργασία ημερολογίου"
@@ -8852,10 +8851,10 @@
         "Αρχείο ανάκτησης"
       ],
       "Refer a friend": [
-        ""
+        "Παραπέμψτε έναν φίλο"
       ],
       "Referral tracker": [
-        ""
+        "Ιχνηλάτης παραπομπών"
       ],
       "Remove calendar": [
         "Αφαίρεση ημερολογίου"
@@ -8902,9 +8901,6 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
-      "Select permissions": [
-        "Επιλογή αδειών"
-      ],
       "Select subscription and pay": [
         "Επιλογή συνδρομής και πληρωμή"
       ],
@@ -8913,9 +8909,6 @@
       ],
       "Select the way to send this notification": [
         "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
-      ],
-      "Select what to import": [
-        "Επιλογή στοιχείων προς εισαγωγή"
       ],
       "Select when you want this notification to be sent": [
         "Επιλέξτε πότε θέλετε να σταλεί αυτή η ειδοποίηση"
@@ -8953,6 +8946,9 @@
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
       ],
+      "Sign in and grant access": [
+        "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
       "Sort folders alphabetically": [
         "Ταξινόμηση φακέλων αλφαβητικά"
       ],
@@ -8960,7 +8956,7 @@
         "Ταξινόμηση ετικετών αλφαβητικά"
       ],
       "Spam filters": [
-        "Φίλτρα Ανεπιθύμητων"
+        "Φίλτρα ενοχλητικών"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
@@ -8999,7 +8995,7 @@
         "Ζωνη ωρας"
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
+        "Δοκιμάστε το ${ MAIL_APP_NAME } στα καλύτερά του δωρεάν"
       ],
       "Two-factor authentication": [
         "Έλεγχος ταυτότητας δύο παραγόντων"
@@ -9071,7 +9067,7 @@
         "Το καθεστώς σας ανάκτησης"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "Έχετε προσκληθεί να δοκιμάσετε το ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "Τ.Κ / Ταχυδρομικός κώδικας"
@@ -9307,8 +9303,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Αναβαθμίστε σε ${ planName } για να συνδέσετε έως και ${ n } συσκευή στο VPN ταυτόχρονα",
-        "Αναβαθμίστε σε ${ planName } για να συνδέσετε έως και ${ n } συσκευές στο VPN ταυτόχρονα"
+        "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευή ταυτόχρονα",
+        "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευές ταυτόχρονα"
       ]
     },
     "Upgrade notice": {
