@@ -16,7 +16,7 @@ const StandardSupportDropdown = () => {
             <SupportDropdown>
                 <DropdownMenuLink
                     className="flex flex-nowrap text-left"
-                    href={getStaticURL('/support/')}
+                    href={getStaticURL('/support')}
                     target="_blank"
                 >
                     <Icon className="mt0-25 mr0-5" name="question-circle" />

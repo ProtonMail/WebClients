@@ -147,7 +147,7 @@ const HumanVerificationForm = ({
                 <Text>
                     {c('Info')
                         .t`If you are having trouble creating your account, please request an invitation and we will respond within one business day.`}{' '}
-                    <Href url={getStaticURL('/support-form')}>{c('Link').t`Request an invite`}</Href>
+                    <Href url={getStaticURL('/support')}>{c('Link').t`Request an invite`}</Href>
                 </Text>
             ),
         } as const,
