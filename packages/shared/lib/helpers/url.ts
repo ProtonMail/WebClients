@@ -270,6 +270,30 @@ export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
 
+export const getPrivacyPolicyURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/privacy-policy`;
+    }
+    return `${url}/legal/privacy`;
+};
+
+export const getTermsURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/terms-and-conditions`;
+    }
+    return `${url}/legal/terms`;
+};
+
+export const getAbuseURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/abuse`;
+    }
+    return `${url}/support/abuse`;
+};
+
 export const isValidHttpUrl = (string: string) => {
     let url;
 
