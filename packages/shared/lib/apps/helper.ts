@@ -12,7 +12,7 @@ interface TargetLocation {
 const getSSOAppTargetLocation = (location: TargetLocation = window.location): TargetLocation => {
     if (location.hostname === VPN_HOSTNAME) {
         return {
-            hostname: 'protonmail.com',
+            hostname: 'proton.me',
             protocol: 'https:',
             port: '',
         };

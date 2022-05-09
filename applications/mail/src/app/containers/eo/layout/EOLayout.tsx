@@ -9,7 +9,7 @@ import {
     MAIL_APP_NAME,
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 
 import {
     getAppVersion,
@@ -37,17 +37,9 @@ export interface Props {
 
 const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const { APP_VERSION } = useConfig();
-    const termsLink = (
-        <Href key="terms" className="eo-footer-link" href={getStaticURL('/terms-and-conditions')}>{c('Link')
-            .t`Terms`}</Href>
-    );
+    const termsLink = <Href key="terms" className="eo-footer-link" href={getTermsURL()}>{c('Link').t`Terms`}</Href>;
     const privacyLink = (
-        <Href key="privacy" className="eo-footer-link" href={getStaticURL('/privacy-policy')}>{c('Link')
-            .t`Privacy policy`}</Href>
-    );
-    const OldVersionLink = (
-        <Href key="oldVersion" className="eo-footer-link" href="https://old.protonmail.com/">{c('Link')
-            .t`Previous version`}</Href>
+        <Href key="privacy" className="eo-footer-link" href={getPrivacyPolicyURL()}>{c('Link').t`Privacy policy`}</Href>
     );
 
     const appVersion = getAppVersion(APP_VERSION);
@@ -114,10 +106,6 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                         |
                     </span>
                     <span className="auto-mobile">{privacyLink}</span>
-                    <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
-                        |
-                    </span>
-                    <span className="auto-mobile">{OldVersionLink}</span>
                     <span className="color-weak pl0-75 pr0-75 no-mobile" aria-hidden="true">
                         |
                     </span>

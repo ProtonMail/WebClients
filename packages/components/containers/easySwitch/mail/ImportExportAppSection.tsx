@@ -1,16 +1,11 @@
 import { c } from 'ttag';
+import { getEasySwitchURL } from '@proton/shared/lib/helpers/url';
 
-import { Button } from '../../../components';
+import { ButtonLike, Href } from '../../../components';
 
 import { SettingsSection, SettingsParagraph } from '../../account';
 
-const DOWNLOAD_URL = 'https://protonmail.com/import-export';
-
 const ImportExportAppSection = () => {
-    const handleClick = () => {
-        window.open(DOWNLOAD_URL);
-    };
-
     return (
         <SettingsSection>
             <SettingsParagraph>
@@ -20,9 +15,9 @@ const ImportExportAppSection = () => {
                 {c('Info').t`Available on macOS, Windows, and Linux.`}
             </SettingsParagraph>
 
-            <Button color="norm" onClick={handleClick}>
+            <ButtonLike color="norm" as={Href} url={getEasySwitchURL()}>
                 {c('Action').t`Download the Import-Export app`}
-            </Button>
+            </ButtonLike>
         </SettingsSection>
     );
 };

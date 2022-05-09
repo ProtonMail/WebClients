@@ -70,7 +70,7 @@ describe('sso app href', () => {
             protocol: 'https:',
             port: '',
         };
-        expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.protonmail.com/u/2`);
+        expect(getAppHref('/', APPS.PROTONCALENDAR, 2, location)).toBe(`https://calendar.proton.me/u/2`);
     });
 
     it('should produce links stripping previous local id basenames', () => {
