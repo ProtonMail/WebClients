@@ -119,11 +119,12 @@ const MailRecipientItemSingle = ({
         event.stopPropagation();
 
         if (recipient.Address) {
-            let newPathname = `/${getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL)}`;
+            const humanLabelID = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
+            let newPathname = `/${humanLabelID}`;
 
             if (mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN) {
                 const pathname = history.location.pathname.split('/');
-                pathname[1] = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
+                pathname[1] = humanLabelID;
                 newPathname = pathname.join('/');
             }
 
