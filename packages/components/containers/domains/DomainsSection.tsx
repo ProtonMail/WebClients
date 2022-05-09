@@ -4,6 +4,7 @@ import { Address, Domain } from '@proton/shared/lib/interfaces';
 import { c, msgid } from 'ttag';
 import { DomainsModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
+import { getDomainsSupportURL } from '@proton/shared/lib/helpers/url';
 import { BRAND_NAME, PLAN_NAMES, PLANS } from '@proton/shared/lib/constants';
 import {
     Button,
@@ -26,10 +27,7 @@ import DomainStatus from './DomainStatus';
 
 const DomainsSectionText = () => {
     return (
-        <SettingsParagraph
-            className="text-cut"
-            learnMoreUrl="https://protonmail.com/support/categories/custom-domains/"
-        >
+        <SettingsParagraph className="text-cut" learnMoreUrl={getDomainsSupportURL()}>
             {c('Message')
                 .t`Connect your custom domain to ${BRAND_NAME} to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.`}
         </SettingsParagraph>
