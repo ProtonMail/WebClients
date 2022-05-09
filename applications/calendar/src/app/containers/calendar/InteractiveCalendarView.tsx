@@ -557,7 +557,8 @@ const InteractiveCalendarView = ({
 
             const isAllowedToTouchEvent = true;
             const isInvitation = event.data.eventData ? !event.data.eventData.IsOrganizer : false;
-            let isAllowedToMoveEvent = getIsCalendarProbablyActive(targetCalendar) && !isInvitation;
+            let isAllowedToMoveEvent =
+                getIsCalendarProbablyActive(targetCalendar) && getIsPersonalCalendar(targetCalendar) && !isInvitation;
 
             if (!isAllowedToTouchEvent) {
                 return;
