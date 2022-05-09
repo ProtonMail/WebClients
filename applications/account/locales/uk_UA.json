@@ -2593,9 +2593,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не вдалося отримати активні сеанси. ${ refresh } або повторіть спробу пізніше."
       ],
-      "File has no contents to preview": [
-        "Файл не має вмісту для перегляду"
-      ],
       "Filter with this name already exist": [
         "Фільтр з цією назвою вже існує"
       ],
@@ -3634,11 +3631,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton не може з'єднатися з вашим обліковим записом Gmail. Переконайтеся, що адреса поштового сервера і номер порту правильні."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         "Proton не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що адреса поштового сервера і номер порту правильні."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton не може з'єднатися з вашим обліковим записом пошти Yahoo. Переконайтеся, що:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton не може з'єднатися з вашим обліковим записом Yahoo. Переконайтеся, що:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Забагато недавніх запитів. Будь ласка, спробуйте ще раз за хвильку."
@@ -3715,8 +3712,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Відкрийте ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Перейдіть до Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Перейдіть до Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Якщо двоетапна перевірка вимкнена, увімкніть її"
@@ -3783,9 +3780,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "в наступному кроці вам необхідно вибрати усі дозволи"
-      ],
       "Manage": [
         "Керувати"
       ],
@@ -3818,19 +3812,19 @@
       "shared calendars": [
         "спільні календарі"
       ],
-      "Yahoo Mail": [
-        "Пошта Yahoo"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Натисніть посилання ${ boldICS } та завантажте файл"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Перейдіть до ${ calendarLink } в налаштуваннях Outlook.com"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Перейдіть до ${ calendarLink } в налаштуваннях Outlook"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Перейдіть до ${ calendarViewLink } в Пошті Yahoo"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Перейдіть до ${ calendarViewLink } в Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Наведіть курсор миші на календар для імпорту й відкрийте випадне меню"
@@ -4378,6 +4372,9 @@
       "Creating your account": [
         "Створення облікового запису"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Кредит на невикористану частину попередньої передплати тарифного плану"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Кредити, розподілення, а також будь-які відповідні купони застосовуються при оформленні замовлення"
       ],
@@ -4813,9 +4810,6 @@
       "New": [
         "Нове"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Далі вам потрібно буде увійти до свого облікового запису Google і дозволити нам отримати доступ до ваших даних."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Немає налаштованого способу відновлення облікового запису. Ви ризикуєте втратити доступ до свого облікового запису"
       ],
@@ -5073,6 +5067,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         "Виберіть кількість користувачів для вашого тарифного плану. Вартість кожного додаткового користувача ${ price }. Якщо вам потрібно понад ${ maxUsers } облікових записів, будь ласка, ${ contactMailToLink } нашій команді підтримки."
+      ],
+      "Select what you want to move from Google.": [
+        "Виберіть, що ви хочете перемістити з Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар з обмеженням у 20 календарів."
@@ -5406,9 +5403,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Ми змінюємо ваш поточний тарифний план на кращий, з більшими можливостями за таку саму ціну. Поки наші системи оновлюються, ви не зможете його змінити. Ми надішлемо вам повідомлення одразу після завершення."
-      ],
-      "What do you want to import from your Google account?": [
-        "Що ви хочете імпортувати зі свого облікового запису Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Якщо вимкнено, це запобігатиме завантаженню файлів зображень на вашому пристрої без вашої згоди.\t"
@@ -7368,8 +7362,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Зауважте, що ${ boldNextStep }, запитані програмою, щоб почати імпортування."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Далі вам потрібно буде увійти до свого облікового запису Google і надати Proton доступ до ваших даних."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Для імпортування ви повинні вибрати всі запитувані елементи, як показано в GIF."
       ]
     },
     "Onboarding": {
@@ -8058,17 +8057,23 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } календар на користувача",
-        "${ MAX_CALENDARS_PER_USER } календарі на користувача",
-        "${ MAX_CALENDARS_PER_USER } календарів на користувача",
-        "${ MAX_CALENDARS_PER_USER } календарів на користувача"
+      "${ _n } calendar per user": [
+        "${ _n } календар на користувача",
+        "${ _n } календарі на користувача",
+        "${ _n } календарів на користувача",
+        "${ _n } календарів на користувача"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } високошвидкісне VPN-з'єднання",
         "${ maxVpn } високошвидкісні VPN-з'єднання",
         "${ maxVpn } високошвидкісних VPN-з'єднань",
         "${ maxVpn } високошвидкісних VPN-з'єднань"
+      ],
+      "${ n } calendar": [
+        "${ n } календар",
+        "${ n } календарі",
+        "${ n } календарів",
+        "${ n } календарі"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } високошвидкісне VPN-з'єднання",
@@ -8111,12 +8116,6 @@
         "${ UsedCalendars } календарі",
         "${ UsedCalendars } календарів",
         "${ UsedCalendars } календаря"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } з ${ MaxCalendars } календар",
-        "${ UsedCalendars } з ${ MaxCalendars } календарі",
-        "${ UsedCalendars } з ${ MaxCalendars } календарів",
-        "${ UsedCalendars } з ${ MaxCalendars } календарі"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } з ${ MaxDomains } власного домену",
@@ -9084,9 +9083,6 @@
       "Select contact group": [
         "Вибрати групу контактів"
       ],
-      "Select permissions": [
-        "Виберіть дозволи"
-      ],
       "Select subscription and pay": [
         "Оберіть передплату й сплатіть"
       ],
@@ -9095,9 +9091,6 @@
       ],
       "Select the way to send this notification": [
         "Виберіть спосіб надсилання цього сповіщення"
-      ],
-      "Select what to import": [
-        "Вибрати елементи для імпорту"
       ],
       "Select when you want this notification to be sent": [
         "Виберіть якщо ви хочете, щоб це сповіщення було надіслано"
@@ -9134,6 +9127,9 @@
       ],
       "Sign in again to continue": [
         "Увійдіть знову для продовження"
+      ],
+      "Sign in and grant access": [
+        "Увійдіть і надайте доступ"
       ],
       "Sort folders alphabetically": [
         "Сортувати теки за алфавітом"

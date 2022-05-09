@@ -131,6 +131,9 @@
       "Continue": [
         "Continuer"
       ],
+      "Continue transfers": [
+        "Poursuivre les transferts"
+      ],
       "Continue with Google": [
         "Continuer avec Google"
       ],
@@ -492,6 +495,9 @@
       ],
       "Stop sharing": [
         "Arrêter le partage"
+      ],
+      "Stop transfers": [
+        "Arrêter les transferts "
       ],
       "Submit": [
         "Envoyer"
@@ -1784,9 +1790,6 @@
       "File cannot be merged with folder": [
         "Le fichier ne peut pas être fusionné avec le dossier"
       ],
-      "File has no contents to preview": [
-        "Ce fichier n'a pas de contenu à prévisualiser"
-      ],
       "File selection is already downloading": [
         "La sélection de fichiers est déjà en cours de téléchargement"
       ],
@@ -2181,11 +2184,6 @@
         "ProtonContacts ne prend pas en charge ${ forNow } :"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "à l'étape suivante, vous devez sélectionner toutes les autorisations"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } contacts sur ${ totalContacts } ne seront pas importés. Cliquez pour plus de détails"
@@ -2393,9 +2391,6 @@
       ],
       "Close this screen to exit.": [
         "Fermez cet écran pour quitter."
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Fermer le gestionnaire de transferts annulera tous les transferts actifs, êtes-vous sûr ?"
       ],
       "Conflict": [
         "Conflit"
@@ -2647,9 +2642,6 @@
       "New": [
         "Nouveau"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Ensuite, vous devrez vous connecter à votre compte Google et nous permettre d'accéder à vos données."
-      ],
       "No": [
         "Non"
       ],
@@ -2674,14 +2666,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
+      "Not a valid URL": [
+        "URL non valide"
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Remarque : les données peuvent toujours être disponibles localement au sein des appareils dans lesquels vous avez installé ${ appName }."
       ],
       "of": [
         "de"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "L'un de vos disques chiffrés est verrouillé. Ceci est probablement dû à une récente réinitialisation du mot de passe.${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Un de vos lecteurs chiffrés est verrouillé. Ceci est très probablement lié à une récente réinitialisation du mot de passe."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2764,6 +2759,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous souhaitez utiliser par défaut lors de l'envoi d'un e-mails à cette adresse électronique."
       ],
+      "Select what you want to move from Google.": [
+        "Sélectionnez ce que vous souhaitez déplacer depuis Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
       ],
@@ -2808,6 +2806,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Les éléments suivants ont peut-être été falsifiés : ${ items }. N'ouvrez que si vous avez confiance."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Certains fichiers doivent encore être transférés. Fermer le gestionnaire de transfert mettra fin aux actions en cours."
       ],
       "There are no files yet": [
         "Il n'y a pas encore de fichiers"
@@ -2933,9 +2934,6 @@
       "What do you want to do?": [
         "Que souhaitez-vous faire ?"
       ],
-      "What do you want to import from your Google account?": [
-        "Que voulez-vous importer depuis votre compte Google ?"
-      ],
       "What would you like to do?": [
         "Qu'aimeriez-vous faire ?"
       ],
@@ -3032,8 +3030,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Votre lien sécurisé et partageable pour ${ boldNameText } :"
+      "Your secure, shareable link for ${ boldNameText }": [
+        "Votre lien de partage sécurisé pour ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3052,6 +3050,9 @@
       ],
       "file data": [
         "données du fichier"
+      ],
+      "file data key": [
+        "clé de données du fichier"
       ],
       "keys": [
         "clés"
@@ -3544,7 +3545,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Voici la nouvelle apparence de Proton.${ br } De nombreux services, une seule mission. Bienvenue dans un Internet où la confidentialité est la règle."
       ]
     },
     "new_plans: title": {
@@ -3732,8 +3733,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Veuillez noter qu'${ boldNextStep } demandées par l'application pour commencer votre importation."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Ensuite, vous devrez vous connecter à votre compte Google et autoriser Proton à accéder à vos données."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Pour que l'importation fonctionne, vous devez sélectionner tous les éléments demandés comme indiqué dans le GIF."
       ]
     },
     "Onboarding Action": {
@@ -4166,9 +4172,6 @@
       "Browser might run out of memory": [
         "Le navigateur est peut-être à court de mémoire"
       ],
-      "Cancel all active transfers": [
-        "Annuler tous les transferts en cours"
-      ],
       "Change layout": [
         "Modifier la mise en page"
       ],
@@ -4454,12 +4457,6 @@
       "Select link expiration time": [
         "Sélectionner le délai d'expiration du lien"
       ],
-      "Select permissions": [
-        "Sélectionnez les autorisations"
-      ],
-      "Select what to import": [
-        "Sélectionnez ce qu'il faut importer"
-      ],
       "Settings": [
         "Paramètres"
       ],
@@ -4475,6 +4472,9 @@
       "Sign in again to continue": [
         "Connectez-vous à nouveau"
       ],
+      "Sign in and grant access": [
+        "Se connecter et donner l'accès"
+      ],
       "Size": [
         "Taille"
       ],
@@ -4486,6 +4486,9 @@
       ],
       "Stop sharing with everyone?": [
         "Arrêter le partage avec tout le monde ?"
+      ],
+      "Stop transfers?": [
+        "Arrêter les transferts ?"
       ],
       "The file or folder failed to be downloaded": [
         "Ce fichier ou dossier n'a pas pu être téléchargé"
@@ -4534,6 +4537,9 @@
       ],
       "Warning: suspected fake website": [
         "Attention : site Web potentiellement faux"
+      ],
+      "What would you like to import?": [
+        "Que voulez-vous importer ?"
       ],
       "What's new": [
         "Nouveautés"

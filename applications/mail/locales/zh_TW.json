@@ -192,7 +192,7 @@
         "複製電郵位址至剪貼簿"
       ],
       "Create a new contact group": [
-        ""
+        "建立一個新聯絡人群組。"
       ],
       "Create folder": [
         "建立資料夾"
@@ -345,7 +345,7 @@
         "前往第一頁"
       ],
       "Go to label": [
-        ""
+        "跳至標籤。"
       ],
       "Go to last page": [
         "前往最後一頁"
@@ -1275,9 +1275,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         "此新的時間提議與您的邀請詳情不符。請驗證在您行事曆中的邀請詳情。"
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        "此回答與您的邀請詳情不符。請驗證在您行事曆中的邀請詳情。"
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         ""
       ],
@@ -1310,6 +1307,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 詢問某個事件的最新消息，惟該事件已不再存在於您的行事曆中。"
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         ""
@@ -1464,9 +1464,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "暫未支援新增重複次數到一個事件"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "事件 ${ veventIcsTitle } 已新增一次"
-      ],
       "Event refreshing is not supported for the moment": [
         "暫未支援事件重新整理"
       ],
@@ -1491,11 +1488,14 @@
       "This invitation is out of date. The event has been updated.": [
         "此邀請已過時。此事件已更新。"
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
+      ],
+      "This response is out of date.": [
+        ""
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "此回答已過時。此事件不再存在於您的行事曆。"
-      ],
-      "This response is out of date. This event has been updated.": [
-        "此回答已過時。此事件已更新。"
       ],
       "This response is out of date. You have no calendars.": [
         "此回答已過時。您並沒有行事曆。"
@@ -2825,9 +2825,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失敗，請再試一次。"
       ],
-      "File has no contents to preview": [
-        "檔案無內容可預覽"
-      ],
       "Filter with this name already exists": [
         "篩選器名稱重複"
       ],
@@ -3624,11 +3621,6 @@
         "建立行事曆事件失敗"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "在下一個步驟中，你需要選取所有的權限"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -4211,9 +4203,6 @@
       "New": [
         "新增"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "接下來，您將需要登入您的 Google 帳戶並允許我們存取您的資料。"
-      ],
       "No action selected": [
         "未選取任何動作"
       ],
@@ -4379,6 +4368,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇向該電子郵件地址傳送時的預設格式"
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
       ],
@@ -4412,8 +4404,8 @@
       "Show original message": [
         "顯示原始訊息"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "抱歉，此訊息不存在或已過期"
+      "Sorry, this message does not exist or has already expired.": [
+        ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
@@ -4675,9 +4667,6 @@
       ],
       "Week": [
         "週"
-      ],
-      "What do you want to import from your Google account?": [
-        "你想要從你的 Google 帳戶匯入什麼資料？"
       ],
       "When do you want your message to be sent?": [
         "您要何時傳送您的郵件？"
@@ -5922,8 +5911,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "需要注意的是 ${ boldNextStep } 以開始您的匯入程序。"
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -7069,12 +7063,6 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
-      "Select permissions": [
-        "選擇權限"
-      ],
-      "Select what to import": [
-        "選取要匯入內容"
-      ],
       "Send email": [
         "發送電子郵件"
       ],
@@ -7104,6 +7092,9 @@
       ],
       "Sign in again to continue": [
         "請再次登入以繼續"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort conversations": [
         "會話排序"
@@ -7152,6 +7143,9 @@
       ],
       "Welcome ${ userName }": [
         "歡迎 ${ userName }"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "最新消息"

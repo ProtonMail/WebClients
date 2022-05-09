@@ -575,7 +575,7 @@
         "Setel ulang kunci"
       ],
       "Reset organization keys": [
-        "Setel ulang kunci organisasi"
+        "Atur ulang kunci organisasi"
       ],
       "Reset password": [
         "Atur ulang kata sandi"
@@ -848,7 +848,7 @@
         "+ ${ _users } pengguna"
       ],
       "+ ${ domains } custom domain": [
-        "+ ${ domains } domain kustom"
+        "+ ${ domains } domain khusus"
       ]
     },
     "Addon unit for subscription": {
@@ -2536,9 +2536,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Gagal untuk memperoleh daftar sesi-sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
       ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
       "Filter with this name already exist": [
         "Filter dengan nama ini sudah ada"
       ],
@@ -3529,11 +3526,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton tidak dapat tersambung dengan akun Gmail. Pastikan alamat server mail dan nomor port Anda benar."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton tidak dapat tersambung dengan akun Yahoo Mail Anda. Pastikan alamat server mail dan nomor port benar."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa alamat server email dan nomor port yang ada sudah benar."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton tidak dapat tersambung ke akun Yahoo Mail Anda. Mohon pastikan:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton tidak dapat tersambung ke akun Yahoo Anda. Mohon pastikan bahwa:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Permintaan baru terlalu banyak. Coba ulangi beberapa saat lagi."
@@ -3610,8 +3607,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Tuju ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Tuju ${ securitySettingsLink } yang ada pada situs Outlook.com"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Tuju Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Apabila verifikasi 2 langkah sedang tidak aktif, aktifkan terlebih dahulu"
@@ -3678,9 +3675,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami"
-      ],
       "Manage": [
         "Kelola"
       ],
@@ -3713,19 +3707,19 @@
       "shared calendars": [
         "kalender yang dibagikan"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Klik tautan ${ boldICS } dan unduh berkas tersebut"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Tuju ${ calendarLink } pada menu pengaturan Outlook.com Anda"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Tuju ${ calendarLink } pada pengaturan Outlook Anda"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Tuju ${ calendarViewLink } pada Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Tuju ${ calendarViewLink } di Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Arahkan kursor Anda ke kalender-kalender yang hendak Anda impor dan buka menu dropdown"
@@ -4204,6 +4198,9 @@
       "Creating your account": [
         "Membuat akun Anda"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Segala saldo, uang kembali, dan kupon yang dapat digunakan akan diproses pada saat checkout"
       ],
@@ -4630,9 +4627,6 @@
       "New": [
         "Baru"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan kami izin untuk dapat mengakses data-data Anda."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Tidak ada metode pemulihan akun yang ditentukan; Anda beresiko kehilangan akses menuju akun Anda"
       ],
@@ -4887,6 +4881,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         "Tentukan jumlah pengguna yang akan diikutsertakan dalam paket langganan Anda. Untuk setiap pengguna tambahan, Anda akan dikenai biaya sebesar${ price }. Apabila Anda butuh lebih dari ${ maxUsers } pengguna, harap ${ contactMailToLink } tim Customer Success kami."
+      ],
+      "Select what you want to move from Google.": [
+        "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
@@ -5220,9 +5217,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Kami tengah meningkatkan paket Anda ke paket yang berharga sama namun lebih kaya akan fitur. Selama proses ini berlangsung, Anda tidak akan dapat mengubah status berlangganan Anda. Kami akan memberitahukan Anda melalui email ketika proses ini telah selesai."
-      ],
-      "What do you want to import from your Google account?": [
-        "Apa yang hendak Anda impor dari akun Google Anda?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Ketika dinonaktifkan, opsi ini akan mencegah gambar-gambar yang ada untuk dapat dimuat pada perangkat Anda tanpa Anda ketahui."
@@ -7146,8 +7140,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Harap diingat bahwa Anda harus ${ boldNextStep } untuk dapat memulai proses impor."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan kami izin untuk mengakses data Anda."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
       ]
     },
     "Onboarding": {
@@ -7362,7 +7361,7 @@
     },
     "Option group": {
       "Custom folders": [
-        "Kustom folder"
+        "Folder khusus"
       ],
       "Default folders": [
         "Folder default"
@@ -7836,11 +7835,14 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } kalender per pengguna"
+      "${ _n } calendar per user": [
+        "${ _n } kalender per pengguna"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } koneksi VPN berkecepatan tinggi"
+      ],
+      "${ n } calendar": [
+        "${ n } kalender"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } koneksi VPN berkecepatan tinggi"
@@ -7862,9 +7864,6 @@
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } kalender"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } dari ${ MaxCalendars } kalender"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } of ${ MaxDomains } domain khusus"
@@ -8811,9 +8810,6 @@
       "Select contact group": [
         "Pilih grup kontak"
       ],
-      "Select permissions": [
-        "Tentukan akses izin"
-      ],
       "Select subscription and pay": [
         "Pilih jenis langgganan dan bayar"
       ],
@@ -8822,9 +8818,6 @@
       ],
       "Select the way to send this notification": [
         "Pilih cara untuk mengirim notifikasi ini"
-      ],
-      "Select what to import": [
-        "Pilih apa-apa saja yang akan diimpor"
       ],
       "Select when you want this notification to be sent": [
         "Tentukan kapan Anda ingin notifikasi ini dikirim"
@@ -8861,6 +8854,9 @@
       ],
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
+      ],
+      "Sign in and grant access": [
+        "Masuk dan berikan izin akses"
       ],
       "Sort folders alphabetically": [
         "Urut folder sesuai abjad"

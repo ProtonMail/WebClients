@@ -1578,9 +1578,6 @@
       "Error connecting to the Bitcoin API.": [
         "Gagal sambung ke API Bitcoin."
       ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Jika saat di TV Anda kedaluwarsa, klik Segarkan pada TV Anda dan masukkan kode lagi."
       ],
@@ -1956,6 +1953,9 @@
       ],
       "Creating your account": [
         "Membuat akun Anda"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Segala saldo, uang kembali, dan kupon yang dapat digunakan akan diproses pada saat checkout"
@@ -3224,11 +3224,14 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } kalender per pengguna"
+      "${ _n } calendar per user": [
+        "${ _n } kalender per pengguna"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } koneksi VPN berkecepatan tinggi"
+      ],
+      "${ n } calendar": [
+        "${ n } kalender"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } koneksi VPN berkecepatan tinggi"
@@ -3250,9 +3253,6 @@
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } kalender"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } dari ${ MaxCalendars } kalender"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } of ${ MaxDomains } domain khusus"
@@ -3308,7 +3308,7 @@
         "Kredit ditambahkan"
       ],
       "Email address copied to clipboard": [
-        "Alamat surel disalin ke papan klip"
+        "Alamat email disalin ke clipboard"
       ],
       "Email updated": [
         "Surel berhasil diperbarui"

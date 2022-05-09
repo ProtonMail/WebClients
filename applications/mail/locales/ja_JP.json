@@ -1275,9 +1275,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " この新しい時間はあなたの招待の詳細と一致しません。カレンダーの招待の詳細を確認してください。"
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " この返信は招待の詳細と一致しません。カレンダーの招待の詳細を確認してください。"
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         ""
       ],
@@ -1309,6 +1306,9 @@
         ""
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
+        ""
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
@@ -1464,9 +1464,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         ""
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        ""
-      ],
       "Event refreshing is not supported for the moment": [
         "イベントの再リフレッシュは現在サポートされていません"
       ],
@@ -1491,11 +1488,14 @@
       "This invitation is out of date. The event has been updated.": [
         "この招待は古くなっています。このイベントは更新されました。"
       ],
-      "This response is out of date. The event does not exist in your calendar anymore.": [
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         ""
       ],
-      "This response is out of date. This event has been updated.": [
-        "レスポンスが古くなってます。このイベントは更新されました。"
+      "This response is out of date.": [
+        ""
+      ],
+      "This response is out of date. The event does not exist in your calendar anymore.": [
+        ""
       ],
       "This response is out of date. You have no calendars.": [
         "レスポンスが古くなってます。カレンダーがありません。"
@@ -2825,9 +2825,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "添付ファイルの暗号化に失敗しました。もう一度お試しください。"
       ],
-      "File has no contents to preview": [
-        "ファイルにプレビューするコンテンツがありません"
-      ],
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
@@ -3624,11 +3621,6 @@
         "カレンダーのイベントの作成に失敗しました"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "次のステップで必要なすべての権限を選択します"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
@@ -4211,9 +4203,6 @@
       "New": [
         "新規"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "次に、Google アカウントにログインしてデータにアクセスすることを許可します。"
-      ],
       "No action selected": [
         "アクションが選択されていません"
       ],
@@ -4379,6 +4368,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
@@ -4412,8 +4404,8 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "このメッセージは存在しないか有効期限切れです。"
+      "Sorry, this message does not exist or has already expired.": [
+        ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されています。"
@@ -4675,9 +4667,6 @@
       ],
       "Week": [
         "週"
-      ],
-      "What do you want to import from your Google account?": [
-        "Google アカウントから何をインポートしますか?"
       ],
       "When do you want your message to be sent?": [
         "いつメッセージを送信したいですか?"
@@ -5922,7 +5911,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -6241,7 +6235,7 @@
         "該当する項目がありません"
       ],
       "No unread messages found": [
-        ""
+        "未読メッセージが見つかりません"
       ]
     },
     "Select files": {
@@ -7069,12 +7063,6 @@
       "Select contact group": [
         "連絡先グループの選択"
       ],
-      "Select permissions": [
-        "権限を選択"
-      ],
-      "Select what to import": [
-        "インポートするものを選択"
-      ],
       "Send email": [
         "メールの送信"
       ],
@@ -7104,6 +7092,9 @@
       ],
       "Sign in again to continue": [
         "続行するには再度ログインしてください"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort conversations": [
         "会話をソート"
@@ -7152,6 +7143,9 @@
       ],
       "Welcome ${ userName }": [
         "ようこそ、${ userName }"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "更新情報"

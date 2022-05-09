@@ -861,6 +861,11 @@
         "Setmana"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Tancar"
@@ -2694,11 +2699,6 @@
         "ProtonContacts ${ forNow } no és compatible amb:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
@@ -3009,9 +3009,6 @@
       "New": [
         "Nou"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Tot seguit haureu d'iniciar sessió al vostre compte de Google i permetre'ns accés a les vostres dades."
-      ],
       "No contacts added yet": [
         "Encara no s'han afegit contactes"
       ],
@@ -3029,6 +3026,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Les ocurrències prèviament actualitzades per l'organitzador es mantindran, però es perdran algunes de les vostres respostes."
@@ -3083,6 +3083,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
@@ -3197,9 +3200,6 @@
       ],
       "Week": [
         "Setmana"
-      ],
-      "What do you want to import from your Google account?": [
-        "Què voleu importar del vostre compte de Google?"
       ],
       "Which event would you like to delete?": [
         "Quin esdeveniment vol esborrar?"
@@ -4022,7 +4022,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -4870,9 +4875,6 @@
       "Select event's last date": [
         "Seleccioneu l'última data de l'esdeveniment"
       ],
-      "Select permissions": [
-        "Seleccioneu els permisos"
-      ],
       "Select the time to send this notification": [
         "Seleccioneu l'hora per enviar aquesta notificació"
       ],
@@ -4884,9 +4886,6 @@
       ],
       "Select the way to send this notification": [
         "Seleccioneu la manera d’enviar aquesta notificació"
-      ],
-      "Select what to import": [
-        "Seleccioneu què voleu importar"
       ],
       "Select when this event will stop happening": [
         "Seleccioneu quan deixarà de succeir aquest esdeveniment"
@@ -4912,6 +4911,9 @@
       "Sign in again to continue": [
         "Torneu a iniciar per continuar"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         "Actualitza l'esdeveniment"
       ],
@@ -4928,6 +4930,9 @@
         "Advertència"
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

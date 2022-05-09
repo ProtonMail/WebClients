@@ -1280,9 +1280,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Aquesta nova proposta horària no coincideix amb els detalls de la vostra invitació. Si us plau verifiqueu els detalls de la invitació al vostre calendari."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Aquesta resposta no coincideix amb els detalls de la vostra invitació. Si us plau verifiqueu els detalls de la invitació al vostre calendari."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha acceptat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment."
       ],
@@ -1315,6 +1312,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } va sol·licitar les darreres actualitzacions d'un esdeveniment que ja no existeix al vostre calendari."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha rebutjat una invitació i ha proposat una nova hora per a una ocurrència d'aquest esdeveniment."
@@ -1469,9 +1469,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "Actualment no s’admet afegir ocurrències a un esdeveniment"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "S'ha afegit una ocurrència a l'esdeveniment ${ veventIcsTitle }"
-      ],
       "Event refreshing is not supported for the moment": [
         "L'actualització d'esdeveniments no és compatible de moment"
       ],
@@ -1496,11 +1493,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Aquesta invitació no està actualitzada. L'esdeveniment s'ha actualitzat."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
+      ],
+      "This response is out of date.": [
+        ""
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Aquesta resposta no està actualitzada. L'esdeveniment ja no existeix al vostre calendari."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Aquesta resposta no està actualitzada. Aquest esdeveniment s'ha actualitzat."
       ],
       "This response is out of date. You have no calendars.": [
         "Aquesta resposta no està actualitzada. No teniu calendaris."
@@ -2839,9 +2839,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Si us plau torna-ho a provar."
       ],
-      "File has no contents to preview": [
-        "L'arxiu no té contingut per previsualitzar"
-      ],
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
@@ -3652,11 +3649,6 @@
         "Ha fallat la creació de l'esdeveniment del calendari"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "en el proper pas necessiteu seleccionar tots els permisos"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
@@ -4282,9 +4274,6 @@
       "New": [
         "Nova"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Tot seguit haureu d'iniciar sessió al vostre compte de Google i permetre'ns accés a les vostres dades."
-      ],
       "No action selected": [
         "No s'ha seleccionat cap acció"
       ],
@@ -4450,6 +4439,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
       ],
@@ -4483,8 +4475,8 @@
       "Show original message": [
         "Mostra el missatge original"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "Ho sentim, aquest missatge no existeix o ja ha caducat"
+      "Sorry, this message does not exist or has already expired.": [
+        ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
@@ -4747,9 +4739,6 @@
       ],
       "Week": [
         "Setmana"
-      ],
-      "What do you want to import from your Google account?": [
-        "Què voleu importar del vostre compte de Google?"
       ],
       "When do you want your message to be sent?": [
         "Quan voleu que s'enviï el vostre missatge?"
@@ -6009,8 +5998,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Tingueu en compte que ${ boldNextStep } demanats per l'aplicació per iniciar la importació."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -7200,12 +7194,6 @@
       "Select contact group": [
         "Seleccionar grup de contactes"
       ],
-      "Select permissions": [
-        "Selecció de permisos"
-      ],
-      "Select what to import": [
-        "Seleccioneu què voleu importar"
-      ],
       "Send email": [
         "Enviar correu"
       ],
@@ -7235,6 +7223,9 @@
       ],
       "Sign in again to continue": [
         "Inicia sessió per continuar"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort conversations": [
         "Ordenar converses"
@@ -7284,6 +7275,9 @@
       ],
       "Welcome ${ userName }": [
         "Benvingut/da, ${ userName }"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Novetats"

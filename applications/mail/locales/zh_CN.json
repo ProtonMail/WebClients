@@ -192,7 +192,7 @@
         "复制邮箱地址"
       ],
       "Create a new contact group": [
-        ""
+        "创建联系人群组"
       ],
       "Create folder": [
         "创建文件夹"
@@ -1275,9 +1275,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " 此新时间提议与您的邀请详细信息不符，请验证您日历中的邀请详情。"
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " 此回复与您的邀请详细信息不符，请验证您日历中的邀请详情。"
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 接受了参加一次该活动的邀请，并为其提议了一个新时间。"
       ],
@@ -1310,6 +1307,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } 请求对您日历中已不存在的活动进行最新更新。"
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } 拒绝了参加一次该活动的邀请，并为其提议了一个新时间。"
@@ -1464,9 +1464,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "暂不支持增加事件的重复次数"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "事件 ${ veventIcsTitle } 已新增一次"
-      ],
       "Event refreshing is not supported for the moment": [
         "暂不支持活动刷新"
       ],
@@ -1491,11 +1488,14 @@
       "This invitation is out of date. The event has been updated.": [
         "此邀请已过期。活动已更新。"
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        ""
+      ],
+      "This response is out of date.": [
+        ""
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "此回复已过期，该活动不再存在于您的日历中。"
-      ],
-      "This response is out of date. This event has been updated.": [
-        "此回复已过期，本活动已更新。"
       ],
       "This response is out of date. You have no calendars.": [
         "此回复已过期，您没有日历。"
@@ -2825,9 +2825,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "加密附件失败，请重试。"
       ],
-      "File has no contents to preview": [
-        "文件没有内容可预览"
-      ],
       "Filter with this name already exists": [
         "这个名称已经用过了"
       ],
@@ -3624,11 +3621,6 @@
         "创建日历事项失败"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "授予本应用所需的所有权限"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
@@ -4211,9 +4203,6 @@
       "New": [
         "新建"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "接下来您需要登录 Google 账户并允许我们获取您的数据。"
-      ],
       "No action selected": [
         "未选择操作"
       ],
@@ -4251,7 +4240,7 @@
         "未找到结果"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
-        ""
+        "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
@@ -4379,6 +4368,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
+      "Select what you want to move from Google.": [
+        "选择您需要从 Google 账户导入的内容。"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
@@ -4412,8 +4404,8 @@
       "Show original message": [
         "显示原始邮件"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "对不起，此邮件不存在或已过期"
+      "Sorry, this message does not exist or has already expired.": [
+        ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
@@ -4461,7 +4453,7 @@
         "您正在转发或回复的原始邮件还在发送中，如果继续，您将无法再撤回原始邮件。"
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        ""
+        "此邮件原先的发件地址已不再有效，邮件将由您的默认地址 ${ defaultEmail } 发送。"
       ],
       "The sender has requested a read receipt.": [
         "发件人请您寄回执。"
@@ -4675,9 +4667,6 @@
       ],
       "Week": [
         "周"
-      ],
-      "What do you want to import from your Google account?": [
-        "您想从您的 Google 账户中导入哪些内容？"
       ],
       "When do you want your message to be sent?": [
         "您想要什么时候发送您的邮件？"
@@ -5922,8 +5911,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "请注意，下一步您需要${ boldNextStep }才能开始导入。"
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "接下来您需要登录 Google 账户并允许 Proton 获取您的数据。"
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -7069,12 +7063,6 @@
       "Select contact group": [
         "选择联系人群组"
       ],
-      "Select permissions": [
-        "选择权限"
-      ],
-      "Select what to import": [
-        "选择要导入的内容"
-      ],
       "Send email": [
         "发送邮件"
       ],
@@ -7104,6 +7092,9 @@
       ],
       "Sign in again to continue": [
         "此操作需要重新登录"
+      ],
+      "Sign in and grant access": [
+        "登录并授予权限"
       ],
       "Sort conversations": [
         "会话排序"
@@ -7145,13 +7136,16 @@
         "警告"
       ],
       "Warning: suspected fake website": [
-        ""
+        "警告：疑似虚假网站"
       ],
       "Welcome": [
         "欢迎"
       ],
       "Welcome ${ userName }": [
         "欢迎您，${ userName }"
+      ],
+      "What would you like to import?": [
+        "您需要导入哪些信息？"
       ],
       "What's new": [
         "更新内容"

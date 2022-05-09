@@ -1600,9 +1600,6 @@
       "Error connecting to the Bitcoin API.": [
         "Pogreška prilikom spajanja na Bitcoin API."
       ],
-      "File has no contents to preview": [
-        "Datoteka nema sadržaja za pregled"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Ako je vrijeme na vašem TV-u isteklo, kliknite Osvježi na televizoru i ponovno unesite kôd."
       ],
@@ -1986,6 +1983,9 @@
       ],
       "Creating your account": [
         "Izrada vašeg računa"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
@@ -3256,12 +3256,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         "",
         ""
@@ -3297,11 +3302,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         "",
         ""

@@ -1589,9 +1589,6 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao ligar à API do Bitcoin."
       ],
-      "File has no contents to preview": [
-        "O ficheiro não tem conteúdo para antever"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Actualizar na sua TV e insira o seu código novamente."
       ],
@@ -1972,6 +1969,9 @@
       "Creating your account": [
         "A criar a sua conta"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -2042,7 +2042,7 @@
         "Para Visa e MasterCard, os 3 algarismos na parte de trás do seu cartão. Para American Express, os 4 algarismos na frente do seu cartão."
       ],
       "Free": [
-        "Grátis"
+        "Gratuito"
       ],
       "Free up some space or add more storage space.": [
         "Liberte algum espaço ou adicione mais espaço de armazenamento."
@@ -3240,11 +3240,15 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         ""
       ],
@@ -3273,10 +3277,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],

@@ -861,6 +861,11 @@
         "Εβδομάδα"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Αλλαγή χρονικής έκτασης σε"
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Κλείσιμο"
@@ -2694,11 +2699,6 @@
         "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
@@ -3009,9 +3009,6 @@
       "New": [
         "Νέο"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
-      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -3029,6 +3026,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Κανένα από τα ανεβασμένα κλειδιά δεν είναι έγκυρο για κρυπτογράφηση. Η κρυπτογράφηση έχει απενεργοποιηθεί αυτόματα."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν, αλλά μερικές από τις απαντήσεις σας θα χαθούν."
@@ -3083,6 +3083,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
+      ],
+      "Select what you want to move from Google.": [
+        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
@@ -3197,9 +3200,6 @@
       ],
       "Week": [
         "Εβδομάδα"
-      ],
-      "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισάγετε από τον λογαριασμό σας στο Google;"
       ],
       "Which event would you like to delete?": [
         "Ποιο γεγονός θα θέλατε να διαγράψετε;"
@@ -4022,8 +4022,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Στη συνέχεια θα πρέπει να εισέλθετε στον λογαριασμό σας Google και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Για να επιτευχθεί η εισαγωγή, πρέπει να επιλέξετε όλα τα απαιτούμενα στοιχεία, όπως φαίνεται στο GIF."
       ]
     },
     "Onboarding": {
@@ -4870,9 +4875,6 @@
       "Select event's last date": [
         "Επιλέξτε την τελευταία ημερομηνία του συμβάντος"
       ],
-      "Select permissions": [
-        ""
-      ],
       "Select the time to send this notification": [
         "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"
       ],
@@ -4884,9 +4886,6 @@
       ],
       "Select the way to send this notification": [
         "Επιλέξτε τον τρόπο αποστολής αυτής της ειδοποίησης"
-      ],
-      "Select what to import": [
-        "Επιλογή στοιχείων προς εισαγωγή"
       ],
       "Select when this event will stop happening": [
         "Επιλέξτε πότε θα σταματήσει να συμβαίνει αυτό το συμβάν"
@@ -4912,6 +4911,9 @@
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
       ],
+      "Sign in and grant access": [
+        "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
       "Update event": [
         "Ενημερωση γεγονοτος"
       ],
@@ -4929,6 +4931,9 @@
       ],
       "Warning: suspected fake website": [
         ""
+      ],
+      "What would you like to import?": [
+        "Τι θα θέλατε να εισάγετε;"
       ],
       "What's new": [
         "Τι νέο υπάρχει"

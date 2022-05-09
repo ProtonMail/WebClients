@@ -131,6 +131,9 @@
       "Continue": [
         "Συνέχεια"
       ],
+      "Continue transfers": [
+        "Συνέχιση μεταφορών"
+      ],
       "Continue with Google": [
         "Συνεχίστε με Google"
       ],
@@ -492,6 +495,9 @@
       ],
       "Stop sharing": [
         "Διακοπή κοινής χρήσης"
+      ],
+      "Stop transfers": [
+        "Διακοπή μεταφορών"
       ],
       "Submit": [
         "Υποβολή"
@@ -1784,9 +1790,6 @@
       "File cannot be merged with folder": [
         "Ένα αρχείο δεν γίνεται να συγχωνευθεί με φάκελο"
       ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
-      ],
       "File selection is already downloading": [
         "Τα επιλεγμένα αρχεία κατεβαίνουν ήδη"
       ],
@@ -2181,11 +2184,6 @@
         "Το ProtonContacts δεν υποστηρίζει ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "στο επόμενο βήμα χρειάζεται να επιλέξετε όλες τις άδειες"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
@@ -2394,9 +2392,6 @@
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
       ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Το κλείσιμο του διαχειριστή μεταφορών θα ακυρώσει όλες τις ενεργές μεταφορές. Είστε βέβαιοι;"
-      ],
       "Conflict": [
         "Διένεξη"
       ],
@@ -2557,7 +2552,7 @@
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
+        "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού Proton για να αρχίσετε τη διαδικασία ξεμπλοκαρίσματος."
@@ -2647,9 +2642,6 @@
       "New": [
         "Νέο"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Μετά πρέπει να εισέλθετε στον λογαριασμό σας στο Google και να μας παραχωρήσετε πρόσβαση στα δεδομένα σας."
-      ],
       "No": [
         "Όχι"
       ],
@@ -2674,14 +2666,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Κανένα από τα ανεβασμένα κλειδιά δεν είναι έγκυρο για κρυπτογράφηση. Η κρυπτογράφηση έχει απενεργοποιηθεί αυτόματα."
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ appName }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
       ],
       "of": [
         "από"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "Μία από τις κρυπτογραφημένες αρχειοθήκες σας είναι κλειδωμένη. Αυτό πιθανότατα οφείλεται σε μια πρόσφατη επαναφορά κωδικού πρόσβασης.${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Μια κρυπτογραφημένη αρχειοθήκη σας είναι κλειδωμένη, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2764,6 +2759,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Ορίστε την προεπιλεγμένη μορφή των μηνυμάτων που αποστέλλονται προς αυτήν την ηλ. διεύθυνση."
       ],
+      "Select what you want to move from Google.": [
+        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
@@ -2808,6 +2806,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Υπάρχουν ακόμη αρχεία που χρειάζονται μεταφορά. Το κλείσιμο του διαχειριστή μεταφορών θα τερματίσει όλες τις εργασίες."
       ],
       "There are no files yet": [
         "Δεν υπάρχουν ακόμη αρχεία"
@@ -2856,7 +2857,7 @@
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά (θα σας ενημερώσουμε όταν η δεικτοδότηση ολοκληρωθεί)."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
+        "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -2932,9 +2933,6 @@
       ],
       "What do you want to do?": [
         "Τι θέλετε να κάνετε;"
-      ],
-      "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισαγάγετε από τον λογαριασμό σας στο Google;"
       ],
       "What would you like to do?": [
         "Τι θα θέλατε να κάνετε;"
@@ -3032,8 +3030,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Ο ασφαλής κοινοποιήσιμος σύνδεσμός σας για το ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        "Ο διασφαλισμένος κοινοποιήσιμος σύνδεσμός σας για το ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3052,6 +3050,9 @@
       ],
       "file data": [
         "δεδομένα αρχείου"
+      ],
+      "file data key": [
+        "κλειδί δεδομένων αρχείου"
       ],
       "keys": [
         "κλειδιά"
@@ -3722,8 +3723,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Παρακαλώ σημειώστε ότι ${ boldNextStep } που ζητά η εφαρμογή για να ξεκινήσετε την εισαγωγή."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Στη συνέχεια θα χρειαστεί να εισέλθετε στον Google λογαριασμό σας και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
       ]
     },
     "Onboarding Action": {
@@ -4156,9 +4162,6 @@
       "Browser might run out of memory": [
         "Ο περιηγητής ενδέχεται να ξεμείνει από μνήμη"
       ],
-      "Cancel all active transfers": [
-        "Ακυρώστε όλες τις ενεργές μεταφορές"
-      ],
       "Change layout": [
         "Αλλαγή διάταξης"
       ],
@@ -4444,12 +4447,6 @@
       "Select link expiration time": [
         "Επιλέξτε το χρόνο λήξης του συνδέσμου"
       ],
-      "Select permissions": [
-        "Επιλογή αδειών"
-      ],
-      "Select what to import": [
-        "Επιλογή στοιχείων προς εισαγωγή"
-      ],
       "Settings": [
         "Ρυθμίσεις"
       ],
@@ -4465,6 +4462,9 @@
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
       ],
+      "Sign in and grant access": [
+        "Εισέλθετε και παραχωρήστε πρόσβαση"
+      ],
       "Size": [
         "Μέγεθος"
       ],
@@ -4476,6 +4476,9 @@
       ],
       "Stop sharing with everyone?": [
         "Διακοπή κοινοποίησης σε όλους;"
+      ],
+      "Stop transfers?": [
+        "Διακοπή μεταφορών;"
       ],
       "The file or folder failed to be downloaded": [
         "Αποτυχία λήψης του αρχείου ή φακέλου"
@@ -4524,6 +4527,9 @@
       ],
       "Warning: suspected fake website": [
         "Προειδοποίηση: υποψία κίβδηλης ιστοσελίδας"
+      ],
+      "What would you like to import?": [
+        "Τι θα θέλατε να εισάγετε;"
       ],
       "What's new": [
         "Τι νέο υπάρχει"

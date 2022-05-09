@@ -1280,9 +1280,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Bu yeni saat önerisi, davet bilgilerinizle eşleşmiyor. Lütfen takviminizdeki davet bilgilerini doğrulayın."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Bu yanıt, davetinizin bilgileriyle eşleşmiyor. Lütfen takviminizdeki davet bilgilerini doğrulayın."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName }, yapılmış bir daveti kabul etti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
       ],
@@ -1315,6 +1312,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName }, artık takviminizde bulunmayan bir etkinliğin güncel bilgilerini istedi."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } davet bilgilerinizle eşleşmeyen bir etkinlikle ilgili en son güncellemeleri istedi. Lütfen takviminizdeki davet bilgilerini doğrulayın."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName }, yapılmış bir daveti reddetti ve bu yinelenen etkinliğin bir tanesi için yeni bir saat önerisinde bulundu."
@@ -1469,9 +1469,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "Şimdilik bir etkinliğe, yinelenen bir etkinlik eklenmesi desteklenmiyor"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "${ veventIcsTitle } dizisine bir etkinlik eklendi"
-      ],
       "Event refreshing is not supported for the moment": [
         "Şimdilik etkinlik yenilenmesi desteklenmiyor"
       ],
@@ -1496,11 +1493,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Bu davet güncel değil. Etkinlik güncellendi."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Bu yanıt, davetinizin bilgileriyle eşleşmiyor. Lütfen takviminizdeki davet bilgilerini doğrulayın."
+      ],
+      "This response is out of date.": [
+        "Bu yanıt güncel değil."
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Bu yanıt güncel değil. Etkinlik artık takviminizde değil."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Bu yanıt güncel değil. Etkinlik güncellenmiş."
       ],
       "This response is out of date. You have no calendars.": [
         "Bu yanıt güncel değil. Herhangi bir takviminiz yok."
@@ -2839,9 +2839,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
       ],
-      "File has no contents to preview": [
-        "Dosyanın ön izlenecek bir içeriği yok"
-      ],
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
@@ -3652,11 +3649,6 @@
         "Takvim etkinliği oluşturulamadı"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "sonraki adımda tüm izinleri seçmelisiniz"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
@@ -4282,9 +4274,6 @@
       "New": [
         "Yeni"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Ardından, Google hesabınızda oturum açmanız ve verilerinize erişmemize izin vermeniz gerekmektedir."
-      ],
       "No action selected": [
         "Herhangi bir işlem seçilmemiş"
       ],
@@ -4450,6 +4439,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
+      "Select what you want to move from Google.": [
+        "Google üzerinden aktarmak istediklerinizi seçin."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
@@ -4483,8 +4475,8 @@
       "Show original message": [
         "Özgün iletiyi göster"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş"
+      "Sorry, this message does not exist or has already expired.": [
+        "Ne yazık ki, bu ileti bulunamadı ya da süresi geçmiş."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
@@ -4747,9 +4739,6 @@
       ],
       "Week": [
         "Hafta"
-      ],
-      "What do you want to import from your Google account?": [
-        "Google hesabınızdan içe aktarılmasını istedikleriniz nelerdir?"
       ],
       "When do you want your message to be sent?": [
         "İletinizin ne zaman gönderilmesini istersiniz?"
@@ -6009,8 +5998,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Lütfen içe aktarmayı başlatmak için uygulama tarafından ${ boldNextStep } gerektiğini unutmayın."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize Proton tarafından erişilmesine izin vermeniz gerekecek."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
       ]
     },
     "Onboarding": {
@@ -7200,12 +7194,6 @@
       "Select contact group": [
         "Kişi grubunu seç"
       ],
-      "Select permissions": [
-        "İzinleri seçin"
-      ],
-      "Select what to import": [
-        "Neyin içe aktarılacağını seçin"
-      ],
       "Send email": [
         "E-posta gönder"
       ],
@@ -7235,6 +7223,9 @@
       ],
       "Sign in again to continue": [
         "Devam etmek için yeniden oturum açın"
+      ],
+      "Sign in and grant access": [
+        "Oturum açın ve erişim izni verin"
       ],
       "Sort conversations": [
         "Yazışmaları sırala"
@@ -7284,6 +7275,9 @@
       ],
       "Welcome ${ userName }": [
         "Hoş geldin, ${ userName }"
+      ],
+      "What would you like to import?": [
+        "Neyi içe aktarmak istersiniz?"
       ],
       "What's new": [
         "Yenilikler"

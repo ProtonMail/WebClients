@@ -1589,9 +1589,6 @@
       "Error connecting to the Bitcoin API.": [
         "Errore di connessione alle API di Bitcoin."
       ],
-      "File has no contents to preview": [
-        "Il file non ha contenuti da visualizzare in anteprima"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se il tempo sul tuo televisore è scaduto. Clicca su Aggiorna sul tuo televisore e reinserisci il tuo codice."
       ],
@@ -1971,6 +1968,9 @@
       ],
       "Creating your account": [
         "Attivazione del conto"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credito per la parte non usata del tuo precedente abbonamento"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Crediti, proporzione ed eventuali coupon applicabili vengono applicati al momento del pagamento"
@@ -3086,11 +3086,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Scopri tutti i piani ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Da ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Da ${ _price2 } per utente"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "Da ${ price }"
@@ -3103,12 +3100,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Accedi ai servizi di streaming in tutto il mondo"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Blocco degli annunci integrato (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Ottieni ${ connections } connessione VPN ad alta velocità",
         "Ottieni ${ connections } connessioni VPN ad alta velocità"
@@ -3116,10 +3107,6 @@
       "Get ${ connections } high-speed VPN connection per user": [
         "Ottieni ${ connections } connessione VPN ad alta velocità per utente",
         "Ottieni ${ connections } connessioni VPN ad alta velocità per utente"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "VPN ad alta velocità su ${ maxVpn } dispositivo",
-        "VPN ad alta velocità su ${ maxVpn } dispositivi"
       ]
     },
     "new_plans: feature": {
@@ -3394,9 +3381,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà eventualmente disabilitato."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La soluzione VPN dedicata che fornisce un accesso sicuro, senza restrizioni e ad alta velocità a Internet."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
@@ -3883,13 +3867,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } calendario per utente",
-        "${ MAX_CALENDARS_PER_USER } calendari per utente"
+      "${ _n } calendar per user": [
+        "${ _n } calendario per utente",
+        "${ _n } calendari per utente"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connessione VPN ad alta velocità",
         "${ maxVpn } connessioni VPN ad alta velocità"
+      ],
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendari"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } connessione VPN ad alta velocità",
@@ -3918,10 +3906,6 @@
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendario",
         "${ UsedCalendars } calendari"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } di ${ MaxCalendars } calendario",
-        "${ UsedCalendars } di ${ MaxCalendars } calendari"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } di ${ MaxDomains } dominio personalizzato",
