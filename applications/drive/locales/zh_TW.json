@@ -57,10 +57,10 @@
         "取消"
       ],
       "Cancel all": [
-        ""
+        "全部取消"
       ],
       "Cancel all downloads": [
-        ""
+        "取消所有上載"
       ],
       "Cancel all uploads": [
         "取消所有上載"
@@ -84,7 +84,7 @@
         "清除"
       ],
       "Clear browser data": [
-        ""
+        "清除瀏覽器資料"
       ],
       "Clear data": [
         "清除資料"
@@ -130,6 +130,9 @@
       ],
       "Continue": [
         "繼續"
+      ],
+      "Continue transfers": [
+        "繼續傳輸"
       ],
       "Continue with Google": [
         "繼續以 Google 帳戶登入"
@@ -222,7 +225,7 @@
         ""
       ],
       "Expand": [
-        ""
+        "展開"
       ],
       "Expand folder": [
         "展開資料夾"
@@ -249,7 +252,7 @@
         "取得驗證碼"
       ],
       "Go to label": [
-        ""
+        "跳至標籤"
       ],
       "Go to panel ${ index }": [
         "前往面板 ${ index }"
@@ -261,7 +264,7 @@
         "前往設定"
       ],
       "Got it": [
-        ""
+        "了解"
       ],
       "Hide advanced PGP settings": [
         "隱藏進階 PGP 設定"
@@ -285,7 +288,7 @@
         "從 .csv 或 vCard 匯入"
       ],
       "Learn more": [
-        ""
+        "瞭解詳情"
       ],
       "Load image": [
         "載入圖片"
@@ -342,7 +345,7 @@
         "開啟導覽"
       ],
       "Pause all": [
-        ""
+        "全部暫停"
       ],
       "Pause download": [
         "暫停下載"
@@ -372,7 +375,7 @@
         "恢復資料"
       ],
       "Refer a friend": [
-        ""
+        "推薦好友"
       ],
       "refresh the page": [
         "重新整理此頁面"
@@ -426,7 +429,7 @@
         "儲存"
       ],
       "Search": [
-        ""
+        "搜尋"
       ],
       "Search drive": [
         ""
@@ -465,7 +468,7 @@
         "顯示標籤"
       ],
       "Show preview": [
-        ""
+        "顯示預覽"
       ],
       "Sign out": [
         "登出"
@@ -491,11 +494,14 @@
       "Stop sharing": [
         "停止分享"
       ],
+      "Stop transfers": [
+        "要停止傳輸檔案嗎？\n標題\n檔案：ProtonMail Drive Application. pot"
+      ],
       "Submit": [
         "提交"
       ],
       "Submit report": [
-        ""
+        "提交報告"
       ],
       "Switch account": [
         "切換帳號"
@@ -903,7 +909,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "阿布哈茲"
       ],
       "Afghanistan": [
         "阿富汗"
@@ -912,7 +918,7 @@
         "阿爾巴尼亞"
       ],
       "Algeria": [
-        ""
+        "阿爾及利亞"
       ],
       "American Samoa": [
         "美屬薩摩亞"
@@ -942,7 +948,7 @@
         "阿魯巴"
       ],
       "Ascension Island": [
-        ""
+        "亞森欣島"
       ],
       "Australia": [
         "澳洲"
@@ -951,7 +957,7 @@
         "奧地利"
       ],
       "Azerbaijan": [
-        "亞塞拜然"
+        "阿塞拜疆"
       ],
       "Bahamas": [
         "巴哈馬"
@@ -987,16 +993,16 @@
         "玻利維亞"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        "博內爾島、聖尤斯特歇斯島和薩巴島"
+        "博奈爾、聖尤斯特歇斯和薩巴"
       ],
       "Bosnia and Herzegovina": [
-        "波希尼亞及赫塞哥維那"
+        "波士尼亞及赫塞哥維納"
       ],
       "Botswana": [
         "波札那"
       ],
       "Bouvet Island": [
-        "布威島"
+        "波維特島"
       ],
       "Brazil": [
         "巴西"
@@ -1005,7 +1011,7 @@
         "英屬印度洋領地"
       ],
       "Brunei Darussalam": [
-        "汶萊"
+        "汶萊達魯薩蘭國"
       ],
       "Bulgaria": [
         "保加利亞"
@@ -1029,7 +1035,7 @@
         "加拿大"
       ],
       "Cape Verde": [
-        ""
+        "維德角島"
       ],
       "Cayman Islands": [
         "開曼群島"
@@ -1047,7 +1053,7 @@
         "中國"
       ],
       "Christmas Island": [
-        ""
+        "聖誕島"
       ],
       "Cocos (Keeling) Islands": [
         "科科斯 (基林) 群島"
@@ -1074,37 +1080,37 @@
         "象牙海岸"
       ],
       "Croatia": [
-        ""
+        "克羅埃西亞"
       ],
       "Cuba": [
-        ""
+        "古巴"
       ],
       "Curaçao": [
-        ""
+        "庫拉索"
       ],
       "Cyprus": [
-        ""
+        "塞浦路斯"
       ],
       "Czech Republic": [
-        ""
+        "捷克共和國"
       ],
       "Denmark": [
-        ""
+        "丹麥"
       ],
       "Djibouti": [
-        ""
+        "吉布地"
       ],
       "Dominica": [
-        ""
+        "多米尼克"
       ],
       "Dominican Republic": [
-        ""
+        "多明尼加共和國"
       ],
       "Ecuador": [
-        ""
+        "厄瓜多"
       ],
       "Egypt": [
-        ""
+        "埃及"
       ],
       "El Salvador": [
         "薩爾瓦多"
@@ -1113,28 +1119,28 @@
         ""
       ],
       "Eritrea": [
-        ""
+        "厄利垂亞"
       ],
       "Estonia": [
-        ""
+        "愛沙尼亞"
       ],
       "Ethiopia": [
-        ""
+        "衣索比亞"
       ],
       "Falkland Islands": [
-        ""
+        "福克蘭群島"
       ],
       "Faroe Islands": [
         ""
       ],
       "Federated States of Micronesia": [
-        ""
+        "密克羅尼西亞聯邦"
       ],
       "Fiji": [
-        ""
+        "斐濟"
       ],
       "Finland": [
-        ""
+        "芬蘭"
       ],
       "France": [
         ""
@@ -1158,7 +1164,7 @@
         ""
       ],
       "Germany": [
-        ""
+        "德國"
       ],
       "Ghana": [
         ""
@@ -1197,7 +1203,7 @@
         ""
       ],
       "Haiti": [
-        ""
+        "海地"
       ],
       "Heard Island and McDonald Islands": [
         ""
@@ -1206,13 +1212,13 @@
         "聖座（梵蒂岡城國）"
       ],
       "Honduras": [
-        ""
+        "洪都拉斯"
       ],
       "Hong Kong": [
         ""
       ],
       "Hungary": [
-        ""
+        "匈牙利"
       ],
       "Iceland": [
         "冰島"
@@ -1461,7 +1467,7 @@
         ""
       ],
       "Saint Barthélemy": [
-        "聖巴泰勒米"
+        "聖巴瑟米"
       ],
       "Saint Helena": [
         ""
@@ -1539,7 +1545,7 @@
         "南蘇丹"
       ],
       "Spain": [
-        ""
+        "西班牙"
       ],
       "Sri Lanka": [
         "斯里蘭卡"
@@ -1617,7 +1623,7 @@
         "烏克蘭"
       ],
       "United Arab Emirates": [
-        "阿拉伯聯合酋長國"
+        "阿聯酋"
       ],
       "United Kingdom": [
         ""
@@ -1653,7 +1659,7 @@
         "瓦利斯和富圖那"
       ],
       "Western Sahara": [
-        ""
+        "西撒哈拉"
       ],
       "Yemen": [
         "葉門"
@@ -1778,9 +1784,6 @@
       ],
       "File cannot be merged with folder": [
         "檔案無法與資料夾合併"
-      ],
-      "File has no contents to preview": [
-        "檔案無內容可預覽"
       ],
       "File selection is already downloading": [
         "所選檔案已在下載中"
@@ -2167,11 +2170,6 @@
         "ProtonContacts ${ forNow }不支援："
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "在下一個步驟中，您必須選取所有的權限"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
@@ -2314,10 +2312,10 @@
         "您確定要清空垃圾桶並永久刪除當中所有項目嗎？"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "您確定要永久刪除這 ${ itemName } 個草稿嗎？"
+        "您確定要從垃圾桶中永久刪除 “${ itemName }” 嗎？"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "您確定要從垃圾桶中永久刪除選取的項目嗎？"
+        "您確定要從垃圾桶中永久刪除已所選取的項目嗎？"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "由於${ appName } 是端到端加密的，因此我們無法為您解密或存取您的資料。為了確保密碼重設後您仍能解鎖雲端硬碟，您必須具備以下條件之一："
@@ -2335,7 +2333,7 @@
         "正在檢查聯絡人 ${ progress } / ${ max }..."
       ],
       "Checking signatures": [
-        "核對簽署。"
+        "正在核對簽署"
       ],
       "Clear data": [
         "清除數據"
@@ -2354,9 +2352,6 @@
       ],
       "Close this screen to exit.": [
         "關閉此畫面以離開。"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "關閉轉移管理員將取消所有進行中的轉移，您確定要這樣做嗎？"
       ],
       "Conflict": [
         "衝突"
@@ -2389,7 +2384,7 @@
         "建立您的第一個資料夾，並開始移動您的檔案。"
       ],
       "Creating": [
-        "檔案建立中。"
+        "正在建立"
       ],
       "Creating link to file": [
         "正在建立檔案連結"
@@ -2407,10 +2402,10 @@
         "刪除雲端硬碟"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        "電子簽署已被核實。該檔案已經通過 ${ emailAddress } 被安全上載。"
+        "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上傳。"
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        "電子簽署已被核實。該文件夾已經通過 ${ emailAddress } 被安全上載。"
+        "數碼簽署已通過驗證。此資料夾由 ${ emailAddress } 安全上傳。"
       ],
       "Download of ${ downloadFileName } will be aborted": [
         "檔案 ${ downloadFileName } 的下載將會被取消。"
@@ -2449,7 +2444,7 @@
         "預計尚餘時間：少於一分鐘"
       ],
       "Estimating time remaining...": [
-        "正在估計尚餘時間..."
+        "正在估計剩餘時間..."
       ],
       "Failed": [
         "失敗"
@@ -2464,7 +2459,7 @@
         "檔案 \"${ name }\" 在下載過程中被刪除"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        "檔案欠缺簽署。我們不能核實電郵地址 ${ emailAddress } 已經把檔案 ${ fileName } 上載好。"
+        "檔案欠缺簽署。我們無法驗證 ${ fileName } 由 ${ emailAddress } 上載。"
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
         "檔案欠缺簽署。我們不能核實是誰把檔案 ${ fileName } 上載好。"
@@ -2604,9 +2599,6 @@
       "New": [
         "新增"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "接下來，您將需要登入您的 Google 帳戶並允許我們存取您的資料。"
-      ],
       "No": [
         "否"
       ],
@@ -2631,20 +2623,23 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
+      "Not a valid URL": [
+        "URL無效。"
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "備註：資料將會持續在安裝 ${ appName } 的裝置上保持可用狀態。"
       ],
       "of": [
         "，共"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "您的其中一個加密雲端硬碟已被鎖定。這很可能是由於近期密碼重設所導致的。${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "當您使用 PGP 和非 ProtonMail 使用者互相寄送郵件時，才需要更改這些設定。"
+        "僅當您使用 PGP 傳送郵件給非 ${ BRAND_NAME } 收件人時，才需要修改下列設定。"
       ],
       "Only the people with the link and the password can access this file.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
@@ -2701,7 +2696,7 @@
         "待處理"
       ],
       "recommended browser": [
-        "已推薦的瀏覽器。"
+        "推薦的瀏覽器"
       ],
       "Recovery process might take some time.": [
         "還原過程或需時。"
@@ -2710,7 +2705,7 @@
         "重新整理此頁面或 ${ link } 將自動解決大部分問題。"
       ],
       "Report has been sent": [
-        "報告一直被傳送。"
+        "回報已傳送"
       ],
       "Search cannot be enabled in this browser": [
         "此瀏覽器無法啟用搜索功能"
@@ -2720,6 +2715,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇向該電子郵件地址傳送時的預設格式"
+      ],
+      "Select what you want to move from Google.": [
+        "選擇您要從 Google 轉移的任何檔案。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
@@ -2740,7 +2738,7 @@
         "簽署檢查將被忽視。"
       ],
       "Signature issue": [
-        "簽署事件。"
+        "簽署問題"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您有部份檔案不再能夠存取。請為您的檔案還原存取。${ StartRecoveryButton }"
@@ -2765,6 +2763,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "以下檔案可能一直跟 ${ items } 混雜一起。只有在你信任的情況下才打開它。"
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "目前仍有檔案等候傳輸，關閉傳輸管理員將會終止所有操作。"
       ],
       "There are no files yet": [
         "目前還沒有任何檔案"
@@ -2839,7 +2840,7 @@
         "垃圾桶"
       ],
       "Try different keywords": [
-        "嘗試不同的關鍵詞。"
+        "嘗試不同的關鍵字"
       ],
       "Unlimited folders, labels, and filters": [
         "無限的資料夾、標籤與過濾條件"
@@ -2869,7 +2870,7 @@
         "同一時間上載數以百計的檔案或會有礙效能。"
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        "使用該表通知我們不適當、非法，或其他惡意分享的檔案。你將會報告："
+        "使用此表格通知我們不適當、非法，或其他惡意分享的檔案。您即將報告："
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "我們不能核實是電郵地址 ${ emailAddress } 把檔案 ${ fileName } 上載好。"
@@ -2888,9 +2889,6 @@
       ],
       "What do you want to do?": [
         "您想要做什麼？"
-      ],
-      "What do you want to import from your Google account?": [
-        "您想要從你的 Google 帳戶匯入什麼資料？"
       ],
       "What would you like to do?": [
         "您想要做什麼？"
@@ -2988,8 +2986,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "您就 ${ boldNameText } 的安全可分享連結："
+      "Your secure, shareable link for ${ boldNameText }": [
+        "您的既安全穩固且可跟 ${ boldNameText } 共享的連結。"
       ]
     },
     "Info on errors": {
@@ -3008,6 +3006,9 @@
       ],
       "file data": [
         "檔案數據"
+      ],
+      "file data key": [
+        "檔案資料金鑰"
       ],
       "keys": [
         "密鑰"
@@ -3657,8 +3658,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "需要注意的是 ${ boldNextStep } ，以讓應用程式開始匯入。"
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding Action": {
@@ -4083,9 +4089,6 @@
       "Browser might run out of memory": [
         ""
       ],
-      "Cancel all active transfers": [
-        "取消所有進行中的傳輸"
-      ],
       "Change layout": [
         "變更版面配置"
       ],
@@ -4368,12 +4371,6 @@
       "Select link expiration time": [
         "選擇連結到期時間"
       ],
-      "Select permissions": [
-        "選取權限"
-      ],
-      "Select what to import": [
-        "選取匯入內容"
-      ],
       "Settings": [
         "設定"
       ],
@@ -4389,6 +4386,9 @@
       "Sign in again to continue": [
         "請再次登入以繼續"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         "大小"
       ],
@@ -4400,6 +4400,9 @@
       ],
       "Stop sharing with everyone?": [
         "是否停止與所有人分享？"
+      ],
+      "Stop transfers?": [
+        "要停止傳輸檔案嗎？\n標題\n檔案：ProtonMail Drive Application. pot"
       ],
       "The file or folder failed to be downloaded": [
         "檔案或資料夾下載失敗"
@@ -4448,6 +4451,9 @@
       ],
       "Warning: suspected fake website": [
         "警告：疑似假冒網站"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "最新消息"

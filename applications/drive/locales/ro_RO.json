@@ -131,6 +131,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue transfers": [
+        "Continuare transferuri"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -494,6 +497,9 @@
       ],
       "Stop sharing": [
         "Oprire partajare"
+      ],
+      "Stop transfers": [
+        "Oprire transferuri"
       ],
       "Submit": [
         "Trimite"
@@ -1789,9 +1795,6 @@
       "File cannot be merged with folder": [
         "Fișierul nu poate fi îmbinat cu folderul."
       ],
-      "File has no contents to preview": [
-        "Fișierul nu are conținut de afișat"
-      ],
       "File selection is already downloading": [
         "Fișierele selectate sunt deja în curs de descărcare"
       ],
@@ -2195,11 +2198,6 @@
         "ProtonContacts nu acceptă ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "în pasul următor trebuie să selectați toate permisiunile"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } din ${ totalContacts } contacte nu vor fi importate. Faceți clic pentru detalii."
@@ -2432,9 +2430,6 @@
       ],
       "Close this screen to exit.": [
         "Închideți această fereastră pentru a ieși."
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Închizând managerul de transferuri se vor anula toate transferurile active, confirmați?"
       ],
       "Conflict": [
         "Conflict"
@@ -2690,9 +2685,6 @@
       "New": [
         "Nou"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "În continuare, va trebui să vă conectați la contul Google personal și să ne permiteți să vă accesăm datele."
-      ],
       "No": [
         "Nu"
       ],
@@ -2717,14 +2709,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Notă: Este posibil ca datele să fie încă disponibile local pe dispozitivele pe care ați instalat ${ appName }."
       ],
       "of": [
         "din"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "Una dintre unitățile criptate este blocată. Cel mai probabil, acest lucru se datorează unei resetări recente a parolei.${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Una din unitățile criptate este blocată. Aceasta se datorează probabil unei resetări recente a parolei."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2807,6 +2802,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selectați formatul de e-mail care doriți să fie folosit implicit când trimiteți mesaje la această adresă."
       ],
+      "Select what you want to move from Google.": [
+        "Selectați ce doriți să importați din Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
       ],
@@ -2851,6 +2849,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Este posibil ca următoarele elemente să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Încă mai sunt fișiere ce trebuie transferate. Închizând managerul de transfer va încheia toate operațiile."
       ],
       "There are no files yet": [
         "Încă nu există fișiere."
@@ -2977,9 +2978,6 @@
       "What do you want to do?": [
         "Ce doriți să faceți?"
       ],
-      "What do you want to import from your Google account?": [
-        "Ce doriți să importați din contul Google personal?"
-      ],
       "What would you like to do?": [
         "Ce v-ar plăcea să faceți?"
       ],
@@ -3076,8 +3074,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Contul Proton este momentan suspendat. Pentru a putea să-l utilizați, trebuie să plătiți orice factură restantă."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Legătura securizată și partajabilă pentru ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        "Legătura securizată și partajabilă pentru ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3096,6 +3094,9 @@
       ],
       "file data": [
         "date fișier"
+      ],
+      "file data key": [
+        "fișier date cheie"
       ],
       "keys": [
         "chei"
@@ -3787,8 +3788,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Rețineți că ${ boldNextStep } solicitate de către aplicație pentru a începe importarea."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "În continuare, va trebui să vă conectați la contul Google personal și să permiteți ca Proton să vă acceseze datele."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Pentru ca importarea să funcționeze, trebuie să selectați toate elementele solicitate așa cum e arătat în imagine."
       ]
     },
     "Onboarding Action": {
@@ -4229,9 +4235,6 @@
       "Browser might run out of memory": [
         "Navigatorul ar putea rămâne fără memorie"
       ],
-      "Cancel all active transfers": [
-        "Anulare toate transferurile active"
-      ],
       "Change layout": [
         "Schimbare aspect"
       ],
@@ -4520,12 +4523,6 @@
       "Select link expiration time": [
         "Selectați ora expirării legăturii"
       ],
-      "Select permissions": [
-        "Selectare permisiuni"
-      ],
-      "Select what to import": [
-        "Selectare date de importat"
-      ],
       "Settings": [
         "Setări"
       ],
@@ -4541,6 +4538,9 @@
       "Sign in again to continue": [
         "Reconectați-vă pentru a continua"
       ],
+      "Sign in and grant access": [
+        "Conectați-vă și acordați acces"
+      ],
       "Size": [
         "Mărime"
       ],
@@ -4552,6 +4552,9 @@
       ],
       "Stop sharing with everyone?": [
         "Opriți partajarea cu toată lumea?"
+      ],
+      "Stop transfers?": [
+        "Opriți transferurile?"
       ],
       "The file or folder failed to be downloaded": [
         "Fișierul sau folderul nu a putut fi descărcat"
@@ -4600,6 +4603,9 @@
       ],
       "Warning: suspected fake website": [
         "Avertisment: suspectare site fals"
+      ],
+      "What would you like to import?": [
+        "Ce ați dori să importați?"
       ],
       "What's new": [
         "Ce este nou"

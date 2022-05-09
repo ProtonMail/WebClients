@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         ""
       ],
-      "File has no contents to preview": [
-        "Afaylu ur isεi ara agbur i teskant"
-      ],
       "Filter with this name already exist": [
         "Amsizdeg yesɛan isem-agi yella yakan"
       ],
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton yegguma ad yeqqen ɣer umiḍan-ik·im Gmail. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wawal uffir d imeɣta."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton yegguma ad yeqqen ɣer umiḍan-ik·im Yahoo Mail. Ttxil-k·m wali ma yella tansa n uqeddac n yimayl akked wawal uffir d imeɣta."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        ""
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton ur yezmir ara ad yeqqen ɣer umiḍan-ik·im Yahoo Mail. Ttxil-k·m wali ma yella:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        ""
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Aṭas n yisutar n melmi kan. Ttxil-k·m εreḍ tikkelt-nniḍen deg kra n wakud."
@@ -3645,7 +3642,7 @@
       "Go to ${ boldAccountSecurity }": [
         ""
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
+      "Go to Outlook ${ securitySettingsLink }": [
         ""
       ],
       "If 2-step verification is off, turn it on": [
@@ -3713,9 +3710,6 @@
       "ICS": [
         ""
       ],
-      "in the next step you need to select all the permissions": [
-        ""
-      ],
       "Manage": [
         "Sefrek"
       ],
@@ -3748,18 +3742,18 @@
       "shared calendars": [
         ""
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        ""
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         ""
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
+      "Go to ${ calendarLink } in your Outlook settings": [
         ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
+      "Go to ${ calendarViewLink } in Yahoo": [
         ""
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
@@ -4262,6 +4256,9 @@
       "Creating your account": [
         ""
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -4691,9 +4688,6 @@
       "New": [
         "Amynut"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Deg usurif d itteddun tesriḍ ad teqqneḍ ɣer umiḍan-inek•inem n Google yerna ad ɣ-tsirgeḍ adduf ɣer yisefka-inek•inem."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Ulac tarayt n tririt n umiḍan yettusbadun; tzemreḍ ad tesruḥeḍ adduf ɣer umiḍan-inek•inem"
       ],
@@ -4948,6 +4942,9 @@
         ""
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
+        ""
+      ],
+      "Select what you want to move from Google.": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -5281,9 +5278,6 @@
         ""
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
-      ],
-      "What do you want to import from your Google account?": [
         ""
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
@@ -7220,7 +7214,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -7910,11 +7909,15 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         ""
       ],
@@ -7943,10 +7946,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],
@@ -8902,9 +8901,6 @@
       "Select contact group": [
         "Fren agraw n unermes"
       ],
-      "Select permissions": [
-        "Fren tisirag"
-      ],
       "Select subscription and pay": [
         ""
       ],
@@ -8913,9 +8909,6 @@
       ],
       "Select the way to send this notification": [
         "Fren abrid swayes ara yettwazen walɣu-a"
-      ],
-      "Select what to import": [
-        "Fren acu ara tketreḍ"
       ],
       "Select when you want this notification to be sent": [
         "Fren melmi i tebɣiḍ ad yettwazen walɣu-a"
@@ -8952,6 +8945,9 @@
       ],
       "Sign in again to continue": [
         "Qqen tikelt-nniḍen akken ad tkemmled"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort folders alphabetically": [
         "Smizzwer ikaramen s ugemmay"

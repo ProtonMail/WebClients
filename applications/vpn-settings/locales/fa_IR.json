@@ -33,7 +33,7 @@
         ""
       ],
       "Authenticate": [
-        ""
+        "احراز هویت"
       ],
       "Back": [
         "بازگشت"
@@ -1589,9 +1589,6 @@
       "Error connecting to the Bitcoin API.": [
         "خطا در اتصال به API Bitcoin."
       ],
-      "File has no contents to preview": [
-        "فایل هیچ محتوایی برای پیش‌نمایش ندارد"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "اگر زمان در تلویزیون شما منقضی شده است، روی نوسازی در تلویزیون خود کلیک کرده و کد خود را دوباره وارد کنید."
       ],
@@ -1971,6 +1968,9 @@
       ],
       "Creating your account": [
         "ایجاد حساب کاربری خود"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
@@ -3240,11 +3240,15 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         ""
       ],
@@ -3273,10 +3277,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],

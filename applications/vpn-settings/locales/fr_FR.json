@@ -174,7 +174,7 @@
         "Demander un code de vérification"
       ],
       "Go to sign in": [
-        "Aller se connecter"
+        "Aller à l'identification"
       ],
       "Hide": [
         "Masquer"
@@ -1589,9 +1589,6 @@
       "Error connecting to the Bitcoin API.": [
         "Erreur lors de la connexion à l'API de Bitcoin."
       ],
-      "File has no contents to preview": [
-        "Ce fichier n'a pas de contenu à prévisualiser"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Si le temps sur votre téléviseur est dépassé, cliquez sur « Rafraîchir » sur votre téléviseur et saisissez à nouveau votre code."
       ],
@@ -1971,6 +1968,9 @@
       ],
       "Creating your account": [
         "Création de votre compte"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédit pour la période non utilisée de votre abonnement précédent"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Les crédits, le prorata et tous les coupons applicables sont appliqués au moment de payer"
@@ -3086,11 +3086,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Explorer tous les abonnements ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "À partir de ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "À partir de ${ _price2 } par utilisateur"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "À partir de ${ price }"
@@ -3103,23 +3100,13 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Accès aux services de streaming dans le monde entier"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Bloqueur de publicités intégré (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
-        "Obtenir ${ connections } connexion VPN à haut débit",
-        "Obtenir ${ connections } connexions VPN à haut débit"
+        "Profitez de ${ connections } connexion VPN haut débit",
+        "Profitez de ${ connections } connexions VPN haut débit"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Obtenir ${ connections } connexion VPN à haut débit par utilisateur",
-        "Obtenir ${ connections } connexions VPN à haut débit par utilisateur"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "VPN à haut débit sur ${ maxVpn } appareil",
-        "VPN à haut débit sur ${ maxVpn } appareils"
+        "Profitez de ${ connections } connexion VPN haut débit par utilisateur",
+        "Profitez de ${ connections } connexions VPN haut débit par utilisateur"
       ]
     },
     "new_plans: feature": {
@@ -3316,7 +3303,7 @@
         "Labels illimités"
       ],
       "Unlimited messages per day": [
-        "Nombre de messages illimité par jour"
+        "Aucune limite d'envoi de messages par jour"
       ],
       "Unlimited volume/bandwidth": [
         "Volume/bande passante illimités"
@@ -3352,7 +3339,7 @@
     },
     "new_plans: info": {
       "Comprehensive privacy and security with all Proton services combined.": [
-        "Sécurité et confidentialité complètes grâce à l'association de tous les services Proton."
+        "Une confidentialité et une sécurité totales en utilisant tous les services Proton."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
         "Si vous supprimez votre compte, vous perdrez tous les avantages de l'abonnement ${ visionary } et ce dernier ne sera plus disponible si vous créez un nouveau compte."
@@ -3376,13 +3363,13 @@
         "Une messagerie électronique et un calendrier sécurisés pour les professionnels et les entreprises."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Messagerie sécurisée dotée de fonctionnalités avancées pour vos communications quotidiennes."
+        "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
         "La solution VPN dédiée qui offre un accès à Internet sûr, illimité et à haut débit."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Le compte de démarrage sans frais conçu pour permettre à chacun de bénéficier de la confidentialité par défaut."
+        "Le compte de démarrage gratuit conçu pour que tout le monde puisse bénéficier de la confidentialité par défaut."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Vous bénéficiez d'un prix promotionnel pour votre abonnement actuel. Si vous supprimez votre compte, vous perdrez ce prix promotionnel et il ne sera pas disponible si vous créez un nouveau compte."
@@ -3395,9 +3382,6 @@
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
       ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La solution VPN dédiée qui offre un accès à Internet sûr, illimité et à haut débit."
-      ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre mode de paiement."
       ],
@@ -3405,7 +3389,7 @@
         "Passez au pack pour entreprises avec l'accès à tous les services premium de Proton."
       ],
       "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Passez au pack de confidentialité ultime et accédez à tous les services premium de Proton."
+        "Passez au pack de confidentialité absolue en profitant de tous les services premium de Proton."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Votre essai se termine le ${ formattedTrialExpirationDate }"
@@ -3489,7 +3473,7 @@
         "Les adresses possèdent l'intégralité des capacités d'envoi et de réception. Un utilisateur peut se voir attribuer plusieurs adresses ; cependant, une même adresse ne peut pas être attribuée à plusieurs utilisateurs."
       ],
       "Advanced security VPN with global network": [
-        "VPN à la sécurité avancée accompagné d'un réseau mondial"
+        "VPN haute sécurité avec un réseau mondial"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
         "Vous permet d'accéder à plusieurs réseaux en même temps, p. ex., vous pouvez regarder un film en streaming depuis un autre pays tout en obtenant des résultats de recherche locale"
@@ -3501,7 +3485,7 @@
         "L'envoi en masse d'e-mails promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        "Créez de multiples adresses e-mail pour vos identités en ligne, par exemple JohnShopper@proton.me pour les comptes liés aux achats, JohnNews@proton.me pour les abonnements aux actualités"
+        "Créez différentes adresses selon vos activités : \"JohnShopper@proton.me\" pour les achats et \"JohnNews@proton.me\" pour les abonnements à des sites d'informations par exemple"
       ],
       "Create up to ${ n } custom calendar.": [
         "Créez jusqu'à ${ n } calendrier personnalisé.",
@@ -3535,7 +3519,7 @@
         "Vous protège en bloquant toutes les connexions au réseau lorsque vous êtes accidentellement déconnecté de notre serveur VPN"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Les labels sont des tags simples que vous pouvez ajouter à des messages afin de les trouver plus facilement ou de leur appliquer des filtres"
+        "Vous pouvez ajouter des labels à vos messages pour les retrouver plus facilement ou pour y appliquer des filtres"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Gérez votre abonnement, notamment sa personnalisation. Les modes de paiement acceptés sont les cartes de crédit, PayPal, les cryptomonnaies et les virements bancaires."
@@ -3559,7 +3543,7 @@
         "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de supprimer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        "Notre infrastructure robuste vous garantit l'accès à votre compte lorsque vous en avez besoin"
+        "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
         "Les disques durs de nos serveurs sont entièrement chiffrés à l'aide de plusieurs couches de mots de passe afin de protéger vos données même si notre matériel est compromis"
@@ -3631,7 +3615,7 @@
         "Lorsque vous êtes connecté à notre VPN, vos requêtes DNS sont acheminées à travers notre tunnel VPN chiffré, améliorant ainsi votre confidentialité et votre sécurité en ligne"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "En cas d'envoi à d'autres utilisateurs ${ MAIL_APP_NAME }, le chiffrement est automatique. L'envoi à des utilisateurs ne disposant pas de ${ MAIL_APP_NAME } nécessite l'établissement d'un mot de passe préalable."
+        "Lors de l'envoi à des utilisateurs ${ MAIL_APP_NAME }, le chiffrement est automatique. Dans le cas de destinataires n'utilisant pas ${ MAIL_APP_NAME } un mot de passe doit être créé avant l'envoi."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Vous pouvez disposer de plusieurs administrateurs. Tous les administrateurs peuvent ajouter et gérer les utilisateurs, mais seul l'administrateur principal contrôle la facturation."
@@ -3645,7 +3629,7 @@
         "10 adresses électroniques/alias"
       ],
       "Access advanced VPN features": [
-        "Accéder à des fonctionnalités VPN avancées"
+        "Accédez à des fonctionnalités VPN avancées"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         "Augmenter le degré de personnalisation grâce à 15 adresses électroniques et la prise en charge de trois domaines de messagerie personnalisés"
@@ -3883,13 +3867,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } calendrier par utilisateur",
-        "${ MAX_CALENDARS_PER_USER } calendriers par utilisateur"
+      "${ _n } calendar per user": [
+        "${ _n } calendrier par utilisateur",
+        "${ _n } calendriers par utilisateur"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexion VPN à haute vitesse",
         "${ maxVpn } connexions VPN à haute vitesse"
+      ],
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } connexion VPN à haute vitesse",
@@ -3918,10 +3906,6 @@
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendrier",
         "${ UsedCalendars } calendriers"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } sur ${ MaxCalendars } calendrier",
-        "${ UsedCalendars } sur ${ MaxCalendars } calendriers"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } sur ${ MaxDomains } domaine personnalisé",

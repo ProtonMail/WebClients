@@ -47,7 +47,7 @@
         "Tilføj"
       ],
       "Add ${ BRAND_NAME } Account": [
-        ""
+        "Tilføj ${ BRAND_NAME }-konto"
       ],
       "Add address": [
         "Tilføj adresse"
@@ -200,10 +200,10 @@
         "Opret"
       ],
       "Create a secure ProtonMail address instead": [
-        ""
+        "Opret en sikker ProtonMail-adresse i stedet"
       ],
       "Create account": [
-        ""
+        "Opret konto"
       ],
       "Create address": [
         "Opret adresse"
@@ -215,7 +215,7 @@
         "Opret mappe"
       ],
       "Create free account": [
-        ""
+        "Opret gratis konto"
       ],
       "Create label": [
         "Opret etiket"
@@ -377,7 +377,7 @@
         "Gå til etikette"
       ],
       "Go to sign in": [
-        ""
+        "Gå til login"
       ],
       "Hide": [
         "Skjul"
@@ -443,7 +443,7 @@
         "markér e-mails som"
       ],
       "Maybe later": [
-        ""
+        "Måske senere"
       ],
       "More": [
         "Mere"
@@ -623,7 +623,7 @@
         "Gem ICS-fil"
       ],
       "Save selected": [
-        ""
+        "Gem valgte"
       ],
       "Select ${ planTitle }": [
         "Vælg ${ planTitle }"
@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Kunne ikke hente aktive sessioner. ${ refresh } eller prøv igen senere."
       ],
-      "File has no contents to preview": [
-        "Filen har intet indhold at forhåndsvise"
-      ],
       "Filter with this name already exist": [
         "Et filter med dette navn findes allerede"
       ],
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton kan ikke oprette forbindelse til din Gmail-konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan ikke oprette forbindelse til din Yahoo Mail-konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        ""
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton kan ikke oprette forbindelse til din Yahoo Mail-konto. Sørg for, at:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        ""
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Gå til ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Gå til Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        ""
       ],
       "If 2-step verification is off, turn it on": [
         "Hvis totrinsbekræftelse er deaktiveret, slå det til"
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "i det næste trin skal du vælge alle tilladelserne"
-      ],
       "Manage": [
         "Administrer"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "delte kalendere"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        ""
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Klik på ${ boldICS } linket og download filen"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Gå til ${ calendarLink } i dine Outlook.com-indstillinger"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Gå til ${ calendarViewLink } i Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        ""
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen"
@@ -4262,6 +4256,9 @@
       "Creating your account": [
         ""
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -4691,9 +4688,6 @@
       "New": [
         "Ny"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Derefter skal du logge ind på din Google-konto og give os adgang til dine data."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Ingen metode til gendannelse indstillet. Du risikerer at miste adgang til din konto"
       ],
@@ -4948,6 +4942,9 @@
         "Vælg Fortsæt til ${ name } for at åbne appen. Dette opretter også en ${ name }-konto med din ${ MAIL_APP_NAME }-adresse, så du fremover kan logge ind med ét klik."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
+        ""
+      ],
+      "Select what you want to move from Google.": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -5282,9 +5279,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
-      ],
-      "What do you want to import from your Google account?": [
-        "Hvad ønsker du at importere fra din Google-konto?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Når deaktiveret, forhindrer dette billedfiler i at indlæse på din enhed uden din viden.\t"
@@ -7220,8 +7214,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -7910,11 +7909,15 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         ""
       ],
@@ -7943,10 +7946,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],
@@ -8902,9 +8901,6 @@
       "Select contact group": [
         "Vælg kontaktgruppe"
       ],
-      "Select permissions": [
-        "Vælg tilladelser"
-      ],
       "Select subscription and pay": [
         ""
       ],
@@ -8913,9 +8909,6 @@
       ],
       "Select the way to send this notification": [
         "Vælg måden at sende denne notifikation på"
-      ],
-      "Select what to import": [
-        "Vælg, hvad der skal importeres"
       ],
       "Select when you want this notification to be sent": [
         "Vælg når du ønsker, at denne notifikation skal sendes"
@@ -8952,6 +8945,9 @@
       ],
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"

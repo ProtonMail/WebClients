@@ -1589,9 +1589,6 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
-      "File has no contents to preview": [
-        "Dosyanın ön izlenecek bir içeriği yok"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Televizyonunuzda süre dolduysa, televizyonda yenile üzerine tıklayın ve kodunuzu yeniden yazın."
       ],
@@ -1971,6 +1968,9 @@
       ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki tarife aboneliğinizin kullanılmayan bölümünden kalan kredi"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Krediler, eşit dağıtım ve geçerli kuponlar ödeme sırasında uygulanır"
@@ -3240,13 +3240,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } takvim / kullanıcı",
-        "${ MAX_CALENDARS_PER_USER } takvim / kullanıcı"
+      "${ _n } calendar per user": [
+        "Kullanıcı başına ${ _n } takvim",
+        "Kullanıcı başına ${ _n } takvim"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } yüksek hızlı VPN bağlantısı",
         "${ maxVpn } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } yüksek hızlı VPN bağlantısı",
@@ -3275,10 +3279,6 @@
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } takvim",
         "${ UsedCalendars } takvim"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } / ${ MaxCalendars } takvim",
-        "${ UsedCalendars } / ${ MaxCalendars } takvim"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ MaxDomains } / ${ UsedDomains } özel etki alanı",

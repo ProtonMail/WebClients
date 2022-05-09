@@ -279,7 +279,7 @@
         "Zapisz"
       ],
       "Save selected": [
-        ""
+        "Zapisz zaznaczone"
       ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
@@ -1611,9 +1611,6 @@
       "Error connecting to the Bitcoin API.": [
         "Wystąpił błąd podczas łączenia z interfejsem API Bitcoina."
       ],
-      "File has no contents to preview": [
-        "Plik nie posiada zawartości do podglądu"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Jeśli czas został przekroczony, kliknij przycisk Odśwież na swoim telewizorze i wpisz kod ponownie."
       ],
@@ -1798,16 +1795,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "bajty"
       ],
       "Gigabytes": [
-        ""
+        "gigabajty"
       ],
       "Kilobytes": [
-        ""
+        "kilobajty"
       ],
       "Megabytes": [
-        ""
+        "megabajty"
       ]
     },
     "Frequency of news": {
@@ -1904,13 +1901,13 @@
         "* Karta płatnicza nie jest wymagana."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji miesięcznej. Inne plany dostępne są przy płatności."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji rocznej. Inne plany dostępne są przy płatności."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji dwuletniej. Inne plany dostępne są przy płatności."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -2001,6 +1998,9 @@
       ],
       "Creating your account": [
         "Tworzenie konta"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Niewykorzystane środki z poprzedniego planu"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Środki, dzielenie proporcjonalne i kupony zostaną naliczone podczas płatności"
@@ -3118,11 +3118,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Poznaj wszystkie plany ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Od ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Od ${ _price2 } za użytkownika"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "Od ${ price }"
@@ -3135,12 +3132,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Dostęp do usług streamingu na całym świecie"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Wbudowana blokada reklam (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Uzyskaj ${ connections } szybkie połączenie VPN na użytkownika",
         "Uzyskaj ${ connections } szybkie połączenia VPN",
@@ -3152,12 +3143,6 @@
         "Uzyskaj ${ connections } szybkie połączenia VPN na użytkownika",
         "Uzyskaj ${ connections } szybkich połączeń VPN na użytkownika",
         "Uzyskaj ${ connections } szybkie połączenia VPN na użytkownika"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "${ maxVpn } szybka sieć VPN na urządzeniu",
-        "${ maxVpn } szybkie sieci VPN na urządzeniu",
-        "${ maxVpn } szybkich sieci VPN na urządzeniu",
-        "${ maxVpn } szybkiej sieci VPN na urządzeniu"
       ]
     },
     "new_plans: feature": {
@@ -3456,9 +3441,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Dedykowane rozwiązanie VPN, które zapewnia bezpieczny, nieograniczony i szybki dostęp do Internetu."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
@@ -3951,17 +3933,23 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } kalendarz na użytkownika",
-        "${ MAX_CALENDARS_PER_USER } kalendarze na użytkownika",
-        "${ MAX_CALENDARS_PER_USER } kalendarzy na użytkownika",
-        "${ MAX_CALENDARS_PER_USER } kalendarzy na użytkownika"
+      "${ _n } calendar per user": [
+        "${ _n } kalendarz na użytkownika",
+        "${ _n } kalendarze na użytkownika",
+        "${ _n } kalendarzy na użytkownika",
+        "${ _n } kalendarzy na użytkownika"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } szybkie połącznie VPN",
         "${ maxVpn } szybkie połącznia VPN",
         "${ maxVpn } szybkich połączeń VPN",
         "${ maxVpn } szybkich połączeń VPN"
+      ],
+      "${ n } calendar": [
+        "${ n } kalendarz",
+        "${ n } kalendarze",
+        "${ n } kalendarzy",
+        "${ n } kalendarzy"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } szybkie połącznie VPN",
@@ -4004,12 +3992,6 @@
         "${ UsedCalendars } kalendarze",
         "${ UsedCalendars } kalendarzy",
         "${ UsedCalendars } kalendarzy"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "Kalendarz: ${ UsedCalendars } / ${ MaxCalendars }",
-        "Kalendarze: ${ UsedCalendars } / ${ MaxCalendars }",
-        "Kalendarze: ${ UsedCalendars } / ${ MaxCalendars }",
-        "Kalendarze: ${ UsedCalendars } / ${ MaxCalendars }"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "Niestandardowa domena: ${ UsedDomains } / ${ MaxDomains }",

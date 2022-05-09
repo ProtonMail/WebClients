@@ -1611,9 +1611,6 @@
       "Error connecting to the Bitcoin API.": [
         "Ошибка при подключении к Bitcoin API."
       ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Если время на вашем телевизоре истекло, нажмите \"Обновить\" на телевизоре и введите свой код еще раз."
       ],
@@ -2002,6 +1999,9 @@
       "Creating your account": [
         "Создание учетной записи"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -2072,7 +2072,7 @@
         "Для Visa и MasterCard - три цифры на обратной стороне карты. Для American Express - 4 цифры на лицевой стороне карты."
       ],
       "Free": [
-        "Бесплатно"
+        "Free"
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места."
@@ -3118,11 +3118,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "От: ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "От ${ _price2 } за пользователя"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "От: ${ price }"
@@ -3135,12 +3132,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Доступ к стриминговым сервисам по всему миру"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Встроенный блокировщик рекламы (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Получите ${ connections } высокоскоростное VPN-подключение",
         "Получите ${ connections } высокоскоростных VPN-подключения",
@@ -3152,12 +3143,6 @@
         "Получите ${ connections } высокоскоростных VPN-подключения на пользователя",
         "Получите ${ connections } высокоскоростных VPN-подключений на пользователя",
         "Получите ${ connections } высокоскоростных VPN-подключения на пользователя"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "Высокоскоростная сеть VPN на ${ maxVpn } устройстве",
-        "Высокоскоростная сеть VPN на ${ maxVpn } устройствах",
-        "Высокоскоростная сеть VPN на ${ maxVpn } устройствах",
-        "Высокоскоростная сеть VPN на ${ maxVpn } устройствах"
       ]
     },
     "new_plans: feature": {
@@ -3456,9 +3441,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к аккаунту будет ограничен, а затем аккаунт будет отключен."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ без ограничений в Интернет."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
@@ -3951,13 +3933,19 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         "",
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         "",
         "",
@@ -4000,12 +3988,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         "",
         "",

@@ -111,7 +111,7 @@
         "Uzavření transferů"
       ],
       "Collapse": [
-        ""
+        "Sbalit"
       ],
       "Collapse folder": [
         "Sbalit složku"
@@ -131,6 +131,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Continue transfers": [
+        ""
+      ],
       "Continue with Google": [
         "Pokračovat pomocí účtu Google"
       ],
@@ -144,7 +147,7 @@
         "Vytvořit"
       ],
       "Create a new contact group": [
-        ""
+        "Vytvořit novou skupinu kontaktů"
       ],
       "Create link": [
         "Vytvořit odkaz"
@@ -195,7 +198,7 @@
         "Stáhnout"
       ],
       "Download anyway": [
-        ""
+        "Přesto stáhnout"
       ],
       "Drive Locked": [
         "Disk uzamčen"
@@ -228,7 +231,7 @@
         ""
       ],
       "Expand": [
-        ""
+        "Rozbalit"
       ],
       "Expand folder": [
         "Rozbalit složku"
@@ -496,6 +499,9 @@
       ],
       "Stop sharing": [
         "Zrušit sdílení"
+      ],
+      "Stop transfers": [
+        ""
       ],
       "Submit": [
         "Odeslat"
@@ -1794,9 +1800,6 @@
       "File cannot be merged with folder": [
         "Soubor nelze sloučit se složkou"
       ],
-      "File has no contents to preview": [
-        "Soubor nemá žádný obsah k náhledu"
-      ],
       "File selection is already downloading": [
         "Vybraný soubor se již stahuje"
       ],
@@ -2209,11 +2212,6 @@
         "Proton kontakty nepodporuje ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "v dalším kroku je potřeba vybrat všechna oprávnění"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontakty nebudou importovány. Klikněte pro podrobnosti"
@@ -2472,9 +2470,6 @@
       "Close this screen to exit.": [
         "Pro ukončení zavřete tuto obrazovku."
       ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Uzavíráme správce přenosu, budou zrušeny aktivní přenosy, jste si touto akcí jistí?"
-      ],
       "Conflict": [
         "Konflikt"
       ],
@@ -2575,7 +2570,7 @@
         ""
       ],
       "Estimating time remaining...": [
-        ""
+        "Odhaduji zbývající čas..."
       ],
       "Failed": [
         "Selhalo"
@@ -2632,7 +2627,7 @@
         "zde"
       ],
       "How does encrypted search work?": [
-        ""
+        "Jak fůnguje šifrované vyhledávání?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
@@ -2733,9 +2728,6 @@
       "New": [
         "Nové"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Dále se musíte přihlásit ke svému účtu Google a povolit nám přístup k Vašim datům."
-      ],
       "No": [
         "Ne"
       ],
@@ -2760,14 +2752,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ appName }, mohou být data stále dostupná lokálně."
       ],
       "of": [
         "z"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "Jeden ze zakryprovaných disků je uzamčen. Tohle je s největší pravděpodobností kvůli nedávnému resetování hesla. ${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2830,7 +2825,7 @@
         "Ve frontě"
       ],
       "recommended browser": [
-        ""
+        "doporučený prohlížeč"
       ],
       "Recovery process might take some time.": [
         "Obnovovací proces může trvat nějakou dobu."
@@ -2849,6 +2844,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -2893,6 +2891,9 @@
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         ""
       ],
       "There are no files yet": [
@@ -3021,9 +3022,6 @@
       "What do you want to do?": [
         "Co chcete udělat?"
       ],
-      "What do you want to import from your Google account?": [
-        "Co chcete importovat z účtu Google?"
-      ],
       "What would you like to do?": [
         "Co byste chtěli dělat?"
       ],
@@ -3120,8 +3118,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Váš bezpečný sdílený odkazový řádek pro ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        ""
       ]
     },
     "Info on errors": {
@@ -3139,6 +3137,9 @@
         ""
       ],
       "file data": [
+        ""
+      ],
+      "file data key": [
         ""
       ],
       "keys": [
@@ -3852,8 +3853,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Vezměte prosím na vědomí, že aplikace ${ boldNextStep } požadovala zahájení importu."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding Action": {
@@ -4302,9 +4308,6 @@
       "Browser might run out of memory": [
         ""
       ],
-      "Cancel all active transfers": [
-        "Zrušit všechny aktivní transfery"
-      ],
       "Change layout": [
         "Změnit rozložení"
       ],
@@ -4596,12 +4599,6 @@
       "Select link expiration time": [
         "Vyberte časovou dobu pro vypršení odkazu"
       ],
-      "Select permissions": [
-        "Výběr oprávnění"
-      ],
-      "Select what to import": [
-        "Vyberte co chcete importovat"
-      ],
       "Settings": [
         "Nastavení"
       ],
@@ -4617,6 +4614,9 @@
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         "Velikost"
       ],
@@ -4628,6 +4628,9 @@
       ],
       "Stop sharing with everyone?": [
         "Přestat sdílet se všemi?"
+      ],
+      "Stop transfers?": [
+        ""
       ],
       "The file or folder failed to be downloaded": [
         "Soubor nebo složku se nepodařilo stáhnout"
@@ -4676,6 +4679,9 @@
       ],
       "Warning: suspected fake website": [
         ""
+      ],
+      "What would you like to import?": [
+        "Co byste chtěli importovat?"
       ],
       "What's new": [
         "Co je nového"

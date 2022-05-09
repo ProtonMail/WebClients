@@ -131,6 +131,9 @@
       "Continue": [
         "继续"
       ],
+      "Continue transfers": [
+        "继续传输"
+      ],
       "Continue with Google": [
         "使用 Google 帐号登录"
       ],
@@ -144,7 +147,7 @@
         "创建"
       ],
       "Create a new contact group": [
-        ""
+        "创建联系人群组"
       ],
       "Create link": [
         "创建链接"
@@ -490,6 +493,9 @@
       ],
       "Stop sharing": [
         "停止分享"
+      ],
+      "Stop transfers": [
+        "停止传输"
       ],
       "Submit": [
         "提交"
@@ -1779,9 +1785,6 @@
       "File cannot be merged with folder": [
         "文件无法与文件夹合并"
       ],
-      "File has no contents to preview": [
-        "文件没有内容可预览"
-      ],
       "File selection is already downloading": [
         "所选文件已在下载中"
       ],
@@ -2048,16 +2051,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "字节"
       ],
       "Gigabytes": [
-        ""
+        "GB"
       ],
       "Kilobytes": [
-        ""
+        "KB"
       ],
       "Megabytes": [
-        ""
+        "MB"
       ]
     },
     "Filter notification": {
@@ -2167,11 +2170,6 @@
         "ProtonContacts 不支持 ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "授予本应用所需的所有权限"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 联系人将不会被导入。点击查看详情"
@@ -2266,7 +2264,7 @@
         "${ speed }/s"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } 存储空间"
       ],
       "${ updated } contact updated successfully.": [
         "已成功更新 ${ updated } 位联系人。"
@@ -2354,9 +2352,6 @@
       ],
       "Close this screen to exit.": [
         "关闭这个窗口以退出"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "关闭传输管理器将会取消所有活动传输，您确定吗？"
       ],
       "Conflict": [
         "冲突"
@@ -2604,9 +2599,6 @@
       "New": [
         "新建"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "接下来您需要登录 Google 账户并允许我们访问您的数据。"
-      ],
       "No": [
         "否"
       ],
@@ -2631,14 +2623,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
       ],
       "of": [
         "/"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "您的加密网盘之一被锁定了，这很可能是由于最近重置了密码所导致的。${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2721,6 +2716,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "选择向该地址发送邮件的首选格式。"
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
@@ -2765,6 +2763,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "以下内容可能已被篡改：${ items }，请确认后打开。"
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        ""
       ],
       "There are no files yet": [
         "还没有文件"
@@ -2889,9 +2890,6 @@
       "What do you want to do?": [
         "您想要做什么？"
       ],
-      "What do you want to import from your Google account?": [
-        "您想从您的 Google 账户中导入哪些内容？"
-      ],
       "What would you like to do?": [
         "您想要做些什么？"
       ],
@@ -2988,8 +2986,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "${ boldNameText } 的安全、可共享链接："
+      "Your secure, shareable link for ${ boldNameText }": [
+        ""
       ]
     },
     "Info on errors": {
@@ -3007,6 +3005,9 @@
         ""
       ],
       "file data": [
+        ""
+      ],
+      "file data key": [
         ""
       ],
       "keys": [
@@ -3657,8 +3658,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "请注意，下一步您需要${ boldNextStep }才能开始导入。"
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding Action": {
@@ -4083,9 +4089,6 @@
       "Browser might run out of memory": [
         "浏览器可能内存不足"
       ],
-      "Cancel all active transfers": [
-        "取消所有活动传输"
-      ],
       "Change layout": [
         "调整布局"
       ],
@@ -4368,12 +4371,6 @@
       "Select link expiration time": [
         "选择链接失效时间"
       ],
-      "Select permissions": [
-        "选择权限"
-      ],
-      "Select what to import": [
-        "选择要导入的内容"
-      ],
       "Settings": [
         "设置"
       ],
@@ -4389,6 +4386,9 @@
       "Sign in again to continue": [
         "再次登录方可继续"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         "大小"
       ],
@@ -4400,6 +4400,9 @@
       ],
       "Stop sharing with everyone?": [
         "停止对所有人的分享？"
+      ],
+      "Stop transfers?": [
+        "停止传输？"
       ],
       "The file or folder failed to be downloaded": [
         "文件或文件夹下载失败"
@@ -4447,6 +4450,9 @@
         "警告"
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

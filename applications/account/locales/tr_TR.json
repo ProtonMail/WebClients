@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Etkin oturumlar alınamadı. Lütfen ${ refresh }yin ya da bir süre sonra yeniden deneyin."
       ],
-      "File has no contents to preview": [
-        "Dosyanın ön izlenecek bir içeriği yok"
-      ],
       "Filter with this name already exist": [
         "Aynı adlı bir süzgeç zaten var"
       ],
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve kapı numarasının doğru olduğundan emin olun."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Yahoo Mail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve kapı numarasının doğru olduğundan emin olun."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton, Yahoo hesabınızla bağlantı kuramada. Lütfen e-posta sunucusu adresinin ve kapı numarasının doğru olduğundan emin olun."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton, Yahoo Mail hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Kısa sürede çok fazla istek yapıldı. Lütfen birkaç dakika sonra yeniden deneyin."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "${ boldAccountSecurity } bölümüne gidin"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Outlook.com ${ securitySettingsLink } bölümüne gidin"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Outlook ${ securitySettingsLink } bölümüne gidin"
       ],
       "If 2-step verification is off, turn it on": [
         "2 aşamalı kimlik doğrulaması kapalı ise açın"
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "sonraki adımda tüm izinleri seçmelisiniz"
-      ],
       "Manage": [
         "Yönet"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "paylaşılmış takvimler"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "${ boldICS } bağlantısına tıklayıp dosyayı indirin"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Outlook.com ayarlarınızdan ${ calendarLink } bölümüne gidin"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Outlook ayarlarınızdan ${ calendarLink } bölümüne gidin"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Yahoo Mail üzerinde ${ calendarViewLink } bölümüne gidin"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Yahoo üzerinde ${ calendarViewLink } bölümüne gidin"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "İmleci içe aktarmak istediğiniz takvim üzerine getirin ve menüyü açın"
@@ -4262,6 +4256,9 @@
       "Creating your account": [
         "Hesabınız oluşturuluyor"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Önceki tarife aboneliğinizin kullanılmayan bölümünden kalan kredi"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Krediler, eşit dağıtım ve geçerli kuponlar ödeme sırasında uygulanır"
       ],
@@ -4691,9 +4688,6 @@
       "New": [
         "Yeni"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Ardından, Google hesabınızda oturum açmanız ve verilerinize erişmemize izin vermeniz gerekmektedir."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Bir hesap kurtarma yöntemi ayarlanmamış. Hesabınıza erişimi kaybetme riskiniz var"
       ],
@@ -4949,6 +4943,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         "Tarifenizde bulunacak kullanıcı sayısını seçin. Her ek kullanıcı için ${ price } eklenir. ${ maxUsers } kullanıcıdan fazlasına gerek duyuyorsanız lütfen ${ contactMailToLink } müşteri başarısı ekibimiz ile görüşün."
+      ],
+      "Select what you want to move from Google.": [
+        "Google üzerinden aktarmak istediklerinizi seçin."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
@@ -5282,9 +5279,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Geçerli tarifenizi aynı fiyata daha fazlasını sunan iyileştirilmiş bir tarifeye yükseltiyoruz. Sistemlerimiz güncellenmekte olduğundan bunu değiştiremezsiniz. İşlem tamamlandığında size bir e-posta göndereceğiz."
-      ],
-      "What do you want to import from your Google account?": [
-        "Google hesabınızdan içe aktarılmasını istedikleriniz nelerdir?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Devre dışı bırakıldığında, görsel dosyalarının bilginiz olmadan aygıtınıza yüklenmesi engellenir."
@@ -7220,8 +7214,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Lütfen içe aktarmayı başlatmak için uygulama tarafından ${ boldNextStep } gerektiğini unutmayın."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize Proton tarafından erişilmesine izin vermeniz gerekecek."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
       ]
     },
     "Onboarding": {
@@ -7910,13 +7909,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } takvim / kullanıcı",
-        "${ MAX_CALENDARS_PER_USER } takvim / kullanıcı"
+      "${ _n } calendar per user": [
+        "Kullanıcı başına ${ _n } takvim",
+        "Kullanıcı başına ${ _n } takvim"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } yüksek hızlı VPN bağlantısı",
         "${ maxVpn } yüksek hızlı VPN bağlantısı"
+      ],
+      "${ n } calendar": [
+        "${ n } takvim",
+        "${ n } takvim"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } yüksek hızlı VPN bağlantısı",
@@ -7945,10 +7948,6 @@
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } takvim",
         "${ UsedCalendars } takvim"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } / ${ MaxCalendars } takvim",
-        "${ UsedCalendars } / ${ MaxCalendars } takvim"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ MaxDomains } / ${ UsedDomains } özel etki alanı",
@@ -8902,9 +8901,6 @@
       "Select contact group": [
         "Kişi grubunu seçin"
       ],
-      "Select permissions": [
-        "İzinleri seçin"
-      ],
       "Select subscription and pay": [
         "Aboneliği ve ödemeyi seçin"
       ],
@@ -8913,9 +8909,6 @@
       ],
       "Select the way to send this notification": [
         "Bu bildirimin gönderilme yöntemini seçin"
-      ],
-      "Select what to import": [
-        "Neyin içe aktarılacağını seçin"
       ],
       "Select when you want this notification to be sent": [
         "Bu bildirimin ne zaman gönderilmesini istediğinizi seçin"
@@ -8952,6 +8945,9 @@
       ],
       "Sign in again to continue": [
         "Devam etmek için yeniden oturum açın"
+      ],
+      "Sign in and grant access": [
+        "Oturum açın ve erişim izni verin"
       ],
       "Sort folders alphabetically": [
         "Klasörler alfabetik olarak sıralansın"

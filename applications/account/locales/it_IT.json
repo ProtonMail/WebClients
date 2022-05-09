@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Impossibile ottenere sessioni attive. Sei pregato di ${ refresh } o riprovare più tardi."
       ],
-      "File has no contents to preview": [
-        "Il file non ha contenuti da visualizzare in anteprima"
-      ],
       "Filter with this name already exist": [
         "Esiste già un filtro con questo nome"
       ],
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton non può connettersi al tuo account Gmail. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton non può connettersi al tuo account Yahoo Mail. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton non può connettersi al tuo account Yahoo. Assicurati che l'indirizzo del server di posta e il numero della porta siano corretti."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton non può connettersi al tuo account Yahoo Mail. Assicurati che:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton non può connettersi al tuo account Yahoo. Assicurati che:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Troppe richieste recenti. Per favore riprova tra qualche istante."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Vai a ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Vai su Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Vai su Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Se la verifica in due passaggi è disattivata, attivala"
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "nel passaggio successivo è necessario selezionare tutti i permessi"
-      ],
       "Manage": [
         "Gestisci"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "calendari condivisi"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Clicca sul collegamento ${ boldICS } e scarica il file"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Vai a ${ calendarLink } nelle impostazioni di Outlook.com"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Vai a ${ calendarLink } nelle impostazioni di Outlook"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Vai al ${ calendarViewLink } in Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Vai al ${ calendarViewLink } in Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Passa il mouse sul calendario che desideri importare e apri il menu a discesa"
@@ -4262,6 +4256,9 @@
       "Creating your account": [
         "Creazione del tuo account"
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Credito per la parte non usata del tuo precedente abbonamento"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Crediti, proporzione ed eventuali coupon applicabili vengono applicati al momento del pagamento"
       ],
@@ -4477,7 +4474,7 @@
         "Se non trovi l'email nella tua casella di posta, controlla la cartella spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "Se hai un dominio personalizzato con ${ MAIL_APP_NAME }, puoi impostare un indirizzo email catch-all per ricevere i messaggi inviati al tuo dominio ma a un indirizzo email non valido (ad es. a causa di errori di battitura)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se hai un codice regalo, inseriscilo qui sotto per applicare lo sconto."
@@ -4690,9 +4687,6 @@
       ],
       "New": [
         "Nuovo"
-      ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Successivamente dovrai accedere al tuo account Google e consentirci di accedere ai tuoi dati."
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Nessun metodo di recupero dell'account impostato; rischi di perdere l'accesso al tuo account"
@@ -4948,7 +4942,10 @@
         "Seleziona Continua su ${ name } per aprire l'app. Questo crea anche un account ${ name } con il tuo indirizzo ${ MAIL_APP_NAME } in modo da poter accedere in futuro con un clic."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }. Se hai bisogno di più di ${ maxUsers } account utente, per favore ${ contactMailToLink } il nostro servizione clienti."
+        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }. Se hai bisogno di più di ${ maxUsers } account utente, per favore ${ contactMailToLink } il nostro servizio clienti."
+      ],
+      "Select what you want to move from Google.": [
+        "Seleziona cosa vuoi spostare da Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
@@ -5282,9 +5279,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Stiamo aggiornando il tuo piano attuale a un piano migliorato che offre di più allo stesso prezzo. Durante l'aggiornamento dei nostri sistemi, non potrai modificarlo. Ti invieremo un'e-mail non appena sarà terminato."
-      ],
-      "What do you want to import from your Google account?": [
-        "Cosa vuoi importare dal tuo account Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Se disabilitato, questo impedirà ai file di immagini il caricamento sul dispositivo senza che tu ne sia informato."
@@ -6946,7 +6940,7 @@
         "È sicuro di voler disattivare l'autenticazione in due passaggi?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        ""
+        "Collega il tuo dominio personalizzato a ${ BRAND_NAME } per impostare indirizzi email personalizzati (ad es. tu@tuaazienda.com). La nostra procedura guidata ti guiderà attraverso il processo."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "La tua prova gratuita è terminata. L'accesso al tuo account sarà presto disabilitato. ${ action }"
@@ -7218,11 +7212,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Scopri tutti i piani ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Da ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Da ${ _price2 } per utente"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "Da ${ price }"
@@ -7235,12 +7226,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Accedi ai servizi di streaming in tutto il mondo"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Blocco degli annunci integrato (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Ottieni ${ connections } connessione VPN ad alta velocità",
         "Ottieni ${ connections } connessioni VPN ad alta velocità"
@@ -7248,10 +7233,6 @@
       "Get ${ connections } high-speed VPN connection per user": [
         "Ottieni ${ connections } connessione VPN ad alta velocità per utente",
         "Ottieni ${ connections } connessioni VPN ad alta velocità per utente"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "VPN ad alta velocità su ${ maxVpn } dispositivo",
-        "VPN ad alta velocità su ${ maxVpn } dispositivi"
       ]
     },
     "new_plans: feature": {
@@ -7532,9 +7513,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La soluzione VPN dedicata che fornisce un accesso sicuro, senza restrizioni e ad alta velocità a Internet."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
@@ -7880,8 +7858,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Tieni presente che ${ boldNextStep } richiesto dall'applicazione per avviare l'importazione."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Successivamente dovrai accedere al tuo account Google e concedere a Proton l'accesso ai tuoi dati."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Affinché l'importazione funzioni, devi selezionare tutti gli elementi richiesti come mostrato nella GIF."
       ]
     },
     "Onboarding": {
@@ -8570,13 +8553,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } calendario per utente",
-        "${ MAX_CALENDARS_PER_USER } calendari per utente"
+      "${ _n } calendar per user": [
+        "${ _n } calendario per utente",
+        "${ _n } calendari per utente"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connessione VPN ad alta velocità",
         "${ maxVpn } connessioni VPN ad alta velocità"
+      ],
+      "${ n } calendar": [
+        "${ n } calendario",
+        "${ n } calendari"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } connessione VPN ad alta velocità",
@@ -8605,10 +8592,6 @@
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendario",
         "${ UsedCalendars } calendari"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } di ${ MaxCalendars } calendario",
-        "${ UsedCalendars } di ${ MaxCalendars } calendari"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } di ${ MaxDomains } dominio personalizzato",
@@ -9562,9 +9545,6 @@
       "Select contact group": [
         "Seleziona gruppo di contatti"
       ],
-      "Select permissions": [
-        "Seleziona permessi"
-      ],
       "Select subscription and pay": [
         "Seleziona abbonamento e paga"
       ],
@@ -9573,9 +9553,6 @@
       ],
       "Select the way to send this notification": [
         "Seleziona il modo di inviare questa notifica"
-      ],
-      "Select what to import": [
-        "Seleziona cosa importare"
       ],
       "Select when you want this notification to be sent": [
         "Scegli quando vuoi inviare questa notifica"
@@ -9612,6 +9589,9 @@
       ],
       "Sign in again to continue": [
         "Accedi di nuovo per continuare"
+      ],
+      "Sign in and grant access": [
+        "Accedi e concedi l'accesso"
       ],
       "Sort folders alphabetically": [
         "Ordina le cartelle in modo alfabetico"
@@ -9967,8 +9947,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        ""
+        "Esegui l'upgrade a ${ planName } per connettere alla VPN fino a ${ n } dispositivo contemporaneamente",
+        "Esegui l'upgrade a ${ planName } per connettere alla VPN fino a ${ n } dispositivi contemporaneamente"
       ]
     },
     "Upgrade notice": {

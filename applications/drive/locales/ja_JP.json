@@ -131,6 +131,9 @@
       "Continue": [
         "続行"
       ],
+      "Continue transfers": [
+        ""
+      ],
       "Continue with Google": [
         "Google で続行"
       ],
@@ -222,7 +225,7 @@
         "ドライブ検索を有効化"
       ],
       "Expand": [
-        ""
+        "展開"
       ],
       "Expand folder": [
         "フォルダーを展開"
@@ -490,6 +493,9 @@
       ],
       "Stop sharing": [
         "共有を停止"
+      ],
+      "Stop transfers": [
+        ""
       ],
       "Submit": [
         "送信"
@@ -1779,9 +1785,6 @@
       "File cannot be merged with folder": [
         "ファイルはフォルダーと結合することができません"
       ],
-      "File has no contents to preview": [
-        "ファイルにプレビューするコンテンツがありません"
-      ],
       "File selection is already downloading": [
         "選択されたファイルはすでにダウンロード中です"
       ],
@@ -1858,7 +1861,7 @@
         "プライマリーアドレス鍵が復号されていません。"
       ],
       "Report failed to be sent": [
-        ""
+        "レポートの送信に失敗しました"
       ],
       "Request timed out": [
         "リクエストはタイムアウトしました"
@@ -2167,11 +2170,6 @@
         "ProtonContactsは${ forNow } をサポートしていません"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "次のステップで必要なすべての権限を選択します"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
@@ -2354,9 +2352,6 @@
       ],
       "Close this screen to exit.": [
         "画面を閉じると終了します。"
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "転送マネージャーを閉じるとすべてのアクティブな転送がキャンセルされますがよろしいですか?"
       ],
       "Conflict": [
         "競合"
@@ -2604,9 +2599,6 @@
       "New": [
         "新規"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "次に、Google アカウントにログインしてデータにアクセスすることを許可します。"
-      ],
       "No": [
         "いいえ"
       ],
@@ -2631,13 +2623,16 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "メモ: アップロードされたキーは暗号化に利用できます。暗号化は自動的に無効化されます。"
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "メモ: まだデータは ${ appName } をインストールしているデバイスで利用可能な場合があります。"
       ],
       "of": [
         " / "
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
@@ -2721,6 +2716,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
@@ -2764,6 +2762,9 @@
         "アプリケーションは、エクスポートする前に連絡先をローカルで復号する必要があります。プロセスの終了時に、VCF ファイルが生成され、ダウンロードすることができます。"
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         ""
       ],
       "There are no files yet": [
@@ -2889,9 +2890,6 @@
       "What do you want to do?": [
         "どのようにしますか?"
       ],
-      "What do you want to import from your Google account?": [
-        "Google アカウントから何をインポートしますか?"
-      ],
       "What would you like to do?": [
         "何をしたいですか?"
       ],
@@ -2988,8 +2986,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "${ boldNameText } を安全に共有するためのリンク:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        ""
       ]
     },
     "Info on errors": {
@@ -3008,6 +3006,9 @@
       ],
       "file data": [
         "ファイルデータ"
+      ],
+      "file data key": [
+        ""
       ],
       "keys": [
         "キー"
@@ -3657,7 +3658,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -3666,7 +3672,7 @@
         "ベータ版アクセスを有効化"
       ],
       "Next": [
-        ""
+        "次へ"
       ],
       "Start using ${ appName }": [
         "${ appName } を使ってみる"
@@ -4083,9 +4089,6 @@
       "Browser might run out of memory": [
         "ブラウザーのメモリが不足しています"
       ],
-      "Cancel all active transfers": [
-        "現在の全ての転送処理をキャンセルする"
-      ],
       "Change layout": [
         "レイアウトを変更"
       ],
@@ -4368,12 +4371,6 @@
       "Select link expiration time": [
         "リンクの有効時間を選択"
       ],
-      "Select permissions": [
-        "権限を選択"
-      ],
-      "Select what to import": [
-        "インポートするものを選択"
-      ],
       "Settings": [
         "設定"
       ],
@@ -4389,6 +4386,9 @@
       "Sign in again to continue": [
         "続行するには再度ログインしてください"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         "サイズ"
       ],
@@ -4400,6 +4400,9 @@
       ],
       "Stop sharing with everyone?": [
         "共有を停止してよろしいですか?"
+      ],
+      "Stop transfers?": [
+        "転送を中止しますか?"
       ],
       "The file or folder failed to be downloaded": [
         "ファイルまたはフォルダーのダウンロードは失敗しました"
@@ -4448,6 +4451,9 @@
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "更新情報"
