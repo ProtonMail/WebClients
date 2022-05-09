@@ -373,7 +373,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                 }}
                                 data-testid="userdropdown:button:switch-account"
                             >
-                                {c('Action').t`Switch account`}
+                                {c('new_plans: action').t`Switch or add account`}
                             </ButtonLike>
                         </div>
                     ) : null}
