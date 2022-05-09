@@ -49,6 +49,7 @@ export type ShareURL = WithSRPPayload<{
     SharePasswordSalt: string;
     ShareURLID: string;
     Token: string;
+    PublicUrl: string;
 }>;
 
 export type UpdateSharedURL = WithSRPPayload<{
