@@ -865,6 +865,11 @@
         "Неделя"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Закрыть"
@@ -2754,11 +2759,6 @@
         "ProtonContacts ${ forNow } не поддерживает:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "на следующем шаге необходимо выбрать все разрешения"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
@@ -3107,9 +3107,6 @@
       "New": [
         "Новый"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
-      ],
       "No contacts added yet": [
         "Контакты ещё не добавлены"
       ],
@@ -3127,6 +3124,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ни один из загруженных ключей не подходит для шифрования. Шифрование автоматически отключено."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "События, ранее обновленные организатором, будут сохранены, но некоторые ваши ответы будут потеряны."
@@ -3181,6 +3181,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -3295,9 +3298,6 @@
       ],
       "Week": [
         "Неделя"
-      ],
-      "What do you want to import from your Google account?": [
-        "Что вы хотите импортировать из своего аккаунта Google?"
       ],
       "Which event would you like to delete?": [
         "Какое событие вы хотите удалить?"
@@ -4008,7 +4008,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Мы освежили внешний вид Proton.${ br } У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
       ]
     },
     "new_plans: title": {
@@ -4182,8 +4182,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -5060,9 +5065,6 @@
       "Select event's last date": [
         "Выберите последнюю дату события"
       ],
-      "Select permissions": [
-        "Выберите разрешения"
-      ],
       "Select the time to send this notification": [
         "Выберите время отправки этого уведомления"
       ],
@@ -5074,9 +5076,6 @@
       ],
       "Select the way to send this notification": [
         "Выберите способ отправки этого уведомления"
-      ],
-      "Select what to import": [
-        "Виберете что импортировать"
       ],
       "Select when this event will stop happening": [
         "Выберите, когда это событие прекратится"
@@ -5102,6 +5101,9 @@
       "Sign in again to continue": [
         "Чтобы продолжить, повторно войдите ещё раз"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         "Обновление события"
       ],
@@ -5119,6 +5121,9 @@
       ],
       "Warning: suspected fake website": [
         "Предупреждение: предполагаемый поддельный сайт"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Что нового"

@@ -117,7 +117,7 @@
         "Zkopírovat e-mail do schránky"
       ],
       "Create a new contact group": [
-        ""
+        "Vytvořit novou skupinu kontaktů"
       ],
       "Create calendar": [
         "Vytvořit kalendář"
@@ -213,7 +213,7 @@
         "Přejít do nastavení"
       ],
       "Got it": [
-        ""
+        "Rozumím"
       ],
       "Hide advanced PGP settings": [
         "Skrýt pokročilá nastavení PGP"
@@ -863,6 +863,11 @@
       ],
       "Week": [
         "Týden"
+      ]
+    },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Změnit časový rozsah na"
       ]
     },
     "Collapsible tooltip": {
@@ -2754,11 +2759,6 @@
         "ProtonContacts nepodporuje ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "v dalším kroku je potřeba vybrat všechna oprávnění"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } mimo ${ totalContacts } kontakty nebudou nahrané. Klikněte pro detaily"
@@ -2874,7 +2874,7 @@
         "${ selectedFoldersCount } vybraných štítků"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } úložiště"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt byl úspěšně aktualizován.",
@@ -2937,7 +2937,7 @@
         "Na jednu pozvánku je povoleno maximálně 100 účastníků"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nemůžete si vzpomenout na helso? Můžeme Vám pomoci vyčistit šifrovaná data od všech šifrovaných kontaktů s tímto klíčem a v tomto procesu zavřete upozornění."
@@ -3107,9 +3107,6 @@
       "New": [
         "Nové"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Dále se musíte přihlásit ke svému účtu Google a povolit nám přístup k Vašim datům."
-      ],
       "No contacts added yet": [
         "Žádné kontakty dosud nebyly přidány"
       ],
@@ -3127,6 +3124,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Výskyt dříve aktualizovaný organizátorem bude zachován, ale některé vaše odpovědi budou ztraceny."
@@ -3181,6 +3181,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
+      ],
+      "Select what you want to move from Google.": [
+        "Vyberte co chcete přesunout z Googlu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -3255,7 +3258,7 @@
         "Tato událost byla aktualizována. Organizátor nebude informován o tom, že jste pozvánku odmítli, protože z pozvané adresy nelze odesílat e-maily. Chcete tuto událost přesto smazat?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -3285,7 +3288,7 @@
         "Aktualizovat opakující se událost"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
@@ -3295,9 +3298,6 @@
       ],
       "Week": [
         "Týden"
-      ],
-      "What do you want to import from your Google account?": [
-        "Co chcete importovat z účtu Google?"
       ],
       "Which event would you like to delete?": [
         "Která událost chcete smazat?"
@@ -3578,7 +3578,7 @@
         "Jaká je pravděpodobnost, že doporučíte ${ calendarAppName } příteli nebo kolegovi?"
       ],
       "I understand the risk": [
-        ""
+        "Rozumím rizikům"
       ],
       "Import all messages": [
         "Importovat všechny zprávy"
@@ -4172,24 +4172,29 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Vezměte prosím na vědomí, že ${ boldNextStep } požaduje aplikace pro zahájení importu."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Dále se musíte přihlásit ke svému účtu Google a udělit společnosti Proton přístup ke svým datům."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
       ]
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        ""
+        "Vítejte v ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
-        ""
+        "Kde můžete převzít kontrolu nad svým časem a svými daty."
       ]
     },
     "Onboarding Action": {
       "Next": [
-        ""
+        "Další"
       ],
       "Start using ${ appName }": [
-        ""
+        "Začněte používat ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -4467,7 +4472,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
@@ -4662,7 +4667,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/měsíc"
       ]
     },
     "Table header": {
@@ -5050,9 +5055,6 @@
       "Select event's last date": [
         "Vyberte poslední datum události"
       ],
-      "Select permissions": [
-        "Vyberte oprávnění"
-      ],
       "Select the time to send this notification": [
         "Vyberte čas pro odeslání tohoto oznámení"
       ],
@@ -5064,9 +5066,6 @@
       ],
       "Select the way to send this notification": [
         "Vyberte způsob, jak odeslat toto oznámení"
-      ],
-      "Select what to import": [
-        "Vyberte, co chcete importovat"
       ],
       "Select when this event will stop happening": [
         "Vyberte, kdy se tato událost přestane vyskytovat"
@@ -5092,6 +5091,9 @@
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
+      "Sign in and grant access": [
+        "Přihlaste se a povolte přístup"
+      ],
       "Update event": [
         "Aktualizovat událost"
       ],
@@ -5108,7 +5110,10 @@
         "Upozornění"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Varování: pravděpodobně se jedná o podvodnou stránku"
+      ],
+      "What would you like to import?": [
+        "Co byste chtěli importovat?"
       ],
       "What's new": [
         "Co je nového"

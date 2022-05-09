@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Az aktív munkamenetek betöltése nem sikerült, ${ refresh } vagy próbálja meg később."
       ],
-      "File has no contents to preview": [
-        "Nincs előnézeti tartalom"
-      ],
       "Filter with this name already exist": [
         "Ilyen nevű szűrő már létezik"
       ],
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "A Proton nem tud csatlakozni a Gmail fiókhoz. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "A Proton nem tud csatlakozni a Yahoo Mail fiókhoz. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "A Proton nem tud csatlakozni a Yahoo Mail fiókjához. Ellenőrizze, hogy a szerver címe és port száma megfelelő."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "A Proton nem tud csatlakozni a Yahoo fiókhoz. Ellenőrizze a következőket:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "A Proton nem tud csatlakozni a Yahoo fiókjához. Ellenőrizze a következőket:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Túl sok lekérdezés történt. Próbálja újra egy kis várakozás után."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Nyissa meg a ${ boldAccountSecurity } részt"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Nyissa meg az Outlook.com ${ securitySettingsLink } részt"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Nyissa meg az Outlook ${ securitySettingsLink } részt"
       ],
       "If 2-step verification is off, turn it on": [
         "Ha a kétlépéses hitelesítés ki van kapcsolva, kapcsolja be"
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "a következő lépésben ki kell választania az összes jogosultságot"
-      ],
       "Manage": [
         "Kezelés"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "megosztott naptárak"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Kattintson az ${ boldICS } hivatkozásra és töltse le a fájlt"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Nyissa meg a ${ calendarLink } részt az Outlook.com beállításaiban"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Nyissa meg a ${ calendarLink } részt az Outlook beállításaiban"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Nyissa meg a ${ calendarViewLink } a Yahoo Mailben"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Nyissa meg a ${ calendarViewLink }-t a Yahoo Mailben"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Mozgassa az egeret az importálni kívánt naptár fölé és nyissa le a lenyíló menüt"
@@ -4262,6 +4256,9 @@
       "Creating your account": [
         ""
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -4691,9 +4688,6 @@
       "New": [
         "Új"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze az adatokhoz való hozzáférést."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Nincs megadva fiók helyreállítási mód; megvan a veszélye, hogy elveszti fiókja elérését"
       ],
@@ -4949,6 +4943,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
+      ],
+      "Select what you want to move from Google.": [
+        "Válassza ki, mit szeretne a Google-ból áthozni."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
@@ -5282,9 +5279,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
-      ],
-      "What do you want to import from your Google account?": [
-        "Mit szeretne importálni a Google fiókjából?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Kikapcsolása megakadályozza, hogy az ön értesítése nélkül töltődjenek le képek az eszközére."
@@ -7220,8 +7214,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Az importlás elindításához ${ boldNextStep } melyet az alkalmazás kér."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a Protonnak az adatokhoz való hozzáférést."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
       ]
     },
     "Onboarding": {
@@ -7910,13 +7909,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "",
-        ""
+      "${ _n } calendar per user": [
+        "${ _n } naptár felhasználónként",
+        "${ _n } naptár felhasználónként"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "",
         ""
+      ],
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
       ],
       "${ n } high-speed VPN connection": [
         "",
@@ -7943,10 +7946,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],
@@ -8902,9 +8901,6 @@
       "Select contact group": [
         "Névjegy csoport kiválasztása"
       ],
-      "Select permissions": [
-        "Válasszon jogosultságokat"
-      ],
       "Select subscription and pay": [
         ""
       ],
@@ -8913,9 +8909,6 @@
       ],
       "Select the way to send this notification": [
         "Válassza ki az emlékeztető elküldésének módját"
-      ],
-      "Select what to import": [
-        "Válassza ki az importálandó dolgokat"
       ],
       "Select when you want this notification to be sent": [
         "Válassza ki az emlékeztető elküldésének időpontját"
@@ -8952,6 +8945,9 @@
       ],
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
+      ],
+      "Sign in and grant access": [
+        "Jelentkezzen be és adjon hozzáférést"
       ],
       "Sort folders alphabetically": [
         "Mappák rendezése betűrendbe"
@@ -9307,8 +9303,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        ""
+        "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
+        "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
       ]
     },
     "Upgrade notice": {

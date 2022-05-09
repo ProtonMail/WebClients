@@ -859,6 +859,11 @@
         "Pekan"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         ""
@@ -2664,11 +2669,6 @@
         "ProtonContacts tidak mendukung ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -2960,9 +2960,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -2980,6 +2977,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Kunci yang diunggah tidak ada yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Kejadian yang sebelumnya diperbarui oleh penyelenggara akan disimpan, tetapi beberapa jawaban Anda akan hilang."
@@ -3034,6 +3034,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -3148,9 +3151,6 @@
       ],
       "Week": [
         "Pekan"
-      ],
-      "What do you want to import from your Google account?": [
-        ""
       ],
       "Which event would you like to delete?": [
         "Acara mana yang ingin dihapus?"
@@ -3947,7 +3947,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -4780,9 +4785,6 @@
       "Select event's last date": [
         "Pilih tanggal akhir acara"
       ],
-      "Select permissions": [
-        ""
-      ],
       "Select the time to send this notification": [
         "Pilih waktu pengiriman notifikasi"
       ],
@@ -4794,9 +4796,6 @@
       ],
       "Select the way to send this notification": [
         "Pilih cara untuk mengirim notifikasi ini"
-      ],
-      "Select what to import": [
-        ""
       ],
       "Select when this event will stop happening": [
         "Pilih waktu saat acara ini berakhir"
@@ -4822,6 +4821,9 @@
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         "Perbarui acara"
       ],
@@ -4838,6 +4840,9 @@
         "Peringatan"
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

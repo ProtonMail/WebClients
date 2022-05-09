@@ -207,7 +207,7 @@
         "Buat pesan baru"
       ],
       "Custom filter": [
-        "Filter kustom"
+        "Filter khusus"
       ],
       "Customize": [
         "Atur"
@@ -1275,9 +1275,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Permintaan waktu baru ini tidak cocok dengan detail undangan Anda. Silakan verifikasi detail undangan di kalender Anda."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Jawaban ini tidak cocok dengan detail undangan Anda. Silakan verifikasi detail undangan di kalender Anda."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } telah menyetujui undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk salah satu acara dalam rangkaian acara ini."
       ],
@@ -1310,6 +1307,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } meminta kabar terkini untuk acara yang sudah tidak ada di kalender Anda."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } meminta pembaruan terkini seputar acara yang tidak sesuai dengan rincian undangan Anda. Harap verifikasi rincian undangan yang ada pada kalender Anda."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } telah menolak undangan untuk dapat hadir dan telah mengusulkan jadwal baru untuk salah satu acara dalam rangkaian acara ini."
@@ -1464,9 +1464,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "Menambahkan kegiatan ke dalam suatu acara tidak didukung untuk saat ini"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "Kegiatan sudah ditambahkan ke acara ${ veventIcsTitle }"
-      ],
       "Event refreshing is not supported for the moment": [
         "Pemuatan ulang acara belum didukung untuk saat ini"
       ],
@@ -1491,11 +1488,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Undangan ini kedaluwarsa. Acara telah diperbarui."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Balasan ini tidak sesuai dengan rincian undangan Anda. Silakan verifikasi rincian undangan di kalender Anda."
+      ],
+      "This response is out of date.": [
+        "Balasan ini telah kedaluwarsa."
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Respon ini kedaluwarsa. Acara ini sudah tidak ada di kalender Anda."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Respon ini kedaluwarsa. Acara telah diperbarui."
       ],
       "This response is out of date. You have no calendars.": [
         "Respon ini kedaluwarsa. Anda tidak memiliki kalender."
@@ -2825,9 +2825,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "Gagal mengenkripsi lampiran. Silakan coba lagi."
       ],
-      "File has no contents to preview": [
-        "Berkas ini kosong"
-      ],
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
       ],
@@ -3624,11 +3621,6 @@
         "Gagal membuat kalender acara"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "terlebih dahulu menyetujui akses-akses izin yang diminta oleh aplikasi kami"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } dari ${ totalContacts } kontak tidak akan diimpor. Klik untuk melihat rincian"
@@ -4211,9 +4203,6 @@
       "New": [
         "Baru"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan kami izin untuk dapat mengakses data-data Anda."
-      ],
       "No action selected": [
         "Tidak ada tindakan yang dipilih"
       ],
@@ -4379,6 +4368,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Pilih format email yang akan digunakan setiap kali Anda mengirim email ke alamat ini."
       ],
+      "Select what you want to move from Google.": [
+        "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Pilih kalender-kalender mana saja yang akan diimpor. Untuk setiap kalender yang Anda impor, sistem kami akan membuat kalender baru hingga batas maksimum 20 kalender."
       ],
@@ -4412,8 +4404,8 @@
       "Show original message": [
         "Tampilkan pesan asli"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "Maaf, pesan ini tidak ada atau sudah kedaluwarsa"
+      "Sorry, this message does not exist or has already expired.": [
+        "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan."
@@ -4675,9 +4667,6 @@
       ],
       "Week": [
         "Pekan"
-      ],
-      "What do you want to import from your Google account?": [
-        "Apa yang hendak Anda impor dari akun Google Anda?"
       ],
       "When do you want your message to be sent?": [
         "Kapankah Anda ingin pesan Anda terkirim?"
@@ -5922,8 +5911,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Harap diingat bahwa Anda harus ${ boldNextStep } untuk dapat memulai proses impor."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Selanjutnya, Anda perlu masuk ke akun Google Anda dan memberikan kami izin untuk mengakses data Anda."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Agar proses impor dapat berlangsung, Anda harus memilih seluruh item yang diminta sebagaimana yang ditampilkan dalam GIF."
       ]
     },
     "Onboarding": {
@@ -5981,7 +5975,7 @@
     },
     "Option group": {
       "Custom folders": [
-        "Kustom folder"
+        "Folder khusus"
       ],
       "Default folders": [
         "Folder-folder default"
@@ -7069,12 +7063,6 @@
       "Select contact group": [
         "Pilih grup kontak"
       ],
-      "Select permissions": [
-        "Tentukan akses izin"
-      ],
-      "Select what to import": [
-        "Pilih apa-apa saja yang akan diimpor"
-      ],
       "Send email": [
         "Kirim email"
       ],
@@ -7104,6 +7092,9 @@
       ],
       "Sign in again to continue": [
         "Masuk lagi untuk melanjutkan"
+      ],
+      "Sign in and grant access": [
+        "Masuk dan berikan izin akses"
       ],
       "Sort conversations": [
         "Urutkan percakapan"
@@ -7152,6 +7143,9 @@
       ],
       "Welcome ${ userName }": [
         "Selamat datang ${ userName }"
+      ],
+      "What would you like to import?": [
+        "Hal-hal apa saja yang hendak Anda impor?"
       ],
       "What's new": [
         "Apa-apa saja yang baru"

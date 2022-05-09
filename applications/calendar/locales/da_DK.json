@@ -861,6 +861,11 @@
         "Uge"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Luk"
@@ -2694,11 +2699,6 @@
         "ProtonKontakter understøtter ikke ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "i det næste trin skal du vælge alle tilladelserne"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -3009,9 +3009,6 @@
       "New": [
         "Ny"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Derefter skal du logge ind på din Google-konto og give os adgang til dine data."
-      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -3029,6 +3026,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Forekomster som arrangøren tidligere har opdateret beholdes, men nogle af dine svar vil gå tabt."
@@ -3083,6 +3083,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -3197,9 +3200,6 @@
       ],
       "Week": [
         "Uge"
-      ],
-      "What do you want to import from your Google account?": [
-        "Hvad ønsker du at importere fra din Google-konto?"
       ],
       "Which event would you like to delete?": [
         "Hvilken begivenhed ønsker du at slette?"
@@ -4022,8 +4022,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Bemærk at ${ boldNextStep } som applikationen anmoder om, for at starte din import."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -4870,9 +4875,6 @@
       "Select event's last date": [
         "Vælg begivenhedens sidste dato"
       ],
-      "Select permissions": [
-        "Vælg tilladelser"
-      ],
       "Select the time to send this notification": [
         "Vælg tid for afsendelse af denne notifikation"
       ],
@@ -4884,9 +4886,6 @@
       ],
       "Select the way to send this notification": [
         "Vælg måden at sende denne notifikation på"
-      ],
-      "Select what to import": [
-        "Vælg, hvad der skal importeres"
       ],
       "Select when this event will stop happening": [
         "Vælg hvornår denne begivenhed ophører med at forekomme"
@@ -4912,6 +4911,9 @@
       "Sign in again to continue": [
         "Log ind igen for at fortsætte"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         "Opdater begivenhed"
       ],
@@ -4929,6 +4931,9 @@
       ],
       "Warning: suspected fake website": [
         "Advarsel: mistanke om falsk websted"
+      ],
+      "What would you like to import?": [
+        ""
       ],
       "What's new": [
         "Nyheder"

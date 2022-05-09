@@ -174,7 +174,7 @@
         "Obter código de verificação"
       ],
       "Go to sign in": [
-        ""
+        "Ir para o início de sessão"
       ],
       "Hide": [
         "Ocultar"
@@ -1589,9 +1589,6 @@
       "Error connecting to the Bitcoin API.": [
         "Erro ao conectar com a API do Bitcoin."
       ],
-      "File has no contents to preview": [
-        "Arquivo não tem conteúdo para pré-visualização"
-      ],
       "If the time on your TV has expired, click on Refresh on your TV and enter your code again.": [
         "Se o tempo na sua TV expirou, clique em Atualizar na sua TV e digite o seu código novamente."
       ],
@@ -1971,6 +1968,9 @@
       ],
       "Creating your account": [
         "Criando sua conta"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
@@ -3086,11 +3086,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Explorar todos os planos da ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "A partir de ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "A partir de ${ _price2 } por usuário"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "A partir de ${ price }"
@@ -3103,12 +3100,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Acesso global a serviços de streaming"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Bloqueador de anúncios integrado (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Obter ${ connections } conexão VPN de alta velocidade",
         "Obter ${ connections } conexões VPN de alta velocidade"
@@ -3116,10 +3107,6 @@
       "Get ${ connections } high-speed VPN connection per user": [
         "Obter ${ connections } conexão VPN de alta velocidade por usuário",
         "Obter ${ connections } conexões VPN de alta velocidade por usuário"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "VPN de alta velocidade em ${ maxVpn } dispositivo",
-        "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
     "new_plans: feature": {
@@ -3394,9 +3381,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "A solução de VPN dedicada que oferece acesso seguro, irrestrito e de alta velocidade à internet."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
@@ -3883,13 +3867,17 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "",
-        ""
+      "${ _n } calendar per user": [
+        "${ _n } calendário por usuario",
+        "${ _n } calendarios por usuario"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } conexão VPN de alta velocidade",
         "${ maxVpn } conexões VPN de alta velocidade"
+      ],
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendarios"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } conexão VPN de alta velocidade",
@@ -3916,10 +3904,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         ""
       ],

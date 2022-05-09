@@ -861,6 +861,11 @@
         "Woche"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Zeitspanne ändern in"
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Schließen"
@@ -2694,11 +2699,6 @@
         "ProtonContacts unterstützt ${ forNow } nicht:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "im nächsten Schritt alle von der Anwendung geforderten Berechtigungen"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } von ${ totalContacts } Kontakt(en) werden nicht importiert. Anklicken, um Details anzuzeigen"
@@ -3009,9 +3009,6 @@
       "New": [
         "Neu"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und ProtonMail den Zugriff auf deine Daten erlauben."
-      ],
       "No contacts added yet": [
         "Noch keine Kontakte hinzugefügt"
       ],
@@ -3029,6 +3026,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wurde automatisch deaktiviert."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Termine, die zuvor vom Organisator aktualisiert wurden, werden beibehalten, aber einige deiner Antworten gehen verloren."
@@ -3083,6 +3083,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn du eine E-Mail an diese E-Mail-Adresse sendest."
+      ],
+      "Select what you want to move from Google.": [
+        "Wähle aus, was du von Google verschieben möchtest."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -3197,9 +3200,6 @@
       ],
       "Week": [
         "Woche"
-      ],
-      "What do you want to import from your Google account?": [
-        "Was möchtest du aus deinem Google-Konto importieren?"
       ],
       "Which event would you like to delete?": [
         "Welchen Termin möchtest du löschen?"
@@ -3898,7 +3898,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Proton präsentiert sein neues Design.${ br } Viele Dienste, eine Mission. Willkommen bei einem Internet, bei dem der Schutz der Privatsphäre Standard ist."
       ]
     },
     "new_plans: title": {
@@ -4032,8 +4032,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Bitte beachte, dass ${ boldNextStep } ausgewählt werden müssen, um den Import zu starten."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Als Nächstes musst du dich bei deinem Google-Konto anmelden und Proton Zugriff auf deine Daten gewähren."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Damit der Import funktioniert, musst du alle gewünschten Elemente auswählen, wie im GIF gezeigt."
       ]
     },
     "Onboarding": {
@@ -4880,9 +4885,6 @@
       "Select event's last date": [
         "End-Datum des Termins auswählen"
       ],
-      "Select permissions": [
-        "Berechtigungen auswählen"
-      ],
       "Select the time to send this notification": [
         "Auswählen, zu welchem Zeitpunkt diese Benachrichtigung gesendet werden soll"
       ],
@@ -4894,9 +4896,6 @@
       ],
       "Select the way to send this notification": [
         "Auswählen, wie diese Benachrichtigung gesendet werden soll"
-      ],
-      "Select what to import": [
-        "Auswählen, welche Daten importiert werden sollen"
       ],
       "Select when this event will stop happening": [
         "Auswählen, wann dieser Termin endet"
@@ -4922,6 +4921,9 @@
       "Sign in again to continue": [
         "Erneut anmelden, um fortzufahren"
       ],
+      "Sign in and grant access": [
+        "Anmelden und Zugang gewähren"
+      ],
       "Update event": [
         "Termin aktualisieren"
       ],
@@ -4939,6 +4941,9 @@
       ],
       "Warning: suspected fake website": [
         "Warnung: Verdacht auf gefälschte Website"
+      ],
+      "What would you like to import?": [
+        "Was möchtest du importieren?"
       ],
       "What's new": [
         "Neuigkeiten"

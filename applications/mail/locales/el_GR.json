@@ -1280,9 +1280,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Αυτή η νέα πρόταση χρόνου δεν ταιριάζει με τα στοιχεία πρόσκλησής σας. Παρακαλώ επιβεβαιώστε τα στοιχεία πρόσκλησης στο ημερολόγιό σας."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Αυτή η απάντηση δεν ταιριάζει με τα στοιχεία πρόσκλησής σας. Παρακαλώ επιβεβαιώστε τα στοιχεία πρόσκλησης στο ημερολόγιό σας."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         ""
       ],
@@ -1315,6 +1312,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "Ο/Η ${ participantName } ζήτησε τις τελευταίες ενημερώσεις για μια εκδήλωση που δεν υπάρχει πλέον στο ημερολόγιό σας."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Ο/Η ${ participantName } ζήτησε την τελευταία ενημέρωση για μια εκδήλωση που δεν ταιριάζει με τα στοιχεία της πρόσκλησής σας. Παρακαλούμε επιβεβαιώστε τα στοιχεία της στο ημερολόγιό σας."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         ""
@@ -1469,9 +1469,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "Για την ώρα δεν υποστηρίζεται προσθήκη διοργανώσεων σε εκδήλωση"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "Προστέθηκε μια διοργάνωση στην εκδήλωση ${ veventIcsTitle }"
-      ],
       "Event refreshing is not supported for the moment": [
         "Για την ώρα δεν υποστηρίζεται ανανέωση εκδήλωσης"
       ],
@@ -1496,11 +1493,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Αυτή η πρόσκληση είναι ξεπερασμένη. Η εκδήλωση έχει ενημερωθεί."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Αυτή η απάντηση δεν ταιριάζει με τα στοιχεία της πρόσκλησής σας. Παρακαλούμε επιβεβαιώστε τα στοιχεία της στο ημερολόγιό σας."
+      ],
+      "This response is out of date.": [
+        "Αυτή η απάντηση έχει λήξει."
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Αυτή η απάντηση είναι εκπρόθεσμη. Η εκδήλωση δεν υπάρχει πλέον στο ημερολόγιό σας."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Αυτή η απάντηση είναι εκπρόθεσμη. Αυτή η εκδήλωση έχει ενημερωθεί."
       ],
       "This response is out of date. You have no calendars.": [
         "Αυτή η απάντηση είναι εκπρόθεσμη. Δεν έχετε ημερολόγια."
@@ -2839,9 +2839,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
       ],
-      "File has no contents to preview": [
-        "Το αρχείο δεν έχει περιεχόμενα για προεπισκόπηση"
-      ],
       "Filter with this name already exists": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
@@ -3360,7 +3357,7 @@
         "Επιλέξτε ένα φάκελο"
       ],
       "Spam": [
-        "Ανεπιθύμητα"
+        "Ενοχλητικά"
       ],
       "Trash": [
         "Διαγραμμένα"
@@ -3650,11 +3647,6 @@
       ],
       "Creating calendar event failed": [
         "Αποτυχία δημιουργίας εκδήλωσης ημερολογίου"
-      ]
-    },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
       ]
     },
     "Import warning": {
@@ -4153,7 +4145,7 @@
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Εάν δεν βρείτε το email στα εισερχόμενα σας, ελέγξτε το φάκελο ανεπιθύμητων."
+        "Αν δεν βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
       ],
       "Image URL": [
         "URL εικόνας"
@@ -4281,9 +4273,6 @@
       ],
       "New": [
         "Νέο"
-      ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Στη συνέχεια, θα πρέπει να συνδεθείτε στον λογαριασμό σας Google και να μας επιτρέψετε να έχουμε πρόσβαση στα δεδομένα σας."
       ],
       "No action selected": [
         "Δεν έχει επιλεγεί καμία ενέργεια"
@@ -4450,6 +4439,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
+      "Select what you want to move from Google.": [
+        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
       ],
@@ -4483,8 +4475,8 @@
       "Show original message": [
         "Εμφάνιση αρχικού μηνύματος"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει"
+      "Sorry, this message does not exist or has already expired.": [
+        "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }."
@@ -4638,7 +4630,7 @@
         "Το δημόσιο κλειδί αυτού του αποστολέα δεν έχει γίνει εμπιστεύσιμο ακόμα."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Για την καταπολέμηση των ανεπιθύμητων μηνυμάτων και της κατάχρησης, επαληθεύστε ότι είστε άνθρωποι."
+        "Για την καταπολέμηση ενοχλήσεων και καταχρήσεων, παρακαλούμε επαληθεύστε ότι είστε άνθρωπος."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Για να υπογράψουμε εκ νέου τις επαφές σας, πρέπει να ελέγξουμε κάθε επαφή με τη λίστα των κλειδιών κρυπτογράφησης που είναι διαθέσιμα στο λογαριασμό σας. Αν δεν βρεθεί αντιστοιχία, η επαφή σας θα επανσυνδεθεί με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -4747,9 +4739,6 @@
       ],
       "Week": [
         "Εβδομάδα"
-      ],
-      "What do you want to import from your Google account?": [
-        "Τι θέλετε να εισάγετε από τον λογαριασμό σας στο Google;"
       ],
       "When do you want your message to be sent?": [
         "Πότε θέλετε να αποσταλεί το μήνυμά σας;"
@@ -4986,7 +4975,7 @@
         "Μετάβαση στα Απεσταλμένα"
       ],
       "Go to Spam": [
-        "Μετάβαση στα Ανεπιθύμητα"
+        "Μετάβαση στα Ενοχλητικά"
       ],
       "Go to Starred": [
         "Μετάβαση στα Αγαπημένα"
@@ -5034,7 +5023,7 @@
         "Μετακίνηση στα Εισερχόμενα"
       ],
       "Move to Spam": [
-        "Μετακίνηση στα Ανεπιθύμητα"
+        "Μετακίνηση στα Ενοχλητικά"
       ],
       "Move to Trash": [
         "Μετακίνηση στα Διαγραμμένα"
@@ -6009,8 +5998,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Στη συνέχεια θα χρειαστεί να εισέλθετε στον Google λογαριασμό σας και να παραχωρήσετε στην Proton πρόσβαση στα δεδομένα σας."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Για να ολοκληρωθεί η διαδικασία της εισαγωγής πρέπει να επιλέξετε όλα τα απαραίτητα στοιχεία, όπως φαίνεται στο GIF."
       ]
     },
     "Onboarding": {
@@ -7200,12 +7194,6 @@
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
       ],
-      "Select permissions": [
-        ""
-      ],
-      "Select what to import": [
-        "Επιλογή στοιχείων προς εισαγωγή"
-      ],
       "Send email": [
         "Αποστολή μηνύματος"
       ],
@@ -7235,6 +7223,9 @@
       ],
       "Sign in again to continue": [
         "Συνδεθείτε ξανά για να συνεχίσετε"
+      ],
+      "Sign in and grant access": [
+        "Εισέλθετε και παραχωρήστε πρόσβαση"
       ],
       "Sort conversations": [
         "Ταξινόμηση συνομιλιών"
@@ -7284,6 +7275,9 @@
       ],
       "Welcome ${ userName }": [
         "Καλώς ήρθατε ${ userName }"
+      ],
+      "What would you like to import?": [
+        "Τι θα θέλατε να εισάγετε;"
       ],
       "What's new": [
         "Τι νέο υπάρχει"

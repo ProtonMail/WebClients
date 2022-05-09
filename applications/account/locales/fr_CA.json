@@ -845,8 +845,8 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        "+ ${ _users } utilisateur",
-        "+ ${ _users } utilisateurs"
+        "+ ${ _users } utilisateur·rice",
+        "+ ${ _users } utilisateur·rice·s"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domaine personnalisé",
@@ -962,7 +962,7 @@
     },
     "Badge": {
       "5 users": [
-        "5 utilisateurs"
+        "5 utilisateur·rice·s"
       ]
     },
     "Badge for domain": {
@@ -1288,8 +1288,8 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "${ users } utilisateur",
-        "${ users } utilisateurs"
+        "${ users } utilisateur·rice",
+        "${ users } utilisateur·rice·s"
       ],
       "Total for ${ n } month": [
         "Total pour ${ n } mois",
@@ -2239,7 +2239,7 @@
         "/mois"
       ],
       "/user per month": [
-        "/utilisateur par mois"
+        "/utilisateur·rice par mois"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2555,9 +2555,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Impossible d'obtenir les sessions actives. Veuillez ${ refresh } ou réessayer plus tard."
       ],
-      "File has no contents to preview": [
-        "Le fichier n'a pas de contenu à prévisualiser"
-      ],
       "Filter with this name already exist": [
         "Un filtre avec ce nom existe déjà"
       ],
@@ -2696,10 +2693,10 @@
         "Veuillez essayer de vous authentifier à nouveau et assurez-vous que les autorisations soient définies correctement."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Veuillez passer à un abonnement business avec plus d'un utilisateur pour obtenir une assistance multi-utilisateurs"
+        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour obtenir une assistance multiutilisateur"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Veuillez passer à un abonnement business avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
+        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton ne peut pas se connecter à votre compte Gmail. Veuillez vous assurer que l'adresse du serveur de messagerie et le numéro de port sont corrects."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton ne peut pas se connecter à votre compte Yahoo Mail. Veuillez vous assurer que l'adresse du serveur de messagerie et le numéro de port sont corrects."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton ne peut pas se connecter à votre compte Yahoo. Veuillez vous assurer que l'adresse du serveur de messagerie et le numéro de port sont corrects."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton ne peut pas se connecter à votre compte Mail Yahoo. Veuillez vous assurer que:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton ne peut pas se connecter à votre compte Yahoo. Veuillez vous assurer que:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Trop de demandes récentes. Veuillez réessayer dans quelques instants."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Allez à ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Allez à Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Allez aux ${ securitySettingsLink } Outlook"
       ],
       "If 2-step verification is off, turn it on": [
         "Si la validation en deux étapes est désactivée, activez-la"
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "à l'étape suivante, vous devez sélectionner toutes les autorisations"
-      ],
       "Manage": [
         "Gérer"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "calendriers partagés"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Cliquez sur le lien ${ boldICS } et téléchargez le fichier"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Accédez à ${ calendarLink } dans vos paramètres Outlook.com"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Accédez aux ${ calendarLink } dans vos paramètres Outlook"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Aller à ${ calendarViewLink } dans Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Aller à ${ calendarViewLink } dans Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Passez la souris sur le calendrier que vous souhaitez importer et ouvrez le menu déroulant"
@@ -3967,13 +3961,13 @@
         "*Aucune carte bancaire requise."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Avec un abonnement d'1 mois. D'autres options d'abonnement sont disponibles au paiement."
+        "*Avec un abonnement d'1 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* Avec un abonnement de 12 mois. D'autres options d'abonnement sont disponibles au paiement."
+        "*Avec un abonnement de 12 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* Avec un abonnement de 24 mois. D'autres options d'abonnement sont disponibles au paiement."
+        "*Avec un abonnement de 24 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de stockage supplémentaire"
@@ -4010,7 +4004,7 @@
         "Une phrase de récupération vous permet d’accéder à votre compte et de récupérer vos messages chiffrés si vous avez oublié votre mot de passe."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "Un utilisateur est un compte associé à un seul nom d'utilisateur, boîte aux lettres et personne"
+        "Un utilisateur·rice est un compte associé à un seul nom d'utilisateur·rice, boîte aux lettres et personne"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Accès au compte restreint en raison de factures impayées. Merci de contacter votre administrateur."
@@ -4053,7 +4047,7 @@
         "La vérification d'adresse est une fonctionnalité de sécurité avancée. Activez-la uniquement si vous savez de quoi il s'agit."
       ],
       "Admin account allocation": [
-        "Attribution de compte administrateur"
+        "Attribution de compte administrateur·rice"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "Après une réinitialisation de mot de passe, vos données sont verrouillées sous forme chiffrée pour les protéger."
@@ -4248,7 +4242,7 @@
         "Créez un lien vers votre calendrier et partagez-le avec n'importe qui en dehors de Proton. Vous et seulement vous pouvez ajouter ou supprimer des événements."
       ],
       "Create a new account and share the email address and password with the user.": [
-        "Créez un nouveau compte et partagez l'adresse courriel et le mot de passe avec l'utilisateur."
+        "Créez un nouveau compte et partagez l'adresse courriel et le mot de passe avec l'utilisateur·rice."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Créez et gérez des comptes secondaires et attribuez-leur des adresses email sur votre domaine personnalisé."
@@ -4261,6 +4255,9 @@
       ],
       "Creating your account": [
         "Création de votre compte"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Crédit non utilisé de votre précédent abonnement"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Les crédits, le prorata et tous les coupons applicables sont appliqués au moment de payer"
@@ -4390,10 +4387,10 @@
         "Entrez le code de vérification qui a été envoyé à ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        "Entrez les identifiants de votre compte ${ BRAND_NAME }."
+        "Saisissez les identifiants de votre compte ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        "Saisissez l'adresse électronique de votre compte ${ BRAND_NAME } ou votre nom d'utilisateur."
+        "Saisissez l'adresse électronique de votre compte ${ BRAND_NAME } ou votre nom d'utilisateur·rice."
       ],
       "Enter your login password to confirm your identity.": [
         "Entrez votre mot de passe pour confirmer votre identité."
@@ -4596,7 +4593,7 @@
         "il est impératif"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "J'utilise ${ appName } et je pense que tu pourrais l'aimer. C'est une messagerie sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour obtenir 1 mois de fonctionnalités premium gratuitement: ${ referrerLink }"
+        "J'utilise ${ appName } et je pense que tu pourrais l'aimer. C'est une messagerie sécurisée qui protège ta vie privée. Inscris-toi avec ce lien pour obtenir 1 mois de fonctionnalités haut de gamme gratuitement: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Confirmez simplement votre sélection et nous ferons le reste."
@@ -4691,9 +4688,6 @@
       "New": [
         "Nouveau"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Ensuite, vous devrez vous connecter à votre compte Google et nous permettre d'accéder à vos données."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Aucune méthode de récupération de compte n’est définie, vous risquez de perdre l'accès à votre compte"
       ],
@@ -4746,7 +4740,7 @@
         "Ce n'est pas votre appareil? Utilisez une fenêtre de navigation privée pour vous connecter et fermez-la lorsque vous avez terminé. ${ learnMore }"
       ],
       "Number of users": [
-        "Nombre d’utilisateurs"
+        "Nombre d’utilisateur·rice·s"
       ],
       "of": [
         "de"
@@ -4948,7 +4942,10 @@
         "Sélectionnez « Se connecter à ${ name } » pour ouvrir l'application. Cela va également créer un compte ${ name } avec votre adresse ${ MAIL_APP_NAME } afin que vous puissiez vous connecter en un clic la prochaine fois."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }. Si vous avez besoin de plus de ${ maxUsers } comptes d'utilisateurs, veuillez ${ contactMailToLink } notre service clientèle."
+        "Sélectionnez le nombre d'utilisateur·rice·s à inclure dans votre abonnement. Chaque utilisateur·rice supplémentaire coûte ${ price }. Si vous avez besoin de plus de ${ maxUsers } comptes d'utilisateur·rice·s, veuillez ${ contactMailToLink } notre service clientèle."
+      ],
+      "Select what you want to move from Google.": [
+        "Sélectionnez ce que vous souhaitez déplacer de Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Sélectionnez les calendriers à importer. Un nouveau calendrier sera créé pour chaque calendrier importé dans la limite de 20 calendriers."
@@ -4990,19 +4987,19 @@
         "SPF est utilisé pour spécifier qui est autorisé à envoyer des courriels depuis ce domaine. Ainsi, nous vous recommandons vivement d'inclure ${ MAIL_APP_NAME }. Pour cela, ajoutez l'enregistrement TXT suivant dans votre configuration DNS. Cette modification peut généralement être effectuée depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
       ],
       "Storage allocated to other users in this organisation": [
-        "Espace de stockage alloué à d'autres utilisateurs de cette organisation"
+        "Espace de stockage alloué à d'autres utilisateur·rice·s de cette organisation"
       ],
       "Storage allocated to this user": [
-        "Stockage alloué à cet utilisateur"
+        "Stockage alloué à cet·te utilisateur·rice"
       ],
       "Storage for users": [
-        "Stockage pour les utilisateurs"
+        "Stockage pour les utilisateur·rice·s"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Le stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
-        "Stockage utilisé par cet utilisateur"
+        "Stockage utilisé par cet·te utilisateur·rice"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Conservez ce mot de passe et ce fichier dans un endroit sûr. Vous en aurez à nouveau besoin pour importer votre clé."
@@ -5282,9 +5279,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Nous mettons à niveau votre abonnement actuel vers un abonnement amélioré qui offre plus pour le même prix. Pendant la mise à jour de nos systèmes, vous ne pourrez pas le modifier. Nous vous enverrons un courriel dès que ce sera fait."
-      ],
-      "What do you want to import from your Google account?": [
-        "Que voulez-vous importer depuis votre compte Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Lorsque cette option est désactivée, ceci empêche toutes les images de se charger sur votre appareil à votre insu.\t"
@@ -7220,8 +7214,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Veuillez noter qu'${ boldNextStep } demandées par l'application pour commencer votre importation."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Ensuite, vous devrez vous connecter à votre compte Google et accorder à Proton l'accès à vos données."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Pour que l'importation fonctionne, vous devez sélectionner tous les éléments demandés comme indiqué dans le GIF."
       ]
     },
     "Onboarding": {
@@ -7910,29 +7909,33 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } calendrier par utilisateur",
-        "${ MAX_CALENDARS_PER_USER } calendriers par utilisateur"
+      "${ _n } calendar per user": [
+        "${ _n } calendrier par utilisateur·rice",
+        "${ _n } calendriers par utilisateur·rice"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } connexion RPV à haute vitesse",
         "${ maxVpn } connexions RPV à haute vitesse"
+      ],
+      "${ n } calendar": [
+        "${ n } calendrier",
+        "${ n } calendriers"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } connexion RPV à haute vitesse",
         "${ n } connexions RPV à haute vitesse"
       ],
       "${ n } high-speed VPN connection per user": [
-        "${ n } connexion RPV à haute vitesse par utilisateur",
-        "${ n } connexions RPV à haute vitesse par utilisateur"
+        "${ n } connexion RPV à haute vitesse par utilisateur·rice",
+        "${ n } connexions RPV à haute vitesse par utilisateur·rice"
       ],
       "${ n } VPN connection": [
         "${ n } connexion RPV",
         "${ n } connexions RPV"
       ],
       "${ n } VPN connection per user": [
-        "${ n } connexion RPV par utilisateur",
-        "${ n } connexions RPV par utilisateur"
+        "${ n } connexion RPV par utilisateur·rice",
+        "${ n } connexions RPV par utilisateur·rice"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresse",
@@ -7946,17 +7949,13 @@
         "${ UsedCalendars } calendrier",
         "${ UsedCalendars } calendriers"
       ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ UsedCalendars } sur ${ MaxCalendars } calendrier",
-        "${ UsedCalendars } sur ${ MaxCalendars } calendriers"
-      ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } sur ${ MaxDomains } domaine personnalisé",
         "${ UsedDomains } sur ${ MaxDomains } domaines personnalisés"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "${ UsedMembers } sur ${ MaxMembers } utilisateur",
-        "${ UsedMembers } sur ${ MaxMembers } utilisateurs"
+        "${ UsedMembers } sur ${ MaxMembers } utilisateur·rice",
+        "${ UsedMembers } sur ${ MaxMembers } utilisateur·rice·s"
       ],
       "1 email address": [
         "1 adresse courriel"
@@ -8191,7 +8190,7 @@
         "/mois"
       ],
       "/user per month": [
-        "/utilisateur par mois"
+        "/utilisateur·rice par mois"
       ]
     },
     "Suffix for price": {
@@ -8286,8 +8285,8 @@
         "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
-        "${ maxUsers } utilisateur",
-        "${ maxUsers } utilisateurs"
+        "${ maxUsers } utilisateur·rice",
+        "${ maxUsers } utilisateur·rice·s"
       ],
       "1. Give a name to the config to be generated": [
         "1. Donnez un nom à la configuration à générer"
@@ -8902,9 +8901,6 @@
       "Select contact group": [
         "Sélectionner le groupe de contacts"
       ],
-      "Select permissions": [
-        "Sélectionnez les autorisations"
-      ],
       "Select subscription and pay": [
         "Sélection de l'abonnement et paiement"
       ],
@@ -8913,9 +8909,6 @@
       ],
       "Select the way to send this notification": [
         "Sélectionnez le mode d'envoi de cette notification"
-      ],
-      "Select what to import": [
-        "Sélectionnez ce qu'il faut importer"
       ],
       "Select when you want this notification to be sent": [
         "Choisissez quand vous souhaitez que cette notification soit envoyée"
@@ -8952,6 +8945,9 @@
       ],
       "Sign in again to continue": [
         "Connectez-vous à nouveau pour continuer"
+      ],
+      "Sign in and grant access": [
+        "Se connecter et donner l'accès"
       ],
       "Sort folders alphabetically": [
         "Trier les dossiers par ordre alphabétique"

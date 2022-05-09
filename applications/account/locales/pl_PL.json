@@ -623,7 +623,7 @@
         "Zapisz plik ICS"
       ],
       "Save selected": [
-        "Zachowaj zaznaczone"
+        "Zapisz zaznaczone"
       ],
       "Select ${ planTitle }": [
         "Wybierz ${ planTitle }"
@@ -2593,9 +2593,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nie udało się uzyskać aktywnych sesji. ${ refresh } lub spróbuj ponownie później."
       ],
-      "File has no contents to preview": [
-        "Plik nie posiada zawartości do podglądu"
-      ],
       "Filter with this name already exist": [
         "Filtr o tej nazwie już istnieje"
       ],
@@ -3249,16 +3246,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "bajty"
       ],
       "Gigabytes": [
-        ""
+        "gigabajty"
       ],
       "Kilobytes": [
-        ""
+        "kilobajty"
       ],
       "Megabytes": [
-        ""
+        "megabajty"
       ]
     },
     "Filter Actions": {
@@ -3634,11 +3631,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton nie może połączyć się z kontem Gmail. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton nie może połączyć się z kontem Yahoo Mail. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton nie może połączyć się z kontem Yahoo. Upewnij się, że adres serwera pocztowego i numer portu są prawidłowe."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton nie może połączyć się z kontem Yahoo Mail. Upewnij się, że:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton nie może połączyć się z kontem Yahoo. Upewnij się, że:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Zbyt wiele żądań w ostatnim czasie. Spróbuj ponownie za kilka chwil."
@@ -3715,8 +3712,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Przejdź do ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Przejdź do ${ securitySettingsLink } na stronie outlook.com"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Przejdź do ${ securitySettingsLink } konta Outlook"
       ],
       "If 2-step verification is off, turn it on": [
         "Włącz weryfikację dwuetapową, jeśli jest wyłączona"
@@ -3783,9 +3780,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "w następnym kroku musisz zaakceptować wszystkie uprawnienia"
-      ],
       "Manage": [
         "Zarządzaj"
       ],
@@ -3818,19 +3812,19 @@
       "shared calendars": [
         "kalendarzy udostępnionych"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Kliknij link ${ boldICS } i pobierz plik"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Przejdź do ${ calendarLink } w ustawianiach usługi Outlook"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Przejdź do ${ calendarLink } w ustawianiach konta Outlook"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Przejdź do ${ calendarViewLink } na koncie Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Przejdź do ${ calendarViewLink } na koncie Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Najedź myszą na kalendarz, który chcesz zaimportować i otwórz menu rozwijane"
@@ -4073,13 +4067,13 @@
         "* Karta płatnicza nie jest wymagana."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji miesięcznej. Inne plany dostępne są przy płatności."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji rocznej. Inne plany dostępne są przy płatności."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji dwuletniej. Inne plany dostępne są przy płatności."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusowej przestrzeni dyskowej"
@@ -4163,7 +4157,7 @@
         "Weryfikacja adresu jest zaawansowaną funkcją bezpieczeństwa. Używaj jej tylko, jeśli wiesz jak działa."
       ],
       "Admin account allocation": [
-        ""
+        "Przestrzeń dyskowa administratora"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "Po zresetowaniu hasła, dla bezpieczeństwa, dane zostaną zablokowane w zaszyfrowanym formacie."
@@ -4377,6 +4371,9 @@
       ],
       "Creating your account": [
         "Tworzenie konta"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Niewykorzystane środki z poprzedniego planu"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         "Środki, dzielenie proporcjonalne i kupony zostaną naliczone podczas płatności"
@@ -4813,9 +4810,6 @@
       "New": [
         "Nowy"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Następnie musisz zalogować się na konto Google i zezwolić nam na dostęp do Twoich danych."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Nie włączyłeś metody odzyskiwania konta i możesz stracić dostęp do swojego konta"
       ],
@@ -5073,6 +5067,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }. Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contactMailToLink } z naszym zespołem wsparcia klienta."
+      ],
+      "Select what you want to move from Google.": [
+        "Wybierz, co chcesz przenieść z konta Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Wybierz, które kalendarze chcesz zaimportować. Dla każdego importowanego kalendarza zostanie utworzony nowy kalendarz, aż do osiągnięcia limitu 20 kalendarzy."
@@ -5406,9 +5403,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Zmieniamy Twój obecny plan do ulepszonego, który oferuje więcej funkcji za tę samą cenę. Gdy nasze systemy rozpoczną aktualizację, nie będziesz mógł już go zmienić. Wyślemy wiadomość, kiedy proces zostanie zakończony."
-      ],
-      "What do you want to import from your Google account?": [
-        "Co chcesz zaimportować z konta Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Jeśli funkcja jest wyłączona, osadzone obrazy nie zostaną załadowane bez Twojej wiedzy."
@@ -7358,11 +7352,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Poznaj wszystkie plany ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "Od ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Od ${ _price2 } za użytkownika"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "Od ${ price }"
@@ -7375,12 +7366,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Dostęp do usług streamingu na całym świecie"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Wbudowana blokada reklam (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Uzyskaj ${ connections } szybkie połączenie VPN",
         "Uzyskaj ${ connections } szybkie połączenia VPN",
@@ -7392,12 +7377,6 @@
         "Uzyskaj ${ connections } szybkie połączenia VPN na użytkownika",
         "Uzyskaj ${ connections } szybkich połączeń VPN na użytkownika",
         "Uzyskaj ${ connections } szybkiego połączenia VPN na użytkownika"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "Szybka sieć VPN na ${ maxVpn } urządzeniu",
-        "Szybka sieć VPN na ${ maxVpn } urządzeniach",
-        "Szybka sieć VPN na ${ maxVpn } urządzeniach",
-        "Szybka sieć VPN na ${ maxVpn } urządzeniach"
       ]
     },
     "new_plans: feature": {
@@ -7702,9 +7681,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "W przeciwnym razie, dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Dedykowane rozwiązanie VPN, które zapewnia bezpieczny, nieograniczony i szybki dostęp do Internetu."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
@@ -8064,8 +8040,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Pamiętaj, że ${ boldNextStep } wymagane przez aplikację, aby rozpocząć proces importowania."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Następnie musisz zalogować się na konto Google i przyznać aplikacji Proton dostęp do Twoich danych."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Aby zaimportować dane, zaznacz wszystkie żądane elementy, jak pokazano na grafice GIF."
       ]
     },
     "Onboarding": {
@@ -8754,21 +8735,27 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "${ MAX_CALENDARS_PER_USER } kalendarz na użytkownika",
-        "${ MAX_CALENDARS_PER_USER } kalendarze na użytkownika",
-        "${ MAX_CALENDARS_PER_USER } kalendarzy na użytkownika",
-        "${ MAX_CALENDARS_PER_USER } kalendarzy na użytkownika"
+      "${ _n } calendar per user": [
+        "${ _n } kalendarz na użytkownika",
+        "${ _n } kalendarze na użytkownika",
+        "${ _n } kalendarzy na użytkownika",
+        "${ _n } kalendarzy na użytkownika"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "${ maxVpn } szybkie połącznie VPN",
-        "${ maxVpn } szybkie połącznia VPN",
+        "${ maxVpn } szybkie połączenie VPN",
+        "${ maxVpn } szybkie połączenia VPN",
         "${ maxVpn } szybkich połączeń VPN",
         "${ maxVpn } szybkich połączeń VPN"
       ],
+      "${ n } calendar": [
+        "${ n } kalendarz",
+        "${ n } kalendarze",
+        "${ n } kalendarzy",
+        "${ n } kalendarzy"
+      ],
       "${ n } high-speed VPN connection": [
-        "${ n } szybkie połącznie VPN",
-        "${ n } szybkie połącznia VPN",
+        "${ n } szybkie połączenie VPN",
+        "${ n } szybkie połączenia VPN",
         "${ n } szybkich połączeń VPN",
         "${ n } szybkich połączeń VPN"
       ],
@@ -8807,12 +8794,6 @@
         "${ UsedCalendars } kalendarze",
         "${ UsedCalendars } kalendarzy",
         "${ UsedCalendars } kalendarzy"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "Kalendarz: ${ UsedCalendars } / ${ MaxCalendars }",
-        "Kalendarze: ${ UsedCalendars } / ${ MaxCalendars }",
-        "Kalendarze: ${ UsedCalendars } / ${ MaxCalendars }",
-        "Kalendarze: ${ UsedCalendars } / ${ MaxCalendars }"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "Niestandardowa domena: ${ UsedDomains } / ${ MaxDomains }",
@@ -9780,9 +9761,6 @@
       "Select contact group": [
         "Wybierz grupę kontaktów"
       ],
-      "Select permissions": [
-        "Zaakceptuj uprawnienia"
-      ],
       "Select subscription and pay": [
         "Wybierz subskrypcję i zapłać"
       ],
@@ -9791,9 +9769,6 @@
       ],
       "Select the way to send this notification": [
         "Wymierz metodę otrzymania powiadomienia"
-      ],
-      "Select what to import": [
-        "Wybierz co chcesz zaimportować"
       ],
       "Select when you want this notification to be sent": [
         "Wybierz, kiedy to powiadomienie ma zostać wysłane"
@@ -9830,6 +9805,9 @@
       ],
       "Sign in again to continue": [
         "Zaloguj się ponownie, aby kontynuować"
+      ],
+      "Sign in and grant access": [
+        "Zaloguj się i przyznaj dostęp"
       ],
       "Sort folders alphabetically": [
         "Sortuj foldery alfabetycznie"
