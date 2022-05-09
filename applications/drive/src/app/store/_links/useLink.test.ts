@@ -70,7 +70,7 @@ describe('useLink', () => {
             })
         );
         mockGetSharePrivateKey.mockImplementation((_, shareId) => `privateKey:${shareId}`);
-        mockDecryptPrivateKey.mockImplementation((nodeKey) => `privateKey:${nodeKey}`);
+        mockDecryptPrivateKey.mockImplementation(({ armoredKey: nodeKey }) => `privateKey:${nodeKey}`);
 
         const { result } = renderHook(() =>
             useLinkInner(
@@ -151,7 +151,7 @@ describe('useLink', () => {
             'nodePassphrase root',
             'nodePassphrase parent',
         ]);
-        expect(mockDecryptPrivateKey.mock.calls.map(([nodeKey]) => nodeKey)).toMatchObject([
+        expect(mockDecryptPrivateKey.mock.calls.map(([{ armoredKey: nodeKey }]) => nodeKey)).toMatchObject([
             'nodeKey root',
             'nodeKey parent',
         ]);
