@@ -142,10 +142,16 @@
 
 .text-italic {
 	font-style: italic;
+
+	// Specific for Arizona font
+	font-variation-settings: 'slnt' var(--font-style-italic);
 }
 
 .text-no-italic {
 	font-style: normal;
+
+	// Specific for Arizona font
+	font-variation-settings: 'slnt' var(--font-style-normal);
 }
 
 .text-strike {
