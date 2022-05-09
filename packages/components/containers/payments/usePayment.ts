@@ -59,6 +59,9 @@ const usePayment = ({ amount, currency, onPay, defaultMethod }: Props) => {
     }, [method, card]);
 
     const handleCardSubmit = () => {
+        if (!amount) {
+            return true;
+        }
         if (method === CARD) {
             setCardSubmitted(true);
         }
