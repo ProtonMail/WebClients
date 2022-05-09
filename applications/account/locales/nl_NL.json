@@ -47,7 +47,7 @@
         "Toevoegen"
       ],
       "Add ${ BRAND_NAME } Account": [
-        ""
+        "${ BRAND_NAME } Aan Account Toevoegen"
       ],
       "Add address": [
         "E-mailadres toevoegen"
@@ -167,7 +167,7 @@
         "Bevestig het openen van link ${ linkToShow }"
       ],
       "contact": [
-        ""
+        "contact"
       ],
       "Contact support": [
         "Neem contact op met ondersteuning"
@@ -200,10 +200,10 @@
         "Aanmaken"
       ],
       "Create a secure ProtonMail address instead": [
-        ""
+        "Maak in plaats daarvan een veilig ProtonMail e-mailadres"
       ],
       "Create account": [
-        ""
+        "Account aanmaken"
       ],
       "Create address": [
         "Adres aanmaken"
@@ -215,7 +215,7 @@
         "Map maken"
       ],
       "Create free account": [
-        ""
+        "Maak een gratis account aan"
       ],
       "Create label": [
         "Label maken"
@@ -224,7 +224,7 @@
         "Link aanmaken"
       ],
       "Current plan": [
-        ""
+        "Huidig abonnement"
       ],
       "Customize": [
         "Personaliseren"
@@ -233,7 +233,7 @@
         "Importeren aanpassen"
       ],
       "Customize plan": [
-        ""
+        "Abonnement aanpassen"
       ],
       "Decrease": [
         "Verlagen"
@@ -296,7 +296,7 @@
         "Download alle configuraties"
       ],
       "Download on another platform": [
-        ""
+        "Downloaden op een ander platform"
       ],
       "Download recovery file": [
         "Herstelbestand downloaden"
@@ -308,7 +308,7 @@
         "Bewerken"
       ],
       "Edit billing details": [
-        ""
+        "Bewerk facturatiegegevens"
       ],
       "Edit email address": [
         "Wijzig e-mailadres"
@@ -326,7 +326,7 @@
         "Bewerk aanmeldgegevens"
       ],
       "Edit subscription": [
-        ""
+        "Wijzig abonnement"
       ],
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
@@ -338,7 +338,7 @@
         "Versleutel en exporteer"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        ""
+        "Ontdek andere ${ BRAND_NAME }-abonnementen"
       ],
       "Export": [
         "Exporteren"
@@ -377,7 +377,7 @@
         "Ga naar label"
       ],
       "Go to sign in": [
-        ""
+        "Ga naar inloggen"
       ],
       "Hide": [
         "Verbergen"
@@ -443,7 +443,7 @@
         "e-mails markeren als"
       ],
       "Maybe later": [
-        ""
+        "Misschien later"
       ],
       "More": [
         "Meer"
@@ -497,7 +497,7 @@
         "Betalen"
       ],
       "Pay ${ price }": [
-        ""
+        "Betaal ${ price }"
       ],
       "Preview": [
         "Voorbeeld"
@@ -623,10 +623,10 @@
         "ICS-bestand opslaan"
       ],
       "Save selected": [
-        ""
+        "Geselecteerde bewaren"
       ],
       "Select ${ planTitle }": [
-        ""
+        "Selecteer ${ planTitle }"
       ],
       "Select calendar view": [
         "Kalenderweergave kiezen"
@@ -806,7 +806,7 @@
         "Factuur bekijken"
       ],
       "View plans details": [
-        ""
+        "Abonnementsgegevens bekijken"
       ],
       "Void all recovery files": [
         "Alle herstelbestanden ongeldig maken"
@@ -845,8 +845,8 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        "",
-        ""
+        "+ ${ _users } gebruiker",
+        "+ ${ _users } gebruikers"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } eigen domein",
@@ -962,7 +962,7 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 gebruikers"
       ]
     },
     "Badge for domain": {
@@ -983,27 +983,27 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Betaalbaar elke 12 maanden"
       ],
       "Payable every 24 months": [
-        ""
+        "Betaalbaar elke 24 maanden"
       ],
       "Payable every month": [
-        ""
+        "Betaalbaar elke maand"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Vernieuwd automatisch op ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
       "1 month": [
-        ""
+        "1 maand"
       ],
       "12 months": [
-        ""
+        "12 maanden"
       ],
       "24 months": [
-        ""
+        "24 maanden"
       ],
       "Annually": [
         "Jaarlijks"
@@ -1288,12 +1288,12 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "",
-        ""
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ],
       "Total for ${ n } month": [
-        "",
-        ""
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
       ]
     },
     "Collapsible tooltip": {
@@ -2226,7 +2226,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Kortingscode toegepast: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -2236,10 +2236,10 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/maand"
       ],
       "/user per month": [
-        ""
+        "/gebruiker per maand"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2307,7 +2307,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        ""
+        "Gefeliciteerd! U hebt het maximum van ${ rewardsLimit } gratis maanden ${ plusPlanName } verdiend"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Versleutelen en importeren van contacten... Dit kan enkele minuten duren. Wanneer het proces is voltooid, kunt u dit venster sluiten."
@@ -2554,9 +2554,6 @@
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Het is niet gelukt om uw actieve sessies op te halen. Gelieve te ${ refresh } of later opnieuw te proberen."
-      ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te tonen"
       ],
       "Filter with this name already exist": [
         "Filter met deze naam bestaat reeds"
@@ -3564,11 +3561,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton kan geen verbinding maken met uw Gmail-account. Zorg ervoor dat het e-mailadres en het poortnummer correct zijn."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton kan geen verbinding maken met uw Yahoo Mail account. Zorg ervoor dat het mail server adres en poort nummer correct zijn."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "Proton kan geen verbinding maken met uw Yahoo account. Zorg ervoor dat het adres van de mailserver en poortnummer correct zijn."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton kan geen verbinding maken met uw Yahoo Mail account. Gelieve ervoor te zorgen dat:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        "Proton kan geen verbinding maken met uw Yahoo account. Gelieve ervoor te zorgen dat:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Te veel recente pogingen. Probeer over enkele ogenblikken opnieuw."
@@ -3645,8 +3642,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Ga naar ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Ga naar Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        "Ga naar Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Als 2-staps-verificatie uit staat, schakelt u deze in"
@@ -3713,9 +3710,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "u in de volgende stap alle machtigingen moet selecteren"
-      ],
       "Manage": [
         "Beheren"
       ],
@@ -3748,19 +3742,19 @@
       "shared calendars": [
         "gedeelde agenda's"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Klik op de ${ boldICS }-link en download het bestand"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Ga naar ${ calendarLink } in uw Outlook.com-instellingen"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        "Ga naar ${ calendarLink } in uw Outlook-instellingen"
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Ga naar ${ calendarViewLink } in Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Ga naar ${ calendarViewLink } in Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Beweeg uw muis naar de agenda die u wilt importeren en open het dropdown-menu"
@@ -3869,7 +3863,7 @@
         "${ emailAddress } is ongeldig"
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
+        "${ forgotPasswordLink } of ${ forgotUsernameLink }?"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
@@ -3905,7 +3899,7 @@
         "${ numContacts } contactpersonen"
       ],
       "${ planName } credits earned": [
-        ""
+        "${ planName } tegoed verdiend"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } map gevonden",
@@ -3939,7 +3933,7 @@
         "${ selectedFoldersCountLocalized } labels geselecteerd"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } opslagruimte"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } U gebruikt dit e-mailadres om in te loggen op alle ${ BRAND_NAME } diensten."
@@ -3964,7 +3958,7 @@
         "(Mail + VPN)"
       ],
       "* No credit card required.": [
-        ""
+        "* Green kredietkaart vereist."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         ""
@@ -3986,7 +3980,7 @@
         "1. Nodig vrienden uit voor Proton"
       ],
       "2. They try ${ planName }": [
-        ""
+        "2. Ze proberen ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% korting toegepast op uw abonnement met coupon ${ code }"
@@ -3995,7 +3989,7 @@
         "3. U verdient tegoed"
       ],
       "30-day money-back guarantee.": [
-        ""
+        "30-dagen geld terug garantie."
       ],
       "5 email addresses": [
         "5 e-mailadressen"
@@ -4022,7 +4016,7 @@
         "account herstel methode"
       ],
       "Account size": [
-        ""
+        "Accountgrootte"
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
@@ -4043,7 +4037,7 @@
         "Label toevoegen"
       ],
       "Additional options": [
-        ""
+        "Aanvullende opties"
       ],
       "address": [
         "adres",
@@ -4094,7 +4088,7 @@
         "Reeds toegewezen"
       ],
       "Already have an account?": [
-        ""
+        "Heeft u al een account?"
       ],
       "Already used": [
         "Al gebruikt"
@@ -4260,7 +4254,10 @@
         "Maak in"
       ],
       "Creating your account": [
-        ""
+        "Account aan het aanmaken"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
@@ -4275,7 +4272,7 @@
         "Aangepast dagelijks"
       ],
       "Custom email domains": [
-        ""
+        "Aangepaste e-maildomeinen"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "Aangepaste filters werken op alle nieuwe e-mails, zowel inkomende e-mails als verzonden e-mails. Filters kunnen direct worden bewerkt en gemaakt via Sieve programmeertaal."
@@ -4342,7 +4339,7 @@
         "Sleep het bestand om te uploaden"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        ""
+        "${ rewards } van de ${ rewardsLimit } maanden ${ planName } verdiend."
       ],
       "Edit label": [
         "Label bewerken"
@@ -4354,7 +4351,7 @@
         ""
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
+        "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via Proton. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
       ],
       "Emailing preference saved": [
         "E-mailvoorkeuren opgeslagen"
@@ -4393,7 +4390,7 @@
         ""
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
+        "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
       ],
       "Enter your login password to confirm your identity.": [
         "Voer uw wachtwoord in om uw identiteit te bevestigen."
@@ -4429,7 +4426,7 @@
         "Voor Visa en MasterCard zijn dit de 3 cijfers op de achterkant van uw kaart. Voor American Express de 4 cijfers op de voorkant van uw kaart."
       ],
       "Free": [
-        ""
+        "Gratis"
       ],
       "Free up some space or add more storage space.": [
         "Maak ruimte vrij of voeg meer opslagruimte toe."
@@ -4691,9 +4688,6 @@
       "New": [
         "Nieuw"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Geen account herstelmethode ingesteld; loopt u het risico de toegang tot uw account te verliezen"
       ],
@@ -4746,13 +4740,13 @@
         "Niet uw apparaat? Gebruik een privé-browservenster om in te loggen en sluit het als u klaar bent. ${ learnMore }"
       ],
       "Number of users": [
-        ""
+        "Aantal gebruikers"
       ],
       "of": [
         "van"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        ""
+        "Eén account voor al uw ${ BRAND_NAME }-diensten."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
@@ -4939,7 +4933,7 @@
         "Scan deze QR-code met uw tweestapsverificatieapparaat om uw account in te stellen. ${ switchButton }."
       ],
       "Securing your account": [
-        ""
+        "Beveiliging van uw account"
       ],
       "Select a service provider to start": [
         "Selecteer een dienstverlener om te beginnen"
@@ -4949,6 +4943,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
+      ],
+      "Select what you want to move from Google.": [
+        "Selecteer wat u wil importeren vanaf Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -5044,7 +5041,7 @@
         "De naam zal zichtbaar zijn voor uw gebruikers wanneer ze ingelogd zijn."
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "De veiligste manier om te browsen, streamen en online te zijn."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Deze configuratiebestanden laten u kiezen met welke ${ VPN_APP_NAME }-server u verbindt wanneer u een VPN-app van derden gebruikt, of wanneer u een VPN-verbinding op een router instelt."
@@ -5206,7 +5203,7 @@
         "Herstelzin bijwerken"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "Upload picture": [
         "Afbeelding uploaden"
@@ -5233,10 +5230,10 @@
         "Verificatie opent een nieuw tabblad, schakel alle popup blockers uit. U wordt niet in rekening gebracht. Elk bedrag dat wordt gebruikt om de kaart te verifiëren zal onmiddellijk worden terugbetaald."
       ],
       "Verifying your payment": [
-        ""
+        "Verifiëren van uw betaling"
       ],
       "Version ${ version }": [
-        ""
+        "Versie ${ version }"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
         "Wilt u ${ addressToCreate } instellen als uw standaard e-mail voor het verzenden van berichten?"
@@ -5283,9 +5280,6 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
       ],
-      "What do you want to import from your Google account?": [
-        "Wat wilt u importeren uit uw Google-account?"
-      ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder uw informatie."
       ],
@@ -5293,7 +5287,7 @@
         "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel-e-mailadres als u nieuwe berichten in uw ${ MAIL_APP_NAME } account heeft."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        ""
+        "Wanneer zij abonneren op een betaald abonnement, zal er 1 tot 3 maanden van ${ planName } gecrediteerd worden aan uw account."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Wanneer uw abonnement verlengt, passen we alle beschikbare credits toe voordat we de bovenstaande betaalmethode in rekening brengen."
@@ -5467,7 +5461,7 @@
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Uw bestaande ${ BRAND_NAME }-account kan gebruikt worden voor alle ${ BRAND_NAME }-diensten. Log in met ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Uw import van ${ delayedImport.Account } is tijdelijk vertraagd."
@@ -5892,7 +5886,7 @@
         " en ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } van de ${ humanMaxSpace } gebruikt"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adres"
@@ -5905,8 +5899,8 @@
         "${ monthsRewarded } maanden gecrediteerd"
       ],
       "${ n } month": [
-        "",
-        ""
+        "${ n } maand",
+        "${ n } maanden"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
@@ -5979,10 +5973,10 @@
         "Ingesloten afbeeldingen automatisch laden"
       ],
       "Auto-reply": [
-        ""
+        "Automatisch antwoord"
       ],
       "Billing cycle": [
-        ""
+        "Facturatieperiode"
       ],
       "Block email tracking": [
         "Blokkeer e-mailtracking"
@@ -6216,7 +6210,7 @@
         "Voer het wachtwoord in voor de sleutel met vingerafdruk: ${ fingerprintCode }"
       ],
       "Expiration date": [
-        ""
+        "Vervaldatum"
       ],
       "Expires": [
         "Verloopt"
@@ -6420,10 +6414,10 @@
         "Betaler"
       ],
       "Payment details": [
-        ""
+        "Betalingsgegevens"
       ],
       "Payment method": [
-        ""
+        "Betalingsmethode"
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -6492,7 +6486,7 @@
         "Wachtwoord tonen"
       ],
       "Security code": [
-        ""
+        "Beveiligingscode"
       ],
       "Select your country": [
         "Selecteer uw land"
@@ -6537,7 +6531,7 @@
         "Sticky labels"
       ],
       "Subscription options": [
-        ""
+        "Abonnementsopties"
       ],
       "System information": [
         "Systeeminformatie"
@@ -6669,7 +6663,7 @@
         "Uw bonus"
       ],
       "ZIP code": [
-        ""
+        "Postcode"
       ]
     },
     "label": {
@@ -6698,7 +6692,7 @@
         "Privé"
       ],
       "VPN connections": [
-        ""
+        "VPN-verbindingen"
       ]
     },
     "Label for news": {
@@ -7145,7 +7139,7 @@
     },
     "Navigation": {
       "Back": [
-        ""
+        "Terug"
       ],
       "Back to Calendar": [
         "Terug naar agenda"
@@ -7218,11 +7212,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
-      "From ${ _price }": [
-        "Vanaf ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "Vanaf ${ _price2 } per gebruiker"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
@@ -7235,12 +7226,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Wereldwijde toegang tot streamingdiensten"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Ingebouwde adblocker (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Gebruik ${ connections } high-speed VPN-verbinding",
         "Gebruik ${ connections } high-speed VPN-verbindingen"
@@ -7248,10 +7233,6 @@
       "Get ${ connections } high-speed VPN connection per user": [
         "Gebruik ${ connections } high-speed VPN-verbinding per gebruiker",
         "Gebruik ${ connections } high-speed VPN-verbindingen per gebruiker"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "High-speed VPN op ${ maxVpn } apparaat",
-        "High-speed VPN op ${ maxVpn } apparaten"
       ]
     },
     "new_plans: feature": {
@@ -7532,9 +7513,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot je account worden beperkt en wordt je account uiteindelijk uitgeschakeld."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "De speciale VPN-oplossing voor veilige, onbeperkte en snelle toegang tot internet."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kies je je abonnement en betaalwijze."
@@ -7880,13 +7858,18 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        ""
+        "Welkom bij ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -8148,7 +8131,7 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        ""
+        "Krediet/debetkaart"
       ],
       "New credit/debit card": [
         "Nieuwe krediet-/bankkaart"
@@ -8457,7 +8440,7 @@
     },
     "Signup label": {
       "Display name": [
-        ""
+        "Weergavenaam"
       ],
       "Email": [
         "E-mailadres"
@@ -8498,7 +8481,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
@@ -8570,65 +8553,65 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "",
-        ""
+      "${ _n } calendar per user": [
+        "${ _n } agenda per gebruiker",
+        "${ _n } agenda's per gebruiker"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "",
-        ""
+        "${ maxVpn } supersnelle VPN-verbinding",
+        "${ maxVpn } supersnelle VPN-verbindingen"
+      ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
       ],
       "${ n } high-speed VPN connection": [
-        "",
-        ""
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        ""
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
       ],
       "${ n } VPN connection per user": [
-        "",
-        ""
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
       ],
       "${ UsedAddresses } address": [
-        "",
-        ""
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adressen"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadres",
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadressen"
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "",
-        ""
+        "${ UsedCalendars } agenda",
+        "${ UsedCalendars } agenda's"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } van de ${ MaxDomains } eigen domein",
+        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers }/${ MaxMembers } gebruiker",
+        "${ UsedMembers }/${ MaxMembers } gebruikers"
       ],
       "1 email address": [
-        ""
+        "1 e-mailadres"
       ],
       "1 VPN connection": [
-        ""
+        "1 VPN-verbinding"
       ],
       "Access to streaming services globally": [
-        ""
+        "Wereldwijde toegang tot streamingdiensten"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Ingebouwde adblocker (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "",
@@ -8637,12 +8620,12 @@
     },
     "Subscription price": {
       "For": [
-        ""
+        "Voor"
       ]
     },
     "Subscription saving": {
       "Save": [
-        ""
+        "Opslaan"
       ]
     },
     "Subtitle for trial plan": {
@@ -8848,18 +8831,18 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/maand"
       ],
       "/user per month": [
-        ""
+        "/gebruiker per maand"
       ]
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/maand"
       ],
       "per month": [
-        ""
+        "per maand"
       ]
     },
     "Summary of errors during export calendar": {
@@ -8874,10 +8857,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Voor bedrijven"
       ],
       "For individuals": [
-        ""
+        "Voor particulieren"
       ]
     },
     "TableHeader": {
@@ -8946,8 +8929,8 @@
         "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
-        "",
-        ""
+        "${ maxUsers } gebruiker",
+        "${ maxUsers } gebruikers"
       ],
       "1. Give a name to the config to be generated": [
         "1. Geef een naam aan de te genereren configuratie"
@@ -9061,7 +9044,7 @@
         "Weet u zeker dat u wil afsluiten?"
       ],
       "Auto-reply": [
-        ""
+        "Automatisch antwoord"
       ],
       "Automatically sign outgoing messages?": [
         "Automatisch uitgaande berichten ondertekenen?"
@@ -9139,7 +9122,7 @@
         "Telefoonnummer bevestigen"
       ],
       "Congratulations on choosing privacy!": [
-        ""
+        "Gefeliciteerd om voor privacy te kiezen!"
       ],
       "Connect ${ name }": [
         "Verbind ${ name }"
@@ -9157,7 +9140,7 @@
         "Agenda aanmaken"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Maak uw ${ BRAND_NAME }-account"
       ],
       "Credentials": [
         "Inloggegevens"
@@ -9253,7 +9236,7 @@
         "Account downgraden"
       ],
       "Download ${ VPN_APP_NAME }": [
-        ""
+        "Download ${ VPN_APP_NAME }"
       ],
       "Edit Allow List": [
         "Bewerk Toestane Lijst"
@@ -9337,7 +9320,7 @@
         "Neem ${ vpnPlus } om toegang te krijgen tot alle servers"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Gift code": [
         "Geschenkcode"
@@ -9497,7 +9480,7 @@
         "Proton Logo"
       ],
       "Recommended": [
-        ""
+        "Aanbevolen"
       ],
       "Reconnect your account": [
         "Uw account opnieuw verbinden"
@@ -9542,7 +9525,7 @@
         "Certificaat intrekken"
       ],
       "Save contact details": [
-        ""
+        "Bewaar contactgegevens"
       ],
       "Secure email based in Switzerland": [
         "Veilige e-maildienst gevestigd in Zwitserland"
@@ -9562,20 +9545,14 @@
       "Select contact group": [
         "Contactgroep selecteren"
       ],
-      "Select permissions": [
-        "Selecteer machtigingen"
-      ],
       "Select subscription and pay": [
-        ""
+        "Kies abonnement en betaal"
       ],
       "Select the time to send this notification": [
         "Selecteer de tijd om deze melding te verzenden"
       ],
       "Select the way to send this notification": [
         "Selecteer de manier om deze melding te verzenden"
-      ],
-      "Select what to import": [
-        "Selecteer wat u wilt importeren"
       ],
       "Select when you want this notification to be sent": [
         "Selecteer wanneer u wilt dat deze melding wordt verzonden"
@@ -9612,6 +9589,9 @@
       ],
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
+      ],
+      "Sign in and grant access": [
+        "Inloggen en toegang verlenen"
       ],
       "Sort folders alphabetically": [
         "Sorteer mappen alfabetisch"
@@ -9674,7 +9654,7 @@
         "Niet-ondersteunde browser"
       ],
       "Upgrade plan": [
-        ""
+        "Abonnement upgraden"
       ],
       "Username": [
         "Gebruikersnaam"
@@ -9683,7 +9663,7 @@
         "Gebruikers en adressen"
       ],
       "Verification": [
-        ""
+        "Verificatie"
       ],
       "VPN apps": [
         "VPN-apps"
@@ -9710,7 +9690,7 @@
         "WireGuard configuratie"
       ],
       "You already have a Proton account": [
-        ""
+        "U heeft al een Proton account"
       ],
       "Your ${ domain } address is active": [
         "Uw ${ domain }-adres is actief"
@@ -9967,8 +9947,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        ""
+        "Upgrade naar ${ planName } om tot ${ n } apparaat tegelijkertijd met VPN te verbinden",
+        "Upgrade naar ${ planName } om tot ${ n } apparaten tegelijkertijd met VPN te verbinden"
       ]
     },
     "Upgrade notice": {

@@ -861,6 +861,11 @@
         ""
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         ""
@@ -2694,11 +2699,6 @@
         ""
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         ""
@@ -3009,9 +3009,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No contacts added yet": [
         ""
       ],
@@ -3028,6 +3025,9 @@
         ""
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Not a valid URL": [
         ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
@@ -3082,6 +3082,9 @@
         ""
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
+        ""
+      ],
+      "Select what you want to move from Google.": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -3196,9 +3199,6 @@
         ""
       ],
       "Week": [
-        ""
-      ],
-      "What do you want to import from your Google account?": [
         ""
       ],
       "Which event would you like to delete?": [
@@ -4022,7 +4022,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -4870,9 +4875,6 @@
       "Select event's last date": [
         ""
       ],
-      "Select permissions": [
-        ""
-      ],
       "Select the time to send this notification": [
         ""
       ],
@@ -4883,9 +4885,6 @@
         ""
       ],
       "Select the way to send this notification": [
-        ""
-      ],
-      "Select what to import": [
         ""
       ],
       "Select when this event will stop happening": [
@@ -4912,6 +4911,9 @@
       "Sign in again to continue": [
         ""
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         ""
       ],
@@ -4928,6 +4930,9 @@
         ""
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

@@ -861,6 +861,11 @@
         "Week"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        "Wijzig tijdsbereik naar"
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Sluiten"
@@ -2694,11 +2699,6 @@
         "ProtonContacts ondersteunt ${ forNow } nog geen:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "in de volgende stap moet u alle machtigingen selecteren"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -3009,9 +3009,6 @@
       "New": [
         "Nieuw"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
-      ],
       "No contacts added yet": [
         "Nog geen contacten toegevoegd"
       ],
@@ -3029,6 +3026,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Voorvallen die eerder zijn bijgewerkt door de organisator zullen worden bewaard, maar sommige van uw antwoorden zullen verloren gaan."
@@ -3083,6 +3083,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
+      ],
+      "Select what you want to move from Google.": [
+        "Selecteer wat u wil importeren vanaf Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -3197,9 +3200,6 @@
       ],
       "Week": [
         "Week"
-      ],
-      "What do you want to import from your Google account?": [
-        "Wat wilt u importeren uit uw Google-account?"
       ],
       "Which event would you like to delete?": [
         "Welke afspraken wilt u verwijderen?"
@@ -3898,7 +3898,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
       ]
     },
     "new_plans: title": {
@@ -4032,8 +4032,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Selecteer alle gewilde items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
     "Onboarding": {
@@ -4880,9 +4885,6 @@
       "Select event's last date": [
         "Selecteer laatste datum van afspraak"
       ],
-      "Select permissions": [
-        "Selecteer machtigingen"
-      ],
       "Select the time to send this notification": [
         "Selecteer de tijd om deze melding te verzenden"
       ],
@@ -4894,9 +4896,6 @@
       ],
       "Select the way to send this notification": [
         "Selecteer de manier om deze melding te verzenden"
-      ],
-      "Select what to import": [
-        "Selecteer wat u wilt importeren"
       ],
       "Select when this event will stop happening": [
         "Selecteer wanneer deze afspraak stopt"
@@ -4922,6 +4921,9 @@
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
       ],
+      "Sign in and grant access": [
+        "Inloggen en toegang verlenen"
+      ],
       "Update event": [
         "Afspraak bijwerken"
       ],
@@ -4939,6 +4941,9 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "What would you like to import?": [
+        "Wat zou u willen importeren?"
       ],
       "What's new": [
         "Wat is er nieuw"

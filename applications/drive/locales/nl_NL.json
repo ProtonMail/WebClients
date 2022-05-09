@@ -111,7 +111,7 @@
         "Overdrachten sluiten"
       ],
       "Collapse": [
-        ""
+        "Inklappen"
       ],
       "Collapse folder": [
         "Map samenvouwen"
@@ -131,6 +131,9 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue transfers": [
+        "Overdrachten voortzetten"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -144,7 +147,7 @@
         "Aanmaken"
       ],
       "Create a new contact group": [
-        ""
+        "Nieuwe contactgroep maken"
       ],
       "Create link": [
         "Link aanmaken"
@@ -224,7 +227,7 @@
         "Drive doorzoeken inschakelen"
       ],
       "Expand": [
-        ""
+        "Uitklappen"
       ],
       "Expand folder": [
         "Map uitklappen"
@@ -492,6 +495,9 @@
       ],
       "Stop sharing": [
         "Delen stoppen"
+      ],
+      "Stop transfers": [
+        "Overdrachten stoppen"
       ],
       "Submit": [
         "Versturen"
@@ -1784,9 +1790,6 @@
       "File cannot be merged with folder": [
         "Bestand kan niet worden samengevoegd met map"
       ],
-      "File has no contents to preview": [
-        "Bestand heeft geen inhoud om een voorbeeld te bekijken"
-      ],
       "File selection is already downloading": [
         "Geselecteerde bestanden worden reeds gedownload"
       ],
@@ -2181,11 +2184,6 @@
         "ProtonContacten ondersteunt geen ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "in de volgende stap moet u alle machtigingen selecteren"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
@@ -2301,7 +2299,7 @@
         "${ speed }/s"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } opslagruimte"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contact bijgewerkt.",
@@ -2393,9 +2391,6 @@
       ],
       "Close this screen to exit.": [
         "Sluit dit scherm om af te sluiten."
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Het sluiten van een transfer manager zal alle actieve overboekingen annuleren, weet u het zeker?"
       ],
       "Conflict": [
         "Probleem"
@@ -2647,9 +2642,6 @@
       "New": [
         "Nieuw"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
-      ],
       "No": [
         "Nee"
       ],
@@ -2674,14 +2666,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ appName } hebt geïnstalleerd."
       ],
       "of": [
         "van"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "Een van uw versleutelde schijven is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoord reset. ${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2764,6 +2759,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
       ],
@@ -2808,6 +2806,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Er zijn bestanden die nog overgedragen moeten worden. Het overdrachtsbeheer sluiten zal alle handelingen stopzetten."
       ],
       "There are no files yet": [
         "Er zijn nog geen bestanden"
@@ -2901,7 +2902,7 @@
         "Drive doorzoeken updaten..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Upgrade vandaag om geen van volgende ${ planName } voordelen te verliezen."
       ],
       "Uploaded": [
         "Geüpload"
@@ -2932,9 +2933,6 @@
       ],
       "What do you want to do?": [
         "Wat wilt u doen?"
-      ],
-      "What do you want to import from your Google account?": [
-        "Wat wilt u importeren uit uw Google-account?"
       ],
       "What would you like to do?": [
         "Wat zou u willen doen?"
@@ -3032,8 +3030,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "Uw veilige, deelbare link voor ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        "Uw veilige, deelbare link voor ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3052,6 +3050,9 @@
       ],
       "file data": [
         "bestandsgegevens"
+      ],
+      "file data key": [
+        ""
       ],
       "keys": [
         "sleutels"
@@ -3544,7 +3545,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
       ]
     },
     "new_plans: title": {
@@ -3732,8 +3733,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Let er op dat u ${ boldNextStep } die worden aangevraagd door de toepassing om uw import te starten."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Vervolgens moet u zich aanmelden bij uw Google-account en ons toegang geven tot uw gegevens."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding Action": {
@@ -3741,7 +3747,7 @@
         "Bèta-toegang inschakelen"
       ],
       "Next": [
-        ""
+        "Volgende"
       ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
@@ -3758,7 +3764,7 @@
         "${ appName } is momenteel alleen beschikbaar als je Bèta Toegang inschakelt."
       ],
       "Your trusty online vault for vital documents and precious memories.": [
-        ""
+        "Uw vertrouwde online kluis voor vitale documenten en te koesteren herinneringen."
       ]
     },
     "Onboarding Proton": {
@@ -3789,7 +3795,7 @@
         "Upgrade om toegang te krijgen tot ${ appName }"
       ],
       "Welcome to ${ appName }": [
-        ""
+        "Welkom bij ${ appName }"
       ]
     },
     "Option": {
@@ -3945,7 +3951,7 @@
         "Versleuteld zoeken is hier"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
@@ -4016,7 +4022,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/maand"
       ]
     },
     "Table header": {
@@ -4165,9 +4171,6 @@
       ],
       "Browser might run out of memory": [
         "Browser valt mogelijk zonder geheugen"
-      ],
-      "Cancel all active transfers": [
-        "Annuleer alle actieve overschrijvingen"
       ],
       "Change layout": [
         "Layout aanpassen"
@@ -4454,12 +4457,6 @@
       "Select link expiration time": [
         "Selecteer vervaltijd link"
       ],
-      "Select permissions": [
-        "Selecteer machtigingen"
-      ],
-      "Select what to import": [
-        "Selecteer wat u wilt importeren"
-      ],
       "Settings": [
         "Instellingen"
       ],
@@ -4475,6 +4472,9 @@
       "Sign in again to continue": [
         "Log opnieuw in om door te gaan"
       ],
+      "Sign in and grant access": [
+        "Inloggen en toegang verlenen"
+      ],
       "Size": [
         "Grootte"
       ],
@@ -4486,6 +4486,9 @@
       ],
       "Stop sharing with everyone?": [
         "Stop het delen met iedereen?"
+      ],
+      "Stop transfers?": [
+        "Overdrachten stoppen?"
       ],
       "The file or folder failed to be downloaded": [
         "Het bestand of de map kon niet worden gedownload"
@@ -4534,6 +4537,9 @@
       ],
       "Warning: suspected fake website": [
         "Waarschuwing: vermoedelijk valse website"
+      ],
+      "What would you like to import?": [
+        "Wat zou u willen importeren?"
       ],
       "What's new": [
         "Wat is er nieuw"

@@ -131,6 +131,9 @@
       "Continue": [
         "Devam et"
       ],
+      "Continue transfers": [
+        "Aktarımları sürdür"
+      ],
       "Continue with Google": [
         "Google ile devam et"
       ],
@@ -492,6 +495,9 @@
       ],
       "Stop sharing": [
         "Paylaşımdan kaldır"
+      ],
+      "Stop transfers": [
+        "Aktarımları durdur"
       ],
       "Submit": [
         "Gönder"
@@ -1784,9 +1790,6 @@
       "File cannot be merged with folder": [
         "Dosya klasörle birleştirilemez"
       ],
-      "File has no contents to preview": [
-        "Dosyanın ön izlenecek bir içeriği yok"
-      ],
       "File selection is already downloading": [
         "Seçilmiş dosyalar zaten indiriliyor"
       ],
@@ -2181,11 +2184,6 @@
         "ProtonContacts ${ forNow } şunu desteklemiyor:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "sonraki adımda tüm izinleri seçmelisiniz"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } kişi içe aktarılmayacak. Ayrıntılı bilgi almak için tıklayın"
@@ -2393,9 +2391,6 @@
       ],
       "Close this screen to exit.": [
         "Çıkmak için bu ekranı kapatın."
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Aktarım yöneticisinin kapatılması tüm etkin aktarımları iptal edecek, emin misiniz?"
       ],
       "Conflict": [
         "Çakışma"
@@ -2647,9 +2642,6 @@
       "New": [
         "Yeni"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Ardından, Google hesabınızda oturum açmanız ve verilerinize erişmemize izin vermeniz gerekmektedir."
-      ],
       "No": [
         "Hayır"
       ],
@@ -2674,14 +2666,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Yüklenmiş anahtarlardan hiçbiri şifreleme için geçerli değil. Şifreleme otomatik olarak devre dışı bırakıldı."
       ],
+      "Not a valid URL": [
+        "Adres geçersiz"
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Not: Veriler, ${ appName } kurulu aygıtlarda yerel olarak bulunmaya devam edebilir."
       ],
       "of": [
         "/"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum büyük olasılıkla yakın zamanda yapılmış bir parola sıfırlama işleminden kaynaklanıyor.${ BrElement }\n${ BrElement }\n${ questionText }"
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2764,6 +2759,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
       ],
+      "Select what you want to move from Google.": [
+        "Google üzerinden aktarmak istediklerinizi seçin."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
       ],
@@ -2808,6 +2806,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Hâlâ aktarılması gereken dosyalar var. Aktarma yöneticisinin kapatılması tüm işlemleri sonlandıracaktır."
       ],
       "There are no files yet": [
         "Henüz bir dosya yok"
@@ -2933,9 +2934,6 @@
       "What do you want to do?": [
         "Ne yapmak istersiniz?"
       ],
-      "What do you want to import from your Google account?": [
-        "Google hesabınızdan içe aktarılmasını istedikleriniz nelerdir?"
-      ],
       "What would you like to do?": [
         "Ne yapmak istersiniz?"
       ],
@@ -3032,8 +3030,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "${ boldNameText } için güvenli, paylaşılabilir bağlantınız:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        "${ boldNameText } için güvenli, paylaşılabilir bağlantınız"
       ]
     },
     "Info on errors": {
@@ -3052,6 +3050,9 @@
       ],
       "file data": [
         "dosya verileri"
+      ],
+      "file data key": [
+        "dosya verileri anahtarı"
       ],
       "keys": [
         "anahtarlar"
@@ -3722,8 +3723,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Lütfen içe aktarmayı başlatmak için uygulama tarafından ${ boldNextStep } gerektiğini unutmayın."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Ardından, Google hesabınızda oturum açmanız ve verilerinize Proton tarafından erişilmesine izin vermeniz gerekecek."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "İçe aktarma işleminin yapılabilmesi için, görseldeki gibi gerekli tüm ögeleri seçmelisiniz."
       ]
     },
     "Onboarding Action": {
@@ -4156,9 +4162,6 @@
       "Browser might run out of memory": [
         "Web tarayıcı için bellek yetersiz olabilir"
       ],
-      "Cancel all active transfers": [
-        "Tüm etkin aktarımları iptal et"
-      ],
       "Change layout": [
         "Görünümü değiştir"
       ],
@@ -4444,12 +4447,6 @@
       "Select link expiration time": [
         "Bağlantının geçerlilik sonu saatini seçin"
       ],
-      "Select permissions": [
-        "İzinleri seçin"
-      ],
-      "Select what to import": [
-        "Neyin içe aktarılacağını seçin"
-      ],
       "Settings": [
         "Ayarlar"
       ],
@@ -4465,6 +4462,9 @@
       "Sign in again to continue": [
         "Devam etmek için yeniden oturum açın"
       ],
+      "Sign in and grant access": [
+        "Oturum açın ve erişim izni verin"
+      ],
       "Size": [
         "Boyut"
       ],
@@ -4476,6 +4476,9 @@
       ],
       "Stop sharing with everyone?": [
         "Herkes ile paylaşımdan kaldırılsın mı?"
+      ],
+      "Stop transfers?": [
+        "Aktarımlar durdurulsun mu?"
       ],
       "The file or folder failed to be downloaded": [
         "Dosya ya da klasör indirilemedi"
@@ -4524,6 +4527,9 @@
       ],
       "Warning: suspected fake website": [
         "Uyarı: Şüpheli sahte web sitesi"
+      ],
+      "What would you like to import?": [
+        "Neyi içe aktarmak istersiniz?"
       ],
       "What's new": [
         "Yenilikler"

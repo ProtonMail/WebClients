@@ -1280,9 +1280,6 @@
       " This new time proposal doesn't match your invitation details. Please verify the invitation details in your calendar.": [
         " Questa nuova proposta di tempo non corrisponde ai dettagli dell'invito. Verifica i dettagli dell'invito nel tuo calendario."
       ],
-      " This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        " Questa risposta non corrisponde ai dettagli dell'invito. Verifica i dettagli dell'invito nel tuo calendario."
-      ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha accettato un invito e ha proposto un nuovo orario per una occorrenza di questo evento."
       ],
@@ -1315,6 +1312,9 @@
       ],
       "${ participantName } asked for the latest updates to an event which does not exist in your calendar anymore.": [
         "${ participantName } ha chiesto gli ultimi aggiornamenti di un evento che non esiste più nel tuo calendario."
+      ],
+      "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "${ participantName } ha chiesto gli ultimi aggiornamenti per un evento che non corrisponde ai dettagli dell'invito. Verifica i dettagli dell'invito nel tuo calendario."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } ha rifiutato un invito e proposto un nuovo orario per una occorrenza di questo evento."
@@ -1469,9 +1469,6 @@
       "Adding occurrences to an event is not supported for the moment": [
         "L'aggiunta di occorrenze a un evento non è supportata per ora"
       ],
-      "An occurrence has been added to the event ${ veventIcsTitle }": [
-        "Una occorrenza è stata aggiunta all'evento ${ veventIcsTitle }"
-      ],
       "Event refreshing is not supported for the moment": [
         "L'aggiornamento degli eventi non è supportato al momento"
       ],
@@ -1496,11 +1493,14 @@
       "This invitation is out of date. The event has been updated.": [
         "Questo invito è scaduto. L'evento è stato aggiornato."
       ],
+      "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
+        "Questa risposta non corrisponde ai dettagli dell'invito. Verifica i dettagli dell'invito nel tuo calendario."
+      ],
+      "This response is out of date.": [
+        "Questa risposta non è aggiornata."
+      ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Questa risposta è scaduta. L'evento non esiste più nel tuo calendario."
-      ],
-      "This response is out of date. This event has been updated.": [
-        "Questa risposta è scaduta. Questo evento è stato aggiornato."
       ],
       "This response is out of date. You have no calendars.": [
         "Questa risposta è scaduta. Non hai calendari."
@@ -2839,9 +2839,6 @@
       "Failed to encrypt attachment. Please try again.": [
         "Fallito nel crittografare l'allegato. Per favore, riprova."
       ],
-      "File has no contents to preview": [
-        "Il file non ha contenuti da visualizzare in anteprima"
-      ],
       "Filter with this name already exists": [
         "Esiste già un filtro con questo nome"
       ],
@@ -3652,11 +3649,6 @@
         "Creazione dell'evento sul calendario non riuscita"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "nel passaggio successivo è necessario selezionare tutti i permessi"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -4282,9 +4274,6 @@
       "New": [
         "Nuovo"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Successivamente dovrai accedere al tuo account Google e consentirci di accedere ai tuoi dati."
-      ],
       "No action selected": [
         "Nessuna azione selezionata"
       ],
@@ -4450,6 +4439,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri utilizzare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
+      "Select what you want to move from Google.": [
+        "Seleziona cosa vuoi spostare da Google."
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
       ],
@@ -4483,8 +4475,8 @@
       "Show original message": [
         "Mostra il messaggio originale"
       ],
-      "Sorry, this message does not exist or has already expired": [
-        "Siamo spiacenti, questo messaggio non esiste o è già scaduto"
+      "Sorry, this message does not exist or has already expired.": [
+        "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
@@ -4747,9 +4739,6 @@
       ],
       "Week": [
         "Settimana"
-      ],
-      "What do you want to import from your Google account?": [
-        "Cosa vuoi importare dal tuo account Google?"
       ],
       "When do you want your message to be sent?": [
         "Quando vuoi che il tuo messaggio sia inviato?"
@@ -5996,7 +5985,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Ti presentiamo il nuovo look di Proton.${ br } Molti servizi, una sola missione. Ti diamo il benvenuto in una nuova versione di internet, dove la privacy è la regola."
       ]
     },
     "new_plans: title": {
@@ -6019,8 +6008,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Tieni presente che ${ boldNextStep } richiesto dall'applicazione per avviare l'importazione."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Successivamente dovrai accedere al tuo account Google e concedere a Proton l'accesso ai tuoi dati."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Affinché l'importazione funzioni, devi selezionare tutti gli elementi richiesti come mostrato nella GIF."
       ]
     },
     "Onboarding": {
@@ -7210,12 +7204,6 @@
       "Select contact group": [
         "Seleziona gruppo di contatti"
       ],
-      "Select permissions": [
-        "Seleziona permessi"
-      ],
-      "Select what to import": [
-        "Seleziona cosa importare"
-      ],
       "Send email": [
         "Invia email"
       ],
@@ -7245,6 +7233,9 @@
       ],
       "Sign in again to continue": [
         "Accedi di nuovo per continuare"
+      ],
+      "Sign in and grant access": [
+        "Accedi e concedi l'accesso"
       ],
       "Sort conversations": [
         "Ordina conversazioni"
@@ -7294,6 +7285,9 @@
       ],
       "Welcome ${ userName }": [
         "Benvenuto/a ${ userName }"
+      ],
+      "What would you like to import?": [
+        "Cosa vorresti importare?"
       ],
       "What's new": [
         "Cosa c'è di nuovo"

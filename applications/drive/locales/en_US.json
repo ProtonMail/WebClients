@@ -131,6 +131,9 @@
       "Continue": [
         ""
       ],
+      "Continue transfers": [
+        ""
+      ],
       "Continue with Google": [
         ""
       ],
@@ -491,6 +494,9 @@
         ""
       ],
       "Stop sharing": [
+        ""
+      ],
+      "Stop transfers": [
         ""
       ],
       "Submit": [
@@ -1784,9 +1790,6 @@
       "File cannot be merged with folder": [
         ""
       ],
-      "File has no contents to preview": [
-        ""
-      ],
       "File selection is already downloading": [
         ""
       ],
@@ -2181,11 +2184,6 @@
         ""
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         ""
@@ -2392,9 +2390,6 @@
         ""
       ],
       "Close this screen to exit.": [
-        ""
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
         ""
       ],
       "Conflict": [
@@ -2647,9 +2642,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No": [
         ""
       ],
@@ -2674,13 +2666,16 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
       "of": [
         ""
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
@@ -2764,6 +2759,9 @@
       "Select the email format you want to be used by default when sending an email to this email address.": [
         ""
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
@@ -2807,6 +2805,9 @@
         ""
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
+        ""
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         ""
       ],
       "There are no files yet": [
@@ -2933,9 +2934,6 @@
       "What do you want to do?": [
         ""
       ],
-      "What do you want to import from your Google account?": [
-        ""
-      ],
       "What would you like to do?": [
         ""
       ],
@@ -3032,7 +3030,7 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         ""
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
+      "Your secure, shareable link for ${ boldNameText }": [
         ""
       ]
     },
@@ -3051,6 +3049,9 @@
         ""
       ],
       "file data": [
+        ""
+      ],
+      "file data key": [
         ""
       ],
       "keys": [
@@ -3722,7 +3723,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -4156,9 +4162,6 @@
       "Browser might run out of memory": [
         ""
       ],
-      "Cancel all active transfers": [
-        ""
-      ],
       "Change layout": [
         ""
       ],
@@ -4444,12 +4447,6 @@
       "Select link expiration time": [
         ""
       ],
-      "Select permissions": [
-        ""
-      ],
-      "Select what to import": [
-        ""
-      ],
       "Settings": [
         ""
       ],
@@ -4465,6 +4462,9 @@
       "Sign in again to continue": [
         ""
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Size": [
         ""
       ],
@@ -4475,6 +4475,9 @@
         ""
       ],
       "Stop sharing with everyone?": [
+        ""
+      ],
+      "Stop transfers?": [
         ""
       ],
       "The file or folder failed to be downloaded": [
@@ -4523,6 +4526,9 @@
         ""
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

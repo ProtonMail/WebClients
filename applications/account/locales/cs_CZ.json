@@ -47,7 +47,7 @@
         "Přidat"
       ],
       "Add ${ BRAND_NAME } Account": [
-        ""
+        "Přidat ${ BRAND_NAME } účet"
       ],
       "Add address": [
         "Přidat adresu"
@@ -200,7 +200,7 @@
         "Vytvořit"
       ],
       "Create a secure ProtonMail address instead": [
-        ""
+        "Namísto toho vytvořit zabezpečenou ProtonMail adresu"
       ],
       "Create account": [
         "Vytvořit účet"
@@ -377,7 +377,7 @@
         "Přejít na štítek"
       ],
       "Go to sign in": [
-        ""
+        "Přejít na přihlášení"
       ],
       "Hide": [
         "Skrýt"
@@ -2593,9 +2593,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Nepodařilo se získat aktivní relace. Prosím ${ refresh } nebo to zkuste znovu později."
       ],
-      "File has no contents to preview": [
-        "Soubor nemá žádný obsah k náhledu"
-      ],
       "Filter with this name already exist": [
         "Filtr s tímto názvem již existuje"
       ],
@@ -3634,11 +3631,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton se nemůže přihlásit k Vašemu Gmail účtu. Zajistěte prosím, že adresa mailového servu a číslo portu jsou správně."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton se nemůže přihlásit k Vašemu účtu Yahoo. Zajistěte prosím, že adresa mailového servu a číslo portu jsou správně."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        ""
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton se nemůže připojit k vašemu Yahoo Mail účtu. Ujistěte se, že:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        ""
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
@@ -3715,8 +3712,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Přejít na ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Přejít na Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        ""
       ],
       "If 2-step verification is off, turn it on": [
         "Pokud je dvoufázové ověřování vypnuté, zapněte ho"
@@ -3783,9 +3780,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "v dalším kroku je potřeba vybrat všechna oprávnění"
-      ],
       "Manage": [
         "Spravovat"
       ],
@@ -3818,19 +3812,19 @@
       "shared calendars": [
         "sdílené kalendáře"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        ""
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Klikněte na odkaz ${ boldICS } a stáhněte si soubor"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "V nastavení Outlook.com přejděte na ${ calendarLink }"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Přejít na ${ calendarViewLink } v Yahoo emailu"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        ""
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Najeďte myší na kalendář, který chcete importovat, a otevřete rozevírací nabídku"
@@ -4070,7 +4064,7 @@
         "(E-mail + VPN)"
       ],
       "* No credit card required.": [
-        ""
+        "* Kreditní karta není vyžadována."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         ""
@@ -4208,7 +4202,7 @@
         "Již bylo přiděleno"
       ],
       "Already have an account?": [
-        ""
+        "Máte již svůj účet?"
       ],
       "Already used": [
         "Již použito"
@@ -4376,6 +4370,9 @@
         "Vytvořit v"
       ],
       "Creating your account": [
+        ""
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
         ""
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
@@ -4813,9 +4810,6 @@
       "New": [
         "Nové"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Dále se musíte přihlásit ke svému účtu Google a povolit nám přístup k Vašim datům."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Není nastavena žádná metoda obnovení účtu; riskujete ztrátu přístupu k Vašemu účtu"
       ],
@@ -4868,7 +4862,7 @@
         "Není to vaše zařízení? K přihlášení použijte okno soukromého procházení a po dokončení jej zavřete. ${ learnMore }"
       ],
       "Number of users": [
-        ""
+        "Počet uživatelů"
       ],
       "of": [
         "z"
@@ -5073,6 +5067,9 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
+      ],
+      "Select what you want to move from Google.": [
+        "Vyberte co chcete přesunout z Googlu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -5357,10 +5354,10 @@
         "Proces ověření otevře novou záložku, vypněte prosím veškerá blokování vyskakovacích oken. Nebude účtován žádný poplatek. Jakákoli částka použitá pro ověření karty bude obratem vrácena."
       ],
       "Verifying your payment": [
-        ""
+        "Ověřování vaší platby"
       ],
       "Version ${ version }": [
-        ""
+        "Verze ${ version }"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
         "Chcete nastavit ${ addressToCreate } jako výchozí e-mail pro odesílání zpráv?"
@@ -5406,9 +5403,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
-      ],
-      "What do you want to import from your Google account?": [
-        "Co chcete importovat z účtu Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokud je zakázáno, zabraňuje načítání obrázkových souborů na Vašem zařízení bez Vašeho vědomí."
@@ -7368,8 +7362,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Vezměte prosím na vědomí, že aplikace ${ boldNextStep } požadovala zahájení importu."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -8058,13 +8057,19 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         "",
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         "",
         "",
@@ -8107,12 +8112,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         "",
         "",
@@ -8773,7 +8772,7 @@
         "Downgradovat účet"
       ],
       "Download ${ VPN_APP_NAME }": [
-        ""
+        "Stáhnout ${ VPN_APP_NAME }"
       ],
       "Edit Allow List": [
         "Upravit seznam povolených"
@@ -9019,7 +9018,7 @@
         "Logo Protonu"
       ],
       "Recommended": [
-        ""
+        "Doporučeno"
       ],
       "Reconnect your account": [
         "Znovu připojit svůj účet"
@@ -9084,9 +9083,6 @@
       "Select contact group": [
         "Vybrat skupinu kontaktů"
       ],
-      "Select permissions": [
-        "Vyberte oprávnění"
-      ],
       "Select subscription and pay": [
         ""
       ],
@@ -9095,9 +9091,6 @@
       ],
       "Select the way to send this notification": [
         "Vyberte způsob, jak odeslat toto oznámení"
-      ],
-      "Select what to import": [
-        "Vyberte co importovat"
       ],
       "Select when you want this notification to be sent": [
         "Vyberte, kdy chcete, aby bylo toto oznámení odesláno"
@@ -9134,6 +9127,9 @@
       ],
       "Sign in again to continue": [
         "Chcete-li pokračovat, znovu se přihlaste"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort folders alphabetically": [
         "Řadit složky abecedně"

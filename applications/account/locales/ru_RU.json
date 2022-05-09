@@ -2593,9 +2593,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не удалось получить активные сеансы. Пожалуйста, ${ refresh } или повторите попытку позже."
       ],
-      "File has no contents to preview": [
-        "В файле нет содержимого для предпросмотра"
-      ],
       "Filter with this name already exist": [
         "Фильтр с таким именем уже существует"
       ],
@@ -3634,11 +3631,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton не может подключиться к вашей учетной записи Gmail. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton не может подключиться к вашей учетной записи Yahoo Mail. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта правильны."
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        ""
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton не может подключиться к вашей учетной записи Yahoo Mail. Пожалуйста, убедитесь, что:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        ""
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Слишком много запросов за последнее время. Пожалуйста, повторите попытку позднее."
@@ -3715,8 +3712,8 @@
       "Go to ${ boldAccountSecurity }": [
         "Перейдите в ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Перейдите в ${ securitySettingsLink } Outlook.com"
+      "Go to Outlook ${ securitySettingsLink }": [
+        ""
       ],
       "If 2-step verification is off, turn it on": [
         "Если двухэтапная аутентификация выключена, включите ее"
@@ -3783,9 +3780,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "на следующем шаге необходимо выбрать все разрешения"
-      ],
       "Manage": [
         "Управлять"
       ],
@@ -3818,19 +3812,19 @@
       "shared calendars": [
         "подписанные календари"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail"
+      "Yahoo": [
+        ""
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "Нажмите на ссылку ${ boldICS } и скачайте файл"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Перейдите к ${ calendarLink } в настройках Outlook.com"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Перейти в ${ calendarViewLink } в Yahoo Mail"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        ""
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Наведите курсор мыши на календарь, который вы хотите импортировать, и откройте выпадающее меню"
@@ -4378,6 +4372,9 @@
       "Creating your account": [
         ""
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -4813,9 +4810,6 @@
       "New": [
         "Новый"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Далее вам нужно будет войти в свой аккаунт Google и разрешить нам доступ к вашим данным."
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "Не установлен метод восстановления аккаунта, вы рискуете потерять доступ к своему аккаунту"
       ],
@@ -5072,6 +5066,9 @@
         "Выберите \"Продолжить\" с ${ name }, чтобы открыть приложение. Это также создаст аккаунт ${ name } с вашим адресом ${ MAIL_APP_NAME }, чтобы в будущем вы могли войти одним нажатием."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
+        ""
+      ],
+      "Select what you want to move from Google.": [
         ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
@@ -5406,9 +5403,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
-      ],
-      "What do you want to import from your Google account?": [
-        "Что вы хотите импортировать из своего аккаунта Google?"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
@@ -7358,11 +7352,8 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
-      "From ${ _price }": [
-        "От: ${ _price }"
-      ],
-      "From ${ _price2 } per user": [
-        "От ${ _price2 } за пользователя"
+      "From ${ _price } per user": [
+        ""
       ],
       "From ${ price }": [
         "От: ${ price }"
@@ -7375,12 +7366,6 @@
       ]
     },
     "new_plans: attribute": {
-      "Access to streaming services globally": [
-        "Доступ к стриминговым сервисам по всему миру"
-      ],
-      "Built-in ad blocker (NetShield)": [
-        "Встроенный блокировщик рекламы (NetShield)"
-      ],
       "Get ${ connections } high-speed VPN connection": [
         "Получите ${ connections } высокоскоростное VPN-подключение",
         "Получите ${ connections } высокоскоростных VPN-подключения",
@@ -7392,12 +7377,6 @@
         "Получите ${ connections } высокоскоростных VPN-подключения на пользователя",
         "Получите ${ connections } высокоскоростных VPN-подключений на пользователя",
         "Получите ${ connections } высокоскоростных VPN-подключения на пользователя"
-      ],
-      "High-speed VPN on ${ maxVpn } device": [
-        "Высокоскоростная VPN на ${ maxVpn } устройстве",
-        "Высокоскоростная VPN на ${ maxVpn } устройствах",
-        "Высокоскоростная VPN на ${ maxVpn } устройствах",
-        "Высокоскоростная VPN на устройствах (${ maxVpn } шт.)"
       ]
     },
     "new_plans: feature": {
@@ -7702,9 +7681,6 @@
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к аккаунту будет ограничен, а затем аккаунт будет отключен."
-      ],
-      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "Специальное решение VPN, которое обеспечивает защищенный высокоскоростной доступ без ограничений в Интернет."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
@@ -8064,8 +8040,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Обратите внимание, что ${ boldNextStep } запрашивается приложением для начала импорта."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -8754,13 +8735,19 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         "",
         "",
         "",
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } calendar": [
         "",
         "",
         "",
@@ -8803,12 +8790,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        "",
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         "",
         "",
         "",
@@ -9780,9 +9761,6 @@
       "Select contact group": [
         "Выбор группы контактов"
       ],
-      "Select permissions": [
-        "Выберите разрешения"
-      ],
       "Select subscription and pay": [
         ""
       ],
@@ -9791,9 +9769,6 @@
       ],
       "Select the way to send this notification": [
         "Выберите способ отправки этого уведомления"
-      ],
-      "Select what to import": [
-        "Виберете что импортировать"
       ],
       "Select when you want this notification to be sent": [
         "Выберите, когда вы хотите получать это уведомление"
@@ -9830,6 +9805,9 @@
       ],
       "Sign in again to continue": [
         "Войдите снова, чтобы продолжить"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"
