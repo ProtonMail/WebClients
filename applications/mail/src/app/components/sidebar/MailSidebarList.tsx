@@ -120,6 +120,53 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         scrollIntoView(element, { block: 'nearest' });
     }, []);
 
+    const { ShowMoved } = mailSettings || { ShowMoved: 0 };
+
+    const isConversation = isConversationMode(currentLabelID, mailSettings, location);
+
+    const counterMap = useDeepMemo(() => {
+        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
+            return {};
+        }
+
+        const all = [...labels, ...folders];
+        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
+        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
+            acc[id] = labelCount?.Unread;
+            return acc;
+        }, {});
+        return unreadCounterMap;
+    }, [mailSettings, labels, folders, conversationCounts, messageCounts, location]);
+
+    const totalMessagesMap = useDeepMemo(() => {
+        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
+            return {};
+        }
+
+        const all = [...labels, ...folders];
+        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
+        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
+            acc[id] = labelCount?.Total;
+            return acc;
+        }, {});
+        return unreadCounterMap;
+    }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
+
+    // show scheduled in sidebar if the user has scheduled messages
+    const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
+
+    const getCommonProps = (labelID: string) => ({
+        currentLabelID,
+        labelID,
+        isConversation,
+        unreadCount: counterMap[labelID],
+        totalMessagesCount: totalMessagesMap[labelID] || 0,
+    });
+
+    const handleOpenLabelModal = (labelType: 'label' | 'folder') => {
+        setLabelType(labelType);
+        setEditLabelModalOpen(true);
+    };
     const sidebarListItems = useMemo(() => {
         const foldersArray = folders?.length ? reduceFolderTreeview : ['add-folder'];
         const labelsArray = labels?.length ? labels.map((f) => f.ID) : ['add-label'];
@@ -127,7 +174,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         return [
             'inbox',
             'drafts',
-            'scheduled',
+            showScheduled && 'scheduled',
             'sent',
             'starred',
             'toggle-more-items',
@@ -139,7 +186,7 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         ]
             .flat(1)
             .filter(isTruthy);
-    }, [reduceFolderTreeview, folders, labels, displayFolders, displayLabels, displayMoreItems]);
+    }, [reduceFolderTreeview, folders, labels, showScheduled, displayFolders, displayLabels, displayMoreItems]);
 
     const shortcutHandlers: HotkeyTuple[] = [
         [
@@ -188,54 +235,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     ];
 
     useHotkeys(sidebarRef, shortcutHandlers);
-
-    const { ShowMoved } = mailSettings || { ShowMoved: 0 };
-
-    const isConversation = isConversationMode(currentLabelID, mailSettings, location);
-
-    const counterMap = useDeepMemo(() => {
-        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
-            return {};
-        }
-
-        const all = [...labels, ...folders];
-        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
-        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
-            acc[id] = labelCount?.Unread;
-            return acc;
-        }, {});
-        return unreadCounterMap;
-    }, [mailSettings, labels, folders, conversationCounts, messageCounts, location]);
-
-    const totalMessagesMap = useDeepMemo(() => {
-        if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
-            return {};
-        }
-
-        const all = [...labels, ...folders];
-        const labelCounterMap = getCounterMap(all, conversationCounts, messageCounts, mailSettings, location);
-        const unreadCounterMap = Object.entries(labelCounterMap).reduce<UnreadCounts>((acc, [id, labelCount]) => {
-            acc[id] = labelCount?.Total;
-            return acc;
-        }, {});
-        return unreadCounterMap;
-    }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
-
-    // show scheduled in sidebar if the user has scheduled messages
-    const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
-
-    const getCommonProps = (labelID: string) => ({
-        currentLabelID,
-        labelID,
-        isConversation,
-        unreadCount: counterMap[labelID],
-        totalMessagesCount: totalMessagesMap[labelID] || 0,
-    });
-
-    const handleOpenLabelModal = (labelType: 'label' | 'folder') => {
-        setLabelType(labelType);
-        setEditLabelModalOpen(true);
-    };
 
     return (
         <div ref={sidebarRef} tabIndex={-1} className="outline-none">
