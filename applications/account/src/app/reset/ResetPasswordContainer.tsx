@@ -181,7 +181,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                url={getStaticURL('/support-form')}
+                                url={getStaticURL('/support')}
                                 target="_self"
                                 fullWidth
                                 className="mt0-5"
@@ -299,7 +299,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
                             color="norm"
                             shape="ghost"
                             size="large"
-                            url={getStaticURL('/support-form')}
+                            url={getStaticURL('/support')}
                             target="_self"
                             fullWidth
                             className="mt0-5"

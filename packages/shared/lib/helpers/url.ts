@@ -225,9 +225,13 @@ export const getBlogURL = (path: string) => {
     return getStaticURL(`/blog${path}`);
 };
 
+export const getIsLegacyStaticURL = (url: string) => {
+    return url.includes('protonmail.com');
+};
+
 export const getKnowledgeBaseUrl = (path: string) => {
     // On protonmail, the KBs are prefixed with /support/knowledge-base/path
-    if (window.location.hostname.includes('protonmail.com')) {
+    if (getIsLegacyStaticURL(window.location.hostname)) {
         return getStaticURL(`/support/knowledge-base${path}`);
     }
     // On proton.me, it's just /support/path
@@ -238,8 +242,56 @@ export const getKnowledgeBaseUrl = (path: string) => {
     return getStaticURL(pathname);
 };
 
+export const getDomainsSupportURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/support/categories/custom-domains`;
+    }
+    return `${url}/support/mail/custom-email-domain`;
+};
+
+export const getBridgeURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/bridge`;
+    }
+    return `${url}/mail/bridge`;
+};
+
+export const getEasySwitchURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/import-export`;
+    }
+    return `${url}/easyswitch`;
+};
+
 export const getShopURL = () => {
     return `https://shop.proton.me`;
+};
+
+export const getPrivacyPolicyURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/privacy-policy`;
+    }
+    return `${url}/legal/privacy`;
+};
+
+export const getTermsURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/terms-and-conditions`;
+    }
+    return `${url}/legal/terms`;
+};
+
+export const getAbuseURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/abuse`;
+    }
+    return `${url}/support/abuse`;
 };
 
 export const isValidHttpUrl = (string: string) => {

@@ -1,6 +1,7 @@
 import { AlertModal, Button, Href, ModalProps, PrimaryButton } from '@proton/components';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { c, msgid } from 'ttag';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Download } from '../../../helpers/attachment/attachmentDownloader';
 
 interface Props extends ModalProps {
@@ -17,9 +18,7 @@ const ConfirmDownloadAttachments = ({ downloads, onResolve, onReject, ...rest }:
 
     const title = senderVerificationFailed ? c('Title').t`Verification error` : c('Title').t`Decryption error`;
 
-    const learnMore = senderVerificationFailed
-        ? 'https://protonmail.com/support/knowledge-base/digital-signature/'
-        : undefined;
+    const learnMore = senderVerificationFailed ? getKnowledgeBaseUrl('/digital-signature') : undefined;
 
     const warningContent = senderVerificationFailed
         ? c('Warning').ngettext(

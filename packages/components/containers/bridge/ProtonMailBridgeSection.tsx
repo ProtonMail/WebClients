@@ -1,6 +1,7 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { PLAN_NAMES, PLANS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
+import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { Select, Icon, ButtonLike, IconName } from '../../components';
 import { useUser } from '../../hooks';
@@ -24,6 +25,7 @@ const initialBridgeClients: BridgeClient[] = [
         platform: 'Windows',
         versionFile: 'version_windows.json',
         version: 'Latest',
+        // NOTE: These URLs don't exist on proton.me yet, and are replaced with the version.json anyway
         downloads: ['https://protonmail.com/download/bridge/Bridge-Installer.exe'],
     },
     {
@@ -46,7 +48,7 @@ const initialBridgeClients: BridgeClient[] = [
 
 const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeClient> => {
     try {
-        const response = await fetch(`https://protonmail.com/download/bridge/${bridgeClient.versionFile}`);
+        const response = await fetch(getStaticURL(`/download/bridge/${bridgeClient.versionFile}`));
         if (!response.ok) {
             throw new Error(response.statusText);
         }
@@ -95,6 +97,7 @@ const ProtonMailBridgeSection = () => {
             setBridgeClients(newBridgeClients);
             setLinuxLink(newBridgeClients[2].downloads[0]);
         }
+
         void run();
     }, []);
 
@@ -142,10 +145,7 @@ const ProtonMailBridgeSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph
-                className="mt0 mb1"
-                learnMoreUrl={hasPaidMail ? 'https://protonmail.com/bridge/' : undefined}
-            >
+            <SettingsParagraph className="mt0 mb1" learnMoreUrl={hasPaidMail ? getBridgeURL() : undefined}>
                 {c('Info')
                     .t`You can use ${MAIL_APP_NAME} with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.`}
             </SettingsParagraph>
