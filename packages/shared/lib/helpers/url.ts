@@ -225,9 +225,13 @@ export const getBlogURL = (path: string) => {
     return getStaticURL(`/blog${path}`);
 };
 
+export const getIsLegacyStaticURL = (url: string) => {
+    return url.includes('protonmail.com');
+};
+
 export const getKnowledgeBaseUrl = (path: string) => {
     // On protonmail, the KBs are prefixed with /support/knowledge-base/path
-    if (window.location.hostname.includes('protonmail.com')) {
+    if (getIsLegacyStaticURL(window.location.hostname)) {
         return getStaticURL(`/support/knowledge-base${path}`);
     }
     // On proton.me, it's just /support/path
@@ -238,6 +242,13 @@ export const getKnowledgeBaseUrl = (path: string) => {
     return getStaticURL(pathname);
 };
 
+export const getDomainsSupportURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/support/categories/custom-domains`;
+    }
+    return `${url}/support/mail/custom-email-domain`;
+};
 export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
