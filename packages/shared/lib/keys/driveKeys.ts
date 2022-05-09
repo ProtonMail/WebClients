@@ -11,7 +11,6 @@ import {
     SessionKey,
 } from 'pmcrypto';
 import { openpgp } from 'pmcrypto/lib/openpgp';
-import getRandomValues from '@proton/get-random-values';
 import { ReadableStream as PolyfillReadableStream } from 'web-streams-polyfill';
 import { createReadableStreamWrapper } from '@mattiasbuelens/web-streams-adapter';
 
@@ -120,7 +119,11 @@ export const generateLookupHash = async (name: string, parentHashKey: Uint8Array
 
 export const generateNodeHashKey = async (publicKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
     const { data: NodeHashKey } = await encryptMessage({
-        data: getRandomValues(new Uint8Array(32)),
+        // Once all clients can use non-ascii bytes, switch to simple
+        // generating of random bytes without encoding it into base64:
+        //import getRandomValues from '@proton/get-random-values';
+        //data: getRandomValues(new Uint8Array(32)),
+        data: generatePassphrase(),
         publicKeys: publicKey,
         privateKeys: addressPrivateKey,
         detached: false,
