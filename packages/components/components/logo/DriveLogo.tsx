@@ -25,7 +25,7 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Prop
             height="36"
             fill="none"
             className={classnames(['logo', size && `icon-${size}p`, variant, className])}
-            aria-labelledby={`{${uid}}-title`}
+            aria-labelledby={`${uid}-title`}
             {...rest}
         >
             {variant === 'with-wordmark' && (
@@ -96,7 +96,7 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Prop
                     <stop offset=".99" stopColor="#FF62C0" />
                 </radialGradient>
             </defs>
-            <title id={`{${uid}}-title`}>{appName}</title>
+            <title id={`${uid}-title`}>{appName}</title>
         </svg>
     );
 };

@@ -25,7 +25,7 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, ...rest }: P
             height="36"
             fill="none"
             className={classnames(['logo', size && `icon-${size}p`, variant, className])}
-            aria-labelledby={`{${uid}}-title`}
+            aria-labelledby={`${uid}-title`}
             {...rest}
         >
             {variant === 'with-wordmark' && (
@@ -104,7 +104,7 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, ...rest }: P
                     <stop offset=".99" stopColor="#54B7FF" />
                 </radialGradient>
             </defs>
-            <title id={`{${uid}}-title`}>{appName}</title>
+            <title id={`${uid}-title`}>{appName}</title>
         </svg>
     );
 };

@@ -60,7 +60,7 @@ const LoadingStep = ({ onSetup, hasPayment }: Props) => {
     return (
         <Main>
             <Content>
-                <div className="text-center">
+                <div className="text-center on-mobile-pt2">
                     <ProtonLogo size={60} variant="glyph-only" />
                     <hr className="mb2 mt2" />
                     <div className="inline-block">
@@ -69,7 +69,7 @@ const LoadingStep = ({ onSetup, hasPayment }: Props) => {
                                 <div className="text-lg" key={text}>
                                     <div
                                         className={classnames([
-                                            'flex-no-min-children flex-align-items-center',
+                                            'flex-no-min-children flex-align-items-center flex-nowrap',
                                             loading && 'color-primary',
                                         ])}
                                     >
@@ -80,7 +80,7 @@ const LoadingStep = ({ onSetup, hasPayment }: Props) => {
                                                 <Icon size={24} className="color-success" name="checkmark" />
                                             )}
                                         </div>
-                                        <div className="text-ellipsis p0-5">{text}</div>
+                                        <div className="flex-item-fluid p0-5 on-tiny-mobile-text-left">{text}</div>
                                     </div>
                                 </div>
                             );
