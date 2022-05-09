@@ -8,7 +8,7 @@ const Cash = () => {
     const { APP_NAME } = useConfig();
     const email = (
         <b key="email-contact">
-            {APP_NAME === APPS.PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'contact@protonmail.com'}
+            {APP_NAME === APPS.PROTONVPN_SETTINGS ? 'contact@protonvpn.com' : 'contact@proton.me'}
         </b>
     );
 
