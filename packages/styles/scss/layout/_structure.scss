@@ -119,6 +119,7 @@ html,
 	border-inline-start-width: 1px;
 	border-inline-end-width: 0;
 	box-shadow: var(--main-box-shadow);
+	background-color: transparent;
 
 	@include respond-to($breakpoint-small) {
 		margin-inline-end: 0;
