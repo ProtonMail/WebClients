@@ -861,6 +861,11 @@
         "Hét"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         "Bezárás"
@@ -2694,11 +2699,6 @@
         "ProtonContacts ${ forNow } nem támogatja:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        "a következő lépésben ki kell választania az összes jogosultságot"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
@@ -3009,9 +3009,6 @@
       "New": [
         "Új"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze az adatokhoz való hozzáférést."
-      ],
       "No contacts added yet": [
         "Még nincsenek névjegyek"
       ],
@@ -3029,6 +3026,9 @@
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
+      ],
+      "Not a valid URL": [
+        ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "A szervező által korábban frissített alkalmak megmaradnak, de az ön által küldött egyes válaszok elvesznek."
@@ -3083,6 +3083,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
@@ -3197,9 +3200,6 @@
       ],
       "Week": [
         "Hét"
-      ],
-      "What do you want to import from your Google account?": [
-        "Mit szeretne importálni a Google fiókjából?"
       ],
       "Which event would you like to delete?": [
         "Melyik eseményt szeretné törölni?"
@@ -4022,8 +4022,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "Az importlás elindításához ${ boldNextStep } melyet az alkalmazás kér."
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -4870,9 +4875,6 @@
       "Select event's last date": [
         "Válassza ki az esemény utolsó dátumát"
       ],
-      "Select permissions": [
-        "Válasszon jogosultságokat"
-      ],
       "Select the time to send this notification": [
         "Válassza ki az emlékeztető elküldésének időpontját"
       ],
@@ -4884,9 +4886,6 @@
       ],
       "Select the way to send this notification": [
         "Válassza ki az emlékeztető elküldésének módját"
-      ],
-      "Select what to import": [
-        "Válassza ki az importálandó dolgokat"
       ],
       "Select when this event will stop happening": [
         "Válassza ki meddig ismétlődik ez az esemény"
@@ -4912,6 +4911,9 @@
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         "Esemény frissítése"
       ],
@@ -4928,6 +4930,9 @@
         "Figyelem"
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

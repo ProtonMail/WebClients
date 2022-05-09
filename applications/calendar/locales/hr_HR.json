@@ -863,6 +863,11 @@
         "Tjedan"
       ]
     },
+    "Calendar view selector": {
+      "Change time range to": [
+        ""
+      ]
+    },
     "Collapsible tooltip": {
       "Close": [
         ""
@@ -2724,11 +2729,6 @@
         "ProtonContacts ne podržava ${ forNow }:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } od ${ totalContacts } kontakata neće biti uvezeno. Pritisnite za detalje"
@@ -3058,9 +3058,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No contacts added yet": [
         "Nema dodanih kontakata"
       ],
@@ -3077,6 +3074,9 @@
         "Nitko od sudionika ne može biti obaviješten o vašim promjenama:"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
+        ""
+      ],
+      "Not a valid URL": [
         ""
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
@@ -3132,6 +3132,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Odaberite zadani format e-pošte koji želite da se koristi prilikom slanja e-pošte na ovu adresu e-pošte."
+      ],
+      "Select what you want to move from Google.": [
+        ""
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -3246,9 +3249,6 @@
       ],
       "Week": [
         "Tjedan"
-      ],
-      "What do you want to import from your Google account?": [
-        ""
       ],
       "Which event would you like to delete?": [
         "Koji događaj želite ukloniti?"
@@ -4097,7 +4097,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -4960,9 +4965,6 @@
       "Select event's last date": [
         "Odaberite zadnji datum događaja"
       ],
-      "Select permissions": [
-        ""
-      ],
       "Select the time to send this notification": [
         "Odaberite vrijeme slanja ove obavijesti"
       ],
@@ -4974,9 +4976,6 @@
       ],
       "Select the way to send this notification": [
         "Odaberite način slanja ove obavijesti"
-      ],
-      "Select what to import": [
-        ""
       ],
       "Select when this event will stop happening": [
         "Odaberite kada će ovaj događaj prestati"
@@ -5002,6 +5001,9 @@
       "Sign in again to continue": [
         "Ponovno se prijavite da biste nastavili"
       ],
+      "Sign in and grant access": [
+        ""
+      ],
       "Update event": [
         "Ažuriraj događaj"
       ],
@@ -5018,6 +5020,9 @@
         "Upozorenje"
       ],
       "Warning: suspected fake website": [
+        ""
+      ],
+      "What would you like to import?": [
         ""
       ],
       "What's new": [

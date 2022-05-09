@@ -131,6 +131,9 @@
       "Continue": [
         "Tovább"
       ],
+      "Continue transfers": [
+        "Le- és feltöltések folytatása"
+      ],
       "Continue with Google": [
         "Folytatás Google fiókkal"
       ],
@@ -493,11 +496,14 @@
       "Stop sharing": [
         "Megosztás megszüntetése"
       ],
+      "Stop transfers": [
+        "Le- és feltöltések leállítása"
+      ],
       "Submit": [
         "Küldés"
       ],
       "Submit report": [
-        ""
+        "Bejelentés elküldése"
       ],
       "Switch account": [
         "Fiók váltása"
@@ -1784,9 +1790,6 @@
       "File cannot be merged with folder": [
         ""
       ],
-      "File has no contents to preview": [
-        "Nincs előnézeti tartalom"
-      ],
       "File selection is already downloading": [
         ""
       ],
@@ -1867,7 +1870,7 @@
         ""
       ],
       "Report failed to be sent": [
-        ""
+        "A bejelentés elküldése nem sikerült"
       ],
       "Request timed out": [
         ""
@@ -2181,11 +2184,6 @@
         "ProtonContacts ${ forNow } nem támogatja:"
       ]
     },
-    "Import instructions emphasis": {
-      "in the next step you need to select all the permissions": [
-        ""
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
@@ -2362,7 +2360,7 @@
         ""
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
       "Canceled": [
         "Megszakítva"
@@ -2393,9 +2391,6 @@
       ],
       "Close this screen to exit.": [
         ""
-      ],
-      "Closing transfer manager will cancel all active transfers, are you sure?": [
-        "Az áttöltéskezelő bezárása megszakítja az összes jelenlegi fájlátvitelt. Folytatja?"
       ],
       "Conflict": [
         ""
@@ -2463,7 +2458,7 @@
         "Letöltés"
       ],
       "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
+        "${ esProgress }-ből ${ totalProgressToShow } elem letöltése folyamatban"
       ],
       "Drag and drop a file here or choose to upload.": [
         "Ejtsen ide fájlokat vagy válassza a feltöltést."
@@ -2484,14 +2479,14 @@
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "",
-        ""
+        "Hátralévő idő becslése: ${ estimatedMinutes } perc",
+        "Hátralévő idő becslése: ${ estimatedMinutes } perc"
       ],
       "Estimated time remaining: Less than a minute": [
-        ""
+        "Hátralévő idő becslése: kevesebb, mint egy perc"
       ],
       "Estimating time remaining...": [
-        ""
+        "Hátralévő idő becslése..."
       ],
       "Failed": [
         "Sikertelen"
@@ -2647,9 +2642,6 @@
       "New": [
         ""
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        ""
-      ],
       "No": [
         "Nem"
       ],
@@ -2674,14 +2666,17 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         ""
       ],
+      "Not a valid URL": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
       "of": [
         "/"
       ],
-      "One of your encrypted drives is locked. This is most likely due to a recent password reset.${ BrElement }\n${ BrElement }\n${ questionText }": [
-        ""
+      "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        "Az egyik titkosított felhőtárolója le van zárva. A legvalószínűbb oka egy nemrégi jelszó-újraállítás lehet."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2753,7 +2748,7 @@
         "Az oldal frissítése vagy a ${ link } automatikusan megoldja a legtöbb problémát."
       ],
       "Report has been sent": [
-        ""
+        "A jelentés el lett küldve"
       ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
@@ -2763,6 +2758,9 @@
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
+      ],
+      "Select what you want to move from Google.": [
+        "Válassza ki, mit szeretne a Google-ból áthozni."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -2808,6 +2806,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Az alábbiakkal, lehet, hogy babráltak: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
+      ],
+      "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
+        "Még vannak fájlok, amelyeket le vagy fel kell tölteni. A transzferkezelő bezárása le fogja állítani az összes műveletet."
       ],
       "There are no files yet": [
         "Még nincsenek fájlok"
@@ -2898,7 +2899,7 @@
         "Nem támogatott fájltípus"
       ],
       "Updating drive search...": [
-        ""
+        "Felhőtárban keresés frissítése..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
@@ -2913,7 +2914,7 @@
         "Fájlok százainak egyszerre való feltöltése fennakadásokat okozhat."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        ""
+        "Használja ezt az adatlapot, hogy tájékoztasson minket nem megfelelő, illegális vagy egyéb módon kártékony megosztott fájlokról. A következőt készül megosztani:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
@@ -2931,9 +2932,6 @@
         "Hét"
       ],
       "What do you want to do?": [
-        ""
-      ],
-      "What do you want to import from your Google account?": [
         ""
       ],
       "What would you like to do?": [
@@ -3032,8 +3030,8 @@
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
       ],
-      "Your secure, shareable link for ${ boldNameText }:": [
-        "A biztonságos, megosztható hivatkozás ehhez: ${ boldNameText }:"
+      "Your secure, shareable link for ${ boldNameText }": [
+        "A biztonságos, megosztható hivatkozás ehhez: ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3052,6 +3050,9 @@
       ],
       "file data": [
         "fájl adatok"
+      ],
+      "file data key": [
+        "fájl adatkulcs"
       ],
       "keys": [
         "kulcsok"
@@ -3139,7 +3140,7 @@
         "Kategória"
       ],
       "Child sexual abuse material": [
-        ""
+        "Gyerek szexuális bántalmazását tartalmazó anyag"
       ],
       "City": [
         "Település"
@@ -3148,7 +3149,7 @@
         ""
       ],
       "Comment": [
-        ""
+        "Hozzászólás"
       ],
       "Contacts": [
         ""
@@ -3157,7 +3158,7 @@
         "Másolás"
       ],
       "Copyright infringement": [
-        ""
+        "Szerzői jogok megsértése"
       ],
       "Country": [
         "Ország"
@@ -3182,7 +3183,7 @@
         "Letöltés mindenképpen"
       ],
       "Email": [
-        ""
+        "E-mail"
       ],
       "Email address": [
         "E-mail cím"
@@ -3272,7 +3273,7 @@
         "E-mail jelszó"
       ],
       "Malware": [
-        ""
+        "Rosszindulatú szoftver"
       ],
       "Manage folders": [
         ""
@@ -3302,7 +3303,7 @@
         "Az operációs rendszer verziója"
       ],
       "Other": [
-        ""
+        "Egyéb"
       ],
       "Password": [
         "Jelszó"
@@ -3314,7 +3315,7 @@
         "Telefonszám"
       ],
       "Please provide full details to help us take appropriate action": [
-        ""
+        "Kérjük, adja meg nekünk az összes részletet, hogy segíteni tudjon nekünk megtenni a megfelelő lépéseket"
       ],
       "Post office box": [
         "Postafiók"
@@ -3341,13 +3342,13 @@
         ""
       ],
       "Report Abuse": [
-        ""
+        "Visszaélés jelentése"
       ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
       "Select type of abuse": [
-        ""
+        "Válassza ki a visszaélés fajtáját"
       ],
       "Set expiration date": [
         "Lejárati dátum beállítása"
@@ -3365,10 +3366,10 @@
         ""
       ],
       "Spam": [
-        ""
+        "Levélszemét"
       ],
       "Stolen data": [
-        ""
+        "Lopott adat"
       ],
       "Street address": [
         "Utca, házszám"
@@ -3722,8 +3723,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        ""
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        "Következőként be kell jelentkeznie a Google fiókjába, hogy engedélyezze a Protonnak az adatokhoz való hozzáférést."
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        "Ahhoz, hogy az importálás működjön, ki kell választani az összes kért elemet, ahogy a GIF mutatja."
       ]
     },
     "Onboarding Action": {
@@ -3825,7 +3831,7 @@
         "Adja meg az új mappa nevét"
       ],
       "Enter your email address": [
-        ""
+        "Adja meg e-mail címét"
       ],
       "Filter groups": [
         "Csoportok szűrése"
@@ -4156,9 +4162,6 @@
       "Browser might run out of memory": [
         "A böngésző kifuthat memóriából"
       ],
-      "Cancel all active transfers": [
-        "Minden folyamatban lévő átvitel megszakítása"
-      ],
       "Change layout": [
         "Elrendezés módosítása"
       ],
@@ -4444,12 +4447,6 @@
       "Select link expiration time": [
         "Hivatkozás lejárati idejének kiválasztása"
       ],
-      "Select permissions": [
-        ""
-      ],
-      "Select what to import": [
-        ""
-      ],
       "Settings": [
         "Beállítások"
       ],
@@ -4465,6 +4462,9 @@
       "Sign in again to continue": [
         "Lépjen be újból a folytatáshoz"
       ],
+      "Sign in and grant access": [
+        "Jelentkezzen be és adjon hozzáférést"
+      ],
       "Size": [
         "Méret"
       ],
@@ -4476,6 +4476,9 @@
       ],
       "Stop sharing with everyone?": [
         "Megszakítja a mindenkivel való megosztást?"
+      ],
+      "Stop transfers?": [
+        "Le- és feltöltések leállítása?"
       ],
       "The file or folder failed to be downloaded": [
         "A fájlt vagy mappát nem sikerült letölteni"
@@ -4524,6 +4527,9 @@
       ],
       "Warning: suspected fake website": [
         "Figyelem: gyanítottan hamis weboldal"
+      ],
+      "What would you like to import?": [
+        "Mit szeretne importálni?"
       ],
       "What's new": [
         "Újdonságok"

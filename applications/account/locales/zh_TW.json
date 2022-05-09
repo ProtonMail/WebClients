@@ -368,7 +368,7 @@
         "生成還原短語"
       ],
       "Get ${ vpnPlus }": [
-        ""
+        "選購 ${ vpnPlus }"
       ],
       "Get verification code": [
         "取得驗證碼"
@@ -2536,9 +2536,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "無法取得使用中工作階段。請 ${ refresh } 或稍後再試。"
       ],
-      "File has no contents to preview": [
-        "預覽的檔案無內容"
-      ],
       "Filter with this name already exist": [
         "以此為名的篩選器已存在"
       ],
@@ -3529,11 +3526,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "Proton 無法連線到您的 Gmail 帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        ""
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton 無法連線到您的 Yahoo 電子郵件帳號。請確保："
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        ""
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近的請求太多。請容後再試。"
@@ -3610,8 +3607,8 @@
       "Go to ${ boldAccountSecurity }": [
         "前往 ${ boldAccountSecurity }"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "前往 Outlook.com ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        ""
       ],
       "If 2-step verification is off, turn it on": [
         "若兩步驟驗證已關閉，請將其開啟"
@@ -3678,9 +3675,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "在下一個步驟中，您必須選取所有的權限"
-      ],
       "Manage": [
         "管理"
       ],
@@ -3713,19 +3707,19 @@
       "shared calendars": [
         "已分享的行事曆"
       ],
-      "Yahoo Mail": [
-        "Yahoo 電子郵件"
+      "Yahoo": [
+        ""
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "點擊 ${ boldICS } 連結並下載檔案"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "前往您 Outlook.com 設定中的 ${ calendarLink }"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "前往 Yahoo 郵件中的 ${ calendarViewLink }"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        ""
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "將滑鼠游標停在您要匯入的行事曆上並開啟下拉式選單"
@@ -4204,6 +4198,9 @@
       "Creating your account": [
         ""
       ],
+      "Credit for the unused portion of your previous plan subscription": [
+        "您之前訂購授權方案裡未使用部分的餘額"
+      ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
@@ -4556,7 +4553,7 @@
         "大量的匯入可能要數天才能完成。"
       ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
-        ""
+        "了解如何透過第三方 VPN 應用程式，登入 ${ VPN_APP_NAME }。"
       ],
       "Learn more": [
         "瞭解更多"
@@ -4629,9 +4626,6 @@
       ],
       "New": [
         "新增"
-      ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "接下來，你需要登入你的 Google 帳戶並允許我們存取你的資料。"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "沒有設定任何帳戶恢復手段，您有可能會無法存取您的資料"
@@ -4888,6 +4882,9 @@
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
       ],
+      "Select what you want to move from Google.": [
+        "選取您要從 Google 移動的項目"
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
@@ -4982,7 +4979,7 @@
         "您的使用者登入後，將可看到此名稱。"
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "最安全可靠的方式，上網瀏覽、影音串流以及線上活動。"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         ""
@@ -5186,7 +5183,7 @@
         "警告：刪除是永久性的。這也會一併移除對所有已連結服務的存取權限並刪除您所有的聯絡人。"
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        ""
+        "我們建議您使用正版 ${ VPN_APP_NAME } 應用程式。"
       ],
       "We recommend using your recovery phrase instead.": [
         "我們建議您使用你的復原短語取代它。"
@@ -5220,9 +5217,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
-      ],
-      "What do you want to import from your Google account?": [
-        "你想要從你的 Google 帳戶匯入什麼資料？"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "停用時，將防止影像檔案在您不經不覺時在您的裝置上載入。\t"
@@ -5291,7 +5285,7 @@
         ""
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
-        ""
+        "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
         "您在未來 24 小時內不得傳送超過 ${ emailSendLimitNumber } 個電子郵件邀請"
@@ -7146,8 +7140,13 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
-        "需要注意的是 ${ boldNextStep } 以開始您的匯入程序。"
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
+        ""
       ]
     },
     "Onboarding": {
@@ -7836,10 +7835,13 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
+      "${ _n } calendar per user": [
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
+        ""
+      ],
+      "${ n } calendar": [
         ""
       ],
       "${ n } high-speed VPN connection": [
@@ -7861,9 +7863,6 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        ""
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
         ""
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
@@ -8811,9 +8810,6 @@
       "Select contact group": [
         "選擇聯絡人群組"
       ],
-      "Select permissions": [
-        "選取權限"
-      ],
       "Select subscription and pay": [
         ""
       ],
@@ -8822,9 +8818,6 @@
       ],
       "Select the way to send this notification": [
         "請選擇此通知發送的方式"
-      ],
-      "Select what to import": [
-        "選取要匯入內容"
       ],
       "Select when you want this notification to be sent": [
         "請選擇您想此通知何時發送"
@@ -8861,6 +8854,9 @@
       ],
       "Sign in again to continue": [
         "請再次登入以繼續"
+      ],
+      "Sign in and grant access": [
+        "登入並授予存取權"
       ],
       "Sort folders alphabetically": [
         "按英文字母排序資料夾"

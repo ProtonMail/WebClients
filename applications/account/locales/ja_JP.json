@@ -915,7 +915,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
       ]
     },
     "Apps dropdown": {
@@ -955,7 +955,7 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 ユーザー"
       ]
     },
     "Badge for domain": {
@@ -2224,7 +2224,7 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/月"
       ],
       "/user per month": [
         ""
@@ -2536,9 +2536,6 @@
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "アクティブなセッションを取得できませんでした。${ refresh } するか、後でもう一度お試しください。"
       ],
-      "File has no contents to preview": [
-        "ファイルにプレビューするコンテンツがありません"
-      ],
       "Filter with this name already exist": [
         "この名前のフィルターが既に存在します"
       ],
@@ -2705,13 +2702,13 @@
         "フォルダ名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your folder names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "フォルダー名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "ラベル名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "ラベル名の中に ${ MAIL_APP_NAME } の最大文字数の上限を超えるものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
@@ -2902,7 +2899,7 @@
         "カレンダーのタイムゾーンはサポートされていません"
       ],
       "Component with wrong format": [
-        ""
+        "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
         "独自のタイムゾーン"
@@ -3529,11 +3526,11 @@
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
         "ProtonはGmailアカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that the mail server address and port number are correct.": [
-        "ProtonはYahoo Mailアカウントに接続できません。メールサーバーのアドレスとポート番号が正しいことを確認してください。"
+      "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        ""
       ],
-      "Proton can't connect to your Yahoo Mail account. Please make sure that:": [
-        "Proton はあなたの Yahoo Mail アカウントに接続できません。以下をご確認ください:"
+      "Proton can't connect to your Yahoo account. Please make sure that:": [
+        ""
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "最近のリクエストが多すぎます。しばらくしてから再度お試しください。"
@@ -3610,8 +3607,8 @@
       "Go to ${ boldAccountSecurity }": [
         "${ boldAccountSecurity } に移動"
       ],
-      "Go to Outlook.com ${ securitySettingsLink }": [
-        "Outlook.com へ移動 ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }": [
+        ""
       ],
       "If 2-step verification is off, turn it on": [
         "2 段階認証がオフの場合、オンにします"
@@ -3678,9 +3675,6 @@
       "ICS": [
         "ICS"
       ],
-      "in the next step you need to select all the permissions": [
-        "次のステップで必要なすべての権限を選択します"
-      ],
       "Manage": [
         "管理"
       ],
@@ -3713,19 +3707,19 @@
       "shared calendars": [
         "共有されたカレンダー"
       ],
-      "Yahoo Mail": [
-        "Yahoo Mail (アメリカ)"
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file": [
         "${ boldICS } をクリックし、ファイルをダウンロードします"
       ],
-      "Go to ${ calendarLink } in your Outlook.com settings": [
-        "Outlook.com 設定から ${ calendarLink } へ移動します"
+      "Go to ${ calendarLink } in your Outlook settings": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo Mail": [
-        "Yahoo Mail の ${ calendarViewLink } へ移動"
+      "Go to ${ calendarViewLink } in Yahoo": [
+        "Yahoo の ${ calendarViewLink } へ移動"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         ""
@@ -3932,7 +3926,7 @@
         "1. 友達を Proton へ招待"
       ],
       "2. They try ${ planName }": [
-        ""
+        "2. 友達は ${ planName } を試すことができます"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "クーポン ${ code } 付きのサブスクリプションに 20% の割引が適用されます"
@@ -4203,6 +4197,9 @@
       ],
       "Creating your account": [
         "アカウントを作成しています"
+      ],
+      "Credit for the unused portion of your previous plan subscription": [
+        ""
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
@@ -4630,9 +4627,6 @@
       "New": [
         "新規"
       ],
-      "Next you'll need to log in to your Google account and allow us to access your data.": [
-        "次に Google アカウントにログインし、データへのアクセスを許可します。"
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "アカウントの回復手段が設定されていません。アカウントにアクセスできなくなる危険性があります。"
       ],
@@ -4888,6 +4882,9 @@
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
       ],
+      "Select what you want to move from Google.": [
+        ""
+      ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
       ],
@@ -4940,7 +4937,7 @@
         "ストレージ容量は ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } で共有されます。"
       ],
       "Storage used by this user": [
-        ""
+        "ストレージはこのユーザーによって使われています"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "このパスワードとファイルは安全な場所に保管してください。パスワードとファイルは鍵をインポートするときにもう一度必要になります。"
@@ -5220,9 +5217,6 @@
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         ""
-      ],
-      "What do you want to import from your Google account?": [
-        "Google アカウントから何をインポートしますか？"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "無効にすると、知らないうちに画像が読み込まれることを防ぎます。"
@@ -5842,7 +5836,7 @@
         ""
       ],
       "${ n } month": [
-        ""
+        "${ n } か月"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ MaxAddresses } のうち ${ UsedAddresses } のメールアドレス"
@@ -5914,10 +5908,10 @@
         "埋め込み画像を自動で読み込む"
       ],
       "Auto-reply": [
-        ""
+        "自動返信"
       ],
       "Billing cycle": [
-        ""
+        "支払い間隔"
       ],
       "Block email tracking": [
         "メールのトラッキングをブロック"
@@ -6151,7 +6145,7 @@
         "フィンガープリント ${ fingerprintCode } を持つキーのパスワードを入力してください"
       ],
       "Expiration date": [
-        ""
+        "有効期限"
       ],
       "Expires": [
         "有効期限"
@@ -6187,7 +6181,7 @@
         "パスワードを非表示"
       ],
       "I understand the risk": [
-        ""
+        "リスクを承知しました"
       ],
       "IF": [
         "条件"
@@ -6358,7 +6352,7 @@
         "支払いの詳細"
       ],
       "Payment method": [
-        ""
+        "支払い方法"
       ],
       "Phone number": [
         "電話番号"
@@ -6427,7 +6421,7 @@
         "パスワードを表示"
       ],
       "Security code": [
-        ""
+        "セキュリティコード"
       ],
       "Select your country": [
         "国を選択してください"
@@ -6604,7 +6598,7 @@
         "報酬"
       ],
       "ZIP code": [
-        ""
+        "郵便番号"
       ]
     },
     "label": {
@@ -7075,7 +7069,7 @@
     },
     "Navigation": {
       "Back": [
-        ""
+        "戻る"
       ],
       "Back to Calendar": [
         "Calendar に戻る"
@@ -7146,7 +7140,12 @@
       ]
     },
     "Oauth instructions": {
-      "Please note that ${ boldNextStep } requested by the application to start your import.": [
+      "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
+        ""
+      ]
+    },
+    "Oauth instructions video": {
+      "For the import to work, you must select all requested items as shown in the GIF.": [
         ""
       ]
     },
@@ -7836,11 +7835,14 @@
       ]
     },
     "Subscription attribute": {
-      "${ MAX_CALENDARS_PER_USER } calendar per user": [
-        "1 ユーザーあたり ${ MAX_CALENDARS_PER_USER } 件のカレンダー"
+      "${ _n } calendar per user": [
+        ""
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } 件の高速 VPN 接続"
+      ],
+      "${ n } calendar": [
+        "${ n } カレンダー"
       ],
       "${ n } high-speed VPN connection": [
         "${ n } 件の高速 VPN 接続"
@@ -7862,9 +7864,6 @@
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } カレンダー"
-      ],
-      "${ UsedCalendars } of ${ MaxCalendars } calendar": [
-        "${ MaxCalendars } 件のうち ${ UsedCalendars } 件のカレンダー"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ MaxDomains } ドメインのうち ${ UsedDomains } ドメインのカスタムドメイン"
@@ -8084,10 +8083,10 @@
         "証明書 ${ name } を失効させました"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "証明書の期限は ${ formattedExpirationDate } です"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "設定ファイル「${ name }」が作成されました。秘密鍵は保存されないため、もう一度表示することはできません。設定をコピーするかダウンロードしてください。"
       ],
       "Creating config file for ${ serverName }": [
         "${ serverName } の設定ファイルを作成しています"
@@ -8109,10 +8108,10 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/月"
       ],
       "per month": [
-        ""
+        "毎月"
       ]
     },
     "Summary of errors during export calendar": {
@@ -8811,9 +8810,6 @@
       "Select contact group": [
         "連絡先グループを選択"
       ],
-      "Select permissions": [
-        "権限を選択"
-      ],
       "Select subscription and pay": [
         "サブスクリプションを選んで決済"
       ],
@@ -8822,9 +8818,6 @@
       ],
       "Select the way to send this notification": [
         ""
-      ],
-      "Select what to import": [
-        "インポートするものを選択"
       ],
       "Select when you want this notification to be sent": [
         ""
@@ -8861,6 +8854,9 @@
       ],
       "Sign in again to continue": [
         "再度サインインして続行"
+      ],
+      "Sign in and grant access": [
+        ""
       ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"
