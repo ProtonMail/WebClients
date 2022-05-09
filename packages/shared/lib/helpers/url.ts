@@ -249,6 +249,15 @@ export const getDomainsSupportURL = () => {
     }
     return `${url}/support/mail/custom-email-domain`;
 };
+
+export const getBridgeURL = () => {
+    const url = getStaticURL('');
+    if (getIsLegacyStaticURL(url)) {
+        return `${url}/bridge`;
+    }
+    return `${url}/mail/bridge`;
+};
+
 export const getEasySwitchURL = () => {
     const url = getStaticURL('');
     if (getIsLegacyStaticURL(url)) {
