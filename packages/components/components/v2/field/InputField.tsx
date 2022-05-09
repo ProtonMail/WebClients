@@ -100,19 +100,32 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
         </>
     );
 
-    const denseSuffix = (() => {
-        if (isDense && (error || warning)) {
-            const { tooltipType, iconClassName, title } = error
-                ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
-                : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
+    const getSuffix = () => {
+        const denseSuffix = (() => {
+            if (isDense && (error || warning)) {
+                const { tooltipType, iconClassName, title } = error
+                    ? { tooltipType: 'error' as const, iconClassName: 'color-danger', title: error }
+                    : { tooltipType: 'warning' as const, iconClassName: 'color-warning', title: warning };
 
-            return (
-                <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
-                    <Icon name="exclamation-circle-filled" className={iconClassName} />
-                </Tooltip>
-            );
+                return (
+                    <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
+                        <Icon name="exclamation-circle-filled" className={iconClassName} />
+                    </Tooltip>
+                );
+            }
+        })();
+
+        if (!denseSuffix && !suffix) {
+            return undefined;
         }
-    })();
+
+        return (
+            <>
+                {denseSuffix}
+                {suffix}
+            </>
+        );
+    };
 
     return (
         <label
@@ -140,12 +153,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     disabled={disabled}
                     aria-describedby={assistiveUid}
                     {...rest}
-                    suffix={
-                        <>
-                            {denseSuffix}
-                            {suffix}
-                        </>
-                    }
+                    suffix={getSuffix()}
                 />
             </div>
             <div className={classes.assistContainer} id={assistiveUid}>
