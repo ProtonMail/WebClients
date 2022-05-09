@@ -8,13 +8,14 @@ import {
     useModals,
     usePopperAnchor,
     useModalState,
+    useMailSettings,
 } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { changeSearchParams } from '@proton/shared/lib/helpers/url';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
 
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
@@ -61,7 +62,7 @@ const MailRecipientItemSingle = ({
     const { createModal } = useModals();
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
-
+    const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
@@ -118,12 +119,24 @@ const MailRecipientItemSingle = ({
         event.stopPropagation();
 
         if (recipient.Address) {
+            let newPathname = `/${getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL)}`;
+
+            if (mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN) {
+                const pathname = history.location.pathname.split('/');
+                pathname[1] = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
+                newPathname = pathname.join('/');
+            }
+
             history.push(
-                changeSearchParams(`/${getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL)}`, history.location.hash, {
+                changeSearchParams(newPathname, history.location.hash, {
                     from: recipient.Address,
+                    page: undefined,
+                    sort: undefined,
                 })
             );
         }
+
+        close();
     };
 
     const customDropdownActions = (
