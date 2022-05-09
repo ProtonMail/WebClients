@@ -1,7 +1,7 @@
 import { useState, useEffect, ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { PLAN_NAMES, PLANS, MAIL_APP_NAME, BRAND_NAME } from '@proton/shared/lib/constants';
-import { getBridgeURL } from '@proton/shared/lib/helpers/url';
+import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { Select, Icon, ButtonLike, IconName } from '../../components';
 import { useUser } from '../../hooks';
@@ -48,7 +48,7 @@ const initialBridgeClients: BridgeClient[] = [
 
 const fetchBridgeVersion = async (bridgeClient: BridgeClient): Promise<BridgeClient> => {
     try {
-        const response = await fetch(`https://protonmail.com/download/bridge/${bridgeClient.versionFile}`);
+        const response = await fetch(getStaticURL(`/download/bridge/${bridgeClient.versionFile}`));
         if (!response.ok) {
             throw new Error(response.statusText);
         }
