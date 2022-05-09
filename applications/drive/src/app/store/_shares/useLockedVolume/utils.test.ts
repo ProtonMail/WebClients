@@ -1,12 +1,20 @@
 import { DecryptedKey, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
-import { generateAddress } from '../../../utils/test/crypto';
+import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
 import { getPossibleAddressPrivateKeys } from './utils';
 
 const DEFAULT_KEYPASSWORD = '1';
 
 describe('useLockedVolume -- utils', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     describe('getPossibleAddressPrivateKeys()', () => {
         it('return empty array if no matching keys found', async () => {
             const keyPassword = DEFAULT_KEYPASSWORD;

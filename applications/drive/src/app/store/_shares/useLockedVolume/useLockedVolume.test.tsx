@@ -2,7 +2,7 @@ import { User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { generateAddress } from '../../../utils/test/crypto';
+import { generateAddress, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
 import { LockedVolumeForRestore } from '../interface';
 import useSharesState from '../useSharesState';
 import useLockedVolume, { useLockedVolumeInner } from './useLockedVolume';
@@ -91,6 +91,14 @@ describe('useLockedVolume', () => {
     let hook: {
         current: ReturnType<typeof useLockedVolume>;
     };
+
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
 
     beforeEach(() => {
         jest.resetAllMocks();
