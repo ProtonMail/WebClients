@@ -26,7 +26,7 @@ const UsernameSection = () => {
                             <strong>{Email}</strong>
                         ) : (
                             <Href
-                                url="https://mail.protonmail.com/login"
+                                url="https://account.proton.me/login?product=mail"
                                 title={c('Info').t`Log in to ${MAIL_APP_NAME} to activate your address`}
                             >{c('Link').t`Not activated`}</Href>
                         )}

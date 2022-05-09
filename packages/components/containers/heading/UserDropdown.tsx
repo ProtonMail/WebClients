@@ -312,7 +312,7 @@ const UserDropdown = ({ onOpenChat, onOpenIntroduction, ...rest }: Props) => {
                                 href={
                                     APP_NAME === APPS.PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/'
-                                        : getStaticURL('/support/')
+                                        : getStaticURL('/support')
                                 }
                                 // eslint-disable-next-line react/jsx-no-target-blank
                                 target="_blank"
