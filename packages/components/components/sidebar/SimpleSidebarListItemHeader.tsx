@@ -4,6 +4,7 @@ import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import SidebarListItem from './SidebarListItem';
 import { HotkeyTuple, useHotkeys } from '../../hooks';
+import ButtonLike from '../button/ButtonLike';
 
 interface Props {
     toggle: boolean;
@@ -64,12 +65,12 @@ const SimpleSidebarListItemHeader = ({
                     data-shortcut-target={id}
                 >
                     {hasCaret && (
-                        <span className="button button-for-icon button-small button-ghost-weak">
+                        <ButtonLike as="span" color="weak" shape="ghost" size="small" icon>
                             <Icon
                                 name="chevron-down"
                                 className={classnames(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
                             />
-                        </span>
+                        </ButtonLike>
                     )}
                     <span className="ml0-5 text-sm">{text}</span>
                 </button>
