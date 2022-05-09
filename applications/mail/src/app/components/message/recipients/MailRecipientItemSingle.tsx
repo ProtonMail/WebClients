@@ -9,9 +9,13 @@ import {
     usePopperAnchor,
     useModalState,
 } from '@proton/components';
+import { useHistory } from 'react-router-dom';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { changeSearchParams } from '@proton/shared/lib/helpers/url';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
@@ -21,6 +25,7 @@ import { MESSAGE_ACTIONS } from '../../../constants';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import RecipientItemSingle from './RecipientItemSingle';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { getHumanLabelID } from '../../../helpers/labels';
 
 interface Props {
     message?: MessageState;
@@ -52,7 +57,7 @@ const MailRecipientItemSingle = ({
     isExpanded,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-
+    const history = useHistory();
     const { createModal } = useModals();
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
@@ -109,6 +114,18 @@ const MailRecipientItemSingle = ({
         setTrustPublicKeyModalOpen(true);
     };
 
+    const handleClickSearch = (event: MouseEvent) => {
+        event.stopPropagation();
+
+        if (recipient.Address) {
+            history.push(
+                changeSearchParams(`/${getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL)}`, history.location.hash, {
+                    from: recipient.Address,
+                })
+            );
+        }
+    };
+
     const customDropdownActions = (
         <>
             <hr className="my0-5" />
@@ -133,7 +150,13 @@ const MailRecipientItemSingle = ({
                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
-
+            <DropdownMenuButton
+                className="text-left flex flex-nowrap flex-align-items-center"
+                onClick={handleClickSearch}
+            >
+                <Icon name="magnifier" className="mr0-5" />
+                <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Show contact messages`}</span>
+            </DropdownMenuButton>
             {showTrustPublicKey && (
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
