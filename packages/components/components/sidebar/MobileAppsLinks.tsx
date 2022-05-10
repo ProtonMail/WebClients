@@ -15,10 +15,10 @@ const MobileAppsLinks = () => {
 
     return (
         <MobileNavServices>
-            {apps.map(({ toApp, title }, index) => {
+            {apps.map(({ toApp, title }) => {
                 const isCurrent = toApp === APP_NAME;
                 return (
-                    <AppLink key={index} to="/" to-app={toApp} target="_self" title={title} aria-current={isCurrent}>
+                    <AppLink key={toApp} to="/" toApp={toApp} target="_self" title={title} aria-current={isCurrent}>
                         <Logo appName={toApp} variant="standalone" />
                     </AppLink>
                 );
