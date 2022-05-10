@@ -66,6 +66,11 @@
 		}
 	}
 
+	h1,
+	.h1 {
+		font-family: 'Arizona Flare', var(--font-family);
+	}
+
 	// main content
 	transition: max-inline-size 0.15s easing(easeIn);
 	//min-block-size: 30em;// was here to limitate shifts
