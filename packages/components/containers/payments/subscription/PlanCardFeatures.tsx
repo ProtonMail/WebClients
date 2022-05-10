@@ -40,10 +40,14 @@ export const PlanCardFeatureList = ({ features, icon, fire = true }: FeatureList
                                     <Icon size={20} name="cross" className="mt0-1" />
                                 )}
                             </span>
-                            <span className="flex-item-fluid inline-flex flex-align-items-center">
-                                <span className="mr0-5">{feature.featureName}</span>
+                            <span className="flex-item-fluid">
+                                <span className="mr0-5 align-middle">{feature.featureName}</span>
                                 {feature.tooltip ? (
-                                    <Info title={feature.tooltip} colorPrimary={feature.included} />
+                                    <Info
+                                        className="align-middle"
+                                        title={feature.tooltip}
+                                        colorPrimary={feature.included}
+                                    />
                                 ) : null}
                             </span>
                         </div>
