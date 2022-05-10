@@ -18,9 +18,6 @@
         "lint:scss": "stylelint --syntax=scss '**/*.scss'",
         "lint:svg": "./tasks/lint-svg.sh"
     },
-    "dependencies": {
-        "inter-ui": "^3.19.3"
-    },
     "devDependencies": {
         "prettier": "^2.6.2",
         "sass": "^1.51.0",
