@@ -5,6 +5,7 @@ import { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
 
 import { useDebouncedRequest } from '../../_api';
 import { useLink, useLinksListing, adjustName, splitLinkName } from '../../_links';
+import { isClientUidAvailable } from './uploadClientUid';
 
 const HASH_CHECK_AMOUNT = 10;
 
@@ -32,6 +33,8 @@ export default function useUploadHelper() {
         ): Promise<{
             filename: string;
             hash: string;
+            linkId?: string;
+            clientUid?: string;
         }> => {
             const hashesToCheck = await Promise.all(
                 range(start, start + HASH_CHECK_AMOUNT).map(async (i) => {
@@ -44,10 +47,25 @@ export default function useUploadHelper() {
             );
 
             const Hashes = hashesToCheck.map(({ hash }) => hash);
-            const { AvailableHashes } = await debouncedRequest<HashCheckResult>(
+            const { AvailableHashes, PendingHashes } = await debouncedRequest<HashCheckResult>(
                 queryCheckAvailableHashes(shareId, parentLinkID, { Hashes }, suppressErrors),
                 abortSignal
             );
+
+            // Check if pending drafts are created by this client and is safe
+            // to automatically replace the draft without user interaction.
+            const pendingAvailableHashes = PendingHashes.filter(({ ClientUID }) => isClientUidAvailable(ClientUID));
+            if (pendingAvailableHashes.length) {
+                const availableName = hashesToCheck.find(({ hash }) => hash === pendingAvailableHashes[0].Hash);
+                if (availableName) {
+                    return {
+                        ...availableName,
+                        linkId: pendingAvailableHashes[0].LinkID,
+                        clientUid: pendingAvailableHashes[0].ClientUID,
+                    };
+                }
+            }
+
             if (!AvailableHashes.length) {
                 return findAdjustedName(start + HASH_CHECK_AMOUNT);
             }
