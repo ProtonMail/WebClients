@@ -171,9 +171,7 @@ const MailRecipientItemSingle = ({
             >
                 <Icon name="magnifier" className="mr0-5" />
                 <span className="flex-item-fluid mtauto mbauto">
-                    {isRecipient
-                        ? c('Action').t`Show messages from recipient`
-                        : c('Action').t`Show messages from sender`}
+                    {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
             </DropdownMenuButton>
             {showTrustPublicKey && (
@@ -182,7 +180,7 @@ const MailRecipientItemSingle = ({
                     onClick={handleClickTrust}
                 >
                     <Icon name="user" className="mr0-5" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust Public Key`}</span>
+                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust public key`}</span>
                 </DropdownMenuButton>
             )}
         </>
