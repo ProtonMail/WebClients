@@ -1,13 +1,11 @@
 import { useState } from 'react';
 
-import { Slider } from '@proton/components';
-
-import { getTitle } from '../../helpers/title';
+import Slider from './Slider';
 import mdx from './Slider.mdx';
 
 export default {
     component: Slider,
-    title: getTitle(__filename, false),
+    title: 'components/Slider',
     parameters: {
         docs: {
             page: mdx,

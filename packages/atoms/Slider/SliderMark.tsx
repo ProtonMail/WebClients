@@ -1,11 +1,11 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+import clsx from '../clsx';
 import './SliderMark.scss';
-import { classnames } from '../../helpers';
 
 const SliderMark = ({ children, className, ...rest }: ComponentPropsWithoutRef<'span'>) => {
     return (
-        <span className={classnames(['slider-mark', className])} {...rest}>
+        <span className={clsx(['slider-mark', className])} {...rest}>
             <span className="slider-mark-label">{children}</span>
         </span>
     );
