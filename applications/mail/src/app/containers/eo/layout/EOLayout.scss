@@ -63,11 +63,6 @@
 	//min-block-size: 30em;// was here to limitate shifts
 	border-radius: var(--border-radius-lg);
 
-	h1,
-	.h1 {
-		font-family: 'Arizona Flare', var(--font-family);
-	}
-
 	// fix for plans, same as in subscription flow
 	&:not([class*='mw']) {
 		max-inline-size: rem(1500);
