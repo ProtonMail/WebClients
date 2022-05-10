@@ -39,6 +39,7 @@ import KeyBackgroundManager from './KeyBackgroundManager';
 import StorageListener from './StorageListener';
 import DelinquentContainer from './DelinquentContainer';
 import { wrapUnloadError } from './errorRefresh';
+import { ExperimentsProvider } from '../experiments';
 
 interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     locales?: TtagLocaleMap;
@@ -200,20 +201,22 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
                     <FeaturesProvider>
-                        <EventModelListener models={eventModels} />
-                        <EventNotices />
-                        <ThemeInjector />
-                        <DensityInjector />
-                        {!noModals && <ModalsChildren />}
-                        <KeyBackgroundManager
-                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                            hasMemberKeyMigration={hasMemberKeyMigration}
-                        />
-                        <StorageListener />
-                        <ForceRefreshProvider>
-                            <LoadedApp />
-                        </ForceRefreshProvider>
+                        <ExperimentsProvider>
+                            <EventModelListener models={eventModels} />
+                            <EventNotices />
+                            <ThemeInjector />
+                            <DensityInjector />
+                            {!noModals && <ModalsChildren />}
+                            <KeyBackgroundManager
+                                hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                                hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                                hasMemberKeyMigration={hasMemberKeyMigration}
+                            />
+                            <StorageListener />
+                            <ForceRefreshProvider>
+                                <LoadedApp />
+                            </ForceRefreshProvider>
+                        </ExperimentsProvider>
                     </FeaturesProvider>
                 </ContactProvider>
             </CalendarModelEventManagerProvider>

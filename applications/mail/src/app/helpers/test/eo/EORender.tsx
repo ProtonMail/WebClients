@@ -5,7 +5,14 @@ import { Route } from 'react-router-dom';
 import { Router } from 'react-router';
 import { createMemoryHistory, MemoryHistory } from 'history';
 import { render as originalRender, RenderResult as OriginalRenderResult } from '@testing-library/react';
-import { CacheProvider, ConfigProvider, FeaturesProvider, ModalsChildren, ModalsProvider } from '@proton/components';
+import {
+    CacheProvider,
+    ConfigProvider,
+    ExperimentsProvider,
+    FeaturesProvider,
+    ModalsChildren,
+    ModalsProvider,
+} from '@proton/components';
 import ApiContext from '@proton/components/containers/api/apiContext';
 import { config, tick } from '../render';
 import { api, mockDomApi, registerFeatureFlagsApiMock } from '../api';
@@ -40,9 +47,11 @@ const EOTestProvider = ({ children, routePath = EO_REDIRECT_PATH }: Props) => {
                             <ModalsChildren />
                             <ReduxProvider store={store}>
                                 <FeaturesProvider>
-                                    <Router history={history}>
-                                        <Route path={routePath}>{children}</Route>
-                                    </Router>
+                                    <ExperimentsProvider>
+                                        <Router history={history}>
+                                            <Route path={routePath}>{children}</Route>
+                                        </Router>
+                                    </ExperimentsProvider>
                                 </FeaturesProvider>
                             </ReduxProvider>
                         </CacheProvider>
