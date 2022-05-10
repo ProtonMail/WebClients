@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { FilterStatement, ConditionType, ConditionComparator } from './interfaces';
+import { SelectOption } from './modal/FilterActionsFormFolderRow';
 
 export const EMAIL_MODE = 'email';
 export const DOMAIN_MODE = 'domain';
@@ -168,4 +169,43 @@ export const getDefaultFolders = () => {
             value: 'trash',
         },
     ];
+};
+
+export const getDefaultFolderOptions = () => {
+    return [
+        {
+            type: 'label',
+            text: c('Option group').t`Move to...`,
+        },
+        {
+            type: 'option',
+            text: c('Filter Actions').t`Select a folder`,
+            value: '',
+            disabled: true,
+        },
+        {
+            type: 'label',
+            text: c('Option group').t`Default folders`,
+        },
+        {
+            type: 'option',
+            text: c('Filter Actions').t`Archive`,
+            value: 'archive',
+        },
+        {
+            type: 'option',
+            text: c('Filter Actions').t`Inbox`,
+            value: 'inbox',
+        },
+        {
+            type: 'option',
+            text: c('Filter Actions').t`Spam`,
+            value: 'spam',
+        },
+        {
+            type: 'option',
+            text: c('Filter Actions').t`Trash`,
+            value: 'trash',
+        },
+    ] as SelectOption[];
 };
