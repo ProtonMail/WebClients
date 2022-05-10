@@ -354,10 +354,23 @@
 		padding-inline: em(10);
 	}
 
-	&-actions--has-scroll {
-		margin-block-start: 0.5em;
-		padding-block-start: 0.5em;
-		box-shadow: 0 -5px 5px 0 var(--background-strong);
+	&-actions {
+		&--has-scroll {
+			margin-block-start: 0.5em;
+			padding-block-start: 0.5em;
+			box-shadow: 0 -5px 5px 0 var(--background-strong);
+		}
+
+		&-secondary {
+			&#{&} {
+				// had to override button groups specificity
+				&#{&} {
+					@include respond-to($breakpoint-medium-landscape, 'min') {
+						padding-inline: rem(3);
+					}
+				}
+			}
+		}
 	}
 
 	// Keep minimal size when activity label is empty
