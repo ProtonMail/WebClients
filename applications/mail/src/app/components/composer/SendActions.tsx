@@ -6,8 +6,6 @@ import Button from '@proton/components/components/button/Button';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
 
-import { classnames } from '@proton/components/helpers';
-
 interface Props {
     loading?: boolean;
     disabled?: boolean;
@@ -34,7 +32,7 @@ const SendActions = (
                     originalPlacement="bottom-right"
                     disabled={disabled}
                     loading={loading}
-                    className={classnames(['flex-item-noshrink'])}
+                    className="flex-item-noshrink composer-actions-secondary"
                     title={c('Title').t`Open actions dropdown`}
                     data-test-id="dropdown:open"
                 >
