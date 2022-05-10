@@ -10,11 +10,11 @@ import {
 import clamp from '@proton/util/clamp';
 import percentage from '@proton/util/percentage';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
+import { useRightToLeft } from '@proton/components/containers/rightToLeft';
+import ButtonLike from '@proton/components/components/button/ButtonLike';
+import Icon from '@proton/components/components/icon/Icon';
 
-import { useRightToLeft } from '../../containers/rightToLeft';
-import { classnames } from '../../helpers';
-import { ButtonLike } from '../button';
-import { Icon } from '../icon';
+import clsx from '../clsx';
 import SliderMark from './SliderMark';
 import './Slider.scss';
 
@@ -271,10 +271,7 @@ const Slider = ({ value, min = 0, max = 100, step, getDisplayedValue, onChange, 
                 shape="outline"
                 as="span"
                 style={{ '--left-custom': `${valueInPercent}%` }}
-                className={classnames([
-                    'slider-thumb left-custom shadow-norm relative',
-                    dragging && 'slider-thumb-dragging',
-                ])}
+                className={clsx(['slider-thumb left-custom shadow-norm relative', dragging && 'slider-thumb-dragging'])}
             >
                 <input
                     type="range"
