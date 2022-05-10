@@ -65,7 +65,7 @@ const MessagePrintFooter = ({ message }: Props) => {
                 </div>
                 <div className="proton-print-footer-items flex flex-gap-0-5">
                     {attachmentsToShow.map((attachment) => (
-                        <MessagePrintFooterItem attachment={attachment} />
+                        <MessagePrintFooterItem key={attachment.ID} attachment={attachment} />
                     ))}
                 </div>
             </div>
