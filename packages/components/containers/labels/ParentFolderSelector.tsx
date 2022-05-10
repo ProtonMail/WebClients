@@ -4,12 +4,9 @@ import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/fold
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 
-import { Loader, Select } from '../../components';
+import { Loader, Option, SelectTwo } from '../../components';
 import { useFolders } from '../../hooks';
 import { OptionProps } from '../../components/select/Select';
-
-// ROOT_FOLDER is transformed to a String when coming from target.value
-const formatValue = (value: string) => (value === `${ROOT_FOLDER}` ? ROOT_FOLDER : value);
 
 interface Props {
     id: string;
@@ -49,13 +46,11 @@ const ParentFolderSelector = ({ id, value, onChange, className, disableOptions =
     );
 
     return (
-        <Select
-            id={id}
-            className={className}
-            value={value}
-            options={options}
-            onChange={({ target }) => onChange?.(formatValue(target.value))}
-        />
+        <SelectTwo id={id} className={className} value={value} onChange={({ value }) => onChange?.(value)}>
+            {options.map((option) => {
+                return <Option value={option.value} title={option.text.toString()} />;
+            })}
+        </SelectTwo>
     );
 };
 
