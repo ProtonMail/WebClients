@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import {
     EventManagerProvider,
+    ExperimentsProvider,
     FeaturesProvider,
     ModalsChildren,
     StandardLoadErrorPage,
@@ -140,8 +141,10 @@ const Setup = ({ onLogin, UID }: Props) => {
     return (
         <EventManagerProvider eventManager={eventManagerRef.current}>
             <FeaturesProvider>
-                <ModalsChildren />
-                <MainContainer />
+                <ExperimentsProvider>
+                    <ModalsChildren />
+                    <MainContainer />
+                </ExperimentsProvider>
             </FeaturesProvider>
         </EventManagerProvider>
     );

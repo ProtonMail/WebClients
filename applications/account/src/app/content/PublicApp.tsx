@@ -17,7 +17,14 @@ import {
 } from '@proton/shared/lib/constants';
 import { GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
-import { FeaturesProvider, ModalsChildren, SSOForkProducer, Unauthenticated, useApi } from '@proton/components';
+import {
+    FeaturesProvider,
+    ExperimentsProvider,
+    ModalsChildren,
+    SSOForkProducer,
+    Unauthenticated,
+    useApi,
+} from '@proton/components';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getAppHref, getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
@@ -355,75 +362,77 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     />
                 </Route>
                 <Route path="*">
-                    <AccountPublicApp
-                        location={location}
-                        locales={locales}
-                        onLogin={handleLogin}
-                        onActiveSessions={handleActiveSessions}
-                    >
-                        <FeaturesProvider>
-                            <ForceRefreshContext.Provider value={refresh}>
-                                <Unauthenticated>
-                                    <Switch location={location}>
-                                        {confirmForkData && toAppName && (
-                                            <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
-                                                <OAuthConfirmForkContainer
-                                                    name={toAppName}
-                                                    image={confirmForkData.payload.clientInfo.Logo}
-                                                    onConfirm={() => {
-                                                        return produceOAuthFork({
-                                                            api,
-                                                            ...confirmForkData.payload,
-                                                        });
-                                                    }}
-                                                    onCancel={() => {
-                                                        // Force a hard refresh to get active sessions to refresh when signing up
-                                                        window.location.pathname = '/switch';
-                                                    }}
+                    <FeaturesProvider>
+                        <ExperimentsProvider>
+                            <AccountPublicApp
+                                location={location}
+                                locales={locales}
+                                onLogin={handleLogin}
+                                onActiveSessions={handleActiveSessions}
+                            >
+                                <ForceRefreshContext.Provider value={refresh}>
+                                    <Unauthenticated>
+                                        <Switch location={location}>
+                                            {confirmForkData && toAppName && (
+                                                <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                                    <OAuthConfirmForkContainer
+                                                        name={toAppName}
+                                                        image={confirmForkData.payload.clientInfo.Logo}
+                                                        onConfirm={() => {
+                                                            return produceOAuthFork({
+                                                                api,
+                                                                ...confirmForkData.payload,
+                                                            });
+                                                        }}
+                                                        onCancel={() => {
+                                                            // Force a hard refresh to get active sessions to refresh when signing up
+                                                            window.location.pathname = '/switch';
+                                                        }}
+                                                    />
+                                                </Route>
+                                            )}
+                                            <Route path={SSO_PATHS.SWITCH}>
+                                                <SwitchAccountContainer
+                                                    activeSessions={activeSessions}
+                                                    toAppName={toAppName}
+                                                    onLogin={handleLogin}
+                                                    onSignOut={handleSignOut}
+                                                    onSignOutAll={handleSignOutAll}
+                                                    onAddAccount={handleAddAccount}
                                                 />
                                             </Route>
-                                        )}
-                                        <Route path={SSO_PATHS.SWITCH}>
-                                            <SwitchAccountContainer
-                                                activeSessions={activeSessions}
-                                                toAppName={toAppName}
-                                                onLogin={handleLogin}
-                                                onSignOut={handleSignOut}
-                                                onSignOutAll={handleSignOutAll}
-                                                onAddAccount={handleAddAccount}
-                                            />
-                                        </Route>
-                                        <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
-                                            <SignupContainer
-                                                clientType={CLIENT_TYPES.MAIL}
-                                                toApp={maybePreAppIntent}
-                                                toAppName={toAppName}
-                                                onLogin={handleLogin}
-                                                onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
-                                            />
-                                        </Route>
-                                        <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                            <ResetPasswordContainer onLogin={handleLogin} />
-                                        </Route>
-                                        <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                            <ForgotUsernameContainer />
-                                        </Route>
-                                        <Route path={SSO_PATHS.LOGIN}>
-                                            <LoginContainer
-                                                hasActiveSessions={Boolean(activeSessions?.length)}
-                                                toAppName={toAppName}
-                                                showContinueTo={!!toOAuthName}
-                                                shouldSetupInternalAddress={maybeShouldSetupInternalAddress}
-                                                onLogin={handleLogin}
-                                                onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
-                                            />
-                                        </Route>
-                                        <Redirect to={SSO_PATHS.LOGIN} />
-                                    </Switch>
-                                </Unauthenticated>
-                            </ForceRefreshContext.Provider>
-                        </FeaturesProvider>
-                    </AccountPublicApp>
+                                            <Route path={[SSO_PATHS.SIGNUP, SSO_PATHS.REFER]}>
+                                                <SignupContainer
+                                                    clientType={CLIENT_TYPES.MAIL}
+                                                    toApp={maybePreAppIntent}
+                                                    toAppName={toAppName}
+                                                    onLogin={handleLogin}
+                                                    onBack={hasBackToSwitch ? () => history.push('/login') : undefined}
+                                                />
+                                            </Route>
+                                            <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                                <ResetPasswordContainer onLogin={handleLogin} />
+                                            </Route>
+                                            <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                                <ForgotUsernameContainer />
+                                            </Route>
+                                            <Route path={SSO_PATHS.LOGIN}>
+                                                <LoginContainer
+                                                    hasActiveSessions={Boolean(activeSessions?.length)}
+                                                    toAppName={toAppName}
+                                                    showContinueTo={!!toOAuthName}
+                                                    shouldSetupInternalAddress={maybeShouldSetupInternalAddress}
+                                                    onLogin={handleLogin}
+                                                    onBack={hasBackToSwitch ? () => history.push('/switch') : undefined}
+                                                />
+                                            </Route>
+                                            <Redirect to={SSO_PATHS.LOGIN} />
+                                        </Switch>
+                                    </Unauthenticated>
+                                </ForceRefreshContext.Provider>
+                            </AccountPublicApp>
+                        </ExperimentsProvider>
+                    </FeaturesProvider>
                 </Route>
             </Switch>
         </>
