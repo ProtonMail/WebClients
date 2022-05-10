@@ -130,8 +130,7 @@ const MailRecipientItemSingle = ({
 
             history.push(
                 changeSearchParams(newPathname, history.location.hash, {
-                    from: isRecipient ? undefined : recipient.Address,
-                    to: isRecipient ? recipient.Address : undefined,
+                    keyword: recipient.Address,
                     page: undefined,
                     sort: undefined,
                 })
