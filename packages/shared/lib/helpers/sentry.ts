@@ -86,6 +86,9 @@ function main({ config: { SENTRY_DSN, COMMIT, APP_VERSION }, uid, sessionTrackin
         normalizeDepth: 5,
         transport: Transport,
         autoSessionTracking: sessionTracking,
+        // Disable client reports. Client reports are used by sentry to retry events that failed to send on visibility change.
+        // Unfortunately Sentry does not use the custom transport for those, and thus fails to add the headers the API requires.
+        sendClientReports: false,
         beforeSend(event, hint) {
             const error = hint?.originalException;
             const stack = typeof error === 'string' ? error : error?.stack;
