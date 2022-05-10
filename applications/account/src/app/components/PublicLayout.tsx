@@ -1,6 +1,5 @@
 import * as React from 'react';
-import { c } from 'ttag';
-import protonLogoSvg from '@proton/styles/assets/img/illustrations/proton-logo.svg';
+import { ProtonLogo } from '@proton/components/components';
 
 import PublicContainer from './PublicContainer';
 import './PublicLayout.scss';
@@ -15,11 +14,7 @@ const PublicLayout = ({ main, footer, below }: PublicLayoutProps) => {
     return (
         <div className="flex flex-column flex-align-items-center">
             <PublicContainer>
-                <img
-                    src={protonLogoSvg}
-                    alt={c('Title').t`Proton Logo`}
-                    className="public-layout--logo block mlauto mrauto mb2"
-                />
+                <ProtonLogo className="mb2" />
 
                 <div className="public-layout--main text-center">{main}</div>
 
