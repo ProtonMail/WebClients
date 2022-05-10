@@ -1,9 +1,10 @@
 import { UNPAID_STATE, USER_ROLES } from '../constants';
+import { hasBit } from '../helpers/bitset';
 
 const { ADMIN_ROLE, MEMBER_ROLE, FREE_ROLE } = USER_ROLES;
 
-export const hasPaidMail = ({ Subscribed }) => Subscribed & 1;
-export const hasPaidVpn = ({ Subscribed }) => Subscribed & 4;
+export const hasPaidMail = ({ Subscribed }) => hasBit(Subscribed, 1);
+export const hasPaidVpn = ({ Subscribed }) => hasBit(Subscribed, 4);
 export const isPaid = ({ Subscribed }) => !!Subscribed;
 export const isPrivate = ({ Private }) => Private === 1;
 export const isFree = (user) => !isPaid(user);
