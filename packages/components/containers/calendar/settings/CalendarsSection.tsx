@@ -22,10 +22,10 @@ export interface CalendarsSectionProps {
     onAdd: () => void;
     onSetDefault?: (id: string) => Promise<void>;
     onEdit: (calendar: VisualCalendar) => void;
-    onDelete: (id: string) => void;
+    onDelete: (id: string) => Promise<void>;
     onExport?: (calendar: VisualCalendar) => void;
-    canUpgradeLimit?: boolean;
-    calendarLimitReachedText: string;
+    canUpgradeCalendarsLimit: boolean;
+    calendarsLimitReachedText: string;
 }
 const CalendarsSection = ({
     calendars = [],
@@ -40,58 +40,63 @@ const CalendarsSection = ({
     onSetDefault,
     onDelete,
     onExport,
-    canUpgradeLimit = true,
-    calendarLimitReachedText,
+    canUpgradeCalendarsLimit,
+    calendarsLimitReachedText,
     ...rest
-}: CalendarsSectionProps) => (
-    <SettingsSection {...rest}>
-        {!canAdd && !isFeatureUnavailable && user.hasNonDelinquentScope && (
-            <Alert className="mb1" type="warning">
-                {calendarLimitReachedText}
-            </Alert>
-        )}
-        {!user.hasPaidMail && canUpgradeLimit && !canAdd && !isFeatureUnavailable && (
-            <Card rounded className="mb1">
-                <div className="flex flex-nowrap flex-align-items-center">
-                    <p className="flex-item-fluid mt0 mb0 pr2">
-                        {c('Upgrade notice').ngettext(
-                            msgid`Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
-                            `Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
-                            MAX_CALENDARS_PAID
-                        )}
-                    </p>
-                    <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
-                        {c('Action').t`Upgrade`}
-                    </ButtonLike>
-                </div>
-            </Card>
-        )}
-        {description}
-        <div className="mb1">
-            {isFeatureUnavailable ? (
-                <Tooltip title={c('Tooltip').t`This feature is unavailable for the moment`}>
-                    {/* a <span> is added artificially so that the disabled prop of the button does not hide the tooltip */}
-                    <span>
-                        <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled>
-                            {add}
-                        </PrimaryButton>
-                    </span>
-                </Tooltip>
-            ) : (
-                <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
-                    {add}
-                </PrimaryButton>
+}: CalendarsSectionProps) => {
+    const shouldShowUpgradeCard = canUpgradeCalendarsLimit && !canAdd && !isFeatureUnavailable;
+    const shouldShowLimitWarning = calendarsLimitReachedText && !isFeatureUnavailable && user.hasNonDelinquentScope;
+
+    return (
+        <SettingsSection {...rest}>
+            {description}
+            <div className="mb1">
+                {isFeatureUnavailable ? (
+                    <Tooltip title={c('Tooltip').t`This feature is unavailable for the moment`}>
+                        {/* a <span> is added artificially so that the disabled prop of the button does not hide the tooltip */}
+                        <span>
+                            <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled>
+                                {add}
+                            </PrimaryButton>
+                        </span>
+                    </Tooltip>
+                ) : (
+                    <PrimaryButton data-test-id="calendar-setting-page:add-calendar" disabled={!canAdd} onClick={onAdd}>
+                        {add}
+                    </PrimaryButton>
+                )}
+            </div>
+            {shouldShowLimitWarning && (
+                <Alert className="mb1" type="warning">
+                    {calendarsLimitReachedText}
+                </Alert>
             )}
-        </div>
-        {!!calendars.length && (
-            <CalendarsTable
-                calendars={calendars}
-                defaultCalendarID={defaultCalendarID}
-                user={user}
-                onSetDefault={onSetDefault}
-            />
-        )}
-    </SettingsSection>
-);
+            {shouldShowUpgradeCard && (
+                <Card rounded className="mb1">
+                    <div className="flex flex-nowrap flex-align-items-center">
+                        <p className="flex-item-fluid mt0 mb0 pr2">
+                            {c('Upgrade notice').ngettext(
+                                msgid`Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendar, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                                `Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`,
+                                MAX_CALENDARS_PAID
+                            )}
+                        </p>
+                        <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
+                            {c('Action').t`Upgrade`}
+                        </ButtonLike>
+                    </div>
+                </Card>
+            )}
+            {!!calendars.length && (
+                <CalendarsTable
+                    calendars={calendars}
+                    defaultCalendarID={defaultCalendarID}
+                    user={user}
+                    onSetDefault={onSetDefault}
+                />
+            )}
+        </SettingsSection>
+    );
+};
 
 export default CalendarsSection;

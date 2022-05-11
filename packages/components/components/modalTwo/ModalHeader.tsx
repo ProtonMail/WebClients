@@ -33,6 +33,10 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      */
     closeButtonProps?: ButtonProps;
     /**
+     * Is the close button displayed? defaults to true
+     */
+    hasClose?: boolean;
+    /**
      * Optional additional title classNames
      */
     titleClassName?: string;
@@ -49,6 +53,7 @@ const ModalHeader = ({
     closeButtonProps,
     titleClassName,
     additionalContent,
+    hasClose = true,
     ...rest
 }: ModalHeaderProps) => {
     const { id, onClose, size } = useContext(ModalContext);
@@ -89,6 +94,7 @@ const ModalHeader = ({
                     </>
                 )}
 
+                {hasClose && (
                     <Tooltip title={c('Action').t`Close`}>
                         <Button
                             className="flex-item-noshrink"
@@ -100,6 +106,7 @@ const ModalHeader = ({
                             <Icon className="modal-close-icon" name="cross-big" />
                         </Button>
                     </Tooltip>
+                )}
                 </div>
             </div>
             {additionalContent}

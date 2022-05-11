@@ -1,5 +1,5 @@
 import { RequireSome } from '../../interfaces';
-import { Calendar, VcalVcalendar, VcalVeventComponent, VcalVtimezoneComponent } from '../../interfaces/calendar';
+import { VcalVcalendar, VcalVeventComponent, VcalVtimezoneComponent, VisualCalendar } from '../../interfaces/calendar';
 import { ICAL_METHOD } from '../constants';
 import { serialize } from '../vcal';
 
@@ -7,7 +7,7 @@ interface CreateExportIcsParams {
     prodId: string;
     eventsWithSummary: VcalVeventComponent[];
     vtimezones?: VcalVtimezoneComponent[];
-    calendar: Calendar;
+    calendar: VisualCalendar;
     defaultTzid: string;
 }
 

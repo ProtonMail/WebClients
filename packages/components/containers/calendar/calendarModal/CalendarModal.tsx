@@ -48,7 +48,7 @@ const { COMPLETE, VISUAL } = CALENDAR_MODAL_TYPE;
 
 export interface CalendarModalProps {
     calendar?: VisualCalendar | SubscribedCalendar;
-    activeCalendars?: VisualCalendar[];
+    calendars?: VisualCalendar[];
     defaultCalendarID?: Nullable<string>;
     onClose?: () => void;
     onExit?: () => void;
@@ -60,7 +60,7 @@ export interface CalendarModalProps {
 
 export const CalendarModal = ({
     calendar: initialCalendar,
-    activeCalendars = [],
+    calendars = [],
     defaultCalendarID = '',
     open,
     onClose,
@@ -100,7 +100,7 @@ export const CalendarModal = ({
         onClose,
         onCreateCalendar,
         onEditCalendar,
-        activeCalendars,
+        calendars,
     });
 
     const formattedModel = {

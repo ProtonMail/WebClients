@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
+    getIsPersonalCalendar,
     getProbablyActiveCalendars,
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     EASY_SWITCH_SOURCE,
     EasySwitchFeatureFlag,
@@ -64,7 +64,7 @@ const AccountEasySwitchSection = () => {
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const activeCalendars = getProbablyActiveCalendars(getVisualCalendars(calendars || [], addresses || []));
+    const activeCalendars = getProbablyActiveCalendars(getVisualCalendars(calendars || []));
 
     const [personalActiveCalendars] = partition<VisualCalendar>(activeCalendars, getIsPersonalCalendar);
 

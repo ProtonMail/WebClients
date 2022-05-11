@@ -7,6 +7,7 @@ import {
     useCalendarsInfoListener,
     useUserSettings,
 } from '@proton/components';
+import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
@@ -27,6 +28,7 @@ import { getCalendarsAlarmsCache } from '../alarms/useCalendarsAlarms';
 import CalendarContainer from './CalendarContainer';
 import CalendarStartupModals from './CalendarStartupModals';
 import EventActionContainer from './EventActionContainer';
+import ShareInvitationContainer from './ShareInvitationContainer';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEventsEventListener from './eventStore/useCalendarsEventsEventListener';
@@ -63,6 +65,8 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);
 
     const eventTargetActionRef = useRef<EventTargetAction>();
+    const shareCalendarInvitationRef = useRef<{ calendarID: string; invitationID: string }>();
+
     const activeAddresses = useMemo(() => {
         return getActiveAddresses(addresses);
     }, [addresses]);
@@ -77,9 +81,13 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
     // We have to do it here, so that we use the correct timezone in EventActionContainer and in CalendarContainer
     const tzid = sideAppView ? getTimezone() : customTzid || defaultTzid;
 
+    const [startupModalState, setStartupModalState] = useState<{ hasModal?: boolean; isOpen: boolean }>({
+        isOpen: false,
+    });
+
     return (
-        <>
-            <CalendarStartupModals />
+        <ContactEmailsProvider>
+            <CalendarStartupModals setStartupModalState={setStartupModalState} />
             <Switch>
                 <Route path={['/:appName/event', '/event']}>
                     <EventActionContainer
@@ -89,6 +97,9 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
                         calendars={calendars}
                         eventTargetActionRef={eventTargetActionRef}
                     />
+                </Route>
+                <Route path={'/share'}>
+                    <ShareInvitationContainer shareCalendarInvitationRef={shareCalendarInvitationRef} />
                 </Route>
                 <Route path="/">
                     <CalendarContainer
@@ -107,6 +118,8 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
                         calendarUserSettings={calendarUserSettings}
                         userSettings={userSettings}
                         eventTargetActionRef={eventTargetActionRef}
+                        shareCalendarInvitationRef={shareCalendarInvitationRef}
+                        startupModalState={startupModalState}
                         getOpenedMailEvents={getOpenedMailEvents}
                     />
                 </Route>
@@ -118,7 +131,7 @@ const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) 
                 calendarsEventsCacheRef={calendarsEventsCacheRef}
                 calendarsAlarmsCacheRef={calendarAlarmsCacheRef}
             />
-        </>
+        </ContactEmailsProvider>
     );
 };
 

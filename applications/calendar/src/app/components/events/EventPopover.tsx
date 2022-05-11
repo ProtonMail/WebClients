@@ -18,7 +18,7 @@ import {
     useLoading,
 } from '@proton/components';
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
-import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
+import { getIsCalendarDisabled, getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
@@ -106,6 +106,7 @@ const EventPopover = ({
     const [calendarBootstrap]: [CalendarBootstrap, boolean, any] = useCalendarBootstrap(calendarData.ID);
     const isSubscribedCalendarReminderFeatureEnabled = !!useFeature(FeatureCode.SubscribedCalendarReminder).feature
         ?.Value;
+    const isCalendarWritable = getIsCalendarWritable(calendarData);
 
     const model = useReadEvent(eventReadResult?.result, tzid);
     const { eventReadError, isEventReadLoading, eventTitleSafe, isCancelled, userPartstat, isSelfAddressActive } =
@@ -191,7 +192,7 @@ const EventPopover = ({
         [start, end, isAllDay, isAllPartDay, formatTime]
     );
 
-    const editButton = !isCalendarDisabled && (
+    const editButton = isCalendarWritable && !isCalendarDisabled && (
         <Tooltip title={c('Event edit button tooltip').t`Edit event`}>
             <ButtonLike
                 data-test-id="event-popover:edit"
@@ -205,7 +206,7 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const deleteButton = !isSubscribedCalendar && (
+    const deleteButton = isCalendarWritable && (
         <Tooltip title={c('Event delete button tooltip').t`Delete event`}>
             <ButtonLike
                 data-test-id="event-popover:delete"
@@ -219,7 +220,7 @@ const EventPopover = ({
             </ButtonLike>
         </Tooltip>
     );
-    const duplicateButton = model.isOrganizer && !!onDuplicate && (
+    const duplicateButton = !isSubscribedCalendar && model.isOrganizer && !!onDuplicate && (
         <Tooltip title={c('Event duplicate button tooltip').t`Duplicate event`}>
             <ButtonLike
                 data-test-id="event-popover:duplicate"
@@ -283,9 +284,7 @@ const EventPopover = ({
             <PopoverContainer {...commonContainerProps} className={containerClassName}>
                 <PopoverHeader
                     {...commonHeaderProps}
-                    actions={
-                        !isSubscribedCalendar && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>
-                    }
+                    actions={deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
                 >
                     <h1 className="h3">{c('Error').t`Error`}</h1>
                 </PopoverHeader>
@@ -304,12 +303,14 @@ const EventPopover = ({
         );
     }
 
+    const hasPopoverButtons = editButton || duplicateButton || deleteButton || viewEventButton;
+
     return (
         <PopoverContainer {...commonContainerProps} className={containerClassName}>
             <PopoverHeader
                 {...commonHeaderProps}
                 actions={
-                    !isSubscribedCalendar && (
+                    hasPopoverButtons && (
                         <>
                             {editButton}
                             {duplicateButton}
@@ -346,7 +347,7 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {!isSubscribedCalendar && !model.isOrganizer && !isCancelled && (
+            {isCalendarWritable && !model.isOrganizer && !isCancelled && (
                 <PopoverFooter
                     className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
                     key={targetEvent.id}

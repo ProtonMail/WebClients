@@ -3,8 +3,10 @@ import { memo, useMemo, useRef } from 'react';
 import { c, msgid } from 'ttag';
 
 import { AddressesAutocompleteTwo, Alert, Details, Summary } from '@proton/components';
+import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
+import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import {
     CANONIZE_SCHEME,
     canonizeEmail,
@@ -16,7 +18,6 @@ import { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calenda
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import uniqueBy from '@proton/utils/uniqueBy';
 
-import { useContactEmailsCache } from '../../../containers/calendar/ContactEmailsProvider';
 import OrganizerRow from '../rows/OrganizerRow';
 import ParticipantRow from '../rows/ParticipantRow';
 
@@ -51,15 +52,7 @@ const ParticipantsInput = ({
     const { contactEmails, contactGroups, contactEmailsMap, groupsWithContactsMap } = useContactEmailsCache();
 
     const ownNormalizedEmails = useMemo(
-        () =>
-            addresses
-                // For custom domains, Proton Mail allows to have multiple sub-users with the same email address
-                // as long as only one of them is enabled. This poses problems when a sub-user
-                // with a disabled address wants to send email to the same address enabled in another sub-user.
-                // Because of this case, it's better to consider disabled addresses as non self,
-                // as we already do this when getting encryption preferences
-                .filter(({ Receive }) => !!Receive)
-                .map(({ Email }) => canonizeInternalEmail(Email)),
+        () => getSelfSendAddresses(addresses).map(({ Email }) => canonizeInternalEmail(Email)),
         [addresses]
     );
 

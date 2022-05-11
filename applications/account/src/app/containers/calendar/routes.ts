@@ -51,10 +51,6 @@ export const getCalendarAppRoutes = (showSubscribedCalendars: boolean, showInvit
                         id: CALENDAR_SETTINGS_SUBSECTION_ID.SUBSCRIBED_CALENDARS,
                         available: showSubscribedCalendars,
                     },
-                    {
-                        text: c('Title').t`Share outside Proton`,
-                        id: CALENDAR_SETTINGS_SUBSECTION_ID.SHARE,
-                    },
                 ],
             },
             interops: <SectionConfig>{

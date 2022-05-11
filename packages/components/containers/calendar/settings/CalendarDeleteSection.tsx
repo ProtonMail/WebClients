@@ -6,20 +6,64 @@ import { c } from 'ttag';
 import { Alert, AlertModal, Button, ErrorButton, useModalState } from '@proton/components/components';
 import { SettingsParagraph } from '@proton/components/containers';
 import { useApi, useEventManager, useLoading, useNotifications } from '@proton/components/hooks';
-import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import { removeCalendar, removeMember, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import {
+    getIsOwnedCalendar,
+    getOwnedPersonalCalendars,
+    getProbablyActiveCalendars,
+} from '@proton/shared/lib/calendar/calendar';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import noop from '@proton/utils/noop';
 
 import SettingsSection from '../../account/SettingsSection';
 
+const getTexts = ({
+    isSubscribedCalendar,
+    isSharedAsMember,
+    isSharedAsOwner,
+}: {
+    isSubscribedCalendar: boolean;
+    isSharedAsMember: boolean;
+    isSharedAsOwner: boolean;
+}) => {
+    if (isSubscribedCalendar) {
+        return {
+            modalTitle: c('Remove calendar section title').t`Unsubscribe?`,
+            modalText: c('Remove calendar section text').t`This calendar will be removed from your account.`,
+            description: c('Remove calendar section description')
+                .t`By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.`,
+            deleteText: c('Action').t`Unsubscribe`,
+        };
+    }
+    if (isSharedAsMember) {
+        return {
+            modalTitle: c('Remove calendar section title').t`Leave calendar?`,
+            modalText: c('Remove calendar section text')
+                .t`If you leave this calendar, you'll have to ask the owner to join again.`,
+            description: c('Remove calendar section description').t`You will no longer have access to this calendar.`,
+            deleteText: c('Action').t`Delete`,
+        };
+    }
+    return {
+        modalTitle: c('Remove calendar section title').t`Delete calendar?`,
+        modalText: isSharedAsOwner
+            ? c('Info')
+                  .t`Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.`
+            : c('Info').t`Are you sure you want to delete this calendar? All events in it will be deleted.`,
+        description: c('Delete calendar section description').t`All events in this calendar will be deleted.`,
+        deleteText: c('Action').t`Delete`,
+    };
+};
+
 interface Props {
-    personalActiveCalendars: VisualCalendar[];
+    calendars: VisualCalendar[];
     calendar: VisualCalendar;
     defaultCalendar?: VisualCalendar;
+    isShared: boolean;
 }
 
-const CalendarDeleteSection = ({ personalActiveCalendars, calendar, defaultCalendar }: Props) => {
+const CalendarDeleteSection = ({ calendars, calendar, defaultCalendar, isShared }: Props) => {
     const history = useHistory();
     const api = useApi();
     const { call } = useEventManager();
@@ -29,20 +73,17 @@ const CalendarDeleteSection = ({ personalActiveCalendars, calendar, defaultCalen
     const [deleteModal, setIsDeleteModalOpen, renderDeleteModal] = useModalState();
 
     const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
+    const isOwner = getIsOwnedCalendar(calendar);
     const isDeleteDefaultCalendar = calendar.ID === defaultCalendar?.ID;
-    const firstRemainingCalendar = personalActiveCalendars.find(({ ID: calendarID }) => calendarID !== calendar.ID);
+    const firstRemainingCalendar = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars)).find(
+        ({ ID: calendarID }) => calendarID !== calendar.ID
+    );
 
-    const modalTitle = isSubscribedCalendar
-        ? c('Remove calendar section title').t`Unsubscribe?`
-        : c('Remove calendar section title').t`Delete calendar?`;
-    const modalText = isSubscribedCalendar
-        ? c('Info').t`This calendar will be removed from your account.`
-        : c('Info').t`Are you sure you want to delete this calendar? All events in it will be deleted.`;
-    const deleteText = isSubscribedCalendar ? c('Action').t`Unsubscribe` : c('Action').t`Delete`;
-    const description = isSubscribedCalendar
-        ? c('Remove calendar section description')
-              .t`By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original publick link.`
-        : c('Delete calendar section description').t`All events in this calendar will be deleted.`;
+    const { modalTitle, modalText, description, deleteText } = getTexts({
+        isSubscribedCalendar,
+        isSharedAsOwner: isOwner && isShared,
+        isSharedAsMember: !isOwner,
+    });
 
     const firstRemainingCalendarName = firstRemainingCalendar ? (
         <span className="text-strong text-break" key="calendar-name">
@@ -60,12 +101,18 @@ const CalendarDeleteSection = ({ personalActiveCalendars, calendar, defaultCalen
 
         await withLoading(
             (async () => {
-                await api(removeCalendar(calendar.ID));
-                // null is a valid default calendar id
-                if (newDefaultCalendarID !== undefined) {
-                    // do not make this operation blocking, but growl about it
-                    await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID })).catch(noop);
+                if (getIsOwnedCalendar(calendar)) {
+                    await api(removeCalendar(calendar.ID));
+
+                    // null is a valid default calendar id
+                    if (newDefaultCalendarID !== undefined) {
+                        // do not make this operation blocking, but growl about it
+                        await api(updateCalendarUserSettings({ DefaultCalendarID: newDefaultCalendarID })).catch(noop);
+                    }
+                } else {
+                    await api(removeMember(calendar.ID, calendar.Members[0].ID));
                 }
+
                 await call();
             })()
         );
@@ -85,16 +132,17 @@ const CalendarDeleteSection = ({ personalActiveCalendars, calendar, defaultCalen
                         <Button color="danger" onClick={handleDelete} loading={loading} type="submit">
                             {deleteText}
                         </Button>,
-                        <Button onClick={deleteModal.onClose} type="submit">{c('Action').t`Cancel`}</Button>,
+                        <Button disabled={loading} onClick={deleteModal.onClose} type="submit">{c('Action')
+                            .t`Cancel`}</Button>,
                     ]}
                 >
                     <div className="mb1">{modalText}</div>
                     {deleteDefaultAlertText}
                 </AlertModal>
             )}
-            <SettingsSection large>
+            <SettingsSection className="container-section-sticky-section">
                 <div className="h2 mb0-25 text-bold">{c('Remove calendar section title').t`Remove calendar`}</div>
-                <SettingsParagraph>{description}</SettingsParagraph>
+                <SettingsParagraph large>{description}</SettingsParagraph>
                 {deleteDefaultAlertText && <Alert className="mb1">{deleteDefaultAlertText}</Alert>}
                 <ErrorButton onClick={() => setIsDeleteModalOpen(true)}>{deleteText}</ErrorButton>
             </SettingsSection>

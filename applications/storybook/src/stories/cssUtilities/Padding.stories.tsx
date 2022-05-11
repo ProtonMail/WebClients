@@ -14,7 +14,7 @@ export default {
     },
 };
 
-const paddingSize = ['0', '0-25', '0-3', '0-5', '0-75', '1', '1-25', '1-5', '1-75', '2', '2-25', '3', '4'];
+const paddingSize = ['0', '0-15', '0-25', '0-3', '0-5', '0-75', '1', '1-25', '1-5', '1-75', '2', '2-25', '3', '4'];
 
 const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-primary user-select';
 

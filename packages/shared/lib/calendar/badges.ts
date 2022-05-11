@@ -24,6 +24,37 @@ export interface CalendarStatusBadge {
     tooltipText?: string;
 }
 
+export const getDefaultCalendarBadge = (): CalendarStatusBadge => ({
+    statusType: CALENDAR_STATUS_TYPE.DEFAULT,
+    badgeType: 'primary',
+    text: c('Calendar status').t`Default`,
+});
+
+export const getActiveCalendarBadge = (): CalendarStatusBadge => ({
+    statusType: CALENDAR_STATUS_TYPE.ACTIVE,
+    badgeType: 'success',
+    text: c('Calendar status').t`Active`,
+});
+
+export const getDisabledCalendarBadge = (): CalendarStatusBadge => ({
+    statusType: CALENDAR_STATUS_TYPE.DISABLED,
+    badgeType: 'light',
+    text: c('Calendar status').t`Disabled`,
+});
+
+export const getNotSyncedCalendarBadge = ({
+    text,
+    tooltipText,
+}: {
+    text: string;
+    tooltipText: string;
+}): CalendarStatusBadge => ({
+    statusType: CALENDAR_STATUS_TYPE.NOT_SYNCED,
+    badgeType: 'warning',
+    text,
+    tooltipText,
+});
+
 export const getCalendarStatusBadges = (calendar: VisualCalendar | SubscribedCalendar, defaultCalendarID?: string) => {
     const isDisabled = getIsCalendarDisabled(calendar);
     const isActive = getIsCalendarProbablyActive(calendar);
@@ -36,36 +67,19 @@ export const getCalendarStatusBadges = (calendar: VisualCalendar | SubscribedCal
     const badges: CalendarStatusBadge[] = [];
 
     if (isDefault) {
-        badges.push({
-            statusType: CALENDAR_STATUS_TYPE.DEFAULT,
-            badgeType: 'primary',
-            text: c('Calendar status').t`Default`,
-        });
+        badges.push(getDefaultCalendarBadge());
     }
 
     if (isActive) {
-        badges.push({
-            statusType: CALENDAR_STATUS_TYPE.ACTIVE,
-            badgeType: 'success',
-            text: c('Calendar status').t`Active`,
-        });
+        badges.push(getActiveCalendarBadge());
     }
 
     if (isDisabled) {
-        badges.push({
-            statusType: CALENDAR_STATUS_TYPE.DISABLED,
-            badgeType: 'light',
-            text: c('Calendar status').t`Disabled`,
-        });
+        badges.push(getDisabledCalendarBadge());
     }
 
     if (isSubscribed && isNotSyncedInfo) {
-        badges.push({
-            statusType: CALENDAR_STATUS_TYPE.NOT_SYNCED,
-            badgeType: 'warning',
-            text: isNotSyncedInfo.label,
-            tooltipText: isNotSyncedInfo.text,
-        });
+        badges.push(getNotSyncedCalendarBadge({ text: isNotSyncedInfo.label, tooltipText: isNotSyncedInfo.text }));
     }
 
     return { isDisabled, isActive, isDefault, isSubscribed, isNotSyncedInfo, badges };

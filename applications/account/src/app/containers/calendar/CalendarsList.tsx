@@ -13,13 +13,11 @@ import {
     SidebarListItemContentIcon,
     SidebarListItemLink,
     generateUID,
-    useAddresses,
     useCalendars,
 } from '@proton/components';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
-import { sortCalendars } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { getVisualCalendars, sortCalendars } from '@proton/shared/lib/calendar/calendar';
 import clsx from '@proton/utils/clsx';
 
 import SettingsListItem from '../../components/SettingsListItem';
@@ -57,7 +55,6 @@ const CalendarsList = ({ prefix, calendarsSection }: Props) => {
     const [calendars = [], loadingCalendars] = useCalendars();
     const { pathname } = useLocation();
     const [showAll, setShowAll] = useState(false);
-    const [addresses = [], loadingAddresses] = useAddresses();
 
     const headerId = generateUID('CalendarsListHeader');
     const contentId = generateUID('CalendarsListContent');
@@ -84,11 +81,11 @@ const CalendarsList = ({ prefix, calendarsSection }: Props) => {
     );
 
     const calendarItems = (() => {
-        if (loadingCalendars || loadingAddresses) {
+        if (loadingCalendars) {
             return [];
         }
 
-        const sortedVisualCalendars = sortCalendars(getVisualCalendars(calendars, addresses));
+        const sortedVisualCalendars = sortCalendars(getVisualCalendars(calendars));
         const remainingItems = calendars.length - MAX_CALENDARS;
 
         if (remainingItems > 1 && !showAll) {

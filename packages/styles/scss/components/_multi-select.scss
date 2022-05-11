@@ -1,0 +1,16 @@
+.multi-select {
+	&-container {
+		border-radius: var(--border-radius-md);
+		border: 1px solid var(--field-norm);
+		background-color: var(--field-background-color);
+		transition: box-shadow 0.15s easing(ease-out-quint); // Use the same transition as input fields, but only for box-shadow (outline)
+
+		&:focus,
+		&:focus-within,
+		&:focus-visible {
+			border-color: var(--field-focus);
+			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+			background-color: var(--field-focus-background-color);
+		}
+	}
+}

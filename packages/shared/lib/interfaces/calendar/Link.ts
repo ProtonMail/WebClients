@@ -36,11 +36,6 @@ export interface CalendarLink extends Omit<CalendarUrl, 'PassphraseID'> {
     link: string;
 }
 
-export interface VisualCalendarLink extends CalendarLink {
-    calendarName: string;
-    color: string;
-}
-
 export interface CopyLinkParams {
     calendarID: string;
     urlID: string;
