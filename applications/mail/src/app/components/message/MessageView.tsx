@@ -306,9 +306,25 @@ const MessageView = (
             }
         );
 
-    const handleFocus = () => {
-        onFocus(conversationIndex);
-    };
+    function handleFocus(context: 'IFRAME'): () => void;
+    function handleFocus(context: 'BUBBLED_EVENT'): (event: FocusEvent) => void;
+    function handleFocus(context: 'IFRAME' | 'BUBBLED_EVENT') {
+        if (context === 'IFRAME') {
+            return () => {
+                onFocus(conversationIndex);
+            };
+        }
+
+        if (context === 'BUBBLED_EVENT') {
+            return (event: FocusEvent) => {
+                // We ensure that the clicked element is in the message view
+                // The event can be returned by a bubbled event from a modal
+                if (elementRef.current?.contains(event.target)) {
+                    onFocus(conversationIndex);
+                }
+            };
+        }
+    }
 
     const handleBlur: FocusEventHandler<HTMLElement> = (event) => {
         onBlur(event, elementRef);
@@ -328,7 +344,7 @@ const MessageView = (
             tabIndex={-1}
             data-message-id={message.data?.ID}
             data-shortcut-target="message-container"
-            onFocus={handleFocus}
+            onFocus={handleFocus('BUBBLED_EVENT')}
             onBlur={handleBlur}
         >
             <div className="rounded overflow-hidden">
@@ -366,7 +382,7 @@ const MessageView = (
                             originalMessageMode={originalMessageMode}
                             toggleOriginalMessage={toggleOriginalMessage}
                             onMessageReady={onMessageReady}
-                            onFocusIframe={handleFocus}
+                            onFocusIframe={handleFocus('IFRAME')}
                         />
                         {showFooter ? <MessageFooter message={message} /> : null}
                     </>
