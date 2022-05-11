@@ -37,7 +37,7 @@ const PaymentMethodsSection = () => {
     const learnMoreUrl =
         APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/payment-options/'
-            : getKnowledgeBaseUrl('/payment');
+            : getKnowledgeBaseUrl('/payment-options');
 
     return (
         <SettingsSection>

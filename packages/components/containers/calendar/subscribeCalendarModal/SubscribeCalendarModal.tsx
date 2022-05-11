@@ -107,7 +107,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
     })();
 
     const kbLink = (
-        <Href key="kbLink" href={getKnowledgeBaseUrl('/calendar-subscribe')}>{c(
+        <Href key="kbLink" href={getKnowledgeBaseUrl('/subscribe-to-external-calendar')}>{c(
             'Subscribe to calendar modal description'
         ).t`Learn how to get a private calendar link.`}</Href>
     );

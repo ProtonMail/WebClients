@@ -53,7 +53,7 @@ const RequestResetTokenForm = ({
                 learnMore={
                     isVPN
                         ? 'https://protonvpn.com/support/reset-protonvpn-account-password/'
-                        : getKnowledgeBaseUrl('/set-forgot-password-options')
+                        : getKnowledgeBaseUrl('/set-account-recovery-methods')
                 }
             >{c('Info').t`We will send a reset code to your recovery email to reset your password.`}</Alert>
             <Label htmlFor="username" className="sr-only">
@@ -170,7 +170,7 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
                 />
             </div>
             {isVPN ? null : (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/restoring-encrypted-mailbox')}>{c('Info')
+                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/recover-encrypted-messages-files')}>{c('Info')
                     .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
             )}
             <div className="text-right mb1">

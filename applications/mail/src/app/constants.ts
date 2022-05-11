@@ -171,13 +171,13 @@ export const defaultESContextMail: EncryptedSearchFunctionsMail = {
 export const WELCOME_PANE_OPTIONS_URLS = {
     plansSelection: '/upgrade',
     protonShop: getShopURL(),
-    proton2FA: getKnowledgeBaseUrl('/two-factor-authentication'),
+    proton2FA: getKnowledgeBaseUrl('/two-factor-authentication-2fa'),
     protonBusiness: getStaticURL('/business'),
     calendar: getAppHref('/', APPS.PROTONCALENDAR),
     vpn: getAppHref('/vpn/vpn-apps', APPS.PROTONACCOUNT),
 };
 
-export const restoringEncryptedMessagesURL = getKnowledgeBaseUrl('/restoring-encrypted-mailbox');
+export const restoringEncryptedMessagesURL = getKnowledgeBaseUrl('/recover-encrypted-messages-files');
 export const reActivateKeySettingsURL = '/encryption-keys';
 
 export const emailTrackerProtectionURL = getKnowledgeBaseUrl('/email-tracker-protection');

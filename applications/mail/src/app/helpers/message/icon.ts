@@ -502,5 +502,5 @@ export const getSendIconHref = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>,
     if (isEncrypted) {
         return undefined;
     }
-    return getKnowledgeBaseUrl('/what-is-encrypted');
+    return getKnowledgeBaseUrl('/proton-mail-encryption-explained');
 };
