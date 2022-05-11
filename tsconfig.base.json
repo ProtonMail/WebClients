@@ -16,7 +16,29 @@
         "strict": true,
         "target": "es2018",
         "skipLibCheck": true,
-        "types": ["webpack-env", "jest"]
+        "types": ["webpack-env", "jest"],
+        "baseUrl": ".",
+        "paths": {
+            "@proton/atoms/*": ["./packages/atoms/*"],
+            "@proton/colors/*": ["./packages/colors/*"],
+            "@proton/components/*": ["./packages/components/*"],
+            "@proton/config/*": ["./packages/config/*"],
+            "@proton/cross-storage/*": ["./packages/cross-storage/*"],
+            "@proton/encrypted-search/*": ["./packages/encrypted-search/*"],
+            "@proton/eslint-config-proton/*": ["./packages/eslint-config-proton/*"],
+            "@proton/get-random-values/*": ["./packages/get-random-values/*"],
+            "@proton/hooks/*": ["./packages/hooks/*"],
+            "@proton/i18n/*": ["./packages/i18n/*"],
+            "@proton/key-transparency/*": ["./packages/key-transparency/*"],
+            "@proton/pack/*": ["./packages/pack/*"],
+            "@proton/polyfill/*": ["./packages/polyfill/*"],
+            "@proton/shared/*": ["./packages/shared/*"],
+            "@proton/srp/*": ["./packages/srp/*"],
+            "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
+            "@proton/styles/*": ["./packages/styles/*"],
+            "@proton/testing/*": ["./packages/testing/*"],
+            "@proton/util/*": ["./packages/util/*"]
+        }
     },
     "exclude": ["**/node_modules", "**/.*/"]
 }
