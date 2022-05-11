@@ -153,8 +153,9 @@ const SubscribedCalendarsSection = ({
                         {c('Subscribed calendar section description')
                             .t`Add public, external, or shared calendars using a URL.`}
                         <br />
-                        <Href url={getKnowledgeBaseUrl('/calendar-subscribe')}>{c('Knowledge base link label')
-                            .t`Here's how`}</Href>
+                        <Href url={getKnowledgeBaseUrl('/subscribe-to-external-calendar')}>{c(
+                            'Knowledge base link label'
+                        ).t`Here's how`}</Href>
                     </SettingsParagraph>
                 }
                 onAdd={handleCreate}

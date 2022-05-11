@@ -31,7 +31,7 @@ const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
                         <Label htmlFor="saveContactToggle">
                             <span className="mr0-5 text-semibold" role="heading" aria-level={2}>{c('Label')
                                 .t`Automatically save contacts`}</span>
-                            <Info url={getKnowledgeBaseUrl('/autosave-contact-list/')} />
+                            <Info url={getKnowledgeBaseUrl('/autosave-contact-list')} />
                         </Label>
                         <Field className="pt0-5">
                             <AutoSaveContactsToggle autoSaveContacts={!!AutoSaveContacts} id="saveContactToggle" />

@@ -54,7 +54,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
     const isDrive = APP_NAME === APPS.PROTONDRIVE;
     const clearCacheLink = isVpn
         ? 'https://protonvpn.com/support/clear-browser-cache-cookies/'
-        : getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies/');
+        : getKnowledgeBaseUrl('/how-to-clean-cache-and-cookies');
     const Client = getClientName(APP_NAME);
     const showCategory = !isDrive;
     const { createNotification } = useNotifications();

@@ -82,7 +82,7 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
     return (
         <>
             {!hasApiKeys && (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp/')}>
+                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>
                     {c('Info')
                         .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-${BRAND_NAME} user that uses a PGP compatible service.`}
                 </Alert>
@@ -96,15 +96,15 @@ const ContactPgpSettings = ({ model, setModel, mailSettings }: Props) => {
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
             {hasApiKeys && (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification/')}>{c('Info')
+                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/address-verification')}>{c('Info')
                     .t`To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.`}</Alert>
             )}
             {!hasApiKeys && !model.sign && (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp/')}>{c('Info')
+                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
                     .t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}</Alert>
             )}
             {model.isPGPExternalWithoutWKDKeys && noPinnedKeyCanSend && (
-                <Alert className="mb1" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp/')}>{c('Info')
+                <Alert className="mb1" type="error" learnMore={getKnowledgeBaseUrl('/how-to-use-pgp')}>{c('Info')
                     .t`None of the uploaded keys are valid for encryption. Encryption is automatically disabled.`}</Alert>
             )}
             {!hasApiKeys && (

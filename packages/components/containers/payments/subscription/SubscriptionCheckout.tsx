@@ -338,7 +338,7 @@ const SubscriptionCheckout = ({
                                                 url={
                                                     isVPN
                                                         ? 'https://protonvpn.com/support/vpn-credit-proration/'
-                                                        : getKnowledgeBaseUrl('/credit-proration/')
+                                                        : getKnowledgeBaseUrl('/credit-proration-coupons')
                                                 }
                                             />
                                         </>
