@@ -7,7 +7,7 @@ import {
     ChangeEvent,
 } from 'react';
 
-import { clamp } from '@proton/shared/lib/helpers/math';
+import clamp from '@proton/util/clamp';
 import percentage from '@proton/util/percentage';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 
