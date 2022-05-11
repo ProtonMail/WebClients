@@ -30,6 +30,11 @@ export const IMAPS = {
     [NON_OAUTH_PROVIDER.YAHOO]: 'imap.mail.yahoo.com',
 };
 
+export const PORTS = {
+    [OAUTH_PROVIDER.GOOGLE]: '993',
+    [NON_OAUTH_PROVIDER.YAHOO]: '993',
+};
+
 export const EASY_SWITCH_EMAIL_PLACEHOLDER = {
     [NON_OAUTH_PROVIDER.YAHOO]: `${USERNAME_PLACEHOLDER}@yahoo.com`,
     [NON_OAUTH_PROVIDER.OUTLOOK]: `${USERNAME_PLACEHOLDER}@outlook.com`,
