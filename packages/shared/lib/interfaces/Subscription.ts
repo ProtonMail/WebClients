@@ -44,6 +44,7 @@ export interface Subscription {
     CouponCode: null | string;
     Currency: Currency;
     Amount: number;
+    RenewAmount: number;
     Plans: Plan[];
 }
 
