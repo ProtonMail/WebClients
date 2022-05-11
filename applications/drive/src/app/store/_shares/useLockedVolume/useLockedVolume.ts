@@ -122,6 +122,7 @@ export function useLockedVolumeInner({
             return volumes;
         },
         [
+            addressesKeys,
             getLockedUnpreparedShares,
             getPreparedVolumes,
             getLoadedLockedShares,
