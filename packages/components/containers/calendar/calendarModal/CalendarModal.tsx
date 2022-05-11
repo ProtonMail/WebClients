@@ -25,7 +25,7 @@ import {
     Button,
 } from '../../../components';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel, validate } from './calendarModalState';
-import { useLoading } from '../../../hooks';
+import { useFeature, useLoading } from '../../../hooks';
 import Notifications from '../notifications/Notifications';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
@@ -34,6 +34,7 @@ import { SelectChangeEvent } from '../../../components/selectTwo/select';
 import GenericError from '../../error/GenericError';
 
 import './CalendarModal.scss';
+import { FeatureCode } from '../..';
 
 const URL_MAX_DISPLAY_LENGTH = 100;
 
@@ -68,6 +69,9 @@ export const CalendarModal = ({
         const option = model.addressOptions.find(({ value: ID }) => ID === model.addressID);
         return (option && option.text) || '';
     }, [model.addressID, model.addressOptions]);
+
+    const isSubscribedCalendarReminderFeatureEnabled = !!useFeature(FeatureCode.SubscribedCalendarReminder).feature
+        ?.Value;
 
     const isSubscribedCalendar = initialCalendar && getIsSubscribedCalendar(initialCalendar);
     const subscribeURL =
@@ -268,18 +272,7 @@ export const CalendarModal = ({
                                             ))}
                                         </InputFieldTwo>
                                     )}
-                                    {subscribeURL &&
-                                        getFakeInputTwo({
-                                            content: (
-                                                <span className="text-break-all">
-                                                    <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>
-                                                        {subscribeURL}
-                                                    </TruncatedText>
-                                                </span>
-                                            ),
-                                            label: c('Label').t`URL`,
-                                        })}
-                                    {!isSubscribedCalendar && (
+                                    {(!isSubscribedCalendar || isSubscribedCalendarReminderFeatureEnabled) && (
                                         <>
                                             <InputFieldTwo
                                                 as={Notifications}
@@ -314,6 +307,17 @@ export const CalendarModal = ({
                                             />
                                         </>
                                     )}
+                                    {subscribeURL &&
+                                        getFakeInputTwo({
+                                            content: (
+                                                <span className="text-break-all">
+                                                    <TruncatedText maxChars={URL_MAX_DISPLAY_LENGTH}>
+                                                        {subscribeURL}
+                                                    </TruncatedText>
+                                                </span>
+                                            ),
+                                            label: c('Label').t`URL`,
+                                        })}
                                 </>
                             )}
                         </ModalTwoContent>
