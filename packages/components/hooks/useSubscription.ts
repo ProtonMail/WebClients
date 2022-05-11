@@ -14,7 +14,7 @@ const useSubscription = (): [tsSubscriptionModel, boolean, Error] => {
 
     const miss = useCallback(() => {
         const { value: user = {} } = cache.get(UserModel.key) || {};
-        if (user.isAdmin) {
+        if (user.isAdmin && Boolean(user.Subscribed)) {
             return SubscriptionModel.get(api);
         }
         // Member cannot fetch subscription
