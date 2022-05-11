@@ -43,6 +43,7 @@ const ItemContextMenu = ({
 
     const inboxButton = (
         <ContextMenuButton
+            key="context-menu-inbox"
             testId="context-menu-inbox"
             icon="inbox"
             name={c('Action').t`Move to inbox`}
@@ -52,6 +53,7 @@ const ItemContextMenu = ({
 
     const nospamButton = (
         <ContextMenuButton
+            key="context-menu-nospam"
             testId="context-menu-nospam"
             icon="fire-slash"
             name={c('Action').t`Move to inbox (not spam)`}
@@ -61,6 +63,7 @@ const ItemContextMenu = ({
 
     const archiveButton = (
         <ContextMenuButton
+            key="context-menu-archive"
             testId="context-menu-archive"
             icon="archive-box"
             name={c('Action').t`Move to archive`}
@@ -70,6 +73,7 @@ const ItemContextMenu = ({
 
     const trashButton = (
         <ContextMenuButton
+            key="context-menu-trash"
             testId="context-menu-trash"
             icon="trash"
             name={c('Action').t`Move to trash`}
@@ -79,6 +83,7 @@ const ItemContextMenu = ({
 
     const spamButton = (
         <ContextMenuButton
+            key="context-menu-spam"
             testId="context-menu-spam"
             icon="fire"
             name={c('Action').t`Move to spam`}
@@ -88,6 +93,7 @@ const ItemContextMenu = ({
 
     const deleteButton = (
         <ContextMenuButton
+            key="context-menu-delete"
             testId="context-menu-delete"
             icon="cross-circle"
             name={c('Action').t`Delete`}
@@ -123,12 +129,14 @@ const ItemContextMenu = ({
 
     const readButtons = [
         <ContextMenuButton
+            key="context-menu-read"
             testId="context-menu-read"
             icon="eye"
             name={c('Action').t`Mark as read`}
             action={() => onMarkAs(MARK_AS_STATUS.READ)}
         />,
         <ContextMenuButton
+            key="context-menu-unread"
             testId="context-menu-unread"
             icon="eye-slash"
             name={c('Action').t`Mark as unread`}
