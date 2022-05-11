@@ -1,3 +1,9 @@
+# [5.0.0 - Beta 28] - 2022-05-18
+
+Introducing Proton's refreshed look.
+
+As we continue to make privacy accessible to everyone, we've updated our apps to provide you with an even better experience with our services.
+
 # [4.0.0-beta.27] - 2022-05-04
 
 ## Added
