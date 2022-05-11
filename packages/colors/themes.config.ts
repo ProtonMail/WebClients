@@ -21,6 +21,19 @@ const config: ThemeConfig[] = [
         ],
     },
     {
+        output: './themes/dist/classic.theme.css',
+        files: [
+            {
+                path: './themes/src/classic/standard-base.css',
+                type: 'light',
+            },
+            {
+                path: './themes/src/classic/prominent-base.css',
+                type: 'dark',
+            },
+        ],
+    },
+    {
         output: './themes/dist/carbon.theme.css',
         files: [
             {
