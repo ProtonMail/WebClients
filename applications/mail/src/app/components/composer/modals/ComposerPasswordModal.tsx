@@ -111,7 +111,7 @@ const ComposerPasswordModal = ({ message, onClose, onChange }: Props) => {
                 {c('Info')
                     .t`Encrypted messages to non-${BRAND_NAME} recipients will expire in 28 days unless a shorter expiration time is set.`}
                 <br />
-                <Href url={getKnowledgeBaseUrl('/encrypt-for-outside-users/')}>{c('Info').t`Learn more`}</Href>
+                <Href url={getKnowledgeBaseUrl('/encrypt-for-outside-users')}>{c('Info').t`Learn more`}</Href>
             </p>
 
             <InputFieldTwo

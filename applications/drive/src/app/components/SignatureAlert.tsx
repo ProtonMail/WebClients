@@ -109,7 +109,7 @@ export function SignatureAlertBody({ signatureIssues, signatureAddress, isFile, 
             &nbsp;
             {textWarning}
             &nbsp;
-            <a href={getKnowledgeBaseUrl('/drive-signature-management/')} target="_blank">
+            <a href={getKnowledgeBaseUrl('/drive-signature-management')} target="_blank">
                 {c('Action').t`Learn more`}
             </a>
         </>

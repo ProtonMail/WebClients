@@ -124,7 +124,7 @@ function SpamFiltersSection() {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/spam-filtering/')}>
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/spam-filtering')}>
                 {c('FilterSettings')
                     .t`Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.`}
             </SettingsParagraph>

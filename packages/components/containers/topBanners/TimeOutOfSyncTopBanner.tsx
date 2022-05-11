@@ -45,7 +45,7 @@ const TimeOutOfSyncTopBanner = () => {
         return null;
     }
 
-    const learnMore = <LearnMore url={getKnowledgeBaseUrl('/device-time-warning/')} />;
+    const learnMore = <LearnMore url={getKnowledgeBaseUrl('/device-time-warning')} />;
 
     return (
         <TopBanner onClose={() => setIgnore(true)} className="bg-warning">

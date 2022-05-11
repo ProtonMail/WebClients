@@ -53,7 +53,7 @@ const RequestResetTokenForm = ({
                 learnMore={
                     isVPN
                         ? 'https://protonvpn.com/support/reset-protonvpn-account-password/'
-                        : getKnowledgeBaseUrl('/set-forgot-password-options/')
+                        : getKnowledgeBaseUrl('/set-forgot-password-options')
                 }
             >{c('Info').t`We will send a reset code to your recovery email to reset your password.`}</Alert>
             <Label htmlFor="username" className="sr-only">
@@ -151,7 +151,7 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
                 withLoading(onSubmit());
             }}
         >
-            <Alert className="mb1" type="warning" learnMore={getKnowledgeBaseUrl('/updating-your-login-password/')}>{c(
+            <Alert className="mb1" type="warning" learnMore={getKnowledgeBaseUrl('/updating-your-login-password')}>{c(
                 'Info'
             )
                 .jt`Resetting your password will reset your encryption keys for all Proton related services (Mail and VPN). You will be unable to read your existing messages. If you know your ${MAIL_APP_NAME} credentials, do NOT reset. You can log in with them ${hereLink}.`}</Alert>
@@ -170,7 +170,7 @@ const DangerForm = ({ onSubmit, isVPN }: { onSubmit: () => Promise<void>; isVPN:
                 />
             </div>
             {isVPN ? null : (
-                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/restoring-encrypted-mailbox/')}>{c('Info')
+                <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/restoring-encrypted-mailbox')}>{c('Info')
                     .t`If you remember your old password later, you can recover your existing messages.`}</Alert>
             )}
             <div className="text-right mb1">

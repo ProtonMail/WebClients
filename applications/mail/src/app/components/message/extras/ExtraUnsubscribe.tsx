@@ -71,7 +71,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 {c('Info')
                     .t`A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.`}
                 <br />
-                <Href href={getKnowledgeBaseUrl('/avoid-spam/')}>{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
             </>
         );
 
@@ -97,7 +97,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 {c('Info')
                     .jt`To unsubscribe from this mailing list, an email will be sent from ${boldFrom} with following details as defined by the sender of the newsletter:`}
                 <br />
-                <Href href={getKnowledgeBaseUrl('/avoid-spam/')}>{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
                 <Row className="mt1">
                     <Label className="cursor-default">
                         <span className="mr0-5">{c('Info').t`Recipient: `}</span>
@@ -163,7 +163,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
                 {c('Info')
                     .jt`To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:`}
                 <br />
-                <Href href={getKnowledgeBaseUrl('/avoid-spam/')}>{c('Link').t`Learn more`}</Href>
+                <Href href={getKnowledgeBaseUrl('/avoid-spam')}>{c('Link').t`Learn more`}</Href>
                 <div className="text-bold rounded border p1 bg-weak text-break mb1 mt1">{c('Info')
                     .t`URL: ${unsubscribeMethods.HttpClient}`}</div>
             </>
