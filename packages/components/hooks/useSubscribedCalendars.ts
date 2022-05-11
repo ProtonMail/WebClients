@@ -19,7 +19,8 @@ import {
     CalendarMemberEventManager,
     CalendarSubscriptionEventManager,
 } from '@proton/shared/lib/interfaces/calendar/EventManager';
-import { addItem, removeItem, updateItem } from '@proton/shared/lib/helpers/array';
+import { addItem, updateItem } from '@proton/shared/lib/helpers/array';
+import removeItem from '@proton/util/removeIndex';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import {
     Calendar,
