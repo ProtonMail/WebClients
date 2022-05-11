@@ -1,0 +1,48 @@
+.ui-prominent {
+	--signal-danger: #ed4c51;
+
+	--signal-warning: #f5930a;
+
+	--signal-success: #349172;
+
+	--signal-info: #2c89db;
+
+	--interaction-norm: #657ee4;
+
+	--interaction-weak: #353e60;
+
+	--text-norm: white;
+	--text-weak: #949bb9;
+	--text-hint: #565f84;
+	--text-disabled: #444e72;
+	--text-invert: #1c223d;
+
+	--field-norm: #565f84;
+	--field-hover: #949bb9;
+	--field-disabled: #353e60;
+	--field-focus: #657ee4;
+	--field-highlight: rgb(101 126 228 / 0.2);
+
+	--border-norm: #353e60;
+	--border-weak: #2d3657;
+
+	--background-norm: #1c223d;
+	--background-weak: #272f4f;
+	--background-strong: #2d3657;
+
+	--interaction-default: transparent;
+	--interaction-default-hover: rgb(68 78 114 / 0.3);
+	--interaction-default-active: rgb(68 78 114 / 0.4);
+
+	--shadow-norm-opacity: 0.32;
+	--shadow-lifted-opacity: 0.4;
+
+	--backdrop-norm: rgb(0 0 0 / 0.32);
+
+	/* Optional colors */
+
+	--optional-scrollbar-thumb-color: #353e60;
+	--optional-scrollbar-thumb-hover-color: #444e72;
+
+	--optional-logo-text-product-color: #8A6EFF;
+}
