@@ -43,13 +43,13 @@ const BillingSection = () => {
         return <MozillaInfoPanel />;
     }
 
-    const { Plans = [], Cycle, Currency, CouponCode, Amount, PeriodEnd } = subscription;
+    const { Plans = [], Cycle, Currency, CouponCode, RenewAmount, PeriodEnd } = subscription;
     const { plan, mailPlan, vpnPlan, addressAddon, domainAddon, memberAddon, vpnAddon, spaceAddon } =
         formatPlans(Plans);
     const subTotal = unique(Plans.map(({ Name }) => Name)).reduce((acc, planName) => {
         return acc + getBaseAmount(planName as PLANS, plansMap, subscription, Cycle);
     }, 0);
-    const discount = subTotal - Amount;
+    const discount = subTotal - RenewAmount;
     const spaceBonus = organization?.BonusSpace;
     const vpnBonus = organization?.BonusVPN;
     const maxUsers = organization?.MaxMembers || 1;
@@ -295,7 +295,7 @@ const BillingSection = () => {
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
                             <div className={priceLabelClassName}>{getDueCycleText(Cycle)}</div>
                             <div className="text-right">
-                                <Price currency={Currency}>{Amount}</Price>
+                                <Price currency={Currency}>{RenewAmount}</Price>
                             </div>
                         </div>
                     </div>
@@ -305,7 +305,7 @@ const BillingSection = () => {
                     <div className={classnames([priceRowClassName, 'text-bold'])}>
                         <div className={priceLabelClassName}>{getTotalBillingText(Cycle)}</div>
                         <div className="text-right">
-                            <Price currency={Currency}>{Amount}</Price>
+                            <Price currency={Currency}>{RenewAmount}</Price>
                         </div>
                     </div>
                 </div>
