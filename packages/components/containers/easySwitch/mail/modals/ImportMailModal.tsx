@@ -119,7 +119,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const { call } = useEventManager();
 
     const debouncedEmail = useDebounceInput(modalModel.email);
-    const invalidPortError = useMemo(() => !isNumber(modalModel.port), [modalModel.port]);
+    const invalidPortError = useMemo(() => !!modalModel.port && !isNumber(modalModel.port), [modalModel.port]);
 
     const title = useMemo(() => {
         switch (modalModel.step) {
