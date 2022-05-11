@@ -69,7 +69,7 @@ const SubscriptionPanel = ({
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
-    const amount = (subscription?.Amount ?? 0) / cycle;
+    const amount = (subscription?.RenewAmount ?? 0) / cycle;
 
     const hasAddresses = Array.isArray(addresses) && addresses.length > 0;
 
