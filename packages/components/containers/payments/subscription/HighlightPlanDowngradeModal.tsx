@@ -1,14 +1,9 @@
 import { c, msgid } from 'ttag';
 import { getDifferenceInDays } from '@proton/shared/lib/date/date';
-import { BRAND_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { Plan, UserModel } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
-import { toMap } from '@proton/shared/lib/helpers/object';
-import { getIsLegacyPlan } from '@proton/shared/lib/helpers/subscription';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import {
     Alert,
     Button,
-    Loader,
     ModalProps,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
@@ -16,56 +11,23 @@ import {
     ModalTwoFooter as ModalFooter,
     Form,
 } from '../../../components';
-import { useConfig, useSubscription, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 
-import { formatPlans } from './helpers';
 import SubscriptionCancelPlan from './SubscriptionCancelPlan';
-import { getShortPlan } from '../features/plan';
+import { getFreePlan } from '../features/plan';
+import { ShortPlan } from '../features/interface';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
     onConfirm: () => void;
-    plans: Plan[] | undefined;
-    user: UserModel;
+    shortPlan: ShortPlan;
+    periodEnd: number;
 }
 
-const HighlightPlanDowngradeModal = ({ onConfirm, onClose, plans, user, ...rest }: Props) => {
-    const { APP_NAME } = useConfig();
+const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd, ...rest }: Props) => {
+    const downgradedShortPlan = getFreePlan();
+    const downgradedPlanName = `${BRAND_NAME} ${downgradedShortPlan.title}`;
+    const currentPlanName = shortPlan.title;
 
-    const [subscription, loadingSubscription] = useSubscription();
-    const { Plans = [], PeriodEnd } = subscription;
-    const { mailPlan, vpnPlan } = formatPlans(Plans);
-
-    const isVpnApp = APP_NAME === 'proton-vpn-settings';
-
-    const getIsVpnPlan = () => {
-        if (vpnPlan !== undefined && mailPlan === undefined) {
-            return true;
-        }
-
-        if (mailPlan !== undefined && vpnPlan === undefined) {
-            return false;
-        }
-
-        return isVpnApp;
-    };
-
-    const isVpnPlan = getIsVpnPlan();
-
-    const currentPlan = isVpnPlan ? (vpnPlan as Plan) : (mailPlan as Plan);
-    const [vpnCountries] = useVPNCountriesCount();
-    const [vpnServers] = useVPNServersCount();
-    const plansMap = toMap(plans, 'Name');
-
-    const downgradedPlanNameKey = PLANS.FREE;
-    const downgradedPlanName = [BRAND_NAME, PLAN_NAMES[downgradedPlanNameKey]].filter(isTruthy).join(' ');
-    const downgradedPlanFeatures = getShortPlan(downgradedPlanNameKey, plansMap, vpnCountries, vpnServers);
-    const planFeatures = getShortPlan(currentPlan.Name as PLANS, plansMap, vpnCountries, vpnServers);
-
-    const daysRemaining = getDifferenceInDays(new Date(), new Date(PeriodEnd * 1000));
-
-    const currentPlanName = [getIsLegacyPlan(currentPlan.Name) ? BRAND_NAME : '', PLAN_NAMES[currentPlan.Name as PLANS]]
-        .filter(isTruthy)
-        .join(' ');
+    const daysRemaining = getDifferenceInDays(new Date(), new Date(periodEnd * 1000));
 
     // translator: daysRemaining contains the number of days remaining for the current subscription eg 288 days remaining
     const planTimeRemainingString = c('new_plans: Plan time remaining').ngettext(
@@ -84,37 +46,30 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, plans, user, ...rest 
         <Modal as={Form} onClose={onClose} size="large" {...rest}>
             <ModalHeader title={c('Title').t`Downgrade account`} />
             <ModalContent>
-                {loadingSubscription ? (
-                    <Loader />
-                ) : (
-                    <>
-                        {daysRemaining > 0 && (
-                            <Alert className="mb1" type="warning">
-                                {planTimeRemainingString}
-                                <br />
-                                {c('Info')
-                                    .t`By downgrading you will lose the following benefits. Are you sure you want to proceed?`}
-                            </Alert>
-                        )}
-                        <div className="flex flex-row flex-nowrap on-mobile-flex-column">
-                            <SubscriptionCancelPlan
-                                name={downgradedPlanName}
-                                info={downgradedPlanFeatures?.description || ''}
-                                features={planFeatures?.features || []}
-                                downgrade
-                            />
-                            <SubscriptionCancelPlan
-                                name={currentPlanName}
-                                info={planFeatures?.description || ''}
-                                features={planFeatures?.features || []}
-                            />
-                        </div>
-                    </>
+                {daysRemaining > 0 && (
+                    <Alert className="mb1" type="warning">
+                        {planTimeRemainingString}
+                        <br />
+                        {c('Info')
+                            .t`By downgrading you will lose the following benefits. Are you sure you want to proceed?`}
+                    </Alert>
                 )}
+                <div className="flex flex-row flex-nowrap on-mobile-flex-column">
+                    <SubscriptionCancelPlan
+                        name={downgradedPlanName}
+                        info={downgradedShortPlan?.description || ''}
+                        features={shortPlan?.features || []}
+                        downgrade
+                    />
+                    <SubscriptionCancelPlan
+                        name={currentPlanName}
+                        info={shortPlan?.description || ''}
+                        features={shortPlan?.features || []}
+                    />
+                </div>
             </ModalContent>
             <ModalFooter>
                 <Button
-                    disabled={loadingSubscription}
                     className="on-mobile-w100 on-mobile-mb1"
                     onClick={() => {
                         onConfirm();
@@ -123,7 +78,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, plans, user, ...rest 
                 >
                     {downgradeButtonString}
                 </Button>
-                <Button className="on-mobile-w100" disabled={loadingSubscription} color="norm" onClick={onClose}>
+                <Button className="on-mobile-w100" color="norm" onClick={onClose}>
                     {keepButtonString}
                 </Button>
             </ModalFooter>
