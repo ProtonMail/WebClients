@@ -7,9 +7,11 @@ import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/hel
 import unary from '@proton/utils/unary';
 import {
     ErrorBoundary,
+    FeatureCode,
     StandardErrorPage,
     useAddresses,
     useCalendars,
+    useFeature,
     useUser,
     useWelcomeFlags,
 } from '@proton/components';
@@ -37,6 +39,8 @@ const MainContainer = () => {
         }
         return view;
     });
+
+    useFeature(FeatureCode.SubscribedCalendarReminder);
 
     const memoedCalendars = useMemo(() => getVisualCalendars(calendars || [], addresses || []), [calendars, addresses]);
     const memoedAddresses = useMemo(() => addresses || [], [addresses]);

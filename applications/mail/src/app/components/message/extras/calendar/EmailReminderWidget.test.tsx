@@ -369,6 +369,7 @@ describe('EmailReminderWidget', () => {
                 ...messageBuilder().ParsedHeaders,
                 'X-Pm-Calendar-Eventisrecurring': '1',
                 'X-Pm-Calendar-Occurrence': '123',
+                'X-Pm-Calendar-Calendarid': '321',
             },
         });
 

@@ -73,6 +73,7 @@ export enum FeatureCode {
     CalendarViewInMail = 'CalendarViewInMail',
     RebrandingFeedbackEnabled = 'RebrandingFeedbackEnabled',
     RebrandingFeedback = 'RebrandingFeedback',
+    SubscribedCalendarReminder = 'SubscribedCalendarReminder',
 }
 
 export interface FeaturesContextValue {
