@@ -5,6 +5,8 @@ import { Audience, VPNCountries, VPNServers } from '@proton/shared/lib/interface
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
+export const getFreeVPNConnectionTotal = () => c('new_plans: feature').t`1 free VPN connection in total`;
+
 export const getB2BHighSpeedVPNConnectionsText = (n: number) => {
     return c('Subscription attribute').ngettext(
         msgid`${n} high-speed VPN connection per user`,
@@ -121,11 +123,12 @@ export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefini
         icon: 'brand-tor',
     };
 };
+
 const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
     return {
         featureName:
             n === 1
-                ? c('new_plans: feature').t`1 free VPN connection in total`
+                ? getFreeVPNConnectionTotal()
                 : c('new_plans: feature').ngettext(
                       msgid`${n} VPN connection per user`,
                       `${n} VPN connections per user`,
