@@ -32,7 +32,7 @@ import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 import {
     getB2BHighSpeedVPNConnectionsText,
-    getB2BVPNConnectionsText,
+    getFreeVPNConnectionTotal,
     getHighSpeedVPNConnectionsText,
     getVPNConnectionsText,
 } from '../features/vpn';
@@ -235,7 +235,7 @@ const SubscriptionPanel = ({
                         return getHighSpeedVPNConnectionsText(VPN_CONNECTIONS);
                     }
                     if (MaxMembers > 1) {
-                        return getB2BVPNConnectionsText(1);
+                        return getFreeVPNConnectionTotal();
                     }
                     return getVPNConnectionsText(1);
                 })(),
