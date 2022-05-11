@@ -15,7 +15,7 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
     const isVPN = appName === APPS.PROTONVPN_SETTINGS;
     const kbUrl = isVPN
         ? 'https://protonvpn.com/support/browsers-supported/'
-        : getKnowledgeBaseUrl('/browsers-supported/');
+        : getKnowledgeBaseUrl('/browsers-supported');
 
     useAppTitle('Compatibility check');
 

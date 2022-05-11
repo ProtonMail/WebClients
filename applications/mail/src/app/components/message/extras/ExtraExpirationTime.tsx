@@ -44,7 +44,7 @@ const ExtraExpirationTime = ({ message, displayAsButton = false, marginBottom = 
                     {...expirationModalProps}
                 >
                     <div className="mr0-5">{expireOnMessage}</div>
-                    <Href href={getKnowledgeBaseUrl('/expiration/')}>{c('Link').t`Learn more`}</Href>
+                    <Href href={getKnowledgeBaseUrl('/expiration')}>{c('Link').t`Learn more`}</Href>
                 </AlertModal>
             </>
         );

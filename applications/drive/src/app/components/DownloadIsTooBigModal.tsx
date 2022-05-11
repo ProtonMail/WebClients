@@ -17,7 +17,7 @@ export default function DownloadIsTooBigModal({ onSubmit, onCancel, onClose, ope
     };
 
     const recommendedBrowser = (
-        <a href={getKnowledgeBaseUrl('/recommended-browsers/')} target="_blank">
+        <a href={getKnowledgeBaseUrl('/recommended-browsers')} target="_blank">
             {c('Info').t`recommended browser`}
         </a>
     );

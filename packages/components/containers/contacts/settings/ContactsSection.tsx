@@ -17,7 +17,7 @@ const ContactsSection = () => {
             <SettingsLayoutLeft>
                 <label htmlFor="saveContactToggle" data-testid="contacts:save-contact-label">
                     <span className="mr0-5 text-semibold">{c('Label').t`Automatically save contacts`}</span>
-                    <Info url={getKnowledgeBaseUrl('/autosave-contact-list/')} />
+                    <Info url={getKnowledgeBaseUrl('/autosave-contact-list')} />
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight className="pt0-5 relative">

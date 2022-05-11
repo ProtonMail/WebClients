@@ -94,7 +94,7 @@ const ExternalPGPSettingsSection = () => {
                     {...automaticallySignModalProps}
                 />
             )}
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/how-to-use-pgp/')}>
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/how-to-use-pgp')}>
                 {c('Info').t`Only change these settings if you are using PGP with non-${BRAND_NAME} recipients.`}
             </SettingsParagraph>
 
@@ -103,7 +103,7 @@ const ExternalPGPSettingsSection = () => {
                     <label htmlFor="signToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Sign external messages`}</span>
                         <Info
-                            url={getKnowledgeBaseUrl('/what-is-a-digital-signature/')}
+                            url={getKnowledgeBaseUrl('/what-is-a-digital-signature')}
                             title={c('Tooltip sign external messages')
                                 .t`Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.`}
                         />
@@ -152,7 +152,7 @@ const ExternalPGPSettingsSection = () => {
                     <label htmlFor="PGPSchemeSelect" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Default PGP scheme`}</span>
                         <Info
-                            url={getKnowledgeBaseUrl('/pgp-mime-pgp-inline/')}
+                            url={getKnowledgeBaseUrl('/pgp-mime-pgp-inline')}
                             title={c('Tooltip default pgp scheme')
                                 .t`Select the default PGP settings used to sign or encrypt messages with non-${BRAND_NAME} PGP users. Note that Inline PGP forces plain text messages. Learn more`}
                         />

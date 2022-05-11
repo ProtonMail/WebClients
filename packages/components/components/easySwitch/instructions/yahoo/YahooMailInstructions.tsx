@@ -6,7 +6,7 @@ import { Href } from '../../../link';
 const YahooMailInstructions = () => {
     // translator: full sentence: "To import emails to Proton, you need an app password from Yahoo. Get it by following these steps:"
     const appPasswordLink = (
-        <Href url={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details/')} key="appPasswordLink">
+        <Href url={getKnowledgeBaseUrl('/allowing-imap-access-and-entering-imap-details')} key="appPasswordLink">
             {c('Import instructions link').t`app password`}
         </Href>
     );
