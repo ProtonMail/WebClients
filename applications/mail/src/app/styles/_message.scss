@@ -309,7 +309,7 @@
 
 /* states classes */
 .message-container.is-opened {
-	& > .message-header {
+	& .message-header {
 		border-block-end: 1px solid var(--border-weak);
 		border-end-start-radius: 0;
 		border-end-end-radius: 0;
