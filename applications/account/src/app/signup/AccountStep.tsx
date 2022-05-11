@@ -1,7 +1,7 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { c } from 'ttag';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
 import {
     AlertModal,
     Button,
@@ -61,6 +61,7 @@ const SignInPromptModal = ({ email, ...rest }: ModalProps & { email: string }) =
 };
 
 interface Props {
+    clientType: CLIENT_TYPES;
     onBack?: () => void;
     defaultUsername?: string;
     defaultEmail?: string;
@@ -84,6 +85,7 @@ interface Props {
 }
 
 const AccountStep = ({
+    clientType,
     onBack,
     title,
     subTitle,
@@ -226,7 +228,10 @@ const AccountStep = ({
     }
 
     const terms = (
-        <Href key="terms" url={getPrivacyPolicyURL()}>{c('new_plans: signup').t`Proton's terms and conditions`}</Href>
+        <Href
+            key="terms"
+            url={getPrivacyPolicyURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}
+        >{c('new_plans: signup').t`Proton's terms and conditions`}</Href>
     );
 
     return (
