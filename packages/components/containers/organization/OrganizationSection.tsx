@@ -69,7 +69,7 @@ const OrganizationSection = ({ organization, onSetupOrganization }: Props) => {
     if (!organization.HasKeys) {
         return (
             <>
-                <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/business')}>
+                <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/proton-for-business')}>
                     {c('Info').t`Create and manage sub-accounts and assign them email addresses on your custom domain.`}
                 </SettingsParagraph>
                 <PrimaryButton
