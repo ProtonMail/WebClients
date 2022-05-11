@@ -89,7 +89,7 @@ export const useCompose = (
             {c('Info')
                 .t`You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.`}
             <br />
-            <Href href={getKnowledgeBaseUrl('/increase-my-storage-space')}>{c('Link').t`Learn more`}</Href>
+            <Href href={getKnowledgeBaseUrl('/increase-storage-space')}>{c('Link').t`Learn more`}</Href>
         </AlertModal>
     );
 

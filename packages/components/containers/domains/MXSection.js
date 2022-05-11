@@ -9,7 +9,7 @@ const MXSection = () => {
     const boldAddresses = <strong key="addresses">{c('Tab in domain modal').t`Addresses`}</strong>;
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/dns-records')}>
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domain')}>
                 {c('Info')
                     .t`Before you can receive emails for your custom domain addresses at ${MAIL_APP_NAME}, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>

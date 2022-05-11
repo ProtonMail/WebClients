@@ -91,7 +91,7 @@ const Bitcoin = ({ amount, currency, type }: Props) => {
                                 url={
                                     APP_NAME === APPS.PROTONVPN_SETTINGS
                                         ? 'https://protonvpn.com/support/vpn-bitcoin-payments/'
-                                        : getKnowledgeBaseUrl('/paying-with-bitcoin')
+                                        : getKnowledgeBaseUrl('/pay-with-bitcoin')
                                 }
                             >{c('Link').t`Learn more`}</Href>
                         </div>
