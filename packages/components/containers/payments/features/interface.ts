@@ -40,7 +40,7 @@ export interface ShortPlan {
     label: string;
     description: string;
     title: string;
-    plan: PLANS.FREE | PLANS.BUNDLE | PLANS.MAIL | PLANS.BUNDLE_PRO | PLANS.MAIL_PRO | PLANS.VPN;
+    plan: PLANS.FREE | PLANS.BUNDLE | PLANS.MAIL | PLANS.BUNDLE_PRO | PLANS.MAIL_PRO | PLANS.VPN | PLANS.NEW_VISIONARY;
     cta: string;
     features: PlanCardFeatureDefinition[];
 }
