@@ -121,13 +121,16 @@ export const getTor = (included: boolean, fire?: boolean): PlanCardFeatureDefini
         icon: 'brand-tor',
     };
 };
-const getVPNConnectionsPerUser = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
+const getVPNConnectionsB2B = (n = 0, fire?: boolean): PlanCardFeatureDefinition => {
     return {
-        featureName: c('new_plans: feature').ngettext(
-            msgid`${n} VPN connection per user`,
-            `${n} VPN connections per user`,
-            n
-        ),
+        featureName:
+            n === 1
+                ? c('new_plans: feature').t`1 free VPN connection in total`
+                : c('new_plans: feature').ngettext(
+                      msgid`${n} VPN connection per user`,
+                      `${n} VPN connections per user`,
+                      n
+                  ),
         tooltip: c('new_plans: tooltip')
             .t`One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections`,
         included: true,
@@ -242,14 +245,14 @@ export const getVPNFeatures = (vpnCountries: VPNCountries, serversCount: VPNServ
             name: 'vpn-connections-per-user',
             target: Audience.B2B,
             plans: {
-                [PLANS.FREE]: getVPNConnectionsPerUser(1),
-                [PLANS.BUNDLE]: getVPNConnectionsPerUser(VPN_CONNECTIONS, true),
-                [PLANS.MAIL]: getVPNConnectionsPerUser(1),
-                [PLANS.VPN]: getVPNConnectionsPerUser(VPN_CONNECTIONS, true),
-                [PLANS.DRIVE]: getVPNConnectionsPerUser(1),
-                [PLANS.FAMILY]: getVPNConnectionsPerUser(1),
-                [PLANS.MAIL_PRO]: getVPNConnectionsPerUser(1),
-                [PLANS.BUNDLE_PRO]: getVPNConnectionsPerUser(VPN_CONNECTIONS, true),
+                [PLANS.FREE]: getVPNConnectionsB2B(1),
+                [PLANS.BUNDLE]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.MAIL]: getVPNConnectionsB2B(1),
+                [PLANS.VPN]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
+                [PLANS.DRIVE]: getVPNConnectionsB2B(1),
+                [PLANS.FAMILY]: getVPNConnectionsB2B(1),
+                [PLANS.MAIL_PRO]: getVPNConnectionsB2B(1),
+                [PLANS.BUNDLE_PRO]: getVPNConnectionsB2B(VPN_CONNECTIONS, true),
             },
         },
         {
