@@ -57,7 +57,9 @@ describe('getCalendarIsNotSyncedInfo', () => {
             Display: 1,
             Color: '#f00',
             Flags: 1,
+            Permissions: 127,
             Type: CALENDAR_TYPE.SUBSCRIPTION,
+            Owner: { Email: 'calendarEmail' },
             Members: [],
         };
 

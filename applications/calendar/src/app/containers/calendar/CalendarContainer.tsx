@@ -1,7 +1,11 @@
 import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { useAppTitle, useCalendarBootstrap } from '@proton/components';
+import { c } from 'ttag';
+
+import { useApi, useAppTitle, useCalendarBootstrap, useModalState, useNotifications } from '@proton/components';
+import { getInvitation } from '@proton/shared/lib/api/calendars';
+import { getIsCalendarWritable, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
 import {
     getAutoDetectPrimaryTimezone,
@@ -12,7 +16,6 @@ import {
     getInviteLocale,
     getSecondaryTimezone,
 } from '@proton/shared/lib/calendar/getSettings';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { SECOND } from '@proton/shared/lib/constants';
 import { MILLISECONDS_IN_MINUTE, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import {
@@ -24,8 +27,14 @@ import {
     getTimezoneOffset,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import { Address, User, UserSettings } from '@proton/shared/lib/interfaces';
-import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { Address, UserModel, UserSettings } from '@proton/shared/lib/interfaces';
+import {
+    AttendeeModel,
+    CalendarMemberInvitation,
+    CalendarUserSettings,
+    MEMBER_INVITATION_STATUS,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import unary from '@proton/utils/unary';
 
@@ -38,8 +47,8 @@ import {
 import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
 import AskUpdateTimezoneModal from '../settings/AskUpdateTimezoneModal';
 import CalendarContainerView from './CalendarContainerView';
-import ContactEmailsProvider from './ContactEmailsProvider';
 import InteractiveCalendarView from './InteractiveCalendarView';
+import ShareCalendarInvitationModal from './ShareCalendarInvitationModal';
 import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_SIDE_APP } from './constants';
 import { CalendarsEventsCache } from './eventStore/interface';
 import useCalendarsEvents from './eventStore/useCalendarsEvents';
@@ -81,7 +90,7 @@ interface Props {
     setCustomTzid: (tzid: string) => void;
     isNarrow: boolean;
     sideAppView?: VIEWS;
-    user: User;
+    user: UserModel;
     addresses: Address[];
     activeAddresses: Address[];
     visibleCalendars: VisualCalendar[];
@@ -92,6 +101,8 @@ interface Props {
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
+    shareCalendarInvitationRef: MutableRefObject<{ calendarID: string; invitationID: string } | undefined>;
+    startupModalState: { hasModal?: boolean; isOpen: boolean };
     getOpenedMailEvents: () => OpenedMailEvent[];
 }
 
@@ -111,12 +122,19 @@ const CalendarContainer = ({
     calendarUserSettings,
     calendarsEventsCacheRef,
     eventTargetActionRef,
+    shareCalendarInvitationRef,
+    startupModalState,
     getOpenedMailEvents,
 }: Props) => {
     const history = useHistory();
     const location = useLocation();
+    const api = useApi();
+    const { createNotification } = useNotifications();
     const [disableCreate, setDisableCreate] = useState(false);
+    const [shareCalendarInvitation, setShareCalendarInvitation] = useState<CalendarMemberInvitation>();
     const [isAskUpdateTimezoneModalOpen, setIsAskUpdateTimezoneModalOpen] = useState(false);
+    const [shareCalendarInvitationModal, setIsSharedCalendarInvitationModalOpen, renderShareCalendarInvitationModal] =
+        useModalState();
 
     const interactiveRef = useRef<InteractiveRef>(null);
     const timeGridViewRef = useRef<TimeGridRef>(null);
@@ -160,10 +178,43 @@ const CalendarContainer = ({
     }, [urlDate, urlView, urlRange]);
 
     useEffect(() => {
-        if (sideAppView || !getAutoDetectPrimaryTimezone(calendarUserSettings)) {
-            return;
-        }
         const run = async () => {
+            if (startupModalState.hasModal === undefined || startupModalState.isOpen) {
+                return;
+            }
+            let doNotShowAskTimezoneUpdateModal =
+                !!shareCalendarInvitationRef.current ||
+                sideAppView ||
+                !getAutoDetectPrimaryTimezone(calendarUserSettings);
+            if (shareCalendarInvitationRef.current) {
+                try {
+                    const { calendarID, invitationID } = shareCalendarInvitationRef.current;
+                    const { Invitation } = await api<{ Code: number; Invitation: CalendarMemberInvitation }>(
+                        getInvitation(calendarID, invitationID)
+                    );
+                    if (Invitation.Status === MEMBER_INVITATION_STATUS.ACCEPTED) {
+                        createNotification({
+                            type: 'success',
+                            text: c('Info').t`You already joined this calendar`,
+                        });
+                    } else if (Invitation.Status === MEMBER_INVITATION_STATUS.REJECTED) {
+                        createNotification({
+                            type: 'error',
+                            text: c('Info').t`You previously rejected this invitation. Ask the owner for a re-invite`,
+                        });
+                    } else {
+                        setShareCalendarInvitation(Invitation);
+                        setIsSharedCalendarInvitationModalOpen(true);
+                    }
+                } catch (e) {
+                    console.error(e);
+                }
+            }
+
+            if (doNotShowAskTimezoneUpdateModal) {
+                return;
+            }
+
             const localTzid = getTimezone();
             const savedTzid = getDefaultTzid(calendarUserSettings, localTzid);
             const key = await getTimezoneSuggestionKey(user.ID);
@@ -174,7 +225,7 @@ const CalendarContainer = ({
             }
         };
         void run();
-    }, []);
+    }, [startupModalState]);
 
     const utcNowDateInTimezone = useMemo(() => {
         return toUTCDate(convertUTCDateTimeToZone(fromUTCDate(nowDate), tzid));
@@ -341,7 +392,7 @@ const CalendarContainer = ({
 
     const isLoading = loadingCalendarBootstrap || loadingEvents;
     const isEventCreationDisabled =
-        disableCreate || !defaultCalendarBootstrap || !activeCalendars.find(unary(getIsPersonalCalendar));
+        disableCreate || !defaultCalendarBootstrap || !activeCalendars.some(unary(getIsCalendarWritable));
 
     return (
         <CalendarContainerView
@@ -379,40 +430,47 @@ const CalendarContainer = ({
                     localTzid={localTimezoneId}
                 />
             )}
-
-            <ContactEmailsProvider>
-                <InteractiveCalendarView
-                    view={view}
-                    isNarrow={isNarrow}
-                    isLoading={isLoading}
-                    tzid={tzid}
-                    {...timezoneInformation}
-                    displayWeekNumbers={displayWeekNumbers}
-                    displaySecondaryTimezone={displaySecondaryTimezone}
-                    weekStartsOn={weekStartsOn}
-                    inviteLocale={inviteLocale}
-                    now={utcNowDateInTimezone}
-                    date={utcDate}
-                    dateRange={utcDateRange}
-                    events={calendarsEvents}
-                    onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
-                    onChangeDate={handleChangeDate}
-                    isEventCreationDisabled={isEventCreationDisabled}
-                    onInteraction={(active: boolean) => setDisableCreate(active)}
-                    calendars={calendars}
+            {renderShareCalendarInvitationModal && shareCalendarInvitation && (
+                <ShareCalendarInvitationModal
+                    {...shareCalendarInvitationModal}
                     addresses={addresses}
-                    activeAddresses={activeAddresses}
-                    activeCalendars={activeCalendars}
-                    defaultCalendar={defaultCalendar}
-                    defaultCalendarBootstrap={defaultCalendarBootstrap}
-                    interactiveRef={interactiveRef}
-                    containerRef={containerRef}
-                    timeGridViewRef={timeGridViewRef}
-                    calendarsEventsCacheRef={calendarsEventsCacheRef}
-                    eventTargetActionRef={eventTargetActionRef}
-                    getOpenedMailEvents={getOpenedMailEvents}
+                    personalCalendars={calendars.filter(unary(getIsPersonalCalendar))}
+                    user={user}
+                    invitation={shareCalendarInvitation}
                 />
-            </ContactEmailsProvider>
+            )}
+
+            <InteractiveCalendarView
+                view={view}
+                isNarrow={isNarrow}
+                isLoading={isLoading}
+                tzid={tzid}
+                {...timezoneInformation}
+                displayWeekNumbers={displayWeekNumbers}
+                displaySecondaryTimezone={displaySecondaryTimezone}
+                weekStartsOn={weekStartsOn}
+                inviteLocale={inviteLocale}
+                now={utcNowDateInTimezone}
+                date={utcDate}
+                dateRange={utcDateRange}
+                events={calendarsEvents}
+                onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
+                onChangeDate={handleChangeDate}
+                isEventCreationDisabled={isEventCreationDisabled}
+                onInteraction={(active: boolean) => setDisableCreate(active)}
+                calendars={calendars}
+                addresses={addresses}
+                activeAddresses={activeAddresses}
+                activeCalendars={activeCalendars}
+                defaultCalendar={defaultCalendar}
+                defaultCalendarBootstrap={defaultCalendarBootstrap}
+                interactiveRef={interactiveRef}
+                containerRef={containerRef}
+                timeGridViewRef={timeGridViewRef}
+                calendarsEventsCacheRef={calendarsEventsCacheRef}
+                eventTargetActionRef={eventTargetActionRef}
+                getOpenedMailEvents={getOpenedMailEvents}
+            />
         </CalendarContainerView>
     );
 };

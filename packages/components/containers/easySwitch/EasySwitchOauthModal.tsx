@@ -13,10 +13,9 @@ import {
     startImportTask,
 } from '@proton/shared/lib/api/easySwitch';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getVisualCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
-import { getPersonalCalendars } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { ACCENT_COLORS, PRODUCT_NAMES } from '@proton/shared/lib/constants';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
@@ -123,7 +122,7 @@ const EasySwitchOauthModal = ({
     const [labels = [], loadingLabels] = useLabels();
     const [folders = [], loadingFolders] = useFolders();
     const [calendars = [], loadingCalendars] = useCalendars();
-    const visualCalendars = getVisualCalendars(calendars, addresses);
+    const visualCalendars = getVisualCalendars(calendars);
 
     const [config, loadingConfig] = useApiEnvironmentConfig();
 
@@ -696,7 +695,7 @@ const EasySwitchOauthModal = ({
                             updateCheckedTypes={(importTypes) => setCheckedTypes(importTypes)}
                             modalModel={modalModel}
                             toEmail={addressMap[modalModel.AddressID].Email}
-                            calendars={getPersonalCalendars(visualCalendars)}
+                            calendars={getWritableCalendars(visualCalendars)}
                             addresses={addresses}
                             labels={labels}
                             folders={folders}

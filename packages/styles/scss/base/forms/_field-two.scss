@@ -81,9 +81,9 @@
 		&.focus,
 		&:not(.disabled):focus-within {
 			border-color: var(--field-focus);
-			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 			background-color: var(--field-focus-background-color);
 			color: var(--field-focus-text-color);
+			box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
 		}
 
 		&.error {
@@ -102,6 +102,7 @@
 				border-radius: 0;
 				box-shadow: none;
 				background-color: transparent;
+				transition: none;
 			}
 		}
 	}

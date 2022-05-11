@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef } from 'react';
 
 import {
     FeatureCode,
@@ -14,7 +14,11 @@ import {
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
-const CalendarStartupModals = () => {
+interface Props {
+    setStartupModalState: Dispatch<SetStateAction<{ hasModal?: boolean; isOpen: boolean }>>;
+}
+
+const CalendarStartupModals = ({ setStartupModalState }: Props) => {
     const app = APPS.PROTONCALENDAR;
 
     // Referral modal
@@ -30,6 +34,11 @@ const CalendarStartupModals = () => {
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
     const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
 
+    const onCloseWithState = (onClose: () => void) => () => {
+        onClose();
+        setStartupModalState((state) => ({ ...state, isOpen: false }));
+    };
+
     const onceRef = useRef(false);
     useEffect(() => {
         if (onceRef.current) {
@@ -39,6 +48,7 @@ const CalendarStartupModals = () => {
         const openModal = (setModalOpen: (newValue: boolean) => void) => {
             onceRef.current = true;
             setModalOpen(true);
+            setStartupModalState({ hasModal: true, isOpen: true });
         };
 
         if (shouldOpenReferralModal.open) {
@@ -47,15 +57,29 @@ const CalendarStartupModals = () => {
             openModal(setV5WelcomeModal);
         } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
+        } else {
+            setStartupModalState({ hasModal: false, isOpen: false });
         }
     }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
-            {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
-            {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
+            {renderReferralModal && (
+                <ReferralModal
+                    endDate={shouldOpenReferralModal.endDate}
+                    {...referralModal}
+                    onClose={onCloseWithState(referralModal.onClose)}
+                />
+            )}
+            {renderV5WelcomeModal && (
+                <V5WelcomeModal app={app} {...v5WelcomeModal} onClose={onCloseWithState(v5WelcomeModal.onClose)} />
+            )}
             {renderRebrandingFeedbackModal && (
-                <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
+                <RebrandingFeedbackModal
+                    onMount={handleRebrandingFeedbackModalDisplay}
+                    {...rebrandingFeedbackModal}
+                    onClose={onCloseWithState(rebrandingFeedbackModal.onClose)}
+                />
             )}
         </>
     );

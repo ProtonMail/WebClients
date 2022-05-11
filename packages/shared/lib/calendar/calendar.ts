@@ -1,13 +1,20 @@
-import isTruthy from '@proton/utils/isTruthy';
+import { getCanWrite } from '@proton/shared/lib/calendar/permissions';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import unary from '@proton/utils/unary';
 
 import { hasBit, toggleBit } from '../helpers/bitset';
 import { Address, Api } from '../interfaces';
-import { Calendar, CalendarUserSettings, CalendarWithMembers, VisualCalendar } from '../interfaces/calendar';
+import {
+    CALENDAR_TYPE,
+    Calendar,
+    CalendarUserSettings,
+    CalendarWithOwnMembers,
+    SubscribedCalendar,
+    VisualCalendar,
+} from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import { CALENDAR_FLAGS, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
 import { reactivateCalendarsKeys } from './keys/reactivateCalendarKeys';
-import { getIsPersonalCalendar } from './subscribe/helpers';
 
 export const getIsCalendarActive = ({ Flags } = { Flags: 0 }) => {
     return hasBit(Flags, CALENDAR_FLAGS.ACTIVE);
@@ -39,60 +46,106 @@ export const getProbablyActiveCalendars = <T extends Calendar>(calendars: T[] = 
     return calendars.filter(unary(getIsCalendarProbablyActive));
 };
 
+export const getIsPersonalCalendar = (calendar: VisualCalendar | SubscribedCalendar): calendar is VisualCalendar => {
+    return calendar.Type === CALENDAR_TYPE.PERSONAL;
+};
+
+export const getIsOwnedCalendar = (calendar: VisualCalendar) => {
+    return calendar.Owner.Email === calendar.Members[0].Email;
+};
+
 export const getPersonalCalendars = <T extends Calendar>(calendars: T[] = []): T[] => {
     return calendars.filter(unary(getIsPersonalCalendar));
 };
 
-export const getDefaultCalendar = <T extends Calendar>(
-    calendars: T[] = [],
-    defaultCalendarID: string | null = ''
-): T | undefined => {
-    // only personal calendars can be default
-    const personalCalendars = getPersonalCalendars(calendars);
-    if (!personalCalendars.length) {
-        return;
-    }
-    return personalCalendars.find(({ ID }) => ID === defaultCalendarID) || personalCalendars[0];
+export const getIsCalendarWritable = (calendar: VisualCalendar) => {
+    return getCanWrite(calendar.Permissions) && getIsPersonalCalendar(calendar);
 };
 
-export const getVisualCalendar = <T>(calendar: CalendarWithMembers & T, addressID: string): VisualCalendar & T => {
-    const member = calendar.Members.find(({ AddressID }) => AddressID === addressID);
-    if (!member) {
-        throw new Error('Calendar member could not be found');
+export const getWritableCalendars = (calendars: VisualCalendar[]) => {
+    return calendars.filter(unary(getIsCalendarWritable));
+};
+
+export const groupCalendarsByTaxonomy = (calendars: VisualCalendar[] = []) => {
+    return calendars.reduce<{
+        ownedPersonalCalendars: VisualCalendar[];
+        sharedCalendars: VisualCalendar[];
+        subscribedCalendars: VisualCalendar[];
+    }>(
+        (acc, calendar) => {
+            if (getIsSubscribedCalendar(calendar)) {
+                acc.subscribedCalendars.push(calendar);
+            } else if (!getIsOwnedCalendar(calendar)) {
+                acc.sharedCalendars.push(calendar);
+            } else {
+                acc.ownedPersonalCalendars.push(calendar);
+            }
+            return acc;
+        },
+        { ownedPersonalCalendars: [], sharedCalendars: [], subscribedCalendars: [] }
+    );
+};
+
+export const getOwnedPersonalCalendars = (calendars: VisualCalendar[] = []) => {
+    return groupCalendarsByTaxonomy(calendars).ownedPersonalCalendars;
+};
+
+export const getSharedCalendars = (calendars: VisualCalendar[] = []) => {
+    return groupCalendarsByTaxonomy(calendars).sharedCalendars;
+};
+
+export const getSubscribedCalendars = (calendars: VisualCalendar[] = []) => {
+    return groupCalendarsByTaxonomy(calendars).subscribedCalendars;
+};
+
+enum CALENDAR_WEIGHT {
+    PERSONAL = 0,
+    SHARED = 1,
+    SUBSCRIBED = 2,
+}
+
+const getCalendarWeight = (calendar: VisualCalendar) => {
+    if (getIsPersonalCalendar(calendar)) {
+        return getIsOwnedCalendar(calendar) ? CALENDAR_WEIGHT.PERSONAL : CALENDAR_WEIGHT.SHARED;
     }
+    return CALENDAR_WEIGHT.SUBSCRIBED;
+};
+export const sortCalendars = (calendars: VisualCalendar[]) => {
+    return [...calendars].sort((cal1, cal2) => {
+        // personal owned calendars go first, shared second, and subscribed last
+        const w1 = getCalendarWeight(cal1);
+        const w2 = getCalendarWeight(cal2);
+
+        return w1 - w2;
+    });
+};
+
+export const getDefaultCalendar = (calendars: VisualCalendar[] = [], defaultCalendarID: string | null = '') => {
+    // only active owned personal calendars can be default
+    const activeOwnedCalendars = getProbablyActiveCalendars(getOwnedPersonalCalendars(calendars));
+    if (!activeOwnedCalendars.length) {
+        return;
+    }
+    return activeOwnedCalendars.find(({ ID }) => ID === defaultCalendarID) || activeOwnedCalendars[0];
+};
+
+export const getVisualCalendar = <T>(calendar: CalendarWithOwnMembers & T): VisualCalendar & T => {
+    const [member] = calendar.Members;
 
     return {
         ...calendar,
-        Email: member.Email,
-        Flags: member.Flags,
+        Name: member.Name,
+        Description: member.Description,
         Color: member.Color,
         Display: member.Display,
+        Email: member.Email,
+        Flags: member.Flags,
+        Permissions: member.Permissions,
     };
 };
 
-export const getVisualCalendars = <T>(
-    calendars: (CalendarWithMembers & T)[],
-    addresses: Address[]
-): (VisualCalendar & T)[] => {
-    return calendars
-        .map((calendar) => {
-            const member = calendar.Members.find(
-                ({ Email: memberEmail }) => !!addresses.find(({ Email: addressEmail }) => memberEmail === addressEmail)
-            );
-            if (!member) {
-                // such calendar becomes invisible
-                return;
-            }
-            return {
-                ...calendar,
-                Email: member.Email,
-                Flags: member.Flags,
-                Color: member.Color,
-                Display: member.Display,
-            };
-        })
-        .filter(isTruthy);
-};
+export const getVisualCalendars = <T>(calendars: (CalendarWithOwnMembers & T)[]): (VisualCalendar & T)[] =>
+    calendars.map((calendar) => getVisualCalendar(calendar));
 
 export const getCanCreateCalendar = (calendars: Calendar[], isFreeUser: boolean) => {
     const activeCalendars = getProbablyActiveCalendars(calendars);

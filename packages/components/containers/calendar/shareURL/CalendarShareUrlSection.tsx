@@ -1,32 +1,28 @@
-import { ComponentPropsWithoutRef, MouseEvent, useState } from 'react';
+import { ComponentPropsWithoutRef, MouseEvent, useEffect, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
-import { Card } from '@proton/atoms/Card';
-import { createPublicLink, deletePublicLink, editPublicLink } from '@proton/shared/lib/api/calendars';
-import {
-    buildLink,
-    generateEncryptedPurpose,
-    getCreatePublicLinkPayload,
-} from '@proton/shared/lib/calendar/shareUrl/helpers';
+import { SettingsParagraph } from '@proton/components/containers';
+import { deletePublicLink, editPublicLink, getPublicLinks } from '@proton/shared/lib/api/calendars';
+import { CALENDAR_SETTINGS_SUBSECTION_ID, MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
+import { generateEncryptedPurpose, transformLinksFromAPI } from '@proton/shared/lib/calendar/shareUrl/helpers';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-import { ACCESS_LEVEL, CalendarUrlResponse, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { ACCESS_LEVEL, CalendarLink, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Nullable } from '@proton/shared/lib/interfaces/utils';
 import { splitKeys } from '@proton/shared/lib/keys';
 
-import { Alert, ButtonLike, Loader, SettingsLink } from '../../../components';
-import { useApi, useGetCalendarInfo, useNotifications } from '../../../hooks';
+import { Alert, Button, Loader } from '../../../components';
+import { useApi, useGetCalendarInfo, useLoading, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
-import { SettingsParagraph, SettingsSection } from '../../account';
-import { useCalendarModelEventManager } from '../../eventManager';
 import DeleteLinkConfirmationModal from './DeleteLinkConfirmationModal';
 import EditLinkModal from './EditLinkModal';
 import LinkTable from './LinkTable';
+import ShareLinkModal from './ShareLinkModal';
 import ShareLinkSuccessModal from './ShareLinkSuccessModal';
-import ShareTable from './ShareTable';
-import useCalendarShareUrls from './useCalendarShareUrls';
+
+const sortLinks = (links: CalendarLink[]) => [...links].sort((a, b) => a.CreateTime - b.CreateTime);
 
 type ModalsMap = {
     shareLinkSuccessModal: ModalWithProps<{
@@ -36,58 +32,47 @@ type ModalsMap = {
     }>;
     deleteLinkConfirmationModal: ModalWithProps<{ calendarID: string; urlID: string }>;
     editLinkModal: ModalWithProps<{ calendarID: string; urlID: string; purpose: Nullable<string> }>;
+    shareLinkModal: ModalWithProps<{ calendarID: string; onSubmit: () => void }>;
 };
 
 interface Props extends ComponentPropsWithoutRef<'div'> {
-    defaultCalendar?: VisualCalendar;
-    calendars: VisualCalendar[];
+    calendar: VisualCalendar;
     user: UserModel;
+    noTitle?: boolean;
 }
 
-const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
-    const { linksMap, isLoadingLinks } = useCalendarShareUrls(calendars);
-    const [isLoadingCreate, setIsLoadingCreate] = useState(false);
+const CalendarShareUrlSection = ({ calendar, user, noTitle }: Props) => {
+    const [links, setLinks] = useState<CalendarLink[]>([]);
+    const [isLoadingLinks, withLoadingLinks] = useLoading();
     const [isLoadingMap, setIsLoadingMap] = useState<Partial<Record<string, boolean>>>({});
     const api = useApi();
     const { createNotification } = useNotifications();
     const getCalendarInfo = useGetCalendarInfo();
-    const { call } = useCalendarModelEventManager();
+
     const notifyLinkCopied = () => {
         createNotification({ type: 'info', text: c('Info').t`Link copied to clipboard` });
     };
+    const handleError = ({ message }: Error) => createNotification({ type: 'error', text: message });
+
+    const calendarID = calendar.ID;
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         shareLinkSuccessModal: { isOpen: false },
         deleteLinkConfirmationModal: { isOpen: false },
         editLinkModal: { isOpen: false },
+        shareLinkModal: { isOpen: false },
     });
 
-    const handleCreateLink = async ({ accessLevel, calendarID }: { accessLevel: ACCESS_LEVEL; calendarID: string }) => {
-        setIsLoadingCreate(true);
-        const { calendarKeys, passphrase, passphraseID } = await getCalendarInfo(calendarID);
-        const { publicKeys } = splitKeys(calendarKeys);
-
-        const { payload, passphraseKey, cacheKey } = await getCreatePublicLinkPayload({
-            accessLevel,
-            publicKeys,
-            passphrase,
-            passphraseID,
-        });
-
-        const {
-            CalendarUrl: { CalendarUrlID },
-        } = await api<CalendarUrlResponse>(createPublicLink(calendarID, payload));
-        const link = buildLink({
-            urlID: CalendarUrlID,
-            accessLevel,
-            passphraseKey,
-            cacheKey,
-        });
-
-        await call([calendarID]);
-        createNotification({ type: 'success', text: c('Info').t`Link created` });
-        setIsLoadingCreate(false);
-
+    const handleCreateLink = async ({
+        link,
+        transformedLink,
+        accessLevel,
+    }: {
+        link: string;
+        transformedLink: CalendarLink[];
+        accessLevel: ACCESS_LEVEL;
+    }) => {
+        setLinks((prevState) => [...prevState, ...transformedLink]);
         updateModal('shareLinkSuccessModal', {
             isOpen: true,
             props: {
@@ -121,18 +106,10 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
         notifyLinkCopied();
     };
 
-    const handleEdit = ({
-        calendarID,
-        urlID,
-        purpose,
-    }: {
-        calendarID: string;
-        urlID: string;
-        purpose: Nullable<string>;
-    }) => {
+    const handleEdit = ({ urlID, purpose }: { urlID: string; purpose: Nullable<string> }) => {
         updateModal('editLinkModal', {
             isOpen: true,
-            props: { calendarID, urlID, purpose },
+            props: { calendarID: calendarID, urlID, purpose },
         });
     };
 
@@ -143,50 +120,62 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
         });
     };
 
-    const infoParagraph = (
-        <SettingsParagraph>{c('Info')
-            .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}</SettingsParagraph>
-    );
-
-    const { editLinkModal, shareLinkSuccessModal, deleteLinkConfirmationModal } = modalsMap;
+    const { editLinkModal, shareLinkSuccessModal, deleteLinkConfirmationModal, shareLinkModal } = modalsMap;
     const editLinkModalProps = editLinkModal.props;
 
-    const shareTableHeader = calendars.length ? (
+    useEffect(() => {
+        const getAllLinks = async () => {
+            const { calendarKeys, passphrase } = await getCalendarInfo(calendarID);
+            const { privateKeys } = splitKeys(calendarKeys);
+
+            try {
+                const { CalendarUrls } = await api(getPublicLinks(calendarID));
+                const links = await transformLinksFromAPI({
+                    calendarUrls: CalendarUrls,
+                    privateKeys,
+                    calendarPassphrase: passphrase,
+                    onError: handleError,
+                });
+                const sortedLinks = sortLinks(links);
+
+                setLinks(sortedLinks);
+            } catch (e: any) {
+                handleError(e);
+            }
+        };
+
+        void withLoadingLinks(getAllLinks());
+    }, []);
+
+    const maxLinksReached = links.length === MAX_LINKS_PER_CALENDAR;
+
+    const content = (
         <>
-            {infoParagraph}
-            <ShareTable
-                linksMap={linksMap}
-                isLoadingCreate={isLoadingCreate}
-                disabled={!!isLoadingLinks}
-                calendars={calendars}
-                onCreateLink={handleCreateLink}
-                defaultCalendar={defaultCalendar}
-                user={user}
-            />
+            <SettingsParagraph>
+                {c('Calendar settings link share description')
+                    .t`Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.`}
+            </SettingsParagraph>
+            <Button
+                onClick={() => updateModal('shareLinkModal', { isOpen: true })}
+                color="norm"
+                disabled={maxLinksReached}
+            >
+                {c('Action').t`Create link`}
+            </Button>
         </>
-    ) : (
-        <>
-            <Alert className="mb1" type="warning">{c('Info')
-                .t`You need to have a personal calendar to create a link.`}</Alert>
-            {infoParagraph}
-        </>
-    );
-    const upgradeBanner = (
-        <Card rounded className="mb1" data-test-id="card:upgrade">
-            <div className="flex flex-nowrap flex-align-items-center">
-                <p className="flex-item-fluid mt0 mb0 pr2">
-                    {c('Upgrade notice')
-                        .t`Upgrade to a Mail paid plan to share your personal calendar via link with anyone.`}
-                </p>
-                <ButtonLike as={SettingsLink} path="/upgrade" color="norm" shape="solid" size="small">
-                    {c('Action').t`Upgrade`}
-                </ButtonLike>
-            </div>
-        </Card>
     );
 
     return (
-        <SettingsSection {...rest}>
+        <>
+            <ShareLinkModal
+                calendarID={calendarID}
+                isOpen={shareLinkModal.isOpen}
+                onSubmit={handleCreateLink}
+                onClose={() => {
+                    closeModal('shareLinkModal');
+                }}
+                subline={calendar.Name}
+            />
             {!!editLinkModalProps && (
                 <EditLinkModal
                     isOpen={editLinkModal.isOpen}
@@ -202,7 +191,16 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
                                 : null;
 
                             await api<void>(editPublicLink({ calendarID, urlID, encryptedPurpose }));
-                            await call([calendarID]);
+                            setLinks((prevState) =>
+                                prevState.map((item) => {
+                                    if (item.CalendarUrlID === urlID) {
+                                        item.purpose = untrimmedPurpose;
+                                        item.EncryptedPurpose = encryptedPurpose;
+                                    }
+
+                                    return item;
+                                })
+                            );
 
                             closeModal('editLinkModal');
                         });
@@ -211,6 +209,7 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
                     onClose={() => {
                         closeModal('editLinkModal');
                     }}
+                    subline={calendar.Name}
                 />
             )}
             {!!shareLinkSuccessModal.props && (
@@ -228,7 +227,7 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
 
                         return tryLoadingAction(urlID, async () => {
                             await api<void>(deletePublicLink({ calendarID, urlID }));
-                            await call([calendarID]);
+                            setLinks((prevState) => prevState.filter((link) => link.CalendarUrlID !== urlID));
                             closeModal('deleteLinkConfirmationModal');
                             createNotification({ type: 'success', text: c('Info').t`Link deleted` });
                         });
@@ -236,24 +235,44 @@ const ShareSection = ({ calendars, defaultCalendar, user, ...rest }: Props) => {
                     onClose={() => closeModal('deleteLinkConfirmationModal')}
                 />
             )}
-            {user.hasPaidMail ? shareTableHeader : upgradeBanner}
+
+            <div className="mb1-75">
+                {noTitle ? (
+                    content
+                ) : (
+                    <>
+                        <h3 className="text-bold" id={CALENDAR_SETTINGS_SUBSECTION_ID.SHARE_PUBLICLY}>
+                            {c('Calendar settings section title').t`Share with anyone`}
+                        </h3>
+                        {content}
+                    </>
+                )}
+            </div>
+            {maxLinksReached && (
+                <Alert className="mb0-75" type="warning">
+                    {c('Maximum calendar links reached warning').ngettext(
+                        msgid`You can create up to ${MAX_LINKS_PER_CALENDAR} link per calendar. To create a new link to this calendar, delete one from the list below.`,
+                        `You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`,
+                        MAX_LINKS_PER_CALENDAR
+                    )}
+                </Alert>
+            )}
             {isLoadingLinks ? (
                 <div className="text-center">
                     <Loader />
                 </div>
             ) : (
                 <LinkTable
-                    calendars={calendars}
                     isLoadingMap={isLoadingMap}
-                    linksMap={linksMap}
+                    links={links}
                     onCopyLink={handleCopyLink}
                     onEdit={handleEdit}
                     onDelete={handleDelete}
                     user={user}
                 />
             )}
-        </SettingsSection>
+        </>
     );
 };
 
-export default ShareSection;
+export default CalendarShareUrlSection;

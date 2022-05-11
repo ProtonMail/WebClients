@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ImportedCalendar } from '@proton/shared/lib/interfaces/EasySwitch';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Checkbox, Label, LabelStack, Option, SelectTwo } from '../../../../components';
 import { classnames } from '../../../../helpers/component';
@@ -11,7 +11,7 @@ interface Props {
     calendar: ImportedCalendar;
     toggleChecked: (calendarID: string) => void;
     checked: boolean;
-    activeCalendars: Calendar[];
+    activeCalendars: VisualCalendar[];
     updateCalendarMapping: (calendarID: string, destination: string) => void;
     value: string;
     isLast: boolean;
