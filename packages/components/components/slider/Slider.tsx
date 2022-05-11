@@ -8,7 +8,7 @@ import {
 } from 'react';
 
 import { clamp } from '@proton/shared/lib/helpers/math';
-import percentage from '@proton/shared/lib/helpers/percentage';
+import percentage from '@proton/util/percentage';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 
 import { useRightToLeft } from '../../containers/rightToLeft';
