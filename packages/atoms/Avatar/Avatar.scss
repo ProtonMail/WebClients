@@ -6,4 +6,9 @@
 	font-size: 0.75rem; // 12
 	background-color: var(--primary);
 	color: var(--primary-contrast);
+
+	&--weak {
+		background-color: var(--background-strong);
+		color: var(--text-norm);
+	}
 }

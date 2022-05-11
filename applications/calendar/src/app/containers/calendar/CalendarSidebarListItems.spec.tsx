@@ -7,13 +7,13 @@ import { createMemoryHistory } from 'history';
 import { CacheProvider } from '@proton/components/containers/cache';
 import useUser from '@proton/components/hooks/useUser';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_FLAGS, CALENDAR_SETTINGS_SUBSECTION_ID } from '@proton/shared/lib/calendar/constants';
+import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import {
     getCalendarHasSubscriptionParameters,
     getCalendarIsNotSyncedInfo,
 } from '@proton/shared/lib/calendar/subscribe/helpers';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarSidebarListItems, { CalendarSidebarListItemsProps } from './CalendarSidebarListItems';
@@ -33,6 +33,26 @@ jest.mock('@proton/components/hooks/useModals', () => ({
     default: jest.fn(() => ({ createModal: jest.fn() })),
 }));
 
+jest.mock('@proton/components/hooks/useApi', () => ({
+    __esModule: true,
+    default: () => jest.fn(() => Promise.resolve([])),
+}));
+
+jest.mock('@proton/components/hooks/useFeature', () => () => ({ feature: { Value: true } }));
+
+jest.mock('@proton/components/hooks/useNotifications', () => () => ({ createNotification: jest.fn() }));
+
+jest.mock('@proton/components/containers/contacts/ContactEmailsProvider', () => ({
+    __esModule: true,
+    useContactEmailsCache: jest.fn(() => ({
+        contactEmails: [],
+        contactGroups: [],
+        contactEmailsMap: {},
+        groupsWithContactsMap: {},
+    })),
+    default: ({ children }: any) => <>{children}</>,
+}));
+
 jest.mock('@proton/shared/lib/calendar/subscribe/helpers', () => ({
     ...jest.requireActual('@proton/shared/lib/calendar/subscribe/helpers'),
     getCalendarHasSubscriptionParameters: jest.fn(),
@@ -47,6 +67,7 @@ jest.mock('@proton/shared/lib/calendar/calendar', () => ({
 jest.mock('@proton/components/hooks/useUser', () => ({
     __esModule: true,
     default: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
+    useGetUser: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
 }));
 
 jest.mock('@proton/components/hooks/useConfig', () => ({
@@ -75,9 +96,24 @@ const mockCalendar: VisualCalendar = {
     Display: 1, // CalendarDisplay.VISIBLE
     Color: '#f00',
     Email: 'email3',
+    Permissions: 127,
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
-    Members: [],
+    Owner: { Email: 'email3' },
+    Members: [
+        {
+            Email: 'email3',
+            Permissions: 127,
+            AddressID: 'AddressID',
+            Display: 1,
+            ID: 'ID',
+            Flags: 1,
+            Color: '#f00',
+            CalendarID: 'id3',
+            Name: 'calendar3',
+            Description: 'description3',
+        },
+    ],
 };
 
 const mockCalendar2: VisualCalendar = {
@@ -87,9 +123,24 @@ const mockCalendar2: VisualCalendar = {
     Display: 1,
     Color: '#f00',
     Email: 'email2',
+    Permissions: 127,
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
-    Members: [],
+    Owner: { Email: 'email2' },
+    Members: [
+        {
+            Email: 'email2',
+            Permissions: 127,
+            AddressID: 'AddressID',
+            Display: 1,
+            ID: 'ID',
+            Flags: 1,
+            Color: '#f00',
+            CalendarID: 'id2',
+            Name: 'calendar2',
+            Description: 'description2',
+        },
+    ],
 };
 
 const getImportButton = () => screen.queryByText(/Import events/) as HTMLButtonElement;
@@ -99,6 +150,14 @@ function renderComponent(props?: Partial<CalendarSidebarListItemsProps>) {
     const defaultProps: CalendarSidebarListItemsProps = {
         onChangeVisibility: jest.fn(),
         calendars: [mockCalendar, mockCalendar2],
+        addresses: [
+            {
+                Email: 'test@pm.gg',
+                Status: 1,
+                Receive: 1,
+                Send: 1,
+            } as Address,
+        ],
     };
     return (
         <Router history={createMemoryHistory()}>
@@ -187,14 +246,15 @@ describe('CalendarSidebarListItems', () => {
         fireEvent.click(screen.getAllByRole('button')[1]);
 
         const editButton = await screen.findByText(/Edit/);
-        const shareLink = screen.getByText(/Share/) as HTMLAnchorElement;
-        expect(shareLink).toBeInTheDocument();
-        expect(shareLink.href).toBe('http://localhost/calendar/calendars?share=id2');
+        const shareButton = screen.getByText(/Share/) as HTMLAnchorElement;
+        expect(shareButton).toBeInTheDocument();
+        fireEvent.click(shareButton);
+        expect(screen.getByText(/Share with Proton users/)).toBeInTheDocument();
+        const shareWithAnyoneButton = screen.getByText(/Share with anyone/);
+        expect(shareWithAnyoneButton).toBeInTheDocument();
         const moreOptionsLink = screen.getByText(/More options/) as HTMLAnchorElement;
         expect(moreOptionsLink).toBeInTheDocument();
-        expect(moreOptionsLink.href).toBe(
-            `http://localhost/calendar/calendars#${CALENDAR_SETTINGS_SUBSECTION_ID.PERSONAL_CALENDARS}`
-        );
+        expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars/id2`);
         expect(getImportButton()).toBeInTheDocument();
 
         const getCalendarModal = () => screen.queryByText(/CalendarModal/);
@@ -252,9 +312,7 @@ describe('CalendarSidebarListItems', () => {
         expect(screen.queryByText(/Import events/)).not.toBeInTheDocument();
         const moreOptionsLink = screen.getByText(/More options/) as HTMLAnchorElement;
         expect(moreOptionsLink).toBeInTheDocument();
-        expect(moreOptionsLink.href).toBe(
-            `http://localhost/calendar/calendars#${CALENDAR_SETTINGS_SUBSECTION_ID.SUBSCRIBED_CALENDARS}`
-        );
+        expect(moreOptionsLink.href).toBe(`http://localhost/calendar/calendars/id3`);
     });
 
     it(`doesn't let you open the dropdown when actions are disabled`, () => {

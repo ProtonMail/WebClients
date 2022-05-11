@@ -24,7 +24,7 @@ import {
     TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { Calendar } from '@proton/shared/lib/interfaces/calendar';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { Checkbox, Label as FormLabel, Icon, LabelStack, UnderlineButton } from '../../../components';
@@ -44,7 +44,7 @@ interface Props {
     checkedTypes: CheckedProductMap;
     updateCheckedTypes: (productMap: CheckedProductMap) => void;
     toEmail: string;
-    calendars: Calendar[];
+    calendars: VisualCalendar[];
     labels: Label[];
     folders: Folder[];
     featureMap?: EasySwitchFeatureFlag;

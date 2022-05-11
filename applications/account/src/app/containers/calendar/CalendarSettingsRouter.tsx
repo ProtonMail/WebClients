@@ -6,12 +6,9 @@ import {
     CalendarImportSection,
     CalendarLayoutSection,
     CalendarSettingsSection,
-    CalendarShareSection,
     CalendarTimeSection,
-    PersonalCalendarsSection,
     PrivateMainAreaLoading,
     PrivateMainSettingsArea,
-    SubscribedCalendarsSection,
     ThemesSection,
     useAddresses,
     useCalendarUserSettings,
@@ -20,14 +17,14 @@ import {
     useSubscribedCalendars,
 } from '@proton/components';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
+import CalendarsSettingsSection from '@proton/components/containers/calendar/settings/CalendarsSettingsSection';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
-    getProbablyActiveCalendars,
+    getIsPersonalCalendar,
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -60,40 +57,30 @@ const CalendarSettingsRouter = ({
     const memoizedAddresses = useMemo(() => addresses || [], [addresses]);
 
     const [calendars, loadingCalendars] = useCalendars();
-    const {
-        visualCalendars,
-        personalCalendars,
-        otherCalendars,
-        activeCalendars,
-        allCalendarIDs,
-        personalActiveCalendars,
-    } = useMemo(() => {
-        const visualCalendars = getVisualCalendars(calendars || [], memoizedAddresses);
+
+    const { visualCalendars, personalCalendars, otherCalendars, allCalendarIDs } = useMemo(() => {
+        const visualCalendars = getVisualCalendars(calendars || []);
         const [personalCalendars, otherCalendars] = partition<VisualCalendar>(
             visualCalendars || [],
             getIsPersonalCalendar
         );
-        const activeCalendars = getProbablyActiveCalendars(visualCalendars);
 
         return {
             visualCalendars,
             personalCalendars,
             otherCalendars,
-            activeCalendars,
-            personalActiveCalendars: activeCalendars.filter((calendar) => getIsPersonalCalendar(calendar)),
             allCalendarIDs: visualCalendars.map(({ ID }) => ID),
         };
     }, [calendars, memoizedAddresses]);
     const { subscribedCalendars, loading: loadingSubscribedCalendars } = useSubscribedCalendars(
         otherCalendars,
-        memoizedAddresses,
         loadingCalendars || loadingAddresses
     );
 
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const defaultCalendar = getDefaultCalendar(activeCalendars, calendarUserSettings.DefaultCalendarID);
+    const defaultCalendar = getDefaultCalendar(visualCalendars, calendarUserSettings.DefaultCalendarID);
 
     useCalendarsInfoListener(allCalendarIDs);
 
@@ -127,32 +114,20 @@ const CalendarSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, calendarsRoute)} exact>
-                <PrivateMainSettingsArea config={calendarsRoute}>
-                    <PersonalCalendarsSection
-                        addresses={memoizedAddresses}
-                        calendars={personalCalendars}
-                        activeCalendars={personalActiveCalendars}
-                        defaultCalendar={defaultCalendar}
-                        user={user}
-                    />
-                    <SubscribedCalendarsSection
-                        addresses={memoizedAddresses}
-                        calendars={subscribedCalendars}
-                        user={user}
-                        unavailable={calendarSubscribeUnavailable}
-                    />
-                    <CalendarShareSection
-                        id="calendar-share-section"
-                        calendars={personalCalendars}
-                        defaultCalendar={defaultCalendar}
-                        user={user}
-                    />
-                </PrivateMainSettingsArea>
+                <CalendarsSettingsSection
+                    config={calendarsRoute}
+                    user={user}
+                    addresses={memoizedAddresses}
+                    personalCalendars={personalCalendars}
+                    subscribedCalendars={subscribedCalendars}
+                    defaultCalendar={defaultCalendar}
+                    calendarSubscribeUnavailable={calendarSubscribeUnavailable}
+                />
             </Route>
             <Route path={`${getSectionPath(path, calendarsRoute)}/:calendarId`}>
                 <CalendarSettingsSection
                     calendars={visualCalendars}
-                    personalActiveCalendars={personalActiveCalendars}
+                    addresses={addresses}
                     subscribedCalendars={subscribedCalendars}
                     defaultCalendar={defaultCalendar}
                     user={user}
@@ -162,7 +137,7 @@ const CalendarSettingsRouter = ({
                 <PrivateMainSettingsArea config={interopsRoute}>
                     <CalendarImportSection
                         addresses={addresses}
-                        personalActiveCalendars={personalActiveCalendars}
+                        calendars={visualCalendars}
                         defaultCalendar={defaultCalendar}
                         user={user}
                     />

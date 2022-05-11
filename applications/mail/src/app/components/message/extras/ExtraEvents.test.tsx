@@ -14,16 +14,17 @@ import {
     ICAL_METHOD,
     SETTINGS_VIEW,
 } from '@proton/shared/lib/calendar/constants';
+import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { ACCENT_COLORS, API_CODES, APPS } from '@proton/shared/lib/constants';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import {
+    CALENDAR_DISPLAY,
     CALENDAR_TYPE,
-    CalendarDisplay,
     CalendarKeyFlags,
     CalendarUserSettings,
-    CalendarWithMembers,
+    CalendarWithOwnMembers,
     VcalVeventComponent,
 } from '@proton/shared/lib/interfaces/calendar';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
@@ -87,16 +88,19 @@ const dummyCalendar = {
     Name: dummyCalendarName,
     Description: '',
     Type: CALENDAR_TYPE.PERSONAL,
+    Owner: { Email: dummyUserEmailAddress },
     Members: [
         {
             ID: dummyMemberID,
             AddressID: dummyUserPrimaryAddressID,
-            Permissions: 127,
             Flags: CALENDAR_FLAGS.ACTIVE,
+            Permissions: MEMBER_PERMISSIONS.OWNS,
             Email: dummyUserEmailAddress,
             CalendarID: dummyCalendarID,
             Color: ACCENT_COLORS[1],
-            Display: CalendarDisplay.HIDDEN,
+            Display: CALENDAR_DISPLAY.HIDDEN,
+            Name: dummyCalendarName,
+            Description: '',
         },
     ],
 };
@@ -136,7 +140,7 @@ const getSetup = async ({
     emailSubject?: string;
     userAddressKey?: GeneratedKey;
     userPrimaryAddressID?: string;
-    userCalendars?: CalendarWithMembers[];
+    userCalendars?: CalendarWithOwnMembers[];
     userCalendarSettings?: CalendarUserSettings;
     defaultCalendarID?: string | null;
     eventCalendarID?: string;
@@ -878,16 +882,19 @@ END:VCALENDAR`;
                 Name: dummyCalendarName,
                 Description: '',
                 Type: CALENDAR_TYPE.PERSONAL,
+                Owner: { Email: dummyUserEmailAddress },
                 Members: [
                     {
                         ID: dummyMemberID,
                         AddressID: dummyUserPrimaryAddressID,
-                        Permissions: 127,
+                        Permissions: 127 as const,
                         Email: dummyUserEmailAddress,
                         Flags: CALENDAR_FLAGS.ACTIVE,
                         CalendarID: dummyCalendarID,
                         Color: '#f00',
-                        Display: CalendarDisplay.HIDDEN,
+                        Display: CALENDAR_DISPLAY.HIDDEN,
+                        Name: dummyCalendarName,
+                        Description: '',
                     },
                 ],
             };

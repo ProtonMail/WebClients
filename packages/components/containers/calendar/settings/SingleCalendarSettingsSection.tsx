@@ -1,10 +1,8 @@
-import { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 
 import { c } from 'ttag';
 
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
-import SelectOptions from '@proton/components/components/selectTwo/SelectOptions';
 import {
     PrivateMainArea,
     SettingsPageTitle,
@@ -12,38 +10,49 @@ import {
     SettingsSection,
     SettingsSectionTitle,
 } from '@proton/components/containers';
-import { useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
-import { UserModel } from '@proton/shared/lib/interfaces';
-import { SubscribedCalendar, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import CalendarSettingsBreadcrumbs from '@proton/components/containers/calendar/settings/CalendarSettingsBreadcrumbs';
+import { useApi, useGetCalendarBootstrap, useNotifications } from '@proton/components/hooks';
+import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
+import { getIsOwnedCalendar } from '@proton/shared/lib/calendar/calendar';
+import { MEMBER_PERMISSIONS, getIsMember } from '@proton/shared/lib/calendar/permissions';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import {
+    CalendarMember,
+    CalendarMemberInvitation,
+    GetAllInvitationsApiResponse,
+    GetAllMembersApiResponse,
+    SubscribedCalendar,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 
-import { ButtonLike, CollapsingBreadcrumbs, Icon, Option, SimpleDropdown } from '../../../components';
 import { PrivateMainSettingsAreaBase } from '../../layout/PrivateMainSettingsArea';
 import CalendarDeleteSection from './CalendarDeleteSection';
 import CalendarEventDefaultsSection from './CalendarEventDefaultsSection';
 import CalendarSettingsHeaderSection from './CalendarSettingsHeaderSection';
+import CalendarShareSection from './CalendarShareSection';
 
 interface Props {
     calendars: VisualCalendar[];
-    personalActiveCalendars: VisualCalendar[];
     subscribedCalendars: SubscribedCalendar[];
     defaultCalendar?: VisualCalendar;
+    addresses: Address[];
     user: UserModel;
 }
 
-const SingleCalendarSettingsSection = ({
-    calendars,
-    personalActiveCalendars,
-    subscribedCalendars,
-    defaultCalendar,
-    user: { hasNonDelinquentScope },
-}: Props) => {
+const SingleCalendarSettingsSection = ({ calendars, subscribedCalendars, defaultCalendar, addresses, user }: Props) => {
     const { calendarId } = useParams<{ calendarId: string }>();
     const history = useHistory();
     const getCalendarBootstrap = useGetCalendarBootstrap();
     const { createNotification } = useNotifications();
+    const api = useApi();
+
+    const [renderCount, setRenderCount] = useState(0);
     const [calendar, setCalendar] = useState<SubscribedCalendar | VisualCalendar>();
     const [bootstrap, setBootstrap] = useState();
-    const [renderCount, setRenderCount] = useState(0);
+    const [invitations, setInvitations] = useState<CalendarMemberInvitation[]>([]);
+    const [members, setMembers] = useState<CalendarMember[]>([]);
+    const [loadingShareData, setLoadingShareData] = useState(true);
 
     useLayoutEffect(() => {
         const calendar =
@@ -68,7 +77,7 @@ const SingleCalendarSettingsSection = ({
                 setBootstrap(undefined);
             }
 
-            (async () => {
+            const loadBootstrap = async () => {
                 try {
                     setBootstrap(await getCalendarBootstrap(calendar.ID));
                 } catch (e: any) {
@@ -79,10 +88,29 @@ const SingleCalendarSettingsSection = ({
                     });
                     //we leave the user stuck with a loader screen
                 }
-            })();
+            };
+
+            const loadMembersAndInvitations = async () => {
+                if (!getIsOwnedCalendar(calendar)) {
+                    return;
+                }
+
+                const [{ Members }, { Invitations }] = await Promise.all([
+                    api<GetAllMembersApiResponse>(getAllMembers(calendar.ID)),
+                    api<GetAllInvitationsApiResponse>(getCalendarInvitations(calendar.ID)),
+                ]);
+                // if failing here, leave user with loader in the section
+
+                // filter out owner
+                setMembers(Members.filter(({ Permissions }) => Permissions !== MEMBER_PERMISSIONS.OWNS));
+                setInvitations(Invitations);
+                setLoadingShareData(false);
+            };
+
+            Promise.all([loadBootstrap(), loadMembersAndInvitations()]);
         },
         // re-load bootstrap only if calendar changes. Do not listen to dynamic changes
-        [calendar?.ID]
+        [calendar]
     );
 
     if (!calendar) {
@@ -109,75 +137,48 @@ const SingleCalendarSettingsSection = ({
         );
     }
 
-    const reRender = () => setRenderCount((count) => count + 1);
+    const hasMembersOrInvitations = !!(members.length || invitations.length);
+    const isOwner = getIsOwnedCalendar(calendar);
+    const isMember = getIsMember(calendar.Permissions);
+    const isSubscribedCalendar = getIsSubscribedCalendar(calendar);
 
-    const breadcrumbs = (
-        <div className="flex flex-nowrap flex-align-items-center no-desktop no-tablet on-mobile-flex">
-            <CollapsingBreadcrumbs
-                breadcrumbs={[
-                    {
-                        text: c('breadcrumb').t`Calendars`,
-                        key: 'calendars-main-route',
-                        onClick: () => history.replace('/calendar/calendars'),
-                    },
-                    {
-                        text: calendar.Name,
-                        key: calendar.ID,
-                        className: 'flex-item-fluid',
-                    },
-                ]}
-            />
-            {calendars && (
-                <SimpleDropdown
-                    as={ButtonLike}
-                    shape="ghost"
-                    color="weak"
-                    icon
-                    type="button"
-                    className="flex-item-noshrink"
-                    content={<Icon name="chevron-down" className="caret-like" />}
-                    hasCaret={false}
-                >
-                    <SelectOptions
-                        selected={calendars.findIndex(({ ID }) => ID === calendar.ID) || 0}
-                        onChange={({ value: calendarID }) => history.replace(`/calendar/calendars/${calendarID}`)}
-                    >
-                        {calendars.map(({ ID, Name, Color }) => (
-                            <Option key={ID} value={ID} title={Name}>
-                                <div className="flex flex-nowrap flex-align-items-center">
-                                    <CalendarSelectIcon color={Color} className="flex-item-noshrink mr0-75" />
-                                    <div className="text-ellipsis">{Name}</div>
-                                </div>
-                            </Option>
-                        ))}
-                    </SelectOptions>
-                </SimpleDropdown>
-            )}
-        </div>
-    );
+    const reRender = () => setRenderCount((count) => count + 1);
 
     return (
         <PrivateMainSettingsAreaBase
             title={calendar.Name}
             noTitle
-            breadcrumbs={calendars.length > 1 ? breadcrumbs : undefined}
+            breadcrumbs={<CalendarSettingsBreadcrumbs calendar={calendar} calendars={calendars} />}
         >
             <div className="container-section-sticky-section container-section-sticky-section--single-calendar-section">
                 <CalendarSettingsHeaderSection
                     calendar={calendar}
                     defaultCalendar={defaultCalendar}
                     onEdit={reRender}
-                    isEditDisabled={!hasNonDelinquentScope}
+                    isEditDisabled={!user.hasNonDelinquentScope || !isMember}
                 />
                 <CalendarEventDefaultsSection
-                    isEditDisabled={!hasNonDelinquentScope}
+                    isEditDisabled={!user.hasNonDelinquentScope}
                     calendar={calendar}
                     bootstrap={bootstrap}
                 />
+                {isOwner && !isSubscribedCalendar && (
+                    <CalendarShareSection
+                        calendar={calendar}
+                        addresses={addresses}
+                        isLoading={loadingShareData}
+                        members={members}
+                        invitations={invitations}
+                        setInvitations={setInvitations}
+                        setMembers={setMembers}
+                        user={user}
+                    />
+                )}
                 <CalendarDeleteSection
-                    personalActiveCalendars={personalActiveCalendars}
+                    calendars={calendars}
                     calendar={calendar}
                     defaultCalendar={defaultCalendar}
+                    isShared={hasMembersOrInvitations}
                 />
             </div>
         </PrivateMainSettingsAreaBase>

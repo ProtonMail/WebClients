@@ -8,12 +8,12 @@ import { getProdIdFromNameAndVersion } from '@proton/shared/lib/calendar/vcalCon
 import { getUniqueVtimezones } from '@proton/shared/lib/calendar/vtimezoneHelper';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import {
-    Calendar,
     EXPORT_ERRORS,
     EXPORT_STEPS,
     ExportCalendarModel,
     ExportError,
     VcalVeventComponent,
+    VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 
@@ -25,7 +25,7 @@ import ExportSummaryModalContent from './ExportSummaryModalContent';
 import ExportingModalContent from './ExportingModalContent';
 
 interface Props {
-    calendar: Calendar;
+    calendar: VisualCalendar;
     onClose?: () => void;
     onExit?: () => void;
     isOpen?: boolean;

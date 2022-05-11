@@ -17,9 +17,10 @@ import {
 import { useApi, useFeature, useLoading, useNotifications } from '@proton/components/hooks';
 import { updateCalendarSettings } from '@proton/shared/lib/api/calendars';
 import { dedupeNotifications, sortNotificationsByAscendingTrigger } from '@proton/shared/lib/calendar/alarms';
+import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MAX_DEFAULT_NOTIFICATIONS } from '@proton/shared/lib/calendar/constants';
 import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
-import { getIsPersonalCalendar, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     CalendarBootstrap,
     NotificationModel,
@@ -106,12 +107,12 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
         setHasTouchedFullDayNotifications(false);
     }, [bootstrap]);
 
-    if (!showDuration && !showNotifications) {
+    if (!getIsOwnedCalendar(calendar) || (!showDuration && !showNotifications)) {
         return null;
     }
 
     return (
-        <SettingsSection large>
+        <SettingsSection large className="container-section-sticky-section">
             <div className="h2 mb0-25 text-bold">{c('Default calendar event settings section title')
                 .t`Default event settings`}</div>
             {showDuration && (
@@ -168,9 +169,11 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                                 });
                                 setHasTouchedPartDayNotifications(true);
                             }}
+                            hasDeleteColor={false}
                         />
                         <div className="mt0-25">
                             <Button
+                                color="norm"
                                 onClick={() => handleSaveNotifications(false)}
                                 loading={loadingSavePartDayNotifications}
                                 disabled={!hasTouchedPartDayNotifications || isEditDisabled}
@@ -206,9 +209,11 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                                 });
                                 setHasTouchedFullDayNotifications(true);
                             }}
+                            hasDeleteColor={false}
                         />
                         <div className="mt0-25">
                             <Button
+                                color="norm"
                                 onClick={() => handleSaveNotifications(true)}
                                 loading={loadingSaveFullDayNotifications}
                                 disabled={!hasTouchedFullDayNotifications || isEditDisabled}
@@ -219,7 +224,6 @@ const CalendarEventDefaultsSection = ({ calendar, bootstrap, isEditDisabled }: P
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
-            <hr className="mb2 mt2" />
         </SettingsSection>
     );
 };

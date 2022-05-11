@@ -28,8 +28,6 @@ export interface CalendarEventData {
     Author: string;
 }
 
-export type CalendarEventDataMap = { [key in CALENDAR_CARD_TYPE]?: CalendarEventData };
-
 export interface CalendarPersonalEventData extends CalendarEventData {
     MemberID: string;
 }
@@ -91,38 +89,6 @@ export interface SyncMultipleApiSuccessResponses {
     };
 }
 
-export interface SyncMultipleApiResponses {
-    Index: number;
-    Response: {
-        Code: number;
-        Event?: CalendarEventWithMetadata;
-        Error?: string;
-    };
-}
-
-export interface SyncMultipleApiResponse {
-    Code: number;
-    Responses: SyncMultipleApiResponses[];
-}
-
-export interface UpdateEventPartApiResponse {
-    Code: number;
-    Event: CalendarEventWithMetadata;
-}
-
-export interface GetCanonicalAddressesApiResponses {
-    Email: string;
-    Response: {
-        Code: number;
-        CanonicalEmail: string;
-    };
-}
-
-export interface GetCanonicalAddressesApiResponse {
-    Code: number;
-    Responses: GetCanonicalAddressesApiResponses[];
-}
-
 export interface FrequencyModel {
     type: FREQUENCY;
     frequency: FREQUENCY;
@@ -171,6 +137,7 @@ export interface AttendeeModel {
 export interface CalendarViewModel {
     id: string;
     color: string;
+    permissions: number;
     isSubscribed: boolean;
 }
 
@@ -178,6 +145,7 @@ export interface CalendarsModel {
     text: string;
     value: string;
     color: string;
+    permissions: number;
     isSubscribed: boolean;
 }
 

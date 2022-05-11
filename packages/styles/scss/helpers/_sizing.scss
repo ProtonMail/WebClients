@@ -28,7 +28,7 @@
 // .w50 { width: 50%; }
 
 /* prettier-ignore */
-@each $width in (0, 1, 2, 3, 5, 10, 15, 18, 20, 25, 30, math.div(100,3), 35, 40, 45, 49, 50, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
+@each $width in (0, 1, 2, 3, 5, 10, 15, 18, 20, 25, 30, math.div(100,3), 35, 40, 45, 49, 50, 55, 60, math.div(100,3) * 2, 70, 75, 80, 90, 95, 100) {
 	.w#{floor($width)} {
 		inline-size: #{$width * 1%};
 	}
@@ -78,7 +78,7 @@
 }
 
 // .max-w50e { max-inline-size: 50em; }
-@each $max-width in (5, 7, 8, 13, 15, 18, 30, 37, 40, 43, 46, 50, 52, 60, 69) {
+@each $max-width in (5, 7, 8, 13, 15, 18, 30, 37, 40, 43, 46, 50, 52, 57, 60, 69) {
 	.max-w#{$max-width}e {
 		max-inline-size: #{$max-width}em;
 	}

@@ -9,6 +9,7 @@ export { default as ContactViewErrors } from './view/ContactViewErrors';
 export { default as ContactGroupDropdown } from './ContactGroupDropdown';
 export { default as ContactDeleteModal } from './modals/ContactDeleteModal';
 export { default as ContactProvider } from './ContactProvider';
+export { default as ContacEmailsProvider } from './ContactEmailsProvider';
 export { default as TopNavbarListItemContactsDropdown } from './widget/TopNavbarListItemContactsDropdown';
 export { default as ContactsRow } from './lists/ContactRow';
 export { default as ContactsList } from './lists/ContactsList';

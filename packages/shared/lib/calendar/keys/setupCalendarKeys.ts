@@ -4,7 +4,7 @@ import { useGetAddressKeys } from '@proton/components/hooks';
 
 import { setupCalendar } from '../../api/calendars';
 import { Api } from '../../interfaces';
-import { CalendarWithMembers } from '../../interfaces/calendar';
+import { CalendarWithOwnMembers } from '../../interfaces/calendar';
 import { getPrimaryKey } from '../../keys';
 import { generateCalendarKeyPayload, isCalendarSetupData } from '../../keys/calendarKeys';
 
@@ -19,7 +19,7 @@ interface SetupCalendarKeyArguments extends SetupCalendarKeysArgumentsShared {
 }
 
 interface SetupCalendarKeysArguments extends SetupCalendarKeysArgumentsShared {
-    calendars: CalendarWithMembers[];
+    calendars: CalendarWithOwnMembers[];
 }
 
 export const setupCalendarKey = async ({ calendarID, api, addressID, getAddressKeys }: SetupCalendarKeyArguments) => {

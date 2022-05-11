@@ -6,14 +6,14 @@ import {
     getIsCalendarMemberEventManagerDelete,
     getIsCalendarMemberEventManagerUpdate,
 } from '../eventManager/helpers';
-import { CalendarWithMembers } from '../interfaces/calendar';
+import { CalendarWithOwnMembers } from '../interfaces/calendar';
 import { CalendarEventManager, CalendarMemberEventManager } from '../interfaces/calendar/EventManager';
 import { STATUS } from './cache';
 import { CALENDARS_CACHE_KEY } from './calendarsModel';
 
 export const findMemberIndices = (
     memberID: string,
-    calendarsWithMembers: CalendarWithMembers[],
+    calendarsWithMembers: CalendarWithOwnMembers[],
     memberCalendarID?: string
 ) => {
     let calendarIndex = -1;
@@ -49,7 +49,7 @@ export const updateCalendarsWithMembers = (
         return;
     }
 
-    const newCalendarsWithMembers: CalendarWithMembers[] = [...oldCalendarsWithMembers];
+    const newCalendarsWithMembers: CalendarWithOwnMembers[] = [...oldCalendarsWithMembers];
 
     if (Calendars.length) {
         for (const event of Calendars) {

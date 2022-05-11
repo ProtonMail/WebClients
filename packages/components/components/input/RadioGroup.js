@@ -13,6 +13,7 @@ const RadioGroup = ({ name, options, onChange, value, className }) => {
             checked={value === option.value}
             name={name}
             className={classnames(['mr2', 'mb0-5', 'flex', 'inline-flex-vcenter', className])}
+            disabled={option.disabled}
         >
             {option.label}
         </Radio>
@@ -28,6 +29,7 @@ RadioGroup.propTypes = {
         PropTypes.shape({
             label: PropTypes.node,
             value: PropTypes.any,
+            disabled: PropTypes.bool,
         }).isRequired
     ),
 };

@@ -1,17 +1,18 @@
 import { PaginationParams } from '../../api/interface';
+import { ApiResponse } from '../Api';
 import { Nullable, RequireSome } from '../utils';
-import { CALENDAR_TYPE, Calendar, CalendarDisplay } from './Calendar';
-import { Attendee, CalendarEventData } from './Event';
+import { CALENDAR_DISPLAY, CALENDAR_TYPE } from './Calendar';
+import { CalendarMember, CalendarMemberInvitation } from './CalendarMember';
+import { Attendee, CalendarEventData, CalendarEventWithMetadata } from './Event';
 import { ACCESS_LEVEL } from './Link';
 
 export type CalendarCreateData = {
     Name: string;
     Description: string;
     Color: string;
-    Display: CalendarDisplay;
+    Display: CALENDAR_DISPLAY;
     URL?: string;
 };
-export type CalendarUpdateData = Partial<Pick<Calendar, 'Name' | 'Description'>>;
 
 export enum DELETION_REASON {
     NORMAL = 0,
@@ -37,11 +38,23 @@ export interface CalendarKeysResetData {
     [calendarID: string]: CalendarSetupData;
 }
 
-export interface CalendarMemberData {
+export interface CreateCalendarMemberData {
+    Email: string;
+    PassphraseKeyPacket: string;
+    Permissions: number;
+}
+
+export interface UpdateCalendarMemberData {
     Permissions: number;
     PassphraseKeyPacket: string;
+    Name: string;
+    Description: string;
     Color: string;
-    Display: CalendarDisplay;
+    Display: CALENDAR_DISPLAY;
+}
+
+export interface UpdateCalendarInviteData {
+    Permissions: number;
 }
 
 export enum CalendarEventsQueryType {
@@ -150,4 +163,42 @@ export interface CreatePublicLinks {
     EncryptedPurpose: Nullable<string>;
     EncryptedCacheKey: string;
     PassphraseID: Nullable<string>;
+}
+
+export interface SyncMultipleApiResponses {
+    Index: number;
+    Response: {
+        Code: number;
+        Event?: CalendarEventWithMetadata;
+        Error?: string;
+    };
+}
+
+export interface SyncMultipleApiResponse extends ApiResponse {
+    Responses: SyncMultipleApiResponses[];
+}
+
+export interface UpdateEventPartApiResponse extends ApiResponse {
+    Event: CalendarEventWithMetadata;
+}
+
+interface GetCanonicalAddressesSingleApiResponse extends ApiResponse {
+    CanonicalEmail: string;
+}
+
+export interface GetCanonicalAddressesApiResponses {
+    Email: string;
+    Response: GetCanonicalAddressesSingleApiResponse;
+}
+
+export interface GetCanonicalAddressesApiResponse extends ApiResponse {
+    Responses: GetCanonicalAddressesApiResponses[];
+}
+
+export interface GetAllMembersApiResponse {
+    Members: CalendarMember[];
+}
+
+export interface GetAllInvitationsApiResponse {
+    Invitations: CalendarMemberInvitation[];
 }

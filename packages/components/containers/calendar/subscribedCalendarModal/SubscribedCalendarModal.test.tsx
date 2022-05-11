@@ -5,7 +5,7 @@ import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 
 import { CacheProvider } from '../../cache';
-import SubscribeCalendarModal from './SubscribeCalendarModal';
+import SubscribedCalendarModal from './SubscribedCalendarModal';
 
 jest.mock('../hooks/useGetCalendarSetup', () => () => ({}));
 
@@ -30,10 +30,10 @@ function renderComponent() {
         <CacheProvider cache={createCache()}>{children}</CacheProvider>
     );
 
-    return render(<SubscribeCalendarModal isOpen />, { wrapper: Wrapper });
+    return render(<SubscribedCalendarModal open />, { wrapper: Wrapper });
 }
 
-describe('SubscribeCalendarModal', () => {
+describe('SubscribedCalendarModal', () => {
     it('shows warnings with an appropriate priority and disables the submit button when needed', async () => {
         renderComponent();
 

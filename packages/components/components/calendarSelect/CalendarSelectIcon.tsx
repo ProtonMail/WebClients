@@ -6,13 +6,19 @@ interface Props {
     color: string;
     className?: string;
     large?: boolean;
+    border?: boolean;
 }
 
-const CalendarSelectIcon = ({ color, className, large }: Props) => {
+const CalendarSelectIcon = ({ color, className, large, border }: Props) => {
     return (
         <div
-            className={clsx(['calendar-select-color', large && 'calendar-select-color--large', className])}
-            style={{ backgroundColor: color }}
+            className={clsx([
+                'calendar-select-color',
+                large && 'calendar-select-color--large',
+                border && 'calendar-select-color--bordered',
+                className,
+            ])}
+            style={{ [border ? 'borderColor' : 'backgroundColor']: color }}
         />
     );
 };

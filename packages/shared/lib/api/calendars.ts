@@ -6,15 +6,16 @@ import {
     CalendarEventsQuery,
     CalendarExportEventsQuery,
     CalendarKeysResetData,
-    CalendarMemberData,
     CalendarSetupData,
-    CalendarUpdateData,
+    CreateCalendarMemberData,
     CreatePublicLinks,
     CreateSingleCalendarEventData,
     CreateSinglePersonalEventData,
     GetEventByUIDArguments,
     QueryCalendarAlarms,
     SyncMultipleEventsData,
+    UpdateCalendarInviteData,
+    UpdateCalendarMemberData,
 } from '../interfaces/calendar/Api';
 import { Nullable } from '../interfaces/utils';
 import { PaginationParams } from './interface';
@@ -95,12 +96,6 @@ export const resetCalendarGroup = (data: { CalendarKeys: CalendarKeysResetData }
     data,
 });
 
-export const updateCalendar = (calendarID: string, data: CalendarUpdateData) => ({
-    url: `${CALENDAR_V1}/${calendarID}`,
-    method: 'put',
-    data,
-});
-
 export const removeCalendar = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}`,
     method: 'delete',
@@ -117,14 +112,34 @@ export const getAllMembers = (calendarID: string) => ({
     method: 'get',
 });
 
-export const addMember = (calendarID: string, data: { Members: CalendarMemberData[] }) => ({
-    url: `${CALENDAR_V1}/${calendarID}`,
+export const getCalendarInvitations = (calendarID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations`,
+    method: 'get',
+});
+
+export const getAllInvitations = () => ({
+    url: `${CALENDAR_V1}/invitations`,
+    method: 'get',
+});
+
+export const addMember = (calendarID: string, data: { AddressID: string; Members: CreateCalendarMemberData[] }) => ({
+    url: `${CALENDAR_V1}/${calendarID}/members`,
     method: 'post',
     data,
 });
 
-export const updateMember = (calendarID: string, memberID: string, data: Partial<CalendarMemberData>) => ({
+export const updateMember = (calendarID: string, memberID: string, data: Partial<UpdateCalendarMemberData>) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/${memberID}`,
+    method: 'put',
+    data,
+});
+
+export const updateInvitation = (
+    calendarID: string,
+    invitationID: string,
+    data: Partial<UpdateCalendarInviteData>
+) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations/${invitationID}`,
     method: 'put',
     data,
 });
@@ -132,6 +147,27 @@ export const updateMember = (calendarID: string, memberID: string, data: Partial
 export const removeMember = (calendarID: string, memberID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/members/${memberID}`,
     method: 'delete',
+});
+
+export const getInvitation = (calendarID: string, invitationID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations/${invitationID}`,
+    method: 'get',
+});
+
+export const removeInvitation = (calendarID: string, invitationID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations/${invitationID}`,
+    method: 'delete',
+});
+
+export const acceptInvitation = (calendarID: string, addressID: string, data: { Signature: string }) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations/${addressID}/accept`,
+    method: 'put',
+    data,
+});
+
+export const rejectInvitation = (calendarID: string, addressID: string) => ({
+    url: `${CALENDAR_V1}/${calendarID}/invitations/${addressID}/reject`,
+    method: 'put',
 });
 
 export const getEventsCount = (calendarID: string) => ({
