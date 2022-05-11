@@ -8,7 +8,9 @@ import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/ca
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { unary } from '@proton/shared/lib/helpers/function';
-import { getHasLegacyPlans, hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { toMap } from '@proton/shared/lib/helpers/object';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -20,6 +22,9 @@ import {
     useOrganization,
     usePlans,
     useSubscription,
+    useConfig,
+    useVPNCountriesCount,
+    useVPNServersCount,
 } from '../../../hooks';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import DowngradeModal from '../DowngradeModal';
@@ -28,21 +33,32 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
 import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngradeModal';
+import { getShortPlan } from '../features/plan';
+import { formatPlans } from './helpers';
 
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
     children: ReactNode;
 }
 
 const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
+    const { APP_NAME } = useConfig();
     const [user] = useUser();
-    const [subscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
     const [organization] = useOrganization();
-    const [plans] = usePlans();
+    const [plans, loadingPlans] = usePlans();
+    const [vpnCountries] = useVPNCountriesCount();
+    const [vpnServers] = useVPNServersCount();
     const { createNotification, hideNotification } = useNotifications();
     const { createModal } = useModals();
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
+
+    const { Plans = [], PeriodEnd = 0 } = subscription || {};
+    const { mailPlan, vpnPlan } = formatPlans(Plans);
+
+    const currentPlan = APP_NAME === APPS.PROTONVPN_SETTINGS ? vpnPlan || mailPlan : mailPlan || vpnPlan;
+    const plansMap = toMap(plans, 'Name');
 
     const handleUnsubscribe = async (data: FeedbackDowngradeData) => {
         const downgradeNotificationId = createNotification({
@@ -91,11 +107,19 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        // We only show the plan downgrade plan modal for users with new plans because we don't have the feature list for legacy plans.
-        if (!getHasLegacyPlans(subscription)) {
+        const shortPlan = currentPlan
+            ? getShortPlan(currentPlan.Name as PLANS, plansMap, vpnCountries, vpnServers)
+            : undefined;
+        // We only show the plan downgrade plan modal for plans that are defined with features
+        if (shortPlan) {
             await new Promise<void>((resolve, reject) => {
                 createModal(
-                    <HighlightPlanDowngradeModal user={user} plans={plans} onConfirm={resolve} onClose={reject} />
+                    <HighlightPlanDowngradeModal
+                        shortPlan={shortPlan}
+                        periodEnd={PeriodEnd}
+                        onConfirm={resolve}
+                        onClose={reject}
+                    />
                 );
             });
         }
@@ -130,7 +154,12 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     };
 
     return (
-        <Button disabled={loading} className={className} onClick={() => withLoading(handleClick())} {...rest}>
+        <Button
+            disabled={loading || loadingPlans || loadingSubscription}
+            className={className}
+            onClick={() => withLoading(handleClick())}
+            {...rest}
+        >
             {children}
         </Button>
     );
