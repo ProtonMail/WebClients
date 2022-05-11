@@ -14,7 +14,7 @@ const DKIMSection = ({ domain }) => {
 
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/anti-spoofing/')}>
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/anti-spoofing-custom-domain')}>
                 {c('Info')
                     .t`${MAIL_APP_NAME} supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.`}
             </Alert>

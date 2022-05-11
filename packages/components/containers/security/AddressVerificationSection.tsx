@@ -26,7 +26,7 @@ const AddressVerificationSection = () => {
 
     return (
         <SettingsSection>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/address-verification/')}>
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/address-verification')}>
                 {c('Info')
                     .t`Address verification is an advanced security feature. Only turn this on if you know what it does.`}
             </SettingsParagraph>
@@ -36,7 +36,7 @@ const AddressVerificationSection = () => {
                     <label htmlFor="trustToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Prompt to trust keys`}</span>
                         <Info
-                            url={getKnowledgeBaseUrl('/address-verification/')}
+                            url={getKnowledgeBaseUrl('/address-verification')}
                             title={c('Tooltip prompt to trust keys')
                                 .t`When receiving an email from another ${MAIL_APP_NAME} user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.`}
                         />

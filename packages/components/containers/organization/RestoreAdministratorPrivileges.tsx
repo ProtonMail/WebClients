@@ -33,7 +33,7 @@ const RestoreAdministratorPrivileges = () => {
                 <ButtonLike as={SettingsLink} path="/organization-keys" color="norm" className="mr1">
                     {c('Action').t`Restore administrator privileges`}
                 </ButtonLike>
-                <LearnMore className="inline-block" url={getKnowledgeBaseUrl('/business/')} />
+                <LearnMore className="inline-block" url={getKnowledgeBaseUrl('/proton-for-business')} />
             </Block>
         );
     }

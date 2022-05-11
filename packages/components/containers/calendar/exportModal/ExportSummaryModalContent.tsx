@@ -51,7 +51,7 @@ const ExportSummaryModalContent = ({ model }: Props) => {
         : exportErrors;
     const hasOnlyPasswordResetErrors = passwordResetErrors.length === exportErrors.length;
 
-    const kbLink = getKnowledgeBaseUrl('/restoring-encrypted-calendar/');
+    const kbLink = getKnowledgeBaseUrl('/restoring-encrypted-calendar');
     const getAlertMessage = () => {
         if (isSuccess) {
             return c('Export calendar').t`Calendar successfully exported. You can now save the ICS file.`;

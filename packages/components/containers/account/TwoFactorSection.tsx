@@ -31,7 +31,7 @@ const TwoFactorSection = () => {
     const twoFactorAuthLink =
         APP_NAME === APPS.PROTONVPN_SETTINGS
             ? 'https://protonvpn.com/support/two-factor-authentication'
-            : getKnowledgeBaseUrl('/two-factor-authentication');
+            : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
     return (
         <>

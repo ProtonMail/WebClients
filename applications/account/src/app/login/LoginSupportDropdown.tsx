@@ -31,7 +31,7 @@ const LoginSupportDropdown = () => {
                     {c('Link').t`Forgot username?`}
                 </Link>
                 <DropdownMenuLink
-                    href={getKnowledgeBaseUrl('/common-login-problems/')}
+                    href={getKnowledgeBaseUrl('/common-login-problems')}
                     target="_blank"
                     className="text-left"
                 >
