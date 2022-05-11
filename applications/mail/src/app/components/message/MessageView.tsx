@@ -331,57 +331,59 @@ const MessageView = (
             onFocus={handleFocus}
             onBlur={handleBlur}
         >
-            {expanded ? (
-                <>
-                    <HeaderExpanded
+            <div className="rounded overflow-hidden">
+                {expanded ? (
+                    <>
+                        <HeaderExpanded
+                            labelID={labelID}
+                            conversationMode={conversationMode}
+                            message={message}
+                            messageViewIcons={messageViewIcons}
+                            messageLoaded={messageLoaded}
+                            bodyLoaded={bodyLoaded}
+                            isSentMessage={sent}
+                            sourceMode={sourceMode}
+                            onLoadRemoteImages={handleLoadRemoteImages}
+                            onLoadEmbeddedImages={handleLoadEmbeddedImages}
+                            onResignContact={handleResignContact}
+                            labels={labels}
+                            mailSettings={mailSettings}
+                            onToggle={handleToggle(false)}
+                            onBack={onBack}
+                            onSourceMode={setSourceMode}
+                            breakpoints={breakpoints}
+                            labelDropdownToggleRef={labelDropdownToggleRef}
+                            moveDropdownToggleRef={moveDropdownToggleRef}
+                            filterDropdownToggleRef={filterDropdownToggleRef}
+                            parentMessageRef={elementRef}
+                        />
+                        <MessageBody
+                            labelID={labelID}
+                            messageLoaded={messageLoaded}
+                            bodyLoaded={bodyLoaded}
+                            sourceMode={sourceMode}
+                            message={message}
+                            originalMessageMode={originalMessageMode}
+                            toggleOriginalMessage={toggleOriginalMessage}
+                            onMessageReady={onMessageReady}
+                            onFocusIframe={handleFocus}
+                        />
+                        {showFooter ? <MessageFooter message={message} /> : null}
+                    </>
+                ) : (
+                    <HeaderCollapsed
                         labelID={labelID}
-                        conversationMode={conversationMode}
-                        message={message}
-                        messageViewIcons={messageViewIcons}
-                        messageLoaded={messageLoaded}
-                        bodyLoaded={bodyLoaded}
-                        isSentMessage={sent}
-                        sourceMode={sourceMode}
-                        onLoadRemoteImages={handleLoadRemoteImages}
-                        onLoadEmbeddedImages={handleLoadEmbeddedImages}
-                        onResignContact={handleResignContact}
                         labels={labels}
-                        mailSettings={mailSettings}
-                        onToggle={handleToggle(false)}
-                        onBack={onBack}
-                        onSourceMode={setSourceMode}
-                        breakpoints={breakpoints}
-                        labelDropdownToggleRef={labelDropdownToggleRef}
-                        moveDropdownToggleRef={moveDropdownToggleRef}
-                        filterDropdownToggleRef={filterDropdownToggleRef}
-                        parentMessageRef={elementRef}
-                    />
-                    <MessageBody
-                        labelID={labelID}
-                        messageLoaded={messageLoaded}
-                        bodyLoaded={bodyLoaded}
-                        sourceMode={sourceMode}
                         message={message}
-                        originalMessageMode={originalMessageMode}
-                        toggleOriginalMessage={toggleOriginalMessage}
-                        onMessageReady={onMessageReady}
-                        onFocusIframe={handleFocus}
+                        messageLoaded={messageLoaded}
+                        isSentMessage={sent}
+                        isUnreadMessage={unread}
+                        onExpand={handleToggle(true)}
+                        breakpoints={breakpoints}
                     />
-                    {showFooter ? <MessageFooter message={message} /> : null}
-                </>
-            ) : (
-                <HeaderCollapsed
-                    labelID={labelID}
-                    labels={labels}
-                    message={message}
-                    messageLoaded={messageLoaded}
-                    isSentMessage={sent}
-                    isUnreadMessage={unread}
-                    onExpand={handleToggle(true)}
-                    breakpoints={breakpoints}
-                />
-            )}
-            {moveScheduledModal}
+                )}
+                {moveScheduledModal}
+            </div>
         </article>
     );
 };
