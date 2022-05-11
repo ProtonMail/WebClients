@@ -21,7 +21,7 @@ import {
 } from '@proton/shared/lib/helpers/formValidators';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
-import { clamp } from '@proton/shared/lib/helpers/math';
+import clamp from '@proton/util/clamp';
 import { setupMemberKey } from '@proton/shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses, useLoading } from '../../hooks';
 import {

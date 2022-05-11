@@ -14,7 +14,7 @@ import {
     getMinPasswordLengthMessage,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { clamp } from '@proton/shared/lib/helpers/math';
+import clamp from '@proton/util/clamp';
 
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import {
