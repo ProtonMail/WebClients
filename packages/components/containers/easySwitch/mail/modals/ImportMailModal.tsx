@@ -84,11 +84,32 @@ interface Props {
     provider?: NON_OAUTH_PROVIDER;
 }
 
+const getDefaultImap = (provider?: NON_OAUTH_PROVIDER): string => {
+    switch (provider) {
+        case NON_OAUTH_PROVIDER.OUTLOOK:
+            return IMAPS[NON_OAUTH_PROVIDER.OUTLOOK];
+        case NON_OAUTH_PROVIDER.YAHOO:
+            return IMAPS[NON_OAUTH_PROVIDER.YAHOO];
+        default:
+            return '';
+    }
+};
+
+const getDefaultPort = (provider?: NON_OAUTH_PROVIDER): string => {
+    switch (provider) {
+        case NON_OAUTH_PROVIDER.OUTLOOK:
+            return PORTS[NON_OAUTH_PROVIDER.OUTLOOK];
+        case NON_OAUTH_PROVIDER.YAHOO:
+            return PORTS[NON_OAUTH_PROVIDER.YAHOO];
+        default:
+            return '';
+    }
+};
+
 const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, ...rest }: Props) => {
     const settingsLink = useSettingsLink();
     const addressMap = toMap(addresses);
     const isReconnectMode = !!currentImport;
-    const isYahoo = provider === NON_OAUTH_PROVIDER.YAHOO;
     const location = useLocation();
     const isCurrentLocationImportPage = IA_PATHNAME_REGEX.test(location.pathname);
 
@@ -102,8 +123,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         importID: currentImport?.ID || '',
         email: currentImport?.Email || '',
         password: '',
-        imap: currentImport?.ImapHost || isYahoo ? IMAPS[NON_OAUTH_PROVIDER.YAHOO] : '',
-        port: currentImport?.ImapPort || isYahoo ? PORTS[NON_OAUTH_PROVIDER.YAHOO] : '',
+        imap: currentImport?.ImapHost || getDefaultImap(provider),
+        port: currentImport?.ImapPort || getDefaultPort(provider),
         errorCode: 0,
         errorLabel: '',
         providerFolders: [],
