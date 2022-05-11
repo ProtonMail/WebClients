@@ -225,16 +225,7 @@ export const getBlogURL = (path: string) => {
     return getStaticURL(`/blog${path}`);
 };
 
-export const getIsLegacyStaticURL = (url: string) => {
-    return url.includes('protonmail.com');
-};
-
 export const getKnowledgeBaseUrl = (path: string) => {
-    // On protonmail, the KBs are prefixed with /support/knowledge-base/path
-    if (getIsLegacyStaticURL(window.location.hostname)) {
-        return getStaticURL(`/support/knowledge-base${path}`);
-    }
-    // On proton.me, it's just /support/path
     const pathname = `/support${path}`;
     if (window.location.hostname.includes('protonvpn.com')) {
         return `https://proton.me${pathname}`;
@@ -243,27 +234,15 @@ export const getKnowledgeBaseUrl = (path: string) => {
 };
 
 export const getDomainsSupportURL = () => {
-    const url = getStaticURL('');
-    if (getIsLegacyStaticURL(url)) {
-        return `${url}/support/categories/custom-domains`;
-    }
-    return `${url}/support/mail/custom-email-domain`;
+    return getStaticURL('/support/mail/custom-email-domain');
 };
 
 export const getBridgeURL = () => {
-    const url = getStaticURL('');
-    if (getIsLegacyStaticURL(url)) {
-        return `${url}/bridge`;
-    }
-    return `${url}/mail/bridge`;
+    return getStaticURL('/mail/bridge');
 };
 
 export const getEasySwitchURL = () => {
-    const url = getStaticURL('');
-    if (getIsLegacyStaticURL(url)) {
-        return `${url}/import-export`;
-    }
-    return `${url}/easyswitch`;
+    return getStaticURL('/easyswitch');
 };
 
 export const getShopURL = () => {
@@ -271,27 +250,15 @@ export const getShopURL = () => {
 };
 
 export const getPrivacyPolicyURL = () => {
-    const url = getStaticURL('');
-    if (getIsLegacyStaticURL(url)) {
-        return `${url}/privacy-policy`;
-    }
-    return `${url}/legal/privacy`;
+    return getStaticURL('/legal/privacy');
 };
 
 export const getTermsURL = () => {
-    const url = getStaticURL('');
-    if (getIsLegacyStaticURL(url)) {
-        return `${url}/terms-and-conditions`;
-    }
-    return `${url}/legal/terms`;
+    return getStaticURL('/legal/terms');
 };
 
 export const getAbuseURL = () => {
-    const url = getStaticURL('');
-    if (getIsLegacyStaticURL(url)) {
-        return `${url}/abuse`;
-    }
-    return `${url}/support/abuse`;
+    return getStaticURL('/support/abuse');
 };
 
 export const isValidHttpUrl = (string: string) => {
