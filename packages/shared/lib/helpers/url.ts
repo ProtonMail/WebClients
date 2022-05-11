@@ -1,4 +1,4 @@
-import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES } from '../constants';
+import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES, APPS } from '../constants';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
@@ -246,11 +246,17 @@ export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
 
-export const getPrivacyPolicyURL = () => {
+export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return 'https://protonvpn.com/privacy-policy';
+    }
     return getStaticURL('/legal/privacy');
 };
 
-export const getTermsURL = () => {
+export const getTermsURL = (app?: APP_NAMES) => {
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return 'https://protonvpn.com/terms-and-conditions';
+    }
     return getStaticURL('/legal/terms');
 };
 
