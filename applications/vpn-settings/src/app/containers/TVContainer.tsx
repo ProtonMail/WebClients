@@ -93,7 +93,7 @@ const TVContainer = () => {
             <div className="flex flex-justify-center flex-align-items-center pt2">
                 <div className="w150p">
                     <Href url="https://protonvpn.com" target="_self">
-                        <VpnLogo className="fill-primary" />
+                        <VpnLogo />
                     </Href>
                 </div>
                 <h3 className="mb0 pl0-25 text-uppercase text-bold">{c('Title').t`TV log in`}</h3>
