@@ -53,10 +53,10 @@ export const getFreePlan = (): ShortPlan => {
 export const getBundlePlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.BUNDLE,
-        title: PLAN_NAMES[PLANS.BUNDLE],
+        title: plan.Title,
         label: c('new_plans: info').t`Popular`,
         description: c('new_plans: info').t`Comprehensive privacy and security with all Proton services combined.`,
-        cta: getCTA(PLAN_NAMES[PLANS.BUNDLE]),
+        cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace),
             getNAddressesFeature({ n: plan.MaxAddresses }),
@@ -74,10 +74,10 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
 export const getMailPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MAIL,
-        title: PLAN_NAMES[PLANS.MAIL],
+        title: plan.Title,
         label: '',
         description: c('new_plans: info').t`Secure email with advanced features for your everyday communications.`,
-        cta: getCTA(PLAN_NAMES[PLANS.MAIL]),
+        cta: getCTA(plan.Title),
         features: [
             getStorageFeature(plan.MaxSpace),
             getNAddressesFeature({ n: plan.MaxAddresses }),
@@ -102,15 +102,15 @@ export const getFreeVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServ
         features: [getVPNConnections(1), getCountries(freeServers), getVPNSpeed('medium'), getNoLogs()],
     };
 };
-export const getVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
+export const getVPNPlan = (plan: Plan, vpnCountries: VPNCountries, serversCount: VPNServers): ShortPlan => {
     const plusServers = getPlusServers(serversCount[PLANS.VPN], vpnCountries[PLANS.VPN].count);
     return {
         plan: PLANS.VPN,
-        title: PLAN_NAMES[PLANS.VPN],
+        title: plan.Title,
         label: '',
         description: c('new_plans: info')
             .t`The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.`,
-        cta: getCTA(PLAN_NAMES[PLANS.VPN]),
+        cta: getCTA(plan.Title),
         features: [
             getVPNConnections(VPN_CONNECTIONS, true),
             getCountries(plusServers, true),
@@ -127,10 +127,10 @@ export const getVPNPlan = (vpnCountries: VPNCountries, serversCount: VPNServers)
 export const getMailProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.MAIL_PRO,
-        title: PLAN_NAMES[PLANS.MAIL_PRO],
+        title: plan.Title,
         label: '',
         description: c('new_plans: info').t`Secure email and calendar for professionals and businesses.`,
-        cta: getCTA(PLAN_NAMES[PLANS.MAIL_PRO]),
+        cta: getCTA(plan.Title),
         features: [
             getStorageFeatureB2B(plan.MaxSpace),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
@@ -145,14 +145,36 @@ export const getMailProPlan = (plan: Plan): ShortPlan => {
 export const getBundleProPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.BUNDLE_PRO,
-        title: PLAN_NAMES[PLANS.BUNDLE_PRO],
+        title: plan.Title,
         label: '',
         description: c('new_plans: info')
             .t`Privacy and security suite for businesses, including all premium Proton services.`,
-        cta: getCTA(PLAN_NAMES[PLANS.BUNDLE_PRO]),
+        cta: getCTA(plan.Title),
         features: [
             getStorageFeatureB2B(plan.MaxSpace),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
+            getNDomainsFeature({ n: plan.MaxDomains }),
+            getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
+            getContactGroupsManagement(),
+            getCalendarAppFeature(),
+            getDriveAppFeature(),
+            getB2BHighSpeedVPNConnections(),
+            getNetShield(true),
+            getSecureCore(true),
+        ],
+    };
+};
+
+export const getNewVisionaryPlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.NEW_VISIONARY,
+        title: plan.Title,
+        label: '',
+        description: '',
+        cta: getCTA(plan.Title),
+        features: [
+            getStorageFeature(plan.MaxSpace),
+            getNAddressesFeature({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
             getFoldersAndLabelsFeature(Number.POSITIVE_INFINITY),
             getContactGroupsManagement(),
@@ -177,13 +199,15 @@ export const getShortPlan = (plan: PLANS, plansMap: PlansMap, vpnCountries: VPNC
         case PLANS.MAIL:
             return getMailPlan(planData);
         case PLANS.VPN:
-            return getVPNPlan(vpnCountries, vpnServers);
+            return getVPNPlan(planData, vpnCountries, vpnServers);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:
             return getBundlePlan(planData);
         case PLANS.BUNDLE_PRO:
             return getBundleProPlan(planData);
+        case PLANS.NEW_VISIONARY:
+            return getNewVisionaryPlan(planData);
         default:
             return null;
     }
