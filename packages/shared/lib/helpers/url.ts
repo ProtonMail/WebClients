@@ -1,4 +1,4 @@
-import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES } from '../constants';
+import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES, APPS } from '../constants';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
@@ -215,9 +215,10 @@ export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) =>
 
 let cache = '';
 export const getStaticURL = (path: string) => {
-    cache = cache || getSecondLevelDomain(window.location.hostname);
     // We create a relative URL to support the TOR domain
-    const hostname = cache;
+    cache = cache || getSecondLevelDomain(window.location.hostname);
+    // The VPN domain has a different static site and the proton.me urls are not supported there
+    const hostname = cache === 'protonvpn.com' ? 'proton.me' : cache;
     return `https://${hostname}${path}`;
 };
 
@@ -226,11 +227,7 @@ export const getBlogURL = (path: string) => {
 };
 
 export const getKnowledgeBaseUrl = (path: string) => {
-    const pathname = `/support${path}`;
-    if (window.location.hostname.includes('protonvpn.com')) {
-        return `https://proton.me${pathname}`;
-    }
-    return getStaticURL(pathname);
+    return getStaticURL(`/support${path}`);
 };
 
 export const getDomainsSupportURL = () => {
@@ -249,11 +246,17 @@ export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
 
-export const getPrivacyPolicyURL = () => {
+export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return 'https://protonvpn.com/privacy-policy';
+    }
     return getStaticURL('/legal/privacy');
 };
 
-export const getTermsURL = () => {
+export const getTermsURL = (app?: APP_NAMES) => {
+    if (app === APPS.PROTONVPN_SETTINGS) {
+        return 'https://protonvpn.com/terms-and-conditions';
+    }
     return getStaticURL('/legal/terms');
 };
 
