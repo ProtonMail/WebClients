@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
+import { Alert, Row, Label, Field, PasswordInput, Input, Href } from '../../../../../components';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
 
 import { ImportMailModalModel } from '../../interfaces';
@@ -18,30 +18,14 @@ import { ImportMailModalModel } from '../../interfaces';
 interface Props {
     modalModel: ImportMailModalModel;
     updateModalModel: (newModel: ImportMailModalModel) => void;
-    needAppPassword: boolean;
-    showPassword: boolean;
     currentImport?: NormalizedImporter;
     invalidPortError: boolean;
     provider?: NON_OAUTH_PROVIDER;
 }
 
-const ImportStartStep = ({
-    modalModel,
-    updateModalModel,
-    needAppPassword,
-    showPassword,
-    currentImport,
-    invalidPortError,
-    provider,
-}: Props) => {
-    const { email, password, needIMAPDetails, imap, port, errorCode, errorLabel } = modalModel;
-
-    useEffect(() => {
-        if (!email) {
-            updateModalModel({ ...modalModel, password: '', port: '', imap: '' });
-        }
-    }, [email]);
-
+const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidPortError, provider }: Props) => {
+    const { email, password, imap, port, errorCode, errorLabel } = modalModel;
+    const needAppPassword = provider === NON_OAUTH_PROVIDER.YAHOO;
     const isRateLimitError = errorCode === IMPORT_ERROR.RATE_LIMIT_EXCEEDED;
     const isAuthError = errorCode === IMPORT_ERROR.AUTHENTICATION_ERROR;
     const isIMAPError = errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
@@ -266,11 +250,10 @@ const ImportStartStep = ({
                     {c('Info').t`Your login information will not be saved after the import is completed.`}
                 </div>
             )}
-
             <Row>
                 <Label htmlFor="emailAddress">{c('Label').t`Email`}</Label>
                 <Field>
-                    <EmailInput
+                    <Input
                         id="emailAddress"
                         value={email}
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
@@ -286,66 +269,58 @@ const ImportStartStep = ({
                     />
                 </Field>
             </Row>
-
-            {showPassword && (
-                <Row>
-                    <Label htmlFor="password">
-                        {needAppPassword ? c('Label').t`App password` : c('Label').t`Password`}
-                    </Label>
-                    <Field>
-                        <PasswordInput
-                            id="password"
-                            value={password}
-                            onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                updateModalModel({ ...modalModel, password: target.value })
-                            }
-                            autoFocus
-                            required
-                            isSubmitted={!!errorLabel}
-                            error={isAuthError ? errorLabel : undefined}
-                            errorZoneClassName="hidden"
-                        />
-                    </Field>
-                </Row>
-            )}
-            {needIMAPDetails && email && showPassword && (
-                <>
-                    <Row>
-                        <Label htmlFor="imap">{c('Label').t`Mail Server (IMAP)`}</Label>
-                        <Field>
-                            <Input
-                                id="imap"
-                                placeholder="imap.domain.com"
-                                value={imap}
-                                onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
-                                    updateModalModel({ ...modalModel, imap: target.value });
-                                }}
-                                required
-                                isSubmitted={!!errorLabel}
-                                error={isIMAPError ? errorLabel : undefined}
-                                errorZoneClassName="hidden"
-                            />
-                        </Field>
-                    </Row>
-                    <Row>
-                        <Label htmlFor="port">{c('Label').t`Port`}</Label>
-                        <Field>
-                            <Input
-                                id="port"
-                                placeholder="993"
-                                value={port}
-                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                    updateModalModel({ ...modalModel, port: target.value })
-                                }
-                                required
-                                isSubmitted={!!imapPortError}
-                                error={imapPortError}
-                                errorZoneClassName="hidden"
-                            />
-                        </Field>
-                    </Row>
-                </>
-            )}
+            <Row>
+                <Label htmlFor="password">
+                    {needAppPassword ? c('Label').t`App password` : c('Label').t`Password`}
+                </Label>
+                <Field>
+                    <PasswordInput
+                        id="password"
+                        value={password}
+                        onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                            updateModalModel({ ...modalModel, password: target.value })
+                        }
+                        required
+                        isSubmitted={!!errorLabel}
+                        error={isAuthError ? errorLabel : undefined}
+                        errorZoneClassName="hidden"
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="imap">{c('Label').t`Mail Server (IMAP)`}</Label>
+                <Field>
+                    <Input
+                        id="imap"
+                        placeholder="imap.domain.com"
+                        value={imap}
+                        onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
+                            updateModalModel({ ...modalModel, imap: target.value });
+                        }}
+                        required
+                        isSubmitted={!!errorLabel}
+                        error={isIMAPError ? errorLabel : undefined}
+                        errorZoneClassName="hidden"
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="port">{c('Label').t`Port`}</Label>
+                <Field>
+                    <Input
+                        id="port"
+                        placeholder="993"
+                        value={port}
+                        onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                            updateModalModel({ ...modalModel, port: target.value })
+                        }
+                        required
+                        isSubmitted={!!imapPortError}
+                        error={imapPortError}
+                        errorZoneClassName="hidden"
+                    />
+                </Field>
+            </Row>
         </>
     );
 };

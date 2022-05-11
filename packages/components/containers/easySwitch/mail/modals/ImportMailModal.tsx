@@ -45,7 +45,7 @@ import ImportStartStep from './steps/ImportStartStep';
 import ImportPrepareStep from './steps/ImportPrepareStep';
 import ImportStartedStep from '../../steps/IAImportStartedStep';
 
-import { IA_PATHNAME_REGEX, IMAPS } from '../../constants';
+import { IA_PATHNAME_REGEX, IMAPS, PORTS } from '../../constants';
 import { dateToTimestamp } from '../helpers';
 
 import './ImportMailModal.scss';
@@ -88,7 +88,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const settingsLink = useSettingsLink();
     const addressMap = toMap(addresses);
     const isReconnectMode = !!currentImport;
-
+    const isYahoo = provider === NON_OAUTH_PROVIDER.YAHOO;
     const location = useLocation();
     const isCurrentLocationImportPage = IA_PATHNAME_REGEX.test(location.pathname);
 
@@ -97,19 +97,16 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const { createModal } = useModals();
     const errorHandler = useErrorHandler();
 
-    const [showPassword, setShowPassword] = useState(false);
-
     const [modalModel, setModalModel] = useState<ImportMailModalModel>({
         step: MailImportStep.START,
         importID: currentImport?.ID || '',
         email: currentImport?.Email || '',
         password: '',
-        imap: currentImport?.ImapHost || '',
-        port: currentImport?.ImapPort || '',
+        imap: currentImport?.ImapHost || isYahoo ? IMAPS[NON_OAUTH_PROVIDER.YAHOO] : '',
+        port: currentImport?.ImapPort || isYahoo ? PORTS[NON_OAUTH_PROVIDER.YAHOO] : '',
         errorCode: 0,
         errorLabel: '',
         providerFolders: [],
-        needIMAPDetails: false,
         selectedPeriod: TIME_PERIOD.BIG_BANG,
         payload: {
             AddressID: addresses[0].ID,
@@ -122,8 +119,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     const { call } = useEventManager();
 
     const debouncedEmail = useDebounceInput(modalModel.email);
-
-    const needAppPassword = useMemo(() => modalModel.imap === IMAPS[NON_OAUTH_PROVIDER.YAHOO], [modalModel.imap]);
     const invalidPortError = useMemo(() => !isNumber(modalModel.port), [modalModel.port]);
 
     const title = useMemo(() => {
@@ -148,8 +143,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
             imap: ImapHost,
             port: ImapPort,
         });
-
-        setShowPassword(true);
     };
 
     const moveToPrepareStep = (Importer: ImporterFromServer, providerFolders: ImportedMailFolder[]) => {
@@ -183,7 +176,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                 ...modalModel,
                 errorCode: Code,
                 errorLabel: Error,
-                needIMAPDetails: modalModel.needIMAPDetails || Code === IMPORT_ERROR.IMAP_CONNECTION_ERROR,
             });
             return;
         }
@@ -191,7 +183,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         errorHandler(error);
     };
 
-    const submitAuthentication = async (needIMAPDetails = false) => {
+    const submitAuthentication = async () => {
         /* If we already have an importID we can just fetch the folders and move on */
         if (modalModel.importID) {
             try {
@@ -213,7 +205,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
             return;
         }
 
-        if ((modalModel.imap && modalModel.port) || needIMAPDetails) {
+        if (modalModel.imap && modalModel.port) {
             try {
                 const { ImporterID } = await api({
                     ...createImport({
@@ -254,7 +246,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         setModalModel({
             ...modalModel,
             imap: '',
-            needIMAPDetails: true,
         });
     };
 
@@ -339,7 +330,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                     await withLoading(resumeImporter());
                     return;
                 }
-                await withLoading(submitAuthentication(modalModel.needIMAPDetails));
+                await withLoading(submitAuthentication());
                 break;
             case MailImportStep.PREPARE:
                 await withLoading(launchImport());
@@ -361,11 +352,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
     }, [modalModel.step, loading]);
 
     const submitRenderer = useMemo(() => {
-        const { email, password, needIMAPDetails, imap, port, isPayloadInvalid, step } = modalModel;
-
-        const disabledStartStep = needIMAPDetails
-            ? !email || !password || !imap || !port || invalidPortError
-            : !email || !password;
+        const { email, password, imap, port, isPayloadInvalid, step } = modalModel;
+        const disabledStartStep = !email || !password || !imap || !port || invalidPortError;
 
         switch (step) {
             case MailImportStep.START:
@@ -398,7 +386,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         modalModel.step,
         modalModel.email,
         modalModel.password,
-        modalModel.needIMAPDetails,
         modalModel.imap,
         modalModel.port,
         modalModel.isPayloadInvalid,
@@ -412,17 +399,8 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
 
         if (debouncedEmail && validateEmailAddress(debouncedEmail)) {
             void withLoading(checkAuth());
-        } else {
-            setShowPassword(false);
         }
     }, [debouncedEmail, modalModel.step]);
-
-    // this one is to avoid a UI glitch when removing the email
-    useEffect(() => {
-        if (!modalModel.email) {
-            setShowPassword(false);
-        }
-    }, [modalModel.email]);
 
     return (
         <FormModal
@@ -438,8 +416,6 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                 <ImportStartStep
                     modalModel={modalModel}
                     updateModalModel={(newModel: ImportMailModalModel) => setModalModel(newModel)}
-                    needAppPassword={needAppPassword}
-                    showPassword={showPassword}
                     currentImport={currentImport}
                     invalidPortError={invalidPortError}
                     provider={provider}
