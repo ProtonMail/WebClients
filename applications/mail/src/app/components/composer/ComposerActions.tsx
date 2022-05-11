@@ -179,7 +179,7 @@ const ComposerActions = ({
                         <>
                             {c('Spotlight').t`You can now schedule your messages to be sent later`}
                             <br />
-                            <Href url={getKnowledgeBaseUrl('/scheduled-send/')} title="Scheduled send">
+                            <Href url={getKnowledgeBaseUrl('/scheduled-send')} title="Scheduled send">
                                 {c('Info').t`Learn more`}
                             </Href>
                         </>

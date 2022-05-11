@@ -6,7 +6,7 @@ const showUnsupported = () => {
     const isProtonVPN = (document.location.origin || document.location.href).indexOf('protonvpn') !== -1;
     const kbUrl = isProtonVPN
         ? 'https://protonvpn.com/support/browsers-supported/'
-        : getKnowledgeBaseUrl('/browsers-supported/');
+        : getKnowledgeBaseUrl('/recommended-browsers');
 
     document.body.innerHTML = `
         <div class="w50 p2 mt2 center big automobile text-center">

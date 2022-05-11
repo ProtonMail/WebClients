@@ -200,9 +200,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                                 {c('Action').t`Never show`}
                             </InlineLinkButton>
                         ) : (
-                            <Href  url={getKnowledgeBaseUrl('/address-verification/')}>
-                                {c('Link').t`Learn more`}
-                            </Href>
+                            <Href url={getKnowledgeBaseUrl('/address-verification')}>{c('Link').t`Learn more`}</Href>
                         )}
                     </span>
                 </div>

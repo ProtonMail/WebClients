@@ -497,10 +497,10 @@ export const getStatusIconName = ({ isEncrypted, fill }: Pick<Partial<StatusIcon
 
 export const getSendIconHref = ({ isEncrypted, fill }: Pick<Partial<StatusIcon>, 'isEncrypted' | 'fill'>) => {
     if (fill === CHECKMARK || fill === WARNING) {
-        return getKnowledgeBaseUrl('/digital-signature/');
+        return getKnowledgeBaseUrl('/digital-signature');
     }
     if (isEncrypted) {
         return undefined;
     }
-    return getKnowledgeBaseUrl('/what-is-encrypted/');
+    return getKnowledgeBaseUrl('/proton-mail-encryption-explained');
 };

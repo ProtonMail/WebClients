@@ -122,7 +122,7 @@ const MailSearch = ({ breakpoints }: Props) => {
                         <div className="text-bold text-lg mauto">{c('Spotlight').t`Message Content Search`}</div>
                         {c('Spotlight').t`You can now search the content of your encrypted emails.`}
                         <br />
-                        <Href url={getKnowledgeBaseUrl('/search-message-content/')} title="Message Content Search">
+                        <Href url={getKnowledgeBaseUrl('/search-message-content')} title="Message Content Search">
                             {c('Info').t`Learn more`}
                         </Href>
                     </>

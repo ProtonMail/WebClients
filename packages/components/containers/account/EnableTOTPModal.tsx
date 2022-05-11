@@ -86,7 +86,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
             const twoFactorAuthLink =
                 APP_NAME === APPS.PROTONVPN_SETTINGS
                     ? 'https://protonvpn.com/support/two-factor-authentication'
-                    : getKnowledgeBaseUrl('/two-factor-authentication');
+                    : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
             // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
             const guideButton = (

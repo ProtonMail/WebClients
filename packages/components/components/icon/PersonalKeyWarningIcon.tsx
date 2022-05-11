@@ -19,7 +19,7 @@ const PersonalKeyWarningIcon = ({ isWeak, className }: Props) => {
         .t`This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.`;
 
     return (
-        <Href url={getKnowledgeBaseUrl('/openpgp-keys-security/')} className={className}>
+        <Href url={getKnowledgeBaseUrl('/openpgp-keys-security')} className={className}>
             <WarningIcon warning={warning} />
         </Href>
     );

@@ -105,7 +105,7 @@ const ComposerInnerModals = ({
                     onSubmit={handleSendAnyway}
                     submit={c('Action').t`Send anyway`}
                 >
-                    <Alert learnMore={getKnowledgeBaseUrl('/attachment-reminders/')}>
+                    <Alert learnMore={getKnowledgeBaseUrl('/attachment-reminders')}>
                         {c('Info')
                             .t`You wrote “${attachmentsFoundKeyword}”, but no attachment has been added. Do you want to send your message anyway?`}
                     </Alert>

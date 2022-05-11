@@ -70,7 +70,7 @@ const LinkConfirmationModal = ({ link = '', isOutside = false, isPhishingAttempt
             {punyCodeLink && (
                 <>
                     {`${punyCodeLinkText} `}
-                    <Href url={getKnowledgeBaseUrl('/homograph-attacks/')} title="What are homograph attacks?">
+                    <Href url={getKnowledgeBaseUrl('/homograph-attacks')} title="What are homograph attacks?">
                         {c('Info').t`Learn more`}
                     </Href>
                 </>

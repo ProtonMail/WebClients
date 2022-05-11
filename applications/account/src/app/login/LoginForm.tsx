@@ -78,7 +78,7 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
         <Href
             className="color-inherit"
             key="learn-more"
-            url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode/')}
+            url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode')}
         >{c('Info').t`Learn more`}</Href>
     );
 

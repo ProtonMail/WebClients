@@ -78,7 +78,7 @@ const SessionsSection = () => {
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/log-out-all-other-sessions/')}>
+            <SettingsParagraph learnMoreUrl={getKnowledgeBaseUrl('/log-out-all-other-sessions')}>
                 {c('Info')
                     .t`Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.`}
             </SettingsParagraph>
