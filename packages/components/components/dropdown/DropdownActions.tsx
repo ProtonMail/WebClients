@@ -72,7 +72,7 @@ const DropdownActions = ({
 
     return (
         <ButtonGroup size={size}>
-            <Button disabled={disabled} loading={loading} className={className} {...restProps} {...restButtonProps}>
+            <Button disabled={disabled || loading} className={className} {...restProps} {...restButtonProps}>
                 {wrapTooltip(text, tooltip)}
             </Button>
             <SimpleDropdown
