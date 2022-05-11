@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Row, Label, Field, PasswordInput, Input, Href } from '../../../../../components';
+import { Alert, Row, Label, Field, Href, InputTwo, PasswordInputTwo } from '../../../../../components';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
 
 import { ImportMailModalModel } from '../../interfaces';
@@ -253,7 +253,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
             <Row>
                 <Label htmlFor="emailAddress">{c('Label').t`Email`}</Label>
                 <Field>
-                    <Input
+                    <InputTwo
                         id="emailAddress"
                         value={email}
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
@@ -262,9 +262,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                         autoFocus
                         required
                         disabled={isReconnect}
-                        isSubmitted={!!errorLabel}
                         error={isAuthError ? errorLabel : undefined}
-                        errorZoneClassName="hidden"
                         placeholder={provider && EASY_SWITCH_EMAIL_PLACEHOLDER[provider]}
                     />
                 </Field>
@@ -274,23 +272,21 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                     {needAppPassword ? c('Label').t`App password` : c('Label').t`Password`}
                 </Label>
                 <Field>
-                    <PasswordInput
+                    <PasswordInputTwo
                         id="password"
                         value={password}
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
                             updateModalModel({ ...modalModel, password: target.value })
                         }
                         required
-                        isSubmitted={!!errorLabel}
                         error={isAuthError ? errorLabel : undefined}
-                        errorZoneClassName="hidden"
                     />
                 </Field>
             </Row>
             <Row>
                 <Label htmlFor="imap">{c('Label').t`Mail Server (IMAP)`}</Label>
                 <Field>
-                    <Input
+                    <InputTwo
                         id="imap"
                         placeholder="imap.domain.com"
                         value={imap}
@@ -298,16 +294,14 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                             updateModalModel({ ...modalModel, imap: target.value });
                         }}
                         required
-                        isSubmitted={!!errorLabel}
                         error={isIMAPError ? errorLabel : undefined}
-                        errorZoneClassName="hidden"
                     />
                 </Field>
             </Row>
             <Row>
                 <Label htmlFor="port">{c('Label').t`Port`}</Label>
                 <Field>
-                    <Input
+                    <InputTwo
                         id="port"
                         placeholder="993"
                         value={port}
@@ -315,9 +309,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                             updateModalModel({ ...modalModel, port: target.value })
                         }
                         required
-                        isSubmitted={!!imapPortError}
                         error={imapPortError}
-                        errorZoneClassName="hidden"
                     />
                 </Field>
             </Row>
