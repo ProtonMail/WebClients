@@ -338,6 +338,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         <>
             {step === ACCOUNT_CREATION_USERNAME && (
                 <AccountStep
+                    clientType={clientType}
                     onBack={handleBackStep}
                     title={(() => {
                         if (model.referralData) {

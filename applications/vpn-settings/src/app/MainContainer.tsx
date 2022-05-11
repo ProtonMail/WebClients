@@ -42,6 +42,7 @@ import {
     WireGuardConfigurationSection,
     useModalState,
     UserDropdown,
+    Unauthenticated,
 } from '@proton/components';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -161,7 +162,9 @@ const MainContainer = () => {
             {render && <AuthenticatedBugModal mode={authenticatedBugReportMode} {...authenticatedBugReportModal} />}
             <Switch>
                 <Route path="/tv">
-                    <TVContainer />
+                    <Unauthenticated>
+                        <TVContainer />
+                    </Unauthenticated>
                 </Route>
                 <Route path="*">
                     <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
