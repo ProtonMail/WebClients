@@ -54,6 +54,18 @@ export const getDefaultCalendar = <T extends Calendar>(
     return personalCalendars.find(({ ID }) => ID === defaultCalendarID) || personalCalendars[0];
 };
 
+export const getVisualCalendar = <T>(calendar: CalendarWithMembers & T, addressID: string): VisualCalendar & T => {
+    const member = calendar.Members.find(({ AddressID }) => AddressID === addressID);
+    if (!member) {
+        throw new Error('Calendar member could not be found');
+    }
+    return {
+        ...calendar,
+        Color: member.Color,
+        Display: member.Display,
+    };
+};
+
 export const getVisualCalendars = <T>(
     calendars: (CalendarWithMembers & T)[],
     addresses: Address[]
