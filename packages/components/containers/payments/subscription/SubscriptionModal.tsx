@@ -211,14 +211,15 @@ const SubscriptionModal = ({
 
         try {
             setModel({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE });
-            await api(
-                subscribe({
+            await api({
+                ...subscribe({
                     Plans: model.planIDs,
                     Codes: getCodes(model),
                     Cycle: model.cycle,
                     ...params, // Contains Payment, Amount and Currency
-                })
-            );
+                }),
+                timeout: 60000 * 2, // 2 minutes
+            });
             await call();
             setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
         } catch (error: any) {
