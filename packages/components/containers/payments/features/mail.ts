@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, MAIL_APP_NAME, PLANS } from '@proton/shared/lib/constants';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
@@ -161,7 +161,7 @@ export const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`End-to-end encryption`,
         tooltip: c('new_plans: tooltip')
-            .t`Prevents messages from being intercepted in transit or being accessed by either ${MAIL_APP_NAME} or other email providers. The only people who can read the messages are the sender and recipient.`,
+            .t`Prevents messages from being accessed by ${BRAND_NAME} or third parties. The only people who can read the messages are the sender and the intended recipient.`,
         included: true,
     };
 };
