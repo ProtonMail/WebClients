@@ -40,7 +40,7 @@ const EmailPrivacySection = () => {
                     <label htmlFor="remoteToggle" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Ask before loading remote content`}</span>
                         <Info
-                            url={getKnowledgeBaseUrl('/images-by-default/')}
+                            url={getKnowledgeBaseUrl('/images-by-default')}
                             title={c('Info')
                                 .t`Prevents content from the sender's server from loading without your permission.`}
                         />

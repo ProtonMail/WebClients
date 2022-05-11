@@ -175,7 +175,7 @@ const UsersAndAddressesSection = () => {
                 <>
                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                     <span className="no-mobile">
-                        <Info url={getKnowledgeBaseUrl('/member-roles/')} />
+                        <Info url={getKnowledgeBaseUrl('/member-roles')} />
                     </span>
                 </>
             ),
@@ -332,7 +332,7 @@ const UsersAndAddressesSection = () => {
                                 <div className="text-bold min-w7e mr1">
                                     <span className="mr0-5">{c('Title header for members table').t`Role`}</span>
                                     <span className="no-mobile">
-                                        <Info url={getKnowledgeBaseUrl('/member-roles/')} />
+                                        <Info url={getKnowledgeBaseUrl('/member-roles')} />
                                     </span>
                                 </div>
                                 <div className="flex-item-fluid">

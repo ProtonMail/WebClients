@@ -18,7 +18,7 @@ const DomainSection = ({ domain, onChange }) => {
 
     return (
         <>
-            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domains/')}>
+            <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/custom-domains')}>
                 {c('Label for adding a new custom domain')
                     .t`Add a domain that you own to your ${MAIL_APP_NAME} account.`}
             </Alert>

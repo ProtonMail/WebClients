@@ -18,9 +18,7 @@ const ExtraAutoReply = ({ message }: Props) => {
             <Icon name="robot" className="flex-item-noshrink ml0-2 mt0-3" />
             <span className="pl0-5 pr0-5 mt0-25 pb0-25 flex-item-fluid">
                 {c('Info').t`This message is automatically generated as a response to a previous message.`}{' '}
-                <Href href={getKnowledgeBaseUrl('/autoresponder/')}>
-                    {c('Info').t`Learn more`}
-                </Href>
+                <Href href={getKnowledgeBaseUrl('/autoresponder')}>{c('Info').t`Learn more`}</Href>
             </span>
         </div>
     );

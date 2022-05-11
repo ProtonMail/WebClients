@@ -39,7 +39,7 @@ const SendWithExpirationModal = ({ emails, onSubmit, onClose, ...rest }: Props) 
                     {c('Info')
                         .t`Message expiration works out-of-the-box when sending emails to other ${MAIL_APP_NAME} users. To send expiring emails to non-${BRAND_NAME} users, please cancel and add password protection to your email.`}
                     <br />
-                    <Href url={getKnowledgeBaseUrl('/expiration/')}>{c('Info').t`Learn more`}</Href>
+                    <Href url={getKnowledgeBaseUrl('/expiration')}>{c('Info').t`Learn more`}</Href>
                 </div>
                 <span>
                     {c('Send email with warnings').ngettext(

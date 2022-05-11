@@ -124,7 +124,7 @@ const ContactViewErrors = ({ contactID, errors, onReload }: Props) => {
                 <span className="mr0-5">{text}</span>
                 <Href
                     className="underline inline-block color-inherit"
-                    url={getKnowledgeBaseUrl('/encrypted-contacts/')}
+                    url={getKnowledgeBaseUrl('/encrypted-contacts')}
                 >{c('Link').t`Learn more`}</Href>
             </span>
             <span className="flex-item-noshrink flex">

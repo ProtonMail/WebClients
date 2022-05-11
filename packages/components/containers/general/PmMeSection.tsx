@@ -16,7 +16,7 @@ const PmMeSection = ({ isPMAddressActive }: Props) => {
         <SettingsSection>
             {!isPMAddressActive ? (
                 <>
-                    <SettingsParagraph className="mb1" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses/')}>
+                    <SettingsParagraph className="mb1" learnMoreUrl={getKnowledgeBaseUrl('/pm-me-addresses')}>
                         {c('Info')
                             .t`Add a @pm.me email address to your account. This simple, shorter domain stands for "${MAIL_APP_NAME} me" or "Private Message me."`}
                     </SettingsParagraph>

@@ -142,7 +142,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your phone number will only be used for this one-time verification.`} </span>
-                        <LearnMore url={getKnowledgeBaseUrl('/human-verification/')} />
+                        <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
                     </Text>
                     <PhoneMethodForm
                         isEmbedded={isEmbedded}
@@ -167,7 +167,7 @@ const CodeMethod = ({
                 <>
                     <Text>
                         <span>{c('Info').t`Your email will only be used for this one-time verification.`} </span>
-                        <LearnMore url={getKnowledgeBaseUrl('/human-verification/')} />
+                        <LearnMore url={getKnowledgeBaseUrl('/human-verification')} />
                     </Text>
                     <EmailMethodForm
                         api={api}

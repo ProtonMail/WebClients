@@ -6,7 +6,7 @@ import { Href } from '../../../link';
 const OutlookCalendarInstructions = () => {
     // translator: full sentence: "To import a calendar to Proton, you need the ICS file. Download it from Outlook in 3 easy steps:"
     const knowledgeBaseLink = (
-        <Href url={getKnowledgeBaseUrl('/import-calendar-to-protoncalendar/')} key="knowledgeBaseLink">
+        <Href url={getKnowledgeBaseUrl('/import-calendar-to-protoncalendar')} key="knowledgeBaseLink">
             {c('Import instructions link').t`ICS file`}
         </Href>
     );
