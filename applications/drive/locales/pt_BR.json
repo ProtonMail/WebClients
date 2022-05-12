@@ -505,9 +505,6 @@
       "Submit report": [
         "Enviar relatório de erros"
       ],
-      "Switch account": [
-        "Alternar de conta"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -2667,7 +2664,7 @@
         "Nenhum das chaves carregadas é valida para criptografia. A criptografia será automaticamente desativada."
       ],
       "Not a valid URL": [
-        ""
+        "Não é uma URL válida"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Observação: Os dados ainda podem estar disponíveis localmente em dispositivos onde você instalou ${ appName }."
@@ -3541,6 +3538,11 @@
       ],
       "Label name": [
         "Nome do marcador"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Mudar ou adicionar conta"
       ]
     },
     "new_plans: info": {

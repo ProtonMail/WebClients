@@ -50,7 +50,7 @@
         "新增 ${ BRAND_NAME } 帳號"
       ],
       "Add address": [
-        "新增電子郵件地址"
+        "新增電郵位址"
       ],
       "Add calendar": [
         "新增行事曆"
@@ -720,9 +720,6 @@
       ],
       "Support": [
         "支援"
-      ],
-      "Switch account": [
-        "切換帳戶"
       ],
       "Switch to rich text": [
         "切換至豐富文字"
@@ -2442,8 +2439,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "您想從 Proton 收到哪些電子郵件？"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "您想收到哪些 ${ BRAND_NAME } 的最新消息？"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "您已重新訂閱 ${ categoriesJsx } 電子郵件。"
@@ -8740,9 +8737,6 @@
       ],
       "Processing...": [
         "處理中..."
-      ],
-      "Proton Logo": [
-        "Proton 圖示"
       ],
       "Recommended": [
         ""

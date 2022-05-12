@@ -721,9 +721,6 @@
       "Support": [
         "Assistance"
       ],
-      "Switch account": [
-        "Changer de compte"
-      ],
       "Switch to rich text": [
         "Passer au texte enrichi"
       ],
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Quels courriels souhaitez-vous recevoir de la part de Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Quels courriels souhaitez-vous recevoir de la part de ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Vous vous êtes réabonné aux courriels ${ categoriesJsx }."
@@ -8831,9 +8828,6 @@
       ],
       "Processing...": [
         "Traitement en cours..."
-      ],
-      "Proton Logo": [
-        "Logo de Proton"
       ],
       "Recommended": [
         "Recommandé"

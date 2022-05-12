@@ -721,9 +721,6 @@
       "Support": [
         "Ondersteuning"
       ],
-      "Switch account": [
-        "Account wijzigen"
-      ],
       "Switch to rich text": [
         "Overschakelen naar rich tekst"
       ],
@@ -1192,7 +1189,7 @@
         "Link toevoegen aan uw e-mailvoet"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Blijf ${ MAIL_APP_NAME } gebruiken."
       ],
       "Copy": [
         "Kopiëren"
@@ -2326,7 +2323,7 @@
         "Volg hoeveel mensen klikken op uw link, registreren en betalende gebruikers worden. Kijk hoeveel gratis maanden er toegevoegd worden."
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
-        ""
+        "U kan vrienden blijven uitnodigern, maar u kan niet meer tegoed ontvangen"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Welke e-mails wilt u ontvangen van Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Welke e-mails wilt u ontvangen van ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "U bent opnieuw geabonneerd op ${ categoriesJsx } e-mails."
@@ -2693,10 +2690,10 @@
         "Probeer opnieuw te verifiëren en zorg ervoor dat de machtigingen correct zijn ingesteld."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        ""
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om multi-gebruiker ondersteuning te ontvangen"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        ""
+        "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om meerdere gebruikers te beheren."
       ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet gedecodeerd"
@@ -3961,13 +3958,13 @@
         "* Green kredietkaart vereist."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Met 1-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Met 12-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Met 24-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
@@ -4004,7 +4001,7 @@
         "Met een herstelzin kunt u toegang krijgen tot uw account en uw gecodeerde berichten herstellen als u uw wachtwoord bent vergeten."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "Een gebruiker is een account geassocieerd met een enkele gebruikersnaam, mailbox en persoon"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Account toegang beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
@@ -4047,7 +4044,7 @@
         "Adresverificatie is een geavanceerde beveiligingsfunctie. Schakel dit alleen in als u weet wat het doet."
       ],
       "Admin account allocation": [
-        ""
+        "Toewijzing beheerdersaccount"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "Na een wachtwoordherstel worden uw gegevens opgesloten op een versleutelde manier om ze veilig te houden."
@@ -4260,7 +4257,7 @@
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
+        "Tegoeden, aftrekken en andere toepasbare kortingscodes worden toegepast bij het afrekenen"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
@@ -4348,7 +4345,7 @@
         "E-mailadres"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
         "E-mailhosting is enkel beschikbaar voor domeinen die u al bezit. Domeinregistratie is momenteel niet beschikbaar via Proton. U kan e-mails hosten voor domeinen geregistreerd bij elke domeinregistrar."
@@ -4387,7 +4384,7 @@
         "Voer de verificatiecode in die is verzonden naar ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "Voer uw ${ BRAND_NAME } Accountgegevens in."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
@@ -4474,7 +4471,7 @@
         "Als u de mail niet kunt vinden in uw inbox, check dan eerst de map 'Spam'."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "Als u een eigen domein heeft met ${ MAIL_APP_NAME }, kunt u een catch-all e-mailadres instellen dat berichten zal ontvangen die naar uw domein worden verstuurd, maar op een ongeldig e-mailadres (bijv. typos)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Als u een geschenkcode heeft, voer deze hieronder in om uw korting toe te passen."
@@ -4942,7 +4939,7 @@
         "Selecteer Doorgaan naar ${ name } om de app te openen. Dit maakt ook een ${ name }-account aan met uw ${ MAIL_APP_NAME }-adres zodat u in de toekomst met één klik kunt inloggen."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Selecter het aantal inbegrepen gebruikers in uw abonnement. Elke extra gebruiker kost ${ price }. Heeft u meer dan ${ maxUsers } gebruikersaccount nodig, ${ contactMailToLink } dan ons Klantensuccesteam."
       ],
       "Select what you want to move from Google.": [
         "Selecteer wat u wil importeren vanaf Google."
@@ -5278,7 +5275,7 @@
         "We sturen een resetcode naar het telefoonnummer dat u hebt opgegeven voor het herstel van uw account."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder uw informatie."
@@ -5508,7 +5505,7 @@
         "Sleutel ${ fingerprint } is al geüpload"
       ],
       "Track your referral link activities here": [
-        ""
+        "Volg uw doorverwijslinkactiviteiten hier"
       ]
     },
     "Info - folder colouring feature": {
@@ -7201,6 +7198,9 @@
       "Keep account": [
         "Account behouden"
       ],
+      "Switch or add account": [
+        "Van account wisselen of account toevoegen"
+      ],
       "Switch plan": [
         "Van abonnement wisselen"
       ]
@@ -7213,7 +7213,7 @@
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
       "From ${ _price } per user": [
-        ""
+        "Vanaf ${ _price } per gebruiker"
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
@@ -7291,6 +7291,9 @@
       ],
       "${ size } total storage": [
         "${ size } opslagruimte"
+      ],
+      "1 free VPN connection in total": [
+        "1 gratis VPN-verbinding"
       ],
       "99.95% SLA": [
         "99,95% SLA"
@@ -7689,8 +7692,8 @@
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Telefonische ondersteuning van het Proton-klantensuccesteam is beschikbaar tijdens Europese kantooruren voor klanten met 6 of meer gebruikers"
       ],
-      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
-        "Voorkomt dat berichten onderweg worden onderschept of worden gelezen door ${ MAIL_APP_NAME } of andere e-mailproviders. De enige mensen die de berichten kunnen lezen, zijn de afzender en de ontvanger."
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Voorkomt dat berichten worden gelezen door ${ BRAND_NAME } of derden. De enige personen die de berichten kunnen lezen, zijn de afzender en de beoogde ontvanger."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Bescherm elk apparaat dat is verbonden met je wifinetwerk. Dit is ook handig als je apparaten hebt die niet direct VPN-instellingen ondersteunen."
@@ -8614,7 +8617,7 @@
         "Ingebouwde adblocker (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
+        "Suppersnelle VPN op ${ maxVpn } apparaat",
         ""
       ]
     },
@@ -8630,7 +8633,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "De privacy-eerst e-mail en agenda oplossing voor uw alledaagse communicatienoden."
       ]
     },
     "Success": {
@@ -9476,9 +9479,6 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
-      "Proton Logo": [
-        "Proton Logo"
-      ],
       "Recommended": [
         "Aanbevolen"
       ],
@@ -9498,7 +9498,7 @@
         "Verwijs een vriend door"
       ],
       "Referral tracker": [
-        ""
+        "Doorverwijstracker"
       ],
       "Remove calendar": [
         "Agenda verwijderen"
@@ -9852,7 +9852,7 @@
         "Kies de standaard lay-out voor uw Inbox."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Stelt de volgende voet in voor de e-mails die u verstuurt: ${ signature } De link verwijst naar uw doorverwijslink. De voet verschijnt onder uw handtekening. U kan uw handtekening op elk moment personaliseren via de instellingen."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Ondertekeningen die met deze sleutel gemaakt zijn worden als ongeldig behandeld en deze sleutel kan niet gebruikt worden voor het versleutelen"
@@ -9913,7 +9913,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages. Learn more": [
-        ""
+        "Selecteer de standaard PGP-instellingen die worden gebruikt voor het ondertekenen of versleutelen van berichten met niet-${ BRAND_NAME }-gebruikers. Merk op dat Inline PGP-gebruikers berichten zonder opmaak weergeven. Meer informatie"
       ]
     },
     "Tooltip prompt to trust keys": {

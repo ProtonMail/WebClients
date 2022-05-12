@@ -721,9 +721,6 @@
       "Support": [
         "サポート"
       ],
-      "Switch account": [
-        "アカウントを切り替え"
-      ],
       "Switch to rich text": [
         "リッチテキストに切り替え"
       ],
@@ -2442,8 +2439,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Proton からどのようなメールを受信したいですか？"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "${ categoriesJsx } のメールを再購読しました"
@@ -8740,9 +8737,6 @@
       ],
       "Processing...": [
         "処理中..."
-      ],
-      "Proton Logo": [
-        "Proton ロゴ"
       ],
       "Recommended": [
         "おすすめ"

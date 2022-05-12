@@ -505,9 +505,6 @@
       "Submit report": [
         "Rapport indienen"
       ],
-      "Switch account": [
-        "Account wisselen"
-      ],
       "Theme": [
         "Thema"
       ],
@@ -2667,7 +2664,7 @@
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
       "Not a valid URL": [
-        ""
+        "Geen geldige URL"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ appName } hebt geïnstalleerd."
@@ -3541,6 +3538,11 @@
       ],
       "Label name": [
         "Labelnaam"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Van account wisselen of account toevoegen"
       ]
     },
     "new_plans: info": {

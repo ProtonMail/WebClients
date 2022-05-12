@@ -721,9 +721,6 @@
       "Support": [
         "Podpora"
       ],
-      "Switch account": [
-        "Přepnout účet"
-      ],
       "Switch to rich text": [
         "Přepnout na formátovaný text"
       ],
@@ -2493,8 +2490,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Který e-maily chcete dostávat od služeb Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Který e-maily chcete dostávat od služeb ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Znovu přihlášení k ${ categoriesJsx } e-mailům."
@@ -3938,10 +3935,10 @@
         "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
       "${ emailAddress } is invalid": [
-        "{ emailAddress } není platná e-mailová adresa"
+        "${ emailAddress } není platná e-mailová adresa"
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
+        "${ forgotPasswordLink } nebo ${ forgotUsernameLink }?"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jedno heslo\", které chcete použít a klikněte Uložit."
@@ -4283,7 +4280,7 @@
         "Je vyžadováno předplatné Basic, Plus nebo Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ${ MAIL_APP_NAME }, je potřeba přidat následující záznamy MX a DNS. To lze obvykle provést v ovládacích panelech u registrátora názvu domény."
@@ -4370,7 +4367,7 @@
         "Vytvořit v"
       ],
       "Creating your account": [
-        ""
+        "Vytvářím váš účet"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         ""
@@ -5057,7 +5054,7 @@
         "Naskenujte tento kód pomocí zařízení určeného pro dvoufázové ověření a nastavte svůj účet. ${ switchButton }."
       ],
       "Securing your account": [
-        ""
+        "Zabezpečení vašeho účtu"
       ],
       "Select a service provider to start": [
         "Vyberte poskytovatele služeb a začněte"
@@ -5198,7 +5195,7 @@
         "Toto heslo jste použili předtím, než jste ho resetovali."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -5327,7 +5324,7 @@
         "Aktualizovat obnovovací frázi"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -5501,7 +5498,7 @@
         "Váš PayPal účet musíte mít propojený s kreditní kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        ""
+        "Před zrušením předplatného musíte odebrat všechny své osobní kalendáře a jejich sdílené odkazy."
       ],
       "You need to have a personal calendar to create a link.": [
         "Musíte mít osobní kalendář pro vytvoření odkazu."
@@ -7373,7 +7370,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        ""
+        "Vítejte v ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -8463,10 +8460,10 @@
         "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ maxUsers } uživatel",
+        "${ maxUsers } uživatelé",
+        "${ maxUsers } uživatelů",
+        "${ maxUsers } uživatelů"
       ],
       "1. Give a name to the config to be generated": [
         "1. Pojmenujte konfiguraci, která se má vygenerovat"
@@ -8580,7 +8577,7 @@
         "Opravdu chcete zavřít editor filtrů?"
       ],
       "Auto-reply": [
-        ""
+        "Automatická odpověď"
       ],
       "Automatically sign outgoing messages?": [
         "Automaticky podepisovat odchozí zprávy?"
@@ -8661,7 +8658,7 @@
         ""
       ],
       "Connect ${ name }": [
-        ""
+        "Připojit ${ name }"
       ],
       "Contact encryption keys": [
         "Šifrovací klíče kontaktu"
@@ -8856,7 +8853,7 @@
         "Získejte ${ vpnPlus } pro přístup ke všem serverům"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
       "Gift code": [
         "Dárkový kód"
@@ -9014,9 +9011,6 @@
       "Processing...": [
         "Zpracovávání..."
       ],
-      "Proton Logo": [
-        "Logo Protonu"
-      ],
       "Recommended": [
         "Doporučeno"
       ],
@@ -9063,7 +9057,7 @@
         "Zrušit certifikát"
       ],
       "Save contact details": [
-        ""
+        "Uložit detaily kontaktu"
       ],
       "Secure email based in Switzerland": [
         "Bezpečný e-mail se sídlem ve Švýcarsku"
@@ -9129,7 +9123,7 @@
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
       "Sign in and grant access": [
-        ""
+        "Přihlaste se a povolte přístup"
       ],
       "Sort folders alphabetically": [
         "Řadit složky abecedně"
@@ -9192,7 +9186,7 @@
         "Nepodporovaný prohlížeč"
       ],
       "Upgrade plan": [
-        ""
+        "Upgradovat plán"
       ],
       "Username": [
         "Uživatelské jméno"
@@ -9201,7 +9195,7 @@
         "Uživatelé a adresy"
       ],
       "Verification": [
-        ""
+        "Ověření"
       ],
       "VPN apps": [
         "VPN aplikace"
@@ -9213,7 +9207,7 @@
         "Pozor!"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Varování: pravděpodobně se jedná o podvodnou stránku"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"
@@ -9228,7 +9222,7 @@
         "Konfigurace WireGuard"
       ],
       "You already have a Proton account": [
-        ""
+        "Již máte účet Proton"
       ],
       "Your ${ domain } address is active": [
         "Vaše ${ domain } adresa je aktivní"
