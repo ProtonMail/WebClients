@@ -1,3 +1,4 @@
+import mod from '@proton/util/mod';
 import { addDays, isNextDay } from '../date-fns-utc';
 import {
     convertUTCDateTimeToZone,
@@ -7,7 +8,6 @@ import {
     toUTCDate,
 } from '../date/timezone';
 import { buildMailTo, canonizeEmail, getEmailTo } from '../helpers/email';
-import { mod } from '../helpers/math';
 import {
     VcalAttendeeProperty,
     VcalDateOrDateTimeProperty,

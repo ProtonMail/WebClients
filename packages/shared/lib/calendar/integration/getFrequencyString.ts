@@ -1,8 +1,8 @@
 import { c, msgid } from 'ttag';
+import mod from '@proton/util/mod';
 import { format } from '../../date-fns-utc';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
 import { unique } from '../../helpers/array';
-import { mod } from '../../helpers/math';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
 import { getPositiveSetpos } from '../helper';
 import {
