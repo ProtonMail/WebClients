@@ -4065,6 +4065,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/styles@workspace:packages/styles"
   dependencies:
+    inter-ui: ^3.19.3
     prettier: ^2.6.2
     sass: ^1.51.0
     stylelint: ^13.13.1
@@ -17505,6 +17506,13 @@ fsevents@^1.2.7:
     strip-ansi: ^6.0.0
     through: ^2.3.6
   checksum: 861d1a9324ae933b49126b3541d94e4d6a2f2a25411b3f3cc00c34bf1bdab34146362d702cf289efe6d8034900dc5905bcf2ea716092a02b6fc390e5986dd236
+  languageName: node
+  linkType: hard
+
+"inter-ui@npm:^3.19.3":
+  version: 3.19.3
+  resolution: "inter-ui@npm:3.19.3"
+  checksum: 74435e742e9829402cf15ac08aa48541c93e96d7528a29ba3bc2a14b059ccd3f330ddba8b1c96f06bfdda46b0c7e1a406db22a309045b3412b66ec4dcb5efa2a
   languageName: node
   linkType: hard
 
