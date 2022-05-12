@@ -1,4 +1,4 @@
-import { OpenPGPKey } from 'pmcrypto';
+import { PublicKeyReference } from '@proton/crypto';
 import { fireEvent } from '@testing-library/dom';
 import { addApiMock, clearAll, generateKeys, render, tick } from '../../../helpers/test/helper';
 import { MessageVerification } from '../../../logic/messages/messagesTypes';
@@ -6,8 +6,9 @@ import ExtraAskResign from './ExtraAskResign';
 import { store } from '../../../logic/store';
 import { refresh } from '../../../logic/contacts/contactsActions';
 import { contactEmails, message, setupContactsForPinKeys } from '../../../helpers/test/pinKeys';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 
-const getMessageVerification = (isSenderVerified: boolean, pinnedKeys?: OpenPGPKey[]) => {
+const getMessageVerification = (isSenderVerified: boolean, pinnedKeys?: PublicKeyReference[]) => {
     return {
         senderVerified: isSenderVerified,
         senderPinnedKeys: pinnedKeys,
@@ -25,6 +26,14 @@ const setup = async (messageVerification: MessageVerification) => {
 };
 
 describe('Extra ask resign banner', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     beforeEach(clearAll);
 
     it('should not display the extra ask resign banner when sender is verified and keys are pinned', async () => {

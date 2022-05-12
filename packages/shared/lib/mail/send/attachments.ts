@@ -9,7 +9,7 @@ export const encryptAttachment = async (
     { name, type, size }: File = {} as File,
     inline: boolean,
     publicKeys: PublicKeyReference[],
-    privateKeys?: PrivateKeyReference[]
+    privateKeys: PrivateKeyReference[] = []
 ): Promise<Packets> => {
     const dataType = data instanceof Uint8Array ? 'binaryData' : 'textData';
     const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: publicKeys });
@@ -18,7 +18,7 @@ export const encryptAttachment = async (
     // symmetrically encrypted data
     const { message: encryptedData, signature } = await CryptoProxy.encryptMessage({
         format: 'binary',
-        detached: true,
+        detached: privateKeys.length > 0, // Only relevant if private keys are given
         [dataType]: data,
         stripTrailingSpaces: dataType === 'textData',
         sessionKey,

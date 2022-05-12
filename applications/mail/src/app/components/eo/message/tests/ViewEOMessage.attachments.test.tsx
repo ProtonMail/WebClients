@@ -1,10 +1,12 @@
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
-import { fireEvent, within } from '@testing-library/dom';
+import { fireEvent, waitFor, within } from '@testing-library/dom';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { setup } from './ViewEOMessage.test.helpers';
 import { EOClearAll } from '../../../../helpers/test/eo/helpers';
 import { assertIcon } from '../../../../helpers/test/assertion';
 import { tick } from '../../../../helpers/test/render';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../../helpers/test/crypto';
+
 describe('Encrypted Outside message attachments', () => {
     const cid = 'cid';
     const attachment1 = {
@@ -44,12 +46,20 @@ describe('Encrypted Outside message attachments', () => {
     const icons = ['md-unknown', 'md-pdf', 'md-image'];
     const totalSize = Attachments.map((attachment) => attachment.Size).reduce((acc, size) => acc + size, 0);
 
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     afterEach(EOClearAll);
 
     it('should show EO attachments with their correct icon', async () => {
         const { getAllByTestId } = await setup({ attachments: Attachments, numAttachments: NumAttachments });
 
-        const items = getAllByTestId('attachment-item');
+        const items = await waitFor(() => getAllByTestId('attachment-item'));
         expect(items.length).toBe(NumAttachments);
         for (let i = 0; i < NumAttachments; i++) {
             const { getByText, getByTestId } = within(items[i]);
@@ -67,7 +77,7 @@ describe('Encrypted Outside message attachments', () => {
         const body = '<div><img src="cid:cid-embedded"/></div>';
         const { getByTestId } = await setup({ attachments: Attachments, numAttachments: NumAttachments, body: body });
 
-        const header = getByTestId('attachments-header');
+        const header = await waitFor(() => getByTestId('attachments-header'));
 
         expect(header.textContent).toMatch(String(totalSize));
         expect(header.textContent).toMatch(/2\s*files/);
@@ -77,7 +87,7 @@ describe('Encrypted Outside message attachments', () => {
     it('should open preview when clicking', async () => {
         const { getAllByTestId } = await setup({ attachments: Attachments, numAttachments: NumAttachments });
 
-        const items = getAllByTestId('attachment-item');
+        const items = await waitFor(() => getAllByTestId('attachment-item'));
         const itemButton = items[2].querySelectorAll('button')[1];
 
         fireEvent.click(itemButton);

@@ -1,4 +1,3 @@
-import { OpenPGPKey } from 'pmcrypto';
 import { SIGNATURE_START, VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import {
     ENCRYPTION_PREFERENCES_ERROR_TYPES,
@@ -6,6 +5,7 @@ import {
 } from '@proton/shared/lib/mail/encryptionPreferences';
 import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { PublicKeyReference } from '@proton/crypto';
 import { StatusIcon, STATUS_ICONS_FILLS, X_PM_HEADERS } from '../../models/crypto';
 import {
     getReceivedStatusIcon,
@@ -18,18 +18,12 @@ import { MessageState, MessageVerification } from '../../logic/messages/messages
 
 const { NOT_SIGNED, NOT_VERIFIED, SIGNED_AND_VALID, SIGNED_AND_INVALID } = VERIFICATION_STATUS;
 
-const fakeKey1: OpenPGPKey = {
+const fakeKey1: PublicKeyReference = {
     getFingerprint() {
         return 'fakeKey1';
     },
-    users: [
-        {
-            userId: {
-                userid: '<user@pm.me>',
-            },
-        },
-    ],
-} as any;
+    getUserIDs: () => ['<user@pm.me>'],
+} as PublicKeyReference;
 
 describe('icon', () => {
     describe('getSendStatusIcon', () => {
