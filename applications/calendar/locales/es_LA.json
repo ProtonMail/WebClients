@@ -412,9 +412,6 @@
       "Submit": [
         "Enviar"
       ],
-      "Switch account": [
-        "Cambiar de cuenta"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -3028,7 +3025,7 @@
         "Ninguna de las claves cargadas son válidas para el cifrado. El cifrado se desactiva automáticamente."
       ],
       "Not a valid URL": [
-        ""
+        "No es una URL válida"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Se mantendrán las ocurrencias previamente actualizadas por el organizador, pero algunas de sus respuestas se perderán."
@@ -3894,6 +3891,11 @@
       ],
       "Label name": [
         "Nombre de la etiqueta"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Cambiar o añadir cuenta"
       ]
     },
     "new_plans: info": {

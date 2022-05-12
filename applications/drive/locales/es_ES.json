@@ -505,9 +505,6 @@
       "Submit report": [
         "Enviar informe"
       ],
-      "Switch account": [
-        "Cambiar de cuenta"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -2667,7 +2664,7 @@
         "Ninguna de las claves cargadas es válida para cifrado. El cifrado se ha deshabilitado automáticamente."
       ],
       "Not a valid URL": [
-        ""
+        "No es una URL válida"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Nota: Los datos pueden seguir estando disponibles localmente en los dispositivos en los que hayas instalado ${ appName }."
@@ -3541,6 +3538,11 @@
       ],
       "Label name": [
         "Nombre de la etiqueta"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Cambiar o añadir cuenta"
       ]
     },
     "new_plans: info": {

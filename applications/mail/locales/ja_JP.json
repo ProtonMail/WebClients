@@ -818,9 +818,6 @@
       "Submit": [
         "送信"
       ],
-      "Switch account": [
-        "アカウントを切り替え"
-      ],
       "Switch to rich text": [
         "リッチテキストに切り替え"
       ],
@@ -3979,7 +3976,7 @@
         "メールトラッカーはあなたのプライバシーを侵害します。Proton は ${ numberOfTrackers } 件のトラッカーを見つけてブロックしました。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "メールトラッカーはあなたのプライバシーを侵害します。トラッカー防止を有効にすると、あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者に知られるのを防ぐことができます。"
+        "メールトラッカーはあなたのプライバシーを侵害します。トラッカー防止を有効にすると、あなたがメッセージを閲覧したかどうか、いつ閲覧したかを差出人に知られるのを防ぐことができます。"
       ],
       "embedded image": [
         "個の埋め込み画像"
@@ -4456,7 +4453,7 @@
         ""
       ],
       "The sender has requested a read receipt.": [
-        "送信者は、開封確認を要求しています。"
+        "差出人が開封確認を要求しています。"
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "${ contactName } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddress } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
@@ -4555,7 +4552,7 @@
         "この公開鍵は自動的に、このメールアドレスへ送信するメールの暗号化に使用されます。"
       ],
       "This sender's public key has not been trusted yet.": [
-        "この送信者の公開鍵はまだ信頼されていません。"
+        "この差出人の公開鍵はまだ信頼されていません。"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "迷惑メールや悪用を防止するために、あなたがコンピューターではないことを確認します。"
@@ -4654,7 +4651,7 @@
         ""
       ],
       "We could not verify the sender's trusted keys.": [
-        "送信者の信頼された鍵を検証できませんでした。"
+        "差出人の信頼された鍵を検証できませんでした。"
       ],
       "We'll notify you when the import is done.": [
         "インポートが完了したら通知します。"
@@ -5580,9 +5577,6 @@
       "Pay invoice": [
         "請求の支払い"
       ],
-      "Previous version": [
-        "以前のバージョン"
-      ],
       "Privacy policy": [
         "プライバシーポリシー"
       ],
@@ -6436,13 +6430,13 @@
         "${ elementsCount } 件の会話を未読にしました。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 件の会話を ${ folderName } に移動し、送信者を許可リストに追加しました。"
+        "${ elementsCount } 件の会話を ${ folderName } に移動し、差出人を許可リストに追加しました。"
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } の会話を迷惑メールに移動し、送信者をブロックリストに追加しました。"
+        "${ elementsCount } の会話を迷惑メールに移動し、差出人をブロックリストに追加しました。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 件の会話を ${ labelName } から削除しました。"
@@ -6511,13 +6505,13 @@
         "会話を未読にしました。"
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "会話を ${ folderName } に移動し、送信者を許可リストに追加しました。"
+        "会話を ${ folderName } に移動し、差出人を許可リストに追加しました。"
       ],
       "Conversation moved to ${ folderName }.": [
         "会話を ${ folderName } に移動しました。"
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "会話を迷惑メールに移動し、送信者をブロックリストに追加しました。"
+        "会話を迷惑メールに移動し、差出人をブロックリストに追加しました。"
       ],
       "Conversation removed from ${ labelName }.": [
         "会話を ${ labelName } から削除しました。"

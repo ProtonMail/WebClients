@@ -111,7 +111,7 @@
         "Luk overførsel"
       ],
       "Collapse": [
-        ""
+        "Fold sammen"
       ],
       "Collapse folder": [
         "Luk mappe sammen"
@@ -227,7 +227,7 @@
         "Aktiver søgning på drev"
       ],
       "Expand": [
-        ""
+        "Udvid"
       ],
       "Expand folder": [
         "Udvid mappe"
@@ -260,7 +260,7 @@
         "Gå til panel ${ index }"
       ],
       "Go to parent": [
-        ""
+        "Gå til overordnet"
       ],
       "Go to settings": [
         "Gå til indstillinger"
@@ -497,16 +497,13 @@
         "Stop deling"
       ],
       "Stop transfers": [
-        ""
+        "Stop overførsler"
       ],
       "Submit": [
         "Indsend"
       ],
       "Submit report": [
-        ""
-      ],
-      "Switch account": [
-        "Skift konto"
+        "Indsend rapport"
       ],
       "Theme": [
         "Tema"
@@ -2060,16 +2057,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bytes"
       ],
       "Gigabytes": [
-        ""
+        "Gigabytes"
       ],
       "Kilobytes": [
-        ""
+        "Kilobytes"
       ],
       "Megabytes": [
-        ""
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2299,7 +2296,7 @@
         "${ speed }/s"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } lagerplads"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt blev opdateret.",
@@ -2667,7 +2664,7 @@
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
       ],
       "Not a valid URL": [
-        ""
+        "Ikke en gyldig URL"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Bemærk: Data kan stadig være tilgængelige lokalt på enheder, hvor du har installeret ${ appName }."
@@ -2760,7 +2757,7 @@
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Vælg, hvad du vil overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -2808,7 +2805,7 @@
         "Der kan være blevet manipuleret med følgende: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
+        "Der er stadig filer, der skal overføres. Ved at lukke overførselsadministratoren afsluttes alle operationer."
       ],
       "There are no files yet": [
         "Der er ingen filer endnu"
@@ -2902,7 +2899,7 @@
         "Opdaterer drevsøgning..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
       ],
       "Uploaded": [
         "Uploadet"
@@ -4463,7 +4460,7 @@
         "Log ind igen for at fortsætte"
       ],
       "Sign in and grant access": [
-        ""
+        "Log ind og giv adgang"
       ],
       "Size": [
         "Størrelse"
@@ -4478,13 +4475,13 @@
         "Stop deling med alle?"
       ],
       "Stop transfers?": [
-        ""
+        "Stop overførsler?"
       ],
       "The file or folder failed to be downloaded": [
         ""
       ],
       "The internet connection was interrupted": [
-        ""
+        "Internetforbindelsen blev afbrudt"
       ],
       "The link does not exist": [
         "Linket eksisterer ikke"
@@ -4529,7 +4526,7 @@
         "Advarsel: mistanke om falsk websted"
       ],
       "What would you like to import?": [
-        ""
+        "Hvad ønsker du at importere?"
       ],
       "What's new": [
         "Nyheder"
@@ -4688,7 +4685,7 @@
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
       ]
     }
   }
