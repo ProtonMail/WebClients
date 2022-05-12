@@ -15,12 +15,21 @@ import {
 } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { AddressID, fromAddress, ID, prepareMessage, props, toAddress } from './Composer.test.helpers';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 
 loudRejection();
 
 const password = 'password';
 
 describe('Composer outside encryption', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     afterEach(clearAll);
 
     const setup = async () => {

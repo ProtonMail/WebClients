@@ -12,6 +12,7 @@ import {
     generateKeys,
     render,
 } from '../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import Composer from '../Composer';
@@ -62,7 +63,13 @@ describe('Composer verify sender', () => {
     let fromKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         fromKeys = await generateKeys('me', address1);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     beforeEach(() => {

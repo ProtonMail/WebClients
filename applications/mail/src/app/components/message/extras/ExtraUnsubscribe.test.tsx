@@ -13,6 +13,7 @@ import {
     waitForEventManagerCall,
     waitForNotification,
 } from '../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import ExtraUnsubscribe from './ExtraUnsubscribe';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
@@ -36,6 +37,14 @@ describe('Unsubscribe banner', () => {
         messageDocument: { initialized: true },
         verification: {},
     } as MessageState;
+
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
 
     afterEach(clearAll);
 

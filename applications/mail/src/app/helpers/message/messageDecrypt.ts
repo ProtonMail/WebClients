@@ -4,15 +4,14 @@ import {
     PrivateKeyReference,
     PublicKeyReference,
     WorkerDecryptionResult,
+    WorkerProcessMIMEResult as MimeProcessResult
 } from '@proton/crypto';
-import processMIMESource from 'pmcrypto/lib/message/processMIME';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getDate, getParsedHeadersFirstValue, getSender, isMIME } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address } from '@proton/shared/lib/interfaces';
-import { AttachmentMime } from '../../models/attachment';
 import { convert } from '../attachment/attachmentConverter';
 import { MessageErrors, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
@@ -20,21 +19,6 @@ const { NOT_VERIFIED, NOT_SIGNED } = VERIFICATION_STATUS;
 
 // decrypted data is always a string for legacy message, regardless of 'format' input option
 interface MaybeLegacyDecryptResult extends WorkerDecryptionResult<string | Uint8Array> {}
-
-interface MimeProcessOptions {
-    headerFilename?: string;
-    sender?: string;
-    publicKeys?: PublicKeyReference[];
-}
-interface MimeProcessResult {
-    body: string;
-    attachments: AttachmentMime[];
-    verified: VERIFICATION_STATUS;
-    encryptedSubject: string;
-    mimetype: MIME_TYPES;
-    signatures: Uint8Array[];
-}
-const processMIME = processMIMESource as (options: MimeProcessOptions, data: string) => Promise<MimeProcessResult>;
 
 const binaryToString = (data: Uint8Array) =>
     utf8ArrayToString(data)
@@ -87,13 +71,11 @@ const decryptMimeMessage = async (
 
         const decryptedStringData =
             decryption.data instanceof Uint8Array ? binaryToString(decryption.data) : decryption.data;
-        processing = await processMIME(
-            {
-                headerFilename,
-                sender,
-            },
-            decryptedStringData
-        );
+        processing = await CryptoProxy.processMIME({
+            data: decryptedStringData,
+            headerFilename,
+            sender,
+        });
 
         const decryptedRawContent =
             decryption.data instanceof Uint8Array ? decryption.data : stringToUtf8Array(decryption.data);

@@ -1,3 +1,4 @@
+import { waitFor } from '@testing-library/dom';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
@@ -13,7 +14,7 @@ describe('Message banners', () => {
 
         const { getByTestId } = await setup();
 
-        const banner = getByTestId('expiration-banner');
+        const banner = await waitFor(() => getByTestId('expiration-banner'));
 
         expect(banner.textContent).toMatch(/Expires in/);
     });
