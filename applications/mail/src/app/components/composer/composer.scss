@@ -122,6 +122,7 @@
 			min-inline-size: rem(100);
 			background: inherit;
 			block-size: auto;
+			border-radius: 0; // to fix a display bug on Chrome PC/MAC
 
 			&:focus {
 				box-shadow: none;
