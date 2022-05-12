@@ -8,7 +8,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import isTruthy from '@proton/util/isTruthy';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { emailValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 

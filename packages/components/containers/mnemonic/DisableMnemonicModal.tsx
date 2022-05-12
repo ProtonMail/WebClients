@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { disableMnemonicPhrase } from '@proton/shared/lib/api/settingsMnemonic';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { srpAuth } from '@proton/shared/lib/srp';
 
 import {

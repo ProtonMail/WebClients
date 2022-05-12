@@ -9,7 +9,7 @@ import {
     getReEncryptedPublicMemberTokensPayloadV2,
 } from '@proton/shared/lib/keys';
 import { CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     Alert,

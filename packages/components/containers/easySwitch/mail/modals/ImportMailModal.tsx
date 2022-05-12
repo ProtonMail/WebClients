@@ -12,7 +12,7 @@ import {
     resumeImport,
 } from '@proton/shared/lib/api/easySwitch';
 
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { Address } from '@proton/shared/lib/interfaces';

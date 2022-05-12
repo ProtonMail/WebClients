@@ -17,7 +17,7 @@ import {
 import { useHistory } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import isTruthy from '@proton/util/isTruthy';
 import { c, msgid } from 'ttag';
 import LocationAside from './LocationAside';

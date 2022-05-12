@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { CircleLoader, classnames, Icon, ProtonLogo } from '@proton/components';
 import Content from '../public/Content';
 import Main from '../public/Main';

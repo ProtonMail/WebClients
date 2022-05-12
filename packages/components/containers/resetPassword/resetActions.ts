@@ -12,7 +12,7 @@ import { persistSession } from '@proton/shared/lib/authentication/persistedSessi
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { getMnemonicReset, GetMnemonicResetData, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
 import { decryptPrivateKey, encryptPrivateKey } from 'pmcrypto';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import isTruthy from '@proton/util/isTruthy';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import {

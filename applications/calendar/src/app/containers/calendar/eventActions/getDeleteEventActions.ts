@@ -2,7 +2,7 @@ import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/integration/invite';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { DELETE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';

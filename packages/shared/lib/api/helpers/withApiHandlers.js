@@ -7,7 +7,7 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import { getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
 import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
-import { noop, randomIntFromInterval } from '../../helpers/function';
+import { noop, randomIntFromInterval } from '@proton/util/function';
 import { getDateHeader } from '../../fetch/helpers';
 import { getLastRefreshDate, setLastRefreshDate } from './refreshStorage';
 
