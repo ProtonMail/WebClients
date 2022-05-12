@@ -1,4 +1,4 @@
-import { mod, withDecimalPrecision } from '../../lib/helpers/math';
+import { withDecimalPrecision } from '../../lib/helpers/math';
 
 describe('math', () => {
     describe('withDecimalPrecision', () => {
@@ -20,20 +20,6 @@ describe('math', () => {
         it('should return the expected values for some simple cases', () => {
             const list = [122.234, 5, -0.54, -1, -1.387, 12.4491];
             expect(list.map((x, i) => withDecimalPrecision(x, i - 2))).toEqual([100, 10, -1, -1, -1.39, 12.449]);
-        });
-    });
-
-    describe('mod', () => {
-        it('should return a positive remainder', () => {
-            expect(mod(-4, 3)).toEqual(2);
-            expect(mod(-3, 3)).toEqual(0);
-            expect(mod(-2, 3)).toEqual(1);
-            expect(mod(-1, 3)).toEqual(2);
-            expect(mod(0, 3)).toEqual(0);
-            expect(mod(1, 3)).toEqual(1);
-            expect(mod(2, 3)).toEqual(2);
-            expect(mod(3, 3)).toEqual(0);
-            expect(mod(4, 3)).toEqual(1);
         });
     });
 });

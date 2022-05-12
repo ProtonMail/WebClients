@@ -13,6 +13,3 @@ export const withDecimalPrecision = (x: number, n: number) => {
     }
     return Math.round(x * powerOfTen) / powerOfTen;
 };
-
-// Modulo with negative number support
-export const mod = (n: number, m: number) => ((n % m) + m) % m;
