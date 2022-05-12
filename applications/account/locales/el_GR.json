@@ -721,9 +721,6 @@
       "Support": [
         "Υποστήριξη"
       ],
-      "Switch account": [
-        "Αλλαγή λογαριασμού"
-      ],
       "Switch to rich text": [
         "Μετάβαση σε εμπλουτισμένο κείμενο"
       ],
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Ποια email θέλετε να λαμβάνετε από το Proton;"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Επανεγραγήκατε στα ${ categoriesJsx } emails."
@@ -5892,7 +5889,7 @@
         "Διεύθυνση ${ MAIL_APP_NAME }"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "Υποσέλιδο ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
         "",
@@ -6276,7 +6273,7 @@
         "Διάστημα"
       ],
       "Invite via email": [
-        ""
+        "Πρόσκληση μέσω email"
       ],
       "Keep me signed in": [
         "Διατήρηση εισόδου μου"
@@ -6309,7 +6306,7 @@
         "Τελευταίος μήνας μόνο"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Επίπεδο φιλτραρίσματος NetShield blocker"
       ],
       "Login password": [
         "Κωδικός σύνδεσης"
@@ -6333,7 +6330,7 @@
         "Μήνυμα"
       ],
       "Moderate NAT": [
-        ""
+        "Μέτριο NAT"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -6495,7 +6492,7 @@
         "Αποστολή αυτόματης απάντησης"
       ],
       "Send in": [
-        ""
+        "Αποστολή σε"
       ],
       "Show secondary time zone": [
         "Εμφάνιση δευτερεύουσας ζώνης ώρας"
@@ -6528,7 +6525,7 @@
         "Δήλωση"
       ],
       "Sticky labels": [
-        ""
+        "Sticky ετικέτες"
       ],
       "Subscription options": [
         "Επιλογές συνδρομής"
@@ -6657,7 +6654,7 @@
         "Ο κωδικός σας (διαχειριστής)"
       ],
       "Your referral link": [
-        ""
+        "Ο σύνδεσμος παραπομπής σας"
       ],
       "Your reward": [
         "Η επιβράβευσή σας"
@@ -8832,9 +8829,6 @@
       "Processing...": [
         "Γίνεται επεξεργασία..."
       ],
-      "Proton Logo": [
-        "Λογότυπο Proton"
-      ],
       "Recommended": [
         "Προτεινόμενο"
       ],
@@ -8884,7 +8878,7 @@
         "Αποθήκευση στοιχείων επαφής"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "Ασφαλές email βασισμένος στην Ελβετία"
       ],
       "Security": [
         "Διασφάλιση"

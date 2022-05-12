@@ -721,9 +721,6 @@
       "Support": [
         "Wsparcie"
       ],
-      "Switch account": [
-        "Przełącz konto"
-      ],
       "Switch to rich text": [
         "Zmień na standardowy tekst"
       ],
@@ -2493,8 +2490,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Jakie wiadomości chcesz otrzymywać od firmy Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Subskrybujesz ponownie listę mailingową ${ categoriesJsx }"
@@ -7341,6 +7338,9 @@
       "Keep account": [
         "Zachowaj konto"
       ],
+      "Switch or add account": [
+        "Przełącz lub dodaj konto"
+      ],
       "Switch plan": [
         "Zmień plan"
       ]
@@ -7353,7 +7353,7 @@
         "Poznaj wszystkie plany ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
-        ""
+        "Od ${ _price } za użytkownika"
       ],
       "From ${ price }": [
         "Od ${ price }"
@@ -7457,6 +7457,9 @@
       ],
       "${ size } total storage": [
         "${ size } całkowitej przestrzeni dyskowej"
+      ],
+      "1 free VPN connection in total": [
+        "Łącznie 1 darmowe połączenie VPN"
       ],
       "99.95% SLA": [
         "Umowa SLA gwarantująca dostępność na poziomie 99,95%"
@@ -7861,8 +7864,8 @@
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Dla klientów posiadających 6 lub więcej użytkowników dostępna jest pomoc telefoniczna od zespołu Proton Customer Success, podczas europejskich godzin pracy"
       ],
-      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
-        "Zapobiega przechwytywaniu wiadomości podczas przesyłania lub uzyskiwaniu do nich dostępu przez ${ MAIL_APP_NAME }, lub innych dostawców poczty elektronicznej. Jedynymi osobami, które mogą czytać wiadomości, są nadawca i odbiorca."
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Zapobiega dostępowi do wiadomości przez firmę ${ BRAND_NAME } lub osoby trzecie. Wiadomości mogą czytać tylko nadawca i odbiorca."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Chroń każde urządzenie podłączone do Twojej sieci Wi-Fi. Jest to również przydatne, jeśli masz urządzenia, które nie obsługują bezpośrednio ustawień VPN."
@@ -9691,9 +9694,6 @@
       ],
       "Processing...": [
         "Przetwarzanie..."
-      ],
-      "Proton Logo": [
-        "Logo Proton"
       ],
       "Recommended": [
         "Zalecany"

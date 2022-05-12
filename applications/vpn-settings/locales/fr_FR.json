@@ -323,9 +323,6 @@
       "Support": [
         "Aide"
       ],
-      "Switch account": [
-        "Changer de compte"
-      ],
       "Top up": [
         "Recharger"
       ],
@@ -3075,6 +3072,9 @@
       "Keep account": [
         "Conserver le compte"
       ],
+      "Switch or add account": [
+        "Basculez vers ou ajoutez un compte"
+      ],
       "Switch plan": [
         "Changer d'abonnement"
       ]
@@ -3087,7 +3087,7 @@
         "Explorer tous les abonnements ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
-        ""
+        "À partir de ${ _price } par utilisateur"
       ],
       "From ${ price }": [
         "À partir de ${ price }"
@@ -3165,6 +3165,9 @@
       ],
       "${ size } total storage": [
         "${ size } d'espace de stockage total"
+      ],
+      "1 free VPN connection in total": [
+        "1 connexion VPN gratuite"
       ],
       "99.95% SLA": [
         "Accord sur les niveaux de service de 99,95 %"
@@ -3554,8 +3557,8 @@
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Une assistance par téléphone est proposée par l'équipe du service clientèle de Proton durant les heures de bureau en Europe, pour les clients comptant au moins 6 utilisateurs"
       ],
-      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
-        "Évite que vos messages ne soient interceptés durant l'envoi ou que ${ MAIL_APP_NAME } ou d'autres fournisseurs de messagerie électronique n'y accèdent. Les seules personnes en mesure de lire les messages sont l'expéditeur et le destinataire."
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Protégez chaque appareil connecté à votre réseau Wi-Fi. Cet élément est également utile si vous possédez des appareils qui ne prennent pas directement en charge les paramètres VPN."

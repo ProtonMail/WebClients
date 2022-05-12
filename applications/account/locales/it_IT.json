@@ -721,9 +721,6 @@
       "Support": [
         "Supporto"
       ],
-      "Switch account": [
-        "Cambia account"
-      ],
       "Switch to rich text": [
         "Passa al testo completo"
       ],
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Quali email vuoi ricevere da Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Quali email vuoi ricevere da ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Hai reindirizzato le email a ${ categoriesJsx }."
@@ -7201,6 +7198,9 @@
       "Keep account": [
         "Mantieni l'account"
       ],
+      "Switch or add account": [
+        "Cambia o aggiungi un account"
+      ],
       "Switch plan": [
         "Cambia piano"
       ]
@@ -7213,7 +7213,7 @@
         "Scopri tutti i piani ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
-        ""
+        "Da ${ _price } per utente"
       ],
       "From ${ price }": [
         "Da ${ price }"
@@ -7291,6 +7291,9 @@
       ],
       "${ size } total storage": [
         "${ size } di spazio di archiviazione totale"
+      ],
+      "1 free VPN connection in total": [
+        "1 connessione VPN gratuita in totale"
       ],
       "99.95% SLA": [
         "SLA del 99,95%"
@@ -7689,8 +7692,8 @@
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "L'assistenza telefonica è disponibile dal team del servizio clienti Proton durante l'orario lavorativo europeo, per i clienti con 6 o più utenti"
       ],
-      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
-        "Impedisce che i messaggi siano intercettati in transito o che siano accessibili da ${ MAIL_APP_NAME } o da altri provider email. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Impedisce l'accesso ai messaggi da parte di ${ BRAND_NAME } o di terzi. Le uniche persone che possono leggere i messaggi sono il mittente e il destinatario."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Proteggi ogni dispositivo connesso alla tua rete WiFi. È anche utile se hai dispositivi che non supportano direttamente le impostazioni VPN."
@@ -9475,9 +9478,6 @@
       ],
       "Processing...": [
         "Elaborazione..."
-      ],
-      "Proton Logo": [
-        "Logo Proton"
       ],
       "Recommended": [
         "Raccomandato"

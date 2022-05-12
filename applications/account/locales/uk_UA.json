@@ -721,9 +721,6 @@
       "Support": [
         "Підтримка"
       ],
-      "Switch account": [
-        "Перемкнути обліковий запис"
-      ],
       "Switch to rich text": [
         "Перемкнути в Rich Text Format (RTF)"
       ],
@@ -2493,8 +2490,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Які листи ви хочете отримувати від Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Які листи ви хочете отримувати від ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ви підписалися на листи ${ categoriesJsx }."
@@ -9013,9 +9010,6 @@
       ],
       "Processing...": [
         "Триває обробка..."
-      ],
-      "Proton Logo": [
-        "Логотип Proton"
       ],
       "Recommended": [
         "Рекомендовано"
