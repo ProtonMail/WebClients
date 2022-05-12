@@ -1,13 +1,23 @@
 import { API_CODES } from '@proton/shared/lib/constants';
+import { CryptoProxy } from '@proton/crypto';
+
 import range from '@proton/utils/range';
 import { fireEvent, waitFor } from '@testing-library/react';
-import { api, clearAll, getCard, render } from '../tests/render';
+import { api, clearAll, getCard, render, mockedCryptoApi } from '../tests/render';
 import ContactImportModal from './ContactImportModal';
 
 jest.mock('../../../hooks/useFeature', () => () => ({ feature: {}, update: jest.fn() }));
 
 describe('ContactImportModal', () => {
+    beforeAll(() => {
+        CryptoProxy.setEndpoint(mockedCryptoApi);
+    });
+
     beforeEach(clearAll);
+
+    afterAll(async () => {
+        await CryptoProxy.releaseEndpoint();
+    });
 
     it('should succeed to import a simple CSV file', async () => {
         const csv = `first name,last name,email-address ,nickname,organization,birthday,home phone,work phone,mobile phone,city,state,zip,country,Job title,personal web page,business website,group membership,Timezone,notes,home

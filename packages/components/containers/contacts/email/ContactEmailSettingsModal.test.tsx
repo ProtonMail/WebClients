@@ -1,8 +1,9 @@
+import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { fireEvent, getByTitle, waitFor } from '@testing-library/react';
-import { api, clearAll, notificationManager, render } from '../tests/render';
+import { api, clearAll, notificationManager, render, mockedCryptoApi } from '../tests/render';
 import ContactEmailSettingsModal, { ContactEmailSettingsProps } from './ContactEmailSettingsModal';
 
 describe('ContactEmailSettingsModal', () => {
@@ -13,7 +14,15 @@ describe('ContactEmailSettingsModal', () => {
         onClose: jest.fn(),
     };
 
+    beforeAll(() => {
+        CryptoProxy.setEndpoint(mockedCryptoApi);
+    });
+
     beforeEach(clearAll);
+
+    afterAll(async () => {
+        await CryptoProxy.releaseEndpoint();
+    });
 
     it('should save a contact with updated email settings', async () => {
         const vcard = `BEGIN:VCARD
