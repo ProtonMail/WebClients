@@ -224,7 +224,7 @@
         "创建链接"
       ],
       "Current plan": [
-        ""
+        "当前套餐"
       ],
       "Customize": [
         "自定义"
@@ -248,7 +248,7 @@
         "删除链接"
       ],
       "Delete permanently": [
-        ""
+        "永久删除"
       ],
       "Delete record": [
         "删除记录"
@@ -296,7 +296,7 @@
         "下载所有配置"
       ],
       "Download on another platform": [
-        ""
+        "通过其他平台下载"
       ],
       "Download recovery file": [
         "下载恢复文件"
@@ -335,7 +335,7 @@
         "启用多用户支持"
       ],
       "Encrypt and export": [
-        ""
+        "加密并导出"
       ],
       "Explore other ${ BRAND_NAME } plans": [
         ""
@@ -350,7 +350,7 @@
         "导出密钥"
       ],
       "Export key before deleting": [
-        ""
+        "删除前导出密钥"
       ],
       "Extend": [
         ""
@@ -431,7 +431,7 @@
         "给邮件加标签"
       ],
       "Load more": [
-        ""
+        "加载更多"
       ],
       "Loading verification": [
         "正在载入验证"
@@ -605,10 +605,10 @@
         "评论"
       ],
       "Revoke": [
-        ""
+        "下线"
       ],
       "Revoke ${ name }": [
-        ""
+        "下线 ${ name }"
       ],
       "Revoke all other sessions": [
         "其余设备全部下线"
@@ -626,7 +626,7 @@
         ""
       ],
       "Select ${ planTitle }": [
-        ""
+        "选择“${ planTitle }”"
       ],
       "Select calendar view": [
         "更改日历视图"
@@ -720,9 +720,6 @@
       ],
       "Support": [
         "帮助"
-      ],
-      "Switch account": [
-        "切换账户"
       ],
       "Switch to rich text": [
         "切换为富文本"
@@ -2442,8 +2439,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "您想要从 Proton 接收哪些电子邮件？"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "您已重新订阅 ${ categoriesJsx } 电子邮件。"
@@ -8740,9 +8737,6 @@
       ],
       "Processing...": [
         "正在处理..."
-      ],
-      "Proton Logo": [
-        "Proton标志"
       ],
       "Recommended": [
         ""

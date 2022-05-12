@@ -721,9 +721,6 @@
       "Support": [
         "Support"
       ],
-      "Switch account": [
-        "Skift konto"
-      ],
       "Switch to rich text": [
         "Skift til rich text format"
       ],
@@ -845,8 +842,8 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        "",
-        ""
+        "+ ${ _users } bruger",
+        "+ ${ _users } brugere"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } brugerdomæne",
@@ -962,7 +959,7 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 brugere"
       ]
     },
     "Badge for domain": {
@@ -983,27 +980,27 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Betales hver 12. måned"
       ],
       "Payable every 24 months": [
-        ""
+        "Betales hver 24. måned"
       ],
       "Payable every month": [
-        ""
+        "Betales hver måned"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Fornyes automatisk ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
       "1 month": [
-        ""
+        "1 måned"
       ],
       "12 months": [
-        ""
+        "12 måneder"
       ],
       "24 months": [
-        ""
+        "24 måneder"
       ],
       "Annually": [
         "Årlig"
@@ -1288,12 +1285,12 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "",
-        ""
+        "${ users } bruger",
+        "${ users } brugere"
       ],
       "Total for ${ n } month": [
-        "",
-        ""
+        "I alt for ${ n } måned",
+        "I alt for ${ n } måneder"
       ]
     },
     "Collapsible tooltip": {
@@ -2226,7 +2223,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Kupon anvendt: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -2236,10 +2233,10 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/måned"
       ],
       "/user per month": [
-        ""
+        "/bruger pr. måned"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2307,7 +2304,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        ""
+        "Tillykke! Du har optjent de maksimale ${ rewardsLimit } gratis måneder med ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Hvilke e-mails vil du modtage fra Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Hvilke e-mails ønsker du at modtage fra ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Du gentegnede abonnement på ${ categoriesJsx } e-mails."
@@ -3198,21 +3195,21 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bytes"
       ],
       "Gigabytes": [
-        ""
+        "Gigabytes"
       ],
       "Kilobytes": [
-        ""
+        "Kilobytes"
       ],
       "Megabytes": [
-        ""
+        "Megabytes"
       ]
     },
     "Filter Actions": {
       "Archive": [
-        "Arkiv"
+        "Arkivér"
       ],
       "Inbox": [
         "Indbakke"
@@ -3562,10 +3559,10 @@
         "Proton kan ikke oprette forbindelse til din Gmail-konto. Sørg for, at mailserverens adresse og portnummer er korrekte."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        ""
+        "Proton kan ikke oprette forbindelse til din Yahoo-konto. Sørg for, at mailserverens adresse og portnummer er korrekt."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that:": [
-        ""
+        "Proton kan ikke oprette forbindelse til din Yahoo-konto. Sørg for at:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "For mange nylige anmodninger. Forsøg igen lidt senere."
@@ -3643,7 +3640,7 @@
         "Gå til ${ boldAccountSecurity }"
       ],
       "Go to Outlook ${ securitySettingsLink }": [
-        ""
+        "Gå til Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Hvis totrinsbekræftelse er deaktiveret, slå det til"
@@ -3743,7 +3740,7 @@
         "delte kalendere"
       ],
       "Yahoo": [
-        ""
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3751,10 +3748,10 @@
         "Klik på ${ boldICS } linket og download filen"
       ],
       "Go to ${ calendarLink } in your Outlook settings": [
-        ""
+        "Gå til ${ calendarLink } i dine Outlook-indstillinger"
       ],
       "Go to ${ calendarViewLink } in Yahoo": [
-        ""
+        "Gå til ${ calendarViewLink } i Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen"
@@ -3863,7 +3860,7 @@
         "${ emailAddress } er ugyldig"
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
+        "${ forgotPasswordLink } eller ${ forgotUsernameLink }?"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også benyttes med én enkelt adgangskode, der erstatter både log ind- og postkasseadgangskoden. Skift til enkeltadgangskodetilstand ved at angive den ønskede enkelte adgangskode, og tryk Gem."
@@ -3899,7 +3896,7 @@
         "${ numContacts } kontakter"
       ],
       "${ planName } credits earned": [
-        ""
+        "${ planName }-kreditter optjent"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } mappe fundet",
@@ -3933,7 +3930,7 @@
         "${ selectedFoldersCountLocalized } etiketter valgt"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } lagerplads"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Du vil bruge denne e-mailadresse til at logge på alle ${ BRAND_NAME } tjenester."
@@ -3958,16 +3955,16 @@
         "(Mail + VPN)"
       ],
       "* No credit card required.": [
-        ""
+        "* Der kræves ikke kreditkort."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Med 12-måneders abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* Med 24-måneders abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
@@ -3980,7 +3977,7 @@
         "1. Inviter venner til Proton"
       ],
       "2. They try ${ planName }": [
-        ""
+        "2. De prøver ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% rabat anvendt på dit abonnement med kupon ${ code }"
@@ -3989,7 +3986,7 @@
         "3. Du optjener kreditter"
       ],
       "30-day money-back guarantee.": [
-        ""
+        "30 dages tilbagebetalingsgaranti."
       ],
       "5 email addresses": [
         "5 e-mailadresser"
@@ -4004,7 +4001,7 @@
         "Med en gendannelsessætning kan du få adgang til din konto igen og gendanne dine krypterede beskeder, hvis du glemmer din adgangskode."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet ubetalte fakturaer. Kontakt venligst din administrator."
@@ -4016,7 +4013,7 @@
         "metode til kontogendannelse"
       ],
       "Account size": [
-        ""
+        "Kontostørrelse"
       ],
       "Account successfully updated": [
         "Opdatering af konto lykkedes"
@@ -4037,7 +4034,7 @@
         "Tilføj etiket"
       ],
       "Additional options": [
-        ""
+        "Yderligere indstillinger"
       ],
       "address": [
         "adresse",
@@ -4076,7 +4073,7 @@
         "Alle dine ændringer vil gå tabt."
       ],
       "Allocated": [
-        ""
+        "Tildelt"
       ],
       "Allow recovery by email": [
         "Tillad gendannelse via e-mail"
@@ -4085,13 +4082,13 @@
         "Tillad gendannelse via telefon"
       ],
       "Already allocated": [
-        ""
+        "Allerede tildelt"
       ],
       "Already have an account?": [
-        ""
+        "Har du allerede en konto?"
       ],
       "Already used": [
-        ""
+        "Allerede anvendt"
       ],
       "Amount below minimum (${ amount }).": [
         "Beløb under minimum (${ amount })."
@@ -4242,7 +4239,7 @@
         "Opret et link til din kalender og del det med enhver uden for Proton. Kun du kan tilføje eller fjerne begivenheder."
       ],
       "Create a new account and share the email address and password with the user.": [
-        ""
+        "Opret en ny konto, og del e-mailadressen og adgangskoden med brugeren."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Opret og administrer underkonti og tildel dem e-mailadresser på dit brugerdomæne."
@@ -4254,13 +4251,13 @@
         "Opret i"
       ],
       "Creating your account": [
-        ""
+        "Opretter din konto"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
+        "Kredit for den ubrugte del af dit tidligere abonnement"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
+        "Kreditter, proratering og eventuelle kuponer anvendes ved afregningen"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
@@ -4272,7 +4269,7 @@
         "Tilpasset daglig"
       ],
       "Custom email domains": [
-        ""
+        "Brugerdefinerede e-maildomæner"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "Brugerdefinerede filtre fungerer på alle nye e-mails, herunder indgående e-mails samt sendte e-mails. Filtre kan redigeres og oprettes direkte via Sieve-programmeringssprog."
@@ -4339,7 +4336,7 @@
         "Slip filen her for at uploade"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        ""
+        "Optjente ${ rewards } af ${ rewardsLimit } ${ planName } måneder."
       ],
       "Edit label": [
         "Redigér etiket"
@@ -4348,10 +4345,10 @@
         "E-mailadresse"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "E-mail-hosting til 10 brugerdefinerede mail-domænenavne er inkluderet gratis. Yderligere domæner kan tilføjes for ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
+        "E-mailhosting er kun tilgængelig for domæner, du allerede ejer. Domæneregistrering er ikke tilgængelig i øjeblikket via Proton. Du kan hoste e-mail for domæner, der er registreret hos en hvilken som helst domæneregistrator."
       ],
       "Emailing preference saved": [
         "E-mail-afsendelsespræference gemt"
@@ -4387,10 +4384,10 @@
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "Indtast dine kontooplysninger for ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
+        "Indtast e-mailadresse eller brugernavn for din ${ BRAND_NAME }-konto."
       ],
       "Enter your login password to confirm your identity.": [
         "Angiv din login-adgangskode for at bekræfte din identitet."
@@ -4474,7 +4471,7 @@
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "Hvis du har et brugerdefineret domæne med ${ MAIL_APP_NAME }, kan du angive en catch-all (fang-alle) e- mailadresse, der vil modtage beskeder sendt til dit domæne med en ugyldig e-mailadresse (f.eks. pga. stavefejl)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
@@ -4740,13 +4737,13 @@
         "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
       ],
       "Number of users": [
-        ""
+        "Antal brugere"
       ],
       "of": [
         "af"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        ""
+        "Én konto til alle ${ BRAND_NAME }-tjenester."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
@@ -4933,7 +4930,7 @@
         "Skan denne kode med din to-faktor-godkendelsesenhed for at oprette din konto. ${ switchButton }."
       ],
       "Securing your account": [
-        ""
+        "Sikrer din konto"
       ],
       "Select a service provider to start": [
         "Vælg en tjenesteudbyder for at starte"
@@ -4942,10 +4939,10 @@
         "Vælg Fortsæt til ${ name } for at åbne appen. Dette opretter også en ${ name }-konto med din ${ MAIL_APP_NAME }-adresse, så du fremover kan logge ind med ét klik."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Vælg det antal brugere, der skal indgå i dit abonnement. Hver ekstra bruger koster ${ price }. Hvis du har brug for flere brugerkonti end ${ maxUsers }, bedes du ${ contactMailToLink } kontakte vores team for kundetilfredshed."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Vælg, hvad du vil overflytte fra Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -4987,19 +4984,19 @@
         "SPF benyttes til at angive, hvem der må sende e-mail fra domænet, så det anbefales kraftigt at inkludere ${ MAIL_APP_NAME } i din SPF-post. Tilføj følgende TXT-post i din DNS. Dette kan typisk gøres i webkontrolpanelet hos din domæneudbyder."
       ],
       "Storage allocated to other users in this organisation": [
-        ""
+        "Lagerplads tildelt andre brugere i denne organisation"
       ],
       "Storage allocated to this user": [
-        ""
+        "Lagerplads tildelt denne bruger"
       ],
       "Storage for users": [
-        ""
+        "Lagerplads til brugere"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Lagerplads deles mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } og ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
-        ""
+        "Lagerplads brugt af denne bruger"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
@@ -5041,7 +5038,7 @@
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "Den sikreste måde at surfe, streame og være online på."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Disse konfigurationsfiler lader dig vælge, hvilken ${ VPN_APP_NAME }-server du opretter forbindelse til, når du bruger en tredjeparts-VPN-app eller opsætter en VPN-forbindelse på en router."
@@ -5203,7 +5200,7 @@
         "Opdater gendannelsessætning"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
       ],
       "Upload picture": [
         "Upload billede"
@@ -5230,10 +5227,10 @@
         "Bekræftelsesprocessen åbner en ny fane. Deaktivér derfor pop-up blockere. Du vil ikke blive debiteret. Ethvert beløb anvendt til bekræftelse af kortet refunderes straks."
       ],
       "Verifying your payment": [
-        ""
+        "Verificerer din betaling"
       ],
       "Version ${ version }": [
-        ""
+        "Version ${ version }"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
         "Ønsker du at indstille ${ addressToCreate } som din standard e-mailadresse til afsendelse af beskeder?"
@@ -5278,7 +5275,7 @@
         "Vi sender en nulstillingskode til det telefonnummer, du angav til kontogendannelse."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "Vi opgraderer dit nuværende abonnement til et forbedret abonnement, der giver mere for den samme pris. Mens vores systemer opdateres, vil du ikke kunne ændre det. Vi sender dig en e-mail, så snart det er gjort."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Når deaktiveret, forhindrer dette billedfiler i at indlæse på din enhed uden din viden.\t"
@@ -5287,7 +5284,7 @@
         "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        ""
+        "Når de abonnerer på et betalt abonnement, vil 1 til 3 måneder af ${ planName } $ blive krediteret din konto."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Når dit abonnement fornyes, vil alle tilgængelige kreditter blive brugt først, før vi laver en opkrævning på dine betalingsmetoder ovenfor."
@@ -5461,7 +5458,7 @@
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Din eksisterende ${ BRAND_NAME }-konto kan bruges til at tilgå alle ${ BRAND_NAME }-tjenester. Log venligst ind med ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Din import fra ${ delayedImport.Account } er midlertidigt forsinket."
@@ -5886,7 +5883,7 @@
         " og ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } af ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adresse"
@@ -5899,8 +5896,8 @@
         "${ monthsRewarded } måneder krediteret"
       ],
       "${ n } month": [
-        "",
-        ""
+        "${ n } måned",
+        "${ n } måneder"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser",
@@ -5973,10 +5970,10 @@
         "Auto-indlæs indlejrede billeder"
       ],
       "Auto-reply": [
-        ""
+        "Autosvar"
       ],
       "Billing cycle": [
-        ""
+        "Faktureringsperiode"
       ],
       "Block email tracking": [
         "Bloker sporing af e-mail"
@@ -6210,7 +6207,7 @@
         "Angiv adgangskoden til nøgle med fingeraftryk: ${ fingerprintCode }"
       ],
       "Expiration date": [
-        ""
+        "Udløbsdato"
       ],
       "Expires": [
         "Udløber"
@@ -6414,10 +6411,10 @@
         "Betaler"
       ],
       "Payment details": [
-        ""
+        "Betalingsoplysninger"
       ],
       "Payment method": [
-        ""
+        "Betalingsmetode"
       ],
       "Phone number": [
         "Telefonnummer"
@@ -6486,7 +6483,7 @@
         "Vis adgangskode"
       ],
       "Security code": [
-        ""
+        "Sikkerhedskode"
       ],
       "Select your country": [
         "Vælg dit land"
@@ -6531,7 +6528,7 @@
         "Klæbende etiketter"
       ],
       "Subscription options": [
-        ""
+        "Abonnementsmuligheder"
       ],
       "System information": [
         "Systemoplysninger"
@@ -6663,7 +6660,7 @@
         "Din belønning"
       ],
       "ZIP code": [
-        ""
+        "Postnummer"
       ]
     },
     "label": {
@@ -6692,7 +6689,7 @@
         "Privat"
       ],
       "VPN connections": [
-        ""
+        "VPN-forbindelser"
       ]
     },
     "Label for news": {
@@ -7139,7 +7136,7 @@
     },
     "Navigation": {
       "Back": [
-        ""
+        "Tilbage"
       ],
       "Back to Calendar": [
         "Tilbage til kalender"
@@ -7215,17 +7212,17 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Derefter skal du logge ind på din Google-konto og give Proton adgang til dine data."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
       ]
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        ""
+        "Velkommen til ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -7487,7 +7484,7 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        ""
+        "Kredit / betalingskort"
       ],
       "New credit/debit card": [
         "Nyt kredit / betalingskort"
@@ -7796,7 +7793,7 @@
     },
     "Signup label": {
       "Display name": [
-        ""
+        "Vist navn"
       ],
       "Email": [
         "E-mail"
@@ -7837,7 +7834,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Inviter venner, og optjen belønninger!"
@@ -7910,78 +7907,78 @@
     },
     "Subscription attribute": {
       "${ _n } calendar per user": [
-        "",
-        ""
+        "${ _n } kalender pr. bruger",
+        "${ _n } kalendere pr. bruger"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "",
-        ""
+        "${ maxVpn } højhastigheds VPN-forbindelse",
+        "${ maxVpn } højhastigheds VPN-forbindelser"
       ],
       "${ n } calendar": [
-        "",
-        ""
+        "${ n } kalender",
+        "${ n } kalendere"
       ],
       "${ n } high-speed VPN connection": [
-        "",
-        ""
+        "${ n } højhastigheds VPN-forbindelse",
+        "${ n } højhastigheds VPN-forbindelser"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        ""
+        "${ n } højhastigheds VPN-forbindelse pr. bruger",
+        "${ n } højhastigheds VPN-forbindelser pr. bruger"
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } VPN-forbindelse",
+        "${ n } VPN-forbindelser"
       ],
       "${ n } VPN connection per user": [
-        "",
-        ""
+        "${ n } VPN-forbindelse pr. bruger",
+        "${ n } VPN-forbindelser pr. bruger"
       ],
       "${ UsedAddresses } address": [
-        "",
-        ""
+        "${ UsedAddresses } adresse",
+        "${ UsedAddresses } adresser"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresse",
+        "${ UsedAddresses } af ${ MaxAddresses } e-mailadresser"
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
+        "${ UsedCalendars } kalender",
+        "${ UsedCalendars } kalendere"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } af ${ MaxDomains } brugerdomæne",
+        "${ UsedDomains } af ${ MaxDomains } brugerdomæner"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers } af ${ MaxMembers } bruger",
+        "${ UsedMembers } af ${ MaxMembers } brugere"
       ],
       "1 email address": [
-        ""
+        "1 e-mailadresse"
       ],
       "1 VPN connection": [
-        ""
+        "1 VPN-forbindelse"
       ],
       "Access to streaming services globally": [
-        ""
+        "Adgang til streamingtjenester i hele verden"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Indbygget annonceblokering (Netshield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
+        "Højhastigheds VPN på ${ maxVpn } enhed",
+        "Højhastigheds VPN på ${ maxVpn } enheder"
       ]
     },
     "Subscription price": {
       "For": [
-        ""
+        "For"
       ]
     },
     "Subscription saving": {
       "Save": [
-        ""
+        "Gem"
       ]
     },
     "Subtitle for trial plan": {
@@ -8187,18 +8184,18 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/måned"
       ],
       "/user per month": [
-        ""
+        "/bruger pr. måned"
       ]
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/måned"
       ],
       "per month": [
-        ""
+        "pr. måned"
       ]
     },
     "Summary of errors during export calendar": {
@@ -8213,10 +8210,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Til virksomheder"
       ],
       "For individuals": [
-        ""
+        "Til enkeltpersoner"
       ]
     },
     "TableHeader": {
@@ -8285,8 +8282,8 @@
         "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
-        "",
-        ""
+        "${ maxUsers } bruger",
+        "${ maxUsers } brugere"
       ],
       "1. Give a name to the config to be generated": [
         "1. Giv et navn til den konfiguration, der skal genereres"
@@ -8400,7 +8397,7 @@
         "Er du sikker på, at du vil lukke?"
       ],
       "Auto-reply": [
-        ""
+        "Autosvar"
       ],
       "Automatically sign outgoing messages?": [
         "Auto-signér udgående beskeder?"
@@ -8478,7 +8475,7 @@
         "Bekræft telefonnummer"
       ],
       "Congratulations on choosing privacy!": [
-        ""
+        "Tillykke med valget af et beskyttet privatliv!"
       ],
       "Connect ${ name }": [
         "Forbind ${ name }"
@@ -8496,7 +8493,7 @@
         "Opret kalender"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Opret din ${ BRAND_NAME }-konto"
       ],
       "Credentials": [
         "Legitimationsoplysninger"
@@ -8592,7 +8589,7 @@
         "Nedgradér konto"
       ],
       "Download ${ VPN_APP_NAME }": [
-        ""
+        "Download ${ VPN_APP_NAME }"
       ],
       "Edit Allow List": [
         "Rediger godkendt-liste"
@@ -8676,7 +8673,7 @@
         "Få ${ vpnPlus } for at få adgang til alle servere"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Gift code": [
         "Gavekode"
@@ -8832,11 +8829,8 @@
       "Processing...": [
         "Behandler..."
       ],
-      "Proton Logo": [
-        "Proton Logo"
-      ],
       "Recommended": [
-        ""
+        "Anbefalet"
       ],
       "Reconnect your account": [
         "Genopret forbindelse til din konto"
@@ -8881,7 +8875,7 @@
         "Tilbagekald certifikat"
       ],
       "Save contact details": [
-        ""
+        "Gem kontaktoplysninger"
       ],
       "Secure email based in Switzerland": [
         "Sikker e-mail-tjeneste baseret i Schweiz"
@@ -8902,7 +8896,7 @@
         "Vælg kontaktgruppe"
       ],
       "Select subscription and pay": [
-        ""
+        "Vælg abonnement og betal"
       ],
       "Select the time to send this notification": [
         "Vælg tid for afsendelse af denne notifikation"
@@ -8947,7 +8941,7 @@
         "Log ind igen for at fortsætte"
       ],
       "Sign in and grant access": [
-        ""
+        "Log ind og giv adgang"
       ],
       "Sort folders alphabetically": [
         "Sortér mapper alfabetisk"
@@ -9010,7 +9004,7 @@
         "Ikke understøttet browser"
       ],
       "Upgrade plan": [
-        ""
+        "Opgradér abonnement"
       ],
       "Username": [
         "Brugernavn"
@@ -9019,7 +9013,7 @@
         "Brugere og adresser"
       ],
       "Verification": [
-        ""
+        "Verifikation"
       ],
       "VPN apps": [
         "VPN-apps"
@@ -9046,7 +9040,7 @@
         "WireGuard konfiguration"
       ],
       "You already have a Proton account": [
-        ""
+        "Du har allerede en Proton-konto"
       ],
       "Your ${ domain } address is active": [
         "Din ${ domain }-adresse er aktiv"
@@ -9303,8 +9297,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        ""
+        "Opgrader til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",
+        "Opgrader til ${ planName } for at forbinde op til ${ n } enheder til VPN'en samtidig"
       ]
     },
     "Upgrade notice": {

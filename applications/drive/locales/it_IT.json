@@ -505,9 +505,6 @@
       "Submit report": [
         "Invia segnalazione"
       ],
-      "Switch account": [
-        "Cambia account"
-      ],
       "Theme": [
         "Tema"
       ],
@@ -2667,7 +2664,7 @@
         "Nessuna delle chiavi caricate sono valide per la crittografia. La crittografia è disabilitata automaticamente."
       ],
       "Not a valid URL": [
-        ""
+        "URL non valido"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ appName }."
@@ -3543,14 +3540,19 @@
         "Nome etichetta"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Cambia o aggiungi un account"
+      ]
+    },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ti presentiamo il nuovo look di Proton.${ br } Molti servizi, una sola missione. Ti diamo il benvenuto in una nuova versione di internet, dove la privacy è la regola."
+        "Ti presentiamo il nuovo look di Proton.${ br } Molti servizi, una sola missione: una nuova versione di internet, dove la privacy è la regola."
       ]
     },
     "new_plans: title": {
       "Updated Proton, unified protection": [
-        "Proton aggiornato, protezione unificata"
+        "Nuovo Proton, protezione unificata"
       ]
     },
     "Notification": {
