@@ -9,7 +9,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Event } from '../../models/event';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
-import notificationIcon from '../../assets/notification.gif';
+import notificationIcon from '../../assets/notification.png';
 
 const useNewEmailNotification = (onOpenElement: () => void) => {
     const history = useHistory();
