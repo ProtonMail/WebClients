@@ -22,7 +22,7 @@ import {
     useUser,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { APPS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
+import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
@@ -30,10 +30,9 @@ import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Fold
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getCounterMap } from '../../helpers/elements';
-import { isConversationMode } from '../../helpers/mailSettings';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
+import MailSidebarSystemFolders from './MailSidebarSystemFolders';
 import SidebarFolders from './SidebarFolders';
-import SidebarItem from './SidebarItem';
 import SidebarLabels from './SidebarLabels';
 
 export type UnreadCounts = { [labelID: string]: number | undefined };
@@ -47,6 +46,7 @@ const formatFolderID = (folderID: string): string => `folder_expanded_state_${fo
 const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const location = useLocation();
     const [user] = useUser();
+    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
     const [mailSettings] = useMailSettings();
@@ -58,8 +58,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     const [displayFolders, toggleFolders] = useLocalState(numFolders > 0, `${user.ID || 'item'}-display-folders`);
     const [displayLabels, toggleLabels] = useLocalState(numLabels > 0, `${user.ID || 'item'}-display-labels`);
     const [displayMoreItems, toggleDisplayMoreItems] = useLocalState(false, `${user.ID || 'item'}-display-more-items`);
-
-    const { feature: scheduledFeature } = useFeature(FeatureCode.ScheduledSend);
 
     const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -131,10 +129,6 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         scrollIntoView(element, { block: 'nearest' });
     }, []);
 
-    const { ShowMoved } = mailSettings || { ShowMoved: 0 };
-
-    const isConversation = isConversationMode(currentLabelID, mailSettings, location);
-
     const counterMap = useDeepMemo(() => {
         if (!mailSettings || !labels || !folders || !conversationCounts || !messageCounts) {
             return {};
@@ -163,21 +157,13 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
         return unreadCounterMap;
     }, [messageCounts, conversationCounts, labels, folders, mailSettings, location]);
 
-    // show scheduled in sidebar if the user has scheduled messages
     const showScheduled = scheduledFeature?.Value && (totalMessagesMap[MAILBOX_LABEL_IDS.SCHEDULED] || 0) > 0;
-
-    const getCommonProps = (labelID: string) => ({
-        currentLabelID,
-        labelID,
-        isConversation,
-        unreadCount: counterMap[labelID],
-        totalMessagesCount: totalMessagesMap[labelID] || 0,
-    });
 
     const handleOpenLabelModal = (labelType: 'label' | 'folder') => {
         setLabelType(labelType);
         setEditLabelModalOpen(true);
     };
+
     const sidebarListItems = useMemo(() => {
         const foldersArray = folders?.length ? reduceFolderTreeview : ['add-folder'];
         const labelsArray = labels?.length ? labels.map((f) => f.ID) : ['add-label'];
@@ -250,104 +236,17 @@ const MailSidebarList = ({ labelID: currentLabelID }: Props) => {
     return (
         <div ref={sidebarRef} tabIndex={-1} className="outline-none">
             <SidebarList>
-                <SidebarItem
-                    {...getCommonProps(MAILBOX_LABEL_IDS.INBOX)}
-                    icon="inbox"
-                    text={c('Link').t`Inbox`}
-                    shortcutText="[G] [I]"
-                    isFolder
-                    id="inbox"
-                    onFocus={setFocusedItem}
+                <MailSidebarSystemFolders
+                    counterMap={counterMap}
+                    currentLabelID={currentLabelID}
+                    location={location}
+                    mailSettings={mailSettings}
+                    setFocusedItem={setFocusedItem}
+                    totalMessagesMap={totalMessagesMap}
+                    displayMoreItems={displayMoreItems}
+                    showScheduled={showScheduled}
+                    onToggleMoreItems={toggleDisplayMoreItems}
                 />
-                <SidebarItem
-                    {...getCommonProps(
-                        ShowMoved & SHOW_MOVED.DRAFTS ? MAILBOX_LABEL_IDS.ALL_DRAFTS : MAILBOX_LABEL_IDS.DRAFTS
-                    )}
-                    icon="file-lines"
-                    text={c('Link').t`Drafts`}
-                    shortcutText="[G] [D]"
-                    isFolder
-                    id="drafts"
-                    onFocus={setFocusedItem}
-                />
-                {showScheduled ? (
-                    <SidebarItem
-                        {...getCommonProps(MAILBOX_LABEL_IDS.SCHEDULED)}
-                        icon="clock"
-                        text={c('Link').t`Scheduled`}
-                        isFolder
-                        id="scheduled"
-                        onFocus={setFocusedItem}
-                    />
-                ) : null}
-                <SidebarItem
-                    {...getCommonProps(
-                        ShowMoved & SHOW_MOVED.SENT ? MAILBOX_LABEL_IDS.ALL_SENT : MAILBOX_LABEL_IDS.SENT
-                    )}
-                    icon="paper-plane"
-                    text={c('Link').t`Sent`}
-                    shortcutText="[G] [E]"
-                    isFolder
-                    id="sent"
-                    onFocus={setFocusedItem}
-                />
-                <SidebarItem
-                    {...getCommonProps(MAILBOX_LABEL_IDS.STARRED)}
-                    icon="star"
-                    text={c('Link').t`Starred`}
-                    shortcutText="[G] [*]"
-                    isFolder={false}
-                    id="starred"
-                    onFocus={setFocusedItem}
-                />
-                <SimpleSidebarListItemHeader
-                    toggle={displayMoreItems}
-                    onToggle={(display: boolean) => toggleDisplayMoreItems(display)}
-                    text={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
-                    title={displayMoreItems ? c('Link').t`Less` : c('Link').t`More`}
-                    id="toggle-more-items"
-                    onFocus={setFocusedItem}
-                />
-                {displayMoreItems && (
-                    <>
-                        <SidebarItem
-                            {...getCommonProps(MAILBOX_LABEL_IDS.ARCHIVE)}
-                            icon="archive-box"
-                            text={c('Link').t`Archive`}
-                            shortcutText="[G] [A]"
-                            isFolder
-                            id="archive"
-                            onFocus={setFocusedItem}
-                        />
-                        <SidebarItem
-                            {...getCommonProps(MAILBOX_LABEL_IDS.SPAM)}
-                            icon="fire"
-                            text={c('Link').t`Spam`}
-                            shortcutText="[G] [S]"
-                            isFolder
-                            id="spam"
-                            onFocus={setFocusedItem}
-                        />
-                        <SidebarItem
-                            {...getCommonProps(MAILBOX_LABEL_IDS.TRASH)}
-                            icon="trash"
-                            text={c('Link').t`Trash`}
-                            shortcutText="[G] [T]"
-                            isFolder
-                            id="trash"
-                            onFocus={setFocusedItem}
-                        />
-                        <SidebarItem
-                            {...getCommonProps(MAILBOX_LABEL_IDS.ALL_MAIL)}
-                            icon="envelopes"
-                            text={c('Link').t`All mail`}
-                            shortcutText="[G] [M]"
-                            isFolder
-                            id="allmail"
-                            onFocus={setFocusedItem}
-                        />
-                    </>
-                )}
                 <SimpleSidebarListItemHeader
                     toggle={displayFolders}
                     onToggle={(display: boolean) => toggleFolders(display)}
