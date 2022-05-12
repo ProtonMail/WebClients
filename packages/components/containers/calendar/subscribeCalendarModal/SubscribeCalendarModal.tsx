@@ -3,12 +3,14 @@ import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { truncateMore } from '@proton/shared/lib/helpers/string';
 import { c } from 'ttag';
 
-import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import { CALENDAR_SUBSCRIPTION_STATUS, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { isURL } from '@proton/shared/lib/helpers/validators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { validateSubscription } from '@proton/shared/lib/api/calendars';
+import { getCalendarStatusInfo } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { getCalendarPayload, getCalendarSettingsPayload, getDefaultModel } from '../calendarModal/calendarModalState';
 import { Href, InputFieldTwo, Loader, Button, BasicModal, Form } from '../../../components';
-import { useLoading } from '../../../hooks';
+import { useLoading, useApi } from '../../../hooks';
 import { GenericError } from '../../error';
 import useGetCalendarSetup from '../hooks/useGetCalendarSetup';
 import useGetCalendarActions from '../hooks/useGetCalendarActions';
@@ -26,8 +28,10 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
     const [calendarURL, setCalendarURL] = useState('');
     const [model, setModel] = useState(() => getDefaultModel());
     const [error, setError] = useState(false);
+    const [validationError, setValidationError] = useState<CALENDAR_SUBSCRIPTION_STATUS>();
 
     const [loadingAction, withLoadingAction] = useLoading();
+    const api = useApi();
 
     const isGoogle = calendarURL.match(/^https?:\/\/calendar\.google\.com/);
     const isOutlook = calendarURL.match(/^https?:\/\/outlook\.live\.com/);
@@ -58,6 +62,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
 
     const { error: setupError, loading: loadingSetup } = useGetCalendarSetup({ setModel });
     const handleClose = () => {
+        setValidationError(undefined);
         setCalendarURL('');
         onClose?.();
     };
@@ -78,7 +83,18 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
         const calendarPayload = getCalendarPayload(formattedModel);
         const calendarSettingsPayload = getCalendarSettingsPayload(formattedModel);
 
-        return handleCreateCalendar(formattedModel.addressID, calendarPayload, calendarSettingsPayload);
+        const {
+            ValidationResult: { Result: result },
+        } = await api<{ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS } }>({
+            ...validateSubscription({ url: calendarURL }),
+            silence: true,
+        }).catch(() => ({ ValidationResult: { Result: CALENDAR_SUBSCRIPTION_STATUS.OK } }));
+
+        if (result === CALENDAR_SUBSCRIPTION_STATUS.OK) {
+            return handleCreateCalendar(formattedModel.addressID, calendarPayload, calendarSettingsPayload);
+        }
+
+        setValidationError(result);
     };
 
     const {
@@ -124,6 +140,18 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
         ).t`Learn how to get a private calendar link.`}</Href>
     );
 
+    const getError = () => {
+        if (calendarURL && !isURLValid) {
+            return c('Error message').t`Invalid URL`;
+        }
+
+        if (validationError) {
+            return getCalendarStatusInfo(validationError)?.text;
+        }
+
+        return null;
+    };
+
     return (
         <BasicModal
             title={title}
@@ -155,11 +183,14 @@ ${kbLink}
 `}</p>
                         <InputFieldTwo
                             autoFocus
-                            error={calendarURL && !isURLValid && c('Error message').t`Invalid URL`}
                             warning={getWarning()}
+                            error={getError()}
                             label={c('Subscribe to calendar modal').t`Calendar URL`}
                             value={calendarURL}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => setCalendarURL(e.target.value.trim())}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                                setValidationError(undefined);
+                                setCalendarURL(e.target.value.trim());
+                            }}
                             data-test-id="input:calendar-subscription"
                         />
                     </>
