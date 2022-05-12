@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { c } from 'ttag';
 
-import { identity } from '@proton/shared/lib/helpers/function';
+import { identity } from '@proton/util/function';
 import { isPaid } from '@proton/shared/lib/user/helpers';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
 import FilterModal from '@proton/components/containers/filters/modal/FilterModal';

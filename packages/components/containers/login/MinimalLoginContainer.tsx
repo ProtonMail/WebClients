@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { EMAIL_PLACEHOLDER, MAIL_APP_NAME } from '@proton/shared/lib/constants';

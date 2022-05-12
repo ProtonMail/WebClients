@@ -5,7 +5,7 @@ import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
 import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
-import { unary } from '../../helpers/function';
+import { unary } from '@proton/util/function';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';

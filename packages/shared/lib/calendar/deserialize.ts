@@ -2,7 +2,7 @@ import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
-import { unary } from '../helpers/function';
+import { unary } from '@proton/util/function';
 import { Address, Nullable } from '../interfaces';
 import {
     CalendarEvent,

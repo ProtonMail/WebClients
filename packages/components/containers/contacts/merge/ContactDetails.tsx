@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { CryptoProcessingError, prepareContact } from '@proton/shared/lib/contacts/decrypt';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';

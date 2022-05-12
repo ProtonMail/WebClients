@@ -12,7 +12,7 @@ import {
     ModalsChildren,
     Icon,
 } from '@proton/components';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 

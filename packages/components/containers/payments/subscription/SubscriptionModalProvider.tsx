@@ -4,7 +4,7 @@ import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@pro
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { PLANS } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 
 import { useModalState } from '../../../components';
 import { usePlans, useSubscription, useUser } from '../../../hooks';

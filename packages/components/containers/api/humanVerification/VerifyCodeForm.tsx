@@ -1,6 +1,6 @@
 import { KeyboardEvent, ReactNode, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { isNumber } from '@proton/shared/lib/helpers/validators';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 

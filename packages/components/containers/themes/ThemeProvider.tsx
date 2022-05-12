@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useEffect, useState } from 'react';
 import { PROTON_DEFAULT_THEME, PROTON_THEMES_MAP, ThemeTypes } from '@proton/shared/lib/themes/themes';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { getCookie, setCookie } from '@proton/shared/lib/helpers/cookies';
 

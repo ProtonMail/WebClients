@@ -1,7 +1,7 @@
 import { serverTime } from 'pmcrypto';
 import { fromUTCDate } from '../date/timezone';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
-import { noop } from '../helpers/function';
+import { noop } from '@proton/util/function';
 import { omit, pick } from '../helpers/object';
 import {
     AttendeeClearPartResult,

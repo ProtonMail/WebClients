@@ -12,7 +12,7 @@ import { Audience, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@
 import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
 import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import { unary } from '@proton/shared/lib/helpers/function';
+import { unary } from '@proton/util/function';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 

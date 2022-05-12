@@ -16,7 +16,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { getSentStatusIconInfo, getReceivedStatusIcon, MessageViewIcons } from '../../helpers/message/icon';
 import MessageBody from './MessageBody';

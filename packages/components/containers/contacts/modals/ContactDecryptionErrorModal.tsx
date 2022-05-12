@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { getKeyUsedForContact } from '@proton/shared/lib/contacts/keyVerifications';
 import { Key } from '@proton/shared/lib/interfaces';

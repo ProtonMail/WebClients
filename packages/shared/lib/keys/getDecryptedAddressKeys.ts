@@ -6,7 +6,7 @@ import { decryptMemberToken } from './memberToken';
 import { splitKeys } from './keys';
 import { getAddressKeyToken } from './addressKeys';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
-import { noop } from '../helpers/function';
+import { noop } from '@proton/util/function';
 
 const getAddressKeyPassword = (
     { Activation, Token, Signature }: tsKey,

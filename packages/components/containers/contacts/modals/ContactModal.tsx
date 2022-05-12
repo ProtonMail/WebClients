@@ -1,7 +1,7 @@
 import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { c } from 'ttag';
 import { addContacts } from '@proton/shared/lib/api/contacts';
-import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function';
+import { randomIntFromInterval, noop } from '@proton/util/function';
 import { hasCategories } from '@proton/shared/lib/contacts/properties';
 import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';
 import { getEditableFields, getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';

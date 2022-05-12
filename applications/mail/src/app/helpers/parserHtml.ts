@@ -1,6 +1,6 @@
 import TurndownService from 'turndown';
 
-import { identity } from '@proton/shared/lib/helpers/function';
+import { identity } from '@proton/util/function';
 
 const EMPTY_LINE_KEEPER = '%%%PROTON-EMPTY-LINE%%%';
 

@@ -1,5 +1,5 @@
 import { ElementType, useState } from 'react';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import tinycolor from 'tinycolor2';
 import { Icon } from '../icon';
 import { Dropdown, DropdownButton } from '../dropdown';

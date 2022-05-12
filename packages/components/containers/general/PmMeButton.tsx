@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { setupAddress } from '@proton/shared/lib/api/addresses';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import { DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import {
     useApi,
     useAddresses,

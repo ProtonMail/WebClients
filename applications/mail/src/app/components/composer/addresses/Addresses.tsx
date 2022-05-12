@@ -1,6 +1,6 @@
 import { MutableRefObject, useEffect, useRef, MouseEvent, useCallback } from 'react';
 import { ContactListModal, useModals, useToggle } from '@proton/components';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import AddressesEditor from './AddressesEditor';
 import AddressesSummary from './AddressesSummary';

@@ -8,7 +8,7 @@ import { formatUser, UserModel } from '@proton/shared/lib/models/userModel';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { isSSOMode, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import {
     getBasename,

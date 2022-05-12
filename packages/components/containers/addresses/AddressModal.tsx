@@ -10,7 +10,7 @@ import {
 import { Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import {
     SelectTwo,
