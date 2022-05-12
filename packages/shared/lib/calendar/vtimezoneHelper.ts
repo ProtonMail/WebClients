@@ -1,4 +1,4 @@
-import isTruthy from '../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { SimpleMap } from '../interfaces';
 import { VcalVeventComponent } from '../interfaces/calendar';
 import { GetVTimezonesMap } from '../interfaces/hooks/GetVTimezonesMap';

@@ -1,6 +1,6 @@
 import { decryptPrivateKey } from 'pmcrypto';
 
-import isTruthy from '../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { DecryptedKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 import { splitKeys } from './keys';

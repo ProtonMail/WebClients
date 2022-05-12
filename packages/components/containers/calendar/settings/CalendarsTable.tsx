@@ -6,7 +6,7 @@ import {
 import { c } from 'ttag';
 import { getIsCalendarDisabled, getIsCalendarProbablyActive } from '@proton/shared/lib/calendar/calendar';
 import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { SimpleMap, UserModel } from '@proton/shared/lib/interfaces';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

@@ -4,7 +4,7 @@ import { Payment, PaymentParameters } from '@proton/components/containers/paymen
 import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
 import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import {
     Button,
     CurrencySelector,

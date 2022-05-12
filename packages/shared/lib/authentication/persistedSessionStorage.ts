@@ -1,5 +1,5 @@
+import isTruthy from '@proton/util/isTruthy';
 import { setItem, getItem, removeItem } from '../helpers/storage';
-import isTruthy from '../helpers/isTruthy';
 import { PersistedSession, PersistedSessionBlob } from './SessionInterface';
 import { getValidatedLocalID } from './sessionForkValidation';
 import { InvalidPersistentSessionError } from './error';

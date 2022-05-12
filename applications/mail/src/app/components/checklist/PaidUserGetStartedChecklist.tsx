@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { useEffect } from 'react';
 
 import { ChecklistItem, Loader, classnames, useApi } from '@proton/components';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import { seenCompletedChecklist } from '@proton/shared/lib/api/checklist';
 

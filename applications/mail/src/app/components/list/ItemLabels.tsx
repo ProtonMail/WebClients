@@ -1,4 +1,4 @@
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { classnames, LabelStack } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { orderBy } from '@proton/shared/lib/helpers/array';

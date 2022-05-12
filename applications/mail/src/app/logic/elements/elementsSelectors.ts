@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import { LabelCount } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { ESDBStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
 import {
     PAGE_SIZE,

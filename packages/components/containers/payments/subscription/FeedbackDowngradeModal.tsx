@@ -4,7 +4,7 @@ import { SUBSCRIPTION_CANCELLATION_REASONS } from '@proton/shared/lib/constants'
 import { shuffle } from '@proton/shared/lib/helpers/array';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import {
     Button,
     InputFieldTwo,

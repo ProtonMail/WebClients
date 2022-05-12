@@ -5,7 +5,7 @@ import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from 
 import { useHistory } from 'react-router-dom';
 import { Location } from 'history';
 import { noop } from '@proton/shared/lib/helpers/function';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
 import { useMoveToFolder, useStar } from '../useApplyLabels';
 import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';

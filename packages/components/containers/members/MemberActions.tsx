@@ -4,7 +4,7 @@ import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE } from '@proton/share
 import memberLogin from '@proton/shared/lib/authentication/memberLogin';
 import { Address, CachedOrganizationKey, Member, Organization, User as tsUser } from '@proton/shared/lib/interfaces';
 import { noop } from '@proton/shared/lib/helpers/function';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { revoke } from '@proton/shared/lib/api/auth';
 import {
     maybeResumeSessionByUser,
