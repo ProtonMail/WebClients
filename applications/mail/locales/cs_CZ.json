@@ -827,9 +827,6 @@
       "Submit": [
         "Odeslat"
       ],
-      "Switch account": [
-        "Přepnout účet"
-      ],
       "Switch to rich text": [
         "Přepnout na formátovaný text"
       ],
@@ -1504,10 +1501,10 @@
         "Tato pozvánka je zastaralá. Událost byla aktualizována."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
+        "Tato odpověď neodpovídá Vašim údajům o pozvánce. Zkontrolujte prosím detaily pozvánky ve Vašem kalendáři."
       ],
       "This response is out of date.": [
-        ""
+        "Tato odpověď je zastaralá."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Tato odpověď je zastaralá. Událost již neexistuje ve Vašem kalendáři."
@@ -3853,7 +3850,7 @@
         "${ selectedFoldersCount } vybraných štítků"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } úložiště"
       ],
       "${ total } conversation": [
         "${ total } konverzace",
@@ -4027,7 +4024,7 @@
         "Základní navigace a akce zůstávají k dispozici bez ohledu na aktivní nebo neaktivní klávesové zkratky v nastavení."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
       "Body: ": [
         "Tělo: "
@@ -4714,7 +4711,7 @@
         "Tato pozvánka je uložena v zakázaném kalendáři."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -4843,7 +4840,7 @@
         "Vylepšete tím, že ${ MAIL_APP_NAME } propojíte s třetí stranou plochy počítače."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
       ],
       "Upload picture": [
         "Nahrát obrázek"
@@ -5826,9 +5823,6 @@
       "Pay invoice": [
         "Zaplatit fakturu"
       ],
-      "Previous version": [
-        "Předchozí verze"
-      ],
       "Privacy policy": [
         "Zásady ochrany osobních údajů"
       ],
@@ -6173,12 +6167,12 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Dále se musíte přihlásit ke svému účtu Google a udělit společnosti Proton přístup ke svým datům."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
       ]
     },
     "Onboarding": {
@@ -6194,7 +6188,7 @@
         "Další"
       ],
       "Start using ${ appName }": [
-        ""
+        "Začněte používat ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -7487,7 +7481,7 @@
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
       "Sign in and grant access": [
-        ""
+        "Přihlaste se a povolte přístup"
       ],
       "Sort conversations": [
         "Seřadit konverzace"

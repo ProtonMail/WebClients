@@ -507,10 +507,7 @@
         "Odeslat"
       ],
       "Submit report": [
-        ""
-      ],
-      "Switch account": [
-        "Přepnout účet"
+        "Odeslat hlášení"
       ],
       "Theme": [
         "Vzhled"
@@ -1888,7 +1885,7 @@
         "Klíč hlavní adresy není dešifrován."
       ],
       "Report failed to be sent": [
-        ""
+        "Hlášení se nepodařilo odeslat"
       ],
       "Request timed out": [
         "Vypršel časový limit žádosti"
@@ -2369,7 +2366,7 @@
         "${ speed }/s"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } úložiště"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } kontakt byl úspěšně aktualizován.",
@@ -2438,7 +2435,7 @@
         "Vzhledem k tomu že ${ appName } je end-to-end zašifrovaná, tak nemáme přístup\na nemůžeme za Vás dekryptovat Vaše soubory. K odemknutí Vašeho disku po resetování hesla\nmusíte mít jedno z následujících:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
       "Canceled": [
         "Zrušeno"
@@ -2561,13 +2558,13 @@
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "",
-        "",
-        "",
-        ""
+        "Předpokládaný zbývající čas: ${ estimatedMinutes } minuta",
+        "Předpokládaný zbývající čas: ${ estimatedMinutes } minuty",
+        "Předpokládaný zbývající čas: ${ estimatedMinutes } minut",
+        "Předpokládaný zbývající čas: ${ estimatedMinutes } minut"
       ],
       "Estimated time remaining: Less than a minute": [
-        ""
+        "Předpokládaný zbývající čas: méně než minuta"
       ],
       "Estimating time remaining...": [
         "Odhaduji zbývající čas..."
@@ -2582,7 +2579,7 @@
         "Nepodařilo se otevřít zabezpečený odkaz. Důvod: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        ""
+        "Soubor \"${ name }\" byl smazán během stahování"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -2597,7 +2594,7 @@
         "Dokončení"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        ""
+        "Složka \"${ link.name }\" byla smazána během stahování"
       ],
       "Folder contents will merge into a single folder": [
         "Obsah složky bude sloučen do jedné složky"
@@ -2753,7 +2750,7 @@
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
       ],
       "Not a valid URL": [
-        ""
+        "Neplatná adresa URL"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ appName }, mohou být data stále dostupná lokálně."
@@ -2834,7 +2831,7 @@
         "Obnovením stránky nebo ${ link } se automaticky vyřeší většina problémů."
       ],
       "Report has been sent": [
-        ""
+        "Hlášení bylo odesláno"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze povolit vyhledávání"
@@ -2846,7 +2843,7 @@
         "Vyberte formát e-mailu, který chcete aby byl použit jako výchozí pro zasílání e-mailu na tuto e-mailovou adresu."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Vyberte co chcete přesunout z Googlu."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -2894,7 +2891,7 @@
         ""
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
+        "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
       ],
       "There are no files yet": [
         "Soubory tam ještě nejsou"
@@ -2909,7 +2906,7 @@
         "Tento prohlížeč nepodporuje náhled PDF dokumentů. Soubor si stáhněte."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Tento odkaz vede na webovou stránku, která se může pokoušet ukrást vaše údaje, například hesla a údaje o kreditní kartě."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Tento odkaz může být homografickým útokem a nelze ho otevřít pomocí prohlížeče Internet Explorer nebo Edge. Pokud jste si jisti, že je odkaz v pořádku, otevřete ho v jiném prohlížeči."
@@ -2990,7 +2987,7 @@
         ""
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
       ],
       "Uploaded": [
         "Nahrané"
@@ -3002,7 +2999,7 @@
         "Nahrávání stovky souboru najednou může zapříčinit dopad na výkon."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        ""
+        "Pomocí tohoto formuláře nás můžete informovat o nevhodných, nezákonných,\nnebo jinak škodlivých sdílených souborech. Chystáte se nahlásit:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         ""
@@ -3119,7 +3116,7 @@
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
       ],
       "Your secure, shareable link for ${ boldNameText }": [
-        ""
+        "Váš bezpečný sdílený odkazový řádek pro ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3228,7 +3225,7 @@
         "Kategorie"
       ],
       "Child sexual abuse material": [
-        ""
+        "Materiál o sexuálním zneužívání dětí"
       ],
       "City": [
         "Město"
@@ -3237,7 +3234,7 @@
         "Kód má 6 číslic bez mezer"
       ],
       "Comment": [
-        ""
+        "Komentář"
       ],
       "Contacts": [
         "Kontakty"
@@ -3246,7 +3243,7 @@
         "Kopírovat"
       ],
       "Copyright infringement": [
-        ""
+        "Porušení autorských práv"
       ],
       "Country": [
         "Země"
@@ -3273,7 +3270,7 @@
         "Přesto stáhnout"
       ],
       "Email": [
-        ""
+        "E-mail"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -3330,7 +3327,7 @@
         "Skrýt heslo"
       ],
       "I understand the risk": [
-        ""
+        "Rozumím rizikům"
       ],
       "Image": [
         "Obrázek"
@@ -3363,7 +3360,7 @@
         "Heslo k e-mailové schránce"
       ],
       "Malware": [
-        ""
+        "Malware"
       ],
       "Manage folders": [
         "Správa složek"
@@ -3393,7 +3390,7 @@
         "Verze operačního systému"
       ],
       "Other": [
-        ""
+        "Ostatní"
       ],
       "Password": [
         "Heslo"
@@ -3405,7 +3402,7 @@
         "Telefonní číslo"
       ],
       "Please provide full details to help us take appropriate action": [
-        ""
+        "Uveďte prosím všechny podrobnosti, které nám pomohou přijmout příslušná opatření"
       ],
       "Post office box": [
         "PSČ"
@@ -3432,13 +3429,13 @@
         "Nahradit složku"
       ],
       "Report Abuse": [
-        ""
+        "Nahlásit zneužití"
       ],
       "Reveal password": [
         "Zobrazit heslo"
       ],
       "Select type of abuse": [
-        ""
+        "Vyberte typ zneužití"
       ],
       "Set expiration date": [
         "Nastavit datum pro vypršení platnosti"
@@ -3456,10 +3453,10 @@
         "Přeskočit složku"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Stolen data": [
-        ""
+        "Odcizené údaje"
       ],
       "Street address": [
         "Ulice a č. p"
@@ -3867,7 +3864,7 @@
         "Zapnout přístup do beta verze"
       ],
       "Next": [
-        ""
+        "Další"
       ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
@@ -3915,7 +3912,7 @@
         "Rozšířit pro přístup k ${ appName }"
       ],
       "Welcome to ${ appName }": [
-        ""
+        "Vítejte v ${ appName }"
       ]
     },
     "Option": {
@@ -3961,7 +3958,7 @@
         "Zadejte nový název složky"
       ],
       "Enter your email address": [
-        ""
+        "Zadejte svou e-mailovou adresu"
       ],
       "Filter groups": [
         "Filtrovat skupiny"
@@ -4075,7 +4072,7 @@
         ""
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
@@ -4465,10 +4462,10 @@
         "Detaily složek"
       ],
       "Found ${ searchView.numberOfResults } result": [
-        "",
-        "",
-        "",
-        ""
+        "Nalezen ${ searchView.numberOfResults } výsledek",
+        "Nalezeny ${ searchView.numberOfResults } výsledky",
+        "Nalezeno ${ searchView.numberOfResults } výsledků",
+        "Nalezeno ${ searchView.numberOfResults } výsledků"
       ],
       "Groups": [
         "Skupiny"
@@ -4615,7 +4612,7 @@
         "Chcete-li pokračovat, znovu se přihlaste"
       ],
       "Sign in and grant access": [
-        ""
+        "Přihlaste se a povolte přístup"
       ],
       "Size": [
         "Velikost"
@@ -4678,7 +4675,7 @@
         "Varování"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Varování: pravděpodobně se jedná o podvodnou stránku"
       ],
       "What would you like to import?": [
         "Co byste chtěli importovat?"

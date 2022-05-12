@@ -721,9 +721,6 @@
       "Support": [
         "Assistance"
       ],
-      "Switch account": [
-        "Changer de compte"
-      ],
       "Switch to rich text": [
         "Passer au texte enrichi"
       ],
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Quels e-mails souhaitez-vous recevoir de la part de Proton ?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Quels e-mails souhaitez-vous recevoir de la part de ${ BRAND_NAME } ?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Vous vous êtes réabonné aux e-mails ${ categoriesJsx }."
@@ -2693,10 +2690,10 @@
         "Veuillez essayer de vous authentifier à nouveau et vous assurer que les autorisations sont définies correctement."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour obtenir une assistance multiutilisateur"
+        "Passez à un abonnement entreprise avec plus d'un utilisateur pour bénéficier d'une assistance multi-utilisateur"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
+        "Passez à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -3201,13 +3198,13 @@
         "Octets"
       ],
       "Gigabytes": [
-        "Giga-octets"
+        "Gigaoctets"
       ],
       "Kilobytes": [
-        "Kilo-octets"
+        "Kilooctets"
       ],
       "Megabytes": [
-        "Mega-octets"
+        "Megaoctets"
       ]
     },
     "Filter Actions": {
@@ -3565,7 +3562,7 @@
         "Proton ne peut pas se connecter à votre compte Yahoo. Veuillez vous assurer que l'adresse du serveur de messagerie et le numéro de port sont corrects."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that:": [
-        "Proton ne peut pas se connecter à votre compte Yahoo. Veuillez vous assurer que :"
+        "Proton ne peut pas se connecter à votre compte Yahoo. Assurez-vous que :"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Trop de demandes récentes. Veuillez réessayer dans quelques instants."
@@ -7201,6 +7198,9 @@
       "Keep account": [
         "Conserver le compte"
       ],
+      "Switch or add account": [
+        "Basculez vers ou ajoutez un compte"
+      ],
       "Switch plan": [
         "Changer d'abonnement"
       ]
@@ -7213,7 +7213,7 @@
         "Explorer tous les abonnements ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
-        ""
+        "À partir de ${ _price } par utilisateur"
       ],
       "From ${ price }": [
         "À partir de ${ price }"
@@ -7291,6 +7291,9 @@
       ],
       "${ size } total storage": [
         "${ size } d'espace de stockage total"
+      ],
+      "1 free VPN connection in total": [
+        "1 connexion VPN gratuite"
       ],
       "99.95% SLA": [
         "SLA/uptime : 99,95 % de disponibilité du service"
@@ -7689,8 +7692,8 @@
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Une assistance par téléphone est proposée par l'équipe du service clientèle de Proton durant les heures de bureau en Europe, pour les clients comptant au moins 6 utilisateurs"
       ],
-      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
-        "Évite que vos messages ne soient interceptés durant l'envoi ou que ${ MAIL_APP_NAME } ou d'autres fournisseurs de messagerie électronique n'y accèdent. Les seules personnes en mesure de lire les messages sont l'expéditeur et le destinataire."
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Protégez chaque appareil connecté à votre réseau Wi-Fi. Cet élément est également utile si vous possédez des appareils qui ne prennent pas directement en charge les paramètres VPN."
@@ -7864,7 +7867,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        "Pour que l'importation fonctionne, vous devez sélectionner tous les éléments demandés comme indiqué dans le GIF."
+        "Pour que l'importation fonctionne, sélectionnez tous les éléments demandés comme indiqué dans le GIF."
       ]
     },
     "Onboarding": {
@@ -9475,9 +9478,6 @@
       ],
       "Processing...": [
         "Traitement en cours…"
-      ],
-      "Proton Logo": [
-        "Logo de Proton"
       ],
       "Recommended": [
         "Recommandé"

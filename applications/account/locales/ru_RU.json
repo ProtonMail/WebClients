@@ -167,7 +167,7 @@
         "Подтвердите открытие ссылки ${ linkToShow }"
       ],
       "contact": [
-        ""
+        "связаться"
       ],
       "Contact support": [
         "Связаться с поддержкой"
@@ -200,10 +200,10 @@
         "Создать"
       ],
       "Create a secure ProtonMail address instead": [
-        ""
+        "Или лучше создать безопасный адрес ProtonMail"
       ],
       "Create account": [
-        ""
+        "Создать учётную запись"
       ],
       "Create address": [
         "Создать адрес"
@@ -215,7 +215,7 @@
         "Создать папку"
       ],
       "Create free account": [
-        ""
+        "Создать бесплатную учётную запись"
       ],
       "Create label": [
         "Создать ярлык"
@@ -224,7 +224,7 @@
         "Создать ссылку"
       ],
       "Current plan": [
-        ""
+        "Текущий тариф"
       ],
       "Customize": [
         "Настроить"
@@ -233,7 +233,7 @@
         "Настроить импорт"
       ],
       "Customize plan": [
-        ""
+        "Настроить тариф"
       ],
       "Decrease": [
         "Уменьшить"
@@ -308,7 +308,7 @@
         "Изменить"
       ],
       "Edit billing details": [
-        ""
+        "Изменить платёжную информацию"
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -326,7 +326,7 @@
         "Изменить информацию о входе в систему"
       ],
       "Edit subscription": [
-        ""
+        "Редактировать подписку"
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
@@ -377,7 +377,7 @@
         "Перейти к ярлыку"
       ],
       "Go to sign in": [
-        ""
+        "Перейти к авторизации"
       ],
       "Hide": [
         "Скрыть"
@@ -443,7 +443,7 @@
         "отметить письма как"
       ],
       "Maybe later": [
-        ""
+        "Может, позже"
       ],
       "More": [
         "Ещё"
@@ -497,7 +497,7 @@
         "Оплатить"
       ],
       "Pay ${ price }": [
-        ""
+        "Оплатить ${ price }"
       ],
       "Preview": [
         "Предпросмотр"
@@ -623,10 +623,10 @@
         "Сохранить файл ICS"
       ],
       "Save selected": [
-        ""
+        "Сохранить выбранное"
       ],
       "Select ${ planTitle }": [
-        ""
+        "Выбрать ${ planTitle }"
       ],
       "Select calendar view": [
         "Выберите вид календаря"
@@ -721,9 +721,6 @@
       "Support": [
         "Поддержка"
       ],
-      "Switch account": [
-        "Сменить аккаунт"
-      ],
       "Switch to rich text": [
         "Перейти на обогащенный текст"
       ],
@@ -806,7 +803,7 @@
         "Просмотр счёта"
       ],
       "View plans details": [
-        ""
+        "Посмотреть детали тарифа"
       ],
       "Void all recovery files": [
         "Уничтожить все файлы восстановления"
@@ -2493,8 +2490,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Какие письма вы хотите получать от Proton?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Вы снова подписаны на ${ categoriesJsx }."
@@ -5069,7 +5066,7 @@
         ""
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Выберите, что вы хотите перенести из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -5165,7 +5162,7 @@
         "Имя будет видно вашим пользователям, когда они войдут в систему."
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "Самый безопасный способ просматривать сайты, вести трансляции и быть онлайн."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -7341,6 +7338,9 @@
       "Keep account": [
         "Сохранить аккаунт"
       ],
+      "Switch or add account": [
+        "Изменить или добавить аккаунт"
+      ],
       "Switch plan": [
         "Сменить тариф"
       ]
@@ -7353,7 +7353,7 @@
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
-        ""
+        "От ${ _price } на пользователя"
       ],
       "From ${ price }": [
         "От: ${ price }"
@@ -7457,6 +7457,9 @@
       ],
       "${ size } total storage": [
         "Общий объем хранилища: ${ size }"
+      ],
+      "1 free VPN connection in total": [
+        "Одно бесплатное VPN-подключение в целом"
       ],
       "99.95% SLA": [
         "99,95% по соглашению о качестве услуг"
@@ -7861,8 +7864,8 @@
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Клиенты, у которых 6 и более пользователей, могут обратиться за помощью к команде поддержки Proton по телефону в рабочее время согласно европейскому графику"
       ],
-      "Prevents messages from being intercepted in transit or being accessed by either ${ MAIL_APP_NAME } or other email providers. The only people who can read the messages are the sender and recipient.": [
-        "Предотвращает перехват отправленных сообщений и сторонний доступ к ним ${ MAIL_APP_NAME } и других служб электронной почты. Читать сообщения могут только отправитель и получатель"
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Ограничивает доступ к сообщениям для ${ BRAND_NAME } или третьей стороны. Читать сообщения могут только отправитель и предполагаемый получатель."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Защитите каждое устройство, подключенное к сети Wi-Fi. Это также будет полезно, если у вас есть устройства, которые не поддерживают настройки VPN напрямую"
@@ -9691,9 +9694,6 @@
       ],
       "Processing...": [
         "Обработка…"
-      ],
-      "Proton Logo": [
-        "Логотип Proton"
       ],
       "Recommended": [
         ""
