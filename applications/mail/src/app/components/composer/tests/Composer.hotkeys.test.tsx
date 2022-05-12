@@ -11,13 +11,20 @@ import {
     GeneratedKey,
     tick,
 } from '../../../helpers/test/helper';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import { ID, prepareMessage, renderComposer, toAddress, AddressID, fromAddress } from './Composer.test.helpers';
 
 describe('Composer hotkeys', () => {
     let fromKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+
         fromKeys = await generateKeys('me', fromAddress);
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
     });
 
     beforeEach(clearAll);

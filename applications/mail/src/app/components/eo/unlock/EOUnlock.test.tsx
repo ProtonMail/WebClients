@@ -9,6 +9,7 @@ import {
     validID,
     mockConsole,
 } from '../../../helpers/test/eo/helpers';
+import { setupCryptoProxyForTesting, releaseCryptoProxy } from '../../../helpers/test/crypto';
 import { EOGetHistory, EORender, EOResetHistory } from '../../../helpers/test/eo/EORender';
 import EOUnlock from './EOUnlock';
 import { store } from '../../../logic/eo/eoStore';
@@ -22,6 +23,14 @@ const props = {
 };
 
 describe('Encrypted Outside Unlock', () => {
+    beforeAll(async () => {
+        await setupCryptoProxyForTesting();
+    });
+
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     beforeEach(async () => {
         await store.dispatch(init({ get: jest.fn() }));
     });

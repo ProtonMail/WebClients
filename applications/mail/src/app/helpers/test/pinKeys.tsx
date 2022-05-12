@@ -1,4 +1,5 @@
-import { arrayToBinaryString, encodeBase64 } from 'pmcrypto';
+import { CryptoProxy } from '@proton/crypto';
+import { arrayToBinaryString, encodeBase64 } from '@proton/crypto/lib/utils';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -28,10 +29,12 @@ export const message = {
 
 export const contactEmails = [{ ContactID: contactID, Email: sender.Address } as ContactEmail] as ContactEmail[];
 
-const getProperties = (senderKeys: GeneratedKey, hasFingerprint = true) => {
+const getProperties = async (senderKeys: GeneratedKey, hasFingerprint = true) => {
     const keyValue = hasFingerprint
         ? `data:application/pgp-keys;base64,${encodeBase64(
-              arrayToBinaryString(senderKeys.publicKeys[0].toPacketlist().write() as Uint8Array)
+              arrayToBinaryString(
+                  await CryptoProxy.exportPublicKey({ key: senderKeys.publicKeys[0], format: 'binary' })
+              )
           )}`
         : 'data:application/pgp-keys;';
 
@@ -61,7 +64,7 @@ export const setupContactsForPinKeys = async (hasFingerprint = true) => {
     const receiverKeys = await generateKeys('me', receiver.Address);
     const senderKeys = await generateKeys('sender', sender.Address);
 
-    const properties = getProperties(senderKeys, hasFingerprint);
+    const properties = await getProperties(senderKeys, hasFingerprint);
     const vCardContact = fromVCardProperties(properties);
 
     const contactCards = await prepareCardsFromVCard(vCardContact, {
