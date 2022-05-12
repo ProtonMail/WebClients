@@ -1,5 +1,5 @@
 // Vcard fields for which we keep track of PREF parameter
-import isTruthy from '../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { PublicKeyWithPref } from '../interfaces';
 import { ContactProperties, ContactProperty, ContactValue } from '../interfaces/contacts/Contact';
 

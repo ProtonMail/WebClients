@@ -1,5 +1,5 @@
 import { PLANS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Audience, PlansMap, VPNCountries, VPNServers } from '@proton/shared/lib/interfaces';
 import { getHighlightFeatures } from './highlights';
 import { getMailFeatures } from './mail';

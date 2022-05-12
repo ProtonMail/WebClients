@@ -1,5 +1,5 @@
+import isTruthy from '@proton/util/isTruthy';
 import { range } from '../helpers/array';
-import isTruthy from '../helpers/isTruthy';
 import { ContactValue } from '../interfaces/contacts';
 import { getStringContactValue } from './properties';
 

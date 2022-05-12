@@ -4,7 +4,7 @@ import { randomIntFromInterval, noop } from '@proton/shared/lib/helpers/function
 import { diff } from '@proton/shared/lib/helpers/array';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
     FormModal,

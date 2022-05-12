@@ -35,7 +35,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { CONTACT_WIDGET_TABS, CustomActionRenderProps } from '@proton/components/containers/contacts/widget/types';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
 import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { uniqueBy } from '@proton/shared/lib/helpers/array';

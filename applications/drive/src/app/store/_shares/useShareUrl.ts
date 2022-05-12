@@ -9,7 +9,7 @@ import {
     uint8ArrayToBase64String,
     stringToUint8Array,
 } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getRandomString } from '@proton/shared/lib/helpers/string';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';

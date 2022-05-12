@@ -1,6 +1,6 @@
 import { ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 import useContactList from '../useContactList';

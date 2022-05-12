@@ -1,4 +1,4 @@
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { useState } from 'react';
 import { Address, Domain } from '@proton/shared/lib/interfaces';
 import { c, msgid } from 'ttag';

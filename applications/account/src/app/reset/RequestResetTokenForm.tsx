@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { ReactNode, useState } from 'react';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import { Button, Icon, Tabs, useLoading, useFormErrors, PhoneInput, InputFieldTwo } from '@proton/components';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { noop } from '@proton/shared/lib/helpers/function';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';

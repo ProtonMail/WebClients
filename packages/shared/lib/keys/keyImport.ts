@@ -1,7 +1,7 @@
 import { getKeys } from 'pmcrypto';
 
+import isTruthy from '@proton/util/isTruthy';
 import { readFileAsString } from '../helpers/file';
-import isTruthy from '../helpers/isTruthy';
 
 const PRIVATE_KEY_EXPR =
     /-----BEGIN PGP (PRIVATE|PUBLIC) KEY BLOCK-----(?:(?!-----)[\s\S])*-----END PGP (PRIVATE|PUBLIC) KEY BLOCK-----/g;
