@@ -11,6 +11,8 @@ import {
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
+import './MessageHeadersModal.scss';
+
 interface Props extends ModalProps {
     message?: Message;
 }
@@ -25,7 +27,7 @@ const MessageHeadersModal = ({ message, ...rest }: Props) => {
     };
 
     return (
-        <ModalTwo size="large" as={Form} onSubmit={handleDownload} {...rest}>
+        <ModalTwo className="message-headers-modal" size="large" as={Form} onSubmit={handleDownload} {...rest}>
             <ModalTwoHeader title={c('Info').t`Message headers`} />
             <ModalTwoContent>
                 <pre className="text-break">{content}</pre>
