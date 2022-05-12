@@ -1,4 +1,4 @@
-import { StandardPrivateApp, useApi } from '@proton/components';
+import { FeatureCode, StandardPrivateApp, useApi } from '@proton/components';
 import { getEvents } from '@proton/shared/lib/api/events';
 import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
@@ -44,6 +44,7 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
                 loadAllowedTimeZones(silentApi).catch(noop);
             }}
             locales={locales}
+            preloadFeatures={[FeatureCode.ReorderSystemFolders]}
             preloadModels={[
                 UserModel,
                 UserSettingsModel,

@@ -1,5 +1,22 @@
 import { DragEvent, DragEventHandler, useState } from 'react';
 
+interface Options {
+    onDragOver?: (event: DragEvent) => void;
+    onDragEnter?: (event: DragEvent) => void;
+    onDragLeave?: (event: DragEvent) => void;
+    onDrop?: (event: DragEvent) => void;
+}
+
+type DragOverReturn = [
+    dragsOver: boolean,
+    dragHandlers: {
+        onDragEnter: DragEventHandler;
+        onDragLeave: DragEventHandler;
+        onDragOver: DragEventHandler;
+        onDrop: DragEventHandler;
+    }
+];
+
 /**
  * Hooks to manage a dragOver flag
  * Takes an optional filter function to accept only specific drag content
@@ -8,26 +25,8 @@ import { DragEvent, DragEventHandler, useState } from 'react';
 const useDragOver = (
     dragFilter: (event: DragEvent) => boolean = () => true,
     dropEffect: 'none' | 'copy' | 'link' | 'move' = 'move',
-    {
-        onDragOver,
-        onDragEnter,
-        onDragLeave,
-        onDrop,
-    }: {
-        onDragOver?: (event: DragEvent) => void;
-        onDragEnter?: (event: DragEvent) => void;
-        onDragLeave?: (event: DragEvent) => void;
-        onDrop?: (event: DragEvent) => void;
-    } = {}
-): [
-    boolean,
-    {
-        onDragEnter: DragEventHandler;
-        onDragLeave: DragEventHandler;
-        onDragOver: DragEventHandler;
-        onDrop: DragEventHandler;
-    }
-] => {
+    { onDragOver, onDragEnter, onDragLeave, onDrop }: Options = {}
+): DragOverReturn => {
     const [dragOver, setDragOver] = useState(0);
 
     const handleDragEnter = (event: DragEvent) => {
