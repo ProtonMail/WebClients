@@ -1,5 +1,5 @@
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
 import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';

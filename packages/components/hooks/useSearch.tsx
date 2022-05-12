@@ -10,7 +10,7 @@ import {
     MouseEvent,
 } from 'react';
 
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { sanitizeString } from '@proton/shared/lib/sanitize';
 
 import { getMatch } from './helpers/search';

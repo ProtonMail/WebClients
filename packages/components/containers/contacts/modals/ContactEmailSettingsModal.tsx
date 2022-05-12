@@ -28,7 +28,7 @@ import {
     MIME_TYPES_MORE,
     PGP_SCHEMES,
 } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 
 import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';

@@ -10,7 +10,7 @@ import {
     useRightToLeft,
     Tabs,
 } from '@proton/components';
-import { buffer } from '@proton/shared/lib/helpers/function';
+import { buffer } from '@proton/util/function';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
 import {

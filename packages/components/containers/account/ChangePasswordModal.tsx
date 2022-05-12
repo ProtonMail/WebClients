@@ -6,7 +6,7 @@ import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys';
 import { isSSOMode, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { persistSessionWithPassword } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { PASSWORD_CHANGE_MESSAGE_TYPE, sendMessageToTabs } from '@proton/shared/lib/helpers/crossTab';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { updatePrivateKeyRoute } from '@proton/shared/lib/api/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import { Address } from '@proton/shared/lib/interfaces';

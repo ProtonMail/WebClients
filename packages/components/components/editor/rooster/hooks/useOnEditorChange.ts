@@ -1,4 +1,4 @@
-import { debounce } from '@proton/shared/lib/helpers/function';
+import { debounce } from '@proton/util/function';
 import { useCallback, useRef } from 'react';
 import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
 import { useIsMounted } from '../../../../hooks';

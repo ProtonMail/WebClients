@@ -15,7 +15,7 @@ import {
 } from '@proton/components';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
-import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import { randomIntFromInterval } from '@proton/util/function';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';

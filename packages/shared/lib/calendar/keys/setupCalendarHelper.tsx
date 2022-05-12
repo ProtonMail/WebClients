@@ -10,7 +10,7 @@ import { getPrimaryKey } from '../../keys';
 import { getActiveAddresses } from '../../helpers/address';
 import { DEFAULT_CALENDAR } from '../constants';
 import { ACCENT_COLORS } from '../../constants';
-import { randomIntFromInterval } from '../../helpers/function';
+import { randomIntFromInterval } from '@proton/util/function';
 
 interface Args {
     addresses: Address[];

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { queryUnlock } from '@proton/shared/lib/api/user';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import {

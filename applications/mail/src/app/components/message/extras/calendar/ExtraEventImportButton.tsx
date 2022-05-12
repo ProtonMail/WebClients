@@ -1,7 +1,7 @@
 import { useAddEvents } from '@proton/components/containers/calendar/hooks';
 import { CALENDAR_APP_NAME } from '@proton/shared/lib/calendar/constants';
 import { getEventWithCalendarAlarms } from '@proton/shared/lib/calendar/integration/invite';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';

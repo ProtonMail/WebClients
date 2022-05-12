@@ -10,7 +10,7 @@ import { getInitials } from '@proton/shared/lib/helpers/string';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { revoke } from '@proton/shared/lib/api/auth';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 
 import {
     Loader,

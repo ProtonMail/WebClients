@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { useState } from 'react';
 import { PasswordInputTwo, Button, useLoading, useFormErrors, InputFieldTwo } from '@proton/components';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import {
     confirmPasswordValidator,
     getMinPasswordLengthMessage,

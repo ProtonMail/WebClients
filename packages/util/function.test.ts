@@ -1,4 +1,4 @@
-import { randomIntFromInterval, unary } from '../../lib/helpers/function';
+import { randomIntFromInterval, unary } from './function';
 
 describe('Functions', () => {
     describe('Random int', () => {
@@ -11,7 +11,7 @@ describe('Functions', () => {
 
     describe('unary', () => {
         it('should ensure only one argument is passed', () => {
-            const myFunction = (name, index) => {
+            const myFunction = (name: string, index: number) => {
                 return index !== undefined ? `Ola ${name} - ${index}` : `Ola ${name}`;
             };
             const names = ['Joao', 'Felix', 'Tareixa'];

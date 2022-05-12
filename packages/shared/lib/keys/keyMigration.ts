@@ -13,7 +13,7 @@ import { queryScopes } from '../api/auth';
 import { migrateAddressKeysRoute } from '../api/keys';
 import { getOrganizationKeys } from '../api/organization';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
-import { noop } from '../helpers/function';
+import { noop } from '@proton/util/function';
 import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
 import { ApiError } from '../fetch/ApiError';
 import { getApiError } from '../api/helpers/apiErrorHelper';

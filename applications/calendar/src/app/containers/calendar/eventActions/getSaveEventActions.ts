@@ -7,7 +7,7 @@ import { buildVcalOrganizer, dayToNumericDay } from '@proton/shared/lib/calendar
 import { getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, Api, SimpleMap } from '@proton/shared/lib/interfaces';

@@ -42,7 +42,7 @@ import { fromUTCDate, getSupportedTimezone } from '@proton/shared/lib/date/timez
 import { getIsAddressActive, getIsAddressDisabled } from '@proton/shared/lib/helpers/address';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import { unary } from '@proton/shared/lib/helpers/function';
+import { unary } from '@proton/util/function';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address } from '@proton/shared/lib/interfaces';
 import {

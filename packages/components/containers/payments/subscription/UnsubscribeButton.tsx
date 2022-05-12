@@ -7,7 +7,7 @@ import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constan
 import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { unary } from '@proton/shared/lib/helpers/function';
+import { unary } from '@proton/util/function';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';

@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
-import { debounce } from '@proton/shared/lib/helpers/function';
+import { debounce } from '@proton/util/function';
 import { useIsMounted, useTheme } from '@proton/components';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 

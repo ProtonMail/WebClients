@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { requestUsername } from '@proton/shared/lib/api/reset';
 import { useHistory } from 'react-router-dom';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { noop } from '@proton/shared/lib/helpers/function';
+import { noop } from '@proton/util/function';
 
 import {
     Button,
