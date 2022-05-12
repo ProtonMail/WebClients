@@ -10,7 +10,7 @@ import { noop } from '@proton/shared/lib/helpers/function';
 
 import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
 import { MINUTE } from '@proton/shared/lib/constants';
-import notificationIcon from '../../../assets/notification.gif';
+import notificationIcon from '../../../assets/notification.png';
 
 import { CalendarsEventsCache } from '../calendar/eventStore/interface';
 
