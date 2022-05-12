@@ -32,7 +32,7 @@
         "etkinleştir"
       ],
       "Activate ${ addressToCreate }": [
-        "${ addressToCreate }@ adresini etkinleştir"
+        "${ addressToCreate } adresini etkinleştir"
       ],
       "Activate ${ Name }@pm.me": [
         "${ Name }@pm.me adresini etkinleştir"
@@ -497,7 +497,7 @@
         "Öde"
       ],
       "Pay ${ price }": [
-        "{ price } öde"
+        "${ price } öde"
       ],
       "Preview": [
         "Ön izleme"
@@ -720,9 +720,6 @@
       ],
       "Support": [
         "Destek"
-      ],
-      "Switch account": [
-        "Hesap değiştir"
       ],
       "Switch to rich text": [
         "Zengin metin biçimine geç"
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Hangi Proton e-postalarını almak istersiniz?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        "Hangi ${ BRAND_NAME } e-postalarını almak istersiniz?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "${ categoriesJsx } e-postalarına yeniden abone oldunuz."
@@ -3541,7 +3538,7 @@
         "Yahoo hesabınızda IMAP erişimi etkinleştirilmiş mi"
       ],
       "Invalid IMAP port": [
-        "IMAP kapı numarası geçersiz"
+        "IMAP bağlantı noktası geçersiz"
       ],
       "Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.": [
         "Proton hesabınızla bağlantı kuramadı. Lütfen Gmail IMAP erişiminin etkinleştirilmiş olduğundan emin olun."
@@ -3553,16 +3550,16 @@
         "Proton hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve kapı numarasının doğru olduğundan emin olun."
+        "Proton dış hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
       ],
       "Proton can't connect to your external account. Please make sure that:": [
         "Proton dış hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
       ],
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve kapı numarasının doğru olduğundan emin olun."
+        "Proton, Gmail hesabınızla bağlantı kuramadı. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "Proton, Yahoo hesabınızla bağlantı kuramada. Lütfen e-posta sunucusu adresinin ve kapı numarasının doğru olduğundan emin olun."
+        "Proton, Yahoo hesabınıza bağlanamıyor. Lütfen posta sunucusu adresinin ve bağlantı noktası numarasının doğru olduğundan emin olun."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that:": [
         "Proton, Yahoo hesabınızla bağlantı kuramadı. Lütfen şundan emin olun:"
@@ -6363,7 +6360,7 @@
         "Herhangi bir etiket bulunamadı"
       ],
       "Non-standard ports": [
-        "Standart olmayan kapı numaraları"
+        "Standart olmayan bağlantı noktaları"
       ],
       "Notification": [
         "Bildirim"
@@ -6441,7 +6438,7 @@
         "Lütfen yüklenecek dosyaları seçin"
       ],
       "Port": [
-        "Kapı numarası"
+        "Bağlantı noktası"
       ],
       "Postal code": [
         "Posta kodu"
@@ -7837,7 +7834,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } edinin"
+        "18 aya kadar ücretsiz ${ planName } kazanın"
       ],
       "Invite friends and earn rewards!": [
         "Arkadaşlarınızı davet edin ve ödül kazanın!"
@@ -8676,7 +8673,7 @@
         "Tüm sunuculara erişmek için ${ vpnPlus } edinin"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        "18 aya kadar ücretsiz ${ planName } edinin"
+        "18 aya kadar ücretsiz ${ planName } kazanın"
       ],
       "Gift code": [
         "Hediye kodu"
@@ -8832,9 +8829,6 @@
       "Processing...": [
         "İşleniyor..."
       ],
-      "Proton Logo": [
-        "Proton Logosu"
-      ],
       "Recommended": [
         "Önerilen"
       ],
@@ -8854,7 +8848,7 @@
         "Arkadaşınıza önerin"
       ],
       "Referral tracker": [
-        "Öneren izleyici"
+        "Öneri izleyici"
       ],
       "Remove calendar": [
         "Takvimi kaldır"

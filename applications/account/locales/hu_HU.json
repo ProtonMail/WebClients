@@ -179,7 +179,7 @@
         "Importálás folytatása"
       ],
       "Continue to ${ name }": [
-        "Folytatás ${ name }-be"
+        "Folytatás itt: ${ name }"
       ],
       "Continue with": [
         "Folytatás ezzel:"
@@ -720,9 +720,6 @@
       ],
       "Support": [
         "Ügyfélszolgálat"
-      ],
-      "Switch account": [
-        "Fiók váltása"
       ],
       "Switch to rich text": [
         "Váltás formázott szövegre"
@@ -2459,8 +2456,8 @@
       ]
     },
     "Email Unsubscribe": {
-      "Which emails do you want to receive from Proton?": [
-        "Milyen e-maileket szeretne kapni a Protontól?"
+      "Which emails do you want to receive from ${ BRAND_NAME }?": [
+        ""
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ismét feliratkozott ezekre az e-mailekre: ${ categoriesJsx }."
@@ -4939,7 +4936,7 @@
         "Válaszon ki egy szolgáltatót a kezdéshez"
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        "Válassza ezt: Folytatás ${ name }-be, hogy megnyissa az alkalmazást. Ez létrehoz egy ${ name } fiókot is a ${ MAIL_APP_NAME } címével, hogy a későbbiekben egy kattintással be tudjon jelentkezni."
+        "Válassza a \"Folytatás itt ${ name }\" lehetőséget, hogy megnyissa az alkalmazást. Ez létrehoz egy ${ name } fiókot is a ${ MAIL_APP_NAME } címével, hogy a későbbiekben egy kattintással be tudjon jelentkezni."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
@@ -5002,7 +4999,7 @@
         ""
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később kulcsa importálásához."
+        "Tárolja a jelszót és a fájlt egy biztos helyen. Szüksége lesz rá később a kulcsa importálásához."
       ],
       "Support for 1 custom email domain": [
         "Egy saját domain név használata"
@@ -5074,7 +5071,7 @@
         "Ez az a jelszó, amelyet a jelszó visszaállítása előtt használt."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ez a link egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
+        "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -5407,7 +5404,7 @@
         "A kifizetés ellenőrzéséhez átirányítjuk a bankjához."
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        "Nem lesz képes visszafejteni bármilyen üzenetet, fájlt vagy akármilyen más adatot, amit ezzel a kulccsal titkosított."
+        "NEM fogja tudni visszafejteni az üzeneteteket, fájlokat vagy akármilyen más adatot, amit ezzel a kulccsal titkosított."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "A kifizetés ellenőrzéséhez hamarosan átirányítunk a PayPal oldalára."
@@ -8562,7 +8559,7 @@
         "Naptár törlése"
       ],
       "Delete key permanently?": [
-        "Végleges törlés?"
+        "Kulcs végleges törlése?"
       ],
       "Delete logs": [
         "Naplók törlése"
@@ -8831,9 +8828,6 @@
       ],
       "Processing...": [
         "Folyamatban..."
-      ],
-      "Proton Logo": [
-        "Proton Logó"
       ],
       "Recommended": [
         ""
