@@ -5,7 +5,7 @@ import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { noop } from '@proton/shared/lib/helpers/function';

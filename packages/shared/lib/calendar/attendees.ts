@@ -1,9 +1,9 @@
 import { arrayToHexString, binaryStringToArray, unsafeSHA1 } from 'pmcrypto';
 
+import isTruthy from '@proton/util/isTruthy';
 import { groupWith } from '../helpers/array';
 import { buildMailTo, canonizeEmailByGuess, getEmailTo, validateEmailAddress } from '../helpers/email';
 import { unary } from '../helpers/function';
-import isTruthy from '../helpers/isTruthy';
 import { omit } from '../helpers/object';
 import { GetCanonicalEmailsMap } from '../interfaces/hooks/GetCanonicalEmailsMap';
 import {

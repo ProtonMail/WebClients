@@ -7,7 +7,7 @@ import {
     ImportType,
     NON_OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,

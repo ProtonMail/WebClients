@@ -3,7 +3,7 @@ import { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { CalendarLogo, DriveLogo, MailLogo, Tabs, VpnLogo, Icon } from '../../../components';

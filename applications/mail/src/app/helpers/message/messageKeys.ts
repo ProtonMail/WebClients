@@ -1,6 +1,6 @@
 import { getKeys, arrayToBinaryString, DecryptResultPmcrypto } from 'pmcrypto';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getParsedAutocryptHeader } from '@proton/shared/lib/mail/autocrypt';

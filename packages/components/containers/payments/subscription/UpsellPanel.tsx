@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { format, fromUnixTime } from 'date-fns';
 import { CYCLE, PLANS, APPS, BRAND_NAME, VPN_CONNECTIONS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import {
     hasMailPro,
     hasMail,

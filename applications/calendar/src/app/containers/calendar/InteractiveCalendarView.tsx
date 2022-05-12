@@ -34,7 +34,7 @@ import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { noop } from '@proton/shared/lib/helpers/function';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Address } from '@proton/shared/lib/interfaces';

@@ -1,4 +1,4 @@
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 
 type V = string | boolean | null | undefined;
 

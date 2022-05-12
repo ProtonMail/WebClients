@@ -4,7 +4,7 @@ import { updateWelcomeFlags, updateThemeType, updateFlags } from '@proton/shared
 import { noop } from '@proton/shared/lib/helpers/function';
 import { range } from '@proton/shared/lib/helpers/array';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import {

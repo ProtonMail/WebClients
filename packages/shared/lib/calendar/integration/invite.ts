@@ -1,11 +1,11 @@
 import { c } from 'ttag';
+import isTruthy from '@proton/util/isTruthy';
 import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
 import { formatTimezoneOffset, getTimezoneOffset, toUTCDate } from '../../date/timezone';
 import { canonizeEmail, canonizeEmailByGuess, canonizeInternalEmail } from '../../helpers/email';
 import { unary } from '../../helpers/function';
-import isTruthy from '../../helpers/isTruthy';
 import { omit, pick } from '../../helpers/object';
 import { getCurrentUnixTimestamp } from '../../helpers/time';
 import { dateLocale } from '../../i18n';

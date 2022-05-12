@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 import { createContext, useContext, useCallback, useRef } from 'react';
 
 import { chunk } from '@proton/shared/lib/helpers/array';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';
 import { queryFolderChildren } from '@proton/shared/lib/api/drive/folder';

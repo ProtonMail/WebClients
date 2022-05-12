@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 import { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import percentage from '@proton/util/percentage';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { StripedList, StripedItem, Meter, IconName, Icon } from '../../../components';

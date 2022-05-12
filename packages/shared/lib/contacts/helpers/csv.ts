@@ -1,6 +1,6 @@
 import Papa from 'papaparse';
 
-import isTruthy from '../../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { ContactProperties } from '../../interfaces/contacts';
 import { sortByPref } from '../properties';
 import {
