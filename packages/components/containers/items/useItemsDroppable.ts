@@ -24,15 +24,19 @@ const useItemsDroppable = (
     const handleDrop = async (event: DragEvent) => {
         dragProps.onDrop(event);
 
-        // Manual trigger of the dragend event on the drag element because native event is not reliable
-        const dragElement = document.getElementById(event.dataTransfer.getData(DRAG_ITEM_ID_KEY));
-        const dragendEvent = new Event('dragend') as any;
-        dragendEvent.dataTransfer = event.dataTransfer;
-        dragendEvent.dataTransfer.dropEffect = dropEffect; // Chrome is losing the original dropEffect
-        dragElement?.dispatchEvent(dragendEvent);
+        const data = event.dataTransfer.getData(DRAG_ITEM_KEY);
 
-        const itemIDs = JSON.parse(event.dataTransfer.getData(DRAG_ITEM_KEY)) as string[];
-        void dropCallback(itemIDs);
+        // If no data dont handle drop
+        if (data) {
+            // Manual trigger of the dragend event on the drag element because native event is not reliable
+            const dragElement = document.getElementById(event.dataTransfer.getData(DRAG_ITEM_ID_KEY));
+            const dragendEvent = new Event('dragend') as any;
+            dragendEvent.dataTransfer = event.dataTransfer;
+            dragendEvent.dataTransfer.dropEffect = dropEffect; // Chrome is losing the original dropEffect
+            dragElement?.dispatchEvent(dragendEvent);
+            const itemIDs = JSON.parse(data) as string[];
+            void dropCallback(itemIDs);
+        }
     };
 
     return { dragOver, dragProps, handleDrop };

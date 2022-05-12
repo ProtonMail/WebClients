@@ -20,6 +20,7 @@ import {
     render,
     setFeatureFlags,
 } from '../../helpers/test/helper';
+import { SYSTEM_FOLDER_SECTION } from '../../hooks/useMoveSystemFolders';
 import MailSidebar from './MailSidebar';
 
 jest.mock('../../../../CHANGELOG.md', () => 'ProtonMail Changelog');
@@ -37,6 +38,48 @@ const props = {
 const folder = { ID: 'folder1', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder1' };
 const subfolder = { ID: 'folder2', Type: LABEL_TYPE.MESSAGE_FOLDER, Name: 'folder2', ParentID: folder.ID };
 const label = { ID: 'label1', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label1' };
+const systemFolders = [
+    {
+        ID: MAILBOX_LABEL_IDS.INBOX,
+        Name: 'inbox',
+        Path: 'inbox',
+        Type: LABEL_TYPE.SYSTEM_FOLDER,
+        Order: 1,
+        Display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
+        ID: MAILBOX_LABEL_IDS.SCHEDULED,
+        Name: 'all scheduled',
+        Path: 'all scheduled',
+        Type: LABEL_TYPE.SYSTEM_FOLDER,
+        Order: 3,
+        Display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
+        ID: MAILBOX_LABEL_IDS.DRAFTS,
+        Name: 'drafts',
+        Path: 'drafts',
+        Type: LABEL_TYPE.SYSTEM_FOLDER,
+        Order: 4,
+        Display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
+        ID: MAILBOX_LABEL_IDS.SENT,
+        Name: 'sent',
+        Path: 'sent',
+        Type: LABEL_TYPE.SYSTEM_FOLDER,
+        Order: 5,
+        Display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
+        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+        Name: 'all mail',
+        Path: 'all mail',
+        Type: LABEL_TYPE.SYSTEM_FOLDER,
+        Order: 11,
+        Display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+];
 const inboxMessages = { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 3, Total: 20 };
 const allMailMessages = { LabelID: MAILBOX_LABEL_IDS.ALL_MAIL, Unread: 10000, Total: 10001 };
 const scheduledMessages = { LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: 4 };
@@ -104,7 +147,11 @@ describe('MailSidebar', () => {
     });
 
     it('should show unread counters', async () => {
-        setupTest([folder, label], [], [inboxMessages, allMailMessages, folderMessages, labelMessages]);
+        setupTest(
+            [folder, label, ...systemFolders],
+            [],
+            [inboxMessages, allMailMessages, folderMessages, labelMessages]
+        );
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
@@ -181,7 +228,7 @@ describe('MailSidebar', () => {
     });
 
     it('should be updated when counters are updated', async () => {
-        setupTest([], [], [inboxMessages]);
+        setupTest(systemFolders, [], [inboxMessages]);
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
 
@@ -200,7 +247,7 @@ describe('MailSidebar', () => {
     });
 
     it('should not show scheduled sidebar item when feature flag is disabled', async () => {
-        setupTest([], [], [scheduledMessages]);
+        setupTest(systemFolders, [], [scheduledMessages]);
 
         const { queryByTestId } = await render(<MailSidebar {...props} />, false);
 
@@ -208,7 +255,7 @@ describe('MailSidebar', () => {
     });
 
     it('should show scheduled sidebar item if scheduled messages', async () => {
-        setupTest([], [], [scheduledMessages]);
+        setupTest(systemFolders, [], [scheduledMessages]);
         setupScheduled();
 
         const { getByTestId } = await render(<MailSidebar {...props} />, false);
@@ -233,7 +280,7 @@ describe('MailSidebar', () => {
 
     describe('Sidebar hotkeys', () => {
         it('should navigate with the arrow keys', async () => {
-            setupTest([label, folder]);
+            setupTest([label, folder, ...systemFolders]);
 
             const { getByTestId, getByTitle, container } = await render(<MailSidebar {...props} />, false);
 
