@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from 'react';
+import { ReactNode, Ref, useEffect } from 'react';
 import { c } from 'ttag';
 import {
     PAYMENT_METHOD_TYPE,
@@ -38,6 +38,7 @@ interface Props {
     cardErrors: Partial<CardModel>;
     noMaxWidth?: boolean;
     paymentMethodStatus?: PaymentMethodStatus;
+    creditCardTopRef?: Ref<HTMLDivElement>;
 }
 
 const Payment = ({
@@ -55,6 +56,7 @@ const Payment = ({
     onCard,
     cardErrors,
     noMaxWidth = false,
+    creditCardTopRef,
 }: Props) => {
     const { paymentMethods, options, loading } = useMethods({ amount, paymentMethodStatus, coupon, flow: type });
     const lastCustomMethod = [...options]
@@ -138,6 +140,7 @@ const Payment = ({
                 <div className="mt2">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
+                            <div ref={creditCardTopRef} />
                             <CreditCard card={card} errors={cardErrors} onChange={onCard} />
                             {type !== 'signup' && <Alert3DS />}
                         </>

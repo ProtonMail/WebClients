@@ -242,6 +242,7 @@ const SubscriptionModal = ({
                 return withLoading(handleSubscribe(params));
             },
         });
+    const creditCardTopRef = useRef<HTMLDivElement>(null);
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<void> => {
         const copyNewModel = { ...newModel };
@@ -358,6 +359,7 @@ const SubscriptionModal = ({
             onSubmit={(e: FormEvent) => {
                 e.preventDefault();
                 if (!handleCardSubmit()) {
+                    creditCardTopRef.current?.scrollIntoView();
                     return;
                 }
                 withLoading(handleCheckout());
@@ -472,6 +474,7 @@ const SubscriptionModal = ({
                                         onMethod={setMethod}
                                         onCard={setCard}
                                         cardErrors={cardErrors}
+                                        creditCardTopRef={creditCardTopRef}
                                     />
                                 ) : (
                                     <>
