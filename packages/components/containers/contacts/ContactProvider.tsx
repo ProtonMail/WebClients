@@ -5,7 +5,9 @@ import createLRU from '@proton/shared/lib/helpers/lru';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
-import { useInstance, useEventManager } from '../../hooks';
+import useInstance from '@proton/hooks/useInstance';
+
+import { useEventManager } from '../../hooks';
 
 import ContactProviderContext from './ContactProviderContext';
 
