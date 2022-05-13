@@ -6,6 +6,7 @@ import removeItem from '@proton/utils/removeIndex';
 import { classnames, generateUID } from '../../../helpers';
 import { ButtonLike, ErrorZone, Icon, UnderlineButton, Tooltip } from '../../../components';
 import NotificationInput from './inputs/NotificationInput';
+import { useActiveBreakpoint } from '../../../hooks';
 
 export const NOTIFICATION_ID = 'notifications';
 
@@ -28,6 +29,8 @@ const Notifications = ({
     onChange,
     errors,
 }: Props) => {
+    const { isNarrow } = useActiveBreakpoint();
+
     return (
         <>
             {notifications.map((notification, index) => {
@@ -39,6 +42,7 @@ const Notifications = ({
                             notification={notification}
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
                             error={errors?.notifications?.fields.includes(index) ? '' : undefined}
+                            isNarrow={isNarrow}
                         />
                         <Tooltip title={c('Action').t`Remove this notification`}>
                             <ButtonLike
