@@ -38,7 +38,7 @@ export const handleSetupAddressKeys = async ({
 }: SetupAddressKeysArgs) => {
     const [availableAddresses, availableDomains] = await Promise.all([
         getAllAddresses(api),
-        api<{ Domains: string[] }>(queryAvailableDomains()).then(({ Domains }) => Domains),
+        api<{ Domains: string[] }>(queryAvailableDomains('signup')).then(({ Domains }) => Domains),
     ]);
 
     const addressesToUse =
