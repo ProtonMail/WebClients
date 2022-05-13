@@ -1,4 +1,5 @@
-import { randomIntFromInterval, unary } from './function';
+import { randomIntFromInterval } from './function';
+import unary from './unary';
 
 describe('Functions', () => {
     describe('Random int', () => {

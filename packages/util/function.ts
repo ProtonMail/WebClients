@@ -1,11 +1,3 @@
-/**
- * Wrap a function to ensure only one argument will pass through
- */
-export const unary =
-    <A, B>(fn: (...args: any) => B) =>
-    (arg: A) =>
-        fn(arg);
-
 export const debounce = <A extends any[]>(func: (...args: A) => void, wait: number, isImmediate?: boolean) => {
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
 
