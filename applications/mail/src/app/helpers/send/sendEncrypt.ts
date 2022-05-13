@@ -1,5 +1,5 @@
 import { encryptMessage, splitMessage, generateSessionKey, encryptSessionKey, SessionKey, OpenPGPKey } from 'pmcrypto';
-import { identity } from '@proton/util/function';
+import identity from '@proton/util/identity';
 import { Package, Packages } from '@proton/shared/lib/interfaces/mail/crypto';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
