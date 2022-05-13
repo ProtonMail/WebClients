@@ -63,7 +63,6 @@ export { default as useHandler, useEventListener, useSubscribeEventManager, useI
 export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
 export * from './useHotkeys';
 export * from './useImporters';
-export { default as useInstance } from './useInstance';
 export { default as useIsClosing } from './useIsClosing';
 export { default as useIsMounted } from './useIsMounted';
 export { default as useKeyPress } from './useKeyPress';

@@ -1,6 +1,6 @@
 import { RefObject, useLayoutEffect, useState } from 'react';
 import { debounce } from '@proton/util/function';
-import useInstance from './useInstance';
+import useInstance from '@proton/hooks/useInstance';
 
 // Can't loop over DOMRect keys with getOwnPropertyNames.
 const keys = ['bottom', 'height', 'left', 'right', 'top', 'width', 'x', 'y'];

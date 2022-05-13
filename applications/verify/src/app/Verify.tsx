@@ -10,12 +10,13 @@ import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { initLocales } from '@proton/shared/lib/i18n/locales';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+import useInstance from '@proton/hooks/useInstance';
+
 import {
     HumanVerificationForm,
     HumanVerificationSteps,
     StandardLoadErrorPage,
     useApi,
-    useInstance,
     useNotifications,
     useThemeQueryParameter,
 } from '@proton/components';
