@@ -32,7 +32,6 @@ export const process = async ({
     if (calendarsToReset.length > 0) {
         await resetCalendarKeys({
             api,
-            calendars: calendarsToReset,
             getAddressKeys,
             addresses,
         });
