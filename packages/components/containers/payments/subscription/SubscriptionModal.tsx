@@ -98,7 +98,7 @@ const SubscriptionModal = ({
         [SUBSCRIPTION_STEPS.NETWORK_ERROR]: c('Title').t`Network error`,
         [SUBSCRIPTION_STEPS.PLAN_SELECTION]: c('Title').t`Select a plan`,
         [SUBSCRIPTION_STEPS.CUSTOMIZATION]: c('Title').t`Customize your plan`,
-        [SUBSCRIPTION_STEPS.CHECKOUT]: c('Title').t`Select subscription and pay`,
+        [SUBSCRIPTION_STEPS.CHECKOUT]: c('new_plans: title').t`Review subscription and pay`,
         [SUBSCRIPTION_STEPS.UPGRADE]: '',
         [SUBSCRIPTION_STEPS.THANKS]: '',
     };
@@ -242,6 +242,7 @@ const SubscriptionModal = ({
                 return withLoading(handleSubscribe(params));
             },
         });
+    const creditCardTopRef = useRef<HTMLDivElement>(null);
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<void> => {
         const copyNewModel = { ...newModel };
@@ -358,6 +359,7 @@ const SubscriptionModal = ({
             onSubmit={(e: FormEvent) => {
                 e.preventDefault();
                 if (!handleCardSubmit()) {
+                    creditCardTopRef.current?.scrollIntoView();
                     return;
                 }
                 withLoading(handleCheckout());
@@ -425,7 +427,7 @@ const SubscriptionModal = ({
                                             }}
                                             fullWidth
                                         >
-                                            {c('Action').t`Continue`}
+                                            {c('new_plans: action').t`Continue to review`}
                                         </Button>
                                     }
                                     plans={plans}
@@ -472,6 +474,7 @@ const SubscriptionModal = ({
                                         onMethod={setMethod}
                                         onCard={setCard}
                                         cardErrors={cardErrors}
+                                        creditCardTopRef={creditCardTopRef}
                                     />
                                 ) : (
                                     <>
