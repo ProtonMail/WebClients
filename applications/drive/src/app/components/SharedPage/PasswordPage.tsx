@@ -3,19 +3,22 @@ import { c } from 'ttag';
 
 import { Button, PasswordInputTwo, InputFieldTwo, useLoading } from '@proton/components';
 
+import SharedPageLayout from './SharedPageLayout';
+
 interface Props {
     submitPassword: (password: string) => Promise<void>;
 }
 
-const EnterPasswordInfo = ({ submitPassword }: Props) => {
+export default function PasswordPage({ submitPassword }: Props) {
     const [loading, withLoading] = useLoading(false);
     const [password, setPassword] = useState('');
 
     return (
-        <>
-            <h3 className="text-bold mt1 mb2">{c('Title').t`Enter password to download`}</h3>
+        <SharedPageLayout small>
+            <h3 className="text-center text-bold">{c('Title').t`This link is password protected`}</h3>
+            <p className="text-center mt0">{c('Info').t`Please enter the password to decrypt and view content.`}</p>
             <form
-                className="w100"
+                className="w100 mt2"
                 onSubmit={(e) => {
                     e.preventDefault();
                     withLoading(submitPassword(password)).catch(console.error);
@@ -31,19 +34,10 @@ const EnterPasswordInfo = ({ submitPassword }: Props) => {
                     value={password}
                     onValue={setPassword}
                 />
-                <Button
-                    size="large"
-                    color="norm"
-                    className="center mt2 min-w7e"
-                    disabled={!password}
-                    loading={loading}
-                    type="submit"
-                >
+                <Button size="large" fullWidth color="norm" disabled={!password} loading={loading} type="submit">
                     {c('Action').t`Submit`}
                 </Button>
             </form>
-        </>
+        </SharedPageLayout>
     );
-};
-
-export default EnterPasswordInfo;
+}

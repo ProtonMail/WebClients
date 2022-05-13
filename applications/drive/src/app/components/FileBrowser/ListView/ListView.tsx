@@ -12,15 +12,15 @@ import {
 } from '@proton/components';
 import buffer from '@proton/utils/buffer';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
+
 import {
     FileBrowserProps,
     FileBrowserItem,
     DragMoveControls,
     FileBrowserLayouts,
-    ItemContextMenuProps,
+    ContextMenuProps,
     SortField,
-} from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
+} from '../interface';
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 import useFileBrowserView from '../useFileBrowserView';
 import ListHeader from './ListHeader';
@@ -40,7 +40,7 @@ type ListItemData = {
     isPreview?: boolean;
     isDesktop?: boolean;
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
-    ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
+    ItemContextMenu?: React.FunctionComponent<ContextMenuProps>;
 };
 type ListItemRowProps = Omit<ListChildComponentProps, 'data'> & {
     data: ListItemData;
@@ -215,7 +215,7 @@ const ListView = <T extends SortField>({
                         itemKey={(index, data: ListItemData) =>
                             loading && index === itemCount - 1
                                 ? 'loader'
-                                : `${data.shareId}/${data.contents[index].LinkID}`
+                                : `${data.shareId}/${data.contents[index].linkId}`
                         }
                     >
                         {ListItemRow}
@@ -224,7 +224,6 @@ const ListView = <T extends SortField>({
             </div>
             {!isPreview && FolderContextMenu && (
                 <FolderContextMenu
-                    shareId={shareId}
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}
                     close={closeContextMenu}

@@ -1,30 +1,22 @@
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
-import { useDownload } from '../../../../store';
+import { DecryptedLink, useDownload } from '../../../../store';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
-    items: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
     close: () => void;
 }
 
-const DownloadButton = ({ shareId, items, close }: Props) => {
+const DownloadButton = ({ shareId, selectedLinks, close }: Props) => {
     const { download } = useDownload();
 
     const onClick = () => {
         void download(
-            items.map((item) => ({
-                isFile: item.IsFile,
+            selectedLinks.map((link) => ({
+                ...link,
                 shareId,
-                linkId: item.LinkID,
-                name: item.Name,
-                mimeType: item.MIMEType,
-                size: item.Size,
-                signatureAddress: item.SignatureAddress,
-                signatureIssues: item.SignatureIssues,
             }))
         );
     };

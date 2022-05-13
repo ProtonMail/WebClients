@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ValidationError } from '../../_utils';
 import { WAIT_TIME } from '../constants';
 import {

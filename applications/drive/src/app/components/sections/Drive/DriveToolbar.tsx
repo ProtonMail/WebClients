@@ -1,15 +1,14 @@
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { Vr } from '@proton/atoms';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
 import {
     DetailsButton,
     DownloadButton,
     LayoutButton,
     PreviewButton,
     RenameButton,
-    ShareButton,
     ShareFileButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
@@ -21,18 +20,19 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
+
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
     showOptionsForNoSelection?: boolean;
 }
 
-const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true }: Props) => {
+const DriveToolbar = ({ shareId, selectedLinks, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
 
     const renderSelectionActions = () => {
-        if (!selectedItems.length) {
+        if (!selectedLinks.length) {
             if (!showOptionsForNoSelection) {
                 return null;
             }
@@ -54,20 +54,19 @@ const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
+                <PreviewButton shareId={shareId} selectedLinks={selectedLinks} />
+                <DownloadButton shareId={shareId} selectedLinks={selectedLinks} />
                 {isNarrow ? (
-                    <ActionsDropdown shareId={shareId} selectedItems={selectedItems} />
+                    <ActionsDropdown shareId={shareId} selectedLinks={selectedLinks} />
                 ) : (
                     <>
-                        <ShareButton shareId={shareId} selectedItems={selectedItems} />
-                        <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
+                        <ShareLinkButton shareId={shareId} selectedLinks={selectedLinks} />
                         <Vr />
-                        <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />
-                        <RenameButton shareId={shareId} selectedItems={selectedItems} />
-                        <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                        <MoveToFolderButton shareId={shareId} selectedLinks={selectedLinks} />
+                        <RenameButton shareId={shareId} selectedLinks={selectedLinks} />
+                        <DetailsButton shareId={shareId} linkIds={selectedLinks.map(({ linkId }) => linkId)} />
                         <Vr />
-                        <MoveToTrashButton shareId={shareId} selectedItems={selectedItems} />
+                        <MoveToTrashButton shareId={shareId} selectedLinks={selectedLinks} />
                     </>
                 )}
             </>

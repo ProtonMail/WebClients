@@ -1,30 +1,32 @@
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
 import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
 }
 
-const TrashToolbar = ({ shareId, selectedItems }: Props) => {
+const TrashToolbar = ({ shareId, selectedLinks }: Props) => {
+    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
+
     const renderSelectionActions = () => {
-        if (!selectedItems.length) {
+        if (!selectedLinks.length) {
             return null;
         }
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} disabledFolders />
+                <PreviewButton shareId={shareId} selectedLinks={selectedLinks} />
+                <DownloadButton shareId={shareId} selectedLinks={selectedLinks} disabledFolders />
                 <Vr />
-                <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                <DetailsButton shareId={shareId} linkIds={selectedLinkIds} />
                 <Vr />
-                <RestoreFromTrashButton shareId={shareId} selectedItems={selectedItems} />
-                <DeletePermanentlyButton shareId={shareId} selectedItems={selectedItems} />
+                <RestoreFromTrashButton shareId={shareId} selectedLinks={selectedLinks} />
+                <DeletePermanentlyButton shareId={shareId} selectedLinks={selectedLinks} />
             </>
         );
     };

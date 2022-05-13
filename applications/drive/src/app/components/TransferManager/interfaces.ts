@@ -1,5 +1,6 @@
 import { IconName } from '@proton/components';
-import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
+
+import { Download, TransferType, Upload } from './transfer';
 
 export interface DownloadProps {
     transfer: Download;

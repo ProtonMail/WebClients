@@ -1,12 +1,4 @@
-import {
-    TransferState,
-    TransferMeta,
-    Transfer,
-    TransferSummary,
-    TransfersStats,
-} from '@proton/shared/lib/interfaces/drive/transfer';
-import { LinkMeta } from '@proton/shared/lib/interfaces/drive/link';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { TransferState, Transfer, TransferSummary, TransfersStats } from '../components/TransferManager/transfer';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
 
 export const isTransferFinished = ({ state }: { state: TransferState }) =>
@@ -57,18 +49,6 @@ export const isTransferOngoing = ({ state }: { state: TransferState }) => {
 };
 
 export const isTransferCancelError = (error: Error) => error.name === 'TransferCancel' || error.name === 'AbortError';
-
-export const getMetaForTransfer = (item: FileBrowserItem | LinkMeta): TransferMeta => {
-    const size =
-        (item as FileBrowserItem).ActiveRevisionSize ||
-        (item as LinkMeta).FileProperties?.ActiveRevision?.Size ||
-        item.Size;
-    return {
-        filename: item.Name,
-        mimeType: item.MIMEType,
-        size,
-    };
-};
 
 export const getProgressBarStatus = (transferState: TransferState): ProgressBarStatus => {
     return (

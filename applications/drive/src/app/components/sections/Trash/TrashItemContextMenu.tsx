@@ -3,23 +3,38 @@ import { useEffect } from 'react';
 
 import { ContextMenu } from '@proton/components';
 
-import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { DecryptedLink } from '../../../store';
+import { ContextMenuProps } from '../../FileBrowser/interface';
 import { PreviewButton, DownloadButton, DetailsButton } from '../ContextMenu';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
 
-const TrashItemContextMenu = ({
-    item,
-    selectedItems,
+export default function generateTrashItemContextMenu(shareId: string, selectedLinks: DecryptedLink[]) {
+    return function TrashItemContextMenuWrapper(props: ContextMenuProps) {
+        return <TrashItemContextMenu shareId={shareId} selectedLinks={selectedLinks} {...props} />;
+    };
+}
+
+function TrashItemContextMenu({
     shareId,
+    selectedLinks,
     anchorRef,
     isOpen,
     position,
     open,
     close,
-}: ItemContextMenuProps) => {
+}: ContextMenuProps & {
+    shareId: string;
+    selectedLinks: DecryptedLink[];
+}) {
+    const selectedLink = selectedLinks[0];
     const hasPreviewAvailable =
-        selectedItems.length === 1 && item.IsFile && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
-    const hasDownloadAvailable = !selectedItems.some((item) => !item.IsFile);
+        selectedLinks.length === 1 &&
+        selectedLink.isFile &&
+        selectedLink.mimeType &&
+        isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
+    const hasDownloadAvailable = !selectedLinks.some((item) => !item.isFile);
+
+    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
     useEffect(() => {
         if (position) {
@@ -29,13 +44,11 @@ const TrashItemContextMenu = ({
 
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} item={item} close={close} />}
-            {hasDownloadAvailable && <DownloadButton shareId={shareId} items={selectedItems} close={close} />}
-            <DetailsButton shareId={shareId} items={selectedItems} close={close} />
-            <RestoreFromTrashButton shareId={shareId} items={selectedItems} close={close} />
-            <DeletePermanentlyButton shareId={shareId} items={selectedItems} close={close} />
+            {hasPreviewAvailable && <PreviewButton shareId={shareId} link={selectedLink} close={close} />}
+            {hasDownloadAvailable && <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />}
+            <DetailsButton shareId={shareId} linkIds={selectedLinkIds} close={close} />
+            <RestoreFromTrashButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
+            <DeletePermanentlyButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
         </ContextMenu>
     );
-};
-
-export default TrashItemContextMenu;
+}

@@ -14,11 +14,11 @@ import {
 import { isEquivalent, pick } from '@proton/shared/lib/helpers/object';
 import { shallowEqual } from '@proton/utils/array';
 import { c } from 'ttag';
-import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useThumbnailsDownload } from '../../../store';
 import { formatAccessCount } from '../../../utils/formatters';
 import SignatureIcon from '../../SignatureIcon';
+import { ItemProps } from '../interface';
 import useFileBrowserItem from '../useFileBrowserItem';
 import CopyLinkIcon from '../CopyLinkIcon';
 import LocationCell from './Cells/LocationCell';
@@ -68,10 +68,10 @@ const ItemRow = ({
     const { addToDownloadQueue } = useThumbnailsDownload();
 
     useEffect(() => {
-        if (item.HasThumbnail) {
-            addToDownloadQueue(shareId, item.LinkID, item.ModifyTime);
+        if (item.hasThumbnail) {
+            addToDownloadQueue(shareId, item.linkId, item.activeRevision?.id);
         }
-    }, [item.ModifyTime, item.HasThumbnail]);
+    }, [item.activeRevision?.id, item.hasThumbnail]);
 
     const generateExpiresCell = () => {
         const expiredPart = isDesktop ? (
@@ -81,11 +81,11 @@ const ItemRow = ({
         );
 
         return (
-            item.SharedUrl &&
-            (item.SharedUrl.ExpireTime ? (
+            item.shareUrl &&
+            (item.shareUrl.expireTime ? (
                 <div className="flex flex-nowrap">
-                    {(isDesktop || !item.UrlsExpired) && <TimeCell time={item.SharedUrl.ExpireTime} />}
-                    {item.UrlsExpired ? expiredPart : null}
+                    {(isDesktop || !item.shareUrl.isExpired) && <TimeCell time={item.shareUrl.expireTime} />}
+                    {item.shareUrl.isExpired ? expiredPart : null}
                 </div>
             ) : (
                 c('Label').t`Never`
@@ -106,11 +106,11 @@ const ItemRow = ({
                 tabIndex={0}
                 role="button"
                 ref={contextMenu.anchorRef}
-                aria-disabled={item.Disabled}
+                aria-disabled={item.isLocked}
                 className={classnames([
                     'file-browser-list-item flex user-select-none opacity-on-hover-container',
-                    (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) && 'bg-strong',
-                    (dragging || item.Disabled) && 'opacity-50',
+                    (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) && 'bg-strong',
+                    (dragging || item.isLocked) && 'opacity-50',
                 ])}
                 data-testid={isSelected ? 'selected' : undefined}
                 {...itemHandlers}
@@ -125,7 +125,7 @@ const ItemRow = ({
                         {...checkboxWrapperHandlers}
                     >
                         <Checkbox
-                            disabled={item.Disabled}
+                            disabled={item.isLocked}
                             className="increase-click-surface"
                             checked={isSelected}
                             {...checkboxHandlers}
@@ -137,58 +137,58 @@ const ItemRow = ({
                     className="m0 flex flex-align-items-center flex-nowrap flex-item-fluid"
                     data-testid="column-name"
                 >
-                    {item.CachedThumbnailURL ? (
+                    {item.cachedThumbnailUrl ? (
                         <img
-                            src={item.CachedThumbnailURL}
+                            src={item.cachedThumbnailUrl}
                             alt={iconText}
                             className="file-browser-list-item--thumbnail flex-item-noshrink mr0-5"
                         />
                     ) : (
-                        <FileIcon mimeType={item.IsFile ? item.MIMEType : 'Folder'} alt={iconText} className="mr0-5" />
+                        <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr0-5" />
                     )}
                     <SignatureIcon item={item} className="mr0-5 flex-item-noshrink" />
-                    <NameCell name={item.Name} />
+                    <NameCell name={item.name} />
                 </TableCell>
 
                 {columns.includes('location') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
-                        <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} isTrashed={!!item.Trashed} />
+                        <LocationCell shareId={shareId} parentLinkId={item.parentLinkId} isTrashed={!!item.trashed} />
                     </TableCell>
                 )}
 
                 {columns.includes('original_location') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w20' : 'w25'])} data-testid="column-location">
-                        <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
+                        <LocationCell shareId={shareId} parentLinkId={item.parentLinkId} />
                     </TableCell>
                 )}
 
                 {columns.includes('uploaded') && (
                     <TableCell className="m0 w15" data-testid="column-uploaded">
-                        <TimeCell time={item.ModifyTime} />
+                        <TimeCell time={item.createTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('modified') && (
                     <TableCell className="m0 w15" data-testid="column-modified">
-                        <TimeCell time={item.RealModifyTime} />
+                        <TimeCell time={item.fileModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('trashed') && (
                     <TableCell className="m0 w25" data-testid="column-trashed">
-                        <TimeCell time={item.Trashed || item.ModifyTime} />
+                        <TimeCell time={item.trashed || item.fileModifyTime} />
                     </TableCell>
                 )}
 
                 {columns.includes('share_created') && (
                     <TableCell className="m0 w15" data-testid="column-share-created">
-                        {item.SharedUrl?.CreateTime && <TimeCell time={item.SharedUrl.CreateTime} />}
+                        {item.shareUrl?.createTime && <TimeCell time={item.shareUrl.createTime} />}
                     </TableCell>
                 )}
 
                 {columns.includes('share_num_access') && (
                     <TableCell className="m0 w15" data-testid="column-num-accesses">
-                        {formatAccessCount(item.SharedUrl?.NumAccesses)}
+                        {formatAccessCount(item.shareUrl?.numAccesses)}
                     </TableCell>
                 )}
 
@@ -200,7 +200,7 @@ const ItemRow = ({
 
                 {columns.includes('size') && (
                     <TableCell className={classnames(['m0', isDesktop ? 'w10' : 'w15'])} data-testid="column-size">
-                        {isFolder ? '-' : <SizeCell size={item.Size} />}
+                        {isFolder ? '-' : <SizeCell size={item.size} />}
                     </TableCell>
                 )}
 
@@ -228,14 +228,8 @@ const ItemRow = ({
                     </Button>
                 </TableCell>
             </TableRow>
-            {!isPreview && !item.Disabled && ItemContextMenu && (
-                <ItemContextMenu
-                    item={item}
-                    selectedItems={selectedItems}
-                    shareId={shareId}
-                    position={contextMenuPosition}
-                    {...contextMenu}
-                />
+            {!isPreview && !item.isLocked && ItemContextMenu && (
+                <ItemContextMenu position={contextMenuPosition} {...contextMenu} />
             )}
         </>
     );

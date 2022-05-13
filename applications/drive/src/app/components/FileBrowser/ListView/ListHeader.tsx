@@ -1,15 +1,10 @@
 import * as React from 'react';
+import { c } from 'ttag';
 
 import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { c } from 'ttag';
-import {
-    FileBrowserItem,
-    FileBrowserLayouts,
-    SortParams,
-    SortField,
-} from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { FileBrowserItem, FileBrowserLayouts, SortParams, SortField } from '../interface';
 import { useFileBrowserColumns } from '../useFileBrowserColumns';
 
 interface Props<T extends SortField> {

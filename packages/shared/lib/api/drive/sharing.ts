@@ -1,3 +1,5 @@
+import { SORT_DIRECTION } from '../../constants';
+import { FOLDER_PAGE_SIZE, DEFAULT_SORT_FIELD, DEFAULT_SORT_ORDER } from '../../drive/constants';
 import { AbuseReportPayload, CreateSharedURL, UpdateSharedURL } from '../../interfaces/drive/sharing';
 
 export const queryInitSRPHandshake = (token: string) => {
@@ -45,14 +47,20 @@ export const querySharedURLFileRevision = (
     return query;
 };
 
-export const querySharedURLChildren = (token: string, linkID: string, Page: number, PageSize: number) => {
+export const querySharedURLChildren = (
+    token: string,
+    linkId: string,
+    {
+        Page,
+        PageSize = FOLDER_PAGE_SIZE,
+        Sort = DEFAULT_SORT_FIELD,
+        Desc = DEFAULT_SORT_ORDER === SORT_DIRECTION.ASC ? 0 : 1,
+    }: { Page: number; PageSize?: number; FoldersOnly?: number; Sort?: string; Desc?: 0 | 1 }
+) => {
     return {
         method: 'get',
-        url: `drive/urls/${token}/folders/${linkID}/children`,
-        params: {
-            Page,
-            PageSize,
-        },
+        url: `drive/urls/${token}/folders/${linkId}/children`,
+        params: { Page, PageSize, Sort, Desc, Thumbnails: 0 },
     };
 };
 

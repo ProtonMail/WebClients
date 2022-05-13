@@ -8,7 +8,6 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { DecryptedLink, useFileView } from '../store';
 import useActiveShare from '../hooks/drive/useActiveShare';
 import useNavigate from '../hooks/drive/useNavigate';
-import { mapDecryptedLinksToChildren } from '../components/sections/helpers';
 import DetailsModal from '../components/DetailsModal';
 import ShareLinkModal from '../components/ShareLinkModal/ShareLinkModal';
 import { SignatureAlertBody } from '../components/SignatureAlert';
@@ -105,30 +104,19 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     }, []);
 
     const openDetails = useCallback(() => {
-        if (!link) {
-            return;
-        }
-
-        const [item] = mapDecryptedLinksToChildren([link]);
-        modalId.current = createModal(<DetailsModal shareId={shareId} item={item} />);
-    }, [shareId, link]);
+        createModal(<DetailsModal shareId={shareId} linkId={linkId} />);
+    }, [shareId, linkId]);
 
     const openShareOptions = useCallback(() => {
-        if (!link) {
-            return;
-        }
-
-        const [item] = mapDecryptedLinksToChildren([link]);
-        modalId.current = createModal(<ShareLinkModal shareId={shareId} item={item} />);
-    }, [shareId, link]);
+        createModal(<ShareLinkModal shareId={shareId} linkId={linkId} />);
+    }, [shareId, linkId]);
 
     const signatureStatus = useMemo(() => {
         if (!link) {
             return;
         }
 
-        const [item] = mapDecryptedLinksToChildren([link]);
-        return <SignatureIcon item={item} className="ml0-5 color-danger" />;
+        return <SignatureIcon item={link} className="ml0-5 color-danger" />;
     }, [link]);
 
     const signatureConfirmation = useMemo(() => {

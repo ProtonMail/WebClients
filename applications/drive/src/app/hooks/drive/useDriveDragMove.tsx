@@ -4,10 +4,10 @@ import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
 import noop from '@proton/utils/noop';
-import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 
 import { useActions } from '../../store';
+import { FileBrowserItem, DragMoveControls } from '../../components/FileBrowser/interface';
 
 export default function useDriveDragMove(
     shareId: string,
@@ -32,30 +32,24 @@ export default function useDriveDragMove(
             console.warn('Could not finish move operation due to', err);
             return;
         }
-        const toMoveInfo = toMove.map(({ ParentLinkID, LinkID, Name, IsFile }) => ({
-            parentLinkId: ParentLinkID,
-            linkId: LinkID,
-            name: Name,
-            isFile: IsFile,
-        }));
         dragEnterCounter.current = 0;
 
         clearSelections();
         setActiveDropTarget(undefined);
 
-        await withGlobalLoader(moveLinks(new AbortController().signal, shareId, toMoveInfo, newParentLinkId));
+        await withGlobalLoader(moveLinks(new AbortController().signal, shareId, toMove, newParentLinkId));
     };
 
     const getDragMoveControls = (item: FileBrowserItem): DragMoveControls => {
-        const dragging = allDragging.some(({ LinkID }) => LinkID === item.LinkID);
+        const dragging = allDragging.some(({ linkId }) => linkId === item.linkId);
         const setDragging = (isDragging: boolean) =>
             isDragging
-                ? setAllDragging(selectedItems.some(({ LinkID }) => LinkID === item.LinkID) ? selectedItems : [item])
+                ? setAllDragging(selectedItems.some(({ linkId }) => linkId === item.linkId) ? selectedItems : [item])
                 : setAllDragging([]);
 
-        const isActiveDropTarget = activeDropTarget?.LinkID === item.LinkID;
-        const availableTarget = !item.IsFile && allDragging.every(({ LinkID }) => item.LinkID !== LinkID);
-        const handleDrop = getHandleItemDrop(item.LinkID);
+        const isActiveDropTarget = activeDropTarget?.linkId === item.linkId;
+        const availableTarget = !item.isFile && allDragging.every(({ linkId }) => item.linkId !== linkId);
+        const handleDrop = getHandleItemDrop(item.linkId);
 
         const handleDragOver = (e: React.DragEvent<HTMLTableRowElement>) => {
             if (availableTarget) {

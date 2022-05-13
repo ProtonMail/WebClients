@@ -12,7 +12,7 @@ import {
     IconName,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SortField, SortParams } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { SortField, SortParams } from '../FileBrowser/interface';
 
 export interface MenuItem<T extends SortField> {
     name: string;

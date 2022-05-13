@@ -1,20 +1,19 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive//fileBrowser';
 
 import useOpenModal from '../../useOpenModal';
 import { noSelection } from './utils';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    linkIds: string[];
 }
 
-const DetailsButton = ({ shareId, selectedItems }: Props) => {
+const DetailsButton = ({ shareId, linkIds }: Props) => {
     const { openDetails, openFilesDetails } = useOpenModal();
 
-    if (noSelection(selectedItems)) {
+    if (noSelection(linkIds)) {
         return null;
     }
 
@@ -23,10 +22,10 @@ const DetailsButton = ({ shareId, selectedItems }: Props) => {
             title={c('Action').t`Details`}
             icon={<Icon name="info-circle" />}
             onClick={() => {
-                if (selectedItems.length === 1) {
-                    openDetails(shareId, selectedItems[0]);
-                } else if (selectedItems.length > 1) {
-                    openFilesDetails(selectedItems);
+                if (linkIds.length === 1) {
+                    openDetails(shareId, linkIds[0]);
+                } else if (linkIds.length > 1) {
+                    openFilesDetails(shareId, linkIds);
                 }
             }}
             data-testid="toolbar-details"

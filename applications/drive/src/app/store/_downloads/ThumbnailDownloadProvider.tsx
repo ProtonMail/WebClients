@@ -9,7 +9,7 @@ import { logError } from '../_utils';
 import useDownload from './useDownload';
 
 interface DownloadProviderState {
-    addToDownloadQueue: (shareId: string, linkId: string, modifyTime: number) => void;
+    addToDownloadQueue: (shareId: string, linkId: string, activeRevisionId?: string) => void;
 }
 
 const ThumbnailsDownloadContext = createContext<DownloadProviderState | null>(null);
@@ -17,13 +17,13 @@ const ThumbnailsDownloadContext = createContext<DownloadProviderState | null>(nu
 const getDownloadIdString = ({
     shareId,
     linkId,
-    modifyTime,
+    activeRevisionId,
 }: {
     shareId: string;
     linkId: string;
-    modifyTime: number;
+    activeRevisionId?: string;
 }) => {
-    return shareId + linkId + modifyTime.toString();
+    return shareId + linkId + (activeRevisionId || '');
 };
 
 /*
@@ -91,11 +91,11 @@ export const ThumbnailsDownloadProvider = ({ children }: any) => {
             });
     };
 
-    const addToDownloadQueue = async (shareId: string, linkId: string, modifyTime: number) => {
+    const addToDownloadQueue = async (shareId: string, linkId: string, activeRevisionId?: string) => {
         const downloadIdString = getDownloadIdString({
             shareId,
             linkId,
-            modifyTime,
+            activeRevisionId,
         });
 
         if (queueLinkCache.current.has(downloadIdString)) {

@@ -1,26 +1,26 @@
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { DecryptedLink } from '../../../../store';
 import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
-    item: FileBrowserItem;
+    link: DecryptedLink;
     close: () => void;
 }
 
-const ShareLinkButton = ({ shareId, item, close }: Props) => {
+const ShareLinkButton = ({ shareId, link, close }: Props) => {
     const { openLinkSharing } = useOpenModal();
 
-    const hasSharedLink = !!item.SharedUrl;
+    const hasSharedLink = !!link.shareUrl;
 
     return (
         <ContextMenuButton
             name={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
             icon={hasSharedLink ? 'link-pen' : 'link'}
             testId="context-menu-share-link"
-            action={() => openLinkSharing(shareId, item)}
+            action={() => openLinkSharing(shareId, link.linkId)}
             close={close}
         />
     );

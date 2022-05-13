@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { useLoading, useNotifications } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SearchSortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { SearchSortField } from '../../components/FileBrowser/interface';
 import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
 import { useSearchResults } from '../_search';

@@ -1,5 +1,4 @@
 import { fromUnixTime, isAfter } from 'date-fns';
-import { c } from 'ttag';
 import {
     OpenPGPKey,
     SessionKey,
@@ -325,23 +324,23 @@ export function useLinkInner(
     ): Promise<DecryptedLink> => {
         return debouncedFunction(
             async (abortSignal: AbortSignal): Promise<DecryptedLink> => {
-                const namePromise = !encryptedLink.parentLinkId
-                    ? { name: c('Title').t`My files`, nameVerified: VERIFICATION_STATUS.SIGNED_AND_VALID }
-                    : decryptSigned({
-                          armoredMessage: encryptedLink.name,
-                          privateKey: await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
-                          // nameSignatureAddress is missing for some old files.
-                          // Fallback to signatureAddress might result in failed
-                          // signature check, but no one reported it so far so
-                          // we should be good. Important is that user can access
-                          // the file and the verification do not hard fail.
-                          // If we find out that it doesnt work for some user,
-                          // we could skip the verification instead. But the best
-                          // would be to fix it properly in the database.
-                          publicKey: await getVerificationKey(
-                              encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
-                          ),
-                      }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
+                const namePromise = decryptSigned({
+                    armoredMessage: encryptedLink.name,
+                    privateKey: !encryptedLink.parentLinkId
+                        ? await getSharePrivateKey(abortSignal, shareId)
+                        : await getLinkPrivateKey(abortSignal, shareId, encryptedLink.parentLinkId),
+                    // nameSignatureAddress is missing for some old files.
+                    // Fallback to signatureAddress might result in failed
+                    // signature check, but no one reported it so far so
+                    // we should be good. Important is that user can access
+                    // the file and the verification do not hard fail.
+                    // If we find out that it doesnt work for some user,
+                    // we could skip the verification instead. But the best
+                    // would be to fix it properly in the database.
+                    publicKey: await getVerificationKey(
+                        encryptedLink.nameSignatureAddress || encryptedLink.signatureAddress
+                    ),
+                }).then(({ data, verified }) => ({ name: data, nameVerified: verified }));
 
                 const fileModifyTimePromise = !encryptedLink.xAttr
                     ? {

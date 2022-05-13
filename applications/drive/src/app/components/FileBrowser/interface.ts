@@ -1,8 +1,10 @@
 import { VERIFICATION_STATUS } from 'pmcrypto';
 import React from 'react';
-import { SORT_DIRECTION } from '../../constants';
-import { SharedUrlInfo } from './link';
-import { LayoutSetting } from './userSettings';
+
+import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
+
+import { LinkShareUrl } from '../../store';
 
 export interface DragMoveControls {
     handleDragOver: (event: React.DragEvent<HTMLTableRowElement>) => void;
@@ -15,31 +17,30 @@ export interface DragMoveControls {
 }
 
 export interface FileBrowserItem {
-    Name: string;
-    LinkID: string;
-    IsFile: boolean;
-    CreateTime: number;
-    ModifyTime: number;
-    RealModifyTime: number;
-    Trashed: number | null;
-    MIMEType: string;
-    Size: number;
-    ActiveRevisionSize?: number;
-    ParentLinkID: string;
-    Location?: string;
-    Disabled?: boolean;
-    UrlsExpired: boolean;
-    ShareUrlShareID?: string;
-    SharedUrl?: SharedUrlInfo & {
-        NumAccesses?: number;
+    name: string;
+    linkId: string;
+    isFile: boolean;
+    createTime: number;
+    fileModifyTime: number;
+    trashed: number | null;
+    mimeType: string;
+    size: number;
+    activeRevision?: {
+        id: string;
+        size: number;
     };
-    HasThumbnail: boolean;
+    parentLinkId: string;
+    location?: string;
+    isLocked?: boolean;
+    shareId?: string;
+    shareUrl?: LinkShareUrl;
+    hasThumbnail: boolean;
     // CachedThumbnailURL is computed URL to cached image. This is not part
     // of any request and not filled automatically. To get this value, use
     // `loadLinkThumbnail` from `useDrive`.
-    CachedThumbnailURL?: string;
-    SignatureAddress: string;
-    SignatureIssues?: {
+    cachedThumbnailUrl?: string;
+    signatureAddress?: string;
+    signatureIssues?: {
         [location: string]: VERIFICATION_STATUS;
     };
 }
@@ -69,8 +70,8 @@ export interface ItemProps {
     columns: ItemRowColumns[];
     dragMoveControls?: DragMoveControls;
     isPreview?: boolean;
-    ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
-    FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
+    ItemContextMenu?: React.FunctionComponent<ContextMenuProps>;
+    FolderContextMenu?: React.FunctionComponent<ContextMenuProps>;
 }
 
 export interface FileBrowserProps<T extends SortField = SortField> {
@@ -93,23 +94,28 @@ export interface FileBrowserProps<T extends SortField = SortField> {
     onToggleAllSelected: () => void;
     setSorting?: (sortParams: SortParams<T>) => void;
     getDragMoveControls?: (item: FileBrowserItem) => DragMoveControls;
-    ItemContextMenu?: React.FunctionComponent<ItemContextMenuProps>;
-    FolderContextMenu?: React.FunctionComponent<FolderContextMenuProps>;
+    ItemContextMenu?: React.FunctionComponent<ContextMenuProps>;
+    FolderContextMenu?: React.FunctionComponent<ContextMenuProps>;
 }
 
 export type FolderSortField = 'name' | 'mimeType' | 'fileModifyTime' | 'size';
+export type PublicFolderSortField = 'name' | 'size';
 export type SharedLinkSortField = 'name' | 'linkCreateTime' | 'linkExpireTime' | 'numAccesses';
 export type TrashedLinksSortField = 'name' | 'size' | 'trashed';
 export type SearchSortField = 'name' | 'fileModifyTime' | 'size';
-export type SortField = FolderSortField | SharedLinkSortField | TrashedLinksSortField | 'metaDataModifyTime';
+export type SortField =
+    | FolderSortField
+    | PublicFolderSortField
+    | SharedLinkSortField
+    | TrashedLinksSortField
+    | 'metaDataModifyTime';
 
 export interface SortParams<T extends SortField = SortField> {
     sortField: T;
     sortOrder: SORT_DIRECTION;
 }
 
-export interface FolderContextMenuProps {
-    shareId: string;
+export interface ContextMenuProps {
     anchorRef: React.RefObject<HTMLElement>;
     children?: React.ReactNode;
     isOpen: boolean;
@@ -121,10 +127,4 @@ export interface FolderContextMenuProps {
         | undefined;
     open: () => void;
     close: () => void;
-}
-
-export interface ItemContextMenuProps extends FolderContextMenuProps {
-    shareId: string;
-    item: FileBrowserItem;
-    selectedItems: FileBrowserItem[];
 }

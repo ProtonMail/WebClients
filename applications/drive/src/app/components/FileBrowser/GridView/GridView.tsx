@@ -4,8 +4,8 @@ import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 import { classnames, Loader, useElementRect, useRightToLeft, Table } from '@proton/components';
 import buffer from '@proton/utils/buffer';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
-import { FileBrowserItem, FileBrowserProps, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { FileBrowserItem, FileBrowserProps, SortField } from '../interface';
 import useFileBrowserView from '../useFileBrowserView';
 import GridHeader from './GridHeader';
 import ItemCell, { Props as ItemCellProps } from './ItemCell';
@@ -189,7 +189,7 @@ function GridView<T extends SortField>({
                             data: ItemCellData;
                         }) => {
                             const item = contents[columnIndex + rowIndex * itemsPerRow];
-                            return item?.LinkID ?? `${columnIndex}-${rowIndex}`;
+                            return item?.linkId ?? `${columnIndex}-${rowIndex}`;
                         }}
                     >
                         {GridItemCell}
@@ -199,7 +199,6 @@ function GridView<T extends SortField>({
 
             {FolderContextMenu && (
                 <FolderContextMenu
-                    shareId={shareId}
                     isOpen={isContextMenuOpen}
                     open={openContextMenu}
                     close={closeContextMenu}

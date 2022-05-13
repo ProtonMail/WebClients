@@ -2,9 +2,9 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button, Icon, Tooltip } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useActions } from '../../store';
+import { FileBrowserItem } from './interface';
 
 interface Props {
     shareId: string;
@@ -26,14 +26,14 @@ const CopyLinkIcon = ({ shareId, item, className }: Props) => {
             e.stopPropagation(); // To not show file preview when clicking (to not trigger other click event).
             e.preventDefault(); // To not show file preview when pressing enter (to disable click event).
 
-            copyShareLinkToClipboard(new AbortController().signal, shareId, item.LinkID).finally(() => {
+            copyShareLinkToClipboard(new AbortController().signal, shareId, item.linkId).finally(() => {
                 setIsLoading(false);
             });
         },
         [shareId, item]
     );
 
-    if (!copyShareLinkToClipboard || !item.SharedUrl || !item.ShareUrlShareID || item.UrlsExpired || item.Trashed) {
+    if (!copyShareLinkToClipboard || !item.shareUrl || !item.shareId || item.shareUrl.isExpired || item.trashed) {
         return null;
     }
 

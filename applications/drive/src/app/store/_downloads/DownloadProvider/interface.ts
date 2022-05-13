@@ -1,7 +1,6 @@
 import { VERIFICATION_STATUS } from 'pmcrypto';
 
-import { TransferState, TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
-
+import { TransferState, TransferMeta } from '../../../components/TransferManager/transfer';
 import { LinkDownload } from '../interface';
 
 export interface Download {

@@ -1,16 +1,13 @@
 import { useCallback } from 'react';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
 import { useFolderView } from '../../../store';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { FileBrowser } from '../../FileBrowser';
 import { DriveFolder } from '../../../hooks/drive/useActiveShare';
-import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyFolder from './EmptyFolder';
-import FolderContextMenu from './FolderContextMenu';
-import DriveItemContextMenu from './DriveItemContextMenu';
+import generateFolderContextMenu from './FolderContextMenu';
+import generateDriveItemContextMenu from './DriveItemContextMenu';
 import useOpenModal from '../../useOpenModal';
 
 interface Props {
@@ -27,24 +24,21 @@ function Drive({ activeFolder, folderView }: Props) {
         selectionControls;
     const { openPreview } = useOpenModal();
 
-    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
-    const contents = mapDecryptedLinksToChildren(items);
-
-    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems2, clearSelections);
+    const { getDragMoveControls } = useDriveDragMove(shareId, selectedItems, clearSelections);
 
     const handleClick = useCallback(
-        async (item: FileBrowserItem) => {
+        async (item: { linkId: string; isFile: boolean }) => {
             document.getSelection()?.removeAllRanges();
-            if (item.IsFile) {
-                openPreview(shareId, item);
+            if (item.isFile) {
+                openPreview(shareId, item.linkId);
                 return;
             }
-            navigateToLink(shareId, item.LinkID, item.IsFile);
+            navigateToLink(shareId, item.linkId, item.isFile);
         },
         [navigateToLink, shareId]
     );
 
-    return !contents.length && !isLoading ? (
+    return !items.length && !isLoading ? (
         <EmptyFolder shareId={shareId} />
     ) : (
         <FileBrowser
@@ -53,8 +47,8 @@ function Drive({ activeFolder, folderView }: Props) {
             caption={folderName}
             shareId={shareId}
             loading={isLoading}
-            contents={contents}
-            selectedItems={selectedItems2}
+            contents={items}
+            selectedItems={selectedItems}
             sortFields={['name', 'fileModifyTime', 'size']}
             sortParams={sortParams}
             setSorting={setSorting}
@@ -65,8 +59,8 @@ function Drive({ activeFolder, folderView }: Props) {
             onShiftClick={toggleRange}
             selectItem={selectItem}
             getDragMoveControls={getDragMoveControls}
-            ItemContextMenu={DriveItemContextMenu}
-            FolderContextMenu={FolderContextMenu}
+            ItemContextMenu={generateDriveItemContextMenu(shareId, selectedItems)}
+            FolderContextMenu={generateFolderContextMenu(shareId)}
         />
     );
 }

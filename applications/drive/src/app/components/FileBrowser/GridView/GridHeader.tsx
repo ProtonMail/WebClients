@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import { TableRowSticky, TableHeaderCell, Checkbox } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { FileBrowserItem, SortParams, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import SortDropdown, { translateSortField } from '../../sections/SortDropdown';
+import { FileBrowserItem, SortParams, SortField } from '../interface';
 
 interface Props<T extends SortField> {
     isLoading?: boolean;

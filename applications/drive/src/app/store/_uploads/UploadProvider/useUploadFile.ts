@@ -16,8 +16,8 @@ import {
     FileRevisionState,
     RequestUploadResult,
 } from '@proton/shared/lib/interfaces/drive/file';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { ValidationError, logError } from '../../_utils';
 import { useDebouncedRequest } from '../../_api';

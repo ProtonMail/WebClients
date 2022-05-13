@@ -1,8 +1,8 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { FILE_CHUNK_SIZE, SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { LinkDownload } from '../interface';
 import { Download } from './interface';
 import useDownloadControl from './useDownloadControl';
