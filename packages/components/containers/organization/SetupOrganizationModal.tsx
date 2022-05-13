@@ -7,7 +7,7 @@ import {
     updateOrganizationKeysV2,
 } from '@proton/shared/lib/api/organization';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import {
     passwordLengthValidator,
     confirmPasswordValidator,

@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';

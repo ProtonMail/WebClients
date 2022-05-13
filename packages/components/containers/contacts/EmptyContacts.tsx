@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import noContactsImg from '@proton/styles/assets/img/illustrations/no-contacts.svg';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import { Button } from '../../components';
 import { useModals } from '../../hooks';

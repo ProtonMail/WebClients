@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { reportBug } from '@proton/shared/lib/api/reports';
 import { APPS, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';

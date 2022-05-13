@@ -9,7 +9,7 @@ import {
     MouseEvent as ReactMouseEvent,
 } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import {
     classnames,
     getCustomSizingClasses,

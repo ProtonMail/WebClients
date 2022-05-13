@@ -1,5 +1,5 @@
 import { Children, isValidElement, ReactNode, useEffect, useRef } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import ErrorBoundary from '../app/ErrorBoundary';
 import { SettingsPageTitle, SettingsParagraph } from '../account';

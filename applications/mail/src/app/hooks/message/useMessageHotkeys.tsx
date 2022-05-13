@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
 import { useFolders, useHotkeys, useMailSettings, HotkeyTuple, useEventManager } from '@proton/components';
 import { isStarred } from '../../helpers/elements';

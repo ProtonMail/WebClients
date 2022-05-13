@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 export type RefreshFn = () => void;
 

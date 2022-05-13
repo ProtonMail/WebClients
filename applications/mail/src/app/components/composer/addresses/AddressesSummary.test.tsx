@@ -1,5 +1,5 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { clearAll, render } from '../../../helpers/test/helper';
 import AddressesSummary from './AddressesSummary';

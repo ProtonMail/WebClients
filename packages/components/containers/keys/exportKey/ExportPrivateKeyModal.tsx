@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { OpenPGPKey, encryptPrivateKey } from 'pmcrypto';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';

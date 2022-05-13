@@ -1,5 +1,7 @@
 import { create as createMutex } from '@protontech/mutex-browser';
 
+import { randomIntFromInterval } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
 import { createOnceHandler } from '../../apiHandlers';
 import { wait } from '../../helpers/promise';
@@ -7,7 +9,6 @@ import { API_CUSTOM_ERROR_CODES, HTTP_ERROR_CODES } from '../../errors';
 import { getVerificationHeaders, withUIDHeaders } from '../../fetch/headers';
 import { setRefreshCookies } from '../auth';
 import { getApiError } from './apiErrorHelper';
-import { noop, randomIntFromInterval } from '@proton/util/function';
 import { getDateHeader } from '../../fetch/helpers';
 import { getLastRefreshDate, setLastRefreshDate } from './refreshStorage';
 

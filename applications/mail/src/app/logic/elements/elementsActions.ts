@@ -1,5 +1,5 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import {
     ESResults,
     EventUpdates,

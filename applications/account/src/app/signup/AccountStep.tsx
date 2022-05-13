@@ -22,7 +22,7 @@ import {
     useLoading,
     useModalState,
 } from '@proton/components';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { hasProtonDomain } from '@proton/shared/lib/helpers/string';
 import { getPrivacyPolicyURL } from '@proton/shared/lib/helpers/url';
 import { Link } from 'react-router-dom';

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Address as tsAddress, UserType } from '@proton/shared/lib/interfaces';

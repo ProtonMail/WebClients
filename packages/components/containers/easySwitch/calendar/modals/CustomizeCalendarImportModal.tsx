@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import {
     CalendarImportMapping,
     CalendarImporterPayload,
