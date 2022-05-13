@@ -28,6 +28,7 @@ interface Props {
     hasType?: boolean;
     onChange: (model: NotificationModel) => void;
     error?: string;
+    isNarrow: boolean;
 }
 
 const getWhenOptions = (isAllDay: boolean, value = 0) => {
@@ -45,6 +46,7 @@ const NotificationInput = ({
     hasType = false,
     onChange,
     error,
+    isNarrow,
 }: Props) => {
     const safeValue = value === undefined ? 1 : value;
 
@@ -63,7 +65,7 @@ const NotificationInput = ({
         show,
         onDisplayed,
         onClose: onCloseSpotlight,
-    } = useSpotlightOnFeature(FeatureCode.SpotlightEmailNotifications);
+    } = useSpotlightOnFeature(FeatureCode.SpotlightEmailNotifications, !isNarrow);
     const shouldShowSpotlight = useSpotlightShow(show);
 
     return (
