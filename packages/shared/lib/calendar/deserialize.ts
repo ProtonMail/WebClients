@@ -1,8 +1,8 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
+import unary from '@proton/util/unary';
 import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';
-import { unary } from '@proton/util/function';
 import { Address, Nullable } from '../interfaces';
 import {
     CalendarEvent,

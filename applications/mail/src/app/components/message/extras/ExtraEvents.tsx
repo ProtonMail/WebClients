@@ -9,7 +9,7 @@ import {
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
-import { unary } from '@proton/util/function';
+import unary from '@proton/util/unary';
 import isTruthy from '@proton/util/isTruthy';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
