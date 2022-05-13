@@ -59,27 +59,19 @@ const Payment = ({
     creditCardTopRef,
 }: Props) => {
     const { paymentMethods, options, loading } = useMethods({ amount, paymentMethodStatus, coupon, flow: type });
-    const lastCustomMethod = [...options]
-        .reverse()
-        .find(
-            ({ value }) =>
-                ![
-                    PAYMENT_METHOD_TYPES.CARD,
-                    PAYMENT_METHOD_TYPES.PAYPAL,
-                    PAYMENT_METHOD_TYPES.CASH,
-                    PAYMENT_METHOD_TYPES.BITCOIN,
-                ].includes(value as any)
-        );
+    const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
+
+    const allMethods = [...options.usedMethods, ...options.methods];
 
     useEffect(() => {
         if (loading) {
             return onMethod(undefined);
         }
-        const result = options.find(({ disabled }) => !disabled);
+        const result = allMethods.find(({ disabled }) => !disabled);
         if (result) {
             onMethod(result.value);
         }
-    }, [loading, options.length]);
+    }, [loading, allMethods.length]);
 
     if (['donation', 'human-verification'].includes(type) && amount < MIN_DONATION_AMOUNT) {
         const price = (
@@ -128,16 +120,16 @@ const Payment = ({
                     noMaxWidth === false && 'max-w37e on-mobile-max-w100 ',
                 ])}
             >
-                <div className="mr1 on-mobile-mr0">
+                <div>
                     {type !== 'signup' && <h2 className="text-2xl text-bold mb1">{c('Label').t`Payment method`}</h2>}
                     <PaymentMethodSelector
-                        options={options}
+                        options={allMethods}
                         method={method}
                         onChange={(value) => onMethod(value)}
-                        lastCustomMethod={lastCustomMethod}
+                        lastUsedMethod={lastUsedMethod}
                     />
                 </div>
-                <div className="mt2">
+                <div className="mt1">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />

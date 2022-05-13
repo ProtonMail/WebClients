@@ -15,7 +15,9 @@ import { PaymentMethodData, PaymentMethodFlows } from './interface';
 const getMethod = (paymentMethod: PaymentMethod) => {
     switch (paymentMethod.Type) {
         case PAYMENT_METHOD_TYPES.CARD:
-            return `${paymentMethod.Details?.Brand} - ${paymentMethod.Details?.Last4}`;
+            const brand = paymentMethod.Details?.Brand;
+            const last4 = paymentMethod.Details?.Last4;
+            return c('new_plans: info').t`${brand} ending in ${last4}`;
         case PAYMENT_METHOD_TYPES.PAYPAL:
             return `PayPal - ${paymentMethod.Details?.PayerID}`;
         default:
@@ -58,41 +60,40 @@ export const getPaymentMethodOptions = ({
     flow,
     paymentMethods = [],
     paymentMethodsStatus = {},
-}: Props): PaymentMethodData[] => {
+}: Props): { usedMethods: PaymentMethodData[]; methods: PaymentMethodData[] } => {
     const isPaypalAmountValid = amount >= MIN_PAYPAL_AMOUNT;
     const isInvoice = flow === 'invoice';
     const isSignup = flow === 'signup';
     const isHumanVerification = flow === 'human-verification';
     const alreadyHavePayPal = paymentMethods.some(({ Type }) => Type === PAYMENT_METHOD_TYPES.PAYPAL);
 
-    return [
-        ...paymentMethods
-            .filter((paymentMethod) => {
-                if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && paymentMethodsStatus?.Card) {
-                    return true;
-                }
-                if (
-                    (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
-                        paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) &&
-                    paymentMethodsStatus?.Paypal
-                ) {
-                    return true;
-                }
-                return false;
-            })
-            .map((paymentMethod) => {
-                const isExpired =
-                    paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ? getIsExpired(paymentMethod.Details) : false;
-                return {
-                    icon: getIcon(paymentMethod),
-                    text: [getMethod(paymentMethod), isExpired && `(${c('Info').t`Expired`})`]
-                        .filter(Boolean)
-                        .join(' '),
-                    value: paymentMethod.ID,
-                    disabled: isExpired,
-                    custom: true,
-                };
-            }),
+    const usedMethods = paymentMethods
+        .filter((paymentMethod) => {
+            if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && paymentMethodsStatus?.Card) {
+                return true;
+            }
+            if (
+                (paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL ||
+                    paymentMethod.Type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) &&
+                paymentMethodsStatus?.Paypal
+            ) {
+                return true;
+            }
+            return false;
+        })
+        .map((paymentMethod) => {
+            const isExpired =
+                paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD ? getIsExpired(paymentMethod.Details) : false;
+            return {
+                icon: getIcon(paymentMethod),
+                text: [getMethod(paymentMethod), isExpired && `(${c('Info').t`Expired`})`].filter(Boolean).join(' '),
+                value: paymentMethod.ID,
+                disabled: isExpired,
+                custom: true,
+            };
+        });
+
+    const methods = [
         paymentMethodsStatus?.Card && {
             icon: 'credit-card' as const,
             value: PAYMENT_METHOD_TYPES.CARD,
@@ -124,4 +125,9 @@ export const getPaymentMethodOptions = ({
                 value: PAYMENT_METHOD_TYPES.CASH,
             },
     ].filter(isTruthy);
+
+    return {
+        usedMethods,
+        methods,
+    };
 };
