@@ -1,4 +1,4 @@
-import { debounce } from '@proton/util/function';
+import debounce from '@proton/util/debounce';
 import { createContext, RefObject, useContext, useEffect, useState } from 'react';
 
 interface ContextProps {
