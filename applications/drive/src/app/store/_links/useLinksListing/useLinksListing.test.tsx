@@ -2,9 +2,10 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { EncryptedLink } from './interface';
-import { PAGE_SIZE, useLinksListingProvider } from './useLinksListing';
-import { LinksStateProvider } from './useLinksState';
+import { EncryptedLink } from '../interface';
+import { PAGE_SIZE } from './useLinksListingHelpers';
+import { useLinksListingProvider } from './useLinksListing';
+import { LinksStateProvider } from '../useLinksState';
 
 const LINKS = [...Array(PAGE_SIZE * 2 - 1)].map((_, x) => ({ linkId: `children${x}`, parentLinkId: 'parentLinkId' }));
 
@@ -12,7 +13,7 @@ function linksToApiLinks(links: { linkId: string; parentLinkId: string }[]) {
     return links.map(({ linkId, parentLinkId }) => ({ LinkID: linkId, ParentLinkID: parentLinkId }));
 }
 
-jest.mock('../_utils/errorHandler', () => {
+jest.mock('../../_utils/errorHandler', () => {
     return {
         useErrorHandler: () => ({
             showErrorNotification: jest.fn(),
@@ -22,14 +23,14 @@ jest.mock('../_utils/errorHandler', () => {
 });
 
 const mockRequst = jest.fn();
-jest.mock('../_api/useDebouncedRequest', () => {
+jest.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequst;
     };
     return useDebouncedRequest;
 });
 
-jest.mock('../_events/useDriveEventManager', () => {
+jest.mock('../../_events/useDriveEventManager', () => {
     const useDriveEventManager = () => {
         return {
             registerEventHandler: () => undefined,
@@ -41,7 +42,7 @@ jest.mock('../_events/useDriveEventManager', () => {
     };
 });
 
-jest.mock('../_shares/useShare', () => {
+jest.mock('../../_shares/useShare', () => {
     const useLink = () => {
         return {};
     };
@@ -49,7 +50,7 @@ jest.mock('../_shares/useShare', () => {
 });
 
 const mockDecrypt = jest.fn();
-jest.mock('./useLink', () => {
+jest.mock('../useLink', () => {
     const useLink = () => {
         return {
             decryptLink: mockDecrypt,

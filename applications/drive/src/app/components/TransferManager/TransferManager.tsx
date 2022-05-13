@@ -13,17 +13,10 @@ import {
 import buffer from '@proton/utils/buffer';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
-import {
-    Download,
-    STATE_TO_GROUP_MAP,
-    TransferGroup,
-    TransferType,
-    TransfersStats,
-    Upload,
-} from '@proton/shared/lib/interfaces/drive/transfer';
 
 import useConfirm from '../../hooks/util/useConfirm';
 import { useTransfersView } from '../../store';
+import { Download, STATE_TO_GROUP_MAP, TransferGroup, TransferType, TransfersStats, Upload } from './transfer';
 import Header from './Header';
 import Transfer from './Transfer';
 import HeaderButtons from './HeaderButtons';

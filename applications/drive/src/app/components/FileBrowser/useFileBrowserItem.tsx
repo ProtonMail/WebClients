@@ -4,9 +4,9 @@ import { msgid, c } from 'ttag';
 import { usePopperAnchor, useDragMove } from '@proton/components';
 import noop from '@proton/utils/noop';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
-import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { selectMessageForItemList } from '../sections/helpers';
+import { FileBrowserItem, DragMoveControls } from './interface';
 
 const DOUBLE_CLICK_MS = 500;
 
@@ -40,8 +40,8 @@ function useFileBrowserItem<T extends HTMLElement>({
         format: CUSTOM_DATA_FORMAT,
         formatter: JSON.stringify,
     });
-    const isSelected = selectedItems.some(({ LinkID }) => item.LinkID === LinkID);
-    const isDraggingSelected = selectedItems.some(({ LinkID }) => LinkID === item.LinkID);
+    const isSelected = selectedItems.some(({ linkId }) => item.linkId === linkId);
+    const isDraggingSelected = selectedItems.some(({ linkId }) => linkId === item.linkId);
     const dragMoveItems = isDraggingSelected ? selectedItems : [item];
     const movingCount = dragMoveItems.length;
 
@@ -56,15 +56,15 @@ function useFileBrowserItem<T extends HTMLElement>({
     };
 
     const moveText = selectMessageForItemList(
-        dragMoveItems.map((item) => item.IsFile),
+        dragMoveItems.map((item) => item.isFile),
         texts
     );
 
-    const iconText = `${!item.IsFile ? c('Label').t`Folder` : `${c('Label').t`File`} - ${item.MIMEType}`} - ${
-        item.Name
+    const iconText = `${!item.isFile ? c('Label').t`Folder` : `${c('Label').t`File`} - ${item.mimeType}`} - ${
+        item.name
     }`;
 
-    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.Disabled ? undefined : fn);
+    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (item.isLocked ? undefined : fn);
 
     const handleClick = unlessDisabled(
         useCallback(
@@ -80,11 +80,11 @@ function useFileBrowserItem<T extends HTMLElement>({
                     // items right away even if we navigate to different folder
                     // or show file preview in few milliseconds.
                     if (e.shiftKey) {
-                        onShiftClick?.(item.LinkID);
+                        onShiftClick?.(item.linkId);
                     } else if (e.ctrlKey || e.metaKey) {
-                        onToggleSelect(item.LinkID);
+                        onToggleSelect(item.linkId);
                     } else {
-                        selectItem(item.LinkID);
+                        selectItem(item.linkId);
                     }
                     clickTimerIdRef.current = setTimeout(() => {
                         clickTimerIdRef.current = undefined;
@@ -141,7 +141,7 @@ function useFileBrowserItem<T extends HTMLElement>({
         useCallback(
             (e: React.DragEvent<HTMLTableRowElement>) => {
                 if (!isDraggingSelected) {
-                    selectItem(item.LinkID);
+                    selectItem(item.linkId);
                 }
                 dragMove.handleDragStart(e);
             },
@@ -153,13 +153,13 @@ function useFileBrowserItem<T extends HTMLElement>({
         (e: React.MouseEvent | React.TouchEvent, top: number, left: number) => {
             e.stopPropagation();
 
-            if (item.Disabled) {
+            if (item.isLocked) {
                 return;
             }
             e.preventDefault();
 
             if (!isSelected) {
-                selectItem(item.LinkID);
+                selectItem(item.linkId);
             }
 
             if (contextMenu.isOpen) {
@@ -168,7 +168,7 @@ function useFileBrowserItem<T extends HTMLElement>({
 
             setContextMenuPosition({ top, left });
         },
-        [contextMenu.isOpen, isSelected, item.Disabled, item.LinkID, selectItem]
+        [contextMenu.isOpen, isSelected, item.isLocked, item.linkId, selectItem]
     );
 
     const handleContextMenu = useCallback(
@@ -199,10 +199,10 @@ function useFileBrowserItem<T extends HTMLElement>({
     const handleCheckboxClick = useCallback(
         (e) => {
             if (!e.shiftKey) {
-                onToggleSelect(item.LinkID);
+                onToggleSelect(item.linkId);
             }
         },
-        [onToggleSelect, item.LinkID]
+        [onToggleSelect, item.linkId]
     );
 
     const handleCheckboxWrapperClick = useCallback(
@@ -210,10 +210,10 @@ function useFileBrowserItem<T extends HTMLElement>({
             e.stopPropagation();
             // Wrapper handles shift key, because FF has issues: https://bugzilla.mozilla.org/show_bug.cgi?id=559506
             if (e.shiftKey) {
-                onShiftClick?.(item.LinkID);
+                onShiftClick?.(item.linkId);
             }
         },
-        [onShiftClick, item.LinkID]
+        [onShiftClick, item.linkId]
     );
 
     const stopPropagation = useCallback((e) => {
@@ -230,10 +230,10 @@ function useFileBrowserItem<T extends HTMLElement>({
         [isSelected]
     );
 
-    const draggable = dragMoveControls && !item.Disabled;
+    const draggable = dragMoveControls && !item.isLocked;
 
     return {
-        isFolder: !item.IsFile,
+        isFolder: !item.isFile,
         iconText,
         dragMoveItems,
         dragMove,

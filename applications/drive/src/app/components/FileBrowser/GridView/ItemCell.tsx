@@ -3,10 +3,10 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { Button, Icon, FileIcon, Checkbox, classnames, DragMoveContainer, FileNameDisplay } from '@proton/components';
-import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useThumbnailsDownload } from '../../../store';
 import SignatureIcon from '../../SignatureIcon';
+import { ItemProps } from '../interface';
 import useFileBrowserItem from '../useFileBrowserItem';
 
 export interface Props extends Omit<ItemProps, 'isPreview' | 'showLocation' | 'columns'> {
@@ -53,10 +53,10 @@ function ItemCell({
     const { addToDownloadQueue } = useThumbnailsDownload();
 
     useEffect(() => {
-        if (item.HasThumbnail) {
-            addToDownloadQueue(shareId, item.LinkID, item.ModifyTime);
+        if (item.hasThumbnail) {
+            addToDownloadQueue(shareId, item.linkId, item.activeRevision?.id);
         }
-    }, [item.ModifyTime]); // Reload thumbnail when file changes.
+    }, [item.activeRevision?.id, item.hasThumbnail]);
 
     return (
         <div className={classnames(['flex flex-col opacity-on-hover-container', className])} style={style}>
@@ -65,39 +65,31 @@ function ItemCell({
                     <DragMoveContainer>{moveText}</DragMoveContainer>
                 </DragMoveContent>
             )}
-            {!item.Disabled && ItemContextMenu && (
-                <ItemContextMenu
-                    item={item}
-                    selectedItems={selectedItems}
-                    shareId={shareId}
-                    position={contextMenuPosition}
-                    {...contextMenu}
-                />
-            )}
+            {!item.isLocked && ItemContextMenu && <ItemContextMenu position={contextMenuPosition} {...contextMenu} />}
             <div
                 ref={contextMenu.anchorRef}
                 role="button"
                 tabIndex={0}
                 draggable={draggable}
-                aria-disabled={item.Disabled}
+                aria-disabled={item.isLocked}
                 className={classnames([
                     'file-browser-grid-item m0-5 flex flex-column w100 rounded border text-align-left',
                     isSelected && 'border-primary',
-                    (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) &&
+                    (isSelected || dragMoveControls?.isActiveDropTarget || item.isLocked) &&
                         'file-browser-grid-item--highlight',
-                    (dragging || item.Disabled) && 'opacity-50',
+                    (dragging || item.isLocked) && 'opacity-50',
                 ])}
                 {...itemHandlers}
             >
                 <div className="flex flex-item-fluid flex-justify-center flex-align-items-center file-browser-grid-item--container">
-                    {item.CachedThumbnailURL ? (
+                    {item.cachedThumbnailUrl ? (
                         <img
-                            src={item.CachedThumbnailURL}
+                            src={item.cachedThumbnailUrl}
                             className="file-browser-grid-item--thumbnail"
                             alt={iconText}
                         />
                     ) : (
-                        <FileIcon size={48} mimeType={item.IsFile ? item.MIMEType : 'Folder'} alt={iconText} />
+                        <FileIcon size={48} mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} />
                     )}
                 </div>
                 <div
@@ -108,15 +100,15 @@ function ItemCell({
                     {...checkboxWrapperHandlers}
                 >
                     <Checkbox
-                        disabled={item.Disabled}
+                        disabled={item.isLocked}
                         className="increase-click-surface file-browser-grid-item-checkbox"
                         checked={isSelected}
                         {...checkboxHandlers}
                     />
                 </div>
-                <div className="file-browser-grid-item--file-name flex border-top" title={item.Name}>
+                <div className="file-browser-grid-item--file-name flex border-top" title={item.name}>
                     <SignatureIcon item={item} className="file-browser-grid-view--signature-icon" />
-                    <FileNameDisplay text={item.Name} className="center" />
+                    <FileNameDisplay text={item.name} className="center" />
                     <Button
                         shape="ghost"
                         size="small"

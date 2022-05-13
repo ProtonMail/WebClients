@@ -1,13 +1,10 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
 import { useSearchView } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { FileBrowser } from '../../FileBrowser';
-import { mapDecryptedLinksToChildren } from '../helpers';
-import SearchItemContextMenu from './SearchItemContextMenu';
+import generateSearchItemContextMenu from './SearchItemContextMenu';
 import { NoSearchResultsView } from './NoSearchResultsView';
 
 interface Props {
@@ -22,18 +19,15 @@ export const Search = ({ shareId, searchView }: Props) => {
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
         selectionControls;
 
-    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
-    const contents = mapDecryptedLinksToChildren(items);
-
     const handleClick = useCallback(
-        async (item: FileBrowserItem) => {
+        async (item: { linkId: string; isFile: boolean }) => {
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.LinkID, item.IsFile);
+            navigateToLink(shareId, item.linkId, item.isFile);
         },
         [navigateToLink, shareId]
     );
 
-    return !contents.length && !isLoading ? (
+    return !items.length && !isLoading ? (
         <NoSearchResultsView />
     ) : (
         <FileBrowser
@@ -42,8 +36,8 @@ export const Search = ({ shareId, searchView }: Props) => {
             caption={c('Title').t`Search results`}
             shareId={shareId}
             loading={isLoading}
-            contents={contents}
-            selectedItems={selectedItems2}
+            contents={items}
+            selectedItems={selectedItems}
             sortFields={['name', 'fileModifyTime', 'size']}
             sortParams={sortParams}
             setSorting={setSorting}
@@ -53,7 +47,7 @@ export const Search = ({ shareId, searchView }: Props) => {
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={toggleRange}
             selectItem={selectItem}
-            ItemContextMenu={SearchItemContextMenu}
+            ItemContextMenu={generateSearchItemContextMenu(shareId, selectedItems)}
         />
     );
 };

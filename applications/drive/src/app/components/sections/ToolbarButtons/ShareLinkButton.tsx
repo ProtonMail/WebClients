@@ -1,31 +1,31 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
 import useOpenModal from '../../useOpenModal';
 import { noSelection, isMultiSelect } from './utils';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
 }
 
-const ShareLinkButton = ({ shareId, selectedItems }: Props) => {
+const ShareLinkButton = ({ shareId, selectedLinks }: Props) => {
     const { openLinkSharing } = useOpenModal();
 
-    if (noSelection(selectedItems) || isMultiSelect(selectedItems)) {
+    if (noSelection(selectedLinks) || isMultiSelect(selectedLinks)) {
         return null;
     }
 
-    const hasSharedLink = !!selectedItems[0]?.SharedUrl;
+    const hasSharedLink = !!selectedLinks[0]?.shareUrl;
 
     return (
         <ToolbarButton
-            disabled={noSelection(selectedItems) || isMultiSelect(selectedItems)}
+            disabled={noSelection(selectedLinks) || isMultiSelect(selectedLinks)}
             title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
             icon={<Icon name={hasSharedLink ? 'link-pen' : 'link'} />}
-            onClick={() => openLinkSharing(shareId, selectedItems[0])}
+            onClick={() => openLinkSharing(shareId, selectedLinks[0].linkId)}
             data-testid="toolbar-share-link"
         />
     );

@@ -1,5 +1,6 @@
 import { useActiveBreakpoint } from '@proton/components';
-import { FileBrowserLayouts, ItemRowColumns } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+
+import { FileBrowserLayouts, ItemRowColumns } from './interface';
 
 const COLUMNS_DESKTOP: Record<FileBrowserLayouts, ItemRowColumns[]> = {
     drive: ['modified', 'size', 'share_options'],

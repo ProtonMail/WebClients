@@ -5,7 +5,6 @@ import { PrivateMainArea, useAppTitle } from '@proton/components';
 
 import { useTrashView } from '../../../store';
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { mapDecryptedLinksToChildren } from '../helpers';
 import TrashToolbar from './TrashToolbar';
 import Trash from './Trash';
 
@@ -15,11 +14,10 @@ const TrashView = () => {
     useEffect(setDefaultRoot, []);
 
     const trashView = useTrashView(activeShareId);
-    const selectedItems = mapDecryptedLinksToChildren(trashView.selectionControls.selectedItems);
 
     return (
         <>
-            <TrashToolbar shareId={activeShareId} selectedItems={selectedItems} />
+            <TrashToolbar shareId={activeShareId} selectedLinks={trashView.selectionControls.selectedItems} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                 <div className="p1 text-strong border-bottom section--header">{c('Info').t`Trash`}</div>
                 <Trash shareId={activeShareId} trashView={trashView} />

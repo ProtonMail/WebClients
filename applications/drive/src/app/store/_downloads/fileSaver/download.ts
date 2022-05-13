@@ -2,7 +2,8 @@ import { isSafari, isEdge, isEdgeChromium, isIos } from '@proton/shared/lib/help
 import { WritableStream } from 'web-streams-polyfill';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { PUBLIC_PATH } from '@proton/shared/lib/constants';
-import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
+
+import { TransferMeta } from '../../../components/TransferManager/transfer';
 
 /**
  * Safari and Edge don't support returning stream as a response.

@@ -1,5 +1,5 @@
 /* eslint-disable max-classes-per-file */
-import { FileBrowserItem } from './fileBrowser';
+import { FileBrowserItem } from '../FileBrowser/interface';
 
 export enum TransferState {
     Initializing = 'initializing',

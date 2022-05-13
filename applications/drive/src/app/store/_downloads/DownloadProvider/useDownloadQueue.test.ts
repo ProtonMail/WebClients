@@ -1,7 +1,6 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 
-import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
-
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { LinkDownload } from '../interface';
 import { Download, UpdateCallback, UpdateData, UpdateFilter, UpdateState } from './interface';
 import useDownloadQueue from './useDownloadQueue';

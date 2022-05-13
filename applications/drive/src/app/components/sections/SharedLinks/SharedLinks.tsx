@@ -1,14 +1,11 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
 import { useSharedLinksView } from '../../../store';
 import { FileBrowser } from '../../FileBrowser';
 import useNavigate from '../../../hooks/drive/useNavigate';
-import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyShared from './EmptyShared';
-import SharedLinksItemContextMenu from './SharedLinksItemContextMenu';
+import generateSharedLinksItemContextMenu from './SharedLinksItemContextMenu';
 
 type Props = {
     shareId: string;
@@ -23,18 +20,15 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
         selectionControls;
 
-    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
-    const contents = mapDecryptedLinksToChildren(items);
-
     const handleClick = useCallback(
-        async (item: FileBrowserItem) => {
+        async (item: { linkId: string; isFile: boolean }) => {
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.LinkID, item.IsFile);
+            navigateToLink(shareId, item.linkId, item.isFile);
         },
         [navigateToLink, shareId]
     );
 
-    return !contents.length && !isLoading ? (
+    return !items.length && !isLoading ? (
         <EmptyShared shareId={shareId} />
     ) : (
         <FileBrowser
@@ -43,8 +37,8 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
             caption={c('Title').t`Shared`}
             shareId={shareId}
             loading={isLoading}
-            contents={contents}
-            selectedItems={selectedItems2}
+            contents={items}
+            selectedItems={selectedItems}
             sortFields={['name', 'linkCreateTime', 'linkExpireTime', 'numAccesses']}
             sortParams={sortParams}
             setSorting={setSorting}
@@ -54,7 +48,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={toggleRange}
             selectItem={selectItem}
-            ItemContextMenu={SharedLinksItemContextMenu}
+            ItemContextMenu={generateSharedLinksItemContextMenu(shareId, selectedItems)}
         />
     );
 };

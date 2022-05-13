@@ -1,9 +1,9 @@
 import { useCallback, useRef } from 'react';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { FileBrowserProps, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
+import { FileBrowserProps, SortField } from './interface';
 import ListView from './ListView/ListView';
 import GridView from './GridView/GridView';
 

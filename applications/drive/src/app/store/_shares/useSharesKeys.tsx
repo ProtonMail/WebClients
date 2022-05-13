@@ -7,7 +7,7 @@ type SharesKeys = {
 
 export type ShareKeys = {
     privateKey: OpenPGPKey;
-    sessionKey: SessionKey;
+    sessionKey?: SessionKey;
 };
 
 /**
@@ -25,7 +25,7 @@ export class SharesKeysStorage {
         return this.keys[shareId];
     }
 
-    set(shareId: string, privateKey: OpenPGPKey, sessionKey: SessionKey) {
+    set(shareId: string, privateKey: OpenPGPKey, sessionKey?: SessionKey) {
         this.keys[shareId] = {
             privateKey,
             sessionKey,

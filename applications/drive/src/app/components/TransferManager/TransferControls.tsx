@@ -1,7 +1,6 @@
 import { useLoading } from '@proton/components';
 import { c } from 'ttag';
 
-import { TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
 import {
     isTransferPaused,
     isTransferFinished,
@@ -9,6 +8,7 @@ import {
     isTransferFinalizing,
     isTransferOngoing,
 } from '../../utils/transfer';
+import { TransferType, Upload } from './transfer';
 import { TransferManagerButtonProps, TransferProps } from './interfaces';
 import Buttons from './Buttons';
 import useTransferControls from './useTransferControls';

@@ -1,10 +1,9 @@
-import { ReactNode, useState, useEffect } from 'react';
+import { ReactNode } from 'react';
 import { c } from 'ttag';
 
-import { useLoading, Row, ModalTwo, ModalTwoFooter, Button, ModalTwoContent, ModalTwoHeader } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { Alert, Row, ModalTwo, ModalTwoFooter, Button, ModalTwoContent, ModalTwoHeader } from '@proton/components';
 
-import { SignatureIssues, useActions, useShareUrl } from '../store';
+import { useLinkDetailsView } from '../store';
 import { formatAccessCount } from '../utils/formatters';
 import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
 import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
@@ -13,11 +12,12 @@ import TimeCell from './FileBrowser/ListView/Cells/TimeCell';
 import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
 import NameCell from './FileBrowser/ListView/Cells/NameCell';
 import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
+import ModalContentLoader from './ModalContentLoader';
 import SignatureAlert from './SignatureAlert';
 
 interface Props {
     shareId: string;
-    item: FileBrowserItem;
+    linkId: string;
     onClose?: () => void;
     open?: boolean;
 }
@@ -27,7 +27,89 @@ interface RowProps {
     children: ReactNode;
 }
 
-const DetailsRow = ({ label, children }: RowProps) => {
+export default function DetailsModal({ shareId, linkId, onClose, open }: Props) {
+    const {
+        isLinkLoading,
+        isSignatureIssuesLoading,
+        isNumberOfAccessesLoading,
+        error,
+        link,
+        signatureIssues,
+        numberOfAccesses,
+    } = useLinkDetailsView(shareId, linkId);
+
+    const renderModalState = () => {
+        if (isLinkLoading) {
+            return <ModalContentLoader>{c('Info').t`Loading link`}</ModalContentLoader>;
+        }
+
+        if (!link || error) {
+            return (
+                <ModalTwoContent>
+                    <Alert type="error">{c('Info').t`Link failed to be loaded`}</Alert>
+                </ModalTwoContent>
+            );
+        }
+
+        const isShared = link.shareUrl && !link.shareUrl.isExpired ? c('Info').t`Yes` : c('Info').t`No`;
+        return (
+            <ModalTwoContent>
+                <SignatureAlert
+                    loading={isSignatureIssuesLoading}
+                    signatureIssues={signatureIssues}
+                    signatureAddress={link.signatureAddress}
+                    isFile={link.isFile}
+                    name={link.name}
+                    className="mb1"
+                />
+                <DetailsRow label={c('Title').t`Name`}>
+                    <NameCell name={link.name} />
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Uploaded by`}>
+                    <UserNameCell />
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Location`}>
+                    <LocationCell shareId={shareId} parentLinkId={link.parentLinkId} />
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Uploaded`}>
+                    <TimeCell time={link.createTime} />
+                </DetailsRow>
+                <DetailsRow label={c('Title').t`Modified`}>
+                    <TimeCell time={link.fileModifyTime} />
+                </DetailsRow>
+                {link.isFile && (
+                    <>
+                        <DetailsRow label={c('Title').t`Type`}>
+                            <DescriptiveTypeCell mimeType={link.mimeType} isFile={link.isFile} />
+                        </DetailsRow>
+                        <DetailsRow label={c('Title').t`MIME type`}>
+                            <MIMETypeCell mimeType={link.mimeType} />
+                        </DetailsRow>
+                        <DetailsRow label={c('Title').t`Size`}>
+                            <SizeCell size={link.size} />
+                        </DetailsRow>
+                    </>
+                )}
+                <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
+                {(numberOfAccesses !== undefined || isNumberOfAccessesLoading) && (
+                    <DetailsRow label={c('Title').t`# of accesses`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
+                )}
+            </ModalTwoContent>
+        );
+    };
+
+    return (
+        <ModalTwo onClose={onClose} open={open} size="large">
+            <ModalTwoHeader title={getTitle(link?.isFile)} />
+            {renderModalState()}
+            <ModalTwoFooter>
+                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
+    );
+}
+
+function DetailsRow({ label, children }: RowProps) {
     return (
         <Row>
             <span className="label cursor-default">{label}</span>
@@ -36,95 +118,11 @@ const DetailsRow = ({ label, children }: RowProps) => {
             </div>
         </Row>
     );
-};
+}
 
-const DetailsModal = ({ shareId, item, onClose, open }: Props) => {
-    const title = item.IsFile ? c('Title').t`File details` : c('Title').t`Folder details`;
-    const isShared = item.SharedUrl && !item.UrlsExpired ? c('Info').t`Yes` : c('Info').t`No`;
-
-    const { checkLinkSignatures } = useActions();
-    const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
-    const [loadingSignatureIssues, withLoadingSignatureIssues] = useLoading();
-
-    const { loadShareUrlNumberOfAccesses } = useShareUrl();
-    const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
-    const [loadingNumberOfAccesses, withLoadingNumberOfAccesses] = useLoading();
-
-    useEffect(() => {
-        const abortController = new AbortController();
-        void withLoadingSignatureIssues(
-            checkLinkSignatures(abortController.signal, shareId, item.LinkID).then(setSignatureIssues)
-        );
-        return () => {
-            abortController.abort();
-        };
-    }, [shareId, item.LinkID]);
-
-    useEffect(() => {
-        if (!item.ShareUrlShareID) {
-            return;
-        }
-        const abortController = new AbortController();
-        void withLoadingNumberOfAccesses(
-            loadShareUrlNumberOfAccesses(abortController.signal, shareId, item.LinkID)
-                .then(setNumberOfAccesses)
-                .catch(console.error)
-        );
-        return () => {
-            abortController.abort();
-        };
-    }, [shareId, item.LinkID, item.ShareUrlShareID]);
-
-    return (
-        <ModalTwo onClose={onClose} open={open} size="large">
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                <SignatureAlert
-                    loading={loadingSignatureIssues}
-                    signatureIssues={signatureIssues}
-                    signatureAddress={item.SignatureAddress}
-                    isFile={item.IsFile}
-                    name={item.Name}
-                    className="mb1"
-                />
-                <DetailsRow label={c('Title').t`Name`}>
-                    <NameCell name={item.Name} />
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Uploaded by`}>
-                    <UserNameCell />
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Location`}>
-                    <LocationCell shareId={shareId} parentLinkId={item.ParentLinkID} />
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Uploaded`}>
-                    <TimeCell time={item.CreateTime} />
-                </DetailsRow>
-                <DetailsRow label={c('Title').t`Modified`}>
-                    <TimeCell time={item.RealModifyTime} />
-                </DetailsRow>
-                {item.IsFile && (
-                    <>
-                        <DetailsRow label={c('Title').t`Type`}>
-                            <DescriptiveTypeCell mimeType={item.MIMEType} isFile={item.IsFile} />
-                        </DetailsRow>
-                        <DetailsRow label={c('Title').t`MIME type`}>
-                            <MIMETypeCell mimeType={item.MIMEType} />
-                        </DetailsRow>
-                        <DetailsRow label={c('Title').t`Size`}>
-                            <SizeCell size={item.Size} />
-                        </DetailsRow>
-                    </>
-                )}
-                <DetailsRow label={c('Title').t`Shared`}>{isShared}</DetailsRow>
-                {(numberOfAccesses !== undefined || loadingNumberOfAccesses) && (
-                    <DetailsRow label={c('Title').t`# of accesses`}>{formatAccessCount(numberOfAccesses)}</DetailsRow>
-                )}
-            </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button onClick={onClose}>{c('Action').t`Close`}</Button>
-            </ModalTwoFooter>
-        </ModalTwo>
-    );
-};
-
-export default DetailsModal;
+function getTitle(isFile?: boolean) {
+    if (isFile === undefined) {
+        return c('Title').t`Item details`;
+    }
+    return isFile ? c('Title').t`File details` : c('Title').t`Folder details`;
+}

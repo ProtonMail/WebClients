@@ -1,7 +1,6 @@
-import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
-
 import { isTransferPaused } from '../../utils/transfer';
 import { useDownload, useUpload } from '../../store';
+import { Download, TransferType, Upload } from './transfer';
 
 function useTransferControls() {
     const { pauseDownloads, resumeDownloads, restartDownloads, cancelDownloads, removeDownloads } = useDownload();

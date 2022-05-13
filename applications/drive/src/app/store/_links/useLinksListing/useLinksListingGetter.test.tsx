@@ -2,10 +2,10 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-import { EncryptedLink } from './interface';
+import { EncryptedLink } from '../interface';
 import { useLinksListingProvider } from './useLinksListing';
 
-jest.mock('../_utils/errorHandler', () => {
+jest.mock('../../_utils/errorHandler', () => {
     return {
         useErrorHandler: () => ({
             showErrorNotification: jest.fn(),
@@ -15,14 +15,14 @@ jest.mock('../_utils/errorHandler', () => {
 });
 
 const mockRequst = jest.fn();
-jest.mock('../_api/useDebouncedRequest', () => {
+jest.mock('../../_api/useDebouncedRequest', () => {
     const useDebouncedRequest = () => {
         return mockRequst;
     };
     return useDebouncedRequest;
 });
 
-jest.mock('../_events/useDriveEventManager', () => {
+jest.mock('../../_events/useDriveEventManager', () => {
     const useDriveEventManager = () => {
         return {
             registerEventHandler: () => undefined,
@@ -34,7 +34,7 @@ jest.mock('../_events/useDriveEventManager', () => {
     };
 });
 
-jest.mock('../_shares/useShare', () => {
+jest.mock('../../_shares/useShare', () => {
     const useLink = () => {
         return {};
     };
@@ -42,7 +42,7 @@ jest.mock('../_shares/useShare', () => {
 });
 
 const mockDecrypt = jest.fn();
-jest.mock('./useLink', () => {
+jest.mock('../useLink', () => {
     const useLink = () => {
         return {
             decryptLink: mockDecrypt,
@@ -52,7 +52,7 @@ jest.mock('./useLink', () => {
 });
 
 const mockGetChildren = jest.fn();
-jest.mock('./useLinksState', () => {
+jest.mock('../useLinksState', () => {
     const useLinksState = () => {
         return {
             setLinks: jest.fn(),

@@ -2,10 +2,10 @@ import React from 'react';
 import { FileIcon, FileNameDisplay, classnames } from '@proton/components';
 
 import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
-import { SharedURLInfoDecrypted } from '../../hooks/drive/usePublicSharing';
+import { LinkInfo } from './types';
 
 interface Props {
-    linkInfo: SharedURLInfoDecrypted;
+    linkInfo: LinkInfo;
     className?: string;
 }
 
