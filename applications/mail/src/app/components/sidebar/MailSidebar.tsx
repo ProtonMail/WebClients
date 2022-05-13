@@ -1,4 +1,4 @@
-import { useCallback, memo } from 'react';
+import { useCallback, memo, useState } from 'react';
 import { c } from 'ttag';
 import {
     Sidebar,
@@ -7,13 +7,14 @@ import {
     MainLogo,
     useMailSettings,
     Tooltip,
-    useModals,
     useUserSettings,
     Spotlight,
     useSpotlightOnFeature,
     FeatureCode,
     useSpotlightShow,
+    useModalState,
 } from '@proton/components';
+import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 import giftSvg from '@proton/styles/assets/img/illustrations/gift.svg';
 
 import { useOnCompose } from '../../containers/ComposeProvider';
@@ -33,7 +34,6 @@ interface Props {
 const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage }: Props) => {
     const onCompose = useOnCompose();
     const [userSettings] = useUserSettings();
-    const { createModal } = useModals();
     const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.SpotlightGetStartedChecklist);
     const { dismissed: getStartedChecklistDismissed } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
@@ -41,15 +41,11 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
     }, [onCompose]);
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
 
+    const [mailGetStartedChecklistModalOpen, setMailGetStartedChecklistModalOpen] = useState(false);
+    const [mnemonicPromptModal, setMnemonicPromptModalOpen] = useModalState();
+
     const handleGiftClick = () => {
-        createModal(
-            <MailGetStartedChecklistModal
-                onSendMessage={() => {
-                    handleCompose();
-                    onSendMessage?.();
-                }}
-            />
-        );
+        setMailGetStartedChecklistModalOpen(true);
     };
 
     const titlePrimaryButton = Shortcuts ? (
@@ -75,33 +71,52 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
     const shouldShowSpotlight = useSpotlightShow(getStartedChecklistDismissed && show);
 
     return (
-        <Sidebar
-            expanded={expanded}
-            onToggleExpand={onToggleExpand}
-            primary={sideBarPrimaryButton}
-            logo={<MainLogo to="/inbox" />}
-            version={<SidebarVersion />}
-            storageGift={
-                userSettings.Checklists?.includes('get-started') && (
-                    <Spotlight
-                        content={c('Get started checklist spotlight').t`You can access the checklist anytime from here`}
-                        show={shouldShowSpotlight}
-                        onDisplayed={onDisplayed}
-                        originalPlacement="top"
-                    >
-                        <button type="button" className="ml0-5" onClick={handleGiftClick}>
-                            <Tooltip title={c('Storage').t`Get extra storage for free`}>
-                                <img width={16} src={giftSvg} alt={c('Action').t`Open get started checklist modal`} />
-                            </Tooltip>
-                        </button>
-                    </Spotlight>
-                )
-            }
-        >
-            <SidebarNav>
-                <MailSidebarList labelID={labelID} />
-            </SidebarNav>
-        </Sidebar>
+        <>
+            <Sidebar
+                expanded={expanded}
+                onToggleExpand={onToggleExpand}
+                primary={sideBarPrimaryButton}
+                logo={<MainLogo to="/inbox" />}
+                version={<SidebarVersion />}
+                storageGift={
+                    userSettings.Checklists?.includes('get-started') && (
+                        <Spotlight
+                            content={c('Get started checklist spotlight')
+                                .t`You can access the checklist anytime from here`}
+                            show={shouldShowSpotlight}
+                            onDisplayed={onDisplayed}
+                            originalPlacement="top"
+                        >
+                            <button type="button" className="ml0-5" onClick={handleGiftClick}>
+                                <Tooltip title={c('Storage').t`Get extra storage for free`}>
+                                    <img
+                                        width={16}
+                                        src={giftSvg}
+                                        alt={c('Action').t`Open get started checklist modal`}
+                                    />
+                                </Tooltip>
+                            </button>
+                        </Spotlight>
+                    )
+                }
+            >
+                <SidebarNav>
+                    <MailSidebarList labelID={labelID} />
+                </SidebarNav>
+            </Sidebar>
+
+            <MailGetStartedChecklistModal
+                open={mailGetStartedChecklistModalOpen}
+                onClose={() => setMailGetStartedChecklistModalOpen(false)}
+                onMnemonicItemSelection={() => setMnemonicPromptModalOpen(true)}
+                onSendMessage={() => {
+                    handleCompose();
+                    onSendMessage?.();
+                }}
+            />
+
+            <MnemonicPromptModal {...mnemonicPromptModal} />
+        </>
     );
 };
 
