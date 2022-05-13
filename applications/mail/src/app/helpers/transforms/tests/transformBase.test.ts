@@ -2,8 +2,8 @@ import { range } from '@proton/shared/lib/helpers/array';
 import { transformBase } from '../transformBase';
 
 describe('transformBase service', () => {
-    const URL_PROTON = 'https://protonmail.com';
-    const URL_PROTON_SLASH = 'https://protonmail.com/';
+    const URL_PROTON = 'https://proton.me';
+    const URL_PROTON_SLASH = 'https://proton.me/';
 
     const LINKS = {
         linkRelative: '/monique',

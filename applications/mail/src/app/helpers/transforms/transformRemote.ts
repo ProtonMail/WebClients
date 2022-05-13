@@ -16,8 +16,7 @@ import {
     removeProtonPrefix,
 } from '../message/messageRemotes';
 import { MessageRemoteImage, MessageState } from '../../logic/messages/messagesTypes';
-
-const WHITELIST = ['notify@protonmail.com'];
+import { WHITE_LISTED_ADDRESSES } from '../../constants';
 
 const SELECTOR = ATTRIBUTES_TO_FIND.map((name) => {
     if (name === 'src') {
@@ -62,7 +61,7 @@ export const transformRemote = (
     const showRemoteImages =
         message.messageImages?.showRemoteImages ||
         hasShowRemote(mailSettings) ||
-        WHITELIST.includes(message.data?.Sender?.Address || '');
+        WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '');
 
     const draft = isDraft(message.data);
 
