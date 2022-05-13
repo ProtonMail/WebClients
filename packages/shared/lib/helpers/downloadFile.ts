@@ -2,7 +2,7 @@ import saveAs from 'file-saver';
 
 import { isFileSaverSupported } from './browser';
 
-const downloadFile = (blob, filename) => {
+const downloadFile = (blob: Blob | undefined, filename: string | undefined) => {
     if (!isFileSaverSupported()) {
         throw new Error('Download requires a newer browser.');
     }
