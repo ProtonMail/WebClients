@@ -90,7 +90,7 @@ const CalendarInviteButtons = ({
             loading={loadingAnswer}
             className={className}
             title={c('Title').t`Change my answer`}
-            content={text}
+            content={<div className="text-ellipsis">{text}</div>}
             data-test-id="dropdown:open"
         >
             <DropdownMenu>

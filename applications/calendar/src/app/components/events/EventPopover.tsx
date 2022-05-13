@@ -11,17 +11,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useMemo, useRef } from 'react';
-import {
-    Alert,
-    Badge,
-    classnames,
-    Loader,
-    useLoading,
-    CalendarInviteButtons,
-    ButtonLike,
-    Icon,
-    Tooltip,
-} from '@proton/components';
+import { Alert, Badge, Loader, useLoading, CalendarInviteButtons, ButtonLike, Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
@@ -192,10 +182,7 @@ const EventPopover = ({
         retryUpdateEvent: () => wait(0),
     };
 
-    const mergedClassName = classnames([
-        'eventpopover flex flex-column flex-nowrap',
-        isNarrow && 'eventpopover--full-width',
-    ]);
+    const mergedClassName = 'eventpopover flex flex-column flex-nowrap';
     const mergedStyle = isNarrow ? undefined : style;
     const frequencyString = useMemo(() => {
         const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
@@ -286,22 +273,17 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {!isSubscribedCalendar && (
+            {!isSubscribedCalendar && !(isCancelled || model.isOrganizer) && (
                 <PopoverFooter
-                    className="flex-item-noshrink flex-align-items-center flex-justify-space-between"
+                    className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
                     key={targetEvent.id}
                 >
-                    {!(isCancelled || model.isOrganizer) && (
-                        <>
-                            <div className="text-bold">{c('Calendar invite buttons label').t`Attending?`}</div>
-                            <CalendarInviteButtons
-                                className="mr1"
-                                actions={actions}
-                                partstat={userPartstat}
-                                disabled={isCalendarDisabled || !isSelfAddressActive}
-                            />
-                        </>
-                    )}
+                    <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
+                    <CalendarInviteButtons
+                        actions={actions}
+                        partstat={userPartstat}
+                        disabled={isCalendarDisabled || !isSelfAddressActive}
+                    />
                 </PopoverFooter>
             )}
         </PopoverContainer>
