@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
-import { getPlanIDs } from '@proton/shared/lib/helpers/subscription';
+import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Currency, PlanIDs, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 
@@ -60,8 +60,16 @@ const PlansSection = () => {
             })
         );
 
-        const coupon = Coupon ? Coupon.Code : undefined; // Coupon can equals null
-        open({ planIDs: newPlanIDs, coupon, step: SUBSCRIPTION_STEPS.CUSTOMIZATION, cycle, currency });
+        open({
+            planIDs: newPlanIDs,
+            coupon: Coupon?.Code,
+            step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
+            cycle,
+            currency,
+            defaultAudience: Object.keys(newPlanIDs).some((planID) => getIsB2BPlan(planID as any))
+                ? Audience.B2B
+                : Audience.B2C,
+        });
     };
 
     useEffect(() => {
