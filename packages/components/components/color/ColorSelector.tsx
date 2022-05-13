@@ -4,8 +4,8 @@ import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { genAccentShades } from '@proton/colors';
 
+import useInstance from '@proton/hooks/useInstance';
 import { classnames } from '../../helpers';
-import { useInstance } from '../..';
 
 interface Props {
     selected: string;
