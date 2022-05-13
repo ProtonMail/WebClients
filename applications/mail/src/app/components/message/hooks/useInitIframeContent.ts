@@ -1,7 +1,8 @@
 import { RefObject, useEffect, useRef, useState } from 'react';
 
 import { debounce } from '@proton/util/function';
-import { useIsMounted, useTheme } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { useTheme } from '@proton/components';
 import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';

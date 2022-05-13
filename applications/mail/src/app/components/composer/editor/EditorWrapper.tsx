@@ -7,7 +7,7 @@ import { useHandler, Editor, EditorMetadata, EditorTextDirection, EditorActions 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { diff } from '@proton/shared/lib/helpers/array';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
-import useIsMounted from '@proton/components/hooks/useIsMounted';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { MessageChange } from '../Composer';
 import {
