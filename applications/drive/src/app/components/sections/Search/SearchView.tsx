@@ -6,7 +6,6 @@ import { PrivateMainArea } from '@proton/components';
 import { useSearchView } from '../../../store';
 import { extractSearchParameters } from '../../../store/_search/utils'; // TODO: handle with container
 import useActiveShare from '../../../hooks/drive/useActiveShare';
-import { mapDecryptedLinksToChildren } from '../helpers';
 import DriveToolbar from '../Drive/DriveToolbar';
 import { Search } from './Search';
 
@@ -17,10 +16,14 @@ export function SearchView() {
     const query = extractSearchParameters(location);
 
     const searchView = useSearchView(activeShareId, query);
-    const selectedItems = mapDecryptedLinksToChildren(searchView.selectionControls.selectedItems);
+
     return (
         <>
-            <DriveToolbar shareId={activeShareId} selectedItems={selectedItems} showOptionsForNoSelection={false} />
+            <DriveToolbar
+                shareId={activeShareId}
+                selectedLinks={searchView.selectionControls.selectedItems}
+                showOptionsForNoSelection={false}
+            />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                 <div className="max-w100 text-pre pt1 pb1 pl0-75 pr0-75 border-bottom section--header text-strong">
                     {searchView.isLoading

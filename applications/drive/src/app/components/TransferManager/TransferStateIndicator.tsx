@@ -1,6 +1,6 @@
 import { Icon, classnames, Tooltip, IconName } from '@proton/components';
 import { c } from 'ttag';
-import { TransferState, Upload, Download, TransferType } from '@proton/shared/lib/interfaces/drive/transfer';
+
 import {
     isTransferManuallyPaused,
     isTransferProgress,
@@ -8,6 +8,7 @@ import {
     isTransferError,
     isTransferCanceled,
 } from '../../utils/transfer';
+import { TransferState, Upload, Download, TransferType } from './transfer';
 
 interface Props {
     transfer: Upload | Download;

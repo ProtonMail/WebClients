@@ -2,8 +2,8 @@ import { useEffect, useMemo } from 'react';
 
 import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { TrashedLinksSortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { TrashedLinksSortField } from '../../components/FileBrowser/interface';
 import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
 import { useMemoArrayNoMatterTheOrder, useAbortSignal, useSelection, useSortingWithDefault } from './utils';

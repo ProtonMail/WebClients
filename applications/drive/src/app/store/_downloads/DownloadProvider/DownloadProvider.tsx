@@ -1,9 +1,9 @@
 import { createContext, useContext } from 'react';
 import * as React from 'react';
 
-import { TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
+import { TransferProgresses } from '../../../components/TransferManager/transfer';
 
-import { LinkDownload, DownloadSignatureIssueModal } from '../interface';
+import { LinkDownload, InitDownloadCallback, DownloadSignatureIssueModal } from '../interface';
 import { Download, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 
@@ -23,9 +23,11 @@ interface DownloadProviderState {
 const DownloadContext = createContext<DownloadProviderState | null>(null);
 
 export const DownloadProvider = ({
+    initDownload,
     DownloadSignatureIssueModal,
     children,
 }: {
+    initDownload: InitDownloadCallback;
     DownloadSignatureIssueModal: DownloadSignatureIssueModal;
     children: React.ReactNode;
 }) => {
@@ -40,7 +42,7 @@ export const DownloadProvider = ({
         restartDownloads,
         removeDownloads,
         clearDownloads,
-    } = useDownload(DownloadSignatureIssueModal);
+    } = useDownload(initDownload, DownloadSignatureIssueModal);
 
     return (
         <DownloadContext.Provider

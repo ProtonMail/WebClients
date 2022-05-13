@@ -1,9 +1,9 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 
+import { TransferMeta } from '../../../components/TransferManager/transfer';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { isValidationError } from '../../_utils';

@@ -1,20 +1,32 @@
 import { ContextSeparator } from '@proton/components';
-import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import DriveItemContextMenu from '../Drive/DriveItemContextMenu';
+import { DecryptedLink } from '../../../store';
+import { ContextMenuProps } from '../../FileBrowser/interface';
+import { DriveItemContextMenu } from '../Drive/DriveItemContextMenu';
 import { GoToParent } from './ContextMenuButtons';
 
-export default function SearchItemContextMenu(props: ItemContextMenuProps) {
-    const { item, selectedItems, shareId, close } = props;
+export default function generateSearchItemContextMenu(shareId: string, selectedLinks: DecryptedLink[]) {
+    return function SearchItemContextMenuWrapper(props: ContextMenuProps) {
+        return <SearchItemContextMenu shareId={shareId} selectedLinks={selectedLinks} {...props} />;
+    };
+}
 
-    const isOnlyOneItem = selectedItems.length === 1;
+function SearchItemContextMenu(
+    props: ContextMenuProps & {
+        shareId: string;
+        selectedLinks: DecryptedLink[];
+    }
+) {
+    const { shareId, selectedLinks, close } = props;
+
+    const isOnlyOneItem = selectedLinks.length === 1;
 
     return (
         <DriveItemContextMenu {...props}>
             {isOnlyOneItem && (
                 <>
                     <ContextSeparator />
-                    <GoToParent shareId={shareId} parentLinkId={item.ParentLinkID} close={close} />
+                    <GoToParent shareId={shareId} parentLinkId={selectedLinks[0].parentLinkId} close={close} />
                 </>
             )}
         </DriveItemContextMenu>

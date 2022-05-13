@@ -1,8 +1,8 @@
 import { useCallback, useRef } from 'react';
 
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
-import { TransferState, TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferState, TransferProgresses } from '../../../components/TransferManager/transfer';
 import { isTransferProgress, isTransferPending, isTransferFinished } from '../../../utils/transfer';
 import { DownloadControls } from '../interface';
 import { Download, UpdateFilter, UpdateState, UpdateCallback } from './interface';

@@ -1,17 +1,16 @@
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
+import { DecryptedLink } from '../../../../store';
 import useOpenModal from '../../../useOpenModal';
 import { ContextMenuButton } from '../../ContextMenu';
 
 interface Props {
     shareId: string;
-    items: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
     close: () => void;
 }
 
-const MoveToFolderButton = ({ shareId, items, close }: Props) => {
+const MoveToFolderButton = ({ shareId, selectedLinks, close }: Props) => {
     const { openMoveToFolder } = useOpenModal();
 
     return (
@@ -19,7 +18,7 @@ const MoveToFolderButton = ({ shareId, items, close }: Props) => {
             name={c('Action').t`Move to folder`}
             icon="arrows-cross"
             testId="context-menu-move"
-            action={() => openMoveToFolder(shareId, items)}
+            action={() => openMoveToFolder(shareId, selectedLinks)}
             close={close}
         />
     );

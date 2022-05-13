@@ -1,7 +1,7 @@
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
 import {
     DetailsButton,
     DownloadButton,
@@ -15,12 +15,14 @@ import { StopSharingButton } from './ToolbarButtons';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
 }
 
-const SharedLinksToolbar = ({ shareId, selectedItems }: Props) => {
+const SharedLinksToolbar = ({ shareId, selectedLinks }: Props) => {
+    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
+
     const renderSelectionActions = () => {
-        if (!selectedItems.length) {
+        if (!selectedLinks.length) {
             return (
                 <>
                     <ShareFileButton shareId={shareId} />
@@ -30,14 +32,14 @@ const SharedLinksToolbar = ({ shareId, selectedItems }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
+                <PreviewButton shareId={shareId} selectedLinks={selectedLinks} />
+                <DownloadButton shareId={shareId} selectedLinks={selectedLinks} />
                 <Vr />
-                <RenameButton shareId={shareId} selectedItems={selectedItems} />
-                <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                <RenameButton shareId={shareId} selectedLinks={selectedLinks} />
+                <DetailsButton shareId={shareId} linkIds={selectedLinkIds} />
                 <Vr />
-                <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
-                <StopSharingButton shareId={shareId} selectedItems={selectedItems} />
+                <ShareLinkButton shareId={shareId} selectedLinks={selectedLinks} />
+                <StopSharingButton shareId={shareId} selectedLinks={selectedLinks} />
             </>
         );
     };

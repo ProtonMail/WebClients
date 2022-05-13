@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
 
-import { Download, TransferType, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
+import { Download, TransferType, Upload } from './transfer';
 import useTransferControls from './useTransferControls';
 import Buttons from './Buttons';
 import {

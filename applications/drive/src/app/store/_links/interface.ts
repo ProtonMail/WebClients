@@ -52,8 +52,8 @@ interface Link {
             token: string;
         };
     };
-    signatureAddress: string; // Addresss used for key signatures.
-    nameSignatureAddress: string; // Address used for name signature.
+    signatureAddress?: string; // Addresss used for key signatures.
+    nameSignatureAddress?: string; // Address used for name signature.
     // If there is no issue, the value should be undefined.
     signatureIssues?: SignatureIssues;
 }
@@ -88,7 +88,7 @@ export type SignatureIssueLocation =
 export interface EncryptedLink extends Link {
     nodeKey: string;
     nodePassphrase: string;
-    nodePassphraseSignature: string;
+    nodePassphraseSignature?: string;
     nodeHashKey?: string;
     contentKeyPacket?: string;
     contentKeyPacketSignature?: string;

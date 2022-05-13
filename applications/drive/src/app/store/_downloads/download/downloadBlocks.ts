@@ -7,9 +7,10 @@ import { areUint8Arrays } from '@proton/utils/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import { MAX_THREADS_PER_DOWNLOAD, BATCH_REQUEST_SIZE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { waitUntil } from '../../../utils/async';
 import { isTransferCancelError } from '../../../utils/transfer';

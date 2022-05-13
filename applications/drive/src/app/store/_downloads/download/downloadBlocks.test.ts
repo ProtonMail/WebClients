@@ -2,8 +2,8 @@ import { ReadableStream } from 'web-streams-polyfill';
 
 import { mergeUint8Arrays } from '@proton/utils/array';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { streamToBuffer } from '../../../utils/stream';
 import * as constants from '../constants';
 import initDownloadBlocks from './downloadBlocks';

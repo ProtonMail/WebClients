@@ -1,6 +1,6 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import fileSaver from '../fileSaver/fileSaver';
 import { LinkDownload, DownloadCallbacks, DownloadControls, DownloadStreamControls } from '../interface';
 import initDownloadLinks from './downloadLinks';

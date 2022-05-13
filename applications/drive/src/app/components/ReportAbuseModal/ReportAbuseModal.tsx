@@ -52,7 +52,7 @@ const ABUSE_CATEGORIES: AbuseCategory[] = [
 
 const CATEGORIES_WITH_EMAIL_VERIFICATION: AbuseCateroryType[] = ['copyright', 'stolen-data'];
 
-const ReportAbuseModal = ({ onClose = noop, linkInfo, password, onSubmit, open }: AbuseFormProps) => {
+const ReportAbuseModal = ({ onClose = noop, linkInfo, onSubmit, open }: AbuseFormProps) => {
     const [submitting, withSubmitting] = useLoading();
     const { createNotification } = useNotifications();
 
@@ -81,16 +81,12 @@ const ReportAbuseModal = ({ onClose = noop, linkInfo, password, onSubmit, open }
 
         try {
             const payload: ReportAbuseRequestPayload = {
+                linkId: linkInfo.linkId,
                 abuseCategory: model.Category!,
-                shareURL: window.location.href,
-                password,
-                nodePassphrase: linkInfo.nodePassphrase,
             };
-
             if (model.Email) {
                 payload.reporterEmail = model.Email;
             }
-
             if (model.Comment) {
                 payload.reporterMessage = model.Comment;
             }

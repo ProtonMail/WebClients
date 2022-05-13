@@ -1,23 +1,23 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../../store';
 import useOpenModal from '../../../useOpenModal';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
 }
 
-const MoveToFolderButton = ({ shareId, selectedItems }: Props) => {
+const MoveToFolderButton = ({ shareId, selectedLinks }: Props) => {
     const { openMoveToFolder } = useOpenModal();
 
     return (
         <ToolbarButton
             title={c('Action').t`Move to folder`}
             icon={<Icon name="arrows-cross" />}
-            onClick={() => openMoveToFolder(shareId, selectedItems)}
+            onClick={() => openMoveToFolder(shareId, selectedLinks)}
             data-testid="toolbar-move"
         />
     );

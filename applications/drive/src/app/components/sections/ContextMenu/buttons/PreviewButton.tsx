@@ -1,17 +1,16 @@
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
+import { DecryptedLink } from '../../../../store';
 import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
-    item: FileBrowserItem;
+    link: DecryptedLink;
     close: () => void;
 }
 
-const PreviewButton = ({ shareId, item, close }: Props) => {
+const PreviewButton = ({ shareId, link, close }: Props) => {
     const { openPreview } = useOpenModal();
 
     return (
@@ -19,7 +18,7 @@ const PreviewButton = ({ shareId, item, close }: Props) => {
             name={c('Action').t`Preview`}
             icon="eye"
             testId="context-menu-preview"
-            action={() => openPreview(shareId, item)}
+            action={() => openPreview(shareId, link.linkId)}
             close={close}
         />
     );

@@ -1,14 +1,11 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-
 import { useTrashView } from '../../../store';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { FileBrowser } from '../../FileBrowser';
-import { mapDecryptedLinksToChildren } from '../helpers';
 import EmptyTrash from './EmptyTrash';
-import TrashItemContextMenu from './TrashItemContextMenu';
+import generateTrashItemContextMenu from './TrashItemContextMenu';
 
 interface Props {
     shareId: string;
@@ -23,22 +20,19 @@ function Trash({ shareId, trashView }: Props) {
     const { clearSelections, selectedItems, selectItem, toggleSelectItem, toggleAllSelected, toggleRange } =
         selectionControls;
 
-    const selectedItems2 = mapDecryptedLinksToChildren(selectedItems);
-    const contents = mapDecryptedLinksToChildren(items);
-
     const handleClick = useCallback(
-        async (item: FileBrowserItem) => {
+        async (item: { linkId: string; isFile: boolean }) => {
             // Trashed folders are not possible to browse.
-            if (!item.IsFile) {
+            if (!item.isFile) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
-            navigateToLink(shareId, item.LinkID, item.IsFile);
+            navigateToLink(shareId, item.linkId, item.isFile);
         },
         [navigateToLink, shareId]
     );
 
-    return !contents.length && !isLoading ? (
+    return !items.length && !isLoading ? (
         <EmptyTrash />
     ) : (
         <FileBrowser
@@ -47,8 +41,8 @@ function Trash({ shareId, trashView }: Props) {
             caption={c('Title').t`Trash`}
             shareId={shareId}
             loading={isLoading}
-            contents={contents}
-            selectedItems={selectedItems2}
+            contents={items}
+            selectedItems={selectedItems}
             sortFields={['name', 'trashed', 'size']}
             sortParams={sortParams}
             setSorting={setSorting}
@@ -58,7 +52,7 @@ function Trash({ shareId, trashView }: Props) {
             onToggleAllSelected={toggleAllSelected}
             onShiftClick={toggleRange}
             selectItem={selectItem}
-            ItemContextMenu={TrashItemContextMenu}
+            ItemContextMenu={generateTrashItemContextMenu(shareId, selectedItems)}
         />
     );
 }

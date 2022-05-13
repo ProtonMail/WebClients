@@ -15,18 +15,17 @@ import {
     ModalTwoContent,
     ModalTwoFooter,
 } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
 import FolderTree from '../FolderTree/FolderTree';
 import HasNoFolders from './HasNoFolders';
 import { selectMessageForItemList } from '../sections/helpers';
 import CreateFolderModal from '../CreateFolderModal';
 import ModalContentLoader from '../ModalContentLoader';
-import { DecryptedLink, TreeItem, useFolderTree, useActions } from '../../store';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedItems: DecryptedLink[];
     onClose?: () => void;
     open?: boolean;
 }
@@ -41,17 +40,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
     const { isNarrow } = useActiveBreakpoint();
 
     const moveLinksToFolder = async (parentFolderId: string) => {
-        await moveLinks(
-            new AbortController().signal,
-            shareId,
-            selectedItems.map(({ ParentLinkID, LinkID, Name, IsFile }) => ({
-                parentLinkId: ParentLinkID,
-                linkId: LinkID,
-                name: Name,
-                isFile: IsFile,
-            })),
-            parentFolderId
-        );
+        await moveLinks(new AbortController().signal, shareId, selectedItems, parentFolderId);
     };
 
     const onSelect = (link: DecryptedLink) => {
@@ -79,7 +68,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         );
     };
 
-    const itemsToMove = selectedItems.map((item) => item.LinkID);
+    const itemsToMove = selectedItems.map((item) => item.linkId);
     const itemsToMoveCount = itemsToMove.length;
     const messages = {
         allFiles: c('Notification').ngettext(
@@ -103,14 +92,14 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, open }: Props) => 
         !selectedFolder ||
         selectedItems.some((item) =>
             [
-                item.LinkID, // Moving folder to its own folder is not possible.
-                item.ParentLinkID, // Moving item to the same location is no-op.
+                item.linkId, // Moving folder to its own folder is not possible.
+                item.parentLinkId, // Moving item to the same location is no-op.
             ].includes(selectedFolder)
         );
 
     let modalContents = {
         title: selectMessageForItemList(
-            selectedItems.map((item) => item.IsFile),
+            selectedItems.map((item) => item.isFile),
             messages
         ),
         content: rootFolder && (

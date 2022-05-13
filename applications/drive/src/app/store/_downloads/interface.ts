@@ -13,7 +13,7 @@ export interface LinkDownload {
     name: string;
     mimeType: string;
     size: number;
-    signatureAddress: string;
+    signatureAddress?: string;
     signatureIssues?: SignatureIssues;
 
     buffer?: Uint8Array[];
@@ -88,9 +88,14 @@ export type Pagination = { FromBlockIndex: number; PageSize: number };
 export type DecryptFileKeys = {
     privateKey: OpenPGPKey;
     sessionKeys?: SessionKey;
-    addressPublicKeys: OpenPGPKey[];
+    addressPublicKeys?: OpenPGPKey[];
 };
 
+export type InitDownloadCallback = (
+    name: string,
+    list: LinkDownload[],
+    eventCallbacks: DownloadEventCallbacks
+) => DownloadControls;
 export type DownloadSignatureIssueModal = React.FunctionComponent<DownloadSignatureIssueModalProps>;
 
 interface DownloadSignatureIssueModalProps {
