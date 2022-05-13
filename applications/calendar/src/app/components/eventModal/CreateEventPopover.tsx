@@ -92,7 +92,7 @@ const CreateEventPopover = ({
                     textareaMaxHeight={textareaMaxHeight}
                     setParticipantError={setParticipantError}
                 />
-                <PopoverFooter>
+                <PopoverFooter className="flex-nowrap flex-justify-end">
                     <Button
                         disabled={loadingAction}
                         data-test-id="create-event-popover:more-event-options"
