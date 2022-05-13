@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
-import { unary } from '@proton/util/function';
+import unary from '@proton/util/unary';
 import isTruthy from '@proton/util/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';

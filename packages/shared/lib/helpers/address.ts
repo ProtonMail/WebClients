@@ -1,8 +1,8 @@
+import unary from '@proton/util/unary';
 import { ADDRESS_STATUS, ADDRESS_TYPE, RECEIVE_ADDRESS, SEND_ADDRESS } from '../constants';
 import { Address, Recipient } from '../interfaces';
 import { ContactEmail } from '../interfaces/contacts';
 import { canonizeInternalEmail } from './email';
-import { unary } from '@proton/util/function';
 
 export const getIsAddressDisabled = (address: Address) => {
     return address.Status === ADDRESS_STATUS.STATUS_DISABLED;
