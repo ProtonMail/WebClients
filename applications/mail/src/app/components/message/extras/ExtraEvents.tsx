@@ -19,6 +19,7 @@ import {
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useEffect, useState } from 'react';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     useAddresses,
     useGetAddressKeys,
@@ -26,7 +27,6 @@ import {
     useContactEmails,
     useGetCalendars,
     useGetCalendarUserSettings,
-    useIsMounted,
     useLoading,
     useUser,
     useUserSettings,

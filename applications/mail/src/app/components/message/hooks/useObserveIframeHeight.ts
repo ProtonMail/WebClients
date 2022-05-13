@@ -1,4 +1,4 @@
-import { useIsMounted } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { debounce } from '@proton/util/function';
 import { RefObject, useCallback, useEffect, useRef } from 'react';
 

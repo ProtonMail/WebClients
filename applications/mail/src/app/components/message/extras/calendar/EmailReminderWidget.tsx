@@ -3,6 +3,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     AppLink,
     Banner,
@@ -17,7 +18,6 @@ import {
     useNotifications,
     CalendarEventDateHeader,
     useGetCalendars,
-    useIsMounted,
     useGetAddressKeys,
     useMailSettings,
 } from '@proton/components';

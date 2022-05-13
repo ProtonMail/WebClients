@@ -1,7 +1,7 @@
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
 import { useGetEncryptionPreferences } from '@proton/components';
-import useIsMounted from '@proton/components/hooks/useIsMounted';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
