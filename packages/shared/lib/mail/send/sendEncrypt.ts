@@ -12,9 +12,9 @@ import {
     encryptSessionKey,
 } from 'pmcrypto';
 import isTruthy from '@proton/util/isTruthy';
+import identity from '@proton/util/identity';
 import { hasBit } from '../../helpers/bitset';
 import { uint8ArrayToBase64String } from '../../helpers/encoding';
-import { identity } from '@proton/util/function';
 import { PackageDirect } from '../../interfaces/mail/crypto';
 import { Message, Attachment } from '../../interfaces/mail/Message';
 import { RequireOnly, SimpleMap } from '../../interfaces/utils';

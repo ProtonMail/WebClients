@@ -1,8 +1,8 @@
 import { c } from 'ttag';
+import identity from '@proton/util/identity';
 import { MIME_TYPES, MAILBOX_LABEL_IDS } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
 import { canonizeInternalEmail, getEmailParts } from '../helpers/email';
-import { identity } from '@proton/util/function';
 import { isICS } from '../helpers/mimetype';
 import { AttachmentInfo, Message } from '../interfaces/mail/Message';
 import { MESSAGE_FLAGS, SIGNATURE_START } from './constants';

@@ -1,5 +1,3 @@
-export const identity = <T>(value: T) => value;
-
 /**
  * Wrap a function to ensure only one argument will pass through
  */
