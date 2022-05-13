@@ -41,9 +41,9 @@ const Checkout = ({ currency, onChangeCurrency, loading, children, hasGuarantee,
                             .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                     </div>
                 ) : (
-                    <div className="flex flex-nowrap color-weak mb0-5">
-                        <span className="flex-item-fluid">{c('Info')
-                            .t`Credits, proration, and any applicable coupons are applied at checkout`}</span>
+                    <div className="flex flex-nowrap mb0-5">
+                        <b className="flex-item-fluid">{c('new_plans: info')
+                            .t`Applicable credits, proration, and coupons are applied in the next step`}</b>
                     </div>
                 )}
                 {hasGuarantee && (
