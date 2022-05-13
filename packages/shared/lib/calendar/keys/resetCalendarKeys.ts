@@ -10,7 +10,6 @@ import { Calendar, CalendarMember } from '../../interfaces/calendar';
 
 interface ResetCalendarKeysArguments {
     api: Api;
-    calendars: Calendar[];
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
     addresses: Address[];
 }
@@ -19,19 +18,10 @@ interface ResetCalendar extends Calendar {
     Members: { [memberID: string]: string };
 }
 
-export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addresses }: ResetCalendarKeysArguments) => {
+export const resetCalendarKeys = async ({ api, getAddressKeys, addresses }: ResetCalendarKeysArguments) => {
+    // We're re-fetching the list of reset calendars because through the getCalendarGroupReset route
+    // we get extra info that will be useful for shared calendars
     const { Calendars: ResetCalendars = [] } = await api<{ Calendars: ResetCalendar[] }>(getCalendarGroupReset());
-
-    /*
-    if (
-        !shallowEqual(
-            ResetCalendars.map(({ ID }) => ID).sort(),
-            calendars.map(({ ID }) => ID).sort()
-        )
-    ) {
-        throw new Error('Calendars to reset do not match');
-    }
-    */
 
     const calendarsResult = await Promise.all(
         ResetCalendars.map(async ({ ID: calendarID }) => {
@@ -76,7 +66,7 @@ export const resetCalendarKeys = async ({ api, calendars, getAddressKeys, addres
         })
     );
 
-    const resetPayload = calendars.reduce((acc, { ID: calendarID }, i) => {
+    const resetPayload = ResetCalendars.reduce((acc, { ID: calendarID }, i) => {
         return {
             ...acc,
             [calendarID]: calendarsResult[i],
