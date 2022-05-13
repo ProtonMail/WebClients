@@ -1,5 +1,5 @@
 import { useMemo, useContext, useEffect } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import { FeatureCode, FeatureContextValue, FeaturesContext } from '../containers/features';
 

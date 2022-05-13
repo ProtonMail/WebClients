@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { addIncomingDefault, updateIncomingDefault } from '@proton/shared/lib/api/incomingDefaults';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { IncomingDefault } from '@proton/shared/lib/interfaces/IncomingDefault';
 import { BLACKLIST_LOCATION, WHITELIST_LOCATION } from '@proton/shared/lib/constants';
 

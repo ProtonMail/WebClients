@@ -1,6 +1,6 @@
 import { KeyboardEvent, useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { Api } from '@proton/shared/lib/interfaces';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { Button, useFormErrors, PhoneInput, InputFieldTwo } from '../../../components';

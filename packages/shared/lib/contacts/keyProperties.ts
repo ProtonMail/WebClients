@@ -1,7 +1,7 @@
 import { arrayToBinaryString, binaryStringToArray, decodeBase64, encodeBase64, getKeys, OpenPGPKey } from 'pmcrypto';
 import isTruthy from '@proton/util/isTruthy';
+import noop from '@proton/util/noop';
 import { PGP_SCHEMES, MIME_TYPES } from '../constants';
-import { noop } from '@proton/util/function';
 import { MimeTypeVcard, PinnedKeysConfig, PublicKeyWithPref } from '../interfaces';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';
 import { VCARD_KEY_FIELDS } from './constants';

@@ -7,7 +7,7 @@ import { OpenPGPKey } from 'pmcrypto';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import isTruthy from '@proton/util/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

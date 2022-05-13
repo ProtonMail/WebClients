@@ -20,7 +20,7 @@ import {
     useMailSettings,
     useAddresses,
 } from '@proton/components';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { setBit, clearBit } from '@proton/shared/lib/helpers/bitset';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { canonizeEmail } from '@proton/shared/lib/helpers/email';

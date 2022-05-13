@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { AlertModal, AlertModalProps, Button } from '../../../components';
 import { useLoading, useNotifications } from '../../../hooks';
 

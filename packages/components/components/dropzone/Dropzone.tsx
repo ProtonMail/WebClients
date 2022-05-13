@@ -1,4 +1,4 @@
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { HTMLAttributes, ReactNode, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { classnames } from '../../helpers';

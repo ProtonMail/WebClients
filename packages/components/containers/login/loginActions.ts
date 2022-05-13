@@ -16,7 +16,7 @@ import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getHasV2KeysToUpgrade, upgradeV2KeysHelper } from '@proton/shared/lib/keys/upgradeKeysV2';

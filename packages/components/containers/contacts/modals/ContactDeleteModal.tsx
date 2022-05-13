@@ -2,7 +2,7 @@ import { c, msgid } from 'ttag';
 
 import { clearContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { useContacts, useApi, useNotifications, useLoading, useEventManager } from '../../../hooks';

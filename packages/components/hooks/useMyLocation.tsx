@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { Api, MyLocationResponse } from '@proton/shared/lib/interfaces';
 import { getLocation } from '@proton/shared/lib/api/vpn';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import useCachedModelResult from './useCachedModelResult';
 import useApi from './useApi';

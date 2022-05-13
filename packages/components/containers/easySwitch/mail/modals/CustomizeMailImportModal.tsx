@@ -2,7 +2,7 @@ import { useState, ChangeEvent, useMemo } from 'react';
 import { subYears, subMonths } from 'date-fns';
 import { c, msgid } from 'ttag';
 
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { Address, Label } from '@proton/shared/lib/interfaces';
 import {
     MailImporterPayload,

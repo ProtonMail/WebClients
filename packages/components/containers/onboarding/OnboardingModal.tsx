@@ -1,7 +1,7 @@
 import { isValidElement, useState } from 'react';
 import { c } from 'ttag';
 import { updateWelcomeFlags, updateThemeType, updateFlags } from '@proton/shared/lib/api/settings';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { range } from '@proton/shared/lib/helpers/array';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/util/isTruthy';

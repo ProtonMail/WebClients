@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { Key } from '@proton/shared/lib/interfaces';
 import { Alert, ErrorButton, FormModal, Input, Row } from '../../../components';
 import { useModals } from '../../../hooks';

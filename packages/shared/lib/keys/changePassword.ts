@@ -1,7 +1,7 @@
 import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
 import isTruthy from '@proton/util/isTruthy';
+import noop from '@proton/util/noop';
 import { Address as tsAddress, DecryptedKey } from '../interfaces';
-import { noop } from '@proton/util/function';
 
 import { getHasMigratedAddressKeys } from './keyMigration';
 import { getEncryptedArmoredAddressKey } from './addressKeys';

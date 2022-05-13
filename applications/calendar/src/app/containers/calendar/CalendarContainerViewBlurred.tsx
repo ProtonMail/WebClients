@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { endOfWeek, startOfWeek } from '@proton/shared/lib/date-fns-utc';
 import { SETTINGS_VIEW, VIEWS } from '@proton/shared/lib/calendar/constants';
 import CalendarContainerView from './CalendarContainerView';
