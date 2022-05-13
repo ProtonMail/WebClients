@@ -14,6 +14,7 @@ import {
     matchSameCidOrLoc,
 } from '../message/messageEmbeddeds';
 import { LoadEmbeddedResults, MessageEmbeddedImage, MessageState } from '../../logic/messages/messagesTypes';
+import { WHITE_LISTED_ADDRESSES } from '../../constants';
 
 export const transformEmbedded = async (
     message: MessageState,
@@ -22,7 +23,10 @@ export const transformEmbedded = async (
 ) => {
     const draft = isDraft(message.data);
 
-    const showEmbeddedImages = message.messageImages?.showEmbeddedImages === true || hasShowEmbedded(mailSettings);
+    const showEmbeddedImages =
+        message.messageImages?.showEmbeddedImages === true ||
+        hasShowEmbedded(mailSettings) ||
+        WHITE_LISTED_ADDRESSES.includes(message.data?.Sender?.Address || '');
 
     const existingEmbeddedImage = getEmbeddedImages(message);
     let newEmbeddedImages: MessageEmbeddedImage[] = [];
