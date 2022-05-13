@@ -182,7 +182,7 @@ const EventPopover = ({
         retryUpdateEvent: () => wait(0),
     };
 
-    const mergedClassName = 'eventpopover flex flex-column flex-nowrap';
+    const containerClassName = 'eventpopover flex flex-column flex-nowrap';
     const mergedStyle = isNarrow ? undefined : style;
     const frequencyString = useMemo(() => {
         const [{ veventComponent: eventComponent }] = eventReadResult?.result || [{}];
@@ -208,7 +208,7 @@ const EventPopover = ({
 
     if (eventReadError) {
         return (
-            <PopoverContainer {...commonContainerProps} className={mergedClassName}>
+            <PopoverContainer {...commonContainerProps} className={containerClassName}>
                 <PopoverHeader
                     {...commonHeaderProps}
                     actions={
@@ -233,7 +233,7 @@ const EventPopover = ({
     }
 
     return (
-        <PopoverContainer {...commonContainerProps} className={mergedClassName}>
+        <PopoverContainer {...commonContainerProps} className={containerClassName}>
             <PopoverHeader
                 {...commonHeaderProps}
                 actions={
@@ -273,7 +273,7 @@ const EventPopover = ({
                     popoverEventContentRef={popoverEventContentRef}
                 />
             </div>
-            {!isSubscribedCalendar && !(isCancelled || model.isOrganizer) && (
+            {!isSubscribedCalendar && !model.isOrganizer && !isCancelled && (
                 <PopoverFooter
                     className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
                     key={targetEvent.id}
