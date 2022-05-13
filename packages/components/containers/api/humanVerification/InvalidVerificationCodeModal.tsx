@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import { AlertModal, Button } from '../../../components';
 import { useLoading } from '../../../hooks';

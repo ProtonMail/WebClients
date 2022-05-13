@@ -4,7 +4,7 @@ import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { HotkeyTuple, useFolders, useHotkeys, useLabels, useMailSettings } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { Location } from 'history';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import isTruthy from '@proton/util/isTruthy';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
 import { useMoveToFolder, useStar } from '../useApplyLabels';

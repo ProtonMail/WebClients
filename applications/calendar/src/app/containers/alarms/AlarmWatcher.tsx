@@ -6,7 +6,7 @@ import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { create } from '@proton/shared/lib/helpers/desktopNotification';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { CalendarAlarm, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import { getAlarmMessage, getNextEventTime } from '@proton/shared/lib/calendar/alarms';
 import { MINUTE } from '@proton/shared/lib/constants';

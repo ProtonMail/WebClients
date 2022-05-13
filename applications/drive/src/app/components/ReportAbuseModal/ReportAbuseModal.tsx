@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { c } from 'ttag';
 
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import {
     SelectTwo,
     useLoading,

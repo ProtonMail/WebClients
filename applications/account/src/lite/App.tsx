@@ -23,7 +23,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import createCache from '@proton/shared/lib/helpers/cache';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import authentication from '@proton/shared/lib/authentication/authentication';
 
 import * as config from '../app/config';

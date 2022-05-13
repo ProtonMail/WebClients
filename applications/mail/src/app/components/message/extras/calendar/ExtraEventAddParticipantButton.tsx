@@ -4,7 +4,7 @@ import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/atte
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getIsSuccessSyncApiResponse, reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { AddAttendeeError } from '@proton/shared/lib/calendar/integration/AddAttendeeError';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';

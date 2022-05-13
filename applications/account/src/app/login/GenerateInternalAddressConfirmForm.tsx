@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { useLoading, Button } from '@proton/components';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import Text from '../public/Text';
 

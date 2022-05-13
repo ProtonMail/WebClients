@@ -1,6 +1,7 @@
 import { useState, ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import { randomIntFromInterval, noop } from '@proton/util/function';
+import { randomIntFromInterval } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { diff } from '@proton/shared/lib/helpers/array';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';

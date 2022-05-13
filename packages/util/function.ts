@@ -1,4 +1,3 @@
-export const noop = () => undefined;
 export const identity = <T>(value: T) => value;
 
 /**

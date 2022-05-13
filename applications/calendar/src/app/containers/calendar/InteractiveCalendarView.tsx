@@ -33,7 +33,7 @@ import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
 import { unique } from '@proton/shared/lib/helpers/array';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import isTruthy from '@proton/util/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { dateLocale } from '@proton/shared/lib/i18n';

@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import { classnames } from '../../helpers';

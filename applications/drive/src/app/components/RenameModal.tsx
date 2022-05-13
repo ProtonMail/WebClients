@@ -14,7 +14,7 @@ import {
     Button,
     PrimaryButton,
 } from '@proton/components';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 

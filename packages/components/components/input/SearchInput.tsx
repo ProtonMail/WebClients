@@ -1,5 +1,5 @@
 import { forwardRef, useState, useEffect, ChangeEvent } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import Input, { Props as InputProps } from './Input';
 import useDebounceInput from './useDebounceInput';

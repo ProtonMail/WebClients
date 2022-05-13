@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { useApi } from '../../hooks';
 
 const useNewDomainOptIn = () => {

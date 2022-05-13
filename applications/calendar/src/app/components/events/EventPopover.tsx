@@ -5,7 +5,7 @@ import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/h
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';

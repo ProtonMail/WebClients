@@ -16,7 +16,7 @@ import {
     useUser,
     useModalState,
 } from '@proton/components';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 import { VisualCalendar, SubscribedCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getIsCalendarDisabled, getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 

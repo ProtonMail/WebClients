@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
-import { noop } from '@proton/util/function';
+import noop from '@proton/util/noop';
 
 import { newVersionUpdater } from '@proton/shared/lib/busy';
 import sentry from '@proton/shared/lib/helpers/sentry';
