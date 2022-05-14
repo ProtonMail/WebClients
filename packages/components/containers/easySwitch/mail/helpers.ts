@@ -1,5 +1,5 @@
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
-import { randomIntFromInterval } from '@proton/util/function';
+import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import isTruthy from '@proton/util/isTruthy';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';

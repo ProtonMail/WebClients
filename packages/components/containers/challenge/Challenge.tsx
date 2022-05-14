@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import { randomIntFromInterval } from '@proton/util/function';
+import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import { classnames } from '../../helpers';
