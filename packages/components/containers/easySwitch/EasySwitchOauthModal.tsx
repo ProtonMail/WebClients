@@ -40,7 +40,7 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, ACCENT_COLORS } from '@proton/shared/lib/constants';
-import { randomIntFromInterval } from '@proton/util/function';
+import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import noop from '@proton/util/noop';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';

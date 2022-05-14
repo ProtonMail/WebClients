@@ -7,7 +7,7 @@ import {
     SidebarListItemContentIcon,
     useModalState,
 } from '@proton/components';
-import { randomIntFromInterval } from '@proton/util/function';
+import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
 
 import { Label } from '@proton/shared/lib/interfaces/Label';
