@@ -1,21 +1,3 @@
-export const throttle = <A extends any[]>(func: (...args: A) => void, ms = 50, context = window) => {
-    let wait = false;
-
-    return (...args: A) => {
-        const later = () => {
-            func.apply(context, args);
-        };
-
-        if (!wait) {
-            later();
-            wait = true;
-            setTimeout(() => {
-                wait = false;
-            }, ms);
-        }
-    };
-};
-
 /** Similar to throttle but ensures first and last calls are made */
 export const buffer = <A extends any[]>(func: (...args: A) => void, ms = 50) => {
     let cooldown: any;
