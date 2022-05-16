@@ -29,13 +29,13 @@ const getFooterNotes = (planName: PLANS, cycle: Cycle): string => {
         return c('Info').t`* No credit card required.`;
     }
     if (cycle === CYCLE.MONTHLY) {
-        return c('Info').t`* With 1-month subscription. Other subscription options available at checkout.`;
+        return c('new_plans: info').t`* With 1-month subscription. Other subscription options available at checkout.`;
     }
     if (cycle === CYCLE.YEARLY) {
-        return c('Info').t`* With 12-months subscription. Other subscription options available at checkout.`;
+        return c('new_plans: info').t`* With 12-month subscription. Other subscription options available at checkout.`;
     }
     if (cycle === CYCLE.TWO_YEARS) {
-        return c('Info').t`* With 24-months subscription. Other subscription options available at checkout.`;
+        return c('new_plans: info').t`* With 24-month subscription. Other subscription options available at checkout.`;
     }
     return '';
 };
