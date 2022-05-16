@@ -132,7 +132,6 @@ const EditMemberModal = ({ member, ...rest }: Props) => {
             <ModalHeader title={c('Title').t`Edit user`} />
             <ModalContent>
                 <InputFieldTwo
-                    autoFocus
                     id="name"
                     value={model.name}
                     error={validator([requiredValidator(model.name)])}
