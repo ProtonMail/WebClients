@@ -14,7 +14,6 @@ export enum MailImportStep {
 export interface ImportMailModalModel {
     providerFolders: ImportedMailFolder[];
     step: MailImportStep;
-    needIMAPDetails: boolean;
     importID: string;
     email: string;
     password: string;

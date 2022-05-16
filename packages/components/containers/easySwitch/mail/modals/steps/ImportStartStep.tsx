@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -10,7 +10,7 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import { Alert, Row, Label, Field, PasswordInput, EmailInput, Input, Href } from '../../../../../components';
+import { Alert, Row, Label, Field, Href, InputTwo, PasswordInputTwo } from '../../../../../components';
 import { EASY_SWITCH_EMAIL_PLACEHOLDER, IMAPS } from '../../../constants';
 
 import { ImportMailModalModel } from '../../interfaces';
@@ -18,30 +18,14 @@ import { ImportMailModalModel } from '../../interfaces';
 interface Props {
     modalModel: ImportMailModalModel;
     updateModalModel: (newModel: ImportMailModalModel) => void;
-    needAppPassword: boolean;
-    showPassword: boolean;
     currentImport?: NormalizedImporter;
     invalidPortError: boolean;
     provider?: NON_OAUTH_PROVIDER;
 }
 
-const ImportStartStep = ({
-    modalModel,
-    updateModalModel,
-    needAppPassword,
-    showPassword,
-    currentImport,
-    invalidPortError,
-    provider,
-}: Props) => {
-    const { email, password, needIMAPDetails, imap, port, errorCode, errorLabel } = modalModel;
-
-    useEffect(() => {
-        if (!email) {
-            updateModalModel({ ...modalModel, password: '', port: '', imap: '' });
-        }
-    }, [email]);
-
+const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidPortError, provider }: Props) => {
+    const { email, password, imap, port, errorCode, errorLabel } = modalModel;
+    const needAppPassword = provider === NON_OAUTH_PROVIDER.YAHOO;
     const isRateLimitError = errorCode === IMPORT_ERROR.RATE_LIMIT_EXCEEDED;
     const isAuthError = errorCode === IMPORT_ERROR.AUTHENTICATION_ERROR;
     const isIMAPError = errorCode === IMPORT_ERROR.IMAP_CONNECTION_ERROR;
@@ -94,9 +78,9 @@ const ImportStartStep = ({
                                 .t`Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.`}</div>
                             <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`your password is correct`}</li>
+                                <li>{c('Import error').t`Your password is correct.`}</li>
                                 <li>{c('Import error')
-                                    .t`"Less secure app access" is turned on in your Google account security settings`}</li>
+                                    .t`"Less secure app access" is turned on in your Google account security settings.`}</li>
                             </ul>
                             <div className="mb1">{twoStepsEnabledMessage}</div>
                             <div className="mb1">{captchaMessage}</div>
@@ -128,9 +112,9 @@ const ImportStartStep = ({
                                 .t`Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
                             <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`your email address and password are correct`}</li>
+                                <li>{c('Import error').t`Your email address and password are correct.`}</li>
                                 <li>{c('Import error')
-                                    .t`"Less secure app access" is turned on in your Google account security settings`}</li>
+                                    .t`"Less secure app access" is turned on in your Google account security settings.`}</li>
                             </ul>
                             <div className="mb1">{twoStepsEnabledMessage}</div>
                             <div className="mb1">{captchaMessage}</div>
@@ -143,7 +127,7 @@ const ImportStartStep = ({
                 if (isReconnect) {
                     // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
                     const appPasswordIsCorrectMessage = c('Import error')
-                        .jt`your app password is correct. Do ${boldNot} use your regular password`;
+                        .jt`Your app password is correct. Do ${boldNot} use your regular password.`;
 
                     message = (
                         <>
@@ -152,7 +136,7 @@ const ImportStartStep = ({
                                     .t`Proton can't connect to your Yahoo account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
                                 <li>{appPasswordIsCorrectMessage}</li>
                             </ul>
                         </>
@@ -167,7 +151,7 @@ const ImportStartStep = ({
                 if (isAuthError) {
                     // translator: the variable here is a HTML tag, here is the complete sentence: "your email address and app password are correct. Do not use your regular password"
                     const credentialsAreCorrectMessage = c('Import error')
-                        .jt`your email address and app password are correct. Do ${boldNot} use your regular password`;
+                        .jt`Your email address and app password are correct. Do ${boldNot} use your regular password.`;
 
                     message = (
                         <>
@@ -177,7 +161,7 @@ const ImportStartStep = ({
                             </div>
                             <ul className="m0 pb1">
                                 <li>{credentialsAreCorrectMessage}</li>
-                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
                             </ul>
                         </>
                     );
@@ -192,13 +176,13 @@ const ImportStartStep = ({
                                 {c('Import error').t`Proton can't connect to your account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your external account`}</li>
-                                <li>{c('Import error').t`your password is correct`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
+                                <li>{c('Import error').t`Your password is correct.`}</li>
                             </ul>
                             <div className="mb1">{c('Import error').t`Use your app password if:`}</div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`2-step verification is enabled in your external account`}</li>
-                                <li>{c('Import error').t`your email account requires one to export your data`}</li>
+                                <li>{c('Import error').t`2-step verification is enabled in your external account.`}</li>
+                                <li>{c('Import error').t`Your email account requires one to export your data.`}</li>
                             </ul>
                         </>
                     );
@@ -217,17 +201,17 @@ const ImportStartStep = ({
                                     .t`Proton can't connect to your external account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your external account`}</li>
-                                <li>{c('Import error').t`your email address and password are correct`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
+                                <li>{c('Import error').t`Your email address and password are correct.`}</li>
                             </ul>
                             <div className="mb1">
                                 {c('Import error').t`Use your app password instead of your regular password if:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error')
-                                    .t`2-step verification is enabled in your external email account`}</li>
+                                    .t`2-step verification is enabled in your external email account.`}</li>
                                 <li>{c('Import error')
-                                    .t`your email account requires an app password to export your data`}</li>
+                                    .t`Your email account requires an app password to export your data.`}</li>
                             </ul>
                         </>
                     );
@@ -266,11 +250,10 @@ const ImportStartStep = ({
                     {c('Info').t`Your login information will not be saved after the import is completed.`}
                 </div>
             )}
-
             <Row>
                 <Label htmlFor="emailAddress">{c('Label').t`Email`}</Label>
                 <Field>
-                    <EmailInput
+                    <InputTwo
                         id="emailAddress"
                         value={email}
                         onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
@@ -279,73 +262,57 @@ const ImportStartStep = ({
                         autoFocus
                         required
                         disabled={isReconnect}
-                        isSubmitted={!!errorLabel}
                         error={isAuthError ? errorLabel : undefined}
-                        errorZoneClassName="hidden"
                         placeholder={provider && EASY_SWITCH_EMAIL_PLACEHOLDER[provider]}
                     />
                 </Field>
             </Row>
-
-            {showPassword && (
-                <Row>
-                    <Label htmlFor="password">
-                        {needAppPassword ? c('Label').t`App password` : c('Label').t`Password`}
-                    </Label>
-                    <Field>
-                        <PasswordInput
-                            id="password"
-                            value={password}
-                            onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                updateModalModel({ ...modalModel, password: target.value })
-                            }
-                            autoFocus
-                            required
-                            isSubmitted={!!errorLabel}
-                            error={isAuthError ? errorLabel : undefined}
-                            errorZoneClassName="hidden"
-                        />
-                    </Field>
-                </Row>
-            )}
-            {needIMAPDetails && email && showPassword && (
-                <>
-                    <Row>
-                        <Label htmlFor="imap">{c('Label').t`Mail Server (IMAP)`}</Label>
-                        <Field>
-                            <Input
-                                id="imap"
-                                placeholder="imap.domain.com"
-                                value={imap}
-                                onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
-                                    updateModalModel({ ...modalModel, imap: target.value });
-                                }}
-                                required
-                                isSubmitted={!!errorLabel}
-                                error={isIMAPError ? errorLabel : undefined}
-                                errorZoneClassName="hidden"
-                            />
-                        </Field>
-                    </Row>
-                    <Row>
-                        <Label htmlFor="port">{c('Label').t`Port`}</Label>
-                        <Field>
-                            <Input
-                                id="port"
-                                placeholder="993"
-                                value={port}
-                                onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
-                                    updateModalModel({ ...modalModel, port: target.value })
-                                }
-                                required
-                                isSubmitted={!!imapPortError}
-                                error={imapPortError}
-                                errorZoneClassName="hidden"
-                            />
-                        </Field>
-                    </Row>
-                </>
-            )}
+            <Row>
+                <Label htmlFor="password">
+                    {needAppPassword ? c('Label').t`App password` : c('Label').t`Password`}
+                </Label>
+                <Field>
+                    <PasswordInputTwo
+                        id="password"
+                        value={password}
+                        onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                            updateModalModel({ ...modalModel, password: target.value })
+                        }
+                        required
+                        error={isAuthError ? errorLabel : undefined}
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="imap">{c('Label').t`Mail Server (IMAP)`}</Label>
+                <Field>
+                    <InputTwo
+                        id="imap"
+                        placeholder="imap.domain.com"
+                        value={imap}
+                        onChange={({ target }: ChangeEvent<HTMLInputElement>) => {
+                            updateModalModel({ ...modalModel, imap: target.value });
+                        }}
+                        required
+                        error={isIMAPError ? errorLabel : undefined}
+                    />
+                </Field>
+            </Row>
+            <Row>
+                <Label htmlFor="port">{c('Label').t`Port`}</Label>
+                <Field>
+                    <InputTwo
+                        id="port"
+                        placeholder="993"
+                        value={port}
+                        onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                            updateModalModel({ ...modalModel, port: target.value })
+                        }
+                        required
+                        error={imapPortError}
+                    />
+                </Field>
+            </Row>
         </>
     );
 };
