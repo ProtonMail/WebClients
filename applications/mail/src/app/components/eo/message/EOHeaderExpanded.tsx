@@ -6,7 +6,7 @@ import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { getRecipients } from '@proton/shared/lib/mail/messages';
 import { eoDefaultMailSettings } from '@proton/shared/lib/mail/eo/constants';
 
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/utils/noop';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { Breakpoints } from '../../../models/utils';
 import { recipientsToRecipientOrGroup } from '../../../helpers/addresses';

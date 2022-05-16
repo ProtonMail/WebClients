@@ -2,6 +2,7 @@ import { c } from 'ttag';
 import { formatImage } from '@proton/shared/lib/helpers/image';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { Button, Icon, Tooltip } from '../../../components';
 import { classnames } from '../../../helpers';
 import useActiveBreakpoint from '../../../hooks/useActiveBreakpoint';
@@ -33,6 +34,8 @@ const ContactSummary = ({
     const photo = formatImage(getSortedProperties(vCardContact, 'photo')[0]?.value || '');
     const name = getSortedProperties(vCardContact, 'fn')[0]?.value || '';
 
+    const nameIsEmail = validateEmailAddress(name);
+
     return (
         <div
             className={classnames([
@@ -50,7 +53,11 @@ const ContactSummary = ({
             </div>
             <div className="contactsummary-contact-name-container pl2 on-mobile-pl0 flex-no-min-children flex-item-fluid">
                 <h2
-                    className="contactsummary-contact-name on-mobile-text-center mb0 flex-item-fluid on-mobile-mb1 text-bold text-ellipsis-two-lines"
+                    className={classnames([
+                        'contactsummary-contact-name on-mobile-text-center mb0 flex-item-fluid on-mobile-mb1 text-bold text-ellipsis-two-lines',
+                        // Several email addresses are a single word but too long, for this case, we break at any char
+                        nameIsEmail && 'text-break',
+                    ])}
                     title={name}
                 >
                     {name}

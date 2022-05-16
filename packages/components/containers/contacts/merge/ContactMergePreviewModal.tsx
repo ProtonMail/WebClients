@@ -84,7 +84,7 @@ const ContactMergePreviewModal = ({ beMergedModel, beDeletedModel, updateModel, 
     };
 
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             {hasError ? (
                 <ContactMergeErrorContent model={model} onClose={rest.onClose} />
             ) : (

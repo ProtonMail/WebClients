@@ -10,7 +10,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/utils/noop';
 import ItemStar from '../../list/ItemStar';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';

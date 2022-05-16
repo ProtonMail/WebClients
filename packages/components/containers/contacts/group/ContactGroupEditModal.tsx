@@ -136,7 +136,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
     const contactEmailsLength = model.contactEmails.length;
 
     return (
-        <ModalTwo size="large" as="form" onSubmit={handleSubmit} {...rest}>
+        <ModalTwo size="large" className="contacts-modal" as="form" onSubmit={handleSubmit} {...rest}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <Row>

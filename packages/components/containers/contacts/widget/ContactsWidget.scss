@@ -22,3 +22,8 @@
 		}
 	}
 }
+
+.contacts-modal {
+	// Special case otherwise contacts are not properly displayed
+	--size: #{rem(700)};
+}

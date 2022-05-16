@@ -2,8 +2,8 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { labelContactEmails, unLabelContactEmails } from '@proton/shared/lib/api/contacts';
-import { useApi, useContacts, useEventManager, useModals, useNotifications } from '../../../hooks';
-import SelectEmailsModal from '../modals/SelectEmailsModal';
+import { useApi, useContacts, useEventManager, useNotifications } from '../../../hooks';
+import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 /**
  * Collect contacts having multiple emails
@@ -33,11 +33,14 @@ export const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Co
 /**
  * Returns a reusable action to apply or remove groups to a list of contact emails
  */
-const useApplyGroups = (onLock?: (lock: boolean) => void, setLoading?: (loading: boolean) => void) => {
+const useApplyGroups = (
+    onLock?: (lock: boolean) => void,
+    setLoading?: (loading: boolean) => void,
+    onSelectEmails?: (props: SelectEmailsProps) => Promise<ContactEmail[]>
+) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
-    const { createModal } = useModals();
     const [contacts] = useContacts() as [Contact[], boolean, any];
 
     const applyGroups = useCallback(
@@ -59,17 +62,7 @@ const useApplyGroups = (onLock?: (lock: boolean) => void, setLoading?: (loading:
 
                 if (groupIDs.length) {
                     setLoading?.(false);
-                    selectedEmails = await new Promise<ContactEmail[]>((resolve, reject) => {
-                        createModal(
-                            <SelectEmailsModal
-                                groupIDs={groupIDs}
-                                contacts={collectedContacts}
-                                onResolve={resolve}
-                                onReject={reject}
-                                onLock={onLock}
-                            />
-                        );
-                    });
+                    selectedEmails = (await onSelectEmails?.({ groupIDs, contacts: collectedContacts, onLock })) || [];
                     setLoading?.(true);
                 }
             }

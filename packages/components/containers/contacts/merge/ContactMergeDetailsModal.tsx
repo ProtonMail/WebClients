@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { CryptoProcessingError, prepareVCardContact } from '@proton/shared/lib/contacts/decrypt';
-import { noop } from '@proton/shared/lib/helpers/function';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import noop from '@proton/utils/noop';
 import {
     Loader,
     ModalTwo,
@@ -61,7 +61,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
     }, []);
 
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalTwoHeader title={c('Title').t`Contact Details`} />
             <ModalTwoContent>
                 {loading || loadingContactEmails || loadingAddresses || loadingContactGroups ? (
@@ -89,7 +89,7 @@ const ContactMergeDetailsModal = ({ contactID, ...rest }: Props) => {
                 )}
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="norm" onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button color="norm" className="mlauto" onClick={rest.onClose}>{c('Action').t`Close`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );

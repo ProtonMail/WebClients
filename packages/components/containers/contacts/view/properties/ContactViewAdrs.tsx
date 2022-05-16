@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 import { VCardAddress, VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Fragment } from 'react';
+import isTruthy from '@proton/utils/isTruthy';
 import ContactViewProperty from './ContactViewProperty';
 import { ContactViewProperties } from './ContactViewProperties';
 import { Copy } from '../../../../components';

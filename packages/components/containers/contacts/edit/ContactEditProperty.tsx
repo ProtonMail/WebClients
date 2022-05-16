@@ -2,9 +2,8 @@ import { forwardRef, Ref } from 'react';
 import { c } from 'ttag';
 import { ContactEmail, ContactEmailModel } from '@proton/shared/lib/interfaces/contacts';
 import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { Button, DropdownActions, Icon, Tooltip, OrderableHandle } from '../../../components';
+import { DropdownActions, Icon, OrderableHandle } from '../../../components';
 import { classnames } from '../../../helpers';
-import { useUser } from '../../../hooks';
 import ContactEditLabel from './ContactEditLabel';
 import ContactFieldProperty from './fields/ContactFieldProperty';
 import ContactGroupDropdown from '../ContactGroupDropdown';
@@ -51,7 +50,6 @@ const ContactEditProperty = (
 ) => {
     const { field, value } = vCardProperty;
     const canDelete = !(field === 'photo' && !value);
-    const [{ hasPaidMail }] = useUser();
 
     const list = [];
 
@@ -136,27 +134,21 @@ const ContactEditProperty = (
                                             'flex-align-items-start',
                                     ])}
                                 >
-                                    {field === 'email' &&
-                                        (hasPaidMail ? (
-                                            <ContactGroupDropdown
-                                                icon
-                                                color="weak"
-                                                shape="outline"
-                                                className="mr0-5"
-                                                contactEmails={[contactEmail as unknown as ContactEmail]}
-                                                onDelayedSave={handleUpdateContactGroups}
-                                                tooltip={c('Title').t`Contact group`}
-                                                onGroupEdit={onGroupEdit}
-                                            >
-                                                <Icon name="users" alt={c('Action').t`Contact group`} />
-                                            </ContactGroupDropdown>
-                                        ) : (
-                                            <Tooltip title={c('Title').t`Contact group`}>
-                                                <Button icon onClick={onUpgrade} className="mr0-5">
-                                                    <Icon name="users" alt={c('Action').t`Contact group`} />
-                                                </Button>
-                                            </Tooltip>
-                                        ))}
+                                    {field === 'email' && (
+                                        <ContactGroupDropdown
+                                            icon
+                                            color="weak"
+                                            shape="outline"
+                                            className="mr0-5"
+                                            contactEmails={[contactEmail as unknown as ContactEmail]}
+                                            onDelayedSave={handleUpdateContactGroups}
+                                            tooltip={c('Title').t`Contact group`}
+                                            onGroupEdit={onGroupEdit}
+                                            onUpgrade={onUpgrade}
+                                        >
+                                            <Icon name="users" alt={c('Action').t`Contact group`} />
+                                        </ContactGroupDropdown>
+                                    )}
                                     <DropdownActions icon list={list} />
                                 </div>
                             )}

@@ -61,26 +61,17 @@ const ContactFieldProperty = (
                 ref={ref}
                 vCardProperty={vCardProperty}
                 onChange={onChangeVCard}
-                disabled={isSubmitted}
+                isSubmitted={isSubmitted}
                 {...rest}
             />
         );
     }
 
     if (field === 'gender') {
-        return (
-            <ContactFieldGender
-                vCardProperty={vCardProperty}
-                onChange={onChangeVCard}
-                disabled={isSubmitted}
-                {...rest}
-            />
-        );
+        return <ContactFieldGender vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;
     }
 
-    return (
-        <ContactFieldString vCardProperty={vCardProperty} onChange={onChangeVCard} disabled={isSubmitted} {...rest} />
-    );
+    return <ContactFieldString vCardProperty={vCardProperty} onChange={onChangeVCard} {...rest} />;
 };
 
 export default forwardRef(ContactFieldProperty);

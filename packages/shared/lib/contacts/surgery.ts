@@ -1,5 +1,5 @@
+import isTruthy from '@proton/utils/isTruthy';
 import { isValid } from 'date-fns';
-import isTruthy from '../helpers/isTruthy';
 import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import {
     compareVCardPropertyByPref,
@@ -32,7 +32,7 @@ export const prepareForSaving = (vCardContact: VCardContact) => {
     const properties = getVCardProperties(vCardContact);
     const newProperties = properties.filter((property) => {
         if (property.field === 'adr') {
-            return Object.values(property.value).some(isTruthy);
+            return property.value && Object.values(property.value).some(isTruthy);
         }
         if (property.field === 'bday' || property.field === 'aniversary') {
             return property.value.text || (property.value.date && isValid(property.value.date));

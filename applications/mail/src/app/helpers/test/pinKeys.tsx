@@ -1,8 +1,10 @@
 import { arrayToBinaryString, encodeBase64 } from 'pmcrypto';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Recipient } from '@proton/shared/lib/interfaces';
-import { ContactEmail, ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts';
-import { prepareCards } from '@proton/shared/lib/contacts/encrypt';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import { prepareCardsFromVCard } from '@proton/shared/lib/contacts/encrypt';
+import { VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { createContactPropertyUid, fromVCardProperties } from '@proton/shared/lib/contacts/properties';
 import { GeneratedKey, generateKeys } from './crypto';
 import { addApiMock } from './api';
 
@@ -34,10 +36,22 @@ const getProperties = (senderKeys: GeneratedKey, hasFingerprint = true) => {
         : 'data:application/pgp-keys;';
 
     return [
-        { field: 'fn', pref: 1, value: 'Sender' } as ContactProperty,
-        { field: 'email', group: 'item1', pref: 1, value: sender.Address } as ContactProperty,
-        { field: 'key', group: 'item1', pref: 1, value: keyValue } as ContactProperty,
-    ] as ContactProperties;
+        { field: 'fn', value: 'Sender', params: { pref: '1' }, uid: createContactPropertyUid() } as VCardProperty,
+        {
+            field: 'email',
+            group: 'item1',
+            value: sender.Address,
+            params: { pref: '1' },
+            uid: createContactPropertyUid(),
+        } as VCardProperty,
+        {
+            field: 'key',
+            group: 'item1',
+            value: keyValue,
+            params: { pref: '1' },
+            uid: createContactPropertyUid(),
+        } as VCardProperty,
+    ] as VCardProperty[];
 };
 
 export const setupContactsForPinKeys = async (hasFingerprint = true) => {
@@ -48,8 +62,12 @@ export const setupContactsForPinKeys = async (hasFingerprint = true) => {
     const senderKeys = await generateKeys('sender', sender.Address);
 
     const properties = getProperties(senderKeys, hasFingerprint);
+    const vCardContact = fromVCardProperties(properties);
 
-    const contactCards = await prepareCards(properties, receiverKeys.privateKeys, receiverKeys.publicKeys);
+    const contactCards = await prepareCardsFromVCard(vCardContact, {
+        privateKey: receiverKeys.privateKeys[0],
+        publicKey: receiverKeys.publicKeys[0],
+    });
 
     // Add an api mock to use the created contact when the call is done
     addApiMock(

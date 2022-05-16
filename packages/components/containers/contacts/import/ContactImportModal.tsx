@@ -40,7 +40,7 @@ const ContactImportModal = ({ ...rest }: Props) => {
     }
 
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalContent model={model} setModel={setModel} onClose={rest.onClose} />
         </ModalTwo>
     );

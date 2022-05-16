@@ -327,7 +327,13 @@ const ContactMergingContent = ({
             </ModalTwoContent>
             <ModalTwoFooter>
                 {!mergeFinished && <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>}
-                <Button color="norm" loading={!mergeFinished} onClick={onMerged} data-testid="merge-model:close-button">
+                <Button
+                    color="norm"
+                    loading={!mergeFinished}
+                    onClick={onMerged}
+                    data-testid="merge-model:close-button"
+                    className="mlauto"
+                >
                     {c('Action').t`Close`}
                 </Button>
             </ModalTwoFooter>

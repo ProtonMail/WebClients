@@ -10,6 +10,7 @@ import {
     fromVCardProperties,
 } from '../properties';
 import { VCardContact, VCardProperty } from '../../interfaces/contacts/VCard';
+import { prepareForSaving } from '../surgery';
 
 const getPref = (params: { [key: string]: string | undefined } | undefined) => {
     const numValue = Number(params?.pref || '');
@@ -225,7 +226,9 @@ export const merge = (contacts: VCardContact[] = []): VCardContact => {
         return { fn: [] };
     }
 
-    const contactsProperties = contacts.map((contact) => getVCardProperties(contact));
+    const contactsProperties = contacts
+        .map((contact) => prepareForSaving(contact)) // Extra security to have well formed contact input
+        .map((contact) => getVCardProperties(contact));
 
     const { mergedContact } = contactsProperties.reduce<{
         mergedContact: VCardProperty[];

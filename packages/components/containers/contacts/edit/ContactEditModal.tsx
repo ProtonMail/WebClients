@@ -175,7 +175,7 @@ const ContactEditModal = ({
                 if (modelContactEmail) {
                     const contactEmail = getContactEmail(modelContactEmail.Email);
                     if (contactEmail) {
-                        await applyGroups(contactEmail, modelContactEmail.changes, true);
+                        await applyGroups([contactEmail], modelContactEmail.changes, true);
                     }
                 }
             })
@@ -221,7 +221,7 @@ const ContactEditModal = ({
     }, []);
 
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <div className="mb1">
