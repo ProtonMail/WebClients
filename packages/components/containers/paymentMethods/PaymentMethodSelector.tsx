@@ -46,8 +46,12 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange }: Pr
             {options.flatMap((option) => {
                 const child = (
                     <Option key={option.value} value={option.value} title={option.text}>
-                        {option.icon && <Icon className="mr0-5" name={option.icon} />}
-                        <span className="text-cut">{option.text}</span>
+                        <span className="inline-flex max-w100 flex-nowrap flex-items-align-center flex-justify-start">
+                            {option.icon && (
+                                <Icon className="mr0-5 mtauto mbauto flex-item-noshrink" name={option.icon} />
+                            )}
+                            <span className="text-ellipsis">{option.text}</span>
+                        </span>
                     </Option>
                 );
                 if (lastUsedMethod?.value === option.value) {
