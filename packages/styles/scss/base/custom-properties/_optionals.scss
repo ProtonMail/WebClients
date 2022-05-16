@@ -60,13 +60,10 @@
 		--email-item-unread-icon-background-color: var(--background-strong),
 		--email-item-unread-icon-text-color      : inherit,
 
-		--email-item-read-background-color     : var(--background-norm),
-		--email-item-read-text-color           : var(--text-weak),
+		--email-item-read-background-color     : var(--background-weak),
+		--email-item-read-text-color           : var(--text-norm),
 		--email-item-read-icon-background-color: var(--background-strong),
 		--email-item-read-icon-text-color      : inherit,
-
-		--email-message-view-opened-item-background-color: var(--optional-email-message-view-background-color),
-		--email-message-view-opened-item-text-color      : var(--text-norm),
 
 		--email-item-selected-background-color     : var(--interaction-norm),
 		--email-item-selected-text-color           : var(--interaction-norm-contrast),
