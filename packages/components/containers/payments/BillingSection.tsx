@@ -11,7 +11,7 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { Plan } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-import { Loader, Time } from '../../components';
+import { Info, Loader, Time } from '../../components';
 import { useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
 import { classnames } from '../../helpers';
 import { SettingsSection } from '../account';
@@ -166,6 +166,12 @@ const BillingSection = () => {
         </>
     );
 
+    const priceInfo = (
+        <Info
+            title={c('new_plans: info').t`Price includes all applicable, non-expired coupons saved to your account.`}
+        />
+    );
+
     return (
         <SettingsSection>
             {!hasLegacyPlans && plan ? (
@@ -293,7 +299,10 @@ const BillingSection = () => {
                     </div>
                     <div className="pt1">
                         <div className={classnames([priceRowClassName, 'text-bold'])}>
-                            <div className={priceLabelClassName}>{getDueCycleText(Cycle)}</div>
+                            <div className={priceLabelClassName}>
+                                <span className="mr0-5">{getDueCycleText(Cycle)}</span>
+                                {priceInfo}
+                            </div>
                             <div className="text-right">
                                 <Price currency={Currency}>{RenewAmount}</Price>
                             </div>
@@ -303,7 +312,10 @@ const BillingSection = () => {
             ) : (
                 <div className="pt1">
                     <div className={classnames([priceRowClassName, 'text-bold'])}>
-                        <div className={priceLabelClassName}>{getTotalBillingText(Cycle)}</div>
+                        <div className={priceLabelClassName}>
+                            <span className="mr0-5">{getTotalBillingText(Cycle)}</span>
+                            {priceInfo}
+                        </div>
                         <div className="text-right">
                             <Price currency={Currency}>{RenewAmount}</Price>
                         </div>
