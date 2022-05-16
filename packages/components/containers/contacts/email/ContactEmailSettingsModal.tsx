@@ -246,8 +246,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     }, [isMimeTypeFixed, hasPGPInline]);
 
     return (
-        // we cannot use the FormModal component because we need to introduce the class text-ellipsis inside the header
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalTwoHeader title={c('Title').t`Email settings (${emailAddress})`} titleClassName="text-ellipsis" />
             <ModalTwoContent>
                 {!isMimeTypeFixed ? (

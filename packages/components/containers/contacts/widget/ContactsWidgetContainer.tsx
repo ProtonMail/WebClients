@@ -16,6 +16,7 @@ import MergeContactBanner from '../widget/MergeContactBanner';
 import { CustomAction } from './types';
 import { ContactMergeProps } from '../merge/ContactMergeModal';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 interface Props {
     onClose: () => void;
@@ -29,6 +30,8 @@ interface Props {
     onMerge: (props: ContactMergeProps) => void;
     onGroupDetails: (contactGroupID: string) => void;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onUpgrade: () => void;
+    onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
 }
 
 const ContactsWidgetContainer = ({
@@ -43,6 +46,8 @@ const ContactsWidgetContainer = ({
     onMerge,
     onGroupDetails,
     onGroupEdit,
+    onUpgrade,
+    onSelectEmails,
 }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
@@ -228,6 +233,8 @@ const ContactsWidgetContainer = ({
                     onClose={onClose}
                     onLock={onLock}
                     onGroupEdit={onGroupEdit}
+                    onUpgrade={onUpgrade}
+                    onSelectEmails={onSelectEmails}
                 />
             </div>
             {showList && countMergeableContacts ? <MergeContactBanner onMerge={() => handleMerge(true)} /> : null}

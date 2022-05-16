@@ -17,6 +17,7 @@ import {
     ModalProps,
     InputTwo,
     Form,
+    ErrorZone,
 } from '../../../components';
 
 export interface ContactImageProps {
@@ -34,6 +35,7 @@ type Props = ContactImageProps & ModalProps;
 
 const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) => {
     const [imageUrl, setImageUrl] = useState(initialUrl);
+    const [isPristine, setIsPristine] = useState(true);
     const { createNotification } = useNotifications();
 
     const title = c('Title').t`Edit image`;
@@ -50,6 +52,8 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) =
             }
         }
     })();
+
+    const error = !isPristine && imageState !== ImageState.Ok ? c('Info').t`Not a valid URL` : undefined;
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         // Remove parameters from URL otherwise the image is broken
@@ -95,7 +99,7 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) =
     };
 
     return (
-        <ModalTwo as={Form} onSubmit={handleSubmit} {...rest}>
+        <ModalTwo as={Form} onSubmit={handleSubmit} className="contacts-modal" {...rest}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <Row>
@@ -105,9 +109,11 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) =
                             id="contactImageModal-input-url"
                             value={isBase64Str ? '' : imageUrl}
                             onChange={handleChange}
+                            onBlur={() => setIsPristine(false)}
                             placeholder={c('Placeholder').t`Image URL`}
-                            error={imageState !== ImageState.Ok ? c('Info').t`Not a valid URL` : undefined}
+                            error={!!error}
                         />
+                        {!!error ? <ErrorZone>{error}</ErrorZone> : null}
                     </Field>
                 </Row>
                 <Row>

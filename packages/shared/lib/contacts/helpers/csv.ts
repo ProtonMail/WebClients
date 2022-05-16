@@ -159,10 +159,9 @@ export const prepare = ({ headers = [], contacts = [] }: ParsedCsvContacts) => {
 
 /**
  * Combine pre-vCards properties into a single vCard one
- * @param preVcards     Array of pre-vCards properties
+ * @param preVCards     Array of pre-vCards properties
  * @return               vCard property
  */
-// export const toVcard = (preVcards: PreVcardProperty[]): ContactPropertyWithDisplay | undefined => {
 export const toVCard = (preVCards: PreVcardProperty[]): VCardProperty<any> | undefined => {
     if (!preVCards.length) {
         return;
@@ -177,10 +176,10 @@ export const toVCard = (preVCards: PreVcardProperty[]): VCardProperty<any> | und
 
     const params: { [key: string]: string } = {};
 
-    if (type || defaultType) {
+    if (type !== undefined || defaultType !== undefined) {
         params.type = (type || defaultType) as string;
     }
-    if (pref) {
+    if (pref !== undefined) {
         params.pref = String(pref);
     }
 

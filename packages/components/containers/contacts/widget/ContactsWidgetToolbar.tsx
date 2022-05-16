@@ -1,11 +1,13 @@
 import { ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import isTruthy from '@proton/utils/isTruthy';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 import ContactGroupDropdown from '../ContactGroupDropdown';
 import useContactList from '../hooks/useContactList';
 import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 interface Props {
     allChecked: boolean;
@@ -22,6 +24,8 @@ interface Props {
     customActions: CustomAction[];
     contactList: ReturnType<typeof useContactList>;
     onGroupEdit: (props: ContactGroupEditProps) => void;
+    onUpgrade: () => void;
+    onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
 }
 
 const ContactsWidgetToolbar = ({
@@ -39,6 +43,8 @@ const ContactsWidgetToolbar = ({
     customActions,
     contactList,
     onGroupEdit,
+    onUpgrade,
+    onSelectEmails,
 }: Props) => {
     const selectedCount = selected.length;
     const handleCheck = ({ target }: ChangeEvent<HTMLInputElement>) => onCheckAll(target.checked);
@@ -123,6 +129,8 @@ const ContactsWidgetToolbar = ({
                 onLock={onLock}
                 onSuccess={() => onCheckAll(false)}
                 onGroupEdit={onGroupEdit}
+                onUpgrade={onUpgrade}
+                onSelectEmails={onSelectEmails}
             >
                 <Icon name="users" />
             </ContactGroupDropdown>

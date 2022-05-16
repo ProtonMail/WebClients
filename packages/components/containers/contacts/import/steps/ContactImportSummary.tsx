@@ -103,7 +103,7 @@ const ContactImportSummary = ({ model, setModel, onClose }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 {canImportGroups ? <Button onClick={onClose}>{c('Action').t`Close`}</Button> : null}
-                <Button color="norm" loading={model.loading} type="submit">
+                <Button color="norm" loading={model.loading} type="submit" className="mlauto">
                     {canImportGroups ? c('Action').t`Next` : c('Action').t`Close`}
                 </Button>
             </ModalTwoFooter>

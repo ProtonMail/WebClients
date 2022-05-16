@@ -65,10 +65,14 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
 
     return (
         <AlertModal
-            title={title}
-            onSubmit={() => withLoadingDelete(handleDelete())}
+            title={
+                <div className="text-ellipsis" title={title}>
+                    {title}
+                </div>
+            }
             buttons={[
-                <ErrorButton type="submit" loading={loadingDelete}>{c('Action').t`Delete`}</ErrorButton>,
+                <ErrorButton onClick={() => withLoadingDelete(handleDelete())} loading={loadingDelete}>{c('Action')
+                    .t`Delete`}</ErrorButton>,
                 <Button onClick={rest.onClose} autoFocus>{c('Action').t`Cancel`}</Button>,
             ]}
             {...rest}

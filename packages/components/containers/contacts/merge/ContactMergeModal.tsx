@@ -94,7 +94,7 @@ const ContactMergeModal = ({ contacts, onMerged, onMergeDetails, onMergePreview,
     };
 
     return (
-        <ModalTwo {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             {isMerging ? (
                 <ContactMergingContent
                     mergeFinished={mergeFinished}

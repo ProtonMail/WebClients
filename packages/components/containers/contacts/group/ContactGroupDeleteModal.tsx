@@ -3,8 +3,7 @@ import { ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { deleteLabels } from '@proton/shared/lib/api/labels';
 import { allSucceded } from '@proton/shared/lib/api/helpers/response';
 import { useApi, useContactGroups, useEventManager, useLoading, useNotifications } from '../../../hooks';
-import { Alert, Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoHeader } from '../../../components';
-import ModalFooter from '../../../components/modalTwo/ModalFooter';
+import { Alert, AlertModal, Button, ModalProps } from '../../../components';
 
 export interface ContactGroupDeleteProps {
     groupIDs: string[];
@@ -53,23 +52,23 @@ const ContactGroupDeleteModal = ({ groupIDs = [], onDelete, ...rest }: Props) =>
               );
 
     return (
-        <ModalTwo size="small" {...rest}>
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                <Alert className="mb1" type="info">
-                    {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
-                </Alert>
-                <Alert className="mb1" type="error">
-                    {alertText}
-                </Alert>
-            </ModalTwoContent>
-            <ModalFooter>
-                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button color="danger" onClick={() => withLoading(handleDelete())} disabled={loading}>
+        <AlertModal
+            title={title}
+            buttons={[
+                <Button color="danger" onClick={() => withLoading(handleDelete())} loading={loading}>
                     {c('Action').t`Delete`}
-                </Button>
-            </ModalFooter>
-        </ModalTwo>
+                </Button>,
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>,
+            ]}
+            {...rest}
+        >
+            <Alert className="mb1" type="info">
+                {c('Info').t`Please note that addresses assigned to this group will NOT be deleted.`}
+            </Alert>
+            <Alert className="mb1" type="error">
+                {alertText}
+            </Alert>
+        </AlertModal>
     );
 };
 
