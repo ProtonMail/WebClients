@@ -15,14 +15,6 @@ import MainContainer from './MainContainer';
 import { useContactEmailsCache } from './ContactEmailsProvider';
 import getSaveEventActions from './eventActions/getSaveEventActions';
 
-window.ResizeObserver =
-    window.ResizeObserver ||
-    jest.fn().mockImplementation(() => ({
-        disconnect: jest.fn(),
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-    }));
-
 jest.mock('./eventActions/getSaveEventActions', () => jest.fn());
 jest.mock('@proton/components/hooks/useAddresses', () => ({
     __esModule: true,
