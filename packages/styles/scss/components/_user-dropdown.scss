@@ -31,7 +31,7 @@
 			max-inline-size: em(200);
 		}
 
-		@include respond-to($breakpoint-large) {
+		@include respond-to($breakpoint-medium-landscape) {
 			display: none;
 		}
 	}
