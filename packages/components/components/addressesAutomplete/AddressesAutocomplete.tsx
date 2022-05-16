@@ -4,7 +4,6 @@ import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contac
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { noop } from '@proton/shared/lib/helpers/function';
 
 import Input, { Props as InputProps } from '../input/Input';
 import { Option } from '../option';
@@ -34,8 +33,6 @@ interface Props extends Omit<InputProps, 'value'> {
     hasEmailPasting?: boolean;
     hasAddOnBlur?: boolean;
     limit?: number;
-    onAddInvalidEmail?: () => void;
-    validate?: (email: string) => string | void;
 }
 
 const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
@@ -53,15 +50,12 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             hasEmailPasting = false,
             hasAddOnBlur = false,
             limit = 20,
-            onAddInvalidEmail,
             onChange,
-            validate = noop,
             ...rest
         }: Props,
         ref
     ) => {
         const [input, setInput] = useState('');
-        const [emailError, setEmailError] = useState('');
         const inputRef = useRef<HTMLInputElement>(null);
 
         const [recipientsByAddress, recipientsByGroup] = useMemo(() => {
@@ -87,7 +81,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
             return [
                 ...getContactsAutocompleteItems(
                     contactEmails,
-                    ({ Email }) => !recipientsByAddress.has(canonizeEmail(Email)) && !validate(Email)
+                    ({ Email }) => !recipientsByAddress.has(canonizeEmail(Email))
                 ),
                 ...getContactGroupsAutocompleteItems(
                     contactGroups,
@@ -98,20 +92,9 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
 
         const options = [...contactsAutocompleteItems];
 
-        const safeAddRecipients = (newRecipients: Recipient[]) => {
-            const uniqueNewRecipients = newRecipients.filter(({ Address }) => {
-                return !validate(Address || '');
-            });
-            if (!uniqueNewRecipients.length) {
-                return;
-            }
-            onAddRecipients(uniqueNewRecipients);
-        };
-
         const handleAddRecipient = (newRecipients: Recipient[]) => {
             setInput('');
-            setEmailError('');
-            safeAddRecipients(newRecipients);
+            onAddRecipients(newRecipients);
         };
 
         const handleAddRecipientFromInput = (input: string) => {
@@ -121,14 +104,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                 return;
             }
             const newRecipient = inputToRecipient(trimmedInput);
-            const error = validate(newRecipient.Address || '');
-
-            if (!error) {
-                handleAddRecipient([newRecipient]);
-            } else {
-                onAddInvalidEmail?.();
-                setEmailError(error);
-            }
+            handleAddRecipient([newRecipient]);
         };
 
         const handleSelect = (item: AddressesAutocompleteItem) => {
@@ -171,7 +147,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
 
             const values = newValue.split(/[,;]/).map((value) => value.trim());
             if (values.length > 1) {
-                safeAddRecipients(values.slice(0, -1).map(inputToRecipient));
+                onAddRecipients(values.slice(0, -1).map(inputToRecipient));
                 setInput(values[values.length - 1]);
                 return;
             }
@@ -191,7 +167,6 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                         onChange?.(event);
                     }}
                     onKeyDown={(event) => {
-                        setEmailError('');
                         // If the default key down handler did not take care of this, add another layer
                         if (!inputProps.onKeyDown(event)) {
                             if (event.key === 'Enter') {
@@ -207,7 +182,6 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                             handleAddRecipientFromInput(input);
                         }
                     }}
-                    error={emailError}
                 />
                 <AutocompleteList anchorRef={anchorRef} {...suggestionProps}>
                     {filteredAndSortedOptions.map(({ chunks, text, option }, index) => {
