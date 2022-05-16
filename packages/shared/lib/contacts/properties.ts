@@ -4,19 +4,7 @@ import { VCardContact, VCardProperty } from '../interfaces/contacts/VCard';
 import { UID_PREFIX } from './constants';
 import { isMultiValue } from './vcard';
 
-export const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key'];
-
-// Clean values starting by "=" to prevent any arbitrary execution if that value ends up in an Excel file
-// https://jira.protontech.ch/browse/SEC-451
-// const getSafeContactValue = (value: ContactValue): ContactValue => {
-//     if (!Array.isArray(value)) {
-//         // We add a guard in case value is undefined. This should not be necessary if we could fully trust
-//         // the types, but unfortunately that's currently not the case for the Contacts code
-//         return (value || '').replace(/^=+/, '');
-//     }
-//     // TS not smart enough to infer the following makes sense, even with conditional types
-//     return value.map((val) => getSafeContactValue(val)) as ContactValue;
-// };
+export const FIELDS_WITH_PREF = ['fn', 'email', 'tel', 'adr', 'key', 'photo'];
 
 export const getStringContactValue = (value: ContactValue): string => {
     if (Array.isArray(value)) {
@@ -38,13 +26,6 @@ export const hasCategories = (vcardContact: VCardProperty[]) => {
 };
 
 /**
- * For a list of vCard contacts, check if any contains categories
- */
-// export const haveCategories = (vcardContacts: ContactProperties[]) => {
-//     return vcardContacts.some((contact) => hasCategories(contact));
-// };
-
-/**
  * Extract categories from a vCard contact
  */
 export const getContactCategories = (contact: VCardContact) => {
@@ -59,101 +40,6 @@ export const getContactCategories = (contact: VCardContact) => {
         })
         .flat();
 };
-
-/**
- * Make sure we keep only valid properties.
- * * In case adr property is badly formatted, re-format
- * * Split multi-valued categories properties, otherwise ICAL.js does not handle them
- */
-// export const sanitizeProperties = (properties: ContactProperties = []): ContactProperties => {
-//     /*
-//         property values should be either arrays or strings
-//         transform to string otherwise (usually the case of a date for bday or anniversary fields)
-//         enforce value for adr field be an array
-//     */
-//     return properties
-//         .filter(({ value }) => value)
-//         .map((property) => {
-//             return Array.isArray(property.value) ? property : { ...property, value: property.value.toString() };
-//         })
-//         .map((property) => {
-//             const { field } = property;
-//             let { value } = property;
-
-//             value = getSafeContactValue(value);
-
-//             if ((field === 'adr' || field === 'org') && !Array.isArray(value)) {
-//                 // assume the bad formatting used commas instead of semicolons
-//                 value = value.split(',').slice(0, 6);
-//             }
-//             if (field === 'categories' && Array.isArray(value)) {
-//                 // Array-valued categories pose problems to ICAL (even though a vcard with CATEGORIES:ONE,TWO
-//                 // will be parsed into a value ['ONE', 'TWO'], ICAL.js fails to transform it back). So we convert
-//                 // an array-valued category into several properties
-//                 return value.map((category) => ({ ...property, value: category }));
-//             }
-//             return { ...property, value };
-//         })
-//         .flat();
-// };
-
-/**
- * Add `pref` to email, adr, tel, key to save order
- */
-// export const addPref = (properties: ContactProperties = []): ContactProperties => {
-//     const prefs = FIELDS_WITH_PREF.reduce((acc, field) => {
-//         acc[field] = 0;
-//         return acc;
-//     }, Object.create(null));
-
-//     return properties.map((property) => {
-//         if (!FIELDS_WITH_PREF.includes(property.field)) {
-//             return property;
-//         }
-//         const newPref = prefs[property.field] + 1;
-//         prefs[property.field] = newPref;
-
-//         return {
-//             ...property,
-//             pref: newPref,
-//         };
-//     });
-// };
-
-/**
- * Function that sorts properties by preference
- */
-// export const sortByPref = (
-//     firstEl: Partial<ContactProperty> | PublicKeyWithPref,
-//     secondEl: Partial<ContactProperty> | PublicKeyWithPref
-// ): number => {
-//     if (firstEl.pref && secondEl.pref) {
-//         return firstEl.pref - secondEl.pref;
-//     }
-//     return 0;
-// };
-
-/**
- * Given a list of properties with preference, reorder them according to the preference
- */
-// export const reOrderByPref = (properties: ContactProperties): ContactProperties => {
-//     const { withPref, withoutPref } = properties.reduce<{
-//         withPref: ContactProperties;
-//         withoutPref: ContactProperties;
-//     }>(
-//         (acc, property) => {
-//             if (FIELDS_WITH_PREF.includes(property.field)) {
-//                 acc.withPref.push(property);
-//             } else {
-//                 acc.withoutPref.push(property);
-//             }
-//             return acc;
-//         },
-//         { withPref: [], withoutPref: [] }
-//     );
-
-//     return withPref.sort(sortByPref).concat(withoutPref);
-// };
 
 /**
  * Generate new group name that doesn't exist
@@ -172,39 +58,6 @@ export const generateNewGroupName = (existingGroups: string[] = []): string => {
 
     return `item${index}`;
 };
-
-/**
- * Add `group` if missing for email.
- * @param {Array} properties
- * @returns {Array}
- */
-// export const addGroup = (properties: ContactProperties = []) => {
-//     const existingGroups = properties.map(({ group }) => group).filter(isTruthy);
-//     return properties.map((property) => {
-//         if (!['email'].includes(property.field) || property.group) {
-//             return property;
-//         }
-
-//         const group = generateNewGroupName(existingGroups);
-//         existingGroups.push(group);
-
-//         return {
-//             ...property,
-//             group,
-//         };
-//     });
-// };
-
-/**
- * Given a contact and a field, get its preferred value
- */
-// export const getPreferredValue = (properties: ContactProperties, field: string) => {
-//     const filteredProperties = properties.filter(({ field: f }) => f === field);
-//     if (!filteredProperties.length) {
-//         return;
-//     }
-//     return filteredProperties.sort(sortByPref)[0].value;
-// };
 
 /**
  * Extract emails from a vCard contact

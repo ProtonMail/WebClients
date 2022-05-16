@@ -93,25 +93,10 @@ const MailRecipientItemSingle = ({
         close();
 
         if (ContactID) {
-            // createModal(<ContactDetailsModal contactID={ContactID} onMailTo={onMailTo} />);
             onContactDetails(ContactID);
             return;
         }
 
-        // createModal(
-        //     <ContactEditModal
-        //         vCardContact={{
-        //             fn: [
-        //                 {
-        //                     field: 'fn',
-        //                     value: recipient.Name || recipient.Address || '',
-        //                     uid: createContactPropertyUid(),
-        //                 },
-        //             ],
-        //             email: [{ field: 'email', value: recipient.Address || '', uid: createContactPropertyUid() }],
-        //         }}
-        //     />
-        // );
         onContactEdit({
             vCardContact: {
                 fn: [

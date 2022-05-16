@@ -40,13 +40,14 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
     };
 
     if (!fixedType && otherInformationFields.map(({ value: f }) => f).includes(field)) {
+        const selectedField = otherInformationFields.find((otherField) => otherField.value === field);
         const filteredOtherInformationFields = otherInformationFields.filter(
             (field) => !filteredTypes.includes(field.value)
         );
 
         return (
             <Label className="pt0 mr1 on-mobile-w100">
-                <SelectTwo value={field} onChange={handleChangeField}>
+                <SelectTwo value={field} onChange={handleChangeField} title={selectedField?.text}>
                     {filteredOtherInformationFields.map((field) => (
                         <Option key={field.value} title={field.text} value={field.value} />
                     ))}
@@ -59,9 +60,11 @@ const ContactEditLabel = ({ vCardProperty, onChangeVCard, fixedType = false, fil
         return <ContactLabelProperty className="pt0-5" field={field} type={type} />;
     }
 
+    const selectedType = fieldTypes.find((fieldType) => fieldType.value === type) || fieldTypes[0];
+
     return (
         <Label className="pt0 mr1 on-mobile-w100">
-            <SelectTwo value={type} onChange={handleChangeType}>
+            <SelectTwo value={type} onChange={handleChangeType} title={selectedType.text}>
                 {fieldTypes.map((fieldType) => (
                     <Option key={fieldType.value} title={fieldType.text} value={fieldType.value} />
                 ))}

@@ -24,7 +24,8 @@ const ContactImportCsvTableRows = ({ preVcards, onToggle, onChangeField, onChang
     return (
         <>
             {preVcards.map(({ checked, header }, i) => (
-                <tr key={i.toString()}>
+                // eslint-disable-next-line react/no-array-index-key
+                <tr key={i}>
                     <td className="text-center">
                         <Checkbox checked={checked} onChange={() => onToggle(i)} />
                     </td>

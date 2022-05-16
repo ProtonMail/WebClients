@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { move } from '@proton/shared/lib/helpers/array';
 import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
+import move from '@proton/utils/move';
 import { Alert, Button, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import { ContactMergePreviewModalProps } from './ContactMergePreviewModal';
 import MergeTable from './table/MergeTable';
@@ -112,7 +112,7 @@ const ContactMergeTableContent = ({
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                 {isDeleteOnly ? (
-                    <Button color="norm" type="submit">{c('Action').t`Continue`}</Button>
+                    <Button color="norm" onClick={onSubmit}>{c('Action').t`Continue`}</Button>
                 ) : (
                     <Button
                         color="norm"

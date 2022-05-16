@@ -1,5 +1,5 @@
 import { API_CODES } from '@proton/shared/lib/constants';
-import { range } from '@proton/shared/lib/helpers/array';
+import range from '@proton/utils/range';
 import { fireEvent, waitFor } from '@testing-library/react';
 import { api, clearAll, getCard, render } from '../tests/render';
 import ContactImportModal from './ContactImportModal';
@@ -37,7 +37,6 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         let importButton = getByText('Import', { selector: 'button' });
         fireEvent.click(importButton);
 
-        // await wait(2000);
         await waitFor(() => getByText('We have detected', { exact: false }));
 
         importButton = getByText('Import', { selector: 'button' });
@@ -50,11 +49,11 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         const signed0 = getCard(contact0Cards, false);
 
         expect(signed0).toContain('FN;PREF=1:John Smith');
-        expect(signed0).toContain('ITEM1.EMAIL;PREF=1:johnsmith@protonmail.com');
+        expect(signed0).toContain('ITEM1.EMAIL;TYPE=;PREF=1:johnsmith@protonmail.com');
 
         const encrypted0 = getCard(contact0Cards, true);
 
-        expect(encrypted0).toContain('ADR;PREF=1:,,,New Orleans,LA,94958,USA');
+        expect(encrypted0).toContain('ADR;TYPE=;PREF=1:,,,New Orleans,LA,94958,USA');
         expect(encrypted0).toContain('ORG:Smith Inc.');
         expect(encrypted0).toContain('TEL;TYPE=home;PREF=1:123-456-789');
         expect(encrypted0).toContain('TITLE:Head honcho');
@@ -64,11 +63,11 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         const signed1 = getCard(contact1Cards, false);
 
         expect(signed1).toContain('FN;PREF=1:Jane Doe');
-        expect(signed1).toContain('ITEM1.EMAIL;PREF=1:jane@example.com');
+        expect(signed1).toContain('ITEM1.EMAIL;TYPE=;PREF=1:jane@example.com');
 
         const encrypted1 = getCard(contact1Cards, true);
 
-        expect(encrypted1).toContain('ADR;PREF=1:,,,Brighton,East Sussex,BR7 7HT,UK');
+        expect(encrypted1).toContain('ADR;TYPE=;PREF=1:,,,Brighton,East Sussex,BR7 7HT,UK');
         expect(encrypted1).toContain('NOTE:Likes to party!');
         expect(encrypted1).toContain('ORG:Example UK');
         expect(encrypted1).toContain('TEL;TYPE=work;PREF=1:(44)12345678');
@@ -80,11 +79,11 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         const signed2 = getCard(contact2Cards, false);
 
         expect(signed2).toContain('FN;PREF=1:Peter Rabbit');
-        expect(signed2).toContain('ITEM1.EMAIL;PREF=1:peter@pm.me');
+        expect(signed2).toContain('ITEM1.EMAIL;TYPE=;PREF=1:peter@pm.me');
 
         const encrypted2 = getCard(contact2Cards, true);
 
-        expect(encrypted2).toContain('ADR;PREF=1:,,,Bridgeport,NJ,8014,USA');
+        expect(encrypted2).toContain('ADR;TYPE=;PREF=1:,,,Bridgeport,NJ,8014,USA');
         expect(encrypted2).toContain('NOTE:nickname: Carrot');
         expect(encrypted2).toContain('BDAY;VALUE=TEXT:03/12/1969');
         expect(encrypted2).toContain('TEL;TYPE=home;PREF=1:856-264-4130');
@@ -97,11 +96,11 @@ Botman,,botman@pm.me,,,,,,,Skopje,,,,,,,,,,Partizanska`;
         const signed3 = getCard(contact3Cards, false);
 
         expect(signed3).toContain('FN;PREF=1:Botman');
-        expect(signed3).toContain('ITEM1.EMAIL;PREF=1:botman@pm.me');
+        expect(signed3).toContain('ITEM1.EMAIL;TYPE=;PREF=1:botman@pm.me');
 
         const encrypted3 = getCard(contact3Cards, true);
 
-        expect(encrypted3).toContain('ADR;PREF=1:,,,Skopje,,,');
+        expect(encrypted3).toContain('ADR;TYPE=;PREF=1:,,,Skopje,,,');
         expect(encrypted3).toContain('NOTE:home: Partizanska');
     });
 });

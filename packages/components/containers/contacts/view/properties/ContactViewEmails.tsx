@@ -6,7 +6,7 @@ import ContactViewProperty from './ContactViewProperty';
 import { ContactViewProperties } from './ContactViewProperties';
 import { ContactEmailSettingsProps } from '../../email/ContactEmailSettingsModal';
 import { Button, Icon, Tooltip, Copy } from '../../../../components';
-import { useUser, useNotifications } from '../../../../hooks';
+import { useNotifications } from '../../../../hooks';
 import ContactGroupDropdown from '../../ContactGroupDropdown';
 import ContactGroupLabels from '../../group/ContactGroupLabels';
 import { ContactGroupEditProps } from '../../group/ContactGroupEditModal';
@@ -38,7 +38,6 @@ const ContactViewEmails = ({
     onUpgrade,
     onGroupEdit,
 }: Props) => {
-    const [{ hasPaidMail }] = useUser();
     const { createNotification } = useNotifications();
 
     const emails = getSortedProperties(vCardContact, 'email');
@@ -89,25 +88,18 @@ const ContactViewEmails = ({
                                                 </Button>
                                             </Tooltip>
                                         )}
-                                        {hasPaidMail ? (
-                                            <ContactGroupDropdown
-                                                icon
-                                                color="weak"
-                                                shape="outline"
-                                                className="ml0-5"
-                                                contactEmails={[contactEmail]}
-                                                tooltip={c('Title').t`Contact group`}
-                                                onGroupEdit={onGroupEdit}
-                                            >
-                                                <Icon name="users" alt={c('Action').t`Contact group`} />
-                                            </ContactGroupDropdown>
-                                        ) : (
-                                            <Tooltip title={c('Title').t`Contact group`}>
-                                                <Button icon onClick={onUpgrade} className="ml0-5">
-                                                    <Icon name="users" alt={c('Action').t`Contact group`} />
-                                                </Button>
-                                            </Tooltip>
-                                        )}
+                                        <ContactGroupDropdown
+                                            icon
+                                            color="weak"
+                                            shape="outline"
+                                            className="ml0-5"
+                                            contactEmails={[contactEmail]}
+                                            tooltip={c('Title').t`Contact group`}
+                                            onGroupEdit={onGroupEdit}
+                                            onUpgrade={onUpgrade}
+                                        >
+                                            <Icon name="users" alt={c('Action').t`Contact group`} />
+                                        </ContactGroupDropdown>
                                         <Copy
                                             className="ml0-5"
                                             value={email.value}

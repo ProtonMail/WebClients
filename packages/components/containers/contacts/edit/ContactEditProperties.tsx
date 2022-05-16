@@ -46,7 +46,7 @@ const ContactEditProperties = (
     {
         isSignatureVerified,
         field,
-        sortable = false,
+        sortable: inputSortable = false,
         onAdd,
         onRemove,
         isSubmitted = false,
@@ -84,6 +84,7 @@ const ContactEditProperties = (
             }
             return compareVCardPropertyByUid(a, b);
         });
+    const sortable = inputSortable && properties.length > 1;
 
     const canAdd = !fields.includes('fn');
     const rows = useMemo(() => {

@@ -1,4 +1,5 @@
-import { noop } from '@proton/shared/lib/helpers/function';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import noop from '@proton/utils/noop';
 import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
 import ContactEditModal, { ContactEditProps, ContactEditModalProps } from '../edit/ContactEditModal';
 import ContactGroupDeleteModal, { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
@@ -26,6 +27,7 @@ import ContactClearDataConfirmModal, {
 import ContactClearDataExecutionModal, {
     ContactClearDataExecutionProps,
 } from '../modals/ContactClearDataExecutionModal';
+import SelectEmailsModal, { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string) => void }) => {
     const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(
@@ -99,6 +101,11 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         ContactClearDataExecutionProps,
         void
     >(ContactClearDataExecutionModal, false);
+
+    const [contactSelectEmailsModal, handleShowContactSelectEmailsModal] = useModalTwo<
+        SelectEmailsProps,
+        ContactEmail[]
+    >(SelectEmailsModal);
 
     const handleUpgrade = () => {
         void handleShowContactUpgradeModal();
@@ -182,6 +189,10 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         });
     };
 
+    const handleSelectEmails = (props: SelectEmailsProps) => {
+        return handleShowContactSelectEmailsModal(props);
+    };
+
     const modals = (
         <>
             {contactDetailsModal}
@@ -199,6 +210,7 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
             {contactDecryptionErrorModal}
             {contactClearDataConfirmModal}
             {contactClearDataExecutionModal}
+            {contactSelectEmailsModal}
         </>
     );
 
@@ -215,5 +227,6 @@ export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string
         onUpgrade: handleUpgrade,
         onSignatureError: handleSignatureError,
         onDecryptionError: handleDecryptionError,
+        onSelectEmails: handleSelectEmails,
     };
 };

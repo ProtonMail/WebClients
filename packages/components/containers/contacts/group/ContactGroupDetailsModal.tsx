@@ -52,7 +52,7 @@ const ContactGroupDetailsModal = ({ contactGroupID, onEdit, onDelete, onExport, 
     };
 
     return (
-        <ModalTwo size="large" {...rest}>
+        <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalHeader
                 title={
                     <div className="flex flex-nowrap flex-align-items-center">

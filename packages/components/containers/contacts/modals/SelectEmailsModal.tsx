@@ -125,7 +125,7 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onLock, onResolve, on
           );
 
     return (
-        <ModalTwo {...rest}>
+        <ModalTwo size="large" {...rest}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
                 <Alert className="mb1">

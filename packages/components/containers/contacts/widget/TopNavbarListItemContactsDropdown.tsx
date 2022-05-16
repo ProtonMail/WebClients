@@ -6,7 +6,7 @@ import { generateUID } from '@proton/components/helpers';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/utils/noop';
 import ContactsWidgetContainer from './ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from './ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from './ContactsWidgetSettingsContainer';
@@ -47,8 +47,18 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
     const [tabIndex, setTabIndex] = useState(0);
     const [lock, setLock] = useState(false);
 
-    const { modals, onDetails, onEdit, onDelete, onExport, onGroupDetails, onGroupEdit, onGroupDelete, onUpgrade } =
-        useContactModals({ onMailTo });
+    const {
+        modals,
+        onDetails,
+        onEdit,
+        onDelete,
+        onExport,
+        onGroupDetails,
+        onGroupEdit,
+        onGroupDelete,
+        onUpgrade,
+        onSelectEmails,
+    } = useContactModals({ onMailTo });
     const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
     const { modals: mergeModals, onMerge } = useContactMergeModals();
 
@@ -125,6 +135,8 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = no
                                     onMerge={onMerge}
                                     onGroupDetails={onGroupDetails}
                                     onGroupEdit={onGroupEdit}
+                                    onUpgrade={onUpgrade}
+                                    onSelectEmails={onSelectEmails}
                                 />
                             ),
                         },
