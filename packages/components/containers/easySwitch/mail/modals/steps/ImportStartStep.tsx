@@ -78,9 +78,9 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                                 .t`Proton can't connect to your account. Please make sure that Gmail IMAP access is enabled.`}</div>
                             <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`your password is correct`}</li>
+                                <li>{c('Import error').t`Your password is correct.`}</li>
                                 <li>{c('Import error')
-                                    .t`"Less secure app access" is turned on in your Google account security settings`}</li>
+                                    .t`"Less secure app access" is turned on in your Google account security settings.`}</li>
                             </ul>
                             <div className="mb1">{twoStepsEnabledMessage}</div>
                             <div className="mb1">{captchaMessage}</div>
@@ -112,9 +112,9 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                                 .t`Proton can't connect to your account. Please make sure that IMAP access is enabled in your Gmail account.`}</div>
                             <div className="mb1">{twoStepsDisabledMessage}</div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`your email address and password are correct`}</li>
+                                <li>{c('Import error').t`Your email address and password are correct.`}</li>
                                 <li>{c('Import error')
-                                    .t`"Less secure app access" is turned on in your Google account security settings`}</li>
+                                    .t`"Less secure app access" is turned on in your Google account security settings.`}</li>
                             </ul>
                             <div className="mb1">{twoStepsEnabledMessage}</div>
                             <div className="mb1">{captchaMessage}</div>
@@ -127,7 +127,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                 if (isReconnect) {
                     // translator: the variable here is a HTML tag, here is the complete sentence: "your app password is correct. Do not use your regular password"
                     const appPasswordIsCorrectMessage = c('Import error')
-                        .jt`your app password is correct. Do ${boldNot} use your regular password`;
+                        .jt`Your app password is correct. Do ${boldNot} use your regular password.`;
 
                     message = (
                         <>
@@ -136,7 +136,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                                     .t`Proton can't connect to your Yahoo account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
                                 <li>{appPasswordIsCorrectMessage}</li>
                             </ul>
                         </>
@@ -151,7 +151,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                 if (isAuthError) {
                     // translator: the variable here is a HTML tag, here is the complete sentence: "your email address and app password are correct. Do not use your regular password"
                     const credentialsAreCorrectMessage = c('Import error')
-                        .jt`your email address and app password are correct. Do ${boldNot} use your regular password`;
+                        .jt`Your email address and app password are correct. Do ${boldNot} use your regular password.`;
 
                     message = (
                         <>
@@ -161,7 +161,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                             </div>
                             <ul className="m0 pb1">
                                 <li>{credentialsAreCorrectMessage}</li>
-                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your Yahoo account.`}</li>
                             </ul>
                         </>
                     );
@@ -176,13 +176,13 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                                 {c('Import error').t`Proton can't connect to your account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your external account`}</li>
-                                <li>{c('Import error').t`your password is correct`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
+                                <li>{c('Import error').t`Your password is correct.`}</li>
                             </ul>
                             <div className="mb1">{c('Import error').t`Use your app password if:`}</div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`2-step verification is enabled in your external account`}</li>
-                                <li>{c('Import error').t`your email account requires one to export your data`}</li>
+                                <li>{c('Import error').t`2-step verification is enabled in your external account.`}</li>
+                                <li>{c('Import error').t`Your email account requires one to export your data.`}</li>
                             </ul>
                         </>
                     );
@@ -201,17 +201,17 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
                                     .t`Proton can't connect to your external account. Please make sure that:`}
                             </div>
                             <ul className="m0 pb1">
-                                <li>{c('Import error').t`IMAP access is enabled in your external account`}</li>
-                                <li>{c('Import error').t`your email address and password are correct`}</li>
+                                <li>{c('Import error').t`IMAP access is enabled in your external account.`}</li>
+                                <li>{c('Import error').t`Your email address and password are correct.`}</li>
                             </ul>
                             <div className="mb1">
                                 {c('Import error').t`Use your app password instead of your regular password if:`}
                             </div>
                             <ul className="m0 pb1">
                                 <li>{c('Import error')
-                                    .t`2-step verification is enabled in your external email account`}</li>
+                                    .t`2-step verification is enabled in your external email account.`}</li>
                                 <li>{c('Import error')
-                                    .t`your email account requires an app password to export your data`}</li>
+                                    .t`Your email account requires an app password to export your data.`}</li>
                             </ul>
                         </>
                     );
