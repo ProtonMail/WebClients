@@ -130,6 +130,9 @@ const SubscriptionModal = ({
         planIDs,
     });
 
+    const subscriptionCouponCode = subscription?.CouponCode;
+    const latestValidCouponCodeRef = useRef('');
+
     const getCodes = ({ gift, coupon }: Model) => [gift, coupon].filter(isTruthy);
 
     const handleUnsubscribe = async () => {
@@ -274,7 +277,10 @@ const SubscriptionModal = ({
                 createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
             }
 
-            copyNewModel.coupon = Code;
+            if (Code) {
+                latestValidCouponCodeRef.current = Code;
+            }
+            copyNewModel.coupon = Code || subscriptionCouponCode || latestValidCouponCodeRef.current;
 
             if (!Gift) {
                 delete copyNewModel.gift;
