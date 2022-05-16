@@ -121,11 +121,11 @@ const ImportManageFoldersRow = ({
             ? c('Error').t`The label name is too long. Please choose a different name.`
             : c('Error').t`The folder name is too long. Please choose a different name.`,
         emptyValueError: isLabelMapping
-            ? c('Error').t`Label name cannot be empty`
-            : c('Error').t`Folder name cannot be empty`,
+            ? c('Error').t`Label name cannot be empty.`
+            : c('Error').t`Folder name cannot be empty.`,
         nameAlreadyExistsError: isLabelMapping
-            ? c('Error').t`This label name is not available. Please choose a different name`
-            : c('Error').t`This folder name is not available. Please choose a different name`,
+            ? c('Error').t`This label name is not available. Please choose a different name.`
+            : c('Error').t`This folder name is not available. Please choose a different name.`,
     };
 
     const WARNINGS = {
