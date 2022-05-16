@@ -15,11 +15,11 @@ import { PaymentMethodData, PaymentMethodFlows } from './interface';
 const getMethod = (paymentMethod: PaymentMethod) => {
     switch (paymentMethod.Type) {
         case PAYMENT_METHOD_TYPES.CARD:
-            const brand = paymentMethod.Details?.Brand;
-            const last4 = paymentMethod.Details?.Last4;
+            const brand = paymentMethod.Details.Brand;
+            const last4 = paymentMethod.Details.Last4;
             return c('new_plans: info').t`${brand} ending in ${last4}`;
         case PAYMENT_METHOD_TYPES.PAYPAL:
-            return `PayPal - ${paymentMethod.Details?.PayerID}`;
+            return `PayPal - ${paymentMethod.Details.PayerID}`;
         default:
             return '';
     }
@@ -33,12 +33,12 @@ const getIcon = (paymentMethod: PaymentMethod): IconName | undefined => {
         return 'brand-paypal';
     }
     if (paymentMethod.Type === PAYMENT_METHOD_TYPES.CARD) {
-        switch (paymentMethod.Details.Brand) {
-            case 'American Express':
+        switch (paymentMethod.Details.Brand.toLowerCase()) {
+            case 'american express':
                 return 'brand-amex';
-            case 'Visa':
+            case 'visa':
                 return 'brand-visa';
-            case 'MasterCard':
+            case 'mastercard':
                 return 'brand-mastercard';
             default:
                 return 'credit-card';
