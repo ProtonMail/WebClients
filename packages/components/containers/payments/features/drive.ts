@@ -68,7 +68,8 @@ const getShareFeature = (): PlanCardFeatureDefinition => {
 const getAdvancedShareFeature = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Advanced sharing security`,
-        tooltip: 'Control access to your shared files by adding password protection and link expiration dates',
+        tooltip: c('new_plans: tooltip')
+            .t`Control access to your shared files by adding password protection and link expiration dates`,
         included: true,
     };
 };
