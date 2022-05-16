@@ -102,6 +102,7 @@ export const MAX_LENGTHS_API = {
     TITLE: 255,
     EVENT_DESCRIPTION: 3000,
     LOCATION: 255,
+    CALENDAR_URL: 10000,
 };
 
 export const MINIMUM_DATE = new Date(1970, 0, 1);
