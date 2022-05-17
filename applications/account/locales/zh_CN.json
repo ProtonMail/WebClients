@@ -2539,8 +2539,8 @@
       "Filter with this name already exists": [
         "这个名称已经用过了"
       ],
-      "Folder name cannot be empty": [
-        "文件夹名称不能为空"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "账号或密码有误，请重试。"
@@ -2584,8 +2584,8 @@
       "Invalid verification code": [
         "验证码无效"
       ],
-      "Label name cannot be empty": [
-        "标签名称不能为空"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -2755,11 +2755,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "文件夹名称不可用，请选择一个不同的名字。"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "标签名称不可用，请选择一个不同的名字。"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
@@ -3475,14 +3475,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "Google 账户的安全设置中已开启「允许不够安全的应用」选项"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "该邮箱开启了两步验证"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "该邮箱开启了两步验证"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "如果 Gmail 的${ bold2StepsDisabled }（这是 Gmail 的默认设置），请确认："
@@ -3496,11 +3496,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "如果${ bold2StepsEnabled }，请确认您的邮箱地址和应用专用密码输入无误。${ boldNot }输入您平常用的密码。"
       ],
-      "IMAP access is enabled in your external account": [
-        "您已在该邮箱中开启 IMAP 功能"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "您的 Yahoo 账户已开启 IMAP 功能"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "IMAP 端口号无效"
@@ -3541,23 +3541,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "您也可以尝试在浏览器中退出${ boldGoogleAccounts }，然后解锁${ linkCAPTCHA }。"
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "应用密码输入无误，${ boldNot }输入您平常用的密码"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "该邮箱需要应用专用密码才能导出数据"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "该邮箱需要应用专用密码才能导出数据"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "您的邮箱地址和应用专用密码输入无误，${ boldNot }输入您平常用的密码"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "您输入的邮箱地址和密码正确"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "密码输入无误"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3904,15 +3904,6 @@
       "* No credit card required.": [
         ""
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 特权存储空间"
       ],
@@ -4196,9 +4187,6 @@
         ""
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
@@ -7831,6 +7819,11 @@
         "使用 URL 新增公开、外部或分享的日历。"
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         ""
@@ -8803,9 +8796,6 @@
       ],
       "Select contact group": [
         "选择联系人群组"
-      ],
-      "Select subscription and pay": [
-        ""
       ],
       "Select the time to send this notification": [
         "选择发送该通知的时间"

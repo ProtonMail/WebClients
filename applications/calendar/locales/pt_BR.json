@@ -2026,8 +2026,8 @@
       "Failed to get original occurrence in series": [
         "Falha em obter a ocorrência original em série"
       ],
-      "Folder name cannot be empty": [
-        "O nome da pasta não pode ser vazio"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Falha no carregamento da imagem"
@@ -2065,8 +2065,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Só é possível mover eventos entre ${ minDateString } - ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "O nome do marcador não pode ser vazio"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mescle ao menos ${ calendarToFixCount } calendário com um calendário Proton existente",
@@ -2183,11 +2183,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Este nome para a pasta não está disponível. Por favor, escolha outro nome"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Este nome de marcador não está disponível. Por favor, escolha outro nome"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Esta mensagem pode conter algum link que pode não ser aberto corretamente pelo seu navegador"
@@ -4374,6 +4374,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Impossível adicionar mais calendários. Você atingiu o limite máximo de inscrições em calendários do seu plano."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {

@@ -2539,8 +2539,8 @@
       "Filter with this name already exists": [
         "Filter dengan nama ini sudah ada"
       ],
-      "Folder name cannot be empty": [
-        "Nama folder tidak bisa dikosongkan"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
@@ -2584,8 +2584,8 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
-      "Label name cannot be empty": [
-        "Nama label tidak boleh kosong"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
@@ -2755,11 +2755,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Nama folder ini tidak tersedia. Mohon pilih nama lain"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Label nama tidak tersedia. Mohon pilih nama lain"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
@@ -3475,14 +3475,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Akses aplikasi kurang aman\" diaktifkan di pengaturan keamanan akun Google Anda"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "verifikasi 2 langkah telah diaktifkan di akun eksternal Anda"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
@@ -3496,11 +3496,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
       ],
-      "IMAP access is enabled in your external account": [
-        "Akses IMAP telah diaktifkan di akun eksternal Anda"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Akses IMAP telah diaktifkan di akun Yahoo Anda"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Port IMAP tidak valid"
@@ -3541,23 +3541,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi Anda biasanya"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "akun surel Anda memerlukan satu untuk mengekspor data"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "alamat email dan kata sandi Anda sudah benar"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "kata sandi Anda benar"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3904,15 +3904,6 @@
       "* No credit card required.": [
         "* Tanpa perlu kartu kredit."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 1 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 12 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* Dengan berlangganan selama 24 bulan. Opsi berlangganan lainnya tersedia untuk dipilih pada proses checkout."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus penyimpanan"
       ],
@@ -4197,9 +4188,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Saldo yang belum terpakai dari paket langganan Anda sebelumnya"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Segala saldo, uang kembali, dan kupon yang dapat digunakan akan diproses pada saat checkout"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Saat ini semua ruang penyimpanan yang tersedia dialokasikan ke akun administrator. Harap kurangi alokasi untuk memberi jatah ruang kosong kepada pengguna tambahan. Anda dapat meningkatkan total ruang penyimpanan Anda kapan saja dengan meningkatkan akun Anda."
@@ -7831,6 +7819,11 @@
         "Gunakan URL untuk menambahkan kalender umum, luar, atau bersama."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } kalender per pengguna"
@@ -8803,9 +8796,6 @@
       ],
       "Select contact group": [
         "Pilih grup kontak"
-      ],
-      "Select subscription and pay": [
-        "Pilih jenis langgganan dan bayar"
       ],
       "Select the time to send this notification": [
         "Pilih waktu pengiriman notifikasi"

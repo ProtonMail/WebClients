@@ -2026,8 +2026,8 @@
       "Failed to get original occurrence in series": [
         "Dizideki özgün yinelenme alınamadı"
       ],
-      "Folder name cannot be empty": [
-        "Klasör adı boş olamaz"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -2065,8 +2065,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler taşınabilir"
       ],
-      "Label name cannot be empty": [
-        "Etiket adı boş olamaz"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
@@ -2183,11 +2183,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir"
@@ -4359,6 +4359,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Daha fazla takvim oluşturulamıyor. Tarifenizdeki en fazla abone olunabilecek takvim sayısına ulaştınız."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {
