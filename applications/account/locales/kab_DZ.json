@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Amsizdeg yesɛan isem-agi yella yakan"
       ],
-      "Folder name cannot be empty": [
-        "Isem n ukaram ur ilaq ara ad yili d ilem"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         ""
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
-      "Label name cannot be empty": [
-        "Isem n tebzimt ur ilaq ara ad yili d ilem"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Urti-a isra ma drus ${ minimumLength } n yizamulen."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Isem n ukaram-a ulac-it. Ttxil-k·m fren isem-nniḍen"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Isem n tebzimt-a ulac-it. Ttxil-k·m fren isem-nniḍen"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Izen-a izmer ad igber kra n tansiwin URL ahat ur neldi ara akken iwata deg iminig-innek•inem amiran"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Anekcum i yusnasen i yesεan taɣelist meẓẓiyen\" irmed deg yiɣewwaṛen n umiḍan-ik·im Google"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "Asenqed ɣef sin yiḥricen yermed deg umiḍan-ik·im azɣaray"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "Asenqed s sin yiḥricen yermed deg umiḍan-ik·im n yimayl azɣaray"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Ma yella ${ bold2StepsDisabled } (iɣewwaren n Gmail imezwer), ttxil-k·m wali ma yella:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Ma yella ${ bold2StepsEnabled }, ttxil-k·m senqed tansa-inek·inem n yimayl akked wawal uffir ma yella d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir i tseqdaceḍ."
       ],
-      "IMAP access is enabled in your external account": [
-        "Anekcum IMAP yermed deg umiḍan-ik·im azɣaray"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Anekcum IMAP yermed deg umiḍan-ik·im Yahoo"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Tawwurt IMAP tarmeɣtut"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Mazal tzemreḍ ad tɛerḍeḍ ad teffɣeḍ seg ${ boldGoogleAccounts } deg yiminig, syen kkes asekker n ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "awal-ik·im uffir d ameɣtu. Seqdec ${ boldNot } awal-ik·im uffir n tannumi"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "amiḍan-ik·im n yimayl yesra awal uffir i usifeḍ n yisefka-inek·inem"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "amiḍan-ik·im n yimayl yesra yiwen i usifeḍ n yisefka-inek·inem"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "tansal-inek·inem n yimayl akked wawal uffir d imeɣta. Seqdec ${ boldNot } awal-ik·im uffir n tannumi"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "tansa-inek·inem n yiamyl akked wawal uffir d imeɣta"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "awal-ik·im uffir d arameɣtu"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         ""
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } n usekles n ubunus"
       ],
@@ -4254,9 +4245,6 @@
         ""
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
@@ -7905,6 +7893,11 @@
         "Rnu iwitayen izuyaz, iẓɣarayen neɣ yettwabḍan s useqdec n URL."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "",
@@ -8894,9 +8887,6 @@
       ],
       "Select contact group": [
         "Fren agraw n unermes"
-      ],
-      "Select subscription and pay": [
-        ""
       ],
       "Select the time to send this notification": [
         "Fren akud ideg ara yettwazen walɣu-a"

@@ -2825,8 +2825,8 @@
       "Filter with this name already exists": [
         "篩選器名稱重複"
       ],
-      "Folder name cannot be empty": [
-        "資料夾名稱不能留空"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -2849,8 +2849,8 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
-      "Label name cannot be empty": [
-        "標籤名稱不能留空"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         ""
@@ -3005,11 +3005,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "此資料夾名稱無法使用。請選擇其他名稱"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "此標籤名稱無法使用。請選擇其他名稱"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "這封郵件已寄出。"
@@ -4128,11 +4128,11 @@
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
       ],
-      "Learn more": [
-        "了解更多"
-      ],
       "learn more": [
         ""
+      ],
+      "Learn more": [
+        "了解更多"
       ],
       "Left to Right": [
         "由左至右"

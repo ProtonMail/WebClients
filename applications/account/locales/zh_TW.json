@@ -2539,8 +2539,8 @@
       "Filter with this name already exists": [
         "以此為名的篩選器已存在"
       ],
-      "Folder name cannot be empty": [
-        "資料夾名稱不能留空"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -2584,8 +2584,8 @@
       "Invalid verification code": [
         "驗證碼無效"
       ],
-      "Label name cannot be empty": [
-        "標籤名稱不能留空"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
@@ -2755,11 +2755,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "此資料夾名稱無法使用。請換另一個名稱"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "此標籤名稱無法使用。請換另一個名稱"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
@@ -3475,14 +3475,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "您的 Google 帳號安全設定中已開啟「低安全性應用程式存取權」"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "您的外部帳號已啟用兩步驟驗證"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "您的外部電子郵件帳號已啟用兩步驟驗證"
+      "2-step verification is enabled in your external email account.": [
+        "您的外部電子郵件帳號已啟用兩步驟驗證."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
@@ -3496,11 +3496,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "如果 ${ bold2StepsEnabled }，請確保您的電子郵件地址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
       ],
-      "IMAP access is enabled in your external account": [
-        "您的外部帳號已啟用 IMAP 存取。"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "您的 Yahoo 帳號已啟用 IMAP 存取"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "無效的 IMAP 連接埠"
@@ -3541,23 +3541,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "您的應用程式密碼正確無誤。${ boldNot } 使用您的一般密碼"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "您的電子郵件帳號要求應用程式密碼，方可匯出您的資料"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "您的電子郵件帳號如此要求，方可匯出您的資料"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "您的電子郵件地址和應用程式密碼均為正確。${ boldNot } 使用您的一般密碼"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "您的電子郵件地址和密碼均為正確"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "您的密碼正確無誤"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3904,15 +3904,6 @@
       "* No credit card required.": [
         ""
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
       ],
@@ -4197,9 +4188,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
@@ -7831,6 +7819,11 @@
         "使用 URL 新增公開、外部或分享的行事曆。"
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         ""
@@ -8803,9 +8796,6 @@
       ],
       "Select contact group": [
         "選擇聯絡人群組"
-      ],
-      "Select subscription and pay": [
-        ""
       ],
       "Select the time to send this notification": [
         "請選擇此通知發送的時間"
