@@ -69,7 +69,7 @@ export const getVPNSpeed = (type: 'medium' | 'highest', fire?: boolean): PlanCar
         tooltip: '',
         included: true,
         fire,
-        icon: 'checkmark-circle',
+        icon: 'chevrons-right',
     };
 };
 
@@ -90,7 +90,7 @@ export const getP2P = (included: boolean, fire?: boolean): PlanCardFeatureDefini
         tooltip: c('new_plans: tooltip').t`Support for file-sharing protocols like BitTorrent`,
         included,
         fire,
-        icon: 'users',
+        icon: 'arrows-switch',
     };
 };
 
@@ -147,7 +147,7 @@ export const getVPNConnections = (n = 0, fire?: boolean): PlanCardFeatureDefinit
         tooltip: '',
         included: true,
         fire,
-        icon: 'checkmark-circle',
+        icon: 'brand-proton-vpn',
     };
 };
 export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
@@ -157,6 +157,7 @@ export const getNoLogs = (fire?: boolean): PlanCardFeatureDefinition => {
             .t`We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy`,
         included: true,
         fire,
+        icon: 'alias',
     };
 };
 const getBandwidth = (): PlanCardFeatureDefinition => {
