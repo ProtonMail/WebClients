@@ -171,7 +171,10 @@ const MessagesSection = () => {
                 <SettingsLayoutLeft>
                     <label htmlFor="spamActionLabelSelect" className="text-semibold">
                         <span className="mr0-5">{c('Label').t`Spam filtering`}</span>
-                        <Info title={c('Tooltip').t`TODO`} />
+                        <Info
+                            title={c('Tooltip')
+                                .t`If you're getting emails you don't want in your inbox, you can block or unsubscribe from the sender.`}
+                        />
                     </label>
                 </SettingsLayoutLeft>
                 <SettingsLayoutRight className="pt0-5">
