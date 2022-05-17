@@ -105,12 +105,13 @@ export const deleteConversations = (IDs: string[], LabelID: string) => ({
 interface LabelConversationsProps {
     LabelID: string;
     IDs: string[];
+    SpamAction?: number;
 }
 
-export const labelConversations = ({ LabelID, IDs }: LabelConversationsProps) => ({
+export const labelConversations = ({ LabelID, IDs, SpamAction }: LabelConversationsProps) => ({
     method: 'put',
     url: 'mail/v4/conversations/label',
-    data: { LabelID, IDs },
+    data: { LabelID, IDs, SpamAction },
 });
 
 export const unlabelConversations = ({ LabelID, IDs }: LabelConversationsProps) => ({
