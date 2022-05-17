@@ -2558,7 +2558,7 @@
       "Filter with this name already exists": [
         ""
       ],
-      "Folder name cannot be empty": [
+      "Folder name cannot be empty.": [
         ""
       ],
       "Incorrect login credentials. Please try again.": [
@@ -2603,7 +2603,7 @@
       "Invalid verification code": [
         ""
       ],
-      "Label name cannot be empty": [
+      "Label name cannot be empty.": [
         ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
@@ -2776,10 +2776,10 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         ""
       ],
-      "This folder name is not available. Please choose a different name": [
+      "This folder name is not available. Please choose a different name.": [
         ""
       ],
-      "This label name is not available. Please choose a different name": [
+      "This label name is not available. Please choose a different name.": [
         ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
@@ -3510,13 +3510,13 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
         ""
       ],
-      "2-step verification is enabled in your external account": [
+      "2-step verification is enabled in your external account.": [
         ""
       ],
-      "2-step verification is enabled in your external email account": [
+      "2-step verification is enabled in your external email account.": [
         ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
@@ -3531,10 +3531,10 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         ""
       ],
-      "IMAP access is enabled in your external account": [
+      "IMAP access is enabled in your external account.": [
         ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
+      "IMAP access is enabled in your Yahoo account.": [
         ""
       ],
       "Invalid IMAP port": [
@@ -3576,22 +3576,22 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         ""
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
         ""
       ],
-      "your email account requires an app password to export your data": [
+      "Your email account requires an app password to export your data.": [
         ""
       ],
-      "your email account requires one to export your data": [
+      "Your email account requires one to export your data.": [
         ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         ""
       ],
-      "your email address and password are correct": [
+      "Your email address and password are correct.": [
         ""
       ],
-      "your password is correct": [
+      "Your password is correct.": [
         ""
       ]
     },
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         ""
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         ""
       ],
@@ -4254,9 +4245,6 @@
         ""
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
@@ -7905,6 +7893,11 @@
         ""
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "",
@@ -8893,9 +8886,6 @@
         ""
       ],
       "Select contact group": [
-        ""
-      ],
-      "Select subscription and pay": [
         ""
       ],
       "Select the time to send this notification": [

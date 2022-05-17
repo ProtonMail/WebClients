@@ -2539,8 +2539,8 @@
       "Filter with this name already exists": [
         "この名前のフィルターが既に存在します"
       ],
-      "Folder name cannot be empty": [
-        "フォルダー名は空にはできません"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "ログイン情報が正しくありません。もう一度やり直してください。"
@@ -2584,8 +2584,8 @@
       "Invalid verification code": [
         "無効な認証コードです"
       ],
-      "Label name cannot be empty": [
-        "ラベル名は空欄にできません"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
@@ -2755,11 +2755,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには最低${ minimumLength } 文字が必要です。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "このフォルダー名は利用できません。別の名前を選択してください"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "このラベル名は利用できません。別の名前を選択してください"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
@@ -3475,14 +3475,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "Googleアカウントのセキュリティ設定で「あまり安全ではないアプリアクセス」がオンになっています"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "2段階認証は外部アカウントで有効になっています"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "2段階認証は外部メールアカウントで有効になっています"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "${ bold2StepsDisabled } (デフォルトのGmail設定) の場合は、以下を確認してください:"
@@ -3496,11 +3496,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "${ bold2StepsEnabled } の場合は、メールアドレスとアプリのパスワードが正しいことを確認してください。${ boldNot } は通常のパスワードを使用します。"
       ],
-      "IMAP access is enabled in your external account": [
-        "IMAPアクセスは外部アカウントで有効になっています"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "IMAP アクセスは Yahoo アカウントで有効になっています"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "無効な IMAP ポート番号"
@@ -3541,23 +3541,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "アプリのパスワードは正しいです。${ boldNot } 通常のパスワードを使用してください"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "あなたの電子メールアカウントは、データをエクスポートするためにアプリのパスワードを必要としています。"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "あなたのメールアカウントはあなたのデータをエクスポートするために必要です"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "メールアドレスとアプリのパスワードは正しいです。${ boldNot } 通常のパスワードを使用してください"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "あなたのメールアドレスとパスワードは正しいです"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "パスワードは正しいです。"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3904,15 +3904,6 @@
       "* No credit card required.": [
         "* クレジットカードは必要ありません。"
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* 12 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* 24 か月のサブスクリプション その他のサブスクリプションのオプションははチェックアウト時に選択できます。"
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ボーナスストレージ"
       ],
@@ -4196,9 +4187,6 @@
         "アカウントを作成しています"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
@@ -7831,6 +7819,11 @@
         ""
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         ""
@@ -8803,9 +8796,6 @@
       ],
       "Select contact group": [
         "連絡先グループを選択"
-      ],
-      "Select subscription and pay": [
-        "サブスクリプションを選んで決済"
       ],
       "Select the time to send this notification": [
         ""

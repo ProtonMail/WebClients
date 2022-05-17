@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Já existe um filtro com este nome"
       ],
-      "Folder name cannot be empty": [
-        "O nome da pasta não pode estar vazio"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Falha no carregamento da imagem"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Código de verificação inválido"
       ],
-      "Label name cannot be empty": [
-        "O nome do marcador não pode ser vazio"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Número máximo de anexos (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) excedido."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo exige um mínimo de ${ minimumLength } caracteres."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Este nome para a pasta não está disponível. Por favor, escolha outro nome"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Este nome de marcador não está disponível. Por favor, escolha outro nome"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Esta mensagem já foi enviada"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Grandes importações podem levar vários dias."
       ],
-      "Learn more": [
-        "Saiba mais"
-      ],
       "learn more": [
         "saiba mais"
+      ],
+      "Learn more": [
+        "Saiba mais"
       ],
       "Left to Right": [
         "Esquerda para direita"

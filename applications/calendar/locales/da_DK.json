@@ -2026,8 +2026,8 @@
       "Failed to get original occurrence in series": [
         "Kunne ikke hente original forekomst i serie"
       ],
-      "Folder name cannot be empty": [
-        "Mappenavn må ikke være tomt"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
@@ -2065,8 +2065,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Det er kun muligt at flytte begivenheder mellem ${ minDateString } - ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "Etikettenavn må ikke være tomt"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
@@ -2183,11 +2183,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
@@ -4359,6 +4359,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Det er ikke muligt at oprette flere kalendere. Du har nået det maksimale antal tilmeldte kalendere for dit abonnement."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {

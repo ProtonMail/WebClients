@@ -2596,8 +2596,8 @@
       "Filter with this name already exists": [
         "Filtr s tímto názvem již existuje"
       ],
-      "Folder name cannot be empty": [
-        "Název složky nemůže být prázdný"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávné přihlašovací údaje. Zkuste to znovu."
@@ -2641,8 +2641,8 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Label name cannot be empty": [
-        "Název štítku nemůže být prázdný"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -2818,11 +2818,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Tento název složky není k dispozici. Zvolte prosím jiný název"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Tento název štítku není k dispozici. Zvolte prosím jiný název"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva může obsahovat některé URL odkazy, které nelze otevřít Vaším současným prohlížečem"
@@ -3580,14 +3580,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Méně bezpečný přístup k aplikaci\" je zapnut v nastavení zabezpečení vašeho účtu Google"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "Na Vašem vzdáleném účtu je povolené dvoufázové ověření"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "Na vašem externím e-mailovém účtu je povoleno dvoufázové ověření"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Pokud ${ bold2StepsDisabled } (výchozí nastavení Gmail), ujistěte se prosím:"
@@ -3601,11 +3601,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa e-mailu a heslo aplikace jsou správné. Proveďte ${ boldNot } použijte běžné heslo."
       ],
-      "IMAP access is enabled in your external account": [
-        "Přístup IMAP je povolen ve vašem vzdáleném účtu"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Přístup skrze IMAP k vašemu Yahoo účtu je aktivní"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Neplatný IMAP port"
@@ -3646,23 +3646,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Můžete se také zkusit odhlásit z ${ boldGoogleAccounts } a následně odemknout ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "vaše helso pro aplikaci je správné. ${ boldNot } použijte Vaše běžné heslo"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "váš e-mailový účet tohle vyžaduje pro export vašich dat"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "vaše mailová adresa a heslo aplikace jsou správné. ${ boldNot } použijte Vaše běžné heslo"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "vaše e-mailová adresa a heslo jsou správné"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "heslo není správné"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -4063,15 +4063,6 @@
       "* No credit card required.": [
         "* Kreditní karta není vyžadována."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
       ],
@@ -4370,9 +4361,6 @@
         "Vytvářím váš účet"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
@@ -8053,6 +8041,11 @@
         "Přidání veřejných, externích nebo sdílených kalendářů pomocí URL adresy."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "",
@@ -9076,9 +9069,6 @@
       ],
       "Select contact group": [
         "Vybrat skupinu kontaktů"
-      ],
-      "Select subscription and pay": [
-        ""
       ],
       "Select the time to send this notification": [
         "Vyberte čas pro odeslání tohoto oznámení"

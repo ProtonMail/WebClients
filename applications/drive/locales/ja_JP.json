@@ -1788,8 +1788,8 @@
       "Folder \"${ name }\" is already downloading": [
         "フォルダー \"${ name }\" はすでにダウンロード中です"
       ],
-      "Folder name cannot be empty": [
-        "フォルダー名は空欄にできません"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました。"
@@ -1812,8 +1812,8 @@
       "Invalid verification code": [
         "無効な検証コードです"
       ],
-      "Label name cannot be empty": [
-        "ラベル名は空欄にできません"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
@@ -1926,11 +1926,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "このフィールドには最低でも ${ minimumLength } 文字必要です。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "このフォルダー名は利用できません。別の名前を選択してください"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "このラベル名は利用できません。別の名前を選択してください"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"

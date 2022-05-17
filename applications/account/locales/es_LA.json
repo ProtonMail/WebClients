@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Ya existe un filtro con este nombre"
       ],
-      "Folder name cannot be empty": [
-        "El nombre de la carpeta no puede estar vacío"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Credenciales de acceso incorrectas. Por favor, intente de nuevo."
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Código de verificación inválido"
       ],
-      "Label name cannot be empty": [
-        "El nombre de la etiqueta no puede estar vacío"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Este nombre de carpeta no está disponible. Elija un nombre diferente."
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Este mensaje puede contener la URL de un enlace que no puede abrirse correctamente en el navegador actual"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "El \"acceso menos seguro a la aplicación\" está habilitado en los ajustes de seguridad de su cuenta de Google"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "la verificación en dos pasos está habilitada en su cuenta externa"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "la verificación en dos pasos está habilitada en su cuenta de correo externa"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Si ${ bold2StepsDisabled } (configuración de Gmail predeterminada), asegúrese de que:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Si ${ bold2StepsEnabled }, asegúrese de que su dirección de correo electrónico y contraseña de la aplicación son correctas. ${ boldNot } utilice su contraseña regular."
       ],
-      "IMAP access is enabled in your external account": [
-        "El acceso IMAP está habilitado en su cuenta externa"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "El acceso IMAP está habilitado en su cuenta de Yahoo Mail"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Puerto IMAP inválido"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "También puede intentar cerrar sesión de ${ boldGoogleAccounts } en el navegador y luego desbloquear el ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "la contraseña de su aplicación es correcta. ${ boldNot } use su contraseña regular"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "su cuenta de correo requiere una contraseña de la aplicación para exportar sus datos"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "su cuenta de correo electrónico requiere una para exportar sus datos"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "su dirección de correo electrónico y contraseña de la aplicación son correctos. ${ boldNot } use su contraseña regular"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "su dirección de correo electrónico y contraseña son correctas"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "su contraseña es correcta"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         "* No se requiere tarjeta de crédito."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Con un mes de suscripción. Otras opciones de suscripción disponibles al pagar."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* Con 12 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* Con 24 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } almacenamiento adicional"
       ],
@@ -4255,9 +4246,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Crédito por la parte no usada de su suscripción al plan anterior"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Los créditos, prorrateo y cualquier cupón serán aplicados al pagar"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible se asigna a la cuenta de administrador. Reduzca la asignación de la cuenta de administrador para liberar espacio para usuarios adicionales. Puede aumentar el almacenamiento total en cualquier momento al actualizar su cuenta."
@@ -8582,6 +8570,11 @@
         "Añadir calendario compartido, público o externo mediante URL."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } calendario por usuario",
@@ -9571,9 +9564,6 @@
       ],
       "Select contact group": [
         "Seleccionar grupo de contactos"
-      ],
-      "Select subscription and pay": [
-        "Seleccionar suscripción y pagar"
       ],
       "Select the time to send this notification": [
         "Seleccione la hora de envío de esta notificación"

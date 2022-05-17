@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
-      "Folder name cannot be empty": [
-        "Το όνομα φακέλου δεν γίνεται να είναι κενό"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Η μεταφόρτωση της εικόνας απέτυχε"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
-      "Label name cannot be empty": [
-        "Το όνομα ετικέτας δεν γίνεται να είναι κενό"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Αυτό το μήνυμα έχει ήδη αποσταλεί"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "Learn more": [
-        "Μάθετε περισσότερα"
-      ],
       "learn more": [
         ""
+      ],
+      "Learn more": [
+        "Μάθετε περισσότερα"
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"

@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
-      "Folder name cannot be empty": [
-        "Klasör adı boş olamaz"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
-      "Label name cannot be empty": [
-        "Etiket adı boş olamaz"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık mı"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş mi"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "Dış e-posta hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş mi"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "${ bold2StepsDisabled } (varsayılan Gmail ayarı) ise, lütfen şundan emin olun:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanız ${ boldNot }."
       ],
-      "IMAP access is enabled in your external account": [
-        "Dış hesabınızda IMAP erişimi etkinleştirilmiş mi"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Yahoo hesabınızda IMAP erişimi etkinleştirilmiş mi"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "IMAP bağlantı noktası geçersiz"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Ayrıca web tarayıcıda açık olan ${ boldGoogleAccounts } oturumlarını kapatıp sonrasında ${ linkCAPTCHA } doğrulamasını açmayı deneyebilirsiniz."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "uygulama parolanız doğru. Normal parolanız ${ boldNot }"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "e-posta hesabınızda, verilerinizi dışa aktarmak için bir uygulama parolası gerekiyor"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "e-posta hesabınızda verilerinizi dışa aktarmak için bir tane gerekiyor"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "eposta adresiniz ve uygulama parolanız doğru mu. Normal parolanız ${ boldNot }"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "e-posta adresiniz ve parolanız doğru mu"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "parolanız doğru mu"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         "* Kredi kartı gerekmez."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* 1 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* 12 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* 24 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } ek depolama alanı"
       ],
@@ -4255,9 +4246,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Önceki tarife aboneliğinizin kullanılmayan bölümünden kalan kredi"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Krediler, eşit dağıtım ve geçerli kuponlar ödeme sırasında uygulanır"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Şu anda kullanılabilecek tüm depolama alanı yönetici hesabına ayrılmış. Lütfen ek kullanıcılara yer açmak için yönetici hesabına ayrılan alanı azaltın. İstediğiniz zaman toplam depolama alanını artırmak için hesabınızı yükseltebilirsiniz."
@@ -7905,6 +7893,11 @@
         "Adresini yazarak, herkese açık, dış ya da paylaşılmış takvimler ekleyin."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "Kullanıcı başına ${ _n } takvim",
@@ -8894,9 +8887,6 @@
       ],
       "Select contact group": [
         "Kişi grubunu seçin"
-      ],
-      "Select subscription and pay": [
-        "Aboneliği ve ödemeyi seçin"
       ],
       "Select the time to send this notification": [
         "Bu bildirimin gönderileceği zamanı seçin"

@@ -2867,8 +2867,8 @@
       "Filter with this name already exists": [
         "Filtr s tímto názvem již existuje"
       ],
-      "Folder name cannot be empty": [
-        "Název složky nesmí být prázdný"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Nahrávání obrázku se nezdařilo"
@@ -2891,8 +2891,8 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Label name cannot be empty": [
-        "Název štítku nesmí být prázdný"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Maximální počet příloh (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) překročen."
@@ -3065,11 +3065,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole musí obsahovat minimálně ${ minimumLength } znaků."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Tento název složky není k dispozici. Zvolte prosím jiný název"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Tento název štítku není k dispozici. Zvolte prosím jiný název"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Tato zpráva byla již odeslána"
@@ -4341,11 +4341,11 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "Learn more": [
-        "Zjistěte více"
-      ],
       "learn more": [
         "více informací"
+      ],
+      "Learn more": [
+        "Zjistěte více"
       ],
       "Left to Right": [
         "Zleva doprava"

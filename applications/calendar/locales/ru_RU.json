@@ -2054,8 +2054,8 @@
       "Failed to get original occurrence in series": [
         "Не удалось загрузить начальное вхождение в серию событий"
       ],
-      "Folder name cannot be empty": [
-        "Название папки не может быть пустым"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Не удалось загрузить изображение"
@@ -2093,8 +2093,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Перемещать события можно только в интервале ${ minDateString } - ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "Название ярлыка не может быть пустым"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
@@ -2219,11 +2219,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Минимальная длина для этого поля: ${ minimumLength }."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Это имя папки недоступно. Пожалуйста, выберите другое название"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Это название ярлыка недоступно. Пожалуйста, выберите другое название"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты в вашем текущем браузере"
@@ -4536,6 +4536,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Невозможно добавить дополнительные календари. Вы достигли максимального количества подписанных календарей в рамках вашего тарифа."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {

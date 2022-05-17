@@ -2596,8 +2596,8 @@
       "Filter with this name already exists": [
         "Фильтр с таким именем уже существует"
       ],
-      "Folder name cannot be empty": [
-        "Имя папки не может быть пустым"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Неверные учетные данные для входа. Пожалуйста, попробуйте снова."
@@ -2641,8 +2641,8 @@
       "Invalid verification code": [
         "Неверный проверочный код"
       ],
-      "Label name cannot be empty": [
-        "Название ярлыка не может быть пустым"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
@@ -2818,11 +2818,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Минимальная длина для этого поля: ${ minimumLength }."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Это название папки недоступно. Пожалуйста, выберите другое название"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Это название ярлыка недоступно. Пожалуйста, выберите другое название"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Это сообщение может содержать ссылки, которые не могут быть правильно открыты вашим текущим браузером"
@@ -3580,14 +3580,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "В настройках безопасности аккаунта Google включен \"Доступ для менее безопасных приложений\""
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "Двухэтапная верификация включена в Вашем внешнем аккаунте"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "Двухэтапная верификация включена в Вашем внешнем аккаунте эл. почты"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Если ${ bold2StepsDisabled } в Gmail (по умолчанию), убедитесь, что:"
@@ -3601,11 +3601,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Если ${ bold2StepsEnabled }, пожалуйста, убедитесь, что ваш адрес электронной почты и пароль от приложения правильны. ${ boldNot } используйте ваш обычный пароль."
       ],
-      "IMAP access is enabled in your external account": [
-        "во внешнем аккаунте включен IMAP"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "В вашей учетной записи Yahoo включен IMAP"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Недопустимый порт IMAP"
@@ -3646,23 +3646,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Вы также можете попробовать выйти из ${ boldGoogleAccounts } в браузере, затем разблокировать ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "ваш пароль приложения правильный. ${ boldNot } используйте ваш обычный пароль"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "ваш аккаунт электронной почты требует пароль приложения для экспорта ваших данных"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "ваш аккаунт электронной почты требует его для экспорта ваших данных"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "ваш адрес эл. почты и пароль приложения верны. ${ boldNot } используя ваш обычный пароль"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "ваш адрес электронной почты и пароль верны"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "ваш пароль правильный"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -4063,15 +4063,6 @@
       "* No credit card required.": [
         "* Кредитная карточка не требуется."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* С подпиской на 1 месяц. Другие варианты подписки доступны при оформлении."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* С подпиской на 12 месяцев. Другие варианты подписки доступны при оформлении."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* С подпиской на 24 месяца. Другие варианты подписки доступны при оформлении."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
       ],
@@ -4371,9 +4362,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Остатки на счете, скидки и любые действующие купоны применяются при оформлении заказа"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "В настоящее время всё хранилище принадлежит учётной записи администратора. Пожалуйста, уменьшите выделенный для неё объём, чтобы освободить место для дополнительных пользователей. Вы можете увеличить общий объём хранилища в любое время, выбрав другой тариф."
@@ -8764,6 +8752,11 @@
         "Добавляйте публичные, внешние мли общие календари, используя URL-адерса."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } календарь на пользователя",
@@ -9787,9 +9780,6 @@
       ],
       "Select contact group": [
         "Выбор группы контактов"
-      ],
-      "Select subscription and pay": [
-        "Выберите подписку и оплатите"
       ],
       "Select the time to send this notification": [
         "Выберите время отправки этого уведомления"

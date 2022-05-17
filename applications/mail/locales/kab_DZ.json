@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Amsizdeg yesɛan isem-agi yella yakan"
       ],
-      "Folder name cannot be empty": [
-        "Isem n ukaram ur ilaq ara ad yili d ilem"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Asali n tugna yecceḍ"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
       ],
-      "Label name cannot be empty": [
-        "Isem n tebzimt ur ilaq ara ad yili d ilem"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         ""
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Urti-a isra ma drus ${ minimumLength } n yizamulen."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Isem n ukaram-a ulac-it. Ttxil-k·m fren isem-nniḍen"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Isem n tebzimt-a ulac-it. Ttxil-k·m fren isem-nniḍen"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Izen-a dayen yettwazen"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         ""
       ],
-      "Learn more": [
-        "Issin ugar"
-      ],
       "learn more": [
         "issin ugar"
+      ],
+      "Learn more": [
+        "Issin ugar"
       ],
       "Left to Right": [
         "Seg uzelmad s ayeffus"

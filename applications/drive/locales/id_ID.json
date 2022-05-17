@@ -1788,8 +1788,8 @@
       "Folder \"${ name }\" is already downloading": [
         "Proses unduhan folder \"${ name }\" sedang berlangsung"
       ],
-      "Folder name cannot be empty": [
-        "Nama folder tidak boleh kosong"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Gagal unggah gambar"
@@ -1812,8 +1812,8 @@
       "Invalid verification code": [
         "Kode verifikasi tidak valid"
       ],
-      "Label name cannot be empty": [
-        "Nama label tidak boleh kosong"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
@@ -1926,11 +1926,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Kolom ini wajib diisi dengan minimal ${ minimumLength } karakter."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Nama label ini tidak dapat digunakan. Mohon pilih nama lain"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
