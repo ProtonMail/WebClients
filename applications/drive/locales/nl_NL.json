@@ -1793,8 +1793,8 @@
       "Folder \"${ name }\" is already downloading": [
         "Map \"${ name }\" wordt reeds gedownload"
       ],
-      "Folder name cannot be empty": [
-        "Mapnaam kan niet leeg zijn"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -1817,8 +1817,8 @@
       "Invalid verification code": [
         "Ongeldige verificatiecode"
       ],
-      "Label name cannot be empty": [
-        "Label naam mag niet leeg zijn"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
@@ -1935,11 +1935,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Deze mapnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"

@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
       ],
-      "Folder name cannot be empty": [
-        "Mappenavnet kan ikke være tomt"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Ugyldig bekræftelseskode"
       ],
-      "Label name cannot be empty": [
-        "Etikettenavn må ikke være tomt"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Mindre sikker app-adgang\" er slået til i dine Google-kontosikkerhedsindstillinger"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "Totrinsbekræftelse er aktiveret på din eksterne konto"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "2-trins verifikation er aktiveret på din eksterne e-mail-konto"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
-      "IMAP access is enabled in your external account": [
-        "IMAP-adgang er aktiveret på din eksterne konto"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "IMAP-adgang er aktiveret på din Yahoo-konto"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Ugyldig IMAP- port"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "din e-mail-konto kræver en app adgangskode for at eksportere dine data"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "din e-mail-konto kræver en for at eksportere dine data"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "din e-mailadresse og adgangskode er korrekte"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "din adgangskode er korrekt"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         "* Der kræves ikke kreditkort."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Med 1-måneds abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* Med 12-måneders abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* Med 24-måneders abonnement. Andre abonnementsmuligheder er tilgængelige ved afregning."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus lagerplads"
       ],
@@ -4255,9 +4246,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit for den ubrugte del af dit tidligere abonnement"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Kreditter, proratering og eventuelle kuponer anvendes ved afregningen"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
@@ -7905,6 +7893,11 @@
         "Tilføj offentlige, eksterne eller delte kalendere ved hjælp af en URL."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } kalender pr. bruger",
@@ -8894,9 +8887,6 @@
       ],
       "Select contact group": [
         "Vælg kontaktgruppe"
-      ],
-      "Select subscription and pay": [
-        "Vælg abonnement og betal"
       ],
       "Select the time to send this notification": [
         "Vælg tid for afsendelse af denne notifikation"

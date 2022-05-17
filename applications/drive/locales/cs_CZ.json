@@ -1803,8 +1803,8 @@
       "Folder \"${ name }\" is already downloading": [
         "Složka \"${ name }\" se již stahuje"
       ],
-      "Folder name cannot be empty": [
-        "Název složky nemůže být prázdné"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Nahrání obrázku se nezdařilo"
@@ -1827,8 +1827,8 @@
       "Invalid verification code": [
         "Neplatný ověřovací kód"
       ],
-      "Label name cannot be empty": [
-        "Název štítku nemůže být prázdné"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -1953,11 +1953,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Tento název složky není k dispozici. Zvolte prosím jiný název"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Tento název štítku není k dispozici. Zvolte prosím jiný název"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva může obsahovat některé URL odkazy, které nelze otevřít Vaším současným prohlížečem"

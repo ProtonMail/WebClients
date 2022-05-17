@@ -2026,8 +2026,8 @@
       "Failed to get original occurrence in series": [
         "Αποτυχία λήψης αρχικού περιστατικού στη σειρά"
       ],
-      "Folder name cannot be empty": [
-        "Το όνομα φακέλου δεν γίνεται να είναι κενό"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Η μεταφόρτωση της εικόνας απέτυχε"
@@ -2065,8 +2065,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Είναι δυνατή μόνο η μετακίνηση γεγονότων, μεταξύ ${ minDateString } - ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "Το όνομα ετικέτας δεν γίνεται να είναι κενό"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -2183,11 +2183,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
@@ -4359,6 +4359,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Δεν είναι δυνατή η προσθήκη περισσότερων ημερολογίων. Έχετε φτάσει στο μέγιστο των εγγεγραμμένων ημερολογίων στο πρόγραμμά σας."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {

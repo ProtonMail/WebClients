@@ -1788,8 +1788,8 @@
       "Folder \"${ name }\" is already downloading": [
         "文件夹“${ name }”已在下载中"
       ],
-      "Folder name cannot be empty": [
-        "文件夹名称不能为空"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -1812,8 +1812,8 @@
       "Invalid verification code": [
         "无效的验证代码"
       ],
-      "Label name cannot be empty": [
-        "标签名称不能为空"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -1926,11 +1926,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此字段至少需要 ${ minimumLength } 个字符。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "文件夹名称不可用，请重新填写。"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "标签名称不可用，请重新填写。"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"

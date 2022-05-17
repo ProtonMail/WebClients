@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Ilyen nevű szűrő már létezik"
       ],
-      "Folder name cannot be empty": [
-        "A mappa nevének megadása szükséges"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra."
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Label name cannot be empty": [
-        "A címke neve nem lehet üres"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Ez a mappanév nem használható. Adjon meg egy másik nevet"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Ez a címkenév nem használható. Adjon meg egy másik nevet"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Kevésbé biztonságos alkalmazások hozzáférése\" be van kapcsolva a Google fiókbiztonsági beállításaiban"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "a kétlépcsős hitelesítés engedélyezve van a külső fiókon"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "a kétlépcsős hitelesítés engedélyezve van az e-mail fiókon"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Ha ${ bold2StepsDisabled } (alapértelmezett Gmail beállítás), kérjük ellenőrizze, hogy:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Ha ${ bold2StepsEnabled }, kérjük ellenőrizze hogy az e-mail cím és az alkalmazásjelszó helyes.\n${ boldNot } használja az alapértelmezett jelszavát."
       ],
-      "IMAP access is enabled in your external account": [
-        "Az IMAP elérés engedélyezve van a külső fiókon"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Az IMAP elérés engedélyezve van a Yahoo fiókon"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Érvénytelen IMAP port"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Megpróbálhat kijelentkezni ${ boldGoogleAccounts }-ból a böngészőjében, és utána feloldani ${ linkCAPTCHA }-t."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "az alkalmazásjelszó megfelelő. ${ boldNot } a belépési jelszavát használja"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "az e-mail fiók alkalmazásjelszót igényel az adatok exportálásához"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "ha az e-mail fiók ezt igényli az adatok exportálásához"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "az e-mail cím és a jelszó megfelelő. ${ boldNot } a belépési jelszavát használja"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "az e-mail cím és jelszó helyes"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "a jelszava helyes"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         ""
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
       ],
@@ -4255,9 +4246,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Kredit az előző csomag-feliratkozásának fel nem használt részéért"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Jelenleg az összes tárhely kiosztásra került az adminisztrátor fiókhoz. Kérjük csökkentse az adminisztrátor fiókhoz kiosztott tárhelyet, hogy helyet szabadítson fel a többi felhasználónak. Bármikor növelheti a rendelkezésre álló tárhelyet nagyobb csomagra váltással."
@@ -7905,6 +7893,11 @@
         "Vegyen fel nyilvános, külső vagy megosztott naptárat URL megadásával."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } naptár felhasználónként",
@@ -8894,9 +8887,6 @@
       ],
       "Select contact group": [
         "Névjegy csoport kiválasztása"
-      ],
-      "Select subscription and pay": [
-        ""
       ],
       "Select the time to send this notification": [
         "Válassza ki az emlékeztető elküldésének időpontját"

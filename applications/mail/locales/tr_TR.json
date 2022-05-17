@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Aynı adlı bir süzgeç zaten var"
       ],
-      "Folder name cannot be empty": [
-        "Klasör adı boş olamaz"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
       ],
-      "Label name cannot be empty": [
-        "Etiket adı boş olamaz"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Eklenebilecek en fazla dosya sayısı (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) sınırı aşıldı."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Bu ileti zaten gönderildi"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması bir kaç gün sürebilir."
       ],
-      "Learn more": [
-        "Ayrıntılı bilgi alın"
-      ],
       "learn more": [
         "ayrıntılı bilgi alın"
+      ],
+      "Learn more": [
+        "Ayrıntılı bilgi alın"
       ],
       "Left to Right": [
         "Soldan sağa"

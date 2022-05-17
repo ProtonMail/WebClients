@@ -2012,8 +2012,8 @@
       "Failed to get original occurrence in series": [
         "無法取得系列中原本事件。"
       ],
-      "Folder name cannot be empty": [
-        "資料夾名稱不能留空"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "圖片上載失敗"
@@ -2051,8 +2051,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "僅可在 ${ minDateString } - ${ maxDateString } 之間移動事件"
       ],
-      "Label name cannot be empty": [
-        "標籤名稱不能留空"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "與現有的 Proton 行事曆合併至少 ${ calendarToFixCount } 個行事曆"
@@ -2165,11 +2165,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "此資料夾名稱無法使用。請換另一個名稱"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "此標籤名稱無法使用。請換另一個名稱"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
@@ -4278,6 +4278,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "無法新增更多行事曆。您已達到您的方案中的已訂閱行事曆上限。"
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {

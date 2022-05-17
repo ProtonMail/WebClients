@@ -2026,8 +2026,8 @@
       "Failed to get original occurrence in series": [
         "No se ha podido obtener la ocurrencia original de la serie"
       ],
-      "Folder name cannot be empty": [
-        "El nombre de la carpeta no puede estar vacío"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "La subida de la imagen ha fallado"
@@ -2065,8 +2065,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "El nombre de la etiqueta no puede estar vacío"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -2183,10 +2183,10 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
-      "This folder name is not available. Please choose a different name": [
+      "This folder name is not available. Please choose a different name.": [
         ""
       ],
-      "This label name is not available. Please choose a different name": [
+      "This label name is not available. Please choose a different name.": [
         ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
@@ -4373,6 +4373,11 @@
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        ""
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
         ""
       ]
     },

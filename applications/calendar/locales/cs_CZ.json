@@ -2054,8 +2054,8 @@
       "Failed to get original occurrence in series": [
         "Nepodařilo se získat původní výskyt v sérii"
       ],
-      "Folder name cannot be empty": [
-        "Název složky nesmí být prázdný"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Selhalo nahrání obrázku"
@@ -2093,8 +2093,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Lze přesunout události pouze mezi ${ minDateString } - ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "Název štítku nesmí být prázdný"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -2219,11 +2219,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Tento název složky není k dispozici. Zvolte prosím jiný název"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Tento název štítku není k dispozici. Zvolte prosím jiný název"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
@@ -4521,6 +4521,11 @@
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
         "Nelze přidat další kalendáře. Dosáhli jste maximálního počtu odebíraných kalendářů v rámci vašeho plánu."
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
       ]
     },
     "Success": {
