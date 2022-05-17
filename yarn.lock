@@ -4236,6 +4236,8 @@ __metadata:
     asmcrypto.js: ^2.3.2
     bcryptjs: ^2.4.3
     eslint: ^8.19.0
+    jsdom: ^19.0.0
+    jsdom-global: ^3.0.2
     mocha: ^9.2.2
     prettier: ^2.7.1
     require-inject: ^1.4.4
@@ -19732,6 +19734,15 @@ fsevents@^1.2.7:
   version: 0.1.1
   resolution: "jsbn@npm:0.1.1"
   checksum: e5ff29c1b8d965017ef3f9c219dacd6e40ad355c664e277d31246c90545a02e6047018c16c60a00f36d561b3647215c41894f5d869ada6908a2e0ce4200c88f2
+  languageName: node
+  linkType: hard
+
+"jsdom-global@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "jsdom-global@npm:3.0.2"
+  peerDependencies:
+    jsdom: ">=10.0.0"
+  checksum: 5c665a412c244d8cfe541da784ff6888c0ed041da3f4c03d7d4ab514215b3f50a934f89c33b543b7848765d841029978a2592dc04b2e0a8734b4bb54809e67d7
   languageName: node
   linkType: hard
 
