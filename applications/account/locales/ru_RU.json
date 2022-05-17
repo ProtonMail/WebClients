@@ -47,7 +47,7 @@
         "Добавить"
       ],
       "Add ${ BRAND_NAME } Account": [
-        ""
+        "Добавить учетную запись ${ BRAND_NAME }"
       ],
       "Add address": [
         "Добавить адрес"
@@ -296,7 +296,7 @@
         "Скачать все конфигурации"
       ],
       "Download on another platform": [
-        ""
+        "Скачать на другой платформе"
       ],
       "Download recovery file": [
         "Скачать файл восстановления"
@@ -338,7 +338,7 @@
         "Зашифровать и экспортировать"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        ""
+        "Изучите другие тарифы ${ BRAND_NAME }"
       ],
       "Export": [
         "Экспортировать"
@@ -842,10 +842,10 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ _users } пользователь",
+        "+ ${ _users } пользователя",
+        "+ ${ _users } пользователей",
+        "+ ${ _users } пользователей"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } свой домен",
@@ -973,7 +973,7 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 пользователей"
       ]
     },
     "Badge for domain": {
@@ -994,27 +994,27 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Оплачивается каждые 12 месяцев"
       ],
       "Payable every 24 months": [
-        ""
+        "Оплачивается каждые 24 месяца"
       ],
       "Payable every month": [
-        ""
+        "Оплачивается каждый месяц"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Пролонгируется автоматически ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
       "1 month": [
-        ""
+        "1 месяц"
       ],
       "12 months": [
-        ""
+        "12 месяцев"
       ],
       "24 months": [
-        ""
+        "24 месяца"
       ],
       "Annually": [
         "Ежегодно"
@@ -1301,16 +1301,16 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ],
       "Total for ${ n } month": [
-        "",
-        "",
-        "",
-        ""
+        "Итого за ${ n } месяц",
+        "Итого за ${ n } месяца",
+        "Итого за ${ n } месяцев",
+        "Итого за ${ n } месяцев"
       ]
     },
     "Collapsible tooltip": {
@@ -2247,7 +2247,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Купон применен: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -2257,10 +2257,10 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/месяц"
       ],
       "/user per month": [
-        ""
+        "/за пользователя в месяц"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2336,7 +2336,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        ""
+        "Поздравляем! Вы заработали максимальное количество ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идёт шифрование и импортирование контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -2491,7 +2491,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        ""
+        "Какую электронную почту вы хотите получать от ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Вы снова подписаны на ${ categoriesJsx }."
@@ -2732,10 +2732,10 @@
         "Пожалуйста, попробуйте повторить аутентификацию и убедитесь, что права доступа установлены правильно."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        ""
+        "Пожалуйста, перейдите на бизнес-план с более чем 1 пользователем, чтобы получить многопользовательскую поддержку"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        ""
+        "Чтобы управлять несколькими пользователями, перейдите на бизнес-план с более чем 1 пользователем."
       ],
       "Primary address key is not decrypted": [
         "Не расшифрован ключ основного адреса"
@@ -3243,16 +3243,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Байт"
       ],
       "Gigabytes": [
-        ""
+        "Гигабайт"
       ],
       "Kilobytes": [
-        ""
+        "Килобайт"
       ],
       "Megabytes": [
-        ""
+        "Мегабайт"
       ]
     },
     "Filter Actions": {
@@ -3629,10 +3629,10 @@
         "Proton не может подключиться к вашей учетной записи Gmail. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта указаны правильно."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        ""
+        "Proton не может подключиться к вашей учетной записи Yahoo. Пожалуйста, убедитесь, что адрес почтового сервера и номер порта правильны."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that:": [
-        ""
+        "Proton не может подключиться к вашей учетной записи Yahoo. Пожалуйста, убедитесь, что:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Слишком много запросов за последнее время. Пожалуйста, повторите попытку позднее."
@@ -3710,7 +3710,7 @@
         "Перейдите в ${ boldAccountSecurity }"
       ],
       "Go to Outlook ${ securitySettingsLink }": [
-        ""
+        "Перейдите в ${ securitySettingsLink } Outlook"
       ],
       "If 2-step verification is off, turn it on": [
         "Если двухэтапная аутентификация выключена, включите ее"
@@ -3810,7 +3810,7 @@
         "подписанные календари"
       ],
       "Yahoo": [
-        ""
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3818,10 +3818,10 @@
         "Нажмите на ссылку ${ boldICS } и скачайте файл"
       ],
       "Go to ${ calendarLink } in your Outlook settings": [
-        ""
+        "Перейдите к ${ calendarLink } в настройках Outlook"
       ],
       "Go to ${ calendarViewLink } in Yahoo": [
-        ""
+        "Перейти в ${ calendarViewLink } в Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Наведите курсор мыши на календарь, который вы хотите импортировать, и откройте выпадающее меню"
@@ -3938,7 +3938,7 @@
         "Адрес ${ emailAddress } недопустимый"
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
+        "${ forgotPasswordLink } или ${ forgotUsernameLink }?"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
@@ -3986,7 +3986,7 @@
         "${ numContacts } контакт(а,ов)"
       ],
       "${ planName } credits earned": [
-        ""
+        "${ planName } $ кредитов получено"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "Найдена ${ providerFoldersNumLocalized } папка",
@@ -4034,7 +4034,7 @@
         "Выбран(о) ${ selectedFoldersCountLocalized } ярлык(а,ов)"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } хранилища"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Вы будете использовать этот адрес электронной почты для входа во все сервисы ${ BRAND_NAME }."
@@ -4061,16 +4061,16 @@
         "(почта и VPN)"
       ],
       "* No credit card required.": [
-        ""
+        "* Кредитная карточка не требуется."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 1 месяц. Другие варианты подписки доступны при оформлении."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 12 месяцев. Другие варианты подписки доступны при оформлении."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 24 месяца. Другие варианты подписки доступны при оформлении."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонусного пространства"
@@ -4085,7 +4085,7 @@
         "1. Пригласите друзей в Proton"
       ],
       "2. They try ${ planName }": [
-        ""
+        "2. Они пробуют ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка 20%"
@@ -4094,7 +4094,7 @@
         "3. Вы получаете кредиты"
       ],
       "30-day money-back guarantee.": [
-        ""
+        "30-дневная гарантия возврата денег."
       ],
       "5 email addresses": [
         "5 адресов электронной почты"
@@ -4109,7 +4109,7 @@
         "Фразу для восстановления доступа к учетной записи позволит вам зайти в ваш аккаунт и восстановить ваши зашифрованные сообщения, если вы забудете ваш пароль."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком, и лицом"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
@@ -4121,7 +4121,7 @@
         "метод восстановления аккаунта"
       ],
       "Account size": [
-        ""
+        "Размер аккаунта"
       ],
       "Account successfully updated": [
         "Учётная запись успешно обновлена"
@@ -4142,7 +4142,7 @@
         "Добавить ярлык"
       ],
       "Additional options": [
-        ""
+        "Дополнительные параметры"
       ],
       "address": [
         "адрес",
@@ -4154,7 +4154,7 @@
         "Проверка адреса – это расширенная функция безопасности. Включайте её только тогда, когда знаете, что она делает."
       ],
       "Admin account allocation": [
-        ""
+        "Распределение аккаунтов администраторов"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "После сброса пароля ваши данные блокируются в зашифрованном виде для обеспечения их сохранности."
@@ -4187,7 +4187,7 @@
         "Все ваши изменения будут потеряны."
       ],
       "Allocated": [
-        ""
+        "Выделено"
       ],
       "Allow recovery by email": [
         "Разрешить восстановление по электронной почте"
@@ -4196,13 +4196,13 @@
         "Разрешить восстановление по номеру телефона"
       ],
       "Already allocated": [
-        ""
+        "Уже выделено"
       ],
       "Already have an account?": [
-        ""
+        "Уже есть учетная запись?"
       ],
       "Already used": [
-        ""
+        "Уже используется"
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже допустимого минимума (${ amount })."
@@ -4355,7 +4355,7 @@
         "Создайте ссылку на свой календарь и поделитесь ею с тем, кто не использует Proton. Только вы можете добавлять или удалять события."
       ],
       "Create a new account and share the email address and password with the user.": [
-        ""
+        "Создайте новый аккаунт и сообщите пользователю адрес электронной почты и пароль."
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
         "Создавайте и управляйте дополнительными учетными записями, назначайте им адреса электронной почты на вашем домене."
@@ -4367,13 +4367,13 @@
         "Создать в"
       ],
       "Creating your account": [
-        ""
+        "Создание учетной записи"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
+        "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
+        "Остатки на счете, скидки и любые действующие купоны применяются при оформлении заказа"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "В настоящее время всё хранилище принадлежит учётной записи администратора. Пожалуйста, уменьшите выделенный для неё объём, чтобы освободить место для дополнительных пользователей. Вы можете увеличить общий объём хранилища в любое время, выбрав другой тариф."
@@ -4385,7 +4385,7 @@
         "Настраиваемое ежедневное"
       ],
       "Custom email domains": [
-        ""
+        "Пользовательские домены электронной почты"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "Настраиваемые фильтры работают со всеми новыми письмами: и входящими, и отправляемыми. Фильтры могут быть созданы и изменены непосредственно с помощью языка программирования Sieve."
@@ -4454,7 +4454,7 @@
         "Для загрузки файла перетащите его сюда"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        ""
+        "Получено ${ rewards } из ${ rewardsLimit } ${ planName } $ месяцев."
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -4463,10 +4463,10 @@
         "Адрес электронной почты"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
+        "Почтовый хостинг доступен только для доменов, которые уже ваши. Регистрация доменов пока недоступна через Proton. Вы можете настраивать почту для доменов, зарегистрированных у любого регистратора доменных имен."
       ],
       "Emailing preference saved": [
         "Настройки отправки почты сохранены"
@@ -4502,10 +4502,10 @@
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "Введите подробности своей учетной записи ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
+        "Введите эл. адрес вашей учётной записи или имя пользователя ${ BRAND_NAME }."
       ],
       "Enter your login password to confirm your identity.": [
         "Для подтверждения своей личности введите пароль для входа."
@@ -4541,7 +4541,7 @@
         "Для Visa и MasterCard - три цифры на обратной стороне карты. Для American Express - 4 цифры на лицевой стороне карты."
       ],
       "Free": [
-        ""
+        "Free"
       ],
       "Free up some space or add more storage space.": [
         "Освободите место или добавьте больше места."
@@ -4589,7 +4589,7 @@
         "Если сообщения нет в папке \"Входящие\" - проверьте, не попало ли оно в папку «спам»."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "Если у вас есть свой домен с ${ MAIL_APP_NAME }, вы можете задать универсальный адрес электронной почты для получения сообщений, отправленных на ваш домен, но на недопустимый адрес электронной почты (например, из-за опечаток)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Если у вас есть подарочный код, введите его ниже, чтобы применить скидку."
@@ -4859,13 +4859,13 @@
         "Не ваше устройство? Используйте окно приватного просмотра для входа в систему и закройте его по завершении. ${ learnMore }"
       ],
       "Number of users": [
-        ""
+        "Количество пользователей"
       ],
       "of": [
         "из"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        ""
+        "Один аккаунт для всех сервисов ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
@@ -5054,7 +5054,7 @@
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
       "Securing your account": [
-        ""
+        "Защита вашей учетной записи"
       ],
       "Select a service provider to start": [
         "Выберите поставщика услуг для начала работы"
@@ -5063,7 +5063,7 @@
         "Выберите \"Продолжить\" с ${ name }, чтобы открыть приложение. Это также создаст аккаунт ${ name } с вашим адресом ${ MAIL_APP_NAME }, чтобы в будущем вы могли войти одним нажатием."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользоватеь стоит ${ price }. А если вам понадобится более ${ maxUsers } учётных записей пользователей, пожалуйста, ${ contactMailToLink } с нашей командой Успеха Клиентов."
       ],
       "Select what you want to move from Google.": [
         "Выберите, что вы хотите перенести из Google."
@@ -5108,19 +5108,19 @@
         "SPF используется для указания того, кому разрешено отправлять электронную почту для домена, поэтому мы настоятельно рекомендуем включить ${ MAIL_APP_NAME } в вашу запись SPF. Пожалуйста, добавьте следующую запись TXT в ваш DNS. Обычно это можно сделать в панели управления вашего регистратора доменов."
       ],
       "Storage allocated to other users in this organisation": [
-        ""
+        "Хранилище, выделенное другим пользователям в этой организации"
       ],
       "Storage allocated to this user": [
-        ""
+        "Хранилище, выделенное данному пользователю"
       ],
       "Storage for users": [
-        ""
+        "Дисковое пространство для пользователей"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
-        ""
+        "Хранилище, используемое этим пользователем"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Храните этот пароль и файл в надежном месте. Они понадобятся вам снова для импорта ключа."
@@ -5324,7 +5324,7 @@
         "Обновить фразу для восстановления"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -5351,10 +5351,10 @@
         "Проверка будет происходить в новой вкладке. Пожалуйста, отключите блокировщики всплывающих окон. Мы не будем снимать ваши средства — любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
       "Verifying your payment": [
-        ""
+        "Подтверждение вашего платежа"
       ],
       "Version ${ version }": [
-        ""
+        "Версия ${ version }"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
         "Хотите установить ${ addressToCreate } в качестве электронной почты по умолчанию для отправки сообщений?"
@@ -5399,7 +5399,7 @@
         "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "Мы переводим ваш текущий тариф на улучшенный тариф, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Если отключено, то предотвращает загрузку изображений на вашем устройстве без вашего ведома."
@@ -5408,7 +5408,7 @@
         "Если уведомления включены, мы будем отправлять оповещения на ваш резервный адрес электронной почты, если в вашем аккаунте ${ MAIL_APP_NAME } появятся новые сообщения."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        ""
+        "Когда они подпишутся на платный план, от 1 до 3 месяцев ${ planName } $ будут зачислены на ваш счет."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении вашей подписки мы сначала используем любой доступный баланс и только после этого списываем недостающую сумму через вышеуказанный способ оплаты."
@@ -5582,7 +5582,7 @@
         "Ваш адрес электронной почты будет использован для этой разовой проверки."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем сервисам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Ваш импорт из ${ delayedImport.Account } временно отложен."
@@ -6007,7 +6007,7 @@
         " и ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "Адрес ${ MAIL_APP_NAME }"
@@ -6022,10 +6022,10 @@
         "${ monthsRewarded } месяцев начислено"
       ],
       "${ n } month": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяцев"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
@@ -6100,10 +6100,10 @@
         "Авто-показ встроенных изображений"
       ],
       "Auto-reply": [
-        ""
+        "Автоответчик"
       ],
       "Billing cycle": [
-        ""
+        "Платежный цикл"
       ],
       "Block email tracking": [
         "Блокировать отслеживание электронной почты"
@@ -6337,7 +6337,7 @@
         "Введите пароль для ключа с отпечатком: ${ fingerprintCode }"
       ],
       "Expiration date": [
-        ""
+        "Срок действия"
       ],
       "Expires": [
         "Срок действия"
@@ -6541,10 +6541,10 @@
         "Плательщик"
       ],
       "Payment details": [
-        ""
+        "Информация о платеже"
       ],
       "Payment method": [
-        ""
+        "Способ оплаты"
       ],
       "Phone number": [
         "Номер телефона"
@@ -6613,7 +6613,7 @@
         "Показать пароль"
       ],
       "Security code": [
-        ""
+        "Код безопасности"
       ],
       "Select your country": [
         "Выберите вашу страну"
@@ -6658,7 +6658,7 @@
         "Липкие ярлыки"
       ],
       "Subscription options": [
-        ""
+        "Параметры подписки"
       ],
       "System information": [
         "Сведения о системе"
@@ -6790,7 +6790,7 @@
         "Ваше вознаграждение"
       ],
       "ZIP code": [
-        ""
+        "ZIP-код"
       ]
     },
     "label": {
@@ -6819,7 +6819,7 @@
         "Конфиденциальный"
       ],
       "VPN connections": [
-        ""
+        "Подключения к VPN"
       ]
     },
     "Label for news": {
@@ -7071,7 +7071,7 @@
         "Вы уверены, что хотите отключить двухфакторную аутентификацию?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        ""
+        "Подключите свой домен к ${ BRAND_NAME }, чтобы установить свои адреса электронной почты (например, you@yourcompany.com). Наш мастер проведет вас через весь процесс."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
@@ -7276,7 +7276,7 @@
     },
     "Navigation": {
       "Back": [
-        ""
+        "Назад"
       ],
       "Back to Calendar": [
         "Вернуться к календарю"
@@ -7311,6 +7311,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        ""
+      ],
       "Continue with free": [
         "Продолжить использовать бесплатно"
       ],
@@ -7459,7 +7462,7 @@
         "Общий объем хранилища: ${ size }"
       ],
       "1 free VPN connection in total": [
-        "Одно бесплатное VPN-подключение в целом"
+        "Всего 1 бесплатное подключение VPN"
       ],
       "99.95% SLA": [
         "99,95% по соглашению о качестве услуг"
@@ -7635,8 +7638,23 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } позволяет создавать адреса электронной почты для дополнительных пользователей и управлять их аккаунтами. Такой вариант идеально подходит семьям и организациям."
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        ""
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Комплексные конфиденциальность и безопасность, обеспеченные сочетанием всех сервисов Proton."
@@ -7655,6 +7673,9 @@
       ],
       "Popular": [
         "Популярно"
+      ],
+      "Price includes all applicable, non-expired coupons saved to your account.": [
+        ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет всех платных услуг Proton, которые обеспечивают компаниям конфиденциальность и безопасность."
@@ -7752,6 +7773,9 @@
       "Improved plans coming soon!": [
         "Скоро появятся улучшенные тарифы!"
       ],
+      "Review subscription and pay": [
+        ""
+      ],
       "Start exploring the Proton universe": [
         "Начните знакомство с сервисами Proton"
       ],
@@ -7791,6 +7815,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Массовая рассылка, рекламная или с помощью программных средств, сейчас не поддерживается. Рекомендуем для таких случаев использовать специального поставщика услуг электронной почты"
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Создавайте разные адреса электронной почты под соответствующие личные данные в Интернете. Например, IvanPokupki@proton.me для аккаунтов, связанных с покупками, и IvanNovosti@proton.me для подписки на новости"
@@ -8044,17 +8071,17 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Затем вам нужно будет войти в свой аккаунт Google и предоставить Proton доступ к вашим данным."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано на GIF."
       ]
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        ""
+        "Добро пожаловать в ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -8316,7 +8343,7 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        ""
+        "Кредитная/дебетовая карта"
       ],
       "New credit/debit card": [
         "Новая кредитная или дебетовая карта"
@@ -8625,7 +8652,7 @@
     },
     "Signup label": {
       "Display name": [
-        ""
+        "Отображаемое имя"
       ],
       "Email": [
         "Эл. почта"
@@ -8666,7 +8693,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
@@ -8739,104 +8766,104 @@
     },
     "Subscription attribute": {
       "${ _n } calendar per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ _n } календарь на пользователя",
+        "${ _n } календаря на пользователя",
+        "${ _n } календарей на пользователя",
+        "${ _n } календаря на пользователя"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ maxVpn } высокоскоростное подключение к VPN",
+        "${ maxVpn } высокоскоростных подключения к VPN",
+        "${ maxVpn } высокоскоростных подключений к VPN",
+        "${ maxVpn } высокоскоростного подключения к VPN"
       ],
       "${ n } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } календарь",
+        "${ n } календаря",
+        "${ n } календарей",
+        "${ n } календаря"
       ],
       "${ n } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } высокоскоростное подключение к VPN",
+        "${ n } высокоскоростных подключения к VPN",
+        "${ n } высокоскоростных подключений к VPN",
+        "${ n } высокоскоростного подключения к VPN"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } высокоскоростное подключение к VPN на пользователя",
+        "${ n } высокоскоростных подключения к VPN на пользователя",
+        "${ n } высокоскоростных подключений к VPN на пользователя",
+        "${ n } высокоскоростного подключения к VPN на пользователя"
       ],
       "${ n } VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } подключение VPN",
+        "${ n } подключений к VPN",
+        "${ n } VPN-подключений",
+        "${ n } VPN соединений"
       ],
       "${ n } VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN-подключение на пользователя",
+        "${ n } VPN-подключения на пользователя",
+        "${ n } VPN-подключений на пользователя",
+        "${ n } VPN-подключений на пользователя"
       ],
       "${ UsedAddresses } address": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedAddresses } адрес",
+        "${ UsedAddresses } адреса",
+        "${ UsedAddresses } адресов",
+        "${ UsedAddresses } адресов"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedCalendars } календарь",
+        "${ UsedCalendars } календаря",
+        "${ UsedCalendars } календарей",
+        "${ UsedCalendars } календарей"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedDomains } из ${ MaxDomains } своего домена",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedMembers } из ${ MaxMembers } пользователя",
+        "${ UsedMembers } из ${ MaxMembers } пользователей",
+        "${ UsedMembers } из ${ MaxMembers } пользователей",
+        "${ UsedMembers } из ${ MaxMembers } пользователей"
       ],
       "1 email address": [
-        ""
+        "1 адрес эл. почты"
       ],
       "1 VPN connection": [
-        ""
+        "1 подключение VPN"
       ],
       "Access to streaming services globally": [
-        ""
+        "Доступ к трансляциям по всему миру"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Встроенный блокировщик рекламы (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        "",
-        "",
-        ""
+        "Высокоскоростная VPN на ${ maxVpn } устройстве",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
     "Subscription price": {
       "For": [
-        ""
+        "За"
       ]
     },
     "Subscription saving": {
       "Save": [
-        ""
+        "Сохранить"
       ]
     },
     "Subtitle for trial plan": {
@@ -9042,18 +9069,18 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/месяц"
       ],
       "/user per month": [
-        ""
+        "/за пользователя в месяц"
       ]
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/месяц"
       ],
       "per month": [
-        ""
+        "в месяц"
       ]
     },
     "Summary of errors during export calendar": {
@@ -9068,10 +9095,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Для предприятий"
       ],
       "For individuals": [
-        ""
+        "Для частных лиц"
       ]
     },
     "TableHeader": {
@@ -9144,10 +9171,10 @@
         "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ maxUsers } пользователь",
+        "${ maxUsers } пользователя",
+        "${ maxUsers } пользователей",
+        "${ maxUsers } пользователей"
       ],
       "1. Give a name to the config to be generated": [
         "1. Дайте имя генерируемой конфигурации"
@@ -9261,7 +9288,7 @@
         "Вы уверены, что хотите закрыть?"
       ],
       "Auto-reply": [
-        ""
+        "Автоответчик"
       ],
       "Automatically sign outgoing messages?": [
         "Подписывать ли исходящие сообщения автоматически?"
@@ -9339,7 +9366,7 @@
         "Подтвердите номер телефона"
       ],
       "Congratulations on choosing privacy!": [
-        ""
+        "Поздравляем с выбором конфиденциальности!"
       ],
       "Connect ${ name }": [
         "Подключить ${ name }"
@@ -9357,7 +9384,7 @@
         "Создать календарь"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Создайте свой ${ BRAND_NAME } Аккаунт"
       ],
       "Credentials": [
         "Учетные данные"
@@ -9453,7 +9480,7 @@
         "Перейти на более дешевую версию аккаунта"
       ],
       "Download ${ VPN_APP_NAME }": [
-        ""
+        "Скачать ${ VPN_APP_NAME }"
       ],
       "Edit Allow List": [
         "Изменить список разрешённых"
@@ -9537,7 +9564,7 @@
         "Получите ${ vpnPlus } для доступа ко всем серверам"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ planName } бесплатно"
       ],
       "Gift code": [
         "Подарочный код"
@@ -9696,7 +9723,7 @@
         "Обработка…"
       ],
       "Recommended": [
-        ""
+        "Рекомендуется"
       ],
       "Reconnect your account": [
         "Повторно подключить свою учётную запись"
@@ -9741,7 +9768,7 @@
         "Отозвать сертификат"
       ],
       "Save contact details": [
-        ""
+        "Посмотреть контактную информацию"
       ],
       "Secure email based in Switzerland": [
         "Безопасная почта, находящаяся в Швейцарии"
@@ -9762,7 +9789,7 @@
         "Выбор группы контактов"
       ],
       "Select subscription and pay": [
-        ""
+        "Выберите подписку и оплатите"
       ],
       "Select the time to send this notification": [
         "Выберите время отправки этого уведомления"
@@ -9807,7 +9834,7 @@
         "Войдите снова, чтобы продолжить"
       ],
       "Sign in and grant access": [
-        ""
+        "Войдите и предоставьте доступ"
       ],
       "Sort folders alphabetically": [
         "Сортировать папки по алфавиту"
@@ -9870,7 +9897,7 @@
         "Неподдерживаемый браузер"
       ],
       "Upgrade plan": [
-        ""
+        "Улучшить план"
       ],
       "Username": [
         "Имя пользователя"
@@ -9879,7 +9906,7 @@
         "Пользователи и адреса"
       ],
       "Verification": [
-        ""
+        "Проверка"
       ],
       "VPN apps": [
         "Приложения VPN"
@@ -9906,7 +9933,7 @@
         "Конфигурация WireGuard"
       ],
       "You already have a Proton account": [
-        ""
+        "У вас уже есть аккаунт Proton"
       ],
       "Your ${ domain } address is active": [
         "Ваш адрес ${ domain } активен"
@@ -10163,10 +10190,10 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        "",
-        "",
-        ""
+        "Улучшение до ${ planName } для одновременного подключения к VPN до ${ n } устройства",
+        "Улучшение до ${ planName } для одновременного подключения к VPN до ${ n } устройств",
+        "Улучшение до ${ planName } для одновременного подключения к VPN до ${ n } устройств",
+        "Улучшение до ${ planName } для одновременного подключения к VPN до ${ n } устройств"
       ]
     },
     "Upgrade notice": {

@@ -5892,8 +5892,8 @@
         "Υποσέλιδο ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
-        "",
-        ""
+        "${ monthsRewarded } μήνας πιστώθηκε",
+        "${ monthsRewarded } μήνες πιστώθηκαν"
       ],
       "${ n } month": [
         "${ n } μήνας",
@@ -9202,7 +9202,7 @@
         "Ορίστε την προεπιλεγμένη διάταξη για τα Εισερχόμενά σας."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        ""
+        "Ορίστε το παρακάτω υποσέλιδο στα μηνύματα που στέλνετε: ${ signature } Ο σύνδεσμος παραπέμπει στον σύνδεσμο παραπομπής σας. Το υποσέλιδο θα φαίνεται κάτω από την υπογραφή σας. Μπορείτε να προσωποποιήσετε την υπογραφή σας οποτεδήποτε μέσα στις ρυθμίσεις."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Οι υπογραφές που παράγονται από αυτό το κλειδί θεωρούνται άκυρες και αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"

@@ -2690,10 +2690,10 @@
         "Veuillez essayer de vous authentifier à nouveau et vous assurer que les autorisations sont définies correctement."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Passez à un abonnement entreprise avec plus d'un utilisateur pour bénéficier d'une assistance multi-utilisateur"
+        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour obtenir une assistance multiutilisateur"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Passez à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
+        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -3958,13 +3958,13 @@
         "*Aucune carte bancaire requise."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        "*Avec un abonnement d'1 mois. D'autres options d'abonnement sont disponibles lors du paiement."
+        "*Prix pour un abonnement d'1 mois. D'autres options sont disponibles lors du paiement."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        "*Avec un abonnement de 12 mois. D'autres options d'abonnement sont disponibles lors du paiement."
+        "*Prix pour un abonnement de 12 mois. D'autres options sont disponibles lors du paiement."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        "*Avec un abonnement de 24 mois. D'autres options d'abonnement sont disponibles lors du paiement."
+        "*Prix pour un abonnement de 24 mois. D'autres options sont disponibles lors du paiement."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de stockage supplémentaire"
@@ -7171,6 +7171,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        ""
+      ],
       "Continue with free": [
         "Continuer avec Free"
       ],
@@ -7467,8 +7470,23 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vous permet de créer des adresses électroniques et de gérer des comptes pour des utilisateurs subsidiaires. Idéal pour les familles et les entreprises."
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        ""
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Une confidentialité et une sécurité totales en utilisant tous les services Proton."
@@ -7487,6 +7505,9 @@
       ],
       "Popular": [
         "Populaire"
+      ],
+      "Price includes all applicable, non-expired coupons saved to your account.": [
+        ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Suite de confidentialité et de sécurité pour les entreprises, comprenant tous les services premium de Proton."
@@ -7582,6 +7603,9 @@
       "Improved plans coming soon!": [
         "Des abonnements améliorés bientôt disponibles !"
       ],
+      "Review subscription and pay": [
+        ""
+      ],
       "Start exploring the Proton universe": [
         "Commencer à explorer l'univers de Proton"
       ],
@@ -7621,6 +7645,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "L'envoi en masse d'e-mails promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Créez différentes adresses selon vos activités : \"JohnShopper@proton.me\" pour les achats et \"JohnNews@proton.me\" pour les abonnements à des sites d'informations par exemple"
