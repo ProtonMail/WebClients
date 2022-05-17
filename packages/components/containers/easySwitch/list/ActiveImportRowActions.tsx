@@ -116,8 +116,8 @@ const ActiveImportRowActions = ({ activeImport }: Props) => {
                     onConfirm={resolve}
                     onClose={reject}
                     title={c('Confirm modal title').t`Import is incomplete!`}
-                    cancel={c('Action').t`Continue import`}
-                    confirm={<Button color="danger" type="submit">{c('Action').t`Cancel import`}</Button>}
+                    cancel={c('Action').t`Continue`}
+                    confirm={<Button color="danger" type="submit">{c('Action').t`Cancel`}</Button>}
                 >
                     <Alert className="mb1" type="error">
                         {c('Warning')
