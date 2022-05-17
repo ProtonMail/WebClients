@@ -281,7 +281,7 @@ const MessageView = (
         }
     }, [hasProcessingErrors]);
 
-    const { labelDropdownToggleRef, moveDropdownToggleRef, filterDropdownToggleRef, moveScheduledModal, moveAllModal } =
+    const { labelDropdownToggleRef, moveDropdownToggleRef, filterDropdownToggleRef, moveScheduledModal, moveAllModal, moveToSpamModal } =
         useMessageHotkeys(
             elementRef,
             {
@@ -399,6 +399,7 @@ const MessageView = (
             )}
             {moveScheduledModal}
             {moveAllModal}
+            {moveToSpamModal}
         </article>
     );
 };
