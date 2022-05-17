@@ -13,7 +13,7 @@ const DeleteLinkConfirmationModal = ({ onClose, onConfirm, isOpen }: DeleteLinkC
         onClose={onClose}
         buttons={[
             <Button color="danger" type="submit" onClick={onConfirm}>{c('Action').t`Delete link`}</Button>,
-            <Button onClick={onClose}>{c(`Action`).t`Cancel`}</Button>,
+            <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
         ]}
         title={c('Info').t`Delete link?`}
     >
