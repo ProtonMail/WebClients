@@ -126,6 +126,7 @@ export type IconName =
     | 'envelope-arrow-up-and-right'
     | 'envelope-cross'
     | 'envelope-dot'
+    | 'envelope-magnifying-glass'
     | 'envelope-open'
     | 'envelope-open-text'
     | 'envelopes'
