@@ -269,10 +269,10 @@
         "コードを受け取っていませんか?"
       ],
       "Disable recovery phrase": [
-        "回復フレーズを無効化"
+        "回復用フレーズを無効化"
       ],
       "Disable recovery phrase?": [
-        "回復フレーズを無効化しますか?"
+        "回復用フレーズを無効化しますか？"
       ],
       "Discard": [
         "破棄"
@@ -299,7 +299,7 @@
         "別のプラットフォームでダウンロード"
       ],
       "Download recovery file": [
-        "回復ファイルをダウンロード"
+        "回復用ファイルをダウンロード"
       ],
       "Download the Import-Export app": [
         "Import-Export アプリをダウンロード"
@@ -362,10 +362,10 @@
         "鍵を生成"
       ],
       "Generate new recovery phrase": [
-        "新しい回復フレーズを生成"
+        "新しい回復用フレーズを生成"
       ],
       "Generate recovery phrase": [
-        "回復フレーズを生成"
+        "回復用フレーズを生成"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
@@ -623,7 +623,7 @@
         "ICS ファイルを保存"
       ],
       "Save selected": [
-        ""
+        "選択済みを保存"
       ],
       "Select ${ planTitle }": [
         "${ planTitle } を選択"
@@ -656,7 +656,7 @@
         "Catch-All の設定"
       ],
       "Set recovery phrase": [
-        "回復フレーズを設定"
+        "回復用フレーズを設定"
       ],
       "Share via link": [
         "リンクで共有"
@@ -752,10 +752,10 @@
         "更新"
       ],
       "Update recovery file": [
-        "回復ファイルを更新"
+        "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
-        "回復フレーズを更新"
+        "回復用フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -806,10 +806,10 @@
         "プランの詳細を表示"
       ],
       "Void all recovery files": [
-        "全ての回復ファイルを無効にする"
+        "すべての回復用ファイルを無効化"
       ],
       "Void all recovery files?": [
-        "全ての回復ファイルを無効にしますか？"
+        "すべての回復用ファイルを無効にしますか？"
       ],
       "Void anyway": [
         "無効化する"
@@ -942,7 +942,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        ""
+        "カレンダーに追加して保留中に設定"
       ]
     },
     "Autoresponse": {
@@ -973,13 +973,13 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "12 か月の支払い"
       ],
       "Payable every 24 months": [
-        ""
+        "24 か月の支払い"
       ],
       "Payable every month": [
-        ""
+        "毎月の支払い"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         ""
@@ -1114,19 +1114,19 @@
         "Bridge に関する問題"
       ],
       "Calendar problem": [
-        "カレンダーに関する問題"
+        "Calendar に関する問題"
       ],
       "Connection problem": [
         "接続に関する問題"
       ],
       "Contacts problem": [
-        "連絡先に関する問題"
+        "Contacts に関する問題"
       ],
       "Custom domain problem": [
         "独自ドメインに関する問題"
       ],
       "Drive problem": [
-        "ドライブに関する問題"
+        "Drive に関する問題"
       ],
       "Feature request": [
         "機能の提案"
@@ -1138,7 +1138,7 @@
         "インストールに関する問題"
       ],
       "Mail problem": [
-        "電子メールに関する問題"
+        "Mail に関する問題"
       ],
       "Manual setup problem": [
         "手動セットアップに関する問題"
@@ -2440,7 +2440,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        ""
+        "${ BRAND_NAME } からどのようなメールを受信したいですか？"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "${ categoriesJsx } のメールを再購読しました"
@@ -2786,7 +2786,7 @@
         "サービスプロバイダーに接続できませんでした。"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "間違った回復フレーズです。再度試すか他の回復手段を使用してください。"
+        "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "間違った検証コードです。 検証コードが正しくコピーされているか確認し、もう一度試してください。 変更が有効になるまでに最大24時間を要する場合があります。"
@@ -2845,7 +2845,7 @@
         "ファイル ${ formattedFilename } は無効なメソッドでインポートできません。"
       ],
       "Your file ${ formattedFilename } has no events to be imported.": [
-        ""
+        "ファイル ${ formattedFilename } にインポートする連絡先がありません。"
       ],
       "Your file ${ formattedFilename } is empty.": [
         "ファイル${ formattedFilename } は空です。"
@@ -3188,7 +3188,7 @@
         "アーカイブ"
       ],
       "Inbox": [
-        "受信箱"
+        "受信トレイ"
       ],
       "Select a folder": [
         "フォルダーを選択"
@@ -3584,7 +3584,7 @@
     },
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu": [
-        ""
+        "${ boldManage } をクリックしてオプション メニューを展開します"
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
         ""
@@ -3605,7 +3605,7 @@
         "${ boldAccountSecurity } に移動"
       ],
       "Go to Outlook ${ securitySettingsLink }": [
-        ""
+        "Outlook へ移動 ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "2 段階認証がオフの場合、オンにします"
@@ -3658,7 +3658,7 @@
         "アプリのパスワード"
       ],
       "Can view all details": [
-        ""
+        "すべての詳細を表示できます"
       ],
       "Export": [
         "エクスポート"
@@ -3713,7 +3713,7 @@
         "${ boldICS } をクリックし、ファイルをダウンロードします"
       ],
       "Go to ${ calendarLink } in your Outlook settings": [
-        ""
+        "Outlook 設定から ${ calendarLink } へ移動します"
       ],
       "Go to ${ calendarViewLink } in Yahoo": [
         "Yahoo の ${ calendarViewLink } へ移動"
@@ -3851,7 +3851,7 @@
         "${ numContacts } 件の連絡先"
       ],
       "${ planName } credits earned": [
-        ""
+        "${ planName } のクレジットを得ました"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } 件のフォルダーが存在"
@@ -3887,7 +3887,7 @@
         "国レベルで接続するには ${ vpnBasic }、${ vpnPlus }、${ visionary } が必要です。"
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        "Secure Core 機能を利用するには ${ vpnPlus } または ${ visionary } に登録する必要があります。"
+        "Secure Core 機能を利用するには ${ vpnPlus } または ${ visionary } が必要です。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
@@ -3944,7 +3944,7 @@
         "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "回復フレーズはパスワードを忘れた場合にアカウントにアクセスしたり暗号化されたメッセージを復元するのに使われます。"
+        "回復用フレーズはパスワードを忘れた場合にアカウントにアクセスしたり暗号化されたメッセージを復元するのに使われます。"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         ""
@@ -3971,7 +3971,7 @@
         "回復用メールアドレスを追加"
       ],
       "Add a recovery phone number": [
-        "回復用の電話番号を追加"
+        "回復用電話番号を追加"
       ],
       "Add image URL": [
         "画像の URL を追加"
@@ -3980,7 +3980,7 @@
         "ラベルを追加"
       ],
       "Additional options": [
-        ""
+        "追加のオプション"
       ],
       "address": [
         "メールアドレス"
@@ -4265,7 +4265,7 @@
         "ダウングレードすると、有料の ${ VPN_APP_NAME } サーバーとの接続が終了します。"
       ],
       "Download recovery file": [
-        "回復ファイルをダウンロード"
+        "回復用ファイルをダウンロード"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
@@ -4301,7 +4301,7 @@
         ""
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "再度回復を有効にすると新しい回復フレーズが生成されます。"
+        "もう一度回復を有効にすると新しい回復用フレーズが生成されます。"
       ],
       "Encryption setting updated": [
         "暗号化の設定が更新されました。"
@@ -4313,7 +4313,7 @@
         "電話番号 ${ phone } に送信したコードを入力してください。"
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "${ email } に送信したコードを入力してください。受信箱にメールがない場合、迷惑メールフォルダーを確認してください。"
+        "${ email } に送信したコードを入力してください。受信トレイにメールがない場合、迷惑メールフォルダーを確認してください。"
       ],
       "Enter the credentials of the email account you want to import from.": [
         "インポートするメールアカウントの認証情報を入力します。"
@@ -4376,7 +4376,7 @@
         "古いメッセージやその他のデータを削除して空き容量を増やすことができます"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "新たな回復フレーズを生成すると古いものは無効化されます。"
+        "新たな回復用フレーズを生成すると古いものは無効化されます。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
         "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
@@ -4640,7 +4640,7 @@
         "クレジットカードは必要ありません"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "データの回復手段が設定されていません。データにアクセスできなくなる危険性があります。"
+        "データの回復手段が設定されていません。データにアクセスできなくなる危険性があります"
       ],
       "No folder selected": [
         "フォルダーが選択されていません"
@@ -4667,7 +4667,7 @@
         "標準"
       ],
       "Not a valid URL": [
-        "有効な URL ではありません。"
+        "有効な URL ではありません"
       ],
       "Not set": [
         "未設定"
@@ -4709,13 +4709,13 @@
         ""
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "古い回復ファイルです。アップデートして確実にデータにアクセスできるようにします"
+        "古い回復用ファイルです。アップデートして確実にデータにアクセスできるようにしてください"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
         "古い回復手段です。アップデートして確実にデータにアクセスできるようにしてください"
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "古い回復フレーズです。アップデートして確実にデータにアクセスできるようにします"
+        "古い回復用フレーズです。アップデートして確実にデータにアクセスできるようにしてください"
       ],
       "P2P": [
         "P2P"
@@ -4745,7 +4745,7 @@
         "プランのアップグレードが必要です"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "アカウントに関連付けられた 12 単語の回復フレーズ入力してください。"
+        "アカウントに関連付けられた 12 語の回復用フレーズ入力してください。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "パスワードをリセットした場合、アカウントへのアクセスとデータの復号に必要になります。安全な場所に保管してください。"
@@ -4820,25 +4820,25 @@
         "はじめに2要素認証ガイドをお読みください"
       ],
       "Recovery file downloaded": [
-        "回復ファイルをダウンロードしました"
+        "回復用ファイルをダウンロードしました"
       ],
       "Recovery files have been voided": [
-        "回復ファイルは無効化されました"
+        "回復用ファイルは無効化されました"
       ],
       "recovery method": [
         "回復手段"
       ],
       "Recovery phrase copied to clipboard": [
-        "回復フレーズはクリップボードへコピーされました"
+        "回復用フレーズがクリップボードへコピーされました"
       ],
       "Recovery phrase downloaded": [
-        "回復フレーズをダウンロードしました"
+        "回復用フレーズをダウンロードしました"
       ],
       "Recovery phrase has been disabled": [
-        "回復フレーズは無効化されました"
+        "回復用フレーズは無効化されました"
       ],
       "Recovery phrase is not associated with any keys.": [
-        "回復フレーズはキーに関連付けられません。"
+        "回復用フレーズは鍵に関連付けられません。"
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         ""
@@ -4880,7 +4880,7 @@
         ""
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Google から移動したいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -4901,7 +4901,7 @@
         "セッションがタイムアウトしました"
       ],
       "Set recovery phrase": [
-        "回復フレーズを設定"
+        "回復用フレーズを設定"
       ],
       "Show original message": [
         "元のメッセージを表示"
@@ -5000,7 +5000,7 @@
         ""
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        "これは以前保存した回復ファイルまたは暗号キーです。"
+        "これは以前保存した回復用ファイルまたは暗号鍵です。"
       ],
       "This is an encryption key you may have previously saved.": [
         "これは以前保存した暗号キーです。"
@@ -5021,7 +5021,7 @@
         "このユーザーは組織の経理責任を負っています。このユーザーを降格させた場合、あなたが経理責任を負います。"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        ""
+        "これにより、このアカウントに関連付けられている 2 要素認証も無効になります。"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
@@ -5030,7 +5030,7 @@
         "組織用の暗号鍵を作成します。4096ビット鍵は高性能コンピューターでのみ動作します。ほとんどのユーザーには2048ビット鍵の使用をお勧めします。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "現在の回復フレーズは無効になります。この回復フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
+        "現在の回復用フレーズは無効になります。この回復用フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "あなたの秘密鍵を含むファイルをダウンロードします。このファイルは必ずパスワードを用いて暗号化してください。"
@@ -5063,13 +5063,13 @@
         "サインイン後 ${ toAppName } を開きます"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        "メールなどのデータを復号するには、回復ファイルが必要です。"
+        "メールなどのデータを復号するには、回復用ファイルが必要です。"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "メールなどのデータを復号するには、回復フレーズや回復ファイルが必要です。"
+        "メールなどのデータを復号するには、回復用フレーズや回復用ファイルが必要です。"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "メールなどのデータを復号するには、回復フレーズが必要です。"
+        "メールなどのデータを復号するには、回復用フレーズが必要です。"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
         "パスワードをリセットしたあともロックされたデータを復号して表示できるようにするために、回復手段を選択してください。"
@@ -5114,7 +5114,7 @@
         "２パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。２パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
-        "回復ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
+        "回復用ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         ""
@@ -5132,10 +5132,10 @@
         "非対応のファイル"
       ],
       "Update recovery file": [
-        "回復ファイルを更新"
+        "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
-        "回復フレーズを更新"
+        "回復用フレーズを更新"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "次の ${ planName } 特典を失わないために今すぐアップグレードしてください。"
@@ -5183,7 +5183,7 @@
         "公式の ${ VPN_APP_NAME } アプリケーションの使用をおすすめします。"
       ],
       "We recommend using your recovery phrase instead.": [
-        "代わりに回復フレーズを使うことをおすすめします。"
+        "代わりに回復用フレーズを使うことをおすすめします。"
       ],
       "We use 3-D Secure to protect your payments.": [
         "お支払いを保護するために3Dセキュアを用いています。"
@@ -5219,7 +5219,7 @@
         "無効にすると、知らないうちに画像が読み込まれることを防ぎます。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスにアラートを送信します。"
+        "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスに通知を送信します。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         ""
@@ -5348,7 +5348,7 @@
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "ダウンロードした回復ファイルを使ってアカウントをリセットしたあとに暗号化されたデータを復元することはできません。"
+        "ダウンロードした回復用ファイルを使ってアカウントをリセットしたあとに暗号化されたデータを復元することはできません。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "ブラウザを閉じてもサインインを維持します。"
@@ -5408,7 +5408,7 @@
         "インポート完了後、ログイン情報は保存されません。"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復コードとしても使用しますので、このパスワードは安全な場所に保管してください。"
+        "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復用コードとしても使用しますので、このパスワードは安全な場所に保管してください。"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
         ""
@@ -5426,10 +5426,10 @@
         "回復用メールアドレス:"
       ],
       "Your recovery phrase": [
-        "あなたの回復フレーズ"
+        "あなたの回復用フレーズ"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "回復フレーズは 12 語の単語を順番に並べて構成されたものです。"
+        "回復用フレーズは 12 語の単語を順番に並べて構成されたものです。"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "あなたのサブスクリプションはMozillaによって管理されています。Mozillaのサポートへお問い合わせください。"
@@ -5636,7 +5636,7 @@
         "下書きを開く"
       ],
       "Go to Inbox": [
-        "受信箱を開く"
+        "受信トレイを開く"
       ],
       "Go to Sent": [
         "送信済みを開く"
@@ -5687,7 +5687,7 @@
         "アーカイブに移動"
       ],
       "Move to Inbox": [
-        "受信箱に移動"
+        "受信トレイに移動"
       ],
       "Move to Spam": [
         "迷惑メールに移動"
@@ -5821,7 +5821,7 @@
         " と ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanMaxSpace } のうち ${ humanUsedSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } アドレス"
@@ -5866,7 +5866,7 @@
         "電話番号での回復を許可"
       ],
       "Allow recovery by recovery phrase": [
-        "回復フレーズによる回復を許可"
+        "回復用フレーズによる回復を許可"
       ],
       "Amount": [
         "金額"
@@ -6199,7 +6199,7 @@
         "インポート先:"
       ],
       "Inbox": [
-        "受信箱"
+        "受信トレイ"
       ],
       "Inherit color from parent folder": [
         "親フォルダーの色を継承"
@@ -6406,10 +6406,10 @@
         "回復用ファイル"
       ],
       "Recovery phone number": [
-        "回復用の電話番号"
+        "回復用電話番号"
       ],
       "Recovery phrase": [
-        "回復フレーズ"
+        "回復用フレーズ"
       ],
       "Repeat password": [
         "パスワードを再度入力"
@@ -6517,7 +6517,7 @@
         "1 つ以上の暗号キーをアップロード"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        ""
+        "1 つ以上の回復ファイルまたは暗号キーをアップロード"
       ],
       "URL": [
         "URL"
@@ -6600,10 +6600,10 @@
     },
     "label": {
       "Recovery phone number": [
-        "回復用の電話番号"
+        "回復用電話番号"
       ],
       "Recovery phrase": [
-        "回復フレーズ"
+        "回復用フレーズ"
       ]
     },
     "Label for adding a new custom domain": {
@@ -6812,7 +6812,7 @@
         "もう少しです"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "作成済みカレンダー数: ${ createdCalendars } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
@@ -7600,16 +7600,16 @@
         "今すぐ検証"
       ],
       "Verify recovery email?": [
-        "回復メールを検証しますか?"
+        "回復用メールアドレスを検証しますか？"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "メールアドレスを確認することでアカウントのセキュリティを向上させ、回復用の追加設定のために利用できます。"
+        "メールアドレスを確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
       ],
       "You can safely close this tab.": [
         "安全にタブを閉じることができます。"
       ],
       "Your recovery email has been successfully verified.": [
-        "回復メールは正常に検証されました。"
+        "回復用メールアドレスは正常に検証されました。"
       ]
     },
     "Recovery method": {
@@ -7820,7 +7820,7 @@
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        ""
+        "リンクを使うことで、購読しているカレンダーは公開されます"
       ],
       "This link might be wrong": [
         "リンクが間違っています"
@@ -7964,10 +7964,10 @@
         "ギフトコードが適用されました。"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "有効な回復メールを入力した場合、すぐにあなたのユーザー名を記載したメールをお送りします。"
+        "有効な回復用メールアドレスを入力していた場合、すぐにあなたのユーザー名を記載したメールをお送りします。"
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "有効な回復用電話番号を入力した場合、すぐにあなたのユーザー名を記載した SMS をお送りします。"
+        "有効な回復用電話番号を入力していた場合、すぐにあなたのユーザー名を記載した SMS をお送りします。"
       ],
       "Import record deleted": [
         "インポート記録が削除されました"
@@ -8123,10 +8123,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "ビジネス向け"
       ],
       "For individuals": [
-        ""
+        "個人向け"
       ]
     },
     "TableHeader": {
@@ -8340,7 +8340,7 @@
         "Catch-All アドレス"
       ],
       "Catch-all address": [
-        "キャッチオールアドレス"
+        "Catch-all アドレス"
       ],
       "Change login password": [
         "ログインパスワードを変更"
@@ -8577,7 +8577,7 @@
         "紛失した鍵の生成"
       ],
       "Generate new recovery phrase?": [
-        "新しい回復フレーズを生成しますか?"
+        "新しい回復用フレーズを生成しますか？"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
@@ -8604,7 +8604,7 @@
         "インポート"
       ],
       "Import as simple event?": [
-        ""
+        "シンプル イベントとしてインポートしますか?"
       ],
       "Import contacts": [
         "連絡先のインポート"
@@ -8751,7 +8751,7 @@
         "回復"
       ],
       "Recovery file": [
-        "回復ファイル"
+        "回復用ファイル"
       ],
       "Refer a friend": [
         "友達を招待"
@@ -8814,7 +8814,7 @@
         ""
       ],
       "Select when you want this notification to be sent": [
-        ""
+        "通知を送信する時間を選択"
       ],
       "Session management": [
         "セッション管理"
@@ -8850,7 +8850,7 @@
         "再度サインインして続行"
       ],
       "Sign in and grant access": [
-        ""
+        "サインインして権限を付与"
       ],
       "Sort folders alphabetically": [
         "フォルダーをアルファベット順に並べ替え"
@@ -9093,7 +9093,7 @@
         "詳細ログを有効にすると、セキュリティログの各イベントの IP アドレスが記録されます。"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        ""
+        "受信トレイの一連の会話をグループにします。無効にすると、それぞれ表示されます。"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
@@ -9108,7 +9108,7 @@
         "デフォルトの作成画面ポップアップサイズを小さくするか最大にするか設定します。"
       ],
       "Set the default layout for your Inbox.": [
-        "受信箱の既定のレイアウトを設定します。"
+        "受信トレイの既定のレイアウトを設定します。"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         ""
@@ -9120,7 +9120,7 @@
         ""
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "インポートは新しいメッセージから始まります。"
       ],
       "This address has been disabled": [
         "このアドレスは無効になっています"
@@ -9285,7 +9285,7 @@
         "本当にこのアドレスを削除してよろしいですか?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "本当にこの電話番号を削除しますか?"
+        "本当にこの電話番号を削除しますか？"
       ],
       "Are you sure you want to discard your import?": [
         "インポートを破棄してよろしいですか?"
@@ -9297,10 +9297,10 @@
         "このアドレスを削除することで、今後アカウントを復旧したり毎日のメール通知を受け取ることができなくなります。"
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "このアドレスを削除することで、今後あなたのアカウントを回復することができなくなります。"
+        "このメールアドレスを削除すると、今後あなたのアカウントを回復することができなくなります。"
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "この電話番号を削除することで、今後あなたのアカウントを回復することができなくなります。"
+        "この電話番号を削除すると、今後あなたのアカウントを回復することができなくなります。"
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "ログを無効にするには、ログの履歴をクリアする必要があります。ログを無効にしてよろしいですか?"
@@ -9357,10 +9357,10 @@
         "無料トライアルは ${ textDate } に終了します。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "回復ファイルは古くなっています。再度アカウントをリセットすると、新しいデータを復元できません。"
+        "回復用ファイルは古くなっています。再度アカウントをリセットすると、新しいデータを復元できません。"
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "回復フレーズは古くなっています。再度アカウントをリセットすると、新しいデータを復元できません。"
+        "回復用フレーズは古くなっています。再度アカウントをリセットすると、新しいデータを復元できません。"
       ]
     },
     "Warning for domain modal": {
