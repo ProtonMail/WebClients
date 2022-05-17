@@ -3,20 +3,21 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
+import { DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Currency, PlanIDs, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Button, Icon, Loader } from '../../components';
-import { useApi, useConfig, useLoading, usePlans, useSubscription } from '../../hooks';
+import { useApi, useConfig, useLoading, usePlans, useSubscription, useUser } from '../../hooks';
 
 import { getDefaultSelectedProductPlans } from './subscription/SubscriptionModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
+import { getCurrency } from './subscription/helpers';
 
 const FREE_SUBSCRIPTION = {} as Subscription;
 
@@ -31,6 +32,7 @@ const PlansSection = () => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
     const [plans = [], loadingPlans] = usePlans();
+    const [user] = useUser();
     const { APP_NAME } = useConfig();
     const api = useApi();
     const location = useLocation();
@@ -44,7 +46,9 @@ const PlansSection = () => {
     });
     const [open] = useSubscriptionModal();
 
-    const [currency, setCurrency] = useState<Currency>(DEFAULT_CURRENCY);
+    const [selectedCurrency, setCurrency] = useState<Currency>();
+    const currency = selectedCurrency || getCurrency(user, subscription, plans);
+
     const [cycle, setCycle] = useState(DEFAULT_CYCLE);
     const { CouponCode } = subscription;
 
@@ -79,8 +83,6 @@ const PlansSection = () => {
         if (loadingPlans || loadingSubscription) {
             return;
         }
-        const [{ Currency } = { Currency: undefined }] = plans;
-        setCurrency(subscription.Currency || Currency);
         setCycle(subscription.Cycle || DEFAULT_CYCLE);
         setSelectedProductPlans(getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription)));
     }, [loadingSubscription, loadingPlans]);

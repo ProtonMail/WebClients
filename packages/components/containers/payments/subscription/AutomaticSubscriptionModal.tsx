@@ -1,11 +1,12 @@
 import { useEffect } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { useLoad, usePlans, useSubscription, useSubscriptionModal } from '@proton/components';
-import { Currency, Plan, Subscription } from '@proton/shared/lib/interfaces';
-import { CURRENCIES, CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { useLoad, usePlans, useSubscription, useSubscriptionModal, useUser } from '@proton/components';
+import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { CURRENCIES, CYCLE, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { getCurrency } from './helpers';
 
-const getParameters = (search: string, plans: Plan[], subscription: Subscription) => {
+const getParameters = (search: string, plans: Plan[], subscription: Subscription, user: UserModel) => {
     const params = new URLSearchParams(location.search);
 
     const planName = params.get('plan') || '';
@@ -35,8 +36,8 @@ const getParameters = (search: string, plans: Plan[], subscription: Subscription
     return {
         plan,
         coupon,
-        cycle: parsedCycle || subscription.Cycle || DEFAULT_CYCLE,
-        currency: parsedCurrency || subscription.Currency || plans[0]?.Currency || DEFAULT_CURRENCY,
+        cycle: parsedCycle || subscription?.Cycle || DEFAULT_CYCLE,
+        currency: parsedCurrency || getCurrency(user, subscription, plans),
         step: parsedTarget || SUBSCRIPTION_STEPS.CHECKOUT,
         disablePlanSelection: edit === 'disable',
     };
@@ -49,6 +50,7 @@ const AutomaticSubscriptionModal = () => {
     const [open, loadingModal] = useSubscriptionModal();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
+    const [user] = useUser();
 
     useLoad();
 
@@ -60,7 +62,8 @@ const AutomaticSubscriptionModal = () => {
         const { plan, currency, cycle, coupon, step, disablePlanSelection } = getParameters(
             location.search,
             plans,
-            subscription
+            subscription,
+            user
         );
         if (!plan) {
             return;
