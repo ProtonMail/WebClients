@@ -1,6 +1,14 @@
 import { c } from 'ttag';
 
-import { OnboardingContent, EarlyAccessModal, ModalTwo, ModalProps, Button, useModalState } from '@proton/components';
+import {
+    OnboardingContent,
+    EarlyAccessModal,
+    ModalTwo,
+    ModalTwoContent as ModalContent,
+    ModalProps,
+    Button,
+    useModalState,
+} from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import onboardingWelcome from '@proton/styles/assets/img/onboarding/drive-upgrade.svg';
@@ -13,7 +21,7 @@ const DriveOnboardingModalNoBeta = (props: ModalProps) => {
         <>
             {renderModal && <EarlyAccessModal {...modalProps} />}
             <ModalTwo size="small" {...props}>
-                <div className="p2">
+                <ModalContent className="m2">
                     <OnboardingContent
                         title={c('Onboarding Title').t`${appName} is in Beta`}
                         description={c('Onboarding Info')
@@ -23,7 +31,7 @@ const DriveOnboardingModalNoBeta = (props: ModalProps) => {
                     <Button size="large" color="norm" fullWidth onClick={() => setModal(true)}>
                         {c('Onboarding Action').t`Enable Beta Access`}
                     </Button>
-                </div>
+                </ModalContent>
             </ModalTwo>
         </>
     );
