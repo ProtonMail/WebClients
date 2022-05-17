@@ -17,6 +17,7 @@ const getMethod = (paymentMethod: PaymentMethod) => {
         case PAYMENT_METHOD_TYPES.CARD:
             const brand = paymentMethod.Details.Brand;
             const last4 = paymentMethod.Details.Last4;
+            // translator: example would be: "Mastercard" ending in "7777"
             return c('new_plans: info').t`${brand} ending in ${last4}`;
         case PAYMENT_METHOD_TYPES.PAYPAL:
             return `PayPal - ${paymentMethod.Details.PayerID}`;
