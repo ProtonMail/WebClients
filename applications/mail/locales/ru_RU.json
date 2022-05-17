@@ -192,7 +192,7 @@
         "Скопировать адрес эл. почты в буфер обмена"
       ],
       "Create a new contact group": [
-        ""
+        "Создать новую группу контактов"
       ],
       "Create folder": [
         "Создать папку"
@@ -1321,7 +1321,7 @@
         "${ participantName } запросил последние обновления события, которое больше не существует в вашем календаре."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
+        "${ participantName } запросил последнюю информацию о событии, которое не совпадает с вашим приглашением. Пожалуйста, проверьте подробности приглашения в своем календаре."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } отклонил приглашение и предложил новое время для одного повтора этого события."
@@ -1501,10 +1501,10 @@
         "Приглашение устарело. Событие было обновлено."
       ],
       "This response doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
+        "Этот ответ не соответствует вашим сведениям о приглашении. Проверьте сведения о приглашении в календаре."
       ],
       "This response is out of date.": [
-        ""
+        "Ответ просрочен."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Этот ответ устарел. События больше нет в вашем календаре."
@@ -3373,16 +3373,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Байт"
       ],
       "Gigabytes": [
-        ""
+        "Гигабайт"
       ],
       "Kilobytes": [
-        ""
+        "Килобайт"
       ],
       "Megabytes": [
-        ""
+        "Мегабайт"
       ]
     },
     "Filter Actions": {
@@ -3850,7 +3850,7 @@
         "${ selectedFoldersCount } ярлык(а,ов) выбран(о)"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } хранилища"
       ],
       "${ total } conversation": [
         "${ total } цепочка писем",
@@ -4474,7 +4474,7 @@
         "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, что оно является законным."
       ],
       "per month.": [
-        ""
+        "в месяц."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
@@ -4579,7 +4579,7 @@
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Выберите, что вы хотите перенести из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -4615,7 +4615,7 @@
         "Показать исходное сообщение"
       ],
       "Sorry, this message does not exist or has already expired.": [
-        ""
+        "К сожалению, это сообщение не существует, либо уже исчезло."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
@@ -4840,7 +4840,7 @@
         "Обновление для использования ${ MAIL_APP_NAME } со сторонними клиентами для ПК."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
       ],
       "Upload picture": [
         "Загрузить картинку"
@@ -5803,7 +5803,7 @@
         "Управлять вашими ярлыками"
       ],
       "More": [
-        ""
+        "Еще"
       ],
       "More about recovery": [
         "Подробнее о восстановлении"
@@ -5976,7 +5976,7 @@
         "Изображение не было загружено, чтобы защитить вашу конфиденциальность."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
+        "Ваш браузер не смог проверить идентичность удаленного сервера. Возможно, изображение размещено с использованием протокола http."
       ]
     },
     "Message notification": {
@@ -6182,28 +6182,28 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Затем вам нужно будет войти в свой аккаунт Google и предоставить Proton доступ к вашим данным."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
       ]
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        ""
+        "Добро пожаловать в ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
-        ""
+        "Где конфиденциальность и безопасность сочетаются с производительностью и простотой использования."
       ]
     },
     "Onboarding Action": {
       "Next": [
-        ""
+        "Далее"
       ],
       "Start using ${ appName }": [
-        ""
+        "Начните использовать ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -6511,7 +6511,7 @@
         "Результатов не найдено"
       ],
       "No unread messages found": [
-        ""
+        "Не найдено непрочитанных сообщений"
       ]
     },
     "Select files": {
@@ -6650,7 +6650,7 @@
         "Откройте для себя все службы Proton"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
@@ -6972,7 +6972,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/месяц"
       ]
     },
     "Table header": {
@@ -7496,7 +7496,7 @@
         "Чтобы продолжить, повторно войдите ещё раз"
       ],
       "Sign in and grant access": [
-        ""
+        "Войдите и предоставьте доступ"
       ],
       "Sort conversations": [
         "Сортировка цепочек писем"
@@ -7550,7 +7550,7 @@
         "Добро пожаловать, ${ userName }"
       ],
       "What would you like to import?": [
-        ""
+        "Что бы вы хотели импортировать?"
       ],
       "What's new": [
         "Что нового"

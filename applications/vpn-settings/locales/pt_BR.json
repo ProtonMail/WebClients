@@ -102,7 +102,7 @@
         "Personalizar"
       ],
       "Customize plan": [
-        ""
+        "Personalizar plano"
       ],
       "Decrease": [
         "Diminuir"
@@ -138,13 +138,13 @@
         "Baixar todas configurações"
       ],
       "Download on another platform": [
-        ""
+        "Baixar em outra plataforma"
       ],
       "Edit": [
         "Editar"
       ],
       "Edit billing details": [
-        ""
+        "Editar detalhes de pagamento"
       ],
       "Edit email address": [
         "Editar endereço de e-mail"
@@ -159,10 +159,10 @@
         "Editar assinatura"
       ],
       "enable desktop notifications": [
-        "habilitar notificações na área de trabalho"
+        "ativar as notificações na área de trabalho"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        ""
+        "Explore outros planos ${ BRAND_NAME }"
       ],
       "Extend": [
         ""
@@ -225,7 +225,7 @@
         "Pagar"
       ],
       "Pay ${ price }": [
-        ""
+        "Pagar ${ price }"
       ],
       "Previous": [
         "Anterior"
@@ -282,7 +282,7 @@
         ""
       ],
       "Select ${ planTitle }": [
-        ""
+        "Selecione ${ planTitle }"
       ],
       "Send code": [
         "Enviar código"
@@ -387,7 +387,7 @@
         "Visualizar fatura"
       ],
       "View plans details": [
-        ""
+        "Ver detalhes dos planos"
       ],
       "Yes": [
         "Sim"
@@ -1895,10 +1895,10 @@
         "5 endereços de e-mail"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "Um nome para te ajudar a identificar onde irá usá-lo, podendo facilmente revogar ou extender depois."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "Um usuário é uma conta associada com um único nome de usuário, caixa de correio e pessoa"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "O acesso à conta foi restringido devido a faturas não pagas. Por favor, entre em contato com o seu administrador."
@@ -1910,7 +1910,7 @@
         "Conta atualizada com sucesso"
       ],
       "Additional options": [
-        ""
+        "Opções adicionais"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Após efetuar o seu pagamento em Bitcoin. Por favor, siga as instruções abaixo para fazer o upgrade de plano."
@@ -1991,7 +1991,7 @@
         "Faça o download do seu aplicativo favorito hoje e leve a privacidade com você para onde quer que você vá."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "A hospedagem de e-mails para 10 nomes de domínio de e-mail adicionais está incluída gratuitamente. Domínios adicionais podem ser adicionados por ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
         ""
@@ -2237,7 +2237,7 @@
         "Protegendo sua conta"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Selecione o número de usuários para incluir em seu plano. Cada usuário adicional custa ${ price }. Se você precisar de mais de ${ maxUsers } contas de usuário, por favor, ${ contactMailToLink } nossa equipe de Sucesso do Cliente."
       ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
@@ -2303,7 +2303,7 @@
         "Isto irá encerrar qualquer sessão ativa e desabilitar a autenticação de 2 fatores."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Este assistente habilitará a autenticação de dois fatores (2FA) em sua conta Proton. A autenticação de dois fatores tornará sua conta Proton mais segura, portanto, recomendamos ativá-la."
+        "Este assistente ativará a autenticação de dois fatores (2FA) em sua conta Proton. A autenticação de dois fatores tornará sua conta Proton mais segura, portanto, recomendamos ativá-la."
       ],
       "to continue to ${ toAppName }": [
         "para continuar para ${ toAppName }"
@@ -2441,7 +2441,7 @@
         "Não é possível utilizar as credenciais do OpenVPN/IKEv2 para fazer login nos aplicativos do ${ VPN_APP_NAME } ou no painel do ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        ""
+        "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
       ],
       "You have no saved payment methods.": [
         "Você não tem uma opção de pagamento salva."
@@ -2861,7 +2861,7 @@
         "Selecione seu país"
       ],
       "Subscription options": [
-        ""
+        "Opções de assinatura"
       ],
       "System information": [
         "Informações do sistema"
@@ -3045,6 +3045,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        ""
+      ],
       "Continue with free": [
         "Continuar com o plano grátis"
       ],
@@ -3341,6 +3344,21 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        ""
+      ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Privacidade e segurança abrangentes com todos os serviços da Proton combinados."
       ],
@@ -3358,6 +3376,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Price includes all applicable, non-expired coupons saved to your account.": [
+        ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pacote de privacidade e segurança para empresas, incluindo todos os serviços premium da Proton."
@@ -3450,6 +3471,9 @@
       "Improved plans coming soon!": [
         "Planos aprimorados serão disponibilizados em breve!"
       ],
+      "Review subscription and pay": [
+        ""
+      ],
       "Start exploring the Proton universe": [
         "Comece a explorar o universo Proton"
       ],
@@ -3486,6 +3510,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Não há compatibilidade com o envio em massa de e-mails promocionais ou com anúncios programáticos no momento. Recomendamos o uso de um provedor de serviços de e-mail dedicado para esse caso de uso."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line (por exemplo JoaoLojas@proton.me para contas de lojas e JoaoNoticias@proton.me para assinaturas de notícias)"
@@ -3558,7 +3585,7 @@
         "O suporte por telefone da equipe de Sucesso do Cliente da Proton está disponível durante o horário comercial europeu, para clientes com 6 ou mais usuários"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o vendedor e o destinatário pretendido."
+        "Impede que as mensagens sejam acessadas pela ${ BRAND_NAME } ou por terceiros. As únicas pessoas que podem ler as mensagens são o remetente e o destinatário pretendido."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Proteja todos os dispositivos conectados à sua rede WiFi. Também é útil quando você tem dispositivos que não são diretamente compatíveis com configurações de VPN."

@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ address } is available.": [
-        ""
+        "${ address } доступен."
       ],
       "${ BRAND_NAME } introduction": [
         "${ BRAND_NAME } введение"
@@ -84,25 +84,25 @@
         "Создать"
       ],
       "Create a secure ProtonMail address instead": [
-        ""
+        "Вместо этого создайте защищенный адрес ProtonMail"
       ],
       "Create account": [
         "Создать учетную запись"
       ],
       "Create address": [
-        ""
+        "Создать адрес"
       ],
       "Create free account": [
-        ""
+        "Создать бесплатный аккаунт"
       ],
       "Current plan": [
-        ""
+        "Текущий тариф"
       ],
       "Customize": [
         "Настроить"
       ],
       "Customize plan": [
-        ""
+        "Настроить тариф"
       ],
       "Decrease": [
         "Уменьшить"
@@ -117,7 +117,7 @@
         "Подробнее"
       ],
       "Didn't receive a code?": [
-        ""
+        "Не получили код?"
       ],
       "Didn't receive the code?": [
         "Не получили код?"
@@ -138,13 +138,13 @@
         "Скачать все конфигурации"
       ],
       "Download on another platform": [
-        ""
+        "Скачать на другой платформе"
       ],
       "Edit": [
         "Редактировать"
       ],
       "Edit billing details": [
-        ""
+        "Изменить платежную информацию"
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
@@ -156,13 +156,13 @@
         "Изменить информацию для входа"
       ],
       "Edit subscription": [
-        ""
+        "Редактировать подписку"
       ],
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        ""
+        "Изучите другие тарифы ${ BRAND_NAME }"
       ],
       "Extend": [
         "Продлить"
@@ -174,7 +174,7 @@
         "Получить проверочный код"
       ],
       "Go to sign in": [
-        ""
+        "Перейти к входу"
       ],
       "Hide": [
         "Скрыть"
@@ -195,7 +195,7 @@
         "Установить по умолчанию"
       ],
       "Maybe later": [
-        ""
+        "Может, позже"
       ],
       "More info: ${ safeTitle }": [
         "Дополнительная информация: ${ safeTitle }"
@@ -225,7 +225,7 @@
         "Оплатить"
       ],
       "Pay ${ price }": [
-        ""
+        "Оплатить ${ price }"
       ],
       "Previous": [
         "Пред."
@@ -267,7 +267,7 @@
         "Повторить"
       ],
       "Return to sign in": [
-        ""
+        "Вернуться к входу"
       ],
       "Revoke": [
         "Отозвать"
@@ -279,16 +279,16 @@
         "Сохранить"
       ],
       "Save selected": [
-        ""
+        "Сохранить выбранное"
       ],
       "Select ${ planTitle }": [
-        ""
+        "Выбрать ${ planTitle }"
       ],
       "Send code": [
-        ""
+        "Отправить код"
       ],
       "Send my username": [
-        ""
+        "Отправить мое имя пользователя"
       ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
@@ -312,7 +312,7 @@
         "Выйти из учетной записи"
       ],
       "Signing in": [
-        ""
+        "Выполняется вход"
       ],
       "Signing out": [
         "Производится выход"
@@ -333,7 +333,7 @@
         "Попробуйте другой способ"
       ],
       "Unlock": [
-        ""
+        "Разблокировать"
       ],
       "Unlock data": [
         "Разблокировать данные"
@@ -354,13 +354,13 @@
         "Использовать другой способ оплаты"
       ],
       "Use recovery code": [
-        ""
+        "Использовать код восстановления"
       ],
       "Use two-factor authentication code": [
-        ""
+        "Использовать код двухфакторной аутентификации"
       ],
       "Use your current email address instead": [
-        ""
+        "Вместо этого используйте свой текущий адрес электронной почты"
       ],
       "User": [
         "Пользователь"
@@ -387,7 +387,7 @@
         "Просмотр счета"
       ],
       "View plans details": [
-        ""
+        "Посмотреть информацию о тарифе"
       ],
       "Yes": [
         "Да"
@@ -401,18 +401,18 @@
     },
     "Action in trial plan": {
       "No, thanks": [
-        ""
+        "Нет, спасибо"
       ],
       "Try free for 30 days": [
-        ""
+        "Испытать бесплатно в течение 30 дней"
       ]
     },
     "Addon": {
       "+ ${ _users } user": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ _users } пользователь",
+        "+ ${ _users } пользователя",
+        "+ ${ _users } пользователей",
+        "+ ${ _users } пользователя"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } свой домен",
@@ -465,21 +465,21 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 пользователей"
       ]
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Оплачивается каждые 12 месяцев"
       ],
       "Payable every 24 months": [
-        ""
+        "Оплачивается каждые 24 месяца"
       ],
       "Payable every month": [
-        ""
+        "Оплачивается каждый месяц"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Пролонгируется автоматически ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -487,10 +487,10 @@
         "1 месяц"
       ],
       "12 months": [
-        ""
+        "12 месяцев"
       ],
       "24 months": [
-        ""
+        "24 месяца"
       ],
       "Annually": [
         "Ежегодно"
@@ -710,16 +710,16 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователя"
       ],
       "Total for ${ n } month": [
-        "",
-        "",
-        "",
-        ""
+        "Итого за ${ n } месяц",
+        "Итого за ${ n } месяца",
+        "Итого за ${ n } месяцев",
+        "Итого за ${ n } месяца"
       ]
     },
     "Collapsible tooltip": {
@@ -1528,7 +1528,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Купон применен: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -1541,7 +1541,7 @@
         "/месяц"
       ],
       "/user per month": [
-        ""
+        "за пользователя в месяц"
       ]
     },
     "Delinquent modal title": {
@@ -1597,7 +1597,7 @@
         "Неверный или недействительный код"
       ],
       "Domain not available, try again later": [
-        ""
+        "Домен недоступен, попробуйте ещё раз позже"
       ],
       "Email is not valid": [
         "Эл. почта недействительна"
@@ -1714,7 +1714,7 @@
         "Неизвестный статус платёжного токена"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        ""
+        "Неправильная фраза для восстановления пароля. Попробуйте снова или используйте другой метод восстановления."
       ],
       "You have no invoices.": [
         "У вас нет счетов."
@@ -1792,16 +1792,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Байт"
       ],
       "Gigabytes": [
-        ""
+        "Гигабайт"
       ],
       "Kilobytes": [
-        ""
+        "Килобайт"
       ],
       "Megabytes": [
-        ""
+        "Мегабайт"
       ]
     },
     "Frequency of news": {
@@ -1859,10 +1859,10 @@
         "${ appName } нужно ваше разрешение на ${ enableDesktopNotifications }."
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
-        ""
+        "${ boldWarning } Если вы продолжите, то потеряете доступ ко всем текущим зашифрованным данным в вашего аккаунта."
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
+        "${ forgotPasswordLink } или ${ forgotUsernameLink }?"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
@@ -1880,10 +1880,10 @@
         "${ number } серверов"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } хранилища"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        ""
+        "${ strongAddressAvailable } Вы будете использовать этот адрес электронной почты для входа во все сервисы ${ BRAND_NAME }."
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "Для подключения на уровне страны требуется ${ vpnBasic }, ${ vpnPlus } или ${ visionary }."
@@ -1895,16 +1895,16 @@
         "(Почта + VPN)"
       ],
       "* No credit card required.": [
-        ""
+        "* Кредитная карточка не требуется."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 1 месяц. Другие варианты подписки доступны при оформлении."
       ],
       "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 12 месяцев. Другие варианты подписки доступны при оформлении."
       ],
       "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 24 месяца. Другие варианты подписки доступны при оформлении."
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуса к вашему хранилищу"
@@ -1919,7 +1919,7 @@
         "К вашей подписке купоном ${ code } применена скидка 20%"
       ],
       "30-day money-back guarantee.": [
-        ""
+        "30-дневная гарантия возврата денег."
       ],
       "5 email addresses": [
         "5 адресов электронной почты"
@@ -1928,40 +1928,40 @@
         "Имя, которое поможет вам определить, где вы его используете, чтобы вы могли легко отозвать или продлить его позже."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "Пользователь – это учётная запись, связанная с одним именем пользователя, почтовым ящиком, и лицом"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
       "Account size": [
-        ""
+        "Размер аккаунта"
       ],
       "Account successfully updated": [
         "Учетная запись успешно обновлена"
       ],
       "Additional options": [
-        ""
+        "Дополнительные параметры"
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "После внесения оплаты Bitcoin, пожалуйста, следуйте согласно указаниям ниже, чтобы произвести улучшение."
       ],
       "Already have an account?": [
-        ""
+        "Уже есть учётная запись?"
       ],
       "Amount below minimum (${ amount }).": [
         "Сумма ниже минимальной (${ amount })."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
+        "AOL считывает ваши личные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для лучшей конфиденциальности создайте безопасный адрес электронной почты."
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "Находится в Швейцарии, доступна везде"
       ],
       "Basic, Plus or Visionary subscription required": [
         "Требуется подписка Basic, Plus или Visionary"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "Счет выставляется в конце текущего платежного цикла (продлевается ${ renewalDate })"
@@ -1991,19 +1991,19 @@
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
       ],
       "Continue anyway?": [
-        ""
+        "Продолжить в любом случае?"
       ],
       "Creating your account": [
         "Создание учетной записи"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
+        "Остаток на счете для неиспользованной части подписки на предыдущий тариф"
       ],
       "Credits, proration, and any applicable coupons are applied at checkout": [
-        ""
+        "Остатки на счете, скидки и любые действующие купоны применяются при оформлении заказа"
       ],
       "Custom email domains": [
-        ""
+        "Пользовательские домены электронной почты"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "К вашей подписке купоном ${ code } применена скидка"
@@ -2012,7 +2012,7 @@
         "Не используйте учетные данные OpenVPN / IKEv2 в приложениях ${ VPN_APP_NAME } или в панели управления ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Done! We sent a code to ${ destination }.": [
-        ""
+        "Готово! Мы отправили код на ${ destination }."
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "При переходе на более дешевую версию все подключения к платными службам ${ VPN_APP_NAME } будут прерваны."
@@ -2021,10 +2021,10 @@
         "Скачайте ваше любимое приложение сегодня и берите конфиденциальность с собой, куда бы вы ни пошли."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "Почтовый хостинг для 10 своих почтовых доменов включен бесплатно. Дополнительные домены могут быть добавлены за ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
+        "Почтовый хостинг доступен только для доменов, которые уже ваши. Регистрация доменов пока недоступна через Proton. Вы можете настраивать почту для доменов, зарегистрированных у любого регистратора доменных имен."
       ],
       "Emailing preference saved": [
         "Настройки отправки почты обновлены"
@@ -2033,19 +2033,19 @@
         "Ввести ключ вручную"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        ""
+        "Введите код, отправленный на ваш номер телефона ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        ""
+        "Введите код, который был отправлен на ${ email }. Если вы не нашли письмо в папке Входящие, пожалуйста, проверьте папку Спам."
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "Введите подробности своей учетной записи ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
+        "Введите эл. адрес вашей учётной записи или имя пользователя ${ BRAND_NAME }."
       ],
       "Enter your login password to confirm your identity.": [
         "Для подтверждения своей личности введите пароль для входа."
@@ -2054,10 +2054,10 @@
         "Введите свой собственный пароль (как администратора организации) и новый пароль для пользователя ${ Name } (${ Email })."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        ""
+        "Введите адрес своей резервной электронной почты для восстановления, и мы отправим вам имя вашего пользователя или адрес электронной почты."
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        ""
+        "Введите свой резервный номер телефона для восстановления, и мы отправим вам имя вашего пользователя или адрес электронной почты."
       ],
       "Expired": [
         "Истек"
@@ -2078,7 +2078,7 @@
         "Освободите место или свяжитесь с вашим администратором."
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
+        "Google регистрирует вашу онлайн-активность и читает ваши персональные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для лучшей конфиденциальности, создайте безопасный адрес электронной почты."
       ],
       "here": [
         "здесь"
@@ -2159,10 +2159,10 @@
         "Войдите в ${ MAIL_APP_NAME }, чтобы активировать свой адрес"
       ],
       "lose access to all current encrypted data": [
-        ""
+        "потеряете доступ ко всем текущим зашифрованным данным"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        ""
+        "Mail.ru читает ваши персональные данные с целью предоставления доступа рекламодателям, государственным учреждениям России и другим третьим лицам. Для лучшей конфиденциальности, создайте безопасный адрес электронной почты."
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
         "Убедитесь, что вы помните пароль для входа и расшифровки писем. ${ boldAlert } Мы рекомендуем сначала добавить ${ recoveryLink }."
@@ -2171,7 +2171,7 @@
         "Чтобы настроить свою учётную запись, введите эту информацию вручную в своё устройство двухфакторной аутентификации. ${ _switchButton }."
       ],
       "No credit card required": [
-        ""
+        "Кредитная карточка не требуется"
       ],
       "No payment is required at this time.": [
         "В данный момент оплата не требуется."
@@ -2186,16 +2186,16 @@
         "Не задано"
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
-        ""
+        "Не ваше устройство? Используйте окно приватного просмотра для входа в систему и закройте его по завершении. ${ learnMore }"
       ],
       "Number of users": [
-        ""
+        "Количество пользователей"
       ],
       "of": [
         "из"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        ""
+        "Один аккаунт для всех сервисов ${ BRAND_NAME }."
       ],
       "Or select a particular server:": [
         "Или выберите определенный сервер:"
@@ -2213,7 +2213,7 @@
         "Требуется улучшение плана"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        ""
+        "Введите фразу восстановления из 12 слов, связанную с вашим аккаунтом."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Пожалуйста, учтите, что после нажатия на кнопку Подтвердить в аккаунте останется ${ creditsRemaining } кредитов."
@@ -2264,10 +2264,10 @@
         "Чтобы настроить свою учётную запись, просканируйте этот код своим устройством двухфакторной аутентификации. ${ switchButton }."
       ],
       "Securing your account": [
-        ""
+        "Защита вашей учетной записи"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользоватеь стоит ${ price }. А если вам понадобится более ${ maxUsers } учётных записей пользователей, пожалуйста, ${ contactMailToLink } с нашей командой Успеха Клиентов."
       ],
       "Server is currently down": [
         "Сервер сейчас не работает"
@@ -2297,7 +2297,7 @@
         "Спасибо за поддержку нашей миссии."
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "Самый безопасный способ просматривать сайты, вести трансляции и быть онлайн."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Эти файлы конфигурации позволяют выбрать сервер ${ VPN_APP_NAME } для подключения при использовании стороннего приложения VPN или настройки подключения к VPN на маршрутизаторе."
@@ -2315,7 +2315,7 @@
         "Это может занять от нескольких секунд до нескольких минут в зависимости от вашего устройства"
       ],
       "This will also disable any two-factor authentication method associated with this account.": [
-        ""
+        "Это также отключит любой метод двухфакторной аутентификации, связанный с этой учётной записью."
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Это действие отменит текущую платную подписку, и вы потеряете все накопленные вами льготы. Остаток вашей подписки будет возвращен в виде остатка на счету."
@@ -2327,16 +2327,16 @@
         "Это навсегда удалит ваш аккаунт и все его данные. Вы не сможете восстановить эту учетную запись."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
-        ""
+        "Это заменит ваш временный пароль. Вы будете использовать это для доступа к вашей учетной записи в ${ BRAND_NAME } в будущем."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        ""
+        "Это выведет вас из всех активных сеансов и отключит двухфакторную аутентификацию."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Этот мастер поможет включить двухфакторную аутентификацию (2ФА) для вашей учётной записи Proton. Мы рекомендуем включать двухфакторную аутентификацию, т. к. она повышает безопасность учётной записи."
       ],
       "to continue to ${ toAppName }": [
-        ""
+        "чтобы продолжить в ${ toAppName }"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Для предотвращения распространения спама и иных злоупотреблений нашим сервисом, нам нужно убедиться, что вы человек."
@@ -2345,13 +2345,13 @@
         "Чтобы быть в курсе последних разработок продуктов Proton, вы можете подписаться на наши различные рассылки и время от времени посещать наш блог."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        ""
+        "Чтобы продолжить, выберите метод восстановления аккаунта, чтобы мы могли проверить запрос."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "Чтобы защитить ваше интернет-соединение, скачайте и установите приложение ${ VPN_APP_NAME } для вашего устройства и подключитесь к серверу ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
-        ""
+        "Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Пополняйте свой счёт кредитами, которые вы можете использовать для подписки на новый тариф или продления своего текущего тарифа. Вы получаете один кредит за каждый потраченный ${ i18nCurrency }."
@@ -2375,7 +2375,7 @@
         "Режим двойного пароля позволяет использовать отдельные пароли для входа в систему и расшифровки почтового ящика. Это обеспечивает незначительные преимущества безопасности в некоторых ситуациях, однако для большинства пользователей мы рекомендуем использовать режим единого пароля. Чтобы переключиться на использование режима двух паролей, сначала установите пароль для входа, а затем пароль на почтовый ящик."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        ""
+        "К сожалению, для этой учетной записи не настроен ни один метод для восстановления."
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, меток и фильтров"
@@ -2402,13 +2402,13 @@
         "Для подтверждения оплаты откроется новая вкладка. Пожалуйста, отключите любые блокировщики всплывающих окон. Снятия ваших средств не произойдёт. Любая сумма, используемая для проверки вашей карты, будет немедленно возвращена."
       ],
       "Verifying your payment": [
-        ""
+        "Подтверждение вашего платежа"
       ],
       "Version ${ version }": [
-        ""
+        "Версия ${ version }"
       ],
       "Warning:": [
-        ""
+        "Внимание:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
         "Внимание: удаление безвозвратно. Это также отключит доступ ко всем подключенным службам и удалит все ваши контакты."
@@ -2417,7 +2417,7 @@
         "Мы советуем вам по возможности использовать официальные приложения ${ VPN_APP_NAME }."
       ],
       "We recommend using your recovery phrase instead.": [
-        ""
+        "Мы рекомендуем использовать вместо этого вашу фразу восстановления."
       ],
       "We use 3-D Secure to protect your payments.": [
         "Мы используем 3-D Secure для защиты ваших платежей."
@@ -2429,13 +2429,13 @@
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        ""
+        "Мы отправим код сброса на адрес электронной почты, который вы указали для восстановления аккаунта."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        ""
+        "Мы отправим код сброса на номер телефона, который вы указали для восстановления аккаунта."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "Мы переводим ваш текущий тариф на улучшенный тариф, который предлагает больше за ту же цену. Пока наши системы обновляются, вы не сможете его изменить. Мы сообщим вам по электронной почте, как только это будет сделано."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "При продлении Вашей подписки, сначала мы используем любые доступные кредиты, а потом списываем недостающую сумму через вышеуказанный метод оплаты."
@@ -2447,10 +2447,10 @@
         "Хотите ли вы получить новый код подтверждения?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        ""
+        "Yahoo читает ваши персональные данные с целью предоставления доступа рекламодателям, разведывательным агентствам США и другим третьим лицам. Для лучшей конфиденциальности, создайте безопасный адрес электронной почты."
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        ""
+        "Яндекс регистрирует ваши действия в сети и читает ваши персональные данные, чтобы предоставить доступ рекламодателям и другим третьим лицам. Для лучшей конфиденциальности, создайте безопасный адрес электронной почты."
       ],
       "You already have a free account": [
         "У вас уже есть бесплатный аккаунт"
@@ -2471,7 +2471,7 @@
         "Вы не можете использовать учетные данные OpenVPN / IKEv2 для входа в приложения ${ VPN_APP_NAME } или панель управления ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        ""
+        "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление учётной записи будет невозможно. Продолжить без адреса электронной почты для восстановления?"
       ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
@@ -2486,7 +2486,7 @@
         "У вас должна быть кредитная карта или банковский счет, связанный с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        ""
+        "Вы должны удалить все дополнительные личные календари и все ссылки на общие календаря, прежде чем вы сможете отменить подписку."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
@@ -2495,7 +2495,7 @@
         "Вы использовали 100% доступного места. Вы не можете отправлять или получать новые сообщения. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
-        ""
+        "Вы ${ loseAllData } для учетной записи ${ BRAND_NAME }. Для восстановления доступа, вам нужно будет ввести свой старый пароль."
       ],
       "You will be soon redirected to your bank to verify your payment.": [
         "Вскоре вы будете перенаправлены в ваш банк для подтверждения вашего платежа."
@@ -2504,10 +2504,10 @@
         "Скоро вы будете перенаправлены на PayPal, чтобы проверить ваш платеж."
       ],
       "You'll stay signed in even after you close the browser.": [
-        ""
+        "Вы сохраните авторизацию даже после закрытия браузера."
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        ""
+        "Ваша учетная запись для ${ BRAND_NAME } связана с ${ externalEmailAddress }. Чтобы использовать ${ toAppName }, пожалуйста, создайте адрес."
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "Ваши аккаунты ${ VPN_APP_NAME } и ${ MAIL_APP_NAME } связаны между собой. Чтобы удалить их оба, войдите в систему по ссылке: ${ loginLink } и удалите там свой аккаунт."
@@ -2531,7 +2531,7 @@
         "Ваш адрес электронной почты будет использован для этой разовой проверки."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Ваш аккаунт ${ BRAND_NAME } можно использовать для доступа ко всем сервисам ${ BRAND_NAME }. Пожалуйста, войдите с ${ email }."
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "Ваши платежные данные защищены шифрованием TLS и швейцарскими законами о конфиденциальности."
@@ -2543,7 +2543,7 @@
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
       ],
       "Your recovery email address:": [
-        ""
+        "Email для восстановления доступа:"
       ],
       "Your subscription is managed by Mozilla. Please contact Mozilla support.": [
         "Ваша подписка находится под управлением Mozilla. Пожалуйста, свяжитесь со службой поддержки Mozilla."
@@ -2620,16 +2620,16 @@
     },
     "Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "Используется ${ humanUsedSpace } из ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "Адрес ${ MAIL_APP_NAME }"
       ],
       "${ n } month": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } месяц",
+        "${ n } месяца",
+        "${ n } месяцев",
+        "${ n } месяца"
       ],
       "Allow recovery by email": [
         "Разрешить восстановление по эл. почте"
@@ -2752,7 +2752,7 @@
         "Адрес эл. почты"
       ],
       "Email or username": [
-        ""
+        "Электронная почта или имя пользователя"
       ],
       "Enter organization name to confirm": [
         "Введите название организации для подтверждения"
@@ -2761,7 +2761,7 @@
         "Введите код, отображаемый на вашем ТВ"
       ],
       "Expiration date": [
-        ""
+        "Срок действия"
       ],
       "Expires": [
         "Истекает"
@@ -2779,7 +2779,7 @@
         "Интервал"
       ],
       "Keep me signed in": [
-        ""
+        "Сохраняйте мой вход"
       ],
       "Key": [
         "Ключ"
@@ -2848,16 +2848,16 @@
         "Плательщик"
       ],
       "Payment details": [
-        ""
+        "Информация о платеже"
       ],
       "Payment method": [
-        ""
+        "Способ оплаты"
       ],
       "Phone number": [
         "Номер телефона"
       ],
       "Phrase consists of 12 unique words in a specific order": [
-        ""
+        "Фраза состоит из 12 уникальных слов, расположенных в определенном порядке"
       ],
       "Postal code": [
         "Почтовый индекс"
@@ -2869,7 +2869,7 @@
         "Имя пользователя Proton"
       ],
       "Recovery code": [
-        ""
+        "Код восстановления"
       ],
       "Recovery email address": [
         "Электронная почта для восстановления"
@@ -2878,22 +2878,22 @@
         "Номер телефона для восстановления"
       ],
       "Recovery phrase": [
-        ""
+        "Фраза для восстановления доступа к учетной записи"
       ],
       "Repeat password": [
-        ""
+        "Подтвердить пароль"
       ],
       "Reveal password": [
         "Показать пароль"
       ],
       "Security code": [
-        ""
+        "Код безопасности"
       ],
       "Select your country": [
         "Выберите вашу страну"
       ],
       "Subscription options": [
-        ""
+        "Варианты подписки"
       ],
       "System information": [
         "Сведения о системе"
@@ -2941,7 +2941,7 @@
         "Ваш пароль (admin)"
       ],
       "ZIP code": [
-        ""
+        "ZIP-код"
       ]
     },
     "label": {
@@ -2991,7 +2991,7 @@
         "Частые проблемы при входе"
       ],
       "Common sign up issues": [
-        ""
+        "Частые проблемы при регистрации"
       ],
       "Forgot username?": [
         "Забыли имя пользователя?"
@@ -3021,7 +3021,7 @@
         "Войти"
       ],
       "Terms": [
-        ""
+        "Правила"
       ],
       "Upgrade": [
         "Улучшить"
@@ -3077,6 +3077,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        ""
+      ],
       "Continue with free": [
         "Продолжить использовать бесплатно"
       ],
@@ -3225,7 +3228,7 @@
         "Общий объем хранилища: ${ size }"
       ],
       "1 free VPN connection in total": [
-        ""
+        "Всего 1 бесплатное подключение VPN"
       ],
       "99.95% SLA": [
         "99,95% по соглашению о качестве услуг"
@@ -3401,6 +3404,21 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        ""
+      ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Комплексные конфиденциальность и безопасность, обеспеченные сочетанием всех сервисов Proton."
       ],
@@ -3418,6 +3436,9 @@
       ],
       "Popular": [
         "Популярно"
+      ],
+      "Price includes all applicable, non-expired coupons saved to your account.": [
+        ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет всех платных услуг Proton, которые обеспечивают компаниям конфиденциальность и безопасность."
@@ -3512,6 +3533,9 @@
       "Improved plans coming soon!": [
         "Скоро появятся улучшенные тарифы!"
       ],
+      "Review subscription and pay": [
+        ""
+      ],
       "Start exploring the Proton universe": [
         "Начните знакомство с сервисами Proton"
       ],
@@ -3548,6 +3572,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Массовая рассылка, рекламная или с помощью программных средств, сейчас не поддерживается. Рекомендуем для таких случаев использовать специального поставщика услуг электронной почты"
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Создавайте разные адреса электронной почты под соответствующие личные данные в Интернете. Например, IvanPokupki@proton.me для аккаунтов, связанных с покупками, и IvanNovosti@proton.me для подписки на новости"
@@ -3622,7 +3649,7 @@
         "Клиенты, у которых 6 и более пользователей, могут обратиться за помощью к команде поддержки Proton по телефону в рабочее время согласно европейскому графику"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
+        "Ограничивает доступ к сообщениям для ${ BRAND_NAME } или третьей стороны. Читать сообщения могут только отправитель и предполагаемый получатель."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Защитите каждое устройство, подключенное к сети Wi-Fi. Это также будет полезно, если у вас есть устройства, которые не поддерживают настройки VPN напрямую"
@@ -3739,7 +3766,7 @@
     },
     "Onboarding": {
       "Welcome to ${ VPN_APP_NAME }": [
-        ""
+        "Добро пожаловать в ${ VPN_APP_NAME }"
       ]
     },
     "Option": {
@@ -3800,7 +3827,7 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        ""
+        "Кредитная/дебетовая карта"
       ],
       "New credit/debit card": [
         "Новая кредитная или дебетовая карта"
@@ -3897,12 +3924,12 @@
         "Номер телефона"
       ],
       "Phrase": [
-        ""
+        "Фраза"
       ]
     },
     "Signup label": {
       "Display name": [
-        ""
+        "Отображаемое имя"
       ],
       "Email": [
         "Эл. почта"
@@ -3913,7 +3940,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
@@ -3937,34 +3964,34 @@
     },
     "Subscription attribute": {
       "${ _n } calendar per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ _n } календарь на пользователя",
+        "${ _n } календаря на пользователя",
+        "${ _n } календарей на пользователя",
+        "${ _n } календаря на пользователя"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ maxVpn } высокоскоростное подключение к VPN",
+        "${ maxVpn } высокоскоростных подключения к VPN",
+        "${ maxVpn } высокоскоростных подключений к VPN",
+        "${ maxVpn } высокоскоростного подключения к VPN"
       ],
       "${ n } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } календарь",
+        "${ n } календаря",
+        "${ n } календарей",
+        "${ n } календарей"
       ],
       "${ n } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } высокоскоростное подключение к VPN",
+        "${ n } высокоскоростных подключения к VPN",
+        "${ n } высокоскоростных подключений к VPN",
+        "${ n } высокоскоростного подключения к VPN"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } высокоскоростное подключение к VPN на пользователя",
+        "${ n } высокоскоростных подключения к VPN на пользователя",
+        "${ n } высокоскоростных подключений к VPN на пользователя",
+        "${ n } высокоскоростного подключения к VPN на пользователя"
       ],
       "${ n } VPN connection": [
         "${ n } подключение к VPN",
@@ -3973,63 +4000,63 @@
         "${ n } подключений к VPN"
       ],
       "${ n } VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN-подключение на пользователя",
+        "${ n } VPN-подключения на пользователя",
+        "${ n } VPN-подключений на пользователя",
+        "${ n } VPN-подключения на пользователя"
       ],
       "${ UsedAddresses } address": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedAddresses } адрес",
+        "${ UsedAddresses } адреса",
+        "${ UsedAddresses } адресов",
+        "${ UsedAddresses } адреса"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedAddresses } из ${ MaxAddresses } адреса электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты",
+        "${ UsedAddresses } из ${ MaxAddresses } адресов электронной почты"
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedCalendars } календарь",
+        "${ UsedCalendars } календаря",
+        "${ UsedCalendars } календарей",
+        "${ UsedCalendars } календаря"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedDomains } из ${ MaxDomains } своего домена",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов",
+        "${ UsedDomains } из ${ MaxDomains } своих доменов"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedMembers } из ${ MaxMembers } пользователя",
+        "${ UsedMembers } из ${ MaxMembers } пользователей",
+        "${ UsedMembers } из ${ MaxMembers } пользователей",
+        "${ UsedMembers } из ${ MaxMembers } пользователей"
       ],
       "1 email address": [
-        ""
+        "1 адрес эл. почты"
       ],
       "1 VPN connection": [
-        ""
+        "1 подключение VPN"
       ],
       "Access to streaming services globally": [
-        ""
+        "Доступ к службам трансляции по всему миру"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Встроенный блокировщик рекламы (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        "",
-        "",
-        ""
+        "Высокоскоростная VPN на ${ maxVpn } устройстве",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах",
+        "Высокоскоростная VPN на ${ maxVpn } устройствах"
       ]
     },
     "Subscription price": {
       "For": [
-        ""
+        "За"
       ]
     },
     "Subscription saving": {
@@ -4039,7 +4066,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        ""
+        "Почта и календарь - это решение для повседневных коммуникаций с приоритетом конфиденциальности."
       ]
     },
     "Success": {
@@ -4068,10 +4095,10 @@
         "Подарочный код применён"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        ""
+        "Если вы ввели действительный адрес резервной эл. почты для восстановления, мы отправим вам письмо с именами ваших пользователей в течение минуты."
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        ""
+        "Если вы ввели действительный резервный номер телефона для восстановления, мы отправим вам короткое сообщение с именами ваших пользователей в течение минуты."
       ],
       "Invoice customized": [
         "Счёт настроен"
@@ -4123,7 +4150,7 @@
         "/месяц"
       ],
       "/user per month": [
-        ""
+        "за пользователя в месяц"
       ]
     },
     "Suffix for price": {
@@ -4136,10 +4163,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Для бизнесов"
       ],
       "For individuals": [
-        ""
+        "Для частных лиц"
       ]
     },
     "TableHeader": {
@@ -4161,10 +4188,10 @@
     },
     "Title": {
       "${ maxUsers } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ maxUsers } пользователь",
+        "${ maxUsers } пользователя",
+        "${ maxUsers } пользователей",
+        "${ maxUsers } пользователя"
       ],
       "${ VPN_APP_NAME } clients": [
         "Клиенты ${ VPN_APP_NAME }"
@@ -4215,7 +4242,7 @@
         "Добавление способа оплаты PayPal"
       ],
       "Address is available": [
-        ""
+        "Адрес доступен"
       ],
       "Amount": [
         "Сумма"
@@ -4263,13 +4290,13 @@
         "Подтвердите номер телефона"
       ],
       "Congratulations on choosing privacy!": [
-        ""
+        "Поздравляем с выбором конфиденциальности!"
       ],
       "Create a ${ mailAppName } address": [
-        ""
+        "Создать адрес ${ mailAppName }"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Создайте свой ${ BRAND_NAME } Аккаунт"
       ],
       "Credits": [
         "Кредиты"
@@ -4305,7 +4332,7 @@
         "Понизить учетную запись"
       ],
       "Download ${ VPN_APP_NAME }": [
-        ""
+        "Скачать ${ VPN_APP_NAME }"
       ],
       "Downloads": [
         "Загрузки"
@@ -4323,7 +4350,7 @@
         "Ошибка"
       ],
       "Find email or username": [
-        ""
+        "Найти адрес электнонной почты или имя пользователя"
       ],
       "General": [
         "Общие положения"
@@ -4356,7 +4383,7 @@
         "Следующий"
       ],
       "No recovery method": [
-        ""
+        "Отсутствует метод восстановления"
       ],
       "Open actions dropdown": [
         "Показать список доступных действий"
@@ -4398,7 +4425,7 @@
         "Сбой проверки PayPal"
       ],
       "Phone": [
-        ""
+        "Телефон"
       ],
       "Plan summary": [
         "Сводка по тарифу"
@@ -4437,19 +4464,19 @@
         "Отозвать сертификат"
       ],
       "Save contact details": [
-        ""
+        "Посмотреть контактную информацию"
       ],
       "Secure email based in Switzerland": [
-        ""
+        "Безопасная почта, находящаяся в Швейцарии"
       ],
       "Select a plan": [
         "Выбор тарифного плана"
       ],
       "Select subscription and pay": [
-        ""
+        "Выберите подписку и оплатите"
       ],
       "Set new password": [
-        ""
+        "Установите новый пароль"
       ],
       "Set up two-factor authentication": [
         "Настройка двухфакторной аутентификации"
@@ -4473,10 +4500,10 @@
         "Переключить в режим с двумя паролями"
       ],
       "This address might compromise your privacy.": [
-        ""
+        "Этот адрес может поставить под угрозу вашу конфиденциальность."
       ],
       "Try the best of ${ MAIL_APP_NAME } for free": [
-        ""
+        "Попробуйте лучшее из ${ MAIL_APP_NAME } бесплатно"
       ],
       "TV log in": [
         "Вход на ТВ"
@@ -4488,7 +4515,7 @@
         "Тип"
       ],
       "Unlock your mailbox": [
-        ""
+        "Разблокируйте свой почтовый ящик"
       ],
       "Unsupported browser": [
         "Неподдерживаемый браузер"
@@ -4497,13 +4524,13 @@
         "Имя пользователя"
       ],
       "Verification": [
-        ""
+        "Подтверждение"
       ],
       "Warning": [
         "Внимание"
       ],
       "Warning!": [
-        ""
+        "Внимание!"
       ],
       "What's new": [
         "Что нового"
@@ -4521,7 +4548,7 @@
         "Ваш тариф"
       ],
       "You’ve been invited to try ${ mailAppName }": [
-        ""
+        "Вас пригласили попробовать ${ mailAppName }"
       ],
       "ZIP / postal code": [
         "Почтовый индекс"

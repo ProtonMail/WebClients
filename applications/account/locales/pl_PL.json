@@ -2491,7 +2491,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        ""
+        "Jakie wiadomości chcesz otrzymywać od firmy ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Subskrybujesz ponownie listę mailingową ${ categoriesJsx }"
@@ -7311,6 +7311,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        ""
+      ],
       "Continue with free": [
         "Kontynuuj bezpłatnie"
       ],
@@ -7635,8 +7638,23 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } umożliwia tworzenie adresów e-mail i zarządzanie kontami dla podrzędnych użytkowników. Idealne rozwiązanie dla rodzin i organizacji."
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        ""
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług firmy Proton."
@@ -7655,6 +7673,9 @@
       ],
       "Popular": [
         "Popularne"
+      ],
+      "Price includes all applicable, non-expired coupons saved to your account.": [
+        ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pakiet dla biznesu w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi Proton premium."
@@ -7752,6 +7773,9 @@
       "Improved plans coming soon!": [
         "Ulepszone plany dostępne wkrótce!"
       ],
+      "Review subscription and pay": [
+        ""
+      ],
       "Start exploring the Proton universe": [
         "Zacznij odkrywać świat Proton"
       ],
@@ -7791,6 +7815,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Masowe wysyłanie promocyjnych lub programowych wiadomości e-mail nie jest obecnie obsługiwane. W tym celu zalecamy korzystanie z usług dedykowanego dostawcy poczty elektronicznej."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@proton.me dla kont zakupowych, JanWiadomości@proton.me dla subskrybowania wiadomości"
