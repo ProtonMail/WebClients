@@ -33,7 +33,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
                     className="mb0-5"
                 >{c('Action').t`Download`}</ButtonLike>
                 <Button color="norm" size="large" fullWidth shape="ghost" onClick={rest.onClose}>
-                    {c('Action').t`Download on another platform`}
+                    {c('Action').t`Close`}
                 </Button>
             </div>
         </ModalTwo>
