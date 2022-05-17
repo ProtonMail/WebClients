@@ -7,7 +7,14 @@ import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
-import { StepDots, StepDot, Button, useSettingsLink, ModalTwo } from '../../components';
+import {
+    StepDots,
+    StepDot,
+    Button,
+    useSettingsLink,
+    ModalTwo,
+    ModalTwoContent as ModalContent,
+} from '../../components';
 import { useApi, useOrganization, useSubscription, useUser, useUserSettings, useWelcomeFlags } from '../../hooks';
 import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
 import OnboardingThemes from './OnboardingThemes';
@@ -157,7 +164,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
 
     return (
         <ModalTwo {...rest} size="small" className="onboarding-modal">
-            <div className="p2">
+            <ModalContent className="m2">
                 {childStep}
                 {hasDots ? (
                     <div className="text-center">
@@ -175,7 +182,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
                         </StepDots>
                     </div>
                 ) : null}
-            </div>
+            </ModalContent>
         </ModalTwo>
     );
 };
