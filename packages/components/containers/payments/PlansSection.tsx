@@ -7,6 +7,7 @@ import { DEFAULT_CURRENCY, DEFAULT_CYCLE } from '@proton/shared/lib/constants';
 import { getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { Audience, Currency, PlanIDs, Subscription, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Button, Icon, Loader } from '../../components';
 import { useApi, useConfig, useLoading, usePlans, useSubscription } from '../../hooks';
@@ -33,11 +34,13 @@ const PlansSection = () => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const location = useLocation();
+    const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
+    const settingsApp = appFromPathname || APP_NAME;
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
-        return getDefaultSelectedProductPlans(APP_NAME, getPlanIDs(subscription));
+        return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription));
     });
     const [open] = useSubscriptionModal();
 
@@ -79,7 +82,7 @@ const PlansSection = () => {
         const [{ Currency } = { Currency: undefined }] = plans;
         setCurrency(subscription.Currency || Currency);
         setCycle(subscription.Cycle || DEFAULT_CYCLE);
-        setSelectedProductPlans(getDefaultSelectedProductPlans(APP_NAME, getPlanIDs(subscription)));
+        setSelectedProductPlans(getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription)));
     }, [loadingSubscription, loadingPlans]);
 
     // @ts-ignore
