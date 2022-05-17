@@ -1,15 +1,7 @@
 import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { format, fromUnixTime } from 'date-fns';
-import {
-    CYCLE,
-    DEFAULT_CURRENCY,
-    PLANS,
-    APPS,
-    BRAND_NAME,
-    VPN_CONNECTIONS,
-    MAIL_APP_NAME,
-} from '@proton/shared/lib/constants';
+import { CYCLE, PLANS, APPS, BRAND_NAME, VPN_CONNECTIONS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import {
     hasMailPro,
@@ -19,7 +11,7 @@ import {
     isTrial,
     getHasLegacyPlans,
 } from '@proton/shared/lib/helpers/subscription';
-import { Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
@@ -68,6 +60,7 @@ interface Item {
 }
 
 interface Props {
+    currency: Currency;
     subscription?: Subscription;
     plans: Plan[];
     user: UserModel;
@@ -94,7 +87,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -193,11 +186,7 @@ const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props
         const vpnPlanName = vpnPlan?.Title || '';
         const plan = bundlePlan;
         const price = (
-            <Price
-                key="plan-price"
-                currency={subscription?.Currency || DEFAULT_CURRENCY}
-                suffix={c('new_plans: Plan frequency').t`/month`}
-            >
+            <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
                 {(plan.Pricing[cycle] || 0) / cycle}
             </Price>
         );
@@ -270,11 +259,7 @@ const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props
     if (hasMailPro(subscription) && businessPlan) {
         const plan = businessPlan;
         const price = (
-            <Price
-                key="plan-price"
-                currency={subscription?.Currency || DEFAULT_CURRENCY}
-                suffix={c('new_plans: Plan frequency').t`/month`}
-            >
+            <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
                 {(plan.Pricing[cycle] || 0) / cycle}
             </Price>
         );

@@ -1,7 +1,7 @@
 import * as History from 'history';
 import { Currency, Plan } from '@proton/shared/lib/interfaces';
 import { getSupportedAddons } from '@proton/shared/lib/helpers/planIDs';
-import { CYCLE, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
+import { CYCLE, DEFAULT_CYCLE, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { SERVICES, SERVICES_KEYS } from './interfaces';
 
 export const getSignupSearchParams = (search: History.Search) => {
@@ -32,7 +32,7 @@ export const getSignupSearchParams = (search: History.Search) => {
 
     return {
         coupon,
-        currency: currency || DEFAULT_CURRENCY,
+        currency,
         cycle: cycle || DEFAULT_CYCLE,
         preSelectedPlan,
         service,

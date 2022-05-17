@@ -16,6 +16,7 @@ import SubscriptionPanel from './SubscriptionPanel';
 import UpsellPanel from './UpsellPanel';
 
 import './YourPlanSection.scss';
+import { getCurrency } from './helpers';
 
 const YourPlanSection = () => {
     const [user] = useUser();
@@ -40,9 +41,12 @@ const YourPlanSection = () => {
         return <MozillaInfoPanel />;
     }
 
+    const currency = getCurrency(user, subscription, plans);
+
     return (
         <div className="your-plan-section-container flex-gap-2">
             <SubscriptionPanel
+                currency={currency}
                 subscription={subscription}
                 organization={organization}
                 user={user}
@@ -52,6 +56,7 @@ const YourPlanSection = () => {
                 openSubscriptionModal={openSubscriptionModal}
             />
             <UpsellPanel
+                currency={currency}
                 subscription={subscription}
                 plans={plans}
                 user={user}
