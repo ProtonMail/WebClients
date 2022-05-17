@@ -1,8 +1,8 @@
-import { CYCLE, PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES } from '@proton/shared/lib/constants';
+import { CYCLE, PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUnixTime } from 'date-fns';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
-import { Cycle, LatestSubscription, Plan, Subscription } from '@proton/shared/lib/interfaces';
+import { Cycle, LatestSubscription, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
@@ -137,4 +137,12 @@ export const getBlackFridayEligibility = (subscription: Subscription, latestSubs
     }
 
     return false;
+};
+
+export const getCurrency = (
+    user: UserModel | undefined,
+    subscription: Subscription | undefined,
+    plans: Plan[] | undefined
+) => {
+    return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
