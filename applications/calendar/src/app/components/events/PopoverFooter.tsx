@@ -7,7 +7,7 @@ interface Props {
 }
 
 const PopoverFooter = ({ children, className }: Props) => {
-    return <footer className={classnames(['flex flex-nowrap flex-justify-end', className])}>{children}</footer>;
+    return <footer className={classnames(['flex', className])}>{children}</footer>;
 };
 
 export default PopoverFooter;

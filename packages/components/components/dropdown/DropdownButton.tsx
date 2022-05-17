@@ -40,7 +40,7 @@ export const DropdownButton: <E extends ElementType = typeof defaultElement>(
                 aria-busy={loading}
                 disabled={loading ? true : disabled}
                 data-testid="dropdown-button"
-                className={classnames([children && hasCaret ? 'flex flex-align-items-center' : '', className])}
+                className={classnames([children && hasCaret && 'flex flex-align-items-center flex-nowrap', className])}
                 {...rest}
             >
                 {children}

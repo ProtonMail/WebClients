@@ -1,5 +1,4 @@
 import { CSSProperties, Ref } from 'react';
-import { classnames } from '@proton/components';
 
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -78,10 +77,7 @@ const MorePopoverEvent = ({
     return (
         <PopoverContainer
             style={isNarrow ? undefined : style}
-            className={classnames([
-                'eventpopover flex flex-nowrap flex-column pt2 pl1-5 pr1-5 pb2',
-                isNarrow && 'eventpopover--full-width',
-            ])}
+            className="eventpopover flex flex-nowrap flex-column pt2 pl1-5 pr1-5 pb2"
             ref={popoverRef}
         >
             <PopoverHeader onClose={onClose} className="flex-item-noshrink">

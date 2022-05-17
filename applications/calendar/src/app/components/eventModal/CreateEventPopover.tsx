@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
-import { Button, classnames, PrimaryButton } from '@proton/components';
+import { Button, PrimaryButton } from '@proton/components';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
@@ -66,7 +66,7 @@ const CreateEventPopover = ({
     return (
         <PopoverContainer
             style={isNarrow ? undefined : style}
-            className={classnames(['eventpopover pt2 pl1-5 pr1-5 pb1', isNarrow && 'eventpopover--full-width'])}
+            className="eventpopover pt2 pl1-5 pr1-5 pb1"
             ref={popoverRef}
             onClose={onClose}
         >
@@ -92,7 +92,7 @@ const CreateEventPopover = ({
                     textareaMaxHeight={textareaMaxHeight}
                     setParticipantError={setParticipantError}
                 />
-                <PopoverFooter>
+                <PopoverFooter className="flex-nowrap flex-justify-end">
                     <Button
                         disabled={loadingAction}
                         data-test-id="create-event-popover:more-event-options"
