@@ -1,5 +1,12 @@
 import { c } from 'ttag';
-import { Button, ModalProps, ModalTwo, OnboardingContent, useSettingsLink } from '@proton/components';
+import {
+    Button,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent as ModalContent,
+    OnboardingContent,
+    useSettingsLink,
+} from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 
@@ -11,7 +18,7 @@ const DriveOnboardingModalNoAccess = (props: ModalProps) => {
 
     return (
         <ModalTwo size="small" {...props}>
-            <div className="p2">
+            <ModalContent className="m2">
                 <OnboardingContent
                     title={c('Onboarding Title').t`Upgrade to access ${appName}`}
                     description={c('Onboarding Info')
@@ -28,7 +35,7 @@ const DriveOnboardingModalNoAccess = (props: ModalProps) => {
                 >
                     {c('Onboarding Action').t`Upgrade account`}
                 </Button>
-            </div>
+            </ModalContent>
         </ModalTwo>
     );
 };

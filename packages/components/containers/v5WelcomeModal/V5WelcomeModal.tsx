@@ -11,6 +11,7 @@ import {
     MailLogo,
     ModalProps,
     ModalTwo as Modal,
+    ModalTwoContent as ModalContent,
     useFeature,
     VpnLogo,
 } from '@proton/components';
@@ -48,7 +49,7 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
 
     return (
         <Modal size="small" {...rest}>
-            <div className="p2">
+            <ModalContent className="m2">
                 <OnboardingContent
                     img={
                         <img
@@ -82,7 +83,7 @@ const V5WelcomeModal = ({ app, ...rest }: Props) => {
                 <div className="flex-item-noshrink text-center mt1-75">
                     <AppLogos size={40} />
                 </div>
-            </div>
+            </ModalContent>
         </Modal>
     );
 };

@@ -3,7 +3,16 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { useHistory, useLocation } from 'react-router-dom';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 import VPNClientCard from './VPNClientCard';
-import { DropdownMenuLink, Copy, ModalTwo, ModalProps, Button, Href, ButtonLike } from '../../../components';
+import {
+    DropdownMenuLink,
+    Copy,
+    ModalTwo,
+    ModalTwoContent,
+    ModalProps,
+    Button,
+    Href,
+    ButtonLike,
+} from '../../../components';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';
 
@@ -14,7 +23,7 @@ interface DownloadModalProps extends ModalProps {
 const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
     return (
         <ModalTwo {...rest} size="small">
-            <div className="p2 text-center">
+            <ModalTwoContent className="m2 text-center">
                 <OnboardingContent
                     img={<img src={onboardingVPNWelcome} alt={c('Onboarding').t`Welcome to ${VPN_APP_NAME}`} />}
                     title={c('Title').t`Download ${VPN_APP_NAME}`}
@@ -35,7 +44,7 @@ const DownloadModal = ({ downloadUrl, ...rest }: DownloadModalProps) => {
                 <Button color="norm" size="large" fullWidth shape="ghost" onClick={rest.onClose}>
                     {c('Action').t`Close`}
                 </Button>
-            </div>
+            </ModalTwoContent>
         </ModalTwo>
     );
 };
