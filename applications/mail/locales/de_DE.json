@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Es gibt bereits einen Filter mit diesem Namen"
       ],
-      "Folder name cannot be empty": [
-        "Name des Ordners muss angegeben werden"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Hochladen des Bilds fehlgeschlagen"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Ungültiger Verifizierungscode"
       ],
-      "Label name cannot be empty": [
-        "Name der Kategorie muss angegeben werden"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Maximale Anzahl von Anhängen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) überschritten."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen."
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Dieser Kategoriename ist nicht verfügbar. Bitte wählen Sie einen anderen Namen"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Diese Nachricht wurde bereits gesendet"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Große Importmengen können mehrere Tage dauern."
       ],
-      "Learn more": [
-        "Mehr erfahren"
-      ],
       "learn more": [
         "mehr erfahren"
+      ],
+      "Learn more": [
+        "Mehr erfahren"
       ],
       "Left to Right": [
         "Von links nach rechts"

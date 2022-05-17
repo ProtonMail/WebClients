@@ -2825,8 +2825,8 @@
       "Filter with this name already exists": [
         "这个名称已经用过了"
       ],
-      "Folder name cannot be empty": [
-        "文件夹名称不能为空"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -2849,8 +2849,8 @@
       "Invalid verification code": [
         "验证码无效"
       ],
-      "Label name cannot be empty": [
-        "标签名称不能为空"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "最多只能有 ${ EO_REPLY_NUM_ATTACHMENTS_LIMIT } 个附件。"
@@ -3005,11 +3005,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "该字段至少需要 ${ minimumLength } 个字符。"
       ],
-      "This folder name is not available. Please choose a different name": [
-        "文件夹名称不可用，请重新填写。"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "标签名称不可用，请重新填写。"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "此邮件已发送"
@@ -4128,10 +4128,10 @@
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
       ],
-      "Learn more": [
+      "learn more": [
         "了解详情"
       ],
-      "learn more": [
+      "Learn more": [
         "了解详情"
       ],
       "Left to Right": [

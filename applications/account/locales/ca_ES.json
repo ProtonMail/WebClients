@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
-      "Folder name cannot be empty": [
-        "El nom de la carpeta no pot estar buit"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         ""
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
-      "Label name cannot be empty": [
-        "El nom de l'etiqueta no es pot deixar buit"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Aquest nom de carpeta no està disponible. Trieu-ne un de diferent"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "L'opció \"Accés a aplicacions menys segures\" està activada a la configuració de seguretat del vostre compte de Google"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "La verificació en dos passos està activada al vostre compte extern"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "La verificació en dos passos està habilitada al vostre compte de correu electrònic extern"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Si ${ bold2StepsDisabled } (paràmetre de Gmail per defecte), assegureu-vos que:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Si ${ bold2StepsEnabled }, assegureu-vos que la vostra adreça de correu electrònic i contrasenya d'aplicació són correctes. ${ boldNot } utilitzis la contrasenya normal."
       ],
-      "IMAP access is enabled in your external account": [
-        "L'accés IMAP està habilitat al vostre compte extern"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "L’accés IMAP està habilitat al vostre compte de Yahoo"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Port IMAP no vàlid"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "També podeu provar de tancar la sessió de ${ boldGoogleAccounts } al navegador i desbloquejar ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "la contrasenya de l'aplicació és correcta. ${ boldNot } utilitzeu la vostra contrasenya habitual"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "el vostre compte de correu electrònic requereix una contrasenya d'aplicació per exportar les vostres dades"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "el vostre compte de correu electrònic en requereix una per exportar les vostres dades"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "la vostra adreça de correu electrònic i la contrasenya de l'aplicació són correctes. ${ boldNot } utilitzi la contrasenya normal"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "la vostra adreça de correu electrònic i contrasenya són correctes"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "la vostra contrasenya és correcta"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         ""
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        ""
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
       ],
@@ -4254,9 +4245,6 @@
         ""
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
         ""
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
@@ -7905,6 +7893,11 @@
         "Afegiu calendaris públics, externs, o compartits utilitzant una URL."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "",
@@ -8894,9 +8887,6 @@
       ],
       "Select contact group": [
         "Seleccionar grup de contactes"
-      ],
-      "Select subscription and pay": [
-        ""
       ],
       "Select the time to send this notification": [
         "Seleccioneu l'hora per enviar aquesta notificació"

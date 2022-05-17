@@ -2026,8 +2026,8 @@
       "Failed to get original occurrence in series": [
         "No s'ha pogut obtenir l'ocurrència original a sèries"
       ],
-      "Folder name cannot be empty": [
-        "El nom de la carpeta no es pot deixar buit"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
@@ -2065,8 +2065,8 @@
       "It is only possible to move events between ${ minDateString } - ${ maxDateString }": [
         "Només és possible moure esdeveniments entre ${ minDateString } - ${ maxDateString }"
       ],
-      "Label name cannot be empty": [
-        "El nom de l'etiqueta no es pot deixar buit"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Uniu almenys ${ calendarToFixCount } calendari amb un calendari Proton existent",
@@ -2183,11 +2183,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Aquest nom de carpeta no està disponible. Trieu-ne un de diferent"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Aquest missatge pot contenir algunes adreces URL que no es poden obrir amb el vostre navegador actual"
@@ -4358,6 +4358,11 @@
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
+        ""
+      ]
+    },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
         ""
       ]
     },

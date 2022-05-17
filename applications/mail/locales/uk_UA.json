@@ -2867,8 +2867,8 @@
       "Filter with this name already exists": [
         "Фільтр з цією назвою вже існує"
       ],
-      "Folder name cannot be empty": [
-        "Тека не може бути без назви"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -2891,8 +2891,8 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
-      "Label name cannot be empty": [
-        "Мітка не може бути без назви"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Перевищено максимальну кількість вкладень (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
@@ -3065,11 +3065,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Назва теки недоступна. Будь ласка, виберіть іншу назву"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Назва мітки недоступна. Будь ласка, виберіть іншу назву"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Це повідомлення вже було надіслане"
@@ -4341,11 +4341,11 @@
       "Large imports can take several days.": [
         "Великий обсяг імпортування може тривати кілька днів."
       ],
-      "Learn more": [
-        "Докладніше"
-      ],
       "learn more": [
         "докладніше"
+      ],
+      "Learn more": [
+        "Докладніше"
       ],
       "Left to Right": [
         "Зліва направо"

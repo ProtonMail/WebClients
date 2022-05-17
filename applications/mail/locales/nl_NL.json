@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
       ],
-      "Folder name cannot be empty": [
-        "Mapnaam kan niet leeg zijn"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
       ],
-      "Label name cannot be empty": [
-        "Label naam mag niet leeg zijn"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Maximum aantal bijlagen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overschreden."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Deze mapnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Dit bericht is al verzonden"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
-      "Learn more": [
-        "Meer informatie"
-      ],
       "learn more": [
         "meer informatie"
+      ],
+      "Learn more": [
+        "Meer informatie"
       ],
       "Left to Right": [
         "Van links naar rechts"
