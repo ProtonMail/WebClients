@@ -7171,6 +7171,9 @@
       ]
     },
     "new_plans: action": {
+      "Continue to review": [
+        "Seguir para revisión"
+      ],
       "Continue with free": [
         "Seguir con el plan gratuito"
       ],
@@ -7467,8 +7470,23 @@
       ]
     },
     "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } finalizando en ${ last4 }"
+      ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } te permite crear direcciones de correo electrónico y gestionar cuentas de usuarios secundarios. Es ideal para familias y empresas."
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        "* Con un mes de suscripción. Otras opciones de suscripción disponibles al pagar."
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        "* Con 12 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        "* Con 24 meses de suscripción. Otras opciones de suscripción disponibles al pagar."
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "Se aplica crédito, prorrateo y cupones para usar en el próximo paso"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Privacidad y seguridad totales con todos los servicios de Proton combinados."
@@ -7487,6 +7505,9 @@
       ],
       "Popular": [
         "Popular"
+      ],
+      "Price includes all applicable, non-expired coupons saved to your account.": [
+        ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Paquete de privacidad y seguridad para empresas, que incluye todos los servicios premium de Proton."
@@ -7582,6 +7603,9 @@
       "Improved plans coming soon!": [
         "¡Pronto habrá planes mejores!"
       ],
+      "Review subscription and pay": [
+        "Seleccionar suscripción y pagar"
+      ],
       "Start exploring the Proton universe": [
         "Descubre el universo Proton"
       ],
@@ -7621,6 +7645,9 @@
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
         "Por ahora no se pueden enviar correos electrónicos programáticos ni promocionales de forma masiva. Te recomendamos tener un proveedor de servicios de correo específico para estos casos."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Crea varias direcciones de correo eletrónico para tus identidades online, como ComprasJuan@proton.me para las cuentas destinadas a compras o NoticiasJuan@proton.me para las suscripciones a medios de comunicación"
@@ -7672,7 +7699,7 @@
         "Además, puedes agregar hasta 5 calendarios de amigos, familiares, compañeros y empresas."
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        "Cada conexión VPN permite que un solo dispositivo se conecte a ProtonVPN en cualquier momento; por ejemplo, para conectar un teléfono y una computadora portátil a Proton VPN a la vez necesitas dos conexiones VPN"
+        "Cada conexión VPN permite que un solo dispositivo se conecte a Proton VPN en cualquier momento; por ejemplo, para conectar un teléfono y una computadora portátil a Proton VPN a la vez necesitas dos conexiones VPN"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"

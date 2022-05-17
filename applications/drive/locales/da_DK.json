@@ -132,7 +132,7 @@
         "Fortsæt"
       ],
       "Continue transfers": [
-        ""
+        "Fortsæt overførsler"
       ],
       "Continue with Google": [
         "Fortsæt med Google"
@@ -147,7 +147,7 @@
         "Opret"
       ],
       "Create a new contact group": [
-        ""
+        "Opret en ny kontaktgruppe"
       ],
       "Create link": [
         "Opret link"
@@ -774,7 +774,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Fortsæt med at bruge ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar status": {
@@ -2351,7 +2351,7 @@
         "Er du sikker på, at du vil slette \"${ itemName }\" permanent fra papirkurv?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
-        "Er du sikker på, at du ønsker at slette de valgte emner permanent fra papirkurven?"
+        "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
         "Fordi ${ appName } er end-to-end krypteret, kan vi ikke få adgang til eller dekryptere dine filer for dig. For at låse dit drev op efter en nulstilling af adgangskode, skal du have en af følgende:"
@@ -2375,13 +2375,13 @@
         "Ryd data"
       ],
       "Clear encrypted search data": [
-        ""
+        "Ryd krypterede søgedata"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        ""
+        "Ryddes browserdata, ryddes søgeindekset på denne enhed. Alle filer skal indekseres igen, når du bruger søgefunktionen."
       ],
       "Clears browser data related to the encrypted search.": [
-        ""
+        "Rydder browserdata relateret til den krypterede søgning."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -2455,7 +2455,7 @@
         "Downloader"
       ],
       "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Downloader emner ${ esProgress } ud af ${ totalProgressToShow }"
+        "Downloader elementer ${ esProgress } ud af ${ totalProgressToShow }"
       ],
       "Drag and drop a file here or choose to upload.": [
         "Træk og slip en fil her eller vælg at uploade."
@@ -2470,7 +2470,7 @@
         "Aktivér søgning på drev"
       ],
       "Encrypted search is here": [
-        ""
+        "Nu med krypteret søgning"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -2540,7 +2540,7 @@
         "her"
       ],
       "How does encrypted search work?": [
-        ""
+        "Hvordan fungerer krypteret søgning?"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -2673,7 +2673,7 @@
         "af"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
+        "Et af dine krypterede drev er låst. Det skyldes sandsynligvis, at adgangskoden for nylig er blevet nulstillet."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2851,7 +2851,7 @@
         "For at aktivere rigtig privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
-        ""
+        "For at aktivere ægte privat søgning skal ${ DRIVE_APP_NAME } indeksere dine filer lokalt. Du kan stadig bruge ${ DRIVE_APP_NAME } som normalt - vi giver dig besked, når indekseringen er færdig."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "For at bekæmpe spam og misbrug bedes du bekræfte, at du er et menneske."
@@ -2980,7 +2980,7 @@
         "Din konto har mindst én forfalden faktura. Din adgang vil snart blive begrænset. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Din nuværende browser understøtter ikke hentning af store filer på grund af manglende adgang til såkaldte service workers. Ved hentning af store filer kan browseren fryse eller holde op med at svare. Brug venligst de nyeste versioner af en ${ recommendedBrowser } og prøv igen."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Dine data er klar til at blive importeret fra ${ importedEmailAddressStrong } til din Proton-konto."
@@ -3028,7 +3028,7 @@
         "Din Proton-konto er i øjeblikket suspenderet. For at fortsætte med at bruge din konto bedes du betale eventuelle forfaldne fakturaer."
       ],
       "Your secure, shareable link for ${ boldNameText }": [
-        ""
+        "Dit sikre, delbare link for ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3049,7 +3049,7 @@
         "fildata"
       ],
       "file data key": [
-        ""
+        "fildatanøgle"
       ],
       "keys": [
         "nøgler"
@@ -3110,7 +3110,7 @@
         "Anvend på alle dubletmapper"
       ],
       "Apply to all unverified items": [
-        "Anvend på alle uverificerede objekter"
+        "Anvend på alle uverificerede elementer"
       ],
       "Attach screenshot(s)": [
         "Vedhæft skærmbillede(r)"
@@ -3137,7 +3137,7 @@
         "Kategori"
       ],
       "Child sexual abuse material": [
-        ""
+        "Indhold med seksuelt misbrug af børn"
       ],
       "City": [
         "By"
@@ -3146,7 +3146,7 @@
         "Kode er på 6 cifre uden mellemrum"
       ],
       "Comment": [
-        ""
+        "Kommentar"
       ],
       "Contacts": [
         "Kontakter"
@@ -3155,7 +3155,7 @@
         "Kopiér"
       ],
       "Copyright infringement": [
-        ""
+        "Krænkelse af ophavsret"
       ],
       "Country": [
         "Land"
@@ -3180,7 +3180,7 @@
         "Download alligevel"
       ],
       "Email": [
-        ""
+        "E-mail"
       ],
       "Email address": [
         "E-mailadresse"
@@ -3195,7 +3195,7 @@
         "Aktivér beta-adgang"
       ],
       "Enabling drive search": [
-        ""
+        "Aktivér søgning på drev"
       ],
       "Encrypt emails": [
         "Kryptér e-mails"
@@ -3237,7 +3237,7 @@
         "Skjul adgangskode"
       ],
       "I understand the risk": [
-        ""
+        "Jeg er indforstået med risikoen"
       ],
       "Image": [
         "Billede"
@@ -3270,7 +3270,7 @@
         "Postkasseadgangskode"
       ],
       "Malware": [
-        ""
+        "Malware"
       ],
       "Manage folders": [
         "Administrer mapper"
@@ -3300,7 +3300,7 @@
         "Operativsystemversion"
       ],
       "Other": [
-        ""
+        "Andet"
       ],
       "Password": [
         "Adgangskode"
@@ -3312,7 +3312,7 @@
         "Telefonnummer"
       ],
       "Please provide full details to help us take appropriate action": [
-        ""
+        "Angiv venligst alle oplysninger for at hjælpe os med at træffe passende foranstaltninger"
       ],
       "Post office box": [
         "Postboks"
@@ -3339,13 +3339,13 @@
         "Erstat mappe"
       ],
       "Report Abuse": [
-        ""
+        "Anmeld misbrug"
       ],
       "Reveal password": [
         "Afslør adgangskode"
       ],
       "Select type of abuse": [
-        ""
+        "Vælg type af misbrug"
       ],
       "Set expiration date": [
         "Angiv en udløbsdato"
@@ -3363,10 +3363,10 @@
         "Spring mappe over"
       ],
       "Spam": [
-        ""
+        "Spam"
       ],
       "Stolen data": [
-        ""
+        "Stjålne data"
       ],
       "Street address": [
         "Adresse"
@@ -3513,7 +3513,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Din gratis prøveperiode er afsluttet. Adgang til din konto vil snart blive deaktiveret. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3542,44 +3542,44 @@
     },
     "Notification": {
       "\"${ name }\" created successfully": [
-        ""
+        "\"${ name }\" oprettet"
       ],
       "\"${ name }\" deleted permanently from trash": [
         "\"${ name }\" permanent slettet fra papirkurven"
       ],
       "\"${ name }\" failed to be created": [
-        ""
+        "\"${ name }\" kunne ikke oprettes"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
         "\"${ name }\" kunne ikke slettes permanent fra papirkurven"
       ],
       "\"${ name }\" failed to be moved": [
-        ""
+        "\"${ name }\" kunne ikke flyttes"
       ],
       "\"${ name }\" failed to be moved to trash": [
-        ""
+        "\"${ name }\" kunne ikke flyttes til papirkurv"
       ],
       "\"${ name }\" failed to be restored from trash": [
-        ""
+        "\"${ name }\" kunne ikke gendannes fra papirkurv"
       ],
       "\"${ name }\" moved to trash": [
-        ""
+        "\"${ name }\" flyttet til papirkurv"
       ],
       "\"${ name }\" restored from trash": [
-        ""
+        "\"${ name }\" gendannet fra papirkurv"
       ],
       "\"${ name }\" successfully moved": [
-        ""
+        "\"${ name }\" blev flyttet"
       ],
       "\"${ newName }\" failed to be renamed": [
-        ""
+        "\"${ newName }\" kunne ikke omdøbes"
       ],
       "\"${ newName }\" renamed successfully": [
-        ""
+        "\"${ newName }\" omdøbt"
       ],
       "${ count } item failed to be decrypted": [
-        "${ count } emne kunne ikke dekrypteres",
-        "${ count } emner kunne ikke dekrypteres"
+        "${ count } element kunne ikke dekrypteres",
+        "${ count } elementer kunne ikke dekrypteres"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element permanent slettet fra papirkurven",
@@ -3590,36 +3590,36 @@
         "${ numberOfItems } elementer kunne ikke fjernes permanent fra papirkurven"
       ],
       "${ numberOfItems } item failed to be moved": [
-        "",
-        ""
+        "${ numberOfItems } element kunne ikke flyttes",
+        "${ numberOfItems } elementer kunne ikke flyttes"
       ],
       "${ numberOfItems } item failed to be moved to trash": [
-        "",
-        ""
+        "${ numberOfItems } element kunne ikke flyttes til papirkurven",
+        "${ numberOfItems } elementer kunne ikke flyttes til papirkurven"
       ],
       "${ numberOfItems } item failed to be restored from trash": [
-        "",
-        ""
+        "${ numberOfItems } element kunne ikke gendannes fra papirkurv",
+        "${ numberOfItems } elementer kunne ikke gendannes fra papirkurv"
       ],
       "${ numberOfItems } item moved to trash": [
-        "",
-        ""
+        "${ numberOfItems } element flyttet til papirkurv",
+        "${ numberOfItems } elementer flyttet til papirkurv"
       ],
       "${ numberOfItems } item restored from trash": [
-        "",
-        ""
+        "${ numberOfItems } element gendannet fra papirkurv",
+        "${ numberOfItems } elementer gendannet fra papirkurv"
       ],
       "${ numberOfItems } item successfully moved": [
-        "",
-        ""
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
       ],
       "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } link til din fil kunne ikke slettes",
-        "${ numberOfItems } links til din fil kunne ikke slettes"
+        "${ numberOfItems } link til dit element kunne ikke slettes",
+        "${ numberOfItems } links til dine elementer kunne ikke slettes"
       ],
       "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } link til din fil blev slettet",
-        "${ numberOfItems } links til din fil blev slettet"
+        "${ numberOfItems } link til dit element blev slettet",
+        "${ numberOfItems } links til dine elementer blev slettet"
       ],
       "All items will soon be permanently deleted from trash": [
         "Alle elementer slettes snart permanent fra papirkurven"
@@ -3631,7 +3631,7 @@
         "Kontaktgruppe opdateret"
       ],
       "Encrypted search activated": [
-        ""
+        "Krypteret søgning aktiveret"
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke uploade filer: ${ err }"
@@ -3653,7 +3653,7 @@
         "Der mangler et navn på en fil eller mappe"
       ],
       "Item failed to be verified": [
-        ""
+        "Element kunne ikke verificeres"
       ],
       "Link failed to be loaded": [
         "Link kunne ikke indlæses"
@@ -3701,10 +3701,10 @@
         "Linket til \"${ name }\" blev slettet"
       ],
       "The link to your item failed to be deleted": [
-        "Linket til din fil kunne ikke slettes"
+        "Linket til dit element kunne ikke slettes"
       ],
       "The link to your item was deleted": [
-        "Linket til din fil blev slettet"
+        "Linket til dit element blev slettet"
       ],
       "Trash failed to be emptied": [
         "Papirkurv kunne ikke tømmes"
@@ -3721,12 +3721,12 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Derefter skal du logge ind på din Google-konto og give Proton adgang til dine data."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "For at importen kan fungere, skal du vælge alle de ønskede elementer som vist i GIF-illustrationen."
       ]
     },
     "Onboarding Action": {
@@ -3734,7 +3734,7 @@
         "Aktiver Betaadgang"
       ],
       "Next": [
-        ""
+        "Næste"
       ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
@@ -3751,7 +3751,7 @@
         "${ appName } er i øjeblikket kun tilgængelig, hvis du aktiverer betaadgang."
       ],
       "Your trusty online vault for vital documents and precious memories.": [
-        ""
+        "Din pålidelige online boks til vigtige dokumenter og dyrebare minder."
       ]
     },
     "Onboarding Proton": {
@@ -3782,7 +3782,7 @@
         "Opgrader for at få adgang til ${ appName }"
       ],
       "Welcome to ${ appName }": [
-        ""
+        "Velkommen til ${ appName }"
       ]
     },
     "Option": {
@@ -3828,7 +3828,7 @@
         "Indtast et nyt mappenavn"
       ],
       "Enter your email address": [
-        ""
+        "Indtast din e-mailadresse"
       ],
       "Filter groups": [
         "Filtrér grupper"
@@ -3935,16 +3935,16 @@
     },
     "Spotlight": {
       "Encrypted search is here": [
-        ""
+        "Nu med krypteret søgning"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Få op til 18 måneder med ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Inviter venner, og optjen belønninger!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        ""
+        "Nu kan du nemt søge i Drive-filer, mens dine data forbliver sikre."
       ]
     },
     "Storage": {
@@ -4009,7 +4009,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/måned"
       ]
     },
     "Table header": {
@@ -4478,7 +4478,7 @@
         "Stop overførsler?"
       ],
       "The file or folder failed to be downloaded": [
-        ""
+        "Filen eller mappen kunne ikke downloades"
       ],
       "The internet connection was interrupted": [
         "Internetforbindelsen blev afbrudt"
@@ -4493,10 +4493,10 @@
         "Linket kunne ikke indlæses"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Denne fil har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Denne mappe har en manglende eller ugyldig signatur. Gå til Menu (⋮) → Detaljer for info."
       ],
       "Total size": [
         "Samlet størrelse"
@@ -4578,7 +4578,7 @@
         "Vælg den PGP-metode, der skal benyttes, når du signerer eller krypterer til en bruger. Bemærk at PGP/Inline gennemtvinger beskeder i simpel tekst"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "Systemundermapper vises som separate mapper i ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
         "Importen vil starte med de seneste beskeder."
@@ -4646,7 +4646,7 @@
         "Hvis du ikke kan huske din adgangskode, er det umuligt at genaktivere din nøgle. Vi kan hjælpe dig med at afvise advarselsbanneret, men i processen vil du permanent miste adgang til alle de data, der er krypteret med den nøgle."
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "Live chat er en premium-funktion, der kun er tilgængelig for dem, der har betalte ${ VPN_APP_NAME }-abonnementer. Åbn venligst en sag i stedet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton vil sammenflette alle mapper med det samme navn. For at undgå dette, skal du ændre navnene før importen."

@@ -132,7 +132,7 @@
         "続行"
       ],
       "Continue transfers": [
-        ""
+        "転送を続行"
       ],
       "Continue with Google": [
         "Google で続行"
@@ -495,7 +495,7 @@
         "共有を停止"
       ],
       "Stop transfers": [
-        ""
+        "転送を中止"
       ],
       "Submit": [
         "送信"
@@ -525,7 +525,7 @@
         "信頼しない"
       ],
       "Update recovery file": [
-        "回復ファイルを更新"
+        "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
         "リカバリーフレーズを更新"
@@ -1798,7 +1798,7 @@
         "無効なログイン情報です。再度お試しください。"
       ],
       "Incorrect mailbox password. Please try again.": [
-        "無効な受信箱のパスワードです。再度お試しください。"
+        "無効な受信トレイのパスワードです。再度お試しください。"
       ],
       "Incorrect password. Please try again.": [
         "パスワードが正しくありません。もう一度お試しください。"
@@ -2621,7 +2621,7 @@
         "メモ: アップロードされたキーは暗号化に利用できます。暗号化は自動的に無効化されます。"
       ],
       "Not a valid URL": [
-        ""
+        "有効な URL ではありません"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "メモ: まだデータは ${ appName } をインストールしているデバイスで利用可能な場合があります。"
@@ -2693,7 +2693,7 @@
         "処理待ち"
       ],
       "recommended browser": [
-        "おすすめのブラウザー"
+        "推奨ブラウザ"
       ],
       "Recovery process might take some time.": [
         "復元処理には少々時間がかかります。"
@@ -2714,7 +2714,7 @@
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Google から移動したいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -2777,7 +2777,7 @@
         "このブラウザーは PDF ドキュメントのプレビューをサポートしていません。ファイルをダウンロードしてください。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "このリンクはパスワードやクレジットカードなどの情報を盗もうとするウェブサイトに誘導している可能性があります。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "このリンクはホモグラフ攻撃の可能性があり、Internet ExplorerおよびEdgeブラウザーで開くことはできません。リンクが正当であることが確実な場合は、別のブラウザーを使用して開いてください。"
@@ -2846,7 +2846,7 @@
         "送信数制限なし"
       ],
       "Unlock drive to recover files": [
-        "回復ファイルを使ってドライブのロックを解除"
+        "回復用ファイルを使ってドライブのロックを解除"
       ],
       "Unsupported file": [
         "非対応のファイル"
@@ -2936,7 +2936,7 @@
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "お使いのブラウザはサービスワーカーが利用不可であるため、大きなファイルのダウンロードに対応していません。大きなファイルをダウンロードすると、ブラウザがフリーズしたり応答しなくなったりすることがあります。最新版の ${ recommendedBrowser } を使用してもう一度お試しください。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
@@ -2978,13 +2978,13 @@
         "以前のパスワード"
       ],
       "Your previous recovery phrase": [
-        "以前の回復フレーズ"
+        "以前の回復用フレーズ"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
       ],
       "Your secure, shareable link for ${ boldNameText }": [
-        ""
+        "${ boldNameText } を安全に共有するためのリンク"
       ]
     },
     "Info on errors": {
@@ -3005,7 +3005,7 @@
         "ファイルデータ"
       ],
       "file data key": [
-        ""
+        "ファイル データ キー"
       ],
       "keys": [
         "キー"
@@ -3877,7 +3877,7 @@
         "友だちを招待して報酬を手に入れよう!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        ""
+        "データの安全を保ったまま Drive のファイルを検索できるようになりました。"
       ]
     },
     "Storage": {
@@ -4384,7 +4384,7 @@
         "続行するには再度ログインしてください"
       ],
       "Sign in and grant access": [
-        ""
+        "サインインして権限を付与"
       ],
       "Size": [
         "サイズ"
@@ -4450,7 +4450,7 @@
         "警告: 偽のウェブサイトの疑いがあります"
       ],
       "What would you like to import?": [
-        ""
+        "何をインポートしたいですか?"
       ],
       "What's new": [
         "更新情報"
