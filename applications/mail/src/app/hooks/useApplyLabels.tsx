@@ -220,7 +220,9 @@ export const useApplyLabels = () => {
                             rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
                             try {
                                 const action = changes[LabelID] ? labelAction : unlabelAction;
-                                const { UndoToken } = await api(action({ LabelID, IDs: elementIDs }));
+                                const { UndoToken } = await api(
+                                    action({ LabelID, IDs: elementIDs, SpamAction: undefined })
+                                );
                                 return UndoToken.Token;
                             } catch (error: any) {
                                 rollbacks[LabelID]();
@@ -334,12 +336,20 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     };
 
     const askToUnsubscribe = async (folderID: string, isMessage: boolean, elements: Element[]) => {
-        if (folderID === SPAM && mailSettings?.SpamAction === null) {
-            const { unsubscribe, remember } = await handleShowSpamModal({ isMessage, elements });
+        if (folderID === SPAM) {
+            if (mailSettings?.SpamAction === null) {
+                const { unsubscribe, remember } = await handleShowSpamModal({ isMessage, elements });
+                const spamAction = unsubscribe ? SpamAction.SpamAndUnsub : SpamAction.JustSpam;
 
-            if (remember) {
-                await api(updateSpamAction(unsubscribe ? SpamAction.SpamAndUnsub : SpamAction.JustSpam));
+                if (remember) {
+                    // Don't waste time
+                    void api(updateSpamAction(spamAction));
+                }
+
+                return spamAction;
             }
+
+            return mailSettings?.SpamAction;
         }
     };
 
@@ -353,7 +363,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             const isMessage = testIsMessage(elements[0]);
 
-            await Promise.all([
+            const [, spamAction] = await Promise.all([
                 // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
                 searchForScheduled(folderID, isMessage, elements),
                 // Open a modal when moving items to spam to propose to unsubscribe them
@@ -407,7 +417,9 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                     stop();
                     dispatch(backendActionStarted());
                     rollback = optimisticApplyLabels(authorizedToMove, { [folderID]: true }, true, [], fromLabelID);
-                    const { UndoToken } = await api(action({ LabelID: folderID, IDs: elementIDs }));
+                    const { UndoToken } = await api(
+                        action({ LabelID: folderID, IDs: elementIDs, SpamAction: spamAction })
+                    );
                     // We are not checking ValidUntil since notification stay for few seconds after this action
                     token = UndoToken.Token;
                 } catch (error: any) {
@@ -508,6 +520,7 @@ export const useStar = () => {
                 action({
                     LabelID: MAILBOX_LABEL_IDS.STARRED,
                     IDs: elements.map((element) => element.ID),
+                    SpamAction: undefined,
                 })
             );
         } catch (error: any) {
