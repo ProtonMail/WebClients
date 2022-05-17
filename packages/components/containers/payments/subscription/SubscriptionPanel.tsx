@@ -3,7 +3,6 @@ import {
     PLANS,
     PLAN_NAMES,
     APPS,
-    DEFAULT_CURRENCY,
     CYCLE,
     BRAND_NAME,
     VPN_CONNECTIONS,
@@ -18,6 +17,7 @@ import {
     UserModel,
     VPNServers,
     VPNCountries,
+    Currency,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import percentage from '@proton/shared/lib/helpers/percentage';
@@ -44,6 +44,7 @@ interface Item {
 
 interface Props {
     user: UserModel;
+    currency: Currency;
     subscription?: Subscription;
     organization?: Organization;
     vpnServers?: VPNServers;
@@ -53,6 +54,7 @@ interface Props {
 }
 
 const SubscriptionPanel = ({
+    currency,
     vpnServers,
     vpnCountries,
     subscription,
@@ -269,7 +271,7 @@ const SubscriptionPanel = ({
                 </h3>
                 <Price
                     className="h3 m0 color-weak"
-                    currency={subscription?.Currency || DEFAULT_CURRENCY}
+                    currency={currency}
                     suffix={subscription && amount ? c('Suffix').t`/month` : ''}
                 >
                     {amount}

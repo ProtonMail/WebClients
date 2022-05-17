@@ -144,16 +144,17 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             signupParameters: SignupParameters
         ): Promise<SubscriptionData> => {
             const planIDs = getPlanIDsFromParams(plans, signupParameters);
+            const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
             const checkResult = await getSubscriptionPrices(
                 api,
                 planIDs || {},
-                signupParameters.currency,
+                currency,
                 signupParameters.cycle,
                 signupParameters.coupon
             );
             return {
                 cycle: signupParameters.cycle,
-                currency: signupParameters.currency,
+                currency: checkResult.Currency,
                 checkResult,
                 planIDs: planIDs || {},
                 skipUpsell: !!planIDs,
@@ -175,9 +176,13 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
                           .catch(() => undefined)
                     : undefined,
                 silentApi<{ Plans: Plan[] }>(
-                    queryPlans({
-                        Currency: DEFAULT_CURRENCY,
-                    })
+                    queryPlans(
+                        signupParameters.currency
+                            ? {
+                                  Currency: signupParameters.currency,
+                              }
+                            : undefined
+                    )
                 ).then(({ Plans }) => Plans),
             ]);
 
