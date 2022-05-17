@@ -168,7 +168,7 @@ const MailRecipientItemSingle = ({
                 className="text-left flex flex-nowrap flex-align-items-center"
                 onClick={handleClickSearch}
             >
-                <Icon name="magnifier" className="mr0-5" />
+                <Icon name="envelope-magnifying-glass" className="mr0-5" />
                 <span className="flex-item-fluid mtauto mbauto">
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
