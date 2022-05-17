@@ -289,6 +289,10 @@ const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props
                 icon: 'brand-proton-vpn',
                 text: getHighSpeedVPNB2B(VPN_CONNECTIONS),
             },
+            {
+                icon: 'checkmark-circle',
+                text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
+            },
         ];
         return (
             <UpsellBox
