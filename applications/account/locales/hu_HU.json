@@ -473,7 +473,7 @@
         "Nem"
       ],
       "No, thanks": [
-        "Nem, köszönöm"
+        "Köszönöm, nem"
       ],
       "OK": [
         "OK"
@@ -683,7 +683,7 @@
         "Előnézet megmutatása"
       ],
       "sign in": [
-        "bejelentkezés"
+        "bejelentkezéshez"
       ],
       "Sign in": [
         "Bejelentkezés"
@@ -1186,7 +1186,7 @@
     },
     "Button": {
       "Add link to your email footer": [
-        "Adjon hozzá linket az email láblécébe"
+        "Hivatkozás hozzáadása az e-mail láblécéhez"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Folytatás ezzel: ${ MAIL_APP_NAME }."
@@ -3943,7 +3943,7 @@
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } tag)",
-        "(${ memberCount } tagok)"
+        "(${ memberCount } tag)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Szűrés ha az alábbi ÖSSZES feltétel teljesül)"
@@ -4166,7 +4166,7 @@
         "Basic, Plus vagy Visionary előfizetés szükséges"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
+        "Mielőtt új ellenőrző kódot igényelne, kérjük nézze meg a levélszemét mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Mielőtt saját domain nevével fogadhatna e-maileket a ${ MAIL_APP_NAME }-nél, a következő DNS MX rekordok hozzáadására van szükség. Ez általában a domain név regisztrátor kezelőfelületén történik."
@@ -4590,7 +4590,7 @@
         "feltétlenül szükséges"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "Én ezt használtam: ${ appName } és szerintem neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, ami védi a magánéleted. Jelentkezz rá ezen a linken, hogy kapj egy hónapnyi ingyen használatot: ${ referrerLink }"
+        "Én a ${ appName } levelezést használom és szerintem neked is tetszeni fog. Ez egy biztonságos e-mail szolgáltatás, ami védi a magánéleted. Regisztrálj rá ezen a hivatkozáson, és egy hónapig a prémium lehetőségeket is ingyen használhatod: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Hagyja jóvá a kiválasztást aztán elindul a folyamat."
@@ -4767,7 +4767,7 @@
         "Egyéb opciók"
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "Új ${ domain } domainünk kényelmes opció emailek küldésére és fogadására. Továbbra is képes lesz az eredeti ${ protonMailAppName } címét használni."
+        "Új ${ domain } domainünk kényelmes opció e-mailek küldésére és fogadására. Továbbra is képes lesz az eredeti ${ protonMailAppName } címét használni."
       ],
       "Outdated recovery file; update to ensure access to your data": [
         "Elavult helyreállítási fájl; frissítse, hogy bizonyosan elérhesse adatait"
@@ -6869,7 +6869,7 @@
         "Mi a különbség az UDP és a TCP protokollok között?"
       ],
       "Why set recovery methods?": [
-        "Miért hozzon létre helyreállítási módokat?"
+        "Miért állítson be helyreállítási módszereket?"
       ]
     },
     "Loading info": {
@@ -7647,19 +7647,19 @@
     },
     "Recovery Email": {
       "Back to ${ signIn }.": [
-        "Visszalépés a bejelentkezéshez ${ signIn }."
+        "Vissza a ${ signIn }."
       ],
       "Cancel": [
         "Mégsem"
       ],
       "Email address has been verified.": [
-        "Az email cím megerősítésre került."
+        "Az e-mail cím megerősítésre került."
       ],
       "Email address not yet verified.": [
-        "Az email cím még nincs megerősítve."
+        "Az e-mail cím még nincs megerősítve."
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "Kérjük jelentkezzen be ${ signIn } hogy újraküldjük a visszaállítási email cím megerősítő kérését."
+        "Kérjük menjen a ${ signIn }, hogy újraküldjük a helyreállítási e-mail cím megerősítő levelet."
       ],
       "Send verification email": [
         "Ellenőrző e-mail küldése"
@@ -7668,22 +7668,22 @@
         "Probléma merült fel email címének megerősítésekor."
       ],
       "Verification email sent to ${ email.Value }": [
-        "Az igazoló emailt megküldtük erre a címre: ${ email.Value }"
+        "Az ellenőrző e-mailt elküldtük erre a címre: ${ email.Value }"
       ],
       "Verify now": [
         "Ellenőrzés most"
       ],
       "Verify recovery email?": [
-        "Helyreállító email megerősítése?"
+        "Helyreállító e-mail megerősítése?"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "Az email címének megerősítése növeli a fiókjának biztonságát, illeve több visszaállítási lehetőséget biztosít."
+        "Az e-mail címének megerősítése növeli a fiókja biztonságát, illeve több helyreállítási lehetőséget biztosít."
       ],
       "You can safely close this tab.": [
         "Most már nyugodtan bezárhatja ezt az ablakot."
       ],
       "Your recovery email has been successfully verified.": [
-        "A visszaállító email címe sikeresen megerősítésre került."
+        "A helyreállító e-mail címe sikeresen megerősítésre került."
       ]
     },
     "Recovery method": {
@@ -8878,7 +8878,7 @@
         ""
       ],
       "Secure email based in Switzerland": [
-        "Biztonságos Email svájci székhellyel"
+        "Biztonságos e-mail svájci székhellyel"
       ],
       "Security": [
         "Biztonság"
@@ -9052,7 +9052,7 @@
         "Jelenlegi csomag"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "Az ingyenes próbaideje hamarosan ekkor jár le: ${ formattedEndDate }"
+        "Az ingyenes próbaideje hamarosan lejár: ${ formattedEndDate }"
       ],
       "Your plan": [
         "Az ön csomagja"
@@ -9451,7 +9451,7 @@
         "Az importálási elem a továbbiakban nem fog szerepelni a listán."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"
+        "Az ingyenes próbaideje le fog járni: ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
         "A helyreállító fájlja elavult. Nem alkalmas az új adatok helyreállítására, ha ismét visszaállítaná a fiókja jelszavát."

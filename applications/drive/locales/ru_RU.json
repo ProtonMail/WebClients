@@ -111,7 +111,7 @@
         "Закрыть окно с загрузками"
       ],
       "Collapse": [
-        ""
+        "Свернуть"
       ],
       "Collapse folder": [
         "Свернуть папку"
@@ -132,7 +132,7 @@
         "Продолжить"
       ],
       "Continue transfers": [
-        ""
+        "Продолжить перенос"
       ],
       "Continue with Google": [
         "Продолжить с Google"
@@ -147,7 +147,7 @@
         "Создать"
       ],
       "Create a new contact group": [
-        ""
+        "Создать новую группу контактов"
       ],
       "Create link": [
         "Создать ссылку"
@@ -231,7 +231,7 @@
         "Включить поиск по хранилищу"
       ],
       "Expand": [
-        ""
+        "Развернуть"
       ],
       "Expand folder": [
         "Развернуть папку"
@@ -501,13 +501,13 @@
         "Закрыть доступ"
       ],
       "Stop transfers": [
-        ""
+        "Остановить перенос"
       ],
       "Submit": [
         "Отправить"
       ],
       "Submit report": [
-        ""
+        "Отправить отчет"
       ],
       "Theme": [
         "Тема"
@@ -2075,16 +2075,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Байт"
       ],
       "Gigabytes": [
-        ""
+        "Гигабайт"
       ],
       "Kilobytes": [
-        ""
+        "Килобайт"
       ],
       "Megabytes": [
-        ""
+        "Мегабайт"
       ]
     },
     "Filter notification": {
@@ -2366,7 +2366,7 @@
         "${ speed }/с"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } хранилища"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } контакт успешно обновлен.",
@@ -2537,7 +2537,7 @@
         "Скачивание"
       ],
       "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
+        "Загрузка элементов ${ esProgress } из ${ totalProgressToShow }"
       ],
       "Drag and drop a file here or choose to upload.": [
         "Для загрузки файлов перетащите их сюда или выберите через диалоговое окно."
@@ -2558,13 +2558,13 @@
         "Введите код подтверждения, отправленный на ${ destinationText }."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "",
-        "",
-        "",
-        ""
+        "Оставшееся время: ${ estimatedMinutes } минута",
+        "Оставшееся время: ${ estimatedMinutes } минуты",
+        "Оставшееся время: ${ estimatedMinutes } минут",
+        "Оставшееся время: ${ estimatedMinutes } минут"
       ],
       "Estimated time remaining: Less than a minute": [
-        ""
+        "Оставшееся время: меньше минуты"
       ],
       "Estimating time remaining...": [
         "Оценка оставшегося времени..."
@@ -2750,7 +2750,7 @@
         "Ни один из загруженных ключей не подходит для шифрования. Шифрование автоматически отключено."
       ],
       "Not a valid URL": [
-        ""
+        "Не является действительным URL"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Примечание: Данные могут быть все еще доступны локально на устройствах, на которых вы установили ${ appName }."
@@ -2759,7 +2759,7 @@
         "из"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
+        "Один из ваших зашифрованных дисков заблокирован. Скорее всего, это вызвано недавним сбросом пароля."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2831,7 +2831,7 @@
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
       "Report has been sent": [
-        ""
+        "Отчет был отправлен"
       ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
@@ -2843,7 +2843,7 @@
         "Выберите формат письма, который вы хотите использовать по умолчанию при отправке почты на этот адрес."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Выберите, что вы хотите перенести из Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
@@ -2891,7 +2891,7 @@
         "Возможно, следующие элементы были взломаны: ${ items }. Открывайте их только в том случае, если вы им доверяете."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
+        "Всё ещё остались файлы для передачи. Закрытие менеджера передачи завершит все операции."
       ],
       "There are no files yet": [
         "Пока здесь пусто"
@@ -2987,7 +2987,7 @@
         "Обновляем поиск по хранилищу..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
       ],
       "Uploaded": [
         "Загружено"
@@ -2999,7 +2999,7 @@
         "Загрузка сотен файлов сразу может повлиять на производительность."
       ],
       "Use this form to notify us of inappropriate, illegal,\nor otherwise malicious shared files. You are about to report:": [
-        ""
+        "Используйте эту форму, чтобы уведомить нас о неприемлемых, незаконных,\nили других вредоносных файлах общего доступа. Вы собираетесь сообщить:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Мы не смогли проверить, что ${ emailAddress } загрузил ${ fileName }."
@@ -3116,7 +3116,7 @@
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
       ],
       "Your secure, shareable link for ${ boldNameText }": [
-        ""
+        "Ссылка для безопасного доступа к ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3137,7 +3137,7 @@
         "данные файла"
       ],
       "file data key": [
-        ""
+        "ключ содержимого файла"
       ],
       "keys": [
         "ключи"
@@ -3225,7 +3225,7 @@
         "Категория"
       ],
       "Child sexual abuse material": [
-        ""
+        "Материалы о сексуальном насилии над детьми"
       ],
       "City": [
         "Город"
@@ -3234,7 +3234,7 @@
         "Код состоит из 6 цифр без пробелов"
       ],
       "Comment": [
-        ""
+        "Комментарий"
       ],
       "Contacts": [
         "Контакты"
@@ -3243,7 +3243,7 @@
         "Копировать"
       ],
       "Copyright infringement": [
-        ""
+        "Нарушение авторских прав"
       ],
       "Country": [
         "Страна"
@@ -3270,7 +3270,7 @@
         "Все равно скачать"
       ],
       "Email": [
-        ""
+        "Электронная почта"
       ],
       "Email address": [
         "Адрес электронной почты"
@@ -3360,7 +3360,7 @@
         "Пароль почтового ящика"
       ],
       "Malware": [
-        ""
+        "Вредоносная программа"
       ],
       "Manage folders": [
         "Управление папками"
@@ -3390,7 +3390,7 @@
         "Версия операционной системы"
       ],
       "Other": [
-        ""
+        "Другое"
       ],
       "Password": [
         "Пароль"
@@ -3402,7 +3402,7 @@
         "Номер телефона"
       ],
       "Please provide full details to help us take appropriate action": [
-        ""
+        "Пожалуйста, предоставьте полную информацию, чтобы мы могли принять соответствующие меры"
       ],
       "Post office box": [
         "Почтовый ящик"
@@ -3429,13 +3429,13 @@
         "Заменить папку"
       ],
       "Report Abuse": [
-        ""
+        "Сообщить о нарушении"
       ],
       "Reveal password": [
         "Показать пароль"
       ],
       "Select type of abuse": [
-        ""
+        "Выберите тип злоупотребления"
       ],
       "Set expiration date": [
         "Задать срок действия"
@@ -3453,10 +3453,10 @@
         "Пропустить папку"
       ],
       "Spam": [
-        ""
+        "Спам"
       ],
       "Stolen data": [
-        ""
+        "Украденные данные"
       ],
       "Street address": [
         "Адрес улицы"
@@ -3866,12 +3866,12 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Затем вам нужно будет войти в свой аккаунт Google и предоставить Proton доступ к вашим данным."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Чтобы импорт сработал, необходимо выбрать все требуемые элементы, как показано в GIF."
       ]
     },
     "Onboarding Action": {
@@ -3879,7 +3879,7 @@
         "Включить доступ к бета-версии"
       ],
       "Next": [
-        ""
+        "Далее"
       ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
@@ -3896,7 +3896,7 @@
         "Доступ к ${ appName } возможен, только если вы включите доступ к бета-версии."
       ],
       "Your trusty online vault for vital documents and precious memories.": [
-        ""
+        "Ваше надежное онлайн-хранилище для жизненно важных документов и драгоценных воспоминаний."
       ]
     },
     "Onboarding Proton": {
@@ -3927,7 +3927,7 @@
         "Чтобы получить доступ к ${ appName }, смените тариф"
       ],
       "Welcome to ${ appName }": [
-        ""
+        "Добро пожаловать в ${ appName }"
       ]
     },
     "Option": {
@@ -3973,7 +3973,7 @@
         "Введите имя новой папки"
       ],
       "Enter your email address": [
-        ""
+        "Введите адрес вашей электронной почты"
       ],
       "Filter groups": [
         "Фильтр групп"
@@ -4087,7 +4087,7 @@
         "Зашифрованный поиск тут"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Получите до 18 месяцев ${ planName } бесплатно"
       ],
       "Invite friends and earn rewards!": [
         "Приглашайте друзей и получайте вознаграждения!"
@@ -4162,7 +4162,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/месяц"
       ]
     },
     "Table header": {
@@ -4627,7 +4627,7 @@
         "Войдите снова, чтобы продолжить"
       ],
       "Sign in and grant access": [
-        ""
+        "Войдите и предоставьте доступ"
       ],
       "Size": [
         "Размер"
@@ -4642,7 +4642,7 @@
         "Закрыть доступ всем?"
       ],
       "Stop transfers?": [
-        ""
+        "Остановить перенос?"
       ],
       "The file or folder failed to be downloaded": [
         "Не удалось скачать файл или папку"
@@ -4693,7 +4693,7 @@
         "Предупреждение: предполагаемый поддельный сайт"
       ],
       "What would you like to import?": [
-        ""
+        "Что бы вы хотели импортировать?"
       ],
       "What's new": [
         "Список изменений"

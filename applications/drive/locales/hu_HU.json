@@ -2820,7 +2820,7 @@
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        "Ez a link egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
+        "Ez a hivatkozás egy olyan weboldalhoz vezet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -2980,7 +2980,7 @@
         "Lejárt számlatartozása van. Hozzáférése hamarosan korlátozásra kerül. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        "A jelenlegi böngészője nem támogatja a nagy fájlok letöltését a szervízmunkások elérhetetlensége miatt. A nagy fájlok letöltésétől lefagyhat a böngésző, vagy nem reagálhat. Kérjük, használja a(z) ${ recommendedBrowser } legújabb verzióját és próbálja újra."
+        "A jelenlegi böngészője nem támogatja a nagy fájlok letöltését a szervízszolgáltatások elérhetetlensége miatt. A nagy fájlok letöltésétől lefagyhat a böngésző, vagy nem reagálhat. Kérjük, használja a(z) ${ recommendedBrowser } legújabb verzióját és próbálja újra."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
@@ -4312,8 +4312,8 @@
         ""
       ],
       "Found ${ searchView.numberOfResults } result": [
-        "${ searchView.numberOfResults } találat találva",
-        "${ searchView.numberOfResults } találat találva"
+        "${ searchView.numberOfResults } találat",
+        "${ searchView.numberOfResults } találat"
       ],
       "Groups": [
         "Csoportok"

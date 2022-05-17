@@ -522,37 +522,37 @@
         "${ title } tegnap kezdődött ekkor: ${ formattedHour }"
       ],
       "${ title } starts at ${ formattedHour }": [
-        ""
+        "${ title } elkezdődik ekkor: ${ formattedHour }"
       ],
       "${ title } starts now": [
         "${ title } most kezdődik"
       ],
       "${ title } starts on ${ _formattedDate2 }": [
-        ""
+        "${ title } elkezdődik ekkor: ${ _formattedDate2 }"
       ],
       "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        ""
+        "${ title } ekkor kezdődik: ${ _formattedDate2 } ${ formattedHour }"
       ],
       "${ title } starts on ${ _formattedDate3 }": [
-        ""
+        "${ title } elkezdődik ekkor: ${ _formattedDate3 }"
       ],
       "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        ""
+        "${ title } ekkor kezdődik: ${ _formattedDate3 } ${ formattedHour }"
       ],
       "${ title } starts on ${ _formattedDateWithoutTime }": [
-        ""
+        "${ title } elkezdődik ekkor: ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        ""
+        "${ title } elkezdődik ekkor: ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } ma kezdődik"
       ],
       "${ title } starts tomorrow": [
-        ""
+        "${ title } holnap kezdődik"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        ""
+        "${ title } holnap ekkor kezdődik: ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -974,7 +974,7 @@
         ""
       ],
       "Algeria": [
-        ""
+        "Algéria"
       ],
       "American Samoa": [
         ""
@@ -1085,88 +1085,88 @@
         ""
       ],
       "Cameroon": [
-        ""
+        "Kamerun"
       ],
       "Canada": [
-        ""
+        "Kanada"
       ],
       "Cape Verde": [
-        ""
+        "Zöld-foki Köztársaság"
       ],
       "Cayman Islands": [
         ""
       ],
       "Central African Republic": [
-        ""
+        "Közép-afrikai Köztársaság"
       ],
       "Chad": [
         ""
       ],
       "Chile": [
-        ""
+        "Chile"
       ],
       "China": [
-        ""
+        "Kína"
       ],
       "Christmas Island": [
-        ""
+        "Karácsony-sziget"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "Kókusz (Keeling)-szigetek"
       ],
       "Colombia": [
-        ""
+        "Kolumbia"
       ],
       "Comoros": [
         ""
       ],
       "Congo": [
-        ""
+        "Kongó"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "Kongói Demokratikus Köztársaság"
       ],
       "Cook Islands": [
-        ""
+        "Cook-szigetek"
       ],
       "Costa Rica": [
-        ""
+        "Costa Rica"
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "Elefántcsontpart\""
       ],
       "Croatia": [
         ""
       ],
       "Cuba": [
-        ""
+        "Kuba"
       ],
       "Curaçao": [
-        ""
+        "Curaçao"
       ],
       "Cyprus": [
-        ""
+        "Ciprus"
       ],
       "Czech Republic": [
-        ""
+        "Csehország"
       ],
       "Denmark": [
-        ""
+        "Dánia"
       ],
       "Djibouti": [
-        ""
+        "Dzsibuti"
       ],
       "Dominica": [
-        ""
+        "Dominikai Közösség"
       ],
       "Dominican Republic": [
-        ""
+        "Dominikai Köztársaság"
       ],
       "Ecuador": [
-        ""
+        "Ecuador"
       ],
       "Egypt": [
-        ""
+        "Egyiptom"
       ],
       "El Salvador": [
         ""
@@ -1175,13 +1175,13 @@
         ""
       ],
       "Eritrea": [
-        ""
+        "Eritrea"
       ],
       "Estonia": [
-        ""
+        "Észtország"
       ],
       "Ethiopia": [
-        ""
+        "Etiópia"
       ],
       "Falkland Islands": [
         ""
@@ -1193,10 +1193,10 @@
         ""
       ],
       "Fiji": [
-        ""
+        "Fidzsi-szigetek"
       ],
       "Finland": [
-        ""
+        "Finnország"
       ],
       "France": [
         ""
@@ -1220,7 +1220,7 @@
         ""
       ],
       "Germany": [
-        ""
+        "Németország"
       ],
       "Ghana": [
         ""
@@ -1601,7 +1601,7 @@
         ""
       ],
       "Spain": [
-        ""
+        "Spanyolország"
       ],
       "Sri Lanka": [
         ""
@@ -1622,7 +1622,7 @@
         ""
       ],
       "Switzerland": [
-        ""
+        "Svájc"
       ],
       "Syria": [
         ""
@@ -1715,7 +1715,7 @@
         ""
       ],
       "Western Sahara": [
-        ""
+        "Nyugat-Szahara"
       ],
       "Yemen": [
         ""
@@ -2033,10 +2033,10 @@
         "Képfeltöltés sikertelen"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Helytelen bejelentkezési adatok. Próbálja meg újra."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
       ],
       "Interval cannot be empty": [
         "Az intervallum nem lehet üres"
@@ -2073,7 +2073,7 @@
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
       ],
       "Missing key packet": [
-        ""
+        "Hiányzó kulcs csomag"
       ],
       "Missing signature": [
         "Hiányzó aláírás"
@@ -2133,7 +2133,7 @@
         "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
       "Request timed out": [
-        ""
+        "A kérés túllépte az időkorlátot"
       ],
       "Self invitation not allowed": [
         "Önmaga meghívása nem lehetséges"
@@ -2154,7 +2154,7 @@
         "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
-        ""
+        "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME } be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
@@ -2458,13 +2458,13 @@
         "Érvénytelen válasz"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Az eseményt nem sikerült felvenni a naptárába. Válasz nem került elküldésre"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Az eseményt nem sikerült frissíteni a naptárában. Válasz nem került elküldésre"
       ],
       "Unexpected error": [
-        ""
+        "Váratlan hiba"
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -2485,7 +2485,7 @@
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
       ]
     },
     "Event popover close button": {
@@ -2528,16 +2528,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bájt"
       ],
       "Gigabytes": [
-        ""
+        "Gigabájt"
       ],
       "Kilobytes": [
-        ""
+        "Kilobájt"
       ],
       "Megabytes": [
-        ""
+        "Megabájt"
       ]
     },
     "Filter notification": {
@@ -2785,7 +2785,7 @@
         "${ selectedFoldersCount } címke kiválasztva"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } tárhely"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
@@ -2796,7 +2796,7 @@
         "(${ memberCount } tagok)"
       ],
       "5 email addresses": [
-        ""
+        "5 e-mail cím"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Egy lemondó értesítés kerül elküldésre az eltávolított résztvevőknek."
@@ -2840,7 +2840,7 @@
         "Maximum 100 résztvevő lehetséges meghívónként"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Mielőtt új ellenőrző kódot igényelne, kérjük nézze meg a levélszemét mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Nem emlékszik a jelszóra? Lehetőség van arra, hogy az összes olyan névjegyadatot törölje, amelyet ezzel a kulccsal titkosított, így megszüntetheti ezt a figyelmeztetést."
@@ -2855,7 +2855,7 @@
         "A kilépéshez zárja be ezt a képernyőt."
       ],
       "Continue with ${ planName }": [
-        ""
+        "Folytatás ezzel: ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Létrehozandó ${ calendarsToBeCreated } új naptár",
@@ -2959,7 +2959,7 @@
         "Örökölve a felsőbb szintű mappából"
       ],
       "Internet connection lost": [
-        ""
+        "Az internetkapcsolat megszakadt"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -3025,7 +3025,7 @@
         "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
       ],
       "Not a valid URL": [
-        ""
+        "Érvénytelen URL-cím"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "A szervező által korábban frissített alkalmak megmaradnak, de az ön által küldött egyes válaszok elvesznek."
@@ -3034,16 +3034,16 @@
         "A szervező által korábban frissített alkalmak megmaradnak."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Other options": [
-        ""
+        "Más opciók"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
       ],
       "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -3070,7 +3070,7 @@
         "Elsődleges"
       ],
       "Priority support": [
-        ""
+        "Elsőbbségi támogatás"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Az oldal frissítése vagy ${ link } automatikusan megoldja a legtöbb problémát."
@@ -3082,7 +3082,7 @@
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Válassza ki, mit szeretne a Google-ból áthozni."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
@@ -3091,19 +3091,19 @@
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
       "Session timed out": [
-        ""
+        "A munkamenet lejárt"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        ""
+        "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "A szervező által korábban frissített eseményekre adott egyes válaszai elvesznek."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "A tárhely megosztott a ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, és a ${ DRIVE_APP_NAME } között."
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Egy saját e-mail domain név használata"
       ],
       "support team": [
         "ügyfélszolgálati csoport"
@@ -3157,7 +3157,7 @@
         "Az esemény frissítésre került. Az esemény szervezője nem kap értesítést, hogy elutasítja a meghívást, mivel a meghívóban szereplő címről nem tud levelet küldeni. Ebben az esetben is törli az eseményt?"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "Ez a hivatkozás egy olyan weboldalhoz vezethet, amely ellophatja személyes információit, mint például a jelszavait vagy a bankkártyája adatait."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Internet Explorerben és Edge-ben nem nyitható meg. Ha biztos benne, hogy ez egy érvényes link, használjon egy másik böngészőt a megnyitáshoz."
@@ -3178,22 +3178,22 @@
         "A cím hitelesítés használatához egy vagy több nyilvános kulcsot megbízhatóként kell megjelölnie, beleértve azt is amelyiket a küldéshez szeretné használni. Ez megakadályozza hamisított titkosítási kulcsok használatát."
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Korlátlan számú mappák, címkék és filterek"
       ],
       "Unlimited messages": [
-        ""
+        "Korlátlan számú üzenet"
       ],
       "Update recurring event": [
         "Ismétlődő esemény frissítése"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Frissítsen ma, hogy elkerülje az alábbi ${ planName } előnyök elvesztését."
       ],
       "We'll notify you when the import is done.": [
         "Értesítést fog kapni az importálás végeztével."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
       ],
       "Week": [
         "Hét"
@@ -3223,7 +3223,7 @@
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Szeretne kapni egy új ellenőrzési kódot?"
       ],
       "Would you like to update all events in this series?": [
         "Valóban szeretné a sorozat valamennyi eseményét frissíteni?"
@@ -3238,7 +3238,7 @@
         "Egy új böngésző fülön a következő címet fogja megnyitni:"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Az importált naptárokat összefűzheti meglévő Proton naptáraival is."
@@ -3712,7 +3712,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "Igyenes próbaideje lejárt. Hozzáférés a fiókjához hamarosan le lesz tiltva. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -4731,7 +4731,7 @@
         "Adja meg a jelszavát"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Írja be a felhasználónevét vagy ${ MAIL_APP_NAME } e-mail címét"
       ],
       "Error": [
         "Hiba"
@@ -4927,10 +4927,10 @@
         "Figyelem"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Figyelem: gyanítottan hamis weboldal"
       ],
       "What would you like to import?": [
-        ""
+        "Mit szeretne importálni?"
       ],
       "What's new": [
         "Újdonságok"
@@ -4939,7 +4939,7 @@
         "A hasonló e-mail címmel rendelkező résztvevőket meghívta"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "Az ingyenes próbaideje hamarosan lejár: ${ formattedEndDate }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
