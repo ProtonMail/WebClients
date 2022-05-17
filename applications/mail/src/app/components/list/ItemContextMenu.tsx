@@ -40,6 +40,20 @@ const ItemContextMenu = ({
     ...rest
 }: Props) => {
     const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
+    const handleMove = (labelID: string) => {
+        onMove(labelID);
+        rest.close();
+    };
+
+    const handleDelete = () => {
+        onDelete();
+        rest.close();
+    };
+
+    const handleMarkAs = (status: MARK_AS_STATUS) => {
+        onMarkAs(status);
+        rest.close();
+    };
 
     const inboxButton = (
         <ContextMenuButton
@@ -47,7 +61,7 @@ const ItemContextMenu = ({
             testId="context-menu-inbox"
             icon="inbox"
             name={c('Action').t`Move to inbox`}
-            action={() => onMove(MAILBOX_LABEL_IDS.INBOX)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
         />
     );
 
@@ -57,7 +71,7 @@ const ItemContextMenu = ({
             testId="context-menu-nospam"
             icon="fire-slash"
             name={c('Action').t`Move to inbox (not spam)`}
-            action={() => onMove(MAILBOX_LABEL_IDS.INBOX)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.INBOX)}
         />
     );
 
@@ -67,7 +81,7 @@ const ItemContextMenu = ({
             testId="context-menu-archive"
             icon="archive-box"
             name={c('Action').t`Move to archive`}
-            action={() => onMove(MAILBOX_LABEL_IDS.ARCHIVE)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.ARCHIVE)}
         />
     );
 
@@ -77,7 +91,7 @@ const ItemContextMenu = ({
             testId="context-menu-trash"
             icon="trash"
             name={c('Action').t`Move to trash`}
-            action={() => onMove(MAILBOX_LABEL_IDS.TRASH)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.TRASH)}
         />
     );
 
@@ -87,7 +101,7 @@ const ItemContextMenu = ({
             testId="context-menu-spam"
             icon="fire"
             name={c('Action').t`Move to spam`}
-            action={() => onMove(MAILBOX_LABEL_IDS.SPAM)}
+            action={() => handleMove(MAILBOX_LABEL_IDS.SPAM)}
         />
     );
 
@@ -97,7 +111,7 @@ const ItemContextMenu = ({
             testId="context-menu-delete"
             icon="cross-circle"
             name={c('Action').t`Delete`}
-            action={() => onDelete()}
+            action={() => handleDelete()}
         />
     );
 
@@ -133,14 +147,14 @@ const ItemContextMenu = ({
             testId="context-menu-read"
             icon="eye"
             name={c('Action').t`Mark as read`}
-            action={() => onMarkAs(MARK_AS_STATUS.READ)}
+            action={() => handleMarkAs(MARK_AS_STATUS.READ)}
         />,
         <ContextMenuButton
             key="context-menu-unread"
             testId="context-menu-unread"
             icon="eye-slash"
             name={c('Action').t`Mark as unread`}
-            action={() => onMarkAs(MARK_AS_STATUS.UNREAD)}
+            action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
         />,
     ];
 
@@ -149,7 +163,7 @@ const ItemContextMenu = ({
     }
 
     return (
-        <ContextMenu noMaxHeight autoClose {...rest}>
+        <ContextMenu noMaxHeight {...rest}>
             {moveButtons}
             <ContextSeparator />
             {readButtons}
