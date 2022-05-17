@@ -168,7 +168,8 @@ const BillingSection = () => {
 
     const priceInfo = (
         <Info
-            title={c('new_plans: info').t`Price includes all applicable, non-expired coupons saved to your account.`}
+            title={c('new_plans: info')
+                .t`Price for future renewal: includes all applicable non-expired coupons saved to your account`}
         />
     );
 
