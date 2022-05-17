@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Ilyen nevű szűrő már létezik"
       ],
-      "Folder name cannot be empty": [
-        "A mappa nevének megadása szükséges"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Képfeltöltés sikertelen"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
       ],
-      "Label name cannot be empty": [
-        "A címke nevének megadása szükséges"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Mellékletek maximális száma (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) túllépve."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Ez a mappanév nem érhető el. Adjon meg egy másik nevet"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Ez a címkenév nem érhető el. Adjon meg egy másik nevet"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Ez az üzenet már el lett küldve"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
-      "Learn more": [
-        "További információk"
-      ],
       "learn more": [
         "további információk"
+      ],
+      "Learn more": [
+        "További információk"
       ],
       "Left to Right": [
         "Balról jobbra"

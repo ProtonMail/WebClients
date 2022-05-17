@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Filter met deze naam bestaat reeds"
       ],
-      "Folder name cannot be empty": [
-        "Naam van de map mag niet leeg zijn"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Ongeldige verificatiecode"
       ],
-      "Label name cannot be empty": [
-        "Label naam mag niet leeg zijn"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Deze naam voor de map is niet beschikbaar. Kies een andere naam"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Deze labelnaam is niet beschikbaar. Kies een andere naam"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "tweestapsverificatie (2FA) is ingeschakeld in uw externe account"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "tweestapsverificatie (2FA) is ingeschakeld in uw externe e-mailaccount"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Als ${ bold2StepsDisabled } (standaard Gmail-instellingen), zorg er dan voor dat:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Als ${ bold2StepsEnabled }, zorg er dan voor dat uw e-mailadres en app-wachtwoord juist zijn. Gebruik ${ boldNot } uw reguliere wachtwoord."
       ],
-      "IMAP access is enabled in your external account": [
-        "IMAP toegang is ingeschakeld in uw externe account"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "IMAP toegang is ingeschakeld in uw Yahoo account"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Ongeldige IMAP poort"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "uw e-mailaccount vereist er één om uw gegevens te exporteren"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "uw e-mailadres en wachtwoord zijn juist"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "uw wachtwoord is correct"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         "* Green kredietkaart vereist."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Met 1-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* Met 12-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* Met 24-maand abonnement. Andere abonnementsopties beschikbaar bij afrekenen."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
       ],
@@ -4255,9 +4246,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Tegoed voor het ongebruikte deel van uw vorig abonnement"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Tegoeden, aftrekken en andere toepasbare kortingscodes worden toegepast bij het afrekenen"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
@@ -8582,6 +8570,11 @@
         "Voeg openbare, externe of gedeelde agenda's toe met behulp van een URL."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } agenda per gebruiker",
@@ -9571,9 +9564,6 @@
       ],
       "Select contact group": [
         "Contactgroep selecteren"
-      ],
-      "Select subscription and pay": [
-        "Kies abonnement en betaal"
       ],
       "Select the time to send this notification": [
         "Selecteer de tijd om deze melding te verzenden"

@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Ja existeix un filtre amb aquest nom"
       ],
-      "Folder name cannot be empty": [
-        "El nom de la carpeta no pot estar buit"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Codi de verificació no vàlid"
       ],
-      "Label name cannot be empty": [
-        "El nom de l'etiqueta no es pot deixar buit"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         ""
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Aquest nom de carpeta no està disponible. Trieu-ne un de diferent"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Aquest nom d'etiqueta no està disponible. Trieu-ne un de diferent"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Aquest missatge ja s'ha enviat"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
-      "Learn more": [
-        "Més informació"
-      ],
       "learn more": [
         "més informació"
+      ],
+      "Learn more": [
+        "Més informació"
       ],
       "Left to Right": [
         "Esquerra a Dreta"

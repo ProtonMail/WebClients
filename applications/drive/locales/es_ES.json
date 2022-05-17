@@ -1793,8 +1793,8 @@
       "Folder \"${ name }\" is already downloading": [
         "El directorio \"${ name }\" ya se está descargando"
       ],
-      "Folder name cannot be empty": [
-        "El nombre de la carpeta no puede estar vacío"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Error al cargar la imagen"
@@ -1817,8 +1817,8 @@
       "Invalid verification code": [
         "Código de verificación no válido"
       ],
-      "Label name cannot be empty": [
-        "El nombre de la etiqueta no puede estar vacío"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
@@ -1935,11 +1935,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Este nombre de carpeta no está disponible. Por favor, elija otro nombre"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Este nombre de etiqueta no está disponible. Por favor, elija otro nombre"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Este mensaje puede contener enlaces que no puedan abrirse correctamente en tu navegador actual"

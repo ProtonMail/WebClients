@@ -2558,8 +2558,8 @@
       "Filter with this name already exists": [
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
-      "Folder name cannot be empty": [
-        "Το όνομα φακέλου δεν μπορεί να είναι κενό"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2603,8 +2603,8 @@
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
-      "Label name cannot be empty": [
-        "Το όνομα της ετικέτας δεν μπορεί να είναι κενό"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -2776,11 +2776,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Αυτό το όνομα φακέλου δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Αυτό το όνομα ετικέτας δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
@@ -3510,14 +3510,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "Η \"λιγότερο ασφαλής πρόσβαση σε εφαρμογή\" είναι ενεργοποιημένη στις ρυθμίσεις ασφαλείας του λογαριασμού σας Google"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "Η επαλήθευση σε 2 βήματα είναι ενεργοποιημένη στον εξωτερικό λογαριασμό email σας"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Εάν ${ bold2StepsDisabled } (προεπιλεγμένες ρυθμίσεις Gmail), βεβαιωθείτε ότι:"
@@ -3531,11 +3531,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Εάν ${ bold2StepsEnabled }, βεβαιωθείτε ότι η διεύθυνση ηλεκτρονικού ταχυδρομείου και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας."
       ],
-      "IMAP access is enabled in your external account": [
-        "Η πρόσβαση IMAP είναι ενεργοποιημένη στον εξωτερικό λογαριασμό σας"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Μη έγκυρη θύρα IMAP"
@@ -3576,23 +3576,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Μπορείτε επίσης να προσπαθήσετε να αποσυνδεθείτε από ${ boldGoogleAccounts } στο πρόγραμμα περιήγησης και, στη συνέχεια, να ξεκλειδώσετε το ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστός. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "ο λογαριασμός email σας απαιτεί κωδικό πρόσβασης για την εξαγωγή των δεδομένων σας"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "ο λογαριασμός email σας απαιτεί έναν για εξαγωγή των δεδομένων σας"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "η διεύθυνση email και ο κωδικός πρόσβασης της εφαρμογής σας είναι σωστά. Χρησιμοποιήστε το ${ boldNot } τον κανονικό κωδικό πρόσβασης σας"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "η διεύθυνση email και ο κωδικός πρόσβασής σας είναι σωστά"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "ο κωδικός σας είναι σωστός"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -3957,15 +3957,6 @@
       "* No credit card required.": [
         "* Δεν απαιτείται πιστωτική κάρτα."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* Με μηνιαία συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* Με ετήσια συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* Με διετή συνδρομή. Άλλες επιλογές συνδρομών, διαθέσιμες στο ταμείο."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
       ],
@@ -4255,9 +4246,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Πίστωση του μη καταναλωμένου υπολοίπου της συνδρομής σας στο προηγούμενο πρόγραμμα"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Πιστώσεις, προμήθεια και τυχόν ενεργά κουπόνια συνυπολογίζονται κατά την εξόφληση"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Προς το παρόν, όλος ο διαθέσιμος αποθηκευτικός χώρος, διατίθεται στο λογαριασμό διαχειριστή. Μειώστε την κατανομή λογαριασμού διαχειριστή για να ελευθερώσετε χώρο για επιπλέον χρήστες. Μπορείτε να αυξήσετε το συνολικό χώρο αποθήκευσης ανά πάσα στιγμή, αναβαθμίζοντας το λογαριασμό σας."
@@ -7905,6 +7893,11 @@
         "Προσθέστε δημόσια, εξωτερικά ή κοινόχρηστα ημερολόγια χρησιμοποιώντας μια διεύθυνση URL."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } ημερολόγιο ανά χρήστη",
@@ -8894,9 +8887,6 @@
       ],
       "Select contact group": [
         "Επιλογή ομάδας επαφών"
-      ],
-      "Select subscription and pay": [
-        "Επιλογή συνδρομής και πληρωμή"
       ],
       "Select the time to send this notification": [
         "Επιλέξτε την ώρα αποστολής αυτής της ειδοποίησης"

@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Un filtre portant ce nom existe déjà"
       ],
-      "Folder name cannot be empty": [
-        "Le nom de dossier ne peut être vide"
+      "Folder name cannot be empty.": [
+        "Le nom de dossier ne peut être vide."
       ],
       "Image upload failed": [
         "Échec de l'importation de l'image"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Code de vérification invalide"
       ],
-      "Label name cannot be empty": [
-        "Le nom du label ne peut pas être vide"
+      "Label name cannot be empty.": [
+        "Le nom du label ne peut pas être vide."
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Nombre maximum de pièces jointes (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) dépassé."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom"
+      "This folder name is not available. Please choose a different name.": [
+        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom."
       ],
-      "This label name is not available. Please choose a different name": [
-        "Ce nom de label n'est pas disponible. Veuillez en choisir un autre"
+      "This label name is not available. Please choose a different name.": [
+        "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
       "This message has already been sent": [
         "Ce message a déjà été envoyé"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
-      "Learn more": [
-        "En savoir plus"
-      ],
       "learn more": [
         "en savoir plus"
+      ],
+      "Learn more": [
+        "En savoir plus"
       ],
       "Left to Right": [
         "De gauche à droite"

@@ -1803,8 +1803,8 @@
       "Folder \"${ name }\" is already downloading": [
         "Тека \"${ name }\" вже завантажується"
       ],
-      "Folder name cannot be empty": [
-        "Тека не може бути без назви"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -1827,8 +1827,8 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
-      "Label name cannot be empty": [
-        "Мітка не може бути без назви"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
@@ -1953,11 +1953,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Назва теки недоступна. Будь ласка, виберіть іншу назву"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Назва мітки недоступна. Будь ласка, виберіть іншу назву"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"

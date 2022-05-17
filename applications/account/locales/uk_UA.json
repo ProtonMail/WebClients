@@ -2596,8 +2596,8 @@
       "Filter with this name already exists": [
         "Фільтр з цією назвою вже існує"
       ],
-      "Folder name cannot be empty": [
-        "Тека не може бути без назви"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -2641,8 +2641,8 @@
       "Invalid verification code": [
         "Недійсний код підтвердження"
       ],
-      "Label name cannot be empty": [
-        "Назва мітки не може бути порожньою"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
@@ -2818,11 +2818,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Назва теки недоступна. Будь ласка, виберіть іншу назву"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Назва мітки недоступна. Будь ласка, виберіть іншу назву"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
@@ -3580,14 +3580,14 @@
       ]
     },
     "Import error": {
-      "\"Less secure app access\" is turned on in your Google account security settings": [
-        "\"Доступ менш захищених програм\" увімкнено у налаштуваннях безпеки вашого облікового запису Google"
+      "\"Less secure app access\" is turned on in your Google account security settings.": [
+        ""
       ],
-      "2-step verification is enabled in your external account": [
-        "двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі"
+      "2-step verification is enabled in your external account.": [
+        ""
       ],
-      "2-step verification is enabled in your external email account": [
-        "двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі пошти"
+      "2-step verification is enabled in your external email account.": [
+        ""
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Якщо ${ bold2StepsDisabled } (типові налаштування Gmail), переконайтеся, що:"
@@ -3601,11 +3601,11 @@
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Якщо ${ bold2StepsEnabled }, переконайтеся що ваша адреса е-пошти і пароль правильні. ${ boldNot } використовуйте свій звичайний пароль."
       ],
-      "IMAP access is enabled in your external account": [
-        "Доступ до IMAP увімкнено в вашому зовнішньому обліковому записі"
+      "IMAP access is enabled in your external account.": [
+        ""
       ],
-      "IMAP access is enabled in your Yahoo account": [
-        "Доступ до IMAP увімкнено в вашому обліковому записі Yahoo"
+      "IMAP access is enabled in your Yahoo account.": [
+        ""
       ],
       "Invalid IMAP port": [
         "Неправильний порт IMAP"
@@ -3646,23 +3646,23 @@
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
         "Ви також можете спробувати вийти з ${ boldGoogleAccounts } в браузері, потім розблокувати ${ linkCAPTCHA }."
       ],
-      "your app password is correct. Do ${ boldNot } use your regular password": [
-        "ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль"
+      "Your app password is correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email account requires an app password to export your data": [
-        "ваш поштовий обліковий запис вимагає пароль програм для експорту даних"
+      "Your email account requires an app password to export your data.": [
+        ""
       ],
-      "your email account requires one to export your data": [
-        "ваш поштовий обліковий запис вимагає цього для експорту даних"
+      "Your email account requires one to export your data.": [
+        ""
       ],
-      "your email address and app password are correct. Do ${ boldNot } use your regular password": [
-        "ваша адреса е-пошти і пароль програм правильні. ${ boldNot } використовуйте свій звичайний пароль"
+      "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
+        ""
       ],
-      "your email address and password are correct": [
-        "адреса е-пошти і пароль правильні"
+      "Your email address and password are correct.": [
+        ""
       ],
-      "your password is correct": [
-        "ваш пароль правильний"
+      "Your password is correct.": [
+        ""
       ]
     },
     "Import error emphasis": {
@@ -4063,15 +4063,6 @@
       "* No credit card required.": [
         "* Кредитна картка не потрібна."
       ],
-      "* With 1-month subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 1 місяць. Інші варіанти передплати доступні при оформленні замовлення."
-      ],
-      "* With 12-months subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 12 місяців. Інші варіанти передплати доступні при оформленні замовлення."
-      ],
-      "* With 24-months subscription. Other subscription options available at checkout.": [
-        "* З передплатою на 24 місяців. Інші варіанти передплати доступні при оформленні замовлення."
-      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } додаткового сховища"
       ],
@@ -4371,9 +4362,6 @@
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "Кредит на невикористану частину попередньої передплати тарифного плану"
-      ],
-      "Credits, proration, and any applicable coupons are applied at checkout": [
-        "Кредити, розподілення, а також будь-які відповідні купони застосовуються при оформленні замовлення"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Наразі весь доступний обсяг сховища призначено обліковому запису адміністратора. Зменште призначений обсяг, щоб звільнити місце для додаткових користувачів. Ви можете збільшити загальний обсяг сховища в будь-який час, покращивши свій тарифний план."
@@ -8053,6 +8041,11 @@
         "Додайте публічні, зовнішні чи спільні календарі за URL-адресою."
       ]
     },
+    "Subscribed calendar URL length warning": {
+      "URL is too long": [
+        ""
+      ]
+    },
     "Subscription attribute": {
       "${ _n } calendar per user": [
         "${ _n } календар на користувача",
@@ -9076,9 +9069,6 @@
       ],
       "Select contact group": [
         "Вибрати групу контактів"
-      ],
-      "Select subscription and pay": [
-        "Оберіть передплату й сплатіть"
       ],
       "Select the time to send this notification": [
         "Виберіть час, щоб надіслати це сповіщення"

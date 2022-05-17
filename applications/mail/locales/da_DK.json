@@ -2839,8 +2839,8 @@
       "Filter with this name already exists": [
         "Et filter med dette navn findes allerede"
       ],
-      "Folder name cannot be empty": [
-        "Mappenavn må ikke være tomt"
+      "Folder name cannot be empty.": [
+        ""
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
@@ -2863,8 +2863,8 @@
       "Invalid verification code": [
         "Ugyldig verifikationskode"
       ],
-      "Label name cannot be empty": [
-        "Etikettenavn må ikke være tomt"
+      "Label name cannot be empty.": [
+        ""
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Det maksimale antal vedhæftninger (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overskredet."
@@ -3025,11 +3025,11 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
-      "This folder name is not available. Please choose a different name": [
-        "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn"
+      "This folder name is not available. Please choose a different name.": [
+        ""
       ],
-      "This label name is not available. Please choose a different name": [
-        "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn"
+      "This label name is not available. Please choose a different name.": [
+        ""
       ],
       "This message has already been sent": [
         "Denne besked er allerede blevet sendt"
@@ -4199,11 +4199,11 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
-      "Learn more": [
-        "Få mere at vide"
-      ],
       "learn more": [
         "få mere at vide"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ],
       "Left to Right": [
         "Venstre mod højre"
