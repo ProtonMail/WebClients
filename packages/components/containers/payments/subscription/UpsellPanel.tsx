@@ -189,6 +189,8 @@ const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Bundle upsell
     if ((user.isFree || hasMail(subscription) || hasDrive(subscription) || hasVPN(subscription)) && bundlePlan) {
+        const vpnPlan = plans.find(({ Name }) => Name === PLANS.VPN);
+        const vpnPlanName = vpnPlan?.Title || '';
         const plan = bundlePlan;
         const price = (
             <Price
@@ -227,14 +229,25 @@ const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props
                       ),
                   }
                 : undefined,
-            {
-                icon: 'brand-proton-vpn',
-                text: getHighSpeedVPN(VPN_CONNECTIONS),
-            },
-            {
-                icon: 'checkmark-circle',
-                text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
-            },
+            ...(hasVPN(subscription)
+                ? ([
+                      vpnPlanName
+                          ? ({
+                                icon: 'brand-proton-vpn',
+                                text: c('new_plans: Upsell attribute').t`Everything in ${vpnPlanName}`,
+                            } as const)
+                          : undefined,
+                  ] as const)
+                : ([
+                      {
+                          icon: 'brand-proton-vpn',
+                          text: getHighSpeedVPN(VPN_CONNECTIONS),
+                      },
+                      {
+                          icon: 'checkmark-circle',
+                          text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
+                      },
+                  ] as const)),
         ];
         return (
             <UpsellBox
@@ -288,6 +301,10 @@ const UpsellPanel = ({ subscription, plans, user, openSubscriptionModal }: Props
             {
                 icon: 'brand-proton-vpn',
                 text: getHighSpeedVPNB2B(VPN_CONNECTIONS),
+            },
+            {
+                icon: 'checkmark-circle',
+                text: c('new_plans: Upsell attribute').t`Access advanced VPN features`,
             },
         ];
         return (

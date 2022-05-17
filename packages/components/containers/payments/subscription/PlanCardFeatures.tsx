@@ -127,7 +127,7 @@ interface PlanCardFeaturesShortProps {
 export const PlanCardFeaturesShort = ({ plan, icon }: PlanCardFeaturesShortProps) => {
     const highlightFeatures = (
         <div>
-            <PlanCardFeatureList features={plan.features} icon={icon} />
+            <PlanCardFeatureList features={plan.features} icon={icon} fire={false} />
         </div>
     );
     return <>{highlightFeatures}</>;
