@@ -1,5 +1,6 @@
 import { Key } from './Key';
 import { USER_ROLES } from '../constants';
+import { Currency } from './Subscription';
 
 export enum MNEMONIC_STATUS {
     DISABLED = 0,
@@ -19,7 +20,7 @@ export interface User {
     ID: string;
     Name: string;
     UsedSpace: number;
-    Currency: string;
+    Currency: Currency;
     Credit: number;
     MaxSpace: number;
     MaxUpload: number;

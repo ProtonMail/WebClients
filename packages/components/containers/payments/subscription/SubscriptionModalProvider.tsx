@@ -7,11 +7,12 @@ import { PLANS } from '@proton/shared/lib/constants';
 import { noop } from '@proton/shared/lib/helpers/function';
 
 import { useModalState } from '../../../components';
-import { usePlans, useSubscription } from '../../../hooks';
+import { usePlans, useSubscription, useUser } from '../../../hooks';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionModal from './SubscriptionModal';
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
+import { getCurrency } from './helpers';
 
 interface OpenCallbackProps {
     step: SUBSCRIPTION_STEPS;
@@ -40,6 +41,7 @@ interface Props {
 
 const SubscriptionModalProvider = ({ children }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
+    const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [modalState, setModalState, render] = useModalState();
     const subscriptionProps = useRef<{
@@ -89,7 +91,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                                   })
                                 : maybePlanIDs || subscriptionPlanIDs,
                             step,
-                            currency: currency || subscription.Currency,
+                            currency: currency || getCurrency(user, subscription, plans),
                             cycle: cycle || subscription.Cycle,
                             coupon: coupon || subscription.CouponCode || undefined,
                             defaultAudience:
