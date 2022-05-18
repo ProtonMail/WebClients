@@ -1,6 +1,6 @@
+import { uniqueBy } from '@proton/util/array';
 import { MINUTE } from '../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
-import { uniqueBy } from '../helpers/array';
 import { omit } from '../helpers/object';
 import { truncate } from '../helpers/string';
 import {

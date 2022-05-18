@@ -1,5 +1,5 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { unique } from '@proton/shared/lib/helpers/array';
+import { unique } from '@proton/util/array';
 import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
@@ -90,7 +90,7 @@ export const recipientsToRecipientOrGroup = (recipients: Recipient[], contactGro
             if (existingGroup) {
                 existingGroup.group?.recipients.push(value);
             } else {
-                if(contactGroupsMap) {
+                if (contactGroupsMap) {
                     const group = contactGroupsMap[value.Group];
                     if (group) {
                         acc.push({ group: { group, recipients: [value] } });

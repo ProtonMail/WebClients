@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { range } from '@proton/shared/lib/helpers/array';
+import { range } from '@proton/util/array';
 import { memo } from 'react';
 import { ButtonGroup, Button } from '../button';
 import { Icon } from '../icon';

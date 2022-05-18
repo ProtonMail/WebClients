@@ -1,6 +1,6 @@
 import { OpenPGPKey } from 'pmcrypto';
 import isTruthy from '@proton/util/isTruthy';
-import { unique } from '../helpers/array';
+import { unique } from '@proton/util/array';
 import { canonizeInternalEmail } from '../helpers/email';
 import { Address } from '../interfaces';
 import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';

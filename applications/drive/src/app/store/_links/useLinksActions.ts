@@ -2,7 +2,7 @@ import { encryptMessage } from 'pmcrypto';
 
 import { usePreventLeave } from '@proton/components';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { chunk } from '@proton/shared/lib/helpers/array';
+import { chunk } from '@proton/util/array';
 
 import { BATCH_REQUEST_SIZE, MAX_THREADS_PER_REQUEST, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { queryMoveLink } from '@proton/shared/lib/api/drive/share';

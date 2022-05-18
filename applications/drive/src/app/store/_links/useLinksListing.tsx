@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 import { createContext, useContext, useCallback, useRef } from 'react';
 
-import { chunk } from '@proton/shared/lib/helpers/array';
+import { chunk } from '@proton/util/array';
 import isTruthy from '@proton/util/isTruthy';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { BATCH_REQUEST_SIZE } from '@proton/shared/lib/drive/constants';

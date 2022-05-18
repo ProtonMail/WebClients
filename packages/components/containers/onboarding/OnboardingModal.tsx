@@ -2,7 +2,7 @@ import { isValidElement, useState } from 'react';
 import { c } from 'ttag';
 import { updateWelcomeFlags, updateThemeType, updateFlags } from '@proton/shared/lib/api/settings';
 import noop from '@proton/util/noop';
-import { range } from '@proton/shared/lib/helpers/array';
+import { range } from '@proton/util/array';
 import { PROTON_THEMES, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import isTruthy from '@proton/util/isTruthy';
 import { hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';

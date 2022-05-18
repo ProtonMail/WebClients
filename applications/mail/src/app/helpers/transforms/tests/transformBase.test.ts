@@ -1,4 +1,4 @@
-import { range } from '@proton/shared/lib/helpers/array';
+import { range } from '@proton/util/array';
 import { transformBase } from '../transformBase';
 
 describe('transformBase service', () => {

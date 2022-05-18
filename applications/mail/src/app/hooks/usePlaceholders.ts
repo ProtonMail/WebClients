@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { generateUID } from '@proton/components';
-import { range } from '@proton/shared/lib/helpers/array';
+import { range } from '@proton/util/array';
 
 import { Element } from '../models/element';
 

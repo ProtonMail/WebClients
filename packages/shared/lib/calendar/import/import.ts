@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 import isTruthy from '@proton/util/isTruthy';
+import { unique } from '@proton/util/array';
 import { getEventByUID } from '../../api/calendars';
 import formatUTC, { Options as FormatOptions } from '../../date-fns-utc/format';
 import { getSupportedTimezone, toUTCDate } from '../../date/timezone';
-import { unique } from '../../helpers/array';
 
 import { readFileAsString } from '../../helpers/file';
 import { truncate } from '../../helpers/string';
