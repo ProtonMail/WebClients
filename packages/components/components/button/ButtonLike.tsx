@@ -63,70 +63,68 @@ export type ButtonLikeProps<E extends ElementType> = PolymorphicComponentProps<E
 
 const defaultElement = 'button';
 
-const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonLikeProps<E>) => ReactElement | null =
-    forwardRef(
-        <E extends ElementType = typeof defaultElement>(
-            {
-                loading = false,
-                disabled = false,
-                className,
-                tabIndex,
-                children,
-                shape: shapeProp,
-                color = 'weak',
-                size = 'medium',
-                fullWidth,
-                pill,
-                icon,
-                group,
-                selected = false,
-                ...restProps
-            }: ButtonLikeProps<E>,
-            ref: typeof restProps.ref
-        ) => {
-            const isDisabled = loading || disabled;
+const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
+    {
+        loading = false,
+        disabled = false,
+        className,
+        tabIndex,
+        children,
+        shape: shapeProp,
+        color = 'weak',
+        size = 'medium',
+        fullWidth,
+        pill,
+        icon,
+        group,
+        selected = false,
+        ...restProps
+    }: ButtonLikeProps<E>,
+    ref: typeof restProps.ref
+) => {
+    const isDisabled = loading || disabled;
 
-            const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
+    const shape = shapeProp || (color === 'weak' ? 'outline' : 'solid');
 
-            const isUnderlineShape = shape === 'underline';
+    const isUnderlineShape = shape === 'underline';
 
-            const buttonClassName = classnames([
-                isUnderlineShape ? 'button-underline' : 'button',
-                !isUnderlineShape && pill && 'button-pill',
-                !isUnderlineShape && icon && 'button-for-icon',
-                group && 'button-group-item',
-                group && selected && 'is-selected',
-                size !== 'medium' && `button-${size}`,
-                `button-${shape}-${color}`,
-                restProps.as !== 'button' ? 'inline-block text-center' : '',
-                !isUnderlineShape && fullWidth && 'w100',
-                className,
-            ]);
+    const buttonClassName = classnames([
+        isUnderlineShape ? 'button-underline' : 'button',
+        !isUnderlineShape && pill && 'button-pill',
+        !isUnderlineShape && icon && 'button-for-icon',
+        group && 'button-group-item',
+        group && selected && 'is-selected',
+        size !== 'medium' && `button-${size}`,
+        `button-${shape}-${color}`,
+        restProps.as !== 'button' ? 'inline-block text-center' : '',
+        !isUnderlineShape && fullWidth && 'w100',
+        className,
+    ]);
 
-            const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
+    const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
 
-            return (
-                <Box
-                    as={defaultElement}
-                    ref={ref}
-                    className={buttonClassName}
-                    disabled={isDisabled}
-                    tabIndex={isDisabled ? -1 : tabIndex}
-                    aria-busy={loading}
-                    {...roleProps}
-                    {...restProps}
-                >
-                    {children}
-                    {loading && (
-                        <span className="button-loader-container">
-                            <CircleLoader />
-                        </span>
-                    )}
-                </Box>
-            );
-        }
+    return (
+        <Box
+            as={defaultElement}
+            ref={ref}
+            className={buttonClassName}
+            disabled={isDisabled}
+            tabIndex={isDisabled ? -1 : tabIndex}
+            aria-busy={loading}
+            {...roleProps}
+            {...restProps}
+        >
+            {children}
+            {loading && (
+                <span className="button-loader-container">
+                    <CircleLoader />
+                </span>
+            )}
+        </Box>
     );
+};
 
-(ButtonLike as any).displayName = 'ButtonLike';
+const ButtonLike: <E extends ElementType = typeof defaultElement>(props: ButtonLikeProps<E>) => ReactElement | null =
+    forwardRef(ButtonLikeBase);
 
 export default ButtonLike;
