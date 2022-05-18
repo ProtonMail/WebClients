@@ -1,4 +1,4 @@
-import { uniqueBy } from '@proton/util/array';
+import uniqueBy from '@proton/util/uniqueBy';
 import { MINUTE } from '../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
 import { omit } from '../helpers/object';
