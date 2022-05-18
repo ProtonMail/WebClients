@@ -1,7 +1,7 @@
 import { getKeys, OpenPGPKey } from 'pmcrypto';
+import { unique } from '@proton/util/array';
 import { User as tsUser, Address as tsAddress, KeyPair, SignedKeyList, DecryptedKey, Key } from '../../interfaces';
 
-import { unique } from '../../helpers/array';
 
 import { getDecryptedAddressKeysHelper } from '../getDecryptedAddressKeys';
 import { getSignedKeyList } from '../signedKeyList';

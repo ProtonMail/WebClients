@@ -4,7 +4,7 @@ import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPr
 import { getRecipients, getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import { useCallback } from 'react';
 import { c, msgid } from 'ttag';
-import { unique } from '@proton/shared/lib/helpers/array';
+import { unique } from '@proton/util/array';
 import { useGetEncryptionPreferences, useModals, useNotifications } from '@proton/components';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';

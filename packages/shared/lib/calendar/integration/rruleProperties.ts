@@ -1,9 +1,9 @@
+import { unique } from '@proton/util/array';
 import { VcalDateOrDateTimeValue, VcalDateTimeValue, VcalDays } from '../../interfaces/calendar/VcalModel';
 import { END_TYPE, MONTHLY_TYPE } from '../constants';
 import { getDayAndSetpos, getIsStandardBydayArray } from '../rrule';
 import { dayToNumericDay, propertyToUTCDate } from '../vcalConverter';
 import { convertUTCDateTimeToZone, fromUTCDate } from '../../date/timezone';
-import { unique } from '../../helpers/array';
 
 export const getEndType = (count?: number, until?: VcalDateOrDateTimeValue) => {
     // count and until cannot occur at the same time (see https://tools.ietf.org/html/rfc5545#page-37)

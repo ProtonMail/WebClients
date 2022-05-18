@@ -1,7 +1,7 @@
 import { setupAddress, orderAddress } from '@proton/shared/lib/api/addresses';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, DEFAULT_ENCRYPTION_CONFIG, ENCRYPTION_CONFIGS } from '@proton/shared/lib/constants';
-import { unique } from '@proton/shared/lib/helpers/array';
+import { unique } from '@proton/util/array';
 import noop from '@proton/util/noop';
 import { Address } from '@proton/shared/lib/interfaces';
 import { missingKeysSelfProcess } from '@proton/shared/lib/keys';

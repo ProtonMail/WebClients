@@ -1,6 +1,6 @@
 import { useCallback, useState, useEffect } from 'react';
 import { c } from 'ttag';
-import { move } from '@proton/shared/lib/helpers/array';
+import { move } from '@proton/util/array';
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';

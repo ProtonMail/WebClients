@@ -5,7 +5,7 @@ import { API_CODES, HOUR, ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareContact } from '@proton/shared/lib/contacts/encrypt';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
-import { chunk, uniqueBy } from '@proton/shared/lib/helpers/array';
+import { chunk, uniqueBy } from '@proton/util/array';
 import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import noop from '@proton/util/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
