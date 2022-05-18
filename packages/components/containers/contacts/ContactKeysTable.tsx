@@ -5,7 +5,7 @@ import { isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
 import uniqueBy from '@proton/util/uniqueBy';
-import { move } from '@proton/util/array';
+import move from '@proton/util/move';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';

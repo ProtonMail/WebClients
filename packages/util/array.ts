@@ -1,17 +1,4 @@
 /**
- * Returns a new array with the item moved to the new position.
- * @param list List of items
- * @param from Index of item to move. If negative, it will begin that many elements from the end.
- * @param to Index of where to move the item. If negative, it will begin that many elements from the end.
- * @return New array with the item moved to the new position
- */
-export const move = <T>(list: T[] = [], from: number, to: number) => {
-    const copy = list.slice();
-    copy.splice(to < 0 ? copy.length + to : to, 0, copy.splice(from, 1)[0]);
-    return copy;
-};
-
-/**
  * Remove the first occurrence of an item from an array. Return a copy of the updated array
  */
 export const remove = <T>(arr: T[], item: T) => {

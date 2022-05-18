@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { move } from '@proton/util/array';
+import move from '@proton/util/move';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactFormatted, ContactMergeModel } from '@proton/shared/lib/interfaces/contacts';
 
