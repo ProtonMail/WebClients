@@ -3,6 +3,7 @@ import { format } from 'date-fns';
 
 import { ImportType, ImportReport } from '@proton/shared/lib/interfaces/EasySwitch';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { TableRow, Icon } from '../../../components';
 
@@ -60,7 +61,7 @@ const ImportReportRow = ({ report }: Props) => {
         <div className="on-mobile-text-center" key="status">
             <ImportReportStatus status={ReportStatus} />
         </div>,
-        <time key="importDate">{format(EndTime * 1000, 'PPp')}</time>,
+        <time key="importDate">{format(EndTime * 1000, 'PPp', { locale: dateLocale })}</time>,
         humanSize(TotalSize),
         <ImportReportRowActions key="button" ID={ID} importType={Product} />,
     ];
