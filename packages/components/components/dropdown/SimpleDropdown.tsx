@@ -19,60 +19,60 @@ interface OwnProps {
 
 export type Props<T extends ElementType> = OwnProps & DropdownButtonProps<T>;
 
-const SimpleDropdown = forwardRef(
-    <E extends ElementType>(
-        {
-            content,
-            children,
-            originalPlacement,
-            autoClose,
-            hasCaret = true,
-            dropdownClassName,
-            dropdownStyle,
-            disableDefaultArrowNavigation = false,
-            onClick,
-            ...rest
-        }: Props<E>,
-        ref: typeof rest.ref
-    ) => {
-        const [uid] = useState(generateUID('dropdown'));
+const SimpleDropdownBase = <E extends ElementType>(
+    {
+        content,
+        children,
+        originalPlacement,
+        autoClose,
+        hasCaret = true,
+        dropdownClassName,
+        dropdownStyle,
+        disableDefaultArrowNavigation = false,
+        onClick,
+        ...rest
+    }: Props<E>,
+    ref: typeof rest.ref
+) => {
+    const [uid] = useState(generateUID('dropdown'));
 
-        const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+    const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-        const handleClick = !!onClick
-            ? () => {
-                  onClick();
-                  toggle();
-              }
-            : toggle;
+    const handleClick = !!onClick
+        ? () => {
+              onClick();
+              toggle();
+          }
+        : toggle;
 
-        return (
-            <>
-                <DropdownButton
-                    {...rest}
-                    ref={useCombinedRefs(ref, anchorRef)}
-                    isOpen={isOpen}
-                    onClick={handleClick}
-                    hasCaret={hasCaret}
-                >
-                    {content}
-                </DropdownButton>
-                <Dropdown
-                    id={uid}
-                    originalPlacement={originalPlacement}
-                    autoClose={autoClose}
-                    isOpen={isOpen}
-                    anchorRef={anchorRef}
-                    onClose={close}
-                    className={dropdownClassName}
-                    style={dropdownStyle}
-                    disableDefaultArrowNavigation={disableDefaultArrowNavigation}
-                >
-                    {children}
-                </Dropdown>
-            </>
-        );
-    }
-);
+    return (
+        <>
+            <DropdownButton
+                {...rest}
+                ref={useCombinedRefs(ref, anchorRef)}
+                isOpen={isOpen}
+                onClick={handleClick}
+                hasCaret={hasCaret}
+            >
+                {content}
+            </DropdownButton>
+            <Dropdown
+                id={uid}
+                originalPlacement={originalPlacement}
+                autoClose={autoClose}
+                isOpen={isOpen}
+                anchorRef={anchorRef}
+                onClose={close}
+                className={dropdownClassName}
+                style={dropdownStyle}
+                disableDefaultArrowNavigation={disableDefaultArrowNavigation}
+            >
+                {children}
+            </Dropdown>
+        </>
+    );
+};
+
+const SimpleDropdown = forwardRef(SimpleDropdownBase);
 
 export default SimpleDropdown;
