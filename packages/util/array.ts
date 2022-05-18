@@ -1,7 +1,3 @@
-import uniqueBy from './uniqueBy';
-
-export const unique = <T>(array: T[]) => uniqueBy(array, (x) => x);
-
 /**
  * Returns a new array with the item moved to the new position.
  * @param list List of items

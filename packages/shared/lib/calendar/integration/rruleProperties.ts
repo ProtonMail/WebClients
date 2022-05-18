@@ -1,4 +1,4 @@
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { VcalDateOrDateTimeValue, VcalDateTimeValue, VcalDays } from '../../interfaces/calendar/VcalModel';
 import { END_TYPE, MONTHLY_TYPE } from '../constants';
 import { getDayAndSetpos, getIsStandardBydayArray } from '../rrule';

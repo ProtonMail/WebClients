@@ -1,5 +1,5 @@
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
