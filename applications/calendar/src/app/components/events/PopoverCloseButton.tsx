@@ -9,7 +9,7 @@ const PopoverCloseButton = ({ onClose }: Props) => {
     return (
         <Tooltip title={c('Event popover close button').t`Close popover`}>
             <Button icon shape="ghost" size="small" onClick={onClose}>
-                <Icon name="cross" alt={c('Action').t`Close event popover`} />
+                <Icon name="cross-big" alt={c('Action').t`Close event popover`} />
             </Button>
         </Tooltip>
     );
