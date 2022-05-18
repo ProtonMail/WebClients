@@ -499,7 +499,7 @@ const SubscriptionModal = ({
                                 <SubscriptionCheckout
                                     submit={
                                         <SubscriptionSubmitButton
-                                            currency={currency}
+                                            currency={model.currency}
                                             onClose={onClose}
                                             canPay={canPay}
                                             paypal={paypal}
