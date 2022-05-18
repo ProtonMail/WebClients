@@ -3,7 +3,7 @@ import { formatRelative, format } from 'date-fns';
 import { toMap, omit } from '@proton/shared/lib/helpers/object';
 import { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
 import unique from '@proton/util/unique';
-import { diff } from '@proton/util/array';
+import diff from '@proton/util/diff';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
