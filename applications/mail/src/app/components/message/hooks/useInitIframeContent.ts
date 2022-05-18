@@ -7,11 +7,12 @@ import { PROTON_THEMES_MAP } from '@proton/shared/lib/themes/themes';
 
 import { MESSAGE_IFRAME_BLOCKQUOTE_ID, MESSAGE_IFRAME_ROOT_ID, MESSAGE_IFRAME_TOGGLE_ID } from '../constants';
 import getIframeHtml from '../helpers/getIframeHtml';
+import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
     messageID: string | undefined;
     content: string;
-    messageHead: string | undefined;
+    message: MessageState;
     iframeRef: RefObject<HTMLIFrameElement>;
     isPlainText: boolean;
     onContentLoaded: (iframeRootElement: HTMLDivElement) => void;
@@ -21,7 +22,7 @@ interface Props {
 const useInitIframeContent = ({
     messageID,
     iframeRef,
-    messageHead,
+    message,
     content,
     onContentLoaded,
     isPlainText,
@@ -44,7 +45,7 @@ const useInitIframeContent = ({
             }
 
             const doc = iframeRef.current?.contentDocument;
-            const iframeContent = getIframeHtml(emailContent, messageHead, isPlainText, themeCSSVariables);
+            const iframeContent = getIframeHtml(emailContent, message, isPlainText, themeCSSVariables);
             doc?.open();
             doc?.write(iframeContent);
             doc?.close();
