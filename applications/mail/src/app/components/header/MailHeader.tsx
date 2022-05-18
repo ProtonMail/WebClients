@@ -21,6 +21,10 @@ import {
     AppsDropdownWithDiscoverySpotlight,
     useModalState,
     UserDropdown,
+    useFeature,
+    FeatureCode,
+    TopNavbarListItemFeedbackButton,
+    FeedbackModal,
 } from '@proton/components';
 import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -51,6 +55,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+    const { feature: featureMailFeedbackEnabled } = useFeature(FeatureCode.MailFeedbackEnabled);
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
 
@@ -163,6 +168,25 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 }
                 contactsButton={
                     <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
+                }
+                feedbackButton={
+                    featureMailFeedbackEnabled?.Value ? (
+                        <TopNavbarListItemFeedbackButton
+                            modal={
+                                <FeedbackModal
+                                    feedbackType="v4_migration"
+                                    description={c('Info')
+                                        .t`Proton has received a facelift. We would love to hear what you think about it!`}
+                                    scaleTitle={c('Label')
+                                        .t`How would you rate your experience with the new ProtonMail?`}
+                                    scaleProps={{
+                                        fromLabel: c('Label').t`0 - Not a fan`,
+                                        toLabel: c('Label').t`10 - Love it!`,
+                                    }}
+                                />
+                            }
+                        />
+                    ) : null
                 }
                 searchBox={<MailSearch breakpoints={breakpoints} />}
                 searchDropdown={<MailSearch breakpoints={breakpoints} />}
