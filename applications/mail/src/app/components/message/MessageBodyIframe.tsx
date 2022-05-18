@@ -11,7 +11,6 @@ import { useMailboxContainerContext } from '../../containers/mailbox/MailboxCont
 import { MessageState } from '../../logic/messages/messagesTypes';
 import useInitIframeContent from './hooks/useInitIframeContent';
 import useIframeDispatchEvents from './hooks/useIframeDispatchEvents';
-import { locateHead } from '../../helpers/message/messageHead';
 import useIframeShowBlockquote from './hooks/useIframeShowBlockquote';
 import { MESSAGE_IFRAME_PRINT_FOOTER_ID, MESSAGE_IFRAME_PRINT_HEADER_ID } from './constants';
 import MessagePrintHeader from './MessagePrintHeader';
@@ -60,7 +59,6 @@ const MessageBodyIframe = ({
     mailSettings,
     onFocus,
 }: Props) => {
-    const messageHead = locateHead(message.messageDocument?.document);
     const hasAttachment = hasAttachments(message.data);
 
     const { isResizing } = useMailboxContainerContext();
@@ -68,7 +66,7 @@ const MessageBodyIframe = ({
     const { initStatus, iframeRootDivRef } = useInitIframeContent({
         messageID: message.data?.ID,
         content,
-        messageHead,
+        message,
         iframeRef,
         onContentLoaded,
         isPlainText,
