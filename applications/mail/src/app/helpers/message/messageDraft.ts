@@ -1,5 +1,5 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';

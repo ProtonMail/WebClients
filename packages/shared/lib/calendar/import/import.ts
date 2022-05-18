@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import isTruthy from '@proton/util/isTruthy';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { getEventByUID } from '../../api/calendars';
 import formatUTC, { Options as FormatOptions } from '../../date-fns-utc/format';
 import { getSupportedTimezone, toUTCDate } from '../../date/timezone';

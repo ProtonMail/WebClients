@@ -1,5 +1,5 @@
 import { addDays, fromUnixTime } from 'date-fns';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
 import { truncate } from '../../helpers/string';
 import {

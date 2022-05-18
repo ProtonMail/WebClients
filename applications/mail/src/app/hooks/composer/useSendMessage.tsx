@@ -5,7 +5,7 @@ import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import { useHistory } from 'react-router';
 import { c } from 'ttag';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { cancelSend } from '@proton/shared/lib/api/messages';
 import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
