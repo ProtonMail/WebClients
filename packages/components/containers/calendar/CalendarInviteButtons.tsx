@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
-import { move } from '@proton/util/array';
+import move from '@proton/util/move';
 import noop from '@proton/util/noop';
 import { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import { c } from 'ttag';
