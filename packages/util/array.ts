@@ -1,9 +1,4 @@
 /**
- * Returns difference of two array of strings
- */
-export const diff = <T>(arr1: T[], arr2: T[]) => arr1.filter((a) => !arr2.includes(a));
-
-/**
  * Groups elements in an array by a provided comparison function.
  * E.g. `[1, 1, 2, 3, 3] => [[1, 1], [2], [3, 3]]`
  */
