@@ -88,32 +88,30 @@ export const SearchField = () => {
                     </div>
                 }
             >
-                <div onClick={handleInputClick}>
-                    <Searchbox
-                        delay={0}
-                        className="w100"
-                        placeholder={placeholderText}
-                        value={searchParams}
-                        onSearch={handleSearch}
-                        onChange={setSearchParams}
-                        // this handler had to be passed with `onFocus` prop, as before it used to trigger
-                        // caching twice in certain cases (the focus stayed on the searchbar after
-                        // indexing, the prepareSearchData is not called until the user hits enter
-                        // to do the search.)
-                        onFocus={handleFieldFocus}
-                        disabled={isDisabled}
-                        advanced={
-                            indexingDropdownControl.isOpen && (
-                                <SearchDropdown
-                                    isOpen={true}
-                                    anchorRef={indexingDropdownAnchorRef}
-                                    onClose={handleClosedDropdown}
-                                    onClosed={handleClosedDropdown}
-                                />
-                            )
-                        }
+                <>
+                    <div onClick={handleInputClick}>
+                        <Searchbox
+                            delay={0}
+                            className="w100"
+                            placeholder={placeholderText}
+                            value={searchParams}
+                            onSearch={handleSearch}
+                            onChange={setSearchParams}
+                            // this handler had to be passed with `onFocus` prop, as before it used to trigger
+                            // caching twice in certain cases (the focus stayed on the searchbar after
+                            // indexing, the prepareSearchData is not called until the user hits enter
+                            // to do the search.)
+                            onFocus={handleFieldFocus}
+                            disabled={isDisabled}
+                        />
+                    </div>
+                    <SearchDropdown
+                        isOpen={indexingDropdownControl.isOpen}
+                        anchorRef={indexingDropdownAnchorRef}
+                        onClose={handleClosedDropdown}
+                        onClosed={handleClosedDropdown}
                     />
-                </div>
+                </>
             </Spotlight>
         </div>
     );
