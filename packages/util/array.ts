@@ -1,17 +1,4 @@
-/**
- * Extract the elements from an array that are unique according to a comparator function
- */
-export const uniqueBy = <T>(array: T[], comparator: (t: T) => any) => {
-    const seen = new Set();
-    return array.filter((value) => {
-        const computed = comparator(value);
-        const hasSeen = seen.has(computed);
-        if (!hasSeen) {
-            seen.add(computed);
-        }
-        return !hasSeen;
-    });
-};
+import uniqueBy from './uniqueBy';
 
 export const unique = <T>(array: T[]) => uniqueBy(array, (x) => x);
 
