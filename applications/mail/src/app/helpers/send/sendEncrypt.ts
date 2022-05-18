@@ -104,8 +104,7 @@ const encryptBodyPackage = async (
     messageKeys: PublicPrivateKey,
     publicKeys: (PublicKeyReference | undefined)[],
     message: MessageState,
-    scheduledTime?: number,
-    canUseScheduledTime = false
+    scheduledTime?: number
 ) => {
     const cleanPublicKeys = publicKeys.filter(isTruthy);
 
@@ -117,12 +116,6 @@ const encryptBodyPackage = async (
     // when the body is larger than 1MB. This is also to avoid enabling compression when the attached data is just the sender's public key,
     // since its value is constant and known to the server, hence compressing it won't necessarily limit compression-based information leakage.
     const shouldCompress = containsEmbeddedAttachments && pack.Body!.length > MEGABYTE;
-
-    /*
-     * Used to disable temporary the usage of the scheduled date in the signature
-     * Because on the BE we cannot have a signature date in the future
-     */
-    const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
 
     const sessionKey = cleanPublicKeys.length
         ? await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicKeys })
@@ -136,7 +129,7 @@ const encryptBodyPackage = async (
         [dataType]: data,
         sessionKey,
         signingKeys: privateKeys,
-        date: canUseScheduledTimeInSignature ? new Date(scheduledTime) : undefined,
+        date: scheduledTime ? new Date(scheduledTime) : undefined,
         format: 'binary',
         compress: shouldCompress,
     });
@@ -164,20 +157,13 @@ const encryptDraftBodyPackage = async (
     pack: Package,
     messageKeys: PublicPrivateKey,
     publicKeys: (PublicKeyReference | undefined)[],
-    scheduledTime?: number,
-    canUseScheduledTime = false
+    scheduledTime?: number
 ) => {
     const cleanPublicAndMessageKeys = [...messageKeys.publicKeys, ...publicKeys].filter(isTruthy);
     const cleanPublicKeys = publicKeys.filter(isTruthy);
 
     // Always encrypt with a single private key
     const privateKeys = messageKeys.privateKeys.slice(0, 1);
-
-    /*
-     * Used to disable temporary the usage of the scheduled date in the signature
-     * Because on the BE we cannot have a signature date in the future
-     */
-    const canUseScheduledTimeInSignature = scheduledTime && canUseScheduledTime;
 
     // pass both messageKeys and publicKeys to make sure the generated session key is compatible with them all
     const sessionKey = await CryptoProxy.generateSessionKey({ recipientKeys: cleanPublicAndMessageKeys });
@@ -190,7 +176,7 @@ const encryptDraftBodyPackage = async (
         [dataType]: data,
         sessionKey,
         signingKeys: privateKeys,
-        date: canUseScheduledTimeInSignature ? new Date(scheduledTime) : undefined,
+        date: scheduledTime ? new Date(scheduledTime) : undefined,
         format: 'binary',
     });
 
