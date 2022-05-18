@@ -1,17 +1,4 @@
 /**
- * Replace the first occurrence of an item from an array by another item. Return a copy of the updated array
- */
-export const replace = <T>(arr: T[], item: T, replacement: T) => {
-    const i = arr.indexOf(item);
-    if (i === -1) {
-        return arr;
-    }
-    const result = arr.slice();
-    result.splice(i, 1, replacement);
-    return result;
-};
-
-/**
  * Returns difference of two array of strings
  */
 export const diff = <T>(arr1: T[], arr2: T[]) => arr1.filter((a) => !arr2.includes(a));
