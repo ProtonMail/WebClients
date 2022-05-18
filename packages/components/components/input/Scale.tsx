@@ -1,5 +1,5 @@
 import { ChangeEvent, ComponentPropsWithoutRef, useRef } from 'react';
-import { range } from '@proton/shared/lib/helpers/array';
+import { range } from '@proton/util/array';
 
 import InputButton, { InputButtonProps } from './InputButton';
 import { classnames, concatStringProp, generateUID } from '../../helpers';

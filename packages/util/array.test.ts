@@ -1,4 +1,4 @@
-import { range, unique, uniqueBy, move, replace, groupWith } from '../../lib/helpers/array';
+import { range, unique, uniqueBy, move, replace, groupWith } from './array';
 
 describe('array', () => {
     describe('range', () => {

@@ -13,7 +13,7 @@ import {
     getIsValidForSending,
     getVerifyingKeys,
 } from '@proton/shared/lib/keys/publicKeys';
-import { uniqueBy } from '@proton/shared/lib/helpers/array';
+import { uniqueBy } from '@proton/util/array';
 import { getKeyInfoFromProperties, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import { DecryptedKey, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts/Contact';

@@ -1,4 +1,4 @@
-import { orderBy, range } from './array';
+import { orderBy, range } from '@proton/util/array';
 import { ROOT_FOLDER } from '../constants';
 import { Folder, FolderWithSubFolders } from '../interfaces/Folder';
 

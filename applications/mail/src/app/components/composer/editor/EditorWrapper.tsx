@@ -5,7 +5,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { useHandler, Editor, EditorMetadata, EditorTextDirection, EditorActions } from '@proton/components';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { diff } from '@proton/shared/lib/helpers/array';
+import { diff } from '@proton/util/array';
 import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';

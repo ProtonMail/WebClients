@@ -1,5 +1,5 @@
+import { chunk } from '@proton/util/array';
 import { runChunksDelayed } from '../../helpers/promise';
-import { chunk } from '../../helpers/array';
 
 interface Arguments {
     pageSize: number;

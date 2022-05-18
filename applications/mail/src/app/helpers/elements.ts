@@ -2,7 +2,7 @@ import { Location } from 'history';
 import { formatRelative, format } from 'date-fns';
 import { toMap, omit } from '@proton/shared/lib/helpers/object';
 import { Label, LabelCount } from '@proton/shared/lib/interfaces/Label';
-import { diff, unique } from '@proton/shared/lib/helpers/array';
+import { diff, unique } from '@proton/util/array';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
