@@ -50,11 +50,10 @@
 
 	&-advanced-search-button {
 		position: absolute;
-		inset-inline-end: em(3);
-		inset-block: em(3);
+		inset-inline-end: 0;
+		inset-block: 0;
 		aspect-ratio: 1;
-		padding: 0;
-		border-radius: var(--border-radius-sm);
+		border-radius: var(--border-radius-md);
 
 		@include respond-to($breakpoint-small) {
 			position: static;
