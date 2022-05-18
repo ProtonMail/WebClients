@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
 import { isToday, isTomorrow } from 'date-fns';
 import { Href, generateUID, useNotifications, useFeatures, FeatureCode, Checkbox } from '@proton/components';
-import { range } from '@proton/util/array';
+import range from '@proton/util/range';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
