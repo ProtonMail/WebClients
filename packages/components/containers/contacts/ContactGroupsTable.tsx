@@ -2,7 +2,7 @@ import { useEffect, useState, useCallback } from 'react';
 import { c, msgid } from 'ttag';
 
 import { deleteLabel, orderContactGroup } from '@proton/shared/lib/api/labels';
-import { move } from '@proton/util/array';
+import move from '@proton/util/move';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import {
