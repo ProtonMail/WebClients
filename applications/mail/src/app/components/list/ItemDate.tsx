@@ -6,7 +6,7 @@ import { getDate } from '../../helpers/elements';
 import { formatSimpleDate, formatFullDate, formatDistanceToNow } from '../../helpers/date';
 import { Element } from '../../models/element';
 
-const REFRESH_DATE_INTERVAL = 1000;
+const REFRESH_DATE_INTERVAL = 60 * 1000;
 
 type FormaterType = 'simple' | 'full' | 'distance';
 
@@ -25,7 +25,7 @@ interface Props {
 }
 
 const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false }: Props) => {
-    const formater = FORMATERS[mode] || FORMATERS.distance;
+    const formater = FORMATERS[mode];
 
     const [formattedDate, setFormattedDate] = useState(() => {
         const date = getDate(element, labelID);
@@ -48,7 +48,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
 
         update();
 
-        if (mode === 'distance') {
+        if (mode === 'distance' || mode === 'simple') {
             const intervalID = setInterval(update, REFRESH_DATE_INTERVAL);
             return () => clearInterval(intervalID);
         }
