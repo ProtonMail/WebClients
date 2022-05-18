@@ -3,7 +3,7 @@ import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, Session
 import { useApi, usePreventLeave } from '@proton/components';
 import { computeKeyPassword } from '@proton/srp';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import { chunk } from '@proton/util/array';
+import chunk from '@proton/util/chunk';
 import {
     base64StringToUint8Array,
     uint8ArrayToBase64String,
