@@ -1,39 +1,6 @@
-import { range, unique, uniqueBy, move, replace, groupWith } from './array';
+import { unique, uniqueBy, move, replace, groupWith } from './array';
 
 describe('array', () => {
-    describe('range', () => {
-        it('should allow no parameters', () => {
-            expect(range()).toEqual([0]);
-        });
-
-        it('should return empty array if end is before start', () => {
-            expect(range(10, 2)).toEqual([]);
-        });
-
-        it('should return empty array if end is same as start', () => {
-            expect(range(2, 2)).toEqual([]);
-        });
-
-        // Here closed is the mathematical definition
-        it('should have a closed start', () => {
-            const start = 0;
-            const result = range(start, 2);
-            expect(result[0]).toEqual(start);
-        });
-
-        // Here open is the mathematical definition
-        it('should have an open end', () => {
-            const end = 2;
-            const result = range(0, end);
-            expect(result[result.length - 1]).toBeLessThan(end);
-        });
-
-        it('should return range with correct step', () => {
-            expect(range(-4, 5, 2)).toEqual([-4, -2, 0, 2, 4]);
-            expect(range(0, 2, 0.5)).toEqual([0, 0.5, 1, 1.5]);
-        });
-    });
-
     describe('unique', () => {
         it('should return same', () => {
             expect(unique([1, 2])).toEqual([1, 2]);

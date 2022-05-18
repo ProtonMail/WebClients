@@ -1,6 +1,6 @@
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
-import { range } from '@proton/util/array';
+import range from '@proton/util/range';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { LABEL_TYPE, VIEW_MODE } from '@proton/shared/lib/constants';

@@ -1,7 +1,7 @@
 import Papa from 'papaparse';
 
 import isTruthy from '@proton/util/isTruthy';
-import { range } from '@proton/util/array';
+import range from '@proton/util/range';
 import { ContactProperties } from '../../interfaces/contacts';
 import { sortByPref } from '../properties';
 import {
