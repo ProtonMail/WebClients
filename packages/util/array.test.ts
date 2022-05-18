@@ -1,16 +1,6 @@
-import { unique, move, replace, groupWith } from './array';
+import { move, replace, groupWith } from './array';
 
 describe('array', () => {
-    describe('unique', () => {
-        it('should return same', () => {
-            expect(unique([1, 2])).toEqual([1, 2]);
-        });
-
-        it('should only return unique items', () => {
-            expect(unique([1, 2, 1])).toEqual([1, 2]);
-        });
-    });
-
     describe('move', () => {
         it('should return a new array', () => {
             const list = [1, 2, 3, 4, 5];

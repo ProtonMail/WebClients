@@ -2,7 +2,7 @@ import { getVtimezones } from '@proton/shared/lib/api/calendars';
 import { parse } from '@proton/shared/lib/calendar/vcal';
 import { GET_VTIMEZONES_API_LIMIT } from '@proton/shared/lib/constants';
 import chunk from '@proton/util/chunk';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { GetVTimezonesMap, VTimezoneObject } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { VcalVtimezoneComponent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';

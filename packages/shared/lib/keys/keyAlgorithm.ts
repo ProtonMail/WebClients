@@ -1,5 +1,5 @@
 import { algorithmInfo } from 'pmcrypto';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { capitalize } from '../helpers/string';
 import { EncryptionConfig, SimpleMap } from '../interfaces';
 

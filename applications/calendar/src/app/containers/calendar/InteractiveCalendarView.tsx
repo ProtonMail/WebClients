@@ -31,7 +31,7 @@ import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { API_CODES, SECOND } from '@proton/shared/lib/constants';
 import { format, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import noop from '@proton/util/noop';
 import isTruthy from '@proton/util/isTruthy';

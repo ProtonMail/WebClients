@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 import mod from '@proton/util/mod';
-import { unique } from '@proton/util/array';
+import unique from '@proton/util/unique';
 import { format } from '../../date-fns-utc';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
 import { END_TYPE, FREQUENCY, MONTHLY_TYPE } from '../constants';
