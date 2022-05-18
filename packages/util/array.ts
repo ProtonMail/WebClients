@@ -1,17 +1,4 @@
 /**
- * Divide an array into sub-arrays of a fixed chunk size
- */
-export const chunk = <T>(list: T[] = [], size = 1) => {
-    return list.reduce<T[][]>((res, item, index) => {
-        if (index % size === 0) {
-            res.push([]);
-        }
-        res[res.length - 1].push(item);
-        return res;
-    }, []);
-};
-
-/**
  * Extract the elements from an array that are unique according to a comparator function
  */
 export const uniqueBy = <T>(array: T[], comparator: (t: T) => any) => {

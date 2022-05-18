@@ -4,7 +4,7 @@ import { c, msgid } from 'ttag';
 import { getContact, addContacts, deleteContacts } from '@proton/shared/lib/api/contacts';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { chunk } from '@proton/util/array';
+import chunk from '@proton/util/chunk';
 import { prepareContact as decrypt } from '@proton/shared/lib/contacts/decrypt';
 import { prepareContact as encrypt } from '@proton/shared/lib/contacts/encrypt';
 import { API_CODES } from '@proton/shared/lib/constants';
