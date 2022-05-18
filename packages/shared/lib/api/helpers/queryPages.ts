@@ -1,4 +1,4 @@
-import { chunk } from '@proton/util/array';
+import chunk from '@proton/util/chunk';
 import { runChunksDelayed } from '../../helpers/promise';
 
 interface Arguments {
