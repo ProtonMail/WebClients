@@ -1,15 +1,4 @@
 /**
- * Build an array with a numeric range, specified by a start, an end, and a step
- */
-export const range = (start = 0, end = 1, step = 1) => {
-    const result = [];
-    for (let index = start; index < end; index += step) {
-        result.push(index);
-    }
-    return result;
-};
-
-/**
  * Divide an array into sub-arrays of a fixed chunk size
  */
 export const chunk = <T>(list: T[] = [], size = 1) => {
