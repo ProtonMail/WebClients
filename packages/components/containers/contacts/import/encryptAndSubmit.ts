@@ -6,7 +6,7 @@ import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
 import { prepareContact } from '@proton/shared/lib/contacts/encrypt';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
 import chunk from '@proton/util/chunk';
-import { uniqueBy } from '@proton/util/array';
+import uniqueBy from '@proton/util/uniqueBy';
 import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import noop from '@proton/util/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';

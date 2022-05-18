@@ -38,7 +38,7 @@ import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
 import isTruthy from '@proton/util/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
 import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { uniqueBy } from '@proton/util/array';
+import uniqueBy from '@proton/util/uniqueBy';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
