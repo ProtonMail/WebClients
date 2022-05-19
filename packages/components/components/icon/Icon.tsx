@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import { isFirefoxLessThan55 } from '@proton/shared/lib/helpers/browser';
 
 import { classnames } from '../../helpers';
 
@@ -300,6 +301,9 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
             ...(rotate && { transform: `rotate(${rotate}deg)` }),
         };
 
+        // Patch broken SVG lookup for Firefox < 55.
+        const href = isFirefoxLessThan55() ? window.location.href.replace(window.location.hash, '') : '';
+
         return (
             <>
                 <svg
@@ -312,7 +316,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
                     {...rest}
                 >
                     {title ? <title>{title}</title> : null}
-                    <use xlinkHref={`#ic-${name}`} />
+                    <use xlinkHref={`${href}#ic-${name}`} />
                 </svg>
                 {alt ? <span className="sr-only">{alt}</span> : null}
             </>
