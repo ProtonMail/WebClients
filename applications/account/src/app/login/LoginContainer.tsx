@@ -300,6 +300,7 @@ const LoginContainer = ({
 
     return (
         <Layout
+            hasWelcome
             hasBackButton={!!handleBackStep}
             topRight={
                 <ButtonLike className="text-semibold" shape="outline" color="norm" pill as={Link} to="/signup">{c(
