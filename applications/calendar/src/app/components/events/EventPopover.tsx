@@ -363,15 +363,19 @@ const EventPopover = ({
             </div>
             {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
-                    className="flex-align-items-center flex-justify-space-between on-mobile-flex-justify-start flex-gap-1"
+                    className="flex-item-noshrink flex-align-items-center flex-justify-space-between gap-4 on-mobile-flex-column"
                     key={targetEvent.id}
                 >
-                    <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
-                    <CalendarInviteButtons
-                        actions={actions}
-                        partstat={userPartstat}
-                        disabled={isCalendarDisabled || !isSelfAddressActive}
-                    />
+                    <div>
+                        <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
+                    </div>
+                    <div className="ml-0 md:ml-auto">
+                        <CalendarInviteButtons
+                            actions={actions}
+                            partstat={userPartstat}
+                            disabled={isCalendarDisabled || !isSelfAddressActive}
+                        />
+                    </div>
                 </PopoverFooter>
             )}
         </PopoverContainer>
