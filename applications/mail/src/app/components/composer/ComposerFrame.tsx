@@ -48,7 +48,7 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
-    const style = computeComposerStyle(index, count, focus, minimized, maximized, breakpoints.isNarrow, windowSize);
+    const style = computeComposerStyle(index, count, minimized, maximized, breakpoints.isNarrow, windowSize);
     const customClassnames = getCustomSizingClasses(style);
     const {
         start: handleStartDragging,
