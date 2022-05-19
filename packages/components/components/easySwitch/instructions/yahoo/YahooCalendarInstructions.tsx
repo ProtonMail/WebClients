@@ -21,15 +21,15 @@ const YahooCalendarInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Go to full calendar view in Yahoo"
-    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} in Yahoo`;
+    const step1 = c('Import instructions step').jt`Go to ${calendarViewLink} in Yahoo.`;
 
     const step2 = c('Import instructions step')
-        .t`Mouse over the calendar you want to import and open the dropdown menu`;
+        .t`Mouse over the calendar you want to import and open the dropdown menu.`;
 
     // translator: full sentence: "Select Export to export the calendar as an ICS file"
     const boldExport = <strong key="boldExport">{c('Import instructions emphasis').t`Export`}</strong>;
     // translator: full sentence: "Select Export to export the calendar as an ICS file"
-    const step3 = c('Import instructions step').jt`Select ${boldExport} to export the calendar as an ICS file`;
+    const step3 = c('Import instructions step').jt`Select ${boldExport} to export the calendar as an ICS file.`;
 
     return (
         <>

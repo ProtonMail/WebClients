@@ -23,14 +23,14 @@ const YahooMailInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Go to account info under your profile in Yahoo"
-    const step1 = c('Import instructions').jt`Go to ${boldAccountInfo} under your profile in ${yahooMailLink}`;
+    const step1 = c('Import instructions').jt`Go to ${boldAccountInfo} under your profile in ${yahooMailLink}.`;
 
     // translator: full sentence: "Go to Account security"
     const boldAccountSecurity = (
         <strong key="boldAccountSecurity">{c('Import instructions emphasis').t`Account security`}</strong>
     );
     // translator: full sentence: "Go to Account security"
-    const step2 = c('Import instructions').jt`Go to ${boldAccountSecurity}`;
+    const step2 = c('Import instructions').jt`Go to ${boldAccountSecurity}.`;
 
     // translator: full sentence: "Generate the app password and use it in place of your regular password when prompted by Proton"
     const boldAppPassword = (
@@ -38,7 +38,7 @@ const YahooMailInstructions = () => {
     );
     // translator: full sentence: "Generate the app password and use it in place of your regular password when prompted by Proton"
     const step3 = c('Import instructions')
-        .jt`Generate the ${boldAppPassword} and use it in place of your regular password when prompted by Proton`;
+        .jt`Generate the ${boldAppPassword} and use it in place of your regular password when prompted by Proton.`;
 
     return (
         <>
