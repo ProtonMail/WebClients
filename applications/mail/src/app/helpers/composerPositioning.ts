@@ -31,7 +31,6 @@ const computeHeight = (windowHeight: number) => {
 export const computeComposerStyle = (
     index: number,
     count: number,
-    focus: boolean,
     minimized: boolean,
     maximized: boolean,
     isNarrow: boolean,
@@ -51,7 +50,6 @@ export const computeComposerStyle = (
 
     const style = {
         '--right-custom': `${computeRightPosition(index, count, windowSize.width)}px`,
-        '--z-position': focus ? 1 : 0,
         computeHeight: `${computeHeight(windowSize.height)}px`,
     };
 
