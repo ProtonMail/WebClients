@@ -43,6 +43,13 @@ export const isMaybeTorLessThan11 = () => {
     // Starting from tor browser 11, tor is based on firefox 91
     return isMaybeTor && !!ua.browser.major && +ua.browser.major < 91;
 };
+// window.InstallTrigger is Firefox specific, and requestIdleCallback was added in Firefox 55.
+// Checking that window.InstallTrigger is present and requestIdleCallback isn't should mean we're
+// looking at Firefox < 55.
+export const isFirefoxLessThan55 = () => {
+    // @ts-expect-error
+    return window.InstallTrigger && !window.requestIdleCallback;
+};
 export const isChrome = () => ua.browser.name === 'Chrome';
 export const isJSDom = () => navigator.userAgent.includes('jsdom');
 export const isMac = () => ua.os.name === 'Mac OS';
