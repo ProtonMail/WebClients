@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
-import { groupWith } from '@proton/util/array';
+import groupWith from '@proton/util/groupWith';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { PLANS, SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 
