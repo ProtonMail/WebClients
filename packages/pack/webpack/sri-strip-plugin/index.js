@@ -24,6 +24,7 @@ class SriStripPlugin {
                                 delete tag.attributes.integrity;
                                 delete tag.attributes.crossorigin;
                             }
+                            this.options.handle?.(tag);
                         });
                         return data;
                     }
