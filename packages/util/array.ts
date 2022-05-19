@@ -22,16 +22,6 @@ export const groupWith = <T>(compare: (a: T, b: T) => boolean, arr: T[] = []) =>
 };
 
 /**
- * Returns the item that has minimum value as determined by fn property selector function.
- * E.g.: `minBy(({ a }) => a, [{a: 4}, {a: 2}, {a: 5}])` returns `{a: 2}`
- */
-export const minBy = <T>(fn: (a: T) => any, arr: T[] = []) => {
-    return arr.reduce((min, item) => {
-        return fn(item) < fn(min) ? item : min;
-    }, arr[0]);
-};
-
-/**
  * Order collection of object by a specific key
  */
 export const orderBy = <T, K extends keyof T>(collection: T[] = [], key: K) => {
