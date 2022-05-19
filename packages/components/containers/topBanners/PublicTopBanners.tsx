@@ -1,13 +1,19 @@
+import { ReactNode } from 'react';
 import OnlineTopBanner from './OnlineTopBanner';
 import BadAppVersionBanner from './BadAppVersionBanner';
 import TorWarningBanner from './TorWarningBanner';
 
-const PublicTopBanners = () => {
+interface Props {
+    children?: ReactNode;
+}
+
+const PublicTopBanners = ({ children }: Props) => {
     return (
         <>
             <TorWarningBanner />
             <OnlineTopBanner />
             <BadAppVersionBanner />
+            {children}
         </>
     );
 };
