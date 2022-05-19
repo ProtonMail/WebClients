@@ -198,13 +198,13 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 {...feedbackModalProps}
                 feedbackType="v4_migration"
                 description={c('Info')
-                    .t`Proton has received a facelift. We would love to hear what you think about it!`}
-                scaleTitle={c('Label').t`How would you rate your experience with the new ProtonMail?`}
+                    .t`We've introduced Proton's unified & refreshled look. We would love to hear what you think about it!`}
+                scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
                 scaleProps={{
                     from: 0,
                     to: 5,
-                    fromLabel: c('Label').t`0 - Not a fan`,
-                    toLabel: c('Label').t`5 - Love it!`,
+                    fromLabel: c('Label').t`0 - Awful`,
+                    toLabel: c('Label').t`5 - Wonderful`,
                 }}
             />
         </>

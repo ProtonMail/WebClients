@@ -81,10 +81,10 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
             <ModalContent>
                 <p className="mb2">{description}</p>
                 <div className="mb2">
-                    <label className="mb1 block" id="score-label">
+                    <label className="mb1 block text-semibold" id="score-label">
                         {scaleTitle}
                     </label>
-                    <div className="w75 on-mobile-w100">
+                    <div className="w60 on-mobile-w100">
                         <Scale
                             {...scaleProps}
                             value={model.Score}
@@ -93,19 +93,21 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
                         />
                     </div>
                 </div>
-                <div>
-                    <label className="mb1 block" htmlFor="feedback-label">{c('Label')
-                        .t`What is the primary reason for this rating?`}</label>
-                    <TextArea
-                        id="feedback-label"
-                        value={model.Feedback}
-                        placeholder={c('Placeholder').t`Feedback`}
-                        onChange={handleChange('Feedback')}
-                    />
-                </div>
+                {model.Score !== undefined && (
+                    <div>
+                        <label className="mb1 block text-semibold" htmlFor="feedback-label">{c('Label')
+                            .t`Tell us about your experience (Optional)`}</label>
+                        <TextArea
+                            id="feedback-label"
+                            value={model.Feedback}
+                            placeholder={c('Placeholder').t`Feedback`}
+                            onChange={handleChange('Feedback')}
+                        />
+                    </div>
+                )}
             </ModalContent>
             <ModalFooter>
-                <Button disabled={loading}>{c('Action').t`Cancel`}</Button>
+                <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
                 <Button type="submit" color="norm" loading={loading}>{c('Action').t`Submit`}</Button>
             </ModalFooter>
         </Modal>
