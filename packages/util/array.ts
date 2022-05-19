@@ -36,19 +36,6 @@ export const shallowEqual = <T>(a: T[], b: T[]) => {
     return true;
 };
 
-/**
- * Basic comparator function that transforms order via >,< into the numeric order that sorting functions typically require
- */
-export const compare = (a: any, b: any) => {
-    if (a > b) {
-        return 1;
-    }
-    if (a < b) {
-        return -1;
-    }
-    return 0;
-};
-
 export const mergeUint8Arrays = (arrays: Uint8Array[]) => {
     const length = arrays.reduce((sum, arr) => sum + arr.length, 0);
     const chunksAll = new Uint8Array(length);
