@@ -22,21 +22,6 @@ export const groupWith = <T>(compare: (a: T, b: T) => boolean, arr: T[] = []) =>
 };
 
 /**
- * Order collection of object by a specific key
- */
-export const orderBy = <T, K extends keyof T>(collection: T[] = [], key: K) => {
-    return collection.slice().sort((a, b) => {
-        if (a[key] > b[key]) {
-            return 1;
-        }
-        if (a[key] < b[key]) {
-            return -1;
-        }
-        return 0;
-    });
-};
-
-/**
  * Determine if two arrays are shallowy equal (i.e. they have the same length and the same elements)
  */
 export const shallowEqual = <T>(a: T[], b: T[]) => {
