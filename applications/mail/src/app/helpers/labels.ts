@@ -216,6 +216,8 @@ export const applyLabelChangesOnConversation = (
     changes: LabelChanges,
     unreadStatuses?: UnreadStatus[]
 ): Conversation => {
+    let Time = conversation.Time;
+
     const Labels = [...(conversation.Labels || [])];
     Object.keys(changes).forEach((labelID) => {
         const index = Labels.findIndex((existingLabel) => existingLabel.ID === labelID);
@@ -232,6 +234,14 @@ export const applyLabelChangesOnConversation = (
                 };
             }
         } else if (index >= 0) {
+            // When the conversation has been received through the event manager it will not have a Time field
+            // By removing the label, we are losing the context time associated
+            // If we rollback that change, both label time and fallback on conversation will be missing
+            // By filling the conversation time at label removal, we ensure there will be a time on rollback
+            if (Time === undefined) {
+                Time = Labels[index].ContextTime;
+            }
+
             Labels.splice(index, 1);
         }
     });
@@ -239,11 +249,11 @@ export const applyLabelChangesOnConversation = (
     if (unreadStatuses) {
         const elementUnreadStatus = unreadStatuses.find((element) => element.id === conversation.ID)?.unread;
         if (elementUnreadStatus) {
-            return { ...conversation, Labels, NumUnread: elementUnreadStatus };
+            return { ...conversation, Time, Labels, NumUnread: elementUnreadStatus };
         }
     }
 
-    return { ...conversation, Labels };
+    return { ...conversation, Time, Labels };
 };
 
 export const applyLabelChangesOnOneMessageOfAConversation = (

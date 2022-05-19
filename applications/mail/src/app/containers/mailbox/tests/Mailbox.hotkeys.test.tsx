@@ -170,7 +170,7 @@ describe('Mailbox hotkeys', () => {
     });
 
     it('should allow to move elements with keyboard', async () => {
-        const labelSpy = jest.fn();
+        const labelSpy = jest.fn<any, any>(() => ({ UndoToken: 'token' }));
         addApiMock('mail/v4/conversations/label', labelSpy, 'put');
 
         const deleteSpy = jest.fn();
@@ -189,7 +189,7 @@ describe('Mailbox hotkeys', () => {
             expect(labelSpy).toHaveBeenCalledTimes(callTimes);
             expect(labelSpy.mock.calls[callTimes - 1][0].data).toEqual({
                 LabelID,
-                IDs: [conversations[conversations.length - 1].ID],
+                IDs: [conversations[conversations.length - (callTimes * 2 - 1)].ID],
             });
         };
 
@@ -224,6 +224,7 @@ describe('Mailbox hotkeys', () => {
         // T should do nothing as we already are in trash folder
         t();
         expect(labelSpy).toHaveBeenCalledTimes(callTimes);
+        await tick();
 
         ctrlBackspace();
         const button = await getByTestId('permanent-delete-modal:submit');
