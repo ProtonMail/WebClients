@@ -21,9 +21,9 @@ const OutlookMailInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Go to Outlook security settings"
-    const step1 = c('Import instructions').jt`Go to Outlook ${securitySettingsLink}`;
+    const step1 = c('Import instructions').jt`Go to Outlook ${securitySettingsLink}.`;
 
-    const step2 = c('Import instructions').t`If 2-step verification is off, turn it on`;
+    const step2 = c('Import instructions').t`If 2-step verification is off, turn it on.`;
 
     // translator: full sentence: "Generate an app password and use it in place of your regular password when prompted by Proton":
     const boldAppPassword = (
@@ -31,7 +31,7 @@ const OutlookMailInstructions = () => {
     );
     // translator: full sentence: "Generate an app password and use it in place of your regular password when prompted by Proton"
     const step3 = c('Import instructions')
-        .jt`Generate an ${boldAppPassword} and use it in place of your regular password when prompted by Proton`;
+        .jt`Generate an ${boldAppPassword} and use it in place of your regular password when prompted by Proton.`;
 
     return (
         <>
