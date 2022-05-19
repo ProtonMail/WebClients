@@ -21,7 +21,7 @@ const useAskAuth = (onError: () => void = noop) => {
              * information for the non-private user, and not for the admin to which the session actually belongs.
              * So we query auth info to get the information about the admin.
              */
-            const infoResult = await api<InfoAuthedResponse>({ ...getInfo(), silent: true });
+            const infoResult = await api<InfoAuthedResponse>({ ...getInfo(), silence: true });
             setAdminAuthTwoFA(infoResult['2FA']);
         };
         run().catch(onError);
