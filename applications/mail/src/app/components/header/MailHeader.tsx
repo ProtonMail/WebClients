@@ -69,6 +69,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
+    const [feedbackModalProps, setFeedbackModalOpen] = useModalState();
 
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
@@ -171,21 +172,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 }
                 feedbackButton={
                     featureMailFeedbackEnabled?.Value ? (
-                        <TopNavbarListItemFeedbackButton
-                            modal={
-                                <FeedbackModal
-                                    feedbackType="v4_migration"
-                                    description={c('Info')
-                                        .t`Proton has received a facelift. We would love to hear what you think about it!`}
-                                    scaleTitle={c('Label')
-                                        .t`How would you rate your experience with the new ProtonMail?`}
-                                    scaleProps={{
-                                        fromLabel: c('Label').t`0 - Not a fan`,
-                                        toLabel: c('Label').t`10 - Love it!`,
-                                    }}
-                                />
-                            }
-                        />
+                        <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModalOpen(true)} />
                     ) : null
                 }
                 searchBox={<MailSearch breakpoints={breakpoints} />}
@@ -207,6 +194,19 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
             <MailComposerModeModal {...mailComposerModeProps} />
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
             <ClearBrowserDataModal {...clearBrowserDataProps} />
+            <FeedbackModal
+                {...feedbackModalProps}
+                feedbackType="v4_migration"
+                description={c('Info')
+                    .t`Proton has received a facelift. We would love to hear what you think about it!`}
+                scaleTitle={c('Label').t`How would you rate your experience with the new ProtonMail?`}
+                scaleProps={{
+                    from: 0,
+                    to: 5,
+                    fromLabel: c('Label').t`0 - Not a fan`,
+                    toLabel: c('Label').t`5 - Love it!`,
+                }}
+            />
         </>
     );
 };
