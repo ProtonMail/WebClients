@@ -21,16 +21,16 @@ const YahooContactsInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Open your Yahoo contacts"
-    const step1 = c('Import instructions').jt`Open your ${yahooMailLink} contacts`;
+    const step1 = c('Import instructions').jt`Open your ${yahooMailLink} contacts.`;
 
-    const step2 = c('Import instructions').t`Expand the dropdown menu by clicking on the 3 dots (...)`;
+    const step2 = c('Import instructions').t`Expand the dropdown menu by clicking on the 3 dots (...).`;
 
     // translator: full sentence: "Select Export to CSV file"
     const boldExportCSV = (
         <strong key="boldExportCSV">{c('Import instructions emphasis').t`Export to CSV file`}</strong>
     );
     // translator: full sentence: "Select Export to CSV file"
-    const step3 = c('Import instructions').jt`Select ${boldExportCSV}`;
+    const step3 = c('Import instructions').jt`Select ${boldExportCSV}.`;
 
     return (
         <>
