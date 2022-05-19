@@ -1,7 +1,7 @@
 import { Fragment, ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { compare } from '@proton/util/array';
+import compare from '@proton/util/compare';
 import { ADDON_NAMES, APPS, CYCLE, MEMBER_PLAN_MAPPING, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { getTimeRemaining } from '@proton/shared/lib/date/date';
 import isTruthy from '@proton/util/isTruthy';
