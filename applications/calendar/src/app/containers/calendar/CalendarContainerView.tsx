@@ -119,6 +119,7 @@ const CalendarContainerView = ({
     const { feature: featureCalendarFeedbackEnabled } = useFeature(FeatureCode.CalendarFeedbackEnabled);
     const calendarAppName = getAppName(APPS.PROTONCALENDAR);
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
+    const [feedbackModal, setFeedbackModal] = useModalState();
 
     const localNowDate = useMemo(() => {
         return new Date(utcDefaultDate.getUTCFullYear(), utcDefaultDate.getUTCMonth(), utcDefaultDate.getUTCDate());
@@ -386,27 +387,27 @@ const CalendarContainerView = ({
                 }
                 feedbackButton={
                     featureCalendarFeedbackEnabled?.Value ? (
-                        <TopNavbarListItemFeedbackButton
-                            modal={
-                                <FeedbackModal
-                                    feedbackType="calendar_launch"
-                                    description={c('Info')
-                                        .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
-                                    scaleTitle={c('Label')
-                                        .t`How likely are you to recommend ${calendarAppName} to a friend or colleague?`}
-                                    scaleProps={{
-                                        fromLabel: c('Label').t`0 - Not likely`,
-                                        toLabel: c('Label').t`10 - Extremely likely`,
-                                    }}
-                                />
-                            }
-                        />
+                        <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModal(true)} />
                     ) : null
                 }
                 title={c('Title').t`Calendar`}
                 expanded={expanded}
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
+            />
+
+            <FeedbackModal
+                {...feedbackModal}
+                feedbackType="calendar_launch"
+                description={c('Info')
+                    .t`${calendarAppName} has been added to the Proton suite. We would love to hear what you think about it!`}
+                scaleTitle={c('Label').t`How likely are you to recommend ${calendarAppName} to a friend or colleague?`}
+                scaleProps={{
+                    from: 0,
+                    to: 10,
+                    fromLabel: c('Label').t`0 - Not likely`,
+                    toLabel: c('Label').t`10 - Extremely likely`,
+                }}
             />
         </>
     );
