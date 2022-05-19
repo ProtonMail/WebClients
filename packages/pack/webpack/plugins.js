@@ -15,7 +15,7 @@ const SriStripPlugin = require('./sri-strip-plugin');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
 
-const { logo, ...logoConfig } = require(path.resolve('./src/assets/logoConfig.js'));
+const faviconsConfig = require(path.resolve('./src/assets/logoConfig.js'));
 
 module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, warningLogs, errorLogs }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
@@ -123,9 +123,12 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
         }),
 
         new FaviconsWebpackPlugin({
-            logo: path.resolve(logo),
-            ...logoConfig,
+            logo: path.resolve(faviconsConfig.logo),
             cache: path.resolve('./node_modules/.cache'),
+            favicons: {
+                ...faviconsConfig.favicons,
+                loadManifestWithCredentials: true,
+            },
         }),
 
         ...(writeSRI
@@ -133,6 +136,16 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
                   new SubresourceIntegrityPlugin(),
                   new SriStripPlugin({
                       ignore: /\.(css|png|svg|ico|json)$/,
+                      handle: (tag) => {
+                          // With enabling the loadManifestWithCredentials option in the FaviconsWebpackPlugin the
+                          // crossorigin attribute for the manifest.json link is added correctly, however the SRI
+                          // plugin removes it and replaces it with SRI attributes. This plugin then removes the SRI
+                          // attributes for the tags which we're not interested to have SRI on, but it also adds
+                          // back the use-credentials crossorigin attribute for the manifest link.
+                          if (tag.tagName === 'link' && tag.attributes.href.endsWith('manifest.json')) {
+                              tag.attributes.crossorigin = 'use-credentials';
+                          }
+                      },
                   }),
               ]
             : []),
