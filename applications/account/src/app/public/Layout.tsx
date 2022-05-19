@@ -23,6 +23,7 @@ import {
     classnames,
     ProtonLogo,
     IconSize,
+    WelcomeV5TopBanner,
 } from '@proton/components';
 
 import LanguageSelect from './LanguageSelect';
@@ -120,15 +121,16 @@ export interface Props {
     bottomRight?: ReactNode;
     hasDecoration?: boolean;
     hasBackButton?: boolean;
+    hasWelcome?: boolean;
 }
 
-const Layout = ({ children, hasDecoration, topRight, bottomRight, hasBackButton }: Props) => {
+const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, hasBackButton }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
-            <PublicTopBanners />
+            <PublicTopBanners>{hasWelcome && <WelcomeV5TopBanner />}</PublicTopBanners>
             <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink ml2 mr2 mt1 mb2 pb2 on-mobile-m0 on-mobile-pt1 on-mobile-pb1">
                 <Href href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}>
                     <ProtonLogo className={classnames([hasBackButton && 'on-mobile-ml3-5'])} />
