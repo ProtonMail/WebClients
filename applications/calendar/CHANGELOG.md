@@ -1,3 +1,11 @@
+## Release: 5.0.0 — May 25, 2022
+
+Introducing Proton's refreshed look.
+
+As we continue to make privacy accessible to everyone, we've updated our apps to provide you with an even better experience with our services.
+
+Proton - Privacy by default.
+
 ## Release: 4.0.9 — Mar 30, 2022
 
 ### Improvements
