@@ -132,7 +132,7 @@
         "Continuer"
       ],
       "Continue transfers": [
-        ""
+        "Poursuivre les transferts"
       ],
       "Continue with Google": [
         "Continuer avec Google"
@@ -497,7 +497,7 @@
         "Arrêter le partage"
       ],
       "Stop transfers": [
-        ""
+        "Arrêter les transferts "
       ],
       "Submit": [
         "Envoyer"
@@ -1794,7 +1794,7 @@
         "Le dossier « ${ name } » est déjà en cours de téléchargement"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Le nom de dossier ne peut être vide."
       ],
       "Image upload failed": [
         "Échec de l'importation de l'image"
@@ -1818,7 +1818,7 @@
         "Code de vérification invalide"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Le nom du label ne peut pas être vide."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
@@ -1936,10 +1936,10 @@
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
@@ -2664,7 +2664,7 @@
         "Aucune des clés téléversées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
       "Not a valid URL": [
-        ""
+        "URL non valide"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Remarque: les données peuvent toujours être disponibles localement au sein des appareils dans lesquels vous avez installé ${ appName }."
@@ -2673,7 +2673,7 @@
         "de"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
+        "Un de vos lecteurs chiffrés est verrouillé. Ceci est très probablement lié à une récente réinitialisation du mot de passe."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2805,7 +2805,7 @@
         "Les éléments suivants ont peut-être été falsifiés: ${ items }. N'ouvrez que si vous avez confiance."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
+        "Certains fichiers doivent encore être transférés. Fermer le gestionnaire de transfert mettra fin aux actions en cours."
       ],
       "There are no files yet": [
         "Il n'y a pas encore de fichiers"
@@ -3028,7 +3028,7 @@
         "Votre compte Proton est actuellement suspendu. Pour continuer à utiliser votre compte, veuillez régler les factures impayées."
       ],
       "Your secure, shareable link for ${ boldNameText }": [
-        ""
+        "Votre lien de partage sécurisé pour ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3049,7 +3049,7 @@
         "données du fichier"
       ],
       "file data key": [
-        ""
+        "clé de données du fichier"
       ],
       "keys": [
         "clés"
@@ -4475,7 +4475,7 @@
         "Arrêter le partage avec tout le monde?"
       ],
       "Stop transfers?": [
-        ""
+        "Arrêter les transferts?"
       ],
       "The file or folder failed to be downloaded": [
         "Ce fichier ou dossier n'a pas pu être téléchargé"

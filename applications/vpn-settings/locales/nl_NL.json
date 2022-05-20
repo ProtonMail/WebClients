@@ -3034,7 +3034,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Doorgaan naar controle"
       ],
       "Continue with free": [
         "Doorgaan met gratis"
@@ -3049,10 +3049,10 @@
         "Gebruik ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "${ planName } kiezen"
+        "Kies ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } kiezen"
+        "Kies ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Begrepen"
@@ -3333,19 +3333,19 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } eindigend met ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Bij een abonnement van 1 maand. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Bij een abonnement van 12 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Bij een abonnement van 24 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Uitgebreide privacy en beveiliging met alle Proton-services gecombineerd."
@@ -3365,8 +3365,8 @@
       "Popular": [
         "Populair"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Prijs voor toekomstige verlenging: inclusief alle toepasselijke, niet-verlopen kortingscodes die zijn opgeslagen in je account"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
@@ -3410,6 +3410,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Ontdek de nieuwe look van Proton. Veel diensten, één missie. Meld u aan om door te gaan of ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3460,7 +3465,7 @@
         "Binnenkort zijn er verbeterde abonnementen beschikbaar!"
       ],
       "Review subscription and pay": [
-        ""
+        "Abonnement controleren en betalen"
       ],
       "Start exploring the Proton universe": [
         "Ontdek het Proton-universum"
@@ -3500,7 +3505,7 @@
         "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kun je een hierin gespecialiseerde e-mailserviceprovider gebruiken."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Beheer toegang tot je gedeelde bestanden door wachtwoordbeveiliging en verloopdatums voor koppelingen toe te voegen"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Maak meerdere e-mailadressen aan voor je online identiteiten, zoals JohnShopper@proton.me voor shoppingaccounts, JohnNieuws@proton.me voor nieuwsabonnementen"
@@ -3664,6 +3669,9 @@
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Maak ${ numberOfPersonalCalendars } persoonlijke agenda",
         "Maak tot ${ numberOfPersonalCalendars } persoonlijke agenda's"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Alles van ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Gebruik 5 aanvullende e-mailadressen per gebruiker"

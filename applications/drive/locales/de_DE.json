@@ -1794,7 +1794,7 @@
         "Der Ordner \"${ name }\" wird bereits heruntergeladen"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Name des Ordners muss angegeben werden."
       ],
       "Image upload failed": [
         "Hochladen des Bildes fehlgeschlagen"
@@ -1818,7 +1818,7 @@
         "Ungültiger Verifizierungscode"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Name der Kategorie muss angegeben werden."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen",
@@ -1936,10 +1936,10 @@
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."

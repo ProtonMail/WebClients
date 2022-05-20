@@ -3066,7 +3066,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Перейти к подтверждению"
       ],
       "Continue with free": [
         "Продолжить использовать бесплатно"
@@ -3124,16 +3124,16 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Получите ${ connections } высокоскоростное VPN-подключение",
-        "Получите ${ connections } высокоскоростных VPN-подключения",
-        "Получите ${ connections } высокоскоростных VPN-подключений",
-        "Получите ${ connections } высокоскоростных VPN-подключения"
+        "Получить ${ connections } высокоскоростное VPN-подключение",
+        "Получить ${ connections } высокоскоростных VPN-подключения",
+        "Получить ${ connections } высокоскоростных VPN-подключений",
+        "Получить ${ connections } высокоскоростных VPN-подключения"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Получите ${ connections } высокоскоростное VPN-подключение на пользователя",
-        "Получите ${ connections } высокоскоростных VPN-подключения на пользователя",
-        "Получите ${ connections } высокоскоростных VPN-подключений на пользователя",
-        "Получите ${ connections } высокоскоростных VPN-подключения на пользователя"
+        "Получить ${ connections } высокоскоростное VPN-подключение на пользователя",
+        "Получить ${ connections } высокоскоростных VPN-подключения на пользователя",
+        "Получить ${ connections } высокоскоростных VPN-подключений на пользователя",
+        "Получить ${ connections } высокоскоростных VPN-подключения на пользователя"
       ]
     },
     "new_plans: feature": {
@@ -3393,19 +3393,19 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand }, последние четыре цифры: ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 1 месяц. Другие варианты подписки доступны на странице оформления заказа."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 12 месяцев. Другие варианты подписки доступны на странице оформления заказа."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* С подпиской на 24 месяца. Другие варианты подписки доступны на странице оформления заказа."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Остатки на счете и купоны будут применены на следующем шаге"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Комплексные конфиденциальность и безопасность, обеспеченные сочетанием всех сервисов Proton."
@@ -3425,8 +3425,8 @@
       "Popular": [
         "Популярно"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Стоимость последующего продления указана с учетом скидок всех действующих купонов, сохраненных в вашем аккаунте"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет всех платных услуг Proton, которые обеспечивают компаниям конфиденциальность и безопасность."
@@ -3470,6 +3470,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } из ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Мы обновили внешний вид Proton. Сервисов много — миссия одна. Чтобы продолжить, войдите в аккаунт. Вы также можете ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3522,7 +3527,7 @@
         "Скоро появятся улучшенные тарифы!"
       ],
       "Review subscription and pay": [
-        ""
+        "Подтверждение и оплата"
       ],
       "Start exploring the Proton universe": [
         "Начните знакомство с сервисами Proton"
@@ -3562,7 +3567,7 @@
         "Массовая рассылка, рекламная или с помощью программных средств, сейчас не поддерживается. Рекомендуем для таких случаев использовать специального поставщика услуг электронной почты"
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Управляйте доступом к файлам, которыми вы поделились. Можно добавить защиту паролем и указать срок действия ссылок."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Создавайте разные адреса электронной почты под соответствующие личные данные в Интернете. Например, IvanPokupki@proton.me для аккаунтов, связанных с покупками, и IvanNovosti@proton.me для подписки на новости"
@@ -3731,8 +3736,11 @@
         "Создайте до ${ numberOfPersonalCalendars } личных календарей",
         "Создайте до ${ numberOfPersonalCalendars } личных календарей"
       ],
+      "Everything in ${ vpnPlanName }": [
+        "Все, что входит в ${ vpnPlanName }"
+      ],
       "Get 5 additional email addresses per user": [
-        "Получите 5 дополнительных адресов электронной почты на пользователя"
+        "Получить 5 дополнительных адресов электронной почты на пользователя"
       ],
       "Priority support": [
         "Приоритетная поддержка"
