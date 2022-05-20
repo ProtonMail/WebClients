@@ -5,24 +5,20 @@
         <meta name="viewport" content="width=device-width, user-scalable=no" />
         <meta http-equiv="x-dns-prefetch-control" content="off" />
         <base href="/" />
-        <title></title>
-        <meta
-            name="description"
-            content="Proton Drive allows you to securely store and share your sensitive documents and access them anywhere."
-        />
-        <meta property="og:title" content="Proton Drive" />
-        <meta
-            property="og:description"
-            content="Proton Drive allows you to securely store and share your sensitive documents and access them anywhere."
-        />
-        <meta name="og:image" content="https://drive.protonmail.com/assets/social_logo.png" />
+        <title><%= appName %></title>
+        <meta name="description" content="<%= appDescription %>">
+        <meta property="og:title" content="<%= appName %>"/>
+        <meta property="og:description" content="<%= appDescription %>"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="<%= appName %>"/>
+        <meta name="og:image" content="https://drive.proton.me/assets/banner.png" />
         <meta name="google" content="notranslate" />
     </head>
     <body>
         <div class="app-root"></div>
         <div class="app-root-loader"></div>
         <noscript class="app-noscript">
-            Proton Drive requires Javascript. Enable Javascript and reload this page to continue.
+            <%= appName %> requires Javascript. Enable Javascript and reload this page to continue.
         </noscript>
     </body>
 </html>
