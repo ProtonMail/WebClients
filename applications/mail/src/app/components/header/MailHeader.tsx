@@ -196,7 +196,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
             <ClearBrowserDataModal {...clearBrowserDataProps} />
             <FeedbackModal
                 {...feedbackModalProps}
-                feedbackType="v4_migration"
+                feedbackType="rebrand_web"
                 description={c('Info')
                     .t`We've introduced Proton's unified & refreshled look. We would love to hear what you think about it!`}
                 scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
