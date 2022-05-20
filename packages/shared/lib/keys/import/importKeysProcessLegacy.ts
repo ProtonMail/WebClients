@@ -26,7 +26,7 @@ const importKeysProcessLegacy = async ({
     addressKeys,
 }: ImportKeysProcessLegacyArguments) => {
     const activeKeys = await getActiveKeys(address.SignedKeyList, address.Keys, addressKeys);
-    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys); // TODO lara do no parse privateKey, only public one?
+    const inactiveKeys = await getInactiveKeys(address.Keys, activeKeys);
 
     const [keysToReactivate, keysToImport, existingKeys] = getFilteredImportRecords(
         keyImportRecords,

@@ -41,7 +41,6 @@ export interface DecryptedKey extends KeyPair {
 
 export interface InactiveKey {
     Key: Key;
-    // privateKey?: PrivateKeyReference; // TODO lara: no parsed privateKey since it cannot be decrypted for inactive keys
     publicKey?: PublicKeyReference;
     fingerprint?: string;
 }

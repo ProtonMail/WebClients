@@ -51,8 +51,6 @@ const decryptMimeMessage = async (
 
     try {
         if (!password) {
-            // TODO lara: the types were wrong, as a legacy message always returns a string. for daniel: can we return format: 'utf8' and then convert to binary? do we need to use decryptLegacyMessage here??
-            // re: https://jira.protontech.ch/browse/MAILWEB-3018 which was fixed only in the function below
             decryption = await CryptoProxy.decryptMessageLegacy({
                 armoredMessage: message?.Body,
                 messageDate: getDate(message),
