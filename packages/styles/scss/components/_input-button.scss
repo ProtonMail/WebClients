@@ -1,18 +1,17 @@
 .input-button.button {
-	--button-default-border-width: 1px;
 	--button-default-border-color: var(--field-norm);
 	--button-default-background-color: var(--background-norm);
 	--button-default-text-color: var(--text-norm);
-	--button-hover-border-width: 1px;
+
 	--button-hover-border-color: var(--field-hover);
 	--button-hover-background-color: var(--interaction-default-hover);
 	--button-hover-text-color: var(--text-norm);
-	--button-active-border-width: 1px;
+
 	--button-active-border-color: var(--interaction-norm);
 	--button-active-background-color: var(--interaction-default-active);
 	--button-active-text-color: var(--text-norm);
 
-	inline-size: 2.5em;
+	inline-size: em(36);
 	padding: em(7); // Same as inputs
 }
 
@@ -26,9 +25,11 @@
 		--button-default-border-color: var(--interaction-norm);
 		--button-default-background-color: var(--interaction-norm);
 		--button-default-text-color: var(--interaction-norm-contrast);
+
 		--button-hover-border-color: var(--interaction-norm-hover);
 		--button-hover-background-color: var(--interaction-norm-hover);
 		--button-hover-text-color: var(--interaction-norm-contrast);
+
 		--button-active-border-color: var(--interaction-norm-active);
 		--button-active-background-color: var(--interaction-norm-active);
 		--button-active-text-color: var(--interaction-norm-contrast);
