@@ -11,7 +11,7 @@ import {
 } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/util/isTruthy';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { getRandomString } from '@proton/shared/lib/helpers/string';
+import getRandomString from "@proton/util/getRandomString";
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import {
