@@ -2027,7 +2027,7 @@
         "Oorspronkelijke herhalingen uit reeks ophalen mislukt"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Mapnaam mag niet leeg zijn."
       ],
       "Image upload failed": [
         "Uploaden van afbeelding is mislukt"
@@ -2066,7 +2066,7 @@
         "Het is enkel mogelijk om afspraken te verplaatsen tussen ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Labelnaam mag niet leeg zijn."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
@@ -2184,10 +2184,10 @@
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Deze mapnaam is niet beschikbaar. Gelieve een andere naam te kiezen."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Deze labelnaam is niet beschikbaar. Gelieve een andere naam te kiezen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
@@ -4378,7 +4378,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL is te lang"
       ]
     },
     "Success": {

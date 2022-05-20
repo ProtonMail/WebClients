@@ -2690,10 +2690,10 @@
         "Veuillez essayer de vous authentifier à nouveau et vous assurer que les autorisations sont définies correctement."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour obtenir une assistance multiutilisateur"
+        "Passez à un abonnement entreprise avec plus d'un utilisateur pour bénéficier d'une assistance multi-utilisateur"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Veuillez passer à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
+        "Passez à un abonnement entreprise avec plus d'un utilisateur pour gérer plusieurs utilisateurs."
       ],
       "Primary address key is not decrypted": [
         "La clé d'adresse principale n'est pas déchiffrée"
@@ -3218,7 +3218,7 @@
         "Sélectionner un dossier"
       ],
       "Spam": [
-        "Indésirable"
+        "Indésirables/spam"
       ],
       "Trash": [
         "Corbeille"
@@ -3270,7 +3270,7 @@
         "Ajoutez un filtre personnalisé pour effectuer automatiquement certaines actions, comme la labellisation ou l'archivage des messages."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Des règles antispam spécifiques peuvent être appliquées ici. Les adresses en liste d'autorisation verront leurs messages dirigés vers votre boîte de réception tandis que ceux provenant des adresses en liste de blocage iront toujours dans le dossier indésirables. Marquer un message comme indésirable ajoute l'adresse à la liste de blocage. Marquer un message comme n'étant pas un message indésirable ajoute l'adresse à la liste d'autorisation."
+        "Des règles anti-indésirables/spam spécifiques peuvent être appliquées ici. Les adresses en liste d'autorisation verront leurs messages dirigés vers votre boîte de réception tandis que ceux provenant des adresses en liste de blocage iront toujours dans le dossier Indésirables/spam. Marquer un message comme indésirable/spam ajoute l'adresse à la liste de blocage. Marquer un message comme n'étant pas un indésirable/spam ajoute l'adresse à la liste d'autorisation."
       ],
       "Search in Allow List and Block List": [
         "Rechercher dans les listes d'autorisation et de blocage"
@@ -3583,7 +3583,7 @@
         "Votre compte de messagerie nécessite un mot de passe d'application pour exporter vos données."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Votre compte de messagerie en nécessite un pour exporter vos données."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
         "Votre adresse email et le mot de passe de l'application sont corrects. N'utilisez ${ boldNot } pas votre mot de passe habituel."
@@ -4157,7 +4157,7 @@
         "Abonnement Basic, Plus ou Visionary requis"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables/spam, ainsi que ${ strong } est la bonne adresse."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Avant de pouvoir recevoir des e-mails sur les adresses de vos domaines personnels depuis ${ MAIL_APP_NAME }, vous devez ajouter les valeurs MX suivantes à votre DNS. Cet ajout peut généralement être fait depuis le panneau de contrôle de votre domaine sur le site de votre registraire."
@@ -4360,7 +4360,7 @@
         "Saisissez le code envoyé à votre numéro de téléphone ${ phone }."
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
-        "Saisissez le code qui a été envoyé à ${ email }. Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier de courrier indésirable."
+        "Saisissez le code qui a été envoyé à ${ email }. Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "Enter the credentials of the email account you want to import from.": [
         "Saisissez les identifiants du compte de messagerie depuis lequel vous souhaitez importer."
@@ -4456,7 +4456,7 @@
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier de courrier indésirable."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
         "Si vous avez un domaine personnalisé avec ${ MAIL_APP_NAME }, vous pouvez définir une adresse électronique attrape-tout (catch-all) qui recevra les messages envoyés à votre domaine, mais à une adresse e-mail non valide (p. ex., en cas de faute de frappe)."
@@ -5128,7 +5128,7 @@
         "Pour garantir un accès continu à votre compte, configurez une méthode de récupération de compte"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
         "Pour rester informé des derniers développements concernant les produits Proton, vous pouvez vous abonner à nos diverses lettres d'information et venir visiter notre blog de temps en temps."
@@ -5692,7 +5692,7 @@
         "Accéder aux messages envoyés"
       ],
       "Go to Spam": [
-        "Accéder au courrier indésirable"
+        "Accéder aux indésirables/spam"
       ],
       "Go to Starred": [
         "Accéder aux favoris"
@@ -5740,7 +5740,7 @@
         "Déplacer vers la boîte de réception"
       ],
       "Move to Spam": [
-        "Déplacer dans les indésirables"
+        "Déplacer dans les indésirables/spam"
       ],
       "Move to Trash": [
         "Déplacer dans la corbeille"
@@ -7160,7 +7160,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Continuer pour examiner"
       ],
       "Continue with free": [
         "Continuer avec Free"
@@ -7178,7 +7178,7 @@
         "Obtenir ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "Passer à ${ upsellShortPlan.title }"
+        "Obtenir ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Compris"
@@ -7218,12 +7218,12 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Profitez de ${ connections } connexion VPN haut débit",
-        "Profitez de ${ connections } connexions VPN haut débit"
+        "Obtenir ${ connections } connexion VPN à haut débit",
+        "Obtenir ${ connections } connexions VPN à haut débit"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Profitez de ${ connections } connexion VPN haut débit par utilisateur",
-        "Profitez de ${ connections } connexions VPN haut débit par utilisateur"
+        "Obtenir ${ connections } connexion VPN à haut débit par utilisateur",
+        "Obtenir ${ connections } connexions VPN à haut débit par utilisateur"
       ]
     },
     "new_plans: feature": {
@@ -7459,22 +7459,22 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } se terminant par ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } vous permet de créer des adresses électroniques et de gérer des comptes pour des utilisateurs subsidiaires. Idéal pour les familles et les entreprises."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "*Pour un abonnement d'1 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "*Pour un abonnement de 12 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "*Pour un abonnement de 24 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Une confidentialité et une sécurité totales en utilisant tous les services Proton."
@@ -7494,8 +7494,8 @@
       "Popular": [
         "Populaire"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Le prix pour le futur renouvellement comprend tous les codes promotionnels non expirés et applicables enregistrés sur votre compte"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Suite de confidentialité et de sécurité pour les entreprises, comprenant tous les services premium de Proton."
@@ -7542,6 +7542,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } sur ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Voici le nouveau look de Proton. Plusieurs services, une seule mission. Connectez-vous pour continuer ou ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -7592,7 +7597,7 @@
         "Des abonnements améliorés bientôt disponibles !"
       ],
       "Review subscription and pay": [
-        ""
+        "Examen de l'abonnement et paiement"
       ],
       "Start exploring the Proton universe": [
         "Commencer à explorer l'univers de Proton"
@@ -7635,7 +7640,7 @@
         "L'envoi en masse d'e-mails promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Contrôlez l'accès à vos fichiers partagés en ajoutant une protection par mot de passe et des dates d'expiration de lien"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Créez différentes adresses selon vos activités : \"JohnShopper@proton.me\" pour les achats et \"JohnNews@proton.me\" pour les abonnements à des sites d'informations par exemple"
@@ -7776,7 +7781,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "Inclus avec ${ plus }, ${ bundle } et ${ BRAND_NAME } pour les entreprises."
+        "Inclus avec ${ plus }, ${ bundle } et ${ BRAND_NAME } for Business."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
         "Inclus avec tous les abonnements ${ BRAND_NAME } pour les entreprises."
@@ -7807,6 +7812,9 @@
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Créez jusqu'à ${ numberOfPersonalCalendars } calendrier personnel",
         "Créez jusqu'à ${ numberOfPersonalCalendars } calendriers personnels"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Obtenir 5 adresses électroniques supplémentaires par utilisateur"
@@ -9617,7 +9625,7 @@
         "Trier les labels par ordre alphabétique"
       ],
       "Spam filters": [
-        "Filtres anti-indésirables"
+        "Filtres anti-indésirables/spam"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"

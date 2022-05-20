@@ -300,7 +300,7 @@
         "自動返信の有効化"
       ],
       "enable desktop notifications": [
-        "デスクトップ通知を有効化する"
+        "デスクトップ通知を有効にする"
       ],
       "Encryption": [
         "暗号化"
@@ -945,7 +945,7 @@
         "宛先を表示"
       ],
       "View rendered HTML": [
-        "HTML描画で表示する"
+        "HTML 描画で表示"
       ],
       "Why not?": [
         "なぜですか?"
@@ -2850,7 +2850,7 @@
         "無効な検証コード"
       ],
       "Label name cannot be empty.": [
-        ""
+        "ラベル名を空にできません。"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "添付ファイルの最大数 (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) を超えました。"
@@ -3634,7 +3634,7 @@
         "${ addressCount } 件のメールアドレス"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } からの通知を受け取るには、${ enableDesktopNotifications } 必要があります。"
+        "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
@@ -6065,7 +6065,7 @@
         "電話番号"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入下さい。（英語）"
+        "問題について、エラーメッセージ等も含めてご記入ください。（英語）"
       ],
       "Please insert link first": [
         "最初にリンクを挿入してください"

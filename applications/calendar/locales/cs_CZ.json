@@ -2055,7 +2055,7 @@
         "Nepodařilo se získat původní výskyt v sérii"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Název složky nesmí být prázdný."
       ],
       "Image upload failed": [
         "Selhalo nahrání obrázku"
@@ -2094,7 +2094,7 @@
         "Lze přesunout události pouze mezi ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Název štítku nesmí být prázdný."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -2220,10 +2220,10 @@
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Tento název složky není k dispozici. Zvolte prosím jiný název."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva obsahuje URL odkazy, které nelze otevřít Vašim prohlížečem"
@@ -4525,7 +4525,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL je příliš dlouhá"
       ]
     },
     "Success": {
