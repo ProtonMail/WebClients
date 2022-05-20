@@ -2,20 +2,18 @@ import { c } from 'ttag';
 
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
 import Icon from '../../components/icon/Icon';
-import { useModals } from '../../hooks';
 
 interface Props {
-    modal: JSX.Element;
+    onClick: () => void;
 }
 
-const TopNavbarListItemFeedbackButton = ({ modal }: Props) => {
-    const { createModal } = useModals();
+const TopNavbarListItemFeedbackButton = ({ onClick }: Props) => {
     return (
         <TopNavbarListItemButton
             as="button"
             type="button"
             title={c('Title').t`Send feedback`}
-            onClick={() => createModal(modal)}
+            onClick={onClick}
             icon={<Icon name="speech-bubble" />}
             text={c('Title').t`Feedback`}
         />

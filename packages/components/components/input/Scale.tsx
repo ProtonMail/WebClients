@@ -2,7 +2,7 @@ import { ChangeEvent, ComponentPropsWithoutRef, useRef } from 'react';
 import { range } from '@proton/shared/lib/helpers/array';
 
 import InputButton, { InputButtonProps } from './InputButton';
-import { concatStringProp, generateUID } from '../../helpers';
+import { classnames, concatStringProp, generateUID } from '../../helpers';
 
 export interface ScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {
     from: number;
@@ -12,9 +12,10 @@ export interface ScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onCha
     value?: number;
     InputButtonProps?: Partial<InputButtonProps>;
     onChange: (value: number) => void;
+    className?: string;
 }
 
-const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange, ...rest }: ScaleProps) => {
+const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange, className, ...rest }: ScaleProps) => {
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         onChange(Number(e.target.value));
     };
@@ -26,8 +27,8 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
     const ariaDescribedBy = concatStringProp([InputButtonProps?.['aria-describedby'], scaleFromToId]);
 
     return (
-        <div {...rest}>
-            <div className="scale-buttons-container">
+        <div className={classnames([className, 'inline-flex flex-column flex-gap-1'])} {...rest}>
+            <div className="flex flex-justify-start flex-align-items-center flex-gap-1">
                 {scale.map((n) => (
                     <InputButton
                         key={n}
@@ -45,7 +46,7 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
                     </InputButton>
                 ))}
             </div>
-            <div id={scaleFromToId} className="flex flex-justify-space-between mt0-5">
+            <div id={scaleFromToId} className="flex flex-justify-space-between flex-align-items-start flex-gap-1">
                 <span className="text-sm m0">{fromLabel}</span>
                 <span className="text-sm m0">{toLabel}</span>
             </div>

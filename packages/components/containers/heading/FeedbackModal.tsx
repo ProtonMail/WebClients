@@ -1,8 +1,18 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { c } from 'ttag';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
-import { FormModal, Scale, ScaleProps, TextArea } from '../../components';
+import {
+    Button,
+    Scale,
+    ScaleProps,
+    TextArea,
+    ModalTwo as Modal,
+    ModalTwoHeader as ModalHeader,
+    ModalTwoContent as ModalContent,
+    ModalTwoFooter as ModalFooter,
+    ModalProps,
+} from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
 
 interface FeedbackModalModel {
@@ -10,15 +20,17 @@ interface FeedbackModalModel {
     Feedback: string;
 }
 
-interface Props {
+type FeedbackType = 'v4_migration' | 'calendar_launch' | 'rebrand_web';
+
+interface Props extends ModalProps {
     onClose?: () => void;
-    feedbackType: string;
+    feedbackType: FeedbackType;
     description: string;
     scaleTitle: string;
-    scaleProps: Omit<ScaleProps, 'to' | 'from' | 'value' | 'InputButtonProps' | 'onChange'>;
+    scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
 }
 
-const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scaleProps, ...rest }: Props) => {
+const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -43,7 +55,7 @@ const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scalePr
             })
         );
         createNotification({ text: c('Success notification when user send feedback').t`Feedback sent` });
-        onClose?.();
+        rest.onClose?.();
     };
 
     const handleChange = (field: string) => (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -58,41 +70,49 @@ const FeedbackModal = ({ onClose, feedbackType, description, scaleTitle, scalePr
     };
 
     return (
-        <FormModal
-            title={c('Title').t`Give feedback`}
-            submit={c('Action').t`Submit`}
-            onSubmit={() => withLoading(handleSubmit())}
-            loading={loading}
-            onClose={onClose}
+        <Modal
+            as="form"
+            onSubmit={(e: FormEvent) => {
+                e.preventDefault();
+                withLoading(handleSubmit());
+            }}
+            size="large"
             {...rest}
         >
-            <p className="mb2">{description}</p>
-            <div className="mb2">
-                <label className="mb1 block" id="score-label">
-                    {scaleTitle}
-                </label>
-                <div className="w75 on-mobile-w100">
-                    <Scale
-                        {...scaleProps}
-                        from={0}
-                        to={10}
-                        value={model.Score}
-                        InputButtonProps={{ 'aria-describedby': 'score-label' }}
-                        onChange={handleScoreChange}
-                    />
+            <ModalHeader title={c('Title').t`Give feedback`} />
+            <ModalContent>
+                <p className="mb2">{description}</p>
+                <div className="mb2">
+                    <label className="mb1 block text-semibold" id="score-label">
+                        {scaleTitle}
+                    </label>
+                    <div>
+                        <Scale
+                            {...scaleProps}
+                            value={model.Score}
+                            InputButtonProps={{ 'aria-describedby': 'score-label' }}
+                            onChange={handleScoreChange}
+                        />
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label className="mb1 block" htmlFor="feedback-label">{c('Label')
-                    .t`What is the primary reason for this rating?`}</label>
-                <TextArea
-                    id="feedback-label"
-                    value={model.Feedback}
-                    placeholder={c('Placeholder').t`Feedback`}
-                    onChange={handleChange('Feedback')}
-                />
-            </div>
-        </FormModal>
+                {model.Score !== undefined && (
+                    <div>
+                        <label className="mb1 block text-semibold" htmlFor="feedback-label">{c('Label')
+                            .t`Tell us about your experience (Optional)`}</label>
+                        <TextArea
+                            id="feedback-label"
+                            value={model.Feedback}
+                            placeholder={c('Placeholder').t`Feedback`}
+                            onChange={handleChange('Feedback')}
+                        />
+                    </div>
+                )}
+            </ModalContent>
+            <ModalFooter>
+                <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button type="submit" color="norm" loading={loading}>{c('Action').t`Submit`}</Button>
+            </ModalFooter>
+        </Modal>
     );
 };
 
