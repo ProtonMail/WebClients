@@ -20,9 +20,11 @@ interface FeedbackModalModel {
     Feedback: string;
 }
 
+type FeedbackType = 'v4_migration' | 'calendar_launch' | 'rebrand_web';
+
 interface Props extends ModalProps {
     onClose?: () => void;
-    feedbackType: string;
+    feedbackType: FeedbackType;
     description: string;
     scaleTitle: string;
     scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
@@ -84,7 +86,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
                     <label className="mb1 block text-semibold" id="score-label">
                         {scaleTitle}
                     </label>
-                    <div className="w60 on-mobile-w100">
+                    <div>
                         <Scale
                             {...scaleProps}
                             value={model.Score}
