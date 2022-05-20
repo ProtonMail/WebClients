@@ -48,10 +48,10 @@
 	--optional-scrollbar-thumb-color: #D1CFCD;
 	--optional-scrollbar-thumb-hover-color: #C2BFBC;
 
-	/* Reset to default because prominent part overrides those colors */
-	--optional-link-norm: var(--interaction-norm);
-	--optional-link-hover: var(--interaction-norm-major-1);
-	--optional-link-active: var(--interaction-norm-major-2);
+	/* Reset because prominent part overrides those colors */
+	--optional-link-norm: initial;
+	--optional-link-hover: initial;
+	--optional-link-active: initial;
 
 	--optional-main-border-color: transparent;
 
@@ -59,4 +59,7 @@
 
 	--optional-email-item-selected-background-color: var(--interaction-norm-major-2);
 	--optional-email-item-selected-icon-background-color: var(--interaction-norm-major-3);
+
+	/* Reset because prominent part overrides those colors */
+	--optional-mini-calendar-today-color: initial;
 }

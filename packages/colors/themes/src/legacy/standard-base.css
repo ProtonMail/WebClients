@@ -58,4 +58,7 @@
 	--optional-border-radius: 2;
 
 	--optional-main-border-color: transparent;
+
+	/* Reset because prominent part overrides those colors */
+	--optional-mini-calendar-today-color: initial;
 }
