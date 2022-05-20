@@ -2559,7 +2559,7 @@
         "Filter met deze naam bestaat reeds"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Mapnaam mag niet leeg zijn."
       ],
       "Incorrect login credentials. Please try again.": [
         "Onjuiste inloggegevens. Gelieve opnieuw te proberen."
@@ -2604,7 +2604,7 @@
         "Ongeldige verificatiecode"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Labelnaam mag niet leeg zijn."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
@@ -2777,10 +2777,10 @@
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Deze mapnaam is niet beschikbaar. Kies een andere naam."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Deze labelnaam is niet beschikbaar. Kies een andere naam."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Dit bericht kan links bevatten die niet op de juiste wijze geopend worden door uw huidige browser"
@@ -3511,13 +3511,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "\"Minder veilige app-toegang\" is ingeschakeld in de beveiligingsinstellingen voor uw Google-account."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "2-staps verificatie is ingeschakeld in uw externe account."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Tweestapsverificatie is ingeschakeld in uw externe e-mailaccount."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Als ${ bold2StepsDisabled } (standaard Gmail-instellingen), zorg er dan voor dat:"
@@ -3532,10 +3532,10 @@
         "Als ${ bold2StepsEnabled }, zorg er dan voor dat uw e-mailadres en app-wachtwoord juist zijn. Gebruik ${ boldNot } uw reguliere wachtwoord."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "IMAP toegang is ingeschakeld in uw externe account."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "IMAP toegang is ingeschakeld in uw Yahoo account."
       ],
       "Invalid IMAP port": [
         "Ongeldige IMAP poort"
@@ -3577,22 +3577,22 @@
         "U kunt ook proberen u uit te loggen uit ${ boldGoogleAccounts } in de browser, en daarna ${ linkCAPTCHA } ontgrendelen."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Uw app-wachtwoord is juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Uw e-mailaccount vereist een app-wachtwoord om uw gegevens te exporteren."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Uw e-mailaccount vereist er één om uw gegevens te exporteren."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Uw e-mailadres en app-wachtwoord zijn juist. Gebruik ${ boldNot } uw reguliere wachtwoord."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Uw e-mailadres en wachtwoord zijn juist."
       ],
       "Your password is correct.": [
-        ""
+        "Uw wachtwoord is juist."
       ]
     },
     "Import error emphasis": {
@@ -7160,7 +7160,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Doorgaan naar controle"
       ],
       "Continue with free": [
         "Doorgaan met gratis"
@@ -7175,10 +7175,10 @@
         "Gebruik ${ BRAND_NAME } gratis"
       ],
       "Get ${ planName }": [
-        "${ planName } kiezen"
+        "Kies ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "${ upsellShortPlan.title } kiezen"
+        "Kies ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Begrepen"
@@ -7459,22 +7459,22 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } eindigend met ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Met ${ BRAND_NAME } kun je e-mailadressen maken en accounts beheren voor subgebruikers. Ideaal voor gezinnen en organisaties."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Bij een abonnement van 1 maand. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Bij een abonnement van 12 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Bij een abonnement van 24 maanden. Andere abonnementsopties beschikbaar bij afrekenen."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Toepasselijke tegoeden, aftrek en kortingscodes worden toegepast in de volgende stap"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Uitgebreide privacy en beveiliging met alle Proton-services gecombineerd."
@@ -7494,8 +7494,8 @@
       "Popular": [
         "Populair"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Prijs voor toekomstige verlenging: inclusief alle toepasselijke, niet-verlopen kortingscodes die zijn opgeslagen in je account"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
@@ -7542,6 +7542,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } van ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Ontdek de nieuwe look van Proton. Veel diensten, één missie. Meld u aan om door te gaan of ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -7592,7 +7597,7 @@
         "Binnenkort zijn er verbeterde abonnementen beschikbaar!"
       ],
       "Review subscription and pay": [
-        ""
+        "Abonnement controleren en betalen"
       ],
       "Start exploring the Proton universe": [
         "Ontdek het Proton-universum"
@@ -7635,7 +7640,7 @@
         "Het verzenden van massamails of programmatische e-mails wordt op dit moment niet ondersteund. Voor deze situaties kun je een hierin gespecialiseerde e-mailserviceprovider gebruiken."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Beheer toegang tot je gedeelde bestanden door wachtwoordbeveiliging en verloopdatums voor koppelingen toe te voegen"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Maak meerdere e-mailadressen aan voor je online identiteiten, zoals JohnShopper@proton.me voor shoppingaccounts, JohnNieuws@proton.me voor nieuwsabonnementen"
@@ -7807,6 +7812,9 @@
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Maak ${ numberOfPersonalCalendars } persoonlijke agenda",
         "Maak tot ${ numberOfPersonalCalendars } persoonlijke agenda's"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Alles van ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Gebruik 5 aanvullende e-mailadressen per gebruiker"
@@ -8572,7 +8580,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL is te lang"
       ]
     },
     "Subscription attribute": {

@@ -282,7 +282,7 @@
         "Auswahl speichern"
       ],
       "Select ${ planTitle }": [
-        "Wähle ${ planTitle }"
+        "${ planTitle } auswählen"
       ],
       "Send code": [
         "Code senden"
@@ -3034,7 +3034,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Weiter zur Prüfung"
       ],
       "Continue with free": [
         "Weiter mit kostenloser Version"
@@ -3046,13 +3046,13 @@
         "Konto zurückstufen"
       ],
       "Get ${ BRAND_NAME } for free": [
-        "Hol dir ${ BRAND_NAME } kostenlos"
+        "${ BRAND_NAME } kostenlos holen"
       ],
       "Get ${ planName }": [
-        "Hol dir ${ planName }"
+        "${ planName } holen"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "Hol dir ${ upsellShortPlan.title }"
+        "${ upsellShortPlan.title } holen"
       ],
       "Got it": [
         "Verstanden"
@@ -3333,19 +3333,19 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } mit den Endziffern ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Mit 1-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Mit 12-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Mit 24-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Anwendbare Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Umfassender Schutz der Privatsphäre und Sicherheit bei allen Proton-Diensten."
@@ -3365,8 +3365,8 @@
       "Popular": [
         "Beliebt"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Preis für künftige Verlängerung: Es wurden bereits alle in deinem Konto hinterlegten anwendbaren und noch gültigen Gutscheine berücksichtigt"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privatsphären- und Sicherheitssuite für Unternehmen, einschließlich aller Premium-Proton-Services."
@@ -3410,6 +3410,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Proton präsentiert sein neues Design. Viele Dienste, eine Mission. Melden Sie sich an, oder ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3460,7 +3465,7 @@
         "Verbesserte Abonnements in Kürze verfügbar!"
       ],
       "Review subscription and pay": [
-        ""
+        "Abonnement prüfen und bezahlen"
       ],
       "Start exploring the Proton universe": [
         "Beginne mit der Erkundung des Proton-Universums"
@@ -3500,7 +3505,7 @@
         "Werbe-E-Mails oder programmtechnisch verschickte Nachrichten können derzeit nicht in größeren Mengen versandt werden. Hierzu empfehlen wir speziell dafür ausgelegte E-Mail-Dienstanbieter."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Steuere den Zugriff auf deine geteilten Dateien mittels Passwortschutz und Ablaufdaten für Links."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Lege mehrere E-Mail-Adressen für deine Online-Identitäten an, z. B. JanShopping@proton.me für Einkaufskonten, JanNachrichten@proton.me für Nachrichtenabonnements."
@@ -3664,6 +3669,9 @@
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Erstelle bis zu ${ numberOfPersonalCalendars } persönlichen Kalender",
         "Erstelle bis zu ${ numberOfPersonalCalendars } persönliche Kalender"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Alle Vorteile von ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Erhalte 5 zusätzliche E-Mail-Adressen pro Benutzer"

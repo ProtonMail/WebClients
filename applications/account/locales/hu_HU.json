@@ -2559,7 +2559,7 @@
         "Ilyen nevű szűrő már létezik"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "A mappa nevének megadása szükséges."
       ],
       "Incorrect login credentials. Please try again.": [
         "Helytelen bejelentkezési adatok. Próbálja meg újra."
@@ -2604,7 +2604,7 @@
         "Érvénytelen ellenőrző kód"
       ],
       "Label name cannot be empty.": [
-        ""
+        "A címke neve nem lehet üres."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
@@ -2777,10 +2777,10 @@
         "Legalább ${ minimumLength } karakter szükséges ebben a mezőben."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Ez a mappanév nem érhető el. Adjon meg egy másik nevet."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Ez a címkenév nem érhető el. Adjon meg egy másik nevet."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ez az üzenet olyan hivatkozásokat tartalmazhat, amelyeket a böngészője nem tud megfelelően megnyitni"
@@ -3511,13 +3511,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "\"Kevésbé biztonságos alkalmazások hozzáférése\" be van kapcsolva a Google fiókbiztonsági beállításaiban."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "A kétlépcsős hitelesítés engedélyezve van a külső fiókon."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Ha ${ bold2StepsDisabled } (alapértelmezett Gmail beállítás), kérjük ellenőrizze, hogy:"
@@ -3532,10 +3532,10 @@
         "Ha ${ bold2StepsEnabled }, kérjük ellenőrizze hogy az e-mail cím és az alkalmazásjelszó helyes.\n${ boldNot } használja az alapértelmezett jelszavát."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Az IMAP elérés engedélyezve van a külső fiókon."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Az IMAP elérés engedélyezve van a Yahoo fiókon."
       ],
       "Invalid IMAP port": [
         "Érvénytelen IMAP port"
@@ -3577,22 +3577,22 @@
         "Megpróbálhat kijelentkezni ${ boldGoogleAccounts }-ból a böngészőjében, és utána feloldani ${ linkCAPTCHA }-t."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Az alkalmazásjelszó megfelelő. ${ boldNot } a belépési jelszavát használja."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Ha az e-mail fiók ezt igényli az adatok exportálásához."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Ha az e-mail fiók ezt igényli az adatok exportálásához."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Az e-mail cím és a jelszó megfelelő. ${ boldNot } a belépési jelszavát használja."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Az e-mail cím és jelszó helyes."
       ],
       "Your password is correct.": [
-        ""
+        "A jelszava helyes."
       ]
     },
     "Import error emphasis": {
@@ -7895,7 +7895,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Az URL túl hosszú"
       ]
     },
     "Subscription attribute": {

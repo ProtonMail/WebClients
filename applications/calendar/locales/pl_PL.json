@@ -2055,7 +2055,7 @@
         "Nie udało się uzyskać oryginalnego powtórzenia w serii"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Nazwa folderu nie może być pusta."
       ],
       "Image upload failed": [
         "Przesłanie zdjęcia nie powiodło się"
@@ -2094,7 +2094,7 @@
         "Przenoszenie wydarzeń jest możliwe tylko pomiędzy datami ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Nazwa etykiety nie może być pusta."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem Proton",
@@ -2220,10 +2220,10 @@
         "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Nazwa folderu nie jest dostępna. Wpisz inną nazwę."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
@@ -4540,7 +4540,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Adres URL jest zbyt długi"
       ]
     },
     "Success": {
