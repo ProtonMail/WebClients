@@ -233,7 +233,7 @@
         "Přizpůsobit import"
       ],
       "Customize plan": [
-        ""
+        "Přizpůsobit plán"
       ],
       "Decrease": [
         "Snížit"
@@ -338,7 +338,7 @@
         "Zašifrovat a exportovat"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        ""
+        "Objevte další ${ BRAND_NAME } plány"
       ],
       "Export": [
         "Export"
@@ -803,7 +803,7 @@
         "Zobrazit fakturu"
       ],
       "View plans details": [
-        ""
+        "Zobrazit detaily plánu"
       ],
       "Void all recovery files": [
         "Zrušit všechny soubory pro obnovení"
@@ -2597,7 +2597,7 @@
         "Filtr s tímto názvem již existuje"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Název složky nesmí být prázdný."
       ],
       "Incorrect login credentials. Please try again.": [
         "Nesprávné přihlašovací údaje. Zkuste to znovu."
@@ -2642,7 +2642,7 @@
         "Neplatný ověřovací kód"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Název štítku nesmí být prázdný."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -2819,10 +2819,10 @@
         "Toto pole vyžaduje minimálně ${ minimumLength } znaků."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Tento název složky není k dispozici. Zvolte prosím jiný název."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Tento název štítku není k dispozici. Zvolte prosím jiný název."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Tato zpráva může obsahovat některé URL odkazy, které nelze otevřít Vaším současným prohlížečem"
@@ -3986,7 +3986,7 @@
         "${ numContacts } kontaktů"
       ],
       "${ planName } credits earned": [
-        ""
+        "${ planName } získaných kreditů"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } složka nalezena",
@@ -4034,7 +4034,7 @@
         "vybráno ${ selectedFoldersCountLocalized } štítků"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } úložiště"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable } Tuto e-mailovou adresu použijete k přihlášení do všech služeb ${ BRAND_NAME }."
@@ -4076,7 +4076,7 @@
         "1. Pozvěte přátele do služby Proton"
       ],
       "2. They try ${ planName }": [
-        ""
+        "2. Vyzkouší ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% sleva na Vaše předplatné s kupónem${ code }"
@@ -4100,7 +4100,7 @@
         "V případě, že zapomenete heslo, obnovovací fráze umožňuje přístup k účtu a obnovu zašifrovaných zpráv."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        ""
+        "Uživatel je účet spojený s jedním uživatelským jménem, poštovní schránkou a osobou"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z důvodu nezaplacených faktur byl přístup k účtu omezen. Kontaktujte správce."
@@ -4112,7 +4112,7 @@
         "metoda obnovení účtu"
       ],
       "Account size": [
-        ""
+        "Velikost účtu"
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
@@ -4133,7 +4133,7 @@
         "Přidat štítek"
       ],
       "Additional options": [
-        ""
+        "Další možnosti"
       ],
       "address": [
         "adresa",
@@ -4361,7 +4361,7 @@
         "Vytvářím váš účet"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
+        "Kredit za nevyužitou část vašeho předchozího předplatného"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "V současné době je veškerý diskový prostor přidělen k účtu správce. Uvolněte prosím část diskového prostoru dalším uživatelům. Kapacitu úložiště můžete kdykoliv navýšit změnou plánu."
@@ -4373,7 +4373,7 @@
         "Denní zvyk"
       ],
       "Custom email domains": [
-        ""
+        "Vlastní e-mailové domény"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "Vlastní filtry fungují na všech nových e-mailech, včetně příchozích i odchozích e-mailů. Filtry mohou být editovány a vytvořeny přímo prostřednictvím programovacího jazyka Sieve."
@@ -4442,7 +4442,7 @@
         "Přetažením sem nahrajte soubor"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        ""
+        "Připsáno ${ rewards } z ${ rewardsLimit } ${ planName } měsíců."
       ],
       "Edit label": [
         "Upravit štítek"
@@ -4451,10 +4451,10 @@
         "E-mailová adresa"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "E-mailový hosting pro 10 vlastních názvů e-mailových domén je zahrnut zdarma. Další domény lze přidat za ${ price }."
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
+        "E-mailový hosting je k dispozici pouze pro domény, které již vlastníte. Registrace domén není v současné době prostřednictvím služby Proton k dispozici. E-mail můžete hostovat pro domény registrované u jakéhokoli registrátora domén."
       ],
       "Emailing preference saved": [
         "Nastavení e-mailu uloženo"
@@ -4490,10 +4490,10 @@
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "Zadejte údaje o svém účtu ${ BRAND_NAME }."
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
-        ""
+        "Zadejte svou e-mailovou adresu nebo uživatelské jméno účtu ${ BRAND_NAME }."
       ],
       "Enter your login password to confirm your identity.": [
         "Zadejte své přihlašovací heslo k potvrzení Vaší totožnosti."
@@ -4577,7 +4577,7 @@
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "Pokud máte vlastní doménu s ${ MAIL_APP_NAME }, můžete nastavit \"spádovou\" e-mailovou adresu, která bude dostávat zprávy odeslané do Vaší domény, ale na neplatnou e-mailovou adresu (např. kvůli překlepům)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Pokud máte dárkový kód, zadejte jej níže pro použití Vaší slevy."
@@ -4700,7 +4700,7 @@
         "je to nezbytně nutné"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        ""
+        "Používal/a jsem ${ appName } a myslel/a jsem, že by se Vám to mohlo líbit. Je to zabezpečená e-mailová služba, která chrání Vaše soukromí. Zaregistrujte se pomocí tohoto odkazu a získejte 1 měsíc prémiových funkcí zdarma: ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Stačí potvrdit výběr a my se postaráme o zbytek."
@@ -4853,7 +4853,7 @@
         "z"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        ""
+        "Jeden účet pro všechny služby ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -5051,7 +5051,7 @@
         ""
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
+        "Vyberte počet uživatelů, kteří mají být do plánu zahrnuti. Každý další uživatel stojí ${ price }. Pokud potřebujete více než ${ maxUsers } uživatelských účtů, kontaktujte prosím ${ contactMailToLink } náš tým pro podporu zákazníků."
       ],
       "Select what you want to move from Google.": [
         "Vyberte co chcete přesunout z Googlu."
@@ -5150,7 +5150,7 @@
         "Jméno bude viditelné vašim uživatelům, když budou přihlášeni."
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "Nejbezpečnější způsob, jak procházet, streamovat a být online."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Tyto konfigurační soubory vám umožní vybrat, ke kterému ${ VPN_APP_NAME } serveru se připojíte, pokud používáte alternativní VPN aplikace nebo nastavujete VPN na routeru."
@@ -5387,7 +5387,7 @@
         "Na zadané telefonní číslo zašleme kód pro obnovení účtu."
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "Váš současný tarif aktualizujeme na vylepšený tarif, který nabízí více za stejnou cenu. Během aktualizace našich systémů jej nebudete moci změnit. Jakmile to bude hotové, pošleme vám e-mail."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "Pokud je zakázáno, zabraňuje načítání obrázkových souborů na Vašem zařízení bez Vašeho vědomí."
@@ -5396,7 +5396,7 @@
         "Pokud máte zapnuta upozornění a obdržíte nové zprávy ve Vašem účtu ${ MAIL_APP_NAME }, pošleme Vám upozornění na adresu pro obnovení / oznámení."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        ""
+        "Když si předplatí placený plán, bude na váš účet připsáno 1 až 3 měsíce ${ planName }."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Až se Vaše předplatné obnoví, použijeme všechny dostupné kredity před tím, než budeme účtovat výše uvedenou platební metodu."
@@ -5570,7 +5570,7 @@
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "Váš stávající účet ${ BRAND_NAME } lze použít pro přístup ke všem službám ${ BRAND_NAME }. Přihlaste se prosím pomocí ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Váš import z ${ delayedImport.Account } je dočasně opožděn."
@@ -5995,7 +5995,7 @@
         " a ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } z ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
@@ -6010,10 +6010,10 @@
         "${ monthsRewarded } měsíců připsáno"
       ],
       "${ n } month": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } z ${ MaxAddresses } emailové adresy",
@@ -6088,10 +6088,10 @@
         "Automaticky načíst vložené obrázky"
       ],
       "Auto-reply": [
-        ""
+        "Automatická odpověď"
       ],
       "Billing cycle": [
-        ""
+        "Fakturační období"
       ],
       "Block email tracking": [
         "Blokovat sledování emailů"
@@ -6325,7 +6325,7 @@
         "Zadejte heslo pro klíč s otiskem: ${ fingerprintCode }"
       ],
       "Expiration date": [
-        ""
+        "Konec platnosti"
       ],
       "Expires": [
         "Expiruje"
@@ -6361,7 +6361,7 @@
         "Skrýt heslo"
       ],
       "I understand the risk": [
-        ""
+        "Rozumím rizikům"
       ],
       "IF": [
         "POKUD"
@@ -6529,10 +6529,10 @@
         "Plátce"
       ],
       "Payment details": [
-        ""
+        "Platební údaje"
       ],
       "Payment method": [
-        ""
+        "Způsob platby"
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -6601,7 +6601,7 @@
         "Ukázat heslo"
       ],
       "Security code": [
-        ""
+        "Bezpečnostní kód"
       ],
       "Select your country": [
         "Vyberte svou zemi"
@@ -6646,7 +6646,7 @@
         ""
       ],
       "Subscription options": [
-        ""
+        "Možnosti předplatného"
       ],
       "System information": [
         "Systémové informace"
@@ -6778,7 +6778,7 @@
         "Vaše odměna"
       ],
       "ZIP code": [
-        ""
+        "PSČ"
       ]
     },
     "label": {
@@ -7929,7 +7929,7 @@
     },
     "Signup label": {
       "Display name": [
-        ""
+        "Zobrazované jméno"
       ],
       "Email": [
         "E-mail"
@@ -8060,16 +8060,16 @@
         ""
       ],
       "${ n } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } kalendář",
+        "${ n } kalendáře",
+        "${ n } kalendářů",
+        "${ n } kalendářů"
       ],
       "${ n } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } vysokorychlostní připojení VPN",
+        "${ n } vysokorychlostní připojení VPN",
+        "${ n } vysokorychlostních připojení VPN",
+        "${ n } vysokorychlostních připojení VPN"
       ],
       "${ n } high-speed VPN connection per user": [
         "",
@@ -8078,10 +8078,10 @@
         ""
       ],
       "${ n } VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení"
       ],
       "${ n } VPN connection per user": [
         "",
@@ -8120,7 +8120,7 @@
         ""
       ],
       "1 email address": [
-        ""
+        "1 e-mailová adresa"
       ],
       "1 VPN connection": [
         ""

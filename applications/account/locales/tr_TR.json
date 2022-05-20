@@ -2559,7 +2559,7 @@
         "Aynı adlı bir süzgeç zaten var"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Klasör adı boş olamaz."
       ],
       "Incorrect login credentials. Please try again.": [
         "Oturum açma bilgileri yanlış. Lütfen yeniden deneyin."
@@ -2604,7 +2604,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Etiket adı boş olamaz."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
@@ -2777,10 +2777,10 @@
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir"
@@ -3511,13 +3511,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "Google hesabınızın güvenlik ayarlarında \"Daha az güvenli uygulama erişimi\" açık."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Dış hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Dış e-posta hesabınızda 2 aşamalı kimlik doğrulaması etkinleştirilmiş."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "${ bold2StepsDisabled } (varsayılan Gmail ayarı) ise, lütfen şundan emin olun:"
@@ -3532,10 +3532,10 @@
         "${ bold2StepsEnabled } ise, lütfen e-posta adresinizin ve uygulama parolanızın doğru olduğundan emin olun. Normal parolanız ${ boldNot }."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Dış hesabınızda IMAP erişimi etkinleştirilmiş."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Yahoo hesabınızda IMAP erişimi etkinleştirildi."
       ],
       "Invalid IMAP port": [
         "IMAP bağlantı noktası geçersiz"
@@ -3577,22 +3577,22 @@
         "Ayrıca web tarayıcıda açık olan ${ boldGoogleAccounts } oturumlarını kapatıp sonrasında ${ linkCAPTCHA } doğrulamasını açmayı deneyebilirsiniz."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "E-posta hesabınızdaki verilerinizi dışa aktarmak için bir uygulama parolası gerekli."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "E-posta hesabınızın verilerini dışa aktarmak için gerekli."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "E-posta adresiniz ve uygulama parolanız doğru. Normal parolanızı KULLANMAYIN."
       ],
       "Your email address and password are correct.": [
-        ""
+        "E-posta adresiniz ve parolanız doğru."
       ],
       "Your password is correct.": [
-        ""
+        "Parolanız doğru."
       ]
     },
     "Import error emphasis": {
@@ -7895,7 +7895,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Adres çok uzun"
       ]
     },
     "Subscription attribute": {

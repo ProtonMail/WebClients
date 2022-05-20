@@ -2559,7 +2559,7 @@
         "Un filtre avec ce nom existe déjà"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Le nom de dossier ne peut être vide."
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -2604,7 +2604,7 @@
         "Code de vérification invalide"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Le nom du label ne peut pas être vide."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
@@ -2777,10 +2777,10 @@
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
@@ -3511,13 +3511,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "«L'accès aux applications moins sécurisées» est activé dans les paramètres de sécurité de votre compte Google."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "La vérification en deux étapes est activée dans votre compte externe."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "La vérification en deux étapes est activée dans votre compte de messagerie externe."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Si ${ bold2StepsDisabled } (paramètre Gmail par défaut), assurez-vous que:"
@@ -3532,10 +3532,10 @@
         "Si ${ bold2StepsEnabled }, assurez-vous que votre adresse courriel et votre mot de passe de l'application sont corrects. N'utilisez ${ boldNot } votre mot de passe habituel."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "L'accès IMAP est activé dans votre compte externe."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "L'accès IMAP est activé dans votre compte Yahoo."
       ],
       "Invalid IMAP port": [
         "Port IMAP invalide"
@@ -3577,22 +3577,22 @@
         "Vous pouvez également essayer de vous déconnecter de ${ boldGoogleAccounts } dans le navigateur, puis déverrouiller ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Le mot de passe de votre application est correct. N'utilisez ${ boldNot } votre mot de passe habituel."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Votre compte de messagerie nécessite un mot de passe d'application pour exporter vos données."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Votre compte de messagerie en nécessite un pour exporter vos données."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Votre adresse courriel et le mot de passe de l'application sont corrects. N'utilisez ${ boldNot } pas votre mot de passe habituel."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Votre adresse électronique et votre mot de passe sont corrects."
       ],
       "Your password is correct.": [
-        ""
+        "Votre mot de passe est correct."
       ]
     },
     "Import error emphasis": {
@@ -7895,7 +7895,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "L'URL est trop longue"
       ]
     },
     "Subscription attribute": {

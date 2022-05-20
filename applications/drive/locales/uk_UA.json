@@ -1804,7 +1804,7 @@
         "Тека \"${ name }\" вже завантажується"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Тека не може бути без назви."
       ],
       "Image upload failed": [
         "Не вдалося завантажити зображення"
@@ -1828,7 +1828,7 @@
         "Недійсний код підтвердження"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Мітка не може бути без назви."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
@@ -1954,10 +1954,10 @@
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Назва теки недоступна. Оберіть іншу назву."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Назва мітки недоступна. Оберіть іншу назву."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
