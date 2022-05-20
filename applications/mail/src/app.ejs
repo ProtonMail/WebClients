@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta http-equiv="x-dns-prefetch-control" content="off">
     <base href="/">
-    <title></title>
-    <meta name="description" content="Log in or create an account.">
+    <title><%= appName %></title>
+    <meta name="description" content="<%= appDescription %>">
+    <meta property="og:title" content="<%= appName %>"/>
+    <meta property="og:description" content="<%= appDescription %>"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:site_name" content="<%= appName %>"/>
+    <meta property="og:image" content="https://mail.proton.me/assets/banner.png"/>
     <meta name="google" content="notranslate">
 </head>
 <body>
     <div class="app-root"></div>
     <div class="app-root-loader"></div>
     <noscript class="app-noscript">
-        ProtonMail requires Javascript. Enable Javascript and reload this page to continue.
+        <%= appName %> requires Javascript. Enable Javascript and reload this page to continue.
     </noscript>
 </body>
 </html>

@@ -15,7 +15,8 @@ const SriStripPlugin = require('./sri-strip-plugin');
 const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
 
-const faviconsConfig = require(path.resolve('./src/assets/logoConfig.js'));
+const defaultFaviconConfig = require('./favicon.config');
+const faviconConfig = require(path.resolve('./src/assets/favicon.config.js'));
 
 module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, warningLogs, errorLogs }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
@@ -106,6 +107,10 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
 
         new HtmlWebpackPlugin({
             template: path.resolve('./src/app.ejs'),
+            templateParameters: {
+                appName: faviconConfig.favicons.appName,
+                appDescription: faviconConfig.favicons.appDescription,
+            },
             inject: 'body',
             scriptLoading: 'defer',
             minify: isProduction && {
@@ -123,11 +128,12 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
         }),
 
         new FaviconsWebpackPlugin({
-            logo: path.resolve(faviconsConfig.logo),
+            logo: path.resolve(faviconConfig.logo),
             cache: path.resolve('./node_modules/.cache'),
             favicons: {
-                ...faviconsConfig.favicons,
-                loadManifestWithCredentials: true,
+                version: buildData.version,
+                ...defaultFaviconConfig,
+                ...faviconConfig.favicons,
             },
         }),
 
