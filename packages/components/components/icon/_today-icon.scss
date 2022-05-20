@@ -1,13 +1,13 @@
 @import '~@proton/styles/scss/config';
 
 .today-icon {
-	font-weight: var(--font-weight-semibold);
+	font-weight: var(--font-weight-bold);
 	border: 1px solid currentColor;
 	border-radius: var(--border-radius-sm);
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	font-size: rem(10);
+	font-size: rem(8);
 	width: rem(16);
 	height: rem(16);
 	line-height: 1;
