@@ -7,6 +7,7 @@ module.exports = (...env) => {
     const htmlIndex = config.plugins.findIndex((plugin) => {
         return plugin instanceof HtmlWebpackPlugin;
     });
+    const htmlPlugin = config.plugins[htmlIndex];
 
     config.entry = {
         lite: [path.resolve('./src/lite/index.tsx'), require.resolve('@proton/shared/lib/browser/supported.js')],
@@ -24,8 +25,10 @@ module.exports = (...env) => {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: path.resolve('./src/app.ejs'),
+            templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             excludeChunks: ['storage', 'lite'],
+            inject: 'body',
         })
     );
     // Add another webpack plugin on top
@@ -35,8 +38,10 @@ module.exports = (...env) => {
         new HtmlWebpackPlugin({
             filename: 'storage.html',
             template: path.resolve('./src/storage.ejs'),
+            templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             chunks: ['storage'],
+            inject: 'body',
         })
     );
     // Add another webpack plugin on top
@@ -46,8 +51,10 @@ module.exports = (...env) => {
         new HtmlWebpackPlugin({
             filename: 'lite.html',
             template: path.resolve('./src/lite.ejs'),
+            templateParameters: htmlPlugin.userOptions.templateParameters,
             scriptLoading: 'defer',
             chunks: ['unsupported', 'lite'],
+            inject: 'body',
         })
     );
     return config;
