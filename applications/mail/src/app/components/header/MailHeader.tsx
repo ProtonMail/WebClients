@@ -21,6 +21,10 @@ import {
     AppsDropdownWithDiscoverySpotlight,
     useModalState,
     UserDropdown,
+    useFeature,
+    FeatureCode,
+    TopNavbarListItemFeedbackButton,
+    FeedbackModal,
 } from '@proton/components';
 import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -51,6 +55,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
+    const { feature: featureMailFeedbackEnabled } = useFeature(FeatureCode.MailFeedbackEnabled);
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
 
@@ -64,6 +69,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const [mailComposerModeProps, setMailComposerModeModalOpen] = useModalState();
     const [mailDefaultHandlerProps, setDefaultHandlerModalOpen] = useModalState();
     const [clearBrowserDataProps, setClearBrowserDataModalOpen] = useModalState();
+    const [feedbackModalProps, setFeedbackModalOpen] = useModalState();
 
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
@@ -164,6 +170,11 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 contactsButton={
                     <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
                 }
+                feedbackButton={
+                    featureMailFeedbackEnabled?.Value ? (
+                        <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModalOpen(true)} />
+                    ) : null
+                }
                 searchBox={<MailSearch breakpoints={breakpoints} />}
                 searchDropdown={<MailSearch breakpoints={breakpoints} />}
                 expanded={!!expanded}
@@ -183,6 +194,19 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
             <MailComposerModeModal {...mailComposerModeProps} />
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
             <ClearBrowserDataModal {...clearBrowserDataProps} />
+            <FeedbackModal
+                {...feedbackModalProps}
+                feedbackType="rebrand_web"
+                description={c('Info')
+                    .t`We've introduced Proton's unified & refreshled look. We would love to hear what you think about it!`}
+                scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
+                scaleProps={{
+                    from: 0,
+                    to: 5,
+                    fromLabel: c('Label').t`0 - Awful`,
+                    toLabel: c('Label').t`5 - Wonderful`,
+                }}
+            />
         </>
     );
 };
