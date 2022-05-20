@@ -91,6 +91,10 @@
 			// No buttons for weekdays, so no need to stretch
 			align-items: center;
 		}
+
+		.current-weekday {
+			color: var(--mini-calendar-today-color);
+		}
 	}
 
 	&-monthdays {
@@ -168,27 +172,10 @@
 
 		&[aria-current='date'] {
 			font-weight: var(--font-weight-bold);
-			color: var(--primary);
+			color: var(--mini-calendar-today-color);
 
 			&::before {
-				border-color: var(--primary);
-			}
-
-			&:hover,
-			&:focus-visible {
-				color: var(--interaction-norm-hover);
-
-				&::before {
-					border-color: var(--interaction-norm-hover);
-				}
-			}
-
-			&:active {
-				color: var(--interaction-norm-active);
-
-				&::before {
-					border-color: var(--interaction-norm-active);
-				}
+				border-color: var(--mini-calendar-today-color);
 			}
 		}
 
