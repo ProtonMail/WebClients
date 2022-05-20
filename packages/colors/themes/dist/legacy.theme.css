@@ -80,6 +80,7 @@
   --optional-font-family: system-ui, sans-serif;
   --optional-border-radius: 2;
   --optional-main-border-color: transparent;
+  --optional-mini-calendar-today-color: initial;
 }
 
 .ui-prominent {
@@ -108,4 +109,5 @@
   --interaction-default-active: rgb(164 164 188 / 0.6);
   --optional-scrollbar-thumb-color: #9393ae;
   --optional-scrollbar-thumb-hover-color: #a4a4bc;
+  --optional-mini-calendar-today-color: white;
 }
