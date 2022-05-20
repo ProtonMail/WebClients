@@ -1,26 +1,9 @@
-import getRandomValues from '@proton/get-random-values';
 
 enum CURRENCIES {
     USD = '$',
     EUR = '€',
     CHF = 'CHF',
 }
-
-export const getRandomString = (
-    length: number,
-    charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-) => {
-    let i;
-    let result = '';
-
-    const values = getRandomValues(new Uint32Array(length));
-
-    for (i = 0; i < length; i++) {
-        result += charset[values[i] % charset.length];
-    }
-
-    return result;
-};
 
 export const normalize = (value = '', removeDiacritics = false) => {
     let normalized = value.toLowerCase().trim();

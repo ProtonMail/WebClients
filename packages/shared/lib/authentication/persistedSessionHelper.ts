@@ -1,4 +1,5 @@
 import getRandomValues from '@proton/get-random-values';
+import getRandomString from "@proton/util/getRandomString";
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
 import { getUser } from '../api/user';
@@ -15,7 +16,6 @@ import { isSSOMode } from '../constants';
 import { Api, User as tsUser } from '../interfaces';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
 import { InvalidPersistentSessionError } from './error';
-import { getRandomString } from '../helpers/string';
 import { InactiveSessionError } from '../api/helpers/withApiHandlers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { getKey } from './cryptoHelper';
