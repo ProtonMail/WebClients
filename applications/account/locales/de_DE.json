@@ -368,7 +368,7 @@
         "Wiederherstellungsphrase erstellen"
       ],
       "Get ${ vpnPlus }": [
-        "Hol dir ${ vpnPlus }"
+        "${ vpnPlus } holen"
       ],
       "Get verification code": [
         "Bestätigungscode abrufen"
@@ -626,7 +626,7 @@
         "Auswahl speichern"
       ],
       "Select ${ planTitle }": [
-        "Wähle ${ planTitle }"
+        "${ planTitle } auswählen"
       ],
       "Select calendar view": [
         "Kalenderansicht wählen"
@@ -2559,7 +2559,7 @@
         "Filter mit diesem Namen bereits vorhanden"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Name des Ordners muss angegeben werden."
       ],
       "Incorrect login credentials. Please try again.": [
         "Ungültige Anmeldedaten. Bitte versuche es erneut."
@@ -2604,7 +2604,7 @@
         "Ungültiger Bestätigungscode"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Name der Kategorie muss angegeben werden."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit einem bestehenden Proton-Kalender zusammenführen",
@@ -2777,10 +2777,10 @@
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Dieser Ordnername ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Dieser Kategoriename ist nicht verfügbar. Bitte wähle einen anderen Namen."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von Ihrem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
@@ -3511,13 +3511,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "Der „Zugriff auf weniger sichere Apps” ist in den Sicherheitseinstellungen deines Google-Kontos aktiviert."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Die 2-Schritt-Verifizierung ist in deinem externen Konto aktiviert."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Wenn ${ bold2StepsDisabled } (Google Mail Standardeinstellungen), stellen Sie bitte sicher, dass:"
@@ -3532,10 +3532,10 @@
         "Wenn ${ bold2StepsEnabled }, stellen Sie bitte sicher, dass Ihre E-Mail-Adresse und Ihr App-Passwort korrekt sind. Verwenden Sie ${ boldNot } Ihr reguläres Passwort!"
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Der IMAP-Zugang in deinem externen Konto ist aktiviert."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Der IMAP-Zugang in deinem Yahoo-Konto ist aktiviert."
       ],
       "Invalid IMAP port": [
         "Ungültiger IMAP-Port"
@@ -3577,22 +3577,22 @@
         "Sie können auch versuchen, sich von „${ boldGoogleAccounts }” im Browser abzumelden und anschließend ${ linkCAPTCHA } zu entsperren."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Dein App-Passwort ist korrekt. Verwende ${ boldNot } dein reguläres Passwort."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Dein E-Mail-Konto erfordert ein App-Passwort, um deine Daten zu exportieren."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Dein E-Mail-Konto erfordert ein solches, um deine Daten zu exportieren."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Deine E-Mail-Adresse und dein App-Passwort sind korrekt. Verwende ${ boldNot } dein reguläres Passwort."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Deine E-Mail-Adresse und dein Passwort sind korrekt."
       ],
       "Your password is correct.": [
-        ""
+        "Dein Passwort ist korrekt."
       ]
     },
     "Import error emphasis": {
@@ -4411,7 +4411,7 @@
         "Bei Visa und MasterCard — die 3-stellige Sicherheitsnummer auf der Rückseite Ihrer Karte. Bei American Express — die 4-stellige Sicherheitsnummer auf der Vorderseite Ihrer Karte."
       ],
       "Free": [
-        ""
+        "Kostenlos"
       ],
       "Free up some space or add more storage space.": [
         "Geben Sie etwas Platz frei oder fügen Sie zusätzlichen Speicherplatz hinzu."
@@ -7160,7 +7160,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Weiter zur Prüfung"
       ],
       "Continue with free": [
         "Weiter mit kostenloser Version"
@@ -7172,13 +7172,13 @@
         "Konto zurückstufen"
       ],
       "Get ${ BRAND_NAME } for free": [
-        "Hol dir ${ BRAND_NAME } kostenlos"
+        "${ BRAND_NAME } kostenlos holen"
       ],
       "Get ${ planName }": [
-        "Hol dir ${ planName }"
+        "${ planName } holen"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "Hol dir ${ upsellShortPlan.title }"
+        "${ upsellShortPlan.title } holen"
       ],
       "Got it": [
         "Verstanden"
@@ -7459,22 +7459,22 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } mit den Endziffern ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "Mit ${ BRAND_NAME } kannst du E-Mail-Adressen erstellen und Konten für Unterbenutzer verwalten – das ist ideal für Familien und Organisationen."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Mit 1-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Mit 12-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Mit 24-monatigem Abonnement. Andere Abonnementoptionen sind beim Bezahlvorgang verfügbar."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Anwendbare Guthaben, anteilige Anrechnungen und Gutscheine können im nächsten Schritt berücksichtigt werden."
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Umfassender Schutz der Privatsphäre und Sicherheit bei allen Proton-Diensten."
@@ -7494,8 +7494,8 @@
       "Popular": [
         "Beliebt"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Preis für künftige Verlängerung: Es wurden bereits alle in deinem Konto hinterlegten anwendbaren und noch gültigen Gutscheine berücksichtigt"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privatsphären- und Sicherheitssuite für Unternehmen, einschließlich aller Premium-Proton-Services."
@@ -7542,6 +7542,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        ""
       ]
     },
     "new_plans: Plan frequency": {
@@ -7592,7 +7597,7 @@
         "Verbesserte Abonnements in Kürze verfügbar!"
       ],
       "Review subscription and pay": [
-        ""
+        "Abonnement prüfen und bezahlen"
       ],
       "Start exploring the Proton universe": [
         "Beginne mit der Erkundung des Proton-Universums"
@@ -7635,7 +7640,7 @@
         "Werbe-E-Mails oder programmtechnisch verschickte Nachrichten können derzeit nicht in größeren Mengen versandt werden. Hierzu empfehlen wir speziell dafür ausgelegte E-Mail-Dienstanbieter."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Steuere den Zugriff auf deine geteilten Dateien mittels Passwortschutz und Ablaufdaten für Links."
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Lege mehrere E-Mail-Adressen für deine Online-Identitäten an, z. B. JanShopping@proton.me für Einkaufskonten, JanNachrichten@proton.me für Nachrichtenabonnements."
@@ -7776,7 +7781,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        "Enthalten bei ${ plus }, ${ bundle } und ${ BRAND_NAME } für Unternehmen."
+        "Enthalten bei ${ plus }, ${ bundle } und ${ BRAND_NAME } for Business."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
         "Enthalten bei allen ${ BRAND_NAME }-Abonnements für Unternehmen."
@@ -7807,6 +7812,9 @@
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Erstelle bis zu ${ numberOfPersonalCalendars } persönlichen Kalender",
         "Erstelle bis zu ${ numberOfPersonalCalendars } persönliche Kalender"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Alle Vorteile von ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Erhalte 5 zusätzliche E-Mail-Adressen pro Benutzer"
@@ -8572,7 +8580,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL ist zu lang"
       ]
     },
     "Subscription attribute": {

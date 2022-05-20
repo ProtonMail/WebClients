@@ -2027,7 +2027,7 @@
         "Dizideki özgün yinelenme alınamadı"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Klasör adı boş olamaz."
       ],
       "Image upload failed": [
         "Görsel yüklenemedi"
@@ -2066,7 +2066,7 @@
         "Yalnızca ${ minDateString } - ${ maxDateString } arasında etkinlikler taşınabilir"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Etiket adı boş olamaz."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
@@ -2184,10 +2184,10 @@
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Bu klasör adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Bu etiket adı kullanılamaz. Lütfen farklı bir ad seçin."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir"
@@ -4363,7 +4363,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Adres çok uzun"
       ]
     },
     "Success": {

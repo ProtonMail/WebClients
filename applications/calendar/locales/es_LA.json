@@ -2027,7 +2027,7 @@
         "Error al obtener la ocurrencia original de la serie"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "El nombre de la carpeta no puede estar vacío."
       ],
       "Image upload failed": [
         "Error al cargar la imagen"
@@ -2066,7 +2066,7 @@
         "Solo es posible mover eventos entre ${ minDateString } y ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
-        ""
+        "El nombre de la etiqueta no puede estar vacío."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fusionar al menos ${ calendarToFixCount } calendario con un calendario existente de Proton",
@@ -2184,10 +2184,10 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Este nombre de carpeta no está disponible. Elija un nombre diferente."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Este mensaje puede contener el URL de algún enlace que no puede abrirse correctamente por su navegador actual"
@@ -4378,7 +4378,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "La URL es demasiado larga"
       ]
     },
     "Success": {

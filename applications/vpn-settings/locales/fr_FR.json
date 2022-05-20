@@ -3034,7 +3034,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Continuer pour examiner"
       ],
       "Continue with free": [
         "Continuer avec Free"
@@ -3092,12 +3092,12 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Profitez de ${ connections } connexion VPN haut débit",
-        "Profitez de ${ connections } connexions VPN haut débit"
+        "Obtenir ${ connections } connexion VPN à haut débit",
+        "Obtenir ${ connections } connexions VPN à haut débit"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Profitez de ${ connections } connexion VPN haut débit par utilisateur",
-        "Profitez de ${ connections } connexions VPN haut débit par utilisateur"
+        "Obtenir ${ connections } connexion VPN à haut débit par utilisateur",
+        "Obtenir ${ connections } connexions VPN à haut débit par utilisateur"
       ]
     },
     "new_plans: feature": {
@@ -3333,19 +3333,19 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } se terminant par ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "*Pour un abonnement d'1 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "*Pour un abonnement de 12 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "*Pour un abonnement de 24 mois. D'autres options d'abonnement sont disponibles lors du paiement."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Les crédits, le prorata et les codes promotionnels applicables sont appliqués à l'étape suivante"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Une confidentialité et une sécurité totales en utilisant tous les services Proton."
@@ -3365,8 +3365,8 @@
       "Popular": [
         "Populaire"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Le prix pour le futur renouvellement comprend tous les codes promotionnels non expirés et applicables enregistrés sur votre compte"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Suite de confidentialité et de sécurité pour les entreprises, comprenant tous les services premium de Proton."
@@ -3410,6 +3410,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } sur ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Voici le nouveau look de Proton. Plusieurs services, une seule mission. Connectez-vous pour continuer ou ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3460,7 +3465,7 @@
         "Des abonnements améliorés bientôt disponibles !"
       ],
       "Review subscription and pay": [
-        ""
+        "Examen de l'abonnement et paiement"
       ],
       "Start exploring the Proton universe": [
         "Commencer à explorer l'univers de Proton"
@@ -3500,7 +3505,7 @@
         "L'envoi en masse d'e-mails promotionnels ou programmatiques n'est actuellement pas pris en charge. Nous vous conseillons d'avoir recours à un fournisseur de services de messagerie dédié pour ce type d'utilisation."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Contrôlez l'accès à vos fichiers partagés en ajoutant une protection par mot de passe et des dates d'expiration de lien"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Créez différentes adresses selon vos activités : \"JohnShopper@proton.me\" pour les achats et \"JohnNews@proton.me\" pour les abonnements à des sites d'informations par exemple"
@@ -3664,6 +3669,9 @@
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Créez jusqu'à ${ numberOfPersonalCalendars } calendrier personnel",
         "Créez jusqu'à ${ numberOfPersonalCalendars } calendriers personnels"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Tout ce qui est inclus dans l'abonnement ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Obtenir 5 adresses électroniques supplémentaires par utilisateur"

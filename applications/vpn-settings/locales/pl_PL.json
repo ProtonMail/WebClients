@@ -3066,7 +3066,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Przejdź do przeglądu"
       ],
       "Continue with free": [
         "Kontynuuj bezpłatnie"
@@ -3081,10 +3081,10 @@
         "Uzyskaj ${ BRAND_NAME } za darmo"
       ],
       "Get ${ planName }": [
-        "Uzyskaj ${ planName }"
+        "Wybierz ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "Uzyskaj ${ upsellShortPlan.title }"
+        "Wybierz ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Rozumiem"
@@ -3393,19 +3393,19 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } kończąca się na ${ last4 }"
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji miesięcznej. Inne plany dostępne są przy płatności."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji rocznej. Inne plany dostępne są przy płatności."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji dwuletniej. Inne plany dostępne są przy płatności."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Mające zastosowanie środki, dzielenie proporcjonalne i kupony są stosowane w następnym kroku"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług firmy Proton."
@@ -3425,8 +3425,8 @@
       "Popular": [
         "Popularne"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Cena za przyszłe odnowienia: obejmuje wszystkie mające zastosowanie kupony zapisane na Twoim koncie, które są dalej ważne"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pakiet dla biznesu w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi Proton premium."
@@ -3470,6 +3470,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Przedstawiamy odświeżony wygląd Proton. Wiele usług, jedna misja. Zaloguj się, aby kontynuować lub ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3522,7 +3527,7 @@
         "Ulepszone plany dostępne wkrótce!"
       ],
       "Review subscription and pay": [
-        ""
+        "Przejrzyj subskrypcję i zapłać"
       ],
       "Start exploring the Proton universe": [
         "Zacznij odkrywać świat Proton"
@@ -3562,7 +3567,7 @@
         "Masowe wysyłanie promocyjnych lub programowych wiadomości e-mail nie jest obecnie obsługiwane. W tym celu zalecamy korzystanie z usług dedykowanego dostawcy poczty elektronicznej."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i daty wygaśnięcia łączy"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@proton.me dla kont zakupowych, JanWiadomości@proton.me dla subskrybowania wiadomości"
@@ -3730,6 +3735,9 @@
         "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarze osobiste",
         "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarzy osobistych",
         "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarza osobistego"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Wszystkie elementy planu ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Uzyskaj 5 dodatkowych adresów e-mail na użytkownika"

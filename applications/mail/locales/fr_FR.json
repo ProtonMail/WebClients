@@ -537,10 +537,10 @@
         "Déplacer vers la boîte de réception"
       ],
       "Move to inbox (not spam)": [
-        "Déplacer vers la boîte de réception (non indésirable)"
+        "Déplacer vers la boîte de réception (non indésirable/spam)"
       ],
       "Move to spam": [
-        "Déplacer vers les indésirables"
+        "Déplacer vers les indésirables/spam"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
@@ -2508,7 +2508,7 @@
         "Expéditeur"
       ],
       "Subject": [
-        "Sujet"
+        "Objet"
       ]
     },
     "Daily recurring event, frequency": {
@@ -3094,13 +3094,13 @@
         "Les brouillons ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Drafts cannot be moved to Spam": [
-        "Les brouillons ne peuvent pas être déplacés vers les indésirables"
+        "Les brouillons ne peuvent pas être déplacés vers les indésirables/spam"
       ],
       "Sent messages cannot be moved to Inbox": [
         "Les messages envoyés ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Sent messages cannot be moved to Spam": [
-        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables"
+        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables/spam"
       ],
       "This action cannot be performed": [
         "Impossible d'effectuer cette action"
@@ -3354,7 +3354,7 @@
         "Sélectionner un dossier"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Trash": [
         "Corbeille"
@@ -3902,7 +3902,7 @@
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables/spam, ainsi que ${ strong } est la bonne adresse."
       ],
       "Body: ": [
         "Corps : "
@@ -4142,7 +4142,7 @@
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
       ],
       "Image URL": [
         "URL de l'image"
@@ -4627,7 +4627,7 @@
         "La clé publique de cet expéditeur n'a pas encore été approuvée."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -4808,7 +4808,7 @@
         "Vous avez marqué **${ count } messages** avec ce label"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "Vous n'avez donné aucun sujet à votre message. Voulez-vous quand même l'envoyer ?"
+        "Vous n'avez donné aucun objet/sujet à votre message. Voulez-vous quand même l'envoyer ?"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "Vous avez atteint 100 % de votre capacité de stockage. Pour composer de nouveaux messages, pensez à libérer de l'espace ou à passer à un abonnement avec un espace de stockage supplémentaire."
@@ -4972,7 +4972,7 @@
         "Accéder aux messages envoyés"
       ],
       "Go to Spam": [
-        "Accéder au courrier indésirable"
+        "Accéder au courrier indésirable/spam"
       ],
       "Go to Starred": [
         "Accéder aux favoris"
@@ -5020,7 +5020,7 @@
         "Déplacer vers Boîte de réception"
       ],
       "Move to Spam": [
-        "Déplacer vers Indésirables"
+        "Déplacer vers Indésirables/spam"
       ],
       "Move to Trash": [
         "Déplacer vers Corbeille"
@@ -5681,7 +5681,7 @@
         "Inscrivez-vous gratuitement"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Starred": [
         "Favoris"
@@ -5778,7 +5778,7 @@
         "Envoyés"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Trash": [
         "Corbeille"
@@ -6555,7 +6555,7 @@
         "${ elementsCount } conversations déplacées vers ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation déplacée vers les indésirables et expéditeur ajouté à la liste de blocage.",
+        "${ elementsCount } conversation déplacée vers les indésirables/spam et expéditeur ajouté à la liste de blocage.",
         "${ elementsCount } conversations déplacées vers les indésirables et expéditeurs ajoutés à la liste de blocage."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
@@ -6587,8 +6587,8 @@
         "${ elementsCount } messages déplacés vers ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message déplacé vers les indésirables et expéditeur ajouté à la liste de blocage.",
-        "${ elementsCount } messages déplacés vers les indésirables et expéditeurs ajoutés à la liste de blocage."
+        "${ elementsCount } message déplacé vers les indésirables/spam et expéditeur ajouté à la liste de blocage.",
+        "${ elementsCount } messages déplacés vers les indésirables/spam et expéditeurs ajoutés à la liste de blocage."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
@@ -6642,7 +6642,7 @@
         "Conversation déplacée vers ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversation déplacée vers les indésirables et expéditeur ajoutée à la liste de blocage."
+        "Conversation déplacée vers les indésirables/spam et expéditeur ajoutée à la liste de blocage."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -6699,7 +6699,7 @@
         "Message déplacé vers ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Message déplacé vers les indésirables et expéditeur ajouté à la liste de blocage."
+        "Message déplacé vers les indésirables/spam et expéditeur ajouté à la liste de blocage."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."
@@ -7117,7 +7117,7 @@
         "Déplacer vers la boîte de réception"
       ],
       "Move to inbox (not spam)": [
-        "Déplacer vers la boîte de réception (non indésirable)"
+        "Déplacer vers la boîte de réception (non indésirable/spam)"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
@@ -7246,7 +7246,7 @@
         "Avertissement de la capacité de stockage"
       ],
       "Subject missing": [
-        "Sujet manquant"
+        "Votre e-mail n'a pas d'objet"
       ],
       "To": [
         "À"
