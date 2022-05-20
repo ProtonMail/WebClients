@@ -2597,7 +2597,7 @@
         "Фільтр з цією назвою вже існує"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Тека не може бути без назви."
       ],
       "Incorrect login credentials. Please try again.": [
         "Неправильні дані входу. Спробуйте ще раз."
@@ -2642,7 +2642,7 @@
         "Недійсний код підтвердження"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Мітка не може бути без назви."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
@@ -2819,10 +2819,10 @@
         "В цьому полі повинно бути не менше ${ minimumLength } символів."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Назва теки недоступна. Оберіть іншу назву."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Назва мітки недоступна. Оберіть іншу назву."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Це повідомлення може містити URL-посилання, які неможливо правильно відкрити у цьому браузері"
@@ -3581,13 +3581,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "«Доступ менш захищених програм» увімкнено у налаштуваннях безпеки вашого облікового запису Google."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Двоетапну перевірку увімкнено у вашому зовнішньому обліковому записі пошти."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Якщо ${ bold2StepsDisabled } (типові налаштування Gmail), переконайтеся, що:"
@@ -3602,10 +3602,10 @@
         "Якщо ${ bold2StepsEnabled }, переконайтеся що ваша адреса е-пошти і пароль правильні. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Доступ до IMAP увімкнено у вашому зовнішньому обліковому записі."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Доступ до IMAP увімкнено в вашому обліковому записі Yahoo."
       ],
       "Invalid IMAP port": [
         "Неправильний порт IMAP"
@@ -3647,22 +3647,22 @@
         "Ви також можете спробувати вийти з ${ boldGoogleAccounts } в браузері, потім розблокувати ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Ваш пароль програм правильний. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Ваш поштовий обліковий запис вимагає пароль програм для експортування даних."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Ваш обліковий запис е-пошти вимагає цього для експорту даних."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Ваша адреса е-пошти та пароль програм правильні. ${ boldNot } використовуйте свій звичайний пароль."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Ваші адреса е-пошти та пароль правильні."
       ],
       "Your password is correct.": [
-        ""
+        "Ваш пароль правильний."
       ]
     },
     "Import error emphasis": {
@@ -8043,7 +8043,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL задовга"
       ]
     },
     "Subscription attribute": {

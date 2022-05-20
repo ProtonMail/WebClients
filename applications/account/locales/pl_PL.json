@@ -2597,7 +2597,7 @@
         "Filtr o tej nazwie już istnieje"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Nazwa folderu nie może być pusta."
       ],
       "Incorrect login credentials. Please try again.": [
         "Dane logowania są nieprawidłowe. Spróbuj ponownie."
@@ -2642,7 +2642,7 @@
         "Kod weryfikacyjny jest nieprawidłowy"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Nazwa etykiety nie może być pusta."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Scal co najmniej ${ calendarToFixCount } kalendarz z obecnym kalendarzem Proton",
@@ -2819,10 +2819,10 @@
         "Pole musi zawierać co najmniej ${ minimumLength } znaków."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Nazwa folderu nie jest dostępna. Wpisz inną nazwę."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Nazwa etykiety nie jest dostępna. Wpisz inną nazwę."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Ta wiadomość może zawierać adresy URL, które nie mogą być poprawnie otwarte przez obecną przeglądarkę"
@@ -3581,13 +3581,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "\"Dostęp do mniej bezpiecznych aplikacji\" w ustawieniach bezpieczeństwa konta Google jest włączony."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Weryfikacja dwuetapowa na koncie zewnętrznym jest włączona."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Jeśli ${ bold2StepsDisabled } (domyślne ustawienie poczty Gmail), upewnij się, że:"
@@ -3602,10 +3602,10 @@
         "Jeśli ${ bold2StepsEnabled }, upewnij się, że adres e-mail i hasło aplikacji są prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "dostęp IMAP jest włączony na koncie zewnętrznym."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "dostęp IMAP jest włączony na koncie Yahoo."
       ],
       "Invalid IMAP port": [
         "Port IMAP jest nieprawidłowy"
@@ -3647,22 +3647,22 @@
         "Możesz spróbować zalogować się na ${ boldGoogleAccounts } w przeglądarce, a następnie przejść weryfikację ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Hasło aplikacji jest prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Konto e-mail wymaga hasła aplikacji do eksportu danych."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Konto e-mail wymaga tego hasła do eksportu danych."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Adres e-mail i hasło aplikacji są prawidłowe. ${ boldNot } używaj swojego zwykłego hasła."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Adres e-mail i hasło są prawidłowe."
       ],
       "Your password is correct.": [
-        ""
+        "Hasło jest prawidłowe."
       ]
     },
     "Import error emphasis": {
@@ -7300,7 +7300,7 @@
     },
     "new_plans: action": {
       "Continue to review": [
-        ""
+        "Przejdź do przeglądu"
       ],
       "Continue with free": [
         "Kontynuuj bezpłatnie"
@@ -7315,10 +7315,10 @@
         "Uzyskaj ${ BRAND_NAME } za darmo"
       ],
       "Get ${ planName }": [
-        "Uzyskaj ${ planName }"
+        "Wybierz ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        "Uzyskaj ${ upsellShortPlan.title }"
+        "Wybierz ${ upsellShortPlan.title }"
       ],
       "Got it": [
         "Rozumiem"
@@ -7627,22 +7627,22 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } kończąca się na ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
         "${ BRAND_NAME } umożliwia tworzenie adresów e-mail i zarządzanie kontami dla podrzędnych użytkowników. Idealne rozwiązanie dla rodzin i organizacji."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji miesięcznej. Inne plany dostępne są przy płatności."
       ],
       "* With 12-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji rocznej. Inne plany dostępne są przy płatności."
       ],
       "* With 24-month subscription. Other subscription options available at checkout.": [
-        ""
+        "* Cena przy subskrypcji dwuletniej. Inne plany dostępne są przy płatności."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "Mające zastosowanie środki, dzielenie proporcjonalne i kupony są stosowane w następnym kroku"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług firmy Proton."
@@ -7662,8 +7662,8 @@
       "Popular": [
         "Popularne"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Cena za przyszłe odnowienia: obejmuje wszystkie mające zastosowanie kupony zapisane na Twoim koncie, które są dalej ważne"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Pakiet dla biznesu w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi Proton premium."
@@ -7710,6 +7710,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Przedstawiamy odświeżony wygląd Proton. Wiele usług, jedna misja. Zaloguj się, aby kontynuować lub ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -7762,7 +7767,7 @@
         "Ulepszone plany dostępne wkrótce!"
       ],
       "Review subscription and pay": [
-        ""
+        "Przejrzyj subskrypcję i zapłać"
       ],
       "Start exploring the Proton universe": [
         "Zacznij odkrywać świat Proton"
@@ -7805,7 +7810,7 @@
         "Masowe wysyłanie promocyjnych lub programowych wiadomości e-mail nie jest obecnie obsługiwane. W tym celu zalecamy korzystanie z usług dedykowanego dostawcy poczty elektronicznej."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Kontroluj dostęp do udostępnionych plików, dodając zabezpieczenie hasłem i daty wygaśnięcia łączy"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@proton.me dla kont zakupowych, JanWiadomości@proton.me dla subskrybowania wiadomości"
@@ -7981,6 +7986,9 @@
         "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarze osobiste",
         "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarzy osobistych",
         "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarza osobistego"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Wszystkie elementy planu ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         "Uzyskaj 5 dodatkowych adresów e-mail na użytkownika"
@@ -8754,7 +8762,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Adres URL jest zbyt długi"
       ]
     },
     "Subscription attribute": {

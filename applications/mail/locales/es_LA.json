@@ -2840,7 +2840,7 @@
         "Ya existe un filtro con este nombre"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "El nombre de la carpeta no puede estar vacío."
       ],
       "Image upload failed": [
         "Error al subir la imagen"
@@ -2864,7 +2864,7 @@
         "Código de verificación inválido"
       ],
       "Label name cannot be empty.": [
-        ""
+        "El nombre de la etiqueta no puede estar vacío."
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Número máximo de adjuntos excedido (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
@@ -3026,10 +3026,10 @@
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Este nombre de carpeta no está disponible. Elija un nombre diferente."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Este nombre de etiqueta no está disponible. Elija un nombre diferente."
       ],
       "This message has already been sent": [
         "Este mensaje ya fue enviado"

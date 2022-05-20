@@ -83,7 +83,7 @@
         "PayPal を追加"
       ],
       "Add sieve filter": [
-        "Sieve でフィルターを追加"
+        "Sieve フィルターを追加"
       ],
       "Add user": [
         "ユーザーを追加"
@@ -2585,7 +2585,7 @@
         "無効な認証コードです"
       ],
       "Label name cannot be empty.": [
-        ""
+        "ラベル名を空にできません。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
@@ -2639,7 +2639,7 @@
         "支払い処理がサポートされていません"
       ],
       "Payments are currently not available, please try again later": [
-        "お支払いが現在ご利用になれません。しばらくしてから再度お試し下さい。"
+        "お支払いが現在ご利用になれません。しばらくしてから再度お試しください。"
       ],
       "Permission denied, administrator privileges have been restricted.": [
         "アクセスが拒否されました。管理者権限は制限されています。"
@@ -3304,7 +3304,7 @@
         "フォルダー"
       ],
       "Get help": [
-        "ヘルプを参照する"
+        "ヘルプを参照"
       ],
       "Key type": [
         "鍵の種類"
@@ -3557,7 +3557,7 @@
         ""
       ],
       "Your password is correct.": [
-        ""
+        "パスワードは正しいです。"
       ]
     },
     "Import error emphasis": {
@@ -3800,7 +3800,7 @@
         "${ addressToCreate } は現在アクティブです"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } からの通知を受け取るには、${ enableDesktopNotifications } 必要があります。"
+        "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } 続行するとアカウント内にある現在の暗号化されたデータにアクセスすることができなくなります。"
@@ -5357,7 +5357,7 @@
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されます。${ payInvoiceLink }"
       ],
       "Your account is being upgraded, this may take up to 30 seconds.": [
-        "アカウントをアップグレード中です。30 秒程お待ち下さい。"
+        "アカウントをアップグレード中です。30 秒程お待ちください。"
       ],
       "Your account recovery method is set": [
         "アカウントの回復手段が設定されています"
@@ -5477,7 +5477,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "未払いによるサービスの中断を避けるため、少なくとも1つの有効な支払い方法を設定しておく必要があります。"
+        "未払いによるサービスの中断を避けるため、少なくとも 1 つの有効な支払い方法を設定しておく必要があります。"
       ]
     },
     "Invoice state display as badge": {
@@ -6596,7 +6596,7 @@
     },
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
-        "あなたが所有しているドメインを${ MAIL_APP_NAME } アカウントに追加します。"
+        "あなたが所有しているドメインを ${ MAIL_APP_NAME } アカウントに追加します。"
       ]
     },
     "Label for domain modal": {
@@ -7468,7 +7468,7 @@
         "電話番号"
       ],
       "Please describe the problem and include any error messages": [
-        "問題について、エラーメッセージ等も含めてご記入下さい"
+        "問題について、エラーメッセージ等も含めてご記入ください"
       ],
       "Please insert link first": [
         "最初にリンクを挿入してください"
@@ -7874,7 +7874,7 @@
         "広告ブロッカー内蔵 (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        ""
+        "${ maxVpn } 台のデバイスでの高速 VPN"
       ]
     },
     "Subscription price": {
@@ -8363,7 +8363,7 @@
         "消去"
       ],
       "Composing": [
-        ""
+        "作成"
       ],
       "Confirm address": [
         "アドレスの確認"
@@ -8651,7 +8651,7 @@
         "メッセージ"
       ],
       "Messages and composing": [
-        ""
+        "メッセージと作成"
       ],
       "Multi-user support": [
         "複数ユーザー対応"
@@ -9244,7 +9244,7 @@
         "${ n } VPN 接続"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "${ numberOfCountries } か国で${ numberOfServers } 台"
+        "${ numberOfCountries } か国で ${ numberOfServers } 台"
       ]
     },
     "VPNClient": {

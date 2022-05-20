@@ -724,8 +724,8 @@
     },
     "Countdown unit": {
       "${ days } day": [
-        "",
-        ""
+        "${ days } día",
+        "${ days } días"
       ],
       "${ monthsWithYears } month": [
         "${ monthsWithYears } mes",
@@ -2330,7 +2330,7 @@
         "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión y otra para descifrar el buzón. (Avanzado)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        ""
+        "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero defina una contraseña de inicio de sesión y luego una contraseña del buzón."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación guardado para esta cuenta."
@@ -3365,8 +3365,8 @@
       "Popular": [
         "Popular"
       ],
-      "Price includes all applicable, non-expired coupons saved to your account.": [
-        ""
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "El precio de la futura renovación tendrá en cuenta todos los cupones válidos y en vigor que tenga guardado en su cuenta"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Paquete de privacidad y seguridad para empresas, que incluye todos los servicios premium de Proton."
@@ -3410,6 +3410,11 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: message displayed when user visit v5 login": {
+      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
+        "Presentamos la nueva imagen de Proton, con varios servicios, pero una misma misión. Inicia sesión para continuar o ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3500,7 +3505,7 @@
         "Por ahora no se pueden enviar correos electrónicos programáticos ni promocionales de forma masiva. Te recomendamos tener un proveedor de servicios de correo específico para estos casos."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Usa enlaces con fechas de caducidad y pon contraseña a sus archivos compartidos para controlar el acceso a ellos"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
         "Crea varias direcciones de correo eletrónico para tus identidades online, como ComprasJuan@proton.me para las cuentas destinadas a compras o NoticiasJuan@proton.me para las suscripciones a medios de comunicación"
@@ -3665,6 +3670,9 @@
         "Capacidad para crear ${ numberOfPersonalCalendars } calendario personal",
         "Capacidad para crear hasta ${ numberOfPersonalCalendars } calendarios personales"
       ],
+      "Everything in ${ vpnPlanName }": [
+        "Todo en ${ vpnPlanName }"
+      ],
       "Get 5 additional email addresses per user": [
         "5 direcciones de correo electrónico adicionales por usuario"
       ],
@@ -3720,7 +3728,7 @@
         "Es muy costoso"
       ],
       "macOS": [
-        ""
+        "macOS"
       ],
       "My reason isn't listed": [
         "Mi motivo no está listado"
@@ -4522,7 +4530,7 @@
         "iOS"
       ],
       "macOS": [
-        ""
+        "macOS"
       ],
       "Windows": [
         "Windows"

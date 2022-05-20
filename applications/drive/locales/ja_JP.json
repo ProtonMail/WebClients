@@ -219,7 +219,7 @@
         "ごみ箱を空にする"
       ],
       "enable desktop notifications": [
-        "デスクトップ通知を有効化する"
+        "デスクトップ通知を有効にする"
       ],
       "Enable drive search": [
         "ドライブ検索を有効化"
@@ -1789,7 +1789,7 @@
         "フォルダー \"${ name }\" はすでにダウンロード中です"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "フォルダー名は空にできません。"
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました。"
@@ -1813,7 +1813,7 @@
         "無効な検証コードです"
       ],
       "Label name cannot be empty.": [
-        ""
+        "ラベル名は空にできません。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
@@ -1927,10 +1927,10 @@
         "このフィールドには最低でも ${ minimumLength } 文字必要です。"
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "このフォルダー名は利用できません。別の名前を選択してください。"
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
@@ -2189,7 +2189,7 @@
         "${ addressCount } 件のメールアドレス"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } からの通知を受け取るには、${ enableDesktopNotifications } 必要があります。"
+        "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
@@ -2555,7 +2555,7 @@
         "巨大なインポートは数日かかる場合があります。"
       ],
       "Learn more": [
-        "より詳しく"
+        "詳細"
       ],
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました"

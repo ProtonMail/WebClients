@@ -2474,7 +2474,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        "Ce e-mailuri doriți să primiți de la ${ BRAND_NAME }?"
+        "Ce mesaje doriți să primiți de la Proton ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "V-ați reabonat la mesajele venite de la ${ categoriesJsx }."
@@ -2578,7 +2578,7 @@
         "Filtrul cu acest nume există deja"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Numele folderului nu poate fi gol."
       ],
       "Incorrect login credentials. Please try again.": [
         "Date de conectare incorecte. Reîncercați."
@@ -2623,7 +2623,7 @@
         "Cod de verificare nevalid."
       ],
       "Label name cannot be empty.": [
-        ""
+        "Numele etichetei nu poate fi gol."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Îmbinați cel puțin un calendar cu un calendar Proton existent",
@@ -2798,10 +2798,10 @@
         "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Acest nume de folder nu este disponibil. Alegeți un nume diferit."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Acest nume de etichetă nu este disponibil. Alegeți un nume diferit."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Acest mesaj poate conține unele legături care nu pot fi deschise corect de navigatorul actual."
@@ -3546,13 +3546,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "„Accesul aplicațiilor mai puțin sigure” este activat în setările de securitate ale contului Google."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Verificarea în 2 pași este activată în contul extern."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "verificarea în 2 pași este activată în contul extern de e-mail."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Dacă ${ bold2StepsDisabled } (setare implicită în Gmail), asigurați-vă că:"
@@ -3567,10 +3567,10 @@
         "Dacă ${ bold2StepsEnabled }, asigurați-vă că adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Accesul IMAP este activat în contul extern."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Accesul IMAP este activat în contul Yahoo."
       ],
       "Invalid IMAP port": [
         "Port IMAP nevalid"
@@ -3612,22 +3612,22 @@
         "Mai puteți înerca să vă deconectați din ${ boldGoogleAccounts } din navigatorul web, apoi să deblocați ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Parola aplicației este corectă. Să ${ boldNot } folosiți parola obișnuită."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Contul de e-mail necesită o parolă de aplicație pentru a exporta datele."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Contul de e-mail necesită o parolă pentru a exporta datele."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Adresa de e-mail și parola aplicației sunt corecte. Să ${ boldNot } folosiți parola obișnuită."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Adresa de e-mail și parola sunt corecte."
       ],
       "Your password is correct.": [
-        ""
+        "Parola este corectă."
       ]
     },
     "Import error emphasis": {
@@ -7969,7 +7969,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Adresa URL este prea lungă"
       ]
     },
     "Subscription attribute": {

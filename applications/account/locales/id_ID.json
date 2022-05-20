@@ -2540,7 +2540,7 @@
         "Filter dengan nama ini sudah ada"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Nama folder tidak boleh kosong."
       ],
       "Incorrect login credentials. Please try again.": [
         "Kredensial masuk salah. Silakan coba lagi."
@@ -2585,7 +2585,7 @@
         "Kode verifikasi tidak valid"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Nama label tidak boleh kosong."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Gabungkan setidaknya ${ calendarToFixCount } kalender dengan kalender-kalender Proton yang telah ada sebelumnya"
@@ -2756,10 +2756,10 @@
         "Bidang ini membutuhkan minimal ${ minimumLength } karakter."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Nama folder ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Nama label ini tidak dapat digunakan. Mohon pilih nama lain."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Pesan ini mungkin berisi tautan URL yang tidak dapat dibuka dengan benar oleh peramban Anda saat ini"
@@ -3476,13 +3476,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "\"Akses aplikasi yang kurang aman\" telah diaktifkan pada pengaturan keamanan akun Google Anda."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Verifikasi 2 langkah telah diaktifkan pada akun eksternal Anda."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Verifikasi 2 langkah telah diaktifkan pada akun email eksternal Anda."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Jika ${ bold2StepsDisabled } (pengaturan baku Gmail), mohon pastikan:"
@@ -3497,10 +3497,10 @@
         "Apabila ${ bold2StepsEnabled }, mohon pastikan alamat email dan kata sandi aplikasi Anda sudah benar. ${ boldNot } gunakan kata sandi Anda biasanya."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Akses IMAP telah diaktifkan pada akun eksternal Anda."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Akses IMAP telah diaktifkan pada akun Yahoo Anda."
       ],
       "Invalid IMAP port": [
         "Port IMAP tidak valid"
@@ -3542,22 +3542,22 @@
         "Anda juga bisa keluar dari ${ boldGoogleAccounts } di peramban, lalu buka kunci ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Akun email Anda memerlukan kata sandi aplikasi untuk dapat mengekspor data Anda."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Alamat email dan kata sandi aplikasi Anda benar. ${ boldNot } gunakan kata sandi biasa Anda."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Alamat email dan kata sandi Anda benar."
       ],
       "Your password is correct.": [
-        ""
+        "Kata sandi Anda benar."
       ]
     },
     "Import error emphasis": {
@@ -7821,7 +7821,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL terlalu panjang"
       ]
     },
     "Subscription attribute": {
