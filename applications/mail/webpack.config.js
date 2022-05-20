@@ -40,6 +40,7 @@ module.exports = (...env) => {
         const htmlIndex = config.plugins.findIndex((plugin) => {
             return plugin instanceof HtmlWebpackPlugin;
         });
+        const htmlPlugin = config.plugins[htmlIndex];
 
         // We keep the order because the other plugins have an impact
         // Replace the old html webpackplugin with this
@@ -49,8 +50,10 @@ module.exports = (...env) => {
             new HtmlWebpackPlugin({
                 filename: 'index.html',
                 template: path.resolve('./src/app.ejs'),
+                templateParameters: htmlPlugin.userOptions.templateParameters,
                 scriptLoading: 'defer',
                 excludeChunks: ['eo'],
+                inject: 'body',
             })
         );
         // Add another webpack plugin on top
@@ -60,6 +63,7 @@ module.exports = (...env) => {
             new HtmlWebpackPlugin({
                 filename: 'eo.html',
                 template: path.resolve('./src/eo.ejs'),
+                templateParameters: htmlPlugin.userOptions.templateParameters,
                 scriptLoading: 'defer',
                 excludeChunks: ['index'],
                 inject: 'body',
