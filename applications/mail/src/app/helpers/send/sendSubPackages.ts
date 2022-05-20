@@ -37,7 +37,7 @@ const sendPMEncryptedOutside = async (message: Message, api: Api) => {
             CryptoProxy.encryptMessage({
                 textData: Token,
                 stripTrailingSpaces: true,
-                passwords: [message.Password!], // TODO lara: what to do on no password??
+                passwords: [message.Password || ''], // TODO can password actually be undefined?
             }),
             srpGetVerify({ api, credentials: { password: message.Password || '' } }),
         ]);

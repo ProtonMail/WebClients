@@ -42,7 +42,7 @@ export const generateMemberToken = () => {
 export const encryptMemberToken = async (token: string, privateKey: PrivateKeyReference) => {
     const { message: encryptedToken } = await CryptoProxy.encryptMessage({
         textData: token,
-        stripTrailingSpaces: true, // TODO lara/daniel this shouldn't matter since data is base64...?
+        stripTrailingSpaces: true,
         encryptionKeys: [privateKey],
         signingKeys: [privateKey],
     });
