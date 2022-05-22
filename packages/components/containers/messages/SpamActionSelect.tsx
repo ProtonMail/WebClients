@@ -13,9 +13,9 @@ interface Props {
 const SpamActionSelect = ({ onChange, ...rest }: Props) => {
     return (
         <SelectTwo onChange={({ value }) => onChange(value as SpamAction | null)} {...rest}>
-            <Option title={c('Option').t`Ask me each time`} value={null} />
-            <Option title={c('Option').t`Move to Spam`} value={SpamAction.JustSpam} />
-            <Option title={c('Option').t`Move to Spam and unsubscribe`} value={SpamAction.SpamAndUnsub} />
+            <Option title={c('Option').t`On`} value={SpamAction.JustSpam} />
+            <Option title={c('Option').t`Off`} value={SpamAction.SpamAndUnsub} />
+            <Option title={c('Option').t`Ask each time`} value={null} />
         </SelectTwo>
     );
 };
