@@ -2,7 +2,6 @@ import { forwardRef, memo, ReactNode, Ref } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 import {
     useMailSettings,
-    useUserSettings,
     useLabels,
     useFolders,
     useWelcomeFlags,
@@ -36,7 +35,6 @@ const PageContainer = (
     ref: Ref<HTMLDivElement>
 ) => {
     const [mailSettings] = useMailSettings();
-    const [userSettings] = useUserSettings();
     const [welcomeFlags, setWelcomeFlagsDone] = useWelcomeFlags();
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
@@ -66,7 +64,6 @@ const PageContainer = (
             <LocationErrorBoundary>
                 <MailboxContainer
                     labelID={labelID}
-                    userSettings={userSettings}
                     mailSettings={mailSettings as MailSettings}
                     breakpoints={breakpoints}
                     elementID={elementID}
