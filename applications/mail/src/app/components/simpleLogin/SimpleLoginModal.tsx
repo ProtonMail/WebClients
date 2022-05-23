@@ -8,7 +8,7 @@ import {
     PrimaryButton,
     useUser,
 } from '@proton/components';
-import connectSimpleLogin from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
+import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 import { useEffect } from 'react';
 
 interface Props extends ModalProps {}
@@ -51,7 +51,7 @@ const SimpleLoginModal = ({ ...rest }: Props) => {
             <ModalTwoHeader title={c('Title').t`Take control of your identity and inbox`} />
             <ModalTwoContent>
                 <div className="text-center">
-                    <img src={connectSimpleLogin} alt={c('Alternative text for SimpleLogin image').t`SimpleLogin`} />
+                    <img src={connectSimpleLoginSvg} alt={c('Alternative text for SimpleLogin image').t`SimpleLogin`} />
                 </div>
                 <div>{c('Info')
                     .t`Get free [NAMETBC] aliases from SimpleLogin by Proton, an email masking service that protects your online identity and puts you in control of your inbox.`}</div>
