@@ -16,6 +16,7 @@ import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import ItemHoverButtons from './ItemHoverButtons';
 import { getLabelIDs } from '../../helpers/elements';
+import ItemUnread from './ItemUnread';
 
 interface Props {
     labelID: string;
@@ -112,6 +113,8 @@ const ItemColumnLayout = ({
                 )}
 
                 <ItemDate element={element} labelID={labelID} className="item-senddate-col" useTooltip />
+
+                <ItemUnread element={element} labelID={labelID} className="ml0-5" />
             </div>
 
             <div className="flex flex-nowrap flex-align-items-center item-secondline max-w100 no-scroll">
@@ -122,8 +125,6 @@ const ItemColumnLayout = ({
                         </span>
                     )}
 
-                    {conversationMode && <NumMessages className="mr0-25 flex-item-noshrink" conversation={element} />}
-
                     <span
                         role="heading"
                         aria-level={2}
@@ -133,6 +134,8 @@ const ItemColumnLayout = ({
                     >
                         {subjectContent}
                     </span>
+
+                    {conversationMode && <NumMessages className="mr0-25 flex-item-noshrink" conversation={element} />}
                 </div>
 
                 <div className="item-icons flex flex-item-noshrink flex-nowrap">
