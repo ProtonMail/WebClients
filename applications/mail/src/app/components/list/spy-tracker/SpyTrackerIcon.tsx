@@ -12,7 +12,7 @@ interface Props {
     title: string;
     className?: string;
     openSpyTrackerModal?: () => void;
-    isDetailsModal?: boolean;
+    isStandaloneIcon?: boolean;
 }
 
 const SpyTrackerIcon = ({
@@ -21,12 +21,13 @@ const SpyTrackerIcon = ({
     title,
     className,
     openSpyTrackerModal,
-    isDetailsModal = false,
+    isStandaloneIcon = false,
 }: Props) => {
     return (
         <div
             className={classnames([
-                'relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center',
+                'relative inline-flex item-spy-tracker-link flex-align-items-center',
+                isStandaloneIcon && 'mr0-1',
                 className,
             ])}
         >
@@ -37,8 +38,9 @@ const SpyTrackerIcon = ({
                 data-testid="privacy:tracker-icon"
                 className={classnames([
                     needsMoreProtection && numberOfTrackers === 0 ? 'color-weak' : 'color-primary',
-                    'relative inline-flex mr0-1 item-spy-tracker-link flex-align-items-center',
-                    !isDetailsModal && 'cursor-pointer',
+                    'relative inline-flex item-spy-tracker-link flex-align-items-center',
+                    !isStandaloneIcon && 'cursor-pointer',
+                    isStandaloneIcon && 'mr0-1',
                     className,
                 ])}
                 onClick={openSpyTrackerModal}
