@@ -8,7 +8,6 @@ import {
     Spotlight,
     Tooltip,
     classnames,
-    useModalState,
     useSpotlightOnFeature,
     useSpotlightShow,
 } from '@proton/components';
@@ -18,19 +17,24 @@ import { isSent } from '@proton/shared/lib/mail/messages';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import SpyTrackerIcon from './SpyTrackerIcon';
-import SpyTrackerModal from './SpyTrackerModal';
 
 interface Props {
     message: MessageState;
     className?: string;
+    onClickIcon?: () => void;
 }
 
-const ItemSpyTrackerIcon = ({ message, className }: Props) => {
-    const [spyTrackerModalProps, setSpyTrackerModalOpen] = useModalState();
+const ItemSpyTrackerIcon = ({ message, className, onClickIcon }: Props) => {
+    // TODO On the first part of the SL integration we will not have the change on the icon. We already started the implementation so we will hide it for now
+    // const { feature: simpleLoginIntegration, loading: loadingSimpleLoginIntegration } = useFeature(
+    //     FeatureCode.SLIntegration
+    // );
 
     const anchorRef = useRef(null);
 
     const sent = isSent(message.data);
+
+    const isSimpleLoginIntegration = false; //TODO replace with when we will need simpleLoginIntegration?.Value;
 
     const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
@@ -50,8 +54,21 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
      * But the user might have set recently the protection to OFF, so if we find trackers in previous emails, we still display the icon.
      */
     if (sent || (!hasProtection && hasShowImage && numberOfTrackers === 0)) {
+        // TODO check also loadingSimpleLoginIntegrationFeature
         return null;
     }
+
+    const spyTrackerIcon = (
+        <div className={classnames(['flex', className])} ref={anchorRef}>
+            <SpyTrackerIcon
+                numberOfTrackers={numberOfTrackers}
+                needsMoreProtection={needsMoreProtection}
+                title={title}
+                isStandaloneIcon={!isSimpleLoginIntegration}
+                openSpyTrackerModal={onClickIcon}
+            />
+        </div>
+    );
 
     return (
         <Spotlight
@@ -69,20 +86,23 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
                 </>
             }
         >
-            <div>
-                {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
-                <Tooltip title={title} data-testid="privacy:icon-tooltip">
-                    <div className={classnames(['flex', className])} ref={anchorRef}>
-                        <SpyTrackerIcon
-                            numberOfTrackers={numberOfTrackers}
-                            needsMoreProtection={needsMoreProtection}
-                            title={title}
-                            openSpyTrackerModal={() => setSpyTrackerModalOpen(true)}
-                        />
-                    </div>
-                </Tooltip>
-                <SpyTrackerModal message={message} {...spyTrackerModalProps} />
-            </div>
+            {isSimpleLoginIntegration ? (
+                <div className="flex flex-nowrap flex-align-items-center">
+                    <span className="mr0-5 relative inline-flex item-spy-tracker-link flex-align-items-center">
+                        {spyTrackerIcon}
+                    </span>
+                    <span className="pl0-25 flex-item-fluid" title={title}>
+                        {title}
+                    </span>
+                </div>
+            ) : (
+                <div>
+                    {/* Need to wrap the Tooltip by a div to avoid ref warning because Spotlight is cloning the element and applying refs on top of it */}
+                    <Tooltip title={title} data-testid="privacy:icon-tooltip">
+                        {spyTrackerIcon}
+                    </Tooltip>
+                </div>
+            )}
         </Spotlight>
     );
 };

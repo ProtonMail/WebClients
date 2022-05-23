@@ -13,6 +13,7 @@ import { addToCache, minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import ItemSpyTrackerIcon from './ItemSpyTrackerIcon';
+import HeaderTopPrivacyIcon from '../../message/header/HeaderTopPrivacyIcon';
 
 const messageWithTrackers: MessageState = {
     localID: 'messageWithTrackerId',
@@ -119,7 +120,7 @@ describe('ItemSpyTrackerIcon', () => {
         setFeatureFlags('SpyTrackerProtection', true);
         addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, ShowImages: SHOW_IMAGES.ALL });
 
-        const { findByTestId } = await render(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, false);
+        const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithoutTrackers} />, false);
 
         const icon = await findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
@@ -133,7 +134,7 @@ describe('ItemSpyTrackerIcon', () => {
         setFeatureFlags('SpyTrackerProtection', true);
         addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.NONE, ShowImages: SHOW_IMAGES.NONE });
 
-        const { findByTestId } = await render(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, false);
+        const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithoutTrackers} />, false);
 
         const icon = await findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
@@ -150,7 +151,7 @@ describe('ItemSpyTrackerIcon', () => {
         setFeatureFlags('SpyTrackerProtection', true);
         addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL, ShowImages: SHOW_IMAGES.ALL });
 
-        const { findByTestId } = await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+        const { findByTestId } = await render(<HeaderTopPrivacyIcon message={messageWithTrackers} />, false);
 
         const icon = await findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);

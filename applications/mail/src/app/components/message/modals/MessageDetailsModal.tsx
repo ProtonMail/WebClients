@@ -69,7 +69,6 @@ const MessageDetailsModal = ({
 
     const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
-        isDetails: true,
     });
     const displayTrackerIcon = !(!hasProtection && hasShowImage && numberOfTrackers === 0) && spyTrackerFeature?.Value;
 
@@ -129,7 +128,7 @@ const MessageDetailsModal = ({
                                     numberOfTrackers={numberOfTrackers}
                                     needsMoreProtection={needsMoreProtection}
                                     title={title}
-                                    isDetailsModal
+                                    isStandaloneIcon
                                     className="mauto"
                                 />
                             </span>
