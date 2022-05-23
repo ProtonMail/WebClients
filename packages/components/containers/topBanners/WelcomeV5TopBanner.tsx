@@ -7,8 +7,9 @@ import { Href } from '../../components';
 
 const WelcomeV5TopBanner = () => {
     const learnMoreLink = (
-        <Href key="learn-more-link" url={getStaticURL('/news/updated-proton')}>{c('new_plans: info')
-            .t`learn more`}</Href>
+        <Href key="learn-more-link" className="color-inherit" url={getStaticURL('/news/updated-proton')}>{c(
+            'new_plans: info'
+        ).t`learn more`}</Href>
     );
 
     return (
