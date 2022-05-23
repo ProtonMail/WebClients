@@ -242,7 +242,7 @@ const SwitchAccountContainer = ({
                 </div>
                 <div className="w100 text-center mb0-5">
                     <Button size="large" color="norm" shape="ghost" fullWidth onClick={handleSignOutAll}>{c('Action')
-                        .t`Sign out all accounts`}</Button>
+                        .t`Sign out of all accounts`}</Button>
                 </div>
             </Content>
         </Main>
