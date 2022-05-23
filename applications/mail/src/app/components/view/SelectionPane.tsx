@@ -3,13 +3,16 @@ import { useMemo } from 'react';
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Button, useFolders, useLabels } from '@proton/components';
+import { Button, useFolders, useLabels, useModalState } from '@proton/components';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
+import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
+import SimpleLoginModal from '../simpleLogin/SimpleLoginModal';
 
 interface Props {
     labelID: string;
@@ -20,8 +23,11 @@ interface Props {
     onCheckAll: (checked: boolean) => void;
 }
 
+const { SPAM } = MAILBOX_LABEL_IDS;
+
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
     const conversationMode = isConversationMode(labelID, mailSettings, location);
+    const [simpleLoginModalProps, setSimpleLoginModalOpen] = useModalState();
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -128,22 +134,47 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const showText = checkeds || labelCount;
 
+    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
+
     return (
         <div className="mauto text-center p2 max-w100">
-            {checkeds === 0 && labelName && (
-                <h3 className="text-bold lh-rg text-ellipsis" title={labelName}>
-                    {labelName}
-                </h3>
+            {showSimpleLoginPlaceholder ? (
+                <>
+                    <div className="mb2">
+                        <img
+                            src={connectSimpleLoginSvg}
+                            alt={c('Alternative text for conversation image').t`Conversation`}
+                            className="hauto"
+                        />
+                    </div>
+                    <h2>{c('Title').t`Don't give spam a chance`}</h2>
+                    <p className="pl2 pr2">
+                        {c('Info')
+                            .t`They can't spam you if they don't know your email address. Next time you're asked for your email, give them a [NAMETBC] alias instead.`}
+                    </p>
+                    <Button onClick={() => setSimpleLoginModalOpen(true)} color="norm" shape="outline">
+                        {c('Action').t`Get free aliases`}
+                    </Button>
+                </>
+            ) : (
+                <>
+                    {checkeds === 0 && labelName && (
+                        <h3 className="text-bold lh-rg text-ellipsis" title={labelName}>
+                            {labelName}
+                        </h3>
+                    )}
+                    <p className="mb2 text-keep-space">{showText ? getFormattedText(text) : null}</p>
+                    <div className="mb2">
+                        <img
+                            src={conversationSvg}
+                            alt={c('Alternative text for conversation image').t`Conversation`}
+                            className="hauto"
+                        />
+                    </div>
+                    {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
+                </>
             )}
-            <p className="mb2 text-keep-space">{showText ? getFormattedText(text) : null}</p>
-            <div className="mb2">
-                <img
-                    src={conversationSvg}
-                    alt={c('Alternative text for conversation image').t`Conversation`}
-                    className="hauto"
-                />
-            </div>
-            {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
+            <SimpleLoginModal {...simpleLoginModalProps} />
         </div>
     );
 };
