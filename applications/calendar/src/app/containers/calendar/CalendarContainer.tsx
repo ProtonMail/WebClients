@@ -26,6 +26,7 @@ import { useAppTitle, useCalendarBootstrap } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 import unary from '@proton/utils/unary';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import {
     canAskTimezoneSuggestion,
     getTimezoneSuggestionKey,
@@ -230,8 +231,9 @@ const CalendarContainer = ({
 
     const timezoneInformation = useMemo(() => {
         const [startDate] = utcDateRangeInTimezone;
-        const { offset } = getTimezoneOffset(startDate, tzid);
-        const { offset: secondaryOffset } = getTimezoneOffset(startDate, secondaryTzid || tzid);
+        const noonDate = getNoonDateForTimeZoneOffset(startDate);
+        const { offset } = getTimezoneOffset(noonDate, tzid);
+        const { offset: secondaryOffset } = getTimezoneOffset(noonDate, secondaryTzid || tzid);
         return {
             primaryTimezone: `${formatGMTOffsetAbbreviation(offset)}`,
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,

@@ -40,6 +40,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import uniqueBy from '@proton/utils/uniqueBy';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
 import DateCursorButtons from '../../components/DateCursorButtons';
@@ -448,6 +449,8 @@ const CalendarContainerView = ({
         return getDateRangeText(view, range, localDate, localDateRange);
     }, [view, range, localDate, localDateRange]);
 
+    const noonDate = getNoonDateForTimeZoneOffset(utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate);
+
     return (
         <PrivateAppContainer
             top={top}
@@ -492,7 +495,7 @@ const CalendarContainerView = ({
                     <TimezoneSelector
                         data-test-id="calendar-view:time-zone-dropdown"
                         className="no-mobile no-tablet"
-                        date={utcDateRangeInTimezone ? utcDateRangeInTimezone[0] : localNowDate}
+                        date={noonDate}
                         timezone={tzid}
                         onChange={setTzid}
                     />
