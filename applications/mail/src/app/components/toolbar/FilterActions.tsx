@@ -7,8 +7,8 @@ import {
     SimpleDropdown,
     useActiveBreakpoint,
     Icon,
+    useMailSettings,
 } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 
 import { Filter } from '../../models/tools';
@@ -17,10 +17,11 @@ interface Props {
     loading?: boolean;
     filter: Filter;
     onFilter: (filter: Filter) => void;
-    mailSettings: MailSettings;
 }
 
-const FilterActions = ({ loading, filter = {}, mailSettings, onFilter }: Props) => {
+const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
+    const [mailSettings] = useMailSettings();
+
     const noFilterApply = !Object.values(filter).length;
     const { isDesktop } = useActiveBreakpoint();
 
@@ -66,7 +67,7 @@ const FilterActions = ({ loading, filter = {}, mailSettings, onFilter }: Props) 
                 }
             },
         },
-        ...(mailSettings.MessageButtons === MESSAGE_BUTTONS.READ_UNREAD
+        ...(mailSettings?.MessageButtons === MESSAGE_BUTTONS.READ_UNREAD
             ? readUnreadButtons
             : readUnreadButtons.reverse()),
     ];

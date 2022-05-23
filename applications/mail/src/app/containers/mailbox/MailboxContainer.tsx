@@ -3,11 +3,9 @@ import { useLocation, useHistory } from 'react-router-dom';
 import {
     classnames,
     ErrorBoundary,
-    FeatureCode,
     PrivateMainArea,
     useCalendars,
     useCalendarUserSettings,
-    useFeature,
     useFolders,
     useItemsSelection,
     useLabels,
@@ -15,10 +13,9 @@ import {
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
-import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { Sort, Filter, SearchParameters } from '../../models/tools';
-import { Element } from '../../models/element';
 import { useMailboxPageTitle } from '../../hooks/mailbox/useMailboxPageTitle';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { isColumnMode, isConversationMode } from '../../helpers/mailSettings';
@@ -49,14 +46,12 @@ import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
-import ItemContextMenu from '../../components/list/ItemContextMenu';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
 import { usePermanentDelete } from '../../hooks/usePermanentDelete';
 import { getFolderName } from '../../helpers/labels';
 
 interface Props {
     labelID: string;
-    userSettings: UserSettings;
     mailSettings: MailSettings;
     breakpoints: Breakpoints;
     elementID?: string;
@@ -66,7 +61,6 @@ interface Props {
 
 const MailboxContainer = ({
     labelID: inputLabelID,
-    userSettings,
     mailSettings,
     breakpoints,
     elementID,
@@ -77,11 +71,10 @@ const MailboxContainer = ({
     const history = useHistory();
     const [labels] = useLabels();
     const [folders] = useFolders();
-    const [isContextMenuOpen, setIsOpen] = useState(false);
-    const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
     const { feature: mailContextMenuFeature } = useFeature<boolean>(FeatureCode.MailContextMenu);
+    const { moveToFolder } = useMoveToFolder();
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet;
     const columnModeSetting = isColumnMode(mailSettings);
@@ -236,24 +229,6 @@ const MailboxContainer = ({
         await permanentDelete(selectedIDs);
     }, [selectedIDs, permanentDelete]);
 
-    const closeContextMenu = useCallback(() => setIsOpen(false), [setIsOpen]);
-    const openContextMenu = useCallback(() => setIsOpen(true), [setIsOpen]);
-
-    const handleContextMenu = useCallback(
-        (e: React.MouseEvent<HTMLDivElement>, element: Element) => {
-            e.stopPropagation();
-            e.preventDefault();
-
-            if (!checkedIDs.includes(element.ID)) {
-                handleCheck([element.ID], true, true);
-            }
-
-            setContextMenuPosition({ top: e.clientY, left: e.clientX });
-            openContextMenu();
-        },
-        [checkedIDs]
-    );
-
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
     const {
@@ -362,15 +337,11 @@ const MailboxContainer = ({
                             loading={loading}
                             placeholderCount={placeholderCount}
                             columnLayout={columnLayout}
-                            mailSettings={mailSettings}
-                            labels={labels}
                             elementID={elementIDForList}
                             elements={elements}
                             checkedIDs={checkedIDs}
                             onCheck={handleCheck}
                             onClick={handleElement}
-                            onContextMenu={handleContextMenu}
-                            userSettings={userSettings}
                             isSearch={isSearch}
                             breakpoints={breakpoints}
                             page={page}
@@ -387,6 +358,10 @@ const MailboxContainer = ({
                             resetWidth={resetWidth}
                             showContentPanel={showContentPanel}
                             scrollBarWidth={scrollBarWidth}
+                            onMarkAs={handleMarkAs}
+                            onDelete={handleDelete}
+                            onMove={handleMove}
+                            onBack={handleBack}
                         />
                     </ErrorBoundary>
                     <ErrorBoundary>
@@ -442,24 +417,6 @@ const MailboxContainer = ({
             {moveAllModal}
             {moveToSpamModal}
             {deleteModal}
-            {mailContextMenuFeature?.Value ? (
-                <ItemContextMenu
-                    elementID={elementID}
-                    labels={labels}
-                    folders={folders}
-                    mailSettings={mailSettings}
-                    anchorRef={listRef}
-                    isOpen={isContextMenuOpen}
-                    checkedIDs={checkedIDs}
-                    labelID={labelID}
-                    open={openContextMenu}
-                    close={closeContextMenu}
-                    position={contextMenuPosition}
-                    onMarkAs={handleMarkAs}
-                    onMove={handleMove}
-                    onDelete={handleDelete}
-                />
-            ) : null}
         </MailboxContainerContextProvider>
     );
 };

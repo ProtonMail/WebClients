@@ -1,17 +1,19 @@
 import { c } from 'ttag';
 import { RefObject, ReactNode } from 'react';
 import { MESSAGE_BUTTONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { ContextMenu, ContextSeparator, ContextMenuButton } from '@proton/components';
-import { Label, MailSettings } from '@proton/shared/lib/interfaces';
+import {
+    ContextMenu,
+    ContextSeparator,
+    ContextMenuButton,
+    useMailSettings,
+    useLabels,
+    useFolders,
+} from '@proton/components';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { isCustomFolder, isCustomLabel } from '../../helpers/labels';
 
 interface Props {
-    mailSettings: MailSettings;
     checkedIDs: string[];
-    labels?: Label[];
-    folders?: Folder[];
     elementID?: string;
     labelID: string;
     anchorRef: RefObject<HTMLElement>;
@@ -27,19 +29,13 @@ interface Props {
     onDelete: () => void;
 }
 
-const ItemContextMenu = ({
-    checkedIDs,
-    elementID,
-    labelID,
-    labels = [],
-    folders = [],
-    mailSettings,
-    onMove,
-    onDelete,
-    onMarkAs,
-    ...rest
-}: Props) => {
-    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings;
+const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onMarkAs, ...rest }: Props) => {
+    const [mailSettings] = useMailSettings();
+    const [labels] = useLabels();
+    const [folders] = useFolders();
+
+    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings || {};
+
     const handleMove = (labelID: string) => {
         onMove(labelID);
         rest.close();
