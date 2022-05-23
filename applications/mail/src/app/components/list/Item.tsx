@@ -1,10 +1,8 @@
 import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
-import { classnames, ItemCheckbox } from '@proton/components';
+import { classnames, ItemCheckbox, useEventListener, useMailSettings, useLabels } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
@@ -21,11 +19,9 @@ const labelsWithIcons = [ALL_MAIL, STARRED, ALL_SENT, ALL_DRAFTS] as string[];
 
 interface Props {
     conversationMode: boolean;
-    labels?: Label[];
     labelID: string;
     loading: boolean;
     elementID?: string;
-    mailSettings: MailSettings;
     columnLayout: boolean;
     element: Element;
     checked?: boolean;
@@ -34,6 +30,7 @@ interface Props {
     onContextMenu: (event: React.MouseEvent<HTMLDivElement>, element: Element) => void;
     onDragStart: (event: DragEvent, element: Element) => void;
     onDragEnd: (event: DragEvent) => void;
+    onBack: () => void;
     dragged: boolean;
     index: number;
     breakpoints: Breakpoints;
@@ -43,31 +40,43 @@ interface Props {
 const Item = ({
     conversationMode,
     labelID,
-    labels,
     loading,
     element,
     elementID,
     columnLayout,
-    mailSettings,
     checked = false,
     onCheck,
     onClick,
     onContextMenu,
     onDragStart,
     onDragEnd,
+    onBack,
     dragged,
     index,
     breakpoints,
     onFocus,
 }: Props) => {
+    const [mailSettings] = useMailSettings();
+    const [labels] = useLabels();
+
     const { shouldHighlight, getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
     const useES = dbExists && esEnabled && shouldHighlight();
+
     const elementRef = useRef<HTMLDivElement>(null);
+
     const [hasFocus, setHasFocus] = useState(false);
-    const displayRecipients = [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS);
+    const [mouseHover, setMouseHover] = useState(false);
+
+    useEventListener(elementRef, 'mouseenter', () => setMouseHover(true), []);
+    useEventListener(elementRef, 'mouseleave', () => setMouseHover(false), []);
+
+    const displayRecipients =
+        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
+        isSent(element) ||
+        isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
-    const isConversationContentView = mailSettings.ViewMode === VIEW_MODE.GROUP;
+    const isConversationContentView = mailSettings?.ViewMode === VIEW_MODE.GROUP;
     const isSelected =
         isConversationContentView && isMessage(element)
             ? elementID === (element as Message).ConversationID
@@ -152,6 +161,7 @@ const Item = ({
             />
             <ItemLayout
                 labelID={labelID}
+                elementID={elementID}
                 labels={labels}
                 element={element}
                 conversationMode={conversationMode}
@@ -162,6 +172,8 @@ const Item = ({
                 displayRecipients={displayRecipients}
                 loading={loading}
                 breakpoints={breakpoints}
+                mouseHover={mouseHover}
+                onBack={onBack}
             />
         </div>
     );

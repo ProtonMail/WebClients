@@ -1,4 +1,4 @@
-import { ChangeEvent, Ref, memo, forwardRef } from 'react';
+import { ChangeEvent, Ref, memo, forwardRef, RefObject } from 'react';
 import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 import {
@@ -13,10 +13,11 @@ import {
     useUser,
     getCanReactiveMnemonic,
     useEventManager,
+    useUserSettings,
+    useMailSettings,
 } from '@proton/components';
-import { ChecklistKey, Label, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { ChecklistKey } from '@proton/shared/lib/interfaces';
 import { DENSITY } from '@proton/shared/lib/constants';
-
 import Item from './Item';
 import { Element } from '../../models/element';
 import EmptyView from '../view/EmptyView';
@@ -40,6 +41,8 @@ import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
 import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
+import { useItemContextMenu } from './useItemContextMenu';
+import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -50,15 +53,12 @@ interface Props {
     loading: boolean;
     placeholderCount: number;
     elementID?: string;
-    userSettings: UserSettings;
-    mailSettings: MailSettings;
     columnLayout: boolean;
     elements?: Element[];
     checkedIDs?: string[];
     onCheck: (ID: string[], checked: boolean, replace: boolean) => void;
     onCheckOne: (event: ChangeEvent, ID: string) => void;
     onClick: (elementID: string | undefined) => void;
-    onContextMenu: (event: React.MouseEvent<HTMLDivElement>, element: Element) => void;
     onFocus: (number: number) => void;
     conversationMode: boolean;
     isSearch: boolean;
@@ -75,7 +75,10 @@ interface Props {
     resetWidth: () => void;
     showContentPanel: boolean;
     scrollBarWidth: number;
-    labels?: Label[];
+    onMarkAs: (status: MARK_AS_STATUS) => void;
+    onMove: (labelID: string) => void;
+    onDelete: () => void;
+    onBack: () => void;
 }
 
 const List = (
@@ -85,14 +88,11 @@ const List = (
         loading,
         placeholderCount,
         elementID,
-        userSettings,
-        mailSettings,
         columnLayout,
         elements: inputElements = defaultElements,
         checkedIDs = defaultCheckedIDs,
         onCheck,
         onClick,
-        onContextMenu,
         conversationMode,
         isSearch,
         breakpoints,
@@ -110,10 +110,16 @@ const List = (
         resetWidth,
         showContentPanel,
         scrollBarWidth,
-        labels,
+        onMarkAs,
+        onDelete,
+        onMove,
+        onBack,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
+    const [userSettings] = useUserSettings();
+    const [mailSettings] = useMailSettings();
+
     const { shouldHighlight } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldHighlight();
@@ -167,6 +173,17 @@ const List = (
         }
     );
 
+    const { contextMenu, onContextMenu } = useItemContextMenu({
+        elementID,
+        labelID,
+        anchorRef: ref as RefObject<HTMLElement>,
+        checkedIDs,
+        onCheck,
+        onMarkAs,
+        onMove,
+        onDelete,
+    });
+
     return (
         <div className={classnames(['relative items-column-list relative', !show && 'hidden'])}>
             <div
@@ -183,7 +200,6 @@ const List = (
                         onFilter={onFilter}
                         filter={filter}
                         conversationMode={conversationMode}
-                        mailSettings={mailSettings}
                         isSearch={isSearch}
                         labelID={labelID}
                     />
@@ -197,7 +213,6 @@ const List = (
                                 <Item
                                     key={element.ID}
                                     conversationMode={conversationMode}
-                                    labels={labels}
                                     labelID={labelID}
                                     loading={loading}
                                     columnLayout={columnLayout}
@@ -207,13 +222,13 @@ const List = (
                                     onCheck={onCheckOne}
                                     onClick={onClick}
                                     onContextMenu={onContextMenu}
-                                    mailSettings={mailSettings}
                                     onDragStart={handleDragStart}
                                     onDragEnd={handleDragEnd}
                                     dragged={draggedIDs.includes(element.ID || '')}
                                     index={index}
                                     breakpoints={breakpoints}
                                     onFocus={onFocus}
+                                    onBack={onBack}
                                 />
                             ))}
 
@@ -310,6 +325,7 @@ const List = (
                     scrollBarWidth={scrollBarWidth}
                 />
             )}
+            {contextMenu}
         </div>
     );
 };
