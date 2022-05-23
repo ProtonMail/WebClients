@@ -12,7 +12,6 @@ export const CalendarsModel = {
     key: CALENDARS_CACHE_KEY,
     get: getCalendars,
     update: (model, events) => {
-        console.log('update via cache model');
         updateCollection({ model, events, item: ({ Calendar }) => Calendar });
     },
 };
