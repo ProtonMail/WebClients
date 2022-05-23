@@ -66,7 +66,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 <span className="pl0-5 mt0-2 pr0-5 flex-item-fluid">
                     {c('Info')
                         .t`Our system flagged this message as a phishing attempt. Please check that it is legitimate.`}
-                    <Href className="pl0-5 pr0-5" url={getBlogURL('/prevent-phishing-attacks/')}>
+                    <Href className="pl0-5 pr0-5" url={getBlogURL('/prevent-phishing-attacks')}>
                         {c('Info').t`Learn more`}
                     </Href>
                 </span>
