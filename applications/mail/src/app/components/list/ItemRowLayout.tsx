@@ -16,9 +16,12 @@ import ItemExpiration from './ItemExpiration';
 import ItemAction from './ItemAction';
 import { ESMessage } from '../../models/encryptedSearch';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
+import ItemHoverButtons from './ItemHoverButtons';
+import ItemUnread from './ItemUnread';
 
 interface Props {
     labelID: string;
+    elementID?: string;
     labels?: Label[];
     element: Element;
     conversationMode: boolean;
@@ -28,10 +31,13 @@ interface Props {
     unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
+    mouseHover: boolean;
+    onBack: () => void;
 }
 
 const ItemRowLayout = ({
     labelID,
+    elementID,
     labels,
     element,
     conversationMode,
@@ -41,6 +47,8 @@ const ItemRowLayout = ({
     unread,
     displayRecipients,
     loading,
+    mouseHover,
+    onBack,
 }: Props) => {
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -78,10 +86,6 @@ const ItemRowLayout = ({
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className="mtauto mbauto flex mr0-5" data-testid={unread}>
-                <ItemStar element={element} />
-            </div>
-
             <div className={classnames(['item-senders w20 flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {sendersContent}
@@ -95,12 +99,6 @@ const ItemRowLayout = ({
                         <ItemLocation element={element} labelID={labelID} />
                     </span>
                 )}
-                {conversationMode && (
-                    <NumMessages
-                        className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
-                        conversation={element}
-                    />
-                )}
                 <div className="flex flex-column inline-block">
                     <span
                         role="heading"
@@ -111,6 +109,14 @@ const ItemRowLayout = ({
                     >
                         {subjectContent}
                     </span>
+
+                    {conversationMode && (
+                        <NumMessages
+                            className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
+                            conversation={element}
+                        />
+                    )}
+
                     {!!resultJSX && highlightData && (
                         <>
                             <span
@@ -130,27 +136,44 @@ const ItemRowLayout = ({
                 labels={labels}
                 element={element}
                 labelID={labelID}
-                maxNumber={5}
+                maxNumber={1}
                 className="flex-item-noshrink mlauto"
                 showDropdown={false}
+                isCollapsed={false}
             />
 
             <span className="item-weight mtauto mbauto ml1 text-right" data-testid="message-row:item-size">
                 {!loading && size}
             </span>
 
-            <span className="flex w2e ml0-5 text-center">
-                <ItemAttachmentIcon
-                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
-                    element={element}
-                    className="flex-item-noshrink"
-                />
-            </span>
+            {mouseHover ? (
+                <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
+            ) : (
+                <>
+                    <span className="flex w2e ml0-5 text-center">
+                        {!!element.ExpirationTime && <ItemExpiration element={element} className="mr0-5" />}
+                        <ItemAttachmentIcon
+                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                            element={element}
+                            className="flex-item-noshrink"
+                        />
+                        <div className="mtauto mbauto flex mr0-5" data-testid={unread}>
+                            <ItemStar element={element} />
+                        </div>
+                    </span>
 
-            <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-align-items-center flex-justify-end">
-                {!!element.ExpirationTime && <ItemExpiration element={element} className="mr0-5" />}
-                <ItemDate element={element} labelID={labelID} className={unread ? 'text-bold' : undefined} useTooltip />
-            </span>
+                    <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-align-items-center flex-justify-end">
+                        <ItemDate
+                            element={element}
+                            labelID={labelID}
+                            className={unread ? 'text-bold' : undefined}
+                            useTooltip
+                        />
+                    </span>
+
+                    <ItemUnread element={element} labelID={labelID} className="ml0-5" />
+                </>
+            )}
         </div>
     );
 };
