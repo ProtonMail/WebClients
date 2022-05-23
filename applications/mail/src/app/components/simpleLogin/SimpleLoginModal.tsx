@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
+
 import {
     ModalProps,
     ModalTwo,
@@ -6,78 +9,94 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
     PrimaryButton,
-    useUser,
+    useApi,
 } from '@proton/components';
+import { createSLUser } from '@proton/shared/lib/api/simpleLogin';
+import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
+import { SIMPLE_LOGIN_EXTENSION_LINKS } from '@proton/shared/lib/constants';
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
-import { useEffect } from 'react';
+
+import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
+import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
+
+import './SimpleLoginModal.scss';
 
 interface Props extends ModalProps {}
+
 const SimpleLoginModal = ({ ...rest }: Props) => {
-    const [{ isFree }] = useUser();
+    const [loading, setLoading] = useState(false);
+    const { canUseExtension } = useSimpleLoginExtension();
+    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
+    const api = useApi();
 
-    const hasExtensionInstalled = false;
+    const { onClose } = rest;
 
-    const installAndGoText = isFree
+    const installAndGoText = isSafari()
         ? c('Info')
-              .t`As a Proton Free user, you get 15 free aliases, and your SimpleLogin account will be created automatically when you install the browser plugin.`
+              .t`Your Proton Account includes SimpleLogin. Install the browser extension with one click to get started.`
         : c('Info')
-              .t`As a Proton customer, you get unlimited aliases and mailboxes, and your SimpleLogin account will be created automatically when you install the browser plugin.`;
+              .t`SimpleLogin is a Proton service, and your Proton Account includes Hide My Email aliases. To start masking your email address, go to SimpleLogin and create your first alias.`;
 
-    const handleExtensionSLEvents = (event: any) => {
-        if (event.data.tag === 'EXTENSION_INSTALLED_QUERY' || event.data.tag === 'EXTENSION_INSTALLED_RESPONSE') {
-            console.log('received events', { event });
+    const handlePluginAction = async () => {
+        setLoading(true);
+
+        let url = '';
+        // In Safari there is no browser extension, so we redirect to the SL dashboard
+        if (isSafari()) {
+            void api(createSLUser());
+            url = SIMPLE_LOGIN_EXTENSION_LINKS.DASHBOARD;
+        } else {
+            // Otherwise, we can open the extension
+            const { Redirect } = await api(createSLUser('browser_extension'));
+            url = Redirect;
         }
+        setLoading(false);
+
+        // We need to send a telemetry request when the user clicks on the go to SL button
+        handleSendTelemetryData(TelemetrySimpleLoginEvents.go_to_simplelogin, {}, true);
+
+        window.open(url, '_blank');
+        onClose?.();
     };
 
-    const handlePluginAction = () => {};
-
-    useEffect(() => {
-        // Event listener responsible for catching the extension response
-        window.addEventListener('message', handleExtensionSLEvents);
-
-        setTimeout(() => {
-            console.log('SEND MESSAGE');
-            // post a message to the extension to know whether it's installed
-            window.postMessage({ tag: 'EXTENSION_INSTALLED_QUERY' }, '*');
-        }, 2000);
-
-        return () => {
-            window.removeEventListener('message', handleExtensionSLEvents);
-        };
-    }, []);
+    const getButtonText = () => {
+        if (!canUseExtension) {
+            return c('Action').t`Go to SimpleLogin`;
+        }
+        return c('Action').t`Get SimpleLogin extension`;
+    };
 
     return (
-        <ModalTwo size="large" {...rest}>
-            <ModalTwoHeader title={c('Title').t`Take control of your identity and inbox`} />
+        <ModalTwo {...rest} className="simple-login-modal">
+            <ModalTwoHeader title={c('Title').t`Hide your email with SimpleLogin by Proton`} />
             <ModalTwoContent>
                 <div className="text-center">
                     <img src={connectSimpleLoginSvg} alt={c('Alternative text for SimpleLogin image').t`SimpleLogin`} />
                 </div>
                 <div>{c('Info')
-                    .t`Get free [NAMETBC] aliases from SimpleLogin by Proton, an email masking service that protects your online identity and puts you in control of your inbox.`}</div>
+                    .t`SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.`}</div>
                 <br />
                 <div className="mb0-5">
-                    <strong>{c('Info').t`How it works`}</strong>
+                    <strong>{c('Info').t`How Hide My Email works`}</strong>
                 </div>
                 <ul className="mt0 mb0">
                     <li className="mb1">{c('Info')
-                        .t`When shopping or signing up online, use a unique, instantly generated [NAMETBC] alias instead of your real email address.`}</li>
+                        .t`When giving out your email, use a unique, disposable Hide My Email alias instead of your real email address.`}</li>
                     <li className="mb1">{c('Info')
                         .t`Email is forwarded to your mailbox; your email address stays hidden.`}</li>
                     <li>{c('Info')
-                        .t`Disable the alias to stop receiving newsletters or in case the mailing list is sold or leaked.`}</li>
+                        .t`If your alias is sold, leaked, or abused, simply disable it to stop receiving spam.`}</li>
                 </ul>
                 <br />
                 <div className="mb0-5">
-                    <strong>{c('Info').t`Simply install and go`}</strong>
+                    <strong>{c('Info').t`Using SimpleLogin is easy`}</strong>
                 </div>
                 <div>{installAndGoText}</div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <PrimaryButton onClick={handlePluginAction} className="mlauto">
-                    {hasExtensionInstalled
-                        ? c('Action').t`Open SimpleLogin plugin`
-                        : c('Action').t`Install SimpleLogin plugin`}
+                <PrimaryButton onClick={handlePluginAction} className="mlauto" loading={loading}>
+                    {getButtonText()}
                 </PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>

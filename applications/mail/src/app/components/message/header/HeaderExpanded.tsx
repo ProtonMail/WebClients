@@ -5,13 +5,11 @@ import { c } from 'ttag';
 import {
     Button,
     ButtonGroup,
-    FeatureCode,
     Icon,
     Tooltip,
     classnames,
     useAddresses,
     useContactModals,
-    useFeature,
     useFolders,
     useMailSettings,
     useToggle,
@@ -46,13 +44,13 @@ import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
 import ItemLocation from '../../list/ItemLocation';
 import ItemStar from '../../list/ItemStar';
-import ItemSpyTrackerIcon from '../../list/spy-tracker/ItemSpyTrackerIcon';
 import MailRecipients from '../recipients/MailRecipients';
 import RecipientItem from '../recipients/RecipientItem';
 import RecipientType from '../recipients/RecipientType';
 import HeaderDropdown from './HeaderDropdown';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
+import HeaderTopPrivacyIcon from './HeaderTopPrivacyIcon';
 
 interface Props {
     labelID: string;
@@ -108,7 +106,6 @@ const HeaderExpanded = ({
     const currentFolderID = getCurrentFolderID(message.data?.LabelIDs, folders);
     const isSendingMessage = message.draftFlags?.sending;
     const isOutboxMessage = isOutbox(message.data);
-    const { feature } = useFeature(FeatureCode.SpyTrackerProtection);
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(message.data?.AttachmentInfo);
 
     const isScheduledMessage = isScheduled(message.data);
@@ -243,9 +240,7 @@ const HeaderExpanded = ({
             ])}
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
-            <span className="absolute message-header-security-icons flex flex-row flex-nowrap">
-                {feature?.Value && <ItemSpyTrackerIcon message={message} className="ml0-25" />}
-            </span>
+            <HeaderTopPrivacyIcon message={message} />
             {isNarrow && messageLoaded && (
                 <div className="flex flex-align-items-center flex-justify-space-between my0-5" onClick={handleClick}>
                     <span className="inline-flex">

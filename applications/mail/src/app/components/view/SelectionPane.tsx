@@ -1,18 +1,20 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { Location } from 'history';
 import { c, msgid } from 'ttag';
 
-import { Button, useFolders, useLabels, useModalState } from '@proton/components';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { Button, FeatureCode, Loader, useFeature, useFolders, useLabels } from '@proton/components';
+import { TelemetrySimpleLoginEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MailSettings, SimpleMap } from '@proton/shared/lib/interfaces';
+import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
-import connectSimpleLoginSvg from '@proton/styles/assets/img/illustrations/connect-simple-login.svg';
 
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
-import SimpleLoginModal from '../simpleLogin/SimpleLoginModal';
+import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
+import { useSimpleLoginTelemetry } from '../../hooks/simpleLogin/useSimpleLoginTelemetry';
+import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
 
 interface Props {
     labelID: string;
@@ -26,8 +28,13 @@ interface Props {
 const { SPAM } = MAILBOX_LABEL_IDS;
 
 const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs = [], onCheckAll }: Props) => {
+    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
+        FeatureCode.SLIntegration
+    );
+    const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
+    const { handleSendTelemetryData } = useSimpleLoginTelemetry();
+    const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
     const conversationMode = isConversationMode(labelID, mailSettings, location);
-    const [simpleLoginModalProps, setSimpleLoginModalOpen] = useModalState();
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -134,28 +141,35 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
 
     const showText = checkeds || labelCount;
 
-    const showSimpleLoginPlaceholder = checkeds === 0 && labelID === SPAM;
+    const showSimpleLoginPlaceholder =
+        simpleLoginIntegrationFeature?.Value && checkeds === 0 && labelID === SPAM && !hasSimpleLogin;
+
+    // If the user sees the SL placeholder, we need to send once a telemetry request
+    useEffect(() => {
+        if (showSimpleLoginPlaceholder && !placeholderSLSeenSent && total > 0) {
+            // We need to send to telemetry the total number of messages that the user has in spam
+            const values = {
+                MessagesInSpam: total,
+            } as SimpleMap<number>;
+            handleSendTelemetryData(TelemetrySimpleLoginEvents.spam_view, values);
+            setPlaceholderSLSeenSent(true);
+        }
+    }, [showSimpleLoginPlaceholder]);
+
+    if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
+        return (
+            <div className="flex h100 pt1 pb1 pr2 pl2">
+                <div className="mauto text-center max-w30e">
+                    <Loader />
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="mauto text-center p2 max-w100">
             {showSimpleLoginPlaceholder ? (
-                <>
-                    <div className="mb2">
-                        <img
-                            src={connectSimpleLoginSvg}
-                            alt={c('Alternative text for conversation image').t`Conversation`}
-                            className="hauto"
-                        />
-                    </div>
-                    <h2>{c('Title').t`Don't give spam a chance`}</h2>
-                    <p className="pl2 pr2">
-                        {c('Info')
-                            .t`They can't spam you if they don't know your email address. Next time you're asked for your email, give them a [NAMETBC] alias instead.`}
-                    </p>
-                    <Button onClick={() => setSimpleLoginModalOpen(true)} color="norm" shape="outline">
-                        {c('Action').t`Get free aliases`}
-                    </Button>
-                </>
+                <SimpleLoginPlaceholder />
             ) : (
                 <>
                     {checkeds === 0 && labelName && (
@@ -174,7 +188,6 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                     {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
                 </>
             )}
-            <SimpleLoginModal {...simpleLoginModalProps} />
         </div>
     );
 };

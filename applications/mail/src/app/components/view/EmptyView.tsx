@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { Button, EmptyViewContainer } from '@proton/components';
+import { Button, EmptyViewContainer, FeatureCode, Loader, useFeature } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import noResultInboxSvg from '@proton/styles/assets/img/illustrations/empty-mailbox.svg';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
@@ -9,6 +9,8 @@ import noUnreadSvg from '@proton/styles/assets/img/illustrations/no-unread-messa
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { useSimpleLoginExtension } from '../../hooks/simpleLogin/useSimpleLoginExtension';
+import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
 
 interface Props {
     labelID: string;
@@ -17,6 +19,11 @@ interface Props {
 }
 
 const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
+    const { feature: simpleLoginIntegrationFeature, loading: loadingSimpleLoadingFeature } = useFeature(
+        FeatureCode.SLIntegration
+    );
+    const { hasSimpleLogin, isFetchingAccountLinked } = useSimpleLoginExtension();
+
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
     const isScheduled = labelID === MAILBOX_LABEL_IDS.SCHEDULED && !isSearch;
     const isSpam = labelID === MAILBOX_LABEL_IDS.SPAM && !isSearch;
@@ -51,7 +58,21 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         }
     })();
 
-    return (
+    const showSimpleLoginPlaceholder = simpleLoginIntegrationFeature?.Value && isSpam && !hasSimpleLogin;
+
+    if (loadingSimpleLoadingFeature || isFetchingAccountLinked) {
+        return (
+            <div className="mauto text-center p2 max-w100">
+                <Loader />
+            </div>
+        );
+    }
+
+    return showSimpleLoginPlaceholder ? (
+        <div className="mauto text-center p2 max-w100">
+            <SimpleLoginPlaceholder />
+        </div>
+    ) : (
         <EmptyViewContainer imageProps={imageProps}>
             <h3 className="text-bold">
                 {isSearch

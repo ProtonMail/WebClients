@@ -23,6 +23,7 @@ import PageContainer from './containers/PageContainer';
 import { ChecklistsProvider } from './containers/checklists';
 import { MailContentRefProvider } from './hooks/useClickMailContent';
 import { store } from './logic/store';
+import { SimpleLoginExtensionProvider } from './hooks/simpleLogin/useSimpleLoginExtension';
 
 const MainContainer = () => {
     const { handleClickSideApp } = useSideApp();
@@ -85,30 +86,32 @@ const MainContainer = () => {
     return (
         <ReduxProvider store={store}>
             <EncryptedSearchProvider>
-                <MailContentRefProvider mailContentRef={mailContentRef}>
-                    <ChecklistsProvider>
-                        <ComposerContainer breakpoints={breakpoints}>
-                            {({ isComposerOpened }) => (
-                                <>
-                                    <ModalsChildren />
-                                    <Switch>
-                                        <Route
-                                            path={MAIN_ROUTE_PATH}
-                                            render={() => (
-                                                <PageContainer
-                                                    ref={mailContentRef}
-                                                    breakpoints={breakpoints}
-                                                    isComposerOpened={isComposerOpened}
-                                                    rightSidebarContent={rightSidebarContent}
-                                                />
-                                            )}
-                                        />
-                                    </Switch>
-                                </>
-                            )}
-                        </ComposerContainer>
-                    </ChecklistsProvider>
-                </MailContentRefProvider>
+                <SimpleLoginExtensionProvider>
+                    <MailContentRefProvider mailContentRef={mailContentRef}>
+                        <ChecklistsProvider>
+                            <ComposerContainer breakpoints={breakpoints}>
+                                {({ isComposerOpened }) => (
+                                    <>
+                                        <ModalsChildren />
+                                        <Switch>
+                                            <Route
+                                                path={MAIN_ROUTE_PATH}
+                                                render={() => (
+                                                    <PageContainer
+                                                        ref={mailContentRef}
+                                                        breakpoints={breakpoints}
+                                                        isComposerOpened={isComposerOpened}
+                                                        rightSidebarContent={rightSidebarContent}
+                                                    />
+                                                )}
+                                            />
+                                        </Switch>
+                                    </>
+                                )}
+                            </ComposerContainer>
+                        </ChecklistsProvider>
+                    </MailContentRefProvider>
+                </SimpleLoginExtensionProvider>
             </EncryptedSearchProvider>
         </ReduxProvider>
     );
