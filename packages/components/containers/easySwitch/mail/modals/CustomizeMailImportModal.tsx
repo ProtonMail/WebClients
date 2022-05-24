@@ -4,6 +4,7 @@ import { c, msgid } from 'ttag';
 
 import noop from '@proton/utils/noop';
 import { Address, Label } from '@proton/shared/lib/interfaces';
+import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import {
     MailImporterPayload,
     ImportedMailFolder,
@@ -95,7 +96,7 @@ const CustomizeMailImportModal = ({
     const hasReservedNamesError = mappingErrors.includes(RESERVED_NAMES);
 
     const addressesOptions = addresses
-        .filter((addr) => addr.Keys.some((k) => k.Active))
+        .filter((addr) => addr.Keys.some((k) => k.Active) && addr.Status === ADDRESS_STATUS.STATUS_ENABLED)
         .map((addr) => ({
             value: addr.ID,
             text: addr.Email,
