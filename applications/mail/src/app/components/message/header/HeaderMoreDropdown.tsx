@@ -12,7 +12,6 @@ import {
     ButtonGroup,
     Button,
     Tooltip,
-    useLabels,
     useMailSettings,
     useLoading,
     useModalState,
@@ -91,7 +90,6 @@ const HeaderMoreDropdown = ({
     const closeDropdown = useRef<() => void>();
     const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
-    const [labels = []] = useLabels();
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
@@ -169,7 +167,6 @@ const HeaderMoreDropdown = ({
               ({ onClose, onLock }) => (
                   <LabelDropdown
                       labelID={labelID}
-                      labels={labels}
                       selectedIDs={selectedIDs}
                       onClose={onClose}
                       onLock={onLock}

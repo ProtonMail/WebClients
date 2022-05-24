@@ -1,6 +1,7 @@
 import { SimpleDropdown, DropdownMenu, DropdownMenuButton, Button, Icon } from '@proton/components';
 import { c } from 'ttag';
 
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Sort } from '../../models/tools';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
@@ -8,6 +9,7 @@ const TIME = 'Time';
 const SIZE = 'Size';
 
 interface Props {
+    labelID: string;
     loading?: boolean;
     conversationMode: boolean;
     sort: Sort;
@@ -19,6 +21,7 @@ interface Props {
 }
 
 const SortDropdown = ({
+    labelID,
     loading,
     conversationMode,
     sort: { sort, desc },
@@ -26,8 +29,9 @@ const SortDropdown = ({
     className,
     hasCaret,
     isSearch,
-    isScheduledLabel = false,
 }: Props) => {
+    const isScheduledLabel = labelID === MAILBOX_LABEL_IDS.SCHEDULED;
+
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
     const hideSizeSorting = isSearch && dbExists && esEnabled;

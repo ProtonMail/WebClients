@@ -1,11 +1,8 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
+import { Icon, useLoading, useMailSettings, ToolbarButton, useLabels, useFolders } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { Label } from '@proton/shared/lib/interfaces/Label';
-import { Folder } from '@proton/shared/lib/interfaces/Folder';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-
+import { Vr } from '@proton/atoms';
 import { Breakpoints } from '../../models/utils';
 import { isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import DeleteButton from './DeleteButton';
@@ -15,27 +12,22 @@ const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED
 
 interface Props {
     labelID: string;
-    labels?: Label[];
-    folders?: Folder[];
     breakpoints: Breakpoints;
     selectedIDs: string[];
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
-    mailSettings: MailSettings;
 }
 
-const MoveButtons = ({
-    labelID = '',
-    labels = [],
-    folders = [],
-    breakpoints,
-    selectedIDs = [],
-    mailSettings,
-    onMove,
-    onDelete,
-}: Props) => {
-    const [loading, withLoading] = useLoading();
+const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDelete }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
+    const [labels] = useLabels();
+    const [folders] = useFolders();
+
+    const [loading, withLoading] = useLoading();
+
+    if (!selectedIDs.length) {
+        return null;
+    }
 
     const titleInbox = Shortcuts ? (
         <>
@@ -142,9 +134,7 @@ const MoveButtons = ({
         />
     );
 
-    const deleteButton = (
-        <DeleteButton key="delete" mailSettings={mailSettings} selectedIDs={selectedIDs} onDelete={onDelete} />
-    );
+    const deleteButton = <DeleteButton key="delete" selectedIDs={selectedIDs} onDelete={onDelete} />;
 
     let buttons: ReactNode[] = [];
 
@@ -179,7 +169,12 @@ const MoveButtons = ({
         buttons = [trashButton, archiveButton, spamButton];
     }
 
-    return <>{buttons}</>; // TS limitation
+    return (
+        <>
+            <Vr />
+            {buttons}
+        </>
+    );
 };
 
 export default MoveButtons;

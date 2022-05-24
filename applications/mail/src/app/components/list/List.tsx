@@ -24,9 +24,8 @@ import EmptyView from '../view/EmptyView';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { Breakpoints } from '../../models/utils';
-import { Sort, Filter } from '../../models/tools';
+import { Filter } from '../../models/tools';
 import { usePaging } from '../../hooks/usePaging';
-import ListSettings from './ListSettings';
 import ESSlowToolbar from './ESSlowToolbar';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import useEncryptedSearchList from './useEncryptedSearchList';
@@ -66,10 +65,7 @@ interface Props {
     page: number;
     total: number | undefined;
     onPage: (page: number) => void;
-    sort: Sort;
-    onSort: (sort: Sort) => void;
     filter: Filter;
-    onFilter: (filter: Filter) => void;
     resizeAreaRef: Ref<HTMLButtonElement>;
     enableResize: () => void;
     resetWidth: () => void;
@@ -101,10 +97,7 @@ const List = (
         onPage,
         onFocus,
         onCheckOne,
-        sort,
-        onSort,
         filter,
-        onFilter,
         resizeAreaRef,
         enableResize,
         resetWidth,
@@ -194,17 +187,16 @@ const List = (
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
                 </h1>
                 <div className="items-column-list-inner opacity-on-hover-supercontainer flex flex-nowrap flex-column relative">
-                    <div>
-                        <ListSettings
-                            sort={sort}
-                            onSort={onSort}
-                            onFilter={onFilter}
-                            filter={filter}
-                            conversationMode={conversationMode}
-                            isSearch={isSearch}
-                            labelID={labelID}
-                        />
-                    </div>
+                    {/* <ListSettings
+                        sort={sort}
+                        onSort={onSort}
+                        onFilter={onFilter}
+                        filter={filter}
+                        conversationMode={conversationMode}
+                        mailSettings={mailSettings}
+                        isSearch={isSearch}
+                        labelID={labelID}
+                    /> */}
                     {showESSlowToolbar && <ESSlowToolbar />}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (

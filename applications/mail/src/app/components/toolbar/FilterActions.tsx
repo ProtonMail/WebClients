@@ -8,10 +8,13 @@ import {
     useActiveBreakpoint,
     Icon,
     useMailSettings,
+    ToolbarButton,
 } from '@proton/components';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
-
+import { Vr } from '@proton/atoms';
 import { Filter } from '../../models/tools';
+
+const { READ_UNREAD } = MESSAGE_BUTTONS;
 
 interface Props {
     loading?: boolean;
@@ -20,7 +23,7 @@ interface Props {
 }
 
 const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
-    const [mailSettings] = useMailSettings();
+    const [{ MessageButtons = READ_UNREAD } = {}] = useMailSettings();
 
     const noFilterApply = !Object.values(filter).length;
     const { isDesktop } = useActiveBreakpoint();
@@ -67,9 +70,7 @@ const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
                 }
             },
         },
-        ...(mailSettings?.MessageButtons === MESSAGE_BUTTONS.READ_UNREAD
-            ? readUnreadButtons
-            : readUnreadButtons.reverse()),
+        ...(MessageButtons === READ_UNREAD ? readUnreadButtons : readUnreadButtons.reverse()),
     ];
 
     if (!isDesktop) {
@@ -111,27 +112,23 @@ const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
         );
     }
     return (
-        <div className="flex">
+        <>
+            <Vr />
+            <div className="text-bold">Show:</div>
             {buttons.map(({ ID, text, isActive, onClick }) => {
                 return (
-                    <Button
+                    <ToolbarButton
                         key={ID}
                         data-testid={ID}
-                        size="small"
-                        shape="ghost"
-                        loading={loading}
                         aria-pressed={isActive}
-                        className={classnames([
-                            'text-sm mt0 mb0 mr0-25 ml0-25',
-                            isActive && 'no-pointer-events bg-strong',
-                        ])}
+                        className={classnames([isActive && 'no-pointer-events bg-strong'])}
                         onClick={onClick}
                     >
                         {text}
-                    </Button>
+                    </ToolbarButton>
                 );
             })}
-        </div>
+        </>
     );
 };
 
