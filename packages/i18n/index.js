@@ -14,7 +14,9 @@ async function main() {
     }
 
     if (is('validate')) {
-        await require('./lib/validate')(options[0], { dir: options[1] });
+        const flags = { isVerbose: options.includes('--verbose') };
+        const args = options.filter((val) => !val.startsWith('--'));
+        await require('./lib/validate')(options[0], { dir: args[1], flags });
     }
 
     if (is('help')) {
