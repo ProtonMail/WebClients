@@ -1,27 +1,73 @@
-[00;31m[Error] test/input/js/broken.js [00m
-1:c('Action').t('Salut')
-2:c('Action').c('Robert')
-3:c('Action').c('jeanne')
-4:c('Action').t('Monique')
+🚨 [Error] test/input/js/broken.js:0
+    match: c('Action').t(
+     line: c('Action').t('Salut')
+      fix: You should not use - c(<context>).t(<string>) or c(<context>).c(<string>)
+           but c(<context>).t`<string>`
 
-👉 You should not use - c(<context>).t(<string>) or c(<context>).c(<string>)
-   but c(<context>).t`<string>` 
+🚨 [Error] test/input/js/broken.js:1
+    match: c('Action').c(
+     line: c('Action').c('Robert')
+      fix: You should not use - c(<context>).t(<string>) or c(<context>).c(<string>)
+           but c(<context>).t`<string>`
 
-[00;31m[Error] test/input/js/broken.js [00m
-5:c('Action').`OUPS`
-6:c('Action').`OUPS 2`
-7:c('Action').c`Nope monique`
-8:c('Action').c`Nope monique 2`
+🚨 [Error] test/input/js/broken.js:2
+    match: c('Action').c(
+     line: c('Action').c('jeanne')
+      fix: You should not use - c(<context>).t(<string>) or c(<context>).c(<string>)
+           but c(<context>).t`<string>`
 
-👉 You should not use - c(<context>).c`<string>` or c(<context>).`<string>`
-   but c(<context>).t`<string>` 
+🚨 [Error] test/input/js/broken.js:3
+    match: c('Action').t(
+     line: c('Action').t('Monique')
+      fix: You should not use - c(<context>).t(<string>) or c(<context>).c(<string>)
+           but c(<context>).t`<string>`
 
-[00;31m[Error] test/input/js/broken.js [00m
-9:c('Action').ngettext(msgid`Day`, 'Days', modifiedValue)
-10:c('Action').ngettext(msgid`Miinute`, "Miinutes", modifiedValue)
-11:c('Action').ngettext(msgid('Miinute'), "Miinutes", modifiedValue)
+🚨 [Error] test/input/js/broken.js:4
+    match: c('Action').`
+     line: c('Action').`OUPS`
+      fix: You should not use - c(<context>).c`<string>` or c(<context>).`<string>`
+           but c(<context>).t`<string>`
 
-👉 Plural form is  - ngettext(msgid`<string single>`, `<string plural>`, value) 
+🚨 [Error] test/input/js/broken.js:5
+    match: c('Action').`
+     line: c('Action').`OUPS 2`
+      fix: You should not use - c(<context>).c`<string>` or c(<context>).`<string>`
+           but c(<context>).t`<string>`
 
+🚨 [Error] test/input/js/broken.js:6
+    match: c('Action').c`
+     line: c('Action').c`Nope monique`
+      fix: You should not use - c(<context>).c`<string>` or c(<context>).`<string>`
+           but c(<context>).t`<string>`
 
-Found 11 error(s) inside 3 file(s)
+🚨 [Error] test/input/js/broken.js:7
+    match: c('Action').c`
+     line: c('Action').c`Nope monique 2`
+      fix: You should not use - c(<context>).c`<string>` or c(<context>).`<string>`
+           but c(<context>).t`<string>`
+
+🚨 [Error] test/input/js/broken.js:8
+    match: c('Action').ngettext(msgid`Day`, '
+     line: c('Action').ngettext(msgid`Day`, 'Days', modifiedValue)
+      fix: Plural form is  - ngettext(msgid`<string single>`, `<string plural>`, value)
+
+🚨 [Error] test/input/js/broken.js:9
+    match: c('Action').ngettext(msgid`Miinute`, "
+     line: c('Action').ngettext(msgid`Miinute`, "Miinutes", modifiedValue)
+      fix: Plural form is  - ngettext(msgid`<string single>`, `<string plural>`, value)
+
+🚨 [Error] test/input/js/broken.js:10
+    match: c('Action').ngettext(msgid('Miinute'), "
+     line: c('Action').ngettext(msgid('Miinute'), "Miinutes", modifiedValue)
+      fix: Plural form is  - ngettext(msgid`<string single>`, `<string plural>`, value)
+
+🚨 [Error] test/input/js/broken.js:16
+    match: c(
+      `new_plans_mailpro2022_team_management_session_management_tooltip`
+    )
+     line:       `new_plans_mailpro2022_team_management_session_management_tooltip`
+      fix: You should not use backticks for the context definition. It is a static string
+           best to use c('<context>').t`<string>`
+
+Found 12 error(s)
+
