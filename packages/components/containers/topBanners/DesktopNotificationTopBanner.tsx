@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { c } from 'ttag';
 import { getStatus, request, Status } from '@proton/shared/lib/helpers/desktopNotification';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import TopBanner from './TopBanner';
 import { useLocalState, useConfig } from '../../hooks';
@@ -11,6 +12,13 @@ const DesktopNotificationTopBanner = () => {
     const [status, setStatus] = useState<Status>(getStatus());
     const [dontAsk, setDontAsk] = useLocalState(false, 'dont-ask-desktop-notification');
     const { APP_NAME } = useConfig();
+    const onMobile = useRef(isMobile());
+
+    if (onMobile.current) {
+        // NOTE: we could support mobile notification but this require to run a service worker
+        return null;
+    }
+
     const appName = getAppName(APP_NAME);
 
     if (!([APPS.PROTONMAIL, APPS.PROTONCALENDAR] as APP_NAMES[]).includes(APP_NAME)) {
@@ -38,7 +46,9 @@ const DesktopNotificationTopBanner = () => {
             className="link align-baseline text-left"
             type="button"
             onClick={handleEnable}
-        >{c('Action').t`enable desktop notifications`}</button>
+        >
+            {c('Action').t`enable desktop notifications`}
+        </button>
     );
 
     return (
