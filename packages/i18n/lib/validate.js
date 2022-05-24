@@ -4,7 +4,7 @@ const gettextParser = require('gettext-parser');
 
 const { success, debug } = require('./helpers/log')('proton-i18n');
 const { TEMPLATE_FILE } = require('../config');
-const { script } = require('./helpers/cli');
+const { scriptNode } = require('./helpers/cli');
 
 const isLint = process.argv.includes('--lint');
 
@@ -74,13 +74,13 @@ function validateVariables(translations) {
     throw new Error(`${total} ${total > 1 ? 'translations' : 'translation'} without matching variables !`);
 }
 
-async function main(mode, { dir } = {}) {
+async function main(mode, { dir, flags = {} } = {}) {
     /*
      * Validate the code to check if we use the correct format when we write ttag translations.
      */
     if (mode === 'lint-functions') {
         debug(`[lint-functions] validation path: ${dir}`);
-        return script('lint.sh', [dir]);
+        return scriptNode('linter.mjs', [dir || process.cwd(), flags.isVerbose ? '--verbose' : ''], 'inherit');
     }
 
     const doc = fs.readFileSync(path.resolve(process.cwd(), TEMPLATE_FILE));
