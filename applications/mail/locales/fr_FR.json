@@ -540,7 +540,7 @@
         "Déplacer vers la boîte de réception (non indésirable/spam)"
       ],
       "Move to spam": [
-        "Déplacer vers les indésirables/spam"
+        "Déplacer vers les indésirables"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
@@ -3094,13 +3094,13 @@
         "Les brouillons ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Drafts cannot be moved to Spam": [
-        "Les brouillons ne peuvent pas être déplacés vers les indésirables/spam"
+        "Les brouillons ne peuvent pas être déplacés vers les indésirables"
       ],
       "Sent messages cannot be moved to Inbox": [
         "Les messages envoyés ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Sent messages cannot be moved to Spam": [
-        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables/spam"
+        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables"
       ],
       "This action cannot be performed": [
         "Impossible d'effectuer cette action"
@@ -3261,6 +3261,11 @@
         "Aucune image sélectionnée"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Le score est requis"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Impossible d'envoyer l'invitation à ${ email }. ${ errorMessage }"
@@ -3354,7 +3359,7 @@
         "Sélectionner un dossier"
       ],
       "Spam": [
-        "Indésirables/spam"
+        "Indésirables"
       ],
       "Trash": [
         "Corbeille"
@@ -3902,7 +3907,7 @@
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables/spam, ainsi que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
       ],
       "Body: ": [
         "Corps : "
@@ -4142,7 +4147,7 @@
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier Indésirables/spam."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
       ],
       "Image URL": [
         "URL de l'image"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
-      "learn more": [
-        "en savoir plus"
-      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "learn more": [
+        "en savoir plus"
       ],
       "Left to Right": [
         "De gauche à droite"
@@ -4627,7 +4632,7 @@
         "La clé publique de cet expéditeur n'a pas encore été approuvée."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -5020,7 +5025,7 @@
         "Déplacer vers Boîte de réception"
       ],
       "Move to Spam": [
-        "Déplacer vers Indésirables/spam"
+        "Déplacer dans les indésirables"
       ],
       "Move to Trash": [
         "Déplacer vers Corbeille"
@@ -5681,7 +5686,7 @@
         "Inscrivez-vous gratuitement"
       ],
       "Spam": [
-        "Indésirables/spam"
+        "Indésirables"
       ],
       "Starred": [
         "Favoris"
@@ -5778,7 +5783,7 @@
         "Envoyés"
       ],
       "Spam": [
-        "Indésirables/spam"
+        "Indésirables"
       ],
       "Trash": [
         "Corbeille"
@@ -5985,9 +5990,34 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la confidentialité est la règle absolue."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "La nouvelle apparence unifiée et actualisée de Proton a été lancée. Nous aimerions savoir ce que vous en pensez !"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Horrible"
+      ],
+      "5 - Wonderful": [
+        "5 - Formidable"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Comment décririez-vous votre expérience avec la nouvelle version de Proton ?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Parlez-nous de votre expérience (facultatif)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Commentaires"
       ]
     },
     "new_plans: title": {
+      "Give feedback": [
+        "Donnez votre avis"
+      ],
       "Updated Proton, unified protection": [
         "Nouvelle version, protection unifiée"
       ]
@@ -6555,7 +6585,7 @@
         "${ elementsCount } conversations déplacées vers ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation déplacée vers les indésirables/spam et expéditeur ajouté à la liste de blocage.",
+        "${ elementsCount } conversation déplacée vers les indésirables et expéditeur ajouté à la liste de blocage.",
         "${ elementsCount } conversations déplacées vers les indésirables et expéditeurs ajoutés à la liste de blocage."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
@@ -6587,8 +6617,8 @@
         "${ elementsCount } messages déplacés vers ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message déplacé vers les indésirables/spam et expéditeur ajouté à la liste de blocage.",
-        "${ elementsCount } messages déplacés vers les indésirables/spam et expéditeurs ajoutés à la liste de blocage."
+        "${ elementsCount } message déplacé vers les indésirables et expéditeur ajouté à la liste de blocage.",
+        "${ elementsCount } messages déplacés vers les indésirables et expéditeurs ajoutés à la liste de blocage."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } message retiré de ${ labelName }.",
@@ -6642,7 +6672,7 @@
         "Conversation déplacée vers ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversation déplacée vers les indésirables/spam et expéditeur ajoutée à la liste de blocage."
+        "Conversation déplacée vers les indésirables et expéditeur ajoutée à la liste de blocage."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -6699,7 +6729,7 @@
         "Message déplacé vers ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Message déplacé vers les indésirables/spam et expéditeur ajouté à la liste de blocage."
+        "Message déplacé vers les indésirables et expéditeur ajouté à la liste de blocage."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."
@@ -6732,6 +6762,11 @@
       ],
       "Verification successful": [
         "Vérification réussie"
+      ]
+    },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Avis envoyé"
       ]
     },
     "Suffix for price": {
@@ -7035,6 +7070,9 @@
       "Exporting contacts": [
         "Exportation des contacts"
       ],
+      "Feedback": [
+        "Votre avis"
+      ],
       "Filter on": [
         "Filtrer sur"
       ],
@@ -7205,6 +7243,9 @@
       ],
       "Send email": [
         "Envoyer un e-mail"
+      ],
+      "Send feedback": [
+        "Envoyer un avis"
       ],
       "Send with changed preferences?": [
         "Envoyer avec les préférences modifiées ?"

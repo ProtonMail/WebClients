@@ -118,9 +118,6 @@
       "Cancel": [
         "Annullér"
       ],
-      "Cancel import": [
-        "Annuller import"
-      ],
       "Change mailbox password": [
         "Skift postkasseadgangskode"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Download alle opsætninger"
-      ],
-      "Download on another platform": [
-        "Download på en anden platform"
       ],
       "Download recovery file": [
         "Download gendannelsesfil"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Log ud"
       ],
-      "Sign out all accounts": [
-        "Log ud alle konti"
-      ],
       "Sign out from": [
         "Log ud fra"
+      ],
+      "Sign out of all accounts": [
+        ""
       ],
       "Signing in": [
         "Logger ind"
@@ -2559,7 +2553,7 @@
         "Et filter med dette navn findes allerede"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Mappenavn må ikke være tomt."
       ],
       "Incorrect login credentials. Please try again.": [
         "Forkerte loginoplysninger. Prøv venligst igen."
@@ -2604,7 +2598,7 @@
         "Ugyldig bekræftelseskode"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Etikettenavn må ikke være tomt."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
@@ -2777,10 +2771,10 @@
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Denne besked kan indeholde links, som ikke kan åbnes korrekt af din aktuelle browser"
@@ -3511,13 +3505,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "\"Mindre sikker app-adgang\" er slået til i sikkerhedsindstillingerne for din Google-konto."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Totrinsbekræftelse er aktiveret på din eksterne konto."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Totrinsbekræftelse er aktiveret på din eksterne e-mail-konto."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Hvis ${ bold2StepsDisabled } (standard Gmail-indstillinger), så sørg venligst for:"
@@ -3532,10 +3526,10 @@
         "Hvis ${ bold2StepsEnabled }, skal du sørge for, at din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "IMAP-adgang er aktiveret på din eksterne konto."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "IMAP-adgang er aktiveret på din Yahoo-konto."
       ],
       "Invalid IMAP port": [
         "Ugyldig IMAP- port"
@@ -3577,22 +3571,22 @@
         "Du kan også prøve at logge ud af ${ boldGoogleAccounts } i browseren, og derefter låse ${ linkCAPTCHA } op."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Din app-adgangskode er korrekt. Benyt ${ boldNot } din normale adgangskode."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Din e-mail-konto kræver en app-adgangskode for at eksportere dine data."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Din e-mail-konto kræver en for at eksportere dine data."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Din e-mailadresse og app-adgangskode er korrekte. Brug ${ boldNot } din normale adgangskode."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Din e-mailadresse og adgangskode er korrekte."
       ],
       "Your password is correct.": [
-        ""
+        "Din adgangskode er korrekt."
       ]
     },
     "Import error emphasis": {
@@ -4035,7 +4029,7 @@
         "Adressebekræftelse er en avanceret sikkerhedsfunktion. Aktivér den kun, hvis du ved, hvad den gør."
       ],
       "Admin account allocation": [
-        ""
+        "Admin-konto tildeling"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "Efter en adgangskode-nulstilling er dine data låst i krypteret form for at holde dem sikre."
@@ -7895,7 +7889,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL er for lang"
       ]
     },
     "Subscription attribute": {

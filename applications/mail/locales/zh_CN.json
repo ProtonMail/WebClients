@@ -3240,6 +3240,11 @@
         "没有选择图像"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "向 ${ email }. ${ errorMessage } 发送邀请失败"
@@ -4128,10 +4133,10 @@
       "Large imports can take several days.": [
         "大批量的导入可能需要几天才能完成。"
       ],
-      "learn more": [
+      "Learn more": [
         "了解详情"
       ],
-      "Learn more": [
+      "learn more": [
         "了解详情"
       ],
       "Left to Right": [
@@ -6601,6 +6606,11 @@
         "验证成功"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/月"
@@ -6889,6 +6899,9 @@
       "Exporting contacts": [
         "导出联系人"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "筛选依据"
       ],
@@ -7059,6 +7072,9 @@
       ],
       "Send email": [
         "发送邮件"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         "按变更后的首选项发送？"

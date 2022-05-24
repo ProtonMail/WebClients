@@ -3261,6 +3261,11 @@
         "Geen afbeelding geselecteerd"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Score is vereist"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Kan geen uitnodiging versturen naar ${ email }. ${ errorMessage }"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Grote importen kunnen meerdere dagen duren."
       ],
-      "learn more": [
-        "meer informatie"
-      ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "learn more": [
+        "meer informatie"
       ],
       "Left to Right": [
         "Van links naar rechts"
@@ -4981,7 +4986,7 @@
         "Ga naar Prullenbak"
       ],
       "Insert link": [
-        ""
+        "Link invoegen"
       ],
       "Jump to first": [
         "Spring naar eerste"
@@ -5985,9 +5990,34 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "We hebben Proton een uniforme, nieuwe look gegeven. We zijn benieuwd wat je ervan vindt!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Verschrikkelijk"
+      ],
+      "5 - Wonderful": [
+        "5 - Geweldig"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Hoe zou je je ervaring met de nieuwe Proton omschrijven?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Vertel ons over je ervaring (optioneel)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Feedback"
       ]
     },
     "new_plans: title": {
+      "Give feedback": [
+        "Feedback geven"
+      ],
       "Updated Proton, unified protection": [
         "Vernieuwde Proton, uniforme beveiliging"
       ]
@@ -6734,6 +6764,11 @@
         "Verificatie gelukt"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Feedback verzonden"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/maand"
@@ -7035,6 +7070,9 @@
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "Filter on": [
         "Filteren op"
       ],
@@ -7205,6 +7243,9 @@
       ],
       "Send email": [
         "E-mail verzenden"
+      ],
+      "Send feedback": [
+        "Feedback versturen"
       ],
       "Send with changed preferences?": [
         "Versturen met gewijzigde voorkeuren?"

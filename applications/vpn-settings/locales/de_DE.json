@@ -137,9 +137,6 @@
       "Download all configurations": [
         "Alle Konfigurationen herunterladen"
       ],
-      "Download on another platform": [
-        "Auf einer anderen Plattform herunterladen"
-      ],
       "Edit": [
         "Bearbeiten"
       ],
@@ -2450,7 +2447,7 @@
         "Du hast ${ spaceDisplayed }% deiner Speicherkapazität aufgebraucht. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Du hast 100% deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
+        "Du hast 100 % deiner Speicherkapazität aufgebraucht. Du kannst keine neuen E-Mails senden oder empfangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Du wirst ${ loseAllData } in deinem „${ BRAND_NAME }”-Konto verlieren. Um diese wiederherzustellen, musst du dein altes Passwort eingeben."
@@ -3358,6 +3355,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Wenn du zu einem anderen Abonnement wechselst, verlierst du alle Vorteile des ${ visionary }-Abonnements und kannst du anschließend nicht zu ${ visionary } zurückwechseln."
+      ],
+      "learn more": [
+        "erfahre mehr"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."

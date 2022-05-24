@@ -3261,6 +3261,11 @@
         "Aucune image sélectionnée"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Le score est requis"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Impossible d'envoyer l'invitation à ${ email }. ${ errorMessage }"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Les importations importantes peuvent prendre plusieurs jours."
       ],
-      "learn more": [
-        "en savoir plus"
-      ],
       "Learn more": [
         "En savoir plus"
+      ],
+      "learn more": [
+        "en savoir plus"
       ],
       "Left to Right": [
         "De gauche à droite"
@@ -6719,6 +6724,11 @@
         "Vérification réussie"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Avis envoyé"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mois"
@@ -7020,6 +7030,9 @@
       "Exporting contacts": [
         "Exportation des contacts"
       ],
+      "Feedback": [
+        "Votre avis"
+      ],
       "Filter on": [
         "Filtrer sur"
       ],
@@ -7190,6 +7203,9 @@
       ],
       "Send email": [
         "Envoyer le courriel"
+      ],
+      "Send feedback": [
+        "Envoyer un avis"
       ],
       "Send with changed preferences?": [
         "Envoyer avec les préférences modifiées?"

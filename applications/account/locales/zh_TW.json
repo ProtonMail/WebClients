@@ -118,11 +118,8 @@
       "Cancel": [
         "取消"
       ],
-      "Cancel import": [
-        "取消匯入"
-      ],
       "Change mailbox password": [
-        "更改郵箱密碼"
+        "變更郵箱密碼"
       ],
       "Change organization keys": [
         "變更組織金鑰"
@@ -131,7 +128,7 @@
         "變更其他電子郵件訂閱"
       ],
       "Change password": [
-        "更改密碼"
+        "變更密碼"
       ],
       "Chat with us": [
         "與我們聊天"
@@ -266,7 +263,7 @@
         "沒收到代碼？"
       ],
       "Didn't receive the code?": [
-        "沒有收到驗證碼嗎？"
+        "尚未收到驗證碼？"
       ],
       "Disable recovery phrase": [
         "停用復原短語"
@@ -295,9 +292,6 @@
       "Download all configurations": [
         "下載所有組態設定"
       ],
-      "Download on another platform": [
-        "其它系統平台下載"
-      ],
       "Download recovery file": [
         "下載帳戶救援檔案"
       ],
@@ -311,7 +305,7 @@
         "編輯賬單遞送詳細資訊"
       ],
       "Edit email address": [
-        "編輯電子郵件地址"
+        "編輯電子郵件位址"
       ],
       "Edit label": [
         "編輯標籤"
@@ -428,7 +422,7 @@
         "保留"
       ],
       "label emails as": [
-        "給電子郵件加上標籤"
+        "將電郵加上標籤"
       ],
       "Load more": [
         "載入更多"
@@ -440,7 +434,7 @@
         "標記為預設值"
       ],
       "mark emails as": [
-        "將電子郵件標記為"
+        "將電郵標記為"
       ],
       "Maybe later": [
         "稍後再考慮"
@@ -452,7 +446,7 @@
         "更多資訊：${ safeTitle }"
       ],
       "move emails to": [
-        "將電子郵件移動到"
+        "將電郵移動到"
       ],
       "Move to Allow List": [
         "移動到允許清單"
@@ -566,7 +560,7 @@
         "功能請求"
       ],
       "Request new code": [
-        "要求新代碼"
+        "重發驗證碼"
       ],
       "Reset credentials": [
         "重設認證"
@@ -587,7 +581,7 @@
         "重設縮放"
       ],
       "Restore administrator privileges": [
-        "恢復系統管理員權限"
+        "恢復管理員權限"
       ],
       "Resubscribe": [
         "重新訂閱"
@@ -611,7 +605,7 @@
         "撤銷 ${ name }"
       ],
       "Revoke all other sessions": [
-        "全部撤銷其他工作階段"
+        "撤銷所有其它工作階段"
       ],
       "Save": [
         "儲存"
@@ -641,7 +635,7 @@
         "選擇時區"
       ],
       "send auto-reply email": [
-        "傳送自動回覆電子郵件"
+        "傳送自動回覆電郵"
       ],
       "Send code": [
         "傳送代碼"
@@ -691,11 +685,11 @@
       "Sign out": [
         "登出"
       ],
-      "Sign out all accounts": [
-        "登出所有帳號"
-      ],
       "Sign out from": [
         "登出自"
+      ],
+      "Sign out of all accounts": [
+        "登出所有帳號"
       ],
       "Signing in": [
         "登入"
@@ -755,7 +749,7 @@
         "更新還原檔案"
       ],
       "Update recovery phrase": [
-        "上傳還原短語"
+        "更新還原短語"
       ],
       "Upgrade": [
         "升級"
@@ -797,7 +791,7 @@
         "驗證電子郵件"
       ],
       "View": [
-        "查看"
+        "檢視"
       ],
       "View invoice": [
         "查看帳單"
@@ -815,7 +809,7 @@
         "仍然廢止"
       ],
       "Wipe": [
-        "抹除"
+        "清除"
       ],
       "Yes": [
         "是"
@@ -2294,7 +2288,7 @@
         "正在加密並匯入聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
       ],
       "Get up to 3 months of ${ mailPlus } for free for every friend who subscribes to ${ MAIL_APP_NAME }.": [
-        ""
+        "當您的朋友訂閱 ${ MAIL_APP_NAME } 後，您最多可以獲得免費的三個月 ${ mailPlus } 訂閱。"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "您正在匯入的聯絡人清單似乎包含群組。請複閱這些群組該如何匯入。"
@@ -2540,7 +2534,7 @@
         "以此為名的篩選器已存在"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "資料夾名稱不能留空。"
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -2585,7 +2579,7 @@
         "驗證碼無效"
       ],
       "Label name cannot be empty.": [
-        ""
+        "標籤名稱不能留空。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "請至少將 ${ calendarToFixCount } 個行事曆與現存的 Proton calendar 合併"
@@ -2756,10 +2750,10 @@
         "此欄位至少須有 ${ minimumLength } 個字元。"
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "此資料夾名稱無法使用。請換另一個名稱。"
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "此標籤名稱無法使用。請換另一個名稱。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此郵件包含的某些連結 URL 或未能以您目前的瀏覽器正確開啟"
@@ -3476,7 +3470,7 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳戶。"
       ],
       "2-step verification is enabled in your external account.": [
         ""
@@ -3500,7 +3494,7 @@
         ""
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "您的 Yahoo 帳號已啟用 IMAP 存取。"
       ],
       "Invalid IMAP port": [
         "無效的 IMAP 連接埠"
@@ -3542,7 +3536,7 @@
         "您亦可嘗試在瀏覽器登出 ${ boldGoogleAccounts }，然後透過 ${ linkCAPTCHA } 驗證。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "您的 App 密碼正確無誤。請${ boldNot } 使用您常使用的密碼。"
       ],
       "Your email account requires an app password to export your data.": [
         ""
@@ -3557,7 +3551,7 @@
         "您的電子郵件地址和密碼均為正確."
       ],
       "Your password is correct.": [
-        ""
+        "您的密碼正確無誤。"
       ]
     },
     "Import error emphasis": {
@@ -4178,7 +4172,7 @@
         "建立並管理子帳號，並為其指派在您的自訂網域下的電子郵件地址。"
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        ""
+        "為其他人建立電子郵件地址；為企業、學校或小組管理 ${ MAIL_APP_NAME } 。新增您的組織名稱和自訂網域 (例如 @yourcompany.com) 以開始使用。 "
       ],
       "Create in": [
         "建立在"
@@ -4400,7 +4394,7 @@
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "若您在 ${ MAIL_APP_NAME } 自訂了一個網域，您可以啟用「全部擷取電子郵件地址」，以接收任何寄到您的網域但收件人不存在(可能是因為拼寫錯誤)的郵件。"
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "若您有禮品代碼，請在下方輸入以享用折扣。"
@@ -4517,7 +4511,7 @@
         "有件至關重要的事"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        ""
+        "我正在用 ${ appName } ，我覺得你也會喜歡它。他是一個主打安全性的電子郵件服務，可以保護你的隱私權。用我的連結註冊的話還可以免費獲得一個月的加值帳戶(普通帳戶是永遠免費的) 哦： ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
@@ -5075,7 +5069,7 @@
         "為繼續此程序，選擇帳戶復原手段，然後我們將能驗證您的請求。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
+        "保護您的網際網路連線安全，請下載並安裝 ${ VPN_APP_NAME } 在您的裝置上，並連接至 ${ VPN_APP_NAME } 伺服器。"
       ],
       "To use ${ toAppName }, please create an address.": [
         "要使用 ${ toAppName }，請建立地址。"
@@ -5279,7 +5273,7 @@
         "您不能推薦 ${ appName } 使用者"
       ],
       "You cannot use the OpenVPN / IKEv2 credentials to log in to ${ VPN_APP_NAME } applications or the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "您無法使用 OpenVPN / IKEv2 認證以登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。 ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您沒有設定備援方法，萬一忘記您的密碼，將無從恢復帳號。要在無備援電子郵件的情況下繼續嗎？"

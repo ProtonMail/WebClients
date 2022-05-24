@@ -300,7 +300,7 @@
         "Aktifkan"
       ],
       "enable desktop notifications": [
-        "mengaktifkan pemberitahuan desktop"
+        "aktifkan notifikasi desktop"
       ],
       "Encryption": [
         "Enkripsi"
@@ -973,10 +973,10 @@
         "${ addContact } atau ${ importContact }."
       ],
       "No results found.": [
-        "Hasil tidak ditemukan."
+        "Tidak ada hasil yang ditemukan."
       ],
       "Please try another search term.": [
-        "Silakan coba term pencarian lain."
+        "Silakan coba kata kunci pencarian lainnya."
       ],
       "You don't have any contacts.": [
         "Anda tidak memiliki kontak."
@@ -3100,7 +3100,7 @@
     },
     "Error importing contacts": {
       "An error occurred reading your file ${ formattedFilename }. File doesn't have the right format.": [
-        "Ada kesalahan saat membaca berkas ${ formattedFilename }. Format berkas salah."
+        "Terdapat kesalahan dalam membaca berkas ${ formattedFilename } milik Anda. Format berkas tidak sesuai."
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
         "Ada kesalahan saat mengunggah berkas ${ formattedFilename }. Ukuran maksimum berkas ${ MAX_IMPORT_FILE_SIZE_STRING }."
@@ -3144,16 +3144,16 @@
         "Validasi acara gagal"
       ],
       "Floating times not supported": [
-        "Waktu mengapung tidak didukung"
+        "Waktu desimal tidak didukung"
       ],
       "Free-busy time information": [
-        "Informasi waktu luang-sibuk"
+        "Informasi waktu luang dan waktu sibuk"
       ],
       "Invalid event": [
         "Acara tidak valid"
       ],
       "Journal entry": [
-        "Entri Jurnal"
+        "Entri jurnal"
       ],
       "Malformed all-day event": [
         "Acara sepanjang hari salah format"
@@ -3171,7 +3171,7 @@
         "Waktu mulai hilang"
       ],
       "No UID, title or start time": [
-        "Tidak ada UID, judul atau waktu mulai"
+        "Tidak ada UID, judul, atau waktu mulai"
       ],
       "Non-Gregorian": [
         "Non-Gregorian"
@@ -3238,6 +3238,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Gambar belum dipilih"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Nilai diperlukan"
       ]
     },
     "Error sending calendar invitation": {
@@ -3844,7 +3849,7 @@
         "Sebelum meminta kode verifikasi baru, periksa folder spam Anda dan pastikan ${ strong } merupakan alamat email yang benar."
       ],
       "Body: ": [
-        "Tubuh: "
+        "Isi: "
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "Tidak mengingat kata sandi Anda? Kami dapat membantu Anda untuk membersihkan data terenkripsi semua kontak yang dienkripsi dengan kunci ini dan dalam prosesnya mengabaikan peringatan."
@@ -4128,11 +4133,11 @@
       "Large imports can take several days.": [
         "Proses impor yang melibatkan data-data dalam jumlah yang besar dapat memakan waktu hingga beberapa hari."
       ],
-      "learn more": [
-        "pelajari lebih lanjut"
-      ],
       "Learn more": [
         "Pelajari lebih lanjut"
+      ],
+      "learn more": [
+        "pelajari lebih lanjut"
       ],
       "Left to Right": [
         "Kiri ke Kanan"
@@ -4513,7 +4518,7 @@
         "Pesan ini telah kedaluwarsa!"
       ],
       "This message is from a mailing list.": [
-        "Pesan ini dari milis."
+        "Pesan ini berasal dari milis."
       ],
       "This message is signed by a key that has not been trusted yet.": [
         "Pesan ini ditandatangani dengan kunci yang belum dipercaya."
@@ -4567,7 +4572,7 @@
         "Untuk dapat berhenti berlangganan dari milis ini, sebuah email akan dikirimkan dari ${ boldFrom } dengan rincian-rincian berikut sebagaimana yang diterakan oleh pengelola milis:"
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
-        "Untuk dapat berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan-arahan lebih lanjut dari pengelola milis:"
+        "Untuk berhenti berlangganan dari milis ini, Anda akan dibawa ke URL berikut yang berisikan arahan lebih lanjut dari pengelola milis:"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, anda harus mempercayai satu atau beberapa kunci publik yang tersedia, termasuk yang ingin anda gunakan untuk mengirim. Ini mencegah kunci enkripsi dipalsukan."
@@ -5503,7 +5508,7 @@
         "Arsip"
       ],
       "clearing your browser cache": [
-        "membersihkan cache peramban Anda"
+        "membersihkan cache browser Anda"
       ],
       "Create a calendar linked to an active email address.": [
         "Buat kalender yang ditautkan pada alamat email yang aktif."
@@ -6601,6 +6606,11 @@
         "Verifikasi berhasil"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Tanggapan telah dikirim"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/bulan"
@@ -6889,6 +6899,9 @@
       "Exporting contacts": [
         "Mengekspor kontak"
       ],
+      "Feedback": [
+        "Kritik dan Saran"
+      ],
       "Filter on": [
         "Filter pada"
       ],
@@ -7060,6 +7073,9 @@
       "Send email": [
         "Kirim email"
       ],
+      "Send feedback": [
+        "Kirim tanggapan"
+      ],
       "Send with changed preferences?": [
         "Kirim dengan preferensi yang telah diubah?"
       ],
@@ -7167,7 +7183,7 @@
         "Enkripsi surel mewajibkan tanda tangan surel untuk mengautentikasi pesan yang Anda kirim"
       ],
       "Encrypted data": [
-        "Data-data terenkripsi"
+        "Data terenkripsi"
       ],
       "Encrypted data with verified digital signature": [
         "Data terenkripsi dengan tanda tangan digital terverifikasi"
@@ -7179,7 +7195,7 @@
         "Sub-folder milik sistem akan muncul sebagai folder terpisah di ${ MAIL_APP_NAME }"
       ],
       "The import will start with the most recent messages.": [
-        "Proses impor akan dimulai dari pesan-pesan Anda yang paling baru."
+        "Proses impor akan dimulai dari pesan Anda yang paling baru."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Tindakan ini akan mengunduh semua pesan agar pesan tersebut dapat dicari secara lokal. Membersihkan data peramban web atau keluar dari mail Anda akan menonaktifkan opsi ini."
