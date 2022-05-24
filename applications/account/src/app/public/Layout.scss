@@ -4,12 +4,18 @@
 @import '~@proton/styles/scss/config';
 
 .sign-layout {
-	&-bg {
-		background-color: var(--background-norm);
+	&-logo {
+		margin-inline: 2em;
+		margin-block: 1em 4em;
 
 		@include respond-to($breakpoint-small, 'max') {
-			padding-inline: 1em;
+			margin-inline: 1em;
+			margin-block: 1em;
 		}
+	}
+
+	&-bg {
+		background-color: var(--background-norm);
 
 		@include respond-to($breakpoint-tiny, 'min') {
 			background: top center / cover no-repeat #f7f5ff;
@@ -147,6 +153,10 @@
 }
 
 .sign-layout-container {
+	@include respond-to($breakpoint-small, 'max') {
+		padding-inline: 1em;
+	}
+
 	// Included through copy
 	/* stylelint-disable-next-line */
 	background-image: url(/assets/host.png);
