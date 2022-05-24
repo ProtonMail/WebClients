@@ -819,7 +819,7 @@
         "提交"
       ],
       "Switch to rich text": [
-        "切換至豐富文字"
+        "切換至多文字格式"
       ],
       "Theme": [
         "佈景主題"
@@ -3240,6 +3240,11 @@
         "未選取任何圖片"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "無法將邀請函寄送至 ${ email } 。 ${ errorMessage }"
@@ -4128,11 +4133,11 @@
       "Large imports can take several days.": [
         "大量匯入或需時數天完成。"
       ],
-      "learn more": [
-        ""
-      ],
       "Learn more": [
         "了解更多"
+      ],
+      "learn more": [
+        ""
       ],
       "Left to Right": [
         "由左至右"
@@ -6601,6 +6606,11 @@
         "驗證成功"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         ""
@@ -6889,6 +6899,9 @@
       "Exporting contacts": [
         "正在匯出聯絡人"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "篩選"
       ],
@@ -7059,6 +7072,9 @@
       ],
       "Send email": [
         "發送電子郵件"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         "要使用已變更的喜好設定傳送嗎？"

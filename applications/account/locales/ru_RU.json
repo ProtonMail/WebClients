@@ -118,9 +118,6 @@
       "Cancel": [
         "Отменить"
       ],
-      "Cancel import": [
-        "Отменить импорт"
-      ],
       "Change mailbox password": [
         "Изменить пароль почтового ящика"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Скачать все конфигурации"
-      ],
-      "Download on another platform": [
-        "Скачать на другой платформе"
       ],
       "Download recovery file": [
         "Скачать файл восстановления"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Выйти из учетной записи"
       ],
-      "Sign out all accounts": [
-        "Выйти из всех учётных записей"
-      ],
       "Sign out from": [
         "Выти из"
+      ],
+      "Sign out of all accounts": [
+        "Выйти из всех учётных записей"
       ],
       "Signing in": [
         "Выполняется вход"
@@ -7364,7 +7358,7 @@
         "Получить ${ connections } высокоскоростных VPN-подключения"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Получить ${ connections } высокоскоростное VPN-подключение на пользователя",
+        "Получите ${ connections } высокоскоростное VPN-подключение на пользователя",
         "Получить ${ connections } высокоскоростных VPN-подключения на пользователя",
         "Получить ${ connections } высокоскоростных VPN-подключений на пользователя",
         "Получить ${ connections } высокоскоростных VPN-подключения на пользователя"
@@ -7656,6 +7650,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Если вы перейдете на другой тариф, то потеряете все преимущества тарифа ${ visionary } и больше не сможете вернуться к ${ visionary }."
       ],
+      "learn more": [
+        "подробнее"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Тариф ${ visionary } больше недоступен новым подписчикам, поскольку предназначен для пользователей со стороны ${ BRAND_NAME } и предусматривает для них специальные функции и преимущества."
       ],
@@ -7714,7 +7711,7 @@
     },
     "new_plans: message displayed when user visit v5 login": {
       "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        ""
+        "Мы обновили внешний вид Proton. Сервисов много — миссия одна. Чтобы продолжить, войдите в аккаунт. Вы также можете ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {

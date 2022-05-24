@@ -3282,6 +3282,11 @@
         "Imagine neselectată"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Scorul este obligatoriu"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nu se poate trimite invitația către ${ email }. ${ errorMessage }"
@@ -4270,11 +4275,11 @@
       "Large imports can take several days.": [
         "Importările mari pot dura mai multe zile."
       ],
-      "learn more": [
-        "detalii"
-      ],
       "Learn more": [
         "Detalii"
+      ],
+      "learn more": [
+        "detalii"
       ],
       "Left to Right": [
         "De la stânga la dreapta"
@@ -6837,6 +6842,11 @@
         "Verificare reușită"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Mesajul a fost trimis"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/lună"
@@ -7151,6 +7161,9 @@
       "Exporting contacts": [
         "Exportare contacte"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "Filter on": [
         "Filtrare după"
       ],
@@ -7321,6 +7334,9 @@
       ],
       "Send email": [
         "Trimitere e-mail"
+      ],
+      "Send feedback": [
+        "Trimitere feedback"
       ],
       "Send with changed preferences?": [
         "Trimitere cu preferințele schimbate?"

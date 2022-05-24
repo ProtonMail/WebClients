@@ -118,9 +118,6 @@
       "Cancel": [
         "Zrušit"
       ],
-      "Cancel import": [
-        "Zrušit import"
-      ],
       "Change mailbox password": [
         "Změnit heslo poštovní schránky"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Stáhnout všechny konfigurace"
-      ],
-      "Download on another platform": [
-        "Stáhnout na jiné platformě"
       ],
       "Download recovery file": [
         "Stáhnout soubor pro obnovení"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Odhlásit se"
       ],
-      "Sign out all accounts": [
-        "Odhlásit se ze všech účtů"
-      ],
       "Sign out from": [
         "Odhlásit z"
+      ],
+      "Sign out of all accounts": [
+        ""
       ],
       "Signing in": [
         "Přihlašování"
@@ -842,10 +836,10 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        "",
-        "",
-        "",
-        ""
+        "+ ${ _users } uživatel",
+        "+ ${ _users } uživatelé",
+        "+ ${ _users } uživatelů",
+        "+ ${ _users } uživatelů"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } vlastní doména",
@@ -963,7 +957,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        ""
+        "Přidat do kalendáře a označit jako čekající"
       ]
     },
     "Autoresponse": {
@@ -973,7 +967,7 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 uživatelů"
       ]
     },
     "Badge for domain": {
@@ -1008,13 +1002,13 @@
     },
     "Billing cycle option": {
       "1 month": [
-        ""
+        "1 měsíc"
       ],
       "12 months": [
-        ""
+        "12 měsíců"
       ],
       "24 months": [
-        ""
+        "24 měsíců"
       ],
       "Annually": [
         "Ročně"
@@ -1301,16 +1295,16 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
       ],
       "Total for ${ n } month": [
-        "",
-        "",
-        "",
-        ""
+        "Celkem za ${ n } měsíc",
+        "Celkem za ${ n } měsíce",
+        "Celkem za ${ n } měsíců",
+        "Celkem za ${ n } měsíců"
       ]
     },
     "Collapsible tooltip": {
@@ -2257,10 +2251,10 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/měsíčně"
       ],
       "/user per month": [
-        ""
+        "/uživatel za měsíc"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2336,7 +2330,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        ""
+        "Blahopřejeme! Získali ste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -3581,13 +3575,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "\"Méně bezpečný přístup k aplikaci\" je zapnut v nastavení zabezpečení vašeho účtu Google."
       ],
       "2-step verification is enabled in your external account.": [
-        ""
+        "Na vašem vzdáleném účtu je povoleno dvoufázové ověřování."
       ],
       "2-step verification is enabled in your external email account.": [
-        ""
+        "Na vašem externím e-mailovém účtu je povoleno dvoufázové ověření."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "Pokud ${ bold2StepsDisabled } (výchozí nastavení Gmail), ujistěte se prosím:"
@@ -3602,10 +3596,10 @@
         "Pokud ${ bold2StepsEnabled }, ujistěte se prosím, že Vaše adresa e-mailu a heslo aplikace jsou správné. Proveďte ${ boldNot } použijte běžné heslo."
       ],
       "IMAP access is enabled in your external account.": [
-        ""
+        "Přístup IMAP je povolen ve vašem vzdáleném účtu."
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Přístup IMAP je ve vašem účtu Yahoo povolen."
       ],
       "Invalid IMAP port": [
         "Neplatný IMAP port"
@@ -3629,10 +3623,10 @@
         "Proton se nemůže přihlásit k Vašemu Gmail účtu. Zajistěte prosím, že adresa mailového servu a číslo portu jsou správně."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        ""
+        "Proton se nemůže přihlásit k Vašemu účtu Yahoo. Zajistěte prosím, že adresa mailového servu a číslo portu jsou správně."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that:": [
-        ""
+        "Proton se nemůže připojit k vašemu účtu Yahoo. Ujistěte se, že:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Bylo zadáno příliš mnoho požadavků. Zkuste to za pár minut."
@@ -3647,22 +3641,22 @@
         "Můžete se také zkusit odhlásit z ${ boldGoogleAccounts } a následně odemknout ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Vaše heslo pro aplikaci je správné. ${ boldNot } používejte Vaše běžné heslo."
       ],
       "Your email account requires an app password to export your data.": [
-        ""
+        "Váš e-mailový účet vyžaduje heslo aplikace pro export vašich dat."
       ],
       "Your email account requires one to export your data.": [
-        ""
+        "Váš e-mailový účet tohle vyžaduje pro export vašich dat."
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Vaše mailová adresa a heslo aplikace jsou správné. ${ boldNot } použijte Vaše běžné heslo."
       ],
       "Your email address and password are correct.": [
-        ""
+        "Vaše e-mailová adresa a heslo jsou správné."
       ],
       "Your password is correct.": [
-        ""
+        "Vaše heslo je správné."
       ]
     },
     "Import error emphasis": {
@@ -3710,7 +3704,7 @@
         "Přejít na ${ boldAccountSecurity }"
       ],
       "Go to Outlook ${ securitySettingsLink }": [
-        ""
+        "Přejít na Outlook ${ securitySettingsLink }"
       ],
       "If 2-step verification is off, turn it on": [
         "Pokud je dvoufázové ověřování vypnuté, zapněte ho"
@@ -3810,7 +3804,7 @@
         "sdílené kalendáře"
       ],
       "Yahoo": [
-        ""
+        "Yahoo"
       ]
     },
     "Import instructions step": {
@@ -3818,10 +3812,10 @@
         "Klikněte na odkaz ${ boldICS } a stáhněte si soubor"
       ],
       "Go to ${ calendarLink } in your Outlook settings": [
-        ""
+        "Přejít na ${ calendarLink } v nastavení Outlook"
       ],
       "Go to ${ calendarViewLink } in Yahoo": [
-        ""
+        "Přejít na ${ calendarViewLink } v Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Najeďte myší na kalendář, který chcete importovat, a otevřete rozevírací nabídku"
@@ -6807,7 +6801,7 @@
         "Soukromé"
       ],
       "VPN connections": [
-        ""
+        "VPN připojení"
       ]
     },
     "Label for news": {
@@ -7264,7 +7258,7 @@
     },
     "Navigation": {
       "Back": [
-        ""
+        "Zpět"
       ],
       "Back to Calendar": [
         "Zpět do Kalendáře"
@@ -7348,12 +7342,12 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Dále se musíte přihlásit ke svému účtu Google a udělit společnosti Proton přístup ke svým datům."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
       ]
     },
     "Onboarding": {
@@ -7970,7 +7964,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
       "Invite friends and earn rewards!": [
         "Pozvěte přátele a získejte odměny!"
@@ -8043,7 +8037,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL je příliš dlouhá"
       ]
     },
     "Subscription attribute": {
@@ -8054,10 +8048,10 @@
         ""
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ maxVpn } vysokorychlostní připojení VPN",
+        "${ maxVpn } vysokorychlostní připojení VPN",
+        "${ maxVpn } vysokorychlostních připojení VPN",
+        "${ maxVpn } vysokorychlostních připojení VPN"
       ],
       "${ n } calendar": [
         "${ n } kalendář",
@@ -8090,10 +8084,10 @@
         ""
       ],
       "${ UsedAddresses } address": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedAddresses } adresa",
+        "${ UsedAddresses } adresy",
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adres"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "",
@@ -8102,10 +8096,10 @@
         ""
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedCalendars } kalendář",
+        "${ UsedCalendars } kalendáře",
+        "${ UsedCalendars } kalendářů",
+        "${ UsedCalendars } kalendářů"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "",
@@ -8123,13 +8117,13 @@
         "1 e-mailová adresa"
       ],
       "1 VPN connection": [
-        ""
+        "1 VPN připojení"
       ],
       "Access to streaming services globally": [
-        ""
+        "Globální přístup ke streamovacím službám"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Vestavěný blokátor reklam (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
         "",
@@ -8351,18 +8345,18 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/měsíčně"
       ],
       "/user per month": [
-        ""
+        "/uživatel za měsíc"
       ]
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/měsíčně"
       ],
       "per month": [
-        ""
+        "za měsíc"
       ]
     },
     "Summary of errors during export calendar": {
