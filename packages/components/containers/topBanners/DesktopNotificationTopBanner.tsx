@@ -14,7 +14,7 @@ const DesktopNotificationTopBanner = () => {
     const { APP_NAME } = useConfig();
     const onMobile = useRef(isMobile());
 
-    if (onMobile) {
+    if (onMobile.current) {
         // NOTE: we could support mobile notification but this require to run a service worker
         return null;
     }
@@ -40,8 +40,6 @@ const DesktopNotificationTopBanner = () => {
         );
     };
 
-    const action = onMobile ? c('Action').t`enable mobile notifications` : c('Action').t`enable desktop notifications`;
-
     const enableDesktopNotifications = (
         <button
             key="enable-desktop-notifications"
@@ -49,7 +47,7 @@ const DesktopNotificationTopBanner = () => {
             type="button"
             onClick={handleEnable}
         >
-            {action}
+            {c('Action').t`enable desktop notifications`}
         </button>
     );
 
