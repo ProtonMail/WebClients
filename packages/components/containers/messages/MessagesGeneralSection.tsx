@@ -1,10 +1,11 @@
-import { useEffect, useState, MouseEvent } from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
+import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useModalState, SettingsLink } from '../../components';
-import { useMailSettings, useUser } from '../../hooks';
+import { useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -17,16 +18,10 @@ import {
 import Icon from '../../components/icon/Icon';
 
 const MessagesGeneralSection = () => {
-    const [{ Shortcuts = 0 } = {}] = useMailSettings();
-    const [, setShortcuts] = useState(Shortcuts);
+    const [userSettings] = useUserSettings();
     const [user, userLoading] = useUser();
 
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-
-    // Handle updates from the Event Manager.
-    useEffect(() => {
-        setShortcuts(Shortcuts);
-    }, [Shortcuts]);
 
     const showDailyEmailNotificationSection = !userLoading && !user.isSubUser && user.isPrivate;
 
@@ -34,6 +29,9 @@ const MessagesGeneralSection = () => {
         e.preventDefault();
         setMailShortcutsModalOpen(true);
     };
+
+    const isDailyEmailEnabled = !!userSettings?.Email?.Notify && !!userSettings?.Email?.Value;
+    const canEnableDailyEmail = !!userSettings?.Email?.Value;
 
     return (
         <>
@@ -54,11 +52,19 @@ const MessagesGeneralSection = () => {
                 <SettingsLayout>
                     <SettingsLayoutLeft>
                         <DailyEmailNotificationToggleLabel />
+                        <div className="text-sm">
+                            <SettingsLink path="/recovery#account" app={APPS.PROTONMAIL}>
+                                {isDailyEmailEnabled && userSettings?.Email?.Status === SETTINGS_STATUS.UNVERIFIED
+                                    ? c('Action').t`Requires a verified recovery email address`
+                                    : c('Link').t`Set email address`}
+                            </SettingsLink>{' '}
+                        </div>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="pt0-5">
-                        <DailyEmailNotificationToggleInput />
-                        <SettingsLink className="ml0-5" path="/recovery" app={APPS.PROTONMAIL}>{c('Link')
-                            .t`Set email address`}</SettingsLink>
+                        <DailyEmailNotificationToggleInput
+                            isEnabled={isDailyEmailEnabled}
+                            canEnable={canEnableDailyEmail}
+                        />
                     </SettingsLayoutRight>
                 </SettingsLayout>
             )}
