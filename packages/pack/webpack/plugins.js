@@ -110,6 +110,8 @@ module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, 
             templateParameters: {
                 appName: faviconConfig.favicons.appName,
                 appDescription: faviconConfig.favicons.appDescription,
+                url: faviconConfig.url,
+                locales: faviconConfig.locales,
             },
             inject: 'body',
             scriptLoading: 'defer',
