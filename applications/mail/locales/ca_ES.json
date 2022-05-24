@@ -3261,6 +3261,11 @@
         "No s'ha seleccionat cap imatge"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "No es pot enviar la invitació a ${ email }. ${ errorMessage }"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Imports grans poden trigar diversos dies."
       ],
-      "learn more": [
-        "més informació"
-      ],
       "Learn more": [
         "Més informació"
+      ],
+      "learn more": [
+        "més informació"
       ],
       "Left to Right": [
         "Esquerra a Dreta"
@@ -6719,6 +6724,11 @@
         "Èxit de verificació"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         ""
@@ -7020,6 +7030,9 @@
       "Exporting contacts": [
         "Exportant contactes"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "Filtrat"
       ],
@@ -7190,6 +7203,9 @@
       ],
       "Send email": [
         "Enviar correu"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         "Enviar amb preferències canviades?"

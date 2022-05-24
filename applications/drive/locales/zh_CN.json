@@ -1789,7 +1789,7 @@
         "文件夹“${ name }”已在下载中"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "文件夹名称不能为空。"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -1813,7 +1813,7 @@
         "无效的验证代码"
       ],
       "Label name cannot be empty.": [
-        ""
+        "标签名称不能为空。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -1927,10 +1927,10 @@
         "此字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "文件夹名称不可用，请重新填写。"
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "标签名称不可用，请重新填写。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "此邮件含有浏览器不能打开的链接"
@@ -2621,7 +2621,7 @@
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
       ],
       "Not a valid URL": [
-        ""
+        "非有效链接"
       ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
@@ -2714,7 +2714,7 @@
         "选择向该地址发送邮件的首选格式。"
       ],
       "Select what you want to move from Google.": [
-        ""
+        "请选择你要从 Google 账户导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -2753,7 +2753,7 @@
         "客服团队"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "应用程序需要在本地解密您的联系人，然后才能导出。 在进程结束时，将生成一个 VCF 文件，您将能够下载它。"
@@ -2762,7 +2762,7 @@
         "以下内容可能已被篡改：${ items }，请确认后打开。"
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
-        ""
+        "当前仍有待传输的文件，关闭传输管理器将中断所有操作。"
       ],
       "There are no files yet": [
         "还没有文件"
@@ -2855,7 +2855,7 @@
         "正在更新网盘搜索..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "Uploaded": [
         "已上传"
@@ -2984,7 +2984,7 @@
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
       ],
       "Your secure, shareable link for ${ boldNameText }": [
-        ""
+        "${ boldNameText } 的安全、可共享链接"
       ]
     },
     "Info on errors": {

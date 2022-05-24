@@ -118,9 +118,6 @@
       "Cancel": [
         "Batal"
       ],
-      "Cancel import": [
-        "Batalkan impor"
-      ],
       "Change mailbox password": [
         "Ganti kata sandi kotak pesan"
       ],
@@ -295,9 +292,6 @@
       "Download all configurations": [
         "Unduh seluruh konfigurasi"
       ],
-      "Download on another platform": [
-        "Unduh pada platform lainnya"
-      ],
       "Download recovery file": [
         "Unduh berkas pemulihan"
       ],
@@ -356,7 +350,7 @@
         "Perpanjang"
       ],
       "Font": [
-        "Fon"
+        "Font"
       ],
       "Generate key": [
         "Hasilkan kunci"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Keluar"
       ],
-      "Sign out all accounts": [
-        "Keluar dari seluruh akun"
-      ],
       "Sign out from": [
         "Keluar dari"
+      ],
+      "Sign out of all accounts": [
+        "Keluar dari seluruh akun"
       ],
       "Signing in": [
         "Masuk"
@@ -4742,7 +4736,7 @@
         "Harap diperhatikan bahwa apabila Anda menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email dengan menggunakan alamat ini."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Untuk diketahui bahwa jika Anda menghapus domain ini, semua alamat yang berasosiasi dengan domain tersebut akan dinonaktifkan."
+        "Harap dicatat bahwa apabila Anda menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
         "Harap dicatat bahwa apabila Anda menghapus filter ini, kami akan berhenti memproses seluruh tindakan otomatis yang berhubungan dengan filter ini."
@@ -5860,7 +5854,7 @@
         "Jumlah"
       ],
       "Amount due": [
-        "Jumlah jatuh tempo"
+        "Jumlah tagihan"
       ],
       "AND": [
         "DAN"
@@ -5983,7 +5977,7 @@
         "Konfirmasi sandi organisasi"
       ],
       "Confirm password": [
-        "Konfirmasi sandi"
+        "Konfirmasi kata sandi"
       ],
       "Contacts": [
         "Kontak"
@@ -6019,7 +6013,7 @@
         "Kata sandi saat ini"
       ],
       "Customize invoices": [
-        "Sesuaikan tagihan"
+        "Sesuaikan faktur"
       ],
       "Daily email notifications": [
         "Pemberitahuan email harian"
@@ -6265,7 +6259,7 @@
         "Nama di kartu"
       ],
       "New login password": [
-        "Kata sandi baru untuk masuk"
+        "Kata sandi masuk baru"
       ],
       "New mailbox password": [
         "Kata sandi kotak pesan baru"
@@ -6289,7 +6283,7 @@
         "Pemberitahuan"
       ],
       "Old login password": [
-        "Kata sandi lama untuk masuk"
+        "Kata sandi masuk lama"
       ],
       "Old password": [
         "Kata sandi lama"
@@ -6379,7 +6373,7 @@
         "Mode proteksi"
       ],
       "Proton username": [
-        "Nama Pengguna Proton"
+        "Nama pengguna Proton"
       ],
       "Read": [
         "Telah dibaca"
@@ -6397,7 +6391,7 @@
         "Nomor telepon pemulihan"
       ],
       "Recovery phrase": [
-        "Kalimat pemulihan"
+        "Frasa pemulihan"
       ],
       "Repeat password": [
         "Ulangi kata sandi"
@@ -6457,16 +6451,16 @@
         "Informasi sistem"
       ],
       "The email was sent ${ attachment }": [
-        "Surel dikirim ${ attachment }"
+        "Email terkirim ${ attachment }"
       ],
       "the email was sent ${ attachment }": [
-        "surel dikirim ${ attachment }"
+        "email terkirim ${ attachment }"
       ],
       "The email was sent ${ attachmentStrong }": [
-        "Surel dikirim ${ attachmentStrong }"
+        "Email terkirim ${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "surel dikirim ${ label }"
+        "email terkirim ${ label }"
       ],
       "Then": [
         "Maka"
@@ -6535,7 +6529,7 @@
         "Menambahkan"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Kami sedih tahu kamu pergi. Tolong jelaskan mengapa kamu pergi untuk membantu kami berbenah."
+        "Kami sedih dengan kepergian Anda. Mohon jelaskan alasan kepergian Anda agar kami dapat menjadi lebih baik ke depannya."
       ],
       "Week start": [
         "Awal pekan"

@@ -3303,6 +3303,11 @@
         "Изображение не выбрано"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Поставьте оценку"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Не могу отправить уведомление ${ email }. ${ errorMessage }"
@@ -4341,11 +4346,11 @@
       "Large imports can take several days.": [
         "Большой импорт может занять несколько дней."
       ],
-      "learn more": [
-        "подробнее"
-      ],
       "Learn more": [
         "Узнать больше"
+      ],
+      "learn more": [
+        "подробнее"
       ],
       "Left to Right": [
         "Слева направо"
@@ -6159,9 +6164,34 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Мы освежили внешний вид Proton.${ br } У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Мы обновили внешний вид Proton и сделали его более универсальным. Нам интересно услышать ваше мнение!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Ужасно"
+      ],
+      "5 - Wonderful": [
+        "5 - Отлично"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Как бы вы описали свой опыт работы с новым ProtonMail?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Поделитесь своими впечатлениями (необязательно)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Обратная связь"
       ]
     },
     "new_plans: title": {
+      "Give feedback": [
+        "Оставить отзыв"
+      ],
       "Updated Proton, unified protection": [
         "Proton: обновления и комплексная защита"
       ]
@@ -6970,6 +7000,11 @@
         "Проверка прошла успешно"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Отзыв отправлен"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/месяц"
@@ -7297,6 +7332,9 @@
       "Exporting contacts": [
         "Экспортирование контактов"
       ],
+      "Feedback": [
+        "Отзыв"
+      ],
       "Filter on": [
         "Вкл фильтр"
       ],
@@ -7467,6 +7505,9 @@
       ],
       "Send email": [
         "Отправить электронное письмо"
+      ],
+      "Send feedback": [
+        "Отправить отзыв"
       ],
       "Send with changed preferences?": [
         "Отправить с изменёнными настройками?"
