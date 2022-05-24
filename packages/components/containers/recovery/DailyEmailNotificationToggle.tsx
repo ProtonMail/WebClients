@@ -3,18 +3,22 @@ import { updateNotifyEmail } from '@proton/shared/lib/api/settings';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { useLoading, useNotifications, useUserSettings, useApi, useEventManager } from '../../hooks';
+import { useLoading, useNotifications, useApi, useEventManager } from '../../hooks';
 import { Toggle, Info } from '../../components';
 
-export const DailyEmailNotificationToggleInput = () => {
+interface DailyEmailNotificationToggleInputProps {
+    isEnabled: boolean;
+    canEnable: boolean;
+}
+
+export const DailyEmailNotificationToggleInput = ({ isEnabled, canEnable }: DailyEmailNotificationToggleInputProps) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [isNotifyEmailApiCallLoading, withLoading] = useLoading();
-    const [userSettings, isUserSettingsLoading] = useUserSettings();
 
     const handleChangeEmailNotify = async (value: number) => {
-        if (value && !userSettings.Email.Value) {
+        if (value && !canEnable) {
             return createNotification({
                 type: 'error',
                 text: c('Error').t`Please set a recovery/notification email first`,
@@ -27,8 +31,8 @@ export const DailyEmailNotificationToggleInput = () => {
     return (
         <Toggle
             className="mr0-5"
-            loading={isNotifyEmailApiCallLoading || isUserSettingsLoading}
-            checked={!!userSettings.Email.Notify && !!userSettings.Email.Value}
+            loading={isNotifyEmailApiCallLoading}
+            checked={isEnabled}
             id="dailyNotificationsToggle"
             onChange={({ target: { checked } }) => withLoading(handleChangeEmailNotify(+checked))}
         />
