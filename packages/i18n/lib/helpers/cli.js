@@ -13,4 +13,9 @@ const script = (cli, args = [], stdio) => {
     return bash(cmd, args, stdio);
 };
 
-module.exports = { bash, script };
+const scriptNode = (cli, args = [], stdio) => {
+    const cmd = path.resolve(__dirname, '..', '..', 'scripts', cli);
+    return bash('node ' + cmd, args, stdio);
+};
+
+module.exports = { bash, script, scriptNode };
