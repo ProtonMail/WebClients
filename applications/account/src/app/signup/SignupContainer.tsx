@@ -573,7 +573,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const loginLink = (
         <ButtonLike
             as={Link}
-            className="ml0-5 text-semibold"
+            className="text-semibold text-ellipsis"
             color="norm"
             shape="outline"
             pill
@@ -587,11 +587,9 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             hasBackButton={!!handleBackStep}
             topRight={
                 hasDecoration && (
-                    <div>
-                        <div className="text-center">
-                            <span className="no-tiny-mobile">{c('Info').t`Already have an account?`}</span>
-                            <span>{loginLink}</span>
-                        </div>
+                    <div className="flex flex-align-items-center flex-gap-0-5">
+                        <span className="no-mobile">{c('Info').t`Already have an account?`}</span>
+                        {loginLink}
                     </div>
                 )
             }

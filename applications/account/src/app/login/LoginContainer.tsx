@@ -303,9 +303,16 @@ const LoginContainer = ({
             hasWelcome
             hasBackButton={!!handleBackStep}
             topRight={
-                <ButtonLike className="text-semibold" shape="outline" color="norm" pill as={Link} to="/signup">{c(
-                    'Action'
-                ).t`Create free account`}</ButtonLike>
+                <ButtonLike
+                    className="text-semibold text-ellipsis"
+                    shape="outline"
+                    color="norm"
+                    pill
+                    as={Link}
+                    to="/signup"
+                >
+                    {c('Action').t`Create free account`}
+                </ButtonLike>
             }
             hasDecoration={step === AuthStep.LOGIN}
             bottomRight={<LoginSupportDropdown />}
