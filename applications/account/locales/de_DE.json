@@ -118,9 +118,6 @@
       "Cancel": [
         "Abbrechen"
       ],
-      "Cancel import": [
-        "Import abbrechen"
-      ],
       "Change mailbox password": [
         "Postfach-Passwort ändern"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Alle Konfigurationen herunterladen"
-      ],
-      "Download on another platform": [
-        "Auf einer anderen Plattform herunterladen"
       ],
       "Download recovery file": [
         "Wiederherstellungsdatei herunterladen"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Abmelden"
       ],
-      "Sign out all accounts": [
-        "Von allen Konten abmelden"
-      ],
       "Sign out from": [
         "Abmelden von"
+      ],
+      "Sign out of all accounts": [
+        "Von allen Konten abmelden"
       ],
       "Signing in": [
         "Anmeldung erfolgt"
@@ -7488,6 +7482,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Wenn du zu einem anderen Abonnement wechselst, verlierst du alle Vorteile des ${ visionary }-Abonnements und kannst du anschließend nicht zu ${ visionary } zurückwechseln."
       ],
+      "learn more": [
+        "erfahre mehr"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."
       ],
@@ -7546,7 +7543,7 @@
     },
     "new_plans: message displayed when user visit v5 login": {
       "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        ""
+        "Proton präsentiert sein neues Design. Viele Dienste, eine Mission. Melde dich an oder ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {

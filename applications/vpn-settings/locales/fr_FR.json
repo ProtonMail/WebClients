@@ -137,9 +137,6 @@
       "Download all configurations": [
         "Télécharger toutes les configurations"
       ],
-      "Download on another platform": [
-        "Télécharger sur une autre plateforme"
-      ],
       "Edit": [
         "Modifier"
       ],
@@ -3102,11 +3099,11 @@
     },
     "new_plans: feature": {
       "${ DRIVE_APP_NAME } (web beta)": [
-        "${ DRIVE_APP_NAME } (Bêta Web)"
+        "${ DRIVE_APP_NAME } (Bêta web)"
       ],
       "${ n } custom email domain": [
         "${ n } domaine de messagerie personnalisé",
-        "${ n } domaines de messagerie personnalisés"
+        "${ n } domaines de messagerie personnalisés pris en charge"
       ],
       "${ n } email address": [
         "${ n } adresse électronique",
@@ -3167,7 +3164,7 @@
         "Console d'administration"
       ],
       "Advanced sharing security": [
-        "Sécurité avancée dédiée au partage"
+        "Sécurité avancée pour le partage"
       ],
       "Auto-reply": [
         "Réponse automatique"
@@ -3197,13 +3194,13 @@
         "Assistant d'importation Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Assistance aux clients de messagerie (via IMAP/SMTP)"
+        "Prise en charge des clients de messagerie (via IMAP/SMTP)"
       ],
       "Enables HIPAA compliance": [
         "Assure la conformité avec la loi HIPAA"
       ],
       "Encrypted contact details": [
-        "Détails chiffrés du contact"
+        "Informations sur les contacts chiffrées"
       ],
       "Encrypted VPN servers": [
         "Serveurs VPN chiffrés"
@@ -3225,7 +3222,7 @@
         "Signatures HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Fonction d'arrêt d'urgence/VPN Permanent"
+        "Fonction kill switch/VPN permanent"
       ],
       "Limited support": [
         "Assistance limitée"
@@ -3258,22 +3255,22 @@
         "Serveurs Secure Core"
       ],
       "Send & receive invitations": [
-        "Envoyer et recevoir des invitations"
+        "Envoi et réception d'invitations"
       ],
       "Share calendar via link": [
         "Partage de calendrier via un lien"
       ],
       "Share files and folders via link": [
-        "Partager des fichiers et des dossiers via un lien"
+        "Partage de fichiers et de dossiers via un lien"
       ],
       "Sign in as user": [
         "Se connecter en tant qu'utilisateur"
       ],
       "Split tunneling (Android and Windows)": [
-        "Split Tunneling (Android at Windows)"
+        "Split tunneling (Android et Windows)"
       ],
       "Strict no-logs policy": [
-        "Politique de non-journalisation stricte"
+        "Politique stricte de non-journalisation (no logs)"
       ],
       "Team management": [
         "Gestion de l'équipe"
@@ -3312,7 +3309,7 @@
         "Gestion des sessions des utilisateurs"
       ],
       "Worldwide streaming services": [
-        "Services de streaming dans le monde entier"
+        "Accès aux services de streaming dans le monde entier"
       ]
     },
     "new_plans: forgot links": {
@@ -3359,6 +3356,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si vous changez d'abonnement, vous perdrez tous les avantages de l'abonnement ${ visionary } et ne serez plus en mesure de revenir à l'abonnement ${ visionary }."
       ],
+      "learn more": [
+        "en savoir plus"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Notre abonnement ${ visionary } n'est plus disponible pour les nouveaux abonnés, car il s'agit d'un abonnement spécial destiné aux utilisateurs ${ BRAND_NAME } initiaux offrant des caractéristiques et des avantages particuliers."
       ],
@@ -3378,7 +3378,7 @@
         "Une messagerie sécurisée avec des fonctionnalités avancées pour vos communications quotidiennes."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        "La solution VPN dédiée qui offre un accès à Internet sûr, illimité et à haut débit."
+        "La solution VPN dédiée qui offre un accès à internet sûr, illimité et à haut débit."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Le compte de démarrage gratuit conçu pour que tout le monde puisse bénéficier de la confidentialité par défaut."
@@ -3487,7 +3487,7 @@
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        "Accédez à du contenu proposé par des services de streaming, notamment Netflix, Disney+ et Prime Video, où que vous vous trouviez"
+        "Accédez aux contenus des services de streaming, dont Netflix, Disney+ et Prime Video, où que vous soyez."
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
         "Les adresses possèdent l'intégralité des capacités d'envoi et de réception. Un utilisateur peut se voir attribuer plusieurs adresses ; cependant, une même adresse ne peut pas être attribuée à plusieurs utilisateurs."
@@ -3496,7 +3496,7 @@
         "VPN haute sécurité avec un réseau mondial"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        "Vous permet d'accéder à plusieurs réseaux en même temps, p. ex., vous pouvez regarder un film en streaming depuis un autre pays tout en obtenant des résultats de recherche locale"
+        "Avec cette fonction vous pouvez accéder à plus d'un réseau en même temps. Vous pouvez par exemple regarder un film en streaming depuis un autre pays que celui où vous vous trouvez tout en consultant des informations locales (du pays où vous vous trouvez)."
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
         "Vous permet de configurer des réponses automatiques pour vos messages entrants"
@@ -3515,7 +3515,7 @@
         "Créez jusqu'à ${ n } calendriers personnalisés."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        "Protège contre les menaces qui pèsent sur la confidentialité du VPN en transmettant votre trafic Internet à travers plusieurs serveurs"
+        "Cette fonctionnalité vous protège des menaces sur la confidentialité du VPN en acheminant votre trafic internet à travers plusieurs serveurs."
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         "Partagez facilement vos calendriers avec vos collègues, votre famille et vos amis via un lien"
@@ -3530,7 +3530,7 @@
         "Stockage de fichiers chiffré de bout en bout"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Garantit que vous recevez tous les e-mails envoyés à votre domaine, même si l'adresse électronique n'existe pas, n'existe plus ou présente une faute de frappe"
+        "Recevez tous les e-mails envoyés à votre domaine, y compris ceux envoyés à une adresse qui n'existe pas (ou plus), ou qui contient une faute frappe."
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Imposez la déconnexion de sessions d'utilisateurs lorsque les identifiants des utilisateurs sont soupçonnés d'être compromis"
@@ -3572,7 +3572,7 @@
         "Les disques durs de nos serveurs sont entièrement chiffrés à l'aide de plusieurs couches de mots de passe afin de protéger vos données même si notre matériel est compromis"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Personnalisez votre signature d'e-mail à l'aide de logos, d'images, d'icônes de réseaux sociaux, de liens vers vos coordonnées et plus encore"
+        "Personnalisez votre signature d'e-mail avec des logos, images, icônes de réseaux sociaux, liens vers vos coordonnées..."
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Une assistance par téléphone est proposée par l'équipe du service clientèle de Proton durant les heures de bureau en Europe, pour les clients comptant au moins 6 utilisateurs"
@@ -3581,13 +3581,13 @@
         "Empêche l'accès aux messages par ${ BRAND_NAME } ou par des tiers, les seules personnes pouvant lire les messages étant l'expéditeur et le destinataire."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Protégez chaque appareil connecté à votre réseau Wi-Fi. Cet élément est également utile si vous possédez des appareils qui ne prennent pas directement en charge les paramètres VPN."
+        "Protégez chaque appareil connecté à votre réseau wifi. Cela est aussi utile si vous avez des appareils qui ne prennent pas directement en charge les paramètres VPN."
       ],
       "Quickly set up out-of-office messages": [
         "Configurer rapidement des messages d'absence"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        "Transférez rapidement vos e-mails, calendriers et contacts depuis n'importe quel fournisseur"
+        "Transférez rapidement vos e-mails, calendriers et contacts depuis n'importe quel fournisseur."
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
         "Un code envoyé sur un téléphone mobile est nécessaire pour se connecter. Cette procédure garantit la sécurité du compte, même si un mot de passe est compromis."
@@ -3596,13 +3596,13 @@
         "Réinitialiser les mots de passe des utilisateurs et réinitialiser l'authentification à deux facteurs des utilisateurs"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        "Envoyez l'ensemble de votre trafic Internet à travers le réseau Tor en un seul clic"
+        "Envoyez l'ensemble de votre trafic internet à travers le réseau Tor en un seul clic."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Stockez en toute sécurité les détails de vos contacts, tels les numéros de téléphone, les adresses, les anniversaires et les notes personnelles. Un chiffrement zéro accès garantit que même Proton ne peut pas y accéder."
+        "Conservez en sécurité les informations de vos contacts, comme le numéro de téléphone, l'adresse, la date d'anniversaire et les notes personnelles. Le chiffrement à accès zéro garantit que même Proton ne peut pas y accéder."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        "Envoyez rapidement et facilement des e-mails à de grands groupes en créant autant de groupes de contacts que nécessaire (jusqu'à 100 contacts par groupe)"
+        "Envoyez rapidement et facilement des e-mails à de nombreuses personnes en créant autant de groupes de contacts que nécessaire (jusqu'à 100 contacts par groupe)."
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
         "Configurez des filtres afin de répondre à vos e-mails, les trier et/ou leur apposer des labels automatiquement"
@@ -3611,7 +3611,7 @@
         "Partagez vos fichiers et dossiers avec n'importe qui à l'aide de liens sécurisés et partageables"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Une version spécialement conçue de NetShield protège votre appareil et accélère votre navigation en bloquant les publicités, les traqueurs et les logiciels malveillants"
+        "NetShield est une fonction spécialement conçue pour protéger votre appareil et accélérer votre navigation en bloquant les publicités, traqueurs et logiciels malveillants."
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Commencez avec ${ freeStorageSize } et débloquez plus d'espace de stockage au fur et à mesure. L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -3626,16 +3626,16 @@
         "Prise en charge des protocoles de partage de fichiers comme BitTorrent"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        "Utilisez votre propre adresse de domaine personnalisée, par exemple vous@votrenom.com"
+        "Utilisez vos adresses e-mail personnalisées à partir de votre propre nom de domaine (vous@votrenom.com)."
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        "Nous ne conservons aucun journal d'utilisation de session concernant votre activité en ligne et nous ne consignons aucune métadonnée susceptible de compromettre votre confidentialité"
+        "Nous ne conservons aucun journal d'utilisation de session concernant votre activité en ligne, et nous ne consignons pas de métadonnées susceptibles de porter atteinte à votre vie privée."
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
         "Nous nous engageons à aider les clients, soumis aux réglementations des lois HIPAA/HITECH, à protéger les informations de santé protégées (ISP). Des accords de partenariat commerciaux (BAA) signés sont disponibles pour tous les clients de ${ BRAND_NAME } pour les entreprises."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Lorsque vous êtes connecté à notre VPN, vos requêtes DNS sont acheminées à travers notre tunnel VPN chiffré, améliorant ainsi votre confidentialité et votre sécurité en ligne"
+        "Lorsque vous êtes connecté à notre VPN, vos requêtes DNS passent par notre tunnel VPN chiffré, ce qui contribue à protéger votre vie privée et à renforcer votre sécurité en ligne."
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
         "Lors de l'envoi à des utilisateurs ${ MAIL_APP_NAME }, le chiffrement est automatique. Dans le cas de destinataires n'utilisant pas ${ MAIL_APP_NAME } un mot de passe doit être créé avant l'envoi."
@@ -3655,7 +3655,7 @@
         "Accédez à des fonctionnalités VPN avancées"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        "Augmenter le degré de personnalisation grâce à 15 adresses électroniques et la prise en charge de trois domaines de messagerie personnalisés"
+        "Augmenter le degré de personnalisation grâce à 15 adresses électroniques et la prise en charge de 3 domaines de messagerie personnalisés"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
         "Augmentez votre espace de stockage vers un total de ${ bundleStorage }"

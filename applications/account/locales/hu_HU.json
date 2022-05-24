@@ -118,9 +118,6 @@
       "Cancel": [
         "Mégsem"
       ],
-      "Cancel import": [
-        "Importálás megszakítása"
-      ],
       "Change mailbox password": [
         "E-mail titkosítási jelszó módosítása"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Összes beállítás letöltése"
-      ],
-      "Download on another platform": [
-        ""
       ],
       "Download recovery file": [
         "Helyreállító fájl letöltése"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Kijelentkezés"
       ],
-      "Sign out all accounts": [
-        "Minden fiók kiléptetése"
-      ],
       "Sign out from": [
         "Kijelentkezés innen:"
+      ],
+      "Sign out of all accounts": [
+        ""
       ],
       "Signing in": [
         "Bejelentkezés"
@@ -2457,7 +2451,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        ""
+        "Milyen e-maileket szeretne kapni a ${ BRAND_NAME }-tól?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Ismét feliratkozott ezekre az e-mailekre: ${ categoriesJsx }."

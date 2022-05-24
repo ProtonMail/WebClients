@@ -3261,6 +3261,11 @@
         "Nincs kép kiválasztva"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         ""
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Egy nagyobb importálás akár napokig is eltarthat."
       ],
-      "learn more": [
-        "további információk"
-      ],
       "Learn more": [
         "További információk"
+      ],
+      "learn more": [
+        "további információk"
       ],
       "Left to Right": [
         "Balról jobbra"
@@ -6719,6 +6724,11 @@
         "Sikeres ellenőrzés"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         ""
@@ -7020,6 +7030,9 @@
       "Exporting contacts": [
         "Névjegyek exportálása"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "Szűrés be"
       ],
@@ -7190,6 +7203,9 @@
       ],
       "Send email": [
         "E-mail küldése"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         ""

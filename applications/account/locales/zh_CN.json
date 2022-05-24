@@ -118,9 +118,6 @@
       "Cancel": [
         "取消"
       ],
-      "Cancel import": [
-        "取消导入"
-      ],
       "Change mailbox password": [
         "更改邮箱密码"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "下载所有配置"
-      ],
-      "Download on another platform": [
-        "通过其他平台下载"
       ],
       "Download recovery file": [
         "下载恢复文件"
@@ -691,11 +685,11 @@
       "Sign out": [
         "退出账户"
       ],
-      "Sign out all accounts": [
-        "退出所有账户"
-      ],
       "Sign out from": [
         "退出"
+      ],
+      "Sign out of all accounts": [
+        ""
       ],
       "Signing in": [
         "正在登录"
@@ -3878,7 +3872,7 @@
         "已选择 ${ selectedFoldersCountLocalized } 个标签"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } 存储空间"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "您可以使用 ${ strongAddressAvailable } 登录所有的 ${ BRAND_NAME } 服务。"
@@ -3923,7 +3917,7 @@
         "3. 赢取奖励"
       ],
       "30-day money-back guarantee.": [
-        ""
+        "30 天退款保证。"
       ],
       "5 email addresses": [
         "5 个邮箱地址"
@@ -3971,7 +3965,7 @@
         "添加标签"
       ],
       "Additional options": [
-        ""
+        "其他选项"
       ],
       "address": [
         "地址"
@@ -4199,7 +4193,7 @@
         "个人每日计划。"
       ],
       "Custom email domains": [
-        ""
+        "自有域名"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "筛选规则对往后的所有邮件都有效，既包括收到的，也包括发出的。使用 Sieve 编程语言可以直接创建或修改规则。"
@@ -4337,7 +4331,7 @@
         "已过期"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "${ expirationDate } 后过期"
       ],
       "Failed to fetch logs.": [
         "获取日志失败。"
@@ -4505,7 +4499,7 @@
         "互联网连接已恢复。"
       ],
       "Invite successfully sent": [
-        ""
+        "已成功发送邀请"
       ],
       "Invited via email": [
         "已发送邀请邮件"
@@ -4664,7 +4658,7 @@
         "不是您的私人设备？尝试使用隐私窗口并且在不需要时将它关闭。 ${ learnMore }"
       ],
       "Number of users": [
-        ""
+        "用户数"
       ],
       "of": [
         "/"
@@ -4679,7 +4673,7 @@
         "标签只对您可见。"
       ],
       "Or select a particular server:": [
-        ""
+        "或选择特定的服务器："
       ],
       "Organization keys activated": [
         "机构密钥已激活"
@@ -4868,7 +4862,7 @@
         ""
       ],
       "Select what you want to move from Google.": [
-        ""
+        "请选择你要从 Google 账户导入的内容。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
@@ -4964,7 +4958,7 @@
         "您的用户登录后即可看到机构名称。"
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "最安全的浏览、串流和冲浪方式。"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "使用第三方 VPN 客户端或在路由器上设置 VPN 连接时，可通过这些配置文件选择连接到哪个 ${ VPN_APP_NAME } 服务器。"
@@ -5126,7 +5120,7 @@
         "更新恢复密语"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "立即升级账户即可继续享有下列 ${ planName } 权益。"
       ],
       "Upload picture": [
         "上传图片"

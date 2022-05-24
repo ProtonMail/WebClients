@@ -3240,6 +3240,11 @@
         "画像が選択されていません"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "${ email } にメールを送信できません。${ errorMessage }"
@@ -4128,11 +4133,11 @@
       "Large imports can take several days.": [
         "巨大なインポートは数日かかる場合があります。"
       ],
-      "learn more": [
-        "詳細"
-      ],
       "Learn more": [
         "より詳しく"
+      ],
+      "learn more": [
+        "詳細"
       ],
       "Left to Right": [
         "左から右"
@@ -6601,6 +6606,11 @@
         "検証に成功しました"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/月"
@@ -6889,6 +6899,9 @@
       "Exporting contacts": [
         "連絡先のエクスポート中"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "フィルター対象"
       ],
@@ -7059,6 +7072,9 @@
       ],
       "Send email": [
         "メールの送信"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         "変更した設定を送信しますか?"

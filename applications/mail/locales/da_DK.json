@@ -2840,7 +2840,7 @@
         "Et filter med dette navn findes allerede"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Mappenavn må ikke være tomt."
       ],
       "Image upload failed": [
         "Billed-upload mislykkedes"
@@ -2864,7 +2864,7 @@
         "Ugyldig verifikationskode"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Etikettenavn må ikke være tomt."
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Det maksimale antal vedhæftninger (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overskredet."
@@ -3026,10 +3026,10 @@
         "Dette felt kræver minimum ${ minimumLength } tegn."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Dette mappenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Dette etikettenavn er ikke tilgængeligt. Vælg venligst et andet navn."
       ],
       "This message has already been sent": [
         "Denne besked er allerede blevet sendt"
@@ -3259,6 +3259,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Intet billede valgt"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
       ]
     },
     "Error sending calendar invitation": {
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Store importer kan tage adskillige dage."
       ],
-      "learn more": [
-        "få mere at vide"
-      ],
       "Learn more": [
         "Få mere at vide"
+      ],
+      "learn more": [
+        "få mere at vide"
       ],
       "Left to Right": [
         "Venstre mod højre"
@@ -6719,6 +6724,11 @@
         "Bekræftelse gennemført"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/måned"
@@ -7020,6 +7030,9 @@
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "Filtrer efter"
       ],
@@ -7190,6 +7203,9 @@
       ],
       "Send email": [
         "Send e-mail"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         "Send med ændrede præferencer?"

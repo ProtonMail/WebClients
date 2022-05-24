@@ -118,9 +118,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Cancel import": [
-        "Cancelar la importación"
-      ],
       "Change mailbox password": [
         "Cambiar contraseña del buzón"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Descargar toda la configuración"
-      ],
-      "Download on another platform": [
-        "Descargar en otra plataforma"
       ],
       "Download recovery file": [
         "Descargar archivo de recuperación"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Cerrar la sesión"
       ],
-      "Sign out all accounts": [
-        "Cerrar sesión en todas las cuentas"
-      ],
       "Sign out from": [
         "Cerrar sesión de"
+      ],
+      "Sign out of all accounts": [
+        "Cerrar sesión en todas las cuentas"
       ],
       "Signing in": [
         "Iniciando sesión"
@@ -2233,10 +2227,10 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/mes"
       ],
       "/user per month": [
-        ""
+        "/usuario por mes"
       ]
     },
     "Daily recurring event, frequency": {
@@ -4245,7 +4239,7 @@
         "Creando tu cuenta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
+        "Crédito por la parte no utilizada de su anterior suscripción al plan"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Por favor, reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
@@ -7488,6 +7482,9 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si te cambias de plan, perderás todas las ventajas que tiene ser ${ visionary } y no podrás volver al plan ${ visionary }."
       ],
+      "learn more": [
+        "más información"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
@@ -8862,15 +8859,15 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/mes"
       ],
       "/user per month": [
-        ""
+        "/usuario por mes"
       ]
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/mes"
       ],
       "per month": [
         "por mes"
