@@ -16,7 +16,7 @@ const transformOpenpgpFiles = require('./helpers/openpgp');
 const { OPENPGP_FILES } = require('./constants');
 
 const defaultFaviconConfig = require('./favicon.config');
-const faviconConfig = require(path.resolve('./src/assets/favicon.config.js'));
+const faviconConfig = require(path.resolve('./favicon.config.js'));
 
 module.exports = ({ isProduction, publicPath, appMode, buildData, featureFlags, writeSRI, warningLogs, errorLogs }) => {
     const { main, worker, elliptic, compat, definition } = transformOpenpgpFiles(
