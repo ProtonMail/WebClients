@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { c } from 'ttag';
 
 import { SHOW_IMAGES, STICKY_LABELS, VIEW_MODE } from '@proton/shared/lib/constants';
@@ -21,9 +21,7 @@ import StickyLabelsToggle from '../layouts/StickyLabelsToggle';
 const { EMBEDDED } = SHOW_IMAGES;
 
 const MessagesSection = () => {
-    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1, Shortcuts = 0 } = {}] =
-        useMailSettings();
-    const [, setShortcuts] = useState(Shortcuts);
+    const [{ ViewMode = 0, StickyLabels = 0, ShowImages = EMBEDDED, ConfirmLink = 1 } = {}] = useMailSettings();
     const [showImages, setShowImages] = useState(ShowImages);
     const handleChange = (newValue: number) => setShowImages(newValue);
     const { feature: spyTrackerFeature } = useFeature(FeatureCode.SpyTrackerProtection);
@@ -37,11 +35,6 @@ const MessagesSection = () => {
     const handleChangeShowImage = (newValue: number) => setShowImages(newValue);
 
     const notifyPreferenceSaved = () => createNotification({ text: c('Success').t`Preference saved` });
-
-    // Handle updates from the Event Manager.
-    useEffect(() => {
-        setShortcuts(Shortcuts);
-    }, [Shortcuts]);
 
     const handleToggleStickyLabels = async (value: number) => {
         await api(updateStickyLabels(value));

@@ -1,11 +1,11 @@
-import { useEffect, MouseEvent, useState } from 'react';
+import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import { APPS } from '@proton/shared/lib/constants';
 
 import { useModalState, SettingsLink } from '../../components';
-import { useMailSettings, useUser, useUserSettings } from '../../hooks';
+import { useUser, useUserSettings } from '../../hooks';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
@@ -18,19 +18,10 @@ import {
 import Icon from '../../components/icon/Icon';
 
 const MessagesGeneralSection = () => {
-    const [mailSettings] = useMailSettings();
-    const Shortcuts = mailSettings?.Shortcuts;
-
     const [userSettings] = useUserSettings();
-    const [, setShortcuts] = useState(Shortcuts);
     const [user, userLoading] = useUser();
 
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
-
-    // Handle updates from the Event Manager.
-    useEffect(() => {
-        setShortcuts(Shortcuts);
-    }, [Shortcuts]);
 
     const showDailyEmailNotificationSection = !userLoading && !user.isSubUser && user.isPrivate;
 
