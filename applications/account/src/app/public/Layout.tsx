@@ -24,6 +24,7 @@ import {
     ProtonLogo,
     IconSize,
     WelcomeV5TopBanner,
+    useActiveBreakpoint,
 } from '@proton/components';
 
 import LanguageSelect from './LanguageSelect';
@@ -127,13 +128,20 @@ export interface Props {
 const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, hasBackButton }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
+    const { isTinyMobile } = useActiveBreakpoint();
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
             <PublicTopBanners>{hasWelcome && <WelcomeV5TopBanner />}</PublicTopBanners>
-            <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink">
-                <Href href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}>
-                    <ProtonLogo className={classnames([hasBackButton && 'on-mobile-ml3-5'])} />
+            <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
+                <Href
+                    className="flex-item-noshrink"
+                    href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
+                >
+                    <ProtonLogo
+                        variant={hasBackButton && isTinyMobile ? 'glyph-only' : 'full'}
+                        className={classnames([hasBackButton && 'on-mobile-ml3-5'])}
+                    />
                 </Href>
                 {topRight}
             </header>
