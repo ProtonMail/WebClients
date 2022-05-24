@@ -1,4 +1,5 @@
 import { Children, isValidElement, ReactNode, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router';
 import noop from '@proton/utils/noop';
 
 import ErrorBoundary from '../app/ErrorBoundary';
@@ -6,18 +7,21 @@ import { SettingsPageTitle, SettingsParagraph } from '../account';
 import useAppTitle from '../../hooks/useAppTitle';
 import createScrollIntoView from '../../helpers/createScrollIntoView';
 import { classnames } from '../../helpers';
-import { SettingsPropsShared } from './interface';
+import { SettingsAreaConfig } from './interface';
 import useActiveSection from './useActiveSection';
 import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 
-interface Props extends SettingsPropsShared {
+interface Props {
     children: ReactNode;
     setActiveSection?: (section: string) => void;
+    config: SettingsAreaConfig;
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, location, children, config }: Props) => {
+const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Props) => {
+    const location = useLocation();
+
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const useIntersectionSection = useRef(false);
 
