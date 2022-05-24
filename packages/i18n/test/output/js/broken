@@ -61,9 +61,11 @@
      line: c('Action').ngettext(msgid('Miinute'), "Miinutes", modifiedValue)
       fix: Plural form is  - ngettext(msgid`<string single>`, `<string plural>`, value)
 
-🚨 [Error] test/input/js/broken.js:15
-    match: c(`new_plans_mailpro2022_team_management_session_management_tooltip`)
-     line:     tooltip: c(`new_plans_mailpro2022_team_management_session_management_tooltip`)
+🚨 [Error] test/input/js/broken.js:16
+    match: c(
+      `new_plans_mailpro2022_team_management_session_management_tooltip`
+    )
+     line:       `new_plans_mailpro2022_team_management_session_management_tooltip`
       fix: You should not use backticks for the context definition. It is a static string
            best to use c('<context>').t`<string>`
 
