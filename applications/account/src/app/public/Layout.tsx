@@ -131,7 +131,7 @@ const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, ha
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
             <PublicTopBanners>{hasWelcome && <WelcomeV5TopBanner />}</PublicTopBanners>
-            <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink ml2 mr2 mt1 mb2 pb2 on-mobile-m0 on-mobile-pt1 on-mobile-pb1">
+            <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink">
                 <Href href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}>
                     <ProtonLogo className={classnames([hasBackButton && 'on-mobile-ml3-5'])} />
                 </Href>
