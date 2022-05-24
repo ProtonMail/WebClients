@@ -3261,6 +3261,11 @@
         "Nessuna immagine selezionata"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Il punteggio è necessario"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Impossibile inviare l'invito a ${ email }. ${ errorMessage }"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Importazioni di grandi dimensioni possono richiedere diversi giorni."
       ],
-      "learn more": [
-        "per saperne di più"
-      ],
       "Learn more": [
         "Per saperne di più"
+      ],
+      "learn more": [
+        "per saperne di più"
       ],
       "Left to Right": [
         "Da sinistra a destra"
@@ -5985,9 +5990,34 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Ti presentiamo il nuovo look di Proton.${ br } Molti servizi, una sola missione: una nuova versione di internet, dove la privacy è la regola."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Proton ora ha un aspetto nuovo e unificato. Ci piacerebbe sapere cosa ne pensi!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Pessima"
+      ],
+      "5 - Wonderful": [
+        "5 - Splendida"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Come descriveresti la tua esperienza con la nuova versione di Proton?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Parlaci della tua esperienza (facoltativo)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Feedback"
       ]
     },
     "new_plans: title": {
+      "Give feedback": [
+        "Lascia un commento"
+      ],
       "Updated Proton, unified protection": [
         "Nuovo Proton, protezione unificata"
       ]
@@ -6734,6 +6764,11 @@
         "Verifica riuscita"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Feedback inviato"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mese"
@@ -7035,6 +7070,9 @@
       "Exporting contacts": [
         "Esportazione contatti"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "Filter on": [
         "Filtra"
       ],
@@ -7205,6 +7243,9 @@
       ],
       "Send email": [
         "Invia email"
+      ],
+      "Send feedback": [
+        "Invia il tuo feedback"
       ],
       "Send with changed preferences?": [
         "Inviare con preferenze modificate?"

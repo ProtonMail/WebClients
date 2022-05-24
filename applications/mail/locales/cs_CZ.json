@@ -3303,6 +3303,11 @@
         "Není vybrán žádný obrázek"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Výsledek je požadován"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "Nelze odeslat pozvánku na adresu ${ email }. ${ errorMessage }"
@@ -4341,11 +4346,11 @@
       "Large imports can take several days.": [
         "Import velkého množství dat může trvat několik dní."
       ],
-      "learn more": [
-        "více informací"
-      ],
       "Learn more": [
         "Zjistěte více"
+      ],
+      "learn more": [
+        "více informací"
       ],
       "Left to Right": [
         "Zleva doprava"
@@ -6955,6 +6960,11 @@
         "Ověření proběhlo úspěšně"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Zpětná vazba byla odeslána"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/měsíčně"
@@ -7282,6 +7292,9 @@
       "Exporting contacts": [
         "Exportování kontaktů"
       ],
+      "Feedback": [
+        "Zpětná vazba"
+      ],
       "Filter on": [
         "Zapnout filtr"
       ],
@@ -7452,6 +7465,9 @@
       ],
       "Send email": [
         "Odeslat e-mail"
+      ],
+      "Send feedback": [
+        "Odeslat zpětnou vazbu"
       ],
       "Send with changed preferences?": [
         "Poslat s provedenými změnami?"

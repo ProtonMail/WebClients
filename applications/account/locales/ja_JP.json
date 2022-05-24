@@ -118,9 +118,6 @@
       "Cancel": [
         "キャンセル"
       ],
-      "Cancel import": [
-        "インポートをキャンセル"
-      ],
       "Change mailbox password": [
         "メールボックスのパスワードを変更"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "すべての設定ファイルをダウンロード"
-      ],
-      "Download on another platform": [
-        "別のプラットフォームでダウンロード"
       ],
       "Download recovery file": [
         "回復用ファイルをダウンロード"
@@ -691,11 +685,11 @@
       "Sign out": [
         "サインアウト"
       ],
-      "Sign out all accounts": [
-        "すべてのアカウントからサインアウト"
-      ],
       "Sign out from": [
         "サインアウトしました: "
+      ],
+      "Sign out of all accounts": [
+        "すべてのアカウントからサインアウト"
       ],
       "Signing in": [
         "サインイン中"
@@ -2540,7 +2534,7 @@
         "この名前のフィルターが既に存在します"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "フォルダー名は空にできません。"
       ],
       "Incorrect login credentials. Please try again.": [
         "ログイン情報が正しくありません。もう一度やり直してください。"
@@ -2756,10 +2750,10 @@
         "このフィールドには最低${ minimumLength } 文字が必要です。"
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "このフォルダー名は利用できません。別の名前を選択してください。"
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
@@ -3542,7 +3536,7 @@
         "また、ブラウザで ${ boldGoogleAccounts } のサインアウトを試し、 ${ linkCAPTCHA } をロックを解除することもできます。"
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "アプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
       ],
       "Your email account requires an app password to export your data.": [
         ""
@@ -3551,7 +3545,7 @@
         ""
       ],
       "Your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "メールアドレスとアプリパスワードは正しいです。通常のパスワードを使用${ boldNot }ください。"
       ],
       "Your email address and password are correct.": [
         ""
@@ -3574,7 +3568,7 @@
         "CAPTCHA"
       ],
       "not": [
-        ""
+        "しないで"
       ]
     },
     "Import error link": {
@@ -4406,7 +4400,7 @@
         "ギフトコードをお持ちの場合は、以下に入力して割引を適用できます。"
       ],
       "If you have never used two-factor authentication before, we strongly recommend you ${ guideButton }.": [
-        "2要素認証を初めて使われる場合は、${ guideButton } をお読みください。"
+        "2 要素認証を初めて使う場合、${ guideButton }。"
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
         ""
@@ -4418,7 +4412,7 @@
         "ログイン情報を失いアカウントをリセットすることになった場合、${ boldAccountAndRecovery }を両方用意することが${ boldImperative }。そうしないと、メール、連絡先、ファイルにアクセスできなくなる可能性があります。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
-        "2 要素認証機器を紛失した場合、6 桁の2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
+        "2 要素認証機器を紛失した場合、6 桁の 2 要素認証パスコード代わりに、以下のコードを使用してアカウントにログインすることができます。各コードは一度しか使用できません。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ MAIL_APP_NAME } と ${ VPN_APP_NAME } の有料機能が使えなくなります。"
@@ -4463,7 +4457,7 @@
         "メール、カレンダー、連絡先を他のサービスから Proton にインポートできます。Proton では、データを移行し暗号化する手順を手順をわかりやすく解説します。プライバシーの世界へようこそ。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントへのアクセスが永久に失われます。"
+        "重要: 回復用コードを確実に保存してください。適切に保存されていない場合、2 要素認証デバイスを紛失した場合、アカウントにアクセスできなくなります。"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "重要: レジストラーによっては (他のレジストラーで要求する) 終了期限付きCNAMEの値が使えません。もしあなたが使用しているレジストラで CNAME レコードが使えない場合、各 CNAME の期限を削除して再度試してみてください。"
@@ -4805,7 +4799,7 @@
         "処理待ち"
       ],
       "read our two-factor authentication Guide first": [
-        "はじめに2要素認証ガイドをお読みください"
+        "はじめに 2 要素認証ガイドをお読みください"
       ],
       "Recovery file downloaded": [
         "回復用ファイルをダウンロードしました"
@@ -4853,7 +4847,7 @@
         "代わりに QR コードをスキャン"
       ],
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
-        "アカウント設定のために、２要素認証デバイスでこのコードをスキャンしてしてください。 ${ switchButton }"
+        "アカウント設定のために、2 要素認証デバイスでこのコードをスキャンしてしてください。${ switchButton }"
       ],
       "Securing your account": [
         "アカウントを安全にしています"
@@ -5039,7 +5033,7 @@
         "すべての有効なセッションからサインアウトし、2 段階認証を無効にします。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "このウィザードは Proton アカウントで２要素認証を有効にします。セキュリティをより高めるため２要素認証の使用をお勧めします。"
+        "このウィザードは Proton アカウントで 2 要素認証 (2FA) を有効にします。セキュリティをより高めるため 2 要素認証の使用をおすすめします。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
@@ -5090,16 +5084,16 @@
         "2 要素認証を使用すると、アカウントのセキュリティが強化されます。これは、パスワード侵害への対策として有効です。"
       ],
       "Two-factor authentication disabled": [
-        "2要素認証が無効になりました。"
+        "2要素認証が無効になりました"
       ],
       "Two-factor authentication enabled": [
-        "2要素認証が有効になりました。"
+        "2要素認証が有効になりました"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
         "2 パスワードモードでは、アカウントへのログイン用とメールボックスの復号用の 2 つのパスワードを使用します。(高度な機能)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "２パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。２パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
+        "2 パスワードモードでは、ログイン用とメールボックスの復号用パスワードが分かれています。いくつかの状況で少しだけセキュリティ上のメリットがありますが、ほとんどのユーザーには標準のパスワードモードのご利用を推奨します。2 パスワードモードに切り替えるには、まずログイン用、次にメールボックス用のパスワードを入力し、保存をクリックしてください。"
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "回復用ファイルの署名の検証ができませんでした。サポートにお問い合わせください。"
@@ -6499,7 +6493,7 @@
         "2 パスワードモード"
       ],
       "Undo send": [
-        "送信を取り消し"
+        "送信の取り消し"
       ],
       "Upload 1 or more encryption keys": [
         "1 つ以上の暗号キーをアップロード"
@@ -7821,7 +7815,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL が長すぎます"
       ]
     },
     "Subscription attribute": {
@@ -8798,10 +8792,10 @@
         "連絡先グループを選択"
       ],
       "Select the time to send this notification": [
-        ""
+        "通知を送信する時間を選択"
       ],
       "Select the way to send this notification": [
-        ""
+        "通知を送信する方法を選択"
       ],
       "Select when you want this notification to be sent": [
         "通知を送信する時間を選択"
@@ -8822,7 +8816,7 @@
         "組織のパスワードを設定"
       ],
       "Set up two-factor authentication": [
-        "2要素認証の設定"
+        "2 要素認証の設定"
       ],
       "Settings": [
         "設定"

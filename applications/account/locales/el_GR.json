@@ -118,9 +118,6 @@
       "Cancel": [
         "Ακύρωση"
       ],
-      "Cancel import": [
-        "Ακύρωση εισαγωγής"
-      ],
       "Change mailbox password": [
         "Αλλαγή κωδικού γραμματοκιβωτίου"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Λήψη όλων των διαμορφώσεων"
-      ],
-      "Download on another platform": [
-        "Λήψη για άλλη πλατφόρμα"
       ],
       "Download recovery file": [
         "Κατέβασμα αρχείου ανάκτησης"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
-      "Sign out all accounts": [
-        "Αποσύνδεση από όλους τους λογαριασμούς"
-      ],
       "Sign out from": [
         "Έξοδος από"
+      ],
+      "Sign out of all accounts": [
+        ""
       ],
       "Signing in": [
         "Γίνεται είσοδος"
@@ -2457,7 +2451,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        ""
+        "Ποια μηνύματα θέλετε να λαμβάνετε από το ${ BRAND_NAME };"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "Επανεγραγήκατε στα ${ categoriesJsx } emails."
@@ -2559,7 +2553,7 @@
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Το όνομα φακέλου δεν μπορεί να είναι κενό."
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -2604,7 +2598,7 @@
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Το όνομα της ετικέτας δεν μπορεί να είναι κενό."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -2690,7 +2684,7 @@
         "Παρακαλούμε βεβαιωθείτε ότι τα δικαιώματα έχουν οριστεί σωστά και δοκιμάστε την ταυτοποίηση ξανά."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        ""
+        "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
         ""
@@ -2777,10 +2771,10 @@
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Αυτό το όνομα φακέλου δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Αυτό το όνομα ετικέτας δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
@@ -3511,7 +3505,7 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        ""
+        "Η \"λιγότερο ασφαλής πρόσβαση σε εφαρμογή\" είναι ενεργοποιημένη στις ρυθμίσεις ασφαλείας του λογαριασμού σας Google."
       ],
       "2-step verification is enabled in your external account.": [
         ""
@@ -3535,7 +3529,7 @@
         ""
       ],
       "IMAP access is enabled in your Yahoo account.": [
-        ""
+        "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo."
       ],
       "Invalid IMAP port": [
         "Μη έγκυρη θύρα IMAP"
@@ -3577,7 +3571,7 @@
         "Μπορείτε επίσης να προσπαθήσετε να αποσυνδεθείτε από ${ boldGoogleAccounts } στο πρόγραμμα περιήγησης και, στη συνέχεια, να ξεκλειδώσετε το ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
-        ""
+        "Ο κωδικός πρόσβασής σας στην εφαρμογή είναι σωστός. Μη ${ boldNot } χρησιμοποιείτε τον σύνηθες κωδικό σας."
       ],
       "Your email account requires an app password to export your data.": [
         ""
@@ -3589,10 +3583,10 @@
         ""
       ],
       "Your email address and password are correct.": [
-        ""
+        "Η διεύθυνση email και ο κωδικός σας είναι σωστά."
       ],
       "Your password is correct.": [
-        ""
+        "Ο κωδικός σας είναι σωστός."
       ]
     },
     "Import error emphasis": {
@@ -5880,8 +5874,8 @@
         "Υποσέλιδο ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
-        "${ monthsRewarded } μήνας πιστώθηκε",
-        "${ monthsRewarded } μήνες πιστώθηκαν"
+        "Πιστώθηκε ${ monthsRewarded } μήνας",
+        "Πιστώθηκαν ${ monthsRewarded } μήνες"
       ],
       "${ n } month": [
         "${ n } μήνας",
@@ -6294,7 +6288,7 @@
         "Τελευταίος μήνας μόνο"
       ],
       "Level for NetShield blocker filtering": [
-        "Επίπεδο φιλτραρίσματος NetShield blocker"
+        "Επίπεδο φίλτρου φραγής NetShield"
       ],
       "Login password": [
         "Κωδικός σύνδεσης"
@@ -6480,7 +6474,7 @@
         "Αποστολή αυτόματης απάντησης"
       ],
       "Send in": [
-        "Αποστολή σε"
+        "Αποστολή στα"
       ],
       "Show secondary time zone": [
         "Εμφάνιση δευτερεύουσας ζώνης ώρας"
@@ -6513,7 +6507,7 @@
         "Δήλωση"
       ],
       "Sticky labels": [
-        "Sticky ετικέτες"
+        "Κολλώδεις ετικέτες"
       ],
       "Subscription options": [
         "Επιλογές συνδρομής"
@@ -8272,7 +8266,7 @@
         "${ appName } Συντομεύσεις πληκτρολογίου"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        ""
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
         "${ maxUsers } χρήστης",
@@ -8871,7 +8865,7 @@
         "Αποθήκευση στοιχείων επαφής"
       ],
       "Secure email based in Switzerland": [
-        "Ασφαλές email βασισμένος στην Ελβετία"
+        "Ασφαλές email με έδρα την Ελεβετία"
       ],
       "Security": [
         "Διασφάλιση"
@@ -9192,7 +9186,7 @@
         "Ορίστε την προεπιλεγμένη διάταξη για τα Εισερχόμενά σας."
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "Ορίστε το παρακάτω υποσέλιδο στα μηνύματα που στέλνετε: ${ signature } Ο σύνδεσμος παραπέμπει στον σύνδεσμο παραπομπής σας. Το υποσέλιδο θα φαίνεται κάτω από την υπογραφή σας. Μπορείτε να προσωποποιήσετε την υπογραφή σας οποτεδήποτε μέσα στις ρυθμίσεις."
+        "Ορίζει το παρακάτω υποσέλιδο στα μηνύματα που στέλνετε: ${ signature } Ο σύνδεσμος δείχνει στον σύνδεσμο παραπομπής σας. Το υποσέλιδο θα φαίνεται κάτω από την υπογραφή σας. Μπορείτε να εξατομικεύσετε την υπογραφή σας στις ρυθμίσεις."
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "Οι υπογραφές που παράγονται από αυτό το κλειδί θεωρούνται άκυρες και αυτό το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"

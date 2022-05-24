@@ -2027,7 +2027,7 @@
         "Αποτυχία λήψης αρχικού περιστατικού στη σειρά"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
       "Image upload failed": [
         "Η μεταφόρτωση της εικόνας απέτυχε"
@@ -2066,7 +2066,7 @@
         "Είναι δυνατή μόνο η μετακίνηση γεγονότων, μεταξύ ${ minDateString } - ${ maxDateString }"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -2184,10 +2184,10 @@
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
@@ -3025,7 +3025,7 @@
         "Κανένα από τα ανεβασμένα κλειδιά δεν είναι έγκυρο για κρυπτογράφηση. Η κρυπτογράφηση έχει απενεργοποιηθεί αυτόματα."
       ],
       "Not a valid URL": [
-        ""
+        "Μη έγκυρο URL"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν, αλλά μερικές από τις απαντήσεις σας θα χαθούν."
@@ -3608,9 +3608,6 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
-      ],
-      "What is the primary reason for this rating?": [
-        "Ποιος είναι ο κύριος λόγος αυτής της αξιολόγησης;"
       ]
     },
     "Label for contact group color": {
@@ -4182,9 +4179,6 @@
       "E.g., ": [
         "Π.χ., "
       ],
-      "Feedback": [
-        "Αξιολόγηση"
-      ],
       "Filter groups": [
         "Φιλτράρισμα κατά ομάδες"
       ],
@@ -4363,7 +4357,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "Υπερβολικά μεγάλο URL"
       ]
     },
     "Success": {
@@ -4752,9 +4746,6 @@
       ],
       "Feedback": [
         "Αξιολόγηση"
-      ],
-      "Give feedback": [
-        "Δώστε ανάδρασης"
       ],
       "Groups": [
         "Ομάδες"
