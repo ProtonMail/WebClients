@@ -14,10 +14,6 @@ const DesktopNotificationTopBanner = () => {
     const { APP_NAME } = useConfig();
     const onMobile = useRef(isMobile());
 
-    if (onMobile.current) {
-        return null;
-    }
-
     const appName = getAppName(APP_NAME);
 
     if (!([APPS.PROTONMAIL, APPS.PROTONCALENDAR] as APP_NAMES[]).includes(APP_NAME)) {
@@ -39,13 +35,17 @@ const DesktopNotificationTopBanner = () => {
         );
     };
 
+    const action = onMobile ? c('Action').t`enable mobile notifications` : c('Action').t`enable desktop notifications`;
+
     const enableDesktopNotifications = (
         <button
             key="enable-desktop-notifications"
             className="link align-baseline text-left"
             type="button"
             onClick={handleEnable}
-        >{c('Action').t`enable desktop notifications`}</button>
+        >
+            {action}
+        </button>
     );
 
     return (
