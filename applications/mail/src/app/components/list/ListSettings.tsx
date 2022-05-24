@@ -11,7 +11,7 @@ interface Props {
     onFilter: (filter: Filter) => void;
     conversationMode: boolean;
     isSearch: boolean;
-    labelID?: string;
+    labelID: string;
 }
 
 const ListSettings = ({ sort, onSort, onFilter, filter, conversationMode, isSearch, labelID }: Props) => {
@@ -20,6 +20,7 @@ const ListSettings = ({ sort, onSort, onFilter, filter, conversationMode, isSear
         <div className="sticky-top upper-layer bg-norm border-bottom border-weak pl0-5 pr0-5 pt0-25 pb0-25 flex flex-wrap flex-justify-space-between">
             <FilterActions filter={filter} onFilter={onFilter} />
             <SortDropdown
+                labelID={labelID}
                 conversationMode={conversationMode}
                 sort={sort}
                 onSort={onSort}

@@ -1,22 +1,24 @@
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
-import { MailSettings } from '@proton/shared/lib/interfaces';
-import { Icon, useLoading, ToolbarButton } from '@proton/components';
+import { Icon, useLoading, ToolbarButton, useMailSettings } from '@proton/components';
 import { c } from 'ttag';
-
+import { Vr } from '@proton/atoms';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 
 interface Props {
-    mailSettings: MailSettings;
     selectedIDs: string[];
     onMarkAs: (status: MARK_AS_STATUS) => Promise<void>;
 }
 
-const ReadUnreadButtons = ({ mailSettings, selectedIDs, onMarkAs }: Props) => {
+const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
     // INFO MessageButtons cannot be changed in setting anymore but we keep the logic for people using it
-    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD, Shortcuts = 0 } = mailSettings;
+    const [{ MessageButtons = MESSAGE_BUTTONS.READ_UNREAD, Shortcuts = 0 } = {}] = useMailSettings();
     const [loading, withLoading] = useLoading();
+
+    if (!selectedIDs.length) {
+        return null;
+    }
 
     const titleRead = Shortcuts ? (
         <>
@@ -63,7 +65,12 @@ const ReadUnreadButtons = ({ mailSettings, selectedIDs, onMarkAs }: Props) => {
     }
 
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/20356
-    return <>{buttons}</>;
+    return (
+        <>
+            <Vr />
+            {buttons}
+        </>
+    );
 };
 
 export default ReadUnreadButtons;

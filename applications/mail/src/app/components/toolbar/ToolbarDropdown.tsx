@@ -1,5 +1,4 @@
-import { ReactNode, useState, useEffect } from 'react';
-import * as React from 'react';
+import { ReactNode, useState, Ref, useImperativeHandle } from 'react';
 import { classnames, usePopperAnchor, DropdownButton, Dropdown, generateUID, Tooltip } from '@proton/components';
 
 interface LockableDropdownProps {
@@ -18,7 +17,7 @@ interface Props {
     disabled?: boolean;
     noMaxSize?: boolean;
     [rest: string]: any;
-    externalToggleRef?: React.MutableRefObject<() => void>;
+    externalToggleRef?: Ref<() => void>;
 }
 
 const ToolbarDropdown = ({
@@ -39,11 +38,7 @@ const ToolbarDropdown = ({
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    useEffect(() => {
-        if (externalToggleRef) {
-            externalToggleRef.current = toggle;
-        }
-    }, []);
+    useImperativeHandle(externalToggleRef, () => toggle, []);
 
     return (
         <>
