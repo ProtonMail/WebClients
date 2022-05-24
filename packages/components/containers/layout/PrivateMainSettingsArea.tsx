@@ -1,4 +1,4 @@
-import { Children, isValidElement, ReactNode, useEffect, useRef } from 'react';
+import { Children, cloneElement, isValidElement, ReactNode, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 import noop from '@proton/utils/noop';
 
@@ -13,19 +13,23 @@ import PrivateMainArea from './PrivateMainArea';
 import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 
-interface Props {
-    children: ReactNode;
+interface PrivateMainSettingsAreaBaseProps {
+    title: string;
+    description?: string;
     setActiveSection?: (section: string) => void;
-    config: SettingsAreaConfig;
+    children?: ReactNode;
 }
 
-const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Props) => {
+export const PrivateMainSettingsAreaBase = ({
+    setActiveSection,
+    title,
+    description,
+    children,
+}: PrivateMainSettingsAreaBaseProps) => {
     const location = useLocation();
 
     const mainAreaRef = useRef<HTMLDivElement>(null);
     const useIntersectionSection = useRef(false);
-
-    const { text: title, description, subsections } = config;
 
     useAppTitle(title);
 
@@ -97,29 +101,14 @@ const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Props) 
         useIntersectionSection.current && setActiveSection ? setActiveSection : noop
     );
 
-    const wrappedSections = Children.toArray(children).map((child, i) => {
+    const wrappedSections = Children.toArray(children).map((child) => {
         if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
             return null;
         }
-        const config = subsections?.[i];
-        if (!config) {
-            throw new Error('Missing subsection');
-        }
-        //
-        if (!getIsSubsectionAvailable(config)) {
-            return null;
-        }
-        return (
-            <SubSettingsSection
-                key={config.id}
-                id={config.id}
-                title={config.text}
-                observer={sectionObserver}
-                className="container-section-sticky-section"
-            >
-                {child}
-            </SubSettingsSection>
-        );
+
+        return cloneElement(child, {
+            observer: sectionObserver,
+        });
     });
 
     return (
@@ -132,6 +121,46 @@ const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Props) 
                 <ErrorBoundary>{wrappedSections}</ErrorBoundary>
             </div>
         </PrivateMainArea>
+    );
+};
+
+interface PrivateMainSettingsAreaProps {
+    children: ReactNode;
+    setActiveSection?: (section: string) => void;
+    config: SettingsAreaConfig;
+}
+
+const PrivateMainSettingsArea = ({ setActiveSection, children, config }: PrivateMainSettingsAreaProps) => {
+    const { text: title, description, subsections } = config;
+
+    const wrappedSections = Children.toArray(children).map((child, i) => {
+        if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
+            return null;
+        }
+        const subsectionConfig = subsections?.[i];
+        if (!subsectionConfig) {
+            throw new Error('Missing subsection');
+        }
+        if (!getIsSubsectionAvailable(subsectionConfig)) {
+            return null;
+        }
+
+        return (
+            <SubSettingsSection
+                key={subsectionConfig.id}
+                id={subsectionConfig.id}
+                title={subsectionConfig.text}
+                className="container-section-sticky-section"
+            >
+                {child}
+            </SubSettingsSection>
+        );
+    });
+
+    return (
+        <PrivateMainSettingsAreaBase title={title} description={description} setActiveSection={setActiveSection}>
+            {wrappedSections}
+        </PrivateMainSettingsAreaBase>
     );
 };
 
