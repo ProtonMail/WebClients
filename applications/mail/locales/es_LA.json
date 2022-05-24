@@ -3261,6 +3261,11 @@
         "Ninguna imagen seleccionada"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Puntuación requerida"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "No se puede enviar la invitación a ${ email }. ${ errorMessage }"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Las importaciones grandes pueden tardar varios días."
       ],
-      "learn more": [
-        "más información"
-      ],
       "Learn more": [
         "Más información"
+      ],
+      "learn more": [
+        "más información"
       ],
       "Left to Right": [
         "Izquierda a derecha"
@@ -5985,9 +5990,34 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Presentamos la actualización de la imagen de Proton.${ br } Varios servicios, pero una misma misión. Bienvenido a Internet en el cual la privacidad es el valor por defecto."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Proton tiene un nuevo diseño. ¡Nos encantaría conocer tu opinión!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Pésima"
+      ],
+      "5 - Wonderful": [
+        "5 - Excelente"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "¿Cómo describirías tu experiencia con el nuevo Proton?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Cuéntanos tu experiencia (opcional)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Comentarios"
       ]
     },
     "new_plans: title": {
+      "Give feedback": [
+        "Deja un comentario"
+      ],
       "Updated Proton, unified protection": [
         "Nuevo diseño, protección unificada"
       ]
@@ -6734,6 +6764,11 @@
         "Verificación exitosa"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Comentarios enviados"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mes"
@@ -7035,6 +7070,9 @@
       "Exporting contacts": [
         "Exportando contactos"
       ],
+      "Feedback": [
+        "Comentarios"
+      ],
       "Filter on": [
         "Filtrar por"
       ],
@@ -7205,6 +7243,9 @@
       ],
       "Send email": [
         "Enviar correo"
+      ],
+      "Send feedback": [
+        "Enviar comentarios"
       ],
       "Send with changed preferences?": [
         "¿Enviar con preferencias cambiadas?"

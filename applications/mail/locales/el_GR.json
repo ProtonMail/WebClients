@@ -2840,7 +2840,7 @@
         "Το φίλτρο με αυτό το όνομα υπάρχει ήδη"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "Το όνομα φακέλου δεν μπορεί να είναι κενό."
       ],
       "Image upload failed": [
         "Η μεταφόρτωση της εικόνας απέτυχε"
@@ -2864,7 +2864,7 @@
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Label name cannot be empty.": [
-        ""
+        "Το όνομα της ετικέτας δεν μπορεί να είναι κενό."
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Υπέρβαση μέγιστου αριθμού συνημμένων (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
@@ -3026,10 +3026,10 @@
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Αυτό το όνομα φακέλου δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Αυτό το όνομα ετικέτας δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα."
       ],
       "This message has already been sent": [
         "Αυτό το μήνυμα έχει ήδη αποσταλεί"
@@ -3259,6 +3259,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Δεν επιλέχθηκε εικόνα"
+      ]
+    },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
       ]
     },
     "Error sending calendar invitation": {
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Οι μεγάλες εισαγωγές μπορεί να πάρουν αρκετές ημέρες."
       ],
-      "learn more": [
-        ""
-      ],
       "Learn more": [
         "Μάθετε περισσότερα"
+      ],
+      "learn more": [
+        ""
       ],
       "Left to Right": [
         "Αριστερά προς τα δεξιά"
@@ -6719,6 +6724,11 @@
         "Επιτυχία επαλήθευσης"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/μήνα"
@@ -7020,6 +7030,9 @@
       "Exporting contacts": [
         "Γίνεται εξαγωγή επαφών"
       ],
+      "Feedback": [
+        ""
+      ],
       "Filter on": [
         "Φίλτρο σε"
       ],
@@ -7190,6 +7203,9 @@
       ],
       "Send email": [
         "Αποστολή μηνύματος"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Send with changed preferences?": [
         "Αποστολή με αλλαγμένες προτιμήσεις;"

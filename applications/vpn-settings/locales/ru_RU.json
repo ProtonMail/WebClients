@@ -137,9 +137,6 @@
       "Download all configurations": [
         "Скачать все конфигурации"
       ],
-      "Download on another platform": [
-        "Скачать на другой платформе"
-      ],
       "Edit": [
         "Редактировать"
       ],
@@ -3130,10 +3127,10 @@
         "Получить ${ connections } высокоскоростных VPN-подключения"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Получить ${ connections } высокоскоростное VPN-подключение на пользователя",
-        "Получить ${ connections } высокоскоростных VPN-подключения на пользователя",
-        "Получить ${ connections } высокоскоростных VPN-подключений на пользователя",
-        "Получить ${ connections } высокоскоростных VPN-подключения на пользователя"
+        "Получите ${ connections } высокоскоростное VPN-подключение на пользователя",
+        "Получите ${ connections } высокоскоростных VPN-подключения на пользователя",
+        "Получите ${ connections } высокоскоростных VPN-подключений на пользователя",
+        "Получите ${ connections } высокоскоростных VPN-подключения на пользователя"
       ]
     },
     "new_plans: feature": {
@@ -3418,6 +3415,9 @@
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Если вы перейдете на другой тариф, то потеряете все преимущества тарифа ${ visionary } и больше не сможете вернуться к ${ visionary }."
+      ],
+      "learn more": [
+        "подробнее"
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Тариф ${ visionary } больше недоступен новым подписчикам, поскольку предназначен для пользователей со стороны ${ BRAND_NAME } и предусматривает для них специальные функции и преимущества."
@@ -3740,7 +3740,7 @@
         "Все, что входит в ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
-        "Получить 5 дополнительных адресов электронной почты на пользователя"
+        "Получите 5 дополнительных адресов электронной почты на пользователя"
       ],
       "Priority support": [
         "Приоритетная поддержка"

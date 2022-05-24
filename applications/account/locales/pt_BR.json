@@ -118,9 +118,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Cancel import": [
-        "Cancelar importação"
-      ],
       "Change mailbox password": [
         "Alterar senha da caixa de correio"
       ],
@@ -294,9 +291,6 @@
       ],
       "Download all configurations": [
         "Baixar todas as configurações"
-      ],
-      "Download on another platform": [
-        "Baixar em outra plataforma"
       ],
       "Download recovery file": [
         "Baixar o arquivo de recuperação"
@@ -691,11 +685,11 @@
       "Sign out": [
         "Encerrar sessão"
       ],
-      "Sign out all accounts": [
-        "Sair de todas as contas"
-      ],
       "Sign out from": [
         "Encerrar sessão de"
+      ],
+      "Sign out of all accounts": [
+        "Encerrar sessão de todas as contas"
       ],
       "Signing in": [
         "Iniciando sessão"
@@ -3574,7 +3568,7 @@
         "Use sua senha de aplicativo em vez da sua senha normal se:"
       ],
       "You can also try to sign out of ${ boldGoogleAccounts } in the browser, then unlock ${ linkCAPTCHA }.": [
-        "Você também pode tentar desconectar-se de ${ boldGoogleAccounts } no navegador, depois desbloquear ${ linkCAPTCHA }."
+        "Você também pode tentar encerrar sessão de ${ boldGoogleAccounts } no navegador, depois desbloquear ${ linkCAPTCHA }."
       ],
       "Your app password is correct. Do ${ boldNot } use your regular password.": [
         "A senha de aplicativo está correta. ${ boldNot } use sua senha normal."
@@ -5170,7 +5164,7 @@
         "Infelizmente não há um método de recuperação salvo para esta conta."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "A menos que você saia de sua conta ou mude a senha, sua sessão permanecerá ativa. Sessões expiram após 60 dias de inatividade."
+        "A menos que você encerre sessão de sua conta ou mude a senha, sua sessão permanecerá ativa. Sessões expiram após 60 dias de inatividade."
       ],
       "Unlimited folders, labels, and filters": [
         "Pastas ilimitadas, marcadores e filtros"
@@ -7172,7 +7166,7 @@
         "Fazer downgrade da conta"
       ],
       "Get ${ BRAND_NAME } for free": [
-        "Obter os produtos ${ BRAND_NAME } gratuitamente"
+        "Obter ${ BRAND_NAME } gratuitamente"
       ],
       "Get ${ planName }": [
         "Obter o ${ planName }"
@@ -7210,10 +7204,10 @@
         "A partir de ${ price }"
       ],
       "Keep my ${ currentPlanName } account": [
-        "Manter minha conta ${ currentPlanName }"
+        "Manter minha conta do ${ currentPlanName }"
       ],
       "Upgrade now": [
-        "Fazer o upgrade agora"
+        "Fazer upgrade agora"
       ]
     },
     "new_plans: attribute": {
@@ -7488,8 +7482,11 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se mudar para um plano diferente, você perderá todos os benefícios do plano ${ visionary } e não poderá voltar para o ${ visionary }."
       ],
+      "learn more": [
+        "saiba mais"
+      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois se trata de um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
+        "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois é um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
       ],
       "Popular": [
         "Popular"
@@ -7546,7 +7543,7 @@
     },
     "new_plans: message displayed when user visit v5 login": {
       "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Apresentando a aparência renovada do Proton. Muitos serviços, uma missão. Faça login para continuar ou ${ learnMoreLink }."
+        "Apresentando a aparência renovada do Proton. Muitos serviços, uma missão. Inicie a sessão para continuar ou ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -7594,7 +7591,7 @@
         "Fazer downgrade da conta?"
       ],
       "Improved plans coming soon!": [
-        "Planos aprimorados serão disponibilizados em breve!"
+        "Planos melhores em breve!"
       ],
       "Review subscription and pay": [
         "Revisar assinatura e pagar"
@@ -7637,7 +7634,7 @@
         "Permite que você configure respostas automáticas para suas mensagens recebidas"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Não há compatibilidade com o envio em massa de e-mails promocionais ou com anúncios programáticos no momento. Recomendamos o uso de um provedor de serviços de e-mail dedicado para esse caso de uso."
+        "O envio em massa de e-mails promocionais ou programáticos não tem suporte no momento. Recomendamos o uso de um provedor de serviços de e-mail dedicado para esse caso de uso."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Controle o acesso aos seus arquivos compartilhados adicionando proteção por senha e datas de expiração de links"
@@ -7656,13 +7653,13 @@
         "Compartilhe facilmente seus calendários com colegas, familiares e amigos por meio de um link"
       ],
       "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Compartilhe facilmente seus calendários com amigos, familiares ou colegas por meio de um link"
+        "Compartilhe facilmente seus calendários com familiares, amigos ou colegas por meio de um link"
       ],
       "End-to-end encrypted calendar": [
-        "Calendário com criptografia de ponta a ponta"
+        "Calendário criptografado de ponta a ponta"
       ],
       "End-to-end encrypted file storage": [
-        "Armazenamento de arquivos com criptografia de ponta a ponta"
+        "Armazenamento de arquivos criptografado de ponta a ponta"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Garante que você receba todos os e-mails enviados ao seu domínio, mesmo que o endereço de e-mail não exista, tenha deixado de existir ou contenha um erro de digitação"
@@ -7767,7 +7764,7 @@
         "Não armazenamos registros de uso de sessão com aquilo que você faz on-line e não registramos metadados que possam comprometer sua privacidade"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Estamos comprometidos em ajudar os clientes sujeitos às regulamentações da HIPAA/HITECH a garantir a segurança de informações de saúde protegidas (PHI). BAAs assinados estão disponíveis para todos os clientes do ${ BRAND_NAME } para Empresas."
+        "Estamos comprometidos em ajudar os clientes sujeitos às regulamentações da HIPAA/HITECH a garantir a segurança de informações pessoais de saúde (PHI). BAAs assinados estão disponíveis para todos os clientes da ${ BRAND_NAME } para Empresas."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Quando você se conecta à nossa VPN, seu DNS faz consultas por meio do nosso túnel VPN criptografado, aumentando sua privacidade e segurança on-line"
@@ -7807,7 +7804,7 @@
         "Aumente seu espaço de armazenamento para ${ businessStorage } por usuário"
       ],
       "Cover more ground with support for 10 custom email domains": [
-        "Tenha mais opções de endereços com o suporte para 10 domínios de e-mail personalizados"
+        "Tenha mais opções com o suporte para 10 domínios de e-mail personalizados"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Crie ${ numberOfPersonalCalendars } calendário pessoal",
@@ -8862,7 +8859,7 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/mês"
       ],
       "/user per month": [
         ""

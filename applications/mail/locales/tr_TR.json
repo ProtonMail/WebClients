@@ -3261,6 +3261,11 @@
         "Herhangi bir görsel seçilmemiş"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Puan zorunludur"
+      ]
+    },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
         "${ email } adresine davet gönderilemedi. ${ errorMessage }"
@@ -4199,11 +4204,11 @@
       "Large imports can take several days.": [
         "Büyük boyutlu içe aktarımların tamamlanması bir kaç gün sürebilir."
       ],
-      "learn more": [
-        "ayrıntılı bilgi alın"
-      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
+      ],
+      "learn more": [
+        "ayrıntılı bilgi alın"
       ],
       "Left to Right": [
         "Soldan sağa"
@@ -6719,6 +6724,11 @@
         "Doğrulandı"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Geri bildirim gönderildi"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/ay"
@@ -7020,6 +7030,9 @@
       "Exporting contacts": [
         "Kişileri dışa aktarma"
       ],
+      "Feedback": [
+        "Geri bildirim"
+      ],
       "Filter on": [
         "Şuna göre süz"
       ],
@@ -7190,6 +7203,9 @@
       ],
       "Send email": [
         "E-posta gönder"
+      ],
+      "Send feedback": [
+        "Geri bildirimi gönder"
       ],
       "Send with changed preferences?": [
         "Değiştirilmiş tercihlerle gönderilsin mi?"
