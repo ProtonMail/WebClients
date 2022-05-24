@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Route, Switch, useRouteMatch, useLocation } from 'react-router-dom';
+import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import { PrivateMainSettingsArea, ThemesSection } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 
@@ -13,7 +13,6 @@ const DriveSettingsRouter = ({
     redirect: ReactNode;
 }) => {
     const { path } = useRouteMatch();
-    const location = useLocation();
 
     const {
         routes: { general },
@@ -22,7 +21,7 @@ const DriveSettingsRouter = ({
     return (
         <Switch>
             <Route path={getSectionPath(path, general)}>
-                <PrivateMainSettingsArea config={general} location={location}>
+                <PrivateMainSettingsArea config={general}>
                     <ThemesSection />
                 </PrivateMainSettingsArea>
             </Route>

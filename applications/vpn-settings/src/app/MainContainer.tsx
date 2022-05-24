@@ -181,7 +181,6 @@ const MainContainer = () => {
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea
                                             setActiveSection={setActiveSection}
-                                            location={location}
                                             config={routes.dashboard}
                                         >
                                             <PlansSection />
@@ -195,21 +194,13 @@ const MainContainer = () => {
                                 </Route>
                             )}
                             <Route path={routes.general.to}>
-                                <PrivateMainSettingsArea
-                                    setActiveSection={setActiveSection}
-                                    location={location}
-                                    config={routes.general}
-                                >
+                                <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.general}>
                                     <LanguageSection locales={locales} />
                                     <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>
-                                <PrivateMainSettingsArea
-                                    setActiveSection={setActiveSection}
-                                    location={location}
-                                    config={routes.account}
-                                >
+                                <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.account}>
                                     <UsernameSection />
                                     <PasswordsSection />
                                     <OpenVPNCredentialsSection />
@@ -219,11 +210,7 @@ const MainContainer = () => {
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.downloads.to}>
-                                <PrivateMainSettingsArea
-                                    setActiveSection={setActiveSection}
-                                    location={location}
-                                    config={routes.downloads}
-                                >
+                                <PrivateMainSettingsArea setActiveSection={setActiveSection} config={routes.downloads}>
                                     <ProtonVPNClientsSection />
                                     <OpenVPNConfigurationSection />
                                     <WireGuardConfigurationSection />
@@ -233,7 +220,6 @@ const MainContainer = () => {
                                 <Route path={routes.payments.to}>
                                     <PrivateMainSettingsArea
                                         setActiveSection={setActiveSection}
-                                        location={location}
                                         config={routes.payments}
                                     >
                                         <PaymentMethodsSection />

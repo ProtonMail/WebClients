@@ -1,12 +1,5 @@
 import { ThemeColor } from '@proton/colors';
-import * as H from 'history';
-
 import { IconName } from '../../components';
-
-export interface SettingsPropsShared {
-    location: H.Location;
-    config: SectionConfig;
-}
 
 export interface SubSectionConfig {
     text?: string;
@@ -15,12 +8,15 @@ export interface SubSectionConfig {
     available?: boolean;
 }
 
-export interface SectionConfig {
+export interface SettingsAreaConfig {
     text: string;
-    to: string;
-    icon: IconName;
     description?: string;
     subsections: SubSectionConfig[];
+}
+
+export interface SectionConfig extends SettingsAreaConfig {
+    to: string;
+    icon: IconName;
     available?: boolean;
     notification?: ThemeColor;
 }

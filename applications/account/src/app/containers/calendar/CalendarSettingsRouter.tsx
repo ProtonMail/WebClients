@@ -1,5 +1,5 @@
 import { ReactNode, useMemo } from 'react';
-import { Switch, Route, useRouteMatch, useLocation } from 'react-router-dom';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 import { UserModel } from '@proton/shared/lib/interfaces';
 import {
@@ -52,7 +52,6 @@ const CalendarSettingsRouter = ({
     redirect,
 }: Props) => {
     const { path } = useRouteMatch();
-    const location = useLocation();
 
     const [addresses, loadingAddresses] = useAddresses();
     const memoizedAddresses = useMemo(() => addresses || [], [addresses]);
@@ -93,7 +92,7 @@ const CalendarSettingsRouter = ({
     return (
         <Switch>
             <Route path={getSectionPath(path, general)}>
-                <PrivateMainSettingsArea config={general} location={location}>
+                <PrivateMainSettingsArea config={general}>
                     <CalendarTimeSection calendarUserSettings={calendarUserSettings} />
                     <CalendarLayoutSection calendarUserSettings={calendarUserSettings} />
                     <CalendarInvitationsSection
@@ -106,7 +105,7 @@ const CalendarSettingsRouter = ({
                 </PrivateMainSettingsArea>
             </Route>
             <Route path={getSectionPath(path, calendarsRoute)}>
-                <PrivateMainSettingsArea config={calendarsRoute} location={location}>
+                <PrivateMainSettingsArea config={calendarsRoute}>
                     <PersonalCalendarsSection
                         addresses={memoizedAddresses}
                         calendars={personalCalendars}
