@@ -14,6 +14,11 @@ const DesktopNotificationTopBanner = () => {
     const { APP_NAME } = useConfig();
     const onMobile = useRef(isMobile());
 
+    if (onMobile) {
+        // NOTE: we could support mobile notification but this require to run a service worker
+        return null;
+    }
+
     const appName = getAppName(APP_NAME);
 
     if (!([APPS.PROTONMAIL, APPS.PROTONCALENDAR] as APP_NAMES[]).includes(APP_NAME)) {
