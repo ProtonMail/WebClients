@@ -23,10 +23,11 @@ interface Props {
     onClose: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
     onMailTo?: (src: string) => void;
+    onLock: (lock: boolean) => void;
     customActions: CustomAction[];
 }
 
-const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, customActions }: Props) => {
+const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customActions }: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
     const [userKeysList, loadingUserKeys] = useUserKeys();
@@ -217,6 +218,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, customActions }
                     onDelete={handleDelete}
                     onMerge={() => handleMerge(false)}
                     onClose={onClose}
+                    onLock={onLock}
                 />
             </div>
             {showList && countMergeableContacts ? <MergeContactBanner onMerge={() => handleMerge(true)} /> : null}
