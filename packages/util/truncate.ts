@@ -21,13 +21,9 @@ export default function truncate(
      */
     omission = DEFAULT_TRUNCATE_OMISSION
 ) {
-    if (str.length === 0) {
+    if (str.length === 0 || str.length <= charsToDisplay) {
         return str;
     }
 
-    if (str.length > charsToDisplay) {
-        return str.substring(0, charsToDisplay - omission.length) + omission;
-    }
-
-    return str;
+    return str.substring(0, charsToDisplay - omission.length) + omission;
 }
