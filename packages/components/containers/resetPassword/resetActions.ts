@@ -1,7 +1,7 @@
 import { getRecoveryMethods, getUser } from '@proton/shared/lib/api/user';
 import { requestLoginResetToken, validateResetToken } from '@proton/shared/lib/api/reset';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { Api, User as tsUser } from '@proton/shared/lib/interfaces';
+import { Api, User as tsUser, UserType } from '@proton/shared/lib/interfaces';
 import { generateKeySaltAndPassphrase, getResetAddressesKeys, handleSetupAddressKeys } from '@proton/shared/lib/keys';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
@@ -71,7 +71,7 @@ export const handleNewPassword = async ({
     let keyPassword = passphrase;
     // This is intended to deal with setting up an address & generating keys for username-only (VPN) accounts if
     // resetting the password through the account application.
-    if (cache.hasGenerateKeys && !User.Keys.length) {
+    if (cache.hasGenerateKeys && !User.Keys.length && User.Type !== UserType.EXTERNAL) {
         keyPassword = await handleSetupAddressKeys({
             api: authApi,
             username,

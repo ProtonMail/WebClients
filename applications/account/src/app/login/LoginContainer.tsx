@@ -49,6 +49,7 @@ interface Props {
     showContinueTo?: boolean;
     onBack?: () => void;
     hasRemember?: boolean;
+    hasGenerateKeys?: boolean;
 }
 
 const LoginContainer = ({
@@ -58,6 +59,7 @@ const LoginContainer = ({
     showContinueTo,
     shouldSetupInternalAddress,
     hasRemember = true,
+    hasGenerateKeys = true,
 }: Props) => {
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -186,7 +188,7 @@ const LoginContainer = ({
                                     password,
                                     persistent,
                                     api: silentApi,
-                                    hasGenerateKeys: true,
+                                    hasGenerateKeys,
                                     ignoreUnlock: false,
                                     payload,
                                 })
