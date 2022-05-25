@@ -30,8 +30,8 @@ const ConfirmRemovePhoneModal = ({ onConfirm, onClose, ...rest }: Props) => {
                 <Button
                     color="norm"
                     onClick={() => {
-                        onClose?.();
                         onConfirm();
+                        onClose?.();
                     }}
                 >
                     {c('Action').t`Confirm`}
