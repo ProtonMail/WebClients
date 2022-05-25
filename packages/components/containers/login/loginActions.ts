@@ -1,4 +1,10 @@
-import { Address as tsAddress, Api, KeySalt as tsKeySalt, User as tsUser } from '@proton/shared/lib/interfaces';
+import {
+    Address as tsAddress,
+    Api,
+    KeySalt as tsKeySalt,
+    User as tsUser,
+    UserType,
+} from '@proton/shared/lib/interfaces';
 import { AUTH_VERSION } from '@proton/srp';
 import { c } from 'ttag';
 import { srpVerify } from '@proton/shared/lib/srp';
@@ -284,7 +290,7 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
 
     const [User] = cache.userSaltResult;
 
-    if (User.Keys.length === 0) {
+    if (User.Keys.length === 0 && User.Type !== UserType.EXTERNAL) {
         if (hasGenerateKeys) {
             if (authResult.TemporaryPassword) {
                 return { cache, to: AuthStep.NEW_PASSWORD };
