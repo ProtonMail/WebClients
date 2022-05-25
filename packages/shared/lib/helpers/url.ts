@@ -218,7 +218,7 @@ export const getStaticURL = (path: string) => {
     // We create a relative URL to support the TOR domain
     cache = cache || getSecondLevelDomain(window.location.hostname);
     // The VPN domain has a different static site and the proton.me urls are not supported there
-    const hostname = cache === 'protonvpn.com' ? 'proton.me' : cache;
+    const hostname = cache === 'protonvpn.com' || cache === 'protonmail.com' ? 'proton.me' : cache;
     return `https://${hostname}${path}`;
 };
 
