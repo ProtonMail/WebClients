@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
+import { useLocation } from 'react-router-dom';
 
 import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
 import { useConfig, useUser } from '../../hooks';
@@ -50,6 +51,7 @@ const PrivateHeader = ({
     const [user] = useUser();
     const { APP_NAME } = useConfig();
     const offer = usePromotionOffer();
+    const location = useLocation();
 
     if (backUrl) {
         return (
@@ -71,6 +73,7 @@ const PrivateHeader = ({
     }
 
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
+    const upgradePathname = isVPN ? '/dashboard' : '/upgrade';
 
     return (
         <Header>
@@ -89,7 +92,7 @@ const PrivateHeader = ({
                             <TopNavbarListItemBlackFridayButton offer={offer} />
                         </TopNavbarListItem>
                     ) : null}
-                    {user.isFree && (
+                    {user.isFree && !location.pathname.endsWith(upgradePathname) && (
                         <TopNavbarListItem noShrink collapsedOnDesktop={false}>
                             <TopNavbarListItemButton
                                 as={SettingsLink}
@@ -97,7 +100,7 @@ const PrivateHeader = ({
                                 color="norm"
                                 text={c('Link').t`Upgrade`}
                                 icon={<Icon name="arrow-up-big-line" />}
-                                path={isVPN ? '/dashboard' : '/upgrade'}
+                                path={upgradePathname}
                                 title={c('Link').t`Go to subscription plans`}
                             />
                         </TopNavbarListItem>
