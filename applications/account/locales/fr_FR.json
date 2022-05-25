@@ -562,6 +562,9 @@
       "Request new code": [
         "Demander un nouveau code"
       ],
+      "Requires a verified recovery email address": [
+        "Nécessite une adresse e-mail de récupération vérifiée"
+      ],
       "Reset credentials": [
         "Réinitialiser les identifiants"
       ],
@@ -689,7 +692,7 @@
         "Se déconnecter de"
       ],
       "Sign out of all accounts": [
-        "Déconnecter tous les comptes"
+        "Se déconnecter de tous les comptes"
       ],
       "Signing in": [
         "Connexion en cours"
@@ -2553,7 +2556,7 @@
         "Un filtre portant ce nom existe déjà"
       ],
       "Folder name cannot be empty.": [
-        "Le nom de dossier ne peut être vide."
+        "Le nom de dossier ne peut pas être vide."
       ],
       "Incorrect login credentials. Please try again.": [
         "Identifiants de connexion incorrects. Veuillez réessayer."
@@ -7226,7 +7229,7 @@
       ],
       "${ n } custom email domain": [
         "${ n } domaine de messagerie personnalisé pris en charge",
-        "${ n } domaines de messagerie personnalisés"
+        "${ n } domaines de messagerie personnalisés pris en charge"
       ],
       "${ n } email address": [
         "${ n } adresse électronique",

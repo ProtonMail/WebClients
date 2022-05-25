@@ -562,6 +562,9 @@
       "Request new code": [
         "Vraag een nieuwe code aan"
       ],
+      "Requires a verified recovery email address": [
+        ""
+      ],
       "Reset credentials": [
         "Inloggegevens resetten"
       ],
@@ -3992,10 +3995,10 @@
         "Account toegang beperkt vanwege onbetaalde facturen. Neem contact op met uw beheerder."
       ],
       "account recovery and data recovery method": [
-        "account recovery en data recovery methode"
+        "accountherstel en data herstelmethode"
       ],
       "account recovery method": [
-        "account herstel methode"
+        "account herstelmethode"
       ],
       "Account size": [
         "Accountgrootte"
@@ -4465,7 +4468,7 @@
         "Indien u zowel SPF als DKIM ingesteld hebt, geeft het DMARC-record voor andere e-maildiensten aan wat er moet gebeuren als er iets misgaat tijdens het controleren van uw SPF- en DKIM-records. Dit maakt het moeilijker voor spammers om zich voor te doen als u, maar dit kan ook afleverproblemen veroorzaken ten gevolge van een foutieve configuratie."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "Als u uw inloggegevens verliest en uw account opnieuw moet instellen, ${ boldImperative } dan dat u een ${ boldAccountRecovery } hebt."
+        "Als u uw inloggegevens verliest en uw account opnieuw moet instellen, dan ${ boldImperative } dat u een ${ boldAccountRecovery } heeft."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
         "Als u uw inloggegevens verliest en uw account moet resetten, zorg er dan voor dat u zowel ${ boldImperative } als ${ boldAccountAndRecovery } hebt, anders hebt u wellicht geen toegang meer tot uw e-mails, contacten of bestanden."
@@ -4569,7 +4572,7 @@
         "Het ziet er naar uit dat een deel van uw data versleuteld en vergrendeld is."
       ],
       "it’s imperative": [
-        "het is noodzakelijk"
+        "is het noodzakelijk"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
         "Ik ben ${ appName } aan het gebruiken en dacht dat het misschien iets voor u zou kunnen zijn. Het is een beveiligde e-maildienst die uw privacy beschermt. Registreer u met deze link om 1 maand gratis premium functies te krijgen: ${ referrerLink }"
