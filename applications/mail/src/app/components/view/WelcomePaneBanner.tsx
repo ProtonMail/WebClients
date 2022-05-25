@@ -9,7 +9,7 @@ import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getAppName } from '@proton/shared/lib/apps/helper';
-import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, DRIVE_APP_NAME, MAIL_APP_NAME, PLANS, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { WELCOME_PANE_OPTIONS_URLS } from '../../constants';
 
@@ -34,7 +34,7 @@ const WelcomePaneBanner = ({ plans, theme, userSettings, calendars = [] }: Props
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
 
     const getPrice = () => {
-        const plusPlan = plans.find((plan) => plan.Name === 'plus');
+        const plusPlan = plans.find((plan) => plan.Name === PLANS.MAIL);
         return plusPlan ? plusPlan.Pricing['12'] / 12 : 0;
     };
 
