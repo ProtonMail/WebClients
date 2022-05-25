@@ -35,6 +35,16 @@ const ThemeProvider = ({ children }: Props) => {
             path: '/',
             expirationDate: 'max',
         });
+
+        const themeMeta = document.querySelector("meta[name='theme-color']");
+        const uiProminentElement = document.querySelector('.ui-prominent');
+        const themeColor = uiProminentElement
+            ? window.getComputedStyle(uiProminentElement).getPropertyValue('--background-norm').trim()
+            : '';
+
+        if (themeMeta && themeColor) {
+            themeMeta.setAttribute('content', themeColor);
+        }
     }, [theme]);
 
     const setTheme = (nextTheme: ThemeTypes) => {
