@@ -78,7 +78,7 @@ const getTeamManagement = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Team management`,
         tooltip: '',
-        included: true,
+        included: false,
     };
 };
 
@@ -86,7 +86,7 @@ const getDocumentEditor = (): PlanCardFeatureDefinition => {
     return {
         featureName: c('new_plans: feature').t`Document editors (docs, sheets, slides)`,
         tooltip: '',
-        included: true,
+        included: false,
     };
 };
 
