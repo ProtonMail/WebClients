@@ -36,22 +36,6 @@ export const addPlus = ([first = '', ...rest] = []) => {
 export const DEFAULT_TRUNCATE_OMISSION = '…';
 
 /**
- * Given a maximum number of characters to display,
- * truncate a string by adding omission if too long
- */
-export const truncate = (str: string, charsToDisplay = 50, omission = DEFAULT_TRUNCATE_OMISSION) => {
-    if (str.length === 0) {
-        return str;
-    }
-
-    if (str.length > charsToDisplay) {
-        return str.substring(0, charsToDisplay - omission.length) + omission;
-    }
-
-    return str;
-};
-
-/**
  * Given a maximum number of characters to capture from a string at the start and end of it,
  * truncate the string by adding omission if too long. If only a maximum number of characters
  * is passed, the string is truncated by adding omission in the middle of it if too long
