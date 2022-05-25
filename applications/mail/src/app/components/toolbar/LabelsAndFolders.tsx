@@ -59,12 +59,13 @@ const LabelsAndFolders = ({
                 autoClose={false}
                 noMaxSize
                 disabled={!selectedIDs || !selectedIDs.length}
-                content={<Icon className="toolbar-icon" name="folder" />}
+                content={<Icon className="toolbar-icon" name="folder-arrow-in" />}
                 dropDownClassName="move-dropdown"
                 className="move-dropdown-button"
                 title={titleMove}
                 data-testid="toolbar:moveto"
                 externalToggleRef={moveDropdownToggleRef}
+                hasCaret={false}
             >
                 {({ onClose, onLock }) => (
                     <MoveDropdown
@@ -88,6 +89,7 @@ const LabelsAndFolders = ({
                 title={titleLabel}
                 data-testid="toolbar:labelas"
                 externalToggleRef={labelDropdownToggleRef}
+                hasCaret={false}
             >
                 {({ onClose, onLock }) => (
                     <LabelDropdown

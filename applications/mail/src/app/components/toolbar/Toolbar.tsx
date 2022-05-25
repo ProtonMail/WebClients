@@ -14,6 +14,7 @@ import LabelsAndFolders from './LabelsAndFolders';
 import FilterActions from './FilterActions';
 import { Filter, Sort } from '../../models/tools';
 import SortDropdown from './SortDropdown';
+import AllActions from './AllActions';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -112,9 +113,13 @@ const Toolbar = ({
                     onBack={onBack}
                 />
                 <FilterActions filter={filter} onFilter={onFilter} />
-                {breakpoints.isDesktop && (
-                    <MoreDropdown labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
-                )}
+                <AllActions labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
+                <MoreDropdown
+                    breakpoints={breakpoints}
+                    labelID={labelID}
+                    elementIDs={elementIDs}
+                    selectedIDs={selectedIDs}
+                />
             </div>
             <div className="flex">
                 <SortDropdown
@@ -122,7 +127,6 @@ const Toolbar = ({
                     conversationMode={conversationMode}
                     sort={sort}
                     onSort={onSort}
-                    hasCaret={false}
                     isSearch={isSearch}
                 />
                 {listInView ? (
