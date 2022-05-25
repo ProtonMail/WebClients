@@ -33,16 +33,6 @@ export const addPlus = ([first = '', ...rest] = []) => {
     return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');
 };
 
-/**
- * Uncapitalize a string
- */
-export const uncapitalize = (str: any) => {
-    if (str === '' || typeof str !== 'string') {
-        return '';
-    }
-    return str[0].toLowerCase() + str.slice(1);
-};
-
 export const DEFAULT_TRUNCATE_OMISSION = '…';
 
 /**
