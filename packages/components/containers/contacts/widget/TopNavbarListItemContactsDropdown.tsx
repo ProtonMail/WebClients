@@ -40,6 +40,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [tabIndex, setTabIndex] = useState(0);
+    const [lock, setLock] = useState(false);
 
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
         customAction.tabs.includes(tab);
@@ -75,6 +76,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                 anchorRef={anchorRef}
                 onClose={handleClose}
                 autoClose={false}
+                autoCloseOutside={!lock}
                 originalPlacement="bottom"
                 className="contacts-widget"
                 contentProps={{
@@ -100,6 +102,7 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                                     onClose={handleClose}
                                     onCompose={onCompose}
                                     onMailTo={onMailTo}
+                                    onLock={setLock}
                                     customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.CONTACTS))}
                                 />
                             ),

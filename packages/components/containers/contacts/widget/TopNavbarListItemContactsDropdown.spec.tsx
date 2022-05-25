@@ -24,6 +24,7 @@ jest.mock('../../../hooks/useCategories', () => ({ useContactGroups: () => [] })
 jest.mock('../../../hooks/useContacts', () => () => []);
 jest.mock('../../../hooks/useUserSettings', () => () => [{}, jest.fn()]);
 jest.mock('../../../hooks/useCachedModelResult', () => jest.fn());
+jest.mock('../../../hooks/useEventManager', () => () => ({}));
 
 function renderComponent({ customActions }: { customActions: CustomAction[] }) {
     return (
