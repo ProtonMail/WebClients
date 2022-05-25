@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { APPS } from '@proton/shared/lib/constants';
-import { getBlogURL } from '@proton/shared/lib/helpers/url';
+import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
 import { Href, SettingsLink } from '../../components';
 import { useFeature, useUser } from '../../hooks';
@@ -34,7 +34,7 @@ const NewDomainTopBanner = () => {
         <SettingsLink path="/identity-addresses" app={APPS.PROTONMAIL}>{c('Link').t`Activate`}</SettingsLink>
     );
 
-    const learnMoreLink = <Href url={getBlogURL('/protonme-domain')}>{c('Info').t`learn more`}</Href>;
+    const learnMoreLink = <Href url={getStaticURL('/news/protonme-domain')}>{c('Info').t`learn more`}</Href>;
 
     return (
         <TopBanner className="bg-info" onClose={handleDismiss}>
