@@ -23,6 +23,10 @@ import themeLegacySvg from '@proton/styles/assets/img/themes/theme-thumb-legacy.
 import themeLegacySvgSmall from '@proton/styles/assets/img/themes/theme-thumb-legacy-small.svg';
 import legacyTheme from '@proton/colors/themes/dist/legacy.theme.css';
 
+import themeClassicSvg from '@proton/styles/assets/img/themes/theme-thumb-classic.svg';
+import themeClassicSvgSmall from '@proton/styles/assets/img/themes/theme-thumb-classic-small.svg';
+import classicTheme from '@proton/colors/themes/dist/classic.theme.css';
+
 export enum ThemeTypes {
     Duotone = 0,
     Carbon = 1,
@@ -30,6 +34,7 @@ export enum ThemeTypes {
     Monokai = 3,
     Contrast = 4,
     Legacy = 5,
+    Classic = 6,
 }
 
 export const PROTON_DEFAULT_THEME = ThemeTypes.Duotone;
@@ -89,6 +94,15 @@ export const PROTON_THEMES_MAP = {
         },
         theme: legacyTheme.toString(),
     },
+    [ThemeTypes.Classic]: {
+        label: 'Classic',
+        identifier: ThemeTypes.Classic,
+        src: {
+            medium: themeClassicSvg,
+            small: themeClassicSvgSmall,
+        },
+        theme: classicTheme.toString(),
+    },
 } as const;
 
 export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai];
@@ -99,5 +113,6 @@ export const PROTON_THEMES = [
     ThemeTypes.Monokai,
     ThemeTypes.Snow,
     ThemeTypes.Contrast,
+    ThemeTypes.Classic,
     ThemeTypes.Legacy,
 ].map((id) => PROTON_THEMES_MAP[id]);
