@@ -1,5 +1,4 @@
 import {
-    capitalize,
     findLongestMatchingIndex,
     truncate,
     truncateMore,
@@ -9,7 +8,6 @@ import {
 } from '../../lib/helpers/string';
 
 describe('string', () => {
-
     describe('longest match', () => {
         it('should get the longest matching string', () => {
             const x = ['14:00', '14:30'];
@@ -19,19 +17,6 @@ describe('string', () => {
             expect(findLongestMatchingIndex(x, '13:35')).toBe(0);
             expect(findLongestMatchingIndex(x, '23:35')).toBe(-1);
             expect(findLongestMatchingIndex()).toBe(-1);
-        });
-    });
-
-    describe('capitalize', () => {
-        it('should return empty string for non-string arguments', () => {
-            const cases = [0, [], {}];
-            const expected = ['', '', ''];
-            expect(cases.map(capitalize)).toEqual(expected);
-        });
-        it('should capitalize strings as expected', () => {
-            const cases = ['', 'n', 'A', 'NY', 'name', 'once upon a time…'];
-            const expected = ['', 'N', 'A', 'NY', 'Name', 'Once upon a time…'];
-            expect(cases.map(capitalize)).toEqual(expected);
         });
     });
 
@@ -106,10 +91,16 @@ describe('string', () => {
             expect(truncateMore({ string: 'ab', charsToDisplay: 2 })).toEqual('ab');
             expect(truncateMore({ string: 'abc', charsToDisplay: 4, charsToDisplayStart: 1 })).toEqual('abc');
             expect(truncateMore({ string: 'abc', charsToDisplay: 2 })).toEqual(`a${DEFAULT_TRUNCATE_OMISSION}`);
-            expect(truncateMore({ string: 'abc', charsToDisplay: 2, skewEnd: true })).toEqual(`${DEFAULT_TRUNCATE_OMISSION}c`);
+            expect(truncateMore({ string: 'abc', charsToDisplay: 2, skewEnd: true })).toEqual(
+                `${DEFAULT_TRUNCATE_OMISSION}c`
+            );
             expect(truncateMore({ string: 'abcde', charsToDisplay: 5, charsToDisplayEnd: 4 })).toEqual('abcde');
-            expect(truncateMore({ string: '12345', charsToDisplay: 4, skewEnd: true })).toEqual(`1${DEFAULT_TRUNCATE_OMISSION}45`);
-            expect(truncateMore({ string: '123456789', charsToDisplay: 5 })).toEqual(`12${DEFAULT_TRUNCATE_OMISSION}89`);
+            expect(truncateMore({ string: '12345', charsToDisplay: 4, skewEnd: true })).toEqual(
+                `1${DEFAULT_TRUNCATE_OMISSION}45`
+            );
+            expect(truncateMore({ string: '123456789', charsToDisplay: 5 })).toEqual(
+                `12${DEFAULT_TRUNCATE_OMISSION}89`
+            );
         });
     });
 
@@ -123,7 +114,6 @@ describe('string', () => {
             expect(truncatePossiblyQuotedString('abcd', 3)).toEqual(`a${DEFAULT_TRUNCATE_OMISSION}d`);
             expect(truncatePossiblyQuotedString('abcde', 4)).toEqual(`ab${DEFAULT_TRUNCATE_OMISSION}e`);
             expect(truncatePossiblyQuotedString('"abcde"', 4)).toEqual(`"a${DEFAULT_TRUNCATE_OMISSION}"`);
-
         });
     });
 });
