@@ -4,6 +4,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
+import { PLANS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import {
     Table,
