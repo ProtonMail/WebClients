@@ -13,6 +13,7 @@ const LoginContainer = ({ onLogin }: Props) => {
 
     return (
         <AccountLoginContainer
+            hasGenerateKeys={false}
             hasRemember={false}
             onLogin={async (data) => {
                 const { User } = data;

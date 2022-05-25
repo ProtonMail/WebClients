@@ -41,9 +41,10 @@ import SetPasswordForm from '../login/SetPasswordForm';
 
 interface Props {
     onLogin: OnLoginCallback;
+    hasGenerateKeys?: boolean;
 }
 
-const ResetPasswordContainer = ({ onLogin }: Props) => {
+const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
     const history = useHistory();
     const cacheRef = useRef<ResetCacheResult | undefined>(undefined);
     const errorHandler = useErrorHandler();
@@ -69,7 +70,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
             persistent: persistent ?? true,
             username: username ?? '',
             Methods: [],
-            hasGenerateKeys: true,
+            hasGenerateKeys,
         };
         setStep(STEPS.REQUEST_RECOVERY_METHODS);
     };
@@ -110,7 +111,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
                     username,
                     Methods: [],
                     persistent,
-                    hasGenerateKeys: true,
+                    hasGenerateKeys,
                 },
                 api: silentApi,
                 token,
@@ -156,7 +157,7 @@ const ResetPasswordContainer = ({ onLogin }: Props) => {
                             defaultUsername={cache?.username || automaticVerification.username}
                             onSubmit={(username) => {
                                 return handleRequestRecoveryMethods({
-                                    hasGenerateKeys: true,
+                                    hasGenerateKeys,
                                     username,
                                     persistent,
                                     api: silentApi,
