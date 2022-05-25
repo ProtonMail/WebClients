@@ -1,4 +1,5 @@
 import { enUS } from 'date-fns/locale';
+import truncate from '@proton/util/truncate';
 import { ICAL_METHOD, MAX_LENGTHS_API } from '../../lib/calendar/constants';
 import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
 import {
@@ -10,7 +11,6 @@ import {
 import { parse } from '../../lib/calendar/vcal';
 import { getIcalMethod } from '../../lib/calendar/vcalHelper';
 import { omit } from '../../lib/helpers/object';
-import { truncate } from '../../lib/helpers/string';
 import {
     VcalDateTimeProperty,
     VcalVcalendar,

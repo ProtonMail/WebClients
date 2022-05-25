@@ -1,4 +1,5 @@
 import { c } from 'ttag';
+import truncate from '@proton/util/truncate';
 
 import {
     IMPORT_ERROR_TYPE,
@@ -6,7 +7,6 @@ import {
     MAX_IMPORT_EVENTS_STRING,
     MAX_IMPORT_FILE_SIZE_STRING,
 } from '../constants';
-import { truncate } from '../../helpers/string';
 
 const getErrorMessage = (errorType: IMPORT_ERROR_TYPE, filename = '') => {
     const formattedFilename = `"${truncate(filename, MAX_FILENAME_CHARS_DISPLAY)}"`;

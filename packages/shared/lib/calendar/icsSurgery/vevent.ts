@@ -1,7 +1,7 @@
 import { addDays, fromUnixTime } from 'date-fns';
 import unique from '@proton/util/unique';
+import truncate from '@proton/util/truncate';
 import { convertUTCDateTimeToZone, fromUTCDate, getSupportedTimezone } from '../../date/timezone';
-import { truncate } from '../../helpers/string';
 import {
     VcalDateOrDateTimeProperty,
     VcalDurationValue,
