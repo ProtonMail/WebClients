@@ -1,7 +1,7 @@
 import { MONTHLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import { useMemo } from 'react';
 import { SelectTwo, Option } from '@proton/components';
-import { capitalize } from '@proton/shared/lib/helpers/string';
+import capitalize from '@proton/util/capitalize';
 import { getOnDayString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/helper';
 import { toUTCDate, fromLocalDate } from '@proton/shared/lib/date/timezone';
@@ -24,7 +24,7 @@ const SelectMonthlyType = ({ id, value, date, className, title, onChange }: Prop
 
         const allOptions = MONTHLY_TYPE_VALUES.map((type) => {
             const onDayString = getOnDayString(startFakeUtcDate, type);
-            return { text: capitalize(onDayString), value: type };
+            return { text: capitalize(onDayString) || '', value: type };
         });
 
         const isLastDay = getNegativeSetpos(startFakeUtcDate) === -1;
