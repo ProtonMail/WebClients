@@ -1,4 +1,3 @@
-
 enum CURRENCIES {
     USD = '$',
     EUR = '€',
@@ -32,16 +31,6 @@ export const toPrice = (amount = 0, currency: keyof typeof CURRENCIES = 'EUR', d
 
 export const addPlus = ([first = '', ...rest] = []) => {
     return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');
-};
-
-/**
- * Capitalize a string
- */
-export const capitalize = (str: any) => {
-    if (str === '' || typeof str !== 'string') {
-        return '';
-    }
-    return str[0].toUpperCase() + str.slice(1);
 };
 
 /**
