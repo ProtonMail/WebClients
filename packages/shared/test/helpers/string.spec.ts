@@ -1,6 +1,5 @@
 import {
     findLongestMatchingIndex,
-    truncate,
     truncateMore,
     getInitials,
     truncatePossiblyQuotedString,
@@ -47,20 +46,6 @@ describe('string', () => {
 
         it('should remove undesired characters', () => {
             expect(getInitials('Thomas Anderson (@neo)')).toEqual('TA');
-        });
-    });
-
-    describe('truncate', () => {
-        it('should truncate', () => {
-            expect(truncate('', 1)).toEqual('');
-            expect(truncate('a', 1)).toEqual('a');
-            expect(truncate('ab', 1)).toEqual(DEFAULT_TRUNCATE_OMISSION);
-            expect(truncate('abc', 1)).toEqual(DEFAULT_TRUNCATE_OMISSION);
-            expect(truncate('abc', 3)).toEqual('abc');
-            expect(truncate('abcd', 3)).toEqual(`ab${DEFAULT_TRUNCATE_OMISSION}`);
-            expect(truncate('abcd', 4)).toEqual('abcd');
-            expect(truncate('abcde', 4)).toEqual(`abc${DEFAULT_TRUNCATE_OMISSION}`);
-            expect(truncate('abcde', 8)).toEqual('abcde');
         });
     });
 
