@@ -9,21 +9,27 @@ import { useMoveAll } from '../../hooks/useMoveAll';
 import { labelIncludes } from '../../helpers/labels';
 import { isSearch } from '../../helpers/elements';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
+import { Breakpoints } from '../../models/utils';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, SCHEDULED, TRASH } = MAILBOX_LABEL_IDS;
 
 interface Props {
+    breakpoints: Breakpoints;
     labelID: string;
     elementIDs: string[];
     selectedIDs: string[];
 }
 
-const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
+const MoreDropdown = ({ breakpoints, labelID = '', elementIDs = [], selectedIDs = [] }: Props) => {
     const [loading, withLoading] = useLoading();
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const { moveAll, modal: moveAllModal } = useMoveAll();
     const location = useLocation();
     const searchParameters = extractSearchParameters(location);
+
+    if (!breakpoints.isNarrow) {
+        return null;
+    }
 
     const cannotEmpty = labelIncludes(
         labelID,
@@ -50,9 +56,10 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
 
     return (
         <>
+            <Vr />
             <ToolbarDropdown
                 title={c('Action').t`More`}
-                content={<Icon className="toolbar-icon" name="three-dots-vertical" />}
+                content={<Icon className="toolbar-icon" name="three-dots-horizontal" />}
                 data-testid="toolbar:more-dropdown"
                 hasCaret={false}
             >
@@ -83,7 +90,6 @@ const MoreDropdown = ({ labelID = '', elementIDs = [], selectedIDs = [] }: Props
                     </DropdownMenu>
                 )}
             </ToolbarDropdown>
-            <Vr />
             {deleteAllModal}
             {moveAllModal}
         </>
