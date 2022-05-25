@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { getPrivacyPolicyURL, getStaticURL, getTermsURL } from '@proton/shared/lib/helpers/url';
+import NudgeTopBanner, { getIsProtonMailDomain } from '@proton/components/containers/topBanners/NudgeTopBanner';
 import {
     APP_NAMES,
     APPS,
@@ -130,9 +131,11 @@ const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, ha
     const appVersion = getAppVersion(APP_VERSION);
     const { isTinyMobile } = useActiveBreakpoint();
 
+    const welcome = getIsProtonMailDomain() ? <NudgeTopBanner /> : <WelcomeV5TopBanner />;
+
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
-            <PublicTopBanners>{hasWelcome && <WelcomeV5TopBanner />}</PublicTopBanners>
+            <PublicTopBanners>{hasWelcome ? welcome : null}</PublicTopBanners>
             <header className="sign-layout-logo flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
                 <Href
                     className="flex-item-noshrink"

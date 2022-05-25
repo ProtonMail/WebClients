@@ -69,6 +69,7 @@ export enum FeatureCode {
     NewDomainOptIn = 'NewDomainOptIn',
     SeenV5WelcomeModal = 'SeenV5WelcomeModal',
     MailContextMenu = 'MailContextMenu',
+    NudgeProton = 'NudgeProton',
 }
 
 export interface FeaturesContextValue {

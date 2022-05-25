@@ -8,6 +8,7 @@ import SubUserTopBanner from './SubUserTopBanner';
 import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
+import NudgeTopBanner from './NudgeTopBanner';
 
 interface Props {
     children?: ReactNode;
@@ -16,6 +17,7 @@ interface Props {
 const TopBanners = ({ children }: Props) => {
     return (
         <>
+            <NudgeTopBanner />
             <DelinquentTopBanner />
             <OnlineTopBanner />
             <TimeOutOfSyncTopBanner />
