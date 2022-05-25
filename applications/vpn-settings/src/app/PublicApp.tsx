@@ -27,7 +27,10 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                     <Unauthenticated>
                         <Switch>
                             <Route path="/reset-password">
-                                <AccountResetPasswordContainer onLogin={async (...args) => onLogin(...args)} />;
+                                <AccountResetPasswordContainer
+                                    hasGenerateKeys={false}
+                                    onLogin={async (...args) => onLogin(...args)}
+                                />
                             </Route>
                             <Route path="/forgot-username">
                                 <AccountForgotUsernameContainer />
