@@ -143,15 +143,28 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
             plans: Plan[],
             signupParameters: SignupParameters
         ): Promise<SubscriptionData> => {
-            const planIDs = getPlanIDsFromParams(plans, signupParameters);
+            const prePlanIDs = getPlanIDsFromParams(plans, signupParameters);
             const currency = signupParameters.currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
-            const checkResult = await getSubscriptionPrices(
+            const { planIDs, checkResult } = await getSubscriptionPrices(
                 api,
-                planIDs || {},
+                prePlanIDs || {},
                 currency,
                 signupParameters.cycle,
                 signupParameters.coupon
-            );
+            )
+                .then((checkResult) => {
+                    return {
+                        checkResult,
+                        planIDs: prePlanIDs,
+                    };
+                })
+                .catch(() => {
+                    // If the check call fails, just reset everything
+                    return {
+                        checkResult: getFreeCheckResult(signupParameters.currency, signupParameters.cycle),
+                        planIDs: undefined,
+                    };
+                });
             return {
                 cycle: signupParameters.cycle,
                 currency: checkResult.Currency,
