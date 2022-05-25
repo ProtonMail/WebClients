@@ -290,8 +290,8 @@ const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep })
 
     const [User] = cache.userSaltResult;
 
-    if (User.Keys.length === 0 && User.Type !== UserType.EXTERNAL) {
-        if (hasGenerateKeys) {
+    if (User.Keys.length === 0) {
+        if (hasGenerateKeys && User.Type !== UserType.EXTERNAL) {
             if (authResult.TemporaryPassword) {
                 return { cache, to: AuthStep.NEW_PASSWORD };
             }
