@@ -114,14 +114,14 @@ const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
     return (
         <>
             <Vr />
-            <div className="text-bold">Show:</div>
+            <div className="text-bold flex flex-align-items-center ml1 mr1">Show:</div>
             {buttons.map(({ ID, text, isActive, onClick }) => {
                 return (
                     <ToolbarButton
                         key={ID}
                         data-testid={ID}
                         aria-pressed={isActive}
-                        className={classnames([isActive && 'no-pointer-events bg-strong'])}
+                        className={classnames(['flex-align-items-center', isActive && 'no-pointer-events bg-strong'])}
                         onClick={onClick}
                     >
                         {text}
