@@ -55,6 +55,7 @@ interface Props extends ButtonProps {
     tooltip?: string;
     forToolbar?: boolean;
     onDelayedSave?: (changes: { [groupID: string]: boolean }) => void;
+    onLock?: (lock: boolean) => void;
 }
 
 const ContactGroupDropdown = ({
@@ -65,6 +66,7 @@ const ContactGroupDropdown = ({
     forToolbar = false,
     tooltip = c('Action').t`Add to group`,
     onDelayedSave,
+    onLock,
     ...rest
 }: Props) => {
     const [keyword, setKeyword] = useState('');
@@ -76,6 +78,8 @@ const ContactGroupDropdown = ({
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
     const applyGroups = useApplyGroups();
+
+    useEffect(() => onLock?.(isOpen), [isOpen]);
 
     const handleCheck =
         (contactGroupID: string) =>
@@ -148,18 +152,12 @@ const ContactGroupDropdown = ({
         <>
             <Tooltip title={tooltip}>
                 <DropdownButton
-                    as={forToolbar ? 'button' : Button}
                     ref={anchorRef}
                     isOpen={isOpen}
                     onClick={toggle}
-                    hasCaret
+                    hasCaret={!forToolbar}
                     disabled={disabled}
-                    caretClassName={forToolbar ? 'toolbar-icon' : ''}
-                    className={classnames([
-                        forToolbar && 'toolbar-button toolbar-button--dropdown',
-                        'flex flex-align-items-center',
-                        className,
-                    ])}
+                    className={classnames([forToolbar && 'button-for-icon', 'flex flex-align-items-center', className])}
                     {...rest}
                 >
                     {children}
