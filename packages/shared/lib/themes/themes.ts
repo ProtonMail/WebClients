@@ -109,10 +109,10 @@ export const DARK_THEMES = [ThemeTypes.Carbon, ThemeTypes.Monokai];
 
 export const PROTON_THEMES = [
     ThemeTypes.Duotone,
+    ThemeTypes.Classic,
     ThemeTypes.Carbon,
     ThemeTypes.Monokai,
     ThemeTypes.Snow,
     ThemeTypes.Contrast,
-    ThemeTypes.Classic,
     ThemeTypes.Legacy,
 ].map((id) => PROTON_THEMES_MAP[id]);
