@@ -58,8 +58,7 @@
 		color: var(--signal-danger);
 	}
 
-	&-input[disabled] + &-fakecheck,
-	&-input:indeterminate + &-fakecheck {
+	&-input[disabled] + &-fakecheck {
 		border-color: var(--field-disabled);
 		background-color: var(--field-disabled-background-color);
 		color: var(--field-disabled-text-color);
@@ -99,7 +98,8 @@
 		color: var(--interaction-norm-contrast);
 	}
 
-	&-input:checked + &-fakecheck &-fakecheck-img {
+	&-input:checked + &-fakecheck &-fakecheck-img,
+	&-input:indeterminate + &-fakecheck &-fakecheck-img {
 		transform: scale(1);
 		transition-delay: 0.1s;
 	}
