@@ -1,6 +1,6 @@
 import { ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 import useContactList from '../useContactList';
@@ -52,7 +52,7 @@ const ContactsWidgetToolbar = ({
           );
 
     const contactEmails = useMemo(() => {
-        return selected.flatMap((contactID) => contactList.contactEmailsMap[contactID]) as ContactEmail[];
+        return selected.flatMap((contactID) => contactList.contactEmailsMap[contactID]).filter(isTruthy);
     }, [selected, contactList.contactEmailsMap]);
 
     return (
@@ -112,10 +112,20 @@ const ContactsWidgetToolbar = ({
                     <Icon name="users-merge" alt={c('Action').t`Merge contacts`} />
                 </Button>
             </Tooltip>
+            <ContactGroupDropdown
+                className="mr0-5 inline-flex pt0-5 pb0-5"
+                contactEmails={contactEmails}
+                disabled={contactEmails.length === 0}
+                forToolbar
+                onLock={onLock}
+                onSuccess={() => onCheckAll(false)}
+            >
+                <Icon name="users" />
+            </ContactGroupDropdown>
             <Tooltip title={deleteText}>
                 <Button
                     icon
-                    className="mr0-5 inline-flex pt0-5 pb0-5"
+                    className="inline-flex pt0-5 pb0-5"
                     onClick={onDelete}
                     disabled={noSelection}
                     title={deleteText}
@@ -124,9 +134,6 @@ const ContactsWidgetToolbar = ({
                     <Icon name="trash" />
                 </Button>
             </Tooltip>
-            <ContactGroupDropdown contactEmails={contactEmails} disabled={noSelection} forToolbar onLock={onLock}>
-                <Icon name="users" />
-            </ContactGroupDropdown>
             <Tooltip title={c('Action').t`Add new contact`}>
                 <Button
                     icon
