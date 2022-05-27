@@ -50,6 +50,7 @@ interface Props {
     onBack?: () => void;
     hasRemember?: boolean;
     hasGenerateKeys?: boolean;
+    hasActiveSessions?: boolean;
 }
 
 const LoginContainer = ({
@@ -60,6 +61,7 @@ const LoginContainer = ({
     shouldSetupInternalAddress,
     hasRemember = true,
     hasGenerateKeys = true,
+    hasActiveSessions = false,
 }: Props) => {
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
@@ -182,6 +184,7 @@ const LoginContainer = ({
                             signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                             defaultUsername={previousUsernameRef.current}
                             hasRemember={hasRemember}
+                            hasActiveSessions={hasActiveSessions}
                             onSubmit={async ({ username, password, payload, persistent }) => {
                                 return handleLogin({
                                     username,

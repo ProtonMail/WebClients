@@ -21,6 +21,8 @@ import {
 } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { SECOND } from '@proton/shared/lib/constants';
+import { Card } from '@proton/atoms';
 
 import Loader from '../signup/Loader';
 import { defaultPersistentKey } from '../public/helper';
@@ -35,18 +37,44 @@ interface Props {
     }) => Promise<void>;
     defaultUsername?: string;
     hasRemember?: boolean;
+    hasActiveSessions?: boolean;
 }
 
-const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`Sign in`, hasRemember }: Props) => {
+const LoginForm = ({
+    onSubmit,
+    defaultUsername = '',
+    signInText = c('Action').t`Sign in`,
+    hasRemember,
+    hasActiveSessions,
+}: Props) => {
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
     const [persistent, setPersistent] = useLocalState(!!hasRemember, defaultPersistentKey);
 
+    const [showPasswordManagerHint, setShowPasswordManagerHint] = useState(false);
+
     const usernameRef = useRef<HTMLInputElement>(null);
     const challengeRefLogin = useRef<ChallengeRef>();
     const [challengeLoading, setChallengeLoading] = useState(true);
     const [challengeError, setChallengeError] = useState(false);
+
+    useEffect(() => {
+        if (hasActiveSessions) {
+            setShowPasswordManagerHint(false);
+            return;
+        }
+
+        if (showPasswordManagerHint || password) {
+            return;
+        }
+
+        let id = setTimeout(() => {
+            setShowPasswordManagerHint(true);
+        }, 10 * SECOND);
+
+        return () => clearTimeout(id);
+    }, [hasActiveSessions, password]);
 
     useEffect(() => {
         if (challengeLoading) {
@@ -178,6 +206,16 @@ const LoginForm = ({ onSubmit, defaultUsername = '', signInText = c('Action').t`
                     }
                 </Button>
                 <div className="text-center mt2">{c('Info').jt`${forgotPasswordLink} or ${forgotUsernameLink}?`}</div>
+
+                {showPasswordManagerHint && (
+                    <Card className="text-center mt2" rounded>
+                        {c('Info').t`Issues signing in?`}
+                        <br />
+                        <Href key="update-password-manager-url" url={getKnowledgeBaseUrl('/update-password-manager')}>
+                            {c('Info').t`Update the URL in your password manager`}
+                        </Href>
+                    </Card>
+                )}
             </form>
         </>
     );
