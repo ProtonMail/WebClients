@@ -242,6 +242,10 @@ export const getEasySwitchURL = () => {
     return getStaticURL('/easyswitch');
 };
 
+export const getImportExportAppUrl = () => {
+    return getStaticURL('/support/export-emails-import-export-app');
+};
+
 export const getShopURL = () => {
     return `https://shop.proton.me`;
 };
