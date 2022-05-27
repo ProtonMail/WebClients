@@ -9,7 +9,7 @@
 
 body {
 	/* in case nothing is set, set a default font and size */
-	font-family: var(--font-family);
+	font-family: system-ui, sans-serif;
 	font-size: em($base-font-size, $root-default-font-size);
 	/* this is clearly needed if we want consistency  */
 	text-rendering: geometricPrecision;
