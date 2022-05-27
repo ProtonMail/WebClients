@@ -43,7 +43,7 @@ export const DailyEmailNotificationToggleLabel = () => (
     <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
         <span className="pr0-5 text-semibold">{c('Label').t`Daily email notifications`}</span>
         <Info
-            url={getStaticURL('/news/notification-emails')}
+            url={getStaticURL('/support/notification-email')}
             title={c('Info')
                 .t`When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${MAIL_APP_NAME} account.`}
         />
