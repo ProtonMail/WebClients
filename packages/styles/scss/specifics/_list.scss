@@ -45,7 +45,7 @@ $container-to-width: 4em !default;
 	background-color: var(--email-message-view-background-color);
 }
 
-$item-container-height: rem(64) !default;
+$item-container-height: rem(66) !default;
 $item-container-padding-block: em(8.5) !default;
 $item-container-padding-inline: em(12) !default;
 
@@ -58,7 +58,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	position: relative;
 	padding-block: $item-container-padding-block; // design wants ~64 height
 	padding-inline: $item-container-padding-inline;
-	border-block-end: 1px solid var(--border-weak);
+	// border-block-end: 1px solid var(--border-weak);
 	scroll-margin-block-start: $item-container-height;
 
 	// no transition, otherwhise there's a flash on page loading
@@ -108,10 +108,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		}
 	}
 
-	&:hover::after {
-		box-shadow: var(--shadow-norm);
-	}
-
 	&:focus::after,
 	&.item-is-focused::after {
 		border-inline-start-color: var(--email-item-focus-marker-color);
@@ -154,9 +150,9 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	}
 }
 
-.item-container {
-	block-size: $item-container-height;
-}
+// .item-container {
+// 	min-block-size: $item-container-height;
+// }
 
 .item-checkbox-label {
 	.item-checkbox {
@@ -180,9 +176,18 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	block-size: em(20);
 	line-height: calc(20 * 1.5 / 21);
 }
-
+.item-firstline {
+	color: var(--text-norm);
+	&-infos {
+		transform: translateY(-0.5ex);
+	}
+}
 .item-secondline:empty {
 	min-block-size: 1.5em;
+}
+
+.item-hover-action-buttons {
+	inset-inline-start: rem(6); // magic number to get perfect hover :D
 }
 
 /* Compact view */
