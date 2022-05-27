@@ -75,7 +75,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                 <DropdownMenuButton
                     key={14}
                     className="text-left flex flex-nowrap flex-align-items-center"
-                    onClick={() => config.blockquote.toggle}
+                    onClick={config.blockquote.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.blockquote.isActive)} />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Quote`}</span>
@@ -84,7 +84,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                 <DropdownMenuButton
                     key={15}
                     className="text-left flex flex-nowrap flex-align-items-center"
-                    onClick={() => config.link.showModal}
+                    onClick={config.link.showModal}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert link`}</span>
