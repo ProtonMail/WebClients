@@ -108,9 +108,6 @@
 
 		--logo-text-proton-color : var(--text-norm),
 		--logo-text-product-color: var(--primary),
-
-		--font-family: $font-family,
-
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		#{$variable}: var(--optional-#{str-slice($variable, 3)}, #{$default});
