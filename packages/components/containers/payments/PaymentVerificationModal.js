@@ -102,85 +102,83 @@ const PaymentVerificationModal = ({
             }
             {...rest}
         >
-            {
-                {
-                    [STEPS.REDIRECT]: (
-                        <>
-                            <p className="text-center">{c('Info')
-                                .t`Your bank requires 3-D Secure verification for security purposes.`}</p>
-                            <p className="text-center">
-                                <PaymentVerificationImage payment={payment} type={type} />
-                            </p>
-                            <div className="mb1">
-                                {isAddCard
-                                    ? c('Info')
-                                          .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
-                                    : c('Info').t`Verification will open a new tab, please disable any popup blockers.`}
-                            </div>
-                        </>
-                    ),
-                    [STEPS.REDIRECTING]: (
-                        <>
-                            <p className="text-center">
-                                {isPayPal
-                                    ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
-                                    : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
-                            </p>
-                            <Loader />
-                            <div className="mb1">{c('Info')
-                                .t`Verification will open a new tab, please disable any popup blockers.`}</div>
-                        </>
-                    ),
-                    [STEPS.REDIRECTED]: (
-                        <>
-                            <p className="text-center">
-                                {isAddCard && !isPayPal
-                                    ? c('Info').t`Please verify the card in the new tab which was opened.`
-                                    : c('Info').t`Please verify payment at the new tab which was opened.`}
-                            </p>
-                            <Loader />
-                            <p className="text-center">
-                                <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
-                            </p>
-                            <div className="mb1">
-                                {isAddCard && isPayPal
-                                    ? c('Info').t`Verification can take a few minutes.`
-                                    : c('Info').t`Payment can take a few minutes to fully verify.`}
-                            </div>
-                        </>
-                    ),
-                    [STEPS.DO_NOT_WINDOW_OPEN]: (
-                        <>
-                            <DoNotWindowOpenAlertError />
-                            <Button onClick={handleCancel}>{c('Action').t`Close`}</Button>
-                        </>
-                    ),
-                    [STEPS.FAIL]: (
-                        <div className="text-center">
-                            <p>
-                                {isPayPal
-                                    ? c('Info')
-                                          .t`Please try again, use a different payment method, or contact PayPal for assistance.`
-                                    : c('Info')
-                                          .t`Please try again, use a different payment method, or call your bank for assistance.`}
-                            </p>
-                            <img src={errorSvg} alt={c('Title').t`Error`} />
-                            {error?.tryAgain ? (
-                                <p>
-                                    <Button type="submit">{c('Action').t`Try again`}</Button>
-                                </p>
-                            ) : null}
-                            <p>
-                                <PrimaryButton onClick={handleCancel}>
-                                    {isAddCard
-                                        ? c('Action').t`Use a different card`
-                                        : c('Action').t`Use a different payment method`}
-                                </PrimaryButton>
-                            </p>
+            {{
+                [STEPS.REDIRECT]: () => (
+                    <>
+                        <p className="text-center">{c('Info')
+                            .t`Your bank requires 3-D Secure verification for security purposes.`}</p>
+                        <p className="text-center">
+                            <PaymentVerificationImage payment={payment} type={type} />
+                        </p>
+                        <div className="mb1">
+                            {isAddCard
+                                ? c('Info')
+                                      .t`Verification will open a new tab, please disable any popup blockers. You will not be charged. Any amount used to verify the card will be refunded immediately.`
+                                : c('Info').t`Verification will open a new tab, please disable any popup blockers.`}
                         </div>
-                    ),
-                }[step]
-            }
+                    </>
+                ),
+                [STEPS.REDIRECTING]: () => (
+                    <>
+                        <p className="text-center">
+                            {isPayPal
+                                ? c('Info').t`You will soon be redirected to PayPal to verify your payment.`
+                                : c('Info').t`You will be soon redirected to your bank to verify your payment.`}
+                        </p>
+                        <Loader />
+                        <div className="mb1">{c('Info')
+                            .t`Verification will open a new tab, please disable any popup blockers.`}</div>
+                    </>
+                ),
+                [STEPS.REDIRECTED]: () => (
+                    <>
+                        <p className="text-center">
+                            {isAddCard && !isPayPal
+                                ? c('Info').t`Please verify the card in the new tab which was opened.`
+                                : c('Info').t`Please verify payment at the new tab which was opened.`}
+                        </p>
+                        <Loader />
+                        <p className="text-center">
+                            <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
+                        </p>
+                        <div className="mb1">
+                            {isAddCard && isPayPal
+                                ? c('Info').t`Verification can take a few minutes.`
+                                : c('Info').t`Payment can take a few minutes to fully verify.`}
+                        </div>
+                    </>
+                ),
+                [STEPS.DO_NOT_WINDOW_OPEN]: () => (
+                    <>
+                        <DoNotWindowOpenAlertError />
+                        <Button onClick={handleCancel}>{c('Action').t`Close`}</Button>
+                    </>
+                ),
+                [STEPS.FAIL]: () => (
+                    <div className="text-center">
+                        <p>
+                            {isPayPal
+                                ? c('Info')
+                                      .t`Please try again, use a different payment method, or contact PayPal for assistance.`
+                                : c('Info')
+                                      .t`Please try again, use a different payment method, or call your bank for assistance.`}
+                        </p>
+                        <img src={errorSvg} alt={c('Title').t`Error`} />
+                        {error?.tryAgain ? (
+                            <p>
+                                <Button type="submit">{c('Action').t`Try again`}</Button>
+                            </p>
+                        ) : null}
+                        <p>
+                            <PrimaryButton onClick={handleCancel}>
+                                {isAddCard
+                                    ? c('Action').t`Use a different card`
+                                    : c('Action').t`Use a different payment method`}
+                            </PrimaryButton>
+                        </p>
+                    </div>
+                ),
+            }[step]()}
         </FormModal>
     );
 };
