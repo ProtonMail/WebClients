@@ -12,14 +12,15 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     setModel: Dispatch<SetStateAction<InvitationModel>>;
     message: MessageState;
+    reloadWidget: () => void;
 }
 
-const ExtraEventButtons = ({ model, setModel, message }: Props) => {
+const ExtraEventButtons = ({ model, setModel, message, reloadWidget }: Props) => {
     const { isImport, isOrganizerMode } = model;
     const inviteButtons = isOrganizerMode ? (
         <ExtraEventOrganizerButtons model={model} setModel={setModel} />
     ) : (
-        <ExtraEventAttendeeButtons model={model} setModel={setModel} message={message} />
+        <ExtraEventAttendeeButtons model={model} setModel={setModel} message={message} reloadWidget={reloadWidget} />
     );
     const importButton = <ExtraEventImportButton model={model} setModel={setModel} />;
     const buttons = isImport ? importButton : inviteButtons;
