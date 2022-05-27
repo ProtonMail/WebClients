@@ -6,10 +6,11 @@ import { canPay } from '@proton/shared/lib/user/helpers';
 import broadcast, { MessageType } from '../broadcast';
 
 interface Props {
-    client?: string | null;
+    redirect?: string | undefined;
+    fullscreen?: boolean;
 }
 
-const SubscribeAccount = ({ client }: Props) => {
+const SubscribeAccount = ({ redirect, fullscreen }: Props) => {
     const onceRef = useRef(false);
     const onceCloseRef = useRef(false);
     const [user] = useUser();
@@ -19,12 +20,16 @@ const SubscribeAccount = ({ client }: Props) => {
         if (onceCloseRef.current) {
             return;
         }
+
         onceCloseRef.current = true;
-        if (client === 'macOS') {
-            document.location.replace('protonvpn://refresh');
-        } else {
-            broadcast({ type: MessageType.CLOSE });
+
+        if (redirect) {
+            document.location.replace(redirect);
+
+            return;
         }
+
+        broadcast({ type: MessageType.CLOSE });
     };
 
     const canEdit = canPay(user);
@@ -42,7 +47,7 @@ const SubscribeAccount = ({ client }: Props) => {
             step: user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION,
             onClose: handleClose,
             onSuccess: handleClose,
-            fullscreen: client !== 'macOS',
+            fullscreen,
         });
     }, [user, loading]);
 
