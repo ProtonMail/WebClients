@@ -23,7 +23,7 @@ const SubscribeAccount = ({ redirect, fullscreen }: Props) => {
 
         onceCloseRef.current = true;
 
-        if (redirect) {
+        if (redirect && /^(\/$|\/[^/]|proton(vpn|mail)?:\/\/)/.test(redirect)) {
             document.location.replace(redirect);
 
             return;
