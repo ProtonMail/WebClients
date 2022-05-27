@@ -1,9 +1,15 @@
+@use '~inter-ui/default' with (
+	$inter-font-display: swap,
+	$inter-font-path: '~inter-ui/Inter (web)'
+);
+
 @use '~inter-ui/variable' with (
 	$inter-font-display: swap,
 	$inter-font-path: '~inter-ui/Inter (web)'
 );
 
-@include variable.default;
+@include default.all;
+@include variable.all;
 
 :root {
 	--font-weight-normal: 400;
@@ -11,8 +17,22 @@
 	--font-weight-bold: 700;
 }
 
+$fallback-fonts: system-ui, sans-serif;
+
 html {
-	font-family: var(--font-family);
+	// Set fallback font stack as default
+	font-family: var(--optional-font-family, #{$fallback-fonts});
+
+	// If the browser supports `@supports`, set Inter static if it doesn't support variable fonts
+	@supports not (font-variation-settings: normal) {
+		font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+	}
+
+	// If the browser supports `@supports`, set Inter variable if it supports variable fonts
+	@supports (font-variation-settings: normal) {
+		font-family: var(--optional-font-family, 'Inter var', #{$fallback-fonts});
+	}
+
 	font-synthesis: none;
 	font-weight: var(--font-weight-normal);
 	font-style: normal;
