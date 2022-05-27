@@ -149,7 +149,23 @@ const PublicApp = ({ onLogin, locales }: Props) => {
         }
     };
 
+    const setProtonMeOn = () =>
+        new Promise<ProgressEvent<EventTarget>>((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = resolve;
+            xhr.onerror = reject;
+            xhr.open('GET', `https://proton.me/on`);
+            xhr.withCredentials = true;
+            xhr.send();
+        });
+
     const handleLogin = async (args: OnLoginCallbackArguments) => {
+        if (!window.location.hostname.endsWith('protonmail.com')) {
+            try {
+                await setProtonMeOn();
+            } catch (error) {}
+        }
+
         const { keyPassword, UID, User, LocalID, persistent, appIntent: maybeFlowAppIntent } = args;
         const toApp = maybeFlowAppIntent?.app || maybePreAppIntent || DEFAULT_APP;
 
