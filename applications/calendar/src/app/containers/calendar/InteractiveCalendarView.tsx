@@ -1073,30 +1073,25 @@ const InteractiveCalendarView = ({
     };
 
     const handleReencryptSharedEvent = async ({ calendarEvent, calendarID }: ReencryptInviteActionData) => {
-        try {
-            const [sharedSessionKey, calendarKeys] = await Promise.all([
-                getSharedSessionKey({ calendarEvent, getAddressKeys, getCalendarKeys }),
-                getCalendarKeys(calendarID),
-            ]);
-            if (!sharedSessionKey) {
-                throw new Error('Failed to retrieve shared session key. Cannot re-encrypt event');
-            }
-            const silentApi = <T,>(config: any) =>
-                api<T>({
-                    ...config,
-                    silence: true,
-                });
-            await reencryptCalendarSharedEvent({
-                calendarEvent,
-                sharedSessionKey,
-                calendarKeys,
-                api: silentApi,
-            });
-        } catch (e: any) {
-            // Not being able to re-encrypt is not a a blocker. We will retry next time around
-            console.error(e);
-            noop();
+        const [sharedSessionKey, calendarKeys] = await Promise.all([
+            getSharedSessionKey({ calendarEvent, getAddressKeys, getCalendarKeys }),
+            getCalendarKeys(calendarID),
+        ]);
+
+        if (!sharedSessionKey) {
+            throw new Error('Failed to retrieve shared session key. Cannot re-encrypt event');
         }
+
+        await reencryptCalendarSharedEvent({
+            calendarEvent,
+            sharedSessionKey,
+            calendarKeys,
+            api,
+        }).catch((error) => {
+            calendarCall([calendarID]);
+
+            throw new Error(error);
+        });
     };
 
     const handleUpdatePartstatActions = async (operations: UpdatePartstatOperation[] = []) => {
