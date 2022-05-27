@@ -6,16 +6,12 @@ import TopBanner from './TopBanner';
 import { Href } from '../../components';
 
 const WelcomeV5TopBanner = () => {
-    const learnMoreLink = (
-        <Href key="learn-more-link" className="color-inherit" url={getStaticURL('/news/updated-proton')}>{c(
-            'new_plans: info'
-        ).t`learn more`}</Href>
-    );
-
     return (
         <TopBanner className="bg-primary">
-            {c('new_plans: message displayed when user visit v5 login')
-                .jt`Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${learnMoreLink}.`}
+            {c('Text').t`Introducing the updated Proton.`} {c('Text').t`More services, one privacy mission.`}{' '}
+            <Href key="learn-more-link" className="color-inherit" url={getStaticURL('/news/updated-proton')}>
+                {c('Link').t`Learn more`}
+            </Href>
         </TopBanner>
     );
 };
