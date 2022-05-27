@@ -31,7 +31,7 @@ interface Props {
     unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
-    mouseHover: boolean;
+    mouseHover?: boolean;
     onBack: () => void;
 }
 

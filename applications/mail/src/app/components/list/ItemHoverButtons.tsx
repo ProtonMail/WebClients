@@ -63,7 +63,10 @@ const ItemHoverButtons = ({ element, labelID, elementID, onBack }: Props) => {
 
     return (
         <>
-            <ButtonGroup size="small">
+            <ButtonGroup
+                size="small"
+                className="opacity-on-hover opacity-on-hover-no-width relative item-hover-action-buttons"
+            >
                 <Tooltip title={unreadAlt}>
                     <Button icon onClick={handleMarkAs}>
                         <Icon name={unreadIcon} alt={unreadAlt} />
