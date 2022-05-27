@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { getEasySwitchURL } from '@proton/shared/lib/helpers/url';
+import { getImportExportAppUrl } from '@proton/shared/lib/helpers/url';
 
 import { ButtonLike, Href } from '../../../components';
 
@@ -15,7 +15,7 @@ const ImportExportAppSection = () => {
                 {c('Info').t`Available on macOS, Windows, and Linux.`}
             </SettingsParagraph>
 
-            <ButtonLike color="norm" as={Href} url={getEasySwitchURL()}>
+            <ButtonLike color="norm" as={Href} url={getImportExportAppUrl()}>
                 {c('Action').t`Download the Import-Export app`}
             </ButtonLike>
         </SettingsSection>
