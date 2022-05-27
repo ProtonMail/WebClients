@@ -172,6 +172,10 @@
 	opacity: 0;
 	// Do not use visibility to keep it focusable even when invisible
 
+	&-no-width {
+		width: 0;
+		transform: scale(0);
+	}
 	/*
 	 * Opacity on focus is managed in buttons focus state
 	&:focus {
@@ -184,11 +188,27 @@
 	&-container:focus-within &-only-desktop {
 		opacity: 1;
 	}
+	&-container:focus-within &-no-width {
+		width: auto;
+		transform: scale(1);
+	}
+
+	&-container:focus-within &-hide {
+		display: none;
+	}
 
 	@media (hover: hover) and (pointer: fine) {
 		&-container:hover &,
 		&-container:hover &-only-desktop {
 			opacity: 1;
+		}
+
+		&-container:hover &-hide {
+			display: none;
+		}
+		&-container:hover &-no-width {
+			width: auto;
+			transform: scale(1);
 		}
 
 		&-only-desktop {

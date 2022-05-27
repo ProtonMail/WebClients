@@ -1,5 +1,5 @@
 import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
-import { classnames, ItemCheckbox, useEventListener, useMailSettings, useLabels } from '@proton/components';
+import { classnames, ItemCheckbox, useMailSettings, useLabels } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
@@ -66,10 +66,10 @@ const Item = ({
     const elementRef = useRef<HTMLDivElement>(null);
 
     const [hasFocus, setHasFocus] = useState(false);
-    const [mouseHover, setMouseHover] = useState(false);
+    // const [mouseHover, setMouseHover] = useState(false);
 
-    useEventListener(elementRef, 'mouseenter', () => setMouseHover(true), []);
-    useEventListener(elementRef, 'mouseleave', () => setMouseHover(false), []);
+    // useEventListener(elementRef, 'mouseenter', () => setMouseHover(true), []);
+    // useEventListener(elementRef, 'mouseleave', () => setMouseHover(false), []);
 
     const displayRecipients =
         [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
@@ -131,7 +131,7 @@ const Item = ({
             onDragStart={(event) => onDragStart(event, element)}
             onDragEnd={onDragEnd}
             className={classnames([
-                'flex flex-nowrap flex-align-items-center cursor-pointer',
+                'flex flex-nowrap cursor-pointer opacity-on-hover-container',
                 columnLayout ? 'item-container' : 'item-container-row',
                 isSelected && 'item-is-selected',
                 !unread && 'read',
@@ -157,7 +157,7 @@ const Item = ({
                 checked={checked}
                 onChange={handleCheck}
                 compactClassName="mr0-75 stop-propagation"
-                normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6' : 'mr0-5'])}
+                normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
             />
             <ItemLayout
                 labelID={labelID}
@@ -172,7 +172,6 @@ const Item = ({
                 displayRecipients={displayRecipients}
                 loading={loading}
                 breakpoints={breakpoints}
-                mouseHover={mouseHover}
                 onBack={onBack}
             />
         </div>
