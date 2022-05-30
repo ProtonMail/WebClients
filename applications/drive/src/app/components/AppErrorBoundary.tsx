@@ -49,7 +49,7 @@ const AppErrorBoundary = ({ children }: Props) => {
             if (error.status === HTTP_STATUS_CODE.INTERNAL_SERVER_ERROR) {
                 return <InternalServerError />;
             }
-            if (error.status === HTTP_STATUS_CODE.NOT_FOUND || error.data.Code === RESPONSE_CODE.INVALID_ID) {
+            if (error.status === HTTP_STATUS_CODE.NOT_FOUND || error.data?.Code === RESPONSE_CODE.INVALID_ID) {
                 return <NotFoundError />;
             }
             if (error.status === HTTP_STATUS_CODE.FORBIDDEN) {
