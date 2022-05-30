@@ -3,7 +3,6 @@ import {
     getMessage,
     encryptMessage,
     generateKey,
-    binaryStringToArray,
     stringToUtf8Array,
     signMessage,
     arrayToHexString,
@@ -66,13 +65,15 @@ interface UnsignedDecryptionPayload {
 
 interface SignedDecryptionPayload extends UnsignedDecryptionPayload {
     publicKey: OpenPGPKey | OpenPGPKey[];
+    format?: 'utf8' | 'binary';
 }
 
-export const decryptSigned = async ({ armoredMessage, privateKey, publicKey }: SignedDecryptionPayload) => {
+export const decryptSigned = async ({ armoredMessage, privateKey, publicKey, format }: SignedDecryptionPayload) => {
     const { data, verified } = await decryptMessage({
         message: await getMessage(armoredMessage),
         privateKeys: privateKey,
         publicKeys: publicKey,
+        format,
     });
     return { data, verified };
 };
@@ -102,14 +103,11 @@ export const generateDriveKey = async (rawPassphrase: string) => {
     return { privateKey, privateKeyArmored };
 };
 
-export const generateLookupHash = async (name: string, hashKey: string) => {
-    const key = await crypto.subtle.importKey(
-        'raw',
-        binaryStringToArray(hashKey),
-        { name: 'HMAC', hash: 'SHA-256' },
-        false,
-        ['sign', 'verify']
-    );
+export const generateLookupHash = async (name: string, parentHashKey: Uint8Array) => {
+    const key = await crypto.subtle.importKey('raw', parentHashKey, { name: 'HMAC', hash: 'SHA-256' }, false, [
+        'sign',
+        'verify',
+    ]);
 
     const signature = await crypto.subtle.sign(
         { name: 'HMAC', hash: { name: 'SHA-256' } },
@@ -121,6 +119,10 @@ export const generateLookupHash = async (name: string, hashKey: string) => {
 
 export const generateNodeHashKey = async (publicKey: OpenPGPKey, addressPrivateKey: OpenPGPKey) => {
     const { data: NodeHashKey } = await encryptMessage({
+        // Once all clients can use non-ascii bytes, switch to simple
+        // generating of random bytes without encoding it into base64:
+        //import getRandomValues from '@proton/get-random-values';
+        //data: getRandomValues(new Uint8Array(32)),
         data: generatePassphrase(),
         publicKeys: publicKey,
         privateKeys: addressPrivateKey,

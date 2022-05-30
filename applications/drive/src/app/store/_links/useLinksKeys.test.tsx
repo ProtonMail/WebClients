@@ -18,10 +18,11 @@ describe('useLinksKeys', () => {
     });
 
     it('setting another key for the same link does not remove the other key', () => {
+        const hashKey = new Uint8Array([1, 2]);
         keys.setPassphrase('shareId', 'linkId', 'pass');
-        keys.setHashKey('shareId', 'linkId', 'hash');
+        keys.setHashKey('shareId', 'linkId', hashKey);
         expect(keys.getPassphrase('shareId', 'linkId')).toBe('pass');
-        expect(keys.getHashKey('shareId', 'linkId')).toBe('hash');
+        expect(keys.getHashKey('shareId', 'linkId')).toBe(hashKey);
     });
 
     it('setting the key again overrides the original value', () => {
