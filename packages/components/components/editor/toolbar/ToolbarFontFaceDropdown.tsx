@@ -81,7 +81,8 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                         style={{ fontFamily: fontValue }}
                         buttonContent={<span className="pr0-5">{fontLabel}</span>}
                         extraContent={
-                            fontValue === defaultValue && showDefaultFontSelector ? (
+                            fontValue.toLowerCase() === (defaultValue || '').toLowerCase() &&
+                            showDefaultFontSelector ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
                                     <Button
                                         color="weak"
