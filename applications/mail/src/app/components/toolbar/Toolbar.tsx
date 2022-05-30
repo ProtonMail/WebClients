@@ -1,5 +1,4 @@
-import { memo, Ref } from 'react';
-import * as React from 'react';
+import { memo, Ref, useRef } from 'react';
 import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
 import ReadUnreadButtons from './ReadUnreadButtons';
@@ -14,7 +13,7 @@ import LabelsAndFolders from './LabelsAndFolders';
 import FilterActions from './FilterActions';
 import { Filter, Sort } from '../../models/tools';
 import SortDropdown from './SortDropdown';
-import AllActions from './AllActions';
+import { useElementBreakpoints } from '../../hooks/useElementBreakpoints';
 
 const defaultSelectedIDs: string[] = [];
 
@@ -75,10 +74,25 @@ const Toolbar = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
 }: Props) => {
+    const toolbarRef = useRef<HTMLDivElement>(null);
+
+    // Using local breakpoints to be more precise and to deal with sidebar being there or not
+    const breakpoint = useElementBreakpoints(toolbarRef, {
+        tiny: 0,
+        small: 500,
+        medium: 700,
+        large: 1100,
+    });
+
+    const isNarrow = breakpoint === 'tiny' || breakpoint === 'small';
+
     const listInView = columnMode || !elementID;
 
     return (
-        <nav className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between">
+        <nav
+            ref={toolbarRef}
+            className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between"
+        >
             <div className="flex">
                 {listInView ? (
                     <SelectAll
@@ -98,39 +112,51 @@ const Toolbar = ({
                 <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
                 <MoveButtons
                     labelID={labelID}
-                    breakpoints={breakpoints}
+                    isNarrow={isNarrow}
                     selectedIDs={selectedIDs}
                     onMove={onMove}
                     onDelete={onDelete}
                 />
-                <LabelsAndFolders
-                    labelID={labelID}
-                    selectedIDs={selectedIDs}
-                    conversationMode={conversationMode}
-                    breakpoints={breakpoints}
-                    labelDropdownToggleRef={labelDropdownToggleRef}
-                    moveDropdownToggleRef={moveDropdownToggleRef}
-                    onBack={onBack}
-                />
-                <FilterActions filter={filter} onFilter={onFilter} />
-                <AllActions labelID={labelID} elementIDs={elementIDs} selectedIDs={selectedIDs} />
+                {breakpoint !== 'tiny' ? (
+                    <LabelsAndFolders
+                        labelID={labelID}
+                        selectedIDs={selectedIDs}
+                        conversationMode={conversationMode}
+                        breakpoints={breakpoints}
+                        labelDropdownToggleRef={labelDropdownToggleRef}
+                        moveDropdownToggleRef={moveDropdownToggleRef}
+                        onBack={onBack}
+                    />
+                ) : null}
+                {breakpoint === 'large' ? <FilterActions icon={false} filter={filter} onFilter={onFilter} /> : null}
                 <MoreDropdown
-                    breakpoints={breakpoints}
                     labelID={labelID}
                     elementIDs={elementIDs}
                     selectedIDs={selectedIDs}
+                    isSearch={isSearch}
+                    isNarrow={isNarrow}
+                    isTiny={breakpoint === 'tiny'}
+                    onMove={onMove}
+                    onDelete={onDelete}
+                    onBack={onBack}
+                    breakpoints={breakpoints}
+                    conversationMode={conversationMode}
                 />
             </div>
             <div className="flex">
+                {breakpoint !== 'large' ? (
+                    <FilterActions icon={breakpoint !== 'large'} filter={filter} onFilter={onFilter} />
+                ) : null}
                 <SortDropdown
                     labelID={labelID}
                     conversationMode={conversationMode}
+                    icon={breakpoint !== 'large'}
                     sort={sort}
                     onSort={onSort}
                     isSearch={isSearch}
                 />
                 {listInView ? (
-                    <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
+                    <PagingControls narrowMode={isNarrow} loading={loading} page={page} total={total} onPage={onPage} />
                 ) : (
                     <NavigationControls
                         loading={loading}
