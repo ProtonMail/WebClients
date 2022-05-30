@@ -84,15 +84,16 @@ describe('Mailbox retries and waitings', () => {
         });
 
         const checkAll = getByTestId('toolbar:select-all-checkbox');
-        const trash = getByTestId('toolbar:movetotrash');
 
         await act(async () => {
             fireEvent.click(checkAll);
             await tick();
+            let trash = getByTestId('toolbar:movetotrash');
             fireEvent.click(trash);
             await tick();
             fireEvent.click(checkAll);
             await tick();
+            trash = getByTestId('toolbar:movetotrash');
             fireEvent.click(trash);
             await tick();
         });

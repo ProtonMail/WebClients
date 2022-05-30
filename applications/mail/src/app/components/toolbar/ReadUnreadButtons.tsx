@@ -47,37 +47,6 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
         c('Action').t`Mark as unread`
     );
 
-    // const title = buttonMarkAsRead ? titleRead : titleUnread;
-    // const action = buttonMarkAsRead ? READ : UNREAD;
-    // const testID = buttonMarkAsRead ? 'toolbar:read' : 'toolbar:unread';
-    // const icon =
-    // const alt = buttonMarkAsRead ? altRead : altUnread;
-
-    // const buttons = [
-    //     <ToolbarButton
-    //         key="read"
-    //         title={titleRead}
-    //         disabled={loading || !selectedIDs.length}
-    //         onClick={() => withLoading(onMarkAs(READ))}
-    //         className="no-tablet no-mobile"
-    //         data-testid="toolbar:read"
-    //         icon={<Icon name="eye" alt={c('Action').t`Mark as read`} />}
-    //     />,
-    //     <ToolbarButton
-    //         key="unread"
-    //         title={titleUnread}
-    //         disabled={loading || !selectedIDs.length}
-    //         onClick={() => withLoading(onMarkAs(UNREAD))}
-    //         data-testid="toolbar:unread"
-    //         icon={<Icon name="eye-slash" alt={c('Action').t`Mark as unread`} />}
-    //     />,
-    // ];
-
-    // if (MessageButtons === MESSAGE_BUTTONS.UNREAD_READ) {
-    //     buttons.reverse();
-    // }
-
-    // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/20356
     return (
         <>
             <Vr />
@@ -87,7 +56,6 @@ const ReadUnreadButtons = ({ selectedIDs, onMarkAs }: Props) => {
                     title={titleRead}
                     disabled={!selectedIDs.length}
                     onClick={() => onMarkAs(READ)}
-                    className="no-tablet no-mobile"
                     data-testid="toolbar:read"
                     icon={<Icon name="envelope-open" alt={c('Action').t`Mark as read`} />}
                 />

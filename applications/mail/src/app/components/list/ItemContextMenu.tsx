@@ -1,11 +1,11 @@
 import { c } from 'ttag';
-import { RefObject, ReactNode, useMemo } from 'react';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { ContextMenu, ContextSeparator, ContextMenuButton, useLabels, useFolders } from '@proton/components';
+import { RefObject, useMemo } from 'react';
+import { ContextMenu, ContextSeparator, ContextMenuButton } from '@proton/components';
 import { useSelector } from 'react-redux';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
-import { isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
+import { useLabelActions } from '../../hooks/useLabelActions';
 
 interface Props {
     checkedIDs: string[];
@@ -25,15 +25,14 @@ interface Props {
 }
 
 const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onMarkAs, ...rest }: Props) => {
-    const [labels] = useLabels();
-    const [folders] = useFolders();
-
     const elementsAreUnread = useSelector(elementsAreUnreadSelector);
 
     const buttonMarkAsRead = useMemo(() => {
         const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
         return !allRead;
     }, [checkedIDs, elementsAreUnread]);
+
+    const [actions] = useLabelActions(labelID, false);
 
     const handleMove = (labelID: string) => {
         onMove(labelID);
@@ -50,7 +49,7 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         rest.close();
     };
 
-    const inboxButton = (
+    const inbox = (
         <ContextMenuButton
             key="context-menu-inbox"
             testId="context-menu-inbox"
@@ -60,7 +59,7 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         />
     );
 
-    const nospamButton = (
+    const nospam = (
         <ContextMenuButton
             key="context-menu-nospam"
             testId="context-menu-nospam"
@@ -70,7 +69,7 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         />
     );
 
-    const archiveButton = (
+    const archive = (
         <ContextMenuButton
             key="context-menu-archive"
             testId="context-menu-archive"
@@ -80,7 +79,7 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         />
     );
 
-    const trashButton = (
+    const trash = (
         <ContextMenuButton
             key="context-menu-trash"
             testId="context-menu-trash"
@@ -90,7 +89,7 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         />
     );
 
-    const spamButton = (
+    const spam = (
         <ContextMenuButton
             key="context-menu-spam"
             testId="context-menu-spam"
@@ -110,31 +109,34 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         />
     );
 
-    let moveButtons: ReactNode[] = [];
+    // let moveButtons: ReactNode[] = [];
 
-    if (labelID === MAILBOX_LABEL_IDS.INBOX) {
-        moveButtons = [trashButton, archiveButton, spamButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.DRAFTS || labelID === MAILBOX_LABEL_IDS.ALL_DRAFTS) {
-        moveButtons = [trashButton, archiveButton, deleteButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.SENT || labelID === MAILBOX_LABEL_IDS.ALL_SENT) {
-        moveButtons = [trashButton, archiveButton, deleteButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.SCHEDULED) {
-        moveButtons = [trashButton, archiveButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.STARRED) {
-        moveButtons = [trashButton, archiveButton, spamButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.ARCHIVE) {
-        moveButtons = [trashButton, inboxButton, spamButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.SPAM) {
-        moveButtons = [trashButton, nospamButton, deleteButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.TRASH) {
-        moveButtons = [inboxButton, archiveButton, deleteButton];
-    } else if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL) {
-        moveButtons = [trashButton, archiveButton, spamButton];
-    } else if (isCustomFolder(labelID, folders)) {
-        moveButtons = [trashButton, archiveButton, spamButton];
-    } else if (isCustomLabel(labelID, labels)) {
-        moveButtons = [trashButton, archiveButton, spamButton];
-    }
+    // if (labelID === MAILBOX_LABEL_IDS.INBOX) {
+    //     moveButtons = [trashButton, archiveButton, spamButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.DRAFTS || labelID === MAILBOX_LABEL_IDS.ALL_DRAFTS) {
+    //     moveButtons = [trashButton, archiveButton, deleteButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.SENT || labelID === MAILBOX_LABEL_IDS.ALL_SENT) {
+    //     moveButtons = [trashButton, archiveButton, deleteButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.SCHEDULED) {
+    //     moveButtons = [trashButton, archiveButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.STARRED) {
+    //     moveButtons = [trashButton, archiveButton, spamButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.ARCHIVE) {
+    //     moveButtons = [trashButton, inboxButton, spamButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.SPAM) {
+    //     moveButtons = [trashButton, nospamButton, deleteButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.TRASH) {
+    //     moveButtons = [inboxButton, archiveButton, deleteButton];
+    // } else if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL) {
+    //     moveButtons = [trashButton, archiveButton, spamButton];
+    // } else if (isCustomFolder(labelID, folders)) {
+    //     moveButtons = [trashButton, archiveButton, spamButton];
+    // } else if (isCustomLabel(labelID, labels)) {
+    //     moveButtons = [trashButton, archiveButton, spamButton];
+    // }
+
+    const allMoveButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
+    const moveButtons = actions.map((action) => allMoveButtons[action]);
 
     return (
         <ContextMenu noMaxHeight {...rest}>

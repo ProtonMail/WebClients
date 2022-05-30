@@ -4,12 +4,12 @@ import {
     DropdownMenuButton,
     EllipsisLoader,
     ToolbarButton,
-    ToolbarSeparator,
     Scroll,
     classnames,
 } from '@proton/components';
 import { c } from 'ttag';
 import { useLocation } from 'react-router';
+import { Vr } from '@proton/atoms';
 import ToolbarDropdown from './ToolbarDropdown';
 import { usePaging } from '../../hooks/usePaging';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -21,9 +21,10 @@ interface Props {
     page: number;
     total: number | undefined;
     onPage: (page: number) => void;
+    narrowMode: boolean;
 }
 
-const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage }: Props) => {
+const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage, narrowMode }: Props) => {
     const location = useLocation();
     const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputTotal, inputOnPage);
     const { getESDBStatus } = useEncryptedSearchContext();
@@ -46,17 +47,57 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
         </DropdownMenuButton>
     );
 
+    if (narrowMode) {
+        return (
+            <>
+                <Vr />
+                <ToolbarDropdown
+                    title={c('Action').t`Change page`}
+                    content={String(page)}
+                    disabled={total <= 1}
+                    size="narrow"
+                    data-testid="toolbar:page-number-dropdown"
+                >
+                    {() => (
+                        <DropdownMenu>
+                            {[...Array(total)].map((_, i) => {
+                                const pageNumber = i + 1; // paging tooling is 0 based
+                                const active = page === pageNumber;
+                                return (
+                                    <DropdownMenuButton
+                                        key={i} // eslint-disable-line react/no-array-index-key
+                                        loading={loading}
+                                        disabled={active}
+                                        isSelected={active}
+                                        onClick={() => onPage(i + 1)}
+                                        aria-label={c('Action').t`Page ${pageNumber}`}
+                                        data-testid={`toolbar:page-number-${pageNumber}`}
+                                        className={classnames(['flex flex-row'])}
+                                    >
+                                        <span className="text-left flex-item-fluid">{pageNumber}</span>
+                                        {active ? <Icon name="checkmark" /> : null}
+                                    </DropdownMenuButton>
+                                );
+                            })}
+                            {useLoadMore && loadMore}
+                        </DropdownMenu>
+                    )}
+                </ToolbarDropdown>
+            </>
+        );
+    }
+
     // translator: Used for pagination, both values are number. Ex: "3 of 15"
     const paginationLabel = c('Pagination').t`${page} of ${total}`;
 
     return (
         <>
-            <ToolbarSeparator />
+            <Vr />
             <ToolbarButton
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}
                 onClick={onPrevious}
-                className="no-tablet no-mobile on-rtl-mirror"
+                className="on-rtl-mirror"
                 icon={<Icon name="chevron-left" alt={c('Action').t`Previous page`} />}
                 data-testid="toolbar:previous-page"
             />
@@ -118,7 +159,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                 disabled={loading || page >= total}
                 title={c('Action').t`Next page`}
                 onClick={onNext}
-                className="no-tablet no-mobile on-rtl-mirror"
+                className="on-rtl-mirror"
                 icon={<Icon name="chevron-right" alt={c('Action').t`Next page`} />}
                 data-testid="toolbar:next-page"
             />
