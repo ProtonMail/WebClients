@@ -5,7 +5,6 @@ const usePopperAnchor = <T extends HTMLElement>() => {
     const [isOpen, setOpen] = useState(false);
 
     const open = useCallback(() => {
-        console.log('test');
         setOpen(true);
     }, []);
 
