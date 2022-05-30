@@ -1,32 +1,22 @@
 import { c } from 'ttag';
-import {
-    Button,
-    classnames,
-    DropdownMenu,
-    DropdownMenuButton,
-    SimpleDropdown,
-    useActiveBreakpoint,
-    Icon,
-    useMailSettings,
-    ToolbarButton,
-} from '@proton/components';
+import { classnames, DropdownMenu, DropdownMenuButton, Icon, useMailSettings, ToolbarButton } from '@proton/components';
 import { MESSAGE_BUTTONS } from '@proton/shared/lib/constants';
 import { Vr } from '@proton/atoms';
 import { Filter } from '../../models/tools';
+import ToolbarDropdown from './ToolbarDropdown';
 
 const { READ_UNREAD } = MESSAGE_BUTTONS;
 
 interface Props {
-    loading?: boolean;
+    icon: boolean;
     filter: Filter;
     onFilter: (filter: Filter) => void;
 }
 
-const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
+const FilterActions = ({ icon, filter, onFilter }: Props) => {
     const [{ MessageButtons = READ_UNREAD } = {}] = useMailSettings();
 
     const noFilterApply = !Object.values(filter).length;
-    const { isDesktop } = useActiveBreakpoint();
 
     const FILTER_OPTIONS = {
         SHOW_ALL: c('Filter option').t`All`,
@@ -73,48 +63,51 @@ const FilterActions = ({ loading, filter = {}, onFilter }: Props) => {
         ...(MessageButtons === READ_UNREAD ? readUnreadButtons : readUnreadButtons.reverse()),
     ];
 
-    if (!isDesktop) {
+    if (icon) {
         const getTextContent = () => {
             const { text = '' } = buttons.find(({ isActive }) => isActive) || {};
             return text;
         };
 
         return (
-            <SimpleDropdown
-                as={Button}
-                shape="ghost"
-                size="small"
+            <ToolbarDropdown
                 hasCaret={false}
+                title={getTextContent()}
                 content={
                     <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
-                        <Icon className="toolbar-icon mr0-5" name="filter" />
-                        <span className="text-sm m0">{getTextContent()}</span>
+                        <Icon
+                            className={classnames(['toolbar-icon mr0-5', !noFilterApply && 'color-primary'])}
+                            name="filter"
+                        />
                     </span>
                 }
             >
-                <DropdownMenu>
-                    {buttons.map(({ ID, text, isActive, onClick }) => {
-                        return (
-                            <DropdownMenuButton
-                                key={ID}
-                                data-testid={ID}
-                                onClick={onClick}
-                                className="text-left"
-                                isSelected={isActive}
-                                loading={loading}
-                            >
-                                {text}
-                            </DropdownMenuButton>
-                        );
-                    })}
-                </DropdownMenu>
-            </SimpleDropdown>
+                {() => (
+                    <DropdownMenu>
+                        <div className="text-bold w100 pr1 pl1 pt0-5 pb0-5">{c('Filter').t`Show:`}</div>
+                        {buttons.map(({ ID, text, isActive, onClick }) => {
+                            return (
+                                <DropdownMenuButton
+                                    key={ID}
+                                    data-testid={ID}
+                                    onClick={onClick}
+                                    className="text-left"
+                                    isSelected={isActive}
+                                >
+                                    {text}
+                                </DropdownMenuButton>
+                            );
+                        })}
+                    </DropdownMenu>
+                )}
+            </ToolbarDropdown>
         );
     }
+
     return (
         <>
             <Vr />
-            <div className="text-bold flex flex-align-items-center ml1 mr1">Show:</div>
+            <div className="text-bold flex flex-align-items-center ml1 mr1">{c('Filter').t`Show:`}</div>
             {buttons.map(({ ID, text, isActive, onClick }) => {
                 return (
                     <ToolbarButton

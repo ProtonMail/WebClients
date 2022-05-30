@@ -1,29 +1,25 @@
-import { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Icon, useLoading, useMailSettings, ToolbarButton, useLabels, useFolders } from '@proton/components';
+import { Icon, useLoading, useMailSettings, ToolbarButton } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Vr } from '@proton/atoms';
-import { Breakpoints } from '../../models/utils';
-import { isCustomFolder, isCustomLabel } from '../../helpers/labels';
 import DeleteButton from './DeleteButton';
+import { useLabelActions } from '../../hooks/useLabelActions';
 
-const { TRASH, SPAM, DRAFTS, ARCHIVE, SENT, INBOX, ALL_DRAFTS, ALL_SENT, STARRED, ALL_MAIL, SCHEDULED } =
-    MAILBOX_LABEL_IDS;
+const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
-    breakpoints: Breakpoints;
+    isNarrow: boolean;
     selectedIDs: string[];
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
 }
 
-const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDelete }: Props) => {
+const MoveButtons = ({ labelID = '', isNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
-    const [labels] = useLabels();
-    const [folders] = useFolders();
-
     const [loading, withLoading] = useLoading();
+
+    const [actions] = useLabelActions(labelID, isNarrow);
 
     if (!selectedIDs.length) {
         return null;
@@ -39,7 +35,7 @@ const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDe
         c('Action').t`Move to inbox`
     );
 
-    const inboxButton = (
+    const inbox = (
         <ToolbarButton
             key="inbox"
             title={titleInbox}
@@ -60,7 +56,7 @@ const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDe
         c('Action').t`Move to archive`
     );
 
-    const archiveButton = (
+    const archive = (
         <ToolbarButton
             key="archive"
             title={titleArchive}
@@ -81,7 +77,7 @@ const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDe
         c('Action').t`Move to spam`
     );
 
-    const spamButton = (
+    const spam = (
         <ToolbarButton
             key="spam"
             title={titleSpam}
@@ -102,7 +98,7 @@ const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDe
         c('Action').t`Move to inbox (not spam)`
     );
 
-    const nospamButton = (
+    const nospam = (
         <ToolbarButton
             key="nospam"
             title={titleNoSpam}
@@ -123,7 +119,7 @@ const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDe
         c('Action').t`Move to trash`
     );
 
-    const trashButton = (
+    const trash = (
         <ToolbarButton
             key="trash"
             title={titleTrash}
@@ -136,38 +132,8 @@ const MoveButtons = ({ labelID = '', breakpoints, selectedIDs = [], onMove, onDe
 
     const deleteButton = <DeleteButton key="delete" selectedIDs={selectedIDs} onDelete={onDelete} />;
 
-    let buttons: ReactNode[] = [];
-
-    // Should cover all situations, fallback on no buttons
-    if (breakpoints.isNarrow) {
-        if (labelID === SPAM || labelID === TRASH) {
-            buttons = [deleteButton];
-        } else {
-            buttons = [trashButton];
-        }
-    } else if (labelID === INBOX) {
-        buttons = [trashButton, archiveButton, spamButton];
-    } else if (labelID === DRAFTS || labelID === ALL_DRAFTS) {
-        buttons = [trashButton, archiveButton, deleteButton];
-    } else if (labelID === SENT || labelID === ALL_SENT) {
-        buttons = [trashButton, archiveButton, deleteButton];
-    } else if (labelID === SCHEDULED) {
-        buttons = [trashButton, archiveButton];
-    } else if (labelID === STARRED) {
-        buttons = [trashButton, archiveButton, spamButton];
-    } else if (labelID === ARCHIVE) {
-        buttons = [trashButton, inboxButton, spamButton];
-    } else if (labelID === SPAM) {
-        buttons = [trashButton, nospamButton, deleteButton];
-    } else if (labelID === TRASH) {
-        buttons = [inboxButton, archiveButton, deleteButton];
-    } else if (labelID === ALL_MAIL) {
-        buttons = [trashButton, archiveButton, spamButton];
-    } else if (isCustomFolder(labelID, folders)) {
-        buttons = [trashButton, archiveButton, spamButton];
-    } else if (isCustomLabel(labelID, labels)) {
-        buttons = [trashButton, archiveButton, spamButton];
-    }
+    const allButtons = { inbox, trash, archive, spam, nospam, delete: deleteButton };
+    const buttons = actions.map((action) => allButtons[action]);
 
     return (
         <>
