@@ -31,7 +31,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
     const { navigateToLink, navigateToSharedURLs, navigateToTrash, navigateToRoot, navigateToSearch } = useNavigate();
     const { setFolder } = useActiveShare();
     const [, setError] = useState();
-    const { createModal } = useModals();
+    const { createModal, removeModal } = useModals();
     const { query: lastQuery } = useSearchResults();
 
     const referer = new URLSearchParams(useLocation().search).get('r');
@@ -87,13 +87,24 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         [shareId]
     );
 
+    // Remember modal ID created by preview and close it together
+    // with closing the preview itself.
+    const modalId = useRef<string>();
+    useEffect(() => {
+        return () => {
+            if (modalId.current) {
+                removeModal(modalId.current);
+            }
+        };
+    }, []);
+
     const openDetails = useCallback(() => {
         if (!link) {
             return;
         }
 
         const [item] = mapDecryptedLinksToChildren([link]);
-        createModal(<DetailsModal shareId={shareId} item={item} />);
+        modalId.current = createModal(<DetailsModal shareId={shareId} item={item} />);
     }, [shareId, link]);
 
     const openShareOptions = useCallback(() => {
@@ -102,7 +113,7 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
         }
 
         const [item] = mapDecryptedLinksToChildren([link]);
-        createModal(<ShareLinkModal shareId={shareId} item={item} />);
+        modalId.current = createModal(<ShareLinkModal shareId={shareId} item={item} />);
     }, [shareId, link]);
 
     const signatureStatus = useMemo(() => {
