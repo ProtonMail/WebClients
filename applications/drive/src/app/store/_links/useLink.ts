@@ -268,7 +268,7 @@ export function useLinkInner(
      */
     const getLinkHashKey = debouncedFunctionDecorator(
         'getLinkHashKey',
-        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<string> => {
+        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<Uint8Array> => {
             let cachedHashKey = linksKeys.getHashKey(shareId, linkId);
             if (cachedHashKey) {
                 return cachedHashKey;
@@ -297,6 +297,7 @@ export function useLinkInner(
                 armoredMessage: encryptedLink.nodeHashKey,
                 privateKey,
                 publicKey,
+                format: 'binary',
             });
 
             if (
