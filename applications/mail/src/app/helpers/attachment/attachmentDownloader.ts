@@ -5,6 +5,7 @@ import { splitExtension } from '@proton/shared/lib/helpers/file';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 import { getAndVerify } from './attachmentLoader';
 import { MessageKeys, MessageVerification } from '../../logic/messages/messagesTypes';
 
@@ -73,7 +74,15 @@ export const generateDownload = async (download: Download /* , message: MessageE
     //     return;
     // }
 
-    downloadFile(new Blob([download.data], { type: download.attachment.MIMEType }), download.attachment.Name);
+    let mimeType = download.attachment.MIMEType;
+
+    // Since version 98, PDF are opened instead of being downloaded in Firefox
+    // One workaround is to use the type application/octet-stream
+    if (isFirefox()) {
+        mimeType = 'application/octet-stream';
+    }
+
+    downloadFile(new Blob([download.data], { type: mimeType }), download.attachment.Name);
 };
 
 /**
