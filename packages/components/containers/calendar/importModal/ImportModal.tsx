@@ -24,7 +24,7 @@ import { ChangeEvent, DragEvent, useEffect, useState } from 'react';
 import { c, msgid } from 'ttag';
 import { onlyDragFiles, Button, BasicModal } from '../../../components';
 
-import { useApi, useEventManager, useConfig, useAddresses } from '../../../hooks';
+import { useApi, useEventManager, useConfig, useAddresses, useGetCalendarUserSettings } from '../../../hooks';
 import { useCalendarModelEventManager } from '../../eventManager';
 
 import AttachingModalContent from './AttachingModalContent';
@@ -59,6 +59,7 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
     const { APP_NAME } = useConfig();
     const isCalendar = APP_NAME === APPS.PROTONCALENDAR;
     const { call: coreCall } = useEventManager();
+    const getCalendarUserSettings = useGetCalendarUserSettings();
     const { call: calendarCall } = useCalendarModelEventManager();
     const [model, setModel] = useState<ImportCalendarModel>(getInitialState(defaultCalendar));
     const [isDropzoneHovered, setIsDropzoneHovered] = useState(false);
@@ -136,13 +137,15 @@ const ImportModal = ({ calendars, defaultCalendar, files, isOpen = false, onClos
                 }
                 try {
                     setModel({ ...model, loading: true });
-                    const { components, calscale, xWrTimezone, method } = await parseIcs(fileAttached);
+                    const [{ PrimaryTimezone: primaryTimezone }, { components, calscale, xWrTimezone, method }] =
+                        await Promise.all([getCalendarUserSettings(), parseIcs(fileAttached)]);
                     const { errors, rest: parsed } = splitErrors(
                         await getSupportedEvents({
                             components,
                             method,
                             calscale,
                             xWrTimezone,
+                            primaryTimezone,
                         })
                     );
                     const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);

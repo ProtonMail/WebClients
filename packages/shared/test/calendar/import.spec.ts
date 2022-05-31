@@ -114,9 +114,9 @@ DTEND;TZID=/America/New_York:19690312T093000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Start time out of bounds'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Start time out of bounds');
     });
 
     it('should catch events with start time after 2038', () => {
@@ -128,9 +128,9 @@ DTEND;VALUE=DATE:20380102
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Start time out of bounds'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Start time out of bounds');
     });
 
     it('should catch malformed all-day events', () => {
@@ -142,12 +142,12 @@ DTEND:20191231T203000Z
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Malformed all-day event'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Malformed all-day event');
     });
 
-    it('should catch events with start and end time after 2038 and take timezones into account', () => {
+    it('should catch events with start and end time after 2038 and take time zones into account', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -156,9 +156,9 @@ DTEND;TZID=America/New_York:20380101T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Start time out of bounds'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Start time out of bounds');
     });
 
     it('should accept events with sequence', () => {
@@ -170,7 +170,9 @@ DTEND;TZID=America/New_York:20020312T082959
 SEQUENCE:11
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -194,7 +196,9 @@ LOCATION:1CP Conference Room 4350
 SEQUENCE:-1
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -218,7 +222,9 @@ DTEND;TZID=/mozilla.org/20050126_1/America/New_York:20020312T083000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -242,7 +248,9 @@ DTEND;VALUE=DATE:20020312
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -266,7 +274,9 @@ DURATION:PT1H0M0S
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: { value: { year: 1998, month: 3, day: 9, hours: 23, minutes: 10, seconds: 0, isUTC: true } },
@@ -296,7 +306,9 @@ END:VALARM
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -328,7 +340,9 @@ END:VALARM
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -369,7 +383,11 @@ UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const eventNoOccurrenceOnDtstart = parse(veventNoOccurrenceOnDtstart) as VcalVeventComponent;
         expect(() =>
-            getSupportedEvent({ vcalVeventComponent: eventNoOccurrenceOnDtstart, hasXWrTimezone: false })
+            getSupportedEvent({
+                vcalVeventComponent: eventNoOccurrenceOnDtstart,
+                hasXWrTimezone: false,
+                guessTzid: 'Asia/Seoul',
+            })
         ).toThrowError('Malformed recurring event');
 
         const veventWithByyeardayNotYearly = `BEGIN:VEVENT
@@ -380,7 +398,11 @@ UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const eventWithByyeardayNotYearly = parse(veventWithByyeardayNotYearly) as VcalVeventComponent;
         expect(() =>
-            getSupportedEvent({ vcalVeventComponent: eventWithByyeardayNotYearly, hasXWrTimezone: false })
+            getSupportedEvent({
+                vcalVeventComponent: eventWithByyeardayNotYearly,
+                hasXWrTimezone: false,
+                guessTzid: 'Asia/Seoul',
+            })
         ).toThrowError('Malformed recurring event');
     });
 
@@ -393,9 +415,9 @@ DTSTAMP:20200508T121218Z
 UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Malformed recurring event'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Malformed recurring event');
     });
 
     it('should catch inconsistent rrules after reformatting bad untils', () => {
@@ -407,9 +429,9 @@ DTSTAMP:20200508T121218Z
 UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Malformed recurring event'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Malformed recurring event');
     });
 
     it('should catch recurring single edits', () => {
@@ -422,9 +444,9 @@ DTSTAMP:20200508T121218Z
 UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Edited event not supported'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Edited event not supported');
     });
 
     it('should catch recurring events with no occurrences because of EXDATE', () => {
@@ -447,9 +469,9 @@ SUMMARY:Scenka: napad na bank
 TRANSP:OPAQUE
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Recurring event has no occurrences'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Recurring event has no occurrences');
     });
 
     it('should catch recurring events with no occurrences because of COUNT', () => {
@@ -469,9 +491,9 @@ SUMMARY:Scenka: napad na bank
 TRANSP:OPAQUE
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Recurring event has no occurrences'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Recurring event has no occurrences');
     });
 
     it('should catch malformed recurring events with no occurrences (throw because of malformed)', () => {
@@ -491,9 +513,9 @@ SUMMARY:Scenka: napad na bank
 TRANSP:OPAQUE
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Malformed recurring event'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Malformed recurring event');
     });
 
     it('should catch non-supported rrules', () => {
@@ -505,9 +527,9 @@ DTSTAMP:20200508T121218Z
 UID:71hdoqnevmnq80hfaeadnq8d0v@google.com
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Recurring rule not supported'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Recurring rule not supported');
     });
 
     it('should normalize exdate', () => {
@@ -519,7 +541,9 @@ RRULE:FREQ=DAILY
 EXDATE;TZID=W. Europe Standard Time:20200610T170000,20200611T170000
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -577,7 +601,9 @@ RRULE:FREQ=DAILY
 EXDATE;TZID=W. Europe Standard Time:20200610T170000,20200611T170000
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -602,7 +628,7 @@ END:VEVENT`;
         });
     });
 
-    it('should support unofficial timezones in our database and normalize recurrence-id', () => {
+    it('should support unofficial time zones in our database and normalize recurrence-id', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -612,7 +638,9 @@ RECURRENCE-ID;TZID=Sarajevo, Skopje, Sofija, Vilnius, Warsaw, Zagreb:20030102T00
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
             dtstamp: {
@@ -635,7 +663,7 @@ END:VEVENT`;
         });
     });
 
-    it('should localize Zulu times in the presence of a calendar timezone for non-recurring events', () => {
+    it('should localize Zulu times in the presence of a calendar time zone for non-recurring events', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -645,7 +673,12 @@ LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(
-            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: true, calendarTzid: 'Europe/Zurich' })
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                hasXWrTimezone: true,
+                calendarTzid: 'Europe/Zurich',
+                guessTzid: 'Asia/Seoul',
+            })
         ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
@@ -665,7 +698,7 @@ END:VEVENT`;
         });
     });
 
-    it('should not localize Zulu times in the presence of a calendar timezone for recurring events', () => {
+    it('should not localize Zulu times in the presence of a calendar time zone for recurring events', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -676,7 +709,12 @@ LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(
-            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: true, calendarTzid: 'Europe/Zurich' })
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                hasXWrTimezone: true,
+                calendarTzid: 'Europe/Zurich',
+                guessTzid: 'Asia/Seoul',
+            })
         ).toEqual({
             component: 'vevent',
             uid: { value: 'test-event' },
@@ -697,7 +735,7 @@ END:VEVENT`;
         });
     });
 
-    it('should reject events with floating times if no global timezone has been specified', () => {
+    it('should localize events with floating times with the guess time zone if no global time zone has been specified', () => {
         const vevent = `
 BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
@@ -708,12 +746,25 @@ RECURRENCE-ID:20030102T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Floating times not supported'
-        );
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                hasXWrTimezone: false,
+                guessTzid: 'Asia/Seoul',
+            })
+        ).toEqual({
+            ...event,
+            dtstart: { value: event.dtstart.value, parameters: { tzid: 'Asia/Seoul' } } as VcalDateTimeProperty,
+            dtend: { value: event.dtend!.value, parameters: { tzid: 'Asia/Seoul' } } as VcalDateTimeProperty,
+            'recurrence-id': {
+                value: event['recurrence-id']!.value,
+                parameters: { tzid: 'Asia/Seoul' },
+            } as VcalDateTimeProperty,
+            sequence: { value: 0 },
+        });
     });
 
-    it('should reject events with floating times if a non-supported global timezone has been specified', () => {
+    it(`should reject events with floating times if a non-supported global time zone has been specified`, () => {
         const vevent = `
 BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
@@ -723,12 +774,12 @@ DTEND:20030101T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: true })).toThrowError(
-            'Calendar timezone not supported'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: true, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Calendar time zone not supported');
     });
 
-    it('should support floating times if a supported global timezone has been specified', () => {
+    it('should support floating times if a supported global time zone has been specified', () => {
         const vevent = `
 BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
@@ -739,7 +790,14 @@ LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
         const event = parse(vevent) as VcalVeventComponent & Required<Pick<VcalVeventComponent, 'dtend'>>;
-        expect(getSupportedEvent({ vcalVeventComponent: event, calendarTzid: tzid, hasXWrTimezone: true })).toEqual({
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                calendarTzid: tzid,
+                hasXWrTimezone: true,
+                guessTzid: 'Asia/Seoul',
+            })
+        ).toEqual({
             ...event,
             dtstart: { value: event.dtstart.value, parameters: { tzid } } as VcalDateTimeProperty,
             dtend: { value: event.dtend.value, parameters: { tzid } } as VcalDateTimeProperty,
@@ -747,7 +805,7 @@ END:VEVENT`;
         });
     });
 
-    it('should ignore global timezone if part-day event time is not floating', () => {
+    it('should ignore global time zone if part-day event time is not floating', () => {
         const vevent = `
 BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
@@ -759,12 +817,17 @@ SEQUENCE:0
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, calendarTzid: tzid, hasXWrTimezone: true })).toEqual(
-            event
-        );
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                calendarTzid: tzid,
+                hasXWrTimezone: true,
+                guessTzid: 'Asia/Seoul',
+            })
+        ).toEqual(event);
     });
 
-    it('should ignore global timezone for all-day events', () => {
+    it('should ignore global time zone for all-day events', () => {
         const vevent = `
 BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
@@ -776,12 +839,17 @@ SEQUENCE:1
 END:VEVENT`;
         const tzid = 'Europe/Brussels';
         const event = parse(vevent) as VcalVeventComponent;
-        expect(getSupportedEvent({ vcalVeventComponent: event, calendarTzid: tzid, hasXWrTimezone: true })).toEqual(
-            event
-        );
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                calendarTzid: tzid,
+                hasXWrTimezone: true,
+                guessTzid: 'Asia/Seoul',
+            })
+        ).toEqual(event);
     });
 
-    it('should not support other timezones not in our list', () => {
+    it('should not support other time zones not in our list', () => {
         const vevent = `BEGIN:VEVENT
 DTSTAMP:19980309T231000Z
 UID:test-event
@@ -790,9 +858,9 @@ DTEND;TZID=Chamorro Standard Time:20030101T003000
 LOCATION:1CP Conference Room 4350
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
-        expect(() => getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toThrowError(
-            'Timezone not supported'
-        );
+        expect(() =>
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toThrowError('Time zone not supported');
     });
 
     it('should crop long UIDs and truncate titles, descriptions and locations', () => {
@@ -812,7 +880,9 @@ LOCATION:Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 END:VEVENT`;
         const event = parse(vevent) as VcalVeventComponent;
         expect(croppedUID.length === MAX_LENGTHS_API.UID);
-        expect(getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false })).toEqual({
+        expect(
+            getSupportedEvent({ vcalVeventComponent: event, hasXWrTimezone: false, guessTzid: 'Asia/Seoul' })
+        ).toEqual({
             ...omit(event, ['dtend']),
             uid: { value: croppedUID },
             summary: { value: truncate(loremIpsum, MAX_LENGTHS_API.TITLE) },
@@ -839,6 +909,7 @@ END:VEVENT`;
             vcalComponent: event,
             calendarTzid: tzid,
             hasXWrTimezone: true,
+            guessTzid: 'Europe/Zurich',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -876,6 +947,7 @@ END:VEVENT`;
             vcalComponent: event,
             calendarTzid: tzid,
             hasXWrTimezone: true,
+            guessTzid: 'Europe/Zurich',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -912,6 +984,7 @@ END:VEVENT`;
             vcalComponent: event,
             calendarTzid: tzid,
             hasXWrTimezone: true,
+            guessTzid: 'Europe/Zurich',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -956,6 +1029,7 @@ END:VEVENT`;
             vcalComponent: event,
             calendarTzid: tzid,
             hasXWrTimezone: true,
+            guessTzid: 'Europe/Zurich',
         });
         expect(supportedEvent).toEqual({
             component: 'vevent',
@@ -978,8 +1052,12 @@ END:VEVENT`;
 });
 
 describe('getSupportedEvents', () => {
-    describe('should guess a timezone to localize floating dates', () => {
-        const generateVcalSetup = (xWrTimezone = '', vtimezonesTzids: string[] = []) => {
+    describe('should guess a time zone to localize floating dates', () => {
+        const generateVcalSetup = (
+            primaryTimezone = 'Asia/Seoul',
+            xWrTimezone = '',
+            vtimezonesTzids: string[] = []
+        ) => {
             const xWrTimezoneString = xWrTimezone ? `X-WR-TIMEZONE:${xWrTimezone}` : '';
             const vtimezonesString = vtimezonesTzids
                 .map(
@@ -1014,6 +1092,7 @@ END:VCALENDAR`;
                 calscale: calscaleProperty?.value,
                 xWrTimezone: xWrTimezoneProperty?.value,
                 method: getIcalMethod(methodProperty) || ICAL_METHOD.PUBLISH,
+                primaryTimezone,
             };
         };
         const localizedVevent = (tzid: string) => ({
@@ -1036,33 +1115,112 @@ END:VCALENDAR`;
 
         it('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
             const [supportedEvent] = await getSupportedEvents(
-                generateVcalSetup('Europe/Brussels', ['America/New_York'])
+                generateVcalSetup('Asia/Seoul', 'Europe/Brussels', ['America/New_York'])
             );
             expect(supportedEvent).toEqual(localizedVevent('Europe/Brussels'));
         });
 
         it('when there is a single vtimezone and no x-wr-timezone', async () => {
-            const [supportedEvent] = await getSupportedEvents(generateVcalSetup('', ['Europe/Vilnius']));
+            const [supportedEvent] = await getSupportedEvents(generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius']));
             expect(supportedEvent).toEqual(localizedVevent('Europe/Vilnius'));
         });
 
         it('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-            const [supportedEvent] = await getSupportedEvents(
-                generateVcalSetup('Moon/Tranquility', ['Europe/Vilnius'])
-            );
-            expect(supportedEvent).toEqual(new Error('Calendar timezone not supported'));
+            await expectAsync(
+                getSupportedEvents(generateVcalSetup('Asia/Seoul', 'Moon/Tranquility', ['Europe/Vilnius']))
+            ).toBeResolvedTo([new Error('Calendar time zone not supported')]);
         });
 
-        it('when there is no vtimezone nor x-wr-timezone (reject unsupported event)', async () => {
-            const [supportedEvent] = await getSupportedEvents(generateVcalSetup());
-            expect(supportedEvent).toEqual(new Error('Floating times not supported'));
+        it('when there is no vtimezone nor x-wr-timezone (fall back to primary time zone)', async () => {
+            const [supportedEvent] = await getSupportedEvents(generateVcalSetup('Asia/Seoul'));
+            expect(supportedEvent).toEqual({
+                component: 'vevent',
+                uid: { value: 'test-uid' },
+                dtstamp: {
+                    value: {
+                        year: 1998,
+                        month: 3,
+                        day: 9,
+                        hours: 23,
+                        minutes: 10,
+                        seconds: 0,
+                        isUTC: true,
+                    },
+                },
+                dtstart: {
+                    value: {
+                        year: 2002,
+                        month: 12,
+                        day: 31,
+                        hours: 20,
+                        minutes: 30,
+                        seconds: 0,
+                        isUTC: false,
+                    },
+                    parameters: { tzid: 'Asia/Seoul' },
+                },
+                summary: { value: 'Floating date-time' },
+                sequence: { value: 0 },
+                dtend: {
+                    value: {
+                        year: 2003,
+                        month: 1,
+                        day: 1,
+                        hours: 0,
+                        minutes: 30,
+                        seconds: 0,
+                        isUTC: false,
+                    },
+                    parameters: { tzid: 'Asia/Seoul' },
+                },
+            });
         });
 
-        it('when there is no x-wr-timezone and more than one vtimezone (reject unsupported event)', async () => {
+        it('when there is no x-wr-timezone and more than one vtimezone (fall back to primary time zone)', async () => {
             const [supportedEvent] = await getSupportedEvents(
-                generateVcalSetup('', ['Europe/Vilnius', 'America/New_York'])
+                generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius', 'America/New_York'])
             );
-            expect(supportedEvent).toEqual(new Error('Floating times not supported'));
+            expect(supportedEvent).toEqual({
+                component: 'vevent',
+                uid: { value: 'test-uid' },
+                dtstamp: {
+                    value: {
+                        year: 1998,
+                        month: 3,
+                        day: 9,
+                        hours: 23,
+                        minutes: 10,
+                        seconds: 0,
+                        isUTC: true,
+                    },
+                },
+                dtstart: {
+                    value: {
+                        year: 2002,
+                        month: 12,
+                        day: 31,
+                        hours: 20,
+                        minutes: 30,
+                        seconds: 0,
+                        isUTC: false,
+                    },
+                    parameters: { tzid: 'Asia/Seoul' },
+                },
+                summary: { value: 'Floating date-time' },
+                sequence: { value: 0 },
+                dtend: {
+                    value: {
+                        year: 2003,
+                        month: 1,
+                        day: 1,
+                        hours: 0,
+                        minutes: 30,
+                        seconds: 0,
+                        isUTC: false,
+                    },
+                    parameters: { tzid: 'Asia/Seoul' },
+                },
+            });
         });
     });
 });
