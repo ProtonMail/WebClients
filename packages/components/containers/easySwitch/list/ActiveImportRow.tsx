@@ -2,6 +2,7 @@ import { c } from 'ttag';
 import { format } from 'date-fns';
 
 import { ImportType, NormalizedImporter } from '@proton/shared/lib/interfaces/EasySwitch';
+import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { TableRow, Icon } from '../../../components';
 
@@ -79,7 +80,9 @@ const ActiveImportRow = ({ activeImport }: Props) => {
         <div className="on-mobile-text-center" key={`import-${activeImport.ID}-row-status`}>
             <ActiveImportStatus processed={processed} total={total} state={State} errorCode={ErrorCode} />
         </div>,
-        <time key={`import-${activeImport.ID}-row-data`}>{format(CreateTime * 1000, 'PPp')}</time>,
+        <time key={`import-${activeImport.ID}-row-data`}>
+            {format(CreateTime * 1000, 'PPp', { locale: dateLocale })}
+        </time>,
         '—',
         <ActiveImportRowActions key={`import-${activeImport.ID}-row-actions`} activeImport={activeImport} />,
     ];
