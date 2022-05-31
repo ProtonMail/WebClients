@@ -81,7 +81,7 @@ export const computeComposerStyle = ({
         style['--height-custom'] = '35px';
     } else if (maximized) {
         const composerWidth = windowWidth - COMPOSER_GUTTER - APP_BAR_WIDTH;
-        style['--left-custom'] = `${windowWidth - composerWidth}px`;
+        style['--left-custom'] = `${windowWidth - composerWidth - COMPOSER_GUTTER}px`;
         style['--width-custom'] = `${composerWidth}px`;
         style['--height-custom'] = `${windowHeight - COMPOSER_VERTICAL_GUTTER * 2}px`;
     }
