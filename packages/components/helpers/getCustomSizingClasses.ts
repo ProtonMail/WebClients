@@ -1,6 +1,6 @@
 import { classnames } from './component';
 
-export const getCustomSizingClasses = (style?: any) => {
+export const getCustomSizingClasses = (style?: any): string => {
     if (!style) {
         return '';
     }
