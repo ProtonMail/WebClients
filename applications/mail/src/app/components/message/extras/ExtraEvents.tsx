@@ -170,11 +170,13 @@ const ExtraEvents = ({ message }: Props) => {
                                     if (!parsedVcalendar) {
                                         return;
                                     }
+                                    const { PrimaryTimezone: primaryTimezone } = await getCalendarUserSettings();
                                     const supportedEventInvitation = await getSupportedEventInvitation({
                                         vcalComponent: parsedVcalendar,
                                         message: message.data,
                                         icsBinaryString,
                                         icsFileName: attachment.Name || '',
+                                        primaryTimezone,
                                     });
                                     return supportedEventInvitation;
                                 } catch (error: any) {

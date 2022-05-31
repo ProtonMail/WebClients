@@ -209,8 +209,8 @@ export const fetchAllEventsByUID: FetchAllEventsByUID = async ({ uid, api, recur
             const supportedRecurrenceId = getLinkedDateTimeProperty({
                 component: 'vevent',
                 property: recurrenceId,
-                isAllDay: !!parentEvent.FullDay,
-                tzid: parentEvent.StartTimezone,
+                linkedIsAllDay: !!parentEvent.FullDay,
+                linkedTzid: parentEvent.StartTimezone,
             });
             const supportedTimestamp = getUnixTime(propertyToUTCDate(supportedRecurrenceId));
             const [recoveredEvent, ...otherRecoveredEvents] = await getPaginatedEventsByUID({

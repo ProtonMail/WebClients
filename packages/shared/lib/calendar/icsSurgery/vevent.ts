@@ -103,7 +103,8 @@ export const getSupportedDateOrDateTimeProperty = ({
             if (isInvite) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FLOATING_TIME, 'vevent', componentId);
+            // we should never reach here as guessTzid should be always defined for import
+            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.UNEXPECTED_FLOATING_TIME, 'vevent', componentId);
         }
         if (hasXWrTimezone && !calendarTzid) {
             if (isInvite) {
@@ -129,19 +130,19 @@ export const getSupportedDateOrDateTimeProperty = ({
 export const getLinkedDateTimeProperty = ({
     property,
     component,
-    isAllDay,
-    tzid,
+    linkedIsAllDay,
+    linkedTzid,
     componentId = '',
     isInvite,
 }: {
     property: VcalDateOrDateTimeProperty;
     component: string;
     componentId?: string;
-    isAllDay: boolean;
-    tzid?: string;
+    linkedIsAllDay: boolean;
+    linkedTzid?: string;
     isInvite?: boolean;
 }): VcalDateOrDateTimeProperty => {
-    if (isAllDay) {
+    if (linkedIsAllDay) {
         return dateToProperty(property.value);
     }
     if (getIsPropertyAllDay(property)) {
@@ -151,17 +152,18 @@ export const getLinkedDateTimeProperty = ({
         throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, component, componentId);
     }
     const supportedTzid = getPropertyTzid(property);
-    if (!supportedTzid || !tzid) {
+    if (!supportedTzid || !linkedTzid) {
         if (isInvite) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
         }
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FLOATING_TIME, component, componentId);
+        // should never be reached
+        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.UNEXPECTED_FLOATING_TIME, component, componentId);
     }
-    if (tzid !== supportedTzid) {
+    if (linkedTzid !== supportedTzid) {
         // the linked date-time property should have the same tzid as dtstart
-        return getDateTimePropertyInDifferentTimezone(property, tzid, isAllDay);
+        return getDateTimePropertyInDifferentTimezone(property, linkedTzid, linkedIsAllDay);
     }
-    return getDateTimeProperty(property.value, tzid);
+    return getDateTimeProperty(property.value, linkedTzid);
 };
 
 /**
@@ -350,8 +352,8 @@ export const getSupportedEvent = ({
                     property,
                     component: 'vevent',
                     componentId,
-                    isAllDay: isAllDayStart,
-                    tzid: startTzid,
+                    linkedIsAllDay: isAllDayStart,
+                    linkedTzid: startTzid,
                     isInvite: isEventInvitation,
                 })
             );
