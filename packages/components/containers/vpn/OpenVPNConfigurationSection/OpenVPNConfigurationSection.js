@@ -106,7 +106,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
 
     const countryServers = groupWith(
         (a, b) => a.ExitCountry === b.ExitCountry,
-        allServers.filter(({ Tier }) => Tier === 1)
+        allServers.filter(({ Tier }) => Tier === 2)
     ).map((groups) => {
         const [first] = groups;
         const activeServers = groups.filter(({ Status }) => Status === 1);
