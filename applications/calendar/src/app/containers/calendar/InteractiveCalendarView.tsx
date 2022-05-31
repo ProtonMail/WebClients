@@ -1617,6 +1617,7 @@ const InteractiveCalendarView = ({
                     if (targetEvent.id === 'tmp' && tmpData) {
                         return (
                             <CreateEventPopover
+                                isDraggingDisabled={isNarrow || isSideApp}
                                 isNarrow={isNarrow}
                                 style={style}
                                 popoverRef={ref}
