@@ -1,8 +1,15 @@
 import { OpenPGPKey } from 'pmcrypto';
 import { Address } from './Address';
-import { CONTACT_MIME_TYPES, CONTACT_PGP_SCHEMES, MIME_TYPES, PGP_SCHEMES, RECIPIENT_TYPES } from '../constants';
+import {
+    CONTACT_MIME_TYPES,
+    CONTACT_PGP_SCHEMES,
+    KEY_FLAG,
+    MIME_TYPES,
+    PGP_SCHEMES,
+    RECIPIENT_TYPES,
+} from '../constants';
 import { MailSettings } from './MailSettings';
-import { Key } from './Key';
+import { SignedKeyListEpochs } from './SignedKeyList';
 
 export interface PublicKeyWithPref {
     publicKey: OpenPGPKey;
@@ -12,17 +19,23 @@ export interface PublicKeyWithPref {
 export interface SelfSend {
     address: Address;
     publicKey?: OpenPGPKey;
+    canSend?: boolean;
 }
 
 export type MimeTypeVcard = MIME_TYPES.PLAINTEXT;
 
+export interface ProcessedApiKey {
+    armoredKey: string;
+    flags: KEY_FLAG;
+    publicKey?: OpenPGPKey;
+}
+
 export interface ApiKeysConfig {
-    Keys: Key[];
-    publicKeys: (OpenPGPKey | undefined)[];
+    publicKeys: ProcessedApiKey[];
     Code?: number;
     RecipientType?: RECIPIENT_TYPES;
     MIMEType?: MIME_TYPES;
-    SignedKeyList?: any[];
+    SignedKeyList?: SignedKeyListEpochs[];
     Warnings?: string[];
     Errors?: string[];
 }
@@ -48,14 +61,19 @@ export interface PublicKeyConfigs {
 
 export interface ContactPublicKeyModel {
     emailAddress: string;
-    publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[] };
+    publicKeys: {
+        apiKeys: OpenPGPKey[];
+        pinnedKeys: OpenPGPKey[];
+        verifyingPinnedKeys: OpenPGPKey[]; // Subset of pinned keys not marked as compromised
+    };
     encrypt?: boolean;
     sign?: boolean;
     mimeType: CONTACT_MIME_TYPES;
     scheme: CONTACT_PGP_SCHEMES;
     trustedFingerprints: Set<string>;
-    verifyOnlyFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
+    obsoleteFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
     encryptionCapableFingerprints: Set<string>; // Keys that are capable of encryption (regardless of whether they are allowed to encrypt).
+    compromisedFingerprints: Set<string>; // Keys that are not allowed to encrypt nor sign, because they are marked as compromised
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithWKDKeys: boolean;
@@ -70,14 +88,15 @@ export interface ContactPublicKeyModel {
 
 export interface PublicKeyModel {
     emailAddress: string;
-    publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[] };
+    publicKeys: { apiKeys: OpenPGPKey[]; pinnedKeys: OpenPGPKey[]; verifyingPinnedKeys: OpenPGPKey[] };
     encrypt: boolean;
     sign: boolean;
     mimeType: CONTACT_MIME_TYPES;
     scheme: PGP_SCHEMES;
     trustedFingerprints: Set<string>;
-    verifyOnlyFingerprints: Set<string>;
+    obsoleteFingerprints: Set<string>;
     encryptionCapableFingerprints: Set<string>;
+    compromisedFingerprints: Set<string>;
     isPGPExternal: boolean;
     isPGPInternal: boolean;
     isPGPExternalWithWKDKeys: boolean;

@@ -73,12 +73,13 @@ const pinnedFakeKey3: OpenPGPKey = {
 describe('extractEncryptionPreferences for an internal user', () => {
     const model = {
         emailAddress: 'user@pm.me',
-        publicKeys: { api: [], pinned: [] },
+        publicKeys: { apiKeys: [], pinnedKeys: [] },
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         trustedFingerprints: new Set([]),
         encryptionCapableFingerprints: new Set([]),
-        verifyOnlyFingerprints: new Set([]),
+        obsoleteFingerprints: new Set([]),
+        compromisedFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
         isPGPExternalWithWKDKeys: false,
@@ -97,14 +98,15 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should extract the primary API key when the email address does not belong to any contact', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [] as OpenPGPKey[];
+        const verifyingPinnedKeys = [] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
             isContact: false,
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -117,6 +119,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isSendKeyPinned: false,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: false,
@@ -131,11 +134,12 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should extract the primary API key when there are no pinned keys', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [] as OpenPGPKey[];
+        const verifyingPinnedKeys = [] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -148,6 +152,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isSendKeyPinned: false,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: false,
@@ -162,12 +167,13 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should pick the pinned key (and not the API one)', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey2, pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey2];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -180,6 +186,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             isSendKeyPinned: true,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: true,
@@ -194,9 +201,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give a warning for keyid mismatch', () => {
         const apiKeys = [fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey2];
+        const verifyingPinnedKeys = [] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey2']),
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
         };
@@ -208,11 +216,12 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give an error when the API gave emailAddress errors', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey1] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey1']),
+            obsoleteFingerprints: new Set(['fakeKey1']),
             emailAddressErrors: ['Recipient could not be found'],
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -220,26 +229,41 @@ describe('extractEncryptionPreferences for an internal user', () => {
         expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.EMAIL_ADDRESS_ERROR);
     });
 
-    it('should give an error when the preferred pinned key is not valid for sending', () => {
+    it('should give an error when there are no pinned keys and the primary key is not valid for sending', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
-        const pinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
-            encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey1']),
+            publicKeys: { apiKeys, pinnedKeys: [], verifyingPinnedKeys: [] },
+            encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
+            compromisedFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND);
+    });
+
+    it('should give an error when the preferred pinned key is not valid for sending', () => {
+        const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
+        const pinnedKeys = [pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey1];
+        const publicKeyModel = {
+            ...model,
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
+            encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey1']),
+        };
+        const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
+
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND);
     });
 
     it('should give an error when the preferred pinned key is not among the keys returned by the API', () => {
         const apiKeys = [fakeKey1, fakeKey2];
         const pinnedKeys = [pinnedFakeKey3];
+        const verifyingPinnedKeys = [pinnedFakeKey3];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
             trustedFingerprints: new Set(['fakeKey3']),
         };
@@ -251,9 +275,10 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give an error if the API returned no keys', () => {
         const apiKeys = [] as OpenPGPKey[];
         const pinnedKeys = [pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey1']),
             encryptionCapableFingerprints: new Set(['fakeKey1']),
         };
@@ -265,25 +290,27 @@ describe('extractEncryptionPreferences for an internal user', () => {
     it('should give an error if the API returned no keys valid for sending', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
+        const verifyingPinnedKeys = [] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey1']),
             encryptionCapableFingerprints: new Set(['fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
-        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_VALID_API_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND);
     });
 
     it('should give an error if there are pinned keys but the contact signature could not be verified', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
             ...model,
             isContactSignatureVerified: false,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -295,12 +322,13 @@ describe('extractEncryptionPreferences for an internal user', () => {
 describe('extractEncryptionPreferences for an external user with WKD keys', () => {
     const model = {
         emailAddress: 'user@pm.me',
-        publicKeys: { apiKeys: [], pinnedKeys: [] },
+        publicKeys: { apiKeys: [], pinnedKeys: [], verifyingPinnedKeys: [] },
         scheme: PGP_SCHEMES.PGP_INLINE,
         mimeType: MIME_TYPES.PLAINTEXT as CONTACT_MIME_TYPES,
         trustedFingerprints: new Set([]),
         encryptionCapableFingerprints: new Set([]),
-        verifyOnlyFingerprints: new Set([]),
+        obsoleteFingerprints: new Set([]),
+        compromisedFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
         isPGPExternalWithWKDKeys: true,
@@ -319,14 +347,15 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should extract the primary API key when the email address does not belong to any contact', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [] as OpenPGPKey[];
+        const verifyingPinnedKeys = [] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
             isContact: false,
             isContactSignatureVerified: undefined,
             contactSignatureTimestamp: undefined,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -339,6 +368,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isSendKeyPinned: false,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: false,
             hasApiKeys: true,
             hasPinnedKeys: false,
@@ -353,11 +383,12 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should extract the primary API key when there are no pinned keys', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [] as OpenPGPKey[];
+        const verifyingPinnedKeys = [] as OpenPGPKey[];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -370,6 +401,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isSendKeyPinned: false,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: false,
             hasApiKeys: true,
             hasPinnedKeys: false,
@@ -384,12 +416,13 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should pick the pinned key (and not the API one)', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey2, pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey1', 'fakeKey2']),
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -402,6 +435,7 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
             isSendKeyPinned: true,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: false,
             hasApiKeys: true,
             hasPinnedKeys: true,
@@ -416,9 +450,10 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should give a warning for keyid mismatch', () => {
         const apiKeys = [fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey2];
+        const verifyingPinnedKeys = [pinnedFakeKey2];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey2']),
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
         };
@@ -430,9 +465,13 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should give an error when the API gave emailAddress errors', () => {
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
+            publicKeys: {
+                apiKeys: [fakeKey1, fakeKey2, fakeKey3],
+                pinnedKeys: [pinnedFakeKey1],
+                verifyingPinnedKeys: [],
+            },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey1']),
+            obsoleteFingerprints: new Set(['fakeKey1']),
             emailAddressErrors: ['Recipient could not be found'],
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -443,9 +482,13 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should give an error when the preferred pinned key is not valid for sending', () => {
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
+            publicKeys: {
+                apiKeys: [fakeKey1, fakeKey2, fakeKey3],
+                pinnedKeys: [pinnedFakeKey1],
+                verifyingPinnedKeys: [pinnedFakeKey1],
+            },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey1']),
+            obsoleteFingerprints: new Set(['fakeKey1']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -455,7 +498,11 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should give an error when the preferred pinned key is not among the keys returned by the API', () => {
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys: [fakeKey1, fakeKey2], pinnedKeys: [pinnedFakeKey3] },
+            publicKeys: {
+                apiKeys: [fakeKey1, fakeKey2],
+                pinnedKeys: [pinnedFakeKey3],
+                verifyingPinnedKeys: [pinnedFakeKey3],
+            },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
             trustedFingerprints: new Set(['fakeKey3']),
         };
@@ -467,10 +514,14 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should give an error if the API returned no keys valid for sending', () => {
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys: [fakeKey1, fakeKey2, fakeKey3], pinnedKeys: [pinnedFakeKey1] },
+            publicKeys: {
+                apiKeys: [fakeKey1, fakeKey2, fakeKey3],
+                pinnedKeys: [pinnedFakeKey1],
+                verifyingPinnedKeys: [],
+            },
             trustedFingerprints: new Set(['fakeKey1']),
             encryptionCapableFingerprints: new Set(['fakeKey3']),
-            verifyOnlyFingerprints: new Set(['fakeKey3']),
+            obsoleteFingerprints: new Set(['fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
 
@@ -480,10 +531,11 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
     it('should give an error if there are pinned keys but the contact signature could not be verified', () => {
         const apiKeys = [fakeKey1, fakeKey2, fakeKey3];
         const pinnedKeys = [pinnedFakeKey1];
+        const verifyingPinnedKeys = [pinnedFakeKey1];
         const publicKeyModel = {
             ...model,
             isContactSignatureVerified: false,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2', 'fakeKey3']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -495,14 +547,15 @@ describe('extractEncryptionPreferences for an external user with WKD keys', () =
 describe('extractEncryptionPreferences for an external user without WKD keys', () => {
     const model = {
         emailAddress: 'user@tatoo.me',
-        publicKeys: { apiKeys: [], pinnedKeys: [] },
+        publicKeys: { apiKeys: [], pinnedKeys: [], verifyingPinnedKeys: [] },
         encrypt: false,
         sign: false,
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         trustedFingerprints: new Set([]),
         encryptionCapableFingerprints: new Set([]),
-        verifyOnlyFingerprints: new Set([]),
+        obsoleteFingerprints: new Set([]),
+        compromisedFingerprints: new Set([]),
         isPGPExternal: true,
         isPGPInternal: false,
         isPGPExternalWithWKDKeys: false,
@@ -529,6 +582,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             scheme: PGP_SCHEMES.PGP_MIME,
             apiKeys: [],
             pinnedKeys: [],
+            verifyingPinnedKeys: [],
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: false,
@@ -557,6 +611,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             scheme: PGP_SCHEMES.PGP_MIME,
             apiKeys: [],
             pinnedKeys: [],
+            verifyingPinnedKeys: [],
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: false,
@@ -577,6 +632,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             scheme: PGP_SCHEMES.PGP_MIME,
             apiKeys: [],
             pinnedKeys: [],
+            verifyingPinnedKeys: [],
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: false,
@@ -590,9 +646,10 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     it('should pick the first pinned key', () => {
         const apiKeys = [] as OpenPGPKey[];
         const pinnedKeys = [pinnedFakeKey2, pinnedFakeKey3];
+        const verifyingPinnedKeys = [pinnedFakeKey2, pinnedFakeKey3];
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys, pinnedKeys },
+            publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
             trustedFingerprints: new Set(['fakeKey2', 'fakeKey3']),
             encryptionCapableFingerprints: new Set(['fakeKey2', 'fakeKey3']),
         };
@@ -607,6 +664,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             isSendKeyPinned: true,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: false,
             hasApiKeys: false,
             hasPinnedKeys: true,
@@ -621,7 +679,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     it('should give a warning for keyid mismatch', () => {
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey1] },
+            publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey1], verifyingPinnedKeys: [] },
             trustedFingerprints: new Set(['fakeKey1']),
             encryptionCapableFingerprints: new Set(['fakeKey1']),
         };
@@ -633,7 +691,11 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
     it('should give an error when the preferred pinned key is not valid for sending', () => {
         const publicKeyModel = {
             ...model,
-            publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1] },
+            publicKeys: {
+                apiKeys: [],
+                pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1],
+                verifyingPinnedKeys: [pinnedFakeKey1],
+            },
             encryptionCapableFingerprints: new Set([]),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -645,7 +707,11 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         const publicKeyModel = {
             ...model,
             isContactSignatureVerified: false,
-            publicKeys: { apiKeys: [], pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1] },
+            publicKeys: {
+                apiKeys: [],
+                pinnedKeys: [pinnedFakeKey2, pinnedFakeKey1],
+                verifyingPinnedKeys: [pinnedFakeKey2],
+            },
             encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
         };
         const result = extractEncryptionPreferences(publicKeyModel, mailSettings);
@@ -657,14 +723,16 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
 describe('extractEncryptionPreferences for an own address', () => {
     const apiKeys = [fakeKey1, fakeKey2];
     const pinnedKeys = [] as OpenPGPKey[];
+    const verifyingPinnedKeys = [] as OpenPGPKey[];
     const model = {
         emailAddress: 'user@pm.me',
-        publicKeys: { apiKeys, pinnedKeys },
+        publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         trustedFingerprints: new Set([]),
-        encryptionCapableFingerprints: new Set([]),
-        verifyOnlyFingerprints: new Set([]),
+        encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
+        obsoleteFingerprints: new Set([]),
+        compromisedFingerprints: new Set([]),
         isPGPExternal: false,
         isPGPInternal: true,
         isPGPExternalWithWKDKeys: false,
@@ -686,6 +754,7 @@ describe('extractEncryptionPreferences for an own address', () => {
                 Receive: 1,
             },
             publicKey: pinnedFakeKey1,
+            canSend: true,
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
@@ -698,6 +767,7 @@ describe('extractEncryptionPreferences for an own address', () => {
             isSendKeyPinned: false,
             apiKeys,
             pinnedKeys,
+            verifyingPinnedKeys,
             isInternal: true,
             hasApiKeys: true,
             hasPinnedKeys: false,
@@ -716,6 +786,7 @@ describe('extractEncryptionPreferences for an own address', () => {
                 Receive: 1,
             },
             publicKey: pinnedFakeKey2,
+            canSend: true,
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
@@ -729,6 +800,7 @@ describe('extractEncryptionPreferences for an own address', () => {
                 Receive: 0,
             },
             publicKey: pinnedFakeKey1,
+            canSend: true,
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
@@ -742,6 +814,21 @@ describe('extractEncryptionPreferences for an own address', () => {
                 Receive: 1,
             },
             publicKey: pinnedFakeKey1,
+            canSend: true,
+        } as any;
+        const result = extractEncryptionPreferences(model, mailSettings, selfSend);
+
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_API_KEY);
+    });
+
+    it('should give an error if the primary key is compromised', () => {
+        const selfSend: SelfSend = {
+            address: {
+                HasKeys: 0,
+                Receive: 1,
+            },
+            publicKey: pinnedFakeKey1,
+            canSend: false,
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
@@ -757,6 +844,6 @@ describe('extractEncryptionPreferences for an own address', () => {
         } as any;
         const result = extractEncryptionPreferences(model, mailSettings, selfSend);
 
-        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.INTERNAL_USER_NO_VALID_API_KEY);
+        expect(result?.error?.type).toEqual(ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND);
     });
 });

@@ -45,9 +45,14 @@ export interface MessageVerification {
     verificationErrors: Error[] | undefined;
 
     /**
-     * Pinned public keys of the sender, if any
+     * Pinned public keys of the sender which can verify, if any
      */
     senderPinnedKeys: OpenPGPKey[] | undefined;
+
+    /**
+     * Sender public keys retrieved from API which can are not pinned
+     */
+    senderPinnableKeys: OpenPGPKey[] | undefined;
 
     /**
      * If the sender is in the list of contacts, whether its contact signature has been verified

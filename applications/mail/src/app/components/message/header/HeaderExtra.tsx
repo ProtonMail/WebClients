@@ -45,7 +45,9 @@ const HeaderExtra = ({
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />
             <ExtraAutoReply message={message} />
-            {messageLoaded && <ExtraPinKey message={message.data} messageVerification={message.verification} />}
+            {message.data && message.verification && (
+                <ExtraPinKey message={message.data} messageVerification={message.verification} />
+            )}
             <ExtraAskResign
                 message={message.data}
                 messageVerification={message.verification}
