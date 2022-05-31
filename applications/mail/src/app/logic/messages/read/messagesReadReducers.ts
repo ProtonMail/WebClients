@@ -159,8 +159,14 @@ export const verificationComplete = (
     const messageState = getMessage(state, ID);
 
     if (messageState) {
+        const pinnedFingerprints = new Set(encryptionPreferences?.pinnedKeys.map((key) => key.getFingerprint()));
+        const senderPinnableKeys = encryptionPreferences?.apiKeys.filter(
+            (key) => !pinnedFingerprints.has(key.getFingerprint())
+        );
         messageState.verification = {
-            senderPinnedKeys: encryptionPreferences?.pinnedKeys,
+            // do not use compromised keys for verification
+            senderPinnedKeys: encryptionPreferences?.verifyingPinnedKeys,
+            senderPinnableKeys,
             signingPublicKey,
             attachedPublicKeys,
             senderVerified: encryptionPreferences?.isContactSignatureVerified,

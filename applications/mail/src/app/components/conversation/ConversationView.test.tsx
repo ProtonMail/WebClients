@@ -263,7 +263,9 @@ describe('ConversationView', () => {
         it('should open a message on enter', async () => {
             store.dispatch(initializeConversation(conversationState));
 
-            const messageMock = jest.fn(() => ({ Message: { ID: message.ID, Attachments: [] } }));
+            const messageMock = jest.fn(() => ({
+                Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: '' } },
+            }));
             addApiMock(`mail/v4/messages/${message.ID}`, messageMock);
 
             const { down, enter } = await setup();

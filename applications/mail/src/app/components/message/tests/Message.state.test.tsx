@@ -15,6 +15,7 @@ describe('message state', () => {
             AddressID: addressID,
             Attachments: [],
             NumAttachments: 0,
+            Sender: { Name: '', Address: '' },
         } as any as Message;
 
         addApiMock(`mail/v4/messages/${messageID}`, () => ({ Message }));
@@ -43,12 +44,22 @@ describe('message state', () => {
 
         const message1 = {
             localID: ID1,
-            data: { ID: ID1, Body: 'something', MIMEType: MIME_TYPES.PLAINTEXT } as Message,
+            data: {
+                ID: ID1,
+                Body: 'something',
+                MIMEType: MIME_TYPES.PLAINTEXT,
+                Sender: { Name: '', Address: '' },
+            } as Message,
             messageDocument: { initialized: true, plainText: 'Body1' },
         };
         const message2 = {
             localID: ID2,
-            data: { ID: ID2, Body: 'something', MIMEType: MIME_TYPES.PLAINTEXT } as Message,
+            data: {
+                ID: ID2,
+                Body: 'something',
+                MIMEType: MIME_TYPES.PLAINTEXT,
+                Sender: { Name: '', Address: '' },
+            } as Message,
             messageDocument: { initialized: true, plainText: 'Body2' },
         };
 

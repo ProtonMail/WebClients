@@ -7,7 +7,8 @@ import { CalendarEvent, CalendarEventData } from '../interfaces/calendar';
 import { GetAddressKeys } from '../interfaces/hooks/GetAddressKeys';
 import { GetEncryptionPreferences } from '../interfaces/hooks/GetEncryptionPreferences';
 import { SimpleMap } from '../interfaces/utils';
-import { splitKeys } from '../keys';
+import { getKeyHasFlagsToVerify } from '../keys';
+import { getActiveKeys } from '../keys/getActiveKeys';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { SIGNED, ENCRYPTED_AND_SIGNED } = CALENDAR_CARD_TYPE;
@@ -55,8 +56,13 @@ export const getAuthorPublicKeysMap = async ({
     const promises = authors.map(async (author) => {
         const ownAddress = normalizedAddresses.find(({ normalizedEmailAddress }) => normalizedEmailAddress === author);
         if (ownAddress) {
-            const result = await getAddressKeys(ownAddress.ID);
-            publicKeysMap[author] = splitKeys(result).publicKeys;
+            const decryptedKeys = await getAddressKeys(ownAddress.ID);
+            const addressKeys = await getActiveKeys(ownAddress.SignedKeyList, ownAddress.Keys, decryptedKeys);
+            publicKeysMap[author] = addressKeys
+                .filter((decryptedKey) => {
+                    return getKeyHasFlagsToVerify(decryptedKey.flags);
+                })
+                .map((key) => key.publicKey);
         } else {
             const { pinnedKeys } = await getEncryptionPreferences(author);
             publicKeysMap[author] = pinnedKeys;
