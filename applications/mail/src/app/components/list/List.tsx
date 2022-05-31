@@ -193,16 +193,23 @@ const List = (
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
                 </h1>
-                <div className="items-column-list-inner flex flex-nowrap flex-column relative">
-                    <ListSettings
-                        sort={sort}
-                        onSort={onSort}
-                        onFilter={onFilter}
-                        filter={filter}
-                        conversationMode={conversationMode}
-                        isSearch={isSearch}
-                        labelID={labelID}
-                    />
+                <div
+                    className={classnames([
+                        'items-column-list-inner flex flex-nowrap flex-column relative',
+                        columnLayout && !isCompactView && 'pt0-5',
+                    ])}
+                >
+                    <div hidden>
+                        <ListSettings
+                            sort={sort}
+                            onSort={onSort}
+                            onFilter={onFilter}
+                            filter={filter}
+                            conversationMode={conversationMode}
+                            isSearch={isSearch}
+                            labelID={labelID}
+                        />
+                    </div>
                     {showESSlowToolbar && <ESSlowToolbar />}
                     {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (

@@ -46,19 +46,23 @@ $container-to-width: 4em !default;
 }
 
 $item-container-height: rem(66) !default;
-$item-container-padding-block: em(8.5) !default;
+$item-container-padding-block: em(11) !default;
 $item-container-padding-inline: em(12) !default;
 
-$item-container-height-compact-mode: rem(48) !default;
+$item-container-margin-inline: em(12) !default;
+
+$item-container-height-compact-mode: rem(56) !default;
 $item-container-row-height-compact-mode: rem(40) !default;
+
+$item-container-row-padding-block: em(6) !default; // design wants 44px
 
 .item-container,
 .item-container-row {
 	@extend %appearing-container;
 	position: relative;
-	padding-block: $item-container-padding-block; // design wants ~64 height
+	padding-block: $item-container-padding-block; // design wants ~66 height
 	padding-inline: $item-container-padding-inline;
-	// border-block-end: 1px solid var(--border-weak);
+	border-block-end: 1px solid var(--border-weak);
 	scroll-margin-block-start: $item-container-height;
 
 	// no transition, otherwhise there's a flash on page loading
@@ -68,6 +72,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		content: '';
 		position: absolute;
 		inset: 0;
+		inset-inline-start: -$item-container-margin-inline;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
@@ -129,6 +134,14 @@ $item-container-row-height-compact-mode: rem(40) !default;
 			background-color: var(--email-item-selected-icon-background-color);
 			color: var(--email-item-selected-icon-text-color);
 		}
+
+		.item-firstline {
+			color: var(--email-item-selected-text-color);
+		}
+
+		.item-titlesender {
+			border-block-end-color: transparent;
+		}
 	}
 
 	// Styling for contact items inside contact dropdown
@@ -147,6 +160,28 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	// which therefore has to be bigger
 	&.es-three-rows {
 		height: rem(76);
+	}
+}
+
+.item-container {
+	border-block-end: 0;
+	padding-block-end: 0; // design wants ~66 height
+	margin-inline: $item-container-margin-inline;
+	border-radius: var(--border-radius-lg);
+}
+
+.item-container-row {
+	padding-block: $item-container-row-padding-block;
+
+	// fix pseudo element for row layout
+	.item-checkbox {
+		&::after {
+			inset-block: -#{$item-container-padding-block};
+		}
+	}
+
+	.item-weight {
+		min-inline-size: 5em;
 	}
 }
 
@@ -203,11 +238,37 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	font-size: em(13);
 }
 
+.item-icon-compact {
+	inline-size: rem($conversation-icon-size);
+	block-size: rem($conversation-icon-size);
+	border-radius: 50%;
+	font-size: rem(12);
+	transition: background-color 0.25s ease-out;
+	margin-block-start: em(-5); // to align with first line
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset-inline: -#{em(12)};
+		inset-block-start: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
+		block-size: $item-container-height-compact-mode;
+	}
+
+	.checkbox-fakecheck {
+		margin: auto;
+		background: var(--background-norm);
+	}
+}
+
 .list-compact {
 	.item-container,
 	.item-container-row {
-		block-size: $item-container-height-compact-mode;
-		scroll-margin-block-start: $item-container-height-compact-mode;
+		// block-size: $item-container-height-compact-mode;
+		// scroll-margin-block-start: $item-container-height-compact-mode;
+		padding-block: em(8); // put this in a var
+		padding-inline: em(5) em(12); // put this in a var (12 - 7)
+		margin-inline: 0;
+		border-radius: 0;
 
 		.item-container-inner {
 			padding-block: em(0);
@@ -219,6 +280,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		block-size: $item-container-row-height-compact-mode;
 		scroll-margin-block-start: $item-container-row-height-compact-mode;
 		.item-icon-compact {
+			// margin-block-start: 0;
 			&::after {
 				block-size: $item-container-row-height-compact-mode;
 			}
@@ -257,6 +319,7 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	.item-checkbox-label,
 	.item-icon-compact {
 		position: relative;
+		margin-block-end: auto;
 
 		&::before {
 			content: '';
@@ -316,27 +379,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 		&::before {
 			inline-size: 60%;
 		}
-	}
-}
-
-.item-icon-compact {
-	inline-size: rem($conversation-icon-size);
-	block-size: rem($conversation-icon-size);
-	border-radius: 50%;
-	font-size: rem(12);
-	transition: background-color 0.25s ease-out;
-
-	&::after {
-		content: '';
-		position: absolute;
-		inset-inline: -#{em(12)};
-		inset-block-start: calc(-1 * (#{$item-container-height-compact-mode} - #{rem($conversation-icon-size)}) / 2);
-		block-size: $item-container-height-compact-mode;
-	}
-
-	.checkbox-fakecheck {
-		margin: auto;
-		background: var(--background-norm);
 	}
 }
 
@@ -402,19 +444,6 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	}
 }
 
-// fix pseudo element for row layout
-.item-container-row {
-	.item-checkbox {
-		&::after {
-			inset-block: -#{$item-container-padding-block};
-		}
-	}
-
-	.item-weight {
-		min-inline-size: 5em;
-	}
-}
-
 .item-sender--smaller,
 .item-date {
 	font-size: em(12);
@@ -440,4 +469,9 @@ $item-container-row-height-compact-mode: rem(40) !default;
 	padding-inline: 0.5em;
 	border-radius: 1em;
 	line-height: 1;
+}
+
+.number-elements {
+	height: 1rem;
+	border: 1px solid;
 }
