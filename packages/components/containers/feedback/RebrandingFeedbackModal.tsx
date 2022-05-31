@@ -13,6 +13,7 @@ const RebrandingFeedbackModal = (props: Partial<FeedbackModalProps>) => {
 
     return (
         <FeedbackModal
+            size="medium"
             onSuccess={handleSuccess}
             feedbackType="rebrand_web"
             description={c('new_plans: info')

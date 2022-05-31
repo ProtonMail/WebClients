@@ -91,7 +91,7 @@ const RebrandingFeedbackPrompt = () => {
         ready();
     }, [loading]);
 
-    return <RebrandingFeedbackModal open={open} />;
+    return <RebrandingFeedbackModal open={open} onClose={() => setOpen(false)} />;
 };
 
 export default RebrandingFeedbackPrompt;
