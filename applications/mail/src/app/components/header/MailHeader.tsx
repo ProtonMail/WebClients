@@ -24,7 +24,7 @@ import {
     useFeature,
     FeatureCode,
     TopNavbarListItemFeedbackButton,
-    FeedbackModal,
+    RebrandingFeedbackModal,
 } from '@proton/components';
 import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -194,19 +194,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
             <MailComposerModeModal {...mailComposerModeProps} />
             <MailDefaultHandlerModal {...mailDefaultHandlerProps} />
             <ClearBrowserDataModal {...clearBrowserDataProps} />
-            <FeedbackModal
-                {...feedbackModalProps}
-                feedbackType="rebrand_web"
-                description={c('new_plans: info')
-                    .t`We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!`}
-                scaleTitle={c('new_plans: label').t`How would you describe your experience with the new Proton?`}
-                scaleProps={{
-                    from: 0,
-                    to: 5,
-                    fromLabel: c('new_plans: label').t`0 - Awful`,
-                    toLabel: c('new_plans: label').t`5 - Wonderful`,
-                }}
-            />
+            <RebrandingFeedbackModal {...feedbackModalProps} />
         </>
     );
 };
