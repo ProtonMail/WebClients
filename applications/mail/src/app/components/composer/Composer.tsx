@@ -477,7 +477,7 @@ const Composer = (
         handlePassword,
         handleExpiration,
         handleCloseInnerModal,
-        handleDeleteDraft,
+        handleDeleteDraft: handleOpenDeleteDraftModal,
         handleNoRecipients,
         handleNoSubjects,
         handleNoAttachments,
@@ -549,6 +549,15 @@ const Composer = (
         saving,
         editorActionsRef,
     });
+
+    const handleDeleteDraft = () => {
+        // If the message has no changes yet, delete it without opening the delete draft inner modal
+        if (!modelMessage.data?.ID && !pendingSave.isPending && !pendingAutoSave.isPending) {
+            void handleDelete();
+        } else {
+            handleOpenDeleteDraftModal();
+        }
+    };
 
     return (
         <div
