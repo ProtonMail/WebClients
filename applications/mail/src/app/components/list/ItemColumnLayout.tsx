@@ -2,6 +2,9 @@ import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
+import { DENSITY } from '@proton/shared/lib/constants';
+import { classnames } from '@proton/components';
+import { useUserSettings } from '@proton/components/hooks/';
 import ItemStar from './ItemStar';
 import ItemLabels from './ItemLabels';
 import ItemAttachmentIcon from './ItemAttachmentIcon';
@@ -49,6 +52,7 @@ const ItemColumnLayout = ({
     unread,
     onBack,
 }: Props) => {
+    const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
 
@@ -88,10 +92,14 @@ const ItemColumnLayout = ({
     }, [element, labels]);
 
     const isStarred = testIsStarred(element || ({} as Element));
+    const isCompactView = userSettings.Density === DENSITY.COMPACT;
 
     return (
         <div
-            className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender pb1 border-bottom border-weak"
+            className={classnames([
+                'flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender',
+                !isCompactView && 'pb1 border-bottom border-weak',
+            ])}
             data-testid="message-list:message"
         >
             <div className="flex flex-align-items-center item-firstline">
