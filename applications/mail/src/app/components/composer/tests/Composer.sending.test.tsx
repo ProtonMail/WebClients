@@ -98,6 +98,13 @@ describe('Composer sending', () => {
                     Email: fromAddress,
                     Receive: 1,
                     HasKeys: true,
+                    Keys: [
+                        {
+                            Primary: 1,
+                            PrivateKey: fromKeys.privateKeyArmored,
+                            PublicKey: fromKeys.publicKeyArmored,
+                        },
+                    ],
                 },
             ]);
 

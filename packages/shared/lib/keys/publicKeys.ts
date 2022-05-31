@@ -2,12 +2,16 @@ import { OpenPGPKey, serverTime, canKeyEncrypt, checkKeyStrength } from 'pmcrypt
 import { c } from 'ttag';
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { canonizeEmailByGuess, canonizeInternalEmail } from '../helpers/email';
-import isTruthy from '../helpers/isTruthy';
 import { toBitMap } from '../helpers/object';
-import { ApiKeysConfig, ContactPublicKeyModel, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
+import { ApiKeysConfig, ContactPublicKeyModel, ProcessedApiKey, PublicKeyConfigs, PublicKeyModel } from '../interfaces';
 import { hasBit } from '../helpers/bitset';
+import { getKeyHasFlagsToEncrypt } from './keyFlags';
 
 const { TYPE_INTERNAL } = RECIPIENT_TYPES;
+
+const getIsFullyProcessedApiKey = (key: ProcessedApiKey): key is Required<ProcessedApiKey> => {
+    return !!key.publicKey;
+};
 
 /**
  * Check if some API key data belongs to an internal user
@@ -18,7 +22,7 @@ export const getIsInternalUser = ({ RecipientType }: ApiKeysConfig): boolean => 
  * Test if no key is enabled
  */
 export const isDisabledUser = (config: ApiKeysConfig): boolean =>
-    getIsInternalUser(config) && !config.Keys.some(({ Flags }) => hasBit(Flags, KEY_FLAG.FLAG_NOT_OBSOLETE));
+    getIsInternalUser(config) && config.publicKeys.every(({ flags }) => !getKeyHasFlagsToEncrypt(flags));
 
 export const getEmailMismatchWarning = (publicKey: OpenPGPKey, emailAddress: string, isInternal: boolean): string[] => {
     const canonicalEmail = isInternal ? canonizeInternalEmail(emailAddress) : canonizeEmailByGuess(emailAddress);
@@ -59,43 +63,62 @@ export const getIsWeakKey = (key: OpenPGPKey): boolean => {
  * Sort list of keys retrieved from the API. Trusted keys take preference.
  * For two keys such that both are either trusted or not, non-verify-only keys take preference
  */
-export const sortApiKeys = (
-    keys: OpenPGPKey[] = [],
-    trustedFingerprints: Set<string>,
-    verifyOnlyFingerprints: Set<string>
-): OpenPGPKey[] =>
+export const sortApiKeys = ({
+    keys = [],
+    obsoleteFingerprints,
+    compromisedFingerprints,
+    trustedFingerprints,
+}: {
+    keys: OpenPGPKey[];
+    obsoleteFingerprints: Set<string>;
+    compromisedFingerprints: Set<string>;
+    trustedFingerprints: Set<string>;
+}): OpenPGPKey[] =>
     keys
         .reduce<OpenPGPKey[][]>(
             (acc, key) => {
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
                 const index = toBitMap({
-                    isVerificationOnly: verifyOnlyFingerprints.has(fingerprint),
+                    isObsolete: obsoleteFingerprints.has(fingerprint),
+                    isCompromised: compromisedFingerprints.has(fingerprint),
                     isNotTrusted: !trustedFingerprints.has(fingerprint),
                 });
                 acc[index].push(key);
                 return acc;
             },
-            Array.from({ length: 4 }).map(() => [])
+            Array.from({ length: 8 }).map(() => [])
         )
         .flat();
 
 /**
  * Sort list of pinned keys retrieved from the API. Keys that can be used for sending take preference
  */
-export const sortPinnedKeys = (keys: OpenPGPKey[] = [], encryptionCapableFingerprints: Set<string>): OpenPGPKey[] =>
+export const sortPinnedKeys = ({
+    keys = [],
+    obsoleteFingerprints,
+    compromisedFingerprints,
+    encryptionCapableFingerprints,
+}: {
+    keys: OpenPGPKey[];
+    obsoleteFingerprints: Set<string>;
+    compromisedFingerprints: Set<string>;
+    encryptionCapableFingerprints: Set<string>;
+}): OpenPGPKey[] =>
     keys
         .reduce<OpenPGPKey[][]>(
             (acc, key) => {
                 const fingerprint = key.getFingerprint();
                 // calculate order through a bitmap
                 const index = toBitMap({
+                    isObsolete: obsoleteFingerprints.has(fingerprint),
+                    isCompromised: compromisedFingerprints.has(fingerprint),
                     cannotSend: !encryptionCapableFingerprints.has(fingerprint),
                 });
                 acc[index].push(key);
                 return acc;
             },
-            Array.from({ length: 2 }).map(() => [])
+            Array.from({ length: 8 }).map(() => [])
         )
         .flat();
 
@@ -103,34 +126,30 @@ export const sortPinnedKeys = (keys: OpenPGPKey[] = [], encryptionCapableFingerp
  * Given a public key, return true if it is capable of encrypting messages.
  * This includes checking that the key is neither expired nor revoked.
  */
-export const getKeyEncryptionCapableStatus = async (publicKey: OpenPGPKey, timestamp?: number): Promise<boolean> => {
+export const getKeyEncryptionCapableStatus = async (publicKey: OpenPGPKey, timestamp?: number) => {
     const now = timestamp || +serverTime();
     return canKeyEncrypt(publicKey, new Date(now));
-};
-
-/**
- * Given a public key retrieved from the API, return true if it has been marked as obsolete, and it is thus
- * verification-only. Return false if it's marked valid for encryption. Return undefined otherwise
- */
-export const getKeyVerificationOnlyStatus = (publicKey: OpenPGPKey, config: ApiKeysConfig): boolean | undefined => {
-    const fingerprint = publicKey.getFingerprint();
-    const index = config.publicKeys.findIndex((publicKey) => publicKey?.getFingerprint() === fingerprint);
-    if (index === -1) {
-        return undefined;
-    }
-    return !hasBit(config.Keys[index].Flags, KEY_FLAG.FLAG_NOT_OBSOLETE);
 };
 
 /**
  * Check if a public key is valid for sending according to the information stored in a public key model
  * We rely only on the fingerprint of the key to do this check
  */
-export const getIsValidForSending = (
-    fingerprint: string,
-    publicKeyModel: PublicKeyModel | ContactPublicKeyModel
-): boolean => {
-    const { verifyOnlyFingerprints, encryptionCapableFingerprints } = publicKeyModel;
-    return !verifyOnlyFingerprints.has(fingerprint) && encryptionCapableFingerprints.has(fingerprint);
+export const getIsValidForSending = (fingerprint: string, publicKeyModel: PublicKeyModel | ContactPublicKeyModel) => {
+    const { compromisedFingerprints, obsoleteFingerprints, encryptionCapableFingerprints } = publicKeyModel;
+    return (
+        !compromisedFingerprints.has(fingerprint) &&
+        !obsoleteFingerprints.has(fingerprint) &&
+        encryptionCapableFingerprints.has(fingerprint)
+    );
+};
+
+const getIsValidForVerifying = (fingerprint: string, compromisedFingerprints: Set<string>) => {
+    return !compromisedFingerprints.has(fingerprint);
+};
+
+export const getVerifyingKeys = (keys: OpenPGPKey[], compromisedFingerprints: Set<string>) => {
+    return keys.filter((key) => getIsValidForVerifying(key.getFingerprint(), compromisedFingerprints));
 };
 
 /**
@@ -154,6 +173,29 @@ export const getContactPublicKeyModel = async ({
     } = pinnedKeysConfig;
     const trustedFingerprints = new Set<string>();
     const encryptionCapableFingerprints = new Set<string>();
+    const obsoleteFingerprints = new Set<string>();
+    const compromisedFingerprints = new Set<string>();
+
+    // prepare keys retrieved from the API
+    const isInternalUser = getIsInternalUser(apiKeysConfig);
+    const isExternalUser = !isInternalUser;
+    const processedApiKeys = apiKeysConfig.publicKeys.filter(getIsFullyProcessedApiKey);
+    const apiKeys = processedApiKeys.map(({ publicKey }) => publicKey);
+    await Promise.all(
+        processedApiKeys.map(async ({ publicKey, flags }) => {
+            const fingerprint = publicKey.getFingerprint();
+            const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
+            if (canEncrypt) {
+                encryptionCapableFingerprints.add(fingerprint);
+            }
+            if (!hasBit(flags, KEY_FLAG.FLAG_NOT_COMPROMISED)) {
+                compromisedFingerprints.add(fingerprint);
+            }
+            if (!hasBit(flags, KEY_FLAG.FLAG_NOT_OBSOLETE)) {
+                obsoleteFingerprints.add(fingerprint);
+            }
+        })
+    );
 
     // prepare keys retrieved from the vCard
     await Promise.all(
@@ -166,27 +208,19 @@ export const getContactPublicKeyModel = async ({
             }
         })
     );
-    const orderedPinnedKeys = sortPinnedKeys(pinnedKeys, encryptionCapableFingerprints);
+    const orderedPinnedKeys = sortPinnedKeys({
+        keys: pinnedKeys,
+        obsoleteFingerprints,
+        compromisedFingerprints,
+        encryptionCapableFingerprints,
+    });
 
-    // prepare keys retrieved from the API
-    const isInternalUser = getIsInternalUser(apiKeysConfig);
-    const isExternalUser = !isInternalUser;
-    const verifyOnlyFingerprints = new Set<string>();
-    const apiKeys = apiKeysConfig.publicKeys.filter(isTruthy);
-    await Promise.all(
-        apiKeys.map(async (publicKey) => {
-            const fingerprint = publicKey.getFingerprint();
-            if (getKeyVerificationOnlyStatus(publicKey, apiKeysConfig)) {
-                verifyOnlyFingerprints.add(publicKey.getFingerprint());
-            }
-            const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
-            if (canEncrypt) {
-                encryptionCapableFingerprints.add(fingerprint);
-            }
-        })
-    );
-
-    const orderedApiKeys = sortApiKeys(apiKeys, trustedFingerprints, verifyOnlyFingerprints);
+    const orderedApiKeys = sortApiKeys({
+        keys: apiKeys,
+        trustedFingerprints,
+        obsoleteFingerprints,
+        compromisedFingerprints,
+    });
 
     return {
         encrypt,
@@ -194,9 +228,14 @@ export const getContactPublicKeyModel = async ({
         scheme: vcardScheme || PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: vcardMimeType || MIME_TYPES_MORE.AUTOMATIC,
         emailAddress,
-        publicKeys: { apiKeys: orderedApiKeys, pinnedKeys: orderedPinnedKeys },
+        publicKeys: {
+            apiKeys: orderedApiKeys,
+            pinnedKeys: orderedPinnedKeys,
+            verifyingPinnedKeys: getVerifyingKeys(orderedPinnedKeys, compromisedFingerprints),
+        },
         trustedFingerprints,
-        verifyOnlyFingerprints,
+        obsoleteFingerprints,
+        compromisedFingerprints,
         encryptionCapableFingerprints,
         isPGPExternal: isExternalUser,
         isPGPInternal: isInternalUser,

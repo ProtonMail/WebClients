@@ -2,10 +2,12 @@ import getPublicKeysVcardHelper from '@proton/shared/lib/api/helpers/getPublicKe
 import { MINUTE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { canonizeEmail, canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
+import { getKeyHasFlagsToEncrypt } from '@proton/shared/lib/keys';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
-import { getContactPublicKeyModel } from '@proton/shared/lib/keys/publicKeys';
+import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton/shared/lib/keys/publicKeys';
 import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
 import { useCallback } from 'react';
+import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { useGetAddresses } from './useAddresses';
 import useApi from './useApi';
 import useCache from './useCache';
@@ -45,8 +47,14 @@ const useGetEncryptionPreferences = () => {
             let pinnedKeysConfig;
             if (selfAddress) {
                 // we do not trust the public keys in ownAddress (they will be deprecated in the API response soon anyway)
-                const selfPublicKey = (await getAddressKeys(selfAddress.ID))[0]?.publicKey;
-                selfSend = { address: selfAddress, publicKey: selfPublicKey };
+                const selfAddressKeys = await getAddressKeys(selfAddress.ID);
+                const primaryAddressKey = (
+                    await getActiveKeys(selfAddress.SignedKeyList, selfAddress.Keys, selfAddressKeys)
+                )[0];
+                const selfPublicKey = primaryAddressKey?.publicKey;
+                const canEncrypt = selfPublicKey ? await getKeyEncryptionCapableStatus(selfPublicKey) : undefined;
+                const canSend = canEncrypt && getKeyHasFlagsToEncrypt(primaryAddressKey.flags);
+                selfSend = { address: selfAddress, publicKey: selfPublicKey, canSend };
                 // For own addresses, we use the decrypted keys in selfSend and do not fetch any data from the API
                 apiKeysConfig = { Keys: [], publicKeys: [], RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL };
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
