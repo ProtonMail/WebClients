@@ -22,15 +22,16 @@ interface FeedbackModalModel {
 
 type FeedbackType = 'v4_migration' | 'calendar_launch' | 'rebrand_web';
 
-interface Props extends ModalProps {
+export interface FeedbackModalProps extends ModalProps {
     onClose?: () => void;
+    onSuccess?: () => void;
     feedbackType: FeedbackType;
     description: string;
     scaleTitle: string;
     scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
 }
 
-const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...rest }: Props) => {
+const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...rest }: FeedbackModalProps) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -55,6 +56,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
             })
         );
         createNotification({ text: c('Success notification when user send feedback').t`Feedback sent` });
+        rest.onSuccess?.();
         rest.onClose?.();
     };
 
