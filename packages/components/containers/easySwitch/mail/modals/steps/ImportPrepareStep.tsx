@@ -38,7 +38,7 @@ interface Props {
     addresses: Address[];
 }
 
-const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED } =
+const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED, RESERVED_NAMES } =
     MailImportPayloadError;
 
 const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) => {
@@ -89,9 +89,14 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
     const showUnavailableNamesError = mappingErrors.includes(UNAVAILABLE_NAMES);
     const showFoldersNameTooLongError = mappingErrors.includes(FOLDER_NAMES_TOO_LONG);
     const showLabelsNameTooLongError = mappingErrors.includes(LABEL_NAMES_TOO_LONG);
+    const showReservedNamesError = mappingErrors.includes(RESERVED_NAMES);
 
     const hasError =
-        showMaxFoldersError || showFoldersNameTooLongError || showLabelsNameTooLongError || showUnavailableNamesError;
+        showMaxFoldersError ||
+        showFoldersNameTooLongError ||
+        showLabelsNameTooLongError ||
+        showUnavailableNamesError ||
+        showReservedNamesError;
 
     const handleUpdateModel = (selectedPeriod: TIME_PERIOD, payload: MailImporterPayload) => {
         updateModalModel({
@@ -273,6 +278,14 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                 </Alert>
             )}
 
+            {showReservedNamesError && (
+                <Alert className="mb1 mt1" type="error">
+                    {isLabelMapping
+                        ? c('Error').t`The label name is invalid. Please choose a different name.`
+                        : c('Error').t`The folder name is invalid. Please choose a different name.`}
+                </Alert>
+            )}
+
             <div className="flex pb1 mb1 border-bottom">
                 <div className="flex-item-fluid text-ellipsis mr0-5" title={fromLabel}>
                     {from}
@@ -337,7 +350,7 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                             }
                             originalPlacement="right"
                         >
-                            <Icon className="ml0-5" name="exclamation-circle-filled" size={18} />
+                            <Icon className="ml0-5 color-danger" name="exclamation-circle-filled" size={18} />
                         </Tooltip>
                     )}
                 </div>
@@ -365,14 +378,17 @@ const ImportPrepareStep = ({ modalModel, updateModalModel, addresses }: Props) =
                     <Button shape="outline" onClick={handleClickCustomize}>
                         {c('Action').t`Customize import`}
                     </Button>
-                    {(showFoldersNameTooLongError || showLabelsNameTooLongError || showUnavailableNamesError) && (
+                    {(showFoldersNameTooLongError ||
+                        showLabelsNameTooLongError ||
+                        showUnavailableNamesError ||
+                        showReservedNamesError) && (
                         <Tooltip
                             title={
                                 isLabelMapping ? c('Tooltip').t`Edit label names` : c('Tooltip').t`Edit folder names`
                             }
                             originalPlacement="right"
                         >
-                            <Icon name="exclamation-circle-filled" size={20} className="ml0-5" />
+                            <Icon name="exclamation-circle-filled" size={20} className="ml0-5 color-danger" />
                         </Tooltip>
                     )}
                     {isCustom && (

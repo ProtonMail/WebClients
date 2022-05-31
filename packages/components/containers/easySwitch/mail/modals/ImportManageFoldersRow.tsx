@@ -7,7 +7,7 @@ import { MailImportDestinationFolder, ImportedMailFolder } from '@proton/shared/
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { classnames } from '../../../../helpers';
-import { Tooltip, Icon, Checkbox, InlineLinkButton, Input, LabelStack } from '../../../../components';
+import { Tooltip, Icon, Checkbox, InlineLinkButton, LabelStack, InputFieldTwo } from '../../../../components';
 import {
     CheckedFoldersMap,
     DisabledFoldersMap,
@@ -17,7 +17,7 @@ import {
     EditModeMap,
     LabelsMap,
 } from '../interfaces';
-import { escapeSlashes, unescapeSlashes, splitEscaped, nameAlreadyExists } from '../helpers';
+import { escapeSlashes, unescapeSlashes, splitEscaped, nameAlreadyExists, RESERVED_NAMES } from '../helpers';
 
 const SYSTEM_FOLDERS = Object.values(MailImportDestinationFolder) as string[];
 
@@ -126,6 +126,9 @@ const ImportManageFoldersRow = ({
         nameAlreadyExistsError: isLabelMapping
             ? c('Error').t`This label name is not available. Please choose a different name.`
             : c('Error').t`This folder name is not available. Please choose a different name.`,
+        reservedNameError: isLabelMapping
+            ? c('Error').t`The label name is invalid. Please choose a different name.`
+            : c('Error').t`The folder name is invalid. Please choose a different name.`,
     };
 
     const WARNINGS = {
@@ -181,7 +184,17 @@ const ImportManageFoldersRow = ({
         });
     }, [inputValue, checked, folderNamesMap, folderPathsMap, checkedFoldersMap, labelsMap]);
 
-    const hasError = emptyValueError || nameTooLongError || nameAlreadyExistsError;
+    const reservedNameError = useMemo(() => {
+        if (!checked) {
+            return false;
+        }
+        const cleanInputValue = inputValue.toLowerCase().trim();
+        return isLabelMapping
+            ? RESERVED_NAMES.includes(cleanInputValue)
+            : RESERVED_NAMES.includes(escapeSlashes(cleanInputValue));
+    }, [checked, inputValue]);
+
+    const hasError = emptyValueError || nameTooLongError || nameAlreadyExistsError || reservedNameError;
 
     const [editMode, setEditMode] = useState(hasError);
 
@@ -234,7 +247,6 @@ const ImportManageFoldersRow = ({
 
     const renderInput = () => {
         let error;
-        let item;
 
         if (nameTooLongError) {
             error = ERRORS.nameTooLongError;
@@ -248,36 +260,28 @@ const ImportManageFoldersRow = ({
             error = ERRORS.emptyValueError;
         }
 
-        if (error) {
-            item = (
-                <Tooltip title={error} type="error">
-                    <Icon
-                        tabIndex={-1}
-                        name="info-circle"
-                        className="color-danger inline-flex flex-align-self-center flex-item-noshrink"
-                    />
-                </Tooltip>
-            );
+        if (reservedNameError) {
+            error = ERRORS.reservedNameError;
         }
 
         return (
-            <Input
+            <InputFieldTwo
                 autoFocus
                 required
-                isSubmitted
                 ref={inputRef}
                 value={inputValue}
                 onChange={handleChange}
-                onPressEnter={(e: KeyboardEvent) => {
-                    e.preventDefault();
-                    if (hasError) {
-                        return;
+                onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (hasError) {
+                            return;
+                        }
+                        handleSave(e);
                     }
-                    handleSave(e);
                 }}
-                icon={item}
+                dense
                 error={error}
-                errorZoneClassName="hidden"
                 className="hauto"
             />
         );
