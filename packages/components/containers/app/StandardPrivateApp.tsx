@@ -16,6 +16,7 @@ import { APPS, REQUIRES_INTERNAL_EMAIL_ADDRESS, REQUIRES_NONDELINQUENT } from '@
 import { getFeatures } from '@proton/shared/lib/api/features';
 
 import { getWelcomeFlagsValue, useApi, useCache, useConfig, WELCOME_FLAGS_CACHE_KEY } from '../../hooks';
+import RebrandingFeedbackPrompt from '../feedback/RebrandingFeedbackPrompt';
 
 import {
     CalendarModelEventManagerProvider,
@@ -200,6 +201,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
             <CalendarModelEventManagerProvider>
                 <ContactProvider>
                     <FeaturesProvider>
+                        <RebrandingFeedbackPrompt />
                         <EventModelListener models={eventModels} />
                         <EventNotices />
                         <ThemeInjector />

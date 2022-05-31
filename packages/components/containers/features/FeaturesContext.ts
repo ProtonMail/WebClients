@@ -71,6 +71,10 @@ export enum FeatureCode {
     NudgeProton = 'NudgeProton',
     EORedesign = 'EORedesign',
     CalendarViewInMail = 'CalendarViewInMail',
+    RebrandingFeedback = 'RebrandingFeedback',
+    HasVisitedRebrandingInThePast = 'HasVisitedRebrandingInThePast',
+    HasGivenRebrandingFeedback = 'HasGivenRebrandingFeedback',
+    HasBeenPromptedForRebrandingFeedback = 'HasBeenPromptedForRebrandingFeedback',
 }
 
 export interface FeaturesContextValue {
