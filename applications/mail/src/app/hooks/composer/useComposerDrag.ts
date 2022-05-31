@@ -2,15 +2,14 @@ import { MouseEventHandler, Reducer, useCallback, useEffect, useReducer, useRef 
 import { debounce, throttle } from '@proton/shared/lib/helpers/function';
 import { useMailSettings } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
-import { COMPOSER_GUTTER, COMPOSER_WIDTH, computeRightPosition } from '../../helpers/composerPositioning';
+import { COMPOSER_GUTTER, COMPOSER_WIDTH, computeLeftPosition } from '../../helpers/composerPositioning';
 
 interface Props {
-    windowWidth: number;
     minimized: boolean;
     maximized: boolean;
-    isNarrow: boolean;
-    totalComposers: number;
     composerIndex: number;
+    totalComposers: number;
+    windowWidth: number;
 }
 
 interface State {
@@ -46,7 +45,7 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
     const [mailSettings] = useMailSettings();
     const prevMinimized = useRef(minimized);
     const prevMaximized = useRef(maximized);
-    const composerRightStyle = computeRightPosition(composerIndex, totalComposers, windowWidth);
+    const composerLeftStyle = computeLeftPosition(composerIndex, totalComposers, windowWidth);
 
     const [{ isDragging, initialCursorPosition, offset, lastOffset }, dispatch] = useReducer<Reducer<State, Action>>(
         moveReducer,
@@ -72,21 +71,19 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
                 return;
             }
 
-            const composerWidth = COMPOSER_WIDTH;
-
             const prevOffset = offset;
             const cursorMoveOffset = e.clientX - initialCursorPosition;
             let finalOffset = prevOffset + cursorMoveOffset;
 
-            const composerRightCornerPos = windowWidth + finalOffset - composerRightStyle;
-            const composerLeftCornerPos = windowWidth + finalOffset - composerRightStyle - composerWidth;
+            const composerLeftCornerPos = composerLeftStyle + finalOffset;
+            const composerRightCornerPos = composerLeftCornerPos + COMPOSER_WIDTH;
 
             if (composerLeftCornerPos < COMPOSER_GUTTER) {
-                const remainingWidth = windowWidth - composerRightStyle - composerWidth;
-                finalOffset = -remainingWidth + COMPOSER_GUTTER;
+                finalOffset = -(composerLeftStyle - COMPOSER_GUTTER);
             }
             if (composerRightCornerPos > windowWidth - COMPOSER_GUTTER) {
-                finalOffset = composerRightStyle - COMPOSER_GUTTER;
+                const maxOffset = windowWidth - COMPOSER_GUTTER - composerLeftStyle - COMPOSER_WIDTH;
+                finalOffset = maxOffset;
             }
 
             dispatch({ type: 'move', payload: { offset: finalOffset } });
@@ -113,7 +110,7 @@ const useComposerDrag = ({ windowWidth, maximized, minimized, totalComposers, co
 
     useEffect(() => {
         dispatch({ type: 'reset-offset' });
-    }, [composerRightStyle, totalComposers]);
+    }, [composerLeftStyle, totalComposers]);
 
     useEffect(() => {
         if (mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED) {
