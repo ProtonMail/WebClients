@@ -1,3 +1,4 @@
+import { classnames } from '@proton/components';
 import { Conversation } from '../../models/conversation';
 
 interface Props {
@@ -13,7 +14,16 @@ const NumMessages = ({ conversation, className }: Props) => {
         return null;
     }
 
-    return <span className={className}>[{NumMessages}]</span>;
+    return (
+        <span
+            className={classnames([
+                'number-elements flex-align-items-center lh100 text-sm inline-flex px0-25 rounded-sm ml0-25 flex-item-noshrink',
+                className,
+            ])}
+        >
+            {NumMessages}
+        </span>
+    );
 };
 
 export default NumMessages;

@@ -108,14 +108,11 @@ const ItemRowLayout = ({
                         data-testid="message-row:subject"
                     >
                         {subjectContent}
-                    </span>
 
-                    {conversationMode && (
-                        <NumMessages
-                            className={classnames(['mr0-25 flex-item-noshrink', unread && 'text-bold'])}
-                            conversation={element}
-                        />
-                    )}
+                        {conversationMode && (
+                            <NumMessages className={classnames([unread && 'text-bold'])} conversation={element} />
+                        )}
+                    </span>
 
                     {!!resultJSX && highlightData && (
                         <>
@@ -150,7 +147,7 @@ const ItemRowLayout = ({
                 <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
             ) : (
                 <>
-                    <span className="flex w2e ml0-5 text-center">
+                    <span className="flex w4e ml0-5 text-center">
                         {!!element.ExpirationTime && <ItemExpiration element={element} className="mr0-5" />}
                         <ItemAttachmentIcon
                             icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
@@ -170,8 +167,9 @@ const ItemRowLayout = ({
                             useTooltip
                         />
                     </span>
-
-                    <ItemUnread element={element} labelID={labelID} className="ml0-5" />
+                    <span className="flex w2e ml0-5 text-center">
+                        <ItemUnread element={element} labelID={labelID} className="ml0-5" />
+                    </span>
                 </>
             )}
         </div>
