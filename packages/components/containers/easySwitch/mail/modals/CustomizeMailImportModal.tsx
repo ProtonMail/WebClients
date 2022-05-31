@@ -49,7 +49,7 @@ interface Props {
     updateModel: (selectedPeriod: TIME_PERIOD, payload: MailImporterPayload) => void;
 }
 
-const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED } =
+const { FOLDER_NAMES_TOO_LONG, LABEL_NAMES_TOO_LONG, UNAVAILABLE_NAMES, MAX_FOLDERS_LIMIT_REACHED, RESERVED_NAMES } =
     MailImportPayloadError;
 
 const CustomizeMailImportModal = ({
@@ -90,6 +90,7 @@ const CustomizeMailImportModal = ({
     const hasUnavailableNamesError = mappingErrors.includes(UNAVAILABLE_NAMES);
     const hasFoldersTooLongError = mappingErrors.includes(FOLDER_NAMES_TOO_LONG);
     const hasLabelsTooLongError = mappingErrors.includes(LABEL_NAMES_TOO_LONG);
+    const hasReservedNamesError = mappingErrors.includes(RESERVED_NAMES);
 
     const addressesOptions = addresses
         .filter((addr) => addr.Keys.some((k) => k.Active))
@@ -196,7 +197,8 @@ const CustomizeMailImportModal = ({
         hasMaxFoldersError ||
         hasFoldersTooLongError ||
         hasLabelsTooLongError ||
-        hasUnavailableNamesError;
+        hasUnavailableNamesError ||
+        hasReservedNamesError;
 
     return (
         <FormModal
