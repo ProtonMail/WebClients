@@ -14,6 +14,9 @@ $padding-inline-start-link: rem(20) !default;
 
 .navigation-icon {
 	color: var(--text-weak);
+	&-empty {
+		inline-size: rem(23);
+	}
 }
 
 .navigation-refresh {
@@ -75,6 +78,10 @@ $padding-inline-start-link: rem(20) !default;
 	&:focus {
 		color: var(--text-norm);
 	}
+
+	.navigation-icon--expand {
+		color: var(--text-weak);
+	}
 }
 
 .navigation-link-header-group-control {
@@ -130,11 +137,11 @@ $padding-inline-start-link: rem(20) !default;
 /* Sub folders */
 .navigation-item {
 	[data-level='1'] {
-		padding-inline-start: 1em;
+		padding-inline-start: 0.6em;
 	}
 
 	[data-level='2'] {
-		padding-inline-start: 2.7em;
+		padding-inline-start: 1.2em;
 	}
 }
 
