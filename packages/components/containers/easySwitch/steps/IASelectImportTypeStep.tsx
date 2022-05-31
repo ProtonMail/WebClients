@@ -127,6 +127,7 @@ const IASelectImportTypeStep = ({
     const handleMailModelUpdate = (selectedPeriod: TIME_PERIOD, payload: MailImporterPayload) => {
         updateModalModel({
             ...modalModel,
+            AddressID: payload.AddressID || modalModel.AddressID,
             data: {
                 ...modalModel.data,
                 [MAIL]: {
