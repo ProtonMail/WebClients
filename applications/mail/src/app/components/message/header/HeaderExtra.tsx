@@ -45,6 +45,7 @@ const HeaderExtra = ({
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />
             <ExtraAutoReply message={message} />
+            <ExtraUnsubscribe message={message} />
             {message.data && message.verification && (
                 <ExtraPinKey message={message.data} messageVerification={message.verification} />
             )}
@@ -69,7 +70,6 @@ const HeaderExtra = ({
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">
                 <ExtraExpirationTime displayAsButton message={message} />
                 <ExtraReadReceipt message={message} />
-                <ExtraUnsubscribe message={message} />
                 {!sourceMode && (
                     <ExtraImages
                         message={message}
