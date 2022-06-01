@@ -400,7 +400,7 @@ const SubscriptionModal = ({
                     />
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
-                    <div className="flex-no-min-children on-mobile-flex-column">
+                    <div className="flex flex-nowrap subscriptionCheckout-top-container">
                         <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
                             <div className="max-w50e">
                                 <PlanCustomization
@@ -448,9 +448,9 @@ const SubscriptionModal = ({
                     </div>
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
-                    <div className="flex-no-min-children on-mobile-flex-column">
+                    <div className="flex flex-nowrap subscriptionCheckout-top-container">
                         <div className="flex-item-fluid on-mobile-w100 pr2 on-tablet-landscape-pr1 on-mobile-pr0 pt2">
-                            <div className="mlauto mrauto max-w37e on-mobile-max-w100  ">
+                            <div className="mlauto mrauto max-w37e subscriptionCheckout-options ">
                                 {!isFreePlanSelected && (
                                     <>
                                         <h2 className="text-2xl text-bold mb1">{c('Label').t`Subscription options`}</h2>
