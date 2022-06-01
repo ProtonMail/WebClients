@@ -1,14 +1,14 @@
-import { Fragment, ChangeEvent } from 'react';
+import { Fragment } from 'react';
 import { c } from 'ttag';
 import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import { Button, Select, Icon, IconName, useModalState } from '../../../components';
+import { Button, Icon, IconName, useModalState, SelectTwo, Option, InputFieldTwo } from '../../../components';
 import { classnames } from '../../../helpers';
 
 import EditLabelModal, { LabelModel } from '../../labels/modals/EditLabelModal';
 
 import { Actions } from '../interfaces';
-import { getDefaultFolders } from '../constants';
+import { getDefaultFolderOptions } from '../constants';
 
 interface Props {
     folders: Folder[];
@@ -22,18 +22,19 @@ type ChangePayload = {
     isOpen: boolean;
 };
 
-type SelectOption = {
-    value: string;
+export type SelectOption = {
+    type: 'label' | 'option';
+    value?: string;
     text: string;
-    group: string;
     disabled?: boolean;
 };
 
-const formatOption = ({ Path, Name }: FolderWithSubFolders, level = 0) => ({
-    value: Path || '',
-    text: formatFolderName(level, Name, ' • '),
-    group: c('Option group').t`Custom folders`,
-});
+const formatOption = ({ Path, Name }: FolderWithSubFolders, level = 0) =>
+    ({
+        type: 'option',
+        value: Path || '',
+        text: formatFolderName(level, Name, ' • '),
+    } as SelectOption);
 
 const reducer = (acc: SelectOption[] = [], folder: FolderWithSubFolders, level = 0): SelectOption[] => {
     acc.push(formatOption(folder, level));
@@ -52,13 +53,29 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
         return reducer(acc, folder, 0);
     }, []);
 
-    const defaultFolders = getDefaultFolders();
-    const options = [...defaultFolders].concat(reducedFolders);
+    const defaultFolders = getDefaultFolderOptions();
+    const options = [...defaultFolders].concat([
+        { type: 'label', text: c('Option group').t`Custom folders` },
+        ...reducedFolders,
+    ]);
 
     const { moveTo } = actions;
     const { isOpen } = moveTo;
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
+
+    const folderOptions = options.map((option) => {
+        const { type, text, value, disabled } = option;
+        if (type === 'label') {
+            return (
+                <label className="text-semibold px0-5 py0-25 block" key={text}>
+                    {text}
+                </label>
+            );
+        }
+
+        return <Option value={value} title={text} key={value} disabled={disabled} />;
+    });
 
     const handleChangeModel = (payload: Partial<ChangePayload>) => {
         handleUpdateActions({
@@ -130,14 +147,14 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
             <div className={classnames(['flex flex-column flex-item-fluid', !isNarrow && 'ml1'])}>
                 {isOpen ? (
                     <div className="w100">
-                        <Select
+                        <InputFieldTwo
+                            as={SelectTwo}
                             id="memberSelect"
                             value={moveTo.folder || ''}
-                            options={options}
-                            onChange={({ target: { value } }: ChangeEvent<HTMLSelectElement>) =>
-                                handleChangeModel({ folder: value })
-                            }
-                        />
+                            onValue={(value: any) => handleChangeModel({ folder: value })}
+                        >
+                            {folderOptions}
+                        </InputFieldTwo>
                         <Button shape="outline" className="mt1" onClick={() => setEditLabelModalOpen(true)}>
                             {c('Action').t`Create folder`}
                         </Button>
