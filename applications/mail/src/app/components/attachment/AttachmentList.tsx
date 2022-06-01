@@ -125,7 +125,12 @@ const AttachmentList = ({
     const handleDownloadAll = async () => {
         setShowLoader(true);
         try {
-            await downloadAll(message, outsideKey);
+            // Download single attachment without a zip file
+            if (attachments.length === 1) {
+                await handleDownload(attachments[0]);
+            } else {
+                await downloadAll(message, outsideKey);
+            }
         } catch (error: any) {
             // Notification is handled by the hook
             console.log('error', error);
