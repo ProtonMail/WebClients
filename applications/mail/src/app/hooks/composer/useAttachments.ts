@@ -6,7 +6,12 @@ import { removeAttachment } from '@proton/shared/lib/api/attachments';
 import { readFileAsBuffer } from '@proton/shared/lib/helpers/file';
 import { useDispatch } from 'react-redux';
 import { Upload } from '../../helpers/upload';
-import { UploadResult, ATTACHMENT_ACTION, upload, checkSize } from '../../helpers/attachment/attachmentUploader';
+import {
+    UploadResult,
+    ATTACHMENT_ACTION,
+    upload,
+    checkSizeAndLength,
+} from '../../helpers/attachment/attachmentUploader';
 import { MessageChange } from '../../components/composer/Composer';
 import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useLongLivingState } from '../useLongLivingState';
@@ -18,7 +23,7 @@ import {
     matchSameCidOrLoc,
     readContentIDandLocation,
 } from '../../helpers/message/messageEmbeddeds';
-import { MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
+import { ATTACHMENT_MAX_COUNT, MESSAGE_ALREADY_SENT_INTERNAL_ERROR } from '../../constants';
 import { addAttachment } from '../../logic/attachments/attachmentsActions';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { useGetMessage } from '../message/useMessage';
@@ -178,7 +183,15 @@ export const useAttachments = ({
     const handleAddEmbeddedImages = async (files: File[]) => {
         const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
 
-        if (checkSize(createNotification, message, files, pendingUploadFiles)) {
+        const hasReachedLimits = checkSizeAndLength({
+            createNotification,
+            message,
+            files,
+            pendingUploadFiles,
+            attachmentsCountLimit: ATTACHMENT_MAX_COUNT,
+        });
+
+        if (hasReachedLimits) {
             return;
         }
 
@@ -193,7 +206,14 @@ export const useAttachments = ({
         const plainText = isPlainText(message.data);
         const pendingUploadFiles = pendingUploads.map((upload) => upload.file);
 
-        if (checkSize(createNotification, message, files, pendingUploadFiles)) {
+        const hasReachedLimits = checkSizeAndLength({
+            createNotification,
+            message,
+            files,
+            pendingUploadFiles,
+            attachmentsCountLimit: ATTACHMENT_MAX_COUNT,
+        });
+        if (hasReachedLimits) {
             return;
         }
 

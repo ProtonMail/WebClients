@@ -178,25 +178,59 @@ export const uploadEO = (
 /**
  * Is current attachments plus eventual files to upload will exceed the max size
  */
-export const isSizeExceeded = (message: MessageState, files: File[] = []) => {
+const isSizeExceeded = (message: MessageState, files: File[] = []) => {
     const attachments = getAttachments(message.data);
     const attachmentsSize = attachments.reduce((acc, attachment) => acc + (attachment.Size || 0), 0);
     const filesSize = files.reduce((acc, file) => acc + (file.size || 0), 0);
     return attachmentsSize + filesSize > ATTACHMENT_MAX_SIZE;
 };
 
-export const checkSize = (
-    createNotification: any,
-    message: MessageState,
-    files: File[],
-    pendingUploadFiles: File[] = []
-) => {
-    const sizeExcedeed = isSizeExceeded(message, [...files, ...pendingUploadFiles]);
+/**
+ * Is current attachments plus eventual files to upload will exceed the max count
+ */
+const isCountExceeded = (message: MessageState, files: File[] = [], attachmentsLengthLimit: number) => {
+    const attachments = getAttachments(message.data);
+    const attachmentsCount = attachments.length + files.length;
+
+    return attachmentsCount > attachmentsLengthLimit;
+};
+
+interface CheckSizeAndLengthOptions {
+    createNotification: any;
+    message: MessageState;
+    files: File[];
+    pendingUploadFiles?: File[];
+    attachmentsCountLimit: number;
+}
+
+export const checkSizeAndLength = ({
+    createNotification,
+    message,
+    files,
+    pendingUploadFiles = [],
+    attachmentsCountLimit,
+}: CheckSizeAndLengthOptions) => {
+    const totalFiles = [...files, ...pendingUploadFiles];
+    const sizeExcedeed = isSizeExceeded(message, totalFiles);
+    const countExceeded = isCountExceeded(message, totalFiles, attachmentsCountLimit);
+
+    if (countExceeded) {
+        /*
+         * translator: attachmentsCountLimit is the number of attachments maximum that we can have in a message
+         * Example : Maximum number of attachments (100) exceeded.
+         */
+        createNotification({
+            type: 'error',
+            text: c('Error').t`Maximum number of attachments (${attachmentsCountLimit}) exceeded`,
+        });
+    }
+
     if (sizeExcedeed) {
         createNotification({
             type: 'error',
             text: c('Error').t`Attachments are limited to 25 MB`,
         });
     }
-    return sizeExcedeed;
+
+    return sizeExcedeed || countExceeded;
 };
