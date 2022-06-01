@@ -128,7 +128,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     const { call } = useEventManager();
     const contactsMap = useContactsMap();
 
-    const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen] = useModalState();
+    const [trustPublicKeyModalProps, setTrustPublicKeyModalOpen, renderTrustPublicKeyModal] = useModalState();
 
     const senderAddress = message.Sender.Address;
     const name = message.Sender.Name;
@@ -190,7 +190,10 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
     };
 
     return (
-        <div className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column">
+        <div
+            className="bg-norm rounded border pl0-5 pr0-25 on-mobile-pr0-5 on-mobile-pb0-5 py0-25 mb0-85 flex flex-nowrap flex-justify-space-between on-mobile-flex-column"
+            data-testid="extra-pin-key:banner"
+        >
             <div className="flex flex-nowrap pr1 on-mobile-mb0-5">
                 <Icon name="exclamation-circle-filled" className="mt0-4 mr0-5 ml0-2 flex-item-noshrink color-danger" />
                 <div>
@@ -223,7 +226,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                 </Button>
             </span>
 
-            <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />
+            {renderTrustPublicKeyModal && <TrustPublicKeyModal contact={contact} {...trustPublicKeyModalProps} />}
         </div>
     );
 };
