@@ -1,19 +1,27 @@
 import { RefObject, useCallback, useEffect } from 'react';
+import { KeyboardKey } from '@proton/shared/lib/interfaces';
 import { editorShortcuts } from '@proton/shared/lib/shortcuts/mail';
 import { isValidShortcut } from '@proton/shared/lib/shortcuts/helpers';
 import { isKeyboardEvent, cloneEvent } from '@proton/shared/lib/helpers/events';
 
 import { IFRAME_EVENTS_LIST, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 
+const PAGE_EVENTS = [KeyboardKey.PageUp, KeyboardKey.PageDown];
+
 /**
  * Calls event.preventDefault on matched events
  * Because events occuring inside an iframe can show prompts in browsers (ex : pressing crtl+s)
  * we need some specific event management here
  */
-const preventDefaultEvents = (event: Event) => {
+const preventKeyboardEvents = (event: Event) => {
     if (isKeyboardEvent(event)) {
         Object.values(editorShortcuts).forEach((shortcut) => {
-            if (isValidShortcut(shortcut, event)) {
+            if (
+                isValidShortcut(shortcut, event) ||
+                // Need to wait for this issue to be fixed
+                // https://bugs.chromium.org/p/chromium/issues/detail?id=890248
+                PAGE_EVENTS.includes(event.key as KeyboardKey)
+            ) {
                 event.preventDefault();
             }
         });
@@ -39,7 +47,7 @@ const canDispatchEvent = (event: Event): boolean => {
 const useBubbleIframeEvents = (iframeRef: RefObject<HTMLIFrameElement>) => {
     const handleBubble = useCallback((event: Event) => {
         const canDispatch = canDispatchEvent(event);
-        preventDefaultEvents(event);
+        preventKeyboardEvents(event);
 
         if (canDispatch) {
             const clonedEvent = cloneEvent(event);
