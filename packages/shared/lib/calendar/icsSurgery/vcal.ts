@@ -1,4 +1,6 @@
 import { VcalStringProperty } from '../../interfaces/calendar';
+import { ICAL_CALSCALE } from '../constants';
+import { normalize } from '../../helpers/string';
 
 export const getSupportedStringValue = (property?: VcalStringProperty) => {
     const trimmedValue = property?.value?.trim();
@@ -7,4 +9,12 @@ export const getSupportedStringValue = (property?: VcalStringProperty) => {
         return;
     }
     return trimmedValue;
+};
+
+export const getSupportedCalscale = (calscale?: VcalStringProperty) => {
+    if (!calscale) {
+        return ICAL_CALSCALE.GREGORIAN;
+    }
+
+    return normalize(calscale.value) === normalize(ICAL_CALSCALE.GREGORIAN) ? ICAL_CALSCALE.GREGORIAN : undefined;
 };
