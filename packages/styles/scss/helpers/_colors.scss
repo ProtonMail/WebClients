@@ -5,7 +5,12 @@
 		background-color: var(--#{dash-join($prefix, $color)});
 		color: var(--#{dash-join($prefix, $color, 'contrast')});
 
-		*:is(a, .link, .button-link, [class*='button-ghost'], [class*='button-underline'], [class*='button-outline']) {
+		a,
+		.link,
+		.button-link,
+		[class*='button-ghost'],
+		[class*='button-underline'],
+		[class*='button-outline'] {
 			color: inherit;
 		}
 
