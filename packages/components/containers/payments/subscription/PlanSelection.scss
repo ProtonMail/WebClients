@@ -114,6 +114,24 @@
 			inline-size: 100%; // a bit earlier than mobile breakpoint, same reason as above
 		}
 	}
+	@include respond-to(800) {
+		&-container {
+			position: static;
+		}
+		&-top-container {
+			flex-direction: column;
+			& > * {
+				inline-size: 100%;
+				flex-basis: auto;
+			}
+		}
+		&-options {
+			&,
+			& .payment-container {
+				max-inline-size: 100%;
+			}
+		}
+	}
 }
 
 .plan-customiser {
