@@ -161,7 +161,7 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
-                <PrimaryButton loading={loading} type="submit">
+                <PrimaryButton loading={loading} type="submit" data-testid="trust-key-modal:submit">
                     {c('Action').t`Trust key`}
                 </PrimaryButton>
             </ModalTwoFooter>
