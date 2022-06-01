@@ -40,6 +40,10 @@ export enum CALENDAR_FLAGS {
     SUPER_OWNER_DISABLED = 64,
 }
 
+export enum ICAL_CALSCALE {
+    GREGORIAN = 'GREGORIAN',
+}
+
 export enum ICAL_METHOD {
     PUBLISH = 'PUBLISH',
     REQUEST = 'REQUEST',

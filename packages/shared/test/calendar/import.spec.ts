@@ -1,6 +1,6 @@
-import { enUS } from 'date-fns/locale';
 import truncate from '@proton/utils/truncate';
-import { ICAL_METHOD, MAX_LENGTHS_API } from '../../lib/calendar/constants';
+import { enUS } from 'date-fns/locale';
+import { ICAL_CALSCALE, ICAL_METHOD, MAX_LENGTHS_API } from '../../lib/calendar/constants';
 import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
 import {
     extractSupportedEvent,
@@ -1161,9 +1161,111 @@ END:VCALENDAR`;
         };
         expect(await parseIcs(ics)).toEqual({
             method: ICAL_METHOD.PUBLISH,
-            calscale: undefined,
+            calscale: ICAL_CALSCALE.GREGORIAN,
             xWrTimezone: undefined,
             components: [expectedVtimezone, expectedVevent],
         });
+    });
+
+    it('should trim calscale and method', async () => {
+        const icsString = `BEGIN:VCALENDAR
+PRODID:-//Company Inc//Product Application//EN
+CALSCALE: GREGORIAN
+VERSION:2.0
+METHOD:    Publish
+BEGIN:VEVENT
+DTSTART:20220530T143000Z
+DTEND:20220530T153000Z
+DTSTAMP:20220528T075010Z
+ORGANIZER;CN=:
+UID:6c56b58d-488a-41bf-90a2-9b0d555c3780
+CREATED:20220528T075010Z
+X-ALT-DESC;FMTTYPE=text/html:
+LAST-MODIFIED:20220528T075010Z
+LOCATION:Sunny danny 8200 Aarhus N
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Optical transform
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+REPEAT:
+DURATION:PTM
+ACTION:DISPLAY
+DESCRIPTION:
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+        const ics = new File([new Blob([icsString])], 'invite.ics');
+        const parsedIcs = await parseIcs(ics);
+        expect(parsedIcs.calscale).toEqual(ICAL_CALSCALE.GREGORIAN);
+        expect(parsedIcs.method).toEqual(ICAL_METHOD.PUBLISH);
+    });
+
+    it('should not recognize unknown calscales', async () => {
+        const icsString = `BEGIN:VCALENDAR
+PRODID:-//Company Inc//Product Application//EN
+CALSCALE: GREGORIANO
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20220530T143000Z
+DTEND:20220530T153000Z
+DTSTAMP:20220528T075010Z
+ORGANIZER;CN=:
+UID:6c56b58d-488a-41bf-90a2-9b0d555c3780
+CREATED:20220528T075010Z
+X-ALT-DESC;FMTTYPE=text/html:
+LAST-MODIFIED:20220528T075010Z
+LOCATION:Sunny danny 8200 Aarhus N
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Optical transform
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+REPEAT:
+DURATION:PTM
+ACTION:DISPLAY
+DESCRIPTION:
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+        const ics = new File([new Blob([icsString])], 'invite.ics');
+        const parsedIcs = await parseIcs(ics);
+        expect(parsedIcs.calscale).toEqual(undefined);
+    });
+
+    it('should throw for unknown methods', async () => {
+        const icsString = `BEGIN:VCALENDAR
+PRODID:-//Company Inc//Product Application//EN
+VERSION:2.0
+METHOD:ATTEND
+BEGIN:VEVENT
+DTSTART:20220530T143000Z
+DTEND:20220530T153000Z
+DTSTAMP:20220528T075010Z
+ORGANIZER;CN=:
+UID:6c56b58d-488a-41bf-90a2-9b0d555c3780
+CREATED:20220528T075010Z
+X-ALT-DESC;FMTTYPE=text/html:
+LAST-MODIFIED:20220528T075010Z
+LOCATION:Sunny danny 8200 Aarhus N
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Optical transform
+TRANSP:OPAQUE
+BEGIN:VALARM
+TRIGGER:-PT30M
+REPEAT:
+DURATION:PTM
+ACTION:DISPLAY
+DESCRIPTION:
+END:VALARM
+END:VEVENT
+END:VCALENDAR`;
+        const ics = new File([new Blob([icsString])], 'invite.ics');
+        await expectAsync(parseIcs(ics)).toBeRejectedWithError(
+            'Your file "invite.ics" has an invalid method and cannot be imported.'
+        );
     });
 });
