@@ -15,7 +15,7 @@ import { Breakpoints } from '../../models/utils';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 
-const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS } = MAILBOX_LABEL_IDS;
+const { SENT, ALL_SENT, ALL_MAIL, STARRED, DRAFTS, ALL_DRAFTS, SCHEDULED } = MAILBOX_LABEL_IDS;
 
 const labelsWithIcons = [ALL_MAIL, STARRED, ALL_SENT, ALL_DRAFTS] as string[];
 
@@ -66,7 +66,7 @@ const Item = ({
     const elementRef = useRef<HTMLDivElement>(null);
     const [hasFocus, setHasFocus] = useState(false);
     const displayRecipients =
-        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS) ||
+        [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
         isSent(element) ||
         isDraft(element);
     const { getRecipientLabel, getRecipientsOrGroups, getRecipientsOrGroupsLabels } = useRecipientLabel();
