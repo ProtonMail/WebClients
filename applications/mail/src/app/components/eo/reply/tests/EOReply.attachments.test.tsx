@@ -58,6 +58,6 @@ describe('EO Reply attachments', () => {
             await wait(100);
         });
 
-        await waitForNotification(`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded.`);
+        await waitForNotification(`Maximum number of attachments (${EO_REPLY_NUM_ATTACHMENTS_LIMIT}) exceeded`);
     });
 });
