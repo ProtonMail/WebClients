@@ -149,7 +149,7 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                 if (defaultFolderNames.includes(folderOrLabel) || folders?.find((f) => f.Path === folderOrLabel)) {
                     acc.folder = [folderOrLabel];
                 }
-                if (labels?.find((l) => l.Name === folderOrLabel)) {
+                if (labels?.find((l) => l.Path === folderOrLabel)) {
                     acc.labels.push(folderOrLabel);
                 }
                 return acc;
