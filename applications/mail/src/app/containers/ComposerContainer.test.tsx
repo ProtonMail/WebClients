@@ -76,7 +76,9 @@ with a link -> https://protonmail.com/`;
 
 
 ${Signature}
+
 Sent with ${protonmailAppName} secure email.
+
 ------- Original Message -------
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
