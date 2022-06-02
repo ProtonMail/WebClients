@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
 import { usePopperAnchor } from '../../components/popper';
-import { useLoading, useContactGroups, useModals } from '../../hooks';
+import { useContactGroups, useModals, useUser } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
 import Dropdown from '../../components/dropdown/Dropdown';
 import Tooltip from '../../components/tooltip/Tooltip';
@@ -15,9 +15,9 @@ import Mark from '../../components/text/Mark';
 import Checkbox from '../../components/input/Checkbox';
 import ContactGroupModal from './modals/ContactGroupModal';
 import useApplyGroups from './useApplyGroups';
-
-import './ContactGroupDropdown.scss';
+import ContactUpgradeModal from './ContactUpgradeModal';
 import { DropdownButton } from '../../components';
+import './ContactGroupDropdown.scss';
 
 const UNCHECKED = 0;
 const CHECKED = 1;
@@ -25,9 +25,6 @@ const INDETERMINATE = 2;
 
 /**
  * Build initial dropdown model
- * @param {Array} contactGroups
- * @param {Array} contactEmails
- * @returns {Object}
  */
 const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmail[] = []) => {
     if (!contactEmails.length || !contactGroups.length) {
@@ -55,6 +52,8 @@ interface Props extends ButtonProps {
     tooltip?: string;
     forToolbar?: boolean;
     onDelayedSave?: (changes: { [groupID: string]: boolean }) => void;
+    onLock?: (lock: boolean) => void;
+    onSuccess?: () => void;
 }
 
 const ContactGroupDropdown = ({
@@ -65,17 +64,31 @@ const ContactGroupDropdown = ({
     forToolbar = false,
     tooltip = c('Action').t`Add to group`,
     onDelayedSave,
+    onLock: onLockWidget,
+    onSuccess,
     ...rest
 }: Props) => {
+    const [{ hasPaidMail }] = useUser();
     const [keyword, setKeyword] = useState('');
-    const [loading, withLoading] = useLoading();
+    const [loading, setLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { createModal } = useModals();
     const [contactGroups = []] = useContactGroups();
     const [initialModel, setInitialModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
-    const applyGroups = useApplyGroups();
+    const [lock, setLock] = useState(false);
+    const applyGroups = useApplyGroups(setLock, setLoading);
+
+    useEffect(() => onLockWidget?.(isOpen), [isOpen]);
+
+    const handleClick = () => {
+        if (hasPaidMail) {
+            toggle();
+        } else {
+            createModal(<ContactUpgradeModal />);
+        }
+    };
 
     const handleCheck =
         (contactGroupID: string) =>
@@ -118,6 +131,7 @@ const ContactGroupDropdown = ({
         }
 
         close();
+        onSuccess?.();
     };
 
     useEffect(() => {
@@ -141,25 +155,24 @@ const ContactGroupDropdown = ({
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        await withLoading(handleApply());
+        setLoading(true);
+        try {
+            await handleApply();
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
         <>
             <Tooltip title={tooltip}>
                 <DropdownButton
-                    as={forToolbar ? 'button' : Button}
                     ref={anchorRef}
                     isOpen={isOpen}
-                    onClick={toggle}
-                    hasCaret
+                    onClick={handleClick}
+                    hasCaret={!forToolbar}
                     disabled={disabled}
-                    caretClassName={forToolbar ? 'toolbar-icon' : ''}
-                    className={classnames([
-                        forToolbar && 'toolbar-button toolbar-button--dropdown',
-                        'flex flex-align-items-center',
-                        className,
-                    ])}
+                    className={classnames([forToolbar ? 'button-for-icon' : 'flex flex-align-items-center', className])}
                     {...rest}
                 >
                     {children}
@@ -172,6 +185,7 @@ const ContactGroupDropdown = ({
                 anchorRef={anchorRef}
                 onClose={close}
                 autoClose={false}
+                autoCloseOutside={!lock}
                 noMaxSize
             >
                 <form onSubmit={handleSubmit}>
@@ -180,6 +194,7 @@ const ContactGroupDropdown = ({
                         <Tooltip title={c('Info').t`Create a new contact group`}>
                             <Button
                                 icon
+                                color="norm"
                                 size="small"
                                 onClick={handleAdd}
                                 className="flex flex-align-items-center"
