@@ -24,10 +24,10 @@ describe('Mailbox retries and waitings', () => {
         });
         addApiMock(`mail/v4/conversations`, conversationRequestSpy, 'get');
 
-        const { getItems } = await setup();
+        const { getItems } = await setup({ totalConversations: conversations.length });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
-        expectElements(getItems, PAGE_SIZE, true);
+        expectElements(getItems, conversations.length, true);
 
         await act(async () => {
             await wait(2000);
@@ -47,10 +47,10 @@ describe('Mailbox retries and waitings', () => {
         });
         addApiMock(`mail/v4/conversations`, conversationRequestSpy, 'get');
 
-        const { getItems } = await setup();
+        const { getItems } = await setup({ totalConversations: conversations.length });
 
         expect(conversationRequestSpy).toHaveBeenCalledTimes(1);
-        expectElements(getItems, PAGE_SIZE, true);
+        expectElements(getItems, conversations.length, true);
 
         await act(async () => {
             await wait(1000);
