@@ -87,19 +87,7 @@ export const initRoosterEditor = async (element: HTMLDivElement, options: Option
             setDirection(editor, direction);
         },
         () => {
-            const selectedText = editor.getSelectionRange().toString();
-            const cursorEl = editor.getElementAtCursor('a[href]') as HTMLElement | null;
-
-            const title = selectedText || cursorEl?.innerText || undefined;
-            const href = selectedText ? undefined : cursorEl?.getAttribute('href') || undefined;
-
-            options.showModalLink?.({
-                linkLabel: title,
-                linkUrl: href,
-                onSubmit: (nextLinkTitle, nextLinkUrl) => {
-                    createLink(editor, nextLinkUrl, undefined, nextLinkTitle);
-                },
-            });
+            options.showModalLink?.({ editor, createLink });
         }
     );
 
