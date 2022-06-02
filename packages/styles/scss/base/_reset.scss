@@ -145,9 +145,11 @@ select {
 }
 
 /* fix display img/iframe */
-img,
-iframe {
-	vertical-align: middle;
+@if $use-vertical-align-img-iframe==true {
+	img,
+	iframe {
+		vertical-align: middle;
+	}
 }
 
 iframe,

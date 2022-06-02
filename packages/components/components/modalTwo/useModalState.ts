@@ -3,6 +3,13 @@ import { generateUID } from '../../helpers';
 
 import { useControlled } from '../../hooks';
 
+export interface ModalStateProps {
+    key: string;
+    open: boolean;
+    onClose: () => void;
+    onExit: () => void;
+}
+
 const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?: () => void }) => {
     const { open: controlledOpen, onClose, onExit } = options || {};
 
@@ -30,9 +37,9 @@ const useModalState = (options?: { open?: boolean; onClose?: () => void; onExit?
         onExit?.();
     };
 
-    const modalProps = {
+    const modalProps: ModalStateProps = {
         key,
-        open,
+        open: !!open,
         onClose: handleClose,
         onExit: handleExit,
     };
