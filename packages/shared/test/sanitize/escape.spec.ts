@@ -8,7 +8,7 @@ describe('Escape', () => {
 
         it('Should replace percentage height by unset', () => {
             expect(escapeForbiddenStyle('height: 100%; min-height: 30% ; max-height:  50%;')).toBe(
-                'height: unset; min-height: unset ; max-height:  unset;'
+                'height: unset; min-height: unset ; max-height:  50%;'
             );
         });
 
