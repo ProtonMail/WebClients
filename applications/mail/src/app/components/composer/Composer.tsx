@@ -52,7 +52,7 @@ import { MessageState, MessageStateWithData, PartialMessageState } from '../../l
 import { removeInitialAttachments } from '../../logic/messages/draft/messagesDraftActions';
 import ComposerMeta from './ComposerMeta';
 import ComposerContent from './ComposerContent';
-import ComposerActions from './ComposerActions';
+import ComposerActions from './actions/ComposerActions';
 import { useDraftSenderVerification } from '../../hooks/composer/useDraftSenderVerification';
 import { ExternalEditorActions } from './editor/EditorWrapper';
 
@@ -622,6 +622,7 @@ const Composer = (
                     attachmentTriggerRef={attachmentTriggerRef}
                     loadingScheduleCount={loadingScheduleCount}
                     onChangeFlag={handleChangeFlag}
+                    onChange={handleChange}
                 />
             </div>
             {waitBeforeScheduleModal}
