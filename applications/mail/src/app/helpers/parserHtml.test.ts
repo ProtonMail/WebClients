@@ -146,4 +146,43 @@ my signature`;
 
         expect(toText(input)).toBe(result);
     });
+
+    it('should keep empty lines in the content and the signature', () => {
+        const input = `
+            <div style="font-family: verdana; font-size: 20px;">Testcontent1</div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;">Testcontent2</div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div style="font-family: verdana; font-size: 20px;">Testcontent3</div>
+            <div style="font-family: verdana; font-size: 20px;"><br></div>
+            <div class="protonmail_signature_block" style="font-family: verdana; font-size: 20px;">
+                <div class="protonmail_signature_block-user">
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);">Test1</div>
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);"><br></div>
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);">Testtest2</div>
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);"><br></div>
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);">Testtesttest3</div>
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);"><br></div>
+                    <div style="font-family:arial;font-size:14px;color:rgb(34,34,34);">Testtesttesttest4</div>
+                </div>
+                <div class="protonmail_signature_block-proton protonmail_signature_block-empty"></div>
+            </div>
+        `;
+
+        const result = `Testcontent1
+
+Testcontent2
+
+Testcontent3
+
+Test1
+
+Testtest2
+
+Testtesttest3
+
+Testtesttesttest4`;
+
+        expect(toText(input)).toBe(result);
+    });
 });

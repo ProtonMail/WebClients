@@ -54,8 +54,12 @@ export const toText = (html: string, convertImages = false) => {
 
     const replaceDiv = {
         filter: ['div'],
-        replacement(content: string) {
-            return content;
+        replacement(content: string, node: HTMLElement) {
+            if (node.children.length > 0 && (node.lastChild?.nodeName === 'BR' || node.lastChild?.nodeName === 'DIV')) {
+                return content;
+            }
+
+            return `${content}\n`;
         },
     } as TurndownService.Rule;
 
