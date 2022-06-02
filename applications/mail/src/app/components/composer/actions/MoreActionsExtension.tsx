@@ -19,7 +19,7 @@ interface Props {
     onChangeFlag: MessageChangeFlag;
 }
 
-const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
+const MoreActionsExtension = ({ message, onChangeFlag }: Props) => {
     const isAttachPublicKey = testIsAttachPublicKey(message);
     const isReceiptRequest = testIsRequestReadReceipt(message);
 
@@ -50,4 +50,4 @@ const EditorToolbarExtension = ({ message, onChangeFlag }: Props) => {
     );
 };
 
-export default memo(EditorToolbarExtension);
+export default memo(MoreActionsExtension);
