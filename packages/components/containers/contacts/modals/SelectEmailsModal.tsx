@@ -1,4 +1,4 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, useEffect } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
@@ -8,46 +8,49 @@ import useContactEmails from '../../../hooks/useContactEmails';
 import { FormModal, Alert, Row, Label, Field, Checkbox } from '../../../components';
 import { useContactGroups } from '../../../hooks';
 
-const enumerate = (names: string[]) => {
-    if (names.length <= 1) {
-        return names.join('');
-    }
-
-    const namesWithoutLast = names.slice(0, -1).join(', ');
-    const nameOfLast = names.slice(-1);
-    // translator: ${namesWithoutLast} variables contains the list of contact or groups names separated by ", " and ${nameOfLast} is the last name of the list. Ex: contact1, contact2 and contact3
-    return c('Info').t`${namesWithoutLast} and ${nameOfLast}`;
-};
-
 interface Props {
     groupIDs: string[];
+    // contacts selected
     contacts: Contact[];
+    // only submit checked contactEmails (Array<Object>)
     onSubmit: (value: ContactEmail[]) => void;
     onClose: () => void;
+    onLock?: (lock: boolean) => void;
 }
 
 type CheckableContact = ContactEmail & { isChecked?: boolean };
 
 /**
  * Modal to select contact emails and add them to a contact group
- * @param contacts contacts selected
- * @param onSubmit only submit checked contactEmails (Array<Object>)
- * @param onClose
  */
-const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, ...rest }: Props) => {
+const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, onLock, ...rest }: Props) => {
     const [contactGroups] = useContactGroups();
-    const [contactEmails] = useContactEmails();
+    const [allContactEmails = []] = useContactEmails() as [ContactEmail[] | undefined, boolean, any];
 
     const groups = groupIDs.map((groupID) => contactGroups?.find((group) => group.ID === groupID)).filter(isTruthy);
 
+    useEffect(() => {
+        onLock?.(true);
+        return () => onLock?.(false);
+    }, []);
+
     const [model, setModel] = useState(
         contacts.map((contact) => {
-            return {
-                ...contact,
-                contactEmails: contactEmails
-                    .filter(({ ContactID }: ContactEmail) => ContactID === contact.ID)
-                    .map((contactEmail: ContactEmail) => ({ ...contactEmail, isChecked: true })),
-            };
+            const contactEmails: CheckableContact[] = allContactEmails
+                .filter(({ ContactID }) => ContactID === contact.ID)
+                .map((contactEmail) => ({
+                    ...contactEmail,
+                    // isChecked by default if the email has already all groups
+                    isChecked: groups.every((group) => contactEmail.LabelIDs.includes(group.ID)),
+                }));
+
+            // If none are checked, check the first one by default
+            const noneChecked = contactEmails.every((contactEmail) => contactEmail.isChecked === false);
+            if (noneChecked && contactEmails.length > 0) {
+                contactEmails[0].isChecked = true;
+            }
+
+            return { ...contact, contactEmails };
         })
     );
 
@@ -80,38 +83,39 @@ const SelectEmailsModal = ({ contacts, groupIDs, onSubmit, onClose, ...rest }: P
     const isSingleGroup = groups.length === 1;
 
     const contactName = contacts[0].Name;
-    const contactsEnumeration = enumerate(contacts.map((contact) => contact.Name));
+    const contactCount = contacts.length;
     const groupName = groups[0].Name;
-    const groupsEnumeration = enumerate(groups.map((group) => group.Name));
     const groupCount = groups.length;
 
     const title = isSingleGroup
         ? c('Title').t`Add to ${groupName}`
         : c('Title').ngettext(msgid`Add to ${groupCount} group`, `Add to ${groupCount} groups`, groupCount);
 
-    let text: string;
-    if (isSingleContact) {
-        if (isSingleGroup) {
-            text = c('Info')
-                .t`${contactName} contains multiple email addresses. Please select which email address or addresses to add to this group.`;
-        } else {
-            // translator: ${groupsEnumeration} is the enumeration of a list of groups. Ex: group1, group2 and group3
-            text = c('Info')
-                .t`${contactName} contains multiple email addresses. Please select which email address or addresses to add to ${groupsEnumeration}.`;
-        }
-    } else if (isSingleGroup) {
-        // translator: ${contactsEnumeration} is the enumeration of a list of contacts. Ex: contact1, contact2 and contact3
-        text = c('Info')
-            .t`${contactsEnumeration} contain multiple email addresses. Please select which email address or addresses to add to this group.`;
-    } else {
-        // translator: ${contactsEnumeration} and ${groupsEnumeration} are the enumeration of lists of contacts and groups. Ex: contact1, contact2 and contact3
-        text = c('Info')
-            .t`${contactsEnumeration} contain multiple email addresses. Please select which email address or addresses to add to ${groupsEnumeration}.`;
-    }
+    const contactText = isSingleContact
+        ? c('Info').t`${contactName} contains multiple email addresses.`
+        : // "<number> contacts contain..." The singular will not be used, the contact name will be used instead
+          c('Info').ngettext(
+              msgid`${contactCount} contact contains multiple email addresses.`,
+              `${contactCount} contacts contain multiple email addresses.`,
+              contactCount
+          );
+
+    const groupText = isSingleGroup
+        ? c('Info').t`Please select which email address or addresses to add to ${groupName}.`
+        : // "... to add to <number> groups" The singular will not be used, the group name will be used instead
+          c('Info').ngettext(
+              msgid`Please select which email address or addresses to add to ${groupCount} group.`,
+              `Please select which email address or addresses to add to ${groupCount} groups.`,
+              groupCount
+          );
 
     return (
         <FormModal submit={c('Action').t`Apply`} title={title} onSubmit={handleSubmit} onClose={onClose} {...rest}>
-            <Alert className="mb1">{text}</Alert>
+            <Alert className="mb2">
+                {contactText}
+                <br />
+                {groupText}
+            </Alert>
             {model
                 .filter(({ contactEmails = [] }) => contactEmails.length > 1) // Only display contact with multiple emails
                 .map(({ ID: contactID, Name, contactEmails = [] }) => {

@@ -35,7 +35,7 @@ export const collectContacts = (contactEmails: ContactEmail[] = [], contacts: Co
 /**
  * Returns a reusable action to apply or remove groups to a list of contact emails
  */
-const useApplyGroups = () => {
+const useApplyGroups = (onLock?: (lock: boolean) => void, setLoading?: (loading: boolean) => void) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -61,6 +61,7 @@ const useApplyGroups = () => {
                     .map(([groupID]) => groupID);
 
                 if (groupIDs.length) {
+                    setLoading?.(false);
                     selectedEmails = await new Promise<ContactEmail[]>((resolve, reject) => {
                         createModal(
                             <SelectEmailsModal
@@ -68,9 +69,11 @@ const useApplyGroups = () => {
                                 contacts={collectedContacts}
                                 onSubmit={resolve}
                                 onClose={reject}
+                                onLock={onLock}
                             />
                         );
                     });
+                    setLoading?.(true);
                 }
             }
 
