@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import { classnames, Icon, HotkeyTuple, FolderIcon } from '@proton/components';
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { formatFolderName } from '@proton/shared/lib/helpers/folder';
@@ -67,8 +68,14 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
                                 ])}
                             />
                         </button>
-                    ) : null}
-                    <FolderIcon className="mr0-5 navigation-icon flex-item-noshrink" folder={folder} />
+                    ) : (
+                        <span className="navigation-icon-empty flex-item-noshrink" />
+                    )}
+                    <FolderIcon
+                        className="mr0-5 navigation-icon flex-item-noshrink"
+                        alt={c('Info').t`Folder`}
+                        folder={folder}
+                    />
                     <span className="text-ellipsis pr0-5">{formatFolderName(level, folder.Name)}</span>
                 </div>
             }
