@@ -72,7 +72,7 @@ const SimpleSidebarListItemHeader = ({
                             />
                         </ButtonLike>
                     )}
-                    <span className="ml0-5 text-sm">{text}</span>
+                    <span className="ml0-25 text-sm">{text}</span>
                 </button>
                 {right}
             </div>
