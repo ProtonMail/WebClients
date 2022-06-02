@@ -1,9 +1,10 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-
+import isTruthy from '@proton/shared/lib/helpers/isTruthy';
 import { Checkbox, Icon, Button, Tooltip } from '../../../components';
 import { CustomAction } from './types';
 import useContactList from '../useContactList';
+import ContactGroupDropdown from '../ContactGroupDropdown';
 
 interface Props {
     allChecked: boolean;
@@ -16,6 +17,7 @@ interface Props {
     onCreate: () => void;
     onMerge: () => void;
     onClose: () => void;
+    onLock: (lock: boolean) => void;
     customActions: CustomAction[];
     contactList: ReturnType<typeof useContactList>;
 }
@@ -31,6 +33,7 @@ const ContactsWidgetToolbar = ({
     onCreate,
     onMerge,
     onClose,
+    onLock,
     customActions,
     contactList,
 }: Props) => {
@@ -47,6 +50,10 @@ const ContactsWidgetToolbar = ({
               `Delete ${selectedCount} contacts`,
               selectedCount
           );
+
+    const contactEmails = useMemo(() => {
+        return selected.flatMap((contactID) => contactList.contactEmailsMap[contactID]).filter(isTruthy);
+    }, [selected, contactList.contactEmailsMap]);
 
     return (
         <div className="flex flex-items-align-center">
@@ -105,6 +112,16 @@ const ContactsWidgetToolbar = ({
                     <Icon name="users-merge" alt={c('Action').t`Merge contacts`} />
                 </Button>
             </Tooltip>
+            <ContactGroupDropdown
+                className="mr0-5 inline-flex pt0-5 pb0-5"
+                contactEmails={contactEmails}
+                disabled={contactEmails.length === 0}
+                forToolbar
+                onLock={onLock}
+                onSuccess={() => onCheckAll(false)}
+            >
+                <Icon name="users" />
+            </ContactGroupDropdown>
             <Tooltip title={deleteText}>
                 <Button
                     icon
