@@ -198,7 +198,7 @@ export const dynamicPageLength = createSelector(
 export const placeholderCount = createSelector(
     [page, total, params, dynamicPageLength],
     (page, total, params, dynamicPageLength) => {
-        if (dynamicPageLength) {
+        if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
         }
         if (total !== undefined) {
