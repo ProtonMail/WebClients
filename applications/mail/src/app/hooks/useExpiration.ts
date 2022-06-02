@@ -144,13 +144,13 @@ export const useExpiration = (message: MessageState) => {
 
             setExpireOnMessage(getExpireOnTime(expirationDate, dateString, formattedTime));
         } else {
-            const willEpireSoon = differenceInHours(expirationDate, nowDate) < 2;
-            setLessThanTwoHours(willEpireSoon);
+            const willExpireSoon = differenceInHours(expirationDate, nowDate) < 2;
+            setLessThanTwoHours(willExpireSoon);
 
             const { formattedDelay, formattedDelayShort } = formatDelay(nowDate, expirationDate);
             setDelayMessage(c('Info').t`Expires in ${formattedDelay}`);
 
-            if (willEpireSoon) {
+            if (willExpireSoon) {
                 setButtonMessage(c('Info').t`Expires in less than ${formattedDelayShort}`);
             } else {
                 setButtonMessage(c('Info').t`Expires in ${formattedDelayShort}`);
