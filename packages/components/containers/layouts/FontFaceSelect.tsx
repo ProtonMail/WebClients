@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DEFAULT_FONT_FACE, FONT_FACE } from '../../components/editor/constants';
+import { DEFAULT_FONT_FACE, FONT_FACES } from '../../components/editor/constants';
 import { Select } from '../../components/select';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 const FontFaceSelect = ({ id, fontFace, onChange, loading, ...rest }: Props) => {
-    const options = Object.entries(FONT_FACE).map(([text, value]) => ({ text, value }));
+    const options = Object.values(FONT_FACES).map(({ label: text, value }) => ({ text, value }));
 
     // FontFace default API value is null and it doesn't trigger default parameter value
     const fontFaceValue = fontFace === undefined || fontFace === null ? DEFAULT_FONT_FACE : fontFace;
