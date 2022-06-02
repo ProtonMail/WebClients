@@ -5,7 +5,7 @@ import { SettingsSection } from '../../account';
 import PrimaryTimezoneSection from './PrimaryTimezoneSection';
 import ShowSecondaryTimezoneToggle from './ShowSecondaryTimezoneToggle';
 import SecondaryTimezoneSection from './SecondaryTimezoneSection';
-import AutoDetectPrimaryTimezoneToggle from './AutoDetectPrimaryTimezoneToggle';
+import AutoDetectPrimaryTimezoneSection from './AutoDetectPrimaryTimezoneSection';
 
 interface Props {
     calendarUserSettings: CalendarUserSettings;
@@ -14,7 +14,7 @@ interface Props {
 const CalendarTimeSection = ({ calendarUserSettings }: Props) => {
     return (
         <SettingsSection>
-            <AutoDetectPrimaryTimezoneToggle calendarUserSettings={calendarUserSettings} />
+            <AutoDetectPrimaryTimezoneSection calendarUserSettings={calendarUserSettings} />
             <PrimaryTimezoneSection calendarUserSettings={calendarUserSettings} />
             <ShowSecondaryTimezoneToggle calendarUserSettings={calendarUserSettings} />
             <SecondaryTimezoneSection calendarUserSettings={calendarUserSettings} />
