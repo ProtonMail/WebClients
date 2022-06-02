@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { useEffect, useState } from 'react';
 import { DropdownMenu, DropdownMenuContainer } from '../../dropdown';
-import { FONT_FACE } from '../constants';
+import { FONT_FACES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
 import { Badge } from '../../badge';
 import { Button } from '../../button';
@@ -15,16 +15,21 @@ interface Props {
     showDefaultFontSelector?: boolean;
 }
 
-const getFontLabel = (font: string) =>
-    Object.entries(FONT_FACE).find(([, value]) => {
-        return value === font;
-    })?.[0];
+const getFontLabel = (font: string): string | undefined => {
+    const lowerFont = font.toLowerCase();
+    const fonts = Object.values(FONT_FACES);
 
-const hasFont = (font: string | undefined) =>
-    font &&
-    Object.entries(FONT_FACE).find(([, fontValue]) => {
-        return fontValue === font;
-    });
+    const search = fonts.find(({ value }) => lowerFont === value.toLowerCase());
+
+    return search?.label;
+};
+
+const hasFont = (font: string): boolean => {
+    const lowerFont = font.toLowerCase();
+    const fonts = Object.values(FONT_FACES);
+
+    return fonts.some(({ value }) => lowerFont === value.toLowerCase());
+};
 
 const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault, showDefaultFontSelector }: Props) => {
     const [computedValue, setComputedValue] = useState(value || defaultValue);
@@ -35,7 +40,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
     };
 
     useEffect(() => {
-        if (!hasFont(value) || value === computedValue) {
+        if (!value || !hasFont(value) || value === computedValue) {
             return;
         }
 
@@ -65,18 +70,19 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
             }
         >
             <DropdownMenu>
-                {Object.values(FONT_FACE).map((font) => (
+                {Object.values(FONT_FACES).map(({ label: fontLabel, value: fontValue }) => (
                     <DropdownMenuContainer
-                        key={font}
-                        className={classnames([font === value && 'dropdown-item--is-selected'])}
+                        key={fontValue}
+                        className={classnames([fontValue === value && 'dropdown-item--is-selected'])}
                         buttonClassName="text-left"
-                        aria-pressed={font === value}
-                        isSelected={font === value}
-                        onClick={() => onChange(font)}
-                        style={{ fontFamily: font.toString() }}
-                        buttonContent={<span className="pr0-5">{getFontLabel(font)}</span>}
+                        aria-pressed={fontValue === value}
+                        isSelected={fontValue === value}
+                        onClick={() => onChange(fontValue)}
+                        style={{ fontFamily: fontValue }}
+                        buttonContent={<span className="pr0-5">{fontLabel}</span>}
                         extraContent={
-                            font === defaultValue && showDefaultFontSelector ? (
+                            fontValue.toLowerCase() === (defaultValue || '').toLowerCase() &&
+                            showDefaultFontSelector ? (
                                 <div className="flex pl0-5 pr0-5 flex-item-noshrink">
                                     <Button
                                         color="weak"

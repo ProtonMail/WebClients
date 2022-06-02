@@ -27,17 +27,55 @@ export const IFRAME_EVENTS_LIST: Event['type'][] = [
     'input',
 ];
 
-export const FONT_FACE = {
-    Georgia: 'georgia',
-    Arial: 'arial',
-    Helvetica: 'helvetica',
-    Monospace: 'menlo, consolas, courier new, monospace',
-    Tahoma: 'tahoma, sans-serif',
-    Verdana: 'verdana',
-    'Times New Roman': 'times new roman',
-    'Trebuchet MS': 'trebuchet ms',
+type FontFace =
+    | 'GEORGIA'
+    | 'ARIAL'
+    | 'HELVETICA'
+    | 'MONOSPACE'
+    | 'TAHOMA'
+    | 'VERDANA'
+    | 'TIMES_NEW_ROMAN'
+    | 'TREBUCHET_MS';
+
+/**
+ * Used in composer font selector
+ */
+export const FONT_FACES: Record<FontFace, { label: string; value: string }> = {
+    GEORGIA: {
+        label: 'Georgia',
+        value: 'Georgia',
+    },
+    ARIAL: {
+        label: 'Arial',
+        value: 'Arial',
+    },
+    HELVETICA: {
+        label: 'Helvetica',
+        value: 'Helvetica',
+    },
+    MONOSPACE: {
+        label: 'Monospace',
+        value: 'Menlo, Consolas, Courier New, Monospace',
+    },
+    TAHOMA: {
+        label: 'Tahoma',
+        value: 'Tahoma, sans-serif',
+    },
+    VERDANA: {
+        label: 'Verdana',
+        value: 'Verdana',
+    },
+    TIMES_NEW_ROMAN: {
+        label: 'Times New Roman',
+        value: 'Times New Roman',
+    },
+    TREBUCHET_MS: {
+        label: 'Trebuchet MS',
+        value: 'Trebuchet MS',
+    },
 };
-export const DEFAULT_FONT_FACE = FONT_FACE.Arial;
+
+export const DEFAULT_FONT_FACE = FONT_FACES.ARIAL.value;
 
 export enum FONT_SIZES {
     '10px' = '7.5pt',
