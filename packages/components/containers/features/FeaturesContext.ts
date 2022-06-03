@@ -36,7 +36,6 @@ export enum FeatureCode {
     BundlePromoShown = 'BundlePromoShown',
     UsedMailMobileApp = 'UsedMailMobileApp',
     UsedContactsImport = 'UsedContactsImport',
-    EnabledEncryptedSearch = 'EnabledEncryptedSearch',
     SpotlightEncryptedSearch = 'SpotlightEncryptedSearch',
     CalendarSubscription = 'CalendarSubscription',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
