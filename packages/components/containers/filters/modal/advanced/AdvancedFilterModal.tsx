@@ -2,9 +2,10 @@ import { useState, FormEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { checkSieveFilter, addTreeFilter, updateFilter } from '@proton/shared/lib/api/filters';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { FILTER_VERSION } from '../../constants';
-import { Filter, StepSieve, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
+import { Filter, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { sieveTemplates, convertModel } from '../../utils';
 
 import {
@@ -16,6 +17,7 @@ import {
     ModalTwoFooter,
     useModalState,
     ModalProps,
+    Alert,
 } from '../../../../components';
 
 import {
@@ -30,7 +32,6 @@ import {
 } from '../../../../hooks';
 
 import FilterNameForm from '../FilterNameForm';
-import HeaderAdvancedFilterModal from './HeaderAdvancedFilterModal';
 import FooterAdvancedFilterModal from './FooterAdvancedFilterModal';
 import SieveForm from './SieveForm';
 import CloseFilterModal from '../CloseFilterModal';
@@ -80,7 +81,6 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
 
     const initialModel = {
         id: filter?.ID,
-        step: StepSieve.NAME,
         sieve: filter?.Sieve || sieveTemplate || '',
         name: filter?.Name || '',
         issues: [],
@@ -163,7 +163,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
     return (
         <>
             <ModalTwo
-                size="large"
+                size="full"
                 as={Form}
                 onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
                 {...rest}
@@ -171,29 +171,23 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />
-                    {model.step === StepSieve.NAME && (
-                        <FilterNameForm
-                            model={model}
-                            onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
-                            isNarrow={isNarrow}
-                            errors={errors}
-                            loading={loading}
-                            isSieveFilter
-                        />
-                    )}
-                    {model.step === StepSieve.SIEVE && (
-                        <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
-                    )}
+                    <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>
+                        {c('Info')
+                            .t`Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.`}
+                    </Alert>
+                    {/*<HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />*/}
+                    <FilterNameForm
+                        model={model}
+                        onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
+                        isNarrow={isNarrow}
+                        errors={errors}
+                        loading={loading}
+                        isSieveFilter
+                    />
+                    <SieveForm model={model} onChange={setModel} userSettings={userSettings} />
                 </ModalTwoContent>
                 <ModalTwoFooter>
-                    <FooterAdvancedFilterModal
-                        model={model}
-                        errors={errors}
-                        onChange={setModel}
-                        onClose={handleClose}
-                        loading={loading}
-                    />
+                    <FooterAdvancedFilterModal errors={errors} onClose={handleClose} loading={loading} />
                 </ModalTwoFooter>
             </ModalTwo>
             <CloseFilterModal {...closeFilterModalProps} handleDiscard={onClose} />

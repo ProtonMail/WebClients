@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Field, Input } from '../../../components';
 import { classnames } from '../../../helpers';
 
-import { SimpleFilterModalModel, AdvancedSimpleFilterModalModel, Step, StepSieve } from '../interfaces';
+import { SimpleFilterModalModel, AdvancedSimpleFilterModalModel, Step } from '../interfaces';
 
 interface Errors {
     name: string;
@@ -28,7 +28,6 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
             if (isSieveFilter) {
                 onChange({
                     ...model,
-                    step: StepSieve.SIEVE,
                 } as AdvancedSimpleFilterModalModel);
 
                 return;
@@ -43,11 +42,9 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
     return (
         <>
             <div className="mb1">
-                {isSieveFilter
-                    ? c('Info')
-                          .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.`
-                    : c('Info')
-                          .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.`}
+                {!isSieveFilter &&
+                    c('Info')
+                        .t`Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.`}
             </div>
             <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
                 <label htmlFor="name" className={classnames(['w20 pt0-5', isNarrow && 'mb1'])}>
