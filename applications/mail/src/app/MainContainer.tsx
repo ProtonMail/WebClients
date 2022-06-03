@@ -27,7 +27,6 @@ const MainContainer = () => {
         FeatureCode.ScheduledSend,
         FeatureCode.SpotlightScheduledSend,
         FeatureCode.BundlePromoShown,
-        FeatureCode.EnabledEncryptedSearch,
         FeatureCode.SpotlightEncryptedSearch,
         FeatureCode.UsedMailMobileApp,
         FeatureCode.SpyTrackerProtection,
