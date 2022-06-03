@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import {
     FeatureCode,
     useApi,
-    useFeatures,
+    useFeature,
     useGetMessageCounts,
     useSubscribeEventManager,
     useUser,
@@ -49,10 +49,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const [user] = useUser();
     const [welcomeFlags] = useWelcomeFlags();
-    const [{ get: getESFeature }, { update: updateSpotlightES }] = useFeatures([
-        FeatureCode.EnabledEncryptedSearch,
-        FeatureCode.SpotlightEncryptedSearch,
-    ]);
+    const { update: updateSpotlightES } = useFeature(FeatureCode.SpotlightEncryptedSearch);
     const { isSearch, page } = parseSearchParams(history.location);
 
     const [esMailStatus, setESMailStatus] = useState<ESDBStatusMail>(defaultESMailStatus);
@@ -65,7 +62,6 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         api,
         user,
         welcomeFlags,
-        getESFeature,
         updateSpotlightES,
         history,
     });
