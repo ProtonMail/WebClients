@@ -23,9 +23,9 @@
 		}
 
 		/*
-        * Here we are optimizing the loading of the big background image
-        * depending on viewport width and orientation
-        */
+			* Here we are optimizing the loading of the big background image
+			* depending on viewport width and orientation
+			*/
 
 		@media (orientation: landscape)
             and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
@@ -86,11 +86,11 @@
 		background-color: white;
 		border-radius: var(--border-radius-lg);
 
-		min-height: 300px;
+		min-height: rem(300);
 		height: 65vh;
 
 		&-small {
-			max-width: 500px;
+			max-width: rem(500);
 			height: auto;
 		}
 
