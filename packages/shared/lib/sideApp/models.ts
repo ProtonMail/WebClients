@@ -1,9 +1,15 @@
 import { ThemeTypes } from '../themes/themes';
+import { User as tsUser } from '../interfaces';
 
 export enum SIDE_APP_EVENTS {
     // Global inside iframe events
     SIDE_APP_CLOSE = 'close',
     SIDE_APP_SWITCH = 'switch',
+    SIDE_APP_READY = 'ready',
+    SIDE_APP_SESSION = 'session',
+    SIDE_APP_API_REQUEST = 'api-request',
+    SIDE_APP_API_RESPONSE = 'api-response',
+    SIDE_APP_ABORT_REQUEST = 'api-request-abort',
 
     // Global outside iframe events
     SIDE_APP_CLOSE_FROM_OUTSIDE = 'outside-close',
@@ -39,6 +45,45 @@ interface SWITCH {
         url: string;
         app: string;
         nextUrl?: string;
+    };
+}
+
+interface READY {
+    type: SIDE_APP_EVENTS.SIDE_APP_READY;
+}
+
+interface SESSION {
+    type: SIDE_APP_EVENTS.SIDE_APP_SESSION;
+    payload: {
+        UID: string;
+        keyPassword?: string;
+        User: tsUser;
+        persistent: boolean;
+    };
+}
+
+interface API_REQUEST {
+    type: SIDE_APP_EVENTS.SIDE_APP_API_REQUEST;
+    payload: {
+        id: string;
+        arg: object;
+        hasAbortController?: boolean;
+    };
+}
+
+interface API_RESPONSE {
+    type: SIDE_APP_EVENTS.SIDE_APP_API_RESPONSE;
+    payload: {
+        id: string;
+        success: boolean;
+        data: any;
+    };
+}
+
+interface API_ABORT_REQUEST {
+    type: SIDE_APP_EVENTS.SIDE_APP_ABORT_REQUEST;
+    payload: {
+        id: string;
     };
 }
 
@@ -115,6 +160,11 @@ interface REFRESH_WIDGET {
 export type SIDE_APP_ACTION =
     | CLOSE
     | SWITCH
+    | READY
+    | SESSION
+    | API_REQUEST
+    | API_RESPONSE
+    | API_ABORT_REQUEST
     | CLOSE_OUTSIDE
     | SWITCH_OUTSIDE
     | CALL_EVENT_MANAGER_OUTSIDE
