@@ -63,11 +63,17 @@ export const toText = (html: string, convertImages = false) => {
         },
     } as TurndownService.Rule;
 
+    const removeHiddenTags = {
+        filter: (node: HTMLElement) => node.style.display === 'none' || node.style.visibility === 'hidden',
+        replacement: () => '',
+    } as TurndownService.Rule;
+
     turndownService.use([
         () => turndownService.addRule('replaceAnchor', replaceAnchor),
         () => turndownService.addRule('replaceDiv', replaceDiv),
         () => turndownService.addRule('replaceImg', replaceImg),
         () => turndownService.addRule('replaceBreakLine', replaceBreakLine),
+        () => turndownService.addRule('removeHiddenTags', removeHiddenTags),
     ]);
 
     /**
