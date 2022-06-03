@@ -94,7 +94,6 @@ export const registerFeatureFlagsApiMock = () => {
 };
 
 export const registerMinimalFlags = () => {
-    setFeatureFlags(FeatureCode.EnabledEncryptedSearch, true);
     setFeatureFlags(FeatureCode.SpotlightEncryptedSearch, false);
 };
 

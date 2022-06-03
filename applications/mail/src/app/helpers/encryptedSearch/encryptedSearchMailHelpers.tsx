@@ -34,7 +34,6 @@ interface Props {
     api: Api;
     user: UserModel;
     welcomeFlags: WelcomeFlagsState;
-    getESFeature: <V = any>() => Promise<Feature<V>>;
     updateSpotlightES: <V = any>(value: V) => Promise<Feature<V>>;
     history: History;
 }
@@ -48,7 +47,6 @@ export const getESHelpers = ({
     api,
     user,
     welcomeFlags,
-    getESFeature,
     updateSpotlightES,
     history,
 }: Props): ESHelpers<Message, ESMessage, NormalizedSearchParams, ESItemChangesMail, StoredCiphertext> => {
@@ -226,14 +224,7 @@ export const getESHelpers = ({
 
     const indexNewUser = async () => {
         try {
-            const esFeature = await getESFeature();
-            if (
-                welcomeFlags.isWelcomeFlow &&
-                !isMobile() &&
-                !!esFeature.Value &&
-                !indexKeyExists(userID) &&
-                isPaid(user)
-            ) {
+            if (welcomeFlags.isWelcomeFlow && !isMobile() && !indexKeyExists(userID) && isPaid(user)) {
                 // Start indexing for new users and prevent showing the spotlight on ES to them
                 await updateSpotlightES(false);
                 return true;
