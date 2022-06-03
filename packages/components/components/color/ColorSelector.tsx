@@ -1,7 +1,7 @@
 import tinycolor from 'tinycolor2';
 
 import generateUID from '@proton/shared/lib/helpers/generateUID';
-import { ACCENT_COLORS } from '@proton/shared/lib/constants';
+import capitalize from '@proton/utils/capitalize';
 import { genAccentShades } from '@proton/colors';
 
 import useInstance from '@proton/hooks/useInstance';
@@ -11,15 +11,15 @@ interface Props {
     selected: string;
     onChange: (color: string) => void;
     className?: string;
-    colors?: string[];
+    colors: { value: string; label?: string }[];
 }
 
-const ColorSelector = ({ selected, onChange, className, colors = ACCENT_COLORS }: Props) => {
+const ColorSelector = ({ selected, onChange, className, colors }: Props) => {
     const uid = useInstance(() => generateUID('color-selector'));
 
     return (
         <ul className={classnames(['color-selector-container unstyled', className])}>
-            {colors.map((color) => {
+            {colors.map(({ value: color, label }) => {
                 const isSelected = selected?.toLowerCase() === color?.toLowerCase();
 
                 const [base, hover, selectedColor] = genAccentShades(tinycolor(color)).map((c) => c.toHexString());
@@ -34,7 +34,7 @@ const ColorSelector = ({ selected, onChange, className, colors = ACCENT_COLORS }
                                 '--color-selector-strong': hover,
                                 '--color-selector-intense': selectedColor,
                             }}
-                            title={base}
+                            title={capitalize(label) || color}
                         >
                             <input
                                 type="radio"
@@ -46,7 +46,7 @@ const ColorSelector = ({ selected, onChange, className, colors = ACCENT_COLORS }
                                 onChange={() => onChange(color)}
                                 autoFocus={isSelected}
                             />
-                            <span className="sr-only">{base}</span>
+                            <span className="sr-only">{label || color}</span>
                         </label>
                     </li>
                 );

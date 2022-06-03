@@ -15,15 +15,16 @@ interface Props {
 
 const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }: Props) => {
     const [tabIndex, setTabIndex] = useState(0);
+    const colors = FONT_COLORS.map((value) => ({ value }));
 
     const tabs = [
         {
             title: c('Info').t`Text color`,
-            content: <ColorSelector selected={fontColor} onChange={setFontColor} colors={FONT_COLORS} />,
+            content: <ColorSelector selected={fontColor} onChange={setFontColor} colors={colors} />,
         },
         {
             title: c('Info').t`Background color`,
-            content: <ColorSelector selected={bgColor} onChange={setBgColor} colors={FONT_COLORS} />,
+            content: <ColorSelector selected={bgColor} onChange={setBgColor} colors={colors} />,
         },
     ];
 
