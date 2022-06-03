@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+export const DEFAULT_TIMEOUT = 30000; // default fetch timeout
 export const RETRY_DELAY_MAX = 10; // seconds
 export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
 export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
