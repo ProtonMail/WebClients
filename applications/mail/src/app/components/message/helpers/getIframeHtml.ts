@@ -16,6 +16,10 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
      * Some infos about those `!important` values:
      * In order to compute correctly the height and avoid any kind of override
      * we had to put those inline style values with important on two divs.
+     *
+     * About this line:
+     * <div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div>
+     * Padding bottom is needed for the scrollbar
      */
     return `
       <html>
@@ -30,7 +34,7 @@ const getIframeHtml = (emailContent: string, messageHead = '', isPlainText: bool
         <div id="${MESSAGE_IFRAME_ROOT_ID}">
           <div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>
           <div style="display: flex !important; width: 100% !important;">
-          <div style="width: 100% !important">${emailContent}</div>
+          <div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div>
           </div>
           <div id="${MESSAGE_IFRAME_PRINT_FOOTER_ID}"></div>
         </div>
