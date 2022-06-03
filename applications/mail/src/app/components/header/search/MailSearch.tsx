@@ -8,7 +8,7 @@ import {
     Spotlight,
     TopNavbarListItemSearchButton,
     useAddresses,
-    useFeatures,
+    useFeature,
     useFolders,
     useLabels,
     useMailSettings,
@@ -47,16 +47,13 @@ const MailSearch = ({ breakpoints }: Props) => {
     const [, loadingLabels] = useLabels();
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
-    const [{ loading: loadingESFeature, feature: esFeature }, { loading: loadingScheduledFeature }] = useFeatures([
-        FeatureCode.EnabledEncryptedSearch,
-        FeatureCode.ScheduledSend,
-    ]);
+    const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
     const [welcomeFlags] = useWelcomeFlags();
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
     const { isDBLimited, dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
 
-    const showEncryptedSearch = !isMobile() && !!esFeature && !!esFeature.Value && !!isPaid(user);
+    const showEncryptedSearch = !isMobile() && !!isPaid(user);
 
     // Show more from inside AdvancedSearch to persist the state when the overlay is closed
     const { state: showMore, toggle: toggleShowMore } = useToggle(false);
@@ -64,12 +61,7 @@ const MailSearch = ({ breakpoints }: Props) => {
     const searchParams = extractSearchParameters(location);
 
     const loading =
-        loadingLabels ||
-        loadingFolders ||
-        loadingMailSettings ||
-        loadingAddresses ||
-        loadingESFeature ||
-        loadingScheduledFeature;
+        loadingLabels || loadingFolders || loadingMailSettings || loadingAddresses || loadingScheduledFeature;
 
     useEffect(() => {
         if (!isOpen) {
