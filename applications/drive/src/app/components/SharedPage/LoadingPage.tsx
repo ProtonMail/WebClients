@@ -10,7 +10,7 @@ interface Props {
 
 export default function LoadingPage({ stage }: Props) {
     return (
-        <SharedPageLayout small>
+        <SharedPageLayout>
             <div className="flex flex-column flex-align-items-center flex-justify-center w100 h100">
                 <CircleLoader size="large" />
                 <div className="mt2">

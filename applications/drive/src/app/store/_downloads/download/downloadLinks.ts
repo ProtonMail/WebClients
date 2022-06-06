@@ -60,15 +60,16 @@ function loadTotalSize(
         if (link.isFile) {
             return link.size;
         }
-        const folderLoader = new FolderTreeLoader();
+        const folderLoader = new FolderTreeLoader(link);
         folderLoaders.set(link.shareId + link.linkId, folderLoader);
-        return folderLoader.load(link, getChildren, onSignatureIssue);
+        return folderLoader.load(getChildren, onSignatureIssue);
     });
 
     Promise.all(sizePromises)
         .then((sizes: number[]) => {
-            const size = sizes.reduce((a, b) => a + b, 0);
-            onInit?.(size);
+            const total = sizes.reduce((a, b) => a + b, 0);
+            const linkSizes = Object.fromEntries(links.map(({ linkId }, idx) => [linkId, sizes[idx]]));
+            onInit?.(total, linkSizes);
         })
         .catch(reportError);
 }
@@ -79,6 +80,7 @@ async function* iterateAllLinks(
 ): AsyncGenerator<NestedLinkDownload> {
     for (const link of links) {
         yield {
+            rootLinkId: link.linkId,
             parentPath: [],
             ...link,
         };

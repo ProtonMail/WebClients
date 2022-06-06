@@ -1,20 +1,32 @@
 import { c } from 'ttag';
 
-import { DecryptedLink } from '../../store';
+import { DecryptedLink, useDownload } from '../../store';
 import SharedPageLayout from './SharedPageLayout';
 import SharedPageHeader from './SharedPageHeader';
+import SharedFileBrowser from './SharedFileBrowser';
 import ReportAbuseButton from './ReportAbuseButton';
 
 interface Props {
+    token: string;
     link: DecryptedLink;
 }
 
-// eslint-disable-next-line
-export default function SharedFile({ link }: Props) {
+export default function SharedFile({ token, link }: Props) {
+    const { download } = useDownload();
+
+    const onDownload = () => {
+        download([
+            {
+                ...link,
+                shareId: token,
+            },
+        ]);
+    };
+
     return (
-        <SharedPageLayout reportAbuseButton={<ReportAbuseButton linkInfo={link} />}>
-            <SharedPageHeader onDownload={() => alert('TODO')}>{c('Title').t`Download shared file`}</SharedPageHeader>
-            {link.name} / {link.size}
+        <SharedPageLayout withSidebar reportAbuseButton={<ReportAbuseButton linkInfo={link} />}>
+            <SharedPageHeader onDownload={onDownload}>{c('Title').t`Download shared file`}</SharedPageHeader>
+            <SharedFileBrowser items={[link]} />
         </SharedPageLayout>
     );
 }

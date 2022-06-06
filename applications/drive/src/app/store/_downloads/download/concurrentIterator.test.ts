@@ -17,6 +17,7 @@ jest.mock('./downloadLinkFile', () => {
 async function* generateLinks(count: number, size = 123) {
     for (let i = 0; i < count; i++) {
         yield {
+            rootLinkId: 'rootLinkId',
             isFile: true,
             size,
         } as NestedLinkDownload;
@@ -49,7 +50,7 @@ describe('ConcurrentIterator', () => {
         expect(mockDownloadLinkFile).toBeCalledTimes(callsBeforePause);
         expect(mockStart).toBeCalledTimes(callsBeforePause);
         mockDownloadLinkFile.mock.calls.forEach(([link, { onProgress, onFinish }]) => {
-            onProgress(link.size);
+            onProgress('linkId', link.size);
             onFinish();
         });
 
