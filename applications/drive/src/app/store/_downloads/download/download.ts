@@ -36,8 +36,8 @@ export default function initDownload(
     const sizePromise = new SizeTimeoutPromise(SIZE_WAIT_TIME);
     const controls = getControls(links, {
         ...callbacks,
-        onInit: (size: number) => {
-            callbacks.onInit?.(size);
+        onInit: (size: number, linkSizes) => {
+            callbacks.onInit?.(size, linkSizes);
             sizePromise.set(size);
         },
         onError: (err: any) => {

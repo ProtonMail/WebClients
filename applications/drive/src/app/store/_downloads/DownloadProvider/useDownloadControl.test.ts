@@ -65,7 +65,7 @@ describe('useDownloadControl', () => {
         const controls = { start: jest.fn(), pause: jest.fn(), resume: jest.fn(), cancel: jest.fn() };
         act(() => {
             hook.current.add('progress', controls);
-            hook.current.updateProgress('progress', FILE_CHUNK_SIZE);
+            hook.current.updateProgress('progress', 'linkId', FILE_CHUNK_SIZE);
             expect(hook.current.calculateDownloadBlockLoad()).toBe(
                 // 2 progress (one chunk done above, one and a bit to go) + 2*3 progressMulti + 100 big
                 2 + 6 + 100
@@ -85,8 +85,29 @@ describe('useDownloadControl', () => {
         const controls = { start: jest.fn(), pause: jest.fn(), resume: jest.fn(), cancel: jest.fn() };
         act(() => {
             hook.current.add('progress', controls);
-            hook.current.updateProgress('progress', FILE_CHUNK_SIZE);
+            hook.current.updateProgress('progress', 'linkId', FILE_CHUNK_SIZE);
             expect(hook.current.calculateDownloadBlockLoad()).toBe(undefined);
+        });
+    });
+
+    it('keeps link progresses', () => {
+        const { result: hook } = renderHook(() =>
+            useDownloadControl(testDownloads, mockUpdateWithCallback, mockRemoveFromQueue, mockClearQueue)
+        );
+
+        const controls = { start: jest.fn(), pause: jest.fn(), resume: jest.fn(), cancel: jest.fn() };
+        act(() => {
+            hook.current.add('progress', controls);
+            // Start some progress before we know size.
+            hook.current.updateProgress('progress', 'linkId1', 10);
+            hook.current.updateProgress('progress', 'linkId2', 20);
+            hook.current.updateLinkSizes('progress', { linkId1: 12, linkId2: 34 });
+            // Continue some progress after we know size.
+            hook.current.updateProgress('progress', 'linkId2', 5);
+            expect(hook.current.getLinksProgress()).toMatchObject({
+                linkId1: { progress: 10, total: 12 },
+                linkId2: { progress: 25, total: 34 },
+            });
         });
     });
 });

@@ -22,7 +22,7 @@ import downloadBlock from './downloadBlock';
 
 export type DownloadBlocksCallbacks = Omit<
     DownloadCallbacks,
-    'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys'
+    'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys' | 'onProgress'
 > & {
     checkFileSignatures?: (abortSignal: AbortSignal) => Promise<void>;
     getBlocks: (
@@ -41,6 +41,7 @@ export type DownloadBlocksCallbacks = Omit<
         verifiedPromise: Promise<VERIFICATION_STATUS>;
     }>;
     checkBlockSignature?: (abortSignal: AbortSignal, verifiedPromise: Promise<VERIFICATION_STATUS>) => Promise<void>;
+    onProgress?: (bytes: number) => void;
 };
 
 /**

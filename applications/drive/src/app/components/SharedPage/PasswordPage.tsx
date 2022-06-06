@@ -14,7 +14,7 @@ export default function PasswordPage({ submitPassword }: Props) {
     const [password, setPassword] = useState('');
 
     return (
-        <SharedPageLayout small>
+        <SharedPageLayout>
             <h3 className="text-center text-bold">{c('Title').t`This link is password protected`}</h3>
             <p className="text-center mt0">{c('Info').t`Please enter the password to decrypt and view content.`}</p>
             <form

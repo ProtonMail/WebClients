@@ -58,8 +58,21 @@ export type DownloadBaseCallbacks = {
 
 export type DownloadCallbacks = DownloadEventCallbacks & DownloadBaseCallbacks;
 
-export type OnInitCallback = (size: number) => void;
-type OnProgressCallback = (bytes: number) => void;
+export type OnInitCallback = (
+    size: number,
+    // linkSizes is map of link ID to its size.
+    // Currently we collect only sizes of top level items, that
+    // is exluding the whole tree of the folder item.
+    linkSizes: { [linkId: string]: number }
+) => void;
+type OnProgressCallback = (
+    // linkId for which the progress should be counted.
+    // Currently we collect only progresses of top level items,
+    // that is child of some folder will report it with top
+    // level folder link ID.
+    linkId: string,
+    bytes: number
+) => void;
 export type OnSignatureIssueCallback = (
     abortSignal: AbortSignal,
     link: LinkDownload,
