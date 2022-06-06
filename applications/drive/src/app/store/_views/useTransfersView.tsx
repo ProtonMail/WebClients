@@ -54,6 +54,10 @@ function useStats(transfers: Transfer[], getTransferProgresses: () => TransferPr
 
     return useMemo((): TransfersStats => {
         const calculateAverageSpeed = (transferId: string) => {
+            if (!statsHistory.length) {
+                return 0;
+            }
+
             let sum = 0;
 
             for (let i = 0; i < statsHistory.length; i++) {
