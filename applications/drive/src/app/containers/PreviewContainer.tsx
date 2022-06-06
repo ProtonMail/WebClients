@@ -3,6 +3,7 @@ import { RouteComponentProps, useLocation } from 'react-router-dom';
 
 import { FilePreview, NavigationControl, useModals } from '@proton/components';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import { DecryptedLink, useFileView } from '../store';
 import useActiveShare from '../hooks/drive/useActiveShare';
@@ -48,7 +49,12 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
 
     useEffect(() => {
         if (error) {
-            if (error.status === HTTP_STATUS_CODE.NOT_FOUND) {
+            if (
+                // Block not found (storage response).
+                error.status === HTTP_STATUS_CODE.NOT_FOUND ||
+                // Meta data not found (API response).
+                error.data?.Code === RESPONSE_CODE.NOT_FOUND
+            ) {
                 navigateToRoot();
             } else {
                 setError(() => {
