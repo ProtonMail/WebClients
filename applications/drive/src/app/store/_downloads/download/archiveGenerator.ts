@@ -78,7 +78,7 @@ export default class ArchiveGenerator {
         }
         if (!this.canceled) {
             await Promise.all(promises).then(() => {
-                this.writer.close();
+                void this.writer.close();
             });
         }
     }
@@ -133,6 +133,6 @@ export default class ArchiveGenerator {
     cancel() {
         this.canceled = true;
         const error = new TransferCancel({ message: `Transfer canceled` });
-        this.writer.abort(error);
+        void this.writer.abort(error);
     }
 }

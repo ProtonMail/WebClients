@@ -98,16 +98,17 @@ export default function useDownloadProvider(
         queue.updateState(nextDownload.id, TransferState.Progress);
 
         const controls = initDownload(nextDownload.meta.filename, nextDownload.links, {
-            onInit: (size: number) => {
+            onInit: (size: number, linkSizes: { [linkId: string]: number }) => {
                 // Keep the previous state for cases when the download is paused.
                 queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
+                control.updateLinkSizes(nextDownload.id, linkSizes);
 
                 if (FileSaver.isFileTooBig(size)) {
                     createModal(<DownloadIsTooBigModal onCancel={() => control.cancelDownloads(nextDownload.id)} />);
                 }
             },
-            onProgress: (increment: number) => {
-                control.updateProgress(nextDownload.id, increment);
+            onProgress: (linkId: string, increment: number) => {
+                control.updateProgress(nextDownload.id, linkId, increment);
             },
             onNetworkError: (error: any) => {
                 queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });

@@ -11,7 +11,7 @@ export default function SharedPageHeader({
 }) {
     return (
         <div className="flex flex-justify-space-between mb1">
-            <h2 className="mb0 pb0">{children}</h2>
+            <h2 className="mb0 pb0 mr1">{children}</h2>
             <Button color="norm" onClick={onDownload}>{c('Action').t`Download`}</Button>
         </div>
     );

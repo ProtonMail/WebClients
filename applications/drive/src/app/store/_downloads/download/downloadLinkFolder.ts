@@ -27,15 +27,16 @@ export default function initDownloadLinkFolder(
     link: LinkDownload,
     callbacks: DownloadCallbacks
 ): DownloadStreamControls {
-    const folderLoader = new FolderTreeLoader();
+    const folderLoader = new FolderTreeLoader(link);
     const concurrentIterator = new ConcurrentIterator();
     const archiveGenerator = new ArchiveGenerator();
 
     const start = () => {
         folderLoader
-            .load(link, callbacks.getChildren, callbacks.onSignatureIssue)
+            .load(callbacks.getChildren, callbacks.onSignatureIssue)
             .then((size) => {
-                callbacks.onInit?.(size);
+                const linkSizes = Object.fromEntries([[link.linkId, size]]);
+                callbacks.onInit?.(size, linkSizes);
             })
             .catch((err) => {
                 callbacks.onError?.(err);
@@ -72,24 +73,23 @@ export default function initDownloadLinkFolder(
  * all links with provided parent path for each of them.
  */
 export class FolderTreeLoader {
+    private rootLink: LinkDownload;
+
     private done: boolean;
 
     private links: NestedLinkDownload[];
 
     private abortController: AbortController;
 
-    constructor() {
+    constructor(link: LinkDownload) {
+        this.rootLink = link;
         this.done = false;
         this.links = [];
         this.abortController = new AbortController();
     }
 
-    async load(
-        link: LinkDownload,
-        getChildren: GetChildrenCallback,
-        onSignatureIssue?: OnSignatureIssueCallback
-    ): Promise<number> {
-        const size = await this.loadHelper(link, getChildren, onSignatureIssue);
+    async load(getChildren: GetChildrenCallback, onSignatureIssue?: OnSignatureIssueCallback): Promise<number> {
+        const size = await this.loadHelper(this.rootLink, getChildren, onSignatureIssue);
         this.done = true;
         return size;
     }
@@ -118,6 +118,7 @@ export class FolderTreeLoader {
         this.links = [
             ...this.links,
             ...children.map((link) => ({
+                rootLinkId: this.rootLink.linkId,
                 parentPath: parent,
                 isFile: link.isFile,
                 shareId,

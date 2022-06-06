@@ -28,7 +28,7 @@ const App = () => {
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
-                        <div className="ui-prominent h100v">
+                        <div className="h100v">
                             <PublicSharedLinkContainer />
                         </div>
                     </StandardPublicApp>

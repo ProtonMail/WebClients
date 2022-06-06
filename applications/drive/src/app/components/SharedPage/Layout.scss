@@ -9,10 +9,6 @@
 			margin-inline: 1em;
 			margin-block: 1em;
 		}
-
-		.logo-text-proton {
-			fill: black;
-		}
 	}
 
 	&-bg {
@@ -23,9 +19,9 @@
 		}
 
 		/*
-			* Here we are optimizing the loading of the big background image
-			* depending on viewport width and orientation
-			*/
+        * Here we are optimizing the loading of the big background image
+        * depending on viewport width and orientation
+        */
 
 		@media (orientation: landscape)
             and (min-width: #{em($breakpoint-tiny + 1, $root-default-font-size)})
@@ -77,33 +73,44 @@
 	&-footer {
 		color: black;
 
-		max-width: 1000px;
-		width: 90vw;
+		width: 95vw;
+		max-width: rem(1000);
 		margin: em(5) auto;
 	}
 
 	&-container {
+		// Big screen has both columns in one big box.
 		background-color: white;
 		border-radius: var(--border-radius-lg);
 
-		min-height: rem(300);
+		// The container should look like a bit like a modal.
 		height: 65vh;
+		min-height: rem(300);
 
-		&-small {
-			max-width: rem(500);
+		&-without-sidebar {
 			height: auto;
+			max-width: rem(500);
 		}
 
-		padding-inline: em(44);
-		padding-block: em(24) em(44);
+		& > div {
+			padding: em(22);
+		}
 
 		@include respond-to($breakpoint-small) {
-			padding-inline: em(20);
-			padding-block-start: 0;
-		}
+			// Small screen has columns as separate boxes.
+			background-color: transparent;
+			border-radius: 0;
 
-		@include respond-to($breakpoint-tiny, 'max') {
-			padding-inline: 0;
+			// Small screen should allow long page to better fit the content.
+			height: auto;
+			min-height: auto;
+
+			& > div {
+				background-color: white;
+				border-radius: var(--border-radius-lg);
+
+				padding: em(11);
+			}
 		}
 	}
 

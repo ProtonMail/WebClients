@@ -76,7 +76,7 @@ function PublicSharedLink({ token }: { token: string }) {
     }
 
     if (link.isFile) {
-        return <SharedFilePage link={link} />;
+        return <SharedFilePage token={token} link={link} />;
     }
     return <SharedFolderPage token={token} rootLink={link} />;
 }
