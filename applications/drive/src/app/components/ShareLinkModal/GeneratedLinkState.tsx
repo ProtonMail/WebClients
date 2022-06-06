@@ -185,7 +185,12 @@ function GeneratedLinkState({
                         </div>
                     </Row>
                     <Alert className="mb1">
-                        {password ? getPasswordProtectedSharingInfoMessage(isFile) : getSharingInfoMessage(isFile)}
+                        {
+                            // Show message "protected by password" only when password is saved.
+                            customPassword
+                                ? getPasswordProtectedSharingInfoMessage(isFile)
+                                : getSharingInfoMessage(isFile)
+                        }
                     </Alert>
                     <Details
                         open={additionalSettingsExpanded}
