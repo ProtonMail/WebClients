@@ -563,11 +563,13 @@ export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`
 
 export enum PLANS {
     FREE = 'free',
+    // Old plans
     PLUS = 'plus',
     PROFESSIONAL = 'professional',
     VISIONARY = 'visionary',
     VPNBASIC = 'vpnbasic',
     VPNPLUS = 'vpnplus',
+    // New plans
     DRIVE = 'drive2022',
     DRIVE_PRO = 'drivepro2022',
     MAIL = 'mail2022',

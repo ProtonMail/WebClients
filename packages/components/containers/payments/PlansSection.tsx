@@ -10,7 +10,7 @@ import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 
 import { Button, Icon, Loader } from '../../components';
-import { useApi, useConfig, useLoading, usePlans, useSubscription, useUser } from '../../hooks';
+import { useApi, useConfig, useLoading, useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
 
 import { getDefaultSelectedProductPlans } from './subscription/SubscriptionModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
@@ -31,6 +31,7 @@ const getSearchParams = (search: string) => {
 const PlansSection = () => {
     const [loading, withLoading] = useLoading();
     const [subscription = FREE_SUBSCRIPTION, loadingSubscription] = useSubscription();
+    const [organization, loadingOrganization] = useOrganization();
     const [plans = [], loadingPlans] = usePlans();
     const [user] = useUser();
     const { APP_NAME } = useConfig();
@@ -45,7 +46,7 @@ const PlansSection = () => {
         return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription));
     });
     const [open] = useSubscriptionModal();
-
+    const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
     const currency = selectedCurrency || getCurrency(user, subscription, plans);
 
@@ -80,19 +81,19 @@ const PlansSection = () => {
     };
 
     useEffect(() => {
-        if (loadingPlans || loadingSubscription) {
+        if (isLoading) {
             return;
         }
         setCycle(subscription.Cycle || DEFAULT_CYCLE);
         setSelectedProductPlans(getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription)));
-    }, [loadingSubscription, loadingPlans]);
+    }, [isLoading, subscription, settingsApp]);
 
     // @ts-ignore
     if (subscription.isManagedByMozilla) {
         return <MozillaInfoPanel />;
     }
 
-    if (loadingSubscription || loadingPlans) {
+    if (isLoading) {
         return <Loader />;
     }
 
@@ -117,6 +118,7 @@ const PlansSection = () => {
                 onChangeCurrency={setCurrency}
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
+                organization={organization}
             />
             <Button
                 color="norm"
