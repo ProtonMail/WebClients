@@ -8,13 +8,24 @@ import broadcast, { MessageType } from '../broadcast';
 interface Props {
     redirect?: string | undefined;
     fullscreen?: boolean;
+    queryParams: URLSearchParams;
 }
 
-const SubscribeAccount = ({ redirect, fullscreen }: Props) => {
+const SubscribeAccount = ({ redirect, fullscreen, queryParams }: Props) => {
     const onceRef = useRef(false);
     const onceCloseRef = useRef(false);
     const [user] = useUser();
     const [open, loading] = useSubscriptionModal();
+    const maybeStart = queryParams.get('start');
+
+    const maybeStep = (() => {
+        if (maybeStart === 'compare') {
+            return SUBSCRIPTION_STEPS.PLAN_SELECTION;
+        }
+        if (maybeStart === 'checkout') {
+            return SUBSCRIPTION_STEPS.CHECKOUT;
+        }
+    })();
 
     const handleClose = () => {
         if (onceCloseRef.current) {
@@ -43,8 +54,9 @@ const SubscribeAccount = ({ redirect, fullscreen }: Props) => {
             return;
         }
         onceRef.current = true;
+        const defaultStep = user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION;
         open({
-            step: user.isFree ? SUBSCRIPTION_STEPS.PLAN_SELECTION : SUBSCRIPTION_STEPS.CUSTOMIZATION,
+            step: maybeStep || defaultStep,
             onClose: handleClose,
             onSuccess: handleClose,
             fullscreen,

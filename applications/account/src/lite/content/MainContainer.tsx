@@ -30,7 +30,7 @@ const MainContainer = () => {
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {action === SupportedActions.SubscribeAccount && (
                 <SubscriptionModalProvider>
-                    <SubscribeAccount redirect={redirect} fullscreen={fullscreen} />
+                    <SubscribeAccount redirect={redirect} fullscreen={fullscreen} queryParams={queryParams} />
                 </SubscriptionModalProvider>
             )}
         </>
