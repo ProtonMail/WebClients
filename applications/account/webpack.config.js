@@ -1,6 +1,8 @@
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const getConfig = require('@proton/pack/webpack.config');
 const path = require('path');
+
+const getConfig = require('@proton/pack/webpack.config');
 
 module.exports = (...env) => {
     const config = getConfig(...env);
@@ -25,12 +27,37 @@ module.exports = (...env) => {
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: path.resolve('./src/app.ejs'),
-            templateParameters: htmlPlugin.userOptions.templateParameters,
+            templateParameters: {
+                ...htmlPlugin.userOptions.templateParameters,
+                appTitle: htmlPlugin.userOptions.templateParameters.appName,
+            },
             scriptLoading: 'defer',
             excludeChunks: ['storage', 'lite'],
             inject: 'body',
         })
     );
+
+    const pages = fs.readdirSync('./src/pages');
+
+    pages.forEach((file) => {
+        const parameters = require(`./src/pages/${file}`);
+
+        const templateParameters = { ...htmlPlugin.userOptions.templateParameters, ...parameters };
+
+        config.plugins.splice(
+            htmlIndex,
+            0,
+            new HtmlWebpackPlugin({
+                filename: file.replace('.json', '.html'),
+                template: path.resolve(`./src/app.ejs`),
+                templateParameters,
+                scriptLoading: 'defer',
+                excludeChunks: ['storage', 'lite'],
+                inject: 'body',
+            })
+        );
+    });
+
     // Add another webpack plugin on top
     config.plugins.splice(
         htmlIndex,
