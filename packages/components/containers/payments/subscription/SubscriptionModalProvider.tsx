@@ -7,7 +7,7 @@ import { PLANS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../../components';
-import { usePlans, useSubscription, useUser } from '../../../hooks';
+import { useOrganization, usePlans, useSubscription, useUser } from '../../../hooks';
 
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionModal from './SubscriptionModal';
@@ -45,6 +45,7 @@ interface Props {
 
 const SubscriptionModalProvider = ({ children }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
+    const [organization, loadingOrganization] = useOrganization();
     const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const subscriptionProps = useRef<{
@@ -62,7 +63,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
     } | null>(null);
     const [modalState, setModalState, render] = useModalState({ onClose: subscriptionProps?.current?.onClose });
 
-    const loading = Boolean(loadingSubscription || loadingPlans);
+    const loading = Boolean(loadingSubscription || loadingPlans || loadingOrganization);
 
     const plansMap = toMap(plans, 'Name');
     const subscriptionPlanIDs = getPlanIDs(subscription);
@@ -100,6 +101,8 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                                 ? switchPlan({
                                       planIDs: subscriptionPlanIDs,
                                       planID: plansMap[plan].Name,
+                                      organization,
+                                      plans,
                                   })
                                 : maybePlanIDs || subscriptionPlanIDs,
                             step,

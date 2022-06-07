@@ -407,6 +407,7 @@ const SubscriptionModal = ({
                         audience={audience}
                         selectedProductPlans={selectedProductPlans}
                         onChangeSelectedProductPlans={setSelectedProductPlans}
+                        organization={organization}
                     />
                 )}
                 {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
