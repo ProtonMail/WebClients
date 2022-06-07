@@ -57,6 +57,12 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
         };
     }, [issues]);
 
+    useEffect(() => {
+        if (editorRef.current) {
+            //editorRef.current.setSize(null, 500);
+        }
+    }, [editorRef.current]);
+
     return (
         <CodeMirror
             className="border mt1"
