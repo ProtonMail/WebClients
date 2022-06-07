@@ -1,4 +1,4 @@
-import { Alignment, Direction, IEditor } from 'roosterjs-editor-types';
+import { Alignment, Direction, IEditor, FormatState } from 'roosterjs-editor-types';
 import { Optional } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
@@ -71,12 +71,17 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         toggleNumbering,
         toggleUnderline,
     } = await import(/* webpackPreload: true */ 'roosterjs');
-
-    if (!editorInstance) {
+    if (!editorInstance || editorInstance.isDisposed()) {
         return;
     }
 
-    const formatState = getFormatState(editorInstance);
+    let formatState: FormatState;
+    try {
+        formatState = getFormatState(editorInstance);
+    } catch {
+        // in tests, it can happen that the (JSDom) window is closed as the format state is being read
+        return;
+    }
 
     const config: ToolbarConfig = {
         bold: {
