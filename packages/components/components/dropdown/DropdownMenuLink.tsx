@@ -1,16 +1,19 @@
+import { ElementType } from 'react';
 import { classnames } from '../../helpers';
-import { Box, PolymorphicComponent } from '../../helpers/react-polymorphic-box';
+import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { Href } from '../link';
 
-interface DropdownMenuLinkProps {}
+interface DropdownMenuLinkOwnProps {}
+
+export type DropdownMenuLinkProps<E extends ElementType> = PolymorphicComponentProps<E, DropdownMenuLinkOwnProps>;
 
 const defaultElement = Href;
 
-const DropdownMenuLink: PolymorphicComponent<DropdownMenuLinkProps, typeof defaultElement> = ({
+const DropdownMenuLink = <E extends ElementType = typeof defaultElement>({
     className = '',
     children,
     ...rest
-}) => {
+}: DropdownMenuLinkProps<E>) => {
     return (
         <Box
             as={defaultElement}
