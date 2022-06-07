@@ -12,7 +12,7 @@ export const formatSimpleDate = (date: Date) => {
     if (isThisWeek(date)) {
         return format(date, 'EEEE', { locale: dateLocale });
     }
-    return format(date, 'PPP', { locale: dateLocale });
+    return format(date, 'PP', { locale: dateLocale });
 };
 
 export const formatFullDate = (date: Date) => format(date, 'PPPPp', { locale: dateLocale });

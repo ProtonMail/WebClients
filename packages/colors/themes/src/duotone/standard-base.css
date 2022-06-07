@@ -56,9 +56,10 @@
 	--optional-main-border-color: transparent;
 
 	--optional-email-item-read-background-color: #FAF9F7;
+    --optional-email-item-read-text-color: #474544;
 
 	--optional-email-item-selected-background-color: var(--interaction-norm-major-2);
-	--optional-email-item-selected-icon-background-color: var(--interaction-norm-major-3);
+	--optional-email-item-selected-icon-background-color: var(--primary);
 
 	/* Reset because prominent part overrides those colors */
 	--optional-mini-calendar-today-color: initial;

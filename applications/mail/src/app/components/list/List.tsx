@@ -193,13 +193,8 @@ const List = (
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
                 </h1>
-                <div
-                    className={classnames([
-                        'items-column-list-inner flex flex-nowrap flex-column relative',
-                        columnLayout && !isCompactView && 'pt0-5',
-                    ])}
-                >
-                    <div hidden>
+                <div className="items-column-list-inner opacity-on-hover-supercontainer flex flex-nowrap flex-column relative">
+                    <div>
                         <ListSettings
                             sort={sort}
                             onSort={onSort}
@@ -216,28 +211,31 @@ const List = (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (
                         <>
-                            {elements.map((element, index) => (
-                                <Item
-                                    key={element.ID}
-                                    conversationMode={conversationMode}
-                                    labelID={labelID}
-                                    loading={loading}
-                                    columnLayout={columnLayout}
-                                    elementID={elementID}
-                                    element={element}
-                                    checked={checkedIDs.includes(element.ID || '')}
-                                    onCheck={onCheckOne}
-                                    onClick={onClick}
-                                    onContextMenu={onContextMenu}
-                                    onDragStart={handleDragStart}
-                                    onDragEnd={handleDragEnd}
-                                    dragged={draggedIDs.includes(element.ID || '')}
-                                    index={index}
-                                    breakpoints={breakpoints}
-                                    onFocus={onFocus}
-                                    onBack={onBack}
-                                />
-                            ))}
+                            {/* div needed here for focus management */}
+                            <div>
+                                {elements.map((element, index) => (
+                                    <Item
+                                        key={element.ID}
+                                        conversationMode={conversationMode}
+                                        labelID={labelID}
+                                        loading={loading}
+                                        columnLayout={columnLayout}
+                                        elementID={elementID}
+                                        element={element}
+                                        checked={checkedIDs.includes(element.ID || '')}
+                                        onCheck={onCheckOne}
+                                        onClick={onClick}
+                                        onContextMenu={onContextMenu}
+                                        onDragStart={handleDragStart}
+                                        onDragEnd={handleDragEnd}
+                                        dragged={draggedIDs.includes(element.ID || '')}
+                                        index={index}
+                                        breakpoints={breakpoints}
+                                        onFocus={onFocus}
+                                        onBack={onBack}
+                                    />
+                                ))}
+                            </div>
 
                             {!loading && !(total > 1) && (
                                 <>

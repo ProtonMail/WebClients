@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { ButtonGroup, Button, Tooltip, Icon } from '@proton/components';
+import { ButtonGroup, Button, classnames, Tooltip, Icon, useLoading } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MouseEvent } from 'react';
 import { Element } from '../../models/element';
@@ -15,13 +15,17 @@ interface Props {
     element: Element; // Element of the current line
     labelID: string;
     elementID?: string; // ElementID of the currently selected element
+    className?: string;
     onBack: () => void;
+    hasStar?: boolean;
 }
 
-const ItemHoverButtons = ({ element, labelID, elementID, onBack }: Props) => {
+const ItemHoverButtons = ({ element, labelID, elementID, className, onBack, hasStar = true }: Props) => {
     const markAs = useMarkAs();
     const { moveToFolder, moveScheduledModal } = useMoveToFolder();
     const star = useStar();
+
+    const [loadingStar, withLoadingStar] = useLoading();
 
     const isUnread = testIsUnread(element, labelID);
     const isStarred = testIsStarred(element || ({} as Element));
@@ -46,13 +50,16 @@ const ItemHoverButtons = ({ element, labelID, elementID, onBack }: Props) => {
 
     const handleStar = (event: MouseEvent) => {
         event.stopPropagation();
-        void star([element], !isStarred);
+
+        if (!loadingStar) {
+            void withLoadingStar(star([element], !isStarred));
+        }
     };
 
-    const unreadIcon = isUnread ? 'envelope-open' : 'envelope-dot';
+    const unreadIcon = isUnread ? 'eye' : 'eye-slash';
     const unreadAlt = isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`;
 
-    const starIcon = isStarred ? 'star-slash' : 'star';
+    const starIcon = isStarred ? 'star-filled' : 'star';
     const starAlt = isMessage(element)
         ? isStarred
             ? c('Alt').t`Unstar message`
@@ -65,7 +72,10 @@ const ItemHoverButtons = ({ element, labelID, elementID, onBack }: Props) => {
         <>
             <ButtonGroup
                 size="small"
-                className="opacity-on-hover opacity-on-hover-no-width relative item-hover-action-buttons"
+                className={classnames([
+                    'opacity-on-hover opacity-on-hover-no-width relative item-hover-action-buttons no-mobile',
+                    className,
+                ])}
             >
                 <Tooltip title={unreadAlt}>
                     <Button icon onClick={handleMarkAs}>
@@ -82,11 +92,17 @@ const ItemHoverButtons = ({ element, labelID, elementID, onBack }: Props) => {
                         <Icon name="trash" alt={c('Action').t`Move to trash`} />
                     </Button>
                 </Tooltip>
-                <Tooltip title={starAlt}>
-                    <Button icon onClick={handleStar}>
-                        <Icon name={starIcon} alt={starAlt} />
-                    </Button>
-                </Tooltip>
+                {hasStar && (
+                    <Tooltip title={starAlt}>
+                        <Button
+                            icon
+                            onClick={handleStar}
+                            className={classnames(['starbutton item-star', isStarred && 'starbutton--is-starred'])}
+                        >
+                            <Icon name={starIcon} alt={starAlt} />
+                        </Button>
+                    </Tooltip>
+                )}
             </ButtonGroup>
             {moveScheduledModal}
         </>
