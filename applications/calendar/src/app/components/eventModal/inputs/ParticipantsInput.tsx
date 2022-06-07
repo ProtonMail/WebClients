@@ -9,7 +9,7 @@ import {
 import { Address, Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import { memo, useMemo, useRef } from 'react';
-import { AddressesAutocomplete, Alert, Details, Summary } from '@proton/components';
+import { AddressesAutocompleteTwo, Alert, Details, Summary } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { AttendeeModel, EventModel } from '@proton/shared/lib/interfaces/calendar';
 import { emailToAttendee } from '@proton/shared/lib/calendar/attendees';
@@ -132,7 +132,7 @@ const ParticipantsInput = ({
 
     return (
         <>
-            <AddressesAutocomplete
+            <AddressesAutocompleteTwo
                 hasAddOnBlur
                 className={className}
                 placeholder={placeholder}
@@ -149,8 +149,8 @@ const ParticipantsInput = ({
                 onAddInvalidEmail={() => {
                     setParticipantError?.(true);
                 }}
-                onChange={(event) => {
-                    if (!event.currentTarget.value.trimStart()) {
+                onChange={(value) => {
+                    if (!value.trimStart()) {
                         setParticipantError?.(false);
                     }
                 }}
