@@ -13,7 +13,7 @@ export type ModalSize = 'small' | 'medium' | 'large' | 'full';
 
 /**
  * Omission of id from ModalOwnProps because in ModalOwnProps "id"
- * is optional, wheveas in ModalContextValue it is guaranteed.
+ * is optional, whereas in ModalContextValue it is guaranteed.
  * Same for size.
  */
 type ModalContextValue = ModalOwnProps & { id: string; size: ModalSize };

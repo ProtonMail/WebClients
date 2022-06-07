@@ -12,22 +12,25 @@ import ThemesModal from '../themes/ThemesModal';
 import EarlyAccessModal from '../earlyAccess/EarlyAccessModal';
 import { useTheme } from '../themes';
 
-const TopNavbarListItemSettingsButton = forwardRef(
-    (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
-        return (
-            <TopNavbarListItemButton
-                {...props}
-                ref={ref}
-                type="button"
-                as="button"
-                data-test-id="view:general-settings"
-                icon={<Icon name="cog-wheel" />}
-                text={c('Text').t`Settings`}
-                title={c('Title').t`Open settings menu`}
-            />
-        );
-    }
-);
+const TopNavbarListItemSettingsButtonBase = (
+    props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>,
+    ref: typeof props.ref
+) => {
+    return (
+        <TopNavbarListItemButton
+            {...props}
+            ref={ref}
+            type="button"
+            as="button"
+            data-test-id="view:general-settings"
+            icon={<Icon name="cog-wheel" />}
+            text={c('Text').t`Settings`}
+            title={c('Title').t`Open settings menu`}
+        />
+    );
+};
+
+const TopNavbarListItemSettingsButton = forwardRef(TopNavbarListItemSettingsButtonBase);
 
 interface Props extends ComponentPropsWithoutRef<typeof AppLink> {
     children?: React.ReactNode;
