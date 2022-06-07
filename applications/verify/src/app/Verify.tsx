@@ -17,7 +17,7 @@ import {
     useApi,
     useInstance,
     useNotifications,
-    useTheme,
+    useThemeQueryParameter,
 } from '@proton/components';
 
 import broadcast, { MessageType } from './broadcast';
@@ -34,9 +34,6 @@ const parseSearch = (search: string) =>
             if (key === 'methods') {
                 return [key, value.split(',')];
             }
-            if (key === 'theme') {
-                return [key, Number(value)];
-            }
             return [key, value];
         })
     );
@@ -45,14 +42,13 @@ const Verify = () => {
     const [step, setStep] = useState(HumanVerificationSteps.ENTER_DESTINATION);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
-    const [, setTheme] = useTheme();
     const api = useApi();
     const { createNotification } = useNotifications();
     const location = useLocation();
-
+    const theme = useThemeQueryParameter();
+    
     const search = parseSearch(location.search) as VerificationSearchParameters;
-
-    const { methods, embed, theme, locale, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
+    const { methods, embed, locale, token, vpn, defaultCountry, defaultEmail, defaultPhone } = search;
 
     const isEmbedded = windowIsEmbedded || embed;
 
@@ -69,10 +65,6 @@ const Verify = () => {
     };
 
     useEffect(() => {
-        if (theme) {
-            setTheme(theme);
-        }
-
         const browserLocale = getBrowserLocale();
 
         const localeCode = getClosestLocaleMatch(locale || '', locales) || getClosestLocaleCode(browserLocale, locales);
