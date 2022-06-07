@@ -1,28 +1,20 @@
-import { useState, useEffect, useCallback, useMemo } from 'react';
-import isTruthy from '@proton/utils/isTruthy';
+import { useCallback, useEffect, useState } from 'react';
+import { BrowserItemId } from '../interface';
 
-type ItemId = string | number;
-
-export interface Item<T> {
-    id: string | number;
-    data: T;
-    disabled?: boolean;
-}
-
-const useSelection = <T>(items: Item<T>[]) => {
-    const [selectedItemIds, setSelectedItems] = useState<ItemId[]>([]);
-    const [multiSelectStartId, setMultiSelectStartId] = useState<ItemId>();
+export function useSelectionControls({ itemIds }: { itemIds: string[] }) {
+    const [selectedItemIds, setSelectedItems] = useState<BrowserItemId[]>([]);
+    const [multiSelectStartId, setMultiSelectStartId] = useState<BrowserItemId>();
 
     useEffect(() => {
-        const isItemInFolder = (itemId: ItemId) => items.some((item) => item.id === itemId);
+        const isItemInFolder = (itemId: BrowserItemId) => itemIds.some((folderItemIds) => folderItemIds === itemId);
         const selected = selectedItemIds.filter(isItemInFolder);
         // If selected items were removed from children, remove them from selected as well
         if (selectedItemIds.length !== selected.length) {
             setSelectedItems(selected);
         }
-    }, [items]);
+    }, [itemIds]);
 
-    const toggleSelectItem = useCallback((id: ItemId) => {
+    const toggleSelectItem = useCallback((id: BrowserItemId) => {
         setSelectedItems((selectedItemIds) => {
             const previousExcludingSelected = selectedItemIds.filter((itemId) => itemId !== id);
             const isPreviouslySelected = previousExcludingSelected.length !== selectedItemIds.length;
@@ -38,25 +30,25 @@ const useSelection = <T>(items: Item<T>[]) => {
     }, []);
 
     const toggleAllSelected = useCallback(() => {
-        setSelectedItems((ids) => (ids.length === items.length ? [] : items.map(({ id }) => id)));
+        setSelectedItems((ids) => (ids.length === itemIds.length ? [] : [...itemIds]));
         setMultiSelectStartId(undefined);
-    }, [items]);
+    }, [itemIds]);
 
     const toggleRange = useCallback(
-        (selectedItemId: ItemId) => {
-            // range between item matching selectedItemId and multiSelectStartId
+        (selectedBrowserItemId: BrowserItemId) => {
+            // range between item matching selectedBrowserItemId and multiSelectStartId
 
             if (!multiSelectStartId) {
-                setMultiSelectStartId(selectedItemId);
-                setSelectedItems([selectedItemId]);
+                setMultiSelectStartId(selectedBrowserItemId);
+                setSelectedItems([selectedBrowserItemId]);
                 return;
             }
 
-            const selected: ItemId[] = [];
+            const selected: BrowserItemId[] = [];
             let i = 0;
-            let matchConditions = [multiSelectStartId, selectedItemId];
+            let matchConditions = [multiSelectStartId, selectedBrowserItemId];
             while (matchConditions.length) {
-                const { id } = items[i];
+                const id = itemIds[i];
                 if (matchConditions.includes(id)) {
                     matchConditions = matchConditions.filter((itemId) => itemId !== id);
                     selected.push(id);
@@ -68,38 +60,34 @@ const useSelection = <T>(items: Item<T>[]) => {
 
             setSelectedItems(selected);
         },
-        [items, multiSelectStartId]
+        [itemIds, multiSelectStartId]
     );
 
-    const selectItem = useCallback((id: ItemId) => {
-        setSelectedItems([id]);
-        setMultiSelectStartId(id);
-    }, []);
+    const selectItem = useCallback(
+        (id: BrowserItemId) => {
+            // preventing same simple selection from happening to avoid re-rendering
+            if (selectedItemIds.length !== 1 || selectedItemIds[0] !== id) {
+                setSelectedItems([id]);
+            }
+            setMultiSelectStartId(id);
+        },
+        [selectedItemIds]
+    );
 
     const clearSelections = useCallback(() => {
         setSelectedItems([]);
         setMultiSelectStartId(undefined);
     }, []);
 
-    const selectedItems = useMemo(
-        () =>
-            items
-                ? selectedItemIds
-                      .map((selectedId) => items.find(({ id, disabled }) => !disabled && selectedId === id))
-                      .filter(isTruthy)
-                      .map(({ data }) => data)
-                : [],
-        [items, selectedItemIds]
-    );
+    const isSelected = (linkId: string) => selectedItemIds.some((id) => id === linkId);
 
     return {
+        selectedItemIds,
         toggleSelectItem,
         toggleAllSelected,
         selectItem,
-        selectedItems,
         clearSelections,
         toggleRange,
+        isSelected,
     };
-};
-
-export default useSelection;
+}

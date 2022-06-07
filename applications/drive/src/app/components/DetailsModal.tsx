@@ -1,20 +1,24 @@
 import { ReactNode } from 'react';
 import { c } from 'ttag';
 
-import { Alert, Row, ModalTwo, ModalTwoFooter, Button, ModalTwoContent, ModalTwoHeader } from '@proton/components';
+import {
+    Alert,
+    Row,
+    ModalTwo,
+    ModalTwoFooter,
+    Button,
+    ModalTwoContent,
+    ModalTwoHeader,
+    FileNameDisplay,
+} from '@proton/components';
 
 import { useLinkDetailsView } from '../store';
 import { formatAccessCount } from '../utils/formatters';
-import UserNameCell from './FileBrowser/ListView/Cells/UserNameCell';
-import LocationCell from './FileBrowser/ListView/Cells/LocationCell';
-import DescriptiveTypeCell from './FileBrowser/ListView/Cells/DescriptiveTypeCell';
-import TimeCell from './FileBrowser/ListView/Cells/TimeCell';
-import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
-import NameCell from './FileBrowser/ListView/Cells/NameCell';
-import MIMETypeCell from './FileBrowser/ListView/Cells/MIMETypeCell';
+import { Cells } from './FileBrowser';
 import ModalContentLoader from './ModalContentLoader';
 import SignatureAlert from './SignatureAlert';
 
+const { UserNameCell, LocationCell, TimeCell, DescriptiveTypeCell, MimeTypeCell, SizeCell } = Cells;
 interface Props {
     shareId: string;
     linkId: string;
@@ -63,7 +67,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                     className="mb1"
                 />
                 <DetailsRow label={c('Title').t`Name`}>
-                    <NameCell name={link.name} />
+                    <FileNameDisplay text={link.name} />
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Uploaded by`}>
                     <UserNameCell />
@@ -83,7 +87,7 @@ export default function DetailsModal({ shareId, linkId, onClose, open }: Props) 
                             <DescriptiveTypeCell mimeType={link.mimeType} isFile={link.isFile} />
                         </DetailsRow>
                         <DetailsRow label={c('Title').t`MIME type`}>
-                            <MIMETypeCell mimeType={link.mimeType} />
+                            <MimeTypeCell mimeType={link.mimeType} />
                         </DetailsRow>
                         <DetailsRow label={c('Title').t`Size`}>
                             <SizeCell size={link.size} />

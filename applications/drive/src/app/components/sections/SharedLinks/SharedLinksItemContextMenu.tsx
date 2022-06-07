@@ -8,13 +8,7 @@ import { ContextMenuProps } from '../../FileBrowser/interface';
 import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
 import { StopSharingButton } from './ContextMenuButtons';
 
-export default function generateSharedLinksItemContextMenu(shareId: string, selectedLinks: DecryptedLink[]) {
-    return function SharedLinksItemContextMenuWrapper(props: ContextMenuProps) {
-        return <SharedLinksItemContextMenu shareId={shareId} selectedLinks={selectedLinks} {...props} />;
-    };
-}
-
-function SharedLinksItemContextMenu({
+export function SharedLinksItemContextMenu({
     shareId,
     selectedLinks,
     anchorRef,
@@ -44,7 +38,7 @@ function SharedLinksItemContextMenu({
 
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} link={selectedLink} close={close} />}
+            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
             {isOnlyOneItem && <RenameButton shareId={shareId} link={selectedLink} close={close} />}
             <DetailsButton shareId={shareId} linkIds={selectedLinkIds} close={close} />

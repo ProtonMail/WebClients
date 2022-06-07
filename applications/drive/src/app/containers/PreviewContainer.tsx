@@ -116,7 +116,9 @@ export default function PreviewContainer({ match }: RouteComponentProps<{ shareI
             return;
         }
 
-        return <SignatureIcon item={link} className="ml0-5 color-danger" />;
+        return (
+            <SignatureIcon isFile={link.isFile} signatureIssues={link.signatureIssues} className="ml0-5 color-danger" />
+        );
     }, [link]);
 
     const signatureConfirmation = useMemo(() => {

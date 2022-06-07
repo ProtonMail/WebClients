@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
 
-import { DecryptedLink } from '../../../store';
 import { ContextMenuProps } from '../../FileBrowser/interface';
 import {
     DetailsButton,
@@ -14,14 +13,9 @@ import {
     ShareLinkButton,
 } from '../ContextMenu';
 import { MoveToFolderButton, MoveToTrashButton } from './ContextMenuButtons';
+import { DecryptedLink } from '../../../store';
 
-export default function generateDriveItemContextMenu(shareId: string, selectedLinks: DecryptedLink[]) {
-    return function DriveItemContextMenuWrapper(props: ContextMenuProps) {
-        return <DriveItemContextMenu shareId={shareId} selectedLinks={selectedLinks} {...props} />;
-    };
-}
-
-export function DriveItemContextMenu({
+export function ItemContextMenu({
     shareId,
     selectedLinks,
     anchorRef,
@@ -50,7 +44,7 @@ export function DriveItemContextMenu({
 
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} noMaxHeight anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} link={selectedLink} close={close} />}
+            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             {hasPreviewAvailable && <ContextSeparator />}
             <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
             {hasLink && <CopyLinkButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}

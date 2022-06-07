@@ -1,7 +1,7 @@
 import React from 'react';
 import { FileIcon, FileNameDisplay, classnames } from '@proton/components';
 
-import SizeCell from '../FileBrowser/ListView/Cells/SizeCell';
+import { Cells } from '../FileBrowser';
 import { LinkInfo } from './types';
 
 interface Props {
@@ -29,7 +29,7 @@ export const FileCard = ({ linkInfo, className }: Props) => {
                 <div className="text-bold mw100 flex w100">
                     <FileNameDisplay text={linkInfo.name} />
                 </div>
-                {linkInfo.mimeType !== 'Folder' && <SizeCell size={linkInfo.size} />}
+                {linkInfo.mimeType !== 'Folder' && <Cells.SizeCell size={linkInfo.size} />}
             </div>
         </div>
     );

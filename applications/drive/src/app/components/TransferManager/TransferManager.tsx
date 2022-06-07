@@ -18,7 +18,7 @@ import useConfirm from '../../hooks/util/useConfirm';
 import { useTransfersView } from '../../store';
 import { Download, STATE_TO_GROUP_MAP, TransferGroup, TransferType, TransfersStats, Upload } from './transfer';
 import Header from './Header';
-import Transfer from './Transfer';
+import Transfer from './TransferItem';
 import HeaderButtons from './HeaderButtons';
 
 interface TransferListEntry<T extends TransferType> {

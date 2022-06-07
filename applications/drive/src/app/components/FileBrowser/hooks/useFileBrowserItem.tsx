@@ -1,0 +1,143 @@
+import { useRef, useCallback } from 'react';
+
+import { BrowserItemId, DragMoveControls } from '../interface';
+import { useSelection } from '../state/useSelection';
+
+const DOUBLE_CLICK_MS = 500;
+
+interface Options {
+    id: BrowserItemId;
+    isItemLocked?: boolean;
+    onItemOpen?: (id: BrowserItemId) => void;
+    dragMoveControls?: DragMoveControls;
+    onItemContextMenu?: (e: React.MouseEvent<HTMLElement, MouseEvent>) => void;
+}
+
+function useFileBrowserItem({
+    id,
+    isItemLocked,
+    onItemContextMenu,
+
+    onItemOpen,
+}: Options) {
+    const selection = useSelection();
+
+    // Timer for click and double click detection.
+    const clickTimerIdRef = useRef<NodeJS.Timeout | undefined>(undefined);
+    const touchStarted = useRef(false);
+
+    const isSelected = selection ? selection.selectedItemIds.some((selectedItemId) => selectedItemId === id) : false;
+    const unlessDisabled = <A extends any[], R>(fn?: (...args: A) => R) => (isItemLocked ? undefined : fn);
+
+    const handleClick = unlessDisabled(
+        useCallback(
+            (e: React.MouseEvent<HTMLDivElement>) => {
+                e.stopPropagation();
+                if (clickTimerIdRef.current) {
+                    clearTimeout(clickTimerIdRef.current);
+                    clickTimerIdRef.current = undefined;
+                    if (id) {
+                        onItemOpen?.(id);
+                    }
+                } else {
+                    // We do selection right away, not in timeout, because then
+                    // would app look like slow. There is no harm to select
+                    // items right away even if we navigate to different folder
+                    // or show file preview in few miliseconds.
+                    if (!id) {
+                        return;
+                    }
+                    if (e.shiftKey) {
+                        selection?.toggleRange(id);
+                    } else if (e.ctrlKey || e.metaKey) {
+                        selection?.toggleSelectItem(id);
+                    } else {
+                        selection?.selectItem(id);
+                    }
+                    clickTimerIdRef.current = setTimeout(() => {
+                        clickTimerIdRef.current = undefined;
+                    }, DOUBLE_CLICK_MS);
+                }
+            },
+            [selection?.toggleRange, selection?.toggleSelectItem, onItemOpen]
+        )
+    );
+
+    const handleKeyDown = unlessDisabled(
+        useCallback(
+            (e: React.KeyboardEvent<HTMLTableRowElement>) => {
+                if (e.key === ' ' || e.key === 'Enter') {
+                    onItemOpen?.(id);
+                }
+            },
+            [onItemOpen]
+        )
+    );
+
+    const handleTouchStart = unlessDisabled(
+        useCallback(
+            (e: React.TouchEvent<HTMLTableRowElement>) => {
+                e.stopPropagation();
+                touchStarted.current = true;
+            },
+            [touchStarted]
+        )
+    );
+
+    const handleTouchCancel = unlessDisabled(
+        useCallback(() => {
+            if (touchStarted.current) {
+                touchStarted.current = false;
+            }
+        }, [touchStarted])
+    );
+
+    const handleTouchEnd = unlessDisabled(
+        useCallback(
+            (e: React.TouchEvent<HTMLTableRowElement>) => {
+                if (touchStarted.current) {
+                    onItemOpen?.(id);
+                    e.preventDefault();
+                }
+                touchStarted.current = false;
+            },
+            [touchStarted, onItemOpen]
+        )
+    );
+
+    const onContextMenu = useCallback(
+        (e) => {
+            e.stopPropagation();
+
+            if (isItemLocked) {
+                return;
+            }
+            e.preventDefault();
+
+            if (!isSelected) {
+                selection?.selectItem(id);
+            }
+
+            onItemContextMenu?.(e);
+        },
+        [onItemContextMenu, selection?.selectItem, selection?.selectedItemIds]
+    );
+
+    const handleMouseDown = useCallback(() => document.getSelection()?.removeAllRanges(), []);
+
+    return {
+        isSelected,
+        itemHandlers: {
+            onTouchCancel: handleTouchCancel,
+            onTouchMove: handleTouchCancel,
+            onTouchStart: handleTouchStart,
+            onTouchEnd: handleTouchEnd,
+            onClick: handleClick,
+            onKeyDown: handleKeyDown,
+            onMouseDown: handleMouseDown,
+            onContextMenu,
+        },
+    };
+}
+
+export default useFileBrowserItem;
