@@ -55,6 +55,7 @@ interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     planIDs?: PlanIDs;
     coupon?: string | null;
     disablePlanSelection?: boolean;
+    disableThanksStep?: boolean;
     defaultAudience?: Audience;
     onSuccess?: () => void;
 }
@@ -93,6 +94,7 @@ const SubscriptionModal = ({
     onClose,
     onSuccess,
     disablePlanSelection,
+    disableThanksStep,
     defaultAudience = Audience.B2C,
     ...rest
 }: Props) => {
@@ -227,8 +229,12 @@ const SubscriptionModal = ({
                 timeout: 60000 * 2, // 2 minutes
             });
             await call();
-            onSuccess?.();
-            setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
+            if (disableThanksStep) {
+                onSuccess?.();
+                onClose?.();
+            } else {
+                setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
+            }
         } catch (error: any) {
             const { Code = 0 } = error.data || {};
 
@@ -534,7 +540,15 @@ const SubscriptionModal = ({
                         <SubscriptionUpgrade />
                     </div>
                 )}
-                {model.step === SUBSCRIPTION_STEPS.THANKS && <SubscriptionThanks method={method} onClose={onClose} />}
+                {model.step === SUBSCRIPTION_STEPS.THANKS && (
+                    <SubscriptionThanks
+                        method={method}
+                        onClose={() => {
+                            onSuccess?.();
+                            onClose?.();
+                        }}
+                    />
+                )}
             </ModalTwoContent>
             {(disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) ||
             backStep === undefined ? null : (
