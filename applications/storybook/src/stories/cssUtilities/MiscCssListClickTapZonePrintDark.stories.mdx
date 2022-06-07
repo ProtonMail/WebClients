@@ -101,7 +101,9 @@ This version below make an element with `className="opacity-on-hover"` appearing
       </div>
       <br /><br />
     Careful when using this, is appropriated for non-critical actions, and for actions related to the container (not to hide everything). If you want to use it on an element that needs to be present on mobile/touch or for a critical action, you might use  `opacity-on-hover-only-desktop` helper (this one will make it always visible when user does not have a precise pointing capability).
-
+    <br /><br />
+    As `opacity-on-hover` relies on `visibility: hidden` (so we keep space), you can use `opacity-on-hover-no-width` if you want the element NOT taking space while hidden.
+    <br /><br />
   </div>
   <div class="w49">
 <Source

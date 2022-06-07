@@ -100,10 +100,7 @@ const ContactRow = ({
                             </span>
                         </div>
                     </div>
-                    <div
-                        className="item-secondline max-w100 text-ellipsis item-sender--smaller"
-                        title={emails.join(', ')}
-                    >
+                    <div className="item-secondline max-w100 text-ellipsis text-sm" title={emails.join(', ')}>
                         {emails.length ? (
                             addPlus(emails as any)
                         ) : (

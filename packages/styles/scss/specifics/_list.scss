@@ -4,8 +4,6 @@
  * For conversations and contacts lists
  */
 
-$container-to-width: 4em !default;
-
 .items-column-list {
 	inline-size: var(--width-conversation-column, calc(100vw * #{math.div($conversations-column-width, 100%)}));
 	min-inline-size: 320px; // Subjective value
@@ -52,7 +50,7 @@ $item-container-padding-inline: em(12) !default;
 $item-container-margin-inline: em(12) !default;
 
 $item-container-height-compact-mode: rem(56) !default;
-$item-container-row-height-compact-mode: rem(40) !default;
+$item-container-row-height-compact-mode: rem(36) !default;
 
 $item-container-row-padding-block: em(6) !default; // design wants 44px
 
@@ -68,11 +66,13 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 	// no transition, otherwhise there's a flash on page loading
 	// because of theme file loading after applying default theme colors
 
-	&::after {
+	&::after,
+	&-wrapper::after {
 		content: '';
 		position: absolute;
 		inset: 0;
 		inset-inline-start: -$item-container-margin-inline;
+		inset-block-end: 1px;
 		z-index: 1;
 		pointer-events: none;
 		transition: 0.15s easing(easeOutQuart);
@@ -83,7 +83,8 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 		outline: none;
 	}
 
-	&.read {
+	&.read,
+	&-wrapper.read {
 		background-color: var(--email-item-read-background-color);
 		color: var(--email-item-read-text-color);
 
@@ -111,6 +112,10 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 			background-color: var(--email-item-unread-icon-background-color);
 			color: var(--email-item-unread-icon-text-color);
 		}
+	}
+
+	&-wrapper:hover::after {
+		box-shadow: var(--shadow-norm);
 	}
 
 	&:focus::after,
@@ -182,12 +187,19 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 
 	.item-weight {
 		min-inline-size: 5em;
+		@include respond-to(1200) {
+			display: none;
+		}
+	}
+
+	.item-senders {
+		inline-size: rem(200);
+		color: var(--text-norm);
+		@include respond-to($breakpoint-medium-landscape) {
+			inline-size: rem(128);
+		}
 	}
 }
-
-// .item-container {
-// 	min-block-size: $item-container-height;
-// }
 
 .item-checkbox-label {
 	.item-checkbox {
@@ -225,19 +237,12 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 	inset-inline-start: rem(6); // magic number to get perfect hover :D
 }
 
+/* Comfortable view */
+// .is-comfortable {
+
+// }
+
 /* Compact view */
-.is-shown-when-compact {
-	display: none;
-}
-
-.item-senddate-col {
-	font-size: em(12);
-}
-
-.item-subject {
-	font-size: em(13);
-}
-
 .item-icon-compact {
 	inline-size: rem($conversation-icon-size);
 	block-size: rem($conversation-icon-size);
@@ -276,11 +281,25 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 		}
 	}
 
+	.item-container {
+		border-block-end: 1px solid var(--border-weak);
+
+		// center hover action vertically, did this to keep more space available for content
+		&:hover,
+		&:focus-within {
+			.item-hover-action-buttons {
+				margin-block-start: -1.5em;
+			}
+		}
+	}
+
 	.item-container-row {
 		block-size: $item-container-row-height-compact-mode;
 		scroll-margin-block-start: $item-container-row-height-compact-mode;
+		padding-block: 0;
 		.item-icon-compact {
 			// margin-block-start: 0;
+			margin-block: auto;
 			&::after {
 				block-size: $item-container-row-height-compact-mode;
 			}
@@ -291,13 +310,8 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 	.item-secondline {
 		margin: 0;
 	}
-
-	.is-hidden-when-compact {
-		display: none;
-	}
-
-	.is-shown-when-compact {
-		display: flex;
+	.item-firstline-infos {
+		transform: none;
 	}
 }
 
@@ -319,7 +333,7 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 	.item-checkbox-label,
 	.item-icon-compact {
 		position: relative;
-		margin-block-end: auto;
+		margin-block: auto;
 
 		&::before {
 			content: '';
@@ -335,6 +349,9 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 		.checkbox-fakecheck {
 			opacity: 0;
 		}
+	}
+	.item-checkbox-label {
+		margin-block-start: 0;
 	}
 
 	.item-senders,
@@ -442,36 +459,4 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 			fill: var(--interaction-norm-contrast);
 		}
 	}
-}
-
-.item-sender--smaller,
-.item-date {
-	font-size: em(12);
-}
-
-// NEEDED?
-// .message-header-metas-container {
-// 	block-size: rem($conversation-icon-size);
-// }
-
-.starbutton {
-	// no focus state, only focus-visible
-	&:focus-visible,
-	&:hover,
-	&--is-starred {
-		color: var(--favorite-icon-color);
-	}
-}
-
-.pill-icon {
-	display: inline-flex;
-	padding-block: 0.125em;
-	padding-inline: 0.5em;
-	border-radius: 1em;
-	line-height: 1;
-}
-
-.number-elements {
-	height: 1rem;
-	border: 1px solid;
 }

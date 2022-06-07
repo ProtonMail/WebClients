@@ -176,25 +176,30 @@
 		width: 0;
 		transform: scale(0);
 	}
-	/*
-	 * Opacity on focus is managed in buttons focus state
-	&:focus {
-		opacity: 1;
-	}
-	*/
 
 	// Need a container to manage with focus-within
 	&-container:focus-within &,
 	&-container:focus-within &-only-desktop {
 		opacity: 1;
 	}
-	&-container:focus-within &-no-width {
+	&-container:focus-within &-no-width,
+	&-supercontainer:hover &-container:hover:focus-within &-no-width {
 		width: auto;
 		transform: scale(1);
 	}
 
 	&-container:focus-within &-hide {
 		display: none;
+	}
+
+	// trick to hide element when we click on it
+	// if supercontainer is hovered but not the element that has focus-within, we hide it
+	&-supercontainer:hover &-container:not(:hover):focus-within &-no-width {
+		width: 0;
+		transform: scale(0);
+	}
+	&-supercontainer:hover &-container:not(:hover):focus-within &-hide {
+		display: flex;
 	}
 
 	@media (hover: hover) and (pointer: fine) {

@@ -31,7 +31,6 @@ interface Props {
     unread: boolean;
     displayRecipients: boolean;
     loading: boolean;
-    mouseHover?: boolean;
     onBack: () => void;
 }
 
@@ -47,7 +46,6 @@ const ItemRowLayout = ({
     unread,
     displayRecipients,
     loading,
-    mouseHover,
     onBack,
 }: Props) => {
     const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
@@ -86,19 +84,17 @@ const ItemRowLayout = ({
 
     return (
         <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
-            <div className={classnames(['item-senders w20 flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+            <div className="mtauto mbauto flex w2e" data-testid={unread}>
+                <ItemStar element={element} />
+            </div>
+            <div className={classnames(['item-senders flex flex-nowrap mauto pr1', unread && 'text-bold'])}>
+                <ItemAction element={element} className="mr0-5 flex-item-noshrink mtauto mbauto" />
                 <span className="max-w100 text-ellipsis" title={addresses} data-testid="message-row:sender-address">
                     {sendersContent}
                 </span>
-                <ItemAction element={element} className="ml0-5 flex-item-noshrink mtauto mbauto" />
             </div>
 
             <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap mauto">
-                {showIcon && (
-                    <span className="mr0-25 inline-flex flex-item-noshrink">
-                        <ItemLocation element={element} labelID={labelID} />
-                    </span>
-                )}
                 <div className="flex flex-column inline-block">
                     <span
                         role="heading"
@@ -107,11 +103,18 @@ const ItemRowLayout = ({
                         title={Subject}
                         data-testid="message-row:subject"
                     >
-                        {subjectContent}
-
                         {conversationMode && (
-                            <NumMessages className={classnames([unread && 'text-bold'])} conversation={element} />
+                            <NumMessages
+                                className={classnames(['mr0-25', unread && 'text-bold'])}
+                                conversation={element}
+                            />
                         )}
+                        {showIcon && (
+                            <span className="mr0-25 inline-flex flex-item-noshrink">
+                                <ItemLocation element={element} labelID={labelID} />
+                            </span>
+                        )}
+                        {subjectContent}
                     </span>
 
                     {!!resultJSX && highlightData && (
@@ -143,35 +146,37 @@ const ItemRowLayout = ({
                 {!loading && size}
             </span>
 
-            {mouseHover ? (
-                <ItemHoverButtons element={element} labelID={labelID} elementID={elementID} onBack={onBack} />
-            ) : (
-                <>
-                    <span className="flex w4e ml0-5 text-center">
-                        {!!element.ExpirationTime && <ItemExpiration element={element} className="mr0-5" />}
-                        <ItemAttachmentIcon
-                            icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
-                            element={element}
-                            className="flex-item-noshrink"
-                        />
-                        <div className="mtauto mbauto flex mr0-5" data-testid={unread}>
-                            <ItemStar element={element} />
-                        </div>
-                    </span>
+            <span className="flex w3e ml0-5 text-center flex-justify-end">
+                {!!element.ExpirationTime && <ItemExpiration element={element} />}
+                <ItemAttachmentIcon
+                    icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
+                    element={element}
+                    className="flex-item-noshrink"
+                />
+            </span>
 
-                    <span className="item-senddate-row w13e ml1 flex flex-nowrap flex-align-items-center flex-justify-end">
-                        <ItemDate
-                            element={element}
-                            labelID={labelID}
-                            className={unread ? 'text-bold' : undefined}
-                            useTooltip
-                        />
-                    </span>
-                    <span className="flex w2e ml0-5 text-center">
+            <span className="ml1 flex w15e flex-nowrap flex-align-items-center flex-justify-end">
+                <ItemHoverButtons
+                    className="mr1"
+                    element={element}
+                    labelID={labelID}
+                    elementID={elementID}
+                    onBack={onBack}
+                    hasStar={false}
+                />
+                <span className="opacity-on-hover-hide flex flex-nowrap item-senddate-row w13e ml0-5 flex-justify-end flex-align-items-center">
+                    <ItemDate
+                        element={element}
+                        labelID={labelID}
+                        className={unread ? 'text-bold' : undefined}
+                        useTooltip
+                    />
+
+                    <span className="flex w2e ml0-5 text-center flex-align-items-center">
                         <ItemUnread element={element} labelID={labelID} className="ml0-5" />
                     </span>
-                </>
-            )}
+                </span>
+            </span>
         </div>
     );
 };
