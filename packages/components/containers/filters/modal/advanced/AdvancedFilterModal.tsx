@@ -8,6 +8,8 @@ import { FILTER_VERSION } from '../../constants';
 import { Filter, AdvancedSimpleFilterModalModel, ErrorsSieve } from '../../interfaces';
 import { sieveTemplates, convertModel } from '../../utils';
 
+import './AdvancedFilterModal.scss';
+
 import {
     useDebounceInput,
     ModalTwo,
@@ -17,7 +19,7 @@ import {
     ModalTwoFooter,
     useModalState,
     ModalProps,
-    Alert,
+    Href,
 } from '../../../../components';
 
 import {
@@ -160,6 +162,8 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
         setCloseFilterModalOpen(true);
     };
 
+    const link = <Href url={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>{c('Info').t`here`}</Href>;
+
     return (
         <>
             <ModalTwo
@@ -168,13 +172,12 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
                 onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
                 {...rest}
                 onClose={handleClose}
+                className="advanced-filter-modal"
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <Alert className="mb1" learnMore={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>
-                        {c('Info')
-                            .t`Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.`}
-                    </Alert>
+                    {c('Info')
+                        .jt`To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language ${link}.`}
                     {/*<HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />*/}
                     <FilterNameForm
                         model={model}

@@ -1,0 +1,7 @@
+@import '~@proton/styles/scss/config';
+
+.advanced-filter-modal {
+	// Special case for the Sieve editor
+	//--size: #{rem(700)};
+	height: 100%;
+}
