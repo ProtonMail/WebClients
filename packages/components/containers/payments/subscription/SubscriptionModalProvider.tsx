@@ -23,6 +23,10 @@ interface OpenCallbackProps {
     currency?: Currency;
     coupon?: string;
     disablePlanSelection?: boolean;
+    disableThanksStep?: boolean;
+    onClose?: () => void;
+    onSuccess?: () => void;
+    fullscreen?: boolean;
 }
 
 export type OpenSubscriptionModalCallback = (props: OpenCallbackProps) => void;
@@ -43,7 +47,6 @@ const SubscriptionModalProvider = ({ children }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
-    const [modalState, setModalState, render] = useModalState();
     const subscriptionProps = useRef<{
         planIDs: PlanIDs;
         defaultAudience?: Audience;
@@ -52,7 +55,12 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         cycle?: Cycle;
         coupon?: string;
         disablePlanSelection?: boolean;
+        disableThanksStep?: boolean;
+        onClose?: () => void;
+        onSuccess?: () => void;
+        fullscreen?: boolean;
     } | null>(null);
+    const [modalState, setModalState, render] = useModalState({ onClose: subscriptionProps?.current?.onClose });
 
     const loading = Boolean(loadingSubscription || loadingPlans);
 
@@ -79,6 +87,10 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         coupon,
                         defaultAudience,
                         disablePlanSelection,
+                        disableThanksStep,
+                        onClose,
+                        onSuccess,
+                        fullscreen,
                     }) => {
                         if (loading || render) {
                             return;
@@ -99,6 +111,10 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                                     ? Audience.B2B
                                     : Audience.B2C,
                             disablePlanSelection,
+                            disableThanksStep,
+                            onClose,
+                            onSuccess,
+                            fullscreen,
                         };
                         setModalState(true);
                     },
