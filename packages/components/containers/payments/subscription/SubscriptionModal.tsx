@@ -55,7 +55,9 @@ interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     planIDs?: PlanIDs;
     coupon?: string | null;
     disablePlanSelection?: boolean;
+    disableThanksStep?: boolean;
     defaultAudience?: Audience;
+    onSuccess?: () => void;
 }
 
 interface Model {
@@ -90,7 +92,9 @@ const SubscriptionModal = ({
     coupon,
     planIDs = {},
     onClose,
+    onSuccess,
     disablePlanSelection,
+    disableThanksStep,
     defaultAudience = Audience.B2C,
     ...rest
 }: Props) => {
@@ -180,6 +184,7 @@ const SubscriptionModal = ({
 
         await api(deleteSubscription());
         await call();
+        onSuccess?.();
         onClose?.();
         createNotification({ text: c('Success').t`You have successfully unsubscribed` });
     };
@@ -224,7 +229,12 @@ const SubscriptionModal = ({
                 timeout: 60000 * 2, // 2 minutes
             });
             await call();
-            setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
+            if (disableThanksStep) {
+                onSuccess?.();
+                onClose?.();
+            } else {
+                setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
+            }
         } catch (error: any) {
             const { Code = 0 } = error.data || {};
 
@@ -530,7 +540,15 @@ const SubscriptionModal = ({
                         <SubscriptionUpgrade />
                     </div>
                 )}
-                {model.step === SUBSCRIPTION_STEPS.THANKS && <SubscriptionThanks method={method} onClose={onClose} />}
+                {model.step === SUBSCRIPTION_STEPS.THANKS && (
+                    <SubscriptionThanks
+                        method={method}
+                        onClose={() => {
+                            onSuccess?.();
+                            onClose?.();
+                        }}
+                    />
+                )}
             </ModalTwoContent>
             {(disablePlanSelection && backStep === SUBSCRIPTION_STEPS.PLAN_SELECTION) ||
             backStep === undefined ? null : (
