@@ -8,7 +8,7 @@ interface Options {
 }
 
 /**
- * waitFor runs every few milisecond to check if the condition from `callback`
+ * waitFor runs every few millisecond to check if the condition from `callback`
  * is met and thus waiting time finished. The options can specify custom time
  * for how long to wait between tries, or set timeout or abortSignal.
  */
