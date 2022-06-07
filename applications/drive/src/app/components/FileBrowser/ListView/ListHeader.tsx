@@ -1,40 +1,78 @@
 import * as React from 'react';
-import { c } from 'ttag';
 
-import { TableRowSticky, TableHeaderCell, Checkbox, useActiveBreakpoint } from '@proton/components';
+import { Checkbox, TableHeaderCell, TableRowSticky } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
-import { FileBrowserItem, FileBrowserLayouts, SortParams, SortField } from '../interface';
-import { useFileBrowserColumns } from '../useFileBrowserColumns';
+import { SortParams } from '../interface';
+import { stopPropagation } from '../../../utils/stopPropagation';
+import { useSelection } from '../state/useSelection';
 
-interface Props<T extends SortField> {
-    type: FileBrowserLayouts;
-    isLoading?: boolean;
-    sortParams?: SortParams<T>;
-    setSorting?: (sortParams: SortParams<T>) => void;
-    selectedItems: FileBrowserItem[];
-    onToggleAllSelected: () => void;
-    contents: FileBrowserItem[];
+interface Props<T> {
     scrollAreaRef: React.RefObject<HTMLDivElement>;
+    sortParams?: SortParams<T>;
+    isLoading: boolean;
+    items: any[];
+    onSort?: (params: SortParams<T>) => void;
+    itemCount: number;
 }
 
-const ListHeader = <T extends SortField>({
-    type,
+export enum HeaderCellsPresets {
+    Checkbox,
+    Placeholder,
+}
+
+const HeaderCell = <T,>({
+    item,
     isLoading,
-    setSorting,
     sortParams,
-    contents,
-    selectedItems,
-    onToggleAllSelected,
-    scrollAreaRef,
-}: Props<T>) => {
-    const { isDesktop } = useActiveBreakpoint();
-    const columns = useFileBrowserColumns(type);
+    itemCount,
+    onSort,
+}: {
+    item: any;
+    isLoading: boolean;
+    itemCount: number;
+    onSort: (key: T) => void;
+    sortParams?: SortParams<T>;
+}) => {
+    const selectionControls = useSelection();
+    if (item.type === HeaderCellsPresets.Checkbox && selectionControls) {
+        const allSelected = Boolean(itemCount && itemCount === selectionControls.selectedItemIds.length);
 
-    const canSort = (fn?: () => void) => (setSorting ? fn : undefined);
+        return (
+            <TableHeaderCell>
+                <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
+                    <Checkbox
+                        className="increase-click-surface"
+                        disabled={!itemCount}
+                        checked={allSelected}
+                        onChange={selectionControls.toggleAllSelected}
+                    />
+                </div>
+            </TableHeaderCell>
+        );
+    }
 
-    const handleSort = (key: SortField) => {
-        if (!sortParams || !setSorting) {
+    if (item.type === HeaderCellsPresets.Placeholder) {
+        return <TableHeaderCell className="file-browser-list--icon-column" />;
+    }
+
+    const getSortDirectionForKey = (key: T) => (sortParams?.sortField === key ? sortParams.sortOrder : undefined);
+
+    return (
+        <TableHeaderCell
+            className={item.props?.className}
+            direction={getSortDirectionForKey(item.type)}
+            onSort={item.sorting ? () => onSort?.(item.type) : undefined}
+            isLoading={isLoading && sortParams?.sortField === item.type}
+        >
+            {item.text}
+        </TableHeaderCell>
+    );
+};
+
+const ListHeader = <T,>({ scrollAreaRef, items, sortParams, isLoading, itemCount, onSort }: Props<T>) => {
+    const handleSort = (key: T) => {
+        if (!sortParams || !onSort) {
             return;
         }
 
@@ -43,103 +81,22 @@ const ListHeader = <T extends SortField>({
                 ? SORT_DIRECTION.DESC
                 : SORT_DIRECTION.ASC;
 
-        setSorting({ sortField: key as T, sortOrder: direction });
+        onSort({ sortField: key, sortOrder: direction });
     };
-
-    const getSortDirectionForKey = (key: SortField) =>
-        sortParams?.sortField === key ? sortParams.sortOrder : undefined;
-
-    const allSelected = !!contents.length && contents.length === selectedItems.length;
 
     return (
         <thead onContextMenu={(e) => e.stopPropagation()}>
             <TableRowSticky scrollAreaRef={scrollAreaRef}>
-                <TableHeaderCell>
-                    <div role="presentation" key="select-all" className="flex" onClick={(e) => e.stopPropagation()}>
-                        <Checkbox
-                            className="increase-click-surface"
-                            disabled={!contents.length}
-                            checked={allSelected}
-                            onChange={onToggleAllSelected}
-                        />
-                    </div>
-                </TableHeaderCell>
-                <TableHeaderCell
-                    onSort={canSort(() => handleSort('name'))}
-                    direction={getSortDirectionForKey('name')}
-                    isLoading={isLoading && sortParams?.sortField === 'name'}
-                >
-                    {c('TableHeader').t`Name`}
-                </TableHeaderCell>
-                {(columns.includes('location') || columns.includes('original_location')) && (
-                    <TableHeaderCell className={isDesktop ? 'w20' : 'w25'}>{c('TableHeader')
-                        .t`Location`}</TableHeaderCell>
-                )}
-                {columns.includes('uploaded') && (
-                    <TableHeaderCell className="w15">{c('TableHeader').t`Uploaded`}</TableHeaderCell>
-                )}
-                {columns.includes('modified') && (
-                    <TableHeaderCell
-                        className="w15"
-                        direction={getSortDirectionForKey('fileModifyTime')}
-                        onSort={canSort(() => handleSort('fileModifyTime'))}
-                        isLoading={isLoading && sortParams?.sortField === 'fileModifyTime'}
-                    >
-                        {c('TableHeader').t`Modified`}
-                    </TableHeaderCell>
-                )}
-                {columns.includes('trashed') && (
-                    <TableHeaderCell
-                        className="w25"
-                        direction={getSortDirectionForKey('trashed')}
-                        onSort={canSort(() => handleSort('trashed'))}
-                        isLoading={isLoading && sortParams?.sortField === 'trashed'}
-                    >
-                        {c('TableHeader').t`Deleted`}
-                    </TableHeaderCell>
-                )}
-                {columns.includes('size') && (
-                    <TableHeaderCell
-                        direction={getSortDirectionForKey('size')}
-                        onSort={canSort(() => handleSort('size'))}
-                        className={isDesktop ? 'w10' : 'w15'}
-                        isLoading={isLoading && sortParams?.sortField === 'size'}
-                    >
-                        {c('TableHeader').t`Size`}
-                    </TableHeaderCell>
-                )}
-                {columns.includes('share_created') && (
-                    <TableHeaderCell
-                        className="w15"
-                        direction={getSortDirectionForKey('linkCreateTime')}
-                        onSort={canSort(() => handleSort('linkCreateTime'))}
-                        isLoading={isLoading && sortParams?.sortField === 'linkCreateTime'}
-                    >
-                        {c('TableHeader').t`Created`}
-                    </TableHeaderCell>
-                )}
-                {columns.includes('share_num_access') && (
-                    <TableHeaderCell
-                        className="w15"
-                        direction={getSortDirectionForKey('numAccesses')}
-                        onSort={canSort(() => handleSort('numAccesses'))}
-                        isLoading={isLoading && sortParams?.sortField === 'numAccesses'}
-                    >
-                        {c('TableHeader').t`# of accesses`}
-                    </TableHeaderCell>
-                )}
-                {columns.includes('share_expires') && (
-                    <TableHeaderCell
-                        className="w20"
-                        direction={getSortDirectionForKey('linkExpireTime')}
-                        onSort={canSort(() => handleSort('linkExpireTime'))}
-                        isLoading={isLoading && sortParams?.sortField === 'linkExpireTime'}
-                    >
-                        {c('TableHeader').t`Expires`}
-                    </TableHeaderCell>
-                )}
-                {columns.includes('share_options') && <TableHeaderCell className="file-browser-list--icon-column" />}
-                <TableHeaderCell className="file-browser-list--icon-column" />
+                {items.map((item, index) => (
+                    <HeaderCell
+                        item={item}
+                        isLoading={isLoading}
+                        sortParams={sortParams}
+                        key={index}
+                        itemCount={itemCount}
+                        onSort={handleSort}
+                    />
+                ))}
             </TableRowSticky>
         </thead>
     );

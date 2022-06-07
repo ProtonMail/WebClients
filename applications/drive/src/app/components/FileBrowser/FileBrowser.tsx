@@ -2,38 +2,63 @@ import { useCallback, useRef } from 'react';
 
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
+import { BrowserItemId, DragMoveControls, FileBrowserBaseItem, SortParams } from './interface';
+import { ListView } from './ListView/ListView';
 import useOnScrollEnd from '../../hooks/util/useOnScrollEnd';
-import { FileBrowserProps, SortField } from './interface';
-import ListView from './ListView/ListView';
 import GridView from './GridView/GridView';
+
+export interface FileBrowserProps<T extends FileBrowserBaseItem, T1> {
+    caption?: string;
+    headerItems: any[];
+    items: T[];
+    layout: LayoutSetting;
+    loading?: boolean;
+    sortParams?: SortParams<T1>;
+
+    Cells: React.FC<{ item: T }>[];
+    GridHeaderComponent: React.FC<{ scrollAreaRef: React.RefObject<HTMLDivElement> }>;
+    GridViewItem: React.FC<{ item: T }>;
+
+    onItemContextMenu?: (e: any) => void;
+    onItemOpen?: (id: BrowserItemId) => void;
+    onItemRender?: (item: T) => void;
+    onScrollEnd?: () => void;
+    onScroll?: () => void;
+    onSort?: (params: SortParams<T1>) => void;
+    onViewContextMenu?: (e: React.MouseEvent<Element>) => void;
+
+    contextMenuAnchorRef?: React.RefObject<HTMLDivElement>;
+    getDragMoveControls?: (item: T) => DragMoveControls;
+}
 
 /**
  * File browser that supports grid view and list view
  * If only grid or list view is needed better use them directly
  */
-const FileBrowser = <T extends SortField>({
+const FileBrowser = <T extends FileBrowserBaseItem, T1>({
+    caption = '',
+    headerItems = [],
+    items = [],
     layout,
-    loading,
-    caption,
-    contents,
-    shareId,
-    selectedItems,
-    type,
-    isPreview = false,
-    onToggleItemSelected,
-    onToggleAllSelected,
-    onItemClick,
-    selectItem,
-    clearSelections,
-    onShiftClick,
-    sortFields,
+    loading = false,
     sortParams,
-    setSorting,
-    getDragMoveControls,
+
+    Cells = [],
+    GridHeaderComponent,
+    GridViewItem,
+
+    onItemContextMenu,
+    onItemOpen,
+    onItemRender,
+    onScroll,
     onScrollEnd,
-    ItemContextMenu,
-    FolderContextMenu,
-}: FileBrowserProps<T>) => {
+    onSort,
+    onViewContextMenu,
+
+    contextMenuAnchorRef,
+
+    getDragMoveControls,
+}: FileBrowserProps<T, T1>) => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
 
     const handleScrollEnd = useCallback(() => {
@@ -41,50 +66,41 @@ const FileBrowser = <T extends SortField>({
     }, [onScrollEnd, layout]);
 
     // On content change, check scroll end (does not rebind listeners).
-    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [contents, layout]);
+    useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [items, layout]);
 
     return layout === LayoutSetting.Grid ? (
         <GridView
-            scrollAreaRef={scrollAreaRef}
             caption={caption}
-            shareId={shareId}
+            items={items}
             loading={loading}
-            contents={contents}
-            selectedItems={selectedItems}
-            sortFields={sortFields}
-            sortParams={sortParams}
-            setSorting={setSorting}
-            onItemClick={onItemClick}
-            onToggleItemSelected={onToggleItemSelected}
-            clearSelections={clearSelections}
-            onToggleAllSelected={onToggleAllSelected}
-            onShiftClick={onShiftClick}
-            selectItem={selectItem}
+            GridHeaderComponent={GridHeaderComponent}
+            GridViewItem={GridViewItem}
+            onItemContextMenu={onItemContextMenu}
+            onItemOpen={onItemOpen}
+            onItemRender={onItemRender}
+            onScroll={onScroll}
+            onViewContextMenu={onViewContextMenu}
+            contextMenuAnchorRef={contextMenuAnchorRef}
+            scrollAreaRef={scrollAreaRef}
             getDragMoveControls={getDragMoveControls}
-            ItemContextMenu={ItemContextMenu}
-            FolderContextMenu={FolderContextMenu}
         />
     ) : (
         <ListView
-            type={type}
-            isPreview={isPreview}
-            scrollAreaRef={scrollAreaRef}
             caption={caption}
-            shareId={shareId}
+            items={items}
+            headerItems={headerItems}
             loading={loading}
-            contents={contents}
-            selectedItems={selectedItems}
             sortParams={sortParams}
-            setSorting={setSorting}
-            onItemClick={onItemClick}
-            onToggleItemSelected={onToggleItemSelected}
-            clearSelections={clearSelections}
-            onToggleAllSelected={onToggleAllSelected}
-            onShiftClick={onShiftClick}
-            selectItem={selectItem}
+            Cells={Cells}
+            onItemContextMenu={onItemContextMenu}
+            onItemOpen={onItemOpen}
+            onItemRender={onItemRender}
+            onScroll={onScroll}
+            onSort={onSort}
+            onViewContextMenu={onViewContextMenu}
+            contextMenuAnchorRef={contextMenuAnchorRef}
+            scrollAreaRef={scrollAreaRef}
             getDragMoveControls={getDragMoveControls}
-            ItemContextMenu={ItemContextMenu}
-            FolderContextMenu={FolderContextMenu}
         />
     );
 };

@@ -8,6 +8,7 @@ import { extractSearchParameters } from '../../../store/_search/utils'; // TODO:
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import DriveToolbar from '../Drive/DriveToolbar';
 import { Search } from './Search';
+import { FileBrowserStateProvider } from '../../FileBrowser';
 
 export function SearchView() {
     const { activeShareId } = useActiveShare();
@@ -18,12 +19,8 @@ export function SearchView() {
     const searchView = useSearchView(activeShareId, query);
 
     return (
-        <>
-            <DriveToolbar
-                shareId={activeShareId}
-                selectedLinks={searchView.selectionControls.selectedItems}
-                showOptionsForNoSelection={false}
-            />
+        <FileBrowserStateProvider itemIds={searchView.items.map(({ linkId }) => linkId)}>
+            <DriveToolbar shareId={activeShareId} items={searchView.items} showOptionsForNoSelection={false} />
             <PrivateMainArea hasToolbar className="flex-no-min-children flex-column flex-nowrap">
                 <div className="max-w100 text-pre pt1 pb1 pl0-75 pr0-75 border-bottom section--header text-strong">
                     {searchView.isLoading
@@ -36,6 +33,6 @@ export function SearchView() {
                 </div>
                 <Search shareId={activeShareId} searchView={searchView} />
             </PrivateMainArea>
-        </>
+        </FileBrowserStateProvider>
     );
 }

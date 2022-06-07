@@ -1,5 +1,4 @@
 /* eslint-disable max-classes-per-file */
-import { FileBrowserItem } from '../FileBrowser/interface';
 
 export enum TransferState {
     Initializing = 'initializing',
@@ -55,14 +54,6 @@ export interface Upload {
     folders?: Upload[];
 }
 
-export interface DownloadInfo {
-    LinkID: string;
-    ShareID: string;
-    // children are filled when LinkID is empty to represent list of files
-    // to be downloaded as one zip archive.
-    children?: FileBrowserItem[];
-}
-
 export interface Download {
     id: string;
     meta: TransferMeta;
@@ -76,12 +67,6 @@ export interface PartialDownload extends Download {
 }
 
 export type Transfer = Upload | Download;
-
-export interface ThumbnailDownload {
-    id: string;
-    downloadInfo: DownloadInfo;
-    state: TransferState;
-}
 
 export interface ThumbnailMeta {
     modifyTime: number;

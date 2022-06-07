@@ -6,7 +6,7 @@ interface Props {
     time: number;
 }
 
-const TimeCell = ({ time }: Props) => {
+export const TimeCell = ({ time }: Props) => {
     return (
         <div className="text-ellipsis" title={readableTime(time, 'PP', { locale: dateLocale })}>
             <span className="text-pre">
@@ -15,5 +15,3 @@ const TimeCell = ({ time }: Props) => {
         </div>
     );
 };
-
-export default TimeCell;

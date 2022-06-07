@@ -12,34 +12,34 @@ import {
     IconName,
 } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SortField, SortParams } from '../FileBrowser/interface';
+import { SortParams } from '../FileBrowser/interface';
 
-export interface MenuItem<T extends SortField> {
+export interface MenuItem<T> {
     name: string;
     icon: IconName;
     sortField: T;
 }
 
-export default function SortDropdown<T extends SortField>({
+export default function SortDropdown<T extends string>({
     sortFields,
-    sortParams,
-    setSorting,
+    sortField,
+    onSort,
 }: {
-    sortFields: T[];
-    sortParams: SortParams<T>;
-    setSorting: (sortParams: SortParams<T>) => void;
+    sortFields?: T[];
+    sortField: SortParams<T>['sortField'];
+    onSort?: (sortParams: SortParams<T>) => void;
 }) {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const dropdownMenuButtons = sortFields.map((sortField) => (
+    const dropdownMenuButtons = sortFields?.map((sortFieldToCheck) => (
         <DropdownMenuButton
-            key={sortField}
+            key={sortFieldToCheck}
             className="flex flex-nowrap text-left"
-            onClick={() => setSorting({ sortField, sortOrder: SORT_DIRECTION.ASC })}
-            aria-current={sortParams.sortField === sortField}
+            onClick={() => onSort?.({ sortField: sortFieldToCheck, sortOrder: SORT_DIRECTION.ASC })}
+            aria-current={sortField === sortFieldToCheck}
         >
-            {translateSortField(sortField)}
+            {translateSortField(sortFieldToCheck)}
         </DropdownMenuButton>
     ));
 
@@ -72,8 +72,8 @@ export default function SortDropdown<T extends SortField>({
     );
 }
 
-export function translateSortField(sortField: SortField): string {
-    const translations: Record<SortField, string> = {
+export function translateSortField(sortField: string): string {
+    const translations: Record<string, string> = {
         name: c('Label').t`Name`,
         size: c('Label').t`Size`,
         // Type is not used (in UI) at this moment, but users might have set

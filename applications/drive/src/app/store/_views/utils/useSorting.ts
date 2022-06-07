@@ -7,16 +7,17 @@ import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { logError } from '../../_utils';
 import { LinkShareUrl } from '../../_links/interface';
 
-type SortField =
-    | 'name'
-    | 'mimeType'
-    | 'metaDataModifyTime'
-    | 'fileModifyTime'
-    | 'size'
-    | 'linkCreateTime'
-    | 'linkExpireTime'
-    | 'numAccesses'
-    | 'trashed';
+export enum SortField {
+    name = 'name',
+    mimeType = 'mimeType',
+    metaDataModifyTime = 'metaDataModifyTime',
+    fileModifyTime = 'fileModifyTime',
+    size = 'size',
+    linkCreateTime = 'linkCreateTime',
+    linkExpireTime = 'linkExpireTime',
+    numAccesses = 'numAccesses',
+    trashed = 'trashed',
+}
 
 interface SortParams<T extends SortField = SortField> {
     sortField: T;

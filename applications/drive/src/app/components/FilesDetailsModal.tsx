@@ -14,7 +14,7 @@ import {
 
 import { useLinksDetailsView } from '../store';
 import ModalContentLoader from './ModalContentLoader';
-import SizeCell from './FileBrowser/ListView/Cells/SizeCell';
+import { Cells } from './FileBrowser';
 
 interface Props {
     shareId: string;
@@ -58,7 +58,7 @@ const FilesDetailsModal = ({ shareId, linkIds, onClose, open }: Props) => {
                     <Label style={{ cursor: 'default' }}>{c('Title').t`Total size`}</Label>
                     <Field className="pt0-5">
                         <b>
-                            <SizeCell size={size} />
+                            <Cells.SizeCell size={size} />
                         </b>
                     </Field>
                 </Row>

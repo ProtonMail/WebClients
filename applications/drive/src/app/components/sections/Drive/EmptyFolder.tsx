@@ -5,7 +5,7 @@ import { EmptyViewContainer, useActiveBreakpoint, usePopperAnchor } from '@proto
 
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 import { UploadButton } from './UploadButton';
-import generateFolderContextMenu from './FolderContextMenu';
+import { FolderContextMenu } from './FolderContextMenu';
 
 const EmptyFolder = ({ shareId }: { shareId: string }) => {
     const { isDesktop } = useActiveBreakpoint();
@@ -35,8 +35,6 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
         };
     }, [anchorRef, isOpen, close, setContextMenuPosition]);
 
-    const FolderContextMenu = generateFolderContextMenu(shareId);
-
     return (
         <>
             <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
@@ -55,6 +53,7 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
                 </EmptyViewContainer>
             </div>
             <FolderContextMenu
+                shareId={shareId}
                 isOpen={isOpen}
                 open={open}
                 close={close}

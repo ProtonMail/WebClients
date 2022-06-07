@@ -3,16 +3,18 @@ import { c } from 'ttag';
 
 import { Button, Icon, Tooltip } from '@proton/components';
 
-import { useActions } from '../../store';
-import { FileBrowserItem } from './interface';
+import { useActions } from '../../../store';
+import { BrowserItemId } from '../../FileBrowser/interface';
 
 interface Props {
     shareId: string;
-    item: FileBrowserItem;
+    linkId: BrowserItemId;
+    trashed: number | null;
+    isExpired: boolean;
     className?: string;
 }
 
-const CopyLinkIcon = ({ shareId, item, className }: Props) => {
+const CopyLinkIcon = ({ shareId, linkId, trashed, isExpired, className }: Props) => {
     const [isLoading, setIsLoading] = useState(false);
     const { copyShareLinkToClipboard } = useActions();
 
@@ -26,14 +28,14 @@ const CopyLinkIcon = ({ shareId, item, className }: Props) => {
             e.stopPropagation(); // To not show file preview when clicking (to not trigger other click event).
             e.preventDefault(); // To not show file preview when pressing enter (to disable click event).
 
-            copyShareLinkToClipboard(new AbortController().signal, shareId, item.linkId).finally(() => {
+            copyShareLinkToClipboard(new AbortController().signal, shareId, linkId).finally(() => {
                 setIsLoading(false);
             });
         },
-        [shareId, item]
+        [shareId, linkId]
     );
 
-    if (!copyShareLinkToClipboard || !item.shareUrl || !item.shareId || item.shareUrl.isExpired || item.trashed) {
+    if (!copyShareLinkToClipboard || isExpired || trashed) {
         return null;
     }
 

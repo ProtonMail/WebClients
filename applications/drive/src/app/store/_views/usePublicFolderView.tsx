@@ -4,18 +4,13 @@ import { useLoading } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
-import { PublicFolderSortField } from '../../components/FileBrowser/interface';
 import { usePublicLinksListing } from '../_links';
-import {
-    useMemoArrayNoMatterTheOrder,
-    useAbortSignal,
-    useLinkName,
-    useSelection,
-    useSortingWithDefault,
-} from './utils';
+import { useMemoArrayNoMatterTheOrder, useAbortSignal, useLinkName, useSortingWithDefault } from './utils';
+import { SortField } from './utils/useSorting';
+import { useSelectionControls } from '../../components/FileBrowser';
 
 const DEFAULT_SORT = {
-    sortField: 'name' as PublicFolderSortField,
+    sortField: 'name' as SortField,
     sortOrder: SORT_DIRECTION.ASC,
 };
 
@@ -44,7 +39,8 @@ export default function usePublicFolderView(token: string, linkId: string) {
             data: item,
         }));
     }, [sortedList]);
-    const selectionControls = useSelection(sortedListForSelection);
+
+    const selectionControls = useSelectionControls({ itemIds: sortedListForSelection.map((item) => item.id) });
 
     useEffect(() => {
         const ac = new AbortController();

@@ -3,64 +3,35 @@ import { FixedSizeGrid, GridChildComponentProps } from 'react-window';
 
 import { classnames, Loader, useElementRect, useRightToLeft, Table } from '@proton/components';
 import buffer from '@proton/utils/buffer';
-import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import { FileBrowserItem, FileBrowserProps, SortField } from '../interface';
-import useFileBrowserView from '../useFileBrowserView';
-import GridHeader from './GridHeader';
-import ItemCell, { Props as ItemCellProps } from './ItemCell';
+import { FileBrowserBaseItem } from '../interface';
+import ItemCell, { ItemProps } from './ItemCell';
+import { useSelection } from '../state/useSelection';
+import { FileBrowserProps } from '../FileBrowser';
+import { calculateCellDimensions } from './utils';
 
-const itemWidth = 13.5 * rootFontSize; // 13.5 * 16 = we want 216px by default
-const itemHeight = 12.25 * rootFontSize; // 12.25 * 16 = we want 196px by default
-
-const calculateCellDimensions = (areaWidth: number) => {
-    const rowItemCount = Math.floor(areaWidth / itemWidth);
-    const expandedItemWidth = areaWidth / rowItemCount;
-    const squishedItemWidth = areaWidth / (rowItemCount + 1);
-    const oversizing = expandedItemWidth - itemWidth;
-    const oversquishing = itemWidth - squishedItemWidth;
-    const ratio = itemHeight / itemWidth;
-
-    // If expanded width is less imperfect than squished width
-    if (oversizing <= oversquishing) {
-        return {
-            cellWidth: expandedItemWidth,
-            cellHeight: expandedItemWidth * ratio,
-        };
-    }
-
-    return {
-        cellWidth: squishedItemWidth,
-        cellHeight: squishedItemWidth * ratio,
-    };
-};
-
-type Props<T extends SortField> = Omit<FileBrowserProps<T>, 'type' | 'onScrollEnd' | 'isPreview' | 'layout'> & {
-    scrollAreaRef: React.RefObject<HTMLDivElement>;
-};
-
-type ItemCellData = {
+interface ItemCellData<T extends FileBrowserBaseItem> {
     loading?: boolean;
     itemsPerRow: number;
     rowCount: number;
-    contents: FileBrowserItem[];
-    getItemProps: (item: FileBrowserItem) => Omit<ItemCellProps, 'style'>;
-};
+    items: T[];
+    getItemProps: (item: T) => Omit<ItemProps<T>, 'style'>;
+}
 
-type GridItemCellProps = Omit<GridChildComponentProps, 'data'> & {
-    data: ItemCellData;
-};
+interface GridItemCellProps<T extends FileBrowserBaseItem> extends GridChildComponentProps {
+    data: ItemCellData<T>;
+}
 
-const GridItemCell = ({
+const GridItemCell = <T extends FileBrowserBaseItem>({
     columnIndex,
     rowIndex,
     style,
-    data: { contents, rowCount, itemsPerRow, getItemProps, loading },
-}: GridItemCellProps) => {
+    data: { items, rowCount, itemsPerRow, getItemProps, loading },
+}: GridItemCellProps<T>) => {
     const currentIndex = columnIndex + rowIndex * itemsPerRow;
-    const item = contents[currentIndex];
+    const item = items[currentIndex];
     const emptyOrLoadingCell =
-        loading && (currentIndex === 0 || contents[currentIndex - 1]) ? (
+        loading && (currentIndex === 0 || items[currentIndex - 1]) ? (
             <div style={style} className="flex items-center justify-center">
                 <Loader />
             </div>
@@ -82,33 +53,36 @@ const GridItemCell = ({
     );
 };
 
-function GridView<T extends SortField>({
+type GridViewProps<T extends FileBrowserBaseItem, T1> = Omit<
+    FileBrowserProps<T, T1>,
+    'type' | 'onScrollEnd' | 'layout' | 'Cells' | 'headerItems'
+> & {
+    scrollAreaRef: React.RefObject<HTMLDivElement>;
+};
+
+function GridView<T extends FileBrowserBaseItem, T1>({
     caption,
-    shareId,
-    contents,
-    onItemClick,
-    selectedItems,
-    onShiftClick,
-    selectItem,
-    getDragMoveControls,
-    loading,
-    onToggleItemSelected,
-    onToggleAllSelected,
-    clearSelections,
+    items,
+    loading = false,
+
+    GridHeaderComponent,
+    GridViewItem,
+
+    onItemContextMenu,
+    onItemOpen,
+    onItemRender,
+    onScroll,
+    onViewContextMenu,
+
+    contextMenuAnchorRef,
     scrollAreaRef,
-    ItemContextMenu,
-    FolderContextMenu,
-    sortFields,
-    sortParams,
-    setSorting,
-}: Props<T>) {
+
+    getDragMoveControls,
+}: GridViewProps<T, T1>) {
+    const selectionControls = useSelection()!;
     const containerRef = useRef<HTMLDivElement>(null);
     const rect = useElementRect(containerRef, buffer);
-    const totalItems = contents.length + (loading ? 1 : 0);
-    const { isContextMenuOpen, closeContextMenu, contextMenuPosition, handleContextMenu, openContextMenu } =
-        useFileBrowserView({
-            clearSelections,
-        });
+    const totalItems = items.length + (loading ? 1 : 0);
 
     const width = rect?.width ?? 0;
 
@@ -117,21 +91,34 @@ function GridView<T extends SortField>({
     const itemsPerRow = Math.floor(width / cellWidth);
     const rowCount = Math.ceil(totalItems / itemsPerRow);
 
-    const itemData = {
-        contents,
-        rowCount,
+    const generateItemKey = ({
+        columnIndex,
+        rowIndex,
+        data: { items, itemsPerRow },
+    }: {
+        columnIndex: number;
+        rowIndex: number;
+        data: ItemCellData<T>;
+    }) => {
+        const item = items[columnIndex + rowIndex * itemsPerRow];
+        return item?.id ?? `${columnIndex}-${rowIndex}`;
+    };
+
+    const itemData: ItemCellData<T> = {
+        items,
         itemsPerRow,
         loading,
-        getItemProps: (item: FileBrowserItem): Omit<ItemCellProps, 'style'> => ({
+        rowCount,
+
+        getItemProps: (item: T): Omit<ItemProps<T>, 'style'> => ({
             item,
-            shareId,
-            selectedItems,
-            onToggleSelect: onToggleItemSelected,
-            onShiftClick,
-            onClick: onItemClick,
-            selectItem,
             dragMoveControls: getDragMoveControls?.(item),
-            ItemContextMenu,
+
+            GridViewItem,
+
+            onItemOpen,
+            onItemRender,
+            onItemContextMenu,
         }),
     };
 
@@ -139,28 +126,19 @@ function GridView<T extends SortField>({
 
     return (
         <div
+            className="flex flex-no-min-children flex-item-fluid flex-column no-scroll"
+            onClick={selectionControls?.clearSelections}
+            onContextMenu={onViewContextMenu}
             ref={containerRef}
             role="presentation"
-            className="flex flex-no-min-children flex-item-fluid flex-column no-scroll"
-            onContextMenu={handleContextMenu}
-            onClick={clearSelections}
         >
             <div>
                 <Table caption={caption} className="file-browser-table m0">
-                    <GridHeader
-                        isLoading={loading}
-                        contents={contents}
-                        onToggleAllSelected={onToggleAllSelected}
-                        scrollAreaRef={scrollAreaRef}
-                        selectedItems={selectedItems}
-                        sortFields={sortFields}
-                        setSorting={setSorting}
-                        sortParams={sortParams}
-                    />
+                    <GridHeaderComponent scrollAreaRef={scrollAreaRef} />
                 </Table>
             </div>
 
-            <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={containerRef}>
+            <div className="flex-no-min-children flex-column flex-item-fluid w100 no-scroll" ref={contextMenuAnchorRef}>
                 {rect && (
                     <FixedSizeGrid
                         style={{ overflowX: 'hidden', '--padding-bottom-custom': '1.5em' }}
@@ -174,38 +152,13 @@ function GridView<T extends SortField>({
                         columnCount={itemsPerRow}
                         rowCount={rowCount}
                         outerRef={scrollAreaRef}
-                        onScroll={() => {
-                            if (isContextMenuOpen) {
-                                closeContextMenu();
-                            }
-                        }}
-                        itemKey={({
-                            columnIndex,
-                            rowIndex,
-                            data: { contents, itemsPerRow },
-                        }: {
-                            columnIndex: number;
-                            rowIndex: number;
-                            data: ItemCellData;
-                        }) => {
-                            const item = contents[columnIndex + rowIndex * itemsPerRow];
-                            return item?.linkId ?? `${columnIndex}-${rowIndex}`;
-                        }}
+                        onScroll={onScroll}
+                        itemKey={generateItemKey}
                     >
                         {GridItemCell}
                     </FixedSizeGrid>
                 )}
             </div>
-
-            {FolderContextMenu && (
-                <FolderContextMenu
-                    isOpen={isContextMenuOpen}
-                    open={openContextMenu}
-                    close={closeContextMenu}
-                    position={contextMenuPosition}
-                    anchorRef={scrollAreaRef}
-                />
-            )}
         </div>
     );
 }
