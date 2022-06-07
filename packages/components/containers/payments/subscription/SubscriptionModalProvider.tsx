@@ -23,6 +23,7 @@ interface OpenCallbackProps {
     currency?: Currency;
     coupon?: string;
     disablePlanSelection?: boolean;
+    disableThanksStep?: boolean;
     onClose?: () => void;
     onSuccess?: () => void;
     fullscreen?: boolean;
@@ -54,6 +55,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
         cycle?: Cycle;
         coupon?: string;
         disablePlanSelection?: boolean;
+        disableThanksStep?: boolean;
         onClose?: () => void;
         onSuccess?: () => void;
         fullscreen?: boolean;
@@ -85,6 +87,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         coupon,
                         defaultAudience,
                         disablePlanSelection,
+                        disableThanksStep,
                         onClose,
                         onSuccess,
                         fullscreen,
@@ -108,6 +111,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                                     ? Audience.B2B
                                     : Audience.B2C,
                             disablePlanSelection,
+                            disableThanksStep,
                             onClose,
                             onSuccess,
                             fullscreen,

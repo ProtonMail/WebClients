@@ -60,6 +60,7 @@ const SubscribeAccount = ({ redirect, fullscreen, queryParams }: Props) => {
             onClose: handleClose,
             onSuccess: handleClose,
             fullscreen,
+            disableThanksStep: true,
         });
     }, [user, loading]);
 
