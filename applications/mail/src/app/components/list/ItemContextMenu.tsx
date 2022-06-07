@@ -1,16 +1,11 @@
 import { c } from 'ttag';
-import { RefObject, ReactNode } from 'react';
-import { MESSAGE_BUTTONS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import {
-    ContextMenu,
-    ContextSeparator,
-    ContextMenuButton,
-    useMailSettings,
-    useLabels,
-    useFolders,
-} from '@proton/components';
+import { RefObject, ReactNode, useMemo } from 'react';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { ContextMenu, ContextSeparator, ContextMenuButton, useLabels, useFolders } from '@proton/components';
+import { useSelector } from 'react-redux';
 import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import { isCustomFolder, isCustomLabel } from '../../helpers/labels';
+import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
 
 interface Props {
     checkedIDs: string[];
@@ -30,11 +25,15 @@ interface Props {
 }
 
 const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onMarkAs, ...rest }: Props) => {
-    const [mailSettings] = useMailSettings();
     const [labels] = useLabels();
     const [folders] = useFolders();
 
-    const { MessageButtons = MESSAGE_BUTTONS.READ_UNREAD } = mailSettings || {};
+    const elementsAreUnread = useSelector(elementsAreUnreadSelector);
+
+    const buttonMarkAsRead = useMemo(() => {
+        const allRead = checkedIDs.every((elementID) => !elementsAreUnread[elementID]);
+        return !allRead;
+    }, [checkedIDs, elementsAreUnread]);
 
     const handleMove = (labelID: string) => {
         onMove(labelID);
@@ -137,32 +136,27 @@ const ItemContextMenu = ({ checkedIDs, elementID, labelID, onMove, onDelete, onM
         moveButtons = [trashButton, archiveButton, spamButton];
     }
 
-    const readButtons = [
-        <ContextMenuButton
-            key="context-menu-read"
-            testId="context-menu-read"
-            icon="eye"
-            name={c('Action').t`Mark as read`}
-            action={() => handleMarkAs(MARK_AS_STATUS.READ)}
-        />,
-        <ContextMenuButton
-            key="context-menu-unread"
-            testId="context-menu-unread"
-            icon="eye-slash"
-            name={c('Action').t`Mark as unread`}
-            action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
-        />,
-    ];
-
-    if (MessageButtons === MESSAGE_BUTTONS.UNREAD_READ) {
-        readButtons.reverse();
-    }
-
     return (
         <ContextMenu noMaxHeight {...rest}>
             {moveButtons}
             <ContextSeparator />
-            {readButtons}
+            {buttonMarkAsRead ? (
+                <ContextMenuButton
+                    key="context-menu-read"
+                    testId="context-menu-read"
+                    icon="envelope-open"
+                    name={c('Action').t`Mark as read`}
+                    action={() => handleMarkAs(MARK_AS_STATUS.READ)}
+                />
+            ) : (
+                <ContextMenuButton
+                    key="context-menu-unread"
+                    testId="context-menu-unread"
+                    icon="envelope-dot"
+                    name={c('Action').t`Mark as unread`}
+                    action={() => handleMarkAs(MARK_AS_STATUS.UNREAD)}
+                />
+            )}
         </ContextMenu>
     );
 };

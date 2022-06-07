@@ -66,10 +66,6 @@ const Item = ({
     const elementRef = useRef<HTMLDivElement>(null);
 
     const [hasFocus, setHasFocus] = useState(false);
-    // const [mouseHover, setMouseHover] = useState(false);
-
-    // useEventListener(elementRef, 'mouseenter', () => setMouseHover(true), []);
-    // useEventListener(elementRef, 'mouseleave', () => setMouseHover(false), []);
 
     const displayRecipients =
         [SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, SCHEDULED].includes(labelID as MAILBOX_LABEL_IDS) ||
@@ -124,56 +120,58 @@ const Item = ({
     };
 
     return (
-        <div
-            onContextMenu={(event) => onContextMenu(event, element)}
-            onClick={handleClick}
-            draggable
-            onDragStart={(event) => onDragStart(event, element)}
-            onDragEnd={onDragEnd}
-            className={classnames([
-                'flex flex-nowrap cursor-pointer opacity-on-hover-container',
-                columnLayout ? 'item-container' : 'item-container-row',
-                isSelected && 'item-is-selected',
-                !unread && 'read',
-                unread && 'unread',
-                dragged && 'item-dragging',
-                loading && 'item-is-loading',
-                hasFocus && 'item-is-focused',
-                useES && columnLayout && 'es-three-rows',
-            ])}
-            style={{ '--index': index }}
-            ref={elementRef}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            tabIndex={-1}
-            data-element-id={element.ID}
-            data-shortcut-target="item-container"
-            data-shortcut-target-selected={isSelected}
-            data-testid={`message-item:${element.Subject}`}
-        >
-            <ItemCheckbox
-                ID={element.ID}
-                name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
-                checked={checked}
-                onChange={handleCheck}
-                compactClassName="mr0-75 stop-propagation"
-                normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
-            />
-            <ItemLayout
-                labelID={labelID}
-                elementID={elementID}
-                labels={labels}
-                element={element}
-                conversationMode={conversationMode}
-                showIcon={showIcon}
-                senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
-                addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
-                unread={unread}
-                displayRecipients={displayRecipients}
-                loading={loading}
-                breakpoints={breakpoints}
-                onBack={onBack}
-            />
+        <div className={classnames(['item-container-wrapper flex flex-nowrap relative', !unread && 'read'])}>
+            <div
+                onContextMenu={(event) => onContextMenu(event, element)}
+                onClick={handleClick}
+                draggable
+                onDragStart={(event) => onDragStart(event, element)}
+                onDragEnd={onDragEnd}
+                className={classnames([
+                    'flex-item-fluid flex flex-nowrap cursor-pointer opacity-on-hover-container',
+                    columnLayout ? 'item-container' : 'item-container-row',
+                    isSelected && 'item-is-selected',
+                    !unread && 'read',
+                    unread && 'unread',
+                    dragged && 'item-dragging',
+                    loading && 'item-is-loading',
+                    hasFocus && 'item-is-focused',
+                    useES && columnLayout && 'es-three-rows',
+                ])}
+                style={{ '--index': index }}
+                ref={elementRef}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                tabIndex={-1}
+                data-element-id={element.ID}
+                data-shortcut-target="item-container"
+                data-shortcut-target-selected={isSelected}
+                data-testid={`message-item:${element.Subject}`}
+            >
+                <ItemCheckbox
+                    ID={element.ID}
+                    name={displayRecipients ? recipientsLabels[0] : sendersLabels[0]}
+                    checked={checked}
+                    onChange={handleCheck}
+                    compactClassName="mr0-75 stop-propagation"
+                    normalClassName={classnames(['ml0-1', columnLayout ? 'mr0-6 mt0-1' : 'mr0-5'])}
+                />
+                <ItemLayout
+                    labelID={labelID}
+                    elementID={elementID}
+                    labels={labels}
+                    element={element}
+                    conversationMode={conversationMode}
+                    showIcon={showIcon}
+                    senders={(displayRecipients ? recipientsLabels : sendersLabels).join(', ')}
+                    addresses={(displayRecipients ? recipientsAddresses : sendersAddresses).join(', ')}
+                    unread={unread}
+                    displayRecipients={displayRecipients}
+                    loading={loading}
+                    breakpoints={breakpoints}
+                    onBack={onBack}
+                />
+            </div>
         </div>
     );
 };

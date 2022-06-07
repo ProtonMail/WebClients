@@ -3,7 +3,7 @@ import { isUnread } from '../../helpers/elements';
 import { Element } from '../../models/element';
 
 interface Props {
-    element: Element;
+    element: Element | undefined;
     labelID: string;
     className?: string;
 }
