@@ -162,12 +162,15 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
         setCloseFilterModalOpen(true);
     };
 
-    const link = <Href url={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>{c('Info').t`here`}</Href>;
+    // translator: full sentence is: To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language
+    const link = (
+        <Href url={getKnowledgeBaseUrl('/sieve-advanced-custom-filters')}>{c('Info')
+            .t`learn more about Sieve programming language`}</Href>
+    );
 
     return (
         <>
             <ModalTwo
-                size="full"
                 as={Form}
                 onSubmit={(event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
                 {...rest}
@@ -176,8 +179,14 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    {c('Info')
-                        .jt`To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language ${link}.`}
+                    <p>
+                        {
+                            // translator: full sentence is: To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language
+                            c('Info')
+                                .jt`To work properly, each filter must contain at least a name and a valid Sieve script. You can ${link}.`
+                        }
+                    </p>
+
                     {/*<HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />*/}
                     <FilterNameForm
                         model={model}
