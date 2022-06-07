@@ -3998,6 +3998,7 @@ __metadata:
     karma: ^6.4.0
     karma-chrome-launcher: ^3.1.1
     karma-jasmine: ^5.1.0
+    karma-spec-reporter: ^0.0.34
     karma-webpack: ^5.0.0
     ts-loader: ^9.3.1
     typescript: ^4.7.4
@@ -4204,6 +4205,7 @@ __metadata:
     karma: ^6.4.0
     karma-chrome-launcher: ^3.1.1
     karma-jasmine: ^5.1.0
+    karma-spec-reporter: ^0.0.34
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
     papaparse: ^5.3.2
@@ -20111,6 +20113,17 @@ fsevents@^1.2.7:
   dependencies:
     minimist: ^1.2.3
   checksum: a09f4758758a899fb97836660624ccd1769325e05f6efca63c9132806cc8dfeb20eaf78b3bc4db7921dcb3c48384fbfd5cddfa3568ddaf00197c75852ec9b480
+  languageName: node
+  linkType: hard
+
+"karma-spec-reporter@npm:^0.0.34":
+  version: 0.0.34
+  resolution: "karma-spec-reporter@npm:0.0.34"
+  dependencies:
+    colors: 1.4.0
+  peerDependencies:
+    karma: ">=0.9"
+  checksum: eaada610a3ecd13fd80bf358e72543e4407f3db22988dc472628e91652b75e97b6b7ad848014875f770fd3536f48777452c5bc9dece052b8030985f29527b459
   languageName: node
   linkType: hard
 
