@@ -6,7 +6,7 @@ interface Props {
     isFile: boolean;
 }
 
-const DescriptiveTypeCell = ({ mimeType, isFile }: Props) => {
+export const DescriptiveTypeCell = ({ mimeType, isFile }: Props) => {
     const type = isFile ? getMimeTypeDescription(mimeType) : c('Label').t`Folder`;
 
     return (
@@ -15,5 +15,3 @@ const DescriptiveTypeCell = ({ mimeType, isFile }: Props) => {
         </div>
     );
 };
-
-export default DescriptiveTypeCell;

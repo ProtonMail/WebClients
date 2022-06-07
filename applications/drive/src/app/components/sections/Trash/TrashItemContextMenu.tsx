@@ -8,13 +8,7 @@ import { ContextMenuProps } from '../../FileBrowser/interface';
 import { PreviewButton, DownloadButton, DetailsButton } from '../ContextMenu';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ContextMenuButtons';
 
-export default function generateTrashItemContextMenu(shareId: string, selectedLinks: DecryptedLink[]) {
-    return function TrashItemContextMenuWrapper(props: ContextMenuProps) {
-        return <TrashItemContextMenu shareId={shareId} selectedLinks={selectedLinks} {...props} />;
-    };
-}
-
-function TrashItemContextMenu({
+export function TrashItemContextMenu({
     shareId,
     selectedLinks,
     anchorRef,
@@ -44,7 +38,7 @@ function TrashItemContextMenu({
 
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} link={selectedLink} close={close} />}
+            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
             {hasDownloadAvailable && <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />}
             <DetailsButton shareId={shareId} linkIds={selectedLinkIds} close={close} />
             <RestoreFromTrashButton shareId={shareId} selectedLinks={selectedLinks} close={close} />

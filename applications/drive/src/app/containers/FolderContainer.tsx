@@ -58,7 +58,7 @@ export default function FolderContainer({ match }: RouteComponentProps<DriveSect
     // In case we open preview, folder doesn't need to change.
     lastFolderPromise.current = folderPromise;
 
-    const shouldRenderDriveView = activeFolder.shareId && activeFolder.linkId;
+    const shouldRenderDriveView = Boolean(activeFolder.shareId && activeFolder.linkId);
 
     return (
         <>

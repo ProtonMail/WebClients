@@ -9,13 +9,7 @@ import { ContextMenuProps } from '../../FileBrowser/interface';
 import { ShareFileButton } from '../ContextMenu/buttons';
 import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 
-export default function generateFolderContextMenu(shareId: string) {
-    return function FolderContextMenuWrapper(props: ContextMenuProps) {
-        return <FolderContextMenu shareId={shareId} {...props} />;
-    };
-}
-
-function FolderContextMenu({
+export function FolderContextMenu({
     shareId,
     anchorRef,
     isOpen,

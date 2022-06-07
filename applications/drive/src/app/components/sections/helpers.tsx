@@ -1,6 +1,9 @@
 import { c } from 'ttag';
 
 import { LinkURLType, fileDescriptions } from '@proton/shared/lib/drive/constants';
+import isTruthy from '@proton/utils/isTruthy';
+
+import { DecryptedLink } from '../../store';
 
 export const selectMessageForItemList = (
     isFiles: boolean[],
@@ -39,4 +42,14 @@ export const getMimeTypeDescription = (mimeType: string) => {
     }
 
     return c('Label').t`Unknown file`;
+};
+
+export const getSelectedItems = (items: DecryptedLink[], selectedItemIds: string[]): DecryptedLink[] => {
+    if (items) {
+        return selectedItemIds
+            .map((selectedItemId) => items.find(({ linkId, isLocked }) => !isLocked && selectedItemId === linkId))
+            .filter(isTruthy) as DecryptedLink[];
+    }
+
+    return [];
 };

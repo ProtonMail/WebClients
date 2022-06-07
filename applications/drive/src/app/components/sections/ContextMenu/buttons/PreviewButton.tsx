@@ -1,16 +1,15 @@
 import { c } from 'ttag';
 
-import { DecryptedLink } from '../../../../store';
 import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
-    link: DecryptedLink;
+    linkId: string;
     close: () => void;
 }
 
-const PreviewButton = ({ shareId, link, close }: Props) => {
+const PreviewButton = ({ shareId, linkId, close }: Props) => {
     const { openPreview } = useOpenModal();
 
     return (
@@ -18,7 +17,7 @@ const PreviewButton = ({ shareId, link, close }: Props) => {
             name={c('Action').t`Preview`}
             icon="eye"
             testId="context-menu-preview"
-            action={() => openPreview(shareId, link.linkId)}
+            action={() => openPreview(shareId, linkId)}
             close={close}
         />
     );

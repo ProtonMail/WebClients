@@ -17,7 +17,7 @@ export type FetchMeta = {
 
 // SortParams are available sorting methods for listing.
 export type SortParams = {
-    sortField: 'mimeType' | 'size' | 'createTime' | 'metaDataModifyTime';
+    sortField: 'size' | 'createTime' | 'metaDataModifyTime';
     sortOrder: SORT_DIRECTION;
 };
 

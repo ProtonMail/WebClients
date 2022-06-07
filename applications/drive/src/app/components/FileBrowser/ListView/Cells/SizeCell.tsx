@@ -6,7 +6,7 @@ interface Props {
     className?: string;
 }
 
-const SizeCell = ({ size, className }: Props) => {
+export const SizeCell = ({ size, className }: Props) => {
     const readableSize = humanSize(size);
     return (
         <div className={classnames(['text-ellipsis', className])} title={readableSize}>
@@ -14,5 +14,3 @@ const SizeCell = ({ size, className }: Props) => {
         </div>
     );
 };
-
-export default SizeCell;
