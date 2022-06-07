@@ -158,7 +158,7 @@ export default function initDownloadBlocks(
 
         const getBlockQueue = (startIndex = 1) => orderBy(blocks, 'Index').filter(({ Index }) => Index >= startIndex);
 
-        let lastConsecutiveRetryTs = 0;
+        let lastConsecutiveRetryTs = Date.now();
         // Downloads several blocks at once, but streams sequentially only one block at a time
         // Other blocks are put into buffer until previous blocks have finished downloading
         const startDownload = async (blockQueue: DriveFileBlock[], numRetries = 0) => {
@@ -166,6 +166,8 @@ export default function initDownloadBlocks(
                 return [];
             }
             activeIndex = blockQueue[0].Index;
+
+            let ongoingNumberOfDownloads = 0;
 
             const retryDownload = async (activeIndex: number) => {
                 abortController = new AbortController();
@@ -180,7 +182,7 @@ export default function initDownloadBlocks(
                 blocksOrBuffer = newBlocks;
                 blocks = newBlocks;
 
-                let retryCount = 1;
+                let retryCount = 0;
                 /*
                  * If download speed is too low, it might require several retries to cover
                  * the whole block page (an amount of attempts greater than the value of
@@ -192,10 +194,10 @@ export default function initDownloadBlocks(
                 }
 
                 lastConsecutiveRetryTs = Date.now();
+                await waitUntil(() => paused === false && ongoingNumberOfDownloads === 0);
                 await startDownload(getBlockQueue(activeIndex), retryCount);
             };
 
-            let ongoingNumberOfDownloads = 0;
             const downloadQueue = blockQueue.map(({ Index, EncSignature, BareURL, Token }) => async () => {
                 ongoingNumberOfDownloads++;
                 try {
@@ -273,6 +275,20 @@ export default function initDownloadBlocks(
                      */
                     if (e.status === HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
                         console.warn(`Blocks for download might have expired. Retry num: ${numRetries}`);
+                        return retryDownload(activeIndex);
+                    }
+
+                    // If we experience some slight issue on server side, lets try
+                    // one more time before notyfing user in transfer manager.
+                    // Be careful about too many attempts as that could be harmful
+                    // for our servers - if we have traffic issue, retrying too
+                    // many times could lead to longer downtime.
+                    // Also, there is some issue mostly in Brave that during upload
+                    // and download at the same time, we get weird network error
+                    // (err::NET_FAILED with status code 200) which is also "fixed"
+                    // by automatic retry.
+                    if (getIsConnectionIssue(e) && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+                        console.warn(`Connection issue for block #${activeIndex} download. Retry num: ${numRetries}`);
                         return retryDownload(activeIndex);
                     }
 
