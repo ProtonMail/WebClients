@@ -12,7 +12,7 @@
         "${ BRAND_NAME } ショップ"
       ],
       "Activate recovery": [
-        "リカバリーを有効化"
+        "回復を有効にする"
       ],
       "Add": [
         "追加"
@@ -144,7 +144,7 @@
         "連絡先グループの削除"
       ],
       "Deselect all": [
-        "選択を全て解除"
+        "すべての選択を解除"
       ],
       "Didn't receive the code?": [
         "コードを受け取っていませんか?"
@@ -366,7 +366,7 @@
         "送信"
       ],
       "Set recovery phrase": [
-        "リカバリーフレーズを設定"
+        "回復用フレーズを設定"
       ],
       "Share": [
         "共有"
@@ -435,10 +435,10 @@
         "更新"
       ],
       "Update recovery file": [
-        "リカバリーファイルを更新"
+        "回復用ファイルを更新"
       ],
       "Update recovery phrase": [
-        "リカバリーフレーズを更新"
+        "回復用フレーズを更新"
       ],
       "Upgrade": [
         "アップグレード"
@@ -2013,7 +2013,7 @@
         ""
       ],
       "Folder name cannot be empty.": [
-        ""
+        "フォルダー名は空にできません。"
       ],
       "Image upload failed": [
         "画像のアップロードに失敗しました。"
@@ -2052,7 +2052,7 @@
         "イベントは ${ minDateString } から ${ maxDateString } まで移動可能です"
       ],
       "Label name cannot be empty.": [
-        ""
+        "ラベル名を空にできません。"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "${ calendarToFixCount } 件のカレンダーを既存の Proton カレンダーに結合します"
@@ -2069,17 +2069,11 @@
       "No data to import": [
         "インポートするデータがありません"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "内部ユーザーのために取得された鍵は送信には有効ではありません"
-      ],
       "No keys retrieved for internal user": [
         "内部ユーザーのために取得された鍵はありません"
       ],
       "No valid address found": [
         "有効なアドレスが見つかりません。"
-      ],
-      "No valid keys retrieved for internal user": [
-        "内部ユーザーのために取得された有効な鍵がありません"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "ユーザーのために取得されたWKD鍵は送信には有効ではありません"
@@ -2114,6 +2108,12 @@
       "Primary address key is not decrypted.": [
         "プライマリーアドレス鍵が復号されていません。"
       ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
+      ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
@@ -2144,8 +2144,14 @@
       "Start time must be before end time": [
         "開始日時は終了日時の前に設定してください。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "このフォルダー名は無効です。別の名前を選択してください。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "このフォルダー名は長すぎます。別の名前を選択してください。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "このラベル名は無効です。別の名前を選択してください。"
       ],
       "The label name is too long. Please choose a different name.": [
         "このラベル名は長すぎます。別の名前を選択してください"
@@ -2166,10 +2172,10 @@
         "このフィールドには最低${ minimumLength } 文字が必要です。"
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "このフォルダー名は利用できません。別の名前を選択してください。"
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "このラベル名は利用できません。別の名前を選択してください。"
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
@@ -2238,7 +2244,7 @@
         "ファイル ${ formattedFilename } の読み取り中にエラーが発生しました。ファイルに正しい形式がありません。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. Maximum file size is ${ MAX_IMPORT_FILE_SIZE_STRING }.": [
-        ""
+        "ファイル ${ formattedFilename } をアップロードしているときにエラーが発生しました。最大ファイルサイズは ${ MAX_IMPORT_FILE_SIZE_STRING } です。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
         "ファイル ${ formattedFilename }のアップロード中にエラーが発生しました。.csv または .vcf ファイルが選択されていません"
@@ -2267,7 +2273,7 @@
         "カレンダーのタイムゾーンはサポートされていません"
       ],
       "Component with wrong format": [
-        ""
+        "無効なコンポーネント形式です"
       ],
       "Custom timezone": [
         "独自のタイムゾーン"
@@ -2300,7 +2306,7 @@
         "無効なイベントです"
       ],
       "Journal entry": [
-        ""
+        "Journal のエントリー"
       ],
       "Malformed all-day event": [
         ""
@@ -2345,7 +2351,7 @@
         "タイムゾーンはサポートされていません"
       ],
       "To-do entry": [
-        ""
+        "To-do のエントリー"
       ],
       "Unknown": [
         "不明"
@@ -2439,7 +2445,7 @@
         "無効なレスポンスです"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "イベントをカレンダーに追加できませんでした。回答は送信されません。"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         ""
@@ -2671,7 +2677,7 @@
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
       ],
       "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        ""
+        "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件のイベントはインポートされません。クリックして詳細を展開します。"
       ],
       "No contact can be imported. Click for details": [
         "連絡先をインポートすることはできません。詳細はクリックしてください"
@@ -2702,29 +2708,20 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } の連絡先が見つかりました"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス(複数可) を選択してください。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス(複数可) を選択してください。"
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } と ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 件の連絡先グループ"
@@ -2750,8 +2747,8 @@
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
       ],
-      "5 email addresses": [
-        "5 件のメールアドレス"
+      "10 email addresses": [
+        "10 件のメールアドレス"
       ],
       "A cancellation email will be sent to removed participants.": [
         ""
@@ -2984,6 +2981,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         ""
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
@@ -3007,6 +3007,12 @@
       ],
       "Please select the folders you would like to import:": [
         "インポートしたいフォルダーを選択してください:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
@@ -3033,10 +3039,10 @@
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
       "Select what you want to move from Google.": [
-        "Google から移動したいものを選択してください。"
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -3087,7 +3093,7 @@
         ""
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "招待されたアドレスからメールを送信できないため、このイベントの主催者に招待を拒否したことが通知されません。 一連の全てのイベントを削除しますか？"
+        "招待されたアドレスからメールを送信できないため、このイベントの主催者に招待を拒否したことが通知されません。 一連のすべてのイベントを削除しますか?"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -3145,6 +3151,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Proton は新しいサイトへ移動しました! ${ link }"
       ],
       "Week": [
         "週"
@@ -3216,7 +3225,7 @@
         "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
-        "保存されていない変更は全て失なわれます。"
+        "保存されていない変更はすべて失なわれます。"
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
         ""
@@ -3278,8 +3287,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "有効期限切れ"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "プライマリー"
@@ -3289,9 +3304,6 @@
       ],
       "Trusted": [
         "信頼済み"
-      ],
-      "Verification only": [
-        "検証専用"
       ],
       "WKD": [
         "WKD"
@@ -3643,10 +3655,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "${ totalLabelsCount } つの内 ${ selectedLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Message": {
@@ -3835,6 +3847,34 @@
         "ラベル名"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "アカウントを追加、切り替え"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        "あなたのご意見をお聞かせください (任意)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "フィードバック"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "フィードバックを送る"
+      ],
+      "Updated Proton, unified protection": [
+        "統合された保護を新しくなった Proton で"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "連絡先グループが作成されました。"
@@ -3931,7 +3971,7 @@
         "${ value } 週間前の ${ time }"
       ],
       "At time of event": [
-        ""
+        "イベントの時間"
       ],
       "On the same day at ${ time }": [
         "同じ日の ${ time }"
@@ -3947,7 +3987,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
       ]
     },
     "Onboarding": {
@@ -3971,7 +4011,7 @@
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
       "Discover all Proton services": [
-        "全ての Proton サービスがここに"
+        "すべての Proton サービスがそこに"
       ],
       "Select a theme": [
         "テーマを選択"
@@ -3991,7 +4031,7 @@
         "既存のグループに追加"
       ],
       "All events": [
-        "全ての予定"
+        "すべての予定"
       ],
       "Create new group": [
         "新しいグループの作成"
@@ -4027,7 +4067,7 @@
         "親フォルダーなし"
       ],
       "This and future events": [
-        "これ以降の全ての予定"
+        "これ以降のすべての予定"
       ],
       "This event": [
         "この予定"
@@ -4068,6 +4108,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "キーは暗号化に使用できません"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "この鍵を「信頼しない」ことをおすすめします。"
       ]
     },
     "PGP key warning": {
@@ -4276,7 +4327,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL が長すぎます"
       ]
     },
     "Success": {
@@ -4287,10 +4338,10 @@
         "住所がクリップボードにコピーされました。"
       ],
       "All events deleted": [
-        "全ての予定が削除されました。"
+        "すべての予定が削除されました"
       ],
       "All events updated": [
-        "全ての予定が更新されました。"
+        "すべての予定が更新されました"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
         ""
@@ -4470,6 +4521,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "新しくなった Proton をご紹介します。"
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "設定"
       ]
@@ -5066,7 +5123,7 @@
         "毎週の全曜日、${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "毎週の全ての日、${ untilString }"
+        "毎週のすべての日、${ untilString }"
       ],
       "Weekly on Friday": [
         "毎週金曜日"

@@ -197,7 +197,7 @@
         "Creare"
       ],
       "Create a secure ProtonMail address instead": [
-        "Creați în schimb o adresă sigură Proton Mail"
+        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Creare cont"
@@ -563,7 +563,7 @@
         "Solicitare cod nou"
       ],
       "Requires a verified recovery email address": [
-        ""
+        "Necesită o adresă de e-mail de recuperare verificată"
       ],
       "Reset credentials": [
         "Resetare acreditări"
@@ -2755,6 +2755,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Navigatorul folosit nu permite autorizarea plății. Folosiți un alt navigator sau conectați-vă de pe un calculator."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Numele folderului nu este valid. Alegeți alt nume."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
       ],
@@ -2763,6 +2766,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "Cheile din fișierele de recuperare nu pot fi validate. Încărcați-le individual pentru mai multe informații."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Numele etichetei nu este valid. Alegeți alt nume."
       ],
       "The label name is too long. Please choose a different name.": [
         "Numele etichetei este prea lung. Alegeți alt nume."
@@ -4018,6 +4024,9 @@
       "1. Invite friends to Proton": [
         "1. Invitați persoane în Proton"
       ],
+      "10 email addresses": [
+        "10 adrese de e-mail"
+      ],
       "2. They try ${ planName }": [
         "2. Ei încearcă ${ planName }"
       ],
@@ -4029,9 +4038,6 @@
       ],
       "30-day money-back guarantee.": [
         "Garanția returnării banilor în 30 de zile."
-      ],
-      "5 email addresses": [
-        "5 adrese de e-mail"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nume care vă ajută să identificați unde o folosiți pentru a o anula sau extinde mai târziu."
@@ -4385,6 +4391,9 @@
       "Edit label": [
         "Editare etichetă"
       ],
+      "Edit link": [
+        "Editare legătură"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -4553,6 +4562,9 @@
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Dacă doriți să combinați acest cont cu un altul, NU îl ștergeți."
       ],
+      "Image description": [
+        "Descriere imagine"
+      ],
       "Image URL": [
         "URL imagine"
       ],
@@ -4696,7 +4708,7 @@
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Jurnalele includ încercările de autentificare pentru toate serviciile Proton care folosesc acreditările Proton Mail."
+        "Jurnalele includ încercările de autentificare pentru toate serviciile Proton care folosesc acreditările Proton Mail."
       ],
       "lose access to all current encrypted data": [
         "pierde accesul la toate datele actuale criptate"
@@ -4986,7 +4998,7 @@
         "Selectați „Continuare cu ${ name }” pentru a deschide aplicația. Acest lucru creează, de asemenea, un cont ${ name } cu adresa ${ MAIL_APP_NAME }, astfel încât să vă puteți autentifica cu un singur clic în viitor."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Selectați numărul de utilizatori pe care să-l includeți în plan. Fiecare utilizator adițional costă ${ price }. Dacă aveți nevoie de mai mult de ${ maxUsers } conturi de utilizator, vă rugăm să ${ contactMailToLink } echipa noastră de suport pentru clienți."
+        "Selectați numărul de utilizatori pe care-l includeți în plan. Fiecare utilizator adițional costă ${ price }. Dacă aveți nevoie de mai mult de ${ maxUsers } conturi de utilizator, vă rugăm să ${ contactMailToLink } echipa noastră de suport pentru clienți."
       ],
       "Select what you want to move from Google.": [
         "Selectați ce doriți să importați din Google."
@@ -5160,7 +5172,7 @@
         "Aceasta vă va deconecta de la orice sesiune activă și va dezactiva autentificarea cu doi factori."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
-        "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont Proton Mail. A2F va face contul Proton Mail mai sigur astfel încât vă recomandăm s-o activați."
+        "Acest asistent va activa „autentificarea cu doi factori” (A2F) pentru acest cont Proton Mail. A2F va face contul Proton Mail mai sigur astfel încât vă recomandăm s-o activați."
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
         "Pentru a evita pierderea de date, ștergeți-o numai dacă știți ce faceți sau dacă ați exportat o copie."
@@ -5199,7 +5211,7 @@
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
-        "Pentru a utiliza ${ toAppName }, vă rugăm să creați o adresă."
+        "Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
@@ -5305,6 +5317,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ne mutăm! Veniți alături de noi pe noul nostru site: ${ link }."
       ],
       "Web URL": [
         "Adresa URL"
@@ -7214,6 +7229,703 @@
         "Nume etichetă"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Viteză VPN maximă"
+      ],
+      "Keep your inbox organized with folders": [
+        "Păstrați-vă mesajele organizate cu foldere"
+      ],
+      "Medium VPN speed": [
+        "Viteză VPN medie"
+      ]
+    },
+    "new_plans: action": {
+      "Continue to review": [
+        "Continuare revizuire"
+      ],
+      "Continue with free": [
+        "Continuare cu gratuit"
+      ],
+      "Delete account": [
+        "Ștergere cont"
+      ],
+      "Downgrade account": [
+        "Retrogradare cont"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Luați ${ BRAND_NAME } gratuit"
+      ],
+      "Get ${ planName }": [
+        "Luați ${ planName }"
+      ],
+      "Get ${ upsellShortPlan.title }": [
+        "Luați ${ upsellShortPlan.title }"
+      ],
+      "Got it": [
+        "Am înțeles"
+      ],
+      "Keep ${ plan }": [
+        "Păstrare ${ plan }"
+      ],
+      "Keep account": [
+        "Păstrare cont"
+      ],
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ],
+      "Switch plan": [
+        "Schimbare plan"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
+        "De la ${ _price } per utilizator"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade now": [
+        "Upgrade acum"
+      ]
+    },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connection": [
+        "Obțineți o conexiune VPN de mare viteză",
+        "Obțineți ${ connections } conexiuni VPN de mare viteză",
+        "Obțineți ${ connections } de conexiuni VPN de mare viteză"
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "Obțineți o conexiune VPN de mare viteză per utilizator",
+        "Obțineți ${ connections } conexiuni VPN de mare viteză per utilizator",
+        "Obțineți ${ connections } de conexiuni VPN de mare viteză per utilizator"
+      ]
+    },
+    "new_plans: feature": {
+      "${ DRIVE_APP_NAME } (web beta)": [
+        "${ DRIVE_APP_NAME } (web beta)"
+      ],
+      "${ n } custom email domain": [
+        "Un domeniu personal de e-mail",
+        "${ n } domenii personale de e-mail",
+        "${ n } de domenii personale de e-mail"
+      ],
+      "${ n } email address": [
+        "O adresă de e-mail",
+        "${ n } adrese de e-mail / aliasuri",
+        "${ n } de adrese de e-mail / aliasuri"
+      ],
+      "${ n } email address per user": [
+        "O adresă per utilizator",
+        "${ n } adrese de e-mail per utilizator",
+        "${ n } de adrese de e-mail per utilizator"
+      ],
+      "${ n } filter": [
+        "Un filtru",
+        "${ n } filtre",
+        "${ n } de filtre"
+      ],
+      "${ n } folder": [
+        "Un folder",
+        "${ n } foldere",
+        "${ n } de foldere"
+      ],
+      "${ n } folder and label": [
+        "Un folder și o etichetă",
+        "${ n } foldere și etichete",
+        "${ n } de foldere și etichete"
+      ],
+      "${ n } label": [
+        "O etichetă",
+        "${ n } etichete",
+        "${ n } de etichete"
+      ],
+      "${ n } message per day": [
+        "Un mesaj pe zi",
+        "${ n } mesaje pe zi",
+        "${ n } de mesaje pe zi"
+      ],
+      "${ n } personal calendar": [
+        "Un calendar personal",
+        "${ n } calendare personale",
+        "${ n } de calendare personale"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "O conexiune VPN per utilizator",
+        "${ n } conexiuni VPN per utilizator",
+        "${ n } de conexiuni VPN per utilizator"
+      ],
+      "${ size } attachment size": [
+        "${ size } mărime atașament"
+      ],
+      "${ size } storage per user": [
+        "${ size } spațiu per utilizator"
+      ],
+      "${ size } total storage": [
+        "${ size } spațiu total"
+      ],
+      "1 free VPN connection in total": [
+        "O conexiune VPN gratuită"
+      ],
+      "99.95% SLA": [
+        "Disponibilitate minimă a serviciului 99,95%"
+      ],
+      "Admin console": [
+        "Consolă administrare"
+      ],
+      "Advanced sharing security": [
+        "Securitate avansată partajări"
+      ],
+      "Auto-reply": [
+        "Răspuns automat"
+      ],
+      "Catch-all": [
+        "Colectare toate mesajele primite"
+      ],
+      "Centralized billing": [
+        "Facturare centralizată"
+      ],
+      "Contact groups": [
+        "Grupuri de contacte"
+      ],
+      "Contact groups management": [
+        "Gestionare grupuri de contacte"
+      ],
+      "Custom email domains": [
+        "Domenii personale de e-mail"
+      ],
+      "DNS leak prevention": [
+        "Prevenire breșe DNS"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Editor documente (documente, foi de calcul, prezentări)"
+      ],
+      "Easy Switch import assistant": [
+        "Asistent de importare Easy Switch"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "Suport client de e-mail (prin IMAP / SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "Se conformează regulilor HIPAA"
+      ],
+      "Encrypted contact details": [
+        "Detalii contacte criptate"
+      ],
+      "Encrypted VPN servers": [
+        "Servere VPN criptate"
+      ],
+      "End-to-end encryption": [
+        "Criptare în ambele părți"
+      ],
+      "Free VPN on a single device": [
+        "VPN gratuit pe un singur dispozitiv"
+      ],
+      "GDPR data processing agreement": [
+        "Acordul de prelucrare a datelor GDPR"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN de mare viteză pe un dispozitiv",
+        "VPN de mare viteză pe ${ n } dispozitive",
+        "VPN de mare viteză pe ${ n } de dispozitive"
+      ],
+      "HTML signatures": [
+        "Semnături HTML"
+      ],
+      "Kill switch/always-on VPN": [
+        "Întrerupător de urgență / VPN permanent"
+      ],
+      "Limited support": [
+        "Asistență limitată"
+      ],
+      "Multiple admin roles": [
+        "Mai multe roluri de administrare"
+      ],
+      "NetShield malware and ad-blocker": [
+        "Blocare malware și reclame cu NetShield"
+      ],
+      "P2P/BitTorrent": [
+        "P2P / BitTorrent"
+      ],
+      "Password-protected Emails": [
+        "Mesaje protejate prin parolă"
+      ],
+      "Phone support (6+ users)": [
+        "Asistență telefonică (peste 6 utilizatori)"
+      ],
+      "Priority email support": [
+        "Asistență pe e-mail prioritară"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ],
+      "Router support": [
+        "Suport ruter"
+      ],
+      "Secure Core servers": [
+        "Server Secure Core"
+      ],
+      "Send & receive invitations": [
+        "Trimiteți și primiți invitații"
+      ],
+      "Share calendar via link": [
+        "Partajare calendar prin legături"
+      ],
+      "Share files and folders via link": [
+        "Partajați fișiere și foldere prin legături"
+      ],
+      "Sign in as user": [
+        "Conectați-vă ca utilizator"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Trafic divizat (Android și Windows)"
+      ],
+      "Strict no-logs policy": [
+        "Politică strictă fără înregistrări"
+      ],
+      "Team management": [
+        "Gestionare echipă"
+      ],
+      "Tor over VPN": [
+        "Tor peste VPN"
+      ],
+      "Two-factor authentication": [
+        "Autentificare cu doi factori"
+      ],
+      "Unlimited filters": [
+        "Filtre nelimitate"
+      ],
+      "Unlimited folders": [
+        "Foldere nelimitate"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited labels": [
+        "Etichete nelimitate"
+      ],
+      "Unlimited messages per day": [
+        "Mesaje nelimitate pe zi"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Lățime de bandă și volum nelimitate"
+      ],
+      "Up to ${ totalStorageSize } total storage": [
+        "Până la ${ totalStorageSize } spațiu total"
+      ],
+      "User credential management": [
+        "Gestionare acreditări utilizatori"
+      ],
+      "User session management": [
+        "Gestionare sesiuni utilizator"
+      ],
+      "Worldwide streaming services": [
+        "Servicii de transmisie în flux globale"
+      ]
+    },
+    "new_plans: forgot links": {
+      "Forgot password": [
+        "Am uitat parola"
+      ],
+      "username": [
+        "utilizator"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Asistență"
+      ],
+      "Team management": [
+        "Gestionare echipă"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand } care se termină cu ${ last4 }"
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        "${ BRAND_NAME } vă permite să creați adrese de e-mail și să gestionați conturi pentru utilizatori secundari. Ideal pentru familii și organizații."
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        "* Cu abonament de o lună. Alte opțiuni de abonament sunt disponibile la finalizare."
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        "* Cu abonament de 12 luni. Alte opțiuni de abonament sunt disponibile la finalizare."
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        "* Cu abonament de 24 de luni. Alte opțiuni de abonament sunt disponibile la finalizare."
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "Creditele aplicabile, taxele zilnice și cupoanele sunt aplicate în pasul următor."
+      ],
+      "Comprehensive privacy and security with all Proton services combined.": [
+        "Confidențialitate și securitate cuprinzătoare cu toate serviciile Proton combinate."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Dacă vă ștergeți contul, veți pierde toate beneficiile planului ${ visionary } și nu vor mai fi disponibile dacă vă creați un cont nou."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Dacă retrogradați contul, veți pierde toate beneficiile planului ${ visionary } și nu vor mai fi disponibile dacă încercați să vă reabonați."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Dacă treceți la un alt plan, veți pierde toate beneficiile planului ${ visionary } și nu veți mai putea reveni la el."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Planul nostru ${ visionary } nu mai este disponibil noilor abonați deoarece un plan special pentru utilizatorii originali ai ${ BRAND_NAME } cu funcții și beneficii speciale."
+      ],
+      "Popular": [
+        "Popular"
+      ],
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Preț pentru reînnoirea viitoare: include toate cupoanele neexpirate aplicabile salvate în cont."
+      ],
+      "Privacy and security suite for businesses, including all premium Proton services.": [
+        "Suită de confidențialitate și securitate pentru companii, incluzând toate serviciile premium Proton."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "E-mail și calendar securizat pentru profesioniști și companii."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "E-mail securizat cu funcții avansate pentru comunicațiile personale de zi cu zi."
+      ],
+      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
+        "Setați răspunsuri automate pentru a informa persoanele de contact că nu sunteți la birou sau că nu puteți răspunde."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Contul de pornire fără costuri conceput pentru a împuternici toată lumea cu confidențialitate în mod implicit."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă ștergeți contul, veți pierde prețul promoțional și nu va fi disponibil dacă creați un cont nou."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } din ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/lună"
+      ]
+    },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Mai aveți încă o zi rămasă pentru contul cu planul ${ currentPlanName }.",
+        "Mai aveți încă ${ daysRemaining } zile rămase pentru contul cu planul ${ currentPlanName }.",
+        "Mai aveți încă ${ daysRemaining } de zile rămase pentru contul cu planul ${ currentPlanName }."
+      ]
+    },
+    "new_plans: signup": {
+      "Creating the account means you accept ${ terms }. ": [
+        "Crearea contului înseamnă că acceptați ${ terms }. "
+      ],
+      "Payment details": [
+        "Detalii plată"
+      ],
+      "Proton's terms and conditions": [
+        "Termenii și condițiile Proton"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "Salvați adresa de e-mail sau numărul de telefon pentru a fi utilizate la verificarea contului dacă trebuie să vă resetați contul."
+      ],
+      "Subscription": [
+        "Abonament"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Pentru a începe, alegeți un nume de afișare. Acesta va fi văzut de cei cărora le trimiteți un e-mail, îi invitați la un eveniment sau le partajați un fișier."
+      ],
+      "Your ${ planName } subscription is now active.": [
+        "Abonamentul ${ planName } este acum activ."
+      ],
+      "Your selected plan: ${ planName }": [
+        "Planul selectat: ${ planName }"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Ștergere cont?"
+      ],
+      "Downgrade account?": [
+        "Retrogradare cont?"
+      ],
+      "Improved plans coming soon!": [
+        "Planuri îmbunătățite sosesc în curând!"
+      ],
+      "Review subscription and pay": [
+        "Revizuire abonament și plată"
+      ],
+      "Start exploring the Proton universe": [
+        "Începeți să explorați universul Proton"
+      ],
+      "Switch plans?": [
+        "Schimbare planuri?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Deblocați funcțiile premium făcând upgrade"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Încercare ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgrade la ${ planName }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Accesați de oriunde conținutul serviciilor de transmisii în flux, inclusiv Netflix, Disney + și Prime Video."
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adresele au capacitate completă de trimitere și primire. Un utilizator poate avea mai multe adrese atribuite acestora; cu toate acestea, o singură adresă nu poate fi atribuită mai multor utilizatori."
+      ],
+      "Advanced security VPN with global network": [
+        "VPN cu securitate avansată și rețea globală"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Vă permite să accesați mai multe rețele în același timp, de ex., transmiteți un film dintr-o altă țară în timp ce obțineți în continuare rezultate de căutare locală."
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Vă permite să configurați răspunsuri automate pentru mesajele primite când nu puteți răspunde."
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "În prezent, trimiterea mesajelor promoționale sau programate grupate nu este acceptată. Vă recomandăm să utilizați un furnizor dedicat de servicii de e-mail pentru acest caz de utilizare."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "Controlați accesul la fișierele partajate adăugând protecția cu parolă și dată de expirare la legături."
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
+        "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@proton.me pentru conturile de cumpărături, ionstiri@proton.me pentru abonamentul la știri."
+      ],
+      "Create up to ${ n } custom calendar.": [
+        "Creați un calendar.",
+        "Creați până la ${ n } calendare.",
+        "Creați până la ${ n } de calendare."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "Vă apără împotriva pierderii confidențialității din VPN prin transmiterea traficului pe Internet prin mai multe servere."
+      ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        "Partajați cu ușurință calendarele cu colegii, familia și prietenii printr-o legătură."
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        "Partajați cu ușurință calendarele cu prietenii sau colegii cu ajutorul unei legături."
+      ],
+      "End-to-end encrypted calendar": [
+        "Calendar criptat în ambele părți"
+      ],
+      "End-to-end encrypted file storage": [
+        "Spațiu de stocare criptat în ambele părți"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Se asigură că primiți toate e-mailurile trimise către domeniul dvs., chiar dacă adresa de e-mail nu a existat, nu mai există sau e scrisă greșit."
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Forțați deconectarea sesiunilor utilizatorilor atunci când e posibil ca acreditările utilizatorilor sunt compromise."
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "Suportul IMAP este limitat la utilizarea aplicațiilor desktop (de ex., Outlook, Apple Mail, Thunderbird) prin ${ MAIL_APP_NAME } Bridge. În prezent, integrările IMAP bazate pe cloud nu sunt acceptate."
+      ],
+      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
+        "Vă protejează blocând toate conexiunile din rețea atunci când conexiunea la serverul nostru VPN cade accidental."
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etichetele sunt etichete simple pe care le puteți adăuga la mesaje pentru a le face mai ușor de găsit sau de aplicat filtre."
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Vă gestionați abonamentul, inclusiv personalizarea planului. Metodele de plată acceptate sunt cardul de credit, PayPal, criptomonedele și transferul bancar."
+      ],
+      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
+        "În zilele lucrătoare, primiți asistență de la echipa de Asistență pentru clienți Proton în termen de 24 de ore de la solicitări."
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        "În plus, adăugați până la 5 calendare de la colegi, organizații, familie și prieteni."
+      ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "În plus, adăugați până la 5 calendare de la prieteni, familie, colegi sau organizații."
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+        "O conexiune VPN permite conectarea unui dispozitiv la Proton VPN la un moment dat. De exemplu, pentru a conecta un telefon și un laptop la Proton VPN în același timp, aveți nevoie de două conexiuni VPN."
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Opțiunea de a vedea căsuțele de e-mail ale utilizatorilor neprivați, inclusiv mesajul complet și datele de contact."
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Instrument de gestionare a organizației care permite administratorilor să adauge și să elimine utilizatorii, să aloce spațiul de stocare, să configureze domenii și să efectueze alte sarcini."
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "Infrastructura noastră robustă vă asigură că vă veți putea accesa contul atunci când aveți nevoie."
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Discurile serverelor noastre sunt complet criptate cu multiple niveluri de parole astfel încât datele sunt protejate chiar și dacă acestea sunt compromise."
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Vă puteți personaliza semnătura de e-mail cu sigle, imagini, pictograme de social media, legături către datele de contact și multe altele."
+      ],
+      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
+        "Asistența telefonică este disponibilă de la echipa de Asistență pentru clienți Proton în timpul programului de lucru european, pentru clienții cu 6 sau mai mulți utilizatori."
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "Împiedică accesarea mesajelor de către ${ BRAND_NAME } sau de către terți. Singurele persoane care pot citi mesajele sunt expeditorul și destinatarul specificat."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Protejați fiecare dispozitiv conectat la rețeaua WiFi. De asemenea, este util dacă aveți dispozitive care nu acceptă direct setări VPN."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Configurați rapid mesaje de răspuns automat"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Transferați rapid e-mailurile, calendarele sau contactele de la orice furnizor."
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "Necesită un cod trimis unui telefon mobil pentru conectare. Prin aceasta chiar dacă o parolă este compromisă, contul rămâne în siguranță."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Resetați parolele și autentificarea cu doi factori a utilizatorilor."
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "Redirecționați traficul din Internet prin rețeaua Tor cu un singur clic."
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
+        "Stocați în siguranță detaliile contactelor personale, cum ar fi numărul de telefon, adresa, ziua de naștere și notele personale. Criptarea cu acces zero vă garantează că nici chiar Proton nu le poate accesa."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Trimiteți e-mailuri către grupuri mari rapid și ușor prin crearea a cât mai multe grupuri de contact de care aveți nevoie (până la 100 de contacte per grup)."
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "Configurați filtre pentru a răspunde automat, sorta și / sau eticheta e-mailurile."
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Partajați fișierele sau folderele cu oricine utilizând legături sigure și partajabile."
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "NetShield special conceput să vă protejeze dispozitivul și să vă accelereze navigarea prin blocarea reclamelor, urmăritorilor și a programelor malițioase."
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "Începeți cu ${ freeStorageSize } și deblocați mai mult spațiu pe parcurs. Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }. Administratorii pot aloca spațiu de stocare diferit utilizatorilor din organizația lor."
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "Suport pentru protocoalele de partajare a fișierelor, cum ar fi BitTorrent."
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Utilizați propriile adrese de domeniu de e-mail personale, de exemplu, nume@adresapersonala.com"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "Nu păstrăm jurnale ale activității online și nu înregistrăm metadate care vă pot compromite confidențialitatea."
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "Ne-am angajat să ajutăm clienții supuși reglementărilor HIPAA / HITECH să asigure informațiile de sănătate protejate (PHI). BAA-urile semnate sunt disponibile pentru toți clienții ${ BRAND_NAME } pentru afaceri."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "Când conexiunea trece prin VPN-ul nostru, DNS face interogări prin tunelul VPN criptat, adăugând asta la confidențialitatea și securitatea online."
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
+        "Când trimiteți altor utilizatori ${ MAIL_APP_NAME }, criptarea este automată. Trimiterea către utilizatori fără cont de ${ MAIL_APP_NAME } necesită setarea unei parole înainte de trimitere."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Puteți avea mai mulți administratori. Toți administratorii pot adăuga și gestiona utilizatorii, dar numai administratorul principal are control asupra facturării."
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        "Inclus cu ${ plus }, ${ bundle } și ${ BRAND_NAME } pentru afaceri."
+      ],
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        "Inclus cu toate planurile ${ BRAND_NAME } pentru afaceri."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } spațiu total"
+      ],
+      "10 email addresses/aliases": [
+        "10 adrese de e-mail / aliasuri"
+      ],
+      "Access advanced VPN features": [
+        "Accesați caracteristici VPN avansate"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "Adăugați mai multe personalizări cu 15 adrese de e-mail și până la 3 domenii adiționale de e-mail personale"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Măriți spațiul de stocare la ${ bundleStorage } în total"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "Măriți spațiul de stocare la ${ businessStorage } per utilizator"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+        "Creați un calendar personal",
+        "Creați până la ${ numberOfPersonalCalendars } calendare personale",
+        "Creați până la ${ numberOfPersonalCalendars } de calendare personale"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "Totul în ${ vpnPlanName }"
+      ],
+      "Get 5 additional email addresses per user": [
+        "Obțineți 5 adrese de e-mail suplimentare per utilizator"
+      ],
+      "Priority support": [
+        "Asistență prioritară"
+      ],
+      "Support for 1 custom email domain": [
+        "Suport pentru un domeniu de e-mail personal"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Foldere, etichete și filtre nelimitate"
+      ],
+      "Unlimited messages": [
+        "Mesaje nelimitate"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "A fost creat ${ _Filter.Name }"
@@ -8320,6 +9032,14 @@
       ],
       "vCard field": [
         "Câmp vCard"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Vă prezentăm noul Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mai multe servicii, o singură misiune: confidențialitatea."
       ]
     },
     "Time period": {

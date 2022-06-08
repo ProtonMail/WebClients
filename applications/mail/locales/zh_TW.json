@@ -111,7 +111,7 @@
         "跳至頁"
       ],
       "Chat with us": [
-        "與我們聊天"
+        "與我們對話"
       ],
       "Check import progress": [
         "查看匯入進度"
@@ -190,6 +190,9 @@
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
+      ],
+      "Copy password to clipboard": [
+        "密碼已複製到剪貼簿"
       ],
       "Create a new contact group": [
         ""
@@ -284,6 +287,9 @@
       "Edit email address": [
         "編輯電子郵件地址"
       ],
+      "Edit encryption": [
+        "編譯加密"
+      ],
       "Edit label": [
         "編輯標籤"
       ],
@@ -314,6 +320,9 @@
       "Expand URL": [
         "查看完整網址"
       ],
+      "Expiration time": [
+        "到期時間"
+      ],
       "Export": [
         "匯出"
       ],
@@ -322,6 +331,9 @@
       ],
       "Export contacts": [
         "匯出聯絡人"
+      ],
+      "External encryption": [
+        "外部加密"
       ],
       "Filter on...": [
         "篩選..."
@@ -390,7 +402,7 @@
         "隱藏郵件"
       ],
       "I have a question": [
-        "我要發問"
+        "我有問題"
       ],
       "Images will be loaded without a proxy": [
         "圖片不會透過代理伺服器載入"
@@ -668,6 +680,12 @@
       "Remove ${ attachmentName }": [
         "移除 ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "移除加密"
+      ],
+      "Remove expiration time": [
+        "移除到期時間"
+      ],
       "Remove this label": [
         "移除此標籤"
       ],
@@ -745,6 +763,9 @@
       ],
       "Set as default": [
         "設為預設"
+      ],
+      "Set encryption": [
+        "設定加密"
       ],
       "Set expiration time": [
         "設定到期時間"
@@ -868,9 +889,6 @@
       ],
       "Unsubscribe": [
         "取消訂閱"
-      ],
-      "Unsubscribe from mailing list": [
-        ""
       ],
       "Unsubscribing": [
         "正在取消訂閱"
@@ -2852,8 +2870,8 @@
       "Label name cannot be empty.": [
         ""
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        ""
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "請將至少 ${ calendarToFixCount } 個行事曆與現有的 Proton 行事曆合併"
@@ -2879,17 +2897,11 @@
       "No data to import": [
         "沒有要匯入的資料"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "未為內部使用者檢索到可用於寄送的有效密鑰"
-      ],
       "No keys retrieved for internal user": [
         "未為內部使用者檢索到密鑰"
       ],
       "No valid address found": [
         "未能找到有效地址"
-      ],
-      "No valid keys retrieved for internal user": [
-        "未為內部使用者檢索到有效密鑰"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "未為內部使用者檢索到有效WKD密鑰"
@@ -2926,6 +2938,12 @@
       ],
       "Primary address key is not decrypted.": [
         "主要地址金鑰並未被解密。"
+      ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
       ],
       "Public key could not be trusted": [
         "公開金鑰無法信任"
@@ -2975,11 +2993,17 @@
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "附件未能解密。\n若您持有對應的私密金鑰，您仍可使用\n像是 GnuPG 的程式來解密檔案。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "此資料夾名稱無法使用。請換另一個名稱。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請選擇其他名稱。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "無法擷取 ${ emailAddress } 的金鑰屬性"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "此標籤名稱無法使用。請換另一個名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請選擇其他名稱。"
@@ -3650,23 +3674,17 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成員"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位聯絡人"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
       ],
       "${ count } unread message": [
         "${ count } 封未讀郵件"
@@ -3682,9 +3700,6 @@
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封郵件無法移動。"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "已封鎖 ${ numberOfTrackers } 個電子郵件追蹤程式"
@@ -3752,8 +3767,8 @@
       "(No Recipient)": [
         "(無收件人)"
       ],
-      "5 email addresses": [
-        "5 個電子郵件地址"
+      "10 email addresses": [
+        "10 個電郵位址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "復原短語是保護帳號存取權限最安全的方法之一。如果您忘記了您的密碼，您可以用它來存取您的帳號並還原您的加密資料。"
@@ -3944,6 +3959,9 @@
       "Do you want to re-sign the contact details?": [
         "您要重新簽署此聯絡人詳細資料嗎？"
       ],
+      "Don't forget to share your password with the recipient": [
+        "別忘記與您的收件者共享金鑰密碼"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "到您喜愛的應用程式商店，下載我們的行動應用程式，安全通訊帶著走。"
       ],
@@ -3968,6 +3986,15 @@
       "Duplicate key updated": [
         "重複金鑰已更新"
       ],
+      "Edit encryption": [
+        "編譯加密"
+      ],
+      "Edit expiration time": [
+        "編輯到期時間"
+      ],
+      "Edit link": [
+        ""
+      ],
       "Email address": [
         "電子郵件地址"
       ],
@@ -3986,11 +4013,8 @@
       "embedded image": [
         "內嵌圖片"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        ""
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        ""
+      "Encrypt message": [
+        "加密郵件"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "驗證碼已傳送 ${ destinationText }，請在下方輸入。"
@@ -4007,9 +4031,6 @@
       "Expiration time": [
         "有效期限"
       ],
-      "Expiration Time": [
-        "過期時間"
-      ],
       "Expires": [
         ""
       ],
@@ -4025,6 +4046,9 @@
       "Expires soon": [
         ""
       ],
+      "Expiring message": [
+        "到期郵件"
+      ],
       "file attached": [
         "已附加檔案"
       ],
@@ -4033,6 +4057,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
+      ],
+      "Folder": [
+        ""
       ],
       "For increased security, activate 2FA.": [
         "為增加安全性請啟用兩步驟驗證。"
@@ -4067,17 +4094,20 @@
       "Hour": [
         "小時"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "我正發送郵件給一位非 Proton Mail 的使用者。"
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳戶時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看「垃圾郵件」資料夾。"
+      ],
+      "Image description": [
+        ""
       ],
       "Image URL": [
         "圖片 URL"
@@ -4244,6 +4274,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         ""
       ],
+      "non-Proton Mail": [
+        "非 Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
@@ -4255,6 +4288,9 @@
       ],
       "of": [
         "，共"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         ""
@@ -4297,6 +4333,12 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "請選擇您想插入的連結類型，並填寫所有欄位。"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
@@ -4375,6 +4417,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新行事曆 (上限為 20 個)。"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
       ],
       "Sending": [
         "正在傳送..."
@@ -4664,6 +4709,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "我們搬家嘍！到新網站來加入我們吧！ ${ link }"
+      ],
       "Web URL": [
         "網頁 URL"
       ],
@@ -4778,6 +4826,24 @@
       "Your email will only be used for this one-time verification.": [
         "您的電子郵件只會用於此一次性驗證。"
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂日期時間為 ${ dateString } 的 ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂時間為今天的 ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂時間為明天的 ${ formattedTime }"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "您的郵件到期日還有 ${ numberOfDays } 天。"
+      ],
+      "Your message will expire today.": [
+        "您的郵件將在今日到期。"
+      ],
+      "Your message will expire tomorrow.": [
+        "您的郵件將在明天到期。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的電話號碼只會用於此一次性驗證。"
       ],
@@ -4807,8 +4873,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "已失效"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "主要"
@@ -4818,9 +4890,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "Verification only": [
-        "僅用於驗證"
       ],
       "WKD": [
         "WKD"
@@ -5252,9 +5321,6 @@
       ],
       "Mark as": [
         "標示為"
-      ],
-      "Message password": [
-        "郵件密碼"
       ],
       "Move to": [
         "移至"
@@ -5895,6 +5961,46 @@
         "標籤名稱"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "切換或是新增帳號"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - 糟透了"
+      ],
+      "5 - Wonderful": [
+        "5 - 十全十美"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "若可行的話，您會如何描述說明在新版 Proton 中的實際體驗？"
+      ],
+      "Tell us about your experience (Optional)": [
+        "分享您精彩的體驗 (什麼都行)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "意見回饋"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "告訴我們您的想法"
+      ],
+      "Updated Proton, unified protection": [
+        "改版更新的 Proton，全方面防護"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } 已建立"
@@ -6013,6 +6119,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此金鑰不能用於加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -6377,10 +6494,10 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
+      "This message is from a mailing list.": [
         ""
       ],
-      "Unsubscribing from mailing list...": [
+      "Unsubscribed": [
         ""
       ]
     },
@@ -6584,6 +6701,9 @@
       "Move ${ selectionCount } message": [
         "移動 ${ selectionCount } 封郵件"
       ],
+      "Password copied to clipboard": [
+        "密碼以複製到剪貼簿"
+      ],
       "Phishing reported": [
         "網路釣魚已報告"
       ],
@@ -6669,6 +6789,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "為您介紹改版更新的 Proton。"
+      ],
+      "More services, one privacy mission.": [
+        "給您更多元服務，秉持同一隱私使命。"
+      ],
       "Settings": [
         "設定"
       ]
@@ -6884,9 +7010,6 @@
       "Enable message content search": [
         "啟用郵件內容搜尋"
       ],
-      "Encryption": [
-        "加密"
-      ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
@@ -6898,6 +7021,9 @@
       ],
       "Exporting contacts": [
         "正在匯出聯絡人"
+      ],
+      "External encryption": [
+        "外部加密"
       ],
       "Feedback": [
         ""

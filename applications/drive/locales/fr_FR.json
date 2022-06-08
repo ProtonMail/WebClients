@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Quelque chose s'est mal passé, veuillez ${ refresh } afin de pouvoir continuer. Si ce message d'erreur s'affiche toujours, veuillez contacter notre ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Le nom du dossier n'est pas valide. Veuillez en choisir un autre."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Le nom du dossier est trop long. Veuillez en choisir un autre."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Le nom du label n'est pas valide. Veuillez en choisir un autre."
       ],
       "The label name is too long. Please choose a different name.": [
         "Le nom du label est trop long. Veuillez en choisir un autre."
@@ -2225,25 +2231,20 @@
         "${ canceledCount } annulé",
         "${ canceledCount } annulés"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "Le contact ${ contactCount } dispose de plusieurs adresses e-mail.",
+        "Les contacts ${ contactCount } disposent de plusieurs adresses e-mail."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } contient des adresses électroniques multiples. Veuillez sélectionner la ou les adresses à ajouter à ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } contient des adresses électroniques multiples. Veuillez sélectionner la ou les adresses à ajouter à ce groupe."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } dispose de plusieurs adresses e-mail."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contact trouvé",
         "${ contactsCount } contacts trouvés"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contient des adresses électroniques multiples. Veuillez sélectionner la ou les adresses à ajouter à ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contient des adresses électroniques multiples. Veuillez sélectionner la ou les adresses à ajouter à ce groupe."
       ],
       "${ doneCount } finished": [
         "${ doneCount } terminé",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } et ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } groupe de contacts",
@@ -2309,8 +2307,8 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
-      "5 email addresses": [
-        "5 adresses e-mail"
+      "10 email addresses": [
+        "10 adresses e-mail"
       ],
       "A number will be added to the filename": [
         "Un numéro sera ajouté au nom du fichier"
@@ -2583,7 +2581,7 @@
         "Connexion Internet perdue"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Connexion Internet perdue. Veuillez vérifier la connectivité de votre appareil."
+        "Connexion internet perdue. Vérifiez que votre appareil est bien connecté."
       ],
       "Internet connection restored.": [
         "Connexion Internet rétablie."
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Un de vos lecteurs chiffrés est verrouillé. Ceci est très probablement lié à une récente réinitialisation du mot de passe."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Une ou plusieurs de vos clés de confiance ont été marquées comme « compromises » par leur propriétaire. Nous vous recommandons de ne plus faire confiance à ces clés."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2710,6 +2711,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Veuillez sélectionner les dossiers que vous souhaitez importer :"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Sélectionnez la ou les adresses e-mail à ajouter au groupe ${ groupCount }.",
+        "Sélectionnez la ou les adresses e-mail à ajouter aux groupes ${ groupCount }."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Sélectionnez la ou les adresses e-mail à ajouter à ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -2925,6 +2933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Nous enverrons un nouveau code de vérification à ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Nous déménageons ! Rejoignez-nous sur notre nouveau site : ${ link }."
+      ],
       "Week": [
         "Semaine"
       ],
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Compromise"
+      ],
       "Expired": [
         "Expirée"
+      ],
+      "Obsolete": [
+        "Obsolète"
       ],
       "Primary": [
         "Principale"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Approuvée"
-      ],
-      "Verification only": [
-        "Vérification uniquement"
       ],
       "WKD": [
         "WKD"
@@ -3827,6 +3841,17 @@
         "La clé ne peut pas être utilisée pour le chiffrement"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } a marqué cette clé comme compromise. Cette clé ne peut être utilisée ni pour le chiffrement ni pour la vérification de la signature."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } a marqué cette clé comme obsolète. Cette clé ne peut être utilisée que pour la vérification de signature."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Nous vous recommandons de ne plus faire confiance à cette clé."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Adresse e-mail non trouvée parmi les identifiants utilisateurs définis dans la clé d'envoi (${ keyUserIds })"
@@ -4104,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Voici le nouveau Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Plus de services, une seule mission : la protection de la vie privée."
+      ],
       "Settings": [
         "Paramètres"
       ]

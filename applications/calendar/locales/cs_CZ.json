@@ -2114,17 +2114,11 @@
       "No data to import": [
         "Žádná data k importu"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Žádný klíč pro interní uživatele není platný pro odeslání"
-      ],
       "No keys retrieved for internal user": [
         "Pro interního uživatele nebyly nalezeny žádné klíče"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Pro interního uživatele nebyly nalezeny žádné validní klíče"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Žádný klíč WKD uživatele není platný pro odeslání"
@@ -2168,6 +2162,12 @@
       "Primary address key is not decrypted.": [
         "Klíč hlavní adresy není dešifrován."
       ],
+      "Primary key is not valid for sending": [
+        "Primární klíč není platný pro odesílání"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Primární klíč pro interního uživatele je možné použít pro odesílání"
+      ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
       ],
@@ -2198,8 +2198,14 @@
       "Start time must be before end time": [
         "Čas začátku musí být před časem konce"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Název složky je neplatný. Zvolte prosím jiný název."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte prosím jiný název."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Název štítku je neplatný. Zvolte prosím jiný název."
       ],
       "The label name is too long. Please choose a different name.": [
         "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
@@ -2807,17 +2813,20 @@
         "${ calendarsToBeMergedCount } sloučených kalendářů",
         "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontakt obsahuje více e-mailových adres.",
+        "${ contactCount } kontakty obsahují více e-mailových adres.",
+        "${ contactCount } kontaktů obsahuje více e-mailových adres.",
+        "${ contactCount } kontaktů obsahuje více e-mailových adres."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
         "${ contactEmailsLength } členové",
         "${ contactEmailsLength } členů",
         "${ contactEmailsLength } členů"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } obsahuje soubor adres emailů. Prosím vyberte která emailová adresa nebo adresy přidat do ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } obsahuje soubor adres emailů. Prosím vyberte emailovou adresu nebo adresy, které přidat do skupiny."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } obsahuje více e-mailových adres."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt nalezen",
@@ -2825,20 +2834,11 @@
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } obsahuje soubor adres emailů. Prosím vyberte která emailová adresa nebo adresy přidat do ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } obsahuje soubor adres emailů. Prosím vyberte emailovou adresu nebo adresy, které přidat do skupiny."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } skupina nalezena",
         "${ groupCounts } skupiny nalezeny",
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } a ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } skupina kontaktů",
@@ -2885,8 +2885,8 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
-      "5 email addresses": [
-        "5 e-mailových adres"
+      "10 email addresses": [
+        "10 e-mailových adres"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Odvolaným účastníkům bude zaslán e-mail o zrušení účasti."
@@ -3131,6 +3131,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Dříve aktualizované výskyty organizátorem budou zachovány."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste tyto klíče \"zrušili\"."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
       ],
@@ -3154,6 +3157,15 @@
       ],
       "Please select the folders you would like to import:": [
         "Vyberte složky, které chcete importovat:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupiny.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Prosím vyčkejte jakmile vyhledáme kontakty, které mohou být znovu přihlášeny se základním šifrovacím klíčem."
@@ -3180,7 +3192,7 @@
         "Vyberte formát emailu, který chcete aby byl použit jako výchozí pro zasílání emailu na tuto emailovou adresu."
       ],
       "Select what you want to move from Google.": [
-        "Vyberte co chcete přesunout z Googlu."
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
@@ -3292,6 +3304,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
       ],
       "Week": [
         "Týden"
@@ -3425,8 +3440,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Kompromitovaný"
+      ],
       "Expired": [
         "Expirováno"
+      ],
+      "Obsolete": [
+        "Zastaralý"
       ],
       "Primary": [
         "Výchozí"
@@ -3436,9 +3457,6 @@
       ],
       "Trusted": [
         "Důvěryhodné"
-      ],
-      "Verification only": [
-        "Pouze ověřování"
       ],
       "WKD": [
         "WKD"
@@ -4000,6 +4018,34 @@
         "Název štítku"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        "Podělte se o své zkušenosti (nepovinné)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Zpětná vazba"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Poskytněte zpětnou vazbu"
+      ],
+      "Updated Proton, unified protection": [
+        "Aktualizovaný Proton, jednotná ochrana"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Skupina kontaktů byla vytvořena"
@@ -4305,6 +4351,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klíč není možné použít k šifrování"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } označil tento klíč jako kompromitovaný. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } označil tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Doporučujeme, abyste tomuto klíči \"nedůvěřovali\"."
       ]
     },
     "PGP key warning": {
@@ -4719,6 +4776,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Představujeme modernizovaný Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Více služeb, jedna mise na ochranu soukromí."
+      ],
       "Settings": [
         "Nastavení"
       ]

@@ -47,7 +47,7 @@
         "Añadir"
       ],
       "Add ${ BRAND_NAME } Account": [
-        "Agregar cuenta de ${ BRAND_NAME }"
+        "Añadir cuenta de ${ BRAND_NAME }"
       ],
       "Add address": [
         "Añadir dirección"
@@ -164,7 +164,7 @@
         "Confirmar la apertura del enlace ${ linkToShow }"
       ],
       "contact": [
-        "contacto"
+        "contactar"
       ],
       "Contact support": [
         "Contactar con soporte"
@@ -197,7 +197,7 @@
         "Crear"
       ],
       "Create a secure ProtonMail address instead": [
-        "Crear una dirección segura de ProtonMail en su lugar"
+        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Crear cuenta"
@@ -230,7 +230,7 @@
         "Personalizar importación"
       ],
       "Customize plan": [
-        "Personaliza tu plan"
+        "Personalizar plan"
       ],
       "Decrease": [
         "Reducir"
@@ -977,13 +977,13 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        "Pagar cada 12 meses"
+        "Pagable cada 12 meses"
       ],
       "Payable every 24 months": [
-        "Pagar cada 24 meses"
+        "Pago cada 24 meses"
       ],
       "Payable every month": [
-        "Pagar cada mes"
+        "Pagable cada mes"
       ],
       "Renews automatically on ${ formattedEndTime }": [
         "Se renueva automáticamente en ${ formattedEndTime }"
@@ -1286,7 +1286,7 @@
         "${ users } usuarios"
       ],
       "Total for ${ n } month": [
-        "Total para ${ n } mes",
+        "Total por ${ n } mes",
         "Total para ${ n } meses"
       ]
     },
@@ -2734,6 +2734,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "El navegador que estás utilizando no permite que el pago sea autorizado. Por favor, utiliza un navegador diferente o inicia sesión a través de un ordenador."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "El nombre de la carpeta es inválido. Por favor, elige un nombre diferente."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Por favor, elige un nombre diferente."
       ],
@@ -2742,6 +2745,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "Las claves de sus archivos de recuperación no se pueden validar. Por favor, súbelas de forma individual para obtener más información."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "El nombre de la etiqueta es inválido. Por favor, elige un nombre diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Por favor, elige un nombre diferente."
@@ -3830,7 +3836,7 @@
     },
     "Info": {
       "${ addressToCreate } is now active": [
-        "${ addressToCreate } está ahora activo"
+        "${ addressToCreate } ahora está activa"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita tu permiso para ${ enableDesktopNotifications }."
@@ -3964,8 +3970,11 @@
       "1. Invite friends to Proton": [
         "1. Invita amigos a Proton"
       ],
+      "10 email addresses": [
+        "10 direcciones de correo"
+      ],
       "2. They try ${ planName }": [
-        ""
+        "2. Ellos prueban ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a tu suscripción con el cupón ${ code }"
@@ -3976,9 +3985,6 @@
       "30-day money-back guarantee.": [
         "Garantía de reembolso de 30 días."
       ],
-      "5 email addresses": [
-        "5 direcciones de correo electrónico"
-      ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nombre que te ayude a identificar dónde lo utilizas para poder revocarlo o ampliarlo fácilmente más adelante."
       ],
@@ -3986,7 +3992,7 @@
         "A recovery file lets you unlock and view your data after an account reset."
       ],
       "A recovery phrase lets you access your account and recover your encrypted messages if you forget your password.": [
-        "Una frase de recuperación te permite acceder a tu cuenta y recuperar tus mensajes encriptados si olvidas tu contraseña."
+        "Una frase de recuperación te permite acceder a tu cuenta y recuperar tus mensajes cifrados si olvidas tu contraseña."
       ],
       "A user is an account associated with a single username, mailbox, and person": [
         "Un usuario es una cuenta asociada a un único nombre de usuario, buzón y persona"
@@ -4013,7 +4019,7 @@
         "Añadir una dirección de correo de recuperación"
       ],
       "Add a recovery phone number": [
-        "Agregar un número de teléfono de recuperación"
+        "Añadir un número de teléfono de recuperación"
       ],
       "Add image URL": [
         "Agregar URL de imagen"
@@ -4035,7 +4041,7 @@
         "Asignación de cuenta de administrador"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
-        "Después de restablecer la contraseña, tus datos se bloquean de forma encriptada para mantenerlos seguros."
+        "Al restablecer una contraseña, tus datos se bloquean con cifrado para mantenerlos seguros."
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Después de realizar el pago con Bitcoin, sigue estas instrucciones para actualizar."
@@ -4073,7 +4079,7 @@
         "Ya asignado"
       ],
       "Already have an account?": [
-        "¿Ya tiene una cuenta?"
+        "¿Ya tienes una cuenta?"
       ],
       "Already used": [
         "Ya usado"
@@ -4242,7 +4248,7 @@
         "Creando tu cuenta"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        "Crédito por la parte no utilizada de su anterior suscripción al plan"
+        "Crédito por la parte no utilizada de tu anterior suscripción al plan"
       ],
       "Currently all available storage is allocated to the administrator account. Please reduce the admin account allocation to free up space for additional users. You can increase the total storage at any time by upgrading your account.": [
         "Actualmente todo el almacenamiento disponible está asignado a la cuenta del administrador. Por favor, reduce la asignación de la cuenta del administrador para liberar espacio para usuarios adicionales. Puedes aumentar el almacenamiento total en cualquier momento mejorando tu cuenta."
@@ -4325,6 +4331,9 @@
       ],
       "Edit label": [
         "Editar etiqueta"
+      ],
+      "Edit link": [
+        "Editar enlace"
       ],
       "Email address": [
         "Dirección de correo electrónico"
@@ -4471,7 +4480,7 @@
         "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountRecovery } configurado."
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "Si pierdes tus datos de inicio de sesión y necesitas restablecer su cuenta, ${ boldImperative } que tengas un ${ boldAccountAndRecovery } configurado; de lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
+        "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, ${ boldImperative } que tengas un ${ boldAccountAndRecovery } configurado. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos o archivos."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "Si pierdes tu dispositivo habilitado para doble factor, estos códigos pueden utilizarse en lugar del código de autenticación de doble factor de 6 dígitos para iniciar sesión en tu cuenta. Cada código solo se puede utilizar una vez."
@@ -4493,6 +4502,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Si tu quieres combinar esta cuenta con otra, no borres esta."
+      ],
+      "Image description": [
+        "Descripción de la imagen"
       ],
       "Image URL": [
         "URL de la imagen"
@@ -4767,11 +4779,11 @@
         "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
-        "Pagado por un plan mensual de ${ rewardMonths }",
-        "Pagado por un plan de ${ rewardMonths } meses"
+        "Pagó un plan de ${ rewardMonths } mes",
+        "Pagó un plan de ${ rewardMonths } meses"
       ],
       "Paid for a monthly plan": [
-        "Pagado por un plan mensual"
+        "Pagó un plan mensual"
       ],
       "Payment can take a few minutes to fully verify.": [
         "El pago puede tardar unos minutos en ser verificado por completo."
@@ -5011,7 +5023,7 @@
         "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrá seguir desbloqueando sus datos en ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "El calendario será removido de su cuenta."
+        "El calendario se eliminará de tu cuenta."
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "La dirección de correo electrónico que has colocado en la parte superior de la lista es tu dirección de correo electrónico predeterminada. Arrastra y suelta para reordenar tus direcciones."
@@ -5155,10 +5167,10 @@
         "Autenticación de doble factor habilitada"
       ],
       "Two-password mode requires two passwords: one to log in to your account and one to decrypt your mailbox. (Advanced)": [
-        "El modo de dos contraseñas requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tu buzón. (Avanzado)"
+        "El modo de doble contraseña requiere dos contraseñas: una para iniciar sesión en tu cuenta y otra para descifrar tu buzón. (Avanzado)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "El modo de dos contraseñas usa contraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero define una contraseña de inicio de sesión y luego una contraseña del buzón."
+        "El modo de doble contraseña utilizacontraseñas separadas para el inicio de sesión y el descifrado del buzón. Esto proporciona un beneficio de seguridad en algunas situaciones, sin embargo, recomendamos el modo de una contraseña para la mayoría de los usuarios. Para cambiar al modo de dos contraseñas, primero define una contraseña de inicio de sesión y luego una contraseña del buzón."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No se ha podido verificar la firma del archivo de recuperación. Póngase en contacto con el servicio de asistencia."
@@ -5224,10 +5236,10 @@
         "Advertencia:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Aviso: La eliminación es permanente. Este proceso elimina el acceso a todos los servicios y borra todos los contactos."
+        "Advertencia: la eliminación es permanente. Esto también elimina el acceso a todos los servicios conectados y elimina todos tus contactos."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
-        "Te aconsejamos que utilice las aplicaciones oficiales de ${ VPN_APP_NAME } siempre que sea posible."
+        "Te aconsejamos utilizar las aplicaciones oficiales de ${ VPN_APP_NAME } cuando sea posible."
       ],
       "We recommend using your recovery phrase instead.": [
         "Recomendamos usar tu frase de recuperación en su lugar."
@@ -5243,6 +5255,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "¡Nos hemos mudado! Únete a nosotros en nuestro nuevo sitio: ${ link }."
       ],
       "Web URL": [
         "URL Web"
@@ -5395,7 +5410,7 @@
         "Pronto serás redirigido a PayPal para verificar tu pago."
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "No podrás recuperar los datos encriptados después de un restablecimiento de la cuenta utilizando los archivos de recuperación descargados."
+        "No podrás recuperar datos cifrados después de restablecer la cuenta con los archivos de recuperación descargados."
       ],
       "You'll stay signed in even after you close the browser.": [
         "Seguirás conectado incluso después de cerrar el navegador."
@@ -5443,7 +5458,7 @@
         "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        "Su cuenta existente de ${ BRAND_NAME } puede utilizarse para acceder a todos los servicios de ${ BRAND_NAME }. Inicie sesión con ${ email }."
+        "Tu cuenta actual de ${ BRAND_NAME } puede utilizarse para acceder a todos los servicios de ${ BRAND_NAME }. Inicia sesión con ${ email }."
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "Tu importación desde ${ delayedImport.Account } se ha retrasado temporalmente."
@@ -6558,7 +6573,7 @@
         "Código de autenticación de doble factor"
       ],
       "Two-password mode": [
-        "Modo de dos contraseñas"
+        "Modo de doble contraseña"
       ],
       "Undo send": [
         "Deshacer envío"
@@ -7296,7 +7311,7 @@
         "Respuesta automática"
       ],
       "Catch-all": [
-        "Catch-all"
+        ""
       ],
       "Centralized billing": [
         "Facturación centralizada"
@@ -7485,9 +7500,6 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si te cambias de plan, perderás todas las ventajas que tiene ser ${ visionary } y no podrás volver al plan ${ visionary }."
       ],
-      "learn more": [
-        "más información"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
@@ -7542,11 +7554,6 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
-      ]
-    },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Presentamos la nueva imagen de Proton, con varios servicios, pero una misma misión. Inicia sesión para continuar o ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -8617,16 +8624,16 @@
         "${ UsedAddresses } direcciones"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } de ${ MaxAddresses } dirección de correo",
+        "${ UsedAddresses } de ${ MaxAddresses } direcciones de correo"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendario",
         "${ UsedCalendars } calendarios"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } de ${ MaxDomains } dominio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } dominios personalizados"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
         "${ UsedMembers } de ${ MaxMembers } usuario",
@@ -8639,7 +8646,7 @@
         "1 conexión VPN"
       ],
       "Access to streaming services globally": [
-        "Acceda a los servicios de streaming de todo el mundo"
+        "Acceso a los servicios de streaming en todo el mundo"
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloqueador de anuncios integrado (NetShield)"
@@ -8651,12 +8658,12 @@
     },
     "Subscription price": {
       "For": [
-        "Para"
+        "Por"
       ]
     },
     "Subscription saving": {
       "Save": [
-        "Guardar"
+        "Ahorra"
       ]
     },
     "Subtitle for trial plan": {
@@ -8891,7 +8898,7 @@
         "Para empresas"
       ],
       "For individuals": [
-        "Para personas"
+        "Para particulares"
       ]
     },
     "TableHeader": {
@@ -8921,6 +8928,14 @@
       ],
       "vCard field": [
         "Campo vCard"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Presentamos el nuevo Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Más servicios, una misión de privacidad."
       ]
     },
     "Time period": {
@@ -9261,7 +9276,7 @@
         "Nombres de dominio"
       ],
       "Don't show again?": [
-        "No mostrar de nuevo?"
+        "¿No volver a mostrar?"
       ],
       "Downgrade account": [
         "Degradar cuenta"
@@ -9297,7 +9312,7 @@
         "Correo electrónico"
       ],
       "Email composer": [
-        "Editor de correos"
+        "Editor de correo"
       ],
       "Email encryption keys": [
         "Claves de cifrado del correo electrónico"
@@ -9649,7 +9664,7 @@
         "Cambiar al modo de una contraseña"
       ],
       "Switch to two-password mode": [
-        "Cambiar al modo de dos contraseñas"
+        "Cambiar al modo de doble contraseña"
       ],
       "Take precautions to avoid data loss!": [
         "¡Toma precauciones para evitar pérdidas de datos!"
@@ -10007,7 +10022,7 @@
         "Haga clic para reproducir el vídeo"
       ],
       "Replay video": [
-        "Repetición del vídeo"
+        "Volver a reproducir el vídeo"
       ]
     },
     "VPN info": {

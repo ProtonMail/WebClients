@@ -126,7 +126,7 @@
         "Alle opmaak wissen"
       ],
       "Clear browser data": [
-        "Wis browser gegevens"
+        "Wis browsergegevens"
       ],
       "Clear data": [
         "Gegevens wissen"
@@ -190,6 +190,9 @@
       ],
       "Copy email to clipboard": [
         "E-mailadres kopiëren naar klembord"
+      ],
+      "Copy password to clipboard": [
+        "Wachtwoord kopiëren naar klembord"
       ],
       "Create a new contact group": [
         "Nieuwe contactgroep maken"
@@ -286,6 +289,9 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
+      "Edit encryption": [
+        "Versleuteling bewerken"
+      ],
       "Edit label": [
         "Label bewerken"
       ],
@@ -316,6 +322,9 @@
       "Expand URL": [
         "URL uitbreiden"
       ],
+      "Expiration time": [
+        "Vervaltijd"
+      ],
       "Export": [
         "Exporteren"
       ],
@@ -324,6 +333,9 @@
       ],
       "Export contacts": [
         "Contactpersonen exporteren"
+      ],
+      "External encryption": [
+        "Externe versleuteling"
       ],
       "Filter on...": [
         "Filteren op..."
@@ -477,7 +489,7 @@
         "Mailbox dichtheid"
       ],
       "Mailbox layout": [
-        "Mailbox layout"
+        "Mailbox lay-out"
       ],
       "Mark as read": [
         "Markeer als gelezen"
@@ -671,6 +683,12 @@
       "Remove ${ attachmentName }": [
         "Verwijder ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "Versleuteling verwijderen"
+      ],
+      "Remove expiration time": [
+        "Vervaltijd verwijderen"
+      ],
       "Remove this label": [
         "Label verwijderen"
       ],
@@ -748,6 +766,9 @@
       ],
       "Set as default": [
         "Als standaard instellen"
+      ],
+      "Set encryption": [
+        "Versleuteling instellen"
       ],
       "Set expiration time": [
         "Stel vervaltijd in"
@@ -872,9 +893,6 @@
       ],
       "Unsubscribe": [
         "Afmelden"
-      ],
-      "Unsubscribe from mailing list": [
-        "Afmelden van mailinglijst"
       ],
       "Unsubscribing": [
         "Afmelden"
@@ -1311,7 +1329,7 @@
         "${ participantName } vroeg om de laatste updates voor een afspraak die niet meer bestaat in uw kalender."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
+        "${ participantName } heeft gevraagd om de laatste updates voor een evenement dat niet overeenkomt met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } heeft de uitnodiging afgewezen en een nieuw tijdstip voorgesteld voor één herhaling van deze afspraak."
@@ -1494,7 +1512,7 @@
         "Deze reactie komt niet overeen met uw uitnodigingsgegevens. Controleer de uitnodigingsgegevens in uw agenda."
       ],
       "This response is out of date.": [
-        ""
+        "Dit antwoord is achterhaald."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Deze reactie is verouderd. De afspraak bestaat niet meer in uw agenda."
@@ -2677,38 +2695,38 @@
     },
     "Email reminder banner": {
       "Event is tomorrow": [
-        "Het evenement is morgen"
+        "De afspraak is morgen"
       ],
       "Event starting now": [
         "De afspraak begint nu"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "Gebeurtenis start in één minuut",
+        "Afspraak start in één minuut",
         "Afspraak start in ${ minutesUntilEvent } minuten"
       ],
       "Event starts tomorrow": [
-        "Het evenement begint morgen"
+        "De afspraak begint morgen"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        "Afspraakgegevens zijn gecodeerd. Meld u opnieuw aan om Agenda te herstellen en uw gegevens te decoderen. ${ learnMoreLink }"
+        "Afspraakgegevens zijn versleuteld. Meld u opnieuw aan om Agenda te herstellen en uw gegevens te ontsleutelen. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        "De details van de afspraak kunnen niet worden ontcijferd. ${ whyNotLink }"
+        "De details van de afspraak kunnen niet worden ontsleuteld. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        "Het evenement staat niet langer in uw agenda"
+        "De afspraak staat niet langer in uw agenda"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        "Het evenement werd geannuleerd"
+        "De afspraak werd geannuleerd"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        "Evenement werd bijgewerkt. Deze herinnering is verouderd."
+        "Afspraak werd bijgewerkt. Deze herinnering is verouderd."
       ]
     },
     "Email subject": {
@@ -2866,8 +2884,8 @@
       "Label name cannot be empty.": [
         "Labelnaam mag niet leeg zijn."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Maximum aantal bijlagen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overschreden."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Maximum aantal bijlagen (${ attachmentsCountLimit }) overschreden"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
@@ -2894,17 +2912,11 @@
       "No data to import": [
         "Geen gegevens om te importeren"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Geen enkele ontvangen sleutel van interne gebruiker is geldig om mee te verzenden"
-      ],
       "No keys retrieved for internal user": [
         "Geen keys ontvangen van interne gebruiker"
       ],
       "No valid address found": [
         "Geen geldig adres gevonden"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Geen geldige keys ontvangen van interne gebruiker"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Geen enkel ontvangen WKD-sleutel is geldig voor deze gebruiker"
@@ -2944,6 +2956,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet ontsleuteld."
+      ],
+      "Primary key is not valid for sending": [
+        "Primaire sleutel is niet geldig voor verzenden"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Primaire sleutel opgehaald voor interne gebruiker is geldig voor verzenden"
       ],
       "Public key could not be trusted": [
         "De openbare sleutel is niet vertrouwd"
@@ -2995,11 +3013,17 @@
         "De bijlage kon niet worden ontsleuteld.\nAls u de bijbehorende private sleutel heeft, kunt u nog steeds\nhet bestand decoderen met een programma zoals GnuPG.",
         "Sommige bijlagen konden niet worden gedecodeerd.\nAls u de bijbehorende privé sleutel heeft, kunt u nog steeds\nde bestanden decoderen met een programma zoals GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "De mapnaam is ongeldig. Kies een andere naam."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "De kerneigenschappen van ${ emailAddress } kunnen niet verkregen worden"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "De naam van het label is ongeldig. Kies een andere naam."
       ],
       "The label name is too long. Please choose a different name.": [
         "De naam van het label is te lang. Kies een andere naam."
@@ -3682,25 +3706,20 @@
         "${ calendarsToBeMergedCount } samengevoegde agenda",
         "${ calendarsToBeMergedCount } samengevoegde agenda's"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contact bevat meerdere e-mailadressen.",
+        "${ contactCount } contacten bevatten meerdere e-mailadressen."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Lid",
         "${ contactEmailsLength } Leden"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of -adressen u wilt toevoegen aan ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of -adressen u wilt toevoegen aan deze groep."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } bevat meerdere e-mailadressen."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contactpersoon gevonden",
         "${ contactsCount } contactpersonen gevonden"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } bevatten meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } bevatten meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan deze groep."
       ],
       "${ count } unread message": [
         "${ count } ongelezen bericht",
@@ -3720,9 +3739,6 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } bericht kon niet verplaatst worden.",
         "${ messagesNotAuthorizedToMove } berichten konden niet worden verplaatst."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } en ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "Één e-mail tracker geblokkeerd",
@@ -3772,7 +3788,7 @@
         "${ total } berichten"
       ],
       "${ totalMessagesCount } scheduled message": [
-        "Één scheduled message",
+        "Één gepland bericht",
         "${ totalMessagesCount } ingeplande berichten"
       ],
       "${ unread } unread conversation": [
@@ -3808,8 +3824,8 @@
       "(No Recipient)": [
         "(Geen ontvanger)"
       ],
-      "5 email addresses": [
-        "5 e-mailadressen"
+      "10 email addresses": [
+        "10 e-mailadressen"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Een herstelzin is een van de veiligste manieren om de toegang tot uw account te beveiligen. U kunt het gebruiken om toegang te krijgen tot uw account en uw versleutelde gegevens te herstellen als u ooit uw wachtwoord vergeet."
@@ -4008,6 +4024,9 @@
       "Do you want to re-sign the contact details?": [
         "Wilt u de contactgegevens opnieuw ondertekenen?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Vergeet uw wachtwoord niet te delen met de ontvanger"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download onze mobiele applicatie van uw favoriete app store om veilig onderweg te communiceren."
       ],
@@ -4032,6 +4051,15 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
+      "Edit encryption": [
+        "Versleuteling bewerken"
+      ],
+      "Edit expiration time": [
+        "Vervaltijd bewerken"
+      ],
+      "Edit link": [
+        "Link bewerken"
+      ],
       "Email address": [
         "E-mailadres"
       ],
@@ -4052,11 +4080,8 @@
         "ingesloten afbeelding",
         "ingesloten afbeeldingen"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Versleutel voor niet-${ BRAND_NAME }-gebruikers"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Versleutelde berichten aan niet-${ BRAND_NAME }-gebruikers verlopen binnen 28 dagen, tenzij er een kortere verlooptijd ingesteld is."
+      "Encrypt message": [
+        "Bericht versleutelen"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Vul de verificatiecode in die naar ${ destinationText } verzonden is."
@@ -4074,9 +4099,6 @@
       "Expiration time": [
         "Vervaltijd"
       ],
-      "Expiration Time": [
-        "Verlooptijd"
-      ],
       "Expires": [
         "Verloopt"
       ],
@@ -4092,6 +4114,9 @@
       "Expires soon": [
         "Verloopt binnenkort"
       ],
+      "Expiring message": [
+        "Bericht verlopend"
+      ],
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
@@ -4101,6 +4126,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als uitgaande. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
+      ],
+      "Folder": [
+        "Map"
       ],
       "For increased security, activate 2FA.": [
         "Activeer 2FA voor meer veiligheid."
@@ -4137,17 +4165,20 @@
         "Uur",
         "Uren"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Ik verzend dit bericht naar een niet-ProtonMail-gebruiker."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Als u problemen ondervindt met het aanmaken van uw account, vraag dan een uitnodiging aan. Wij reageren op uw verzoek binnen een werkdag."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Als u dit bericht aan een niet-${ MAIL_APP_NAME }-gebruiker verstuurt, zorg ervoor dat er een wachtwoord ingesteld is."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Als u denkt dat dit een fout is, neem dan contact met ons op via ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
+      ],
+      "Image description": [
+        "Omschrijving van de afbeelding"
       ],
       "Image URL": [
         "Afbeeldings-URL"
@@ -4315,6 +4346,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Geen trackers gevonden, maar sommige afbeeldingen konden niet ingeladen worden met bescherming tegen tracking"
       ],
+      "non-Proton Mail": [
+        "niet-Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
@@ -4326,6 +4360,9 @@
       ],
       "of": [
         "van"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren je deze sleutel niet meer de vertrouwen."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
@@ -4368,6 +4405,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groep.",
+        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groepen."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Een moment geduld, we zijn op zoek naar contacten die opnieuw ondertekend kunnen worden met de primaire versleutelingssleutel."
@@ -4430,7 +4474,7 @@
         "Geplande verzending van dit bericht zal worden geannuleerd."
       ],
       "Scheduling message...": [
-        "Scheduling message..."
+        "Bericht plannen..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
         "Duurt de zoekopdracht te lang? ${ dropdownButton } of ${ toggleOffButton } van deze zoeksessie."
@@ -4446,6 +4490,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Verzend een versleuteld, met wachtwoord beveiligd bericht naar een ${ boldText } e-mailadres."
       ],
       "Sending": [
         "Bezig met verzenden"
@@ -4736,6 +4783,9 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      ],
       "Web URL": [
         "Website (URL)"
       ],
@@ -4858,6 +4908,25 @@
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map op ${ dateString } om ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map vandaag om ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map morgen om ${ formattedTime }"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Uw bericht zal verlopen binnen ${ numberOfDays } dag.",
+        "Uw bericht zal verlopen binnen ${ numberOfDays } dagen."
+      ],
+      "Your message will expire today.": [
+        "Uw bericht zal vandaag verlopen."
+      ],
+      "Your message will expire tomorrow.": [
+        "Uw bericht zal morgen verlopen."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
@@ -4887,8 +4956,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Gecompromitteerd"
+      ],
       "Expired": [
         "Verlopen"
+      ],
+      "Obsolete": [
+        "Verouderd"
       ],
       "Primary": [
         "Primair"
@@ -4898,9 +4973,6 @@
       ],
       "Trusted": [
         "Vertrouwd"
-      ],
-      "Verification only": [
-        "Alleen verificatie"
       ],
       "WKD": [
         "WLD"
@@ -5334,9 +5406,6 @@
       ],
       "Mark as": [
         "Markeren als"
-      ],
-      "Message password": [
-        "Wachtwoord van bericht"
       ],
       "Move to": [
         "Verplaatsen naar"
@@ -5813,7 +5882,7 @@
         "Afbeelding is niet geladen om uw privacy te beschermen."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
+        "Uw browser kon de identiteit van de externe server niet verifiëren. De afbeelding wordt mogelijk gehost met het http-protocol."
       ]
     },
     "Message notification": {
@@ -5992,7 +6061,7 @@
         "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
       ],
       "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "We hebben Proton een uniforme, nieuwe look gegeven. We zijn benieuwd wat je ervan vindt!"
+        "We hebben Proton een uniforme, nieuwe look gegeven. We zijn benieuwd wat u ervan vindt!"
       ]
     },
     "new_plans: label": {
@@ -6003,10 +6072,10 @@
         "5 - Geweldig"
       ],
       "How would you describe your experience with the new Proton?": [
-        "Hoe zou je je ervaring met de nieuwe Proton omschrijven?"
+        "Hoe zou u uw ervaring met de nieuwe Proton omschrijven?"
       ],
       "Tell us about your experience (Optional)": [
-        "Vertel ons over je ervaring (optioneel)"
+        "Vertel ons over uw ervaring (optioneel)"
       ]
     },
     "new_plans: placeholder": {
@@ -6043,7 +6112,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
     "Onboarding": {
@@ -6140,6 +6209,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } heeft deze sleutel gemarkeerd als gecompromitteerd. Deze sleutel kan niet worden gebruikt voor versleuteling of ter verificatie."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } heeft deze sleutel gemarkeerd als verouderd. Deze sleutel kan alleen nog gebruikt worden voor de verificatie van handtekeningen."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "We adviseren je deze sleutel niet meer te vertrouwen."
       ]
     },
     "PGP key warning": {
@@ -6512,11 +6592,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Afmelden van mailinglijst"
+      "This message is from a mailing list.": [
+        "Dit bericht komt van een mailinglist."
       ],
-      "Unsubscribing from mailing list...": [
-        "Afmelden van mailinglijst..."
+      "Unsubscribed": [
+        "Opgezegd"
       ]
     },
     "Step in filter modal": {
@@ -6742,6 +6822,9 @@
         "Verplaats ${ selectionCount } bericht",
         "Verplaats ${ selectionCount } berichten"
       ],
+      "Password copied to clipboard": [
+        "Wachtwoord gekopieerd naar klembord"
+      ],
       "Phishing reported": [
         "Phishing gerapporteerd"
       ],
@@ -6827,6 +6910,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Maak kennis met de vernieuwde Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Meer diensten, één privacymissie."
+      ],
       "Settings": [
         "Instellingen"
       ]
@@ -7055,9 +7144,6 @@
       "Enable message content search": [
         "Inschakelen van zoeken op berichtinhoud"
       ],
-      "Encryption": [
-        "Versleuteling"
-      ],
       "Enter your password": [
         "Voer uw wachtwoord in"
       ],
@@ -7069,6 +7155,9 @@
       ],
       "Exporting contacts": [
         "Contacten worden geëxporteerd"
+      ],
+      "External encryption": [
+        "Externe versleuteling"
       ],
       "Feedback": [
         "Feedback"
@@ -7116,7 +7205,7 @@
         "Mailbox dichtheid"
       ],
       "Mailbox layout": [
-        "Mailbox layout"
+        "Mailbox lay-out"
       ],
       "Mark as unread": [
         "Markeren als ongelezen"

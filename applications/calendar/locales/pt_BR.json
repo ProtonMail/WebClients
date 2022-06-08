@@ -860,7 +860,7 @@
     },
     "Calendar view selector": {
       "Change time range to": [
-        ""
+        "Alterar intervalo de tempo para"
       ]
     },
     "Collapsible tooltip": {
@@ -2084,17 +2084,11 @@
       "No data to import": [
         "Sem dados para importar"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nenhuma chave recuperada para o usuário interno é válida para o envio"
-      ],
       "No keys retrieved for internal user": [
         "Nenhuma chave recuperada para o usuário interno"
       ],
       "No valid address found": [
         "Nenhum endereço válido encontrado"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nenhuma chave válida recuperada para o usuário interno"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nenhuma chave WKD recuperada para o usuário é válida para o envio"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "O endereço da chave primária não foi descriptografada."
       ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Chave primária recuperada para o usuário interno é válida para o envio"
+      ],
       "Request timed out": [
         "A solicitação expirou"
       ],
@@ -2162,8 +2162,14 @@
       "Start time must be before end time": [
         "A hora de início deve ser antes da hora de término"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Por favor, escolha um nome diferente."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "O nome do marcador é inválido. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "O nome do marcador é muito longo. Por favor, escolha um nome diferente."
@@ -2737,32 +2743,24 @@
         "${ calendarsToBeMergedCount } calendário mesclado",
         "${ calendarsToBeMergedCount } calendários mesclados"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a este grupo."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contato encontrado",
         "${ contactsCount } contatos encontrados"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a este grupo."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } e ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contatos",
@@ -2795,8 +2793,8 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
-      "5 email addresses": [
-        "5 endereços de e-mail"
+      "10 email addresses": [
+        "10 endereços de e-mail"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Um e-mail de cancelamento será enviado aos participantes removidos."
@@ -3033,6 +3031,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Ocorrências previamente atualizadas pelo organizador serão mantidas."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
       ],
@@ -3056,6 +3057,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Por favor, selecione as pastas que você deseja importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
@@ -3082,7 +3090,7 @@
         "Selecione o formato de e-mail que você deseja que seja usado por padrão ao enviar um e-mail para este endereço."
       ],
       "Select what you want to move from Google.": [
-        "Selecione o que você deseja mover do Google."
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
@@ -3194,6 +3202,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos nos movendo! Junte-se a nós em nosso novo site: ${ link }."
       ],
       "Week": [
         "Semana"
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Comprometida"
+      ],
       "Expired": [
         "Expirado"
+      ],
+      "Obsolete": [
+        "Obsoleta"
       ],
       "Primary": [
         "Principal"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ],
-      "Verification only": [
-        "Apenas verificação"
       ],
       "WKD": [
         "WKD"
@@ -3907,7 +3921,7 @@
     },
     "new_plans: placeholder": {
       "Feedback": [
-        "Feedback"
+        "Comentários"
       ]
     },
     "new_plans: title": {
@@ -4045,7 +4059,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Em seguida, você precisará iniciar sessão na sua conta do Google e conceder ao Proton o acesso aos seus dados."
       ]
     },
     "Oauth instructions video": {
@@ -4175,6 +4189,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "A chave não pode ser usada para criptografar"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4581,6 +4606,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Apresentamos a versão atualizada dos produtos Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mais serviços, uma missão de privacidade."
+      ],
       "Settings": [
         "Configurações"
       ]
@@ -4933,7 +4964,7 @@
         "Inicie a sessão novamente para continuar"
       ],
       "Sign in and grant access": [
-        ""
+        "Inicie sessão e conceda acesso"
       ],
       "Update event": [
         "Atualizar evento"
