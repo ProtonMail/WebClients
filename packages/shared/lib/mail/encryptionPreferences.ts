@@ -184,7 +184,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
             ...result,
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_CANNOT_SEND,
-                c('Error').t`Primary key retrieved for internal user is valid for sending`
+                c('Error').t`Primary key retrieved for internal user is not valid for sending`
             ),
         };
     }
