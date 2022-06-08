@@ -200,7 +200,7 @@
         "Obtenir codi de verificació"
       ],
       "Go to label": [
-        ""
+        "Ves a l'etiqueta"
       ],
       "Go to panel ${ index }": [
         "Anar al panell ${ index }"
@@ -209,7 +209,7 @@
         "Anar a la configuració"
       ],
       "Got it": [
-        ""
+        "Entesos"
       ],
       "Hide advanced PGP settings": [
         "Amagar configuració PGP avançada"
@@ -593,7 +593,7 @@
     },
     "Attendee role": {
       "Optional": [
-        ""
+        "Opcional"
       ]
     },
     "Beta access description": {
@@ -768,7 +768,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continua utilitzant ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar invite buttons label": {
@@ -790,7 +790,7 @@
         "${ name } ha acceptat provisionalment la invitació"
       ],
       "This event has been canceled": [
-        ""
+        "Aquest esdeveniment s'ha cancel·lat"
       ],
       "You accepted the invitation": [
         "Heu acceptat la invitació"
@@ -807,10 +807,10 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        ""
+        "Afegeix calendari des d'una URL"
       ],
       "More options": [
-        ""
+        "Més opcions"
       ]
     },
     "Calendar status": {
@@ -844,7 +844,7 @@
         "Han passat més de 12 hores des de la darrera actualització"
       ],
       "Unsupported calendar format": [
-        ""
+        "Format de calendari no suportat"
       ]
     },
     "Calendar view": {
@@ -873,12 +873,12 @@
     },
     "colon": {
       ": ": [
-        ""
+        ": "
       ]
     },
     "Confirm modal title": {
       "Quit import customization?": [
-        ""
+        "Voleu abandonar la personalització d'importació?"
       ]
     },
     "Contact field label": {
@@ -971,34 +971,34 @@
         ""
       ],
       "Albania": [
-        ""
+        "Albània"
       ],
       "Algeria": [
         ""
       ],
       "American Samoa": [
-        ""
+        "Samoa Americana"
       ],
       "Andorra": [
         ""
       ],
       "Angola": [
-        ""
+        "Angola"
       ],
       "Anguilla": [
         ""
       ],
       "Antarctica": [
-        ""
+        "Antàrtida"
       ],
       "Antigua and Barbuda": [
         ""
       ],
       "Argentina": [
-        ""
+        "Argentina"
       ],
       "Armenia": [
-        ""
+        "Armènia"
       ],
       "Aruba": [
         ""
@@ -1007,10 +1007,10 @@
         ""
       ],
       "Australia": [
-        ""
+        "Austràlia"
       ],
       "Austria": [
-        ""
+        "Àustria"
       ],
       "Azerbaijan": [
         ""
@@ -1046,7 +1046,7 @@
         ""
       ],
       "Bolivia": [
-        ""
+        "Bolívia"
       ],
       "Bonaire, Sint Eustatius and Saba": [
         ""
@@ -1103,7 +1103,7 @@
         ""
       ],
       "Chile": [
-        ""
+        "Xile"
       ],
       "China": [
         ""
@@ -1133,13 +1133,13 @@
         ""
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "Costa d'Ivori"
       ],
       "Croatia": [
         ""
       ],
       "Cuba": [
-        ""
+        "Cuba"
       ],
       "Curaçao": [
         ""
@@ -1286,7 +1286,7 @@
         ""
       ],
       "International": [
-        ""
+        "Internacional"
       ],
       "Iran": [
         ""
@@ -1679,7 +1679,7 @@
         ""
       ],
       "United Arab Emirates": [
-        ""
+        "Emirats Àrabs Units"
       ],
       "United Kingdom": [
         ""
@@ -1835,7 +1835,7 @@
     },
     "Disabled calendar name suffix": {
       "Disabled": [
-        ""
+        "Desactivat"
       ]
     },
     "Disabled calendar tooltip": {
@@ -1845,7 +1845,7 @@
     },
     "Dropdown action icon tooltip": {
       "Add calendar": [
-        ""
+        "Afegeix calendari"
       ]
     },
     "Duration": {
@@ -2084,17 +2084,11 @@
       "No data to import": [
         "Ni hi ha dades per importar"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
-      ],
       "No keys retrieved for internal user": [
         "No s’ha recuperat cap clau per a l’usuari intern"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
-      ],
-      "No valid keys retrieved for internal user": [
-        "No hi ha claus vàlides recuperades per l'usuari intern"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
       ],
+      "Primary key is not valid for sending": [
+        "La clau principal no és vàlida per enviar"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "La clau principal obtinguda per l'usuari intern és vàlida per enviar"
+      ],
       "Request timed out": [
         ""
       ],
@@ -2162,8 +2162,14 @@
       "Start time must be before end time": [
         "L’hora d’inici ha de ser abans de l’hora de finalització"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "El nom de la carpeta no és vàlid. Escolliu-ne un de diferent."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Escolliu-ne un de diferent."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "El nom de l'etiqueta no és vàlid. Escolliu-ne un de diferent."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Escolliu-ne un de diferent."
@@ -2297,7 +2303,7 @@
         "Element"
       ],
       "Encryption failed": [
-        ""
+        "El xifratge ha fallat"
       ],
       "End time out of bounds": [
         "Hora de finalització fora de límits"
@@ -2415,7 +2421,7 @@
     },
     "Event canceled status badge": {
       "canceled": [
-        ""
+        "cancel·lat"
       ]
     },
     "Event delete button tooltip": {
@@ -2425,7 +2431,7 @@
     },
     "Event duplicate button tooltip": {
       "Duplicate event": [
-        ""
+        "Duplica l'esdeveniment"
       ]
     },
     "Event edit button tooltip": {
@@ -2501,7 +2507,7 @@
         "no"
       ],
       "pending": [
-        ""
+        "pendent"
       ],
       "yes": [
         "sí"
@@ -2528,10 +2534,10 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bytes"
       ],
       "Gigabytes": [
-        ""
+        "Gigabytes"
       ],
       "Kilobytes": [
         ""
@@ -2737,32 +2743,24 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacte té múltiples adreces de correu.",
+        "${ contactCount } contactes tenen múltiples adreces de correu."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
         "${ contactEmailsLength } Membres"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu quina adreça de correu electrònic o adreces voleu afegir a ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu l'adreça o adreces de correu electrònic que vulgueu afegir a aquest grup."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } té múltiples adreces de correu."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacte trobat",
         "${ contactsCount } contactes trobats"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quina adreça o adreces de correu electrònic voleu afegir a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quines adreces de correu electrònic voleu afegir a aquest grup."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grup de contactes",
@@ -2785,7 +2783,7 @@
         "${ selectedFoldersCount } etiquetes seleccionades"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } d'emmagatzematge"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } contacte actualitzat satisfactòriament.",
@@ -2795,8 +2793,8 @@
         "(${ memberCount } membre)",
         "(${ memberCount } membres)"
       ],
-      "5 email addresses": [
-        ""
+      "10 email addresses": [
+        "10 adreces de correu"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Tots els participants eliminats rebran un correu electrònic de cancel·lació."
@@ -3025,7 +3023,7 @@
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
       "Not a valid URL": [
-        ""
+        "No és una URL vàlida"
       ],
       "Occurrences previously updated by the organizer will be kept, but some of your answers will be lost.": [
         "Les ocurrències prèviament actualitzades per l'organitzador es mantindran, però es perdran algunes de les vostres respostes."
@@ -3033,11 +3031,14 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Les ocurrències prèviament actualitzades per l'organitzador es mantindran."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una o més de les teves claus de confiança ha estat marcada com a \"compromesa\" pel seu propietari. Et recomanem que marquis aquestes claus com a \"no confiables\"."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         ""
       ],
       "Other options": [
-        ""
+        "Altres opcions"
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
@@ -3057,6 +3058,13 @@
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
       ],
@@ -3070,7 +3078,7 @@
         "Primari"
       ],
       "Priority support": [
-        ""
+        "Suport prioritari"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Actualitzar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
@@ -3082,7 +3090,7 @@
         "Seleccioneu el format de correu electrònic que voleu utilitzar per defecte quan envieu correus a aquesta adreça."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
@@ -3178,10 +3186,10 @@
         "Per utilitzar la verificació d'adreça, heu de confiar en una o diverses claus públiques disponibles, incloent la que voleu fer servir per enviar. D'aquesta manera s'evita la falsificació de claus de xifratge."
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Carpetes, etiquetes i filtres sense límit"
       ],
       "Unlimited messages": [
-        ""
+        "Missatges il·limitats"
       ],
       "Update recurring event": [
         "Actualitza l'esdeveniment recurrent"
@@ -3194,6 +3202,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         ""
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ens mudem! Entreu al nostre lloc nou: ${ link }."
       ],
       "Week": [
         "Setmana"
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Compromesa"
+      ],
       "Expired": [
         "Expirat"
+      ],
+      "Obsolete": [
+        "Obsolet"
       ],
       "Primary": [
         "Primari"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Fiable"
-      ],
-      "Verification only": [
-        "Només verificació"
       ],
       "WKD": [
         "WKD"
@@ -3393,7 +3407,7 @@
         "Ciutat"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "El codi és de 6 dígits sense espais"
       ],
       "Color": [
         "Color"
@@ -3411,19 +3425,19 @@
         "Data i hora"
       ],
       "Default email address": [
-        ""
+        "Adreça de correu per defecte"
       ],
       "Default event duration": [
-        ""
+        "Durada d'esdeveniments per defecte"
       ],
       "Default full day notifications": [
         ""
       ],
       "Default notifications": [
-        ""
+        "Notificacions per defecte"
       ],
       "Delete": [
-        ""
+        "Elimina"
       ],
       "Description": [
         "Descripció"
@@ -3477,7 +3491,7 @@
         "Recomanaríeu ${ calendarAppName } a un amic o col·lega?"
       ],
       "I understand the risk": [
-        ""
+        "Entenc el risc"
       ],
       "Import all messages": [
         "Importar tots els missatges"
@@ -3601,7 +3615,7 @@
         "URL"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nom d'usuari o adreça de ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -3673,13 +3687,13 @@
     },
     "Loading info": {
       "Almost there": [
-        ""
+        "Ja gairebé està"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         ""
       ],
       "Creating new calendars": [
-        ""
+        "S'estan creant calendaris nous"
       ],
       "Gathering your data": [
         ""
@@ -3688,7 +3702,7 @@
         ""
       ],
       "Your import is starting": [
-        ""
+        "La importació està començant"
       ]
     },
     "Mail import summary": {
@@ -3709,7 +3723,7 @@
         "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "S'ha acabat la prova gratuïta. L'accés al compte es desactivarà prompte. ${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3890,6 +3904,34 @@
         "Nom d'etiqueta"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Canvia o afegeix un compte"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Presentem el nou aspecte de Proton. ${ br } Molts serveis, una missió. Benvingut/da a l'Internet on tenim la privacitat per defecte."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        "Expliqueu-nos la vostra experiència. (Opcional)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Opinió"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Doneu la vostra opinió"
+      ],
+      "Updated Proton, unified protection": [
+        "Proton actualitzat, protecció unificada"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Grup de contactes creat"
@@ -4027,7 +4069,7 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        ""
+        "Benvingut/da a ${ appName }"
       ],
       "Where you can take control of your time and your data.": [
         ""
@@ -4035,7 +4077,7 @@
     },
     "Onboarding Action": {
       "Next": [
-        ""
+        "Següent"
       ],
       "Start using ${ appName }": [
         ""
@@ -4120,10 +4162,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Crea un calendari nou"
       ],
       "Merge with calendar": [
-        ""
+        "Combina amb el calendari"
       ]
     },
     "Participant name": {
@@ -4147,6 +4189,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } ha marcat aquesta clau com a compromesa. Aquesta clau no es pot fer servir ni per xifrar ni per verificar signatures."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } ha marcat aquesta clau com a obsoleta. Aquesta clau només es pot fer servir per verificar signatures."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Et recomanem que marquis la clau com a \"no confiable\"."
       ]
     },
     "PGP key warning": {
@@ -4192,7 +4245,7 @@
         "Nom"
       ],
       "Password": [
-        ""
+        "Contrasenya"
       ],
       "Please describe the problem and include any error messages": [
         "Si us plau, descriu el problema i inclou-hi qualsevol missatges d'error"
@@ -4204,7 +4257,7 @@
         "Cercar per nom o correu electrònic"
       ],
       "Select": [
-        ""
+        "Selecciona"
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
@@ -4301,13 +4354,13 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Convideu amistats i guanyeu recompenses!"
       ],
       "No more missed appointments": [
-        ""
+        "No hi ha més cites perdudes"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         ""
@@ -4497,7 +4550,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/mes"
       ]
     },
     "Table header": {
@@ -4553,13 +4606,19 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Et presentem el Proton actualitzat."
+      ],
+      "More services, one privacy mission.": [
+        "Més serveis, una sola missió per la privacitat."
+      ],
       "Settings": [
         "Preferències"
       ]
     },
     "Time period": {
       "account creation date": [
-        ""
+        "data de creació del compte"
       ],
       "the last 12 months": [
         ""
@@ -5058,7 +5117,7 @@
         "Perdreu qualsevol personalització que hàgiu fet fins ara."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "La prova gratuïta acaba el ${ textDate }. ${ action }"
       ]
     },
     "Weekly recurring event, frequency": {

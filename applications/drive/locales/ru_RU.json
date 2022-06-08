@@ -1914,8 +1914,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Что-то пошло не так, пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, свяжитесь с нашей ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Недопустимое название папки. Пожалуйста, выберите другое название."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Название папки слишком длинное. Пожалуйста, выберите другое название."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
       ],
       "The label name is too long. Please choose a different name.": [
         "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
@@ -2269,29 +2275,26 @@
         "${ canceledCount } отменены",
         "${ canceledCount } отменены"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт содержит несколько адресов электронной почты.",
+        "${ contactCount } контакта содержат несколько адресов электронной почты.",
+        "${ contactCount } контактов содержат несколько адресов электронной почты.",
+        "${ contactCount } контакта содержит несколько адресов электронной почты."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } участник",
         "${ contactEmailsLength } участника",
         "${ contactEmailsLength } участников",
         "${ contactEmailsLength } участника"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "У контакта ${ contactName } несколько адресов электронной почты. Выберите, какие адреса нужно добавить в группы ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "У контакта ${ contactName } несколько адресов электронной почты. Выберите, какие адреса нужно добавить в эту группу."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } содержит несколько адресов электронной почты."
       ],
       "${ contactsCount } contact found": [
         "Найден ${ contactsCount } контакт",
         "Найдено ${ contactsCount } контакта",
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "У контактов ${ contactsEnumeration } несколько адресов электронной почты. Выберите, какие адреса нужно добавить в группы ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "У контактов ${ contactsEnumeration } несколько адресов электронной почты. Выберите, какие адреса нужно добавить в эту группу."
       ],
       "${ doneCount } finished": [
         "${ doneCount } завершён",
@@ -2322,9 +2325,6 @@
         "Найдено ${ groupCounts } группы",
         "Найдено ${ groupCounts } групп",
         "Найдено ${ groupCounts } групп"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } и ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } группа контактов",
@@ -2383,8 +2383,8 @@
         "(${ memberCount } учасники)",
         "(${ memberCount } учасники)"
       ],
-      "5 email addresses": [
-        "5 адресов электронной почты"
+      "10 email addresses": [
+        "10 адресов электронной почты"
       ],
       "A number will be added to the filename": [
         "К имени файла будет добавлен номер"
@@ -2761,6 +2761,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Один из ваших зашифрованных дисков заблокирован. Скорее всего, это вызвано недавним сбросом пароля."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2796,6 +2799,15 @@
       ],
       "Please select the folders you would like to import:": [
         "Пожалуйста, выберите папки для импорта:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу.",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группы.",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп.",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группы."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пожалуйста, подождите, пока мы ищем контакты, которые можно повторно подписать с помощью основного ключа шифрования."
@@ -3013,6 +3025,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Мы переезжаем! Присоединяйтесь к нам на нашем новом сайте: ${ link }."
+      ],
       "Week": [
         "Неделя"
       ],
@@ -3153,8 +3168,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Раскрытый"
+      ],
       "Expired": [
         "Срок действия истек"
+      ],
+      "Obsolete": [
+        "Устаревший"
       ],
       "Primary": [
         "Основной"
@@ -3164,9 +3185,6 @@
       ],
       "Trusted": [
         "Надежный"
-      ],
-      "Verification only": [
-        "Только для проверки"
       ],
       "WKD": [
         "WKD"
@@ -3641,12 +3659,12 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Мы освежили внешний вид Proton.${ br } У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
+        "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
       ]
     },
     "new_plans: title": {
       "Updated Proton, unified protection": [
-        "Proton: обновления и комплексная защита"
+        "Обновленный Proton, комплексная защита"
       ]
     },
     "Notification": {
@@ -3957,6 +3975,17 @@
         "Ключ не может быть зашифрован"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } пометил этот ключ как раскрытый. Этот ключ нельзя использовать ни для шифрования, ни для проверки подписи."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } пометил этот ключ как раскрытый. Этот ключ может быть использован для проверки подписи."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Мы рекомендуем вам \"отозвать доверие\" у этого ключа."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Среди идентификаторов пользователей, определенных в ключе отправки (${ keyUserIds }), адрес электронной почты не найден"
@@ -4242,6 +4271,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Представляем обновленный Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Больше сервисов, одна миссия по обеспечению конфиденциальности."
+      ],
       "Settings": [
         "Настройки"
       ]

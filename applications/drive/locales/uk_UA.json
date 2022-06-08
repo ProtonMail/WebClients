@@ -1914,8 +1914,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Щось пішло не так. Будь ласка, ${ refresh } для продовження. Якщо це повідомлення не зникає, зв'яжіться з нашою ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Назва теки неправильна. Оберіть іншу назву."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Назва мітки неправильна. Оберіть іншу назву."
       ],
       "The label name is too long. Please choose a different name.": [
         "Назва мітки надто довга. Будь ласка, скоротіть назву."
@@ -2269,29 +2275,26 @@
         "${ canceledCount } скасовано",
         "${ canceledCount } скасовано"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт містить кілька адрес е-пошти.",
+        "${ contactCount } контакти містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } учасник",
         "${ contactEmailsLength } учасники",
         "${ contactEmailsLength } учасників",
         "${ contactEmailsLength } учасників"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до цієї групи."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } містить кілька адрес е-пошти."
       ],
       "${ contactsCount } contact found": [
         "Знайдено ${ contactsCount } контакт",
         "Знайдено ${ contactsCount } контакти",
         "Знайдено ${ contactsCount } контактів",
         "Знайдено ${ contactsCount } контактів"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до цієї групи."
       ],
       "${ doneCount } finished": [
         "${ doneCount } завершено",
@@ -2322,9 +2325,6 @@
         "Знайдено ${ groupCounts } групи",
         "Знайдено ${ groupCounts } груп",
         "Знайдено ${ groupCounts } груп"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } та ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } група контактів",
@@ -2383,8 +2383,8 @@
         "(${ memberCount } учасників)",
         "(${ memberCount } учасників)"
       ],
-      "5 email addresses": [
-        "5 адрес е-пошти"
+      "10 email addresses": [
+        "10 адрес е-пошти"
       ],
       "A number will be added to the filename": [
         "Число буде додано до назви файлу"
@@ -2761,6 +2761,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Один з ваших зашифрованих пристроїв заблоковано. Швидше за все це пов'язано з недавнім скиданням пароля."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2796,6 +2799,15 @@
       ],
       "Please select the folders you would like to import:": [
         "Оберіть теки, які ви бажаєте імпортувати:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } групи.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Зачекайте, поки ми перевіряємо контакти, які можуть бути повторно підписані з використанням основного ключа шифрування."
@@ -3013,6 +3025,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ми переїхали! Долучайтеся до нас на нашому новому сайті: ${ link }."
+      ],
       "Week": [
         "Тиждень"
       ],
@@ -3153,8 +3168,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Скомпрометований"
+      ],
       "Expired": [
         "Протермінований"
+      ],
+      "Obsolete": [
+        "Застарілий"
       ],
       "Primary": [
         "Основний"
@@ -3164,9 +3185,6 @@
       ],
       "Trusted": [
         "Надійний"
-      ],
-      "Verification only": [
-        "Лише перевірка"
       ],
       "WKD": [
         "WKD"
@@ -3634,6 +3652,21 @@
         "Назва мітки"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Перемкнути або додати обліковий запис"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Представляємо оновлений вигляд.${ br } Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Оновлений Proton, єдиний захист"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "\"${ name }\" успішно створено"
@@ -3942,6 +3975,17 @@
         "Ключ не можна застосовувати для шифрування"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } позначає цей ключ скомпрометованим. Він не може бути використаний ні для шифрування, ні для перевірки підписів."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } позначає цей ключ застарілим. Він може бути використаний лише для перевірки підписів."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Ми радимо вам не довіряти цим ключам."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Адресу електронної пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
@@ -4227,6 +4271,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Представляємо оновлений Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Більше служб, єдина місія приватності."
+      ],
       "Settings": [
         "Налаштування"
       ]

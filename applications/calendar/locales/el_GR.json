@@ -2084,17 +2084,11 @@
       "No data to import": [
         "Κανένα δεδομένο προς εισαγωγή"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Κανένα κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για την αποστολή"
-      ],
       "No keys retrieved for internal user": [
         "Κανένα πλήκτρο δεν ανακτήθηκε για τον εσωτερικό χρήστη"
       ],
       "No valid address found": [
         "Δεν βρέθηκε έγκυρη διεύθυνση"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Δεν υπάρχουν έγκυρα κλειδιά που ανακτήθηκαν για τον εσωτερικό χρήστη"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Κανένα κλειδί WKD που ανακτήθηκε για το χρήστη δεν είναι έγκυρο για την αποστολή"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται."
       ],
+      "Primary key is not valid for sending": [
+        "Το πρωτεύον κλειδί δεν είναι έγκυρο για αποστολή"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Το πρωτεύον κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη είναι έγκυρο για αποστολή"
+      ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
       ],
@@ -2162,8 +2162,14 @@
       "Start time must be before end time": [
         "Η ώρα έναρξης πρέπει να είναι πριν από την ώρα λήξης"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "The label name is too long. Please choose a different name.": [
         "Υπερβολικό μήκος ονόματος ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
@@ -2737,32 +2743,24 @@
         "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
         "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } επαφή βρέθηκε",
         "${ contactsCount } επαφές βρέθηκαν"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } και ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } ομάδα επαφών",
@@ -2795,8 +2793,8 @@
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
       ],
-      "5 email addresses": [
-        ""
+      "10 email addresses": [
+        "10 ηλ. διευθύνσεις"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Ένα email ακύρωσης θα αποσταλεί σε αφαιρεμένους συμμετέχοντες."
@@ -3033,6 +3031,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Οι εμφανίσεις που ενημερώθηκαν προηγουμένως από τον διοργανωτή θα διατηρηθούν."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Αλλάξτε αυτές τις ρυθμίσεις μόνο αν χρησιμοποιείτε PGP με παραλήπτες εκτός ${ BRAND_NAME }."
       ],
@@ -3056,6 +3057,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
@@ -3082,7 +3090,7 @@
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
       "Select what you want to move from Google.": [
-        "Επιλέξτε τι θέλετε να εισάγετε από την Google."
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Επιλέξτε ποια ημερολόγια θα εισαχθούν. Για κάθε εισαγόμενο, ένα νέο ημερολόγιο θα δημιουργηθεί, μέχρι το όριο των 20."
@@ -3194,6 +3202,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Μετακομίζουμε! Ελάτε μαζί μας στη νέα μας ιστοσελίδα: ${ link }."
       ],
       "Week": [
         "Εβδομάδα"
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Έχει λήξει"
+      ],
+      "Obsolete": [
+        "Παρωχημένο"
       ],
       "Primary": [
         "Κύριο"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ],
-      "Verification only": [
-        "Μόνο επαλήθευση"
       ],
       "WKD": [
         "WKD"
@@ -3890,6 +3904,34 @@
         "Όνομα ετικέτας"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Εναλλαγή ή προσθήκη λογαριασμού"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Παρουσίαση ανανεωμένης όψης του Proton.${ br }Πολλές υπηρεσίες, μία αποστολή. Καλώς ήρθατε σε ένα διαδίκτυο όπου η ιδιωτικότητα είναι η προεπιλογή."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        "Πείτε μας για την εμπειρία σας (Προαιρετικό)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Σχόλια"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Δώστε σχόλια"
+      ],
+      "Updated Proton, unified protection": [
+        "Ενημερωμένο Proton, ενοποιημένη προστασία"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Η ομάδα επαφών δημιουργήθηκε"
@@ -4147,6 +4189,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4553,6 +4606,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Παρουσίαση του ενημερωμένου Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Περισσότερες υπηρεσίες, μία αποστολή ιδιωτικότητας."
+      ],
       "Settings": [
         "Ρυθμίσεις"
       ]
@@ -4890,7 +4949,7 @@
         "Επιλέξτε σε ποιο ημερολόγιο θα προστεθεί αυτό το γεγονός"
       ],
       "Send feedback": [
-        "Αποστολή ανάδρασης"
+        "Αποστολή σχολίων"
       ],
       "Send invitation": [
         "Αποστολή πρόσκλησης"

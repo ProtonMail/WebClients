@@ -276,7 +276,7 @@
         "Salvar"
       ],
       "Save selected": [
-        ""
+        "Salvar selecionado"
       ],
       "Select ${ planTitle }": [
         "Selecione ${ planTitle }"
@@ -406,8 +406,8 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        "",
-        ""
+        "+ ${ _users } usuário",
+        "+ ${ _users } usuários"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } domínio personalizado",
@@ -453,16 +453,16 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Pagável a cada 12 meses"
       ],
       "Payable every 24 months": [
-        ""
+        "Pagável a cada 24 meses"
       ],
       "Payable every month": [
-        ""
+        "Pagável todo mês"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Renova automaticamente em ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -693,12 +693,12 @@
     },
     "Checkout row": {
       "${ users } user": [
-        "",
-        ""
+        "${ users } usuário",
+        "${ users } usuários"
       ],
       "Total for ${ n } month": [
-        "",
-        ""
+        "Total por ${ n } mês",
+        "Total para ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -1503,7 +1503,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Cupom aplicado: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -1516,7 +1516,7 @@
         "/mês"
       ],
       "/user per month": [
-        ""
+        "/usuário por mês"
       ]
     },
     "Delinquent modal title": {
@@ -1873,14 +1873,14 @@
         "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos à VPN)",
         "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos à VPN)"
       ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Foi aplicado um desconto de 20% na sua assinatura com o cupom ${ code }"
       ],
       "30-day money-back guarantee.": [
         "Garantia de devolução do seu dinheiro por até 30 dias."
-      ],
-      "5 email addresses": [
-        "5 endereços de e-mail"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para te ajudar a identificar onde irá usá-lo, podendo facilmente revogar ou extender depois."
@@ -2383,6 +2383,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos nos movendo! Junte-se a nós em nosso novo site: ${ link }."
+      ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Enviaremos um código de redefinição para o endereço de e-mail que você forneceu para a recuperação da conta."
       ],
@@ -2581,8 +2584,8 @@
         "${ MAIL_APP_NAME } endereço"
       ],
       "${ n } month": [
-        "",
-        ""
+        "${ n } mês",
+        "${ n } messes"
       ],
       "Allow recovery by email": [
         "Permitir recuperação por e-mail"
@@ -3356,9 +3359,6 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se mudar para um plano diferente, você perderá todos os benefícios do plano ${ visionary } e não poderá voltar para o ${ visionary }."
       ],
-      "learn more": [
-        "saiba mais"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois se trata de um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
       ],
@@ -3410,11 +3410,6 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
-      ]
-    },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Apresentando a aparência renovada do Proton. Muitos serviços, uma missão. Faça login para continuar ou ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -3870,7 +3865,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Obtenha até 18 meses de ${ planName } gratuitamente"
       ],
       "Invite friends and earn rewards!": [
         "Convide amigos e ganhe recompensas!"
@@ -3910,52 +3905,52 @@
         "${ n } conexões VPN de alta velocidade"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        ""
+        "${ n } conexão VPN de alta velocidade por usuário",
+        "${ n } conexões VPN de alta velocidade por usuário"
       ],
       "${ n } VPN connection": [
         "${ n } conexão de VPN",
         "${ n } conexões de VPN"
       ],
       "${ n } VPN connection per user": [
-        "",
-        ""
+        "${ n } conexões VPN por usuário",
+        "${ n } conexões VPN por usuário"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } endereço",
         "${ UsedAddresses } endereços"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
+        "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
+        "${ UsedCalendars } calendário",
+        "${ UsedCalendars } calendarios"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } de ${ MaxDomains } domínio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } domínios personalizados"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers } de ${ MaxMembers } usuário",
+        "${ UsedMembers } de ${ MaxMembers } usuários"
       ],
       "1 email address": [
-        ""
+        "1 endereço de e-mail"
       ],
       "1 VPN connection": [
         "1 conexão VPN"
       ],
       "Access to streaming services globally": [
-        ""
+        "Acesso global a serviços de streaming"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Bloqueador de anúncios integrado (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
+        "VPN de alta velocidade em ${ maxVpn } dispositivo",
+        "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
     "Subscription price": {
@@ -4054,7 +4049,7 @@
         "/mês"
       ],
       "/user per month": [
-        ""
+        "/usuário por mês"
       ]
     },
     "Suffix for price": {
@@ -4067,10 +4062,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Para empresas"
       ],
       "For individuals": [
-        ""
+        "Para indivíduos"
       ]
     },
     "TableHeader": {
@@ -4088,6 +4083,14 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Apresentamos a versão atualizada dos produtos Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mais serviços, uma missão de privacidade."
       ]
     },
     "Title": {
@@ -4192,13 +4195,13 @@
         "Confirme o número do telefone"
       ],
       "Congratulations on choosing privacy!": [
-        ""
+        "Parabéns por escolher a privacidade!"
       ],
       "Create a ${ mailAppName } address": [
         "Criar um endereço de ${ mailAppName }"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Crie suaconta do ${ BRAND_NAME }"
       ],
       "Credits": [
         "Creditos"
@@ -4466,7 +4469,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "Fatura de ${ MAIL_APP_NAME }"
       ]
     },
     "Tooltip": {

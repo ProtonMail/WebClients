@@ -1905,8 +1905,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Numele folderului nu este valid. Alegeți alt nume."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Numele etichetei nu este valid. Alegeți alt nume."
       ],
       "The label name is too long. Please choose a different name.": [
         "Numele etichetei este prea lung. Alegeți alt nume."
@@ -2247,27 +2253,23 @@
         "${ canceledCount } anulate",
         "${ canceledCount } anulate"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "Un contact conține adrese multiple de e-mail.",
+        "${ contactCount } contacte conțin adrese multiple de e-mail.",
+        "${ contactCount } de contacte conțin adrese multiple de e-mail."
+      ],
       "${ contactEmailsLength } Member": [
         "Un membru",
         "${ contactEmailsLength } membri",
         "${ contactEmailsLength } de membri"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa de e-mail sau adresele de adăugat în acest grup."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } conține adrese multiple de e-mail."
       ],
       "${ contactsCount } contact found": [
         "S-a găsit un contact",
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
       ],
       "${ doneCount } finished": [
         "S-a transferat unul",
@@ -2293,9 +2295,6 @@
         "S-a găsit un grup",
         "S-au găsit ${ groupCounts } grupuri",
         "S-au găsit ${ groupCounts } de grupuri"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } și ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "Un grup de contacte",
@@ -2346,8 +2345,8 @@
         "(${ memberCount } membri)",
         "(${ memberCount } de membri)"
       ],
-      "5 email addresses": [
-        "5 adrese de e-mail"
+      "10 email addresses": [
+        "10 adrese de e-mail"
       ],
       "A number will be added to the filename": [
         "Va fi adăugată o cifră la numele fișierelor."
@@ -2718,6 +2717,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Una din unitățile criptate este blocată. Aceasta se datorează probabil unei resetări recente a parolei."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2753,6 +2755,14 @@
       ],
       "Please select the folders you would like to import:": [
         "Selectați folderele pe care doriți să le importați:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selectați adresa sau adresele de e-mail de adăugat la un grup.",
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } grupuri.",
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } de grupuri."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
@@ -2969,6 +2979,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ne mutăm! Veniți alături de noi pe noul nostru site: ${ link }."
+      ],
       "Week": [
         "Săptămâna"
       ],
@@ -3109,8 +3122,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Compromisă"
+      ],
       "Expired": [
         "Expirată"
+      ],
+      "Obsolete": [
+        "Învechită"
       ],
       "Primary": [
         "Primară"
@@ -3120,9 +3139,6 @@
       ],
       "Trusted": [
         "Aprobată"
-      ],
-      "Verification only": [
-        "Doar verificare"
       ],
       "WKD": [
         "WKD"
@@ -3587,6 +3603,21 @@
         "Nume etichetă"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Proton actualizat, protecție unificată"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "„${ name }” a fost creat cu succes."
@@ -3877,6 +3908,17 @@
         "Cheia nu poate fi folosită pentru criptare."
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } a marcat această cheie ca fiind compromisă. Această cheie nu poate fi folosită nici pentru criptare, nici pentru verificarea semnăturii."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } a marcat această cheie ca fiind depășită. Această cheie poate fi folosită doar pentru verificarea semnăturii."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Vă recomandăm să „nu aprobați” această cheie."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Adresa de e-mail nu a fost găsită printre id-urile de utilizatori definite în cheia de trimitere (${ keyUserIds })"
@@ -4158,6 +4200,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Vă prezentăm noul Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mai multe servicii, o singură misiune: confidențialitatea."
+      ],
       "Settings": [
         "Setări"
       ]

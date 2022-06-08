@@ -74,7 +74,7 @@
         "Adicionar pasta"
       ],
       "Add label": [
-        "Adicionar etiqueta"
+        "Adicionar marcador"
       ],
       "Add notification": [
         "Adicionar notificação"
@@ -197,7 +197,7 @@
         "Criar"
       ],
       "Create a secure ProtonMail address instead": [
-        "Em vez disso, crie um endereço ProtonMail seguro"
+        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Criar conta"
@@ -332,7 +332,7 @@
         "Criptografar e exportar"
       ],
       "Explore other ${ BRAND_NAME } plans": [
-        "Explore outros planos ${ BRAND_NAME }"
+        "Explorar outros planos ${ BRAND_NAME }"
       ],
       "Export": [
         "Exportar"
@@ -620,7 +620,7 @@
         "Salvar arquivo ICS"
       ],
       "Save selected": [
-        ""
+        "Salvar selecionado"
       ],
       "Select ${ planTitle }": [
         "Selecione ${ planTitle }"
@@ -977,16 +977,16 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Pagável a cada 12 meses"
       ],
       "Payable every 24 months": [
-        ""
+        "Pagável a cada 24 meses"
       ],
       "Payable every month": [
-        ""
+        "Pagável todo mês"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Renova automaticamente em ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -1286,8 +1286,8 @@
         "${ users } usuários"
       ],
       "Total for ${ n } month": [
-        "",
-        ""
+        "Total por ${ n } mês",
+        "Total por ${ n } meses"
       ]
     },
     "Collapsible tooltip": {
@@ -2220,7 +2220,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Cupom aplicado: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -2233,7 +2233,7 @@
         "/mês"
       ],
       "/user per month": [
-        ""
+        "/usuário por mês"
       ]
     },
     "Daily recurring event, frequency": {
@@ -2734,6 +2734,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Por favor, use um navegador diferente ou inicie a sessão através de um computador."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Por favor, escolha um nome diferente."
       ],
@@ -2742,6 +2745,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "As chaves em seu arquivo de recuperação não podem ser validadas. Por favor, carregue-as individualmente para obter mais informações."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "O nome do marcador é inválido. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "Este nome de marcador é muito longo. Por favor, escolha um nome diferente."
@@ -3556,10 +3562,10 @@
         "O Proton não pode se conectar à sua conta do Gmail. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        ""
+        "O Proton não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que o endereço do servidor de e-mail e o número da porta estejam corretos."
       ],
       "Proton can't connect to your Yahoo account. Please make sure that:": [
-        ""
+        "O Proton não pode se conectar à sua conta do Yahoo. Por favor, certifique-se de que:"
       ],
       "Too many recent requests. Please try again in a few moments.": [
         "Muitos pedidos recentes. Por favor, tente novamente em alguns instantes."
@@ -3637,7 +3643,7 @@
         "Vá para ${ boldAccountSecurity }"
       ],
       "Go to Outlook ${ securitySettingsLink }": [
-        ""
+        "Vá para ${ securitySettingsLink } em Outlook"
       ],
       "If 2-step verification is off, turn it on": [
         "Se a verificação dem 2 etapas estiver desligada, ligue-a"
@@ -3745,10 +3751,10 @@
         "Clique no link ${ boldICS } e baixe o arquivo"
       ],
       "Go to ${ calendarLink } in your Outlook settings": [
-        ""
+        "Vá para ${ calendarLink } em suas configurações do Outlook"
       ],
       "Go to ${ calendarViewLink } in Yahoo": [
-        ""
+        "Vá para ${ calendarViewLink } no Yahoo"
       ],
       "Mouse over the calendar you want to import and open the dropdown menu": [
         "Coloque o mouse sobre o calendário que deseja importar e abra o menu de contexto"
@@ -3964,6 +3970,9 @@
       "1. Invite friends to Proton": [
         "1. Convide amigos para o Proton"
       ],
+      "10 email addresses": [
+        "10 endereços de e-mail"
+      ],
       "2. They try ${ planName }": [
         "2. Eles tentam ${ planName }"
       ],
@@ -3975,9 +3984,6 @@
       ],
       "30-day money-back guarantee.": [
         "Garantia de devolução do seu dinheiro por até 30 dias."
-      ],
-      "5 email addresses": [
-        "5 endereços de e-mail"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Um nome para te ajudar a identificar onde irá usá-lo, podendo facilmente revogar ou extender depois."
@@ -4007,7 +4013,7 @@
         "Conta atualizada com sucesso"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\""
+        "Adicione um endereço de e-mail @pm.me na sua conta. Este domínio simples e curto significa \"${ MAIL_APP_NAME } me\" ou \"Mensagem privado\""
       ],
       "Add a recovery email address": [
         "Adicionar um e-mail de recuperação"
@@ -4032,7 +4038,7 @@
         "A verificação de endereço é um recurso de segurança avançado. Apenas habilite se você souber o que está fazendo."
       ],
       "Admin account allocation": [
-        ""
+        "Alocação da conta do administrador"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "Depois da redefinição da senha, seus dados são bloqueados em formato encriptado para garanti-los em segurança."
@@ -4112,7 +4118,7 @@
         "Tem certeza que quer excluir esta pasta? Todas as subpastas também serão excluídas."
       ],
       "Are you sure you want to delete this label?": [
-        "Você tem certeza que deseja excluir este marcador?"
+        "Tem certeza de que deseja excluir este marcador?"
       ],
       "Are you sure you want to discard your changes?": [
         "Você tem certeza que deseja descartar suas alterações?"
@@ -4321,10 +4327,13 @@
         "Arraste o arquivo aqui para enviá-lo"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        ""
+        "Ganhou ${ rewards } de ${ rewardsLimit } ${ planName } meses."
       ],
       "Edit label": [
         "Editar marcador"
+      ],
+      "Edit link": [
+        "Editar link"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -4456,7 +4465,7 @@
         "Se você não encontrar o e-mail na caixa de entrada. Por favor, verifique a pasta de spam."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        ""
+        "Se você tem um domínio personalizado com o ${ MAIL_APP_NAME }, você pode definir um email catch-all que receberá mensagens enviadas para o seu domínio, mas com um endereço de email inválido (por exemplo, devido a erros de digitação)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Se você tem um vale-presente, insira-o abaixo para aplicar o desconto."
@@ -4493,6 +4502,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Se você deseja combinar esta conta com outra, NÃO a apague."
+      ],
+      "Image description": [
+        "Descrição da imagem"
       ],
       "Image URL": [
         "Imagem URL"
@@ -4734,7 +4746,7 @@
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
-        "Somente você pode ver as etiquetas."
+        "Somente você pode ver os marcadores."
       ],
       "Or select a particular server:": [
         "Ou selecione um servidor particular:"
@@ -4933,7 +4945,7 @@
         "Selecione quais calendários importar. Um novo calendário será criado para cada calendário importado, até o limite de 20 calendários."
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Enviado com <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>e-mail seguro."
+        "Enviado via e-mail seguro <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
@@ -4969,10 +4981,10 @@
         "O SPF é usado para especificar quem tem permissão de enviar emails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
       "Storage allocated to other users in this organisation": [
-        ""
+        "Armazenamento atribuído a outros usuários desta organização"
       ],
       "Storage allocated to this user": [
-        ""
+        "Armazenamento alocado a este usuário"
       ],
       "Storage for users": [
         "Armazenamento para usuários"
@@ -4981,7 +4993,7 @@
         "O espaço de armazenamento é compartilhado através do ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }."
       ],
       "Storage used by this user": [
-        ""
+        "Armazenamento utilizado por este usuário"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Guarde essa senha e o arquivo em um local seguro. Você precisará deles de novo para importar sua chave."
@@ -5244,6 +5256,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos nos movendo! Junte-se a nós em nosso novo site: ${ link }."
+      ],
       "Web URL": [
         "URL da Web"
       ],
@@ -5269,7 +5284,7 @@
         "Quando as notificações estão ativas, enviaremos um alerta para seu endereço de recuperação se você tiver novas mensagens na sua conta ${ MAIL_APP_NAME }."
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        ""
+        "Quando eles assinam um plano pago, 1 a 3 meses de ${ planName } serão creditados em sua conta."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
@@ -5320,7 +5335,7 @@
         "Você pode importar um tipo de dado por vez."
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "Agora você pode receber mensagens em seu endereço @pm.me Atualize para um plano pago para também enviar e-mails usando seu endereço @pm.me e criar endereços @pm.me adicionais."
+        "Agora você pode receber mensagens no seu endereço @pm.me. Atualize para um plano pago para também enviar e-mails usando seu endereço @pm.me e criar endereços @pm.me adicionais."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Você pode ativar as notificações para receber alertas quando novas mensagens de e-mail chegarem nesta pasta."
@@ -5868,21 +5883,21 @@
         " e ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } de ${ humanMaxSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } endereço"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "Rodapé do ${ MAIL_APP_NAME }"
       ],
       "${ monthsRewarded } month credited": [
         "${ monthRewarded } mês creditado",
         "${ monthsRewarded } meses creditado"
       ],
       "${ n } month": [
-        "",
-        ""
+        "${ n } mês",
+        "${ n } messes"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
@@ -6030,7 +6045,7 @@
         "Configurar para conectar a ${ serverName }"
       ],
       "Confirm link URLs": [
-        ""
+        "Confirmar links"
       ],
       "Confirm login password": [
         "Confirmar nova senha"
@@ -6510,10 +6525,10 @@
         "Instrução"
       ],
       "Sticky labels": [
-        ""
+        "Marcadores fixos"
       ],
       "Subscription options": [
-        ""
+        "Opções de assinatura"
       ],
       "System information": [
         "Informações do sistema"
@@ -6579,7 +6594,7 @@
         "Usuário"
       ],
       "User's new password": [
-        "Nova Senha do Usuário"
+        "Nova senha do usuário"
       ],
       "Username": [
         "Nome de usuário"
@@ -6854,7 +6869,7 @@
         "Qual é a diferença entre os protocolos UDP e TCP?"
       ],
       "Why set recovery methods?": [
-        "Porque definir método de recuperação?"
+        "Por que definir métodos de recuperação?"
       ]
     },
     "Loading info": {
@@ -6922,7 +6937,7 @@
         "Você tem certeza de que deseja desativar a autenticação de dois fatores?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        ""
+        "Conecte seu domínio personalizado ao ${ BRAND_NAME } para criar endereços de e-mail personalizados (por exemplo, você@sua-empresa.com). Nosso assistente guiará você no processo."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Sua avaliação gratuita terminou. O acesso a sua será desativada em breve. ${ action }"
@@ -7296,7 +7311,7 @@
         "Resposta automática"
       ],
       "Catch-all": [
-        "Catch-all"
+        ""
       ],
       "Centralized billing": [
         "Faturamento centralizado"
@@ -7485,9 +7500,6 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se mudar para um plano diferente, você perderá todos os benefícios do plano ${ visionary } e não poderá voltar para o ${ visionary }."
       ],
-      "learn more": [
-        "saiba mais"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nosso plano ${ visionary } não está mais disponível para novos assinantes, pois é um plano para usuários originais da ${ BRAND_NAME }, com recursos e benefícios especiais."
       ],
@@ -7542,11 +7554,6 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
-      ]
-    },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Apresentando a aparência renovada do Proton. Muitos serviços, uma missão. Inicie a sessão para continuar ou ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -7885,7 +7892,7 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Em seguida, você precisará iniciar sessão na sua conta do Google e conceder ao Proton o acesso aos seus dados."
       ]
     },
     "Oauth instructions video": {
@@ -8461,7 +8468,7 @@
         "Ações"
       ],
       "Labels": [
-        "Etiquetas"
+        "Marcadores"
       ]
     },
     "Signup label": {
@@ -8507,7 +8514,7 @@
     },
     "Spotlight": {
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Obtenha até 18 meses de ${ planName } gratuitamente"
       ],
       "Invite friends and earn rewards!": [
         "Convide amigos e ganhe recompensas!"
@@ -8585,12 +8592,12 @@
     },
     "Subscription attribute": {
       "${ _n } calendar per user": [
-        "",
-        ""
+        "${ _n } calendário por usuario",
+        "${ _n } calendarios por usuario"
       ],
       "${ maxVpn } high-speed VPN connection": [
-        "",
-        ""
+        "${ maxVpn } conexão VPN de alta velocidade",
+        "${ maxVpn } conexões VPN de alta velocidade"
       ],
       "${ n } calendar": [
         "${ n } calendário",
@@ -8613,40 +8620,40 @@
         "${ n } conexões VPN por usuário"
       ],
       "${ UsedAddresses } address": [
-        "",
-        ""
+        "${ UsedAddresses } endereço",
+        "${ UsedAddresses } endereços"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        ""
+        "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
+        "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
       ],
       "${ UsedCalendars } calendar": [
-        "",
-        ""
+        "${ UsedCalendars } calendário",
+        "${ UsedCalendars } calendarios"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        ""
+        "${ UsedDomains } de ${ MaxDomains } domínio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } domínios personalizados"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        ""
+        "${ UsedMembers } de ${ MaxMembers } usuário",
+        "${ UsedMembers } de ${ MaxMembers } usuários"
       ],
       "1 email address": [
-        ""
+        "1 endereço de e-mail"
       ],
       "1 VPN connection": [
-        ""
+        "1 conexão VPN"
       ],
       "Access to streaming services globally": [
-        ""
+        "Acesso global a serviços de streaming"
       ],
       "Built-in ad blocker (NetShield)": [
-        ""
+        "Bloqueador de anúncios integrado (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        ""
+        "VPN de alta velocidade em ${ maxVpn } dispositivo",
+        "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
     "Subscription price": {
@@ -8825,7 +8832,7 @@
     },
     "Success message after sorting labels": {
       "Labels sorted": [
-        "Etiquetas ordenadas"
+        "Marcadores ordenadas"
       ]
     },
     "Success notification": {
@@ -8865,7 +8872,7 @@
         "/mês"
       ],
       "/user per month": [
-        ""
+        "/usuário por mês"
       ]
     },
     "Suffix for price": {
@@ -8888,10 +8895,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Para empresas"
       ],
       "For individuals": [
-        ""
+        "Para indivíduos"
       ]
     },
     "TableHeader": {
@@ -8921,6 +8928,14 @@
       ],
       "vCard field": [
         "campo vCard"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Apresentamos a versão atualizada dos produtos Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mais serviços, uma missão de privacidade."
       ]
     },
     "Time period": {
@@ -9075,7 +9090,7 @@
         "Você tem certeza que deseja fechar?"
       ],
       "Auto-reply": [
-        ""
+        "Resposta automática"
       ],
       "Automatically sign outgoing messages?": [
         "Assinar automaticamente as mensagens enviadas?"
@@ -9096,7 +9111,7 @@
         "Lista de Bloqueados"
       ],
       "Bridge for ${ platform }": [
-        "Ponte para ${ platform }"
+        "Bridge para ${ platform }"
       ],
       "Card verification": [
         "Verificação do cartão"
@@ -9138,7 +9153,7 @@
         "Limpar"
       ],
       "Composing": [
-        ""
+        "Composição"
       ],
       "Confirm address": [
         "Confirmar endereço"
@@ -9177,7 +9192,7 @@
         "Credenciais"
       ],
       "Credits": [
-        "Creditos"
+        "Créditos"
       ],
       "Currency": [
         "Moeda"
@@ -9228,7 +9243,7 @@
         "Exclua a pasta ${ label.Name }"
       ],
       "Delete ${ label.Name } label": [
-        "Excluir etiqueta ${ label.Name }"
+        "Excluir marcador ${ label.Name }"
       ],
       "Delete account": [
         "Excluir conta"
@@ -9427,7 +9442,7 @@
         "Mensagens"
       ],
       "Messages and composing": [
-        ""
+        "Mensagens e composição"
       ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"
@@ -9616,13 +9631,13 @@
         "Inicie a sessão novamente para continuar"
       ],
       "Sign in and grant access": [
-        ""
+        "Inicie sessão e conceda acesso"
       ],
       "Sort folders alphabetically": [
         "Ordenar pastas por ordem alfabética"
       ],
       "Sort labels alphabetically": [
-        "Ordenar etiquetas alfabeticamente"
+        "Ordenar marcadores alfabeticamente"
       ],
       "Spam filters": [
         "Filtros de spam"
@@ -9706,7 +9721,7 @@
         "O que você gostaria de importar?"
       ],
       "What's new": [
-        "O que há de novo"
+        "Novidades"
       ],
       "WireGuard": [
         "WireGuard"
@@ -9760,7 +9775,7 @@
     },
     "Title for PDF file": {
       "${ MAIL_APP_NAME } invoice": [
-        ""
+        "Fatura de ${ MAIL_APP_NAME }"
       ]
     },
     "Title header": {
@@ -9972,8 +9987,8 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        ""
+        "Atualize para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",
+        "Atualize para ${ planName } para conectar até ${ n } dispositivos à VPN de uma só vez"
       ]
     },
     "Upgrade notice": {

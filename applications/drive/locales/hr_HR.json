@@ -1905,7 +1905,13 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nešto je pošlo po zlu. Molimo ${ refresh } kako biste nastavili. Ako i dalje vidite ovu poruku o pogrešci, kontaktirajte naš ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
+        ""
+      ],
+      "The label name is invalid. Please choose a different name.": [
         ""
       ],
       "The label name is too long. Please choose a different name.": [
@@ -2247,27 +2253,23 @@
         "",
         ""
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } član",
         "${ contactEmailsLength } člana",
         "${ contactEmailsLength } članova"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } sadrži više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt pronađen",
         "${ contactsCount } kontakta pronađena",
         "${ contactsCount } kontakata pronađeno"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } sadrže više adresa e-pošte. Odaberite koju adresu ili adrese e-pošte želite dodati u ovu grupu."
       ],
       "${ doneCount } finished": [
         "",
@@ -2293,9 +2295,6 @@
         "${ groupCounts } grupa pronađena",
         "${ groupCounts } grupe pronađene",
         "${ groupCounts } grupa pronađeno"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "",
@@ -2346,7 +2345,7 @@
         "",
         ""
       ],
-      "5 email addresses": [
+      "10 email addresses": [
         ""
       ],
       "A number will be added to the filename": [
@@ -2718,6 +2717,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2752,6 +2754,14 @@
         "Napominjemo da ovaj postupak može potrajati neko vrijeme, ovisno o veličini vašeg adresara."
       ],
       "Please select the folders you would like to import:": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
         ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
@@ -2969,6 +2979,9 @@
       "We'll send a new verification code to ${ strong }": [
         ""
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        ""
+      ],
       "Week": [
         "Tjedan"
       ],
@@ -3109,8 +3122,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Isteklo"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Glavno"
@@ -3120,9 +3139,6 @@
       ],
       "Trusted": [
         "Pouzdan"
-      ],
-      "Verification only": [
-        "Samo za provjeru"
       ],
       "WKD": [
         "WKD"
@@ -3587,6 +3603,21 @@
         ""
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         ""
@@ -3877,6 +3908,17 @@
         "Ključ se ne može koristiti za šifriranje"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Adresa e-pošte nije pronađena među korisničkim ID-ovima definiranim u ključu za slanje (${ keyUserIds })"
@@ -4158,6 +4200,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "Postavke"
       ]

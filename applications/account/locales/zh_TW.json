@@ -197,7 +197,7 @@
         "新增"
       ],
       "Create a secure ProtonMail address instead": [
-        "改為創建全新安全防護 ProtonMail 電郵位址"
+        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "創建帳號"
@@ -614,7 +614,7 @@
         "儲存"
       ],
       "Save address": [
-        "儲存電子郵件地址"
+        "儲存電郵位址"
       ],
       "Save ICS file": [
         "儲存 ICS 檔案"
@@ -839,7 +839,7 @@
     },
     "Addon": {
       "+ ${ _users } user": [
-        ""
+        "+ ${ _users } 個使用者"
       ],
       "+ ${ domains } custom domain": [
         "+ ${ domains } 個自訂網域"
@@ -949,7 +949,7 @@
     },
     "Badge": {
       "5 users": [
-        ""
+        "5 個使用者"
       ]
     },
     "Badge for domain": {
@@ -984,13 +984,13 @@
     },
     "Billing cycle option": {
       "1 month": [
-        ""
+        "1 個月"
       ],
       "12 months": [
-        ""
+        "12 個月"
       ],
       "24 months": [
-        ""
+        "24 個月"
       ],
       "Annually": [
         "每年"
@@ -1274,7 +1274,7 @@
     },
     "Checkout row": {
       "${ users } user": [
-        ""
+        "${ users } 個使用者"
       ],
       "Total for ${ n } month": [
         ""
@@ -2218,7 +2218,7 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/月"
       ],
       "/user per month": [
         ""
@@ -2285,7 +2285,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        ""
+        "恭喜！您已達到 ${ rewardsLimit } 個月免費 ${ plusPlanName } 的上限。"
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
@@ -2713,6 +2713,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "您目前使用的瀏覽器無法完成支付認證，請使用其他瀏覽器或透過電腦登入。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請換另一個名稱。"
       ],
@@ -2721,6 +2724,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "在您帳戶救援檔案內的金鑰無法通過驗證。請逐一上傳更多資訊。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請換另一個名稱。"
@@ -3818,7 +3824,7 @@
         "${ emailAddress } 無效"
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
+        "${ forgotPasswordLink } 或 ${ forgotUsernameLink } ？"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         ""
@@ -3848,7 +3854,7 @@
         "${ numContacts } 位聯絡人"
       ],
       "${ planName } credits earned": [
-        ""
+        "${ planName } 儲值已賺取"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "找到 ${ providerFoldersNumLocalized } 個資料夾"
@@ -3875,16 +3881,16 @@
         "已選取 ${ selectedFoldersCountLocalized } 個標籤"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } 儲存空間"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
         "${ strongAddressAvailable }您將會使用此電子郵件地址登入所有 ${ BRAND_NAME } 服務。"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
-        ""
+        "國家級連線需要 ${ vpnBasic }、${ vpnPlus } 或 ${ visionary }。"
       ],
       "${ vpnPlus } or ${ visionary } required for Secure Core feature.": [
-        ""
+        "使用安全核心功能需要 ${ vpnPlus } 或 ${ visionary } 。"
       ],
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
@@ -3899,7 +3905,7 @@
         "（郵件 + VPN）"
       ],
       "* No credit card required.": [
-        ""
+        "* 無需信用卡。"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
@@ -3910,8 +3916,11 @@
       "1. Invite friends to Proton": [
         "一、邀請好友到 Proton"
       ],
+      "10 email addresses": [
+        "10 個電郵位址"
+      ],
       "2. They try ${ planName }": [
-        ""
+        "2. 讓他們試試看 ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "您使用優惠券 ${ code } 的訂閱已享用 20% 折扣"
@@ -3920,13 +3929,10 @@
         "三、您賺取儲值"
       ],
       "30-day money-back guarantee.": [
-        ""
-      ],
-      "5 email addresses": [
-        "5 個電子郵件地址"
+        "30天退款保證。"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "一個好記且讓您很快辨識它用在何處，如此一來就可輕鬆將其撤銷或是延展。"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -3947,13 +3953,13 @@
         "帳戶復原方法"
       ],
       "Account size": [
-        ""
+        "帳號容量"
       ],
       "Account successfully updated": [
         "帳號已成功更新"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        ""
+        "新增一個 @pm.me 的電子郵件地址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
       ],
       "Add a recovery email address": [
         "新增備援電子郵件地址"
@@ -3968,7 +3974,7 @@
         "新增標籤"
       ],
       "Additional options": [
-        ""
+        "額外設定"
       ],
       "address": [
         "個電子郵件地址"
@@ -3977,7 +3983,7 @@
         "電子郵件地址驗證是一項進階安全性功能。只建議熟諳箇中原理的人使用。"
       ],
       "Admin account allocation": [
-        ""
+        "管理員帳戶指派"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "在重設密碼之後，您的資料將上鎖以確保安全。"
@@ -4004,7 +4010,7 @@
         "一切您所作的變更將會消失。"
       ],
       "Allocated": [
-        ""
+        "已分配"
       ],
       "Allow recovery by email": [
         "允許透過電子郵件復原"
@@ -4013,10 +4019,10 @@
         "允許透過電話復原"
       ],
       "Already allocated": [
-        ""
+        "已分配"
       ],
       "Already have an account?": [
-        ""
+        "已經有帳號了嗎？"
       ],
       "Already used": [
         "已使用"
@@ -4097,7 +4103,7 @@
         "需為 Basic、Plus 或 Visionary 訂閱方案"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "請求新的驗證碼前，請先檢查您的垃圾郵件資料夾，並檢查 ${ strong } 的地址是否正確。"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         ""
@@ -4181,7 +4187,7 @@
         "建立在"
       ],
       "Creating your account": [
-        ""
+        "建立您的帳號"
       ],
       "Credit for the unused portion of your previous plan subscription": [
         "您之前訂購授權方案裡未使用部分的餘額"
@@ -4196,7 +4202,7 @@
         "自訂每天"
       ],
       "Custom email domains": [
-        ""
+        "自訂電郵網域"
       ],
       "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
         "自訂篩選器適用於所有新的電子郵件，包括內送及外寄電子郵件。篩選器可以使用 Sieve 程式設計語言直接編輯和建立。"
@@ -4232,7 +4238,7 @@
         "請切勿忘記此密碼。否則，您將無法管理您的組織。"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
-        ""
+        "您無法使用 OpenVPN / IKEv2 認證以登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。 ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其他工作階段嗎？"
@@ -4262,10 +4268,13 @@
         "拖放檔案到此處上載"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
-        ""
+        "已賺取 ${ rewards } 個月，最多 ${ rewardsLimit } 個月 ${ planName } $。"
       ],
       "Edit label": [
         "編輯標籤"
+      ],
+      "Edit link": [
+        "編輯連結"
       ],
       "Email address": [
         "電子郵件地址"
@@ -4334,7 +4343,7 @@
         "已過期"
       ],
       "expires ${ expirationDate }": [
-        ""
+        "過期 ${ expirationDate }"
       ],
       "Failed to fetch logs.": [
         "擷取紀錄檔失敗。"
@@ -4349,7 +4358,7 @@
         "對於 Visa 與 MasterCard 信用卡而言，所指的是卡背的 3 位數字。而 American Express 信用卡則是卡面的 4 位數字。"
       ],
       "Free": [
-        ""
+        "免費"
       ],
       "Free up some space or add more storage space.": [
         "請清空部分空間或增加更多儲存空間。"
@@ -4418,13 +4427,13 @@
         "如果您遺失了您的兩步驟驗證裝置，這些代碼可以用來代替 6 位數的兩步驟驗證代碼來登入您的帳號。每個代碼都只能使用一次。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
-        ""
+        "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 與 ${ VPN_APP_NAME } 的付費功能。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } paid features, including additional storage and filters.": [
-        ""
+        "若您仍然選擇降級，你將會失去 ${ MAIL_APP_NAME } 的付費功能，包含額外的儲存空間與郵件篩選器。"
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
-        ""
+        "若您仍然選擇降級，你將會失去 ${ VPN_APP_NAME } 的付費功能。"
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
         "如果您最近重置了您的密碼，您可以使用資料復原方法去解鎖您的資料"
@@ -4434,6 +4443,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "若您想要將此帳號與其他的結合，則請不要刪除它。"
+      ],
+      "Image description": [
+        "圖片描述"
       ],
       "Image URL": [
         "圖片 URL"
@@ -4526,7 +4538,7 @@
         "請在您的 DNS 一直保留這些記錄，直到您不欲再使用 DKIM 為止。"
       ],
       "Key deletion is irreversible!": [
-        ""
+        "密鑰刪除是無法還原的！"
       ],
       "Label all imported messages as": [
         "將所有匯入的郵件標記為"
@@ -4571,7 +4583,7 @@
         "正在載入預覽"
       ],
       "Log in to ${ MAIL_APP_NAME } to activate your address": [
-        ""
+        "登 ${ MAIL_APP_NAME } 入以啟用您位址"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
         "記錄包含使用您的 Proton 認證登入所有 Proton 服務的認證嘗試。"
@@ -4667,16 +4679,16 @@
         "，共"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        ""
+        "單一帳戶用於所有 ${ BRAND_NAME } 服務。"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        ""
+        "只有當您使用 PGP 寄送給非 ${ BRAND_NAME } 收件人時，才需修改這些設定。"
       ],
       "Only you can see the labels.": [
         "只有您可以見到標籤。"
       ],
       "Or select a particular server:": [
-        ""
+        "或挑選特定的伺服器："
       ],
       "Organization keys activated": [
         "組織金鑰已啟用"
@@ -4835,7 +4847,7 @@
         "重新整理此頁面或${ link }將自動解決大部分問題。"
       ],
       "Revoke certificate ${ name }": [
-        ""
+        "撤銷憑證 ${ name }"
       ],
       "Right to Left": [
         "由右至左"
@@ -4853,7 +4865,7 @@
         "請使用您的兩步驟驗證裝置掃描此代碼，以便設定您的帳號。又或者，${ switchButton }。"
       ],
       "Securing your account": [
-        ""
+        "保護您的帳號"
       ],
       "Select a service provider to start": [
         "選取您的服務提供者以開始"
@@ -4907,22 +4919,22 @@
         ""
       ],
       "Storage allocated to other users in this organisation": [
-        ""
+        "儲存空間已分配給這個組織中的其他使用者"
       ],
       "Storage allocated to this user": [
-        ""
+        "儲存空間已分配給這個使用者"
       ],
       "Storage for users": [
-        ""
+        "使用者的儲存空間"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 共享。"
       ],
       "Storage used by this user": [
-        ""
+        "儲存空間已被這個使用者所使用"
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        ""
+        "將此密碼以及檔案存放在另一處安全的地方。日後匯入金鑰時，就得派上用場。"
       ],
       "Support for 1 custom email domain": [
         "支援 1 個自訂電子郵件網域"
@@ -4964,10 +4976,10 @@
         "最安全可靠的方式，上網瀏覽、影音串流以及線上活動。"
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
-        ""
+        "這些設定檔讓你可以在第三方 VPN 應用程式或路由器上自由選擇要連線到哪一台 ${ VPN_APP_NAME } 伺服器。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        ""
+        "這些設定檔提供 WireGuard routers 與官方客戶端使用。"
       ],
       "This 30-day free trial is not available any other way.": [
         "此 30 天免費試用算是友情份上，千金不換喔。"
@@ -4994,7 +5006,7 @@
         "此密碼是你重設前的舊密碼。"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
-        ""
+        "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
@@ -5018,7 +5030,7 @@
         "這將讓你目前的復原短語被提用。你無法再使用它來存取你的帳戶或是解密你的資料。"
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        ""
+        "這將下載一個包含您私鑰的檔案。使用密碼進行加密來保護這個檔案。"
       ],
       "This will enable PayPal to be used to pay for your Proton subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "這將允許使用 PayPal 來支付您的 Proton 訂閱。我們將在瀏覽器的新索引標籤中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
@@ -5039,7 +5051,7 @@
         "本精靈將會在您的 Proton 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 Proton 帳號更安全，所以我們建議啟用它。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        ""
+        "為避免資料遺失，最好只刪除您知道的檔案，或是匯出複本。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "要確認，請輸入您想要刪除的使用者名稱。"
@@ -5123,7 +5135,7 @@
         "更新還原短語"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "現在就升級，以免錯失 ${ planName } 所屬的福利。"
       ],
       "Upload picture": [
         "上載圖片"
@@ -5135,10 +5147,10 @@
         "URL 連結"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        ""
+        "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -5150,10 +5162,10 @@
         "驗證將開新索引標籤，請停用任何彈出式視窗攔截程式。您不會被收費。任何用於驗證信用卡的金額都會馬上退還。"
       ],
       "Verifying your payment": [
-        ""
+        "正在驗證您的付款"
       ],
       "Version ${ version }": [
-        ""
+        "版本 ${ version }"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
         "您想要將 ${ addressToCreate } 設定用來傳送郵件的預設電子郵件嗎？"
@@ -5182,6 +5194,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "我們搬家嘍！到新網站來加入我們吧！ ${ link }"
+      ],
       "Web URL": [
         "網頁 URL"
       ],
@@ -5198,16 +5213,16 @@
         "我們將會寄出重設代碼到您先前所提供的備援電話。"
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "我們正進行您現有方案升等，晉級方案維持原價外，還提供更多服務。在系統更新階段時，您可能無法做任何變更。稍後作業完成，我們會立即電郵通知您。"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
         "停用時，將防止影像檔案在您不經不覺時在您的裝置上載入。\t"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        ""
+        "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳戶中有新訊息，我們將向您的備援/通知電子郵件地址傳送提示。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
-        ""
+        "當他們訂閱付費方案時，您的帳號將獲得 1 至 3 個月 ${ planName } $ 儲值。"
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "當您的訂閱續期時，我們會先在可用的餘額中扣除，才會以上面的付款方法扣款。"
@@ -5297,7 +5312,7 @@
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        ""
+        "您需移除其它額外添加的個人行事曆，以及共享行事曆的連結後，即可進行取消訂購授權。"
       ],
       "You need to have a personal calendar to create a link.": [
         "建立連結需要有個人行事曆。"
@@ -5315,7 +5330,7 @@
         "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        ""
+        "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "您仍需回覆邀請以便主辦者看見您的回覆。"
@@ -5327,7 +5342,7 @@
         "即將重新導向到您的銀行驗證您的付款。"
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key.": [
-        ""
+        "您無法使用此金鑰解密任何郵件、檔案以及其它加密的資料。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即將重新導向到 PayPal 驗證您的付款。"
@@ -5345,7 +5360,7 @@
         "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。如要使用 ${ toAppName }，請建立一個電子郵件地址。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
-        ""
+        "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 帳號是相互連結的。如要一併刪除，請登入 ${ loginLink } 並在那裡刪除您的帳號。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
@@ -5381,7 +5396,7 @@
         "您的電子郵件只會用於此一次驗證。"
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
-        ""
+        "您現有的 ${ BRAND_NAME } 帳號可用來存取所有的 ${ BRAND_NAME } 服務。請以 ${ email } 登入。"
       ],
       "Your import from ${ delayedImport.Account } is temporarily delayed.": [
         "您從匯入 ${ delayedImport.Account } 的操作被暫時推遲。"
@@ -5806,10 +5821,10 @@
         " 且 ${ l }"
       ],
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
-        ""
+        "${ MAIL_APP_NAME } 個地址"
       ],
       "${ MAIL_APP_NAME } footer": [
         ""
@@ -5818,7 +5833,7 @@
         "${ monthsRewarded } 個月已儲值"
       ],
       "${ n } month": [
-        ""
+        "${ n } 月"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "最多可有 ${ MaxAddresses } 個電子郵件地址，目前已有 ${ UsedAddresses } 個"
@@ -5881,7 +5896,7 @@
         "附上公鑰"
       ],
       "Attach screenshot(s)": [
-        ""
+        "附加螢幕截圖（多個）"
       ],
       "Auto-detect primary time zone": [
         "自動偵測主要時區"
@@ -5890,19 +5905,19 @@
         "自動載入嵌入圖片"
       ],
       "Auto-reply": [
-        ""
+        "自動回覆"
       ],
       "Billing cycle": [
-        ""
+        "帳單週期"
       ],
       "Block email tracking": [
         "封鎖郵件追蹤"
       ],
       "Block malware only": [
-        ""
+        "僅阻擋惡意軟體"
       ],
       "Block malware, ads and trackers": [
-        ""
+        "封鎖惡意軟體、廣告與追蹤程式"
       ],
       "bonus storage": [
         "隨贈儲存空間"
@@ -6004,10 +6019,10 @@
         "國家"
       ],
       "Create password": [
-        ""
+        "建立密碼"
       ],
       "Credits pending": [
-        ""
+        "額度正在路上"
       ],
       "Credits used": [
         "已使用儲值"
@@ -6127,7 +6142,7 @@
         "請輸入密碼以解密金鑰，金鑰指紋為：${ fingerprintCode }"
       ],
       "Expiration date": [
-        ""
+        "有效期限"
       ],
       "Expires": [
         "到期日"
@@ -6163,7 +6178,7 @@
         "隱藏密碼"
       ],
       "I understand the risk": [
-        ""
+        "我了解風險"
       ],
       "IF": [
         "如"
@@ -6226,7 +6241,7 @@
         "僅過去一個月"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "Bridge 封鎖過濾等級"
       ],
       "Login password": [
         "登入密碼"
@@ -6274,13 +6289,13 @@
         "新密碼"
       ],
       "No filter": [
-        ""
+        "無篩選器"
       ],
       "No label found": [
         "找不到標籤"
       ],
       "Non-standard ports": [
-        ""
+        "非標準的連接埠"
       ],
       "Notification": [
         "通知"
@@ -6331,10 +6346,10 @@
         "付款人"
       ],
       "Payment details": [
-        ""
+        "付款細節"
       ],
       "Payment method": [
-        ""
+        "付款方式"
       ],
       "Phone number": [
         "電話號碼"
@@ -6403,7 +6418,7 @@
         "顯示密碼"
       ],
       "Security code": [
-        ""
+        "安全碼"
       ],
       "Select your country": [
         "請選擇您的國家"
@@ -6412,7 +6427,7 @@
         "發送自動回覆"
       ],
       "Send in": [
-        ""
+        "傳送"
       ],
       "Show secondary time zone": [
         "顯示次要時區"
@@ -6448,7 +6463,7 @@
         ""
       ],
       "Subscription options": [
-        ""
+        "訂閱選項"
       ],
       "System information": [
         "系統資訊"
@@ -6523,7 +6538,7 @@
         "驗證碼"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN 加速器"
       ],
       "Waiting for subscription": [
         "正等候訂閱"
@@ -6580,7 +6595,7 @@
         "你的報酬"
       ],
       "ZIP code": [
-        ""
+        "郵遞區號"
       ]
     },
     "label": {
@@ -7074,6 +7089,669 @@
         "標籤名稱"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        ""
+      ],
+      "Keep your inbox organized with folders": [
+        ""
+      ],
+      "Medium VPN speed": [
+        ""
+      ]
+    },
+    "new_plans: action": {
+      "Continue to review": [
+        ""
+      ],
+      "Continue with free": [
+        ""
+      ],
+      "Delete account": [
+        ""
+      ],
+      "Downgrade account": [
+        ""
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        ""
+      ],
+      "Get ${ planName }": [
+        ""
+      ],
+      "Get ${ upsellShortPlan.title }": [
+        ""
+      ],
+      "Got it": [
+        ""
+      ],
+      "Keep ${ plan }": [
+        ""
+      ],
+      "Keep account": [
+        ""
+      ],
+      "Switch or add account": [
+        ""
+      ],
+      "Switch plan": [
+        ""
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        ""
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        ""
+      ],
+      "From ${ _price } per user": [
+        ""
+      ],
+      "From ${ price }": [
+        ""
+      ],
+      "Keep my ${ currentPlanName } account": [
+        ""
+      ],
+      "Upgrade now": [
+        ""
+      ]
+    },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connection": [
+        ""
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        ""
+      ]
+    },
+    "new_plans: feature": {
+      "${ DRIVE_APP_NAME } (web beta)": [
+        ""
+      ],
+      "${ n } custom email domain": [
+        ""
+      ],
+      "${ n } email address": [
+        ""
+      ],
+      "${ n } email address per user": [
+        ""
+      ],
+      "${ n } filter": [
+        ""
+      ],
+      "${ n } folder": [
+        ""
+      ],
+      "${ n } folder and label": [
+        ""
+      ],
+      "${ n } label": [
+        ""
+      ],
+      "${ n } message per day": [
+        ""
+      ],
+      "${ n } personal calendar": [
+        ""
+      ],
+      "${ n } VPN connection": [
+        ""
+      ],
+      "${ n } VPN connection per user": [
+        ""
+      ],
+      "${ size } attachment size": [
+        ""
+      ],
+      "${ size } storage per user": [
+        ""
+      ],
+      "${ size } total storage": [
+        ""
+      ],
+      "1 free VPN connection in total": [
+        ""
+      ],
+      "99.95% SLA": [
+        ""
+      ],
+      "Admin console": [
+        ""
+      ],
+      "Advanced sharing security": [
+        ""
+      ],
+      "Auto-reply": [
+        ""
+      ],
+      "Catch-all": [
+        ""
+      ],
+      "Centralized billing": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Contact groups management": [
+        ""
+      ],
+      "Custom email domains": [
+        ""
+      ],
+      "DNS leak prevention": [
+        ""
+      ],
+      "Document editors (docs, sheets, slides)": [
+        ""
+      ],
+      "Easy Switch import assistant": [
+        ""
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        ""
+      ],
+      "Enables HIPAA compliance": [
+        ""
+      ],
+      "Encrypted contact details": [
+        ""
+      ],
+      "Encrypted VPN servers": [
+        "加密的 VPN 伺服器"
+      ],
+      "End-to-end encryption": [
+        ""
+      ],
+      "Free VPN on a single device": [
+        ""
+      ],
+      "GDPR data processing agreement": [
+        ""
+      ],
+      "High-speed VPN on ${ n } device": [
+        ""
+      ],
+      "HTML signatures": [
+        ""
+      ],
+      "Kill switch/always-on VPN": [
+        ""
+      ],
+      "Limited support": [
+        ""
+      ],
+      "Multiple admin roles": [
+        ""
+      ],
+      "NetShield malware and ad-blocker": [
+        ""
+      ],
+      "P2P/BitTorrent": [
+        ""
+      ],
+      "Password-protected Emails": [
+        ""
+      ],
+      "Phone support (6+ users)": [
+        ""
+      ],
+      "Priority email support": [
+        ""
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Router support": [
+        ""
+      ],
+      "Secure Core servers": [
+        "Secure Core 伺服器"
+      ],
+      "Send & receive invitations": [
+        ""
+      ],
+      "Share calendar via link": [
+        ""
+      ],
+      "Share files and folders via link": [
+        ""
+      ],
+      "Sign in as user": [
+        ""
+      ],
+      "Split tunneling (Android and Windows)": [
+        ""
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Team management": [
+        ""
+      ],
+      "Tor over VPN": [
+        ""
+      ],
+      "Two-factor authentication": [
+        ""
+      ],
+      "Unlimited filters": [
+        ""
+      ],
+      "Unlimited folders": [
+        ""
+      ],
+      "Unlimited folders, labels and filters": [
+        ""
+      ],
+      "Unlimited labels": [
+        ""
+      ],
+      "Unlimited messages per day": [
+        ""
+      ],
+      "Unlimited volume/bandwidth": [
+        ""
+      ],
+      "Up to ${ totalStorageSize } total storage": [
+        ""
+      ],
+      "User credential management": [
+        ""
+      ],
+      "User session management": [
+        ""
+      ],
+      "Worldwide streaming services": [
+        ""
+      ]
+    },
+    "new_plans: forgot links": {
+      "Forgot password": [
+        ""
+      ],
+      "username": [
+        ""
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        ""
+      ],
+      "Team management": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        ""
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        ""
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "適用的餘額、價差與優惠券將在下一步時套用。"
+      ],
+      "Comprehensive privacy and security with all Proton services combined.": [
+        ""
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "若你將帳戶刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新建立帳戶，也不能再次選擇該方案。"
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "若你將帳戶降級，你將失去所有 ${ visionary } 帶來的福利，且在你決定重新訂閱時，該方案不再可用。"
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "如果你切換到不同的計畫，你將失去所有 ${ visionary } 計畫的福利，且無法切換回 ${ visionary } 。"
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "我們的 ${ visionary } 計畫不再可用於新的訂閱者，這是一個給予原 ${ BRAND_NAME } 使用者的特殊方案，具有特別功能與福利。"
+      ],
+      "Popular": [
+        ""
+      ],
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        ""
+      ],
+      "Privacy and security suite for businesses, including all premium Proton services.": [
+        ""
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        ""
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        ""
+      ],
+      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
+        "設定自動回覆，可告知來訪者您不在辦公室或暫時無法親自回應。"
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        ""
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        ""
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "你正在當前的計畫中享受促銷價格。若你刪除你的帳戶，你將會永遠失去此促銷價，即使你決定建立一個新帳戶也是。"
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "你正在當前的計畫中享受促銷價格。若你將帳戶降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
+      ]
+    },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        ""
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/月"
+      ]
+    },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        ""
+      ]
+    },
+    "new_plans: signup": {
+      "Creating the account means you accept ${ terms }. ": [
+        ""
+      ],
+      "Payment details": [
+        ""
+      ],
+      "Proton's terms and conditions": [
+        ""
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        ""
+      ],
+      "Subscription": [
+        ""
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        ""
+      ],
+      "Your ${ planName } subscription is now active.": [
+        ""
+      ],
+      "Your selected plan: ${ planName }": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        ""
+      ],
+      "Downgrade account?": [
+        ""
+      ],
+      "Improved plans coming soon!": [
+        ""
+      ],
+      "Review subscription and pay": [
+        ""
+      ],
+      "Start exploring the Proton universe": [
+        ""
+      ],
+      "Switch plans?": [
+        ""
+      ],
+      "Unlock premium features by upgrading": [
+        ""
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        ""
+      ],
+      "Upgrade to ${ planName }": [
+        ""
+      ],
+      "Your account's usage": [
+        ""
+      ]
+    },
+    "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        ""
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        ""
+      ],
+      "Advanced security VPN with global network": [
+        ""
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        ""
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        ""
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        ""
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
+        ""
+      ],
+      "Create up to ${ n } custom calendar.": [
+        ""
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        ""
+      ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        ""
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        ""
+      ],
+      "End-to-end encrypted calendar": [
+        ""
+      ],
+      "End-to-end encrypted file storage": [
+        ""
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        ""
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        ""
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        ""
+      ],
+      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
+        ""
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        ""
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        ""
+      ],
+      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
+        ""
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        ""
+      ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+        ""
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        ""
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        ""
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        ""
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "我們以多層密碼完整加密伺服器上的硬碟，即便硬碟被整顆拔走，你的資料仍然受到保護。"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        ""
+      ],
+      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
+        ""
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        ""
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        ""
+      ],
+      "Quickly set up out-of-office messages": [
+        ""
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        ""
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        ""
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        ""
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        ""
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
+        ""
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        ""
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        ""
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        ""
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        ""
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        ""
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        ""
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        ""
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        ""
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        ""
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        ""
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
+        ""
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        ""
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        ""
+      ],
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        ""
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        ""
+      ],
+      "10 email addresses/aliases": [
+        ""
+      ],
+      "Access advanced VPN features": [
+        ""
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        ""
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        ""
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        ""
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        ""
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+        ""
+      ],
+      "Everything in ${ vpnPlanName }": [
+        ""
+      ],
+      "Get 5 additional email addresses per user": [
+        ""
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
+        ""
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } 已建立"
@@ -7480,7 +8158,7 @@
         "搜尋使用者"
       ],
       "Select": [
-        ""
+        "選取"
       ],
       "Select a reason": [
         "選取理由"
@@ -7818,7 +8496,7 @@
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        ""
+        "URL 過長"
       ]
     },
     "Subscription attribute": {
@@ -7844,7 +8522,7 @@
         ""
       ],
       "${ UsedAddresses } address": [
-        ""
+        "${ UsedAddresses } 個電子郵件地址"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         ""
@@ -8055,7 +8733,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } 已移除"
+        "已移除 ${ label.Name }"
       ],
       "Address deleted": [
         "電子郵件地址已刪除"
@@ -8067,7 +8745,7 @@
         "電子郵件地址已啟用"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "憑證 ${ name } 已撤銷"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
         ""
@@ -8087,10 +8765,10 @@
     },
     "Suffix": {
       "/month": [
-        ""
+        "/月"
       ],
       "/user per month": [
-        ""
+        "/ 每使用者每月"
       ]
     },
     "Suffix for price": {
@@ -8113,10 +8791,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "商業使用"
       ],
       "For individuals": [
-        ""
+        "個人使用"
       ]
     },
     "TableHeader": {
@@ -8146,6 +8824,14 @@
       ],
       "vCard field": [
         "vCard 欄位"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "為您介紹改版更新的 Proton。"
+      ],
+      "More services, one privacy mission.": [
+        "給您更多元服務，秉持同一隱私使命。"
       ]
     },
     "Time period": {
@@ -8180,19 +8866,19 @@
         "${ appName } 鍵盤快捷鍵"
       ],
       "${ MAIL_APP_NAME } Bridge": [
-        ""
+        "${ MAIL_APP_NAME } Bridge"
       ],
       "${ maxUsers } user": [
         ""
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. 為生成的設定檔取一個名稱"
       ],
       "1. Select platform": [
         "1. 選擇平台"
       ],
       "2. Select platform": [
-        ""
+        "2. 選擇平台"
       ],
       "2. Select protocol": [
         "2. 選擇通訊協定"
@@ -8204,7 +8890,7 @@
         "3. 選取組態設定檔並下載"
       ],
       "3. Select VPN options": [
-        ""
+        "3. 選擇 VPN 選項"
       ],
       "4. Select a server to connect to": [
         ""
@@ -8297,7 +8983,7 @@
         "您確定要關閉嗎？"
       ],
       "Auto-reply": [
-        ""
+        "自動回覆"
       ],
       "Automatically sign outgoing messages?": [
         "自動簽署寄出的訊息？"
@@ -8363,7 +9049,7 @@
         ""
       ],
       "Confirm address": [
-        "確認電子郵件地址"
+        "確認電郵位址"
       ],
       "Confirm downgrade": [
         "確認降級"
@@ -8573,7 +9259,7 @@
         "選購 ${ vpnPlus } 即可存取所有的伺服器"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "免費取得最多18個月的 ${ planName }"
       ],
       "Gift code": [
         "禮品代碼"
@@ -8627,7 +9313,7 @@
         "帳單"
       ],
       "Keyboard shortcuts": [
-        ""
+        "鍵盤快捷鍵"
       ],
       "Labels": [
         "標籤"
@@ -8729,7 +9415,7 @@
         "處理中..."
       ],
       "Recommended": [
-        ""
+        "推薦"
       ],
       "Reconnect your account": [
         "重新連線到您的帳號"
@@ -8900,7 +9586,7 @@
         "不支援此瀏覽器"
       ],
       "Upgrade plan": [
-        ""
+        "升級方案"
       ],
       "Username": [
         "使用者名稱"
@@ -8909,7 +9595,7 @@
         "使用者及電子郵件地址"
       ],
       "Verification": [
-        ""
+        "驗證"
       ],
       "VPN apps": [
         "VPN 應用程式"
@@ -8921,7 +9607,7 @@
         "警告！"
       ],
       "Warning: suspected fake website": [
-        ""
+        "警告：疑似假冒網站。"
       ],
       "What would you like to import?": [
         "您想匯入什麼？"
@@ -8930,7 +9616,7 @@
         "最近更新"
       ],
       "WireGuard": [
-        ""
+        "WireGuard"
       ],
       "WireGuard configuration": [
         ""
@@ -9241,7 +9927,7 @@
         "${ n } 條VPN連線"
       ],
       "${ numberOfServers } in ${ numberOfCountries } country": [
-        "有 ${ numberOfServers } 台伺服器分布在 ${ numberOfCountries } 國家"
+        "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
       ]
     },
     "VPNClient": {

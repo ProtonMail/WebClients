@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo deu errado. Por favor, ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "O nome da pasta é muito longo. Por favor, escolha um nome diferente."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "O nome do marcador é inválido. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "Este nome de marcador é muito longo. Por favor, escolha um nome diferente."
@@ -2225,25 +2231,20 @@
         "${ canceledCount } cancelado",
         "${ canceledCount } cancelados"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a este grupo."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contato encontrado",
         "${ contactsCount } contatos encontrados"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contém vários endereços de e-mail. Selecione qual ou quais endereços de e-mail serão adicionados a este grupo."
       ],
       "${ doneCount } finished": [
         "${ doneCount } concluído",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } e ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contato",
@@ -2309,8 +2307,8 @@
         "(${ memberCount } membro)",
         "(${ memberCount } membros)"
       ],
-      "5 email addresses": [
-        "5 endereços de e-mail"
+      "10 email addresses": [
+        "10 endereços de e-mail"
       ],
       "A number will be added to the filename": [
         "Um número será adicionado ao nome do arquivo"
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2710,6 +2711,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Por favor, selecione as pastas que você deseja importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Espere enquanto procuramos por contatos que possam ser assinados novamente com a chave de criptografia primária."
@@ -2925,6 +2933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos nos movendo! Junte-se a nós em nosso novo site: ${ link }."
+      ],
       "Week": [
         "Semana"
       ],
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Comprometida"
+      ],
       "Expired": [
         "Expirado"
+      ],
+      "Obsolete": [
+        "Obsoleta"
       ],
       "Primary": [
         "Principal"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Confiável"
-      ],
-      "Verification only": [
-        "Apenas verificação"
       ],
       "WKD": [
         "WKD"
@@ -3827,6 +3841,17 @@
         "A chave não pode ser usada para criptografar"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Endereço de e-mail não encontrado entre as identidades de usuário definidas na chave de envio (${ keyUserIds })"
@@ -4104,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Apresentamos a versão atualizada dos produtos Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mais serviços, uma missão de privacidade."
+      ],
       "Settings": [
         "Configurações"
       ]

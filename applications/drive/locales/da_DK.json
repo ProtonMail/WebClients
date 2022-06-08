@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noget gik galt. ${ refresh } siden for at fortsætte. Ser du stadig denne fejlmeddelelse, bedes du kontakte vores ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Etikettenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
@@ -2225,25 +2231,20 @@
         "${ canceledCount } annulleret",
         "${ canceledCount } annulleret"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } indeholder adskillige e-mailadresser.",
+        "${ contactCount } indeholder adskillige e-mailadresser."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
         "${ contactEmailsLength } medlemmer"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } indeholder adskillige e-mailadresser."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
       ],
       "${ doneCount } finished": [
         "${ doneCount } færdig",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } og ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } kontaktgruppe",
@@ -2309,8 +2307,8 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "5 email addresses": [
-        "5 e-mailadresser"
+      "10 email addresses": [
+        "10 e-mailadresser"
       ],
       "A number will be added to the filename": [
         "Et nummer vil blive tilføjet filnavnet"
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Et af dine krypterede drev er låst. Det skyldes sandsynligvis, at adgangskoden for nylig er blevet nulstillet."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2710,6 +2711,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } gruppe.",
+        "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } grupper."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -2925,6 +2933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Vi flytter! Følg med os til vores nye hjemmeside: ${ link }."
+      ],
       "Week": [
         "Uge"
       ],
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Kompromitteret"
+      ],
       "Expired": [
         "Udløbet"
+      ],
+      "Obsolete": [
+        "Forældet"
       ],
       "Primary": [
         "Primær"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "Verification only": [
-        "Kun bekræftelse"
       ],
       "WKD": [
         "WKD"
@@ -3540,6 +3554,21 @@
         "Etikettenavn"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Skift eller tilføj konto"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vi præsenterer Proton's nye udseende.${ br } Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Opdateret Proton, forenet beskyttelse"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "\"${ name }\" oprettet"
@@ -3810,6 +3839,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } har markeret denne nøgle som kompromitteret. Denne nøgle kan ikke bruges hverken til kryptering eller til signaturkontrol."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } har markeret denne nøgle som forældet. Denne nøgle kan kun bruges til signaturkontrol."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
       ]
     },
     "PGP key warning": {
@@ -4089,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Vi præsenterer det opdaterede Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Flere tjenester, én mission om privatlivsbeskyttelse."
+      ],
       "Settings": [
         "Indstillinger"
       ]
