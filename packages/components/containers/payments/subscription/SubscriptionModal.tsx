@@ -7,12 +7,12 @@ import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { Audience, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
 import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import unary from '@proton/util/unary';
+import unary from '@proton/utils/unary';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
 

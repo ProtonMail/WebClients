@@ -13,7 +13,7 @@ import {
 import getRandomValues from '@proton/get-random-values';
 import { c } from 'ttag';
 
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { ENCRYPTION_TYPES, ENCRYPTION_CONFIGS } from '../constants';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
 import { Address, EncryptionConfig } from '../interfaces';

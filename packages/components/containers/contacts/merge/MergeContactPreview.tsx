@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
 import { getContact } from '@proton/shared/lib/api/contacts';
 import { prepareContact } from '@proton/shared/lib/contacts/decrypt';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { ContactProperties, ContactMergeModel, ContactEmail } from '@proton/shared/lib/interfaces/contacts';

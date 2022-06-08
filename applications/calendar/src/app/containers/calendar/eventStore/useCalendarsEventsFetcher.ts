@@ -1,7 +1,7 @@
 import { MutableRefObject, useEffect, useState } from 'react';
 import { useApi } from '@proton/components';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { CalendarsEventsCache } from './interface';
 import getCalendarEventsCache from './cache/getCalendarEventsCache';
 import { fetchCalendarEvents } from './cache/fetchCalendarEvents';

@@ -37,7 +37,7 @@
             "@proton/stylelint-config-proton/*": ["./packages/stylelint-config-proton/*"],
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
-            "@proton/util/*": ["./packages/util/*"]
+            "@proton/utils/*": ["./packages/utils/*"]
         }
     },
     "exclude": ["**/node_modules", "**/.*/"]

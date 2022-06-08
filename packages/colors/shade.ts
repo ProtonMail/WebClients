@@ -1,6 +1,6 @@
 import tiny, { Instance as Color } from 'tinycolor2';
 
-import percentOf from '@proton/util/percentOf';
+import percentOf from '@proton/utils/percentOf';
 
 function shade(color: Color, percent: number) {
     const rgb = color.toRgb();

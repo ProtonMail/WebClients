@@ -13,7 +13,7 @@ import {
     getIsValidForSending,
     getVerifyingKeys,
 } from '@proton/shared/lib/keys/publicKeys';
-import uniqueBy from '@proton/util/uniqueBy';
+import uniqueBy from '@proton/utils/uniqueBy';
 import { getKeyInfoFromProperties, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import { DecryptedKey, ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { ContactProperties, ContactProperty } from '@proton/shared/lib/interfaces/contacts/Contact';
@@ -28,7 +28,7 @@ import {
     MIME_TYPES_MORE,
     PGP_SCHEMES,
 } from '@proton/shared/lib/constants';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 
 import ContactMIMETypeSelect from '../ContactMIMETypeSelect';
 import ContactPgpSettings from '../ContactPgpSettings';

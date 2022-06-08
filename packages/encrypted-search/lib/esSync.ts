@@ -1,5 +1,5 @@
 import { IDBPDatabase } from 'idb';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getNumItemsDB, getOldestItem, openESDB, updateSizeIDB } from './esUtils';
 import { decryptFromDB, uncachedSearch } from './esSearch';

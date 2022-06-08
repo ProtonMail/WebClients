@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import getRandomString from "@proton/util/getRandomString";
+import getRandomString from "@proton/utils/getRandomString";
 import { OnKeyImportCallback } from '@proton/shared/lib/keys';
 
 import {

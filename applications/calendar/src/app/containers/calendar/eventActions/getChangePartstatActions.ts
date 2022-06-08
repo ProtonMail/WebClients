@@ -2,7 +2,7 @@ import { getUnixTime } from 'date-fns';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { serverTime } from 'pmcrypto';
 import {

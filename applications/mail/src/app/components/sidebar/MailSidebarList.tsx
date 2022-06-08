@@ -20,7 +20,7 @@ import {
     useUser,
 } from '@proton/components';
 import { APPS, MAILBOX_LABEL_IDS, SHOW_MOVED } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { Radio, Row } from '@proton/components';
 import * as React from 'react';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 
 interface Props {

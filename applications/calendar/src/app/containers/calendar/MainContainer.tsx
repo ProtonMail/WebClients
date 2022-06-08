@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import unary from '@proton/util/unary';
+import unary from '@proton/utils/unary';
 import {
     ErrorBoundary,
     StandardErrorPage,

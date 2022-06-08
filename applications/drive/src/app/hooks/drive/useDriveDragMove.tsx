@@ -3,7 +3,7 @@ import * as React from 'react';
 import { c } from 'ttag';
 
 import { useGlobalLoader } from '@proton/components';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 

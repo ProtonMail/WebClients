@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import range from '@proton/util/range';
+import range from '@proton/utils/range';
 import { memo } from 'react';
 import { ButtonGroup, Button } from '../button';
 import { Icon } from '../icon';

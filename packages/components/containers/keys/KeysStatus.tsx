@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { Badge } from '../../components';
 import { KeyStatus } from './shared/interface';

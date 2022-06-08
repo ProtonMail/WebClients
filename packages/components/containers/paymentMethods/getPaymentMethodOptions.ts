@@ -7,7 +7,7 @@ import {
     PAYMENT_METHOD_TYPES,
 } from '@proton/shared/lib/constants';
 import { PaymentMethod, PaymentMethodStatus } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { IconName } from '../../components';
 import { PaymentMethodData, PaymentMethodFlows } from './interface';

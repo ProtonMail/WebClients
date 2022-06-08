@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import truncate from '@proton/util/truncate';
+import truncate from '@proton/utils/truncate';
 
 import {
     IMPORT_ERROR_TYPE,

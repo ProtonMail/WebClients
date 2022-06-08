@@ -4,8 +4,8 @@ import { algorithmInfo, OpenPGPKey, isExpiredKey, isRevokedKey } from 'pmcrypto'
 import { isValid, format } from 'date-fns';
 import { c } from 'ttag';
 
-import uniqueBy from '@proton/util/uniqueBy';
-import move from '@proton/util/move';
+import uniqueBy from '@proton/utils/uniqueBy';
+import move from '@proton/utils/move';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getFormattedAlgorithmNames } from '@proton/shared/lib/keys';

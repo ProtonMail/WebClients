@@ -10,7 +10,7 @@ import {
     TableCellBusy,
     useRightToLeft,
 } from '@proton/components';
-import buffer from '@proton/util/buffer';
+import buffer from '@proton/utils/buffer';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import {
     FileBrowserProps,

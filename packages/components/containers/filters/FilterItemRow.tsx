@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 import { c } from 'ttag';
 import { FILTER_STATUS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { toggleEnable, deleteFilter } from '@proton/shared/lib/api/filters';
 
 import { Toggle, DropdownActions, OrderableTableRow, useModalState } from '../../components';

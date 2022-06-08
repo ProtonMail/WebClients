@@ -1,4 +1,4 @@
-import range from '@proton/util/range';
+import range from '@proton/utils/range';
 import { transformBase } from '../transformBase';
 
 describe('transformBase service', () => {
