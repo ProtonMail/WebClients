@@ -179,7 +179,7 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
             >
                 <ModalTwoHeader title={title} />
                 <ModalTwoContent>
-                    <p>
+                    <p className="mb1">
                         {
                             // translator: full sentence is: To work properly, each filter must contain at least a name and a valid Sieve script. You can learn more about Sieve programming language
                             c('Info')
@@ -187,7 +187,6 @@ const AdvancedFilterModal = ({ filter, ...rest }: Props) => {
                         }
                     </p>
 
-                    {/*<HeaderAdvancedFilterModal model={model} errors={errors} onChange={setModel} />*/}
                     <FilterNameForm
                         model={model}
                         onChange={(newModel) => setModel(newModel as AdvancedSimpleFilterModalModel)}
