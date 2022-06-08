@@ -163,6 +163,10 @@ async function uploadBlockData(
             // It can happen when browser blocks the request, for example.
             reject(new Error('Upload failed'));
         };
+        xhr.ontimeout = () => {
+            // ontimeout can happen during switching proxy, for example.
+            reject(new Error('Upload timed out'));
+        };
         xhr.open('POST', url);
         xhr.setRequestHeader('pm-storage-token', token);
         xhr.send(
