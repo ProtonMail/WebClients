@@ -2,7 +2,7 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 import { c } from 'ttag';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
-import { unique } from '@proton/shared/lib/helpers/array';
+import unique from '@proton/util/unique';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { loadModels } from '@proton/shared/lib/models/helper';

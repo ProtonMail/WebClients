@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 
 import { Button, useLoading, PasswordInputTwo, useFormErrors, InputFieldTwo } from '@proton/components';
 

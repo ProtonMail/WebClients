@@ -1,3 +1,4 @@
+import chunk from '@proton/util/chunk';
 import { syncMultipleEvents } from '../../api/calendars';
 import { HTTP_ERROR_CODES } from '../../errors';
 import {
@@ -16,7 +17,6 @@ import { getComponentIdentifier, splitErrors } from './import';
 import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '../icsSurgery/ImportEventError';
 import { createCalendarEvent, getHasSharedEventContent, getHasSharedKeyPacket } from '../serialize';
 import getCreationKeys from '../integration/getCreationKeys';
-import { chunk } from '../../helpers/array';
 import { wait } from '../../helpers/promise';
 import { Api, DecryptedKey } from '../../interfaces';
 

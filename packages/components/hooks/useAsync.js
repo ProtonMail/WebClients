@@ -1,5 +1,6 @@
 import { useCallback, useReducer, useRef } from 'react';
-import useIsMounted from './useIsMounted';
+
+import useIsMounted from '@proton/hooks/useIsMounted';
 
 const DEFAULT_STATE = {
     loading: false,

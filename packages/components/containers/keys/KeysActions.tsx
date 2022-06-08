@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { DropdownActions } from '../../components';
 import { KeyActions } from './shared/interface';
 

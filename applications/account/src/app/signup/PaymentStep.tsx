@@ -1,10 +1,10 @@
 import { PAYMENT_METHOD_TYPES } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { Payment, PaymentParameters } from '@proton/components/containers/payments/interface';
 import { Api, Currency, Cycle, PaymentMethodStatus, Plan } from '@proton/shared/lib/interfaces';
 import SubscriptionCycleSelector from '@proton/components/containers/payments/subscription/SubscriptionCycleSelector';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import {
     Button,
     CurrencySelector,

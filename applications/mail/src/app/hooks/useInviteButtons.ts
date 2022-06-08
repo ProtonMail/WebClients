@@ -12,7 +12,7 @@ import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/r
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {

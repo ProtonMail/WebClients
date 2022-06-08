@@ -5,7 +5,7 @@ import punycode from 'punycode.js';
 import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { isIE11, isEdge } from '@proton/shared/lib/helpers/browser';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 
 import { isExternal, isSubDomain, getHostname } from '../helpers/url';

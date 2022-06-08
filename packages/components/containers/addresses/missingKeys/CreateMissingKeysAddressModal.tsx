@@ -7,7 +7,7 @@ import {
     MEMBER_PRIVATE,
 } from '@proton/shared/lib/constants';
 import { missingKeysMemberProcess, missingKeysSelfProcess } from '@proton/shared/lib/keys';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { InfoAuthedResponse, TwoFaResponse } from '@proton/shared/lib/authentication/interface';
 import { getInfo } from '@proton/shared/lib/api/auth';
 import { getHasTOTPEnabled, getHasTOTPSettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { useApi, useUser, useUserSettings } from '../../hooks';
 
 const useAskAuth = (onError: () => void = noop) => {

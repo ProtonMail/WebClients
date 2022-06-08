@@ -1,5 +1,5 @@
 import { MIME_TYPES, PACKAGE_TYPE } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Api } from '@proton/shared/lib/interfaces';
 import { Package, Packages, PackageStatus, SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';

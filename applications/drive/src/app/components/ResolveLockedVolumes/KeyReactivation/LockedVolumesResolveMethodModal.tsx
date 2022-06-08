@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, RadioGroup } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 import { c, msgid } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LockedVolumeResolveMethod } from './interfaces';
 

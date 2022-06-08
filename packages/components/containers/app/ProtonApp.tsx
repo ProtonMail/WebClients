@@ -8,7 +8,7 @@ import { formatUser, UserModel } from '@proton/shared/lib/models/userModel';
 import { STATUS } from '@proton/shared/lib/models/cache';
 import { isSSOMode, SSO_PATHS, APPS } from '@proton/shared/lib/constants';
 import { getPersistedSession } from '@proton/shared/lib/authentication/persistedSessionStorage';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import createListeners from '@proton/shared/lib/helpers/listeners';
 import {
     getBasename,
@@ -23,6 +23,7 @@ import { requestFork } from '@proton/shared/lib/authentication/sessionForking';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
 
+import useInstance from '@proton/hooks/useInstance';
 import { Icons } from '../../components';
 import Signout from './Signout';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
@@ -37,7 +38,7 @@ import RightToLeftProvider from '../rightToLeft/Provider';
 import { setTmpEventID } from './loadEventID';
 import clearKeyCache from './clearKeyCache';
 import { OnLoginCallbackArguments } from './interface';
-import { useInstance, PreventLeaveProvider } from '../../hooks';
+import { PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import ThemeProvider from '../themes/ThemeProvider';
 import SpotlightProvider from '../../components/spotlight/Provider';

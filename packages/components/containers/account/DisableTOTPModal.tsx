@@ -4,7 +4,7 @@ import { disableTotp } from '@proton/shared/lib/api/settings';
 import { srpAuth } from '@proton/shared/lib/srp';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 
 import {
     Loader,

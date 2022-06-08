@@ -1,7 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 
 import { FormModal, Icon, TitleModal, Button } from '../../../components';
 import { useContactEmails, useContactGroups, useModals, useUser, useUserKeys } from '../../../hooks';

@@ -11,7 +11,7 @@ import {
     ModalTwoHeader,
     useLoading,
 } from '@proton/components';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 

@@ -5,7 +5,7 @@ import { DecryptedKey, KeySalt, MNEMONIC_STATUS } from '@proton/shared/lib/inter
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { getMnemonicUserKeys, MnemonicKeyResponse } from '@proton/shared/lib/api/settingsMnemonic';
 import { lockSensitiveSettings, unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { computeKeyPassword } from '@proton/srp';

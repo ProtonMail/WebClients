@@ -2,7 +2,7 @@ import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_METHOD, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
 import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/veventHelper';
-import { unary } from '@proton/shared/lib/helpers/function';
+import unary from '@proton/util/unary';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';

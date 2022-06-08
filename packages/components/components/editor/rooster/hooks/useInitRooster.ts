@@ -2,8 +2,8 @@ import { RefObject, useCallback, useEffect, useRef } from 'react';
 import { IEditor } from 'roosterjs-editor-types';
 
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { initRoosterEditor } from '../helpers/initRoosterEditor';
-import { useIsMounted } from '../../../../hooks';
 import { EditorActions, OnEditorEventListened } from '../../interface';
 import { EDITOR_BLOCKQUOTE_TOGGLE_CONTAINER_ID, ROOSTER_EDITOR_ID, ROOSTER_EDITOR_WRAPPER_ID } from '../../constants';
 

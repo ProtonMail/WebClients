@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Badge } from '../../components';
 import { AddressStatuses } from './helper';
 

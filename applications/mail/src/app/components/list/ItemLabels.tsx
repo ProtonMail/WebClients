@@ -1,7 +1,7 @@
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { classnames, LabelStack } from '@proton/components';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { orderBy } from '@proton/shared/lib/helpers/array';
+import orderBy from '@proton/util/orderBy';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { useHistory } from 'react-router-dom';
 

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { extractVcards, readVcf } from '@proton/shared/lib/contacts/vcard';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { MAX_IMPORT_CONTACTS, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/contacts/constants';
 import { prepare, readCsv, toVcardContacts } from '@proton/shared/lib/contacts/helpers/csv';
 import {

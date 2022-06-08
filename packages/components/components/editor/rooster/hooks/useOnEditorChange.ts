@@ -1,7 +1,7 @@
-import { debounce } from '@proton/shared/lib/helpers/function';
+import debounce from '@proton/util/debounce';
 import { useCallback, useRef } from 'react';
 import { IEditor, PluginEvent, PluginEventType } from 'roosterjs-editor-types';
-import { useIsMounted } from '../../../../hooks';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { SetEditorToolbarConfig } from '../../interface';
 
 const EVENTS_TO_TRIGGER_ONCHANGE = [PluginEventType.Input, PluginEventType.ContentChanged];

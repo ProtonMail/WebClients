@@ -1,3 +1,4 @@
+import { shallowEqual } from '@proton/util/array';
 import { FREQUENCY } from './constants';
 import {
     VcalDateOrDateTimeValue,
@@ -6,7 +7,6 @@ import {
     VcalRruleProperty,
     VcalRrulePropertyValue,
 } from '../interfaces/calendar/VcalModel';
-import { shallowEqual } from '../helpers/array';
 import isDeepEqual from '../helpers/isDeepEqual';
 import { omit } from '../helpers/object';
 import { toUTCDate } from '../date/timezone';

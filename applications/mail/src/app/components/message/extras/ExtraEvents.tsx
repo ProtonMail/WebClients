@@ -9,8 +9,8 @@ import {
     getProbablyActiveCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_MIME_TYPE } from '@proton/shared/lib/calendar/constants';
-import { unary } from '@proton/shared/lib/helpers/function';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import unary from '@proton/util/unary';
+import isTruthy from '@proton/util/isTruthy';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
@@ -19,6 +19,7 @@ import {
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { useEffect, useState } from 'react';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     useAddresses,
     useGetAddressKeys,
@@ -26,7 +27,6 @@ import {
     useContactEmails,
     useGetCalendars,
     useGetCalendarUserSettings,
-    useIsMounted,
     useLoading,
     useUser,
     useUserSettings,

@@ -24,7 +24,7 @@ import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import { MutableRefObject, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { useAppTitle, useCalendarBootstrap } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
-import { unary } from '@proton/shared/lib/helpers/function';
+import unary from '@proton/util/unary';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import {
     canAskTimezoneSuggestion,
