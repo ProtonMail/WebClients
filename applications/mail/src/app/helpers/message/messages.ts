@@ -1,7 +1,7 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { attachmentsSize } from '@proton/shared/lib/mail/messages';
-import uniqueBy from '@proton/util/uniqueBy';
+import uniqueBy from '@proton/utils/uniqueBy';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import { getContent, setContent } from './messageContent';

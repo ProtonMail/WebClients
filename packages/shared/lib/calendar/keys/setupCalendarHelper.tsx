@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/components';
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import { setupCalendarKey } from './setupCalendarKeys';
 import { Address, Api } from '../../interfaces';
 import { createCalendar, updateCalendarUserSettings } from '../../api/calendars';

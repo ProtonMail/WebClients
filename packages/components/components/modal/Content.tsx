@@ -1,6 +1,6 @@
 import { ReactNode, FormEvent } from 'react';
 
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { classnames } from '../../helpers';
 
 interface Props {

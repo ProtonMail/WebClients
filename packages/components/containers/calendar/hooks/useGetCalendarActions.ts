@@ -1,6 +1,6 @@
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { Dispatch, SetStateAction } from 'react';
 import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';

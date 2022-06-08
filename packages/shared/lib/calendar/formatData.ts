@@ -1,5 +1,5 @@
 import { OpenPGPSignature } from 'pmcrypto';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
 import { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';

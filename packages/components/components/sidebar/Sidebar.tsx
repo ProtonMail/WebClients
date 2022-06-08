@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { APPS } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import percentage from '@proton/util/percentage';
+import percentage from '@proton/utils/percentage';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 
 import { SettingsLink } from '../link';

@@ -1,5 +1,5 @@
 import { getKeys } from 'pmcrypto';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { KEY_FLAG, MIME_TYPES, RECIPIENT_TYPES } from '../../constants';
 import { API_CUSTOM_ERROR_CODES } from '../../errors';
 import { Api, ApiKeysConfig, ProcessedApiKey, SignedKeyListEpochs } from '../../interfaces';

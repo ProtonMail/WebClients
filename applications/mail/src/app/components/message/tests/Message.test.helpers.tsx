@@ -1,5 +1,5 @@
 import { MutableRefObject } from 'react';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { act } from '@testing-library/react';

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { useLoading, Button, useFormErrors, InputFieldTwo } from '@proton/components';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { Api } from '@proton/shared/lib/interfaces';
 import { queryCheckUsernameAvailability } from '@proton/shared/lib/api/user';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';

@@ -1,5 +1,5 @@
 import { getKeys } from 'pmcrypto';
-import getRandomString from "@proton/util/getRandomString";
+import getRandomString from "@proton/utils/getRandomString";
 import { KeyReactivationRequestStateData, KeyReactivationRequestState, KeyReactivationRequest } from './interface';
 
 export const getInitialStates = async (initial: KeyReactivationRequest[]): Promise<KeyReactivationRequestState[]> => {

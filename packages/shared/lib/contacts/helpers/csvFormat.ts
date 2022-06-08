@@ -1,5 +1,5 @@
-import isTruthy from '@proton/util/isTruthy';
-import capitalize from '@proton/util/capitalize';
+import isTruthy from '@proton/utils/isTruthy';
+import capitalize from '@proton/utils/capitalize';
 import { normalize } from '../../helpers/string';
 import { ContactValue } from '../../interfaces/contacts';
 import {

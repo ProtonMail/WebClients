@@ -1,6 +1,6 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
 import { useHotkeys, useWindowSize, useHandler } from '@proton/components';
-import throttle from '@proton/util/throttle';
+import throttle from '@proton/utils/throttle';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 export const useResizeMessageView = (

@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
-import { addItem, updateItem } from '@proton/util/array';
-import removeItem from '@proton/util/removeIndex';
+import { addItem, updateItem } from '@proton/utils/array';
+import removeItem from '@proton/utils/removeIndex';
 import { classnames, generateUID } from '../../../helpers';
 import { ButtonLike, ErrorZone, Icon, UnderlineButton, Tooltip } from '../../../components';
 import NotificationInput from './inputs/NotificationInput';

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Address } from '@proton/shared/lib/interfaces';
 import { EasySwitchFeatureFlag, ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 
 import mailIllu from '@proton/styles/assets/img/import/importTypes/mail.svg';
 import calendarIllu from '@proton/styles/assets/img/import/importTypes/calendar.svg';

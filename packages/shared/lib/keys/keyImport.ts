@@ -1,6 +1,6 @@
 import { getKeys } from 'pmcrypto';
 
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { readFileAsString } from '../helpers/file';
 
 const PRIVATE_KEY_EXPR =

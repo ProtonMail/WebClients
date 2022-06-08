@@ -1,4 +1,4 @@
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { APP_NAMES, APPS, APPS_CONFIGURATION, VPN_HOSTNAME } from '../constants';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';

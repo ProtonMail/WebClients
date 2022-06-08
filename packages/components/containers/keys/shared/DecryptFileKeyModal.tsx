@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { c } from 'ttag';
 import { decryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import {
     Button,

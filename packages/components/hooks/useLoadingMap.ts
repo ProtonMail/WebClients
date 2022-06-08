@@ -1,4 +1,4 @@
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { LoadingMap, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { useRef, useState, useEffect, useCallback } from 'react';
 

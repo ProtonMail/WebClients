@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { c } from 'ttag';
 import { HumanVerificationMethodType } from '@proton/shared/lib/interfaces';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 
 import {
     ModalProps,

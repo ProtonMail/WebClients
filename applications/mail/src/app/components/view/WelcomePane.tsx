@@ -17,7 +17,7 @@ import { c, msgid } from 'ttag';
 import { Location } from 'history';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import capitalize from '@proton/util/capitalize';
+import capitalize from '@proton/utils/capitalize';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import envelope from '@proton/styles/assets/img/illustrations/welcome-pane.svg';
 import mobileMailApp from '@proton/styles/assets/img/illustrations/app-teaser.svg';

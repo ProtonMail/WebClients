@@ -3,15 +3,15 @@ import { encryptSessionKey, splitMessage, decryptSessionKey, getMessage, Session
 import { useApi, usePreventLeave } from '@proton/components';
 import { computeKeyPassword } from '@proton/srp';
 import { srpGetVerify } from '@proton/shared/lib/srp';
-import chunk from '@proton/util/chunk';
+import chunk from '@proton/utils/chunk';
 import {
     base64StringToUint8Array,
     uint8ArrayToBase64String,
     stringToUint8Array,
 } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import getRandomString from "@proton/util/getRandomString";
+import getRandomString from "@proton/utils/getRandomString";
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import {

@@ -1,4 +1,4 @@
-import unique from '@proton/util/unique';
+import unique from '@proton/utils/unique';
 import { getEmailParts } from '@proton/shared/lib/helpers/email';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
