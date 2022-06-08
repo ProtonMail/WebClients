@@ -76,7 +76,12 @@ export const queryUploadFileBlock = (url: string, chunk: Uint8Array) => {
     };
 };
 
-export const queryCreateFileRevision = (shareId: string, linkId: string, currentRevisiontID: string) => {
+export const queryCreateFileRevision = (
+    shareId: string,
+    linkId: string,
+    currentRevisiontID: string,
+    clientUID?: string
+) => {
     return {
         method: 'post',
         timeout: UPLOAD_TIMEOUT,
@@ -84,6 +89,7 @@ export const queryCreateFileRevision = (shareId: string, linkId: string, current
         silence: true,
         data: {
             CurrentRevisionID: currentRevisiontID,
+            ClientUID: clientUID,
         },
     };
 };

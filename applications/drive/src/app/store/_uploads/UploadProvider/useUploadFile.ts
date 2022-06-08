@@ -36,6 +36,7 @@ import {
 import { initUploadFileWorker } from '../initUploadFileWorker';
 import { ConflictStrategyHandler, UploadUserError } from './interface';
 import useUploadHelper from './useUploadHelper';
+import { generateClientUid } from './uploadClientUid';
 
 interface FileRevision {
     isNewFile: boolean;
@@ -45,6 +46,10 @@ interface FileRevision {
     previousRevisionID?: string;
     sessionKey: SessionKey;
     privateKey: OpenPGPKey;
+    // Callbacks to control local client UIDs.
+    // See useUploadClientUid for more details.
+    uploadFinished: () => void;
+    uploadFailed: () => void;
 }
 
 export default function useUploadFile() {
@@ -69,7 +74,8 @@ export default function useUploadFile() {
             filename: string,
             mimeType: string,
             hash: string,
-            keys: FileKeys
+            keys: FileKeys,
+            previousClientUid?: string
         ): Promise<FileRevision> => {
             const error = validateLinkName(file.name);
             if (error) {
@@ -85,6 +91,8 @@ export default function useUploadFile() {
 
             checkSignal(abortSignal, filename);
 
+            const { clientUid, uploadFinished, uploadFailed } = generateClientUid(previousClientUid);
+
             // Do not abort using signal - file could be created and we
             // wouldn't know ID to do proper cleanup.
             const { File: createdFile } = await debouncedRequest<CreateFileResult>(
@@ -99,6 +107,7 @@ export default function useUploadFile() {
                     NodePassphraseSignature: keys.nodePassphraseSignature,
                     ParentLinkID: parentId,
                     SignatureAddress: addressKeyInfo.address.Email,
+                    ClientUID: clientUid,
                 })
             );
 
@@ -109,6 +118,8 @@ export default function useUploadFile() {
                 privateKey: keys.privateKey,
                 revisionID: createdFile.RevisionID,
                 sessionKey: keys.sessionKey,
+                uploadFinished,
+                uploadFailed,
             };
         };
 
@@ -128,10 +139,12 @@ export default function useUploadFile() {
 
             checkSignal(abortSignal, link.name);
 
+            const { clientUid, uploadFinished, uploadFailed } = generateClientUid();
+
             // Do not abort using signal - revision could be created and we
             // wouldn't know ID to do proper cleanup.
             const { Revision } = await debouncedRequest<CreateFileRevisionResult>(
-                queryCreateFileRevision(shareId, link.linkId, currentActiveRevisionID)
+                queryCreateFileRevision(shareId, link.linkId, currentActiveRevisionID, clientUid)
             ).catch((err) => {
                 if (err.data?.Code === 2500) {
                     throw new UploadUserError(
@@ -149,6 +162,8 @@ export default function useUploadFile() {
                 previousRevisionID: currentActiveRevisionID,
                 sessionKey,
                 privateKey,
+                uploadFinished,
+                uploadFailed,
             };
         };
 
@@ -184,11 +199,40 @@ export default function useUploadFile() {
             return createRevision(abortSignal, link);
         };
 
+        /**
+         * replaceDraft removes previous link completely and creates new
+         * file, because API does not allow creation of new revision for link
+         * without any revision. One day it would be good to keep the draft
+         * and just finish upload of the missing blocks.
+         */
+        const replaceDraft = async (
+            abortSignal: AbortSignal,
+            filename: string,
+            mimeType: string,
+            hash: string,
+            keys: FileKeys,
+            linkId: string,
+            clientUid: string
+        ) => {
+            await deleteChildrenLinks(abortSignal, shareId, parentId, [linkId]);
+            return createFile(abortSignal, filename, mimeType, hash, keys, clientUid);
+        };
+
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
-                const { filename: newName, hash } = await findAvailableName(abortSignal, shareId, parentId, file.name);
+                const {
+                    filename: newName,
+                    hash,
+                    linkId,
+                    clientUid,
+                } = await findAvailableName(abortSignal, shareId, parentId, file.name);
                 checkSignal(abortSignal, file.name);
+                // Automatically replace file - previous draft was uploaded
+                // by the same client.
+                if (linkId && clientUid) {
+                    return replaceDraft(abortSignal, file.name, mimeType, hash, keys, linkId, clientUid);
+                }
                 if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
@@ -325,6 +369,8 @@ export default function useUploadFile() {
                         })
                     );
 
+                    createdFileRevision.uploadFinished();
+
                     // Replacing file should keep only one revision because we
                     // don't use revisions now at all (UI is not ready to handle
                     // situation that size of the file is sum of all revisions,
@@ -354,6 +400,7 @@ export default function useUploadFile() {
                 const createdFileRevision = await createdFileRevisionPromise.catch(() => undefined);
                 try {
                     if (createdFileRevision) {
+                        createdFileRevision.uploadFailed();
                         if (createdFileRevision.isNewFile) {
                             // Cleanup should not be able to abort.
                             await deleteChildrenLinks(new AbortController().signal, shareId, parentId, [
