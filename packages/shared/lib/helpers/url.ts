@@ -215,6 +215,10 @@ export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) =>
 
 let cache = '';
 export const getStaticURL = (path: string) => {
+    if (window.location.hostname === 'localhost') {
+        return `https://proton.me${path}`;
+    }
+
     // We create a relative URL to support the TOR domain
     cache = cache || getSecondLevelDomain(window.location.hostname);
     // The VPN domain has a different static site and the proton.me urls are not supported there
