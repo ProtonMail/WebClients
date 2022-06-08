@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Zkopírovat e-mail do schránky"
       ],
+      "Copy password to clipboard": [
+        "Zkopírovat heslo do schránky"
+      ],
       "Create a new contact group": [
         "Vytvořit novou skupinu kontaktů"
       ],
@@ -290,6 +293,9 @@
       "Edit email address": [
         "Upravit e-mailovou adresu"
       ],
+      "Edit encryption": [
+        "Upravit šifrování"
+      ],
       "Edit label": [
         "Upravit štítek"
       ],
@@ -320,6 +326,9 @@
       "Expand URL": [
         "Rozbalit adresu URL"
       ],
+      "Expiration time": [
+        "Doba vypršení platnosti"
+      ],
       "Export": [
         "Exportovat"
       ],
@@ -328,6 +337,9 @@
       ],
       "Export contacts": [
         "Exportovat kontakty"
+      ],
+      "External encryption": [
+        "Externí šifrování"
       ],
       "Filter on...": [
         "Filtrovat…"
@@ -399,7 +411,7 @@
         "Mám dotaz"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "Obrázky se načítají bez proxy serveru"
       ],
       "import": [
         "import"
@@ -582,7 +594,7 @@
         "Ne"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování."
       ],
       "No, I won't attend": [
         "Ne, nebudu se účastnit"
@@ -677,6 +689,12 @@
       "Remove ${ attachmentName }": [
         "Odstranit ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "Odstranit šifrování"
+      ],
+      "Remove expiration time": [
+        "Odstranění doby platnosti"
+      ],
       "Remove this label": [
         "Odebrat štítek"
       ],
@@ -754,6 +772,9 @@
       ],
       "Set as default": [
         "Nastavit jako výchozí"
+      ],
+      "Set encryption": [
+        "Nastavení šifrování"
       ],
       "Set expiration time": [
         "Nastavit dobu platnosti"
@@ -880,9 +901,6 @@
       ],
       "Unsubscribe": [
         "Odhlásit odběr"
-      ],
-      "Unsubscribe from mailing list": [
-        "Odhlásit se ze seznamu adresátů"
       ],
       "Unsubscribing": [
         "Odhlašování odběru"
@@ -1321,7 +1339,7 @@
         "${ participantName } požádal o nejnovější aktualizaci k události, která už neexistuje ve Vašem kalendáři."
       ],
       "${ participantName } asked for the latest updates to an event which doesn't match your invitation details. Please verify the invitation details in your calendar.": [
-        ""
+        "${ participantName } požádal o nejnovější aktualizace události, která neodpovídá vašim pozvánkovým údajům. Ověřte prosím údaje pozvánky ve svém kalendáři."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } pozvánku odmítl a navrhl nový čas pro jeden výskyt této události."
@@ -2894,8 +2912,8 @@
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Maximální počet příloh (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) překročen."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Překročen maximální počet příloh (${ attachmentsCountLimit })"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Sloučit nejméně ${ calendarToFixCount } kalendář s existujícím Proton kalendářem",
@@ -2924,17 +2942,11 @@
       "No data to import": [
         "Žádná data k importu"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Žádný z klíčů pro interního uživatele není možné použít pro odesílání"
-      ],
       "No keys retrieved for internal user": [
         "Pro interního uživatele nebyly nalezeny žádné klíče"
       ],
       "No valid address found": [
         "Nebyla nalezena žádná platná adresa"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Pro interního uživatele nebyly nalezeny žádné platné klíče"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Žádný WKD klíč pro uživatele není platný pro odesílání"
@@ -2980,6 +2992,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Klíč primární adresy není dešifrován."
+      ],
+      "Primary key is not valid for sending": [
+        "Primární klíč není platný pro odesílání"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Primární klíč pro interního uživatele je možné použít pro odesílání"
       ],
       "Public key could not be trusted": [
         "Nelze věřit veřejnému klíči"
@@ -3035,11 +3053,17 @@
         "Přílohy nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubory nadále dešifrovat \nprogramem, jako je např. GnuPG.",
         "Některé přílohy nebylo možné dešifrovat.\nPokud máte příslušný privátní klíč, budete moci soubory nadále dešifrovat \nprogramem, jako je např. GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Název složky je neplatný. Zvolte prosím jiný název."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte jiný název."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Klíč vlastností pro ${ emailAddress } nebylo možné extrahovat"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Název štítku je neplatný. Zvolte prosím jiný název."
       ],
       "The label name is too long. Please choose a different name.": [
         "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
@@ -3746,29 +3770,26 @@
         "${ calendarsToBeMergedCount } sloučených kalendářů",
         "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontakt obsahuje více e-mailových adres.",
+        "${ contactCount } kontakty obsahují více e-mailových adres.",
+        "${ contactCount } kontaktů obsahuje více e-mailových adres.",
+        "${ contactCount } kontaktů obsahuje více e-mailových adres."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
         "${ contactEmailsLength } členové",
         "${ contactEmailsLength } členů",
         "${ contactEmailsLength } členů"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidat do skupiny."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } obsahuje více e-mailových adres."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt nalezen",
         "${ contactsCount } kontakty nalezeny",
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidat do skupiny."
       ],
       "${ count } unread message": [
         "${ count } nepřečtená zpráva",
@@ -3789,16 +3810,13 @@
         "${ groupCounts } skupin nalezeno"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } může chránit i vaši firmu."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } zpráva nemohla být přesunuta.",
         "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty.",
         "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty.",
         "${ messagesNotAuthorizedToMove } zprávy nemohly být přesunuty."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } a ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } sledování e-mailu zablokováno",
@@ -3920,8 +3938,8 @@
       "(No Recipient)": [
         "(Žádný příjemce)"
       ],
-      "5 email addresses": [
-        "5 e-mailových adres"
+      "10 email addresses": [
+        "10 e-mailových adres"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Fráze pro obnovení účtu je jedním z nejbezpečnějších způsobů ochrany samotného účtu. Můžete ji použít pro přístup k účtu a obnovení zašifrovaných dat, pokud někdy zapomenete heslo."
@@ -4136,6 +4154,9 @@
       "Do you want to re-sign the contact details?": [
         "Chcete znovu podepsat tento detail kontaktu?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Nezapomeňte příjemci sdělit své heslo"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Stáhněte si naši mobilní aplikaci z Vašeho oblíbeného obchodu s aplikacemi pro bezpečnou komunikaci na cestách."
       ],
@@ -4159,6 +4180,15 @@
       ],
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
+      ],
+      "Edit encryption": [
+        "Upravit šifrování"
+      ],
+      "Edit expiration time": [
+        "Upravit dobu platnosti"
+      ],
+      "Edit link": [
+        "Upravit odkaz"
       ],
       "Email address": [
         "E-mailová adresa"
@@ -4184,11 +4214,8 @@
         "vložených obrázků",
         "vložených obrázků"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        ""
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Šifrované zprávy příjemcům, kteří nevyužívají ${ BRAND_NAME } vyprší platnost po 28 dnech, pokud není nastavena kratší doba expirace."
+      "Encrypt message": [
+        "Šifrovaná zpráva"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -4208,9 +4235,6 @@
       "Expiration time": [
         "Platnost do"
       ],
-      "Expiration Time": [
-        "Čas expirace"
-      ],
       "Expires": [
         "Platnost do"
       ],
@@ -4226,6 +4250,9 @@
       "Expires soon": [
         "Brzy vyprší"
       ],
+      "Expiring message": [
+        "Zpráva s končící platností"
+      ],
       "file attached": [
         "soubor připojen",
         "soubory připojeny",
@@ -4237,6 +4264,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
+      ],
+      "Folder": [
+        "Složka"
       ],
       "For increased security, activate 2FA.": [
         "Pro zvýšení zabezpečení, aktivujte 2FA."
@@ -4277,17 +4307,20 @@
         "Hodiny",
         "Hodiny"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Tuto zprávu posílám uživateli, který není uživatelem služby ProtonMail."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Pokud máte potíže s vytvořením účtu, požádejte prosím o pozvánku a my odpovíme do jednoho pracovního dne."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Pokud příjemce této zprávy nevyužívá ${ MAIL_APP_NAME } ujistěte se, že nastavíte heslo."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Pokud si myslíte, že jde o chybu, kontaktujte nás ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Pokud jste nenašli e-mail ve vaší schránce, zkontrolujte prosím složku se spamem."
+      ],
+      "Image description": [
+        "Popis obrázku"
       ],
       "Image URL": [
         "URL adresa obrázku"
@@ -4455,6 +4488,9 @@
         "Nebyly nalezeny žádné výsledky"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
+        "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování"
+      ],
+      "non-Proton Mail": [
         ""
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
@@ -4468,6 +4504,9 @@
       ],
       "of": [
         "z"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste tyto klíče \"zrušili\"."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Tato nastavení změňte, pouze pokud používáte PGP s příjemci, kteří nepoužívají službu ${ BRAND_NAME }."
@@ -4510,6 +4549,15 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Prosím vyberte druh odkazu, který chcete vložit a vyplňte všechna pole."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupiny.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Prosím vyčkejte jakmile vyhledáme kontakty, které mohou být znovu přihlášeny se základním šifrovacím klíčem."
@@ -4589,6 +4637,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vyberte kalendáře, které chcete importovat. Pro každý importovaný kalendář bude vytvořen nový kalendář až do limitu 20 kalendářů."
       ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Odeslání šifrované zprávy chráněné heslem na e-mailovou adresu ${ boldText }."
+      ],
       "Sending": [
         "Odesílání"
       ],
@@ -4614,7 +4665,7 @@
         "Nastavit obnovovací frázi"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Vytvořením PGP Vám poskytuje zasílat end-to-end šifrované emailové korespondence i s uživateli, kteří nejsou klientem ${ BRAND_NAME } a používají kompatibilní PGP službu."
+        "Nastavením PGP si můžete posílat koncově šifrované e-maily i s uživateli, kteří nejsou klienti ${ BRAND_NAME } a používají kompatibilní PGP službu."
       ],
       "Show original message": [
         "Zobrazit původní zprávu"
@@ -4626,7 +4677,7 @@
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Bezpečné ukládání a sdílení souborů pomocí ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Předmět"
@@ -4880,6 +4931,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -4926,7 +4980,7 @@
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
+        "Dnes můžete ${ VPN_APP_NAME } používat zdarma."
       ],
       "You cannot reply from the invited address.": [
         "Nemůžete odpovídat na pozvané adresy."
@@ -4977,7 +5031,7 @@
         "Dosáhli jste ${ spaceDisplayed }% své kapacity úložiště. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "Dosáhli jste 100% Vaší kapacity úložiště. Nemůžete posílat nebo přijímat nové emaily. ${ freeUpMessage } ${ upgradeLink }"
+        "Dosáhli jste 100 % kapacity vašeho úložiště. Už nemůžete posílat nebo přijímat nové e-maily. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "Z této složky jste vybrali **${ count } konverzaci",
@@ -5018,6 +5072,27 @@
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "Vaše zpráva bude smazána z doručené pošty příjemce a z Vaší složky odeslaných zpráv dne ${ dateString } v ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "Vaše zpráva bude smazána z doručené pošty příjemce a z Vaší složky odeslaných zpráv dnes v ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "Vaše zpráva bude smazána z doručené pošty příjemce a z Vaší složky odeslaných zpráv zítra v ${ formattedTime }"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Vaše zpráva vyprší za ${ numberOfDays } den.",
+        "Vaše zpráva vyprší za ${ numberOfDays } dny.",
+        "Vaše zpráva vyprší za ${ numberOfDays } dnů.",
+        "Vaše zpráva vyprší za ${ numberOfDays } dnů."
+      ],
+      "Your message will expire today.": [
+        "Platnost vaší zprávy vyprší dnes."
+      ],
+      "Your message will expire tomorrow.": [
+        "Platnost vaší zprávy vyprší zítra."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
       ],
@@ -5047,8 +5122,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Kompromitovaný"
+      ],
       "Expired": [
         "Vypršelo"
+      ],
+      "Obsolete": [
+        "Zastaralé"
       ],
       "Primary": [
         "Primární"
@@ -5058,9 +5139,6 @@
       ],
       "Trusted": [
         "Důvěryhodný"
-      ],
-      "Verification only": [
-        "Pouze ověření"
       ],
       "WKD": [
         "WKD"
@@ -5498,9 +5576,6 @@
       ],
       "Mark as": [
         "Označit jako"
-      ],
-      "Message password": [
-        "Heslo zprávy"
       ],
       "Move to": [
         "Přesunout do"
@@ -5981,7 +6056,7 @@
         "Kvůli ochraně Vašeho soukromí nebyl obrázek nahrán."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
+        "Prohlížeči se nepodařilo ověřit identitu vzdáleného serveru. Obrázek může být hostován pomocí protokolu http."
       ]
     },
     "Message notification": {
@@ -6156,6 +6231,46 @@
         "Název štítku"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Představili jsme sjednocený a osvěžený vzhled Protonu. Rádi bychom slyšeli, co si o něm myslíte!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Špatné"
+      ],
+      "5 - Wonderful": [
+        "5 - Skvělé"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Jak byste popsal své zkušenosti s novým Protonem?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Podělte se o své zkušenosti (nepovinné)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Zpětná vazba"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Poskytněte zpětnou vazbu"
+      ],
+      "Updated Proton, unified protection": [
+        "Aktualizovaný Proton, jednotná ochrana"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } byl vytvořen"
@@ -6185,7 +6300,7 @@
         "Vítejte na ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
-        ""
+        "Kde se soukromí a zabezpečení snoubí s produktivitou a snadným používáním."
       ]
     },
     "Onboarding Action": {
@@ -6274,6 +6389,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klíč není možné použít k šifrování"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } označil tento klíč jako kompromitovaný. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } označil tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Doporučujeme, abyste tomuto klíči \"nedůvěřovali\"."
       ]
     },
     "PGP key warning": {
@@ -6462,7 +6588,7 @@
         "PGP-podepsaná zpráva. Ověření odesílatele se nepodařilo"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem"
       ],
       "Stored with zero-access encryption": [
         "Uloženo s žádným přístupem šifrování"
@@ -6553,16 +6679,16 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
+        "Šifrováno pomocí ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
-        ""
+        "Šifrováno pomocí ${ MAIL_APP_NAME } příjemci PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified PGP recipient": [
-        ""
+        "Šifrováno pomocí ${ MAIL_APP_NAME } ověřenému příjemci PGP"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to verified recipient": [
-        ""
+        "Šifrováno pomocí ${ MAIL_APP_NAME } ověřenému příjemci"
       ],
       "End-to-end encrypted": [
         "End-to-end šifrováno"
@@ -6580,13 +6706,13 @@
         "Podepsané pomocí PGP"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
-        ""
+        "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem"
       ],
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
-        "",
-        "",
-        "",
-        ""
+        "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem ověřenému příjemci",
+        "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem ověřeným příjemcům",
+        "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem ověřeným příjemcům",
+        "Odesláno pomocí ${ MAIL_APP_NAME } se šifrováním s nulovým přístupem ověřeným příjemcům"
       ],
       "Sent by you with end-to-end encryption": [
         "Odesláno Vámi s end-to-end šifrováním"
@@ -6662,11 +6788,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Odhlášení z mailing listu"
+      "This message is from a mailing list.": [
+        "Zpráva pochází ze seznamu adresátů."
       ],
-      "Unsubscribing from mailing list...": [
-        "Odhlášení z mailing listu..."
+      "Unsubscribed": [
+        "Odběr byl odhlášen"
       ]
     },
     "Step in filter modal": {
@@ -6938,6 +7064,9 @@
         "Přestěhovat ${ selectionCount } zpráv",
         "Přestěhovat ${ selectionCount } zpráv"
       ],
+      "Password copied to clipboard": [
+        "Heslo bylo zkopírované do schránky"
+      ],
       "Phishing reported": [
         "Phishing nahlášen"
       ],
@@ -7023,6 +7152,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Představujeme modernizovaný Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Více služeb, jedna mise na ochranu soukromí."
+      ],
       "Settings": [
         "Nastavení"
       ]
@@ -7263,7 +7398,7 @@
         "E-mailové adresa"
       ],
       "Email composer": [
-        "Editor emailu"
+        "E-mailový editor"
       ],
       "Email content": [
         "Obsah e-mailu"
@@ -7277,9 +7412,6 @@
       "Enable message content search": [
         "Povolit hledání v obsahu zprávy"
       ],
-      "Encryption": [
-        "Šifrování"
-      ],
       "Enter your password": [
         "Zadejte Vaše heslo"
       ],
@@ -7291,6 +7423,9 @@
       ],
       "Exporting contacts": [
         "Exportování kontaktů"
+      ],
+      "External encryption": [
+        "Externí šifrování"
       ],
       "Feedback": [
         "Zpětná vazba"

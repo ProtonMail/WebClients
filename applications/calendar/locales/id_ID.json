@@ -2069,17 +2069,11 @@
       "No data to import": [
         ""
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Tidak ada kunci yang diambil untuk pengguna internal yang valid untuk pengiriman"
-      ],
       "No keys retrieved for internal user": [
         "Tidak ada kunci untuk pengguna internal yang diambil"
       ],
       "No valid address found": [
         "Tidak ditemukan alamat valid"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Tidak ada kunci valid untuk pengguna internal yang diambil"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Tidak ada kunci WKD yang diambil untuk pengguna internal yang valid untuk pengiriman"
@@ -2114,6 +2108,12 @@
       "Primary address key is not decrypted.": [
         "Kunci alamat utama tidak didekripsi."
       ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
+      ],
       "Request timed out": [
         ""
       ],
@@ -2144,7 +2144,13 @@
       "Start time must be before end time": [
         "Waktu mulai harus sebelum waktu selesai"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
+        ""
+      ],
+      "The label name is invalid. Please choose a different name.": [
         ""
       ],
       "The label name is too long. Please choose a different name.": [
@@ -2702,29 +2708,20 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         ""
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Anggota"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontak ditemukan"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } dan ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         ""
@@ -2750,7 +2747,7 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
-      "5 email addresses": [
+      "10 email addresses": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -2984,6 +2981,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Kejadian yang sebelumnya diperbarui oleh penyelenggara akan disimpan."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         ""
       ],
@@ -3006,6 +3006,12 @@
         "Silakan hapus yang ganda dan coba lagi."
       ],
       "Please select the folders you would like to import:": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
         ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
@@ -3033,7 +3039,7 @@
         "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -3144,6 +3150,9 @@
         ""
       ],
       "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
         ""
       ],
       "Week": [
@@ -3278,8 +3287,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Kedaluwarsa"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Utama"
@@ -3289,9 +3304,6 @@
       ],
       "Trusted": [
         "Terpercaya"
-      ],
-      "Verification only": [
-        "Verifikasi saja"
       ],
       "WKD": [
         "WKD"
@@ -3835,6 +3847,34 @@
         ""
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Grup kontak telah dibuat"
@@ -4068,6 +4108,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Kunci tidak dapat digunakan untuk enkripsi"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4470,6 +4521,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "Pengaturan"
       ]

@@ -78,7 +78,7 @@
         "查看导入进度"
       ],
       "Choose a file or drag it here": [
-        "选择一个文件或将其拖到此处"
+        "选择文件或将文件拖至此处"
       ],
       "Clear": [
         "清除"
@@ -111,7 +111,7 @@
         "关闭传输窗口"
       ],
       "Collapse": [
-        ""
+        "收起"
       ],
       "Collapse folder": [
         "收起文件夹"
@@ -225,7 +225,7 @@
         "启用网盘搜索"
       ],
       "Expand": [
-        ""
+        "展开"
       ],
       "Expand folder": [
         "展开文件夹"
@@ -258,7 +258,7 @@
         "前往面板 ${ index }"
       ],
       "Go to parent": [
-        ""
+        "上级目录"
       ],
       "Go to settings": [
         "前往设置"
@@ -1703,7 +1703,7 @@
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出此限，请将其拆分成较小的文件。"
+        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -1887,8 +1887,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
@@ -2109,7 +2115,7 @@
         "邮件"
       ],
       "Manual": [
-        "手动"
+        "人工验证"
       ],
       "No verification method available": [
         "无可用的验证方法"
@@ -2203,23 +2209,17 @@
       "${ canceledCount } canceled": [
         "${ canceledCount } 项已取消"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成员"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组。"
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 项已完成"
@@ -2235,9 +2235,6 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 个群组"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 个联系人群组"
@@ -2272,8 +2269,8 @@
       "(${ memberCount } member)": [
         "（${ memberCount } 位成员）"
       ],
-      "5 email addresses": [
-        "5 个邮箱地址"
+      "10 email addresses": [
+        ""
       ],
       "A number will be added to the filename": [
         "将在文件名中添加一个编号"
@@ -2531,7 +2528,7 @@
         "正在索引搜索结果…"
       ],
       "Inherited from parent folder": [
-        "继承自父文件夹"
+        "与上层文件夹一致"
       ],
       "Initializing": [
         "正在初始化"
@@ -2588,7 +2585,7 @@
         "我的链接"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "设置新文件夹的名称和位置，若不选取父文件夹，则将创建顶层文件夹。"
+        "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
       "Network issue": [
         "网络问题"
@@ -2632,6 +2629,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2667,6 +2667,12 @@
       ],
       "Please select the folders you would like to import:": [
         "请选择要导入的文件夹："
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
@@ -2810,7 +2816,7 @@
         "要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。在此期间您仍然可以正常使用 ${ DRIVE_APP_NAME } - 索引完成后我们会立即通知您。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "为了防止垃圾邮件和滥用，请验证您是人类。"
+        "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
@@ -2880,6 +2886,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        ""
       ],
       "Week": [
         "周"
@@ -3021,8 +3030,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "已失效"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "主密钥"
@@ -3032,9 +3047,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "Verification only": [
-        "仅用于验证"
       ],
       "WKD": [
         "WKD"
@@ -3421,7 +3433,7 @@
         "支付"
       ],
       "Request an invite": [
-        "请求邀请"
+        "申请注册"
       ],
       "Shared": [
         "共享"
@@ -3491,6 +3503,21 @@
       ],
       "Label name": [
         "标签名称"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "新版 Proton，全方位的隐私保护"
       ]
     },
     "Notification": {
@@ -3703,7 +3730,7 @@
         "填写机构信息"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "请使用左上角的应用选择器访问其他 Proton 服务，包括 VPN、日历和网盘。"
+        "点击左上方的应用菜单即可前往其他 Proton 服务，如 VPN、日历和网盘。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -3731,7 +3758,7 @@
         "忽略分组"
       ],
       "No parent folder": [
-        "无父文件夹"
+        "无上层文件夹"
       ]
     },
     "Option group label": {
@@ -3745,6 +3772,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -3790,7 +3828,7 @@
         "搜索群组名称"
       ],
       "Search for name or email": [
-        "搜索名称或电子邮件地址"
+        "搜索名称或邮箱地址"
       ],
       "Select": [
         "选择"
@@ -4020,6 +4058,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "新版 Proton 闪亮登场。"
+      ],
+      "More services, one privacy mission.": [
+        "产品服务愈加丰富，隐私保护使命如一。"
+      ],
       "Settings": [
         "设置"
       ]
@@ -4384,7 +4428,7 @@
         "再次登录方可继续"
       ],
       "Sign in and grant access": [
-        ""
+        "登录并授予权限"
       ],
       "Size": [
         "大小"
@@ -4417,10 +4461,10 @@
         "链接加载失败"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "此文件的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "此文件夹的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
       ],
       "Total size": [
         "总大小"
@@ -4450,7 +4494,7 @@
         ""
       ],
       "What would you like to import?": [
-        ""
+        "您需要导入哪些内容？"
       ],
       "What's new": [
         "更新内容"

@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "E-Mail in Zwischenablage kopieren"
       ],
+      "Copy password to clipboard": [
+        "Passwort in die Zwischenablage kopieren"
+      ],
       "Create a new contact group": [
         "Neue Kontaktgruppe erstellen"
       ],
@@ -286,6 +289,9 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
+      "Edit encryption": [
+        "Verschlüsselung bearbeiten"
+      ],
       "Edit label": [
         "Kategorie bearbeiten"
       ],
@@ -316,6 +322,9 @@
       "Expand URL": [
         "Vollständige URL anzeigen"
       ],
+      "Expiration time": [
+        "Ablaufzeitpunkt"
+      ],
       "Export": [
         "Exportieren"
       ],
@@ -324,6 +333,9 @@
       ],
       "Export contacts": [
         "Kontakte exportieren"
+      ],
+      "External encryption": [
+        "Externe Verschlüsselung"
       ],
       "Filter on...": [
         "Filtern nach …"
@@ -671,6 +683,12 @@
       "Remove ${ attachmentName }": [
         "${ attachmentName } entfernen"
       ],
+      "Remove encryption": [
+        "Verschlüsselung entfernen"
+      ],
+      "Remove expiration time": [
+        "Ablaufzeitpunkt entfernen"
+      ],
       "Remove this label": [
         "Kategorie entfernen"
       ],
@@ -748,6 +766,9 @@
       ],
       "Set as default": [
         "Als Standard festlegen"
+      ],
+      "Set encryption": [
+        "Verschlüsselung einstellen"
       ],
       "Set expiration time": [
         "Gültigkeitsdatum festlegen"
@@ -872,9 +893,6 @@
       ],
       "Unsubscribe": [
         "Abbestellen"
-      ],
-      "Unsubscribe from mailing list": [
-        "Aus der Verteilerliste austragen"
       ],
       "Unsubscribing": [
         "Abonnement wird gekündigt"
@@ -2866,8 +2884,8 @@
       "Label name cannot be empty.": [
         "Name der Kategorie muss angegeben werden."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Maximale Anzahl von Anhängen (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) überschritten."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Maximale Anzahl von Anhängen (${ attachmentsCountLimit }) überschritten"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Mindestens ${ calendarToFixCount } Kalender mit bestehenden Proton-Kalendern zusammenführen",
@@ -2894,17 +2912,11 @@
       "No data to import": [
         "Keine zu importierenden Daten"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Kein für den internen Benutzer abgerufener Schlüssel ist für den Versand gültig"
-      ],
       "No keys retrieved for internal user": [
         "Keine Schlüssel für internen Benutzer abgerufen"
       ],
       "No valid address found": [
         "Keine gültige E-Mail-Adresse gefunden"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Keine gültigen Schlüssel für internen Benutzer abgerufen"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Der für den Benutzer abgerufene WKD-Schlüssel ist für den Versand ungültig"
@@ -2944,6 +2956,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Der Schlüssel der primären Adresse wird nicht entschlüsselt."
+      ],
+      "Primary key is not valid for sending": [
+        "Primärschlüssel ist für das Senden nicht gültig"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Der für den internen Benutzer abgefragte Primärschlüssel ist für den Versand gültig"
       ],
       "Public key could not be trusted": [
         "Öffentlicher Schlüssel war nicht vertrauenswürdig"
@@ -2995,11 +3013,17 @@
         "Der Anhang konnte nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Datei trotzdem mit einem Programm wie GnuPG entschlüsseln.",
         "Einige der Anhänge konnten nicht entschlüsselt werden.\nWenn du den entsprechenden privaten Schlüssel besitzt, kannst du die Dateien trotzdem mit einem Programm wie GnuPG entschlüsseln."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Der Name des Ordners ist zu lang. Bitte wählen Sie einen kürzeren Namen."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Die Schlüsseleigenschaften für ${ emailAddress } konnten nicht extrahiert werden"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Der Name der Kategorie ist ungültig. Bitte wähle einen anderen Namen."
       ],
       "The label name is too long. Please choose a different name.": [
         "Der Name der Kategorie ist zu lang. Bitte wählen Sie einen kürzeren Namen."
@@ -3682,25 +3706,20 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } Kontakt enthält mehrere E-Mail-Adressen.",
+        "${ contactCount } Kontakte enthalten mehrere E-Mail-Adressen."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Mitglied",
         "${ contactEmailsLength } Mitglieder"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } enthält mehrere E-Mail-Adressen. Bitte wähle, welche E-Mail-Adresse(n) du zu ${ groupsEnumeration } hinzufügen möchtest."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } enthält mehrere E-Mail-Adressen. Bitte wähle, welche E-Mail-Adresse(n) du zu dieser Gruppe hinzufügen möchtest."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } enthält mehrere E-Mail-Adressen."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } Kontakt gefunden",
         "${ contactsCount } Kontakte gefunden"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } enthalten mehrere E-Mail-Adressen. Bitte wähle die E-Mail-Adresse(n) aus, die zu ${ groupsEnumeration } hinzugefügt werden sollen."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } enthalten mehrere E-Mail-Adressen. Bitte wähle, welche E-Mail-Adresse(n) du zu dieser Gruppe hinzufügen möchtest."
       ],
       "${ count } unread message": [
         "${ count } ungelesene Nachricht",
@@ -3720,9 +3739,6 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } Nachricht konnte nicht verschoben werden.",
         "${ messagesNotAuthorizedToMove } Nachrichten konnten nicht verschoben werden."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } und ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } E-Mail-Tracker gesperrt",
@@ -3808,8 +3824,8 @@
       "(No Recipient)": [
         "(Keine Empfänger)"
       ],
-      "5 email addresses": [
-        "5 E-Mail-Adressen"
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Eine Wiederherstellungsphrase ist eine der sichersten Möglichkeiten, den Zugang zu deinem Konto zu schützen. Mit dieser kannst du auf dein Konto zugreifen und deine verschlüsselten Daten wiederherstellen, falls du dein Passwort einmal vergessen solltest."
@@ -4008,6 +4024,9 @@
       "Do you want to re-sign the contact details?": [
         "Möchten Sie den Kontakt neu signieren?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Vergessen Sie nicht, dem Empfänger das neue Passwort mitzuteilen"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Laden Sie unsere mobile App aus Ihrem bevorzugten App-Store herunter, um auch von unterwegs sicher zu kommunizieren."
       ],
@@ -4032,6 +4051,15 @@
       "Duplicate key updated": [
         "Zweitschlüssel aktualisiert"
       ],
+      "Edit encryption": [
+        "Verschlüsselung bearbeiten"
+      ],
+      "Edit expiration time": [
+        "Ablaufzeit bearbeiten"
+      ],
+      "Edit link": [
+        "Link bearbeiten"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -4052,11 +4080,8 @@
         "eingebettete Grafik",
         "eingebettete Grafiken"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Verschlüsseln für Nicht-${ BRAND_NAME }-Benutzer"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Verschlüsselte Nachrichten an Empfänger ohne ${ BRAND_NAME }-Konto verfallen nach 28 Tagen, wenn kein kürzeres Verfallsdatum festgelegt wurde."
+      "Encrypt message": [
+        "Nachricht verschlüsseln"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Geben Sie den an ${ destinationText } gesendeten Verifizierungscode ein."
@@ -4074,9 +4099,6 @@
       "Expiration time": [
         "Verfallszeit"
       ],
-      "Expiration Time": [
-        "Verfallszeit"
-      ],
       "Expires": [
         "Verfällt"
       ],
@@ -4092,6 +4114,9 @@
       "Expires soon": [
         "Verfällt demnächst"
       ],
+      "Expiring message": [
+        "Ablaufende Nachricht"
+      ],
       "file attached": [
         "Datei angehängt",
         "Dateien angehängt"
@@ -4101,6 +4126,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter gelten für eingehende wie auch gesendete E-Mails aus. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
+      ],
+      "Folder": [
+        "Ordner"
       ],
       "For increased security, activate 2FA.": [
         "Für erhöhte Sicherheit aktivieren Sie die Zwei-Faktor-Authentifizierung."
@@ -4137,17 +4165,20 @@
         "Stunde",
         "Stunden"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Ich sende diese Nachricht an einen Nicht-ProtonMail-Benutzer."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Wenn Sie Probleme bei der Erstellung Ihres Kontos haben, stellen Sie bitte eine Anfrage, und wir werden Ihnen innerhalb eines Werktages antworten."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Wenn du diese Nachricht an einen Nicht-${ MAIL_APP_NAME }-Nutzer sendest, stelle bitte sicher, dass du ein Passwort für die Nachricht festlegst."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Sollten Sie die E-Mail nicht in Ihrem Posteingang vorfinden, überprüfen Sie bitte Ihren Spam-Ordner."
+      ],
+      "Image description": [
+        "Bildbeschreibung"
       ],
       "Image URL": [
         "Bild-URL"
@@ -4315,6 +4346,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Keine Tracker gefunden, aber einige Bilder konnten nicht mit Tracking-Schutz geladen werden"
       ],
+      "non-Proton Mail": [
+        "Keine Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wird automatisch deaktiviert."
       ],
@@ -4326,6 +4360,9 @@
       ],
       "of": [
         "von"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-${ BRAND_NAME }-Empfängern verwendest."
@@ -4368,6 +4405,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Bitte wähle die Art des einzufügenden Links aus und fülle alle Felder aus."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupCount } Gruppe hinzugefügt werden sollen.",
+        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupCount } Gruppen hinzugefügt werden sollen."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Bitte auswählen, welche E-Mail-Adresse(n) zu ${ groupName } hinzugefügt werden sollen."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
@@ -4446,6 +4490,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wählen Sie die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Sende eine verschlüsselte, passwortgeschützte Nachricht an eine ${ boldText } E-Mail-Adresse."
       ],
       "Sending": [
         "Wird gesendet"
@@ -4736,6 +4783,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
+      ],
       "Web URL": [
         "Web-URL"
       ],
@@ -4858,6 +4908,25 @@
       "Your email will only be used for this one-time verification.": [
         "Ihre E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "Deine Nachricht wird am ${ dateString } um ${ formattedTime } aus deinem gesendet Ordner und dem Posteingang des Empfängers gelöscht werden"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "Deine Nachricht wird heute um ${ formattedTime } aus deinem \"Gesendet-Ordner\" und aus dem Posteingang des Empfängers gelöscht"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "Deine Nachricht wird morgen um ${ formattedTime } aus deinem gesendet Ordner und dem Posteingang des Empfängers gelöscht werden"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "",
+        "Deine Nachricht wird in ${ numberOfDays } Tagen ablaufen."
+      ],
+      "Your message will expire today.": [
+        "Deine Nachricht wird heute ablaufen."
+      ],
+      "Your message will expire tomorrow.": [
+        "Deine Nachricht wird morgen ablaufen."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ihre Rufnummer wird nur für diese einmalige Überprüfung verwendet."
       ],
@@ -4887,8 +4956,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Kompromittiert"
+      ],
       "Expired": [
         "Abgelaufen"
+      ],
+      "Obsolete": [
+        "Veraltet"
       ],
       "Primary": [
         "Primär"
@@ -4898,9 +4973,6 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
-      ],
-      "Verification only": [
-        "Nur zur Verifizierung"
       ],
       "WKD": [
         "WKD"
@@ -5334,9 +5406,6 @@
       ],
       "Mark as": [
         "Kennzeichnen als"
-      ],
-      "Message password": [
-        "Nachrichtenpasswort"
       ],
       "Move to": [
         "Verschieben nach"
@@ -6142,6 +6211,17 @@
         "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } hat diesen Schlüssel als kompromittiert gekennzeichnet. Dieser Schlüssel kann weder für die Verschlüsselung, noch für die Signaturprüfung verwendet werden."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } hat diesen Schlüssel als veraltet gekennzeichnet. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "E-Mail-Adresse nicht unter den im Sendeschlüssel definierten Benutzer-IDs gefunden (${ keyUserIds })"
@@ -6512,11 +6592,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Aus der Verteilerliste ausgetragen"
+      "This message is from a mailing list.": [
+        "Diese Nachricht wurde an eine Verteilerliste gesendet."
       ],
-      "Unsubscribing from mailing list...": [
-        "Abmeldung aus Verteilerliste im Gange..."
+      "Unsubscribed": [
+        "Abbestellt"
       ]
     },
     "Step in filter modal": {
@@ -6742,6 +6822,9 @@
         "${ selectionCount } Nachricht verschieben",
         "${ selectionCount } Nachrichten verschieben"
       ],
+      "Password copied to clipboard": [
+        "Passwort in die Zwischenablage kopiert"
+      ],
       "Phishing reported": [
         "Phishing gemeldet"
       ],
@@ -6827,6 +6910,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Wir stellen das neue Proton vor."
+      ],
+      "More services, one privacy mission.": [
+        "Mehr Dienste, eine Mission zum Schutz der Privatsphäre."
+      ],
       "Settings": [
         "Einstellungen"
       ]
@@ -7055,9 +7144,6 @@
       "Enable message content search": [
         "Suche nach Nachrichteninhalten aktivieren"
       ],
-      "Encryption": [
-        "Verschlüsselung"
-      ],
       "Enter your password": [
         "Passwort eingeben"
       ],
@@ -7069,6 +7155,9 @@
       ],
       "Exporting contacts": [
         "Kontakte werden exportiert"
+      ],
+      "External encryption": [
+        "Externe Verschlüsselung"
       ],
       "Feedback": [
         "Feedback"

@@ -1873,14 +1873,14 @@
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)",
         "+${ organization.BonusVPN } ${ VPN_APP_NAME } bağlantısı (daha fazla aygıt için VPN bağlantısı sağlar)"
       ],
+      "10 email addresses": [
+        "10 e-posta adresi"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "${ code } kuponu ile aboneliğinize %20 indirim uygulandı"
       ],
       "30-day money-back guarantee.": [
         "30 gün ücret iade garantisi."
-      ],
-      "5 email addresses": [
-        "5 e-posta adresi"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Daha sonra sertifikayı kolayca geçersiz kılmaya ya da uzatmaya yardımcı olacak bir ad."
@@ -2382,6 +2382,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Hesap kurtarma için ayarladığınız e-posta adresine bir sıfırlama kodu göndereceğiz."
@@ -3018,6 +3021,669 @@
         "İsviçre frangı"
       ]
     },
+    "new_plans": {
+      "Highest VPN speed": [
+        "En yüksek VPN hızı"
+      ],
+      "Keep your inbox organized with folders": [
+        "Gelen kutunuzu klasörler ile düzenli tutun"
+      ],
+      "Medium VPN speed": [
+        "Orta VPN hızı"
+      ]
+    },
+    "new_plans: action": {
+      "Continue to review": [
+        "Gözden geçirmeyi sürdür"
+      ],
+      "Continue with free": [
+        "Ücretsiz olarak devam et"
+      ],
+      "Delete account": [
+        "Hesabı sil"
+      ],
+      "Downgrade account": [
+        "Hesap tarifesini düşür"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Ücretsiz ${ BRAND_NAME } edinin"
+      ],
+      "Get ${ planName }": [
+        "${ planName } alın"
+      ],
+      "Get ${ upsellShortPlan.title }": [
+        "${ upsellShortPlan.title } alın"
+      ],
+      "Got it": [
+        "Anladım"
+      ],
+      "Keep ${ plan }": [
+        "${ plan } tarifesinde kal"
+      ],
+      "Keep account": [
+        "Hesabı tut"
+      ],
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ],
+      "Switch plan": [
+        "Tarifeyi değiştir"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ _price } per user": [
+        "Bir kullanıcı için ${ _price } ile başlar"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connection": [
+        "${ connections } yüksek hızlı VPN bağlantısı alın",
+        "${ connections } yüksek hızlı VPN bağlantısı alın"
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "Her kullanıcı için ${ connections } yüksek hızlı VPN bağlantısı alın",
+        "Her kullanıcı için ${ connections } yüksek hızlı VPN bağlantısı alın"
+      ]
+    },
+    "new_plans: feature": {
+      "${ DRIVE_APP_NAME } (web beta)": [
+        "${ DRIVE_APP_NAME } (web beta)"
+      ],
+      "${ n } custom email domain": [
+        "${ n } özel e-posta etki alanı",
+        "${ n } özel e-posta etki alanı"
+      ],
+      "${ n } email address": [
+        "${ n } e-posta adresi",
+        "${ n } e-posta adresi/takma ad"
+      ],
+      "${ n } email address per user": [
+        "Her kullanıcı için ${ n } e-posta adresi",
+        "Her kullanıcı için ${ n } e-posta adresi"
+      ],
+      "${ n } filter": [
+        "${ n } süzgeç",
+        "${ n } süzgeç"
+      ],
+      "${ n } folder": [
+        "${ n } klasör",
+        "${ n } klasör"
+      ],
+      "${ n } folder and label": [
+        "${ n } klasör ve etiket",
+        "${ n } klasör ve etiket"
+      ],
+      "${ n } label": [
+        "${ n } etiket",
+        "${ n } etiket"
+      ],
+      "${ n } message per day": [
+        "Her gün ${ n } ileti",
+        "Her gün ${ n } ileti"
+      ],
+      "${ n } personal calendar": [
+        "${ n } kişisel takvim",
+        "${ n } kişisel takvim"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN bağlantısı",
+        "${ n } VPN bağlantısı"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN bağlantısı / kullanıcı",
+        "${ n } VPN bağlantısı / kullanıcı"
+      ],
+      "${ size } attachment size": [
+        "${ size } ek dosya boyutu"
+      ],
+      "${ size } storage per user": [
+        "Her kullanıcı için ${ size } depolama alanı"
+      ],
+      "${ size } total storage": [
+        "${ size } toplam depolama alanı"
+      ],
+      "1 free VPN connection in total": [
+        "Toplam 1 ücretsiz VPN bağlantısı"
+      ],
+      "99.95% SLA": [
+        "%99.95 hizmet sürekliliği"
+      ],
+      "Admin console": [
+        "Yönetici panosu"
+      ],
+      "Advanced sharing security": [
+        "Gelişmiş paylaşım güvenliği"
+      ],
+      "Auto-reply": [
+        "Otomatik yanıt"
+      ],
+      "Catch-all": [
+        "Tümünü yakalayan e-posta"
+      ],
+      "Centralized billing": [
+        "Tek merkezden faturalama"
+      ],
+      "Contact groups": [
+        "Kişi grupları"
+      ],
+      "Contact groups management": [
+        "Kişi grupları yönetimi"
+      ],
+      "Custom email domains": [
+        "Özel e-posta etki alanları"
+      ],
+      "DNS leak prevention": [
+        "DNS sızıntısı önleme"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Belge düzenleyiciler (belgeler, hesap tabloları, sunumlar)"
+      ],
+      "Easy Switch import assistant": [
+        "Easy Switch içe aktarma yardımcısı"
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        "E-posta istemcisi desteği (IMAP/SMTP)"
+      ],
+      "Enables HIPAA compliance": [
+        "HIPAA uyumluluğu"
+      ],
+      "Encrypted contact details": [
+        "Şifrelenmiş kişi bilgileri"
+      ],
+      "Encrypted VPN servers": [
+        "Şifrelenmiş VPN sunucuları"
+      ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
+      "Free VPN on a single device": [
+        "Tek bir aygıt için ücretsiz VPN"
+      ],
+      "GDPR data processing agreement": [
+        "KVKK veri işleme sözleşmesi"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "${ n } aygıt için yüksek hızlı VPN",
+        "${ n } aygıt için yüksek hızlı VPN"
+      ],
+      "HTML signatures": [
+        "HTML imzalar"
+      ],
+      "Kill switch/always-on VPN": [
+        "Kill Switch / Her zaman açık VPN"
+      ],
+      "Limited support": [
+        "Sınırlı destek"
+      ],
+      "Multiple admin roles": [
+        "Birden çok yönetici rolü"
+      ],
+      "NetShield malware and ad-blocker": [
+        "NetShield zararlı yazılım ve reklam engelleyici"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
+      "Password-protected Emails": [
+        "Parola korumalı e-postalar"
+      ],
+      "Phone support (6+ users)": [
+        "Telefon desteği (6+ kullanıcı)"
+      ],
+      "Priority email support": [
+        "Öncelikli e-posta desteği"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Router support": [
+        "Yöneltici desteği"
+      ],
+      "Secure Core servers": [
+        "Secure Core sunucuları"
+      ],
+      "Send & receive invitations": [
+        "Davetler alın ve gönderin"
+      ],
+      "Share calendar via link": [
+        "Bağlantı ile takvim paylaşma"
+      ],
+      "Share files and folders via link": [
+        "Bağlantı ile dosya ve klasör paylaşın"
+      ],
+      "Sign in as user": [
+        "Kullanıcı olarak oturum açma"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Bölünmüş tünelleme (Android ve Windows)"
+      ],
+      "Strict no-logs policy": [
+        "Sıkı kayıt tutmama ilkesi"
+      ],
+      "Team management": [
+        "Ekip yönetimi"
+      ],
+      "Tor over VPN": [
+        "VPN üzerinden Tor"
+      ],
+      "Two-factor authentication": [
+        "İki aşamalı kimlik doğrulama"
+      ],
+      "Unlimited filters": [
+        "Sınırsız süzgeç"
+      ],
+      "Unlimited folders": [
+        "Sınırsız klasör"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Sınırsız klasör, etiket ve süzgeç"
+      ],
+      "Unlimited labels": [
+        "Sınırsız etiket"
+      ],
+      "Unlimited messages per day": [
+        "Her gün sınırsız ileti"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Sınırsız trafik/bant genişliği"
+      ],
+      "Up to ${ totalStorageSize } total storage": [
+        "${ totalStorageSize } toplam depolama alanına kadar"
+      ],
+      "User credential management": [
+        "Kullanıcı kimlik doğrulama bilgileri yönetimi"
+      ],
+      "User session management": [
+        "Kullanıcı oturumları yönetimi"
+      ],
+      "Worldwide streaming services": [
+        "Tüm dünyadaki yayın akışı hizmetleri"
+      ]
+    },
+    "new_plans: forgot links": {
+      "Forgot password": [
+        "Parolamı unuttum"
+      ],
+      "username": [
+        "kullanıcı adı"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        "Destek"
+      ],
+      "Team management": [
+        "Ekip yönetimi"
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        "${ brand }, ${ last4 } içinde sona erecek"
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        "* 1 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        "* 12 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        "* 24 aylık abonelik ile. Diğer abonelik seçenekleri ödeme sırasında görülebilir."
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        "Uygulanabilir krediler, eşit dağıtım ve kuponlar sonraki adımda uygulanacak"
+      ],
+      "Comprehensive privacy and security with all Proton services combined.": [
+        "Tüm Proton hizmetlerinin bir arada olduğu kapsamlı kişisel gizlilik ve güvenlik."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Hesabınızı silerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeni bir hesap açtığınızda yeniden abone olamazsınız."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Hesap tarifenizi düşürürseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra yeniden abone olamazsınız."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Farklı bir tarifeye geçerseniz tüm ${ visionary } tarifesi avantajlarını kaybedersiniz ve daha sonra ${ visionary } tarifesine yeniden abone olamazsınız."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Özgün ${ BRAND_NAME } kullanıcıları için sunulan bazı özellikler ve avantajlar bulunduran özel bir tarife olduğundan, artık yeni abonelere ${ visionary } tarifesini sunmuyoruz."
+      ],
+      "Popular": [
+        "Beğenilen"
+      ],
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        "Gelecekteki yenileme fiyatı: Hesabınızda kayıtlı kullanılabilecek tüm süresi dolmamış kuponları içerir"
+      ],
+      "Privacy and security suite for businesses, including all premium Proton services.": [
+        "Tüm ücretli Proton hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "Profesyoneller ve kuruluşlar için güvenli e-posta ve takvim."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Günlük iletişim gereksinimleriniz için gelişmiş özellikleri olan güvenli e-posta."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        "Güvenli, sınırsız ve yüksek hızda internet erişimi sağlayan özel VPN çözümü."
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Ücretsiz başlangıç hesabı kişisel gizliliği doğal sayan herkesin gereksinimlerine göre tasarlanmıştır."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesabınızı silerseniz, fırsat fiyatınızı kaybedersiniz ve yeni bir hesap açtığınızda bu fiyatı kullanamazsınız."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        "${ humanUsedSpace } / ${ humanMaxSpace }"
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        "/ay"
+      ]
+    },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "${ currentPlanName } hesabınızda hala ${ daysRemaining } günlük kullanım hakkınız var.",
+        "${ currentPlanName } hesabınızda hala ${ daysRemaining } günlük kullanım hakkınız var."
+      ]
+    },
+    "new_plans: signup": {
+      "Creating the account means you accept ${ terms }. ": [
+        "Hesap açarak ${ terms } metinlerini kabul etmiş olursunuz. "
+      ],
+      "Payment details": [
+        "Ödeme ayrıntıları"
+      ],
+      "Proton's terms and conditions": [
+        "Proton hüküm ve koşulları"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "Hesabınızı sıfırlamanız gerekirse doğrulama için kullanılacak e-posta adresi ya da telefon numarasını kaydedin."
+      ],
+      "Subscription": [
+        "Abonelik"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Başlamak için görüntülenecek bir ad yazın. Bu ad, e-posta ve etkinlik davetleri ile dosya paylaşımı gönderdiğiniz kişilere görüntülenir."
+      ],
+      "Your ${ planName } subscription is now active.": [
+        "${ planName } aboneliğiniz başladı."
+      ],
+      "Your selected plan: ${ planName }": [
+        "Seçtiğiniz tarife: ${ planName }"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Hesap silinsin mi?"
+      ],
+      "Downgrade account?": [
+        "Hesap tarifesi düşürülsün mü?"
+      ],
+      "Improved plans coming soon!": [
+        "Yakında geliştirilmiş tarifeler geliyor!"
+      ],
+      "Review subscription and pay": [
+        "Aboneliği ve ödemeyi gözden geçirin"
+      ],
+      "Start exploring the Proton universe": [
+        "Proton evrenini keşfetmeye başlayın"
+      ],
+      "Switch plans?": [
+        "Tarifeler değiştirilsin mi?"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } deneme"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        "Netflix, Disney+ ve Prime Video gibi yayın akışı hizmetlerindeki içeriğe her yerden erişin"
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        "Adreslerin tam gönderme ve alma özelliği vardır. Bir kullanıcının kendisine atanmış birden fazla adresi olabilir. Ancak, tek bir adres birden çok kullanıcıya atanamaz."
+      ],
+      "Advanced security VPN with global network": [
+        "Dünya çağında ağ ile gelişmiş güvenlik VPN hizmeti"
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        "Aynı anda birden fazla ağa erişmenizi sağlar. Örneğin arama sonuçlarını yerel olarak alırken başka bir ülkeden bir film yayın akışını izleyebilirsiniz"
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        "Gelen iletileriniz için hazır yanıtlar (otomatik yanıt) ayarlamanızı sağlar"
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        "Toplu gönderim ya da zamanlanmış e-posta gönderimi şu anda desteklenmiyor. Bu tür gereksinimler içinözel bir e-posta hizmeti sağlayıcısı kullanmanızı öneririz."
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        "Paylaşılan dosyalarınıza erişimi parola koruması ve bağlantı geçerlilik tarihi ekleyerek denetleyin"
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
+        "Çevrimiçi kimlikleriniz için e-posta adresleri oluşturun. Örneğin alışveriş işlemleri için AliAlisveris@proton.me, haber aboneliği için AliHaber@proton.me gibi takma adlar oluşturabilirsiniz"
+      ],
+      "Create up to ${ n } custom calendar.": [
+        "${ n } özel takvime kadar ekleyin.",
+        "${ n } özel takvime kadar ekleyin."
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        "İnternet trafiğinizi birden çok sunucudan geçirerek VPN gizliliğine yönelik tehditlere karşı koruma sağlar"
+      ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        "Takvimlerinizi bir bağlantı ile iş arkadaşlarınız, aileniz ve arkadaşlarınızla paylaşın"
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        "Takvimlerinizi bir bağlantı ile arkadaşlarınız, aileniz veya iş arkadaşlarınız ile kolayca paylaşın"
+      ],
+      "End-to-end encrypted calendar": [
+        "Uçtan uca şifrelenmiş takvim"
+      ],
+      "End-to-end encrypted file storage": [
+        "Uçtan uca şifrelenmiş dosya depolama alanı"
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        "Alıcı e-posta adresi hiç var olmasa da, silinmiş olsa da ya da hatalı yazılmış olsa da etki alanınıza gönderilen tüm e-postaları almanızı sağlar"
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        "Kullanıcı kimlik doğrulama bilgilerinin ele geçirildiğini düşündüğünüzde kullanıcı oturumlarını zorla kapatın"
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        "IMAP desteği, ${ MAIL_APP_NAME } Bridge üzerinden masaüstü uygulamalarının (Outlook, Apple Mail, Thunderbird gibi) kullanımıyla sınırlıdır. Bulut tabanlı IMAP bütünleştirmeleri şu anda desteklenmiyor."
+      ],
+      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
+        "VPN sunucumuzla bağlantınız yanlışlıkla kesildiğinde tüm ağ bağlantılarını engelleyerek korunmanızı sağlar"
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        "Etiketler, bulunmalarını kolaylaştırmak ya da süzmek için iletilere ekleyebileceğiniz basit notlardır"
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        "Tarifenizin özelleştirilmesi ile birlikte aboneliğinizi yönetin. Kredi kartı, PayPal, kripto para ve banka havalesi ile ödeme yapabilirsiniz."
+      ],
+      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
+        "Çalışma günlerinde, isteklerin ardından 24 saat içinde Proton müşteri destek ekibinden destek alın"
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        "Buna ek olarak, iş arkadaşlarınız, kuruluşunuz, aileniz ve arkadaşlarınız için 5 taneye kadar takvim ekleyebilirsiniz."
+      ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        "Buna ek olarak, arkadaşlarınız, aileniz, iş arkadaşlarınız ve kuruluşunuz için 5 taneye kadar takvim ekleyebilirsiniz."
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+        "Bir VPN bağlantısı, herhangi bir zamanda bir aygıtın Proton VPN hizmetine bağlanmasını sağlar. Örneğin, bir telefon ve bir dizüstü bilgisayardan aynı anda Proton VPN bağlantısı kurmakj için iki VPN bağlantınız olması gerekir"
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        "Kişisel olmayan kullanıcı e-posta kutularını, tam ileti ve kişi bilgileri ile birlikte kullanıcının yaptığı gibi görüntüleme seçeneği"
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        "Kuruluş yönetimi aracı yöneticilerin kullanıcı ekleyip silmesini, kullanıcılara depolama alanı atamasını, etki alanlarını yapılandırmasını ve diğer işlemleri yapmasını sağlar"
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        "Güçlü altyapımız, gerek duyduğunuzda hesabınıza erişmenizi sağlar"
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        "Sunucularımızın sabit diskleri birden çok parola katmanıyla tamamen şifrelenmiştir. Böylece donanımımız ele geçirilse bile verileriniz korunur"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "E-posta imzanızı logolar, görseller, sosyal ağ simgeleri, iletişim bilgilerinizin bağlantıları ve diğer şeylerle kişiselleştirin"
+      ],
+      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
+        "6 ya da daha fazla kullanıcısı olan müşteriler için Avrupa çalışma saatleri içinde Proton müşteri başarısı ekibinden telefonla destek alabilirsiniz"
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
+      ],
+      "Quickly set up out-of-office messages": [
+        "Ofis dışında iletilerini hızlıca ayarlayın"
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        "Başka bir hizmet sağlayıcı üzerindeki e-postalarınızı, takcimlerinizi ve kişilerinizi hızla aktarın"
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        "Oturum açmak için bir cep telefonuna bir kod gönderilmesi gerekir. Böylece bir parola ele geçirilmiş olsa bile hesap güvende kalır."
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        "Kullanıcı parolalarını ve kullanıcıların iki aşamalı kimlik doğrulamasını sıfırlayın"
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        "İnternet trafiğinizi tek bir tıklamayla Tor ağı üzerinden yöneltin"
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
+        "Kişilerinizin, telefon numarası, adres, doğum günü ve kişisel notlar gibi bilgilerini güvenli bir şekilde saklayın. Sıfır erişimli şifreleme, bu bilgilere Proton tarafından bile erişilememesini sağlar."
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        "Gerek duyduğunuz kadar kişi grubu oluşturarak büyük gruplara hızlı ve kolay bir şekilde e-posta gönderin (her grupta 100 kişiye kadar)"
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        "E-postalarınızı otomatik olarak yanıtlamak, sıralamak ve/veya etiketlemek için süzgeçler ayarlayın"
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        "Güvenli ve paylaşılabilir bağlantılar ile dosya ve klasörlerinizi paylaşın"
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        "Özel olarak tasarlanmış NetShield aygıtınızı korur ve reklamları, etkinlik izleyicileri, kötü amaçlı yazılımları engelleyerek internette gezinme hızınızı artırır"
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        "${ freeStorageSize } ile başlayın ve ilerledikçe daha fazla depolama alanı elde edin. Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır."
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır. Yöneticiler kuruluşlarındaki kullanıcılara farklı depolama alanları atayabilir"
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        "BitTorrent gibi dosya paylaşımı iletişim kurallarına destek"
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        "Dilerseniz siz@sirketiniz.com gibi kendi etki alanınızla e-posta adresleri oluşturun"
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        "Çevrimiçi yaptıklarınızla ilgili oturum kullanım günlükleri tutmuyoruz ve kişisel gizliliğinizi tehlikeye atabilecek üst verilerin kaydını tutmuyoruz"
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        "HIPAA/HITECH düzenlemelerine tabi olan müşterilere, korunan sağlık bilgilerini (PHI) koruma konusunda yardımcı olmaya kararlıyız. İmzalı BAA sözleşmeleri, tüm ${ BRAND_NAME } Kurumsal müşterileri tarafından kullanılabilir."
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        "VPN hizmetimize bağlandığınızda, DNS sorgularınız şifreli VPN tünelimiz üzerinden aktarılır ve çevrimiçi kişisel gizliliğinizi ve güvenliğinizi artırır"
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
+        "Diğer ${ MAIL_APP_NAME } kullanıcılarına gönderilen e-postalar otomatik olarak şifrelenir. ${ MAIL_APP_NAME } dışındaki kullanıcılara şifrelenmiş e-posta göndermek için, göndermeden önce bir şifre ayarlanması gerekir."
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        "Birden fazla yöneticiniz olabilir. Tüm yöneticiler kullanıcıları ekleyebilir ve yönetebilir. Ancak yalnızca birincil yönetici faturalandırma işlemlerini yönetebilir."
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        "${ storageSize } toplam depolama alanı"
+      ],
+      "10 email addresses/aliases": [
+        "10 e-posta adresi/takma adı"
+      ],
+      "Access advanced VPN features": [
+        "Gelişmiş VPN özelliklerine erişin"
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        "15 e-posta adresi ve 3 özel e-posta etki alanı ile daha fazla kişiselleştime sağlayın"
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        "Toplam depolama alanınızı ${ bundleStorage } boyutuna artırın"
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        "Her kullanıcı için depolama alanınızı ${ businessStorage } boyutuna kadar artırın"
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+        "${ numberOfPersonalCalendars } kişisel takvime kadar ekleyin",
+        "${ numberOfPersonalCalendars } kişisel takvime kadar ekleyin"
+      ],
+      "Everything in ${ vpnPlanName }": [
+        "${ vpnPlanName } özelliklerinin tümü"
+      ],
+      "Get 5 additional email addresses per user": [
+        "Her kullanıcı için 5 ek e-posta adresi alın"
+      ],
+      "Priority support": [
+        "Öncelikli destek"
+      ],
+      "Support for 1 custom email domain": [
+        "1 özel e-posta etki alanı desteği"
+      ],
+      "Unlimited folders, labels, and filters": [
+        "Sınırsız klasör, etiket, süzgeç"
+      ],
+      "Unlimited messages": [
+        "Sınırsız ileti"
+      ]
+    },
     "Notification": {
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 kimlik doğrulama bilgileri güncellendi"
@@ -3417,6 +4083,14 @@
       ],
       "Status": [
         "Durum"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Güncellenmiş Proton ile tanışın."
+      ],
+      "More services, one privacy mission.": [
+        "Daha fazla hizmet, tek kişisel gizlilik amacı."
       ]
     },
     "Title": {

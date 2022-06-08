@@ -787,7 +787,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Agenda kon niet ontcijferd worden"
+        "Agenda kon niet ontsleuteld worden"
       ],
       "Calendar is syncing": [
         "De agenda wordt gesynchroniseerd"
@@ -1750,7 +1750,7 @@
         "Agendalimiet bereikt"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "Kan geen nieuwe kalenders maken voor alle geïmporteerde kalenders vanwege de limiet voor persoonlijke kalenders."
+        "Kan geen nieuwe agenda's maken voor alle geïmporteerde agenda's vanwege de limiet voor persoonlijke agenda's."
       ],
       "Contact could not be saved": [
         "Contact kon niet worden opgeslagen"
@@ -1766,8 +1766,8 @@
         "Deselecteer tenminste ${ calendarToFixCount } agenda's"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "Ten minste ${ calendarToFixCount } kalender deselecteren of",
-        "Ten minste ${ calendarToFixCount } kalenders deselecteren of"
+        "Ten minste ${ calendarToFixCount } agenda deselecteren of",
+        "Ten minste ${ calendarToFixCount } agenda's deselecteren of"
       ],
       "Email address invalid": [
         "E-mailadres ongeldig"
@@ -1821,8 +1821,8 @@
         "Labelnaam mag niet leeg zijn."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton agenda",
-        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton agenda's"
+        "Minstens ${ calendarToFixCount } agenda samenvoegen met een bestaande Proton-agenda",
+        "Minstens ${ calendarToFixCount } agenda's samenvoegen met bestaande Proton-agenda's"
       ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
@@ -1861,7 +1861,7 @@
         "Voorkeuren konden niet worden opgeslagen"
       ],
       "Primary address key is not decrypted": [
-        "Primaire adressleutel is niet gedecodeerd"
+        "Primaire adressleutel is niet ontsleuteld"
       ],
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet gedecodeerd."
@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Er ging iets mis, gelieve ${ refresh } om door te gaan. Als je dit foutbericht nog steeds ziet, neem dan contact op met onze ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "De mapnaam is ongeldig. Kies een andere naam."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "De mapnaam is te lang. Kies een andere naam."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "De naam van het label is ongeldig. Kies een andere naam."
       ],
       "The label name is too long. Please choose a different name.": [
         "De naam van het label is te lang. Kies een andere naam."
@@ -2225,25 +2231,20 @@
         "${ canceledCount } geannuleerd",
         "${ canceledCount } geannuleerd"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contact bevat meerdere e-mailadressen.",
+        "${ contactCount } contacten bevatten meerdere e-mailadressen."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Lid",
         "${ contactEmailsLength } Leden"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of adres u wilt toevoegen aan ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } bevat meerdere e-mailadressen. Selecteer welk e-mailadres of adres u wilt toevoegen aan deze groep."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } bevat meerdere e-mailadressen."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contactpersoon gevonden",
         "${ contactsCount } contactpersonen gevonden"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } bevat meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } bevat meerdere e-mailadressen. Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan deze groep."
       ],
       "${ doneCount } finished": [
         "${ doneCount } voltooid",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } groep gevonden",
         "${ groupCounts } groepen gevonden"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } en ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "Één contactgroep",
@@ -2309,8 +2307,8 @@
         "(${ memberCount } lid)",
         "(${ memberCount } leden)"
       ],
-      "5 email addresses": [
-        "5 e-mailadressen"
+      "10 email addresses": [
+        "10 e-mailadressen"
       ],
       "A number will be added to the filename": [
         "Een nummer wordt toegevoegd aan de bestandsnaam"
@@ -2495,7 +2493,7 @@
         "Het is niet gelukt om een beveiligde link te openen. De reden is: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
-        "Bestand \"${ name }\" werd verwijderd tijdens download"
+        "Bestand \"${ name }\" werd verwijderd tijdens downloaden"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Handtekening van bestand ontbreekt. We konden niet verifiëren dat ${ emailAddress } ${ fileName } heeft geüpload."
@@ -2510,7 +2508,7 @@
         "Afronden"
       ],
       "Folder \"${ link.name }\" was deleted during download": [
-        "Map \"${ link.name }\" werd verwijderd tijdens download"
+        "Map \"${ link.name }\" werd verwijderd tijdens downloaden"
       ],
       "Folder contents will merge into a single folder": [
         "De inhoud van de mappen wordt samengevoegd tot één enkele map"
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren je deze sleutel niet meer de vertrouwen."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2710,6 +2711,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groep.",
+        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groepen."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Een moment geduld, we zijn op zoek naar contacten die opnieuw ondertekend kunnen worden met de primaire versleutelingssleutel."
@@ -2757,7 +2765,7 @@
         "Selecteer het e-mailformaat dat u standaard wilt gebruiken bij het verzenden van dit e-mailadres."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Selecteer wat u wil importeren vanaf Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selecteer welke agenda's u wilt importeren. Voor elke geïmporteerde agenda wordt een nieuwe agenda aangemaakt, tot de limiet van 20 agenda's is bereikt."
@@ -2829,7 +2837,7 @@
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Deze link is gemaakt in\nin een vorige versie en kan niet worden gewijzigd. Verwijder deze koppeling en maak een\nnieuwe om de instellingen te wijzigen."
+        "Deze link is gemaakt in\neen vorige versie en kan niet worden gewijzigd. Verwijder deze koppeling en maak een\nnieuwe om de instellingen te wijzigen."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
@@ -2925,6 +2933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "We verzenden een nieuwe verificatiecode naar ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "We verhuizen! Vervoeg ons op onze nieuwe website: ${ link }."
+      ],
       "Week": [
         "Week"
       ],
@@ -2953,7 +2964,7 @@
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
-        "U kunt geïmporteerde kalenders ook samenvoegen met bestaande Proton-agenda's."
+        "U kunt geïmporteerde agenda's ook samenvoegen met bestaande Proton-agenda's."
       ],
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
@@ -3049,7 +3060,7 @@
         "bestandsgegevens"
       ],
       "file data key": [
-        ""
+        "bestandsgegevenssleutel"
       ],
       "keys": [
         "sleutels"
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Gecompromitteerd"
+      ],
       "Expired": [
         "Verlopen"
+      ],
+      "Obsolete": [
+        "Verouderd"
       ],
       "Primary": [
         "Primair"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Vertrouwd"
-      ],
-      "Verification only": [
-        "Alleen verificatie"
       ],
       "WKD": [
         "WKD"
@@ -3258,7 +3272,7 @@
         "Berichten labelen als"
       ],
       "Last 12 months only": [
-        "Alleen afgelopen 12 maanden"
+        "Alleen laatste 12 maanden"
       ],
       "Last 3 months only": [
         "Alleen de laatste 3 maanden"
@@ -3333,7 +3347,7 @@
         "Regio"
       ],
       "Replace file": [
-        "Bastand verplaatsen"
+        "Bestand vervangen"
       ],
       "Replace folder": [
         "Map vervangen"
@@ -3420,7 +3434,7 @@
         "Wat is er gebeurd?"
       ],
       "Yes, I want to permanently delete\nmy old files": [
-        "Ja, ik wil mijn oude bestanden\nmijn oude bestanden"
+        "Ja, ik wil permanent\nmijn oude bestanden verwijderen"
       ]
     },
     "Label for contact group color": {
@@ -3741,7 +3755,7 @@
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Selecteer alle gewenste items, zoals weergegeven in de GIF, om de import te doen slagen."
       ]
     },
     "Onboarding Action": {
@@ -3825,6 +3839,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Sleutel kan niet worden gebruikt voor versleuteling"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } heeft deze sleutel gemarkeerd als gecompromitteerd. Deze sleutel kan niet worden gebruikt voor versleuteling of ter verificatie."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } heeft deze sleutel gemarkeerd als verouderd. Deze sleutel kan alleen nog gebruikt worden voor de verificatie van handtekeningen."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "We adviseren je deze sleutel niet meer te vertrouwen."
       ]
     },
     "PGP key warning": {
@@ -4104,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Maak kennis met de vernieuwde Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Meer diensten, één privacymissie."
+      ],
       "Settings": [
         "Instellingen"
       ]

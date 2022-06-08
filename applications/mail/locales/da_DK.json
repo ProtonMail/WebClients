@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Kopiér e-mail til upklipsholder"
       ],
+      "Copy password to clipboard": [
+        "Kopiér adgangskode til udklipsholder"
+      ],
       "Create a new contact group": [
         "Opret en ny kontaktgruppe"
       ],
@@ -286,6 +289,9 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
+      "Edit encryption": [
+        "Rediger kryptering"
+      ],
       "Edit label": [
         "Redigér etikette"
       ],
@@ -316,6 +322,9 @@
       "Expand URL": [
         "Udvid URL"
       ],
+      "Expiration time": [
+        "Udløbstid"
+      ],
       "Export": [
         "Exportér"
       ],
@@ -324,6 +333,9 @@
       ],
       "Export contacts": [
         "Eksportér kontakter"
+      ],
+      "External encryption": [
+        "Ekstern kryptering"
       ],
       "Filter on...": [
         "Filtrer efter..."
@@ -671,6 +683,12 @@
       "Remove ${ attachmentName }": [
         "Fjern ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "Fjern kryptering"
+      ],
+      "Remove expiration time": [
+        "Fjern udløbstid"
+      ],
       "Remove this label": [
         "Fjern denne etiket"
       ],
@@ -748,6 +766,9 @@
       ],
       "Set as default": [
         "Angiv som standard"
+      ],
+      "Set encryption": [
+        "Tilføj kryptering"
       ],
       "Set expiration time": [
         "Indstil udløbstidspunkt"
@@ -872,9 +893,6 @@
       ],
       "Unsubscribe": [
         "Afmeld abonnement"
-      ],
-      "Unsubscribe from mailing list": [
-        "Afmeld dig fra mailinglisten"
       ],
       "Unsubscribing": [
         "Afmelder abonnement"
@@ -2866,8 +2884,8 @@
       "Label name cannot be empty.": [
         "Etikettenavn må ikke være tomt."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Det maksimale antal vedhæftninger (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) overskredet."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
@@ -2894,17 +2912,11 @@
       "No data to import": [
         "Ingen data at importere"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
-      ],
       "No keys retrieved for internal user": [
         "Ingen nøgler hentet for intern bruger"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Ingen gyldige nøgler hentet for intern bruger"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
@@ -2944,6 +2956,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
+      ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
       ],
       "Public key could not be trusted": [
         "Den offentlige nøgle kunne ikke stoles på"
@@ -2995,11 +3013,17 @@
         "Vedhæftningen kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filen med et program som for eksempel GnuPG.",
         "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne med et program som for eksempel GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Nøgleegenskaberne for ${ emailAddress } kunne ikke udtrækkes"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
@@ -3263,7 +3287,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        ""
+        "Bedømmelse er påkrævet"
       ]
     },
     "Error sending calendar invitation": {
@@ -3682,25 +3706,20 @@
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Medlem",
         "${ contactEmailsLength } Medlemmer"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal tilføjes til denne gruppe."
       ],
       "${ count } unread message": [
         "${ count } ulæst besked",
@@ -3720,9 +3739,6 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } besked kunne ikke flyttes.",
         "${ messagesNotAuthorizedToMove } beskeder kunne ikke flyttes."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } og ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } e-mail-tracker blokeret",
@@ -3808,8 +3824,8 @@
       "(No Recipient)": [
         "(Ingen modtager)"
       ],
-      "5 email addresses": [
-        "5 e-mailadresser"
+      "10 email addresses": [
+        "10 e-mailadresser"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "En gendannelsessætning er en af de sikreste måder at beskytte adgangen til din konto. Du kan bruge den til at få adgang til din konto og gendanne dine krypterede data, hvis du nogensinde glemmer din adgangskode."
@@ -4008,6 +4024,9 @@
       "Do you want to re-sign the contact details?": [
         "Vil du gensignere kontaktdetaljerne?"
       ],
+      "Don't forget to share your password with the recipient": [
+        ""
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download vores mobil-app fra din foretrukne app-butik for at kommunikere sikkert på farten."
       ],
@@ -4032,6 +4051,15 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Edit encryption": [
+        ""
+      ],
+      "Edit expiration time": [
+        ""
+      ],
+      "Edit link": [
+        "Redigér link"
+      ],
       "Email address": [
         "E-mail"
       ],
@@ -4052,11 +4080,8 @@
         "indlejret billede",
         "indlejrede billeder"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Krypter for ikke-${ BRAND_NAME }-brugere"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Krypterede beskeder til modtagere uden ${ BRAND_NAME } udløber om 28 dage, medmindre en kortere udløbstid er opsat."
+      "Encrypt message": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -4074,9 +4099,6 @@
       "Expiration time": [
         "Udløbstidspunkt"
       ],
-      "Expiration Time": [
-        "Udløbstid"
-      ],
       "Expires": [
         "Udløber"
       ],
@@ -4092,6 +4114,9 @@
       "Expires soon": [
         "Udløber snart"
       ],
+      "Expiring message": [
+        ""
+      ],
       "file attached": [
         "fil vedhæftet",
         "filer vedhæftet"
@@ -4101,6 +4126,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
+      ],
+      "Folder": [
+        ""
       ],
       "For increased security, activate 2FA.": [
         "Aktivér 2FA for øget sikkerhed."
@@ -4137,17 +4165,20 @@
         "Time",
         "Timer"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        ""
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Hvis du sender denne besked til en modtager, som ikke bruger ${ MAIL_APP_NAME }, så sørg for at angive en adgangskode til din besked."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener dette er en fejltagelse, bedes du kontakte os ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "Image description": [
+        "Billedbeskriveslse"
       ],
       "Image URL": [
         "Billed-URL"
@@ -4315,6 +4346,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Ingen trackere fundet, men nogle billeder kunne ikke indlæses med sporingsbeskyttelse"
       ],
+      "non-Proton Mail": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
       ],
@@ -4326,6 +4360,9 @@
       ],
       "of": [
         "af"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
@@ -4368,6 +4405,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vælg venligst den type link du ønsker at indsætte og udfyld alle felterne."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -4446,6 +4490,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        ""
       ],
       "Sending": [
         "Afsender"
@@ -4736,6 +4783,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Vi flytter! Følg med os til vores nye hjemmeside: ${ link }."
+      ],
       "Web URL": [
         "Webadresse"
       ],
@@ -4858,6 +4908,25 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Din besked udløber om ${ numberOfDays } dag.",
+        "Din besked udløber om ${ numberOfDays } dage."
+      ],
+      "Your message will expire today.": [
+        "Din besked udløber i dag."
+      ],
+      "Your message will expire tomorrow.": [
+        "Din besked udløber i morgen."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
       ],
@@ -4887,8 +4956,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Udløbet"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Primær"
@@ -4898,9 +4973,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "Verification only": [
-        "Kun bekræftelse"
       ],
       "WKD": [
         "WKD"
@@ -5334,9 +5406,6 @@
       ],
       "Mark as": [
         "Markér som"
-      ],
-      "Message password": [
-        "Beskedadgangskode"
       ],
       "Move to": [
         "Flyt til"
@@ -5982,6 +6051,46 @@
         "Etiketnavn"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        ""
+      ],
+      "5 - Wonderful": [
+        ""
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
+      ],
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } oprettet"
@@ -6100,6 +6209,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -6472,11 +6592,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Afmeld dig fra mailingliste"
+      "This message is from a mailing list.": [
+        ""
       ],
-      "Unsubscribing from mailing list...": [
-        "Afmelder fra mailingliste..."
+      "Unsubscribed": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6702,6 +6822,9 @@
         "Flyt ${ selectionCount } besked",
         "Flyt ${ selectionCount } beskeder"
       ],
+      "Password copied to clipboard": [
+        ""
+      ],
       "Phishing reported": [
         "Phishing anmeldt"
       ],
@@ -6726,7 +6849,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        ""
+        "Feedback sendt"
       ]
     },
     "Suffix for price": {
@@ -6787,6 +6910,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "Indstillinger"
       ]
@@ -7015,9 +7144,6 @@
       "Enable message content search": [
         "Aktiver beskedindholdssøgning"
       ],
-      "Encryption": [
-        "Kryptering"
-      ],
       "Enter your password": [
         "Indtast din adgangskode"
       ],
@@ -7030,8 +7156,11 @@
       "Exporting contacts": [
         "Eksporterer kontakter"
       ],
+      "External encryption": [
+        "Ekstern kryptering"
+      ],
       "Feedback": [
-        ""
+        "Feedback"
       ],
       "Filter on": [
         "Filtrer efter"
@@ -7205,7 +7334,7 @@
         "Send e-mail"
       ],
       "Send feedback": [
-        ""
+        "Send feedback"
       ],
       "Send with changed preferences?": [
         "Send med ændrede præferencer?"

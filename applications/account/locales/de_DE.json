@@ -197,7 +197,7 @@
         "Erstellen"
       ],
       "Create a secure ProtonMail address instead": [
-        "Erstelle stattdessen eine sichere Proton Mail E-Mail-Adresse"
+        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Konto erstellen"
@@ -2734,6 +2734,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Der Name des Ordners ist ungültig. Bitte einen anderen Name wählen."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Der Ordnername ist zu lang. Bitte wählen Sie einen kürzeren Namen."
       ],
@@ -2742,6 +2745,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "Die Schlüssel in Ihren Wiederherstellungsdateien konnten nicht überprüft werden. Bitte laden Sie die Dateien einzeln hoch, um weitere Informationen zu erhalten."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Die Kategoriebezeichnung ist ungültig. Bitte verwende eine andere Bezeichnung."
       ],
       "The label name is too long. Please choose a different name.": [
         "Der Name der Kategorie ist zu lang. Bitte wählen Sie einen anderen Namen."
@@ -3115,10 +3121,10 @@
         "Ereignisse aus Ihrem Kalender werden entschlüsselt: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Aufgrund einer Kennwortrücksetzung konnten keine Ihrer Ereignisse entschlüsselt und exportiert werden."
+        "Aufgrund einer Passwortrücksetzung konnten keine deiner Ereignisse entschlüsselt und exportiert werden."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Aufgrund einer Passwortrücksetzung konnten einige Ihrer Ereignisse nicht entschlüsselt und exportiert werden."
+        "Aufgrund einer Passwortrücksetzung konnten einige deiner Ereignisse nicht entschlüsselt und exportiert werden."
       ],
       "Error decrypting event": [
         "Fehler beim Entschlüsseln des Ereignisses"
@@ -3964,6 +3970,9 @@
       "1. Invite friends to Proton": [
         "1. Lade Freunde zu Proton ein"
       ],
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
+      ],
       "2. They try ${ planName }": [
         "2. Sie versuchen ${ planName }"
       ],
@@ -3975,9 +3984,6 @@
       ],
       "30-day money-back guarantee.": [
         "30 Tage Geld-zurück-Garantie."
-      ],
-      "5 email addresses": [
-        "5 E-Mail-Adressen"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Ein Name, mit dem du erkennen kannst, wo es im Einsatz ist, damit du es später leicht widerrufen oder verlängern kannst."
@@ -4326,6 +4332,9 @@
       "Edit label": [
         "Kategorie bearbeiten"
       ],
+      "Edit link": [
+        "Link bearbeiten"
+      ],
       "Email address": [
         "E-Mail-Adresse"
       ],
@@ -4486,13 +4495,16 @@
         "Wenn du mit dem Zurückstufen fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "Wenn du dein Kennwort kürzlich zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen."
+        "Falls du kürzlich dein Passwort zurückgesetzt hast, kannst du deine Daten mit einer Datenwiederherstellungsmethode wiederherstellen"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
         "Wenn Sie einen bestehenden SPF-Eintrag behalten möchten, können Sie einfach ${ spf } nach dem ${ spfValue } hinzufügen. Erstellen Sie keinesfalls mehrere SPF-Einträge."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Wenn Sie dieses Konto mit einem anderen kombinieren möchten, dürfen Sie es NICHT löschen."
+      ],
+      "Image description": [
+        "Bildbeschreibung"
       ],
       "Image URL": [
         "Bild-URL"
@@ -5089,7 +5101,7 @@
         "Dadurch werden die Daten und alle mit diesem Benutzer verbundenen E-Mail-Adressen dauerhaft gelöscht."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Dadurch wird Ihr Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
+        "Dadurch wird dein Konto und alle zugehörigen Daten dauerhaft gelöscht. Dieses Konto kann dann nicht mehr reaktiviert werden."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Dies ersetzt Ihr vorläufiges Passwort. Sie benötigen es, um zukünftig auf Ihr ${ BRAND_NAME }-Konto zuzugreifen."
@@ -5167,7 +5179,7 @@
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "Solange Sie sich nicht von Ihrem Konto abmelden oder Ihr Passwort ändern, bleibt Ihre Sitzung aktiv. Sitzungen laufen nach 60 Tagen Inaktivität aus."
+        "Solange du dich nicht von deinem Konto abmeldest oder dein Passwort änderst, bleibt deine Sitzung aktiv. Sitzungen laufen nach 60 Tagen Inaktivität aus."
       ],
       "Unlimited folders, labels, and filters": [
         "Unbegrenzte Anzahl von Ordnern, Kategorien und Filterlisten"
@@ -5243,6 +5255,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
       ],
       "Web URL": [
         "Web-URL"
@@ -6435,7 +6450,7 @@
         "Aufforderung zum Vertrauen der Schlüssel"
       ],
       "Proration": [
-        "Verrechnung"
+        "Anteilsmäßige Verrechnung"
       ],
       "Protection mode": [
         "Schutzmodus"
@@ -6679,16 +6694,16 @@
     },
     "Label for news": {
       "Proton announcements": [
-        "Ankündigungen von Proton"
+        "Proton Ankündigungen"
       ],
       "Proton Beta": [
         "Proton Beta"
       ],
       "Proton beta announcements": [
-        "Proton • Beta-Ankündigungen"
+        "Proton Beta-Ankündigungen"
       ],
       "Proton company announcements": [
-        "Ankündigen über Proton"
+        "Proton Firmenankündigungen"
       ],
       "Proton for business": [
         "Proton für Unternehmen"
@@ -6700,13 +6715,13 @@
         "Hauptfunktionen von Proton"
       ],
       "Proton newsletter": [
-        "Proton-Newsletter"
+        "Proton Newsletter"
       ],
       "Proton offers and promotions": [
         "Proton Angebote und Sonderaktionen"
       ],
       "Proton product announcements": [
-        "Proton • Produktankündigungen"
+        "Proton Produktankündigungen"
       ]
     },
     "Label in domain modal": {
@@ -7296,7 +7311,7 @@
         "Automatische Antworten"
       ],
       "Catch-all": [
-        "Catch-all"
+        "Vollausstattung"
       ],
       "Centralized billing": [
         "Zentrale Abrechnung"
@@ -7485,9 +7500,6 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Wenn du zu einem anderen Abonnement wechselst, verlierst du alle Vorteile des ${ visionary }-Abonnements und kannst du anschließend nicht zu ${ visionary } zurückwechseln."
       ],
-      "learn more": [
-        "erfahre mehr"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Unser ${ visionary }-Abonnement steht neuen Benutzern nicht länger zur Verfügung, da es ein spezielles Abonnement für Originalbenutzer von ${ BRAND_NAME } ist und besondere Funktionen und Vorteile umfasst."
       ],
@@ -7542,11 +7554,6 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } von ${ humanMaxSpace }"
-      ]
-    },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Proton präsentiert sein neues Design. Viele Dienste, eine Mission. Melde dich an oder ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -8416,7 +8423,7 @@
         "Mache den Schritt zum Datenschutz. Mühelos und sicher."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
-        "Sie können einer einzelnen Nachricht mehreren Kategorien zuordnen, aber die Nachrichten können sich normalerweise nur in einem einzigen Ordner befinden. Durch Ziehen und Ablegen können Sie die Reihenfolge Ihrer Ordner und Kategorien ändern."
+        "Du kannst einer einzelnen Nachricht mehrere Kategorien zuordnen, aber die Nachrichten können sich normalerweise nur in einem einzigen Ordner befinden. Durch Ziehen und Ablegen kannst du die Reihenfolge deiner Ordner und Kategorien ändern."
       ]
     },
     "Settings section title": {
@@ -8656,7 +8663,7 @@
     },
     "Subscription saving": {
       "Save": [
-        "Speichern"
+        "Spare"
       ]
     },
     "Subtitle for trial plan": {
@@ -8921,6 +8928,14 @@
       ],
       "vCard field": [
         "vCard-Feld"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Wir stellen das neue Proton vor."
+      ],
+      "More services, one privacy mission.": [
+        "Mehr Dienste, eine Mission zum Schutz der Privatsphäre."
       ]
     },
     "Time period": {
@@ -9871,7 +9886,7 @@
         "Lege fest, wie deine Nachrichtenliste standardmäßig aussehen soll."
       ],
       "Set the default Composer popup size as small or full screen.": [
-        "Legen die Standardgröße (Klein/Vollbild) des Verfassen-Fensters fest."
+        "Lege die Standardgröße (Klein/Vollbild) des Verfassen-Fensters fest."
       ],
       "Set the default layout for your Inbox.": [
         "Lege das Standard-Layout für deinen Posteingang fest."
