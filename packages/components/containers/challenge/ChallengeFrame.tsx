@@ -24,6 +24,7 @@ export interface Props
     children?: ReactNode;
     src: string;
     className?: string;
+    empty?: boolean;
     bodyClassName?: string;
     loaderClassName?: string;
     hasSizeObserver?: boolean;
@@ -40,6 +41,7 @@ const ChallengeFrame = ({
     title,
     children,
     className,
+    empty,
     bodyClassName = '',
     challengeRef,
     src,
@@ -111,7 +113,7 @@ const ChallengeFrame = ({
             onSuccess?.();
         };
 
-        const stylesPromise = getStyleSrcsData(getStyleSrcUrls());
+        const stylesPromise = empty ? Promise.resolve('') : getStyleSrcsData(getStyleSrcUrls());
 
         const cb = (event: MessageEvent) => {
             const iframe = iframeRef.current;
@@ -148,8 +150,8 @@ const ChallengeFrame = ({
                             handleError();
                         }, errorTimeout);
 
-                        const themeNodeData = document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '';
-                        const iconsNodeData = document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '';
+                        const themeNodeData = empty ? '' : document.querySelector(`#${THEME_ID}`)?.innerHTML ?? '';
+                        const iconsNodeData = empty ? '' : document.querySelector(`#${ICONS_ID}`)?.innerHTML ?? '';
 
                         setStage('load');
                         addLog(
