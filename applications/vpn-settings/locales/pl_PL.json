@@ -1859,7 +1859,7 @@
         "${ boldWarning } Jeśli to zrobisz, stracisz dostęp do wszystkich obecnie zaszyfrowanych danych."
       ],
       "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } lub ${ forgotUsernameLink }?"
+        "${ forgotPasswordLink } lub ${ forgotUsernameLink }"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } może być również używany z wykorzystaniem pojedynczego hasła, które zastępuje Twoje hasło logowania oraz skrzynki pocztowej. Aby przejść w tryb pojedynczego hasła, wpisz hasło, z którego chcesz korzystać i kliknij przycisk Zapisz."
@@ -1903,14 +1903,14 @@
         "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)",
         "+${ organization.BonusVPN } połączeń ${ VPN_APP_NAME } (pozwalają na podłączenie dodatkowych urządzeń do sieci VPN)"
       ],
+      "10 email addresses": [
+        "10 adresów e-mail"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "Zniżka 20% za kupon ${ code } została wliczona do Twojej subskrypcji"
       ],
       "30-day money-back guarantee.": [
         "30-dniowa gwarancja zwrotu pieniędzy."
-      ],
-      "5 email addresses": [
-        "5 adresów e-mail"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Nazwa ułatwiająca identyfikację miejsca, w którym jest używany, aby można było łatwo odwołać lub przedłużyć konfigurację."
@@ -2412,6 +2412,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Przenosimy się! Dołącz do nas na nowej stronie: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Wyślemy kod resetowania na adres pomocniczy."
@@ -3058,7 +3061,7 @@
         "Zachowaj porządek w skrzynce odbiorczej dzięki folderom"
       ],
       "Medium VPN speed": [
-        "Średnia prędkość VPN"
+        "Umiarkowana prędkość VPN"
       ]
     },
     "new_plans: action": {
@@ -3072,22 +3075,22 @@
         "Usuń konto"
       ],
       "Downgrade account": [
-        "Obniż plan konta"
+        "Obniż plan"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Uzyskaj ${ BRAND_NAME } za darmo"
       ],
       "Get ${ planName }": [
-        "Wybierz ${ planName }"
+        "Wybierz plan ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
         "Wybierz ${ upsellShortPlan.title }"
       ],
       "Got it": [
-        "Rozumiem"
+        "Ok"
       ],
       "Keep ${ plan }": [
-        "Zachowaj ${ plan }"
+        "Zachowaj plan ${ plan }"
       ],
       "Keep account": [
         "Zachowaj konto"
@@ -3104,7 +3107,7 @@
         "Obniż plan do ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
-        "Poznaj wszystkie plany ${ BRAND_NAME }"
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
         "Od ${ _price } za użytkownika"
@@ -3147,25 +3150,25 @@
         "${ n } adres e-mail",
         "${ n } adresy e-mail",
         "${ n } adresów e-mail",
-        "${ n } adresu e-mail"
+        "${ n } adresów e-mail"
       ],
       "${ n } email address per user": [
         "${ n } adres e-mail na użytkownika",
         "${ n } adresy e-mail na użytkownika",
         "${ n } adresów e-mail na użytkownika",
-        "${ n } adresu e-mail na użytkownika"
+        "${ n } adresów e-mail na użytkownika"
       ],
       "${ n } filter": [
         "${ n } filtr",
         "${ n } filtry",
         "${ n } filtrów",
-        "${ n } filtra"
+        "${ n } filtrów"
       ],
       "${ n } folder": [
         "${ n } folder",
         "${ n } foldery",
         "${ n } folderów",
-        "${ n } folderu"
+        "${ n } folderów"
       ],
       "${ n } folder and label": [
         "${ n } folder i etykieta",
@@ -3177,13 +3180,13 @@
         "${ n } etykieta",
         "${ n } etykiety",
         "${ n } etykiet",
-        "${ n } etykiety"
+        "${ n } etykiet"
       ],
       "${ n } message per day": [
-        "${ n } wiadomość na dzień",
-        "${ n } wiadomości na dzień",
-        "${ n } wiadomości na dzień",
-        "${ n } wiadomości na dzień"
+        "${ n } wiadomość dziennie",
+        "${ n } wiadomości dziennie",
+        "${ n } wiadomości dziennie",
+        "${ n } wiadomości dziennie"
       ],
       "${ n } personal calendar": [
         "${ n } kalendarz osobisty",
@@ -3204,19 +3207,19 @@
         "${ n } połącznia VPN na użytkownika"
       ],
       "${ size } attachment size": [
-        "${ size } rozmiar załącznika"
+        "${ size } rozmiaru załącznika"
       ],
       "${ size } storage per user": [
         "${ size } przestrzeni dyskowej na użytkownika"
       ],
       "${ size } total storage": [
-        "${ size } całkowitej przestrzeni dyskowej"
+        "${ size } przestrzeni dyskowej"
       ],
       "1 free VPN connection in total": [
         "Łącznie 1 darmowe połączenie VPN"
       ],
       "99.95% SLA": [
-        "Umowa SLA gwarantująca dostępność na poziomie 99,95%"
+        "Umowa SLA 99,95%"
       ],
       "Admin console": [
         "Pulpit administratora"
@@ -3231,7 +3234,7 @@
         "Catch-all"
       ],
       "Centralized billing": [
-        "Scentralizowane rozliczanie"
+        "Scentralizowane płatności"
       ],
       "Contact groups": [
         "Grupy kontaktów"
@@ -3240,7 +3243,7 @@
         "Zarządzanie grupami kontaktów"
       ],
       "Custom email domains": [
-        "Niestandardowe domeny e-mail"
+        "Niestandardowe domeny"
       ],
       "DNS leak prevention": [
         "Zabezpieczenie przed wyciekiem zapytań DNS"
@@ -3252,10 +3255,10 @@
         "Asystent importu Easy Switch"
       ],
       "Email client support (via IMAP/SMTP)": [
-        "Wsparcie klientów e-mail (przez IMAP/SMTP)"
+        "Wsparcie aplikacji pocztowych (przez IMAP/SMTP)"
       ],
       "Enables HIPAA compliance": [
-        "Zapewnia zgodność z przepisami HIPAA"
+        "Zgodność z wymogami HIPAA"
       ],
       "Encrypted contact details": [
         "Zaszyfrowane szczegóły kontaktu"
@@ -3267,7 +3270,7 @@
         "Szyfrowanie end-to-end"
       ],
       "Free VPN on a single device": [
-        "Darmowy VPN na jednym urządzeniu"
+        "Darmowy VPN na 1 urządzenie"
       ],
       "GDPR data processing agreement": [
         "Umowa o przetwarzaniu danych zgodnie z RODO"
@@ -3282,7 +3285,7 @@
         "Podpisy HTML"
       ],
       "Kill switch/always-on VPN": [
-        "Wyłącznik awaryjny / stale aktywny VPN"
+        "Kill Switch / stale aktywny VPN"
       ],
       "Limited support": [
         "Ograniczone wsparcie"
@@ -3297,10 +3300,10 @@
         "P2P / BitTorrent"
       ],
       "Password-protected Emails": [
-        "Chronione hasłem wiadomości e-mail"
+        "Wiadomości chronione hasłem"
       ],
       "Phone support (6+ users)": [
-        "Wsparcie telefoniczne (użytkownicy powyżej 6 lat)"
+        "Wsparcie telefoniczne (dla ponad 6 użytkowników)"
       ],
       "Priority email support": [
         "Priorytetowe wsparcie e-mail"
@@ -3321,7 +3324,7 @@
         "Udostępnij kalendarz przez link"
       ],
       "Share files and folders via link": [
-        "Udostępniaj pliki i foldery za pomocą łącza"
+        "Udostępniaj pliki i foldery za pomocą linku"
       ],
       "Sign in as user": [
         "Zaloguj się jako użytkownik"
@@ -3330,7 +3333,7 @@
         "Dzielone tunelowanie (Android i Windows)"
       ],
       "Strict no-logs policy": [
-        "Restrykcyjna polityka braku przechowywania logów"
+        "Polityka braku przechowywania logów"
       ],
       "Team management": [
         "Zarządzanie zespołem"
@@ -3351,16 +3354,16 @@
         "Nieograniczona liczba folderów, etykiet i filtrów"
       ],
       "Unlimited labels": [
-        "Nieograniczone etykiety"
+        "Nieograniczona liczba etykiet"
       ],
       "Unlimited messages per day": [
-        "Nieograniczone wysyłanie wiadomości na dzień"
+        "Nieograniczone wysyłanie wiadomości"
       ],
       "Unlimited volume/bandwidth": [
-        "Nielimitowana objętość/przepustowość"
+        "Nielimitowana przepustowość"
       ],
       "Up to ${ totalStorageSize } total storage": [
-        "Aż do ${ totalStorageSize } całkowitej przestrzeni dyskowej"
+        "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
       "User credential management": [
         "Zarządzanie danymi uwierzytelniającymi użytkownika"
@@ -3377,7 +3380,7 @@
         "Przypomnij hasło"
       ],
       "username": [
-        "nazwa użytkownika"
+        "nazwę użytkownika"
       ]
     },
     "new_plans: heading": {
@@ -3416,14 +3419,11 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "W przypadku przejścia do innego planu traci się wszystkie korzyści wynikające z planu ${ visionary } i nie będzie można przejść z powrotem do ${ visionary }."
       ],
-      "learn more": [
-        "dowiedz się więcej"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Nasz plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME } posiadających specjalne funkcje i korzyści."
       ],
       "Popular": [
-        "Popularne"
+        "Popularny"
       ],
       "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
         "Cena za przyszłe odnowienia: obejmuje wszystkie mające zastosowanie kupony zapisane na Twoim koncie, które są dalej ważne"
@@ -3472,11 +3472,6 @@
         "${ humanUsedSpace } z ${ humanMaxSpace }"
       ]
     },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Przedstawiamy odświeżony wygląd Proton. Wiele usług, jedna misja. Zaloguj się, aby kontynuować lub ${ learnMoreLink }."
-      ]
-    },
     "new_plans: Plan frequency": {
       "/month": [
         "/ miesiąc"
@@ -3513,7 +3508,7 @@
         "Twoja subskrypcja ${ planName } jest teraz aktywna."
       ],
       "Your selected plan: ${ planName }": [
-        "Wybrany przez Ciebie plan: ${ planName }"
+        "Wybrany plan: ${ planName }"
       ]
     },
     "new_plans: title": {
@@ -3521,7 +3516,7 @@
         "Usunąć konto?"
       ],
       "Downgrade account?": [
-        "Obniżyć plan konta?"
+        "Obniżyć plan?"
       ],
       "Improved plans coming soon!": [
         "Ulepszone plany dostępne wkrótce!"
@@ -3544,7 +3539,7 @@
         "Ulepszenie do ${ planName }"
       ],
       "Your account's usage": [
-        "Twoje użycie konta"
+        "Użycie konta"
       ]
     },
     "new_plans: tooltip": {
@@ -3591,7 +3586,7 @@
         "Kalendarz zaszyfrowany end-to-end"
       ],
       "End-to-end encrypted file storage": [
-        "Plik przestrzeni dyskowej zaszyfrowany end-to-end"
+        "Przestrzeń dyskowa zaszyfrowana end-to-end"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         "Zapewnia otrzymywanie wszystkich wiadomości e-mail wysyłanych do Twojej domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
@@ -3639,7 +3634,7 @@
         "Personalizuj swój podpis e-mail za pomocą logo, obrazów, ikon mediów społecznościowych, linków do danych kontaktowych i innych elementów"
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Dla klientów posiadających 6 lub więcej użytkowników dostępna jest pomoc telefoniczna od zespołu Proton Customer Success, podczas europejskich godzin pracy"
+        "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta Proton"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Zapobiega dostępowi do wiadomości przez firmę ${ BRAND_NAME } lub osoby trzecie. Wiadomości mogą czytać tylko nadawca i odbiorca."
@@ -3675,7 +3670,7 @@
         "Udostępniaj pliki lub foldery innym osobom, korzystając z bezpiecznych łączy z możliwością udostępniania"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "Specjalnie zaprojektowana osłona NetShield chroni urządzenie i przyspiesza przeglądanie stron internetowych, blokując reklamy, trackery i złośliwe oprogramowanie"
+        "Specjalnie zaprojektowana funkcja NetShield chroni Twoje urządzenie oraz przyśpiesza przeglądanie Internetu poprzez blokowanie reklam, skryptów śledzących i złośliwego oprogramowania"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Zacznij od ${ freeStorageSize } i odblokowuj po drodze więcej miejsca. Przestrzeń dyskowa jest współdzielona przez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
@@ -3710,7 +3705,7 @@
     },
     "new_plans: Upsell attribute": {
       "${ storageSize } total storage": [
-        "${ storageSize } całkowita przestrzeń dyskowa"
+        "${ storageSize } przestrzeni dyskowej"
       ],
       "10 email addresses/aliases": [
         "10 adresów e-mail / aliasów"
@@ -3722,7 +3717,7 @@
         "Dodaj więcej personalizacji dzięki 15 adresom e-mail i wsparciu 3 niestandardowych domen e-mail"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        "Zwiększ przestrzeń dyskową do całkowitej wartości ${ bundleStorage }"
+        "Zwiększ przestrzeń dyskową do ${ bundleStorage }"
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Zwiększ przestrzeń dyskową do ${ businessStorage } na użytkownika"
@@ -3731,10 +3726,10 @@
         "Obejmij więcej obszarów dzięki obsłudze 10 niestandardowych domen poczty elektronicznej"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarz osobisty",
-        "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarze osobiste",
-        "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarzy osobistych",
-        "Utwórz maksymalnie ${ numberOfPersonalCalendars } kalendarza osobistego"
+        "Utwórz do ${ numberOfPersonalCalendars } osobistego kalendarza",
+        "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy",
+        "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy",
+        "Utwórz do ${ numberOfPersonalCalendars } osobistych kalendarzy"
       ],
       "Everything in ${ vpnPlanName }": [
         "Wszystkie elementy planu ${ vpnPlanName }"
@@ -4180,6 +4175,14 @@
       ],
       "Status": [
         "Status"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Przedstawiamy zaktualizowane usługi Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Więcej usług, jedna misja dotycząca prywatności."
       ]
     },
     "Title": {

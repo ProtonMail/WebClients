@@ -1887,8 +1887,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "發生錯誤，請${ refresh }以繼續。如果您仍看到此錯誤訊息，請聯絡我們的${ supportTeam }。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請選擇其他名稱。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "此標籤名稱無法使用。請換另一個名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請選擇其他名稱。"
@@ -2203,23 +2209,17 @@
       "${ canceledCount } canceled": [
         "${ canceledCount } 個任務已取消"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 位成員"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位聯絡人"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 項已完成"
@@ -2235,9 +2235,6 @@
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 個聯絡人群組"
@@ -2272,8 +2269,8 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 位成員)"
       ],
-      "5 email addresses": [
-        "5 個電子郵件地址"
+      "10 email addresses": [
+        "10 個電子郵件地址"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中新增數字"
@@ -2632,6 +2629,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2667,6 +2667,12 @@
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
@@ -2881,6 +2887,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "我們搬家嘍！到新網站來加入我們吧！ ${ link }"
+      ],
       "Week": [
         "週"
       ],
@@ -3021,8 +3030,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "已失效"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "主要"
@@ -3032,9 +3047,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "Verification only": [
-        "僅用於驗證"
       ],
       "WKD": [
         "WKD"
@@ -3493,6 +3505,21 @@
         "標籤名稱"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         ""
@@ -3745,6 +3772,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此金鑰不能用於加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4020,6 +4058,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "為您介紹改版更新的 Proton。"
+      ],
+      "More services, one privacy mission.": [
+        "給您更多元服務，秉持同一隱私使命。"
+      ],
       "Settings": [
         "設定"
       ]

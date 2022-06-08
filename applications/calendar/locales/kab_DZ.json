@@ -18,13 +18,13 @@
         "Rnu"
       ],
       "Add address": [
-        ""
+        "Rnu tansa"
       ],
       "Add contact": [
         "Rnu anermis"
       ],
       "Add email": [
-        ""
+        "Rnu imayl"
       ],
       "Add group": [
         "Rnu agraw"
@@ -39,7 +39,7 @@
         "Rnu alɣu"
       ],
       "Add phone number": [
-        ""
+        "Rnu uṭṭun n tiliɣri"
       ],
       "Add to group": [
         "Rnu ɣer ugraw"
@@ -317,7 +317,7 @@
         "Aseggas yezrin"
       ],
       "Quit": [
-        ""
+        "Ffeɣ"
       ],
       "Re-sign": [
         "Ales azmul"
@@ -344,7 +344,7 @@
         "Kkes amttekki-a"
       ],
       "Rename": [
-        ""
+        "Beddel isem"
       ],
       "Report a problem": [
         "Azen aneqqis n wugur"
@@ -407,7 +407,7 @@
         "Bdu tawila"
       ],
       "Stay": [
-        ""
+        "Qqim"
       ],
       "Submit": [
         "Azen"
@@ -974,7 +974,7 @@
         ""
       ],
       "Algeria": [
-        ""
+        "Lezzayer"
       ],
       "American Samoa": [
         ""
@@ -1166,7 +1166,7 @@
         ""
       ],
       "Egypt": [
-        ""
+        "Maṣer"
       ],
       "El Salvador": [
         ""
@@ -1199,7 +1199,7 @@
         ""
       ],
       "France": [
-        ""
+        "Fransa"
       ],
       "French Guiana": [
         ""
@@ -1280,7 +1280,7 @@
         ""
       ],
       "India": [
-        ""
+        "Lhend"
       ],
       "Indonesia": [
         ""
@@ -1304,13 +1304,13 @@
         ""
       ],
       "Italy": [
-        ""
+        "Ṭelyan"
       ],
       "Jamaica": [
         ""
       ],
       "Japan": [
-        ""
+        "Japun"
       ],
       "Jersey": [
         ""
@@ -1658,7 +1658,7 @@
         ""
       ],
       "Tunisia": [
-        ""
+        "Tunes"
       ],
       "Turkey": [
         ""
@@ -1682,7 +1682,7 @@
         ""
       ],
       "United Kingdom": [
-        ""
+        "Tagelda Yedduklen"
       ],
       "United States": [
         ""
@@ -2084,17 +2084,11 @@
       "No data to import": [
         ""
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Ulac tasarut yettwaffen i useqdac adigan i yeɣtan i tuzna"
-      ],
       "No keys retrieved for internal user": [
         "Ur d-nufi ula d tasarut i useqdac adigan"
       ],
       "No valid address found": [
         "Ur d-nufi ara tansa yeɣtan"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Ur d-nufi tisura yeɣtan i useqdac adigan"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Ulac tasarut WKD yettwaffen i useqdac adigan i yeɣtan i tuzna"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara."
       ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
+      ],
       "Request timed out": [
         ""
       ],
@@ -2162,7 +2162,13 @@
       "Start time must be before end time": [
         "Asrag n beddu yessfk ad yili send asrag n tagara"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
+        ""
+      ],
+      "The label name is invalid. Please choose a different name.": [
         ""
       ],
       "The label name is too long. Please choose a different name.": [
@@ -2357,7 +2363,7 @@
         ""
       ],
       "Timezone": [
-        ""
+        "Tamennaḍt tasragant"
       ],
       "Timezone not supported": [
         ""
@@ -2366,7 +2372,7 @@
         ""
       ],
       "Unknown": [
-        ""
+        "Arussin"
       ],
       "Unsupported event": [
         ""
@@ -2737,32 +2743,24 @@
         "",
         ""
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } n uɛeggal",
         "${ contactEmailsLength } n yiɛeggalen"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } yegber aṭas n tansiwin imayl. Ttxil fren anta tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } n unermis yettwafen",
         "${ contactsCount } n yinermisen yettwafen"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } yegber aṭas n tansiwin imayl. Ttxil fren tansa neɣ tansiwin imayl ara ternuḍ ɣer ugraw-a."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } n ugraw yettwafen",
         "${ groupCounts } n yigrawen yettwafen"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } d ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "",
@@ -2795,7 +2793,7 @@
         "(${ memberCount } n uɛeggal)",
         "(${ memberCount } n yiɛeggalen)"
       ],
-      "5 email addresses": [
+      "10 email addresses": [
         ""
       ],
       "A cancellation email will be sent to removed participants.": [
@@ -2834,7 +2832,7 @@
         "Tinnubga ad tettwazen i yimettekkiyen deg tedyant."
       ],
       "and": [
-        ""
+        "akked"
       ],
       "At most 100 participants are allowed per invitation": [
         "Ma aṭas 100 n yimettekkiyen i yettusirgen i yiwen n unaɛruḍ"
@@ -3033,6 +3031,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Timeḍriwin yettwaleqqmen yakan sɣur amsuddes ad qqiment."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         ""
       ],
@@ -3055,6 +3056,13 @@
         "Ttxil kkes usligen tɛerḍeḍ tikkelt-nniḍen."
       ],
       "Please select the folders you would like to import:": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
         ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
@@ -3082,7 +3090,7 @@
         "Fren amasal n yimayl i tebɣiḍ ad yettwaseqdec d amezwer mi ara tazneḍ imayl ɣer tansa-a imayl."
       ],
       "Select what you want to move from Google.": [
-        ""
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         ""
@@ -3193,6 +3201,9 @@
         ""
       ],
       "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
         ""
       ],
       "Week": [
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Ifut"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Agejdan"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Yettwaman"
-      ],
-      "Verification only": [
-        "Asenqed kan"
       ],
       "WKD": [
         "WKD"
@@ -3384,7 +3398,7 @@
         ""
       ],
       "Calendars": [
-        ""
+        "Iwitayen"
       ],
       "Category": [
         "Taggayt"
@@ -3396,10 +3410,10 @@
         ""
       ],
       "Color": [
-        ""
+        "Ini"
       ],
       "Contacts": [
-        ""
+        "Inermisen"
       ],
       "Copy": [
         "Nɣel"
@@ -3408,7 +3422,7 @@
         "Tamurt"
       ],
       "Date and time": [
-        ""
+        "Azemz d wakud"
       ],
       "Default email address": [
         ""
@@ -3462,7 +3476,7 @@
         "Asiɣzef n tansa"
       ],
       "Folder location": [
-        ""
+        "Ideg n ukaram"
       ],
       "Frequency": [
         ""
@@ -3525,7 +3539,7 @@
         ""
       ],
       "Notifications": [
-        ""
+        "Ilɣa"
       ],
       "Operating system": [
         "Anagraw n wammud"
@@ -3622,16 +3636,16 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        ""
+        "Snulfu-d akaram"
       ],
       "Create label": [
         ""
       ],
       "Edit folder": [
-        ""
+        "Ẓreg akaram"
       ],
       "Edit label": [
-        ""
+        "Ẓreg tabzimt"
       ]
     },
     "label/folder notification": {
@@ -3727,7 +3741,7 @@
     },
     "Modal action": {
       "Close": [
-        ""
+        "Mdel"
       ],
       "Manage calendars": [
         ""
@@ -3743,7 +3757,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        ""
+        "Rnu awitay"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -3881,12 +3895,40 @@
     },
     "New Label form": {
       "Color": [
-        ""
+        "Ini"
       ],
       "Folder name": [
-        ""
+        "Isem n ukaram"
       ],
       "Label name": [
+        "Isem n tebzimt"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
         ""
       ]
     },
@@ -4035,7 +4077,7 @@
     },
     "Onboarding Action": {
       "Next": [
-        ""
+        "Uḍfir"
       ],
       "Start using ${ appName }": [
         ""
@@ -4120,7 +4162,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Snulfu-d awitay amaynut"
       ],
       "Merge with calendar": [
         ""
@@ -4147,6 +4189,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Tasarut ulamek ara tettwaseqdec i uwgelhen"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4192,7 +4245,7 @@
         "Isem"
       ],
       "Password": [
-        ""
+        "Awal uffir"
       ],
       "Please describe the problem and include any error messages": [
         "Mudd ma ulac aɣilif aglam n wugur sakin seddu-d akk iznan n tuccḍa"
@@ -4204,7 +4257,7 @@
         "Nadi ɣef yisem neɣ imayl"
       ],
       "Select": [
-        ""
+        "Fren"
       ],
       "Start typing an email address": [
         "Bdu tira n tansa n yimayl"
@@ -4553,6 +4606,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "Iɣewwaren"
       ]
@@ -4706,7 +4765,7 @@
         ""
       ],
       "Edit calendar": [
-        ""
+        "Ẓreg awitay"
       ],
       "Edit contact": [
         "Ẓreg anermis"
@@ -4945,7 +5004,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Ass-a"
       ]
     },
     "Tooltip": {

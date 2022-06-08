@@ -213,13 +213,13 @@
         "Sunting rincian masuk"
       ],
       "Email settings": [
-        "Pengaturan surel"
+        "Pengaturan email"
       ],
       "Empty trash": [
         "Kosongkan sampah"
       ],
       "enable desktop notifications": [
-        "aktifkan notifikasi desktop"
+        "mengaktifkan notifikasi desktop"
       ],
       "Enable drive search": [
         "Aktifkan pencarian drive"
@@ -1678,7 +1678,7 @@
     },
     "Default encryption scheme": {
       "Use global default (${ defaultValueText })": [
-        "Gunakan bawaan global (${ defaultValueText })"
+        "Gunakan nilai default global (${ defaultValueText })"
       ]
     },
     "Delinquent modal title": {
@@ -1834,7 +1834,7 @@
         "Nomor tidak valid"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Kontak-kontak berikut tidak memiliki alamat email: ${ noEmailsContactNamesList } "
+        "Kontak berikut tidak memiliki alamat email: ${ noEmailsContactNamesList } "
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "Grup tidak memiliki kontak: ${ noContactGroupList } "
@@ -1887,8 +1887,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Terjadi kesalahan, silakan ${ refresh } untuk meneruskan. Jika Anda masih melihat pesan galat ini harap kontak ${ supportTeam } kami."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Nama folder tidak valid. Silakan pilih nama lain."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Nama folder terlalu panjang. Mohon pilih nama lain."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Nama label tidak valid. Silakan pilih nama lain."
       ],
       "The label name is too long. Please choose a different name.": [
         "Nama label terlalu panjang. Mohon pilih nama lain."
@@ -2106,7 +2112,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "Surel"
+        "Email"
       ],
       "Manual": [
         "Manual"
@@ -2203,23 +2209,17 @@
       "${ canceledCount } canceled": [
         "${ canceledCount } dibatalkan"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontak mengandung lebih dari satu alamat email."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Anggota"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } mengandung lebih dari satu alamat email."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontak ditemukan"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } berisi banyak alamat surel. Silakan pilih satu alamat surel atau lebih untuk ditambahkan ke grup ini."
       ],
       "${ doneCount } finished": [
         "${ doneCount } telah selesai terproses"
@@ -2235,9 +2235,6 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup ditemukan"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } dan ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grup kontak"
@@ -2272,8 +2269,8 @@
       "(${ memberCount } member)": [
         "(${ memberCount } anggota)"
       ],
-      "5 email addresses": [
-        "5 alamat email"
+      "10 email addresses": [
+        "10 alamat email"
       ],
       "A number will be added to the filename": [
         "Nomor akan ditambahkan ke nama berkas"
@@ -2507,7 +2504,7 @@
         "Jika anda yakin ini adalah kesalahan, silakan hubungi kami ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Jika Anda tidak menemukan surel di kotak masuk, mohon periksa folder spam Anda."
+        "Apabila Anda tidak menemukan email yang bersangkutan di dalam kotak masuk, mohon periksa folder spam Anda."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Apabila Anda memiliki setidaknya salah satunya, tuju menu pengaturan akun Proton\nuntuk dapat mencabut pemblokiran yang ada."
@@ -2632,6 +2629,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Salah satu drive Anda terkunci. Hal ini kemungkinan diakibatkan oleh pengaturan ulang kata sandi yang berlangsung baru-baru ini."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Satu atau lebih kunci terpercaya Anda telah ditandai sebagai \"bocor\" oleh pemiliknya. Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci tersebut."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2667,6 +2667,12 @@
       ],
       "Please select the folders you would like to import:": [
         "Harap pilih folder-folder yang hendak Anda impor:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupCount } grup."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Silakan pilih alamat email mana saja yang akan ditambahkan ke ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Mohon tunggu selagi kami memeriksa kontak yang dapat ditandatangani ulang dengan kunci enkripsi utama."
@@ -2711,7 +2717,7 @@
         "Pilih berkas atau folder yang telah diunggah dan buat tautan untuk berkas atau folder tersebut."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "Pilih format surel bawaan yang akan Anda gunakan setiap kali mengirim surat ke alamat ini."
+        "Pilih format email yang akan Anda gunakan sebagai default setiap kali Anda mengirim surat ke alamat ini."
       ],
       "Select what you want to move from Google.": [
         "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
@@ -2881,6 +2887,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Kami akan mengirimkan kode verifikasi baru ke ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Kami telah pindah! Bergabunglah dengan kami pada situs baru kami: ${ link }."
+      ],
       "Week": [
         "Pekan"
       ],
@@ -3021,8 +3030,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Bocor"
+      ],
       "Expired": [
         "Kedaluwarsa"
+      ],
+      "Obsolete": [
+        "Usang"
       ],
       "Primary": [
         "Utama"
@@ -3032,9 +3047,6 @@
       ],
       "Trusted": [
         "Terpercaya"
-      ],
-      "Verification only": [
-        "Verifikasi saja"
       ],
       "WKD": [
         "WKD"
@@ -3051,7 +3063,7 @@
         "(Sedang tidak tersedia. Mohon periksa lagi nanti.)"
       ],
       "Add email address": [
-        "Tambah alamat surel"
+        "Tambah alamat email"
       ],
       "Add image URL": [
         "Tambah URL gambar"
@@ -3138,10 +3150,10 @@
         "Email"
       ],
       "Email address": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email format": [
-        "Format surel"
+        "Format email"
       ],
       "Emails": [
         "Email"
@@ -3153,7 +3165,7 @@
         "Mengaktifkan pencarian drive"
       ],
       "Encrypt emails": [
-        "Enkripsi surel"
+        "Enkripsi email"
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -3306,7 +3318,7 @@
         "Atur tanggal kedaluwarsa"
       ],
       "Sign emails": [
-        "Tanda tangani surel"
+        "Tandatangani email"
       ],
       "Size": [
         "Ukuran"
@@ -3491,6 +3503,21 @@
       ],
       "Label name": [
         "Nama label"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Pindah atau tambahkan akun"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Memperkenalkan tampilan Proton yang baru.${ br } Berbagai layanan, satu misi. Selamat datang di Internet yang menjunjung privasi sebagai hal yang baku."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Proton yang baru, dengan perlindungan yang tersatukan"
       ]
     },
     "Notification": {
@@ -3747,6 +3774,17 @@
         "Kunci tidak dapat digunakan untuk enkripsi"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } telah menandai kunci ini sebagai kunci yang bocor. Kunci ini tidak akan lagi dapat digunakan baik untuk mengenkipsi pesan maupun untuk memverifikasi tanda tangan."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } telah menandai kunci ini sebagai kunci yang usang. Kunci ini hanya akan dapat digunakan untuk memverifikasi tanda tangan."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Kami menyarankan Anda untuk tidak lagi \"memercayai\" kunci ini."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Alamat email tidak ditemukan di antara id-id pengguna yang terhubung dengan kunci pengiriman (${ keyUserIds })"
@@ -3796,7 +3834,7 @@
         "Pilih"
       ],
       "Start typing an email address": [
-        "Mulai ketik alamat surel"
+        "Ketikkan alamat email"
       ]
     },
     "Placeholder for contact group name": {
@@ -4020,6 +4058,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Memperkenalkan Proton yang baru."
+      ],
+      "More services, one privacy mission.": [
+        "Beragam layanan, satu misi privasi."
+      ],
       "Settings": [
         "Pengaturan"
       ]
@@ -4147,10 +4191,10 @@
         "Menghapus kontak"
       ],
       "Discard": [
-        "Buang"
+        "Batalkan"
       ],
       "Discard changes?": [
-        "Buang perubahan?"
+        "Batalkan perubahan?"
       ],
       "Download canceled": [
         "Unduhan dibatalkan"
@@ -4192,13 +4236,13 @@
         "Edit gambar"
       ],
       "Email addresses": [
-        "Alamat surel"
+        "Alamat email"
       ],
       "Email settings": [
-        "Pengaturan surel"
+        "Pengaturan email"
       ],
       "Email settings (${ emailAddress })": [
-        "Pengaturan surel (${ emailAddress })"
+        "Pengaturan email (${ emailAddress })"
       ],
       "Empty trash": [
         "Kosongkan sampah"
@@ -4363,10 +4407,10 @@
         "Pilih grup kontak"
       ],
       "Select link expiration date": [
-        "Pilih tanggal kedaluwarsa tautan"
+        "Tentukan tanggal kedaluwarsa tautan"
       ],
       "Select link expiration time": [
-        "Pilih jangka kedaluwarsa tautan"
+        "Tentukan waktu kedaluwarsa tautan"
       ],
       "Settings": [
         "Pengaturan"
@@ -4456,7 +4500,7 @@
         "Apa yang baru"
       ],
       "You have inaccessible files": [
-        "Anda memiliki berkas-berkas yang tidak dapat diakses"
+        "Anda memiliki berkas yang tidak dapat diakses"
       ],
       "You have no files to share": [
         "Anda tidak memiliki berkas untuk dibagikan"
@@ -4484,7 +4528,7 @@
         "Opsi Otomatis berarti pesan akan dikirim apa adanya sesuai format tulis yang dipakai. Opsi Teks Polos berarti pesan akan selalu dikirim dalam bentuk teks polos."
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "Tanda tangan digital memastikan identitas Anda sebagai pengirim surel"
+        "Menandatangani email secara digital akan membantu sistem kami dalam mengotentikasi pesan yang Anda kirim"
       ],
       "Each imported email will have this label": [
         "Masing-masing email yang diimpor akan memiliki label ini"

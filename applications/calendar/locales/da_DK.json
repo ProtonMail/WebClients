@@ -2084,17 +2084,11 @@
       "No data to import": [
         "Ingen data at importere"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Ingen nøgle hentet for intern bruger er gyldig til afsendelse"
-      ],
       "No keys retrieved for internal user": [
         "Ingen nøgler hentet for intern bruger"
       ],
       "No valid address found": [
         "Ingen gyldig adresse fundet"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Ingen gyldige nøgler hentet for intern bruger"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Ingen WKD-nøgle hentet for bruger er gyldig til afsendelse"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "Primære adressenøgle er ikke dekrypteret."
       ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
+      ],
       "Request timed out": [
         "Forespørgsel fik timeout"
       ],
@@ -2162,8 +2162,14 @@
       "Start time must be before end time": [
         "Starttidspunkt skal være før sluttidspunkt"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
@@ -2737,32 +2743,24 @@
         "${ calendarsToBeMergedCount } flettet kalender",
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
         "${ contactEmailsLength } medlemmer"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til denne gruppe."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt fundet",
         "${ contactsCount } kontakter fundet"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } indeholder flere e-mailadresser. Vælg venligst hvilken e-mailadresse eller adresser der skal føjes til denne gruppe."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } gruppe fundet",
         "${ groupCounts } grupper fundet"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } og ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } kontaktgruppe",
@@ -2795,8 +2793,8 @@
         "(${ memberCount } medlem)",
         "(${ memberCount } medlemmer)"
       ],
-      "5 email addresses": [
-        "5 e-mailadresser"
+      "10 email addresses": [
+        "10 e-mailadresser"
       ],
       "A cancellation email will be sent to removed participants.": [
         "En aflysningsmail vil blive sendt til fjernede deltagere."
@@ -3033,6 +3031,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Forekomster som arrangøren tidligere har opdateret vil blive opbevaret."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
@@ -3056,6 +3057,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -3082,7 +3090,7 @@
         "Vælg det e-mail-format der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
       ],
       "Select what you want to move from Google.": [
-        "Vælg, hvad du vil overflytte fra Google."
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
@@ -3194,6 +3202,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi sender en ny verifikationskode til ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Vi flytter! Følg med os til vores nye hjemmeside: ${ link }."
       ],
       "Week": [
         "Uge"
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Udløbet"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Primær"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Betroet"
-      ],
-      "Verification only": [
-        "Kun bekræftelse"
       ],
       "WKD": [
         "WKD"
@@ -3890,6 +3904,34 @@
         "Etikettenavn"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Kontaktgruppe oprettet"
@@ -4147,6 +4189,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Nøgle kan ikke benyttes til kryptering"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4553,6 +4606,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "Indstillinger"
       ]

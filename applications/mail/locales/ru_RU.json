@@ -69,13 +69,13 @@
         "Все прочитанные"
       ],
       "All Starred": [
-        "Все избранные"
+        "Все Важные"
       ],
       "All Unread": [
         "Все непрочитанные"
       ],
       "All Unstarred": [
-        "Все не избранные"
+        "Все Неважные"
       ],
       "Apply": [
         "Применить"
@@ -102,7 +102,7 @@
         "Отменить"
       ],
       "Carbon Copy, Blind Carbon Copy": [
-        "Копия, скрытая копия"
+        "Копия, Cкрытая копия"
       ],
       "CC BCC": [
         "Копия Скрытая копия"
@@ -111,7 +111,7 @@
         "Изменить страницу"
       ],
       "Chat with us": [
-        "Переписывайтесь с нами"
+        "Поговорите с нами"
       ],
       "Check import progress": [
         "Проверка хода импорта"
@@ -129,7 +129,7 @@
         "Очистить данные браузера"
       ],
       "Clear data": [
-        "Стереть данные"
+        "Очистить данные"
       ],
       "clear it": [
         "очистить"
@@ -190,6 +190,9 @@
       ],
       "Copy email to clipboard": [
         "Скопировать адрес эл. почты в буфер обмена"
+      ],
+      "Copy password to clipboard": [
+        "Скопировать пароль в буфер обмена"
       ],
       "Create a new contact group": [
         "Создать новую группу контактов"
@@ -264,7 +267,7 @@
         "Не получили код?"
       ],
       "Discard": [
-        "Отказаться"
+        "Отменить"
       ],
       "Dismiss get started checklist": [
         "Отклонить контрольный список начала работы"
@@ -289,6 +292,9 @@
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
+      ],
+      "Edit encryption": [
+        "Изменить шифрование"
       ],
       "Edit label": [
         "Изменить ярлык"
@@ -320,6 +326,9 @@
       "Expand URL": [
         "Развернуть URL"
       ],
+      "Expiration time": [
+        "Время окончания срока действия"
+      ],
       "Export": [
         "Экспорт"
       ],
@@ -328,6 +337,9 @@
       ],
       "Export contacts": [
         "Экспортировать контакты"
+      ],
+      "External encryption": [
+        "Внешнее шифрование"
       ],
       "Filter on...": [
         "Фильтр по..."
@@ -381,7 +393,7 @@
         "Скрыть расширенные настройки PGP"
       ],
       "Hide attachment details": [
-        "Скрыть сведения о вложении"
+        "Скрыть подробности вложения"
       ],
       "Hide details": [
         "Скрыть подробности"
@@ -414,7 +426,7 @@
         "Импортировать сообщения"
       ],
       "Inline": [
-        "Встроенный"
+        "Встроить"
       ],
       "Insert": [
         "Вставить"
@@ -462,7 +474,7 @@
         "Загрузить"
       ],
       "Load embedded images": [
-        "Скачать встроенные изображения"
+        "Загрузить встроенные изображения"
       ],
       "Load image": [
         "Загрузить изображение"
@@ -480,10 +492,10 @@
         "Войти"
       ],
       "Mailbox density": [
-        "Плотность отображения элементов для почты"
+        "Плотность почтового ящика"
       ],
       "Mailbox layout": [
-        "Схема отображения для почты"
+        "Макет почтового ящика"
       ],
       "Mark as read": [
         "Отметить как прочитанное"
@@ -498,13 +510,13 @@
         "Отметить для удаления"
       ],
       "Mark legitimate": [
-        "Отметить как законное"
+        "Отметить как легитимное"
       ],
       "Maximize composer": [
         "Развернуть редактор"
       ],
       "Maybe": [
-        "Может быть"
+        "Возможно"
       ],
       "Maybe I'll attend": [
         "Возможно я участвую"
@@ -549,7 +561,7 @@
         "Переместить в спам"
       ],
       "Move to trash": [
-        "Переместить в корзину"
+        "Переместить в Корзину"
       ],
       "Move to...": [
         "Переместить в..."
@@ -576,7 +588,7 @@
         "След. месяц"
       ],
       "Next page": [
-        "След. страница"
+        "Следующая страница"
       ],
       "No": [
         "Нет"
@@ -663,7 +675,7 @@
         "Порекомендуйте другу"
       ],
       "Refine it": [
-        "Усовершенствовать его"
+        "Уточните его"
       ],
       "refresh the page": [
         "обновить страницу"
@@ -676,6 +688,12 @@
       ],
       "Remove ${ attachmentName }": [
         "Удалить ${ attachmentName }"
+      ],
+      "Remove encryption": [
+        "Удалить шифрование"
+      ],
+      "Remove expiration time": [
+        "Удалить время истечения срока действия"
       ],
       "Remove this label": [
         "Удалить этот ярлык"
@@ -705,13 +723,13 @@
         "Возобновить"
       ],
       "Revert to original display": [
-        "Возврат к исходному отображению"
+        "Вернуться к исходному отображению"
       ],
       "Save": [
         "Сохранить"
       ],
       "Saving${ _ellipsis }": [
-        "Сохраняем ${ _ellipsis }"
+        "Сохранение ${ _ellipsis }"
       ],
       "Schedule message": [
         "Запланировать сообщение"
@@ -755,6 +773,9 @@
       "Set as default": [
         "Установить по умолчанию"
       ],
+      "Set encryption": [
+        "Установить шифрование"
+      ],
       "Set expiration time": [
         "Установите время истечения срока действия"
       ],
@@ -762,7 +783,7 @@
         "Установить фразу для восстановления"
       ],
       "Share via link": [
-        "Доступ по ссылке"
+        "Поделиться по ссылке"
       ],
       "Sharing options": [
         "Параметры совместного доступа"
@@ -774,7 +795,7 @@
         "Показать расширенные настройки PGP"
       ],
       "Show attachment details": [
-        "Показать сведения о вложении"
+        "Показать подробности вложения"
       ],
       "Show details": [
         "Показать подробности"
@@ -786,7 +807,7 @@
         "Показать ярлыки"
       ],
       "Show less": [
-        "Меньше"
+        "Показать меньше"
       ],
       "Show less search options": [
         "Показать меньше настроек поиска"
@@ -801,7 +822,7 @@
         "Показать предпросмотр"
       ],
       "Sign out": [
-        "Выйти из аккаунта"
+        "Выйти"
       ],
       "Signing out": [
         "Выход"
@@ -813,7 +834,7 @@
         "Пропустить"
       ],
       "Star": [
-        "Пометить звездочкой"
+        "Важное"
       ],
       "Start import": [
         "Начать импорт"
@@ -849,7 +870,7 @@
         "Доверять ключам"
       ],
       "Trust Public Key": [
-        "Доверять этому публичному ключу"
+        "Доверять публичному ключу"
       ],
       "Try again": [
         "Попробовать снова"
@@ -876,16 +897,13 @@
         "Ненумерованный список"
       ],
       "Unstar": [
-        "Убрать звездочку"
+        "Неважное"
       ],
       "Unsubscribe": [
         "Отписаться"
       ],
-      "Unsubscribe from mailing list": [
-        "Отписаться от списка рассылки"
-      ],
       "Unsubscribing": [
-        "Подписка отменяется"
+        "Отменить подписку"
       ],
       "Untrust": [
         "Не доверять"
@@ -900,7 +918,7 @@
         "Обновить фразу для восстановления"
       ],
       "Upgrade": [
-        "Повысить"
+        "Улучшить"
       ],
       "Upgrade now": [
         "Улучшить сейчас"
@@ -936,7 +954,7 @@
         "Просмотреть контакт"
       ],
       "View headers": [
-        "Просмотр заголовков"
+        "Просмотреть заголовки"
       ],
       "View HTML": [
         "Просмотр HTML"
@@ -960,7 +978,7 @@
         "Просмотр обработанного HTML"
       ],
       "Why not?": [
-        "Why not?"
+        "Почему нет?"
       ],
       "Yes": [
         "Да"
@@ -1675,7 +1693,7 @@
         "Язык"
       ],
       "Logo": [
-        "Лого"
+        "Логотип"
       ],
       "Member": [
         "Участник"
@@ -2772,7 +2790,7 @@
         "Основной секретный ключ для адреса не найден"
       ],
       "Attachments are limited to 25 MB": [
-        "Размер вложений ограничен 25 МБайтами"
+        "Вложения ограничены 25 МБ"
       ],
       "Authentication canceled.": [
         "Аутентификация отменена."
@@ -2886,7 +2904,7 @@
         "Недопустимое имя"
       ],
       "Invalid public key file": [
-        "Неправильный файл публичного ключа"
+        "Неверный файл открытого ключа"
       ],
       "Invalid verification code": [
         "Неверный код подтверждения"
@@ -2894,8 +2912,8 @@
       "Label name cannot be empty.": [
         "Название ярлыка не может быть пустым."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Превышено максимальное количество вложений (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Превышено максимальное количество вложений (${ attachmentsCountLimit })"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Объедините по крайней мере ${ calendarToFixCount } календарь с существующим календарем Proton",
@@ -2924,17 +2942,11 @@
       "No data to import": [
         "Нет данных для импорта"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Ни один их полученных ключей внутреннего пользователя не годен для отправки"
-      ],
       "No keys retrieved for internal user": [
         "Нет загруженных ключей для внутреннего пользователя"
       ],
       "No valid address found": [
         "Не найдено действительных адресов"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Нет действующих ключей для внутреннего пользователя"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Ни один из полученных из WKD ключей пользователя не годен для отправки"
@@ -2981,8 +2993,14 @@
       "Primary address key is not decrypted.": [
         "Основной ключ адреса не расшифрован."
       ],
+      "Primary key is not valid for sending": [
+        "Основной ключ не действителен для отправки"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Основной ключ, полученный для внутреннего пользователя, действителен для отправки"
+      ],
       "Public key could not be trusted": [
-        "Нельзя сделать публичный ключ доверенным"
+        "Открытый ключ не может быть доверенным"
       ],
       "re-activate the previous key": [
         "реактивировать предыдущий ключ"
@@ -3027,7 +3045,7 @@
         "Что-то пошло не так. Пожалуйста ${ refresh } чтобы продолжить. Если вы все еще видите сообщение об ошибке, пожалуйста свяжитесь нашей ${ supportTeam }."
       ],
       "Sorry, Proton can't decrypt your message. Please check that all your keys are active.": [
-        "К сожалению, Proton не смог расшифровать ваше сообщение. Пожалуйста, убедитесь, что все ваши ключи активны."
+        "Извините, Proton не может расшифровать ваше сообщение. Убедитесь, что все ваши ключи активны."
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "Не удаётся расшифровать вложение.\nЕсли у вас есть подходящий секретный ключ, вы сможете расшифровать\nфайл при помощи специальной программы, например GnuPG.",
@@ -3035,11 +3053,17 @@
         "Не удаётся расшифровать некоторые вложения.\nЕсли у вас есть подходящий секретный ключ, вы сможете расшифровать\nфайлы при помощи специальной программы, например GnuPG.",
         "Не удаётся расшифровать некоторые вложения.\nЕсли у вас есть подходящий секретный ключ, вы сможете расшифровать\nфайлы при помощи специальной программы, например GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Недопустимое название папки. Пожалуйста, выберите другое название."
+      ],
       "The folder name is too long. Please choose a different name.": [
-        "Имя папки слишком длинное. Пожалуйста, выберите другое имя."
+        "Название папки слишком длинное. Пожалуйста, выберите другое название."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Не удалось извлечь свойства ключа для ${ emailAddress }"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Недопустимое название ярлыка. Пожалуйста, выберите другое название."
       ],
       "The label name is too long. Please choose a different name.": [
         "Название ярлыка слишком длинное. Пожалуйста, выберите другое название."
@@ -3066,7 +3090,7 @@
         "Минимальная длина для этого поля: ${ minimumLength }."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Это имя папки недоступно. Пожалуйста, выберите другое название."
+        "Это название папки недоступно. Пожалуйста, выберите другое название."
       ],
       "This label name is not available. Please choose a different name.": [
         "Это название ярлыка недоступно. Пожалуйста, выберите другое название."
@@ -3305,7 +3329,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "Поставьте оценку"
+        "Оценка обязательна"
       ]
     },
     "Error sending calendar invitation": {
@@ -3612,7 +3636,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "Капча"
+        "CAPTCHA"
       ],
       "Email": [
         "Эл. почта"
@@ -3746,29 +3770,26 @@
         "${ calendarsToBeMergedCount } объединенных календарей",
         "${ calendarsToBeMergedCount } объединенный(х) календарь(я,ей)"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт содержит несколько адресов электронной почты.",
+        "${ contactCount } контакта содержит несколько адресов электронной почты.",
+        "${ contactCount } контактов содержит несколько адресов электронной почты.",
+        "${ contactCount } контакта содержит несколько адресов электронной почты."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } адресат",
         "${ contactEmailsLength } адресата",
         "${ contactEmailsLength } адресатов",
         "${ contactEmailsLength } адресатов"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "У контакта ${ contactName } несколько адресов электронной почты. Пожалуйста, выберите адрес или адреса электронной почты, чтобы добавить в ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "У контакта ${ contactName } несколько адресов электронной почты. Пожалуйста, выберите адрес или адреса электронной почты, чтобы добавить в эту группу."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } содержит несколько адресов электронной почты."
       ],
       "${ contactsCount } contact found": [
         "Найден ${ contactsCount } контакт",
         "Найдены ${ contactsCount } контакта",
         "Найдено ${ contactsCount } контактов",
         "Найдено ${ contactsCount } контактов"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "У контактов ${ contactsEnumeration } несколько адресов электронной почты. Пожалуйста, выберите адрес или адреса электронной почты, чтобы добавить в ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "У контактов ${ contactsEnumeration } несколько адресов электронной почты. Пожалуйста, выберите адрес или адреса электронной почты, чтобы добавить в эту группу."
       ],
       "${ count } unread message": [
         "${ count } непрочитанное сообщение",
@@ -3796,9 +3817,6 @@
         "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщения.",
         "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений.",
         "Не удалось переместить ${ messagesNotAuthorizedToMove } сообщений."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } и ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } почтовый трекер заблокирован",
@@ -3920,8 +3938,8 @@
       "(No Recipient)": [
         "(Нет получателей)"
       ],
-      "5 email addresses": [
-        "5 адресов электронной почты"
+      "10 email addresses": [
+        "10 адресов электронной почты"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза восстановления - это один из самых надежных способов защиты доступа к вашему аккаунту. С ее помощью можно получить доступ к аккаунту и восстановить зашифрованные данные, если вы вдруг забудете пароль."
@@ -3933,7 +3951,7 @@
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
       "Activation in progress": [
-        "Осуществляется активация"
+        "Выполняется активация"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
         "Добавьте ${ addressToCreate } в свой аккаунт бесплатно только в течение ограниченного времени."
@@ -4011,7 +4029,7 @@
         "Вы уверены, что хотите безвозвратно удалить эту цепочку писем?"
       ],
       "Are you sure you want to permanently delete this draft?": [
-        "Эту операцию нельзя отменить. Вы уверены, что хотите удалить этот черновик?"
+        "Вы уверены, что хотите безвозвратно удалить этот черновик?"
       ],
       "Are you sure you want to permanently delete this message?": [
         "Вы уверены, что хотите безвозвратно удалить это сообщение?"
@@ -4038,7 +4056,7 @@
         "Не помните ваш пароль? Мы можем помочь вам удалить данные зашифрованные этим ключом для всех контактов и таким образом убрать это оповещение."
       ],
       "Center": [
-        "Центрировать"
+        "Центр"
       ],
       "Checking contact ${ progress } of ${ max }...": [
         "Проверка контакта ${ progress } из ${ max }..."
@@ -4068,7 +4086,7 @@
         "Продолжить с ${ planName }"
       ],
       "Copied to clipboard": [
-        "Скопирован в буфер обмена"
+        "Скопировано в буфер обмена"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
         "Создать ${ calendarsToBeCreated } новый календарь",
@@ -4136,6 +4154,9 @@
       "Do you want to re-sign the contact details?": [
         "Вы хотите повторно подписать контакт?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Не забудьте сообщить свой пароль получателю"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Скачайте наше мобильное приложение из предпочитаемого магазина, чтобы общаться безопасно, где бы вы ни были."
       ],
@@ -4152,7 +4173,7 @@
         "Черновик сохранен."
       ],
       "Drop a file here to upload": [
-        "Для загрузки файла перетащите его сюда"
+        "Перетащите сюда файл для загрузки"
       ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
@@ -4160,8 +4181,17 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлён"
       ],
+      "Edit encryption": [
+        "Изменить шифрование"
+      ],
+      "Edit expiration time": [
+        "Изменить срок действия"
+      ],
+      "Edit link": [
+        "Изменить ссылку"
+      ],
       "Email address": [
-        "Адрес эл. почты"
+        "Адрес электронной почты"
       ],
       "Email tracker protection is disabled": [
         "Защита от трекеров электронной почты отключена"
@@ -4184,11 +4214,8 @@
         "встроенные изображения",
         "встроенные изображения"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Шифровать для пользователей вне ${ BRAND_NAME }"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Срок действия зашифрованных сообщений для получателей вне ${ BRAND_NAME }, истекает через 28 дней, если не установлен более короткий срок действия."
+      "Encrypt message": [
+        "Зашифровать сообщение"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введите код подтверждения, отправленный на ${ destinationText }."
@@ -4208,9 +4235,6 @@
       "Expiration time": [
         "Срок действия"
       ],
-      "Expiration Time": [
-        "Срок действия"
-      ],
       "Expires": [
         "Истекает"
       ],
@@ -4221,10 +4245,13 @@
         "Истекает через ${ formattedDelayShort }"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        "Истекает через меньше, чем ${ formattedDelayShort }"
+        "Истекает меньше, чем через ${ formattedDelayShort }"
       ],
       "Expires soon": [
         "Скоро истекает"
+      ],
+      "Expiring message": [
+        "Сообщение с истекающим сроком действия"
       ],
       "file attached": [
         "файл прикреплён",
@@ -4238,6 +4265,9 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
       ],
+      "Folder": [
+        "Папка"
+      ],
       "For increased security, activate 2FA.": [
         "Для повышения безопасности активируйте 2FA."
       ],
@@ -4245,7 +4275,7 @@
         "Для сообщений новее, чем ${ oldestDate }"
       ],
       "Free up some space or add more storage space.": [
-        "Освободите место или добавьте больше места."
+        "Освободите место или добавьте больше места для хранения."
       ],
       "Free up some space or contact your administrator.": [
         "Освободите место или свяжитесь с вашим администратором."
@@ -4277,17 +4307,20 @@
         "Часов",
         "Час(а, ов)"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Я отправляю это сообщение пользователю, не являющемуся пользователем ProtonMail."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Если у вас возникли проблемы с созданием аккаунта, пожалуйста, запросите приглашение и мы ответим в течение одного рабочего дня."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Если вы отправляете это сообщение пользователю вне ${ MAIL_APP_NAME }, пожалуйста, не забудьте установить пароль для вашего сообщения."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Если вы считаете, что это ошибка, пожалуйста, свяжитесь с нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке \"Входящие\" — проверьте, не попало ли оно в папку «спам»."
+      ],
+      "Image description": [
+        "Описание изображения"
       ],
       "Image URL": [
         "URL изображения"
@@ -4332,10 +4365,10 @@
         "Подключение к Интернету потеряно"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
-        "Интернет-соединение потеряно. Пожалуйста, проверьте возможность подключения устройства."
+        "Интернет-соединение потеряно. Пожалуйста, проверьте подключение вашего устройства."
       ],
       "Internet connection restored.": [
-        "Соединение с интернет восстановлено."
+        "Интернет-соединение восстановлено."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Просто подтвердите свой выбор, а остальное мы сделаем сами."
@@ -4350,7 +4383,7 @@
         "Узнать больше"
       ],
       "learn more": [
-        "подробнее"
+        "узнать больше"
       ],
       "Left to Right": [
         "Слева направо"
@@ -4365,16 +4398,16 @@
         "Загрузка ${ appName }"
       ],
       "Loading message": [
-        "Скачивание сообщения"
+        "Загрузка сообщения"
       ],
       "Loading preview": [
         "Загрузка предпросмотра"
       ],
       "Manage your folders": [
-        "Управлять Вашими папками"
+        "Управлять вашими папками"
       ],
       "Manage your labels": [
-        "Управлять Вашими ярлыками"
+        "Управлять вашими ярлыками"
       ],
       "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
         "Превышено максимальное количество вложений (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
@@ -4457,6 +4490,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Трекеры не найдены, но некоторые изображения не могут быть загружены при использовании защиты от отслеживания"
       ],
+      "non-Proton Mail": [
+        "не Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
       ],
@@ -4469,6 +4505,9 @@
       "of": [
         "из"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Один или несколько ваших доверенных ключей были отмечены их владельцем как «раскрытые». Мы рекомендуем вам «отозвать доверие» у этих ключей."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
       ],
@@ -4476,7 +4515,7 @@
         "Другие возможности"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, что оно является законным."
+        "Наша система отметила это сообщение как попытку фишинга. Пожалуйста, проверьте, что оно является легитимным."
       ],
       "per month.": [
         "в месяц."
@@ -4497,7 +4536,7 @@
         "Пожалуйста, добавьте хотя бы одного получателя."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Пожалуйста, храните ее в безопасности. Он понадобится вам для доступа к вашей учетной записи и расшифровки данных в случае сброса пароля."
+        "Пожалуйста, храните её в безопасности. Она понадобится вам для доступа к вашей учетной записи и расшифровки данных в случае сброса пароля."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -4511,6 +4550,15 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Пожалуйста, выберите тип ссылки, которую вы хотите добавить и заполните все поля."
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу.",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу .",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп .",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группы."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Пожалуйста, подождите, пока мы ищем контакты, которые можно повторно подписать с помощью основного ключа шифрования."
       ],
@@ -4518,7 +4566,7 @@
         "Пожалуйста, подождите, пока мы ищем контакты с зашифрованными неактивным ключом данными."
       ],
       "Preview": [
-        "Предварительный просмотр"
+        "Предпросмотр"
       ],
       "Primary": [
         "Основной"
@@ -4530,16 +4578,16 @@
         "Приоритетная поддержка"
       ],
       "Proton doesn't make money by abusing privacy.": [
-        "Протон не делает деньги на нарушении конфиденциальности."
+        "Proton не зарабатывает на нарушении конфиденциальности."
       ],
       "Recipient: ": [
         "Получатель: "
       ],
       "Recovery phrase copied to clipboard": [
-        "Фраза для восстановления доступа к аккаунту скопирована в буфер обмена"
+        "Фраза для восстановления скопирована в буфер обмена"
       ],
       "Recovery phrase downloaded": [
-        "Фраза восстановления загружена"
+        "Фраза для восстановления загружена"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
@@ -4578,7 +4626,7 @@
         "Поиск занимает слишком много времени? ${ dropdownButton } или ${ toggleOffButton } из этой поисковой сессии."
       ],
       "Seems like you are all caught up for now": [
-        "Похоже, делать тут пока нечего."
+        "Похоже, делать тут пока нечего"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберите формат писем, который вы хотите использовать по умолчанию для отправки сообщений этим адресатам."
@@ -4588,6 +4636,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Выберите, какие календари необходимо импортировать. Для каждого импортированного календаря будет создан новый календарь, не превышающий лимит в 20 календарей."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Отправьте зашифрованное, защищенное паролем сообщение на адрес электронной почты ${ boldText }."
       ],
       "Sending": [
         "Отправка"
@@ -4620,7 +4671,7 @@
         "Показать исходное сообщение"
       ],
       "Sorry, this message does not exist or has already expired.": [
-        "К сожалению, это сообщение не существует, либо уже исчезло."
+        "К сожалению, это сообщение не существует, либо срок его действия уже истёк."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Место для хранения совместно используется ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } и ${ DRIVE_APP_NAME }."
@@ -4632,7 +4683,7 @@
         "Тема"
       ],
       "Subject is end-to-end encrypted": [
-        "Поле \"Тема\" зашифровано сквозным методом"
+        "Тема зашифрована сквозным шифрованием"
       ],
       "Subject:": [
         "Тема:"
@@ -4671,7 +4722,7 @@
         "Первоначальный отправитель этого сообщения больше не действителен. Ваше сообщение будет отправлено с адреса по умолчанию ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
-        "Отправитель запросил квитанцию о прочтении."
+        "Отправитель запросил уведомление о прочтении."
       ],
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Проверка ${ contactName } не удалась: контакт подписан неправильно.\nЭто может быть результатом сброса пароля.\nВы должны повторно подписать контакт, чтобы отправить сообщение на ${ contactAddress } или изменить его."
@@ -4794,7 +4845,7 @@
         "Чтобы использовать проверку адреса, вы должны доверять одному или нескольким из доступных публичных ключей, включая тот, который вы хотите использовать для отправки. Это предотвращает подделку ключей шифрования."
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "Слишком много сообщений ожидают отправки. Пожалуйста, дождитесь пока не будет отправлено другое сообщение, чтобы запланировать это."
+        "Слишком много сообщений, ожидающих отправки. Пожалуйста, подождите, пока не будет отправлено другое сообщение, чтобы запланировать это."
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "Выключить поиск контактов. Активация будет прервана."
@@ -4851,13 +4902,13 @@
         "Загрузить картинку"
       ],
       "URL link": [
-        "Ссылка на URL"
+        "URL ссылка"
       ],
       "URL: ${ unsubscribeMethods.HttpClient }": [
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ calendarAppName } to keep your agenda private.": [
-        "Используйте ${ calendarAppName }, чтобы сохранить конфиденциальность своей повестки дня."
+        "Используйте ${ calendarAppName }, чтобы сохранить свою повестку дня в тайне."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Use keyboard shortcuts to manage your email faster."
@@ -4869,7 +4920,7 @@
         "Посетите наш магазин, чтобы приобрести товары Proton."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Мы приносим свои извинения. Возможно, это была ошибка с нашей стороны. Можете ли вы подтвердить, что вы хотите отметить это письмо как законное?"
+        "Мы приносим свои извинения. Возможно, это была ошибка с нашей стороны. Можете ли вы подтвердить, что вы хотите отметить это письмо как легитимное?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Мы не можем проверить доверенные ключи отправителя."
@@ -4879,6 +4930,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Мы отправим новый код подтверждения на ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Мы переезжаем! Присоединяйтесь к нам на нашем новом сайте: ${ link }."
       ],
       "Web URL": [
         "Ссылка"
@@ -4935,7 +4989,7 @@
         "Здесь нет сообщений"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "У вас ${ totalLabel } в папке «Входящие»."
+        "У вас ${ totalLabel } во Входящих."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
         "У вас ${ unreadsLabel } во Входящих."
@@ -5018,6 +5072,27 @@
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "Ваше сообщение будет удалено из папки \"Входящие\" получателя и из вашей папки \"Отправленные\" ${ dateString } в ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "Ваше сообщение будет удалено из папки \"Входящие\" получателя и из папки \"Отправленные\" сегодня в ${ formattedTime }."
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "Ваше сообщение будет удалено из папки \"Входящие\" получателя и из вашей папки \"Отправленные\" завтра в ${ formattedTime }"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Срок действия вашего сообщения истекает через ${ numberOfDays } день.",
+        "Срок действия вашего сообщения истекает через ${ numberOfDays } дня.",
+        "Срок действия вашего сообщения истекает через ${ numberOfDays } дней.",
+        "Срок действия вашего сообщения истекает через ${ numberOfDays } дня."
+      ],
+      "Your message will expire today.": [
+        "Срок действия вашего сообщения истекает сегодня."
+      ],
+      "Your message will expire tomorrow.": [
+        "Срок действия вашего сообщения истекает завтра."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
       ],
@@ -5025,10 +5100,10 @@
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
       ],
       "Your recovery phrase": [
-        "Ваша фраза для восстановления доступа к аккаунту"
+        "Ваша фраза для восстановления"
       ],
       "Your recovery phrase is a series of 12 words in a specific order.": [
-        "Ваша фраза для восстановления доступа к аккаунту – это набор из 12 слов в определённом порядке."
+        "Ваша фраза для восстановления – это набор из 12 слов в определённом порядке."
       ]
     },
     "info": {
@@ -5047,8 +5122,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Раскрытый"
+      ],
       "Expired": [
         "Срок действия истек"
+      ],
+      "Obsolete": [
+        "Устаревший"
       ],
       "Primary": [
         "Основной"
@@ -5058,9 +5139,6 @@
       ],
       "Trusted": [
         "Надёжный"
-      ],
-      "Verification only": [
-        "Только для проверки"
       ],
       "WKD": [
         "WKD"
@@ -5392,7 +5470,7 @@
         "Больше не спрашивать"
       ],
       "Email": [
-        "Эл. почта"
+        "Электронная почта"
       ],
       "Email address": [
         "Адрес эл. почты"
@@ -5499,9 +5577,6 @@
       "Mark as": [
         "Отметить как"
       ],
-      "Message password": [
-        "Пароль сообщения"
-      ],
       "Move to": [
         "Переместить в"
       ],
@@ -5566,7 +5641,7 @@
         "Фраза для восстановления доступа к аккаунту"
       ],
       "Region": [
-        "Область"
+        "Регион/область"
       ],
       "Reveal password": [
         "Показать пароль"
@@ -5599,7 +5674,7 @@
         "Со звездочкой"
       ],
       "Statement": [
-        "Отчет"
+        "Выражение"
       ],
       "Street address": [
         "Адрес"
@@ -5641,7 +5716,7 @@
         "Скрытые получатели"
       ],
       "Upload picture": [
-        "Загрузить картинку"
+        "Загрузить изображение"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         "Имя пользователя или адрес ${ MAIL_APP_NAME }"
@@ -5688,7 +5763,7 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Максимизированный"
+        "Развёрнутый"
       ],
       "Normal": [
         "Обычный"
@@ -5865,7 +5940,7 @@
         "Корзина"
       ],
       "Upgrade": [
-        "Повысить"
+        "Улучшить"
       ],
       "Upgrade account": [
         "Повысить учётную запись"
@@ -5902,7 +5977,7 @@
     },
     "Loading info": {
       "Almost there": [
-        "Почти там"
+        "Почти готово"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
         "Количество созданных календарей: ${ createdCalendars } из ${ calendarsToBeCreated }"
@@ -5959,13 +6034,13 @@
     },
     "Message": {
       "Fw:": [
-        "Fw:"
+        "Переслано:"
       ],
       "On ${ date }, ${ name } ${ address } wrote:": [
         "${ date }, ${ name } ${ address } написал(а):"
       ],
       "Re:": [
-        "Re:"
+        "Ответ:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Ваша бесплатный пробный период закончился. Доступ к вашему аккаунту скоро будет отключен. ${ action }"
@@ -6163,7 +6238,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Мы освежили внешний вид Proton.${ br } У наших сервисов общая миссия — создать Интернет, где конфиденциальность на первом месте."
+        "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
       ],
       "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
         "Мы обновили внешний вид Proton и сделали его более универсальным. Нам интересно услышать ваше мнение!"
@@ -6193,7 +6268,7 @@
         "Оставить отзыв"
       ],
       "Updated Proton, unified protection": [
-        "Proton: обновления и комплексная защита"
+        "Обновленный Proton, комплексная защита"
       ]
     },
     "Notification": {
@@ -6316,6 +6391,17 @@
         "Ключ не может быть использован для шифрования"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } пометил этот ключ как раскрытый. Этот ключ нельзя использовать ни для шифрования, ни для проверки подписи."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } пометил этот ключ как устаревший. Этот ключ можно использовать только для проверки подписи."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Мы рекомендуем вам \"отозвать доверие\" у этого ключа."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
@@ -6332,7 +6418,7 @@
         "Например, "
       ],
       "Email address": [
-        "Адрес эл. почты"
+        "Адреса электронной почты"
       ],
       "End date": [
         "Дата окончания"
@@ -6392,7 +6478,7 @@
         "Выбрать"
       ],
       "Start date": [
-        "Начиная с"
+        "Дата начала"
       ],
       "Start typing an email address": [
         "Начните вводить адрес эл. почты"
@@ -6702,11 +6788,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Вы отменили подписку на список рассылки"
+      "This message is from a mailing list.": [
+        "Это сообщение из списка рассылки."
       ],
-      "Unsubscribing from mailing list...": [
-        "Отменяется подписка на список рассылки..."
+      "Unsubscribed": [
+        "Подписка отменена"
       ]
     },
     "Step in filter modal": {
@@ -6978,6 +7064,9 @@
         "Переместить сообщения ${ selectionCount }",
         "Переместить сообщения ${ selectionCount }"
       ],
+      "Password copied to clipboard": [
+        "Пароль скопирован в буфер обмена"
+      ],
       "Phishing reported": [
         "Отчёт о фишинге отправлен"
       ],
@@ -7063,6 +7152,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Представляем обновленный Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Больше сервисов, одна миссия по обеспечению конфиденциальности."
+      ],
       "Settings": [
         "Настройки"
       ]
@@ -7317,9 +7412,6 @@
       "Enable message content search": [
         "Включить поиск содержимого сообщений"
       ],
-      "Encryption": [
-        "Шифрование"
-      ],
       "Enter your password": [
         "Введите свой пароль"
       ],
@@ -7332,11 +7424,14 @@
       "Exporting contacts": [
         "Экспортирование контактов"
       ],
+      "External encryption": [
+        "Внешнее шифрование"
+      ],
       "Feedback": [
         "Отзыв"
       ],
       "Filter on": [
-        "Вкл фильтр"
+        "Фильтр включен"
       ],
       "Forward": [
         "Переслать"
@@ -7375,16 +7470,16 @@
         "Загрузить внешнее содержимое"
       ],
       "Mailbox density": [
-        "Плотность отображения элементов для почты"
+        "Плотность почтового ящика"
       ],
       "Mailbox layout": [
-        "Схема отображения для почты"
+        "Макет почтового ящика"
       ],
       "Mark as unread": [
         "Отметить как непрочитанное"
       ],
       "Mark email as legitimate": [
-        "Пометить эл. письмо как законное"
+        "Пометить электронное письмо как легитимное"
       ],
       "Merge contacts": [
         "Объединение контактов"
@@ -7393,7 +7488,7 @@
         "Идет объединение контактов"
       ],
       "Message details": [
-        "Информация о сообщении"
+        "Подробности сообщения"
       ],
       "Message list": [
         "Список сообщений"
@@ -7411,7 +7506,7 @@
         "Еще варианты выбора"
       ],
       "Move to": [
-        "Переместить"
+        "Переместить в"
       ],
       "Move to inbox": [
         "Переместить во Входящие"
@@ -7447,7 +7542,7 @@
         "Открыть меню настроек"
       ],
       "Other information": [
-        "Доп. информация"
+        "Дополнительная информация"
       ],
       "Other names": [
         "Другие названия"
@@ -7525,7 +7620,7 @@
         "Ошибка отправки"
       ],
       "Sending notice": [
-        "Предупреждение"
+        "Примечание об отправке"
       ],
       "Sending original message": [
         "Отправление исходного сообщения"
@@ -7564,7 +7659,7 @@
         "Доверять закрепленным ключам?"
       ],
       "Trust public key?": [
-        "Доверять этому открытому ключу?"
+        "Доверять открытому ключу?"
       ],
       "Unsubscribe": [
         "Отписаться"

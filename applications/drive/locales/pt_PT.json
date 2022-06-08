@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo correu mal, por favor ${ refresh } para continuar. Se ainda vir esta mensagem de erro, por favor, contacte a nossa ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "O nome da pasta é inválido. Por favor, escolha um nome diferente."
+      ],
       "The folder name is too long. Please choose a different name.": [
         ""
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "O nome da etiqueta é inválido. Por favor, escolha um nome diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         ""
@@ -2057,16 +2063,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bytes"
       ],
       "Gigabytes": [
-        ""
+        "Gigabytes"
       ],
       "Kilobytes": [
-        ""
+        "Kilobytes"
       ],
       "Megabytes": [
-        ""
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2225,25 +2231,20 @@
         "",
         ""
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } contém vários endereços de email. Por favor, seleccione qual ou quais os endereços a adicionar a ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } contém vários endereços de email. Por favor, seleccione qual ou quais os endereços a adicionar a este grupo."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contém vários endereços de email. Por favor, seleccione qual ou quais os endereços a adicionar a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contém vários endereços de email. Por favor, seleccione qual ou quais os endereços a adicionar a este grupo."
       ],
       "${ doneCount } finished": [
         "",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } e ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "",
@@ -2309,8 +2307,8 @@
         "",
         ""
       ],
-      "5 email addresses": [
-        ""
+      "10 email addresses": [
+        "10 endereços de e-mail"
       ],
       "A number will be added to the filename": [
         "Será adicionado um número ao nome do ficheiro"
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         ""
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2709,6 +2710,13 @@
         "Por favor, note que este processo pode levar algum tempo dependendo do tamanho do seu livro de endereços."
       ],
       "Please select the folders you would like to import:": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
         ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
@@ -2925,6 +2933,9 @@
       "We'll send a new verification code to ${ strong }": [
         ""
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Estamos a mover! Junte-se a nós no nosso novo site: ${ link }."
+      ],
       "Week": [
         "Semana"
       ],
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Expirada"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Primária"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Confiada"
-      ],
-      "Verification only": [
-        "Só verificação"
       ],
       "WKD": [
         "WKD"
@@ -3540,6 +3554,21 @@
         ""
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         ""
@@ -3810,6 +3839,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "A chave não pode ser usada para encriptar"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4089,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Apresentando o Proton atualizado."
+      ],
+      "More services, one privacy mission.": [
+        "Mais serviços, uma missão: privacidade."
+      ],
       "Settings": [
         "Definições"
       ]

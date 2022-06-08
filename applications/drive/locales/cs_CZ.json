@@ -132,7 +132,7 @@
         "Pokračovat"
       ],
       "Continue transfers": [
-        ""
+        "Pokračovat v přenosech"
       ],
       "Continue with Google": [
         "Pokračovat pomocí účtu Google"
@@ -228,7 +228,7 @@
         "povolit oznámení na ploše"
       ],
       "Enable drive search": [
-        ""
+        "Povolit hledání na disku"
       ],
       "Expand": [
         "Rozbalit"
@@ -501,7 +501,7 @@
         "Zrušit sdílení"
       ],
       "Stop transfers": [
-        ""
+        "Zastavit přenosy"
       ],
       "Submit": [
         "Odeslat"
@@ -1789,7 +1789,7 @@
         "Zadejte 6 číslic"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        "Soubor \"${ item.name }\" nelze nahrát kvůli chybě \"${ error }\""
+        "Soubor „${ item.name }“ nelze nahrát kvůli chybě „${ error }“"
       ],
       "File \"${ name }\" is already downloading": [
         "Soubor \"${ name }\" se již stahuje"
@@ -1914,8 +1914,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Něco se pokazilo, pro pokračování prosím ${ refresh }. Pokud se tato chybová zpráva stále zobrazuje, kontaktujte prosím náš ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Název složky je neplatný. Zvolte prosím jiný název."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte jiný název."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Název štítku je neplatný. Zvolte prosím jiný název."
       ],
       "The label name is too long. Please choose a different name.": [
         "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
@@ -2269,29 +2275,26 @@
         "${ canceledCount } zrušených",
         "${ canceledCount } zrušených"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontakt obsahuje více e-mailových adres.",
+        "${ contactCount } kontakty obsahují více e-mailových adres.",
+        "${ contactCount } kontaktů obsahuje více e-mailových adres.",
+        "${ contactCount } kontaktů obsahuje více e-mailových adres."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } člen",
         "${ contactEmailsLength } členové",
         "${ contactEmailsLength } členů",
         "${ contactEmailsLength } členů"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidáte do skupiny."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } obsahuje více e-mailových adres."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt nalezen",
         "${ contactsCount } kontakty nalezeny",
         "${ contactsCount } kontaktů nalezeno",
         "${ contactsCount } kontaktů nalezeno"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte která e-mailová adresa nebo adresy přidat do ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } obsahuje soubor adres e-mailů. Prosím vyberte e-mailovou adresu nebo adresy, které přidáte do skupiny."
       ],
       "${ doneCount } finished": [
         "${ doneCount } hotovo",
@@ -2322,9 +2325,6 @@
         "${ groupCounts } skupiny nalezeny",
         "${ groupCounts } skupin nalezeno",
         "${ groupCounts } skupin nalezeno"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } a ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } skupina kontaktů",
@@ -2383,8 +2383,8 @@
         "(${ memberCount } členů)",
         "(${ memberCount } členů)"
       ],
-      "5 email addresses": [
-        "5 e-mailových adres"
+      "10 email addresses": [
+        "10 e-mailových adres"
       ],
       "A number will be added to the filename": [
         "K názvu souboru bude přidáno číslo"
@@ -2522,13 +2522,13 @@
         "Odstranit disků"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
       ],
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
-        ""
+        "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ emailAddress }."
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "Stahování ${ downloadFileName } bude zrušeno"
       ],
       "Downloaded": [
         "Stažené"
@@ -2537,10 +2537,10 @@
         "Stahování"
       ],
       "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
+        "Stahování souborů ${ esProgress } z ${ totalProgressToShow }"
       ],
       "Drag and drop a file here or choose to upload.": [
-        "Zachyťte a přetáhněte soubor sem nebo vyberte soubor nahrát."
+        "Uchopte a přetáhněte soubor sem, nebo vyberte soubor pro nahrání."
       ],
       "Drop the file here to upload": [
         "Přetažením sem, nahrajte soubor"
@@ -2549,10 +2549,10 @@
         "Duplicitní klíč byl aktualizován"
       ],
       "Enable drive search": [
-        ""
+        "Povolit hledání na disku"
       ],
       "Encrypted search is here": [
-        ""
+        "Zašifrované vyhledávání je tady"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Zadejte ověřovací kód, který byl odeslán na ${ destinationText }."
@@ -2582,10 +2582,10 @@
         "Soubor \"${ name }\" byl smazán během stahování"
       ],
       "File is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Souboru chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál ${ fileName }."
       ],
       "File is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Souboru chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
       "File will not be uploaded": [
         "Soubor nebude nahrán"
@@ -2600,10 +2600,10 @@
         "Obsah složky bude sloučen do jedné složky"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Složce chybí podpis. Nemohli jsme ověřit, že ${ emailAddress } nahrál ${ fileName }."
       ],
       "Folder is missing signature. We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Složce chybí podpis. Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
       "Folder will not be uploaded": [
         "Složka nebude nahrána"
@@ -2759,7 +2759,10 @@
         "z"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        ""
+        "Jedna ze zašifrovaných jednotek je uzamčená. Je to pravděpodobně způsobeno nedávným resetem hesla."
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Jeden nebo více důvěryhodných klíčů byl vlastníkem označen jako \"kompromitovaný\". Doporučujeme, abyste tyto klíče \"zrušili\"."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2796,6 +2799,15 @@
       ],
       "Please select the folders you would like to import:": [
         "Prosím vyberte složky, které chcete importovat:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupiny.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin.",
+        "Vyberte adresu, nebo adresy, které chcete přidat do ${ groupCount } skupin."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Vyberte adresu, nebo adresy, které chcete přidat do skupiny ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Prosím vyčkejte jakmile vyhledáme kontakty, které mohou být znovu přihlášeny se základním šifrovacím klíčem."
@@ -2861,7 +2873,7 @@
         "Sdílejte soubory přes s odkazovými řádky"
       ],
       "Signature check will be ignored": [
-        ""
+        "Kontrola podpisu bude ignorována"
       ],
       "Signature issue": [
         "Problém s podpisem"
@@ -2882,13 +2894,13 @@
         "tým podpory"
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že mu důvěřujete."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Před exportem kontaktů musí aplikace kontakty lokálně dešifrovat. Na konci procesu bude vygenerován soubor VCF, který si budete moci stáhnout."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        ""
+        "S následujícími položkami mohlo dojít k manipulaci : ${ items }. Otevřete pouze v případě, že jim důvěřujete."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
@@ -2984,7 +2996,7 @@
         "Nepodporovaný soubor"
       ],
       "Updating drive search...": [
-        ""
+        "Aktulizování hledání na disku..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
@@ -3002,16 +3014,19 @@
         "Pomocí tohoto formuláře nás můžete informovat o nevhodných, nezákonných,\nnebo jinak škodlivých sdílených souborech. Chystáte se nahlásit:"
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
-        ""
+        "Nemohli jsme ověřit, že ${ emailAddress } nahrál ${ fileName }."
       ],
       "We couldn’t verify who uploaded ${ fileName }.": [
-        ""
+        "Nemohli jsme ověřit, kdo nahrál ${ fileName }."
       ],
       "We'll notify you when the import is done.": [
         "Po dokončení importu Vás budeme informovat."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na adresu ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
       ],
       "Week": [
         "Týden"
@@ -3068,7 +3083,7 @@
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
       ],
       "Your current browser does not support the downloading of large files due to the unavailability of service workers. Downloading large files may freeze or leave the browser unresponsive. Please use the latest versions of a ${ recommendedBrowser } and try again.": [
-        ""
+        "Váš aktuální prohlížeč nepodporuje stahování velkých souborů z důvodu nedostupnosti pracovníků služby. Při stahování velkých souborů může dojít k zamrznutí nebo nereagování prohlížeče. Použijte prosím nejnovější verzi ${ recommendedBrowser } a zkuste to znovu."
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
@@ -3131,30 +3146,36 @@
     },
     "Item": {
       "file attributes": [
-        ""
+        "vlastnosti souboru"
       ],
       "file data": [
-        ""
+        "údaje o souboru"
       ],
       "file data key": [
-        ""
+        "klíč k souborům a datům"
       ],
       "keys": [
-        ""
+        "klíče"
       ],
       "name": [
-        ""
+        "název"
       ],
       "name hash": [
         ""
       ],
       "thumbnail": [
-        ""
+        "náhled"
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Kompromitovaný"
+      ],
       "Expired": [
         "Expirováno"
+      ],
+      "Obsolete": [
+        "Zastaralý"
       ],
       "Primary": [
         "Výchozí"
@@ -3164,9 +3185,6 @@
       ],
       "Trusted": [
         "Důvěryhodný"
-      ],
-      "Verification only": [
-        "Pouze ověření"
       ],
       "WKD": [
         "WKD"
@@ -3285,7 +3303,7 @@
         "Zapnout přístup do beta verze"
       ],
       "Enabling drive search": [
-        ""
+        "Povolování hledání na disku"
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -3634,6 +3652,21 @@
         "Název štítku"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Aktualizovaný Proton, jednotná ochrana"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "\"${ name }\" úspěšně vytvořen"
@@ -3771,7 +3804,7 @@
         "Souboru nebo složce chybí název"
       ],
       "Item failed to be verified": [
-        ""
+        "Položku se nepodařilo ověřit"
       ],
       "Link failed to be loaded": [
         "Nepodařilo se načíst odkaz"
@@ -3851,12 +3884,12 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "Dále se musíte přihlásit ke svému účtu Google a udělit společnosti Proton přístup ke svým datům."
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "Aby import fungoval, musíte vybrat všechny požadované položky, jak je znázorněno na obrázku GIF."
       ]
     },
     "Onboarding Action": {
@@ -3881,7 +3914,7 @@
         "${ appName } je v současné době k dispozici pouze v případě, že povolíte přístup do betaverze."
       ],
       "Your trusty online vault for vital documents and precious memories.": [
-        ""
+        "Váš spolehlivý online trezor pro důležité dokumenty a vzácné vzpomínky."
       ]
     },
     "Onboarding Proton": {
@@ -3940,6 +3973,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Klíč nelze použít k šifrování"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } označil tento klíč jako kompromitovaný. Tento klíč nelze použít ani pro šifrování, ani pro ověření podpisu."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } označil tento klíč jako zastaralý. Tento klíč lze použít pouze pro ověření podpisu."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Doporučujeme, abyste tomuto klíči \"nedůvěřovali\"."
       ]
     },
     "PGP key warning": {
@@ -4069,7 +4113,7 @@
     },
     "Spotlight": {
       "Encrypted search is here": [
-        ""
+        "Zašifrované vyhledávání je tady"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Získejte ${ planName } až na 18 měsíců zdarma"
@@ -4078,7 +4122,7 @@
         "Pozvěte přátele a získejte odměny!"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
-        ""
+        "Nyní můžete jednoduše vyhledávat soubory na Drivu, zatímco jsou vaše data zabezpečena."
       ]
     },
     "Storage": {
@@ -4147,7 +4191,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/měsíc"
       ]
     },
     "Table header": {
@@ -4227,6 +4271,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Představujeme modernizovaný Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Více služeb, jedna mise na ochranu soukromí."
+      ],
       "Settings": [
         "Nastavení"
       ]
@@ -4303,7 +4353,7 @@
         "Beta přístup"
       ],
       "Browser might run out of memory": [
-        ""
+        "Prohlížeči může dojít paměť"
       ],
       "Change layout": [
         "Změnit rozložení"
@@ -4387,10 +4437,10 @@
         "Soubor se nepodařilo stáhnout"
       ],
       "Download unverified file?": [
-        ""
+        "Stáhnout neověřený soubor?"
       ],
       "Download unverified folder?": [
-        ""
+        "Stáhnout neověřenou složku?"
       ],
       "Downloading": [
         "Stahování"
@@ -4429,7 +4479,7 @@
         "Vysypat koš"
       ],
       "Enable drive search": [
-        ""
+        "Povolit hledání na disku"
       ],
       "Enter password to download": [
         "Zadejte heslo pro stažení souboru"
@@ -4627,13 +4677,13 @@
         "Přestat sdílet se všemi?"
       ],
       "Stop transfers?": [
-        ""
+        "Zastavit přenosy?"
       ],
       "The file or folder failed to be downloaded": [
         "Soubor nebo složku se nepodařilo stáhnout"
       ],
       "The internet connection was interrupted": [
-        ""
+        "Internetové připojení bylo přerušeno"
       ],
       "The link does not exist": [
         "Odkaz neexistuje"
@@ -4645,10 +4695,10 @@
         "Odkaz se nepodařilo načíst"
       ],
       "This file has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Tento soubor nemá nebo mu chybí podpis. Běžte do Menu (⋮) → Detaily pro info."
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
-        ""
+        "Tato složka nemá nebo jí chybí podpis. Běžte do Menu (⋮) → Detaily pro info."
       ],
       "Total size": [
         "Celková velikost"

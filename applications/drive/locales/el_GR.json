@@ -1794,7 +1794,7 @@
         "Ο φάκελος \"${ name }\" κατεβαίνει ήδη"
       ],
       "Folder name cannot be empty.": [
-        "Το όνομα φακέλου δεν μπορεί να είναι κενό."
+        "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
       "Image upload failed": [
         "Αποτυχία ανεβάσματος εικόνας"
@@ -1818,7 +1818,7 @@
         "Μη έγκυρος κωδικός επαλήθευσης"
       ],
       "Label name cannot be empty.": [
-        "Το όνομα της ετικέτας δεν μπορεί να είναι κενό."
+        "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Συγχωνεύστε τουλάχιστον ${ calendarToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του Proton",
@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Κάτι πήγε στραβά, παρακαλούμε ${ refresh } για να προχωρήσετε. Εάν εξακολουθείτε να βλέπετε αυτό το μήνυμα σφάλματος, παρακαλούμε επικοινωνήστε με την ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Μη έγκυρο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Πολύ μακρύ όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα συντομότερο."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Μη έγκυρο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "The label name is too long. Please choose a different name.": [
         "Πολύ μακρύ όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα συντομότερο."
@@ -1936,10 +1942,10 @@
         "Αυτό το πεδίο απαιτεί τουλάχιστον ${ minimumLength } χαρακτήρες."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Αυτό το όνομα φακέλου δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα."
+        "Μη διαθέσιμο όνομα φακέλου. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Αυτό το όνομα ετικέτας δεν είναι διαθέσιμο. Δοκιμάστε ένα διαφορετικό όνομα."
+        "Μη διαθέσιμο όνομα ετικέτας. Παρακαλούμε δοκιμάστε ένα διαφορετικό."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιο σύνδεσμο URL που δεν μπορεί να ανοίξει σωστά από το τρέχον πρόγραμμα περιήγησης"
@@ -2225,25 +2231,20 @@
         "${ canceledCount } ακυρώθηκε",
         "${ canceledCount } ακυρώθηκαν"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Μέλος",
         "${ contactEmailsLength } Μέλη"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } επαφή βρέθηκε",
         "${ contactsCount } επαφές βρέθηκαν"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε ποια διεύθυνση ηλεκτρονικού ταχυδρομείου ή διευθύνσεις θα προσθέσετε στο ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου. Επιλέξτε τη διεύθυνση ηλεκτρονικού ταχυδρομείου ή τις διευθύνσεις που θα προσθέσετε σε αυτήν την ομάδα."
       ],
       "${ doneCount } finished": [
         "${ doneCount } τελείωσε",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } και ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } ομάδα επαφών",
@@ -2309,7 +2307,7 @@
         "(${ memberCount } μέλος)",
         "(${ memberCount } μέλη)"
       ],
-      "5 email addresses": [
+      "10 email addresses": [
         ""
       ],
       "A number will be added to the filename": [
@@ -2354,7 +2352,7 @@
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα διαγραμμένα στοιχεία;"
       ],
       "Because ${ appName } is end-to-end encrypted, we cannot access\nor decrypt your files for you. To unlock your drive after a password reset,\nyou must have one of the following:": [
-        "Επειδή το ${ appName } είναι κρυπτογραφημένο από άκρο σε άκρο, δεν μπορούμε να έχουμε πρόσβαση\nή να αποκρυπτογραφήσουμε τα αρχεία για εσάς. Για να ξεκλειδώσετε τη μονάδα δίσκου μετά από επαναφορά κωδικού πρόσβασης,\nπρέπει να έχετε ένα από τα παρακάτω:"
+        "Επειδή το ${ appName } είναι διατερματικά κρυπτογραφημένο, δεν μπορούμε να προσπελάσουμε ή να αποκρυπτογραφήσουμε τα αρχεία σας για εσάς. Για να ξεκλειδώσετε την αρχειοθήκη σας μετά από επαναφορά κωδικού πρόσβασης, πρέπει να έχετε ένα από τα εξής:"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
@@ -2586,7 +2584,7 @@
         "Απώλεια σύνδεσης στο διαδίκτυο. Παρακαλούμε ελέγξτε τη συνδεσιμότητα της συσκευής σας."
       ],
       "Internet connection restored.": [
-        "Έγινε επαναφορά της σύνδεσης στο Διαδίκτυο."
+        "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
       ],
       "Just confirm your selection and we'll do the rest.": [
         "Απλώς επιβεβαιώστε την επιλογή σας και εμείς θα κάνουμε τα υπόλοιπα."
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Μια κρυπτογραφημένη αρχειοθήκη σας είναι κλειδωμένη, πιθανότατα λόγω πρόσφατης επαναφοράς κωδικού πρόσβασης."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2711,6 +2712,13 @@
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Παρακαλώ περιμένετε όσο ψάχνουμε για επαφές που μπορούν να επανσυνδεθούν με το πρωτεύον κλειδί κρυπτογράφησης."
       ],
@@ -2733,7 +2741,7 @@
         "Υποστήριξη κατά προτεραιότητα"
       ],
       "Queued": [
-        "Σε ουρά"
+        "Σε αναμονή"
       ],
       "recommended browser": [
         ""
@@ -2769,7 +2777,7 @@
         "Λήξη χρόνου συνεδρίας"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "Η ρύθμιση PGP επιτρέπει την αποστολή μηνυμάτων κρυπτογραφημένων από άκρο σε άκρο σε χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
+        "Η ρύθμιση PGP επιτρέπει την αποστολή διατερματικά κρυπτογραφημένων μηνυμάτων προς χρήστες εκτός ${ BRAND_NAME } που χρησιμοποιούν υπηρεσίες συμβατές με PGP."
       ],
       "Share files with links": [
         "Κοινή χρήση αρχείων με συνδέσμους"
@@ -2884,7 +2892,7 @@
         "Δοκιμάστε διαφορετικές λέξεις κλειδιά"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
       ],
       "Unlimited messages": [
         "Aπεριόριστα μηνύματα"
@@ -2924,6 +2932,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Μετακομίζουμε! Ελάτε μαζί μας στη νέα μας ιστοσελίδα: ${ link }."
       ],
       "Week": [
         "Εβδομάδα"
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Έχει λήξει"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Κύριο"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Αξιόπιστο"
-      ],
-      "Verification only": [
-        "Μόνο επαλήθευση"
       ],
       "WKD": [
         "WKD"
@@ -3540,6 +3554,21 @@
         "Όνομα ετικέτας"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Εναλλαγή ή προσθήκη λογαριασμού"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Παρουσίαση ανανεωμένης όψης του Proton.${ br }Πολλές υπηρεσίες, μία αποστολή. Καλώς ήρθατε σε ένα διαδίκτυο όπου η ιδιωτικότητα είναι η προεπιλογή."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Ενημερωμένο Proton, ενοποιημένη προστασία"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
@@ -3810,6 +3839,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Το κλειδί δεν μπορεί να χρησιμοποιηθεί για κρυπτογράφηση"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -4089,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Παρουσίαση του ενημερωμένου Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Περισσότερες υπηρεσίες, μία αποστολή ιδιωτικότητας."
+      ],
       "Settings": [
         "Ρυθμίσεις"
       ]
@@ -4584,7 +4630,7 @@
         "Η εισαγωγή θα ξεκινήσει με τα πιο πρόσφατα μηνύματα."
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "Μεταφορτώστε ένα δημόσιο κλειδί (public key), για να ενεργοποιήσετε την αποστολή από άκρο σε άκρο κρυπτογραφημένων ηλεκτρονικών μηνυμάτων, από το ένα email σε άλλο email, στο παρόν μήνυμα ηλεκτρονικού ταχυδρομείου"
+        "Για ενεργοποίηση της αποστολής διατερματικά κρυπτογραφημένων μηνυμάτων προς αυτήν τη διεύθυνση, ανεβάστε ένα δημόσιο κλειδί"
       ],
       "You do not have any contacts to export": [
         "Δεν έχετε επαφές προς εξαγωγή"

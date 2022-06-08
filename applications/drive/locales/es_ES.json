@@ -604,7 +604,7 @@
     },
     "Beta access description": {
       "Beta Access lets you use the beta version of ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME } before they are released to the public. This means you can be the first to try new products, get new updates, and use new features.": [
-        "El Acceso Beta te permite usar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que se pongan a disposición del público. De este modo puedes ser el primero en probar nuevos productos, obtener nuevas actualizaciones y usar nuevas funciones."
+        "El acceso beta te permite utilizar la versión beta de ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME } antes de que sean lanzados al público. Esto significa que puedes probar nuevos productos , obtener nuevas actualizaciones y utilizar nuevas funciones."
       ],
       "If you encounter issues, you can always disable Beta Access.": [
         "Si encuentras problemas, siempre puedes deshabilitar el acceso beta."
@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Algo salió mal, por favor ${ refresh } para continuar. Si aún ves este mensaje de error, ponte en contacto con nuestro ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "El nombre de la carpeta es inválido. Por favor, elige un nombre diferente."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nombre de la carpeta es demasiado largo. Por favor, elija un nombre diferente."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "El nombre de la etiqueta es inválido. Por favor, elige un nombre diferente."
       ],
       "The label name is too long. Please choose a different name.": [
         "El nombre de la etiqueta es demasiado largo. Por favor, elija un nombre diferente."
@@ -2225,25 +2231,20 @@
         "${ canceledCount } cancelado",
         "${ canceledCount } cancelados"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "El contacto ${ contactCount } contiene múltiples direcciones de correo.",
+        "Los contactos ${ contactCount } contienen múltiples direcciones de correo."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Miembro",
         "${ contactEmailsLength } Miembros"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } contiene múltiples direcciones de correo electrónico. Selecciona qué dirección o direcciones de correo electrónico quieres añadir a ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } contiene múltiples direcciones de correo electrónico. Selecciona qué dirección o direcciones de correo electrónico quieres añadir a este grupo."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } contiene múltiples direcciones de correo."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacto encontrado",
         "${ contactsCount } contactos encontrados"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contiene múltiples direcciones de correo electrónico. Selecciona qué dirección o direcciones de correo electrónico quieres añadir a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contiene múltiples direcciones de correo electrónico. Selecciona qué dirección de correo electrónico o direcciones añadir a este grupo."
       ],
       "${ doneCount } finished": [
         "${ doneCount } finalizado",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupos encontrados"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } y ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupo de contactos",
@@ -2309,8 +2307,8 @@
         "(${ memberCount } miembro)",
         "(${ memberCount } miembros)"
       ],
-      "5 email addresses": [
-        "5 direcciones de correo electrónico"
+      "10 email addresses": [
+        "10 direcciones de correo"
       ],
       "A number will be added to the filename": [
         "Se añadirá un número al nombre del archivo"
@@ -2673,7 +2671,10 @@
         "de"
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
-        "Una de tus unidades encriptadas está bloqueada. Lo más probable es que esto se deba a un restablecimiento reciente de la contraseña."
+        "Una de tus unidades cifradas está bloqueada. Lo más probable es que esto se deba a un restablecimiento reciente de la contraseña."
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una o más de tus claves de confianza fueron marcadas como \"comprometidas\" por su propietario. Te recomendamos que las consideres \"no fiables\"."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2710,6 +2711,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Por favor, selecciona las carpetas que te gustaría importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecciona qué dirección o direcciones de correo añadir al grupo ${ groupCount }.",
+        "Selecciona qué dirección o direcciones de correo añadir a los grupos ${ groupCount }."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Selecciona qué dirección o direcciones de correo añadir a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, espera mientras buscamos contactos que puedan volver a firmarse con la clave de cifrado principal."
@@ -2896,7 +2904,7 @@
         "Archivo no soportado"
       ],
       "Updating drive search...": [
-        ""
+        "Actualizando búsqueda en drive..."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Actualiza hoy para evitar perder los beneficios de ${ planName } $."
@@ -2924,6 +2932,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos un código de verificación nuevo a ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "¡Nos hemos mudado! Únete a nosotros en nuestro nuevo sitio: ${ link }."
       ],
       "Week": [
         "Semana"
@@ -3010,7 +3021,7 @@
         "La descarga de su carpeta falló al descargar."
       ],
       "Your folder has finished downloading.": [
-        "Su carpeta ha terminado de descargarse."
+        "Tu carpeta ha terminado de descargarse."
       ],
       "Your folder is being downloaded.": [
         "Tu carpeta está siendo descargada."
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Comprometido"
+      ],
       "Expired": [
         "Caducada"
+      ],
+      "Obsolete": [
+        "Obsoleto"
       ],
       "Primary": [
         "Principal"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "De confianza"
-      ],
-      "Verification only": [
-        "Sólo verificación"
       ],
       "WKD": [
         "WKD"
@@ -3155,7 +3169,7 @@
         "Copiar"
       ],
       "Copyright infringement": [
-        "Infringimiento de derechos de autor"
+        "Infracción de derechos de autor"
       ],
       "Country": [
         "País"
@@ -3270,7 +3284,7 @@
         "Contraseña del buzón"
       ],
       "Malware": [
-        "Software malicioso"
+        "Malware"
       ],
       "Manage folders": [
         "Gestionar carpetas"
@@ -3794,10 +3808,10 @@
         "${ appName } está en beta"
       ],
       "Upgrade to access ${ appName }": [
-        "Actualizar para acceder a ${ appName }"
+        "Actualiza para acceder a ${ appName }"
       ],
       "Welcome to ${ appName }": [
-        "Bienvenido a ${ appName }"
+        "Bienvenido/a a ${ appName }"
       ]
     },
     "Option": {
@@ -3825,6 +3839,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Esta clave no puede utilizarse para cifrado"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } ha marcado esta clave como comprometida. Esta clave no puede ser usada ni para cifrado ni para verificación de firma."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } ha marcado esta clave como obsoleta. La clave solo puede ser usada para verificación de firma."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Te recomendamos que consideres esta clave \"no fiable\"."
       ]
     },
     "PGP key warning": {
@@ -3950,7 +3975,7 @@
     },
     "Spotlight": {
       "Encrypted search is here": [
-        "La búsqueda cifrada es aquí"
+        "La búsqueda cifrada está aquí"
       ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtén hasta 18 meses gratis de ${ planName }"
@@ -4024,7 +4049,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/mes"
       ]
     },
     "Table header": {
@@ -4104,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Presentamos el nuevo Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Más servicios, misma misión: la privacidad."
+      ],
       "Settings": [
         "Configuración"
       ]

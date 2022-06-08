@@ -47,7 +47,7 @@
         "Přidat"
       ],
       "Add ${ BRAND_NAME } Account": [
-        "Přidat ${ BRAND_NAME } účet"
+        "Přidat ${ BRAND_NAME } Účet"
       ],
       "Add address": [
         "Přidat adresu"
@@ -104,7 +104,7 @@
         "Použít"
       ],
       "Attach screenshot(s)": [
-        "Přiložit snímek/snímky obrazovky"
+        "Přiložit snímek(ky) obrazovky"
       ],
       "Authenticate": [
         "Ověřit"
@@ -197,7 +197,7 @@
         "Vytvořit"
       ],
       "Create a secure ProtonMail address instead": [
-        "Namísto toho vytvořit zabezpečenou ProtonMail adresu"
+        "Create a secure Proton Mail address instead"
       ],
       "Create account": [
         "Vytvořit účet"
@@ -518,7 +518,7 @@
         "Obnovit data"
       ],
       "Refer a friend": [
-        "Doporučte přítele"
+        "Doporučte příteli"
       ],
       "Refresh status": [
         "Obnovit stav"
@@ -563,7 +563,7 @@
         "Vyžádejte si nový kód"
       ],
       "Requires a verified recovery email address": [
-        ""
+        "Vyžaduje ověřenou emailovou adresu pro obnovení"
       ],
       "Reset credentials": [
         "Resetovat pověření"
@@ -692,7 +692,7 @@
         "Odhlásit z"
       ],
       "Sign out of all accounts": [
-        ""
+        "Odhlásit se ze všech účtů"
       ],
       "Signing in": [
         "Přihlašování"
@@ -991,16 +991,16 @@
     },
     "Billing cycle": {
       "Payable every 12 months": [
-        ""
+        "Splatné každých 12 měsíců"
       ],
       "Payable every 24 months": [
-        ""
+        "Splatné každých 24 měsíců"
       ],
       "Payable every month": [
-        ""
+        "Splatné každý měsíc"
       ],
       "Renews automatically on ${ formattedEndTime }": [
-        ""
+        "Obnoví se automaticky v ${ formattedEndTime }"
       ]
     },
     "Billing cycle option": {
@@ -2244,7 +2244,7 @@
     },
     "Coupon": {
       "Coupon applied: ${ CouponCode }": [
-        ""
+        "Použitý kupón: ${ CouponCode }"
       ]
     },
     "Credits": {
@@ -2729,10 +2729,10 @@
         "Zkuste se znovu ověřit a zkontrolujte, zda jsou oprávnění nastavena správně."
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        ""
+        "Chcete-li získat podporu pro více uživatelů, upgradujte prosím na obchodní plán s více než 1 uživatelem"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        ""
+        "Chcete-li spravovat více uživatelů, přejděte na obchodní plán s více než 1 uživatelem."
       ],
       "Primary address key is not decrypted": [
         "Klíč hlavní adresy není dešifrován"
@@ -2776,6 +2776,9 @@
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
         "Prohlížeč, který používáte, neumožňuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Název složky je neplatný. Zvolte prosím jiný název."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Název složky je příliš dlouhý. Zvolte prosím jiný název."
       ],
@@ -2784,6 +2787,9 @@
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
         "Klíče v souborech pro obnovení nelze ověřit. Pro více informací nahrajte soubory jednotlivě."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Název štítku je neplatný. Zvolte prosím jiný název."
       ],
       "The label name is too long. Please choose a different name.": [
         "Název štítku je příliš dlouhý. Zvolte prosím jiný název."
@@ -3511,9 +3517,9 @@
       ],
       "This file contains an event invitation:": [
         "Tento soubor obsahuje pozvánku na událost:",
-        "Tento soubor obsahuje pozvánky na událost:",
-        "Tento soubor obsahuje pozvánky na událost:",
-        "Tento soubor obsahuje pozvánky na událost:"
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:"
       ],
       "This file contains an invitation response:": [
         "Tento soubor obsahuje odpověď na pozvánku:",
@@ -4072,6 +4078,9 @@
       "1. Invite friends to Proton": [
         "1. Pozvěte přátele do služby Proton"
       ],
+      "10 email addresses": [
+        "10 e-mailových adres"
+      ],
       "2. They try ${ planName }": [
         "2. Vyzkouší ${ planName }"
       ],
@@ -4083,9 +4092,6 @@
       ],
       "30-day money-back guarantee.": [
         "30denní záruka vrácení peněz."
-      ],
-      "5 email addresses": [
-        "5 e-mailových adres"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Název, který vám pomůže zapamatovat si jeho použití, abyste později mohli konfiguraci snadno zrušit nebo rozšířit."
@@ -4444,6 +4450,9 @@
       "Edit label": [
         "Upravit štítek"
       ],
+      "Edit link": [
+        "Upravit odkaz"
+      ],
       "Email address": [
         "E-mailová adresa"
       ],
@@ -4611,6 +4620,9 @@
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
         "Jestliže si přejete kombinovat tento účet s dalším, nemažte jej."
+      ],
+      "Image description": [
+        "Popis obrázku"
       ],
       "Image URL": [
         "URL adresa obrázku"
@@ -5045,7 +5057,7 @@
         "Vyberte poskytovatele služeb a začněte"
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        ""
+        "Výběrem možnosti Pokračovat na ${ name } otevřete aplikaci. Tím se také vytvoří účet ${ name } s vaší adresou ${ MAIL_APP_NAME }, abyste se v budoucnu mohli přihlásit jedním kliknutím."
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         "Vyberte počet uživatelů, kteří mají být do plánu zahrnuti. Každý další uživatel stojí ${ price }. Pokud potřebujete více než ${ maxUsers } uživatelských účtů, kontaktujte prosím ${ contactMailToLink } náš tým pro podporu zákazníků."
@@ -5368,6 +5380,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Zašleme nový ověřovací kód na ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Stěhujeme se! Připojte se k nám na novém místě: ${ link }."
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -5668,7 +5683,7 @@
         "Zaúčtováno"
       ],
       "Gifted": [
-        ""
+        "Darovaný"
       ],
       "Paid": [
         "Zaplaceno"
@@ -6160,7 +6175,7 @@
         "Nastavení pro připojení k ${ serverName }"
       ],
       "Confirm link URLs": [
-        ""
+        "Potvrzení URL odkazů"
       ],
       "Confirm login password": [
         "Potvrdit nové přihlašovací heslo"
@@ -6607,7 +6622,7 @@
         "Poslat automatickou odpověď"
       ],
       "Send in": [
-        ""
+        "Odeslat"
       ],
       "Show secondary time zone": [
         "Zobrazit sekundární časové pásmo"
@@ -6640,7 +6655,7 @@
         "Prohlášení"
       ],
       "Sticky labels": [
-        ""
+        "Nalepovací štítky"
       ],
       "Subscription options": [
         "Možnosti předplatného"
@@ -7056,7 +7071,7 @@
         "Opravdu chcete vypnout dvoufázové ověřování?"
       ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
-        ""
+        "Připojte vlastní doménu k ${ BRAND_NAME } a nastavte vlastní e-mailové adresy (např. you@yourcompany.com). Procesem vás provede náš průvodce."
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         "Vaše bezplatná zkušební verze skončila. Přístup k vašemu účtu bude brzy deaktivován. ${ action }"
@@ -7282,6 +7297,720 @@
       ],
       "Label name": [
         "Název štítku"
+      ]
+    },
+    "new_plans": {
+      "Highest VPN speed": [
+        "Nejvyšší rychlost VPN"
+      ],
+      "Keep your inbox organized with folders": [
+        "Udržujte si pořádek v doručené poště pomocí složek"
+      ],
+      "Medium VPN speed": [
+        "Střední rychlost VPN"
+      ]
+    },
+    "new_plans: action": {
+      "Continue to review": [
+        "Pokračovat v prozkoumávání"
+      ],
+      "Continue with free": [
+        "Pokračovat zdarma"
+      ],
+      "Delete account": [
+        "Smazat účet"
+      ],
+      "Downgrade account": [
+        "Snížit úroveň účtu"
+      ],
+      "Get ${ BRAND_NAME } for free": [
+        "Získat ${ BRAND_NAME } zdarma"
+      ],
+      "Get ${ planName }": [
+        "Získejte ${ planName }"
+      ],
+      "Get ${ upsellShortPlan.title }": [
+        "Získejte ${ upsellShortPlan.title }"
+      ],
+      "Got it": [
+        "Rozumím"
+      ],
+      "Keep ${ plan }": [
+        "Udržujte${ plan }"
+      ],
+      "Keep account": [
+        "Ponechat si svůj účet"
+      ],
+      "Switch or add account": [
+        "Přepnout nebo přidat účet"
+      ],
+      "Switch plan": [
+        "Změnit plán"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        ""
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        ""
+      ],
+      "From ${ _price } per user": [
+        ""
+      ],
+      "From ${ price }": [
+        ""
+      ],
+      "Keep my ${ currentPlanName } account": [
+        ""
+      ],
+      "Upgrade now": [
+        ""
+      ]
+    },
+    "new_plans: attribute": {
+      "Get ${ connections } high-speed VPN connection": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Get ${ connections } high-speed VPN connection per user": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "new_plans: feature": {
+      "${ DRIVE_APP_NAME } (web beta)": [
+        "${ DRIVE_APP_NAME } (webová beta verze)"
+      ],
+      "${ n } custom email domain": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "",
+        "",
+        ""
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailová adresa na uživatele",
+        "",
+        "",
+        ""
+      ],
+      "${ n } filter": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } folder": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } folder and label": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } label": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } message per day": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "${ n } personal calendar": [
+        "${ n } osobní kalendář",
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection": [
+        "${ n } připojení VPN",
+        "",
+        "",
+        ""
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } připojení VPN na uživatele",
+        "",
+        "",
+        ""
+      ],
+      "${ size } attachment size": [
+        ""
+      ],
+      "${ size } storage per user": [
+        "${ size } úložiště na uživatele"
+      ],
+      "${ size } total storage": [
+        "${ size } celkové úložiště"
+      ],
+      "1 free VPN connection in total": [
+        "Celkem 1 bezplatné připojení VPN"
+      ],
+      "99.95% SLA": [
+        "99.95% SLA Dostupnost"
+      ],
+      "Admin console": [
+        "Správcovská konzole"
+      ],
+      "Advanced sharing security": [
+        "Pokročilé zabezpečení sdílení"
+      ],
+      "Auto-reply": [
+        ""
+      ],
+      "Catch-all": [
+        ""
+      ],
+      "Centralized billing": [
+        ""
+      ],
+      "Contact groups": [
+        ""
+      ],
+      "Contact groups management": [
+        ""
+      ],
+      "Custom email domains": [
+        ""
+      ],
+      "DNS leak prevention": [
+        "Prevence úniků DNS"
+      ],
+      "Document editors (docs, sheets, slides)": [
+        "Editory dokumentů (dokumenty, listy, prezentace)"
+      ],
+      "Easy Switch import assistant": [
+        ""
+      ],
+      "Email client support (via IMAP/SMTP)": [
+        ""
+      ],
+      "Enables HIPAA compliance": [
+        ""
+      ],
+      "Encrypted contact details": [
+        ""
+      ],
+      "Encrypted VPN servers": [
+        "Šifrované servery VPN"
+      ],
+      "End-to-end encryption": [
+        "Koncové šifrování"
+      ],
+      "Free VPN on a single device": [
+        "Bezplatná VPN na jednom zařízení"
+      ],
+      "GDPR data processing agreement": [
+        ""
+      ],
+      "High-speed VPN on ${ n } device": [
+        "Vysokorychlostní VPN na zařízení ${ n }",
+        "",
+        "",
+        ""
+      ],
+      "HTML signatures": [
+        ""
+      ],
+      "Kill switch/always-on VPN": [
+        ""
+      ],
+      "Limited support": [
+        "Omezená podpora"
+      ],
+      "Multiple admin roles": [
+        "Více rolí správce"
+      ],
+      "NetShield malware and ad-blocker": [
+        "NetShield malware and ad-blocker"
+      ],
+      "P2P/BitTorrent": [
+        "P2P/BitTorrent"
+      ],
+      "Password-protected Emails": [
+        ""
+      ],
+      "Phone support (6+ users)": [
+        ""
+      ],
+      "Priority email support": [
+        "Prioritní podpora"
+      ],
+      "Priority support": [
+        "Prioritní podpora"
+      ],
+      "Router support": [
+        "Podpora routeru"
+      ],
+      "Secure Core servers": [
+        "Servery Secure Core"
+      ],
+      "Send & receive invitations": [
+        "Odesílání a přijímání pozvánek"
+      ],
+      "Share calendar via link": [
+        "Sdílet kalendář prostřednictvím odkazu"
+      ],
+      "Share files and folders via link": [
+        "Sdílení souborů a složek prostřednictvím odkazu"
+      ],
+      "Sign in as user": [
+        "Přihlasit se jako uživatel"
+      ],
+      "Split tunneling (Android and Windows)": [
+        "Rozdělené tunelování (Android a Windows)"
+      ],
+      "Strict no-logs policy": [
+        ""
+      ],
+      "Team management": [
+        "Řízení týmu"
+      ],
+      "Tor over VPN": [
+        "TOR skrze VPN"
+      ],
+      "Two-factor authentication": [
+        "Dvoufaktorová autentizace"
+      ],
+      "Unlimited filters": [
+        ""
+      ],
+      "Unlimited folders": [
+        ""
+      ],
+      "Unlimited folders, labels and filters": [
+        ""
+      ],
+      "Unlimited labels": [
+        ""
+      ],
+      "Unlimited messages per day": [
+        "Neomezený počet zpráv za den"
+      ],
+      "Unlimited volume/bandwidth": [
+        "Neomezená šířka pásma"
+      ],
+      "Up to ${ totalStorageSize } total storage": [
+        ""
+      ],
+      "User credential management": [
+        ""
+      ],
+      "User session management": [
+        "Správa uživatelských relací"
+      ],
+      "Worldwide streaming services": [
+        "Celosvětové streamovací služby"
+      ]
+    },
+    "new_plans: forgot links": {
+      "Forgot password": [
+        "Zapomenuté heslo"
+      ],
+      "username": [
+        "uživatelské jméno"
+      ]
+    },
+    "new_plans: heading": {
+      "Support": [
+        ""
+      ],
+      "Team management": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "${ brand } ending in ${ last4 }": [
+        ""
+      ],
+      "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
+        ""
+      ],
+      "* With 1-month subscription. Other subscription options available at checkout.": [
+        "* S 1měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
+      ],
+      "* With 12-month subscription. Other subscription options available at checkout.": [
+        "* S 12měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
+      ],
+      "* With 24-month subscription. Other subscription options available at checkout.": [
+        "* S 24měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
+      ],
+      "Applicable credits, proration, and coupons are applied in the next step": [
+        ""
+      ],
+      "Comprehensive privacy and security with all Proton services combined.": [
+        "Komplexní ochrana soukromí a zabezpečení se všemi službami Protonu dohromady."
+      ],
+      "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
+        "Pokud svůj účet odstraníte, ztratíte všechny výhody plánu ${ visionary } a při vytvoření nového účtu nebudou k dispozici."
+      ],
+      "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
+        "Pokud svůj účet snížíte, ztratíte všechny výhody plánu ${ visionary } a při dalším pokusu o předplatné nebude k dispozici."
+      ],
+      "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
+        "Pokud přejdete na jiný plán, ztratíte všechny výhody plánu ${ visionary } a nebudete moci přejít zpět na plán ${ visionary }."
+      ],
+      "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
+        "Náš plán ${ visionary } již není k dispozici novým předplatitelům, protože se jedná o speciální plán pro původní uživatele ${ BRAND_NAME } se speciálními funkcemi a výhodami."
+      ],
+      "Popular": [
+        "Oblíbené"
+      ],
+      "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
+        ""
+      ],
+      "Privacy and security suite for businesses, including all premium Proton services.": [
+        "Soukromí a zabezpečení pro firmy včetně všech prémiových služeb Proton."
+      ],
+      "Secure email and calendar for professionals and businesses.": [
+        "Zabezpečený e-mail a kalendář pro profesionály a firmy."
+      ],
+      "Secure email with advanced features for your everyday communications.": [
+        "Zabezpečený e-mail s pokročilými funkcemi pro každodenní komunikaci."
+      ],
+      "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
+        "Nastavte automatické odpovědi, které informují kontakty, že jste mimo kancelář nebo nemůžete odpovědět."
+      ],
+      "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
+        ""
+      ],
+      "The no-cost starter account designed to empower everyone with privacy by default.": [
+        "Bezplatný startovací účet, který ve výchozím nastavení poskytuje soukromí všem."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
+        "Ve svém aktuálním tarifu využíváte akční cenu. Smazání účtu bude mít za následek ztrátu této ceny a již nebude k dispozici při vytváření nového účtu."
+      ],
+      "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
+        "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
+      ]
+    },
+    "new_plans: Label": {
+      "${ humanUsedSpace } of ${ humanMaxSpace }": [
+        ""
+      ]
+    },
+    "new_plans: Plan frequency": {
+      "/month": [
+        ""
+      ]
+    },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    "new_plans: signup": {
+      "Creating the account means you accept ${ terms }. ": [
+        "Vytvoření účtu znamená, že přijímáte ${ terms }. "
+      ],
+      "Payment details": [
+        "Platební údaje"
+      ],
+      "Proton's terms and conditions": [
+        "Pravidla a podmínky společnosti Proton"
+      ],
+      "Save your email address or phone number to use for verification if you need to reset your account.": [
+        "Uložte si svou e-mailovou adresu nebo telefonní číslo, které můžete použít pro ověření, pokud budete potřebovat obnovit svůj účet."
+      ],
+      "Subscription": [
+        "Předplatné"
+      ],
+      "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
+        "Chcete-li začít, vyberte si zobrazované jméno. To je to, co lidé uvidí, když jim pošlete e-mail, pozvete je na událost nebo sdílíte soubor."
+      ],
+      "Your ${ planName } subscription is now active.": [
+        "Vaše předplatné ${ planName } je nyní aktivní."
+      ],
+      "Your selected plan: ${ planName }": [
+        "Váš vybraný plán: ${ planName }"
+      ]
+    },
+    "new_plans: title": {
+      "Delete account?": [
+        "Smazat účet?"
+      ],
+      "Downgrade account?": [
+        "Snížit účet na nižší úroveň?"
+      ],
+      "Improved plans coming soon!": [
+        "Vylepšené plány již brzy!"
+      ],
+      "Review subscription and pay": [
+        "Zkontrolovat předplatné a zaplatit"
+      ],
+      "Start exploring the Proton universe": [
+        "Začněte objevovat svět Protonu"
+      ],
+      "Switch plans?": [
+        "Změnit plán?"
+      ],
+      "Unlock premium features by upgrading": [
+        "Odemknout prémiové funkce povýšením účtu"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        ""
+      ],
+      "Upgrade to ${ planName }": [
+        ""
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
+    "new_plans: tooltip": {
+      "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
+        ""
+      ],
+      "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
+        ""
+      ],
+      "Advanced security VPN with global network": [
+        ""
+      ],
+      "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
+        ""
+      ],
+      "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
+        ""
+      ],
+      "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
+        ""
+      ],
+      "Control access to your shared files by adding password protection and link expiration dates": [
+        ""
+      ],
+      "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
+        ""
+      ],
+      "Create up to ${ n } custom calendar.": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
+        ""
+      ],
+      "Easily share your calendars with your colleagues, family, and friends via a link": [
+        ""
+      ],
+      "Easily share your calendars with your family, friends, or colleagues via a link": [
+        ""
+      ],
+      "End-to-end encrypted calendar": [
+        ""
+      ],
+      "End-to-end encrypted file storage": [
+        ""
+      ],
+      "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
+        ""
+      ],
+      "Force sign-out of user sessions when user credentials are believed to be compromised": [
+        ""
+      ],
+      "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
+        ""
+      ],
+      "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
+        ""
+      ],
+      "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
+        ""
+      ],
+      "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
+        ""
+      ],
+      "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
+        ""
+      ],
+      "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
+        ""
+      ],
+      "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
+        ""
+      ],
+      "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
+        ""
+      ],
+      "Option to view non-private user inboxes as the user would, including full message and contact details": [
+        ""
+      ],
+      "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
+        ""
+      ],
+      "Our robust infrastructure ensures you will be able to access your account when you need it": [
+        ""
+      ],
+      "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
+        ""
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        ""
+      ],
+      "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
+        ""
+      ],
+      "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
+        ""
+      ],
+      "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
+        ""
+      ],
+      "Quickly set up out-of-office messages": [
+        ""
+      ],
+      "Quickly transfer your emails, calendars or contacts from any provider": [
+        ""
+      ],
+      "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
+        ""
+      ],
+      "Reset user passwords and reset two-factor authentication on users": [
+        ""
+      ],
+      "Route your internet traffic through the Tor network with a single click": [
+        ""
+      ],
+      "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
+        ""
+      ],
+      "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
+        ""
+      ],
+      "Set up filters to automatically reply to, sort, and/or label your emails": [
+        ""
+      ],
+      "Share your files or folders with anyone by using secure, shareable links": [
+        ""
+      ],
+      "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
+        ""
+      ],
+      "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
+        ""
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
+        ""
+      ],
+      "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
+        ""
+      ],
+      "Support for file-sharing protocols like BitTorrent": [
+        ""
+      ],
+      "Use your own custom email domain addresses, e.g., you@yourname.com": [
+        ""
+      ],
+      "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
+        ""
+      ],
+      "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
+        ""
+      ],
+      "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
+        ""
+      ],
+      "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
+        ""
+      ],
+      "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
+        ""
+      ]
+    },
+    "new_plans: upgrade": {
+      "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
+        ""
+      ],
+      "Included with all ${ BRAND_NAME } for Business plans.": [
+        ""
+      ]
+    },
+    "new_plans: Upsell attribute": {
+      "${ storageSize } total storage": [
+        ""
+      ],
+      "10 email addresses/aliases": [
+        "10 e-mailových adres/aliasů"
+      ],
+      "Access advanced VPN features": [
+        ""
+      ],
+      "Add more personalization with 15 email addresses and support for 3 custom email domains": [
+        ""
+      ],
+      "Boost your storage space to ${ bundleStorage } total": [
+        ""
+      ],
+      "Boost your storage space to ${ businessStorage } per user": [
+        ""
+      ],
+      "Cover more ground with support for 10 custom email domains": [
+        ""
+      ],
+      "Create up to ${ numberOfPersonalCalendars } personal calendar": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "Everything in ${ vpnPlanName }": [
+        ""
+      ],
+      "Get 5 additional email addresses per user": [
+        ""
+      ],
+      "Priority support": [
+        ""
+      ],
+      "Support for 1 custom email domain": [
+        ""
+      ],
+      "Unlimited folders, labels, and filters": [
+        ""
+      ],
+      "Unlimited messages": [
+        ""
       ]
     },
     "Notification": {
@@ -7617,7 +8346,7 @@
         "Bitcoin"
       ],
       "Credit/debit card": [
-        ""
+        "Kreditní/debetní karta"
       ],
       "New credit/debit card": [
         "Nová kreditní/debetní karta"
@@ -8045,10 +8774,10 @@
     },
     "Subscription attribute": {
       "${ _n } calendar per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ _n } kalendář na uživatele",
+        "${ _n } kalendáře na uživatele",
+        "${ _n } kalendářů na uživatele",
+        "${ _n } kalendářů na uživatele"
       ],
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } vysokorychlostní připojení VPN",
@@ -8069,10 +8798,10 @@
         "${ n } vysokorychlostních připojení VPN"
       ],
       "${ n } high-speed VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } vysokorychlostní VPN připojení na uživatele",
+        "${ n } vysokorychlostní VPN připojení na uživatele",
+        "${ n } vysokorychlostních VPN připojení na uživatele",
+        "${ n } vysokorychlostních VPN připojení na uživatele"
       ],
       "${ n } VPN connection": [
         "${ n } VPN připojení",
@@ -8081,10 +8810,10 @@
         "${ n } VPN připojení"
       ],
       "${ n } VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresa",
@@ -8093,10 +8822,10 @@
         "${ UsedAddresses } adres"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } kalendář",
@@ -8105,16 +8834,16 @@
         "${ UsedCalendars } kalendářů"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedDomains } z ${ MaxDomains } vlastní domény",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén"
       ],
       "${ UsedMembers } of ${ MaxMembers } user": [
-        "",
-        "",
-        "",
-        ""
+        "${ UsedMembers } z ${ MaxMembers } uživatele",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů"
       ],
       "1 email address": [
         "1 e-mailová adresa"
@@ -8129,20 +8858,20 @@
         "Vestavěný blokátor reklam (NetShield)"
       ],
       "High-speed VPN on ${ maxVpn } device": [
-        "",
-        "",
-        "",
-        ""
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení"
       ]
     },
     "Subscription price": {
       "For": [
-        ""
+        "Pro"
       ]
     },
     "Subscription saving": {
       "Save": [
-        ""
+        "Uložit"
       ]
     },
     "Subtitle for trial plan": {
@@ -8374,10 +9103,10 @@
     },
     "Tab subscription modal": {
       "For businesses": [
-        ""
+        "Pro podniky"
       ],
       "For individuals": [
-        ""
+        "Pro jednotlivce"
       ]
     },
     "TableHeader": {
@@ -8407,6 +9136,14 @@
       ],
       "vCard field": [
         "Pole vCard"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Představujeme aktualizovaný Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Více služeb, jedna mise na ochranu soukromí."
       ]
     },
     "Time period": {
@@ -8630,7 +9367,7 @@
         "Vyčistit"
       ],
       "Composing": [
-        ""
+        "Sestavování"
       ],
       "Confirm address": [
         "Potvrdit adresu"
@@ -8645,7 +9382,7 @@
         "Potvrzení telefonního čísla"
       ],
       "Congratulations on choosing privacy!": [
-        ""
+        "Gratulujeme k volbě soukromí!"
       ],
       "Connect ${ name }": [
         "Připojit ${ name }"
@@ -8663,7 +9400,7 @@
         "Vytvořit kalendář"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        ""
+        "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Credentials": [
         "Pověření"
@@ -8921,7 +9658,7 @@
         "Zprávy"
       ],
       "Messages and composing": [
-        ""
+        "Zprávy a sestavování"
       ],
       "Multi-user support": [
         "Podpora pro více uživatelů"
@@ -9466,10 +10203,10 @@
     },
     "Upgrade": {
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "",
-        "",
-        "",
-        ""
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou"
       ]
     },
     "Upgrade notice": {

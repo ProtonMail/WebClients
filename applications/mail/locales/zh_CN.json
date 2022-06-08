@@ -117,7 +117,7 @@
         "查看导入进度"
       ],
       "Choose a file or drag it here": [
-        "选择一个文件或将其拖动到这里"
+        "选择文件或将文件拖至此处"
       ],
       "Clear": [
         "清除"
@@ -132,7 +132,7 @@
         "清除数据"
       ],
       "clear it": [
-        "将其清除"
+        "清除"
       ],
       "Clear query": [
         "清除查询"
@@ -190,6 +190,9 @@
       ],
       "Copy email to clipboard": [
         "复制邮箱地址"
+      ],
+      "Copy password to clipboard": [
+        ""
       ],
       "Create a new contact group": [
         "创建联系人群组"
@@ -284,6 +287,9 @@
       "Edit email address": [
         "编辑电子邮件地址"
       ],
+      "Edit encryption": [
+        ""
+      ],
       "Edit label": [
         "编辑标签"
       ],
@@ -314,6 +320,9 @@
       "Expand URL": [
         "展开"
       ],
+      "Expiration time": [
+        ""
+      ],
       "Export": [
         "导出"
       ],
@@ -322,6 +331,9 @@
       ],
       "Export contacts": [
         "导出联系人"
+      ],
+      "External encryption": [
+        ""
       ],
       "Filter on...": [
         "筛选依据..."
@@ -351,16 +363,16 @@
         "转到末页"
       ],
       "Go to next page": [
-        "前往下一页"
+        "下一页"
       ],
       "Go to page ${ page }": [
-        "前往 ${ page } 页"
+        "转到第 ${ page } 页"
       ],
       "Go to panel ${ index }": [
         "转到面板 ${ index }"
       ],
       "Go to previous page": [
-        "前往上一页"
+        "上一页"
       ],
       "Go to settings": [
         "前往设置"
@@ -447,7 +459,7 @@
         "了解详情"
       ],
       "Less search options": [
-        "更少的搜索选项"
+        "收起搜索选项"
       ],
       "Load": [
         "加载"
@@ -519,7 +531,7 @@
         "更多信息：${ safeTitle }"
       ],
       "More search options": [
-        "更多的搜索选项"
+        "展开搜索选项"
       ],
       "move emails to": [
         "将邮件移至"
@@ -668,6 +680,12 @@
       "Remove ${ attachmentName }": [
         "移除 ${ attachmentName }"
       ],
+      "Remove encryption": [
+        ""
+      ],
+      "Remove expiration time": [
+        ""
+      ],
       "Remove this label": [
         "移除此标签"
       ],
@@ -746,6 +764,9 @@
       "Set as default": [
         "设为默认"
       ],
+      "Set encryption": [
+        ""
+      ],
       "Set expiration time": [
         "设置有效期"
       ],
@@ -780,13 +801,13 @@
         "显示更少"
       ],
       "Show less search options": [
-        "减少搜索选项"
+        "不显示下列搜索选项"
       ],
       "Show messages": [
         "显示邮件"
       ],
       "Show more search options": [
-        "展开搜索选项"
+        "显示更多搜索选项"
       ],
       "Show preview": [
         "显示预览"
@@ -869,9 +890,6 @@
       "Unsubscribe": [
         "取消订阅"
       ],
-      "Unsubscribe from mailing list": [
-        "退订邮件"
-      ],
       "Unsubscribing": [
         "正在退订"
       ],
@@ -888,7 +906,7 @@
         "更新恢复密语"
       ],
       "Upgrade": [
-        "升级"
+        "升级账户"
       ],
       "Upgrade now": [
         "立即升级账户"
@@ -1066,7 +1084,7 @@
     },
     "Attachment radio advanced search": {
       "All": [
-        "全部"
+        "不限"
       ],
       "With": [
         "有"
@@ -2580,7 +2598,7 @@
         "正在合并联系人，可能需要几分钟的时间。完成后您就可以关闭此对话框了。"
       ],
       "The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_CONTACTS_STRING } contact. If your file is bigger, please split it into smaller files.": [
-        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出此限，请将其拆分成较小的文件。"
+        "文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且联系人总数上限为 ${ MAX_IMPORT_CONTACTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "拖动可调整联系人合并优先级，未勾选的联系人不会被合并。"
@@ -2852,8 +2870,8 @@
       "Label name cannot be empty.": [
         ""
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "最多只能有 ${ EO_REPLY_NUM_ATTACHMENTS_LIMIT } 个附件。"
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -2879,17 +2897,11 @@
       "No data to import": [
         "没有要导入的数据"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "没有为内部用户检索到的密钥用于发送"
-      ],
       "No keys retrieved for internal user": [
         "没有为内部用户检索到密钥"
       ],
       "No valid address found": [
         "未找到有效地址"
-      ],
-      "No valid keys retrieved for internal user": [
-        "没有为内部用户检索到有效密钥"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "没有为内部用户检索到的密钥用于发送"
@@ -2926,6 +2938,12 @@
       ],
       "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
+      ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
       ],
       "Public key could not be trusted": [
         "无法信任公钥"
@@ -2975,11 +2993,17 @@
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
         "该附件无法解密。\n如果你有相应的私钥，你仍然能够解密\n用GnuPG等程序来处理该文件。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "无法提取${ emailAddress } 的密钥属性"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
@@ -3501,10 +3525,10 @@
         "应用"
       ],
       "Custom folders": [
-        "自定义文件夹"
+        "用户文件夹"
       ],
       "Default folders": [
-        "默认文件夹"
+        "系统文件夹"
       ],
       "Labels": [
         "标签"
@@ -3549,7 +3573,7 @@
         "邮件"
       ],
       "Manual": [
-        "手动"
+        "人工验证"
       ],
       "No verification method available": [
         "没有可用的验证方法"
@@ -3650,23 +3674,17 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 会员"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组。"
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到 ${ groupsEnumeration }。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含多个电子邮件地址，请选择哪个/些地址添加到该群组。"
       ],
       "${ count } unread message": [
         "${ count } 封未读邮件"
@@ -3682,9 +3700,6 @@
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } 封邮件无法移动。"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "已屏蔽 ${ numberOfTrackers } 个电子邮件跟踪器"
@@ -3752,8 +3767,8 @@
       "(No Recipient)": [
         "(无收件人)"
       ],
-      "5 email addresses": [
-        "5 个邮箱地址"
+      "10 email addresses": [
+        ""
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "“恢复密语”是保护账户访问权限的最安全方法之一。如果您忘记了密码，您可以用它来访问账户并恢复加密数据。"
@@ -3944,6 +3959,9 @@
       "Do you want to re-sign the contact details?": [
         "确定要重新对联系人详细信息签名吗？"
       ],
+      "Don't forget to share your password with the recipient": [
+        ""
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
       ],
@@ -3968,6 +3986,15 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
+      "Edit encryption": [
+        ""
+      ],
+      "Edit expiration time": [
+        ""
+      ],
+      "Edit link": [
+        "修改链接"
+      ],
       "Email address": [
         "邮箱地址"
       ],
@@ -3986,11 +4013,8 @@
       "embedded image": [
         "张嵌入图像"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "为非 ${ BRAND_NAME } 用户加密"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "向非 ${ BRAND_NAME } 邮箱发送的加密邮件 28 天内有效，您也可以设置更短的有效期。"
+      "Encrypt message": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4005,9 +4029,6 @@
         "正在估算剩余时间..."
       ],
       "Expiration time": [
-        "邮件有效期"
-      ],
-      "Expiration Time": [
         "邮件有效期"
       ],
       "Expires": [
@@ -4025,6 +4046,9 @@
       "Expires soon": [
         "即将过期"
       ],
+      "Expiring message": [
+        ""
+      ],
       "file attached": [
         "个附件"
       ],
@@ -4033,6 +4057,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
+      ],
+      "Folder": [
+        ""
       ],
       "For increased security, activate 2FA.": [
         "开启双重验证可进一步提升账户安全性。"
@@ -4067,17 +4094,20 @@
       "Hour": [
         "小时"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        ""
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "若您要将此邮件发给非 ${ MAIL_APP_NAME } 用户，请务必设置邮件密码。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "Image description": [
+        ""
       ],
       "Image URL": [
         "图片地址"
@@ -4107,7 +4137,7 @@
         "索引暂停"
       ],
       "Inherited from parent folder": [
-        "继承自母文件夹"
+        "与上层文件夹一致"
       ],
       "Insert image": [
         "插入图片"
@@ -4244,6 +4274,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
+      "non-Proton Mail": [
+        ""
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
       ],
@@ -4255,6 +4288,9 @@
       ],
       "of": [
         "，共"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
@@ -4298,6 +4334,12 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "选择链接类型并填写相关信息。"
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
+      ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
       ],
@@ -4317,7 +4359,7 @@
         "优先享受客服"
       ],
       "Proton doesn't make money by abusing privacy.": [
-        "Proton 不会通过滥用用户隐私来赚钱。"
+        "Proton 绝不以践踏用户隐私的方式牟利。"
       ],
       "Recipient: ": [
         "收件人："
@@ -4375,6 +4417,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        ""
       ],
       "Sending": [
         "正在发送"
@@ -4446,7 +4491,7 @@
         "要显示的文字"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "导出联系人之前应用程序需在本地将其解密。在该过程结束时，将生成一个可供下载的 VCF 文件。"
+        "通讯录需在本机解密后方可导出，解密完成时将生成一份 VCF 文件供您下载。"
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "如果您离开该页面，您输入的数据可能不会被保存。"
@@ -4560,7 +4605,7 @@
         "尚未信任此发件人的公钥。"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "为防止滥发邮件，请验证您是真人操作。"
+        "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "要给联系人重新签名，我们需要对照您账户中可用的密钥列表来检查每一位联系人。如果找不到匹配项，您的联系人将使用主密钥重新签名。"
@@ -4664,6 +4709,9 @@
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        ""
+      ],
       "Web URL": [
         "网址"
       ],
@@ -4692,7 +4740,7 @@
         "您当前登录的用户为 ${ user.Name } (${ user.Email })。"
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        "您可以将其添加为附件或在邮件正文中内嵌显示。"
+        "您可以将此图片作为附件或嵌入邮件正文中。"
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "您也可以将导入日历与现有 Proton 日历合并。"
@@ -4701,7 +4749,7 @@
         "您可以在${ importProgressLink } 查看导入进度"
       ],
       "You can either update your search query or ${ button }": [
-        "您可以更改搜索条件或${ button }。"
+        "您可以更改或${ button }搜索条件。"
       ],
       "You can either update your search query or clear it": [
         "您可以修改或清除搜索内容"
@@ -4778,6 +4826,24 @@
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        ""
+      ],
+      "Your message will expire today.": [
+        ""
+      ],
+      "Your message will expire tomorrow.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
       ],
@@ -4807,8 +4873,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "已过期"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "首选"
@@ -4818,9 +4890,6 @@
       ],
       "Trusted": [
         "已信任"
-      ],
-      "Verification only": [
-        "仅用于验证"
       ],
       "WKD": [
         "WKD"
@@ -5179,7 +5248,7 @@
         "重复频率"
       ],
       "From": [
-        "发件人"
+        "从"
       ],
       "From:": [
         "发件人："
@@ -5252,9 +5321,6 @@
       ],
       "Mark as": [
         "标为"
-      ],
-      "Message password": [
-        "邮件密码"
       ],
       "Move to": [
         "移至"
@@ -5380,7 +5446,7 @@
         "时间"
       ],
       "To": [
-        "收件人"
+        "至"
       ],
       "To:": [
         "收件人："
@@ -5496,10 +5562,10 @@
         "立即领取"
       ],
       "Add folder": [
-        "添加文件夹"
+        "创建文件夹"
       ],
       "Add label": [
-        "添加标签"
+        "创建标签"
       ],
       "All mail": [
         "所有邮件"
@@ -5562,7 +5628,7 @@
         "管理标签"
       ],
       "More": [
-        ""
+        "其他"
       ],
       "More about recovery": [
         "详细了解账户恢复"
@@ -5574,7 +5640,7 @@
         "在 ${ calendarAppName } 中打开更新的日程"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "或者您可以删除一个日历后创建一个新的，将其关联到一个在用的邮箱地址。"
+        "您也可以删除并重新创建一份日历，关联至已启用的邮箱地址。"
       ],
       "Outbox": [
         "发件箱"
@@ -5592,7 +5658,7 @@
         "重新启用与本日历关联的地址以更新您的邀请。"
       ],
       "Request an invite": [
-        "请求邀请"
+        "申请注册"
       ],
       "Scheduled": [
         "定时发送"
@@ -5607,7 +5673,7 @@
         "垃圾邮件"
       ],
       "Starred": [
-        "已加星标"
+        "星标邮件"
       ],
       "Terms": [
         "服务条款"
@@ -5895,6 +5961,46 @@
         "标签名称"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "切换或添加账户"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "我们近期统一更新了 Proton 的界面，期待您的评价！"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 分：非常差"
+      ],
+      "5 - Wonderful": [
+        "5 分：非常好"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "您如何评价新版 Proton 的使用体验？"
+      ],
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
+        "新版 Proton，全方位的隐私保护"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } 已创建"
@@ -5924,7 +6030,7 @@
         "欢迎来到 ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
-        ""
+        "隐私与便利、效率与安全在此得以相辅相成。"
       ]
     },
     "Onboarding Action": {
@@ -5949,7 +6055,7 @@
         "填写机构信息"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "使用左上角的应用选择器访问其他 Proton 服务，包括 VPN, 日历和云盘。"
+        "点击左上方的应用菜单即可前往其他 Proton 服务，如 VPN、日历和网盘。"
       ],
       "You can change this anytime in your settings.": [
         "您可以随时在设置中更改。"
@@ -5977,7 +6083,7 @@
         "用户文件夹"
       ],
       "Default folders": [
-        "预置文件夹"
+        "系统文件夹"
       ],
       "Move to...": [
         "移至..."
@@ -6013,6 +6119,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此密钥不能用于加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -6079,7 +6196,7 @@
         "搜索群组名称"
       ],
       "Search for name or email": [
-        "搜索名称或电子邮件地址"
+        "搜索名称或邮箱地址"
       ],
       "Search messages": [
         "搜索邮件"
@@ -6091,7 +6208,7 @@
         "选择"
       ],
       "Start date": [
-        "开始日期"
+        "起始日期"
       ],
       "Start typing an email address": [
         "开始输入电子邮件地址"
@@ -6377,11 +6494,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "邮件已退订"
+      "This message is from a mailing list.": [
+        ""
       ],
-      "Unsubscribing from mailing list...": [
-        "正在退订邮件..."
+      "Unsubscribed": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6584,6 +6701,9 @@
       "Move ${ selectionCount } message": [
         "移动 ${ selectionCount } 封邮件"
       ],
+      "Password copied to clipboard": [
+        ""
+      ],
       "Phishing reported": [
         "欺诈信息举报完成"
       ],
@@ -6669,6 +6789,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "新版 Proton 闪亮登场。"
+      ],
+      "More services, one privacy mission.": [
+        "产品服务愈加丰富，隐私保护使命如一。"
+      ],
       "Settings": [
         "设置"
       ]
@@ -6884,9 +7010,6 @@
       "Enable message content search": [
         "启用邮件全文搜索"
       ],
-      "Encryption": [
-        "加密"
-      ],
       "Enter your password": [
         "输入密码"
       ],
@@ -6898,6 +7021,9 @@
       ],
       "Exporting contacts": [
         "导出联系人"
+      ],
+      "External encryption": [
+        ""
       ],
       "Feedback": [
         ""
