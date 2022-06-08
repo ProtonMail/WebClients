@@ -8,6 +8,7 @@ import {
     useApi,
     useCache,
     useErrorHandler,
+    useThemeQueryParameter,
 } from '@proton/components';
 import LoaderPage from '@proton/components/containers/app/LoaderPage';
 import { User, UserSettings } from '@proton/shared/lib/interfaces';
@@ -44,6 +45,8 @@ const Setup = ({ onLogin, UID }: Props) => {
 
     const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
     const cache = useCache();
+
+    useThemeQueryParameter();
 
     useEffect(() => {
         const setupFork = async (selector: string) => {
