@@ -1,4 +1,4 @@
-import { mergeUint8Arrays } from '@proton/util/array';
+import { mergeUint8Arrays } from '@proton/utils/array';
 
 const IV_LENGTH = 16;
 const ALGORITHM = 'AES-GCM';

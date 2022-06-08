@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, RequestNewCodeModal, useFormErrors, useLoading, InputFieldTwo } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import Text from '../public/Text';
 
 import ValidateResetTokenConfirmModal from './ValidateResetTokenConfirmModal';

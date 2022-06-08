@@ -1,4 +1,4 @@
-import { shallowEqual } from '@proton/util/array';
+import { shallowEqual } from '@proton/utils/array';
 import { FREQUENCY } from './constants';
 import {
     VcalDateOrDateTimeValue,

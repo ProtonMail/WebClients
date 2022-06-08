@@ -1,6 +1,6 @@
 import tinycolor, { Instance as Color } from 'tinycolor2';
 
-import percentOf from '@proton/util/percentOf';
+import percentOf from '@proton/utils/percentOf';
 
 function hue(percent: number) {
     return function (color: Color) {

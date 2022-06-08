@@ -1,4 +1,4 @@
-import mod from '@proton/util/mod';
+import mod from '@proton/utils/mod';
 import { addDays, isNextDay } from '../date-fns-utc';
 import {
     convertUTCDateTimeToZone,

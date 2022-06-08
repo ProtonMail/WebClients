@@ -2,7 +2,7 @@ import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKe
 import { GetDecryptedPassphraseAndCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetDecryptedPassphraseAndCalendarKeys';
 import { useCallback } from 'react';
 import { splitKeys } from '@proton/shared/lib/keys';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import {
     decryptPassphrase,
     getAddressesMembersMap,

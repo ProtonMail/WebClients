@@ -1,7 +1,7 @@
 import { createContext, useContext, useCallback, useEffect, useState } from 'react';
 
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { useDriveEventManager, DriveEvents } from '../_events';
 import { isEncryptedLinkSame, isDecryptedLinkSame } from './link';

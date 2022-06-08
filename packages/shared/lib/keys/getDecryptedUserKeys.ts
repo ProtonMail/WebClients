@@ -1,7 +1,7 @@
 import { decryptPrivateKey } from 'pmcrypto';
 
-import isTruthy from '@proton/util/isTruthy';
-import noop from '@proton/util/noop';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 import { DecryptedKey, Key as tsKey, KeyPair, User } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';

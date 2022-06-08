@@ -1,8 +1,8 @@
 import { useMemo, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { PLANS } from '@proton/shared/lib/constants';
-import compare from '@proton/util/compare';
-import groupWith from '@proton/util/groupWith';
+import compare from '@proton/utils/compare';
+import groupWith from '@proton/utils/groupWith';
 import { Details, Summary } from '../../../components';
 import { useUser, useUserVPN } from '../../../hooks';
 import { classnames } from '../../../helpers';

@@ -1,5 +1,5 @@
 import { enUS } from 'date-fns/locale';
-import truncate from '@proton/util/truncate';
+import truncate from '@proton/utils/truncate';
 import { ICAL_METHOD, MAX_LENGTHS_API } from '../../lib/calendar/constants';
 import { getSupportedEvent } from '../../lib/calendar/icsSurgery/vevent';
 import {

@@ -1,5 +1,5 @@
-import uniqueBy from '@proton/util/uniqueBy';
-import truncate from '@proton/util/truncate';
+import uniqueBy from '@proton/utils/uniqueBy';
+import truncate from '@proton/utils/truncate';
 import { MINUTE } from '../constants';
 import { convertUTCDateTimeToZone, fromUTCDate, getTimezoneOffset, toUTCDate } from '../date/timezone';
 import { omit } from '../helpers/object';

@@ -1,5 +1,5 @@
 import { ICAL_ATTENDEE_ROLE } from '@proton/shared/lib/calendar/constants';
-import uniqueBy from '@proton/util/uniqueBy';
+import uniqueBy from '@proton/utils/uniqueBy';
 import {
     CANONIZE_SCHEME,
     canonizeEmail,

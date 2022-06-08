@@ -1,6 +1,6 @@
 import { algorithmInfo } from 'pmcrypto';
-import unique from '@proton/util/unique';
-import capitalize from '@proton/util/capitalize';
+import unique from '@proton/utils/unique';
+import capitalize from '@proton/utils/capitalize';
 import { EncryptionConfig, SimpleMap } from '../interfaces';
 
 const CUSTOM_FORMATTED_ALGS: SimpleMap<string> = { elgamal: 'ElGamal' };

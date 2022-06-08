@@ -17,7 +17,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { buildTreeview } from '@proton/shared/lib/helpers/folder';
 import { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
 

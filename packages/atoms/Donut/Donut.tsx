@@ -1,4 +1,4 @@
-import percentOf from '@proton/util/percentOf';
+import percentOf from '@proton/utils/percentOf';
 import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
 
 import useUid from '@proton/components/hooks/useUid';

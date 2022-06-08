@@ -1,7 +1,7 @@
 import { create as createMutex } from '@protontech/mutex-browser';
 
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
-import noop from '@proton/util/noop';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import noop from '@proton/utils/noop';
 import { RETRY_ATTEMPTS_MAX, RETRY_DELAY_MAX, OFFLINE_RETRY_ATTEMPTS_MAX, OFFLINE_RETRY_DELAY } from '../../constants';
 import { createOnceHandler } from '../../apiHandlers';
 import { wait } from '../../helpers/promise';

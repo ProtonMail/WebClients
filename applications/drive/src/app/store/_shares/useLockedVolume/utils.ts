@@ -12,7 +12,7 @@ import {
 
 import { useAddressesKeys } from '@proton/components';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';

@@ -1,11 +1,11 @@
 import { useState, ChangeEvent, useMemo } from 'react';
 import { c, msgid } from 'ttag';
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
-import noop from '@proton/util/noop';
-import diff from '@proton/util/diff';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import noop from '@proton/utils/noop';
+import diff from '@proton/utils/diff';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/Contact';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import {
     FormModal,

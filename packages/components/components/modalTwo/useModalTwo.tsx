@@ -1,4 +1,4 @@
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { ComponentType, useRef, useState } from 'react';
 import useModalState from './useModalState';
 

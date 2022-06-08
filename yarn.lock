@@ -4089,9 +4089,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/util@workspace:packages/util":
+"@proton/utils@workspace:packages/utils":
   version: 0.0.0-use.local
-  resolution: "@proton/util@workspace:packages/util"
+  resolution: "@proton/utils@workspace:packages/utils"
   dependencies:
     "@proton/eslint-config-proton": "workspace:^"
     "@types/jest": ^27.4.1
