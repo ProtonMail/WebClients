@@ -191,8 +191,11 @@
       "Copy email to clipboard": [
         "Copiar correu electrònic al porta-retalls"
       ],
-      "Create a new contact group": [
+      "Copy password to clipboard": [
         ""
+      ],
+      "Create a new contact group": [
+        "Crear un nou grup de contactes"
       ],
       "Create folder": [
         "Crear carpeta"
@@ -263,7 +266,7 @@
         "Descarta"
       ],
       "Dismiss get started checklist": [
-        "Descartar la llista de verificació per començar"
+        "Descarta la llista de primers passos"
       ],
       "Done": [
         "Fet"
@@ -285,6 +288,9 @@
       ],
       "Edit email address": [
         "Editar l'adreça de correu electrònic"
+      ],
+      "Edit encryption": [
+        ""
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -316,6 +322,9 @@
       "Expand URL": [
         "Expandir URL"
       ],
+      "Expiration time": [
+        ""
+      ],
       "Export": [
         "Exporta"
       ],
@@ -324,6 +333,9 @@
       ],
       "Export contacts": [
         "Exportar contactes"
+      ],
+      "External encryption": [
+        ""
       ],
       "Filter on...": [
         "Filtrar per..."
@@ -347,7 +359,7 @@
         "Anar a la primera pàgina"
       ],
       "Go to label": [
-        ""
+        "Vagi a l'etiqueta"
       ],
       "Go to last page": [
         "Anar a la darrera pàgina"
@@ -395,7 +407,7 @@
         "Tinc una pregunta"
       ],
       "Images will be loaded without a proxy": [
-        ""
+        "Les imatges es carregaran sense proxy"
       ],
       "import": [
         "importar"
@@ -450,13 +462,13 @@
         "Saber-ne més"
       ],
       "Less search options": [
-        ""
+        "Menys opcions de cerca"
       ],
       "Load": [
         "Carregar"
       ],
       "Load embedded images": [
-        ""
+        "Carregar imatges incrustades"
       ],
       "Load image": [
         "Carregar imatge"
@@ -516,7 +528,7 @@
         "Més"
       ],
       "More details about ${ ariaLabelTitle }": [
-        ""
+        "Més detalls sobre ${ ariaLabelTitle }"
       ],
       "More info: ${ safeTitle }": [
         "Més informació: ${ safeTitle }"
@@ -576,7 +588,7 @@
         "No"
       ],
       "No trackers found, but some images could not be loaded with tracking protection.": [
-        ""
+        "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment."
       ],
       "No, I won't attend": [
         "No, no hi assistiré"
@@ -648,7 +660,7 @@
         "Tornar a signar"
       ],
       "Read receipt sent": [
-        ""
+        "S'ha enviat la confirmació de lectura"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -670,6 +682,12 @@
       ],
       "Remove ${ attachmentName }": [
         "Esborrar ${ attachmentName }"
+      ],
+      "Remove encryption": [
+        ""
+      ],
+      "Remove expiration time": [
+        ""
       ],
       "Remove this label": [
         "Elimina aquesta etiqueta"
@@ -741,13 +759,16 @@
         "enviar correu d’auto-resposta"
       ],
       "Send read receipt": [
-        ""
+        "Enviar confirmació de lectura"
       ],
       "Set": [
         "Establir"
       ],
       "Set as default": [
         "Establir com a predeterminat"
+      ],
+      "Set encryption": [
+        ""
       ],
       "Set expiration time": [
         "Definir el temps d'expiració"
@@ -783,7 +804,7 @@
         "Mostrar menys"
       ],
       "Show less search options": [
-        ""
+        "Mostrar menys opcions de cerca"
       ],
       "Show messages": [
         "Mostrar missatges"
@@ -868,13 +889,10 @@
         "Llista sense ordenar"
       ],
       "Unstar": [
-        ""
+        "No destacar"
       ],
       "Unsubscribe": [
         "Anul·lar la subscripció"
-      ],
-      "Unsubscribe from mailing list": [
-        ""
       ],
       "Unsubscribing": [
         "Anul·lant la subscripció"
@@ -895,7 +913,7 @@
         "Actualitzar"
       ],
       "Upgrade now": [
-        "Actualitzar ara"
+        "Millorar ara"
       ],
       "Upload picture": [
         "Carregar imatge"
@@ -931,7 +949,7 @@
         "Mostrar les capçaleres"
       ],
       "View HTML": [
-        ""
+        "Veure HTML"
       ],
       "View invoice": [
         "Veure factura"
@@ -943,7 +961,7 @@
         "Veure el missatge"
       ],
       "View message details": [
-        ""
+        "Mostrar detalls del missatge"
       ],
       "View recipients": [
         "Veure destinataris"
@@ -969,7 +987,7 @@
     },
     "action": {
       "Search messages": [
-        ""
+        "Cerqueu missatges"
       ]
     },
     "Actions message": {
@@ -1040,8 +1058,8 @@
     },
     "Amount of completed get started checklist items": {
       "${ numberOfCompletedItems }/${ totalNumberOfItems } complete": [
-        "",
-        ""
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } completat",
+        "${ numberOfCompletedItems }/${ totalNumberOfItems } completats"
       ]
     },
     "Apps dropdown": {
@@ -1260,7 +1278,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "Continuar utilitzant ${ MAIL_APP_NAME }."
       ]
     },
     "Calendar attachment tooltip": {
@@ -1494,7 +1512,7 @@
         ""
       ],
       "This response is out of date.": [
-        ""
+        "Aquesta resposta està desactualitzada."
       ],
       "This response is out of date. The event does not exist in your calendar anymore.": [
         "Aquesta resposta no està actualitzada. L'esdeveniment ja no existeix al vostre calendari."
@@ -1879,7 +1897,7 @@
         "Colòmbia"
       ],
       "Comoros": [
-        ""
+        "Les Comores"
       ],
       "Congo": [
         "Congo"
@@ -1951,7 +1969,7 @@
         "Illes Fèroe"
       ],
       "Federated States of Micronesia": [
-        ""
+        "Estats Federats de Micronèsia"
       ],
       "Fiji": [
         "Fiji"
@@ -2014,7 +2032,7 @@
         "Guinea"
       ],
       "Guinea-Bissau": [
-        ""
+        "Guinea-Bissau"
       ],
       "Guyana": [
         "Guyana"
@@ -2840,7 +2858,7 @@
         "Ja existeix un filtre amb aquest nom"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "El nom de la carpeta no pot estar buit."
       ],
       "Image upload failed": [
         "La càrrega de la imatge ha fallat"
@@ -2864,9 +2882,9 @@
         "Codi de verificació no vàlid"
       ],
       "Label name cannot be empty.": [
-        ""
+        "El nom de l'etiqueta no pot estar buit."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
@@ -2880,7 +2898,7 @@
         "Error de processament del missatge."
       ],
       "Missing key packet": [
-        ""
+        "Falta el paquet de claus"
       ],
       "Missing signature": [
         "Signatura no trobada"
@@ -2894,17 +2912,11 @@
       "No data to import": [
         "Ni hi ha dades per importar"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Cap enviament de cap clau per a l’usuari intern és vàlid per enviar-la"
-      ],
       "No keys retrieved for internal user": [
         "No s’ha recuperat cap clau per a l’usuari intern"
       ],
       "No valid address found": [
         "No s’ha trobat una adreça vàlida"
-      ],
-      "No valid keys retrieved for internal user": [
-        "No hi ha claus vàlides recuperades per l'usuari intern"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "No hi ha cap clau WKD per a l'usuari vàlida per a l'enviament"
@@ -2944,6 +2956,12 @@
       ],
       "Primary address key is not decrypted.": [
         "La clau de la adreça primària no està desxifrada."
+      ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
       ],
       "Public key could not be trusted": [
         "La clau pública no pot ser verificada"
@@ -2995,11 +3013,17 @@
         "No s'ha pogut desxifrar el fitxer adjunt.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nel fitxer amb un programa com GnuPG.",
         "No s'ha pogut desxifrar els fitxers adjunts.\nSi teniu la clau privada corresponent, encara podreu desxifrar\nels fitxers amb un programa com GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        ""
+      ],
       "The folder name is too long. Please choose a different name.": [
         "El nom de la carpeta és massa llarg. Trieu-ne un de diferent."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "No s'han pogut extreure les propietats clau de ${ emailAddress }"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        ""
       ],
       "The label name is too long. Please choose a different name.": [
         "El nom de l'etiqueta és massa llarg. Trieu-ne un de diferent."
@@ -3026,10 +3050,10 @@
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "Aquest nom de carpeta no està disponible. Trieu-ne un altre."
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
       ],
       "This message has already been sent": [
         "Aquest missatge ja s'ha enviat"
@@ -3336,16 +3360,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bytes"
       ],
       "Gigabytes": [
-        ""
+        "Gigabytes"
       ],
       "Kilobytes": [
-        ""
+        "Kilobytes"
       ],
       "Megabytes": [
-        ""
+        "Megabytes"
       ]
     },
     "Filter Actions": {
@@ -3447,7 +3471,7 @@
     },
     "Get started checklist completion": {
       "We've increased the total storage of your account to ${ rewardInGb } GB. Get additional storage and unlock premium features today.": [
-        ""
+        "Hem augmentat l'emmagatzematge del compte a ${ rewardInGb } GB. Obteniu espai addicional i desbloquegeu característiques prèmium ara."
       ],
       "You're all set!": [
         "Ja ho teniu tot llest!"
@@ -3455,7 +3479,7 @@
     },
     "Get started checklist incentive": {
       "Complete all steps and get a total of ${ rewardInGb } GB on your account": [
-        ""
+        "Completeu tots els passos i obtingueu un total de ${ rewardInGb } GB al vostre compte"
       ],
       "Expires soon": [
         "Caduca aviat"
@@ -3661,7 +3685,7 @@
     },
     "Info": {
       "${ activateLink } or ${ learnMoreLink }.": [
-        ""
+        "${ activateLink } o ${ learnMoreLink }."
       ],
       "${ addressCount } email address": [
         "${ addressCount } adreça de correu electrònic",
@@ -3682,25 +3706,20 @@
         "${ calendarsToBeMergedCount } calendari combinat",
         "${ calendarsToBeMergedCount } calendaris combinats"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Membre",
         "${ contactEmailsLength } Membres"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu quina adreça de correu electrònic o adreces voleu afegir a ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conté diverses adreces de correu electrònic. Seleccioneu l'adreça o adreces de correu electrònic que vulgueu afegir a aquest grup."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contacte trobat",
         "${ contactsCount } contactes trobats"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quina adreça o adreces de correu electrònic voleu afegir a ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } contenen diverses adreces de correu electrònic. Seleccioneu quines adreces de correu electrònic voleu afegir a aquest grup."
       ],
       "${ count } unread message": [
         "${ count } missatge no llegit",
@@ -3715,14 +3734,11 @@
         "${ groupCounts } grups trobats"
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
-        ""
+        "${ MAIL_APP_NAME } pot protegir també la vostra empresa."
       ],
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } missatge no s'ha pogut moure.",
         "${ messagesNotAuthorizedToMove } missatges no s'han pogut moure."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } rastrejador de correu electrònic bloquejat",
@@ -3761,7 +3777,7 @@
         "${ selectedFoldersCount } etiquetes seleccionades"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } d'emmagatzematge"
       ],
       "${ total } conversation": [
         "${ total } conversa",
@@ -3808,8 +3824,8 @@
       "(No Recipient)": [
         "(Cap Destinatari)"
       ],
-      "5 email addresses": [
-        "5 adreces de correu electrònic"
+      "10 email addresses": [
+        "10 adreces de correu"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Una frase de recuperació és una de les formes més segures de protegir el vostre compte. La podeu utilitzar per accedir al vostre compte i recuperar les vostres dades xifrades si mai oblideu la contrasenya."
@@ -3907,7 +3923,7 @@
         "La navegació bàsica i les accions es mantenen disponibles independentment de que a la configuració les dreceres de teclat estiguin actives o no."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        ""
+        "Abans de sol·licitar un nou codi de verificació, reviseu la carpeta de correu brossa i si ${ strong } és l'adreça correcta."
       ],
       "Body: ": [
         "Cos: "
@@ -3943,7 +3959,7 @@
         "Confirmeu l'informe de phishing"
       ],
       "Continue with ${ planName }": [
-        ""
+        "Continuar amb ${ planName }"
       ],
       "Copied to clipboard": [
         "Copiat al porta-retalls"
@@ -4003,10 +4019,13 @@
         "Voleu descarregar aquests adjunts de totes maneres?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
-        "Voleu tornar a signar les dades de contacte i en el procés confiar les tecles amb les següents empremtes dactilars?"
+        "Voleu tornar a signar les dades de contacte i en el procés confiar en les claus amb les següents empremtes dactilars?"
       ],
       "Do you want to re-sign the contact details?": [
         "Voleu tornar a signar els detalls de contacte?"
+      ],
+      "Don't forget to share your password with the recipient": [
+        ""
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Descarregueu la nostra aplicació mòbil des de la vostra botiga d'aplicacions preferida per comunicar-vos de manera segura en qualsevol moment."
@@ -4032,6 +4051,15 @@
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
+      "Edit encryption": [
+        ""
+      ],
+      "Edit expiration time": [
+        ""
+      ],
+      "Edit link": [
+        ""
+      ],
       "Email address": [
         "Adreça de correu electrònic"
       ],
@@ -4052,10 +4080,7 @@
         "imatge integrade",
         "imatges integrades"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        ""
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
+      "Encrypt message": [
         ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
@@ -4074,22 +4099,22 @@
       "Expiration time": [
         "Data de caducitat"
       ],
-      "Expiration Time": [
-        "Temps d'expiració"
-      ],
       "Expires": [
-        ""
+        "Caduca"
       ],
       "Expires in ${ formattedDelay }": [
-        ""
+        "Caduca en ${ formattedDelay }"
       ],
       "Expires in ${ formattedDelayShort }": [
-        ""
+        "Caduca en ${ formattedDelayShort }"
       ],
       "Expires in less than ${ formattedDelayShort }": [
-        ""
+        "Caduca en menys de ${ formattedDelayShort }"
       ],
       "Expires soon": [
+        "Caduca aviat"
+      ],
+      "Expiring message": [
         ""
       ],
       "file attached": [
@@ -4101,6 +4126,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
+      ],
+      "Folder": [
+        ""
       ],
       "For increased security, activate 2FA.": [
         "Per millorar la seguretat activeu l'autenticació de doble factor (2FA)."
@@ -4137,17 +4165,20 @@
         "Hora",
         "Hores"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        ""
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        ""
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
+      ],
+      "Image description": [
+        ""
       ],
       "Image URL": [
         "URL de la imatge"
@@ -4313,6 +4344,9 @@
         "No s'han trobat resultats"
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
+        "No s'han trobat rastrejadors, però algunes imatges no s'han pogut carregar amb la protecció de seguiment"
+      ],
+      "non-Proton Mail": [
         ""
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
@@ -4327,6 +4361,9 @@
       "of": [
         "de"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        ""
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         ""
       ],
@@ -4337,7 +4374,7 @@
         "El nostre sistema ha marcat aquest missatge com un intent de suplantació d'identitat. Comproveu que sigui legítim."
       ],
       "per month.": [
-        ""
+        "al mes."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         ""
@@ -4368,6 +4405,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Seleccioneu el tipus d'enllaç que voleu inserir i ompliu tots els camps."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Si us plau, espereu mentre busquem contactes que es poden tornar a signar amb la clau de xifratge primària."
@@ -4447,6 +4491,9 @@
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Seleccioneu quins calendaris importar. Es crearà un nou calendari per cada calendari importat fins al límit de 20 calendaris."
       ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        ""
+      ],
       "Sending": [
         "Enviant"
       ],
@@ -4478,13 +4525,13 @@
         "Mostra el missatge original"
       ],
       "Sorry, this message does not exist or has already expired.": [
-        ""
+        "Ho sentim, aquest missatge no existeix o ja ha expirat."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "L'emmagatzematge és compartit amb ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }."
       ],
       "Store and share files securely with ${ DRIVE_APP_NAME }.": [
-        ""
+        "Emmagatzemeu i compartiu fitxers de forma segura amb ${ DRIVE_APP_NAME }."
       ],
       "Subject": [
         "Assumpte"
@@ -4499,7 +4546,7 @@
         "Assumpte: "
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Suport per a 1 domini de correu personalitzat"
       ],
       "Support privacy by upgrading for": [
         "Doneu suport a la privacitat actualitzant a"
@@ -4526,7 +4573,7 @@
         "El missatge original que esteu intentant reenviar o respondre està en procés d'enviament. Si continueu, ja no podreu desfer l'enviament del missatge original."
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
-        ""
+        "El remitent original d'aquest missatge ja no és vàlid. El missatge s'enviarà des de la seva adreça per defecte ${ defaultEmail }."
       ],
       "The sender has requested a read receipt.": [
         "L'emissor ha sol·licitat una confirmació de lectura."
@@ -4698,7 +4745,7 @@
         "Actualitzeu per donar suport a la privacitat i obtenir més funcionalitats."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
-        ""
+        "Milloreu el compte per a utilitzar ${ MAIL_APP_NAME } amb clients d'escriptori de tercers."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
@@ -4713,7 +4760,7 @@
         "URL: ${ unsubscribeMethods.HttpClient }"
       ],
       "Use ${ calendarAppName } to keep your agenda private.": [
-        ""
+        "Utilitzeu ${ calendarAppName } per a mantenir l'agenda privada."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
         "Utilitzeu dreceres de teclat per gestionar el vostre correu electrònic més ràpidament."
@@ -4735,6 +4782,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ens mudem! Entreu al nostre lloc nou: ${ link }."
       ],
       "Web URL": [
         "URL del web"
@@ -4782,7 +4832,7 @@
         "Podeu activar les notificacions per obtenir alertes quan arribin missatges de correu electrònic nous en aquesta carpeta."
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
-        ""
+        "Podeu utilitzar ${ VPN_APP_NAME } gratuïtament avui."
       ],
       "You cannot reply from the invited address.": [
         "No podeu contestar des de l'adreça convidada."
@@ -4858,6 +4908,25 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "",
+        ""
+      ],
+      "Your message will expire today.": [
+        ""
+      ],
+      "Your message will expire tomorrow.": [
+        ""
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
       ],
@@ -4887,8 +4956,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Vençuda"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Primari"
@@ -4898,9 +4973,6 @@
       ],
       "Trusted": [
         "De confiança"
-      ],
-      "Verification only": [
-        "Només verificació"
       ],
       "WKD": [
         "WKD"
@@ -5159,7 +5231,7 @@
         "CUALSEVOL"
       ],
       "Attach screenshot(s)": [
-        ""
+        "Adjunta captura/es de pantalla"
       ],
       "Attachments": [
         "Adjunts"
@@ -5276,7 +5348,7 @@
         "Amaga la contrasenya"
       ],
       "I understand the risk": [
-        ""
+        "Entenc el risc"
       ],
       "IF": [
         "SI"
@@ -5334,9 +5406,6 @@
       ],
       "Mark as": [
         "Marca com a"
-      ],
-      "Message password": [
-        "Contrasenya del missatge"
       ],
       "Move to": [
         "Moure a"
@@ -5480,7 +5549,7 @@
         "Carregar imatge"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        ""
+        "Nom d'usuari o adreça de ${ MAIL_APP_NAME }"
       ],
       "Verification code": [
         "Codi de verificació"
@@ -5644,7 +5713,7 @@
         "Gestioneu les vostres etiquetes"
       ],
       "More": [
-        ""
+        "Més"
       ],
       "More about recovery": [
         "Més sobre la recuperació"
@@ -5701,7 +5770,7 @@
         "Paperera"
       ],
       "Upgrade": [
-        "Actualitzar"
+        "Millorar"
       ],
       "Upgrade account": [
         "Millorar el compte"
@@ -5982,6 +6051,46 @@
         "Nom de etiqueta"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        ""
+      ],
+      "5 - Wonderful": [
+        ""
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
+      ],
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } creat"
@@ -6008,10 +6117,10 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        ""
+        "Benvingut/da a ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
-        ""
+        "On la privadesa i la seguretat es troben amb la productivitat i la facilitat d'ús."
       ]
     },
     "Onboarding Action": {
@@ -6019,7 +6128,7 @@
         "Següent"
       ],
       "Start using ${ appName }": [
-        ""
+        "Comenceu a utilitzar ${ appName }"
       ]
     },
     "Onboarding Proton": {
@@ -6080,16 +6189,16 @@
     },
     "Paid user checklist item": {
       "Get mobile app": [
-        ""
+        "Obtenir l'aplicació mòbil"
       ],
       "Import contacts or emails": [
-        ""
+        "Importar contactes o correus electrònics"
       ],
       "Send a message": [
-        ""
+        "Enviar un missatge"
       ],
       "Set up a recovery method": [
-        ""
+        "Configurar un mètode de recuperació"
       ]
     },
     "Participant name": {
@@ -6100,6 +6209,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "La clau no es pot utilitzar per al xifratge"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        ""
       ]
     },
     "PGP key warning": {
@@ -6175,7 +6295,7 @@
         "Cerca nom, correu electrónic o grup"
       ],
       "Select": [
-        ""
+        "Seleccionar"
       ],
       "Start date": [
         "Data d'inici"
@@ -6323,7 +6443,7 @@
         "No s'han trobat resultats"
       ],
       "No unread messages found": [
-        ""
+        "No s'han trobat missatges sense llegir"
       ]
     },
     "Select files": {
@@ -6367,7 +6487,7 @@
     },
     "Sent email icon": {
       "Encrypted by ${ MAIL_APP_NAME }": [
-        ""
+        "Xifrat per ${ MAIL_APP_NAME }"
       ],
       "Encrypted by ${ MAIL_APP_NAME } to PGP recipient": [
         ""
@@ -6450,10 +6570,10 @@
         "Descobriu tots els serveis de Proton"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "Convideu amistats i guanyeu recompenses!"
       ],
       "Message Content Search": [
         "Cerca de contingut del missatge"
@@ -6472,10 +6592,10 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
+      "This message is from a mailing list.": [
         ""
       ],
-      "Unsubscribing from mailing list...": [
+      "Unsubscribed": [
         ""
       ]
     },
@@ -6702,6 +6822,9 @@
         "Mou ${ selectionCount } missatge",
         "Mou ${ selectionCount } missatges"
       ],
+      "Password copied to clipboard": [
+        ""
+      ],
       "Phishing reported": [
         "Phishing reportat"
       ],
@@ -6731,7 +6854,7 @@
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/mes"
       ]
     },
     "Table header": {
@@ -6787,6 +6910,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
+      ],
       "Settings": [
         "Preferències"
       ]
@@ -7015,20 +7144,20 @@
       "Enable message content search": [
         "Activar la cerca de contingut dels missatges"
       ],
-      "Encryption": [
-        "Xifratge"
-      ],
       "Enter your password": [
         "Introdueix la teva contrasenya"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        ""
+        "Introduïu el nom d'usuari i l'adreça de correu de ${ MAIL_APP_NAME }"
       ],
       "Error": [
         "Error"
       ],
       "Exporting contacts": [
         "Exportant contactes"
+      ],
+      "External encryption": [
+        ""
       ],
       "Feedback": [
         ""
@@ -7091,13 +7220,13 @@
         "Combinant contactes"
       ],
       "Message details": [
-        ""
+        "Detalls del missatge"
       ],
       "Message list": [
         "Llista de missatges"
       ],
       "Message will expire": [
-        ""
+        "El missatge caducarà"
       ],
       "More": [
         "Més"
@@ -7172,7 +7301,7 @@
         "Falta el destinatari"
       ],
       "Recipients": [
-        ""
+        "Destinataris"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -7214,7 +7343,7 @@
         "Enviar sense expiració?"
       ],
       "Sender": [
-        ""
+        "Remitent"
       ],
       "Sender changed": [
         "Remitent canviat"
@@ -7278,7 +7407,7 @@
         "Advertència"
       ],
       "Warning: suspected fake website": [
-        ""
+        "Avís: presumpte lloc web fals"
       ],
       "Welcome": [
         "Benvingut/da"
@@ -7287,7 +7416,7 @@
         "Benvingut/da, ${ userName }"
       ],
       "What would you like to import?": [
-        ""
+        "Què li agradaria importar?"
       ],
       "What's new": [
         "Novetats"

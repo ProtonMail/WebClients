@@ -1873,13 +1873,13 @@
         "",
         ""
       ],
+      "10 email addresses": [
+        ""
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% de descuento aplicado a tu suscripción con el cupón ${ code }"
       ],
       "30-day money-back guarantee.": [
-        ""
-      ],
-      "5 email addresses": [
         ""
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
@@ -2303,7 +2303,7 @@
         ""
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
-        ""
+        "Para proteger tu conexión a Internet, descarga e instala la aplicación de ${ VPN_APP_NAME } para tu dispositivo y conéctate a un servidor de ${ VPN_APP_NAME }."
       ],
       "To use ${ toAppName }, please create an address.": [
         ""
@@ -2381,6 +2381,9 @@
         "Te redirigiremos a PayPal en una nueva pestaña de navegador para completar esta transacción. Si usas cualquier bloqueador emergente, por favor desactívalos para continuar."
       ],
       "We'll send a new verification code to ${ strong }": [
+        ""
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
         ""
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
@@ -3170,7 +3173,7 @@
         "Respuesta automática"
       ],
       "Catch-all": [
-        "Catch-all"
+        ""
       ],
       "Centralized billing": [
         "Facturación centralizada"
@@ -3356,14 +3359,11 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Si te cambias de plan, perderás todas las ventajas que tiene ser ${ visionary } y no podrás volver al plan ${ visionary }."
       ],
-      "learn more": [
-        "más información"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Ya no ofrecemos el plan ${ visionary } a quienes se suscriben por primera vez porque es un plan especial que incluye funciones y ventajas exclusivas para quienes ya tienen ${ BRAND_NAME }."
       ],
       "Popular": [
-        "Popular"
+        ""
       ],
       "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
         "El precio de la futura renovación tendrá en cuenta todos los cupones válidos y en vigor que tengas guardados en tu cuenta"
@@ -3410,11 +3410,6 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
-      ]
-    },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Presentamos la nueva imagen de Proton, con varios servicios, pero una misma misión. Inicia sesión para continuar o ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -4088,6 +4083,14 @@
       ],
       "Status": [
         "Estado"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        ""
+      ],
+      "More services, one privacy mission.": [
+        ""
       ]
     },
     "Title": {

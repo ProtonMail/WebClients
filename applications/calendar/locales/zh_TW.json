@@ -2069,17 +2069,11 @@
       "No data to import": [
         "無資料可匯入"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "內部使用者沒有提取到任何用於寄送的有效金鑰"
-      ],
       "No keys retrieved for internal user": [
         "內部使用者沒有提取到任何金鑰"
       ],
       "No valid address found": [
         "找不到有效的地址"
-      ],
-      "No valid keys retrieved for internal user": [
-        "內部使用者沒有提取到任何有效的金鑰"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "使用者沒有提取到任何用於寄送的有效 WKD 金鑰"
@@ -2114,6 +2108,12 @@
       "Primary address key is not decrypted.": [
         "主要地址金鑰並未被加密。"
       ],
+      "Primary key is not valid for sending": [
+        "主要金鑰對傳送無效"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "從內部使用者擷取而來的金鑰對寄送有效"
+      ],
       "Request timed out": [
         "請求逾時"
       ],
@@ -2144,8 +2144,14 @@
       "Start time must be before end time": [
         "起始時間必須在結束時間之前"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "此資料夾名稱無法使用。請換另一個名稱。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "資料夾名稱太長。請換另一個名稱。"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "此標籤名稱無法使用。請換另一個名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
         "標籤名稱太長。請換另一個名稱。"
@@ -2702,29 +2708,20 @@
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } 位聯絡人包含多組電郵位址。"
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 個成員"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } 包含多組電郵位址。"
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 個聯絡人"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到 ${ groupsEnumeration } 的電子郵件地址。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } 包含了多個電子郵件地址。請選取要新增到此群組的電子郵件地址。"
-      ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } 和 ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 個聯絡人群組"
@@ -2750,8 +2747,8 @@
       "(${ memberCount } member)": [
         "(${ memberCount } 個成員)"
       ],
-      "5 email addresses": [
-        "5 個電子郵件地址"
+      "10 email addresses": [
+        "10 個電子郵件地址"
       ],
       "A cancellation email will be sent to removed participants.": [
         "取消函將發送給已移除的參與者。"
@@ -2984,6 +2981,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "召集人先前更新的事件將會保留。"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "您的一個或更多個信任金鑰曾被他們的擁有者標記為「被盜」。我們建議您「取消信任」這些金鑰。"
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有當您使用 PGP 寄送給非 ${ BRAND_NAME } 收件人時，才需修改這些設定。"
       ],
@@ -3007,6 +3007,12 @@
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "請選取一或多組電郵位址已加入至 ${ groupCount } 個群組中。"
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "請選取一或多組電郵位址以加入至 ${ groupName }。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "請稍候，我們正查找可使用主要加密金鑰重新簽署的聯絡人。"
@@ -3033,7 +3039,7 @@
         "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
       ],
       "Select what you want to move from Google.": [
-        "選取您要從 Google 移動的項目"
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新的行事曆，上限為 20 個行事曆。"
@@ -3145,6 +3151,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我們將會向 ${ strong } 傳送新的驗證碼"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "我們搬家嘍！到新網站來加入我們吧！ ${ link }"
       ],
       "Week": [
         "週"
@@ -3278,8 +3287,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "已洩漏"
+      ],
       "Expired": [
         "過期"
+      ],
+      "Obsolete": [
+        "廢棄"
       ],
       "Primary": [
         "主要"
@@ -3289,9 +3304,6 @@
       ],
       "Trusted": [
         "信任"
-      ],
-      "Verification only": [
-        "僅用於驗證"
       ],
       "WKD": [
         "WKD"
@@ -3835,6 +3847,34 @@
         "標籤名稱"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "切換或是新增帳號"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        "分享您精彩的體驗 (什麼都行)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "意見回饋"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "告訴我們您的想法"
+      ],
+      "Updated Proton, unified protection": [
+        "改版更新的 Proton，全方面防護"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "聯絡人群組已建立"
@@ -4068,6 +4108,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "此金鑰不適用於加密"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } 已將此金鑰標記為已洩漏。此金鑰無法用於加密與簽章驗證。"
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } 已將此金鑰標記為廢棄。此金鑰僅能用於簽章驗證。"
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "我們建議您「取消信任」這些金鑰。"
       ]
     },
     "PGP key warning": {
@@ -4470,6 +4521,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "介紹更新的 Proton。"
+      ],
+      "More services, one privacy mission.": [
+        "更多服務，一項隱私使命。"
+      ],
       "Settings": [
         "設定"
       ]

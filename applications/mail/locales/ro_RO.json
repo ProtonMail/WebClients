@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Copiere mesaj în memorie"
       ],
+      "Copy password to clipboard": [
+        "Copiere parolă în memorie"
+      ],
       "Create a new contact group": [
         "Creare grup de contacte"
       ],
@@ -288,6 +291,9 @@
       "Edit email address": [
         "Editare adresa de e-mail"
       ],
+      "Edit encryption": [
+        "Editare criptare"
+      ],
       "Edit label": [
         "Editare etichetă"
       ],
@@ -318,6 +324,9 @@
       "Expand URL": [
         "Extindere URL"
       ],
+      "Expiration time": [
+        "Dată expirare"
+      ],
       "Export": [
         "Exportare"
       ],
@@ -326,6 +335,9 @@
       ],
       "Export contacts": [
         "Exportare contacte"
+      ],
+      "External encryption": [
+        "Criptare externă"
       ],
       "Filter on...": [
         "Filtrare după..."
@@ -674,6 +686,12 @@
       "Remove ${ attachmentName }": [
         "Eliminare ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "Eliminare criptare"
+      ],
+      "Remove expiration time": [
+        "Eliminare dată expirare"
+      ],
       "Remove this label": [
         "Eliminare etichetă"
       ],
@@ -751,6 +769,9 @@
       ],
       "Set as default": [
         "Setare ca implicit"
+      ],
+      "Set encryption": [
+        "Setare criptare"
       ],
       "Set expiration time": [
         "Setați timpul de expirare"
@@ -876,9 +897,6 @@
       ],
       "Unsubscribe": [
         "Dezabonare"
-      ],
-      "Unsubscribe from mailing list": [
-        "Dezabonare de la lista de discuții"
       ],
       "Unsubscribing": [
         "Unsubscribing"
@@ -2880,8 +2898,8 @@
       "Label name cannot be empty.": [
         "Numele etichetei nu poate fi gol."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Numărul maxim de atașamente (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) a fost depășit."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Numărul maxim de atașamente (${ attachmentsCountLimit }) a fost depășit."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Îmbinați cel puțin un calendar cu un calendar Proton existent",
@@ -2909,17 +2927,11 @@
       "No data to import": [
         "Nu sunt date de importat."
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nicio cheie preluată pentru utilizatorul intern nu este valabilă pentru trimitere"
-      ],
       "No keys retrieved for internal user": [
         "Nicio cheie preluată pentru utilizatorul intern"
       ],
       "No valid address found": [
         "Nu s-a găsit o adresă de e-mail validă."
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nicio cheie validă preluată pentru utilizatorul intern"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nicio cheie WKD recuperată pentru utilizator nu este validă pentru trimitere"
@@ -2962,6 +2974,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Cheia primară a adresei nu este decriptată."
+      ],
+      "Primary key is not valid for sending": [
+        "Cheia primară nu este validă pentru trimiteri."
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Cheia primară preluată pentru utilizatorul intern nu este valabilă pentru trimiteri."
       ],
       "Public key could not be trusted": [
         "Cheia publică nu poate fi de încredere."
@@ -3015,11 +3033,17 @@
         "Unele atașamente nu a putut fi decriptate.\nDacă aveți cheia privată corespunzătoare, veți putea decripta\nfișierele cu un program cum ar fi GnuPG.",
         "Unele atașamente nu au putut fi decriptate.\nDacă dețineți cheia privată corespunzătoare, veți putea decripta în continuare\nfișierele cu un program cum ar fi GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Numele folderului nu este valid. Alegeți alt nume."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Numele folderului este prea lung. Alegeți alt nume."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Proprietățile cheii pentru ${ emailAddress } nu au putut fi extrase"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Numele etichetei nu este valid. Alegeți alt nume."
       ],
       "The label name is too long. Please choose a different name.": [
         "Numele etichetei este prea lung. Alegeți alt nume."
@@ -3714,27 +3738,23 @@
         "${ calendarsToBeMergedCount } calendare îmbinate",
         "${ calendarsToBeMergedCount } de calendare îmbinate"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "Un contact conține adrese multiple de e-mail.",
+        "${ contactCount } contacte conțin adrese multiple de e-mail.",
+        "${ contactCount } de contacte conțin adrese multiple de e-mail."
+      ],
       "${ contactEmailsLength } Member": [
         "Un membru",
         "${ contactEmailsLength } membri",
         "${ contactEmailsLength } de membri"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } conține adrese de e-mail multiple. Selectați adresa de e-mail sau adresele de adăugat în acest grup."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } conține adrese multiple de e-mail."
       ],
       "${ contactsCount } contact found": [
         "S-a găsit un contact",
         "S-au găsit ${ contactsCount } contacte",
         "S-au găsit ${ contactsCount } de contacte"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } conțin adrese de e-mail multiple. Selectați adresa sau adresele de e-mail de adăugat în acest grup."
       ],
       "${ count } unread message": [
         "Un mesaj necitit",
@@ -3758,9 +3778,6 @@
         "Un mesaj nu a putut fi mutat.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } mesaje.",
         "Nu au putut fi mutate ${ messagesNotAuthorizedToMove } de mesaje."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } și ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "S-a blocat un urmăritor de e-mail",
@@ -3864,8 +3881,8 @@
       "(No Recipient)": [
         "(Fără destinatar)"
       ],
-      "5 email addresses": [
-        "5 adrese de e-mail"
+      "10 email addresses": [
+        "10 adrese de e-mail"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "O frază de recuperare este una dintre cele mai sigure modalități de a vă proteja accesul la cont. O puteți folosi pentru a vă accesa contul și pentru a vă recupera datele criptate dacă vă uitați vreodată parola."
@@ -4072,6 +4089,9 @@
       "Do you want to re-sign the contact details?": [
         "Doriți să reînregistrați datele contactului?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Nu uitați să partajați parola cu destinatarul."
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Descărcați aplicația mobilă din magazinul preferat de aplicații pentru a comunica în siguranță la distanță."
       ],
@@ -4096,6 +4116,15 @@
       "Duplicate key updated": [
         "Cheie duplicat actualizată"
       ],
+      "Edit encryption": [
+        "Editare criptare"
+      ],
+      "Edit expiration time": [
+        "Editare dată de expirare"
+      ],
+      "Edit link": [
+        "Editare legătură"
+      ],
       "Email address": [
         "Adresă e-mail"
       ],
@@ -4118,11 +4147,8 @@
         "imagini încorporate",
         "de imagini încorporate"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Criptare pentru neutilizatori ai ${ BRAND_NAME }"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Mesajele criptate către destinatarii care nu sunt utilizatori ai ${ BRAND_NAME } vor expira în 28 de zile, cu excepția cazului în care se stabilește un termen de expirare mai scurt."
+      "Encrypt message": [
+        "Criptare mesaj"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduceți codul de verificare care a fost trimis la ${ destinationText }."
@@ -4141,9 +4167,6 @@
       "Expiration time": [
         "Dată expirare"
       ],
-      "Expiration Time": [
-        "Dată expirare"
-      ],
       "Expires": [
         "Expiră"
       ],
@@ -4159,6 +4182,9 @@
       "Expires soon": [
         "Expiră în curând"
       ],
+      "Expiring message": [
+        "Mesaj la expirare"
+      ],
       "file attached": [
         "fişier ataşat",
         "fișiere atașate",
@@ -4169,6 +4195,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzând atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
+      ],
+      "Folder": [
+        "Folder"
       ],
       "For increased security, activate 2FA.": [
         "Pentru o securitate sporită, activați A2F."
@@ -4207,17 +4236,20 @@
         "ore",
         "de ore"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Trimit acest mesaj unui utilizator non-Proton Mail."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Dacă aveți probleme cu crearea contului, solicitați o invitație și vom răspunde în termen de o zi lucrătoare."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Dacă trimiteți acest mesaj unui destinatar care nu este utilizator al ${ MAIL_APP_NAME }, asigurați-vă că ați setat o parolă pentru mesaj."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, vă rugăm să ne contactați la ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "Image description": [
+        "Descriere imagine"
       ],
       "Image URL": [
         "URL imagine"
@@ -4386,6 +4418,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Nu s-au găsit urmăritori, dar unele imagini nu au putut fi încărcare cu protecția la urmărire activă."
       ],
+      "non-Proton Mail": [
+        "non-Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
@@ -4397,6 +4432,9 @@
       ],
       "of": [
         "din"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Una sau mai multe chei de încredere au fost marcate ca fiind „compromise” de către proprietar. Vă recomandăm să „nu aprobați” aceste chei."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
@@ -4439,6 +4477,14 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Selectați tipul de legătură pe care doriți să o inserați și completați toate câmpurile."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selectați adresa sau adresele de e-mail de adăugat la un grup.",
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } grupuri.",
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupCount } de grupuri."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Așteptați până se caută contactele care pot fi resemnate cu cheia de criptare primară."
@@ -4517,6 +4563,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Selectați calendarele de importat. Va fi creat un nou calendar pentru fiecare calendar importat până la limita de 20 de calendare."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Trimitere mesaj criptat, protejat cu parolă, la o adresă de e-mail ${ boldText }."
       ],
       "Sending": [
         "Se trimite"
@@ -4808,6 +4857,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ne mutăm! Vino alături de noi pe noul nostru site: ${ link }."
+      ],
       "Web URL": [
         "Adresa URL"
       ],
@@ -4938,6 +4990,26 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "Mesajul va fi șters ${ dateString } la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "Mesajul va fi șters astăzi la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "Mesajul va fi șters mâine la ${ formattedTime } din folderul de mesaje «Primite» a destinatarului și din folderul personal de mesaje «Trimise»."
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Acest mesaj va expira peste o zi.",
+        "Acest mesaj va expira peste ${ numberOfDays } zile.",
+        "Acest mesaj va expira peste ${ numberOfDays } de zile."
+      ],
+      "Your message will expire today.": [
+        "Mesajul va expira astăzi."
+      ],
+      "Your message will expire tomorrow.": [
+        "Mesajul va expira mâine."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
       ],
@@ -4967,8 +5039,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Compromisă"
+      ],
       "Expired": [
         "Expirată"
+      ],
+      "Obsolete": [
+        "Învechită"
       ],
       "Primary": [
         "Primară"
@@ -4978,9 +5056,6 @@
       ],
       "Trusted": [
         "Aprobată"
-      ],
-      "Verification only": [
-        "Doar verificare"
       ],
       "WKD": [
         "WKD"
@@ -5416,9 +5491,6 @@
       ],
       "Mark as": [
         "Marcare"
-      ],
-      "Message password": [
-        "Parolă mesaj"
       ],
       "Move to": [
         "Mutare în"
@@ -6069,6 +6141,46 @@
         "Nume etichetă"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Schimbare sau adăugare cont"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Am introdus aspectul unificat și reîmprospătat al lui Proton. Ne-ar plăcea să auzim ce credeți despre asta!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Groaznică"
+      ],
+      "5 - Wonderful": [
+        "5 - Minunată"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Cum ați descrie experiența avută cu noul Proton Mail?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Spuneți-ne despre experiența avută. (Opțional)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Feedback"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Oferiți feedback"
+      ],
+      "Updated Proton, unified protection": [
+        "Proton actualizat, protecție unificată"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } a fost creat"
@@ -6187,6 +6299,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Cheia nu poate fi folosită pentru criptare."
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } a marcat această cheie ca fiind compromisă. Această cheie nu poate fi folosită nici pentru criptare, nici pentru verificarea semnăturii."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } a marcat această cheie ca fiind depășită. Această cheie poate fi folosită doar pentru verificarea semnăturii."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Vă recomandăm să „nu aprobați” această cheie."
       ]
     },
     "PGP key warning": {
@@ -6567,11 +6690,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Dezabonat din lista de corespondență"
+      "This message is from a mailing list.": [
+        "Acest mesaj este de la o listă de corespondență."
       ],
-      "Unsubscribing from mailing list...": [
-        "Vă dezabonăm de la lista de corespondență..."
+      "Unsubscribed": [
+        "Dezabonat"
       ]
     },
     "Step in filter modal": {
@@ -6820,6 +6943,9 @@
         "Mutare ${ selectionCount } mesaje",
         "Mutare ${ selectionCount } de mesaje"
       ],
+      "Password copied to clipboard": [
+        "Parola a fost copiată în memorie."
+      ],
       "Phishing reported": [
         "Înșelăciune raportată"
       ],
@@ -6905,6 +7031,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Vă prezentăm noul Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Mai multe servicii, o singură misiune: confidențialitatea."
+      ],
       "Settings": [
         "Setări"
       ]
@@ -7146,9 +7278,6 @@
       "Enable message content search": [
         "Activați căutarea conținutului mesajului"
       ],
-      "Encryption": [
-        "Criptare"
-      ],
       "Enter your password": [
         "Introduceţi parola"
       ],
@@ -7160,6 +7289,9 @@
       ],
       "Exporting contacts": [
         "Exportare contacte"
+      ],
+      "External encryption": [
+        "Criptare externă"
       ],
       "Feedback": [
         "Feedback"

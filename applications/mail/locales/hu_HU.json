@@ -15,13 +15,13 @@
         "Aktiválás"
       ],
       "Activate recovery": [
-        ""
+        "Helyreállítás aktiválása"
       ],
       "Add": [
         "Hozzáadás"
       ],
       "Add address": [
-        ""
+        "Cím hozzáadása"
       ],
       "Add condition": [
         "Új feltétel"
@@ -30,7 +30,7 @@
         "Új névjegy"
       ],
       "Add email": [
-        ""
+        "E-mail hozzáadása"
       ],
       "Add group": [
         "Csoport hozzáadása"
@@ -42,10 +42,10 @@
         "Új csoport hozzáadása"
       ],
       "Add participant": [
-        ""
+        "Résztvevő hozzáadása"
       ],
       "Add phone number": [
-        ""
+        "Telefonszám hozzáadása"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
         "Hozzáadás a csoporthoz: ${ CALENDAR_APP_NAME }"
@@ -111,10 +111,10 @@
         "Lapozás"
       ],
       "Chat with us": [
-        ""
+        "Beszélgetés indítása"
       ],
       "Check import progress": [
-        ""
+        "Importálási folyamat ellenőrzése"
       ],
       "Choose a file or drag it here": [
         "Válasszon fájlt vagy ejtse ide"
@@ -126,7 +126,7 @@
         "Formázás törlése"
       ],
       "Clear browser data": [
-        ""
+        "Böngészőadatok törlése"
       ],
       "Clear data": [
         "Adatok törlése"
@@ -168,7 +168,7 @@
         "Jóváhagyás"
       ],
       "Confirm opening of link ${ linkToShow }": [
-        ""
+        "Hivatkozás megnyitásának jóváhagyása: ${ linkToShow }"
       ],
       "Contact group": [
         "Névjegy csoport"
@@ -191,8 +191,11 @@
       "Copy email to clipboard": [
         "E-mail másolása a vágólapra"
       ],
+      "Copy password to clipboard": [
+        "Jelszó másolása a vágólapra"
+      ],
       "Create a new contact group": [
-        ""
+        "Új névjegy csoport létrehozása"
       ],
       "Create folder": [
         "Mappa létrehozása"
@@ -204,19 +207,19 @@
         "Új névjegy létrehozása"
       ],
       "Create new message": [
-        ""
+        "Új üzenet létrehozása"
       ],
       "Custom filter": [
         "Saját szűrő"
       ],
       "Customize": [
-        ""
+        "Testreszabás"
       ],
       "Decrypt": [
-        ""
+        "Visszafejtés"
       ],
       "Default email application": [
-        ""
+        "Alapértelmezett e-mail alkalmazás"
       ],
       "Delete": [
         "Törlés"
@@ -257,13 +260,13 @@
         "Részletek"
       ],
       "Didn't receive the code?": [
-        ""
+        "Nem kapta meg a kódot?"
       ],
       "Discard": [
         "Elvetés"
       ],
       "Dismiss get started checklist": [
-        ""
+        "Kezdési tevékenységlista bezárásra"
       ],
       "Done": [
         "Kész"
@@ -281,19 +284,22 @@
         "Cím szerkesztése"
       ],
       "Edit draft": [
-        ""
+        "Vázlat szerkesztése"
       ],
       "Edit email address": [
         "E-mail cím módosítása"
       ],
+      "Edit encryption": [
+        "Titkosítás szerkesztése"
+      ],
       "Edit label": [
-        ""
+        "Címke szerkesztése"
       ],
       "Edit phone number": [
         "Telefonszám módosítása"
       ],
       "Edit sign-in details": [
-        ""
+        "Bejelentkezési adatok szerkesztése"
       ],
       "Email settings": [
         "E-mail beállítások"
@@ -302,28 +308,34 @@
         "Engedélyezés"
       ],
       "enable desktop notifications": [
-        "asztali értesítések engedélyezése"
+        "asztali értesítéset küldhessen"
       ],
       "Encryption": [
         "Titkosítás"
       ],
       "exclude message content": [
-        ""
+        "zárja ki az üzenetek tartalmában való keresést"
       ],
       "Expand composer": [
         "Szerkesztő kinagyítása"
       ],
       "Expand URL": [
-        ""
+        "URL kifejtése"
+      ],
+      "Expiration time": [
+        "Lejárati idő"
       ],
       "Export": [
         "Exportálás"
       ],
       "Export contact group": [
-        ""
+        "Névjegy csoport exportálása"
       ],
       "Export contacts": [
         "Névjegyek exportálása"
+      ],
+      "External encryption": [
+        "Külső titkosítás"
       ],
       "Filter on...": [
         "Szűrés..."
@@ -335,7 +347,7 @@
         "Továbbítás mellékletként"
       ],
       "Generate recovery phrase": [
-        ""
+        "Helyreállító jelmondat létrehozása"
       ],
       "Get started": [
         "Kezdés"
@@ -383,10 +395,10 @@
         "Részletek elrejtése"
       ],
       "Hide folders": [
-        ""
+        "Mappák elrejtése"
       ],
       "Hide labels": [
-        ""
+        "Címkék elrejtése"
       ],
       "Hide messages": [
         "Üzenetek elrejtése"
@@ -404,7 +416,7 @@
         "Importálás"
       ],
       "Import from .csv or vCard": [
-        ""
+        "Importálás .csv vagy vCard fájlból"
       ],
       "Import messages": [
         "Üzenetek importálása"
@@ -462,10 +474,10 @@
         "Kép betöltése"
       ],
       "Load more": [
-        ""
+        "Több betöltése"
       ],
       "Load unprotected": [
-        ""
+        "Betöltés védelem nélkül"
       ],
       "Loading${ ellipsis }": [
         "Betöltés${ ellipsis }"
@@ -477,7 +489,7 @@
         "Megjelenítés tömörsége"
       ],
       "Mailbox layout": [
-        ""
+        "Elrendezés"
       ],
       "Mark as read": [
         "Megjelölés olvasottként"
@@ -522,7 +534,7 @@
         "További információk: ${ safeTitle }"
       ],
       "More search options": [
-        ""
+        "További keresési beállítások"
       ],
       "move emails to": [
         "áthelyezés ide:"
@@ -549,7 +561,7 @@
         "Áthelyezés..."
       ],
       "Need help?": [
-        ""
+        "Segíthetünk?"
       ],
       "Never show": [
         "Elrejtés"
@@ -588,19 +600,19 @@
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
-        ""
+        "${ CALENDAR_APP_NAME } megnyitása"
       ],
       "Open calendar": [
-        ""
+        "Naptár megnyitása"
       ],
       "Open get started checklist modal": [
-        ""
+        "Kezdési tevékenységlista megnyitása"
       ],
       "Open navigation": [
         "Navigáció megnyitása"
       ],
       "Open shop": [
-        ""
+        "Bolt megnyitása"
       ],
       "Ordered list": [
         "Számozott lista"
@@ -609,7 +621,7 @@
         "${ pageNumber }. oldal"
       ],
       "Pause": [
-        ""
+        "Felfüggesztés"
       ],
       "Preview": [
         "Előnézet"
@@ -639,7 +651,7 @@
         "Nyomtatás"
       ],
       "Quit": [
-        ""
+        "Kilépés"
       ],
       "Quote": [
         "Idézet"
@@ -657,7 +669,7 @@
         "Ajánljon egy barátot"
       ],
       "Refine it": [
-        ""
+        "Finomítsa"
       ],
       "refresh the page": [
         "frissítse az oldalt"
@@ -671,14 +683,20 @@
       "Remove ${ attachmentName }": [
         "${ attachmentName } eltávolítása"
       ],
+      "Remove encryption": [
+        "Titkosítás kikapcsolása"
+      ],
+      "Remove expiration time": [
+        "Időkorlát eltávolítása"
+      ],
       "Remove this label": [
         "Címke eltávolítása"
       ],
       "Rename": [
-        ""
+        "Átnevezés"
       ],
       "Reply securely": [
-        ""
+        "Válasz biztonságosan"
       ],
       "Report a problem": [
         "Probléma jelentése"
@@ -699,7 +717,7 @@
         "Folytatás"
       ],
       "Revert to original display": [
-        ""
+        "Visszatérés az eredeti megjelenéshez"
       ],
       "Save": [
         "Mentés"
@@ -717,10 +735,10 @@
         "Keresés"
       ],
       "Search in ${ option.text }": [
-        ""
+        "Keresés itt: ${ option.text }"
       ],
       "Search message content": [
-        "Keresés üzenet tartalmában"
+        "Keresés az üzenetek tartalmában"
       ],
       "Select all": [
         "Összes kijelölése"
@@ -747,13 +765,16 @@
         "Beállítás"
       ],
       "Set as default": [
-        ""
+        "Beállítás alapértelmezettként"
+      ],
+      "Set encryption": [
+        "Titkosítás beállítása"
       ],
       "Set expiration time": [
         "Időkorlát megadása"
       ],
       "Set recovery phrase": [
-        ""
+        "Helyreállító jelmondat beállítása"
       ],
       "Share via link": [
         "Megosztás hivatkozással"
@@ -774,13 +795,13 @@
         "Részletek megjelenítése"
       ],
       "Show folders": [
-        ""
+        "Mappák megjelenítése"
       ],
       "Show labels": [
-        ""
+        "Címkék megjelenítése"
       ],
       "Show less": [
-        ""
+        "Kevesebb megjelenítése"
       ],
       "Show less search options": [
         "Kevesebb keresési beállítás megjelenítése"
@@ -816,13 +837,13 @@
         "Beállítás megkezdése"
       ],
       "Stay": [
-        ""
+        "Marad"
       ],
       "Submit": [
         "Küldés"
       ],
       "Switch to rich text": [
-        ""
+        "Váltás formázott szövegre"
       ],
       "Theme": [
         "Téma"
@@ -831,7 +852,7 @@
         "Ez az üzenet beágyazott képet tartalmaz."
       ],
       "This message contains remote content.": [
-        ""
+        "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
       ],
       "Trust": [
         "Megbízható"
@@ -850,7 +871,7 @@
         "Másik módszer"
       ],
       "Turn on tracker protection": [
-        ""
+        "Követés védelem bekapcsolása"
       ],
       "Underline": [
         "Aláhúzott"
@@ -859,7 +880,7 @@
         "Visszavonás"
       ],
       "Unlock data": [
-        ""
+        "Adatok feloldása"
       ],
       "Unmark for deletion": [
         "Mégsem jelöl törlésre"
@@ -873,9 +894,6 @@
       "Unsubscribe": [
         "Leiratkozás"
       ],
-      "Unsubscribe from mailing list": [
-        "Leiratkozás levelezési listáról"
-      ],
       "Unsubscribing": [
         "Leiratkozás"
       ],
@@ -883,19 +901,19 @@
         "Nem megbízható"
       ],
       "Update": [
-        ""
+        "Frissítés"
       ],
       "Update recovery file": [
-        ""
+        "Helyreállító fájl frissítése"
       ],
       "Update recovery phrase": [
-        ""
+        "Helyreállító jelmondat frissítése"
       ],
       "Upgrade": [
         "Csomagváltás"
       ],
       "Upgrade now": [
-        ""
+        "Váltás nagyobb csomagra"
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -907,7 +925,7 @@
         "Küldéshez használható"
       ],
       "Use your mouse to resize the view. If you're using your keyboard, you can use left and right arrow keys to resize.": [
-        ""
+        "Az egérrel átméretezheti a nézetet. Ha a billentyűzetet használja, a jobba és balra nyilakkal méretezheti át."
       ],
       "Use “${ label }” setting": [
         "\"${ label }\" beállítás használata"
@@ -916,10 +934,10 @@
         "Ellenőrzés"
       ],
       "Verify account": [
-        ""
+        "Fiók ellenőrzése"
       ],
       "Verify email": [
-        ""
+        "E-mail ellenőrzése"
       ],
       "View": [
         "Megtekintés"
@@ -952,7 +970,7 @@
         "HTML nézet"
       ],
       "Why not?": [
-        ""
+        "Miért ne?"
       ],
       "Yes": [
         "Igen"
@@ -991,13 +1009,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        ""
+        "Résztvevő hozzáadása nem sikerült"
       ],
       "Invitation sent and participant added": [
-        ""
+        "Meghívó elküldve és résztvevő hozzáadva"
       ],
       "Participant added": [
-        ""
+        "Résztvevő hozzáadva"
       ]
     },
     "Alert": {
@@ -1074,10 +1092,10 @@
         "Mind"
       ],
       "With": [
-        ""
+        "Van"
       ],
       "Without": [
-        ""
+        "Nincs"
       ]
     },
     "Attachment signature verification": {
@@ -1265,12 +1283,12 @@
     },
     "Calendar attachment tooltip": {
       "Has a calendar event": [
-        ""
+        "Egy naptár eseményt tartalmaz"
       ]
     },
     "Calendar invite buttons label": {
       "Attending?": [
-        ""
+        "Részt vesz?"
       ]
     },
     "Calendar invite info": {
@@ -1278,16 +1296,16 @@
         " Ez az új javasolt időpont nem fedi a meghívó adatait. Ellenőrizze a meghívó részleteit a naptárában."
       ],
       "${ participantName } accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára."
       ],
       "${ participantName } accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az eseményhez."
       ],
       "${ participantName } accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } elfogadott egy meghívást az esemény egy alkalmára."
       ],
       "${ participantName } accepted an invitation to this event.": [
-        ""
+        "${ participantName } elfogadott egy meghívást erre az eseményre."
       ],
       "${ participantName } accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára."
@@ -1314,16 +1332,16 @@
         "${ participantName } a legfrissebb változtatásokról kért tájékoztatást egy olyan eseményről, ami nem fedi az ön meghívási adatait. Ellenőrizze a meghívási részleteit a naptárában."
       ],
       "${ participantName } declined an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az esemény egy alkalmára."
       ],
       "${ participantName } declined an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az eseményhez."
       ],
       "${ participantName } declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } elutasított egy meghívást az esemény egy alkalmára."
       ],
       "${ participantName } declined an invitation to this event.": [
-        ""
+        "${ participantName } visszautasított egy meghívást erre az eseményre."
       ],
       "${ participantName } declined your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } elutasította a meghívását és új időpontot javasolt az esemény egy alkalmára."
@@ -1338,16 +1356,16 @@
         "${ participantName } elutasította a meghívását."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
       ],
       "${ participantName } had accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } elfogadott egy meghívást és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
       ],
       "${ participantName } had accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } elfogadott egy meghívást az esemény egy alkalmára."
       ],
       "${ participantName } had accepted an invitation to this event.": [
-        ""
+        "${ participantName } elfogadott egy meghívást erre az eseményre."
       ],
       "${ participantName } had accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
@@ -1356,16 +1374,16 @@
         "${ participantName } elfogadta a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
       ],
       "${ participantName } had declined an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
       ],
       "${ participantName } had declined an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } elutasított egy meghívást és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
       ],
       "${ participantName } had declined an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } visszautasított egy meghívást az esemény egy alkalmára."
       ],
       "${ participantName } had declined an invitation to this event.": [
-        ""
+        "${ participantName } visszautasított egy meghívást erre az eseményre."
       ],
       "${ participantName } had declined your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } elutasította a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
@@ -1410,16 +1428,16 @@
         "${ participantName } új időpontot javasolt az eseményhez. A javaslat elavult. Önnek nincs is naptára."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
       ],
       "${ participantName } had tentatively accepted an invitation and proposed a new time for this event. Answer and proposal are out of date.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
       ],
       "${ participantName } had tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást az esemény egy alkalmára."
       ],
       "${ participantName } had tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást erre az eseményre."
       ],
       "${ participantName } had tentatively accepted your invitation and proposed a new time for one occurrence of this event. Answer and proposal are out of date.": [
         "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára. A válasz és a javaslat elavult."
@@ -1428,7 +1446,7 @@
         "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az eseményhez. A válasz és a javaslat elavult."
       ],
       "${ participantName } is not in the participants list.": [
-        ""
+        "${ participantName } nincs a résztvevők listáján."
       ],
       "${ participantName } proposed a new time for one occurrence of this event.": [
         "${ participantName } új időpontot javasolt az esemény egy alkalmára."
@@ -1437,16 +1455,16 @@
         "${ participantName } új időpontot javasolt ehhez az eseményhez."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for one occurrence of this event.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az esemény egy alkalmára."
       ],
       "${ participantName } tentatively accepted an invitation and proposed a new time for this event.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást és új időpontot javasolt az eseményhez."
       ],
       "${ participantName } tentatively accepted an invitation to one occurrence of the event.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást az esemény egy alkalmára."
       ],
       "${ participantName } tentatively accepted an invitation to this event.": [
-        ""
+        "${ participantName } feltételesen elfogadott egy meghívást erre az eseményre."
       ],
       "${ participantName } tentatively accepted your invitation and proposed a new time for one occurrence of this event.": [
         "${ participantName } feltételesen elfogadta a meghívását és új időpontot javasolt az esemény egy alkalmára."
@@ -1461,28 +1479,28 @@
         "${ participantName } feltételesen elfogadta a meghívását."
       ],
       "(Attendance optional)": [
-        ""
+        "(Részvétel opcionális)"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        ""
+        "További alkalmak hozzáadása egy eseményhez jelenleg nem támogatott"
       ],
       "Event refreshing is not supported for the moment": [
-        ""
+        "Esemény frissítés jelenleg nem támogatott"
       ],
       "Event rescheduling is not supported for the moment": [
-        ""
+        "Az esemény újraidőzítés jelenleg nem támogatott"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        ""
+        "A válasz nem adható a ${ calendarAppName } naptárhoz, mert jelenleg csak a sorozat összes eseményéhez való válasz támogatott"
       ],
       "This event has been canceled.": [
-        ""
+        "Ezt az eseményt törölték."
       ],
       "This event has been updated.": [
         "Ez eseményt frissítették."
       ],
       "This invitation is out of date. The event has been canceled.": [
-        ""
+        "A meghívó elavult. Az eseményt törölték."
       ],
       "This invitation is out of date. The event has been deleted.": [
         "A meghívó elavult. Az eseményt törölték."
@@ -1503,16 +1521,16 @@
         "Ez a válasz elavult. Önnek nincs is naptára."
       ],
       "You already accepted this invitation.": [
-        ""
+        "Már elfogadta ezt a meghívást."
       ],
       "You already declined this invitation.": [
-        ""
+        "Már visszautasította ezt a meghívást."
       ],
       "You already tentatively accepted this invitation.": [
-        ""
+        "Már feltételesen elfogadta ezt meghívást."
       ],
       "Your email address is not in the participants list": [
-        ""
+        "Az ön e-mail címe nem szerepel a résztvevők listáján"
       ]
     },
     "Calendar status": {
@@ -1551,18 +1569,18 @@
     },
     "Calendar widget banner": {
       "Event already ended": [
-        ""
+        "Az esemény már befejeződött"
       ],
       "Event in progress": [
-        ""
+        "Az esemény folyamatban van"
       ]
     },
     "Collapsible tooltip": {
       "Close": [
-        ""
+        "Bezárás"
       ],
       "Open": [
-        ""
+        "Megnyitás"
       ]
     },
     "Composer email icon": {
@@ -1633,13 +1651,13 @@
     },
     "Confirm modal title": {
       "Edit and reschedule": [
-        ""
+        "Szerkesztés és újraütemezés"
       ],
       "Message saved to Drafts": [
-        ""
+        "Üzenet áthelyezve a Vázlatokba"
       ],
       "Quit import customization?": [
-        ""
+        "Elveti az importálás módosításait?"
       ]
     },
     "Contact field label": {
@@ -1726,774 +1744,774 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "Abházia"
       ],
       "Afghanistan": [
-        ""
+        "Afganisztán"
       ],
       "Albania": [
-        ""
+        "Albánia"
       ],
       "Algeria": [
-        ""
+        "Algéria"
       ],
       "American Samoa": [
-        ""
+        "Amerikai Szamoa"
       ],
       "Andorra": [
-        ""
+        "Andorra"
       ],
       "Angola": [
-        ""
+        "Angola"
       ],
       "Anguilla": [
-        ""
+        "Anguilla"
       ],
       "Antarctica": [
-        ""
+        "Antarktisz"
       ],
       "Antigua and Barbuda": [
-        ""
+        "Antigua és Barbuda"
       ],
       "Argentina": [
-        ""
+        "Argentína"
       ],
       "Armenia": [
-        ""
+        "Örményország"
       ],
       "Aruba": [
-        ""
+        "Aruba"
       ],
       "Ascension Island": [
-        ""
+        "Ascension-sziget"
       ],
       "Australia": [
-        ""
+        "Ausztrália"
       ],
       "Austria": [
-        ""
+        "Ausztria"
       ],
       "Azerbaijan": [
-        ""
+        "Azerbajdzsán"
       ],
       "Bahamas": [
-        ""
+        "Bahama-szigetek"
       ],
       "Bahrain": [
-        ""
+        "Bahrein"
       ],
       "Bangladesh": [
-        ""
+        "Banglades"
       ],
       "Barbados": [
-        ""
+        "Barbados"
       ],
       "Belarus": [
-        ""
+        "Fehéroroszország"
       ],
       "Belgium": [
-        ""
+        "Belgium"
       ],
       "Belize": [
-        ""
+        "Belize"
       ],
       "Benin": [
-        ""
+        "Benin"
       ],
       "Bermuda": [
-        ""
+        "Bermuda"
       ],
       "Bhutan": [
-        ""
+        "Bhután"
       ],
       "Bolivia": [
-        ""
+        "Bolívia"
       ],
       "Bonaire, Sint Eustatius and Saba": [
-        ""
+        "Bonaire, Sint Eustatius és Saba"
       ],
       "Bosnia and Herzegovina": [
-        ""
+        "Bosznia-Hercegovina"
       ],
       "Botswana": [
-        ""
+        "Botswana"
       ],
       "Bouvet Island": [
-        ""
+        "Bouvet-sziget"
       ],
       "Brazil": [
-        ""
+        "Brazília"
       ],
       "British Indian Ocean Territory": [
-        ""
+        "Brit Indiai-óceáni Terület"
       ],
       "Brunei Darussalam": [
-        ""
+        "Brunei Darussalam Állam"
       ],
       "Bulgaria": [
-        ""
+        "Bulgária"
       ],
       "Burkina Faso": [
-        ""
+        "Burkina Faso"
       ],
       "Burma": [
-        ""
+        "Mianmar"
       ],
       "Burundi": [
-        ""
+        "Burundi"
       ],
       "Cambodia": [
-        ""
+        "Kambodzsa"
       ],
       "Cameroon": [
-        ""
+        "Kamerun"
       ],
       "Canada": [
-        ""
+        "Kanada"
       ],
       "Cape Verde": [
-        ""
+        "Zöld-foki Köztársaság"
       ],
       "Cayman Islands": [
-        ""
+        "Kajmán-szigetek"
       ],
       "Central African Republic": [
-        ""
+        "Közép-afrikai Köztársaság"
       ],
       "Chad": [
-        ""
+        "Csád"
       ],
       "Chile": [
-        ""
+        "Chile"
       ],
       "China": [
-        ""
+        "Kína"
       ],
       "Christmas Island": [
-        ""
+        "Karácsony-sziget"
       ],
       "Cocos (Keeling) Islands": [
-        ""
+        "Kókusz (Keeling)-szigetek"
       ],
       "Colombia": [
-        ""
+        "Kolumbia"
       ],
       "Comoros": [
-        ""
+        "Comore-szigetek"
       ],
       "Congo": [
-        ""
+        "Kongó"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "Kongói Demokratikus Köztársaság"
       ],
       "Cook Islands": [
-        ""
+        "Cook-szigetek"
       ],
       "Costa Rica": [
-        ""
+        "Costa Rica"
       ],
       "Cote d'Ivoire\"": [
         "Côte d'Ivoire"
       ],
       "Croatia": [
-        ""
+        "Horvátország"
       ],
       "Cuba": [
-        ""
+        "Kuba"
       ],
       "Curaçao": [
-        ""
+        "Curaçao"
       ],
       "Cyprus": [
-        ""
+        "Ciprus"
       ],
       "Czech Republic": [
-        ""
+        "Csehország"
       ],
       "Denmark": [
-        ""
+        "Dánia"
       ],
       "Djibouti": [
-        ""
+        "Dzsibuti"
       ],
       "Dominica": [
-        ""
+        "Dominikai Közösség"
       ],
       "Dominican Republic": [
-        ""
+        "Dominikai Köztársaság"
       ],
       "Ecuador": [
-        ""
+        "Ecuador"
       ],
       "Egypt": [
-        ""
+        "Egyiptom"
       ],
       "El Salvador": [
-        ""
+        "El Salvador"
       ],
       "Equatorial Guinea": [
-        ""
+        "Egyenlítői-Guinea"
       ],
       "Eritrea": [
-        ""
+        "Eritrea"
       ],
       "Estonia": [
-        ""
+        "Észtország"
       ],
       "Ethiopia": [
-        ""
+        "Etiópia"
       ],
       "Falkland Islands": [
-        ""
+        "Aland-szigetek"
       ],
       "Faroe Islands": [
-        ""
+        "Feröer-szigetek"
       ],
       "Federated States of Micronesia": [
-        ""
+        "Mikronéziai Szövetségi Államok"
       ],
       "Fiji": [
-        ""
+        "Fidzsi-szigetek"
       ],
       "Finland": [
-        ""
+        "Finnország"
       ],
       "France": [
-        ""
+        "Franciaország"
       ],
       "French Guiana": [
-        ""
+        "Francia Guyana"
       ],
       "French Polynesia": [
-        ""
+        "Francia Polinézia"
       ],
       "French Southern Territories": [
-        ""
+        "Francia déli területek"
       ],
       "Gabon": [
-        ""
+        "Gabon"
       ],
       "Gambia": [
-        ""
+        "Gambia"
       ],
       "Georgia": [
-        ""
+        "Grúzia"
       ],
       "Germany": [
-        ""
+        "Németország"
       ],
       "Ghana": [
-        ""
+        "Ghána"
       ],
       "Gibraltar": [
-        ""
+        "Gibraltár"
       ],
       "Greece": [
-        ""
+        "Görögország"
       ],
       "Greenland": [
-        ""
+        "Grönland"
       ],
       "Grenada": [
-        ""
+        "Grenada"
       ],
       "Guadeloupe": [
-        ""
+        "Guadeloupe"
       ],
       "Guam": [
-        ""
+        "Guam"
       ],
       "Guatemala": [
-        ""
+        "Guatemala"
       ],
       "Guernsey": [
-        ""
+        "Guernsey"
       ],
       "Guinea": [
-        ""
+        "Guinea"
       ],
       "Guinea-Bissau": [
-        ""
+        "Bissau-Guinea"
       ],
       "Guyana": [
-        ""
+        "Guyana"
       ],
       "Haiti": [
-        ""
+        "Haiti"
       ],
       "Heard Island and McDonald Islands": [
-        ""
+        "Heard-sziget és McDonald-szigetek"
       ],
       "Holy See (Vatican City State)": [
-        ""
+        "Vatikán"
       ],
       "Honduras": [
-        ""
+        "Honduras"
       ],
       "Hong Kong": [
-        ""
+        "Hongkong"
       ],
       "Hungary": [
-        ""
+        "Magyarország"
       ],
       "Iceland": [
-        ""
+        "Izland"
       ],
       "India": [
-        ""
+        "India"
       ],
       "Indonesia": [
-        ""
+        "Indonézia"
       ],
       "International": [
-        ""
+        "Nemzetközi"
       ],
       "Iran": [
-        ""
+        "Irán"
       ],
       "Iraq": [
-        ""
+        "Irak"
       ],
       "Ireland": [
-        ""
+        "Írország"
       ],
       "Isle of Man": [
-        ""
+        "Mann"
       ],
       "Israel": [
-        ""
+        "Izrael"
       ],
       "Italy": [
-        ""
+        "Olaszország"
       ],
       "Jamaica": [
-        ""
+        "Jamaika"
       ],
       "Japan": [
-        ""
+        "Japán"
       ],
       "Jersey": [
-        ""
+        "Jersey"
       ],
       "Jordan": [
-        ""
+        "Jordánia"
       ],
       "Kazakhstan": [
-        ""
+        "Kazahsztán"
       ],
       "Kenya": [
-        ""
+        "Kenya"
       ],
       "Kiribati": [
-        ""
+        "Kiribati"
       ],
       "Kosovo": [
-        ""
+        "Koszovó"
       ],
       "Kuwait": [
-        ""
+        "Kuvait"
       ],
       "Kyrgyzstan": [
-        ""
+        "Kirgizisztán"
       ],
       "Laos": [
-        ""
+        "Laosz"
       ],
       "Latvia": [
-        ""
+        "Lettország"
       ],
       "Lebanon": [
-        ""
+        "Libanon"
       ],
       "Lesotho": [
-        ""
+        "Lesotho"
       ],
       "Liberia": [
-        ""
+        "Libéria"
       ],
       "Libya": [
-        ""
+        "Líbia"
       ],
       "Liechtenstein": [
-        ""
+        "Liechtenstein"
       ],
       "Lithuania": [
-        ""
+        "Litvánia"
       ],
       "Luxembourg": [
-        ""
+        "Luxemburg"
       ],
       "Macao": [
-        ""
+        "Makaó"
       ],
       "Madagascar": [
-        ""
+        "Madagaszkár"
       ],
       "Malawi": [
-        ""
+        "Malawi Köztársaság"
       ],
       "Malaysia": [
-        ""
+        "Malajzia"
       ],
       "Maldives": [
-        ""
+        "Maldív-szigetek"
       ],
       "Mali": [
-        ""
+        "Mali"
       ],
       "Malta": [
-        ""
+        "Málta"
       ],
       "Marshall Islands": [
-        ""
+        "Marshall-szigetek"
       ],
       "Martinique": [
-        ""
+        "Martinique"
       ],
       "Mauritania": [
-        ""
+        "Mauritánia"
       ],
       "Mauritius": [
-        ""
+        "Mauritius"
       ],
       "Mayotte": [
-        ""
+        "Mayotte"
       ],
       "Mexico": [
-        ""
+        "Mexikó"
       ],
       "Moldova": [
-        ""
+        "Moldova"
       ],
       "Monaco": [
-        ""
+        "Monaco"
       ],
       "Mongolia": [
-        ""
+        "Mongólia"
       ],
       "Montenegro": [
-        ""
+        "Montenegró"
       ],
       "Montserrat": [
-        ""
+        "Montserrat"
       ],
       "Morocco": [
-        ""
+        "Marokkó"
       ],
       "Mozambique": [
-        ""
+        "Mozambik"
       ],
       "Namibia": [
-        ""
+        "Namíbia"
       ],
       "Nauru": [
-        ""
+        "Nauru"
       ],
       "Nepal": [
-        ""
+        "Nepál"
       ],
       "Netherlands": [
-        ""
+        "Hollandia"
       ],
       "New Caledonia": [
-        ""
+        "Új Kaledónia"
       ],
       "New Zealand": [
-        ""
+        "Új-Zéland"
       ],
       "Nicaragua": [
-        ""
+        "Nicaragua"
       ],
       "Niger": [
-        ""
+        "Niger"
       ],
       "Nigeria": [
-        ""
+        "Nigéria"
       ],
       "Niue": [
-        ""
+        "Niue"
       ],
       "Norfolk Island": [
-        ""
+        "Norfolk-sziget"
       ],
       "North Korea": [
-        ""
+        "Észak-Korea"
       ],
       "North Macedonia": [
-        ""
+        "Észak-Macedónia"
       ],
       "Northern Mariana Islands": [
-        ""
+        "Északi-Mariana-szigetek"
       ],
       "Norway": [
-        ""
+        "Norvégia"
       ],
       "Oman": [
-        ""
+        "Omán"
       ],
       "Pakistan": [
-        ""
+        "Pakisztán"
       ],
       "Palau": [
-        ""
+        "Palau"
       ],
       "Palestine": [
-        ""
+        "Palesztina"
       ],
       "Panama": [
-        ""
+        "Panama"
       ],
       "Papua New Guinea": [
-        ""
+        "Pápua Új-Guinea"
       ],
       "Paraguay": [
-        ""
+        "Paraguay"
       ],
       "Peru": [
-        ""
+        "Peru"
       ],
       "Philippines": [
-        ""
+        "Fülöp-szigetek"
       ],
       "Pitcairn": [
-        ""
+        "Pitcairn-szigetek"
       ],
       "Poland": [
-        ""
+        "Lengyelország"
       ],
       "Portugal": [
-        ""
+        "Portugália"
       ],
       "Puerto Rico": [
-        ""
+        "Puerto Rico"
       ],
       "Qatar": [
-        ""
+        "Katar"
       ],
       "Reunion": [
-        ""
+        "Réunion"
       ],
       "Romania": [
-        ""
+        "Románia"
       ],
       "Russia": [
         "Oroszország"
       ],
       "Rwanda": [
-        ""
+        "Ruanda"
       ],
       "Saint Barthélemy": [
-        ""
+        "Saint-Barthélemy"
       ],
       "Saint Helena": [
-        ""
+        "Szent Ilona-sziget"
       ],
       "Saint Kitts and Nevis": [
-        ""
+        "Saint Christopher és Nevis Államszövetség"
       ],
       "Saint Lucia": [
-        ""
+        "Saint Lucia"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "Saint Martin (francia rész)"
       ],
       "Saint Pierre and Miquelon": [
-        ""
+        "Saint-Pierre és Miquelon"
       ],
       "Saint Vincent and the Grenadines": [
-        ""
+        "Saint Vincent és a Grenadine-szigetek"
       ],
       "Samoa": [
-        ""
+        "Szamoa"
       ],
       "San Marino": [
-        ""
+        "San Marino"
       ],
       "Sao Tome and Principe": [
-        ""
+        "Sao Tome és Principe"
       ],
       "Saudi Arabia": [
-        ""
+        "Szaúd-Arábia"
       ],
       "Senegal": [
-        ""
+        "Szenegál"
       ],
       "Serbia": [
-        ""
+        "Szerbia"
       ],
       "Seychelles": [
-        ""
+        "Seychelle-szigetek"
       ],
       "Sierra Leone": [
-        ""
+        "Sierra Leone"
       ],
       "Singapore": [
-        ""
+        "Szingapúr"
       ],
       "Sint Maarten": [
-        ""
+        "Sint Maarten"
       ],
       "Slovakia": [
-        ""
+        "Szlovákia"
       ],
       "Slovenia": [
-        ""
+        "Szlovénia"
       ],
       "Solomon Islands": [
-        ""
+        "Salamon-szigetek"
       ],
       "Somalia": [
-        ""
+        "Szomália"
       ],
       "South Africa": [
-        ""
+        "Dél-afrikai Köztársaság"
       ],
       "South Georgia and the South Sandwich Islands": [
-        ""
+        "Déli-Georgia és Déli-Sandwich-szigetek"
       ],
       "South Korea": [
-        ""
+        "Dél-Korea"
       ],
       "South Ossetia": [
-        ""
+        "Dél-Oszétia"
       ],
       "South Sudan": [
-        ""
+        "Dél-szudáni Köztársaság"
       ],
       "Spain": [
-        ""
+        "Spanyolország"
       ],
       "Sri Lanka": [
-        ""
+        "Srí Lanka"
       ],
       "Sudan": [
-        ""
+        "Szudán"
       ],
       "Suriname": [
-        ""
+        "Szurinám"
       ],
       "Svalbard and Jan Mayen": [
-        ""
+        "Svalbard és Jan Mayen-szigetek"
       ],
       "Swaziland": [
         "Eswatini"
       ],
       "Sweden": [
-        ""
+        "Svédország"
       ],
       "Switzerland": [
-        ""
+        "Svájc"
       ],
       "Syria": [
-        ""
+        "Szíria"
       ],
       "Taiwan": [
-        ""
+        "Tajvan"
       ],
       "Tajikistan": [
-        ""
+        "Tádzsikisztán"
       ],
       "Tanzania": [
-        ""
+        "Tanzánia"
       ],
       "Thailand": [
-        ""
+        "Thaiföld"
       ],
       "Timor-Leste": [
-        ""
+        "Kelet-Timor"
       ],
       "Togo": [
-        ""
+        "Togo"
       ],
       "Tokelau": [
-        ""
+        "Tokelau-szigetek"
       ],
       "Tonga": [
-        ""
+        "Tonga"
       ],
       "Trinidad and Tobago": [
-        ""
+        "Trinidad és Tobago"
       ],
       "Tristan da Cunha": [
-        ""
+        "Tristan da Cunha"
       ],
       "Tunisia": [
-        ""
+        "Tunézia"
       ],
       "Turkey": [
-        ""
+        "Törökország"
       ],
       "Turkmenistan": [
-        ""
+        "Türkmenisztán"
       ],
       "Turks and Caicos Islands": [
-        ""
+        "Turks- és Caicos-szigetek"
       ],
       "Tuvalu": [
-        ""
+        "Tuvalu"
       ],
       "Uganda": [
-        ""
+        "Uganda"
       ],
       "Ukraine": [
-        ""
+        "Ukrajna"
       ],
       "United Arab Emirates": [
-        ""
+        "Egyesült Arab Emírségek"
       ],
       "United Kingdom": [
-        ""
+        "Egyesült Királyság"
       ],
       "United States": [
-        ""
+        "Amerikai Egyesült Államok"
       ],
       "United States Minor Outlying Islands": [
-        ""
+        "USA Amerikai Csendes-óceáni szigetek"
       ],
       "Uruguay": [
-        ""
+        "Uruguay"
       ],
       "Uzbekistan": [
-        ""
+        "Üzbegisztán"
       ],
       "Vanuatu": [
-        ""
+        "Vanuatu"
       ],
       "Venezuela": [
-        ""
+        "Venezuela"
       ],
       "Vietnam": [
-        ""
+        "Vietnám"
       ],
       "Virgin Islands, British": [
-        ""
+        "Brit Virgin-szigetek"
       ],
       "Virgin Islands, U.S.": [
-        ""
+        "Amerikai Virgin-szigetek"
       ],
       "Wallis and Futuna": [
-        ""
+        "Wallis és Futuna"
       ],
       "Western Sahara": [
-        ""
+        "Nyugat-Szahara"
       ],
       "Yemen": [
-        ""
+        "Jemen"
       ],
       "Zambia": [
-        ""
+        "Zambia"
       ],
       "Zimbabwe": [
-        ""
+        "Zimbabwe"
       ],
       "Åland Islands": [
-        ""
+        "Aland-szigetek"
       ]
     },
     "CustomFilter": {
       "Attachment": [
-        ""
+        "Melléklet"
       ],
       "Filter on": [
         "Szűrés be"
@@ -2546,7 +2564,7 @@
         "Ma"
       ],
       "Tomorrow": [
-        ""
+        "Holnap"
       ]
     },
     "Default display name vcard": {
@@ -2577,7 +2595,7 @@
         "Névjegyek visszafejtése. Ez eltarthat néhány percig. A folyamat végeztével letölthető lesz az exportált névjegy lista."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
-        ""
+        "Névjegyek törlése. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
@@ -2624,12 +2642,12 @@
     },
     "Early Access Disabled": {
       "Off": [
-        ""
+        "Ki"
       ]
     },
     "Early Access Enabled": {
       "On": [
-        ""
+        "Be"
       ]
     },
     "Email body for description (description part)": {
@@ -2677,38 +2695,38 @@
     },
     "Email reminder banner": {
       "Event is tomorrow": [
-        ""
+        "Az esemény holnap lesz"
       ],
       "Event starting now": [
-        ""
+        "Az esemény most kezdődik"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
-        "",
-        ""
+        "Az esemény ${ minutesUntilEvent } perc múlva kezdődik",
+        "Az esemény ${ minutesUntilEvent } perc múlva kezdődik"
       ],
       "Event starts tomorrow": [
-        ""
+        "Az esemény holnap kezdődik"
       ]
     },
     "Email reminder decryption error": {
       "Event details are encrypted. Sign in again to restore Calendar and decrypt your data. ${ learnMoreLink }": [
-        ""
+        "Az esemény adatai titkosítva vannak. Lépjen be újra a naptár visszaállításához és az adatok visszafejtéséhez. ${ learnMoreLink }"
       ],
       "Event details cannot be decrypted. ${ whyNotLink }": [
-        ""
+        "Az esemény adatainak visszafejtése nem sikerült. ${ whyNotLink }"
       ]
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        ""
+        "Az esemény már nincs a naptárában"
       ]
     },
     "Email reminder out of date alert": {
       "Event was canceled": [
-        ""
+        "Az eseményt törölték"
       ],
       "Event was updated. This reminder is out-of-date.": [
-        ""
+        "Az eseményt frissítették. Ez az emlékeztető elavult."
       ]
     },
     "Email subject": {
@@ -2846,10 +2864,10 @@
         "Képfeltöltés sikertelen"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Helytelen bejelentkezési adatok. Próbálja meg újra."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
       ],
       "Invalid expiration time": [
         "Érvénytelen időkorlát"
@@ -2866,8 +2884,8 @@
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Mellékletek maximális száma (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) túllépve."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        ""
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
@@ -2894,17 +2912,11 @@
       "No data to import": [
         "Nincs importálandó adat"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Nem található a küldéshez érvényes kulcs a belső felhasználóhoz"
-      ],
       "No keys retrieved for internal user": [
         "Nem található kulcs a belső felhasználóhoz"
       ],
       "No valid address found": [
         "Nincs érvényes cím"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Nem található érvényes kulcs a belső felhasználóhoz"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Nem sikerült a küldéshez érvényes WKD kulcs letöltése"
@@ -2945,6 +2957,12 @@
       "Primary address key is not decrypted.": [
         "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
+      "Primary key is not valid for sending": [
+        ""
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        ""
+      ],
       "Public key could not be trusted": [
         "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
       ],
@@ -2956,7 +2974,7 @@
         "Kettőzött címzettek eltávolítása: ${ recipents }"
       ],
       "Request timed out": [
-        ""
+        "A kérés túllépte az időkorlátot"
       ],
       "Require at least one action": [
         "Legalább egy művelet szükséges"
@@ -2995,11 +3013,17 @@
         "A csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG.",
         "Néhány csatolt fájlt visszafejtése nem sikerült.\nHa rendelkezik a szükséges titkos kulccsal, még visszafejtheti egy\nprogrammal, mint például GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Ez a mappanév érvénytelen. Adjon meg egy másik nevet."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "A ${ emailAddress } cím kulcsadatait nem sikerült kibontani"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Ez a címkenév érvénytelen. Adjon meg egy másik nevet."
       ],
       "The label name is too long. Please choose a different name.": [
         "Ez a címkenév túl hosszú. Adjon meg egy másik nevet."
@@ -3091,16 +3115,16 @@
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        ""
+        "Vázlat nem helyezethő át a Bejövő üzenetekhez"
       ],
       "Drafts cannot be moved to Spam": [
-        ""
+        "Vázlat nem helyezethő át a Levélszemét közé"
       ],
       "Sent messages cannot be moved to Inbox": [
-        ""
+        "Az elküldött üzenetek nem helyezhetők át a Bejövő mappába"
       ],
       "Sent messages cannot be moved to Spam": [
-        ""
+        "Az elküldött üzenetek nem helyezhetők át a Levélszemét közé"
       ],
       "This action cannot be performed": [
         "Ez a művelet nem hajtható végre"
@@ -3263,12 +3287,12 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        ""
+        "A pont megadása kötelező"
       ]
     },
     "Error sending calendar invitation": {
       "Cannot send invitation to ${ email }. ${ errorMessage }": [
-        ""
+        "Meghívó elküldése nem sikerült: ${ email }. ${ errorMessage }"
       ]
     },
     "Event invitation error": {
@@ -3285,13 +3309,13 @@
         "Érvénytelen válasz"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        ""
+        "Az eseményt nem sikerült felvenni a naptárába. Válasz nem került elküldésre"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        ""
+        "Az eseményt nem sikerült frissíteni a naptárában. Válasz nem került elküldésre"
       ],
       "Unexpected error": [
-        ""
+        "Váratlan hiba"
       ],
       "Unsupported invitation": [
         "Nem támogatott meghívó"
@@ -3312,7 +3336,7 @@
         "A válasz elküldésre került, de az eseményt nem sikerült a naptárához adni"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        ""
+        "A válasz elküldésre került, de az eseményt nem sikerült a naptárában frissíteni"
       ]
     },
     "Event title": {
@@ -3336,16 +3360,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bájt"
       ],
       "Gigabytes": [
-        ""
+        "Gigabájt"
       ],
       "Kilobytes": [
-        ""
+        "Kilobájt"
       ],
       "Megabytes": [
-        ""
+        "Megabájt"
       ]
     },
     "Filter Actions": {
@@ -3437,12 +3461,12 @@
     },
     "Font Face Default": {
       "Default": [
-        ""
+        "Alapértelmezett"
       ]
     },
     "Font Size Default": {
       "Default": [
-        ""
+        "Alapértelmezett"
       ]
     },
     "Get started checklist completion": {
@@ -3450,7 +3474,7 @@
         "Megnöveltük fiókjának teljes tárhelyét ${ rewardInGb } GB-ra. Szerezzen további tárhelyet és oldjon fel prémium funkciókat még ma."
       ],
       "You're all set!": [
-        ""
+        "Minden beállítva!"
       ]
     },
     "Get started checklist incentive": {
@@ -3458,61 +3482,61 @@
         "Teljesítse az összes lépést és szerezzen összesen ${ rewardInGb } GB-ot a fiókjába"
       ],
       "Expires soon": [
-        ""
+        "Hamarosan lejár"
       ],
       "Expires today": [
-        ""
+        "Ma jár le"
       ],
       "Only ${ days } day left": [
-        "",
-        ""
+        "Már csak ${ days } nap van hátra",
+        "Már csak ${ days } nap van hátra"
       ]
     },
     "Get started checklist instructions": {
       "Available on iOS and Android.": [
-        ""
+        "Android és iOS változatokban érhető el."
       ],
       "Get the ${ protonMailAppName } mobile app": [
-        ""
+        "Töltse le a ${ protonMailAppName } mobil alkalmazást"
       ],
       "Import contacts or emails": [
-        ""
+        "Importálja névjegyeit vagy üzeneteit"
       ],
       "Import your contacts or messages": [
-        ""
+        "Importálja a névjegyeit vagy az üzeneteit"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        ""
+        "Töltse át a névjegyeit vagy az e-mailjeit bármelyik másik szolgáltatótól az Easy Switch importáló segítségével."
       ],
       "Sign into the mobile app to complete the action": [
-        ""
+        "Jelentkezzen be a mobil alkalmazásba a befejezéshez"
       ],
       "Using your mobile device, scan this QR code or visit": [
-        ""
+        "A mobil eszközével olvassa be a QR kódot vagy nyissa meg a címet:"
       ]
     },
     "Get started checklist item": {
       "Get mobile app": [
-        ""
+        "Töltse le a mobil alkalmazást"
       ],
       "Import contacts or emails": [
-        ""
+        "Importálja névjegyeit vagy üzeneteit"
       ],
       "Send a message": [
-        ""
+        "Küldjön egy üzenetet"
       ],
       "Set up a recovery method": [
-        ""
+        "Állítson be egy helyreállítási módot"
       ]
     },
     "Get started checklist spotlight": {
       "You can access the checklist anytime from here": [
-        ""
+        "Innen érheti el ezt a tennivalólistát"
       ]
     },
     "Get started checklist title": {
       "Get started": [
-        ""
+        "Kezdés"
       ]
     },
     "Group": {
@@ -3546,10 +3570,10 @@
         "Névjegyek"
       ],
       "Contacts, groups and settings": [
-        ""
+        "Névjegyek, csoportok és beállítások"
       ],
       "Get help": [
-        ""
+        "Súgó megnyitása"
       ],
       "Search": [
         "Keresés"
@@ -3583,11 +3607,11 @@
     },
     "ICS widget label for event details": {
       "${ totalAttendees } participant": [
-        "",
-        ""
+        "${ totalAttendees } résztvevő",
+        "${ totalAttendees } résztvevő"
       ],
       "Organizer:": [
-        ""
+        "Szervező:"
       ]
     },
     "Import calendar": {
@@ -3682,25 +3706,20 @@
         "${ calendarsToBeMergedCount } egyesített naptár",
         "${ calendarsToBeMergedCount } egyesített naptár"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
         "${ contactEmailsLength } tag"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } névjegy található",
         "${ contactsCount } névjegy található"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni a ${ groupsEnumeration } csoporthoz."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } több e-mail címet tartalmaz. Kérjük válassza ki melyik e-mail címet vagy címeket szeretné hozzáadni ehhez a csoporthoz."
       ],
       "${ count } unread message": [
         "${ count } olvasatlan üzenet",
@@ -3721,12 +3740,9 @@
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át.",
         "${ messagesNotAuthorizedToMove } üzenet nem helyezhető át."
       ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } és ${ nameOfLast }"
-      ],
       "${ numberOfTrackers } email tracker blocked": [
-        "",
-        ""
+        "${ numberOfTrackers } e-mail követő blokkolva",
+        "${ numberOfTrackers } e-mail követő blokkolva"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } névjegy csoport",
@@ -3737,12 +3753,12 @@
         "${ numContacts } névjegy"
       ],
       "${ occurrencesInBody } occurrence found": [
-        "",
-        ""
+        "${ occurrencesInBody } előfordulás található",
+        "${ occurrencesInBody } előfordulás található"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "",
-        ""
+        "${ occurrencesInBody } előfordulás található a levél szövegében",
+        "${ occurrencesInBody } előfordulás található a levél szövegében"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } fájl csatolva",
@@ -3761,7 +3777,7 @@
         "${ selectedFoldersCount } címke kiválasztva"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } tárhely"
       ],
       "${ total } conversation": [
         "${ total } beszélgetés",
@@ -3772,8 +3788,8 @@
         "${ total } üzenet"
       ],
       "${ totalMessagesCount } scheduled message": [
-        "",
-        ""
+        "${ totalMessagesCount } időzített üzenet",
+        "${ totalMessagesCount } időzített üzenet"
       ],
       "${ unread } unread conversation": [
         "${ unread } olvasatlan beszélgetés",
@@ -3808,11 +3824,11 @@
       "(No Recipient)": [
         "(Nincs címzett)"
       ],
-      "5 email addresses": [
-        "5 e-mail cím"
+      "10 email addresses": [
+        "10 e-mail cím"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
-        ""
+        "A helyreállító jelmondat az egyik legbiztosabb módja annak, hogy megőrizze fiókja elérését. Ha elfelejtené a jelszavát, a helyreállító jelmondattal újra hozzáférhet a fiókjához és helyreállíthatja titkosított adatai elérhetőségét."
       ],
       "A request to unsubscribe from this mailing list will be sent to the sender of the newsletter and automatically processed.": [
         "A hírlevél küldőjéhez elküldésre kerül egy leiratkozási kérelem, amelyet automatikusan feldolgoznak."
@@ -3821,7 +3837,7 @@
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
       ],
       "Activation in progress": [
-        ""
+        "A bekapcsolás folyamatban"
       ],
       "Add ${ addressToCreate } to your account for free, for a limited time only.": [
         "Adja a(z) ${ addressToCreate } címet a fiókjához ingyen, korlátozott ideig."
@@ -3847,10 +3863,10 @@
         "Mind (${ totalFoldersCount } címke)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
-        ""
+        "Az összes, ebben a mappában található üzenet véglegesen törlésre kerül."
       ],
       "All messages stored with this label will be permanently deleted.": [
-        ""
+        "Az összes, ezzel a címkével megjelölt üzenet véglegesen törlésre kerül."
       ],
       "All your calendars are disabled.": [
         "Minden naptára le van tiltva."
@@ -3865,10 +3881,10 @@
         "és"
       ],
       "Are you sure you want to delete all messages in this folder?": [
-        ""
+        "Biztosan törli az összes üzenetet ebben a mappában?"
       ],
       "Are you sure you want to delete all messages with this label?": [
-        ""
+        "Biztosan törli az összes, ezzel a címkével megjelölt üzenetet?"
       ],
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
@@ -3901,7 +3917,7 @@
         "Háttérszín"
       ],
       "Based in Switzerland, available globally": [
-        ""
+        "Svájci székhelyű, világszerte elérhető"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
         "Az alapvető navigációs lehetőségek akkor is megmaradnak, ha a beállításokban letiltotta a gyorsbillentyűket."
@@ -3922,13 +3938,13 @@
         "Névjegy ellenőrzése ${ progress }/${ max }..."
       ],
       "Clear data": [
-        ""
+        "Adatok törlése"
       ],
       "Clearing browser data also deactivates message content search on this device. All messages will need to be downloaded again to search within them.": [
-        ""
+        "A böngésző adatok törlése letiltja az üzenetek szövegében való keresést ezen az eszközön. A keresés újbóli engedélyezéséhez az összes üzenetet ismét le kell majd tölteni."
       ],
       "Clears browser data related to message content search including downloaded messages": [
-        ""
+        "Törli a böngésző üzenetekben való keresésre vonatkozó adatait, beleértve a letöltött üzeneteket"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kattintson az \"Új kód kérése\" gombra, hogy a ${ strong } számra új ellenőrzési kódot küldjünk. Ha hibás ez a szám, kattintson a Szerkesztés gombra."
@@ -3990,13 +4006,13 @@
         "Nap"
       ],
       "Decrypt message": [
-        ""
+        "Üzenet visszafejtése"
       ],
       "Default email application": [
-        ""
+        "Alapértelmezett e-mail alkalmazás"
       ],
       "Disable message content search": [
-        ""
+        "Üzenetek tartalmában való keresés letiltása"
       ],
       "Do you want to download this attachment anyway?": [
         "Ettől függetlenül letölti a csatolt fájlt?",
@@ -4008,11 +4024,14 @@
       "Do you want to re-sign the contact details?": [
         "Aláírja újra a névjegyet?"
       ],
+      "Don't forget to share your password with the recipient": [
+        ""
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Töltse le a mobil alkalmazásunkat a kedvenc alkalmazásboltjából, hogy út közben is biztonságosan kommunikálhasson."
       ],
       "Downloading message ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
+        "Letöltés: ${ esProgress } üzenet. Összesen: ${ totalProgressToShow }"
       ],
       "Draft": [
         "Piszkozat"
@@ -4032,6 +4051,15 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
+      "Edit encryption": [
+        ""
+      ],
+      "Edit expiration time": [
+        ""
+      ],
+      "Edit link": [
+        ""
+      ],
       "Email address": [
         "E-mail cím"
       ],
@@ -4039,42 +4067,36 @@
         "E-mail követő védelem ki van kapcsolva"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        ""
+        "Az e-mail követők megsérthetik a magánszféráját. A Proton nem talált követőt ebben az üzenetben."
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "",
-        ""
+        "Az e-mail követők megsérthetik a magánszféráját. A Proton ${ numberOfTrackers } követőt talált és tiltott le.",
+        "Az e-mail követők megsérthetik a magánszféráját. A Proton ${ numberOfTrackers } követőt talált és tiltott le."
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        ""
+        "Az e-mail követők megsérthetik a magánszféráját. Kapcsolja be a követés elleni védelmet, hogy a feladók ne értesülhessenek arról, ha és amikor megnyitja az üzenetet."
       ],
       "embedded image": [
         "beágyazott kép",
         "beágyazott kép"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Titkosítás nem-${ BRAND_NAME } felhasználóknak"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "A nem-${ BRAND_NAME } címzetteknek szóló titkosított üzenetek 28 nap után járnak le, hacsak nem ad meg egy ennél rövidebb időtartamot."
+      "Encrypt message": [
+        ""
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
       ],
       "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "",
-        ""
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc",
+        "Becsült hátralévő idő: ${ estimatedMinutes } perc"
       ],
       "Estimated time remaining: Less than a minute": [
-        ""
+        "Becsült hátralévő idő: kevesebb mint 1 perc"
       ],
       "Estimating time remaining...": [
         "Hátralévő idő becslése..."
       ],
       "Expiration time": [
-        "Időkorlát"
-      ],
-      "Expiration Time": [
         "Időkorlát"
       ],
       "Expires": [
@@ -4092,6 +4114,9 @@
       "Expires soon": [
         "Hamarosan lejár"
       ],
+      "Expiring message": [
+        ""
+      ],
       "file attached": [
         "fájl csatolva",
         "fájlok csatolva"
@@ -4102,8 +4127,11 @@
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
       ],
-      "For increased security, activate 2FA.": [
+      "Folder": [
         ""
+      ],
+      "For increased security, activate 2FA.": [
+        "A biztonság érdekében, kapcsolja be a kétlépcsős hitelesítést."
       ],
       "For messages newer than ${ oldestDate }": [
         "Üzeneteknek, melyek újabbak mint ${ oldestDate }"
@@ -4118,7 +4146,7 @@
         "Forrás:"
       ],
       "Get more storage and premium features.": [
-        ""
+        "Szerezzen több térhelyet és prémium szolgáltatásokat."
       ],
       "Group assignment applied": [
         "Csoport hozzárendelés alkalmazva"
@@ -4137,17 +4165,20 @@
         "Óra",
         "Óra"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        ""
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Ha ezt az üzenetet nem ${ MAIL_APP_NAME } felhasználónak küldi, ne felejtsen el jelszót beállítani."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Ha úgy gondolja ez tévedés, vegye fel velük a kapcsolatot ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
+      ],
+      "Image description": [
+        ""
       ],
       "Image URL": [
         "Kép URL"
@@ -4172,10 +4203,10 @@
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
       "Increase storage space starting at": [
-        ""
+        "Tárhely megnövelése már"
       ],
       "Indexing paused": [
-        ""
+        "Feldolgozás szüneteltetve"
       ],
       "Inherited from parent folder": [
         "Örökölve a tartalmazó mappáról"
@@ -4187,7 +4218,7 @@
         "Link beillesztése"
       ],
       "Internet connection lost": [
-        ""
+        "Az internetkapcsolat megszakadt"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -4259,13 +4290,13 @@
         "Üzenet elküldve."
       ],
       "Message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Az üzenet a következő időpontban lesz elküldve: ${ dateString } ${ formattedTime }"
       ],
       "Message will be sent today at ${ formattedTime }": [
-        ""
+        "Az üzenet ma, ${ formattedTime }-kor lesz elküldve"
       ],
       "Message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Az üzenet holnap, ${ formattedTime }-kor lesz elküldve"
       ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
@@ -4286,7 +4317,7 @@
         "Nincs e-mail cím"
       ],
       "No email trackers found": [
-        ""
+        "Nincs e-mail követő"
       ],
       "No folder found": [
         "Nem található mappa"
@@ -4304,7 +4335,7 @@
         "Nincs kiválasztva címke"
       ],
       "No more results found": [
-        ""
+        "Nincs több találat"
       ],
       "No preview available": [
         "Előnézet nem érhető el"
@@ -4314,6 +4345,9 @@
       ],
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett"
+      ],
+      "non-Proton Mail": [
+        ""
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
@@ -4327,6 +4361,9 @@
       "of": [
         "/"
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Egy vagy több megbízható kulcsát a tulajdonosa \"kompromittáltként\" jelölt meg. Javasoljuk, hogy távolítsa el a kulcsok megbízhatóságát."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
@@ -4337,7 +4374,7 @@
         "A rendszerünk úgy érzékelte, hogy ez egy adathalász kísérlet. Kérjük ellenőrizze, hogy esetleg mégsem az."
       ],
       "per month.": [
-        ""
+        "havonta."
       ],
       "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
         "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
@@ -4352,7 +4389,7 @@
         "Egyszerű szöveg"
       ],
       "Please add at least one recipient.": [
-        ""
+        "Kérjük, adjon meg legalább egy címzettet."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "Tartsa biztonságban. Szüksége lesz rá a fiókja eléréshez és adatai visszafejtéséhez, ha visszaállítaná a fiókja jelszavát."
@@ -4368,6 +4405,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Válassza ki a beszúrandó link típusát és adja meg az adatait."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
@@ -4388,7 +4432,7 @@
         "Elsőbbségi támogatás"
       ],
       "Proton doesn't make money by abusing privacy.": [
-        ""
+        "A Proton nem abból él, hogy a személyes adatokkal visszaéljen."
       ],
       "Recipient: ": [
         "Címzett: "
@@ -4427,13 +4471,13 @@
         "Piszkozat mentése…"
       ],
       "Scheduled send of this message will be cancelled.": [
-        ""
+        "Az üzenet időzített elküldése törlésre kerül."
       ],
       "Scheduling message...": [
         "Üzenet ütemezése..."
       ],
       "Search taking too long? ${ dropdownButton } or ${ toggleOffButton } from this search session.": [
-        ""
+        "Túl sokáig tart a keresés? ${ dropdownButton } vagy ${ toggleOffButton } ebből a keresési munkafolyamatból."
       ],
       "Seems like you are all caught up for now": [
         "Úgy tűnik minden el van intézve"
@@ -4446,6 +4490,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        ""
       ],
       "Sending": [
         "Küldés"
@@ -4463,7 +4510,7 @@
         "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
       "Session timed out": [
-        ""
+        "A munkamenet lejárt"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
         "Állítsa be, hogy a ${ MAIL_APP_NAME } legyen az alapértelmezett e-mail alkalmazás ebben a böngészőben. A ${ MAIL_APP_NAME } automatikusan meg fog nyílni, amikor egy e-mail hivatkozást megnyit."
@@ -4499,10 +4546,10 @@
         "Tárgy: "
       ],
       "Support for 1 custom email domain": [
-        "Támogasson egy 1 egyedi email domain névért"
+        "Egy saját e-mail domain név használata"
       ],
       "Support privacy by upgrading for": [
-        ""
+        "Támogassa a magánszféra védelmét, váltson nagyobb csomagra:"
       ],
       "support team": [
         "ügyfélszolgálat"
@@ -4539,7 +4586,7 @@
         "${ contactNames } névjegyének ellenőrzése nem sikerült, az aláírás hibás.\nEzt a jelszó visszaállítása is okozhatja.\nÜzenet küldéséhez (${ contactAddresses }) újra alá kell írni vagy átszerkeszteni a névjegyeket."
       ],
       "Themes can give your inbox a new look.": [
-        ""
+        "A témák egy új kinézetet adnak a levelezésének."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Hiba történt a névjegy aláírásnak ellenőrzésekor. Ezt jelszó visszaállítás is okozhatja."
@@ -4548,7 +4595,7 @@
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "Ez a cím le van tiltva. Ahhoz, hogy küldhessen erre a címre, a tulajdonosnak engedélyeznie kell."
@@ -4557,7 +4604,7 @@
         "Ez a böngésző nem támogatja a PDF fájlok megjelenítését. Töltse le a fájlt."
       ],
       "This conversation contains a scheduled message. Sending of this message will be cancelled.": [
-        ""
+        "Ez a beszélgetés egy időzítetten elküldendő üzenetet tartalmaz. Az üzenet küldése törlésre kerül."
       ],
       "This conversation contains non-trashed messages.": [
         "Ez a beszélgetés nem-törölt üzeneteket is tartalmaz."
@@ -4581,7 +4628,7 @@
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "This message has been adjusted to comply with a dark background.": [
-        ""
+        "Ez az üzenet módosításra került, hogy sötét háttérrel is megfelelő legyen."
       ],
       "This message is automatically generated as a response to a previous message.": [
         "Ez egy automatikusan generált üzenet, válaszként egy korábbi üzenetre."
@@ -4599,19 +4646,19 @@
         "Ez az üzenet a csatolt kulccsal van aláírva, ami még nincs megbízhatóként megjelölve."
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
-        ""
+        "Ez az üzenet átkerül a Vázlatokba, hogy szerkeszthesse. Újra meg kell majd adnia az elküldés időpontját."
       ],
       "This message will be sent on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Ez az üzenet a következő időpontban lesz elküldve: ${ dateString } ${ formattedTime }"
       ],
       "This message will be sent shortly": [
-        ""
+        "Ez az üzenet hamarosan elküldésre kerül"
       ],
       "This message will be sent today at ${ formattedTime }": [
-        ""
+        "Ez az üzenet ma, ${ formattedTime }-kor lesz elküldve"
       ],
       "This message will be sent tomorrow at ${ formattedTime }": [
-        ""
+        "Ez az üzenet holnap, ${ formattedTime }-kor lesz elküldve"
       ],
       "This message will expire ${ formattedDate }": [
         "Ez az üzenet időkorlátos, lejár: ${ formattedDate }"
@@ -4653,10 +4700,10 @@
         "Túl sok üzenet vár elküldésre. Várjon amíg elküldődik egy üzenet, mielőtt ezt ütemezné."
       ],
       "Turn off content search. Activation progress won't be lost.": [
-        ""
+        "Üzenetekben való keresés kikapcsolása. Az eddigi aktiválási folyamat nem veszik el."
       ],
       "Turn on to search the content of your messages": [
-        ""
+        "Kapcsolja be, hogy az üzenetek szövegében is kereshessen"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappa, címke és szűrő"
@@ -4671,37 +4718,37 @@
         "Üzenetek tartalmában való keresés frissítése..."
       ],
       "Upgrade to add more addresses to your account.": [
-        ""
+        "Váltson nagyobb csomagra, hogy több címet hozhasson létre a fiókjában."
       ],
       "Upgrade to configure a vacation auto-responder.": [
-        ""
+        "Automatikus szabadság-üzenetet beállításához, váltson nagyobb csomagra."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        ""
+        "Váltson nagyobb csomagra, hogy több mappát, szűrőt és címet hozhasson létre."
       ],
       "Upgrade to host emails from your own domain name.": [
-        ""
+        "Váltson nagyobb csomagra, hogy saját domain nevet használhasson a levelezéshez."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        ""
+        "Váltson nagyobb csomagra, hogy @pm.me címről is küldhessen levelet."
       ],
       "Upgrade to send emails to contact groups easily.": [
-        ""
+        "Váltson nagyobb csomagra, hogy egyszerre csoportoknak is könnyen küldhessen leveleket."
       ],
       "Upgrade to support a privacy-first internet.": [
-        ""
+        "Váltson nagyobb csomagra, hogy támogassa a magánszféra-barát internetet."
       ],
       "Upgrade to support our mission of privacy for all.": [
-        ""
+        "Váltson nagyobb csomagra, hogy támogassa a mindenki számára elérhető adatvédelmet."
       ],
       "Upgrade to support privacy and get more features.": [
-        ""
+        "Váltson nagyobb csomagra, hogy támogassa a magánszféra védelmét és további szolgáltatásokhoz férjen hozzá."
       ],
       "Upgrade to use ${ MAIL_APP_NAME } with third-party desktop clients.": [
         "Váltson nagyobb csomagra, a ${ MAIL_APP_NAME } harmadik féltől származó, asztali levelezőprogramokkal való használatához."
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        ""
+        "Váltson ma nagyobb csomagra, hogy elkerülje az alábbi ${ planName } előnyök elvesztését."
       ],
       "Upload picture": [
         "Kép feltöltése"
@@ -4716,13 +4763,13 @@
         "Használja a(z) ${ calendarAppName } alkalmazást, hogy titkosítva tartsa napirendjét."
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        ""
+        "Az e-mail egyszerűbb kezeléséhez használjon gyorsbillentyűket."
       ],
       "Version ${ appVersion }": [
-        ""
+        "Verzió: ${ appVersion }"
       ],
       "Visit our shop to get Proton merchandise.": [
-        ""
+        "Nyissa meg a webboltunkat a Proton portékákért."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "Elnézést, ez egy téves kiértékelés lehetett a mi részünkről. Megerősíti, hogy ez az üzenet helyénvaló?"
@@ -4734,7 +4781,10 @@
         "Érdesíteni fogjuk az importálás végeztével."
       ],
       "We'll send a new verification code to ${ strong }": [
-        ""
+        "Küldünk egy új ellenőrzési kódot ide: ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Költözünk! Csatlakozzon az új címünkön: ${ link }."
       ],
       "Web URL": [
         "Weblap link"
@@ -4743,7 +4793,7 @@
         "Hét"
       ],
       "When do you want your message to be sent?": [
-        ""
+        "Mikor szeretné elküldeni az üzenetet?"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Amikor engedélyezte a megbízható kulcsok kezelését \"${ senderName }\" címzetthez, a nyilvános kulcsok bekerültek a névjegyébe."
@@ -4752,7 +4802,7 @@
         "Új ellenőrző kódot kér, vagy megpróbál egy másik ellenőrzési módszert?"
       ],
       "Would you like to receive a new verification code?": [
-        ""
+        "Szeretne kapni egy új ellenőrzési kódot?"
       ],
       "Yearly": [
         "Évente"
@@ -4764,7 +4814,7 @@
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
       "You can add it as an attachment or display it inline in your mail body.": [
-        ""
+        "Hozzáadhatja mellékletként, vagy megjelenítheti az üzenet szövegében."
       ],
       "You can also merge imported calendars with existing Proton calendars.": [
         "Az importált naptárokat összefűzheti meglévő Proton naptáraival is."
@@ -4797,20 +4847,20 @@
         "A beérkezett üzeneteknél ${ unreadsLabel } van."
       ],
       "You have **${ count } conversation** stored in this folder": [
-        "",
-        ""
+        "Ebben a mappában **${ count } beszélgetés** van tárolva",
+        "Ebben a mappában **${ count } beszélgetés** van tárolva"
       ],
       "You have **${ count } conversation** tagged with this label": [
-        "",
-        ""
+        "Ezzel a címkével **${ count } beszélgetés** van megjelölve",
+        "Ezzel a címkével **${ count } beszélgetés** van megjelölve"
       ],
       "You have **${ count } message** stored in this folder": [
-        "",
-        ""
+        "Ebben a mappában **${ count } üzenet** van tárolva",
+        "Ebben a mappában **${ count } üzenet** van tárolva"
       ],
       "You have **${ count } message** tagged with this label": [
-        "",
-        ""
+        "Ezzel a címkével **${ count } üzenet** van megjelölve",
+        "Ezzel a címkével **${ count } üzenet** van megjelölve"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nem adott meg tárgyat az üzenethez. Elküldi tárgy nélkül?"
@@ -4819,7 +4869,7 @@
         "Teljesen betelt a tárhelye. További üzenetek küldéséhez szabadítson fel helyet vagy vásároljon további tárhelyet."
       ],
       "You have reached the maximum number of 5 replies.": [
-        ""
+        "Elérte a maximálisan lehetséges 5 választ."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Elérte a tárolási kapacitás ${ spaceDisplayed }% -át. ${ freeUpMessage } ${ upgradeLink }"
@@ -4828,23 +4878,23 @@
         "Teljesen megtelt a tárhelye. Nem küldhet vagy fogadhat új e-maileket. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
-        "",
-        ""
+        "Ebből a mappából **${ count } beszélgetés** van kiválasztva",
+        "Ebből a mappából **${ count } beszélgetés** van kiválasztva"
       ],
       "You selected **${ count } conversation** with this label": [
-        "",
-        ""
+        "Ezzel a címkével **${ count } beszélgetést** választott ki",
+        "Ezzel a címkével **${ count } beszélgetést** választott ki"
       ],
       "You selected **${ count } message** from this folder": [
-        "",
-        ""
+        "Ebből a mappából **${ count } üzenet** van kiválasztva",
+        "Ebből a mappából **${ count } üzenet** van kiválasztva"
       ],
       "You selected **${ count } message** with this label": [
-        "",
-        ""
+        "Ezzel a címkével **${ count } üzenetet** választott ki",
+        "Ezzel a címkével **${ count } üzenetet** választott ki"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        ""
+        "A levél tartalmazza a \"${ attachmentsFoundKeyword }\" kifejezést, de nem csatolt mellékletet. Biztos, hogy elküldi így a levelet?"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "Lejárt számlatartozása van. Hozzáférése korlátozásra került. ${ payInvoiceLink }"
@@ -4857,6 +4907,25 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        ""
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "",
+        ""
+      ],
+      "Your message will expire today.": [
+        ""
+      ],
+      "Your message will expire tomorrow.": [
+        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -4873,7 +4942,7 @@
     },
     "info": {
       "Optional": [
-        ""
+        "Nem kötelező"
       ]
     },
     "Info on errors": {
@@ -4887,8 +4956,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "Lejárt"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "Elsődleges"
@@ -4898,9 +4973,6 @@
       ],
       "Trusted": [
         "Megbízható"
-      ],
-      "Verification only": [
-        "Csak ellenőrzés"
       ],
       "WKD": [
         "WKD"
@@ -5107,12 +5179,12 @@
     },
     "Keyboard Shortcuts Disabled": {
       "Off": [
-        ""
+        "Ki"
       ]
     },
     "Keyboard Shortcuts Enabled": {
       "On": [
-        ""
+        "Be"
       ]
     },
     "Label": {
@@ -5123,7 +5195,7 @@
         " és ${ l }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
-        ""
+        "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
       "Actions": [
         "Műveletek"
@@ -5138,7 +5210,7 @@
         "Hozzáadás csoporthoz"
       ],
       "Address": [
-        ""
+        "Cím"
       ],
       "ALL": [
         "MIND"
@@ -5180,10 +5252,10 @@
         "Böngésző verziója"
       ],
       "Calendar": [
-        ""
+        "Naptár"
       ],
       "Calendars": [
-        ""
+        "Naptárak"
       ],
       "Carbon Copy": [
         "Másolat"
@@ -5198,16 +5270,16 @@
         "Település"
       ],
       "Code is 6 digits without spaces": [
-        ""
+        "A kód hatjegyű, szóközök nélkül"
       ],
       "Conditions": [
         "Feltételek"
       ],
       "Confirm password": [
-        ""
+        "Jelszó megerősítése"
       ],
       "Contacts": [
-        ""
+        "Névjegyek"
       ],
       "Copy": [
         "Másolás"
@@ -5237,7 +5309,7 @@
         "E-mail formátum"
       ],
       "Emails": [
-        ""
+        "E-mailek"
       ],
       "Enable Beta Access": [
         "\"Béta hozzáférés\" engedélyezése"
@@ -5258,7 +5330,7 @@
         "Mappa helye"
       ],
       "Frequency": [
-        ""
+        "Gyakoriság"
       ],
       "From": [
         "Feladó"
@@ -5267,7 +5339,7 @@
         "Feladó:"
       ],
       "From: ${ importedEmail }": [
-        ""
+        "Forrás: ${ importedEmail }"
       ],
       "Group": [
         "Csoport"
@@ -5285,16 +5357,16 @@
         "Ha"
       ],
       "Import all messages": [
-        ""
+        "Összes üzenet importálása"
       ],
       "Import contacts": [
         "Névjegyek importálása"
       ],
       "Import interval": [
-        ""
+        "Importálás intervalluma"
       ],
       "Import to email address": [
-        ""
+        "Importálás e-mail címre"
       ],
       "Keyboard shortcuts": [
         "Gyorsbillentyűk"
@@ -5306,37 +5378,34 @@
         "Címkézés, mint"
       ],
       "Label messages as": [
-        ""
+        "Üzenetek megjelölése címkével"
       ],
       "Last 12 months only": [
-        ""
+        "Csak az utolsó 12 hónap"
       ],
       "Last 3 months only": [
-        ""
+        "Csak az utolsó 3 hónap"
       ],
       "Last month only": [
-        ""
+        "Csak az utolsó hónap"
       ],
       "Location": [
-        ""
+        "Hely"
       ],
       "Mailbox password": [
         "E-mail titkosítási jelszó"
       ],
       "Manage folders": [
-        ""
+        "Mappák kezelése"
       ],
       "Manage labels": [
-        ""
+        "Címkék kezelése"
       ],
       "Manage my addresses": [
-        ""
+        "Saját címek kezelése"
       ],
       "Mark as": [
         "Megjelölés mint"
-      ],
-      "Message password": [
-        ""
       ],
       "Move to": [
         "Mozgatás ide"
@@ -5366,16 +5435,16 @@
         "Vagy"
       ],
       "Participants": [
-        ""
+        "Résztvevők"
       ],
       "Password": [
         "Jelszó"
       ],
       "Password hint": [
-        ""
+        "Jelszó emlékeztető"
       ],
       "PGP scheme": [
-        ""
+        "PGP séma"
       ],
       "Phone number": [
         "Telefonszám"
@@ -5399,7 +5468,7 @@
         "Címzett"
       ],
       "Recovery phrase": [
-        ""
+        "Helyreállító jelmondat"
       ],
       "Region": [
         "Régió"
@@ -5408,16 +5477,16 @@
         "Jelszó felfedése"
       ],
       "Search in": [
-        ""
+        "Keresés:"
       ],
       "Select how your composer opens by default.": [
-        ""
+        "Válassza ki, hogy alapértelmezetten hogyan nyíljon meg a szerkesztő."
       ],
       "Select how your list of messages looks like by default.": [
-        ""
+        "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg az üzenetek listája."
       ],
       "Select how your mailbox looks like by default.": [
-        ""
+        "Válassza ki, hogy alapértelmezetten hogyan jelenjen meg a levelezése."
       ],
       "Send auto-reply": [
         "Automatikus válasz küldése"
@@ -5468,7 +5537,7 @@
         "Címzett:"
       ],
       "To: ${ emailAddress }": [
-        ""
+        "Ide: ${ emailAddress }"
       ],
       "Two-factor authentication code": [
         "Kétlépcsős hitelesítő kód"
@@ -5596,7 +5665,7 @@
         "Naptár létrehozása egy aktív e-mail címhez."
       ],
       "Create a new calendar to add this event": [
-        ""
+        "Az esemény hozzáadásához, hozzon létre egy új naptárat"
       ],
       "Create a new calendar to answer this invitation": [
         "A meghívó megválaszolásához, hozzon létre egy új naptárat"
@@ -5644,10 +5713,10 @@
         "Címkék kezelése"
       ],
       "More": [
-        ""
+        "Továbbiak"
       ],
       "More about recovery": [
-        ""
+        "Több információ a helyreállításról"
       ],
       "Open in ${ calendarAppName }": [
         "Megnyitás: ${ calendarAppName }"
@@ -5665,7 +5734,7 @@
         "Számla kifizetése"
       ],
       "Privacy policy": [
-        ""
+        "Adatvédelmi irányelvek"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
         "A meghívó kezeléséhez, engedélyezze újra a naptárhoz tartozó címét."
@@ -5683,7 +5752,7 @@
         "Elküldött"
       ],
       "Sign up for free": [
-        ""
+        "Regisztráljon ingyenesen"
       ],
       "Spam": [
         "Levélszemét"
@@ -5692,10 +5761,10 @@
         "Csillagozott"
       ],
       "Terms": [
-        ""
+        "Feltételek"
       ],
       "This ICS file contains more than one event. Please download it and import the events in ${ calendarAppName }": [
-        ""
+        "Ez az ICS fájl több eseményt tartalmaz. Kérjük, töltse le és importálja a ${ calendarAppName } alkalmazásban"
       ],
       "Trash": [
         "Lomtár"
@@ -5707,7 +5776,7 @@
         "Csomag váltása"
       ],
       "You need to activate your calendar keys to add this event": [
-        ""
+        "A esemény hozzáadásához előbb aktiválnia kell a naptár kulcsait"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "A meghívó megválaszolásához előbb aktiválnia kell a naptár kulcsait"
@@ -5733,37 +5802,37 @@
     },
     "Link to calendar event": {
       "Open in ${ CALENDAR_APP_NAME }": [
-        ""
+        "${ CALENDAR_APP_NAME } megnyitása"
       ]
     },
     "Loading info": {
       "Almost there": [
-        ""
+        "Majdnem kész"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        ""
+        "Már ennyi naptárt hozott létre: ${ createdCalendars } ennyiből: ${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
-        ""
+        "Új naptárak lérehozása"
       ],
       "Gathering your data": [
-        ""
+        "Adatok összegyűjtése"
       ],
       "We're gathering your data from your provider": [
-        ""
+        "Összegyűjtjük az adatait a szolgáltatótól"
       ],
       "Your import is starting": [
-        ""
+        "Az importálás indul"
       ]
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ selectedLabelsCount } címkéből az összes ${ totalLabelsCount } címke közül, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        "",
-        ""
+        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }",
+        "Minden üzenet importálása ${ totalLabelsCount } címkéből, ${ periodFragment } időponttól és megjelölés ezzel a címkével: ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
     "Mailbox": {
@@ -5810,24 +5879,24 @@
     },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
-        ""
+        "Az adatai védelme érdekében a kép nem került betöltésre."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
+        "A böngészője nem tudta ellenőrizni a távoli szerver azonosságát. A kép esetleg HTTP protokollon keresztül kerülhet kiszolgálásra."
       ]
     },
     "Message notification": {
       "Scheduled sending undone": [
-        ""
+        "Ütemezett küldés visszavonva"
       ],
       "Scheduling cancelled. Message has been moved to Drafts.": [
-        ""
+        "Az ütemezett elküldés törölve. Az üzenet a Vázlatok mappába került."
       ],
       "Sending undone": [
         "Küldés megszakítva"
       ],
       "Undoing send...": [
-        ""
+        "Küldés visszavonása..."
       ]
     },
     "MIME type": {
@@ -5982,6 +6051,46 @@
         "Cimke neve"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        ""
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        ""
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        ""
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        ""
+      ],
+      "5 - Wonderful": [
+        ""
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
+      ],
+      "Tell us about your experience (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        ""
+      ],
+      "Updated Proton, unified protection": [
+        ""
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } létrehozva"
@@ -5993,7 +6102,7 @@
         "Névjegy csoport frissítve"
       ],
       "Password has been set successfully": [
-        ""
+        "A jelszó beállítása sikeres"
       ]
     },
     "Oauth instructions": {
@@ -6008,18 +6117,18 @@
     },
     "Onboarding": {
       "Welcome to ${ appName }": [
-        ""
+        "Üdvözli a ${ appName }"
       ],
       "Where privacy and security meet productivity and ease of use.": [
-        ""
+        "Amikor az adatok védelme és a biztonság könnyű használhatósággal és hatékonysággal társul."
       ]
     },
     "Onboarding Action": {
       "Next": [
-        ""
+        "Következő"
       ],
       "Start using ${ appName }": [
-        ""
+        "${ appName } használatának megkezdése"
       ]
     },
     "Onboarding Proton": {
@@ -6047,7 +6156,7 @@
         "Hozzáadás meglévő csoporthoz"
       ],
       "All": [
-        ""
+        "Mind"
       ],
       "Create new group": [
         "Új csoport létrehozása"
@@ -6072,10 +6181,10 @@
     },
     "Option group label": {
       "Create new calendar": [
-        ""
+        "Új naptár lérehozása"
       ],
       "Merge with calendar": [
-        ""
+        "Összefőzés naptárral"
       ]
     },
     "Paid user checklist item": {
@@ -6099,6 +6208,17 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
+        "A kulcs nem használható titkosításhoz"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
         ""
       ]
     },
@@ -6112,7 +6232,7 @@
         "Kapcsolatfelvételi lehetőség"
       ],
       "Confirm password": [
-        ""
+        "Jelszó megerősítése"
       ],
       "E.g., ": [
         "Pl., "
@@ -6206,11 +6326,11 @@
         "${ contactsExported.length } névjegy sikeresen exportálva (összesen: ${ countContacts })."
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "",
-        ""
+        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }.",
+        "${ model.deleted.length } névjegy sikeresen törölve. Összesen: ${ totalBeDeleted }."
       ],
       "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "",
+        "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged }).",
         "${ model.submitted.length } névjegy sikeresen egyesítve (összesen: ${ totalBeMerged })."
       ],
       "No contacts exported.": [
@@ -6317,13 +6437,13 @@
         "Nincsenek üzenetek"
       ],
       "No messages scheduled": [
-        ""
+        "Nincs ütemezett üzenet"
       ],
       "No results found": [
         "Nincs találat"
       ],
       "No unread messages found": [
-        ""
+        "Nincs olvasatlan üzenet"
       ]
     },
     "Select files": {
@@ -6333,7 +6453,7 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        ""
+        "A következő címekhez tartozó névjegyek törlésre kerültek, így a vonatkozó titkosítási beállítások ennek megfelelően frissültek:"
       ]
     },
     "Send email with errors": {
@@ -6447,36 +6567,36 @@
     },
     "Spotlight": {
       "Discover all Proton services": [
-        ""
+        "Fedezze fel a Proton szolgáltatásait"
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "Szerezzen akár 18 hónapnyi ${ planName } csomagot ingyen"
       ],
       "Invite friends and earn rewards!": [
         "Hívja meg barátait és szerezzen nyereményeket!"
       ],
       "Message Content Search": [
-        ""
+        "Keresés üzenetek tartalmában"
       ],
       "Securely manage your schedule, files, and online life! Open to discover all Proton services.": [
-        ""
+        "Tartsa biztonságban időbeosztását, fájljait és az online tevékenységeit. Nyissa meg, a további Proton szolgáltatások felfedezéséhez."
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        ""
+        "A magánszférájának védelme érdekében, a Proton e-mail követőket tiltott le ebben az üzenetben"
       ],
       "You can now schedule your messages to be sent later": [
-        ""
+        "Most már ütemezheti is a leveleit későbbi elküldésre"
       ],
       "You can now search the content of your encrypted emails.": [
-        ""
+        "Most már kereshet a titkosított üzenetek tartalmában is."
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Leiratkozott a levelezési listáról"
+      "This message is from a mailing list.": [
+        ""
       ],
-      "Unsubscribing from mailing list...": [
-        "Leiratkozás levelezési listáról..."
+      "Unsubscribed": [
+        ""
       ]
     },
     "Step in filter modal": {
@@ -6495,7 +6615,7 @@
     },
     "Storage": {
       "Get extra storage for free": [
-        ""
+        "Szerezzen további tárhelyet ingyen"
       ],
       "Release notes": [
         "Kiadási megjegyzések"
@@ -6525,20 +6645,20 @@
         "${ elementsCount } beszélgetés megjelölve ${ labelName } címkével."
       ],
       "${ elementsCount } conversation marked as read.": [
-        "",
-        ""
+        "${ elementsCount } beszélgetés olvasottnak megjelölve.",
+        "${ elementsCount } beszélgetés olvasottnak megjelölve."
       ],
       "${ elementsCount } conversation marked as Starred.": [
         "${ elementsCount } beszélgetés csillaggal megjelölve.",
         "${ elementsCount } beszélgetés csillaggal megjelölve."
       ],
       "${ elementsCount } conversation marked as unread.": [
-        "",
-        ""
+        "${ elementsCount } beszélgetés olvasatlannak megjelölve.",
+        "${ elementsCount } beszélgetés olvasatlannak megjelölve."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "",
-        ""
+        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába.",
+        "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } beszélgetés átkerült a ${ folderName } mappába.",
@@ -6557,20 +6677,20 @@
         "${ elementsCount } üzenet megjelölve ${ labelName } címkével."
       ],
       "${ elementsCount } message marked as read.": [
-        "",
-        ""
+        "${ elementsCount } üzenet olvasottnak megjelölve.",
+        "${ elementsCount } üzenet olvasottnak megjelölve."
       ],
       "${ elementsCount } message marked as Starred.": [
         "${ elementsCount } üzenet csillaggal megjelölve.",
         "${ elementsCount } üzenet csillaggal megjelölve."
       ],
       "${ elementsCount } message marked as unread.": [
-        "",
-        ""
+        "${ elementsCount } üzenet olvasatlannak megjelölve.",
+        "${ elementsCount } üzenet olvasatlannak megjelölve."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "",
-        ""
+        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába.",
+        "${ elementsCount } üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } üzenet átkerült a ${ folderName } mappába.",
@@ -6611,22 +6731,22 @@
         "Névjegyek törölve"
       ],
       "Conversation added to ${ labelName }.": [
-        ""
+        "A beszélgetés megjelölve ${ labelName } címkével."
       ],
       "Conversation deleted": [
         "Beszélgetés törölve"
       ],
       "Conversation marked as read.": [
-        ""
+        "Beszélgetés olvasottnak megjelölve."
       ],
       "Conversation marked as Starred.": [
-        ""
+        "Beszélgetés csillaggal megjelölve."
       ],
       "Conversation marked as unread.": [
-        ""
+        "Beszélgetés olvasatlannak megjelölve."
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        ""
+        "Az beszélgetés átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
       ],
       "Conversation moved to ${ folderName }.": [
         "A beszélgetés átkerült a ${ folderName } mappába."
@@ -6635,7 +6755,7 @@
         "Az beszélgetés átkerült a levélszeméthez, a feladó pedig a tiltólistára."
       ],
       "Conversation removed from ${ labelName }.": [
-        ""
+        "${ labelName } címke eltávolítva a beszélgetésről."
       ],
       "Draft deleted": [
         "Piszkozat törölve"
@@ -6662,7 +6782,7 @@
         "Leiratkozva a levelezési listáról"
       ],
       "Message added to ${ labelName }.": [
-        ""
+        "Az üzenet ${ labelName } címkével megjelölve."
       ],
       "Message content search activated": [
         "Keresés az üzenetek tartalmában aktiválva"
@@ -6674,16 +6794,16 @@
         "Üzenet helyénvalóként megjelölve"
       ],
       "Message marked as read.": [
-        ""
+        "Megjelölve olvasottként."
       ],
       "Message marked as Starred.": [
-        ""
+        "Üzenet csillaggal megjelölve."
       ],
       "Message marked as unread.": [
-        ""
+        "Üzenet megjelölve olvasatlanként."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        ""
+        "Az üzenet átkerült a ${ folderName } mappába, a feladó pedig bekerült az engedélyezett listába."
       ],
       "Message moved to ${ folderName }.": [
         "Az üzenet átkerült a ${ folderName } mappába."
@@ -6692,7 +6812,7 @@
         "Az üzenet átkerült a levélszeméthez, a feladó pedig a tiltólistára."
       ],
       "Message removed from ${ labelName }.": [
-        ""
+        "${ labelName } címke eltávolítva az üzenetről."
       ],
       "Move ${ selectionCount } conversation": [
         "${ selectionCount } beszélgetés áthelyezése",
@@ -6701,6 +6821,9 @@
       "Move ${ selectionCount } message": [
         "${ selectionCount } üzenet áthelyezése",
         "${ selectionCount } üzenet áthelyezése"
+      ],
+      "Password copied to clipboard": [
+        ""
       ],
       "Phishing reported": [
         "Adathalászat bejelentve"
@@ -6726,12 +6849,12 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        ""
+        "Visszajelzés elküldve"
       ]
     },
     "Suffix for price": {
       "/month": [
-        ""
+        "/hó"
       ]
     },
     "Table header": {
@@ -6787,6 +6910,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "A legfrissebb Proton bemutatása."
+      ],
+      "More services, one privacy mission.": [
+        "Több szolgáltatás, egy adatvédelmi küldetés."
+      ],
       "Settings": [
         "Beállítások"
       ]
@@ -6798,16 +6927,16 @@
     },
     "Time period": {
       "account creation date": [
-        ""
+        "fiók létrehozásának dátumától"
       ],
       "the last 12 months": [
-        ""
+        "az utóbbi 12 hónapból"
       ],
       "the last 3 months": [
-        ""
+        "az utóbbi 3 hónapból"
       ],
       "the last month": [
-        ""
+        "az utóbbi hónapból"
       ]
     },
     "Time unit": {
@@ -7001,10 +7130,10 @@
         "E-mail cím"
       ],
       "Email composer": [
-        ""
+        "E-mail szerkesztő"
       ],
       "Email content": [
-        ""
+        "E-mail tartalma"
       ],
       "Email settings": [
         "E-mail beállítások"
@@ -7013,10 +7142,7 @@
         "E-mail beállítások (${ emailAddress })"
       ],
       "Enable message content search": [
-        ""
-      ],
-      "Encryption": [
-        "Titkosítás"
+        "Üzenetek tartalmában való keresés engedélyezése"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -7030,8 +7156,11 @@
       "Exporting contacts": [
         "Névjegyek exportálása"
       ],
+      "External encryption": [
+        "Külső titkosítás"
+      ],
       "Feedback": [
-        ""
+        "Visszajelzés"
       ],
       "Filter on": [
         "Szűrés be"
@@ -7067,7 +7196,7 @@
         "Link jóváhagyása"
       ],
       "Load embedded images": [
-        ""
+        "Beágyazott képek betöltése"
       ],
       "Load remote content": [
         "Távoli tartalom betöltése"
@@ -7121,7 +7250,7 @@
         "Áthelyezés a lomtárba"
       ],
       "Moving a scheduled message": [
-        ""
+        "Üzemezett üzenet áthelyezése"
       ],
       "New message": [
         "Új üzenet"
@@ -7133,7 +7262,7 @@
         "Következő üzenet"
       ],
       "No attachment found": [
-        ""
+        "Nincs melléklet"
       ],
       "Open actions dropdown": [
         "Műveletek menü megnyitása"
@@ -7169,7 +7298,7 @@
         "Névjegy ismételt aláírása"
       ],
       "Recipient missing": [
-        ""
+        "Címzett hiányzik"
       ],
       "Recipients": [
         "Címzettek"
@@ -7187,10 +7316,10 @@
         "Probléma jelentése"
       ],
       "Request new code": [
-        ""
+        "Új kód kérése"
       ],
       "Schedule send": [
-        ""
+        "Ütemezett küldés"
       ],
       "Select a theme": [
         "Téma kiválasztása"
@@ -7205,10 +7334,10 @@
         "E-mail küldése"
       ],
       "Send feedback": [
-        ""
+        "Visszajelzés küldése"
       ],
       "Send with changed preferences?": [
-        ""
+        "Elküldi a megváltoztatott beállításokkal?"
       ],
       "Send without expiration?": [
         "Küldés időkorlát nélkül?"
@@ -7217,7 +7346,7 @@
         "Feladó"
       ],
       "Sender changed": [
-        ""
+        "Feladó megváltoztatva"
       ],
       "Sending error": [
         "Hiba a küldés közben"
@@ -7247,7 +7376,7 @@
         "Tárhely figyelmeztetés"
       ],
       "Subject missing": [
-        ""
+        "Tárgy hiányzik"
       ],
       "To": [
         "Címzett"
@@ -7298,7 +7427,7 @@
     },
     "Today icon tooltip in mini calendar": {
       "Today": [
-        ""
+        "Ma"
       ]
     },
     "Tooltip": {
@@ -7309,13 +7438,13 @@
         "Az üzenetek digitális aláírása teszi ellenőrizhetővé, hogy az üzenetet valóban ön küldte"
       ],
       "Each imported email will have this label": [
-        ""
+        "Minden importált üzenet megkapja ezt a címkét"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
         "Az e-mail titkosítása aláírást is von magával, az elküldött üzenetek pontosabb ellenőrizhetősége érdekében"
       ],
       "Encrypted data": [
-        ""
+        "Titkosított adatok"
       ],
       "Encrypted data with verified digital signature": [
         "Titkosított adat, ellenőrzött digitális aláírással"
@@ -7327,10 +7456,10 @@
         "A rendszer almappák külön mappákként fognak megjelenni a ${ MAIL_APP_NAME }ben"
       ],
       "The import will start with the most recent messages.": [
-        ""
+        "Az importálás a legfrissebb üzenetekkel kezdődik."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        ""
+        "Ez a művelet letölti az összes üzenetet, hogy helyben kereshetők legyenek. A böngésző adatainak törlése kikapcsolja ezt a lehetőséget."
       ],
       "This feature is only available for paid users": [
         "Ez a lehetőség csak előfizetéses csomagokban érhető érhető el"
@@ -7344,21 +7473,21 @@
     },
     "Tor out of date": {
       "stable release": [
-        ""
+        "stabil kiadásra"
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
-        ""
+        "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
       ]
     },
     "Update font modal": {
       "Today is a good day to write an email": [
-        ""
+        "Jó nap ez egy e-mail írására"
       ],
       "Update default font and size": [
-        ""
+        "Alapértelmezett betűtípus és méret frissítése"
       ],
       "Your default font will look like following:": [
-        ""
+        "Így fog kinézni az alapértelmezett betűtípus:"
       ]
     },
     "Validation": {
@@ -7369,10 +7498,10 @@
     },
     "Video control": {
       "Click to replay the video": [
-        ""
+        "Kattintson a videó újrajátszásához"
       ],
       "Replay video": [
-        ""
+        "Videó újrajátszása"
       ]
     },
     "Warning": {
@@ -7400,7 +7529,7 @@
         "Az élő csevegés egy prémium funkció, ami csak a fizetős ${ VPN_APP_NAME } csomagokban elérhető. Kérjük, nyisson egy jegyet."
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
-        ""
+        "A Proton az azonos nevű mappákat összefésüli. Ha ezt el szeretné kerülni, előzetesen nevezze át az azonos nevű mappákat."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "A hibajelentések nem titkosítottak a végpontok közt, kérjük ne küldjön semmilyen érzékeny információt."
@@ -7413,13 +7542,13 @@
         "A mellékletek aláírásának ellenőrzése nem sikerült.\nLetöltheti a mellékleteket, de elképzelhető, hogy megváltoztatták a tartalmát."
       ],
       "The contact data is corrupted and cannot be displayed.": [
-        ""
+        "A névjegy adatai sérültek és nem jeleníthetők meg."
       ],
       "The contact failed to load.": [
         "A névjegy betöltése nem sikerült."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        ""
+        "Az eszközén a dátum és idő beállítása pontatlan. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
         "A titkosított tartalom visszafejtése nem sikerült."
@@ -7434,10 +7563,10 @@
         "Ehhez a lehetőséghez előfizetéses csomag szükséges"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        ""
+        "Sajnos a támogatási csoport jelenleg nem elérhető. Kérjük, az alábbi űrlapon írja le a problémáját és amint lehet felvesszük önnel a kapcsolatot."
       ],
       "You will lose any customization you made so far.": [
-        ""
+        "Elveszíti az eddigi változtatásokat."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ textDate }. ${ action }"

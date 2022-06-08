@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "Копіювати е-пошту в буфер обміну"
       ],
+      "Copy password to clipboard": [
+        "Копіювати пароль до буфера"
+      ],
       "Create a new contact group": [
         "Створити нову групу контактів"
       ],
@@ -290,6 +293,9 @@
       "Edit email address": [
         "Змінити адресу е-пошти"
       ],
+      "Edit encryption": [
+        "Редагувати шифрування"
+      ],
       "Edit label": [
         "Редагувати мітку"
       ],
@@ -320,6 +326,9 @@
       "Expand URL": [
         "Розгорнути URL"
       ],
+      "Expiration time": [
+        "Термін дії"
+      ],
       "Export": [
         "Експортувати"
       ],
@@ -328,6 +337,9 @@
       ],
       "Export contacts": [
         "Експортувати контакти"
+      ],
+      "External encryption": [
+        "Зовнішнє шифрування"
       ],
       "Filter on...": [
         "Фільтр..."
@@ -677,6 +689,12 @@
       "Remove ${ attachmentName }": [
         "Вилучити ${ attachmentName }"
       ],
+      "Remove encryption": [
+        "Вилучити шифрування"
+      ],
+      "Remove expiration time": [
+        "Вилучити термін дії"
+      ],
       "Remove this label": [
         "Вилучити цю мітку"
       ],
@@ -754,6 +772,9 @@
       ],
       "Set as default": [
         "Встановити типовим"
+      ],
+      "Set encryption": [
+        "Встановити шифрування"
       ],
       "Set expiration time": [
         "Вказати термін дії"
@@ -880,9 +901,6 @@
       ],
       "Unsubscribe": [
         "Відписатися"
-      ],
-      "Unsubscribe from mailing list": [
-        "Відписатися від розсилки"
       ],
       "Unsubscribing": [
         "Скасувати підписку"
@@ -2894,8 +2912,8 @@
       "Label name cannot be empty.": [
         "Мітка не може бути без назви."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Перевищено максимальну кількість вкладень (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT })."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Об'єднайте принаймні ${ calendarToFixCount } календар з наявним календарем Proton",
@@ -2924,17 +2942,11 @@
       "No data to import": [
         "Немає даних для імпорту"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Для внутрішнього користувача не отримано жодного дійсного ключа для надсилання"
-      ],
       "No keys retrieved for internal user": [
         "Для внутрішнього користувача не отримано жодного ключа"
       ],
       "No valid address found": [
         "Не знайдено дійсної адреси"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Для внутрішнього користувача не отримано жодного дійсного ключа"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Для користувача не отримано жодного ключа WKD, дійсного для надсилання"
@@ -2980,6 +2992,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Основний ключ адреси не розшифрований."
+      ],
+      "Primary key is not valid for sending": [
+        "Основний ключ недійсний для надсилання"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Для внутрішнього користувача не отримано дійсного основного ключа для надсилання"
       ],
       "Public key could not be trusted": [
         "Відкритий ключ не може бути довіреним"
@@ -3035,11 +3053,17 @@
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG.",
         "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Назва теки неправильна. Оберіть іншу назву."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Назва теки надто довга. Будь ласка, скоротіть назву."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "Не вдається видобути властивості ключа для ${ emailAddress }"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Назва мітки неправильна. Оберіть іншу назву."
       ],
       "The label name is too long. Please choose a different name.": [
         "Назва мітки надто довга. Будь ласка, скоротіть назву."
@@ -3746,29 +3770,26 @@
         "${ calendarsToBeMergedCount } об'єднаних календарів",
         "${ calendarsToBeMergedCount } об'єднаних календарів"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт містить кілька адрес е-пошти.",
+        "${ contactCount } контакти містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } учасник",
         "${ contactEmailsLength } учасники",
         "${ contactEmailsLength } учасників",
         "${ contactEmailsLength } учасників"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до цієї групи."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } містить кілька адрес е-пошти."
       ],
       "${ contactsCount } contact found": [
         "Знайдено ${ contactsCount } контакт",
         "Знайдено ${ contactsCount } контакти",
         "Знайдено ${ contactsCount } контактів",
         "Знайдено ${ contactsCount } контактів"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } містить декілька адрес електронної пошти. Виберіть одну чи декілька адрес для додавання до цієї групи."
       ],
       "${ count } unread message": [
         "${ count } непрочитане повідомлення",
@@ -3796,9 +3817,6 @@
         "${ messagesNotAuthorizedToMove } повідомлення не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
         "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } та ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "Заблоковано ${ numberOfTrackers } елемент стеження",
@@ -3920,8 +3938,8 @@
       "(No Recipient)": [
         "(Немає отримувача)"
       ],
-      "5 email addresses": [
-        "5 адрес е-пошти"
+      "10 email addresses": [
+        "10 адрес е-пошти"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Фраза відновлення є одним із найнадійніших способів захисту вашого облікового запису. Ви можете використати її для доступу до свого облікового запису та відновлення зашифрованих даних у випадку втрати пароля."
@@ -4136,6 +4154,9 @@
       "Do you want to re-sign the contact details?": [
         "Ви хочете повторно підписати контактні дані?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Пам'ятайте про надання пароля отримувачу"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Завантажте наш мобільний застосунок для захищеного спілкування на ходу."
       ],
@@ -4159,6 +4180,15 @@
       ],
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
+      ],
+      "Edit encryption": [
+        "Редагувати шифрування"
+      ],
+      "Edit expiration time": [
+        "Редагувати термін дії"
+      ],
+      "Edit link": [
+        "Редагувати посилання"
       ],
       "Email address": [
         "Адреса е-пошти"
@@ -4184,11 +4214,8 @@
         "вбудованих зображень",
         "вбудованих зображень"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "Шифрувати для користувачів поза ${ BRAND_NAME }"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "Зашифровані повідомлення одержувачам поза ${ BRAND_NAME } дійсні протягом 28 днів, якщо не вказано коротший термін дії."
+      "Encrypt message": [
+        "Зашифрувати повідомлення"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Введіть код перевірки, який був надісланий на ${ destinationText }."
@@ -4208,9 +4235,6 @@
       "Expiration time": [
         "Час завершення"
       ],
-      "Expiration Time": [
-        "Час завершення"
-      ],
       "Expires": [
         "Завершується"
       ],
@@ -4226,6 +4250,9 @@
       "Expires soon": [
         "Скоро завершується"
       ],
+      "Expiring message": [
+        "Самознищувальне повідомлення"
+      ],
       "file attached": [
         "вкладений файл",
         "вкладені файли",
@@ -4237,6 +4264,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включно з вхідними та надісланими. Кожен фільтр повинен містити принаймні назву, умову та дію."
+      ],
+      "Folder": [
+        "Тека"
       ],
       "For increased security, activate 2FA.": [
         "Для підвищення безпеки активуйте двоетапну перевірку."
@@ -4277,17 +4307,20 @@
         "Годин",
         "Годин"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Я надсилаю повідомлення користувачу не ProtonMail."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Якщо у вас виникли труднощі під час створення облікового запису, подайте запит на запрошення і ми відповімо протягом одного робочого дня."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Якщо ви надсилаєте це повідомлення користувачу поза ${ MAIL_APP_NAME }, обов'язково встановіть для нього пароль."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Якщо ви вважаєте, що це помилка, зв'яжіться з нами ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Якщо ви не можете знайти лист у вхідних повідомленнях, перевірте свою теку спаму."
+      ],
+      "Image description": [
+        "Опис зображення"
       ],
       "Image URL": [
         "URL-адреса зображення"
@@ -4457,6 +4490,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Елементів стеження не виявлено, але деякі зображення неможливо завантажити з активним захистом від стеження"
       ],
+      "non-Proton Mail": [
+        "не Proton Mail"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
@@ -4468,6 +4504,9 @@
       ],
       "of": [
         "з"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Один або кілька ваших довірених ключів були позначені «скомпрометованими» їх власником. Ми радимо вам не довіряти цим ключам."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
@@ -4510,6 +4549,15 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Виберіть тип посилання, яке ви хочете вставити й заповніть усі поля."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } групи.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Зачекайте, поки ми перевіряємо контакти, які можуть бути повторно підписані з використанням основного ключа шифрування."
@@ -4588,6 +4636,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Виберіть, які календарі імпортувати. Для кожного імпортованого календаря буде створено новий календар, але не більше 20 календарів."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "Надіслати зашифроване, захищене паролем повідомлення на електронну адресу ${ boldText }."
       ],
       "Sending": [
         "Надсилається"
@@ -4880,6 +4931,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Ми надішлемо новий код підтвердження на ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ми переїхали! Долучайтеся до нас на нашому новому сайті: ${ link }."
+      ],
       "Web URL": [
         "URL-адреса"
       ],
@@ -5018,6 +5072,27 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "Повідомлення буде видалено зі скриньки отримувача і з вашої теки надісланих ${ dateString }, о ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "Повідомлення буде видалено зі скриньки отримувача і з вашої теки надісланих сьогодні, о ${ formattedTime }"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "Повідомлення буде видалено зі скриньки отримувача і з вашої теки надісланих завтра, о ${ formattedTime }"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Термін дії повідомлення завершиться через ${ numberOfDays } день.",
+        "Термін дії повідомлення завершиться через ${ numberOfDays } дні.",
+        "Термін дії повідомлення завершиться через ${ numberOfDays } днів.",
+        "Термін дії повідомлення завершиться через ${ numberOfDays } дні."
+      ],
+      "Your message will expire today.": [
+        "Термін дії повідомлення завершиться сьогодні."
+      ],
+      "Your message will expire tomorrow.": [
+        "Термін дії повідомлення завершиться завтра."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
       ],
@@ -5047,8 +5122,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Скомпрометований"
+      ],
       "Expired": [
         "Протермінований"
+      ],
+      "Obsolete": [
+        "Застарілий"
       ],
       "Primary": [
         "Основний"
@@ -5058,9 +5139,6 @@
       ],
       "Trusted": [
         "Надійний"
-      ],
-      "Verification only": [
-        "Лише перевірка"
       ],
       "WKD": [
         "WKD"
@@ -5498,9 +5576,6 @@
       ],
       "Mark as": [
         "Позначити як"
-      ],
-      "Message password": [
-        "Пароль повідомлення"
       ],
       "Move to": [
         "Перемістити"
@@ -6156,6 +6231,46 @@
         "Назва мітки"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Перемкнути або додати обліковий запис"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Представляємо оновлений вигляд.${ br } Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Ми представили уніфікований та оновлений вигляд Proton і бажаємо дізнатися про ваші враження!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Гірше не може бути"
+      ],
+      "5 - Wonderful": [
+        "5 - Чудово"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Як би ви описали свої враження від нового Proton?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Розкажіть нам про своє враження (Необов'язково)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Відгук"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Залишити відгук"
+      ],
+      "Updated Proton, unified protection": [
+        "Оновлений Proton, єдиний захист"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } створено"
@@ -6274,6 +6389,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Ключ не можна використовувати для шифрування"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } позначає цей ключ скомпрометованим. Він не може бути використаний ні для шифрування, ні для перевірки підписів."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } позначає цей ключ застарілим. Він може бути використаний лише для перевірки підписів."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Ми радимо вам не довіряти цим ключам."
       ]
     },
     "PGP key warning": {
@@ -6662,11 +6788,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "Відписатися від розсилки електронною поштою"
+      "This message is from a mailing list.": [
+        "Це повідомлення зі списку розсилки."
       ],
-      "Unsubscribing from mailing list...": [
-        "Скасування підписки на розсилку електронною поштою..."
+      "Unsubscribed": [
+        "Підписку скасовано"
       ]
     },
     "Step in filter modal": {
@@ -6741,16 +6867,16 @@
         "${ elementsCount } розмови позначено непрочитаною."
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } розмову переміщено до ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } розмови переміщено до ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } розмов переміщено до ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } розмов переміщено до ${ folderName }, а відправника додано до списку дозволених."
+        "${ elementsCount } розмову переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
+        "${ elementsCount } розмови переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
-        "${ elementsCount } розмову переміщено до ${ folderName }.",
-        "${ elementsCount } розмови переміщено до ${ folderName }.",
-        "${ elementsCount } розмов переміщено до ${ folderName }.",
-        "${ elementsCount } розмов переміщено до ${ folderName }."
+        "${ elementsCount } розмову переміщено до теки ${ folderName }.",
+        "${ elementsCount } розмови переміщено до теки ${ folderName }.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
         "${ elementsCount } розмову переміщено до спаму, а відправника додано до списку блокування.",
@@ -6789,16 +6915,16 @@
         "${ elementsCount } повідомлення позначено непрочитаними."
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } повідомлення переміщено до ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } повідомлення переміщено до ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } повідомлень переміщено до ${ folderName }, а відправника додано до списку дозволених.",
-        "${ elementsCount } повідомлень переміщено до ${ folderName }, а відправника додано до списку дозволених."
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправника додано до списку дозволених.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
-        "${ elementsCount } повідомлення переміщено до ${ folderName }.",
-        "${ elementsCount } повідомлення переміщено до ${ folderName }.",
-        "${ elementsCount } повідомлень переміщено до ${ folderName }.",
-        "${ elementsCount } повідомлень переміщено до ${ folderName }."
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
         "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до списку блокування.",
@@ -6858,10 +6984,10 @@
         "Розмову позначено непрочитаною."
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "Розмову переміщено до ${ folderName }, а відправника додано до списку дозволених."
+        "Розмову переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
       ],
       "Conversation moved to ${ folderName }.": [
-        "Розмову переміщено до ${ folderName }."
+        "Розмову переміщено до теки ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
         "Розмову переміщено до спаму, а відправника додано до списку блокування."
@@ -6915,10 +7041,10 @@
         "Повідомлення позначено непрочитаним."
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "Повідомлення переміщено до ${ folderName }, а відправника додано до списку дозволених."
+        "Повідомлення переміщено до теки ${ folderName }, а відправника додано до списку дозволених."
       ],
       "Message moved to ${ folderName }.": [
-        "Повідомлення переміщено до ${ folderName }."
+        "Повідомлення переміщено до теки ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
         "Повідомлення переміщено до спаму, а відправника до списку блокування."
@@ -6937,6 +7063,9 @@
         "Перемістити ${ selectionCount } повідомлення",
         "Перемістити ${ selectionCount } повідомлень",
         "Перемістити ${ selectionCount } повідомлень"
+      ],
+      "Password copied to clipboard": [
+        "Пароль скопійовано до буфера"
       ],
       "Phishing reported": [
         "Звіт про шахрайство подано"
@@ -7023,6 +7152,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Представляємо оновлений Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Більше служб, єдина місія приватності."
+      ],
       "Settings": [
         "Налаштування"
       ]
@@ -7277,9 +7412,6 @@
       "Enable message content search": [
         "Увімкнути пошук вмісту повідомлень"
       ],
-      "Encryption": [
-        "Шифрування"
-      ],
       "Enter your password": [
         "Введіть свій пароль"
       ],
@@ -7291,6 +7423,9 @@
       ],
       "Exporting contacts": [
         "Експортування контактів"
+      ],
+      "External encryption": [
+        "Зовнішнє шифрування"
       ],
       "Feedback": [
         "Відгук"

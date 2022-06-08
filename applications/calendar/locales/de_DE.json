@@ -2084,17 +2084,11 @@
       "No data to import": [
         "Keine zu importierenden Daten"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "Kein für den internen Benutzer abgerufener Schlüssel ist zum Senden gültig"
-      ],
       "No keys retrieved for internal user": [
         "Keine Schlüssel für interne Benutzer abgerufen"
       ],
       "No valid address found": [
         "Keine gültige Adresse gefunden"
-      ],
-      "No valid keys retrieved for internal user": [
-        "Keine gültigen Schlüssel für internen Benutzer abgerufen"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Der für den Benutzer abgerufene WKD (Web Key Directory)-Schlüssel ist für das Senden ungültig"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "Der Hauptadressschlüssel wird nicht entschlüsselt."
       ],
+      "Primary key is not valid for sending": [
+        "Primärschlüssel ist für das Senden nicht gültig"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "Der für den internen Benutzer abgefragte Primärschlüssel ist für den Versand gültig"
+      ],
       "Request timed out": [
         "Zeitüberschreitung bei der Anfrage"
       ],
@@ -2162,8 +2162,14 @@
       "Start time must be before end time": [
         "Startzeit muss vor der Endzeit liegen"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Der Name des Ordners ist ungültig. Bitte wähle einen anderen Namen."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Der Name des Ordners ist zu lang. Bitte wähle einen kürzeren Namen."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Der Name der Kategorie ist ungültig. Bitte wähle einen anderen Namen."
       ],
       "The label name is too long. Please choose a different name.": [
         "Der Name der Kategorie ist zu lang. Bitte wähle einen kürzeren Namen."
@@ -2737,32 +2743,24 @@
         "${ calendarsToBeMergedCount } zusammengeführter Kalender",
         "${ calendarsToBeMergedCount } zusammengeführte Kalender"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "",
+        "${ contactCount } Kontakt enthält mehrere E-Mail-Adressen."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Mitglied",
         "${ contactEmailsLength } Mitglieder"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wähle aus, welche E-Mail-Adresse(n) du zur Gruppe „${ groupsEnumeration }” hinzufügen möchtest."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "Der Kontakt „${ contactName }” enthält mehrere E-Mail-Adressen. Bitte wähle aus, welche E-Mail-Adresse(n) du zu dieser Gruppe hinzufügen möchtest."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } enthält mehrere E-Mail-Adressen."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } Kontakt gefunden",
         "${ contactsCount } Kontakte gefunden"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wähle die E-Mail-Adresse(n) aus, die zur Gruppe „${ groupsEnumeration }” hinzugefügt werden sollen."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "„${ contactsEnumeration }” enthalten mehrere E-Mail-Adressen. Bitte wähle aus, welche E-Mail-Adresse(n) du zu dieser Gruppe hinzufügen möchtest."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } und ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } Kontaktgruppe",
@@ -2795,8 +2793,8 @@
         "(${ memberCount } Mitglied)",
         "(${ memberCount } Mitglieder)"
       ],
-      "5 email addresses": [
-        "5 E-Mail-Adressen"
+      "10 email addresses": [
+        "10 E-Mail-Adressen"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Eine Absage-E-Mail wird an die entfernten Teilnehmer gesendet."
@@ -3033,6 +3031,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Terminee, die zuvor vom Organisator aktualisiert wurden, werden beibehalten."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Einer oder mehrere deiner vertrauenswürdigen Schlüssel wurden durch dessen Besitzer als „kompromittiert“ gemeldet. Wir empfehlen dir, die betroffenen Schlüssel als „nicht vertrauenswürdig“ zu markieren."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ändere diese Einstellungen nur, wenn du PGP mit Nicht-${ BRAND_NAME }-Empfängern verwendest."
       ],
@@ -3056,6 +3057,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Bitte wähle die zu importierenden Ordner aus:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "",
+        "Bitte wähle aus, welche E-Mail-Adresse/n du ${ groupCount } hinzufügen möchtest."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Bitte wähle aus, welche E-Mail-Adresse/n du ${ groupName } hinzufügen möchtest."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Bitte warte, während nach Kontakten gesucht wird, die mit dem primären Verschlüsselungsschlüssel neu signiert werden können."
@@ -3082,7 +3090,7 @@
         "Wähle das Nachrichtenformat, das standardmäßig verwendet werden soll, wenn du eine E-Mail an diese E-Mail-Adresse sendest."
       ],
       "Select what you want to move from Google.": [
-        "Wähle aus, was du von Google verschieben möchtest."
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "Bitte wähle die zu importierenden Kalender aus. Für jeden importierten Kalender wird ein neuer Kalender erstellt, bis die Grenze von 20 Kalendern erreicht ist."
@@ -3194,6 +3202,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Wir ziehen um! Besuche uns auf unserer neuen Webseite: ${ link }."
       ],
       "Week": [
         "Woche"
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Kompromittiert"
+      ],
       "Expired": [
         "Abgelaufen"
+      ],
+      "Obsolete": [
+        "Veraltet"
       ],
       "Primary": [
         "Haupt"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Vertrauenswürdig"
-      ],
-      "Verification only": [
-        "Nur zur Bestätigung"
       ],
       "WKD": [
         "Web Key Directory (WKD)"
@@ -4177,6 +4191,17 @@
         "Schlüssel kann nicht zur Verschlüsselung verwendet werden"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } hat diesen Schlüssel als kompromittiert gekennzeichnet. Dieser Schlüssel kann weder für die Verschlüsselung, noch für die Signaturprüfung verwendet werden."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } hat diesen Schlüssel als veraltet gekennzeichnet. Dieser Schlüssel kann nur noch für die Signaturprüfung verwendet werden."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Wir empfehlen dir, diesen Schlüssel als „nicht vertrauenswürdig“ einzustufen."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "E-Mail-Adresse nicht unter den im Sendeschlüssel definierten Benutzer-IDs gefunden (${ keyUserIds })"
@@ -4581,6 +4606,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Wir stellen das neue Proton vor."
+      ],
+      "More services, one privacy mission.": [
+        "Mehr Dienste, eine Mission zum Schutz der Privatsphäre."
+      ],
       "Settings": [
         "Einstellungen"
       ]

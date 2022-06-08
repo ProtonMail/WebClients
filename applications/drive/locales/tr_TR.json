@@ -1896,8 +1896,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Bir şeyler ters gitti. Lütfen ilerlemek için ${ refresh }yin. Bu sorun sürerse lütfen ${ supportTeam } ile görüşün."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir ad seçin."
@@ -2225,25 +2231,20 @@
         "${ canceledCount } iptal edildi",
         "${ canceledCount } iptal edildi"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kişinin birkaç e-posta adresi var.",
+        "${ contactCount } kişinin birkaç e-posta adresi var."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } üye",
         "${ contactEmailsLength } üye"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } için birden fazla e-posta adresi var. ${ groupsEnumeration } grubuna eklenecek adres veya adresleri seçin."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } için birden fazla e-posta adresi var. Lütfen bu gruba ekleyeceğiniz e-posta adreslerini seçin."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } için birkaç e-posta adresi var."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kişi bulundu",
         "${ contactsCount } kişi bulundu"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } için birden fazla e-posta adresi var. ${ groupsEnumeration } grubuna eklenecek adres veya adresleri seçin."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } için birden fazla e-posta adresi var. Bu gruba eklenecek adres veya adresleri seçin."
       ],
       "${ doneCount } finished": [
         "${ doneCount } tamamlandı",
@@ -2264,9 +2265,6 @@
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } ve ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } kişi grubu",
@@ -2309,8 +2307,8 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
-      "5 email addresses": [
-        "5 e-posta adresi"
+      "10 email addresses": [
+        "10 e-posta adresi"
       ],
       "A number will be added to the filename": [
         "Dosya adına bir numara eklensin"
@@ -2595,7 +2593,7 @@
         "Anahtar parmak izi"
       ],
       "Large imports can take several days.": [
-        "Büyük boyutlu içe aktarımların tamamlanması bir kaç gün sürebilir."
+        "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -2675,6 +2673,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Şifrelenmiş sürücülerinizden biri kilitli. Bu durum genellikle bir parola sıfırlama işleminde kaynaklanır."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2710,6 +2711,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin.",
+        "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
@@ -2925,6 +2933,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
+      ],
       "Week": [
         "Hafta"
       ],
@@ -3065,8 +3076,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Ele geçirilmiş"
+      ],
       "Expired": [
         "Süresi geçmiş"
+      ],
+      "Obsolete": [
+        "Eskimiş"
       ],
       "Primary": [
         "Birincil"
@@ -3076,9 +3093,6 @@
       ],
       "Trusted": [
         "Güvenilmiş"
-      ],
-      "Verification only": [
-        "Yalnızca doğrulama"
       ],
       "WKD": [
         "WKD"
@@ -3540,6 +3554,21 @@
         "Etiket adı"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "Güncellenmiş Proton, birleşik koruma"
+      ]
+    },
     "Notification": {
       "\"${ name }\" created successfully": [
         "\"${ name }\" oluşturuldu"
@@ -3810,6 +3839,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } kullanıcısı bu anahtarı ele geçirilmiş olarak işaretlemiş. Bu anahtar şifreleme ya da imza doğrulaması için kullanılamaz."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } kullanıcısı bu anahtarı eskimiş olarak işaretlemiş. Bu anahtar yalnızca imza doğrulaması için kullanılabilir."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Bu anahtara \"güvenmemeniz\" önerilir."
       ]
     },
     "PGP key warning": {
@@ -4089,6 +4129,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Güncellenmiş Proton ile tanışın."
+      ],
+      "More services, one privacy mission.": [
+        "Daha fazla hizmet, tek kişisel gizlilik amacı."
+      ],
       "Settings": [
         "Ayarlar"
       ]
