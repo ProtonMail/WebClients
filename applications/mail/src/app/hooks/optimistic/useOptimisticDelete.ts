@@ -2,7 +2,7 @@ import { useHandler, useCache } from '@proton/components';
 import { MessageCountsModel, ConversationCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { useDispatch } from 'react-redux';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { Element } from '../../models/element';
 import { replaceCounter } from '../../helpers/counter';
 import { isConversation, isUnread } from '../../helpers/elements';

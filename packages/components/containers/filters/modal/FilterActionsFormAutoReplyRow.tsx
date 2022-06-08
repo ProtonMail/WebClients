@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 
 import { Toggle, Tooltip, Editor, EditorActions } from '../../../components';
 import { useUser } from '../../../hooks';

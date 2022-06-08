@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import useIsMounted from '@proton/hooks/useIsMounted';
 
 export type PromiseHandlers<P> = {

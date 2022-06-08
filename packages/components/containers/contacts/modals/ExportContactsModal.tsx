@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 import { format } from 'date-fns';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { exportContactsFromLabel } from '@proton/shared/lib/contacts/helpers/export';

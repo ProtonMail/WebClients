@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Nullable, SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { ACCESS_LEVEL, CalendarLink, VisualCalendar, VisualCalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { UserModel } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { Table, TableHeader, TableBody, TableRow, Info, DropdownActions } from '../../../components';
 import CalendarSelectIcon from '../../../components/calendarSelect/CalendarSelectIcon';

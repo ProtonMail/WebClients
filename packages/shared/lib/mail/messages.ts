@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import identity from '@proton/util/identity';
+import identity from '@proton/utils/identity';
 import { MIME_TYPES, MAILBOX_LABEL_IDS } from '../constants';
 import { clearBit, hasBit, setBit, toggleBit } from '../helpers/bitset';
 import { canonizeInternalEmail, getEmailParts } from '../helpers/email';

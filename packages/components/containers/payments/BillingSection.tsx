@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 import { PLANS } from '@proton/shared/lib/constants';
-import unique from '@proton/util/unique';
+import unique from '@proton/utils/unique';
 import {
     getBaseAmount,
     getHasLegacyPlans,

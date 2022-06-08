@@ -1,6 +1,6 @@
 import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
-import isTruthy from '@proton/util/isTruthy';
-import noop from '@proton/util/noop';
+import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 import { User, Address, OrganizationKey, DecryptedKey, SignedKeyList, Member, Api, Organization } from '../interfaces';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';

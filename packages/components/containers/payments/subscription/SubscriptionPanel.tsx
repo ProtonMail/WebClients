@@ -20,8 +20,8 @@ import {
     Currency,
 } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
-import percentage from '@proton/util/percentage';
-import isTruthy from '@proton/util/isTruthy';
+import percentage from '@proton/utils/percentage';
+import isTruthy from '@proton/utils/isTruthy';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';

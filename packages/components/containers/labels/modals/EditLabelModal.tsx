@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { ACCENT_COLORS, ROOT_FOLDER, LABEL_TYPE } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
-import noop from '@proton/util/noop';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import noop from '@proton/utils/noop';
 import { create as createLabel, updateLabel, checkLabelAvailability } from '@proton/shared/lib/api/labels';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';

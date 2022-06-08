@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { c, msgid } from 'ttag';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { resignAllContacts } from '@proton/shared/lib/contacts/globalOperations';
 import { Alert, Button, DynamicProgress, FormModal, PrimaryButton } from '../../../components';

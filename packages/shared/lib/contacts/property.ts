@@ -1,5 +1,5 @@
-import isTruthy from '@proton/util/isTruthy';
-import range from '@proton/util/range';
+import isTruthy from '@proton/utils/isTruthy';
+import range from '@proton/utils/range';
 import { ContactValue } from '../interfaces/contacts';
 import { getStringContactValue } from './properties';
 

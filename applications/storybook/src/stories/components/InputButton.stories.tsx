@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { InputButton } from '@proton/components';
-import remove from '@proton/util/remove';
+import remove from '@proton/utils/remove';
 
 import { getTitle } from '../../helpers/title';
 

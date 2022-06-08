@@ -1,5 +1,5 @@
 import { differenceInMinutes } from 'date-fns';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,

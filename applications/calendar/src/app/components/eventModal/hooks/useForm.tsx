@@ -1,4 +1,4 @@
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { useLoading } from '@proton/components';
 import { useState } from 'react';
 import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';

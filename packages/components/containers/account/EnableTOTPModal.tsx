@@ -7,7 +7,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { APPS } from '@proton/shared/lib/constants';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import {

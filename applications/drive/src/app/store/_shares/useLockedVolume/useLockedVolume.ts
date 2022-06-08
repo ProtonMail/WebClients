@@ -5,7 +5,7 @@ import { encryptMessage, OpenPGPKey } from 'pmcrypto';
 import { usePreventLeave, useAddressesKeys } from '@proton/components';
 import { Address } from '@proton/shared/lib/interfaces';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { generateLookupHash, encryptPassphrase } from '@proton/shared/lib/keys/driveKeys';
 import { queryRestoreDriveVolume, queryDeleteLockedVolumes } from '@proton/shared/lib/api/drive/volume';
 

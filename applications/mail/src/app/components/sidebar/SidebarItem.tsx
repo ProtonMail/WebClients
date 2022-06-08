@@ -17,8 +17,8 @@ import {
 import { useHistory } from 'react-router-dom';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import noop from '@proton/util/noop';
-import isTruthy from '@proton/util/isTruthy';
+import noop from '@proton/utils/noop';
+import isTruthy from '@proton/utils/isTruthy';
 import { c, msgid } from 'ttag';
 import LocationAside from './LocationAside';
 import { LABEL_IDS_TO_HUMAN } from '../../constants';

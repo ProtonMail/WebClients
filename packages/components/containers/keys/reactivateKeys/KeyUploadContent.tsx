@@ -1,8 +1,8 @@
 import { ComponentType, Dispatch, ReactNode, SetStateAction, useRef } from 'react';
 import { c } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
-import uniqueBy from '@proton/util/uniqueBy';
-import removeItem from '@proton/util/removeIndex';
+import uniqueBy from '@proton/utils/uniqueBy';
+import removeItem from '@proton/utils/removeIndex';
 
 import { Button, ButtonProps, Icon, InputFieldTwo, Table, TableBody, TableRow } from '../../../components';
 import { useModals, useNotifications } from '../../../hooks';

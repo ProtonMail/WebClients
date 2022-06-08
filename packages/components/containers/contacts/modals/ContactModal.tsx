@@ -1,8 +1,8 @@
 import { useState, useCallback, useEffect, useRef, useMemo } from 'react';
 import { c } from 'ttag';
 import { addContacts } from '@proton/shared/lib/api/contacts';
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
-import noop from '@proton/util/noop';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import noop from '@proton/utils/noop';
 import { hasCategories } from '@proton/shared/lib/contacts/properties';
 import { prepareContacts } from '@proton/shared/lib/contacts/encrypt';
 import { getEditableFields, getOtherInformationFields } from '@proton/shared/lib/helpers/contacts';

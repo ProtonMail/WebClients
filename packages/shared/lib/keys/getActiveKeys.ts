@@ -1,5 +1,5 @@
 import { getSHA256Fingerprints, OpenPGPKey } from 'pmcrypto';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { ActiveKey, DecryptedKey, Key, SignedKeyList } from '../interfaces';
 import { KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';
