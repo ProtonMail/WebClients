@@ -7,9 +7,9 @@ import { useFeature } from '../../hooks';
 import RebrandingFeedbackModal from './RebrandingFeedbackModal';
 
 /*
- * Need to make sure that the useEffect below really only runs once per runtime of the application
- * independently of what happens in the react tree. After the useEffect has ran once, we don't ever
- * want to run it again in the same runtime.
+ * Need to make sure that the functionality inside of the useEffect below really only runs once per runtime of
+ * the application independently of what happens in the react tree. After the useEffect has ran once, we don't
+ * ever want to run it again in the same runtime.
  */
 let logicAlreadyRanDuringCurrentRuntime = false;
 
@@ -27,13 +27,24 @@ const RebrandingFeedbackPrompt = () => {
         hasGivenRebrandingFeedback.loading ||
         hasBeenPromptedForRebrandingFeedback.loading;
 
-    /**
-     * Features are assumed to be loaded when this function is called, as ensured
-     * in the useEffect condition down below. This is important because this logic
-     * is only supposed to run once ever, therefore the data it consumes needs to
-     * be guaranteed in advance.
-     */
-    const ready = () => {
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+
+        if (logicAlreadyRanDuringCurrentRuntime) {
+            return;
+        }
+
+        /**
+         * Features are assumed to be loaded at this point, as ensured by the conditions above.
+         * This is important because this logic is only supposed to run once ever, therefore the
+         * data it consumes needs to be guaranteed in advance.
+         */
+        logicAlreadyRanDuringCurrentRuntime = true;
+
+        let promptTimeoutId: undefined | number;
+
         const prompt = () => {
             /**
              * User has already visited the v5 / rebranding update AND has already been
@@ -69,26 +80,16 @@ const RebrandingFeedbackPrompt = () => {
         if (!hasVisitedRebrandingInThePast.feature?.Value) {
             void hasVisitedRebrandingInThePast.update(true);
 
-            setTimeout(prompt, DAY);
+            promptTimeoutId = window.setTimeout(prompt, DAY);
 
             return;
         }
 
         prompt();
-    };
 
-    useEffect(() => {
-        if (loading) {
-            return;
-        }
-
-        if (logicAlreadyRanDuringCurrentRuntime) {
-            return;
-        }
-
-        logicAlreadyRanDuringCurrentRuntime = true;
-
-        ready();
+        return () => {
+            window.clearTimeout(promptTimeoutId);
+        };
     }, [loading]);
 
     return <RebrandingFeedbackModal open={open} onClose={() => setOpen(false)} />;
