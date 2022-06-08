@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { ReactNode, useRef, useState } from 'react';
 import { GIGA } from '@proton/shared/lib/constants';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
-import clamp from '@proton/util/clamp';
+import clamp from '@proton/utils/clamp';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
 import { Donut } from '@proton/atoms';

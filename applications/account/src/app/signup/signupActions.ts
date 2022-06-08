@@ -18,7 +18,7 @@ import { handleSetupKeys } from '@proton/shared/lib/keys';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';
 import { updateEmail, updateLocale, updatePhone } from '@proton/shared/lib/api/settings';
 import { subscribe } from '@proton/shared/lib/api/payments';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { auth } from '@proton/shared/lib/api/auth';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { AuthResponse } from '@proton/shared/lib/authentication/interface';

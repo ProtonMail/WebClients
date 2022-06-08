@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import debounce from '@proton/util/debounce';
+import debounce from '@proton/utils/debounce';
 
 const getWindowSize = (): [number, number] => {
     return [window.innerWidth, window.innerHeight];

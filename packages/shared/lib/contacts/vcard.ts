@@ -1,6 +1,6 @@
 import ICAL from 'ical.js';
 import { parseISO } from 'date-fns';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { isValidDate } from '../date/date';
 import { readFileAsString } from '../helpers/file';
 import { ContactProperties, ContactProperty } from '../interfaces/contacts';

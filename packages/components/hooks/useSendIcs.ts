@@ -2,7 +2,7 @@ import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { concatArrays } from 'pmcrypto';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

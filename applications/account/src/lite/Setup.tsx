@@ -15,7 +15,7 @@ import { User, UserSettings } from '@proton/shared/lib/interfaces';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
-import getRandomString from "@proton/util/getRandomString";
+import getRandomString from "@proton/utils/getRandomString";
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { getLatestID } from '@proton/shared/lib/api/events';

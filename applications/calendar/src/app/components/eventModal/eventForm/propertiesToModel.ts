@@ -2,7 +2,7 @@ import { MAX_LENGTHS_API, EVENT_VERIFICATION_STATUS } from '@proton/shared/lib/c
 import { EventModelView, VcalVeventComponent, SelfAddressData } from '@proton/shared/lib/interfaces/calendar';
 import { getDtendProperty } from '@proton/shared/lib/calendar/vcalConverter';
 import { getEventStatus } from '@proton/shared/lib/calendar/vcalHelper';
-import truncate from '@proton/util/truncate';
+import truncate from '@proton/utils/truncate';
 
 import { propertiesToAttendeeModel } from './propertiesToAttendeeModel';
 import propertiesToDateTimeModel from './propertiesToDateTimeModel';

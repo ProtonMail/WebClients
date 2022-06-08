@@ -2,8 +2,8 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { VERIFICATION_STATUS } from 'pmcrypto';
 import { c } from 'ttag';
 
-import orderBy from '@proton/util/orderBy';
-import { areUint8Arrays } from '@proton/util/array';
+import orderBy from '@proton/utils/orderBy';
+import { areUint8Arrays } from '@proton/utils/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';

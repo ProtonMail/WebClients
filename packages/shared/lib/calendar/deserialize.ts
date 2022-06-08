@@ -1,5 +1,5 @@
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
-import unary from '@proton/util/unary';
+import unary from '@proton/utils/unary';
 import { getIsAddressDisabled } from '../helpers/address';
 import { canonizeInternalEmail } from '../helpers/email';
 import { base64StringToUint8Array } from '../helpers/encoding';

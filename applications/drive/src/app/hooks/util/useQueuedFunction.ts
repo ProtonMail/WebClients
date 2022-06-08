@@ -1,4 +1,4 @@
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { useCache } from '@proton/components';
 
 type FunctionQueue<R> = [number, (() => Promise<R>)[]];

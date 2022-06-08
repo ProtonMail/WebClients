@@ -2,7 +2,7 @@ import { act } from '@testing-library/react';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { fireEvent } from '@testing-library/dom';
-import range from '@proton/util/range';
+import range from '@proton/utils/range';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { render, clearAll, addApiMock, assertFocus, tick, mockConsole } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';

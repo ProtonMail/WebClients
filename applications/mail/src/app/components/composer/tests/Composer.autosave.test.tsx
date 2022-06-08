@@ -1,4 +1,4 @@
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { act } from '@testing-library/react';
 import { fireEvent, getByTestId } from '@testing-library/dom';

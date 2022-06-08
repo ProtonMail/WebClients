@@ -1,6 +1,6 @@
 import TurndownService from 'turndown';
 
-import identity from '@proton/util/identity';
+import identity from '@proton/utils/identity';
 
 const EMPTY_LINE_KEEPER = '%%%PROTON-EMPTY-LINE%%%';
 

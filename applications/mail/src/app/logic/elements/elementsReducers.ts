@@ -1,9 +1,9 @@
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Draft } from 'immer';
 import { PayloadAction } from '@reduxjs/toolkit';
-import isTruthy from '@proton/util/isTruthy';
-import range from '@proton/util/range';
-import diff from '@proton/util/diff';
+import isTruthy from '@proton/utils/isTruthy';
+import range from '@proton/utils/range';
+import diff from '@proton/utils/diff';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { newState } from './elementsSlice';
 import {

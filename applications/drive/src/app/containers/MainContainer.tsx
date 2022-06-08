@@ -9,7 +9,7 @@ import {
     useWelcomeFlags,
     useEarlyAccess,
 } from '@proton/components';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 
 import { DriveProvider, useDriveEventManager, useDefaultShare, useSearchControl } from '../store';

@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { Contact, ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import useContactEmails from '../../../hooks/useContactEmails';
 import { FormModal, Alert, Row, Label, Field, Checkbox } from '../../../components';
 import { useContactGroups } from '../../../hooks';

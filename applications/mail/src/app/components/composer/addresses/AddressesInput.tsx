@@ -11,7 +11,7 @@ import {
     Icon,
     Tooltip,
 } from '@proton/components';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces/Address';
 

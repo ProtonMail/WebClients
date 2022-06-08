@@ -1,4 +1,4 @@
-import move from '@proton/util/move';
+import move from '@proton/utils/move';
 
 /**
  * Re-order elements in an array inside a group of arrays

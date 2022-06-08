@@ -2,7 +2,7 @@ import * as openpgp from 'openpgp';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { init as initPmcrypto } from 'pmcrypto/lib/pmcrypto';
 
-import { mergeUint8Arrays } from '@proton/util/array';
+import { mergeUint8Arrays } from '@proton/utils/array';
 import { sign as signMessage, generateNodeKeys, generateContentKeys } from '@proton/shared/lib/keys/driveKeys';
 
 import { ecryptFileExtendedAttributes } from '../../_links';

@@ -13,7 +13,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import {
     VisualCalendar,
     IMPORT_STEPS,

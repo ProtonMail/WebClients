@@ -1,6 +1,6 @@
 import { c } from 'ttag';
-import isTruthy from '@proton/util/isTruthy';
-import unary from '@proton/util/unary';
+import isTruthy from '@proton/utils/isTruthy';
+import unary from '@proton/utils/unary';
 import { MIME_TYPES } from '../../constants';
 import { addDays, format as formatUTC } from '../../date-fns-utc';
 import { Options } from '../../date-fns-utc/format';
