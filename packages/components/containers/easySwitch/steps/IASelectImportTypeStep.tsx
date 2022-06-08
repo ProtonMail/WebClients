@@ -19,7 +19,7 @@ import {
     EasySwitchFeatureFlag,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';

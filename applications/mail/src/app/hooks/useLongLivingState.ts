@@ -1,5 +1,5 @@
 import { SetStateAction, useRef, useState } from 'react';
-import { useIsMounted } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
 
 /**
  * Enhanced useState supporting to continue living after component unmounting through the use of a ref.

@@ -12,7 +12,7 @@ import {
     TableCell,
 } from '@proton/components';
 import { isEquivalent, pick } from '@proton/shared/lib/helpers/object';
-import { shallowEqual } from '@proton/shared/lib/helpers/array';
+import { shallowEqual } from '@proton/util/array';
 import { c } from 'ttag';
 import { ItemProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 

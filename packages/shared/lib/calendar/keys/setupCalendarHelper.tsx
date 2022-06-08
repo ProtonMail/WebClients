@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/components';
+import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import { setupCalendarKey } from './setupCalendarKeys';
 import { Address, Api } from '../../interfaces';
 import { createCalendar, updateCalendarUserSettings } from '../../api/calendars';
@@ -10,7 +11,6 @@ import { getPrimaryKey } from '../../keys';
 import { getActiveAddresses } from '../../helpers/address';
 import { DEFAULT_CALENDAR } from '../constants';
 import { ACCENT_COLORS } from '../../constants';
-import { randomIntFromInterval } from '../../helpers/function';
 
 interface Args {
     addresses: Address[];

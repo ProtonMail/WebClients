@@ -1,9 +1,9 @@
 import { OpenPGPSignature } from 'pmcrypto';
+import isTruthy from '@proton/util/isTruthy';
 import { SimpleMap } from '../interfaces';
 import { EncryptPartResult, SignPartResult } from '../interfaces/calendar/PartResult';
 import { AttendeeClearPartResult } from '../interfaces/calendar/Attendee';
 import { uint8ArrayToBase64String } from '../helpers/encoding';
-import isTruthy from '../helpers/isTruthy';
 import { CALENDAR_CARD_TYPE } from './constants';
 
 const { ENCRYPTED_AND_SIGNED, SIGNED } = CALENDAR_CARD_TYPE;

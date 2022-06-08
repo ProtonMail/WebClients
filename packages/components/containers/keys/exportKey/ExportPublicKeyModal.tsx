@@ -2,7 +2,7 @@ import { getKeys, OpenPGPKey } from 'pmcrypto';
 import { c } from 'ttag';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { KEY_FILE_EXTENSION } from '@proton/shared/lib/constants';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import {
     Form,
     ModalProps,

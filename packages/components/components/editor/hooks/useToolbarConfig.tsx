@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { useIsMounted } from '../../../hooks';
+import useIsMounted from '@proton/hooks/useIsMounted';
 
 import { getToolbarConfig, ToolbarConfig } from '../helpers/getToolbarConfig';
 import { EditorMetadata, SetEditorToolbarConfig } from '../interface';

@@ -25,7 +25,7 @@ import {
 import { c } from 'ttag';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { partition } from '@proton/shared/lib/helpers/array';
+import { partition } from '@proton/util/array';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
 import { CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import SubscribeCalendarModal from '@proton/components/containers/calendar/subscribeCalendarModal/SubscribeCalendarModal';

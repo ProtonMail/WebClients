@@ -1,5 +1,5 @@
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
-import { range } from '@proton/shared/lib/helpers/array';
+import range from '@proton/util/range';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
 import { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
 

@@ -5,7 +5,7 @@ import { Href, MailShortcutsModal, Price, SettingsLink, useModals, useModalState
 import ThemesModal from '@proton/components/containers/themes/ThemesModal';
 import { PROTON_DEFAULT_THEME, ThemeTypes } from '@proton/shared/lib/themes/themes';
 import { Plan, UserSettings } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { getAppName } from '@proton/shared/lib/apps/helper';

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { updateEmail } from '@proton/shared/lib/api/settings';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { SETTINGS_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon, InputFieldTwo, useFormErrors, useModalState } from '../../../components';

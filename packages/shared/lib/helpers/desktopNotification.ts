@@ -1,6 +1,6 @@
 import Push from 'push.js';
 
-import { noop } from './function';
+import noop from '@proton/util/noop';
 
 Push.config({
     serviceWorker: './assets/serviceWorker.min.js', // Sets a custom service worker script

@@ -5,7 +5,7 @@ import { encryptPrivateKey } from 'pmcrypto';
 import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shared/lib/api/organization';
 import { OrganizationModel } from '@proton/shared/lib/models';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import {

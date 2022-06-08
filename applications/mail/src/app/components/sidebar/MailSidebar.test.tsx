@@ -5,7 +5,7 @@ import { getAppVersion } from '@proton/components';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import loudRejection from 'loud-rejection';
-import { range } from '@proton/shared/lib/helpers/array';
+import range from '@proton/util/range';
 import {
     render,
     clearAll,

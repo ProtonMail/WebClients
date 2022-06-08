@@ -4,10 +4,10 @@ import { BLACK_FRIDAY, CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { getLastCancelledSubscription } from '@proton/shared/lib/api/payments';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { useApi, useBlackFridayPeriod, useLoading, usePlans, useSubscription, useUser } from '../../hooks';
 import { EligibleOffer } from '../payments/interface';
 import { getBlackFridayEligibility } from '../payments/subscription/helpers';
-import useIsMounted from '../../hooks/useIsMounted';
 
 const usePromotionOffer = (): EligibleOffer | undefined => {
     const api = useApi();

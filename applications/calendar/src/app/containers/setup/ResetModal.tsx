@@ -10,7 +10,7 @@ import {
     useLoading,
     useCache,
 } from '@proton/components';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';

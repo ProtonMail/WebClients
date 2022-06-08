@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { Address } from '@proton/shared/lib/interfaces';
 import { ImportType, NON_OAUTH_PROVIDER } from '@proton/shared/lib/interfaces/EasySwitch';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 
 import { FormModal } from '../../components';
 import { useModals } from '../../hooks';

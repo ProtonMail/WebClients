@@ -15,7 +15,7 @@ import {
 import { ACCENT_COLORS, API_CODES, APPS } from '@proton/shared/lib/constants';
 import { canonizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 import {
     CALENDAR_TYPE,

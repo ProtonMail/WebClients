@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { cancelImport, createToken, resumeImport, updateImport } from '@proton/shared/lib/api/easySwitch';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 
 import {
     NormalizedImporter,

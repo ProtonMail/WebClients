@@ -1,4 +1,6 @@
 import { encryptPrivateKey, OpenPGPKey } from 'pmcrypto';
+import isTruthy from '@proton/util/isTruthy';
+import noop from '@proton/util/noop';
 import { User, Address, OrganizationKey, DecryptedKey, SignedKeyList, Member, Api, Organization } from '../interfaces';
 import { getDecryptedUserKeys, getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getDecryptedAddressKeys, getDecryptedAddressKeysHelper } from './getDecryptedAddressKeys';
@@ -12,9 +14,7 @@ import { queryScopes } from '../api/auth';
 import { migrateAddressKeysRoute } from '../api/keys';
 import { getOrganizationKeys } from '../api/organization';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
-import { noop } from '../helpers/function';
 import { migrateMembersAddressKeysRoute, restoreBrokenSKLRoute } from '../api/memberKeys';
-import isTruthy from '../helpers/isTruthy';
 import { ApiError } from '../fetch/ApiError';
 import { getApiError } from '../api/helpers/apiErrorHelper';
 

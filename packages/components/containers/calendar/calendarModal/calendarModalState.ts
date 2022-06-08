@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
-import { randomIntFromInterval } from '@proton/shared/lib/helpers/function';
+import randomIntFromInterval from '@proton/util/randomIntFromInterval';
 import { Address } from '@proton/shared/lib/interfaces';
 import {
     VisualCalendar,

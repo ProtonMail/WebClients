@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { c } from 'ttag';
-
-import { truncate } from '@proton/shared/lib/helpers/string';
+import truncate from '@proton/util/truncate';
 
 import { InlineLinkButton } from '../button';
 

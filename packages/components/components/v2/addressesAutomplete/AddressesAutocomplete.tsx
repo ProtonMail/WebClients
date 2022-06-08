@@ -4,7 +4,7 @@ import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contac
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { inputToRecipient } from '@proton/shared/lib/mail/recipient';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 
 import InputField, { InputFieldProps } from '../field/InputField';
 import Input from '../input/Input';

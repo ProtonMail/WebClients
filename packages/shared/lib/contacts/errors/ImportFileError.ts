@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { truncate } from '../../helpers/string';
+import truncate from '@proton/util/truncate';
 
 import { MAX_FILENAME_CHARS_DISPLAY, MAX_IMPORT_CONTACTS_STRING, MAX_IMPORT_FILE_SIZE_STRING } from '../constants';
 

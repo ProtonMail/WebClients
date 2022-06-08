@@ -1,9 +1,9 @@
 import { ReactNode, useState } from 'react';
+import useInstance from '@proton/hooks/useInstance';
 import NotificationsContext from './notificationsContext';
 import NotificationsChildrenContext from './childrenContext';
 import { NotificationOptions } from './interfaces';
 import createManager from './manager';
-import { useInstance } from '../../hooks';
 
 interface Props {
     children: ReactNode;

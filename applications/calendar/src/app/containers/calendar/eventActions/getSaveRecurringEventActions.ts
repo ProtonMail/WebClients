@@ -2,7 +2,7 @@ import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getResetPartstatActions, getUpdatedInviteVevent } from '@proton/shared/lib/calendar/integration/invite';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
-import { unary } from '@proton/shared/lib/helpers/function';
+import unary from '@proton/util/unary';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';

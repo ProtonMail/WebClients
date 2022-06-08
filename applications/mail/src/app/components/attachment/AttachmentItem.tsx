@@ -1,12 +1,12 @@
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     Icon,
     classnames,
     useLoading,
     FileIcon,
-    useIsMounted,
     CircleLoader,
     FileNameDisplay,
     CircularProgress,

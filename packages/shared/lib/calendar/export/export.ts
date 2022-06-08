@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 import { arrayToHexString, binaryStringToArray, getKeys, getSignature } from 'pmcrypto';
 import { fromUnixTime } from 'date-fns';
+import unique from '@proton/util/unique';
+import { partition } from '@proton/util/array';
 import { queryEvents } from '../../api/calendars';
 import { wait } from '../../helpers/promise';
-import { partition, unique } from '../../helpers/array';
 import { Address, Api, Key } from '../../interfaces';
 import {
     CalendarEvent,

@@ -1,7 +1,11 @@
 import { ElementType, createContext, useLayoutEffect, useState, useRef } from 'react';
 import { modalTwoRootClassName } from '@proton/shared/lib/busy';
 
-import { usePrevious, useHotkeys, useInstance } from '../../hooks';
+import useInstance from '@proton/hooks/useInstance';
+
+import usePrevious from '@proton/hooks/usePrevious';
+
+import { useHotkeys } from '../../hooks';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
 import { classnames, generateUID } from '../../helpers';
 import { useFocusTrap } from '../focus';

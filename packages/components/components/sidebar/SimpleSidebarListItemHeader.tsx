@@ -1,5 +1,5 @@
 import { ReactNode, useRef } from 'react';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import Icon from '../icon/Icon';
 import { classnames } from '../../helpers';
 import SidebarListItem from './SidebarListItem';

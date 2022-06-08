@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { updateOrganizationName } from '@proton/shared/lib/api/organization';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import {
     ModalProps,
     ModalTwo as Modal,

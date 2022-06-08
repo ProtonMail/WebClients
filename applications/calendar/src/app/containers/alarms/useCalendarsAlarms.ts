@@ -3,7 +3,7 @@ import { useApi } from '@proton/components';
 
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
 import { Calendar as tsCalendar } from '@proton/shared/lib/interfaces/calendar';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 
 import { DAY, MINUTE } from '@proton/shared/lib/constants';
 import getCalendarsAlarmsCached from './getCalendarsAlarmsCached';

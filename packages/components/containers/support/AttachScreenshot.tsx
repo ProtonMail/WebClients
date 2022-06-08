@@ -3,7 +3,7 @@ import { c } from 'ttag';
 
 import { toBlob, resize } from '@proton/shared/lib/helpers/image';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
-import { removeItem } from '@proton/shared/lib/helpers/array';
+import removeItem from '@proton/util/removeIndex';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { useNotifications } from '../../hooks';
 import { Button, FileInput, Icon, Info, Table, TableBody, TableCell, TableRow } from '../../components';

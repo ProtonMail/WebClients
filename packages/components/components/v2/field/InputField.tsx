@@ -1,8 +1,8 @@
 import { ElementType, forwardRef, ReactElement, ReactNode, useContext, useState } from 'react';
+import useInstance from '@proton/hooks/useInstance';
 import { Box, PolymorphicComponentProps } from '../../../helpers/react-polymorphic-box';
 import Icon from '../../icon/Icon';
 import { classnames, generateUID } from '../../../helpers';
-import { useInstance } from '../../../hooks';
 import Input from '../input/Input';
 import { Tooltip } from '../../tooltip';
 import { FormContext } from '../../../components';
