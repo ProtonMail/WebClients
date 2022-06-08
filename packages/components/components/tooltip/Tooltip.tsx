@@ -1,9 +1,10 @@
 import { Children, cloneElement, ReactElement, ReactNode, useContext, useEffect, useState } from 'react';
+import useInstance from '@proton/hooks/useInstance';
 import { generateUID, classnames } from '../../helpers';
 import { usePopper, Popper, usePopperAnchor } from '../popper';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import useTooltipHandlers from './useTooltipHandlers';
-import { useCombinedRefs, useInstance } from '../../hooks';
+import { useCombinedRefs } from '../../hooks';
 import { TooltipExclusiveContext } from './TooltipExclusive';
 
 export type TooltipType = 'info' | 'error' | 'warning';

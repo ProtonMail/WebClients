@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useDispatch, useSelector, useStore } from 'react-redux';
-import { useApi, useIsMounted } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { useApi } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Conversation } from '../../models/conversation';
 import { useGetElementsFromIDs } from '../mailbox/useElements';

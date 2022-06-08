@@ -1,5 +1,5 @@
 import { c, msgid } from 'ttag';
-import { clamp } from '@proton/shared/lib/helpers/math';
+import clamp from '@proton/util/clamp';
 import { NOTIFICATION_UNITS, NOTIFICATION_UNITS_MAX, NOTIFICATION_WHEN } from '@proton/shared/lib/calendar/constants';
 
 export const getDaysBefore = (value: number) => ({

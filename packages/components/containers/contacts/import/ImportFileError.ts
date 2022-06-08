@@ -1,5 +1,5 @@
-import { truncate } from '@proton/shared/lib/helpers/string';
 import { c } from 'ttag';
+import truncate from '@proton/util/truncate';
 import {
     MAX_FILENAME_CHARS_DISPLAY,
     MAX_IMPORT_CONTACTS_STRING,

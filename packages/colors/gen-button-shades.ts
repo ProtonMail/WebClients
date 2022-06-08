@@ -1,6 +1,6 @@
 import tinycolor, { Instance as Color } from 'tinycolor2';
 
-import isBetween from '@proton/shared/lib/helpers/isBetween';
+import isBetween from '@proton/util/isBetween';
 
 import shade from './shade';
 import tint from './tint';

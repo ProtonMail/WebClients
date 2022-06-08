@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
-import { noop } from '@proton/shared/lib/helpers/function';
-import { useIsMounted } from '@proton/components';
+import noop from '@proton/util/noop';
+import useIsMounted from '@proton/hooks/useIsMounted';
 
 export type PromiseHandlers<P> = {
     promise: Promise<P>;

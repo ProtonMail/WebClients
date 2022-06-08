@@ -1,6 +1,7 @@
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { useRef, useState } from 'react';
-import { useHandler, useIsMounted, useNotifications } from '@proton/components';
+import useIsMounted from '@proton/hooks/useIsMounted';
+import { useHandler, useNotifications } from '@proton/components';
 import { Abortable } from '@proton/components/hooks/useHandler';
 import { c } from 'ttag';
 import SavingDraftNotification, {

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { resizeImage, toImage } from '@proton/shared/lib/helpers/image';
 import { isBase64Image } from '@proton/shared/lib/helpers/validators';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { SHOW_IMAGES } from '@proton/shared/lib/constants';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
 

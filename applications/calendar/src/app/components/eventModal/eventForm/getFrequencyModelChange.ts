@@ -1,6 +1,6 @@
 import { MONTHLY_TYPE, WEEKLY_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getNegativeSetpos, getPositiveSetpos } from '@proton/shared/lib/calendar/helper';
-import { replace } from '@proton/shared/lib/helpers/array';
+import replace from '@proton/util/replace';
 import { fromLocalDate, toUTCDate } from '@proton/shared/lib/date/timezone';
 import { isBefore } from 'date-fns';
 

@@ -8,7 +8,7 @@ import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import UndoActionNotification from '../components/notifications/UndoActionNotification';
 import { isMessage as testIsMessage } from '../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../helpers/message/messages';

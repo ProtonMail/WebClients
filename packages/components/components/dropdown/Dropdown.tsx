@@ -11,7 +11,7 @@ import {
     MouseEvent as ReactMouseEvent,
 } from 'react';
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { dropdownRootClassName } from '@proton/shared/lib/busy';
 import { useIsClosing, useCombinedRefs, useHotkeys, useDropdownArrowNavigation, HotkeyTuple } from '../../hooks';
 import { classnames, getCustomSizingClasses } from '../../helpers';

@@ -2,7 +2,7 @@ import { useRef, useCallback, useState } from 'react';
 import { msgid, c } from 'ttag';
 
 import { usePopperAnchor, useDragMove } from '@proton/components';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { CUSTOM_DATA_FORMAT } from '@proton/shared/lib/drive/constants';
 import { FileBrowserItem, DragMoveControls } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 

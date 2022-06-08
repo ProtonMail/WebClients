@@ -1,12 +1,12 @@
 import { decryptPrivateKey } from 'pmcrypto';
 
-import isTruthy from '../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
+import noop from '@proton/util/noop';
 import { DecryptedKey, Key as tsKey, KeyPair, KeysPair, User } from '../interfaces';
 import { decryptMemberToken } from './memberToken';
 import { splitKeys } from './keys';
 import { getAddressKeyToken } from './addressKeys';
 import { getDecryptedOrganizationKey } from './getDecryptedOrganizationKey';
-import { noop } from '../helpers/function';
 
 const getAddressKeyPassword = (
     { Activation, Token, Signature }: tsKey,

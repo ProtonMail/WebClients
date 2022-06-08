@@ -1,4 +1,4 @@
-import isTruthy from '../../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { normalize } from '../../helpers/string';
 import {
     DateTimeValue,

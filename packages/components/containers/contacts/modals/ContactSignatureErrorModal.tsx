@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { Alert, FormModal } from '../../../components';
 import { useModals } from '../../../hooks';
 import ContactResignExecutionModal from './ContactResignExecutionModal';

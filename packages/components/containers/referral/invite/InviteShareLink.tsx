@@ -4,7 +4,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { useUserSettings } from '@proton/components/hooks';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { throttle } from '@proton/shared/lib/helpers/function';
+import throttle from '@proton/util/throttle';
 
 const InviteShareLink = () => {
     const appName = getAppName(APPS.PROTONMAIL);

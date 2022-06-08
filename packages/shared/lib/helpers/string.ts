@@ -1,26 +1,8 @@
-import getRandomValues from '@proton/get-random-values';
-
 enum CURRENCIES {
     USD = '$',
     EUR = '€',
     CHF = 'CHF',
 }
-
-export const getRandomString = (
-    length: number,
-    charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-) => {
-    let i;
-    let result = '';
-
-    const values = getRandomValues(new Uint32Array(length));
-
-    for (i = 0; i < length; i++) {
-        result += charset[values[i] % charset.length];
-    }
-
-    return result;
-};
 
 export const normalize = (value = '', removeDiacritics = false) => {
     let normalized = value.toLowerCase().trim();
@@ -51,43 +33,7 @@ export const addPlus = ([first = '', ...rest] = []) => {
     return [first, rest.length && `+${rest.length}`].filter(Boolean).join(', ');
 };
 
-/**
- * Capitalize a string
- */
-export const capitalize = (str: any) => {
-    if (str === '' || typeof str !== 'string') {
-        return '';
-    }
-    return str[0].toUpperCase() + str.slice(1);
-};
-
-/**
- * Uncapitalize a string
- */
-export const uncapitalize = (str: any) => {
-    if (str === '' || typeof str !== 'string') {
-        return '';
-    }
-    return str[0].toLowerCase() + str.slice(1);
-};
-
 export const DEFAULT_TRUNCATE_OMISSION = '…';
-
-/**
- * Given a maximum number of characters to display,
- * truncate a string by adding omission if too long
- */
-export const truncate = (str: string, charsToDisplay = 50, omission = DEFAULT_TRUNCATE_OMISSION) => {
-    if (str.length === 0) {
-        return str;
-    }
-
-    if (str.length > charsToDisplay) {
-        return str.substring(0, charsToDisplay - omission.length) + omission;
-    }
-
-    return str;
-};
 
 /**
  * Given a maximum number of characters to capture from a string at the start and end of it,

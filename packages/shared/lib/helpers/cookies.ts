@@ -1,4 +1,4 @@
-import isTruthy from './isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 
 export const getCookies = (): string[] => {
     try {

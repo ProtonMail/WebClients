@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { deleteAddress, enableAddress, disableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { Address, Member, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 
 import { DropdownActions, useModalState } from '../../components';

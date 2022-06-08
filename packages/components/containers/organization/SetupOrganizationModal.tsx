@@ -7,14 +7,14 @@ import {
     updateOrganizationKeysV2,
 } from '@proton/shared/lib/api/organization';
 import { updateQuota, updateVPN } from '@proton/shared/lib/api/members';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import {
     passwordLengthValidator,
     confirmPasswordValidator,
     getMinPasswordLengthMessage,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { clamp } from '@proton/shared/lib/helpers/math';
+import clamp from '@proton/util/clamp';
 
 import { generateOrganizationKeys, getHasMigratedAddressKeys } from '@proton/shared/lib/keys';
 import {

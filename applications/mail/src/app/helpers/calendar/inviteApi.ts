@@ -54,8 +54,9 @@ import {
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { API_CODES } from '@proton/shared/lib/constants';
-import { noop, unary } from '@proton/shared/lib/helpers/function';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import unary from '@proton/util/unary';
+import noop from '@proton/util/noop';
+import isTruthy from '@proton/util/isTruthy';
 import { omit, pick } from '@proton/shared/lib/helpers/object';
 import { Address, Api } from '@proton/shared/lib/interfaces';
 import {

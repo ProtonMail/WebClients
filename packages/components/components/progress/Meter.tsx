@@ -1,5 +1,5 @@
 import { ComponentPropsWithoutRef } from 'react';
-import isBetween from '@proton/shared/lib/helpers/isBetween';
+import isBetween from '@proton/util/isBetween';
 
 import { classnames } from '../../helpers';
 

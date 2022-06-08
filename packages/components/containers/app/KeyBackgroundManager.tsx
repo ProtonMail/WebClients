@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import {
     activateMemberAddressKeys,
     getAddressesWithKeysToActivate,

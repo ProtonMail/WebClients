@@ -2,11 +2,12 @@ import { c } from 'ttag';
 import { ReactNode, useRef, useState } from 'react';
 import { GIGA } from '@proton/shared/lib/constants';
 import humanSize, { getLongSizeFormat, getSizeFormat, getUnit } from '@proton/shared/lib/helpers/humanSize';
-import { clamp } from '@proton/shared/lib/helpers/math';
+import clamp from '@proton/util/clamp';
 import generateUID from '@proton/shared/lib/helpers/generateUID';
 import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
 import { Donut } from '@proton/atoms';
-import { Slider, Tooltip } from '../../components';
+import Slider from '@proton/atoms/Slider/Slider';
+import { Tooltip } from '../../components';
 import InputField from '../../components/v2/field/InputField';
 import { useElementRect } from '../../hooks';
 

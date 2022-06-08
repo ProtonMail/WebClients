@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef, useEffect, useRef } from 'react';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
-import usePrevious from '../../hooks/usePrevious';
+import usePrevious from '@proton/hooks/usePrevious';
 import { DropdownMenuButton } from '../dropdown';
 import { classnames } from '../../helpers';
 

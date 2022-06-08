@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import isTruthy from '@proton/util/isTruthy';
+import truncate from '@proton/util/truncate';
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
-import isTruthy from '../../helpers/isTruthy';
-import { normalize, truncate } from '../../helpers/string';
+import { normalize } from '../../helpers/string';
 import {
     ContactGroup,
     ContactMetadata,

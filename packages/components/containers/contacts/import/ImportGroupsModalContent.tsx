@@ -1,5 +1,5 @@
 import { FORBIDDEN_LABEL_NAMES } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactGroup, IMPORT_GROUPS_ACTION, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts';

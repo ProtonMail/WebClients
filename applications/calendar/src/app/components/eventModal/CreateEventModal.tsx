@@ -2,7 +2,7 @@ import { ICAL_ATTENDEE_STATUS, ICAL_EVENT_STATUS } from '@proton/shared/lib/cale
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { Address } from '@proton/shared/lib/interfaces';
 import { useState } from 'react';
 import { Button, BasicModal, Form } from '@proton/components';

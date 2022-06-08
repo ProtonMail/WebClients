@@ -1,6 +1,6 @@
 import { SETTINGS_NOTIFICATION_TYPE } from '@proton/shared/lib/calendar/constants';
 import { getIsAlarmComponent } from '@proton/shared/lib/calendar/vcalHelper';
-import { unary } from '@proton/shared/lib/helpers/function';
+import unary from '@proton/util/unary';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { triggerToModel } from '@proton/shared/lib/calendar/notificationModel';

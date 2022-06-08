@@ -8,7 +8,7 @@
  * Examples of RFC rules violated in the wild:
  * * Local parts should have a maximum length of 64 octets
  */
-import isTruthy from './isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 
 export enum CANONIZE_SCHEME {
     DEFAULT,

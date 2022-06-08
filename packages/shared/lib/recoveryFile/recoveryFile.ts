@@ -13,7 +13,7 @@ import {
 } from 'pmcrypto';
 import getRandomValues from '@proton/get-random-values';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
-import isTruthy from '../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { DecryptedKey, KeyWithRecoverySecret } from '../interfaces';
 import downloadFile from '../helpers/downloadFile';
 import { KEY_FILE_EXTENSION } from '../constants';

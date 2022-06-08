@@ -13,7 +13,7 @@ import {
 } from '@proton/components';
 import { getSlugFromApp } from '@proton/shared/lib/apps/slugHelper';
 import { APP_NAMES, APPS } from '@proton/shared/lib/constants';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { getIsSectionAvailable, getIsSubsectionAvailable } from '@proton/components/containers/layout/helper';
 
 import { getRoutes } from './routes';

@@ -9,7 +9,7 @@ import {
     SettingsLink,
 } from '@proton/components';
 import { c } from 'ttag';
-import { noop } from '@proton/shared/lib/helpers/function';
+import noop from '@proton/util/noop';
 import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 

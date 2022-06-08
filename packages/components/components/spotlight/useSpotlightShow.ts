@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { useInstance } from '../..';
+import useInstance from '@proton/hooks/useInstance';
 
 import { generateUID } from '../../helpers';
 import { SpotlightContext } from './Provider';

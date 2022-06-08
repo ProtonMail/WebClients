@@ -5,7 +5,7 @@ import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { useStore, useDispatch, useSelector } from 'react-redux';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
 import { isSearch } from '../../helpers/elements';
 import { Element } from '../../models/element';
 import { Filter, Sort, SearchParameters } from '../../models/tools';

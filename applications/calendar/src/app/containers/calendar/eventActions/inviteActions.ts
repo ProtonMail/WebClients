@@ -11,7 +11,7 @@ import {
 import { getAttendeePartstat, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { canonizeEmailByGuess } from '@proton/shared/lib/helpers/email';
-import { unary } from '@proton/shared/lib/helpers/function';
+import unary from '@proton/util/unary';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';

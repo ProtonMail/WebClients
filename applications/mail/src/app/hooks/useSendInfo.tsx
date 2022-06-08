@@ -1,14 +1,14 @@
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
 import { Dispatch, SetStateAction, useCallback, useEffect, useMemo, useState } from 'react';
 import { useGetEncryptionPreferences } from '@proton/components';
-import useIsMounted from '@proton/components/hooks/useIsMounted';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { c, msgid } from 'ttag';
 import { OpenPGPKey } from 'pmcrypto';
 import { getRecipientsAddresses } from '@proton/shared/lib/mail/messages';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
-import { noop } from '@proton/shared/lib/helpers/function';
-import isTruthy from '@proton/shared/lib/helpers/isTruthy';
+import noop from '@proton/util/noop';
+import isTruthy from '@proton/util/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { ENCRYPTION_PREFERENCES_ERROR_TYPES } from '@proton/shared/lib/mail/encryptionPreferences';

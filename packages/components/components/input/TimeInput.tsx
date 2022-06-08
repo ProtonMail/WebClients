@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 import { Locale, addMinutes, startOfDay, format, parse } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { findLongestMatchingIndex } from '@proton/shared/lib/helpers/string';
-import { withDecimalPrecision } from '@proton/shared/lib/helpers/math';
+import withDecimalPrecision from '@proton/util/withDecimalPrecision';
 
 import Input, { Props as InputProps } from './Input';
 import Dropdown from '../dropdown/Dropdown';

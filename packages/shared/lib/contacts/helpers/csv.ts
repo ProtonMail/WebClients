@@ -1,6 +1,7 @@
 import Papa from 'papaparse';
 
-import isTruthy from '../../helpers/isTruthy';
+import isTruthy from '@proton/util/isTruthy';
+import range from '@proton/util/range';
 import { ContactProperties } from '../../interfaces/contacts';
 import { sortByPref } from '../properties';
 import {
@@ -11,7 +12,6 @@ import {
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
 import { standarize, combine, display, toPreVcard } from './csvFormat';
-import { range } from '../../helpers/array';
 import { getAllTypes } from '../../helpers/contacts';
 import { VCardKey } from '../../interfaces/contacts/VCard';
 
