@@ -108,6 +108,12 @@ export interface LinkChildrenResult {
 
 export interface HashCheckResult {
     AvailableHashes: string[];
+    PendingHashes: {
+        ClientUID: string;
+        Hash: string;
+        LinkID: string;
+        RevisionID: string;
+    }[];
 }
 
 export interface MoveLink {
