@@ -78,7 +78,7 @@
         "インポートの進行を確認"
       ],
       "Choose a file or drag it here": [
-        "ファイルを選択するか、ここにドラッグしてください"
+        "ファイルを選択するか、ここにドラッグ"
       ],
       "Clear": [
         "クリア"
@@ -111,7 +111,7 @@
         "転送一覧を閉じる"
       ],
       "Collapse": [
-        ""
+        "作成"
       ],
       "Collapse folder": [
         "フォルダーを折りたたむ"
@@ -177,7 +177,7 @@
         "完全に削除"
       ],
       "Deselect all": [
-        "選択を全て解除"
+        "すべての選択を解除"
       ],
       "Details": [
         "詳細"
@@ -345,7 +345,7 @@
         "ナビゲーションを開く"
       ],
       "Pause all": [
-        "すべてポーズ"
+        "すべてを一時停止"
       ],
       "Pause download": [
         "ダウンロードを一時停止"
@@ -435,7 +435,7 @@
         "ドライブを検索"
       ],
       "Select all": [
-        "全て選択"
+        "すべて選択"
       ],
       "Set recovery phrase": [
         "リカバリーフレーズを設定"
@@ -833,7 +833,7 @@
         "誕生日"
       ],
       "Email": [
-        "電子メール"
+        "メール"
       ],
       "Gender": [
         "性別"
@@ -1887,8 +1887,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "エラーが発生しました。続行するには ${ refresh } してください。それでもこのエラーが発生する場合は ${ supportTeam } までお問い合わせください。"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "このフォルダー名は無効です。別の名前を選択してください。"
+      ],
       "The folder name is too long. Please choose a different name.": [
         "このフォルダー名は利用できません。別の名前を選択してください"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "このラベル名は無効です。別の名前を選択してください。"
       ],
       "The label name is too long. Please choose a different name.": [
         "このラベル名は利用できません。別の名前を選択してください"
@@ -2024,7 +2030,7 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        ""
+        "姓と名のチェックを同時にはずすことはできません"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -2203,23 +2209,17 @@
       "${ canceledCount } canceled": [
         "${ canceledCount } 件キャンセル"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        ""
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス (複数可) を選択してください。"
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス (複数可) を選択してください。"
+      "${ contactName } contains multiple email addresses.": [
+        ""
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } 件の連絡先が見つかりました"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループ${ groupsEnumeration } に追加するメールアドレス (複数可) を選択してください。"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } には複数のメールアドレスが含まれています。このグループに追加するメールアドレス (複数可) を選択してください。"
       ],
       "${ doneCount } finished": [
         "${ doneCount } 件完了しました"
@@ -2235,9 +2235,6 @@
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } 件のグループが見つかりました"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } と ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 件の連絡先グループ"
@@ -2272,8 +2269,8 @@
       "(${ memberCount } member)": [
         "(${ memberCount } メンバー)"
       ],
-      "5 email addresses": [
-        "5 件のメールアドレス"
+      "10 email addresses": [
+        "10 件のメールアドレス"
       ],
       "A number will be added to the filename": [
         "ファイル名に番号が追加されます"
@@ -2306,7 +2303,7 @@
         "このリンクを知っていれば、誰でもこのフォルダーにアクセスできます。"
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
-        "全てのアイテムを完全に削除し、ごみ箱を空にしてよろしいですか？"
+        "すべてのアイテムを完全に削除し、ごみ箱を空にしてよろしいですか?"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
         "「${ itemName }」をごみ箱から完全に削除してよろしいですか?"
@@ -2405,7 +2402,7 @@
         "デジタル署名が検証されました。このフォルダーは ${ emailAddress } によって安全にアップロードされました。"
       ],
       "Download of ${ downloadFileName } will be aborted": [
-        ""
+        "${ downloadFileName } のダウンロードは中断します"
       ],
       "Downloaded": [
         "ダウンロード完了"
@@ -2501,13 +2498,13 @@
         "暗号化された検索の原理"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1営業日以内に対応します。"
+        "アカウントの作成に問題がある場合は、招待をリクエストしてください。1 営業日以内に対応します。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダを確認してください。"
+        "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         ""
@@ -2609,7 +2606,7 @@
         "ごみ箱にファイルやフォルダーがありません"
       ],
       "No group found": [
-        "グループがありません。"
+        "グループはありません"
       ],
       "No preview available": [
         "プレビューは利用できません"
@@ -2630,6 +2627,9 @@
         " / "
       ],
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
+        ""
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         ""
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
@@ -2666,7 +2666,13 @@
         "アドレス帳のサイズによっては、この処理に時間がかかる場合がありますのでご注意ください。"
       ],
       "Please select the folders you would like to import:": [
-        "インポートしたいフォルダを選択してください:"
+        "インポートしたいフォルダーを選択してください:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        ""
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        ""
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
@@ -2699,7 +2705,7 @@
         "復元処理には少々時間がかかります。"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
-        "ほとんどの問題は、ページを更新するか、 ${ link } することで解決できます。"
+        "ほとんどの問題は、ページを更新するか、${ link }することで解決できます。"
       ],
       "Report has been sent": [
         "レポートは送信されました"
@@ -2717,7 +2723,7 @@
         "Google から移動したいものを選択してください。"
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        ""
+        "インポートするカレンダーを選択してください。インポートするカレンダーは最大 20 件までに制限されます。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -2881,6 +2887,9 @@
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Proton は新しいサイトへ移動しました! ${ link }"
+      ],
       "Week": [
         "週表示"
       ],
@@ -2927,7 +2936,7 @@
         "ストレージ容量が最大に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
-        "保存されていない変更は全て失なわれます。"
+        "保存されていない変更はすべて失なわれます。"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "アカウントに少なくとも1つの期限切れの請求書があるため、アクセスが制限されています。${ payInvoiceLink }"
@@ -3021,8 +3030,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        ""
+      ],
       "Expired": [
         "有効期限切れ"
+      ],
+      "Obsolete": [
+        ""
       ],
       "Primary": [
         "プライマリー"
@@ -3032,9 +3047,6 @@
       ],
       "Trusted": [
         "信頼済み"
-      ],
-      "Verification only": [
-        "検証専用"
       ],
       "WKD": [
         "WKD"
@@ -3243,7 +3255,7 @@
         "名前"
       ],
       "Never": [
-        "繰り返し続ける"
+        "なし"
       ],
       "Notification": [
         "通知"
@@ -3372,7 +3384,7 @@
         "動画ファイル"
       ],
       "What happened?": [
-        "どのような症状がでましたか？"
+        "どのような問題が発生しましたか?"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "はい、古いファイルを完全に削除します"
@@ -3415,7 +3427,7 @@
         "サブスクリプション プランへ移動"
       ],
       "Learn more": [
-        "より詳しく"
+        "詳細"
       ],
       "Pay invoice": [
         "請求の支払い"
@@ -3458,10 +3470,10 @@
     },
     "Mail import summary": {
       "Import all messages from ${ selectedLabelsCount } out of ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "${ totalLabelsCount } つの内 ${ selectedLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ],
       "Import all messages from ${ totalLabelsCount } label since ${ periodFragment } and label them as ${ LABEL_MARKUP_PLACEHOLDER }": [
-        ""
+        "${ totalLabelsCount } つのラベルから${ periodFragment }の間のすべてのメッセージをインポートし、${ LABEL_MARKUP_PLACEHOLDER } というラベルを付けます"
       ]
     },
     "Message": {
@@ -3491,6 +3503,21 @@
       ],
       "Label name": [
         "ラベル名"
+      ]
+    },
+    "new_plans: action": {
+      "Switch or add account": [
+        "アカウントを追加、切り替え"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "新しい外観になった Proton をご紹介します。${ br }たくさんのサービス、1 つのミッション。どこでもプライベートなインターネットへようこそ。"
+      ]
+    },
+    "new_plans: title": {
+      "Updated Proton, unified protection": [
+        "統合された保護を新しくなった Proton で"
       ]
     },
     "Notification": {
@@ -3564,7 +3591,7 @@
         "${ numberOfItems } 件のアイテムへのリンクが削除されました"
       ],
       "All items will soon be permanently deleted from trash": [
-        "全てのアイテムは間もなくごみ箱から完全に削除されます。"
+        "すべてのアイテムはまもなくごみ箱から完全に削除されます"
       ],
       "Contact group created": [
         "連絡先グループが作成されました。"
@@ -3656,12 +3683,12 @@
     },
     "Oauth instructions": {
       "Next you'll need to sign in to your Google account and grant Proton access to your data.": [
-        ""
+        "次に、Google アカウントにサインインしてデータにアクセスすることを許可します。"
       ]
     },
     "Oauth instructions video": {
       "For the import to work, you must select all requested items as shown in the GIF.": [
-        ""
+        "インポートするには、GIF にあるように要求されたすべてのアイテムを選択します。"
       ]
     },
     "Onboarding Action": {
@@ -3694,7 +3721,7 @@
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
       ],
       "Discover all Proton services": [
-        "全ての Proton サービスがここに"
+        "すべての Proton サービスがここに"
       ],
       "Select a theme": [
         "テーマを選択"
@@ -3731,7 +3758,7 @@
         "グループを無視"
       ],
       "No parent folder": [
-        "親フォルダなし"
+        "親フォルダーなし"
       ]
     },
     "Option group label": {
@@ -3745,6 +3772,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "鍵は暗号化に使用できません"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        ""
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        ""
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "この鍵を「信頼しない」ことをおすすめします。"
       ]
     },
     "PGP key warning": {
@@ -3829,7 +3867,7 @@
         "メールアドレス"
       ],
       "Email": [
-        "電子メール"
+        "メール"
       ],
       "Fax": [
         "Fax"
@@ -4020,6 +4058,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "新しくなった Proton をご紹介します。"
+      ],
+      "More services, one privacy mission.": [
+        "たくさんのサービス、1 つのプライバシーミッション。"
+      ],
       "Settings": [
         "設定"
       ]
@@ -4231,7 +4275,7 @@
         "ファイルの詳細"
       ],
       "Folder details": [
-        "フォルダの詳細"
+        "フォルダーの詳細"
       ],
       "Folders details": [
         "フォルダーの詳細"
@@ -4336,7 +4380,7 @@
         "ファイル名の変更"
       ],
       "Rename a folder": [
-        "フォルダ名の変更"
+        "フォルダー名の変更"
       ],
       "Report a problem": [
         "問題を報告"
@@ -4465,7 +4509,7 @@
         "フォルダーがありません"
       ],
       "Your file is ready to be downloaded": [
-        "ファイルのダウンロード準備完了"
+        "ファイルのダウンロードの準備が完了しました"
       ],
       "Your folder is ready to be downloaded": [
         "フォルダーのダウンロード準備完了"

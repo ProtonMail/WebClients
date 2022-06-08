@@ -191,6 +191,9 @@
       "Copy email to clipboard": [
         "E-postayı panoya kopyala"
       ],
+      "Copy password to clipboard": [
+        "Parolayı panoya kopyala"
+      ],
       "Create a new contact group": [
         "Yeni bir kişi grubu oluştur"
       ],
@@ -286,6 +289,9 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
+      "Edit encryption": [
+        "Şifrelemeyi düzenle"
+      ],
       "Edit label": [
         "Etiketi düzenle"
       ],
@@ -316,6 +322,9 @@
       "Expand URL": [
         "Bağlantıyı genişlet"
       ],
+      "Expiration time": [
+        "Geçerlilik süresi"
+      ],
       "Export": [
         "Dışa aktar"
       ],
@@ -324,6 +333,9 @@
       ],
       "Export contacts": [
         "Kişileri dışa aktar"
+      ],
+      "External encryption": [
+        "Dış şifreleme"
       ],
       "Filter on...": [
         "Şuna göre süz..."
@@ -671,6 +683,12 @@
       "Remove ${ attachmentName }": [
         "${ attachmentName } dosyasını kaldır"
       ],
+      "Remove encryption": [
+        "Şifrelemeyi kaldır"
+      ],
+      "Remove expiration time": [
+        "Geçerlilik süresini kaldır"
+      ],
       "Remove this label": [
         "Bu etiketi kaldır"
       ],
@@ -748,6 +766,9 @@
       ],
       "Set as default": [
         "Varsayılan olarak ayarla"
+      ],
+      "Set encryption": [
+        "Şifreleme ayarla"
       ],
       "Set expiration time": [
         "Geçerlilik süresi ayarla"
@@ -872,9 +893,6 @@
       ],
       "Unsubscribe": [
         "Abonelikten ayrıl"
-      ],
-      "Unsubscribe from mailing list": [
-        "E-posta listesinin aboneliğinden ayrıl"
       ],
       "Unsubscribing": [
         "Abonelikten çıkılıyor"
@@ -2866,8 +2884,8 @@
       "Label name cannot be empty.": [
         "Etiket adı boş olamaz."
       ],
-      "Maximum number of attachments (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) exceeded.": [
-        "Eklenebilecek en fazla dosya sayısı (${ EO_REPLY_NUM_ATTACHMENTS_LIMIT }) sınırı aşıldı."
+      "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
+        "Eklenebilecek en fazla dosya sayısı (${ attachmentsCountLimit }) sınırı aşıldı"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "En az ${ calendarToFixCount } takvimi var olan bir Proton takvimiyle birleştirin",
@@ -2894,17 +2912,11 @@
       "No data to import": [
         "İçe aktarılacak veri yok"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "İç kullanıcı için geçerli bir gönderim anahtarı alınamadı"
-      ],
       "No keys retrieved for internal user": [
         "İç kullanıcı için bir anahtarı alınamadı"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
-      ],
-      "No valid keys retrieved for internal user": [
-        "İç kullanıcının için geçerli bir anahtar alınamadı"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "İç kullanıcı için geçerli WKD bir gönderim anahtarı alınamadı"
@@ -2944,6 +2956,12 @@
       ],
       "Primary address key is not decrypted.": [
         "Birincil adres anahtarının şifresi çözülemedi."
+      ],
+      "Primary key is not valid for sending": [
+        "Birincil anahtar gönderim için geçerli değil"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli"
       ],
       "Public key could not be trusted": [
         "Herkese açık anahtara güvenilemedi"
@@ -2995,11 +3013,17 @@
         "Ek dosyanın şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyanın şifresini çözebilirsiniz.",
         "Bazı ek dosyaların şifresi çözülemedi.\nİlgili kişisel anahtara sahipseniz, GnuPG gibi programlarla dosyaların şifresini çözebilirsiniz."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "${ emailAddress } anahtarının özellikleri ayıklanamadı"
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir ad seçin."
@@ -3682,25 +3706,20 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kişinin birkaç e-posta adresi var.",
+        "${ contactCount } kişinin birkaç e-posta adresi var."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } üye",
         "${ contactEmailsLength } üye"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } için birden fazla e-posta adresi var. ${ groupsEnumeration } grubuna eklenecek adres veya adresleri seçin."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } için birden fazla e-posta adresi var. Lütfen bu gruba ekleyeceğiniz e-posta adreslerini seçin."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } için birkaç e-posta adresi var."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kişi bulundu",
         "${ contactsCount } kişi bulundu"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } için birden fazla e-posta adresi var. ${ groupsEnumeration } grubuna eklenecek adres veya adresleri seçin."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } için birden fazla e-posta adresi var. Bu gruba eklenecek adres veya adresleri seçin."
       ],
       "${ count } unread message": [
         "${ count } okunmamış ileti",
@@ -3720,9 +3739,6 @@
       "${ messagesNotAuthorizedToMove } message could not be moved.": [
         "${ messagesNotAuthorizedToMove } ileti taşınamadı.",
         "${ messagesNotAuthorizedToMove } ileti taşınamadı."
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } ve ${ nameOfLast }"
       ],
       "${ numberOfTrackers } email tracker blocked": [
         "${ numberOfTrackers } e-posta izleyici engellendi",
@@ -3808,8 +3824,8 @@
       "(No Recipient)": [
         "(Alıcı yok)"
       ],
-      "5 email addresses": [
-        "5 e-posta adresi"
+      "10 email addresses": [
+        "10 e-posta adresi"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "Bir kurtarma ifadesi, hesabınıza erişimi korumanın en güvenli yollarından biridir. Hesabınıza erişmek ve parolanızı unutursanız şifrelenmiş verilerinizi kurtarmak için bu ifadeyi kullanabilirsiniz."
@@ -4008,6 +4024,9 @@
       "Do you want to re-sign the contact details?": [
         "Kişi bilgilerini yeniden imzalamak istiyor musunuz?"
       ],
+      "Don't forget to share your password with the recipient": [
+        "Parolanızı alıcı ile paylaşmayı unutmayın"
+      ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Hareket halindeyken güvenli bir şekilde iletişim kurmak için uygulama mağazanızdan mobil uygulamamızı indirin."
       ],
@@ -4032,6 +4051,15 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
+      "Edit encryption": [
+        "Şifrelemeyi düzenle"
+      ],
+      "Edit expiration time": [
+        "Geçerlilik süresini düzenle"
+      ],
+      "Edit link": [
+        "Bağlantıyı düzenle"
+      ],
       "Email address": [
         "E-posta adresi"
       ],
@@ -4052,11 +4080,8 @@
         "gömülmüş görsel",
         "gömülmüş görsel"
       ],
-      "Encrypt for non-${ BRAND_NAME } users": [
-        "${ BRAND_NAME } kullanmayan kişiler için şifrele"
-      ],
-      "Encrypted messages to non-${ BRAND_NAME } recipients will expire in 28 days unless a shorter expiration time is set.": [
-        "${ BRAND_NAME } kullanmayan alıcılara gönderilen şifrelenmiş iletiler, daha kısa bir süre belirtilmedikçe 28 gün sonra geçersiz olur."
+      "Encrypt message": [
+        "İletiyi şifrele"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } alıcısına gönderilen doğrulama kodunu yazın."
@@ -4074,9 +4099,6 @@
       "Expiration time": [
         "Geçerlilik süresi"
       ],
-      "Expiration Time": [
-        "Geçerlilik süresi"
-      ],
       "Expires": [
         "Geçerlilik sonu"
       ],
@@ -4092,6 +4114,9 @@
       "Expires soon": [
         "Yakında geçersiz olacak"
       ],
+      "Expiring message": [
+        "İletinin süresi geçiyor"
+      ],
       "file attached": [
         "dosya eklendi",
         "dosya eklendi"
@@ -4101,6 +4126,9 @@
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
+      ],
+      "Folder": [
+        "Klasör"
       ],
       "For increased security, activate 2FA.": [
         "Güvenliği arttırmak için 2 aşamalı kimlik doğrulamayı açın."
@@ -4137,17 +4165,20 @@
         "saat",
         "saat"
       ],
+      "I'm sending this message to a non-ProtonMail user.": [
+        "Bu iletiyi ProtonMail kullanmayan bir alıcıya gönderiyorum."
+      ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hesap açmakta sorun yaşıyorsanız, lütfen bir davet isteyin. Bir iş günü içinde size yanıt vereceğiz."
-      ],
-      "If you are sending this message to a non ${ MAIL_APP_NAME } user, please be sure to set a password for your message.": [
-        "Bu iletiyi ${ MAIL_APP_NAME } kullanmayan bir kişiye gönderiyorsanız, iletiniz için bir parola ayarladığınızdan emin olun."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Bir hata olduğunu düşünüyorsanız, lütfen ${ contactLink } üzerinden bizimle görüşün."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı gelen kutunuzda göremezseniz, istenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "Image description": [
+        "Görsel açıklaması"
       ],
       "Image URL": [
         "Görsel adresi"
@@ -4202,7 +4233,7 @@
         "Anahtar parmak izi"
       ],
       "Large imports can take several days.": [
-        "Büyük boyutlu içe aktarımların tamamlanması bir kaç gün sürebilir."
+        "Büyük boyutlu içe aktarımların tamamlanması birkaç gün sürebilir."
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -4315,6 +4346,9 @@
       "No trackers found, but some images could not be loaded with tracking protection": [
         "Herhangi bir izleyici bulunamadı. Ancak bazı görseller izleme koruması nedeniyle yüklenmeyebilir"
       ],
+      "non-Proton Mail": [
+        "Proton olmayan e-posta"
+      ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Yüklenmiş anahtarlardan hiçbiri şifreleme için geçerli değil. Şifreleme otomatik olarak devre dışı bırakıldı."
       ],
@@ -4326,6 +4360,9 @@
       ],
       "of": [
         "/"
+      ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
@@ -4368,6 +4405,13 @@
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Lütfen eklemek istediğiniz bağlantı türünü seçin ve tüm alanları doldurun."
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin.",
+        "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
@@ -4436,7 +4480,7 @@
         "Arama çok uzun mu sürüyor? Bu arama oturumunu ${ dropdownButton } ya da ${ toggleOffButton }."
       ],
       "Seems like you are all caught up for now": [
-        "Şimdilik herşeyi okudunuz gibi görünüyor"
+        "Şimdilik her şeyi okudunuz gibi görünüyor"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Bu adrese, bir e-posta gönderilirken varsayılan olarak kullanılmasını istediğiniz e-posta biçimini seçin."
@@ -4446,6 +4490,9 @@
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
+      ],
+      "Send an encrypted, password protected message to a ${ boldText } email address.": [
+        "${ boldText } e-posta adresine şifrelenmiş ve parola ile korunan bir ileti gönderin."
       ],
       "Sending": [
         "Gönderiliyor"
@@ -4736,6 +4783,9 @@
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
+      ],
       "Web URL": [
         "Web adresi"
       ],
@@ -4858,6 +4908,25 @@
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
+      "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
+        "İletiniz alınıcının gelen kutusundan ve sizin gönderilmiş kutunuzdan ${ dateString } günü ${ formattedTime } zamanında silinecek"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
+        "İletiniz alınıcının gelen kutusundan ve sizin gönderilmiş kutunuzdan bugün ${ formattedTime } zamanında silinecek"
+      ],
+      "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
+        "İletiniz alınıcının gelen kutusundan ve sizin gönderilmiş kutunuzdan yarın ${ formattedTime } zamanında silinecek"
+      ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "İletiniz ${ numberOfDays } gün sonra geçersiz olacak.",
+        "İletiniz ${ numberOfDays } gün sonra geçersiz olacak."
+      ],
+      "Your message will expire today.": [
+        "İletinizin geçerlilik süresi bugün dolacak."
+      ],
+      "Your message will expire tomorrow.": [
+        "İletinizin geçerlilik süresi yarın dolacak."
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
       ],
@@ -4887,8 +4956,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Ele geçirilmiş"
+      ],
       "Expired": [
         "Süresi geçmiş"
+      ],
+      "Obsolete": [
+        "Eskimiş"
       ],
       "Primary": [
         "Birincil"
@@ -4898,9 +4973,6 @@
       ],
       "Trusted": [
         "Güvenilmiş"
-      ],
-      "Verification only": [
-        "Yalnızca doğrulama"
       ],
       "WKD": [
         "WKD"
@@ -5334,9 +5406,6 @@
       ],
       "Mark as": [
         "Şöyle işaretlensin"
-      ],
-      "Message password": [
-        "İleti parolası"
       ],
       "Move to": [
         "Şuraya taşınsın"
@@ -5982,6 +6051,46 @@
         "Etiket adı"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
+      ],
+      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
+        "Birleştirilmiş ve yenilenmiş Proton görünümünü yayınladık. Nasıl bulduğunuzu öğrenmek isteriz!"
+      ]
+    },
+    "new_plans: label": {
+      "0 - Awful": [
+        "0 - Çok kötü"
+      ],
+      "5 - Wonderful": [
+        "5 - Çok iyi"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Yeni Proton ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
+      ],
+      "Tell us about your experience (Optional)": [
+        "Bize deneyimlerinizi anlatın (isteğe bağlı)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Geri bildirim"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Geri bildirim verin"
+      ],
+      "Updated Proton, unified protection": [
+        "Güncellenmiş Proton, birleşik koruma"
+      ]
+    },
     "Notification": {
       "${ _Filter.Name } created": [
         "${ _Filter.Name } oluşturuldu"
@@ -6100,6 +6209,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } kullanıcısı bu anahtarı ele geçirilmiş olarak işaretlemiş. Bu anahtar şifreleme ya da imza doğrulaması için kullanılamaz."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } kullanıcısı bu anahtarı eskimiş olarak işaretlemiş. Bu anahtar yalnızca imza doğrulaması için kullanılabilir."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Bu anahtara \"güvenmemeniz\" önerilir."
       ]
     },
     "PGP key warning": {
@@ -6345,7 +6465,7 @@
         "Sorunlar algıladık. E-postanız şu nedenlerle belirtilen e-posta adreslerine gönderilemez:"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Bazı sorunlar algıladık. E-postanız şu nedenlerle belirtilen bir ya da bir kaç e-posta adresine gönderilemez:"
+        "Bazı sorunlar algıladık. E-postanız şu nedenlerle belirtilen bir ya da birkaç e-posta adresine gönderilemez:"
       ]
     },
     "Send email with warnings": {
@@ -6472,11 +6592,11 @@
       ]
     },
     "Status": {
-      "Unsubscribed from mailing list": [
-        "E-posta listesinin aboneliğinden ayrıldınız"
+      "This message is from a mailing list.": [
+        "Bu ileti bir posta listesinden gönderilmiş."
       ],
-      "Unsubscribing from mailing list...": [
-        "E-posta listesi aboneliğinden çıkıyorsunuz..."
+      "Unsubscribed": [
+        "Abonelikten ayrıldınız"
       ]
     },
     "Step in filter modal": {
@@ -6702,6 +6822,9 @@
         "${ selectionCount } iletiyi taşıma",
         "${ selectionCount } iletiyi taşıma"
       ],
+      "Password copied to clipboard": [
+        "Parola panoya kopyalandı"
+      ],
       "Phishing reported": [
         "Kimlik avı bildirildi"
       ],
@@ -6787,6 +6910,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Güncellenmiş Proton ile tanışın."
+      ],
+      "More services, one privacy mission.": [
+        "Daha fazla hizmet, tek kişisel gizlilik amacı."
+      ],
       "Settings": [
         "Ayarlar"
       ]
@@ -7015,9 +7144,6 @@
       "Enable message content search": [
         "İleti içeriği aramasını etkinleştir"
       ],
-      "Encryption": [
-        "Şifrele"
-      ],
       "Enter your password": [
         "Parolanızı yazın"
       ],
@@ -7029,6 +7155,9 @@
       ],
       "Exporting contacts": [
         "Kişileri dışa aktarma"
+      ],
+      "External encryption": [
+        "Dış şifreleme"
       ],
       "Feedback": [
         "Geri bildirim"

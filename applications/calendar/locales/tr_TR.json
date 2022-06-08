@@ -2084,17 +2084,11 @@
       "No data to import": [
         "İçe aktarılacak bir veri yok"
       ],
-      "No key retrieved for internal user is valid for sending": [
-        "İç kullanıcı için alınan anahtarların hiç biri gönderim için geçerli değil"
-      ],
       "No keys retrieved for internal user": [
         "İç kullanıcı için herhangi bir anahtar alınamadı"
       ],
       "No valid address found": [
         "Geçerli bir adres bulunamadı"
-      ],
-      "No valid keys retrieved for internal user": [
-        "İç kullanıcı için geçerli bir anahtar alınamadı"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "Kullanıcı için alınan WKD anahtarı gönderim için geçerli değil"
@@ -2132,6 +2126,12 @@
       "Primary address key is not decrypted.": [
         "Birincil adres anahtarının şifresi çözülemedi."
       ],
+      "Primary key is not valid for sending": [
+        "Birincil anahtar gönderim için geçerli değil"
+      ],
+      "Primary key retrieved for internal user is valid for sending": [
+        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli"
+      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
@@ -2162,8 +2162,14 @@
       "Start time must be before end time": [
         "Başlangıç saati bitiş saatinden önce olmalıdır"
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Klasör adı geçersiz. Lütfen farklı bir ad seçin."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Klasör adı çok uzun. Lütfen farklı bir ad seçin."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Etiket adı geçersiz. Lütfen farklı bir ad seçin."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etiket adı çok uzun. Lütfen farklı bir ad seçin."
@@ -2737,32 +2743,24 @@
         "${ calendarsToBeMergedCount } birleştirilmiş takvim",
         "${ calendarsToBeMergedCount } birleştirilmiş takvim"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kişinin birkaç e-posta adresi var.",
+        "${ contactCount } kişinin birkaç e-posta adresi var."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } üye",
         "${ contactEmailsLength } üye"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactName } için birden fazla e-posta adresi var. ${ groupsEnumeration } grubuna eklenecek adres veya adresleri seçin."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactName } için birden fazla e-posta adresi var. Lütfen bu gruba ekleyeceğiniz e-posta adreslerini seçin."
+      "${ contactName } contains multiple email addresses.": [
+        "${ contactName } için birkaç e-posta adresi var."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kişi bulundu",
         "${ contactsCount } kişi bulundu"
       ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "${ contactsEnumeration } için birden fazla e-posta adresi var. ${ groupsEnumeration } grubuna eklenecek adres veya adresleri seçin."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "${ contactsEnumeration } için birden fazla e-posta adresi var. Bu gruba eklenecek adres veya adresleri seçin."
-      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } ve ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } kişi grubu",
@@ -2795,8 +2793,8 @@
         "(${ memberCount } üye)",
         "(${ memberCount } üye)"
       ],
-      "5 email addresses": [
-        "5 e-posta adresi"
+      "10 email addresses": [
+        "10 e-posta adresi"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Çıkarılan katılımcılara bir iptal bilgilendirmesi e-postası gönderilecek."
@@ -3033,6 +3031,9 @@
       "Occurrences previously updated by the organizer will be kept.": [
         "Düzenleyici tarafından daha önce güncellenen etkinlikler tutulacak."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Güvenilir anahtarlarınızın bir ya da birkaçı sahipleri tarafından \"ele geçirilmiş\" olarak işaretlenmiş. Bu anahtarla \"güvenmemeniz\" önerilir."
+      ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Bu ayarları yalnızca ${ BRAND_NAME } dışındaki alıcılar ile PGP kullanıyorsanız değiştirin."
       ],
@@ -3056,6 +3057,13 @@
       ],
       "Please select the folders you would like to import:": [
         "Lütfen içe aktarmak istediğiniz klasörleri seçin:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin.",
+        "Lütfen ${ groupCount } gruba eklenecek e-posta adresini ya da adreslerini seçin."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Lütfen birincil şifreleme anahtarıyla yeniden imzalanabilecek kişiler aranırken bekleyin."
@@ -3082,7 +3090,7 @@
         "Bu adrese, e-posta gönderirken varsayılan olarak kullanılmasını istediğiniz bir e-posta adresi seçin."
       ],
       "Select what you want to move from Google.": [
-        "Google üzerinden aktarmak istediklerinizi seçin."
+        "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
         "İçe aktarılacak takvimleri seçin. En fazla 20 tane olmak üzere içe aktarılan her takvim için yeni bir takvim oluşturulur."
@@ -3187,13 +3195,16 @@
         "Yinelenen etkinliği güncelle"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
-        "${ planName } faydalarını kaybetmemek için bugün yükseltin."
+        "${ planName } avantajlarını kaybetmemek için tarifenizi bugün yükseltin."
       ],
       "We'll notify you when the import is done.": [
         "İçe aktarım tamamlandığında sizi bilgilendireceğiz."
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Taşınıyoruz! Bizimle yeni sitemizde buluşun: ${ link }."
       ],
       "Week": [
         "Hafta"
@@ -3327,8 +3338,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Ele geçirilmiş"
+      ],
       "Expired": [
         "Süresi geçmiş"
+      ],
+      "Obsolete": [
+        "Eskimiş"
       ],
       "Primary": [
         "Birincil"
@@ -3338,9 +3355,6 @@
       ],
       "Trusted": [
         "Güvenilir"
-      ],
-      "Verification only": [
-        "Yalnızca doğrulama"
       ],
       "WKD": [
         "WKD"
@@ -3890,6 +3904,34 @@
         "Etiket adı"
       ]
     },
+    "new_plans: action": {
+      "Switch or add account": [
+        "Hesap değiştirin ya da ekleyin"
+      ]
+    },
+    "new_plans: info": {
+      "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
+        "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience (Optional)": [
+        "Bize deneyimlerinizi anlatın (isteğe bağlı)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Geri bildirim"
+      ]
+    },
+    "new_plans: title": {
+      "Give feedback": [
+        "Geri bildirim verin"
+      ],
+      "Updated Proton, unified protection": [
+        "Güncellenmiş Proton, birleşik koruma"
+      ]
+    },
     "Notification": {
       "Contact group created": [
         "Kişi grubu oluşturuldu"
@@ -4147,6 +4189,17 @@
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
         "Anahtar şifreleme için kullanılamaz"
+      ]
+    },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "${ emailAddress } kullanıcısı bu anahtarı ele geçirilmiş olarak işaretlemiş. Bu anahtar şifreleme ya da imza doğrulaması için kullanılamaz."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "${ emailAddress } kullanıcısı bu anahtarı eskimiş olarak işaretlemiş. Bu anahtar yalnızca imza doğrulaması için kullanılabilir."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Bu anahtara \"güvenmemeniz\" önerilir."
       ]
     },
     "PGP key warning": {
@@ -4553,6 +4606,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Güncellenmiş Proton ile tanışın."
+      ],
+      "More services, one privacy mission.": [
+        "Daha fazla hizmet, tek kişisel gizlilik amacı."
+      ],
       "Settings": [
         "Ayarlar"
       ]

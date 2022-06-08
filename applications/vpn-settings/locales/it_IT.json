@@ -1873,14 +1873,14 @@
         "+${ organization.BonusVPN } connessione per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)",
         "+${ organization.BonusVPN } connessioni per ${ VPN_APP_NAME } (consente di connettere più dispositivi alla VPN)"
       ],
+      "10 email addresses": [
+        "10 indirizzi email"
+      ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "20% di sconto applicato al tuo abbonamento con coupon ${ code }"
       ],
       "30-day money-back guarantee.": [
         "Rimborso garantito in 30 giorni."
-      ],
-      "5 email addresses": [
-        "5 indirizzi email"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
         "Un nome che aiuti a ricordarne l'utilizzo, in modo da facilitare la revoca o l'estensione in un secondo momento."
@@ -2382,6 +2382,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Invieremo un nuovo codice di verifica a ${ strong }"
+      ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Ci spostiamo! Raggiungici al nostro nuovo sito: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Invieremo un codice di ripristino all'indirizzo email fornito per il recupero dell'account."
@@ -3356,9 +3359,6 @@
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "Se passi a un piano diverso, perdi tutti i vantaggi del piano ${ visionary } e non potrai più tornare a ${ visionary }."
       ],
-      "learn more": [
-        "scopri di più"
-      ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Il nostro piano ${ visionary } non è più disponibile per i nuovi abbonati perché è un piano speciale per utenti originali ${ BRAND_NAME } con funzioni e vantaggi speciali."
       ],
@@ -3410,11 +3410,6 @@
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } di ${ humanMaxSpace }"
-      ]
-    },
-    "new_plans: message displayed when user visit v5 login": {
-      "Introducing Proton's refreshed look. Many services, one mission. Sign in to continue or ${ learnMoreLink }.": [
-        "Ti presentiamo il nuovo look di Proton. Molti servizi, una sola missione. Accedi per continuare o ${ learnMoreLink }."
       ]
     },
     "new_plans: Plan frequency": {
@@ -4088,6 +4083,14 @@
       ],
       "Status": [
         "Stato"
+      ]
+    },
+    "Text": {
+      "Introducing the updated Proton.": [
+        "Ti presentiamo la versione aggiornata di Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Tanti servizi, un solo obiettivo: la privacy."
       ]
     },
     "Title": {

@@ -1914,8 +1914,14 @@
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Coś poszło nie tak. ${ refresh }, aby kontynuować. Jeśli wciąż widzisz ten błąd, skontaktuj się z naszą ${ supportTeam }."
       ],
+      "The folder name is invalid. Please choose a different name.": [
+        "Nazwa folderu jest nieprawidłowa. Wpisz inną nazwę."
+      ],
       "The folder name is too long. Please choose a different name.": [
         "Nazwa folderu jest zbyt długa. Wpisz krótszą nazwę."
+      ],
+      "The label name is invalid. Please choose a different name.": [
+        "Nazwa etykiety jest nieprawidłowa. Wpisz inną nazwę."
       ],
       "The label name is too long. Please choose a different name.": [
         "Nazwa etykiety jest zbyt długa. Wpisz krótszą nazwę."
@@ -2269,29 +2275,26 @@
         "Transfer ${ canceledCount } plików został anulowany",
         "Transfer ${ canceledCount } plików został anulowany"
       ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontakt zawiera wiele adresów e-mail.",
+        "${ contactCount } kontakty zawierają wiele adresów e-mail.",
+        "${ contactCount } kontaktów zawierają wiele adresów e-mail.",
+        "${ contactCount } kontaktów zawierają wiele adresów e-mail."
+      ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } członek",
         "${ contactEmailsLength } członków",
         "${ contactEmailsLength } członków",
         "${ contactEmailsLength } członków"
       ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "Kontakt ${ contactName } posiada wiele adresów e-mail. Wybierz adresy, które chcesz dodać do grup ${ groupsEnumeration }."
-      ],
-      "${ contactName } contains multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "Kontakt ${ contactName } posiada wiele adresów e-mail. Wybierz adresy, które chcesz dodać do grupy."
+      "${ contactName } contains multiple email addresses.": [
+        "Kontakt ${ contactName } zawiera wiele adresów e-mail."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } znaleziony kontakt",
         "${ contactsCount } znalezione kontakty",
         "${ contactsCount } znalezionych kontaktów",
         "${ contactsCount } znalezionych kontaktów"
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to ${ groupsEnumeration }.": [
-        "Kontakty ${ contactsEnumeration } posiadają wiele adresów e-mail. Wybierz adresy, które chcesz dodać do grup ${ groupsEnumeration }."
-      ],
-      "${ contactsEnumeration } contain multiple email addresses. Please select which email address or addresses to add to this group.": [
-        "Kontakty ${ contactsEnumeration } posiadają wiele adresów e-mail. Wybierz adresy, które chcesz dodać do grupy."
       ],
       "${ doneCount } finished": [
         "Transfer ${ doneCount } pliku został zakończony",
@@ -2322,9 +2325,6 @@
         "${ groupCounts } znalezione grupy",
         "${ groupCounts } znalezionych grup",
         "${ groupCounts } znalezionych grup"
-      ],
-      "${ namesWithoutLast } and ${ nameOfLast }": [
-        "${ namesWithoutLast } i ${ nameOfLast }"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } grupę kontaktów",
@@ -2383,8 +2383,8 @@
         "(${ memberCount } członków)",
         "(${ memberCount } członków)"
       ],
-      "5 email addresses": [
-        "5 adresów e-mail"
+      "10 email addresses": [
+        "10 adresów e-mail"
       ],
       "A number will be added to the filename": [
         "Do nazwy pliku zostanie dodany numer"
@@ -2761,6 +2761,9 @@
       "One of your encrypted drives is locked. This is most likely due to a recent password reset.": [
         "Jeden z zaszyfrowanych dysków jest zablokowany. To może być spowodowane zresetowaniem hasła."
       ],
+      "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
+        "Co najmniej jeden z zaufanych kluczy został oznaczony przez właściciela jako zagrożony. Zalecamy przestać ufać tym kluczom."
+      ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
       ],
@@ -2796,6 +2799,15 @@
       ],
       "Please select the folders you would like to import:": [
         "Wybierz foldery, które chcesz zaimportować:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Zaznacz adresy, które chcesz dodać do ${ groupCount } grupy.",
+        "Zaznacz adresy, które chcesz dodać do ${ groupCount } grup.",
+        "Zaznacz adresy, które chcesz dodać do ${ groupCount } grup.",
+        "Zaznacz adresy, które chcesz dodać do ${ groupCount } grup."
+      ],
+      "Please select which email address or addresses to add to ${ groupName }.": [
+        "Zaznacz adresy, które chcesz dodać do grupy ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Poczekaj na sprawdzenie kontaktów, które mogą zostać ponownie podpisane za pomocą głównego klucza szyfrowania."
@@ -3013,6 +3025,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Wyślemy nowy kod weryfikacyjny do ${ strong }"
       ],
+      "We're moving! Join us at our new site: ${ link }.": [
+        "Przenosimy się! Dołącz do nas na nowej stronie: ${ link }."
+      ],
       "Week": [
         "Tydzień"
       ],
@@ -3153,8 +3168,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Zagrożony"
+      ],
       "Expired": [
         "Wygasł"
+      ],
+      "Obsolete": [
+        "Przestarzały"
       ],
       "Primary": [
         "Główny"
@@ -3164,9 +3185,6 @@
       ],
       "Trusted": [
         "Zaufany"
-      ],
-      "Verification only": [
-        "Tylko do weryfikacji"
       ],
       "WKD": [
         "WKD"
@@ -3641,7 +3659,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Przedstawiamy odświeżony wygląd Protona.${ br } Wiele usług, jedna koncepcja. Witamy w Internecie, w którym prywatność jest podstawą."
+        "Przedstawiamy odświeżony wygląd usługi Proton.${ br } Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
       ]
     },
     "new_plans: title": {
@@ -3957,6 +3975,17 @@
         "Klucz nie może zostać użyty do szyfrowania"
       ]
     },
+    "PGP Key info": {
+      "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
+        "Adres ${ emailAddress } oznaczył klucz jako zagrożony. Ten klucz nie może zostać użyty do szyfrowania lub weryfikacji podpisu."
+      ],
+      "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
+        "Adres ${ emailAddress } oznaczył klucz jako przestarzały. Ten klucz może zostać użyty tylko do weryfikacji podpisu."
+      ],
+      "We recommend that you \"untrust\" this key.": [
+        "Zalecamy przestać ufać temu kluczowi."
+      ]
+    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Adres e-mail nie został znaleziony wśród identyfikatorów zdefiniowanych w kluczu przeznaczonym do wysyłania wiadomości (${ keyUserIds })"
@@ -4242,6 +4271,12 @@
       ]
     },
     "Text": {
+      "Introducing the updated Proton.": [
+        "Przedstawiamy zaktualizowane usługi Proton."
+      ],
+      "More services, one privacy mission.": [
+        "Więcej usług, jedna misja dotycząca prywatności."
+      ],
       "Settings": [
         "Ustawienia"
       ]
