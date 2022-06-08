@@ -1,5 +1,5 @@
 import { splitExtension } from '@proton/shared/lib/helpers/file';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { EncryptedLink } from './interface';
 

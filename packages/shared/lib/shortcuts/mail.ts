@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { metaKey, altKey, shiftKey, isSafari as checkIsSafari } from '../helpers/browser';
 import { KeyboardKeyType } from '../interfaces';
 

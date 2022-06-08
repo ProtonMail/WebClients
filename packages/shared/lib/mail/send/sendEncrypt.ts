@@ -11,8 +11,8 @@ import {
     OpenPGPKey,
     encryptSessionKey,
 } from 'pmcrypto';
-import isTruthy from '@proton/util/isTruthy';
-import identity from '@proton/util/identity';
+import isTruthy from '@proton/utils/isTruthy';
+import identity from '@proton/utils/identity';
 import { hasBit } from '../../helpers/bitset';
 import { uint8ArrayToBase64String } from '../../helpers/encoding';
 import { PackageDirect } from '../../interfaces/mail/crypto';

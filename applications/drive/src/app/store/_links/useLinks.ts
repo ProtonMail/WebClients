@@ -1,5 +1,5 @@
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { MAX_THREADS_PER_REQUEST } from '@proton/shared/lib/drive/constants';
 
 import { isIgnoredError } from '../_utils';

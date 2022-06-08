@@ -1,6 +1,6 @@
 import { ReactNode, useRef, useState } from 'react';
 import { getFeatures, updateFeatureValue } from '@proton/shared/lib/api/features';
-import unique from '@proton/util/unique';
+import unique from '@proton/utils/unique';
 import { useApi } from '../../hooks';
 import FeaturesContext, { Feature, FeatureCode } from './FeaturesContext';
 

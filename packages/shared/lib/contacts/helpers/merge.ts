@@ -1,4 +1,4 @@
-import unique from '@proton/util/unique';
+import unique from '@proton/utils/unique';
 import { normalize } from '../../helpers/string';
 import { ContactProperties, ContactValue } from '../../interfaces/contacts';
 import { FormattedContact } from '../../interfaces/contacts/FormattedContact';

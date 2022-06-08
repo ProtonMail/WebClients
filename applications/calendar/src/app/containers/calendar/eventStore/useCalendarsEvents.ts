@@ -1,7 +1,7 @@
 import { useEffect, useState, useMemo, MutableRefObject } from 'react';
 import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from '@proton/shared/lib/date/timezone';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { getRecurringEvents } from './cache/getRecurringEvents';
 import { CalendarsEventsCache } from './interface';
 import { CalendarViewEvent, CalendarViewEventData } from '../interface';

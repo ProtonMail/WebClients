@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { Address } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { createCalendar, removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
@@ -40,8 +40,8 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { PRODUCT_NAMES, ACCENT_COLORS } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
-import noop from '@proton/util/noop';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import noop from '@proton/utils/noop';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { getPersonalCalendars } from '@proton/shared/lib/calendar/subscribe/helpers';

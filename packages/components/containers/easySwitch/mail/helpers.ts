@@ -1,6 +1,6 @@
 import { ACCENT_COLORS } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/util/randomIntFromInterval';
-import isTruthy from '@proton/util/isTruthy';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+import isTruthy from '@proton/utils/isTruthy';
 
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';

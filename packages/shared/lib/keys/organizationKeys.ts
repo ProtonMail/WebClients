@@ -1,7 +1,7 @@
 import { decryptPrivateKey, encryptPrivateKey, generateKey, OpenPGPKey, reformatKey } from 'pmcrypto';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { getAllMemberAddresses } from '../api/members';
 import { encryptAddressKeyToken, generateAddressKey, getAddressKeyToken } from './addressKeys';
 import { decryptMemberToken, encryptMemberToken, generateMemberToken } from './memberToken';

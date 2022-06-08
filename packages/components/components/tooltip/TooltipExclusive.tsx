@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from 'react';
 
-import arrayRemove from '@proton/util/remove';
-import { last } from '@proton/util/array';
+import arrayRemove from '@proton/utils/remove';
+import { last } from '@proton/utils/array';
 
 interface TooltipExclusiveContextValue {
     last?: string;

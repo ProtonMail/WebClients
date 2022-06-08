@@ -1,5 +1,5 @@
-import isTruthy from '@proton/util/isTruthy';
-import unary from '@proton/util/unary';
+import isTruthy from '@proton/utils/isTruthy';
+import unary from '@proton/utils/unary';
 import { hasBit, toggleBit } from '../helpers/bitset';
 import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
 import { Calendar, CalendarUserSettings, CalendarWithMembers, VisualCalendar } from '../interfaces/calendar';

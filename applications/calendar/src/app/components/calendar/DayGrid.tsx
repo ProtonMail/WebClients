@@ -1,5 +1,5 @@
 import { useMemo, useState, useRef, useLayoutEffect, useEffect, Ref } from 'react';
-import chunk from '@proton/util/chunk';
+import chunk from '@proton/utils/chunk';
 import { eachDayOfInterval, isSameMonth } from '@proton/shared/lib/date-fns-utc';
 import { getISOWeek } from 'date-fns';
 

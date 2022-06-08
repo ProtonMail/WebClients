@@ -1,4 +1,4 @@
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { KeyWithRecoverySecret } from '@proton/shared/lib/interfaces';
 import { useUser } from './useUser';
 

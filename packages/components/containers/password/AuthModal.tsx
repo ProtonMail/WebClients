@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { PASSWORD_WRONG_ERROR } from '@proton/shared/lib/api/auth';
 import { srpAuth, SrpConfig } from '@proton/shared/lib/srp';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 
 import { useApi } from '../../hooks';
 

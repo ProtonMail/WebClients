@@ -26,7 +26,7 @@ import { c } from 'ttag';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { oneClickUnsubscribe, markAsUnsubscribed } from '@proton/shared/lib/api/messages';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { useSaveDraft } from '../../../hooks/message/useSaveDraft';
 import { useSendMessage } from '../../../hooks/composer/useSendMessage';
 import { findSender } from '../../../helpers/addresses';

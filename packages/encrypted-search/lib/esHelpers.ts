@@ -3,7 +3,7 @@ import { MINUTE, SECOND } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces/Api';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getIsOfflineError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { randomDelay } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import {

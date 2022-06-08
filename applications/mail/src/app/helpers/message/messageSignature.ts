@@ -1,7 +1,7 @@
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { isPlainText } from '@proton/shared/lib/mail/messages';
 import { message } from '@proton/shared/lib/sanitize';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import { getProtonMailSignature } from '@proton/shared/lib/mail/signature';
 import { dedentTpl } from '../dedent';
 import { replaceLineBreaks } from '../string';

@@ -7,8 +7,8 @@ import {
     ChangeEvent,
 } from 'react';
 
-import clamp from '@proton/util/clamp';
-import percentage from '@proton/util/percentage';
+import clamp from '@proton/utils/clamp';
+import percentage from '@proton/utils/percentage';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft';
 import ButtonLike from '@proton/components/components/button/ButtonLike';

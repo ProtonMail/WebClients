@@ -1,4 +1,4 @@
-import chunk from '@proton/util/chunk';
+import chunk from '@proton/utils/chunk';
 import { syncMultipleEvents } from '../../api/calendars';
 import { HTTP_ERROR_CODES } from '../../errors';
 import {

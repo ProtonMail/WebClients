@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import { updateBackupKey } from '@proton/shared/lib/api/organization';
 import { getBackupKeyData } from '@proton/shared/lib/keys';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import { OpenPGPKey } from 'pmcrypto';
 import { confirmPasswordValidator, passwordLengthValidator } from '@proton/shared/lib/helpers/formValidators';
 import {

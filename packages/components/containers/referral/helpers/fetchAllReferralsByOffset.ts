@@ -1,5 +1,5 @@
 import { getReferrals } from '@proton/shared/lib/api/core/referrals';
-import range from '@proton/util/range';
+import range from '@proton/utils/range';
 import { Api, Referral } from '@proton/shared/lib/interfaces';
 
 interface ReferralApiResult {

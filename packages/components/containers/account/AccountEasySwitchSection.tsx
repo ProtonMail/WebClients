@@ -7,7 +7,7 @@ import {
     ImportType,
     NON_OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getDefaultCalendar,
@@ -15,7 +15,7 @@ import {
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
-import { partition } from '@proton/util/array';
+import { partition } from '@proton/utils/array';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { useAddresses, useCalendars, useCalendarUserSettings, useFeature, useModals, useUser } from '../../hooks';

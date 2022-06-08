@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { c } from 'ttag';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import FooterModal from './Footer';
 import DialogModal from './Dialog';
 import HeaderModal from './Header';

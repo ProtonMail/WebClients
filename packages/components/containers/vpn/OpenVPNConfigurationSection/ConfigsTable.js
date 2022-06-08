@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { memo } from 'react';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
-import isTruthy from '@proton/util/isTruthy';
+import isTruthy from '@proton/utils/isTruthy';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import { PLANS } from '@proton/shared/lib/constants';

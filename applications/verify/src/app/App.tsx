@@ -1,5 +1,5 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import noop from '@proton/util/noop';
+import noop from '@proton/utils/noop';
 import {
     ApiProvider,
     ConfigProvider,

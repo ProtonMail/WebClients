@@ -28,7 +28,7 @@ import {
     getVisualCalendars,
 } from '@proton/shared/lib/calendar/calendar';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { partition } from '@proton/util/array';
+import { partition } from '@proton/utils/array';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import CalendarInvitationsSection from '@proton/components/containers/calendar/settings/CalendarInvitationsSection';
