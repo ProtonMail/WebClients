@@ -1,3 +1,4 @@
+import { c } from 'ttag';
 import { Direction } from 'roosterjs-editor-types';
 import { EditorMetadata } from './interface';
 
@@ -93,48 +94,50 @@ export const DEFAULT_FONT_SIZE = 14;
 export const DEFAULT_FONT_COLOR = '#222222';
 export const DEFAULT_BACKGROUND = '#FFFFFF';
 
-export const FONT_COLORS = [
+export const FONT_COLORNAMES = {
     /* white */
-    '#FFFFFF',
-    '#DADADA',
-    '#B5B5B5',
-    '#909090',
-    '#6B6B6B',
-    '#464646',
-    '#222222',
+    '#FFFFFF': () => c('color').t`white`,
+    '#DADADA': () => c('color').t`gainsboro`,
+    '#B5B5B5': () => c('color').t`philippine silver`,
+    '#909090': () => c('color').t`philippine gray`,
+    '#6B6B6B': () => c('color').t`dim gray`,
+    '#464646': () => c('color').t`outer space`,
+    '#222222': () => c('color').t`raisin black`,
     /* magenta */
-    '#F6CBCB',
-    '#EC9798',
-    '#E36667',
-    '#ED4139',
-    '#CF3932',
-    '#9A2B25',
-    '#681D19',
+    '#F6CBCB': () => c('color').t`light red`,
+    '#EC9798': () => c('color').t`ruddy pink`,
+    '#E36667': () => c('color').t`light carmine pink`,
+    '#ED4139': () => c('color').t`cinnabar`,
+    '#CF3932': () => c('color').t`persian red`,
+    '#9A2B25': () => c('color').t`vivid auburn`,
+    '#681D19': () => c('color').t`persian plum`,
     /* blue */
-    '#CDE1F2',
-    '#9CC3E5',
-    '#6CA6D9',
-    '#3B83C2',
-    '#2A47F6',
-    '#145390',
-    '#0F3A62',
+    '#CDE1F2': () => c('color').t`azureish white`,
+    '#9CC3E5': () => c('color').t`pale cerulean`,
+    '#6CA6D9': () => c('color').t`blue-gray`,
+    '#3B83C2': () => c('color').t`cyan-blue azure`,
+    '#2A47F6': () => c('color').t`palatinate blue`,
+    '#145390': () => c('color').t`dark cerulean`,
+    '#0F3A62': () => c('color').t`dark midnight blue`,
     /* green */
-    '#D7EAD3',
-    '#B3D6A9',
-    '#8FC380',
-    '#77F241',
-    '#66A657',
-    '#3A762B',
-    '#29501F',
+    '#D7EAD3': () => c('color').t`pastel gray`,
+    '#B3D6A9': () => c('color').t`light moss green`,
+    '#8FC380': () => c('color').t`pistachio`,
+    '#77F241': () => c('color').t`kiwi`,
+    '#66A657': () => c('color').t`Apple`,
+    '#3A762B': () => c('color').t`japanese laurel`,
+    '#29501F': () => c('color').t`mughal green`,
     /* yellow */
-    '#FFF2CD',
-    '#FEE59C',
-    '#FCD86F',
-    '#FDF84E',
-    '#F2C246',
-    '#BE8F35',
-    '#7F6124',
-];
+    '#FFF2CD': () => c('color').t`blanched almond`,
+    '#FEE59C': () => c('color').t`caramel`,
+    '#FCD86F': () => c('color').t`dandelion`,
+    '#FDF84E': () => c('color').t`lemon yellow`,
+    '#F2C246': () => c('color').t`maize`,
+    '#BE8F35': () => c('color').t`satin sheen gold`,
+    '#7F6124': () => c('color').t`field drab`,
+} as const;
+
+export const FONT_COLORS = Object.keys(FONT_COLORNAMES) as string[];
 
 export const HEADER_CLASS = 'h4';
 export const DEFAULT_LINK = '';
