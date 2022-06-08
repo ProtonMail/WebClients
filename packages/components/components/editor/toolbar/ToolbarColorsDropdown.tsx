@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 import Icon from '../../icon/Icon';
 import ColorSelector from '../../color/ColorSelector';
-import { FONT_COLORS } from '../constants';
+import { FONT_COLORNAMES } from '../constants';
 import ToolbarDropdown from './ToolbarDropdown';
 import { Tabs } from '../../tabs';
 
@@ -15,7 +15,7 @@ interface Props {
 
 const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }: Props) => {
     const [tabIndex, setTabIndex] = useState(0);
-    const colors = FONT_COLORS.map((value) => ({ value }));
+    const colors = Object.entries(FONT_COLORNAMES).map(([value, getLabel]) => ({ value, label: getLabel() }));
 
     const tabs = [
         {
