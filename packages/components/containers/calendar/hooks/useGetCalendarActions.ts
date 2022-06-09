@@ -1,4 +1,4 @@
-import { getPersonalCalendars } from '@proton/shared/lib/calendar/calendar';
+import { getPersonalCalendars, getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import isTruthy from '@proton/utils/isTruthy';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -7,7 +7,7 @@ import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
 import {
     CalendarNotificationSettings,
     CalendarSettings,
-    SubscribedCalendar,
+    CalendarWithMembers,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
@@ -19,12 +19,9 @@ import {
     updateCalendarUserSettings,
     updateMember,
 } from '@proton/shared/lib/api/calendars';
-import { loadModels } from '@proton/shared/lib/models/helper';
-import { CalendarsModel } from '@proton/shared/lib/models';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
 import {
     useApi,
-    useCache,
     useEventManager,
     useGetAddresses,
     useGetAddressKeys,
@@ -121,7 +118,6 @@ const useGetCalendarActions = ({
     const getAddresses = useGetAddresses();
     const { call } = useEventManager();
     const { call: calendarCall } = useCalendarModelEventManager();
-    const cache = useCache();
     const getAddressKeys = useGetAddressKeys();
     const readCalendarBootstrap = useReadCalendarBootstrap();
     const { createNotification } = useNotifications();
@@ -143,12 +139,13 @@ const useGetCalendarActions = ({
         const {
             Calendar,
             Calendar: { ID: newCalendarID },
-        } = await api<{ Calendar: SubscribedCalendar }>(
+        } = await api<{ Calendar: CalendarWithMembers }>(
             createCalendar({
                 ...calendarPayload,
                 AddressID: addressID,
             })
         );
+        const visualCalendar = getVisualCalendar(Calendar, addressID);
 
         await setupCalendarKey({
             api,
@@ -163,7 +160,7 @@ const useGetCalendarActions = ({
 
         onCreateCalendar?.(newCalendarID);
         // Set the calendar in case one of the following calls fails so that it ends up in the update function after this.
-        setCalendar(Calendar);
+        setCalendar(visualCalendar);
 
         if (!isSubscribedCalendar) {
             await Promise.all([
@@ -186,8 +183,6 @@ const useGetCalendarActions = ({
             });
         }
 
-        // Refresh the calendar model in order to ensure flags are correct
-        await loadModels([CalendarsModel], { api, cache, useCache: false });
         await call();
 
         onClose?.();
