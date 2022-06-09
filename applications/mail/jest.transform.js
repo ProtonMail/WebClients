@@ -6,6 +6,6 @@ module.exports = require('babel-jest').default.createTransformer({
         '@babel/plugin-transform-runtime',
         '@babel/plugin-proposal-optional-chaining',
         'transform-class-properties',
-        'transform-require-context'
-    ]
+        'transform-require-context',
+    ],
 });
