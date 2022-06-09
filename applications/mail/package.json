@@ -16,7 +16,7 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
-        "test": "jest --runInBand --ci --logHeapUsage --forceExit --shard=1/2 && jest --runInBand --ci --logHeapUsage --forceExit --shard=2/2",
+        "test": "node --expose-gc node_modules/.bin/jest --runInBand --ci --logHeapUsage --forceExit",
         "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
@@ -74,6 +74,7 @@
         "prettier": "^2.6.2",
         "redux-logger": "^3.0.6",
         "typescript": "^4.6.4",
+        "weak-napi": "^2.0.2",
         "workbox-webpack-plugin": "^6.5.3"
     }
 }

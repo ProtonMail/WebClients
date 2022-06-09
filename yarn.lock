@@ -16446,6 +16446,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"get-symbol-from-current-process-h@npm:^1.0.1":
+  version: 1.0.2
+  resolution: "get-symbol-from-current-process-h@npm:1.0.2"
+  checksum: d47cc1b9e0be27469e2af0555b21aaa5ebd114e8aa25bb0e2616c8abaebb7933e7b5bedcc31c6cad06e4df232e0fe280118001fec78da488f5f630b65cc1cae5
+  languageName: node
+  linkType: hard
+
 "get-uri@npm:3":
   version: 3.0.2
   resolution: "get-uri@npm:3.0.2"
@@ -16457,6 +16464,15 @@ fsevents@^1.2.7:
     fs-extra: ^8.1.0
     ftp: ^0.3.10
   checksum: 5325b2906b08ca37529ca421cf52bc50376e75c6a945e0a8064e3f76b4bb67b8ab1e316a2fc7a307c8c606ab36d030720f39a57c97b027ff1134335e12102946
+  languageName: node
+  linkType: hard
+
+"get-uv-event-loop-napi-h@npm:^1.0.5":
+  version: 1.0.6
+  resolution: "get-uv-event-loop-napi-h@npm:1.0.6"
+  dependencies:
+    get-symbol-from-current-process-h: ^1.0.1
+  checksum: 3a2a9f9fc18196113d94496c79d5208c7e750cee6f65625fa34df195cab6bf9f122981c923e10cadd81d7f8da1ff92fe4020a7414d3ec16c820dee18e45bb29c
   languageName: node
   linkType: hard
 
@@ -23165,7 +23181,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"node-addon-api@npm:^3.2.0":
+"node-addon-api@npm:^3.0.0, node-addon-api@npm:^3.2.0":
   version: 3.2.1
   resolution: "node-addon-api@npm:3.2.1"
   dependencies:
@@ -23211,6 +23227,17 @@ fsevents@^1.2.7:
   version: 1.3.1
   resolution: "node-forge@npm:1.3.1"
   checksum: 08fb072d3d670599c89a1704b3e9c649ff1b998256737f0e06fbd1a5bf41cae4457ccaee32d95052d80bbafd9ffe01284e078c8071f0267dc9744e51c5ed42a9
+  languageName: node
+  linkType: hard
+
+"node-gyp-build@npm:^4.2.1":
+  version: 4.4.0
+  resolution: "node-gyp-build@npm:4.4.0"
+  bin:
+    node-gyp-build: bin.js
+    node-gyp-build-optional: optional.js
+    node-gyp-build-test: build-test.js
+  checksum: 972a059f960253d254e0b23ce10f54c8982236fc0edcab85166d0b7f87443b2ce98391c877cfb2f6eeafcf03c538c5f4dd3e0bfff03828eb48634f58f4c64343
   languageName: node
   linkType: hard
 
@@ -26132,6 +26159,7 @@ fsevents@^1.2.7:
     ttag: ^1.7.24
     turndown: ^7.1.1
     typescript: ^4.6.4
+    weak-napi: ^2.0.2
     workbox-cacheable-response: ^6.5.3
     workbox-expiration: ^6.5.3
     workbox-routing: ^6.5.3
@@ -28632,6 +28660,16 @@ fsevents@^1.2.7:
     is-plain-object: ^2.0.3
     split-string: ^3.0.1
   checksum: 09a4bc72c94641aeae950eb60dc2755943b863780fcc32e441eda964b64df5e3f50603d5ebdd33394ede722528bd55ed43aae26e9df469b4d32e2292b427b601
+  languageName: node
+  linkType: hard
+
+"setimmediate-napi@npm:^1.0.3":
+  version: 1.0.6
+  resolution: "setimmediate-napi@npm:1.0.6"
+  dependencies:
+    get-symbol-from-current-process-h: ^1.0.1
+    get-uv-event-loop-napi-h: ^1.0.5
+  checksum: c2bd48c6f7131e1aa9d7e076d6778a56047ec509b5edfedcc4c98c917d912abed9a60c70f4cf6a841393abe2352ef9cff44e3fe9a1000010180f3ad9522d625a
   languageName: node
   linkType: hard
 
@@ -32234,6 +32272,18 @@ typescript@^3.9.7:
   dependencies:
     defaults: ^1.0.3
   checksum: 814e9d1ddcc9798f7377ffa448a5a3892232b9275ebb30a41b529607691c0491de47cba426e917a4d08ded3ee7e9ba2f3fe32e62ee3cd9c7d3bafb7754bd553c
+  languageName: node
+  linkType: hard
+
+"weak-napi@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "weak-napi@npm:2.0.2"
+  dependencies:
+    node-addon-api: ^3.0.0
+    node-gyp: latest
+    node-gyp-build: ^4.2.1
+    setimmediate-napi: ^1.0.3
+  checksum: 4c3ebac3250c179c789bbef0514a53d35143da41706c716d4b8d2d8921aa8acb3eb4a1c1ccc7d5dc4dead6eae8602c69bae36250e15d967fda39c363dadf02af
   languageName: node
   linkType: hard
 
