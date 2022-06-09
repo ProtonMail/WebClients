@@ -27,7 +27,7 @@ const RebrandingFeedbackModal = (props: Partial<FeedbackModalProps>) => {
         <FeedbackModal
             size="medium"
             onSuccess={handleSuccess}
-            feedbackType="rebrand_web"
+            feedbackType="web_clients_relaunch"
             scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
             scaleProps={{
                 from: 1,
