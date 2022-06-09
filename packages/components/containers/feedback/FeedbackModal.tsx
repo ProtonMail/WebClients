@@ -20,7 +20,7 @@ interface FeedbackModalModel {
     Feedback: string;
 }
 
-type FeedbackType = 'v4_migration' | 'calendar_launch' | 'rebrand_web';
+type FeedbackType = 'v4_migration' | 'calendar_launch' | 'web_clients_relaunch';
 
 export interface FeedbackModalProps extends ModalProps {
     onClose?: () => void;
