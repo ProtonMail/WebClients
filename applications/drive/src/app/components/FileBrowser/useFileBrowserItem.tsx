@@ -78,7 +78,7 @@ function useFileBrowserItem<T extends HTMLElement>({
                     // We do selection right away, not in timeout, because then
                     // would app look like slow. There is no harm to select
                     // items right away even if we navigate to different folder
-                    // or show file preview in few miliseconds.
+                    // or show file preview in few milliseconds.
                     if (e.shiftKey) {
                         onShiftClick?.(item.LinkID);
                     } else if (e.ctrlKey || e.metaKey) {
