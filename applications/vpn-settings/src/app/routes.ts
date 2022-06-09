@@ -49,6 +49,10 @@ export const getRoutes = (user: UserModel) => {
                     text: c('Title').t`Language`,
                     id: 'language',
                 },
+                {
+                    text: c('Themes').t`Themes`,
+                    id: 'themes',
+                },
             ],
         },
         account: <SectionConfig>{
