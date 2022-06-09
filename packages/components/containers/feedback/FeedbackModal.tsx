@@ -26,7 +26,7 @@ export interface FeedbackModalProps extends ModalProps {
     onClose?: () => void;
     onSuccess?: () => void;
     feedbackType: FeedbackType;
-    description: string;
+    description?: string;
     scaleTitle: string;
     scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
 }
@@ -81,9 +81,9 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
             size="large"
             {...rest}
         >
-            <ModalHeader title={c('new_plans: title').t`Give feedback`} />
+            <ModalHeader title={c('Feedback Modal Title').t`Provide feedback`} />
             <ModalContent>
-                <p className="mb2">{description}</p>
+                {description && <p className="mb2">{description}</p>}
                 <div className="mb2">
                     <label className="mb1 block text-semibold" id="score-label">
                         {scaleTitle}
