@@ -28,14 +28,12 @@ const RebrandingFeedbackModal = (props: Partial<FeedbackModalProps>) => {
             size="medium"
             onSuccess={handleSuccess}
             feedbackType="rebrand_web"
-            description={c('new_plans: info')
-                .t`We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!`}
-            scaleTitle={c('new_plans: label').t`How would you describe your experience with the new Proton?`}
+            scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
             scaleProps={{
                 from: 0,
                 to: 5,
-                fromLabel: c('new_plans: label').t`0 - Awful`,
-                toLabel: c('new_plans: label').t`5 - Wonderful`,
+                fromLabel: c('Label').t`0 - Awful`,
+                toLabel: c('Label').t`5 - Wonderful`,
             }}
             {...props}
         />
