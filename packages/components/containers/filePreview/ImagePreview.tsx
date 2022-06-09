@@ -35,7 +35,7 @@ function getImageNaturalDimensions(imageElement: HTMLImageElement | null) {
  * where browsers don't check headers and allow scripts from the SVG.
  * One option would be to render it as PNG, but zooming or rescaling the window
  * would mean to redraw. Better to keep SVG then. Sanitizing small SVGs takes
- * miliseconds, bigger ones (MBs) under second. Only super huge ones takes even
+ * milliseconds, bigger ones (MBs) under second. Only super huge ones takes even
  * 10 seconds on slow computer as is mine, but we talk about huge SVGs as 30 MB.
  * Because such SVG is more edge case, we can live with that.
  */

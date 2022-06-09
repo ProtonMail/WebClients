@@ -5,21 +5,15 @@ import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/Api
 import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { streamToBuffer } from '../../../utils/stream';
+import * as constants from '../constants';
 import initDownloadBlocks from './downloadBlocks';
 
 const createNotFoundError = () => createApiError('Error', { status: 404, statusText: 'Not found.' } as Response, {});
 
-const TIME_TO_RESET_RETRIES_LOCAL = 50;
+const TIME_TO_RESET_RETRIES_LOCAL = 50; // Milliseconds.
 
-jest.mock('../constants', () => {
-    const originalModule = jest.requireActual('../constants');
-
-    return {
-        __esModule: true,
-        ...originalModule,
-        TIME_TO_RESET_RETRIES: TIME_TO_RESET_RETRIES_LOCAL,
-    };
-});
+jest.mock('../constants');
+const mockConstants = constants as jest.MockedObject<typeof constants>;
 
 let offlineURL = '';
 let expiredURL = '';
@@ -67,6 +61,7 @@ const mockDownloadBlock = jest.fn(
 describe('initDownload', () => {
     beforeEach(() => {
         mockDownloadBlock.mockClear();
+        mockConstants.TIME_TO_RESET_RETRIES = TIME_TO_RESET_RETRIES_LOCAL;
         responseDelay = 0;
     });
 
@@ -137,6 +132,9 @@ describe('initDownload', () => {
     });
 
     it('should reuse already downloaded data after recovering from network error', async () => {
+        // Make sure to not reset retries counter during the test.
+        mockConstants.TIME_TO_RESET_RETRIES = 10000;
+
         offlineURL = 'url:2';
         const downloadControls = initDownloadBlocks(
             'filename',
@@ -180,10 +178,13 @@ describe('initDownload', () => {
         // Non-failing blocks are downloaded only once.
         expect(mockDownloadBlock.mock.calls.map(([, url]) => url)).toEqual([
             'url:1',
-            'url:2',
+            'url:2', // First attempt.
             'url:3',
             'url:4',
-            'url:2',
+            'url:2', // First retry.
+            'url:2', // Second retry.
+            'url:2', // Third retry.
+            'url:2', // Second attempt after resume and fixing the issue.
         ]);
     });
 
