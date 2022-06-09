@@ -21,19 +21,19 @@ const OutlookContactsInstructions = () => {
         </Href>
     );
     // translator: full sentence: "Open your Outlook contacts"
-    const step1 = c('Import instructions').jt`Open your Outlook ${outlookContactsLink}`;
+    const step1 = c('Import instructions').jt`Open your Outlook ${outlookContactsLink}.`;
 
     // translator: full sentence: "Click Manage to expand the options menu"
     const boldManage = <strong key="boldManage">{c('Import instructions emphasis').t`Manage`}</strong>;
     // translator: full sentence: "Click Manage to expand the options menu"
-    const step2 = c('Import instructions').jt`Click ${boldManage} to expand the options menu`;
+    const step2 = c('Import instructions').jt`Click ${boldManage} to expand the options menu.`;
 
     // translator: full sentence: "Select Export contacts and choose which contacts to export."
     const boldExportContacts = (
         <strong key="boldExportContacts">{c('Import instructions emphasis').t`Export contacts`}</strong>
     );
     // translator: full sentence: "Select Export contacts and choose which contacts to export."
-    const step3 = c('Import instructions').jt`Select ${boldExportContacts} and choose which contacts to export`;
+    const step3 = c('Import instructions').jt`Select ${boldExportContacts} and choose which contacts to export.`;
 
     return (
         <>
