@@ -3,13 +3,25 @@ import { c } from 'ttag';
 import useFeature from '../../hooks/useFeature';
 import { FeatureCode } from '../features/FeaturesContext';
 import FeedbackModal, { FeedbackModalProps } from './FeedbackModal';
+import { RebrandingFeatureValue } from './useRebrandingFeedback';
 
 const RebrandingFeedbackModal = (props: Partial<FeedbackModalProps>) => {
-    const hasGivenRebrandingFeedback = useFeature(FeatureCode.HasGivenRebrandingFeedback);
+    const rebranding = useFeature<RebrandingFeatureValue>(FeatureCode.RebrandingFeedback);
 
     const handleSuccess = () => {
-        hasGivenRebrandingFeedback.update(true);
+        /*
+         * The value of the rebranding feature is guaranteed to exist here
+         * because we're disabling the Feedback Modal until it's available.
+         */
+        rebranding.update({
+            ...rebranding.feature!.Value,
+            hasGivenRebrandingFeedback: true,
+        });
     };
+
+    if (!rebranding.feature?.Value) {
+        return null;
+    }
 
     return (
         <FeedbackModal

@@ -4,7 +4,12 @@ import { DAY } from '@proton/shared/lib/constants';
 
 import { FeatureCode } from '../features';
 import { useFeature } from '../../hooks';
-import RebrandingFeedbackModal from './RebrandingFeedbackModal';
+
+export interface RebrandingFeatureValue {
+    hasVisitedRebrandingInThePast: boolean;
+    hasGivenRebrandingFeedback: boolean;
+    hasBeenPromptedForRebrandingFeedback: boolean;
+}
 
 /*
  * Need to make sure that the functionality inside of the useEffect below really only runs once per runtime of
@@ -13,26 +18,16 @@ import RebrandingFeedbackModal from './RebrandingFeedbackModal';
  */
 let logicAlreadyRanDuringCurrentRuntime = false;
 
-const RebrandingFeedbackPrompt = () => {
-    const rebrandingFeedback = useFeature(FeatureCode.RebrandingFeedback);
-    const hasVisitedRebrandingInThePast = useFeature(FeatureCode.HasVisitedRebrandingInThePast);
-    const hasBeenPromptedForRebrandingFeedback = useFeature(FeatureCode.HasBeenPromptedForRebrandingFeedback);
-    const hasGivenRebrandingFeedback = useFeature(FeatureCode.HasGivenRebrandingFeedback);
+const useRebrandingFeedback = () => {
+    const rebrandingFeedbackEnabled = useFeature(FeatureCode.RebrandingFeedbackEnabled);
+    const rebranding = useFeature<RebrandingFeatureValue>(FeatureCode.RebrandingFeedback);
 
-    const [open, setOpen] = useState(false);
+    const [shouldDisplay, setShouldDisplay] = useState(false);
 
-    const loading =
-        rebrandingFeedback.loading ||
-        hasVisitedRebrandingInThePast.loading ||
-        hasGivenRebrandingFeedback.loading ||
-        hasBeenPromptedForRebrandingFeedback.loading;
+    const loading = rebrandingFeedbackEnabled.loading || rebranding.loading;
 
     useEffect(() => {
-        if (loading) {
-            return;
-        }
-
-        if (logicAlreadyRanDuringCurrentRuntime) {
+        if (loading || !rebranding.feature?.Value || logicAlreadyRanDuringCurrentRuntime) {
             return;
         }
 
@@ -45,27 +40,36 @@ const RebrandingFeedbackPrompt = () => {
 
         let promptTimeoutId: undefined | number;
 
+        const { Value: rebrandingValue } = rebranding.feature;
+
+        const updateRebranding = (value: Partial<RebrandingFeatureValue>) => {
+            void rebranding.update({ ...rebrandingValue, ...value });
+        };
+
+        const { hasVisitedRebrandingInThePast, hasGivenRebrandingFeedback, hasBeenPromptedForRebrandingFeedback } =
+            rebrandingValue;
+
         const prompt = () => {
             /**
              * User has already visited the v5 / rebranding update AND has already been
              * prompted for feedback previously. So we don't ask again.
              */
-            if (hasBeenPromptedForRebrandingFeedback.feature?.Value) {
+            if (hasBeenPromptedForRebrandingFeedback) {
                 return;
             }
 
             /* We didn't prompt the user but they already gave feedback on their own */
-            if (hasGivenRebrandingFeedback.feature?.Value) {
+            if (hasGivenRebrandingFeedback) {
                 return;
             }
 
-            setOpen(true);
+            setShouldDisplay(true);
 
-            void hasBeenPromptedForRebrandingFeedback.update(true);
+            updateRebranding({ hasBeenPromptedForRebrandingFeedback: true });
         };
 
         /* Rebranding feedback is globally disabled */
-        if (!rebrandingFeedback.feature?.Value) {
+        if (!rebrandingFeedbackEnabled.feature?.Value) {
             return;
         }
 
@@ -77,8 +81,8 @@ const RebrandingFeedbackPrompt = () => {
          * his browser for a really long time, prompting him anyway after expiration of
          * a certain amount of time in that case.
          */
-        if (!hasVisitedRebrandingInThePast.feature?.Value) {
-            void hasVisitedRebrandingInThePast.update(true);
+        if (!hasVisitedRebrandingInThePast) {
+            updateRebranding({ hasVisitedRebrandingInThePast: true });
 
             promptTimeoutId = window.setTimeout(prompt, DAY);
 
@@ -90,9 +94,9 @@ const RebrandingFeedbackPrompt = () => {
         return () => {
             window.clearTimeout(promptTimeoutId);
         };
-    }, [loading]);
+    }, [loading, rebranding, rebrandingFeedbackEnabled]);
 
-    return <RebrandingFeedbackModal open={open} onClose={() => setOpen(false)} />;
+    return shouldDisplay;
 };
 
-export default RebrandingFeedbackPrompt;
+export default useRebrandingFeedback;
