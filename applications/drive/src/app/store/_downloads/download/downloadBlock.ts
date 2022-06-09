@@ -19,10 +19,15 @@ export default async function downloadBlock(
             isTimeout = true;
             abortController.abort();
         }, DOWNLOAD_TIMEOUT);
-        abortController.signal.addEventListener('abort', () => {
+        const signalAbortHandle = () => {
             timeoutController.abort();
             clearTimeout(timeoutHandle);
-        });
+        };
+        abortController.signal.addEventListener('abort', signalAbortHandle);
+        const cleanListeners = () => {
+            clearTimeout(timeoutHandle);
+            abortController.signal.removeEventListener('abort', signalAbortHandle);
+        };
 
         return fetch(url, {
             signal: abortController.signal,
@@ -33,13 +38,13 @@ export default async function downloadBlock(
             },
         })
             .then((result) => {
-                clearTimeout(timeoutHandle);
+                cleanListeners();
                 return result;
             })
             .catch((err: any) => {
                 // Do not move to finally block. We need to clear it before
                 // another fetch attempt is called to not abort it by accident.
-                clearTimeout(timeoutHandle);
+                cleanListeners();
                 if (isTimeout && attempt < DOWNLOAD_RETRIES_ON_TIMEOUT) {
                     return doFetch(attempt + 1);
                 }

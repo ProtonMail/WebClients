@@ -33,10 +33,10 @@ export const MAX_RETRIES_BEFORE_FAIL = 3;
  * happening quickly after each other results in failure.
  * Link expires in 30 minutes. That is the limit to download one 4 MB block.
  */
-export const TIME_TO_RESET_RETRIES = 2 * 60 * 1000;
+export const TIME_TO_RESET_RETRIES = 2 * 60 * 1000; // Milliseconds.
 
 /**
  * WAIT_TIME is used for pauses between checks, such as to check if buffer is
  * still full or not, or if the upload is paused, and so on.
  */
-export const WAIT_TIME = 50; // Miliseconds.
+export const WAIT_TIME = 50; // Milliseconds.

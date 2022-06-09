@@ -55,4 +55,4 @@ export const MAX_UPLOAD_JOBS = 5;
  * WAIT_TIME is used for pauses between checks, such as to check if buffer is
  * still full or not, or if the upload is paused, and so on.
  */
-export const WAIT_TIME = 50; // Miliseconds.
+export const WAIT_TIME = 50; // Milliseconds.
