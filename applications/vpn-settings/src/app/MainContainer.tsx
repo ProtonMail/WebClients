@@ -43,6 +43,7 @@ import {
     useModalState,
     UserDropdown,
     Unauthenticated,
+    ThemesSection,
 } from '@proton/components';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -195,6 +196,7 @@ const MainContainer = () => {
                                     config={routes.general}
                                 >
                                     <LanguageSection locales={locales} />
+                                    <ThemesSection />
                                 </PrivateMainSettingsArea>
                             </Route>
                             <Route path={routes.account.to}>
