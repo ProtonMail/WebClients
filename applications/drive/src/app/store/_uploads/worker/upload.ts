@@ -4,7 +4,7 @@ import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 
 import { MAX_UPLOAD_JOBS, MAX_RETRIES_BEFORE_FAIL } from '../constants';
-import { UploadingBlock } from './interface';
+import { UploadingBlockControl } from './interface';
 import { Pauser } from './pauser';
 
 /**
@@ -13,7 +13,7 @@ import { Pauser } from './pauser';
  */
 export default async function startUploadJobs(
     pauser: Pauser,
-    generator: AsyncGenerator<UploadingBlock>,
+    generator: AsyncGenerator<UploadingBlockControl>,
     progressCallback: (progress: number) => void,
     networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData
@@ -29,7 +29,7 @@ export default async function startUploadJobs(
 
 async function startUploadJob(
     pauser: Pauser,
-    generator: AsyncGenerator<UploadingBlock>,
+    generator: AsyncGenerator<UploadingBlockControl>,
     progressCallback: (progress: number) => void,
     networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData
@@ -41,13 +41,22 @@ async function startUploadJob(
 }
 
 async function uploadBlock(
-    block: UploadingBlock,
+    block: UploadingBlockControl,
     pauser: Pauser,
     progressCallback: (progress: number) => void,
     networkErrorCallback: (error: string) => void,
     uploadBlockDataCallback = uploadBlockData,
     numRetries = 0
 ): Promise<void> {
+    // It could take some time from block token creation and block upload
+    // itself: for example, the process could be paused (either this block
+    // or any other) for too long. If we know it is old token, we can
+    // optimise and ask for new one right away without even uploading data.
+    if (block.isTokenExpired()) {
+        block.onTokenExpiration();
+        return;
+    }
+
     let progress = 0;
     const onProgress = (relativeIncrement: number) => {
         const increment = block.originalSize * relativeIncrement;
@@ -71,6 +80,7 @@ async function uploadBlock(
             onProgress,
             pauser.abortController.signal
         );
+        block.finish();
     } catch (err: any | XHRError) {
         resetProgress();
 
@@ -84,6 +94,17 @@ async function uploadBlock(
         // the request was cancelled. When we attempt to upload again, we
         // get this error which we can ignore and consider it uploaded.
         if (err.errorCode === RESPONSE_CODE.ALREADY_EXISTS) {
+            return;
+        }
+
+        // We detect token expiration on client side before calling API so
+        // this should not happen except few edge cases, such as different
+        // time configuration on server and client, or there might be tiny
+        // window because of different start of expiration measurmement.
+        // Anyway, we can simply ask for new tokens here as well.
+        if (err.errorCode === RESPONSE_CODE.NOT_FOUND || err.status === HTTP_STATUS_CODE.NOT_FOUND) {
+            console.warn(`Expired block token #${block.index}. Asking for new upload token.`);
+            block.onTokenExpiration();
             return;
         }
 
@@ -111,7 +132,7 @@ async function uploadBlock(
             return uploadBlock(block, pauser, progressCallback, networkErrorCallback, uploadBlockDataCallback, 0);
         }
 
-        if (err.statusCode !== HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
+        if (numRetries < MAX_RETRIES_BEFORE_FAIL) {
             console.warn(`Failed block #${block.index} upload. Retry num: ${numRetries}`);
             return uploadBlock(
                 block,
