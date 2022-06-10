@@ -1,16 +1,17 @@
 import {
+    Ref,
+    RefObject,
+    useCallback,
+    useEffect,
+    useImperativeHandle,
+    useLayoutEffect,
     useMemo,
     useRef,
     useState,
-    useCallback,
-    useImperativeHandle,
-    useLayoutEffect,
-    useEffect,
-    Ref,
-    RefObject,
 } from 'react';
-import { eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import { classnames, useElementRect } from '@proton/components';
+import { addWeeks, eachDayOfInterval, format, isSameDay } from '@proton/shared/lib/date-fns-utc';
+import { Button, classnames, Icon, Tooltip, useElementRect } from '@proton/components';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
 
 import handleTimeGridMouseDown from './interactions/timeGridMouseHandler';
 import handleDayGridMouseDown from './interactions/dayGridMouseHandler';
@@ -28,6 +29,7 @@ import RowEvents from './DayGrid/RowEvents';
 import { PartDayEventView } from '../events/PartDayEvent';
 import { disableScroll, enableScroll } from './mouseHelpers/scrollHelper';
 import { CalendarViewEvent, TargetEventData, TargetMoreData } from '../../containers/calendar/interface';
+import { getNavigationArrowsText } from '../../helpers/i18n';
 
 const hours = Array.from({ length: 24 }, (a, i) => {
     return new Date(Date.UTC(2000, 0, 1, i));
@@ -61,8 +63,11 @@ interface Props {
     onMouseDown?: OnMouseDown;
     formatTime?: (date: Date) => string;
     onClickDate?: (date: Date) => void;
+    onChangeDate?: (date: Date) => void;
     weekdays?: string[];
+    weekdaysSingle?: string[];
     actionRef: RefObject<TimeGridActionRef>;
+    isSideApp?: boolean;
 }
 
 const TimeGrid = ({
@@ -78,15 +83,18 @@ const TimeGrid = ({
     events = [],
     formatTime = defaultFormat,
     onClickDate,
+    onChangeDate,
     onMouseDown,
     isInteractionEnabled = false,
     isScrollDisabled = false,
     weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+    weekdaysSingle = ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     targetEventRef,
     targetEventData,
     targetMoreRef,
     targetMoreData,
     actionRef,
+    isSideApp,
 }: Props) => {
     const timeGridRef = useRef<HTMLDivElement>(null);
     const dayGridRef = useRef<HTMLDivElement>(null);
@@ -94,6 +102,10 @@ const TimeGrid = ({
     const titleRef = useRef<HTMLDivElement>(null);
     const scrollRef = useRef<HTMLDivElement>(null);
     const partDayEventViewRef = useRef<HTMLDivElement>(null);
+
+    const { previous: previousWeek, next: nextWeek } = getNavigationArrowsText(VIEWS.WEEK);
+
+    const canDisplaySecondaryTimeZone = displaySecondaryTimezone && !isSideApp;
 
     const rect = useElementRect(timeGridRef);
     const [partDayEventViewStyleValues, setPartDayEventViewStyleValues] = useState(() => ({
@@ -169,6 +181,14 @@ const TimeGrid = ({
         const scrollRect = scrollRef.current.getBoundingClientRect();
         scrollRef.current.scrollTop = topOffset - scrollRect.height / 2 + titleRect.height / 2;
     }, []);
+
+    const handleClickNextWeek = useCallback(() => {
+        onChangeDate?.(addWeeks(date, 1));
+    }, [date]);
+
+    const handleClickPrevWeek = useCallback(() => {
+        onChangeDate?.(addWeeks(date, -1));
+    }, [date]);
 
     useImperativeHandle(
         actionRef,
@@ -270,6 +290,17 @@ const TimeGrid = ({
         }
     }, []);
 
+    const dayButtons = (
+        <DayButtons
+            days={days}
+            now={now}
+            date={date}
+            onClickDate={onClickDate}
+            weekdays={weekdays}
+            weekdaysSingle={weekdaysSingle}
+        />
+    );
+
     return (
         <div
             className={classnames(['flex-item-fluid scroll-if-needed h100', displayViewClass])}
@@ -285,22 +316,68 @@ const TimeGrid = ({
                     ])}
                 >
                     <div data-test-id="calendar-day-week-view:week-header" className="flex calendar-first-row-heading">
-                        {displaySecondaryTimezone ? (
+                        {canDisplaySecondaryTimeZone ? (
                             <div className="calendar-aside text-center flex flex-column flex-justify-end">
                                 <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
                                     {secondaryTimezone}
                                 </div>
                             </div>
                         ) : null}
-                        <div className="calendar-aside flex flex-column flex-justify-end">
-                            <div className="text-center">{primaryTimezone}</div>
-                        </div>
-                        <DayButtons days={days} now={now} date={date} onClickDate={onClickDate} weekdays={weekdays} />
+                        {!isSideApp && (
+                            <div className="calendar-aside flex flex-column flex-justify-end">
+                                <div className="text-center">{primaryTimezone}</div>
+                            </div>
+                        )}
+
+                        {isSideApp ? (
+                            <div className="mr0-5 ml0-5 flex flex-align-items-end">
+                                <Tooltip title={previousWeek}>
+                                    <Button
+                                        icon
+                                        size="small"
+                                        className="mb0-5"
+                                        color="weak"
+                                        shape="ghost"
+                                        onClick={handleClickPrevWeek}
+                                    >
+                                        <Icon name="chevron-left-filled" />
+                                        <span className="sr-only">{previousWeek}</span>
+                                    </Button>
+                                </Tooltip>
+
+                                {dayButtons}
+
+                                <Tooltip title={nextWeek}>
+                                    <Button
+                                        icon
+                                        size="small"
+                                        className="mb0-5"
+                                        color="weak"
+                                        shape="ghost"
+                                        onClick={handleClickNextWeek}
+                                    >
+                                        <Icon name="chevron-right-filled" />
+                                        <span className="sr-only">{nextWeek}</span>
+                                    </Button>
+                                </Tooltip>
+                            </div>
+                        ) : (
+                            dayButtons
+                        )}
                     </div>
 
                     <div className="flex calendar-fullday-row">
-                        {displaySecondaryTimezone ? <div className="calendar-aside" /> : null}
-                        <div className="calendar-aside calendar-aside-weekNumber text-center" />
+                        {canDisplaySecondaryTimeZone ? <div className="calendar-aside" /> : null}
+                        <div className="calendar-aside calendar-aside-weekNumber text-center flex flex-column flex-justify-end">
+                            {isSideApp && (
+                                <span
+                                    className="h-custom flex flex-column flex-justify-center pt0-25"
+                                    style={{ '--height-custom': `${dayEventHeight / 16}rem` }}
+                                >
+                                    {primaryTimezone}
+                                </span>
+                            )}
+                        </div>
                         <div className="flex-item-fluid relative">
                             <DayLines days={daysRows[0]} />
                             <div
@@ -330,7 +407,7 @@ const TimeGrid = ({
                 </div>
 
                 <div className="flex">
-                    {displaySecondaryTimezone ? (
+                    {canDisplaySecondaryTimeZone ? (
                         <HourTexts
                             className="calendar-aside calendar-secondary-timezone-cell"
                             hours={formattedSecondaryHours}

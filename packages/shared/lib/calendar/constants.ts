@@ -180,6 +180,11 @@ export enum VIEWS {
     YEAR,
     AGENDA,
     CUSTOM,
+    MAIL,
+}
+
+export enum ACTION_VIEWS {
+    VIEW = 'VIEW',
 }
 
 export enum NOTIFICATION_WHEN {

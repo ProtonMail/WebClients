@@ -236,7 +236,7 @@ const ExtraEvents = ({ message }: Props) => {
             }
             dispatch(errorsAction({ ID: message.localID, errors }));
         }
-    }, [message.data, message.errors, loadingConfigs, message.data?.ID]);
+    }, [message.data, message.errors, loadingConfigs, message.data.ID]);
 
     if (loadingConfigs || messageHasDecryptionError || !getMessageHasData(message) || loadingWidget) {
         return null;

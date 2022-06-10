@@ -3,7 +3,7 @@ import { MutableRefObject, useEffect, useRef, useState } from 'react';
 import useGetCalendarEventPersonal from '@proton/components/hooks/useGetCalendarEventPersonal';
 import { useApi, useGetCalendarEventRaw } from '@proton/components';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent, CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
 import { getEvent as getEventRoute } from '@proton/shared/lib/api/calendars';
 import { c } from 'ttag';
 
@@ -17,6 +17,7 @@ import {
     SharedVcalVeventComponent,
 } from './interface';
 import getAllEventsByUID from '../getAllEventsByUID';
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 
 const SLOW_EVENT_BYPASS = {};
 const EVENTS_PER_BATCH = 5;
@@ -25,7 +26,8 @@ const EVENTS_RACE_MS = 300;
 const useCalendarsEventsReader = (
     calendarEvents: CalendarViewEvent[],
     cacheRef: MutableRefObject<CalendarsEventsCache>,
-    rerender: () => void
+    rerender: () => void,
+    getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
     const getCalendarEventPersonal = useGetCalendarEventPersonal();
     const getCalendarEventRaw = useGetCalendarEventRaw();
@@ -53,12 +55,12 @@ const useCalendarsEventsReader = (
             calendarEventsCache: CalendarEventsCache
         ): Promise<void> => {
             try {
-                const { Event } = await api<{ Event: CalendarEvent }>({
+                const { Event } = await api<{ Event: CalendarEventWithMetadata }>({
                     ...getEventRoute(calendarID, eventID),
                     silence: true,
                     signal,
                 });
-                upsertCalendarApiEvent(Event, calendarEventsCache);
+                upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
             } catch (error: any) {
                 throw new Error('Failed to get event');
             }
@@ -107,7 +109,7 @@ const useCalendarsEventsReader = (
             const newFetchPromise = getAllEventsByUID(api, calendarID, uid)
                 .then((eventOccurrences) => {
                     eventOccurrences.forEach((eventOccurrence) => {
-                        upsertCalendarApiEvent(eventOccurrence, calendarEventsCache);
+                        upsertCalendarApiEvent(eventOccurrence, calendarEventsCache, getOpenedMailEvents);
                     });
                 })
                 .catch(() => {

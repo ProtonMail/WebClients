@@ -12,8 +12,18 @@ import {
     EventInvitationError,
     getErrorMessage,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
+import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { APPS } from '@proton/shared/lib/constants';
 import { useCallback, Dispatch, SetStateAction } from 'react';
-import { InlineLinkButton, Loader, useLoading, useNotifications, CalendarInviteButtons } from '@proton/components';
+import {
+    InlineLinkButton,
+    Loader,
+    useLoading,
+    useNotifications,
+    CalendarInviteButtons,
+    useSideApp,
+} from '@proton/components';
 import { c } from 'ttag';
 import Banner, { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
 import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
@@ -48,6 +58,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
 
     const [loadingRetry, withLoadingRetry] = useLoading();
     const { createNotification } = useNotifications();
+    const { sideAppUrl } = useSideApp();
 
     const handleEmailSuccess = () => {
         createNotification({
@@ -96,8 +107,20 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 delete newModel.reencryptionData;
             }
             setModel(newModel);
+
+            // If the calendar app is opened in the side panel,
+            // we want to call the calendar event manager to refresh the view
+            if (sideAppUrl) {
+                postMessageToIframe(
+                    {
+                        type: SIDE_APP_EVENTS.SIDE_APP_CALL_CALENDAR_EVENT_MANAGER,
+                        payload: { calendarID: savedEvent.CalendarID },
+                    },
+                    APPS.PROTONCALENDAR
+                );
+            }
         },
-        [invitationApi, attendee, organizer]
+        [invitationApi, attendee, organizer, sideAppUrl]
     );
 
     const handleUnexpectedError = () => {

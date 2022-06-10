@@ -1,13 +1,13 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
 
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants'
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { classnames, generateUID } from '@proton/components';
 
 import { LogoProps } from './Logo';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
-const MailLogo = ({ variant = 'with-wordmark', className, size, ...rest }: Props) => {
+const MailLogo = ({ variant = 'with-wordmark', className, size, hasTitle = true, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -91,7 +91,7 @@ const MailLogo = ({ variant = 'with-wordmark', className, size, ...rest }: Props
                     <stop offset="1" stopColor="#6D4AFF" />
                 </linearGradient>
             </defs>
-            <title id={`${uid}-title`}>{MAIL_APP_NAME}</title>
+            {hasTitle && <title id={`${uid}-title`}>{MAIL_APP_NAME}</title>}
         </svg>
     );
 };

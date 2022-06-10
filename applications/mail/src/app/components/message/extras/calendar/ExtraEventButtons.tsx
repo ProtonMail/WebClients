@@ -24,6 +24,7 @@ const ExtraEventButtons = ({ model, setModel, message }: Props) => {
     const importButton = <ExtraEventImportButton model={model} setModel={setModel} />;
     const buttons = isImport ? importButton : inviteButtons;
     const displayButtons = getDoNotDisplayButtons(model) ? null : buttons;
+
     const link = getCalendarEventLink(model);
 
     return (

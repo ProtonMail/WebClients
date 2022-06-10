@@ -5,8 +5,7 @@ import { format } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { VIEWS } from '@proton/shared/lib/calendar/constants';
-
-const { DAY, WEEK, MONTH, YEAR, AGENDA, CUSTOM } = VIEWS;
+import { getNavigationArrowsText } from '../helpers/i18n';
 
 interface Props {
     view: VIEWS;
@@ -21,23 +20,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
         return format(now, 'PP', { locale: dateLocale });
     }, [now, dateLocale]);
 
-    const previous = {
-        [DAY]: c('Action').t`Previous day`,
-        [WEEK]: c('Action').t`Previous week`,
-        [MONTH]: c('Action').t`Previous month`,
-        [AGENDA]: c('Action').t`Previous month`,
-        [CUSTOM]: c('Action').t`Previous month`,
-        [YEAR]: c('Action').t`Previous year`,
-    }[view];
-
-    const next = {
-        [DAY]: c('Action').t`Next day`,
-        [WEEK]: c('Action').t`Next week`,
-        [MONTH]: c('Action').t`Next month`,
-        [AGENDA]: c('Action').t`Next month`,
-        [CUSTOM]: c('Action').t`Next month`,
-        [YEAR]: c('Action').t`Next year`,
-    }[view];
+    const { previous, next } = getNavigationArrowsText(view);
 
     return (
         <>

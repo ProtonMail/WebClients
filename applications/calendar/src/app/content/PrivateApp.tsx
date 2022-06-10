@@ -1,4 +1,4 @@
-import { StandardPrivateApp, LoaderPage, useApi, useCache, useAppTitle } from '@proton/components';
+import { StandardPrivateApp, LoaderPage, useApi, useCache, useAppTitle, useSideAppParent } from '@proton/components';
 import {
     UserModel,
     UserSettingsModel,
@@ -36,6 +36,8 @@ const PrivateApp = ({ onLogout, locales }: Props) => {
     const cache = useCache();
 
     useAppTitle('');
+
+    useSideAppParent();
 
     return (
         <StandardPrivateApp

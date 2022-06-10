@@ -288,3 +288,7 @@ export const convertUTCDateTimeToZone = (dateTime: DateTime, tzid: string) => {
     const date = new Date(unixTime - offset * 60000);
     return fromUTCDate(date);
 };
+
+export const fromUTCDateToLocalFakeUTCDate = (utcDate: Date, isAllDay: boolean, tzid = 'UTC') => {
+    return isAllDay ? utcDate : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
+};

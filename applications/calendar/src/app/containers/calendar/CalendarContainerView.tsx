@@ -1,6 +1,6 @@
 import { MAXIMUM_DATE, MINIMUM_DATE, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
-import { ReactNode, Ref, useCallback, useEffect, useMemo } from 'react';
+import { ReactNode, Ref, useCallback, useEffect, useMemo, useState } from 'react';
 import {
     LocalizedMiniCalendar,
     useToggle,
@@ -25,9 +25,11 @@ import {
     TopBanners,
     UserDropdown,
     useModalState,
+    SideAppHeaderTitle,
+    PrivateSideAppHeader,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
-import { differenceInCalendarDays } from 'date-fns';
+import { differenceInCalendarDays, format, isToday } from 'date-fns';
 
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 import { AttendeeModel, CalendarUserSettings, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
@@ -40,6 +42,9 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { canonizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import uniqueBy from '@proton/utils/uniqueBy';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import { dateLocale } from '@proton/shared/lib/i18n';
+import { getDefaultView } from '@proton/shared/lib/calendar/getSettings';
+
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import CalendarSidebar from './CalendarSidebar';
 import CalendarToolbar from './CalendarToolbar';
@@ -49,6 +54,8 @@ import ViewSelector from '../../components/ViewSelector';
 import getDateDiff from './getDateDiff';
 import getDateRangeText from '../../components/getDateRangeText';
 import CalendarOnboardingModal from '../../components/onboarding/CalendarOnboardingModal';
+import { toUrlParams } from './getUrlHelper';
+import { getIsSideApp } from '../../helpers/views';
 
 /**
  * Converts a local date into the corresponding UTC date at 0 hours.
@@ -114,13 +121,25 @@ const CalendarContainerView = ({
 
     calendarUserSettings,
 }: Props) => {
+    const [showIframeMiniCalendar, setShowIframeMiniCalendar] = useState<boolean>(false);
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { createNotification } = useNotifications();
     const [groups = []] = useContactGroups();
     const { feature: featureCalendarFeedbackEnabled } = useFeature(FeatureCode.CalendarFeedbackEnabled);
-    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [feedbackModal, setFeedbackModal] = useModalState();
+
+    const calendarAppName = getAppName(APPS.PROTONCALENDAR);
+    const isSideApp = getIsSideApp(view);
+    const defaultView = getDefaultView(calendarUserSettings);
+
+    const toLink = toUrlParams({
+        date: utcDate,
+        view: defaultView,
+        range,
+        defaultView,
+        defaultDate: utcDefaultDate,
+    });
 
     const localNowDate = useMemo(() => {
         return new Date(utcDefaultDate.getUTCFullYear(), utcDefaultDate.getUTCMonth(), utcDefaultDate.getUTCDate());
@@ -142,6 +161,9 @@ const CalendarContainerView = ({
     }, []);
 
     const handleClickLocalDate = useCallback((newDate) => {
+        if (showIframeMiniCalendar) {
+            setShowIframeMiniCalendar(false);
+        }
         onChangeDate(localToUtcDate(newDate));
     }, []);
 
@@ -156,6 +178,11 @@ const CalendarContainerView = ({
     const ownNormalizedEmails = useMemo(() => {
         return addresses.map(({ Email }) => canonizeInternalEmail(Email));
     }, [addresses]);
+
+    const handleClickTodayIframe = () => {
+        setShowIframeMiniCalendar(false);
+        onClickToday();
+    };
 
     const getHandleCreateEventFromWidget = ({
         contactList,
@@ -327,11 +354,43 @@ const CalendarContainerView = ({
         setExpand(false);
     }, [window.location.pathname]);
 
-    const top = <TopBanners />;
+    const top = !isSideApp && <TopBanners />;
 
     const logo = <MainLogo to="/" />;
 
-    const header = (
+    const header = isSideApp ? (
+        <PrivateSideAppHeader
+            toLink={toLink}
+            customTitle={
+                <SideAppHeaderTitle
+                    dropdownTitle={format(localDate, 'PP', { locale: dateLocale })}
+                    onToggleDropdown={() => setShowIframeMiniCalendar(!showIframeMiniCalendar)}
+                    onCloseDropdown={() => setShowIframeMiniCalendar(false)}
+                    buttonColor={isToday(localDate) ? 'norm' : undefined}
+                    dropdownExpanded={showIframeMiniCalendar}
+                />
+            }
+            customActions={
+                <Tooltip title={c('Action').t`Today`}>
+                    <Button icon color="norm" shape="ghost" onClick={handleClickTodayIframe} className="mr0-5">
+                        <Icon name="calendar-today" size={14} />
+                    </Button>
+                </Tooltip>
+            }
+            dropdownItem={
+                showIframeMiniCalendar ? (
+                    <LocalizedMiniCalendar
+                        onSelectDate={handleClickLocalDate}
+                        date={localDate}
+                        now={localNowDate}
+                        displayWeekNumbers={false}
+                        weekStartsOn={weekStartsOn}
+                    />
+                ) : undefined
+            }
+            onCloseDropdown={() => setShowIframeMiniCalendar(false)}
+        />
+    ) : (
         <>
             {renderOnboardingModal && <CalendarOnboardingModal showGenericSteps {...onboardingModal} />}
             <PrivateHeader
@@ -396,7 +455,6 @@ const CalendarContainerView = ({
                 onToggleExpand={onToggleExpand}
                 isNarrow={isNarrow}
             />
-
             <FeedbackModal
                 {...feedbackModal}
                 feedbackType="calendar_launch"
@@ -458,6 +516,7 @@ const CalendarContainerView = ({
             sidebar={sidebar}
             isBlurred={isBlurred}
             containerRef={containerRef}
+            mainNoBorder={isSideApp}
         >
             {loader}
             <div className="only-print p1">
@@ -472,35 +531,37 @@ const CalendarContainerView = ({
                 <br />
                 {currentRange}
             </div>
-            <CalendarToolbar
-                dateCursorButtons={
-                    <DateCursorButtons
-                        view={view}
-                        currentRange={currentRange}
-                        now={localNowDate}
-                        onToday={onClickToday}
-                        onNext={handleClickNext}
-                        onPrev={handleClickPrev}
-                    />
-                }
-                viewSelector={
-                    <ViewSelector
-                        data-test-id="calendar-view:view-options"
-                        view={view}
-                        range={range}
-                        onChange={onChangeView}
-                    />
-                }
-                timezoneSelector={
-                    <TimezoneSelector
-                        data-test-id="calendar-view:time-zone-dropdown"
-                        className="no-mobile no-tablet"
-                        date={noonDate}
-                        timezone={tzid}
-                        onChange={setTzid}
-                    />
-                }
-            />
+            {!isSideApp && (
+                <CalendarToolbar
+                    dateCursorButtons={
+                        <DateCursorButtons
+                            view={view}
+                            currentRange={currentRange}
+                            now={localNowDate}
+                            onToday={onClickToday}
+                            onNext={handleClickNext}
+                            onPrev={handleClickPrev}
+                        />
+                    }
+                    viewSelector={
+                        <ViewSelector
+                            data-test-id="calendar-view:view-options"
+                            view={view}
+                            range={range}
+                            onChange={onChangeView}
+                        />
+                    }
+                    timezoneSelector={
+                        <TimezoneSelector
+                            data-test-id="calendar-view:time-zone-dropdown"
+                            className="no-mobile no-tablet"
+                            date={noonDate}
+                            timezone={tzid}
+                            onChange={setTzid}
+                        />
+                    }
+                />
+            )}
             <PrivateMainArea hasToolbar data-test-id="calendar-view:events-area">
                 {children}
             </PrivateMainArea>

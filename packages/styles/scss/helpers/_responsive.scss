@@ -354,6 +354,9 @@
 				align-self: center;
 			}
 		}
+		&-flex-item-grow-1-5 {
+			flex-grow: 1.5;
+		}
 
 		&-hide-td3 td:nth-child(3) {
 			display: none;

@@ -1,0 +1,46 @@
+@import '~@proton/styles/scss/config';
+
+.side-app {
+	inline-size: rem(320);
+	z-index: 1; // For shadow
+
+	&-frame {
+		animation: 0.5s easing(easeOutQuart) anime-side-app-frame-in forwards;
+
+		@keyframes anime-side-app-frame-in {
+			from {
+				opacity: 0;
+				transform: translateX(5em);
+			}
+			to {
+				opacity: 1;
+				transform: translateX(0);
+			}
+		}
+	}
+
+	&-link {
+		background-color: var(--interaction-default);
+		&:hover,
+		&:focus {
+			background-color: var(--interaction-default-hover);
+		}
+		&:active,
+		&.is-active {
+			.user-initials {
+				background-color: var(--interaction-default-active);
+			}
+		}
+	}
+}
+
+//TODO: Remove when $breakpoint-large will part of useActiveBreakpoints
+@include respond-to($breakpoint-medium-sidepanel) {
+	.side-app {
+		display: none;
+	}
+
+	.side-app-side-bar {
+		display: none;
+	}
+}

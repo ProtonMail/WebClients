@@ -63,7 +63,7 @@ const Notifications = ({
             })}
             {canAdd && (
                 <UnderlineButton
-                    className={classnames(['p0', notifications.length === 0 && 'mt0-5'])}
+                    className={classnames(['p0', notifications.length === 0 && 'mt0-5 on-mobile-mt1'])}
                     data-test-id="add-notification"
                     title={c('Title').t`Add another notification to remind you of this event`}
                     onClick={() =>

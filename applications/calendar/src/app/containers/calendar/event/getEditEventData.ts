@@ -1,7 +1,7 @@
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, CalendarMember } from '@proton/shared/lib/interfaces/calendar';
+import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
 import parseMainEventData from './parseMainEventData';
-import { getRecurrenceIdDate } from './getEventHelper';
 import { getComponentWithPersonalPart } from '../../../helpers/event';
 import { DecryptedEventTupleResult } from '../eventStore/interface';
 

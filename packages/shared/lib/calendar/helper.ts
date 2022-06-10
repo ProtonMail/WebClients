@@ -10,7 +10,7 @@ import {
     VcalDateOrDateTimeProperty,
     VcalDateTimeProperty,
 } from '../interfaces/calendar';
-import { MAX_LENGTHS_API, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from './constants';
+import { ACTION_VIEWS, MAX_LENGTHS_API, MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC } from './constants';
 import { propertyToUTCDate } from './vcalConverter';
 import { getIsPropertyAllDay } from './vcalHelper';
 
@@ -142,4 +142,24 @@ export const reformatApiErrorMessage = (message: string) => {
         return message.slice(0, -18);
     }
     return message;
+};
+
+export const getLinkToCalendarEvent = ({
+    calendarID,
+    eventID,
+    recurrenceID,
+}: {
+    calendarID: string;
+    eventID: string;
+    recurrenceID?: number;
+}) => {
+    const params = new URLSearchParams();
+    params.set('Action', ACTION_VIEWS.VIEW);
+    params.set('EventID', eventID);
+    params.set('CalendarID', calendarID);
+    if (recurrenceID) {
+        params.set('RecurrenceID', `${recurrenceID}`);
+    }
+
+    return `/event?${params.toString()}`;
 };
