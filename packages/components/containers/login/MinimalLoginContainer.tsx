@@ -8,7 +8,7 @@ import { EMAIL_PLACEHOLDER, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { useApi, useErrorHandler, useLoading, useNotifications } from '../../hooks';
 import { Input, Label, UnderlineButton, PasswordInput, PrimaryButton, CircleLoader } from '../../components';
 import { OnLoginCallback } from '../app/interface';
-import { captureChallengeMessage, Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
+import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../challenge';
 
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
@@ -163,14 +163,12 @@ const LoginForm = ({
                         challengeRef={challengeRefLogin}
                         name="login"
                         type={0}
-                        onSuccess={(logs) => {
+                        onSuccess={() => {
                             setChallengeLoading(false);
-                            captureChallengeMessage('Failed to load LoginForm iframe partially', logs);
                         }}
-                        onError={(logs) => {
+                        onError={() => {
                             setChallengeLoading(false);
                             setChallengeError(true);
-                            captureChallengeMessage('Failed to load LoginForm iframe fatally', logs);
                         }}
                     />
                 )}
