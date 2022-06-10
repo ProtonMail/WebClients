@@ -39,6 +39,7 @@ import {
 } from '../vcalHelper';
 import { withDtstamp } from '../veventHelper';
 import { ImportFileError } from './ImportFileError';
+import { getSupportedCalscale } from '../icsSurgery/vcal';
 
 const getParsedComponentHasError = (component: VcalCalendarComponentOrError): component is { error: Error } => {
     return !!(component as { error: Error }).error;
@@ -56,6 +57,7 @@ export const parseIcs = async (ics: File) => {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
         const { method, components, calscale, 'x-wr-timezone': xWrTimezone } = parsedVcalendar;
+        const supportedCalscale = getSupportedCalscale(calscale);
         const supportedMethod = getIcalMethod(method);
 
         if (!supportedMethod) {
@@ -67,7 +69,7 @@ export const parseIcs = async (ics: File) => {
         if (components.length > MAX_IMPORT_EVENTS) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.TOO_MANY_EVENTS, filename);
         }
-        return { components, calscale: calscale?.value, xWrTimezone: xWrTimezone?.value, method: supportedMethod };
+        return { components, calscale: supportedCalscale, xWrTimezone: xWrTimezone?.value, method: supportedMethod };
     } catch (e: any) {
         if (e instanceof ImportFileError) {
             throw e;
@@ -195,7 +197,7 @@ export const getSupportedEvents = async ({
     calscale?: string;
     xWrTimezone?: string;
 }) => {
-    if (calscale && calscale.toLowerCase() !== 'gregorian') {
+    if (calscale?.toLowerCase() !== 'gregorian') {
         return [new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN, 'vcalendar', '')];
     }
     const hasXWrTimezone = !!xWrTimezone;
