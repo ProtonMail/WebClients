@@ -1,3 +1,6 @@
+import { getSecondLevelDomain } from '@proton/shared/lib/helpers/url';
+import isTruthy from '@proton/utils/isTruthy';
+
 export const isSubDomain = (hostname: string, domain: string) => {
     if (hostname === domain) {
         return true;
@@ -29,4 +32,14 @@ export const isExternal = (url: string) => {
          */
         return true;
     }
+};
+
+export const isURLProtonInternal = (url: string) => {
+    const currentDomain = getSecondLevelDomain(window.location.hostname);
+    const targetOriginHostname = getHostname(url);
+
+    // Still need to check the current domain otherwise it would not work on proton.local, localhost, etc...
+    return ['protonmail.com', currentDomain]
+        .filter(isTruthy)
+        .some((domain) => isSubDomain(targetOriginHostname, domain));
 };

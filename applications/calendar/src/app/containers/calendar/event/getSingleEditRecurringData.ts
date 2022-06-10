@@ -2,7 +2,7 @@ import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
 import { addMilliseconds } from '@proton/shared/lib/date-fns-utc';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
-import { getRecurrenceIdDate } from './getEventHelper';
+import { getRecurrenceIdDate } from '@proton/shared/lib/calendar/vcalHelper';
 
 const getSingleEditRecurringData = (originalEvent: VcalVeventComponent, occurrenceEvent: VcalVeventComponent) => {
     // If it's a single edition, the recurrence ID exists on the occurrence

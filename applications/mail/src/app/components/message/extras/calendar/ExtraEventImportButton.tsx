@@ -5,9 +5,12 @@ import noop from '@proton/utils/noop';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { ImportedEvent } from '@proton/shared/lib/interfaces/calendar';
+import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { APPS } from '@proton/shared/lib/constants';
 import { useCallback, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
-import { useNotifications, useLoading, Button } from '@proton/components';
+import { useNotifications, useLoading, Button, useSideApp } from '@proton/components';
 import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
 
 interface Props {
@@ -19,6 +22,7 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
     const [loading, withLoading] = useLoading();
     const addEvents = useAddEvents();
     const { createNotification } = useNotifications();
+    const { sideAppUrl } = useSideApp();
 
     const {
         calendarData,
@@ -66,6 +70,15 @@ const ExtraEventImportButton = ({ model, setModel }: Props) => {
             });
             if (importedEvents.length) {
                 handleSuccess(importedEvents);
+                if (sideAppUrl) {
+                    postMessageToIframe(
+                        {
+                            type: SIDE_APP_EVENTS.SIDE_APP_CALL_CALENDAR_EVENT_MANAGER,
+                            payload: { calendarID: calendar.ID },
+                        },
+                        APPS.PROTONCALENDAR
+                    );
+                }
             }
             if (importErrors.length) {
                 handleError();

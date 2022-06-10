@@ -1,4 +1,4 @@
-import { useAddresses } from '@proton/components';
+import { FeaturesProvider, useAddresses } from '@proton/components';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { mocked } from 'jest-mock';
@@ -20,12 +20,14 @@ import {
     addressBuilder,
 } from '@proton/testing';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { VERIFICATION_STATUS } from '@proton/srp/lib/constants';
 
 import { Nullable } from '@proton/shared/lib/interfaces';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import EmailReminderWidget from './EmailReminderWidget';
+import { authentication } from '../../../../helpers/test/render';
 
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
@@ -52,9 +54,13 @@ function renderComponent(overrides?: any) {
     window.history.pushState({}, 'Calendar', '/');
 
     const Wrapper = ({ children }: any) => (
-        <CacheProvider cache={createCache()}>
-            <BrowserRouter>{children}</BrowserRouter>
-        </CacheProvider>
+        <AuthenticationProvider store={authentication}>
+            <CacheProvider cache={createCache()}>
+                <FeaturesProvider>
+                    <BrowserRouter>{children}</BrowserRouter>
+                </FeaturesProvider>
+            </CacheProvider>
+        </AuthenticationProvider>
     );
 
     return {
@@ -146,6 +152,7 @@ describe('EmailReminderWidget', () => {
 
         expect(skeleton).toBeInTheDocument();
         await waitFor(() => expect(screen.queryByText(/Event was canceled/)).toBeInTheDocument());
+
         expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).toBeInTheDocument();
     });
 

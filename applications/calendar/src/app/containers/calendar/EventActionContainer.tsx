@@ -1,61 +1,55 @@
 import { MutableRefObject, useEffect } from 'react';
-import { LoaderPage, useNotifications, useApi, useCache } from '@proton/components';
+import { LoaderPage, useNotifications } from '@proton/components';
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
-import { getUnixTime } from 'date-fns';
 import { Address } from '@proton/shared/lib/interfaces';
 import { VisualCalendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
-import { getEvent, updateMember } from '@proton/shared/lib/api/calendars';
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { ACTION_VIEWS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getDateOrDateTimeProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
-import { loadModels } from '@proton/shared/lib/models/helper';
-import { CalendarsModel } from '@proton/shared/lib/models';
-import { MAXIMUM_DATE, MINIMUM_DATE } from '@proton/shared/lib/calendar/constants';
 import { convertUTCDateTimeToZone, fromUTCDate, toUTCDate } from '@proton/shared/lib/date/timezone';
-import { addMilliseconds, isSameDay } from '@proton/shared/lib/date-fns-utc';
-import { getOccurrences } from '@proton/shared/lib/calendar/recurring';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
-import { getIsPropertyAllDay, getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
-import getRecurrenceIdValueFromTimestamp from '@proton/shared/lib/calendar/getRecurrenceIdValueFromTimestamp';
-import parseMainEventData from './event/parseMainEventData';
-import { getRecurrenceIdDate } from './event/getEventHelper';
 import { EventTargetAction } from './interface';
 import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
-import getAllEventsByUID from './getAllEventsByUID';
+import { useOpenEvent } from '../../hooks/useOpenEvent';
+import { VIEW_URL_PARAMS_VIEWS_CONVERSION } from './getUrlHelper';
+
+const { VIEW } = ACTION_VIEWS;
 
 interface Props {
     addresses: Address[];
     calendars: VisualCalendar[];
+    sideAppView?: VIEWS;
     tzid: string;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
 }
-const EventActionContainer = ({ tzid, addresses, calendars, eventTargetActionRef }: Props) => {
+const EventActionContainer = ({ tzid, sideAppView, addresses, calendars, eventTargetActionRef }: Props) => {
     const { createNotification } = useNotifications();
     const history = useHistory();
-    const api = useApi();
-    const cache = useCache();
+    const openEvent = useOpenEvent();
 
     useEffect(() => {
         const run = async () => {
             const params = new URLSearchParams(window.location.search);
             const action = params.get('Action');
+            const possiblySideAppView = sideAppView ? `/${VIEW_URL_PARAMS_VIEWS_CONVERSION[sideAppView]}` : '';
 
-            if (action === 'VIEW') {
+            if (action === VIEW) {
                 const handleLinkError = () => {
                     createNotification({
                         type: 'error',
                         text: c('Error').t`Invalid link to the event`,
                     });
-                    history.replace('/');
+                    history.replace(`${possiblySideAppView}/`);
                 };
 
                 const handleOtherError = () => {
-                    history.replace('/');
+                    history.replace(`${possiblySideAppView}/`);
                 };
 
                 const handleGotoRange = (date: Date) => {
+                    const viewString = sideAppView ? possiblySideAppView : '/week';
                     history.replace(
-                        `/week/${[date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('/')}`
+                        `${viewString}/${[date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()].join('/')}`
                     );
                 };
 
@@ -77,6 +71,7 @@ const EventActionContainer = ({ tzid, addresses, calendars, eventTargetActionRef
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
+                        preventPopover: !!sideAppView, // If the app is a side app, we want to prevent the popover opening
                     };
                     return handleGotoRange(startInTzid);
                 };
@@ -91,6 +86,7 @@ const EventActionContainer = ({ tzid, addresses, calendars, eventTargetActionRef
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
+                        preventPopover: !!sideAppView, // If the app is a side app, we want to prevent the popover opening
                     };
                     return handleGotoRange(startInTzid);
                 };
@@ -99,111 +95,22 @@ const EventActionContainer = ({ tzid, addresses, calendars, eventTargetActionRef
                 const eventID = params.get('EventID');
                 const recurrenceId = params.get('RecurrenceID');
 
-                if (!calendarID || !eventID) {
-                    return handleLinkError();
-                }
-                const calendar = calendars.find(({ ID }) => ID === calendarID);
-                if (!calendar) {
-                    return handleLinkError();
-                }
-                if (!calendar.Display) {
-                    const [{ ID: memberID }] = getMemberAndAddress(addresses, calendar.Members);
-                    await api({
-                        ...updateMember(calendarID, memberID, { Display: 1 }),
-                        silence: true,
-                    }).catch(() => {});
-                    await loadModels([CalendarsModel], { api, cache, useCache: false });
-                }
-                try {
-                    const result = await api<{ Event: CalendarEvent }>({
-                        ...getEvent(calendarID, eventID),
-                        silence: true,
-                    });
-                    const parsedEvent = parseMainEventData(result.Event);
+                const openedEvent = await openEvent({
+                    calendars,
+                    addresses,
+                    calendarID,
+                    eventID,
+                    recurrenceId,
+                    onGoToEvent: handleGotoEvent,
+                    onGoToOccurrence: handleGotoOccurrence,
+                    onLinkError: handleLinkError,
+                    onOtherError: handleOtherError,
+                });
 
-                    if (!parsedEvent) {
-                        throw new Error('Missing parsed event');
-                    }
-
-                    if (!parsedEvent.rrule) {
-                        return handleGotoEvent(result.Event, parsedEvent);
-                    }
-
-                    if (!recurrenceId) {
-                        const occurrences = getOccurrences({ component: parsedEvent, maxCount: 1 });
-                        if (!occurrences.length) {
-                            return handleLinkError();
-                        }
-                        const [firstOccurrence] = occurrences;
-                        return handleGotoOccurrence(result.Event, parsedEvent, firstOccurrence);
-                    }
-
-                    const parsedRecurrenceID = parseInt(recurrenceId || '', 10);
-
-                    if (
-                        !Number.isInteger(parsedRecurrenceID) ||
-                        parsedRecurrenceID < getUnixTime(MINIMUM_DATE) ||
-                        parsedRecurrenceID > getUnixTime(MAXIMUM_DATE)
-                    ) {
-                        return handleLinkError();
-                    }
-
-                    const eventsByUID = await getAllEventsByUID(api, calendarID, parsedEvent.uid.value);
-
-                    const { dtstart } = parsedEvent;
-                    const localRecurrenceID = toUTCDate(
-                        getRecurrenceIdValueFromTimestamp(
-                            parsedRecurrenceID,
-                            getIsPropertyAllDay(dtstart),
-                            getPropertyTzid(dtstart) || 'UTC'
-                        ).value
-                    );
-
-                    const isTargetOccurrenceEdited = eventsByUID.some((recurrence) => {
-                        const parsedEvent = parseMainEventData(recurrence);
-                        if (!parsedEvent) {
-                            return false;
-                        }
-                        const recurrenceID = getRecurrenceIdDate(parsedEvent);
-                        if (!recurrenceID) {
-                            return false;
-                        }
-                        // Here a date-time comparison could be used instead, but since the recurrence id parameter can be easily tweaked to change
-                        // e.g. the seconds and since a recurring granularity less than daily is not allowed, just compare the day
-                        return isSameDay(localRecurrenceID, recurrenceID);
-                    });
-
-                    const maxStart = addMilliseconds(localRecurrenceID, 1);
-                    const untilTargetOccurrences = getOccurrences({
-                        component: parsedEvent,
-                        maxCount: 10000000,
-                        maxStart,
-                    });
-                    if (!untilTargetOccurrences.length || isTargetOccurrenceEdited) {
-                        // Target occurrence could not be found, fall back to the first generated occurrence
-                        const initialOccurrences = getOccurrences({ component: parsedEvent, maxCount: 1 });
-                        if (!initialOccurrences.length) {
-                            return handleLinkError();
-                        }
-                        const [firstOccurrence] = initialOccurrences;
-                        return handleGotoOccurrence(result.Event, parsedEvent, firstOccurrence);
-                    }
-                    const [firstOccurrence] = untilTargetOccurrences;
-                    const targetOccurrence = untilTargetOccurrences[untilTargetOccurrences.length - 1];
-                    // Target recurrence could not be expanded to
-                    if (!isSameDay(localRecurrenceID, targetOccurrence.localStart)) {
-                        return handleGotoOccurrence(result.Event, parsedEvent, firstOccurrence);
-                    }
-                    return handleGotoOccurrence(result.Event, parsedEvent, targetOccurrence);
-                } catch (e: any) {
-                    if (e.status >= 400 && e.status <= 499) {
-                        return handleLinkError();
-                    }
-                    return handleOtherError();
-                }
+                return openedEvent;
             }
 
-            history.replace('/');
+            history.replace('');
         };
 
         void run();

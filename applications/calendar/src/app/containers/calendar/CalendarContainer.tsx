@@ -26,6 +26,7 @@ import { useAppTitle, useCalendarBootstrap } from '@proton/components';
 import { useHistory, useLocation } from 'react-router-dom';
 import unary from '@proton/utils/unary';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
+import { SECOND } from '@proton/shared/lib/constants';
 import { getNoonDateForTimeZoneOffset } from '../../helpers/date';
 import {
     canAskTimezoneSuggestion,
@@ -42,10 +43,10 @@ import getTitleDateString from './getTitleDateString';
 import { fromUrlParams, toUrlParams } from './getUrlHelper';
 import InteractiveCalendarView from './InteractiveCalendarView';
 import { EventTargetAction, InteractiveRef, TimeGridRef } from './interface';
+import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import { SUPPORTED_VIEWS_IN_APP, SUPPORTED_VIEWS_IN_SIDE_APP } from './constants';
 
 const { DAY, WEEK, MONTH } = VIEWS;
-
-const SUPPORTED_VIEWS = [MONTH, WEEK, DAY];
 
 const getRange = (view: VIEWS, range: number) => {
     if (!range) {
@@ -77,6 +78,7 @@ interface Props {
     tzid: string;
     setCustomTzid: (tzid: string) => void;
     isNarrow: boolean;
+    sideAppView?: VIEWS;
     user: User;
     addresses: Address[];
     activeAddresses: Address[];
@@ -88,12 +90,14 @@ interface Props {
     calendarUserSettings: CalendarUserSettings;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
+    getOpenedMailEvents: () => OpenedMailEvent[];
 }
 
 const CalendarContainer = ({
     tzid,
     setCustomTzid,
     isNarrow,
+    sideAppView,
     user,
     addresses,
     activeAddresses,
@@ -105,6 +109,7 @@ const CalendarContainer = ({
     calendarUserSettings,
     calendarsEventsCacheRef,
     eventTargetActionRef,
+    getOpenedMailEvents,
 }: Props) => {
     const history = useHistory();
     const location = useLocation();
@@ -118,7 +123,7 @@ const CalendarContainer = ({
     const [localTimezoneId, setLocalTimezoneId] = useState<string>();
 
     useEffect(() => {
-        const handle = setInterval(() => setNowDate(new Date()), 30000);
+        const handle = setInterval(() => setNowDate(new Date()), 30 * SECOND);
         return () => {
             clearInterval(handle);
         };
@@ -153,8 +158,7 @@ const CalendarContainer = ({
     }, [urlDate, urlView, urlRange]);
 
     useEffect(() => {
-        const hasAutoDetectPrimaryTimezone = getAutoDetectPrimaryTimezone(calendarUserSettings);
-        if (!hasAutoDetectPrimaryTimezone) {
+        if (sideAppView || !getAutoDetectPrimaryTimezone(calendarUserSettings)) {
             return;
         }
         const run = async () => {
@@ -199,11 +203,14 @@ const CalendarContainer = ({
     const defaultView = getDefaultView(calendarUserSettings);
     const requestedView = customView || defaultView;
     const view = (() => {
+        if (SUPPORTED_VIEWS_IN_SIDE_APP.includes(requestedView)) {
+            return requestedView;
+        }
         if (isNarrow) {
             return WEEK;
         }
 
-        if (SUPPORTED_VIEWS.includes(requestedView)) {
+        if (SUPPORTED_VIEWS_IN_APP.includes(requestedView)) {
             return requestedView;
         }
 
@@ -242,7 +249,13 @@ const CalendarContainer = ({
     }, [utcDateRangeInTimezone, secondaryTzid, tzid]);
 
     useEffect(() => {
-        const newRoute = toUrlParams({ date: utcDate, defaultDate: utcDefaultDate, view, defaultView, range });
+        const newRoute = toUrlParams({
+            date: utcDate,
+            defaultDate: utcDefaultDate,
+            view,
+            defaultView,
+            range,
+        });
         if (location.pathname === newRoute) {
             return;
         }
@@ -262,6 +275,7 @@ const CalendarContainer = ({
         utcDateRangeInTimezone,
         tzid,
         calendarsEventsCacheRef,
+        getOpenedMailEvents,
         initializeCacheOnlyCalendarsIDs,
         () => setInitializeCacheOnlyCalendarsIDs([])
     );
@@ -382,6 +396,7 @@ const CalendarContainer = ({
                     onChangeDate={handleChangeDate}
                     isEventCreationDisabled={isEventCreationDisabled}
                     onInteraction={(active: boolean) => setDisableCreate(active)}
+                    calendars={calendars}
                     addresses={addresses}
                     activeAddresses={activeAddresses}
                     activeCalendars={activeCalendars}
@@ -392,6 +407,7 @@ const CalendarContainer = ({
                     timeGridViewRef={timeGridViewRef}
                     calendarsEventsCacheRef={calendarsEventsCacheRef}
                     eventTargetActionRef={eventTargetActionRef}
+                    getOpenedMailEvents={getOpenedMailEvents}
                 />
             </ContactEmailsProvider>
         </CalendarContainerView>

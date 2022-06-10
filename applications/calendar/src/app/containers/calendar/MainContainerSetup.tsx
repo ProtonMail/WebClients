@@ -16,6 +16,8 @@ import {
 } from '@proton/shared/lib/calendar/calendar';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
+import { VIEWS } from '@proton/shared/lib/calendar/constants';
+import { useGetOpenedMailEvents } from '../../hooks/useGetOpenedMailEvents';
 
 import { CalendarsEventsCache } from './eventStore/interface';
 import getCalendarsEventCache from './eventStore/cache/getCalendarsEventCache';
@@ -33,9 +35,10 @@ interface Props {
     calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
+    sideAppView?: VIEWS;
 }
 
-const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
+const MainContainerSetup = ({ user, addresses, calendars, sideAppView }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
     const [userSettings] = useUserSettings();
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS] = useCalendarUserSettings();
@@ -51,8 +54,9 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
 
     useCalendarsInfoListener(allCalendarIDs);
 
+    const getOpenedMailEvents = useGetOpenedMailEvents(sideAppView);
     const calendarsEventsCacheRef = useRef<CalendarsEventsCache>(getCalendarsEventCache());
-    useCalendarsEventsEventListener(calendarsEventsCacheRef, allCalendarIDs);
+    useCalendarsEventsEventListener(calendarsEventsCacheRef, allCalendarIDs, getOpenedMailEvents);
 
     const calendarAlarmsCacheRef = useRef<CalendarsAlarmsCache>(getCalendarsAlarmsCache());
     useCalendarsAlarmsEventListeners(calendarAlarmsCacheRef, allCalendarIDs);
@@ -67,14 +71,18 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
     const [localTzid] = useState(() => getTimezone());
     const [customTzid, setCustomTzid] = useState('');
     const defaultTzid = getDefaultTzid(calendarUserSettings, localTzid);
-    const tzid = customTzid || defaultTzid;
+
+    // In the side app the time zone selector won't be visible. We want to force using the browser time zone
+    // We have to do it here, so that we use the correct timezone in EventActionContainer and in CalendarContainer
+    const tzid = sideAppView ? getTimezone() : customTzid || defaultTzid;
 
     return (
         <>
             <CalendarStartupModals />
             <Switch>
-                <Route path="/event">
+                <Route path={['/:appName/event', '/event']}>
                     <EventActionContainer
+                        sideAppView={sideAppView}
                         tzid={tzid}
                         addresses={addresses}
                         calendars={calendars}
@@ -86,6 +94,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
                         tzid={tzid}
                         setCustomTzid={setCustomTzid}
                         isNarrow={isNarrow}
+                        sideAppView={sideAppView}
                         user={user}
                         addresses={addresses}
                         activeAddresses={activeAddresses}
@@ -97,6 +106,7 @@ const MainContainerSetup = ({ user, addresses, calendars }: Props) => {
                         calendarUserSettings={calendarUserSettings}
                         userSettings={userSettings}
                         eventTargetActionRef={eventTargetActionRef}
+                        getOpenedMailEvents={getOpenedMailEvents}
                     />
                 </Route>
                 <Redirect to="/" />

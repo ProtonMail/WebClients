@@ -160,6 +160,9 @@ import {
 } from './interface';
 import { getInitialTargetEventData } from './targetEventHelper';
 import EquivalentAttendeesModal from './confirmationModals/EquivalentAttendeesModal';
+import { useOpenEventsFromMail } from '../../hooks/useOpenEventsFromMail';
+import { OpenedMailEvent } from '../../hooks/useGetOpenedMailEvents';
+import { getIsSideApp } from '../../helpers/views';
 
 const getNormalizedTime = (isAllDay: boolean, initial: DateTimeModel, dateFromCalendar: Date) => {
     if (!isAllDay) {
@@ -222,6 +225,7 @@ interface Props extends SharedViewProps {
     onChangeDate: (date: Date) => void;
     onInteraction: (active: boolean) => void;
     activeCalendars: VisualCalendar[];
+    calendars: VisualCalendar[];
     addresses: Address[];
     activeAddresses: Address[];
     defaultCalendar?: VisualCalendar;
@@ -231,6 +235,7 @@ interface Props extends SharedViewProps {
     interactiveRef: RefObject<InteractiveRef>;
     calendarsEventsCacheRef: MutableRefObject<CalendarsEventsCache>;
     eventTargetActionRef: MutableRefObject<EventTargetAction | undefined>;
+    getOpenedMailEvents: () => OpenedMailEvent[];
 }
 const InteractiveCalendarView = ({
     view,
@@ -257,6 +262,7 @@ const InteractiveCalendarView = ({
     onChangeDate,
     onInteraction,
 
+    calendars,
     addresses,
     activeAddresses,
 
@@ -269,6 +275,7 @@ const InteractiveCalendarView = ({
     timeGridViewRef,
     calendarsEventsCacheRef,
     eventTargetActionRef,
+    getOpenedMailEvents,
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
@@ -280,6 +287,8 @@ const InteractiveCalendarView = ({
     const relocalizeText = useRelocalizeText();
     const config = useConfig();
     const isSavingEvent = useRef(false);
+
+    const isSideApp = getIsSideApp(view);
 
     const { modalsMap, closeModal, updateModal } = useModalsMap<ModalsMap>({
         createEventModal: { isOpen: false },
@@ -344,6 +353,18 @@ const InteractiveCalendarView = ({
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
         getInitialTargetEventData(eventTargetActionRef, dateRange)
     );
+
+    // Handle events coming from outside if calendar app is open in the side panel
+    useOpenEventsFromMail({
+        calendars,
+        addresses,
+        onChangeDate,
+        tzid,
+        timeGridViewRef,
+        interactiveData,
+        setInteractiveData,
+    });
+
     useEffect(() => {
         const eventTargetAction = eventTargetActionRef.current;
         if (!eventTargetAction) {
@@ -366,7 +387,8 @@ const InteractiveCalendarView = ({
     const isDuplicatingEvent = !!modalsMap.createEventModal.props?.isDuplicating;
     const isInTemporaryBlocking =
         tmpData && tmpDataOriginal && getHasDoneChanges(tmpData, tmpDataOriginal, isEditingEvent);
-    const isScrollDisabled = !!interactiveData && !temporaryEvent;
+    // If opening the event from mail in the side app (when preventPopover is true), do not disable scroll
+    const isScrollDisabled = !!interactiveData && !temporaryEvent && !targetEventData?.preventPopover;
     const prodId = getProdId(config);
 
     useEffect(() => {
@@ -1198,13 +1220,19 @@ const InteractiveCalendarView = ({
             ]);
             const calendarsEventsCache = calendarsEventsCacheRef.current;
             if (calendarsEventsCache) {
-                upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventsCache);
+                upsertUpdateEventPartResponses(
+                    updatePartstatActions,
+                    updatePartstatResponses,
+                    calendarsEventsCache,
+                    getOpenedMailEvents
+                );
                 upsertUpdateEventPartResponses(
                     updatePersonalPartActions,
                     updatePersonalPartResponses,
-                    calendarsEventsCache
+                    calendarsEventsCache,
+                    getOpenedMailEvents
                 );
-                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventsCache);
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventsCache, getOpenedMailEvents);
             }
             const uniqueCalendarIDs = unique([
                 ...syncActions.map(({ calendarID }) => calendarID),
@@ -1273,13 +1301,19 @@ const InteractiveCalendarView = ({
             const syncResponses = await handleSyncActions(syncActions);
             const calendarsEventCache = calendarsEventsCacheRef.current;
             if (calendarsEventCache) {
-                upsertUpdateEventPartResponses(updatePartstatActions, updatePartstatResponses, calendarsEventCache);
+                upsertUpdateEventPartResponses(
+                    updatePartstatActions,
+                    updatePartstatResponses,
+                    calendarsEventCache,
+                    getOpenedMailEvents
+                );
                 upsertUpdateEventPartResponses(
                     updatePersonalPartActions,
                     updatePersonalPartResponses,
-                    calendarsEventCache
+                    calendarsEventCache,
+                    getOpenedMailEvents
                 );
-                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache);
+                upsertSyncMultiActionsResponses(syncActions, syncResponses, calendarsEventCache, getOpenedMailEvents);
             }
             calendarsEventCache.rerender?.();
             handleCreateNotification(texts);
@@ -1347,8 +1381,8 @@ const InteractiveCalendarView = ({
         [dateLocale]
     );
 
-    const weekdays = useMemo(() => {
-        return getFormattedWeekdays('ccc', { locale: dateLocale });
+    const [weekdays, weekdaysSingle] = useMemo(() => {
+        return ['ccc', 'ccccc'].map((format) => getFormattedWeekdays(format, { locale: dateLocale }));
     }, [dateLocale]);
 
     const targetMoreEvents = useMemo(() => {
@@ -1565,11 +1599,14 @@ const InteractiveCalendarView = ({
                 dateRange={dateRange}
                 events={sortedEventsWithTemporary}
                 onClickDate={onClickDate}
+                onChangeDate={onChangeDate}
                 formatTime={formatTime}
                 formatDate={formatDate}
                 weekdays={weekdays}
+                weekdaysSingle={weekdaysSingle}
                 timeGridViewRef={timeGridViewRef}
                 isScrollDisabled={isScrollDisabled}
+                isSideApp={isSideApp}
             />
             <Popover
                 containerEl={document.body}
@@ -1579,7 +1616,7 @@ const InteractiveCalendarView = ({
                 when={targetEvent ? targetEvent.start : undefined}
             >
                 {({ style, ref, textareaMaxHeight }: PopoverRenderData) => {
-                    if (!targetEvent) {
+                    if (!targetEvent || targetEventData?.preventPopover) {
                         return null;
                     }
                     if (targetEvent.id === 'tmp' && tmpData) {
@@ -1590,7 +1627,7 @@ const InteractiveCalendarView = ({
                                 popoverRef={ref}
                                 model={tmpData}
                                 addresses={addresses}
-                                displayWeekNumbers={displayWeekNumbers}
+                                displayWeekNumbers={!isSideApp && displayWeekNumbers}
                                 weekStartsOn={weekStartsOn}
                                 setModel={handleSetTemporaryEventModel}
                                 onSave={async (inviteActions: InviteActions) => {
@@ -1630,6 +1667,7 @@ const InteractiveCalendarView = ({
                             style={style}
                             popoverRef={ref}
                             event={targetEvent}
+                            view={view}
                             tzid={tzid}
                             weekStartsOn={weekStartsOn}
                             displayNameEmailMap={displayNameEmailMap}
@@ -1758,7 +1796,7 @@ const InteractiveCalendarView = ({
             {!!tmpData && (
                 <CreateEventModal
                     isNarrow={isNarrow}
-                    displayWeekNumbers={displayWeekNumbers}
+                    displayWeekNumbers={!isSideApp && displayWeekNumbers}
                     weekStartsOn={weekStartsOn}
                     tzid={tzid}
                     model={tmpData}
