@@ -87,6 +87,23 @@ async function uploadBlock(
             return;
         }
 
+        // If we experience some slight issue on server side, lets try
+        // one more time before notyfing user in transfer manager.
+        // Be careful about too many attempts as that could be harmful
+        // for our servers - if we have traffic issue, retrying too
+        // many times could lead to longer downtime.
+        if (numRetries === 0 && getIsConnectionIssue(err)) {
+            console.warn(`Connection issue for block #${block.index} upload. Retrying one more time.`);
+            return uploadBlock(
+                block,
+                pauser,
+                progressCallback,
+                networkErrorCallback,
+                uploadBlockDataCallback,
+                numRetries + 1
+            );
+        }
+
         if (networkErrorCallback && getIsConnectionIssue(err)) {
             pauser.pause();
             networkErrorCallback(err.message || err.status);

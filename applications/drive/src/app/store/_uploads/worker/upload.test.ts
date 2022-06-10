@@ -86,13 +86,40 @@ describe('upload jobs', () => {
         expect(mockUploadBlockCallback).toBeCalledTimes(1 + MAX_RETRIES_BEFORE_FAIL); // First call + retries.
     });
 
-    it('pauses and notifies about network error', async () => {
+    it('automatically retries after network error once', async () => {
         async function* generator(): AsyncGenerator<UploadingBlock> {
             yield createUploadingBlock(1);
         }
 
         const mockUploadBlockCallback = jest.fn(() => {
             if (mockUploadBlockCallback.mock.calls.length === 1) {
+                throw new Error('network error');
+            }
+            return Promise.resolve();
+        });
+        mockNetworkErrorCallback.mockImplementation(() => {
+            expect(pauser.isPaused).toBeTruthy();
+        });
+        await startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
+        // First call + automatic retry.
+        expect(mockUploadBlockCallback).toBeCalledTimes(2);
+        expect(mockNetworkErrorCallback).toBeCalledTimes(0);
+    });
+
+    it('pauses and notifies about network error', async () => {
+        async function* generator(): AsyncGenerator<UploadingBlock> {
+            yield createUploadingBlock(1);
+        }
+
+        const mockUploadBlockCallback = jest.fn(() => {
+            // Fail twice as it automatically retries after first failure.
+            if (mockUploadBlockCallback.mock.calls.length <= 2) {
                 throw new Error('network error');
             }
             return Promise.resolve();
@@ -108,7 +135,8 @@ describe('upload jobs', () => {
             mockNetworkErrorCallback,
             mockUploadBlockCallback
         );
-        expect(mockUploadBlockCallback).toBeCalledTimes(2); // First call + resume.
+        // First call + automatic retry + after resume.
+        expect(mockUploadBlockCallback).toBeCalledTimes(3);
         expect(mockNetworkErrorCallback).toBeCalledTimes(1);
         expect(mockNetworkErrorCallback).toBeCalledWith('network error');
     });
