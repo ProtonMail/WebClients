@@ -1,5 +1,5 @@
 import { c } from 'ttag';
-import { Audience, Currency, Cycle, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import { Audience, Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
@@ -38,6 +38,7 @@ interface Props {
     selectedProductPlans: SelectedProductPlans;
     onChangeSelectedProductPlans: (newPlans: SelectedProductPlans) => void;
     subscription?: Subscription;
+    organization?: Organization;
 }
 
 const PlanSelection = ({
@@ -49,6 +50,7 @@ const PlanSelection = ({
     currency,
     loading,
     subscription,
+    organization,
     onChangePlanIDs,
     onChangeCurrency,
     onChangeCycle,
@@ -126,6 +128,8 @@ const PlanSelection = ({
                         switchPlan({
                             planIDs,
                             planID: isFree ? undefined : planName,
+                            organization,
+                            plans,
                         })
                     );
                 }}
