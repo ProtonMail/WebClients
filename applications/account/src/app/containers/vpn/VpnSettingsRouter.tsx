@@ -5,6 +5,7 @@ import {
     OpenVPNCredentialsSection,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
+    ThemesSection,
     WireGuardConfigurationSection,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
@@ -23,11 +24,16 @@ const VpnSettingsRouter = ({
     const location = useLocation();
 
     const {
-        routes: { downloads, openvpn, wireguard },
+        routes: { general, downloads, openvpn, wireguard },
     } = vpnAppRoutes;
 
     return (
         <Switch>
+            <Route path={getSectionPath(path, general)}>
+                <PrivateMainSettingsArea location={location} config={general}>
+                    <ThemesSection />
+                </PrivateMainSettingsArea>
+            </Route>
             <Route path={getSectionPath(path, downloads)}>
                 <PrivateMainSettingsArea location={location} config={downloads}>
                     <VpnUpgradeSection />
