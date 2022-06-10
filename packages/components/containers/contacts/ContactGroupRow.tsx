@@ -59,8 +59,8 @@ const ContactGroupRow = ({ checked, style, groupsEmailsMap, group, onClick, onCh
                     <span
                         role="heading"
                         aria-level={2}
-                        className="inline-block pl1 pr1 pt0-25 pb0-25 rounded-full color-white text-ellipsis"
-                        style={{ backgroundColor: Color }}
+                        className="inline-block pl1 pr1 pt0-25 pb0-25 rounded-full text-ellipsis"
+                        style={{ backgroundColor: Color, color: 'white' }}
                     >
                         {Name}
                     </span>
