@@ -81,6 +81,7 @@ const CreateEventModal = ({
             loading={loadingAction && lastAction === ACTION.SUBMIT}
             disabled={loadingAction || cannotSave}
             type="submit"
+            className={isCreateEvent ? 'on-tiny-mobile-w100' : ''}
         >
             {c('Action').t`Save`}
         </Button>
@@ -105,13 +106,13 @@ const CreateEventModal = ({
     const submit = isCreateEvent ? (
         submitButton
     ) : (
-        <div>
+        <div className="flex on-tiny-mobile-w100 on-tiny-mobile-flex-column">
             {!isSubscribedCalendar && (
                 <Button
                     onClick={loadingAction ? noop : handleDeleteWithNotice}
                     loading={loadingAction && lastAction === ACTION.DELETE}
                     disabled={loadingAction}
-                    className="mr1"
+                    className="mr0-5 on-tiny-mobile-mr0 on-tiny-mobile-mb0-5"
                 >{c('Action').t`Delete`}</Button>
             )}
             {submitButton}
@@ -136,6 +137,7 @@ const CreateEventModal = ({
             footer={
                 <>
                     <Button
+                        className="no-tiny-mobile"
                         data-test-id="event-creation-modal:cancel-event-creation"
                         disabled={loadingAction}
                         onClick={onClose}
