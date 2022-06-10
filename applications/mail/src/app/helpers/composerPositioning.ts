@@ -36,6 +36,7 @@ export const computeLeftPosition = (index: number, count: number, windowWidth: n
         rightPosition = COMPOSER_GUTTER + share * index;
     }
 
+    //console.log({rightPosition, res:(windowWidth - COMPOSER_WIDTH - rightPosition), gutter: COMPOSER_GUTTER})
     return windowWidth - COMPOSER_WIDTH - rightPosition;
 };
 

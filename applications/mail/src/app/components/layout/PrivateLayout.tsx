@@ -1,5 +1,6 @@
 import { useState, useEffect, ReactNode, useCallback, forwardRef, Ref } from 'react';
-import { PrivateAppContainer, NewDomainTopBanner, TopBanners } from '@proton/components';
+import { PrivateAppContainer, NewDomainTopBanner, TopBanners, useSideApp } from '@proton/components';
+import SideAppIframe from '@proton/components/components/sideApp/SideAppIframe';
 import { useLocation } from 'react-router-dom';
 import MailHeader from '../header/MailHeader';
 import MailSidebar from '../sidebar/MailSidebar';
@@ -11,9 +12,14 @@ interface Props {
     labelID: string;
     elementID: string | undefined;
     isBlurred?: boolean;
+    rightSidebarContent?: ReactNode;
 }
 
-const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }: Props, ref: Ref<HTMLDivElement>) => {
+const PrivateLayout = (
+    { children, breakpoints, labelID, elementID, isBlurred, rightSidebarContent }: Props,
+    ref: Ref<HTMLDivElement>
+) => {
+    const { sideAppUrl } = useSideApp();
     const location = useLocation();
     const [expanded, setExpand] = useState(false);
 
@@ -48,8 +54,23 @@ const PrivateLayout = ({ children, breakpoints, labelID, elementID, isBlurred }:
         />
     );
 
+    const sideAppSidebar = rightSidebarContent && !sideAppUrl && (
+        <div className="side-app-side-bar flex-column mt0-5 ml1 mr1 flex">{rightSidebarContent}</div>
+    );
+
+    const sideAppIframe = <SideAppIframe />;
+
     return (
-        <PrivateAppContainer top={top} header={header} sidebar={sidebar} isBlurred={isBlurred} containerRef={ref}>
+        <PrivateAppContainer
+            top={top}
+            header={header}
+            sidebar={sidebar}
+            isBlurred={isBlurred}
+            containerRef={ref}
+            sideAppSidebar={sideAppSidebar}
+            sideAppIframe={sideAppIframe}
+            mainBordered={!!rightSidebarContent && !sideAppUrl}
+        >
             {children}
         </PrivateAppContainer>
     );

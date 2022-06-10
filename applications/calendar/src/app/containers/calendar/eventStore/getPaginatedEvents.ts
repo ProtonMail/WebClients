@@ -2,11 +2,11 @@ import { getUnixTime } from 'date-fns';
 import { CalendarEventsQueryType } from '@proton/shared/lib/interfaces/calendar/Api';
 import { queryEvents } from '@proton/shared/lib/api/calendars';
 import { Api } from '@proton/shared/lib/interfaces';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEventWithMetadata } from '@proton/shared/lib/interfaces/calendar';
 
 interface ApiResponse {
     More: 0 | 1;
-    Events: CalendarEvent[];
+    Events: CalendarEventWithMetadata[];
 }
 
 const PageSize = 100;
@@ -22,7 +22,7 @@ const getPaginatedEvents = async (
     calendarID: string,
     dateRange: Date[],
     Timezone: string,
-    upsertEvent: (event: CalendarEvent) => void
+    upsertEvent: (event: CalendarEventWithMetadata) => void
 ) => {
     const params = {
         // Special case, not using our boundaries, since the API does not accept negative values.
@@ -31,12 +31,12 @@ const getPaginatedEvents = async (
         Timezone,
         PageSize,
     };
-    const eventsOfType: CalendarEvent[][] = QUERY_TYPES.map(() => []);
+    const eventsOfType: CalendarEventWithMetadata[][] = QUERY_TYPES.map(() => []);
 
     async function* getEventsOfType({ Type }: { Type: CalendarEventsQueryType }) {
         let More = 1;
         let Page = 0;
-        let Events: CalendarEvent[] = [];
+        let Events: CalendarEventWithMetadata[] = [];
         while (More === 1) {
             ({ Events, More } = await api<ApiResponse>(queryEvents(calendarID, { ...params, Type, Page })));
             Page += 1;

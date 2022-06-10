@@ -6,10 +6,12 @@ import { CalendarEventManager, CalendarEventsEventManager } from '@proton/shared
 import { CalendarsEventsCache } from './interface';
 import removeCalendarEventStoreRecord from './cache/removeCalendarEventStoreRecord';
 import upsertCalendarApiEventWithoutBlob from './cache/upsertCalendarApiEventWithoutBlobs';
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 
 export const useCalendarCacheEventListener = (
     cacheRef: MutableRefObject<CalendarsEventsCache>,
-    calendarIDs: string[]
+    calendarIDs: string[],
+    getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
     const { subscribe: standardSubscribe } = useEventManager();
     const { subscribe: calendarSubscribe } = useCalendarModelEventManager();
@@ -61,7 +63,11 @@ export const useCalendarCacheEventListener = (
                         if (!calendarsEventsCache) {
                             return;
                         }
-                        removeCalendarEventStoreRecord(CalendarEventsChange.ID, calendarsEventsCache);
+                        removeCalendarEventStoreRecord(
+                            CalendarEventsChange.ID,
+                            calendarsEventsCache,
+                            getOpenedMailEvents
+                        );
                         // TODO: Only increment count if this event happened in the date range we are currently interested in
                         actions++;
                     }

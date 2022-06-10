@@ -5,9 +5,9 @@ import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { LogoProps } from './Logo';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
-const VpnLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props) => {
+const VpnLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
     // This logo can be several times in the view, ids has to be different each time
     const [uid] = useState(generateUID('logo'));
 
@@ -88,7 +88,7 @@ const VpnLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props)
                     <stop offset="1" stopColor="#6d4aff" />
                 </linearGradient>
             </defs>
-            <title id={`${uid}-title`}>{VPN_APP_NAME}</title>
+            {hasTitle && <title id={`${uid}-title`}>{VPN_APP_NAME}</title>}
         </svg>
     );
 };

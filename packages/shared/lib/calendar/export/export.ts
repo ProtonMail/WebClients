@@ -24,11 +24,10 @@ import { fromRruleString } from '../vcal';
 import { getTimezonedFrequencyString } from '../integration/getFrequencyString';
 import { getDateProperty } from '../vcalConverter';
 import {
-    convertUTCDateTimeToZone,
     formatGMTOffsetAbbreviation,
     fromUTCDate,
+    fromUTCDateToLocalFakeUTCDate,
     getTimezoneOffset,
-    toUTCDate,
 } from '../../date/timezone';
 import { dateLocale } from '../../i18n';
 import { WeekStartsOn } from '../../date-fns-utc/interface';
@@ -68,7 +67,7 @@ export interface GetErrorProps {
 export const getError = ({ event, errorType, weekStartsOn, defaultTzid }: GetErrorProps): ExportError => {
     const { StartTime, RRule, FullDay } = event;
     const startDate = new Date(StartTime * SECOND);
-    const fakeUTCStartDate = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(startDate), defaultTzid));
+    const fakeUTCStartDate = fromUTCDateToLocalFakeUTCDate(startDate, !!FullDay, defaultTzid);
     const startDateString = formatUTC(fakeUTCStartDate, FullDay ? 'P' : 'Pp', { locale: dateLocale });
     const { offset } = getTimezoneOffset(startDate, defaultTzid);
     const offsetString = formatGMTOffsetAbbreviation(offset);
