@@ -1,5 +1,4 @@
 @import '~@proton/styles/scss/config';
-$editor-font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 
 // custom scroll
 body:not(.isDarkMode) {
@@ -46,10 +45,10 @@ html {
 
 body {
 	box-sizing: border-box;
-	font-family: $editor-font-family;
+	font-family: system-ui, sans-serif;
 	font-size: 0.875rem; /* 14 */
 	line-height: normal;
-	color: #222;
+	color: black;
 	background: white;
 	/* to fix, CSS var are not passing through the iframe */
 	word-wrap: break-word;
@@ -57,7 +56,8 @@ body {
 }
 
 body a {
-	color: #657ee4;
+	// force blue even for :visited
+	color: blue;
 }
 
 #proton-editor-container {
@@ -72,7 +72,6 @@ body a {
 }
 
 #rooster-editor {
-	font-family: $editor-font-family;
 	outline: none;
 	padding: 0.5rem;
 }
