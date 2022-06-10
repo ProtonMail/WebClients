@@ -21,7 +21,7 @@ import {
 import { useApiWithoutResult, useUser, useSortedList, useUserVPN, usePlans, useVPNLogicals } from '../../../hooks';
 import { getCountryByAbbr, correctAbbr } from '../../../helpers/countries';
 import ServerConfigs from './ServerConfigs';
-import { isSecureCoreEnabled } from './utils';
+import { isSecureCoreEnabled, isTorEnabled } from './utils';
 import ConfigsTable, { CATEGORY } from './ConfigsTable';
 import { SettingsParagraph } from '../../account';
 
@@ -106,7 +106,9 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
 
     const countryServers = groupWith(
         (a, b) => a.ExitCountry === b.ExitCountry,
-        allServers.filter(({ Tier }) => Tier === 2)
+        allServers.filter(
+            ({ Tier, Features }) => Tier === 2 && !isSecureCoreEnabled(Features) && !isTorEnabled(Features)
+        )
     ).map((groups) => {
         const [first] = groups;
         const activeServers = groups.filter(({ Status }) => Status === 1);
