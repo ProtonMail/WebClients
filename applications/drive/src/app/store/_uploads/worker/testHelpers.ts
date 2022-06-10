@@ -1,6 +1,6 @@
 import { EncryptedBlock, Link } from '../interface';
 import { WAIT_TIME } from '../constants';
-import { UploadingBlock } from './interface';
+import { UploadingBlock, UploadingBlockControl } from './interface';
 
 export function waitFor(callback: () => boolean, timeout = 100): Promise<string> {
     return new Promise((resolve, reject) => {
@@ -31,14 +31,31 @@ export function createBlock(index: number): EncryptedBlock {
     };
 }
 
-export function createUploadingBlock(index: number): UploadingBlock {
+export function createUploadingBlock(index: number, isTokenExpired = () => false): UploadingBlock {
     const block = createBlock(index);
     return {
-        index: block.index,
-        originalSize: block.originalSize,
-        encryptedData: block.encryptedData,
+        block,
         uploadLink: `link${index}`,
         uploadToken: `token${index}`,
+        isTokenExpired,
+    };
+}
+
+export function createUploadingBlockControl(
+    index: number,
+    mockFinish = jest.fn(),
+    mockOnTokenExpiration = jest.fn()
+): UploadingBlockControl {
+    const block = createUploadingBlock(index);
+    return {
+        index: block.block.index,
+        originalSize: block.block.originalSize,
+        encryptedData: block.block.encryptedData,
+        uploadLink: block.uploadLink,
+        uploadToken: block.uploadToken,
+        isTokenExpired: block.isTokenExpired,
+        finish: mockFinish,
+        onTokenExpiration: mockOnTokenExpiration,
     };
 }
 

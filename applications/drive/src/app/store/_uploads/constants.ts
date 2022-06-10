@@ -56,3 +56,10 @@ export const MAX_UPLOAD_JOBS = 5;
  * still full or not, or if the upload is paused, and so on.
  */
 export const WAIT_TIME = 50; // Milliseconds.
+
+/**
+ * TOKEN_EXPIRATION_TIME defines after what time server expires the token.
+ * We can optimise and not even ask for block upload if we know the token
+ * is already old and we should ask for new one.
+ */
+export const TOKEN_EXPIRATION_TIME = 3 * 60 * 60 * 1000; // Milliseconds.

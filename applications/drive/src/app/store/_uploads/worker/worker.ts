@@ -2,7 +2,6 @@ import * as openpgp from 'openpgp';
 import { OpenPGPKey, SessionKey } from 'pmcrypto';
 import { init as initPmcrypto } from 'pmcrypto/lib/pmcrypto';
 
-import { mergeUint8Arrays } from '@proton/utils/array';
 import { sign as signMessage, generateNodeKeys, generateContentKeys } from '@proton/shared/lib/keys/driveKeys';
 
 import { ecryptFileExtendedAttributes } from '../../_links';
@@ -84,7 +83,7 @@ async function start(
 
     const uploadingBlocksGenerator = buffer.generateUploadingBlocks();
     const finish = async () => {
-        const fileHash = mergeUint8Arrays(buffer.blockHashes);
+        const fileHash = buffer.hash;
         const [signature, xattr] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
             ecryptFileExtendedAttributes(file, privateKey, addressPrivateKey),
