@@ -12,6 +12,12 @@ interface Props {
 }
 
 const WelcomeV5TopBanner = ({ onClose }: Props) => {
+    const { feature } = useFeature(FeatureCode.WelcomeV5TopBanner);
+
+    if (!feature?.Value === undefined) {
+        return null;
+    }
+
     return (
         <TopBanner className="bg-primary" onClose={onClose}>
             {c('Text').t`Introducing the updated Proton.`} {c('Text').t`More services, one privacy mission.`}{' '}
