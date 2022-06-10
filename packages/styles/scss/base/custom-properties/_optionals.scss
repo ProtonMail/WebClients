@@ -10,7 +10,7 @@
 
 	/*
 	 * Generate 'optional' css variables from
-	 * --variable-name: default-value
+	 * variable-name: default-value
 	 *
 	 * Output
 	 * --variable-name: var(--optional-variable-name, default-value);
@@ -21,95 +21,95 @@
 
 	@each $variable, $default in (
 
-		--link-norm  : var(--interaction-norm),
-		--link-hover : var(--interaction-norm-hover),
-		--link-active: var(--interaction-norm-active),
+		link-norm  : var(--interaction-norm),
+		link-hover : var(--interaction-norm-hover),
+		link-active: var(--interaction-norm-active),
 
-		--selection-background-color: var(--primary),
-		--selection-text-color      : var(--primary-contrast),
+		selection-background-color: var(--primary),
+		selection-text-color      : var(--primary-contrast),
 
-		--header-background-color : var(--background-norm),
-		--sidebar-background-color: var(--background-norm),
+		header-background-color : var(--background-norm),
+		sidebar-background-color: var(--background-norm),
 
-		--navigation-current-item-marker-color    : var(--interaction-norm),
-		--navigation-current-item-background-color: var(--interaction-default-hover),
-		--navigation-current-item-text-color      : var(--text-norm),
+		navigation-current-item-marker-color    : var(--interaction-norm),
+		navigation-current-item-background-color: var(--interaction-default-hover),
+		navigation-current-item-text-color      : var(--text-norm),
 
-		--searchbox-background-color: transparent,
-		--searchbox-text-color      : var(--text-norm),
+		searchbox-background-color: transparent,
+		searchbox-text-color      : var(--text-norm),
 
-		--main-box-shadow  : none,
-		--main-border-color: var(--border-norm),
+		main-box-shadow  : none,
+		main-border-color: var(--border-norm),
 
-		--navigation-item-count-background-color: var(--primary),
-		--navigation-item-count-text-color      : var(--primary-contrast),
+		navigation-item-count-background-color: var(--primary),
+		navigation-item-count-text-color      : var(--primary-contrast),
 
-		--toolbar-background-color   : var(--background-weak),
-		--toolbar-border-bottom-color: var(--border-norm),
-		--toolbar-text-color         : var(--text-norm),
-		--toolbar-separator-color    : var(--border-norm),
+		toolbar-background-color   : var(--background-weak),
+		toolbar-border-bottom-color: var(--border-norm),
+		toolbar-text-color         : var(--text-norm),
+		toolbar-separator-color    : var(--border-norm),
 
-		--scrollbar-thumb-color      : rgba(grey, 0.25),
-		--scrollbar-thumb-hover-color: rgba(grey, 0.5),
+		scrollbar-thumb-color      : rgba(grey, 0.25),
+		scrollbar-thumb-hover-color: rgba(grey, 0.5),
 
-		--tooltip-background-color: black,
-		--tooltip-text-color      : white,
+		tooltip-background-color: black,
+		tooltip-text-color      : white,
 
-		--email-item-unread-background-color     : var(--background-norm),
-		--email-item-unread-text-color           : var(--text-norm),
-		--email-item-unread-icon-background-color: var(--background-strong),
-		--email-item-unread-icon-text-color      : inherit,
+		email-item-unread-background-color     : var(--background-norm),
+		email-item-unread-text-color           : var(--text-norm),
+		email-item-unread-icon-background-color: var(--background-strong),
+		email-item-unread-icon-text-color      : inherit,
 
-		--email-item-read-background-color     : var(--background-weak),
-		--email-item-read-text-color           : var(--text-norm),
-		--email-item-read-icon-background-color: var(--background-strong),
-		--email-item-read-icon-text-color      : inherit,
+		email-item-read-background-color     : var(--background-weak),
+		email-item-read-text-color           : var(--text-norm),
+		email-item-read-icon-background-color: var(--background-strong),
+		email-item-read-icon-text-color      : inherit,
 
-		--email-item-selected-background-color     : var(--interaction-norm),
-		--email-item-selected-text-color           : var(--interaction-norm-contrast),
-		--email-item-selected-icon-background-color: var(--interaction-norm-major-2),
-		--email-item-selected-icon-text-color      : inherit,
+		email-item-selected-background-color     : var(--interaction-norm),
+		email-item-selected-text-color           : var(--interaction-norm-contrast),
+		email-item-selected-icon-background-color: var(--interaction-norm-major-2),
+		email-item-selected-icon-text-color      : inherit,
 
-		--email-item-focus-marker-color         : var(--interaction-norm),
-		--email-item-selected-focus-marker-color: var(--interaction-norm-major-2),
+		email-item-focus-marker-color         : var(--interaction-norm),
+		email-item-selected-focus-marker-color: var(--interaction-norm-major-2),
 
-		--email-message-view-background-color: var(--background-norm),
+		email-message-view-background-color: var(--background-norm),
 
-		--field-background-color : var(--background-norm),
-		--field-text-color       : var(--text-norm),
-		--field-placeholder-color: var(--text-hint),
+		field-background-color : var(--background-norm),
+		field-text-color       : var(--text-norm),
+		field-placeholder-color: var(--text-hint),
 
-		--field-hover-background-color: var(--background-norm),
-		--field-hover-text-color      : var(--text-norm),
+		field-hover-background-color: var(--background-norm),
+		field-hover-text-color      : var(--text-norm),
 
-		--field-focus-background-color: var(--background-norm),
-		--field-focus-text-color      : var(--text-norm),
+		field-focus-background-color: var(--background-norm),
+		field-focus-text-color      : var(--text-norm),
 
-		--field-disabled-background-color: var(--background-norm),
-		--field-disabled-text-color      : var(--text-disabled),
+		field-disabled-background-color: var(--background-norm),
+		field-disabled-text-color      : var(--text-disabled),
 
-		--select-background-color: var(--field-background-color),
+		select-background-color: var(--field-background-color),
 
-		--favorite-icon-color: orange,
+		favorite-icon-color: orange,
 
-		--mark-background-color: yellow,
-		--mark-text-color      : black,
-		--mark-font-weight     : var(--font-weight-normal, normal),
+		mark-background-color: yellow,
+		mark-text-color      : black,
+		mark-font-weight     : var(--font-weight-normal, normal),
 
-		--modal-background-color: var(--background-norm),
-		--modal-text-color      : var(--text-norm),
+		modal-background-color: var(--background-norm),
+		modal-text-color      : var(--text-norm),
 
-		--file-preview-text-color      : var(--text-norm),
-		--file-preview-background-color: var(--background-norm),
+		file-preview-text-color      : var(--text-norm),
+		file-preview-background-color: var(--background-norm),
 
-		--mini-calendar-today-color: var(--primary),
+		mini-calendar-today-color: var(--primary),
 
-		--border-radius: 8,
+		border-radius: 8,
 
-		--logo-text-proton-color : var(--text-norm),
-		--logo-text-product-color: var(--primary),
+		logo-text-proton-color : var(--text-norm),
+		logo-text-product-color: var(--primary),
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
-		#{$variable}: var(--optional-#{str-slice($variable, 3)}, #{$default});
+		--#{$variable}: var(--optional-#{$variable}, #{$default});
 	}
 }
