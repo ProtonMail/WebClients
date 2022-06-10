@@ -136,6 +136,7 @@ const LoginForm = ({
                 <Challenge
                     className="h0 absolute"
                     noLoader
+                    empty
                     tabIndex={-1}
                     challengeRef={challengeRefLogin}
                     type={0}
