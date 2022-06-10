@@ -4,7 +4,6 @@ import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 import {
     Button,
-    captureChallengeMessage,
     Challenge,
     ChallengeError,
     ChallengeRef,
@@ -141,14 +140,12 @@ const LoginForm = ({
                     challengeRef={challengeRefLogin}
                     type={0}
                     name="login"
-                    onSuccess={(logs) => {
+                    onSuccess={() => {
                         setChallengeLoading(false);
-                        captureChallengeMessage('Failed to load LoginForm iframe partially', logs);
                     }}
-                    onError={(logs) => {
+                    onError={() => {
                         setChallengeLoading(false);
                         setChallengeError(true);
-                        captureChallengeMessage('Failed to load LoginForm iframe fatally', logs);
                     }}
                 />
                 <InputFieldTwo
