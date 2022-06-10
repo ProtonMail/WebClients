@@ -6,7 +6,6 @@ import {
     AlertModal,
     Button,
     ButtonLike,
-    captureChallengeMessage,
     Challenge,
     ChallengeError,
     ChallengeRef,
@@ -291,14 +290,12 @@ const AccountStep = ({
                             challengeRef={challengeRefLogin}
                             type={0}
                             name="username"
-                            onSuccess={(logs) => {
+                            onSuccess={() => {
                                 setChallengeLoading(false);
-                                captureChallengeMessage('Failed to load CreateAccountForm iframe partially', logs);
                             }}
-                            onError={(logs) => {
+                            onError={() => {
                                 setChallengeLoading(false);
                                 setChallengeError(true);
-                                captureChallengeMessage('Failed to load CreateAccountForm iframe fatally', logs);
                             }}
                         >
                             {innerChallenge}
