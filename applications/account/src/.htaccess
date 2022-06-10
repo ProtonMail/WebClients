@@ -1,11 +1,11 @@
 RewriteEngine On
 
-# Redirect to https if not coming from https && not forwarded from https && not curl nor any health check user-agent    
-RewriteCond %{HTTPS} !=on                                                                                               
-RewriteCond %{HTTP:X-Forwarded-Proto} !=https                                                                           
-RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)                                                           
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]                                                              
-                                                                 
+# Redirect to https if not coming from https && not forwarded from https && not curl nor any health check user-agent
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
@@ -36,6 +36,17 @@ ErrorDocument 403   /assets/errors/403.html
     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</Files>
+
+<Files ~ "\.(ttf|otf|eot|woff|woff2)$">
+    # Take out the subdomain part (proton.me) of for example
+    # Origin: https://account-api.proton.me
+    # Host: account.proton.me
+    SetEnvIf Origin "^[^.]+\.(.*)$" origin=$0 origin_domain=$1
+    SetEnvIf Host "^[^.]+\.(.*)$" server_name_domain=$1
+    # Compare the subdomain variables
+    SetEnvIfExpr "reqenv('origin_domain') == reqenv('server_name_domain')" match=true
+    Header set Access-Control-Allow-Origin "%{origin}e" env=match
 </Files>
 
 <IfModule mod_mime.c>
