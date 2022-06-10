@@ -1,0 +1,886 @@
+/* eslint-disable class-methods-use-this */
+
+/* eslint-disable max-classes-per-file */
+
+/* eslint-disable no-underscore-dangle */
+import {
+    MaybeArray,
+    decryptKey,
+    encryptKey,
+    enums,
+    readCleartextMessage,
+    readKey,
+    readKeys,
+    readMessage,
+    readPrivateKey,
+    readSignature,
+} from 'pmcrypto-v7/lib/openpgp';
+import {
+    SHA256,
+    SHA512,
+    armorBytes,
+    canKeyEncrypt,
+    checkKeyStrength,
+    decryptMessage,
+    decryptMessageLegacy,
+    decryptSessionKey,
+    encryptMessage,
+    encryptSessionKey,
+    generateKey,
+    generateSessionKey,
+    generateSessionKeyForAlgorithm,
+    getSHA256Fingerprints,
+    init as initPmcrypto,
+    isExpiredKey,
+    isRevokedKey,
+    processMIME,
+    reformatKey,
+    signMessage,
+    unsafeMD5,
+    unsafeSHA1,
+    verifyCleartextMessage,
+    verifyMessage,
+} from 'pmcrypto-v7/lib/pmcrypto';
+import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto-v7/lib/pmcrypto';
+
+import { arrayToHexString } from '../utils';
+import {
+    KeyInfo,
+    KeyReference,
+    MessageInfo,
+    PrivateKeyReference,
+    PublicKeyReference,
+    SignatureInfo,
+    WorkerDecryptLegacyOptions,
+    WorkerDecryptionOptions,
+    WorkerEncryptOptions,
+    WorkerEncryptSessionKeyOptions,
+    WorkerGenerateKeyOptions,
+    WorkerGenerateSessionKeyOptions,
+    WorkerGetKeyInfoOptions,
+    WorkerGetMessageInfoOptions,
+    WorkerGetSignatureInfoOptions,
+    WorkerImportPrivateKeyOptions,
+    WorkerImportPublicKeyOptions,
+    WorkerProcessMIMEOptions,
+    WorkerReformatKeyOptions,
+    WorkerSignOptions,
+    WorkerVerifyCleartextOptions,
+    WorkerVerifyOptions,
+} from './api.models';
+
+// Note:
+// - streams are currently not supported since they are not Transferable (not in all browsers).
+// - when returning binary data, the values are always transferred.
+
+type SerializedSignatureOptions = { armoredSignature?: string; binarySignature?: Uint8Array };
+const getSignature = async ({ armoredSignature, binarySignature }: SerializedSignatureOptions) => {
+    if (armoredSignature) {
+        return readSignature({ armoredSignature });
+    } else if (binarySignature) {
+        return readSignature({ binarySignature });
+    }
+    throw new Error('Must provide `armoredSignature` or `binarySignature`');
+};
+
+type SerializedMessageOptions = { armoredMessage?: string; binaryMessage?: Uint8Array };
+const getMessage = async ({ armoredMessage, binaryMessage }: SerializedMessageOptions) => {
+    if (armoredMessage) {
+        return readMessage({ armoredMessage });
+    } else if (binaryMessage) {
+        return readMessage({ binaryMessage });
+    }
+    throw new Error('Must provide `armoredMessage` or `binaryMessage`');
+};
+
+type SerializedKeyOptions = { armoredKey?: string; binaryKey?: Uint8Array };
+const getKey = async ({ armoredKey, binaryKey }: SerializedKeyOptions) => {
+    if (armoredKey) {
+        return readKey({ armoredKey });
+    } else if (binaryKey) {
+        return readKey({ binaryKey });
+    }
+    throw new Error('Must provide `armoredKey` or `binaryKey`');
+};
+
+const toArray = <T>(maybeArray: MaybeArray<T>) => (Array.isArray(maybeArray) ? maybeArray : [maybeArray]);
+
+const getPublicKeyReference = async (key: PublicKey, keyStoreID: number): Promise<PublicKeyReference> => {
+    const publicKey = key.isPrivate() ? key.toPublic() : key; // We don't throw on private key since we allow importing an (encrypted) private key using 'importPublicKey'
+
+    const fingerprint = publicKey.getFingerprint();
+    const hexKeyID = publicKey.getKeyID().toHex();
+    const hexKeyIDs = publicKey.getKeyIDs().map((id) => id.toHex());
+    const algorithmInfo = publicKey.getAlgorithmInfo();
+    const creationTime = publicKey.getCreationTime();
+    const expirationTime = await publicKey.getExpirationTime();
+    const userIDs = publicKey.getUserIDs();
+    const keyContentHash = await SHA256(publicKey.write()).then(arrayToHexString);
+    let isWeak: boolean;
+    try {
+        checkKeyStrength(publicKey);
+        isWeak = false;
+    } catch {
+        isWeak = true;
+    }
+    return {
+        _idx: keyStoreID,
+        _keyContentHash: keyContentHash,
+        isPrivate: () => false,
+        getFingerprint: () => fingerprint,
+        getKeyID: () => hexKeyID,
+        getKeyIDs: () => hexKeyIDs,
+        getAlgorithmInfo: () => algorithmInfo,
+        getCreationTime: () => creationTime,
+        getExpirationTime: () => expirationTime,
+        getUserIDs: () => userIDs,
+        isWeak: () => isWeak,
+        equals: (otherKey: KeyReference) => otherKey._keyContentHash === keyContentHash,
+        subkeys: publicKey.getSubkeys().map((subkey) => {
+            const subkeyAlgoInfo = subkey.getAlgorithmInfo();
+            const subkeyKeyID = subkey.getKeyID().toHex();
+            return {
+                getAlgorithmInfo: () => subkeyAlgoInfo,
+                getKeyID: () => subkeyKeyID,
+            };
+        }),
+    };
+};
+
+const getPrivateKeyReference = async (privateKey: PrivateKey, keyStoreID: number): Promise<PrivateKeyReference> => {
+    const publicKeyReference = await getPublicKeyReference(privateKey.toPublic(), keyStoreID);
+    return {
+        ...publicKeyReference,
+        isPrivate: () => true,
+    };
+};
+
+class KeyStore {
+    private store = new Map<number, Key>();
+
+    /**
+     * Monotonic counter keeping track of the next unique identifier to index a newly added key.
+     * The starting counter value is picked at random to minimize the changes of collisions between keys during different user sessions.
+     * NB: key references may be stored by webapps even after the worker has been destroyed (e.g. after closing the browser window),
+     * hence we want to keep using different identifiers even after restarting the worker, to also invalidate those stale key references.
+     */
+    private nextIdx = Math.floor(Math.random() * (Number.MAX_SAFE_INTEGER / 2));
+
+    /**
+     * Add a key to the key store.
+     * @param key - key to add
+     * @param customIdx - custom identifier to use to store the key, instead of the internally generated one.
+     *                    This argument is primarily intended for when key store identifiers need to be synchronised across different workers.
+     *                    This value must be unique for each key, even across different sessions.
+     * @returns key identifier to retrieve the key from the store
+     */
+    add(key: Key, customIdx?: number) {
+        const idx = customIdx !== undefined ? customIdx : this.nextIdx;
+        if (this.store.has(idx)) {
+            throw new Error('Idx already in use');
+        }
+        this.store.set(idx, key);
+        this.nextIdx++; // increment regardless of customIdx, for code simplicity
+        return idx;
+    }
+
+    get(idx: number) {
+        const key = this.store.get(idx);
+        if (!key) {
+            throw new Error('Key not found');
+        }
+        return key;
+    }
+
+    clearAll() {
+        this.store.forEach((key) => {
+            if (key.isPrivate()) {
+                // @ts-ignore missing definition for clearPrivateParams()
+                key.clearPrivateParams();
+            }
+        });
+        this.store.clear();
+        // no need to reset index
+    }
+
+    clear(idx: number) {
+        const keyToClear = this.get(idx);
+        if (keyToClear.isPrivate()) {
+            // @ts-ignore missing definition for clearPrivateParams()
+            keyToClear.clearPrivateParams();
+        }
+        this.store.delete(idx);
+    }
+}
+
+type SerialisedOutputFormat = 'armored' | 'binary' | undefined;
+type SerialisedOutputTypeFromFormat<F extends SerialisedOutputFormat> = F extends 'armored'
+    ? string
+    : F extends 'binary'
+    ? Uint8Array
+    : never;
+
+class KeyManagementApi {
+    protected keyStore = new KeyStore();
+
+    /**
+     * Invalidate all key references by removing all keys from the internal key store.
+     * The private key material corresponding to any PrivateKeyReference is erased from memory.
+     */
+    async clearKeyStore() {
+        this.keyStore.clearAll();
+    }
+
+    /**
+     * Invalidate the key reference by removing the key from the internal key store.
+     * If a PrivateKeyReference is given, the private key material is erased from memory.
+     */
+    async clearKey({ key: keyReference }: { key: KeyReference }) {
+        this.keyStore.clear(keyReference._idx);
+    }
+
+    /**
+     * Generate a key for the given UserID.
+     * The key is stored in the key store, and can be exported using `exportPrivateKey` or `exportPublicKey`.
+     * @param options.userIDs - user IDs as objects: `{ name: 'Jo Doe', email: 'info@jo.com' }`
+     * @param options.type - key algorithm type: ECC (default) or RSA
+     * @param options.rsaBits - number of bits for RSA keys
+     * @param options.curve - elliptic curve for ECC keys
+     * @param options.keyExpirationTime- number of seconds from the key creation time after which the key expires
+     * @param options.subkeys - options for each subkey e.g. `[{ sign: true, passphrase: '123'}]`
+     * @param options.date - use the given date as creation date of the key and the key signatures, instead of the server time
+     * @returns reference to the generated private key
+     */
+    async generateKey(options: WorkerGenerateKeyOptions) {
+        const { privateKey } = await generateKey({ ...options, format: 'object' });
+        // Typescript guards against a passphrase input, but it's best to ensure the option wasn't given since for API simplicity we assume any PrivateKeyReference points to a decrypted key.
+        if (!privateKey.isDecrypted()) {
+            throw new Error(
+                'Unexpected "passphrase" option on key generation. Use "exportPrivateKey" after key generation to obtain a transferable encrypted key.'
+            );
+        }
+        const keyStoreID = this.keyStore.add(privateKey);
+
+        return getPrivateKeyReference(privateKey, keyStoreID);
+    }
+
+    async reformatKey({ privateKey: keyReference, ...options }: WorkerReformatKeyOptions) {
+        const originalKey = this.keyStore.get(keyReference._idx) as PrivateKey;
+        // we have to deep clone before reformatting, since privateParams of reformatted key point to the ones of the given privateKey, and
+        // we do not want reformatted key to be affected if the original key reference is cleared/deleted.
+        // @ts-ignore - missing .clone() definition
+        const keyToReformat = originalKey.clone(true);
+        const { privateKey } = await reformatKey({ ...options, privateKey: keyToReformat, format: 'object' });
+        // Typescript guards against a passphrase input, but it's best to ensure the option wasn't given since for API simplicity we assume any PrivateKeyReference points to a decrypted key.
+        if (!privateKey.isDecrypted()) {
+            throw new Error(
+                'Unexpected "passphrase" option on key reformat. Use "exportPrivateKey" after key reformatting to obtain a transferable encrypted key.'
+            );
+        }
+        const keyStoreID = this.keyStore.add(privateKey);
+
+        return getPrivateKeyReference(privateKey, keyStoreID);
+    }
+
+    /**
+     * Import a private key, which is either already decrypted, or that can be decrypted with the given passphrase.
+     * If a passphrase is given, but the key is already decrypted, importing fails.
+     * Either `armoredKey` or `binaryKey` must be provided.
+     * Note: if the passphrase to decrypt the key is unknown, the key shuld be imported using `importPublicKey` instead.
+     * @param options.passphrase - key passphrase if the input key is encrypted, or `null` if the input key is expected to be already decrypted
+     * @returns reference to imported private key
+     * @throws {Error} if the key cannot be decrypted or importing fails
+     */
+    async importPrivateKey<T extends Data>(
+        { armoredKey, binaryKey, passphrase }: WorkerImportPrivateKeyOptions<T>,
+        _customIdx?: number
+    ) {
+        if (!armoredKey && !binaryKey) {
+            throw new Error('Must provide `armoredKey` or `binaryKey`');
+        }
+        const expectDecrypted = passphrase === null;
+        const maybeEncryptedKey = binaryKey
+            ? await readPrivateKey({ binaryKey })
+            : await readPrivateKey({ armoredKey: armoredKey! });
+        let decryptedKey;
+        if (expectDecrypted) {
+            if (!maybeEncryptedKey.isDecrypted()) {
+                throw new Error('Provide passphrase to import an encrypted private key');
+            }
+            decryptedKey = maybeEncryptedKey;
+            // @ts-ignore missing .validate() types
+            await decryptedKey.validate();
+        } else {
+            decryptedKey = await decryptKey({ privateKey: maybeEncryptedKey, passphrase });
+        }
+
+        const keyStoreID = this.keyStore.add(decryptedKey, _customIdx);
+
+        return getPrivateKeyReference(decryptedKey, keyStoreID);
+    }
+
+    /**
+     * Import a public key.
+     * Either `armoredKey` or `binaryKey` must be provided.
+     * Note: if a private key is given, it will be converted to a public key before import.
+     * @returns reference to imported public key
+     */
+    async importPublicKey<T extends Data>(
+        { armoredKey, binaryKey }: WorkerImportPublicKeyOptions<T>,
+        _customIdx?: number
+    ) {
+        const publicKey = await getKey({ binaryKey, armoredKey });
+        const keyStoreID = this.keyStore.add(publicKey, _customIdx);
+        return getPublicKeyReference(publicKey, keyStoreID);
+    }
+
+    /**
+     * Get the serialized public key.
+     * Exporting a key does not invalidate the corresponding `KeyReference`, nor does it remove the key from internal storage (use `clearKey()` for that).
+     * @param options.format - `'binary'` or `'armored'` format of serialized key
+     * @returns serialized public key
+     */
+    async exportPublicKey<F extends SerialisedOutputFormat = 'armored'>({
+        format = 'armored',
+        key: keyReference,
+    }: {
+        key: KeyReference;
+        format?: F;
+    }): Promise<SerialisedOutputTypeFromFormat<F>> {
+        const maybePrivateKey = this.keyStore.get(keyReference._idx);
+        const publicKey = maybePrivateKey.isPrivate() ? maybePrivateKey.toPublic() : maybePrivateKey;
+        const serializedKey = format === 'binary' ? publicKey.write() : publicKey.armor();
+        return serializedKey as SerialisedOutputTypeFromFormat<F>;
+    }
+
+    /**
+     * Get the serialized private key, encrypted with the given `passphrase`.
+     * Exporting a key does not invalidate the corresponding `keyReference`, nor does it remove the key from internal storage (use `clearKey()` for that).
+     * @param options.passphrase - passphrase to encrypt the key with (non-empty string), or `null` to export an unencrypted key (not recommended).
+     * @param options.format - `'binary'` or `'armored'` format of serialized key
+     * @returns serialized encrypted key
+     */
+    async exportPrivateKey<F extends SerialisedOutputFormat = 'armored'>({
+        format = 'armored',
+        ...options
+    }: {
+        privateKey: PrivateKeyReference;
+        passphrase: string | null;
+        format?: F;
+    }): Promise<SerialisedOutputTypeFromFormat<F>> {
+        const { privateKey: keyReference, passphrase } = options;
+        if (!keyReference.isPrivate()) {
+            throw new Error('Private key expected');
+        }
+        const privateKey = this.keyStore.get(keyReference._idx) as PrivateKey;
+        const doNotEncrypt = passphrase === null;
+        const maybeEncryptedKey = doNotEncrypt ? privateKey : await encryptKey({ privateKey, passphrase });
+
+        const serializedKey = format === 'binary' ? maybeEncryptedKey.write() : maybeEncryptedKey.armor();
+        return serializedKey as SerialisedOutputTypeFromFormat<F>;
+    }
+}
+
+/**
+ * Each instance keeps a dedicated key storage.
+ */
+export class Api extends KeyManagementApi {
+    /**
+     * Init pmcrypto and set the underlying global OpenPGP config.
+     */
+    static init() {
+        initPmcrypto();
+    }
+
+    /**
+     * Encrypt the given data using `encryptionKeys`, `sessionKeys` and `passwords`, after optionally
+     * signing it with `signingKeys`.
+     * Either `textData` or `binaryData` must be given.
+     * A detached signature over the data may be provided by passing either `armoredSignature` or `binarySignature`.
+     * @param options.textData - text data to encrypt
+     * @param options.binaryData - binary data to encrypt
+     * @param options.stripTrailingSpaces - whether trailing spaces should be removed from each line of `textData`
+     * @param options.format - `'binary` or `'armored'` format of serialized signed message
+     * @param options.date - use the given date for the message signature, instead of the server time
+     */
+    async encryptMessage<
+        DataType extends Data,
+        FormatType extends WorkerEncryptOptions<DataType>['format'] = 'armored',
+        DetachedType extends boolean = false
+    >({
+        encryptionKeys: encryptionKeyRefs = [],
+        signingKeys: signingKeyRefs = [],
+        armoredSignature,
+        binarySignature,
+        compress = false,
+        config = {},
+        ...options
+    }: WorkerEncryptOptions<DataType> & { format?: FormatType; detached?: DetachedType }) {
+        const signingKeys = toArray(signingKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
+        );
+        const encryptionKeys = toArray(encryptionKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PublicKey
+        );
+        const inputSignature =
+            binarySignature || armoredSignature ? await getSignature({ armoredSignature, binarySignature }) : undefined;
+
+        if (config.preferredCompressionAlgorithm) {
+            throw new Error(
+                'Passing `config.preferredCompressionAlgorithm` is not supported. Use `compress` option instead.'
+            );
+        }
+
+        const encryptionResult = await encryptMessage<DataType, FormatType, DetachedType>({
+            ...options,
+            encryptionKeys,
+            signingKeys,
+            signature: inputSignature,
+            config: {
+                ...config,
+                preferredCompressionAlgorithm: compress ? enums.compression.zlib : enums.compression.uncompressed,
+            },
+        });
+
+        return encryptionResult;
+    }
+
+    /**
+     * Create a signature over the given data using `signinKeys`.
+     * Either `textData` or `binaryData` must be given.
+     * @param options.textData - text data to sign
+     * @param options.binaryData - binary data to sign
+     * @param options.stripTrailingSpaces - whether trailing spaces should be removed from each line of `textData`
+     * @param options.detached - whether to return a detached signature, without the signed data
+     * @param options.format - `'binary` or `'armored'` format of serialized signed message
+     * @param options.date - use the given date for signing, instead of the server time
+     * @returns serialized signed message or signature
+     */
+    async signMessage<
+        DataType extends Data,
+        FormatType extends WorkerSignOptions<DataType>['format'] = 'armored'
+        // inferring D (detached signature type) is unnecessary since the result type does not depend on it for format !== 'object'
+    >({ signingKeys: signingKeyRefs = [], ...options }: WorkerSignOptions<DataType> & { format?: FormatType }) {
+        const signingKeys = toArray(signingKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
+        );
+        const signResult = await signMessage<DataType, FormatType, boolean>({
+            ...options,
+            signingKeys,
+        });
+
+        return signResult;
+    }
+
+    /**
+     * Verify a signature over the given data.
+     * Either `armoredSignature` or `binarySignature` must be given for the signature, and either `textData` or `binaryData` must be given as data to be verified.
+     * To verify a Cleartext message, which includes both the signed data and the corresponding signature, see `verifyCleartextMessage`.
+     * @param options.textData - expected signed text data
+     * @param options.binaryData - expected signed binary data
+     * @param options.armoredSignature - armored signature to verify
+     * @param options.binarySignature - binary signature to verify
+     * @param options.stripTrailingSpaces - whether trailing spaces should be removed from each line of `textData`.
+     *                                      This option must match the one used when signing.
+     * @returns signature verification result over the given data
+     */
+    async verifyMessage<DataType extends Data, FormatType extends WorkerVerifyOptions<DataType>['format'] = 'utf8'>({
+        armoredSignature,
+        binarySignature,
+        verificationKeys: verificationKeyRefs = [],
+        ...options
+    }: WorkerVerifyOptions<DataType> & { format?: FormatType }) {
+        const verificationKeys = toArray(verificationKeyRefs).map((keyReference) =>
+            this.keyStore.get(keyReference._idx)
+        );
+        const signature = await getSignature({ armoredSignature, binarySignature });
+        const {
+            signatures: signatureObjects, // extracting this is needed for proper type inference of `serialisedResult.signatures`
+            ...verificationResultWithoutSignatures
+        } = await verifyMessage<DataType, FormatType>({ signature, verificationKeys, ...options });
+
+        const serialisedResult = {
+            ...verificationResultWithoutSignatures,
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+        };
+
+        return serialisedResult;
+    }
+
+    /**
+     * Verify a Cleartext message, which includes the signed data and the corresponding signature.
+     * A cleartext message is always in armored form.
+     * To verify a detached signature over some data, see `verifyMessage` instead.
+     * @params options.armoredCleartextSignature - armored cleartext message to verify
+     */
+    async verifyCleartextMessage({
+        armoredCleartextMessage,
+        verificationKeys: verificationKeyRefs = [],
+        ...options
+    }: WorkerVerifyCleartextOptions) {
+        const verificationKeys = toArray(verificationKeyRefs).map((keyReference) =>
+            this.keyStore.get(keyReference._idx)
+        );
+        const cleartextMessage = await readCleartextMessage({ cleartextMessage: armoredCleartextMessage });
+        const {
+            signatures: signatureObjects, // extracting this is needed for proper type inference of `serialisedResult.signatures`
+            ...verificationResultWithoutSignatures
+        } = await verifyCleartextMessage({ cleartextMessage, verificationKeys, ...options });
+
+        const serialisedResult = {
+            ...verificationResultWithoutSignatures,
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+        };
+
+        return serialisedResult;
+    }
+
+    /**
+     * Decrypt a message using `decryptionKeys`, `sessionKey`, or `passwords`, and optionally verify the content using `verificationKeys`.
+     * Eiher `armoredMessage` or `binaryMessage` must be given.
+     * For detached signature verification over the decrypted data, one of `armoredSignature`,
+     * `binarySignature`, `armoredEncryptedSignature` and `binaryEncryptedSignature` may be given.
+     * @param options.armoredMessage - armored data to decrypt
+     * @param options.binaryMessage - binary data to decrypt
+     * @param options.expectSigned - if true, data decryption fails if the message is not signed with the provided `verificationKeys`
+     * @param options.format - whether to return data as a string or Uint8Array. If 'utf8' (the default), also normalize newlines.
+     * @param options.date - use the given date for verification instead of the server time
+     */
+    async decryptMessage<FormatType extends WorkerDecryptionOptions['format'] = 'utf8'>({
+        decryptionKeys: decryptionKeyRefs = [],
+        verificationKeys: verificationKeyRefs = [],
+        armoredMessage,
+        binaryMessage,
+        armoredSignature,
+        binarySignature,
+        armoredEncryptedSignature: armoredEncSignature,
+        binaryEncryptedSignature: binaryEncSingature,
+        ...options
+    }: WorkerDecryptionOptions & { format?: FormatType }) {
+        const decryptionKeys = toArray(decryptionKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
+        );
+        const verificationKeys = toArray(verificationKeyRefs).map((keyReference) =>
+            this.keyStore.get(keyReference._idx)
+        );
+
+        const message = await getMessage({ binaryMessage, armoredMessage });
+        const signature =
+            binarySignature || armoredSignature ? await getSignature({ binarySignature, armoredSignature }) : undefined;
+        const encryptedSignature =
+            binaryEncSingature || armoredEncSignature
+                ? await getMessage({ binaryMessage: binaryEncSingature, armoredMessage: armoredEncSignature })
+                : undefined;
+
+        const { signatures: signatureObjects, ...decryptionResultWithoutSignatures } = await decryptMessage<
+            Data,
+            FormatType
+        >({
+            ...options,
+            message,
+            signature,
+            encryptedSignature,
+            decryptionKeys,
+            verificationKeys,
+        });
+
+        const serialisedResult = {
+            ...decryptionResultWithoutSignatures,
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+        };
+
+        return serialisedResult;
+
+        // TODO: once we have support for the intendedRecipient verification, we should add the
+        // a `verify(publicKeys)` function to the decryption result, that allows verifying
+        // the decrypted signatures after decryption.
+        // Note: asking the apps to call `verifyMessage` separately is not an option, since
+        // the verification result is to be considered invalid outside of the encryption context if the intended recipient is present, see: https://datatracker.ietf.org/doc/html/draft-ietf-openpgp-crypto-refresh#section-5.2.3.32
+    }
+
+    /**
+     * Backwards-compatible decrypt message function, to be only used for email messages that might be of legacy format.
+     * For all other cases, use `decryptMessage`.
+     */
+    async decryptMessageLegacy<FormatType extends WorkerDecryptLegacyOptions['format'] = 'utf8'>({
+        decryptionKeys: decryptionKeyRefs = [],
+        verificationKeys: verificationKeyRefs = [],
+        armoredMessage,
+        armoredSignature,
+        binarySignature,
+        ...options
+    }: WorkerDecryptLegacyOptions & { format?: FormatType }) {
+        const decryptionKeys = toArray(decryptionKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
+        );
+        const verificationKeys = toArray(verificationKeyRefs).map((keyReference) =>
+            this.keyStore.get(keyReference._idx)
+        );
+
+        const signature =
+            binarySignature || armoredSignature ? await getSignature({ binarySignature, armoredSignature }) : undefined;
+
+        const { signatures: signatureObjects, ...decryptionResultWithoutSignatures } =
+            await decryptMessageLegacy<FormatType>({
+                ...options,
+                armoredMessage,
+                signature,
+                decryptionKeys,
+                verificationKeys,
+            });
+
+        const serialisedResult = {
+            ...decryptionResultWithoutSignatures,
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array), // no support for streamed input for now
+        };
+        return serialisedResult;
+    }
+
+    /**
+     * Generating a session key for the specified symmetric algorithm.
+     * To generate a session key based on some recipient's public key preferences,
+     * use `generateSessionKey()` instead.
+     */
+    async generateSessionKeyForAlgorithm(algoName: Parameters<typeof generateSessionKeyForAlgorithm>[0]) {
+        const sessionKeyBytes = await generateSessionKeyForAlgorithm(algoName);
+        return sessionKeyBytes;
+    }
+
+    /**
+     * Generate a session key compatible with the given recipient keys.
+     * To get a session key for a specific symmetric algorithm, use `generateSessionKeyForAlgorithm` instead.
+     */
+    async generateSessionKey({ recipientKeys: recipientKeyRefs = [], ...options }: WorkerGenerateSessionKeyOptions) {
+        const recipientKeys = toArray(recipientKeyRefs).map((keyReference) => this.keyStore.get(keyReference._idx));
+        const sessionKey = await generateSessionKey({ recipientKeys, ...options });
+        return sessionKey;
+    }
+
+    /**
+     * Encrypt a session key with `encryptionKeys`, `passwords`, or both at once.
+     * At least one of `encryptionKeys` or `passwords` must be specified.
+     * @param options.data - the session key to be encrypted e.g. 16 random bytes (for aes128)
+     * @param options.algorithm - algorithm of the session key
+     * @param options.aeadAlgorithm - AEAD algorithm of the session key
+     * @param options.format - `'armored'` or `'binary'` format of the returned encrypted message
+     * @param options.wildcard - use a key ID of 0 instead of the encryption key IDs
+     * @param options.date - use the given date for key validity checks, instead of the server time
+     */
+    async encryptSessionKey<FormatType extends WorkerEncryptSessionKeyOptions['format'] = 'armored'>({
+        encryptionKeys: encryptionKeyRefs = [],
+        ...options
+    }: WorkerEncryptSessionKeyOptions & { format?: FormatType }): Promise<SerialisedOutputTypeFromFormat<FormatType>> {
+        const encryptionKeys = toArray(encryptionKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PublicKey
+        );
+        const encryptedData = await encryptSessionKey<FormatType>({
+            ...options,
+            encryptionKeys,
+        });
+
+        return encryptedData as SerialisedOutputTypeFromFormat<FormatType>;
+    }
+
+    /**
+     * Decrypt the message's session keys using either `decryptionKeys` or `passwords`.
+     * Either `armoredMessage` or `binaryMessage` must be given.
+     * @param options.armoredMessage - an armored message containing encrypted session key packets
+     * @param options.binaryMessage - a binary message containing encrypted session key packets
+     * @param options.date - date to use for key validity checks instead of the server time
+     * @throws if no session key could be found or decrypted
+     */
+    async decryptSessionKey({
+        decryptionKeys: decryptionKeyRefs = [],
+        armoredMessage,
+        binaryMessage,
+        ...options
+    }: WorkerDecryptionOptions) {
+        const decryptionKeys = toArray(decryptionKeyRefs).map(
+            (keyReference) => this.keyStore.get(keyReference._idx) as PrivateKey
+        );
+
+        const message = await getMessage({ binaryMessage, armoredMessage });
+
+        const sessionKey = await decryptSessionKey({
+            ...options,
+            message,
+            decryptionKeys,
+        });
+
+        return sessionKey;
+    }
+
+    async processMIME({ verificationKeys: verificationKeyRefs = [], ...options }: WorkerProcessMIMEOptions) {
+        const verificationKeys = toArray(verificationKeyRefs).map((keyReference) =>
+            this.keyStore.get(keyReference._idx)
+        );
+
+        const { signatures: signatureObjects, ...resultWithoutSignature } = await processMIME({
+            ...options,
+            verificationKeys,
+        });
+
+        const serialisedResult = {
+            ...resultWithoutSignature,
+            signatures: signatureObjects.map((sig) => sig.write() as Uint8Array),
+        };
+        return serialisedResult;
+    }
+
+    async getMessageInfo<DataType extends Data>({
+        armoredMessage,
+        binaryMessage,
+    }: WorkerGetMessageInfoOptions<DataType>): Promise<MessageInfo> {
+        const message = await getMessage({ binaryMessage, armoredMessage });
+        const signingKeyIDs = message.getSigningKeyIDs().map((keyID) => keyID.toHex());
+        const encryptionKeyIDs = message.getEncryptionKeyIDs().map((keyID) => keyID.toHex());
+
+        return { signingKeyIDs, encryptionKeyIDs };
+    }
+
+    async getSignatureInfo<DataType extends Data>({
+        armoredSignature,
+        binarySignature,
+    }: WorkerGetSignatureInfoOptions<DataType>): Promise<SignatureInfo> {
+        const signature = await getSignature({ binarySignature, armoredSignature });
+        const signingKeyIDs = signature.getSigningKeyIDs().map((keyID) => keyID.toHex());
+
+        return { signingKeyIDs };
+    }
+
+    /**
+     * Get basic info about a serialied key without importing it in the key store.
+     * E.g. determine whether the given key is private, and whether it is decrypted.
+     */
+    async getKeyInfo<T extends Data>({ armoredKey, binaryKey }: WorkerGetKeyInfoOptions<T>): Promise<KeyInfo> {
+        const key = await getKey({ binaryKey, armoredKey });
+        const keyIsPrivate = key.isPrivate();
+        const keyIsDecrypted = keyIsPrivate ? key.isDecrypted() : null;
+        const fingerprint = key.getFingerprint();
+        const keyIDs = key.getKeyIDs().map((keyID) => keyID.toHex());
+
+        return {
+            keyIsPrivate,
+            keyIsDecrypted,
+            fingerprint,
+            keyIDs,
+        };
+    }
+
+    /**
+     * Armor a message signature in binary form
+     */
+    async getArmoredSignature({ binarySignature }: { binarySignature: Uint8Array }) {
+        const signature = await getSignature({ binarySignature });
+        return signature.armor();
+    }
+
+    /**
+     * Armor a message given in binary form
+     */
+    async getArmoredMessage({ binaryMessage }: { binaryMessage: Uint8Array }) {
+        const armoredMessage = await armorBytes(binaryMessage);
+        return armoredMessage;
+    }
+
+    /**
+     * Given one or more keys concatenated in binary format, get the corresponding keys in armored format.
+     * The keys are not imported into the key store nor processed further. Both private and public keys are supported.
+     * @returns array of armored keys
+     */
+    async getArmoredKeys({ binaryKeys }: { binaryKeys: Uint8Array }) {
+        const keys = await readKeys({ binaryKeys });
+        return keys.map((key) => key.armor());
+    }
+
+    /**
+     * Returns whether the primary key is revoked.
+     * @param options.date - date to use for signature verification, instead of the server time
+     */
+    async isRevokedKey({ key: keyReference, date }: { key: KeyReference; date?: Date }) {
+        const key = this.keyStore.get(keyReference._idx);
+        const isRevoked = await isRevokedKey(key, date);
+        return isRevoked;
+    }
+
+    /**
+     * Returns whether the primary key is expired, or its creation time is in the future.
+     * @param options.date - date to use for the expiration check, instead of the server time
+     */
+    async isExpiredKey({ key: keyReference, date }: { key: KeyReference; date?: Date }) {
+        const key = this.keyStore.get(keyReference._idx);
+        const isExpired = await isExpiredKey(key, date);
+        return isExpired;
+    }
+
+    /**
+     * Check whether a key can successfully encrypt a message.
+     * This confirms that the key has encryption capabilities, it is neither expired nor revoked, and that its key material is valid.
+     */
+    async canKeyEncrypt({ key: keyReference, date }: { key: KeyReference; date?: Date }) {
+        const key = this.keyStore.get(keyReference._idx);
+        const canEncrypt = await canKeyEncrypt(key, date);
+        return canEncrypt;
+    }
+
+    async getSHA256Fingerprints({ key: keyReference }: { key: KeyReference }) {
+        const key = this.keyStore.get(keyReference._idx);
+        // this is quite slow since it hashes the key packets, even for v5 keys, instead of reusing the fingerprint.
+        // once v5 keys are more widespread and this function can be made more efficient, we could include `sha256Fingerprings` in `KeyReference` or `KeyInfo`.
+        const sha256Fingerprints = await getSHA256Fingerprints(key);
+        return sha256Fingerprints;
+    }
+
+    async computeHash({
+        algorithm,
+        data,
+    }: {
+        algorithm: 'unsafeMD5' | 'unsafeSHA1' | 'SHA512' | 'SHA256';
+        data: Uint8Array;
+    }) {
+        let hash;
+        switch (algorithm) {
+            case 'SHA512':
+                hash = await SHA512(data);
+                return hash;
+            case 'SHA256':
+                hash = await SHA256(data);
+                return hash;
+            case 'unsafeSHA1':
+                hash = await unsafeSHA1(data);
+                return hash;
+            case 'unsafeMD5':
+                hash = await unsafeMD5(data);
+                return hash;
+            default:
+                throw new Error(`Unsupported algorithm: ${algorithm}`);
+        }
+    }
+
+    /**
+     * Replace the User IDs of the target key to match those of the source key.
+     * NOTE: this function mutates the target key in place, and does not update binding signatures.
+     */
+    async replaceUserIDs({
+        sourceKey: sourceKeyReference,
+        targetKey: targetKeyReference,
+    }: {
+        sourceKey: KeyReference;
+        targetKey: PrivateKeyReference;
+    }) {
+        const sourceKey = this.keyStore.get(sourceKeyReference._idx);
+        const targetKey = this.keyStore.get(targetKeyReference._idx);
+        if (targetKey.getFingerprint() !== sourceKey.getFingerprint()) {
+            throw new Error('Cannot replace UserIDs of a different key');
+        }
+
+        targetKey.users = sourceKey.users.map((sourceUser) => {
+            // @ts-ignore missing .clone() definition
+            const destUser = sourceUser.clone();
+            destUser.mainKey = targetKey;
+            return destUser;
+        });
+    }
+}
+
+export interface ApiInterface extends Omit<Api, 'keyStore'> {}
