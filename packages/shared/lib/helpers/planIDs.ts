@@ -1,4 +1,4 @@
-import { Plan, PlanIDs } from '../interfaces';
+import { Organization, Plan, PlanIDs } from '../interfaces';
 import { PLANS, ADDON_NAMES } from '../constants';
 
 const { MAIL, DRIVE, VPN, FAMILY, NEW_VISIONARY, ENTERPRISE, BUNDLE, BUNDLE_PRO, MAIL_PRO, DRIVE_PRO } = PLANS;
@@ -45,7 +45,17 @@ export const getSupportedAddons = (planIDs: PlanIDs) => {
     return supported;
 };
 
-export const switchPlan = ({ planIDs, planID }: { planIDs: PlanIDs; planID?: PLANS | ADDON_NAMES }) => {
+export const switchPlan = ({
+    planIDs,
+    planID,
+    organization,
+    plans,
+}: {
+    planIDs: PlanIDs;
+    planID?: PLANS | ADDON_NAMES;
+    organization?: Organization;
+    plans: Plan[];
+}) => {
     if (planID === undefined) {
         return {};
     }
@@ -58,26 +68,51 @@ export const switchPlan = ({ planIDs, planID }: { planIDs: PlanIDs; planID?: PLA
         Object.keys(supportedAddons).forEach((addon) => {
             const quantity = planIDs[addon as keyof PlanIDs];
 
-            // Transfer domain addons
             if (quantity) {
                 newPlanIDs[addon] = quantity;
             }
 
+            const plan = plans.find(({ Name }) => Name === planID);
+
             // Transfer member addons
-            if (addon.startsWith('1member')) {
-                newPlanIDs[addon] =
-                    (planIDs[ADDON_NAMES.MEMBER] || 0) +
-                    (planIDs[ADDON_NAMES.MEMBER_BUNDLE_PRO] || 0) +
-                    (planIDs[ADDON_NAMES.MEMBER_DRIVE_PRO] || 0) +
-                    (planIDs[ADDON_NAMES.MEMBER_MAIL_PRO] || 0) +
-                    (planIDs[ADDON_NAMES.MEMBER_ENTERPRISE] || 0);
+            if (addon.startsWith('1member') && plan && organization) {
+                const memberAddon = plans.find(({ Name }) => Name === addon);
+                const diffAddresses = (organization.UsedAddresses || 0) - plan.MaxAddresses;
+                const diffSpace = (Math.max(organization.UsedSpace, organization.AssignedSpace) || 0) - plan.MaxSpace; // AssignedSpace is the space assigned to members in the organization which count for addon transfer
+                const diffVPN = (organization.UsedVPN || 0) - plan.MaxVPN;
+                const diffMembers = (organization.UsedMembers || 0) - plan.MaxMembers;
+                const diffCalendars = (organization.UsedCalendars || 0) - plan.MaxCalendars;
+
+                if (memberAddon) {
+                    newPlanIDs[addon] = Math.max(
+                        diffSpace > 0 && memberAddon.MaxSpace ? Math.ceil(diffSpace / memberAddon.MaxSpace) : 0,
+                        diffAddresses > 0 && memberAddon.MaxAddresses
+                            ? Math.ceil(diffAddresses / memberAddon.MaxAddresses)
+                            : 0,
+                        diffVPN > 0 && memberAddon.MaxVPN ? Math.ceil(diffVPN / memberAddon.MaxVPN) : 0,
+                        diffMembers > 0 && memberAddon.MaxMembers ? Math.ceil(diffMembers / memberAddon.MaxMembers) : 0,
+                        diffCalendars > 0 && memberAddon.MaxCalendars
+                            ? Math.ceil(diffCalendars / memberAddon.MaxCalendars)
+                            : 0,
+                        (planIDs[ADDON_NAMES.MEMBER_BUNDLE_PRO] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_DRIVE_PRO] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_MAIL_PRO] || 0) +
+                            (planIDs[ADDON_NAMES.MEMBER_ENTERPRISE] || 0)
+                    );
+                }
             }
 
-            if (addon.startsWith('1domain')) {
-                newPlanIDs[addon] =
-                    (planIDs[ADDON_NAMES.DOMAIN] || 0) +
-                    (planIDs[ADDON_NAMES.DOMAIN_ENTERPRISE] || 0) +
-                    (planIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0);
+            // Transfer domain addons
+            if (addon.startsWith('1domain') && plan && organization) {
+                const domainAddon = plans.find(({ Name }) => Name === addon);
+                const diffDomains = (organization.UsedDomains || 0) - plan.MaxDomains;
+
+                if (domainAddon) {
+                    newPlanIDs[addon] = Math.max(
+                        diffDomains > 0 && domainAddon.MaxDomains ? Math.ceil(diffDomains / domainAddon.MaxDomains) : 0,
+                        (planIDs[ADDON_NAMES.DOMAIN_ENTERPRISE] || 0) + (planIDs[ADDON_NAMES.DOMAIN_BUNDLE_PRO] || 0)
+                    );
+                }
             }
         });
 
