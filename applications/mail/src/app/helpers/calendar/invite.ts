@@ -66,6 +66,7 @@ import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
 import { getOriginalTo } from '@proton/shared/lib/mail/messages';
 import { getUnixTime } from 'date-fns';
 import { serverTime } from 'pmcrypto';
+import { getSupportedCalscale } from '@proton/shared/lib/calendar/icsSurgery/vcal';
 import { MessageStateWithData } from '../../logic/messages/messagesTypes';
 import { FetchAllEventsByUID } from './inviteApi';
 
@@ -592,10 +593,11 @@ export const getSupportedEventInvitation = async ({
 }): Promise<EventInvitation | undefined> => {
     const { calscale, 'x-wr-timezone': xWrTimezone, method } = vcalComponent;
     const supportedMethod = getIcalMethod(method);
+    const supportedCalscale = getSupportedCalscale(calscale);
     if (!supportedMethod) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVALID_METHOD);
     }
-    if (calscale && calscale.value.toLowerCase() !== 'gregorian') {
+    if (!supportedCalscale) {
         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { method: supportedMethod });
     }
     if (!vcalComponent.components?.length) {
