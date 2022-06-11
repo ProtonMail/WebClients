@@ -22,7 +22,7 @@ const ReferralHowItWorks = () => {
                 description={c('info').t`We’ll send you a notice. Cancel anytime.`}
             />
             <VerticalStep
-                icon="calendar-row"
+                icon="calendar-today"
                 title={c('info').t`Day 30: Trial ends`}
                 description={
                     <>
