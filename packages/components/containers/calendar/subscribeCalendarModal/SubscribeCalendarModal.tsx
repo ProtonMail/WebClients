@@ -157,7 +157,7 @@ const SubscribeCalendarModal = ({ isOpen, onClose, onCreateCalendar }: Props) =>
             title={title}
             footer={
                 <>
-                    <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
+                    <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
                     <Button type="submit" color="norm" {...submitProps} />
                 </>
             }
