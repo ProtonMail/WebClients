@@ -2,15 +2,15 @@
 
 ## Improvements
 
--   Allow to add contact in bulk to contact groups
--   Added a “quick action menu” when right click on email
--   Allow to insert link on images in the composer
+-   Added the ability add contacts to contact groups in bulk
+-   Added a Quick action menu when right-clicking on an email
+-   Added the ability to insert a link on images in the composer
 
 ## Bug fixes
 
--   Fixed an issue where download a single attachment should not created a zip file
+-   Fixed an issue where downloading a single attachment would create a zip file
 -   Fixed an issue where a placeholder was briefly shown when accessing a folder known to be empty
--   Fixed an issue where we display incorrect font in the composer
+-   Fixed an issue where an incorrect font would be displayed in the composer
 -   Fixed an issue with composer keyboard shortcuts
 
 ## Release 5.0.1.0 - May 27, 2022
