@@ -40,7 +40,7 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
         await openDropdown(getByTestId, getByText);
 
         // Trust public key dropdown item should not be found
-        const dropdownItem = queryByText('Trust Public Key');
+        const dropdownItem = queryByText('Trust public key');
         expect(dropdownItem).toBeNull();
     });
 
@@ -52,7 +52,7 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
         await openDropdown(getByTestId, getByText);
 
         // Trust public key dropdown item should be found
-        getByText('Trust Public Key');
+        getByText('Trust public key');
     });
 
     it('should contain the trust key action in the dropdown if attached key', async () => {
@@ -63,6 +63,6 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
         await openDropdown(getByTestId, getByText);
 
         // Trust public key dropdown item should be found
-        getByText('Trust Public Key');
+        getByText('Trust public key');
     });
 });
