@@ -166,7 +166,7 @@ const AccountSizeCustomiser = ({
     input: ReactElement;
     mode?: CustomiserMode;
 }) => {
-    const contactMailToLink = <a key={1} href="mailto:ProtonForBusiness@proton.me">{c('Action').t`contact`}</a>;
+    const contactMailToLink = <a key={1} href="mailto:enterprise@proton.me">{c('Action').t`contact`}</a>;
     return (
         <div className="mb2">
             {mode !== 'signup' && (
@@ -174,7 +174,7 @@ const AccountSizeCustomiser = ({
                     <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
                     <div className="mb1">
                         {c('Info')
-                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Customer Success team.`}
+                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Sales team.`}
                     </div>
                 </>
             )}
