@@ -8,4 +8,3 @@ export { default as TimeOutOfSyncTopBanner } from './TimeOutOfSyncTopBanner';
 export { default as NewDomainTopBanner } from './NewDomainTopBanner';
 export { default as TopBanners } from './TopBanners';
 export { default as TopBanner } from './TopBanner';
-export { default as WelcomeV5TopBanner } from './WelcomeV5TopBanner';
