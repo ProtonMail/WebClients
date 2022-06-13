@@ -1,8 +1,10 @@
-import { ChangeEvent, ComponentPropsWithoutRef, useRef } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 import range from '@proton/utils/range';
 
 import InputButton, { InputButtonProps } from './InputButton';
-import { classnames, concatStringProp, generateUID } from '../../helpers';
+import { classnames, concatStringProp } from '../../helpers';
+import useUid from '../../hooks/useUid';
+import ScaleLabel from './ScaleLabel';
 
 export interface ScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, 'onChange'> {
     from: number;
@@ -22,7 +24,9 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
 
     const scale = range(from, to + 1);
 
-    const { current: scaleFromToId } = useRef(generateUID('scale-from-to'));
+    const scaleId = useUid('scale');
+
+    const scaleFromToId = useUid('scale-from-to');
 
     const ariaDescribedBy = concatStringProp([InputButtonProps?.['aria-describedby'], scaleFromToId]);
 
@@ -32,8 +36,8 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
                 {scale.map((n) => (
                     <InputButton
                         key={n}
-                        id={`score-${n}`}
-                        name="score"
+                        id={`${scaleId}-${n}`}
+                        name={scaleId}
                         type="radio"
                         value={n}
                         title={String(n)}
@@ -46,10 +50,7 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
                     </InputButton>
                 ))}
             </div>
-            <div id={scaleFromToId} className="flex flex-justify-space-between flex-align-items-start flex-gap-1">
-                <span className="text-sm m0">{fromLabel}</span>
-                <span className="text-sm m0">{toLabel}</span>
-            </div>
+            <ScaleLabel id={scaleFromToId} fromLabel={fromLabel} toLabel={toLabel} />
         </div>
     );
 };

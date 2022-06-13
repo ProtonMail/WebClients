@@ -34,10 +34,8 @@ const RebrandingFeedbackModal = (props: RebrandingModalProps) => {
             feedbackType="web_clients_relaunch"
             scaleTitle={c('Label').t`How would you describe your experience with the new Proton?`}
             scaleProps={{
-                from: 1,
-                to: 5,
-                fromLabel: c('Label').t`1 - Awful`,
-                toLabel: c('Label').t`5 - Wonderful`,
+                fromLabel: c('Label').t`Awful`,
+                toLabel: c('Label').t`Wonderful`,
             }}
             {...props}
         />
