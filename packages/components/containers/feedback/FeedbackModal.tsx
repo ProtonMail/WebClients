@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
@@ -25,13 +25,14 @@ type FeedbackType = 'v4_migration' | 'calendar_launch' | 'web_clients_relaunch';
 export interface FeedbackModalProps extends ModalProps {
     onClose?: () => void;
     onSuccess?: () => void;
+    onMount?: () => void;
     feedbackType: FeedbackType;
     description?: string;
     scaleTitle: string;
     scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
 }
 
-const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...rest }: FeedbackModalProps) => {
+const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMount, ...rest }: FeedbackModalProps) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -39,6 +40,10 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
         Score: undefined,
         Feedback: '',
     });
+
+    useEffect(() => {
+        onMount?.();
+    }, []);
 
     const handleSubmit = async () => {
         if (model.Score === undefined) {
