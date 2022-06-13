@@ -1,12 +1,21 @@
+# Release beta 29 - 2022-06-22
+
+## Fixed
+
+-   Automatically handle small connection interruptions
+-   Improved automatic pausing
+-   Better duplicity detection after failed upload
+-   Fix download and upload at the same time in Brave
+
 # Introducing Proton's refreshed look.
 
-# [5.0.0 - Beta 28] - 2022-05-25
+# Release beta 28 - 2022-05-25
 
 As we continue to make privacy accessible to everyone, we've updated our apps to provide you with an even better experience with our services.
 
 Proton - Privacy by default.
 
-# [4.0.0-beta.27] - 2022-05-04
+# Release beta 27 - 2022-05-04
 
 ## Added
 
@@ -22,7 +31,7 @@ Proton - Privacy by default.
 -   Improved messaging for download failures caused when user edits folder during download
 -   Fixed issues related to users unable to edit links after changing default addresses
 
-# [4.0.0-beta.26] - 2022-04-06
+# Release beta 26 - 2022-04-06
 
 ## Added
 
@@ -42,7 +51,7 @@ Proton - Privacy by default.
 -   Stuck downloads in initial or pending state
 -   Loading thumbnails
 
-# [4.0.0-beta.25] - 2022-03-09
+# Release beta 25 - 2022-03-09
 
 ## Added
 
@@ -60,7 +69,7 @@ Proton - Privacy by default.
 -   Added missing translations
 -   Uploading huge files
 
-# [4.0.0-beta.24] - 2022-01-25
+# Release beta 24 - 2022-01-25
 
 ## Added
 
@@ -71,7 +80,7 @@ Proton - Privacy by default.
 
 -   Missing copy link for folders within contextual menu
 
-# [4.0.0-beta.23] - 2022-01-05
+# Release beta 23 - 2022-01-05
 
 ## Improved
 
@@ -85,7 +94,7 @@ Proton - Privacy by default.
 
 -   Breadcrumb chevrons sizing
 
-# [4.0.0-beta.22] - 2021-11-24
+# Release beta 22 - 2021-11-24
 
 ## Improved
 
@@ -97,7 +106,7 @@ Proton - Privacy by default.
 
 -   Folder upload via drag&drop on Firefox
 
-# [4.0.0-beta.21] - 2021-10-27
+# Release beta 21 - 2021-10-27
 
 ## Improved
 
@@ -111,7 +120,7 @@ Proton - Privacy by default.
 -   Issue with uploads, page scrolling on Firefox mobile
 -   Issue on folders being skipped during upload
 
-# [4.0.0-beta.20] - 2021-10-06
+# Release beta 20 - 2021-10-06
 
 This release is focused on improvements of existing features.
 
@@ -133,7 +142,7 @@ This release is focused on improvements of existing features.
 -   Undue 404 errors
 -   Missing security headers on /sw/ping
 
-# [4.0.0-beta.19] - 2021-09-01
+# Release beta 19 - 2021-09-01
 
 Just in time for the new season, this latest release improves how you secure and interact with your data. We give you more control when uploading and downloading multiple files and also made a number of fixes and UX improvements to enhance the everyday convenience of using Proton Drive.
 
@@ -150,7 +159,7 @@ Just in time for the new season, this latest release improves how you secure and
 -   Thumbnail of shared image file will be displayed when in download page
 -   Grid mode available in Shared and Trash sections
 
-# [4.0.0-beta.18] - 2021-07-29
+# Release beta 18 - 2021-07-29
 
 ## Fixed
 
@@ -163,7 +172,7 @@ Just in time for the new season, this latest release improves how you secure and
 -   Thumbnails are now visible in list view layout
 -   Downloading multiple files now generates a zip archive that keeps the original folder structure
 
-# [4.0.0-beta.17] - 2021-07-14
+# Release beta 17 - 2021-07-14
 
 With this Proton Drive update we give you more control over how you want to handle duplicates when uploading. Scroll down for other fixes and improvements.
 
@@ -180,9 +189,9 @@ With this Proton Drive update we give you more control over how you want to hand
 -   Download and Preview files in Trash
 -   User can now remove a custom password and use the same URL to share a file
 
-# [4.0.0-beta.16] - 2021-06-15
+# Release beta 16 - 2021-06-15
 
-This time we Proton Drive team brings you updates to the Shared section, improved upload visuals and many more improvements which will enlighten your day using Proton Drive Beta.
+This time we Proton Drive team brings you updates to the Shared section, improved upload visuals and many more improvements which will enlighten your day using Proton Beta
 
 ## Fixed
 
@@ -201,7 +210,7 @@ This time we Proton Drive team brings you updates to the Shared section, improve
 -   Added Download and Share buttons to the Preview mode
 -   Added number of accesses to file Details screen for when a file is shared
 
-# [4.0.0-beta.15] - 2021-05-26
+# Release beta 15 - 2021-05-26
 
 With this product iteration we give you ability to view thumbnails (for new uploads only) in Grid layout mode.
 
@@ -215,7 +224,7 @@ With this product iteration we give you ability to view thumbnails (for new uplo
 
 -   View thumbnails of supported image type files in Grid layout
 
-# [4.0.0-beta.14] - 2021-05-05
+# Release beta 14 - 2021-05-05
 
 Our team has been hard at work smashing bugs and improving experience using Proton Drive.
 
@@ -231,7 +240,7 @@ Our team has been hard at work smashing bugs and improving experience using Prot
 -   Sharing modal has seen copy and layout updates
 -   User can now start sharing a file by pressing a button in the toolbar, or on mouse-over event of a file
 
-# [4.0.0-beta.13] - 2021-04-02
+# Release beta 13 - 2021-04-02
 
 After a password reset you can choose to recover access to your previously encrypted files stored on your Proton Drive. Also, we are adding support of 5 new languages together with sharing experience improvements.
 
@@ -245,7 +254,7 @@ After a password reset you can choose to recover access to your previously encry
 -   Access recovery process to the previously encrypted files after a password reset
 -   5 new languages: Croatian, Traditional Chinese, Greek, Kabyle, and Spanish (Spain)
 
-# [4.0.0-beta.12] - 2021-03-10
+# Release beta 12 - 2021-03-10
 
 We have further improved sharing a link user experience.
 
@@ -259,7 +268,7 @@ We have further improved sharing a link user experience.
 
 -   User can now set expiration date of a shared link by choosing date & time from calendar component
 
-# [4.0.0-beta.11] - 2021-03-03
+# Release beta 11 - 2021-03-03
 
 Among other improvements, this update provides a more convenient way to manage your shared links.
 
@@ -272,13 +281,13 @@ Among other improvements, this update provides a more convenient way to manage y
 -   A new section to overview your shared links. Edit, delete or create a new shared link easily without leaving the section
 -   Storage space quota is now visible at the left bottom of the side menu bar
 
-# [4.0.0-beta.10] - 2021-02-24
+# Release beta 10 - 2021-02-24
 
 ## Fixed
 
 -   Downloading of large files (1GB or more) should be more stable, due to the implemented pagination
 
-# [4.0.0-beta.9] - 2021-02-10
+# Release beta 9 - 2021-02-10
 
 Improvements and fixes to make your everyday experience with Proton Drive better.
 
@@ -294,7 +303,7 @@ Improvements and fixes to make your everyday experience with Proton Drive better
 -   Delete permanently from trash icon is now aligned with the one in ProtonMail
 -   Improved downloading process by implementing a retry
 
-# [4.0.0-beta.8] - 2021-01-13
+# Release beta 8 - 2021-01-13
 
 With this update we bring you more convenience by remembering which layout you chose to browse your files. Also, numerous bug fixes and improvements.
 
@@ -309,7 +318,7 @@ With this update we bring you more convenience by remembering which layout you c
 
 -   Layout (Grid or List), and column used for sorting are remembered
 
-# [4.0.0-beta.7] - 2020-12-17
+# Release beta 7 - 2020-12-17
 
 In order to provide full control and comfort for our initial waves of Beta users, we have opted in to set the shared links to never expire by default. However, user can change this option and set number of days for a shared link to expire.
 
@@ -317,7 +326,7 @@ In order to provide full control and comfort for our initial waves of Beta users
 
 -   By default, shared links will never expire
 
-# [4.0.0-beta.6] - 2020-12-15
+# Release beta 6 - 2020-12-15
 
 More improvements and fixes coming your way before the holiday season kicks in.
 
@@ -333,7 +342,7 @@ More improvements and fixes coming your way before the holiday season kicks in.
 -   Black Friday promo replaced with a regular promo text
 -   og:image and og:description texts added when sharing a link to Proton Drive
 
-# [4.0.0-beta.5] - 2020-12-08
+# Release beta 5 - 2020-12-08
 
 We have updated share with link feature with easier to grasp labels and more convenient layout to set password. Further improved uploading experience by chasing down couple of bugs and increasing upload success rating. Next, we have made file type recognition better by reading its header bytes. Read on for the full list of improvements below, and get in touch with us if you have feedback to share please.
 
@@ -356,7 +365,7 @@ We have updated share with link feature with easier to grasp labels and more con
 -   Improved file preview process when previewing a lot of files
 -   Added tooltips for My files and Trash sections
 
-# [4.0.0-beta.4] - 2020-11-25
+# Release beta 4 - 2020-11-25
 
 The Proton Drive beta now lets you share files with end-to-end encrypted URL links. ​ In addition, we have been improving the upload experience.
 
@@ -372,7 +381,7 @@ The Proton Drive beta now lets you share files with end-to-end encrypted URL lin
 -   Use a pre-generated password for the secure link, or change it
 -   Change the default expiration date (90 days) of a secure link
 
-# [4.0.0-beta.3] - 2020-11-11
+# Release beta 3 - 2020-11-11
 
 We have been working on adding new functionality to ProtonDrive, as well as listening to your feedback to address frictions you've been having.
 
@@ -396,7 +405,7 @@ Thank you for your feedback and time with us.
 -   Refresh button to reload the current view in My files and Trash
 -   Cancel all the transfers when closing Transfer manager
 
-# [4.0.0-beta.2] - 2020-10-14
+# Release beta 2 - 2020-10-14
 
 ## Fixed
 
@@ -414,13 +423,13 @@ Thank you for your feedback and time with us.
 
 -   A new favicon
 
-# [4.0.0-beta.1] - 2020-09-29
+# Release beta 1 - 2020-09-29
 
-Here at Proton we value your support and staying with us over the years. As a token of gratitude, and unveiling our future plans, we give you early access to ProtonDrive Beta.
+Here at Proton we value your support and staying with us over the years. As a token of gratitude, and unveiling our future plans, we give you early access to ProtonBeta
 
 With ProtonDrive, you can upload and manage your files, keep your files secure and access them from anywhere.
 
-ProtonDrive has been hand crafted by using end-to-end and zero-access encryption technologies, so no one can read your data. Not even us. Welcome to ProtonDrive Beta.
+ProtonDrive has been hand crafted by using end-to-end and zero-access encryption technologies, so no one can read your data. Not even us. Welcome to ProtonBeta
 
 ## Added
 
