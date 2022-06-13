@@ -166,7 +166,7 @@ const AccountSizeCustomiser = ({
     input: ReactElement;
     mode?: CustomiserMode;
 }) => {
-    const contactMailToLink = <a key={1} href="mailto:ProtonForBusiness@proton.me">{c('Action').t`contact`}</a>;
+    const contactMailToLink = <a key={1} href="mailto:enterprise@proton.me">{c('Action').t`contact`}</a>;
     return (
         <div className="mb2">
             {mode !== 'signup' && (
