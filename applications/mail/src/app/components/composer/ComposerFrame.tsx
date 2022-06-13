@@ -1,6 +1,7 @@
 import { useEffect, DragEvent, useState, useRef } from 'react';
-import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary } from '@proton/components';
+import { classnames, useToggle, useMailSettings, useHandler, ErrorBoundary, useSideApp } from '@proton/components';
 import { COMPOSER_MODE } from '@proton/shared/lib/constants';
+import { SIDE_APP_WIDTH } from '@proton/shared/lib/sideApp/constants';
 import ComposerTitleBar from './ComposerTitleBar';
 import { computeComposerStyle, shouldBeMaximized } from '../../helpers/composerPositioning';
 import { WindowSize, Breakpoints } from '../../models/utils';
@@ -32,6 +33,7 @@ const ComposerFrame = ({
     const [mailSettings] = useMailSettings();
     const composerFrameRef = useRef<HTMLDivElement>(null);
     const composerRef = useRef<ComposerAction>(null);
+    const { sideAppUrl } = useSideApp();
 
     // Minimized status of the composer
     const { state: minimized, toggle: toggleMinimized } = useToggle(false);
@@ -41,6 +43,7 @@ const ComposerFrame = ({
         mailSettings?.ComposerMode === COMPOSER_MODE.MAXIMIZED
     );
 
+    const windowWidth = sideAppUrl ? windowSize.width - SIDE_APP_WIDTH : windowSize.width;
     const { style, customClasses } = computeComposerStyle({
         index,
         count,
@@ -48,7 +51,7 @@ const ComposerFrame = ({
         maximized,
         isNarrow: breakpoints.isNarrow,
         windowHeight: windowSize.height,
-        windowWidth: windowSize.width,
+        windowWidth: windowWidth,
     });
 
     const {
@@ -60,7 +63,7 @@ const ComposerFrame = ({
         maximized,
         minimized,
         totalComposers: count,
-        windowWidth: windowSize.width,
+        windowWidth: windowWidth,
     });
 
     // onClose handler can be called in a async handler

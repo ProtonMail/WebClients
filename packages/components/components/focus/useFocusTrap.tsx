@@ -63,6 +63,8 @@ const useFocusTrap = ({
     const prevOpenRef = useRef(false);
     const pendingRef = useRef('');
 
+    const isIframe = window.self !== window.top;
+
     useEffect(() => {
         prevOpenRef.current = active;
     }, [active]);
@@ -155,8 +157,15 @@ const useFocusTrap = ({
         };
 
         const contain = (root: HTMLDivElement) => {
+            // In the case where the app is inside an iframe, the focus trap can block the parent app to take the focus
+            // So it becomes impossible to use inputs for example
+            // In that case, iframe side, we see that the active element is the iframe body
+            // So if we see that the activeElement is the root body, it means we want to take the focus outside the iframe
+            const isFocusedElementOutsideFrame = root.ownerDocument.body === document.activeElement && isIframe;
+
             // If the current focused element is not in this root. E.g. no autoFocus
-            if (!root.contains(document.activeElement)) {
+            // and the focused element is inside the frame, we can focus the element
+            if (!root.contains(document.activeElement) && !isFocusedElementOutsideFrame) {
                 // If the first tabbable element should not be focused, fall back to the container
                 if (!enableInitialFocus) {
                     focusElement(root);

@@ -8,6 +8,8 @@ import { AppLink, SettingsLink } from '@proton/components';
 import { getUnixTime } from 'date-fns';
 import { InvitationModel } from './invite';
 
+import OpenInCalendarButton from '../../components/message/extras/calendar/OpenInCalendarButton';
+
 const calendarAppName = getAppName(APPS.PROTONCALENDAR);
 
 export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invitationIcs'>) => {
@@ -142,22 +144,17 @@ export const getCalendarEventLink = (model: RequireSome<InvitationModel, 'invita
     const eventID = invitationApi?.calendarEvent.ID;
     const recurrenceIDProperty = invitationApi?.vevent['recurrence-id'];
     const recurrenceID = recurrenceIDProperty ? getUnixTime(propertyToUTCDate(recurrenceIDProperty)) : undefined;
-    const params = new URLSearchParams();
-    params.set('Action', 'VIEW');
-    params.set('EventID', eventID);
-    params.set('CalendarID', calendarID);
-    if (recurrenceID) {
-        params.set('RecurrenceID', `${recurrenceID}`);
-    }
-    const linkTo = calendarID && eventID ? `/event?${params.toString()}` : undefined;
-    if (!linkTo) {
-        return null;
-    }
+
+    const linkString = isOutdated
+        ? c('Link').t`Open updated event in ${calendarAppName}`
+        : c('Link').t`Open in ${calendarAppName}`;
+
     return (
-        <AppLink to={linkTo} toApp={APPS.PROTONCALENDAR}>
-            {isOutdated
-                ? c('Link').t`Open updated event in ${calendarAppName}`
-                : c('Link').t`Open in ${calendarAppName}`}
-        </AppLink>
+        <OpenInCalendarButton
+            linkString={linkString}
+            calendarID={calendarID}
+            eventID={eventID}
+            recurrenceID={recurrenceID}
+        />
     );
 };

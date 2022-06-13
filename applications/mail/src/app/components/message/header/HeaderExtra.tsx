@@ -14,7 +14,8 @@ import ExtraDecryptedSubject from '../extras/ExtraDecryptedSubject';
 import ExtraScheduledMessage from '../extras/ExtraScheduledMessage';
 import EmailReminderWidget from '../extras/calendar/EmailReminderWidget';
 import ExtraDarkStyle from '../extras/ExtraDarkStyle';
-import { MessageState, MessageStateWithData } from '../../../logic/messages/messagesTypes';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { getMessageHasData } from '../../../helpers/message/messages';
 
 interface Props {
     message: MessageState;
@@ -63,8 +64,10 @@ const HeaderExtra = ({
                 />
             )}
 
-            {messageLoaded && received && <EmailReminderWidget message={message.data} errors={message.errors} />}
-            {messageLoaded && received ? <ExtraEvents message={message as MessageStateWithData} /> : null}
+            {messageLoaded && received && getMessageHasData(message) && (
+                <EmailReminderWidget message={message.data} errors={message.errors} />
+            )}
+            {messageLoaded && received && getMessageHasData(message) ? <ExtraEvents message={message} /> : null}
             {isScheduledMessage && scheduledFeature?.Value ? <ExtraScheduledMessage message={message} /> : null}
 
             <span className="inline-flex flex-row on-mobile-w100 hidden-empty">

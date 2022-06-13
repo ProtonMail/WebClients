@@ -194,7 +194,12 @@ const EventForm = ({
     );
 
     const notificationsRow = (
-        <IconRow id={NOTIFICATION_INPUT_ID} icon="bell" title={c('Label').t`Notifications`}>
+        <IconRow
+            id={NOTIFICATION_INPUT_ID}
+            icon="bell"
+            title={c('Label').t`Notifications`}
+            labelClassName="pb0-5 on-mobile-mt0-5"
+        >
             {isAllDay ? (
                 <Notifications
                     hasType

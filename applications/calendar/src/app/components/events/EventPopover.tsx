@@ -1,8 +1,9 @@
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
-import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
+import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
 
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import noop from '@proton/utils/noop';
@@ -10,8 +11,20 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
 import { useMemo, useRef } from 'react';
-import { Alert, Badge, Loader, useLoading, CalendarInviteButtons, ButtonLike, Icon, Tooltip } from '@proton/components';
+import { getUnixTime } from 'date-fns';
+import {
+    Alert,
+    Badge,
+    Loader,
+    useLoading,
+    CalendarInviteButtons,
+    ButtonLike,
+    Icon,
+    Tooltip,
+    AppLink,
+} from '@proton/components';
 import { c } from 'ttag';
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
@@ -28,6 +41,7 @@ import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
 import useReadEvent from './useReadEvent';
+import { getIsSideApp } from '../../helpers/views';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
@@ -41,6 +55,7 @@ interface Props {
     style: any;
     popoverRef: any;
     event: CalendarViewEvent | CalendarViewEventTemporaryEvent;
+    view: VIEWS;
     tzid: string;
     weekStartsOn: WeekStartsOn;
     isNarrow: boolean;
@@ -58,6 +73,7 @@ const EventPopover = ({
     popoverRef,
     event: targetEvent,
     event: { start, end, isAllDay, isAllPartDay },
+    view,
     tzid,
     weekStartsOn,
     isNarrow,
@@ -68,6 +84,16 @@ const EventPopover = ({
 
     const targetEventData = targetEvent?.data || {};
     const { eventReadResult, eventData, calendarData } = targetEventData;
+
+    const recurrenceDate = toLocalDate(fromUTCDate(start));
+    const recurrenceTimestamp = getUnixTime(recurrenceDate);
+    const linkTo =
+        eventData &&
+        getLinkToCalendarEvent({
+            calendarID: eventData.CalendarID,
+            eventID: eventData.ID,
+            recurrenceID: recurrenceTimestamp,
+        });
 
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
 
@@ -174,6 +200,18 @@ const EventPopover = ({
         </Tooltip>
     );
 
+    const viewEventButton = getIsSideApp(view) && (
+        <Tooltip title={c('View event button tooltip').t`Open in a new tab`}>
+            <AppLink
+                to={linkTo || '/'}
+                selfOpening
+                className="mr0-5 button button-small button-ghost-weak button-for-icon"
+            >
+                <Icon name="arrow-out-square" size={14} />
+            </AppLink>
+        </Tooltip>
+    );
+
     const actions = {
         accept: () => onChangePartstat(ICAL_ATTENDEE_STATUS.ACCEPTED),
         acceptTentatively: () => onChangePartstat(ICAL_ATTENDEE_STATUS.TENTATIVE),
@@ -242,6 +280,7 @@ const EventPopover = ({
                             {editButton}
                             {duplicateButton}
                             {deleteButton}
+                            {viewEventButton}
                         </>
                     )
                 }

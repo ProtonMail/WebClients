@@ -1,5 +1,5 @@
 import { getSelfAddressData } from '@proton/shared/lib/calendar/deserialize';
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { c } from 'ttag';
 import { getUnixTime } from 'date-fns';
 import { getParsedHeadersFirstValue } from '@proton/shared/lib/mail/messages';
@@ -53,12 +53,14 @@ import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import { MessageErrors } from '../../../../logic/messages/messagesTypes';
 
 import './CalendarWidget.scss';
+import OpenInCalendarButton from './OpenInCalendarButton';
+import useCalendarWidgetSideAppEvents from './useCalendarWidgetSideAppEvents';
 
 const EVENT_NOT_FOUND_ERROR = 'EVENT_NOT_FOUND';
 const DECRYPTION_ERROR = 'DECRYPTION_ERROR';
 
 interface EmailReminderWidgetProps {
-    message?: Pick<Message, 'ID' | 'ParsedHeaders'>;
+    message: Pick<Message, 'ID' | 'ParsedHeaders'>;
     errors?: MessageErrors;
 }
 
@@ -82,6 +84,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<React.ReactNode>(null);
     const [loadedWidget, setLoadedWidget] = useState<string>();
+    const [refreshCount, setRefreshCount] = useState<number>(0);
 
     const { createNotification } = useNotifications();
     const api = useApi();
@@ -91,10 +94,23 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const getAddressKeys = useGetAddressKeys();
 
     const isMounted = useIsMounted();
+    // setters don't need to be listed as dependencies in a callback
+    const refresh = useCallback(() => {
+        if (isMounted()) {
+            setLoadedWidget('');
+            setRefreshCount((count) => count + 1);
+        }
+    }, []);
 
     const messageHasDecryptionError = !!errors?.decryption?.length;
 
     const { modal: linkModal } = useLinkHandler(eventReminderRef, mailSettings);
+
+    useCalendarWidgetSideAppEvents({
+        messageID: message.ID,
+        calendarEvent,
+        refresh,
+    });
 
     useEffect(() => {
         void (async () => {
@@ -111,7 +127,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                 setLoadedWidget('');
                 return;
             }
-            if (loadedWidget === message?.ID) {
+            if (loadedWidget === message.ID) {
                 return;
             }
             let calendarData;
@@ -284,11 +300,11 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
             } finally {
                 if (isMounted()) {
                     setIsLoading(false);
-                    setLoadedWidget(message?.ID);
+                    setLoadedWidget(message.ID);
                 }
             }
         })();
-    }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError, message?.ID]);
+    }, [calendarIdHeader, eventIdHeader, messageHasDecryptionError, message.ID, refreshCount]);
 
     const sanitizedAndUrlifiedLocation = useMemo(() => {
         const trimmedLocation = vevent?.location?.value?.trim();
@@ -340,14 +356,6 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
         : undefined;
     const participantsList = getParticipantsList(participants, organizerParticipant);
 
-    const params = new URLSearchParams();
-    params.set('Action', 'VIEW');
-    params.set('EventID', `${eventIdHeader}`);
-    params.set('CalendarID', `${calendarIdHeader}`);
-    params.set('RecurrenceID', `${occurrenceHeader}`);
-
-    const linkTo = `/event?${params.toString()}`;
-
     const [startDate, endDate] = getEventLocalStartEndDates(calendarEvent, parseInt(occurrenceHeader, 10));
     const isOutdated = (sequence?.value || 0) > parseInt(`${sequenceHeader}`, 10);
 
@@ -372,8 +380,12 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                             endDate={endDate}
                             isAllDay={!!FullDay}
                         />
-                        <AppLink toApp={APPS.PROTONCALENDAR} to={linkTo}>{c('Link to calendar event')
-                            .t`Open in ${CALENDAR_APP_NAME}`}</AppLink>
+                        <OpenInCalendarButton
+                            linkString={c('Link to calendar event').t`Open in ${CALENDAR_APP_NAME}`}
+                            calendarID={calendarEvent?.CalendarID || calendarIdHeader}
+                            eventID={calendarEvent?.ID || eventIdHeader}
+                            recurrenceID={parseInt(occurrenceHeader, 10)}
+                        />
                     </div>
                     <hr className="m0" />
                     <div className="p1-5">

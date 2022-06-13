@@ -6,9 +6,9 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { LogoProps } from './Logo';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
-const CalendarLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props) => {
+const CalendarLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
     const appName = getAppName(APPS.PROTONCALENDAR);
 
     // This logo can be several times in the view, ids has to be different each time
@@ -104,7 +104,7 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, ...rest }: P
                     <stop offset=".99" stopColor="#54B7FF" />
                 </radialGradient>
             </defs>
-            <title id={`${uid}-title`}>{appName}</title>
+            {hasTitle && <title id={`${uid}-title`}>{appName}</title>}
         </svg>
     );
 };

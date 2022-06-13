@@ -70,6 +70,7 @@ export enum FeatureCode {
     MailContextMenu = 'MailContextMenu',
     NudgeProton = 'NudgeProton',
     EORedesign = 'EORedesign',
+    CalendarViewInMail = 'CalendarViewInMail',
 }
 
 export interface FeaturesContextValue {

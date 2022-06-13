@@ -42,6 +42,7 @@ import { PreventLeaveProvider } from '../../hooks';
 import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoader';
 import ThemeProvider from '../themes/ThemeProvider';
 import SpotlightProvider from '../../components/spotlight/Provider';
+import { SideAppUrlProvider } from '../../hooks/useSideApp';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -288,22 +289,26 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
                                                     <AuthenticationProvider store={authenticationValue}>
                                                         <CacheProvider cache={cacheRef.current}>
                                                             <GlobalLoaderProvider>
-                                                                <GlobalLoader />
-                                                                <NotificationsChildren />
-                                                                {(() => {
-                                                                    if (isLoggingOut) {
-                                                                        return (
-                                                                            <Signout
-                                                                                onDone={handleFinalizeLogout}
-                                                                                onLogout={() => consumerLogoutPromise}
-                                                                            />
-                                                                        );
-                                                                    }
-                                                                    if (pathRef.current) {
-                                                                        return null;
-                                                                    }
-                                                                    return children;
-                                                                })()}
+                                                                <SideAppUrlProvider>
+                                                                    <GlobalLoader />
+                                                                    <NotificationsChildren />
+                                                                    {(() => {
+                                                                        if (isLoggingOut) {
+                                                                            return (
+                                                                                <Signout
+                                                                                    onDone={handleFinalizeLogout}
+                                                                                    onLogout={() =>
+                                                                                        consumerLogoutPromise
+                                                                                    }
+                                                                                />
+                                                                            );
+                                                                        }
+                                                                        if (pathRef.current) {
+                                                                            return null;
+                                                                        }
+                                                                        return children;
+                                                                    })()}
+                                                                </SideAppUrlProvider>
                                                             </GlobalLoaderProvider>
                                                         </CacheProvider>
                                                     </AuthenticationProvider>

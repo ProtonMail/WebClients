@@ -22,6 +22,13 @@ export const getAppFromPathname = (pathname: string): APP_NAMES | undefined => {
     });
 };
 
+export const getAppFromHostname = (hostname: string): APP_NAMES | undefined => {
+    return ALLOWED_APPS.find((appName) => {
+        const slug = getSlugFromApp(appName);
+        return hostname.match(`^${slug}\.`);
+    });
+};
+
 export const getAppFromPathnameSafe = (pathname: string) => {
     const trimmedPathname = stripLeadingAndTrailingSlash(stripLocalBasenameFromPathname(pathname));
     return getAppFromPathname(trimmedPathname);
