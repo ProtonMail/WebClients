@@ -5,6 +5,7 @@ import mdx from './VerticalSteps.mdx';
 
 export default {
     component: VerticalSteps,
+    subcomponents: { VerticalStep },
     title: 'components/VerticalSteps',
     parameters: { docs: { page: mdx } },
 };
@@ -35,7 +36,3 @@ export const Basic = () => (
         />
     </VerticalSteps>
 );
-
-export const StoryWithoutCanvas = () => <div>I am a story without a canvas</div>;
-
-export const StoryWithCanvas = () => <div>I am a story with a canvas</div>;
