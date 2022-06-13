@@ -8,10 +8,15 @@ import {
     useModals,
     usePopperAnchor,
     useModalState,
+    useMailSettings,
 } from '@proton/components';
+import { useHistory } from 'react-router-dom';
 import { OpenPGPKey } from 'pmcrypto';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
 import { Recipient } from '@proton/shared/lib/interfaces';
+import { changeSearchParams } from '@proton/shared/lib/helpers/url';
+import { MAILBOX_LABEL_IDS, VIEW_LAYOUT } from '@proton/shared/lib/constants';
+
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
@@ -21,6 +26,7 @@ import { MESSAGE_ACTIONS } from '../../../constants';
 import { useContactsMap } from '../../../hooks/contact/useContacts';
 import RecipientItemSingle from './RecipientItemSingle';
 import { MessageState } from '../../../logic/messages/messagesTypes';
+import { getHumanLabelID } from '../../../helpers/labels';
 
 interface Props {
     message?: MessageState;
@@ -52,11 +58,11 @@ const MailRecipientItemSingle = ({
     isExpanded,
 }: Props) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-
+    const history = useHistory();
     const { createModal } = useModals();
     const contactsMap = useContactsMap();
     const { getRecipientLabel } = useRecipientLabel();
-
+    const [mailSettings] = useMailSettings();
     const onCompose = useOnCompose();
     const onMailTo = useOnMailTo();
 
@@ -109,6 +115,31 @@ const MailRecipientItemSingle = ({
         setTrustPublicKeyModalOpen(true);
     };
 
+    const handleClickSearch = (event: MouseEvent) => {
+        event.stopPropagation();
+
+        if (recipient.Address) {
+            const humanLabelID = getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL);
+            let newPathname = `/${humanLabelID}`;
+
+            if (mailSettings?.ViewLayout === VIEW_LAYOUT.COLUMN) {
+                const pathname = history.location.pathname.split('/');
+                pathname[1] = humanLabelID;
+                newPathname = pathname.join('/');
+            }
+
+            history.push(
+                changeSearchParams(newPathname, history.location.hash, {
+                    keyword: recipient.Address,
+                    page: undefined,
+                    sort: undefined,
+                })
+            );
+        }
+
+        close();
+    };
+
     const customDropdownActions = (
         <>
             <hr className="my0-5" />
@@ -133,14 +164,22 @@ const MailRecipientItemSingle = ({
                     <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
-
+            <DropdownMenuButton
+                className="text-left flex flex-nowrap flex-align-items-center"
+                onClick={handleClickSearch}
+            >
+                <Icon name="envelope-magnifying-glass" className="mr0-5" />
+                <span className="flex-item-fluid mtauto mbauto">
+                    {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
+                </span>
+            </DropdownMenuButton>
             {showTrustPublicKey && (
                 <DropdownMenuButton
                     className="text-left flex flex-nowrap flex-align-items-center"
                     onClick={handleClickTrust}
                 >
                     <Icon name="user" className="mr0-5" />
-                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust Public Key`}</span>
+                    <span className="flex-item-fluid mtauto mbauto">{c('Action').t`Trust public key`}</span>
                 </DropdownMenuButton>
             )}
         </>
