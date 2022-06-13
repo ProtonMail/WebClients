@@ -4,14 +4,14 @@ import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
 import {
     Button,
-    Scale,
-    ScaleProps,
     TextArea,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalProps,
+    EmojiScale,
+    EmojiScaleProps,
 } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
 
@@ -29,7 +29,7 @@ export interface FeedbackModalProps extends ModalProps {
     feedbackType: FeedbackType;
     description?: string;
     scaleTitle: string;
-    scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
+    scaleProps: Omit<EmojiScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
 }
 
 const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMount, ...rest }: FeedbackModalProps) => {
@@ -94,7 +94,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMo
                         {scaleTitle}
                     </label>
                     <div>
-                        <Scale
+                        <EmojiScale
                             {...scaleProps}
                             value={model.Score}
                             InputButtonProps={{ 'aria-describedby': 'score-label' }}
@@ -102,6 +102,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMo
                         />
                     </div>
                 </div>
+
                 {model.Score !== undefined && (
                     <div>
                         <label className="mb1 block text-semibold" htmlFor="feedback-label">{c('new_plans: label')
