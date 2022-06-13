@@ -57,7 +57,7 @@ describe('Encrypted Outside Unlock', () => {
         const { getByText, getByTestId } = await EORender(<EOUnlock {...props} />, '/eo/:id');
 
         // Unlock form is displayed
-        getByText('Decrypt message');
+        getByText('Unlock message');
 
         const unlockInput = getByTestId('unlock:input');
 
@@ -87,7 +87,7 @@ describe('Encrypted Outside Unlock', () => {
         const { getByText, getByTestId } = await EORender(<EOUnlock {...props} />, '/eo/:id');
 
         // Unlock form is displayed
-        getByText('Decrypt message');
+        getByText('Unlock message');
 
         const unlockInput = getByTestId('unlock:input');
 
