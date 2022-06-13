@@ -78,7 +78,8 @@
 	}
 
 	.keep-color {
-		color-adjust: exact;
+		/* stylelint-disable-next-line */
+		print-color-adjust: exact;
 	}
 
 	.main {
