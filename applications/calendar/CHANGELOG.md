@@ -1,3 +1,10 @@
+## Release: 5.0.2 — June 22, 2022
+
+### Improvements
+
+-   Make ICS parsing more robust
+-   Make displayed GMT offset more representative of the date range in view
+
 # Introducing Proton's refreshed look.
 
 ## Release: 5.0.0 — May 25, 2022
