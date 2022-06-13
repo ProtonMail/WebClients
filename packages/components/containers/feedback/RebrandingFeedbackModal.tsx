@@ -13,14 +13,16 @@ const RebrandingFeedbackModal = (props: RebrandingModalProps) => {
     const rebranding = useFeature<RebrandingFeatureValue>(FeatureCode.RebrandingFeedback);
 
     const handleSuccess = () => {
-        /*
-         * The value of the rebranding feature is guaranteed to exist here
-         * because we're disabling the Feedback Modal until it's available.
-         */
-        rebranding.update({
-            ...rebranding.feature!.Value,
-            hasGivenRebrandingFeedback: true,
-        });
+        if (rebranding.feature?.Value.hasGivenRebrandingFeedback !== true) {
+            /*
+             * The value of the rebranding feature is guaranteed to exist here
+             * because we're disabling the Feedback Modal until it's available.
+             */
+            rebranding.update({
+                ...rebranding.feature!.Value,
+                hasGivenRebrandingFeedback: true,
+            });
+        }
     };
 
     if (!rebranding.feature?.Value) {
