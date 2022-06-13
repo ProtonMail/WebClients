@@ -24,7 +24,6 @@ import {
     classnames,
     ProtonLogo,
     IconSize,
-    WelcomeV5TopBanner,
     useActiveBreakpoint,
 } from '@proton/components';
 
@@ -131,7 +130,7 @@ const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, ha
     const appVersion = getAppVersion(APP_VERSION);
     const { isTinyMobile } = useActiveBreakpoint();
 
-    const welcome = getIsProtonMailDomain() ? <NudgeTopBanner /> : <WelcomeV5TopBanner />;
+    const welcome = getIsProtonMailDomain() ? <NudgeTopBanner /> : null;
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h100 sign-layout-bg scroll-if-needed relative">
