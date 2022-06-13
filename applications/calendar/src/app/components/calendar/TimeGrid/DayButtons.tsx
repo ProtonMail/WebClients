@@ -8,8 +8,9 @@ interface Props {
     date: Date;
     onClickDate?: (value: Date) => void;
     weekdays: string[];
+    weekdaysSingle: string[];
 }
-const DayButtons = ({ days, now, date, onClickDate, weekdays }: Props) => {
+const DayButtons = ({ days, now, date, onClickDate, weekdays, weekdaysSingle }: Props) => {
     const result = days.map((day) => {
         return (
             <button
@@ -25,10 +26,10 @@ const DayButtons = ({ days, now, date, onClickDate, weekdays }: Props) => {
                     <span className="calendar-grid-heading-day-fullname">{weekdays[day.getUTCDay()]}</span>
 
                     <span className="calendar-grid-heading-day-shortname no-desktop no-tablet" aria-hidden="true">
-                        {weekdays[day.getUTCDay()][0]}
+                        {weekdaysSingle[day.getUTCDay()]}
                     </span>
                 </span>
-                <span className="calendar-grid-heading-number inline-flex flex-justify-center flex-align-items-center color-norm">
+                <span className="calendar-grid-heading-number inline-flex flex-justify-center flex-align-items-center color-norm flex-item-noshrink">
                     {day.getUTCDate()}
                 </span>
             </button>

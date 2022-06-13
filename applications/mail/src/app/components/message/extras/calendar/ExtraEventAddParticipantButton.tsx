@@ -1,4 +1,4 @@
-import { Button, useLoading, useNotifications } from '@proton/components';
+import { Button, useLoading, useNotifications, useSideApp } from '@proton/components';
 import useAddAttendees from '@proton/components/containers/calendar/hooks/useAddAttendees';
 import { getAttendeeEmail, withPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
@@ -9,6 +9,9 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiSuccessResponses } from '@proton/shared/lib/interfaces/calendar';
 import { EncryptionPreferencesError } from '@proton/shared/lib/mail/encryptionPreferences';
+import { postMessageToIframe } from '@proton/shared/lib/sideApp/helpers';
+import { APPS } from '@proton/shared/lib/constants';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
 import { Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 import { getDisableButtons, InvitationModel, UPDATE_ACTION } from '../../../../helpers/calendar/invite';
@@ -24,6 +27,7 @@ const ExtraEventAddParticipantButton = ({ model, setModel }: Props) => {
     const [loading, withLoading] = useLoading();
     const contactEmailsMap = useContactsMap();
     const addAttendees = useAddAttendees();
+    const { sideAppUrl } = useSideApp();
 
     const {
         calendarData,
@@ -93,6 +97,17 @@ const ExtraEventAddParticipantButton = ({ model, setModel }: Props) => {
                 return handleError();
             }
             handleSuccess(response);
+            // If the calendar app is opened in the side panel,
+            // we want to call the calendar event manager to refresh the view
+            if (sideAppUrl) {
+                postMessageToIframe(
+                    {
+                        type: SIDE_APP_EVENTS.SIDE_APP_CALL_CALENDAR_EVENT_MANAGER,
+                        payload: { calendarID: calendarEvent.CalendarID },
+                    },
+                    APPS.PROTONCALENDAR
+                );
+            }
         } catch (e: any) {
             if (e instanceof EncryptionPreferencesError) {
                 const email = getAttendeeEmail(attendeeToSave);

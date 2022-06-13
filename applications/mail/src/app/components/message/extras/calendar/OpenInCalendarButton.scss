@@ -1,0 +1,24 @@
+@import '../../../../../../../../node_modules/@proton/styles/scss/config/index';
+
+//TODO: Remove when $breakpoint-large will part of useActiveBreakpoints
+.open-calendar {
+	@include respond-to($breakpoint-medium-sidepanel) {
+		&--small-screens {
+			display: inline;
+		}
+
+		&--large-screens {
+			display: none;
+		}
+	}
+
+	@include respond-to($breakpoint-medium-sidepanel, 'min') {
+		&--small-screens {
+			display: none;
+		}
+
+		&--large-screens {
+			display: inline;
+		}
+	}
+}

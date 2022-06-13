@@ -1,4 +1,4 @@
-import { forwardRef, memo, Ref } from 'react';
+import { forwardRef, memo, ReactNode, Ref } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 import {
     useMailSettings,
@@ -28,10 +28,11 @@ interface Props {
     params: MailUrlParams;
     breakpoints: Breakpoints;
     isComposerOpened: boolean;
+    rightSidebarContent?: ReactNode;
 }
 
 const PageContainer = (
-    { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened }: Props,
+    { params: { elementID, labelID, messageID }, breakpoints, isComposerOpened, rightSidebarContent }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const [mailSettings] = useMailSettings();
@@ -56,6 +57,7 @@ const PageContainer = (
             labelID={labelID}
             elementID={elementID}
             breakpoints={breakpoints}
+            rightSidebarContent={rightSidebarContent}
         >
             <MailStartupModals
                 onboardingOpen={!!welcomeFlags.isWelcomeFlow}
@@ -82,6 +84,7 @@ const MemoPageContainer = memo(forwardRef(PageContainer));
 interface PageParamsParserProps {
     breakpoints: Breakpoints;
     isComposerOpened: boolean;
+    rightSidebarContent?: ReactNode;
 }
 
 const PageParamsParser = (props: PageParamsParserProps, ref: Ref<HTMLDivElement>) => {

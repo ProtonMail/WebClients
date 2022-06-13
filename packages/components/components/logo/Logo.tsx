@@ -18,6 +18,7 @@ export interface LogoProps extends Omit<ComponentPropsWithoutRef<'svg'>, 'size'>
     appName: APP_NAMES;
     size?: IconSize;
     variant?: LogoVariant;
+    hasTitle?: boolean;
 }
 
 const Logo = ({ appName, variant, ...rest }: LogoProps) => {

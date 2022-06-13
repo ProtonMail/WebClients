@@ -1,12 +1,15 @@
-import { getIsRecurring } from '@proton/shared/lib/calendar/vcalHelper';
-
+import { getIsRecurring, getRecurrenceIdDate, getUidValue } from '@proton/shared/lib/calendar/vcalHelper';
+import { postMessageFromIframe } from '@proton/shared/lib/sideApp/helpers';
+import { SIDE_APP_EVENTS } from '@proton/shared/lib/sideApp/models';
+import { APPS } from '@proton/shared/lib/constants';
 import { CalendarEventsCache } from '../interface';
-import { getRecurrenceIdDate, getUidValue } from '../../event/getEventHelper';
 import { removeEventFromRecurrenceInstances, removeEventFromRecurringCache } from './recurringCache';
+import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 
 export const removeCalendarEventStoreRecord = (
     EventID: string,
-    { tree, events, recurringEvents }: CalendarEventsCache
+    { tree, events, recurringEvents }: CalendarEventsCache,
+    getOpenedMailEvents?: () => OpenedMailEvent[]
 ) => {
     const oldCalendarEventStoreRecord = events.get(EventID);
     if (!oldCalendarEventStoreRecord) {
@@ -27,6 +30,17 @@ export const removeCalendarEventStoreRecord = (
     }
 
     events.delete(EventID);
+
+    // If the deleted event is open in Mail, tell it to refresh the widget
+    if ((getOpenedMailEvents?.() || []).find(({ UID }) => UID === uid)) {
+        postMessageFromIframe(
+            {
+                type: SIDE_APP_EVENTS.SIDE_APP_REFRESH_WIDGET,
+                payload: { UID: uid, ModifyTime: Number.POSITIVE_INFINITY },
+            },
+            APPS.PROTONMAIL
+        );
+    }
 };
 
 export default removeCalendarEventStoreRecord;

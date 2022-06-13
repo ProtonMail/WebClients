@@ -13,10 +13,11 @@ import {
     EVENT_INVITATION_ERROR_TYPE,
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Banner, InlineLinkButton, useApi, useLoading } from '@proton/components';
 import { c } from 'ttag';
 import { BannerBackgroundColor } from '@proton/components/components/banner/Banner';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     EventInvitation,
     getEventTimeStatus,
@@ -41,6 +42,7 @@ import ExtraEventWarning from './ExtraEventWarning';
 import EmailReminderWidgetSkeleton from './EmailReminderWidgetSkeleton';
 import { MessageStateWithData } from '../../../../logic/messages/messagesTypes';
 import './CalendarWidget.scss';
+import useCalendarWidgetSideAppEvents from './useCalendarWidgetSideAppEvents';
 
 const {
     DECRYPTION_ERROR,
@@ -97,10 +99,19 @@ const ExtraEvent = ({
     );
     const [loading, withLoading] = useLoading(true);
     const [retryCount, setRetryCount] = useState<number>(0);
+    const isMounted = useIsMounted();
     const api = useApi();
 
+    const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs, pmData, invitationApi } = model;
+    // setters don't need to be listed as dependencies in a callback
+    const refresh = useCallback(() => {
+        if (isMounted()) {
+            setRetryCount((count) => count + 1);
+        }
+    }, []);
+
     const handleRetry = () => {
-        setRetryCount((count) => count + 1);
+        refresh();
         setModel(
             getInitialInvitationModel({
                 invitationOrError,
@@ -115,10 +126,13 @@ const ExtraEvent = ({
         );
     };
 
-    const { isOrganizerMode, invitationIcs, isPartyCrasher: isPartyCrasherIcs, pmData } = model;
+    useCalendarWidgetSideAppEvents({
+        messageID: message.data.ID,
+        calendarEvent: invitationApi?.calendarEvent,
+        refresh,
+    });
 
     useEffect(() => {
-        let unmounted = false;
         const run = async () => {
             if (!invitationIcs?.vevent) {
                 return;
@@ -190,7 +204,7 @@ const ExtraEvent = ({
                         isPartyCrasher = !calendarEvent.Attendees.some(({ Token }) => Token === senderToken);
                     }
                 }
-                if (!unmounted) {
+                if (isMounted()) {
                     setModel({
                         ...model,
                         invitationIcs: supportedInvitationIcs,
@@ -217,7 +231,7 @@ const ExtraEvent = ({
                 !getInvitationHasEventID(invitationApi) ||
                 !getHasFullCalendarData(calendarData) ||
                 calendarData?.calendarNeedsUserAction ||
-                unmounted
+                !isMounted()
             ) {
                 // treat as a new invitation
                 return;
@@ -263,7 +277,7 @@ const ExtraEvent = ({
                     isOrganizerMode,
                     isOutdated,
                 });
-                if (!unmounted) {
+                if (isMounted()) {
                     setModel({
                         ...model,
                         invitationIcs: supportedInvitationIcs,
@@ -284,7 +298,7 @@ const ExtraEvent = ({
                     });
                 }
             } catch (e: any) {
-                if (!unmounted) {
+                if (isMounted()) {
                     setModel({
                         ...model,
                         invitationApi,
@@ -296,10 +310,6 @@ const ExtraEvent = ({
         };
 
         void withLoading(run());
-
-        return () => {
-            unmounted = true;
-        };
     }, [retryCount]);
 
     if (loading) {

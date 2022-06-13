@@ -5,14 +5,16 @@ const URL_PARAMS_VIEWS_CONVERSION: { [key: string]: VIEWS } = {
     month: VIEWS.MONTH,
     week: VIEWS.WEEK,
     day: VIEWS.DAY,
+    mail: VIEWS.MAIL,
 };
-const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
+export const VIEW_URL_PARAMS_VIEWS_CONVERSION = {
     [VIEWS.YEAR]: 'year',
     [VIEWS.AGENDA]: 'agenda',
     [VIEWS.CUSTOM]: 'custom',
     [VIEWS.MONTH]: 'month',
     [VIEWS.WEEK]: 'week',
     [VIEWS.DAY]: 'day',
+    [VIEWS.MAIL]: 'mail',
 };
 
 export const getUrlView = (urlView: string) => {
@@ -37,6 +39,7 @@ export const getUrlDate = (urlYear: string, urlMonth: string, urlDay: string) =>
 
 export const fromUrlParams = (pathname: string) => {
     const [, ...rest] = pathname.split('/');
+
     return {
         view: getUrlView(rest[0]),
         range: parseInt(rest[4], 10) || undefined,
@@ -58,5 +61,6 @@ export const toUrlParams = ({ date, defaultDate, view, defaultView, range }: ToU
             : [date.getUTCFullYear(), date.getUTCMonth() + 1, date.getUTCDate()];
     const viewParam = !dateParams && view === defaultView ? undefined : VIEW_URL_PARAMS_VIEWS_CONVERSION[view];
     const result = [viewParam, ...(dateParams || []), range];
+
     return `/${result.filter(Boolean).join('/')}`;
 };

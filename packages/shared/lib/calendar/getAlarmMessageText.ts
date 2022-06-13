@@ -12,7 +12,7 @@ interface Arguments {
 }
 const getAlarmMessageText = ({ title, isAllDay, startFakeUTCDate, nowFakeUTCDate, formatOptions }: Arguments) => {
     const formattedHour = formatUTC(startFakeUTCDate, 'p', formatOptions);
-    // because of browser timer imprecisions, allow for a 1 minute margin to determine simultaneity
+    // because of browser timer imprecision, allow for a 1 minute margin to determine simultaneity
     const isNow = Math.abs(+startFakeUTCDate - +nowFakeUTCDate) <= MINUTE / 2;
     const isInFuture = startFakeUTCDate > nowFakeUTCDate;
 

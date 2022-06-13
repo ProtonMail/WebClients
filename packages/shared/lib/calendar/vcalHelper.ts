@@ -27,6 +27,7 @@ import {
     ICAL_METHODS_ATTENDEE,
     ICAL_METHODS_ORGANIZER,
 } from './constants';
+import { toUTCDate } from '../date/timezone';
 
 export const getIsPropertyAllDay = (property: VcalDateOrDateTimeProperty): property is VcalDateProperty => {
     return property.parameters?.type === 'date' ?? false;
@@ -43,12 +44,24 @@ export const getIsAllDay = ({ dtstart }: Pick<VcalVeventComponent, 'dtstart'>) =
     return getIsPropertyAllDay(dtstart);
 };
 
+export const getUidValue = (component: VcalVeventComponent) => {
+    return component.uid.value;
+};
+
 export const getIsRecurring = ({ rrule }: Pick<VcalVeventComponent, 'rrule'>) => {
     return !!rrule;
 };
 
 export const getRecurrenceId = ({ 'recurrence-id': recurrenceId }: Pick<VcalVeventComponent, 'recurrence-id'>) => {
     return recurrenceId;
+};
+
+export const getRecurrenceIdDate = (component: VcalVeventComponent) => {
+    const rawRecurrenceId = getRecurrenceId(component);
+    if (!rawRecurrenceId || !rawRecurrenceId.value) {
+        return;
+    }
+    return toUTCDate(rawRecurrenceId.value);
 };
 
 export const getSequence = (event: VcalVeventComponent) => {

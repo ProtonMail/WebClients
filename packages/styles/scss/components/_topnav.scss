@@ -123,7 +123,7 @@
 
 // special fix for Hungarian looooooooong text
 [lang='hu'] {
-	@include respond-to(1550) {
+	@include respond-to(1650) {
 		@include collapse-all-four-except-upgrade;
 	}
 	@include respond-to(1050) {
