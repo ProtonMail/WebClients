@@ -174,7 +174,7 @@ const AccountSizeCustomiser = ({
                     <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
                     <div className="mb1">
                         {c('Info')
-                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Customer Success team.`}
+                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Sales team.`}
                     </div>
                 </>
             )}
