@@ -1,6 +1,6 @@
 import { MAX_LINKS_PER_CALENDAR } from '@proton/shared/lib/calendar/constants';
 import { useEffect, useRef, useState } from 'react';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 import { VisualCalendar, ACCESS_LEVEL, CalendarLink } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
@@ -122,8 +122,13 @@ const ShareTable = ({
                 </TableBody>
             </Table>
             {maxLinksPerCalendarReached && (
-                <Alert className="mb1" type="warning">{c('Info')
-                    .t`You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`}</Alert>
+                <Alert className="mb1" type="warning">
+                    {c('Maximum calendar links reached warning').ngettext(
+                        msgid`You can create up to ${MAX_LINKS_PER_CALENDAR} link per calendar. To create a new link to this calendar, delete one from the list below.`,
+                        `You can create up to ${MAX_LINKS_PER_CALENDAR} links per calendar. To create a new link to this calendar, delete one from the list below.`,
+                        MAX_LINKS_PER_CALENDAR
+                    )}
+                </Alert>
             )}
         </div>
     );
