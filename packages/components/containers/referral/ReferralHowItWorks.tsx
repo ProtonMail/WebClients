@@ -26,7 +26,7 @@ const ReferralHowItWorks = () => {
                 title={c('info').t`Day 30: Trial ends`}
                 description={
                     <>
-                        {c('info').t`Your subscription will start Jan 16th.`}
+                        {c('info').t`Your subscription will start after your 30-day trial.`}
                         <br />
                         {c('info').t`Cancel anytime before`}
                     </>
