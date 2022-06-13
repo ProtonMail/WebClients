@@ -3,6 +3,7 @@ import {
     canonizeEmail,
     canonizeEmailByGuess,
     canonizeInternalEmail,
+    getEmailTo,
     parseMailtoURL,
     validateDomain,
     validateEmailAddress,
@@ -209,6 +210,12 @@ describe('email', () => {
                 ['addr1@an.example', 'addr2@an.example', 'addr3@an.example', 'addr4@an.example'],
             ];
             expect(mailtoURLs.map((to) => parseMailtoURL(to))).toEqual(expected.map((to) => ({ to })));
+        });
+    });
+
+    describe('getEmailTo', () => {
+        it('should always return a string', () => {
+            expect(getEmailTo('mailto:')).toBeInstanceOf(String);
         });
     });
 });
