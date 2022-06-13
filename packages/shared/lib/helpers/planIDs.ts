@@ -78,7 +78,9 @@ export const switchPlan = ({
             if (addon.startsWith('1member') && plan && organization) {
                 const memberAddon = plans.find(({ Name }) => Name === addon);
                 const diffAddresses = (organization.UsedAddresses || 0) - plan.MaxAddresses;
-                const diffSpace = (Math.max(organization.UsedSpace, organization.AssignedSpace) || 0) - plan.MaxSpace; // AssignedSpace is the space assigned to members in the organization which count for addon transfer
+                const diffSpace =
+                    ((organization.UsedMembers > 1 ? organization.AssignedSpace : organization.UsedSpace) || 0) -
+                    plan.MaxSpace; // AssignedSpace is the space assigned to members in the organization which count for addon transfer
                 const diffVPN = (organization.UsedVPN || 0) - plan.MaxVPN;
                 const diffMembers = (organization.UsedMembers || 0) - plan.MaxMembers;
                 const diffCalendars = (organization.UsedCalendars || 0) - plan.MaxCalendars;
