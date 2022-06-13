@@ -168,7 +168,8 @@ export const canonizeEmailByGuess = (email: string) => {
 };
 
 const extractStringItems = (str: string) => {
-    return str.split(',').filter(isTruthy);
+    // filter(isTruthy) wouldn't result in TS understanding that the return of this function is of type string[], so we expand it
+    return str.split(',').filter((item) => isTruthy(item));
 };
 
 /**
@@ -206,10 +207,10 @@ export const parseMailtoURL = (mailtoURL: string, decode = true) => {
 
 export const buildMailTo = (email = '') => `mailto:${email}`;
 
-export const getEmailTo = (str: string, decode?: boolean): string => {
+export const getEmailTo = (str: string, decode?: boolean) => {
     try {
         const {
-            to: [emailTo],
+            to: [emailTo = ''],
         } = parseMailtoURL(str, decode);
         return emailTo;
     } catch (e: any) {
