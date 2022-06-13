@@ -1,6 +1,6 @@
-import { ComponentPropsWithoutRef, ReactElement, useState } from 'react';
+import { ComponentPropsWithoutRef, ReactElement, ReactNode, useState } from 'react';
 import { Cycle, Currency, Plan, Organization, PlanIDs } from '@proton/shared/lib/interfaces';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import {
     ADDON_NAMES,
@@ -153,6 +153,34 @@ const addonLimit = {
     [ADDON_NAMES.MEMBER_ENTERPRISE]: MAX_MEMBER_ADDON,
 } as const;
 
+// Since ttag doesn't support ngettext with jt, we manually replace the string with a react node...
+const getAccountSizeString = (maxUsers: number, price: ReactNode) => {
+    // translator: This string is followed up by the string "Should you need more than ${maxUsers} user accounts, please <contact> our Sales team"
+    const first = c('plan customizer, users')
+        .jt`Select the number of users to include in your plan. Each additional user costs ${price}.`;
+
+    const contact = '_TMPL_';
+    // translator: This string is a part of a larger string asking the user to "contact" our sales team => full sentence: Should you need more than ${maxUsers} user accounts, please <contact> our Sales team
+    const contactString = c('plan customizer, users').t`contact`;
+    const contactHref = (
+        <a key={1} href="mailto:enterprise@proton.me">
+            {contactString}
+        </a>
+    );
+    const second = c('plan customizer, users').ngettext(
+        msgid`Should you need more than ${maxUsers} user account, please ${contact} our Sales team.`,
+        `Should you need more than ${maxUsers} user accounts, please ${contact} our Sales team.`,
+        maxUsers
+    );
+    return [
+        first,
+        ' ',
+        ...second
+            .split(contact)
+            .map((value, index, arr) => (index !== arr.length - 1 ? [value, contactHref] : [value])),
+    ];
+};
+
 const AccountSizeCustomiser = ({
     addon,
     maxUsers,
@@ -166,16 +194,12 @@ const AccountSizeCustomiser = ({
     input: ReactElement;
     mode?: CustomiserMode;
 }) => {
-    const contactMailToLink = <a key={1} href="mailto:enterprise@proton.me">{c('Action').t`contact`}</a>;
     return (
         <div className="mb2">
             {mode !== 'signup' && (
                 <>
                     <h2 className="text-2xl text-bold mb1">{c('Info').t`Account size`}</h2>
-                    <div className="mb1">
-                        {c('Info')
-                            .jt`Select the number of users to include in your plan. Each additional user costs ${price}. Should you need more than ${maxUsers} user accounts, please ${contactMailToLink} our Sales team.`}
-                    </div>
+                    <div className="mb1">{getAccountSizeString(maxUsers, price)}</div>
                 </>
             )}
             <div className="flex-no-min-children flex-nowrap flex-align-items-center mb1 on-mobile-flex-wrap">
