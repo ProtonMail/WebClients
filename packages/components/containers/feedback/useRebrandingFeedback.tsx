@@ -22,7 +22,7 @@ const useRebrandingFeedback = () => {
     const rebrandingFeedbackEnabled = useFeature(FeatureCode.RebrandingFeedbackEnabled);
     const rebranding = useFeature<RebrandingFeatureValue>(FeatureCode.RebrandingFeedback);
 
-    const [shouldDisplay, setShouldDisplay] = useState(false);
+    const [handleDisplay, setHandleDisplay] = useState<undefined | (() => void)>(undefined);
 
     const loading = rebrandingFeedbackEnabled.loading || rebranding.loading;
 
@@ -63,9 +63,13 @@ const useRebrandingFeedback = () => {
                 return;
             }
 
-            setShouldDisplay(true);
-
-            updateRebranding({ hasBeenPromptedForRebrandingFeedback: true });
+            /*
+             * We want to store the "handleDisplay" callback here, not use react's
+             * setState callback api, therefore the curry. Yum!
+             */
+            setHandleDisplay(() => () => {
+                updateRebranding({ hasBeenPromptedForRebrandingFeedback: true });
+            });
         };
 
         /* Rebranding feedback is globally disabled */
@@ -96,7 +100,7 @@ const useRebrandingFeedback = () => {
         };
     }, [loading, rebranding, rebrandingFeedbackEnabled]);
 
-    return shouldDisplay;
+    return handleDisplay;
 };
 
 export default useRebrandingFeedback;

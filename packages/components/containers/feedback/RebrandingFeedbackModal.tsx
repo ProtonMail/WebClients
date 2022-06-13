@@ -5,7 +5,11 @@ import { FeatureCode } from '../features/FeaturesContext';
 import FeedbackModal, { FeedbackModalProps } from './FeedbackModal';
 import { RebrandingFeatureValue } from './useRebrandingFeedback';
 
-const RebrandingFeedbackModal = (props: Partial<FeedbackModalProps>) => {
+interface RebrandingModalProps extends Partial<FeedbackModalProps> {
+    onMount?: () => void;
+}
+
+const RebrandingFeedbackModal = (props: RebrandingModalProps) => {
     const rebranding = useFeature<RebrandingFeatureValue>(FeatureCode.RebrandingFeedback);
 
     const handleSuccess = () => {
