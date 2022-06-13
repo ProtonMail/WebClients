@@ -27,7 +27,7 @@ const DriveStartupModals = () => {
     const shouldOpenV5WelcomeModal = useShouldOpenV5WelcomeModal();
 
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
-    const shouldOpenRebrandingFeedbackModal = useRebrandingFeedback();
+    const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
 
     const onceRef = useRef(false);
     useEffect(() => {
@@ -44,16 +44,18 @@ const DriveStartupModals = () => {
             openModal(setReferralModal);
         } else if (shouldOpenV5WelcomeModal) {
             openModal(setV5WelcomeModal);
-        } else if (shouldOpenRebrandingFeedbackModal) {
+        } else if (handleRebrandingFeedbackModalDisplay) {
             openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal, shouldOpenRebrandingFeedbackModal]);
+    }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
             {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
-            {renderRebrandingFeedbackModal && <RebrandingFeedbackModal {...rebrandingFeedbackModal} />}
+            {renderRebrandingFeedbackModal && (
+                <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
+            )}
         </>
     );
 };
