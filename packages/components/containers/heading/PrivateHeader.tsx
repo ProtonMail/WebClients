@@ -3,6 +3,8 @@ import { APPS } from '@proton/shared/lib/constants';
 import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
 
+import { Vr } from '@proton/atoms';
+
 import { AppLink, Hamburger, Icon, SettingsLink } from '../../components';
 import { useConfig, useUser } from '../../hooks';
 import Header, { Props as HeaderProps } from '../../components/header/Header';
@@ -13,7 +15,6 @@ import usePromotionOffer from './usePromotionOffer';
 
 import { TopNavbar, TopNavbarList, TopNavbarListItem } from '../../components/topnavbar';
 import TopNavbarListItemButton from '../../components/topnavbar/TopNavbarListItemButton';
-import { Vr } from '../../components/vr';
 
 interface Props extends HeaderProps {
     logo?: ReactNode;

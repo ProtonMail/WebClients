@@ -1,5 +1,6 @@
 import { getDevice } from '@proton/shared/lib/helpers/browser';
-import { ToolbarSeparator, Toolbar, useActiveBreakpoint } from '@proton/components';
+import { Toolbar, useActiveBreakpoint } from '@proton/components';
+import { Vr } from '@proton/atoms';
 import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import {
@@ -40,12 +41,12 @@ const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true
                     <CreateNewFolderButton />
                     {isDesktop && (
                         <>
-                            <ToolbarSeparator />
+                            <Vr />
                             <UploadFolderButton />
                             <UploadFileButton />
                         </>
                     )}
-                    <ToolbarSeparator />
+                    <Vr />
                     <ShareFileButton shareId={shareId} />
                 </>
             );
@@ -61,11 +62,11 @@ const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true
                     <>
                         <ShareButton shareId={shareId} selectedItems={selectedItems} />
                         <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
-                        <ToolbarSeparator />
+                        <Vr />
                         <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />
                         <RenameButton shareId={shareId} selectedItems={selectedItems} />
                         <DetailsButton shareId={shareId} selectedItems={selectedItems} />
-                        <ToolbarSeparator />
+                        <Vr />
                         <MoveToTrashButton shareId={shareId} selectedItems={selectedItems} />
                     </>
                 )}
