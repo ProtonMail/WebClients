@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, RenderResult } from '@testing-library/react';
 
 import VerticalSteps from './VerticalSteps';
 import VerticalStep from './VerticalStep';
@@ -32,8 +32,12 @@ function renderBasicVerticalSteps() {
     );
 }
 
-describe('<VerticalSteps /> with Basic render', () => {
-    const output = renderBasicVerticalSteps();
+describe('<VerticalSteps /> with basic render', () => {
+    let output: RenderResult<typeof import('@testing-library/dom/types/queries'), HTMLElement, HTMLElement>;
+
+    beforeAll(() => {
+        output = renderBasicVerticalSteps();
+    });
 
     it('should display 4 steps', () => {
         const { container } = output;
