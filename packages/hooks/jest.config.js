@@ -1,6 +1,7 @@
 module.exports = {
     preset: 'ts-jest',
-    testEnvironment: 'node',
+    clearMocks: true,
+    testEnvironment: 'jsdom',
     collectCoverageFrom: ['*.ts', '!index.ts'],
     coverageThreshold: {
         global: {

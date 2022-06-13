@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+
 import { MailSettings } from '@proton/shared/lib/interfaces';
+import { Vr } from '@proton/atoms';
 
 import { classnames } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { ButtonGroup, Button } from '../../button';
-import { Vr } from '../../vr';
 import { useActiveBreakpoint } from '../../../hooks';
 import { ToolbarConfig } from '../helpers/getToolbarConfig';
 import { DEFAULT_FONT_FACE, DEFAULT_FONT_SIZE } from '../constants';
