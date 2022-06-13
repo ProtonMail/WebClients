@@ -1,21 +1,22 @@
 import { useEffect, useState, useMemo, MutableRefObject } from 'react';
-import { fromUTCDate, toUTCDate, convertUTCDateTimeToZone } from '@proton/shared/lib/date/timezone';
+import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
+import { DAY } from '@proton/shared/lib/constants';
 import { getRecurringEvents } from './cache/getRecurringEvents';
 import { CalendarsEventsCache } from './interface';
 import { CalendarViewEvent, CalendarViewEventData } from '../interface';
 import { getExistingFetch } from './cache/fetchCalendarEvents';
 import useCalendarsEventsFetcher from './useCalendarsEventsFetcher';
 import useCalendarsEventsReader from './useCalendarsEventsReader';
-
-const DAY_IN_MILLISECONDS = 86400000;
+import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 
 const useCalendarsEvents = (
     requestedCalendars: VisualCalendar[],
     utcDateRange: [Date, Date],
     tzid: string,
     cacheRef: MutableRefObject<CalendarsEventsCache>,
+    getOpenedMailEvents: () => OpenedMailEvent[],
     initializeCacheOnlyCalendarsIDs: string[],
     onCacheInitialized: () => void
 ): [CalendarViewEvent[], boolean] => {
@@ -25,6 +26,7 @@ const useCalendarsEvents = (
         utcDateRange,
         tzid,
         cacheRef,
+        getOpenedMailEvents,
         initializeCacheOnlyCalendarsIDs,
         onCacheInitialized
     );
@@ -59,8 +61,8 @@ const useCalendarsEvents = (
                 }
 
                 // Add a day in both ranges to not miss events due to tz since they are stored in UTC time
-                const searchStart = +utcDateRange[0] - DAY_IN_MILLISECONDS;
-                const searchEnd = +utcDateRange[1] + DAY_IN_MILLISECONDS;
+                const searchStart = +utcDateRange[0] - DAY;
+                const searchEnd = +utcDateRange[1] + DAY;
 
                 const results = calendarEventsCache.tree
                     .search(searchStart, searchEnd)
@@ -134,10 +136,8 @@ const useCalendarsEvents = (
                 return results
                     .concat(recurringResults)
                     .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, data, id }): CalendarViewEvent => {
-                        const start = isAllDay
-                            ? utcStart
-                            : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
-                        const end = isAllDay ? utcEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
+                        const start = fromUTCDateToLocalFakeUTCDate(utcStart, isAllDay, tzid);
+                        const end = fromUTCDateToLocalFakeUTCDate(utcEnd, isAllDay, tzid);
 
                         return {
                             id,
@@ -152,7 +152,7 @@ const useCalendarsEvents = (
             .flat();
     }, [rerender, loading, tzid, requestedCalendars, utcDateRange]);
 
-    useCalendarsEventsReader(eventsResults, cacheRef, () => setRerender({}));
+    useCalendarsEventsReader(eventsResults, cacheRef, () => setRerender({}), getOpenedMailEvents);
 
     return [eventsResults, loading];
 };

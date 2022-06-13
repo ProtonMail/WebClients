@@ -12,7 +12,7 @@ export const getInitialTargetEventData = (
         return;
     }
 
-    const { id, isAllDay, isAllPartDay, startInTzid } = eventTargetAction;
+    const { id, isAllDay, isAllPartDay, startInTzid, preventPopover } = eventTargetAction;
 
     const isDayGrid = isAllDay || isAllPartDay;
     const [startDateRange, endDateRange] = dateRange;
@@ -30,6 +30,7 @@ export const getInitialTargetEventData = (
             type: isDayGrid ? TYPE.DAYGRID : TYPE.TIMEGRID,
             // Assuming week view is always displayed, so not trying to calculate the idx
             idx: isDayGrid ? 0 : getTimeGridIdx(),
+            preventPopover,
         },
     };
 };

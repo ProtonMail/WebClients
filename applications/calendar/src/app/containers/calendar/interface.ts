@@ -53,6 +53,7 @@ export interface SharedViewProps {
     tzid: string;
     events: CalendarViewEvent[];
     onClickDate: (date: Date) => void;
+    onChangeDate: (date: Date) => void;
 }
 
 export interface TimeGridRef {
@@ -77,6 +78,7 @@ export interface TargetEventData {
     id: string;
     idx?: number;
     type: TYPE;
+    preventPopover?: boolean; // We want to prevent popover opening when calendar app is opened in the side panel
 }
 
 export interface TargetMoreData {
@@ -126,4 +128,5 @@ export interface EventTargetAction {
     isAllDay: boolean;
     isAllPartDay: boolean;
     startInTzid: Date;
+    preventPopover?: boolean; // used when opening an event from PM inside the side app
 }

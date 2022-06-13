@@ -35,6 +35,7 @@ import {
     getPmSharedEventID,
     getPmSharedSessionKey,
     getSequence,
+    getUidValue,
 } from '@proton/shared/lib/calendar/vcalHelper';
 import { getIsEventCancelled, withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -157,6 +158,13 @@ export const getInvitationHasAttendee = (
     invitation: EventInvitation
 ): invitation is RequireSome<EventInvitation, 'attendee'> => {
     return invitation.attendee !== undefined;
+};
+
+export const getInvitationUID = (invitationOrError: EventInvitation | EventInvitationError) => {
+    if (invitationOrError instanceof EventInvitationError) {
+        return;
+    }
+    return getUidValue(invitationOrError.vevent);
 };
 
 export const getHasFullCalendarData = (data?: CalendarWidgetData): data is Required<CalendarWidgetData> => {

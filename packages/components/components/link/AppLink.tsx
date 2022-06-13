@@ -10,16 +10,19 @@ import Tooltip from '../tooltip/Tooltip';
 export interface AppLinkProps extends Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'color'> {
     to: string;
     toApp?: APP_NAMES;
+    selfOpening?: boolean;
 }
 
-const AppLink = ({ to, toApp, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
+const AppLink = ({ to, toApp, selfOpening = false, children, ...rest }: AppLinkProps, ref: Ref<HTMLAnchorElement>) => {
     const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
 
-    if (toApp && toApp !== APP_NAME) {
+    const targetApp = selfOpening ? APP_NAME : toApp;
+
+    if (targetApp && (targetApp !== APP_NAME || selfOpening)) {
         if (isSSOMode) {
             // If in vpn-level account settings and want to visit the proton vpn app
-            if (toApp === APPS.PROTONVPN_SETTINGS) {
+            if (targetApp === APPS.PROTONVPN_SETTINGS) {
                 const href = `https://${VPN_HOSTNAME}/${stripLeadingAndTrailingSlash(to)}`;
                 return (
                     // internal link, trusted
@@ -30,7 +33,7 @@ const AppLink = ({ to, toApp, children, ...rest }: AppLinkProps, ref: Ref<HTMLAn
                 );
             }
             const localID = authentication.getLocalID?.();
-            const href = getAppHref(to, toApp, localID);
+            const href = getAppHref(to, targetApp, localID);
             return (
                 // internal link, trusted
                 <a ref={ref} target="_blank" {...rest} href={href}>
@@ -39,7 +42,7 @@ const AppLink = ({ to, toApp, children, ...rest }: AppLinkProps, ref: Ref<HTMLAn
             );
         }
         if (APP_NAME === APPS.PROTONVPN_SETTINGS) {
-            const href = getAppHref(to, toApp);
+            const href = getAppHref(to, targetApp);
             return (
                 // internal link, trusted
                 // eslint-disable-next-line react/jsx-no-target-blank
@@ -57,7 +60,7 @@ const AppLink = ({ to, toApp, children, ...rest }: AppLinkProps, ref: Ref<HTMLAn
                 </Tooltip>
             );
         }
-        const href = getAppHrefBundle(to, toApp);
+        const href = getAppHrefBundle(to, targetApp);
         return (
             <a ref={ref} target="_self" {...rest} href={href}>
                 {children}

@@ -27,7 +27,6 @@ export const getAppHref = (
     targetLocation: TargetLocation = window.location
 ) => {
     const { subdomain: targetSubdomain } = APPS_CONFIGURATION[toApp];
-
     const { hostname, protocol, port } = getSSOAppTargetLocation(targetLocation);
     const lastIndex = hostname.lastIndexOf('.');
     const secondLevelIndex = hostname.indexOf('.');

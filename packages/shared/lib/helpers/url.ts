@@ -283,3 +283,12 @@ export const isValidHttpUrl = (string: string) => {
 
     return url.protocol === 'http:' || url.protocol === 'https:';
 };
+
+export const isAppFromURL = (url: string | undefined, app: APP_NAMES) => {
+    if (url) {
+        const { host } = new URL(url);
+        const segments = host.split('.');
+        return segments[0] === APPS_CONFIGURATION[app].subdomain;
+    }
+    return false;
+};

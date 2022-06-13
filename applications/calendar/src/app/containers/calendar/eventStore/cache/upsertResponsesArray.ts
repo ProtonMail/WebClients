@@ -9,6 +9,7 @@ import upsertCalendarApiEvent from './upsertCalendarApiEvent';
 import { getIsDeleteSyncOperation, SyncEventActionOperations } from '../../getSyncMultipleEventsPayload';
 import { CalendarsEventsCache } from '../interface';
 import removeCalendarEventStoreRecord from './removeCalendarEventStoreRecord';
+import { OpenedMailEvent } from '../../../../hooks/useGetOpenedMailEvents';
 
 const getResponse = (responses: SyncMultipleApiResponses[], index: number) => {
     return responses.find((x) => x.Index === index);
@@ -17,7 +18,8 @@ const getResponse = (responses: SyncMultipleApiResponses[], index: number) => {
 export const upsertSyncMultiActionsResponses = (
     multiActions: SyncEventActionOperations[],
     multiResponses: SyncMultipleApiResponse[],
-    calendarsEventsCache: CalendarsEventsCache
+    calendarsEventsCache: CalendarsEventsCache,
+    getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
     for (let i = 0; i < multiResponses.length; ++i) {
         const actions = multiActions[i];
@@ -36,7 +38,11 @@ export const upsertSyncMultiActionsResponses = (
 
             if (getIsDeleteSyncOperation(operation)) {
                 if (!matchingResponse || matchingResponse.Response.Code === API_CODES.SINGLE_SUCCESS) {
-                    removeCalendarEventStoreRecord(operation.data.calendarEvent.ID, calendarEventsCache);
+                    removeCalendarEventStoreRecord(
+                        operation.data.calendarEvent.ID,
+                        calendarEventsCache,
+                        getOpenedMailEvents
+                    );
                 }
                 continue;
             }
@@ -44,7 +50,7 @@ export const upsertSyncMultiActionsResponses = (
             if (matchingResponse) {
                 const matchingEvent = matchingResponse.Response.Event;
                 if (matchingEvent && matchingResponse.Response.Code === API_CODES.SINGLE_SUCCESS) {
-                    upsertCalendarApiEvent(matchingEvent, calendarEventsCache);
+                    upsertCalendarApiEvent(matchingEvent, calendarEventsCache, getOpenedMailEvents);
                 }
             }
         }
@@ -54,7 +60,8 @@ export const upsertSyncMultiActionsResponses = (
 export const upsertUpdateEventPartResponses = (
     operations: (UpdatePartstatOperation | UpdatePersonalPartOperation)[],
     responses: UpdateEventPartApiResponse[],
-    calendarsEventsCache: CalendarsEventsCache
+    calendarsEventsCache: CalendarsEventsCache,
+    getOpenedMailEvents: () => OpenedMailEvent[]
 ) => {
     for (let i = 0; i < responses.length; ++i) {
         const operation = operations[i];
@@ -66,7 +73,7 @@ export const upsertUpdateEventPartResponses = (
         }
 
         if (Code === API_CODES.SINGLE_SUCCESS) {
-            upsertCalendarApiEvent(Event, calendarEventsCache);
+            upsertCalendarApiEvent(Event, calendarEventsCache, getOpenedMailEvents);
         }
     }
 };

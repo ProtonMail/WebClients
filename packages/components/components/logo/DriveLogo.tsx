@@ -6,9 +6,9 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 
 import { LogoProps } from './Logo';
 
-type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size'>;
+type Props = ComponentPropsWithoutRef<'svg'> & Pick<LogoProps, 'variant' | 'size' | 'hasTitle'>;
 
-const DriveLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Props) => {
+const DriveLogo = ({ variant = 'with-wordmark', size, className, hasTitle = true, ...rest }: Props) => {
     const appName = getAppName(APPS.PROTONDRIVE);
 
     // This logo can be several times in the view, ids has to be different each time
@@ -96,7 +96,7 @@ const DriveLogo = ({ variant = 'with-wordmark', size, className, ...rest }: Prop
                     <stop offset=".99" stopColor="#FF62C0" />
                 </radialGradient>
             </defs>
-            <title id={`${uid}-title`}>{appName}</title>
+            {hasTitle && <title id={`${uid}-title`}>{appName}</title>}
         </svg>
     );
 };

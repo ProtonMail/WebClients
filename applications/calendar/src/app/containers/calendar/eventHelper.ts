@@ -2,6 +2,7 @@ import {
     convertUTCDateTimeToZone,
     convertZonedDateTimeToUTC,
     fromUTCDate,
+    fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
 import { differenceInHours } from 'date-fns';
@@ -16,8 +17,8 @@ export const getCalendarViewEventProperties = ({ start, end, isAllDay }: EventMo
     const utcStart = getTimeInUtc(start, isAllDay);
     const utcEnd = getTimeInUtc(end, isAllDay);
 
-    const calendarStart = isAllDay ? utcStart : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcStart), tzid));
-    const calendarEnd = isAllDay ? utcEnd : toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcEnd), tzid));
+    const calendarStart = fromUTCDateToLocalFakeUTCDate(utcStart, isAllDay, tzid);
+    const calendarEnd = fromUTCDateToLocalFakeUTCDate(utcEnd, isAllDay, tzid);
     const isAllPartDay = !isAllDay && differenceInHours(utcEnd, utcStart) >= 24;
 
     return {
