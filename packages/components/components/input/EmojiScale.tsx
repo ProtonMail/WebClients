@@ -18,7 +18,7 @@ export interface EmojiScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, '
 const scale = [
     { value: 1, emoji: '😫', label: () => c('Label').t`Awful` },
     { value: 2, emoji: '🙁', label: () => c('Label').t`Bad` },
-    { value: 3, emoji: '😐', label: () => c('Label').t`Ok` },
+    { value: 3, emoji: '😐', label: () => c('Label').t`OK` },
     { value: 4, emoji: '😊', label: () => c('Label').t`Good` },
     { value: 5, emoji: '😍', label: () => c('Label').t`Wonderful` },
 ];
