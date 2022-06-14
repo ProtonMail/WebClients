@@ -259,7 +259,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
         if (
             step === AuthStep.LOGIN ||
             (step === AuthStep.UNLOCK && e.name !== 'PasswordError') ||
-            (step === AuthStep.TOTP && e.name !== 'TOTPError')
+            (step === AuthStep.TWO_FA && e.name !== 'TOTPError')
         ) {
             handleCancel();
         }
@@ -301,7 +301,7 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                     }}
                 />
             )}
-            {step === AuthStep.TOTP && cache && (
+            {step === AuthStep.TWO_FA && cache && (
                 <TOTPForm
                     cancelButton={cancelButton}
                     onSubmit={(totp) => {
