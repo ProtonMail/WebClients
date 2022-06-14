@@ -1,4 +1,5 @@
 import { fromUnixTime, isAfter } from 'date-fns';
+import { c } from 'ttag';
 import {
     OpenPGPKey,
     SessionKey,
@@ -385,7 +386,15 @@ export function useLinkInner(
                 return {
                     ...encryptedLink,
                     encryptedName: encryptedLink.name,
-                    name: name,
+                    // Private app doesn't show root anywhere besides few
+                    // places like move files dialog. When folder is shared
+                    // though, the public app should display the real name
+                    // provided by user.
+                    // This is not an ideal solution as folder named "root"
+                    // by user would be translated to My files, but that's
+                    // minor issue. In the future this would be better solved
+                    // by detecting if share or token is used.
+                    name: name === 'root' && !encryptedLink.parentLinkId ? c('Title').t`My files` : name,
                     fileModifyTime: fileModifyTime,
                     signatureIssues: Object.keys(signatureIssues).length > 0 ? signatureIssues : undefined,
                 };

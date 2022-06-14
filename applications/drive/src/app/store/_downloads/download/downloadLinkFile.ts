@@ -70,7 +70,7 @@ export default function initDownloadLinkFile(link: LinkDownload, callbacks: Down
         getBlocks: (abortSignal, pagination) => callbacks.getBlocks(abortSignal, link.shareId, link.linkId, pagination),
         transformBlockStream,
         checkBlockSignature,
-        onProgress: (bytes: number) => callbacks.onProgress?.(link.linkId, bytes),
+        onProgress: (bytes: number) => callbacks.onProgress?.([link.linkId], bytes),
     });
     return {
         ...controls,

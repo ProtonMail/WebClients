@@ -60,7 +60,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
                 </DragMoveContent>
             )}
             <TableRow
-                style={style}
+                style={{ ...style, ...item.itemRowStyle }}
                 tabIndex={0}
                 role="button"
                 draggable={draggable}

@@ -65,12 +65,11 @@ export type OnInitCallback = (
     // is exluding the whole tree of the folder item.
     linkSizes: { [linkId: string]: number }
 ) => void;
-type OnProgressCallback = (
-    // linkId for which the progress should be counted.
-    // Currently we collect only progresses of top level items,
-    // that is child of some folder will report it with top
-    // level folder link ID.
-    linkId: string,
+export type OnProgressCallback = (
+    // linkIds for which the progress should be counted.
+    // It should contain link itself and all the parents so the whole directory
+    // tree is properly counted.
+    linkIds: string[],
     bytes: number
 ) => void;
 export type OnSignatureIssueCallback = (

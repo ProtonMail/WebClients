@@ -6,6 +6,7 @@ import {
     GetChildrenCallback,
     OnInitCallback,
     OnSignatureIssueCallback,
+    OnProgressCallback,
 } from '../interface';
 import { NestedLinkDownload } from './interface';
 import { FolderTreeLoader } from './downloadLinkFolder';
@@ -22,7 +23,20 @@ export default function initDownloadLinks(links: LinkDownload[], callbacks: Down
     const archiveGenerator = new ArchiveGenerator();
 
     const start = () => {
-        loadTotalSize(links, folderLoaders, callbacks.getChildren, callbacks.onInit, callbacks.onSignatureIssue);
+        // To get link into progresses right away so potentially loader can be displayed.
+        callbacks.onProgress?.(
+            links.map(({ linkId }) => linkId),
+            0
+        );
+
+        loadTotalSize(
+            links,
+            folderLoaders,
+            callbacks.getChildren,
+            callbacks.onInit,
+            callbacks.onSignatureIssue,
+            callbacks.onProgress
+        );
         const linksIterator = iterateAllLinks(links, folderLoaders);
         const linksWithStreamsIterator = concurrentIterator.iterate(linksIterator, callbacks);
         archiveGenerator
@@ -54,22 +68,25 @@ function loadTotalSize(
     folderLoaders: Map<String, FolderTreeLoader>,
     getChildren: GetChildrenCallback,
     onInit?: OnInitCallback,
-    onSignatureIssue?: OnSignatureIssueCallback
+    onSignatureIssue?: OnSignatureIssueCallback,
+    onProgress?: OnProgressCallback
 ) {
     const sizePromises = links.map(async (link) => {
         if (link.isFile) {
-            return link.size;
+            return { size: link.size, linkSizes: Object.fromEntries([[link.linkId, link.size]]) };
         }
         const folderLoader = new FolderTreeLoader(link);
         folderLoaders.set(link.shareId + link.linkId, folderLoader);
-        return folderLoader.load(getChildren, onSignatureIssue);
+        const result = await folderLoader.load(getChildren, onSignatureIssue, onProgress);
+        result.linkSizes[link.linkId] = result.size;
+        return result;
     });
 
     Promise.all(sizePromises)
-        .then((sizes: number[]) => {
-            const total = sizes.reduce((a, b) => a + b, 0);
-            const linkSizes = Object.fromEntries(links.map(({ linkId }, idx) => [linkId, sizes[idx]]));
-            onInit?.(total, linkSizes);
+        .then((results) => {
+            const size = results.reduce((total, { size }) => total + size, 0);
+            const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
+            onInit?.(size, linkSizes);
         })
         .catch(reportError);
 }
@@ -80,7 +97,7 @@ async function* iterateAllLinks(
 ): AsyncGenerator<NestedLinkDownload> {
     for (const link of links) {
         yield {
-            rootLinkId: link.linkId,
+            parentLinkIds: [],
             parentPath: [],
             ...link,
         };

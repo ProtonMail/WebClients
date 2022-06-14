@@ -17,7 +17,6 @@ jest.mock('./downloadLinkFile', () => {
 async function* generateLinks(count: number, size = 123) {
     for (let i = 0; i < count; i++) {
         yield {
-            rootLinkId: 'rootLinkId',
             isFile: true,
             size,
         } as NestedLinkDownload;

@@ -16,8 +16,8 @@ export interface FileBrowserProps<T extends FileBrowserBaseItem, T1> {
     sortParams?: SortParams<T1>;
 
     Cells: React.FC<{ item: T }>[];
-    GridHeaderComponent: React.FC<{ scrollAreaRef: React.RefObject<HTMLDivElement> }>;
-    GridViewItem: React.FC<{ item: T }>;
+    GridHeaderComponent?: React.FC<{ scrollAreaRef: React.RefObject<HTMLDivElement> }>;
+    GridViewItem?: React.FC<{ item: T }>;
 
     onItemContextMenu?: (e: any) => void;
     onItemOpen?: (id: BrowserItemId) => void;
@@ -68,23 +68,30 @@ const FileBrowser = <T extends FileBrowserBaseItem, T1>({
     // On content change, check scroll end (does not rebind listeners).
     useOnScrollEnd(handleScrollEnd, scrollAreaRef, 0.9, [items, layout]);
 
-    return layout === LayoutSetting.Grid ? (
-        <GridView
-            caption={caption}
-            items={items}
-            loading={loading}
-            GridHeaderComponent={GridHeaderComponent}
-            GridViewItem={GridViewItem}
-            onItemContextMenu={onItemContextMenu}
-            onItemOpen={onItemOpen}
-            onItemRender={onItemRender}
-            onScroll={onScroll}
-            onViewContextMenu={onViewContextMenu}
-            contextMenuAnchorRef={contextMenuAnchorRef}
-            scrollAreaRef={scrollAreaRef}
-            getDragMoveControls={getDragMoveControls}
-        />
-    ) : (
+    if (layout === LayoutSetting.Grid) {
+        if (!GridHeaderComponent || !GridViewItem) {
+            throw new Error('Cannot use grid view without grid components');
+        }
+        return (
+            <GridView
+                caption={caption}
+                items={items}
+                loading={loading}
+                GridHeaderComponent={GridHeaderComponent}
+                GridViewItem={GridViewItem}
+                onItemContextMenu={onItemContextMenu}
+                onItemOpen={onItemOpen}
+                onItemRender={onItemRender}
+                onScroll={onScroll}
+                onViewContextMenu={onViewContextMenu}
+                contextMenuAnchorRef={contextMenuAnchorRef}
+                scrollAreaRef={scrollAreaRef}
+                getDragMoveControls={getDragMoveControls}
+            />
+        );
+    }
+
+    return (
         <ListView
             caption={caption}
             items={items}

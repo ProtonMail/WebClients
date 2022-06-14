@@ -47,6 +47,7 @@ export interface ContextMenuProps {
 export interface FileBrowserBaseItem {
     id: string;
     isLocked?: boolean;
+    itemRowStyle?: React.CSSProperties;
 }
 
 export enum HeaderCellsPresets {

@@ -111,7 +111,18 @@
 
 				padding: em(11);
 			}
+
+			// File browser is fluid.
+			// It needs to get some height otherwise it is not visible on mobile.
+			& > div:first-child {
+				height: 400px;
+			}
 		}
+	}
+
+	&-header {
+		font-size: em(24);
+		height: em(24);
 	}
 
 	&-footer {

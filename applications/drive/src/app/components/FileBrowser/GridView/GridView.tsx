@@ -55,8 +55,10 @@ const GridItemCell = <T extends FileBrowserBaseItem>({
 
 type GridViewProps<T extends FileBrowserBaseItem, T1> = Omit<
     FileBrowserProps<T, T1>,
-    'type' | 'onScrollEnd' | 'layout' | 'Cells' | 'headerItems'
+    'type' | 'onScrollEnd' | 'layout' | 'Cells' | 'headerItems' | 'GridHeaderComponent' | 'GridViewItem'
 > & {
+    GridHeaderComponent: React.FC<{ scrollAreaRef: React.RefObject<HTMLDivElement> }>;
+    GridViewItem: React.FC<{ item: T }>;
     scrollAreaRef: React.RefObject<HTMLDivElement>;
 };
 
