@@ -10,7 +10,16 @@ import { canonizeEmailByGuess, canonizeInternalEmail } from '@proton/shared/lib/
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { EventModelReadView, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
-import { Collapsible, IconRow, Info, useMailSettings } from '@proton/components';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Icon,
+    IconRow,
+    Info,
+    useMailSettings,
+} from '@proton/components';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 
@@ -202,10 +211,18 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
             {!!numberOfParticipants && (
                 <IconRow labelClassName={labelClassName} icon="user" title={c('Label').t`Participants`}>
                     <div className="w100">
-                        <Collapsible
-                            openText={c('Participants expand button label').t`Expand participants list`}
-                            closeText={c('Participants expand button label').t`Collapse participants list`}
-                            headerContent={
+                        <Collapsible>
+                            <CollapsibleHeader
+                                suffix={
+                                    <CollapsibleHeaderIconButton
+                                        expandText={c('Participants expand button label').t`Expand participants list`}
+                                        collapseText={c('Participants collapse button label')
+                                            .t`Collapse participants list`}
+                                    >
+                                        <Icon name="chevron-down" />
+                                    </CollapsibleHeaderIconButton>
+                                }
+                            >
                                 <div className="attendee-count">
                                     {numberOfParticipants}{' '}
                                     {c('Label').ngettext(msgid`participant`, `participants`, numberOfParticipants)}
@@ -216,9 +233,8 @@ const PopoverEventContent = ({ calendar, model, formatTime, displayNameEmailMap,
                                             .join(', ')}
                                     </div>
                                 </div>
-                            }
-                        >
-                            {getAttendees()}
+                            </CollapsibleHeader>
+                            <CollapsibleContent>{getAttendees()}</CollapsibleContent>
                         </Collapsible>
                         <Participant
                             className="is-organizer"

@@ -26,6 +26,10 @@ import {
     SelectTwo,
     TextAreaTwo,
     useFormErrors,
+    CollapsibleHeader,
+    CollapsibleContent,
+    CollapsibleHeaderIconButton,
+    Icon,
 } from '../../components';
 import { useApi, useConfig, useNotifications } from '../../hooks';
 
@@ -281,19 +285,19 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                 />
                 {model.OSArtificial && OSAndOSVersionFields}
 
-                <Collapsible
-                    className="mt1"
-                    headerContent={
-                        <div className="flex flex-align-items-center">
-                            <label className="text-semibold">{c('Label').t`System information`}</label>
-                        </div>
-                    }
-                    disableFullWidth
-                    buttonLikeProps={{
-                        size: 'small',
-                    }}
-                >
-                    <div className="mt1">
+                <Collapsible className="mt1">
+                    <CollapsibleHeader
+                        disableFullWidth
+                        suffix={
+                            <CollapsibleHeaderIconButton size="small">
+                                <Icon name="chevron-down" />
+                            </CollapsibleHeaderIconButton>
+                        }
+                    >
+                        <label className="text-semibold">{c('Label').t`System information`}</label>
+                    </CollapsibleHeader>
+
+                    <CollapsibleContent className="mt1">
                         {!model.OSArtificial && OSAndOSVersionFields}
 
                         <InputFieldTwo
@@ -310,7 +314,7 @@ const BugModal = ({ username: Username = '', email, mode, open, onClose, onExit 
                             onValue={handleChange('BrowserVersion')}
                             disabled={loading}
                         />
-                    </div>
+                    </CollapsibleContent>
                 </Collapsible>
             </ModalContent>
             <ModalFooter>
