@@ -68,10 +68,6 @@
 			}
 		}
 	}
-
-	&[aria-expanded='true'] .caret-like {
-		@extend .rotateX-180;
-	}
 }
 
 .button-underline {

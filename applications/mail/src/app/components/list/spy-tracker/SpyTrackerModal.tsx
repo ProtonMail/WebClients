@@ -3,7 +3,11 @@ import {
     Button,
     classnames,
     Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
     Href,
+    Icon,
     ModalProps,
     ModalTwo,
     ModalTwoContent,
@@ -93,19 +97,31 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
                 {trackers.map((tracker, index) => {
                     return (
                         <Collapsible
-                            headerContent={getHeaderContent(tracker)}
                             key={tracker.name}
                             className={classnames(['border-bottom border-weak', index === 0 && 'border-top'])}
-                            openText={c('Action').t`Expand URL`}
                         >
-                            {tracker.urls.map((url, index) => (
-                                <p
-                                    className="color-weak text-break mb0-5 mt0-5"
-                                    key={`${tracker.name}-${index}-tracker`} // eslint-disable-line react/no-array-index-key
-                                >
-                                    {url}
-                                </p>
-                            ))}
+                            <CollapsibleHeader
+                                suffix={
+                                    <CollapsibleHeaderIconButton
+                                        expandText={c('Action').t`Expand URL`}
+                                        collapseText={c('Action').t`Collapse URL`}
+                                    >
+                                        <Icon name="chevron-down" />
+                                    </CollapsibleHeaderIconButton>
+                                }
+                            >
+                                {getHeaderContent(tracker)}
+                            </CollapsibleHeader>
+                            <CollapsibleContent>
+                                {tracker.urls.map((url, index) => (
+                                    <p
+                                        className="color-weak text-break mb0-5 mt0-5"
+                                        key={`${tracker.name}-${index}-tracker`} // eslint-disable-line react/no-array-index-key
+                                    >
+                                        {url}
+                                    </p>
+                                ))}
+                            </CollapsibleContent>
                         </Collapsible>
                     );
                 })}
