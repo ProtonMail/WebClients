@@ -1,13 +1,14 @@
 import { c } from 'ttag';
+
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
-import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import addItem from '@proton/utils/addItem';
-import updateItem from '@proton/utils/updateItem';
 import removeItem from '@proton/utils/removeIndex';
+import updateItem from '@proton/utils/updateItem';
+
+import { Button, ButtonLike, Icon, IconName, Tooltip } from '../../../components';
 import { classnames, generateUID } from '../../../helpers';
-import { ButtonLike, ErrorZone, Icon, UnderlineButton, Tooltip } from '../../../components';
-import NotificationInput from './inputs/NotificationInput';
 import { useActiveBreakpoint } from '../../../hooks';
+import NotificationInput from './inputs/NotificationInput';
 
 export const NOTIFICATION_ID = 'notifications';
 
@@ -15,22 +16,29 @@ interface Props {
     notifications: NotificationModel[];
     hasWhen?: boolean;
     hasType?: boolean;
+    fullWidth?: boolean;
     canAdd?: boolean;
+    addIcon?: IconName;
     defaultNotification: NotificationModel;
+    disabled?: boolean;
     onChange: (value: NotificationModel[]) => void;
-    errors?: EventModelErrors;
 }
 
 const Notifications = ({
     notifications,
     hasWhen,
     hasType,
+    fullWidth = true,
     canAdd = true,
+    addIcon,
     defaultNotification,
+    disabled,
     onChange,
-    errors,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
+    const addNotificationText = c('Action').t`Add notification`;
+
+    const noNotificationsButtonClassName = fullWidth ? 'mt0-5 on-mobile-mt1' : 'mt0-5 on-tablet-mt1';
 
     return (
         <>
@@ -40,15 +48,17 @@ const Notifications = ({
                         <NotificationInput
                             hasWhen={hasWhen}
                             hasType={hasType}
+                            fullWidth={fullWidth}
                             notification={notification}
+                            disabled={disabled}
                             onChange={(newNotification) => onChange(updateItem(notifications, index, newNotification))}
-                            error={errors?.notifications?.fields.includes(index) ? '' : undefined}
                             isNarrow={isNarrow}
                         />
                         <Tooltip title={c('Action').t`Remove this notification`}>
                             <ButtonLike
                                 data-test-id="delete-notification"
                                 className="flex flex-item-noshrink ml0-5"
+                                disabled={disabled}
                                 onClick={() => onChange(removeItem(notifications, index))}
                                 icon
                                 type="button"
@@ -63,18 +73,27 @@ const Notifications = ({
                 );
             })}
             {canAdd && (
-                <UnderlineButton
-                    className={classnames(['p0', notifications.length === 0 && 'mt0-5 on-mobile-mt1'])}
+                <Button
+                    className={classnames(['p0-5', notifications.length === 0 && noNotificationsButtonClassName])}
+                    shape={addIcon ? 'ghost' : 'underline'}
+                    color={addIcon ? 'weak' : 'norm'}
                     data-test-id="add-notification"
                     title={c('Title').t`Add another notification to remind you of this event`}
+                    disabled={disabled}
                     onClick={() =>
                         onChange(addItem(notifications, { ...defaultNotification, id: generateUID('notification') }))
                     }
                 >
-                    {c('Action').t`Add notification`}
-                </UnderlineButton>
+                    {addIcon ? (
+                        <span className="flex flex-nowrap w100 flex-align-items-center">
+                            <Icon name={addIcon} className="mr0-5 flex-item-centered-vert" />
+                            {addNotificationText}
+                        </span>
+                    ) : (
+                        addNotificationText
+                    )}
+                </Button>
             )}
-            {errors?.notifications?.text && <ErrorZone id={NOTIFICATION_ID}>{errors.notifications.text}</ErrorZone>}
         </>
     );
 };

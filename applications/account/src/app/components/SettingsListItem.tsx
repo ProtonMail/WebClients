@@ -1,7 +1,4 @@
-import * as React from 'react';
-
 import { NotificationDot } from '@proton/atoms';
-
 import {
     IconName,
     SidebarListItem,
@@ -16,12 +13,14 @@ interface Props {
     icon: IconName;
     notification?: ThemeColor;
     children: React.ReactNode;
+    exact?: boolean;
+    linkClassName?: string;
 }
 
-const SettingsListItem = ({ to, icon, children, notification }: Props) => {
+const SettingsListItem = ({ to, icon, children, notification, exact, linkClassName }: Props) => {
     return (
         <SidebarListItem>
-            <SidebarListItemLink to={to}>
+            <SidebarListItemLink to={to} exact={exact} className={linkClassName}>
                 <SidebarListItemContent
                     left={<SidebarListItemContentIcon name={icon} />}
                     right={notification && <NotificationDot color={notification} />}

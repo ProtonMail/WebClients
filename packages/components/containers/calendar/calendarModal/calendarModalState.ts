@@ -1,24 +1,42 @@
 import { c } from 'ttag';
-import { ACCENT_COLORS } from '@proton/shared/lib/constants';
-import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
-import { Address } from '@proton/shared/lib/interfaces';
-import {
-    VisualCalendar,
-    CALENDAR_TYPE,
-    CalendarErrors,
-    CalendarSettings,
-    CalendarViewModelFull,
-} from '@proton/shared/lib/interfaces/calendar';
-import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
-import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
-import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+
 import { DEFAULT_EVENT_DURATION } from '@proton/shared/lib/calendar/constants';
+import { modelToNotifications } from '@proton/shared/lib/calendar/modelToNotifications';
 import {
     DEFAULT_FULL_DAY_NOTIFICATION,
     DEFAULT_FULL_DAY_NOTIFICATIONS,
     DEFAULT_PART_DAY_NOTIFICATION,
     DEFAULT_PART_DAY_NOTIFICATIONS,
 } from '@proton/shared/lib/calendar/notificationDefaults';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+import { ACCENT_COLORS } from '@proton/shared/lib/constants';
+import { Address } from '@proton/shared/lib/interfaces';
+import {
+    CALENDAR_TYPE,
+    CalendarErrors,
+    CalendarSettings,
+    CalendarViewModelFull,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
+import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
+
+export const getCalendarEventSettingsModel = (settings: Partial<CalendarSettings>) => {
+    const {
+        DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
+        DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
+        DefaultEventDuration = DEFAULT_EVENT_DURATION,
+    } = settings;
+
+    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
+    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
+
+    return {
+        duration: DefaultEventDuration,
+        partDayNotifications,
+        fullDayNotifications,
+    };
+};
 
 interface GetCalendarModelArguments {
     Calendar: VisualCalendar;
@@ -31,30 +49,17 @@ export const getCalendarModel = ({
     CalendarSettings,
     Addresses,
     AddressID,
-}: GetCalendarModelArguments): Partial<CalendarViewModelFull> => {
-    const {
-        DefaultPartDayNotifications = DEFAULT_PART_DAY_NOTIFICATIONS,
-        DefaultFullDayNotifications = DEFAULT_FULL_DAY_NOTIFICATIONS,
-        DefaultEventDuration = DEFAULT_EVENT_DURATION,
-    } = CalendarSettings;
-
-    const partDayNotifications = notificationsToModel(DefaultPartDayNotifications, false);
-    const fullDayNotifications = notificationsToModel(DefaultFullDayNotifications, true);
-
-    return {
-        calendarID: Calendar.ID,
-        name: Calendar.Name,
-        display: !!Calendar.Display,
-        description: Calendar.Description,
-        color: (Calendar.Color || '').toLowerCase(),
-        addressID: AddressID,
-        addressOptions: Addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
-        duration: DefaultEventDuration,
-        partDayNotifications,
-        fullDayNotifications,
-        type: Calendar.Type,
-    };
-};
+}: GetCalendarModelArguments): Partial<CalendarViewModelFull> => ({
+    calendarID: Calendar.ID,
+    name: Calendar.Name,
+    display: !!Calendar.Display,
+    description: Calendar.Description,
+    color: (Calendar.Color || '').toLowerCase(),
+    addressID: AddressID,
+    addressOptions: Addresses.map(({ ID, Email = '' }) => ({ value: ID, text: Email })),
+    type: Calendar.Type,
+    ...getCalendarEventSettingsModel(CalendarSettings),
+});
 
 export const getDefaultModel = (): CalendarViewModelFull => {
     return {

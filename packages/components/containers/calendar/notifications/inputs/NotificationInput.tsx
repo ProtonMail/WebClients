@@ -1,11 +1,16 @@
 import { c } from 'ttag';
 
-import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import {
     NOTIFICATION_INPUT_ID,
     NOTIFICATION_UNITS_MAX,
     SETTINGS_NOTIFICATION_TYPE,
 } from '@proton/shared/lib/calendar/constants';
+import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
+
+import { FeatureCode } from '../../..';
+import { useSpotlightOnFeature } from '../../../..';
+import { IntegerInput, Option, SelectTwo, Spotlight, TimeInput, useSpotlightShow } from '../../../../components';
+import { classnames } from '../../../../helpers';
 import {
     getDaysBefore,
     getHoursBefore,
@@ -14,10 +19,6 @@ import {
     getSameTime,
     getWeeksBefore,
 } from './notificationOptions';
-import { classnames } from '../../../../helpers';
-import { Option, SelectTwo, IntegerInput, TimeInput, Spotlight, useSpotlightShow } from '../../../../components';
-import { FeatureCode } from '../../..';
-import { useSpotlightOnFeature } from '../../../..';
 
 const { EMAIL, DEVICE /* BOTH */ } = SETTINGS_NOTIFICATION_TYPE;
 
@@ -26,6 +27,8 @@ interface Props {
     notification: NotificationModel;
     hasWhen?: boolean;
     hasType?: boolean;
+    fullWidth?: boolean;
+    disabled?: boolean;
     onChange: (model: NotificationModel) => void;
     error?: string;
     isNarrow: boolean;
@@ -44,6 +47,8 @@ const NotificationInput = ({
     notification,
     notification: { isAllDay, type, when, value, at, unit },
     hasType = false,
+    fullWidth = true,
+    disabled = false,
     onChange,
     error,
     isNarrow,
@@ -69,7 +74,13 @@ const NotificationInput = ({
     const shouldShowSpotlight = useSpotlightShow(show);
 
     return (
-        <div className={classnames(['flex flex-nowrap flex-item-fluid on-mobile-flex-column', className])}>
+        <div
+            className={classnames([
+                'flex flex-nowrap flex-item-fluid',
+                className,
+                fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column',
+            ])}
+        >
             {hasType && (
                 <Spotlight
                     show={shouldShowSpotlight}
@@ -88,12 +99,16 @@ const NotificationInput = ({
                 >
                     <span
                         className={classnames([
-                            'flex flex-nowrap on-mobile-mt0-5 on-mobile-mb0-5 mr0-5',
-                            isAllDay && at ? 'on-tiny-mobile-ml0' : 'w10e on-mobile-ml0',
+                            'flex flex-nowrap mr0-5',
+                            fullWidth ? 'on-mobile-mt0-5 on-mobile-mb0-5' : 'on-tablet-mt0-5 on-tablet-mb0-5',
+                            isAllDay && at
+                                ? 'on-tiny-mobile-ml0'
+                                : classnames(['w10e', fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0']),
                         ])}
                     >
                         <SelectTwo
                             value={type}
+                            disabled={disabled}
                             onChange={({ value }) => onChange({ ...notification, type: +value })}
                             title={c('Title').t`Select the way to send this notification`}
                             onOpen={onCloseSpotlight}
@@ -120,6 +135,7 @@ const NotificationInput = ({
                             min={0}
                             max={NOTIFICATION_UNITS_MAX[unit]}
                             value={value}
+                            disabled={disabled}
                             onChange={(newValue) => {
                                 if (newValue !== undefined && newValue === 0) {
                                     return;
@@ -140,6 +156,7 @@ const NotificationInput = ({
                     data-test-id="notification-time-dropdown"
                     className="flex-item-fluid"
                     value={optionsValue}
+                    disabled={disabled}
                     onChange={({ value }) => {
                         const optionIndex = +value;
                         const option = options[optionIndex];
@@ -162,13 +179,23 @@ const NotificationInput = ({
             {isAllDay && at && (
                 <span className="flex on-tiny-mobile-flex-column flex-nowrap">
                     {isAllDay && at && (
-                        <span className="flex flex-nowrap flex-item-fluid flex-align-items-center on-mobile-mt0-5">
-                            <span className="flex-item-noshrink ml0-5 on-mobile-ml0 mr0-5">{c('Notification time input')
-                                .t`at`}</span>
+                        <span
+                            className={classnames([
+                                'flex flex-nowrap flex-item-fluid flex-align-items-center',
+                                fullWidth ? 'on-mobile-mt0-5' : 'on-tablet-mt0-5',
+                            ])}
+                        >
+                            <span
+                                className={classnames([
+                                    'flex-item-noshrink ml0-5 mr0-5',
+                                    fullWidth ? 'on-mobile-ml0' : 'on-tablet-ml0',
+                                ])}
+                            >{c('Notification time input').t`at`}</span>
                             <span className="w8e">
                                 <TimeInput
                                     data-test-id="notification-time-at"
                                     value={at}
+                                    disabled={disabled}
                                     onChange={(at) => onChange({ ...notification, at })}
                                     title={c('Title').t`Select the time to send this notification`}
                                     {...errorProps}

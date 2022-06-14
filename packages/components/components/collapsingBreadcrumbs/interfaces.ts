@@ -8,5 +8,6 @@ export interface BreadcrumbInfo
     collapsedText?: ReactNode;
     noShrink?: boolean;
     highlighted?: boolean;
+    className?: string;
     onClick?: () => void;
 }

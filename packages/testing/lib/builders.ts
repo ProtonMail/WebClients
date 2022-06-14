@@ -50,10 +50,10 @@ export const calendarBuilder = build<VisualCalendar>('Calendar', {
     fields: {
         ID: testCalendarId,
         Name: 'My calendar',
-        Email: testEmail,
         Description: '',
         Type: 0,
         Flags: CALENDAR_FLAGS.ACTIVE,
+        Email: testEmail,
         Color: '#F00',
         Display: 1,
         Members: [
