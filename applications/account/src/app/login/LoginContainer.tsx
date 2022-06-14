@@ -205,7 +205,7 @@ const LoginContainer = ({
                     </Content>
                 </>
             )}
-            {step === AuthStep.TOTP && cache && (
+            {step === AuthStep.TWO_FA && cache && (
                 <>
                     <Header title={c('Title').t`Two-factor authentication`} onBack={handleBackStep} />
                     <Content>

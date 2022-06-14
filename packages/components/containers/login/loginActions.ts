@@ -259,18 +259,17 @@ export const handleSetupPassword = async ({ cache, newPassword }: { cache: AuthC
 const next = async ({ cache, from }: { cache: AuthCacheResult; from: AuthStep }): Promise<AuthActionResponse> => {
     const { hasTotp, hasUnlock, hasU2F, authApi, authResult, ignoreUnlock, hasGenerateKeys, loginPassword } = cache;
 
-    if (from === AuthStep.LOGIN && hasTotp) {
-        return {
-            cache,
-            to: AuthStep.TOTP,
-        };
-    }
-
-    if ((from === AuthStep.LOGIN || from === AuthStep.TOTP) && hasU2F) {
-        return {
-            cache,
-            to: AuthStep.U2F,
-        };
+    if (from === AuthStep.LOGIN) {
+        if (hasTotp) {
+            return {
+                cache,
+                to: AuthStep.TWO_FA,
+            };
+        } else if (hasU2F) {
+            // U2F must be enabled together with TOTP for backwards support. Since we don't support any type of U2F right now,
+            // error out if only that is enabled.
+            throw new Error('U2F is not supported');
+        }
     }
 
     // Special case for the admin panel, return early since it can not get key salts.
@@ -334,7 +333,7 @@ export const handleTotp = async ({
         throw e;
     });
 
-    return next({ cache, from: AuthStep.TOTP });
+    return next({ cache, from: AuthStep.TWO_FA });
 };
 
 export const handleLogin = async ({
