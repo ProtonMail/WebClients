@@ -1,0 +1,5 @@
+.collapsible-header-icon-button {
+	&[aria-expanded='true'] svg {
+		transform: rotateX(180deg);
+	}
+}

@@ -1,34 +1,170 @@
-import Collapsible, { Props as CollapsibleProps } from '@proton/components/components/collapsible/Collapsible';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderButton,
+    CollapsibleHeaderIconButton,
+    Icon,
+} from '@proton/components';
 
-import { getTitle } from '../../helpers/title';
 import mdx from './Collapsible.mdx';
 
 export default {
     component: Collapsible,
-    title: getTitle(__filename, false),
-    parameters: {
-        docs: {
-            page: mdx,
-        },
-    },
+    subcomponents: { CollapsibleHeader, CollapsibleContent, CollapsibleHeaderButton, CollapsibleHeaderIconButton },
+    title: 'components/Collapsible',
+    parameters: { docs: { page: mdx } },
 };
 
-export const Playground = (args: CollapsibleProps) => <Collapsible {...args} />;
-const args: CollapsibleProps = {
-    children:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?',
-    headerContent: 'Header content',
-};
-Playground.args = args;
-Playground.argTypes = {
-    headerContent: {
-        type: { name: 'string' },
-    },
-};
+export const Basic = () => (
+    <Collapsible>
+        <CollapsibleHeader
+            suffix={
+                <CollapsibleHeaderIconButton>
+                    <Icon name="chevron-down" />
+                </CollapsibleHeaderIconButton>
+            }
+        >
+            Collapsible header
+        </CollapsibleHeader>
+        <CollapsibleContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </CollapsibleContent>
+    </Collapsible>
+);
 
-export const Basic = ({ ...args }) => (
-    <Collapsible headerContent={<h3 className="mb0">I am but a header</h3>} expandByDefault {...args}>
-        <p>This is the content</p>
-        <p>And it&#39;s grrrrrreat!</p>
+export const ExpandedByDefault = () => (
+    <Collapsible expandByDefault>
+        <CollapsibleHeader
+            suffix={
+                <CollapsibleHeaderIconButton>
+                    <Icon name="chevron-down" />
+                </CollapsibleHeaderIconButton>
+            }
+        >
+            Collapsible header
+        </CollapsibleHeader>
+        <CollapsibleContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </CollapsibleContent>
+    </Collapsible>
+);
+
+export const ExpandButton = () => (
+    <>
+        <Collapsible className="mb1">
+            <CollapsibleHeader
+                suffix={
+                    <CollapsibleHeaderIconButton>
+                        <Icon name="chevron-down" />
+                    </CollapsibleHeaderIconButton>
+                }
+            >
+                Chevron icon
+            </CollapsibleHeader>
+            <CollapsibleContent>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+            </CollapsibleContent>
+        </Collapsible>
+        <Collapsible className="mb1">
+            <CollapsibleHeader
+                suffix={
+                    <CollapsibleHeaderIconButton>
+                        <Icon name="brand-proton" />
+                    </CollapsibleHeaderIconButton>
+                }
+            >
+                Proton icon
+            </CollapsibleHeader>
+            <CollapsibleContent>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+            </CollapsibleContent>
+        </Collapsible>
+        <Collapsible>
+            <CollapsibleHeader>Omitted icon</CollapsibleHeader>
+            <CollapsibleContent>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+            </CollapsibleContent>
+        </Collapsible>
+
+        <Collapsible>
+            <CollapsibleHeader suffix={<CollapsibleHeaderButton>Toggle</CollapsibleHeaderButton>}>
+                Button
+            </CollapsibleHeader>
+            <CollapsibleContent>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.
+            </CollapsibleContent>
+        </Collapsible>
+    </>
+);
+
+export const TooltipText = () => (
+    <Collapsible>
+        <CollapsibleHeader
+            suffix={
+                <CollapsibleHeaderIconButton expandText="I can be opened" collapseText="I can be collapsed">
+                    <Icon name="chevron-down" />
+                </CollapsibleHeaderIconButton>
+            }
+        >
+            Collapsible header
+        </CollapsibleHeader>
+        <CollapsibleContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </CollapsibleContent>
+    </Collapsible>
+);
+
+export const FullWidth = () => (
+    <Collapsible>
+        <CollapsibleHeader
+            suffix={
+                <CollapsibleHeaderIconButton>
+                    <Icon name="chevron-down" />
+                </CollapsibleHeaderIconButton>
+            }
+            disableFullWidth
+        >
+            Collapsible header not full width
+        </CollapsibleHeader>
+        <CollapsibleContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </CollapsibleContent>
+    </Collapsible>
+);
+
+export const TogglableContainer = () => (
+    <Collapsible>
+        <CollapsibleHeader
+            suffix={
+                <CollapsibleHeaderIconButton>
+                    <Icon name="chevron-down" />
+                </CollapsibleHeaderIconButton>
+            }
+            disableContainerToggle
+        >
+            Collapsible header not clickable
+        </CollapsibleHeader>
+        <CollapsibleContent>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat.
+        </CollapsibleContent>
     </Collapsible>
 );
