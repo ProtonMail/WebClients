@@ -4,8 +4,7 @@ import { APP_NAMES } from '@proton/shared/lib/constants';
 
 export enum AuthStep {
     LOGIN,
-    TOTP,
-    U2F,
+    TWO_FA,
     UNLOCK,
     NEW_PASSWORD,
     GENERATE_INTERNAL,
