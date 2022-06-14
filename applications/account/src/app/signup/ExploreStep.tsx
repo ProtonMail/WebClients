@@ -25,7 +25,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                         return (
                             <li key={app}>
                                 <Button
-                                    loading={type === app && loading}
+                                    loading={showLoader}
                                     data-testid={app.replace('proton-', 'explore-')}
                                     size="large"
                                     shape="ghost"
