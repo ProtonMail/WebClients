@@ -31,3 +31,9 @@ export const decodeBase64URL = (str: string) => {
 
 export const uint8ArrayToPaddedBase64URLString = (array: Uint8Array) =>
     encodeBase64URL(uint8ArrayToString(array), false);
+
+export const validateBase64string = (str: string, useVariantAlphabet?: boolean) => {
+    const regex = useVariantAlphabet ? /^[-_A-Za-z0-9]*={0,3}$/ : /^[+/A-Za-z0-9]*={0,3}$/
+
+    return regex.test(str);
+};

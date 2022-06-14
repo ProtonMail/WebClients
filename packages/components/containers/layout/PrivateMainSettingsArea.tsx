@@ -14,16 +14,20 @@ import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 
 interface PrivateMainSettingsAreaBaseProps {
+    breadcrumbs?: ReactNode;
     title: string;
+    noTitle?: boolean;
     description?: string;
     setActiveSection?: (section: string) => void;
     children?: ReactNode;
 }
 
 export const PrivateMainSettingsAreaBase = ({
-    setActiveSection,
+    breadcrumbs,
     title,
+    noTitle,
     description,
+    setActiveSection,
     children,
 }: PrivateMainSettingsAreaBaseProps) => {
     const location = useLocation();
@@ -114,9 +118,12 @@ export const PrivateMainSettingsAreaBase = ({
     return (
         <PrivateMainArea ref={mainAreaRef}>
             <div className="container-section-sticky">
-                <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
-                    {title}
-                </SettingsPageTitle>
+                {breadcrumbs && <div className="mt1-5">{breadcrumbs}</div>}
+                {!noTitle && (
+                    <SettingsPageTitle className={classnames(['mt1-5', !description && 'mb1-5'])}>
+                        {title}
+                    </SettingsPageTitle>
+                )}
                 {description && <SettingsParagraph className="mb1-5">{description}</SettingsParagraph>}
                 <ErrorBoundary>{wrappedSections}</ErrorBoundary>
             </div>
@@ -131,7 +138,7 @@ interface PrivateMainSettingsAreaProps {
 }
 
 const PrivateMainSettingsArea = ({ setActiveSection, children, config }: PrivateMainSettingsAreaProps) => {
-    const { text: title, description, subsections } = config;
+    const { text, title, description, subsections } = config;
 
     const wrappedSections = Children.toArray(children).map((child, i) => {
         if (!isValidElement<{ observer: IntersectionObserver; className: string }>(child)) {
@@ -158,7 +165,11 @@ const PrivateMainSettingsArea = ({ setActiveSection, children, config }: Private
     });
 
     return (
-        <PrivateMainSettingsAreaBase title={title} description={description} setActiveSection={setActiveSection}>
+        <PrivateMainSettingsAreaBase
+            title={title || text}
+            description={description}
+            setActiveSection={setActiveSection}
+        >
             {wrappedSections}
         </PrivateMainSettingsAreaBase>
     );

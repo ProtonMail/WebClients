@@ -1,37 +1,37 @@
 import { ReactNode } from 'react';
-import { Route, Redirect, Switch, useRouteMatch } from 'react-router-dom';
+import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
 
 import {
-    useAddresses,
-    ThemesSection,
-    LayoutsSection,
-    MessagesOtherSection,
-    IdentitySection,
-    AddressesSection,
-    PmMeSection,
-    MessagesSection,
-    MessagesGeneralSection,
-    FoldersSection,
-    LabelsSection,
-    FiltersSection,
-    SpamFiltersSection,
-    AutoReplySection,
-    DomainsSection,
-    CatchAllSection,
-    AddressVerificationSection,
-    ExternalPGPSettingsSection,
     AddressKeysSection,
-    UserKeysSection,
-    ProtonMailBridgeSection,
+    AddressVerificationSection,
+    AddressesSection,
+    AutoReplySection,
+    CatchAllSection,
+    DomainsSection,
     EmailPrivacySection,
+    ExternalPGPSettingsSection,
+    FiltersSection,
+    FoldersSection,
+    IdentitySection,
     ImportExportAppSection,
-    PrivateMainSettingsArea,
+    LabelsSection,
+    LayoutsSection,
+    MessagesGeneralSection,
+    MessagesOtherSection,
+    MessagesSection,
     NewDomainSection,
+    PmMeSection,
+    PrivateMainAreaLoading,
+    PrivateMainSettingsArea,
+    ProtonMailBridgeSection,
+    SpamFiltersSection,
+    ThemesSection,
+    UserKeysSection,
+    useAddresses,
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 
 import { getHasPmMeAddress, getMailAppRoutes } from './routes';
-import PrivateMainAreaLoading from '../../components/PrivateMainAreaLoading';
 
 const MailSettingsRouter = ({
     mailAppRoutes,

@@ -6,6 +6,7 @@ import { getAppName } from '@proton/shared/lib/apps/helper';
 import AccountSidebarVersion from './AccountSidebarVersion';
 import { Routes } from './routes';
 import SidebarListWrapper from '../containers/SidebarListWrapper';
+import CalendarSettingsSidebar from '../containers/calendar/CalendarSettingsSidebar';
 
 interface AccountSidebarProps {
     app: APP_NAMES;
@@ -47,7 +48,7 @@ const AccountSidebar = ({ app, appSlug, logo, expanded, onToggleExpand, routes }
                 <SidebarList>
                     <SidebarListWrapper prefix={prefix} {...routes.account} />
                     {app === APPS.PROTONMAIL && <SidebarListWrapper prefix={prefix} {...routes.mail} />}
-                    {app === APPS.PROTONCALENDAR && <SidebarListWrapper prefix={prefix} {...routes.calendar} />}
+                    {app === APPS.PROTONCALENDAR && <CalendarSettingsSidebar prefix={prefix} {...routes.calendar} />}
                     {app === APPS.PROTONDRIVE && <SidebarListWrapper prefix={prefix} {...routes.drive} />}
                     {app === APPS.PROTONVPN_SETTINGS && <SidebarListWrapper prefix={prefix} {...routes.vpn} />}
                     {routes.organization.available && <SidebarListWrapper prefix={prefix} {...routes.organization} />}

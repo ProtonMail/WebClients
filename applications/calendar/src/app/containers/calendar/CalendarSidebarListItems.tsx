@@ -184,7 +184,7 @@ const CalendarSidebarListItems = ({
             {!!calendarModalCalendar && (
                 <CalendarModal
                     {...calendarModalProps}
-                    isOpen={isCalendarModalOpen}
+                    open={isCalendarModalOpen}
                     onClose={onCloseCalendarModal}
                     onExit={() => {
                         setCalendarModalCalendar(null);

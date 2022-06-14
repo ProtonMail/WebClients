@@ -10,6 +10,7 @@ export interface SubSectionConfig {
 
 export interface SettingsAreaConfig {
     text: string;
+    title?: string;
     description?: string;
     subsections: SubSectionConfig[];
 }

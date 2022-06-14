@@ -1,4 +1,4 @@
-import { getCalendarIsNotSyncedInfo, getSyncingInfo, getNotSyncedInfo } from '../../../lib/calendar/subscribe/helpers';
+import { getCalendarIsNotSyncedInfo, getNotSyncedInfo, getSyncingInfo } from '../../../lib/calendar/subscribe/helpers';
 import { HOUR } from '../../../lib/constants';
 import { CALENDAR_SUBSCRIPTION_STATUS, CALENDAR_TYPE, VisualCalendar } from '../../../lib/interfaces/calendar';
 
@@ -21,13 +21,13 @@ const {
 
 describe('getSyncingInfo', () => {
     it('passes an object with the correct label and text', () => {
-        expect(getSyncingInfo('dog')).toEqual({ label: 'Syncing', text: 'dog' });
+        expect(getSyncingInfo('dog')).toEqual({ label: 'Syncing', text: 'dog', longText: '', isSyncing: true });
     });
 });
 
 describe('getNotSyncedInfo', () => {
     it('passes an object with the correct label and text', () => {
-        expect(getNotSyncedInfo('dog')).toEqual({ label: 'Not synced', text: 'dog' });
+        expect(getNotSyncedInfo('dog')).toEqual({ label: 'Not synced', text: 'dog', longText: '', isSyncing: false });
     });
 });
 
@@ -48,10 +48,10 @@ describe('getCalendarIsNotSyncedInfo', () => {
             ID: 'calendarID',
             Name: 'calendarName',
             Description: 'calendarDescription',
+            Email: 'calendarEmail',
             Display: 1,
             Color: '#f00',
             Flags: 1,
-            Email: 'email',
             Type: CALENDAR_TYPE.SUBSCRIPTION,
             Members: [],
         };
@@ -89,8 +89,13 @@ describe('getCalendarIsNotSyncedInfo', () => {
             },
         };
 
-        expect(getCalendarIsNotSyncedInfo(notSyncedYetCalendar)).toEqual(getSyncingInfo('Calendar is syncing'));
-        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(OK))).toBe(null);
+        expect(getCalendarIsNotSyncedInfo(notSyncedYetCalendar)).toEqual(
+            getSyncingInfo(
+                'Calendar is syncing',
+                'Calendar is syncing: it may take several minutes for all of its events to show up'
+            )
+        );
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(OK))).toBe(undefined);
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(9999))).toEqual(
             getNotSyncedInfo('Failed to sync calendar')
         );
@@ -119,7 +124,12 @@ describe('getCalendarIsNotSyncedInfo', () => {
                         Status: status,
                     },
                 })
-            ).toEqual(getNotSyncedInfo('More than 12 hours passed since last update'))
+            ).toEqual(
+                getNotSyncedInfo(
+                    'More than 12 hours passed since last update',
+                    'More than 12 hours passed since last update — Proton Calendar will try to update the calendar in a few hours.'
+                )
+            )
         );
         expect(
             getCalendarIsNotSyncedInfo({
@@ -129,7 +139,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
                     LastUpdateTime: syncPeriodTooLongCalendar.SubscriptionParameters.LastUpdateTime + 12 * HOUR + 1,
                 },
             })
-        ).toBe(null);
+        ).toBe(undefined);
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INVALID_ICS))).toEqual(
             getNotSyncedInfo('Unsupported calendar format')
         );
@@ -141,29 +151,55 @@ describe('getCalendarIsNotSyncedInfo', () => {
         );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_BAD_REQUEST))).toEqual(
-            getNotSyncedInfo('Calendar link is not accessible')
+            getNotSyncedInfo(
+                'Calendar link is not accessible',
+                "Calendar link is not accessible from outside the calendar provider's ecosystem."
+            )
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_UNAUTHORIZED))).toEqual(
-            getNotSyncedInfo('Calendar link is not accessible')
+            getNotSyncedInfo(
+                'Calendar link is not accessible',
+                "Calendar link is not accessible from outside the calendar provider's ecosystem."
+            )
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_FORBIDDEN))).toEqual(
-            getNotSyncedInfo('Calendar link is not accessible')
+            getNotSyncedInfo(
+                'Calendar link is not accessible',
+                "Calendar link is not accessible from outside the calendar provider's ecosystem."
+            )
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_NOT_FOUND))).toEqual(
-            getNotSyncedInfo('Calendar link is not accessible')
+            getNotSyncedInfo(
+                'Calendar link is not accessible',
+                "Calendar link is not accessible from outside the calendar provider's ecosystem."
+            )
         );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INTERNAL_CALENDAR_URL_NOT_FOUND))).toEqual(
-            getNotSyncedInfo('Calendar link is not accessible')
+            getNotSyncedInfo(
+                'Calendar link is not accessible',
+                "Calendar link is not accessible from outside the calendar provider's ecosystem."
+            )
         );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_GENERIC))).toEqual(
-            getNotSyncedInfo('Calendar link is temporarily inaccessible')
+            getNotSyncedInfo(
+                'Calendar link is temporarily inaccessible',
+                'Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.'
+            )
         );
         expect(
             getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR))
-        ).toEqual(getNotSyncedInfo('Calendar link is temporarily inaccessible'));
+        ).toEqual(
+            getNotSyncedInfo(
+                'Calendar link is temporarily inaccessible',
+                'Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.'
+            )
+        );
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(HTTP_REQUEST_FAILED_TIMEOUT))).toEqual(
-            getNotSyncedInfo('Calendar link is temporarily inaccessible')
+            getNotSyncedInfo(
+                'Calendar link is temporarily inaccessible',
+                'Calendar link is temporarily inaccessible. Please verify that the link from the calendar provider is still valid.'
+            )
         );
 
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INTERNAL_CALENDAR_UNDECRYPTABLE))).toEqual(

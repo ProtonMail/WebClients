@@ -6,9 +6,11 @@ import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
-
 import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
-import { AlertModal, Button, useModalState } from '../../../components';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { SettingsParagraph } from '@proton/components/containers';
+
+import { AlertModal, Button, Href, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
 import { CalendarModal } from '../calendarModal/CalendarModal';
@@ -41,9 +43,9 @@ export interface PersonalCalendarsSectionProps {
 
 const PersonalCalendarsSection = ({
     addresses,
-    calendars = [],
+    calendars,
     defaultCalendar,
-    activeCalendars = [],
+    activeCalendars,
     user,
 }: PersonalCalendarsSectionProps) => {
     const api = useApi();
@@ -160,6 +162,7 @@ const PersonalCalendarsSection = ({
     const calendarLimitReachedText = c('Calendar limit warning')
         .t`You have reached the maximum number of personal calendars you can create within your plan.`;
     const isBelowLimit = calendars.length < calendarsLimit;
+    const canAdd = activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope;
 
     const { calendarModal, exportCalendarModal, deleteCalendarModal } = modalsMap;
 
@@ -198,7 +201,7 @@ const PersonalCalendarsSection = ({
                 <CalendarModal
                     {...calendarModal.props}
                     {...calendarModalProps}
-                    isOpen={isCalendarModalOpen}
+                    open={isCalendarModalOpen}
                     onExit={() => {
                         onExitCalendarModal?.();
                         updateModal('calendarModal', {
@@ -216,7 +219,19 @@ const PersonalCalendarsSection = ({
                 loadingMap={loadingMap}
                 add={c('Action').t`Create calendar`}
                 calendarLimitReachedText={calendarLimitReachedText}
-                canAdd={activeAddresses.length > 0 && isBelowLimit && user.hasNonDelinquentScope}
+                canAdd={canAdd}
+                description={
+                    canAdd &&
+                    !calendars.length && (
+                        <SettingsParagraph>
+                            {c('Personal calendar section description')
+                                .t`Create a calendar to stay on top of your schedule while keeping your data secure.`}
+                            <br />
+                            <Href url={getKnowledgeBaseUrl('/protoncalendar-calendars')}>{c('Knowledge base link label')
+                                .t`Learn more`}</Href>
+                        </SettingsParagraph>
+                    )
+                }
                 onAdd={handleCreate}
                 onSetDefault={handleSetDefault}
                 onEdit={handleEdit}
