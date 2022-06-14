@@ -1,20 +1,21 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
-import createCache from '@proton/shared/lib/helpers/cache';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { createMemoryHistory } from 'history';
+
 import { CacheProvider } from '@proton/components/containers/cache';
-import { CALENDAR_FLAGS, SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
-import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import useSubscribedCalendars from '@proton/components/hooks/useSubscribedCalendars';
+import { CALENDAR_FLAGS, SETTINGS_VIEW } from '@proton/shared/lib/calendar/constants';
 import getHasUserReachedCalendarLimit from '@proton/shared/lib/calendar/getHasUserReachedCalendarLimit';
+import createCache from '@proton/shared/lib/helpers/cache';
+import { CALENDAR_TYPE, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import CalendarSidebar, { CalendarSidebarProps } from './CalendarSidebar';
 
 jest.mock('@proton/components/containers/calendar/calendarModal/CalendarModal', () => ({
     __esModule: true,
-    CalendarModal: jest.fn(({ isOpen }) => <span>{isOpen ? 'CalendarModal' : null}</span>),
+    CalendarModal: jest.fn(({ open }) => <span>{open ? 'CalendarModal' : null}</span>),
 }));
 
 jest.mock('@proton/components/containers/calendar/subscribeCalendarModal/SubscribeCalendarModal', () => ({

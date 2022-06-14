@@ -79,7 +79,7 @@ export interface CalendarAddressOptions {
     text: string;
 }
 
-export interface CalendarSelectOptions {
+export interface CalendarSelectOption {
     id: string;
     name: string;
     color: string;

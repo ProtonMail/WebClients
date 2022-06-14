@@ -1,17 +1,8 @@
-import { getPersonalCalendars, getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
-import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
-import isTruthy from '@proton/utils/isTruthy';
-import { omit } from '@proton/shared/lib/helpers/object';
 import { Dispatch, SetStateAction } from 'react';
-import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
-import {
-    CalendarNotificationSettings,
-    CalendarSettings,
-    CalendarWithMembers,
-    VisualCalendar,
-} from '@proton/shared/lib/interfaces/calendar';
-import { getPrimaryKey } from '@proton/shared/lib/keys';
+
 import { c } from 'ttag';
+
+import { CALENDAR_MODAL_TYPE } from '@proton/components/containers/calendar/calendarModal';
 import {
     createCalendar,
     updateCalendar,
@@ -19,12 +10,25 @@ import {
     updateCalendarUserSettings,
     updateMember,
 } from '@proton/shared/lib/api/calendars';
+import { getPersonalCalendars, getVisualCalendar } from '@proton/shared/lib/calendar/calendar';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
+import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
+import { omit } from '@proton/shared/lib/helpers/object';
+import {
+    CalendarNotificationSettings,
+    CalendarSettings,
+    CalendarWithMembers,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
+import { CalendarCreateData } from '@proton/shared/lib/interfaces/calendar/Api';
+import { getPrimaryKey } from '@proton/shared/lib/keys';
+import isTruthy from '@proton/utils/isTruthy';
+
 import {
     useApi,
     useEventManager,
-    useGetAddresses,
     useGetAddressKeys,
+    useGetAddresses,
     useNotifications,
     useReadCalendarBootstrap,
 } from '../../../hooks';
@@ -96,21 +100,25 @@ const getHasChangedCalendarSettings = (
 };
 
 interface Props {
+    type?: CALENDAR_MODAL_TYPE;
     setCalendar: Dispatch<SetStateAction<VisualCalendar | undefined>>;
     setError: Dispatch<SetStateAction<boolean>>;
     defaultCalendarID?: string | null;
     onClose?: () => void;
     onCreateCalendar?: (id: string) => void;
+    onEditCalendar?: () => void;
     activeCalendars?: VisualCalendar[];
     isSubscribedCalendar?: boolean;
 }
 
 const useGetCalendarActions = ({
+    type = CALENDAR_MODAL_TYPE.COMPLETE,
     setCalendar,
     setError,
     defaultCalendarID,
     onClose,
     onCreateCalendar,
+    onEditCalendar,
     activeCalendars,
     isSubscribedCalendar = false,
 }: Props) => {
@@ -225,9 +233,15 @@ const useGetCalendarActions = ({
         await call();
         await calendarCall([calendarID]);
 
+        onEditCalendar?.();
         onClose?.();
 
-        createNotification({ text: c('Success').t`Calendar updated` });
+        createNotification({
+            text:
+                type === CALENDAR_MODAL_TYPE.COMPLETE
+                    ? c('Success').t`Calendar updated`
+                    : c('Success').t`Calendar information updated`,
+        });
     };
 
     return { handleCreateCalendar, handleUpdateCalendar };
