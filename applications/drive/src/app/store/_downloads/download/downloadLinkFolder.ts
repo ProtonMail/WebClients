@@ -12,11 +12,17 @@ import {
     DownloadStreamControls,
     GetChildrenCallback,
     OnSignatureIssueCallback,
+    OnProgressCallback,
     ChildrenLinkMeta,
 } from '../interface';
 import { NestedLinkDownload } from './interface';
 import ArchiveGenerator from './archiveGenerator';
 import ConcurrentIterator from './concurrentIterator';
+
+type FolderLoadInfo = {
+    size: number;
+    linkSizes: { [linkId: string]: number };
+};
 
 /**
  * initDownloadLinkFolder prepares controls to download archive of the folder.
@@ -33,9 +39,9 @@ export default function initDownloadLinkFolder(
 
     const start = () => {
         folderLoader
-            .load(callbacks.getChildren, callbacks.onSignatureIssue)
-            .then((size) => {
-                const linkSizes = Object.fromEntries([[link.linkId, size]]);
+            .load(callbacks.getChildren, callbacks.onSignatureIssue, callbacks.onProgress)
+            .then(({ size, linkSizes }) => {
+                linkSizes[link.linkId] = size;
                 callbacks.onInit?.(size, linkSizes);
             })
             .catch((err) => {
@@ -88,18 +94,30 @@ export class FolderTreeLoader {
         this.abortController = new AbortController();
     }
 
-    async load(getChildren: GetChildrenCallback, onSignatureIssue?: OnSignatureIssueCallback): Promise<number> {
-        const size = await this.loadHelper(this.rootLink, getChildren, onSignatureIssue);
+    async load(
+        getChildren: GetChildrenCallback,
+        onSignatureIssue?: OnSignatureIssueCallback,
+        onProgress?: OnProgressCallback
+    ): Promise<FolderLoadInfo> {
+        const result = await this.loadHelper(
+            this.rootLink,
+            [this.rootLink.linkId],
+            getChildren,
+            onSignatureIssue,
+            onProgress
+        );
         this.done = true;
-        return size;
+        return result;
     }
 
     private async loadHelper(
         link: LinkDownload,
+        parentLinkIds: string[],
         getChildren: GetChildrenCallback,
         onSignatureIssue?: OnSignatureIssueCallback,
+        onProgress?: OnProgressCallback,
         parent: string[] = []
-    ): Promise<number> {
+    ): Promise<FolderLoadInfo> {
         if (this.abortController.signal.aborted) {
             throw new TransferCancel({ message: `Transfer canceled` });
         }
@@ -118,7 +136,7 @@ export class FolderTreeLoader {
         this.links = [
             ...this.links,
             ...children.map((link) => ({
-                rootLinkId: this.rootLink.linkId,
+                parentLinkIds: parentLinkIds,
                 parentPath: parent,
                 isFile: link.isFile,
                 shareId,
@@ -132,13 +150,30 @@ export class FolderTreeLoader {
         ];
         return Promise.all(
             children.map(async (item: ChildrenLinkMeta) => {
+                // To get link into progresses right away so potentially loader can be displayed.
+                onProgress?.([...parentLinkIds, item.linkId], 0);
+
                 if (!item.isFile) {
-                    return this.loadHelper({ ...item, shareId }, getChildren, onSignatureIssue, [...parent, item.name]);
+                    const result = await this.loadHelper(
+                        { ...item, shareId },
+                        [...parentLinkIds, item.linkId],
+                        getChildren,
+                        onSignatureIssue,
+                        onProgress,
+                        [...parent, item.name]
+                    );
+                    result.linkSizes[item.linkId] = result.size;
+                    return result;
                 }
-                return item.size;
+                return { size: item.size, linkSizes: Object.fromEntries([[item.linkId, item.size]]) };
             })
-        ).then((sizes: number[]) => {
-            return sizes.reduce((total, size) => total + size, 0);
+        ).then((results: FolderLoadInfo[]) => {
+            const size = results.reduce((total, { size }) => total + size, 0);
+            const linkSizes = results.reduce((sum, { linkSizes }) => ({ ...sum, ...linkSizes }), {});
+            return {
+                size,
+                linkSizes,
+            };
         });
     }
 

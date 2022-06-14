@@ -19,6 +19,7 @@ export default function PasswordPage({ submitPassword }: Props) {
             <p className="text-center mt0">{c('Info').t`Please enter the password to decrypt and view content.`}</p>
             <form
                 className="w100 mt2"
+                autoComplete="off"
                 onSubmit={(e) => {
                     e.preventDefault();
                     withLoading(submitPassword(password)).catch(console.error);
@@ -28,7 +29,7 @@ export default function PasswordPage({ submitPassword }: Props) {
                     bigger
                     as={PasswordInputTwo}
                     label={c('Label').t`Password`}
-                    autoComplete="current-password"
+                    autoComplete="off"
                     id="password"
                     disabled={loading}
                     value={password}

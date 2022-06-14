@@ -5,19 +5,14 @@ import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferProgress, isTransferPending, isTransferFinished } from '../../../utils/transfer';
 import { DownloadControls } from '../interface';
-import { Download, UpdateFilter, UpdateState, UpdateCallback } from './interface';
-
-interface TransferProgresses {
-    [downloadId: string]: {
-        progress: number;
-        links: {
-            [linkId: string]: {
-                total?: number;
-                progress: number;
-            };
-        };
-    };
-}
+import {
+    Download,
+    DownloadProgresses,
+    DownloadLinksProgresses,
+    UpdateFilter,
+    UpdateState,
+    UpdateCallback,
+} from './interface';
 
 export default function useDownloadControl(
     downloads: Download[],
@@ -28,7 +23,7 @@ export default function useDownloadControl(
     // Controls keep references to ongoing downloads to have ability
     // to pause or cancel them.
     const controls = useRef<{ [id: string]: DownloadControls }>({});
-    const progresses = useRef<TransferProgresses>({});
+    const progresses = useRef<DownloadProgresses>({});
 
     const add = (id: string, downloadControls: DownloadControls) => {
         controls.current[id] = downloadControls;
@@ -55,7 +50,7 @@ export default function useDownloadControl(
         });
     };
 
-    const updateProgress = (id: string, linkId: string, increment: number) => {
+    const updateProgress = (id: string, linkIds: string[], increment: number) => {
         progresses.current[id].progress += increment;
         // Because increment can be float, some aritmetic operation can result
         // in -0.0000000001 which would be then displayed as -0 after rounding.
@@ -63,13 +58,13 @@ export default function useDownloadControl(
             progresses.current[id].progress = 0;
         }
 
-        getLinkProgress(id, linkId).progress += increment;
+        linkIds.forEach((linkId) => (getLinkProgress(id, linkId).progress += increment));
     };
 
     const getProgresses = () =>
         Object.fromEntries(Object.entries(progresses.current).map(([linkId, { progress }]) => [linkId, progress]));
 
-    const getLinksProgress = () =>
+    const getLinksProgress = (): DownloadLinksProgresses =>
         Object.values(progresses.current).reduce((aggregatedLinks, { links }) => {
             // What if some link is downloaded more than once?
             // Probably very rare case which we can safely ignore. The worst case

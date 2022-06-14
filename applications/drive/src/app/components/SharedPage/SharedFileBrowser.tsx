@@ -1,40 +1,109 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+
+import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { DecryptedLink, useDownload } from '../../store';
 import { isTransferActive } from '../../utils/transfer';
+import { FileBrowser } from '../FileBrowser';
+import { BrowserItemId } from '../FileBrowser/interface';
+import { PublicLink } from './interface';
+import { headerCells, contentCells } from './cells';
 
 interface Props {
+    folderName: string;
     items: DecryptedLink[];
+    isLoading?: boolean;
+    sortParams?: any; //TODO
+    setSorting?: (params: any) => void; //TODO
+    onItemOpen?: (item: DecryptedLink) => void;
 }
 
-export default function SharedFileBrowser({ items }: Props) {
-    const { downloads, getDownloadsProgresses } = useDownload();
+export default function SharedFileBrowser({ folderName, items, isLoading, sortParams, setSorting, onItemOpen }: Props) {
+    const { downloads, getDownloadsLinksProgresses } = useDownload();
+    const [fileBrowserItems, setFileBrowserItems] = useState<PublicLink[]>([]);
 
-    const [progress, setProgress] = useState<number>();
+    const handleItemOpen = useCallback(
+        (id: BrowserItemId) => {
+            const item = items.find((item) => item.linkId === id);
+            if (!item) {
+                return;
+            }
+            onItemOpen?.(item);
+        },
+        [items]
+    );
 
+    const updateFileBrowserItems = () => {
+        const linksProgresses = getDownloadsLinksProgresses();
+
+        setFileBrowserItems(
+            items.map((item) => {
+                const progress = linksProgresses[item.linkId];
+                const total = item.isFile ? item.size : progress?.total;
+                const percent = (() => {
+                    if (progress === undefined || total === undefined) {
+                        return 0;
+                    }
+                    if (total === 0) {
+                        return 100;
+                    }
+                    return Math.round((100 / total) * progress.progress);
+                })();
+                return {
+                    id: item.linkId,
+                    ...item,
+                    progress: !progress
+                        ? undefined
+                        : {
+                              total,
+                              progress: progress.progress,
+                              percent,
+                              isFinished: percent === 100,
+                          },
+                    itemRowStyle: !progress
+                        ? undefined
+                        : {
+                              background: `linear-gradient(90deg, var(--interaction-norm-minor-2) ${percent}%, rgb(255, 255, 255, 0) ${percent}%)`,
+                          },
+                };
+            })
+        );
+    };
+
+    // Enrich link date with download progress. Downloads changes only when
+    // status changes, not the progress, so if download is active, it needs
+    // to run in interval until download is finished.
     useEffect(() => {
+        updateFileBrowserItems();
+
         if (!downloads.some(isTransferActive)) {
-            return;
+            // Progresses are not handled by state and might be updated
+            // without notifying a bit after downloads state is changed.
+            const id = setTimeout(updateFileBrowserItems, 500);
+            return () => {
+                clearTimeout(id);
+            };
         }
 
-        const updateProgress = () => {
-            const progresses = getDownloadsProgresses();
-            setProgress(Object.values(progresses)[0]);
-        };
-        const id = setInterval(updateProgress, 500);
+        const id = setInterval(updateFileBrowserItems, 500);
         return () => {
             clearInterval(id);
-            // Update one more time to get latest progress in case download
-            // is over and interval will not be restarted.
-            updateProgress();
         };
-    }, [downloads]);
+    }, [items, downloads]);
 
     return (
         <>
-            {items.map(({ name }) => name).join(', ')}
-            <br />
-            progress: {progress}
+            <FileBrowser
+                caption={folderName}
+                headerItems={headerCells}
+                items={fileBrowserItems}
+                layout={LayoutSetting.List}
+                loading={isLoading}
+                sortParams={sortParams}
+                Cells={contentCells}
+                onSort={setSorting}
+                onItemOpen={handleItemOpen}
+            />
         </>
     );
 }

@@ -19,11 +19,11 @@ export default function SharedPageLayout({ reportAbuseButton, withSidebar, child
             </header>
             <div
                 className={classnames([
-                    'shared-page-layout-container flex-no-min-children flex-nowrap on-mobile-flex-column',
+                    'shared-page-layout-container flex flex-no-min-children flex-nowrap on-mobile-flex-column',
                     !withSidebar && 'shared-page-layout-container-without-sidebar',
                 ])}
             >
-                <div className="flex-item-fluid on-mobile-mb1">{children}</div>
+                <div className="flex-item-fluid on-mobile-mb1 flex flex-column flex-nowrap">{children}</div>
                 {withSidebar && <SharedPageGetDriveSidebar />}
             </div>
             <footer className="shared-page-layout-footer">

@@ -58,11 +58,8 @@ export default class ConcurrentIterator {
                     // onInit and onFinish are ignored per file when downloading
                     // multiple files - we care only about total onInit or onFinish.
                     onInit: undefined,
-                    onProgress: (linkId: string, bytes: number) => {
-                        // onProgress ignores the linkId provided by file download.
-                        // For now we dont care about children of downloaded items
-                        // in the UI, so we can simplify the algorithm here a bit.
-                        callbacks.onProgress?.(link.rootLinkId, bytes);
+                    onProgress: (linkIds: string[], bytes: number) => {
+                        callbacks.onProgress?.([...link.parentLinkIds, ...linkIds], bytes);
                         this.loadSize -= bytes;
                     },
                     onFinish: () => {

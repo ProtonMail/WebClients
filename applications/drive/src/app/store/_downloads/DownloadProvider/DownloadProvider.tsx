@@ -4,7 +4,7 @@ import * as React from 'react';
 import { TransferProgresses } from '../../../components/TransferManager/transfer';
 
 import { LinkDownload, InitDownloadCallback, DownloadSignatureIssueModal } from '../interface';
-import { Download, UpdateFilter } from './interface';
+import { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 
 interface DownloadProviderState {
@@ -18,6 +18,7 @@ interface DownloadProviderState {
     removeDownloads: (idOrFilter: UpdateFilter) => void;
     clearDownloads: () => void;
     getDownloadsProgresses: () => TransferProgresses;
+    getDownloadsLinksProgresses: () => DownloadLinksProgresses;
 }
 
 const DownloadContext = createContext<DownloadProviderState | null>(null);
@@ -36,6 +37,7 @@ export const DownloadProvider = ({
         hasDownloads,
         download,
         getProgresses,
+        getLinksProgress,
         pauseDownloads,
         resumeDownloads,
         cancelDownloads,
@@ -57,6 +59,7 @@ export const DownloadProvider = ({
                 removeDownloads,
                 clearDownloads,
                 getDownloadsProgresses: getProgresses,
+                getDownloadsLinksProgresses: getLinksProgress,
             }}
         >
             {children}

@@ -107,8 +107,8 @@ export default function useDownloadProvider(
                     createModal(<DownloadIsTooBigModal onCancel={() => control.cancelDownloads(nextDownload.id)} />);
                 }
             },
-            onProgress: (linkId: string, increment: number) => {
-                control.updateProgress(nextDownload.id, linkId, increment);
+            onProgress: (linkIds: string[], increment: number) => {
+                control.updateProgress(nextDownload.id, linkIds, increment);
             },
             onNetworkError: (error: any) => {
                 queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
@@ -154,6 +154,7 @@ export default function useDownloadProvider(
         hasDownloads: queue.hasDownloads,
         download,
         getProgresses: control.getProgresses,
+        getLinksProgress: control.getLinksProgress,
         pauseDownloads: control.pauseDownloads,
         resumeDownloads: control.resumeDownloads,
         cancelDownloads: control.cancelDownloads,

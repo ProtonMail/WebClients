@@ -3,7 +3,7 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { LinkDownload } from '../interface';
 
 export type NestedLinkDownload = LinkDownload & {
-    rootLinkId: string;
+    parentLinkIds: string[];
     parentPath: string[];
 };
 

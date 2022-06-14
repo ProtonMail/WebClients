@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { DecryptedLink, useDownload } from '../../store';
+import { DecryptedLink } from '../../store';
+import { FileBrowserStateProvider } from '../FileBrowser/state';
 import SharedPageLayout from './SharedPageLayout';
 import SharedPageHeader from './SharedPageHeader';
 import SharedFileBrowser from './SharedFileBrowser';
@@ -12,21 +13,14 @@ interface Props {
 }
 
 export default function SharedFile({ token, link }: Props) {
-    const { download } = useDownload();
-
-    const onDownload = () => {
-        download([
-            {
-                ...link,
-                shareId: token,
-            },
-        ]);
-    };
-
     return (
-        <SharedPageLayout withSidebar reportAbuseButton={<ReportAbuseButton linkInfo={link} />}>
-            <SharedPageHeader onDownload={onDownload}>{c('Title').t`Download shared file`}</SharedPageHeader>
-            <SharedFileBrowser items={[link]} />
-        </SharedPageLayout>
+        <FileBrowserStateProvider itemIds={[link.linkId]}>
+            <SharedPageLayout withSidebar reportAbuseButton={<ReportAbuseButton linkInfo={link} />}>
+                <SharedPageHeader token={token} rootItem={link} items={[link]}>
+                    <strong>{c('Title').t`Download shared file`}</strong>
+                </SharedPageHeader>
+                <SharedFileBrowser folderName={link.name} items={[link]} />
+            </SharedPageLayout>
+        </FileBrowserStateProvider>
     );
 }
