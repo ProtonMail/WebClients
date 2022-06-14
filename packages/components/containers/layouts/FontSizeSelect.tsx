@@ -9,14 +9,14 @@ interface Props {
     loading: boolean;
 }
 
-const FontSizeSelect = ({ id, fontSize, onChange, loading, ...rest }: Props) => {
-    const options = Object.entries(FONT_SIZES).map(([valueInPx]) => {
-        const fontSizeNumber = valueInPx.replace('px', '');
-        return { text: fontSizeNumber, value: fontSizeNumber };
-    });
+const options = Object.entries(FONT_SIZES).map(([valueInPx]) => {
+    const fontSizeNumber = valueInPx.replace('px', '');
+    return { text: fontSizeNumber, value: parseInt(fontSizeNumber, 10) };
+});
 
-    // FontFace default API value is null and it doesn't trigger default parameter value
-    const fontFaceSize = fontSize === undefined || fontSize === null ? DEFAULT_FONT_SIZE : fontSize;
+const FontSizeSelect = ({ id, fontSize, onChange, loading, ...rest }: Props) => {
+    const isValid = options.some((option) => fontSize === option.value);
+    const fontFaceSize = isValid ? fontSize : DEFAULT_FONT_SIZE;
 
     return (
         <SelectTwo
@@ -24,7 +24,7 @@ const FontSizeSelect = ({ id, fontSize, onChange, loading, ...rest }: Props) => 
             value={fontFaceSize}
             disabled={loading}
             onChange={({ value }) => {
-                onChange(typeof value === 'string' ? parseInt(value, 10) : value);
+                onChange(value);
             }}
             {...rest}
         >
