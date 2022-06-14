@@ -22,6 +22,19 @@ export interface Download {
     signatureStatus?: VERIFICATION_STATUS;
 }
 
+export interface DownloadProgresses {
+    [downloadId: string]: {
+        progress: number;
+        links: DownloadLinksProgresses;
+    };
+}
+export interface DownloadLinksProgresses {
+    [linkId: string]: {
+        total?: number;
+        progress: number;
+    };
+}
+
 export type UpdateFilter = string | ((params: UpdateCallbackParams) => boolean);
 export type UpdateState = TransferState | ((params: UpdateCallbackParams) => TransferState);
 export type UpdateCallback = (params: UpdateCallbackParams) => void;

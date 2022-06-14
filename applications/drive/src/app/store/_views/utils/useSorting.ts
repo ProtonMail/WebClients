@@ -103,7 +103,7 @@ function getNameSortConfig(direction = SORT_DIRECTION.ASC) {
     return {
         key: 'name' as keyof LinkSortFields,
         direction,
-        compare: (a: string, b: string) => a.localeCompare(b),
+        compare: (a: string, b: string) => a.localeCompare(b, undefined, { numeric: true }),
     };
 }
 

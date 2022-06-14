@@ -91,7 +91,9 @@ describe('FolderTreeLoader', () => {
     it('calculates size', async () => {
         const folderTreeLoader = new FolderTreeLoader(linkDownload);
         const promise = folderTreeLoader.load(stubGetChildren);
-        await expect(promise).resolves.toBe(expectedTotalSize);
+        await expect(promise).resolves.toMatchObject({
+            size: expectedTotalSize,
+        });
     });
 
     it('iterates all childs', async () => {
