@@ -8,4 +8,4 @@ Necessarily compositional.
 
 Ideally functional, controlled (only props in events out) & stateful only to the containment of local ui-logic e.g. hover / focus states.
 
-1 module per component. Should be kept 1 level deep. No grouping or nesting (other than for purely semantic co-location as in a component is so complex that its implementation details spans accross multiple files).
+1 module per component. Should be kept 1 level deep. No grouping or nesting (other than for purely semantic co-location as in a component is so complex that its implementation details spans across multiple files).
