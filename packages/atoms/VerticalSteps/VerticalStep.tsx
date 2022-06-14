@@ -1,6 +1,7 @@
-import { Icon, IconName } from '@proton/components/components';
-import { classnames } from '@proton/components/helpers';
 import { ComponentPropsWithoutRef, ReactNode } from 'react';
+import { Icon, IconName } from '@proton/components/components';
+
+import clsx from '../clsx';
 
 export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     description?: ReactNode;
@@ -13,14 +14,14 @@ const VerticalStep = ({ title, description, icon, alt, status = 'next', classNam
     return (
         <li
             {...rest}
-            className={classnames([
+            className={clsx([
                 'flex flex-nowrap flex-align-items-start vertical-steps-item',
                 status === 'passed' && 'vertical-steps-item--next-done',
                 className,
             ])}
         >
             <span
-                className={classnames([
+                className={clsx([
                     'flex-item-noshrink rounded-50 vertical-steps-icon-container flex',
                     ['done', 'passed'].includes(status) ? 'bg-success' : 'bg-strong',
                 ])}
@@ -28,14 +29,14 @@ const VerticalStep = ({ title, description, icon, alt, status = 'next', classNam
                 <Icon name={icon} className="mauto" size={16} alt={alt} />
             </span>
             <span
-                className={classnames([
+                className={clsx([
                     'flex-item-fluid pl0-5 flex flex-column flex-nowrap relative vertical-steps-item-text',
                     status === 'passed' && 'color-disabled',
                 ])}
             >
-                {title ? <span className={classnames([status !== 'passed' && 'text-semibold'])}>{title}</span> : null}
+                {title ? <span className={clsx([status !== 'passed' && 'text-semibold'])}>{title}</span> : null}
                 {description ? (
-                    <span className={classnames(['text-sm', status !== 'passed' && 'color-weak'])}>{description}</span>
+                    <span className={clsx(['text-sm', status !== 'passed' && 'color-weak'])}>{description}</span>
                 ) : null}
             </span>
         </li>
