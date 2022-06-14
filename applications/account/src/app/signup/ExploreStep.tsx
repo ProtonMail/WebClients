@@ -21,10 +21,11 @@ const ExploreStep = ({ onExplore }: Props) => {
                 <ul className="unstyled m0 divide-y">
                     {[APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS].map((app) => {
                         const name = getAppName(app);
+                        const showLoader = type === app && loading;
                         return (
                             <li key={app}>
                                 <Button
-                                    loading={type === app && loading}
+                                    loading={showLoader}
                                     data-testid={app.replace('proton-', 'explore-')}
                                     size="large"
                                     shape="ghost"
@@ -46,9 +47,11 @@ const ExploreStep = ({ onExplore }: Props) => {
                                         aria-hidden="true"
                                     />{' '}
                                     <span className="flex-item-fluid">{name}</span>
-                                    <span className="flex-item-noshrink" aria-hidden="true">
-                                        <Icon name="arrow-right" />
-                                    </span>
+                                    {!showLoader && (
+                                        <span className="flex-item-noshrink" aria-hidden="true">
+                                            <Icon name="arrow-right" />
+                                        </span>
+                                    )}
                                 </Button>
                             </li>
                         );
