@@ -8,8 +8,6 @@ const toMap = (list: string[]) =>
         return acc;
     }, {});
 
-const LIST_PROTON_TAG = ['svg'];
-// const MAP_PROTON_TAG = toMap(LIST_PROTON_TAG);
 const LIST_PROTON_ATTR = ['data-src', 'src', 'srcset', 'background', 'poster', 'xlink:href', 'href'];
 const MAP_PROTON_ATTR = toMap(LIST_PROTON_ATTR);
 const PROTON_ATTR_TAG_WHITELIST = ['a', 'base'];
@@ -23,10 +21,12 @@ const CONFIG: { [key: string]: any } = {
     default: {
         ALLOWED_URI_REGEXP:
             /^(?:(?:(?:f|ht)tps?|mailto|tel|callto|cid|blob|xmpp|data):|[^a-z]|[a-z+.\-]+(?:[^a-z+.\-:]|$))/i, // eslint-disable-line no-useless-escape
-        ADD_TAGS: ['proton-src', 'base', 'proton-svg'],
+        ADD_TAGS: ['proton-src', 'base'],
         ADD_ATTR: ['target', 'proton-src'],
         FORBID_TAGS: ['style', 'input', 'form'],
         FORBID_ATTR: ['srcset', 'for'],
+        // Accept HTML (official) tags only and automatically excluding all SVG & MathML tags
+        USE_PROFILES: { html: true },
     },
     // When we display a message we need to be global and return more informations
     raw: { WHOLE_DOCUMENT: true, RETURN_DOM: true },
@@ -54,30 +54,6 @@ const CONFIG: { [key: string]: any } = {
 };
 
 const getConfig = (type: string): Config => ({ ...CONFIG.default, ...(CONFIG[type] || {}) });
-
-/**
- * Rename some tags adding the proton- prefix configured in LIST_PROTON_TAG
- * This process is done outside and after DOMPurify because renaming tags in DOMPurify don't work
- * Currently used only for svg tags which are considered as image
- */
-const sanitizeElements = (document: Element) => {
-    LIST_PROTON_TAG.forEach((tagName) => {
-        const svgs = document.querySelectorAll(tagName);
-        svgs.forEach((element) => {
-            const newElement = element.ownerDocument.createElement(`proton-${tagName}`);
-            // Copy the children
-            while (element.firstChild) {
-                newElement.appendChild(element.firstChild); // *Moves* the child
-            }
-
-            element.getAttributeNames().forEach((name) => {
-                newElement.setAttribute(name, element.getAttribute(name) || '');
-            });
-
-            element.parentElement?.replaceChild(newElement, element);
-        });
-    });
-};
 
 /**
  * Rename some attributes adding the proton- prefix configured in LIST_PROTON_ATTR
@@ -155,9 +131,7 @@ export const html = clean('raw') as (input: Node) => Element;
 export const protonizer = (input: string, attachHooks: boolean): Element => {
     const process = clean('protonizer');
     purifyHTMLHooks(attachHooks);
-    const resultDocument = process(input) as Element;
-    sanitizeElements(resultDocument);
-    return resultDocument;
+    return process(input) as Element;
 };
 
 /**
