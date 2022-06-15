@@ -8,7 +8,7 @@
 const CSS_URL = '((url|image-set)(\\(|&(#40|#x00028|lpar);))';
 const REGEXP_URL_ATTR = new RegExp(CSS_URL, 'gi');
 
-const REGEXP_HEIGHT_POURCENTAGE = /((?:min-|max-|line-)?height\s*:\s*)([\d.]+%)/gi;
+const REGEXP_HEIGHT_PERCENTAGE = /((?:min-|max-|line-)?height)\s*:\s*([\d.,]+%)/gi;
 const REGEXP_POSITION_ABSOLUTE = /position\s*:\s*absolute/gi;
 
 export const escape = (string: string) => {
@@ -111,18 +111,16 @@ export const escapeURLinStyle = (style: string) => {
 };
 
 export const escapeForbiddenStyle = (style: string): string => {
-    let parsedStyle = style.replace(REGEXP_POSITION_ABSOLUTE, 'position: relative');
-
-    // In case matchAll is not compatible https://caniuse.com/mdn-javascript_builtins_string_matchall
-    try {
-        const matches = parsedStyle.matchAll(REGEXP_HEIGHT_POURCENTAGE);
-
-        for (const match of matches) {
-            if (!match[1].includes('line-height')) {
-                parsedStyle = parsedStyle.replace(match[0], `${match[1]}unset`);
+    let parsedStyle = style
+        .replaceAll(REGEXP_POSITION_ABSOLUTE, 'position: relative')
+        .replaceAll(REGEXP_HEIGHT_PERCENTAGE, (rule, prop) => {
+            // Replace nothing in this case.
+            if (['line-height', 'max-height'].includes(prop)) {
+                return rule;
             }
-        }
-    } catch (e) {}
+
+            return `${prop}: unset`;
+        });
 
     return parsedStyle;
 };
