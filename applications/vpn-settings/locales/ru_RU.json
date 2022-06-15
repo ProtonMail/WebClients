@@ -65,9 +65,6 @@
       "Confirm": [
         "Подтвердить"
       ],
-      "contact": [
-        "связаться"
-      ],
       "Contact support": [
         "Связаться с поддержкой"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Улучшить"
+      ],
+      "Use ${ label } theme": [
+        "Использовать тему: ${ label }"
       ],
       "Use a different card": [
         "Использовать другую карту"
@@ -1975,6 +1975,9 @@
       "By leaving now, changes may not be saved": [
         "Если выйти сейчас, изменения могут не сохраниться"
       ],
+      "Choose the look and feel of the application.": [
+        "Выберите внешний вид приложения."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Нажмите \"Запросить новый код\", и мы отправим новый проверочный код на ${ strong }. Если этот номер телефона не верный, то выберите \"Изменить\" для обновления."
       ],
@@ -2125,6 +2128,9 @@
       "Internet connection restored.": [
         "Соединение с интернет восстановлено."
       ],
+      "Issues signing in?": [
+        "Проблемы с входом?"
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Узнайте, как пользоваться ${ VPN_APP_NAME } с помощью сторонних приложений VPN."
       ],
@@ -2251,9 +2257,6 @@
       "Securing your account": [
         "Обеспечение безопасности вашего аккаунта"
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Выберите количество пользователей для включения в ваш тариф. Каждый дополнительный пользоватеь стоит ${ price }. А если вам понадобится более ${ maxUsers } аккаунтов, пожалуйста, ${ contactMailToLink } с нашей Командой Успеха Клиентов."
-      ],
       "Server is currently down": [
         "Сервер сейчас не работает"
       ],
@@ -2370,6 +2373,9 @@
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
+      ],
+      "Update the URL in your password manager": [
+        "Обновите URL в менеджере паролей"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
@@ -3069,7 +3075,7 @@
         "Перейти к подтверждению"
       ],
       "Continue with free": [
-        "Продолжить использовать бесплатно"
+        "Continue with Free"
       ],
       "Delete account": [
         "Удалить аккаунт"
@@ -3876,6 +3882,20 @@
         "Добавьте ваше имя (или название компании) и адрес в ваши счета"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
     "Price": {
       "Free": [
         "Free"
@@ -4177,12 +4197,9 @@
         "Статус"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Представляем обновленный Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Больше служб, одна миссия по обеспечению конфиденциальности."
+    "Themes": {
+      "Themes": [
+        "Темы"
       ]
     },
     "Title": {

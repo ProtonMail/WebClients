@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Mesclar contatos"
       ],
+      "Messages from this sender": [
+        "Mensagens deste remetente"
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "Minimizar compositor"
       ],
@@ -861,7 +867,7 @@
         "Confiar na chave",
         "Chaves confiáveis"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "Confiar na chave pública"
       ],
       "Try again": [
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "A chave primária não é valida para o envio"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Chave primária recuperada para o usuário interno é válida para o envio"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Chave primária recuperada para o usuário interno não é válida para o envio"
       ],
       "Public key could not be trusted": [
         "A chave pública não pode ser confiável"
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Apresentamos a versão atualizada dos produtos Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Mais serviços, uma missão de privacidade."
-      ],
       "Settings": [
         "Configurações"
       ]

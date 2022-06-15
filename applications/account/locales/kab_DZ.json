@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Xelleṣ ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Ma ulac aɣilif, nermes anedbal n tkebbanit i usefrek n umultaɣ-inek•inem"
+      ],
       "Preview": [
         "Taskant"
       ],
@@ -1266,7 +1269,7 @@
         "Ugar n 12 n yisragen i yezrin ɣef uleqqem aneggaru"
       ],
       "Unsupported calendar format": [
-        ""
+        "Amasal n uwitay ur nettusefrak ara"
       ]
     },
     "Calendar view": {
@@ -2138,7 +2141,7 @@
         "Ṭrindad d Ṭubagu"
       ],
       "Tristan da Cunha": [
-        ""
+        "Tristan da Cunha"
       ],
       "Tunisia": [
         "Tunes"
@@ -2372,7 +2375,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        ""
+        "Ɛawen-aɣ ad nennarni!"
       ]
     },
     "Duration": {
@@ -3201,13 +3204,13 @@
         "Iṭamḍanen"
       ],
       "Gigabytes": [
-        ""
+        "Jiga iṭamḍanen"
       ],
       "Kilobytes": [
-        ""
+        "Kilu iṭamḍanen"
       ],
       "Megabytes": [
-        ""
+        "Miga iṭamḍanen"
       ]
     },
     "Filter Actions": {
@@ -3621,44 +3624,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
+      "Click ${ boldManage } to expand the options menu.": [
         ""
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
         ""
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
         ""
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         ""
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         ""
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         ""
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Ddu ɣer ${ boldAccountSecurity }"
-      ],
-      "Go to Outlook ${ securitySettingsLink }": [
+      "Go to ${ boldAccountSecurity }.": [
         ""
       ],
-      "If 2-step verification is off, turn it on": [
+      "Go to Outlook ${ securitySettingsLink }.": [
         ""
       ],
-      "Open your ${ yahooMailLink } contacts": [
+      "If 2-step verification is off, turn it on.": [
         ""
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
+      "Open your ${ yahooMailLink } contacts.": [
         ""
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
+      "Open your Outlook ${ outlookContactsLink }.": [
         ""
       ],
-      "Select ${ boldExportCSV }": [
-        "Fren ${ boldExportCSV }"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        ""
+      ],
+      "Select ${ boldExportCSV }.": [
+        ""
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         ""
@@ -3666,7 +3669,7 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         ""
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
@@ -3675,14 +3678,14 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         ""
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        ""
+        "I uktar n yimaylen ɣer Proton, tesriḍ ${ appPasswordLink } seg Yahoo. Awi-t-id s uḍfar n yiḥricen-a :"
       ]
     },
     "Import instructions emphasis": {
@@ -3696,7 +3699,7 @@
         "awal uffir n usnas"
       ],
       "Can view all details": [
-        ""
+        "Sireg timeẓriwt n telqayt"
       ],
       "Export": [
         "Sifeḍ"
@@ -3722,7 +3725,7 @@
         "awal uffir n usnas"
       ],
       "app password or enable IMAP": [
-        ""
+        "awal uffir n usnas neɣ rmed IMAP"
       ],
       "contacts": [
         "inermisen"
@@ -3747,23 +3750,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Sit ɣef useɣwen ${ boldICS } syen sader afaylu"
-      ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Ddu ɣer ${ calendarLink } deg Yiɣewwaren-ik n Outlook"
-      ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Ddu ɣer ${ calendarViewLink } deg Yahoo"
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
+      "Click on the ${ boldICS } link and download the file.": [
         ""
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Fren ${ boldExport } i usifeḍ n uwitay am ufaylu ICS"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        ""
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "Ddaw n ${ boldPublish }, fren awitay i tebɣiḍ ad d-tketreḍ. Sbadu tisirag ɣer ${ boldCanViewAllDetails } syen suffeɣ-t-id"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        ""
+      ],
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        ""
       ]
     },
     "Import key": {
@@ -4580,6 +4583,9 @@
       "Invited via email": [
         "Yettwasnubget s yimayl"
       ],
+      "Issues signing in?": [
+        ""
+      ],
       "It appears some of your data is encrypted and locked.": [
         ""
       ],
@@ -5035,7 +5041,7 @@
         "Isem ad d-yettban i yiseqdacen-ik•im mi ara qqnen."
       ],
       "The securest way to browse, stream, and be online.": [
-        ""
+        "Abrid uḍmin i tunigin, i usuddem d tunigin srid."
       ],
       "These configuration files let you choose which ${ VPN_APP_NAME } server you connect to when using a third-party VPN app or setting up a VPN connection on a router.": [
         "Ifuyla-agi n twila ad k•m ǧǧen ad tferneḍ anwa aqeddac n ${ VPN_APP_NAME } iɣer ara teqqneḍ mi ara tesqedceḍ asnas VPN n wis kraḍ neɣ ad tesbaduḍ tuqqna VPN ɣef umeglay."
@@ -5195,6 +5201,9 @@
       ],
       "Update recovery phrase": [
         "Leqqem tafyirt n tririt"
+      ],
+      "Update the URL in your password manager": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         ""
@@ -7161,13 +7170,33 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        ""
+        "Arured afellay maḍi VPN"
       ],
       "Keep your inbox organized with folders": [
         ""
       ],
       "Medium VPN speed": [
+        "Arured alemmas VPN"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
         ""
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Eǧǧ amiḍan-iw ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: action": {
@@ -7175,67 +7204,47 @@
         ""
       ],
       "Continue with free": [
-        ""
+        "Kemmel baṭel"
       ],
       "Delete account": [
-        ""
+        "Kkes amiḍan"
       ],
       "Downgrade account": [
-        ""
+        "Sader aswir n umiḍan"
       ],
       "Get ${ BRAND_NAME } for free": [
-        ""
+        "Awi ${ BRAND_NAME } baṭel"
       ],
       "Get ${ planName }": [
-        ""
+        "Awi ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        ""
+        "Awi ${ upsellShortPlan.title }"
       ],
       "Got it": [
-        ""
+        "Gziɣ-t"
       ],
       "Keep ${ plan }": [
         ""
       ],
       "Keep account": [
-        ""
+        "Eǧǧ amiḍan"
       ],
       "Switch or add account": [
         ""
       ],
       "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
-        ""
+        "Beddel aɣawas"
       ]
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "",
-        ""
+        "Awi ${ connections } n tuqqna VPN s urured ɛlayen",
+        "Awi ${ connections } n tuqqna VPN s urured ɛlayen"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "",
-        ""
+        "Awi ${ connections } n tuqqna VPN s urured ɛlayen i useqdac",
+        "Awi ${ connections } n tuqqniwin VPN s urured ɛlayen i useqdac"
       ]
     },
     "new_plans: feature": {
@@ -7247,12 +7256,12 @@
         ""
       ],
       "${ n } email address": [
-        "",
-        ""
+        "${ n } tansa n yimayl",
+        "${ n } tansiwin n yimayl"
       ],
       "${ n } email address per user": [
-        "",
-        ""
+        "${ n } tansa n yimayl i useqdac",
+        "${ n } tansiwin n yimayl i useqdac"
       ],
       "${ n } filter": [
         "",
@@ -7271,20 +7280,20 @@
         ""
       ],
       "${ n } message per day": [
-        "",
-        ""
+        "${ n } n yiznen i wass",
+        "${ n } n yiznan i ass"
       ],
       "${ n } personal calendar": [
         "",
         ""
       ],
       "${ n } VPN connection": [
-        "",
-        ""
+        "${ n } tuqqna VPN",
+        "${ n } n tuqqniwin VPN"
       ],
       "${ n } VPN connection per user": [
-        "",
-        ""
+        "${ n } n tuqqna VPN i useqdac",
+        "${ n } n tuqqniwin VPN i useqdac"
       ],
       "${ size } attachment size": [
         ""
@@ -7308,25 +7317,25 @@
         ""
       ],
       "Auto-reply": [
-        ""
+        "Tiririt tawurmant"
       ],
       "Catch-all": [
-        ""
+        "Ṭṭef kullec"
       ],
       "Centralized billing": [
         ""
       ],
       "Contact groups": [
-        ""
+        "Igrawen n urmas"
       ],
       "Contact groups management": [
         ""
       ],
       "Custom email domains": [
-        ""
+        "Tiɣula n yimayl tudmawanin"
       ],
       "DNS leak prevention": [
-        ""
+        "Asewḥel n tuffɣa n DNS"
       ],
       "Document editors (docs, sheets, slides)": [
         ""
@@ -7341,13 +7350,13 @@
         ""
       ],
       "Encrypted contact details": [
-        ""
+        "Talqayt n unermis awgelhan"
       ],
       "Encrypted VPN servers": [
         ""
       ],
       "End-to-end encryption": [
-        ""
+        "Awgelhen seg yixef ɣer yixef"
       ],
       "Free VPN on a single device": [
         ""
@@ -7360,13 +7369,13 @@
         ""
       ],
       "HTML signatures": [
-        ""
+        "Izmulen n HTML"
       ],
       "Kill switch/always-on VPN": [
         ""
       ],
       "Limited support": [
-        ""
+        "Tallalt s talast"
       ],
       "Multiple admin roles": [
         ""
@@ -7375,31 +7384,31 @@
         ""
       ],
       "P2P/BitTorrent": [
-        ""
+        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
         ""
       ],
       "Phone support (6+ users)": [
-        ""
+        "Tallalt s tilifun (ugar n 6 yiseqdacen)"
       ],
       "Priority email support": [
-        ""
+        "Imayl n tallalt yezwaren"
       ],
       "Priority support": [
-        ""
+        "Tallalt yezwaren"
       ],
       "Router support": [
-        ""
+        "Tallalt n umeglay"
       ],
       "Secure Core servers": [
-        ""
+        "Iqeddacen n Secure Core"
       ],
       "Send & receive invitations": [
         ""
       ],
       "Share calendar via link": [
-        ""
+        "Bḍu awitay s useɣwen"
       ],
       "Share files and folders via link": [
         ""
@@ -7411,16 +7420,16 @@
         ""
       ],
       "Strict no-logs policy": [
-        ""
+        "Tasertit tuḥrist war aɣmis"
       ],
       "Team management": [
-        ""
+        "Asefrek n terbaɛt"
       ],
       "Tor over VPN": [
-        ""
+        "Tor ɣef VPN"
       ],
       "Two-factor authentication": [
-        ""
+        "Asesteb s snat n tarrayin"
       ],
       "Unlimited filters": [
         ""
@@ -7435,10 +7444,10 @@
         ""
       ],
       "Unlimited messages per day": [
-        ""
+        "War talast n yiznan i wass"
       ],
       "Unlimited volume/bandwidth": [
-        ""
+        "Ableɣ/Tehri n tesfift war talast"
       ],
       "Up to ${ totalStorageSize } total storage": [
         ""
@@ -7447,7 +7456,7 @@
         ""
       ],
       "User session management": [
-        ""
+        "Asefrek n tiɣimiyin n useqdac"
       ],
       "Worldwide streaming services": [
         ""
@@ -7455,18 +7464,35 @@
     },
     "new_plans: forgot links": {
       "Forgot password": [
-        ""
+        "Tettuḍ awal uffir"
       ],
       "username": [
-        ""
+        "isem n useqdac"
       ]
     },
     "new_plans: heading": {
       "Support": [
-        ""
+        "Tallalt"
       ],
       "Team management": [
+        "Asefrek n terbaɛt"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Aneεruḍ-ik·im ad yekfu deg ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7534,31 +7560,14 @@
         ""
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } n ${ humanMaxSpace }"
       ]
     },
     "new_plans: Plan frequency": {
       "/month": [
-        ""
+        "/ayyur"
       ]
     },
     "new_plans: Plan time remaining": {
@@ -7572,7 +7581,7 @@
         ""
       ],
       "Payment details": [
-        ""
+        "Talqayt n lexlas"
       ],
       "Proton's terms and conditions": [
         ""
@@ -7581,7 +7590,7 @@
         ""
       ],
       "Subscription": [
-        ""
+        "Amultaɣ"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         ""
@@ -7590,15 +7599,26 @@
         ""
       ],
       "Your selected plan: ${ planName }": [
+        "Tferneḍ aɣawas-a: ${ planName }"
+      ]
+    },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        ""
+      ],
+      "Upgrade to ${ planName }": [
+        "Leqqem ɣer ${ planName }"
+      ],
+      "Your account's usage": [
         ""
       ]
     },
     "new_plans: title": {
       "Delete account?": [
-        ""
+        "Kkes amiḍan?"
       ],
       "Downgrade account?": [
-        ""
+        "Sader aswir n umiḍan?"
       ],
       "Improved plans coming soon!": [
         ""
@@ -7610,20 +7630,9 @@
         ""
       ],
       "Switch plans?": [
-        ""
+        "Beddel iɣawasen?"
       ],
       "Unlock premium features by upgrading": [
-        ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
         ""
       ]
     },
@@ -7666,7 +7675,7 @@
         ""
       ],
       "End-to-end encrypted calendar": [
-        ""
+        "Awitay ittwawegelhen seg yixef ɣer yixef"
       ],
       "End-to-end encrypted file storage": [
         ""
@@ -7796,13 +7805,13 @@
     },
     "new_plans: Upsell attribute": {
       "${ storageSize } total storage": [
-        ""
+        "${ storageSize } n uḥraz asemday"
       ],
       "10 email addresses/aliases": [
-        ""
+        "10 n tansiwin n yimayl/mefferismawen"
       ],
       "Access advanced VPN features": [
-        ""
+        "Kcem ɣer tmahilin VPN leqqayen"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
         ""
@@ -7827,7 +7836,7 @@
         ""
       ],
       "Priority support": [
-        ""
+        "Tallalt yezwaren"
       ],
       "Support for 1 custom email domain": [
         ""
@@ -7836,7 +7845,7 @@
         ""
       ],
       "Unlimited messages": [
-        ""
+        "Iznan war talast"
       ]
     },
     "Notification": {

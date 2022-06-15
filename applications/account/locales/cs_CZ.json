@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Zaplatit ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        ""
+      ],
       "Preview": [
         "Náhled"
       ],
@@ -3691,44 +3694,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Kliknutím na ${ boldManage } rozbalíte nabídku možností"
+      "Click ${ boldManage } to expand the options menu.": [
+        ""
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "V závislosti na poskytovateli aktuální e-mailové služby bude možná nutné nejprve vygenerovat ${ knowledgeBaseLink } než budete moci provést import do Protonu"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        ""
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "Rozbalte rozbalovací nabídku kliknutím na 3 tečky (...)"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        ""
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        ""
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        ""
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Přejděte na ${ boldAccountInfo } ve svém profilu v ${ yahooMailLink }"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        ""
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Přejít na ${ boldAccountSecurity }"
+      "Go to ${ boldAccountSecurity }.": [
+        ""
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Přejít na Outlook ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        ""
       ],
-      "If 2-step verification is off, turn it on": [
-        "Pokud je dvoufázové ověřování vypnuté, zapněte ho"
+      "If 2-step verification is off, turn it on.": [
+        ""
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Otevřít Vaše ${ yahooMailLink } kontakty"
+      "Open your ${ yahooMailLink } contacts.": [
+        ""
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Otevřít Vaše ${ outlookContactsLink } v Outlooku"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        ""
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "Vyberte ${ boldExportContacts } a zvolte kontakty, které chcete exportovat"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        ""
       ],
-      "Select ${ boldExportCSV }": [
-        "Vybrat ${ boldExportCSV }"
+      "Select ${ boldExportCSV }.": [
+        ""
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
@@ -3736,8 +3739,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ji z Yahoo ve 3 snadných krocích:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Před zahájením procesu importu si jej stáhněte"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si ji z aplikace Outlook ve 3 snadných krocích:"
@@ -3745,8 +3748,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z Yahoo ve 3 snadných krocích:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Chcete-li importovat kontakty do Protonu, potřebujete ${ knowledgeBaseLink }. Před zahájením procesu importu si jej stáhněte"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Chcete-li importovat e-maily do aplikace Proton, potřebujete ${ appPasswordLink } z aplikace Outlook. Získáte jej podle následujících kroků:"
@@ -3817,23 +3820,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Klikněte na odkaz ${ boldICS } a stáhněte si soubor"
+      "Click on the ${ boldICS } link and download the file.": [
+        ""
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Přejít na ${ calendarLink } v nastavení Outlook"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Přejít na ${ calendarViewLink } v Yahoo"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        ""
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "Najeďte myší na kalendář, který chcete importovat, a otevřete rozevírací nabídku"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        ""
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        ""
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "V části ${ boldPublish } vyberte kalendář, který chcete importovat. Nastavte oprávnění na ${ boldCanViewAllDetails } a publikujte jej"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        ""
       ]
     },
     "Import key": {
@@ -4702,6 +4705,9 @@
       "Invited via email": [
         "Pozván e-mailem"
       ],
+      "Issues signing in?": [
+        ""
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
       ],
@@ -5319,6 +5325,9 @@
       ],
       "Update recovery phrase": [
         "Aktualizovat obnovovací frázi"
+      ],
+      "Update the URL in your password manager": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
@@ -7310,6 +7319,26 @@
         "Střední rychlost VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } plány"
+      ],
+      "From ${ _price } per user": [
+        "Od ${ _price } na uživatele"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechat můj ${ currentPlanName } účet"
+      ],
+      "Upgrade now": [
+        "Upgradovat nyní"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat v prozkoumávání"
@@ -7346,26 +7375,6 @@
       ],
       "Switch plan": [
         "Změnit plán"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
-        ""
       ]
     },
     "new_plans: attribute": {
@@ -7631,10 +7640,27 @@
     },
     "new_plans: heading": {
       "Support": [
-        ""
+        "Podpora"
       ],
       "Team management": [
+        "Řízení týmu"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec zablokován."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
         ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Zkušební verze končí ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7702,23 +7728,6 @@
         "Ve svém aktuálním tarifu využíváte akční cenu. Pokud přejdete na nižší verzi účtu, ztratíte možnost nadále využívat tuto cenu a při opětovném přihlášení k předplatnému již nebude dostupná."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         ""
@@ -7726,15 +7735,15 @@
     },
     "new_plans: Plan frequency": {
       "/month": [
-        ""
+        "/měsíčně"
       ]
     },
     "new_plans: Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "",
-        "",
-        "",
-        ""
+        "Pořád Vám zbývá ${ daysRemaining } den Vašeho ${ currentPlanName } účtu.",
+        "Pořád Vám zbývají ${ daysRemaining } dny Vašeho ${ currentPlanName } účtu.",
+        "Pořád Vám zbývá ${ daysRemaining } dnů Vašeho ${ currentPlanName } účtu.",
+        "Pořád Vám zbývá ${ daysRemaining } dnů Vašeho ${ currentPlanName } účtu."
       ]
     },
     "new_plans: signup": {
@@ -7763,6 +7772,17 @@
         "Váš vybraný plán: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        ""
+      ],
+      "Upgrade to ${ planName }": [
+        ""
+      ],
+      "Your account's usage": [
+        "Využití vašeho účtu"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Smazat účet?"
@@ -7784,17 +7804,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Odemknout prémiové funkce povýšením účtu"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
-        "Využití vašeho účtu"
       ]
     },
     "new_plans: tooltip": {
@@ -7931,10 +7940,10 @@
         ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        ""
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
-        ""
+        "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }.\nSprávci mohou uživatelům v organizaci přidělovat různé objemy úložišť"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         ""
@@ -7968,7 +7977,7 @@
     },
     "new_plans: Upsell attribute": {
       "${ storageSize } total storage": [
-        ""
+        "${ storageSize } celkové úložiště"
       ],
       "10 email addresses/aliases": [
         "10 e-mailových adres/aliasů"
@@ -7995,22 +8004,22 @@
         ""
       ],
       "Everything in ${ vpnPlanName }": [
-        ""
+        "Vše v ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
         ""
       ],
       "Priority support": [
-        ""
+        "Prioritní podpora"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Podpora 1 vlastní e-mailové domény"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Neomezený počet složek, štítků a filtrů"
       ],
       "Unlimited messages": [
-        ""
+        "Neomezené zprávy"
       ]
     },
     "Notification": {

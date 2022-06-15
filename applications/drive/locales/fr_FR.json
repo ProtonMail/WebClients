@@ -2355,7 +2355,7 @@
         "Étant donné que ${ appName } est chiffré de bout en bout, nous ne pouvons pas accéder\nou déchiffrer vos fichiers pour vous. Pour déverrouiller votre disque après une réinitialisation de mot de passe,\nvous devez avoir l'un des éléments suivants :"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam et vérifiez que ${ strong } est la bonne adresse."
       ],
       "Canceled": [
         "Annulé"
@@ -2547,7 +2547,7 @@
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam ."
       ],
       "If you have one of these, continue to Proton account setting to\nstart the unblock process.": [
         "Si vous en possédez l’un de ces éléments, passez à la configuration du compte Proton pour\ncommencer le processus de déblocage."
@@ -2862,7 +2862,7 @@
         "Pour activer la recherche réellement privée, ${ DRIVE_APP_NAME } doit indexer vos fichiers localement. Vous pourrez toujours utiliser ${ DRIVE_APP_NAME } normalement, nous vous ferons savoir quand l'indexation sera terminée."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -3377,7 +3377,7 @@
         "Ignorer le dossier"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Stolen data": [
         "Données volées"
@@ -4129,12 +4129,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Voici le nouveau Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Plus de services, une seule mission : la protection de la vie privée."
-      ],
       "Settings": [
         "Paramètres"
       ]

@@ -518,6 +518,12 @@
       "Merge contacts": [
         "Gabungkan kontak"
       ],
+      "Messages from this sender": [
+        "Pesan yang berasal dari pengirim ini"
+      ],
+      "Messages to this recipient": [
+        "Pesan yang tertuju kepada penerima ini"
+      ],
       "Minimize composer": [
         "Minimalkan komposer"
       ],
@@ -857,8 +863,8 @@
       "Trust key": [
         "Percayai kunci"
       ],
-      "Trust Public Key": [
-        "Percayai Kunci Publik"
+      "Trust public key": [
+        "Percayai kunci publik"
       ],
       "Try again": [
         "Coba lagi"
@@ -2942,8 +2948,8 @@
       "Primary key is not valid for sending": [
         "Kunci utama tidak valid untuk pengiriman"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Kunci utama yang diambil untuk pengguna internal dapat digunakan untuk pengiriman"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Kunci utama yang diambil untuk pengguna internal tidak dapat digunakan untuk pengiriman"
       ],
       "Public key could not be trusted": [
         "Kunci publik tidak dapat dipercaya"
@@ -6789,12 +6795,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Memperkenalkan Proton yang baru."
-      ],
-      "More services, one privacy mission.": [
-        "Beragam layanan, satu misi privasi."
-      ],
       "Settings": [
         "Pengaturan"
       ]
@@ -6981,13 +6981,13 @@
         "Menghapus kontak"
       ],
       "Edit contact": [
-        "Ubah kontak"
+        "Sunting kontak"
       ],
       "Edit contact group": [
         "Sunting grup kontak"
       ],
       "Edit filter": [
-        "Ubah filter"
+        "Sunting filter"
       ],
       "Edit image": [
         "Sunting gambar"
