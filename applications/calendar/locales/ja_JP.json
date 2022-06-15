@@ -296,6 +296,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        ""
+      ],
       "Open navigation": [
         "ナビゲーションを開く"
       ],
@@ -2111,7 +2114,7 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
+      "Primary key retrieved for internal user is not valid for sending": [
         ""
       ],
       "Request timed out": [
@@ -2850,7 +2853,7 @@
         "アップロードするファイルをここにドロップしてください"
       ],
       "Duplicate key updated": [
-        "重複したキーはアップデートされました"
+        "重複した鍵がアップデートされました"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "${ destinationText } に送信された認証コードを入力してください。"
@@ -3009,16 +3012,16 @@
         "インポートしたいフォルダーを選択してください:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        ""
+        "${ groupCount } 件のグループに追加するメールアドレスを選択してください。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
+        "プライマリー暗号鍵で再署名できる連絡先を探しています。しばらくお待ちください。"
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "非アクティブなキーで暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
+        "無効な鍵で暗号化されたデータが含まれている連絡先を探しています。しばらくお待ちください。"
       ],
       "Previous modifications on this series will be lost.": [
         ""
@@ -3129,7 +3132,7 @@
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先暗号化キーを再度有効にする必要があります。 したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
+        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
@@ -3624,7 +3627,7 @@
         "登録を申請する"
       ],
       "Subscribed calendars": [
-        "登録済みカレンダー"
+        "購読済みカレンダー"
       ],
       "Upgrade": [
         "アップグレード"
@@ -3859,7 +3862,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "あなたのご意見をお聞かせください (任意)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4107,7 +4110,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "キーは暗号化に使用できません"
+        "鍵は暗号化に使用できません"
       ]
     },
     "PGP Key info": {
@@ -4277,10 +4280,10 @@
         "友だちを招待して報酬を手に入れよう!"
       ],
       "No more missed appointments": [
-        ""
+        "予定を通知する"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        ""
+        "メール通知で、予定をいつ通知するかを選択できます。"
       ]
     },
     "Storage": {
@@ -4299,7 +4302,7 @@
         "カレンダーの URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        ""
+        "URL を入力して、外部または公開カレンダーを購読できます。購読すると、そのカレンダーの読み取り専用バージョンが「購読済みカレンダー」に追加されます。\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -4317,7 +4320,7 @@
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        ""
+        "カレンダーの購読は、現在利用できません。"
       ]
     },
     "Subscribed calendar limit reached modal body": {
@@ -4521,12 +4524,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "新しくなった Proton をご紹介します。"
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "設定"
       ]
@@ -4961,6 +4958,11 @@
       ],
       "Replay video": [
         "ビデオを再度再生"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        ""
       ]
     },
     "Warning": {

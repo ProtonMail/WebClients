@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Pagar ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Por favor contacte al administrador de la organización para administrar la suscripción"
+      ],
       "Preview": [
         "Previsualizar"
       ],
@@ -3621,44 +3624,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Haz clic en ${ boldManage } para ampliar el menú de opciones"
+      "Click ${ boldManage } to expand the options menu.": [
+        "Haz clic en ${ boldManage } para desplegar el menú de opciones."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "Dependiendo de su proveedor de servicios de correo electrónico, es posible que tenga que generar primero un ${ knowledgeBaseLink } antes de poder importar a Proton"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Dependiendo de tu proveedor de servicios de correo, es posible que tengas que generar primero un ${ knowledgeBaseLink } antes de poder importar a Proton."
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "Amplíe el menú desplegable haciendo clic en los 3 puntos (...)"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Expande el menú desplegable haciendo clic en los 3 puntos (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Genere una ${ boldAppPassword } y utilícela en lugar de su contraseña habitual cuando se lo pida Proton"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genera una ${ boldAppPassword } y utilízala en lugar de tu contraseña habitual cuando Proton te lo pida."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Genere la ${ boldAppPassword } y utilícela en lugar de su contraseña habitual cuando se lo pida Proton"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Genera la ${ boldAppPassword } y utilízala en lugar de tu contraseña habitual cuando Proton te lo pida."
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Ve a ${ boldAccountInfo } en tu perfil en ${ yahooMailLink }"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Ve a ${ boldAccountInfo } en tu perfil en ${ yahooMailLink }."
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Ir a ${ boldAccountSecurity }"
+      "Go to ${ boldAccountSecurity }.": [
+        "Ir a ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Ir a Outlook ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Ir a Outlook ${ securitySettingsLink }."
       ],
-      "If 2-step verification is off, turn it on": [
-        "Si la verificación en dos pasos está desactivada, actívela"
+      "If 2-step verification is off, turn it on.": [
+        "Si la verificación en dos pasos está desactivada, actívala."
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Abre tus contactos de ${ yahooMailLink }"
+      "Open your ${ yahooMailLink } contacts.": [
+        "Abre tus contactos de ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Abre tus ${ outlookContactsLink } de Outlook"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Abre tus ${ outlookContactsLink } de Outlook."
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "Selecciona ${ boldExportContacts } y elige los contactos que quieres exportar"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Selecciona ${ boldExportContacts } y elige los contactos que quieres exportar."
       ],
-      "Select ${ boldExportCSV }": [
-        "Selecciona ${ boldExportCSV }"
+      "Select ${ boldExportCSV }.": [
+        "Selecciona ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Para importar un calendario a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo desde Outlook en 3 sencillos pasos:"
@@ -3666,8 +3669,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Para importar un calendario a Proton, necesitas el ${ knowledgeBaseLink }. Descárgalo de Yahoo en 3 sencillos pasos:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Para importar un calendario a Proton, necesita el ${ knowledgeBaseLink }. Descárguelo antes de iniciar el proceso de importación"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Para importar un calendario a Proton, necesitas el ${ knowledgeBaseLink }. Descárgalo antes de iniciar el proceso de importación."
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Para importar contactos a Proton, necesitas un ${ knowledgeBaseLink }. Descárguelo desde Outlook en 3 sencillos pasos:"
@@ -3675,8 +3678,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Para importar un calendario a Proton, necesitas el ${ knowledgeBaseLink }. Descárgalo de Yahoo en 3 sencillos pasos:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Para importar contactos a Proton, necesita un ${ knowledgeBaseLink }. Descárguelo antes de iniciar el proceso de importación"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Para importar contactos a Proton, necesitas un ${ knowledgeBaseLink }. Descárgalo antes de iniciar el proceso de importación."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Para importar correos electrónicos a Proton, necesitas un ${ appPasswordLink } de Outlook. Consíguelo siguiendo estos pasos:"
@@ -3747,23 +3750,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Haga clic en el enlace ${ boldICS } y descargue el archivo"
+      "Click on the ${ boldICS } link and download the file.": [
+        "Haz clic en el enlace ${ boldICS } y descarga el archivo."
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Ir a ${ calendarLink } en tus ajustes de Outlook"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Ir a ${ calendarLink } en tus ajustes de Outlook."
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Ir a ${ calendarViewLink } en Yahoo"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Ir a ${ calendarViewLink } en Yahoo."
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "Sitúe el ratón sobre el calendario que desea importar y abra el menú desplegable"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Sitúa el ratón sobre el calendario que deseas importar y abre el menú desplegable."
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Seleccione ${ boldExport } para exportar el calendario como un archivo ICS"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Selecciona ${ boldExport } para exportar el calendario como un archivo ICS."
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "En ${ boldPublish }, seleccione el calendario que desea importar. Establezca el permiso a ${ boldCanViewAllDetails } y publíquelo"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "En ${ boldPublish }, selecciona el calendario que deseas importar. Establece el permiso a ${ boldCanViewAllDetails } y publícalo."
       ]
     },
     "Import key": {
@@ -4580,6 +4583,9 @@
       "Invited via email": [
         "Invitado por correo electrónico"
       ],
+      "Issues signing in?": [
+        "¿Problemas al iniciar sesión?"
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que algunos de tus datos están cifrados y bloqueados."
       ],
@@ -5195,6 +5201,9 @@
       ],
       "Update recovery phrase": [
         "Actualizar frase de recuperación"
+      ],
+      "Update the URL in your password manager": [
+        "Actualiza la URL en tu administrador de contraseñas"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Actualiza hoy para evitar perder los beneficios de ${ planName } $."
@@ -7170,6 +7179,26 @@
         "VPN a velocidad media"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Bajar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Echar un vistazo a todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
+        "Desde ${ _price } por usuario"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Seguir en ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Subir de nivel"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pasar a la revisión"
@@ -7206,26 +7235,6 @@
       ],
       "Switch plan": [
         "Cambiar plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Bajar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Echar un vistazo a todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ _price } per user": [
-        "Desde ${ _price } por usuario"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Seguir en ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Subir de nivel"
       ]
     },
     "new_plans: attribute": {
@@ -7469,6 +7478,23 @@
         "Administración de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "La prueba acaba el ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que acaba en ${ last4 }"
@@ -7534,23 +7560,6 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, dejarás de tener acceso a tu cuenta y, finalmente, se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir usando ${ MAIL_APP_NAME } con las funciones prémium, suscríbete y elige el método de pago."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Pásate al plan para empresas y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Pásate al plan de privacidad definitivo y disfruta de todos los servicios prémium de Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "La prueba acaba el ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -7593,6 +7602,17 @@
         "Has seleccionado el plan ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Prueba de ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Pasar a ${ planName }"
+      ],
+      "Your account's usage": [
+        "Uso de la cuenta"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "¿Eliminar cuenta?"
@@ -7614,17 +7634,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Sube de nivel para disfrutar de funciones prémium"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Prueba de ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Pasar a ${ planName }"
-      ],
-      "Your account's usage": [
-        "Uso de la cuenta"
       ]
     },
     "new_plans: tooltip": {

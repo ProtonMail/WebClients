@@ -65,9 +65,6 @@
       "Confirm": [
         "Bestätigen"
       ],
-      "contact": [
-        "Kontakt aufnehmen"
-      ],
       "Contact support": [
         "Support kontaktieren"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Umsteigen"
+      ],
+      "Use ${ label } theme": [
+        "${ label }-Farbschema verwenden"
       ],
       "Use a different card": [
         "Verwende eine andere Karte"
@@ -1945,6 +1945,9 @@
       "By leaving now, changes may not be saved": [
         "Durch das Verlassen werden Änderungen möglicherweise nicht gespeichert."
       ],
+      "Choose the look and feel of the application.": [
+        "Wähle das Erscheinungsbild der Anwendung."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern”, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten”, um sie zu korrigieren."
       ],
@@ -2095,6 +2098,9 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "Issues signing in?": [
+        "Probleme beim Anmelden?"
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Erfahre, wie du dich bei ${ VPN_APP_NAME } mit VPN-Anwendungen von Drittanbietern anmelden kannst."
       ],
@@ -2221,9 +2227,6 @@
       "Securing your account": [
         "Dein Konto wird gesichert"
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Wähle die Anzahl der Benutzer aus, die in deinem Abonnement enthalten sein sollen. Jeder zusätzliche Benutzer kostet ${ price }. Benötigst du mehr als ${ maxUsers } Benutzerkonten, ${ contactMailToLink } bitte unser Kundenbetreuungsteam."
-      ],
       "Server is currently down": [
         "Der Server ist derzeit nicht erreichbar"
       ],
@@ -2340,6 +2343,9 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
+      ],
+      "Update the URL in your password manager": [
+        "Bitte aktualisiere die URL in deinem Passwort-Manager"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Position: ${ formattedBestServerName }"
@@ -3037,7 +3043,7 @@
         "Weiter zur Überprüfung"
       ],
       "Continue with free": [
-        "Weiter mit kostenloser Version"
+        "Continue with Free"
       ],
       "Delete account": [
         "Konto löschen"
@@ -3528,7 +3534,7 @@
         "Mit dieser Funktion stellst du sicher, dass du alle an deine Domain gesendeten E-Mails erhältst, auch wenn die E-Mail-Adresse nicht oder nicht mehr existiert oder einen Tippfehler enthält"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Erzwinge die Abmeldung von Benutzersitzungen, wenn die Anmeldedaten des Benutzers vermutlich kompromittiert wurden."
+        "Erzwinge die Abmeldung von Benutzersitzungen, wenn der Verdacht besteht, dass die Anmeldedaten des Benutzers kompromittiert wurden."
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Die IMAP-Unterstützung ist auf die Nutzung von Desktop-Apps (z. B. Outlook, Apple Mail, Thunderbird) über ${ MAIL_APP_NAME } Bridge beschränkt. Cloud-basierte IMAP-Integrationen werden derzeit nicht unterstützt."
@@ -3555,7 +3561,7 @@
         "Eine VPN-Verbindung ermöglicht es einem Gerät, sich zu einem bestimmten Zeitpunkt mit dem Proton VPN zu verbinden. Wenn du etwa ein Telefon und einen Laptop gleichzeitig mit dem Proton VPN verbinden möchtest, benötigst du zwei VPN-Verbindungen."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus seiner Sicht einschließlich aller Nachrichten- und Kontaktdetails"
+        "Option zum Anzeigen der Posteingänge nicht privater Benutzer aus dessen Sicht, einschließlich aller Nachrichten- und Kontaktdetails"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Ein Organisationsverwaltungstool, mit dem Administratoren Benutzer hinzufügen und wieder entfernen, Speicherplatz zuweisen, Domains konfigurieren und andere Aufgaben ausführen können."
@@ -3570,7 +3576,7 @@
         "Gestalte deine E-Mail-Signatur individuell mit Logos, Bildern, Symbolen sozialer Netzwerke, Links zu deinen Kontaktdaten und mehr."
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        "Telefonische Unterstützung durch das Kundenbetreuungsteam von Proton besteht für Kunden mit mindestens 6 Benutzern innerhalb europäischer Geschäftszeiten."
+        "Telefonische Unterstützung (innerhalb europäischer Geschäftszeiten) durch das Kundenbetreuungsteam von Proton besteht für Kunden mit mindestens 6 Benutzern."
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
         "Verhindere den Zugriff auf Nachrichten durch ${ BRAND_NAME } oder Dritte. Die Einzigen, die die Nachrichten lesen können, sind der Absender und der gewünschte Empfänger."
@@ -3594,7 +3600,7 @@
         "Leite deinen Internetverkehr mit einem einzigen Klick durch das Tor-Netzwerk."
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher. Dank Zero-Access-Verschlüsselung kann nicht einmal Proton auf diese Informationen zugreifen."
+        "Speichere die Daten deiner Kontakte wie Telefonnummer, Adresse, Geburtstag und persönliche Notizen sicher ab. Dank Zero-Access-Verschlüsselung kann nicht einmal Proton auf diese Informationen zugreifen."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Sende E-Mails schnell und einfach an große Gruppen, indem du so viele Kontaktgruppen wie nötig erstellst (mit bis zu 100 Kontakten pro Gruppe)."
@@ -3808,6 +3814,18 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Füge deinen Namen (oder Firmennamen) und deine Adresse zu deinen Rechnungen hinzu"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "kontaktiere"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Wähle die Anzahl der Benutzer aus, die in deinem Abonnement enthalten sein sollen. Jeder zusätzliche Benutzer kostet ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Benötigst du mehr als ${ maxUsers } Benutzerkonto, ${ contact } bitte unser Vertriebsteam.",
+        "Benötigst du mehr als ${ maxUsers } Benutzerkonten, ${ contact } bitte unser Vertriebsteam."
       ]
     },
     "Price": {
@@ -4085,12 +4103,9 @@
         "Status"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Wir stellen das neue Proton vor."
-      ],
-      "More services, one privacy mission.": [
-        "Mehr Dienste, eine Mission zum Schutz der Privatsphäre."
+    "Themes": {
+      "Themes": [
+        "Farbschema"
       ]
     },
     "Title": {

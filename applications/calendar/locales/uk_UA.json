@@ -302,6 +302,9 @@
       "OK": [
         "Гаразд"
       ],
+      "Open in a new tab": [
+        "Відкрити в новій вкладці"
+      ],
       "Open navigation": [
         "Відкрити панель навігації"
       ],
@@ -2165,8 +2168,8 @@
       "Primary key is not valid for sending": [
         "Основний ключ недійсний для надсилання"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Для внутрішнього користувача не отримано дійсного основного ключа для надсилання"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Для внутрішнього користувача отримано недійсний основний ключ для надсилання"
       ],
       "Request timed out": [
         "Час очікування запиту завершився"
@@ -4030,7 +4033,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Розкажіть нам про своє враження (Необов'язково)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4776,12 +4779,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Представляємо оновлений Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Більше служб, єдина місія приватності."
-      ],
       "Settings": [
         "Налаштування"
       ]
@@ -5240,6 +5237,11 @@
       ],
       "Replay video": [
         "Повторно відтворити відео"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Відкрити в новій вкладці"
       ]
     },
     "Warning": {

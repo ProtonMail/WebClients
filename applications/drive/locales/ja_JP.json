@@ -578,7 +578,7 @@
         "${ addContact } または ${ importContact }."
       ],
       "No results found.": [
-        "一致する結果が見つかりませんでした。"
+        "該当する結果が見つかりませんでした。"
       ],
       "Please try another search term.": [
         "別の単語で検索してみてください。"
@@ -2210,13 +2210,13 @@
         "${ canceledCount } 件キャンセル"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        ""
+        "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "連絡先 ${ contactName } に複数のメールアドレスが含まれています。"
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } 件の連絡先が見つかりました"
@@ -2606,13 +2606,13 @@
         "ごみ箱にファイルやフォルダーがありません"
       ],
       "No group found": [
-        "グループはありません"
+        "グループが見つかりませんでした"
       ],
       "No preview available": [
         "プレビューは利用できません"
       ],
       "No results found": [
-        "該当する項目がありません"
+        "該当する結果が見つかりませんでした"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "メモ: アップロードされたキーは暗号化に利用できます。暗号化は自動的に無効化されます。"
@@ -2669,16 +2669,16 @@
         "インポートしたいフォルダーを選択してください:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        ""
+        "${ groupCount } 件のグループに追加するメールアドレスを選択してください。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
+        "プライマリー暗号鍵で再署名できる連絡先を探しています。しばらくお待ちください。"
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "無効な鍵で暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
+        "無効な鍵で暗号化されたデータが含まれている連絡先を探しています。しばらくお待ちください。"
       ],
       "Preparing link to file": [
         "ファイルへのリンクを準備中"
@@ -2822,10 +2822,10 @@
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先暗号化キーを再度有効にする必要があります。 したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
+        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "アドレスの検証を利用するには、送信で使うキーを含む 1 つ以上のパブリックキーを信頼する必要があります。これにより、暗号キーの偽装を防ぐことができます。"
+        "アドレスの検証を利用するには、送信で使う鍵を含む 1 つ以上の公開鍵を信頼する必要があります。これにより、暗号鍵の偽装を防ぐことができます。"
       ],
       "Transfer canceled for file \"${ name }\"": [
         "ファイル「${ name }」の転送をキャンセルしました"
@@ -2966,7 +2966,7 @@
         "ファイルをダウンロード中です。"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
-        "パスワードをリセットしたためファイルにアクセスできません。古い暗号キーを再度アップロードすることでアクセス可能になります。${ KeyReactivationButton }"
+        "パスワードをリセットしたためファイルにアクセスできません。古い暗号鍵を再度アップロードすることでアクセス可能になります。${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
@@ -4058,12 +4058,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "新しくなった Proton をご紹介します。"
-      ],
-      "More services, one privacy mission.": [
-        "たくさんのサービス、1 つのプライバシーミッション。"
-      ],
       "Settings": [
         "設定"
       ]
@@ -4335,7 +4329,7 @@
         "名前"
       ],
       "No results found": [
-        "該当する項目がありません"
+        "該当する結果が見つかりませんでした"
       ],
       "Number of files": [
         "ファイル数"

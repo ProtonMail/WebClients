@@ -527,6 +527,12 @@
       "Merge contacts": [
         "Sloučit kontakty"
       ],
+      "Messages from this sender": [
+        "Zprávy tohoto odesílatele"
+      ],
+      "Messages to this recipient": [
+        "Zprávy tomuto příjemci"
+      ],
       "Minimize composer": [
         "Maximalizovat editor"
       ],
@@ -869,8 +875,8 @@
         "Důvěřovat klíčům",
         "Důvěřovat klíčům"
       ],
-      "Trust Public Key": [
-        "Důvěřujte veřejnému klíči"
+      "Trust public key": [
+        "Důvěřovat veřejnému klíči"
       ],
       "Try again": [
         "Zkuste to znovu"
@@ -2996,8 +3002,8 @@
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Primární klíč pro interního uživatele je možné použít pro odesílání"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primární klíč pro interního uživatele není možné použít pro odesílání"
       ],
       "Public key could not be trusted": [
         "Nelze věřit veřejnému klíči"
@@ -7152,12 +7158,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Představujeme modernizovaný Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Více služeb, jedna mise na ochranu soukromí."
-      ],
       "Settings": [
         "Nastavení"
       ]
