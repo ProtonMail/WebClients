@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Betal ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Kontakt venligst din administrator for, at håndtere abonnementet"
+      ],
       "Preview": [
         "Forhåndsvisning"
       ],
@@ -2735,7 +2738,7 @@
         "Denne browser understøtter ikke betalingshåndtering, så benyt venligst en anden eller alternativt en computerbrowser."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        ""
+        "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Filnavnet er for langt. Vælg venligst et andet."
@@ -2747,7 +2750,7 @@
         "Nøglerne i dine gendannelsesfiler kan ikke valideres. Upload enkeltvis for at få flere oplysninger."
       ],
       "The label name is invalid. Please choose a different name.": [
-        ""
+        "Labelens navn er ugyldigt. Vælg venligst et andet navn."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
@@ -3621,44 +3624,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Klik på ${ boldManage } for at udvide menu med valgmuligheder"
+      "Click ${ boldManage } to expand the options menu.": [
+        ""
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "Afhængigt af din e-mail-udbyder skal du muligvis oprette et ${ knowledgeBaseLink } først, før du kan importere til Proton"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        ""
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "Udvid dropdown-menuen ved at trykke på de 3 prikker (...)"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        ""
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Opret et ${ boldAppPassword } og brug det i stedet for din almindelige adgangskode, når Proton anmoder om det"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        ""
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Generer ${ boldAppPassword } og bruge det i stedet for din almindelige adgangskode, når Proton beder dig om det"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        ""
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Gå til ${ boldAccountInfo } under din profil i ${ yahooMailLink }"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        ""
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Gå til ${ boldAccountSecurity }"
+      "Go to ${ boldAccountSecurity }.": [
+        ""
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Gå til Outlook ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        ""
       ],
-      "If 2-step verification is off, turn it on": [
-        "Hvis totrinsbekræftelse er deaktiveret, slå det til"
+      "If 2-step verification is off, turn it on.": [
+        ""
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Åbn dine ${ yahooMailLink } kontakter"
+      "Open your ${ yahooMailLink } contacts.": [
+        ""
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Åbn dit Outlook ${ outlookContactsLink }"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        ""
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "Vælg ${ boldExportContacts } og vælg, hvilke kontakter der skal eksporteres"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        ""
       ],
-      "Select ${ boldExportCSV }": [
-        "Vælg ${ boldExportCSV }"
+      "Select ${ boldExportCSV }.": [
+        ""
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
@@ -3666,8 +3669,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere en kalender til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "For at importere en kalender til Proton, skal du bruge ${ knowledgeBaseLink }. Download dette, før du starter importprocessen"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Outlook i 3 nemme trin:"
@@ -3675,8 +3678,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "For at importere kontakter til Proton skal du bruge ${ knowledgeBaseLink }. Download det fra Yahoo i 3 nemme trin:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "For at importere kontakter til Proton skal du bruge et ${ knowledgeBaseLink }. Download dette, før du starter importprocessen"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "For at importere e-mails til Proton, skal du bruge et ${ appPasswordLink } fra Outlook. Få det ved at følge disse trin:"
@@ -3747,23 +3750,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Klik på ${ boldICS } linket og download filen"
+      "Click on the ${ boldICS } link and download the file.": [
+        ""
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Gå til ${ calendarLink } i dine Outlook-indstillinger"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Gå til ${ calendarViewLink } i Yahoo"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        ""
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "Hold musen over den kalender, du vil importere, og åbn dropdown-menuen"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        ""
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        ""
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "Under ${ boldPublish }, vælg kalenderen du vil importere. Indstil tilladelsen til ${ boldCanViewAllDetails } og offentliggør den"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        ""
       ]
     },
     "Import key": {
@@ -4333,7 +4336,7 @@
         "Redigér etiket"
       ],
       "Edit link": [
-        ""
+        "Rediger link"
       ],
       "Email address": [
         "E-mailadresse"
@@ -4504,7 +4507,7 @@
         "Slet IKKE denne konto, hvis du ønsker at kombinere den med en anden."
       ],
       "Image description": [
-        ""
+        "Billedbeskriveslse"
       ],
       "Image URL": [
         "Billed-URL"
@@ -4579,6 +4582,9 @@
       ],
       "Invited via email": [
         "Inviteret via e-mail"
+      ],
+      "Issues signing in?": [
+        "Problemer med at logge ind?"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Det ser ud til, at nogle af dine data er krypteret og låst."
@@ -5195,6 +5201,9 @@
       ],
       "Update recovery phrase": [
         "Opdater gendannelsessætning"
+      ],
+      "Update the URL in your password manager": [
+        "Opdater url'en i din adgangskodeapp"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Opgradér i dag for at undgå at miste følgende ${ planName }-fordele."
@@ -7170,6 +7179,26 @@
         ""
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        ""
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        ""
+      ],
+      "From ${ _price } per user": [
+        ""
+      ],
+      "From ${ price }": [
+        ""
+      ],
+      "Keep my ${ currentPlanName } account": [
+        ""
+      ],
+      "Upgrade now": [
+        ""
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         ""
@@ -7205,26 +7234,6 @@
         ""
       ],
       "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
         ""
       ]
     },
@@ -7469,6 +7478,23 @@
         ""
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         ""
@@ -7534,23 +7560,6 @@
         ""
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         ""
@@ -7593,6 +7602,17 @@
         ""
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        ""
+      ],
+      "Upgrade to ${ planName }": [
+        "Opgrader til ${ planName }"
+      ],
+      "Your account's usage": [
+        "Din kontos forbrug"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         ""
@@ -7613,17 +7633,6 @@
         ""
       ],
       "Unlock premium features by upgrading": [
-        ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
         ""
       ]
     },
@@ -8932,10 +8941,10 @@
     },
     "Text": {
       "Introducing the updated Proton.": [
-        ""
+        "Vi præsenterer det opdaterede Proton."
       ],
       "More services, one privacy mission.": [
-        ""
+        "Flere tjenester, én privatlivsmission."
       ]
     },
     "Time period": {

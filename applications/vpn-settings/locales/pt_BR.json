@@ -65,9 +65,6 @@
       "Confirm": [
         "Confirmar"
       ],
-      "contact": [
-        "contato"
-      ],
       "Contact support": [
         "Contatar o suporte"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Upgrade"
+      ],
+      "Use ${ label } theme": [
+        "Usar o tema ${ label }"
       ],
       "Use a different card": [
         "Usar outro cartão"
@@ -1945,6 +1945,9 @@
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
+      "Choose the look and feel of the application.": [
+        "Escolha a aparência do aplicativo."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
@@ -2095,6 +2098,9 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
+      "Issues signing in?": [
+        ""
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Saiba como fazer login no ${ VPN_APP_NAME } com aplicativos de VPN de terceiros."
       ],
@@ -2221,9 +2227,6 @@
       "Securing your account": [
         "Protegendo sua conta"
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Selecione o número de usuários para incluir em seu plano. Cada usuário adicional custa ${ price }. Se você precisar de mais de ${ maxUsers } contas de usuário, por favor, ${ contactMailToLink } nossa equipe de Sucesso do Cliente."
-      ],
       "Server is currently down": [
         "O servidor está indisponível no momento"
       ],
@@ -2340,6 +2343,9 @@
       ],
       "Unsupported file": [
         "Arquivo não suportado"
+      ],
+      "Update the URL in your password manager": [
+        ""
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
@@ -3037,7 +3043,7 @@
         "Prosseguir para a revisão"
       ],
       "Continue with free": [
-        "Continuar com o plano grátis"
+        "Continue with Free"
       ],
       "Delete account": [
         "Excluir conta"
@@ -3810,6 +3816,18 @@
         "Adicione seu nome (ou nome da empresa) e endereço para suas faturas"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        "contato"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
+      ]
+    },
     "Price": {
       "Free": [
         "Gratuito"
@@ -4085,12 +4103,9 @@
         "Status"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Apresentamos a versão atualizada dos produtos Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Mais serviços, uma missão de privacidade."
+    "Themes": {
+      "Themes": [
+        "Temas"
       ]
     },
     "Title": {

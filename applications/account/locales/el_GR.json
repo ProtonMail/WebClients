@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Πληρωμή ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        ""
+      ],
       "Preview": [
         "Προεπισκόπηση"
       ],
@@ -3621,44 +3624,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
+      "Click ${ boldManage } to expand the options menu.": [
         ""
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
         ""
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
         ""
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         ""
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Παράξτε ${ boldAppPassword } και χρησιμοποιήστε το στη θέση του τακτικού σας κωδικού όταν σας ζητηθεί από το Proton"
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Πηγαίντε στο ${ boldAccountInfo } κάτω από το προφίλ σας σε ${ yahooMailLink }"
-      ],
-      "Go to ${ boldAccountSecurity }": [
-        "Πηγαίντε στο ${ boldAccountSecurity }"
-      ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Μετάβαση στο Outlook ${ securitySettingsLink }"
-      ],
-      "If 2-step verification is off, turn it on": [
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         ""
       ],
-      "Open your ${ yahooMailLink } contacts": [
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         ""
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
+      "Go to ${ boldAccountSecurity }.": [
         ""
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
+      "Go to Outlook ${ securitySettingsLink }.": [
         ""
       ],
-      "Select ${ boldExportCSV }": [
-        "Επιλογή ${ boldExportCSV }"
+      "If 2-step verification is off, turn it on.": [
+        ""
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        ""
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        ""
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        ""
+      ],
+      "Select ${ boldExportCSV }.": [
+        ""
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         ""
@@ -3666,7 +3669,7 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Για την εισαγωγή ενός ημερολογίου στο Proton, θα χρειαστείτε ${ knowledgeBaseLink }. Κατεβάστε το από το Yahoo σε 3 απλά βήματα:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
@@ -3675,7 +3678,7 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         ""
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
@@ -3747,22 +3750,22 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
+      "Click on the ${ boldICS } link and download the file.": [
         ""
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Μετάβαση στο ${ calendarLink } στις ρυθμίσεις του Outlook"
-      ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Μετάβαση στο ${ calendarViewLink } στη Yahoo"
-      ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
+      "Go to ${ calendarLink } in your Outlook settings.": [
         ""
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
+      "Go to ${ calendarViewLink } in Yahoo.": [
         ""
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        ""
+      ],
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
         ""
       ]
     },
@@ -3971,7 +3974,7 @@
         "1. Προσκαλέστε φίλους στο Proton"
       ],
       "10 email addresses": [
-        ""
+        "10 διευθύνσεις email"
       ],
       "2. They try ${ planName }": [
         "2. Έπειτα δοκιμάστε ${ planName }"
@@ -4333,7 +4336,7 @@
         "Επεξεργασία ετικέτας"
       ],
       "Edit link": [
-        ""
+        "Επεξεργασία συνδέσμου"
       ],
       "Email address": [
         "Διεύθυνση email"
@@ -4504,7 +4507,7 @@
         "Εάν επιθυμείτε να συνδυάσετε αυτόν τον λογαριασμό με έναν άλλο, ΜΗΝ τον διαγράψετε."
       ],
       "Image description": [
-        ""
+        "Περιγραφή εικόνας"
       ],
       "Image URL": [
         "URL εικόνας"
@@ -4579,6 +4582,9 @@
       ],
       "Invited via email": [
         "Προσκλήθηκε μέσω email"
+      ],
+      "Issues signing in?": [
+        "Προβλήματα κατά την είσοδο;"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Φαίνεται πως μερικά από τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα."
@@ -5195,6 +5201,9 @@
       ],
       "Update recovery phrase": [
         "Ενημέρωση φράσης ανάκτησης"
+      ],
+      "Update the URL in your password manager": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
@@ -7170,6 +7179,26 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
+        "Από ${ _price } ανά χρήστη"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         ""
@@ -7206,26 +7235,6 @@
       ],
       "Switch plan": [
         "Αλλαγή προγράμματος"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ _price } per user": [
-        "Από ${ _price } ανά χρήστη"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: attribute": {
@@ -7469,6 +7478,23 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -7534,23 +7560,6 @@
         ""
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προνομιακά χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } από ${ humanMaxSpace }"
@@ -7593,6 +7602,17 @@
         "Το επιλεγμένο σας πρόγραμμα: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Δοκιμή ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Αναβάθμιση σε ${ planName }"
+      ],
+      "Your account's usage": [
+        "Η κατανάλωση του λογαριασμού σας"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Διαγραφή λογαριασμού;"
@@ -7614,17 +7634,6 @@
       ],
       "Unlock premium features by upgrading": [
         ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Δοκιμή ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Αναβάθμιση σε ${ planName }"
-      ],
-      "Your account's usage": [
-        "Η κατανάλωση του λογαριασμού σας"
       ]
     },
     "new_plans: tooltip": {

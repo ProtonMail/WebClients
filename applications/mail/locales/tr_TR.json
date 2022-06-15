@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Kişileri birleştir"
       ],
+      "Messages from this sender": [
+        "Bu göndericiden alınmış iletiler"
+      ],
+      "Messages to this recipient": [
+        "Bu alıcıya gönderilmiş iletiler"
+      ],
       "Minimize composer": [
         "Oluşturucuyu küçült"
       ],
@@ -861,7 +867,7 @@
         "Anahtara güven",
         "Anahtarlara güven"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "Herkese açık anahtara güven"
       ],
       "Try again": [
@@ -2538,22 +2544,22 @@
         "Günlük"
       ],
       "Daily, ${ timesString }": [
-        "Günlük, ${ timesString }"
+        "Günde bir, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Günlük, ${ untilString }"
+        "Günde bir, ${ untilString }"
       ],
       "Every ${ interval } day": [
-        "Her ${ interval } günde bir",
-        "Her ${ interval } günde bir"
+        "${ interval } günde bir",
+        "${ interval } günde bir"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Her ${ interval } günde, ${ timesString }",
-        "Her ${ interval } günde, ${ timesString }"
+        "${ interval } günde bir, ${ timesString }",
+        "${ interval } günde bir, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Her ${ interval } günde bir, ${ untilString }",
-        "Her ${ interval } günde bir, ${ untilString }"
+        "${ interval } günde bir, ${ untilString }",
+        "${ interval } günde bir, ${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } tarihine kadar"
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli değil"
       ],
       "Public key could not be trusted": [
         "Herkese açık anahtara güvenilemedi"
@@ -3987,16 +3993,16 @@
         "Özel"
       ],
       "Custom daily": [
-        "Günlük, özel"
+        "Günde bir, özel"
       ],
       "Custom monthly": [
-        "Aylık, özel"
+        "Ayda bir, özel"
       ],
       "Custom weekly": [
-        "Haftalık, özel"
+        "Haftada bir, özel"
       ],
       "Custom yearly": [
-        "Yıllık, özel"
+        "Yılda bir, özel"
       ],
       "Daily": [
         "Günlük"
@@ -4299,7 +4305,7 @@
         "Bu ileti yarın ${ formattedTime } saatinde gönderilecek"
       ],
       "Monthly ${ onDayString }": [
-        "Aylık ${ onDayString }"
+        "Ayda bir ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Güncellenmiş Proton ile tanışın."
-      ],
-      "More services, one privacy mission.": [
-        "Daha fazla hizmet, tek kişisel gizlilik amacı."
-      ],
       "Settings": [
         "Ayarlar"
       ]
@@ -7691,7 +7691,7 @@
         "Haftada bir ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Haftanın her günü"
+        "Haftada bir her gün"
       ],
       "Weekly on all days, ${ timesString }": [
         "Haftada bir her gün, ${ timesString }"
@@ -7800,7 +7800,7 @@
         "${ interval } yılda bir, ${ untilString }"
       ],
       "Yearly": [
-        "Yılda bir"
+        "Yıllık"
       ],
       "Yearly, ${ timesString }": [
         "Yılda bir, ${ timesString }"

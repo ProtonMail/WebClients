@@ -192,7 +192,7 @@
         "Copiar correu electrònic al porta-retalls"
       ],
       "Copy password to clipboard": [
-        ""
+        "Copia la contrasenya al porta-retalls"
       ],
       "Create a new contact group": [
         "Crear un nou grup de contactes"
@@ -290,7 +290,7 @@
         "Editar l'adreça de correu electrònic"
       ],
       "Edit encryption": [
-        ""
+        "Edita el xifrat"
       ],
       "Edit label": [
         "Editar etiqueta"
@@ -323,7 +323,7 @@
         "Expandir URL"
       ],
       "Expiration time": [
-        ""
+        "Temps de caducitat"
       ],
       "Export": [
         "Exporta"
@@ -335,7 +335,7 @@
         "Exportar contactes"
       ],
       "External encryption": [
-        ""
+        "Xifrat extern"
       ],
       "Filter on...": [
         "Filtrar per..."
@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Combinar contactes"
       ],
+      "Messages from this sender": [
+        "Missatges d'aquest remitent"
+      ],
+      "Messages to this recipient": [
+        "Missatges per a aquest destinatari"
+      ],
       "Minimize composer": [
         "Minimitzar l'editor"
       ],
@@ -684,10 +690,10 @@
         "Esborrar ${ attachmentName }"
       ],
       "Remove encryption": [
-        ""
+        "Elimina el xifrat"
       ],
       "Remove expiration time": [
-        ""
+        "Elimina el temps de caducitat"
       ],
       "Remove this label": [
         "Elimina aquesta etiqueta"
@@ -768,7 +774,7 @@
         "Establir com a predeterminat"
       ],
       "Set encryption": [
-        ""
+        "Defineix el xifrat"
       ],
       "Set expiration time": [
         "Definir el temps d'expiració"
@@ -861,8 +867,8 @@
         "Clau de confiança",
         "Claus de confiança"
       ],
-      "Trust Public Key": [
-        "Confiar en la Clau Pública"
+      "Trust public key": [
+        "Confia en la clau pública"
       ],
       "Try again": [
         "Torna-ho a provar"
@@ -1963,7 +1969,7 @@
         "Etiòpia"
       ],
       "Falkland Islands": [
-        ""
+        "Illes Flkland"
       ],
       "Faroe Islands": [
         "Illes Fèroe"
@@ -2960,7 +2966,7 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
+      "Primary key retrieved for internal user is not valid for sending": [
         ""
       ],
       "Public key could not be trusted": [
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "Preferències"
       ]
@@ -7157,10 +7157,10 @@
         "Exportant contactes"
       ],
       "External encryption": [
-        ""
+        "Xifrat extern"
       ],
       "Feedback": [
-        ""
+        "Comentaris"
       ],
       "Filter on": [
         "Filtrat"
@@ -7334,7 +7334,7 @@
         "Enviar correu"
       ],
       "Send feedback": [
-        ""
+        "Enviar comentaris"
       ],
       "Send with changed preferences?": [
         "Enviar amb preferències canviades?"
@@ -7364,7 +7364,7 @@
         "Inicia sessió per continuar"
       ],
       "Sign in and grant access": [
-        ""
+        "Iniciar sessió i concedir accés"
       ],
       "Sort conversations": [
         "Ordenar converses"
@@ -7422,7 +7422,7 @@
         "Novetats"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        ""
+        "El vostre període de prova acaba aviat, el ${ formattedEndDate }"
       ]
     },
     "Today icon tooltip in mini calendar": {
