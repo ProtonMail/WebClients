@@ -27,6 +27,7 @@ import './OnboardingModal.scss';
 
 interface Props {
     onClose?: () => void;
+    onExit?: () => void;
     onDone?: () => void;
     children?: ((props: OnboardingStepRenderCallback) => JSX.Element)[];
     showGenericSteps?: boolean;
