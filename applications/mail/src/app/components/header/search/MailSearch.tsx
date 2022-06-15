@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
-import { c } from 'ttag';
 import { useLocation } from 'react-router-dom';
 import {
     FeatureCode,
     generateUID,
-    Href,
-    Spotlight,
     TopNavbarListItemSearchButton,
     useAddresses,
     useFeature,
@@ -13,14 +10,11 @@ import {
     useLabels,
     useMailSettings,
     usePopperAnchor,
-    useSpotlightOnFeature,
     useToggle,
     useUser,
-    useWelcomeFlags,
 } from '@proton/components';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isPaid } from '@proton/shared/lib/user/helpers';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import SearchOverlay from './SearchOverlay';
 import AdvancedSearch from './AdvancedSearch';
 import SearchInput from './SearchInput';
@@ -32,6 +26,7 @@ import { useClickMailContent } from '../../../hooks/useClickMailContent';
 import { ADVANCED_SEARCH_OVERLAY_CLOSE_EVENT } from '../../../constants';
 
 import './Search.scss';
+import MailSearchSpotlight from './MailSearchSpotlight';
 
 interface Props {
     breakpoints: Breakpoints;
@@ -48,7 +43,6 @@ const MailSearch = ({ breakpoints }: Props) => {
     const [, loadingFolders] = useFolders();
     const [, loadingAddresses] = useAddresses();
     const { loading: loadingScheduledFeature } = useFeature(FeatureCode.ScheduledSend);
-    const [welcomeFlags] = useWelcomeFlags();
     const { getESDBStatus, cacheIndexedDB, closeDropdown } = useEncryptedSearchContext();
     const { isDBLimited, dropdownOpened } = getESDBStatus();
     const esState = useEncryptedSearchToggleState(isOpen);
@@ -87,11 +81,6 @@ const MailSearch = ({ breakpoints }: Props) => {
         }
     };
 
-    const { show: showSpotlight, onDisplayed } = useSpotlightOnFeature(
-        FeatureCode.SpotlightEncryptedSearch,
-        showEncryptedSearch && !welcomeFlags.isWelcomeFlow && !isOpen
-    );
-
     // Listen to close events from composer or iframes
     useEffect(() => {
         document.addEventListener('dropdownclose', close);
@@ -105,27 +94,13 @@ const MailSearch = ({ breakpoints }: Props) => {
 
     return (
         <>
-            <Spotlight
-                originalPlacement="bottom"
-                show={showSpotlight}
-                onDisplayed={onDisplayed}
-                content={
-                    <>
-                        <div className="text-bold text-lg mauto">{c('Spotlight').t`Message Content Search`}</div>
-                        {c('Spotlight').t`You can now search the content of your encrypted emails.`}
-                        <br />
-                        <Href url={getKnowledgeBaseUrl('/search-message-content')} title="Message Content Search">
-                            {c('Info').t`Learn more`}
-                        </Href>
-                    </>
-                }
-            >
+            <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>
                 {breakpoints.isNarrow ? (
                     <TopNavbarListItemSearchButton onClick={handleOpen} />
                 ) : (
                     <SearchInput ref={anchorRef} searchParams={searchParams} onOpen={handleOpen} />
                 )}
-            </Spotlight>
+            </MailSearchSpotlight>
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
                     isNarrow={breakpoints.isNarrow}
