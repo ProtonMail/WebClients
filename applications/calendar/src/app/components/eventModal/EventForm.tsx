@@ -49,7 +49,6 @@ export interface EventFormProps {
     isMinimal?: boolean;
     isCreateEvent: boolean;
     setParticipantError?: (value: boolean) => void;
-    textareaMaxHeight?: number;
     isSubscribedCalendar?: boolean;
     isDuplicating?: boolean;
 }
@@ -66,7 +65,6 @@ const EventForm = ({
     isMinimal,
     isCreateEvent,
     setParticipantError,
-    textareaMaxHeight,
     isSubscribedCalendar,
     isDuplicating = false,
     ...props
@@ -185,7 +183,6 @@ const EventForm = ({
                 autoGrow
                 placeholder={c('Placeholder').t`Add description`}
                 maxLength={MAX_LENGTHS_API.EVENT_DESCRIPTION}
-                style={{ '--max-height-custom': `${textareaMaxHeight}px` }}
                 className="max-h-custom"
                 title={c('Title').t`Add more information related to this event`}
                 {...createHandlers({ model, setModel, field: 'description' }).native}
