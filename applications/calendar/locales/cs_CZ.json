@@ -302,6 +302,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Otevřít na nové kartě"
+      ],
       "Open navigation": [
         "Otevřít menu"
       ],
@@ -2165,8 +2168,8 @@
       "Primary key is not valid for sending": [
         "Primární klíč není platný pro odesílání"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Primární klíč pro interního uživatele je možné použít pro odesílání"
+      "Primary key retrieved for internal user is not valid for sending": [
+        ""
       ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
@@ -4030,7 +4033,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Podělte se o své zkušenosti (nepovinné)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4776,12 +4779,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Představujeme modernizovaný Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Více služeb, jedna mise na ochranu soukromí."
-      ],
       "Settings": [
         "Nastavení"
       ]
@@ -5240,6 +5237,11 @@
       ],
       "Replay video": [
         "Přehrát video"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Otevřít na nové kartě"
       ]
     },
     "Warning": {

@@ -140,7 +140,7 @@
         "Pilih berkas atau taruh di sini"
       ],
       "Clear all formatting": [
-        "Hapus semua format"
+        "Hapus seluruh format"
       ],
       "Close": [
         "Tutup"
@@ -254,7 +254,7 @@
         "Hapus tanpa mengekspor"
       ],
       "Delete your account": [
-        "Hapus akun anda"
+        "Hapus akun Anda"
       ],
       "Details": [
         "Rincian"
@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Bayar ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Silakan hubungi administrator organisasi untuk mengelola langganan"
+      ],
       "Preview": [
         "Pratinjau"
       ],
@@ -608,7 +611,7 @@
         "Cabut ${ name }"
       ],
       "Revoke all other sessions": [
-        "Cabut semua sesi lainnya"
+        "Cabut seluruh sesi lainnya"
       ],
       "Save": [
         "Simpan"
@@ -1336,7 +1339,7 @@
     },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
-        "Yakin ingin menghapus metode pembayaran ini?"
+        "Apakah Anda yakin untuk menghapus metode pembayaran ini?"
       ]
     },
     "Confirmation title": {
@@ -2528,7 +2531,7 @@
         "Kesalahan pada salah satu kondisi"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
-        "Gagal untuk memperoleh daftar sesi-sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
+        "Gagal memperoleh sesi yang aktif. Silakan ${ refresh } atau coba lagi nanti."
       ],
       "Filter with this name already exist": [
         "Filter dengan nama ini sudah ada"
@@ -2747,10 +2750,10 @@
         "Kunci organisasi harus diaktifkan terlebih dahulu."
       ],
       "The session has expired. Please sign in again.": [
-        "Sesi telah habis. Silakan masuk lagi."
+        "Masa berlaku sesi telah habis. Silakan masuk lagi."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "Ada terlalu banyak folder di dalam akun eksternal Anda. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat terhapus."
+        "Akun eksternal Anda memiliki terlalu banyak folder. Mohon sesuaikan parameter impor Anda agar sebagian folder dapat dihapus."
       ],
       "This field is required": [
         "Kolom ini wajib diisi"
@@ -2798,7 +2801,7 @@
         "Anda telah kehilangan akses ke kunci organisasi Anda. Tanpa pemulihan Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
       ],
       "You have no invoices.": [
-        "Anda tidak memiliki tagihan."
+        "Anda tidak memiliki tagihan apapun."
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
         "Anda telah menggunakan semua alamat dalam paket Anda. Mohon tingkatkan paket untuk menambah alamat baru."
@@ -2816,7 +2819,7 @@
         "Anda harus menyetel nama"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
-        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi semua tagihan yang belum dibayar."
+        "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
       ],
       "Your import will not be processed.": [
         "Impor Anda tidak akan diproses."
@@ -3246,10 +3249,10 @@
     },
     "FilterSettings": {
       "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Tambah filter khusus untuk menjalankan tindakan tertentu, seperti pelabelan atau pengarsipan pesan."
+        "Tambahkan filter khusus agar tindakan tertentu seperti pelabelan atau pengarsipan pesan dapat berlangsung secara otomatis."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "Terapkan aturan spam khusus-pengirim. Pesan dari alamat atau domain di Daftar Kenan selalu ke Kotak Masuk sementara pesan dari alamat atau domain di Daftar Tangkal selalu ke Spam. Menandai pesan sebagai spam menambahkan alamatnya ke Daftar Tangkal. Menandai pesan sebagai bukan spam menambahkannya ke Daftar Kenan."
+        "Terapkan aturan spam khusus bagi pengirim tertentu. Pesan dari alamat atau domain yang ada di Daftar Izin akan selalu tertuju ke Kotak masuk, sedangkan pesan dari alamat atau domain yang ada di Daftar Blokir selalu akan selalu tertuju ke Spam. Menandai pesan sebagai spam menambahkan alamat pengirimnya ke Daftar Blokir. Menandai pesan sebagai bukan spam akan menambahkan alamat pengirimnya ke Daftar Izin."
       ],
       "Search in Allow List and Block List": [
         "Cari di Daftar Izin dan Daftar Blokir"
@@ -3586,44 +3589,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya"
+      "Click ${ boldManage } to expand the options menu.": [
+        "Klik ${ boldManage } untuk menampilkan menu pengaturan selengkapnya."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "Tergantung dari layanan email yang Anda gunakan sebelumnya, Anda mungkin akan butuh untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat memulai proses impor"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "Tergantung dari layanan email Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke Proton."
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "Perlebar menu dropdown dengan mengeklik tombol 3 titik (...)"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Hasilkan ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Hasilkan ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh Proton."
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Tuju ${ boldAccountInfo } yang ada di bawah profil ${ yahooMailLink } Anda."
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Tuju ${ boldAccountSecurity }"
+      "Go to ${ boldAccountSecurity }.": [
+        "Tuju ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Tuju Outlook ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Tuju ${ securitySettingsLink } Outlook."
       ],
-      "If 2-step verification is off, turn it on": [
-        "Apabila verifikasi 2 langkah sedang tidak aktif, aktifkan terlebih dahulu"
+      "If 2-step verification is off, turn it on.": [
+        "Apabila verifikasi 2 langkah belum aktif, aktifkan terlebih dahulu."
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Buka kontak ${ yahooMailLink } Anda"
+      "Open your ${ yahooMailLink } contacts.": [
+        "Buka kontak ${ yahooMailLink } Anda."
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Buka ${ outlookContactsLink } Outlook Anda"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Buka ${ outlookContactsLink } Outlook Anda."
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "Pilih ${ boldExportContacts } dan tentukan kontak-kontak mana saja yang hendak Anda ekspor"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Pilih ${ boldExportContacts } dan tentukan kontak mana saja yang hendak Anda ekspor."
       ],
-      "Select ${ boldExportCSV }": [
-        "Pilih ${ boldExportCSV }"
+      "Select ${ boldExportCSV }.": [
+        "Pilih ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
@@ -3631,8 +3634,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk dapat mengimpor kalender ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Outlook dengan mengikuti 3 langkah mudah berikut:"
@@ -3640,8 +3643,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Anda dapat mengunduhnya dari Yahoo dengan mengikuti 3 langkah mudah berikut:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Untuk dapat mengimpor kontak ke Proton, Anda akan membutuhkan ${ knowledgeBaseLink }. Harap unduh berkas ini terlebih dahulu sebelum memulai proses impor."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Untuk dapat mengimpor email ke Proton, Anda akan membutuhkan ${ appPasswordLink } dari Outlook. Anda dapat memperolehnya dengan mengikuti langkah-langkah berikut:"
@@ -3712,23 +3715,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Klik tautan ${ boldICS } dan unduh berkas tersebut"
+      "Click on the ${ boldICS } link and download the file.": [
+        "Klik tautan ${ boldICS } dan unduh berkas tersebut."
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Tuju ${ calendarLink } pada pengaturan Outlook Anda"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Tuju ${ calendarLink } pada pengaturan Outlook Anda."
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Tuju ${ calendarViewLink } di Yahoo"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Tuju ${ calendarViewLink } di Yahoo."
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "Arahkan kursor Anda ke kalender-kalender yang hendak Anda impor dan buka menu dropdown"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Arahkan kursor Anda ke kalender yang hendak Anda impor dan buka menu dropdown."
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Pilih ${ boldExport } untuk mengekspor kalender yang bersangkutan dalam bentuk berkas ICS."
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "Pada ${ boldPublish }, pilih kalender-kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender-kalender tersebut izin ${ boldCanViewAllDetails } dan kemudian terbitkan"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Pada ${ boldPublish }, pilih kalender mana saja yang hendak Anda impor. Apabila sudah, berikan kalender tersebut izin ${ boldCanViewAllDetails } dan terbitkan."
       ]
     },
     "Import key": {
@@ -3959,7 +3962,7 @@
         "Akun berhasil diperbarui"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat email yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
+        "Buat akun Anda lebih hidup dengan alamat email khusus yang berakhiran @pm.me. Alamat yang sederhana dan mudah diingat ini merupakan kependekan dari \"${ MAIL_APP_NAME } me\" atau \"Private Message me.\""
       ],
       "Add a recovery email address": [
         "Tambahkan alamat email pemulihan"
@@ -4049,13 +4052,13 @@
         "Apakah Anda yakin untuk menghapus alamat ini?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Apakah Anda yakin ingin menghapus kalender ini?"
+        "Apakah Anda yakin untuk menghapus kalender ini?"
       ],
       "Are you sure you want to delete this domain?": [
-        "Yakin ingin menghapus domain ini?"
+        "Apakah Anda yakin untuk menghapus domain ini?"
       ],
       "Are you sure you want to delete this filter?": [
-        "Apakah Anda yakin ingin menghapus filter ini?"
+        "Apakah Anda yakin untuk menghapus filter ini?"
       ],
       "Are you sure you want to delete this folder? All children folders will also be deleted.": [
         "Apakah Anda yakin untuk menghapus folder ini? Seluruh sub-folder yang terkandung di dalam folder ini juga akan ikut terhapus."
@@ -4067,10 +4070,10 @@
         "Apakah Anda yakin untuk membatalkan perubahan-perubahan Anda?"
       ],
       "Are you sure you want to permanently delete all your logs?": [
-        "Apakah Anda yakin mau menghapus secara permanen seluruh log Anda?"
+        "Apakah Anda yakin untuk menghapus seluruh log Anda secara permanen?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Yakin ingin menghapus hak istimewa dari pengguna ini?"
+        "Apakah Anda yakin untuk menghapus hak administratif pengguna ini?"
       ],
       "Auto-reply is active each month between the selected start and end time.": [
         "Pesan balasan otomatis akan terkirim setiap bulannya pada rentang waktu yang ditentukan."
@@ -4241,7 +4244,7 @@
         "Jangan gunakan informasi kredensial OpenVPN / IKEv2 pada aplikasi ${ VPN_APP_NAME } atau dasbor ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "Apakah Anda ingin mencabut semua sesi lain kecuali sesi ini?"
+        "Apakah Anda ingin mencabut seluruh sesi kecuali sesi ini?"
       ],
       "domain used": [
         "domain dipakai"
@@ -4367,7 +4370,7 @@
         "Kosongkan beberapa ruang atau hubungi administrator Anda."
       ],
       "free up space by deleting older messages or other data": [
-        "menghapus pesan-pesan lama atau data-data lainnya yang sudah tidak diperlukan"
+        "menghapus pesan lama atau data lainnya yang sudah tidak diperlukan"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Frasa pemulihan yang baru akan menggantikan frasa pemulihan yang terdahulu."
@@ -4451,7 +4454,7 @@
         "URL gambar"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Gambar-gambar yang ada telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
+        "Seluruh gambar telah dihapus karena tidak dapat diikutsertakan dalam pesan balasan otomatis"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "Impor ${ contactsFragment } dan ${ contactsGroupsFragment }"
@@ -4519,6 +4522,9 @@
       "Invited via email": [
         "Diundang via email"
       ],
+      "Issues signing in?": [
+        "Tidak dapat masuk?"
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Sepertinya sebagian data Anda terenkripsi dan terkunci."
       ],
@@ -4568,7 +4574,7 @@
         "Tautan telah dibuat"
       ],
       "Link deleted": [
-        "Tautan telah dihapus"
+        "Tautan dihapus"
       ],
       "Link type": [
         "Jenis tautan"
@@ -4586,7 +4592,7 @@
         "Masuk ke ${ MAIL_APP_NAME } untuk mengaktifkan alamat Anda"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Log mencakup upaya otentikasi untuk semua layanan Proton yang menggunakan kredensial ProtonMail Anda."
+        "Log merekam segala upaya otentikasi yang terhubung dengan kredensial Proton Anda pada seluruh layanan Proton."
       ],
       "lose access to all current encrypted data": [
         "kehilangan akses ke semua data yang terenkripsi"
@@ -4748,13 +4754,13 @@
         "Harap simpan frasa pemulihan ini sebaik-baiknya. Anda akan memerlukan frasa pemulihan ini untuk dapat mengakses akun Anda apabila di kemudian waktu Anda harus mengatur ulang kata sandi Anda."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "Harap diperhatikan bahwa apabila Anda menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email dengan menggunakan alamat ini."
+        "Harap diperhatikan bahwa dengan menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima email melalui alamat ini."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Harap dicatat bahwa apabila Anda menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
+        "Harap dicatat bahwa dengan menghapus domain ini, seluruh alamat yang terhubung dengan domain tersebut akan dinonaktifkan."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "Harap dicatat bahwa apabila Anda menghapus filter ini, kami akan berhenti memproses seluruh tindakan otomatis yang berhubungan dengan filter ini."
+        "Harap dicatat bahwa dengan menghapus filter ini, kami tidak akan lagi memproses seluruh tindakan otomatis yang terhubung dengan filter ini."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, sisa saldo Anda akan menjadi ${ creditsRemaining }."
@@ -4772,7 +4778,7 @@
         "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi bank Anda untuk mendapatkan bantuan."
       ],
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
-        "Silahkan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
+        "Silakan coba lagi, gunakan metode pembayaran lainnya, atau hubungi PayPal untuk medapatkan bantuan."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Mohon verifikasi pembayaran di tab baru yang terbuka."
@@ -5036,10 +5042,10 @@
         "Dengan ini, PayPal dapat dipakai untuk membayar langganan Proton Anda. Kami akan membuka PayPal di tab baru. Jika Anda memakai pemblokir pop-up, harap nonaktifkan untuk melanjutkan."
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
-        "Tindakan ini akan menghapus seluruh data dan alamat email yang terkait dengan pengguna ini secara permanen."
+        "Tindakan ini akan menghapus seluruh data dan alamat email yang terhubung dengan pengguna ini secara permanen."
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
-        "Tindakan ini akan menghapus semua akun Anda beserta semua datanya secara permanen. Anda tidak akan dapat mengaktifkan ulang akun ini."
+        "Tindakan ini akan menghapus akun Anda beserta seluruh data yang terkandung di dalamnya secara permanen. Anda tidak akan dapat mengaktifkan kembali akun ini."
       ],
       "This will replace your temporary password. You will use it to access your ${ BRAND_NAME } Account in the future.": [
         "Ini akan mengganti kata sandi sementara Anda. Anda akan menggunakannya untuk mengakses akun ${ BRAND_NAME } di masa mendatang."
@@ -5078,7 +5084,7 @@
         "Untuk mencegah spam dan penyalahgunaan, mohon buktikan bahwa Anda adalah seorang manusia."
       ],
       "To keep up with the latest development at Proton products, you can subscribe to our various emails and visit our blog from time to time.": [
-        "Untuk dapat mengikuti berbagai perkembangan terbaru seputar berbagai produk Proton, Anda dapat berlangganan ke buletin email kami serta mengunjungi blog kami dari waktu ke waktu."
+        "Untuk dapat mengikuti perkembangan terbaru seputar berbagai produk Proton, Anda dapat berlangganan ke buletin email kami serta mengunjungi blog kami dari waktu ke waktu."
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "Untuk dapat melanjutkan, pilih metode pemulihan akun yang Anda kehendaki agar kami dapat memverifikasi permintaan Anda."
@@ -5096,7 +5102,7 @@
         "Tor"
       ],
       "Two-factor authentication adds an extra layer of security to your account in case your password is compromised.": [
-        "Otentikasi dua faktor akan menambahkan lapisan keamanan ekstra pada akun Anda di kala kata sandi Anda jatuh ke tangan pihak yang tidak bertanggung jawab."
+        "Otentikasi dua faktor akan memberikan lapisan keamanan ekstra pada akun Anda di kala kata sandi Anda jatuh ke tangan pihak yang tidak bertanggung jawab."
       ],
       "Two-factor authentication disabled": [
         "Oentikasi dua faktor dinonaktifkan"
@@ -5133,6 +5139,9 @@
       ],
       "Update recovery phrase": [
         "Perbarui frasa pemulihan"
+      ],
+      "Update the URL in your password manager": [
+        "Perbarui URL pada aplikasi pengelola kata sandi Anda"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Tingkatkan akun Anda sekarang juga agar Anda tidak kehilangan berbagai keuntungan ${ planName } berikut."
@@ -5216,7 +5225,7 @@
         "Kami tengah meningkatkan paket Anda ke paket yang berharga sama namun lebih kaya akan fitur. Selama proses ini berlangsung, Anda tidak akan dapat mengubah status berlangganan Anda. Kami akan memberitahukan Anda melalui email ketika proses ini telah selesai."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Ketika dinonaktifkan, opsi ini akan mencegah gambar-gambar yang ada untuk dapat dimuat pada perangkat Anda tanpa Anda ketahui."
+        "Ketika dinonaktifkan, opsi ini akan mencegah gambar yang ada untuk dapat termuat pada perangkat Anda tanpa Anda ketahui."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Pada saat notifikasi diaktifkan, kami akan mengirimkan peringatan ke alamat email pemulihan Anda setiap kali terdapat pesan baru yang masuk ke akun ${ MAIL_APP_NAME } Anda."
@@ -5225,7 +5234,7 @@
         "Pada saat mereka berlangganan ke paket berbayar, Anda akan memperoleh saldo ${ planName } $ yang bernilai setara dengan biaya berlangganan selama 1 hingga 3 bulan."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Pada saat paket yang Anda langgan telah jatuh tempo, kami akan terlebih dahulu memperbarui langganan Anda dengan saldo yang tersedia sebelum kami menagih Anda melalui metode-metode pembayaran di atas."
+        "Pada saat paket langganan Anda diperbarui, kami akan terlebih dahulu menerapkan segala saldo yang tersimpan sebelum kami menagih Anda melalui metode pembayaran di atas."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Tanpa aktivasi, Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
@@ -5261,7 +5270,7 @@
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Anda dapat membuat tautan sampai ke ${ MAX_LINKS_PER_CALENDAR } per kalender. Untuk membuat sebuah tautan baru untuk kalender ini, hapus satu dari daftar dibawah ini."
+        "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan yang ada di bawah ini."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Anda dapat menyesuaikan dan mengunduh tagihan Anda untuk keperluan akuntansi."
@@ -5279,7 +5288,7 @@
         "Anda dapat mengaktifkan notifikasi untuk menerima pemberitahuan pada saat ada email baru yang masuk ke folder ini."
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop manapun yang mendukung IMAP/SMTP, termasuk Outlook, Apple Mail, dan Thunderbird."
+        "Anda dapat menggunakan ${ MAIL_APP_NAME } dengan klien email desktop manapun yang mendukung IMAP/SMTP termasuk Outlook, Apple Mail, dan Thunderbird."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Anda dapat menggunakan informasi kredensial berikut untuk dapat tersambung ke server ${ VPN_APP_NAME } melalui aplikasi VPN open source milik pihak ketiga seperti Tunnelblick untuk macOS atau OpenVPN untuk GNU/Linux."
@@ -5363,7 +5372,7 @@
         "Akun ${ VPN_APP_NAME } dan ${ MAIL_APP_NAME } Anda saling terhubung antar satu sama lain. Untuk menghapus keduanya, harap masuk ke ${ loginLink } dan hapus akun Anda di sana."
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
-        "Akun Anda memiliki setidaknya satu tagihan yang jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
+        "Akun Anda memiliki setidaknya satu tagihan yang telah jatuh tempo. Akses Anda telah dibatasi. ${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Akun Anda memiliki setidaknya satu tagihan yang belum dibayar. Akses akun Anda akan dibatasi. ${ payInvoiceLink }"
@@ -6502,7 +6511,7 @@
         "Total (${ countdown })"
       ],
       "Two-factor authentication": [
-        "Otentikasi dua-faktor"
+        "Otentikasi dua faktor"
       ],
       "Two-factor authentication code": [
         "Kode otentikasi dua faktor"
@@ -6644,13 +6653,13 @@
         "Proton untuk bisnis"
       ],
       "Proton for Business newsletter": [
-        "Buletin berita Proton untuk Bisnis"
+        "Buletin Proton for Business"
       ],
       "Proton major features": [
         "Fitur mayor Proton"
       ],
       "Proton newsletter": [
-        "Buletin berita Proton"
+        "Buletin Proton"
       ],
       "Proton offers and promotions": [
         "Penawaran dan promosi Proton"
@@ -7100,6 +7109,26 @@
         "Kecepatan VPN sedang"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
+        "Dari ${ _price } per pengguna"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Pertahankan akun ${ currentPlanName } $ yang saya miliki saat ini"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -7136,26 +7165,6 @@
       ],
       "Switch plan": [
         "Ganti paket"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ _price } per user": [
-        "Dari ${ _price } per pengguna"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } $ yang saya miliki saat ini"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
       ]
     },
     "new_plans: attribute": {
@@ -7385,6 +7394,23 @@
         "Manajemen tim"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dengan berbagai fitur premium, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } akan berakhir dalam ${ last4 }"
@@ -7450,23 +7476,6 @@
         "Anda sedang berlangganan ke paket Anda saat ini dengan harga diskon. Dengan menurunkan jenis akun Anda, Anda tidak akan lagi dapat membeli langganan dengan harga diskon ke depannya."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Apabila tidak, akses menuju akun Anda akan dibatasi dan akun Anda akan dinonaktifkan ke depannya."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Untuk dapat tetap menggunakan ${ MAIL_APP_NAME } dan berbagai premium yang ada, pilih jenis langganan dan metode pembayaran yang Anda kehendaki."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket bisnis dengan akses ke seluruh layanan premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tingkatkan akun Anda ke paket privasi menyeluruh dan akses seluruh layanan premium yang Proton miliki."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Masa uji coba Anda akan berakhir ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } dari ${ humanMaxSpace }"
@@ -7508,6 +7517,17 @@
         "Paket yang Anda pilih: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Uji Coba ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Tingkatkan ke ${ planName }"
+      ],
+      "Your account's usage": [
+        "Penggunaan akun Anda"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hapus akun?"
@@ -7529,17 +7549,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Nikmati berbagai fitur premium dengan meningkatkan jenis akun"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Uji Coba ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Tingkatkan ke ${ planName }"
-      ],
-      "Your account's usage": [
-        "Penggunaan akun Anda"
       ]
     },
     "new_plans: tooltip": {
@@ -8152,7 +8161,7 @@
         "Kode pos"
       ],
       "Search settings": [
-        "Pengaturan pencarian"
+        "Cari di pengaturan"
       ],
       "Search users": [
         "Cari pengguna"
@@ -8572,7 +8581,7 @@
         "${ server.Domain } disalin ke clipboard Anda"
       ],
       "Account deleted. Logging out...": [
-        "Akun dihapus. Keluar akun..."
+        "Akun dihapus. Mengeluarkan Anda dari akun..."
       ],
       "Address added": [
         "Alamat ditambahkan"
@@ -8596,7 +8605,7 @@
         "Kalender berhasil dibuat"
       ],
       "Calendar removed": [
-        "Kalender berhasil dihapus"
+        "Kalender dihapus"
       ],
       "Calendar updated": [
         "Kalender berhasil diperbarui"
@@ -8662,13 +8671,13 @@
         "Kata sandi berhasil diperbarui"
       ],
       "Payment method added": [
-        "Metode pembayaran berhasil ditambahkan"
+        "Metode pembayaran ditambahkan"
       ],
       "Payment method deleted": [
-        "Metode pembayaran berhasil dihapus"
+        "Metode pembayaran dihapus"
       ],
       "Payment method updated": [
-        "Metode pembayaran berhasil diperbarui"
+        "Metode pembayaran diperbarui"
       ],
       "Phone number updated": [
         "Nomor telepon telah diperbarui"
@@ -8686,7 +8695,7 @@
         "Sesi berhasil dicabut"
       ],
       "Sessions revoked": [
-        "Sesi-sesi berhasil dicabut"
+        "Sesi berhasil dicabut"
       ],
       "SPF value copied to clipboard": [
         "Nilai SPF disalin ke clipboard"
@@ -8733,7 +8742,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } berhasil dihapus"
+        "${ label.Name } dihapus"
       ],
       "Address deleted": [
         "Alamat dihapus"
@@ -8757,7 +8766,7 @@
         "Membuat file konfigurasi untuk ${ serverName }"
       ],
       "Filter removed": [
-        "Filter berhasil dihapus"
+        "Filter dihapus"
       ],
       "Status updated": [
         "Status berhasil diperbarui"
@@ -9490,7 +9499,7 @@
         "Tentukan kapan Anda ingin notifikasi ini dikirim"
       ],
       "Session management": [
-        "Pengelolaan Sesi"
+        "Pengelolaan sesi"
       ],
       "Set new password": [
         "Atur kata sandi baru"
@@ -9958,7 +9967,7 @@
         "Apakah Anda yakin ingin menghapus alamat ini?"
       ],
       "Are you sure you want to delete the phone number?": [
-        "Apakah Anda yakin ingin menghapus nomor telepon ini?"
+        "Apakah Anda yakin untuk menghapus nomor telepon ini?"
       ],
       "Are you sure you want to discard your import?": [
         "Yakin ingin membuang impor Anda?"
@@ -9976,7 +9985,7 @@
         "Dengan menghapus nomor telepon ini, Anda tidak akan lagi dapat memulihkan akun Anda."
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
-        "Apabila log dinonaktifkan, seluruh riwayat log Anda akan terhapus. Anda yakin ingin menonaktifkan log?"
+        "Dengan menonaktifkan log, seluruh riwayat log Anda akan terhapus. Apakah Anda yakin untuk menonaktifkan log?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
         "Dengan menonaktifkan alamat ini, Anda tidak dapat lagi mengirim atau menerima email menggunakan alamat ini dan semua produk Proton yang ditautkan juga akan dinonaktifkan. Apakah Anda yakin ingin menonaktifkan alamat ini?"
@@ -9988,7 +9997,7 @@
         "Live chat merupakan fitur premium yang hanya tersedia bagi pengguna ${ VPN_APP_NAME } versi berbayar. Apabila Anda merasa ada sesuatu yang salah, harap buka tiket layanan dukungan."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Harap diperhatikan dengan memilih metode pembayaran ini, akun anda tidak dapat segera ditingkatkan. Kami akan memperbarui akun anda setelah pembayaran sah."
+        "Harap diperhatikan bahwa dengan memilih metode pembayaran ini, akun Anda tidak akan dapat ditingkatkan dengan segera. Kami akan memperbarui status akun Anda setelah pembayaran Anda dinyatakan sah."
       ],
       "Please provide at least one recipient": [
         "Harap tulis setidaknya satu nama penerima"
@@ -10038,7 +10047,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Setelah sukses memverifikasi, jangan menghapus data TXT ini karena diperlukan untuk mengkonfirmasi bahwa anda masih memiliki domain."
+        "Setelah proses verifikasi sukses, jangan hapus data TXT ini karena data ini akan dibutuhkan untuk mengkonfirmasi status kepemilikan Anda pada domain yang bersangkutan ke depannya."
       ],
       "It can take up to a day for DNS changes to update.": [
         "Pembaruan perubahan DNS perlu waktu sampai satu hari."

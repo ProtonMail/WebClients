@@ -298,6 +298,9 @@
       "OK": [
         "Tamam"
       ],
+      "Open in a new tab": [
+        "Yeni sekmede aç"
+      ],
       "Open navigation": [
         "Gezinmeyi aç"
       ],
@@ -1754,22 +1757,22 @@
         "Günlük"
       ],
       "Daily, ${ timesString }": [
-        "Günlük olarak, ${ timesString }"
+        "Günde bir ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Günlük olarak, ${ untilString }"
+        "Günde bir, ${ untilString }"
       ],
       "Every ${ interval } day": [
-        "Her ${ interval } günde",
-        "Her ${ interval } günde bir"
+        "${ interval } günde bir",
+        "${ interval } günde bir"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Her ${ interval } günde bir, ${ timesString }",
-        "Her ${ interval } günde bir, ${ timesString }"
+        "${ interval } günde bir, ${ timesString }",
+        "${ interval } günde bir, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Her ${ interval } günde bir, ${ untilString }",
-        "Her ${ interval } günde bir, ${ untilString }"
+        "${ interval } günde bir, ${ untilString }",
+        "${ interval } günde bir, ${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } tarihine kadar"
@@ -2129,8 +2132,8 @@
       "Primary key is not valid for sending": [
         "Birincil anahtar gönderim için geçerli değil"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "İç kullanıcı için alınan birincil anahtar gönderim için geçerli değil"
       ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
@@ -3916,7 +3919,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Bize deneyimlerinizi anlatın (isteğe bağlı)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Güncellenmiş Proton ile tanışın."
-      ],
-      "More services, one privacy mission.": [
-        "Daha fazla hizmet, tek kişisel gizlilik amacı."
-      ],
       "Settings": [
         "Ayarlar"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Görüntüyü yeniden oynat"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Yeni sekmede aç"
       ]
     },
     "Warning": {

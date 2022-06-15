@@ -65,9 +65,6 @@
       "Confirm": [
         "Підтвердити"
       ],
-      "contact": [
-        "контакт"
-      ],
       "Contact support": [
         "Зв'язатися з підтримкою"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Покращити"
+      ],
+      "Use ${ label } theme": [
+        "Використовувати тему ${ label }"
       ],
       "Use a different card": [
         "Використати іншу картку"
@@ -1975,6 +1975,9 @@
       "By leaving now, changes may not be saved": [
         "Якщо ви зараз підете, зміни можуть не зберегтися"
       ],
+      "Choose the look and feel of the application.": [
+        "Налаштуйте зовнішній вигляд програми."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Натисніть \"Запитати новий код\", щоб отримати новий код перевірки на ${ strong }. Якщо цей номер телефону неправильний, натисніть \"Змінити\" для його виправлення."
       ],
@@ -2125,6 +2128,9 @@
       "Internet connection restored.": [
         "З'єднання з Інтернетом відновлено."
       ],
+      "Issues signing in?": [
+        "Проблеми з входом?"
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Дізнайтеся, як виконати вхід в ${ VPN_APP_NAME } через сторонні програми VPN."
       ],
@@ -2251,9 +2257,6 @@
       "Securing your account": [
         "Захист вашого облікового запису"
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Виберіть кількість користувачів для вашого тарифного плану. Вартість кожного додаткового користувача ${ price }. Якщо вам потрібно понад ${ maxUsers } облікових записів, будь ласка, ${ contactMailToLink } нашій команді підтримки."
-      ],
       "Server is currently down": [
         "Наразі сервер не працює"
       ],
@@ -2370,6 +2373,9 @@
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
+      ],
+      "Update the URL in your password manager": [
+        "Оновіть URL-адресу у своєму менеджері паролів"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
@@ -3055,13 +3061,13 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        ""
+        "Найвища швидкість VPN"
       ],
       "Keep your inbox organized with folders": [
         ""
       ],
       "Medium VPN speed": [
-        ""
+        "Середня швидкість VPN"
       ]
     },
     "new_plans: action": {
@@ -3069,7 +3075,7 @@
         ""
       ],
       "Continue with free": [
-        ""
+        "Continue with Free"
       ],
       "Delete account": [
         "Видалити обліковий запис"
@@ -3078,10 +3084,10 @@
         "Понизити тарифний план"
       ],
       "Get ${ BRAND_NAME } for free": [
-        ""
+        "Отримати ${ BRAND_NAME } безплатно"
       ],
       "Get ${ planName }": [
-        ""
+        "Отримати ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
         ""
@@ -3096,7 +3102,7 @@
         ""
       ],
       "Switch or add account": [
-        ""
+        "Перемкнути або додати обліковий запис"
       ],
       "Switch plan": [
         ""
@@ -3119,7 +3125,7 @@
         ""
       ],
       "Upgrade now": [
-        ""
+        "Покращити"
       ]
     },
     "new_plans: attribute": {
@@ -3147,52 +3153,52 @@
         ""
       ],
       "${ n } email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } адреса електронної пошти",
+        "${ n } адреси/псевдонімів е-пошти",
+        "${ n } адрес/псевдонімів е-пошти",
+        "${ n } адреси/псевдонімів е-пошти"
       ],
       "${ n } email address per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } адреса е-пошти на користувача",
+        "${ n } адреси е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача",
+        "${ n } адреси е-пошти на користувача"
       ],
       "${ n } filter": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } фільтр",
+        "${ n } фільтри",
+        "${ n } фільтрів",
+        "${ n } фільтра"
       ],
       "${ n } folder": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } тека",
+        "${ n } теки",
+        "${ n } тек",
+        "${ n } теки"
       ],
       "${ n } folder and label": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } тека й мітка",
+        "${ n } теки й мітки",
+        "${ n } тек і міток",
+        "${ n } тек і міток"
       ],
       "${ n } label": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } мітка",
+        "${ n } мітки",
+        "${ n } міток",
+        "${ n } мітки"
       ],
       "${ n } message per day": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } повідомлення на добу",
+        "${ n } повідомлення на добу",
+        "${ n } повідомлень на добу",
+        "${ n } повідомлення на добу"
       ],
       "${ n } personal calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } особистий календар",
+        "${ n } особисті календарі",
+        "${ n } особистих календарів",
+        "${ n } особистих календарів"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-з'єднання",
@@ -3207,7 +3213,7 @@
         "${ n } VPN-з'єднань на користувача"
       ],
       "${ size } attachment size": [
-        ""
+        "Розмір вкладень ${ size }"
       ],
       "${ size } storage per user": [
         ""
@@ -3219,28 +3225,28 @@
         ""
       ],
       "99.95% SLA": [
-        ""
+        "99.95% SLA"
       ],
       "Admin console": [
-        ""
+        "Консоль адміністратора"
       ],
       "Advanced sharing security": [
         ""
       ],
       "Auto-reply": [
-        ""
+        "Автовідповідь"
       ],
       "Catch-all": [
-        ""
+        "Catch-all"
       ],
       "Centralized billing": [
         ""
       ],
       "Contact groups": [
-        ""
+        "Групи контактів"
       ],
       "Contact groups management": [
-        ""
+        "Керування групами контактів"
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"
@@ -3261,46 +3267,46 @@
         ""
       ],
       "Encrypted contact details": [
-        ""
+        "Зашифровані подробиці контакту"
       ],
       "Encrypted VPN servers": [
         ""
       ],
       "End-to-end encryption": [
-        ""
+        "Наскрізне шифрування"
       ],
       "Free VPN on a single device": [
-        ""
+        "Безплатна VPN для одного пристрою"
       ],
       "GDPR data processing agreement": [
         ""
       ],
       "High-speed VPN on ${ n } device": [
-        "",
-        "",
-        "",
-        ""
+        "Високошвидкісна VPN на ${ n } пристрої",
+        "Високошвидкісна VPN на ${ n } пристроях",
+        "Високошвидкісна VPN на ${ n } пристроях",
+        "Високошвидкісна VPN на ${ n } пристроях"
       ],
       "HTML signatures": [
-        ""
+        "HTML-підписи"
       ],
       "Kill switch/always-on VPN": [
-        ""
+        "Kill Switch/Постійна VPN"
       ],
       "Limited support": [
-        ""
+        "Обмежена підтримка"
       ],
       "Multiple admin roles": [
         ""
       ],
       "NetShield malware and ad-blocker": [
-        ""
+        "NetShield — блокувальник зловмисних програм та реклами"
       ],
       "P2P/BitTorrent": [
         "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
-        ""
+        "Електронні листи, захищені паролем"
       ],
       "Phone support (6+ users)": [
         ""
@@ -3312,7 +3318,7 @@
         "Пріоритетна підтримка"
       ],
       "Router support": [
-        ""
+        "Підтримка маршрутизатора"
       ],
       "Secure Core servers": [
         "Сервери Secure Core"
@@ -3330,13 +3336,13 @@
         ""
       ],
       "Split tunneling (Android and Windows)": [
-        ""
+        "Розділене тунелювання (Android і Windows)"
       ],
       "Strict no-logs policy": [
         "Cуворе дотримання політики без журналювання"
       ],
       "Team management": [
-        ""
+        "Керування командою"
       ],
       "Tor over VPN": [
         "Tor через VPN"
@@ -3345,19 +3351,19 @@
         "Двоетапна перевірка"
       ],
       "Unlimited filters": [
-        ""
+        "Необмежена кількість фільтрів"
       ],
       "Unlimited folders": [
-        ""
+        "Необмежена кількість тек"
       ],
       "Unlimited folders, labels and filters": [
-        ""
+        "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited labels": [
-        ""
+        "Необмежена кількість міток"
       ],
       "Unlimited messages per day": [
-        ""
+        "Необмежена кількість повідомлень на день"
       ],
       "Unlimited volume/bandwidth": [
         ""
@@ -3372,15 +3378,15 @@
         ""
       ],
       "Worldwide streaming services": [
-        ""
+        "Світові служби трансляції"
       ]
     },
     "new_plans: forgot links": {
       "Forgot password": [
-        ""
+        "Забули пароль"
       ],
       "username": [
-        ""
+        "ім'я користувача"
       ]
     },
     "new_plans: heading": {
@@ -3388,7 +3394,7 @@
         "Підтримка"
       ],
       "Team management": [
-        ""
+        "Керування командою"
       ]
     },
     "new_plans: info": {
@@ -3493,7 +3499,7 @@
         "Подробиці платежу"
       ],
       "Proton's terms and conditions": [
-        ""
+        "Умови та положення Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         ""
@@ -3513,10 +3519,10 @@
     },
     "new_plans: title": {
       "Delete account?": [
-        ""
+        "Видалити обліковий запис?"
       ],
       "Downgrade account?": [
-        ""
+        "Понизити обліковий запис?"
       ],
       "Improved plans coming soon!": [
         ""
@@ -3528,18 +3534,18 @@
         ""
       ],
       "Switch plans?": [
-        ""
+        "Змінити тарифний план?"
       ]
     },
     "new_plans: Title": {
       "${ mailPlanName } Trial": [
-        ""
+        "Пробна версія ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
         ""
       ],
       "Your account's usage": [
-        ""
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: tooltip": {
@@ -3583,10 +3589,10 @@
         ""
       ],
       "End-to-end encrypted calendar": [
-        ""
+        "Наскрізно зашифрований календар"
       ],
       "End-to-end encrypted file storage": [
-        ""
+        "Наскрізно зашифроване сховище файлів"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         ""
@@ -3708,7 +3714,7 @@
         ""
       ],
       "10 email addresses/aliases": [
-        ""
+        "10 адрес/псевдонімів е-пошти"
       ],
       "Access advanced VPN features": [
         ""
@@ -3874,6 +3880,20 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Додайте своє ім'я (або назву компанії) та адресу до своїх рахунків"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "зв'язатися"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Виберіть необхідну кількість користувачів, яку потрібно включити в тарифний план. Кожен додатковий користувач коштує ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Якщо вам потрібно більше ніж ${ maxUsers } обліковий запис користувача, вам потрібно ${ contact } з нашою командою продажів.",
+        "Якщо вам потрібно більше ніж ${ maxUsers } облікові записи користувача, вам потрібно ${ contact } з нашою командою продажів.",
+        "Якщо вам потрібно більше ніж ${ maxUsers } облікових записів користувача, вам потрібно ${ contact } з нашою командою продажів.",
+        "Якщо вам потрібно більше ніж ${ maxUsers } облікових записів користувача, вам потрібно ${ contact } з нашою командою продажів."
       ]
     },
     "Price": {
@@ -4177,12 +4197,9 @@
         "Стан"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Представляємо оновлений Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Більше служб, єдина місія приватності."
+    "Themes": {
+      "Themes": [
+        "Теми"
       ]
     },
     "Title": {

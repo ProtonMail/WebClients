@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Plătire ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Contactați administratorul organizației pentru a vă gestiona abonamentul."
+      ],
       "Preview": [
         "Examinare"
       ],
@@ -2471,7 +2474,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        "Ce mesaje doriți să primiți de la Proton ${ BRAND_NAME }?"
+        "Ce mesaje doriți să primiți de la ${ BRAND_NAME }?"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "V-ați reabonat la mesajele venite de la ${ categoriesJsx }."
@@ -3197,7 +3200,7 @@
         "Cele mai rapide servere VPN"
       ],
       "Secure Core servers": [
-        "Servere centrale securizate"
+        "Servere Secure Core"
       ],
       "Secure streaming support": [
         "Suport securizat transmisii live"
@@ -3437,7 +3440,7 @@
         "Manuală"
       ],
       "No verification method available": [
-        "Nicio metodă de verificare disponibilă"
+        "Nu sunt metode de verificare disponibile"
       ],
       "SMS": [
         "SMS"
@@ -3656,44 +3659,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
+      "Click ${ boldManage } to expand the options menu.": [
         "Faceți clic pe ${ boldManage } pentru a extinde meniul de opțiuni."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
         "În funcție de furnizorul de e-mail, s-ar putea să trebuiască să generați ${ knowledgeBaseLink } înainte de a putea importa datele în Proton."
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
         "Extindeți meniul derulant făcând clic pe cele 3 puncte (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         "Generați o ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
         "Generați ${ boldAppPassword } și utilizați-o în locul parolei obișnuite atunci când o solicită Proton."
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
         "Accesați ${ boldAccountInfo } din profilul personal în ${ yahooMailLink }."
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Accesați ${ boldAccountSecurity }."
+      "Go to ${ boldAccountSecurity }.": [
+        "Salt la ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
+      "Go to Outlook ${ securitySettingsLink }.": [
         "Accesați ${ securitySettingsLink } din Outlook."
       ],
-      "If 2-step verification is off, turn it on": [
+      "If 2-step verification is off, turn it on.": [
         "Dacă verificarea în doi pași este dezactivată, activați-o."
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Deschideți contactele din ${ yahooMailLink }."
+      "Open your ${ yahooMailLink } contacts.": [
+        "Deschideți lista de contacte ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
+      "Open your Outlook ${ outlookContactsLink }.": [
         "Deschideți ${ outlookContactsLink } din Outlook."
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
         "Selectați ${ boldExportContacts } și alegeți contactele ce trebuie exportate."
       ],
-      "Select ${ boldExportCSV }": [
-        "Selectați ${ boldExportCSV }"
+      "Select ${ boldExportCSV }.": [
+        "Selectați ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Outlook în 3 pași simpli:"
@@ -3701,7 +3704,7 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Pentru a importa un calendar în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
@@ -3710,7 +3713,7 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Pentru a importa contacte la Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l din Yahoo în 3 pași simpli:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
         "Pentru a importa contacte în Proton, aveți nevoie de un ${ knowledgeBaseLink }. Descărcați-l înainte de a începe procesul de importare."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
@@ -3782,23 +3785,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
+      "Click on the ${ boldICS } link and download the file.": [
         "Faceți clic pe ${ boldICS } și descărcați fișierul."
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
+      "Go to ${ calendarLink } in your Outlook settings.": [
         "Accesați ${ calendarLink } din setările Outlook."
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
+      "Go to ${ calendarViewLink } in Yahoo.": [
         "Accesați ${ calendarViewLink } din Yahoo."
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
         "Mutați cursorul peste calendarul de importat și deschideți meniul derulant."
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
         "Selectați ${ boldExport } pentru a exporta calendarul ca fișier ICS."
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "În ${ boldPublish }, selectați calendarul pe care doriți să-l importați. Setați permisiunea la ${ boldCanViewAllDetails } și să le publice."
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "Sub ${ boldPublish }, selectați calendarul pe care doriți să îl importați. Setați permisiunea la ${ boldCanViewAllDetails } și publicați-l."
       ]
     },
     "Import key": {
@@ -4641,6 +4644,9 @@
       "Invited via email": [
         "Invitat prin e-mail"
       ],
+      "Issues signing in?": [
+        "Probleme la conectare?"
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Se pare că unele date sunt criptate și blocate."
       ],
@@ -5258,6 +5264,9 @@
       "Update recovery phrase": [
         "Actualizare frază de recuperare"
       ],
+      "Update the URL in your password manager": [
+        "Actualizați-vă adresa URL în managerul de parole."
+      ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Faceți upgrade astăzi pentru a evita pierderea beneficiilor din ${ planName }."
       ],
@@ -5355,10 +5364,10 @@
         "Fără activare nu veți putea crea noi utilizatori, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "Doriți să primiți un nou cod de verificare sau să folosiți o metodă alternativă de verificare?"
+        "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
       ],
       "Would you like to receive a new verification code?": [
-        "Doriți să primiți un nou cod de verificare?"
+        "Doriți să primiți un cod nou de verificare?"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
         "Yahoo vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii americane şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
@@ -7240,6 +7249,26 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
+        "De la ${ _price } per utilizator"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade now": [
+        "Upgrade acum"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continuare revizuire"
@@ -7276,26 +7305,6 @@
       ],
       "Switch plan": [
         "Schimbare plan"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ _price } per user": [
-        "De la ${ _price } per utilizator"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
-      ],
-      "Upgrade now": [
-        "Upgrade acum"
       ]
     },
     "new_plans: attribute": {
@@ -7477,7 +7486,7 @@
         "Suport ruter"
       ],
       "Secure Core servers": [
-        "Server Secure Core"
+        "Servere Secure Core"
       ],
       "Send & receive invitations": [
         "Trimiteți și primiți invitații"
@@ -7553,6 +7562,23 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -7609,30 +7635,13 @@
         "Soluția VPN dedicată care oferă acces sigur, fără restricții, de mare viteză la Internet."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
-        "Contul de pornire fără costuri conceput pentru a împuternici toată lumea cu confidențialitate în mod implicit."
+        "Contul de început, fără costuri, creat pentru a împuternici pe toată lumea cu confidențialitate în mod implicit."
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă ștergeți contul, veți pierde prețul promoțional și nu va fi disponibil dacă creați un cont nou."
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Treceți la pachetul de afaceri cu acces la toate serviciile premium Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Treceți la pachetul de confidențialitate complet și accesați toate serviciile premium Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Perioada de probă se termină ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: Label": {
@@ -7678,6 +7687,17 @@
         "Planul selectat: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Încercare ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Upgrade la ${ planName }"
+      ],
+      "Your account's usage": [
+        "Utilizare cont"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Ștergere cont?"
@@ -7699,17 +7719,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Deblocați funcțiile premium făcând upgrade"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Încercare ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Upgrade la ${ planName }"
-      ],
-      "Your account's usage": [
-        "Utilizare cont"
       ]
     },
     "new_plans: tooltip": {
@@ -10066,7 +10075,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Când primiți un e-mail de la un alt utilizator ${ MAIL_APP_NAME } care nu are chei de încredere salvate în contacte dvs., vi se va solicita dacă doriți să activați cheile de încredere."
+        "Când primiți un e-mail de la un alt utilizator ${ MAIL_APP_NAME } care nu are chei de încredere salvate în contactele dvs., vi se va solicita dacă doriți să activați cheile de încredere."
       ]
     },
     "Tooltip sign external messages": {

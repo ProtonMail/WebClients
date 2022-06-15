@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Unisci contatti"
       ],
+      "Messages from this sender": [
+        "Messaggi da questo mittente"
+      ],
+      "Messages to this recipient": [
+        "Messaggi a questo destinatario"
+      ],
       "Minimize composer": [
         "Minimizza il compositore"
       ],
@@ -861,8 +867,8 @@
         "Chiave attendibile",
         "Chiavi attendibili"
       ],
-      "Trust Public Key": [
-        "Considera la chiave pubblica affidabile"
+      "Trust public key": [
+        "Chiave pubblica attendibile"
       ],
       "Try again": [
         "Riprova"
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "La chiave primaria non è valida per l'invio"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "La chiave primaria recuperata per l'utente interno è valida per l'invio"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La chiave primaria recuperata per l'utente interno non è valida per l'invio"
       ],
       "Public key could not be trusted": [
         "Impossibile fidarsi della chiave pubblica"
@@ -4025,7 +4031,7 @@
         "Desideri firmare nuovamente i dettagli del contatto?"
       ],
       "Don't forget to share your password with the recipient": [
-        ""
+        "Non dimenticare di condividere la tua password con il destinatario"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Scarica la nostra applicazione mobile dal tuo app store preferito per comunicare in modo sicuro in movimento."
@@ -4081,7 +4087,7 @@
         "immagini incorporate"
       ],
       "Encrypt message": [
-        ""
+        "Cifra messaggio"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Inserisci il codice di verifica inviato a ${ destinationText }."
@@ -4115,7 +4121,7 @@
         "Scade a breve"
       ],
       "Expiring message": [
-        ""
+        "Scadenza messaggio"
       ],
       "file attached": [
         "file allegato",
@@ -4166,7 +4172,7 @@
         "Ore"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        ""
+        "Sto inviando questo messaggio a un utente non-ProtonMail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Se stai avendo problemi con la creazione del tuo account, per favore invia una richiesta. Ti risponderemo nell'arco di una giornata lavorativa."
@@ -4347,7 +4353,7 @@
         "Nessun tracker trovato, tuttavia alcune immagini non possono essere caricate con la protezione dal tracking attivata"
       ],
       "non-Proton Mail": [
-        ""
+        "non-Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Nessuna delle chiavi caricate sono valide per la crittografia. La crittografia è disabilitata automaticamente."
@@ -4492,7 +4498,7 @@
         "Seleziona quali calendari importare. Verrà creato un nuovo calendario per ogni calendario importato fino al limite di 20 calendari."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
+        "Invia un messaggio crittografato e protetto da password a un indirizzo email ${ boldText }."
       ],
       "Sending": [
         "Invio in corso"
@@ -4909,23 +4915,23 @@
         "La tua email sarà utilizzata solo per questa verifica una tantum."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Il tuo messaggio verrà eliminato dalla posta in arrivo del destinatario e dalla tua cartella di invio il giorno ${ dateString } alle ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "Il tuo messaggio verrà eliminato dalla posta in arrivo del destinatario e dalla tua cartella di invio oggi alle ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "Il tuo messaggio verrà eliminato dalla posta in arrivo del destinatario e dalla tua cartella di invio domani alle ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "",
-        ""
+        "Il tuo messaggio scadrà tra ${ numberOfDays } giorno.",
+        "Il tuo messaggio scadrà tra ${ numberOfDays } giorni."
       ],
       "Your message will expire today.": [
-        ""
+        "Il tuo messaggio scadrà oggi."
       ],
       "Your message will expire tomorrow.": [
-        ""
+        "Il tuo messaggio scadrà domani."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Ti presentiamo la versione aggiornata di Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Tanti servizi, un solo obiettivo: la privacy."
-      ],
       "Settings": [
         "Impostazioni"
       ]

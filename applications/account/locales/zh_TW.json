@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "費用 ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "請洽詢組織機構的管理員以管理訂購授權"
+      ],
       "Preview": [
         "預覽"
       ],
@@ -3586,44 +3589,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "點擊 ${ boldManage } 以展開您的選項選單"
+      "Click ${ boldManage } to expand the options menu.": [
+        "點擊 ${ boldManage } 以展開選項功能表。"
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "取決於您的電子郵件服務提供者，您可能需要在您匯入到 Proton 前先產生 ${ knowledgeBaseLink }"
-      ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "點擊三個點 (...) 展開下拉式選單"
-      ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "產生 ${ boldAppPassword } 並在 Proton 提示您使用其來取代您一般的密碼"
-      ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "產生 ${ boldAppPassword } 並在 Proton 提示您使用其來取代您一般的密碼"
-      ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "前往 ${ yahooMailLink } 中您個人資料底下的 ${ boldAccountInfo }"
-      ],
-      "Go to ${ boldAccountSecurity }": [
-        "前往 ${ boldAccountSecurity }"
-      ],
-      "Go to Outlook ${ securitySettingsLink }": [
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
         ""
       ],
-      "If 2-step verification is off, turn it on": [
-        "若兩步驟驗證已關閉，請將其開啟"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "點擊三個點 (...) 展開下拉式選單"
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "開啟您的 ${ yahooMailLink } 聯絡人"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "開啟您的 Outlook ${ outlookContactsLink }"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "進行生成一組 ${ boldAppPassword } ，當 Proton 出現提示時，即以該密碼取代您舊有的一般密碼。"
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "選取 ${ boldExportContacts } 並選擇您要匯出的聯絡人"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "請至 ${ yahooMailLink } 裡您名下個人資料的 ${ boldAccountInfo }。"
       ],
-      "Select ${ boldExportCSV }": [
-        "選取 ${ boldExportCSV }"
+      "Go to ${ boldAccountSecurity }.": [
+        "前往 ${ boldAccountSecurity }。"
+      ],
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "前往 Outlook ${ securitySettingsLink }."
+      ],
+      "If 2-step verification is off, turn it on.": [
+        "若雙重驗證仍待用中，建議您啟用它。"
+      ],
+      "Open your ${ yahooMailLink } contacts.": [
+        "開啟您的 ${ yahooMailLink } 通訊錄。"
+      ],
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "開啟您的 Outlook 通訊錄 ${ outlookContactsLink }."
+      ],
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "選取 ${ boldExportContacts } 並選擇您要匯出的通訊錄。"
+      ],
+      "Select ${ boldExportCSV }.": [
+        "選取匯出 ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
@@ -3631,8 +3634,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "要匯入行事曆到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Outlook 下載它："
@@ -3640,8 +3643,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。透過三個簡單的步驟從 Yahoo 下載它："
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "要匯入聯絡人到 Proton，您需要 ${ knowledgeBaseLink }。在開始匯入流程前下載此檔案"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "要匯入電子郵件到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
@@ -3712,23 +3715,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "點擊 ${ boldICS } 連結並下載檔案"
-      ],
-      "Go to ${ calendarLink } in your Outlook settings": [
+      "Click on the ${ boldICS } link and download the file.": [
         ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
+      "Go to ${ calendarLink } in your Outlook settings.": [
         ""
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "將滑鼠游標停在您要匯入的行事曆上並開啟下拉式選單"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        ""
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "選取 ${ boldExport } 以將行事曆匯出為 ICS 檔案"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        ""
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "在 ${ boldPublish } 下，選取您要匯入的行事曆。設定權限給 ${ boldCanViewAllDetails } 並發佈它。"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        ""
+      ],
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        ""
       ]
     },
     "Import key": {
@@ -4519,6 +4522,9 @@
       "Invited via email": [
         "透過 email 邀請"
       ],
+      "Issues signing in?": [
+        "登入出現問題？"
+      ],
       "It appears some of your data is encrypted and locked.": [
         "您的某些資料似乎已被加密和鎖定。"
       ],
@@ -5133,6 +5139,9 @@
       ],
       "Update recovery phrase": [
         "更新還原短語"
+      ],
+      "Update the URL in your password manager": [
+        "在您的密碼管理程式中更新網址"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "現在就升級，以免錯失 ${ planName } 所屬的福利。"
@@ -5827,7 +5836,7 @@
         "${ MAIL_APP_NAME } 個地址"
       ],
       "${ MAIL_APP_NAME } footer": [
-        ""
+        "${ MAIL_APP_NAME } 頁尾"
       ],
       "${ monthsRewarded } month credited": [
         "${ monthsRewarded } 個月已儲值"
@@ -5950,7 +5959,7 @@
         "類別"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "選擇一名稱用於生成的憑證檔案"
       ],
       "Code": [
         "代碼"
@@ -5977,10 +5986,10 @@
         "條件"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "架構組態以連接 ${ serverName }"
       ],
       "Confirm link URLs": [
-        ""
+        "確認連結網址"
       ],
       "Confirm login password": [
         "確認登入密碼"
@@ -6079,7 +6088,7 @@
         "描述"
       ],
       "Device/certificate name": [
-        ""
+        "裝置/憑證 名稱"
       ],
       "Digits": [
         "位數"
@@ -6265,7 +6274,7 @@
         "郵件"
       ],
       "Moderate NAT": [
-        ""
+        "中等 NAT"
       ],
       "Move to": [
         "移動到"
@@ -6460,7 +6469,7 @@
         "陳述式"
       ],
       "Sticky labels": [
-        ""
+        "硬標籤"
       ],
       "Subscription options": [
         "訂閱選項"
@@ -7100,6 +7109,26 @@
         ""
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        ""
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        ""
+      ],
+      "From ${ _price } per user": [
+        ""
+      ],
+      "From ${ price }": [
+        ""
+      ],
+      "Keep my ${ currentPlanName } account": [
+        ""
+      ],
+      "Upgrade now": [
+        ""
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         ""
@@ -7135,26 +7164,6 @@
         ""
       ],
       "Switch plan": [
-        ""
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        ""
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        ""
-      ],
-      "From ${ _price } per user": [
-        ""
-      ],
-      "From ${ price }": [
-        ""
-      ],
-      "Keep my ${ currentPlanName } account": [
-        ""
-      ],
-      "Upgrade now": [
         ""
       ]
     },
@@ -7385,6 +7394,23 @@
         ""
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        ""
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        ""
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        ""
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        ""
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        ""
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         ""
@@ -7450,23 +7476,6 @@
         "你正在當前的計畫中享受促銷價格。若你將帳戶降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         ""
@@ -7508,6 +7517,17 @@
         ""
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        ""
+      ],
+      "Upgrade to ${ planName }": [
+        ""
+      ],
+      "Your account's usage": [
+        ""
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         ""
@@ -7528,17 +7548,6 @@
         ""
       ],
       "Unlock premium features by upgrading": [
-        ""
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        ""
-      ],
-      "Upgrade to ${ planName }": [
-        ""
-      ],
-      "Your account's usage": [
         ""
       ]
     },

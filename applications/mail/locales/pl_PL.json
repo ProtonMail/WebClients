@@ -527,6 +527,12 @@
       "Merge contacts": [
         "Scal kontakty"
       ],
+      "Messages from this sender": [
+        "Wiadomości do tego nadawcy"
+      ],
+      "Messages to this recipient": [
+        "Wiadomości do tego odbiorcy"
+      ],
       "Minimize composer": [
         "Minimalizuj edytor"
       ],
@@ -869,7 +875,7 @@
         "Zaufaj kluczom",
         "Zaufaj kluczom"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "Zaufaj kluczowi publicznemu"
       ],
       "Try again": [
@@ -2996,8 +3002,8 @@
       "Primary key is not valid for sending": [
         "Klucz główny nie jest przeznaczony do wysyłania wiadomości"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        ""
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Odzyskany klucz główny dla wewnętrznego użytkownika nie jest przeznaczony do wysyłania wiadomości"
       ],
       "Public key could not be trusted": [
         "Klucz publiczny nie może zostać dodany do zaufanych"
@@ -3550,7 +3556,7 @@
         "Importuj kontakty lub wiadomości"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "Prześlij szybko kontakty lub wiadomości od innego dostawcy za pomocą asystenta importowania Easy Switch."
+        "Prześlij szybko kontakty lub wiadomości od innego dostawcy za pomocą asystenta importu Easy Switch."
       ],
       "Sign into the mobile app to complete the action": [
         "Zaloguj się w aplikacji mobilnej, aby ukończyć zadanie"
@@ -5073,13 +5079,13 @@
         "Adres e-mail zostanie użyty tylko do jednorazowej weryfikacji."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie usunięta ze skrzynki odbiorczej odbiorcy i Twojego folderu Wysłane w dniu: ${ dateString } o godzinie ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie usunięta ze skrzynki odbiorczej odbiorcy i Twojego folderu Wysłane dzisiaj o godzinie ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "Wiadomość zostanie usunięta ze skrzynki odbiorczej odbiorcy i Twojego folderu Wysłane jutro o godzinie ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Wiadomość wygaśnie jutro.",
@@ -7152,12 +7158,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Przedstawiamy zaktualizowane usługi Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Więcej usług, jedna misja dotycząca prywatności."
-      ],
       "Settings": [
         "Ustawienia"
       ]
@@ -7711,7 +7711,7 @@
         "Każda zaimportowana wiadomość będzie posiadała tę etykietę"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "Szyfrowanie wiadomości wymusza ich podpisywanie w celu uwierzytelnienia wysłanych wiadomości"
+        "Szyfrowanie wiadomości wymusza ich podpisywanie w celu uwierzytelniania wysłanych wiadomości"
       ],
       "Encrypted data": [
         "Zaszyfrowane dane"

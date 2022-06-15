@@ -298,6 +298,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        ""
+      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
@@ -2129,8 +2132,8 @@
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "La clé principale récupérée pour l’utilisateur interne est valide pour l’envoi"
+      "Primary key retrieved for internal user is not valid for sending": [
+        ""
       ],
       "Request timed out": [
         "La requête a expiré"
@@ -3916,7 +3919,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        ""
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Voici le nouveau Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Plus de services, une seule mission: la protection de la vie privée."
-      ],
       "Settings": [
         "Paramètres"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Rejouer la vidéo"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        ""
       ]
     },
     "Warning": {

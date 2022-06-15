@@ -298,6 +298,9 @@
       "OK": [
         "D'acord"
       ],
+      "Open in a new tab": [
+        "Obrir a una nova pestanya"
+      ],
       "Open navigation": [
         "Obrir navegació"
       ],
@@ -2129,8 +2132,8 @@
       "Primary key is not valid for sending": [
         "La clau principal no és vàlida per enviar"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "La clau principal obtinguda per l'usuari intern és vàlida per enviar"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clau principal obtinguda per l'usuari intern no és vàlida per enviar"
       ],
       "Request timed out": [
         ""
@@ -3916,7 +3919,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Expliqueu-nos la vostra experiència. (Opcional)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Et presentem el Proton actualitzat."
-      ],
-      "More services, one privacy mission.": [
-        "Més serveis, una sola missió per la privacitat."
-      ],
       "Settings": [
         "Preferències"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Reproduir el vídeo"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Obrir a una nova pestanya"
       ]
     },
     "Warning": {

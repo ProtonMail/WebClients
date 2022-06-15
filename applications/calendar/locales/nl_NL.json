@@ -298,6 +298,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Openen in een nieuw tabblad"
+      ],
       "Open navigation": [
         "Open navigatie"
       ],
@@ -2129,8 +2132,8 @@
       "Primary key is not valid for sending": [
         "Primaire sleutel is niet geldig voor verzenden"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Primaire sleutel opgehaald voor interne gebruiker is geldig voor verzenden"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
       ],
       "Request timed out": [
         "Reactietijd verzoek overschreden"
@@ -3916,7 +3919,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Vertel ons over uw ervaring (Optioneel)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Maak kennis met de vernieuwde Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Meer diensten, één privacymissie."
-      ],
       "Settings": [
         "Instellingen"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Video opnieuw afspelen"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Openen in een nieuw tabblad"
       ]
     },
     "Warning": {

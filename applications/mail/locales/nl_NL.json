@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Contacten samenvoegen"
       ],
+      "Messages from this sender": [
+        "Berichten van deze afzender"
+      ],
+      "Messages to this recipient": [
+        "Berichten aan deze ontvanger"
+      ],
       "Minimize composer": [
         "Opstelvenster minimaliseren"
       ],
@@ -861,8 +867,8 @@
         "Sleutel vertrouwen",
         "Vertrouwde sleutels"
       ],
-      "Trust Public Key": [
-        "Vertrouw openbare sleutel"
+      "Trust public key": [
+        "Publieke sleutel vertrouwen"
       ],
       "Try again": [
         "Opnieuw proberen"
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "Primaire sleutel is niet geldig voor verzenden"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Primaire sleutel opgehaald voor interne gebruiker is geldig voor verzenden"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primaire sleutel opgehaald voor interne gebruiker is niet geldig voor verzenden"
       ],
       "Public key could not be trusted": [
         "De openbare sleutel is niet vertrouwd"
@@ -4178,7 +4184,7 @@
         "Als u de e-mail niet in de inbox kan vinden, check dan uw map met spam."
       ],
       "Image description": [
-        "Omschrijving van de afbeelding"
+        "Afbeeldingsomschrijving"
       ],
       "Image URL": [
         "Afbeeldings-URL"
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Maak kennis met de vernieuwde Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Meer diensten, één privacymissie."
-      ],
       "Settings": [
         "Instellingen"
       ]
