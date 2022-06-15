@@ -74,7 +74,16 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
 
     return (
         <>
-            {renderOnboardingModal && <MailOnboardingModal onDone={onOnboardingDone} open={onboardingModal.open} />}
+            {renderOnboardingModal && (
+                <MailOnboardingModal
+                    onDone={() => {
+                        onOnboardingDone();
+                        onboardingModal.onClose();
+                    }}
+                    onExit={onboardingModal.onExit}
+                    open={onboardingModal.open}
+                />
+            )}
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
             {renderMnemonicModal && <MnemonicPromptModal {...mnemonicPromptModal} />}
             {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
