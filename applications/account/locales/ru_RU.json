@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "Оплатить ${ price }"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Пожалуйста, свяжитесь с администратором организации для управления подпиской"
+      ],
       "Preview": [
         "Предпросмотр"
       ],
@@ -2819,7 +2822,7 @@
         "Это обязательное поле"
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
-        "Минимальная длина для этого поля: ${ minimumLength }."
+        "Минимальная длина для этого поля: ${ minimumLength } символов."
       ],
       "This folder name is not available. Please choose a different name.": [
         "Это имя папки недоступно. Пожалуйста, выберите другое название."
@@ -3691,44 +3694,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Нажмите ${ boldManage }, чтобы развернуть меню параметров"
+      "Click ${ boldManage } to expand the options menu.": [
+        "Нажмите ${ boldManage }, чтобы развернуть меню параметров."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "В зависимости от поставщика услуг электронной почты, вам может потребоваться сначала сгенерировать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать в Proton"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "В зависимости от поставщика услуг электронной почты, вам может потребоваться сначала сгенерировать ${ knowledgeBaseLink }, прежде чем вы сможете импортировать данные в Proton."
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "Разверните выпадающее меню, нажав на 3 точки (...)"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "Разверните выпадающее меню, нажав на 3 точки (...)."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Сгенерируйте ${ boldAppPassword } и используйте его вместо обычного пароля при запросе Proton."
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Перейдите в ${ boldAccountInfo } в своем профиле в ${ yahooMailLink }"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "Перейдите в ${ boldAccountInfo } в своем профиле в ${ yahooMailLink }."
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Перейдите в ${ boldAccountSecurity }"
+      "Go to ${ boldAccountSecurity }.": [
+        "Перейдите в ${ boldAccountSecurity }."
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Перейдите в Outlook ${ securitySettingsLink }"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Перейдите в ${ securitySettingsLink } в Outlook."
       ],
-      "If 2-step verification is off, turn it on": [
-        "Если двухэтапная аутентификация выключена, включите ее"
+      "If 2-step verification is off, turn it on.": [
+        "Если двухэтапная аутентификация выключена, включите ее."
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Откройте контакты ${ yahooMailLink }"
+      "Open your ${ yahooMailLink } contacts.": [
+        "Откройте контакты ${ yahooMailLink }."
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Откройте свои ${ outlookContactsLink } Outlook"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Откройте свои ${ outlookContactsLink } Outlook."
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "Выберите ${ boldExportContacts } и определите, какие контакты нужно экспортировать"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "Выберите ${ boldExportContacts } и определите, какие контакты нужно экспортировать."
       ],
-      "Select ${ boldExportCSV }": [
-        "Выберите ${ boldExportCSV }"
+      "Select ${ boldExportCSV }.": [
+        "Выберите ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Чтобы импортировать календарь в Proton, вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
@@ -3736,8 +3739,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Чтобы импортировать календарь в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Для импорта контактов в Proton вам необходим ${ knowledgeBaseLink }. Скачайте его с Outlook в 3 простых шага:"
@@ -3745,8 +3748,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Для импорта контактов в Proton необходим ${ knowledgeBaseLink }. Скачайте его с Yahoo в 3 простых шага:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Чтобы импортировать контакты в Proton, вам понадобится ${ knowledgeBaseLink }. Скачайте его перед началом процесса импорта."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Для импорта электронной почты в Proton вам понадобится ${ appPasswordLink } из Outlook. Получите его, выполнив следующие действия:"
@@ -3817,23 +3820,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Нажмите на ссылку ${ boldICS } и скачайте файл"
+      "Click on the ${ boldICS } link and download the file.": [
+        "Нажмите на ссылку ${ boldICS } и скачайте файл."
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Перейдите к ${ calendarLink } в настройках Outlook"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Перейдите к ${ calendarLink } в настройках Outlook."
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Перейти в ${ calendarViewLink } в Yahoo"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Перейти в ${ calendarViewLink } в Yahoo."
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "Наведите курсор мыши на календарь, который вы хотите импортировать, и откройте выпадающее меню"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "Наведите курсор мыши на календарь, который вы хотите импортировать, и откройте выпадающее меню."
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Выберите ${ boldExport } для экспорта календаря в формате файла ICS"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Выберите ${ boldExport } для экспорта календаря в формате файла ICS."
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение на ${ boldCanViewAllDetails } и опубликуйте его"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "В разделе ${ boldPublish } выберите календарь, который вы хотите импортировать. Установите разрешение на ${ boldCanViewAllDetails } и опубликуйте его."
       ]
     },
     "Import key": {
@@ -4622,7 +4625,7 @@
         "Если вы хотите объединить эту учетную запись с другой, НЕ удаляйте ее."
       ],
       "Image description": [
-        "Описание изображения"
+        "Добавить описание"
       ],
       "Image URL": [
         "Ссылка на изображение"
@@ -4701,6 +4704,9 @@
       ],
       "Invited via email": [
         "Приглашено по электронной почте"
+      ],
+      "Issues signing in?": [
+        "Проблемы со входом?"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Похоже, что некоторые ваши данные зашифрованы и заблокированы."
@@ -5171,7 +5177,7 @@
         "Этот 30-дневный бесплатный пробный период не доступен никаким другим способом."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Эта учетная запись была приостановлена в связи с возможным нарушением политики."
+        "Этот аккаунт был отключен в связи с возможным нарушением политики."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Браузер не поддерживает предпросмотр документов PDF. Пожалуйста, скачайте файл."
@@ -5319,6 +5325,9 @@
       ],
       "Update recovery phrase": [
         "Обновить фразу для восстановления"
+      ],
+      "Update the URL in your password manager": [
+        "Обновите URL в менеджере паролей"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Улучшите сегодня, чтобы не потерять следующие преимущества ${ planName }."
@@ -6706,7 +6715,7 @@
         "Режим с двумя паролями"
       ],
       "Undo send": [
-        "Отмена отправки"
+        "Отменить отправку"
       ],
       "Upload 1 or more encryption keys": [
         "Загрузите 1 или несколько ключей шифрования"
@@ -7310,6 +7319,26 @@
         "Средняя скорость VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ _price } per user": [
+        "От ${ _price } на пользователя"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Сохранить мой аккаунт ${ currentPlanName }"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Перейти к обзору"
@@ -7346,26 +7375,6 @@
       ],
       "Switch plan": [
         "Сменить тариф"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ _price } per user": [
-        "От ${ _price } на пользователя"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
       ]
     },
     "new_plans: attribute": {
@@ -7637,6 +7646,23 @@
         "Управление командами"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } заканчивающийся на ${ last4 }"
@@ -7702,23 +7728,6 @@
         "Вы пользуетесь акционной ценой на свой текущий тариф. Если вы перейдете на более дешевую версию аккаунта, то потеряете возмоножность пользоваться акционной ценой, которая также будет недоступна, если вы попробуете повторно подписаться на тариф."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Чтобы продолжить использование ${ MAIL_APP_NAME } с платными функциями, выберите подписку и способ оплаты."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Перейдите на пакет для предприятий с доступом ко всем платным службам Proton."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Улучшите до пакета максимальной конфиденциальности и получите доступ ко всем платным службам Proton."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Ваш пробный период заканчивается ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } из ${ humanMaxSpace }"
@@ -7763,6 +7772,17 @@
         "Вы выбрали тариф: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "Пробная версия ${ mailPlanName }"
+      ],
+      "Upgrade to ${ planName }": [
+        "Улучшить до ${ planName }"
+      ],
+      "Your account's usage": [
+        "Использование вашего аккаунта"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Удалить аккаунт?"
@@ -7784,17 +7804,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Улучшите тариф и разблокируйте платные функции"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "Пробная версия ${ mailPlanName }"
-      ],
-      "Upgrade to ${ planName }": [
-        "Улучшить до ${ planName }"
-      ],
-      "Your account's usage": [
-        "Использование вашего аккаунта"
       ]
     },
     "new_plans: tooltip": {
@@ -9955,7 +9964,7 @@
         "Ссылка на календарь"
       ],
       "Your current plan": [
-        "Текущий тариф"
+        "Ваш текущий тариф"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"

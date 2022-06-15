@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Combinar contactos"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "Minimizar el editor"
       ],
@@ -861,8 +867,8 @@
         "Confiar clave",
         "Confiar claves"
       ],
-      "Trust Public Key": [
-        "Confiar clave pública"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "Inténtalo de nuevo"
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "La clave principal no es válida para realizar el envío"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "La clave principal recuperada para el usuario interno es válida para enviar"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clave principal recuperada para el usuario interno no es válida para enviar"
       ],
       "Public key could not be trusted": [
         "No se ha podido verificar la clave pública"
@@ -4347,7 +4353,7 @@
         "Algunas de las imágenes no pudieron ser cargadas con la protección de rastreo"
       ],
       "non-Proton Mail": [
-        ""
+        "no-Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ninguna de las claves cargadas son validas para el cifrado. El cifrado se desactiva automáticamente."
@@ -4492,7 +4498,7 @@
         "Seleccione los calendarios que desea importar. Se creará un nuevo calendario para cada calendario importado hasta el límite de 20 calendarios."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
+        "Enviar a la dirección de correo electrónico ${ boldText } un mensaje encriptado y protegido por contraseña."
       ],
       "Sending": [
         "Enviando"
@@ -4909,17 +4915,17 @@
         "Tu correo electrónico sólo se utilizará para esta verificación única."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados el ${ dateString } a las ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados hoy a las ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "Tu mensaje se eliminará de la bandeja de entrada del destinatario y de tu carpeta de enviados mañana a las ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "",
-        ""
+        "Tu mensaje expirará en ${ numberOfDays } días."
       ],
       "Your message will expire today.": [
         "Tu mensaje caducará hoy."
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Presentamos el nuevo Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Más servicios, misma misión: la privacidad."
-      ],
       "Settings": [
         "Configuración"
       ]

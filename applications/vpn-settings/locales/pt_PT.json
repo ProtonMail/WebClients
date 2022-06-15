@@ -65,9 +65,6 @@
       "Confirm": [
         "Confirmar"
       ],
-      "contact": [
-        ""
-      ],
       "Contact support": [
         "Contactar o suporte"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Actualizar"
+      ],
+      "Use ${ label } theme": [
+        ""
       ],
       "Use a different card": [
         "Utilizar um cartão diferente"
@@ -1945,6 +1945,9 @@
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar gravadas"
       ],
+      "Choose the look and feel of the application.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o número estiver incorrecto, clique em \"Editar\" para o corrigir."
       ],
@@ -2095,6 +2098,9 @@
       "Internet connection restored.": [
         "Ligação à Internet reposta."
       ],
+      "Issues signing in?": [
+        ""
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         ""
       ],
@@ -2221,9 +2227,6 @@
       "Securing your account": [
         ""
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
-      ],
       "Server is currently down": [
         "O servidor está em baixo"
       ],
@@ -2340,6 +2343,9 @@
       ],
       "Unsupported file": [
         "Ficheiro não suportado"
+      ],
+      "Update the URL in your password manager": [
+        ""
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         ""
@@ -3037,7 +3043,7 @@
         ""
       ],
       "Continue with free": [
-        ""
+        "Continue with Free"
       ],
       "Delete account": [
         "Eliminar conta"
@@ -3810,6 +3816,18 @@
         "Adicione o seu nome (ou o da empresa) e morada às facturas"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
+      ]
+    },
     "Price": {
       "Free": [
         "Gratuito"
@@ -4085,11 +4103,8 @@
         "Estado"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
+    "Themes": {
+      "Themes": [
         ""
       ]
     },

@@ -524,6 +524,12 @@
       "Merge contacts": [
         "Spoji kontakte"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "Smanji prozor za novu poruku"
       ],
@@ -865,8 +871,8 @@
         "Ključevi povjerenja",
         "Ključevi povjerenja"
       ],
-      "Trust Public Key": [
-        "Vjeruj javnom ključu"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "Pokušaj ponovno"
@@ -2978,7 +2984,7 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
+      "Primary key retrieved for internal user is not valid for sending": [
         ""
       ],
       "Public key could not be trusted": [
@@ -7031,12 +7037,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "Postavke"
       ]

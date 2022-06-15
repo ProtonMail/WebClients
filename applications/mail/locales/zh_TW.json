@@ -518,6 +518,12 @@
       "Merge contacts": [
         "合併聯絡人"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "最小化撰寫器"
       ],
@@ -857,8 +863,8 @@
       "Trust key": [
         "信任金鑰"
       ],
-      "Trust Public Key": [
-        "信任公開金鑰"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "再試一次"
@@ -2942,8 +2948,8 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        ""
+      "Primary key retrieved for internal user is not valid for sending": [
+        "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
       ],
       "Public key could not be trusted": [
         "公開金鑰無法信任"
@@ -6789,12 +6795,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "為您介紹改版更新的 Proton。"
-      ],
-      "More services, one privacy mission.": [
-        "給您更多元服務，秉持同一隱私使命。"
-      ],
       "Settings": [
         "設定"
       ]

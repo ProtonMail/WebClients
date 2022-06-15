@@ -296,6 +296,9 @@
       "OK": [
         "確定"
       ],
+      "Open in a new tab": [
+        "開啟新分頁"
+      ],
       "Open navigation": [
         "開啟導覽"
       ],
@@ -2111,8 +2114,8 @@
       "Primary key is not valid for sending": [
         "主要金鑰對傳送無效"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "從內部使用者擷取而來的金鑰對寄送有效"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
       ],
       "Request timed out": [
         "請求逾時"
@@ -3859,7 +3862,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "分享您精彩的體驗 (什麼都行)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4521,12 +4524,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "介紹更新的 Proton。"
-      ],
-      "More services, one privacy mission.": [
-        "更多服務，一項隱私使命。"
-      ],
       "Settings": [
         "設定"
       ]
@@ -4961,6 +4958,11 @@
       ],
       "Replay video": [
         "重播影片"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "開啟新分頁"
       ]
     },
     "Warning": {

@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Névjegyek egyesítése"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "Szerkesztő minimalizálása"
       ],
@@ -861,8 +867,8 @@
         "Megbízható kulcs",
         "Kulcsok megjelölése megbízhatóként"
       ],
-      "Trust Public Key": [
-        "Nyilvános kulcsok megjelölése megbízhatóként"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "Próbálja újra"
@@ -2960,7 +2966,7 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
+      "Primary key retrieved for internal user is not valid for sending": [
         ""
       ],
       "Public key could not be trusted": [
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "A legfrissebb Proton bemutatása."
-      ],
-      "More services, one privacy mission.": [
-        "Több szolgáltatás, egy adatvédelmi küldetés."
-      ],
       "Settings": [
         "Beállítások"
       ]

@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Smezdi inermisen"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "Semẓi amsuddes"
       ],
@@ -861,8 +867,8 @@
         "Tasarut yettwamanen",
         "Tisura yettwamanen"
       ],
-      "Trust Public Key": [
-        "Tasarut tazayezt yettwamanen"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "Ɛreḍ tikkelt-nniḍen"
@@ -2695,10 +2701,10 @@
     },
     "Email reminder banner": {
       "Event is tomorrow": [
-        ""
+        "Tadyant ad ttebdu azekka"
       ],
       "Event starting now": [
-        ""
+        "Tadyant ad ttebdu tura"
       ],
       "Event starts in ${ minutesUntilEvent } minute": [
         "",
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Tasarut tagejdant yettwaffen i useqdac adigan i yeɣtan i tuzna"
+      "Primary key retrieved for internal user is not valid for sending": [
+        ""
       ],
       "Public key could not be trusted": [
         "Tasarut tazayezt izmer ur tettwaman ara"
@@ -6080,12 +6086,12 @@
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "Tikti"
       ]
     },
     "new_plans: title": {
       "Give feedback": [
-        ""
+        "Mudd-d tikti"
       ],
       "Updated Proton, unified protection": [
         ""
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        "Ugar n yimeẓ, yiwet n tuɣdaḍt n tbaḍnit."
-      ],
       "Settings": [
         "Iɣewwaren"
       ]

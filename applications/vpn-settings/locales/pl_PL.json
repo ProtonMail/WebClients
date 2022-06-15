@@ -65,9 +65,6 @@
       "Confirm": [
         "Potwierdź"
       ],
-      "contact": [
-        "skontaktuj się"
-      ],
       "Contact support": [
         "Skontaktuj się ze wsparciem technicznym"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Ulepsz"
+      ],
+      "Use ${ label } theme": [
+        "Użyj motywu ${ label }"
       ],
       "Use a different card": [
         "Użyj innej karty"
@@ -1975,6 +1975,9 @@
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
       ],
+      "Choose the look and feel of the application.": [
+        "Wybierz wygląd aplikacji."
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
@@ -2125,6 +2128,9 @@
       "Internet connection restored.": [
         "Połączenie z Internetem zostało przywrócone."
       ],
+      "Issues signing in?": [
+        "Problemy z logowaniem?"
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Dowiedz się, jak zalogować do usługi ${ VPN_APP_NAME } za pomocą alternatywnych aplikacji."
       ],
@@ -2251,9 +2257,6 @@
       "Securing your account": [
         "Zabezpieczenie konta"
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }. Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contactMailToLink } z naszym zespołem wsparcia klienta."
-      ],
       "Server is currently down": [
         "Serwer jest obecnie wyłączony"
       ],
@@ -2370,6 +2373,9 @@
       ],
       "Unsupported file": [
         "Plik jest nieobsługiwany"
+      ],
+      "Update the URL in your password manager": [
+        "Zaktualizuj adres URL w menadżerze haseł"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
@@ -3069,7 +3075,7 @@
         "Przejdź do przeglądu"
       ],
       "Continue with free": [
-        "Kontynuuj bezpłatnie"
+        "Continue with Free"
       ],
       "Delete account": [
         "Usuń konto"
@@ -3222,10 +3228,10 @@
         "Umowa SLA 99,95%"
       ],
       "Admin console": [
-        "Pulpit administratora"
+        "Konsola administratora"
       ],
       "Advanced sharing security": [
-        "Zaawansowane bezpieczeństwo przy udostępnianiu"
+        "Zaawansowane bezpieczeństwo udostępniania"
       ],
       "Auto-reply": [
         "Autoresponder"
@@ -3273,7 +3279,7 @@
         "Darmowy VPN na 1 urządzenie"
       ],
       "GDPR data processing agreement": [
-        "Umowa o przetwarzaniu danych zgodnie z RODO"
+        "Umowa przetwarzania danych zgodnie z RODO"
       ],
       "High-speed VPN on ${ n } device": [
         "${ n } szybka sieć VPN na urządzeniu",
@@ -3294,7 +3300,7 @@
         "Wiele ról administratora"
       ],
       "NetShield malware and ad-blocker": [
-        "Blokada przed złośliwym oprogramowaniem i reklamami NetShield"
+        "Blokada złośliwego oprogramowania i reklam NetShield"
       ],
       "P2P/BitTorrent": [
         "P2P / BitTorrent"
@@ -3366,7 +3372,7 @@
         "Do ${ totalStorageSize } przestrzeni dyskowej"
       ],
       "User credential management": [
-        "Zarządzanie danymi uwierzytelniającymi użytkownika"
+        "Zarządzanie danymi logowania użytkownika"
       ],
       "User session management": [
         "Zarządzanie sesją użytkownika"
@@ -3536,7 +3542,7 @@
         "Wersja próbna planu ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        "Ulepszenie do ${ planName }"
+        "Ulepszenie do planu ${ planName }"
       ],
       "Your account's usage": [
         "Użycie konta"
@@ -3876,6 +3882,20 @@
         "Dodaj swoje imię i nazwisko (lub nazwę firmy) oraz adres do faktury"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
     "Price": {
       "Free": [
         "Za darmo"
@@ -4177,12 +4197,9 @@
         "Status"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Przedstawiamy zaktualizowane usługi Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Więcej usług, jedna misja dotycząca prywatności."
+    "Themes": {
+      "Themes": [
+        "Motywy"
       ]
     },
     "Title": {

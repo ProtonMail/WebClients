@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Fusionner les contacts"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "Minimiser le composeur"
       ],
@@ -861,8 +867,8 @@
         "Approuver la clé",
         "Approuver les clés"
       ],
-      "Trust Public Key": [
-        "Faire confiance à la clé publique"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "Réessayer"
@@ -2960,7 +2966,7 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
+      "Primary key retrieved for internal user is not valid for sending": [
         ""
       ],
       "Public key could not be trusted": [
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "Paramètres"
       ]

@@ -69,13 +69,13 @@
         "すべての既読"
       ],
       "All Starred": [
-        "すべてのスター付き"
+        "すべての星印付き"
       ],
       "All Unread": [
         "すべての未読"
       ],
       "All Unstarred": [
-        "すべてのスターなし"
+        "すべての星印なし"
       ],
       "Apply": [
         "適用"
@@ -518,6 +518,12 @@
       "Merge contacts": [
         "連絡先の統合"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "最小化"
       ],
@@ -825,7 +831,7 @@
         "スキップ"
       ],
       "Star": [
-        "星印をつける"
+        "星印を付ける"
       ],
       "Start import": [
         "インポート開始"
@@ -857,7 +863,7 @@
       "Trust key": [
         "鍵を信頼する"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "公開鍵を信頼"
       ],
       "Try again": [
@@ -885,7 +891,7 @@
         "箇条書き"
       ],
       "Unstar": [
-        "星印をはずす"
+        "星印を外す"
       ],
       "Unsubscribe": [
         "登録解除"
@@ -991,7 +997,7 @@
         "${ addContact }または${ importContact }。"
       ],
       "No results found.": [
-        "一致する結果が見つかりませんでした。"
+        "該当する結果が見つかりませんでした。"
       ],
       "Please try another search term.": [
         "別の単語で検索してみてください。"
@@ -2942,8 +2948,8 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        ""
+      "Primary key retrieved for internal user is not valid for sending": [
+        "内部ユーザー用に取得されたプライマリー鍵は送信に使用できません"
       ],
       "Public key could not be trusted": [
         "公開鍵を信頼できません"
@@ -3233,10 +3239,10 @@
         "エラー: ${ errorMessage }"
       ],
       "No results found": [
-        "該当する項目がありません"
+        "該当する結果が見つかりませんでした"
       ],
       "No results found for \"${ query }\"": [
-        "「${ query }」の見つかった結果はありません"
+        "「${ query }」に該当する結果が見つかりませんでした"
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
@@ -3675,13 +3681,13 @@
         "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        ""
+        "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } メンバー"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "連絡先 ${ contactName } に複数のメールアドレスが含まれています。"
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } の連絡先が見つかりました"
@@ -3993,7 +3999,7 @@
         "有効期限を編集"
       ],
       "Edit link": [
-        ""
+        "リンクを編集"
       ],
       "Email address": [
         "メールアドレス"
@@ -4107,7 +4113,7 @@
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
       ],
       "Image description": [
-        ""
+        "画像の説明"
       ],
       "Image URL": [
         "画像のURL"
@@ -4248,16 +4254,16 @@
         "メールトラッカーはありません"
       ],
       "No folder found": [
-        "フォルダーが見つかりません"
+        "フォルダーが見つかりませんでした"
       ],
       "No folder selected": [
         "フォルダーが選択されていません"
       ],
       "No group found": [
-        "グループはありません"
+        "グループが見つかりませんでした"
       ],
       "No label found": [
-        "ラベルが見つかりません"
+        "ラベルが見つかりませんでした"
       ],
       "No label selected": [
         "ラベルが選択されていません"
@@ -4335,16 +4341,16 @@
         "挿入するリンクの種類を選択し、すべての項目に入力してください。"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        ""
+        "${ groupCount } 件のグループに追加するメールアドレスを選択してください。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
-        "プライマリ暗号化鍵で再署名できる連絡先を探すまでお待ちください。"
+        "プライマリー暗号鍵で再署名できる連絡先を探しています。しばらくお待ちください。"
       ],
       "Please wait while we look for contacts that contain data encrypted with the inactive key.": [
-        "無効な鍵で暗号化されたデータが含まれている連絡先を探すまでお待ちください。"
+        "無効な鍵で暗号化されたデータが含まれている連絡先を探しています。しばらくお待ちください。"
       ],
       "Preview": [
         "プレビュー"
@@ -4611,7 +4617,7 @@
         "連絡先に再署名するには、すべての連絡先をあなたのアカウントで利用可能な暗号鍵のリストに照らして確認する必要があります。 一致するものが見つからない場合、連絡先はプライマリ暗号鍵で再署名されます。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、キーが生成されたときに使用されたパスワードを覚えておく必要があります。"
+        "データを復元するには、データが作成されたときに使用された連絡先の暗号鍵を再度有効にする必要があります。したがって、鍵が生成されたときに使用されたパスワードを覚えている必要があります。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         ""
@@ -4903,7 +4909,7 @@
         "「キーを信頼」をクリックすることにより、連絡先が作成され、この送信者の公開鍵に関連付けられます。このアドレスから送信されるメールは自動的に暗号の検証が行われます。"
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
-        "次のフィンガープリントをもつプライマリーキーを信頼しますか?"
+        "次のフィンガープリントのプライマリー鍵を信頼しますか？"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
         ""
@@ -5066,7 +5072,7 @@
         "未読のメールを表示"
       ],
       "Star": [
-        "星"
+        "星印を付ける"
       ]
     },
     "Keyboard shortcut section name": {
@@ -5329,7 +5335,7 @@
         "名前"
       ],
       "No label found": [
-        "ラベルが見つかりません"
+        "ラベルが見つかりませんでした"
       ],
       "Notification": [
         "通知"
@@ -6342,13 +6348,13 @@
     },
     "Search - no results": {
       "No messages found": [
-        "メッセージが見つかりません"
+        "メッセージが見つかりませんでした"
       ],
       "No messages scheduled": [
         "スケジュールされているメッセージはありません"
       ],
       "No results found": [
-        "該当する項目がありません"
+        "該当する結果が見つかりませんでした"
       ],
       "No unread messages found": [
         "未読メッセージが見つかりません"
@@ -6789,12 +6795,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "新しくなった Proton をご紹介します。"
-      ],
-      "More services, one privacy mission.": [
-        "たくさんのサービス、1 つのプライバシーミッション。"
-      ],
       "Settings": [
         "設定"
       ]
@@ -7128,7 +7128,7 @@
         "次のメッセージ"
       ],
       "No attachment found": [
-        "添付ファイルがありません"
+        "添付ファイルが見つかりませんでした"
       ],
       "Open actions dropdown": [
         "アクションのドロップダウンを開く"

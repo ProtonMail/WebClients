@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Fusionner les contacts"
       ],
+      "Messages from this sender": [
+        "Messages de cet expéditeur"
+      ],
+      "Messages to this recipient": [
+        "Messages vers ce destinataire"
+      ],
       "Minimize composer": [
         "Minimiser le composeur"
       ],
@@ -552,7 +558,7 @@
         "Déplacer vers la boîte de réception (non indésirable/spam)"
       ],
       "Move to spam": [
-        "Déplacer vers les indésirables"
+        "Déplacer vers les indésirables/spam"
       ],
       "Move to trash": [
         "Déplacer vers la corbeille"
@@ -861,8 +867,8 @@
         "Approuver la clé",
         "Approuver les clés"
       ],
-      "Trust Public Key": [
-        "Faire confiance à la clé publique"
+      "Trust public key": [
+        "Approuver la clé publique"
       ],
       "Try again": [
         "Réessayer"
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "La clé principale récupérée pour l’utilisateur interne est valide pour l’envoi"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi"
       ],
       "Public key could not be trusted": [
         "La clé publique n'a pas pu être approuvée"
@@ -3118,13 +3124,13 @@
         "Les brouillons ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Drafts cannot be moved to Spam": [
-        "Les brouillons ne peuvent pas être déplacés vers les indésirables"
+        "Les brouillons ne peuvent pas être déplacés vers les indésirables/spam"
       ],
       "Sent messages cannot be moved to Inbox": [
         "Les messages envoyés ne peuvent pas être déplacés vers la boîte de réception"
       ],
       "Sent messages cannot be moved to Spam": [
-        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables"
+        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables/spam"
       ],
       "This action cannot be performed": [
         "Impossible d'effectuer cette action"
@@ -3383,7 +3389,7 @@
         "Sélectionner un dossier"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Trash": [
         "Corbeille"
@@ -3707,8 +3713,8 @@
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "Le contact ${ contactCount } contient plusieurs adresses email.",
-        ""
+        "Le contact ${ contactCount } a plusieurs adresses e-mail.",
+        "Les contacts ${ contactCount } ont plusieurs adresses e-mail."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
@@ -3923,7 +3929,7 @@
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier Indésirables et vérifiez que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam, ainsi que ${ strong } est la bonne adresse."
       ],
       "Body: ": [
         "Corps : "
@@ -4115,7 +4121,7 @@
         "Expire bientôt"
       ],
       "Expiring message": [
-        ""
+        "Message expiré"
       ],
       "file attached": [
         "fichier joint",
@@ -4175,7 +4181,7 @@
         "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "Si vous ne trouvez pas le message dans votre boîte de réception, veuillez vérifier votre dossier indésirables."
+        "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam."
       ],
       "Image description": [
         "Description de l'image"
@@ -4679,7 +4685,7 @@
         "La clé publique de cet expéditeur n'a pas encore été approuvée."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -5097,7 +5103,7 @@
         "Déplacer vers Boîte de réception"
       ],
       "Move to Spam": [
-        "Déplacer dans les indésirables"
+        "Déplacer dans les indésirables/spam"
       ],
       "Move to Trash": [
         "Déplacer vers Corbeille"
@@ -5755,7 +5761,7 @@
         "Inscrivez-vous gratuitement"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Starred": [
         "Favoris"
@@ -5852,7 +5858,7 @@
         "Envoyés"
       ],
       "Spam": [
-        "Indésirables"
+        "Indésirables/spam"
       ],
       "Trash": [
         "Corbeille"
@@ -6213,10 +6219,10 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } a marqué cette clé comme étant compromise. Cette clé ne peut pas être utilisée pour le chiffrement ou la vérification des signatures."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } a marqué cette clé comme obsolète. Cette clé peut uniquement être utilisée pour la vérification des signatures."
       ],
       "We recommend that you \"untrust\" this key.": [
         "Nous vous recommandons de ne plus faire confiance à cette clé."
@@ -6665,7 +6671,7 @@
         "${ elementsCount } conversations déplacées vers ${ folderName }."
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } conversation déplacée vers les indésirables et expéditeur ajouté à la liste de blocage.",
+        "${ elementsCount } conversation déplacée vers les indésirables/spam et expéditeur ajouté à la liste de blocage.",
         "${ elementsCount } conversations déplacées vers les indésirables et expéditeurs ajoutés à la liste de blocage."
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
@@ -6697,7 +6703,7 @@
         "${ elementsCount } messages déplacés vers ${ folderName }."
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } message déplacé vers les indésirables et expéditeur ajouté à la liste de blocage.",
+        "${ elementsCount } message déplacé vers les indésirables/spam et expéditeur ajouté à la liste de blocage.",
         "${ elementsCount } messages déplacés vers les indésirables et expéditeurs ajoutés à la liste de blocage."
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
@@ -6752,7 +6758,7 @@
         "Conversation déplacée vers ${ folderName }."
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "Conversation déplacée vers les indésirables et expéditeur ajoutée à la liste de blocage."
+        "Conversation déplacée vers les indésirables/spam et expéditeur ajouté à la liste de blocage."
       ],
       "Conversation removed from ${ labelName }.": [
         "Conversation retirée de ${ labelName }."
@@ -6809,7 +6815,7 @@
         "Message déplacé vers ${ folderName }."
       ],
       "Message moved to spam and sender added to Block List.": [
-        "Message déplacé vers les indésirables et expéditeur ajouté à la liste de blocage."
+        "Message déplacé vers les indésirables/spam et expéditeur ajouté à la liste de blocage."
       ],
       "Message removed from ${ labelName }.": [
         "Message retiré de ${ labelName }."
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Voici le nouveau Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Plus de services, une seule mission : la protection de la vie privée."
-      ],
       "Settings": [
         "Paramètres"
       ]

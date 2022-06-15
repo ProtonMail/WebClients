@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Kontakte zusammenführen"
       ],
+      "Messages from this sender": [
+        "Nachrichten von diesem Absender"
+      ],
+      "Messages to this recipient": [
+        "Nachrichten an diesen Empfänger"
+      ],
       "Minimize composer": [
         "Verfassen-Fenster minimieren"
       ],
@@ -861,7 +867,7 @@
         "Schlüssel vertrauen",
         "Schlüssel vertrauen"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
       ],
       "Try again": [
@@ -2960,8 +2966,8 @@
       "Primary key is not valid for sending": [
         "Primärschlüssel ist für das Senden nicht gültig"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Der für den internen Benutzer abgefragte Primärschlüssel ist für den Versand gültig"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Der für den internen Benutzer abgerufene Primärschlüssel ist für das Senden nicht gültig"
       ],
       "Public key could not be trusted": [
         "Öffentlicher Schlüssel war nicht vertrauenswürdig"
@@ -4918,7 +4924,7 @@
         "Deine Nachricht wird morgen um ${ formattedTime } aus deinem gesendet Ordner und dem Posteingang des Empfängers gelöscht werden"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "",
+        "Diese Nachricht wird in ${ numberOfDays } Tag ablaufen.",
         "Deine Nachricht wird in ${ numberOfDays } Tagen ablaufen."
       ],
       "Your message will expire today.": [
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Wir stellen das neue Proton vor."
-      ],
-      "More services, one privacy mission.": [
-        "Mehr Dienste, eine Mission zum Schutz der Privatsphäre."
-      ],
       "Settings": [
         "Einstellungen"
       ]

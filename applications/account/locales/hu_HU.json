@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "${ price } fizetése"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        ""
+      ],
       "Preview": [
         "Előnézet"
       ],
@@ -3621,44 +3624,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Kattintson a ${ boldManage } elemre a lehetőségek megnyitásához"
+      "Click ${ boldManage } to expand the options menu.": [
+        ""
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "Az e-mail szolgáltatójától függően, létre kellhet hoznia egy ${ knowledgeBaseLink }, mielőtt a Protonba importál"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        ""
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "Nyissa meg a lenyílómenüt a 3 pontra kattintva (...)"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        ""
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a Proton kéri"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        ""
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Hozzon létre egy ${ boldAppPassword }-t és azt használja a belépési jelszava helyett amikor a Proton kéri"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        ""
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "Nyissa meg a ${ boldAccountInfo } részt a személyes adatainál, a ${ yahooMailLink } fiókjában"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        ""
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "Nyissa meg a ${ boldAccountSecurity } részt"
+      "Go to ${ boldAccountSecurity }.": [
+        ""
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Nyissa meg az Outlook ${ securitySettingsLink } részt"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        ""
       ],
-      "If 2-step verification is off, turn it on": [
-        "Ha a kétlépéses hitelesítés ki van kapcsolva, kapcsolja be"
+      "If 2-step verification is off, turn it on.": [
+        ""
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "Nyissa meg a ${ yahooMailLink } névjegyeket"
+      "Open your ${ yahooMailLink } contacts.": [
+        ""
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Nyissa meg az Outlook ${ outlookContactsLink } részt"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        ""
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "Válassza ki a ${ boldExportContacts } elemet és adja meg, hogy mely névjegyeket exportálja"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        ""
       ],
-      "Select ${ boldExportCSV }": [
-        "Válassza az ${ boldExportCSV } elemet"
+      "Select ${ boldExportCSV }.": [
+        ""
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Naptár importálásához szükséges az ${ knowledgeBaseLink }. Az Outlookból a következő 3 lépéssel töltheti le:"
@@ -3666,8 +3669,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Naptár importálásához szükséges az ${ knowledgeBaseLink }. A Yahoo-tól a következő 3 lépéssel töltheti le:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Naptár importálásához szükséges az ${ knowledgeBaseLink }. Töltse le az importálás megkezdése előtt"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. Az Outlookból a következő 3 lépéssel töltheti le:"
@@ -3675,8 +3678,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. A Yahoo-tól a következő 3 lépéssel töltheti le:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Névjegyek importálásához szükséges a ${ knowledgeBaseLink }. Töltse le az importálás megkezdése előtt"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Az e-mailek Protonba való importálásához egy ${ appPasswordLink } szükséges a Outlookhoz. A következő módon juthat hozzá:"
@@ -3747,23 +3750,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "Kattintson az ${ boldICS } hivatkozásra és töltse le a fájlt"
+      "Click on the ${ boldICS } link and download the file.": [
+        ""
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Nyissa meg a ${ calendarLink } részt az Outlook beállításaiban"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        ""
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Nyissa meg a ${ calendarViewLink }-t a Yahoo Mailben"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        ""
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "Mozgassa az egeret az importálni kívánt naptár fölé és nyissa le a lenyíló menüt"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        ""
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Válassza az ${ boldExport } elemet a naptár ICS fájlként való exportálásához"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        ""
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "A ${ boldPublish } alatt, válassza ki a naptárat amelyet importálni szeretne. Állítsa a jogosultságokat ${ boldCanViewAllDetails } típusúra és publikálja"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        ""
       ]
     },
     "Import key": {
@@ -4580,6 +4583,9 @@
       "Invited via email": [
         "Meghívva e-mail által"
       ],
+      "Issues signing in?": [
+        ""
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
       ],
@@ -5195,6 +5201,9 @@
       ],
       "Update recovery phrase": [
         "Helyreállító jelmondat frissítése"
+      ],
+      "Update the URL in your password manager": [
+        ""
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Váltson ma nagyobb csomagra, hogy elkerülje az alábbi ${ planName } előnyök elvesztését."
@@ -7170,6 +7179,26 @@
         "Közepes VPN sebesség"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Váltás kisebb csomagra: ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "További ${ BRAND_NAME } csomagok megismerése"
+      ],
+      "From ${ _price } per user": [
+        "Már felhasználónkénti ${ _price }-tól"
+      ],
+      "From ${ price }": [
+        "Már ${ price }-tól"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Megtartom a ${ currentPlanName } fiókot"
+      ],
+      "Upgrade now": [
+        "Váltás nagyobb csomagra"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Tovább az áttekintéshez"
@@ -7206,26 +7235,6 @@
       ],
       "Switch plan": [
         "Csomag váltása"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Váltás kisebb csomagra: ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "További ${ BRAND_NAME } csomagok megismerése"
-      ],
-      "From ${ _price } per user": [
-        "Már felhasználónkénti ${ _price }-tól"
-      ],
-      "From ${ price }": [
-        "Már ${ price }-tól"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Megtartom a ${ currentPlanName } fiókot"
-      ],
-      "Upgrade now": [
-        "Váltás nagyobb csomagra"
       ]
     },
     "new_plans: attribute": {
@@ -7469,6 +7478,23 @@
         "Csoport menedzsment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, szám vége: ${ last4 }"
@@ -7534,23 +7560,6 @@
         "Önnek kedvezményes ára van a jelenlegi csomagjához, Ha kisebb csomagra vált, elveszíti a kedvezményes árat és ezt nem fogja tudni igénybe venni, ha újra előfizet."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Váltson az üzleti csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Váltson a legnagyobb adatvédelmi csomagra, a Proton összes prémium szolgáltatásának eléréshez."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Próbaideje véget ér: ${ formattedTrialExpirationDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } a ${ humanMaxSpace } tárhelyből"
@@ -7593,6 +7602,17 @@
         "A választott csomagja: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } Próbaváltozat"
+      ],
+      "Upgrade to ${ planName }": [
+        "Váltás ${ planName } csomagra"
+      ],
+      "Your account's usage": [
+        "A fiókja kihasználtsága"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Fiók törlése?"
@@ -7614,17 +7634,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Váltson nagyobb csomagra a prémium funkciók eléréshez"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } Próbaváltozat"
-      ],
-      "Upgrade to ${ planName }": [
-        "Váltás ${ planName } csomagra"
-      ],
-      "Your account's usage": [
-        "A fiókja kihasználtsága"
       ]
     },
     "new_plans: tooltip": {
