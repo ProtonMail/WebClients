@@ -12,6 +12,7 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 interface Props {
     showGenericSteps?: boolean;
     onDone?: () => void;
+    onExit?: () => void;
     open?: boolean;
 }
 
