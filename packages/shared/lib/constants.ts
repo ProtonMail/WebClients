@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 export const RETRY_DELAY_MAX = 10; // seconds
 export const RETRY_ATTEMPTS_MAX = 5; // how many times to try the same request
 export const OFFLINE_RETRY_DELAY = 2000; // how much time in ms to wait before retrying an offline request
@@ -511,18 +513,30 @@ export enum LABEL_EXCLUSIVE {
     LABEL = 0,
 }
 
-export const ACCENT_COLORS = [
-    '#8080FF',
-    '#DB60D6',
-    '#EC3E7C',
-    '#F78400',
-    '#936D58',
-    '#415DF0',
-    '#179FD9',
-    '#1DA583',
-    '#3CBB3A',
-    '#B4A40E',
-];
+export const ACCENT_COLORNAMES = {
+    '#8080FF': () => c('color').t`purple`,
+    '#DB60D6': () => c('color').t`pink`,
+    '#EC3E7C': () => c('color').t`strawberry`,
+    '#F78400': () => c('color').t`carrot`,
+    '#936D58': () => c('color').t`sahara`,
+    '#5252CC': () => c('color').t`enzian`,
+    '#A839A4': () => c('color').t`plum`,
+    '#BA1E55': () => c('color').t`cerise`,
+    '#C44800': () => c('color').t`copper`,
+    '#54473F': () => c('color').t`soil`,
+    '#415DF0': () => c('color').t`slateblue`,
+    '#179FD9': () => c('color').t`pacific`,
+    '#1DA583': () => c('color').t`reef`,
+    '#3CBB3A': () => c('color').t`fern`,
+    '#B4A40E': () => c('color').t`olive`,
+    '#273EB2': () => c('color').t`cobalt`,
+    '#0A77A6': () => c('color').t`ocean`,
+    '#0F735A': () => c('color').t`pine`,
+    '#258723': () => c('color').t`forest`,
+    '#807304': () => c('color').t`pickle`,
+} as const;
+
+export const ACCENT_COLORS = Object.keys(ACCENT_COLORNAMES) as string[];
 
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 

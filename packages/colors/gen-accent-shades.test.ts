@@ -10,8 +10,8 @@ describe('genAccentShades', () => {
 
         expect(output.map(getOriginal)).toEqual([
             { h: 240, s: 1, l: 0.75 },
-            { h: 240, s: 0.95, l: 0.65 },
-            { h: 240, s: 0.95, l: 0.58 },
+            { h: 240, s: 0.95, l: 0.7 },
+            { h: 240, s: 0.9, l: 0.65 },
         ]);
     });
 

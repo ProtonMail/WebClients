@@ -1,5 +1,6 @@
 import { ElementType, useState } from 'react';
 import noop from '@proton/utils/noop';
+import { ACCENT_COLORNAMES } from '@proton/shared/lib/constants';
 import tinycolor from 'tinycolor2';
 import { Icon } from '../icon';
 import { Dropdown, DropdownButton } from '../dropdown';
@@ -21,6 +22,8 @@ const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, c
 
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
+
+    const colors = Object.entries(ACCENT_COLORNAMES).map(([value, getLabel]) => ({ value, label: getLabel() }));
 
     return (
         <>
@@ -47,7 +50,8 @@ const ColorPicker = <T extends ElementType>({ color = 'blue', onChange = noop, c
                 <ColorSelector
                     selected={color}
                     onChange={onChange}
-                    className="flex flex-row flex-wrap flex-justify-center m0 p1 "
+                    className="flex flex-row flex-wrap flex-justify-center m0 p1"
+                    colors={colors}
                 />
             </Dropdown>
         </>
