@@ -1,6 +1,12 @@
 import { ChangeEvent, ComponentPropsWithoutRef, useRef } from 'react';
 import { c } from 'ttag';
 
+import emojiAwful from '@proton/styles/assets/img/emojis/emoji-awful.svg';
+import emojiBad from '@proton/styles/assets/img/emojis/emoji-bad.svg';
+import emojiOk from '@proton/styles/assets/img/emojis/emoji-ok.svg';
+import emojiGood from '@proton/styles/assets/img/emojis/emoji-good.svg';
+import emojiWonderful from '@proton/styles/assets/img/emojis/emoji-wonderful.svg';
+
 import InputButton, { InputButtonProps } from './InputButton';
 import { classnames, concatStringProp, generateUID } from '../../helpers';
 import { Tooltip } from '../tooltip';
@@ -16,11 +22,11 @@ export interface EmojiScaleProps extends Omit<ComponentPropsWithoutRef<'div'>, '
 }
 
 const scale = [
-    { value: 1, emoji: '😫', label: () => c('Label').t`Awful` },
-    { value: 2, emoji: '🙁', label: () => c('Label').t`Bad` },
-    { value: 3, emoji: '😐', label: () => c('Label').t`OK` },
-    { value: 4, emoji: '😊', label: () => c('Label').t`Good` },
-    { value: 5, emoji: '😍', label: () => c('Label').t`Wonderful` },
+    { value: 1, emoji: emojiAwful, label: () => c('Label').t`Awful` },
+    { value: 2, emoji: emojiBad, label: () => c('Label').t`Bad` },
+    { value: 3, emoji: emojiOk, label: () => c('Label').t`OK` },
+    { value: 4, emoji: emojiGood, label: () => c('Label').t`Good` },
+    { value: 5, emoji: emojiWonderful, label: () => c('Label').t`Wonderful` },
 ];
 
 const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, className, ...rest }: EmojiScaleProps) => {
@@ -49,9 +55,7 @@ const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, cla
                                 {...InputButtonProps}
                                 aria-describedby={ariaDescribedBy}
                             >
-                                <span className="emoji-scale_emoji" aria-hidden="true">
-                                    {option.emoji}
-                                </span>
+                                <img src={option.emoji} alt={option.label()} aria-hidden="true" />
                                 <span className="sr-only">{option.label()}</span>
                             </InputButton>
                         </span>
