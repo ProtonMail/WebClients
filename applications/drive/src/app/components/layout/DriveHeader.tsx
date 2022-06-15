@@ -8,10 +8,9 @@ import {
     TopNavbarListItemSettingsDropdown,
     UserDropdown,
     useModalState,
-    useFeature,
-    FeatureCode,
     TopNavbarListItemFeedbackButton,
     RebrandingFeedbackModal,
+    useHasRebrandingFeedback,
 } from '@proton/components';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -37,7 +36,7 @@ export const DriveHeader = ({
     searchBox,
 }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
-    const { feature: rebrandingFeedbackEnabled } = useFeature(FeatureCode.RebrandingFeedbackEnabled);
+    const hasRebrandingFeedback = useHasRebrandingFeedback();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
 
@@ -46,7 +45,7 @@ export const DriveHeader = ({
             {renderOnboardingModal && <DriveOnboardingModal showGenericSteps {...onboardingModal} />}
             <PrivateHeader
                 feedbackButton={
-                    rebrandingFeedbackEnabled?.Value ? (
+                    hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
                     ) : null
                 }
