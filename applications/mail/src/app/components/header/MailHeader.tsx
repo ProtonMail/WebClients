@@ -21,10 +21,9 @@ import {
     AppsDropdownWithDiscoverySpotlight,
     useModalState,
     UserDropdown,
-    useFeature,
-    FeatureCode,
     TopNavbarListItemFeedbackButton,
     RebrandingFeedbackModal,
+    useHasRebrandingFeedback,
 } from '@proton/components';
 import { APPS, VIEW_LAYOUT, DENSITY, COMPOSER_MODE } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -55,7 +54,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
     const location = useLocation();
     const [labels = []] = useLabels();
     const [folders = []] = useFolders();
-    const { feature: featureMailFeedbackEnabled } = useFeature(FeatureCode.MailFeedbackEnabled);
+    const hasRebrandingFeedback = useHasRebrandingFeedback();
     const { getESDBStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled } = getESDBStatus();
 
@@ -171,7 +170,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                     <TopNavbarListItemContactsDropdown onCompose={handleContactsCompose} onMailTo={onMailTo} />
                 }
                 feedbackButton={
-                    featureMailFeedbackEnabled?.Value ? (
+                    hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setFeedbackModalOpen(true)} />
                     ) : null
                 }

@@ -19,14 +19,13 @@ import {
     Button,
     useNotifications,
     useContactGroups,
-    useFeature,
-    FeatureCode,
     TopBanners,
     UserDropdown,
     useModalState,
     SideAppHeaderTitle,
     PrivateSideAppHeader,
     RebrandingFeedbackModal,
+    useHasRebrandingFeedback,
 } from '@proton/components';
 import { c, msgid } from 'ttag';
 import { differenceInCalendarDays, format, isToday } from 'date-fns';
@@ -124,7 +123,7 @@ const CalendarContainerView = ({
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
     const { createNotification } = useNotifications();
     const [groups = []] = useContactGroups();
-    const { feature: rebrandingFeedbackEnabled } = useFeature(FeatureCode.RebrandingFeedbackEnabled);
+    const hasRebrandingFeedback = useHasRebrandingFeedback();
     const [onboardingModal, setOnboardingModal, renderOnboardingModal] = useModalState();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
 
@@ -444,7 +443,7 @@ const CalendarContainerView = ({
                     />
                 }
                 feedbackButton={
-                    rebrandingFeedbackEnabled?.Value ? (
+                    hasRebrandingFeedback ? (
                         <TopNavbarListItemFeedbackButton onClick={() => setRebrandingFeedbackModal(true)} />
                     ) : null
                 }

@@ -4,6 +4,7 @@ import { DAY } from '@proton/shared/lib/constants';
 
 import { FeatureCode } from '../features';
 import { useFeature } from '../../hooks';
+import useHasRebrandingFeedback from './useHasRebrandingFeedback';
 
 export interface RebrandingFeatureValue {
     hasVisitedRebrandingInThePast: boolean;
@@ -19,15 +20,18 @@ export interface RebrandingFeatureValue {
 let logicAlreadyRanDuringCurrentRuntime = false;
 
 const useRebrandingFeedback = () => {
-    const rebrandingFeedbackEnabled = useFeature(FeatureCode.RebrandingFeedbackEnabled);
+    const hasRebrandingFeedback = useHasRebrandingFeedback();
     const rebranding = useFeature<RebrandingFeatureValue>(FeatureCode.RebrandingFeedback);
 
     const [handleDisplay, setHandleDisplay] = useState<undefined | (() => void)>(undefined);
 
-    const loading = rebrandingFeedbackEnabled.loading || rebranding.loading;
-
     useEffect(() => {
-        if (loading || !rebranding.feature?.Value || logicAlreadyRanDuringCurrentRuntime) {
+        if (
+            rebranding.loading ||
+            !rebranding.feature?.Value ||
+            logicAlreadyRanDuringCurrentRuntime ||
+            !hasRebrandingFeedback
+        ) {
             return;
         }
 
@@ -72,11 +76,6 @@ const useRebrandingFeedback = () => {
             });
         };
 
-        /* Rebranding feedback is globally disabled */
-        if (!rebrandingFeedbackEnabled.feature?.Value) {
-            return;
-        }
-
         /**
          * User is visiting v5 / rebranding for the first time, we register this so
          * that we can prompt them the next time they visit again.
@@ -98,7 +97,7 @@ const useRebrandingFeedback = () => {
         return () => {
             window.clearTimeout(promptTimeoutId);
         };
-    }, [loading, rebranding, rebrandingFeedbackEnabled]);
+    }, [rebranding.loading, rebranding, hasRebrandingFeedback]);
 
     return handleDisplay;
 };
