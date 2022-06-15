@@ -68,7 +68,7 @@ const PlanSelection = ({
         hasFreePlan ? FREE_PLAN : null,
         selectedProductPlans[Audience.B2C] === PLANS.MAIL && plansMap[PLANS.MAIL],
         selectedProductPlans[Audience.B2C] === PLANS.VPN && plansMap[PLANS.VPN],
-        // selectedProductPlans[Audience.B2C] === PLANS.DRIVE && plansMap[PLANS.DRIVE],
+        selectedProductPlans[Audience.B2C] === PLANS.DRIVE && plansMap[PLANS.DRIVE],
         plansMap[PLANS.BUNDLE],
     ].filter(isTruthy);
 

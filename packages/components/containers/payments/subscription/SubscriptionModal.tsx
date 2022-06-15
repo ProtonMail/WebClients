@@ -75,7 +75,12 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
 };
 
 export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: PlanIDs) => {
-    const defaultB2CPlan = appName === APPS.PROTONVPN_SETTINGS ? PLANS.VPN : PLANS.MAIL;
+    let defaultB2CPlan = PLANS.MAIL;
+    if (appName === APPS.PROTONVPN_SETTINGS) {
+        defaultB2CPlan = PLANS.VPN;
+    } else if (appName === APPS.PROTONDRIVE) {
+        defaultB2CPlan = PLANS.DRIVE;
+    }
     const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find((x) => planIDs[x]);
     const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((x) => planIDs[x]);
     const defaultB2BPlan = PLANS.MAIL_PRO;
