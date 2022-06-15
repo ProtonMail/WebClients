@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { SelectTwo, Option } from '../../components';
 import { DEFAULT_FONT_FACE, FONT_FACES } from '../../components/editor/constants';
-import { Select } from '../../components/select';
 
 interface Props {
     id: string;
@@ -9,18 +9,31 @@ interface Props {
     loading: boolean;
 }
 
+const options = Object.values(FONT_FACES).map(({ label: text, value }) => ({ text, value: value.toLowerCase() }));
+
 const FontFaceSelect = ({ id, fontFace, onChange, loading, ...rest }: Props) => {
-    const options = Object.values(FONT_FACES).map(({ label: text, value }) => ({ text, value }));
-
+    const isValid = fontFace && options.some((option) => option.value === fontFace.toLowerCase());
     // FontFace default API value is null and it doesn't trigger default parameter value
-    const fontFaceValue = fontFace === undefined || fontFace === null ? DEFAULT_FONT_FACE : fontFace;
-
-    const handleChange = ({ target }: React.ChangeEvent<HTMLSelectElement>) => {
-        onChange(target.value);
-    };
+    const fontFaceValue = isValid ? fontFace.toLowerCase() : DEFAULT_FONT_FACE.toLowerCase();
 
     return (
-        <Select id={id} value={fontFaceValue} options={options} disabled={loading} onChange={handleChange} {...rest} />
+        <SelectTwo
+            id={id}
+            value={fontFaceValue}
+            disabled={loading}
+            onChange={({ value: selectedValue }) => {
+                const option = Object.values(FONT_FACES).find(({ value }) => value.toLowerCase() === selectedValue);
+
+                if (option) {
+                    onChange(option.value);
+                }
+            }}
+            {...rest}
+        >
+            {options.map(({ text, value }) => (
+                <Option key={value} title={text} value={value} />
+            ))}
+        </SelectTwo>
     );
 };
 
