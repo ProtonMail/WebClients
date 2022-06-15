@@ -493,6 +493,9 @@
       "Pay ${ price }": [
         "${ price } öde"
       ],
+      "Please contact the administrator of the organisation to manage the subscription": [
+        "Lütfen aboneliğinizle ilgili işlemleri yapması için kuruluşunuzun yöneticisi ile görüşün"
+      ],
       "Preview": [
         "Ön izleme"
       ],
@@ -3621,44 +3624,44 @@
       ]
     },
     "Import instructions": {
-      "Click ${ boldManage } to expand the options menu": [
-        "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın"
+      "Click ${ boldManage } to expand the options menu.": [
+        "Seçenekler menüsü açmak için ${ boldManage } üzerine tıklayın."
       ],
-      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton": [
-        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir"
+      "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
+        "E-posta hizmeti sağlayıcınıza bağlı olarak, Proton içine aktarmadan önce bir ${ knowledgeBaseLink } oluşturmanız gerekebilir."
       ],
-      "Expand the dropdown menu by clicking on the 3 dots (...)": [
-        "3 nokta (...) üzerine tıklayarak menüyü açın"
+      "Expand the dropdown menu by clicking on the 3 dots (...).": [
+        "3 nokta (...) üzerine tıklayarak menüyü açın."
       ],
-      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın"
+      "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "Bir ${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
-      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton": [
-        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın"
+      "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
+        "${ boldAppPassword } oluşturun ve Proton tarafından sorulduğunda normal parolanız yerine bunu yazın."
       ],
-      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }": [
-        "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin"
+      "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
+        "${ yahooMailLink } üzerindeki profilinizin altından ${ boldAccountInfo } bölümüne gidin."
       ],
-      "Go to ${ boldAccountSecurity }": [
-        "${ boldAccountSecurity } bölümüne gidin"
+      "Go to ${ boldAccountSecurity }.": [
+        "${ boldAccountSecurity } bölümüne gidin."
       ],
-      "Go to Outlook ${ securitySettingsLink }": [
-        "Outlook ${ securitySettingsLink } bölümüne gidin"
+      "Go to Outlook ${ securitySettingsLink }.": [
+        "Outlook ${ securitySettingsLink } bölümüne gidin."
       ],
-      "If 2-step verification is off, turn it on": [
-        "2 aşamalı kimlik doğrulaması kapalı ise açın"
+      "If 2-step verification is off, turn it on.": [
+        "2 aşamalı kimlik doğrulaması kapalı ise açın."
       ],
-      "Open your ${ yahooMailLink } contacts": [
-        "${ yahooMailLink } kişilerinizi açın"
+      "Open your ${ yahooMailLink } contacts.": [
+        "${ yahooMailLink } kişilerinizi açın."
       ],
-      "Open your Outlook ${ outlookContactsLink }": [
-        "Outlook ${ outlookContactsLink } bölümünü açın"
+      "Open your Outlook ${ outlookContactsLink }.": [
+        "Outlook ${ outlookContactsLink } bölümünü açın."
       ],
-      "Select ${ boldExportContacts } and choose which contacts to export": [
-        "${ boldExportContacts } seçin ve dışa aktarmak istediğiniz kişileri seçin"
+      "Select ${ boldExportContacts } and choose which contacts to export.": [
+        "${ boldExportContacts } seçin ve dışa aktarmak istediğiniz kişileri seçin."
       ],
-      "Select ${ boldExportCSV }": [
-        "${ boldExportCSV } seçin"
+      "Select ${ boldExportCSV }.": [
+        "${ boldExportCSV } seçin."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
@@ -3666,8 +3669,8 @@
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
-      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin"
+      "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Bir takvimi Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Outlook üzerinden indirebilirsiniz:"
@@ -3675,8 +3678,8 @@
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Yahoo in 3 easy steps:": [
         "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. 3 kolay adımda Yahoo üzerinden indirebilirsiniz:"
       ],
-      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process": [
-        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin"
+      "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
+        "Kişileri Proton içine aktarmak için ${ knowledgeBaseLink } gerekecek. İçe aktarma işlemine başlamadan önce bunu indirin."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "E-postaları Proton içine aktarmak için şu adımları izleyerek Outlook üzerinden ${ appPasswordLink } almalısınız:"
@@ -3747,23 +3750,23 @@
       ]
     },
     "Import instructions step": {
-      "Click on the ${ boldICS } link and download the file": [
-        "${ boldICS } bağlantısına tıklayıp dosyayı indirin"
+      "Click on the ${ boldICS } link and download the file.": [
+        "${ boldICS } bağlantısına tıklayıp dosyayı indirin."
       ],
-      "Go to ${ calendarLink } in your Outlook settings": [
-        "Outlook ayarlarınızdan ${ calendarLink } bölümüne gidin"
+      "Go to ${ calendarLink } in your Outlook settings.": [
+        "Outlook ayarlarınızdan ${ calendarLink } bölümüne gidin."
       ],
-      "Go to ${ calendarViewLink } in Yahoo": [
-        "Yahoo üzerinde ${ calendarViewLink } bölümüne gidin"
+      "Go to ${ calendarViewLink } in Yahoo.": [
+        "Yahoo üzerinde ${ calendarViewLink } bölümüne gidin."
       ],
-      "Mouse over the calendar you want to import and open the dropdown menu": [
-        "İmleci içe aktarmak istediğiniz takvim üzerine getirin ve menüyü açın"
+      "Mouse over the calendar you want to import and open the dropdown menu.": [
+        "İmleci içe aktarmak istediğiniz takvim üzerine getirin ve menüyü açın."
       ],
-      "Select ${ boldExport } to export the calendar as an ICS file": [
-        "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin"
+      "Select ${ boldExport } to export the calendar as an ICS file.": [
+        "Takvimi ICS olarak dışa aktarmak için ${ boldExport } seçin."
       ],
-      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it": [
-        "${ boldPublish } altından, içe aktarmak istediğiniz takvimi seçin. İzinleri ${ boldCanViewAllDetails } olarak ayarlayıp yayınlayın"
+      "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
+        "${ boldPublish } altından, içe aktarmak istediğiniz takvimi seçin. İzinleri ${ boldCanViewAllDetails } olarak ayarlayıp yayınlayın."
       ]
     },
     "Import key": {
@@ -4580,6 +4583,9 @@
       "Invited via email": [
         "E-posta ile davet edildi"
       ],
+      "Issues signing in?": [
+        "Oturum açmakta sorun mu yaşıyorsunuz?"
+      ],
       "It appears some of your data is encrypted and locked.": [
         "Bazı verileriniz şifrelenmiş ve kilitlenmiş görünüyor."
       ],
@@ -5195,6 +5201,9 @@
       ],
       "Update recovery phrase": [
         "Kurtarma ifadesini güncelle"
+      ],
+      "Update the URL in your password manager": [
+        "Parola yöneticinizdeki adresi güncelleyin"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "${ planName } avantajlarını kaybetmemek için bugün yükseltin."
@@ -7170,6 +7179,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ _price } per user": [
+        "Bir kullanıcı için ${ _price } ile başlar"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -7206,26 +7235,6 @@
       ],
       "Switch plan": [
         "Tarifeyi değiştir"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ _price } per user": [
-        "Bir kullanıcı için ${ _price } ile başlar"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: attribute": {
@@ -7469,6 +7478,23 @@
         "Ekip yönetimi"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Upgrade to the business pack with access to all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
+      ],
+      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
+        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
+      ],
+      "Your trial ends ${ formattedTrialExpirationDate }": [
+        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -7534,23 +7560,6 @@
         "Geçerli tarifenizde bir fırsat fiyatından yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat fiyatınızı kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Upgrade to the business pack with access to all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan kurumsal kişisel gizililik paketine yükseltin."
-      ],
-      "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        "Tüm ücretli Proton hizmetlerine erişim sağlayan en üst düzey kişisel gizililik paketine yükseltin."
-      ],
-      "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Deneme süreniz ${ formattedTrialExpirationDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } / ${ humanMaxSpace }"
@@ -7593,6 +7602,17 @@
         "Seçtiğiniz tarife: ${ planName }"
       ]
     },
+    "new_plans: Title": {
+      "${ mailPlanName } Trial": [
+        "${ mailPlanName } deneme"
+      ],
+      "Upgrade to ${ planName }": [
+        "${ planName } tarifesine yükselt"
+      ],
+      "Your account's usage": [
+        "Hesap kullanımınız"
+      ]
+    },
     "new_plans: title": {
       "Delete account?": [
         "Hesap silinsin mi?"
@@ -7614,17 +7634,6 @@
       ],
       "Unlock premium features by upgrading": [
         "Tarifenizi yükselterek ücretli özelliklere erişin"
-      ]
-    },
-    "new_plans: Title": {
-      "${ mailPlanName } Trial": [
-        "${ mailPlanName } deneme"
-      ],
-      "Upgrade to ${ planName }": [
-        "${ planName } tarifesine yükselt"
-      ],
-      "Your account's usage": [
-        "Hesap kullanımınız"
       ]
     },
     "new_plans: tooltip": {

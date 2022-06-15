@@ -302,6 +302,9 @@
       "OK": [
         "ОК"
       ],
+      "Open in a new tab": [
+        ""
+      ],
       "Open navigation": [
         "Показать панель навигации"
       ],
@@ -2165,8 +2168,8 @@
       "Primary key is not valid for sending": [
         "Доверенные ключи не действительны для отправки"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Основной ключ, полученный для внутреннего пользователя, действителен для отправки"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Первичный ключ, полученный для внутреннего пользователя, не действителен для отправки"
       ],
       "Request timed out": [
         "Время запроса истекло"
@@ -4030,7 +4033,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Поделитесь своими впечатлениями (необязательно)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4776,12 +4779,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Представляем обновленный Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Больше сервисов, одна миссия по обеспечению конфиденциальности."
-      ],
       "Settings": [
         "Настройки"
       ]
@@ -5240,6 +5237,11 @@
       ],
       "Replay video": [
         "Воспроизвести видео"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        ""
       ]
     },
     "Warning": {

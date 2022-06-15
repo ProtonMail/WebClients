@@ -298,6 +298,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Ouvrir dans un nouvel onglet"
+      ],
       "Open navigation": [
         "Ouvrir la navigation"
       ],
@@ -2129,8 +2132,8 @@
       "Primary key is not valid for sending": [
         "La clé principale n'est pas valide pour l'envoi"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "La clé principale récupérée pour l’utilisateur interne est valide pour l’envoi"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi"
       ],
       "Request timed out": [
         "La requête a expiré"
@@ -2744,15 +2747,15 @@
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "${ contactCount } contact présente plusieurs adresses électroniques.",
+        "${ contactCount } contacts présentent plusieurs adresses électroniques."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } présente plusieurs adresses électroniques."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contact trouvé",
@@ -3059,11 +3062,11 @@
         "Veuillez sélectionner les dossiers que vous souhaitez importer :"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupe.",
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupCount } groupes."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Sélectionnez l'adresse ou les adresses électroniques à ajouter à ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Veuillez patienter pendant que nous recherchons des contacts qui peuvent être signés une nouvelle fois avec la clé de chiffrement principale."
@@ -3916,7 +3919,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Parlez-nous de votre expérience (facultatif)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Voici le nouveau Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Plus de services, une seule mission : la protection de la vie privée."
-      ],
       "Settings": [
         "Paramètres"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Rejouer la vidéo"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Ouvrir dans un nouvel onglet"
       ]
     },
     "Warning": {

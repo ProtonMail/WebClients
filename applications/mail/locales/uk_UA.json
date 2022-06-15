@@ -527,6 +527,12 @@
       "Merge contacts": [
         "Об'єднати контакти"
       ],
+      "Messages from this sender": [
+        "Повідомлення від цього відправника"
+      ],
+      "Messages to this recipient": [
+        "Повідомлення цьому отримувачу"
+      ],
       "Minimize composer": [
         "Згорнути редактор"
       ],
@@ -869,7 +875,7 @@
         "Довіряти ключам",
         "Довіряти ключам"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "Довіряти відкритому ключу"
       ],
       "Try again": [
@@ -2996,8 +3002,8 @@
       "Primary key is not valid for sending": [
         "Основний ключ недійсний для надсилання"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Для внутрішнього користувача не отримано дійсного основного ключа для надсилання"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Для внутрішнього користувача отримано недійсний основний ключ для надсилання"
       ],
       "Public key could not be trusted": [
         "Відкритий ключ не може бути довіреним"
@@ -7152,12 +7158,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Представляємо оновлений Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Більше служб, єдина місія приватності."
-      ],
       "Settings": [
         "Налаштування"
       ]

@@ -298,6 +298,9 @@
       "OK": [
         "ΟΚ"
       ],
+      "Open in a new tab": [
+        ""
+      ],
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
@@ -2129,8 +2132,8 @@
       "Primary key is not valid for sending": [
         "Το πρωτεύον κλειδί δεν είναι έγκυρο για αποστολή"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Το πρωτεύον κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη είναι έγκυρο για αποστολή"
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Το πρωτεύον κλειδί που ανακτήθηκε για τον εσωτερικό χρήστη δεν είναι έγκυρο για αποστολή"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -3916,7 +3919,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Πείτε μας για την εμπειρία σας (Προαιρετικό)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Παρουσίαση του ενημερωμένου Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Περισσότερες υπηρεσίες, μία αποστολή ιδιωτικότητας."
-      ],
       "Settings": [
         "Ρυθμίσεις"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Ξαναπαίξιμο βίντεο"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        ""
       ]
     },
     "Warning": {

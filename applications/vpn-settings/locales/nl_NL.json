@@ -65,9 +65,6 @@
       "Confirm": [
         "Bevestig"
       ],
-      "contact": [
-        "contact"
-      ],
       "Contact support": [
         "Neem contact op met ondersteuning"
       ],
@@ -343,6 +340,9 @@
       ],
       "Upgrade": [
         "Upgraden"
+      ],
+      "Use ${ label } theme": [
+        ""
       ],
       "Use a different card": [
         "Gebruik een andere kaart"
@@ -1945,6 +1945,9 @@
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
+      "Choose the look and feel of the application.": [
+        ""
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -2095,6 +2098,9 @@
       "Internet connection restored.": [
         "Internetverbinding hersteld."
       ],
+      "Issues signing in?": [
+        "Problemen met inloggen?"
+      ],
       "Learn how to log in to ${ VPN_APP_NAME } with third-party VPN applications.": [
         "Meer informatie over hoe u zich kunt aanmelden bij ${ VPN_APP_NAME } met VPN-applicaties via apps van derden."
       ],
@@ -2221,9 +2227,6 @@
       "Securing your account": [
         "Beveiliging van uw account"
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Selecter het aantal inbegrepen gebruikers in uw abonnement. Elke extra gebruiker kost ${ price }. Heeft u meer dan ${ maxUsers } gebruikersaccount nodig, ${ contactMailToLink } dan ons Klantensuccesteam."
-      ],
       "Server is currently down": [
         "Server is momenteel offline"
       ],
@@ -2340,6 +2343,9 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
+      ],
+      "Update the URL in your password manager": [
+        "Werk de URL in uw wachtwoordmanager bij"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
@@ -3037,7 +3043,7 @@
         "Doorgaan naar controle"
       ],
       "Continue with free": [
-        "Doorgaan met gratis"
+        "Continue with Free"
       ],
       "Delete account": [
         "Account verwijderen"
@@ -3092,12 +3098,12 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "Gebruik ${ connections } high-speed VPN-verbinding",
-        "Gebruik ${ connections } high-speed VPN-verbindingen"
+        "Gebruik ${ connections } supersnelle VPN-verbinding",
+        "Gebruik ${ connections } supersnelle VPN-verbindingen"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "Gebruik ${ connections } high-speed VPN-verbinding per gebruiker",
-        "Gebruik ${ connections } high-speed VPN-verbindingen per gebruiker"
+        "Gebruik ${ connections } supersnelle VPN-verbinding per gebruiker",
+        "Gebruik ${ connections } supersnelle VPN-verbindingen per gebruiker"
       ]
     },
     "new_plans: feature": {
@@ -3117,8 +3123,8 @@
         "${ n } e-mailadressen per gebruiker"
       ],
       "${ n } filter": [
-        "",
-        ""
+        "${ n } filter",
+        "${ n } filters"
       ],
       "${ n } folder": [
         "${ n } map",
@@ -3129,8 +3135,8 @@
         "${ n } mappen en labels"
       ],
       "${ n } label": [
-        "",
-        ""
+        "${ n } label",
+        "${ n } labels"
       ],
       "${ n } message per day": [
         "${ n } bericht per dag",
@@ -3173,7 +3179,7 @@
         "Automatisch beantwoorden"
       ],
       "Catch-all": [
-        ""
+        "Catch-all"
       ],
       "Centralized billing": [
         "Gecentraliseerde facturatie"
@@ -3618,7 +3624,7 @@
         "Opslagruimte wordt gedeeld door ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } en ${ DRIVE_APP_NAME }. Beheerders kunnen afwijkende opslagruimte toewijzen aan gebruikers binnen de organisatie"
       ],
       "Support for file-sharing protocols like BitTorrent": [
-        "Ondersteuning voor filesharingprotocollen zoals BitTorrent"
+        "Ondersteuning voor bestandsdelingprotocollen zoals BitTorrent"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
         "Gebruik uw eigen e-mailadressen met een aangepast domein, zoals u@uwnaam.com"
@@ -3808,6 +3814,18 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
       ]
     },
     "Price": {
@@ -4085,12 +4103,9 @@
         "Status"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Maak kennis met de vernieuwde Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Meer diensten, één privacymissie."
+    "Themes": {
+      "Themes": [
+        ""
       ]
     },
     "Title": {

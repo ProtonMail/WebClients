@@ -779,36 +779,36 @@
     },
     "Calendar status": {
       "Not synced": [
-        ""
+        "Nincs szinkronizálva"
       ],
       "Syncing": [
-        ""
+        "Szinkronizálás"
       ]
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        ""
+        "A naptár visszafejtése nem sikerült"
       ],
       "Calendar is syncing": [
-        ""
+        "A naptár szinkronizál"
       ],
       "Calendar is too big": [
-        ""
+        "A naptár túl nagy"
       ],
       "Calendar link is not accessible": [
-        ""
+        "A naptár hivatkozás nem érhető el"
       ],
       "Calendar link is temporarily inaccessible": [
-        ""
+        "A naptár hivatkozás átmenetileg nem érhető el"
       ],
       "Failed to sync calendar": [
-        ""
+        "A naptár szinkronizálása nem sikerült"
       ],
       "More than 12 hours passed since last update": [
-        ""
+        "Több mint 12 óra telt el a legutóbbi frissítés óta"
       ],
       "Unsupported calendar format": [
-        ""
+        "Nem támogatott naptár formátum"
       ]
     },
     "Collapsible tooltip": {
@@ -1747,10 +1747,10 @@
         "Hitelesítési hiba."
       ],
       "Calendar limit reached": [
-        ""
+        "Elérte a naptárak maximális számát"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        ""
+        "Nem lehetséges minden importált naptárhoz egy új naptár létrehozása, a személyes naptár korlátok miatt."
       ],
       "Contact could not be saved": [
         "A névjegy mentése nem sikerült"
@@ -1762,12 +1762,12 @@
         "Ebben a böngészőben nem lehetséges az üzenetek tartalmában való keresés. Lépjen ki a privát módból vagy próbáljon másik böngészőt."
       ],
       "Deselect at least ${ calendarToFixCount } calendar": [
-        "",
-        ""
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál",
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál"
       ],
       "Deselect at least ${ calendarToFixCount } calendar or": [
-        "",
-        ""
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy",
+        "Törölje a kiválasztást legalább ${ calendarToFixCount } naptárnál vagy"
       ],
       "Email address invalid": [
         "Érvénytelen e-mail cím"
@@ -1779,19 +1779,19 @@
         "6 számjegyet írjon be"
       ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
-        ""
+        "A fájl: \"${ item.name }\", hiba miatt nem tölthető fel: \"${ error }\""
       ],
       "File \"${ name }\" is already downloading": [
-        ""
+        "A fájl: \"${ name }\" már töltődik lefelé"
       ],
       "File cannot be merged with folder": [
-        ""
+        "Fájl nem egyesíthető mappával"
       ],
       "File selection is already downloading": [
-        ""
+        "A kiválasztott fájlok már töltődnek lefelé"
       ],
       "Folder \"${ name }\" is already downloading": [
-        ""
+        "A mappa: \"${ name }\" már töltődik lefelé"
       ],
       "Folder name cannot be empty.": [
         "A mappa nevének megadása szükséges."
@@ -1800,10 +1800,10 @@
         "Képfeltöltés sikertelen"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Helytelen bejelentkezési adatok. Próbálja meg újra."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Hibás e-mail titkosítási jelszó. Kérjük, próbálja újra."
       ],
       "Incorrect password. Please try again.": [
         "Hibás jelszó. Próbálja meg újra."
@@ -1821,8 +1821,8 @@
         "A címke neve nem lehet üres."
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "",
-        ""
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
+        "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal"
       ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
@@ -1831,7 +1831,7 @@
         "Hiányzó aláírás"
       ],
       "No data to import": [
-        ""
+        "Nincs importálandó adat"
       ],
       "No valid address found": [
         "Nem található érvényes e-mail cím"
@@ -1854,8 +1854,8 @@
         "Aktiválja újra az üzenetek tartalmában való keresést"
       ],
       "Please fix the highlighted conflict to proceed.": [
-        "",
-        ""
+        "Javítsa ki a megjelölt hibát a folytatáshoz.",
+        "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
       "Preferences could not be saved": [
         "Beállítások mentése nem sikerült"
@@ -1864,13 +1864,13 @@
         "Az elsődleges cím kulcsa nincs visszafejtve"
       ],
       "Primary address key is not decrypted.": [
-        ""
+        "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
       "Report failed to be sent": [
         "A bejelentés elküldése nem sikerült"
       ],
       "Request timed out": [
-        ""
+        "A kérés túllépte az időkorlátot"
       ],
       "Search failed": [
         "A keresés nem sikerült"
@@ -1885,10 +1885,10 @@
         "Néhány névjegy törlése nem sikerült"
       ],
       "Some groups could not be deleted": [
-        ""
+        "Néhány csoport törlése nem sikerült"
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
-        ""
+        "Bizonyos címkék neve nem használható. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bizonyos címkék neve túl hosszú a ${ MAIL_APP_NAME }be importáláshoz. Módosítsa az importálás beállításait, hogy ezek kerüljenek átnevezésre."
@@ -1897,40 +1897,40 @@
         "Hiba történt. Kérjük, ${ refresh } az oldalt a folytatáshoz. Ha a hiba továbbra is fennáll, kérjük lépjen velünk kapcsolatba: ${ supportTeam }."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        ""
+        "Ez a mappanév érvénytelen. Adjon meg egy másik nevet."
       ],
       "The folder name is too long. Please choose a different name.": [
-        ""
+        "Ez a mappanév túl hosszú. Adjon meg egy másik nevet."
       ],
       "The label name is invalid. Please choose a different name.": [
-        ""
+        "Ez a címkenév érvénytelen. Adjon meg egy másik nevet."
       ],
       "The label name is too long. Please choose a different name.": [
-        ""
+        "Ez a címkenév túl hosszú. Adjon meg egy másik nevet."
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
-        ""
+        "Az eredeti fájl új verziója még nincs feltöltve, próbálja meg később"
       ],
       "The original file has missing active revision": [
-        ""
+        "Az eredeti fájlnak nincs aktív verziója"
       ],
       "The original file has missing hash key": [
-        ""
+        "Az eredeti fájlnak nincs ellenőrzőösszeg kulcsa"
       ],
       "The original file has missing session key": [
-        ""
+        "Az eredeti fájlnak nincs munkafolyamat kulcsa"
       ],
       "The original file is not uploaded yet, please try again later": [
-        ""
+        "Az eredeti fájl még nincs feltöltve, próbálja meg később"
       ],
       "The original folder not found": [
-        ""
+        "Az eredeti mappa nem található"
       ],
       "The original folder or file not found": [
-        ""
+        "Az eredeti mappa vagy fájl nem található"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        ""
+        "Túl sok mappa van a külső e-mail fiókban. Módosítsa az importálás beállításait, hogy néhány mappát töröljön."
       ],
       "There was an error when exporting the contacts vCards": [
         "Hiba történt a névjegyek vCard formátumra exportálásakor"
@@ -1963,7 +1963,7 @@
         "Meg kell adnia egy nevet"
       ],
       "Your browser does not support uploading folders": [
-        ""
+        "A böngészője nem támogatja mappák feltöltését"
       ],
       "Your import will not be processed.": [
         "Az importálás nem lesz feldolgozva."
@@ -2063,16 +2063,16 @@
     },
     "file size format, long": {
       "Bytes": [
-        ""
+        "Bájt"
       ],
       "Gigabytes": [
-        ""
+        "Gigabájt"
       ],
       "Kilobytes": [
-        ""
+        "Kilobájt"
       ],
       "Megabytes": [
-        ""
+        "Megabájt"
       ]
     },
     "Filter notification": {
@@ -2197,16 +2197,16 @@
     },
     "Info": {
       "${ activeDownloadsCount } downloading": [
-        "",
-        ""
+        "${ activeDownloadsCount } letöltés",
+        "${ activeDownloadsCount } letöltés"
       ],
       "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "",
-        ""
+        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)",
+        "${ activeDownloadsCount } letöltés (${ downloadProgress }%)"
       ],
       "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "",
-        ""
+        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)",
+        "${ activeUploadsCount } feltöltés (${ uploadProgress }%)"
       ],
       "${ addressCount } email address": [
         "${ addressCount } e-mail cím",
@@ -2228,8 +2228,8 @@
         ""
       ],
       "${ canceledCount } canceled": [
-        "",
-        ""
+        "${ canceledCount } megszakítva",
+        "${ canceledCount } megszakítva"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
         "",
@@ -2247,20 +2247,20 @@
         "${ contactsCount } névjegy található"
       ],
       "${ doneCount } finished": [
-        "",
-        ""
+        "${ doneCount } kész",
+        "${ doneCount } kész"
       ],
       "${ doneDownloadsCount } downloaded": [
-        "",
-        ""
+        "${ doneDownloadsCount } letöltve",
+        "${ doneDownloadsCount } letöltve"
       ],
       "${ doneUploadsCount } uploaded": [
-        "",
-        ""
+        "${ doneUploadsCount } feltöltve",
+        "${ doneUploadsCount } feltöltve"
       ],
       "${ errorCount } failed": [
-        "",
-        ""
+        "${ errorCount } sikertelen",
+        "${ errorCount } sikertelen"
       ],
       "${ groupCounts } group found": [
         "${ groupCounts } csoport található",
@@ -2275,8 +2275,8 @@
         ""
       ],
       "${ pausedCount } paused": [
-        "",
-        ""
+        "${ pausedCount } felfüggesztve",
+        "${ pausedCount } felfüggesztve"
       ],
       "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
         "",
@@ -2294,14 +2294,14 @@
         "${ speed }/mp"
       ],
       "${ storageSize } storage": [
-        ""
+        "${ storageSize } tárhely"
       ],
       "${ updated } contact updated successfully.": [
         "${ updated } névjegy sikeresen frissítve.",
         "${ updated } névjegy sikeresen frissítve."
       ],
       "${ uploadName } already exists in this location.": [
-        ""
+        "${ uploadName } már létezik ezen a helyen."
       ],
       "(${ memberCount } member)": [
         "",
@@ -2311,10 +2311,10 @@
         ""
       ],
       "A number will be added to the filename": [
-        ""
+        "Egy számot ad a fájl nevéhez"
       ],
       "A number will be added to the folder name": [
-        ""
+        "Egy számot ad a mappa nevéhez"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "A fiók hozzáférése rendezetlen számla miatt korlátozva lett. Kérjük lépjen kapcsolatba az adminisztrátorral."
@@ -2340,7 +2340,7 @@
         "A hivatkozás birtokában bárki hozzáférhet a fájlhoz."
       ],
       "Anyone with this link can access your folder.": [
-        ""
+        "A hivatkozás birtokában bárki hozzáférhet a mappához."
       ],
       "Are you sure you want to empty trash and permanently delete all the items?": [
         "Biztos benne, hogy kiüríti a lomtárat és véglegesen törli az összes benne lévő elemet?"
@@ -2388,7 +2388,7 @@
         ""
       ],
       "Conflict": [
-        ""
+        "Ütközés"
       ],
       "Continue using ${ appName } and unlock drive later": [
         ""
@@ -2425,7 +2425,7 @@
         "A fájl linkjének létrehozása"
       ],
       "Creating link to folder": [
-        ""
+        "Mappa hivatkozásának előkészítése"
       ],
       "Creating share": [
         ""
@@ -2490,7 +2490,7 @@
         "Nem sikerült a biztonságos link létrehozása. Próbálja meg később."
       ],
       "Failed to open a secure link. The reason is: ${ error }": [
-        ""
+        "Biztonságos hivatkozás megnyitása sikertelen. Az oka: ${ error }"
       ],
       "File \"${ name }\" was deleted during download": [
         "\"${ name }\" fájl törölve lett letöltés közben"
@@ -2502,7 +2502,7 @@
         "A fájl aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
       "File will not be uploaded": [
-        ""
+        "Fájl nem lesz feltöltve"
       ],
       "Finalizing": [
         "Befejezés"
@@ -2511,7 +2511,7 @@
         "\"${ link.name }\" mappa törölve lett letöltés közben"
       ],
       "Folder contents will merge into a single folder": [
-        ""
+        "Összefűzi a mappák tartalmát egy mappává"
       ],
       "Folder is missing signature. We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ${ emailAddress } töltötte fel ezt: ${ fileName }."
@@ -2520,7 +2520,7 @@
         "A mappa aláírása hiányzik. Nem tudtuk megerősíteni, hogy ki töltötte fel ezt: ${ fileName }."
       ],
       "Folder will not be uploaded": [
-        ""
+        "Mappa nem lesz feltöltve"
       ],
       "Free up some space or add more storage space.": [
         "Szabadítson fel helyet vagy vásároljon több területet."
@@ -2578,7 +2578,7 @@
         "Inicializálás"
       ],
       "Internet connection lost": [
-        ""
+        "Az internetkapcsolat megszakadt"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Az internet kapcsolat megszakadt. Ellenőrizze az eszköz csatlakoztathatóságát."
@@ -2599,7 +2599,7 @@
         "További információk"
       ],
       "Link copied to clipboard": [
-        ""
+        "Hivatkozás a vágólapra másolva"
       ],
       "Link expires: ": [
         "A link lejár: "
@@ -2683,10 +2683,10 @@
         "Csak akkor változtassa meg ezeket a beállításokat, ha PGP-t használ a nem ${ BRAND_NAME } címzettekhez."
       ],
       "Only the people with the link and the password can access this file.": [
-        ""
+        "Csak azok férhetnek hozzá a fájlhoz, akik a hivatkozást és a jelszót is ismerik."
       ],
       "Only the people with the link and the password can access this folder.": [
-        ""
+        "Csak azok férhetnek hozzá a mappához, akik a hivatkozást és a jelszót is ismerik."
       ],
       "Other options": [
         "Más opciók"
@@ -2729,7 +2729,7 @@
         "A fájl linkjének előkészítése"
       ],
       "Preparing link to folder": [
-        ""
+        "A mappa hivatkozásának előkészítése"
       ],
       "Preview": [
         "Előnézet"
@@ -2759,7 +2759,7 @@
         "A keresés nem engedélyezhető ebben a böngészőben"
       ],
       "Select an uploaded file or folder and create a link to it.": [
-        ""
+        "Hivatkozás létrehozásához, válasszon ki egy feltöltött fájlt vagy mappát."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
@@ -2771,10 +2771,10 @@
         ""
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        ""
+        "A szerverek nem érhetők el. Próbálja meg egy pár perc múlva"
       ],
       "Session timed out": [
-        ""
+        "A munkamenet lejárt"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "A PGP beállítása lehetővé teszi végpontok közt titkosított e-mail küldését olyan nem-${ BRAND_NAME } felhasználónak, aki PGP-kompatibilis szolgáltatást használ."
@@ -2837,7 +2837,7 @@
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
       "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        ""
+        "A hivatkozás egy korábbi\nváltozatban lett létrehozva és nem módosítható. A beállítások megváltoztatásához törölje a hivatkozást és készítsen egy újat."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a fájlhoz. A fájl újbóli megosztásához egy új hivatkozásra lesz szükség."
@@ -2846,14 +2846,14 @@
         ""
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "",
-        ""
+        "Ez törli a hivatkozást és megszünteti a fájl vagy mappa elérhetőségét azok számára, akiknek elküldte.",
+        "Ez törli a hivatkozásokat és megszünteti a fájlok vagy mappák elérhetőségét azok számára, akiknek elküldte."
       ],
       "This will overwrite the existing file": [
-        ""
+        "Felülírja a meglévő fájlt"
       ],
       "This will overwrite the existing folder": [
-        ""
+        "Felülírja a meglévő mappát"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait."
@@ -2934,13 +2934,13 @@
         ""
       ],
       "We're moving! Join us at our new site: ${ link }.": [
-        ""
+        "Költözünk! Csatlakozzon az új címünkön: ${ link }."
       ],
       "Week": [
         "Hét"
       ],
       "What do you want to do?": [
-        ""
+        "Mit szeretne tenni?"
       ],
       "What would you like to do?": [
         ""
@@ -4129,12 +4129,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "Beállítások"
       ]

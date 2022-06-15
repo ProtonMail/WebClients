@@ -300,6 +300,9 @@
       "OK": [
         "OK"
       ],
+      "Open in a new tab": [
+        "Deschidere in filă nouă"
+      ],
       "Open navigation": [
         "Deschidere navigare"
       ],
@@ -2147,8 +2150,8 @@
       "Primary key is not valid for sending": [
         "Cheia primară nu este validă pentru trimiteri."
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        "Cheia primară preluată pentru utilizatorul intern nu este valabilă pentru trimiteri."
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Cheia primară preluată pentru utilizatorul intern nu este validă pentru trimiteri."
       ],
       "Request timed out": [
         "Solicitarea a expirat"
@@ -3219,7 +3222,7 @@
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveți siguranța că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -3973,7 +3976,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        "Spuneți-ne despre experiența avută. (Opțional)"
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -4691,12 +4694,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "Vă prezentăm noul Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Mai multe servicii, o singură misiune: confidențialitatea."
-      ],
       "Settings": [
         "Setări"
       ]
@@ -5147,6 +5144,11 @@
       ],
       "Replay video": [
         "Redare video"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Deschidere in filă nouă"
       ]
     },
     "Warning": {

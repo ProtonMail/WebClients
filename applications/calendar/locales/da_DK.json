@@ -298,6 +298,9 @@
       "OK": [
         "Ok"
       ],
+      "Open in a new tab": [
+        "Åbn i en ny fane"
+      ],
       "Open navigation": [
         "Åbn navigation"
       ],
@@ -2127,10 +2130,10 @@
         "Primære adressenøgle er ikke dekrypteret."
       ],
       "Primary key is not valid for sending": [
-        ""
+        "Primær nøgle er ikke gyldig til afsendelse"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        ""
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primær nøgle hentet for intern bruger er ikke gyldig til afsendelse"
       ],
       "Request timed out": [
         "Forespørgsel fik timeout"
@@ -2163,13 +2166,13 @@
         "Starttidspunkt skal være før sluttidspunkt"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        ""
+        "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
       ],
       "The label name is invalid. Please choose a different name.": [
-        ""
+        "Etikettenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
@@ -2744,15 +2747,15 @@
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "${ contactCount } indeholder adskillige e-mailadresser.",
+        "${ contactCount } indeholder adskillige e-mailadresser."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } medlem",
         "${ contactEmailsLength } medlemmer"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } indeholder adskillige e-mailadresser."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt fundet",
@@ -3032,7 +3035,7 @@
         "Forekomster som arrangøren tidligere har opdateret vil blive opbevaret."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
+        "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
@@ -3059,11 +3062,11 @@
         "Vælg venligst de mapper, du ønsker at importere:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } gruppe.",
+        "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } grupper."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -3339,13 +3342,13 @@
     },
     "Key badge": {
       "Compromised": [
-        ""
+        "Kompromitteret"
       ],
       "Expired": [
         "Udløbet"
       ],
       "Obsolete": [
-        ""
+        "Forældet"
       ],
       "Primary": [
         "Primær"
@@ -3906,30 +3909,30 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        ""
+        "Skift eller tilføj konto"
       ]
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Vi præsenterer Proton's nye udseende.${ br } Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
       ]
     },
     "new_plans: label": {
       "Tell us about your experience (Optional)": [
-        ""
+        "Tell us about your experience. (Optional)"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "Feedback"
       ]
     },
     "new_plans: title": {
       "Give feedback": [
-        ""
+        "Giv feedback"
       ],
       "Updated Proton, unified protection": [
-        ""
+        "Opdateret Proton, forenet beskyttelse"
       ]
     },
     "Notification": {
@@ -4193,13 +4196,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } har markeret denne nøgle som kompromitteret. Denne nøgle kan ikke bruges hverken til kryptering eller til signaturkontrol."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } har markeret denne nøgle som forældet. Denne nøgle kan kun bruges til signaturkontrol."
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
       ]
     },
     "PGP key warning": {
@@ -4606,12 +4609,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "Indstillinger"
       ]
@@ -5054,6 +5051,11 @@
       ],
       "Replay video": [
         "Afspil video"
+      ]
+    },
+    "View event button tooltip": {
+      "Open in a new tab": [
+        "Åbn i en ny fane"
       ]
     },
     "Warning": {

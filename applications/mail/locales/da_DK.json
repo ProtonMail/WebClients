@@ -521,6 +521,12 @@
       "Merge contacts": [
         "Flet kontakter"
       ],
+      "Messages from this sender": [
+        "Beskeder fra denne afsender"
+      ],
+      "Messages to this recipient": [
+        "Beskeder til denne modtager"
+      ],
       "Minimize composer": [
         "Minimér skrivevinduet"
       ],
@@ -861,7 +867,7 @@
         "Stol på nøgle",
         "Stol på nøgler"
       ],
-      "Trust Public Key": [
+      "Trust public key": [
         "Hav tillid til offentlig nøgle"
       ],
       "Try again": [
@@ -2885,7 +2891,7 @@
         "Etikettenavn må ikke være tomt."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        ""
+        "Det maksimale antal vedhæftninger (${ attachmentsCountLimit }) overskredet"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Flet mindst ${ calendarToFixCount } kalender med en eksisterende Proton-kalender",
@@ -2958,10 +2964,10 @@
         "Primære adressenøgle er ikke dekrypteret."
       ],
       "Primary key is not valid for sending": [
-        ""
+        "Primær nøgle er ikke gyldig til afsendelse"
       ],
-      "Primary key retrieved for internal user is valid for sending": [
-        ""
+      "Primary key retrieved for internal user is not valid for sending": [
+        "Primær nøgle hentet for intern bruger er ikke gyldig til afsendelse"
       ],
       "Public key could not be trusted": [
         "Den offentlige nøgle kunne ikke stoles på"
@@ -3014,7 +3020,7 @@
         "Nogle af vedhæftningerne kunne ikke dekrypteres.\nHvis du har den tilhørende private nøgle, vil du stadig kunne dekryptere filerne med et program som for eksempel GnuPG."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        ""
+        "Mappenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
       "The folder name is too long. Please choose a different name.": [
         "Mappenavnet er for langt. Vælg venligst et andet navn."
@@ -3023,7 +3029,7 @@
         "Nøgleegenskaberne for ${ emailAddress } kunne ikke udtrækkes"
       ],
       "The label name is invalid. Please choose a different name.": [
-        ""
+        "Etikettenavnet er ikke gyldigt. Vælg venligst et andet navn."
       ],
       "The label name is too long. Please choose a different name.": [
         "Etikettenavnet er for langt. Vælg venligst et andet navn."
@@ -3707,15 +3713,15 @@
         "${ calendarsToBeMergedCount } flettede kalendere"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "${ contactCount } indeholder adskillige e-mailadresser.",
+        "${ contactCount } indeholder adskillige e-mailadresser."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } Medlem",
         "${ contactEmailsLength } Medlemmer"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } indeholder adskillige e-mailadresser."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } kontakt fundet",
@@ -4025,7 +4031,7 @@
         "Vil du gensignere kontaktdetaljerne?"
       ],
       "Don't forget to share your password with the recipient": [
-        ""
+        "Glem ikke at dele din adgangskode med modtageren"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Download vores mobil-app fra din foretrukne app-butik for at kommunikere sikkert på farten."
@@ -4052,10 +4058,10 @@
         "Duplikeret nøgle opdateret"
       ],
       "Edit encryption": [
-        ""
+        "Rediger kryptering"
       ],
       "Edit expiration time": [
-        ""
+        "Rediger udløbstidspunkt"
       ],
       "Edit link": [
         "Redigér link"
@@ -4081,7 +4087,7 @@
         "indlejrede billeder"
       ],
       "Encrypt message": [
-        ""
+        "Krypter besked"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Indtast den bekræftelseskode, der blev sendt til ${ destinationText }."
@@ -4115,7 +4121,7 @@
         "Udløber snart"
       ],
       "Expiring message": [
-        ""
+        "Bedsked med udløb"
       ],
       "file attached": [
         "fil vedhæftet",
@@ -4128,7 +4134,7 @@
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
       ],
       "Folder": [
-        ""
+        "Mapppe"
       ],
       "For increased security, activate 2FA.": [
         "Aktivér 2FA for øget sikkerhed."
@@ -4166,7 +4172,7 @@
         "Timer"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        ""
+        "Jeg sender denne besked til en ikke-ProtonMail bruger."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Hvis du har problemer med at oprette din konto, bedes du anmode om en invitation. Så vil vi svare inden for en arbejdsdag."
@@ -4347,7 +4353,7 @@
         "Ingen trackere fundet, men nogle billeder kunne ikke indlæses med sporingsbeskyttelse"
       ],
       "non-Proton Mail": [
-        ""
+        "ikke-Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
@@ -4362,7 +4368,7 @@
         "af"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
+        "En eller flere af dine betroede nøgler er blevet markeret som \"kompromitteret\" af deres ejer. Vi anbefaler, at du ikke længere har tillid til disse nøgler."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
@@ -4407,11 +4413,11 @@
         "Vælg venligst den type link du ønsker at indsætte og udfyld alle felterne."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } gruppe.",
+        "Vælg hvilken eller hvilke e-mail-adresser der skal tilføjes til ${ groupCount } grupper."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Vent venligst mens vi leder efter kontakter, der kan gensigneres med den primære krypteringsnøgle."
@@ -4492,7 +4498,7 @@
         "Vælg, hvilke kalendere der skal importeres. Der oprettes en ny kalender for hver importeret kalender op til grænsen på 20 kalendere."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
+        "Send en krypteret, adgangskodebeskyttet besked til en ${ boldText } e-mailadresse."
       ],
       "Sending": [
         "Afsender"
@@ -4909,13 +4915,13 @@
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Din besked vil blive slettet fra modtagerens indbakke og din sendt-mappe ${ dateString } kl. ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "Din besked vil blive slettet fra modtagerens indbakke og din sendt-mappe i dag kl. ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "Din besked vil blive slettet fra modtagerens indbakke og din sendt-mappe i morgen kl. ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "Din besked udløber om ${ numberOfDays } dag.",
@@ -4957,13 +4963,13 @@
     },
     "Key badge": {
       "Compromised": [
-        ""
+        "Kompromitteret"
       ],
       "Expired": [
         "Udløbet"
       ],
       "Obsolete": [
-        ""
+        "Forældet"
       ],
       "Primary": [
         "Primær"
@@ -6053,42 +6059,42 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        ""
+        "Skift eller tilføj konto"
       ]
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Vi præsenterer Proton's nye udseende.${ br } Mange tjenester, én mission. Velkommen til et internet, hvor privatlivsbeskyttelse er standard."
       ],
       "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
+        "Vi har introduceret Proton's forenede og opfriskede udseende. Vi vil gerne høre, hvad du synes om det!"
       ]
     },
     "new_plans: label": {
       "0 - Awful": [
-        ""
+        "0 - Forfærdelig"
       ],
       "5 - Wonderful": [
-        ""
+        "5 - Vidunderlig"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "Hvordan vil du beskrive din oplevelse med det nye Proton?"
       ],
       "Tell us about your experience (Optional)": [
-        ""
+        "Fortæl os om dine indtryk. (Valgfrit)"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "Feedback"
       ]
     },
     "new_plans: title": {
       "Give feedback": [
-        ""
+        "Giv feedback"
       ],
       "Updated Proton, unified protection": [
-        ""
+        "Opdateret Proton, forenet beskyttelse"
       ]
     },
     "Notification": {
@@ -6213,13 +6219,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } har markeret denne nøgle som kompromitteret. Denne nøgle kan ikke bruges hverken til kryptering eller til signaturkontrol."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } har markeret denne nøgle som forældet. Denne nøgle kan kun bruges til signaturkontrol."
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "Vi anbefaler, at du ikke længere har tillid til denne nøgle."
       ]
     },
     "PGP key warning": {
@@ -6593,10 +6599,10 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        ""
+        "Denne besked er fra en mailingliste."
       ],
       "Unsubscribed": [
-        ""
+        "Afmeldt"
       ]
     },
     "Step in filter modal": {
@@ -6823,7 +6829,7 @@
         "Flyt ${ selectionCount } beskeder"
       ],
       "Password copied to clipboard": [
-        ""
+        "Adgangskode kopieret til udklipsholder"
       ],
       "Phishing reported": [
         "Phishing anmeldt"
@@ -6910,12 +6916,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ],
       "Settings": [
         "Indstillinger"
       ]

@@ -192,7 +192,7 @@
         "复制邮箱地址"
       ],
       "Copy password to clipboard": [
-        ""
+        "将密码复制至剪贴板"
       ],
       "Create a new contact group": [
         "创建联系人群组"
@@ -288,7 +288,7 @@
         "编辑电子邮件地址"
       ],
       "Edit encryption": [
-        ""
+        "编辑加密"
       ],
       "Edit label": [
         "编辑标签"
@@ -321,7 +321,7 @@
         "展开"
       ],
       "Expiration time": [
-        ""
+        "失效时间"
       ],
       "Export": [
         "导出"
@@ -333,7 +333,7 @@
         "导出联系人"
       ],
       "External encryption": [
-        ""
+        "外部加密"
       ],
       "Filter on...": [
         "筛选依据..."
@@ -518,6 +518,12 @@
       "Merge contacts": [
         "合并联系人"
       ],
+      "Messages from this sender": [
+        ""
+      ],
+      "Messages to this recipient": [
+        ""
+      ],
       "Minimize composer": [
         "最小化编辑窗"
       ],
@@ -681,10 +687,10 @@
         "移除 ${ attachmentName }"
       ],
       "Remove encryption": [
-        ""
+        "移除加密"
       ],
       "Remove expiration time": [
-        ""
+        "移除失效时间"
       ],
       "Remove this label": [
         "移除此标签"
@@ -765,7 +771,7 @@
         "设为默认"
       ],
       "Set encryption": [
-        ""
+        "设置加密"
       ],
       "Set expiration time": [
         "设置有效期"
@@ -857,8 +863,8 @@
       "Trust key": [
         "信任此密钥"
       ],
-      "Trust Public Key": [
-        "信任其公钥"
+      "Trust public key": [
+        ""
       ],
       "Try again": [
         "重试"
@@ -1024,10 +1030,10 @@
         "已转发"
       ],
       "Replied to": [
-        "答复给"
+        "已回复"
       ],
       "Replied to all": [
-        "全部答复"
+        "已回复所有人"
       ],
       "Star conversation": [
         "星标会话"
@@ -2844,7 +2850,7 @@
         "这个名称已经用过了"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "文件夹名称不能为空。"
       ],
       "Image upload failed": [
         "图像上传失败"
@@ -2868,7 +2874,7 @@
         "验证码无效"
       ],
       "Label name cannot be empty.": [
-        ""
+        "标签名称不能为空。"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         ""
@@ -2942,7 +2948,7 @@
       "Primary key is not valid for sending": [
         ""
       ],
-      "Primary key retrieved for internal user is valid for sending": [
+      "Primary key retrieved for internal user is not valid for sending": [
         ""
       ],
       "Public key could not be trusted": [
@@ -3030,10 +3036,10 @@
         "该字段至少需要 ${ minimumLength } 个字符。"
       ],
       "This folder name is not available. Please choose a different name.": [
-        ""
+        "文件夹名称不可用，请重新填写。"
       ],
       "This label name is not available. Please choose a different name.": [
-        ""
+        "标签名称不可用，请重新填写。"
       ],
       "This message has already been sent": [
         "此邮件已发送"
@@ -3768,7 +3774,7 @@
         "(无收件人)"
       ],
       "10 email addresses": [
-        ""
+        "10 个电子邮件地址"
       ],
       "A recovery phrase is one of the safest ways to protect access to your account. You can use it to access your account and recover your encrypted data if you ever forget your password.": [
         "“恢复密语”是保护账户访问权限的最安全方法之一。如果您忘记了密码，您可以用它来访问账户并恢复加密数据。"
@@ -3987,10 +3993,10 @@
         "重复的密钥已更新"
       ],
       "Edit encryption": [
-        ""
+        "更改加密方式"
       ],
       "Edit expiration time": [
-        ""
+        "编辑过期时间"
       ],
       "Edit link": [
         "修改链接"
@@ -4014,7 +4020,7 @@
         "张嵌入图像"
       ],
       "Encrypt message": [
-        ""
+        "邮件加密"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "验证码已发至 ${ destinationText }，请在下方输入。"
@@ -4059,7 +4065,7 @@
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
       "Folder": [
-        ""
+        "文件夹"
       ],
       "For increased security, activate 2FA.": [
         "开启双重验证可进一步提升账户安全性。"
@@ -4095,7 +4101,7 @@
         "小时"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        ""
+        "我在给非 Proton Mail 用户发送消息。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您创建账户存在困难，请提交注册申请，我们将在一个工作日内回复。"
@@ -4107,7 +4113,7 @@
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
       "Image description": [
-        ""
+        "图片描述"
       ],
       "Image URL": [
         "图片地址"
@@ -4275,7 +4281,7 @@
         "没有检测到跟踪器，但跟踪器防护导致某些图像无法加载"
       ],
       "non-Proton Mail": [
-        ""
+        "非 Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
@@ -4419,7 +4425,7 @@
         "请选择要导入的日历。将为每个导入的日历创建一个新日历（最多 20 个）。"
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
+        "向 ${ boldText } 邮箱发送加密且需要密码才能打开的邮件。"
       ],
       "Sending": [
         "正在发送"
@@ -4452,7 +4458,7 @@
         "显示原始邮件"
       ],
       "Sorry, this message does not exist or has already expired.": [
-        ""
+        "对不起，此消息不存在或已过期。"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME }、${ DRIVE_APP_NAME } 均共用同一存储空间。"
@@ -4827,22 +4833,22 @@
         "您的邮箱将只会用于此一次性验证。"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "您发送的消息将在 ${ dateString } ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "您发送的消息将在今天 ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "您发送的消息将在明天 ${ formattedTime } 从您的已发送文件夹和接收者的收件箱删除。"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        ""
+        "您的消息将在 ${ numberOfDays } 天后过期。"
       ],
       "Your message will expire today.": [
-        ""
+        "您的消息将在今天过期。"
       ],
       "Your message will expire tomorrow.": [
-        ""
+        "您的消息将在明天过期。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
@@ -5995,7 +6001,7 @@
     },
     "new_plans: title": {
       "Give feedback": [
-        ""
+        "提供反馈"
       ],
       "Updated Proton, unified protection": [
         "新版 Proton，全方位的隐私保护"
@@ -6495,10 +6501,10 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        ""
+        "此邮件来自邮件列表。"
       ],
       "Unsubscribed": [
-        ""
+        "已退订"
       ]
     },
     "Step in filter modal": {
@@ -6702,7 +6708,7 @@
         "移动 ${ selectionCount } 封邮件"
       ],
       "Password copied to clipboard": [
-        ""
+        "密码已复制到剪贴板"
       ],
       "Phishing reported": [
         "欺诈信息举报完成"
@@ -6728,7 +6734,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        ""
+        "反馈已发送"
       ]
     },
     "Suffix for price": {
@@ -6789,12 +6795,6 @@
       ]
     },
     "Text": {
-      "Introducing the updated Proton.": [
-        "新版 Proton 闪亮登场。"
-      ],
-      "More services, one privacy mission.": [
-        "产品服务愈加丰富，隐私保护使命如一。"
-      ],
       "Settings": [
         "设置"
       ]
@@ -7023,10 +7023,10 @@
         "导出联系人"
       ],
       "External encryption": [
-        ""
+        "外部加密"
       ],
       "Feedback": [
-        ""
+        "用户反馈"
       ],
       "Filter on": [
         "筛选依据"
@@ -7200,7 +7200,7 @@
         "发送邮件"
       ],
       "Send feedback": [
-        ""
+        "发送反馈"
       ],
       "Send with changed preferences?": [
         "按变更后的首选项发送？"
