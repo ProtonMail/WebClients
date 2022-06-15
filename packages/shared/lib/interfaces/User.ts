@@ -38,6 +38,7 @@ export interface User {
     ToMigrate: 0 | 1;
     MnemonicStatus: MNEMONIC_STATUS;
     Idle: 0 | 1;
+    CreateTime: number;
 }
 
 export interface UserModel extends User {
