@@ -43,7 +43,7 @@ const handleApiErrorRefresh = () => {
 const handleError = (error: any) => {
     const apiError = getApiError(error);
     // If there is no API error message or it's a chunk loading error, assume it's a resource loading error.
-    if (!apiError.message || error?.message.contains('chunk')) {
+    if (!apiError.message || error?.message?.includes('chunk')) {
         if (handleEarlyAccessRefresh()) {
             return true;
         }
