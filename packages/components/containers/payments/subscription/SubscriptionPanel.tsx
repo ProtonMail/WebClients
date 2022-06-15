@@ -287,7 +287,7 @@ const SubscriptionPanel = ({
                 return getDefault();
             })()}
             {user.isPaid && user.canPay ? (
-                <Button onClick={handleEditPayment} className="mb0-5" size="large" color="norm" fullWidth>{c('Action')
+                <Button onClick={handleEditPayment} className="mb0-5" size="large" color="weak" fullWidth>{c('Action')
                     .t`Edit billing details`}</Button>
             ) : null}
             {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (
