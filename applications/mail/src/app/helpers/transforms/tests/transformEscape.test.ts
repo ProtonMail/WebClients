@@ -256,23 +256,25 @@ describe('transformEscape', () => {
                 const list = getAttribute('proton-poster');
                 expect(list.length).toBe(2);
             });
+        });
 
-            it('should add the prefix for SVG', () => {
+        describe('SVG have been totally discontinuated, should be removed, not prefixed!', () => {
+            it('should not add the prefix for SVG', () => {
                 const { querySelectorAll } = setup();
                 const list = querySelectorAll('proton-svg');
-                expect(list.length).toBe(1);
+                expect(list.length).toBe(0);
             });
 
-            it('should add the prefix for xlink:href', () => {
+            it('should not add the prefix for xlink:href', () => {
                 const { document } = setup();
                 const list = document.innerHTML.match(/proton-xlink:href/g);
-                expect(list?.length).toBe(2);
+                expect(list?.length).toBeUndefined();
             });
 
-            it('should add the prefix for svg href', () => {
+            it('should not add the prefix for svg href', () => {
                 const { querySelector } = setup();
                 const svgHref = querySelector('[proton-href="svg-href.jpg"]');
-                expect(svgHref).not.toBe(null);
+                expect(svgHref).toBe(null);
             });
         });
 
@@ -302,12 +304,6 @@ describe('transformEscape', () => {
                 const list = querySelectorAll('svg');
                 expect(list.length).toBe(0);
             });
-        });
-
-        it('should correctly escape svg', () => {
-            const { document } = setup();
-            expect(document.innerHTML).toMatch(/\/proton-svg>/);
-            expect(document.innerHTML).toMatch(/<proton-svg/);
         });
     });
 
