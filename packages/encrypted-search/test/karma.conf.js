@@ -24,7 +24,12 @@ module.exports = (config) => {
                         use: [
                             {
                                 loader: 'ts-loader',
-                                options: { transpileOnly: true },
+                                options: {
+                                    transpileOnly: true,
+                                    compilerOptions: {
+                                        jsx: 'react-jsx',
+                                    },
+                                },
                             },
                         ],
                         exclude: /node_modules/,
