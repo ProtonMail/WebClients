@@ -16,6 +16,8 @@ export { default as RadioGroup } from './RadioGroup';
 export { default as SearchInput } from './SearchInput';
 export { default as Scale } from './Scale';
 export * from './Scale';
+export { default as EmojiScale } from './EmojiScale';
+export * from './EmojiScale';
 export { default as TelInput } from './TelInput';
 export { default as TextArea } from './TextArea';
 export { default as TimeInput } from './TimeInput';

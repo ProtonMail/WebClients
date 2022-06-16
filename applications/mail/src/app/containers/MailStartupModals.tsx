@@ -12,6 +12,8 @@ import {
     getShouldOpenMnemonicModal,
     V5WelcomeModal,
     useShouldOpenV5WelcomeModal,
+    RebrandingFeedbackModal,
+    useRebrandingFeedback,
 } from '@proton/components';
 import { MnemonicPromptModal } from '@proton/components/containers/mnemonic';
 
@@ -50,6 +52,9 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
     const [v5WelcomeModal, setV5WelcomeModal, renderV5WelcomeModal] = useModalState();
     const shouldOpenV5WelcomeModal = useShouldOpenV5WelcomeModal();
 
+    const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
+    const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
+
     const onceRef = useRef(false);
     useEffect(() => {
         if (onceRef.current) {
@@ -69,8 +74,15 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
             openModal(setReferralModal);
         } else if (shouldOpenV5WelcomeModal) {
             openModal(setV5WelcomeModal);
+        } else if (handleRebrandingFeedbackModalDisplay) {
+            openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenMnemonicModal, shouldOpenReferralModal.open, shouldOpenV5WelcomeModal]);
+    }, [
+        shouldOpenMnemonicModal,
+        shouldOpenReferralModal.open,
+        shouldOpenV5WelcomeModal,
+        handleRebrandingFeedbackModalDisplay,
+    ]);
 
     return (
         <>
@@ -87,6 +99,9 @@ const MailStartupModals = ({ onboardingOpen, onOnboardingDone }: Props) => {
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
             {renderMnemonicModal && <MnemonicPromptModal {...mnemonicPromptModal} />}
             {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
+            {renderRebrandingFeedbackModal && (
+                <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
+            )}
         </>
     );
 };
