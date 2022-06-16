@@ -1,14 +1,7 @@
-@import '~@proton/styles/scss/config';
-
-.proton-emoji-mart .emoji-mart {
-	background-color: var(--background-norm);
-	border: none;
-
-	.emoji-mart-category-label span {
-		background-color: var(--background-norm);
-	}
-
-	.emoji-mart-search input {
-		background-color: var(--background-norm);
-	}
+// Forcing dropdown size unless dropdown positioning is panicking
+/* stylelint-disable */
+em-emoji-picker {
+	/* stylelint-enable */
+	block-size: 22rem;
+	inline-size: 20rem;
 }
