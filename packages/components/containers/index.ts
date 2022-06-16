@@ -19,6 +19,7 @@ export * from './error';
 export * from './eventManager';
 export * from './emailPrivacy';
 export * from './features';
+export * from './feedback';
 export * from './filePreview';
 export * from './filters';
 export * from './general';

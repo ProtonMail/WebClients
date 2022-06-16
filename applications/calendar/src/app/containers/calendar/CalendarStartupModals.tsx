@@ -9,6 +9,8 @@ import {
     getShouldOpenReferralModal,
     V5WelcomeModal,
     useShouldOpenV5WelcomeModal,
+    RebrandingFeedbackModal,
+    useRebrandingFeedback,
 } from '@proton/components';
 
 const CalendarStartupModals = () => {
@@ -23,6 +25,9 @@ const CalendarStartupModals = () => {
     // V5 welcome modal
     const [v5WelcomeModal, setV5WelcomeModal, renderV5WelcomeModal] = useModalState();
     const shouldOpenV5WelcomeModal = useShouldOpenV5WelcomeModal();
+
+    const [rebrandingFeedbackModal, setRebrandingFeedbackModal, renderRebrandingFeedbackModal] = useModalState();
+    const handleRebrandingFeedbackModalDisplay = useRebrandingFeedback();
 
     const onceRef = useRef(false);
     useEffect(() => {
@@ -39,13 +44,18 @@ const CalendarStartupModals = () => {
             openModal(setReferralModal);
         } else if (shouldOpenV5WelcomeModal) {
             openModal(setV5WelcomeModal);
+        } else if (handleRebrandingFeedbackModalDisplay) {
+            openModal(setRebrandingFeedbackModal);
         }
-    }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal]);
+    }, [shouldOpenReferralModal.open, shouldOpenV5WelcomeModal, handleRebrandingFeedbackModalDisplay]);
 
     return (
         <>
             {renderReferralModal && <ReferralModal endDate={shouldOpenReferralModal.endDate} {...referralModal} />}
             {renderV5WelcomeModal && <V5WelcomeModal app={app} {...v5WelcomeModal} />}
+            {renderRebrandingFeedbackModal && (
+                <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
+            )}
         </>
     );
 };

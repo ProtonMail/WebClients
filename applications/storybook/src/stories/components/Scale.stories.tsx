@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Scale } from '@proton/components';
+import { EmojiScale, Scale } from '@proton/components';
 import { getTitle } from '../../helpers/title';
 
 import mdx from './Scale.mdx';
@@ -31,4 +31,14 @@ export const Basic = () => {
             onChange={handleChange}
         />
     );
+};
+
+export const Emoji = () => {
+    const [value, setValue] = useState<number>();
+
+    const handleChange = (v: number) => {
+        setValue(v);
+    };
+
+    return <EmojiScale fromLabel="Awful" toLabel="Wonderful" value={value} onChange={handleChange} />;
 };

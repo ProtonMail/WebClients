@@ -1,0 +1,12 @@
+@import '~@proton/styles/scss/config';
+
+.emoji-scale {
+	&_input-button {
+		&#{&} {
+			inline-size: em(52);
+			block-size: em(52);
+			padding: 0;
+			display: flex;
+		}
+	}
+}
