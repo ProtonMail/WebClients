@@ -7,9 +7,12 @@ import { useFeature } from '../../hooks';
 import useHasRebrandingFeedback from './useHasRebrandingFeedback';
 
 export interface RebrandingFeatureValue {
-    hasVisitedRebrandingInThePast: boolean;
-    hasGivenRebrandingFeedback: boolean;
-    hasBeenPromptedForRebrandingFeedback: boolean;
+    /* User has visited rebranding in the past */
+    visited: boolean;
+    /* User has given rebranding feedback */
+    completed: boolean;
+    /* User has been prompted for rebranding feedback in the past */
+    prompted: boolean;
 }
 
 /*
@@ -50,20 +53,19 @@ const useRebrandingFeedback = () => {
             void rebranding.update({ ...rebrandingValue, ...value });
         };
 
-        const { hasVisitedRebrandingInThePast, hasGivenRebrandingFeedback, hasBeenPromptedForRebrandingFeedback } =
-            rebrandingValue;
+        const { visited, completed, prompted } = rebrandingValue;
 
         const prompt = () => {
             /**
              * User has already visited the v5 / rebranding update AND has already been
              * prompted for feedback previously. So we don't ask again.
              */
-            if (hasBeenPromptedForRebrandingFeedback) {
+            if (prompted) {
                 return;
             }
 
             /* We didn't prompt the user but they already gave feedback on their own */
-            if (hasGivenRebrandingFeedback) {
+            if (completed) {
                 return;
             }
 
@@ -72,7 +74,7 @@ const useRebrandingFeedback = () => {
              * setState callback api, therefore the curry. Yum!
              */
             setHandleDisplay(() => () => {
-                updateRebranding({ hasBeenPromptedForRebrandingFeedback: true });
+                updateRebranding({ prompted: true });
             });
         };
 
@@ -84,8 +86,8 @@ const useRebrandingFeedback = () => {
          * his browser for a really long time, prompting him anyway after expiration of
          * a certain amount of time in that case.
          */
-        if (!hasVisitedRebrandingInThePast) {
-            updateRebranding({ hasVisitedRebrandingInThePast: true });
+        if (!visited) {
+            updateRebranding({ visited: true });
 
             promptTimeoutId = window.setTimeout(prompt, DAY);
 
