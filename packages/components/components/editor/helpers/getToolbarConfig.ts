@@ -171,6 +171,7 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         },
         image: {
             showModal: () => {
+                console.log('show modal');
                 options.showModalImage({
                     onAddImages: (images) => {
                         if (options.onAddAttachments) {
