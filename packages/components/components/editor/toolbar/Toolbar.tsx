@@ -114,6 +114,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     <Vr aria-hidden="true" />
                     <ToolbarAlignmentDropdown setAlignment={config.alignment.setValue} />
                     <Vr aria-hidden="true" />
+                    <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
                     <ToolbarButton
                         onClick={config.blockquote.toggle}
                         aria-pressed={config.blockquote.isActive}
@@ -139,21 +140,6 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     >
                         <Icon name="eraser" className="mauto" alt={c('Action').t`Clear all formatting`} />
                     </ToolbarButton>
-                    <Vr aria-hidden="true" />
-                    <ToolbarEmojiDropdown onInsert={config.emoji.insert} openRef={openEmojiPickerRef} />
-                    {metadata.supportImages && (
-                        <>
-                            <Vr aria-hidden="true" />
-                            <ToolbarButton
-                                onClick={config.image.showModal}
-                                className="flex-item-noshrink"
-                                title={c('Action').t`Insert image`}
-                                tabIndex={-1}
-                            >
-                                <Icon name="file-image" className="mauto" alt={c('Action').t`Insert image`} />
-                            </ToolbarButton>
-                        </>
-                    )}
                 </>
             ) : null}
             {showMoreDropdown && (
