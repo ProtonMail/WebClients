@@ -1,12 +1,13 @@
-import { BaseEmoji } from 'emoji-mart';
 import { Alignment, Direction, FormatState, IEditor } from 'roosterjs-editor-types';
 
 import { Optional } from '@proton/shared/lib/interfaces';
 
 import { DEFAULT_BACKGROUND, DEFAULT_FONT_COLOR } from '../constants';
-import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
 import { EditorMetadata } from '../interface';
 import rgbToHex from './rgbToHex';
+
+import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from '../hooks/interface';
+import { Emoji } from '../toolbar/ToolbarEmojiDropdown';
 
 interface ItemToggle {
     isActive: boolean;
@@ -42,7 +43,7 @@ export interface ToolbarConfig {
     };
     textDirection: Pick<ItemValue<Direction>, 'setValue'>;
     emoji: {
-        insert: (emoji: BaseEmoji) => void;
+        insert: (emoji: Emoji) => void;
     };
 }
 
@@ -171,7 +172,6 @@ export const getToolbarConfig = async (editorInstance: IEditor | undefined, opti
         },
         image: {
             showModal: () => {
-                console.log('show modal');
                 options.showModalImage({
                     onAddImages: (images) => {
                         if (options.onAddAttachments) {
