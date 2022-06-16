@@ -1,17 +1,17 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import { c } from 'ttag';
 import { sendFeedback } from '@proton/shared/lib/api/feedback';
 
 import {
     Button,
-    Scale,
-    ScaleProps,
     TextArea,
     ModalTwo as Modal,
     ModalTwoHeader as ModalHeader,
     ModalTwoContent as ModalContent,
     ModalTwoFooter as ModalFooter,
     ModalProps,
+    EmojiScale,
+    EmojiScaleProps,
 } from '../../components';
 import { useApi, useLoading, useNotifications } from '../../hooks';
 
@@ -20,17 +20,19 @@ interface FeedbackModalModel {
     Feedback: string;
 }
 
-type FeedbackType = 'v4_migration' | 'calendar_launch' | 'rebrand_web';
+type FeedbackType = 'v4_migration' | 'calendar_launch' | 'web_clients_relaunch';
 
-interface Props extends ModalProps {
+export interface FeedbackModalProps extends ModalProps {
     onClose?: () => void;
+    onSuccess?: () => void;
+    onMount?: () => void;
     feedbackType: FeedbackType;
-    description: string;
+    description?: string;
     scaleTitle: string;
-    scaleProps: Omit<ScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
+    scaleProps: Omit<EmojiScaleProps, 'value' | 'InputButtonProps' | 'onChange'>;
 }
 
-const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...rest }: Props) => {
+const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMount, ...rest }: FeedbackModalProps) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
@@ -38,6 +40,10 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
         Score: undefined,
         Feedback: '',
     });
+
+    useEffect(() => {
+        onMount?.();
+    }, []);
 
     const handleSubmit = async () => {
         if (model.Score === undefined) {
@@ -55,6 +61,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
             })
         );
         createNotification({ text: c('Success notification when user send feedback').t`Feedback sent` });
+        rest.onSuccess?.();
         rest.onClose?.();
     };
 
@@ -79,15 +86,15 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
             size="large"
             {...rest}
         >
-            <ModalHeader title={c('new_plans: title').t`Give feedback`} />
+            <ModalHeader title={c('Feedback Modal Title').t`Your feedback`} />
             <ModalContent>
-                <p className="mb2">{description}</p>
+                {description && <p className="mb2">{description}</p>}
                 <div className="mb2">
                     <label className="mb1 block text-semibold" id="score-label">
                         {scaleTitle}
                     </label>
                     <div>
-                        <Scale
+                        <EmojiScale
                             {...scaleProps}
                             value={model.Score}
                             InputButtonProps={{ 'aria-describedby': 'score-label' }}
@@ -95,10 +102,11 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
                         />
                     </div>
                 </div>
+
                 {model.Score !== undefined && (
                     <div>
                         <label className="mb1 block text-semibold" htmlFor="feedback-label">{c('new_plans: label')
-                            .t`Tell us about your experience (Optional)`}</label>
+                            .t`Tell us about your experience. (Optional)`}</label>
                         <TextArea
                             id="feedback-label"
                             value={model.Feedback}
@@ -110,7 +118,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, ...r
             </ModalContent>
             <ModalFooter>
                 <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button type="submit" color="norm" loading={loading}>{c('Action').t`Submit`}</Button>
+                <Button type="submit" color="norm" loading={loading}>{c('Action').t`Send feedback`}</Button>
             </ModalFooter>
         </Modal>
     );
