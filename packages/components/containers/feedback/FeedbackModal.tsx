@@ -106,7 +106,7 @@ const FeedbackModal = ({ feedbackType, description, scaleTitle, scaleProps, onMo
                 {model.Score !== undefined && (
                     <div>
                         <label className="mb1 block text-semibold" htmlFor="feedback-label">{c('new_plans: label')
-                            .t`Tell us about your experience (Optional).`}</label>
+                            .t`Tell us about your experience. (Optional)`}</label>
                         <TextArea
                             id="feedback-label"
                             value={model.Feedback}
