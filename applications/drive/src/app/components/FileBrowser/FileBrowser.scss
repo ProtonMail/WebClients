@@ -32,6 +32,9 @@
 	&:focus {
 		background-color: var(--background-weak);
 	}
+	&:focus-visible {
+		outline: 0; // not needed, provided by file-browser-grid-item--highlight
+	}
 }
 
 .file-browser-grid-item.file-browser-grid-item--highlight {
