@@ -1,4 +1,4 @@
-import { ChangeEvent, ComponentPropsWithoutRef, useRef } from 'react';
+import { ChangeEvent, ComponentPropsWithoutRef } from 'react';
 import { c } from 'ttag';
 
 import emojiAwful from '@proton/styles/assets/img/emojis/emoji-awful.svg';
@@ -8,7 +8,7 @@ import emojiGood from '@proton/styles/assets/img/emojis/emoji-good.svg';
 import emojiWonderful from '@proton/styles/assets/img/emojis/emoji-wonderful.svg';
 
 import InputButton, { InputButtonProps } from './InputButton';
-import { classnames, concatStringProp, generateUID } from '../../helpers';
+import { classnames } from '../../helpers';
 import { Tooltip } from '../tooltip';
 import ScaleLabel from './ScaleLabel';
 import './EmojiScale.scss';
@@ -34,10 +34,6 @@ const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, cla
         onChange(Number(e.target.value));
     };
 
-    const { current: scaleFromToId } = useRef(generateUID('scale-from-to'));
-
-    const ariaDescribedBy = concatStringProp([InputButtonProps?.['aria-describedby'], scaleFromToId]);
-
     return (
         <div className={classnames([className, 'flex flex-column flex-gap-1'])} {...rest}>
             <div className="flex flex-justify-space-between flex-align-items-center">
@@ -53,7 +49,6 @@ const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, cla
                                 onChange={handleChange}
                                 ButtonLikeProps={{ className: 'emoji-scale_input-button' }}
                                 {...InputButtonProps}
-                                aria-describedby={ariaDescribedBy}
                             >
                                 <img src={option.emoji} alt={option.label()} aria-hidden="true" />
                                 <span className="sr-only">{option.label()}</span>
@@ -62,7 +57,7 @@ const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, cla
                     </Tooltip>
                 ))}
             </div>
-            <ScaleLabel id={scaleFromToId} fromLabel={fromLabel} toLabel={toLabel} />
+            <ScaleLabel fromLabel={fromLabel} toLabel={toLabel} />
         </div>
     );
 };
