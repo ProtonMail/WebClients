@@ -23,6 +23,7 @@
         "safe-buffer": "^5.2.1"
     },
     "dependencies": {
+        "@emoji-mart/data": "^1.0.2",
         "@openpgp/web-stream-tools": "^0.0.11",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/stylelint-config-proton": "workspace:packages/stylelint-config-proton",

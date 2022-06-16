@@ -1,0 +1,13 @@
+@import '~@proton/styles/scss/config';
+
+section#root {
+	background-color: var(--background-norm);
+
+	.sticky {
+		background-color: var(--background-norm);
+	}
+
+	.search input[type='search'] {
+		background-color: var(--background-norm);
+	}
+}

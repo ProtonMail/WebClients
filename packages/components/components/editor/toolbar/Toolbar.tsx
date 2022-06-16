@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Vr } from '@proton/atoms';
 
-import { forwardRef, Ref } from 'react';
+import { Ref } from 'react';
 import { classnames } from '../../../helpers';
 import Icon from '../../icon/Icon';
 import { ButtonGroup } from '../../button';
@@ -153,4 +153,4 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
     );
 };
 
-export default forwardRef(Toolbar);
+export default Toolbar;

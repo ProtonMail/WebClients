@@ -1,15 +1,45 @@
-import { Ref, useImperativeHandle, useRef } from 'react';
-import { BaseEmoji, Picker } from 'emoji-mart';
-import { c } from 'ttag';
-import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
-import ToolbarDropdown, { ToolbarDropdownAction } from './ToolbarDropdown';
-import { useTheme } from '../../../containers/themes';
+import { Ref, useEffect, useImperativeHandle, useRef } from 'react';
 
-import 'emoji-mart/css/emoji-mart.css';
+import data from '@emoji-mart/data';
+import { Picker } from 'emoji-mart';
+import { c } from 'ttag';
+
+import { DARK_THEMES } from '@proton/shared/lib/themes/themes';
+
+import { useTheme } from '../../../containers/themes';
+import ToolbarDropdown, { ToolbarDropdownAction } from './ToolbarDropdown';
+
+import emojiPickerCss from './ToolbarEmojiDropdown.raw.scss';
 import './ToolbarEmojiDropdown.scss';
 
+export interface Emoji {
+    id: string;
+    name: string;
+    native: string;
+    unified: string;
+    keywords: string[];
+    shortcodes: string;
+    emoticons: string[];
+    aliases: string[];
+}
+
+const EmojiPicker = (props: any) => {
+    const ref = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const picker = new Picker({ ...props, data, ref });
+
+        // Inject custom CSS inside the custom elements of the emoji picker
+        const style = document.createElement('style');
+        style.innerHTML = emojiPickerCss;
+        picker.shadowRoot?.appendChild(style);
+    }, []);
+
+    return <div ref={ref} />;
+};
+
 interface Props {
-    onInsert: (emoji: BaseEmoji) => void;
+    onInsert: (emoji: Emoji) => void;
     openRef: Ref<() => void>;
 }
 
@@ -19,7 +49,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
     const [theme] = useTheme();
     const isDarkTheme = DARK_THEMES.includes(theme);
 
-    const handleSelect = (emoji: BaseEmoji) => {
+    const handleSelect = (emoji: Emoji) => {
         onInsert(emoji);
         dropdownRef.current?.close();
     };
@@ -40,17 +70,14 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef }: Props) => {
             autoClose={false}
             autoCloseOutside={true}
         >
-            <div className="proton-emoji-mart">
-                <Picker
-                    autoFocus
-                    onSelect={handleSelect}
-                    theme={isDarkTheme ? 'dark' : 'light'}
-                    title="Choose your emoji"
-                    native
-                    showSkinTones={false}
-                    showPreview={false}
-                />
-            </div>
+            <EmojiPicker
+                autoFocus="true"
+                onEmojiSelect={handleSelect}
+                theme={isDarkTheme ? 'dark' : 'light'}
+                set="native"
+                skinTonePosition="none"
+                previewPosition="none"
+            />
         </ToolbarDropdown>
     );
 };
