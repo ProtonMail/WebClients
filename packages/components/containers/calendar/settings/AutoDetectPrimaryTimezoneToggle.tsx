@@ -12,7 +12,7 @@ interface Props extends ToggleProps {
 }
 
 const AutoDetectPrimaryTimezoneToggle = ({
-    calendarUserSettings: { PrimaryTimezone, AutoDetectPrimaryTimezone },
+    calendarUserSettings: { AutoDetectPrimaryTimezone },
     reverse = false,
     ref,
     ...rest
@@ -40,8 +40,6 @@ const AutoDetectPrimaryTimezoneToggle = ({
                 withLoadingAutoDetect(
                     handleChange({
                         AutoDetectPrimaryTimezone: reverse ? +!target.checked : +target.checked,
-                        // Set a timezone if it's the first time
-                        PrimaryTimezone: !PrimaryTimezone ? PrimaryTimezone : undefined,
                     })
                 )
             }
