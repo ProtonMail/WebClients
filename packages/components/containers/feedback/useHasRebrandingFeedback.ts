@@ -8,7 +8,7 @@ const useHasRebrandingFeedback = () => {
     const rebrandingFeedbackEnabled = useFeature(FeatureCode.RebrandingFeedbackEnabled);
 
     const rebrandingFeedbackFeatureIsEnabled = Boolean(rebrandingFeedbackEnabled.feature?.Value);
-    const isEnglishUser = Locale === 'en_US';
+    const isEnglishUser = Locale?.startsWith('en_');
 
     return rebrandingFeedbackFeatureIsEnabled && isEnglishUser;
 };
