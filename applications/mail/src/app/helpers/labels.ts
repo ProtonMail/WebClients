@@ -260,6 +260,8 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
     conversation: Conversation,
     changes: LabelChanges
 ): { updatedConversation: Conversation; conversationChanges: LabelChanges } => {
+    let Time = conversation.Time;
+
     const Labels = [...(conversation.Labels || [])];
     const conversationChanges: LabelChanges = {};
     Object.keys(changes).forEach((labelID) => {
@@ -276,6 +278,14 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
             }
         } else if (hasLabel) {
             if (numMessages <= 1) {
+                // When the conversation has been received through the event manager it will not have a Time field
+                // By removing the label, we are losing the context time associated
+                // If we rollback that change, both label time and fallback on conversation will be missing
+                // By filling the conversation time at label removal, we ensure there will be a time on rollback
+                if (Time === undefined) {
+                    Time = Labels[index].ContextTime;
+                }
+
                 Labels.splice(index, 1);
                 conversationChanges[labelID] = false;
             } else {
@@ -284,5 +294,5 @@ export const applyLabelChangesOnOneMessageOfAConversation = (
         }
     });
 
-    return { updatedConversation: { ...conversation, Labels }, conversationChanges };
+    return { updatedConversation: { ...conversation, Time, Labels }, conversationChanges };
 };
