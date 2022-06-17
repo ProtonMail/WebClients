@@ -32,7 +32,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
             buttons={[
                 <Button loading={loading} shape="solid" color="norm" onClick={handleSendVerificationEmailClick}>{c(
                     'Recovery Email'
-                ).t`Send verification email`}</Button>,
+                ).t`Verify with email`}</Button>,
                 <Button onClick={onClose} disabled={loading}>{c('Recovery Email').t`Cancel`}</Button>,
             ]}
             {...rest}
