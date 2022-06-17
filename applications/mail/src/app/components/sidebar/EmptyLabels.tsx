@@ -34,7 +34,7 @@ const EmptyLabels = ({ onFocus }: Props) => {
                 onClick={() => setEditLabelModalOpen(true)}
             >
                 <SidebarListItemContent
-                    right={<SidebarListItemContentIcon name="plus" color="white" />}
+                    right={<SidebarListItemContentIcon name="plus" />}
                     title={c('Title').t`Create a new label`}
                 >
                     {c('Link').t`Add label`}
