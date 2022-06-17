@@ -1,8 +1,12 @@
 import { ComponentPropsWithoutRef, ReactNode, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { c } from 'ttag';
+import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+
 import { SettingsSectionTitle } from '../account';
 import { Icon } from '../../components';
 import { classnames } from '../../helpers';
+import { useNotifications } from '../../hooks';
 
 export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
@@ -14,6 +18,7 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
 
 const SubSettingsSection = ({ id, observer, title, children, className, ...rest }: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);
+    const { createNotification } = useNotifications();
 
     useEffect(() => {
         const el = ref.current;
@@ -25,6 +30,18 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
             observer.unobserve(el);
         };
     }, [observer, ref.current]);
+
+    const handleLinkClick = () => {
+        const hash = document.location.hash;
+        const dehashedHref = document.location.href.replace(hash, '');
+
+        const urlToCopy = `${dehashedHref}#${id}`;
+        textToClipboard(urlToCopy);
+
+        createNotification({
+            text: c('Info').t`Link copied to clipboard`,
+        });
+    };
 
     return (
         <>
@@ -39,7 +56,7 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
                 className={classnames([className, 'sub-settings-section'])}
             >
                 {title && (
-                    <Link to={`#${id}`} className="sub-settings-section-link">
+                    <Link to={`#${id}`} onClick={handleLinkClick} className="sub-settings-section-link">
                         <SettingsSectionTitle className="opacity-on-hover-container relative">
                             <span
                                 className="sub-settings-section-anchor absolute opacity-on-hover"
