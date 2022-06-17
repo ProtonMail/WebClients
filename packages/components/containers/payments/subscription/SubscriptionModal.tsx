@@ -1,7 +1,7 @@
 import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
-import { APP_NAMES, APPS, DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
+import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
 import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
@@ -19,7 +19,6 @@ import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helper
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import {
     useApi,
-    useConfig,
     useEventManager,
     useLoading,
     useModals,
@@ -47,6 +46,7 @@ import CalendarDowngradeModal from './CalendarDowngradeModal';
 import SubscriptionCycleSelector from './SubscriptionCycleSelector';
 import MemberDowngradeModal from '../MemberDowngradeModal';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
+import { getDefaultSelectedProductPlans } from './helpers';
 
 interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     step?: SUBSCRIPTION_STEPS;
@@ -57,6 +57,7 @@ interface Props extends Pick<ModalProps<'div'>, 'open' | 'onClose' | 'onExit'> {
     disablePlanSelection?: boolean;
     disableThanksStep?: boolean;
     defaultAudience?: Audience;
+    defaultSelectedProductPlans: ReturnType<typeof getDefaultSelectedProductPlans>;
     onSuccess?: () => void;
 }
 
@@ -74,22 +75,6 @@ const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
     [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.CUSTOMIZATION,
 };
 
-export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: PlanIDs) => {
-    let defaultB2CPlan = PLANS.MAIL;
-    if (appName === APPS.PROTONVPN_SETTINGS) {
-        defaultB2CPlan = PLANS.VPN;
-    } else if (appName === APPS.PROTONDRIVE) {
-        defaultB2CPlan = PLANS.DRIVE;
-    }
-    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find((x) => planIDs[x]);
-    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((x) => planIDs[x]);
-    const defaultB2BPlan = PLANS.MAIL_PRO;
-    return {
-        [Audience.B2C]: matchingB2CPlan || defaultB2CPlan,
-        [Audience.B2B]: matchingB2BPlan || defaultB2BPlan,
-    };
-};
-
 const SubscriptionModal = ({
     step = SUBSCRIPTION_STEPS.PLAN_SELECTION,
     cycle = DEFAULT_CYCLE,
@@ -101,6 +86,7 @@ const SubscriptionModal = ({
     disablePlanSelection,
     disableThanksStep,
     defaultAudience = Audience.B2C,
+    defaultSelectedProductPlans,
     ...rest
 }: Props) => {
     const TITLE = {
@@ -118,7 +104,6 @@ const SubscriptionModal = ({
     const [subscription] = useSubscription();
     const { call } = useEventManager();
     const { createModal } = useModals();
-    const { APP_NAME } = useConfig();
     const { createNotification } = useNotifications();
     const [plans = []] = usePlans();
     const [organization] = useOrganization();
@@ -128,9 +113,7 @@ const SubscriptionModal = ({
     const { Code: couponCode } = checkResult?.Coupon || {}; // Coupon can be null
     const creditsRemaining = (user.Credit + (checkResult?.Credit ?? 0)) / 100;
     const [audience, setAudience] = useState(defaultAudience);
-    const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
-        return getDefaultSelectedProductPlans(APP_NAME, planIDs);
-    });
+    const [selectedProductPlans, setSelectedProductPlans] = useState(defaultSelectedProductPlans);
     const [model, setModel] = useState<Model>({
         step,
         cycle,

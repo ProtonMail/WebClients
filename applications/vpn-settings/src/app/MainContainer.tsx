@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { useLocation, Redirect, Switch, useHistory } from 'react-router-dom';
+import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import {
     TopBanners,
@@ -172,7 +173,7 @@ const MainContainer = () => {
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
-                                    <SubscriptionModalProvider>
+                                    <SubscriptionModalProvider app={APPS.PROTONVPN_SETTINGS}>
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea
                                             setActiveSection={setActiveSection}
@@ -180,7 +181,7 @@ const MainContainer = () => {
                                             config={routes.dashboard}
                                         >
                                             <PlansSection />
-                                            <YourPlanSection />
+                                            <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
                                             <BillingSection />
                                             <CreditsSection />
                                             <GiftCodeSection />

@@ -1,23 +1,19 @@
+import { ReactNode } from 'react';
 import { c } from 'ttag';
-import { Audience, Currency, Cycle } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { PLANS } from '@proton/shared/lib/constants';
 
 import { classnames } from '../../../helpers';
 import { Badge, Icon, Price, PrimaryButton } from '../../../components';
 
-import SelectPlan from './SelectPlan';
-
 interface Props {
-    target: Audience;
     planName: PLANS;
-    selectedPlan: PLANS;
-    planTitle: string;
+    planTitle: ReactNode;
     price: number;
     info: string;
     action: string;
     onSelect: (planName: PLANS) => void;
-    onSelectPlan: (planName: PLANS) => void;
-    features: React.ReactNode;
+    features: ReactNode;
     currency: Currency;
     cycle: Cycle;
     isCurrentPlan?: boolean;
@@ -41,16 +37,12 @@ const getCycleUnit = (planName: PLANS) => {
 };
 
 const PlanCard = ({
-    target,
-    canSelect,
     planName,
     planTitle,
     price,
     info,
     action,
-    selectedPlan,
     onSelect,
-    onSelectPlan,
     features,
     currency,
     cycle,
@@ -78,18 +70,12 @@ const PlanCard = ({
                     </div>
                 ) : null}
                 <div className="flex flex-row flex-align-items-center">
-                    {canSelect ? (
-                        <h2 className="h3 plan-selection-title flex text-bold text-capitalize mb0-5">
-                            <SelectPlan planName={selectedPlan} target={target} onChange={onSelectPlan} />
-                        </h2>
-                    ) : (
-                        <h2
-                            className="h3 plan-selection-title flex text-bold text-capitalize mb0-5"
-                            id={`desc_${planTitle}`}
-                        >
-                            {planTitle}
-                        </h2>
-                    )}
+                    <h2
+                        className="h3 plan-selection-title flex text-bold text-capitalize mb0-5"
+                        id={`desc_${planName}`}
+                    >
+                        {planTitle}
+                    </h2>
                     <span className="ml0-5 mb0-5">{badgeMultiUser}</span>
                 </div>
                 <p className="text-lg plan-selection-info color-weak mb1">{info}</p>
@@ -106,7 +92,7 @@ const PlanCard = ({
                     onClick={() => onSelect(planName)}
                     disabled={disabled}
                     className="w100"
-                    aria-describedby={`desc_${planTitle}`}
+                    aria-describedby={`desc_${planName}`}
                 >
                     {action}
                 </PrimaryButton>
