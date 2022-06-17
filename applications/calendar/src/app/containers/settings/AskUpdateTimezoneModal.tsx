@@ -1,6 +1,16 @@
 import { c } from 'ttag';
-import { Button, useApi, useEventManager, useNotifications, AlertModal, useLoading } from '@proton/components';
+
+import {
+    Button,
+    useApi,
+    useEventManager,
+    useNotifications,
+    AlertModal,
+    useLoading,
+    useCalendarUserSettings,
+} from '@proton/components';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
+import AutoDetectPrimaryTimezoneToggle from '@proton/components/containers/calendar/settings/AutoDetectPrimaryTimezoneToggle';
 
 interface Props {
     localTzid: string;
@@ -13,6 +23,7 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
+    const [calendarUserSettings] = useCalendarUserSettings();
 
     const handleUpdateTimezone = async (tzid: string) => {
         await api(updateCalendarUserSettings({ PrimaryTimezone: tzid }));
@@ -42,8 +53,17 @@ const AskUpdateTimezoneModal = ({ localTzid, onClose, isOpen }: Props) => {
                 <Button onClick={handleClose} autoFocus>{c('Action').t`Cancel`}</Button>,
             ]}
         >
-            {c('Info')
-                .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}
+            <p>{c('Info')
+                .jt`Your system time zone seems to have changed to ${timezone}. Do you want to update your time zone preference?`}</p>
+
+            <div className="flex flex-align-items-center flex-nowrap">
+                <AutoDetectPrimaryTimezoneToggle
+                    calendarUserSettings={calendarUserSettings}
+                    className="mr0-5 flex-item-noshrink"
+                    reverse
+                />
+                {c("Don't ask to update timezone checkbox label").t`Don't ask again`}
+            </div>
         </AlertModal>
     );
 };
