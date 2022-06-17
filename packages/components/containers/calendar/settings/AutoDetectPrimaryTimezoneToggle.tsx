@@ -1,24 +1,27 @@
 import { c } from 'ttag';
 import { updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { CalendarUserSettings } from '@proton/shared/lib/interfaces/calendar';
+
 import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
-import { Toggle, Info } from '../../../components';
+import { Toggle } from '../../../components';
+import { ToggleProps } from '../../../components/toggle/Toggle';
 
-import SettingsLayout from '../../account/SettingsLayout';
-import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
-import SettingsLayoutRight from '../../account/SettingsLayoutRight';
-
-interface Props {
+interface Props extends ToggleProps {
     calendarUserSettings: CalendarUserSettings;
+    reverse?: boolean;
 }
 
 const AutoDetectPrimaryTimezoneToggle = ({
-    calendarUserSettings: { PrimaryTimezone, AutoDetectPrimaryTimezone },
+    calendarUserSettings: { AutoDetectPrimaryTimezone },
+    reverse = false,
+    ref,
+    ...rest
 }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loadingAutoDetect, withLoadingAutoDetect] = useLoading();
+    const checked = reverse ? !AutoDetectPrimaryTimezone : !!AutoDetectPrimaryTimezone;
 
     const handleChange = async (data: Partial<CalendarUserSettings>) => {
         await api(updateCalendarUserSettings(data));
@@ -27,38 +30,20 @@ const AutoDetectPrimaryTimezoneToggle = ({
     };
 
     return (
-        <SettingsLayout>
-            <SettingsLayoutLeft>
-                <label
-                    className="text-semibold"
-                    htmlFor="autodetect-primary-timezone"
-                    id="label-autodetect-primary-timezone"
-                >
-                    <span className="mr0-5">{c('Label').t`Auto-detect primary time zone`}</span>
-                    <Info
-                        title={c('Info')
-                            .t`If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).`}
-                    />
-                </label>
-            </SettingsLayoutLeft>
-            <SettingsLayoutRight className="pt0-5 flex flex-align-items-center">
-                <Toggle
-                    id="autodetect-primary-timezone"
-                    aria-describedby="autodetect-primary-timezone"
-                    loading={loadingAutoDetect}
-                    checked={!!AutoDetectPrimaryTimezone}
-                    onChange={({ target }) =>
-                        withLoadingAutoDetect(
-                            handleChange({
-                                AutoDetectPrimaryTimezone: +target.checked,
-                                // Set a timezone if it's the first time
-                                PrimaryTimezone: !PrimaryTimezone ? PrimaryTimezone : undefined,
-                            })
-                        )
-                    }
-                />
-            </SettingsLayoutRight>
-        </SettingsLayout>
+        <Toggle
+            {...rest}
+            id="autodetect-primary-timezone"
+            aria-describedby="autodetect-primary-timezone"
+            loading={loadingAutoDetect}
+            checked={checked}
+            onChange={({ target }) =>
+                withLoadingAutoDetect(
+                    handleChange({
+                        AutoDetectPrimaryTimezone: reverse ? +!target.checked : +target.checked,
+                    })
+                )
+            }
+        />
     );
 };
 
