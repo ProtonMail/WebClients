@@ -6,7 +6,11 @@ import clsx from '../clsx';
 export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
     description?: ReactNode;
     icon: IconName;
-    alt?: string; // define `alt` only for non decorative icon
+    /** 
+     * define `alt` only for non decorative icons
+     * if the icon does not bring any added value to the text, leave it empty
+     */
+    alt?: string;
     status?: 'next' | 'done' | 'passed';
 }
 
