@@ -216,14 +216,14 @@ const SubscriptionPanel = ({
                 icon: 'calendar-checkmark',
                 text: (() => {
                     if (MaxMembers > 1) {
-                        const n = MAX_CALENDARS_PER_USER;
+                        const n = user.hasPaidMail ? MAX_CALENDARS_PER_USER : MAX_CALENDARS_FREE;
                         return c('Subscription attribute').ngettext(
                             msgid`${n} calendar per user`,
                             `${n} calendars per user`,
                             n
                         );
                     }
-                    const n = user.isFree ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
+                    const n = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
                     return c('Subscription attribute').ngettext(msgid`${n} calendar`, `${n} calendars`, n);
                 })(),
             },
