@@ -45,7 +45,7 @@ const UpsellBox = ({ title, items, children, actions, description }: UpsellBoxPr
             </h3>
             {children}
             {description && <div className="color-weak text-lg">{description}</div>}
-            <StripedList>
+            <StripedList alternate="odd">
                 {items.map((item) => {
                     return (
                         <StripedItem

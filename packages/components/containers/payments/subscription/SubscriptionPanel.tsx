@@ -126,7 +126,7 @@ const SubscriptionPanel = ({
 
     const getVpnAppFree = () => {
         return (
-            <StripedList>
+            <StripedList alternate="odd">
                 {(
                     [
                         {
@@ -177,7 +177,7 @@ const SubscriptionPanel = ({
             },
         ];
         return (
-            <StripedList>
+            <StripedList alternate="odd">
                 {items.map((item) => {
                     return (
                         <StripedItem
