@@ -1,12 +1,21 @@
 import { c } from 'ttag';
-import { Audience, Currency, Cycle, Organization, Plan, PlanIDs, Subscription } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Currency,
+    Cycle,
+    Organization,
+    Plan,
+    PlanIDs,
+    PlansMap,
+    Subscription,
+} from '@proton/shared/lib/interfaces';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import isTruthy from '@proton/utils/isTruthy';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
-import { CalendarLogo, DriveLogo, MailLogo, Tabs, VpnLogo, Icon } from '../../../components';
+import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
 import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { getShortPlan } from '../features/plan';
 import { getAllFeatures } from '../features';
@@ -20,6 +29,28 @@ export interface SelectedProductPlans {
     [Audience.B2C]: PLANS;
     [Audience.B2B]: PLANS;
 }
+
+const getPlansList = (enabledProductPlans: PLANS[], plan: Plan, plansMap: PlansMap) => {
+    if (enabledProductPlans.includes(plan.Name as PLANS)) {
+        return enabledProductPlans
+            .map((planName) => {
+                const plan = plansMap[planName];
+                if (plan) {
+                    return {
+                        plan: planName,
+                        label: plan.Title,
+                    };
+                }
+            })
+            .filter(isTruthy);
+    }
+};
+
+const getPlanPanel = (enabledProductPlans: PLANS[], planName: PLANS, plansMap: PlansMap) => {
+    if (enabledProductPlans.includes(planName)) {
+        return plansMap[planName];
+    }
+};
 
 interface Props {
     planIDs: PlanIDs;
@@ -64,20 +95,19 @@ const PlanSelection = ({
     const [vpnServers] = useVPNServersCount();
     const [vpnCountries] = useVPNCountriesCount();
 
+    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
+    const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE*/];
+
     const B2CPlans = [
         hasFreePlan ? FREE_PLAN : null,
-        selectedProductPlans[Audience.B2C] === PLANS.MAIL && plansMap[PLANS.MAIL],
-        selectedProductPlans[Audience.B2C] === PLANS.VPN && plansMap[PLANS.VPN],
-        selectedProductPlans[Audience.B2C] === PLANS.DRIVE && plansMap[PLANS.DRIVE],
+        getPlanPanel(enabledProductB2CPlans, selectedProductPlans[Audience.B2C], plansMap) || plansMap[PLANS.MAIL],
         plansMap[PLANS.BUNDLE],
     ].filter(isTruthy);
 
     const B2BPlans = [
         hasFreePlan ? FREE_PLAN : null,
-        selectedProductPlans[Audience.B2B] === PLANS.MAIL_PRO && plansMap[PLANS.MAIL_PRO],
-        // selectedPlan === PLANS.DRIVE_PRO && plansMap[PLANS.DRIVE_PRO],
+        getPlanPanel(enabledProductB2BPlans, selectedProductPlans[Audience.B2B], plansMap) || plansMap[PLANS.MAIL_PRO],
         plansMap[PLANS.BUNDLE_PRO],
-        // plansMap[PLANS.ENTERPRISE],
     ].filter(isTruthy);
 
     const isSignupMode = mode === 'signup';
@@ -87,25 +117,43 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = [PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as PLANS);
-        const canSelect = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].includes(plan.Name as PLANS);
         const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
-        const planTitle = plan.Title;
-        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnCountries, vpnServers);
 
         if (!shortPlan) {
             return null;
         }
 
+        const planTitle = shortPlan.title;
+        const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
+
+        const selectedPlan = selectedProductPlans[audience];
+        const plansList = getPlansList(audience === Audience.B2C ? enabledProductB2CPlans : [], plan, plansMap);
+
         return (
             <PlanCard
-                target={audience}
                 isCurrentPlan={!isSignupMode && isCurrentPlan}
                 action={actionLabel}
-                planTitle={planTitle}
                 info={shortPlan.description}
                 planName={plan.Name as PLANS}
-                canSelect={canSelect}
+                planTitle={
+                    plansList ? (
+                        <SelectTwo
+                            value={selectedPlan}
+                            onChange={({ value: newPlanName }) => {
+                                onChangeSelectedProductPlans({ ...selectedProductPlans, [audience]: newPlanName });
+                            }}
+                        >
+                            {plansList.map(({ plan, label }) => (
+                                <Option key={label} value={plan} title={label}>
+                                    {label}
+                                </Option>
+                            ))}
+                        </SelectTwo>
+                    ) : (
+                        planTitle
+                    )
+                }
                 recommended={isRecommended}
                 currency={currency}
                 disabled={loading || (isFree && !isSignupMode && isCurrentPlan)}
@@ -119,10 +167,6 @@ const PlanSelection = ({
                         <PlanCardFeatures audience={audience} features={features} planName={plan.Name as PLANS} />
                     )
                 }
-                selectedPlan={selectedProductPlans[audience]}
-                onSelectPlan={(plan) => {
-                    onChangeSelectedProductPlans({ ...selectedProductPlans, [audience]: plan });
-                }}
                 onSelect={(planName) => {
                     onChangePlanIDs(
                         switchPlan({
