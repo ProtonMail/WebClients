@@ -162,7 +162,7 @@ describe('CalendarSidebarListItems', () => {
         expect(getHasWeakColour()).toBe(true);
         expect(screen.getAllByText(/\(label\)/)[0]).toBeInTheDocument();
 
-        mockedGetCalendarIsNotSyncedInfo.mockImplementation(() => undefined);
+        mockedGetCalendarIsNotSyncedInfo.mockImplementation(() => null);
         rerender(renderComponent());
 
         expect(getHasWeakColour()).toBe(false);

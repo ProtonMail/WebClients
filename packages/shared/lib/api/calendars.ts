@@ -1,3 +1,4 @@
+import { CALENDAR_VALIDATION_MODE } from '../calendar/constants';
 import { Attendee, CalendarSettings, CalendarUserSettings } from '../interfaces/calendar';
 import {
     CalendarCreateArguments,
@@ -287,4 +288,16 @@ export const editPublicLink = ({
 export const getSubscriptionParameters = (calendarID: string) => ({
     url: `${CALENDAR_V1}/${calendarID}/subscription`,
     method: 'get',
+});
+
+export const validateSubscription = ({
+    url: URL,
+    mode: Mode = CALENDAR_VALIDATION_MODE.DOWNLOAD_AND_PARSE,
+}: {
+    url: string;
+    mode?: CALENDAR_VALIDATION_MODE;
+}) => ({
+    url: `${CALENDAR_V1}/subscription/validate`,
+    method: 'post',
+    data: { URL, Mode },
 });

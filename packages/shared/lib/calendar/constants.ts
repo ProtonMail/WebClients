@@ -320,3 +320,8 @@ export enum SETTINGS_VIEW {
     YEAR = 3,
     PLANNING = 4,
 }
+
+export enum CALENDAR_VALIDATION_MODE {
+    DOWNLOAD_ONLY = 0,
+    DOWNLOAD_AND_PARSE = 1,
+}
