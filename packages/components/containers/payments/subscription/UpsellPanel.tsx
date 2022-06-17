@@ -1,7 +1,15 @@
 import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { format, fromUnixTime } from 'date-fns';
-import { CYCLE, PLANS, APPS, BRAND_NAME, VPN_CONNECTIONS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import {
+    CYCLE,
+    PLANS,
+    APPS,
+    BRAND_NAME,
+    VPN_CONNECTIONS,
+    MAIL_APP_NAME,
+    APP_NAMES,
+} from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import {
     hasMailPro,
@@ -60,6 +68,7 @@ interface Item {
 }
 
 interface Props {
+    app: APP_NAMES;
     currency: Currency;
     subscription?: Subscription;
     plans: Plan[];
@@ -87,7 +96,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -178,6 +187,43 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
 
     const cycle = CYCLE.TWO_YEARS;
 
+    const drivePlan = plans.find(({ Name }) => Name === PLANS.DRIVE);
+    const driveStorage = humanSize(drivePlan?.MaxSpace ?? 500, undefined, undefined, 0);
+    if (user.isFree && app === APPS.PROTONDRIVE && drivePlan) {
+        const plan = drivePlan;
+        const price = (
+            <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
+                {(plan.Pricing[cycle] || 0) / cycle}
+            </Price>
+        );
+        const handleUpgrade = () =>
+            openSubscriptionModal({
+                cycle,
+                plan: PLANS.DRIVE,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+            });
+        const items: (Item | undefined)[] = [
+            {
+                icon: 'storage',
+                text: c('new_plans: Upsell attribute').t`Boost your storage space to ${driveStorage} total`,
+            },
+        ];
+        return (
+            <UpsellBox
+                title={getUpgradeText(plan.Title)}
+                description={c('new_plans: Info')
+                    .t`Make privacy your default for file backup, storage, sharing, and retrieval.`}
+                items={items.filter(isTruthy)}
+                actions={
+                    <Button onClick={handleUpgrade} size="large" color="norm" shape="solid" fullWidth>
+                        {c('new_plans: Action').jt`From ${price}`}
+                    </Button>
+                }
+            />
+        );
+    }
+
     const bundlePlan = plans.find(({ Name }) => Name === PLANS.BUNDLE);
     const bundleStorage = humanSize(bundlePlan?.MaxSpace ?? 500, undefined, undefined, 0);
     // Bundle upsell
@@ -208,7 +254,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
                 text: c('new_plans: Upsell attribute')
                     .t`Add more personalization with 15 email addresses and support for 3 custom email domains`,
             },
-            !hasMail(subscription)
+            !user.hasPaidMail
                 ? {
                       icon: 'calendar-checkmark',
                       text: c('new_plans: Upsell attribute').ngettext(

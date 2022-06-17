@@ -1,3 +1,4 @@
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import { Loader } from '../../../components';
 import {
     useAddresses,
@@ -18,7 +19,10 @@ import UpsellPanel from './UpsellPanel';
 import './YourPlanSection.scss';
 import { getCurrency } from './helpers';
 
-const YourPlanSection = () => {
+interface Props {
+    app: APP_NAMES;
+}
+const YourPlanSection = ({ app }: Props) => {
     const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [addresses] = useAddresses();
@@ -46,6 +50,7 @@ const YourPlanSection = () => {
     return (
         <div className="your-plan-section-container flex-gap-2">
             <SubscriptionPanel
+                app={app}
                 currency={currency}
                 subscription={subscription}
                 organization={organization}
@@ -56,6 +61,7 @@ const YourPlanSection = () => {
                 openSubscriptionModal={openSubscriptionModal}
             />
             <UpsellPanel
+                app={app}
                 currency={currency}
                 subscription={subscription}
                 plans={plans}

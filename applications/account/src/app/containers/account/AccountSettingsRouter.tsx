@@ -76,7 +76,7 @@ const AccountSettingsRouter = ({
                     <SubscriptionModalProvider app={app}>
                         <AutomaticSubscriptionModal />
                         <PrivateMainSettingsArea location={location} config={dashboard}>
-                            <YourPlanSection />
+                            <YourPlanSection app={app} />
                             <BillingSection />
                             <PaymentMethodsSection />
                             <CreditsSection />
