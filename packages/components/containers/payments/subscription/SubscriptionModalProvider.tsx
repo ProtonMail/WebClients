@@ -3,7 +3,7 @@ import { Audience, Currency, Cycle, PlanIDs } from '@proton/shared/lib/interface
 import { getHasB2BPlan, getHasLegacyPlans, getIsB2BPlan, getPlanIDs } from '@proton/shared/lib/helpers/subscription';
 import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import { toMap } from '@proton/shared/lib/helpers/object';
-import { PLANS } from '@proton/shared/lib/constants';
+import { APP_NAMES, PLANS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { useModalState } from '../../../components';
@@ -12,11 +12,12 @@ import { useOrganization, usePlans, useSubscription, useUser } from '../../../ho
 import { SUBSCRIPTION_STEPS } from './constants';
 import SubscriptionModal from './SubscriptionModal';
 import SubscriptionModalDisabled from './SubscriptionModalDisabled';
-import { getCurrency } from './helpers';
+import { getCurrency, getDefaultSelectedProductPlans, SelectedProductPlans } from './helpers';
 
 interface OpenCallbackProps {
     step: SUBSCRIPTION_STEPS;
     defaultAudience?: Audience;
+    defaultSelectedProductPlans?: SelectedProductPlans;
     plan?: PLANS;
     planIDs?: PlanIDs;
     cycle?: Cycle;
@@ -41,9 +42,10 @@ export const useSubscriptionModal = () => {
 
 interface Props {
     children: ReactNode;
+    app: APP_NAMES;
 }
 
-const SubscriptionModalProvider = ({ children }: Props) => {
+const SubscriptionModalProvider = ({ children, app }: Props) => {
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const [user] = useUser();
@@ -51,6 +53,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
     const subscriptionProps = useRef<{
         planIDs: PlanIDs;
         defaultAudience?: Audience;
+        defaultSelectedProductPlans: SelectedProductPlans;
         step: SUBSCRIPTION_STEPS;
         currency?: Currency;
         cycle?: Cycle;
@@ -87,6 +90,7 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         cycle,
                         coupon,
                         defaultAudience,
+                        defaultSelectedProductPlans,
                         disablePlanSelection,
                         disableThanksStep,
                         onClose,
@@ -96,15 +100,18 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                         if (loading || render) {
                             return;
                         }
+
+                        const planIDs = plan
+                            ? switchPlan({
+                                  planIDs: subscriptionPlanIDs,
+                                  planID: plansMap[plan].Name,
+                                  organization,
+                                  plans,
+                              })
+                            : maybePlanIDs || subscriptionPlanIDs;
+
                         subscriptionProps.current = {
-                            planIDs: plan
-                                ? switchPlan({
-                                      planIDs: subscriptionPlanIDs,
-                                      planID: plansMap[plan].Name,
-                                      organization,
-                                      plans,
-                                  })
-                                : maybePlanIDs || subscriptionPlanIDs,
+                            planIDs,
                             step,
                             currency: currency || getCurrency(user, subscription, plans),
                             cycle: cycle || subscription.Cycle,
@@ -113,6 +120,8 @@ const SubscriptionModalProvider = ({ children }: Props) => {
                                 defaultAudience || (plan && getIsB2BPlan(plan)) || getHasB2BPlan(subscription)
                                     ? Audience.B2B
                                     : Audience.B2C,
+                            defaultSelectedProductPlans:
+                                defaultSelectedProductPlans || getDefaultSelectedProductPlans(app, planIDs),
                             disablePlanSelection,
                             disableThanksStep,
                             onClose,

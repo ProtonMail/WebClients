@@ -1,4 +1,5 @@
 import { StandardErrorPage, SubscriptionModalProvider } from '@proton/components';
+import { APPS } from '@proton/shared/lib/constants';
 import DeleteAccount from '../containers/DeleteAccount';
 import SubscribeAccount from '../containers/SubscribeAccount';
 
@@ -29,7 +30,7 @@ const MainContainer = () => {
         <>
             {action === SupportedActions.DeleteAccount && <DeleteAccount />}
             {action === SupportedActions.SubscribeAccount && (
-                <SubscriptionModalProvider>
+                <SubscriptionModalProvider app={redirect?.includes('vpn') ? APPS.PROTONVPN_SETTINGS : APPS.PROTONMAIL}>
                     <SubscribeAccount redirect={redirect} fullscreen={fullscreen} queryParams={queryParams} />
                 </SubscriptionModalProvider>
             )}
