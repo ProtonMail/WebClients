@@ -177,7 +177,8 @@ const FilterModal = ({ filter, onCloseCustomAction, ...rest }: Props) => {
                     isOpen: true,
                 },
                 moveTo: {
-                    folder: foldersLabelsMap?.folder ? foldersLabelsMap?.folder[0] : undefined,
+                    folder:
+                        foldersLabelsMap?.folder && foldersLabelsMap?.folder[0] ? foldersLabelsMap?.folder[0] : 'inbox',
                     isOpen: true,
                 },
                 markAs: {
