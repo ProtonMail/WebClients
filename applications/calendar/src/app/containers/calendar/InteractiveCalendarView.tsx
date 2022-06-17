@@ -1615,7 +1615,7 @@ const InteractiveCalendarView = ({
                 once
                 when={targetEvent ? targetEvent.start : undefined}
             >
-                {({ style, ref, textareaMaxHeight }: PopoverRenderData) => {
+                {({ style, ref }: PopoverRenderData) => {
                     if (!targetEvent || targetEventData?.preventPopover) {
                         return null;
                     }
@@ -1648,7 +1648,6 @@ const InteractiveCalendarView = ({
                                     }
                                     handleEditEvent(temporaryEvent);
                                 }}
-                                textareaMaxHeight={textareaMaxHeight}
                                 onClose={async () => {
                                     try {
                                         await handleConfirmDeleteTemporary({ ask: true });

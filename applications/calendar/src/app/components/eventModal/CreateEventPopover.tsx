@@ -26,7 +26,6 @@ interface Props {
     style: CSSProperties;
     popoverRef: Ref<HTMLDivElement>;
     setModel: (value: EventModel) => void;
-    textareaMaxHeight: number;
 }
 
 const CreateEventPopover = ({
@@ -41,7 +40,6 @@ const CreateEventPopover = ({
     weekStartsOn,
     addresses,
     isNarrow,
-    textareaMaxHeight,
 }: Props) => {
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
@@ -89,7 +87,6 @@ const CreateEventPopover = ({
                     setModel={setModel}
                     isMinimal
                     isCreateEvent
-                    textareaMaxHeight={textareaMaxHeight}
                     setParticipantError={setParticipantError}
                 />
                 <PopoverFooter className="flex-nowrap flex-justify-end">
