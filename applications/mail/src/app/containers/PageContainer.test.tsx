@@ -10,6 +10,7 @@ import {
     addToCache,
     onCompose,
     tick,
+    setFeatureFlags,
 } from '../helpers/test/helper';
 import { Breakpoints } from '../models/utils';
 import PageContainer from './PageContainer';
@@ -30,9 +31,11 @@ describe('PageContainer', () => {
         addApiMock('calendar/v1', () => ({}));
         addApiMock('payments/plans', () => ({}));
         addApiMock('mail/v4/conversations', () => ({}));
+        addApiMock('domains/optin', () => ({}));
 
         minimalCache();
         addToCache('MailSettings', { Shortcuts: 1 });
+        setFeatureFlags('SeenV5WelcomeModal', true);
 
         const renderResult = await render(<Component {...props} />, false);
         const { container } = renderResult;
