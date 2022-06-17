@@ -13,3 +13,8 @@ export const postVerifyValidate = (data: { JWT: string }) => ({
     method: 'post',
     data,
 });
+
+export const postVerifyPhone = () => ({
+    url: 'core/v4/verify/phone',
+    method: 'post',
+});
