@@ -89,7 +89,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
         };
 
         expect(getCalendarIsNotSyncedInfo(notSyncedYetCalendar)).toEqual(getSyncingInfo('Calendar is syncing'));
-        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(OK))).toBeUndefined();
+        expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(OK))).toBe(null);
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(9999))).toEqual(
             getNotSyncedInfo('Failed to sync calendar')
         );
@@ -128,7 +128,7 @@ describe('getCalendarIsNotSyncedInfo', () => {
                     LastUpdateTime: syncPeriodTooLongCalendar.SubscriptionParameters.LastUpdateTime + 12 * HOUR + 1,
                 },
             })
-        ).toBeUndefined();
+        ).toBe(null);
         expect(getCalendarIsNotSyncedInfo(getCommonCalendarWithStatus(INVALID_ICS))).toEqual(
             getNotSyncedInfo('Unsupported calendar format')
         );

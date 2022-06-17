@@ -76,6 +76,52 @@ export const getNotSyncedInfo = (text: string) => ({
     text,
 });
 
+export const getCalendarStatusInfo = (status: CALENDAR_SUBSCRIPTION_STATUS) => {
+    if (status === OK) {
+        return null;
+    }
+
+    if (status === INVALID_ICS) {
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Unsupported calendar format`);
+    }
+
+    if (status === ICS_SIZE_EXCEED_LIMIT) {
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar is too big`);
+    }
+
+    if (status === SYNCHRONIZING) {
+        return getSyncingInfo(c('Calendar subscription not synced error').t`Calendar is syncing`);
+    }
+
+    if (
+        [
+            HTTP_REQUEST_FAILED_BAD_REQUEST,
+            HTTP_REQUEST_FAILED_UNAUTHORIZED,
+            HTTP_REQUEST_FAILED_FORBIDDEN,
+            HTTP_REQUEST_FAILED_NOT_FOUND,
+            INTERNAL_CALENDAR_URL_NOT_FOUND,
+        ].includes(status)
+    ) {
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar link is not accessible`);
+    }
+
+    if (
+        [HTTP_REQUEST_FAILED_GENERIC, HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR, HTTP_REQUEST_FAILED_TIMEOUT].includes(
+            status
+        )
+    ) {
+        return getNotSyncedInfo(
+            c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`
+        );
+    }
+
+    if (status === INTERNAL_CALENDAR_UNDECRYPTABLE) {
+        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar could not be decrypted`);
+    }
+
+    return getNotSyncedInfo(c('Calendar subscription not synced error').t`Failed to sync calendar`);
+};
+
 export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
     const { Status, LastUpdateTime } = calendar.SubscriptionParameters;
 
@@ -89,47 +135,5 @@ export const getCalendarIsNotSyncedInfo = (calendar: SubscribedCalendar) => {
         );
     }
 
-    if (Status === OK) {
-        return;
-    }
-
-    if (Status === INVALID_ICS) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Unsupported calendar format`);
-    }
-
-    if (Status === ICS_SIZE_EXCEED_LIMIT) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar is too big`);
-    }
-
-    if (Status === SYNCHRONIZING) {
-        return getSyncingInfo(c('Calendar subscription not synced error').t`Calendar is syncing`);
-    }
-
-    if (
-        [
-            HTTP_REQUEST_FAILED_BAD_REQUEST,
-            HTTP_REQUEST_FAILED_UNAUTHORIZED,
-            HTTP_REQUEST_FAILED_FORBIDDEN,
-            HTTP_REQUEST_FAILED_NOT_FOUND,
-            INTERNAL_CALENDAR_URL_NOT_FOUND,
-        ].includes(Status)
-    ) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar link is not accessible`);
-    }
-
-    if (
-        [HTTP_REQUEST_FAILED_GENERIC, HTTP_REQUEST_FAILED_INTERNAL_SERVER_ERROR, HTTP_REQUEST_FAILED_TIMEOUT].includes(
-            Status
-        )
-    ) {
-        return getNotSyncedInfo(
-            c('Calendar subscription not synced error').t`Calendar link is temporarily inaccessible`
-        );
-    }
-
-    if (Status === INTERNAL_CALENDAR_UNDECRYPTABLE) {
-        return getNotSyncedInfo(c('Calendar subscription not synced error').t`Calendar could not be decrypted`);
-    }
-
-    return getNotSyncedInfo(c('Calendar subscription not synced error').t`Failed to sync calendar`);
+    return getCalendarStatusInfo(Status);
 };
