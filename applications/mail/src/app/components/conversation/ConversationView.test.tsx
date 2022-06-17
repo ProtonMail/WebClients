@@ -4,7 +4,7 @@ import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { fireEvent } from '@testing-library/dom';
 import range from '@proton/utils/range';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { render, clearAll, addApiMock, assertFocus, tick, mockConsole } from '../../helpers/test/helper';
+import { render, clearAll, addApiMock, assertFocus, tick, mockConsole, addApiKeys } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
 import { Conversation } from '../../models/conversation';
@@ -261,10 +261,13 @@ describe('ConversationView', () => {
         });
 
         it('should open a message on enter', async () => {
+            const senderEmail = 'sender@email.com';
+            addApiKeys(false, senderEmail, []);
+
             store.dispatch(initializeConversation(conversationState));
 
             const messageMock = jest.fn(() => ({
-                Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: '' } },
+                Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: senderEmail } },
             }));
             addApiMock(`mail/v4/messages/${message.ID}`, messageMock);
 

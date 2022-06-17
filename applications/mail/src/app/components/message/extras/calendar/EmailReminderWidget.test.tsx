@@ -27,7 +27,7 @@ import { Nullable } from '@proton/shared/lib/interfaces';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import EmailReminderWidget from './EmailReminderWidget';
-import { authentication } from '../../../../helpers/test/render';
+import { authentication, tick } from '../../../../helpers/test/render';
 
 jest.mock('@proton/components/hooks/useNotifications');
 jest.mock('@proton/components/hooks/useModals');
@@ -99,6 +99,11 @@ describe('EmailReminderWidget', () => {
                 })
         );
         mockedUseAddresses.mockImplementation(() => [[addressBuilder({})], false, null]);
+        server.use(
+            rest.get(`/core/v4/features`, (req, res, ctx) => {
+                return res.once(ctx.json({}));
+            })
+        );
     });
 
     it('does not render anything when necessary headers are not present', () => {
@@ -115,6 +120,8 @@ describe('EmailReminderWidget', () => {
         await waitFor(() => {
             expect(screen.getByText(/DateHeader/)).toBeInTheDocument();
         });
+
+        await tick();
 
         expect((screen.getByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`)) as HTMLAnchorElement).href).toBe(
             `http://localhost/event?Action=VIEW&EventID=${encodeURIComponent(
@@ -152,6 +159,8 @@ describe('EmailReminderWidget', () => {
 
         expect(skeleton).toBeInTheDocument();
         await waitFor(() => expect(screen.queryByText(/Event was canceled/)).toBeInTheDocument());
+
+        await tick();
 
         expect(screen.queryByText(new RegExp(`Open in ${CALENDAR_APP_NAME}`))).toBeInTheDocument();
     });
