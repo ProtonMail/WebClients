@@ -150,7 +150,7 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
                         <InputFieldTwo
                             as={SelectTwo}
                             id="memberSelect"
-                            value={moveTo.folder || ''}
+                            value={moveTo.folder || 'inbox'}
                             onValue={(value: any) => handleChangeModel({ folder: value })}
                         >
                             {folderOptions}

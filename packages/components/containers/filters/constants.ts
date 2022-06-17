@@ -175,16 +175,6 @@ export const getDefaultFolderOptions = () => {
     return [
         {
             type: 'label',
-            text: c('Option group').t`Move to...`,
-        },
-        {
-            type: 'option',
-            text: c('Filter Actions').t`Select a folder`,
-            value: '',
-            disabled: true,
-        },
-        {
-            type: 'label',
             text: c('Option group').t`Default folders`,
         },
         {
@@ -194,7 +184,7 @@ export const getDefaultFolderOptions = () => {
         },
         {
             type: 'option',
-            text: c('Filter Actions').t`Inbox`,
+            text: c('Filter Actions').t`Inbox - Default`,
             value: 'inbox',
         },
         {
