@@ -55,7 +55,11 @@ function testRule(rule, content, type) {
  */
 async function* errorIterator(source = 'src', options = {}) {
     const { ext } = path.parse(source);
-    const files = ext ? [source] : glob.sync(path.join(source, '**', '*.{js,jsx,ts,tsx}'));
+    const files = ext
+        ? [source]
+        : glob.sync(path.join(source, '**', '*.{js,jsx,ts,tsx}'), {
+              ignore: [path.join(source, 'node_modules', '**')],
+          });
 
     for (const file of files) {
         if (file.endsWith('.d.ts') || file.includes('tests')) {
