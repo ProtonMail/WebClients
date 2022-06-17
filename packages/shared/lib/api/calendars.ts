@@ -231,6 +231,11 @@ export const updateCalendarUserSettings = (data: Partial<CalendarUserSettings>) 
     data,
 });
 
+export const getAllowedTimeZones = () => ({
+    url: `${CALENDAR_V1}/timezones`,
+    method: 'get',
+});
+
 export const getVtimezones = (Timezones: string[]) => ({
     // params doesn't work correctly so
     url: `${CALENDAR_V1}/vtimezones?${Timezones.map((tzid) => `Timezones[]=${tzid}`).join('&')}`,
