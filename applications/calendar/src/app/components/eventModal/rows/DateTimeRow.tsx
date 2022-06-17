@@ -8,7 +8,7 @@ import {
     UnderlineButton,
     TimeInput,
     classnames,
-    TimezoneSelector,
+    TimeZoneSelector,
     MemoizedIconRow as IconRow,
 } from '@proton/components';
 import { c } from 'ttag';
@@ -100,7 +100,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     </div>
 
                     {!isAllDay && showTzSelector && (
-                        <TimezoneSelector
+                        <TimeZoneSelector
                             className="field ml0-5 on-mobile-ml0 on-mobile-mt0-5 on-mobile-mb0-5 flex-item-fluid"
                             id="event-start-timezone-select"
                             data-test-id="create-event-modal/start:time-zone-dropdown"
@@ -146,7 +146,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                     </div>
 
                     {!isAllDay && showTzSelector && (
-                        <TimezoneSelector
+                        <TimeZoneSelector
                             className="field ml0-5 on-mobile-ml0 on-mobile-mt0-5 on-mobile-mb0-5 flex-item-fluid"
                             id="event-end-timezone-select"
                             data-test-id="create-event-modal/end:time-zone-dropdown"
