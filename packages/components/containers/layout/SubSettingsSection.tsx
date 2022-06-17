@@ -2,6 +2,7 @@ import { ComponentPropsWithoutRef, ReactNode, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { SettingsSectionTitle } from '../account';
 import { Icon } from '../../components';
+import { classnames } from '../../helpers';
 
 export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'> {
     id: string;
@@ -11,7 +12,7 @@ export interface SubSettingsSectionProps extends ComponentPropsWithoutRef<'div'>
     children: ReactNode;
 }
 
-const SubSettingsSection = ({ id, observer, title, children, ...rest }: SubSettingsSectionProps) => {
+const SubSettingsSection = ({ id, observer, title, children, className, ...rest }: SubSettingsSectionProps) => {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -30,19 +31,22 @@ const SubSettingsSection = ({ id, observer, title, children, ...rest }: SubSetti
             <div className="relative">
                 <div id={id} className="header-height-anchor" />
             </div>
-            <section {...rest} id={id} ref={ref} data-target-id={id}>
+            <section
+                {...rest}
+                id={id}
+                ref={ref}
+                data-target-id={id}
+                className={classnames([className, 'sub-settings-section'])}
+            >
                 {title && (
-                    <SettingsSectionTitle className="opacity-on-hover-container relative">
-                        <Link
-                            to={`#${id}`}
-                            className="sub-settings-section-anchor absolute opacity-on-hover"
-                            aria-hidden="true"
-                            tabIndex={-1}
-                        >
-                            <Icon name="link" />
-                        </Link>
-                        {title}
-                    </SettingsSectionTitle>
+                    <Link to={`#${id}`} aria-hidden="true" tabIndex={-1} className="sub-settings-section-link">
+                        <SettingsSectionTitle className="opacity-on-hover-container relative">
+                            <span className="sub-settings-section-anchor absolute opacity-on-hover">
+                                <Icon name="link" />
+                            </span>
+                            {title}
+                        </SettingsSectionTitle>
+                    </Link>
                 )}
                 {children}
             </section>
