@@ -24,7 +24,7 @@ const EmptyFolders = ({ onFocus }: Props) => {
                 onClick={() => setEditLabelModalOpen(true)}
             >
                 <SidebarListItemContent
-                    right={<SidebarListItemContentIcon name="plus" color="white" />}
+                    right={<SidebarListItemContentIcon name="plus" />}
                     title={c('Title').t`Create a new folder`}
                 >
                     {c('Link').t`Add folder`}
