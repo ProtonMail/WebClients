@@ -81,7 +81,7 @@ function ItemCell({
                 draggable={draggable}
                 aria-disabled={item.Disabled}
                 className={classnames([
-                    'file-browser-grid-item m0-5 flex flex-column w100 rounded border text-align-left outline-none',
+                    'file-browser-grid-item m0-5 flex flex-column w100 rounded border text-align-left',
                     isSelected && 'border-primary',
                     (isSelected || dragMoveControls?.isActiveDropTarget || item.Disabled) &&
                         'file-browser-grid-item--highlight',
