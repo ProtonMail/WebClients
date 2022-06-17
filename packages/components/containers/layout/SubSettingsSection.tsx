@@ -39,9 +39,13 @@ const SubSettingsSection = ({ id, observer, title, children, className, ...rest 
                 className={classnames([className, 'sub-settings-section'])}
             >
                 {title && (
-                    <Link to={`#${id}`} aria-hidden="true" tabIndex={-1} className="sub-settings-section-link">
+                    <Link to={`#${id}`} className="sub-settings-section-link">
                         <SettingsSectionTitle className="opacity-on-hover-container relative">
-                            <span className="sub-settings-section-anchor absolute opacity-on-hover">
+                            <span
+                                className="sub-settings-section-anchor absolute opacity-on-hover"
+                                aria-hidden="true"
+                                tabIndex={-1}
+                            >
                                 <Icon name="link" />
                             </span>
                             {title}
