@@ -1,5 +1,5 @@
 module.exports = {
-    logo: 'src/assets/favicon-drive-32.svg',
+    logo: 'public/assets/favicon.svg',
     favicons: {
         appName: 'Proton Drive',
         appDescription:
