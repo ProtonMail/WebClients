@@ -59,7 +59,7 @@ const SieveEditor = ({ value, issues = [], onChange, theme }: Props) => {
 
     return (
         <CodeMirror
-            className="border"
+            className="border mt1"
             value={value}
             options={options}
             onBeforeChange={onChange}

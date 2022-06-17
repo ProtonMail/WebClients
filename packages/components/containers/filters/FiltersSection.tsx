@@ -50,7 +50,7 @@ function FiltersSection() {
         <SettingsSection>
             <SettingsParagraph>
                 {c('FilterSettings')
-                    .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages.`}
+                    .t`Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.`}
             </SettingsParagraph>
 
             <ActionsFilterToolbar />
