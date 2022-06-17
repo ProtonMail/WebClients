@@ -1,1 +1,1 @@
-export * from './TimezoneSelector';
+export * from './TimeZoneSelector';

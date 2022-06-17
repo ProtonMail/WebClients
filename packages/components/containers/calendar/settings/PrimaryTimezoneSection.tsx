@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useApi, useEventManager, useLoading, useNotifications } from '../../../hooks';
 
-import { TimezoneSelector } from '../../../components';
+import { TimeZoneSelector } from '../../../components';
 
 import SettingsLayoutLeft from '../../account/SettingsLayoutLeft';
 import SettingsLayout from '../../account/SettingsLayout';
@@ -34,7 +34,7 @@ const PrimaryTimezoneSection = ({ calendarUserSettings: { PrimaryTimezone } }: P
                 </label>
             </SettingsLayoutLeft>
             <SettingsLayoutRight>
-                <TimezoneSelector
+                <TimeZoneSelector
                     data-test-id="settings/primary-time-zone:dropdown"
                     loading={loadingPrimaryTimeZone}
                     timezone={PrimaryTimezone}

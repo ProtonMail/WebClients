@@ -1,4 +1,5 @@
-import { StandardPrivateApp } from '@proton/components';
+import { StandardPrivateApp, useApi } from '@proton/components';
+import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { Model } from '@proton/shared/lib/interfaces/Model';
 import {
@@ -19,6 +20,7 @@ import {
     PaymentMethodsModel,
     ImportersModel,
 } from '@proton/shared/lib/models';
+import noop from '@proton/utils/noop';
 
 interface Props {
     onLogout: () => void;
@@ -28,12 +30,19 @@ interface Props {
 const getAppContainer = () => import('./MainContainer');
 
 const PrivateApp = ({ onLogout, locales }: Props) => {
+    const api = useApi();
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+
     return (
         <StandardPrivateApp
             noModals
             fallback={false}
             openpgpConfig={{}}
             onLogout={onLogout}
+            onInit={() => {
+                // Intentionally ignoring to return promise of the timezone call to avoid blocking app start
+                loadAllowedTimeZones(silentApi).catch(noop);
+            }}
             locales={locales}
             preloadModels={[
                 UserModel,

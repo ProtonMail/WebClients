@@ -1,4 +1,5 @@
-import { StandardPrivateApp, LoaderPage, useApi, useCache, useAppTitle, useSideAppParent } from '@proton/components';
+import { StandardPrivateApp, LoaderPage, useApi, useAppTitle, useSideAppParent } from '@proton/components';
+import { loadAllowedTimeZones } from '@proton/shared/lib/date/timezone';
 import {
     UserModel,
     UserSettingsModel,
@@ -10,8 +11,8 @@ import {
     ContactsModel,
     LabelsModel,
 } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
+import noop from '@proton/utils/noop';
 
 const EVENT_MODELS = [
     UserModel,
@@ -23,7 +24,7 @@ const EVENT_MODELS = [
     LabelsModel,
 ];
 
-const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel];
+const PRELOAD_MODELS = [UserModel, UserSettingsModel, AddressesModel, CalendarsModel, CalendarUserSettingsModel];
 
 const getAppContainer = () => import('../containers/calendar/MainContainer');
 
@@ -33,22 +34,18 @@ interface Props {
 }
 const PrivateApp = ({ onLogout, locales }: Props) => {
     const api = useApi();
-    const cache = useCache();
 
     useAppTitle('');
 
     useSideAppParent();
 
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
+
     return (
         <StandardPrivateApp
             onLogout={onLogout}
             locales={locales}
-            onInit={async () => {
-                const [calendars] = await loadModels([CalendarsModel], { api, cache });
-                if (calendars?.length) {
-                    await loadModels([CalendarUserSettingsModel], { api, cache });
-                }
-            }}
+            onInit={() => loadAllowedTimeZones(silentApi).catch(noop)}
             preloadModels={PRELOAD_MODELS}
             eventModels={EVENT_MODELS}
             fallback={<LoaderPage />}
