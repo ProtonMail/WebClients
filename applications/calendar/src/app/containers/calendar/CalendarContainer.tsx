@@ -237,7 +237,8 @@ const CalendarContainer = ({
     );
 
     const timezoneInformation = useMemo(() => {
-        const [startDate] = utcDateRangeInTimezone;
+        // in responsive mode we display just one day even though the view is WEEK
+        const startDate = isNarrow ? utcDate : utcDateRangeInTimezone[0];
         const noonDate = getNoonDateForTimeZoneOffset(startDate);
         const { offset } = getTimezoneOffset(noonDate, tzid);
         const { offset: secondaryOffset } = getTimezoneOffset(noonDate, secondaryTzid || tzid);
@@ -246,7 +247,7 @@ const CalendarContainer = ({
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
         };
-    }, [utcDateRangeInTimezone, secondaryTzid, tzid]);
+    }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, isNarrow]);
 
     useEffect(() => {
         const newRoute = toUrlParams({
