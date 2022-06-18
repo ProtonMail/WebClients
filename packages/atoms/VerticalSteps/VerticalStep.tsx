@@ -11,6 +11,11 @@ export interface VerticalStepProps extends ComponentPropsWithoutRef<'li'> {
      * if the icon does not bring any added value to the text, leave it empty
      */
     alt?: string;
+    /**
+     * 'next': default state
+     * 'done': icon will be colored as success 
+     * 'passed': icon will be colored as success, text will look like disabled, and green will be applied to the "path" to the next icon
+     */
     status?: 'next' | 'done' | 'passed';
 }
 
