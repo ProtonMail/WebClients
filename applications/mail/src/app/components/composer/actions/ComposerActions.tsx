@@ -17,18 +17,20 @@ import {
     useSpotlightOnFeature,
     useFeatures,
     useSpotlightShow,
+    EditorMetadata,
 } from '@proton/components';
 import { metaKey, shiftKey, altKey } from '@proton/shared/lib/helpers/browser';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import { formatSimpleDate } from '../../../helpers/date';
-import AttachmentsButton from '../../attachment/AttachmentsButton';
-import SendActions from '../SendActions';
-import { getAttachmentCounts } from '../../../helpers/message/messages';
-import { MessageChange, MessageChangeFlag } from '../Composer';
-import { MessageState } from '../../../logic/messages/messagesTypes';
 import ComposerPasswordActions from './ComposerPasswordActions';
 import ComposerMoreActions from './ComposerMoreActions';
+import { MessageState } from '../../../logic/messages/messagesTypes';
+import { MessageChange, MessageChangeFlag } from '../Composer';
+import { ExternalEditorActions } from '../editor/EditorWrapper';
+import { getAttachmentCounts } from '../../../helpers/message/messages';
+import { formatSimpleDate } from '../../../helpers/date';
+import SendActions from '../SendActions';
+import AttachmentsButton from '../../attachment/AttachmentsButton';
 
 interface Props {
     className?: string;
@@ -47,6 +49,8 @@ interface Props {
     attachmentTriggerRef: MutableRefObject<() => void>;
     loadingScheduleCount: boolean;
     onChangeFlag: MessageChangeFlag;
+    editorActionsRef: MutableRefObject<ExternalEditorActions | undefined>;
+    editorMetadata: EditorMetadata;
     onChange: MessageChange;
 }
 
@@ -67,6 +71,8 @@ const ComposerActions = ({
     attachmentTriggerRef,
     loadingScheduleCount,
     onChangeFlag,
+    editorActionsRef,
+    editorMetadata,
     onChange,
 }: Props) => {
     const [
@@ -231,6 +237,8 @@ const ComposerActions = ({
                             onExpiration={onExpiration}
                             onChangeFlag={onChangeFlag}
                             lock={lock}
+                            editorActionsRef={editorActionsRef}
+                            editorMetadata={editorMetadata}
                             onChange={onChange}
                         />
                     </div>
