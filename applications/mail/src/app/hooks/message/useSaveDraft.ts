@@ -30,7 +30,7 @@ export const useCreateDraft = () => {
     return useCallback(async (message: MessageStateWithData) => {
         try {
             const newMessage = await createMessage(message, api, getMessageKeys);
-            dispatch(draftSaved({ ID: message.localID, message: newMessage }));
+            dispatch(draftSaved({ ID: message.localID, message: newMessage, draftFlags: message?.draftFlags }));
             await call();
         } catch (error: any) {
             if (!error.data) {

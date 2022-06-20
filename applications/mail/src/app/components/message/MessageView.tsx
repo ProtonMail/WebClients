@@ -16,7 +16,7 @@ import { classnames } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { hasAttachments, isDraft, isOutbox, isSent } from '@proton/shared/lib/mail/messages';
+import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
 import { LOAD_RETRY_COUNT } from '../../constants';
@@ -25,6 +25,8 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { isUnread } from '../../helpers/elements';
 import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
+import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
@@ -36,6 +38,7 @@ import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
+import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
 import MessageBody from './MessageBody';
 import MessageFooter from './MessageFooter';
 import HeaderCollapsed from './header/HeaderCollapsed';
@@ -62,6 +65,7 @@ interface Props {
     isComposerOpened: boolean;
     containerRef?: React.RefObject<HTMLElement>;
     wrapperRef?: React.RefObject<HTMLDivElement>;
+    onOpenQuickReply?: (index?: number) => void;
 }
 
 export interface MessageViewRef {
@@ -90,6 +94,7 @@ const MessageView = (
         isComposerOpened,
         containerRef,
         wrapperRef,
+        onOpenQuickReply,
     }: Props,
     ref: Ref<MessageViewRef>
 ) => {
@@ -149,7 +154,7 @@ const MessageView = (
 
     const handleToggle = (value: boolean) => () => {
         if (draft && !outbox) {
-            onCompose({ existingDraft: message, fromUndo: false });
+            onCompose({ type: ComposeTypes.existing, existingDraft: message, fromUndo: false });
             return;
         }
 
@@ -207,6 +212,20 @@ const MessageView = (
             }
         },
     }));
+
+    const { hasFocus: hasQuickReplyFocus, setHasFocus: setHasQuickReplyFocus } = useQuickReplyFocus();
+
+    // 1- If on conversation mode
+    //      If we click inside another message body (which is an iframe), we will change the hasFocus in that case, the conversation is not focused.
+    //      Else, if focused conversation is the one of the quick reply, the focused is managed by hasQuickReplyFocus
+    // 2- If on message mode, we only rely on the hasQuickReplyFocus
+    const quickReplyIsFocused = hasFocus !== undefined ? hasQuickReplyFocus && hasFocus : hasQuickReplyFocus;
+
+    const canShowQuickReply =
+        !isDraft(message.data) &&
+        !isScheduled(message.data) &&
+        !isOutbox(message.data) &&
+        !isUnread(message.data, labelID);
 
     // Manage loading the message
     useEffect(() => {
@@ -327,6 +346,7 @@ const MessageView = (
         if (context === 'IFRAME') {
             return () => {
                 onFocus(conversationIndex);
+                setHasQuickReplyFocus(false);
             };
         }
 
@@ -401,6 +421,17 @@ const MessageView = (
                         onFocusIframe={handleFocus('IFRAME')}
                     />
                     {showFooter ? <MessageFooter message={message} /> : null}
+                    {canShowQuickReply && (
+                        <QuickReplyContainer
+                            referenceMessageID={message.data?.ID || ''}
+                            conversationID={conversationID}
+                            conversationIndex={conversationIndex}
+                            onOpenQuickReply={onOpenQuickReply}
+                            onFocus={handleFocus('IFRAME')}
+                            hasFocus={quickReplyIsFocused}
+                            setHasFocus={setHasQuickReplyFocus}
+                        />
+                    )}
                 </>
             ) : (
                 <HeaderCollapsed

@@ -9,7 +9,7 @@ import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
 import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
 import { preparePlainText } from '../helpers/transforms/transforms';
-import { OnCompose } from '../hooks/composer/useCompose';
+import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
 import { MessageState } from '../logic/messages/messagesTypes';
 import { Breakpoints } from '../models/utils';
 import { useOnCompose } from './ComposeProvider';
@@ -67,6 +67,7 @@ with a link -> https://protonmail.com/`;
 
         await act(async () => {
             onCompose({
+                type: ComposeTypes.new,
                 action: MESSAGE_ACTIONS.REPLY,
                 referenceMessage: message,
             });

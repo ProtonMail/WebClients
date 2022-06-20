@@ -37,7 +37,7 @@ import { useGetMessageKeys } from '../message/useGetMessageKeys';
 import { useGetMessage } from '../message/useMessage';
 import { useGetAttachment } from '../useAttachment';
 import useDelaySendSeconds from '../useDelaySendSeconds';
-import { OnCompose } from './useCompose';
+import { ComposeTypes, OnCompose } from './useCompose';
 import { useSendModifications } from './useSendModifications';
 
 // Reference: Angular/src/app/composer/services/sendMessage.js
@@ -49,6 +49,7 @@ interface UseSendMessageParameters {
     alreadySaved?: boolean;
     sendingMessageNotificationManager?: SendingMessageNotificationManager;
     useSilentApi?: boolean;
+    sendingFrom?: string;
 }
 
 export const useSendMessage = () => {
@@ -74,6 +75,7 @@ export const useSendMessage = () => {
             onCompose,
             sendingMessageNotificationManager,
             useSilentApi = false,
+            sendingFrom,
         }: UseSendMessageParameters) => {
             const { localID, data } = inputMessage;
             const hasUndo = !!delaySendSeconds;
@@ -127,6 +129,7 @@ export const useSendMessage = () => {
                 }
                 // Re-open draft
                 onCompose({
+                    type: ComposeTypes.existing,
                     existingDraft: {
                         localID,
                         data,
@@ -180,6 +183,7 @@ export const useSendMessage = () => {
                     delaySendSeconds,
                     autoSaveContacts,
                     scheduledAt,
+                    sendingFrom,
                 });
 
                 return api<{ Sent: Message }>({
@@ -244,6 +248,7 @@ export const useSendMessage = () => {
                 ) {
                     hasClickedUndoSend = false;
                     onCompose({
+                        type: ComposeTypes.existing,
                         existingDraft: {
                             localID,
                             data,

@@ -3,6 +3,7 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import { updateAddress } from '@proton/shared/lib/api/addresses';
 import { Address } from '@proton/shared/lib/interfaces';
 
@@ -78,6 +79,10 @@ const EditAddressesSection = ({ address }: Props) => {
         }, 100);
     }, [address]);
 
+    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
+        {}
+    );
+
     return (
         <form
             onSubmit={async (e) => {
@@ -116,6 +121,12 @@ const EditAddressesSection = ({ address }: Props) => {
                                 setSignatureUpdated(true);
                             }}
                             simple
+                            openEmojiPickerRef={openEmojiPickerRef}
+                            toolbarConfig={toolbarConfig}
+                            setToolbarConfig={setToolbarConfig}
+                            modalLink={modalLink}
+                            modalImage={modalImage}
+                            modalDefaultFont={modalDefaultFont}
                         />
                     </div>
 

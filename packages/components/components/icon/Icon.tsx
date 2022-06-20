@@ -138,6 +138,7 @@ export type IconName =
     | 'envelope-open'
     | 'envelope-open-text'
     | 'envelopes'
+    | 'emoji'
     | 'eraser'
     | 'exclamation-circle'
     | 'exclamation-circle-filled'

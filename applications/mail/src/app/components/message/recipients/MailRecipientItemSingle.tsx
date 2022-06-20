@@ -25,6 +25,7 @@ import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { Element } from '../../../models/element';
 import TrustPublicKeyModal from '../modals/TrustPublicKeyModal';
 import RecipientItemSingle from './RecipientItemSingle';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     message?: MessageState;
@@ -99,6 +100,7 @@ const MailRecipientItemSingle = ({
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
         onCompose({
+            type: ComposeTypes.new,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: [recipient] } },
         });

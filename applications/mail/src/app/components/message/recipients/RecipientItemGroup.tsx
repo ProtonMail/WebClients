@@ -24,6 +24,7 @@ import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import GroupModal from '../modals/GroupModal';
 import RecipientDropdownItem from './RecipientDropdownItem';
 import RecipientItemLayout from './RecipientItemLayout';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     group: RecipientGroup;
@@ -69,6 +70,7 @@ const RecipientItemGroup = ({
     const handleCompose = (event: MouseEvent) => {
         event.stopPropagation();
         onCompose({
+            type: ComposeTypes.new,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: group.recipients } },
         });

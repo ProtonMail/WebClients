@@ -8,12 +8,15 @@ import { Recipient } from '@proton/shared/lib/interfaces/Address';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAddressFromPlusAlias, getByEmail } from '@proton/shared/lib/mail/addresses';
 import isTruthy from '@proton/utils/isTruthy';
+import { isSent, isSentAndReceived } from '@proton/shared/lib/mail/messages';
 import unique from '@proton/utils/unique';
 
 import { ContactGroupsMap, ContactsMap } from '../logic/contacts/contactsTypes';
 import { RecipientGroup, RecipientOrGroup } from '../models/address';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
+import { MessageState } from '../logic/messages/messagesTypes';
+import { MESSAGE_ACTIONS } from '../constants';
 import { isMessage, isConversation as testIsConversation } from './elements';
 
 /**
@@ -244,4 +247,65 @@ export const getSendersToBlock = (
             return;
         })
         .filter(isTruthy);
+};
+
+export const getRecipients = (referenceMessage: MessageState, action: MESSAGE_ACTIONS, addresses: Address[]) => {
+    const { data } = referenceMessage;
+
+    const toList = data?.ToList || [];
+    const replyTos = data?.ReplyTos || [];
+    const ccList = data?.CCList || [];
+    const bccList = data?.BCCList || [];
+
+    let returnToList: Recipient[] = [];
+    let returnCCList: Recipient[] = [];
+    let returnBCCList: Recipient[] = [];
+
+    if (action === MESSAGE_ACTIONS.REPLY) {
+        if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
+            returnToList = [...toList];
+        } else {
+            returnToList = [...replyTos];
+        }
+    } else {
+        if (isSent(referenceMessage.data) || isSentAndReceived(referenceMessage.data)) {
+            returnToList = [...toList];
+            returnCCList = [...ccList];
+            returnBCCList = [...bccList];
+        } else {
+            // Remove user address in CCList and ToList
+            const userAddresses = addresses.map(({ Email = '' }) => canonizeInternalEmail(Email));
+            const CCListAll: Recipient[] = unique([...(toList || []), ...(ccList || [])]);
+            const CCList = CCListAll.filter(
+                ({ Address = '' }) => !userAddresses.includes(canonizeInternalEmail(Address))
+            );
+
+            returnToList = [...replyTos];
+            returnCCList = [...CCList];
+        }
+    }
+    return { ToList: returnToList, CCList: returnCCList, BCCList: returnBCCList };
+};
+
+export const getReplyRecipientListAsString = (
+    referenceMessage: MessageState,
+    action: MESSAGE_ACTIONS,
+    addresses: Address[],
+    contactsMap: ContactsMap
+) => {
+    const getContactLabel = (recipientList: Recipient[]) => {
+        return recipientList.map((recipient) => getRecipientLabel(recipient, contactsMap));
+    };
+
+    const { ToList, CCList, BCCList } = getRecipients(referenceMessage, action, addresses);
+
+    const recipientList = getContactLabel([...ToList, ...CCList, ...BCCList]);
+
+    let recipientAsString = '';
+    recipientList.forEach((recipient, index) => {
+        const isLastElement = index === recipientList.length - 1;
+        recipientAsString = isLastElement ? `${recipientAsString}${recipient}` : `${recipientAsString}${recipient}, `;
+    });
+
+    return recipientAsString;
 };
