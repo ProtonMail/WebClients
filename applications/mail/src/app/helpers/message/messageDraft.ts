@@ -69,7 +69,7 @@ const newCopy = (
 /**
  * Format and build a reply
  */
-const reply = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
+export const reply = (referenceMessage: PartialMessageState, useEncrypted = false): PartialMessageState => {
     const Subject = formatSubject(
         useEncrypted ? referenceMessage.decryption?.decryptedSubject : referenceMessage.data?.Subject,
         RE_PREFIX
@@ -90,7 +90,7 @@ const reply = (referenceMessage: PartialMessageState, useEncrypted = false): Par
 /**
  * Format and build a replyAll
  */
-const replyAll = (
+export const replyAll = (
     referenceMessage: PartialMessageState,
     useEncrypted = false,
     addresses: Address[]
@@ -218,7 +218,7 @@ export const generatePreviousMessageInfos = (referenceMessage: PartialMessageSta
 /**
  * Generate blockquote of the referenced message to the content of the new mail
  */
-const generateBlockquote = (
+export const generateBlockquote = (
     referenceMessage: PartialMessageState,
     mailSettings: MailSettings,
     userSettings: UserSettings,
@@ -254,7 +254,8 @@ export const createNewDraft = (
     userSettings: UserSettings,
     addresses: Address[],
     getAttachment: (ID: string) => WorkerDecryptionResult<Uint8Array> | undefined,
-    isOutside = false
+    isOutside = false,
+    isQuickReply = false
 ): PartialMessageState => {
     const MIMEType = isOutside
         ? (mailSettings.DraftMIMEType as unknown as MIME_TYPES)
@@ -347,6 +348,7 @@ export const createNewDraft = (
             originalFrom,
             originalAddressID,
             initialAttachments,
+            isQuickReply,
         },
         messageImages,
     };

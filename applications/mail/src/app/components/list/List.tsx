@@ -46,6 +46,7 @@ import { ResizeHandle } from './ResizeHandle';
 import TaskRunningBanner from './TaskRunningBanner';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -268,7 +269,10 @@ const List = (
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {
                                                         case ChecklistKey.SendMessage: {
-                                                            onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                            onCompose({
+                                                                type: ComposeTypes.new,
+                                                                action: MESSAGE_ACTIONS.NEW,
+                                                            });
                                                             break;
                                                         }
 
@@ -302,7 +306,10 @@ const List = (
                                                 onItemSelection={(key: ChecklistKey) => () => {
                                                     switch (key) {
                                                         case ChecklistKey.SendMessage: {
-                                                            onCompose({ action: MESSAGE_ACTIONS.NEW });
+                                                            onCompose({
+                                                                type: ComposeTypes.new,
+                                                                action: MESSAGE_ACTIONS.NEW,
+                                                            });
                                                             break;
                                                         }
                                                         case ChecklistKey.MobileApp: {

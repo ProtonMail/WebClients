@@ -28,29 +28,36 @@ import { useAppDispatch } from '../../logic/store';
 import { useGetLocalID, useGetMessage } from '../message/useMessage';
 import { useDraft } from '../useDraft';
 
+export enum ComposeTypes {
+    existing,
+    new,
+    message,
+}
+
 export interface ComposeExisting {
+    type: ComposeTypes.existing;
     existingDraft: MessageState;
     fromUndo: boolean;
+    fromQuickReply?: boolean;
 }
 
 export interface ComposeNew {
+    type: ComposeTypes.new;
     action: MESSAGE_ACTIONS;
     referenceMessage?: PartialMessageState;
 }
 
-export type ComposeArgs = (ComposeExisting | ComposeNew) & {
+export interface ComposeModelMessage {
+    type: ComposeTypes.message;
+    modelMessage: MessageState;
+}
+
+export type ComposeArgs = (ComposeExisting | ComposeNew | ComposeModelMessage) & {
     returnFocusTo?: HTMLElement;
 };
 
-export const getComposeExisting = (composeArgs: ComposeArgs) =>
-    (composeArgs as ComposeExisting).existingDraft ? (composeArgs as ComposeExisting) : undefined;
-
-export const getComposeNew = (composeArgs: ComposeArgs) =>
-    typeof (composeArgs as ComposeNew).action === 'number' ? (composeArgs as ComposeNew) : undefined;
-
 export const getComposeArgs = (composeArgs: ComposeArgs) => ({
-    composeExisting: getComposeExisting(composeArgs),
-    composeNew: getComposeNew(composeArgs),
+    ...composeArgs,
     returnFocusTo: composeArgs.returnFocusTo || (document.activeElement as HTMLElement),
 });
 
@@ -134,10 +141,10 @@ export const useCompose = (
             return;
         }
 
-        const { composeExisting, composeNew, returnFocusTo } = getComposeArgs(composeArgs);
+        const compose = getComposeArgs(composeArgs);
 
-        if (composeExisting) {
-            const { existingDraft, fromUndo } = composeExisting;
+        if (compose.type === ComposeTypes.existing) {
+            const { existingDraft, fromUndo, returnFocusTo } = compose;
             const localID = getLocalID(existingDraft.localID);
 
             const existingMessageID = openComposers.find((id) => id === localID);
@@ -160,8 +167,8 @@ export const useCompose = (
             return;
         }
 
-        if (composeNew) {
-            const { action, referenceMessage } = composeNew;
+        if (compose.type === ComposeTypes.new) {
+            const { action, referenceMessage, returnFocusTo } = compose;
             const message = referenceMessage?.data;
 
             if (isOutbox(message) && message?.ID) {
@@ -179,6 +186,13 @@ export const useCompose = (
 
             openComposer(newMessageID, returnFocusTo);
             focusComposer(newMessageID);
+        }
+
+        if (compose.type === ComposeTypes.message) {
+            const { modelMessage, returnFocusTo } = compose;
+
+            openComposer(modelMessage.localID, returnFocusTo);
+            focusComposer(modelMessage.localID);
         }
     });
 

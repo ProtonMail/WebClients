@@ -6,6 +6,7 @@ import { isBusy } from '@proton/shared/lib/shortcuts/helpers';
 
 import { MESSAGE_ACTIONS } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
+import { ComposeTypes } from '../composer/useCompose';
 
 export interface PageHotkeysHandlers {
     onOpenShortcutsModal: () => void;
@@ -61,7 +62,7 @@ export const usePageHotkeys = ({ onOpenShortcutsModal }: PageHotkeysHandlers) =>
             'N',
             (e) => {
                 if (Shortcuts && !isBusy(e)) {
-                    onCompose({ action: MESSAGE_ACTIONS.NEW });
+                    onCompose({ type: ComposeTypes.new, action: MESSAGE_ACTIONS.NEW });
                 }
             },
         ],

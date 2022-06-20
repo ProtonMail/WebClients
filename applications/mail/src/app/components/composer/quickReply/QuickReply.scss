@@ -1,0 +1,40 @@
+@import '~@proton/styles/scss/config/index';
+@import '../../composer/composer';
+
+.quick-reply {
+	&-collapsed {
+		&:hover {
+			border-color: var(--field-hover);
+		}
+	}
+
+	&-composer {
+		// need to size it, because quick reply does not have dimensions like the composer container
+		block-size: em(135);
+
+		// plain text case
+		textarea {
+			margin-inline-start: 0.1em;
+
+			// Focus styles are brought by container with field and textarea classes
+			&:focus-visible {
+				outline: 0;
+			}
+		}
+	}
+
+	&-container {
+		padding-inline: 0;
+		padding-block: 0 0.5em;
+		overflow: hidden; // to avoid iframe eating the border-radius :-\
+	}
+
+	&-emoji-button {
+		padding: em(9); // to override toolbar-button padding
+	}
+}
+
+.is-focused {
+	border-color: var(--field-focus);
+	box-shadow: 0 0 0 #{$fields-focus-ring-size} var(--field-highlight);
+}

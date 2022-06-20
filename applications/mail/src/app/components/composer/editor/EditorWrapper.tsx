@@ -3,6 +3,7 @@ import { Dispatch, SetStateAction, memo, useCallback, useEffect, useRef, useStat
 import { c } from 'ttag';
 
 import { Editor, EditorActions, EditorMetadata, EditorTextDirection, useHandler } from '@proton/components';
+import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
@@ -274,6 +275,10 @@ const EditorWrapper = ({
         }
     }, [editorMetadata.blockquoteExpanded, blockquoteSaved, isPlainText]);
 
+    const { openEmojiPickerRef, toolbarConfig, setToolbarConfig, modalLink, modalImage, modalDefaultFont } = useToolbar(
+        { onAddAttachments, onChangeMetadata: handleChangeMetadata }
+    );
+
     return canRenderEditor ? (
         <Editor
             editorToolbarClassname="mb1 ml1-75 mr1-75"
@@ -282,7 +287,6 @@ const EditorWrapper = ({
             metadata={editorMetadata}
             disabled={disabled}
             onChange={onChangeContentCallback}
-            onChangeMetadata={handleChangeMetadata}
             onFocus={onFocus}
             showBlockquoteToggle={!editorMetadata.blockquoteExpanded}
             onBlockquoteToggleClick={handleBlockquoteToggleClick}
@@ -292,6 +296,12 @@ const EditorWrapper = ({
             isPlainText={isPlainText}
             fileHover={fileHover}
             setFileHover={setFileHover}
+            openEmojiPickerRef={openEmojiPickerRef}
+            toolbarConfig={toolbarConfig}
+            setToolbarConfig={setToolbarConfig}
+            modalLink={modalLink}
+            modalImage={modalImage}
+            modalDefaultFont={modalDefaultFont}
         />
     ) : null;
 };

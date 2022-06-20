@@ -4,12 +4,23 @@ import { Draft } from 'immer';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
-import { setFlag } from '@proton/shared/lib/mail/messages';
+import { isPlainText, setFlag } from '@proton/shared/lib/mail/messages';
 
+import { setDocumentContent } from '../../../helpers/message/messageContent';
 import { replaceEmbeddedAttachments } from '../../../helpers/message/messageEmbeddeds';
 import { getEmbeddedImages, updateImages } from '../../../helpers/message/messageImages';
+import { RootState } from '../../store';
 import { getLocalID, getMessage } from '../helpers/messagesReducer';
-import { MessageEmbeddedImage, MessageState, MessagesState, PartialMessageState } from '../messagesTypes';
+import { allMessages } from '../messagesSelectors';
+import {
+    MessageDraftFlags,
+    MessageEmbeddedImage,
+    MessageState,
+    MessagesState,
+    PartialMessageState,
+} from '../messagesTypes';
+
+const getAllMessages = (state: Draft<MessagesState>) => allMessages({ messages: state } as RootState);
 
 export const createDraft = (state: Draft<MessagesState>, { payload: message }: PayloadAction<MessageState>) => {
     (state as MessagesState)[message.localID] = message;
@@ -17,7 +28,9 @@ export const createDraft = (state: Draft<MessagesState>, { payload: message }: P
 
 export const openDraft = (
     state: Draft<MessagesState>,
-    { payload: { ID, fromUndo } }: PayloadAction<{ ID: string; fromUndo: boolean }>
+    {
+        payload: { ID, fromUndo, fromQuickReply },
+    }: PayloadAction<{ ID: string; fromUndo: boolean; fromQuickReply?: boolean }>
 ) => {
     const localID = getLocalID(state, ID);
     const messageState = getMessage(state, ID);
@@ -25,7 +38,11 @@ export const openDraft = (
     if (messageState) {
         // Drafts have a different sanitization as mail content
         // So we have to restart the sanitization process on a cached draft
-        messageState.messageDocument = undefined;
+        // If the message is opened from a quick reply, we don't want to restart the sanitization
+        if (!fromQuickReply) {
+            messageState.messageDocument = undefined;
+            messageState.messageImages = undefined;
+        }
         if (!messageState.draftFlags) {
             messageState.draftFlags = {};
         }
@@ -34,7 +51,6 @@ export const openDraft = (
             openDraftFromUndo: fromUndo,
             isSentDraft: false,
         };
-        messageState.messageImages = undefined;
     } else {
         state[localID] = { localID, draftFlags: { openDraftFromUndo: fromUndo } };
     }
@@ -48,9 +64,66 @@ export const removeInitialAttachments = (state: Draft<MessagesState>, { payload:
     }
 };
 
+export const removeQuickReplyFlag = (state: Draft<MessagesState>, { payload: ID }: PayloadAction<string>) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.draftFlags) {
+        messageState.draftFlags.isQuickReply = undefined;
+    }
+};
+
+export const removeAllQuickReplyFlags = (state: Draft<MessagesState>) => {
+    const messages = getAllMessages(state);
+
+    if (messages) {
+        messages.forEach((message) => {
+            if (message && message.draftFlags) {
+                message.draftFlags.isQuickReply = undefined;
+            }
+        });
+    }
+};
+
+export const updateIsSavingFlag = (
+    state: Draft<MessagesState>,
+    { payload: { ID, isSaving } }: PayloadAction<{ ID: string; isSaving: boolean }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState && messageState.draftFlags) {
+        messageState.draftFlags.isSaving = isSaving;
+    }
+};
+
+export const updateDraftContent = (
+    state: Draft<MessagesState>,
+    { payload: { ID, content } }: PayloadAction<{ ID: string; content: string }>
+) => {
+    const messageState = getMessage(state, ID);
+
+    if (messageState) {
+        if (isPlainText(messageState.data)) {
+            if (messageState.messageDocument) {
+                messageState.messageDocument.plainText = content;
+            } else {
+                messageState.messageDocument = { plainText: content };
+            }
+        } else {
+            const document = setDocumentContent(messageState.messageDocument?.document, content);
+            if (messageState.messageDocument) {
+                messageState.messageDocument.document = document;
+            } else {
+                messageState.messageDocument = { document };
+            }
+        }
+    }
+};
+
 export const draftSaved = (
     state: Draft<MessagesState>,
-    { payload: { ID, message } }: PayloadAction<{ ID: string; message: Message }>
+    {
+        payload: { ID, message, draftFlags },
+    }: PayloadAction<{ ID: string; message: Message; draftFlags?: MessageDraftFlags }>
 ) => {
     const messageState = getMessage(state, ID);
 
@@ -61,7 +134,7 @@ export const draftSaved = (
             message.Attachments
         );
     } else {
-        state[ID] = { localID: ID, data: message } as any;
+        state[ID] = { localID: ID, data: message, draftFlags: draftFlags } as any;
     }
 };
 

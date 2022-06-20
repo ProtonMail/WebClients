@@ -44,6 +44,7 @@ import RecipientType from '../recipients/RecipientType';
 import HeaderExtra from './HeaderExtra';
 import HeaderMoreDropdown from './HeaderMoreDropdown';
 import HeaderTopPrivacyIcon from './HeaderTopPrivacyIcon';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -131,6 +132,7 @@ const HeaderExpanded = ({
 
     const handleCompose = (action: MESSAGE_ACTIONS) => async () => {
         onCompose({
+            type: ComposeTypes.new,
             action,
             referenceMessage: message,
         });
