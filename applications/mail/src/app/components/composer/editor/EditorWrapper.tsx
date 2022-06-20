@@ -1,21 +1,14 @@
-import { useEffect, useState, useRef, useMemo, useCallback, memo } from 'react';
+import { useEffect, useState, useRef, useCallback, memo, SetStateAction, Dispatch } from 'react';
 import { c } from 'ttag';
 
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import { useHandler, Editor, EditorMetadata, EditorTextDirection, EditorActions } from '@proton/components';
-import { MIME_TYPES } from '@proton/shared/lib/constants';
 import diff from '@proton/utils/diff';
-import { defaultFontStyle } from '@proton/components/components/editor/helpers';
 import useIsMounted from '@proton/hooks/useIsMounted';
-import { Address, MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MessageChange } from '../Composer';
-import {
-    getContent,
-    exportPlainText,
-    plainTextToHTML,
-    setDocumentContent,
-} from '../../../helpers/message/messageContent';
+import { getContent } from '../../../helpers/message/messageContent';
 import { locateBlockquote } from '../../../helpers/message/messageBlockquote';
 import { getEmbeddedImages } from '../../../helpers/message/messageImages';
 import {
@@ -47,8 +40,9 @@ interface Props {
     onRemoveAttachment: (attachment: Attachment) => Promise<void>;
     isOutside?: boolean;
     mailSettings?: MailSettings;
-    userSettings?: UserSettings;
-    addresses: Address[];
+    editorMetadata: EditorMetadata;
+    fileHover?: boolean;
+    setFileHover?: Dispatch<SetStateAction<boolean>>;
 }
 
 const EditorWrapper = ({
@@ -60,17 +54,16 @@ const EditorWrapper = ({
     onAddAttachments,
     onRemoveAttachment,
     onFocus,
-    isOutside = false,
     mailSettings,
-    userSettings,
-    addresses,
+    editorMetadata,
+    fileHover,
+    setFileHover,
 }: Props) => {
     const isMounted = useIsMounted();
     const skipNextInputRef = useRef(false); // Had trouble by using a state here
 
     const [editorReady, setEditorReady] = useState(false);
     const [documentReady, setDocumentReady] = useState(false);
-    const [blockquoteExpanded, setBlockquoteExpanded] = useState(true);
     const [blockquoteSaved, setBlockquoteSaved] = useState<string>();
 
     // Keep track of the containing CIDs to detect deletion
@@ -85,17 +78,6 @@ const EditorWrapper = ({
     const canRenderEditor = !!message.data?.MIMEType;
     const isPlainText = testIsPlainText(message.data);
     const rightToLeft = message.data?.RightToLeft ? EditorTextDirection.RightToLeft : EditorTextDirection.LeftToRight;
-    const metadata: EditorMetadata = useMemo(
-        () => ({
-            supportPlainText: !isOutside,
-            isPlainText,
-            supportRightToLeft: true,
-            rightToLeft,
-            supportImages: true,
-            supportDefaultFontSelector: !isOutside,
-        }),
-        [isPlainText, rightToLeft]
-    );
 
     // Detect document ready
     useEffect(() => {
@@ -110,7 +92,7 @@ const EditorWrapper = ({
     const handleGetContent = useHandler(() => {
         const editorContent = editorActionsRef.current?.getContent() || '';
 
-        if (!blockquoteExpanded && blockquoteSaved !== '') {
+        if (!editorMetadata.blockquoteExpanded && blockquoteSaved !== '') {
             return editorContent + blockquoteSaved;
         }
 
@@ -160,9 +142,11 @@ const EditorWrapper = ({
                 // Means it's the first content initialization
                 content = contentBeforeBlockquote;
                 setBlockquoteSaved(blockquote);
-                setBlockquoteExpanded(blockquote === '');
+                editorMetadata.setBlockquoteExpanded?.(blockquote === '');
             } else {
-                content = blockquoteExpanded ? contentBeforeBlockquote + blockquote : contentBeforeBlockquote;
+                content = editorMetadata.blockquoteExpanded
+                    ? contentBeforeBlockquote + blockquote
+                    : contentBeforeBlockquote;
             }
         }
 
@@ -255,45 +239,13 @@ const EditorWrapper = ({
             checkImageDeletion();
         }
 
-        const nextContent = blockquoteExpanded ? content : `${content}${blockquoteSaved}`;
+        const nextContent = editorMetadata.blockquoteExpanded ? content : `${content}${blockquoteSaved}`;
 
         onChangeContent(nextContent);
     });
 
     const handleChangeMetadata = useCallback(
         (change: Partial<EditorMetadata>) => {
-            const switchToPlainText = () => {
-                const plainText = exportPlainText(handleGetContent());
-
-                const messageImages = message.messageImages ? { ...message.messageImages, images: [] } : undefined;
-                onChange({ messageDocument: { plainText }, data: { MIMEType: MIME_TYPES.PLAINTEXT }, messageImages });
-            };
-
-            const switchToHTML = () => {
-                const MIMEType = MIME_TYPES.DEFAULT;
-                const content = plainTextToHTML(
-                    message.data,
-                    message.messageDocument?.plainText,
-                    mailSettings,
-                    userSettings,
-                    addresses
-                );
-
-                const fontStyles = defaultFontStyle(mailSettings);
-                const wrappedContent = `<div style="${fontStyles}">${content}</div>`;
-
-                const document = setDocumentContent(message.messageDocument?.document, wrappedContent);
-                onChange({ messageDocument: { document }, data: { MIMEType } });
-            };
-
-            if (change.isPlainText !== undefined) {
-                if (change.isPlainText) {
-                    switchToPlainText();
-                    setBlockquoteExpanded(true);
-                } else {
-                    switchToHTML();
-                }
-            }
             if (change.rightToLeft !== undefined) {
                 onChange({ data: { RightToLeft: change.rightToLeft } });
             }
@@ -301,8 +253,8 @@ const EditorWrapper = ({
         [onChange, message]
     );
 
-    const handleBlocquoteToggleClick = useCallback(() => {
-        setBlockquoteExpanded(true);
+    const handleBlockquoteToggleClick = useCallback(() => {
+        editorMetadata.setBlockquoteExpanded?.(true);
 
         skipNextInputRef.current = true;
         if (editorActionsRef.current) {
@@ -316,21 +268,26 @@ const EditorWrapper = ({
         if (!disabled) {
             editorActionsRef.current?.focus();
         }
-    }, [blockquoteExpanded, blockquoteSaved, isPlainText]);
+    }, [editorMetadata.blockquoteExpanded, blockquoteSaved, isPlainText]);
 
     return canRenderEditor ? (
         <Editor
+            editorToolbarClassname="mb1 ml1-75 mr1-75"
+            editorClassname="pl1-75 pr1-75"
             placeholder={c('Placeholder').t`Write your message`}
-            metadata={metadata}
+            metadata={editorMetadata}
             disabled={disabled}
             onChange={onChangeContentCallback}
             onChangeMetadata={handleChangeMetadata}
             onFocus={onFocus}
-            showBlockquoteToggle={!blockquoteExpanded}
-            onBlockquoteToggleClick={handleBlocquoteToggleClick}
+            showBlockquoteToggle={!editorMetadata.blockquoteExpanded}
+            onBlockquoteToggleClick={handleBlockquoteToggleClick}
             onReady={handleEditorReady}
             mailSettings={mailSettings}
             onAddAttachments={onAddAttachments}
+            isPlainText={isPlainText}
+            fileHover={fileHover}
+            setFileHover={setFileHover}
         />
     ) : null;
 };

@@ -1,11 +1,9 @@
+import { DragEvent, useState } from 'react';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
-import { isPlainText, getAttachments } from '@proton/shared/lib/mail/messages';
-import { DragEvent, useState, DragEventHandler } from 'react';
+import { getAttachments } from '@proton/shared/lib/mail/messages';
 import { c } from 'ttag';
-import { classnames, EllipsisLoader } from '@proton/components';
-import { Address, MailSettings } from '@proton/shared/lib/interfaces';
-import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
-import { isDragFile } from '../../helpers/dom';
+import { classnames, EditorMetadata, EllipsisLoader, onlyDragFiles } from '@proton/components';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { PendingUpload } from '../../hooks/composer/useAttachments';
 import { MessageChange } from './Composer';
 import { MessageState, MessageStateWithData, OutsideKey } from '../../logic/messages/messagesTypes';
@@ -26,7 +24,7 @@ interface Props {
     isOutside?: boolean;
     outsideKey?: OutsideKey;
     mailSettings?: MailSettings;
-    addresses: Address[];
+    editorMetadata: EditorMetadata;
 }
 
 const ComposerContent = ({
@@ -43,40 +41,18 @@ const ComposerContent = ({
     isOutside = false,
     outsideKey,
     mailSettings,
-    addresses,
+    editorMetadata,
 }: Props) => {
     const [fileHover, setFileHover] = useState(false);
 
     const attachments = getAttachments(message.data);
     const showAttachements = attachments.length + (pendingUploads?.length || 0) > 0;
 
-    const onlyFiles = (eventHandler: DragEventHandler) => (event: DragEvent) => {
-        if (isDragFile(event)) {
-            return eventHandler(event);
-        }
-    };
-
-    const handleDrop = onlyFiles((event: DragEvent) => {
+    const handleDrop = onlyDragFiles((event: DragEvent) => {
         event.preventDefault();
         event.stopPropagation();
         setFileHover(false);
-        onAddAttachments([...event.dataTransfer.files]);
-    });
-
-    /**
-     * Listening for entering on the whole section
-     * But for leaving only on the overlay to prevent any interception by the editor
-     */
-    const handleDragLeave = onlyFiles((event) => {
-        event.stopPropagation();
-        setFileHover(false);
-    });
-
-    const handleDragOver = onlyFiles((event) => {
-        // In order to allow drop we need to preventDefault
-        event.preventDefault();
-        event.stopPropagation();
-        setFileHover(true);
+        onAddAttachments?.([...event.dataTransfer.files]);
     });
 
     return (
@@ -84,9 +60,7 @@ const ComposerContent = ({
             className={classnames([
                 'flex-item-fluid-auto mb0-5 flex flex-column flex-nowrap relative composer-content pt0-5',
                 attachments?.length > 0 && 'composer-content--has-attachments',
-                isPlainText(message.data) ? '' : 'composer-content--rich-edition',
             ])}
-            onDragOver={handleDragOver}
         >
             {disabled && (
                 <>
@@ -100,7 +74,7 @@ const ComposerContent = ({
             <div
                 className={classnames([
                     'flex-item-fluid flex flex-column flex-nowrap relative',
-                    isOutside ? 'mx0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0' : 'w100 pl1-75 pr1-75 mb0-5',
+                    isOutside ? 'mx0-5 on-tiny-mobile-ml0 on-tiny-mobile-mr0' : 'w100 mb0-5',
                 ])}
                 data-testid="composer-content"
             >
@@ -113,26 +87,11 @@ const ComposerContent = ({
                     onFocus={onFocus}
                     onAddAttachments={onAddAttachments}
                     onRemoveAttachment={onRemoveAttachment}
-                    isOutside={isOutside}
                     mailSettings={mailSettings}
-                    addresses={addresses}
+                    editorMetadata={editorMetadata}
+                    fileHover={fileHover}
+                    setFileHover={setFileHover}
                 />
-                {fileHover && (
-                    <div
-                        onDragLeave={handleDragLeave}
-                        onDropCapture={handleDrop}
-                        className={classnames([
-                            'composer-editor-dropzone absolute-cover flex flex-justify-center flex-align-items-center rounded-xl',
-                            !isOutside && 'mr1-75 ml1-75',
-                        ])}
-                    >
-                        <span className="composer-editor-dropzone-text no-pointer-events text-center color-weak">
-                            <img src={dragAndDrop} alt="" className="mb1" />
-                            <br />
-                            {c('Info').t`Drop a file here to upload`}
-                        </span>
-                    </div>
-                )}
             </div>
             {showAttachements && (
                 <div

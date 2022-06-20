@@ -279,8 +279,11 @@
 	}
 
 	&-editor-dropzone {
+		// Force dropzone background color to white in the composer
+		inset-block-start: 5px;
+		inset-block-end: 5px;
+		background-color: white;
 		border: 1px dashed var(--border-norm);
-		background-color: var(--background-norm);
 		opacity: 1;
 	}
 
