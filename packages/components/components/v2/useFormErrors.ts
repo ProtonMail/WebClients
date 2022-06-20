@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { flushSync } from 'react-dom';
+
+import { errorClassName } from '../v2/field/InputField';
 
 const useFormErrors = () => {
     const [, rerender] = useState<any>();
@@ -23,9 +26,16 @@ const useFormErrors = () => {
             errorsMapRef.current = [];
             rerender({});
         },
-        onFormSubmit: () => {
+        onFormSubmit: (element?: HTMLElement) => {
             isSubmittedRef.current = true;
-            rerender({});
+            if (element) {
+                flushSync(() => {
+                    rerender({});
+                });
+                element?.querySelector(`.${errorClassName}`)?.scrollIntoView();
+            } else {
+                rerender({});
+            }
             const oldErrors = errorsMapRef.current;
             return !oldErrors.some((value) => !!value);
         },
