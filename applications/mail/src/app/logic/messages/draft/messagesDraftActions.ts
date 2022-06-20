@@ -4,15 +4,27 @@ import { cancelSend as cancelSendApiCall } from '@proton/shared/lib/api/messages
 import { Api } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { MessageEmbeddedImage, MessageState } from '../messagesTypes';
+import { MessageDraftFlags, MessageEmbeddedImage, MessageState } from '../messagesTypes';
 
 export const createDraft = createAction<MessageState>('message/draft/create');
 
-export const openDraft = createAction<{ ID: string; fromUndo: boolean }>('messages/draft/open');
+export const openDraft = createAction<{ ID: string; fromUndo: boolean; fromQuickReply?: boolean }>(
+    'messages/draft/open'
+);
 
 export const removeInitialAttachments = createAction<string>('messages/draft/removeInitialAttachments');
 
-export const draftSaved = createAction<{ ID: string; message: Message }>('message/draft/saved');
+export const removeQuickReplyFlag = createAction<string>('message/draft/removeQuickReplyFlag');
+
+export const removeAllQuickReplyFlags = createAction('message/draft/removeAllQuickReplyFlags');
+
+export const updateIsSavingFlag = createAction<{ ID: string; isSaving: boolean }>('message/draft/updateIsSavingFlag');
+
+export const updateDraftContent = createAction<{ ID: string; content: string }>('message/draft/update');
+
+export const draftSaved = createAction<{ ID: string; message: Message; draftFlags?: MessageDraftFlags }>(
+    'message/draft/saved'
+);
 
 export const updateScheduled = createAction<{ ID: string; scheduledAt: number }>('message/scheduled/update');
 

@@ -24,6 +24,7 @@ import MailGetStartedChecklistModal from '../checklist/GetStartedChecklistModal'
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
 import SidebarVersion from './SidebarVersion';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -38,7 +39,7 @@ const MailSidebar = ({ labelID, expanded = false, onToggleExpand, onSendMessage 
     const { show, onDisplayed } = useSpotlightOnFeature(FeatureCode.SpotlightGetStartedChecklist);
     const { dismissed: getStartedChecklistDismissed } = useGetStartedChecklist();
     const handleCompose = useCallback(() => {
-        onCompose({ action: MESSAGE_ACTIONS.NEW });
+        onCompose({ type: ComposeTypes.new, action: MESSAGE_ACTIONS.NEW });
     }, [onCompose]);
 
     const [mailGetStartedChecklistModalOpen, setMailGetStartedChecklistModalOpen] = useState(false);

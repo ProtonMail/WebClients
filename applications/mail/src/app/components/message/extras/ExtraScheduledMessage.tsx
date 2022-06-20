@@ -22,6 +22,7 @@ import { formatDateToHuman } from '../../../helpers/date';
 import { cancelScheduled } from '../../../logic/messages/draft/messagesDraftActions';
 import { MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { useAppDispatch } from '../../../logic/store';
+import { ComposeTypes } from '../../../hooks/composer/useCompose';
 
 interface Props {
     message: MessageStateWithData;
@@ -63,7 +64,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
         createNotification({
             text: c('Message notification').t`Scheduling cancelled. Message has been moved to Drafts.`,
         });
-        onCompose({ existingDraft: message, fromUndo: false });
+        onCompose({ type: ComposeTypes.existing, existingDraft: message, fromUndo: false });
     };
 
     const getScheduleBannerMessage = () => {

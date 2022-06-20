@@ -1,7 +1,8 @@
-import { Dispatch, DragEvent, SetStateAction, useCallback, useRef } from 'react';
+import { Dispatch, DragEvent, RefObject, SetStateAction, useCallback } from 'react';
 
 import { c } from 'ttag';
 
+import { ToolbarConfig } from '@proton/components/components/editor/helpers/getToolbarConfig';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import dragAndDrop from '@proton/styles/assets/img/illustrations/drag-and-drop-img.svg';
 import noop from '@proton/utils/noop';
@@ -9,10 +10,7 @@ import noop from '@proton/utils/noop';
 import { classnames } from '../../helpers';
 import { onlyDragFiles } from '../dropzone';
 import { EDITOR_DEFAULT_METADATA } from './constants';
-import { ModalDefaultFontProps, ModalImageProps, ModalLinkProps } from './hooks/interface';
-import useEditorModal from './hooks/useEditorModal';
-import useToolbarConfig from './hooks/useToolbarConfig';
-import { EditorActions, EditorMetadata } from './interface';
+import { EditorActions, EditorMetadata, SetEditorToolbarConfig } from './interface';
 import DefaultFontModal from './modals/DefaultFontModal';
 import InsertImageModal from './modals/InsertImageModal';
 import InsertLinkModal from './modals/InsertLinkModal';
@@ -27,7 +25,6 @@ interface Props {
     placeholder?: string;
     metadata?: Partial<EditorMetadata>;
     onChange: (value: string) => void;
-    onChangeMetadata?: (metadataChange: Partial<EditorMetadata>) => void;
     showBlockquoteToggle?: boolean;
     onBlockquoteToggleClick?: () => void;
     disabled?: boolean;
@@ -44,6 +41,14 @@ interface Props {
     isPlainText?: boolean;
     fileHover?: boolean;
     setFileHover?: Dispatch<SetStateAction<boolean>>;
+    openEmojiPickerRef: RefObject<() => void>;
+    toolbarConfig?: ToolbarConfig;
+    setToolbarConfig: SetEditorToolbarConfig;
+    modalLink: any;
+    modalImage: any;
+    modalDefaultFont: any;
+    hasToolbar?: boolean;
+    hasDropzone?: boolean;
 }
 
 const Editor = ({
@@ -53,7 +58,6 @@ const Editor = ({
     placeholder,
     metadata: metadataProp,
     onChange = noop,
-    onChangeMetadata = noop,
     simple,
     onFocus = noop,
     disabled = false,
@@ -65,25 +69,20 @@ const Editor = ({
     isPlainText,
     fileHover,
     setFileHover,
+    openEmojiPickerRef,
+    toolbarConfig,
+    setToolbarConfig,
+    modalLink,
+    modalImage,
+    modalDefaultFont,
+    hasToolbar = true,
+    hasDropzone = true,
 }: Props) => {
     /**
      * Set to true when editor setContent is called by parent components
      * in order to prevent onChange callback
      */
     const metadata: EditorMetadata = { ...EDITOR_DEFAULT_METADATA, ...metadataProp };
-
-    const modalLink = useEditorModal<ModalLinkProps>();
-    const modalImage = useEditorModal<ModalImageProps>();
-    const modalDefaultFont = useEditorModal<ModalDefaultFontProps>();
-    const openEmojiPickerRef = useRef<() => void>(null);
-
-    const [toolbarConfig, setToolbarConfig] = useToolbarConfig({
-        showModalImage: modalImage.showCallback,
-        showModalLink: modalLink.showCallback,
-        showModalDefaultFont: modalDefaultFont.showCallback,
-        onChangeMetadata,
-        onAddAttachments,
-    });
 
     const handleDrop = onlyDragFiles((event: DragEvent) => {
         event.preventDefault();
@@ -159,7 +158,7 @@ const Editor = ({
                         />
                     )}
 
-                    {fileHover && (
+                    {fileHover && hasDropzone && (
                         <div
                             onDragLeave={handleDragLeave}
                             onDropCapture={handleDrop}
@@ -177,14 +176,16 @@ const Editor = ({
                     )}
                 </div>
 
-                <EditorToolbar
-                    config={toolbarConfig}
-                    metadata={metadata}
-                    mailSettings={mailSettings}
-                    className={editorToolbarClassname}
-                    openEmojiPickerRef={openEmojiPickerRef}
-                    simple={simple}
-                />
+                {hasToolbar && (
+                    <EditorToolbar
+                        config={toolbarConfig}
+                        metadata={metadata}
+                        mailSettings={mailSettings}
+                        className={editorToolbarClassname}
+                        openEmojiPickerRef={openEmojiPickerRef}
+                        simple={simple}
+                    />
+                )}
             </div>
             {modalDefaultFont.render && metadata.supportDefaultFontSelector && (
                 <DefaultFontModal {...modalDefaultFont.props} {...modalDefaultFont.modalsStateProps} />

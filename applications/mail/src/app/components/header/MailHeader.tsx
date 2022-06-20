@@ -41,6 +41,7 @@ import MailOnboardingModal from '../onboarding/MailOnboardingModal';
 import ClearBrowserDataModal from './ClearBrowserDataModal';
 import MailDefaultHandlerModal from './MailDefaultHandlerModal';
 import MailSearch from './search/MailSearch';
+import { ComposeTypes } from '../../hooks/composer/useCompose';
 
 interface Props {
     labelID: string;
@@ -76,6 +77,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
 
     const handleContactsCompose = (emails: Recipient[], attachments: File[]) => {
         onCompose({
+            type: ComposeTypes.new,
             action: MESSAGE_ACTIONS.NEW,
             referenceMessage: { data: { ToList: emails }, draftFlags: { initialAttachments: attachments } },
         });
@@ -186,7 +188,7 @@ const MailHeader = ({ labelID, elementID, breakpoints, expanded, onToggleExpand 
                 onToggleExpand={onToggleExpand}
                 isNarrow={breakpoints.isNarrow}
                 floatingButton={
-                    <FloatingButton onClick={() => onCompose({ action: MESSAGE_ACTIONS.NEW })}>
+                    <FloatingButton onClick={() => onCompose({ type: ComposeTypes.new, action: MESSAGE_ACTIONS.NEW })}>
                         <Icon size={24} name="pen" className="mauto" />
                     </FloatingButton>
                 }

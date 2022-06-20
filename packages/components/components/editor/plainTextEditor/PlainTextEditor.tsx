@@ -32,6 +32,9 @@ const PlainTextEditor = ({ onFocus, onReady, onChange, placeholder }: Props) => 
                 }
             },
             isDisposed: () => isMountedCallback() === false || !textareaRef.current,
+            scroll: (scrollToOption: ScrollToOptions) => {
+                textareaRef.current?.scrollTo?.(scrollToOption);
+            },
         };
         onReady(actions);
     }, []);

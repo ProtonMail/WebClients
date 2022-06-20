@@ -225,6 +225,16 @@ export interface MessageDraftFlags {
      * Flag for draft that has already been sent
      */
     isSentDraft?: boolean;
+
+    /**
+     * Flag to know whether the draft has been created in a quick reply
+     */
+    isQuickReply?: boolean;
+
+    /**
+     * Flag to know whether the quick reply draft is being saved or not
+     */
+    isSaving?: boolean;
 }
 
 export interface MessageState {
