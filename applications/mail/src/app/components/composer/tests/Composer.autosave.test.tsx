@@ -1,7 +1,6 @@
 import noop from '@proton/utils/noop';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { act } from '@testing-library/react';
-import { fireEvent, getByTestId } from '@testing-library/dom';
+import { fireEvent, getByTestId, waitFor } from '@testing-library/dom';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import {
@@ -30,11 +29,15 @@ describe('Composer autosave', () => {
     });
 
     beforeEach(() => {
+        jest.useFakeTimers();
         addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
     });
 
-    afterEach(clearAll);
+    afterEach(() => {
+        clearAll();
+        jest.useRealTimers();
+    });
 
     const asyncSpy = (resolved = true) => {
         let resolve: (value: unknown) => void = noop;
@@ -76,15 +79,23 @@ describe('Composer autosave', () => {
         return { ...renderResult, createSpy, updateSpy, sendSpy, createResolve, updateResolve, sendResolve };
     };
 
+    const waitForSpy = (spy: jest.Mock<Promise<unknown>, []>) =>
+        waitFor(
+            () => {
+                expect(spy).toHaveBeenCalled();
+            },
+            { timeout: 10000 }
+        );
+
     it('should wait 2s before saving a change', async () => {
         const { createSpy, container } = await setup();
 
         await act(async () => {
             triggerRoosterInput(container);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             expect(createSpy).not.toHaveBeenCalled();
-            await wait(1500);
-            expect(createSpy).toHaveBeenCalled();
+            jest.advanceTimersByTime(1500);
+            await waitForSpy(createSpy);
         });
     });
 
@@ -93,12 +104,12 @@ describe('Composer autosave', () => {
 
         await act(async () => {
             triggerRoosterInput(container);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             triggerRoosterInput(container);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             expect(createSpy).not.toHaveBeenCalled();
-            await wait(1500);
-            expect(createSpy).toHaveBeenCalled();
+            jest.advanceTimersByTime(1500);
+            await waitForSpy(createSpy);
         });
     });
 
@@ -107,36 +118,38 @@ describe('Composer autosave', () => {
 
         await act(async () => {
             triggerRoosterInput(container);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             expect(createSpy).not.toHaveBeenCalled();
-            await wait(1500);
-            expect(createSpy).toHaveBeenCalled();
+            jest.advanceTimersByTime(1500);
+            await waitForSpy(createSpy);
             triggerRoosterInput(container);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             expect(updateSpy).not.toHaveBeenCalled();
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             expect(updateSpy).not.toHaveBeenCalled();
             createResolve({ Message: { ID } });
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             expect(updateSpy).not.toHaveBeenCalled();
-            await wait(1500);
-            expect(updateSpy).toHaveBeenCalled();
+            jest.advanceTimersByTime(1500);
+            await waitForSpy(updateSpy);
         });
     });
 
     it('should wait previous save before sending', async () => {
+        jest.useFakeTimers();
+
         const { createSpy, createResolve, sendSpy, container, ...renderResult } = await setup(false);
 
         await act(async () => {
             triggerRoosterInput(container);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
             const sendButton = await renderResult.findByTestId('composer:send-button');
             fireEvent.click(sendButton);
-            await wait(1500);
+            jest.advanceTimersByTime(1500);
+            await waitForSpy(createSpy);
             expect(sendSpy).not.toHaveBeenCalled();
             createResolve({ Message: { ID, Attachments: [] } });
-            await wait(1500);
-            expect(sendSpy).toHaveBeenCalled();
+            await waitForSpy(sendSpy);
         });
     });
 });
