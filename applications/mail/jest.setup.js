@@ -2,9 +2,6 @@ import '@testing-library/jest-dom';
 import { init } from 'pmcrypto/lib/pmcrypto';
 import * as openpgp from 'openpgp';
 
-// Allow to detect fake timers later
-globalThis.originalDate = globalThis.Date;
-
 init(openpgp);
 
 // Silence warnings on expect to throw https://github.com/testing-library/react-testing-library/issues/157
