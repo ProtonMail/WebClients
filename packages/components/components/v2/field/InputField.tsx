@@ -35,6 +35,7 @@ export interface InputFieldOwnProps {
 }
 
 export type InputFieldProps<E extends ElementType> = PolymorphicComponentProps<E, InputFieldOwnProps>;
+export const errorClassName = 'inputform-container--invalid';
 
 const defaultElement = Input;
 
@@ -67,7 +68,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             isDense && 'inputform-container--dense',
             rootClassName,
             disabled && 'inputform-container--disabled',
-            Boolean(error) && 'inputform-container--invalid',
+            Boolean(error) && errorClassName,
             !error && Boolean(warning) && 'inputform-container--warning',
             bigger && 'inputform-container--bigger',
         ]),

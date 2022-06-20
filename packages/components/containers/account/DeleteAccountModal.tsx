@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { c } from 'ttag';
 import { ACCOUNT_DELETION_REASONS } from '@proton/shared/lib/constants';
 import { deleteUser, canDelete, unlockPasswordChanges } from '@proton/shared/lib/api/user';
@@ -107,8 +107,8 @@ const DeleteAccountModal = (props: Props) => {
         <Option title={c('Option').t`My reason isn't listed`} value={OTHER} key={OTHER} />,
     ].filter(isTruthy);
 
-    const handleSubmit = async () => {
-        if (!onFormSubmit()) {
+    const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+        if (!onFormSubmit(event.currentTarget)) {
             return;
         }
 
@@ -161,7 +161,7 @@ const DeleteAccountModal = (props: Props) => {
             onClose={hideHeader ? undefined : onClose}
             disableCloseOnEscape={disableCloseOnEscape || loading}
             size={size}
-            onSubmit={loading ? noop : () => withLoading(handleSubmit())}
+            onSubmit={loading ? noop : (event: FormEvent<HTMLFormElement>) => withLoading(handleSubmit(event))}
             {...rest}
         >
             {!hideHeader && <ModalTwoHeader title={c('Title').t`Delete account`} />}
@@ -253,16 +253,18 @@ const DeleteAccountModal = (props: Props) => {
                         disabled={loading}
                     />
                 )}
-
-                <Checkbox
-                    required
+                <InputFieldTwo
                     id="check"
+                    as={Checkbox}
+                    error={validator([!model.check ? requiredValidator(undefined) : ''])}
                     checked={model.check}
+                    onChange={({ target }: ChangeEvent<HTMLInputElement>) =>
+                        setModel({ ...model, check: target.checked })
+                    }
                     disabled={loading}
-                    onChange={({ target }) => setModel({ ...model, check: target.checked })}
                 >
                     {c('Label').t`Yes, I want to permanently delete this account and all its data.`}
-                </Checkbox>
+                </InputFieldTwo>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button onClick={onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
