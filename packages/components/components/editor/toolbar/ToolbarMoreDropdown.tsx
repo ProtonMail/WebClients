@@ -11,12 +11,11 @@ const getClassname = (status: boolean) => (status ? undefined : 'visibility-hidd
 
 interface Props {
     metadata: EditorMetadata;
-    onChangeMetadata: (change: Partial<EditorMetadata>) => void;
     isNarrow?: boolean;
     config: ToolbarConfig;
 }
 
-const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetadata }: Props) => (
+const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
     <ToolbarDropdown
         content={<Icon name="three-dots-horizontal" alt={c('Action').t`More`} />}
         className="flex-item-noshrink mlauto editor-toolbar-more-dropdown"
@@ -139,36 +138,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config, onChangeMetad
                         />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Right to Left`}</span>
                     </DropdownMenuButton>,
-                    metadata.supportPlainText && <div className="dropdown-item-hr" key="hr-5" />,
                 ]}
-            {metadata.supportPlainText && [
-                <DropdownMenuButton
-                    key={3}
-                    className="text-left flex flex-nowrap flex-align-items-center border-bottom-none"
-                    onClick={() => {
-                        if (metadata.isPlainText !== false) {
-                            onChangeMetadata({ isPlainText: false });
-                        }
-                    }}
-                    data-testid="editor-to-html"
-                >
-                    <Icon name="checkmark" className={getClassname(!metadata.isPlainText)} />
-                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Normal`}</span>
-                </DropdownMenuButton>,
-                <DropdownMenuButton
-                    key={4}
-                    className="text-left flex flex-nowrap flex-align-items-center"
-                    onClick={() => {
-                        if (metadata.isPlainText !== true) {
-                            onChangeMetadata({ isPlainText: true });
-                        }
-                    }}
-                    data-testid="editor-to-plaintext"
-                >
-                    <Icon name="checkmark" className={getClassname(metadata.isPlainText)} />
-                    <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Info').t`Plain text`}</span>
-                </DropdownMenuButton>,
-            ]}
         </DropdownMenu>
     </ToolbarDropdown>
 );
