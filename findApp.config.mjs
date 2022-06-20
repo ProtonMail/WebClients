@@ -33,6 +33,18 @@ export default {
         glob: '{lib,*-impl}/**/*.{js,jsx,ts,tsx}'
       },
       {
+        name: 'atoms',
+        glob: '**/*.{js,jsx,ts,tsx}'
+      },
+      {
+        name: 'util',
+        glob: '**/*.{js,jsx,ts,tsx}'
+      },
+      {
+        name: 'colors',
+        glob: '**/*.{js,jsx,ts,tsx}'
+      },
+      {
         name: 'components',
         glob: '{{components,containers,helpers,hooks}/**/*,index}.{js,jsx,ts,tsx}'
       },
