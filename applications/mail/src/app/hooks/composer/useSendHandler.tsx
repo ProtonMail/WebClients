@@ -76,7 +76,10 @@ export const useSendHandler = ({
             mapSendPrefs = verificationResults.mapSendPrefs;
             inputMessage = verificationResults.cleanMessage;
 
-            alreadySaved = !!inputMessage.data.ID && !pendingAutoSave.isPending && !verificationResults.hasChanged;
+            alreadySaved =
+                !!getMessage(inputMessage.localID)?.data?.ID &&
+                !pendingAutoSave.isPending &&
+                !verificationResults.hasChanged;
 
             // Don't abort before pendingAutoSave is checked
             autoSave.abort?.();
