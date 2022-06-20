@@ -158,16 +158,16 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         const { Authentication } = await api(getAuthenticationMethod({ Email: modalModel.email }));
         const { ImapHost, ImapPort, ImporterID } = Authentication;
 
-        setModalModel({
+        setModalModel((modalModel) => ({
             ...modalModel,
-            importID: ImporterID,
-            imap: ImapHost,
-            port: ImapPort,
-        });
+            importID: ImporterID || modalModel.importID,
+            imap: ImapHost || modalModel.imap,
+            port: ImapPort || modalModel.port,
+        }));
     };
 
     const moveToPrepareStep = (Importer: ImporterFromServer, providerFolders: ImportedMailFolder[]) => {
-        setModalModel({
+        setModalModel((modalModel) => ({
             ...modalModel,
             providerFolders: providerFolders.sort(destinationFoldersFirst),
             importID: Importer.ID,
@@ -177,7 +177,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
             step: MailImportStep.PREPARE,
             errorCode: 0,
             errorLabel: '',
-        });
+        }));
     };
 
     const handleSubmitStartError = (error: any & { data: { Code: number; Error: string } }) => {
@@ -193,11 +193,11 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                 IMPORT_ERROR.RATE_LIMIT_EXCEEDED,
             ].includes(Code)
         ) {
-            setModalModel({
+            setModalModel((modalModel) => ({
                 ...modalModel,
                 errorCode: Code,
                 errorLabel: Error,
-            });
+            }));
             return;
         }
 
@@ -264,10 +264,10 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
             return;
         }
 
-        setModalModel({
+        setModalModel((modalModel) => ({
             ...modalModel,
             imap: '',
-        });
+        }));
     };
 
     const formatImportPayload = () => {
@@ -294,10 +294,10 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         await api(startImportTask(payload));
         await call();
 
-        setModalModel({
+        setModalModel((modalModel) => ({
             ...modalModel,
             step: MailImportStep.STARTED,
-        });
+        }));
     };
 
     const resumeImporter = async () => {
@@ -370,7 +370,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                 {modalModel.step === MailImportStep.STARTED ? c('Action').t`Close` : c('Action').t`Cancel`}
             </Button>
         );
-    }, [modalModel.step, loading]);
+    }, [modalModel.step]);
 
     const submitRenderer = useMemo(() => {
         const { email, password, imap, port, isPayloadInvalid, step } = modalModel;
