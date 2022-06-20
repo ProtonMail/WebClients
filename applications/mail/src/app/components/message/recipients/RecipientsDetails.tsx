@@ -11,6 +11,7 @@ interface Props {
     mapStatusIcons?: MapStatusIcons;
     isLoading: boolean;
     isDetailsModal?: boolean;
+    isPrintModal?: boolean;
     showDropdown?: boolean;
     isOutside?: boolean;
 }
@@ -20,6 +21,7 @@ const RecipientsDetails = ({
     mapStatusIcons,
     isLoading,
     isDetailsModal = false,
+    isPrintModal = false,
     showDropdown,
     isOutside,
 }: Props) => {
@@ -35,6 +37,7 @@ const RecipientsDetails = ({
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
                     showDropdown={showDropdown}
+                    isPrintModal={isPrintModal}
                 />
             ) : (
                 <EORecipientsList list={ToList} isLoading={isLoading} showDropdown={showDropdown} />
@@ -50,6 +53,7 @@ const RecipientsDetails = ({
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
                     showDropdown={showDropdown}
+                    isPrintModal={isPrintModal}
                 />
             ) : (
                 <EORecipientsList list={CCList} isLoading={isLoading} showDropdown={showDropdown} />
@@ -65,6 +69,7 @@ const RecipientsDetails = ({
                     mapStatusIcons={mapStatusIcons}
                     isLoading={isLoading}
                     showDropdown={showDropdown}
+                    isPrintModal={isPrintModal}
                 />
             ) : (
                 <EORecipientsList list={BCCList} isLoading={isLoading} showDropdown={showDropdown} />
