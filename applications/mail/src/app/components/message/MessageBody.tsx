@@ -108,6 +108,7 @@ const MessageBody = ({
             className={classnames([
                 'message-content relative bg-norm color-norm overflow-hidden',
                 plain && 'plain',
+                isPrint && 'message-content-print',
                 isPrint || !isIframeContentSet ? '' : 'pt1 pb1 px1-25',
                 !placeholderMode && !hasDarkStyles && isDarkTheme && !plain && !sourceMode && 'dark-style', // Required for the iframe margin reserved for the horizontal scroll
             ])}
