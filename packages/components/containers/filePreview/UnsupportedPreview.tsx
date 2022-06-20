@@ -16,7 +16,7 @@ const UnsupportedPreview = ({ onSave, type = 'file' }: Props) => {
     return (
         <div className="absolute-center text-center w100 pl1 pr1">
             <img
-                className={classnames(['mb1', isNarrow ? 'w150p' : 'w200p'])}
+                className="mb1 w80p"
                 src={type === 'file' ? unsupportedPreviewSvg : corruptedPreviewSvg}
                 alt={c('Info').t`Unsupported file`}
             />
