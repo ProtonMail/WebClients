@@ -153,9 +153,11 @@ select {
 			$default-height-fields-inputforms
 		); // To ensure minimum size when overriding block-size to 'auto'
 
+		// make sure input inside does not go over its container
 		input.inputform-field {
 			block-size: 100%;
 			min-block-size: initial;
+			background-color: transparent;
 		}
 
 		.inputform-field {
