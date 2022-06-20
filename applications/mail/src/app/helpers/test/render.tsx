@@ -102,21 +102,12 @@ const TestProvider = ({ children }: Props) => {
     );
 };
 
-export const isFakeTimers = () => globalThis.originalDate !== globalThis.Date;
-
 /**
  * Small helper to wait for asynchronous work to be executed
  * Should be avoided as much as possible, but often convenient
  */
 export const tick = () => {
-    if (isFakeTimers()) {
-        return act(() => {
-            jest.runAllTimers();
-            return Promise.resolve();
-        });
-    } else {
-        return act(() => wait(0));
-    }
+    return act(() => Promise.resolve());
 };
 
 export const render = async (ui: ReactElement, useMinimalCache = true): Promise<RenderResult> => {

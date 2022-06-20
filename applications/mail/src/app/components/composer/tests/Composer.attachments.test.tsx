@@ -1,8 +1,7 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address, Key } from '@proton/shared/lib/interfaces';
-import { fireEvent, getByTitle } from '@testing-library/dom';
+import { fireEvent, getByTitle, waitFor } from '@testing-library/dom';
 import loudRejection from 'loud-rejection';
-import { wait } from '@proton/shared/lib/helpers/promise';
 import { act } from '@testing-library/react';
 import {
     clearAll,
@@ -43,6 +42,9 @@ describe('Composer attachments', () => {
     const file = new File([], fileName, { type: fileType });
     const attachmentData = { ID: 'AttachmentID', Name: fileName, MIMEType: fileType };
 
+    let updateSpy: jest.Mock;
+    let sendSpy: jest.Mock;
+
     const setup = async (MIMEType = MIME_TYPES.PLAINTEXT) => {
         const { attachment, sessionKey: generatedSessionKey } = await createAttachment(
             attachmentData,
@@ -51,7 +53,7 @@ describe('Composer attachments', () => {
 
         const resolve = addApiResolver('mail/v4/attachments');
 
-        const updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }: any) => {
+        updateSpy = jest.fn(({ data: { Message, AttachmentKeyPackets } }: any) => {
             Message.Attachments.forEach((Attachment: any) => {
                 if (AttachmentKeyPackets?.[Attachment.ID]) {
                     Attachment.KeyPackets = AttachmentKeyPackets[Attachment.ID];
@@ -61,7 +63,7 @@ describe('Composer attachments', () => {
         });
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
 
-        const sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
+        sendSpy = jest.fn(() => Promise.resolve({ Sent: {} }));
         addApiMock(`mail/v4/messages/${ID}`, sendSpy, 'post');
 
         minimalCache();
@@ -90,12 +92,13 @@ describe('Composer attachments', () => {
     const saveNow = async (container: HTMLElement) => {
         fireEvent.keyDown(container, { key: 's', ctrlKey: true });
         await tick();
+    };
 
-        // Mandatory to wait on every consequence of the change before starting another test
-        // Definitely not proud of this, any better suggestion is welcomed
-        await act(async () => {
-            await wait(3000);
+    const waitForAutoSave = async () => {
+        act(() => {
+            jest.advanceTimersByTime(3000);
         });
+        await tick();
     };
 
     const switchAddress = async (getByTestId: (id: string) => HTMLElement) => {
@@ -113,11 +116,15 @@ describe('Composer attachments', () => {
     });
 
     beforeEach(() => {
+        jest.useFakeTimers();
         addKeysToAddressKeysCache(address1.ID, address1Keys);
         addKeysToAddressKeysCache(address2.ID, address2Keys);
     });
 
-    afterEach(clearAll);
+    afterEach(() => {
+        clearAll();
+        jest.useRealTimers();
+    });
 
     it('should not show embedded modal when plaintext mode', async () => {
         const { queryAllByText, findByText, resolve, container } = await setup();
@@ -130,11 +137,12 @@ describe('Composer attachments', () => {
         expect(attachmentName).not.toBe(null);
 
         resolve({ Attachment: { ID: 'AttachmentID' } });
+        await tick();
+
+        await waitForAutoSave();
 
         // file without an "s" mean only one
         await findByText('file attached');
-
-        await saveNow(container);
     });
 
     it('should show embedded modal when html mode', async () => {
@@ -152,11 +160,12 @@ describe('Composer attachments', () => {
         expect(attachmentName).not.toBe(null);
 
         resolve({ Attachment: { ID: 'AttachmentID' } });
+        await tick();
+
+        await waitForAutoSave();
 
         // file without an "s" mean only one
         await findByText('file attached');
-
-        await saveNow(container);
     });
 
     it('should re-encrypt attachment key packets on sender address change', async () => {
@@ -164,6 +173,9 @@ describe('Composer attachments', () => {
             await setup();
 
         resolve({ Attachment: attachment });
+        await tick();
+
+        await waitForAutoSave();
 
         await switchAddress(getByTestId);
 
@@ -173,7 +185,7 @@ describe('Composer attachments', () => {
 
         expect(updateSpy).toHaveBeenCalled();
 
-        const requestData = (updateSpy.mock.calls[0] as any[])[0].data;
+        const requestData = (updateSpy.mock.calls[1] as any[])[0].data;
         const keyPackets = requestData.AttachmentKeyPackets[attachment.ID as string];
 
         expect(keyPackets).toBeDefined();
@@ -196,12 +208,29 @@ describe('Composer attachments', () => {
         await waitForNotification('Sending message...');
 
         resolve({ Attachment: attachment });
+        await tick();
+
+        await waitFor(
+            () => {
+                expect(updateSpy).toBeCalled();
+            },
+            { timeout: 20000 }
+        );
+
+        await tick();
+
+        await waitFor(
+            () => {
+                expect(sendSpy).toBeCalled();
+            },
+            { timeout: 20000 }
+        );
 
         await waitForNotification('Message sent');
 
         await waitForNoNotification();
 
-        const requestData = (updateSpy.mock.calls[0] as any[])[0].data;
+        const requestData = (updateSpy.mock.calls[1] as any[])[0].data;
         const keyPackets = requestData.AttachmentKeyPackets[attachment.ID as string];
 
         expect(keyPackets).toBeDefined();
