@@ -67,7 +67,7 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
                 <Content>
                     <Text>
                         {c('Subtitle for trial plan')
-                            .t`A short rundown of the timeline of your trial. Feel free to opt out/cancel anytime.`}
+                            .t`This offer is for those new to Proton only. No credit card required.`}
                     </Text>
                     <ReferralHowItWorks />
                     <Button
@@ -83,9 +83,6 @@ const ReferralStep = ({ onPlan, onBack }: Props) => {
                         }}
                         fullWidth
                     >{c('Action in trial plan').t`Start my 30-day free trial`}</Button>
-                    <p className="text-center mt0 mb0-5">
-                        <small className="color-weak">{c('Info').t`No credit card required`}</small>
-                    </p>
                     <Button
                         loading={loading && type === 'free'}
                         disabled={loading}
