@@ -9,6 +9,7 @@ export interface InputTwoProps extends Omit<ComponentPropsWithRef<'input'>, 'pre
     prefix?: ReactNode;
     suffix?: ReactNode;
     containerRef?: Ref<HTMLDivElement>;
+    containerProps?: ComponentPropsWithRef<'div'>;
     disableChange?: boolean;
     onValue?: (value: string) => void;
     inputClassName?: string;
@@ -26,6 +27,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
         onValue,
         disableChange,
         containerRef,
+        containerProps,
         ...rest
     } = props;
 
@@ -60,6 +62,7 @@ const InputTwo = (props: InputTwoProps, ref: Ref<HTMLInputElement>) => {
                 classNameProp,
             ])}
             ref={containerRef}
+            {...containerProps}
         >
             {prefix && (
                 <div className="field-two-input-adornment ml0-5 flex flex-align-items-center flex-item-noshrink flex-nowrap flex-gap-0-5">
