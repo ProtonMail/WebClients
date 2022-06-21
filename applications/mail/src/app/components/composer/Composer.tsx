@@ -243,7 +243,7 @@ const Composer = (
             const password = isOpenFromUndo
                 ? // Keep password on undo
                   {}
-                : // Forget previously setted password if kept in the cache
+                : // Forget previously set password if kept in the cache
                   { Password: undefined, PasswordHint: undefined };
 
             const newModelMessage = {
