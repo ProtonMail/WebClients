@@ -4,8 +4,9 @@ import { addMonths, format } from 'date-fns';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 const ReferralHowItWorks = () => {
-    const endDate = addMonths(new Date(), 1);
-    const endText = format(endDate, 'PP', { locale: dateLocale });
+    // NOTE API plan to return subscription start date with GET /plans route
+    const startDate = addMonths(new Date(), 1);
+    const startText = format(startDate, 'PP', { locale: dateLocale });
 
     return (
         <VerticalSteps>
@@ -29,7 +30,8 @@ const ReferralHowItWorks = () => {
             <VerticalStep
                 icon="calendar-today"
                 title={c('info').t`Day 30: Trial ends`}
-                description={c('info').t`Your subscription starts on ${endText}.`}
+                // translator: Your subscription starts on Apr 29, 1453.
+                description={c('info').t`Your subscription starts on ${startText}.`}
             />
         </VerticalSteps>
     );
