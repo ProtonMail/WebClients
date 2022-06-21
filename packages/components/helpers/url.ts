@@ -10,15 +10,11 @@ export const isSubDomain = (hostname: string, domain: string) => {
 };
 
 export const getHostname = (url: string) => {
-    if (/^https?:\/\//.test(url)) {
-        // Absolute URL.
-        // The easy way to parse an URL, is to create <a> element.
-        // @see: https://gist.github.com/jlong/2428561
-        const parser = document.createElement('a');
-        parser.href = url;
-        return parser.hostname;
-    }
-    return window.location.hostname; // Relative URL.
+    // The easy way to parse an URL, is to create <a> element.
+    // @see: https://gist.github.com/jlong/2428561
+    const parser = document.createElement('a');
+    parser.href = url;
+    return parser.hostname;
 };
 
 export const isExternal = (url: string) => {
