@@ -372,6 +372,9 @@
       "Send": [
         "Trimitere"
       ],
+      "Send feedback": [
+        "Trimitere feedback"
+      ],
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
@@ -879,6 +882,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "morcov"
+      ],
+      "cerise": [
+        "cireșiu"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "cupru"
+      ],
+      "enzian": [
+        "gențiană"
+      ],
+      "fern": [
+        "ferigă"
+      ],
+      "forest": [
+        "pădure"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "măsliniu"
+      ],
+      "pacific": [
+        "Pacific"
+      ],
+      "pickle": [
+        "murături"
+      ],
+      "pine": [
+        "pin"
+      ],
+      "pink": [
+        "roz"
+      ],
+      "plum": [
+        "prună"
+      ],
+      "purple": [
+        "violet"
+      ],
+      "reef": [
+        "recif"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "slateblue": [
+        "ardezie albastră"
+      ],
+      "soil": [
+        "pământiu"
+      ],
+      "strawberry": [
+        "căpșună"
       ]
     },
     "Confirm modal title": {
@@ -1854,6 +1919,11 @@
         "Evenimentul aparține unui calendar dezactivat."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Nu mă mai întreba"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Adăugare calendar"
@@ -2540,6 +2610,11 @@
         "(fără titlu)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Experiența personală"
+      ]
+    },
     "file size format": {
       "bytes": [
         "baiți"
@@ -2762,9 +2837,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } are nevoie de permisiunea dvs. pentru ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } a fost adăugată la serviciul Proton. Ne-ar plăcea să auzim ce credeți despre această aplicație!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "Un calendar nou",
@@ -3418,12 +3490,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporar indisponibil. Vă rugăm să reveniți mai târziu.)"
       ],
-      "0 - Not likely": [
-        "0 - Probabil nu"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extrem de probabil"
-      ],
       "Add email address": [
         "Adăugare adresă de e-mail"
       ],
@@ -3441,6 +3507,12 @@
       ],
       "Automatically save contacts": [
         "Salvare automată contacte"
+      ],
+      "Awful": [
+        "Îngrozitoare"
+      ],
+      "Bad": [
+        "Rea"
       ],
       "Browser": [
         "Navigator"
@@ -3538,11 +3610,14 @@
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
       ],
+      "Good": [
+        "Bună"
+      ],
       "Hide password": [
         "Ascundere parolă"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Cât de probabil este să recomandați ${ calendarAppName } unui prieten sau coleg?"
+      "How would you describe your experience with the new Proton?": [
+        "Cum ați descrie experiența avută cu noul Proton Mail?"
       ],
       "I understand the risk": [
         "Înțeleg riscul"
@@ -3594,6 +3669,9 @@
       ],
       "Notifications": [
         "Notificări"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -3677,6 +3755,9 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
+      ],
+      "Wonderful": [
+        "Minunată"
       ]
     },
     "Label for contact group color": {
@@ -3975,8 +4056,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Povestiți-ne despre experiența avută. (opțional)"
       ]
     },
     "new_plans: placeholder": {
@@ -3985,9 +4066,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Oferiți feedback"
-      ],
       "Updated Proton, unified protection": [
         "Proton actualizat, protecție unificată"
       ]

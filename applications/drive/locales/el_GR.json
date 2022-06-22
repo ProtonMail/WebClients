@@ -439,6 +439,9 @@
       "Select all": [
         "Επιλογή όλων"
       ],
+      "Send feedback": [
+        "Αποστολή σχολίων"
+      ],
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
       ],
@@ -817,6 +820,68 @@
       ],
       "Open": [
         "Άνοιγμα"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "καρότο"
+      ],
+      "cerise": [
+        "κεράσι"
+      ],
+      "cobalt": [
+        "κοβάλτιο"
+      ],
+      "copper": [
+        "χαλκός"
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        "φτέρη"
+      ],
+      "forest": [
+        "δάσος"
+      ],
+      "ocean": [
+        "ωκεανός"
+      ],
+      "olive": [
+        "λαδί"
+      ],
+      "pacific": [
+        "Ειρηνικός"
+      ],
+      "pickle": [
+        "τουρσί"
+      ],
+      "pine": [
+        "πεύκο"
+      ],
+      "pink": [
+        "ροζ"
+      ],
+      "plum": [
+        "δαμάσκηνο"
+      ],
+      "purple": [
+        "μοβ"
+      ],
+      "reef": [
+        "ύφαλος"
+      ],
+      "sahara": [
+        "Σαχάρα"
+      ],
+      "slateblue": [
+        "μπλε ροζέ"
+      ],
+      "soil": [
+        "χώμα"
+      ],
+      "strawberry": [
+        "φράουλα"
       ]
     },
     "Confirm modal title": {
@@ -2047,6 +2112,16 @@
         "Δεν επιλέχθηκε εικόνα"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Απαιτείται βαθμολογία"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Η γνώμη σας"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2213,7 +2288,7 @@
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
+        "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
@@ -3135,6 +3210,12 @@
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
+      "Awful": [
+        "Απαίσια"
+      ],
+      "Bad": [
+        "Κακή"
+      ],
       "Browser": [
         "Πρόγραμμα περιήγησης"
       ],
@@ -3247,8 +3328,14 @@
       "Get your own ${ appName }": [
         "Αποκτήστε το δικό σας ${ appName }"
       ],
+      "Good": [
+        "Καλή"
+      ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Πώς θα περιγράφατε την εμπειρία σας στο νέο Proton;"
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
@@ -3306,6 +3393,9 @@
       ],
       "Notification": [
         "Ειδοποίηση"
+      ],
+      "OK": [
+        "Αποδεκτή"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα"
@@ -3432,6 +3522,9 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
+      ],
+      "Wonderful": [
+        "Θαυμάσια"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ναι, επιθυμώ την οριστική διαγραφή των παλιών αρχείων μου"
@@ -3562,6 +3655,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Παρουσίαση ανανεωμένης όψης του Proton.${ br }Πολλές υπηρεσίες, μία αποστολή. Καλώς ήρθατε σε ένα διαδίκτυο όπου η ιδιωτικότητα είναι η προεπιλογή."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Πείτε μας για την εμπειρία σας. (Προαιρετικό)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Σχόλια"
       ]
     },
     "new_plans: title": {
@@ -4047,6 +4150,11 @@
         "Επιτυχία επαλήθευσης"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Τα σχόλια απεστάλησαν"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/μήνα"
@@ -4336,6 +4444,9 @@
       "Failed": [
         "Αποτυχημένα"
       ],
+      "Feedback": [
+        "Σχόλια"
+      ],
       "File details": [
         "Λεπτομέρειες αρχείου"
       ],
@@ -4483,6 +4594,9 @@
       ],
       "Select link expiration time": [
         "Επιλέξτε το χρόνο λήξης του συνδέσμου"
+      ],
+      "Send feedback": [
+        "Αποστολή σχολίων"
       ],
       "Settings": [
         "Ρυθμίσεις"

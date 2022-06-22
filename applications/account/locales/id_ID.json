@@ -53,7 +53,7 @@
         "Tambah alamat"
       ],
       "Add calendar": [
-        "Tambah kalender"
+        "Tambahkan kalender"
       ],
       "Add condition": [
         "Tambahkan syarat"
@@ -77,7 +77,7 @@
         "Tambah label"
       ],
       "Add notification": [
-        "Tambahkan notifikasi"
+        "Tambahkan pemberitahuan"
       ],
       "Add PayPal": [
         "Tambahkan PayPal"
@@ -162,9 +162,6 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Konfirmasi untuk membuka tautan ${ linkToShow }"
-      ],
-      "contact": [
-        "kontak"
       ],
       "Contact support": [
         "Hubungi layanan dukungan"
@@ -635,7 +632,7 @@
         "Pilih berkas"
       ],
       "Select language for invitation emails": [
-        "Tentukan bahasa email-email undangan"
+        "Tentukan bahasa email undangan"
       ],
       "Select timezone": [
         "Pilih zona waktu"
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Dukung"
-      ],
-      "Switch to rich text": [
-        "Beralih ke format rich text"
       ],
       "Top up": [
         "Isi ulang"
@@ -1165,7 +1159,7 @@
         "Masalah kecepatan"
       ],
       "Streaming problem": [
-        "Masalah pemutaran konten"
+        "Masalah streaming"
       ],
       "Update problem": [
         "Masalah pemutakhiran"
@@ -1199,7 +1193,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Anda dapat mengimpor berkas-berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Dengan ini, Anda dapat mengimpor berbagai acara maupun agenda yang Anda miliki secara cepat."
+        "Anda dapat mengimpor berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Hal ini memungkinkan Anda untuk dapat mengimpor acara tertentu atau seluruh agenda Anda secara cepat."
       ]
     },
     "Calendar limit warning": {
@@ -1215,7 +1209,7 @@
         "Label ditambahkan"
       ],
       "Label deleted": [
-        "Label diperbarui"
+        "Label dihapus"
       ],
       "Label edited": [
         "Label disunting"
@@ -1226,10 +1220,10 @@
         "Aktif"
       ],
       "Default": [
-        "Bawaan"
+        "Default"
       ],
       "Disabled": [
-        "Dinonaktifkan"
+        "Nonaktif"
       ],
       "Not synced": [
         "Tidak disinkronkan"
@@ -1289,6 +1283,173 @@
       ],
       "Open": [
         "Buka"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Apple"
+      ],
+      "azureish white": [
+        "putih kebiruan"
+      ],
+      "blanched almond": [
+        "almond panggang"
+      ],
+      "blue-gray": [
+        "biru-abu"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "ceri"
+      ],
+      "cinnabar": [
+        "cinnabar"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "tembaga"
+      ],
+      "cyan-blue azure": [
+        "biru langit-laut"
+      ],
+      "dandelion": [
+        "dandelion"
+      ],
+      "dark cerulean": [
+        "biru laut gelap"
+      ],
+      "dark midnight blue": [
+        "biru temaram"
+      ],
+      "dim gray": [
+        "abu pucat"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "perdu"
+      ],
+      "field drab": [
+        "coklat lapangan"
+      ],
+      "forest": [
+        "hutan"
+      ],
+      "gainsboro": [
+        "gainsboro"
+      ],
+      "japanese laurel": [
+        "laurel jepang"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "kuning lemon"
+      ],
+      "light carmine pink": [
+        "merah jambu karmina"
+      ],
+      "light moss green": [
+        "hijau lumut"
+      ],
+      "light red": [
+        "merah terang"
+      ],
+      "maize": [
+        "jagung"
+      ],
+      "mughal green": [
+        "hijau mughal"
+      ],
+      "ocean": [
+        "samudera"
+      ],
+      "olive": [
+        "zaitun"
+      ],
+      "outer space": [
+        "luar angkasa"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "palatinate blue": [
+        "biru palatina"
+      ],
+      "pale cerulean": [
+        "biru laut pucat"
+      ],
+      "pastel gray": [
+        "abu pastel"
+      ],
+      "persian plum": [
+        "plum persia"
+      ],
+      "persian red": [
+        "merah persia"
+      ],
+      "philippine gray": [
+        "abu filipina"
+      ],
+      "philippine silver": [
+        "perak filipina"
+      ],
+      "pickle": [
+        "acar"
+      ],
+      "pine": [
+        "pinus"
+      ],
+      "pink": [
+        "merah jambu"
+      ],
+      "pistachio": [
+        "pistachio"
+      ],
+      "plum": [
+        "plum"
+      ],
+      "purple": [
+        "ungu"
+      ],
+      "raisin black": [
+        "hitam kismis"
+      ],
+      "reef": [
+        "karang"
+      ],
+      "ruddy pink": [
+        "merah jambu pucat"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "emas satin"
+      ],
+      "slateblue": [
+        "biru tanah"
+      ],
+      "soil": [
+        "tanah"
+      ],
+      "strawberry": [
+        "stroberi"
+      ],
+      "vivid auburn": [
+        "coklat menyala"
+      ],
+      "white": [
+        "putih"
       ]
     },
     "Condition for custom filter": {
@@ -2600,7 +2761,7 @@
         "Wajib isi nama di kartu"
       ],
       "Name required": [
-        "Nama diperlukan"
+        "Nama dibutuhkan"
       ],
       "No active sessions": [
         "Tidak ada sesi yang aktif"
@@ -3096,43 +3257,43 @@
         "${ totalProcessed }/${ totalToProcess } acara diekspor"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalender berhasil diekspor. Anda sekarang dapat menyimpan berkas ICS."
+        "Kalender berhasil diekspor. Anda kini dapat menyimpan berkas ICS yang bersangkutan."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Mendekripsi acara dari kalender Anda: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Karena peyetelan ulang sandi, acara Anda tidak dapat didekripsi dan diekspor."
+        "Akibat pengaturan ulang kata sandi, seluruh acara Anda tidak dapat didekripsi dan diekspor."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Karena peyetelan ulang sandi, beberapa acara Anda tidak dapat didekripsi dan diekspor."
+        "Akibat pengaturan ulang kata sandi, beberapa acara Anda tidak dapat didekripsi dan diekspor."
       ],
       "Error decrypting event": [
         "Kesalahan dalam mendekripsi acara"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Pelajari cara memulihkan acara terenkripsi dengan sandi lawas"
+        "Pelajari cara untuk memulihkan acara yang terenkripsi dengan kata sandi Anda terdahulu"
       ],
       "Loading events": [
         "Memuat acara"
       ],
       "None of the events could be exported.": [
-        "Tidak ada acara yang bisa diekspor."
+        "Tidak ada acara yang dapat diekspor."
       ],
       "Password reset - event cannot be decrypted": [
-        "Atur ulang sandi - acara tidak dapat didekripsi"
+        "Kata sandi telah diatur ulang - acara tidak dapat didekripsi"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Atur ulang sandi - beberapa acara tidak dapat didekripsi"
+        "Kata sandi telah diatur ulang - beberapa acara tidak dapat didekripsi"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Mohon tidak menutup tab sebelum proses ekspor selesai."
+        "Jangan tutup tab sebelum proses impor selesai."
       ],
       "Some of your events could not be exported.": [
         "Beberapa acara Anda tidak dapat diekspor."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Koneksi internet terputus, menyebabkan proses ekspor gagal. Silakan coba lagi."
+        "Koneksi internet Anda terputus, yang menyebabkan proses ekspor gagal. Silakan coba lagi."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Anda dapat menyimpan berkas ICS milik acara yang telah berhasil diekspor."
@@ -3196,6 +3357,9 @@
       "Inbox": [
         "Kotak Masuk"
       ],
+      "Inbox - Default": [
+        "Kotak Masuk - Default"
+      ],
       "Select a folder": [
         "Pilih folder"
       ],
@@ -3248,8 +3412,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Tambahkan filter khusus agar tindakan tertentu seperti pelabelan atau pengarsipan pesan dapat berlangsung secara otomatis."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "Tambahkan filter khusus agar berbagai proses tertentu, seperti pelabelan atau pengarsipan pesan, dapat berlangsung secara otomatis. Filter dapat disunting dan dibuat secara langsung dengan menggunakan bahasa pemrograman Sieve."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Terapkan aturan spam khusus bagi pengirim tertentu. Pesan dari alamat atau domain yang ada di Daftar Izin akan selalu tertuju ke Kotak masuk, sedangkan pesan dari alamat atau domain yang ada di Daftar Blokir selalu akan selalu tertuju ke Spam. Menandai pesan sebagai spam menambahkan alamat pengirimnya ke Daftar Blokir. Menandai pesan sebagai bukan spam akan menambahkan alamat pengirimnya ke Daftar Izin."
@@ -3334,7 +3498,7 @@
         "Waktu"
       ],
       "What others see": [
-        "Apa yang orang lain lihat"
+        "Apa yang akan orang lain lihat"
       ]
     },
     "Header for addresses table": {
@@ -4037,13 +4201,13 @@
         "dan"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Semua orang dengan tautan ini dapat melihat semua rincian acara dari kalender ini seperti judul, lokasi atau peserta."
+        "Semua orang dengan tautan ini akan dapat melihat seluruh rincian acara kalender ini seperti judul, lokasi, atau daftar peserta."
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Semua orang dengan tautan ini dapat melihat apakah Anda memiliki waktu lenggang atau sibuk pada kalender Anda. Mereka tidak dapat rincian acara, seperti judul, lokasi, atau peserta."
+        "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian acara yang ada seperti nama, lokasi, atau daftar peserta."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Semua orang dengan tautan ini tidak akan dapat mensinkronkan atau mendapatkan pembaruan mendatang dari kalender Anda. Jika Anda ingin memberikan lagi akses kepada mereka, Anda harus membuat sebuah tautan baru."
+        "Semua orang yang memiliki tautan ini tidak akan lagi dapat menyinkronkan atau mendapatkan pembaruan mengenai kalender Anda ke depannya. Apabila Anda ingin kembali memberikan akses kepada mereka, Anda harus membuat tautan baru."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL membaca data pribadi Anda untuk kepentingan para pengiklan dan pihak ketiga lainnya. Demi privasi yang lebih baik, buatlah alamat email yang aman."
@@ -4142,7 +4306,7 @@
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Dengan berbagi detail acara keseluruhan dari kalender ini, Anda menerima untuk mengizinkan Proton untuk mengakses informasi terenkripsi kalender ini."
+        "Dengan membagikan detail acara kalender ini secara menyeluruh, Anda mengizinkan Proton untuk mengakses informasi terenkripsi yang ada pada kalender ini."
       ],
       "Center": [
         "Tengah"
@@ -4175,7 +4339,7 @@
         "Buat label khusus untuk menandai pesan-pesan yang diimpor, rentang waktu impor yang bersangkutan, serta label-label yang hendak Anda impor."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Buat sebuah tautan ke kalender Anda dan bagikan dengan semua orang diluar Proton. Hanya Anda yang dapat menambah atau menghapus acara."
+        "Buat tautan yang tertuju pada kalender Anda dan bagikan dengan mereka yang berada di luar layanan Proton. Hanya Anda yang dapat menambah atau menghapus acara."
       ],
       "Create a new account and share the email address and password with the user.": [
         "Buat akun baru dan bagikan alamat email serta kata sandi akun tersebut kepada pengguna yang bersangkutan."
@@ -4206,9 +4370,6 @@
       ],
       "Custom email domains": [
         "Domain email khusus"
-      ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Filter buatan sendiri bekerja di semua surel, termasuk email yang masuk dan terkirim. Filter dapat diedit dan dibuat secara langsung melalui bahasa pemrograman Sieve."
       ],
       "Custom monthly": [
         "Sesuaikan bulanan"
@@ -4266,6 +4427,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Unduh kunci PGP Anda untuk menggunakannya dengan layanan PGP lain."
+      ],
+      "Drop a file here to upload": [
+        "Letakkan berkas yang hendak Anda unggah di sini"
       ],
       "Drop the file here to upload": [
         "Taruh berkas di sini untuk mengunggah"
@@ -4340,7 +4504,7 @@
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Undangan dan permintaan konfirmasi kehadiran acara (RSVP) akan terkirim dalam bahasa ini."
+        "Undangan dan permintaan konfirmasi kehadiran acara (RSVP) akan dikirim dalam bahasa ini."
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -4350,9 +4514,6 @@
       ],
       "Failed to fetch logs.": [
         "Gagal mengambil log."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama dan skrip Sieve yang valid."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter bekerja di semua surel, termasuk surel yang masuk dan terkirim. Setiap filter harus memuat minimal nama, kondisi dan tindakan."
@@ -4391,7 +4552,7 @@
         "Apabila administrator lain mengubah kata sandi ini, Anda harus menanyakan Kata Sandi Organisasi yang baru kepada mereka."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Jika zona waktu sistem tidak cocok dengan preferensi zona waktu saat ini, Anda akan diminta untuk memperbaruinya (paling banyak sekali per hari)."
+        "Apabila zona waktu sistem tidak cocok dengan preferensi zona waktu saat ini, Anda akan diminta untuk memperbaruinya (paling banyak sekali per hari)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Jika domain ini saat ini menerima email, pilih tab ${ boldAddresses } dan tambahkan semua alamat email aktif sebelum mengubah data MX untuk memastikan kelancaran transisi."
@@ -4558,6 +4719,9 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
+      "learn more about Sieve programming language": [
+        "mempelajari lebih lanjut seputar bahasa pemrograman Sieve"
+      ],
       "Left to Right": [
         "Kiri ke Kanan"
       ],
@@ -4565,13 +4729,13 @@
         "Beri tahu kontak-kontak Anda bahwa Anda peduli dengan privasi mereka."
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Tampilan terbatas: orang lain seakan-akan melihat bahwa Anda sedang sibuk. Tampilan penuh: menampilkan seluruh rincian acara, termasuk nama, lokasi, atau peserta."
+        "Tampilan terbatas: orang lain akan melihat seolah-olah Anda sedang sibuk. Tampilan penuh: menampilkan seluruh rincian acara, termasuk nama, lokasi, atau peserta."
       ],
       "Link copied to clipboard": [
         "Tautan disalin ke clipboard"
       ],
       "Link created": [
-        "Tautan telah dibuat"
+        "Tautan dibuat"
       ],
       "Link deleted": [
         "Tautan dihapus"
@@ -4666,9 +4830,6 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
-      "Normal": [
-        "Normal"
-      ],
       "Not a valid URL": [
         "Bukan URL yang valid"
       ],
@@ -4691,7 +4852,7 @@
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
-        "Hanya Anda yang dapat melihat label."
+        "Label ini hanya akan dapat dilihat oleh Anda."
       ],
       "Or select a particular server:": [
         "Atau pilih salah satu server berikut:"
@@ -4741,9 +4902,6 @@
       "Phone number": [
         "Nomor telepon"
       ],
-      "Plain text": [
-        "Teks biasa"
-      ],
       "Plan upgrade required": [
         "Diperlukan peningkatan paket"
       ],
@@ -4790,7 +4948,7 @@
         "Dibutuhkan langganan Plus atau Visionary"
       ],
       "Prevents content from the sender's server from loading without your permission.": [
-        "Mencegah konten-konten yang berasal dari server milik pengirim pesan untuk dapat termuat tanpa seizin Anda."
+        "Mencegah konten yang berasal dari server milik pengirim pesan untuk dapat termuat tanpa seizin Anda."
       ],
       "Preview": [
         "Pratinjau"
@@ -4878,9 +5036,6 @@
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Pilih Lanjut ke ${ name } untuk membuka aplikasi yang bersangkutan. Tindakan ini juga akan membuat akun ${ name } dengan alamat ${ MAIL_APP_NAME } Anda sehingga Anda akan dapat masuk hanya dengan sekali klik ke depannya."
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Tentukan jumlah pengguna yang akan diikutsertakan dalam paket langganan Anda. Untuk setiap pengguna tambahan, Anda akan dikenai biaya sebesar${ price }. Apabila Anda butuh lebih dari ${ maxUsers } pengguna, harap ${ contactMailToLink } tim Customer Success kami."
       ],
       "Select what you want to move from Google.": [
         "Pilih hal-hal apa saja yang hendak Anda pindahkan dari Google."
@@ -5095,6 +5250,9 @@
       "To use ${ toAppName }, please create an address.": [
         "Untuk dapat menggunakan ${ toAppName }, mohon buat alamat terlebih dahulu."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Untuk dapat bekerja, masing-masing filter harus memiliki nama dan kode Sieve yang valid. Anda dapat ${ link }."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
       ],
@@ -5269,9 +5427,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Anda dapat mengecek status proses impor Anda ${ importProgressLink }."
       ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan yang ada di bawah ini."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Anda dapat menyesuaikan dan mengunduh tagihan Anda untuk keperluan akuntansi."
       ],
@@ -5324,10 +5479,10 @@
         "Anda harus menghapus seluruh kalender personal tambahan dan tautan kalender yang yang telah dibagikan sebelum Anda dapat membatalkan langganan Anda."
       ],
       "You need to have a personal calendar to create a link.": [
-        "Anda harus punya kalender pribadi supaya bisa membuat tautan."
+        "Anda harus memiliki kalender pribadi untuk dapat membuat tautan."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara-acara Anda dari berkas .ics."
+        "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Anda harus punya kalender pribadi aktif supaya bisa mengimpor acara."
@@ -5342,7 +5497,7 @@
         "Anda disarankan untuk mengekspor cadangan dari kunci ini untuk berjaga-jaga apabila di kemudian waktu Anda perlu untuk memulihkan data yang terenkripsi oleh kunci ini."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Anda tetap harus membalas undangan ini agar pihak penyelenggara acara dapat melihat respon Anda."
+        "Anda tetap harus membalas undangan ini agar penyelenggara acara dapat melihat respon Anda."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Anda akan ${ loseAllData } di akun ${ BRAND_NAME } Anda. Untuk memulihkannya, masukkan kata sandi lama Anda."
@@ -5819,7 +5974,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Petunjuk"
+        "Berikut caranya"
       ]
     },
     "Label": {
@@ -5908,7 +6063,7 @@
         "Lampirkan tangkapan layar"
       ],
       "Auto-detect primary time zone": [
-        "Deteksi zona waktu secara otomatis"
+        "Deteksi zona waktu utama secara otomatis"
       ],
       "Auto-load embedded images": [
         "Muat gambar yang tersemat secara otomatis"
@@ -6061,7 +6216,7 @@
         "Durasi acara default"
       ],
       "Default full day notifications": [
-        "Pemberitahuan seharian penuh default"
+        "Notifikasi sehari penuh default"
       ],
       "Default language": [
         "Bahasa bawaan"
@@ -6076,7 +6231,7 @@
         "Skema PGP default"
       ],
       "Default view": [
-        "Tampilan bawaan"
+        "Tampilan default"
       ],
       "Delete": [
         "Hapus"
@@ -6436,13 +6591,13 @@
         "Kirim pesan balasan otomatis"
       ],
       "Send in": [
-        "Kirim"
+        "Kirim dalam"
       ],
       "Show secondary time zone": [
         "Tampilkan zona waktu sekunder"
       ],
       "Show week numbers": [
-        "Tunjukkan nomor minggu"
+        "Tampilkan nomor pekan"
       ],
       "Sign external messages": [
         "Tandatangani pesan eksternal"
@@ -6589,10 +6744,10 @@
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
       "Your calendar URL": [
-        "Alamat URL kalender Anda"
+        "URL kalender Anda"
       ],
       "Your calendar URL label": [
-        "Alamat URL label kalender Anda"
+        "Label URL kalender Anda"
       ],
       "Your password (admin)": [
         "Kata sandi Anda (admin)"
@@ -6855,6 +7010,11 @@
         "Impor seluruh pesan yang berlabel dari total ${ totalLabelsCount } label yang ada sejak ${ periodFragment } dan labeli pesan-pesan tersebut dengan label ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan di bawah ini."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Hapus"
@@ -6921,7 +7081,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        "Tambah kalender"
+        "Tambahkan kalender"
       ]
     },
     "Monetary unit": {
@@ -6960,109 +7120,109 @@
         "pada hari ${ dayOfMonth }"
       ],
       "on the first Friday": [
-        "pada Jumat pertama"
+        "pada hari Jumat pertama"
       ],
       "on the first Monday": [
-        "pada Senin pertama"
+        "pada hari Senin pertama"
       ],
       "on the first Saturday": [
-        "pada Sabtu pertama"
+        "pada hari Sabtu pertama"
       ],
       "on the first Sunday": [
-        "pada Minggu pertama"
+        "pada hari Minggu pertama"
       ],
       "on the first Thursday": [
-        "pada Kamis pertama"
+        "pada hari Kamis pertama"
       ],
       "on the first Tuesday": [
-        "pada Selasa pertama"
+        "pada hari Selasa pertama"
       ],
       "on the first Wednesday": [
-        "pada Rabu pertama"
+        "pada hari Rabu pertama"
       ],
       "on the fourth Friday": [
-        "pada Jumat keempat"
+        "pada hari Jumat keempat"
       ],
       "on the fourth Monday": [
-        "pada Senin keempat"
+        "pada hari Senin keempat"
       ],
       "on the fourth Saturday": [
-        "pada Sabtu keempat"
+        "pada hari Sabtu keempat"
       ],
       "on the fourth Sunday": [
-        "pada Minggu keempat"
+        "pada hari Minggu keempat"
       ],
       "on the fourth Thursday": [
-        "pada Kamis keempat"
+        "pada hari Kamis keempat"
       ],
       "on the fourth Tuesday": [
-        "pada Selasa keempat"
+        "pada hari Selasa keempat"
       ],
       "on the fourth Wednesday": [
-        "pada Rabu keempat"
+        "pada hari Rabu keempat"
       ],
       "on the last Friday": [
-        "pada Jumat terakhir"
+        "pada hari Jumat terakhir"
       ],
       "on the last Monday": [
-        "pada Senin terakhir"
+        "pada hari Senin terakhir"
       ],
       "on the last Saturday": [
-        "pada Sabtu terakhir"
+        "pada hari Sabtu terakhir"
       ],
       "on the last Sunday": [
-        "pada Minggu terakhir"
+        "pada hari Minggu terakhir"
       ],
       "on the last Thursday": [
-        "pada Kamis terakhir"
+        "pada hari Kamis terakhir"
       ],
       "on the last Tuesday": [
-        "pada Selasa terakhir"
+        "pada hari Selasa terakhir"
       ],
       "on the last Wednesday": [
-        "pada Rabu terakhir"
+        "pada hari Rabu terakhir"
       ],
       "on the second Friday": [
-        "pada Jumat kedua"
+        "pada hari Jumat kedua"
       ],
       "on the second Monday": [
-        "pada Senin kedua"
+        "pada hari Senin kedua"
       ],
       "on the second Saturday": [
-        "pada Sabtu kedua"
+        "pada hari Sabtu kedua"
       ],
       "on the second Sunday": [
-        "pada Minggu kedua"
+        "pada hari Minggu kedua"
       ],
       "on the second Thursday": [
-        "pada Kamis kedua"
+        "pada hari Kamis kedua"
       ],
       "on the second Tuesday": [
-        "pada Selasa kedua"
+        "pada hari Selasa kedua"
       ],
       "on the second Wednesday": [
-        "pada Rabu kedua"
+        "pada hari Rabu kedua"
       ],
       "on the third Friday": [
-        "pada Jumat ketiga"
+        "pada hari Jumat ketiga"
       ],
       "on the third Monday": [
-        "pada Senin ketiga"
+        "pada hari Senin ketiga"
       ],
       "on the third Saturday": [
-        "pada Sabtu ketiga"
+        "pada hari Sabtu ketiga"
       ],
       "on the third Sunday": [
-        "pada Minggu ketiga"
+        "pada hari Minggu ketiga"
       ],
       "on the third Thursday": [
-        "pada Kamis ketiga"
+        "pada hari Kamis ketiga"
       ],
       "on the third Tuesday": [
-        "pada Selasa ketiga"
+        "pada hari Selasa ketiga"
       ],
       "on the third Wednesday": [
-        "pada Rabu ketiga"
+        "pada hari Rabu ketiga"
       ]
     },
     "Moved to black/whitelist": {
@@ -7458,7 +7618,7 @@
         "Layanan email dan kalender yang aman untuk para profesional dan pelaku usaha."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "Email aman dengan berbagai fitur mutakhir untuk komunikasi Anda sehari-hari."
+        "Email aman dengan berbagai fitur mutakhir untuk kebutuhan komunikasi Anda sehari-hari."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Gunakan pesan balasan otomatis untuk menginformasikan kontak Anda bahwa Anda sedang tidak berada di kantor atau tidak dapat membalas."
@@ -7793,19 +7953,19 @@
         "pada saat acara"
       ],
       "day before": [
-        "hari sebelumnya"
+        "hari sebelum"
       ],
       "hour before": [
-        "jam sebelumnya"
+        "jam sebelum"
       ],
       "minute before": [
-        "menit sebelumnya"
+        "menit sebelum"
       ],
       "on the same day": [
-        "hari yang sama"
+        "pada hari yang sama"
       ],
       "week before": [
-        "pekan sebelumnya"
+        "minggu sebelum"
       ]
     },
     "Oauth instructions": {
@@ -8101,10 +8261,10 @@
         "Cara menghubungi Anda"
       ],
       "Add a calendar description": [
-        "Masukkan keterangan kalender"
+        "Tambahkan keterangan kalender"
       ],
       "Add a calendar name": [
-        "Masukkan nama kalender"
+        "Tambahkan nama kalender"
       ],
       "Add gift code": [
         "Tambahkan kode hadiah"
@@ -8191,6 +8351,17 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Masukkan nama dan alamat Anda (atau perusahaan Anda) ke tagihan"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "hubungi"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Tentukan jumlah pengguna untuk diikutsertakan dalam paket Anda. Per penggunanya, Anda akan dikenakan biaya sebesar ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Apabila Anda memerlukan lebih dari ${ maxUsers } pengguna, silakan ${ contact } tim Sales kami."
       ]
     },
     "Price": {
@@ -8333,7 +8504,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Hasil tidak ditemukan"
+        "Tidak ada hasil yang ditemukan"
       ]
     },
     "Settings description": {
@@ -8441,7 +8612,7 @@
         "Tidak ada lagi janji yang luput"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        "Dengan notifikasi email, Anda dapat menentukan notifikasi seputar acara-acara mana saja yang akan Anda terima beserta waktunya."
+        "Dengan notifikasi email, Anda dapat menentukan notifikasi seputar acara mana saja yang akan Anda terima beserta waktunya."
       ]
     },
     "State": {
@@ -8461,9 +8632,6 @@
       ],
       "Preview": [
         "Pratinjau"
-      ],
-      "Sieve editor": [
-        "Penyunting Sieve"
       ]
     },
     "Storage": {
@@ -8479,20 +8647,20 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "URL Kalender"
+        "URL kalender"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Untuk dapat berlangganan kalender-kalender eksternal atau publik beserta pembaharuannya, masukkan URL kalender-kalender yang bersangkutan. Kalender-kalender tersebut akan ditambahkan ke dalam daftar kalender yang Anda langgan dengan status read-only.\n${ kbLink }"
+        "Untuk dapat berlangganan ke kalender eksternal atau publik beserta pembaruannya, masukkan URL kalender yang bersangkutan. Kalender tersebut akan ditambahkan ke dalam daftar kalender yang Anda langgan dengan status read-only.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Pelajari cara mendapatkan tautan kalender pribadi."
+        "Pelajari cara untuk mendapatkan tautan kalender pribadi."
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Dengan menggunakan tautan ini, Google akan mengumumkan kalender langganan Anda"
+        "Dengan menggunakan tautan ini, Google akan membuat daftar kalender yang Anda langgan publik"
       ],
       "This link might be wrong": [
         "Tautan ini mungkin salah"
@@ -8500,7 +8668,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Gunakan URL untuk menambahkan kalender umum, luar, atau bersama."
+        "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -8573,7 +8741,7 @@
     },
     "Subtitle for trial plan": {
       "The privacy-first Mail and Calendar solution for your everyday communications needs.": [
-        "Solusi Mail dan Calendar yang mengedepankan privasi untuk berbagai keperluan komunikasi Anda sehari-hari."
+        "Solusi Mail dan Calendar yang mengedepankan privasi untuk kebutuhan komunikasi Anda sehari-hari."
       ]
     },
     "Success": {
@@ -8599,16 +8767,16 @@
         "Bug berhasil dilaporkan"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Kalender ditambahkan. Sinkronisasi butuh waktu sejenak."
+        "Kalender ditambahkan. Proses sinkronisasi dapat memakan waktu hingga beberapa menit."
       ],
       "Calendar created": [
-        "Kalender berhasil dibuat"
+        "Kalender dibuat"
       ],
       "Calendar removed": [
         "Kalender dihapus"
       ],
       "Calendar updated": [
-        "Kalender berhasil diperbarui"
+        "Kalender diperbarui"
       ],
       "Canceling import": [
         "Membatalkan proses impor"
@@ -8790,7 +8958,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Detail acara tidak dapat diekspor"
+        "Rincian mengenai acara yang tidak dapat diekspor"
       ]
     },
     "Tab in domain modal": {
@@ -8833,14 +9001,6 @@
       ],
       "vCard field": [
         "Bidang vCard"
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Memperkenalkan Proton yang baru."
-      ],
-      "More services, one privacy mission.": [
-        "Beragam layanan, satu misi privasi."
       ]
     },
     "Time period": {
@@ -8923,7 +9083,7 @@
         "Tambah alamat"
       ],
       "Add another notification to remind you of this event": [
-        "Tambah pemberitahuan lain untuk mengingatkan Anda pada acara ini"
+        "Tambahkan notifikasi lain untuk mengingatkan Anda pada acara ini"
       ],
       "Add contact group name": [
         "Tambah nama grup kontak"
@@ -9814,7 +9974,7 @@
         "Fitur ini hanya tersedia untuk pengguna berbayar"
       ],
       "This feature is unavailable for the moment": [
-        "Fitur ini sementara tidak tersedia"
+        "Fitur ini tidak tersedia untuk saat ini"
       ],
       "This key cannot be used for encryption": [
         "Kunci ini tidak dapat dipakai untuk mengenkripsi"
@@ -9893,10 +10053,10 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Tingkatkan ke paket rencana berbayar untuk membuat sampai ke ${ MAX_CALENDARS_PER_USER } kalender, memperbolehkan Anda untuk membuat kalender untuk pekerjaan, untuk dibagikan bersama teman, dan hanya untuk Anda sendiri."
+        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat membuat hingga ${ MAX_CALENDARS_PER_USER } kalender untuk segala jenis keperluan mulai dari kerja, dibagikan kepada teman, hingga untuk diri Anda sendiri."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Aktifkan paket berbayar agar bisa berbagi tautan kalender pribadi dengan siapa saja."
+        "Tingkatkan jenis akun Anda ke akun berbayar untuk dapat membagikan kalender personal melalui tautan kepada siapapun."
       ]
     },
     "User role": {
@@ -10069,13 +10229,13 @@
         "Setiap ${ interval } pekan pada ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Setiap ${ interval } minggu pada semua hari"
+        "Setiap ${ interval } pekan pada seluruh hari"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Setiap ${ interval } pekan pada semua hari, ${ timesString }"
+        "Setiap ${ interval } pekan pada seluruh hari, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Setiap ${ interval } pekan pada semua hari, ${ untilString }"
+        "Setiap ${ interval } pekan setiap harinya, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Setiap ${ interval } pekan pada hari Jumat"
@@ -10096,7 +10256,7 @@
         "Setiap ${ interval } minggu pada hari Senin, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Setiap ${ interval } pekan pada hari Sabtu"
+        "Setiap ${ interval } minggu pada hari Sabtu"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
         "Setiap ${ interval } pekan pada hari Sabtu, ${ timesString }"
@@ -10150,13 +10310,13 @@
         "Mingguan pada ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Mingguan pada semua hari"
+        "Mingguan pada seluruh hari"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Mingguan pada semua hari, ${ timesString }"
+        "Mingguan pada seluruh hari, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Mingguan pada semua hari, ${ untilString }"
+        "Mingguan setiap harinya, ${ untilString }"
       ],
       "Weekly on Friday": [
         "Mingguan pada hari Jumat"

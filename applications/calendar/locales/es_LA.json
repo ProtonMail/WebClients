@@ -370,6 +370,9 @@
       "Send": [
         "Enviar"
       ],
+      "Send feedback": [
+        "Enviar comentarios"
+      ],
       "Set recovery phrase": [
         "Establecer frase de recuperación"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "zanahoria"
+      ],
+      "cerise": [
+        "cereza"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "enziano"
+      ],
+      "fern": [
+        "helecho"
+      ],
+      "forest": [
+        "bosque"
+      ],
+      "ocean": [
+        "océano"
+      ],
+      "olive": [
+        "aceituna"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "pepinillo"
+      ],
+      "pine": [
+        "pino"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "ciruela"
+      ],
+      "purple": [
+        "púrpura"
+      ],
+      "reef": [
+        "arrecife"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "azul pizarra"
+      ],
+      "soil": [
+        "suelo"
+      ],
+      "strawberry": [
+        "fresa"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "El evento pertenece a un calendario deshabilitado."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "No volver a preguntar"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Añadir calendario"
@@ -2521,6 +2591,11 @@
         "(sin título)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Sus comentarios"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } se ha añadido a la suite Proton. ¡Nos encantaría escuchar lo que piensa!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } calendario nuevo",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(No disponible temporalmente. Compruebe más tarde.)"
       ],
-      "0 - Not likely": [
-        "0 - No es probable"
-      ],
-      "10 - Extremely likely": [
-        "10 - Muy probable"
-      ],
       "Add email address": [
         "Añadir correo electrónico"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
+      ],
+      "Awful": [
+        "Pésima"
+      ],
+      "Bad": [
+        "Mala"
       ],
       "Browser": [
         "Navegador"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "Desde: ${ importedEmail }"
       ],
+      "Good": [
+        "Buena"
+      ],
       "Hide password": [
         "Ocultar contraseña"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "¿Qué tan probable es que recomiende ${ calendarAppName } a un amigo o compañero?"
+      "How would you describe your experience with the new Proton?": [
+        "¿Cómo describiría su experiencia con el nuevo Proton?"
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Notificaciones"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
+      ],
+      "Wonderful": [
+        "Excelente"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Cuéntenos acerca de su experiencia (opcional)."
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Dejar un comentario"
-      ],
       "Updated Proton, unified protection": [
         "Proton actualizado, protección unificada"
       ]

@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "automatische E-Mail-Antwort senden"
       ],
+      "Send feedback": [
+        "Feedback senden"
+      ],
       "Send read receipt": [
         "Lesebestätigung senden"
       ],
@@ -849,7 +852,7 @@
         "Senden"
       ],
       "Switch to rich text": [
-        "Zu Rich Text wechseln"
+        ""
       ],
       "Theme": [
         "Farbschema"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Öffnen"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        "Karotte"
+      ],
+      "cerise": [
+        "Kirschrot"
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        "Kobaltblau"
+      ],
+      "copper": [
+        "Kupfer"
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        "Enzian"
+      ],
+      "fern": [
+        "Farn"
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        "Waldgrün"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        "Ozeanblau"
+      ],
+      "olive": [
+        "Olivgrün"
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        "Pazifikblau"
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        "Moosgrün"
+      ],
+      "pine": [
+        "Kiefernfarben"
+      ],
+      "pink": [
+        "Rosa"
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        "Pflaume"
+      ],
+      "purple": [
+        "Violett"
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        "Koralle"
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        "Blaugrau"
+      ],
+      "soil": [
+        "Erdfarben"
+      ],
+      "strawberry": [
+        "Erdbeere"
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        "Weiß"
       ]
     },
     "Composer email icon": {
@@ -3350,6 +3520,11 @@
         "(Kein Titel)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "Bytes"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Posteingang"
+      ],
+      "Inbox - Default": [
+        "Posteingang - Standard"
       ],
       "Select a folder": [
         "Ordner auswählen"
@@ -4127,9 +4305,6 @@
         "Datei angehängt",
         "Dateien angehängt"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filter gelten für eingehende wie auch gesendete E-Mails aus. Jeder Filter muss mindestens einen Namen und ein gültiges Sieve-Skript enthalten."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filter gelten für eingehende wie auch gesendete E-Mails aus. Jeder Filter muss mindestens einen Namen, eine Bedingung und eine Aktion enthalten."
       ],
@@ -4359,7 +4534,7 @@
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wird automatisch deaktiviert."
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "Ungültige URL"
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
       ],
+      "Awful": [
+        "Furchtbar"
+      ],
+      "Bad": [
+        "Schlecht"
+      ],
       "BCC": [
         "BCC"
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "Von: ${ importedEmail }"
       ],
+      "Good": [
+        "Gut"
+      ],
       "Group": [
         "Gruppe"
       ],
       "Hide password": [
         "Passwort ausblenden"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Benachrichtigung"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "ohne Anhänge"
+      ],
+      "Wonderful": [
+        "Wunderbar"
       ]
     },
     "Label for contact group color": {
@@ -6065,23 +6258,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton präsentiert sein neues Design.${ br } Viele Dienste, eine Mission. Willkommen bei einem Internet, bei dem der Schutz der Privatsphäre Standard ist."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Proton hat jetzt einen einheitlichen und frischen Look. Wir würden gerne hören, was du davon hältst!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 – furchtbar"
-      ],
-      "5 - Wonderful": [
-        "5 – wunderbar"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Wie würdest du deine Erfahrungen mit dem neuen Proton beschreiben?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Erzähle uns von deinen Erfahrungen (optional)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Feedback geben"
-      ],
       "Updated Proton, unified protection": [
         "Verbessertes Proton, einheitlicher Schutz"
       ]

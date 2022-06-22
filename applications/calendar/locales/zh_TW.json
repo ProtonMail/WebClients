@@ -368,6 +368,9 @@
       "Send": [
         "送出"
       ],
+      "Send feedback": [
+        "傳送意見回饋"
+      ],
       "Set recovery phrase": [
         "設定還原短語"
       ],
@@ -875,6 +878,68 @@
     "colon": {
       ": ": [
         "："
+      ]
+    },
+    "color": {
+      "carrot": [
+        "胡蘿蔔"
+      ],
+      "cerise": [
+        "櫻桃"
+      ],
+      "cobalt": [
+        "鈷"
+      ],
+      "copper": [
+        "銅"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "蕨類"
+      ],
+      "forest": [
+        "森林"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "olive": [
+        "橄欖"
+      ],
+      "pacific": [
+        "太平洋"
+      ],
+      "pickle": [
+        "泡菜"
+      ],
+      "pine": [
+        "松樹"
+      ],
+      "pink": [
+        "粉紅色"
+      ],
+      "plum": [
+        "梅子"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "reef": [
+        "礁石"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
+      "soil": [
+        "土壤"
+      ],
+      "strawberry": [
+        "草莓"
       ]
     },
     "Confirm modal title": {
@@ -1838,6 +1903,11 @@
         "此事件屬於已停用的行事曆。"
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "毋需重複詢問"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "新增行事曆"
@@ -2502,6 +2572,11 @@
         "(無標題)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "您的意見回饋"
+      ]
+    },
     "file size format": {
       "bytes": [
         "位元組"
@@ -2698,9 +2773,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } 已被新增至 Proton 套裝中。我們想要聽聽您的想法！"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個新增行事曆"
@@ -3316,12 +3388,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
-      "0 - Not likely": [
-        "0 - 不太可能"
-      ],
-      "10 - Extremely likely": [
-        "10 - 極有可能"
-      ],
       "Add email address": [
         "新增電子郵件地址"
       ],
@@ -3339,6 +3405,12 @@
       ],
       "Automatically save contacts": [
         "自動儲存聯絡人"
+      ],
+      "Awful": [
+        "糟透了"
+      ],
+      "Bad": [
+        "不佳"
       ],
       "Browser": [
         "瀏覽器"
@@ -3436,11 +3508,14 @@
       "From: ${ importedEmail }": [
         "寄件人：${ importedEmail }"
       ],
+      "Good": [
+        "良好"
+      ],
       "Hide password": [
         "隱藏密碼"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "您向朋友或同事推薦 ${ calendarAppName } 的可能性有多大？"
+      "How would you describe your experience with the new Proton?": [
+        "若可行的話，您會如何描述說明在新版 Proton 中的實際體驗？"
       ],
       "I understand the risk": [
         "我了解風險"
@@ -3492,6 +3567,9 @@
       ],
       "Notifications": [
         "通知"
+      ],
+      "OK": [
+        "確定"
       ],
       "Operating system": [
         "操作系统"
@@ -3573,6 +3651,9 @@
       ],
       "What happened?": [
         "發生了什麼問題？"
+      ],
+      "Wonderful": [
+        "太棒了"
       ]
     },
     "Label for contact group color": {
@@ -3861,8 +3942,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "與我們分享您的使用體驗。（選填）"
       ]
     },
     "new_plans: placeholder": {
@@ -3871,9 +3952,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "告訴我們您的想法"
-      ],
       "Updated Proton, unified protection": [
         "改版更新的 Proton，全方面防護"
       ]

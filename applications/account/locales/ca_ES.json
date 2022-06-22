@@ -6,16 +6,16 @@
   "contexts": {
     "Access level": {
       "Full": [
-        "Complet"
+        ""
       ],
       "Full view": [
-        "Vista completa"
+        ""
       ],
       "Limited": [
-        "Limitat"
+        ""
       ],
       "Limited view": [
-        "Vista limitada"
+        ""
       ]
     },
     "Action": {
@@ -53,7 +53,7 @@
         "Afegir adreça"
       ],
       "Add calendar": [
-        "Afegir calendari"
+        ""
       ],
       "Add condition": [
         "Afegir condició"
@@ -77,7 +77,7 @@
         "Afegir etiqueta"
       ],
       "Add notification": [
-        "Afegir notificació"
+        ""
       ],
       "Add PayPal": [
         "Afegir PayPal"
@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmeu obrir l'enllaç ${ linkToShow }"
       ],
-      "contact": [
-        ""
-      ],
       "Contact support": [
         "Contactar amb el suport"
       ],
@@ -182,7 +179,7 @@
         ""
       ],
       "Continue with Google": [
-        "Continua amb Google"
+        ""
       ],
       "Copy": [
         "Copiar"
@@ -191,7 +188,7 @@
         "Copiar correu electrònic al porta-retalls"
       ],
       "Copy link": [
-        "Copiar enllaç"
+        ""
       ],
       "Create": [
         "Crear"
@@ -206,7 +203,7 @@
         "Crear una adreça"
       ],
       "Create calendar": [
-        "Crear calendari"
+        ""
       ],
       "Create folder": [
         "Crear carpeta"
@@ -218,7 +215,7 @@
         "Crear etiqueta"
       ],
       "Create link": [
-        "Crear enllaç"
+        ""
       ],
       "Current plan": [
         ""
@@ -242,7 +239,7 @@
         "Esborra"
       ],
       "Delete link": [
-        "Eliminar enllaç"
+        ""
       ],
       "Delete permanently": [
         ""
@@ -338,7 +335,7 @@
         "Exportar"
       ],
       "Export ICS": [
-        "Exportar ICS"
+        ""
       ],
       "Export key": [
         "Exportar clau"
@@ -398,7 +395,7 @@
         "Importar correus"
       ],
       "Import from .ics": [
-        "Importar des de .ics"
+        ""
       ],
       "Import key": [
         "Importar clau"
@@ -542,7 +539,7 @@
         "Suprimeix bonus"
       ],
       "Remove calendar": [
-        "Eliminar calendari"
+        ""
       ],
       "Remove gift code": [
         "Esborrar codi regal"
@@ -551,7 +548,7 @@
         "Elimina aquesta etiqueta"
       ],
       "Remove this notification": [
-        "Elimina aquesta notificació"
+        ""
       ],
       "Rename": [
         "Reanomenar"
@@ -620,7 +617,7 @@
         "Desar adreça"
       ],
       "Save ICS file": [
-        "Desar fitxer ICS"
+        ""
       ],
       "Save selected": [
         ""
@@ -629,7 +626,7 @@
         ""
       ],
       "Select calendar view": [
-        "Tria la visualització de calendari"
+        ""
       ],
       "Select files": [
         "Seleccioneu fitxers"
@@ -638,7 +635,7 @@
         ""
       ],
       "Select timezone": [
-        "Seleccioneu el fus horari"
+        ""
       ],
       "send auto-reply email": [
         "enviar correu d’auto-resposta"
@@ -674,10 +671,10 @@
         "Mostrar les etiquetes"
       ],
       "Show less": [
-        "Mostrar menys"
+        ""
       ],
       "Show more": [
-        "Mostrar-ne més"
+        ""
       ],
       "Show preview": [
         ""
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Assistència"
-      ],
-      "Switch to rich text": [
-        "Canviar a text enriquit"
       ],
       "Top up": [
         "Recarregar"
@@ -1214,8 +1208,8 @@
         ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Heu assolit el nombre màxim d'${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendari subscrit.",
-        "Heu assolit el nombre màxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendaris subscrits."
+        "",
+        ""
       ]
     },
     "Calendar link purpose update success message": {
@@ -1231,13 +1225,13 @@
     },
     "Calendar status": {
       "Active": [
-        "Actiu"
+        ""
       ],
       "Default": [
-        "Per defecte"
+        ""
       ],
       "Disabled": [
-        "Deshabilitat"
+        ""
       ],
       "Not synced": [
         "No sincronitzat"
@@ -1274,13 +1268,13 @@
     },
     "Calendar view": {
       "Day": [
-        "Dia"
+        ""
       ],
       "Month": [
-        "Mes"
+        ""
       ],
       "Week": [
-        "Setmana"
+        ""
       ]
     },
     "Checkout row": {
@@ -1298,6 +1292,173 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
         ""
       ]
     },
@@ -2241,32 +2402,32 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "${ count } vegada",
-        "${ count } vegades"
+        "",
+        ""
       ],
       "Daily": [
-        "Diàriament"
+        ""
       ],
       "Daily, ${ timesString }": [
-        "Diàriament, ${ timesString }"
+        ""
       ],
       "Daily, ${ untilString }": [
-        "Diàriament, ${ untilString }"
+        ""
       ],
       "Every ${ interval } day": [
-        "Cada ${ interval } dia",
-        "Cada ${ interval } dies"
+        "",
+        ""
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "Cada ${ interval } dia, ${ timesString }",
-        "Cada ${ interval } dies, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "Cada ${ interval } dia, ${ untilString }",
-        "Cada ${ interval } dies, ${ untilString }"
+        "",
+        ""
       ],
       "until ${ dateString }": [
-        "fins el ${ dateString }"
+        ""
       ]
     },
     "Day": {
@@ -2380,16 +2541,16 @@
     },
     "Duration": {
       "120 minutes": [
-        "120 minuts"
+        ""
       ],
       "30 minutes": [
-        "30 minuts"
+        ""
       ],
       "60 minutes": [
-        "60 minuts"
+        ""
       ],
       "90 minutes": [
-        "90 minuts"
+        ""
       ]
     },
     "Email body for description (description part)": {
@@ -2620,7 +2781,7 @@
         "Nom en targeta requerit"
       ],
       "Name required": [
-        "Cal indicar un nom"
+        ""
       ],
       "No active sessions": [
         "No hi ha sessions actives"
@@ -3018,7 +3179,7 @@
         "Error: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Enllaç no vàlid"
+        ""
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
@@ -3057,10 +3218,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Esdeveniment @ ${ timeString }"
+        ""
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "Esdeveniment del ${ timeString }, ${ rruleString }"
+        ""
       ]
     },
     "Event invitation error": {
@@ -3114,50 +3275,50 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } esdeveniment exportat",
-        "${ totalProcessed }/${ totalToProcess } esdeveniments exportats"
+        "",
+        ""
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Calendari exportat satisfactòriament. Ja podeu desar l'arxiu ICS."
+        ""
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Desxifrant esdeveniments del vostre calendari: ${ totalProcessed }/${ totalToProcess }"
+        ""
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "A causa del restabliment de contrasenya, cap dels vostres esdeveniments s'han pogut desxifrar i exportar."
+        ""
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "A causa del restabliment de contrasenya, alguns dels vostres esdeveniments no s'han pogut desxifrar i exportar."
+        ""
       ],
       "Error decrypting event": [
-        "Error desxifrant l'esdeveniment"
+        ""
       ],
       "Learn how to restore encrypted events with old password": [
-        "Apreneu a restablir esdeveniments xifrats amb l'antiga contrasenya"
+        ""
       ],
       "Loading events": [
-        "Carregant esdeveniments"
+        ""
       ],
       "None of the events could be exported.": [
-        "No s'ha pogut exportar cap dels esdeveniments."
+        ""
       ],
       "Password reset - event cannot be decrypted": [
-        "Restabliment de contrasenya - un esdeveniment no es pot desxifrar"
+        ""
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Restabliment de contrasenya - diversos esdeveniments no es poden desxifrar"
+        ""
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "No tanqueu la pestanya abans de finalitzar el procés d'exportació."
+        ""
       ],
       "Some of your events could not be exported.": [
-        "Alguns dels vostres esdeveniments no s'han pogut exportar."
+        ""
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "La connexió d'internet s'ha interromput, causant la fallada del procés d'exportació. Torneu-ho a intentar."
+        ""
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Podeu desar l'arxiu ICS dels esdeveniments que han estat exportats satisfactòriament."
+        ""
       ]
     },
     "Feature": {
@@ -3220,6 +3381,9 @@
       "Inbox": [
         "Safata d'entrada"
       ],
+      "Inbox - Default": [
+        ""
+      ],
       "Select a folder": [
         "Selecció de carpeta"
       ],
@@ -3272,8 +3436,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Afegiu un filtre personalitzat per realitzar automàticament certes accions, com ara etiquetar o arxivar missatges."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Aplicar regles de correu no desitjat específiques depenent del remitent. Els missatges d'adreces o dominis a la llista de Permesos sempre van a parar a la vostra Safata d'entrada, mentre que missatges d'adreces o dominis de la llista de No desitjats sempre van a parar a Correu brossa. Marcar un missatge com a correu brossa n'afegeix l'adreça a la llista de No desitjats; marcar un missatge com a no correu brossa l'afegeix a la llista de Permesos."
@@ -3325,7 +3489,7 @@
         "Accions"
       ],
       "Calendar": [
-        "Calendari"
+        ""
       ],
       "Event": [
         "Esdeveniment"
@@ -3340,10 +3504,10 @@
         "Clau tipus"
       ],
       "Label": [
-        "Etiqueta"
+        ""
       ],
       "Name": [
-        "Nom"
+        ""
       ],
       "Notifications": [
         "Notificacions"
@@ -3352,13 +3516,13 @@
         "Clau d'identificació de la clau d'organització"
       ],
       "Status": [
-        "Estat"
+        ""
       ],
       "Time": [
         "Temps"
       ],
       "What others see": [
-        "El que altres veuen"
+        ""
       ]
     },
     "Header for addresses table": {
@@ -3848,7 +4012,7 @@
         ""
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } es definirà com a calendari predeterminat."
+        ""
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "",
@@ -4028,7 +4192,7 @@
         "Afegir URL de la imatge"
       ],
       "Add label": [
-        "Afegir etiqueta"
+        ""
       ],
       "Additional options": [
         "Opcions addicionals"
@@ -4094,13 +4258,13 @@
         "i"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Qualsevol amb aquest enllaç pot veure tots els detalls dels esdeveniments d'aquest calendari com ara títol, localització o participants."
+        ""
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Qualsevol amb aquest enllaç pot veure al vostre calendari si esteu lliure o ocupat. No podran veure detalls dels esdeveniments com ara títol, localització o participants."
+        ""
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Qualsevol amb aquest enllaç no podrà sincronitzar o rebre actualitzacions futures del vostre calendari. Si voleu tornar a donar-hi accés, haureu de crear un nou enllaç."
+        ""
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL llegeix les teves dades personals per donar-hi accés a publicitants o altres terceres parts. Per una millor privadesa crea una adreça de correu electrònic segur."
@@ -4109,7 +4273,7 @@
         "Esteu segur que voleu esborrar aquesta carpeta?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Estàs segur de que vols esborrar aquest calendari?"
+        ""
       ],
       "Are you sure you want to delete this domain?": [
         "Esteu segur que voleu suprimir aquest domini?"
@@ -4199,7 +4363,7 @@
         "Si surt ara, és possible que els canvis no es desin"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Compartint tots els detalls dels esdeveniments d'aquest calendari accepteu donar a Proton accés a la informació xifrada d'aquest calendari."
+        ""
       ],
       "Center": [
         "Centre"
@@ -4233,7 +4397,7 @@
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació i les etiquetes que vulgueu importar."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Creeu un enllaç al vostre calendari i compartiu-lo amb qualsevol persona fora de Proton. Sou l'únic/a que podeu afegir o esborrar esdeveniments."
+        ""
       ],
       "Create a new account and share the email address and password with the user.": [
         ""
@@ -4257,28 +4421,25 @@
         "Actualment tot l'emmagatzematge disponible està assignat al compte d'administrador. Si us plau reduïu l'assignació a aquest compte per fer espai per altres usuaris. Podeu ampliar l'espai total sempre que vulgueu mitjançant l'actualització del compte."
       ],
       "Custom": [
-        "Personalitzat"
+        ""
       ],
       "Custom daily": [
-        "Personalitzat diàriament"
+        ""
       ],
       "Custom email domains": [
         ""
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Els filtres personalitzats funcionen en tots els correus electrònics nous, inclosos els que entren i els que s'envien. Els filtres es poden editar i crear directament mitjançant el llenguatge de programació de Sieve."
-      ],
       "Custom monthly": [
-        "Personalitzat mensualment"
+        ""
       ],
       "Custom weekly": [
-        "Personalitzat setmanalment"
+        ""
       ],
       "Custom yearly": [
-        "Personalitzat anualment"
+        ""
       ],
       "Daily": [
-        "Diàriament"
+        ""
       ],
       "Data locked": [
         ""
@@ -4287,7 +4448,7 @@
         ""
       ],
       "Delete link?": [
-        "Eliminar enllaç?"
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Descompte aplicat a la vostra subscripció amb un cupó ${ code }"
@@ -4326,6 +4487,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descarregueu les vostres claus PGP per utilitzar amb altres serveis compatibles amb PGP."
       ],
+      "Drop a file here to upload": [
+        ""
+      ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
       ],
@@ -4333,7 +4497,7 @@
         ""
       ],
       "Edit label": [
-        "Editar etiqueta"
+        ""
       ],
       "Edit link": [
         ""
@@ -4410,9 +4574,6 @@
       "Failed to fetch logs.": [
         "No s'han pogut trobar els registres."
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom i una seqüència de comandes vàlida."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
       ],
@@ -4450,7 +4611,7 @@
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Si el fus horari del sistema no coincideix amb la configuració de fus horari actual us demanarem que l’actualitzeu (com a màxim una vegada al dia)."
+        ""
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Si actualment aquest domini rep correus electrònics, seleccioneu la pestanya ${ boldAddresses } i afegiu totes les adreces de correu electrònic actives abans de canviar el registre MX per garantir una transició fluida."
@@ -4619,6 +4780,9 @@
       "Learn more": [
         "Saber-ne més"
       ],
+      "learn more about Sieve programming language": [
+        ""
+      ],
       "Left to Right": [
         "Esquerra a dreta"
       ],
@@ -4626,16 +4790,16 @@
         "Feu que els vostres contactes coneguin que us preocupeu per la seva privadesa."
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Vista limitada: altres poden veure si esteu ocupat. Vista completa: mostra tots els detalls de l'esdeveniment incloent nom, localització o participants."
+        ""
       ],
       "Link copied to clipboard": [
-        "Enllaç copiat al porta-retalls"
+        ""
       ],
       "Link created": [
-        "Enllaç creat"
+        ""
       ],
       "Link deleted": [
-        "Enllaç eliminat"
+        ""
       ],
       "Link type": [
         "Tipus d'enllaç"
@@ -4671,7 +4835,7 @@
         "Combinats"
       ],
       "Monthly ${ onDayString }": [
-        "Mensualment ${ onDayString }"
+        ""
       ],
       "more": [
         "més"
@@ -4727,9 +4891,6 @@
       "No results found": [
         "No s'han trobat resultats"
       ],
-      "Normal": [
-        "Normal"
-      ],
       "Not a valid URL": [
         "No és una URL vàlida"
       ],
@@ -4752,7 +4913,7 @@
         ""
       ],
       "Only you can see the labels.": [
-        "Sou l'únic/a que podeu veure les etiquetes."
+        ""
       ],
       "Or select a particular server:": [
         ""
@@ -4802,9 +4963,6 @@
       ],
       "Phone number": [
         "Número de telèfon"
-      ],
-      "Plain text": [
-        "Text pla"
       ],
       "Plan upgrade required": [
         "Es requereix una millora del pla"
@@ -4941,9 +5099,6 @@
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         ""
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        ""
-      ],
       "Select what you want to move from Google.": [
         ""
       ],
@@ -5029,7 +5184,7 @@
         ""
       ],
       "The calendar will be removed from your account.": [
-        "El calendari s'eliminarà del vostre compte."
+        ""
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "L'adreça de correu electrònic que poseu a la primera posició de la llista és la vostra adreça per defecte. Arrossegueu i deixeu anar per reordenar-les."
@@ -5157,6 +5312,9 @@
       "To use ${ toAppName }, please create an address.": [
         ""
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
       ],
@@ -5275,7 +5433,7 @@
         "Setmana"
       ],
       "Week and month views only apply to desktop.": [
-        "Les visualitzacions de setmana i mes només s'apliquen a l'escriptori."
+        ""
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         ""
@@ -5314,7 +5472,7 @@
         "Yandex registra la teva activitat i llegeix les teves dades personals per donar-hi accés a publicitants o altres terceres parts. Per una millor privadesa crea una adreça de correu electrònic segur."
       ],
       "Yearly": [
-        "Anualment"
+        ""
       ],
       "You already have a free account": [
         "Ja teniu un compte gratuït"
@@ -5330,9 +5488,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         ""
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Podeu crear fins a ${ MAX_LINKS_PER_CALENDAR } enllaços per calendari. Per crear un nou enllaç per aquest calendari, elimineu-ne un de la llista següent."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Podeu personalitzar i descarregar les vostres factures a efectes de comptabilitat."
@@ -5386,10 +5541,10 @@
         ""
       ],
       "You need to have a personal calendar to create a link.": [
-        "Necessiteu tenir un calendari personal per crear un enllaç."
+        ""
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        "Necessiteu tenir un calendari personal actiu per a importar els esdeveniments d'un .ics."
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Necessiteu tenir un calendari personal actiu per importar els vostres esdeveniments."
@@ -5881,7 +6036,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Veieu com fer-ho"
+        ""
       ]
     },
     "Label": {
@@ -5973,7 +6128,7 @@
         "Adjuntar captura/es de pantalla"
       ],
       "Auto-detect primary time zone": [
-        "Detectar automàticament el fus horari primari"
+        ""
       ],
       "Auto-load embedded images": [
         "Càrrega automàtica d'imatges incrustades"
@@ -6033,7 +6188,7 @@
         "El codi és de 6 dígits sense espais"
       ],
       "Color": [
-        "Color"
+        ""
       ],
       "Composer": [
         "Editor"
@@ -6141,7 +6296,7 @@
         "Esquema PGP per defecte"
       ],
       "Default view": [
-        "Vista per defecte"
+        ""
       ],
       "Delete": [
         "Eliminar"
@@ -6150,7 +6305,7 @@
         "Densitat"
       ],
       "Description": [
-        "Descripció"
+        ""
       ],
       "Device/certificate name": [
         ""
@@ -6162,7 +6317,7 @@
         "Descompte"
       ],
       "Display": [
-        "Mostra"
+        ""
       ],
       "Display name": [
         "Mostrar el nom"
@@ -6504,10 +6659,10 @@
         ""
       ],
       "Show secondary time zone": [
-        "Mostrar fus horari secundari"
+        ""
       ],
       "Show week numbers": [
-        "Mostrar el número de setmana"
+        ""
       ],
       "Sign external messages": [
         "Signar missatges externs"
@@ -6594,7 +6749,7 @@
         "Pengeu 1 o més fitxers de recuperació o claus de xifratge"
       ],
       "URL": [
-        "URL"
+        ""
       ],
       "Use folder colors": [
         "Utilitzar colors de carpeta"
@@ -6654,10 +6809,10 @@
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
       ],
       "Your calendar URL": [
-        "URL del vostre calendari"
+        ""
       ],
       "Your calendar URL label": [
-        "Etiqueta URL del vostre calendari"
+        ""
       ],
       "Your password (admin)": [
         "La seva contrasenya (admin)"
@@ -6922,6 +7077,12 @@
         ""
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "",
+        ""
+      ]
+    },
     "Member action": {
       "Delete": [
         "Esborra"
@@ -6988,7 +7149,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        "Afegir calendari"
+        ""
       ]
     },
     "Monetary unit": {
@@ -7004,135 +7165,135 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Cada ${ interval } mes ${ onDayString }",
-        "Cada ${ interval } mesos ${ onDayString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
-        "Cada ${ interval } mesos ${ onDayString }, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
-        "Cada ${ interval } mesos ${ onDayString }, ${ untilString }"
+        "",
+        ""
       ],
       "Monthly ${ onDayString }": [
-        "Mensualment ${ onDayString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensualment ${ onDayString }, ${ timesString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensualment ${ onDayString }, ${ untilString }"
+        ""
       ]
     },
     "Monthly recurring event, repeats on": {
       "on day ${ dayOfMonth }": [
-        "el dia ${ dayOfMonth }"
+        ""
       ],
       "on the first Friday": [
-        "el primer divendres"
+        ""
       ],
       "on the first Monday": [
-        "el primer dilluns"
+        ""
       ],
       "on the first Saturday": [
-        "el primer dissabte"
+        ""
       ],
       "on the first Sunday": [
-        "el primer diumenge"
+        ""
       ],
       "on the first Thursday": [
-        "el primer dijous"
+        ""
       ],
       "on the first Tuesday": [
-        "el primer dimarts"
+        ""
       ],
       "on the first Wednesday": [
-        "el primer dimecres"
+        ""
       ],
       "on the fourth Friday": [
-        "el quart divendes"
+        ""
       ],
       "on the fourth Monday": [
-        "el quart dilluns"
+        ""
       ],
       "on the fourth Saturday": [
-        "el quart dissabte"
+        ""
       ],
       "on the fourth Sunday": [
-        "el quart diumenge"
+        ""
       ],
       "on the fourth Thursday": [
-        "el quart dijous"
+        ""
       ],
       "on the fourth Tuesday": [
-        "el quart dimarts"
+        ""
       ],
       "on the fourth Wednesday": [
-        "el quart dimecres"
+        ""
       ],
       "on the last Friday": [
-        "l'últim divendres"
+        ""
       ],
       "on the last Monday": [
-        "l'últim dilluns"
+        ""
       ],
       "on the last Saturday": [
-        "l'últim dissabte"
+        ""
       ],
       "on the last Sunday": [
-        "l'últim diumenge"
+        ""
       ],
       "on the last Thursday": [
-        "l'últim dijous"
+        ""
       ],
       "on the last Tuesday": [
-        "l'últim dimarts"
+        ""
       ],
       "on the last Wednesday": [
-        "l'últim dimecres"
+        ""
       ],
       "on the second Friday": [
-        "el segon divendres"
+        ""
       ],
       "on the second Monday": [
-        "el segon dilluns"
+        ""
       ],
       "on the second Saturday": [
-        "el segon dissabte"
+        ""
       ],
       "on the second Sunday": [
-        "el segon diumenge"
+        ""
       ],
       "on the second Thursday": [
-        "el segon dijous"
+        ""
       ],
       "on the second Tuesday": [
-        "el segon dimarts"
+        ""
       ],
       "on the second Wednesday": [
-        "el segon dimecres"
+        ""
       ],
       "on the third Friday": [
-        "el tercer divendres"
+        ""
       ],
       "on the third Monday": [
-        "el tercer dilluns"
+        ""
       ],
       "on the third Saturday": [
-        "el tercer dissabte"
+        ""
       ],
       "on the third Sunday": [
-        "el segon diumenge"
+        ""
       ],
       "on the third Thursday": [
-        "el tercer dijous"
+        ""
       ],
       "on the third Tuesday": [
-        "el tercer dimarts"
+        ""
       ],
       "on the third Wednesday": [
-        "el tercer dimecres"
+        ""
       ]
     },
     "Moved to black/whitelist": {
@@ -7864,39 +8025,39 @@
     },
     "Notification time input": {
       "at": [
-        "a"
+        ""
       ]
     },
     "Notification type": {
       "email": [
-        "correu electrònic"
+        ""
       ],
       "notification": [
-        "notificació"
+        ""
       ]
     },
     "Notification when": {
       "at time of event": [
-        "al moment de l'esdeveniment"
+        ""
       ],
       "day before": [
-        "dia abans",
-        "dies abans"
+        "",
+        ""
       ],
       "hour before": [
-        "hora abans",
-        "hores abans"
+        "",
+        ""
       ],
       "minute before": [
-        "minut abans",
-        "minuts abans"
+        "",
+        ""
       ],
       "on the same day": [
-        "el mateix dia"
+        ""
       ],
       "week before": [
-        "setmana abans",
-        "setmanes abans"
+        "",
+        ""
       ]
     },
     "Oauth instructions": {
@@ -8192,10 +8353,10 @@
         "Una manera de contactar amb tu"
       ],
       "Add a calendar description": [
-        "Afegir una descripció de calendari"
+        ""
       ],
       "Add a calendar name": [
-        "Afegir un nom de calendari"
+        ""
       ],
       "Add gift code": [
         "Afegir codi regal"
@@ -8284,6 +8445,18 @@
         "Afegeixi el seu nom (o nom de la empresa) i adreça a les seves factures"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
+      ]
+    },
     "Price": {
       "Free": [
         "Gratuït"
@@ -8291,10 +8464,10 @@
     },
     "Primary timezone": {
       "Primary time zone": [
-        "Zona horaria primaria"
+        ""
       ],
       "Secondary time zone": [
-        "Fus horari secundari"
+        ""
       ]
     },
     "Private Member": {
@@ -8424,7 +8597,7 @@
     },
     "Select search results": {
       "No results found": [
-        "No s'han trobat resultats"
+        ""
       ]
     },
     "Settings description": {
@@ -8552,9 +8725,6 @@
       ],
       "Preview": [
         "Vista prèvia"
-      ],
-      "Sieve editor": [
-        "Editor Sieve"
       ]
     },
     "Storage": {
@@ -8570,7 +8740,7 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "Enllaç del calendari"
+        ""
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
         ""
@@ -8578,25 +8748,25 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Apreneu com obtenir un enllaç de calendari privat."
+        ""
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Usant aquest enllaç, Google farà que el calendari al que us esteu subscrivint sigui públic"
+        ""
       ],
       "This link might be wrong": [
-        "Aquest enllaç podria ser erroni"
+        ""
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Afegiu calendaris públics, externs, o compartits utilitzant una URL."
+        ""
       ]
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "L'URL és massa llarga"
+        ""
       ]
     },
     "Subscription attribute": {
@@ -8703,16 +8873,16 @@
         "Error notificat"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."
+        ""
       ],
       "Calendar created": [
-        "Calendari creat"
+        ""
       ],
       "Calendar removed": [
-        "Calendari suprimit"
+        ""
       ],
       "Calendar updated": [
-        "Calendari actualitzat"
+        ""
       ],
       "Canceling import": [
         "Cancel·lar importació"
@@ -8727,7 +8897,7 @@
         "Crèdits afegits"
       ],
       "Default calendar updated": [
-        "Calendari per defecte actualitzat"
+        ""
       ],
       "DMARC value copied to clipboard": [
         "Valor DMARC copiat al portaretalls"
@@ -8894,7 +9064,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Detalls dels esdeveniments que no s'han pogut exportar"
+        ""
       ]
     },
     "Tab in domain modal": {
@@ -8939,14 +9109,6 @@
         "Camp vCard"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
-        ""
-      ]
-    },
     "Time period": {
       "account creation date": [
         "data de creació del compte"
@@ -8973,7 +9135,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Cercar fus horari"
+        ""
       ]
     },
     "Title": {
@@ -9030,7 +9192,7 @@
         "Afegir adreça"
       ],
       "Add another notification to remind you of this event": [
-        "Afegeix una altra notificació per recordar-vos aquest esdeveniment"
+        ""
       ],
       "Add contact group name": [
         "Afegir nom de grup de contactes"
@@ -9192,7 +9354,7 @@
         "Crear una adreça de ${ mailAppName }"
       ],
       "Create calendar": [
-        "Crear calendari"
+        ""
       ],
       "Create your ${ BRAND_NAME } Account": [
         ""
@@ -9258,7 +9420,7 @@
         "Eliminar compte"
       ],
       "Delete calendar": [
-        "Esborrar calendari"
+        ""
       ],
       "Delete key permanently?": [
         ""
@@ -9300,7 +9462,7 @@
         "Edita la Lista de Bloqueig"
       ],
       "Edit calendar": [
-        "Editar Calendari"
+        ""
       ],
       "Edit credit/debit card": [
         "Modificar targeta de crèdit"
@@ -9339,7 +9501,7 @@
         "Error"
       ],
       "Export calendar": [
-        "Exportar calendari"
+        ""
       ],
       "Export private key": [
         "Exportar clau privada"
@@ -9553,7 +9715,7 @@
         ""
       ],
       "Remove calendar": [
-        "Eliminar calendari"
+        ""
       ],
       "Report a problem": [
         "Avisar d'un problema"
@@ -9598,13 +9760,13 @@
         "Seleccionar grup de contactes"
       ],
       "Select the time to send this notification": [
-        "Seleccioneu l'hora per enviar aquesta notificació"
+        ""
       ],
       "Select the way to send this notification": [
-        "Seleccioneu la manera d’enviar aquesta notificació"
+        ""
       ],
       "Select when you want this notification to be sent": [
-        "Selecciona quan vols que s'enviï aquesta notificació"
+        ""
       ],
       "Session management": [
         "Gestió de sessions"
@@ -9745,7 +9907,7 @@
         "La seva adreça ${ domain } està activa"
       ],
       "Your calendar link": [
-        "El vostre enllaç al calendari"
+        ""
       ],
       "Your current plan": [
         "El vostre pla actual"
@@ -9768,7 +9930,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Tria un número"
+        ""
       ]
     },
     "Title for payment methods table": {
@@ -9922,7 +10084,7 @@
         "Aquesta funció només està disponible per a usuaris de pagament"
       ],
       "This feature is unavailable for the moment": [
-        "Aquesta característica no està disponible de moment"
+        ""
       ],
       "This key cannot be used for encryption": [
         "Aquesta clau no es pot utilitzar per al xifratge"
@@ -10002,11 +10164,11 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Actualitzeu-vos a un pla de pagament per crear fins a ${ MAX_CALENDARS_PER_USER } calendari, amb la possibilitat de crear calendaris per la feina, per compartir amb amics o simplement per a ús personal.",
-        "Actualitzeu-vos a un pla de pagament per crear fins a ${ MAX_CALENDARS_PER_USER } calendaris, amb la possibilitat de crear calendaris per la feina, per compartir amb amics o simplement per a ús personal."
+        "",
+        ""
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Actualitzeu-vos a un pla de pagament per compartir el vostre calendari personal amb qualsevol a través d'un enllaç."
+        ""
       ]
     },
     "User role": {
@@ -10174,239 +10336,239 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ timesString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ untilString }",
-        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on all days": [
-        "Cada ${ interval } setmana tots els dies",
-        "Cada ${ interval } setmanes tots els dies"
+        "",
+        ""
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Cada ${ interval } setmana tots els dies, ${ timesString }",
-        "Cada ${ interval } setmanes tots els dies, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Cada ${ interval } setmana tots els dies, ${ untilString }",
-        "Cada ${ interval } setmanes tots els dies, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Friday": [
-        "Cada ${ interval } setmana els divendres",
-        "Cada ${ interval } setmanes els divendres"
+        "",
+        ""
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Cada ${ interval } setmana els divendres, ${ timesString }",
-        "Cada ${ interval } setmanes els divendres, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Cada ${ interval } setmana els divendres, ${ untilString }",
-        "Cada ${ interval } setmanes els divendres, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Monday": [
-        "Cada ${ interval } setmana els dilluns",
-        "Cada ${ interval } setmanes els dilluns"
+        "",
+        ""
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Cada ${ interval } setmana els dilluns, ${ timesString }",
-        "Cada ${ interval } setmanes els dilluns, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Cada ${ interval } setmana els dilluns, ${ untilString }",
-        "Cada ${ interval } setmanes els dilluns, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Saturday": [
-        "Cada ${ interval } setmana els dissabtes",
-        "Cada ${ interval } setmanes els dissabtes"
+        "",
+        ""
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Cada ${ interval } setmana els dissabtes, ${ timesString }",
-        "Cada ${ interval } setmanes els dissabtes, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Cada ${ interval } setmana els dissabtes, ${ untilString }",
-        "Cada ${ interval } setmanes els dissabtes, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Sunday": [
-        "Cada ${ interval } setmana els diumenges",
-        "Cada ${ interval } setmanes els diumenges"
+        "",
+        ""
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Cada ${ interval } setmana els diumenges, ${ timesString }",
-        "Cada ${ interval } setmanes els diumenges, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Cada ${ interval } setmana els diumenges, ${ untilString }",
-        "Cada ${ interval } setmanes els diumenges, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Thursday": [
-        "Cada ${ interval } setmana els dijous",
-        "Cada ${ interval } setmanes els dijous"
+        "",
+        ""
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Cada ${ interval } setmana els dijous, ${ timesString }",
-        "Cada ${ interval } setmanes els dijous, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Cada ${ interval } setmana els dijous, ${ untilString }",
-        "Cada ${ interval } setmanes els dijous, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday": [
-        "Cada ${ interval } setmana els dimarts",
-        "Cada ${ interval } setmanes els dimarts"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Cada ${ interval } setmana els Dimarts, ${ timesString }",
-        "Cada ${ interval } setmanes els Dimarts, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Cada ${ interval } setmana els dimarts, ${ untilString }",
-        "Cada ${ interval } setmanes els dimarts, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Wednesday": [
-        "Cada ${ interval } setmana els dimecres",
-        "Cada ${ interval } setmanes els dimecres"
+        "",
+        ""
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Cada ${ interval } setmana els dimecres, ${ timesString }",
-        "Cada ${ interval } setmanes els dimecres, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Cada ${ interval } setmana el dimecres, ${ untilString }",
-        "Cada ${ interval } setmanes el dimecres, ${ untilString }"
+        "",
+        ""
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Setmanalment els ${ multipleDaysString }"
+        ""
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Setmanalment els ${ multipleDaysString }, ${ timesString }"
+        ""
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Setmanalment els ${ multipleDaysString }, ${ untilString }"
+        ""
       ],
       "Weekly on all days": [
-        "Setmanalment tots els dies"
+        ""
       ],
       "Weekly on all days, ${ timesString }": [
-        "Setmanalment tots els dies, ${ timesString }"
+        ""
       ],
       "Weekly on all days, ${ untilString }": [
-        "Setmanalment tots els dies, ${ untilString }"
+        ""
       ],
       "Weekly on Friday": [
-        "Setmanalment el divendres"
+        ""
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Setmanalment els divendres, ${ timesString }"
+        ""
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Setmanalment el divendres, ${ untilString }"
+        ""
       ],
       "Weekly on Monday": [
-        "Setmanalment el dilluns"
+        ""
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Setmanalment els dilluns, ${ timesString }"
+        ""
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Setmanalment el dilluns, ${ untilString }"
+        ""
       ],
       "Weekly on Saturday": [
-        "Setmanalment el dissabte"
+        ""
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Setmanalment el dissabte, ${ timesString }"
+        ""
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Setmanalment el dissabte, ${ untilString }"
+        ""
       ],
       "Weekly on Sunday": [
-        "Setmanalment el diumenge"
+        ""
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Setmanalment el diumenge, ${ timesString }"
+        ""
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Setmanalment el diumenge, ${ untilString }"
+        ""
       ],
       "Weekly on Thursday": [
-        "Setmanalment el dijous"
+        ""
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Setmanalment els dijous, ${ timesString }"
+        ""
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Setmanalment el dijous, ${ untilString }"
+        ""
       ],
       "Weekly on Tuesday": [
-        "Setmanalment els dimarts"
+        ""
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Setmanalment els dimarts, ${ timesString }"
+        ""
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Setmanalment el dimarts, ${ untilString }"
+        ""
       ],
       "Weekly on Wednesday": [
-        "Setmanalment el dimecres"
+        ""
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Setmanalment els dimecres, ${ timesString }"
+        ""
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Setmanalment el dimecres, ${ untilString }"
+        ""
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "Divendres"
+        ""
       ],
       "Monday": [
-        "Dilluns"
+        ""
       ],
       "Saturday": [
-        "Dissabte"
+        ""
       ],
       "Sunday": [
-        "Diumenge"
+        ""
       ],
       "Thursday": [
-        "Dijous"
+        ""
       ],
       "Tuesday": [
-        "Dimarts"
+        ""
       ],
       "Wednesday": [
-        "Dimecres"
+        ""
       ]
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Cada ${ interval } any",
-        "Cada ${ interval } anys"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Cada ${ interval } any, ${ timesString }",
-        "Cada ${ interval } anys, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Cada ${ interval } any, ${ untilString }",
-        "Cada ${ interval } anys, ${ untilString }"
+        "",
+        ""
       ],
       "Yearly": [
-        "Anualment"
+        ""
       ],
       "Yearly, ${ timesString }": [
-        "Anualment, ${ timesString }"
+        ""
       ],
       "Yearly, ${ untilString }": [
-        "Anualment, ${ untilString }"
+        ""
       ]
     }
   }

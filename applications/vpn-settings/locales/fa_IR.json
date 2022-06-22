@@ -709,6 +709,68 @@
         ""
       ]
     },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "مطمئن هستید که می خواهید این نحوه پرداخت را حذف کنید؟"
@@ -731,7 +793,7 @@
     },
     "Country name": {
       "Abkhazia": [
-        ""
+        "آبخازستان"
       ],
       "Afghanistan": [
         "افغانستان"
@@ -770,7 +832,7 @@
         "آروبا"
       ],
       "Ascension Island": [
-        ""
+        "جزیرهٔ اسنشن"
       ],
       "Australia": [
         "استرالیا"
@@ -890,7 +952,7 @@
         "کنگو"
       ],
       "Congo, Democratic Republic of the": [
-        ""
+        "جمهوری دموکراتیک کنگو"
       ],
       "Cook Islands": [
         "جزایر کوک"
@@ -899,7 +961,7 @@
         "کاستاریکا"
       ],
       "Cote d'Ivoire\"": [
-        ""
+        "ساحل عاج"
       ],
       "Croatia": [
         "کرواسی"
@@ -950,13 +1012,13 @@
         "اتیوپی"
       ],
       "Falkland Islands": [
-        ""
+        "جزایر فالکلند"
       ],
       "Faroe Islands": [
         "جزایر فارو"
       ],
       "Federated States of Micronesia": [
-        ""
+        "ایالات فدرال میکرونزی"
       ],
       "Fiji": [
         "فیجی"
@@ -1052,7 +1114,7 @@
         "اندونزی"
       ],
       "International": [
-        ""
+        "بین‌المللی"
       ],
       "Iran": [
         "ایران"
@@ -1094,7 +1156,7 @@
         "کیریباتی"
       ],
       "Kosovo": [
-        ""
+        "کوزوو"
       ],
       "Kuwait": [
         "کویت"
@@ -1277,7 +1339,7 @@
         "قطر"
       ],
       "Reunion": [
-        ""
+        "رئونیون"
       ],
       "Romania": [
         "روماني"
@@ -1292,7 +1354,7 @@
         "سنت بارتلی"
       ],
       "Saint Helena": [
-        ""
+        "سن هلن"
       ],
       "Saint Kitts and Nevis": [
         "سنت کیتس و نویس"
@@ -1301,7 +1363,7 @@
         "سنت لوسیا"
       ],
       "Saint Martin (French Part)": [
-        ""
+        "سن مارتین (فرانسه)"
       ],
       "Saint Pierre and Miquelon": [
         "سنت پیر و ماژلان"
@@ -1337,7 +1399,7 @@
         "سنگاپور"
       ],
       "Sint Maarten": [
-        ""
+        "سن مارتن"
       ],
       "Slovakia": [
         "اسلواکی"
@@ -1361,7 +1423,7 @@
         "کرهٔ جنوبی"
       ],
       "South Ossetia": [
-        ""
+        "اوستیای جنوبی"
       ],
       "South Sudan": [
         "سودان جنوبی"
@@ -1391,7 +1453,7 @@
         "سوئیس"
       ],
       "Syria": [
-        ""
+        "سوریه"
       ],
       "Taiwan": [
         "تایوان"
@@ -1493,7 +1555,7 @@
         "زیمباوه"
       ],
       "Åland Islands": [
-        ""
+        "جزایر الند"
       ]
     },
     "CountryInfo": {
@@ -1870,8 +1932,8 @@
         "+${ bonusSpace } حافظه هدیه"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        "",
-        ""
+        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
+        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
       ],
       "10 email addresses": [
         ""
@@ -1940,7 +2002,7 @@
         "با تنزل طرح به یک طرح رایگان، شما برای همیشه این مزایا را از دست خواهید داد، حتی اگر مجدداً در آینده طرح را ارتقاء دهید."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        ""
+        "با تنزیل دادن شما مزایای زیر را از دست خواهید داد. آیا مایل به ادامه هستید؟"
       ],
       "By leaving now, changes may not be saved": [
         "با خارج شدن، تغییرات ممکن است که ذخیره نشوند"
@@ -1958,7 +2020,7 @@
         "ایجاد حساب کاربری خود"
       ],
       "Credit for the unused portion of your previous plan subscription": [
-        ""
+        "اعتبار برای قسمت استفاده نشدهٔ طرح اشتراک قبلی شما"
       ],
       "Custom email domains": [
         ""
@@ -2390,7 +2452,7 @@
         ""
       ],
       "We're moving! Join us at our new site: ${ link }.": [
-        ""
+        "ما در حال جابجایی هستیم! به ما در سایت جدیدمان بپیوندید: ${ link }."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         ""
@@ -2399,7 +2461,7 @@
         ""
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        ""
+        "ما در حال به‌روزرسانی طرح فعلی شما به یک طرح بهبود یافته هستیم که به ازای قیمت یکسان قابلیت‌های بیشتری ارائه می‌دهد. هنگامی که سامانه‌های ما در حال به‌روزرسانی هستند، شما قادر به تغییر آن نخواهید بود. ما به شما به محض انجام شدن آن پیام خواهیم داد."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "هنگامی که اشتراک شما تمدید می‌شود، قبل از اینکه روش پرداخت فوق را شارژ کنیم، اعتبارات موجود را اعمال خواهیم کرد."
@@ -2420,7 +2482,7 @@
         "در حال حاضر یک حساب کاربری رایگان دارید"
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
-        ""
+        "شما در حال حاضر به عنوان ${ user.Name } (${ user.Email }) وارد شده‌اید."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "می‌توانید صورتحساب‌های خود را برای اهداف حسابداری، شخصی‌سازی و دانلود کنید."
@@ -2450,7 +2512,7 @@
         "شما باید یک کارت اعتباری یا حساب بانکی متصل به حساب PayPal خود داشته باشید. اگر حساب PayPal شما این امکان را ندارد، لطفا روی دکمهٔ زیر کلیک کنید."
       ],
       "You must remove any additional personal calendars and any shared calendar links before you can cancel your subscription.": [
-        ""
+        "شما باید هر تقویم شخصی دیگر و هر پیوند تقویم به اشتراک گذشتهٔ دیگر را پیش از اینکه بتوانید اشتراک‌تان را لغو کنید حذف کنید."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "شما به ${ spaceDisplayed }% ظرفیت حافظه خود رسیدید. ${ freeUpMessage } ${ upgradeLink }"

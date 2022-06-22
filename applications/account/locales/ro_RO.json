@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmați deschiderea legăturii ${ linkToShow }"
       ],
-      "contact": [
-        "contactați"
-      ],
       "Contact support": [
         "Contactați asistența"
       ],
@@ -629,7 +626,7 @@
         "Selectare ${ planTitle }"
       ],
       "Select calendar view": [
-        "Selectare afișare calendar"
+        "Selectare tip afișare calendar"
       ],
       "Select files": [
         "Selectare fișiere"
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Asistenţă"
-      ],
-      "Switch to rich text": [
-        "Comutare la text formatat"
       ],
       "Top up": [
         "Alimentare"
@@ -1221,20 +1215,20 @@
         "Ați atins numărul maxim de calendare personale pe care le puteți crea în cadrul planului actual."
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Ați atins numărul maxim de un calendar abonat.",
-        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } calendare abonate.",
-        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } de calendare abonate."
+        "Ați atins numărul maxim de o abonare la un calendar.",
+        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } abonări la calendare.",
+        "Ați atins numărul maxim de ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } de abonări la calendare."
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "Etichetă adăugată"
+        "Etichetă a fost adăugată."
       ],
       "Label deleted": [
-        "Etichetă ștearsă"
+        "Etichetă a fost ștearsă."
       ],
       "Label edited": [
-        "Etichetă editată"
+        "Eticheta a fost editată."
       ]
     },
     "Calendar status": {
@@ -1282,13 +1276,13 @@
     },
     "Calendar view": {
       "Day": [
-        "Ziua"
+        "zi"
       ],
       "Month": [
-        "Luna"
+        "lună"
       ],
       "Week": [
-        "Săptămâna"
+        "săptămână"
       ]
     },
     "Checkout row": {
@@ -1309,6 +1303,173 @@
       ],
       "Open": [
         "Deschidere"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "măr"
+      ],
+      "azureish white": [
+        "alb azuric"
+      ],
+      "blanched almond": [
+        "migdale decolorate"
+      ],
+      "blue-gray": [
+        "albastru-gri"
+      ],
+      "caramel": [
+        "caramel"
+      ],
+      "carrot": [
+        "morcov"
+      ],
+      "cerise": [
+        "cireșiu"
+      ],
+      "cinnabar": [
+        "cinabru"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "cupru"
+      ],
+      "cyan-blue azure": [
+        "azur cian-albastru"
+      ],
+      "dandelion": [
+        "alb păpădie"
+      ],
+      "dark cerulean": [
+        "cerulean întunecat"
+      ],
+      "dark midnight blue": [
+        "albastru închis nocturn"
+      ],
+      "dim gray": [
+        "gri deschis"
+      ],
+      "enzian": [
+        "gențiană"
+      ],
+      "fern": [
+        "ferigă"
+      ],
+      "field drab": [
+        "câmp cafeniu deschis"
+      ],
+      "forest": [
+        "pădure"
+      ],
+      "gainsboro": [
+        "gri deschis"
+      ],
+      "japanese laurel": [
+        "laur japonez"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "galben lămâie"
+      ],
+      "light carmine pink": [
+        "roz carmin deschis"
+      ],
+      "light moss green": [
+        "verde mușchi deschis"
+      ],
+      "light red": [
+        "roșu deschis"
+      ],
+      "maize": [
+        "porumb"
+      ],
+      "mughal green": [
+        "verde mughal"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "măsliniu"
+      ],
+      "outer space": [
+        "spațiu cosmic"
+      ],
+      "pacific": [
+        "Pacific"
+      ],
+      "palatinate blue": [
+        "albastru palatinat"
+      ],
+      "pale cerulean": [
+        "cerulean palid"
+      ],
+      "pastel gray": [
+        "gri pastel"
+      ],
+      "persian plum": [
+        "prune persane"
+      ],
+      "persian red": [
+        "roșu persan"
+      ],
+      "philippine gray": [
+        "gri filipinez"
+      ],
+      "philippine silver": [
+        "argintiu filipinez"
+      ],
+      "pickle": [
+        "murături"
+      ],
+      "pine": [
+        "pin"
+      ],
+      "pink": [
+        "roz"
+      ],
+      "pistachio": [
+        "fistic"
+      ],
+      "plum": [
+        "prună"
+      ],
+      "purple": [
+        "violet"
+      ],
+      "raisin black": [
+        "stafide negre"
+      ],
+      "reef": [
+        "recif"
+      ],
+      "ruddy pink": [
+        "roz ruddy"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "satin sheen gold": [
+        "aur lucios satinat"
+      ],
+      "slateblue": [
+        "ardezie albastră"
+      ],
+      "soil": [
+        "pământiu"
+      ],
+      "strawberry": [
+        "căpșună"
+      ],
+      "vivid auburn": [
+        "castaniu viu"
+      ],
+      "white": [
+        "alb"
       ]
     },
     "Condition for custom filter": {
@@ -2253,12 +2414,12 @@
     },
     "Daily recurring event, frequency": {
       "${ count } time": [
-        "O dată",
+        "o dată",
         "de ${ count } ori",
         "de ${ count } de ori"
       ],
       "Daily": [
-        "Zilnic"
+        "zilnic"
       ],
       "Daily, ${ timesString }": [
         "Zilnic, ${ timesString }"
@@ -2267,17 +2428,17 @@
         "Zilnic, ${ untilString }"
       ],
       "Every ${ interval } day": [
-        "În fiecare zi",
+        "Zilnic",
         "La fiecare ${ interval } zile",
         "La fiecare ${ interval } de zile"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "În fiecare zi, ${ timesString }",
+        "Zilnic, ${ timesString }",
         "La fiecare ${ interval } zile, ${ timesString }",
         "La fiecare ${ interval } de zile, ${ timesString }"
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "În fiecare zi, ${ untilString }",
+        "Zilnic, ${ untilString }",
         "La fiecare ${ interval } zile, ${ untilString }",
         "La fiecare ${ interval } de zile, ${ untilString }"
       ],
@@ -2397,7 +2558,7 @@
     },
     "Duration": {
       "120 minutes": [
-        "120 minute"
+        "120 de minute"
       ],
       "30 minutes": [
         "30 de minute"
@@ -2640,7 +2801,7 @@
         "Numele de pe card este obligatoriu."
       ],
       "Name required": [
-        "Numele este obligatoriu"
+        "Numele este obligatoriu."
       ],
       "No active sessions": [
         "Nu sunt sesiuni active."
@@ -3039,7 +3200,7 @@
         "Eroare: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Adresă URL nevalidă."
+        "Adresă URL nevalidă"
       ],
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
@@ -3135,12 +3296,12 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "S-a exportat un eveniment/${ totalToProcess }",
+        "S-a exportat un eveniment",
         "S-au exportat ${ totalProcessed }/${ totalToProcess } evenimente",
         "S-au exportat ${ totalProcessed }/${ totalToProcess } de evenimente"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Calendarul a fost exportat cu succes. Acum puteţi salva fişierul ICS."
+        "Calendarul a fost exportat cu succes. Acum puteți salva fișierul ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Se decriptează evenimentele din calendar: ${ totalProcessed }/${ totalToProcess }"
@@ -3244,6 +3405,9 @@
       "Inbox": [
         "Primite"
       ],
+      "Inbox - Default": [
+        "Primite - implicit"
+      ],
       "Select a folder": [
         "Selectați un folder"
       ],
@@ -3296,8 +3460,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Adăugați un filtru personal pentru a efectua în mod automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "Adăugați un filtru personalizat pentru a efectua automat anumite acțiuni, cum ar fi etichetarea sau arhivarea mesajelor. Filtrele pot fi editate și create direct prin intermediul limbajului de programare Sieve."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Aplicare reguli de blocare specifice expeditorului. Mesajele de la adresele sau domeniile din «Listă adrese permise» merg întotdeauna în folderul «Primite», iar mesajele de la adresele sau domeniile din lista «Listă adrese blocate» merg întotdeauna în folderul «Nedorite». Marcarea unui mesaj ca nedorit adaugă adresa sa în «Listă adrese blocate». Marcarea unui mesaj ca nefiind nedorit, adaugă adresa în «Listă adrese permise»."
@@ -3382,7 +3546,7 @@
         "Timp"
       ],
       "What others see": [
-        "Ce văd alţii"
+        "Ce văd alții"
       ]
     },
     "Header for addresses table": {
@@ -4157,7 +4321,7 @@
         "Oricine are această legătură poate vedea dacă aveți sau nu timp liber în calendar. Nu pot vedea detaliile evenimentului, cum ar fi titlul, locul sau participanții."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Oricine cu această legătură nu va putea sincroniza sau obţine actualizări viitoare pentru calendar. Dacă doriți să le oferiți acces din nou, va trebui să creați o nouă legătură."
+        "Oricine cu această legătură nu va putea sincroniza sau obține actualizări viitoare pentru calendar. Dacă doriți să le oferiți acces din nou, va trebui să creați o legătură nouă."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL vă citeşte datele personale pentru a oferi acces agenţilor de publicitate, agenţiilor de informaţii americane şi altor terţe părți. Pentru o confidențialitate mai bună, creați o adresă de e-mail securizată."
@@ -4166,7 +4330,7 @@
         "Sigur doriți ștergerea acestei adrese?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Sunteți sigur că doriți ștergerea acestui calendar?"
+        "Sigur doriți să ștergeți acest calendar?"
       ],
       "Are you sure you want to delete this domain?": [
         "Sigur doriți să ștergeți acest domeniu?"
@@ -4323,9 +4487,6 @@
       "Custom email domains": [
         "Domenii personale e-mail"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Filtrele personalizate funcționează pe toate mesajele noi, inclusiv mesajele primite și cele trimise. Filtrele pot fi editate şi create direct prin limbajul de programare Sieve."
-      ],
       "Custom monthly": [
         "Lunar personalizat"
       ],
@@ -4384,6 +4545,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Descărcați cheile PGP pentru a le folosi cu alte servicii compatibile cu PGP."
+      ],
+      "Drop a file here to upload": [
+        "Plasați aici un fișier pentru a fi încărcat"
       ],
       "Drop the file here to upload": [
         "Plasați fișierul aici pentru a fi încărcat."
@@ -4469,9 +4633,6 @@
       "Failed to fetch logs.": [
         "Eșuare prelucrare jurnale."
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtrele funcționează asupra tuturor mesajelor, atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzând atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
@@ -4509,7 +4670,7 @@
         "Dacă un alt administrator a schimbat această parolă, va trebui să-i solicitați noua parolă a organizației."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Dacă fusul orar al calculatorului nu se potrivește cu cel din preferințe, vi se va solicita să-l actualizați (maxim o dată pe zi)."
+        "Dacă fusul orar al sistemului nu se potrivește cu cel din preferințe, vi se va solicita să-l actualizați (maxim o dată pe zi)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Dacă acest domeniu primește în prezent e-mailuri, selectați fila ${ boldAddresses } și adăugați toate adresele de e-mail active înainte de a schimba înregistrarea MX pentru a asigura o tranziție fără probleme."
@@ -4680,6 +4841,9 @@
       "Learn more": [
         "Detalii"
       ],
+      "learn more about Sieve programming language": [
+        "aflați mai multe despre limbajul de programare Sieve"
+      ],
       "Left to Right": [
         "De la stânga la dreapta"
       ],
@@ -4690,13 +4854,13 @@
         "Vizualizare limitată: alții văd dacă sunteți ocupat(ă). Vizualizare completă: afișează toate detaliile evenimentului, inclusiv numele, locul sau participanții."
       ],
       "Link copied to clipboard": [
-        "Legătura a fost copiată în memorie"
+        "Legătura a fost copiată în memorie."
       ],
       "Link created": [
-        "Legătură creată"
+        "Legătură a fost creată."
       ],
       "Link deleted": [
-        "Legătura a fost ștearsă"
+        "Legătura a fost ștearsă."
       ],
       "Link type": [
         "Tip legătură"
@@ -4788,9 +4952,6 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
-      "Normal": [
-        "Normal"
-      ],
       "Not a valid URL": [
         "URL nevalid"
       ],
@@ -4813,7 +4974,7 @@
         "Modificați aceste setări numai dacă utilizați PGP cu destinatari care nu sunt utilizatori ai ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
-        "Numai dvs. puteţi vedea etichetele."
+        "Numai dvs. puteți vedea etichetele."
       ],
       "Or select a particular server:": [
         "Sau selectați un server anume:"
@@ -4864,9 +5025,6 @@
       ],
       "Phone number": [
         "Număr de telefon"
-      ],
-      "Plain text": [
-        "Text simplu"
       ],
       "Plan upgrade required": [
         "Trebuie trecut la alt plan"
@@ -5003,9 +5161,6 @@
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Selectați „Continuare cu ${ name }” pentru a deschide aplicația. Acest lucru creează, de asemenea, un cont ${ name } cu adresa ${ MAIL_APP_NAME }, astfel încât să vă puteți autentifica cu un singur clic în viitor."
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Selectați numărul de utilizatori pe care-l includeți în plan. Fiecare utilizator adițional costă ${ price }. Dacă aveți nevoie de mai mult de ${ maxUsers } conturi de utilizator, vă rugăm să ${ contactMailToLink } echipa noastră de suport pentru clienți."
-      ],
       "Select what you want to move from Google.": [
         "Selectați ce doriți să importați din Google."
       ],
@@ -5139,7 +5294,7 @@
         "Această legătură duce la un site web care ar putea încerca să vă fure informațiile, cum ar fi parolele și detaliile cărților de credit."
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "Această legătură ar putea fi un atac omoglific (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveţi siguranţa că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
+        "Această legătură ar putea fi un atac omografic (caractere asemănătoare dar cu cod diferit de caracter) și nu poate fi deschisă de către navigatoarele Internet Explorer și Edge. Dacă aveți siguranța că legătura este legitimă, folosiți un alt navigator pentru a o deschide."
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Această legătură ar putea fi un atac omoglific. Verificați adresa pe care doriți să o vizitați sau nu o deschideți."
@@ -5218,6 +5373,9 @@
       ],
       "To use ${ toAppName }, please create an address.": [
         "Pentru a utiliza ${ toAppName }, trebuie să creați o adresă."
+      ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Pentru a funcționa corect, fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid. Puteți să ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
@@ -5393,9 +5551,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Puteți verifica progresul ${ importProgressLink }."
       ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Vă puteți personaliza și descărca facturile pentru contabilitate."
       ],
@@ -5451,7 +5606,7 @@
         "Trebuie să aveți un calendar personal pentru a crea o legătură."
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din .ics."
+        "Trebuie să aveți un calendar personal activ pentru a vă importa evenimentele din fișierul .ics."
       ],
       "You need to have an active personal calendar to import your events.": [
         "Trebuie să aveți un calendar personal activ pentru a importa evenimentele."
@@ -5943,7 +6098,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Uite cum"
+        "Uite așa"
       ]
     },
     "Label": {
@@ -6191,7 +6346,7 @@
         "Durată implicită eveniment"
       ],
       "Default full day notifications": [
-        "Notificări întreaga zi implicite"
+        "Notificări implicite întreaga zi"
       ],
       "Default language": [
         "Limba implicită"
@@ -6989,6 +7144,13 @@
         "Importare toate mesajele de la ${ totalLabelsCount } de etichete începând cu ${ periodFragment } și etichetare cu ${ LABEL_MARKUP_PLACEHOLDER }."
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Puteți crea până la o legătură per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
+        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
+        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } de legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Ștergere"
@@ -7071,19 +7233,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "${ onDayString }, lunar",
-        "${ onDayString }, la fiecare ${ interval } luni",
-        "${ onDayString }, la fiecare ${ interval } de luni"
+        "Lunar, ${ onDayString }",
+        "La fiecare ${ interval } luni, ${ onDayString }",
+        "La fiecare ${ interval } de luni, ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "${ onDayString }, lunar, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ timesString }"
+        "Lunar, ${ onDayString }, ${ timesString }",
+        "La fiecare ${ interval } luni, ${ onDayString }, ${ timesString }",
+        "La fiecare ${ interval } de luni, ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "${ onDayString }, lunar, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }",
-        "${ onDayString }, la fiecare ${ interval } luni, ${ untilString }"
+        "Lunar, ${ onDayString }, ${ untilString }",
+        "La fiecare ${ interval } luni, ${ onDayString }, ${ untilString }",
+        "La fiecare ${ interval } de luni, ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
@@ -7626,7 +7788,7 @@
         "E-mail și calendar securizat pentru profesioniști și companii."
       ],
       "Secure email with advanced features for your everyday communications.": [
-        "E-mail securizat cu funcții avansate pentru comunicațiile personale de zi cu zi."
+        "E-mail securizat cu funcții avansate pentru comunicațiile personale zilnice."
       ],
       "Set automatic replies to inform contacts you are out of the office or unable to respond.": [
         "Setați răspunsuri automate pentru a informa persoanele de contact că nu sunteți la birou sau că nu puteți răspunde."
@@ -7964,7 +8126,7 @@
     },
     "Notification when": {
       "at time of event": [
-        "la ora evenimentului"
+        "la momentul evenimentului"
       ],
       "day before": [
         "o zi în avans",
@@ -7972,12 +8134,12 @@
         "de zile în avans"
       ],
       "hour before": [
-        "O oră înainte",
+        "o oră înainte",
         "ore înainte",
         "de ore înainte"
       ],
       "minute before": [
-        "Un minut înainte",
+        "un minut înainte",
         "minute înainte",
         "de minute înainte"
       ],
@@ -7985,7 +8147,7 @@
         "în aceeași zi"
       ],
       "week before": [
-        "O săptămână înainte",
+        "o săptămână înainte",
         "săptămâni înainte",
         "de săptămâni înainte"
       ]
@@ -8375,6 +8537,19 @@
         "Adăugare nume (sau nume companie) și adresă pe facturi"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        "contactați"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selectați numărul de utilizatori de inclus în plan. Fiecare utilizator în plus costă ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Dacă aveți nevoie de mai mult de un utilizator în cont, ${ contact } echipa noastră de vânzări.",
+        "Dacă aveți nevoie de mai mult de ${ maxUsers } utilizatori în cont, ${ contact } echipa noastră de vânzări.",
+        "Dacă aveți nevoie de mai mult de ${ maxUsers } de utilizatori în cont, ${ contact } echipa noastră de vânzări."
+      ]
+    },
     "Price": {
       "Free": [
         "Gratuit"
@@ -8515,12 +8690,12 @@
     },
     "Select search results": {
       "No results found": [
-        "Nu s-au găsit rezultate"
+        "Nu s-au găsit rezultate."
       ]
     },
     "Settings description": {
       "Make the move to privacy. Effortlessly and securely.": [
-        "Faceți trecerea la confidențialitate. Fără efort și sigur."
+        "Faceți trecerea la confidențialitate. Fără efort și în siguranță."
       ],
       "You can apply multiple labels to a single message, but messages can usually only be in a single folder. Drag and drop to rearrange the order of your folders and labels.": [
         "Puteți aplica mai multe etichete unui singur mesaj, dar mesajele pot fi doar într-un singur folder. Trageți și plasați pentru a rearanja folderele și etichetele."
@@ -8643,9 +8818,6 @@
       ],
       "Preview": [
         "Examinare"
-      ],
-      "Sieve editor": [
-        "Editor Sieve"
       ]
     },
     "Storage": {
@@ -8664,7 +8836,7 @@
         "URL calendar"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la «Abonări calendare».\n${ kbLink }"
+        "Pentru a vă abona la un calendar extern sau public și la actualizările acestuia, introduceți adresa URL. O versiune doar pentru citire a calendarului va fi adăugată la Calendarele abonate.\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -8682,7 +8854,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Adăugare calendare publice, externe sau partajate folosing o adresă URL."
+        "Adăugare calendare publice, externe sau partajate folosind o adresă URL."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -8810,13 +8982,13 @@
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."
       ],
       "Calendar created": [
-        "Calendar creat"
+        "Calendarul a fost creat."
       ],
       "Calendar removed": [
-        "Calendar eliminat"
+        "Calendar a fost eliminat."
       ],
       "Calendar updated": [
-        "Calendar actualizat"
+        "Calendarul a fost actualizat."
       ],
       "Canceling import": [
         "Anulare importare"
@@ -8831,7 +9003,7 @@
         "Credite adăugate"
       ],
       "Default calendar updated": [
-        "Calendar implicit actualizat"
+        "Calendarul implicit a fost actualizat."
       ],
       "DMARC value copied to clipboard": [
         "Valoarea DMARC a fost copiată în memorie"
@@ -9041,14 +9213,6 @@
       ],
       "vCard field": [
         "Câmp vCard"
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Vă prezentăm noul Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Mai multe servicii, o singură misiune: confidențialitatea."
       ]
     },
     "Time period": {
@@ -10111,9 +10275,9 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Treceți la un plan cu plată pentru a putea crea maxim un calendar, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
-        "Treceți la un plan cu plată pentru a putea crea până la ${ MAX_CALENDARS_PER_USER } calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale.",
-        "Treceți la un plan cu plată pentru a putea crea până la ${ MAX_CALENDARS_PER_USER } de calendare, să puteți crea calendare pentru muncă, să le partajați cu prietenii sau doar personale."
+        "Treceți la un plan cu plată pentru a putea crea maxim un calendar. Puteți crea calendare personale, pentru muncă sau să le partajați cu prietenii.",
+        "Treceți la un plan cu plată pentru a putea crea până la ${ MAX_CALENDARS_PER_USER } calendare. Puteți crea calendare personale, pentru muncă sau să le partajați cu prietenii.",
+        "Treceți la un plan cu plată pentru a putea crea până la ${ MAX_CALENDARS_PER_USER } de calendare. Puteți crea calendare personale, pentru muncă sau să le partajați cu prietenii."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
         "Treceți la un plan cu plată pentru a vă partaja calendarul personal cu oricine printr-o legătură."
@@ -10293,134 +10457,134 @@
         "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "${ multipleDaysString }, săptâmânal, ${ timesString }",
-        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, ${ multipleDaysString }, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "${ multipleDaysString }, săptâmânal, ${ untilString }",
-        "${ multipleDaysString }, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "${ multipleDaysString }, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, ${ multipleDaysString }, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, ${ multipleDaysString }, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Zilnic, săptămânal",
-        "Zilnic, la fiecare ${ interval } săptămâni",
-        "Zilnic, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, toate zilele",
+        "La fiecare ${ interval } săptămâni, toate zilele",
+        "La fiecare ${ interval } de săptămâni, toate zilele"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Săptămânal, zilnic, ${ timesString }",
-        "La fiecare ${ interval } săptămâni, zilnic, ${ timesString }",
-        "La fiecare ${ interval } de săptămâni, zilnic, ${ timesString }"
+        "Săptămânal, toate zilele, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, toate zilele, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, toate zilele, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Zilnic, săptâmânal, ${ untilString }",
-        "Zilnic, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Zilnic, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, toate zilele, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, toate zilele, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, toate zilele, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Vineri, săptămânal",
-        "Vineri, la fiecare ${ interval } săptămâni",
-        "Vineri, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, vineri",
+        "La fiecare ${ interval } săptămâni, vineri",
+        "La fiecare ${ interval } de săptămâni, vineri"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Vineri, săptâmânal, ${ timesString }",
-        "Vineri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Vineri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, vineri, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, vineri, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, vineri, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Vineri, săptâmânal, ${ untilString }",
-        "Vineri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Vineri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, vineri, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, vineri, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, vineri, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Luni, săptămânal",
-        "Luni, la fiecare ${ interval } săptămâni",
-        "Luni, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, luni",
+        "La fiecare ${ interval } săptămâni, luni",
+        "La fiecare ${ interval } de săptămâni, luni"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Luni, săptămânal, ${ timesString }",
-        "Luni, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Luni, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, luni, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, luni, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, luni, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Luni, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Luni, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, luni, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, luni, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, luni, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "Sâmbătă, săptămânal",
-        "Sâmbătă, la fiecare ${ interval } săptămâni",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, sâmbătă",
+        "La fiecare ${ interval } săptămâni, sâmbătă",
+        "La fiecare ${ interval } de săptămâni, sâmbătă"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Sâmbătă, săptâmânal, ${ timesString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, sâmbătă, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, sâmbătă, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, sâmbătă, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Sâmbătă, săptămânal, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Sâmbătă, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, sâmbătă, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, sâmbătă, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, sâmbătă, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "Duminică, săptămânal",
-        "Duminică, la fiecare ${ interval } săptămâni",
-        "Duminică, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, duminică",
+        "La fiecare ${ interval } săptămâni, duminică",
+        "La fiecare ${ interval } de săptămâni, duminică"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Duminică, săptămânal, ${ timesString }",
-        "Duminică, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Duminică, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, duminică, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, duminică, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, duminică, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Duminică, săptâmânal, ${ untilString }",
-        "Duminică, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Duminică, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, duminică, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, duminică, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, duminică, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "Joi, săptămânal",
-        "Joi, la fiecare ${ interval } săptămâni",
-        "Joi, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, joi",
+        "La fiecare ${ interval } săptămâni, joi",
+        "La fiecare ${ interval } de săptămâni, joi"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Joi, săptâmânal, ${ timesString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, joi, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, joi, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, joi, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }",
-        "Joi, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Joi, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, joi, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, joi, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, joi, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "Marți, săptămânal",
-        "Marți, la fiecare ${ interval } săptămâni",
-        "Marți, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, marți",
+        "La fiecare ${ interval } săptămâni, marți",
+        "La fiecare ${ interval } de săptămâni, marți"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Marți, săptâmânal, ${ timesString }",
-        "Marți, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Marți, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, marți, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, marți, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, marți, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Marți, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Marți, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, marți, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, marți, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, marți, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "Miercuri, săptămânal",
-        "Miercuri, la fiecare ${ interval } săptămâni",
-        "Miercuri, la fiecare ${ interval } de săptămâni"
+        "Săptămânal, miercuri",
+        "La fiecare ${ interval } săptămâni, miercuri",
+        "La fiecare ${ interval } de săptămâni, miercuri"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Miercuri, săptâmânal, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ timesString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ timesString }"
+        "Săptămânal, miercuri, ${ timesString }",
+        "La fiecare ${ interval } săptămâni, miercuri, ${ timesString }",
+        "La fiecare ${ interval } de săptămâni, miercuri, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Miercuri, la fiecare ${ interval } săptămâni, ${ untilString }",
-        "Miercuri, la fiecare ${ interval } de săptămâni, ${ untilString }"
+        "Săptămânal, miercuri, ${ untilString }",
+        "La fiecare ${ interval } săptămâni, miercuri, ${ untilString }",
+        "La fiecare ${ interval } de săptămâni, miercuri, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Săptămânal, ${ multipleDaysString }"
@@ -10432,76 +10596,76 @@
         "Săptămânal, ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Săptămânal în fiecare zi"
+        "Săptămânal, toate zilele"
       ],
       "Weekly on all days, ${ timesString }": [
         "Săptămânal, zilnic, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Zilnic, săptămânal, ${ untilString }"
+        "Săptămânal, toate zilele, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Vineri, săptămânal"
+        "Săptămânal, vineri"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Vineri, săptămânal, ${ timesString }"
+        "Săptămânal, vineri, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Vineri, săptămânal, ${ untilString }"
+        "Săptămânal, vineri, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Luni, săptămânal"
+        "Săptămânal, luni"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Luni, săptămânal, ${ timesString }"
+        "Săptămânal, luni, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Luni, săptămânal, ${ untilString }"
+        "Săptămânal, luni, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Sâmbătă, săptămânal"
+        "Săptămânal, sâmbătă"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Sâmbătă, săptămânal, ${ timesString }"
+        "Săptămânal, sâmbătă, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Sâmbătă, săptămânal, ${ untilString }"
+        "Săptămânal, sâmbătă, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Duminică, săptămânal"
+        "Săptămânal, duminică"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Duminică, săptămânal, ${ timesString }"
+        "Săptămânal, duminică, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Duminică, săptămânal, ${ untilString }"
+        "Săptămânal, duminică, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Joi, săptămânal"
+        "Săptămânal, joi"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Joi, săptămânal, ${ timesString }"
+        "Săptămânal, joi, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Joi, săptămânal, ${ untilString }"
+        "Săptămânal, joi, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Marți, săptămânal"
+        "Săptămânal, marți"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Marți, săptămânal, ${ timesString }"
+        "Săptămânal, marți, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Marți, săptămânal, ${ untilString }"
+        "Săptămânal, marți, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Miercuri, săptămânal"
+        "Săptămânal, miercuri"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Miercuri, săptămânal, ${ timesString }"
+        "Săptămânal, miercuri, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Miercuri, săptămânal, ${ untilString }"
+        "Săptămânal, miercuri, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {

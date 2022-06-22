@@ -370,6 +370,9 @@
       "Send": [
         "Envia"
       ],
+      "Send feedback": [
+        "Enviar opinió"
+      ],
       "Set recovery phrase": [
         "Establir la frase de recuperació"
       ],
@@ -525,37 +528,37 @@
         "${ title } va començar ahir a les ${ formattedHour }"
       ],
       "${ title } starts at ${ formattedHour }": [
-        ""
+        "${ title } va començar a les ${ formattedHour }"
       ],
       "${ title } starts now": [
         "${ title } comença ara"
       ],
       "${ title } starts on ${ _formattedDate2 }": [
-        ""
+        "${ title } va començar a les ${ _formattedDate2 }"
       ],
       "${ title } starts on ${ _formattedDate2 } at ${ formattedHour }": [
-        ""
+        "${ title } va començar el ${ _formattedDate2 } a les ${ formattedHour }"
       ],
       "${ title } starts on ${ _formattedDate3 }": [
-        ""
+        "${ title } va començar a les ${ _formattedDate3 }"
       ],
       "${ title } starts on ${ _formattedDate3 } at ${ formattedHour }": [
-        ""
+        "${ title } va començar el ${ _formattedDate3 } a les ${ formattedHour }"
       ],
       "${ title } starts on ${ _formattedDateWithoutTime }": [
-        ""
+        "${ title } va començar a les ${ _formattedDateWithoutTime }"
       ],
       "${ title } starts on ${ formattedDateWithTime }": [
-        ""
+        "${ title } va començar el ${ formattedDateWithTime }"
       ],
       "${ title } starts today": [
         "${ title } comença avui"
       ],
       "${ title } starts tomorrow": [
-        ""
+        "${ title } començarà demà"
       ],
       "${ title } starts tomorrow at ${ formattedHour }": [
-        ""
+        "${ title } començarà demà a les ${ formattedHour }"
       ]
     },
     "Alert": {
@@ -576,22 +579,22 @@
     },
     "Attached ics file error": {
       "Empty ICS file": [
-        ""
+        "Fitxer ICS buit"
       ],
       "Invalid event": [
-        ""
+        "Esdeveniment no vàlid"
       ],
       "Invalid ICS file": [
-        ""
+        "Fitxer ICS invàlid"
       ],
       "Invalid method": [
-        ""
+        "Mètode no vàlid"
       ],
       "Unsupported calendar component": [
-        ""
+        "Component de calendari no admès"
       ],
       "Unsupported event": [
-        ""
+        "Esdeveniment no suportat"
       ]
     },
     "Attendee role": {
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "pastanaga"
+      ],
+      "cerise": [
+        "cerise"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "coure"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "falguera"
+      ],
+      "forest": [
+        "bosc"
+      ],
+      "ocean": [
+        "oceà"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pacific": [
+        "pacífic"
+      ],
+      "pickle": [
+        "escabetx"
+      ],
+      "pine": [
+        "pi"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "pruna"
+      ],
+      "purple": [
+        "porpra"
+      ],
+      "reef": [
+        "escull"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "blau pissarra"
+      ],
+      "soil": [
+        "sòl"
+      ],
+      "strawberry": [
+        "maduixa"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "L'esdeveniment pertany a un calendari deshabilitat."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "No m'ho demaneu més"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Afegeix calendari"
@@ -2036,10 +2106,10 @@
         "La càrrega de la imatge ha fallat"
       ],
       "Incorrect login credentials. Please try again.": [
-        ""
+        "Credencials d'inici de sessió incorrectes. Torneu-ho a provar."
       ],
       "Incorrect mailbox password. Please try again.": [
-        ""
+        "Contrasenya de bústia incorrecta. Torneu a provar-ho."
       ],
       "Interval cannot be empty": [
         "L'interval no pot estar buit"
@@ -2076,7 +2146,7 @@
         "Uniu almenys ${ calendarToFixCount } calendaris amb calendaris Proton existents"
       ],
       "Missing key packet": [
-        ""
+        "Falta el paquet de claus"
       ],
       "Missing signature": [
         "Signatura no trobada"
@@ -2136,7 +2206,7 @@
         "La clau principal obtinguda per l'usuari intern no és vàlida per enviar"
       ],
       "Request timed out": [
-        ""
+        "S'ha esgotat el temps d'espera"
       ],
       "Self invitation not allowed": [
         "Autoinvitació no permesa"
@@ -2315,7 +2385,7 @@
         "Esdeveniment"
       ],
       "Event validation failed": [
-        ""
+        "Ha fallat la validació de l'esdeveniment"
       ],
       "Floating times not supported": [
         "Els temps flotants no són admesos"
@@ -2345,7 +2415,7 @@
         "Falta l’hora d’inici"
       ],
       "No UID, title or start time": [
-        ""
+        "Sense UID, títol o hora d'inici"
       ],
       "Non-Gregorian": [
         "No gregorià"
@@ -2354,7 +2424,7 @@
         "Notificació fora de límits"
       ],
       "Original recurring event could not be found": [
-        ""
+        "No es troba l'esdeveniment recurrent original"
       ],
       "Recurring event has no occurrences": [
         "L'esdeveniment recurrent no té cap ocurrència"
@@ -2458,13 +2528,13 @@
         ""
       ],
       "Attached ICS file could not be read": [
-        ""
+        "No es pot llegir l'arxiu ICS adjunt"
       ],
       "Invalid invitation": [
-        ""
+        "Invitació no vàlida"
       ],
       "Invalid response": [
-        ""
+        "Resposta no vàlida"
       ],
       "The event could not be added to your calendar. No answer was sent": [
         ""
@@ -2476,10 +2546,10 @@
         ""
       ],
       "Unsupported invitation": [
-        ""
+        "Invitació no compatible"
       ],
       "Unsupported response": [
-        ""
+        "Resposta no compatible"
       ],
       "We could not cancel the event in your calendar": [
         ""
@@ -2521,6 +2591,11 @@
         "(sense títol)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "La vostra opinió"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2543,10 +2618,10 @@
         "Gigabytes"
       ],
       "Kilobytes": [
-        ""
+        "Kilobytes"
       ],
       "Megabytes": [
-        ""
+        "Megabytes"
       ]
     },
     "Filter notification": {
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } s'ha afegit a la suite Proton. Ens agradaria saber què en penseu!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nou calendari",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
-      "0 - Not likely": [
-        "0 - Poc probable"
-      ],
-      "10 - Extremely likely": [
-        "10 - Molt probable"
-      ],
       "Add email address": [
         "Afegir adreça de correu electrònic"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Desar contactes automàticament"
+      ],
+      "Awful": [
+        "Horrible"
+      ],
+      "Bad": [
+        "Dolenta"
       ],
       "Browser": [
         "Navegador"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
+      "Good": [
+        "Bona"
+      ],
       "Hide password": [
         "Amaga la contrasenya"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Recomanaríeu ${ calendarAppName } a un amic o col·lega?"
+      "How would you describe your experience with the new Proton?": [
+        "Com descriuria la seva experiència amb el nou Proton?"
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Notificacions"
+      ],
+      "OK": [
+        "Adequada"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Què ha passat?"
+      ],
+      "Wonderful": [
+        "Meravellosa"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Expliqueu-nos la vostra experiència. (Opcional)"
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Doneu la vostra opinió"
-      ],
       "Updated Proton, unified protection": [
         "Proton actualitzat, protecció unificada"
       ]
