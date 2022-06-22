@@ -1,19 +1,20 @@
+import { useEffect, useMemo, useRef } from 'react';
+import { c } from 'ttag';
+import { getUnixTime } from 'date-fns';
+
 import CalendarEventDateHeader from '@proton/components/components/calendarEventDateHeader/CalendarEventDateHeader';
 import { getIsCalendarDisabled } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_ATTENDEE_STATUS, VIEWS } from '@proton/shared/lib/calendar/constants';
 import { getIsSubscribedCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { fromUTCDate, toLocalDate } from '@proton/shared/lib/date/timezone';
-
 import { getTimezonedFrequencyString } from '@proton/shared/lib/calendar/integration/getFrequencyString';
 import noop from '@proton/utils/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { Calendar, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { Calendar, CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 import { getLinkToCalendarEvent } from '@proton/shared/lib/calendar/helper';
-import { useMemo, useRef } from 'react';
-import { getUnixTime } from 'date-fns';
 import {
     Alert,
     Badge,
@@ -23,9 +24,13 @@ import {
     ButtonLike,
     Icon,
     Tooltip,
+    useFeature,
+    FeatureCode,
     AppLink,
+    useCalendarBootstrap,
 } from '@proton/components';
-import { c } from 'ttag';
+import { notificationsToModel } from '@proton/shared/lib/calendar/notificationsToModel';
+
 import { getIsCalendarEvent } from '../../containers/calendar/eventStore/cache/helper';
 import {
     CalendarViewEvent,
@@ -35,13 +40,13 @@ import {
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import { getEventErrorMessage } from './error';
 import getEventInformation from './getEventInformation';
-import PopoverContainer from './PopoverContainer';
+import useReadEvent from './useReadEvent';
+import { getIsSideApp } from '../../helpers/views';
 
+import PopoverContainer from './PopoverContainer';
 import PopoverEventContent from './PopoverEventContent';
 import PopoverFooter from './PopoverFooter';
 import PopoverHeader from './PopoverHeader';
-import useReadEvent from './useReadEvent';
-import { getIsSideApp } from '../../helpers/views';
 
 const { ACCEPTED, TENTATIVE } = ICAL_ATTENDEE_STATUS;
 
@@ -80,6 +85,7 @@ const EventPopover = ({
     displayNameEmailMap,
 }: Props) => {
     const popoverEventContentRef = useRef<HTMLDivElement>(null);
+
     const [loadingAction, withLoadingAction] = useLoading();
 
     const targetEventData = targetEvent?.data || {};
@@ -96,12 +102,40 @@ const EventPopover = ({
         });
 
     const isCalendarDisabled = getIsCalendarDisabled(calendarData);
+    const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
+    const [calendarBootstrap]: [CalendarBootstrap, boolean, any] = useCalendarBootstrap(calendarData.ID);
+    const isSubscribedCalendarReminderFeatureEnabled = !!useFeature(FeatureCode.SubscribedCalendarReminder).feature
+        ?.Value;
 
     const model = useReadEvent(eventReadResult?.result, tzid);
     const { eventReadError, isEventReadLoading, eventTitleSafe, isCancelled, userPartstat, isSelfAddressActive } =
         getEventInformation(targetEvent, model);
 
-    const isSubscribedCalendar = getIsSubscribedCalendar(calendarData);
+    useEffect(() => {
+        if (
+            !isSubscribedCalendar ||
+            !isSubscribedCalendarReminderFeatureEnabled ||
+            !calendarBootstrap ||
+            isEventReadLoading
+        ) {
+            return;
+        }
+
+        const {
+            CalendarSettings: { DefaultFullDayNotifications, DefaultPartDayNotifications },
+        } = calendarBootstrap;
+
+        model.notifications = notificationsToModel(
+            model.isAllDay ? DefaultFullDayNotifications : DefaultPartDayNotifications,
+            model.isAllDay
+        );
+    }, [
+        isEventReadLoading,
+        calendarBootstrap,
+        isSubscribedCalendar,
+        isSubscribedCalendarReminderFeatureEnabled,
+        model,
+    ]);
 
     const handleDelete = () => {
         if (eventData && getIsCalendarEvent(eventData)) {
