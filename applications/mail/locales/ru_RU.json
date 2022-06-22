@@ -770,6 +770,9 @@
       "send auto-reply email": [
         "отправить автоответ"
       ],
+      "Send feedback": [
+        "Отправить отзыв"
+      ],
       "Send read receipt": [
         "Отправить уведомление о прочтении"
       ],
@@ -855,7 +858,7 @@
         "Отправить"
       ],
       "Switch to rich text": [
-        "Переключиться на обогащенный текст"
+        ""
       ],
       "Theme": [
         "Тема"
@@ -1597,6 +1600,173 @@
       ],
       "Open": [
         "Открыть"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "яблочный"
+      ],
+      "azureish white": [
+        "лазурно-белый"
+      ],
+      "blanched almond": [
+        "очищенный миндаль"
+      ],
+      "blue-gray": [
+        "сизый"
+      ],
+      "caramel": [
+        "карамельный"
+      ],
+      "carrot": [
+        "морковный"
+      ],
+      "cerise": [
+        "вишневый"
+      ],
+      "cinnabar": [
+        "киноварь"
+      ],
+      "cobalt": [
+        "кобальт"
+      ],
+      "copper": [
+        "медный"
+      ],
+      "cyan-blue azure": [
+        "зеленовато-голубая лазурь"
+      ],
+      "dandelion": [
+        "одуванчик"
+      ],
+      "dark cerulean": [
+        "темно-лазуревый"
+      ],
+      "dark midnight blue": [
+        "полуночно-синий"
+      ],
+      "dim gray": [
+        "грязно-серый"
+      ],
+      "enzian": [
+        "горечавка"
+      ],
+      "fern": [
+        "папоротник"
+      ],
+      "field drab": [
+        "тусклый полевой"
+      ],
+      "forest": [
+        "лесной"
+      ],
+      "gainsboro": [
+        "гейнсборо"
+      ],
+      "japanese laurel": [
+        "аукуба японская"
+      ],
+      "kiwi": [
+        "киви"
+      ],
+      "lemon yellow": [
+        "лимонно-желтый"
+      ],
+      "light carmine pink": [
+        "карминовый светло-розовый"
+      ],
+      "light moss green": [
+        "зеленый мох"
+      ],
+      "light red": [
+        "светло-красный"
+      ],
+      "maize": [
+        "кукурузный"
+      ],
+      "mughal green": [
+        "могольский зеленый"
+      ],
+      "ocean": [
+        "океан"
+      ],
+      "olive": [
+        "оливковый"
+      ],
+      "outer space": [
+        "дальний космос"
+      ],
+      "pacific": [
+        "тихоокеанский"
+      ],
+      "palatinate blue": [
+        "сочный синий"
+      ],
+      "pale cerulean": [
+        "бледно-лазуревый"
+      ],
+      "pastel gray": [
+        "пастельный серый"
+      ],
+      "persian plum": [
+        "персидская слива"
+      ],
+      "persian red": [
+        "красный крон"
+      ],
+      "philippine gray": [
+        "филиппинский серый"
+      ],
+      "philippine silver": [
+        "филиппинский серебряный"
+      ],
+      "pickle": [
+        "огурчик"
+      ],
+      "pine": [
+        "сосновый"
+      ],
+      "pink": [
+        "розовый"
+      ],
+      "pistachio": [
+        "фисташковый"
+      ],
+      "plum": [
+        "сливовый"
+      ],
+      "purple": [
+        "фиолетовый"
+      ],
+      "raisin black": [
+        "лиловый черный"
+      ],
+      "reef": [
+        "коралловый"
+      ],
+      "ruddy pink": [
+        "румяный розовый"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "satin sheen gold": [
+        "шелковый золотой"
+      ],
+      "slateblue": [
+        "сланцево-синий"
+      ],
+      "soil": [
+        "землистый"
+      ],
+      "strawberry": [
+        "клубничный"
+      ],
+      "vivid auburn": [
+        "яркий каштановый"
+      ],
+      "white": [
+        "белый"
       ]
     },
     "Composer email icon": {
@@ -3392,6 +3562,11 @@
         "(без названия)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Ваш отзыв"
+      ]
+    },
     "file size format": {
       "bytes": [
         "байт"
@@ -3426,6 +3601,9 @@
       ],
       "Inbox": [
         "Входящие"
+      ],
+      "Inbox - Default": [
+        "Входящие — по умолчанию"
       ],
       "Select a folder": [
         "Выбрать папку"
@@ -4265,9 +4443,6 @@
         "файлов прикреплено",
         "файлов прикреплено"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя и корректный Sieve-скрипт."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фильтры применяются ко всем письмам: как ко входящим, так и к отправленным. В каждом фильтре должно быть как минимум имя, условие и действие."
       ],
@@ -4503,7 +4678,7 @@
         "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
       ],
       "Normal": [
-        "Обычный"
+        ""
       ],
       "Not a valid URL": [
         "Недопустимый URL"
@@ -5415,6 +5590,12 @@
       "Automatically save contacts": [
         "Автоматическое сохранение контактов"
       ],
+      "Awful": [
+        "Ужасно"
+      ],
+      "Bad": [
+        "Плохо"
+      ],
       "BCC": [
         "Cкрытая копия"
       ],
@@ -5517,11 +5698,17 @@
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
       ],
+      "Good": [
+        "Хорошо"
+      ],
       "Group": [
         "Группа"
       ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Как бы вы описали свой опыт работы с новым ProtonMail?"
       ],
       "I understand the risk": [
         "Я понимаю риск"
@@ -5594,6 +5781,9 @@
       ],
       "Notification": [
         "Уведомление"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Операционная система"
@@ -5747,6 +5937,9 @@
       ],
       "without attachments": [
         "без вложений"
+      ],
+      "Wonderful": [
+        "Прекрасно"
       ]
     },
     "Label for contact group color": {
@@ -6245,23 +6438,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Мы обновили внешний вид Proton и сделали его более универсальным. Нам интересно услышать ваше мнение!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Ужасно"
-      ],
-      "5 - Wonderful": [
-        "5 - Отлично"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Как бы вы описали свой опыт работы с новым ProtonMail?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Поделитесь своими впечатлениями (необязательно)"
+      "Tell us about your experience. (Optional)": [
+        "Расскажите нам о вашем опыте (не обязательно)"
       ]
     },
     "new_plans: placeholder": {
@@ -6270,9 +6451,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Оставить отзыв"
-      ],
       "Updated Proton, unified protection": [
         "Обновленный Proton, комплексная защита"
       ]

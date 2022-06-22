@@ -370,6 +370,9 @@
       "Send": [
         "Verzenden"
       ],
+      "Send feedback": [
+        "Feedback versturen"
+      ],
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "De afspraak hoort bij een uitgeschakelde agenda."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        ""
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Agenda toevoegen"
@@ -2521,6 +2591,11 @@
         "(geen titel)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Uw feedback"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } is toegevoegd aan het Proton pak. We horen graag wat u ervan vindt!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Tijdelijk onbeschikbaar. Probeer later opnieuw.)"
       ],
-      "0 - Not likely": [
-        "0 - Niet waarschijnlijk"
-      ],
-      "10 - Extremely likely": [
-        "10 - Zeer waarschijnlijk"
-      ],
       "Add email address": [
         "E-mailadres toevoegen"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
+      ],
+      "Awful": [
+        "Vreselijk"
+      ],
+      "Bad": [
+        "Slecht"
       ],
       "Browser": [
         "Browser"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
       ],
+      "Good": [
+        "Goed"
+      ],
       "Hide password": [
         "Wachtwoord verbergen"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Hoe waarschijnlijk is het dat u ${ calendarAppName } aan een vriend of collega zult aanbevelen?"
+      "How would you describe your experience with the new Proton?": [
+        "Hoe zou u uw ervaring met de nieuwe Proton omschrijven?"
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Meldingen"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Wat is er gebeurd?"
+      ],
+      "Wonderful": [
+        "Uitstekend"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Vertel ons over uw ervaring. (Optioneel)"
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Feedback geven"
-      ],
       "Updated Proton, unified protection": [
         "Vernieuwde Proton, uniforme beveiliging"
       ]

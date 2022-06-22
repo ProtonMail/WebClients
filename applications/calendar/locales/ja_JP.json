@@ -368,6 +368,9 @@
       "Send": [
         "送信"
       ],
+      "Send feedback": [
+        "フィードバックを送信"
+      ],
       "Set recovery phrase": [
         "回復用フレーズを設定"
       ],
@@ -875,6 +878,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "キャロット"
+      ],
+      "cerise": [
+        "セリース"
+      ],
+      "cobalt": [
+        "コバルト"
+      ],
+      "copper": [
+        "コパー"
+      ],
+      "enzian": [
+        "エンツィアン"
+      ],
+      "fern": [
+        "ファーン"
+      ],
+      "forest": [
+        "フォレスト"
+      ],
+      "ocean": [
+        "オーシャン"
+      ],
+      "olive": [
+        "オリーブ"
+      ],
+      "pacific": [
+        "パシフィック"
+      ],
+      "pickle": [
+        "ピックル"
+      ],
+      "pine": [
+        "パイン"
+      ],
+      "pink": [
+        "ピンク"
+      ],
+      "plum": [
+        "プラム"
+      ],
+      "purple": [
+        "パープル"
+      ],
+      "reef": [
+        "リーフ"
+      ],
+      "sahara": [
+        "サハラ"
+      ],
+      "slateblue": [
+        "スレートブルー"
+      ],
+      "soil": [
+        "ソイル"
+      ],
+      "strawberry": [
+        "ストロベリー"
       ]
     },
     "Confirm modal title": {
@@ -1838,6 +1903,11 @@
         "無効なカレンダーに関連付けられたイベントです。"
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "再度表示しない"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "カレンダーを追加"
@@ -2502,6 +2572,11 @@
         "(タイトルなし)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "あなたのご意見"
+      ]
+    },
     "file size format": {
       "bytes": [
         "バイト"
@@ -2698,9 +2773,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } が Proton スイートに加わりました。これについての感想をぜひ聞かせていただきたいです!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
@@ -3316,12 +3388,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(一時的に利用できません。あとでお試しください。)"
       ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        "10 - とても"
-      ],
       "Add email address": [
         "メールアドレスの追加"
       ],
@@ -3339,6 +3405,12 @@
       ],
       "Automatically save contacts": [
         "連絡先への宛先の自動追加"
+      ],
+      "Awful": [
+        "ひどい"
+      ],
+      "Bad": [
+        "悪い"
       ],
       "Browser": [
         "ブラウザ"
@@ -3436,11 +3508,14 @@
       "From: ${ importedEmail }": [
         "移行元: ${ importedEmail }"
       ],
+      "Good": [
+        "いい"
+      ],
       "Hide password": [
         "パスワードを非表示"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        ""
+      "How would you describe your experience with the new Proton?": [
+        "新しい Proton の使い心地はいかがでしょうか?"
       ],
       "I understand the risk": [
         "リスクを承知しました"
@@ -3492,6 +3567,9 @@
       ],
       "Notifications": [
         "通知"
+      ],
+      "OK": [
+        "まあまあ"
       ],
       "Operating system": [
         "OS"
@@ -3573,6 +3651,9 @@
       ],
       "What happened?": [
         "どのような症状がでましたか？"
+      ],
+      "Wonderful": [
+        "すばらしい"
       ]
     },
     "Label for contact group color": {
@@ -3861,8 +3942,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "あなたのご意見をお聞かせください (任意)"
       ]
     },
     "new_plans: placeholder": {
@@ -3871,9 +3952,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "フィードバックを送る"
-      ],
       "Updated Proton, unified protection": [
         "統合された保護を新しくなった Proton で"
       ]

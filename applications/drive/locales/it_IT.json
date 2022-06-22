@@ -439,6 +439,9 @@
       "Select all": [
         "Seleziona tutti"
       ],
+      "Send feedback": [
+        "Invia il tuo feedback"
+      ],
       "Set recovery phrase": [
         "Imposta frase di recupero"
       ],
@@ -817,6 +820,68 @@
       ],
       "Open": [
         "Apri"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "carota"
+      ],
+      "cerise": [
+        "ciliegia"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "rame"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "felce"
+      ],
+      "forest": [
+        "foresta"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pacific": [
+        "pacifico"
+      ],
+      "pickle": [
+        "cetriolo"
+      ],
+      "pine": [
+        "pino"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "prugna"
+      ],
+      "purple": [
+        "viola"
+      ],
+      "reef": [
+        "corallo"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "ardesia"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "fragola"
       ]
     },
     "Confirm modal title": {
@@ -2047,6 +2112,16 @@
         "Nessuna immagine selezionata"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Il punteggio è necessario"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Il tuo feedback"
+      ]
+    },
     "file size format": {
       "bytes": [
         "byte"
@@ -3135,6 +3210,12 @@
       "Automatically save contacts": [
         "Salvataggio automatico dei contatti"
       ],
+      "Awful": [
+        "Terribile"
+      ],
+      "Bad": [
+        "Non buona"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -3247,8 +3328,14 @@
       "Get your own ${ appName }": [
         "Ottieni il tuo ${ appName }"
       ],
+      "Good": [
+        "Buona"
+      ],
       "Hide password": [
         "Nascondi la password"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Come descriveresti la tua esperienza con la nuova versione di Proton?"
       ],
       "I understand the risk": [
         "Comprendo i rischi"
@@ -3306,6 +3393,9 @@
       ],
       "Notification": [
         "Notifica"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3432,6 +3522,9 @@
       ],
       "What happened?": [
         "Cos'è successo?"
+      ],
+      "Wonderful": [
+        "Fantastica"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Sì, voglio eliminare definitivamente\ni miei vecchi file"
@@ -3562,6 +3655,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Ti presentiamo il nuovo look di Proton.${ br } Molti servizi, una sola missione: una nuova versione di internet, dove la privacy è la regola."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Parlaci della tua esperienza. (Facoltativo)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Commento"
       ]
     },
     "new_plans: title": {
@@ -4047,6 +4150,11 @@
         "Verifica riuscita"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Commento inviato"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mese"
@@ -4336,6 +4444,9 @@
       "Failed": [
         "Fallito"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "File details": [
         "Informazioni file"
       ],
@@ -4483,6 +4594,9 @@
       ],
       "Select link expiration time": [
         "Seleziona ora di scadenza del link"
+      ],
+      "Send feedback": [
+        "Invia il tuo feedback"
       ],
       "Settings": [
         "Impostazioni"

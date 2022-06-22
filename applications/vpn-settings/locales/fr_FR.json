@@ -709,6 +709,68 @@
         "Ouvrir"
       ]
     },
+    "color": {
+      "carrot": [
+        "carotte"
+      ],
+      "cerise": [
+        "rouge cerise"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "cuivre"
+      ],
+      "enzian": [
+        "gentiane"
+      ],
+      "fern": [
+        "fougère"
+      ],
+      "forest": [
+        "forêt"
+      ],
+      "ocean": [
+        "océan"
+      ],
+      "olive": [
+        "olive"
+      ],
+      "pacific": [
+        "pacifique"
+      ],
+      "pickle": [
+        "cornichon"
+      ],
+      "pine": [
+        "pin"
+      ],
+      "pink": [
+        "rose"
+      ],
+      "plum": [
+        "prune"
+      ],
+      "purple": [
+        "violet"
+      ],
+      "reef": [
+        "récif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "bleu ardoise"
+      ],
+      "soil": [
+        "terre"
+      ],
+      "strawberry": [
+        "fraise"
+      ]
+    },
     "Confirmation message to delete payment method": {
       "Are you sure you want to delete this payment method?": [
         "Êtes-vous sûr de vouloir supprimer ce mode de paiement ?"
@@ -3818,14 +3880,14 @@
     },
     "plan customizer, users": {
       "contact": [
-        "contact"
+        "contacter"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        ""
+        "Sélectionnez le nombre d'utilisateurs à inclure dans votre abonnement. Chaque utilisateur supplémentaire coûte ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "",
-        ""
+        "Si vous avez besoin de plus d'${ maxUsers } compte utilisateur, veuillez ${ contact } notre Service client.",
+        "Si vous avez besoin de plus de ${ maxUsers } comptes utilisateur, veuillez ${ contact } notre Service client."
       ]
     },
     "Price": {
