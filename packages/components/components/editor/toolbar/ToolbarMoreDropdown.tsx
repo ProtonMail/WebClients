@@ -92,7 +92,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 <DropdownMenuButton
                     key={16}
                     className="text-left flex flex-nowrap flex-align-items-center"
-                    onClick={() => config.formatting.clear}
+                    onClick={() => config.formatting.clear()}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
                     <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Clear all formatting`}</span>
@@ -103,7 +103,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     <DropdownMenuButton
                         key={17}
                         className="text-left flex flex-nowrap flex-align-items-center"
-                        onClick={() => config.image.showModal}
+                        onClick={() => config.image.showModal()}
                     >
                         <Icon name="checkmark" className="visibility-hidden" />
                         <span className="ml0-5 mtauto mbauto flex-item-fluid">{c('Action').t`Insert image`}</span>
