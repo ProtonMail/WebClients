@@ -443,6 +443,9 @@
       "Select all": [
         "Zaznacz wszystkie"
       ],
+      "Send feedback": [
+        "Wyślij opinię"
+      ],
       "Set recovery phrase": [
         "Ustaw hasło odzyskiwania"
       ],
@@ -821,6 +824,68 @@
       ],
       "Open": [
         "Otwórz"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "marchewkowy"
+      ],
+      "cerise": [
+        "wiśniowy"
+      ],
+      "cobalt": [
+        "kobaltowy"
+      ],
+      "copper": [
+        "miedziany"
+      ],
+      "enzian": [
+        "atramentowy"
+      ],
+      "fern": [
+        "paprotkowy"
+      ],
+      "forest": [
+        "leśny"
+      ],
+      "ocean": [
+        "morski"
+      ],
+      "olive": [
+        "oliwkowy"
+      ],
+      "pacific": [
+        "pacyficzny"
+      ],
+      "pickle": [
+        "khaki"
+      ],
+      "pine": [
+        "sosnowy"
+      ],
+      "pink": [
+        "różowy"
+      ],
+      "plum": [
+        "śliwkowy"
+      ],
+      "purple": [
+        "fioletowy"
+      ],
+      "reef": [
+        "rafa koralowa"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "slateblue"
+      ],
+      "soil": [
+        "ziemisty"
+      ],
+      "strawberry": [
+        "truskawkowy"
       ]
     },
     "Confirm modal title": {
@@ -2065,6 +2130,16 @@
         "Nie wybrano obrazu"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Ocena jest wymagana"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Twoja opinia"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bajtów"
@@ -3227,6 +3302,12 @@
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
+      "Awful": [
+        "Okropnie"
+      ],
+      "Bad": [
+        "Źle"
+      ],
       "Browser": [
         "Przeglądarka"
       ],
@@ -3341,8 +3422,14 @@
       "Get your own ${ appName }": [
         "Uzyskaj własny dysk ${ appName }"
       ],
+      "Good": [
+        "Dobrze"
+      ],
       "Hide password": [
         "Ukryj hasło"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Jak oceniasz nową usługę Proton?"
       ],
       "I understand the risk": [
         "Rozumiem ryzyko"
@@ -3400,6 +3487,9 @@
       ],
       "Notification": [
         "Powiadomienie"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "System operacyjny"
@@ -3526,6 +3616,9 @@
       ],
       "What happened?": [
         "Co się stało?"
+      ],
+      "Wonderful": [
+        "Wspaniale"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Tak, chcę trwale usunąć\nstare pliki"
@@ -3660,6 +3753,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Przedstawiamy odświeżony wygląd usługi Proton.${ br } Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Opowiedz nam o swoich wrażeniach. (opcjonalnie)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Opinia"
       ]
     },
     "new_plans: title": {
@@ -4189,6 +4292,11 @@
         "Weryfikacja powiodła się"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Opinia została wysłana"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/ miesiąc"
@@ -4490,6 +4598,9 @@
       "Failed": [
         "Niepowodzenie"
       ],
+      "Feedback": [
+        "Opinia"
+      ],
       "File details": [
         "Szczegóły pliku"
       ],
@@ -4639,6 +4750,9 @@
       ],
       "Select link expiration time": [
         "Wybierz czas wygaśnięcia linku"
+      ],
+      "Send feedback": [
+        "Wyślij opinię"
       ],
       "Settings": [
         "Ustawienia"

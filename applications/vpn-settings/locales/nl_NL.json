@@ -342,7 +342,7 @@
         "Upgraden"
       ],
       "Use ${ label } theme": [
-        ""
+        "Gebruik ${ label }-thema"
       ],
       "Use a different card": [
         "Gebruik een andere kaart"
@@ -707,6 +707,68 @@
       ],
       "Open": [
         "Openen"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cobalt": [
+        "kobaltblauw"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
       ]
     },
     "Confirmation message to delete payment method": {
@@ -1946,7 +2008,7 @@
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
       "Choose the look and feel of the application.": [
-        ""
+        "Kies het uiterlijk en gevoel van de applicatie."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
@@ -3818,13 +3880,13 @@
     },
     "plan customizer, users": {
       "contact": [
-        ""
+        "neem contact op"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        ""
+        "Selecteer het aantal gebruikers om op te nemen in je abonnement. Elke extra gebruiker kost ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "",
+        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team.",
         ""
       ]
     },
@@ -4105,7 +4167,7 @@
     },
     "Themes": {
       "Themes": [
-        ""
+        "Thema's"
       ]
     },
     "Title": {

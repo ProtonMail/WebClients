@@ -370,6 +370,9 @@
       "Send": [
         "Enviar"
       ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
       "Set recovery phrase": [
         "Definir frase de recuperação"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "cenoura"
+      ],
+      "cerise": [
+        "cereja"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "samambaia"
+      ],
+      "forest": [
+        "floresta"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "azeitona"
+      ],
+      "pacific": [
+        "pacífica"
+      ],
+      "pickle": [
+        "salmoura"
+      ],
+      "pine": [
+        "pinho"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "ameixa"
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "reef": [
+        "recife"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "azul ardósia"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "morango"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "O evento pertence a um calendário desabilitado."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Não perguntar novamente"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Adicionar calendário"
@@ -2130,7 +2200,7 @@
         "O endereço da chave primária não foi descriptografada."
       ],
       "Primary key is not valid for sending": [
-        ""
+        "A chave primária não é válida para envio"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
         "Chave primária recuperada para o usuário interno não é válida para o envio"
@@ -2521,6 +2591,11 @@
         "(sem título)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Seu comentário"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2731,9 +2806,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } foi adicionado ao Proton suite. Adoraríamos saber qual a sua opinião a respeito!"
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } novo calendário",
         "${ calendarsToBeCreatedCount } novos calendários"
@@ -2747,15 +2819,15 @@
         "${ calendarsToBeMergedCount } calendários mesclados"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "${ contactCount } contém vários endereços de e-mail.",
+        "${ contactCount } contêm vários endereços de e-mail."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } contém vários endereços de e-mail."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contato encontrado",
@@ -3035,7 +3107,7 @@
         "Ocorrências previamente atualizadas pelo organizador serão mantidas."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
+        "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
@@ -3062,11 +3134,11 @@
         "Por favor, selecione as pastas que você deseja importar:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
+        "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Por favor, retorne mais tarde.)"
       ],
-      "0 - Not likely": [
-        "0 - Acho que não"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extremamente provável"
-      ],
       "Add email address": [
         "Adicionar endereço de e-mail"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
+      ],
+      "Awful": [
+        "Horrível"
+      ],
+      "Bad": [
+        "Ruim"
       ],
       "Browser": [
         "Navegador"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
+      "Good": [
+        "Bom"
+      ],
       "Hide password": [
         "Ocultar senha"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Qual a chance de você recomendar ${ calendarAppName } a um amigo ou colega?"
+      "How would you describe your experience with the new Proton?": [
+        "Como você descreveria sua experiência com o novo visual dos produtos Proton?"
       ],
       "I understand the risk": [
         "Eu entendo o risco"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Notificações"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "O que aconteceu?"
+      ],
+      "Wonderful": [
+        "Maravilhoso"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Nos conte sobre sua experiência. (Opcional)"
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Enviar feedback"
-      ],
       "Updated Proton, unified protection": [
         "Proton atualizado, proteção unificada"
       ]
@@ -4196,13 +4274,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } marcou esta chave como comprometida. Essa chave não pode ser usada para criptografia nem para verificação de assinatura."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } marcou esta chave como obsoleta. Esta chave só pode ser usada para verificação de assinatura."
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "Recomendamos que você \"desconfie\" dessa chave."
       ]
     },
     "PGP key warning": {

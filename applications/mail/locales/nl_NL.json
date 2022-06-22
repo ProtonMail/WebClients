@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "automatisch antwoord versturen"
       ],
+      "Send feedback": [
+        "Feedback versturen"
+      ],
       "Send read receipt": [
         "Leesbevestiging verzenden"
       ],
@@ -849,7 +852,7 @@
         "Versturen"
       ],
       "Switch to rich text": [
-        "Overschakelen naar rich tekst"
+        ""
       ],
       "Theme": [
         "Thema"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Open"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Appeltjesrood"
+      ],
+      "azureish white": [
+        "azuurwit"
+      ],
+      "blanched almond": [
+        "geblancheerde amandel"
+      ],
+      "blue-gray": [
+        "blauw-grijs"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cinnabar": [
+        "cinnaber"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "cyan-blue azure": [
+        "cyaanblauw azuur"
+      ],
+      "dandelion": [
+        "paardenbloem"
+      ],
+      "dark cerulean": [
+        "donker ceruleumblauw"
+      ],
+      "dark midnight blue": [
+        "donker middernachtblauw"
+      ],
+      "dim gray": [
+        "zacht grijs"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "field drab": [
+        "veldsaai"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        "japanse laurier"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citroengeel"
+      ],
+      "light carmine pink": [
+        "licht karmijnroze"
+      ],
+      "light moss green": [
+        "licht mosgroen"
+      ],
+      "light red": [
+        "lichtrood"
+      ],
+      "maize": [
+        "maïs"
+      ],
+      "mughal green": [
+        "mogolgroen"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "outer space": [
+        "ruimte"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "palatinate blue": [
+        "paltsblauw"
+      ],
+      "pale cerulean": [
+        "mat ceruleumblauw"
+      ],
+      "pastel gray": [
+        "pastelgrijs"
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        "perzisch rood"
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "pistachio": [
+        "pistache"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "raisin black": [
+        "rozijnzwart"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "ruddy pink": [
+        "perzisch rood"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "satijnglanzend goud"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
+      ],
+      "vivid auburn": [
+        "helder kastanjebruin"
+      ],
+      "white": [
+        "wit"
       ]
     },
     "Composer email icon": {
@@ -3350,6 +3520,11 @@
         "(geen titel)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Uw feedback"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Inbox"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "Kies een map"
@@ -4121,14 +4299,11 @@
         "Verloopt binnenkort"
       ],
       "Expiring message": [
-        "Bericht verlopend"
+        "Verlopend bericht"
       ],
       "file attached": [
         "bestandsbijlage",
         "bestandsbijlagen"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet ten minste een naam en een geldig Sieve-script bevatten."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als uitgaande. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -4359,7 +4534,7 @@
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
       "Normal": [
-        "Normaal"
+        ""
       ],
       "Not a valid URL": [
         "Ongeldige link"
@@ -4413,7 +4588,7 @@
         "Selecteer het soort link dat u wil invoeren en vul alle velden in."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groep.",
+        "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groepen."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
@@ -4915,7 +5090,7 @@
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map op ${ dateString } om ${ formattedTime }"
+        "Uw bericht zal verwijderd worden uit de ontvangers inbox en uw verzonden map op ${ dateString } om ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
         "Uw bericht zal verwijderd worden uit de verzender's inbox en uw verzonden map vandaag om ${ formattedTime }"
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Contacten automatisch opslaan"
       ],
+      "Awful": [
+        "Vreselijk"
+      ],
+      "Bad": [
+        "Slecht"
+      ],
       "BCC": [
         "Bcc"
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
       ],
+      "Good": [
+        "Goed"
+      ],
       "Group": [
         "Groep"
       ],
       "Hide password": [
         "Wachtwoord verbergen"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Hoe zou u uw ervaring met de nieuwe Proton omschrijven?"
       ],
       "I understand the risk": [
         "Ik begrijp het risico"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Notificatie"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Besturingssysteem"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "zonder bijlagen"
+      ],
+      "Wonderful": [
+        "Uitstekend"
       ]
     },
     "Label for contact group color": {
@@ -6059,29 +6252,17 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "Van account wisselen of account toevoegen"
+        "Account toevoegen of wisselen"
       ]
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Ontdek de nieuwe look van Proton.${ br } Veel diensten, één missie. Welkom in een internetomgeving waar privacy de standaard is."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "We hebben Proton een uniforme, nieuwe look gegeven. We zijn benieuwd wat u ervan vindt!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Verschrikkelijk"
-      ],
-      "5 - Wonderful": [
-        "5 - Geweldig"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Hoe zou u uw ervaring met de nieuwe Proton omschrijven?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Vertel ons over uw ervaring (optioneel)"
+      "Tell us about your experience. (Optional)": [
+        "Vertel ons over uw ervaring. (Optioneel)"
       ]
     },
     "new_plans: placeholder": {
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Feedback geven"
-      ],
       "Updated Proton, unified protection": [
         "Vernieuwde Proton, uniforme beveiliging"
       ]

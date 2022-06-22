@@ -370,6 +370,9 @@
       "Send": [
         "Senden"
       ],
+      "Send feedback": [
+        "Feedback senden"
+      ],
       "Set recovery phrase": [
         "Wiederherstellungsphrase einrichten"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "Karotte"
+      ],
+      "cerise": [
+        "Kirschrot"
+      ],
+      "cobalt": [
+        "Kobaltblau"
+      ],
+      "copper": [
+        "Kupfer"
+      ],
+      "enzian": [
+        "Enzian"
+      ],
+      "fern": [
+        "Farn"
+      ],
+      "forest": [
+        "Waldgrün"
+      ],
+      "ocean": [
+        "Ozeanblau"
+      ],
+      "olive": [
+        "Olivgrün"
+      ],
+      "pacific": [
+        "Pazifikblau"
+      ],
+      "pickle": [
+        "Moosgrün"
+      ],
+      "pine": [
+        "Kiefernfarben"
+      ],
+      "pink": [
+        "Rosa"
+      ],
+      "plum": [
+        "Pflaume"
+      ],
+      "purple": [
+        "Violett"
+      ],
+      "reef": [
+        "Koralle"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "slateblue": [
+        "Blaugrau"
+      ],
+      "soil": [
+        "Erdfarben"
+      ],
+      "strawberry": [
+        "Erdbeere"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "Der Termin ist in einem deaktivierten Kalender enthalten."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Nicht erneut nachfragen"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Kalender hinzufügen"
@@ -2521,6 +2591,11 @@
         "(Kein Titel)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Dein Feedback"
+      ]
+    },
     "file size format": {
       "bytes": [
         "Bytes"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } wurde der Proton-Suite hinzugefügt. Wir würden uns freuen zu hören, was du davon hältst!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } neuer Kalender",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
       ],
-      "0 - Not likely": [
-        "0 — Unwahrscheinlich"
-      ],
-      "10 - Extremely likely": [
-        "10 — Sehr wahrscheinlich"
-      ],
       "Add email address": [
         "E-Mail-Adresse hinzufügen"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
+      ],
+      "Awful": [
+        "Furchtbar"
+      ],
+      "Bad": [
+        "Schlecht"
       ],
       "Browser": [
         "Browser"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "Von: ${ importedEmail }"
       ],
+      "Good": [
+        "Gut"
+      ],
       "Hide password": [
         "Passwort ausblenden"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Wie wahrscheinlich ist es, dass du ${ calendarAppName } einem Freund oder Kollegen empfiehlst?"
+      "How would you describe your experience with the new Proton?": [
+        "Wie würdest du deine Erfahrungen mit dem neuen Proton beschreiben?"
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Benachrichtigungen"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Problembeschreibung"
+      ],
+      "Wonderful": [
+        "Wunderbar"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Erzähle uns von deinen Erfahrungen. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Feedback geben"
-      ],
       "Updated Proton, unified protection": [
         "Verbessertes Proton, einheitlicher Schutz"
       ]

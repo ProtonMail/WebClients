@@ -770,6 +770,9 @@
       "send auto-reply email": [
         "wyślij automatyczną odpowiedź"
       ],
+      "Send feedback": [
+        "Wyślij opinię"
+      ],
       "Send read receipt": [
         "Wyślij potwierdzenie odczytu"
       ],
@@ -855,7 +858,7 @@
         "Wyślij"
       ],
       "Switch to rich text": [
-        "Zmień na standardowy tekst"
+        ""
       ],
       "Theme": [
         "Motyw"
@@ -1597,6 +1600,173 @@
       ],
       "Open": [
         "Otwórz"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "jabłkowy"
+      ],
+      "azureish white": [
+        "lazurowa biel"
+      ],
+      "blanched almond": [
+        "migdał blanszowany"
+      ],
+      "blue-gray": [
+        "niebieskoszary"
+      ],
+      "caramel": [
+        "karmel"
+      ],
+      "carrot": [
+        "marchewkowy"
+      ],
+      "cerise": [
+        "wiśniowy"
+      ],
+      "cinnabar": [
+        "cynobrowy"
+      ],
+      "cobalt": [
+        "kobaltowy"
+      ],
+      "copper": [
+        "miedziany"
+      ],
+      "cyan-blue azure": [
+        "lazurowy"
+      ],
+      "dandelion": [
+        "mniszek lekarski"
+      ],
+      "dark cerulean": [
+        "ciemny cerulean"
+      ],
+      "dark midnight blue": [
+        "ciemny północny błękit"
+      ],
+      "dim gray": [
+        "ciemnoszary"
+      ],
+      "enzian": [
+        "atramentowy"
+      ],
+      "fern": [
+        "paprotkowy"
+      ],
+      "field drab": [
+        "oliwkowy brązowy"
+      ],
+      "forest": [
+        "leśny"
+      ],
+      "gainsboro": [
+        "jasnoszary"
+      ],
+      "japanese laurel": [
+        "laurowy"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "cytrynowożółty"
+      ],
+      "light carmine pink": [
+        "jasny karminowy róż"
+      ],
+      "light moss green": [
+        "jasna zieleń mchu"
+      ],
+      "light red": [
+        "jasnoczerwony"
+      ],
+      "maize": [
+        "kukurydziany"
+      ],
+      "mughal green": [
+        "ciemnozielony"
+      ],
+      "ocean": [
+        "morski"
+      ],
+      "olive": [
+        "oliwkowy"
+      ],
+      "outer space": [
+        "przestrzeń kosmiczna"
+      ],
+      "pacific": [
+        "pacyficzny"
+      ],
+      "palatinate blue": [
+        "błękit palatynowy"
+      ],
+      "pale cerulean": [
+        "jasny cerulean"
+      ],
+      "pastel gray": [
+        "pastelowa szarość"
+      ],
+      "persian plum": [
+        "perska śliwka"
+      ],
+      "persian red": [
+        "perska czerwień"
+      ],
+      "philippine gray": [
+        "filipińska szarość"
+      ],
+      "philippine silver": [
+        "filipińskie srebro"
+      ],
+      "pickle": [
+        "khaki"
+      ],
+      "pine": [
+        "sosnowy"
+      ],
+      "pink": [
+        "różowy"
+      ],
+      "pistachio": [
+        "pistacjowy"
+      ],
+      "plum": [
+        "śliwkowy"
+      ],
+      "purple": [
+        "fioletowy"
+      ],
+      "raisin black": [
+        "rodzynki czarne"
+      ],
+      "reef": [
+        "rafa koralowa"
+      ],
+      "ruddy pink": [
+        "rumiany róż"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "satynowy złoty połysk"
+      ],
+      "slateblue": [
+        "slateblue"
+      ],
+      "soil": [
+        "ziemisty"
+      ],
+      "strawberry": [
+        "truskawkowy"
+      ],
+      "vivid auburn": [
+        "żywy kasztanowy"
+      ],
+      "white": [
+        "biały"
       ]
     },
     "Composer email icon": {
@@ -3392,6 +3562,11 @@
         "(brak tytułu)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Twoja opinia"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bajtów"
@@ -3426,6 +3601,9 @@
       ],
       "Inbox": [
         "Odebrane"
+      ],
+      "Inbox - Default": [
+        "Odebrane (domyślny)"
       ],
       "Select a folder": [
         "Wybierz folder"
@@ -4265,9 +4443,6 @@
         "załączników",
         "załączników"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę i skrypt Sieve."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
       ],
@@ -4503,7 +4678,7 @@
         "Żaden z przesłanych kluczy nie jest przeznaczony do szyfrowania. Szyfrowanie zostało automatycznie wyłączone."
       ],
       "Normal": [
-        "Standardowy"
+        ""
       ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
@@ -5415,6 +5590,12 @@
       "Automatically save contacts": [
         "Automatyczne zapisywanie kontaktów"
       ],
+      "Awful": [
+        "Okropnie"
+      ],
+      "Bad": [
+        "Źle"
+      ],
       "BCC": [
         "UDW"
       ],
@@ -5517,11 +5698,17 @@
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
       ],
+      "Good": [
+        "Dobrze"
+      ],
       "Group": [
         "Grupa"
       ],
       "Hide password": [
         "Ukryj hasło"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Jak oceniasz nową usługę Proton?"
       ],
       "I understand the risk": [
         "Rozumiem ryzyko"
@@ -5594,6 +5781,9 @@
       ],
       "Notification": [
         "Powiadomienie"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "System operacyjny"
@@ -5747,6 +5937,9 @@
       ],
       "without attachments": [
         "bez załączników"
+      ],
+      "Wonderful": [
+        "Wspaniale"
       ]
     },
     "Label for contact group color": {
@@ -6245,22 +6438,10 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Przedstawiamy odświeżony wygląd usługi Proton.${ br } Wiele usług, jedna misja. Witaj w Internecie, w którym prywatność jest standardem."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Usługa Proton została ujednolicona i odświeżona. Chcemy poznać Twoją opinię!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Okropnie"
-      ],
-      "5 - Wonderful": [
-        "5 - Wspaniale"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Jak oceniasz nową usługę Proton?"
-      ],
-      "Tell us about your experience (Optional)": [
+      "Tell us about your experience. (Optional)": [
         "Opowiedz nam o swoich wrażeniach. (opcjonalnie)"
       ]
     },
@@ -6270,9 +6451,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Wyślij opinię"
-      ],
       "Updated Proton, unified protection": [
         "Zaktualizowany Proton, ujednolicona ochrona"
       ]

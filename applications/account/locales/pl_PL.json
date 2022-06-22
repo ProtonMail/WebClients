@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Potwierdź otwieranie linku ${ linkToShow }"
       ],
-      "contact": [
-        "skontaktuj się"
-      ],
       "Contact support": [
         "Pomoc techniczna"
       ],
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Wsparcie"
-      ],
-      "Switch to rich text": [
-        "Zmień na standardowy tekst"
       ],
       "Top up": [
         "Doładuj"
@@ -1319,6 +1313,173 @@
       ],
       "Open": [
         "Otwórz"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "jabłkowy"
+      ],
+      "azureish white": [
+        "lazurowa biel"
+      ],
+      "blanched almond": [
+        "migdał blanszowany"
+      ],
+      "blue-gray": [
+        "niebieskoszary"
+      ],
+      "caramel": [
+        "karmel"
+      ],
+      "carrot": [
+        "marchewkowy"
+      ],
+      "cerise": [
+        "wiśniowy"
+      ],
+      "cinnabar": [
+        "cynobrowy"
+      ],
+      "cobalt": [
+        "kobaltowy"
+      ],
+      "copper": [
+        "miedziany"
+      ],
+      "cyan-blue azure": [
+        "lazurowy"
+      ],
+      "dandelion": [
+        "mniszek lekarski"
+      ],
+      "dark cerulean": [
+        "ciemny cerulean"
+      ],
+      "dark midnight blue": [
+        "ciemny północny błękit"
+      ],
+      "dim gray": [
+        "ciemnoszary"
+      ],
+      "enzian": [
+        "atramentowy"
+      ],
+      "fern": [
+        "paprotkowy"
+      ],
+      "field drab": [
+        "oliwkowy brązowy"
+      ],
+      "forest": [
+        "leśny"
+      ],
+      "gainsboro": [
+        "jasnoszary"
+      ],
+      "japanese laurel": [
+        "laurowy"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "cytrynowożółty"
+      ],
+      "light carmine pink": [
+        "jasny karminowy róż"
+      ],
+      "light moss green": [
+        "jasna zieleń mchu"
+      ],
+      "light red": [
+        "jasnoczerwony"
+      ],
+      "maize": [
+        "kukurydziany"
+      ],
+      "mughal green": [
+        "ciemnozielony"
+      ],
+      "ocean": [
+        "morski"
+      ],
+      "olive": [
+        "oliwkowy"
+      ],
+      "outer space": [
+        "przestrzeń kosmiczna"
+      ],
+      "pacific": [
+        "pacyficzny"
+      ],
+      "palatinate blue": [
+        "błękit palatynowy"
+      ],
+      "pale cerulean": [
+        "jasny cerulean"
+      ],
+      "pastel gray": [
+        "pastelowa szarość"
+      ],
+      "persian plum": [
+        "perska śliwka"
+      ],
+      "persian red": [
+        "perska czerwień"
+      ],
+      "philippine gray": [
+        "filipińska szarość"
+      ],
+      "philippine silver": [
+        "filipińskie srebro"
+      ],
+      "pickle": [
+        "khaki"
+      ],
+      "pine": [
+        "sosnowy"
+      ],
+      "pink": [
+        "różowy"
+      ],
+      "pistachio": [
+        "pistacjowy"
+      ],
+      "plum": [
+        "śliwkowy"
+      ],
+      "purple": [
+        "fioletowy"
+      ],
+      "raisin black": [
+        "rodzynki czarne"
+      ],
+      "reef": [
+        "rafa koralowa"
+      ],
+      "ruddy pink": [
+        "rumiany róż"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "satynowy złoty połysk"
+      ],
+      "slateblue": [
+        "slateblue"
+      ],
+      "soil": [
+        "ziemisty"
+      ],
+      "strawberry": [
+        "truskawkowy"
+      ],
+      "vivid auburn": [
+        "żywy kasztanowy"
+      ],
+      "white": [
+        "biały"
       ]
     },
     "Condition for custom filter": {
@@ -3099,7 +3260,7 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Wydarzenie @ ${ timeString }"
+        ""
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Wydarzenie od ${ timeString }, ${ rruleString }"
@@ -3268,6 +3429,9 @@
       "Inbox": [
         "Odebrane"
       ],
+      "Inbox - Default": [
+        "Odebrane (domyślny)"
+      ],
       "Select a folder": [
         "Wybierz folder"
       ],
@@ -3320,8 +3484,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Dodaj filtr niestandardowy do wykonywania automatycznych czynności, takich jak etykietowanie lub archiwizacja wiadomości."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "Dodaj filtr niestandardowy do wykonywania automatycznych czynności, takich jak etykietowanie lub archiwizacja wiadomości. Filtry mogą być tworzone i edytowane w języku programowania Sieve."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Ustaw swoje preferencje dla nadawców spamu. Wiadomości z adresów i domen z listy dozwolonych są zawsze dostarczane do skrzynki odbiorczej, a z listy odrzuconych zawsze przenoszone do Spamu. Oznaczenie wiadomości jako spam, dodaje adres nadawcy do listy odrzuconych, a oznaczenie wiadomości jako wolnej od spamu dodaje adres do listy dozwolonych."
@@ -4381,9 +4545,6 @@
       "Custom email domains": [
         "Niestandardowe domeny"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Filtry niestandardowe działają na wszystkie nowe wiadomości przychodzące oraz wysyłane. Filtry możesz tworzyć i edytować bezpośrednio w języku programowania Sieve."
-      ],
       "Custom monthly": [
         "Co miesiąc (niestandardowo)"
       ],
@@ -4443,6 +4604,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Pobierz swoje klucze PGP, aby korzystać z nich w innych aplikacjach."
+      ],
+      "Drop a file here to upload": [
+        "Upuść plik tutaj, aby przesłać"
       ],
       "Drop the file here to upload": [
         "Upuść plik tutaj, aby przesłać"
@@ -4527,9 +4691,6 @@
       ],
       "Failed to fetch logs.": [
         "Nie udało się pobrać logów."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę i skrypt Sieve."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry działają na wszystkie wiadomości przychodzące oraz wysyłane. Każdy filtr musi zawierać nazwę, warunek i akcję."
@@ -4741,6 +4902,9 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
+      "learn more about Sieve programming language": [
+        "Dowiedz się więcej o języku programowania Sieve"
+      ],
       "Left to Right": [
         "Od lewej do prawej"
       ],
@@ -4849,9 +5013,6 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
-      "Normal": [
-        "Standardowy"
-      ],
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
       ],
@@ -4926,9 +5087,6 @@
       ],
       "Phone number": [
         "Numer telefonu"
-      ],
-      "Plain text": [
-        "Zwykły tekst"
       ],
       "Plan upgrade required": [
         "Ulepszenie planu jest wymagane"
@@ -5064,9 +5222,6 @@
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Kliknij Przejdź do aplikacji ${ name }, aby otworzyć aplikację. Ta czynność spowoduje również utworzenie konta ${ name } skojarzonego z adresem ${ MAIL_APP_NAME }. W przyszłości będziesz mógł zalogować się jednym kliknięciem."
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }. Jeśli potrzebujesz więcej niż ${ maxUsers } użytkowników, ${ contactMailToLink } z naszym zespołem wsparcia klienta."
       ],
       "Select what you want to move from Google.": [
         "Wybierz, co chcesz przenieść z konta Google."
@@ -5281,6 +5436,9 @@
       "To use ${ toAppName }, please create an address.": [
         "Utwórz adres, aby korzystać z usługi ${ toAppName }."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Każdy filtr musi zawierać nazwę i skrypt Sieve. ${ link }."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
       ],
@@ -5454,9 +5612,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Możesz sprawdzić postęp ${ importProgressLink }."
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Możesz utworzyć maksymalnie ${ MAX_LINKS_PER_CALENDAR } linków do kalendarza. Usuń dotychczasowy link, aby utworzyć nowy."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Możesz dostosować i pobrać swoje faktury do celów księgowych."
@@ -7056,6 +7211,14 @@
         "Importuj wiadomości z ${ totalLabelsCount } etykiet od ${ periodFragment } i oznacz je etykietą ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Możesz utworzyć maksymalnie ${ MAX_LINKS_PER_CALENDAR } link do kalendarza. Usuń dotychczasowy link, aby utworzyć nowy.",
+        "Możesz utworzyć maksymalnie ${ MAX_LINKS_PER_CALENDAR } linki do kalendarza. Usuń dotychczasowy link, aby utworzyć nowy.",
+        "Możesz utworzyć maksymalnie ${ MAX_LINKS_PER_CALENDAR } linków do kalendarza. Usuń dotychczasowy link, aby utworzyć nowy.",
+        "Możesz utworzyć maksymalnie ${ MAX_LINKS_PER_CALENDAR } linków do kalendarza. Usuń dotychczasowy link, aby utworzyć nowy."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Usuń"
@@ -7660,7 +7823,7 @@
         "Ulepsz do najwyższego pakietu prywatności i uzyskaj dostęp do wszystkich usług Proton premium."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
-        "Wersja próbna zakończy się w dniu ${ formattedTrialExpirationDate }"
+        "Wersja próbna zakończy się ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7686,25 +7849,25 @@
         "Wszechstronna ochrona prywatności i bezpieczeństwo dzięki połączeniu wszystkich usług Proton."
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "W przypadku usunięcia konta traci się wszystkie korzyści wynikające z planu ${ visionary } i nie będzie to dostępne przy tworzeniu nowego konta."
+        "Jeśli usuniesz konto, stracisz wszystkie zalety planu ${ visionary }, które nie będą dostępne przy tworzeniu nowego konta."
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "W przypadku obniżenia poziomu konta traci się wszystkie korzyści wynikające z planu ${ visionary } i nie będzie on dostępny przy ponownej próbie subskrypcji."
+        "Jeśli obniżysz plan, stracisz wszystkie zalety planu ${ visionary }, które nie będą dostępne przy ponownej subskrypcji."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "W przypadku przejścia do innego planu traci się wszystkie korzyści wynikające z planu ${ visionary } i nie będzie można przejść z powrotem do ${ visionary }."
+        "Jeśli zmienisz plan, stracisz wszystkie zalety planu ${ visionary }, a ponowny powrót do tego planu nie będzie możliwy."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
-        "Nasz plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME } posiadających specjalne funkcje i korzyści."
+        "Plan ${ visionary } nie jest już dostępny dla nowych subskrybentów, ponieważ jest to specjalny plan dla pierwotnych użytkowników ${ BRAND_NAME }, posiadający specjalne funkcje i zalety."
       ],
       "Popular": [
         "Popularny"
       ],
       "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        "Cena za przyszłe odnowienia: obejmuje wszystkie mające zastosowanie kupony zapisane na Twoim koncie, które są dalej ważne"
+        "Cena za przyszłe odnowienie: zawiera wszystkie ważne kupony zapisane na Twoim koncie"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
-        "Pakiet dla biznesu w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi Proton premium."
+        "Pakiet dla biznesów w zakresie prywatności i bezpieczeństwa, w tym wszystkie usługi Proton premium."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Bezpieczna poczta e-mail i kalendarz dla profesjonalistów oraz biznesów."
@@ -7740,10 +7903,10 @@
     },
     "new_plans: Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "Nadal masz ${ daysRemaining } dzień korzystania z konta ${ currentPlanName }.",
-        "Nadal masz ${ daysRemaining } dni korzystania z konta ${ currentPlanName }.",
-        "Nadal masz ${ daysRemaining } dni korzystania z konta ${ currentPlanName }.",
-        "Nadal masz ${ daysRemaining } dnia korzystania z konta ${ currentPlanName }."
+        "Pozostał ${ daysRemaining } dzień korzystania z konta ${ currentPlanName }.",
+        "Pozostały ${ daysRemaining } dni korzystania z konta ${ currentPlanName }.",
+        "Pozostało ${ daysRemaining } dni korzystania z konta ${ currentPlanName }.",
+        "Pozostało ${ daysRemaining } dnia korzystania z konta ${ currentPlanName }."
       ]
     },
     "new_plans: signup": {
@@ -7832,19 +7995,19 @@
         "Utwórz wiele adresów e-mail dla swoich tożsamości internetowych, np. JanZakupowy@proton.me dla kont zakupowych i JanWiadomości@proton.me dla subskrybowania wiadomości"
       ],
       "Create up to ${ n } custom calendar.": [
-        "Utwórz maksymalnie ${ n } kalendarz niestandardowy.",
-        "Utwórz maksymalnie ${ n } kalendarze niestandardowe.",
-        "Utwórz maksymalnie ${ n } kalendarzy niestandardowych.",
-        "Utwórz maksymalnie ${ n } kalendarza niestandardowego."
+        "Utwórz do ${ n } niestandardowego kalendarza.",
+        "Utwórz do ${ n } niestandardowych kalendarzy.",
+        "Utwórz do ${ n } niestandardowych kalendarzy.",
+        "Utwórz do ${ n } niestandardowych kalendarzy."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Chroni przed zagrożeniem prywatności VPN, przekierowując ruch internetowy przez wiele serwerów"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        "Łatwo udostępniaj swoje kalendarze współpracownikom, rodzinie i znajomym za pomocą łącza"
+        "Udostępnij swoje kalendarze za pomocą linku współpracownikom, rodzinie i znajomym"
       ],
       "Easily share your calendars with your family, friends, or colleagues via a link": [
-        "Łatwo udostępniaj swoje kalendarze rodzinie, znajomym i współpracownikom za pomocą łącza"
+        "Udostępnij swoje kalendarze za pomocą linku rodzinie, znajomym i współpracownikom"
       ],
       "End-to-end encrypted calendar": [
         "Kalendarz zaszyfrowany end-to-end"
@@ -7853,13 +8016,13 @@
         "Przestrzeń dyskowa zaszyfrowana end-to-end"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Zapewnia otrzymywanie wszystkich wiadomości e-mail wysyłanych do Twojej domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
+        "Zapewnia odbieranie wszystkich wiadomości wysyłanych do domeny, nawet jeśli adres e-mail nie istnieje, przestał istnieć lub zawiera literówkę"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
         "Wymuszanie wylogowania z sesji użytkownika, gdy istnieje podejrzenie, że jego dane logowania zostały naruszone"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        "Obsługa protokołu IMAP jest ograniczona do korzystania z aplikacji na komputery stacjonarne (np. Outlook, Apple Mail, Thunderbird) za pośrednictwem ${ MAIL_APP_NAME } Bridge. Integracje IMAP oparte na chmurze nie są obecnie obsługiwane."
+        "Obsługa IMAP jest dostępna na aplikacjach desktopowych (np. Outlook, Apple Mail, Thunderbird) za pomocą ${ MAIL_APP_NAME } Bridge. Integracje IMAP oparte na chmurze nie są obsługiwane."
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
         "Chroni Cię, blokując wszystkie połączenia sieciowe, gdy przypadkowo utracisz połączenie z naszym serwerem VPN"
@@ -7868,7 +8031,7 @@
         "Etykiety to proste znaczniki, które możesz dodawać do wiadomości, aby ułatwić ich wyszukiwanie lub filtrowanie"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Zarządzaj swoją subskrypcją, w tym dostosuj plan do swoich potrzeb. Akceptowane metody płatności to karta kredytowa, PayPal, kryptowaluta i przelew bankowy."
+        "Zarządzaj subskrypcją i dostosuj plan. Akceptowanymi metodami płatności są karty kredytowe, konto PayPal, kryptowaluty i przelewy bankowe."
       ],
       "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
         "W dni robocze otrzymasz odpowiedź od zespołu wsparcia klienta Proton w ciągu 24 godzin od zgłoszenia"
@@ -7886,7 +8049,7 @@
         "Możliwość przeglądania służbowych skrzynek odbiorczych użytkowników w taki sam sposób, w jaki robi to użytkownik, łącznie z pełnymi wiadomościami i szczegółami kontaktu"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Narzędzie do zarządzania organizacją, które umożliwia administratorom dodawanie i usuwanie użytkowników, przydzielanie pamięci masowej, konfigurowanie domen i wykonywanie innych zadań"
+        "Narzędzie do zarządzania organizacją umożliwia administratorom dodawanie, usuwanie użytkowników, przydzielanie przestrzeni dyskowej, konfigurowanie domen i wykonywanie innych zadań"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nasza solidna infrastruktura zapewnia dostęp do konta wtedy, gdy jest ono potrzebne"
@@ -7895,13 +8058,13 @@
         "Dyski twarde naszych serwerów są w pełni zaszyfrowane za pomocą wielu warstw haseł, dzięki czemu dane są chronione nawet w przypadku uszkodzenia sprzętu"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        "Personalizuj swój podpis e-mail za pomocą logo, obrazów, ikon mediów społecznościowych, linków do danych kontaktowych i innych elementów"
+        "Personalizuj swój podpis za pomocą logo, obrazów, ikon mediów społecznościowych, linków do szczegółów kontaktu i innych elementów"
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
         "Wsparcie telefoniczne jest dostępne dla klientów posiadających co najmniej 6 użytkowników i jest realizowane podczas europejskich godzin pracy zespołu wsparcia klienta Proton"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        "Zapobiega dostępowi do wiadomości przez firmę ${ BRAND_NAME } lub osoby trzecie. Wiadomości mogą czytać tylko nadawca i odbiorca."
+        "Zapobiega dostępowi do wiadomości przez ${ BRAND_NAME } lub strony trzecie. Wiadomości mogą zostać odczytane tylko przez nadawcę i odbiorcę."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
         "Chroń każde urządzenie podłączone do Twojej sieci Wi-Fi. Jest to również przydatne, jeśli masz urządzenia, które nie obsługują bezpośrednio ustawień VPN."
@@ -7913,7 +8076,7 @@
         "Szybko przenieś wiadomości, kalendarze i kontakty od dowolnego dostawcy"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        "Do zalogowania się wymagany jest kod wysyłany na telefon komórkowy. Dzięki temu nawet w przypadku złamania hasła, konto pozostaje bezpieczne."
+        "Do zalogowania wymagany jest kod wysyłany na numer telefonu. Zapewnia to bezpieczeństwo konta, nawet w przypadku naruszenia hasła."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
         "Resetowanie haseł i uwierzytelniania dwustopniowego użytkowników"
@@ -7922,13 +8085,13 @@
         "Przekieruj swój ruch internetowy przez sieć Tor za pomocą jednego kliknięcia"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        "Bezpiecznie przechowuj szczegółowe dane swoich kontaktów, takie jak numer telefonu, adres, data urodzenia i osobiste notatki. Szyfrowanie z zerowym dostępem gwarantuje, że nawet Proton nie będzie miał do nich dostępu."
+        "Bezpiecznie przechowuj szczegóły kontaktów, takie jak numer telefonu, adres, data urodzin i osobiste notatki. Szyfrowanie po stronie klienta zapewnia, że nawet Proton nie ma do nich dostępu."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
         "Wysyłaj wiadomości do dużych grup szybko i łatwo, tworząc tyle grup kontaktów, ile potrzebujesz (do 100 kontaktów na grupę)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Skonfiguruj filtry, aby automatycznie odpowiadać na wiadomości e-mail, sortować je i/lub oznaczać etykietami"
+        "Skonfiguruj filtry, aby automatycznie odpowiadać, sortować i oznaczać wiadomości etykietami"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Udostępniaj pliki lub foldery innym osobom, używając bezpiecznych linków z możliwością udostępniania"
@@ -7958,10 +8121,10 @@
         "Zobowiązujemy się pomagać klientom podlegającym przepisom HIPAA/HITECH w zabezpieczaniu chronionych informacji zdrowotnych (PHI). Podpisane umowy BAA są dostępne dla wszystkich klientów biznesowych ${ BRAND_NAME }."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        "Po podłączeniu do naszej sieci VPN, zapytania DNS są przesyłane przez szyfrowany tunel VPN, co zwiększa Twoją prywatność i bezpieczeństwo online"
+        "Po połączeniu z usługą VPN, zapytania DNS są przesyłane przez szyfrowany tunel VPN, co zwiększa Twoją prywatność i bezpieczeństwo online"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        "W przypadku wysyłania do innych użytkowników ${ MAIL_APP_NAME } szyfrowanie jest automatyczne. Wysyłanie do użytkowników spoza ${ MAIL_APP_NAME } wymaga ustawienia hasła przed wysłaniem."
+        "Podczas wysyłania wiadomości do użytkowników ${ MAIL_APP_NAME } szyfrowanie jest automatyczne. Wysyłanie do użytkowników spoza ${ MAIL_APP_NAME } wymaga ustawienia hasła wiadomości."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
         "Możesz mieć więcej niż jednego administratora. Wszyscy administratorzy mogą dodawać i zarządzać użytkownikami, ale tylko główny administrator ma kontrolę nad płatnościami."
@@ -7995,7 +8158,7 @@
         "Zwiększ przestrzeń dyskową do ${ businessStorage } na użytkownika"
       ],
       "Cover more ground with support for 10 custom email domains": [
-        "Obejmij więcej obszarów dzięki obsłudze 10 niestandardowych domen poczty elektronicznej"
+        "Pracuj przy wielu projektach dzięki wsparciu dla 10 niestandardowych domen"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
         "Utwórz do ${ numberOfPersonalCalendars } osobistego kalendarza",
@@ -8466,6 +8629,20 @@
         "Dodaj swoje imię i nazwisko (lub nazwę firmy) oraz adres do faktury"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        "skontaktuj się"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Wybierz liczbę użytkowników w planie. Każdy dodatkowy użytkownik kosztuje ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Jeśli potrzebujesz ponad ${ maxUsers } użytkownika, ${ contact } z naszym zespołem sprzedaży.",
+        "Jeśli potrzebujesz ponad ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
+        "Jeśli potrzebujesz ponad ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży.",
+        "Jeśli potrzebujesz ponad ${ maxUsers } użytkowników, ${ contact } z naszym zespołem sprzedaży."
+      ]
+    },
     "Price": {
       "Free": [
         "Za darmo"
@@ -8734,9 +8911,6 @@
       ],
       "Preview": [
         "Podgląd"
-      ],
-      "Sieve editor": [
-        "Edytuj filtr Sieve"
       ]
     },
     "Storage": {
@@ -9145,14 +9319,6 @@
       ],
       "vCard field": [
         "Pole vCard"
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Przedstawiamy zaktualizowane usługi Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Więcej usług, jedna misja dotycząca prywatności."
       ]
     },
     "Time period": {
@@ -10402,22 +10568,22 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Co tydzień w ${ multipleDaysString }",
-        "Co ${ interval } tygodnie w ${ multipleDaysString }",
-        "Co ${ interval } tygodni w ${ multipleDaysString }",
-        "Co ${ interval } tygodnia w ${ multipleDaysString }"
+        "Co tydzień w: ${ multipleDaysString }",
+        "Co ${ interval } tygodnie w: ${ multipleDaysString }",
+        "Co ${ interval } tygodni w: ${ multipleDaysString }",
+        "Co ${ interval } tygodnia w: ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodnie w ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodni w ${ multipleDaysString }, ${ timesString }",
-        "Co ${ interval } tygodnia w ${ multipleDaysString }, ${ timesString }"
+        "Co tydzień w: ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodnie w: ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodni w: ${ multipleDaysString }, ${ timesString }",
+        "Co ${ interval } tygodnia w: ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodnie w ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodni w ${ multipleDaysString }, ${ untilString }",
-        "Co ${ interval } tygodnia w ${ multipleDaysString }, ${ untilString }"
+        "Co tydzień w: ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodnie w: ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodni w: ${ multipleDaysString }, ${ untilString }",
+        "Co ${ interval } tygodnia w: ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Codziennie",
@@ -10564,13 +10730,13 @@
         "Co ${ interval } tygodnia w środę, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Co tydzień w ${ multipleDaysString }"
+        "Co tydzień w: ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ timesString }"
+        "Co tydzień w: ${ multipleDaysString }, ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Co tydzień w ${ multipleDaysString }, ${ untilString }"
+        "Co tydzień w: ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
         "Codziennie"
@@ -10647,25 +10813,25 @@
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "Piątek"
+        "piątek"
       ],
       "Monday": [
-        "Poniedziałek"
+        "poniedziałek"
       ],
       "Saturday": [
-        "Sobota"
+        "sobota"
       ],
       "Sunday": [
-        "Niedziela"
+        "niedziela"
       ],
       "Thursday": [
-        "Czwartek"
+        "czwartek"
       ],
       "Tuesday": [
-        "Wtorek"
+        "wtorek"
       ],
       "Wednesday": [
-        "Środa"
+        "środa"
       ]
     },
     "Yearly recurring event, frequency": {

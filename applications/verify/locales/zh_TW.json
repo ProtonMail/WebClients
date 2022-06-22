@@ -12,7 +12,7 @@
         "關閉"
       ],
       "Close modal": [
-        "關閉視窗"
+        "關閉對話框"
       ],
       "Didn't receive the code?": [
         "沒有收到驗證碼嗎？"
@@ -33,7 +33,7 @@
         "重新整理此頁面"
       ],
       "Request new code": [
-        "請求新驗證碼"
+        "申請新驗證碼"
       ],
       "Submit": [
         "送出"
@@ -52,6 +52,68 @@
       ],
       "View invoice": [
         "查看帳單"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "胡蘿蔔"
+      ],
+      "cerise": [
+        "櫻桃"
+      ],
+      "cobalt": [
+        "鈷"
+      ],
+      "copper": [
+        "銅"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "蕨類"
+      ],
+      "forest": [
+        "森林"
+      ],
+      "ocean": [
+        "海洋"
+      ],
+      "olive": [
+        "橄欖"
+      ],
+      "pacific": [
+        "太平洋"
+      ],
+      "pickle": [
+        "泡菜"
+      ],
+      "pine": [
+        "松樹"
+      ],
+      "pink": [
+        "粉紅色"
+      ],
+      "plum": [
+        "梅子"
+      ],
+      "purple": [
+        "紫色"
+      ],
+      "reef": [
+        "礁石"
+      ],
+      "sahara": [
+        "撒哈拉"
+      ],
+      "slateblue": [
+        "板岩藍"
+      ],
+      "soil": [
+        "土壤"
+      ],
+      "strawberry": [
+        "草莓"
       ]
     },
     "Country name": {
@@ -877,7 +939,7 @@
     },
     "Human verification method": {
       "CAPTCHA": [
-        "驗證碼"
+        "CAPTCHA"
       ],
       "Email": [
         "電子郵件"
@@ -886,7 +948,7 @@
         "手動"
       ],
       "No verification method available": [
-        "沒有可用的驗證方式"
+        "無適用的驗證方法"
       ],
       "SMS": [
         "簡訊"
@@ -894,16 +956,16 @@
     },
     "Info": {
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "請求新的驗證碼前，請先檢查您的垃圾郵件資料夾，並檢查 ${ strong } 的地址是否正確。"
+        "在您申請一組新驗證碼前，請先查看驗證碼郵件是否在垃圾郵件資料夾，並檢查 ${ strong } 的位址是否正確。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
+        "點擊「申請新代碼」以便將一組新的驗證碼傳送至 ${ strong }。如果此電話號碼不正確，請點擊「編輯」進行更正。"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
-        "請輸入發送到 ${ destinationText } 的驗證碼。"
+        "請輸入 ${ destinationText } 接收到的驗證碼。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
+        "若您在創建帳號時出現問題，可提出邀請需求，我們會在一個工作日內回覆。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
@@ -924,33 +986,33 @@
         "工作階段已逾時"
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "為防止垃圾郵件及濫用，請驗證您是真人。"
+        "為反制垃圾郵件及濫用，請驗證您是真人。"
       ],
       "We'll send a new verification code to ${ strong }": [
-        "我們將會向 ${ strong } 傳送新的驗證碼"
+        "我們將傳送新的驗證碼至 ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "您想要接收新的驗證碼，還是換一個驗證方法？"
+        "請問您需要申請新的驗證碼，或使用另一種驗證方法？"
       ],
       "Would you like to receive a new verification code?": [
-        "您想要收到新的驗證碼嗎？"
+        "請問您需要申請新的驗證碼嗎？"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次驗證。"
+        "您的電郵位址僅作為一次性驗證用途。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼只會用於此一次性驗證。"
+        "您的電話號碼僅作為一次性驗證用途。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
+        "您的 Proton 帳號目前暫時無法提供服務。為確保您的帳號權益，請儘速繳納逾期帳單。"
       ]
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "驗證碼為六位數且無空格"
+        "驗證碼為六個數字且無空格"
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -973,7 +1035,7 @@
         "了解更多"
       ],
       "Request an invite": [
-        "請求邀請"
+        "提出邀請需求"
       ]
     },
     "Placeholder": {
@@ -983,7 +1045,7 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "已向 ${ methodTo } 發送驗證碼"
+        "驗證碼已發送至 ${ methodTo }"
       ],
       "Verification successful": [
         "驗證成功"
@@ -997,7 +1059,7 @@
         "無效的驗證碼"
       ],
       "Request new code": [
-        "要求新代碼"
+        "申請新代碼"
       ],
       "Sign in again to continue": [
         "請重新登入以繼續"

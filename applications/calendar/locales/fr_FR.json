@@ -370,6 +370,9 @@
       "Send": [
         "Envoyer"
       ],
+      "Send feedback": [
+        "Envoyer un avis"
+      ],
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         " : "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "carotte"
+      ],
+      "cerise": [
+        "rouge cerise"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "cuivre"
+      ],
+      "enzian": [
+        "gentiane"
+      ],
+      "fern": [
+        "fougère"
+      ],
+      "forest": [
+        "forêt"
+      ],
+      "ocean": [
+        "océan"
+      ],
+      "olive": [
+        "olive"
+      ],
+      "pacific": [
+        "pacifique"
+      ],
+      "pickle": [
+        "cornichon"
+      ],
+      "pine": [
+        "pin"
+      ],
+      "pink": [
+        "rose"
+      ],
+      "plum": [
+        "prune"
+      ],
+      "purple": [
+        "violet"
+      ],
+      "reef": [
+        "récif"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "bleu ardoise"
+      ],
+      "soil": [
+        "terre"
+      ],
+      "strawberry": [
+        "fraise"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "L'événement appartient à un calendrier désactivé."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Ne plus demander"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Ajouter un calendrier"
@@ -2521,6 +2591,11 @@
         "(sans titre)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Votre retour d'expérience"
+      ]
+    },
     "file size format": {
       "bytes": [
         "octets"
@@ -2731,9 +2806,6 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre permission pour ${ enableDesktopNotifications }."
       ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } a été ajouté à la suite Proton. Nous aimerions savoir ce que vous en pensez !"
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nouveau calendrier",
         "${ calendarsToBeCreatedCount } nouveaux calendriers"
@@ -2747,15 +2819,15 @@
         "${ calendarsToBeMergedCount } calendriers fusionnés"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contact présente plusieurs adresses électroniques.",
-        "${ contactCount } contacts présentent plusieurs adresses électroniques."
+        "Le contact ${ contactCount } dispose de plusieurs adresses e-mail.",
+        "Les contacts ${ contactCount } disposent de plusieurs adresses e-mail."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membre",
         "${ contactEmailsLength } membres"
       ],
       "${ contactName } contains multiple email addresses.": [
-        "${ contactName } présente plusieurs adresses électroniques."
+        "${ contactName } dispose de plusieurs adresses e-mail."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contact trouvé",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(temporairement indisponible. Veuillez vérifier plus tard)"
       ],
-      "0 - Not likely": [
-        "0 - Improbable"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extrêmement probable"
-      ],
       "Add email address": [
         "Ajouter une adresse électronique"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Enregistrer automatiquement les contacts"
+      ],
+      "Awful": [
+        "Affreuse"
+      ],
+      "Bad": [
+        "Mauvaise"
       ],
       "Browser": [
         "Navigateur"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "De : ${ importedEmail }"
       ],
+      "Good": [
+        "Bonne"
+      ],
       "Hide password": [
         "Masquer le mot de passe"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Quelle est la probabilité que vous recommandiez ${ calendarAppName } à un ami ou à un collègue ?"
+      "How would you describe your experience with the new Proton?": [
+        "Comment décririez-vous votre expérience avec la nouvelle version de Proton ?"
       ],
       "I understand the risk": [
         "Je comprends le risque"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Notifications"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Système d’exploitation"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Que s’est-il passé ?"
+      ],
+      "Wonderful": [
+        "Merveilleuse"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Parlez-nous de votre expérience (optionnel)"
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Donnez votre avis"
-      ],
       "Updated Proton, unified protection": [
         "Nouvelle version, protection unifiée"
       ]

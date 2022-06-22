@@ -6,16 +6,16 @@
   "contexts": {
     "Access level": {
       "Full": [
-        "完全"
+        ""
       ],
       "Full view": [
-        "完整查看"
+        ""
       ],
       "Limited": [
-        "受限"
+        ""
       ],
       "Limited view": [
-        "受限查看"
+        ""
       ]
     },
     "Action": {
@@ -104,7 +104,7 @@
         "应用"
       ],
       "Attach screenshot(s)": [
-        "附截图"
+        "添加截图"
       ],
       "Authenticate": [
         "认证"
@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "确认打开链接 ${ linkToShow }"
       ],
-      "contact": [
-        "联系"
-      ],
       "Contact support": [
         "联系客服"
       ],
@@ -182,7 +179,7 @@
         "切换到"
       ],
       "Continue with Google": [
-        "使用 Google 账号继续"
+        "使用 Google 账号登录"
       ],
       "Copy": [
         "复制"
@@ -347,7 +344,7 @@
         "删除前导出密钥"
       ],
       "Extend": [
-        ""
+        "续期"
       ],
       "Font": [
         "字体"
@@ -551,7 +548,7 @@
         "移除此标签"
       ],
       "Remove this notification": [
-        "移除这个通知？"
+        "移除通知"
       ],
       "Rename": [
         "重命名"
@@ -605,10 +602,10 @@
         "评论"
       ],
       "Revoke": [
-        "下线"
+        "吊销"
       ],
       "Revoke ${ name }": [
-        "下线 ${ name }"
+        "吊销 ${ name }"
       ],
       "Revoke all other sessions": [
         "其余设备全部下线"
@@ -629,13 +626,13 @@
         "开通 ${ planTitle }"
       ],
       "Select calendar view": [
-        "更改日历视图"
+        "选择日历视图"
       ],
       "Select files": [
         "选择文件"
       ],
       "Select language for invitation emails": [
-        "选择邀请邮件的语言"
+        "选择邀请邮件的使用语言"
       ],
       "Select timezone": [
         "选择时区"
@@ -674,10 +671,10 @@
         "显示标签"
       ],
       "Show less": [
-        "显示更少"
+        "收起"
       ],
       "Show more": [
-        "显示更多"
+        "展开"
       ],
       "Show preview": [
         "显示预览"
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "帮助"
-      ],
-      "Switch to rich text": [
-        "切换为富文本"
       ],
       "Top up": [
         "充值"
@@ -912,7 +906,7 @@
     },
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
-        ""
+        "正在使用此证书的所有路由器和客户端都将断开连接。"
       ]
     },
     "Apps dropdown": {
@@ -987,13 +981,13 @@
     },
     "Billing cycle option": {
       "1 month": [
-        ""
+        "1 个月"
       ],
       "12 months": [
-        ""
+        "12 个月"
       ],
       "24 months": [
-        ""
+        "24 个月"
       ],
       "Annually": [
         "按年付费"
@@ -1199,31 +1193,31 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "您可以将其他日历的 ICS 文件导入到 ${ CALENDAR_APP_NAME }，方便您快速导入一个日程或整个议程。"
+        ""
       ]
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "您已达到您账户等级所能创建的个人日历数上限。"
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "您已达到订阅日历的最大值 ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } 个。"
+        ""
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "标签已添加"
+        ""
       ],
       "Label deleted": [
-        "标签已删除"
+        ""
       ],
       "Label edited": [
-        "标签已更改"
+        ""
       ]
     },
     "Calendar status": {
       "Active": [
-        "已激活"
+        "活动"
       ],
       "Default": [
         "默认"
@@ -1266,7 +1260,7 @@
     },
     "Calendar view": {
       "Day": [
-        "天"
+        ""
       ],
       "Month": [
         "月"
@@ -1289,6 +1283,173 @@
       ],
       "Open": [
         "打开"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        "柠檬黄"
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        ""
       ]
     },
     "Condition for custom filter": {
@@ -2221,7 +2382,7 @@
     },
     "Cycle": {
       "/month": [
-        ""
+        "/月"
       ],
       "/user per month": [
         ""
@@ -2235,22 +2396,22 @@
         "每天"
       ],
       "Daily, ${ timesString }": [
-        "每天，${ timesString }"
+        ""
       ],
       "Daily, ${ untilString }": [
-        "每天，${ untilString }"
+        ""
       ],
       "Every ${ interval } day": [
         "每 ${ interval } 天"
       ],
       "Every ${ interval } day, ${ timesString }": [
-        "每 ${ interval } 天，${ timesString }"
+        ""
       ],
       "Every ${ interval } day, ${ untilString }": [
-        "每 ${ interval } 天，${ untilString }"
+        ""
       ],
       "until ${ dateString }": [
-        "直到${ dateString }"
+        "直到 ${ dateString }"
       ]
     },
     "Day": {
@@ -2363,16 +2524,16 @@
     },
     "Duration": {
       "120 minutes": [
-        "120 分钟"
+        ""
       ],
       "30 minutes": [
-        "30 分钟"
+        ""
       ],
       "60 minutes": [
-        "60 分钟"
+        ""
       ],
       "90 minutes": [
-        "90 分钟"
+        ""
       ]
     },
     "Email body for description (description part)": {
@@ -2440,7 +2601,7 @@
     },
     "Email Unsubscribe": {
       "Which emails do you want to receive from ${ BRAND_NAME }?": [
-        "您想要从 ${ BRAND_NAME } 接收哪些电子邮件？"
+        "您想订阅哪些 ${ BRAND_NAME } 官方邮件？"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
         "您已重新订阅 ${ categoriesJsx } 电子邮件。"
@@ -2997,7 +3158,7 @@
         "错误：${ errorMessage }"
       ],
       "Invalid URL": [
-        "链接无效"
+        ""
       ],
       "Oops, something went wrong": [
         "糟糕，出错了"
@@ -3023,7 +3184,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        ""
+        "证书 ${ name } 不存在或已被吊销"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "姓氏和名字至少应勾选一个"
@@ -3036,10 +3197,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "活动 @ ${ timeString }"
+        ""
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "${ timeString } 开始的活动，${ rruleString }"
+        ""
       ]
     },
     "Event invitation error": {
@@ -3093,49 +3254,49 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } 日程已导出"
+        ""
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "成功导出日历，您现在可以保存 ICS 文件。"
+        ""
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "正在解密您日历中的日程: ${ totalProcessed }/${ totalToProcess }"
+        ""
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "由于密码重置，您的任何日程都无法解密和导出。"
+        ""
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "由于密码重置，您的某些日程无法解密和导出。"
+        ""
       ],
       "Error decrypting event": [
-        "解密日程时出错"
+        ""
       ],
       "Learn how to restore encrypted events with old password": [
-        "了解如何使用旧密码来恢复加密日程"
+        ""
       ],
       "Loading events": [
-        "日程加载中"
+        ""
       ],
       "None of the events could be exported.": [
-        "没有任何日程可以导出。"
+        ""
       ],
       "Password reset - event cannot be decrypted": [
-        "密码重置 - 日程无法解密"
+        ""
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "密码重置 - 多个日程无法解密"
+        ""
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "导出结束前请勿关闭此网页。"
+        ""
       ],
       "Some of your events could not be exported.": [
-        "某些日程无法导出。"
+        ""
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "网络连接中断，致使导出过程失败，请重试。"
+        ""
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "您可以保存成功导出日程的 ICS 文件。"
+        ""
       ]
     },
     "Feature": {
@@ -3196,6 +3357,9 @@
       "Inbox": [
         "收件箱"
       ],
+      "Inbox - Default": [
+        ""
+      ],
       "Select a folder": [
         "选择文件夹"
       ],
@@ -3248,8 +3412,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "定制筛选规则可以自动执行某些操作，例如加标签或将邮件存档。"
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "针对发件人的筛选规则可以在这里设置。来自白名单的邮件会被一律归入收件箱，而来自黑名单的则一律归为垃圾邮件。将邮件标为垃圾邮件后其发件人也会被加入黑名单，而标为非垃圾邮件则会被加入白名单。"
@@ -3301,7 +3465,7 @@
         "操作"
       ],
       "Calendar": [
-        "日历"
+        ""
       ],
       "Event": [
         "事件"
@@ -3316,10 +3480,10 @@
         "密钥类型"
       ],
       "Label": [
-        "标签"
+        ""
       ],
       "Name": [
-        "名称"
+        ""
       ],
       "Notifications": [
         "通知"
@@ -3328,13 +3492,13 @@
         "机构密钥指纹"
       ],
       "Status": [
-        "状态"
+        ""
       ],
       "Time": [
         "时间"
       ],
       "What others see": [
-        "对外显示"
+        ""
       ]
     },
     "Header for addresses table": {
@@ -3812,7 +3976,7 @@
         "${ boldWarning } 如果继续，您将无法访问您账户中的所有当前加密数据。"
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 将成为默认分类。"
+        "${ calendarName } 将设置为默认日历。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 个新日历"
@@ -3923,7 +4087,7 @@
         "10 个邮箱地址"
       ],
       "2. They try ${ planName }": [
-        "2. 他们试用了 ${ planName }"
+        "2. 体验 ${ planName }"
       ],
       "20% discount applied to your subscription with coupon ${ code }": [
         "使用优惠码 ${ code } 即可享受 20% 的优惠。"
@@ -3935,7 +4099,7 @@
         "30 天内可退款。"
       ],
       "A name to help you identify where you use it so you can easily revoke it or extend it later.": [
-        ""
+        "名称中可注明证书用途，便于今后续期或吊销。"
       ],
       "A recovery file lets you unlock and view your data after an account reset. ": [
         "A recovery file lets you unlock and view your data after an account reset."
@@ -4037,13 +4201,13 @@
         "并"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "任何有此链接的人都可以查看此日历的所有活动详情。例如标题、地点或参与者。"
+        ""
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看活动详细信息，例如标题、地点或参与者。"
+        ""
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "任何有此链接的人都无法同步或获取您日历内容更新。如果您想再次授予他们访问权限，则必须创建一个新链接。"
+        ""
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL 读取您的个人数据，以便为广告商和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
@@ -4142,7 +4306,7 @@
         "若现在离开，所作更改将不会被保存"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "分享此日历的完整活动详情，即表示您同意授权 Proton 访问此日历的加密信息。"
+        ""
       ],
       "Center": [
         "居中"
@@ -4175,7 +4339,7 @@
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "创建日历链接并与 Proton 以外的任何人分享。请放心：只有您可以添加或删除日程。"
+        ""
       ],
       "Create a new account and share the email address and password with the user.": [
         "创建一个新的账户并与此用户共享电子邮件地址和密码。"
@@ -4202,25 +4366,22 @@
         "自定义"
       ],
       "Custom daily": [
-        "个人每日计划。"
+        "个人每日计划"
       ],
       "Custom email domains": [
         "自有域名"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "筛选规则对往后的所有邮件都有效，既包括收到的，也包括发出的。使用 Sieve 编程语言可以直接创建或修改规则。"
-      ],
       "Custom monthly": [
-        "个人月计划。"
+        "个人月计划"
       ],
       "Custom weekly": [
-        "个人周计划。"
+        "个人周计划"
       ],
       "Custom yearly": [
-        "个人年计划。"
+        "个人年计划"
       ],
       "Daily": [
-        "每日"
+        "每天"
       ],
       "Data locked": [
         "数据已锁定"
@@ -4229,7 +4390,7 @@
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
       ],
       "Delete link?": [
-        "要删除链接吗？"
+        "删除链接？"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "优惠码 ${ code } 已计入，可用于您本次的结算。"
@@ -4266,6 +4427,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "下载您的 PGP 密钥以用于其他 PGP 兼容服务。"
+      ],
+      "Drop a file here to upload": [
+        ""
       ],
       "Drop the file here to upload": [
         "将文件拖至此处上传"
@@ -4340,19 +4504,16 @@
         "请输入您的恢复电话号码，我们将发送您的用户名或电子邮件地址信息。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "会通过这个语言发送活动邀请或回复信息。"
+        ""
       ],
       "Expired": [
         "已过期"
       ],
       "expires ${ expirationDate }": [
-        "${ expirationDate } 后过期"
+        "${ expirationDate } 过期"
       ],
       "Failed to fetch logs.": [
         "获取日志失败。"
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称和一段 Sieve 代码。"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
@@ -4391,7 +4552,7 @@
         "若其他管理员更改了此密码，您需要向其询问新的机构密码。"
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "若系统时区与当前时区不一致，则询问是否更改（每天最多一次）。"
+        ""
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "若此域名正接收邮件，请在更改 MX 记录前点选 ${ boldAddresses } 选项卡并添加所有活跃中的邮件地址以确保平稳转移服务。"
@@ -4558,6 +4719,9 @@
       "Learn more": [
         "了解详情"
       ],
+      "learn more about Sieve programming language": [
+        ""
+      ],
       "Left to Right": [
         "从左到右"
       ],
@@ -4565,10 +4729,10 @@
         "向他人表明您对隐私的关切。"
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "简视图：其他人看见你是否在忙；全视图：显示日程所有详细信息，包括姓名、地点以及参与者。"
+        ""
       ],
       "Link copied to clipboard": [
-        "链接已复制到剪切板"
+        "链接已复制到剪贴板"
       ],
       "Link created": [
         "链接已创建"
@@ -4666,9 +4830,6 @@
       "No results found": [
         "未找到结果"
       ],
-      "Normal": [
-        "常规"
-      ],
       "Not a valid URL": [
         "URL 无效"
       ],
@@ -4740,9 +4901,6 @@
       ],
       "Phone number": [
         "电话号码"
-      ],
-      "Plain text": [
-        "纯文本"
       ],
       "Plan upgrade required": [
         "需升级账户"
@@ -4879,9 +5037,6 @@
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         ""
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "选择您的计划所包含的用户数量，每个用户需要花费 ${ price }。如果您需要多于 ${ maxUsers } 个用户，请联系我们的客户支持团队 ${ contactMailToLink }。"
-      ],
       "Select what you want to move from Google.": [
         "请选择你要从 Google 账户导入的内容。"
       ],
@@ -4967,7 +5122,7 @@
         "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
       ],
       "The calendar will be removed from your account.": [
-        "日历将会从您的帐户中移除。"
+        "日历将会从您的账号中移除。"
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "置顶列表的电子邮件地址是您的默认电子邮件地址，拖放可重新排列。"
@@ -5057,7 +5212,7 @@
         "接下来将为您的 Proton 账户开启双重验证，提升账户安全性。"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "为了避免数据损失，只有您知道您在做什么，或已经导出备份的情况下才删除它。"
+        "为避免丢失数据，删除密钥前请确认您了解执行该操作的后果，并确保此密钥已妥善备份。"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "如果确定要执行此操作，请再次输入您要删除的用户名称。"
@@ -5094,6 +5249,9 @@
       ],
       "To use ${ toAppName }, please create an address.": [
         "创建一个地址以使用${ toAppName }。"
+      ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "充值后即可使用余额升级账户或增添服务项目。余额与${ i18nCurrency }等值。"
@@ -5141,7 +5299,7 @@
         "更新恢复密语"
       ],
       "Update the URL in your password manager": [
-        "在密码管理器中更新 URL"
+        "请在密码管理器中更新本站网址"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "立即升级账户即可继续享有下列 ${ planName } 权益。"
@@ -5156,7 +5314,7 @@
         "网址"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
-        ""
+        "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "在没有客户端时，请使用以下凭证连接到 ${ VPN_APP_NAME } 服务器。示例包括：macOS 下的 Tunnelblick, GNU/Linux 下的 OpenVPN。"
@@ -5252,7 +5410,7 @@
         "Yandex 记录您的在线活动并读取您的个人数据，以便为广告商和其他第三方提供访问。为了更好地保护您的隐私，请创建一个安全的电子邮件地址。"
       ],
       "Yearly": [
-        "按年"
+        ""
       ],
       "You already have a free account": [
         "您的账户已经是免费版了"
@@ -5268,9 +5426,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以在 ${ importProgressLink } 查看导入进度。"
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接，要新建链接请先从下方列表中删除一个。"
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "您可以定制并下载账单用于记账。"
@@ -5312,7 +5467,7 @@
         "您需要使用机构管理员提供给您的备份机构密码激活您的机构私钥。"
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自定义域名。"
+        "降级前需要停用或移除所有额外的 ${ MAIL_APP_NAME } 用户、地址和自有域名。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "您的 PayPal 账户需要绑定信用卡或银行账户才能作为支付方式。"
@@ -5324,10 +5479,10 @@
         "取消订阅前，请删除任何附加的个人日历和共享日历链接。"
       ],
       "You need to have a personal calendar to create a link.": [
-        "您需要有个人日历才能创建链接。"
+        ""
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        "从.ics导入您的日程之前需要有一个启用的个人日历。"
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "导入您的日程之前您需要有一个启用的个人日历。"
@@ -5342,7 +5497,7 @@
         "您需要导出此密钥的备份，以供恢复其加密的数据。"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "您仍然需要回复活动举办方的邀请，让他们看到您的回应。"
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "你将会丢失${ BRAND_NAME } 账户下的${ loseAllData }。要想恢复，请输入原来的密码。"
@@ -5819,7 +5974,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "了解如何操作"
+        ""
       ]
     },
     "Label": {
@@ -5905,10 +6060,10 @@
         "附上公钥"
       ],
       "Attach screenshot(s)": [
-        "附加屏幕截图"
+        "截图"
       ],
       "Auto-detect primary time zone": [
-        "自动检测主时区"
+        "自动检测主要时区"
       ],
       "Auto-load embedded images": [
         "自动加载嵌入图像"
@@ -5959,7 +6114,7 @@
         "类别"
       ],
       "Choose a name for the generated certificate file": [
-        ""
+        "输入新证书的名称"
       ],
       "Code": [
         "验证码"
@@ -5968,7 +6123,7 @@
         "验证码是无空格的六位数"
       ],
       "Color": [
-        "颜色"
+        ""
       ],
       "Composer": [
         "编辑窗"
@@ -5986,7 +6141,7 @@
         "条件"
       ],
       "Config to connect to ${ serverName }": [
-        ""
+        "用于连接 ${ serverName } 的配置信息"
       ],
       "Confirm link URLs": [
         "确认打开链接"
@@ -6055,28 +6210,28 @@
         "星期"
       ],
       "Default email address": [
-        "首选邮箱地址"
+        "默认邮箱地址"
       ],
       "Default event duration": [
-        "默认事件时长"
+        ""
       ],
       "Default full day notifications": [
-        "默认全天通知"
+        ""
       ],
       "Default language": [
         "默认语言"
       ],
       "Default language (${ defaultLanguage })": [
-        "默认语言 (${ defaultLanguage })"
+        ""
       ],
       "Default notifications": [
-        "默认通知"
+        ""
       ],
       "Default PGP scheme": [
         "默认 PGP 格式"
       ],
       "Default view": [
-        "首选视图"
+        "默认视图"
       ],
       "Delete": [
         "删除"
@@ -6085,10 +6240,10 @@
         "密度"
       ],
       "Description": [
-        "说明："
+        ""
       ],
       "Device/certificate name": [
-        "设备/证书 名称"
+        "设备或证书名称"
       ],
       "Digits": [
         "验证码位数"
@@ -6097,7 +6252,7 @@
         "优惠"
       ],
       "Display": [
-        "显示"
+        ""
       ],
       "Display name": [
         "称呼"
@@ -6250,7 +6405,7 @@
         "仅上个月"
       ],
       "Level for NetShield blocker filtering": [
-        ""
+        "NetShield 过滤级别"
       ],
       "Login password": [
         "登录密码"
@@ -6274,7 +6429,7 @@
         "内容"
       ],
       "Moderate NAT": [
-        ""
+        "保守 NAT"
       ],
       "Move to": [
         "移至"
@@ -6442,7 +6597,7 @@
         "显示次要时区"
       ],
       "Show week numbers": [
-        "显示第几周"
+        ""
       ],
       "Sign external messages": [
         "对向外发送的邮件予以数字签名"
@@ -6529,7 +6684,7 @@
         "上传一个或多个恢复文件或加密密钥"
       ],
       "URL": [
-        "网址"
+        ""
       ],
       "Use folder colors": [
         "文件夹附带颜色"
@@ -6547,7 +6702,7 @@
         "验证码"
       ],
       "VPN Accelerator": [
-        ""
+        "VPN 加速器"
       ],
       "Waiting for subscription": [
         ""
@@ -6589,10 +6744,10 @@
         "我确定要永久删除此账户及其所有数据。"
       ],
       "Your calendar URL": [
-        "您的日历链接"
+        ""
       ],
       "Your calendar URL label": [
-        "您的日历链接标签"
+        ""
       ],
       "Your password (admin)": [
         "您的密码(管理员)"
@@ -6855,6 +7010,11 @@
         "导入自${ periodFragment }以来 ${ totalLabelsCount } 个标签的所有邮件，并将其标记为${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        ""
+      ]
+    },
     "Member action": {
       "Delete": [
         "删除"
@@ -6921,7 +7081,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        "新建日历"
+        ""
       ]
     },
     "Monetary unit": {
@@ -6937,22 +7097,22 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "每 ${ interval } 个月的${ onDayString }"
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "每 ${ interval } 个月的${ onDayString }，${ timesString }"
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "每 ${ interval } 月的${ onDayString }，${ untilString }"
+        ""
       ],
       "Monthly ${ onDayString }": [
-        "每月 ${ onDayString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "每月${ onDayString }，${ timesString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "每月${ onDayString }，${ untilString }"
+        ""
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7502,7 +7662,7 @@
         "Proton 服务条款"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "如果您需要重置您的账户，请保存电子邮件地址或电话号码用于验证。"
+        "请妥善保存您填写的邮箱或电话号码，以便在意外情况下重置账户。"
       ],
       "Subscription": [
         "订购"
@@ -7525,7 +7685,7 @@
         "开通 ${ planName }"
       ],
       "Your account's usage": [
-        "您账户的使用情况"
+        "您的账户使用情况"
       ]
     },
     "new_plans: title": {
@@ -7777,35 +7937,35 @@
     },
     "Notification time input": {
       "at": [
-        "在"
+        ""
       ]
     },
     "Notification type": {
       "email": [
-        "邮箱"
+        ""
       ],
       "notification": [
-        "通知"
+        ""
       ]
     },
     "Notification when": {
       "at time of event": [
-        "日程时间"
+        ""
       ],
       "day before": [
-        "天前"
+        ""
       ],
       "hour before": [
-        "小时前"
+        ""
       ],
       "minute before": [
-        "分钟前"
+        ""
       ],
       "on the same day": [
-        "当天"
+        ""
       ],
       "week before": [
-        "周前"
+        ""
       ]
     },
     "Oauth instructions": {
@@ -8101,10 +8261,10 @@
         "您的联系方式"
       ],
       "Add a calendar description": [
-        "填写分类描述"
+        ""
       ],
       "Add a calendar name": [
-        "填写分类名称"
+        ""
       ],
       "Add gift code": [
         "输入礼品码"
@@ -8191,6 +8351,17 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "可将您的姓名（或公司名称）和地址写入账单中"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        ""
       ]
     },
     "Price": {
@@ -8333,7 +8504,7 @@
     },
     "Select search results": {
       "No results found": [
-        "搜索无结果"
+        ""
       ]
     },
     "Settings description": {
@@ -8354,7 +8525,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "未能更新设置"
+        ""
       ]
     },
     "Settings/filters": {
@@ -8438,10 +8609,10 @@
         "邀请好友注册赢取奖励！"
       ],
       "No more missed appointments": [
-        "不再错过任何日程"
+        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        "使用邮件提醒功能，您可以自由决定何时收到哪些日程的通知。"
+        ""
       ]
     },
     "State": {
@@ -8461,9 +8632,6 @@
       ],
       "Preview": [
         "预览"
-      ],
-      "Sieve editor": [
-        "Sieve 编辑器"
       ]
     },
     "Storage": {
@@ -8479,33 +8647,33 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "日历链接"
+        ""
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "要订阅外部或公共日历及其更新，请输入相应链接。一个只读版日历将添加到您订阅的日历中。\n${ kbLink }"
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "了解如何获取私人日历链接。"
+        ""
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "通过使用此链接，Google 会将您订阅的日历设为公开"
+        ""
       ],
       "This link might be wrong": [
-        "此链接可能有误"
+        ""
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "使用 URL 新增公开、外部或分享的日历。"
+        ""
       ]
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "URL 太长"
+        ""
       ]
     },
     "Subscription attribute": {
@@ -8599,7 +8767,7 @@
         "问题已反馈"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "已新增日历，可能需要几分钟才能同步"
+        "日历已添加，可能需要几分钟才能同步"
       ],
       "Calendar created": [
         "日历已创建"
@@ -8754,16 +8922,16 @@
         "地址已启用"
       ],
       "Certificate ${ name } revoked": [
-        ""
+        "证书 ${ name } 已吊销"
       ],
       "Certificate extended until ${ formattedExpirationDate }": [
-        ""
+        "证书有效期已延长至 ${ formattedExpirationDate }"
       ],
       "Config \"${ name }\" created, note that the private key is not stored and won't be shown again, you should copy or download this config.": [
-        ""
+        "${ name } 配置已创建。注意：其私钥不会存储在我们的服务器上，今后也不会再显示，您应当立刻复制或下载此配置。"
       ],
       "Creating config file for ${ serverName }": [
-        ""
+        "创建连接至 ${ serverName } 的配置文件"
       ],
       "Filter removed": [
         "规则已删除"
@@ -8790,7 +8958,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "日程无法导出的详细信息"
+        ""
       ]
     },
     "Tab in domain modal": {
@@ -8835,14 +9003,6 @@
         "vCard 字段"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "新版 Proton 闪亮登场。"
-      ],
-      "More services, one privacy mission.": [
-        "产品服务愈加丰富，隐私保护使命如一。"
-      ]
-    },
     "Time period": {
       "account creation date": [
         "账户创建"
@@ -8867,7 +9027,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "搜索时区"
+        ""
       ]
     },
     "Title": {
@@ -8881,13 +9041,13 @@
         "${ maxUsers } 位用户"
       ],
       "1. Give a name to the config to be generated": [
-        ""
+        "1. 为需要生成的证书设置名称"
       ],
       "1. Select platform": [
         "1. 选择平台"
       ],
       "2. Select platform": [
-        ""
+        "2. 选择平台"
       ],
       "2. Select protocol": [
         "2. 选择协议"
@@ -8899,10 +9059,10 @@
         "3. 选择配置文件并下载"
       ],
       "3. Select VPN options": [
-        ""
+        "3. 设置 VPN 选项"
       ],
       "4. Select a server to connect to": [
-        ""
+        "4. 选择需要连接的服务器"
       ],
       "Account and password": [
         "账户和密钥"
@@ -8923,7 +9083,7 @@
         "添加地址"
       ],
       "Add another notification to remind you of this event": [
-        "添加另一个提醒您此日程的通知"
+        ""
       ],
       "Add contact group name": [
         "添加联系人群组名称"
@@ -9085,7 +9245,7 @@
         "创建 ${ mailAppName } 地址"
       ],
       "Create calendar": [
-        "创建日历"
+        ""
       ],
       "Create your ${ BRAND_NAME } Account": [
         "创建 ${ BRAND_NAME } 账户"
@@ -9151,7 +9311,7 @@
         "删除账户"
       ],
       "Delete calendar": [
-        "删除日历"
+        ""
       ],
       "Delete key permanently?": [
         "永久删除密钥？"
@@ -9193,7 +9353,7 @@
         "更改黑名单"
       ],
       "Edit calendar": [
-        "编辑日历"
+        ""
       ],
       "Edit credit/debit card": [
         "编辑信用卡/借记卡"
@@ -9445,7 +9605,7 @@
         "邀请记录"
       ],
       "Remove calendar": [
-        "删除日历"
+        ""
       ],
       "Report a problem": [
         "反馈问题"
@@ -9466,7 +9626,7 @@
         "恢复管理员权限"
       ],
       "Revoke certificate": [
-        "撤销证书"
+        "吊销证书"
       ],
       "Save contact details": [
         ""
@@ -9490,13 +9650,13 @@
         "选择联系人群组"
       ],
       "Select the time to send this notification": [
-        "选择发送该通知的时间"
+        ""
       ],
       "Select the way to send this notification": [
-        "选择发送该通知的方式"
+        ""
       ],
       "Select when you want this notification to be sent": [
-        "选择您希望发送该通知的时间"
+        ""
       ],
       "Session management": [
         "登录设备管理"
@@ -9637,7 +9797,7 @@
         "${ domain } 地址已激活"
       ],
       "Your calendar link": [
-        "您的日历链接"
+        ""
       ],
       "Your current plan": [
         "您的账户等级"
@@ -9660,7 +9820,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "选择一个数字"
+        ""
       ]
     },
     "Title for payment methods table": {
@@ -9893,10 +10053,10 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "开通付费账户即可创建多达 ${ MAX_CALENDARS_PER_USER } 份日历，助您工作、社交、生活面面俱到。"
+        ""
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "升级至付费方案以使用链接分享您的个人日历。"
+        ""
       ]
     },
     "User role": {
@@ -10060,171 +10220,171 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "每 ${ interval } 周的${ multipleDaysString }"
+        ""
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "每${ interval } 周的${ multipleDaysString }，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "每${ interval } 周的${ multipleDaysString }，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on all days": [
         "每 ${ interval } 周整周"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "每 ${ interval } 周整周，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "每 ${ interval } 周整周，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Friday": [
         "每 ${ interval } 周的星期五"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "每 ${ interval } 周的星期五，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "每 ${ interval } 周的星期五，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Monday": [
         "每 ${ interval } 周的星期一"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "每 ${ interval } 周的星期一，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "每 ${ interval } 周的星期一，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Saturday": [
         "每 ${ interval } 周的星期六"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "每 ${ interval } 周的星期六，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "每 ${ interval } 周的星期六，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Sunday": [
         "每 ${ interval } 周的星期日"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "每 ${ interval } 周的星期日，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "每 ${ interval } 周的星期日，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Thursday": [
         "每 ${ interval } 周的星期四"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "每 ${ interval } 周的星期四，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "每 ${ interval } 周的星期四，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Tuesday": [
         "每 ${ interval } 周的星期二"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "每 ${ interval } 周的星期二，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "每 ${ interval } 周的星期二，${ untilString }"
+        ""
       ],
       "Every ${ interval } week on Wednesday": [
         "每 ${ interval } 周的星期三"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "每 ${ interval } 周的星期三，${ timesString }"
+        ""
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "每 ${ interval } 周的星期三，${ untilString }"
+        ""
       ],
       "Weekly on ${ multipleDaysString }": [
-        "每周的 ${ multipleDaysString }"
+        ""
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "每周${ multipleDaysString }，${ timesString }"
+        ""
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "每周${ multipleDaysString }，${ untilString }"
+        ""
       ],
       "Weekly on all days": [
         "每周所有天"
       ],
       "Weekly on all days, ${ timesString }": [
-        "每周所有天，${ timesString }"
+        ""
       ],
       "Weekly on all days, ${ untilString }": [
-        "每周所有天，${ untilString }"
+        ""
       ],
       "Weekly on Friday": [
         "每周五"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "每周五，${ timesString }"
+        ""
       ],
       "Weekly on Friday, ${ untilString }": [
-        "每周五，${ untilString }"
+        ""
       ],
       "Weekly on Monday": [
         "每周一"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "每周一，${ timesString }"
+        ""
       ],
       "Weekly on Monday, ${ untilString }": [
-        "每周一，${ untilString }"
+        ""
       ],
       "Weekly on Saturday": [
         "每周六"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "每周六，${ timesString }"
+        ""
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "每周六，${ untilString }"
+        ""
       ],
       "Weekly on Sunday": [
         "每周日"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "每周日，${ timesString }"
+        ""
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "每周日，${ untilString }"
+        ""
       ],
       "Weekly on Thursday": [
         "每周四"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "每周四，${ timesString }"
+        ""
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "每周四，${ untilString }"
+        ""
       ],
       "Weekly on Tuesday": [
         "每周二"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "每周二，${ timesString }"
+        ""
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "每周二，${ untilString }"
+        ""
       ],
       "Weekly on Wednesday": [
         "每周三"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "每周三，${ timesString }"
+        ""
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "每周三，${ untilString }"
+        ""
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
       "Friday": [
-        "周五"
+        "星期五"
       ],
       "Monday": [
         "星期一"
@@ -10247,22 +10407,22 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "每 ${ interval } 年"
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "每 ${ interval } 年，${ timesString }"
+        ""
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "每 ${ interval } 年，直到${ untilString }"
+        ""
       ],
       "Yearly": [
-        "每年"
+        ""
       ],
       "Yearly, ${ timesString }": [
-        "每年, ${ timesString }"
+        ""
       ],
       "Yearly, ${ untilString }": [
-        "每年，直到${ untilString }"
+        ""
       ]
     }
   }
