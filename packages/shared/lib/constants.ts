@@ -824,6 +824,8 @@ export const USER_SCOPES = {
     DRIVE: 68719476736,
 };
 
+export const DOH_DOMAINS = ['.compute.amazonaws.com'];
+
 export const PROTON_DOMAINS = [
     'protonmail.com',
     'protonmail.ch',

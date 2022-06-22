@@ -1,4 +1,4 @@
-import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES, APPS } from '../constants';
+import { APPS_CONFIGURATION, APP_NAMES, LINK_TYPES, APPS, DOH_DOMAINS } from '../constants';
 
 const PREFIX_TO_TYPE: { [prefix: string]: LINK_TYPES | undefined } = {
     'tel:': LINK_TYPES.PHONE,
@@ -182,9 +182,13 @@ export const getRelativeApiHostname = (hostname: string) => {
     return `${first}-api.${second}`;
 };
 
+export const getIsDohDomain = (origin: string) => {
+    return DOH_DOMAINS.some((dohDomain) => origin.endsWith(dohDomain));
+};
+
 export const getApiSubdomainUrl = (pathname: string) => {
     const url = new URL('/', window.location.origin);
-    if (url.hostname === 'localhost') {
+    if (url.hostname === 'localhost' || getIsDohDomain(url.origin)) {
         url.pathname = `/api${pathname}`;
         return url;
     }
@@ -215,7 +219,7 @@ export const getAppUrlRelativeToOrigin = (origin: string, appName: APP_NAMES) =>
 
 let cache = '';
 export const getStaticURL = (path: string) => {
-    if (window.location.hostname === 'localhost') {
+    if (window.location.hostname === 'localhost' || getIsDohDomain(window.location.origin)) {
         return `https://proton.me${path}`;
     }
 
