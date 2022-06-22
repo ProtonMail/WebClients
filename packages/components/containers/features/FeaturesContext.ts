@@ -74,6 +74,7 @@ export enum FeatureCode {
     RebrandingFeedbackEnabled = 'RebrandingFeedbackEnabled',
     RebrandingFeedback = 'RebrandingFeedback',
     SubscribedCalendarReminder = 'SubscribedCalendarReminder',
+    DrivePlan = 'DrivePlan',
 }
 
 export interface FeaturesContextValue {

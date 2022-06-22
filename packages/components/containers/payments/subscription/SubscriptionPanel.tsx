@@ -43,6 +43,7 @@ interface Item {
 }
 
 interface Props {
+    drivePlanEnabled: boolean;
     app: APP_NAMES;
     user: UserModel;
     currency: Currency;
@@ -55,6 +56,7 @@ interface Props {
 }
 
 const SubscriptionPanel = ({
+    drivePlanEnabled,
     app,
     currency,
     vpnServers,
@@ -287,7 +289,7 @@ const SubscriptionPanel = ({
                 if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
                 }
-                if (user.isFree && app === APPS.PROTONDRIVE) {
+                if (user.isFree && app === APPS.PROTONDRIVE && drivePlanEnabled) {
                     return getDriveAppFree();
                 }
                 if (hasVPN(subscription)) {

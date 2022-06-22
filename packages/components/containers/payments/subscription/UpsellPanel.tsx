@@ -2,29 +2,29 @@ import { ReactNode } from 'react';
 import { c, msgid } from 'ttag';
 import { format, fromUnixTime } from 'date-fns';
 import {
-    CYCLE,
-    PLANS,
+    APP_NAMES,
     APPS,
     BRAND_NAME,
-    VPN_CONNECTIONS,
+    CYCLE,
     MAIL_APP_NAME,
-    APP_NAMES,
+    PLANS,
+    VPN_CONNECTIONS,
 } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 import {
-    hasMailPro,
-    hasMail,
+    getHasLegacyPlans,
     hasDrive,
+    hasMail,
+    hasMailPro,
     hasVPN,
     isTrial,
-    getHasLegacyPlans,
 } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { StripedList, StripedItem, Button, Price, IconName, Icon } from '../../../components';
+import { Button, Icon, IconName, Price, StripedItem, StripedList } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
 import './UpsellPanel.scss';
@@ -68,6 +68,7 @@ interface Item {
 }
 
 interface Props {
+    drivePlanEnabled: boolean;
     app: APP_NAMES;
     currency: Currency;
     subscription?: Subscription;
@@ -96,7 +97,7 @@ const getUpgradeText = (planName: string) => {
     return c('new_plans: Title').t`Upgrade to ${planName}`;
 };
 
-const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app }: Props) => {
+const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModal, app, drivePlanEnabled }: Props) => {
     if (!user.canPay || !subscription) {
         return null;
     }
@@ -189,7 +190,7 @@ const UpsellPanel = ({ currency, subscription, plans, user, openSubscriptionModa
 
     const drivePlan = plans.find(({ Name }) => Name === PLANS.DRIVE);
     const driveStorage = humanSize(drivePlan?.MaxSpace ?? 500, undefined, undefined, 0);
-    if (user.isFree && app === APPS.PROTONDRIVE && drivePlan) {
+    if (user.isFree && app === APPS.PROTONDRIVE && drivePlan && drivePlanEnabled) {
         const plan = drivePlan;
         const price = (
             <Price key="plan-price" currency={currency} suffix={c('new_plans: Plan frequency').t`/month`}>
