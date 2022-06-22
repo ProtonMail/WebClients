@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "enviar correu d’auto-resposta"
       ],
+      "Send feedback": [
+        "Enviar comentaris"
+      ],
       "Send read receipt": [
         "Enviar confirmació de lectura"
       ],
@@ -849,7 +852,7 @@
         "Enviar"
       ],
       "Switch to rich text": [
-        "Canviar a text enriquit"
+        ""
       ],
       "Theme": [
         "Tema"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Obrir"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -3350,6 +3520,11 @@
         "(No title)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Bústia d’entrada"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "Selecció de carpeta"
@@ -4061,10 +4239,10 @@
         ""
       ],
       "Edit expiration time": [
-        ""
+        "Editar l'hora de caducitat"
       ],
       "Edit link": [
-        ""
+        "Editar l'enllaç"
       ],
       "Email address": [
         "Adreça de correu electrònic"
@@ -4087,7 +4265,7 @@
         "imatges integrades"
       ],
       "Encrypt message": [
-        ""
+        "Xifrar el missatge"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Introduïu el codi de verificació que s’ha enviat a ${ destinationText }."
@@ -4121,20 +4299,17 @@
         "Caduca aviat"
       ],
       "Expiring message": [
-        ""
+        "Missatge de caducitat"
       ],
       "file attached": [
         "arxiu adjunt",
         "arxius adjunts"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom i una seqüència de comandes vàlida."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Els filtres funcionen en tots els correus electrònics, inclosos els que es reben i els enviats. Cada filtre ha de contenir almenys un nom, una condició i una acció."
       ],
       "Folder": [
-        ""
+        "Carpeta"
       ],
       "For increased security, activate 2FA.": [
         "Per millorar la seguretat activeu l'autenticació de doble factor (2FA)."
@@ -4172,7 +4347,7 @@
         "Hores"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        ""
+        "Envio aquest missatge a un usuari que no és de Proton Mail."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Si teniu problemes per crear el vostre compte, sol·liciteu una invitació i us respondrem en un dia laborable."
@@ -4184,7 +4359,7 @@
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
       ],
       "Image description": [
-        ""
+        "Descripció de la imatge"
       ],
       "Image URL": [
         "URL de la imatge"
@@ -4359,7 +4534,7 @@
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "No és una URL vàlida"
@@ -4915,13 +5090,13 @@
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats el ${ dateString } a les ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats avui a les ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "El vostre missatge s'esborrarà de la safata d'entrada del destinatari i de la vostra carpeta d'enviats demà a les ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
         "",
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Desar contactes automàticament"
       ],
+      "Awful": [
+        "Horrible"
+      ],
+      "Bad": [
+        "Dolenta"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
+      "Good": [
+        "Bona"
+      ],
       "Group": [
         "Grup"
       ],
       "Hide password": [
         "Amaga la contrasenya"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         "Entenc el risc"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Notificació"
+      ],
+      "OK": [
+        "Correcta"
       ],
       "Operating system": [
         "Sistema operatiu"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "sense fitxers adjunts"
+      ],
+      "Wonderful": [
+        "Meravellosa"
       ]
     },
     "Label for contact group color": {
@@ -6065,22 +6258,10 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         ""
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        ""
-      ],
-      "5 - Wonderful": [
-        ""
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
-      ],
-      "Tell us about your experience (Optional)": [
+      "Tell us about your experience. (Optional)": [
         ""
       ]
     },
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

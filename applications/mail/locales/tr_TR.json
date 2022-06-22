@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "otomatik yanıt e-postası gönder"
       ],
+      "Send feedback": [
+        "Geri bildirim gönder"
+      ],
       "Send read receipt": [
         "Okundu bilgisi gönderilsin"
       ],
@@ -849,7 +852,7 @@
         "Gönder"
       ],
       "Switch to rich text": [
-        "Zengin metin biçimine geç"
+        ""
       ],
       "Theme": [
         "Tema"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Aç"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "elma"
+      ],
+      "azureish white": [
+        "masmavi beyaz"
+      ],
+      "blanched almond": [
+        "beyazlatılmış badem"
+      ],
+      "blue-gray": [
+        "mavi gri"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "havuç"
+      ],
+      "cerise": [
+        "kiraz"
+      ],
+      "cinnabar": [
+        "zencefil"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "bakır"
+      ],
+      "cyan-blue azure": [
+        "camgöbeği-gök mavisi"
+      ],
+      "dandelion": [
+        "karahindiba"
+      ],
+      "dark cerulean": [
+        "koyu gök mavisi"
+      ],
+      "dark midnight blue": [
+        "koyu gece mavisi"
+      ],
+      "dim gray": [
+        "koyu gri"
+      ],
+      "enzian": [
+        "kantaron"
+      ],
+      "fern": [
+        "eğrelti otu"
+      ],
+      "field drab": [
+        "orta koyu sarı"
+      ],
+      "forest": [
+        "orman"
+      ],
+      "gainsboro": [
+        "grimsi"
+      ],
+      "japanese laurel": [
+        "japon defnesi"
+      ],
+      "kiwi": [
+        "kivi"
+      ],
+      "lemon yellow": [
+        "limon sarısı"
+      ],
+      "light carmine pink": [
+        "açık parlak pembe"
+      ],
+      "light moss green": [
+        "açık yosun yeşili"
+      ],
+      "light red": [
+        "açık kırmızı"
+      ],
+      "maize": [
+        "mısır"
+      ],
+      "mughal green": [
+        "babür yeşili"
+      ],
+      "ocean": [
+        "okyanus"
+      ],
+      "olive": [
+        "zeytin"
+      ],
+      "outer space": [
+        "uzay boşluğu"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "palatinate blue": [
+        "palatinat mavisi"
+      ],
+      "pale cerulean": [
+        "soluk gök mavisi"
+      ],
+      "pastel gray": [
+        "pastel gri"
+      ],
+      "persian plum": [
+        "iran eriği"
+      ],
+      "persian red": [
+        "iran kırmızısı"
+      ],
+      "philippine gray": [
+        "filipin grisi"
+      ],
+      "philippine silver": [
+        "filipin gümüşü"
+      ],
+      "pickle": [
+        "salatalık"
+      ],
+      "pine": [
+        "çam"
+      ],
+      "pink": [
+        "pembe"
+      ],
+      "pistachio": [
+        "fıstık"
+      ],
+      "plum": [
+        "erik"
+      ],
+      "purple": [
+        "mor"
+      ],
+      "raisin black": [
+        "siyah üzüm"
+      ],
+      "reef": [
+        "resif"
+      ],
+      "ruddy pink": [
+        "pembemsi kırmızı"
+      ],
+      "sahara": [
+        "çöl"
+      ],
+      "satin sheen gold": [
+        "saten parlak altın"
+      ],
+      "slateblue": [
+        "arduvaz mavisi"
+      ],
+      "soil": [
+        "toprak"
+      ],
+      "strawberry": [
+        "çilek"
+      ],
+      "vivid auburn": [
+        "canlı kumral"
+      ],
+      "white": [
+        "beyaz"
       ]
     },
     "Composer email icon": {
@@ -3350,6 +3520,11 @@
         "(başlıksız)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Geri bildiriminiz"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bayt"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Gelen kutusu"
+      ],
+      "Inbox - Default": [
+        "Gelen kutusu - Varsayılan"
       ],
       "Select a folder": [
         "Bir klasör seçin"
@@ -4127,9 +4305,6 @@
         "dosya eklendi",
         "dosya eklendi"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Süzgeçler, alınan ve gönderilen tüm e-postalara uygulanır. Her süzgeçte en az bir ad ve geçerli bir Sieve komut dosyası bulunmalıdır."
       ],
@@ -4359,7 +4534,7 @@
         "Yüklenmiş anahtarlardan hiçbiri şifreleme için geçerli değil. Şifreleme otomatik olarak devre dışı bırakıldı."
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "Adres geçersiz"
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
       ],
+      "Awful": [
+        "Çok kötü"
+      ],
+      "Bad": [
+        "Kötü"
+      ],
       "BCC": [
         "Gizli kopya"
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
       ],
+      "Good": [
+        "İyi"
+      ],
       "Group": [
         "Grup"
       ],
       "Hide password": [
         "Parolayı gizle"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Yeni Proton ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
       ],
       "I understand the risk": [
         "Riski anladım"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Bildirim"
+      ],
+      "OK": [
+        "İdare eder"
       ],
       "Operating system": [
         "İşletim sistemi"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "ek dosyaları olmayan"
+      ],
+      "Wonderful": [
+        "Çok iyi"
       ]
     },
     "Label for contact group color": {
@@ -6065,23 +6258,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Yenilenmiş Proton böyle görünüyor.${ br }Birçok hizmet, tek amaç. Kişisel gizliliğin doğal sayıldığı internet fikrine hoş geldiniz."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Birleştirilmiş ve yenilenmiş Proton görünümünü yayınladık. Nasıl bulduğunuzu öğrenmek isteriz!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Çok kötü"
-      ],
-      "5 - Wonderful": [
-        "5 - Çok iyi"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Yeni Proton ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Bize deneyimlerinizi anlatın (isteğe bağlı)"
+      "Tell us about your experience. (Optional)": [
+        "Bize deneyimlerinizi anlatın. (İsteğe bağlı)"
       ]
     },
     "new_plans: placeholder": {
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Geri bildirim verin"
-      ],
       "Updated Proton, unified protection": [
         "Güncellenmiş Proton, birleşik koruma"
       ]

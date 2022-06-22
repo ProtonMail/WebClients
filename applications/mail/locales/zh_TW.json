@@ -81,7 +81,7 @@
         "套用"
       ],
       "Archive": [
-        ""
+        "封存"
       ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
@@ -195,7 +195,7 @@
         "密碼已複製到剪貼簿"
       ],
       "Create a new contact group": [
-        ""
+        "創建新聯絡人群組"
       ],
       "Create folder": [
         "建立資料夾"
@@ -357,7 +357,7 @@
         "前往第一頁"
       ],
       "Go to label": [
-        ""
+        "跳至標籤"
       ],
       "Go to last page": [
         "前往最後一頁"
@@ -669,7 +669,7 @@
         "恢復資料"
       ],
       "Refer a friend": [
-        ""
+        "推薦好友"
       ],
       "Refine it": [
         "重組"
@@ -761,6 +761,9 @@
       "send auto-reply email": [
         "傳送自動回覆電子郵件"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Send read receipt": [
         ""
       ],
@@ -816,7 +819,7 @@
         "顯示更多搜尋選項"
       ],
       "Show preview": [
-        ""
+        "顯示預覽"
       ],
       "Sign out": [
         "登出"
@@ -831,7 +834,7 @@
         "略過"
       ],
       "Star": [
-        ""
+        "星號"
       ],
       "Start import": [
         "開始匯入"
@@ -846,7 +849,7 @@
         "提交"
       ],
       "Switch to rich text": [
-        "切換至多文字格式"
+        ""
       ],
       "Theme": [
         "佈景主題"
@@ -891,7 +894,7 @@
         "項目符號清單"
       ],
       "Unstar": [
-        ""
+        "移除星號"
       ],
       "Unsubscribe": [
         "取消訂閱"
@@ -1582,6 +1585,173 @@
       ],
       "Open": [
         "開啟"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -3329,6 +3499,11 @@
         "(無標題)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "位元組"
@@ -3363,6 +3538,9 @@
       ],
       "Inbox": [
         "收件匣"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "選擇一個資料夾"
@@ -4058,9 +4236,6 @@
       "file attached": [
         "已附加檔案"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱及一個有效的 Sieve 指令碼。"
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
@@ -4287,7 +4462,7 @@
         "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
       "Normal": [
-        "內文"
+        ""
       ],
       "Not a valid URL": [
         "非有效的圖片網址"
@@ -5160,6 +5335,12 @@
       "Automatically save contacts": [
         "自動儲存聯絡人"
       ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
+      ],
       "BCC": [
         ""
       ],
@@ -5262,11 +5443,17 @@
       "From: ${ importedEmail }": [
         "寄件者：${ importedEmail }"
       ],
+      "Good": [
+        ""
+      ],
       "Group": [
         "群組"
       ],
       "Hide password": [
         "隱藏密碼"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -5339,6 +5526,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "作業系統"
@@ -5492,6 +5682,9 @@
       ],
       "without attachments": [
         "不帶附件"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -5975,23 +6168,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - 糟透了"
-      ],
-      "5 - Wonderful": [
-        "5 - 十全十美"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "若可行的話，您會如何描述說明在新版 Proton 中的實際體驗？"
-      ],
-      "Tell us about your experience (Optional)": [
-        "分享您精彩的體驗 (什麼都行)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -6000,9 +6181,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "告訴我們您的想法"
-      ],
       "Updated Proton, unified protection": [
         "改版更新的 Proton，全方面防護"
       ]
@@ -7026,7 +7204,7 @@
         "外部加密"
       ],
       "Feedback": [
-        ""
+        "意見反饋"
       ],
       "Filter on": [
         "篩選"

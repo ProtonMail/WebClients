@@ -370,6 +370,9 @@
       "Send": [
         "Küldés"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "Ez az esemény egy kikapcsolt naptárhoz tartozik."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        ""
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
@@ -2521,6 +2591,11 @@
         "(névtelen)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bájt"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } bekerült a Proton csomagba. Kíváncsian várjuk, hogy mit gondol róla!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } új naptár",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
-      "0 - Not likely": [
-        "0 - Egyáltalán nem"
-      ],
-      "10 - Extremely likely": [
-        "10 - Nagyon"
-      ],
       "Add email address": [
         "E-mail cím hozzáadása"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Névjegyek automatikus létrehozása"
+      ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
       ],
       "Browser": [
         "Böngésző"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "Forrás: ${ importedEmail }"
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "A jelszó elrejtése"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Mennyire ajánlaná a ${ calendarAppName } alkalmazást egy barátjának vagy kollégájának?"
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Emlékeztetők"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "Operációs rendszer"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Mi történt?"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

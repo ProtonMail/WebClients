@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Confirmar a abertura do link ${ linkToShow }"
       ],
-      "contact": [
-        "contato"
-      ],
       "Contact support": [
         "Contatar o suporte"
       ],
@@ -296,7 +293,7 @@
         "Baixar o arquivo de recuperação"
       ],
       "Download the Import-Export app": [
-        "Baixe o aplicativo Import-Export"
+        "Baixar o aplicativo Import-Export"
       ],
       "Edit": [
         "Editar"
@@ -626,7 +623,7 @@
         "Salvar selecionado"
       ],
       "Select ${ planTitle }": [
-        "Selecione ${ planTitle }"
+        "Selecionar ${ planTitle }"
       ],
       "Select calendar view": [
         "Selecionar visualização do calendário"
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Suporte"
-      ],
-      "Switch to rich text": [
-        "Alternar para rich text"
       ],
       "Top up": [
         "Recarregar"
@@ -1206,7 +1200,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Você pode importar arquivos ICS de outro calendário para ${ CALENDAR_APP_NAME }. Isso permite que você importe rapidamente um evento ou a sua agenda inteira."
+        "Você pode importar arquivos ICS de outro calendário para ${ CALENDAR_APP_NAME }. Isso permite que você rapidamente importe um evento ou sua agenda inteira."
       ]
     },
     "Calendar limit warning": {
@@ -1299,6 +1293,173 @@
       ],
       "Open": [
         "Abrir"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Apple"
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        "amêndoa branqueada"
+      ],
+      "blue-gray": [
+        "cinza azulado"
+      ],
+      "caramel": [
+        "caramelo"
+      ],
+      "carrot": [
+        "cenoura"
+      ],
+      "cerise": [
+        "cereja"
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "cyan-blue azure": [
+        "azul ciano"
+      ],
+      "dandelion": [
+        "dente-de-leão"
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        "cinza escuro"
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        "samambaia"
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        "floresta"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        "louro japonês"
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        "amarelo limão"
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        "verde musgo claro"
+      ],
+      "light red": [
+        "vermelho claro"
+      ],
+      "maize": [
+        "milho"
+      ],
+      "mughal green": [
+        "verde mogol"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "azeitona"
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        "azul palatinado"
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        "cinza pastel"
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        "vermelho persa"
+      ],
+      "philippine gray": [
+        "cinza filipino"
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        "salmoura"
+      ],
+      "pine": [
+        "pinho"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "pistachio": [
+        "pistache"
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        "recife"
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        "azul ardósia"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "morango"
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        "branco"
       ]
     },
     "Condition for custom filter": {
@@ -3220,6 +3381,9 @@
       "Inbox": [
         "Caixa de Entrada"
       ],
+      "Inbox - Default": [
+        "Caixa de entrada - padrão"
+      ],
       "Select a folder": [
         "Selecione uma pasta"
       ],
@@ -3272,8 +3436,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Adicione um filtro personalizado para executar ações automaticamente, como rotular ou arquivar mensagens."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Crie regras específicas de spam para remetentes. Mensagens de endereços ou domínios na Lista de Permitidos sempre vão para sua caixa de entrada, enquanto que mensagens de endereços ou domínios na Lista de Bloqueados sempre vão para a caixa Spam. Marcar a mensagem como spam adiciona o endereço na Lista de Bloqueados. Marcar a mensagem como \"não é spam\" adiciona na Lista de Permitidos."
@@ -3649,7 +3813,7 @@
         "Vá para ${ securitySettingsLink } em Outlook."
       ],
       "If 2-step verification is off, turn it on.": [
-        "Se a verificação dem 2 etapas estiver desligada, ligue-a."
+        "Se a verificação em 2 etapas estiver desligada, ligue-a."
       ],
       "Open your ${ yahooMailLink } contacts.": [
         "Abra seus contatos no ${ yahooMailLink }."
@@ -4260,22 +4424,19 @@
         "Personalizado"
       ],
       "Custom daily": [
-        "Personalizado diariamente"
+        "Personalização diária"
       ],
       "Custom email domains": [
         "Domínios personalizados de e-mail"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Os filtros personalizados funcionam em todos os novos e-mails, incluindo os e-mails recebidos e os e-mails enviados. Os filtros podem ser editados e criados diretamente através da linguagem de programação Sieve."
-      ],
       "Custom monthly": [
-        "Personalizado mensalmente"
+        "Personalização mensal"
       ],
       "Custom weekly": [
-        "Personalizado semanalmente"
+        "Personalização mensal"
       ],
       "Custom yearly": [
-        "Personalizado anualmente"
+        "Personalização anaul"
       ],
       "Daily": [
         "Diariamente"
@@ -4326,8 +4487,11 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Baixe suas chaves PGP para usar com outros serviços compatíveis com PGP."
       ],
+      "Drop a file here to upload": [
+        "Solte o arquivo aqui para para enviá-lo"
+      ],
       "Drop the file here to upload": [
-        "Arraste o arquivo aqui para enviá-lo"
+        "Solte o arquivo aqui para fazer o upload"
       ],
       "Earned ${ rewards } of ${ rewardsLimit } ${ planName } months.": [
         "Ganhou ${ rewards } de ${ rewardsLimit } ${ planName } meses."
@@ -4410,9 +4574,6 @@
       "Failed to fetch logs.": [
         "Falha ao buscar os registros."
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome e um script Sieve válido."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
@@ -4450,7 +4611,7 @@
         "Se outro administrador alterou esta senha, você precisará perguntar a nova senha da organização."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Se o fuso horário do sistema não coincidir com a preferência de fuso horário atual, você será solicitado a atualizá-lo (no máximo uma vez por dia)."
+        "Se o fuso horário do sistema não corresponder à preferência de fuso horário atual, você será solicitado para atualizar essa preferência (no máximo uma vez por dia)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Se este domínio está recebendo e-mails, selecione a guia ${ boldAddresses } e adicione todos os endereços de e-mail ativos antes de alterar o registro MX para garantir uma transição suave."
@@ -4532,7 +4693,7 @@
         "Importar Caixa de Entrada"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "Importe seus e-mail, calendários e contatos de outro serviço para o Proton. Nós te guiaremos em cada etapa do processo e encriptaremos seus dados conforme eles sejam migrados. Bem-vindo ao mundo da privacidade."
+        "Importe seus e-mails, calendários e contatos de outro serviço para o Proton. Nós te guiaremos em cada etapa do processo e encriptaremos seus dados conforme eles sejam migrados. Bem-vindo ao mundo da privacidade."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Importante: Por favor, certifique-se de salvar os códigos de recuperação. Caso contrário, você perderá permanentemente o acesso à sua conta se perder o dispositivo de autenticação de dois fatores."
@@ -4619,6 +4780,9 @@
       "Learn more": [
         "Saiba mais"
       ],
+      "learn more about Sieve programming language": [
+        ""
+      ],
       "Left to Right": [
         "Esquerda para direita"
       ],
@@ -4653,7 +4817,7 @@
         "Faça login no ${ MAIL_APP_NAME } para ativar seu endereço"
       ],
       "Logs include authentication attempts for all Proton services that use your Proton credentials.": [
-        "Registros incluem tentativas de autenticação de todos os serviços da Proton que usam suas credenciais Proton."
+        "Registros incluem tentativas de autenticação em todos os serviços da Proton que usam suas credenciais Proton."
       ],
       "lose access to all current encrypted data": [
         "perder o acesso a todos os dados criptografados atuais"
@@ -4671,7 +4835,7 @@
         "Mesclado"
       ],
       "Monthly ${ onDayString }": [
-        "Mensalmente ${ onDayString }"
+        "Mensalmente, ${ onDayString }"
       ],
       "more": [
         "mais"
@@ -4726,9 +4890,6 @@
       ],
       "No results found": [
         "Nenhum resultado encontrado"
-      ],
-      "Normal": [
-        "Normal"
       ],
       "Not a valid URL": [
         "Não é uma URL válida"
@@ -4802,9 +4963,6 @@
       ],
       "Phone number": [
         "Número de telefone"
-      ],
-      "Plain text": [
-        "Texto simples"
       ],
       "Plan upgrade required": [
         "Upgrade de plano necessário"
@@ -4941,9 +5099,6 @@
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Escolha Continuar para ${ name } abrir o app. Isso tambem cria uma conta ${ name } com seu endereço ${ MAIL_APP_NAME } para que você possa entrar com um click no futuro."
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Selecione o número de usuários para incluir em seu plano. Cada usuário adicional custa ${ price }. Se você precisar de mais de ${ maxUsers } contas de usuário, por favor, ${ contactMailToLink } nossa equipe de Sucesso do Cliente."
-      ],
       "Select what you want to move from Google.": [
         "Selecione o que você deseja mover do Google."
       ],
@@ -5035,7 +5190,7 @@
         "O endereço de e-mail que você colocou no topo da lista é o seu endereço de e-mail padrão. Arraste e solte para reordenar seus endereços."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "O aplicativo de Importação-Exportação permite a exportação de mensagens para backups locais e a restauração de backups anteriores para sua conta."
+        "O aplicativo Import-Export permite exportar mensagens para backups locais e restaurar backups anteriores para sua conta."
       ],
       "The name will be visible to your users while they are logged in.": [
         "O nome será visível aos seus usuários enquanto eles estiverem logados."
@@ -5156,6 +5311,9 @@
       ],
       "To use ${ toAppName }, please create an address.": [
         "Para usar ${ toAppName }, por favor crie um endereço."
+      ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        ""
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregue sua conta com créditos que podem ser utilizados para assinar um novo plano ou renovar seu plano atual. Você recebe um crédito a cada ${ i18nCurrency } gasto."
@@ -5330,9 +5488,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode acompanhar o progresso em ${ importProgressLink }."
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } links por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Você pode personalizar e baixar suas faturas para fins contábeis."
@@ -5906,7 +6061,7 @@
       ],
       "${ n } month": [
         "${ n } mês",
-        "${ n } messes"
+        "${ n } meses"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
@@ -6922,6 +7077,12 @@
         "Importar todas as mensagens de ${ totalLabelsCount } marcadores desde ${ periodFragment } e marcá-las como ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } link por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo.",
+        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } links por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Excluir"
@@ -7004,19 +7165,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "A cada ${ interval } mês ${ onDayString }",
+        "A cada ${ interval } mês, ${ onDayString }",
         "A cada ${ interval } meses, ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
         "A cada ${ interval } mês ${ onDayString }, ${ timesString }",
-        "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
+        "A cada ${ interval } meses, ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
         "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
         "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensalmente, ${ onDayString }"
+        "Mensalmente ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Mensalmente ${ onDayString }, ${ timesString }"
@@ -7030,109 +7191,109 @@
         "no dia ${ dayOfMonth }"
       ],
       "on the first Friday": [
-        "na primeira sexta-feira"
+        "na primeira Sexta-feira"
       ],
       "on the first Monday": [
-        "na primeira segunda-feira"
+        "na primeira Segunda-feira"
       ],
       "on the first Saturday": [
-        "no primeiro sábado"
+        "no primeiro Sábado"
       ],
       "on the first Sunday": [
-        "no primeiro domingo"
+        "no primeiro Domingo"
       ],
       "on the first Thursday": [
-        "na primeira quinta-feira"
+        "na primeira Quinta-feira"
       ],
       "on the first Tuesday": [
-        "na primeira terça-feira"
+        "na primeira Terça-feira"
       ],
       "on the first Wednesday": [
-        "na primeira quarta-feira"
+        "na primeira Quarta-feira"
       ],
       "on the fourth Friday": [
-        "na quarta sexta-feira"
+        "na quarta Sexta-feira"
       ],
       "on the fourth Monday": [
-        "na quarta segunda-feira"
+        "na quarta Segunda-feira"
       ],
       "on the fourth Saturday": [
-        "no quarto sábado"
+        "no quarto Sábado"
       ],
       "on the fourth Sunday": [
-        "no quarto domingo"
+        "no quarto Domingo"
       ],
       "on the fourth Thursday": [
-        "na quarta quinta-feira"
+        "na quarta Quinta-feira"
       ],
       "on the fourth Tuesday": [
-        "na quarta terça-feira"
+        "na quarta Terça-feira"
       ],
       "on the fourth Wednesday": [
-        "na quarta quarta-feira"
+        "na quarta Quarta-feira"
       ],
       "on the last Friday": [
-        "na última sexta-feira"
+        "na última Sexta-feira"
       ],
       "on the last Monday": [
-        "na última segunda-feira"
+        "na última Segunda-feira"
       ],
       "on the last Saturday": [
-        "no último sábado"
+        "no último Sábado"
       ],
       "on the last Sunday": [
-        "no último domingo"
+        "no último Domingo"
       ],
       "on the last Thursday": [
-        "na última quinta-feira"
+        "na última Quinta-feira"
       ],
       "on the last Tuesday": [
-        "na última terça-feira"
+        "na última Terça-feira"
       ],
       "on the last Wednesday": [
-        "na última quarta-feira"
+        "na última Quarta-feira"
       ],
       "on the second Friday": [
-        "na segunda sexta-feira"
+        "na segunda Sexta-feira"
       ],
       "on the second Monday": [
-        "na segunda segunda-feira"
+        "na segunda Segunda-feira"
       ],
       "on the second Saturday": [
-        "no segundo sábado"
+        "no segundo Sábado"
       ],
       "on the second Sunday": [
-        "no segundo domingo"
+        "no segundo Domingo"
       ],
       "on the second Thursday": [
-        "na segunda quinta-feira"
+        "na segunda Quinta-feira"
       ],
       "on the second Tuesday": [
-        "na segunda terça-feira"
+        "na segunda Terça-feira"
       ],
       "on the second Wednesday": [
-        "na segunda quarta-feira"
+        "na segunda Quarta-feira"
       ],
       "on the third Friday": [
-        "na terceira sexta-feira"
+        "na terceira Sexta-feira"
       ],
       "on the third Monday": [
-        "na terceira segunda-feira"
+        "na terceira Segunda-feira"
       ],
       "on the third Saturday": [
-        "no terceiro sábado"
+        "no terceiro Sábado"
       ],
       "on the third Sunday": [
-        "no terceiro domingo"
+        "no terceiro Domingo"
       ],
       "on the third Thursday": [
-        "na terceira quinta-feira"
+        "na terceira Quinta-feira"
       ],
       "on the third Tuesday": [
-        "na terceira terça-feira"
+        "na terceira Terça-feira"
       ],
       "on the third Wednesday": [
-        "na terceira quarta-feira"
+        "na terceira Quarta-feira"
       ]
     },
     "Moved to black/whitelist": {
@@ -7864,7 +8025,7 @@
     },
     "Notification time input": {
       "at": [
-        "às"
+        "em"
       ]
     },
     "Notification type": {
@@ -8192,7 +8353,7 @@
         "Uma maneira de entrar em contato com você"
       ],
       "Add a calendar description": [
-        "Adicionar uma descrição do calendário"
+        "Adicione a descrição do calendário"
       ],
       "Add a calendar name": [
         "Digite um nome para o calendário"
@@ -8282,6 +8443,18 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Adicione seu nome (ou nome da empresa) e o endereço para suas faturas"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        "contato"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
       ]
     },
     "Price": {
@@ -8552,9 +8725,6 @@
       ],
       "Preview": [
         "Visualizar"
-      ],
-      "Sieve editor": [
-        "Editor de critérios"
       ]
     },
     "Storage": {
@@ -8638,7 +8808,7 @@
       ],
       "${ UsedCalendars } calendar": [
         "${ UsedCalendars } calendário",
-        "${ UsedCalendars } calendarios"
+        "${ UsedCalendars } calendários"
       ],
       "${ UsedDomains } of ${ MaxDomains } custom domain": [
         "${ UsedDomains } de ${ MaxDomains } domínio personalizado",
@@ -8667,12 +8837,12 @@
     },
     "Subscription price": {
       "For": [
-        "Para"
+        "Por"
       ]
     },
     "Subscription saving": {
       "Save": [
-        "Salvar"
+        "Economize"
       ]
     },
     "Subtitle for trial plan": {
@@ -8937,14 +9107,6 @@
       ],
       "vCard field": [
         "campo vCard"
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Apresentamos a versão atualizada dos produtos Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Mais serviços, uma missão de privacidade."
       ]
     },
     "Time period": {
@@ -9418,7 +9580,7 @@
         "Importar via ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import-Export app": [
-        "Aplicativo de Importação-Exportação"
+        "Aplicativo Import-Export"
       ],
       "Invalid verification code": [
         "Código de verificação inválido"
@@ -10175,7 +10337,7 @@
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
         "A cada ${ interval } semana, na(o) ${ multipleDaysString }",
-        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }"
+        "A cada ${ interval } semanas, ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
         "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
@@ -10186,106 +10348,106 @@
         "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "A cada ${ interval } semana, todos os dias",
-        "A cada ${ interval } semanas, todos os dias"
+        "A cada ${ interval } das semanas, todos os dias",
+        "A cada ${ interval } das semanas, todos os dias"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "A cada ${ interval } semana, todos os dias, às ${ timesString }",
-        "A cada ${ interval } semanas, todos os dias, ${ timesString }"
+        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
         "A cada ${ interval } semana, todos os dias, ${ untilString }",
         "A cada ${ interval } semanas em todos os dias, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "A cada ${ interval } semana, na sexta-feira",
-        "A cada ${ interval } semanas, na sexta-feira"
+        "A cada ${ interval } semana, na Sexta-feira",
+        "A cada ${ interval } semanas na Sexta-feira"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "A cada ${ interval } semana, na sexta-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na sexta-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na Sexta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Sexta-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "A cada ${ interval } semana, na sexta-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na sexta-feira, ${ untilString }"
+        "A cada ${ interval } semana, na Sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Sexta-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "A cada ${ interval } semana, na segunda-feira",
-        "A cada ${ interval } semanas, na segunda-feira"
+        "A cada ${ interval } semana, à Segunda-feira",
+        "A cada ${ interval } semanas na Segunda-feira"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "A cada ${ interval } semana, na segunda-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na segunda-feira, às ${ timesString }"
+        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semanas, na Segunda-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "A cada ${ interval } semana, na segunda-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na segunda-feira, ${ untilString }"
+        "A cada ${ interval } semana, na Segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Segunda-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
-        "A cada ${ interval } semana, no sábado",
-        "A cada ${ interval } semanas, no sábado"
+        "A cada ${ interval } semana, no Sábado",
+        "A cada ${ interval } semanas, no Sábado"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "A cada ${ interval } semana, no sábado, às ${ timesString }",
-        "A cada ${ interval } semanas, no sábado, às ${ timesString }"
+        "A cada ${ interval } semana, no Sábado, às ${ timesString }",
+        "A cada ${ interval } semanas, no Sábado, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "A cada ${ interval } semana, no sábado, ${ untilString }",
-        "A cada ${ interval } semanas, no sábado, ${ untilString }"
+        "A cada ${ interval } semana, no Sábado, ${ untilString }",
+        "A cada ${ interval } semanas, no Sábado, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
-        "A cada ${ interval } semana, no domingo",
-        "A cada ${ interval } semanas, no domingo"
+        "A cada ${ interval } semana ao Domingo",
+        "A cada ${ interval } semanas, ao Domingo"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "A cada ${ interval } semana, no domingo, às ${ timesString }",
-        "A cada ${ interval } semanas, no domingo, às ${ timesString }"
+        "A cada ${ interval } semana, todos os dias, até ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, até ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "A cada ${ interval } semana, no domingo, ${ untilString }",
-        "A cada ${ interval } semanas, no domingo, ${ untilString }"
+        "A cada ${ interval } semana, no Domingo, ${ untilString }",
+        "A cada ${ interval } semanas, no Domingo, ${ untilString }"
       ],
       "Every ${ interval } week on Thursday": [
-        "A cada ${ interval } semana, na quinta-feira",
-        "A cada ${ interval } semanas, na quinta-feira"
+        "A cada ${ interval } semana, na Quinta-feira",
+        "A cada ${ interval } semanas na Quinta-feira"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "A cada ${ interval } semana, na quinta-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na quinta-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na Quinta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Quinta-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "A cada ${ interval } semana, na quinta-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na quinta-feira, ${ untilString }"
+        "A cada ${ interval } semana, na Quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Quinta-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
-        "A cada ${ interval } semana, na terça-feira",
-        "A cada ${ interval } semanas, na terça-feira"
+        "A cada ${ interval } semana, na Terça-feira",
+        "A cada ${ interval } semanas na Terça-feira"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "A cada ${ interval } semana, na terça-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na terça-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na Terça-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Terça-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "A cada ${ interval } semana, na terça-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na terça-feira, ${ untilString }"
+        "A cada ${ interval } semana, na Terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Terça-feira, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
-        "A cada ${ interval } semana, na quarta-feira",
-        "A cada ${ interval } semanas, na quarta-feira"
+        "A cada ${ interval } semana, na Quarta-feira",
+        "A cada ${ interval } semanas, na Quarta-feira"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "A cada ${ interval } semana, na quarta-feira, às ${ timesString }",
-        "A cada ${ interval } semanas, na quarta-feira, às ${ timesString }"
+        "A cada ${ interval } semana, na Quarta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na Quarta-feira, às ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "A cada ${ interval } semana, na quarta-feira, ${ untilString }",
-        "A cada ${ interval } semanas, na quarta-feira, ${ untilString }"
+        "A cada ${ interval } semana, na Quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na Quarta-feira, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Semanalmente em ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Semanalmente em ${ multipleDaysString }, às ${ timesString }"
+        "Semanalmente, ${ multipleDaysString }, até ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
         "Semanalmente em ${ multipleDaysString }, ${ untilString }"
@@ -10300,67 +10462,67 @@
         "Semanalmente em todos os dias, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Semanalmente, na sexta-feira"
+        "Semanalmente na Sexta-feira"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Semanalmente na sexta-feira, às ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Semanalmente na sexta-feira, ${ untilString }"
+        "Semanalmente na Sexta-feira, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Semanalmente na segunda-feira"
+        "Semanalmente na Segunda-feira"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Semanalmente no domingo, às ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Semanalmente na segunda-feira, ${ untilString }"
+        "Semanalmente na Segunda-feira, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Semanalmente, no sábado"
+        "Semanalmente no Sábado"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Semanalmente no sábado, às ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Semanalmente no sábado, ${ untilString }"
+        "Semanalmente no Sábado, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Semanalmente no domingo"
+        "Semanalmente, ao Domingo"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Semanalmente no domingo, ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Semanalmente no domingo, ${ untilString }"
+        "Semanalmente no Domingo, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Semanalmente, na quinta-feira"
+        "Semanalmente na Quinta-feira"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Semanalmente na quinta-feira, às ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Semanalmente na quinta-feira, ${ untilString }"
+        "Semanalmente na Quinta-feira, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Semanalmente na terça-feira"
+        "Semanalmente, à Terça-feira"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Semanalmente na quinta-feira, às ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Semanalmente na terça-feira, ${ untilString }"
+        "Semanalmente na Terça-feira, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Semanalmente, na quarta-feira"
+        "Semanalmente na Quarta-feira"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Semanalmente na quarta-feira, às ${ timesString }"
+        "Semanalmente no Domingo, ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Semanalmente na quarta-feira, ${ untilString }"
+        "Semanalmente na Quarta-feira, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10388,7 +10550,7 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "A cada ${ interval } ano",
+        "A cada ${ interval } de ano",
         "A cada ${ interval } anos"
       ],
       "Every ${ interval } year, ${ timesString }": [

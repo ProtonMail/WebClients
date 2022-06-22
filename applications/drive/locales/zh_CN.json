@@ -437,6 +437,9 @@
       "Select all": [
         "全选"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         "设置恢复密语"
       ],
@@ -814,6 +817,68 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
         ""
       ]
     },
@@ -2038,6 +2103,16 @@
         "未选择图像"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "字节"
@@ -3089,6 +3164,12 @@
       "Automatically save contacts": [
         "自动保存联系人"
       ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
+      ],
       "Browser": [
         "浏览器"
       ],
@@ -3200,8 +3281,14 @@
       "Get your own ${ appName }": [
         "获取您的专属 ${ appName }"
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "隐藏密码"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -3259,6 +3346,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "操作系统"
@@ -3385,6 +3475,9 @@
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "Wonderful": [
+        ""
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "是的，我想永久删除\n我的旧文件"
@@ -3513,6 +3606,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
       ]
     },
     "new_plans: title": {
@@ -3976,9 +4079,14 @@
         "验证成功"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
-        ""
+        "/月"
       ]
     },
     "Table header": {
@@ -4259,6 +4367,9 @@
       "Failed": [
         "失败"
       ],
+      "Feedback": [
+        ""
+      ],
       "File details": [
         "文件详细信息"
       ],
@@ -4405,6 +4516,9 @@
       ],
       "Select link expiration time": [
         "选择链接失效时间"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Settings": [
         "设置"

@@ -767,6 +767,9 @@
       "send auto-reply email": [
         "trimitere răspuns automat"
       ],
+      "Send feedback": [
+        "Trimitere feedback"
+      ],
       "Send read receipt": [
         "Trimitere confirmare de citire"
       ],
@@ -852,7 +855,7 @@
         "Trimite"
       ],
       "Switch to rich text": [
-        "Comutare la text formatat"
+        ""
       ],
       "Theme": [
         "Tema"
@@ -1592,6 +1595,173 @@
       ],
       "Open": [
         "Deschidere"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "măr"
+      ],
+      "azureish white": [
+        "alb azuric"
+      ],
+      "blanched almond": [
+        "migdale decolorate"
+      ],
+      "blue-gray": [
+        "albastru-gri"
+      ],
+      "caramel": [
+        "caramel"
+      ],
+      "carrot": [
+        "morcov"
+      ],
+      "cerise": [
+        "cireșiu"
+      ],
+      "cinnabar": [
+        "cinabru"
+      ],
+      "cobalt": [
+        "cobalt"
+      ],
+      "copper": [
+        "cupru"
+      ],
+      "cyan-blue azure": [
+        "azur cian-albastru"
+      ],
+      "dandelion": [
+        "alb păpădie"
+      ],
+      "dark cerulean": [
+        "cerulean întunecat"
+      ],
+      "dark midnight blue": [
+        "albastru închis nocturn"
+      ],
+      "dim gray": [
+        "gri deschis"
+      ],
+      "enzian": [
+        "gențiană"
+      ],
+      "fern": [
+        "ferigă"
+      ],
+      "field drab": [
+        "câmp cafeniu deschis"
+      ],
+      "forest": [
+        "pădure"
+      ],
+      "gainsboro": [
+        "gri deschis"
+      ],
+      "japanese laurel": [
+        "laur japonez"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "galben lămâie"
+      ],
+      "light carmine pink": [
+        "roz carmin deschis"
+      ],
+      "light moss green": [
+        "verde mușchi deschis"
+      ],
+      "light red": [
+        "roșu deschis"
+      ],
+      "maize": [
+        "porumb"
+      ],
+      "mughal green": [
+        "verde mughal"
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "măsliniu"
+      ],
+      "outer space": [
+        "spațiu cosmic"
+      ],
+      "pacific": [
+        "pacific"
+      ],
+      "palatinate blue": [
+        "albastru palatinat"
+      ],
+      "pale cerulean": [
+        "cerulean palid"
+      ],
+      "pastel gray": [
+        "gri pastel"
+      ],
+      "persian plum": [
+        "prune persane"
+      ],
+      "persian red": [
+        "roșu persan"
+      ],
+      "philippine gray": [
+        "gri filipinez"
+      ],
+      "philippine silver": [
+        "argintiu filipinez"
+      ],
+      "pickle": [
+        "murături"
+      ],
+      "pine": [
+        "pin"
+      ],
+      "pink": [
+        "roz"
+      ],
+      "pistachio": [
+        "fistic"
+      ],
+      "plum": [
+        "prună"
+      ],
+      "purple": [
+        "violet"
+      ],
+      "raisin black": [
+        "stafide negre"
+      ],
+      "reef": [
+        "recif"
+      ],
+      "ruddy pink": [
+        "roz ruddy"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "satin sheen gold": [
+        "aur lucios satinat"
+      ],
+      "slateblue": [
+        "ardezie albastră"
+      ],
+      "soil": [
+        "pământiu"
+      ],
+      "strawberry": [
+        "căpșună"
+      ],
+      "vivid auburn": [
+        "castaniu viu"
+      ],
+      "white": [
+        "alb"
       ]
     },
     "Composer email icon": {
@@ -3371,6 +3541,11 @@
         "(fără titlu)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Experiența personală"
+      ]
+    },
     "file size format": {
       "bytes": [
         "octeți"
@@ -3405,6 +3580,9 @@
       ],
       "Inbox": [
         "Primite"
+      ],
+      "Inbox - Default": [
+        "Primite - implicit"
       ],
       "Select a folder": [
         "Selectați un folder"
@@ -4196,9 +4374,6 @@
         "fișiere atașate",
         "fișiere atașate"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtrele funcționează asupra tuturor mesajelor, atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume și un script Sieve valid."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtrele funcționează asupra tuturor mesajelor, incluzând atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
@@ -4431,7 +4606,7 @@
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "URL nevalid"
@@ -5330,6 +5505,12 @@
       "Automatically save contacts": [
         "Salvare automată contacte"
       ],
+      "Awful": [
+        "Îngrozitoare"
+      ],
+      "Bad": [
+        "Rea"
+      ],
       "BCC": [
         "CA"
       ],
@@ -5432,11 +5613,17 @@
       "From: ${ importedEmail }": [
         "De la: ${ importedEmail }"
       ],
+      "Good": [
+        "Bună"
+      ],
       "Group": [
         "Grup"
       ],
       "Hide password": [
         "Ascundere parolă"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Cum ați descrie experiența avută cu noul Proton Mail?"
       ],
       "I understand the risk": [
         "Înțeleg riscul"
@@ -5509,6 +5696,9 @@
       ],
       "Notification": [
         "Notificare"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistem de operare"
@@ -5662,6 +5852,9 @@
       ],
       "without attachments": [
         "fără atașamente"
+      ],
+      "Wonderful": [
+        "Minunată"
       ]
     },
     "Label for contact group color": {
@@ -6155,23 +6348,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Am introdus aspectul unificat și reîmprospătat al lui Proton. Ne-ar plăcea să auzim ce credeți despre asta!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Groaznică"
-      ],
-      "5 - Wonderful": [
-        "5 - Minunată"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Cum ați descrie experiența avută cu noul Proton Mail?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Spuneți-ne despre experiența avută. (Opțional)"
+      "Tell us about your experience. (Optional)": [
+        "Povestiți-ne despre experiența avută. (opțional)"
       ]
     },
     "new_plans: placeholder": {
@@ -6180,9 +6361,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Oferiți feedback"
-      ],
       "Updated Proton, unified protection": [
         "Proton actualizat, protecție unificată"
       ]

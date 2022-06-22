@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         ""
       ],
-      "contact": [
-        ""
-      ],
       "Contact support": [
         ""
       ],
@@ -719,9 +716,6 @@
         ""
       ],
       "Support": [
-        ""
-      ],
-      "Switch to rich text": [
         ""
       ],
       "Top up": [
@@ -1298,6 +1292,173 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
         ""
       ]
     },
@@ -3220,6 +3381,9 @@
       "Inbox": [
         ""
       ],
+      "Inbox - Default": [
+        ""
+      ],
       "Select a folder": [
         ""
       ],
@@ -3272,7 +3436,7 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
         ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
@@ -4265,9 +4429,6 @@
       "Custom email domains": [
         ""
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        ""
-      ],
       "Custom monthly": [
         ""
       ],
@@ -4324,6 +4485,9 @@
         ""
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
+        ""
+      ],
+      "Drop a file here to upload": [
         ""
       ],
       "Drop the file here to upload": [
@@ -4408,9 +4572,6 @@
         ""
       ],
       "Failed to fetch logs.": [
-        ""
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
         ""
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
@@ -4619,6 +4780,9 @@
       "Learn more": [
         ""
       ],
+      "learn more about Sieve programming language": [
+        ""
+      ],
       "Left to Right": [
         ""
       ],
@@ -4727,9 +4891,6 @@
       "No results found": [
         ""
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         ""
       ],
@@ -4801,9 +4962,6 @@
         ""
       ],
       "Phone number": [
-        ""
-      ],
-      "Plain text": [
         ""
       ],
       "Plan upgrade required": [
@@ -4939,9 +5097,6 @@
         ""
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
-        ""
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
         ""
       ],
       "Select what you want to move from Google.": [
@@ -5157,6 +5312,9 @@
       "To use ${ toAppName }, please create an address.": [
         ""
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         ""
       ],
@@ -5329,9 +5487,6 @@
         ""
       ],
       "You can check the progress ${ importProgressLink }.": [
-        ""
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
         ""
       ],
       "You can customize and download your invoices for accounting purposes.": [
@@ -6922,6 +7077,12 @@
         ""
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "",
+        ""
+      ]
+    },
     "Member action": {
       "Delete": [
         ""
@@ -8284,6 +8445,18 @@
         ""
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
+      ]
+    },
     "Price": {
       "Free": [
         ""
@@ -8551,9 +8724,6 @@
         ""
       ],
       "Preview": [
-        ""
-      ],
-      "Sieve editor": [
         ""
       ]
     },
@@ -8936,14 +9106,6 @@
         ""
       ],
       "vCard field": [
-        ""
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        ""
-      ],
-      "More services, one privacy mission.": [
         ""
       ]
     },

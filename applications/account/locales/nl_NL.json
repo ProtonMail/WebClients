@@ -6,16 +6,16 @@
   "contexts": {
     "Access level": {
       "Full": [
-        "Volledig"
+        ""
       ],
       "Full view": [
-        "Volledige weergave"
+        ""
       ],
       "Limited": [
-        "Beperkt"
+        ""
       ],
       "Limited view": [
-        "Beperkte weergave"
+        ""
       ]
     },
     "Action": {
@@ -53,7 +53,7 @@
         "E-mailadres toevoegen"
       ],
       "Add calendar": [
-        "Agenda toevoegen"
+        ""
       ],
       "Add condition": [
         "Voorwaarde toevoegen"
@@ -77,7 +77,7 @@
         "Label toevoegen"
       ],
       "Add notification": [
-        "Melding toevoegen"
+        ""
       ],
       "Add PayPal": [
         "PayPal toevoegen"
@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Bevestig het openen van link ${ linkToShow }"
       ],
-      "contact": [
-        "contact"
-      ],
       "Contact support": [
         "Neem contact op met ondersteuning"
       ],
@@ -182,7 +179,7 @@
         "Doorgaan met"
       ],
       "Continue with Google": [
-        "Ga verder met Google"
+        ""
       ],
       "Copy": [
         "Kopieer"
@@ -191,7 +188,7 @@
         "E-mailadres kopiëren naar klembord"
       ],
       "Copy link": [
-        "Link kopiëren"
+        ""
       ],
       "Create": [
         "Aanmaken"
@@ -206,7 +203,7 @@
         "Adres aanmaken"
       ],
       "Create calendar": [
-        "Agenda aanmaken"
+        ""
       ],
       "Create folder": [
         "Map maken"
@@ -218,7 +215,7 @@
         "Label maken"
       ],
       "Create link": [
-        "Link aanmaken"
+        ""
       ],
       "Current plan": [
         "Huidig abonnement"
@@ -242,7 +239,7 @@
         "Verwijderen"
       ],
       "Delete link": [
-        "Verwijder hyperlink"
+        ""
       ],
       "Delete permanently": [
         "Permanent verwijderen"
@@ -338,7 +335,7 @@
         "Exporteren"
       ],
       "Export ICS": [
-        "Exporteer ICS"
+        ""
       ],
       "Export key": [
         "Sleutel exporteren"
@@ -398,7 +395,7 @@
         "E-mails importeren"
       ],
       "Import from .ics": [
-        "Importeer vanuit .ics"
+        ""
       ],
       "Import key": [
         "Sleutel importeren"
@@ -542,7 +539,7 @@
         "Verwijder bonussen"
       ],
       "Remove calendar": [
-        "Agenda verwijderen"
+        ""
       ],
       "Remove gift code": [
         "Verwijder geschenkcode"
@@ -551,7 +548,7 @@
         "Label verwijderen"
       ],
       "Remove this notification": [
-        "Deze melding verwijderen"
+        ""
       ],
       "Rename": [
         "Hernoem"
@@ -620,7 +617,7 @@
         "Adres opslaan"
       ],
       "Save ICS file": [
-        "ICS-bestand opslaan"
+        ""
       ],
       "Save selected": [
         "Geselecteerde bewaren"
@@ -629,16 +626,16 @@
         "Selecteer ${ planTitle }"
       ],
       "Select calendar view": [
-        "Kalenderweergave kiezen"
+        ""
       ],
       "Select files": [
         "Selecteer bestanden"
       ],
       "Select language for invitation emails": [
-        "Selecteer taal voor uitnodigings-e-mails"
+        ""
       ],
       "Select timezone": [
-        "Kies tijdzone"
+        ""
       ],
       "send auto-reply email": [
         "automatisch antwoord versturen"
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Ondersteuning"
-      ],
-      "Switch to rich text": [
-        "Overschakelen naar rich tekst"
       ],
       "Top up": [
         "Saldo verhogen"
@@ -949,7 +943,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Voeg toe aan uw agenda en markeer als wachtend"
+        ""
       ]
     },
     "Autoresponse": {
@@ -1206,38 +1200,38 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "U kunt ICS-bestanden importeren van een andere agenda naar ${ CALENDAR_APP_NAME }. Hiermee kunt u snel een afspraak of een volledige agenda importeren."
+        ""
       ]
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "U hebt het maximale aantal persoonlijke agenda's bereikt dat u binnen uw abonnement kunt aanmaken."
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "U hebt het maximum van één geabonneerde agenda bereikt.",
-        "U hebt het maximum van ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } geabonneerde agenda's bereikt."
+        "",
+        ""
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "Label toegevoegd"
+        ""
       ],
       "Label deleted": [
-        "Label verwijderd"
+        ""
       ],
       "Label edited": [
-        "Label bewerkt"
+        ""
       ]
     },
     "Calendar status": {
       "Active": [
-        "Actief"
+        ""
       ],
       "Default": [
-        "Standaard"
+        ""
       ],
       "Disabled": [
-        "Inactief"
+        ""
       ],
       "Not synced": [
         "Niet gesynchroniseerd"
@@ -1274,13 +1268,13 @@
     },
     "Calendar view": {
       "Day": [
-        "Dag"
+        ""
       ],
       "Month": [
-        "Maand"
+        ""
       ],
       "Week": [
-        "Week"
+        ""
       ]
     },
     "Checkout row": {
@@ -1299,6 +1293,173 @@
       ],
       "Open": [
         "Openen"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Appeltjesgroen"
+      ],
+      "azureish white": [
+        "azuurwit"
+      ],
+      "blanched almond": [
+        "geblancheerde amandel"
+      ],
+      "blue-gray": [
+        "blauw-grijs"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "wortel"
+      ],
+      "cerise": [
+        "kers"
+      ],
+      "cinnabar": [
+        "cinnaber"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "koper"
+      ],
+      "cyan-blue azure": [
+        "cyaanblauw azuur"
+      ],
+      "dandelion": [
+        "paardenbloem"
+      ],
+      "dark cerulean": [
+        "donker ceruleumblauw"
+      ],
+      "dark midnight blue": [
+        "donker middernachtblauw"
+      ],
+      "dim gray": [
+        "zacht grijs"
+      ],
+      "enzian": [
+        "gentiaan"
+      ],
+      "fern": [
+        "varen"
+      ],
+      "field drab": [
+        "veldsaai"
+      ],
+      "forest": [
+        "bos"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        "japanse laurier"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citroengeel"
+      ],
+      "light carmine pink": [
+        "licht karmijnroze"
+      ],
+      "light moss green": [
+        "licht mosgroen"
+      ],
+      "light red": [
+        "lichtrood"
+      ],
+      "maize": [
+        "maïs"
+      ],
+      "mughal green": [
+        "mogolgroen"
+      ],
+      "ocean": [
+        "oceaan"
+      ],
+      "olive": [
+        "olijf"
+      ],
+      "outer space": [
+        "kosmos"
+      ],
+      "pacific": [
+        "stille oceaan"
+      ],
+      "palatinate blue": [
+        "paltsblauw"
+      ],
+      "pale cerulean": [
+        "mat ceruleumblauw"
+      ],
+      "pastel gray": [
+        "pastelgrijs"
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        "perzisch rood"
+      ],
+      "philippine gray": [
+        "filippijnsgrijs"
+      ],
+      "philippine silver": [
+        "filippijnszilver"
+      ],
+      "pickle": [
+        "augurk"
+      ],
+      "pine": [
+        "den"
+      ],
+      "pink": [
+        "roze"
+      ],
+      "pistachio": [
+        "pistache"
+      ],
+      "plum": [
+        "pruim"
+      ],
+      "purple": [
+        "paars"
+      ],
+      "raisin black": [
+        "rozijnzwart"
+      ],
+      "reef": [
+        "rif"
+      ],
+      "ruddy pink": [
+        "perzisch rood"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "satijnglanzend goud"
+      ],
+      "slateblue": [
+        "leisteenblauw"
+      ],
+      "soil": [
+        "aarde"
+      ],
+      "strawberry": [
+        "aardbei"
+      ],
+      "vivid auburn": [
+        "helder kastanjebruin"
+      ],
+      "white": [
+        "wit"
       ]
     },
     "Condition for custom filter": {
@@ -2242,7 +2403,7 @@
     "Daily recurring event, frequency": {
       "${ count } time": [
         "${ count } keer",
-        "${ count } keren"
+        "${ count } keer"
       ],
       "Daily": [
         "Dagelijks"
@@ -2380,16 +2541,16 @@
     },
     "Duration": {
       "120 minutes": [
-        "120 minuten"
+        ""
       ],
       "30 minutes": [
-        "30 minuten"
+        ""
       ],
       "60 minutes": [
-        "60 minuten"
+        ""
       ],
       "90 minutes": [
-        "90 minuten"
+        ""
       ]
     },
     "Email body for description (description part)": {
@@ -2620,7 +2781,7 @@
         "Naam op kaart verplicht"
       ],
       "Name required": [
-        "Naam vereist"
+        "Naam verplicht"
       ],
       "No active sessions": [
         "Geen actieve sessies"
@@ -3018,7 +3179,7 @@
         "Fout: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Ongeldige URL"
+        ""
       ],
       "Oops, something went wrong": [
         "Oeps, er is iets misgegaan"
@@ -3057,10 +3218,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Afspraak @ ${ timeString }"
+        ""
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "Afspraak van ${ timeString }, ${ rruleString }"
+        ""
       ]
     },
     "Event invitation error": {
@@ -3114,50 +3275,50 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } afspraak geëxporteerd",
-        "${ totalProcessed }/${ totalToProcess } afspraken geëxporteerd"
+        "",
+        ""
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Agenda succesvol geëxporteerd. U kunt nu het ICS-bestand opslaan."
+        ""
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Afspraken van uw agenda decoderen: ${ totalProcessed }/${ totalToProcess }"
+        ""
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Als gevolg van een wachtwoordreset konden geen van uw evenementen worden gedecodeerd en geëxporteerd."
+        ""
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Als gevolg van een wachtwoordreset konden sommige van uw evenementen niet worden gedecodeerd en geëxporteerd."
+        ""
       ],
       "Error decrypting event": [
-        "Fout bij decoderen afspraak"
+        ""
       ],
       "Learn how to restore encrypted events with old password": [
-        "Leer hoe u versleutelde afspraken kunt herstellen met uw oude wachtwoord"
+        ""
       ],
       "Loading events": [
-        "Afspraken worden geladen"
+        ""
       ],
       "None of the events could be exported.": [
-        "Geen van de afspraken konden worden geëxporteerd."
+        ""
       ],
       "Password reset - event cannot be decrypted": [
-        "Wachtwoord opnieuw instellen - afspraak kan niet worden gedecodeerd"
+        ""
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Wachtwoord opnieuw instellen - meerdere afspraken kunnen niet worden gedecodeerd"
+        ""
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Gelieve het tabblad niet te sluiten voordat het exportproces is voltooid."
+        ""
       ],
       "Some of your events could not be exported.": [
-        "Sommige van uw evenementen konden niet worden geëxporteerd."
+        ""
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "De internetverbinding werd onderbroken, waardoor het exportproces mislukt. Probeer het opnieuw."
+        ""
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "U kunt een ICS-bestand van de succesvol geëxporteerde afspraken opslaan."
+        ""
       ]
     },
     "Feature": {
@@ -3220,6 +3381,9 @@
       "Inbox": [
         "Inbox"
       ],
+      "Inbox - Default": [
+        ""
+      ],
       "Select a folder": [
         "Kies een map"
       ],
@@ -3272,8 +3436,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Voeg een aangepast filter toe om automatisch bepaalde acties uit te voeren, zoals het labelen of archiveren van berichten."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Pas afzender-specifieke spamregels toe. Berichten uit adressen of domeinen in de Toegestane Lijst gaan altijd naar uw Inbox terwijl berichten van adressen of domeinen in de bloklijst altijd naar Spam gaan. Een bericht als Spam markeren voegt zijn adres toe aan de bloklijst. Een bericht niet als Spam markeren voegt het toe aan de Toegestane Lijst."
@@ -3325,7 +3489,7 @@
         "Acties"
       ],
       "Calendar": [
-        "Agenda"
+        ""
       ],
       "Event": [
         "Gebeurtenis"
@@ -3340,10 +3504,10 @@
         "Sleuteltype"
       ],
       "Label": [
-        "Label"
+        ""
       ],
       "Name": [
-        "Naam"
+        ""
       ],
       "Notifications": [
         "Meldingen"
@@ -3352,13 +3516,13 @@
         "Vingerafdruk van organisatiesleutel"
       ],
       "Status": [
-        "Status"
+        ""
       ],
       "Time": [
         "Tijd"
       ],
       "What others see": [
-        "Wat anderen zien"
+        ""
       ]
     },
     "Header for addresses table": {
@@ -3848,7 +4012,7 @@
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } zal worden ingesteld als standaardagenda."
+        ""
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nieuwe agenda",
@@ -4094,13 +4258,13 @@
         "en"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Iedereen met deze link kan alle details van deze agenda zien, zoals titel, locatie of deelnemers."
+        ""
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
+        ""
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Iedereen met deze link kan niet synchroniseren of toekomstige updates voor uw agenda krijgen. Als u hen weer toegang wilt geven, moet u een nieuwe link aanmaken."
+        ""
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
@@ -4109,7 +4273,7 @@
         "Weet u zeker dat u dit adres wil verwijderen?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Weet u zeker dat u deze agenda wilt verwijderen?"
+        ""
       ],
       "Are you sure you want to delete this domain?": [
         "Weet u zeker dat u dit domein wilt verwijderen?"
@@ -4199,7 +4363,7 @@
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Door de volledige agendadetails van deze kalender te delen, gaat u akkoord om Proton toegang te verlenen tot versleutelde informatie van deze agenda."
+        ""
       ],
       "Center": [
         "Centreren"
@@ -4233,7 +4397,7 @@
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "Maak een link naar uw agenda en deel deze met iedereen buiten uw Proton. Alleen u kunt afspraken toevoegen of verwijderen."
+        ""
       ],
       "Create a new account and share the email address and password with the user.": [
         "Nieuw account aanmaken en het e-mailadres en wachtwoord delen met de gebruiker."
@@ -4257,28 +4421,25 @@
         "Alle beschikbare opslagruimte is momenteel toegewezen aan het beheerdersaccount. Beperk de toewijzingshoeveelheid om ruimte te creëren voor extra gebruikers. Door uw account te upgraden kunt u op elk gewenst moment de totale opslagcapaciteit verhogen."
       ],
       "Custom": [
-        "Aangepast"
+        ""
       ],
       "Custom daily": [
-        "Aangepast dagelijks"
+        ""
       ],
       "Custom email domains": [
         "Aangepaste e-maildomeinen"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Aangepaste filters werken op alle nieuwe e-mails, zowel inkomende e-mails als verzonden e-mails. Filters kunnen direct worden bewerkt en gemaakt via Sieve programmeertaal."
-      ],
       "Custom monthly": [
-        "Aangepast maandelijks"
+        ""
       ],
       "Custom weekly": [
-        "Aangepast wekelijks"
+        ""
       ],
       "Custom yearly": [
-        "Aangepast jaarlijks"
+        ""
       ],
       "Daily": [
-        "Dagelijks"
+        ""
       ],
       "Data locked": [
         "Gegevens vergrendeld"
@@ -4287,7 +4448,7 @@
         "Verwijder alle andere MX records of zorg ervoor dat ${ MAIL_APP_NAME } zijn prioriteit het laagste getal is."
       ],
       "Delete link?": [
-        "Link verwijderen?"
+        ""
       ],
       "Discount applied to your subscription with coupon ${ code }": [
         "Korting toegepast op uw abonnement met kortingscode ${ code }"
@@ -4325,6 +4486,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download uw PGP-sleutels voor gebruik met andere PGP-compatibele diensten."
+      ],
+      "Drop a file here to upload": [
+        "Sleep een bestand hierheen om te uploaden"
       ],
       "Drop the file here to upload": [
         "Sleep het bestand om te uploaden"
@@ -4399,7 +4563,7 @@
         "Voer uw herstel-telefoonnummer in en wij sturen u uw gebruikersnaam of e-mailadres."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Afspraakuitnodigingen en RSVPs zullen worden verstuurd in deze taal."
+        ""
       ],
       "Expired": [
         "Verlopen"
@@ -4409,9 +4573,6 @@
       ],
       "Failed to fetch logs.": [
         "Fout bij het ophalen van logs."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet ten minste een naam en een geldig Sieve-script bevatten."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filters werken op alle e-mails, zowel inkomende als verzonden e-mails. Elk filter moet minstens een naam, voorwaarde en actie bevatten."
@@ -4450,7 +4611,7 @@
         "Wanneer een andere beheerder dit wachtwoord heeft aangepast, dan moet u hem naar het nieuwe organisatiewachtwoord vragen."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Als de tijdzone niet overeenkomt met de huidige tijdzone zal u worden gevraagd om deze bij te werken (maximaal één keer per dag)."
+        ""
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Als dit domein momenteel e-mails ontvangt, selecteer het tabblad ${ boldAddresses } en voeg alle actieve e-mailadressen toe voordat u het MX-record wijzigt om een soepele overgang te garanderen."
@@ -4619,6 +4780,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "learn more about Sieve programming language": [
+        ""
+      ],
       "Left to Right": [
         "Links naar rechts"
       ],
@@ -4626,16 +4790,16 @@
         "Laat uw contacten weten dat u om hun privacy geeft."
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Beperkte weergave: anderen zien of u bezig bent. Volledige weergave: toont alle afspraakgegevens, inclusief naam, locatie of deelnemers."
+        ""
       ],
       "Link copied to clipboard": [
-        "Link gekopieerd naar klembord"
+        ""
       ],
       "Link created": [
-        "Link aangemaakt"
+        ""
       ],
       "Link deleted": [
-        "Link verwijderd"
+        ""
       ],
       "Link type": [
         "Linktype"
@@ -4671,7 +4835,7 @@
         "Samengevoegd"
       ],
       "Monthly ${ onDayString }": [
-        "Maandelijks ${ onDayString }"
+        ""
       ],
       "more": [
         "meer"
@@ -4727,9 +4891,6 @@
       "No results found": [
         "Geen resultaten gevonden"
       ],
-      "Normal": [
-        "Normaal"
-      ],
       "Not a valid URL": [
         "Ongeldige link"
       ],
@@ -4752,7 +4913,7 @@
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
       ],
       "Only you can see the labels.": [
-        "Alleen u kunt de labels zien."
+        ""
       ],
       "Or select a particular server:": [
         "Of selecteer een specifieke server:"
@@ -4802,9 +4963,6 @@
       ],
       "Phone number": [
         "Telefoonnummer"
-      ],
-      "Plain text": [
-        "Tekst zonder opmaak"
       ],
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
@@ -4941,9 +5099,6 @@
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Selecteer Doorgaan naar ${ name } om de app te openen. Dit maakt ook een ${ name }-account aan met uw ${ MAIL_APP_NAME }-adres zodat u in de toekomst met één klik kunt inloggen."
       ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Selecter het aantal inbegrepen gebruikers in uw abonnement. Elke extra gebruiker kost ${ price }. Heeft u meer dan ${ maxUsers } gebruikersaccount nodig, ${ contactMailToLink } dan ons Klantensuccesteam."
-      ],
       "Select what you want to move from Google.": [
         "Selecteer wat u wil importeren vanaf Google."
       ],
@@ -5029,7 +5184,7 @@
         "Het ${ boldDataLocked } bericht wordt niet meer weergegeven, maar u kan nog steeds uw gegevens ontgrendelen via ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "De agenda zal verwijderd worden van uw account."
+        ""
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
         "Het e-mailadres dat u bovenaan de lijst plaatst is uw standaard e-mailadres. Slepen en neerzetten om uw adressen te rangschikken."
@@ -5157,6 +5312,9 @@
       "To use ${ toAppName }, please create an address.": [
         "Maak een adres aan om ${ toAppName } te gebruiken."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
       ],
@@ -5275,7 +5433,7 @@
         "Week"
       ],
       "Week and month views only apply to desktop.": [
-        "Week- en maandweergaven zijn alleen van toepassing op desktop."
+        ""
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "We sturen een resetcode naar het e-mailadres dat u hebt opgegeven voor het herstel van uw account."
@@ -5314,7 +5472,7 @@
         "Yandex registreert uw online activiteit en leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
       ],
       "Yearly": [
-        "Jaarlijks"
+        ""
       ],
       "You already have a free account": [
         "U heeft al een gratis account"
@@ -5330,9 +5488,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "U kunt de voortgang controleren ${ importProgressLink }."
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "U kunt maximaal ${ MAX_LINKS_PER_CALENDAR } koppelingen per kalender maken. Als u een nieuwe koppeling naar deze kalender wilt maken, verwijder deze uit de onderstaande lijst."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
@@ -5386,10 +5541,10 @@
         "U moet alle extra persoonlijke agenda's en gedeelde agenda-koppelingen verwijderen voordat u uw abonnement kunt opzeggen."
       ],
       "You need to have a personal calendar to create a link.": [
-        "U moet een persoonlijke agenda hebben om een koppeling aan te maken."
+        ""
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        "U heeft een actieve persoonlijke agenda nodig om uw afspraken uit .ics te importeren."
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "U heeft een actieve persoonlijke agenda nodig om uw afspraken te importeren."
@@ -5404,7 +5559,7 @@
         "U exporteert best een back-up van deze sleutel voor het geval u de gegevens die het versleutelde wilt herstellen."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "U moet nog steeds reageren op uitnodigingen om de host uw reactie te laten zien."
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "U zult ${ loseAllData } m.b.t. uw ${ BRAND_NAME } account. Om dit te herstellen moet u uw oude wachtwoord invoeren."
@@ -5881,7 +6036,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Hoe werkt dit"
+        ""
       ]
     },
     "Label": {
@@ -5973,7 +6128,7 @@
         "Schermafbeelding(en) toevoegen"
       ],
       "Auto-detect primary time zone": [
-        "Automatisch primaire tijdzone detecteren"
+        ""
       ],
       "Auto-load embedded images": [
         "Ingesloten afbeeldingen automatisch laden"
@@ -6033,7 +6188,7 @@
         "Code is 6 cijfers zonder spaties"
       ],
       "Color": [
-        "Kleur"
+        ""
       ],
       "Composer": [
         "Opstelvenster"
@@ -6120,28 +6275,28 @@
         "Dagen van de week"
       ],
       "Default email address": [
-        "Standaard e-mailadres"
+        ""
       ],
       "Default event duration": [
-        "Standaard afspraakduur"
+        ""
       ],
       "Default full day notifications": [
-        "Standaardmeldingen volledige dag"
+        ""
       ],
       "Default language": [
         "Standaardtaal"
       ],
       "Default language (${ defaultLanguage })": [
-        "Standaardtaal (${ defaultLanguage })"
+        ""
       ],
       "Default notifications": [
-        "Standaardmeldingen"
+        ""
       ],
       "Default PGP scheme": [
         "Standaard PGP-schema"
       ],
       "Default view": [
-        "Standaardweergave"
+        ""
       ],
       "Delete": [
         "Verwijder"
@@ -6150,7 +6305,7 @@
         "Dichtheid"
       ],
       "Description": [
-        "Beschrijving"
+        ""
       ],
       "Device/certificate name": [
         "Apparaat/certificaat naam"
@@ -6162,7 +6317,7 @@
         "Korting"
       ],
       "Display": [
-        "Tonen"
+        ""
       ],
       "Display name": [
         "Weergavenaam"
@@ -6504,10 +6659,10 @@
         "Verzenden in"
       ],
       "Show secondary time zone": [
-        "Toon secundaire tijdzone"
+        ""
       ],
       "Show week numbers": [
-        "Weeknummers weergeven"
+        ""
       ],
       "Sign external messages": [
         "Onderteken externe berichten"
@@ -6594,7 +6749,7 @@
         "Upload 1 of meer herstelbestanden of encryptiesleutels"
       ],
       "URL": [
-        "Website"
+        ""
       ],
       "Use folder colors": [
         "Gebruik mapkleuren"
@@ -6654,10 +6809,10 @@
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
       "Your calendar URL": [
-        "Uw agenda-URL"
+        ""
       ],
       "Your calendar URL label": [
-        "Uw agenda-URL label"
+        ""
       ],
       "Your password (admin)": [
         "Uw wachtwoord (admin)"
@@ -6922,6 +7077,12 @@
         "Importeer alle berichten van ${ totalLabelsCount } labels sinds ${ periodFragment } en label ze als ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "U kunt maximaal ${ MAX_LINKS_PER_CALENDAR } koppeling per agenda maken. Als u een nieuwe koppeling naar deze agenda wilt maken, verwijder een bestaande uit de onderstaande lijst.",
+        "U kunt maximaal ${ MAX_LINKS_PER_CALENDAR } koppelingen per agenda maken. Als u een nieuwe koppeling naar deze agenda wilt maken, verwijder een bestaande uit de onderstaande lijst."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Verwijderen"
@@ -6988,7 +7149,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        "Agenda toevoegen"
+        ""
       ]
     },
     "Monetary unit": {
@@ -7004,25 +7165,25 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Elke maand ${ onDayString }",
-        "Elke ${ interval } maanden ${ onDayString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Elke maand ${ onDayString }, ${ timesString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Elke maand ${ onDayString }, ${ untilString }",
-        "Elke ${ interval } maanden ${ onDayString }, ${ untilString }"
+        "",
+        ""
       ],
       "Monthly ${ onDayString }": [
-        "Maandelijks ${ onDayString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Maandelijks ${ onDayString }, ${ timesString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Maandelijks ${ onDayString }, ${ untilString }"
+        ""
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7864,39 +8025,39 @@
     },
     "Notification time input": {
       "at": [
-        "om"
+        ""
       ]
     },
     "Notification type": {
       "email": [
-        "e-mailadres"
+        ""
       ],
       "notification": [
-        "notificatie"
+        ""
       ]
     },
     "Notification when": {
       "at time of event": [
-        "op tijdstip van afspraak"
+        ""
       ],
       "day before": [
-        "dag ervoor",
-        "dagen ervoor"
+        "",
+        ""
       ],
       "hour before": [
-        "uur ervoor",
-        "uren ervoor"
+        "",
+        ""
       ],
       "minute before": [
-        "minuut ervoor",
-        "minuten ervoor"
+        "",
+        ""
       ],
       "on the same day": [
-        "op dezelfde dag"
+        ""
       ],
       "week before": [
-        "week ervoor",
-        "weken ervoor"
+        "",
+        ""
       ]
     },
     "Oauth instructions": {
@@ -8192,10 +8353,10 @@
         "Een manier om contact met u op te nemen"
       ],
       "Add a calendar description": [
-        "Voeg een beschrijving toe aan de kalender"
+        ""
       ],
       "Add a calendar name": [
-        "Voeg een kalendernaam toe"
+        ""
       ],
       "Add gift code": [
         "Voeg geschenkcode toe"
@@ -8284,6 +8445,18 @@
         "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        "neem contact op"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Selecteer het aantal gebruikers om op te nemen in uw abonnement. Elke extra gebruiker kost ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Heeft u meer dan ${ maxUsers } gebruiker nodig, ${ contact } met ons Sales team.",
+        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team."
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -8291,10 +8464,10 @@
     },
     "Primary timezone": {
       "Primary time zone": [
-        "Primaire tijdzone"
+        ""
       ],
       "Secondary time zone": [
-        "Secundaire tijdzone"
+        ""
       ]
     },
     "Private Member": {
@@ -8424,7 +8597,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Geen resultaten gevonden"
+        ""
       ]
     },
     "Settings description": {
@@ -8445,7 +8618,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Instellingen wijzigen mislukt"
+        ""
       ]
     },
     "Settings/filters": {
@@ -8529,10 +8702,10 @@
         "Nodig vrienden uit en verdien bonussen!"
       ],
       "No more missed appointments": [
-        "Geen gemiste afspraken meer"
+        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        "Met e-mailmeldingen, beslist u zelf over welke afspraken u een melding ontvangt en wanneer."
+        ""
       ]
     },
     "State": {
@@ -8552,9 +8725,6 @@
       ],
       "Preview": [
         "Voorbeeld"
-      ],
-      "Sieve editor": [
-        "Sieve-editor"
       ]
     },
     "Storage": {
@@ -8570,33 +8740,33 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "Agenda-URL"
+        ""
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Om u te abonneren op een externe of openbare agenda en de updates ervan, voert u de URL in. Een alleen-lezen versie van de agenda wordt toegevoegd aan uw geabonneerde agenda's.\n${ kbLink }"
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Leer hoe je een persoonlijkge agendalink krijgt."
+        ""
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Door deze link te gebruiken, maakt Google de agenda waarop u zich abonneert openbaar"
+        ""
       ],
       "This link might be wrong": [
-        "Deze link kan fout zijn"
+        ""
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Voeg openbare, externe of gedeelde agenda's toe met behulp van een URL."
+        ""
       ]
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "URL is te lang"
+        ""
       ]
     },
     "Subscription attribute": {
@@ -8703,16 +8873,16 @@
         "Bug gemeld"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Agenda toegevoegd. Het kan een paar minuten duren om te synchroniseren."
+        ""
       ],
       "Calendar created": [
-        "Agenda aangemaakt"
+        ""
       ],
       "Calendar removed": [
-        "Agenda verwijderd"
+        ""
       ],
       "Calendar updated": [
-        "Agenda bijgewerkt"
+        ""
       ],
       "Canceling import": [
         "Annuleer import"
@@ -8727,7 +8897,7 @@
         "Tegoed toegevoegd"
       ],
       "Default calendar updated": [
-        "Standaardkalender geüpdate"
+        ""
       ],
       "DMARC value copied to clipboard": [
         "DMARC-waarde gekopieerd naar klembord"
@@ -8894,7 +9064,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Details over afspraken die niet konden worden geëxporteerd"
+        ""
       ]
     },
     "Tab in domain modal": {
@@ -8939,14 +9109,6 @@
         "vCard-veld"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Maak kennis met de vernieuwde Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Meer diensten, één privacymissie."
-      ]
-    },
     "Time period": {
       "account creation date": [
         "aanmaakdatum van account"
@@ -8973,7 +9135,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Zoek tijdzones"
+        ""
       ]
     },
     "Title": {
@@ -9030,7 +9192,7 @@
         "E-mailadres toevoegen"
       ],
       "Add another notification to remind you of this event": [
-        "Voeg nog een melding toe om je te herinneren aan deze afspraak"
+        ""
       ],
       "Add contact group name": [
         "Naam contactgroep toevoegen"
@@ -9258,7 +9420,7 @@
         "Account verwijderen"
       ],
       "Delete calendar": [
-        "Agenda verwijderen"
+        ""
       ],
       "Delete key permanently?": [
         "Key permanent verwijderen?"
@@ -9339,7 +9501,7 @@
         "Fout"
       ],
       "Export calendar": [
-        "Agenda exporteren"
+        ""
       ],
       "Export private key": [
         "Exporteer geheime sleutel"
@@ -9553,7 +9715,7 @@
         "Doorverwijstracker"
       ],
       "Remove calendar": [
-        "Agenda verwijderen"
+        ""
       ],
       "Report a problem": [
         "Meld een probleem"
@@ -9598,13 +9760,13 @@
         "Contactgroep selecteren"
       ],
       "Select the time to send this notification": [
-        "Selecteer de tijd om deze melding te verzenden"
+        ""
       ],
       "Select the way to send this notification": [
-        "Selecteer de manier om deze melding te verzenden"
+        ""
       ],
       "Select when you want this notification to be sent": [
-        "Selecteer wanneer u wilt dat deze melding wordt verzonden"
+        ""
       ],
       "Session management": [
         "Sessiebeheer"
@@ -9745,7 +9907,7 @@
         "Uw ${ domain }-adres is actief"
       ],
       "Your calendar link": [
-        "Uw agenda-link"
+        ""
       ],
       "Your current plan": [
         "Uw huidige abonnement"
@@ -9768,7 +9930,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Kies een nummer"
+        ""
       ]
     },
     "Title for payment methods table": {
@@ -9922,7 +10084,7 @@
         "Deze functionaliteit is alleen beschikbaar voor betalende gebruikers"
       ],
       "This feature is unavailable for the moment": [
-        "Deze functionaliteit is op dit moment niet beschikbaar"
+        ""
       ],
       "This key cannot be used for encryption": [
         "Deze sleutel kan niet worden gebruikt voor versleuteling"
@@ -10002,11 +10164,11 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Upgrade naar een betaald abonnement om tot ${ MAX_CALENDARS_PER_USER } agenda's te maken, laat u toe om agenda's te maken voor het werk, om te delen met vrienden en alleen voor uzelf.",
-        "Upgrade naar een betaald abonnement om maximaal ${ MAX_CALENDARS_PER_USER } agenda's aan te maken, laat u toe om agenda's te maken voor het werk, om te delen met vrienden en alleen voor uzelf."
+        "",
+        ""
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Upgrade naar een betaald plan om uw persoonlijke agenda via een link met iedereen te delen."
+        ""
       ]
     },
     "User role": {
@@ -10174,127 +10336,127 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Elke week op ${ multipleDaysString }",
+        "Elke ${ interval } week op ${ multipleDaysString }",
         "Elke ${ interval } weken op ${ multipleDaysString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Elke week op ${ multipleDaysString }, ${ timesString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ timesString }"
+        "Elke ${ interval } week op ${ multipleDaysString } ${ timesString }",
+        "Elke ${ interval } weken op ${ multipleDaysString } ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Elke week op ${ multipleDaysString }, ${ untilString }",
-        "Elke ${ interval } weken op ${ multipleDaysString }, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on all days": [
         "Elke ${ interval } op alle dagen",
         "Elke ${ interval } weken op alle dagen"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Elke week op alle dagen, ${ timesString }",
-        "Elke ${ interval } weken op alle dagen, ${ timesString }"
+        "Elke ${ interval } week op alle dagen ${ timesString }",
+        "Elke ${ interval } weken op alle dagen ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Elke week op alle dagen, ${ untilString }",
+        "Elke ${ interval } week op alle dagen, ${ untilString }",
         "Elke ${ interval } weken op alle dagen, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
-        "Elke week op vrijdag",
+        "Elke ${ interval } week op vrijdag",
         "Elke ${ interval } weken op vrijdag"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Elke week op vrijdag, ${ timesString }",
-        "Elke ${ interval } weken op vrijdag, ${ timesString }"
+        "Elke ${ interval } week op vrijdag ${ timesString }",
+        "Elke ${ interval } weken op vrijdag ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Elke week op vrijdag, ${ untilString }",
+        "Elke ${ interval } week op vrijdag, ${ untilString }",
         "Elke ${ interval } weken op vrijdag, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
-        "Elke ${ interval } op maandag",
+        "Elke week op maandag",
         "Elke ${ interval } weken op maandag"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Elke week op maandag, ${ timesString }",
+        "Elke ${ interval } week op maandag ${ timesString }",
         "Elke ${ interval } weken op maandag ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Elke week op maandag, ${ untilString }",
-        "Elke ${ interval } weken op maandag ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Saturday": [
-        "Elke week op zaterdag",
+        "Elke ${ interval } week op zaterdag",
         "Elke ${ interval } weken op zaterdag"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Elke week op zaterdag, ${ timesString }",
+        "Elke ${ interval } week op zaterdag ${ timesString }",
         "Elke ${ interval } weken op zaterdag ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Elke week op zaterdag, ${ untilString }",
-        "Elke ${ interval } weken op zaterdag ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Sunday": [
-        "Elke ${ interval } op zondag",
+        "Elke ${ interval } week op zondag",
         "Elke ${ interval } weken op zondag"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Elke week op zondag, ${ timesString }",
+        "Elke ${ interval } week op zondag ${ timesString }",
         "Elke ${ interval } weken op zondag ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Elke week op zondag, ${ untilString }",
-        "Elke ${ interval } weken op zondag, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Thursday": [
         "Elke ${ interval } op donderdag",
         "Elke ${ interval } weken op donderdag"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Elke week op donderdag, ${ timesString }",
+        "Elke ${ interval } week op donderdag ${ timesString }",
         "Elke ${ interval } weken op donderdag ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Elke week op donderdag, ${ untilString }",
-        "Elke ${ interval } weken op donderdag ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday": [
-        "Elke ${ interval } op dinsdag",
+        "Elke week op dinsdag",
         "Elke ${ interval } weken op dinsdag"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Elke week op dinsdag, ${ timesString }",
+        "Elke ${ interval } week op dinsdag ${ timesString }",
         "Elke ${ interval } weken op dinsdag ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Elke week op dinsdag, ${ untilString }",
-        "Elke ${ interval } weken op dinsdag ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Wednesday": [
-        "Elke ${ interval } op woensdag",
+        "Elke ${ interval } week op woensdag",
         "Elke ${ interval } weken op woensdag"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Elke week op woensdag, ${ timesString }",
+        "Elke ${ interval } week op woensdag ${ timesString }",
         "Elke ${ interval } weken op woensdag ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Elke week op woensdag, ${ untilString }",
-        "Elke ${ interval } weken op woensdag ${ untilString }"
+        "",
+        ""
       ],
       "Weekly on ${ multipleDaysString }": [
         "Wekelijks op ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Wekelijks op ${ multipleDaysString }, ${ timesString }"
+        "Wekelijks op ${ multipleDaysString } ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Wekelijks op ${ multipleDaysString }, ${ untilString }"
+        ""
       ],
       "Weekly on all days": [
         "Wekelijks op alle dagen"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Wekelijks op alle dagen, ${ timesString }"
+        "Wekelijks op alle dagen ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
         "Wekelijks op alle dagen, ${ untilString }"
@@ -10306,16 +10468,16 @@
         "Wekelijks op vrijdag ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Wekelijks op vrijdag ${ untilString }"
+        "Wekelijks op vrijdag, ${ untilString }"
       ],
       "Weekly on Monday": [
         "Wekelijks op maandag"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Wekelijks op maandag, ${ timesString }"
+        "Wekelijks op maandag ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Wekelijks op maandag, ${ untilString }"
+        ""
       ],
       "Weekly on Saturday": [
         "Wekelijks op zaterdag"
@@ -10324,7 +10486,7 @@
         "Wekelijks op zaterdag ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Wekelijks op zaterdag ${ untilString }"
+        ""
       ],
       "Weekly on Sunday": [
         "Wekelijks op zondag"
@@ -10333,7 +10495,7 @@
         "Wekelijks op zondag ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Wekelijks op zondag ${ untilString }"
+        ""
       ],
       "Weekly on Thursday": [
         "Wekelijks op donderdag"
@@ -10342,7 +10504,7 @@
         "Wekelijks op donderdag ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Wekelijks op donderdag ${ untilString }"
+        ""
       ],
       "Weekly on Tuesday": [
         "Wekelijks op dinsdag"
@@ -10351,7 +10513,7 @@
         "Wekelijks op dinsdag ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Wekelijks op dinsdag ${ untilString }"
+        ""
       ],
       "Weekly on Wednesday": [
         "Wekelijks op woensdag"
@@ -10360,7 +10522,7 @@
         "Wekelijks op woensdag ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Wekelijks op woensdag ${ untilString }"
+        ""
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10388,25 +10550,25 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Elk jaar",
-        "Elke ${ interval } jaar"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Elk jaar, ${ timesString }",
-        "Elke ${ interval } jaar, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Elk jaar, ${ untilString }",
-        "Elke ${ interval } jaar, ${ untilString }"
+        "",
+        ""
       ],
       "Yearly": [
-        "Jaarlijks"
+        ""
       ],
       "Yearly, ${ timesString }": [
-        "Jaarlijks ${ timesString }"
+        ""
       ],
       "Yearly, ${ untilString }": [
-        "Jaarlijks ${ untilString }"
+        ""
       ]
     }
   }

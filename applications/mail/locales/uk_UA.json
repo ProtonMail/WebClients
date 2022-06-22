@@ -770,6 +770,9 @@
       "send auto-reply email": [
         "надіслати лист з автоматичною відповіддю"
       ],
+      "Send feedback": [
+        "Надіслати відгук"
+      ],
       "Send read receipt": [
         "Надіслати підтвердження прочитання"
       ],
@@ -855,7 +858,7 @@
         "Відправити"
       ],
       "Switch to rich text": [
-        "Перемкнути в Rich Text Format (RTF)"
+        ""
       ],
       "Theme": [
         "Тема"
@@ -1597,6 +1600,173 @@
       ],
       "Open": [
         "Відкрити"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "яблуневий"
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        "блакитно-сірий"
+      ],
+      "caramel": [
+        "карамельний"
+      ],
+      "carrot": [
+        "морквяний"
+      ],
+      "cerise": [
+        "вишневий"
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        "кобальтовий"
+      ],
+      "copper": [
+        "мідний"
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        "тьмяно-сірий"
+      ],
+      "enzian": [
+        "енізан"
+      ],
+      "fern": [
+        "папороть"
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        "лісовий"
+      ],
+      "gainsboro": [
+        "ґейнсборо"
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        "ківі"
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        "світло-червоний"
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        "океанічний"
+      ],
+      "olive": [
+        "оливковий"
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        "тихоокеанський"
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        "філіппінський сірий"
+      ],
+      "philippine silver": [
+        "філіппінський срібний"
+      ],
+      "pickle": [
+        "розсіл"
+      ],
+      "pine": [
+        "сосновий"
+      ],
+      "pink": [
+        "рожевий"
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        "сливовий"
+      ],
+      "purple": [
+        "бузковий"
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        "рифовий"
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        "сизий"
+      ],
+      "soil": [
+        "земляний"
+      ],
+      "strawberry": [
+        "полуничний"
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        "білий"
       ]
     },
     "Composer email icon": {
@@ -3392,6 +3562,11 @@
         "(без назви)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Ваш відгук"
+      ]
+    },
     "file size format": {
       "bytes": [
         "байтів"
@@ -3426,6 +3601,9 @@
       ],
       "Inbox": [
         "Вхідні"
+      ],
+      "Inbox - Default": [
+        "Вхідні - типово"
       ],
       "Select a folder": [
         "Вибрати теку"
@@ -4265,9 +4443,6 @@
         "вкладених файлів",
         "вкладених файлів"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Фільтри працюють для всіх листів, включно з вхідними та надісланими. Кожен фільтр повинен містити принаймні назву та дійсний сценарій Sieve."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включно з вхідними та надісланими. Кожен фільтр повинен містити принаймні назву, умову та дію."
       ],
@@ -4503,7 +4678,7 @@
         "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
       "Normal": [
-        "Звичайний"
+        ""
       ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
@@ -5415,6 +5590,12 @@
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
+      "Awful": [
+        "Жахливо"
+      ],
+      "Bad": [
+        "Погано"
+      ],
       "BCC": [
         "Прихована копія"
       ],
@@ -5517,11 +5698,17 @@
       "From: ${ importedEmail }": [
         "Від: ${ importedEmail }"
       ],
+      "Good": [
+        "Добре"
+      ],
       "Group": [
         "Група"
       ],
       "Hide password": [
         "Приховати пароль"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Як би ви описали свої враження від нового Proton?"
       ],
       "I understand the risk": [
         "Я розумію ризик"
@@ -5594,6 +5781,9 @@
       ],
       "Notification": [
         "Сповіщення"
+      ],
+      "OK": [
+        "Нормально"
       ],
       "Operating system": [
         "Операційна система"
@@ -5747,6 +5937,9 @@
       ],
       "without attachments": [
         "без вкладень"
+      ],
+      "Wonderful": [
+        "Дивовижно"
       ]
     },
     "Label for contact group color": {
@@ -6245,23 +6438,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Представляємо оновлений вигляд.${ br } Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Ми представили уніфікований та оновлений вигляд Proton і бажаємо дізнатися про ваші враження!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Гірше не може бути"
-      ],
-      "5 - Wonderful": [
-        "5 - Чудово"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Як би ви описали свої враження від нового Proton?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Розкажіть нам про своє враження (Необов'язково)"
+      "Tell us about your experience. (Optional)": [
+        "Розкажіть нам про своє враження. (Необов'язково)"
       ]
     },
     "new_plans: placeholder": {
@@ -6270,9 +6451,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Залишити відгук"
-      ],
       "Updated Proton, unified protection": [
         "Оновлений Proton, єдиний захист"
       ]

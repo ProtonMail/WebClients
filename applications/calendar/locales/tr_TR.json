@@ -370,6 +370,9 @@
       "Send": [
         "Gönder"
       ],
+      "Send feedback": [
+        "Geri bildirim gönder"
+      ],
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "havuç"
+      ],
+      "cerise": [
+        "kiraz"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "bakır"
+      ],
+      "enzian": [
+        "kantaron"
+      ],
+      "fern": [
+        "eğrelti otu"
+      ],
+      "forest": [
+        "orman"
+      ],
+      "ocean": [
+        "okyanus"
+      ],
+      "olive": [
+        "zeytin"
+      ],
+      "pacific": [
+        "pasifik"
+      ],
+      "pickle": [
+        "salatalık"
+      ],
+      "pine": [
+        "çam"
+      ],
+      "pink": [
+        "pembe"
+      ],
+      "plum": [
+        "erik"
+      ],
+      "purple": [
+        "mor"
+      ],
+      "reef": [
+        "resif"
+      ],
+      "sahara": [
+        "çöl"
+      ],
+      "slateblue": [
+        "arduvaz mavisi"
+      ],
+      "soil": [
+        "toprak"
+      ],
+      "strawberry": [
+        "çilek"
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "Etkinlik, devre dışı bırakılmış bir takvime ait."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Bir daha sorma"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Takvim ekle"
@@ -2521,6 +2591,11 @@
         "(başlıksız)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Geri bildiriminiz"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bayt"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "Proton uygulama paketine ${ calendarAppName } eklendi. Hakkında ne düşündüğünüzü öğrenmek isteriz."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } yeni takvim",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Geçici olarak kullanılamıyor. Lütfen bir süre sonra yeniden bakın.)"
       ],
-      "0 - Not likely": [
-        "0 - Önermem"
-      ],
-      "10 - Extremely likely": [
-        "10 - Kesinlikle öneririm"
-      ],
       "Add email address": [
         "E-posta adresi ekle"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Kişileri otomatik olarak kaydet"
+      ],
+      "Awful": [
+        "Çok kötü"
+      ],
+      "Bad": [
+        "Kötü"
       ],
       "Browser": [
         "Tarayıcı"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
       ],
+      "Good": [
+        "İyi"
+      ],
       "Hide password": [
         "Parolayı gizle"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "${ calendarAppName } uygulamasını bir arkadaşınıza veya iş arkadaşınıza önerme olasılığınız nedir?"
+      "How would you describe your experience with the new Proton?": [
+        "Yeni Proton ile yaşadığınız deneyimi nasıl değerlendirirsiniz?"
       ],
       "I understand the risk": [
         "Riski anladım"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Bildirimler"
+      ],
+      "OK": [
+        "Tamam"
       ],
       "Operating system": [
         "İşletim istemi"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Ne oldu?"
+      ],
+      "Wonderful": [
+        "Harika"
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Bize deneyimlerinizi anlatın. (İsteğe bağlı)"
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Geri bildirim verin"
-      ],
       "Updated Proton, unified protection": [
         "Güncellenmiş Proton, birleşik koruma"
       ]
