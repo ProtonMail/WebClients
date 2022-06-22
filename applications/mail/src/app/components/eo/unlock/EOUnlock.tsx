@@ -3,7 +3,7 @@ import { useRouteMatch } from 'react-router';
 import { c } from 'ttag';
 
 import { Href, Loader } from '@proton/components';
-import { getStaticURL } from '@proton/shared/lib/helpers/url';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import MessageDecryptForm from './MessageDecryptForm';
 import { EOUrlParams } from '../../../helpers/eo/eoUrl';
@@ -45,7 +45,9 @@ const EOUnlock = ({ setSessionStorage }: Props) => {
                 )}
             </div>
             <div className="flex p1 mlauto mb2">
-                <Href className="mlauto mrauto" href={getStaticURL('/support')}>{c('Action').t`Need help?`}</Href>
+                <Href className="mlauto mrauto" href={getKnowledgeBaseUrl('/open-password-protected-emails')}>{c(
+                    'Action'
+                ).t`Need help?`}</Href>
             </div>
         </main>
     );

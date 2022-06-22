@@ -16,7 +16,7 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
 
     return (
         <form onSubmit={(e) => e.preventDefault()}>
-            <h1 className="eo-layout-title mb0 on-mobile-mt0-5">{c('Info').t`Decrypt message`}</h1>
+            <h1 className="eo-layout-title mb0 on-mobile-mt0-5">{c('Info').t`Unlock message`}</h1>
             <div className="mt0-25 color-weak mb2">{MAIL_APP_NAME}</div>
             <InputFieldTwo
                 autoFocus
@@ -35,7 +35,7 @@ const MessageDecryptForm = ({ onSubmit }: Props) => {
                 data-testid="unlock:input"
             />
             <Button size="large" color="norm" type="button" fullWidth onClick={handleSubmit}>{c('Action')
-                .t`Decrypt`}</Button>
+                .t`Read message`}</Button>
         </form>
     );
 };
