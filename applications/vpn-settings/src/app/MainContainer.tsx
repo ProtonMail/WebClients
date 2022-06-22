@@ -45,6 +45,8 @@ import {
     UserDropdown,
     Unauthenticated,
     ThemesSection,
+    useFeatures,
+    FeatureCode,
 } from '@proton/components';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -62,6 +64,8 @@ import TVContainer from './containers/TVContainer';
 const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
 
 const MainContainer = () => {
+    useFeatures([FeatureCode.DrivePlan]);
+
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [tagsArray, setTagsArray] = useState<string[]>([]);

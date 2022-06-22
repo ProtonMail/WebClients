@@ -15,8 +15,9 @@ import { switchPlan } from '@proton/shared/lib/helpers/planIDs';
 import isTruthy from '@proton/utils/isTruthy';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
+import { FeatureCode } from '../../../containers/features';
 import { CalendarLogo, DriveLogo, Icon, MailLogo, Option, SelectTwo, Tabs, VpnLogo } from '../../../components';
-import { useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
+import { useFeature, useVPNCountriesCount, useVPNServersCount } from '../../../hooks';
 import { getShortPlan } from '../features/plan';
 import { getAllFeatures } from '../features';
 import CurrencySelector from '../CurrencySelector';
@@ -30,20 +31,18 @@ export interface SelectedProductPlans {
     [Audience.B2B]: PLANS;
 }
 
-const getPlansList = (enabledProductPlans: PLANS[], plan: Plan, plansMap: PlansMap) => {
-    if (enabledProductPlans.includes(plan.Name as PLANS)) {
-        return enabledProductPlans
-            .map((planName) => {
-                const plan = plansMap[planName];
-                if (plan) {
-                    return {
-                        plan: planName,
-                        label: plan.Title,
-                    };
-                }
-            })
-            .filter(isTruthy);
-    }
+const getPlansList = (enabledProductPlans: PLANS[], plansMap: PlansMap) => {
+    return enabledProductPlans
+        .map((planName) => {
+            const plan = plansMap[planName];
+            if (plan) {
+                return {
+                    planName,
+                    label: plan.Title,
+                };
+            }
+        })
+        .filter(isTruthy);
 };
 
 const getPlanPanel = (enabledProductPlans: PLANS[], planName: PLANS, plansMap: PlansMap) => {
@@ -94,9 +93,14 @@ const PlanSelection = ({
     const plansMap = toMap(plans, 'Name');
     const [vpnServers] = useVPNServersCount();
     const [vpnCountries] = useVPNCountriesCount();
+    const drivePlanFeature = useFeature(FeatureCode.DrivePlan);
 
-    const enabledProductB2CPlans = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE];
-    const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE*/];
+    const enabledProductB2CPlans = [
+        PLANS.MAIL,
+        PLANS.VPN,
+        drivePlanFeature.feature?.Value === true ? PLANS.DRIVE : null,
+    ].filter(isTruthy);
+    const enabledProductB2BPlans = [PLANS.MAIL_PRO /*, PLANS.DRIVE_PRO*/];
 
     const B2CPlans = [
         hasFreePlan ? FREE_PLAN : null,
@@ -113,11 +117,13 @@ const PlanSelection = ({
     const isSignupMode = mode === 'signup';
     const features = getAllFeatures(plansMap, vpnCountries, vpnServers);
 
+    const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
+    const recommendedPlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO];
+
     const renderPlanCard = (plan: Plan, audience: Audience) => {
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
-        const isRecommended = [PLANS.BUNDLE, PLANS.BUNDLE_PRO].includes(plan.Name as PLANS);
-        const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
+        const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
         const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, vpnCountries, vpnServers);
 
         if (!shortPlan) {
@@ -125,10 +131,16 @@ const PlanSelection = ({
         }
 
         const planTitle = shortPlan.title;
+        const selectedPlanLabel = isFree ? c('Action').t`Current plan` : c('Action').t`Edit subscription`;
         const actionLabel = isCurrentPlan ? selectedPlanLabel : c('Action').t`Select ${planTitle}`;
 
-        const selectedPlan = selectedProductPlans[audience];
-        const plansList = getPlansList(audience === Audience.B2C ? enabledProductB2CPlans : [], plan, plansMap);
+        const plansList = audience === Audience.B2C ? plansListB2C : [];
+        const isSelectable = plansList.some(({ planName: otherPlanName }) => otherPlanName === plan.Name);
+        const selectedPlan = plansList.some(
+            ({ planName: otherPlanName }) => otherPlanName === selectedProductPlans[audience]
+        )
+            ? selectedProductPlans[audience]
+            : plansList[0]?.planName;
 
         return (
             <PlanCard
@@ -137,15 +149,15 @@ const PlanSelection = ({
                 info={shortPlan.description}
                 planName={plan.Name as PLANS}
                 planTitle={
-                    plansList ? (
+                    plansList && isSelectable ? (
                         <SelectTwo
                             value={selectedPlan}
                             onChange={({ value: newPlanName }) => {
                                 onChangeSelectedProductPlans({ ...selectedProductPlans, [audience]: newPlanName });
                             }}
                         >
-                            {plansList.map(({ plan, label }) => (
-                                <Option key={label} value={plan} title={label}>
+                            {plansList.map(({ planName, label }) => (
+                                <Option key={label} value={planName} title={label}>
                                     {label}
                                 </Option>
                             ))}
