@@ -76,6 +76,7 @@ const MainContainer = () => {
         FeatureCode.CalendarAutoImportInvite,
         FeatureCode.ReferralProgram,
         FeatureCode.CalendarSubscription,
+        FeatureCode.SubscribedCalendarReminder,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
         features;

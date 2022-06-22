@@ -145,15 +145,20 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                     // - recurring events, to detect deleted and modified occurrences
                     // - when the calendar is changed, since the other route relies on the calendar id
                     if (byUID) {
-                        const events = await getPaginatedEventsByUID({
+                        const allEventsByUID = await getPaginatedEventsByUID({
                             api,
                             uid: `${eventUIDHeader}`,
                             recurrenceID: recurrenceIdHeader ? parseInt(recurrenceIdHeader, 10) : undefined,
                         });
 
-                        if (!events.length) {
+                        if (!allEventsByUID.length) {
                             throw new Error(EVENT_NOT_FOUND_ERROR);
                         }
+
+                        const sameCalendarEvents = allEventsByUID.filter(
+                            ({ CalendarID }) => CalendarID === calendarIdHeader
+                        );
+                        const events = sameCalendarEvents.length ? sameCalendarEvents : allEventsByUID;
 
                         if (events.find(({ Exdates }) => Exdates.includes(occurrence))) {
                             throw new Error(EVENT_NOT_FOUND_ERROR);
