@@ -761,6 +761,9 @@
       "send auto-reply email": [
         "自动回复"
       ],
+      "Send feedback": [
+        "发送反馈"
+      ],
       "Send read receipt": [
         "发送回执"
       ],
@@ -846,7 +849,7 @@
         "提交"
       ],
       "Switch to rich text": [
-        "切换为富文本"
+        ""
       ],
       "Theme": [
         "配色"
@@ -864,7 +867,7 @@
         "信任此密钥"
       ],
       "Trust public key": [
-        ""
+        "信任公钥"
       ],
       "Try again": [
         "重试"
@@ -1582,6 +1585,173 @@
       ],
       "Open": [
         "打开"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        ""
       ]
     },
     "Composer email icon": {
@@ -3329,6 +3499,11 @@
         "(无标题)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "字节"
@@ -3363,6 +3538,9 @@
       ],
       "Inbox": [
         "收件箱"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "选择文件夹"
@@ -4058,9 +4236,6 @@
       "file attached": [
         "个附件"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称和一段 Sieve 代码。"
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "筛选规则对所有邮件都有效，既包括收到的，也包括发出的。每条规则包括名称、条件和操作三部分。"
       ],
@@ -4287,7 +4462,7 @@
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
       ],
       "Normal": [
-        "普通"
+        ""
       ],
       "Not a valid URL": [
         "URL 无效"
@@ -5160,6 +5335,12 @@
       "Automatically save contacts": [
         "自动保存联系人"
       ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
+      ],
       "BCC": [
         "密送"
       ],
@@ -5262,11 +5443,17 @@
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
+      "Good": [
+        ""
+      ],
       "Group": [
         "群组"
       ],
       "Hide password": [
         "隐藏密码"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         "风险已知悉"
@@ -5339,6 +5526,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "操作系统"
@@ -5492,6 +5682,9 @@
       ],
       "without attachments": [
         "不含附件"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -5975,22 +6168,10 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton 界面现已焕然一新。${ br }服务繁多，使命不变。欢迎进入隐私优先的互联网。"
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "我们近期统一更新了 Proton 的界面，期待您的评价！"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 分：非常差"
-      ],
-      "5 - Wonderful": [
-        "5 分：非常好"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "您如何评价新版 Proton 的使用体验？"
-      ],
-      "Tell us about your experience (Optional)": [
+      "Tell us about your experience. (Optional)": [
         ""
       ]
     },
@@ -6000,9 +6181,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "提供反馈"
-      ],
       "Updated Proton, unified protection": [
         "新版 Proton，全方位的隐私保护"
       ]

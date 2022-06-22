@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Conferma l'apertura del link ${ linkToShow }"
       ],
-      "contact": [
-        "contatto"
-      ],
       "Contact support": [
         "Contatta il supporto"
       ],
@@ -721,9 +718,6 @@
       "Support": [
         "Supporto"
       ],
-      "Switch to rich text": [
-        "Passa al testo completo"
-      ],
       "Top up": [
         "Ricarica"
       ],
@@ -1231,7 +1225,7 @@
     },
     "Calendar status": {
       "Active": [
-        "Attiva"
+        "Attivo"
       ],
       "Default": [
         "Predefinito"
@@ -1299,6 +1293,173 @@
       ],
       "Open": [
         "Apri"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Apple"
+      ],
+      "azureish white": [
+        "bianco azzurro"
+      ],
+      "blanched almond": [
+        "mandorla"
+      ],
+      "blue-gray": [
+        "blu grigio"
+      ],
+      "caramel": [
+        "caramello"
+      ],
+      "carrot": [
+        "carota"
+      ],
+      "cerise": [
+        "ciliegia"
+      ],
+      "cinnabar": [
+        "cinabro"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "rame"
+      ],
+      "cyan-blue azure": [
+        "azzurro ciano"
+      ],
+      "dandelion": [
+        "dente di leone"
+      ],
+      "dark cerulean": [
+        "ceruleo scuro"
+      ],
+      "dark midnight blue": [
+        "blu notte scuro"
+      ],
+      "dim gray": [
+        "grigio tenue"
+      ],
+      "enzian": [
+        "enzian"
+      ],
+      "fern": [
+        "felce"
+      ],
+      "field drab": [
+        "scialbo"
+      ],
+      "forest": [
+        "foresta"
+      ],
+      "gainsboro": [
+        "gainsboro"
+      ],
+      "japanese laurel": [
+        "alloro giapponese"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "giallo limone"
+      ],
+      "light carmine pink": [
+        "rosa carminio chiaro"
+      ],
+      "light moss green": [
+        "verde muschio chiaro"
+      ],
+      "light red": [
+        "rosso chiaro"
+      ],
+      "maize": [
+        "mais"
+      ],
+      "mughal green": [
+        "verde mughal"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "outer space": [
+        "spazio"
+      ],
+      "pacific": [
+        "pacifico"
+      ],
+      "palatinate blue": [
+        "blu palatinato"
+      ],
+      "pale cerulean": [
+        "ceruleo pallido"
+      ],
+      "pastel gray": [
+        "grigio pastello"
+      ],
+      "persian plum": [
+        "prugna persiana"
+      ],
+      "persian red": [
+        "rosso persiano"
+      ],
+      "philippine gray": [
+        "grigio filippino"
+      ],
+      "philippine silver": [
+        "argento filippino"
+      ],
+      "pickle": [
+        "cetriolo"
+      ],
+      "pine": [
+        "pino"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "pistachio": [
+        "pistacchio"
+      ],
+      "plum": [
+        "prugna"
+      ],
+      "purple": [
+        "viola"
+      ],
+      "raisin black": [
+        "nero uva"
+      ],
+      "reef": [
+        "corallo"
+      ],
+      "ruddy pink": [
+        "rosa rubino"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "oro satinato"
+      ],
+      "slateblue": [
+        "ardesia"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "fragola"
+      ],
+      "vivid auburn": [
+        "ramato vivido"
+      ],
+      "white": [
+        "bianco"
       ]
     },
     "Condition for custom filter": {
@@ -2251,7 +2412,7 @@
         "Giornalmente, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Giornalmente, ${ untilString }"
+        "Giornaliero, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Ogni ${ interval } giorno",
@@ -3220,6 +3381,9 @@
       "Inbox": [
         "Posta in arrivo"
       ],
+      "Inbox - Default": [
+        "Posta in arrivo - Predefinito"
+      ],
       "Select a folder": [
         "Seleziona una cartella"
       ],
@@ -3272,8 +3436,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Aggiungi un filtro personalizzato per eseguire automaticamente determinate azioni, come l'etichettatura o l'archiviazione dei messaggi."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "Aggiungi un filtro personalizzato per eseguire automaticamente determinate azioni, come etichettare o archiviare i messaggi. I filtri possono essere modificati e creati direttamente tramite il linguaggio di programmazione Sieve."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Applica regole spam specifiche per il mittente. Messaggi da indirizzi o domini nella Lista Consentiti andranno sempre nella tua casella di posta in arrivo mentre i messaggi da indirizzi o domini nella Lista Bloccati andranno sempre in Spam. Contrassegnare un messaggio come spam aggiungerà il suo indirizzo alla Lista Bloccati. Contrassegnare un messaggio come non spam lo aggiungerà alla Lista Consentiti."
@@ -4260,25 +4424,22 @@
         "Personalizzato"
       ],
       "Custom daily": [
-        "Personalizzato giornalmente"
+        "Personalizzato giornaliero"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "I filtri personalizzati funzionano su tutte le nuove email incluse le email in arrivo e le email inviate. I filtri possono essere modificati e creati direttamente tramite il linguaggio di programmazione Sieve."
-      ],
       "Custom monthly": [
-        "Personalizzato mensilmente"
+        "Personalizzato mensile"
       ],
       "Custom weekly": [
-        "Personalizzato settimanalmente"
+        "Personalizzato settimanale"
       ],
       "Custom yearly": [
-        "Personalizzato annualmente"
+        "Personalizzato annuale"
       ],
       "Daily": [
-        "Giornalmente"
+        "Giornaliero"
       ],
       "Data locked": [
         "Dati bloccati"
@@ -4326,6 +4487,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Scarica le chiavi PGP da usare con altri servizi compatibili con PGP."
       ],
+      "Drop a file here to upload": [
+        "Trascina un file qui per caricarlo"
+      ],
       "Drop the file here to upload": [
         "Trascina il file qui per caricarlo"
       ],
@@ -4333,7 +4497,7 @@
         "Guadagnati ${ rewards } di ${ rewardsLimit } ${ planName } mesi."
       ],
       "Edit label": [
-        "Modifica dell'etichetta"
+        "Modifica etichetta"
       ],
       "Edit link": [
         "Modifica link"
@@ -4409,9 +4573,6 @@
       ],
       "Failed to fetch logs.": [
         "Recupero dei log non riuscito."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "I filtri funzionano su tutte le email, incluse le email in arrivo e quelle inviate. Ogni filtro deve contenere almeno un nome e uno script Sieve valido."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "I filtri funzionano su tutte le email, incluse le email in arrivo e quelle inviate. Ogni filtro deve contenere almeno un nome, una condizione e un'azione."
@@ -4619,6 +4780,9 @@
       "Learn more": [
         "Per saperne di più"
       ],
+      "learn more about Sieve programming language": [
+        "scopri di più sul linguaggio di programmazione Sieve"
+      ],
       "Left to Right": [
         "Da sinistra a destra"
       ],
@@ -4671,7 +4835,7 @@
         "Unito"
       ],
       "Monthly ${ onDayString }": [
-        "Mensilmente ${ onDayString }"
+        "Mensile ${ onDayString }"
       ],
       "more": [
         "altro"
@@ -4726,9 +4890,6 @@
       ],
       "No results found": [
         "Nessun risultato trovato"
-      ],
-      "Normal": [
-        "Normale"
       ],
       "Not a valid URL": [
         "URL non valido"
@@ -4802,9 +4963,6 @@
       ],
       "Phone number": [
         "Numero di telefono"
-      ],
-      "Plain text": [
-        "Testo normale"
       ],
       "Plan upgrade required": [
         "Upgrade del piano necessario"
@@ -4940,9 +5098,6 @@
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Seleziona Continua su ${ name } per aprire l'app. Questo crea anche un account ${ name } con il tuo indirizzo ${ MAIL_APP_NAME } in modo da poter accedere in futuro con un clic."
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }. Se hai bisogno di più di ${ maxUsers } account utente, per favore ${ contactMailToLink } il nostro servizio clienti."
       ],
       "Select what you want to move from Google.": [
         "Seleziona cosa vuoi spostare da Google."
@@ -5157,6 +5312,9 @@
       "To use ${ toAppName }, please create an address.": [
         "Per usare ${ toAppName }, sei pregato di creare un indirizzo."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Per funzionare correttamente, ogni filtro deve contenere almeno un nome e uno script Sieve valido. Puoi ${ link }."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
       ],
@@ -5314,7 +5472,7 @@
         "Yandex registra la tua attività online e legge i tuoi dati personali al fine di fornire accesso agli inserzionisti e ad altri software di terze parti. Per una migliore privacy, crea un indirizzo email sicuro."
       ],
       "Yearly": [
-        "Annualmente"
+        "Annuale"
       ],
       "You already have a free account": [
         "Hai già un account gratuito"
@@ -5330,9 +5488,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Puoi controllare lo stato di avanzamento ${ importProgressLink }."
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Puoi personalizzare e scaricare le tue fatture per scopi contabili."
@@ -6922,6 +7077,12 @@
         "Importa tutti i messaggi da ${ totalLabelsCount } etichette da ${ periodFragment } ed etichettali come ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto.",
+        "Puoi creare fino a ${ MAX_LINKS_PER_CALENDAR } link per calendario. Per creare un nuovo link a questo calendario, eliminane uno dalla lista qui sotto."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Elimina"
@@ -7016,7 +7177,7 @@
         "Ogni ${ interval } mesi ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensilmente ${ onDayString }"
+        "Mensile ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
         "Mensilmente ${ onDayString }, ${ timesString }"
@@ -7030,109 +7191,109 @@
         "il giorno ${ dayOfMonth }"
       ],
       "on the first Friday": [
-        "il primo Venerdì"
+        "il primo venerdì"
       ],
       "on the first Monday": [
-        "il primo Lunedì"
+        "il primo lunedì"
       ],
       "on the first Saturday": [
-        "il primo Sabato"
+        "il primo sabato"
       ],
       "on the first Sunday": [
-        "la prima Domenica"
+        "la prima domenica"
       ],
       "on the first Thursday": [
-        "il primo Giovedì"
+        "il primo giovedì"
       ],
       "on the first Tuesday": [
-        "il primo Martedì"
+        "il primo martedì"
       ],
       "on the first Wednesday": [
-        "il primo Mercoledì"
+        "il primo mercoledì"
       ],
       "on the fourth Friday": [
-        "il quarto Venerdì"
+        "il quarto venerdì"
       ],
       "on the fourth Monday": [
-        "il quarto Lunedì"
+        "il quarto lunedì"
       ],
       "on the fourth Saturday": [
-        "il quarto Sabato"
+        "il quarto sabato"
       ],
       "on the fourth Sunday": [
-        "la quarta Domenica"
+        "la quarta domenica"
       ],
       "on the fourth Thursday": [
-        "il quarto Giovedì"
+        "il quarto giovedì"
       ],
       "on the fourth Tuesday": [
-        "il quarto Martedì"
+        "il quarto martedì"
       ],
       "on the fourth Wednesday": [
-        "il quarto Mercoledì"
+        "il quarto mercoledì"
       ],
       "on the last Friday": [
-        "l'ultimo Venerdì"
+        "l'ultimo venerdì"
       ],
       "on the last Monday": [
-        "l'ultimo Lunedì"
+        "l'ultimo lunedì"
       ],
       "on the last Saturday": [
-        "l'ultimo Sabato"
+        "l'ultimo sabato"
       ],
       "on the last Sunday": [
-        "l'ultima Domenica"
+        "l'ultima domenica"
       ],
       "on the last Thursday": [
         "l'ultimo Giovedì"
       ],
       "on the last Tuesday": [
-        "l'ultimo Martedì"
+        "l'ultimo martedì"
       ],
       "on the last Wednesday": [
-        "l'ultimo Mercoledì"
+        "l'ultimo mercoledì"
       ],
       "on the second Friday": [
-        "il secondo Venerdì"
+        "il secondo venerdì"
       ],
       "on the second Monday": [
-        "il secondo Lunedì"
+        "il secondo lunedì"
       ],
       "on the second Saturday": [
-        "il secondo Sabato"
+        "il secondo sabato"
       ],
       "on the second Sunday": [
-        "la seconda Domenica"
+        "la seconda domenica"
       ],
       "on the second Thursday": [
-        "il secondo Giovedì"
+        "il secondo giovedì"
       ],
       "on the second Tuesday": [
-        "il secondo Martedì"
+        "il secondo martedì"
       ],
       "on the second Wednesday": [
-        "il secondo Mercoledì"
+        "il secondo mercoledì"
       ],
       "on the third Friday": [
-        "il terzo Venerdì"
+        "il terzo venerdì"
       ],
       "on the third Monday": [
-        "il terzo Lunedì"
+        "il terzo lunedì"
       ],
       "on the third Saturday": [
-        "il terzo Sabato"
+        "il terzo sabato"
       ],
       "on the third Sunday": [
-        "la terza Domenica"
+        "la terza domenica"
       ],
       "on the third Thursday": [
-        "il terzo Giovedì"
+        "il terzo giovedì"
       ],
       "on the third Tuesday": [
-        "il terzo Martedì"
+        "il terzo martedì"
       ],
       "on the third Wednesday": [
-        "il terzo Mercoledì"
+        "il terzo mercoledì"
       ]
     },
     "Moved to black/whitelist": {
@@ -8284,6 +8445,18 @@
         "Aggiungi il tuo nome (o il nome dell'azienda) e l'indirizzo alle tue fatture"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        "contatto"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Seleziona il numero di utenti da includere nel tuo piano. Ogni utente aggiuntivo costa ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita.",
+        "Se hai bisogno di più di ${ maxUsers } account, per favore ${ contact } il nostro team di vendita."
+      ]
+    },
     "Price": {
       "Free": [
         "Gratis"
@@ -8552,9 +8725,6 @@
       ],
       "Preview": [
         "Anteprima"
-      ],
-      "Sieve editor": [
-        "Editor Sieve"
       ]
     },
     "Storage": {
@@ -8937,14 +9107,6 @@
       ],
       "vCard field": [
         "campo vCard"
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Ti presentiamo la versione aggiornata di Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Tanti servizi, un solo obiettivo: la privacy."
       ]
     },
     "Time period": {
@@ -10183,63 +10345,63 @@
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
         "Ogni ${ interval } settimana il ${ multipleDaysString }, ${ untilString }",
-        "Ogni ${ interval } settimane il${ multipleDaysString }, ${ untilString }"
+        "Ogni ${ interval } settimane di ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Ogni ${ interval } settimana tutti i giorni",
-        "Ogni ${ interval } settimane tutti i giorni"
+        "Ogni ${ interval } settimane, tutti i giorni"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Ogni ${ interval } settimana tutti i giorni, ${ timesString }",
         "Ogni ${ interval } settimane tutti i giorni, ${ timesString }"
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Ogni ${ interval } settimana tutti i giorni, ${ untilString }",
+        "Ogni ${ interval } settimana, tutti i giorni, ${ untilString }",
         "Ogni ${ interval } settimane tutti i giorni, ${ untilString }"
       ],
       "Every ${ interval } week on Friday": [
         "Ogni ${ interval } settimana il Venerdì",
-        "Ogni ${ interval } settimane il Venerdì"
+        "Ogni ${ interval } settimane di Venerdì"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Ogni ${ interval } settimana il Venerdì, ${ timesString }",
-        "Ogni ${ interval } settimane il Venerdì, ${ timesString }"
+        "Ogni ${ interval } settimana di Venerdì, ${ timesString }",
+        "Ogni ${ interval } settimane di Venerdì, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Ogni ${ interval } settimana il Venerdì, ${ untilString }",
-        "Ogni ${ interval } settimane il Venerdì, ${ untilString }"
+        "Ogni ${ interval } settimana di Venerdì, ${ untilString }",
+        "Ogni ${ interval } settimane di Venerdì, ${ untilString }"
       ],
       "Every ${ interval } week on Monday": [
         "Ogni ${ interval } settimana il Lunedì",
-        "Ogni ${ interval } settimane il Lunedì"
+        "Ogni ${ interval } settimane di Lunedì"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Ogni ${ interval } settimana il Lunedì, ${ timesString }",
-        "Ogni ${ interval } settimane il Lunedì, ${ timesString }"
+        "Ogni ${ interval } settimana di Lunedì, ${ timesString }",
+        "Ogni ${ interval } settimane di Lunedì, ${ timesString }"
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Ogni ${ interval } settimana il Lunedì, ${ untilString }",
-        "Ogni ${ interval } settimane il Lunedì, ${ untilString }"
+        "Ogni ${ interval } settimana di Lunedì, ${ untilString }",
+        "Ogni ${ interval } settimane di Lunedì, ${ untilString }"
       ],
       "Every ${ interval } week on Saturday": [
         "Ogni ${ interval } settimana il Sabato",
-        "Ogni ${ interval } settimane il Sabato"
+        "Ogni ${ interval } settimane di Sabato"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Ogni ${ interval } settimana il Sabato, ${ timesString }",
-        "Ogni ${ interval } settimane il Sabato, ${ timesString }"
+        "Ogni ${ interval } settimana di Sabato, ${ timesString }",
+        "Ogni ${ interval } settimane di Sabato, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Ogni ${ interval } settimana il Sabato, ${ untilString }",
-        "Ogni ${ interval } settimane il Sabato, ${ untilString }"
+        "Ogni ${ interval } settimana di Sabato, ${ untilString }",
+        "Ogni ${ interval } settimane di Sabato, ${ untilString }"
       ],
       "Every ${ interval } week on Sunday": [
         "Ogni ${ interval } settimana la Domenica",
-        "Ogni ${ interval } settimane la Domenica"
+        "Ogni ${ interval } settimane di Domenica"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Ogni ${ interval } settimana la Domenica, ${ timesString }",
-        "Ogni ${ interval } settimane la Domenica, ${ timesString }"
+        "Ogni ${ interval } settimana di Domenica, ${ timesString }",
+        "Ogni ${ interval } settimane di Domenica, ${ timesString }"
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
         "Ogni ${ interval } settimana la Domenica, ${ untilString }",
@@ -10250,36 +10412,36 @@
         "Ogni ${ interval } settimane il Giovedì"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Ogni ${ interval } settimana il Giovedì, ${ timesString }",
-        "Ogni ${ interval } settimane il Giovedì, ${ timesString }"
+        "Ogni ${ interval } settimana di Giovedì, ${ timesString }",
+        "Ogni ${ interval } settimane di Giovedì, ${ timesString }"
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Ogni ${ interval } settimana il Giovedì, ${ untilString }",
-        "Ogni ${ interval } settimane il Giovedì, ${ untilString }"
+        "Ogni ${ interval } settimana di Giovedì, ${ untilString }",
+        "Ogni ${ interval } settimane di Giovedì, ${ untilString }"
       ],
       "Every ${ interval } week on Tuesday": [
         "Ogni ${ interval } settimana il Martedì",
         "Ogni ${ interval } settimane il Martedì"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Ogni ${ interval } settimana il Martedì, ${ timesString }",
-        "Ogni ${ interval } settimane il Martedì, ${ timesString }"
+        "Ogni ${ interval } settimana di Martedì, ${ timesString }",
+        "Ogni ${ interval } settimane di Martedì, ${ timesString }"
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Ogni ${ interval } settimana il Martedì, ${ untilString }",
-        "Ogni ${ interval } settimane il Martedì, ${ untilString }"
+        "Ogni ${ interval } settimana di Martedì, ${ untilString }",
+        "Ogni ${ interval } settimane di Martedì, ${ untilString }"
       ],
       "Every ${ interval } week on Wednesday": [
         "Ogni ${ interval } settimana il Mercoledì",
         "Ogni ${ interval } settimane il Mercoledì"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Ogni ${ interval } settimana il Mercoledì, ${ timesString }",
-        "Ogni ${ interval } settimane il Mercoledì, ${ timesString }"
+        "Ogni ${ interval } settimana di Mercoledì, ${ timesString }",
+        "Ogni ${ interval } settimane di Mercoledì, ${ timesString }"
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Ogni ${ interval } settimana il Mercoledì, ${ untilString }",
-        "Ogni ${ interval } settimane il Mercoledì, ${ untilString }"
+        "Ogni ${ interval } settimana di Mercoledì, ${ untilString }",
+        "Ogni ${ interval } settimane di Mercoledì, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
         "Settimanalmente il ${ multipleDaysString }"
@@ -10291,7 +10453,7 @@
         "Settimanalmente il ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Settimanalmente tutti i giorni"
+        "Settimanale su tutti i giorni"
       ],
       "Weekly on all days, ${ timesString }": [
         "Settimanalmente tutti i giorni, ${ timesString }"
@@ -10309,7 +10471,7 @@
         "Settimanalmente il Venerdì, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Settimanalmente il Lunedì"
+        "Settimanale il lunedì"
       ],
       "Weekly on Monday, ${ timesString }": [
         "Settimanalmente il Lunedì, ${ timesString }"
@@ -10327,7 +10489,7 @@
         "Settimanalmente il Sabato, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Settimanalmente la Domenica"
+        "Settimanale la domenica"
       ],
       "Weekly on Sunday, ${ timesString }": [
         "Settimanalmente la Domenica, ${ timesString }"
@@ -10351,7 +10513,7 @@
         "Settimanalmente il Martedì, ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Settimanale il martedì, ${ untilString }"
+        "Settimanalmente il Martedì, ${ untilString }"
       ],
       "Weekly on Wednesday": [
         "Settimanalmente il Mercoledì"
@@ -10400,7 +10562,7 @@
         "Ogni ${ interval } anni, ${ untilString }"
       ],
       "Yearly": [
-        "Annualmente"
+        "Annuale"
       ],
       "Yearly, ${ timesString }": [
         "Annualmente, ${ timesString }"

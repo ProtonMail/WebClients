@@ -439,6 +439,9 @@
       "Select all": [
         "Seleccionar todo"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         "Establecer una frase de recuperación"
       ],
@@ -817,6 +820,68 @@
       ],
       "Open": [
         "Abrir"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "zanahoria"
+      ],
+      "cerise": [
+        "cereza"
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "enzian": [
+        "enzima"
+      ],
+      "fern": [
+        "helecho"
+      ],
+      "forest": [
+        "bosque"
+      ],
+      "ocean": [
+        "océano"
+      ],
+      "olive": [
+        "aceituna"
+      ],
+      "pacific": [
+        "pacífico"
+      ],
+      "pickle": [
+        "pepinillo"
+      ],
+      "pine": [
+        "pino"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "plum": [
+        "ciruela"
+      ],
+      "purple": [
+        "morado"
+      ],
+      "reef": [
+        "arrecife"
+      ],
+      "sahara": [
+        "sáhara"
+      ],
+      "slateblue": [
+        "azul pizarra"
+      ],
+      "soil": [
+        "suelo"
+      ],
+      "strawberry": [
+        "fresa"
       ]
     },
     "Confirm modal title": {
@@ -2047,6 +2112,16 @@
         "No se ha seleccionado ninguna imagen"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        ""
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3135,6 +3210,12 @@
       "Automatically save contacts": [
         "Guardar contactos automáticamente"
       ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -3247,8 +3328,14 @@
       "Get your own ${ appName }": [
         "Obtén tu propio ${ appName }"
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "Ocultar contraseña"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         "Entiendo el riesgo"
@@ -3306,6 +3393,9 @@
       ],
       "Notification": [
         "Notificación"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "Sistema operativo"
@@ -3432,6 +3522,9 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
+      ],
+      "Wonderful": [
+        ""
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Sí, quiero borrar permanentemente\nmis archivos antiguos"
@@ -3562,6 +3655,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Presentamos la nueva imagen de Proton.${ br } Varios servicios, pero una misma misión. Estás ante una nueva era de Internet que se cimenta sobre la base de la privacidad."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        ""
       ]
     },
     "new_plans: title": {
@@ -4047,6 +4150,11 @@
         "Verificación completada con éxito"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        ""
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/mes"
@@ -4336,6 +4444,9 @@
       "Failed": [
         "Fallido"
       ],
+      "Feedback": [
+        ""
+      ],
       "File details": [
         "Detalles del archivo"
       ],
@@ -4483,6 +4594,9 @@
       ],
       "Select link expiration time": [
         "Selecciona la hora de expiración del enlace"
+      ],
+      "Send feedback": [
+        ""
       ],
       "Settings": [
         "Configuración"

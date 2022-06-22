@@ -368,6 +368,9 @@
       "Send": [
         "发送​​"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         "设置恢复密语"
       ],
@@ -874,6 +877,68 @@
     },
     "colon": {
       ": ": [
+        ""
+      ]
+    },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
         ""
       ]
     },
@@ -1838,6 +1903,11 @@
         "此为已停用日历中的事件"
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        ""
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
@@ -2502,6 +2572,11 @@
         "(无标题)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "字节"
@@ -2698,9 +2773,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的权限来${ enableDesktopNotifications }"
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } 已被添加到 Proton 套装中，我们很乐意倾听你对其的看法！"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } 个新日历"
@@ -3316,12 +3388,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
-      "0 - Not likely": [
-        "0 - 不可能"
-      ],
-      "10 - Extremely likely": [
-        "10 - 极有可能"
-      ],
       "Add email address": [
         "添加邮箱地址"
       ],
@@ -3339,6 +3405,12 @@
       ],
       "Automatically save contacts": [
         "自动保存联系人"
+      ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
       ],
       "Browser": [
         "浏览器"
@@ -3436,11 +3508,14 @@
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "隐藏密码"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "您有多大可能向朋友或同事推荐 ${ calendarAppName }？"
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -3491,6 +3566,9 @@
         "通知"
       ],
       "Notifications": [
+        ""
+      ],
+      "OK": [
         ""
       ],
       "Operating system": [
@@ -3573,6 +3651,9 @@
       ],
       "What happened?": [
         "发生了什么？"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -3861,8 +3942,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -3871,9 +3952,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

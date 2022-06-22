@@ -374,6 +374,9 @@
       "Send": [
         "Odeslat"
       ],
+      "Send feedback": [
+        "Odeslat zpětnou vazbu"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
@@ -881,6 +884,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "mrkev"
+      ],
+      "cerise": [
+        "třešeň"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "měď"
+      ],
+      "enzian": [
+        "hořec"
+      ],
+      "fern": [
+        "kapradina"
+      ],
+      "forest": [
+        "les"
+      ],
+      "ocean": [
+        "oceán"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pacific": [
+        "pacifik"
+      ],
+      "pickle": [
+        "okurka"
+      ],
+      "pine": [
+        "borovice"
+      ],
+      "pink": [
+        "růžová"
+      ],
+      "plum": [
+        "švestka"
+      ],
+      "purple": [
+        "fialová"
+      ],
+      "reef": [
+        "útes"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "břidlice"
+      ],
+      "soil": [
+        "půda"
+      ],
+      "strawberry": [
+        "jahoda"
       ]
     },
     "Confirm modal title": {
@@ -1862,6 +1927,11 @@
         "Událost patří do zakázaného kalendáře."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Příště se neptat"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Přidat kalendář"
@@ -2169,7 +2239,7 @@
         "Primární klíč není platný pro odesílání"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        ""
+        "Primární klíč pro interního uživatele není určen k odesílání"
       ],
       "Request timed out": [
         "Vypršel časový limit požadavku"
@@ -2559,6 +2629,11 @@
         "(bez názvu)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Vaše zpětná vazba"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bajtů"
@@ -2794,9 +2869,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } byl přidán do Proton suite. Rádi bychom slyšeli, co si myslíte!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } nový kalendář",
@@ -3469,12 +3541,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
-      "0 - Not likely": [
-        "0 - Nepravděpodobně"
-      ],
-      "10 - Extremely likely": [
-        "10 - Velmi pravděpodobné"
-      ],
       "Add email address": [
         "Přidat e-mailovou adresu"
       ],
@@ -3492,6 +3558,12 @@
       ],
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
+      ],
+      "Awful": [
+        "Strašné"
+      ],
+      "Bad": [
+        "Špatné"
       ],
       "Browser": [
         "Prohlížeč"
@@ -3589,11 +3661,14 @@
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
       ],
+      "Good": [
+        "Dobré"
+      ],
       "Hide password": [
         "Skrýt heslo"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Jaká je pravděpodobnost, že doporučíte ${ calendarAppName } příteli nebo kolegovi?"
+      "How would you describe your experience with the new Proton?": [
+        "Jak byste popsal své zkušenosti s novým Protonem?"
       ],
       "I understand the risk": [
         "Rozumím rizikům"
@@ -3645,6 +3720,9 @@
       ],
       "Notifications": [
         "Oznámení"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Operační systém"
@@ -3729,6 +3807,9 @@
       ],
       "What happened?": [
         "Co se stalo?"
+      ],
+      "Wonderful": [
+        "Úžasné"
       ]
     },
     "Label for contact group color": {
@@ -4032,8 +4113,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Povězte nám o svých zkušenostech. (Nepovinné)"
       ]
     },
     "new_plans: placeholder": {
@@ -4042,9 +4123,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Poskytněte zpětnou vazbu"
-      ],
       "Updated Proton, unified protection": [
         "Aktualizovaný Proton, jednotná ochrana"
       ]

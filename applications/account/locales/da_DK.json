@@ -6,16 +6,16 @@
   "contexts": {
     "Access level": {
       "Full": [
-        "Fuld"
+        ""
       ],
       "Full view": [
-        "Fuld visning"
+        ""
       ],
       "Limited": [
-        "Begrænset"
+        ""
       ],
       "Limited view": [
-        "Begrænset visning"
+        ""
       ]
     },
     "Action": {
@@ -162,9 +162,6 @@
       ],
       "Confirm opening of link ${ linkToShow }": [
         "Bekræft åbning af link ${ linkToShow }"
-      ],
-      "contact": [
-        "kontakt"
       ],
       "Contact support": [
         "Kontakt support"
@@ -398,7 +395,7 @@
         "Importer e-mails"
       ],
       "Import from .ics": [
-        "Import fra .ics"
+        "Importér fra .ics"
       ],
       "Import key": [
         "Importér nøgle"
@@ -721,9 +718,6 @@
       "Support": [
         "Support"
       ],
-      "Switch to rich text": [
-        "Skift til rich text format"
-      ],
       "Top up": [
         "Genopfyld"
       ],
@@ -949,7 +943,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Føj til kalender og markér som afventende"
+        ""
       ]
     },
     "Autoresponse": {
@@ -1206,38 +1200,38 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Du kan importere ICS-filer fra en anden kalender til ${ CALENDAR_APP_NAME }. Dette lader dig hurtigt importere en begivenhed eller hele din dagsorden."
+        ""
       ]
     },
     "Calendar limit warning": {
       "You have reached the maximum number of personal calendars you can create within your plan.": [
-        "Du har nået det maksimale antal personlige kalendere, du kan oprette med dit abonnement."
+        ""
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
-        "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalender.",
-        "Du har nået det maksimale antal på ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } kalendere."
+        "",
+        ""
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "Etiket tilføjet"
+        ""
       ],
       "Label deleted": [
-        "Etiket slettet"
+        ""
       ],
       "Label edited": [
-        "Etiket rettet"
+        ""
       ]
     },
     "Calendar status": {
       "Active": [
-        "Aktiv"
+        ""
       ],
       "Default": [
-        "Standard"
+        ""
       ],
       "Disabled": [
-        "Deaktiveret"
+        ""
       ],
       "Not synced": [
         "Ikke synkroniseret"
@@ -1299,6 +1293,173 @@
       ],
       "Open": [
         "Åbn"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        "gulerod"
+      ],
+      "cerise": [
+        "kirsebærrød"
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        "kobolt"
+      ],
+      "copper": [
+        "kobber"
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        "ensian"
+      ],
+      "fern": [
+        "bregne"
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        "skov"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        "ocean"
+      ],
+      "olive": [
+        "oliven"
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        "stillehav"
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        "fyr"
+      ],
+      "pink": [
+        "pink"
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        "blomme"
+      ],
+      "purple": [
+        "lilla"
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        "rev"
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        "skiferblå"
+      ],
+      "soil": [
+        "jord"
+      ],
+      "strawberry": [
+        "jordbær"
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        ""
       ]
     },
     "Condition for custom filter": {
@@ -2251,7 +2412,7 @@
         "Daglig, ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Daglig, ${ untilString }"
+        "Dagligt, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Hver ${ interval } dag",
@@ -2380,16 +2541,16 @@
     },
     "Duration": {
       "120 minutes": [
-        "120 minutter"
+        ""
       ],
       "30 minutes": [
-        "30 minutter"
+        ""
       ],
       "60 minutes": [
-        "60 minutter"
+        ""
       ],
       "90 minutes": [
-        "90 minutter"
+        ""
       ]
     },
     "Email body for description (description part)": {
@@ -3018,7 +3179,7 @@
         "Fejl: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "Ugyldig URL"
+        ""
       ],
       "Oops, something went wrong": [
         "Ups, noget gik galt"
@@ -3057,10 +3218,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Begivenhed @ ${ timeString }"
+        ""
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "Begivenhed fra ${ timeString }, ${ rruleString }"
+        ""
       ]
     },
     "Event invitation error": {
@@ -3114,50 +3275,50 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } begivenhed eksporteret",
-        "${ totalProcessed }/${ totalToProcess } begivenheder eksporteret"
+        "",
+        ""
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalender eksporteret. Du kan nu gemme ICS-filen."
+        ""
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Dekrypterer begivenheder fra din kalender: ${ totalProcessed }/${ totalToProcess }"
+        ""
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
+        ""
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
+        ""
       ],
       "Error decrypting event": [
-        "Fejl under dekryptering af begivenhed"
+        ""
       ],
       "Learn how to restore encrypted events with old password": [
-        "Lær at gendanne krypterede begivenheder med gammel adgangskode"
+        ""
       ],
       "Loading events": [
-        "Indlæser begivenheder"
+        ""
       ],
       "None of the events could be exported.": [
-        "Ingen af begivenhederne kunne eksporteres."
+        ""
       ],
       "Password reset - event cannot be decrypted": [
-        "Nulstilling af adgangskode - begivenhed kan ikke dekrypteres"
+        ""
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Nulstilling af adgangskode - flere begivenheder kan ikke dekrypteres"
+        ""
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Luk ikke fanen før eksportprocessen er afsluttet."
+        ""
       ],
       "Some of your events could not be exported.": [
-        "Nogle af dine begivenheder kunne ikke eksporteres."
+        ""
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Internetforbindelsen blev afbrudt, hvilket fik eksportprocessen til at mislykkes. Prøv venligst igen."
+        ""
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret."
+        ""
       ]
     },
     "Feature": {
@@ -3220,6 +3381,9 @@
       "Inbox": [
         "Indbakke"
       ],
+      "Inbox - Default": [
+        ""
+      ],
       "Select a folder": [
         "Vælg en mappe"
       ],
@@ -3272,8 +3436,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Tilføj et brugerdefineret filter til automatisk at udføre visse handlinger, såsom mærkning eller arkivering af beskeder."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Anvend afsenderspecifikke spamregler. Beskeder fra adresser eller domæner på Godkendt-listen fortsætter altid til din indbakke, mens blokerede adresser altid ryger i spam. Markering af en besked som spam føjer adressen til blokeringslisten. Markering af en besked som ikke-spam føjer den til listen over godkendte afsendere."
@@ -4094,13 +4258,13 @@
         "og"
       ],
       "Anyone with this link can see all the event details of this calendar such as title, location or participants.": [
-        "Enhver med dette link kan se alle begivenhedsdetaljer i denne kalender såsom titel, placering eller deltagere."
+        ""
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
-        "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
+        ""
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Folk med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, bliver du nødt til at oprette et nyt link."
+        ""
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
         "AOL læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
@@ -4199,7 +4363,7 @@
         "Ved at forlade nu gemmes ændringer ikke"
       ],
       "By sharing the full event details of this calendar, you accept to grant Proton access to this calendar's encrypted information.": [
-        "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give Proton adgang til denne kalenders krypterede oplysninger."
+        ""
       ],
       "Center": [
         "Centrér"
@@ -4257,28 +4421,25 @@
         "Aktuelt allokeres al ledig lagerplads til administratorkontoen. Reducér administratorkontoallokeringen for at frigive lagerplads til yderligere brugere. Du kan altid forøge den samlede mængde lagerplads ved at opgradere din konto."
       ],
       "Custom": [
-        "Tilpasset"
+        ""
       ],
       "Custom daily": [
-        "Tilpasset daglig"
+        ""
       ],
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Brugerdefinerede filtre fungerer på alle nye e-mails, herunder indgående e-mails samt sendte e-mails. Filtre kan redigeres og oprettes direkte via Sieve-programmeringssprog."
-      ],
       "Custom monthly": [
-        "Tilpasset månedligt"
+        ""
       ],
       "Custom weekly": [
-        "Tilpasset ugentlig"
+        ""
       ],
       "Custom yearly": [
-        "Tilpasset årligt"
+        ""
       ],
       "Daily": [
-        "Dagligt"
+        ""
       ],
       "Data locked": [
         "Data låst"
@@ -4325,6 +4486,9 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Download dine PGP-nøgler til brug sammen med andre PGP-kompatible tjenester."
+      ],
+      "Drop a file here to upload": [
+        ""
       ],
       "Drop the file here to upload": [
         "Slip filen her for at uploade"
@@ -4399,7 +4563,7 @@
         "Indtast dit telefonnummer til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Invitationer til begivenheder og anmodninger om svar vil blive sendt på dette sprog."
+        ""
       ],
       "Expired": [
         "Udløbet"
@@ -4409,9 +4573,6 @@
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
-      ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn og et gyldigt Sieve-script."
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre virker på alle e-mails, herunder indgående samt sendte e-mails. Hvert filter skal indeholde mindst et navn, en betingelse og en handling."
@@ -4619,6 +4780,9 @@
       "Learn more": [
         "Få mere at vide"
       ],
+      "learn more about Sieve programming language": [
+        ""
+      ],
       "Left to Right": [
         "Venstre mod højre"
       ],
@@ -4626,7 +4790,7 @@
         "Lad dine kontakter vide, at du bekymrer dig om deres privatliv."
       ],
       "Limited view: others see if you're busy. Full view: shows all event details, including name, location, or participants.": [
-        "Begrænset visning: andre ser om du er optaget. Fuld visning: viser alle begivenhedsdetaljer, herunder navn, placering eller deltagere."
+        ""
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -4635,7 +4799,7 @@
         "Link oprettet"
       ],
       "Link deleted": [
-        "Linket er slettet"
+        "Linket slettet"
       ],
       "Link type": [
         "Link type"
@@ -4671,7 +4835,7 @@
         "Flettet"
       ],
       "Monthly ${ onDayString }": [
-        "Månedligt ${ onDayString }"
+        ""
       ],
       "more": [
         "mere"
@@ -4727,9 +4891,6 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
-      "Normal": [
-        "Normal"
-      ],
       "Not a valid URL": [
         "Ugyldig URL"
       ],
@@ -4752,7 +4913,7 @@
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
       ],
       "Only you can see the labels.": [
-        "Kun du kan se etiketterne."
+        ""
       ],
       "Or select a particular server:": [
         "Eller vælg en bestemt server:"
@@ -4802,9 +4963,6 @@
       ],
       "Phone number": [
         "Telefonnummer"
-      ],
-      "Plain text": [
-        "Almindelig tekst"
       ],
       "Plan upgrade required": [
         "Abonnementsopgradering påkrævet"
@@ -4940,9 +5098,6 @@
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Vælg Fortsæt til ${ name } for at åbne appen. Dette opretter også en ${ name }-konto med din ${ MAIL_APP_NAME }-adresse, så du fremover kan logge ind med ét klik."
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Vælg det antal brugere, der skal indgå i dit abonnement. Hver ekstra bruger koster ${ price }. Hvis du har brug for flere brugerkonti end ${ maxUsers }, bedes du ${ contactMailToLink } kontakte vores team for kundetilfredshed."
       ],
       "Select what you want to move from Google.": [
         "Vælg, hvad du vil overflytte fra Google."
@@ -5157,6 +5312,9 @@
       "To use ${ toAppName }, please create an address.": [
         "Opret en adresse for at bruge ${ toAppName }."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        ""
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Genopfyld din konto med kredit, som du kan benytte på et nyt abonnement eller fornyelse af dit nuværende. Du får én kredit pr. brugte ${ i18nCurrency }."
       ],
@@ -5275,7 +5433,7 @@
         "Uge"
       ],
       "Week and month views only apply to desktop.": [
-        "Uge- og månedsvisninger gælder kun på computeren."
+        "Uge- og månedsvisninger gælder kun på desktop."
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
         "Vi sender en nulstillingskode til den e-mailadresse, du angav til kontogendannelse."
@@ -5314,7 +5472,7 @@
         "Yandex registrerer din onlineaktivitet og læser dine personlige data for at give adgang for annoncører og andre tredjeparter. Opret en sikker e-mailadresse for bedre beskyttelse af personlige oplysninger."
       ],
       "Yearly": [
-        "Årlig"
+        ""
       ],
       "You already have a free account": [
         "Du har allerede en gratis konto"
@@ -5330,9 +5488,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Du kan tjekke fremskridtet ${ importProgressLink }."
-      ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } links pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor."
       ],
       "You can customize and download your invoices for accounting purposes.": [
         "Du kan tilpasse og downloade dine fakturaer til bogholderiformål."
@@ -5386,10 +5541,10 @@
         "Du skal fjerne eventuelle ekstra personlige kalendere og delte kalenderlinks, før du kan annullere dit abonnement."
       ],
       "You need to have a personal calendar to create a link.": [
-        "Du skal have en personlig kalender for at oprette et link."
+        ""
       ],
       "You need to have an active personal calendar to import your events from .ics.": [
-        "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra .ics."
+        ""
       ],
       "You need to have an active personal calendar to import your events.": [
         "Du skal have en aktiv personlig kalender for at importere dine begivenheder."
@@ -5404,7 +5559,7 @@
         "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at gendanne data, som den krypterede nøgle har krypteret."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Du skal stadig svare på invitationer, for at værten kan se dit svar."
+        ""
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Du vil ${ loseAllData } i din ${ BRAND_NAME } konto. For at gendanne det, skal du indtaste din gamle adgangskode."
@@ -5881,7 +6036,7 @@
     },
     "Knowledge base link label": {
       "Here's how": [
-        "Sådan gør du"
+        ""
       ]
     },
     "Label": {
@@ -5973,7 +6128,7 @@
         "Vedhæft skærmfoto(s)"
       ],
       "Auto-detect primary time zone": [
-        "Auto-registrer primær tidszone"
+        ""
       ],
       "Auto-load embedded images": [
         "Auto-indlæs indlejrede billeder"
@@ -6033,7 +6188,7 @@
         "Kode er på 6 cifre uden mellemrum"
       ],
       "Color": [
-        "Farve"
+        ""
       ],
       "Composer": [
         "Skrivevindue"
@@ -6120,28 +6275,28 @@
         "Ugedage"
       ],
       "Default email address": [
-        "Standard e-mailadresse"
+        ""
       ],
       "Default event duration": [
-        "Standardvarighed for begivenheder"
+        ""
       ],
       "Default full day notifications": [
-        "Standard heldagsnotifikationer"
+        ""
       ],
       "Default language": [
         "Standardsporg"
       ],
       "Default language (${ defaultLanguage })": [
-        "Standardsprog (${ defaultLanguage })"
+        ""
       ],
       "Default notifications": [
-        "Standardnotifikationer"
+        ""
       ],
       "Default PGP scheme": [
         "Standard PGP-metode"
       ],
       "Default view": [
-        "Standardvisning"
+        ""
       ],
       "Delete": [
         "Slet"
@@ -6150,7 +6305,7 @@
         "Tæthed"
       ],
       "Description": [
-        "Beskrivelse"
+        ""
       ],
       "Device/certificate name": [
         "Enhed/certifikatnavn"
@@ -6162,7 +6317,7 @@
         "Rabat"
       ],
       "Display": [
-        "Visning"
+        ""
       ],
       "Display name": [
         "Visningsnavn"
@@ -6501,13 +6656,13 @@
         "Send auto-svar"
       ],
       "Send in": [
-        "Send i"
+        ""
       ],
       "Show secondary time zone": [
-        "Vis sekundær tidszone"
+        ""
       ],
       "Show week numbers": [
-        "Vis ugenumre"
+        ""
       ],
       "Sign external messages": [
         "Signér eksterne beskeder"
@@ -6594,7 +6749,7 @@
         "Upload 1 eller flere gendannelsesfiler eller krypteringsnøgler"
       ],
       "URL": [
-        "URL"
+        ""
       ],
       "Use folder colors": [
         "Brug mappefarver"
@@ -6654,10 +6809,10 @@
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
       ],
       "Your calendar URL": [
-        "Din kalender URL"
+        ""
       ],
       "Your calendar URL label": [
-        "Din kalender URL etiket"
+        ""
       ],
       "Your password (admin)": [
         "Din adgangskode (admin)"
@@ -6922,6 +7077,12 @@
         "Importer alle beskeder fra ${ totalLabelsCount } etiketter siden ${ periodFragment } og giv dem etiketten ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "",
+        ""
+      ]
+    },
     "Member action": {
       "Delete": [
         "Slet"
@@ -6988,7 +7149,7 @@
     },
     "Modal title and action": {
       "Add calendar": [
-        "Tilføj kalender"
+        ""
       ]
     },
     "Monetary unit": {
@@ -7004,25 +7165,25 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Hver ${ interval } måned ${ onDayString }",
-        "Hver ${ interval } måned ${ onDayString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }",
-        "Hver ${ interval } måned ${ onDayString }, ${ untilString }"
+        "",
+        ""
       ],
       "Monthly ${ onDayString }": [
-        "Månedligt ${ onDayString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Månedligt ${ onDayString }, ${ timesString }"
+        ""
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Månedligt ${ onDayString }, ${ untilString }"
+        ""
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -7102,7 +7263,7 @@
         "på den anden lørdag"
       ],
       "on the second Sunday": [
-        "på den anden søndag"
+        "på den første søndag"
       ],
       "on the second Thursday": [
         "på den anden torsdag"
@@ -7864,39 +8025,39 @@
     },
     "Notification time input": {
       "at": [
-        "kl."
+        ""
       ]
     },
     "Notification type": {
       "email": [
-        "e-mail"
+        ""
       ],
       "notification": [
-        "notifikation"
+        ""
       ]
     },
     "Notification when": {
       "at time of event": [
-        "på tidspunktet for begivenheden"
+        ""
       ],
       "day before": [
-        "dag før",
-        "dage før"
+        "",
+        ""
       ],
       "hour before": [
-        "time før",
-        "timer før"
+        "",
+        ""
       ],
       "minute before": [
-        "minut før",
-        "minutter før"
+        "",
+        ""
       ],
       "on the same day": [
-        "på den samme dag"
+        ""
       ],
       "week before": [
-        "uge før",
-        "uger før"
+        "",
+        ""
       ]
     },
     "Oauth instructions": {
@@ -8192,10 +8353,10 @@
         "En måde at kontakte dig på"
       ],
       "Add a calendar description": [
-        "Tilføj en kalenderbeskrivelse"
+        ""
       ],
       "Add a calendar name": [
-        "Tilføj et kalendernavn"
+        ""
       ],
       "Add gift code": [
         "Tilføj gavekode"
@@ -8282,6 +8443,18 @@
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
         "Tilføj dit eget (eller firma-) navn og adresse til dine fakturaer"
+      ]
+    },
+    "plan customizer, users": {
+      "contact": [
+        ""
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        ""
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "",
+        ""
       ]
     },
     "Price": {
@@ -8424,7 +8597,7 @@
     },
     "Select search results": {
       "No results found": [
-        "Ingen resultater fundet"
+        ""
       ]
     },
     "Settings description": {
@@ -8445,7 +8618,7 @@
     },
     "Settings update growler warning": {
       "Failed to update settings": [
-        "Kunne ikke opdatere indstillinger"
+        ""
       ]
     },
     "Settings/filters": {
@@ -8529,10 +8702,10 @@
         "Inviter venner, og optjen belønninger!"
       ],
       "No more missed appointments": [
-        "Ikke flere glemte aftaler"
+        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
-        "Med e-mail-meddelelser bestemmer du selv, hvilke begivenheder du vil have besked om og hvornår."
+        ""
       ]
     },
     "State": {
@@ -8552,9 +8725,6 @@
       ],
       "Preview": [
         "Forhåndsvisning"
-      ],
-      "Sieve editor": [
-        "Sieve-editor"
       ]
     },
     "Storage": {
@@ -8570,33 +8740,33 @@
     },
     "Subscribe to calendar modal": {
       "Calendar URL": [
-        "Kalender-URL"
+        ""
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "Hvis du vil abonnere på en ekstern eller offentlig kalender og dens opdateringer, skal du indtaste URL-adressen. En skrivebeskyttet version af kalenderen vil blive tilføjet til dine kalenderabonnementer.\n${ kbLink }"
+        ""
       ]
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Lær hvordan du får et privat kalenderlink."
+        ""
       ]
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "Bruger du dette link, vil Google offentliggøre den kalender du abonnerer på"
+        ""
       ],
       "This link might be wrong": [
-        "Dette link er muligvis forkert"
+        ""
       ]
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Tilføj offentlige, eksterne eller delte kalendere ved hjælp af en URL."
+        ""
       ]
     },
     "Subscribed calendar URL length warning": {
       "URL is too long": [
-        "URL er for lang"
+        ""
       ]
     },
     "Subscription attribute": {
@@ -8703,16 +8873,16 @@
         "Fejl anmeldt"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "Kalender oprettet. Det kan tage et par minutter at synkronisere."
+        ""
       ],
       "Calendar created": [
-        "Kalender oprettet"
+        ""
       ],
       "Calendar removed": [
-        "Kalender fjernet"
+        ""
       ],
       "Calendar updated": [
-        "Kalender opdateret"
+        ""
       ],
       "Canceling import": [
         "Annullerer import"
@@ -8727,7 +8897,7 @@
         "Kreditter tilføjet"
       ],
       "Default calendar updated": [
-        "Standardkalender opdateret"
+        ""
       ],
       "DMARC value copied to clipboard": [
         "DMARC-værdi kopieret til udklipsholder"
@@ -8894,7 +9064,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Detaljer om begivenheder, der ikke kunne eksporteres"
+        ""
       ]
     },
     "Tab in domain modal": {
@@ -8939,14 +9109,6 @@
         "vCard-felt"
       ]
     },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Vi præsenterer det opdaterede Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Flere tjenester, én privatlivsmission."
-      ]
-    },
     "Time period": {
       "account creation date": [
         "oprettelsesdato for konto"
@@ -8973,7 +9135,7 @@
     },
     "Timezone search placeholder": {
       "Search timezones": [
-        "Søg tidszoner"
+        ""
       ]
     },
     "Title": {
@@ -9553,7 +9715,7 @@
         "Sporing af henvisning"
       ],
       "Remove calendar": [
-        "Fjern kalender"
+        ""
       ],
       "Report a problem": [
         "Anmeld et problem"
@@ -9598,13 +9760,13 @@
         "Vælg kontaktgruppe"
       ],
       "Select the time to send this notification": [
-        "Vælg tid for afsendelse af denne notifikation"
+        "Vælg tidspunkt for afsendelse af denne notifikation"
       ],
       "Select the way to send this notification": [
         "Vælg måden at sende denne notifikation på"
       ],
       "Select when you want this notification to be sent": [
-        "Vælg når du ønsker, at denne notifikation skal sendes"
+        "Vælg hvornår du ønsker, at denne notifikation skal sendes"
       ],
       "Session management": [
         "Sessionshåndtering"
@@ -9768,7 +9930,7 @@
     },
     "Title (number of minutes/hours/days/weeks)": {
       "Choose a number": [
-        "Vælg et nummer"
+        ""
       ]
     },
     "Title for payment methods table": {
@@ -9922,7 +10084,7 @@
         "Denne funktion er kun tilgængelig for betalende brugere"
       ],
       "This feature is unavailable for the moment": [
-        "Denne funktion er ikke tilgængelig i øjeblikket"
+        ""
       ],
       "This key cannot be used for encryption": [
         "Nøglen kanm ikke benyttes til kryptering"
@@ -10002,11 +10164,11 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Opgrader til et betalt abonnement for at oprette op til ${ MAX_CALENDARS_PER_USER } kalender, få mulighed for at lave kalendere til arbejde, deling med venner og bare til dig selv.",
-        "Opgrader til et betalt abonnement for at oprette op til ${ MAX_CALENDARS_PER_USER } kalendere, få mulighed for at lave kalendere til arbejde, deling med venner og bare til dig selv."
+        "",
+        ""
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
-        "Opgrader til et betalt abonnement for at dele din personlige kalender med enhver via et link."
+        ""
       ]
     },
     "User role": {
@@ -10174,136 +10336,136 @@
     },
     "Weekly recurring event, frequency": {
       "Every ${ interval } week on ${ multipleDaysString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }",
-        "Hver ${ interval } uge på ${ multipleDaysString }, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on all days": [
         "Hver ${ interval } uge på alle dage",
         "Hver ${ interval } uge på alle dage"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
-        "Hver ${ interval } uge på alle dage, ${ timesString }",
-        "Hver ${ interval } uge på alle dage, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on all days, ${ untilString }": [
-        "Hver ${ interval } uge på alle dage, ${ untilString }",
-        "Hver ${ interval } uge på alle dage, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Friday": [
         "Hver ${ interval } uge om fredagen",
         "Hver ${ interval } uge om fredagen"
       ],
       "Every ${ interval } week on Friday, ${ timesString }": [
-        "Hver ${ interval } uge om fredagen, ${ timesString }",
-        "Hver ${ interval } uge om fredagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Hver ${ interval } uge om fredagen, ${ untilString }",
-        "Hver ${ interval } uge om fredagen, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Monday": [
         "Hver ${ interval } uge om mandagen",
         "Hver ${ interval } uge om mandagen"
       ],
       "Every ${ interval } week on Monday, ${ timesString }": [
-        "Hver ${ interval } uge om mandagen, ${ timesString }",
-        "Hver ${ interval } uge om mandagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Monday, ${ untilString }": [
-        "Hver ${ interval } uge om mandagen, ${ untilString }",
-        "Hver ${ interval } uge om mandagen, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Saturday": [
         "Hver ${ interval } uge om lørdagen",
         "Hver ${ interval } uge om lørdagen"
       ],
       "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Hver ${ interval } uge om lørdagen, ${ timesString }",
-        "Hver ${ interval } uge om lørdagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Hver ${ interval } uge om lørdagen, ${ untilString }",
-        "Hver ${ interval } uge om lørdagen, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Sunday": [
         "Hver ${ interval } uge om søndagen",
         "Hver ${ interval } uge om søndagen"
       ],
       "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Hver ${ interval } uge om søndagen, ${ timesString }",
-        "Hver ${ interval } uge om søndagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Hver ${ interval } uge om søndagen, ${ untilString }",
-        "Hver ${ interval } uge om søndagen, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Thursday": [
         "Hver ${ interval } uge om torsdagen",
         "Hver ${ interval } uge om torsdagen"
       ],
       "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Hver ${ interval } uge om torsdagen, ${ timesString }",
-        "Hver ${ interval } uge om torsdagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Hver ${ interval } uge om torsdagen, ${ untilString }",
-        "Hver ${ interval } uge om torsdagen, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday": [
         "Hver ${ interval } uge om tirsdagen",
         "Hver ${ interval } uge om tirsdagen"
       ],
       "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Hver ${ interval } uge om tirsdagen, ${ timesString }",
-        "Hver ${ interval } uge om tirsdagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }",
-        "Hver ${ interval } uge om tirsdagen, ${ untilString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Wednesday": [
         "Hver ${ interval } uge om onsdagen",
         "Hver ${ interval } uge om onsdagen"
       ],
       "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Hver ${ interval } uge om onsdagen, ${ timesString }",
-        "Hver ${ interval } uge om onsdagen, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Hver ${ interval } uge om onsdagen, ${ untilString }",
-        "Hver ${ interval } uge om onsdagen, ${ untilString }"
+        "",
+        ""
       ],
       "Weekly on ${ multipleDaysString }": [
         "Ugentlig på ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ timesString }"
+        ""
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Ugentligt på ${ multipleDaysString }, ${ untilString }"
+        ""
       ],
       "Weekly on all days": [
-        "Ugentligt alle dage"
+        "Ugentligt på alle dage"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Ugentlig på alle dage, ${ timesString }"
+        ""
       ],
       "Weekly on all days, ${ untilString }": [
-        "Ugentlig på alle dage, ${ untilString }"
+        ""
       ],
       "Weekly on Friday": [
         "Ugentligt om fredagen"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Ugentligt om fredagen, ${ timesString }"
+        ""
       ],
       "Weekly on Friday, ${ untilString }": [
         "Ugentligt om fredagen, ${ untilString }"
@@ -10312,55 +10474,55 @@
         "Ugentligt om mandagen"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Ugentligt om mandagen, ${ timesString }"
+        ""
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Ugentligt om mandagen, ${ untilString }"
+        ""
       ],
       "Weekly on Saturday": [
         "Ugentligt om lørdagen"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Ugentligt om lørdagen, ${ timesString }"
+        ""
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Ugentligt om lørdagen, ${ untilString }"
+        ""
       ],
       "Weekly on Sunday": [
         "Ugentligt om søndagen"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Ugentligt om søndagen, ${ timesString }"
+        ""
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Ugentligt om søndagen, ${ untilString }"
+        ""
       ],
       "Weekly on Thursday": [
         "Ugentligt om torsdagen"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Ugentligt om torsdagen, ${ timesString }"
+        ""
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Ugentligt om torsdagen, ${ untilString }"
+        ""
       ],
       "Weekly on Tuesday": [
         "Ugentligt om tirsdagen"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Ugentligt om tirsdagen, ${ timesString }"
+        ""
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Ugentligt om tirsdagen, ${ untilString }"
+        ""
       ],
       "Weekly on Wednesday": [
         "Ugentligt om onsdagen"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Ugentligt om onsdagen, ${ timesString }"
+        ""
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Ugentligt om onsdagen, ${ untilString }"
+        ""
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -10388,25 +10550,25 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Hver ${ interval } år",
-        "Hver ${ interval } år"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Hver ${ interval } år, ${ timesString }",
-        "Hver ${ interval } år, ${ timesString }"
+        "",
+        ""
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Hver ${ interval } år, ${ untilString }",
-        "Hver ${ interval } år, ${ untilString }"
+        "",
+        ""
       ],
       "Yearly": [
-        "Årlig"
+        ""
       ],
       "Yearly, ${ timesString }": [
-        "Årligt, ${ timesString }"
+        ""
       ],
       "Yearly, ${ untilString }": [
-        "Årligt, ${ untilString }"
+        ""
       ]
     }
   }

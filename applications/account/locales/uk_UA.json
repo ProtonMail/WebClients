@@ -163,9 +163,6 @@
       "Confirm opening of link ${ linkToShow }": [
         "Підтвердити відкриття посилання ${ linkToShow }"
       ],
-      "contact": [
-        "зв'язатися"
-      ],
       "Contact support": [
         "Зв'язатися з підтримкою"
       ],
@@ -677,7 +674,7 @@
         "Згорнути"
       ],
       "Show more": [
-        "Розгорнути"
+        "Докладніше"
       ],
       "Show preview": [
         "Показати попередній перегляд"
@@ -720,9 +717,6 @@
       ],
       "Support": [
         "Підтримка"
-      ],
-      "Switch to rich text": [
-        "Перемкнути в Rich Text Format (RTF)"
       ],
       "Top up": [
         "Поповнити"
@@ -963,7 +957,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Додати до календаря та у чергу"
+        "Додати до календаря та в чергу"
       ]
     },
     "Autoresponse": {
@@ -1229,7 +1223,7 @@
       ],
       "You have reached the maximum of ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } subscribed calendar.": [
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписного календаря.",
-        "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписні календарі.",
+        "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів.",
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів.",
         "Ви досягли максимальної кількості ${ MAX_SUBSCRIBED_CALENDARS_PER_USER } підписних календарів."
       ]
@@ -1250,10 +1244,10 @@
         "Активний"
       ],
       "Default": [
-        "Типово"
+        "Типовий"
       ],
       "Disabled": [
-        "Вимкнено"
+        "Вимкнений"
       ],
       "Not synced": [
         "Не синхронізовано"
@@ -1319,6 +1313,173 @@
       ],
       "Open": [
         "Відкрити"
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        ""
       ]
     },
     "Condition for custom filter": {
@@ -3159,7 +3320,7 @@
         "${ totalProcessed }/${ totalToProcess } подію експортовано",
         "${ totalProcessed }/${ totalToProcess } події експортовано",
         "${ totalProcessed }/${ totalToProcess } подій експортовано",
-        "${ totalProcessed }/${ totalToProcess } подій експортовано"
+        "${ totalProcessed }/${ totalToProcess } події експортовано"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Календар успішно експортовано. Тепер ви можете зберегти ICS файл."
@@ -3186,10 +3347,10 @@
         "Жодну з ваших подій не вдалося експортувати."
       ],
       "Password reset - event cannot be decrypted": [
-        "Скидання пароля - не можна розшифрувати подію"
+        "Скидання пароля — неможливо розшифрувати подію"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Скидання пароля - не можна розшифрувати декілька подій"
+        "Скидання пароля — неможливо розшифрувати кілька подій"
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Не закривайте цю вкладку доки не завершиться процес експортування."
@@ -3198,7 +3359,7 @@
         "Деякі з ваших подій не вдалося експортувати."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Інтернет-з'єднання було перервано, внаслідок чого процес експорту зазнав невдачі. Будь ласка, спробуйте ще раз."
+        "Інтернет-з'єднання було перервано, внаслідок чого процес експорту зазнав невдачі. Повторіть спробу."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Ви можете зберегти ICS файл подій, які були успішно експортовані."
@@ -3268,6 +3429,9 @@
       "Inbox": [
         "Вхідні"
       ],
+      "Inbox - Default": [
+        "Вхідні - типово"
+      ],
       "Select a folder": [
         "Вибрати теку"
       ],
@@ -3320,8 +3484,8 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "Додайте власний фільтр для автоматичного виконання певних дій, наприклад, позначення міткою чи архівування повідомлень."
+      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages. Filters can be edited and created directly via Sieve programming language.": [
+        "Додайте власний фільтр для автовиконання певних дій, наприклад, позначення міткою або архівування повідомлень. Фільтри можна редагувати та створювати безпосередньо за допомогою мови програмування Sieve."
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
         "Застосовуйте правила спаму призначені для певних користувачів. Повідомлення з адрес чи доменів зі списку дозволів завжди надходять до вашої теки Вхідні, а повідомлення з адрес чи доменів зі списку блокування завжди надходять до спаму. Позначення повідомлення небажаним додає його адресу до списку блокування. Позначення повідомлення потрібним додає його до списку дозволів."
@@ -3391,7 +3555,7 @@
         "Мітка"
       ],
       "Name": [
-        "Ім'я"
+        "Назва"
       ],
       "Notifications": [
         "Сповіщення"
@@ -3701,37 +3865,37 @@
         ""
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        ""
+        "Розгорніть випадне меню, натиснувши на 3 крапки (...)."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        ""
+        "Згенеруйте ${ boldAppPassword } і скористайтеся ним замість свого звичайного пароля під час запиту від Proton."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        ""
+        "Згенеруйте ${ boldAppPassword } та скористайтеся ним замість свого звичайного пароля під час запиту від Proton."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        ""
+        "Перейдіть до ${ boldAccountInfo } у своєму профілі ${ yahooMailLink }."
       ],
       "Go to ${ boldAccountSecurity }.": [
-        ""
+        "Відкрийте ${ boldAccountSecurity }."
       ],
       "Go to Outlook ${ securitySettingsLink }.": [
-        ""
+        "Перейдіть до Outlook ${ securitySettingsLink }."
       ],
       "If 2-step verification is off, turn it on.": [
-        ""
+        "Якщо двоетапна перевірка вимкнена, увімкніть її."
       ],
       "Open your ${ yahooMailLink } contacts.": [
-        ""
+        "Відкрийте свої контакти ${ yahooMailLink }."
       ],
       "Open your Outlook ${ outlookContactsLink }.": [
-        ""
+        "Відкрийте свої Outlook ${ outlookContactsLink }."
       ],
       "Select ${ boldExportContacts } and choose which contacts to export.": [
         ""
       ],
       "Select ${ boldExportCSV }.": [
-        ""
+        "Виберіть ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Щоб імпортувати календар до Proton, вам необхідний ${ knowledgeBaseLink }. Завантажте його з Outlook, виконавши 3 прості кроки:"
@@ -4381,9 +4545,6 @@
       "Custom email domains": [
         "Власні домени електронної пошти"
       ],
-      "Custom filters work on all new emails, including incoming emails as well as sent emails. Filters can be edited and created directly via Sieve programming language.": [
-        "Власні поля доступні в усіх нових повідомленнях, включно з вхідними та надісланими. Фільтри можна редагувати й створювати безпосередньо через мову програмування Sieve."
-      ],
       "Custom monthly": [
         "Власне щомісяця"
       ],
@@ -4444,6 +4605,9 @@
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Завантажте свої ключі PGP для використання з іншими службами, сумісними з PGP."
       ],
+      "Drop a file here to upload": [
+        "Для вивантаження файлу перетягніть його сюди"
+      ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
       ],
@@ -4451,7 +4615,7 @@
         "Зібрано ${ rewards } з ${ rewardsLimit } місяців ${ planName }."
       ],
       "Edit label": [
-        "Змінити мітку"
+        "Редагувати мітку"
       ],
       "Edit link": [
         "Редагувати посилання"
@@ -4528,9 +4692,6 @@
       "Failed to fetch logs.": [
         "Помилка отримання журналів."
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву та дійсний сценарій Sieve."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
       ],
@@ -4568,7 +4729,7 @@
         "Якщо інший адміністратор змінив цей пароль, вам необхідно запитати в нього новий пароль організації."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Якщо системний часовий пояс відрізняється від поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
+        "Якщо системний часовий пояс відрізняється від поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж раз на день)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Якщо цей домен зараз отримує електронну пошту, виберіть вкладку ${ boldAddresses } і додайте всі активні електронні адреси перед зміною MX запису для безперебійного переходу."
@@ -4741,6 +4902,9 @@
       "Learn more": [
         "Докладніше"
       ],
+      "learn more about Sieve programming language": [
+        "дізнатися докладніше про мову програмування Sieve"
+      ],
       "Left to Right": [
         "Зліва направо"
       ],
@@ -4751,7 +4915,7 @@
         "Обмежений перегляд: інші бачать чи ви зайняті. Повний перегляд: показує всі подробиці події, включно з іменем, розташуванням та учасниками."
       ],
       "Link copied to clipboard": [
-        "Посилання скопійовано в буфер обміну"
+        "Посилання скопійовано до буфера обміну"
       ],
       "Link created": [
         "Посилання створено"
@@ -4849,9 +5013,6 @@
       "No results found": [
         "Результатів не знайдено"
       ],
-      "Normal": [
-        "Звичайний"
-      ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
       ],
@@ -4874,7 +5035,7 @@
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
-        "Тільки ви можете бачити мітки."
+        "Лише ви можете бачити мітки."
       ],
       "Or select a particular server:": [
         "Або виберіть певний сервер:"
@@ -4926,9 +5087,6 @@
       ],
       "Phone number": [
         "Номер телефону"
-      ],
-      "Plain text": [
-        "Звичайний текст"
       ],
       "Plan upgrade required": [
         "Необхідно передплатити тарифний план"
@@ -5064,9 +5222,6 @@
       ],
       "Select Continue to ${ name } to open the app. This also creates a ${ name } account with your ${ MAIL_APP_NAME } address so you can sign in with one click in the future.": [
         "Виберіть Продовжити з ${ name }, щоб відкрити застосунок. Це також створить обліковий запис ${ name } за допомогою адреси ${ MAIL_APP_NAME }, щоб ви могли увійти одним клацанням миші в майбутньому."
-      ],
-      "Select the number of users to include in your plan. Each additional user costs ${ price }. Should you need more than ${ maxUsers } user accounts, please ${ contactMailToLink } our Customer Success team.": [
-        "Виберіть кількість користувачів для вашого тарифного плану. Вартість кожного додаткового користувача ${ price }. Якщо вам потрібно понад ${ maxUsers } облікових записів, будь ласка, ${ contactMailToLink } нашій команді підтримки."
       ],
       "Select what you want to move from Google.": [
         "Виберіть, що ви хочете перемістити з Google."
@@ -5281,6 +5436,9 @@
       "To use ${ toAppName }, please create an address.": [
         "Щоб скористатися ${ toAppName }, створіть адресу."
       ],
+      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
+        "Для належної роботи кожен фільтр повинен містити принаймні назву й дійсний скрипт Sieve. Ви можете ${ link }."
+      ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
       ],
@@ -5455,9 +5613,6 @@
       "You can check the progress ${ importProgressLink }.": [
         "Ви можете переглянути поступ ${ importProgressLink }."
       ],
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть одне зі списку нижче."
-      ],
       "You can customize and download your invoices for accounting purposes.": [
         "Ви можете налаштувати і завантажити свої рахунки для бухгалтерського обліку."
       ],
@@ -5528,7 +5683,7 @@
         "Ви повинні експортувати резервну копію цього ключа, якщо вам потрібно відновити дані, які ним зашифровані."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Вам все одно необхідно відповісти на запрошення, щоб організатор побачив вашу відповідь."
+        "Вам усе одно необхідно відповісти на запрошення, щоб організатор побачив вашу відповідь."
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "Ви ${ loseAllData } у вашому обліковому записі ${ BRAND_NAME }. Щоб відновити його, вам потрібно буде ввести свій старий пароль."
@@ -6724,7 +6879,7 @@
         "Вивантажте 1 чи більше файлів відновлення чи ключів шифрування"
       ],
       "URL": [
-        "URL"
+        "URL-адреса"
       ],
       "Use folder colors": [
         "Використати кольори тек"
@@ -7056,6 +7211,14 @@
         "Імпортувати всі повідомлення з ${ totalLabelsCount } мітками, починаючи з ${ periodFragment } та позначити їх міткою ${ LABEL_MARKUP_PLACEHOLDER }"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилання на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
+        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
+        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
+        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу."
+      ]
+    },
     "Member action": {
       "Delete": [
         "Видалити"
@@ -7138,19 +7301,19 @@
     },
     "Monthly recurring event, frequency": {
       "Every ${ interval } month ${ onDayString }": [
-        "Кожен ${ interval } місяць ${ onDayString }",
+        "Щомісяця ${ onDayString }",
         "Кожні ${ interval } місяці ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }",
         "Кожні ${ interval } місяців ${ onDayString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ timesString }",
+        "Щомісяця ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
       ],
       "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Кожен ${ interval } місяць ${ onDayString }, ${ untilString }",
+        "Щомісяця ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
         "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
@@ -7310,33 +7473,33 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        ""
+        "Найвища швидкість VPN"
       ],
       "Keep your inbox organized with folders": [
         ""
       ],
       "Medium VPN speed": [
-        ""
+        "Середня швидкість VPN"
       ]
     },
     "new_plans: Action": {
       "Downgrade to ${ downgradedPlanName }": [
-        ""
+        "Понизити до ${ downgradedPlanName }"
       ],
       "Explore all ${ BRAND_NAME } plans": [
-        ""
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
       ],
       "From ${ _price } per user": [
-        ""
+        "Від ${ _price } на користувача"
       ],
       "From ${ price }": [
-        ""
+        "Від ${ price }"
       ],
       "Keep my ${ currentPlanName } account": [
-        ""
+        "Залишити мою передплату ${ currentPlanName }"
       ],
       "Upgrade now": [
-        ""
+        "Покращити"
       ]
     },
     "new_plans: action": {
@@ -7347,22 +7510,22 @@
         ""
       ],
       "Delete account": [
-        ""
+        "Видалити обліковий запис"
       ],
       "Downgrade account": [
-        ""
+        "Понизити обліковий запис"
       ],
       "Get ${ BRAND_NAME } for free": [
-        ""
+        "Отримати ${ BRAND_NAME } безплатно"
       ],
       "Get ${ planName }": [
-        ""
+        "Отримати ${ planName }"
       ],
       "Get ${ upsellShortPlan.title }": [
-        ""
+        "Отримати ${ upsellShortPlan.title }"
       ],
       "Got it": [
-        ""
+        "Зрозуміло"
       ],
       "Keep ${ plan }": [
         ""
@@ -7371,7 +7534,7 @@
         ""
       ],
       "Switch or add account": [
-        ""
+        "Перемкнути або додати обліковий запис"
       ],
       "Switch plan": [
         ""
@@ -7402,67 +7565,67 @@
         ""
       ],
       "${ n } email address": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } адреса електронної пошти",
+        "${ n } адреси/псевдонімів е-пошти",
+        "${ n } адрес/псевдонімів е-пошти",
+        "${ n } адреси/псевдонімів е-пошти"
       ],
       "${ n } email address per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } адреса е-пошти на користувача",
+        "${ n } адреси е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача",
+        "${ n } адрес е-пошти на користувача"
       ],
       "${ n } filter": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } фільтр",
+        "${ n } фільтри",
+        "${ n } фільтрів",
+        "${ n } фільтри"
       ],
       "${ n } folder": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } тека",
+        "${ n } теки",
+        "${ n } тек",
+        "${ n } тек"
       ],
       "${ n } folder and label": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } тека й мітка",
+        "${ n } теки й мітки",
+        "${ n } тек і міток",
+        "${ n } тек і міток"
       ],
       "${ n } label": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } мітка",
+        "${ n } мітки",
+        "${ n } міток",
+        "${ n } міток"
       ],
       "${ n } message per day": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } повідомлення на добу",
+        "${ n } повідомлення на добу",
+        "${ n } повідомлень на добу",
+        "${ n } повідомлення на добу"
       ],
       "${ n } personal calendar": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } особистий календар",
+        "${ n } особисті календарі",
+        "${ n } особистих календарів",
+        "${ n } особистих календарів"
       ],
       "${ n } VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднання",
+        "${ n } VPN-з'єднань",
+        "${ n } VPN-з'єднань"
       ],
       "${ n } VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } VPN-з'єднання на користувача",
+        "${ n } VPN-з'єднання на користувача",
+        "${ n } VPN-з'єднань на користувача",
+        "${ n } VPN-з'єднань на користувача"
       ],
       "${ size } attachment size": [
-        ""
+        "Розмір вкладень ${ size }"
       ],
       "${ size } storage per user": [
         ""
@@ -7474,37 +7637,37 @@
         ""
       ],
       "99.95% SLA": [
-        ""
+        "99.95% SLA"
       ],
       "Admin console": [
-        ""
+        "Консоль адміністратора"
       ],
       "Advanced sharing security": [
         ""
       ],
       "Auto-reply": [
-        ""
+        "Автовідповідь"
       ],
       "Catch-all": [
-        ""
+        "Catch-all"
       ],
       "Centralized billing": [
         ""
       ],
       "Contact groups": [
-        ""
+        "Групи контактів"
       ],
       "Contact groups management": [
-        ""
+        "Керування групами контактів"
       ],
       "Custom email domains": [
-        ""
+        "Власні домени електронної пошти"
       ],
       "DNS leak prevention": [
-        ""
+        "Захист від витоку DNS"
       ],
       "Document editors (docs, sheets, slides)": [
-        ""
+        "Редактори документів (документи, таблиці, слайди)"
       ],
       "Easy Switch import assistant": [
         ""
@@ -7516,46 +7679,46 @@
         ""
       ],
       "Encrypted contact details": [
-        ""
+        "Зашифровані подробиці контакту"
       ],
       "Encrypted VPN servers": [
-        ""
+        "Зашифровані VPN-сервери"
       ],
       "End-to-end encryption": [
-        ""
+        "Наскрізне шифрування"
       ],
       "Free VPN on a single device": [
-        ""
+        "Безплатна VPN для одного пристрою"
       ],
       "GDPR data processing agreement": [
         ""
       ],
       "High-speed VPN on ${ n } device": [
-        "",
-        "",
-        "",
-        ""
+        "Високошвидкісна VPN на ${ n } пристрої",
+        "Високошвидкісна VPN на ${ n } пристроях",
+        "Високошвидкісна VPN на ${ n } пристроях",
+        "Високошвидкісна VPN на ${ n } пристроях"
       ],
       "HTML signatures": [
-        ""
+        "HTML-підписи"
       ],
       "Kill switch/always-on VPN": [
-        ""
+        "Kill Switch/Постійна VPN"
       ],
       "Limited support": [
-        ""
+        "Обмежена підтримка"
       ],
       "Multiple admin roles": [
         ""
       ],
       "NetShield malware and ad-blocker": [
-        ""
+        "NetShield — блокувальник зловмисних програм та реклами"
       ],
       "P2P/BitTorrent": [
-        ""
+        "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
-        ""
+        "Електронні листи, захищені паролем"
       ],
       "Phone support (6+ users)": [
         ""
@@ -7564,13 +7727,13 @@
         ""
       ],
       "Priority support": [
-        ""
+        "Пріоритетна підтримка"
       ],
       "Router support": [
-        ""
+        "Підтримка маршрутизатора"
       ],
       "Secure Core servers": [
-        ""
+        "Сервери Secure Core"
       ],
       "Send & receive invitations": [
         ""
@@ -7585,34 +7748,34 @@
         ""
       ],
       "Split tunneling (Android and Windows)": [
-        ""
+        "Розділене тунелювання (Android і Windows)"
       ],
       "Strict no-logs policy": [
-        ""
+        "Суворе дотримання політики без журналювання"
       ],
       "Team management": [
-        ""
+        "Керування командою"
       ],
       "Tor over VPN": [
-        ""
+        "Tor через VPN"
       ],
       "Two-factor authentication": [
-        ""
+        "Двоетапна перевірка"
       ],
       "Unlimited filters": [
-        ""
+        "Необмежена кількість фільтрів"
       ],
       "Unlimited folders": [
-        ""
+        "Необмежена кількість тек"
       ],
       "Unlimited folders, labels and filters": [
-        ""
+        "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited labels": [
-        ""
+        "Необмежена кількість міток"
       ],
       "Unlimited messages per day": [
-        ""
+        "Необмежена кількість повідомлень на день"
       ],
       "Unlimited volume/bandwidth": [
         ""
@@ -7627,31 +7790,31 @@
         ""
       ],
       "Worldwide streaming services": [
-        ""
+        "Світові служби трансляції"
       ]
     },
     "new_plans: forgot links": {
       "Forgot password": [
-        ""
+        "Забули пароль"
       ],
       "username": [
-        ""
+        "ім'я користувача"
       ]
     },
     "new_plans: heading": {
       "Support": [
-        ""
+        "Підтримка"
       ],
       "Team management": [
-        ""
+        "Керування командою"
       ]
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        ""
+        "В іншому випадку доступ до вашого облікового запису буде обмежено, а ваш обліковий запис буде вимкнено."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        ""
+        "Щоб продовжувати використовувати ${ MAIL_APP_NAME } з преміумфункціями, оберіть опції передплати та оплати."
       ],
       "Upgrade to the business pack with access to all premium Proton services.": [
         ""
@@ -7660,7 +7823,7 @@
         ""
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
-        ""
+        "Ваш пробний період завершується ${ formattedTrialExpirationDate }"
       ]
     },
     "new_plans: info": {
@@ -7730,20 +7893,20 @@
     },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } з ${ humanMaxSpace }"
       ]
     },
     "new_plans: Plan frequency": {
       "/month": [
-        ""
+        "/місяць"
       ]
     },
     "new_plans: Plan time remaining": {
       "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
-        "",
-        "",
-        "",
-        ""
+        "У вас все ще залишився ${ daysRemaining } день чинної передплати ${ currentPlanName }.",
+        "У вас все ще залишилося ${ daysRemaining } дні чинної передплати ${ currentPlanName }.",
+        "У вас все ще залишилося ${ daysRemaining } днів чинної передплати ${ currentPlanName }.",
+        "У вас все ще залишилося ${ daysRemaining } дні чинної передплати ${ currentPlanName }."
       ]
     },
     "new_plans: signup": {
@@ -7751,16 +7914,16 @@
         ""
       ],
       "Payment details": [
-        ""
+        "Подробиці платежу"
       ],
       "Proton's terms and conditions": [
-        ""
+        "Умови та положення Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         ""
       ],
       "Subscription": [
-        ""
+        "Передплата"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         ""
@@ -7774,21 +7937,21 @@
     },
     "new_plans: Title": {
       "${ mailPlanName } Trial": [
-        ""
+        "Пробна версія ${ mailPlanName }"
       ],
       "Upgrade to ${ planName }": [
-        ""
+        "Покращити до ${ planName }"
       ],
       "Your account's usage": [
-        ""
+        "Використання вашого облікового запису"
       ]
     },
     "new_plans: title": {
       "Delete account?": [
-        ""
+        "Видалити обліковий запис?"
       ],
       "Downgrade account?": [
-        ""
+        "Понизити обліковий запис?"
       ],
       "Improved plans coming soon!": [
         ""
@@ -7800,7 +7963,7 @@
         ""
       ],
       "Switch plans?": [
-        ""
+        "Змінити тарифний план?"
       ],
       "Unlock premium features by upgrading": [
         ""
@@ -7847,10 +8010,10 @@
         ""
       ],
       "End-to-end encrypted calendar": [
-        ""
+        "Наскрізно зашифрований календар"
       ],
       "End-to-end encrypted file storage": [
-        ""
+        "Наскрізно зашифроване сховище файлів"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
         ""
@@ -7940,7 +8103,7 @@
         ""
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        ""
+        "Простір сховища спільний для ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         ""
@@ -7980,7 +8143,7 @@
         ""
       ],
       "10 email addresses/aliases": [
-        ""
+        "10 адрес/псевдонімів е-пошти"
       ],
       "Access advanced VPN features": [
         ""
@@ -8010,16 +8173,16 @@
         ""
       ],
       "Priority support": [
-        ""
+        "Пріоритетна підтримка"
       ],
       "Support for 1 custom email domain": [
-        ""
+        "Підтримка 1 власного домену е-пошти"
       ],
       "Unlimited folders, labels, and filters": [
-        ""
+        "Необмежена кількість тек, міток і фільтрів"
       ],
       "Unlimited messages": [
-        ""
+        "Необмежена кількість повідомлень"
       ]
     },
     "Notification": {
@@ -8057,19 +8220,19 @@
         "день до",
         "дні до",
         "днів до",
-        "днів до"
+        "дня до"
       ],
       "hour before": [
         "година до",
         "години до",
         "годин до",
-        "годин до"
+        "години до"
       ],
       "minute before": [
         "хвилина до",
         "хвилини до",
         "хвилин до",
-        "хвилин до"
+        "хвилини до"
       ],
       "on the same day": [
         "того ж дня"
@@ -8078,7 +8241,7 @@
         "тиждень до",
         "тижні до",
         "тижнів до",
-        "тижнів до"
+        "тижня до"
       ]
     },
     "Oauth instructions": {
@@ -8466,6 +8629,20 @@
         "Додайте своє ім'я (або назву компанії) та адресу до своїх рахунків"
       ]
     },
+    "plan customizer, users": {
+      "contact": [
+        "зв'язатися"
+      ],
+      "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
+        "Виберіть необхідну кількість користувачів, яку потрібно включити в тарифний план. Кожен додатковий користувач коштує ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Якщо вам потрібно більше ніж ${ maxUsers } обліковий запис користувача, вам потрібно ${ contact } з нашою командою продажів.",
+        "Якщо вам потрібно більше ніж ${ maxUsers } облікові записи користувача, вам потрібно ${ contact } з нашою командою продажів.",
+        "Якщо вам потрібно більше ніж ${ maxUsers } облікових записів користувача, вам потрібно ${ contact } з нашою командою продажів.",
+        "Якщо вам потрібно більше ніж ${ maxUsers } облікові записи користувача, вам потрібно ${ contact } з нашою командою продажів."
+      ]
+    },
     "Price": {
       "Free": [
         "Безплатно"
@@ -8734,9 +8911,6 @@
       ],
       "Preview": [
         "Перегляд"
-      ],
-      "Sieve editor": [
-        "Редактор Sieve"
       ]
     },
     "Storage": {
@@ -8760,7 +8934,7 @@
     },
     "Subscribe to calendar modal description": {
       "Learn how to get a private calendar link.": [
-        "Навчіться, як отримати приватне посилання для календаря."
+        "Дізнайтеся, як отримати приватне посилання для календаря."
       ]
     },
     "Subscribed calendar extension warning": {
@@ -8773,7 +8947,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Додайте публічні, зовнішні чи спільні календарі за URL-адресою."
+        "Додайте загальнодоступні, зовнішні чи спільні календарі за URL-адресою."
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -9145,14 +9319,6 @@
       ],
       "vCard field": [
         "Поле vCard"
-      ]
-    },
-    "Text": {
-      "Introducing the updated Proton.": [
-        "Представляємо оновлений Proton."
-      ],
-      "More services, one privacy mission.": [
-        "Більше служб, єдина місія приватності."
       ]
     },
     "Time period": {
@@ -10220,10 +10386,10 @@
     },
     "Upgrade notice": {
       "Upgrade to a paid plan to create up to ${ MAX_CALENDARS_PER_USER } calendar, allowing you to make calendars for work, to share with friends, and just for yourself.": [
-        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календар та мати окремі календарі для роботи, друзів та для себе.",
-        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календаря та мати окремі календарі для роботи, друзів та для себе.",
-        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календарів та мати окремі календарі для роботи, друзів та для себе.",
-        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календарів та мати окремі календарі для роботи, друзів та для себе."
+        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календар та мати окремі календарі для роботи, друзів і для себе.",
+        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календаря та мати окремі календарі для роботи, друзів і для себе.",
+        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календарів та мати окремі календарі для роботи, друзів і для себе.",
+        "Перейдіть на платний тарифний план, щоб створити ${ MAX_CALENDARS_PER_USER } календарів та мати окремі календарі для роботи, друзів і для себе."
       ],
       "Upgrade to a paid plan to share your personal calendar via link with anyone.": [
         "Перейдіть на платний тарифний план, щоб надавати доступ до особистого календаря будь-кому за посиланням."
@@ -10414,10 +10580,10 @@
         "Кожні ${ interval } тижнів ${ multipleDaysString }, ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Кожен ${ interval } тиждень у ${ multipleDaysString }, ${ untilString }",
+        "Щотижня у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
         "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
-        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
         "Кожен ${ interval } тиждень в усі дні",
@@ -10450,7 +10616,7 @@
         "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
       ],
       "Every ${ interval } week on Friday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у п'ятницю, ${ untilString }",
+        "Щотижня у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
         "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
@@ -10486,7 +10652,7 @@
         "Кожні ${ interval } тижнів у суботу, ${ timesString }"
       ],
       "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Кожен ${ interval } тиждень у суботу, ${ untilString }",
+        "Щотижня у суботу, ${ untilString }",
         "Кожні ${ interval } тижні у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }",
         "Кожні ${ interval } тижнів у суботу, ${ untilString }"
@@ -10576,7 +10742,7 @@
         "Щотижня в усі дні"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Щотижня кожен день, ${ timesString }"
+        "Щотижня щодня, ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
         "Щотижня кожен день, ${ untilString }"
@@ -10670,19 +10836,19 @@
     },
     "Yearly recurring event, frequency": {
       "Every ${ interval } year": [
-        "Кожен ${ interval } рік",
+        "Щороку",
         "Кожні ${ interval } роки",
         "Кожні ${ interval } років",
         "Кожні ${ interval } років"
       ],
       "Every ${ interval } year, ${ timesString }": [
-        "Кожен ${ interval } рік, ${ timesString }",
+        "Щороку, ${ timesString }",
         "Кожні ${ interval } роки, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }",
         "Кожні ${ interval } років, ${ timesString }"
       ],
       "Every ${ interval } year, ${ untilString }": [
-        "Кожен ${ interval } рік, ${ untilString }",
+        "Щороку, ${ untilString }",
         "Кожні ${ interval } роки, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }",
         "Кожні ${ interval } років, ${ untilString }"
