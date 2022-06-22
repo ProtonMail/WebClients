@@ -374,6 +374,9 @@
       "Send": [
         "Надіслати"
       ],
+      "Send feedback": [
+        "Надіслати відгук"
+      ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
@@ -881,6 +884,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морквяний"
+      ],
+      "cerise": [
+        "вишневий"
+      ],
+      "cobalt": [
+        "кобальтовий"
+      ],
+      "copper": [
+        "мідний"
+      ],
+      "enzian": [
+        "енізан"
+      ],
+      "fern": [
+        "папороть"
+      ],
+      "forest": [
+        "лісовий"
+      ],
+      "ocean": [
+        "океанічний"
+      ],
+      "olive": [
+        "оливковий"
+      ],
+      "pacific": [
+        "тихоокеанський"
+      ],
+      "pickle": [
+        "розсіл"
+      ],
+      "pine": [
+        "сосновий"
+      ],
+      "pink": [
+        "рожевий"
+      ],
+      "plum": [
+        "сливовий"
+      ],
+      "purple": [
+        "бузковий"
+      ],
+      "reef": [
+        "рифовий"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сизий"
+      ],
+      "soil": [
+        "земляний"
+      ],
+      "strawberry": [
+        "полуничний"
       ]
     },
     "Confirm modal title": {
@@ -1862,6 +1927,11 @@
         "Подія з вимкненого календаря."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        "Не питати знову"
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Додати календар"
@@ -2559,6 +2629,11 @@
         "(без назви)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Ваш відгук"
+      ]
+    },
     "file size format": {
       "bytes": [
         "байт"
@@ -2794,9 +2869,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } додано до Proton suite. Ми хотіли б почути вашу думку про це!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новий календар",
@@ -3469,12 +3541,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Тимчасово недоступно. Повторіть спробу пізніше.)"
       ],
-      "0 - Not likely": [
-        "0 - малоймовірно"
-      ],
-      "10 - Extremely likely": [
-        "10 - Неодмінно"
-      ],
       "Add email address": [
         "Додати адресу електронної пошти"
       ],
@@ -3492,6 +3558,12 @@
       ],
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
+      ],
+      "Awful": [
+        "Жахливо"
+      ],
+      "Bad": [
+        "Погано"
       ],
       "Browser": [
         "Браузер"
@@ -3589,11 +3661,14 @@
       "From: ${ importedEmail }": [
         "Від: ${ importedEmail }"
       ],
+      "Good": [
+        "Добре"
+      ],
       "Hide password": [
         "Сховати пароль"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Яка ймовірність, що ви порадите ${ calendarAppName } другові або колезі?"
+      "How would you describe your experience with the new Proton?": [
+        "Як би ви описали свої враження від нового Proton?"
       ],
       "I understand the risk": [
         "Я розумію ризик"
@@ -3645,6 +3720,9 @@
       ],
       "Notifications": [
         "Сповіщення"
+      ],
+      "OK": [
+        "Нормально"
       ],
       "Operating system": [
         "Операційна система"
@@ -3729,6 +3807,9 @@
       ],
       "What happened?": [
         "Що трапилось?"
+      ],
+      "Wonderful": [
+        "Дивовижно"
       ]
     },
     "Label for contact group color": {
@@ -4032,8 +4113,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        "Розкажіть нам своє враження. (Необов'язково)"
       ]
     },
     "new_plans: placeholder": {
@@ -4042,9 +4123,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Залишити відгук"
-      ],
       "Updated Proton, unified protection": [
         "Оновлений Proton, єдиний захист"
       ]

@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "αποστολή μηνύματος αυτόματης απάντησης"
       ],
+      "Send feedback": [
+        "Αποστολή σχολίων"
+      ],
       "Send read receipt": [
         "Αποστολή αποδεικτικού ανάγνωσης"
       ],
@@ -849,7 +852,7 @@
         "Υποβολή"
       ],
       "Switch to rich text": [
-        "Μετάβαση σε εμπλουτισμένο κείμενο"
+        ""
       ],
       "Theme": [
         "Θέμα"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Άνοιγμα"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "μήλο"
+      ],
+      "azureish white": [
+        "λευκό γαλαζωπό"
+      ],
+      "blanched almond": [
+        "αμυγδαλόψυχα"
+      ],
+      "blue-gray": [
+        "μπλε-γκρι"
+      ],
+      "caramel": [
+        "καραμελί"
+      ],
+      "carrot": [
+        "καρότο"
+      ],
+      "cerise": [
+        "κεράσι"
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        "κοβάλτιο"
+      ],
+      "copper": [
+        "χαλκός"
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        "ραδίκι"
+      ],
+      "dark cerulean": [
+        "σκούρος ουρανός"
+      ],
+      "dark midnight blue": [
+        "μπλε μεσονυκτίου"
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        "φτέρη"
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        "δάσος"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        "ακτινίδιο"
+      ],
+      "lemon yellow": [
+        "λεμονί"
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        "ανοιχτό κόκκινο"
+      ],
+      "maize": [
+        "καλαμπόκι"
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        "ωκεανός"
+      ],
+      "olive": [
+        "λαδί"
+      ],
+      "outer space": [
+        "μεσοαστρικό"
+      ],
+      "pacific": [
+        "Ειρηνικός"
+      ],
+      "palatinate blue": [
+        "βασιλικό μπλε"
+      ],
+      "pale cerulean": [
+        "χλωμός ουρανός"
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        "τουρσί"
+      ],
+      "pine": [
+        "πεύκο"
+      ],
+      "pink": [
+        "ροζ"
+      ],
+      "pistachio": [
+        "φιστίκι"
+      ],
+      "plum": [
+        "δαμάσκηνο"
+      ],
+      "purple": [
+        "μοβ"
+      ],
+      "raisin black": [
+        "μαύρη σταφίδα"
+      ],
+      "reef": [
+        "ύφαλος"
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        "Σαχάρα"
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        "μπλε ροζέ"
+      ],
+      "soil": [
+        "χώμα"
+      ],
+      "strawberry": [
+        "φράουλα"
+      ],
+      "vivid auburn": [
+        "ζωηρό καστανοκόκκινο"
+      ],
+      "white": [
+        "λευκό"
       ]
     },
     "Composer email icon": {
@@ -3350,6 +3520,11 @@
         "(χωρίς τίτλο)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Η γνώμη σας"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Εισερχόμενα"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "Επιλέξτε ένα φάκελο"
@@ -3698,7 +3876,7 @@
         "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
-        "${ appName } χρειάζεται την άδειά σας για να ${ enableDesktopNotifications }."
+        "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
@@ -4127,9 +4305,6 @@
         "συνημμένο αρχείο",
         "συνημμένα αρχεία"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και μια έγκυρη Sieve δέσμη ενεργειών."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Τα φίλτρα λειτουργούν σε όλα τα μηνύματα ηλεκτρονικού ταχυδρομείου, συμπεριλαμβανομένων των εισερχόμενων καθώς και των απεσταλμένων μηνυμάτων ηλεκτρονικού ταχυδρομείου. Κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα, μια συνθήκη και μια ενέργεια."
       ],
@@ -4359,7 +4534,7 @@
         "Κανένα από τα ανεβασμένα κλειδιά δεν είναι έγκυρο για κρυπτογράφηση. Η κρυπτογράφηση έχει απενεργοποιηθεί αυτόματα."
       ],
       "Normal": [
-        "Κανονικό"
+        ""
       ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
@@ -4730,7 +4905,7 @@
         "Αναβάθμιση για να μπορείτε να ρυθμίσετε παραμέτρους αυτόματης απόκρισης διακοπών."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Αναβάθμιση για τη δημιουργία περισσότερων φακέλων, φίλτρων και διευθύνσεων."
+        "Για τη δημιουργία περισσότερων φακέλων, φίλτρων και διευθύνσεων, αναβαθμίστε."
       ],
       "Upgrade to host emails from your own domain name.": [
         "Αναβαθμίστε για να λαμβάνετε και να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου με το δικό σας τομέα."
@@ -5040,7 +5215,7 @@
         "Προώθηση"
       ],
       "Go to All Mail": [
-        "Μετάβαση σε Όλα τα Μηνύματα"
+        "Μετάβαση σε \"Όλα τα μηνύματα\""
       ],
       "Go to Archive": [
         "Μετάβαση στα Αρχειοθετημένα"
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Αυτόματη αποθήκευση επαφών"
       ],
+      "Awful": [
+        "Απαίσια"
+      ],
+      "Bad": [
+        "Κακή"
+      ],
       "BCC": [
         "Κρυφή Κοιν."
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "Από: ${ importedEmail }"
       ],
+      "Good": [
+        "Καλή"
+      ],
       "Group": [
         "Ομάδα"
       ],
       "Hide password": [
         "Απόκρυψη κωδικού πρόσβασης"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Πώς θα περιγράφατε την εμπειρία σας στο νέο Proton;"
       ],
       "I understand the risk": [
         "Καταλαβαίνω τον κίνδυνο"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Ειδοποίηση"
+      ],
+      "OK": [
+        "Αποδεκτή"
       ],
       "Operating system": [
         "Λειτουργικό σύστημα (OS)"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "χωρίς συνημμένα"
+      ],
+      "Wonderful": [
+        "Θαυμάσια"
       ]
     },
     "Label for contact group color": {
@@ -5659,7 +5852,7 @@
         "Προσθήκη ετικέτας"
       ],
       "All mail": [
-        "Όλα τα Μηνύματα"
+        "Όλα τα μηνύματα"
       ],
       "Archive": [
         "Αρχειοθέτηση"
@@ -6065,22 +6258,10 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Παρουσίαση ανανεωμένης όψης του Proton.${ br }Πολλές υπηρεσίες, μία αποστολή. Καλώς ήρθατε σε ένα διαδίκτυο όπου η ιδιωτικότητα είναι η προεπιλογή."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Απαίσια"
-      ],
-      "5 - Wonderful": [
-        "5 - Θαυμάσια"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Πώς θα περιγράφατε την εμπειρία σας στο νέο Proton;"
-      ],
-      "Tell us about your experience (Optional)": [
+      "Tell us about your experience. (Optional)": [
         "Πείτε μας για την εμπειρία σας. (Προαιρετικό)"
       ]
     },
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Δώστε σχόλια"
-      ],
       "Updated Proton, unified protection": [
         "Ενημερωμένο Proton, ενοποιημένη προστασία"
       ]

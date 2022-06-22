@@ -370,6 +370,9 @@
       "Send": [
         "Enviar"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         ""
       ],
@@ -876,6 +879,68 @@
     },
     "colon": {
       ": ": [
+        ""
+      ]
+    },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
         ""
       ]
     },
@@ -1846,6 +1911,11 @@
         "O evento pertence a uma agenda desactivada."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        ""
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
@@ -2521,6 +2591,11 @@
         "(sem título)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "O ${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } foi adicionado ao pacote Proton. Adoraríamos ouvir o que pensa sobre isso!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
-      "0 - Not likely": [
-        "0 - Provavelmente não"
-      ],
-      "10 - Extremely likely": [
-        "10 - Extremamente provável"
-      ],
       "Add email address": [
         "Adicionar endereço electrónico"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
+      ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
       ],
       "Browser": [
         "Navegador"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         ""
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "Ocultar senha"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Qual a probabilidade de recomendar o ${ calendarAppName } a um amigo ou colega?"
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -3542,6 +3617,9 @@
         ""
       ],
       "Notifications": [
+        ""
+      ],
+      "OK": [
         ""
       ],
       "Operating system": [
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "O que é que aconteceu?"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "enviar email de resposta automática"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Send read receipt": [
         ""
       ],
@@ -1586,6 +1589,173 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
         ""
       ]
     },
@@ -3350,6 +3520,11 @@
         "(sem título)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Caixa de entrada"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "Seleccionar uma pasta"
@@ -4127,9 +4305,6 @@
         "ficheiro anexado",
         "ficheiros anexados"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Os filtros funcionam em todo o correio, incluindo recebido e enviado. Cada filtro deve conter pelo menos um nome e um script Sieve válido."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os emails, incluindo recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma acção."
       ],
@@ -4359,7 +4534,7 @@
         "Nenhuma das chaves carregadas é válida para encriptação. A encriptação foi automaticamente desactivada."
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "Não é um URL válido"
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Gravar contactos automaticamente"
       ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
+      ],
       "BCC": [
         ""
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         ""
       ],
+      "Good": [
+        ""
+      ],
       "Group": [
         "Grupo"
       ],
       "Hide password": [
         "Ocultar senha"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Notificação"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "Sistema operativo"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "sem anexos"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -6065,22 +6258,10 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         ""
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        ""
-      ],
-      "5 - Wonderful": [
-        ""
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
-      ],
-      "Tell us about your experience (Optional)": [
+      "Tell us about your experience. (Optional)": [
         ""
       ]
     },
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

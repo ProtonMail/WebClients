@@ -368,6 +368,9 @@
       "Send": [
         "Kirim"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         ""
       ],
@@ -874,6 +877,68 @@
     },
     "colon": {
       ": ": [
+        ""
+      ]
+    },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
         ""
       ]
     },
@@ -1838,6 +1903,11 @@
         ""
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        ""
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         ""
@@ -2502,6 +2572,11 @@
         "(tanpa judul)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "byte"
@@ -2698,9 +2773,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } memerlukan izin Anda untuk ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        ""
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         ""
@@ -3316,12 +3388,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         ""
       ],
-      "0 - Not likely": [
-        ""
-      ],
-      "10 - Extremely likely": [
-        "10 - Sangat merekomendasikan"
-      ],
       "Add email address": [
         "Tambah alamat surel"
       ],
@@ -3339,6 +3405,12 @@
       ],
       "Automatically save contacts": [
         "Simpan kontak secara otomatis"
+      ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
       ],
       "Browser": [
         "Peramban"
@@ -3436,10 +3508,13 @@
       "From: ${ importedEmail }": [
         ""
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "Sembunyikan kata sandi"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
+      "How would you describe your experience with the new Proton?": [
         ""
       ],
       "I understand the risk": [
@@ -3491,6 +3566,9 @@
         ""
       ],
       "Notifications": [
+        ""
+      ],
+      "OK": [
         ""
       ],
       "Operating system": [
@@ -3573,6 +3651,9 @@
       ],
       "What happened?": [
         "Apa yang terjadi?"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -3861,8 +3942,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -3871,9 +3952,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

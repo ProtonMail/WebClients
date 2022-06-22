@@ -522,10 +522,10 @@
         "Névjegyek egyesítése"
       ],
       "Messages from this sender": [
-        ""
+        "Üzenetek ettől a feladótól"
       ],
       "Messages to this recipient": [
-        ""
+        "Üzenetek ennek a címzettnek"
       ],
       "Minimize composer": [
         "Szerkesztő minimalizálása"
@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "automatikus válasz küldése"
       ],
+      "Send feedback": [
+        "Visszajelzés küldése"
+      ],
       "Send read receipt": [
         "Olvasási visszaigazolás küldése"
       ],
@@ -849,7 +852,7 @@
         "Küldés"
       ],
       "Switch to rich text": [
-        "Váltás formázott szövegre"
+        ""
       ],
       "Theme": [
         "Téma"
@@ -868,7 +871,7 @@
         "Kulcsok megjelölése megbízhatóként"
       ],
       "Trust public key": [
-        ""
+        "Nyilvános kulcs megjelölése megbízhatóként"
       ],
       "Try again": [
         "Próbálja újra"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Megnyitás"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Alma"
+      ],
+      "azureish white": [
+        "azúrkék fehér"
+      ],
+      "blanched almond": [
+        "blansírozott mandula"
+      ],
+      "blue-gray": [
+        "kékesszürke"
+      ],
+      "caramel": [
+        "karamell"
+      ],
+      "carrot": [
+        "sárgarépa"
+      ],
+      "cerise": [
+        "cseresznye"
+      ],
+      "cinnabar": [
+        "cinóber"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "réz"
+      ],
+      "cyan-blue azure": [
+        "cián-kék azúrkék"
+      ],
+      "dandelion": [
+        "pitypang"
+      ],
+      "dark cerulean": [
+        "sötét cerulán"
+      ],
+      "dark midnight blue": [
+        "sötét éjkék"
+      ],
+      "dim gray": [
+        "halványszürke"
+      ],
+      "enzian": [
+        "encián"
+      ],
+      "fern": [
+        "páfrány"
+      ],
+      "field drab": [
+        "terepszínű"
+      ],
+      "forest": [
+        "erdő"
+      ],
+      "gainsboro": [
+        "gainsboro"
+      ],
+      "japanese laurel": [
+        "japán babér"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citrom sárga"
+      ],
+      "light carmine pink": [
+        "világos kárminrózsaszín"
+      ],
+      "light moss green": [
+        "világos moha zöld"
+      ],
+      "light red": [
+        "világos piros"
+      ],
+      "maize": [
+        "kukorica"
+      ],
+      "mughal green": [
+        "mugli zöld"
+      ],
+      "ocean": [
+        "óceán"
+      ],
+      "olive": [
+        "olíva"
+      ],
+      "outer space": [
+        "világűr"
+      ],
+      "pacific": [
+        "csendes-óceáni"
+      ],
+      "palatinate blue": [
+        "palatinátkék"
+      ],
+      "pale cerulean": [
+        "halvány cerulán"
+      ],
+      "pastel gray": [
+        "pasztellszürke"
+      ],
+      "persian plum": [
+        "perzsaszilva"
+      ],
+      "persian red": [
+        "perzsavörös"
+      ],
+      "philippine gray": [
+        "filippínó szürke"
+      ],
+      "philippine silver": [
+        "filippínó ezüst"
+      ],
+      "pickle": [
+        "pác"
+      ],
+      "pine": [
+        "fenyő"
+      ],
+      "pink": [
+        "rózsaszín"
+      ],
+      "pistachio": [
+        "pisztácia"
+      ],
+      "plum": [
+        "szilva"
+      ],
+      "purple": [
+        "lila"
+      ],
+      "raisin black": [
+        "mazsola fekete"
+      ],
+      "reef": [
+        "zátony"
+      ],
+      "ruddy pink": [
+        "vöröses rózsaszín"
+      ],
+      "sahara": [
+        "szahara"
+      ],
+      "satin sheen gold": [
+        "szaténfényű arany"
+      ],
+      "slateblue": [
+        "palakék"
+      ],
+      "soil": [
+        "föld"
+      ],
+      "strawberry": [
+        "eper"
+      ],
+      "vivid auburn": [
+        "élénk vörösesbarna"
+      ],
+      "white": [
+        "fehér"
       ]
     },
     "Composer email icon": {
@@ -2891,7 +3061,7 @@
         "A címke neve nem lehet üres."
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        ""
+        "Túllépte a mellékletek maximális számát (${ attachmentsCountLimit })"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "Fűzzön össze legalább ${ calendarToFixCount } naptárat meglévő Proton naptárakkal",
@@ -2964,10 +3134,10 @@
         "Az elsődleges cím kulcsa nincs visszafejtve."
       ],
       "Primary key is not valid for sending": [
-        ""
+        "Az elsődleges kulcs nem érvényes a küldéshez"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        ""
+        "A belső felhasználóhoz letöltött elsődleges kulcs nem érvényes a küldéshez"
       ],
       "Public key could not be trusted": [
         "Ez a nyilvános kulcs nem jelölhető meg megbízhatóként"
@@ -3350,6 +3520,11 @@
         "(névtelen)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Az ön visszajelzése"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bájt"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Beérkezett üzenetek"
+      ],
+      "Inbox - Default": [
+        "Beérkezett üzenetek - Alapértelmezett"
       ],
       "Select a folder": [
         "Válasszon egy mappát"
@@ -3713,15 +3891,15 @@
         "${ calendarsToBeMergedCount } egyesített naptár"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "${ contactCount } névjegy több e-mail címet tartalmaz.",
+        "${ contactCount } névjegy több e-mail címet tartalmaz."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } tag",
         "${ contactEmailsLength } tag"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } több e-mail címet tartalmaz."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } névjegy található",
@@ -4031,7 +4209,7 @@
         "Aláírja újra a névjegyet?"
       ],
       "Don't forget to share your password with the recipient": [
-        ""
+        "Ne felejtse el megosztani a jelszavát a címzettel"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "Töltse le a mobil alkalmazásunkat a kedvenc alkalmazásboltjából, hogy út közben is biztonságosan kommunikálhasson."
@@ -4058,13 +4236,13 @@
         "Duplikált kulcs frissítve"
       ],
       "Edit encryption": [
-        ""
+        "Titkosítás szerkesztése"
       ],
       "Edit expiration time": [
-        ""
+        "Időkorlát szerkesztése"
       ],
       "Edit link": [
-        ""
+        "Hivatkozás szerkesztése"
       ],
       "Email address": [
         "E-mail cím"
@@ -4087,7 +4265,7 @@
         "beágyazott kép"
       ],
       "Encrypt message": [
-        ""
+        "Üzenet titkosítása"
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Írja be a ${ destinationText } címre küldött ellenőrző kódot."
@@ -4121,20 +4299,17 @@
         "Hamarosan lejár"
       ],
       "Expiring message": [
-        ""
+        "Időkorlátos üzenet"
       ],
       "file attached": [
         "fájl csatolva",
         "fájlok csatolva"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név és egy érvényes Sieve parancsfájl."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "A szűrők minden levélre vonatkoznak, a bejövő és az elküldött üzenetekre is. Minden szűrőnek szükséges legalább egy név, egy feltétel és egy művelet."
       ],
       "Folder": [
-        ""
+        "Mappa"
       ],
       "For increased security, activate 2FA.": [
         "A biztonság érdekében, kapcsolja be a kétlépcsős hitelesítést."
@@ -4172,7 +4347,7 @@
         "Óra"
       ],
       "I'm sending this message to a non-ProtonMail user.": [
-        ""
+        "Egy nem-Proton Mail címzettnek küldöm ezt az üzenetet."
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "Ha problémába ütközik a fiók létrehozásakor, kérjen egy meghívót és egy munkanapon belül segítséget nyújtunk."
@@ -4184,7 +4359,7 @@
         "Ha nem találja az e-mailt a beérkező leveleknél, ellenőrizze a Levélszemét közt."
       ],
       "Image description": [
-        ""
+        "Kép leírása"
       ],
       "Image URL": [
         "Kép URL"
@@ -4353,13 +4528,13 @@
         "Egy követőt se találtunk, de néhány képet nem lehetett betölteni követő-védelem mellett"
       ],
       "non-Proton Mail": [
-        ""
+        "nem-Proton Mail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
       ],
       "Normal": [
-        "Normál"
+        ""
       ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
@@ -4413,11 +4588,11 @@
         "Válassza ki a beszúrandó link típusát és adja meg az adatait."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz.",
+        "Válasszon ki e-mail címet vagy címeket ${ groupCount } csoporthoz adáshoz."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Válasszon ki e-mail címet vagy címeket a ${ groupName } csoporthoz adáshoz."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Folyamatban van az olyan névjegyek keresése, amelyeket újra aláírhat az elsődleges titkosítás kulccsal."
@@ -4498,7 +4673,7 @@
         "Válassza ki az importálandó naptárakat. Minden importált naptárhoz egy új naptár kerül létrehozásra, a maximum 20-as korlátig."
       ],
       "Send an encrypted, password protected message to a ${ boldText } email address.": [
-        ""
+        "Titkosított, jelszóval védett üzenet küldése ${ boldText } e-mail címre."
       ],
       "Sending": [
         "Küldés"
@@ -4915,23 +5090,23 @@
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
-        ""
+        "Az üzenete törlésre kerül a címzett levelei közül és az elküldött levelekből, ekkor: ${ dateString } ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder today at ${ formattedTime }": [
-        ""
+        "Az üzenete ma törlésre kerül a címzett levelei közül és az elküldött levelekből, ekkor: ${ formattedTime }"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder tomorrow at ${ formattedTime }": [
-        ""
+        "Az üzenete holnap törlésre kerül a címzett levelei közül és az elküldött levelekből, ekkor: ${ formattedTime }"
       ],
       "Your message will expire in ${ numberOfDays } day.": [
-        "",
-        ""
+        "Az üzenete ${ numberOfDays } nap múlva lejár.",
+        "Az üzenete ${ numberOfDays } nap múlva lejár."
       ],
       "Your message will expire today.": [
-        ""
+        "Az üzenete ma lejár."
       ],
       "Your message will expire tomorrow.": [
-        ""
+        "Az üzenete holnap lejár."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -4963,13 +5138,13 @@
     },
     "Key badge": {
       "Compromised": [
-        ""
+        "Kompromittált"
       ],
       "Expired": [
         "Lejárt"
       ],
       "Obsolete": [
-        ""
+        "Elavult"
       ],
       "Primary": [
         "Elsődleges"
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Névjegyek automatikus mentése"
       ],
+      "Awful": [
+        "Szörnyű"
+      ],
+      "Bad": [
+        "Rossz"
+      ],
       "BCC": [
         "Titkos másolat"
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "Forrás: ${ importedEmail }"
       ],
+      "Good": [
+        "Jó"
+      ],
       "Group": [
         "Csoport"
       ],
       "Hide password": [
         "Jelszó elrejtése"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Hogyan értékelné a tapasztalatait az új Protonnal kapcsolatban?"
       ],
       "I understand the risk": [
         "Megértettem a kockázatot"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Értesítés"
+      ],
+      "OK": [
+        "Megfelelő"
       ],
       "Operating system": [
         "Operációs rendszer"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "nem tartalmaz mellékletet"
+      ],
+      "Wonderful": [
+        "Csodás"
       ]
     },
     "Label for contact group color": {
@@ -6059,42 +6252,27 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        ""
+        "Váltás vagy fiók hozzáadása"
       ]
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
+        "A Proton új megjelenésének bemutatása.${ br } Sok szolgáltatás, egy küldetés. Üdvözli az az internet, amelyen az adatvédelem alapértelmezett."
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        ""
-      ],
-      "5 - Wonderful": [
-        ""
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
-      ],
-      "Tell us about your experience (Optional)": [
-        ""
+      "Tell us about your experience. (Optional)": [
+        "Küldjön visszajelzést a tapasztalatairól. (Opcionális)"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "Visszajelzés"
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
-        ""
+        "Frissített Proton, egységesített védelem"
       ]
     },
     "Notification": {
@@ -6219,13 +6397,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } ezt a kulcsot kompromittáltként jelölte meg. Ez a kulcs már sem titkosításra, sem aláírás ellenőrzésre nem használható."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } ezt a kulcsot elavultként jelölte meg. Ez a kulcs már csak aláírás ellenőrzésre használható."
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "Javasoltjuk, hogy szüntesse meg a kulcs megbízható megjelölését."
       ]
     },
     "PGP key warning": {
@@ -6599,10 +6777,10 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        ""
+        "Ez az üzenet levelezési listáról érkezett."
       ],
       "Unsubscribed": [
-        ""
+        "Leiratkozás kész"
       ]
     },
     "Step in filter modal": {
@@ -6829,7 +7007,7 @@
         "${ selectionCount } üzenet áthelyezése"
       ],
       "Password copied to clipboard": [
-        ""
+        "Jelszó a vágólapra másolva"
       ],
       "Phishing reported": [
         "Adathalászat bejelentve"

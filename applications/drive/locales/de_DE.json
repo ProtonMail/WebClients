@@ -439,6 +439,9 @@
       "Select all": [
         "Alle auswählen"
       ],
+      "Send feedback": [
+        "Feedback senden"
+      ],
       "Set recovery phrase": [
         "Wiederherstellungsphrase festlegen"
       ],
@@ -817,6 +820,68 @@
       ],
       "Open": [
         "Öffnen"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "Karotte"
+      ],
+      "cerise": [
+        "Kirschrot"
+      ],
+      "cobalt": [
+        "Kobaltblau"
+      ],
+      "copper": [
+        "Kupfer"
+      ],
+      "enzian": [
+        "Enzian"
+      ],
+      "fern": [
+        "Farn"
+      ],
+      "forest": [
+        "Waldgrün"
+      ],
+      "ocean": [
+        "Ozeanblau"
+      ],
+      "olive": [
+        "Olivgrün"
+      ],
+      "pacific": [
+        "Pazifikblau"
+      ],
+      "pickle": [
+        "Moosgrün"
+      ],
+      "pine": [
+        "Kiefernfarben"
+      ],
+      "pink": [
+        "Rosa"
+      ],
+      "plum": [
+        "Pflaume"
+      ],
+      "purple": [
+        "Violett"
+      ],
+      "reef": [
+        "Koralle"
+      ],
+      "sahara": [
+        "Sahara"
+      ],
+      "slateblue": [
+        "Blaugrau"
+      ],
+      "soil": [
+        "Erdfarben"
+      ],
+      "strawberry": [
+        "Erdbeere"
       ]
     },
     "Confirm modal title": {
@@ -2047,6 +2112,16 @@
         "Kein Bild ausgewählt"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Wertung ist erforderlich"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "Bytes"
@@ -3135,6 +3210,12 @@
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
       ],
+      "Awful": [
+        "Furchtbar"
+      ],
+      "Bad": [
+        "Schlecht"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -3247,8 +3328,14 @@
       "Get your own ${ appName }": [
         "Hol dir dein eigenes ${ appName }"
       ],
+      "Good": [
+        "Gut"
+      ],
       "Hide password": [
         "Passwort ausblenden"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
@@ -3306,6 +3393,9 @@
       ],
       "Notification": [
         "Benachrichtigungen"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Betriebssystem"
@@ -3432,6 +3522,9 @@
       ],
       "What happened?": [
         "Was ist passiert?"
+      ],
+      "Wonderful": [
+        "Wunderbar"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ja, ich möchte meine alten Dateien dauerhaft löschen"
@@ -3562,6 +3655,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Proton präsentiert sein neues Design.${ br } Viele Dienste, eine Mission. Willkommen bei einem Internet, bei dem der Schutz der Privatsphäre Standard ist."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        ""
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Feedback"
       ]
     },
     "new_plans: title": {
@@ -4047,6 +4150,11 @@
         "Verifizierung erfolgreich"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Feedback gesendet"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/Monat"
@@ -4336,6 +4444,9 @@
       "Failed": [
         "Fehlgeschlagen"
       ],
+      "Feedback": [
+        "Feedback"
+      ],
       "File details": [
         "Dateiinformationen"
       ],
@@ -4483,6 +4594,9 @@
       ],
       "Select link expiration time": [
         "Ablaufzeit der Verknüpfung wählen"
+      ],
+      "Send feedback": [
+        "Feedback senden"
       ],
       "Settings": [
         "Einstellungen"

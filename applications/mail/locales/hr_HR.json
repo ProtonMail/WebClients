@@ -767,6 +767,9 @@
       "send auto-reply email": [
         "pošalji automatski odgovor"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Send read receipt": [
         ""
       ],
@@ -852,7 +855,7 @@
         "Pošalji"
       ],
       "Switch to rich text": [
-        "Prijeđite na obilat tekst"
+        ""
       ],
       "Theme": [
         "Tema"
@@ -1591,6 +1594,173 @@
         ""
       ],
       "Open": [
+        ""
+      ]
+    },
+    "color": {
+      "Apple": [
+        ""
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        ""
+      ],
+      "blue-gray": [
+        ""
+      ],
+      "caramel": [
+        ""
+      ],
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "cyan-blue azure": [
+        ""
+      ],
+      "dandelion": [
+        ""
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        ""
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        ""
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        ""
+      ],
+      "maize": [
+        ""
+      ],
+      "mughal green": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        ""
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        ""
+      ],
+      "philippine gray": [
+        ""
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "pistachio": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
         ""
       ]
     },
@@ -3371,6 +3541,11 @@
         "(bez naslova)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bajtova"
@@ -3405,6 +3580,9 @@
       ],
       "Inbox": [
         "Pristigla pošta"
+      ],
+      "Inbox - Default": [
+        ""
       ],
       "Select a folder": [
         "Odaberite mapu"
@@ -4196,9 +4374,6 @@
         "privitka dodana",
         "privitaka dodano"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv i valjana Sieve skripta."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtri rade na svim porukama e-pošte, uključujući dolazne i poslane. Svaki filtar mora sadržavati barem naziv, uvjet i radnju."
       ],
@@ -4431,7 +4606,7 @@
         ""
       ],
       "Normal": [
-        "Normalno"
+        ""
       ],
       "Not a valid URL": [
         "Nije valjani URL"
@@ -5330,6 +5505,12 @@
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
+      ],
       "BCC": [
         ""
       ],
@@ -5432,11 +5613,17 @@
       "From: ${ importedEmail }": [
         ""
       ],
+      "Good": [
+        ""
+      ],
       "Group": [
         "Grupa"
       ],
       "Hide password": [
         "Sakrij lozinku"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         ""
@@ -5509,6 +5696,9 @@
       ],
       "Notification": [
         "Obavijest"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "Operativni sustav"
@@ -5662,6 +5852,9 @@
       ],
       "without attachments": [
         "bez privitaka"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -6155,22 +6348,10 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         ""
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        ""
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        ""
-      ],
-      "5 - Wonderful": [
-        ""
-      ],
-      "How would you describe your experience with the new Proton?": [
-        ""
-      ],
-      "Tell us about your experience (Optional)": [
+      "Tell us about your experience. (Optional)": [
         ""
       ]
     },
@@ -6180,9 +6361,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        ""
-      ],
       "Updated Proton, unified protection": [
         ""
       ]

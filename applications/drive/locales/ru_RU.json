@@ -443,6 +443,9 @@
       "Select all": [
         "Выделить всё"
       ],
+      "Send feedback": [
+        "Отправить отзыв"
+      ],
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
@@ -821,6 +824,68 @@
       ],
       "Open": [
         "Открыть"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морковный"
+      ],
+      "cerise": [
+        "вишневый"
+      ],
+      "cobalt": [
+        "кобальт"
+      ],
+      "copper": [
+        "медный"
+      ],
+      "enzian": [
+        "горечавка"
+      ],
+      "fern": [
+        "папоротник"
+      ],
+      "forest": [
+        "лесной"
+      ],
+      "ocean": [
+        "океан"
+      ],
+      "olive": [
+        "оливковый"
+      ],
+      "pacific": [
+        "тихоокеанский"
+      ],
+      "pickle": [
+        "огурчик"
+      ],
+      "pine": [
+        "сосновый"
+      ],
+      "pink": [
+        "розовый"
+      ],
+      "plum": [
+        "сливовый"
+      ],
+      "purple": [
+        "фиолетовый"
+      ],
+      "reef": [
+        "коралловый"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сланцево-синий"
+      ],
+      "soil": [
+        "землистый"
+      ],
+      "strawberry": [
+        "клубничный"
       ]
     },
     "Confirm modal title": {
@@ -2065,6 +2130,16 @@
         "Изображение не выбрано"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Поставьте оценку"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Ваш отзыв"
+      ]
+    },
     "file size format": {
       "bytes": [
         "байт"
@@ -3227,6 +3302,12 @@
       "Automatically save contacts": [
         "Автоматически сохранять контакты"
       ],
+      "Awful": [
+        "Ужасно"
+      ],
+      "Bad": [
+        "Плохо"
+      ],
       "Browser": [
         "Браузер"
       ],
@@ -3341,8 +3422,14 @@
       "Get your own ${ appName }": [
         "Создайте свой собственный ${ appName }"
       ],
+      "Good": [
+        "Хорошо"
+      ],
       "Hide password": [
         "Скрыть пароль"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Как бы вы описали свой опыт работы с новым ProtonMail?"
       ],
       "I understand the risk": [
         "Я понимаю риск"
@@ -3400,6 +3487,9 @@
       ],
       "Notification": [
         "Уведомление"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Операционная система"
@@ -3526,6 +3616,9 @@
       ],
       "What happened?": [
         "Что случилось?"
+      ],
+      "Wonderful": [
+        "Прекрасно"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Да, я хочу окончательно удалить все мои старые файлы"
@@ -3660,6 +3753,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Расскажите нам о вашем опыте (не обязательно)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Отзыв"
       ]
     },
     "new_plans: title": {
@@ -4189,6 +4292,11 @@
         "Проверка прошла успешно"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Отзыв отправлен"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/месяц"
@@ -4490,6 +4598,9 @@
       "Failed": [
         "Не удалось"
       ],
+      "Feedback": [
+        "Отзыв"
+      ],
       "File details": [
         "Информация о файле"
       ],
@@ -4639,6 +4750,9 @@
       ],
       "Select link expiration time": [
         "Выберите время окончания действия ссылки"
+      ],
+      "Send feedback": [
+        "Отправить отзыв"
       ],
       "Settings": [
         "Настройки"

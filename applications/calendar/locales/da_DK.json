@@ -370,6 +370,9 @@
       "Send": [
         "Send"
       ],
+      "Send feedback": [
+        ""
+      ],
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
       ],
@@ -877,6 +880,68 @@
     "colon": {
       ": ": [
         ": "
+      ]
+    },
+    "color": {
+      "carrot": [
+        ""
+      ],
+      "cerise": [
+        ""
+      ],
+      "cobalt": [
+        ""
+      ],
+      "copper": [
+        ""
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        ""
+      ],
+      "forest": [
+        ""
+      ],
+      "ocean": [
+        ""
+      ],
+      "olive": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "pickle": [
+        ""
+      ],
+      "pine": [
+        ""
+      ],
+      "pink": [
+        ""
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        ""
+      ],
+      "reef": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "slateblue": [
+        ""
+      ],
+      "soil": [
+        ""
+      ],
+      "strawberry": [
+        ""
       ]
     },
     "Confirm modal title": {
@@ -1846,6 +1911,11 @@
         "Begivenheden hører til en deaktiveret kalender."
       ]
     },
+    "Don't ask to update timezone checkbox label": {
+      "Don't ask again": [
+        ""
+      ]
+    },
     "Dropdown action icon tooltip": {
       "Add calendar": [
         "Tilføj kalender"
@@ -2521,6 +2591,11 @@
         "(ingen titel)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        ""
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -2730,9 +2805,6 @@
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } har brug for din tilladelse til ${ enableDesktopNotifications }."
-      ],
-      "${ calendarAppName } has been added to the Proton suite. We would love to hear what you think about it!": [
-        "${ calendarAppName } er blevet tilføjet til Proton-suiten. Vi vil gerne høre hvad du synes om den!"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
@@ -3367,12 +3439,6 @@
       "(Temporarily unavailable. Please check back later.)": [
         "(Midlertidigt utilgængelig. Tjek igen senere.)"
       ],
-      "0 - Not likely": [
-        "0 - Ikke sandsynligt"
-      ],
-      "10 - Extremely likely": [
-        "10 - Ekstremt sandsynligt"
-      ],
       "Add email address": [
         "Tilføj e-mailadresse"
       ],
@@ -3390,6 +3456,12 @@
       ],
       "Automatically save contacts": [
         "Gem automatisk kontakter"
+      ],
+      "Awful": [
+        ""
+      ],
+      "Bad": [
+        ""
       ],
       "Browser": [
         "Browser"
@@ -3487,11 +3559,14 @@
       "From: ${ importedEmail }": [
         "Fra: ${ importedEmail }"
       ],
+      "Good": [
+        ""
+      ],
       "Hide password": [
         "Skjul adgangskode"
       ],
-      "How likely are you to recommend ${ calendarAppName } to a friend or colleague?": [
-        "Hvor sandsynligt er det, at du vil anbefale ${ calendarAppName } til en ven eller kollega?"
+      "How would you describe your experience with the new Proton?": [
+        ""
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
@@ -3543,6 +3618,9 @@
       ],
       "Notifications": [
         "Notifikationer"
+      ],
+      "OK": [
+        ""
       ],
       "Operating system": [
         "Operativsystem"
@@ -3625,6 +3703,9 @@
       ],
       "What happened?": [
         "Hvad skete der?"
+      ],
+      "Wonderful": [
+        ""
       ]
     },
     "Label for contact group color": {
@@ -3918,8 +3999,8 @@
       ]
     },
     "new_plans: label": {
-      "Tell us about your experience (Optional)": [
-        "Tell us about your experience. (Optional)"
+      "Tell us about your experience. (Optional)": [
+        ""
       ]
     },
     "new_plans: placeholder": {
@@ -3928,9 +4009,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Giv feedback"
-      ],
       "Updated Proton, unified protection": [
         "Opdateret Proton, forenet beskyttelse"
       ]

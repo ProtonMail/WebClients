@@ -443,6 +443,9 @@
       "Select all": [
         "Vybrat vše"
       ],
+      "Send feedback": [
+        "Odeslat zpětnou vazbu"
+      ],
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
@@ -821,6 +824,68 @@
       ],
       "Open": [
         "Otevřít"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "mrkev"
+      ],
+      "cerise": [
+        "třešeň"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "měď"
+      ],
+      "enzian": [
+        "hořec"
+      ],
+      "fern": [
+        "kapradina"
+      ],
+      "forest": [
+        "les"
+      ],
+      "ocean": [
+        "oceán"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "pacific": [
+        "pacifik"
+      ],
+      "pickle": [
+        "okurka"
+      ],
+      "pine": [
+        "borovice"
+      ],
+      "pink": [
+        "růžová"
+      ],
+      "plum": [
+        "švestka"
+      ],
+      "purple": [
+        "fialová"
+      ],
+      "reef": [
+        "útes"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "slateblue": [
+        "břidlice"
+      ],
+      "soil": [
+        "půda"
+      ],
+      "strawberry": [
+        "jahoda"
       ]
     },
     "Confirm modal title": {
@@ -2065,6 +2130,16 @@
         "Není vybrán žádný obrázek"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Výsledek je požadován"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Vaše zpětná vazba"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bajty"
@@ -3227,6 +3302,12 @@
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
+      "Awful": [
+        "Strašné"
+      ],
+      "Bad": [
+        "Špatné"
+      ],
       "Browser": [
         "Prohlížeč"
       ],
@@ -3341,8 +3422,14 @@
       "Get your own ${ appName }": [
         "Získejte své vlastní ${ appName }"
       ],
+      "Good": [
+        "Dobré"
+      ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Jak byste popsal své zkušenosti s novým Protonem?"
       ],
       "I understand the risk": [
         "Rozumím rizikům"
@@ -3400,6 +3487,9 @@
       ],
       "Notification": [
         "Oznámení"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Operační systém"
@@ -3526,6 +3616,9 @@
       ],
       "What happened?": [
         "Co se stalo?"
+      ],
+      "Wonderful": [
+        "Úžasné"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Ano, chci trvale odstranit\nsvé staré soubory"
@@ -3660,6 +3753,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Povězte nám o svých zkušenostech. (Nepovinné)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Zpětná vazba"
       ]
     },
     "new_plans: title": {
@@ -4189,6 +4292,11 @@
         "Ověření proběhlo úspěšně"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Zpětná vazba byla odeslána"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/měsíc"
@@ -4490,6 +4598,9 @@
       "Failed": [
         "Selhalo"
       ],
+      "Feedback": [
+        "Zpětná vazba"
+      ],
       "File details": [
         "Podrobnosti souboru"
       ],
@@ -4639,6 +4750,9 @@
       ],
       "Select link expiration time": [
         "Vyberte časovou dobu pro vypršení odkazu"
+      ],
+      "Send feedback": [
+        "Odeslat zpětnou vazbu"
       ],
       "Settings": [
         "Nastavení"

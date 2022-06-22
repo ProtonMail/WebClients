@@ -770,6 +770,9 @@
       "send auto-reply email": [
         "odeslat automatickou odpověď"
       ],
+      "Send feedback": [
+        "Odeslat zpětnou vazbu"
+      ],
       "Send read receipt": [
         "Odeslat potvrzení o přečtení"
       ],
@@ -855,7 +858,7 @@
         "Odeslat"
       ],
       "Switch to rich text": [
-        "Přepnout na formátovaný text"
+        ""
       ],
       "Theme": [
         "Motiv"
@@ -1597,6 +1600,173 @@
       ],
       "Open": [
         "Otevřít"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Apple"
+      ],
+      "azureish white": [
+        "azurově bílá"
+      ],
+      "blanched almond": [
+        "blanšírované mandle"
+      ],
+      "blue-gray": [
+        "modrošedá"
+      ],
+      "caramel": [
+        "karamel"
+      ],
+      "carrot": [
+        "mrkev"
+      ],
+      "cerise": [
+        "třešeň"
+      ],
+      "cinnabar": [
+        "rumělka"
+      ],
+      "cobalt": [
+        "kobalt"
+      ],
+      "copper": [
+        "měď"
+      ],
+      "cyan-blue azure": [
+        "azurová-azurově modrá"
+      ],
+      "dandelion": [
+        "pampeliška"
+      ],
+      "dark cerulean": [
+        "tmavě blankytná"
+      ],
+      "dark midnight blue": [
+        "tmavá půlnoční modrá"
+      ],
+      "dim gray": [
+        "tmavě šedá"
+      ],
+      "enzian": [
+        "hořec"
+      ],
+      "fern": [
+        "kapradina"
+      ],
+      "field drab": [
+        "polní šedá"
+      ],
+      "forest": [
+        "les"
+      ],
+      "gainsboro": [
+        "velmi světle šedá"
+      ],
+      "japanese laurel": [
+        "japonský vavřín"
+      ],
+      "kiwi": [
+        "kiwi"
+      ],
+      "lemon yellow": [
+        "citrónově zelená"
+      ],
+      "light carmine pink": [
+        "světle karmínově růžová"
+      ],
+      "light moss green": [
+        "mechově světle zelená"
+      ],
+      "light red": [
+        "světle červená"
+      ],
+      "maize": [
+        "kukuřice"
+      ],
+      "mughal green": [
+        "mughalská zelená"
+      ],
+      "ocean": [
+        "oceán"
+      ],
+      "olive": [
+        "oliva"
+      ],
+      "outer space": [
+        "vesmírný prostor"
+      ],
+      "pacific": [
+        "pacifik"
+      ],
+      "palatinate blue": [
+        "palatinátově modrá"
+      ],
+      "pale cerulean": [
+        "bledě blankytná"
+      ],
+      "pastel gray": [
+        "pastelově šedá"
+      ],
+      "persian plum": [
+        "perská švestka"
+      ],
+      "persian red": [
+        "perská červená"
+      ],
+      "philippine gray": [
+        "filipínská šedá"
+      ],
+      "philippine silver": [
+        "filipínská stříbrná"
+      ],
+      "pickle": [
+        "okurka"
+      ],
+      "pine": [
+        "borovice"
+      ],
+      "pink": [
+        "růžová"
+      ],
+      "pistachio": [
+        "pistácie"
+      ],
+      "plum": [
+        "švestka"
+      ],
+      "purple": [
+        "fialová"
+      ],
+      "raisin black": [
+        "rozinkově černá"
+      ],
+      "reef": [
+        "útes"
+      ],
+      "ruddy pink": [
+        "perská červená"
+      ],
+      "sahara": [
+        "sahara"
+      ],
+      "satin sheen gold": [
+        "saténově lesklá zlatá"
+      ],
+      "slateblue": [
+        "břidlice"
+      ],
+      "soil": [
+        "půda"
+      ],
+      "strawberry": [
+        "jahoda"
+      ],
+      "vivid auburn": [
+        "živě kaštanová"
+      ],
+      "white": [
+        "bílá"
       ]
     },
     "Composer email icon": {
@@ -3392,6 +3562,11 @@
         "(bez názvu)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Vaše zpětná vazba"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bajtů"
@@ -3426,6 +3601,9 @@
       ],
       "Inbox": [
         "Doručená pošta"
+      ],
+      "Inbox - Default": [
+        "Doručená pošta - výchozí"
       ],
       "Select a folder": [
         "Vyberte složku"
@@ -4265,9 +4443,6 @@
         "připojené soubory",
         "souborů připojeno"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno a platný filtrovací skript."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtry fungují na všech e-mailech, včetně příchozích i odeslaných e-mailů. Každý filtr musí obsahovat alespoň jméno, podmínku a činnost k vykonání."
       ],
@@ -4503,7 +4678,7 @@
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
       ],
       "Normal": [
-        "Normální"
+        ""
       ],
       "Not a valid URL": [
         "Neplatný odkaz"
@@ -5415,6 +5590,12 @@
       "Automatically save contacts": [
         "Automaticky ukládat kontakty"
       ],
+      "Awful": [
+        "Strašné"
+      ],
+      "Bad": [
+        "Špatné"
+      ],
       "BCC": [
         "Skrytá kopie"
       ],
@@ -5517,11 +5698,17 @@
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
       ],
+      "Good": [
+        "Dobré"
+      ],
       "Group": [
         "Skupina"
       ],
       "Hide password": [
         "Skrýt heslo"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Jak byste popsal své zkušenosti s novým Protonem?"
       ],
       "I understand the risk": [
         "Rozumím rizikům"
@@ -5594,6 +5781,9 @@
       ],
       "Notification": [
         "Oznámení"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Operační systém"
@@ -5747,6 +5937,9 @@
       ],
       "without attachments": [
         "bez příloh"
+      ],
+      "Wonderful": [
+        "Úžasné"
       ]
     },
     "Label for contact group color": {
@@ -6245,23 +6438,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Představili jsme sjednocený a osvěžený vzhled Protonu. Rádi bychom slyšeli, co si o něm myslíte!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Špatné"
-      ],
-      "5 - Wonderful": [
-        "5 - Skvělé"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Jak byste popsal své zkušenosti s novým Protonem?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Podělte se o své zkušenosti (nepovinné)"
+      "Tell us about your experience. (Optional)": [
+        "Povězte nám o svých zkušenostech. (Nepovinné)"
       ]
     },
     "new_plans: placeholder": {
@@ -6270,9 +6451,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Poskytněte zpětnou vazbu"
-      ],
       "Updated Proton, unified protection": [
         "Aktualizovaný Proton, jednotná ochrana"
       ]

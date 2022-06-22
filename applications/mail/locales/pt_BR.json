@@ -764,6 +764,9 @@
       "send auto-reply email": [
         "enviar e-mail de resposta automática"
       ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
       "Send read receipt": [
         "Enviar recibo de leitura"
       ],
@@ -849,7 +852,7 @@
         "Enviar"
       ],
       "Switch to rich text": [
-        "Alternar para rich text"
+        ""
       ],
       "Theme": [
         "Tema"
@@ -1587,6 +1590,173 @@
       ],
       "Open": [
         "Abrir"
+      ]
+    },
+    "color": {
+      "Apple": [
+        "Apple"
+      ],
+      "azureish white": [
+        ""
+      ],
+      "blanched almond": [
+        "amêndoa branqueada"
+      ],
+      "blue-gray": [
+        "cinza azulado"
+      ],
+      "caramel": [
+        "caramelo"
+      ],
+      "carrot": [
+        "cenoura"
+      ],
+      "cerise": [
+        "cereja"
+      ],
+      "cinnabar": [
+        ""
+      ],
+      "cobalt": [
+        "cobalto"
+      ],
+      "copper": [
+        "cobre"
+      ],
+      "cyan-blue azure": [
+        "azul ciano"
+      ],
+      "dandelion": [
+        "dente-de-leão"
+      ],
+      "dark cerulean": [
+        ""
+      ],
+      "dark midnight blue": [
+        ""
+      ],
+      "dim gray": [
+        "cinza escuro"
+      ],
+      "enzian": [
+        ""
+      ],
+      "fern": [
+        "samambaia"
+      ],
+      "field drab": [
+        ""
+      ],
+      "forest": [
+        "floresta"
+      ],
+      "gainsboro": [
+        ""
+      ],
+      "japanese laurel": [
+        "louro japonês"
+      ],
+      "kiwi": [
+        ""
+      ],
+      "lemon yellow": [
+        "amarelo limão"
+      ],
+      "light carmine pink": [
+        ""
+      ],
+      "light moss green": [
+        ""
+      ],
+      "light red": [
+        "vermelho claro"
+      ],
+      "maize": [
+        "milho"
+      ],
+      "mughal green": [
+        "verde mogol"
+      ],
+      "ocean": [
+        "oceano"
+      ],
+      "olive": [
+        "azeitona"
+      ],
+      "outer space": [
+        ""
+      ],
+      "pacific": [
+        ""
+      ],
+      "palatinate blue": [
+        "azul palatinado"
+      ],
+      "pale cerulean": [
+        ""
+      ],
+      "pastel gray": [
+        ""
+      ],
+      "persian plum": [
+        ""
+      ],
+      "persian red": [
+        "vermelho persa"
+      ],
+      "philippine gray": [
+        "cinza filipino"
+      ],
+      "philippine silver": [
+        ""
+      ],
+      "pickle": [
+        "salmoura"
+      ],
+      "pine": [
+        "pinho"
+      ],
+      "pink": [
+        "rosa"
+      ],
+      "pistachio": [
+        "pistache"
+      ],
+      "plum": [
+        ""
+      ],
+      "purple": [
+        "roxo"
+      ],
+      "raisin black": [
+        ""
+      ],
+      "reef": [
+        "recife"
+      ],
+      "ruddy pink": [
+        ""
+      ],
+      "sahara": [
+        ""
+      ],
+      "satin sheen gold": [
+        ""
+      ],
+      "slateblue": [
+        "azul ardósia"
+      ],
+      "soil": [
+        "terra"
+      ],
+      "strawberry": [
+        "morango"
+      ],
+      "vivid auburn": [
+        ""
+      ],
+      "white": [
+        "branco"
       ]
     },
     "Composer email icon": {
@@ -3350,6 +3520,11 @@
         "(sem título)"
       ]
     },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Seu comentário"
+      ]
+    },
     "file size format": {
       "bytes": [
         "bytes"
@@ -3384,6 +3559,9 @@
       ],
       "Inbox": [
         "Caixa de entrada"
+      ],
+      "Inbox - Default": [
+        "Caixa de entrada - padrão"
       ],
       "Select a folder": [
         "Selecione uma pasta"
@@ -3713,15 +3891,15 @@
         "${ calendarsToBeMergedCount } calendários mesclados"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        "",
-        ""
+        "${ contactCount } contém vários endereços de e-mail.",
+        "${ contactCount } contêm vários endereços de e-mail."
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } membro",
         "${ contactEmailsLength } membros"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } contém vários endereços de e-mail."
       ],
       "${ contactsCount } contact found": [
         "${ contactsCount } contato encontrado",
@@ -4127,9 +4305,6 @@
         "arquivo anexado",
         "arquivos anexados"
       ],
-      "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name and a valid Sieve script.": [
-        "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome e um script Sieve válido."
-      ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Os filtros funcionam em todos os e-mails, incluindo os e-mails recebidos e enviados. Cada filtro deve conter pelo menos um nome, uma condição e uma ação a ser salva."
       ],
@@ -4359,7 +4534,7 @@
         "Nenhuma das chaves carregadas é válida para criptografia. A criptografia está desativada automaticamente."
       ],
       "Normal": [
-        "Normal"
+        ""
       ],
       "Not a valid URL": [
         "Não é uma URL válida"
@@ -4368,7 +4543,7 @@
         "de"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
+        "Uma ou mais de suas chaves confiáveis foram marcadas como \"comprometidas\" pelo proprietário. Recomendamos que você \"desconfie\" dessas chaves."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
@@ -4413,11 +4588,11 @@
         "Por favor, selecione o tipo de link que você deseja inserir e preencha em todos os campos."
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "",
-        ""
+        "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
+        "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "Por favor, selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "Por favor, aguarde enquanto procuramos contatos que podem ser reassinados com a chave de criptografia principal."
@@ -5245,6 +5420,12 @@
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
       ],
+      "Awful": [
+        "Horrível"
+      ],
+      "Bad": [
+        "Ruim"
+      ],
       "BCC": [
         "CCO"
       ],
@@ -5347,11 +5528,17 @@
       "From: ${ importedEmail }": [
         "De: ${ importedEmail }"
       ],
+      "Good": [
+        "Bom"
+      ],
       "Group": [
         "Grupo"
       ],
       "Hide password": [
         "Ocultar senha"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Como você descreveria sua experiência com o novo visual dos produtos Proton?"
       ],
       "I understand the risk": [
         "Eu entendo o risco"
@@ -5424,6 +5611,9 @@
       ],
       "Notification": [
         "Notificação"
+      ],
+      "OK": [
+        "OK"
       ],
       "Operating system": [
         "Sistema operacional"
@@ -5577,6 +5767,9 @@
       ],
       "without attachments": [
         "sem anexos"
+      ],
+      "Wonderful": [
+        "Maravilhoso"
       ]
     },
     "Label for contact group color": {
@@ -6065,23 +6258,11 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Apresentando a aparência renovada do Proton.${ br } Muitos serviços, uma missão. Boas-vindas a uma internet onde a privacidade é o padrão."
-      ],
-      "We've introduced Proton's unified & refreshed look. We would love to hear what you think about it!": [
-        "Apresentamos o novo visual unificado e atualizado dos produtos Proton. Queremos saber o que você achou!"
       ]
     },
     "new_plans: label": {
-      "0 - Awful": [
-        "0 - Péssima"
-      ],
-      "5 - Wonderful": [
-        "5 - Excelente"
-      ],
-      "How would you describe your experience with the new Proton?": [
-        "Como você descreveria sua experiência com o novo visual dos produtos Proton?"
-      ],
-      "Tell us about your experience (Optional)": [
-        "Conte-nos sobre sua experiência (opcional)"
+      "Tell us about your experience. (Optional)": [
+        "Nos conte sobre sua experiência. (Opcional)"
       ]
     },
     "new_plans: placeholder": {
@@ -6090,9 +6271,6 @@
       ]
     },
     "new_plans: title": {
-      "Give feedback": [
-        "Enviar feedback"
-      ],
       "Updated Proton, unified protection": [
         "Proton atualizado, proteção unificada"
       ]
@@ -6219,13 +6397,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "${ emailAddress } marcou esta chave como comprometida. Essa chave não pode ser usada para criptografia nem para verificação de assinatura."
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "${ emailAddress } marcou esta chave como obsoleta. Esta chave só pode ser usada para verificação de assinatura."
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "Recomendamos que você \"desconfie\" dessa chave."
       ]
     },
     "PGP key warning": {

@@ -443,6 +443,9 @@
       "Select all": [
         "Вибрати все"
       ],
+      "Send feedback": [
+        "Надіслати відгук"
+      ],
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
@@ -821,6 +824,68 @@
       ],
       "Open": [
         "Відкрити"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "морквяний"
+      ],
+      "cerise": [
+        "вишневий"
+      ],
+      "cobalt": [
+        "кобальтовий"
+      ],
+      "copper": [
+        "мідний"
+      ],
+      "enzian": [
+        "енізан"
+      ],
+      "fern": [
+        "папороть"
+      ],
+      "forest": [
+        "лісовий"
+      ],
+      "ocean": [
+        "океанічний"
+      ],
+      "olive": [
+        "оливковий"
+      ],
+      "pacific": [
+        "тихоокеанський"
+      ],
+      "pickle": [
+        "розсіл"
+      ],
+      "pine": [
+        "сосновий"
+      ],
+      "pink": [
+        "рожевий"
+      ],
+      "plum": [
+        "сливовий"
+      ],
+      "purple": [
+        "бузковий"
+      ],
+      "reef": [
+        "рифовий"
+      ],
+      "sahara": [
+        "сахара"
+      ],
+      "slateblue": [
+        "сизий"
+      ],
+      "soil": [
+        "земляний"
+      ],
+      "strawberry": [
+        "полуничний"
       ]
     },
     "Confirm modal title": {
@@ -2065,6 +2130,16 @@
         "Не вибрано жодного зображення"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "Оцінка обов'язкова"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "Ваш відгук"
+      ]
+    },
     "file size format": {
       "bytes": [
         "байтів"
@@ -3227,6 +3302,12 @@
       "Automatically save contacts": [
         "Автоматично зберігати контакти"
       ],
+      "Awful": [
+        "Жахливо"
+      ],
+      "Bad": [
+        "Погано"
+      ],
       "Browser": [
         "Браузер"
       ],
@@ -3341,8 +3422,14 @@
       "Get your own ${ appName }": [
         "Отримайте свій ${ appName }"
       ],
+      "Good": [
+        "Добре"
+      ],
       "Hide password": [
         "Сховати пароль"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "Як би ви описали свої враження від нового Proton?"
       ],
       "I understand the risk": [
         "Я розумію ризик"
@@ -3400,6 +3487,9 @@
       ],
       "Notification": [
         "Сповіщення"
+      ],
+      "OK": [
+        "Нормально"
       ],
       "Operating system": [
         "Операційна система"
@@ -3526,6 +3616,9 @@
       ],
       "What happened?": [
         "Що сталося?"
+      ],
+      "Wonderful": [
+        "Дивовижно"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "Так, я хочу остаточно видалити\nмої старі файли"
@@ -3660,6 +3753,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "Представляємо оновлений вигляд.${ br } Багато служб, одна місія. Ласкаво просимо до Інтернету, де приватність — це стандарт."
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "Розкажіть нам про своє враження. (Необов'язково)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "Відгук"
       ]
     },
     "new_plans: title": {
@@ -4189,6 +4292,11 @@
         "Перевірку виконано успішно"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "Відгук надіслано"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/місяць"
@@ -4490,6 +4598,9 @@
       "Failed": [
         "Невдалі"
       ],
+      "Feedback": [
+        "Відгук"
+      ],
       "File details": [
         "Подробиці про файл"
       ],
@@ -4639,6 +4750,9 @@
       ],
       "Select link expiration time": [
         "Оберіть час завершення дії посилання"
+      ],
+      "Send feedback": [
+        "Надіслати відгук"
       ],
       "Settings": [
         "Налаштування"

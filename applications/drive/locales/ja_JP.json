@@ -437,6 +437,9 @@
       "Select all": [
         "すべて選択"
       ],
+      "Send feedback": [
+        "フィードバックを送信"
+      ],
       "Set recovery phrase": [
         "リカバリーフレーズを設定"
       ],
@@ -815,6 +818,68 @@
       ],
       "Open": [
         "開く"
+      ]
+    },
+    "color": {
+      "carrot": [
+        "キャロット"
+      ],
+      "cerise": [
+        "セリース"
+      ],
+      "cobalt": [
+        "コバルト"
+      ],
+      "copper": [
+        "コパー"
+      ],
+      "enzian": [
+        "エンツィアン"
+      ],
+      "fern": [
+        "ファーン"
+      ],
+      "forest": [
+        "フォレスト"
+      ],
+      "ocean": [
+        "オーシャン"
+      ],
+      "olive": [
+        "オリーブ"
+      ],
+      "pacific": [
+        "パシフィック"
+      ],
+      "pickle": [
+        "ピックル"
+      ],
+      "pine": [
+        "パイン"
+      ],
+      "pink": [
+        "ピンク"
+      ],
+      "plum": [
+        "プラム"
+      ],
+      "purple": [
+        "パープル"
+      ],
+      "reef": [
+        "リーフ"
+      ],
+      "sahara": [
+        "サハラ"
+      ],
+      "slateblue": [
+        "スレートブルー"
+      ],
+      "soil": [
+        "ソイル"
+      ],
+      "strawberry": [
+        "ストロベリー"
       ]
     },
     "Confirm modal title": {
@@ -2038,6 +2103,16 @@
         "画像が選択されていません"
       ]
     },
+    "Error notification when score is missing in user feedback form modal": {
+      "Score is required": [
+        "評価は必須です"
+      ]
+    },
+    "Feedback Modal Title": {
+      "Your feedback": [
+        "あなたのご意見"
+      ]
+    },
     "file size format": {
       "bytes": [
         "バイト"
@@ -2810,7 +2885,7 @@
         "存在するフォルダーを上書きします"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
+        "完全なるプライベート検索を有効にするに、${ DRIVE_APP_NAME } はローカルにファイルをインデックスする必要があります。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         ""
@@ -3089,6 +3164,12 @@
       "Automatically save contacts": [
         "宛先を連絡先に自動追加"
       ],
+      "Awful": [
+        "ひどい"
+      ],
+      "Bad": [
+        "悪い"
+      ],
       "Browser": [
         "ブラウザ"
       ],
@@ -3200,8 +3281,14 @@
       "Get your own ${ appName }": [
         "${ appName } を入手"
       ],
+      "Good": [
+        "いい"
+      ],
       "Hide password": [
         "パスワードを非表示"
+      ],
+      "How would you describe your experience with the new Proton?": [
+        "新しい Proton の使い心地はいかがでしょうか?"
       ],
       "I understand the risk": [
         "リスクを承知しました"
@@ -3259,6 +3346,9 @@
       ],
       "Notification": [
         "通知"
+      ],
+      "OK": [
+        "まあまあ"
       ],
       "Operating system": [
         "OS"
@@ -3385,6 +3475,9 @@
       ],
       "What happened?": [
         "どのような問題が発生しましたか?"
+      ],
+      "Wonderful": [
+        "すばらしい"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "はい、古いファイルを完全に削除します"
@@ -3513,6 +3606,16 @@
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
         "新しい外観になった Proton をご紹介します。${ br }たくさんのサービス、1 つのミッション。どこでもプライベートなインターネットへようこそ。"
+      ]
+    },
+    "new_plans: label": {
+      "Tell us about your experience. (Optional)": [
+        "あなたのご意見をお聞かせください (任意)"
+      ]
+    },
+    "new_plans: placeholder": {
+      "Feedback": [
+        "フィードバック"
       ]
     },
     "new_plans: title": {
@@ -3976,6 +4079,11 @@
         "検証に成功しました"
       ]
     },
+    "Success notification when user send feedback": {
+      "Feedback sent": [
+        "意見が送信されました"
+      ]
+    },
     "Suffix for price": {
       "/month": [
         "/月"
@@ -4259,6 +4367,9 @@
       "Failed": [
         "失敗"
       ],
+      "Feedback": [
+        "フィードバック"
+      ],
       "File details": [
         "ファイルの詳細"
       ],
@@ -4405,6 +4516,9 @@
       ],
       "Select link expiration time": [
         "リンクの有効時間を選択"
+      ],
+      "Send feedback": [
+        "フィードバックを送信"
       ],
       "Settings": [
         "設定"
