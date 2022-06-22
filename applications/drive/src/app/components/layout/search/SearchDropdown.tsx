@@ -19,7 +19,7 @@ interface Props {
 export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) => {
     const [user] = useUser();
     const { getESDBStatus } = useSearchLibrary();
-    const { isRefreshing, esEnabled } = getESDBStatus();
+    const { isRefreshing, esEnabled, dbExists } = getESDBStatus();
     const showProgress = indexKeyExists(user.ID) && esEnabled && (!isDBReadyAfterBuilding(user.ID) || isRefreshing);
 
     return (
@@ -38,13 +38,18 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                 UNSTABLE_AUTO_HEIGHT
             >
                 <div className="pl1-5 pr1-5 pt1-5 pb1">
-                    <div className="flex">
+                    <div>
                         <div className="flex">
-                            <span className="inline-flex text-bold text-lg">{c('Label').t`Enabling drive search`}</span>
+                            <span className="inline-flex text-bold text-lg">
+                                {dbExists ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
+                            </span>
                         </div>
                         <p className="mb0">
-                            {c('Info')
-                                .t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we’ll let you know when indexing is done.`}
+                            {dbExists
+                                ? c('Info')
+                                      .t`Private search enabled. You may now close this dialogue and search for files and folders.`
+                                : c('Info')
+                                      .t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we’ll let you know when indexing is done.`}
                         </p>
                     </div>
                     {showProgress && <SearchIndexingProgress />}

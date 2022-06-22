@@ -28,7 +28,7 @@ export const SearchIndexingProgress = () => {
         progressStatus = c('Info').t`Updating drive search...`;
     } else {
         // translator: esProgress is a number representing the current message being fetched, totalIndexingMessages is the total number of message in the mailbox
-        progressStatus = c('Info').jt`Downloading items ${esProgress} out of ${totalProgressToShow}` as string;
+        progressStatus = c('Info').jt`Indexing items ${esProgress} out of ${totalProgressToShow}` as string;
     }
 
     const etaMessage =
