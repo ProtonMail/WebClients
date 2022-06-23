@@ -1,5 +1,5 @@
 import { Recipient } from '@proton/shared/lib/interfaces';
-
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientsList from './RecipientsList';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
@@ -10,9 +10,19 @@ interface Props {
     isLoading: boolean;
     showDropdown?: boolean;
     isPrintModal?: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
-const MailRecipientList = ({ list, mapStatusIcons, isLoading, showDropdown, isPrintModal }: Props) => {
+const MailRecipientList = ({
+    list,
+    mapStatusIcons,
+    isLoading,
+    showDropdown,
+    isPrintModal,
+    onContactDetails,
+    onContactEdit,
+}: Props) => {
     const { getRecipientsOrGroups } = useRecipientLabel();
 
     const recipientsOrGroup = getRecipientsOrGroups(list);
@@ -24,6 +34,8 @@ const MailRecipientList = ({ list, mapStatusIcons, isLoading, showDropdown, isPr
             recipientsOrGroup={recipientsOrGroup}
             showDropdown={showDropdown}
             isPrintModal={isPrintModal}
+            onContactDetails={onContactDetails}
+            onContactEdit={onContactEdit}
         />
     );
 };

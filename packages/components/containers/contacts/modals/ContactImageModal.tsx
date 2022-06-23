@@ -1,16 +1,27 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import { c } from 'ttag';
-
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import { resizeImage } from '@proton/shared/lib/helpers/image';
 import { CONTACT_IMG_SIZE } from '@proton/shared/lib/contacts/constants';
-
 import { useNotifications } from '../../../hooks';
-import { Row, Label, Field, Input, FileInput, FormModal } from '../../../components';
+import {
+    Row,
+    Label,
+    Field,
+    FileInput,
+    ModalTwo,
+    ModalTwoHeader,
+    ModalTwoContent,
+    ModalTwoFooter,
+    Button,
+    ModalProps,
+    InputTwo,
+    Form,
+    ErrorZone,
+} from '../../../components';
 
-interface Props {
+export interface ContactImageProps {
     url?: string;
-    onClose?: () => void;
     onSubmit: (image: string) => void;
 }
 
@@ -20,8 +31,11 @@ enum ImageState {
     Ok,
 }
 
-const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }: Props) => {
+type Props = ContactImageProps & ModalProps;
+
+const ContactImageModal = ({ url: initialUrl = '', onSubmit, ...rest }: Props) => {
     const [imageUrl, setImageUrl] = useState(initialUrl);
+    const [isPristine, setIsPristine] = useState(true);
     const { createNotification } = useNotifications();
 
     const title = c('Title').t`Edit image`;
@@ -39,15 +53,20 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
         }
     })();
 
+    const error = !isPristine && imageState !== ImageState.Ok ? c('Info').t`Not a valid URL` : undefined;
+
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         // Remove parameters from URL otherwise the image is broken
         const urlWithoutParams = e.target.value.split('?')[0];
         setImageUrl(urlWithoutParams);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = (event: FormEvent) => {
+        event.stopPropagation();
+        event.preventDefault();
+
         onSubmit(imageUrl);
-        onClose?.();
+        rest.onClose?.();
     };
 
     const handleUpload = (e: ChangeEvent<HTMLInputElement>) => {
@@ -69,7 +88,7 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
                     bigResize: true,
                 });
                 onSubmit(base64str);
-                onClose?.();
+                rest.onClose?.();
             } catch (error: any) {
                 createNotification({ text: c('Error').t`Image upload failed`, type: 'error' });
                 throw error;
@@ -80,34 +99,38 @@ const ContactImageModal = ({ url: initialUrl = '', onSubmit, onClose, ...rest }:
     };
 
     return (
-        <FormModal
-            title={title}
-            onSubmit={handleSubmit}
-            submit={c('Action').t`Save`}
-            onClose={onClose}
-            submitProps={{ disabled: imageState === ImageState.Error }}
-            {...rest}
-        >
-            <Row>
-                <Label htmlFor="contactImageModal-input-url">{c('Label').t`Add image URL`}</Label>
-                <Field>
-                    <Input
-                        id="contactImageModal-input-url"
-                        value={isBase64Str ? '' : imageUrl}
-                        onChange={handleChange}
-                        placeholder={c('Placeholder').t`Image URL`}
-                        error={imageState !== ImageState.Ok ? c('Info').t`Not a valid URL` : undefined}
-                    />
-                </Field>
-            </Row>
-            <Row>
-                <Label htmlFor="contactImageModal-input-file">{c('Label').t`Upload picture`}</Label>
-                <Field>
-                    <FileInput id="contactImageModal-input-file" accept="image/*" onChange={handleUpload}>{c('Action')
-                        .t`Upload picture`}</FileInput>
-                </Field>
-            </Row>
-        </FormModal>
+        <ModalTwo as={Form} onSubmit={handleSubmit} className="contacts-modal" {...rest}>
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                <Row>
+                    <Label htmlFor="contactImageModal-input-url">{c('Label').t`Add image URL`}</Label>
+                    <Field>
+                        <InputTwo
+                            id="contactImageModal-input-url"
+                            value={isBase64Str ? '' : imageUrl}
+                            onChange={handleChange}
+                            onBlur={() => setIsPristine(false)}
+                            placeholder={c('Placeholder').t`Image URL`}
+                            error={!!error}
+                        />
+                        {!!error ? <ErrorZone>{error}</ErrorZone> : null}
+                    </Field>
+                </Row>
+                <Row>
+                    <Label htmlFor="contactImageModal-input-file">{c('Label').t`Upload picture`}</Label>
+                    <Field>
+                        <FileInput id="contactImageModal-input-file" accept="image/*" onChange={handleUpload}>{c(
+                            'Action'
+                        ).t`Upload picture`}</FileInput>
+                    </Field>
+                </Row>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                <Button color="norm" type="submit" disabled={imageState === ImageState.Error}>{c('Action')
+                    .t`Save`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

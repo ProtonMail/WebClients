@@ -1,5 +1,4 @@
 import { c } from 'ttag';
-
 import isTruthy from '@proton/utils/isTruthy';
 import truncate from '@proton/utils/truncate';
 import { CONTACT_CARD_TYPE, FORBIDDEN_LABEL_NAMES } from '../../constants';
@@ -7,7 +6,6 @@ import { normalize } from '../../helpers/string';
 import {
     ContactGroup,
     ContactMetadata,
-    ContactProperties,
     IMPORT_GROUPS_ACTION,
     ImportCategories,
     ImportedContact,
@@ -19,13 +17,11 @@ import {
     EXTENSION,
     ImportContactsModel,
 } from '../../interfaces/contacts/Import';
+import { VCardContact } from '../../interfaces/contacts/VCard';
 import { SimpleMap } from '../../interfaces/utils';
 import { MAX_CONTACT_ID_CHARS_DISPLAY } from '../constants';
-
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '../errors/ImportContactError';
-
-import { hasCategories } from '../properties';
-import { parse as parseVcard } from '../vcard';
+import { parseToVCard } from '../vcard';
 
 export const getIsAcceptedExtension = (extension: string): extension is ACCEPTED_EXTENSIONS => {
     return Object.values(EXTENSION).includes(extension as EXTENSION);
@@ -40,42 +36,39 @@ export const getHasPreVcardsContacts = (
 /**
  * Try to get a string that identifies a contact. This will be used in case of errors
  */
-export const getContactId = (vcardOrContactProperties: string | ContactProperties) => {
+export const getContactId = (vcardOrVCardContact: string | VCardContact) => {
     // translator: When having an error importing a contact for which we can't find a name, we display an error message `Contact ${contactId}: error description` with contactId = 'unknown'
     const unknownString = c('Import contact. Contact identifier').t`unknown`;
-    if (Array.isArray(vcardOrContactProperties)) {
-        const fn = vcardOrContactProperties.filter(({ field }) => field === 'fn')[0]?.value;
+    if (typeof vcardOrVCardContact !== 'string') {
+        const fn = vcardOrVCardContact.fn[0]?.value;
         if (fn) {
-            return fn as string;
+            return fn;
         }
-        const email = vcardOrContactProperties.filter(({ field }) => field === 'email')[0]?.value;
+        const email = vcardOrVCardContact.email?.[0]?.value;
         if (email) {
-            return email as string;
+            return email;
         }
         return unknownString;
     }
     // try to get the name of the contact from FN, which is a required field in a vcard
-    const contentLineSeparator = vcardOrContactProperties.includes('\r\n') ? '\r\n' : '\n';
+    const contentLineSeparator = vcardOrVCardContact.includes('\r\n') ? '\r\n' : '\n';
     const contentLineSeparatorLength = contentLineSeparator.length;
-    const indexOfFNValue = vcardOrContactProperties.indexOf(
+    const indexOfFNValue = vcardOrVCardContact.indexOf(
         ':',
-        vcardOrContactProperties.toLowerCase().indexOf(`${contentLineSeparator}fn`)
+        vcardOrVCardContact.toLowerCase().indexOf(`${contentLineSeparator}fn`)
     );
     if (indexOfFNValue === -1) {
         return unknownString;
     }
-    let indexOfNextField = vcardOrContactProperties.indexOf(contentLineSeparator, indexOfFNValue);
-    let FNvalue = vcardOrContactProperties.substring(indexOfFNValue + 1, indexOfNextField);
+    let indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, indexOfFNValue);
+    let FNvalue = vcardOrVCardContact.substring(indexOfFNValue + 1, indexOfNextField);
     while (
-        vcardOrContactProperties[indexOfNextField + contentLineSeparatorLength] === ' ' &&
+        vcardOrVCardContact[indexOfNextField + contentLineSeparatorLength] === ' ' &&
         FNvalue.length < MAX_CONTACT_ID_CHARS_DISPLAY
     ) {
         const oldIndex = indexOfNextField;
-        indexOfNextField = vcardOrContactProperties.indexOf(
-            contentLineSeparator,
-            oldIndex + contentLineSeparatorLength
-        );
-        FNvalue += vcardOrContactProperties.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
+        indexOfNextField = vcardOrVCardContact.indexOf(contentLineSeparator, oldIndex + contentLineSeparatorLength);
+        FNvalue += vcardOrVCardContact.substring(oldIndex + contentLineSeparatorLength + 1, indexOfNextField);
     }
 
     return truncate(FNvalue, MAX_CONTACT_ID_CHARS_DISPLAY);
@@ -87,7 +80,7 @@ export const getSupportedContact = (vcard: string) => {
         return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.UNSUPPORTED_VCARD_VERSION, contactId);
     }
     try {
-        return parseVcard(vcard);
+        return parseToVCard(vcard);
     } catch (error: any) {
         const contactId = getContactId(vcard);
         return new ImportContactError(IMPORT_CONTACT_ERROR_TYPE.EXTERNAL_ERROR, contactId, error);
@@ -248,23 +241,6 @@ export const splitErrors = <T>(contacts: (T | ImportContactError)[]) => {
         { errors: [], rest: [] }
     );
 };
-
-/**
- * Split contacts depending on having the CATEGORIES property.
- * @param contacts
- */
-export const splitContacts = (contacts: ContactProperties[] = []) =>
-    contacts.reduce<{ withCategories: ContactProperties[]; withoutCategories: ContactProperties[] }>(
-        (acc, contact) => {
-            if (hasCategories(contact)) {
-                acc.withCategories.push(contact);
-            } else {
-                acc.withoutCategories.push(contact);
-            }
-            return acc;
-        },
-        { withCategories: [], withoutCategories: [] }
-    );
 
 /**
  * Split encrypted contacts depending on having the CATEGORIES property.

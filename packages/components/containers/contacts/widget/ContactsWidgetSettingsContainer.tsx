@@ -1,23 +1,33 @@
 import { c } from 'ttag';
-
 import { Label, Field, Info, CircleLoader } from '@proton/components';
 import { useContacts, useMailSettings } from '@proton/components/hooks';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-
 import AutoSaveContactsToggle from '../../general/AutoSaveContactsToggle';
 import ContactsWidgetSettingsContainerExport from './ContactsWidgetSettingsContainerExport';
 import ContactsWidgetSettingsContainerImport from './ContactsWidgetSettingsContainerImport';
 
 interface Props {
+    onImport: () => void;
+    onExport: () => void;
     onClose: () => void;
 }
 
-const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
+const ContactsWidgetSettingsContainer = ({ onImport, onExport, onClose }: Props) => {
     const [mailSettings, loadingMailSettings] = useMailSettings();
     const { AutoSaveContacts } = mailSettings || {};
     const [, loadingContacts] = useContacts();
 
     const loading = loadingContacts || loadingMailSettings;
+
+    const handleImport = () => {
+        onImport();
+        onClose();
+    };
+
+    const handleExport = () => {
+        onExport();
+        onClose();
+    };
 
     return (
         <>
@@ -38,10 +48,10 @@ const ContactsWidgetSettingsContainer = ({ onClose }: Props) => {
                         </Field>
                     </div>
                     <div className="mb2">
-                        <ContactsWidgetSettingsContainerImport onImportButtonClick={onClose} />
+                        <ContactsWidgetSettingsContainerImport onImport={handleImport} />
                     </div>
                     <div className="mb2">
-                        <ContactsWidgetSettingsContainerExport onExportButtonClick={onClose} />
+                        <ContactsWidgetSettingsContainerExport onExport={handleExport} />
                     </div>
                 </div>
             )}

@@ -3,7 +3,8 @@ import { ComponentType, useRef, useState } from 'react';
 import useModalState from './useModalState';
 
 export const useModalTwo = function <OwnProps, Value>(
-    Modal: ComponentType<any>
+    Modal: ComponentType<any>,
+    usePromise = true
 ): [JSX.Element | null, (ownProps: OwnProps) => Promise<Value>] {
     const [props, setOpen, render] = useModalState();
     const [ownProps, setOwnProps] = useState<OwnProps>();
@@ -40,7 +41,9 @@ export const useModalTwo = function <OwnProps, Value>(
         props.onClose();
     };
 
-    const modal = render ? <Modal {...props} {...ownProps} onResolve={handleResolve} onReject={handleReject} /> : null;
+    const promiseHandlers = usePromise ? { onResolve: handleResolve, onReject: handleReject } : {};
+
+    const modal = render ? <Modal {...props} {...ownProps} {...promiseHandlers} /> : null;
 
     return [modal, handleShowModal];
 };

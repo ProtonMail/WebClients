@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 import { classnames } from '@proton/components';
+import noop from '@proton/utils/noop';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import RecipientItem from '../../message/recipients/RecipientItem';
 import RecipientType from '../../message/recipients/RecipientType';
@@ -27,13 +28,21 @@ const EOReplyHeader = ({ message }: Props) => {
                         recipientOrGroup={{ recipient: message.data?.EORecipient }}
                         isLoading={false}
                         isOutside
+                        onContactDetails={noop}
+                        onContactEdit={noop}
                     />
                 </RecipientType>
                 <RecipientType
                     label={c('Label').t`To:`}
                     className={classnames(['flex flex-align-items-start flex-nowrap message-recipient-expanded'])}
                 >
-                    <RecipientItem recipientOrGroup={{ recipient: message.data?.Sender }} isLoading={false} isOutside />
+                    <RecipientItem
+                        recipientOrGroup={{ recipient: message.data?.Sender }}
+                        isLoading={false}
+                        isOutside
+                        onContactDetails={noop}
+                        onContactEdit={noop}
+                    />
                 </RecipientType>
             </div>
         </>

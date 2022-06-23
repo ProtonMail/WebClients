@@ -2,10 +2,9 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { OpenPGPKey } from 'pmcrypto';
-
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MapStatusIcons, StatusIcon } from '../../../models/crypto';
 import { RecipientOrGroup } from '../../../models/address';
-
 import RecipientItemLayout from './RecipientItemLayout';
 import RecipientItemGroup from './RecipientItemGroup';
 import MailRecipientItemSingle from './MailRecipientItemSingle';
@@ -26,6 +25,8 @@ interface Props {
     hideAddress?: boolean;
     isRecipient?: boolean;
     isExpanded?: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
 const RecipientItem = ({
@@ -42,6 +43,8 @@ const RecipientItem = ({
     hideAddress,
     isRecipient,
     isExpanded,
+    onContactDetails,
+    onContactEdit,
 }: Props) => {
     const ref = useRef<HTMLButtonElement>(null);
 
@@ -78,6 +81,8 @@ const RecipientItem = ({
                     hideAddress={hideAddress}
                     isRecipient={isRecipient}
                     isExpanded={isExpanded}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
                 />
             );
         }
