@@ -10,11 +10,11 @@ import { Tooltip } from '../tooltip';
 import { ModalContext } from './Modal';
 import './ModalHeader.scss';
 
-interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'> {
+interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children' | 'title'> {
     /**
      * The title to render in the Modal header.
      */
-    title?: string;
+    title?: string | JSX.Element;
     /**
      * A subline to render below the Title.
      * Will not render unless "title" is passed as well.
@@ -30,9 +30,13 @@ interface ModalHeaderProps extends Omit<ComponentPropsWithRef<'div'>, 'children'
      * Props forwarded to the close Button component
      */
     closeButtonProps?: ButtonProps;
+    /**
+     * Optionnal additional title classNames
+     */
+    titleClassName?: string;
 }
 
-const ModalHeader = ({ title, subline, actions, closeButtonProps, ...rest }: ModalHeaderProps) => {
+const ModalHeader = ({ title, subline, actions, closeButtonProps, titleClassName, ...rest }: ModalHeaderProps) => {
     const { id, onClose, size } = useContext(ModalContext);
 
     const [firstAction, secondAction] = Array.isArray(actions) ? actions : [actions];
@@ -52,6 +56,7 @@ const ModalHeader = ({ title, subline, actions, closeButtonProps, ...rest }: Mod
                         className={classnames([
                             'text-bold',
                             ['large', 'full'].includes(size) ? 'text-4xl' : 'text-2xl',
+                            titleClassName,
                         ])}
                     >
                         {title}

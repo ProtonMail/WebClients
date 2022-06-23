@@ -23,6 +23,7 @@ import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { useDispatch } from 'react-redux';
 import { DecryptResultPmcrypto } from 'pmcrypto';
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import MessageHeadersModal from '../modals/MessageHeadersModal';
 import { getDate, isStarred as IsMessageStarred } from '../../../helpers/elements';
 import { formatFileNameDate } from '../../../helpers/date';
@@ -61,6 +62,8 @@ interface Props {
     parentMessageRef: React.RefObject<HTMLElement>;
     mailSettings: MailSettings;
     messageViewIcons: MessageViewIcons;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
 const HeaderMoreDropdown = ({
@@ -75,6 +78,8 @@ const HeaderMoreDropdown = ({
     parentMessageRef,
     mailSettings,
     messageViewIcons,
+    onContactDetails,
+    onContactEdit,
 }: Props) => {
     const location = useLocation();
     const api = useApi();
@@ -417,6 +422,8 @@ const HeaderMoreDropdown = ({
                 mailSettings={mailSettings}
                 messageViewIcons={messageViewIcons}
                 messageLoaded={messageLoaded}
+                onContactDetails={onContactDetails}
+                onContactEdit={onContactEdit}
                 {...messageDetailsModalProps}
             />
             <MessageHeadersModal message={message.data} {...messageHeaderModalProps} />

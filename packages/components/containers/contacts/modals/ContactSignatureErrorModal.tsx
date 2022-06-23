@@ -1,37 +1,44 @@
 import { c } from 'ttag';
-import noop from '@proton/utils/noop';
-import { Alert, FormModal } from '../../../components';
-import { useModals } from '../../../hooks';
-import ContactResignExecutionModal from './ContactResignExecutionModal';
+import {
+    Alert,
+    Button,
+    ModalProps,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+} from '../../../components';
 
-interface Props {
+export interface ContactSignatureErrorProps {
     contactID: string;
-    onClose?: () => void;
 }
 
-const ContactSignatureErrorModal = ({ onClose = noop, contactID, ...rest }: Props) => {
-    const { createModal } = useModals();
+export interface ContactSignatureErrorModalProps {
+    onResign: () => void;
+}
 
+type Props = ContactSignatureErrorProps & ContactSignatureErrorModalProps & ModalProps;
+
+const ContactSignatureErrorModal = ({ contactID, onResign, ...rest }: Props) => {
     const handleSubmit = () => {
-        createModal(<ContactResignExecutionModal />);
-        onClose();
+        onResign();
+        rest.onClose?.();
     };
 
     return (
-        <FormModal
-            title={c('Title').t`Re-sign all contacts`}
-            onSubmit={handleSubmit}
-            onClose={onClose}
-            submit={c('Action').t`Re-sign`}
-            close={c('Action').t`Close`}
-            className="pm-modal--smaller"
-            {...rest}
-        >
-            <Alert className="mb1" type="info">{c('Info')
-                .t`To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.`}</Alert>
-            <Alert className="mb1" type="info">{c('Info')
-                .t`Please note that this process may take some time depending on the size of your address book.`}</Alert>
-        </FormModal>
+        <ModalTwo size="small" {...rest}>
+            <ModalTwoHeader title={c('Title').t`Re-sign all contacts`} />
+            <ModalTwoContent>
+                <Alert className="mb1" type="info">{c('Info')
+                    .t`To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.`}</Alert>
+                <Alert className="mb1" type="info">{c('Info')
+                    .t`Please note that this process may take some time depending on the size of your address book.`}</Alert>
+            </ModalTwoContent>
+            <ModalTwoFooter>
+                <Button onClick={rest.onClose}>{c('Action').t`Close`}</Button>
+                <Button color="norm" onClick={handleSubmit}>{c('Action').t`Re-sign`}</Button>
+            </ModalTwoFooter>
+        </ModalTwo>
     );
 };
 

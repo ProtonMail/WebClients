@@ -1,19 +1,16 @@
 import Papa from 'papaparse';
-
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
-import { ContactProperties } from '../../interfaces/contacts';
-import { sortByPref } from '../properties';
+import { createContactPropertyUid, fromVCardProperties, generateNewGroupName } from '../properties';
 import {
-    ContactPropertyWithDisplay,
     ParsedCsvContacts,
     PreVcardProperty,
     PreVcardsContact,
     PreVcardsProperty,
 } from '../../interfaces/contacts/Import';
-import { standarize, combine, display, toPreVcard } from './csvFormat';
+import { standarize, combine, toPreVcard } from './csvFormat';
 import { getAllTypes } from '../../helpers/contacts';
-import { VCardKey } from '../../interfaces/contacts/VCard';
+import { VCardContact, VCardKey, VCardProperty } from '../../interfaces/contacts/VCard';
 
 interface PapaParseOnCompleteArgs {
     data?: string[][];
@@ -162,37 +159,36 @@ export const prepare = ({ headers = [], contacts = [] }: ParsedCsvContacts) => {
 
 /**
  * Combine pre-vCards properties into a single vCard one
- * @param {Array} preVcards     Array of pre-vCards properties
- *
- * @return {Object}             vCard property
+ * @param preVCards     Array of pre-vCards properties
+ * @return               vCard property
  */
-export const toVcard = (preVcards: PreVcardProperty[]): ContactPropertyWithDisplay | undefined => {
-    if (!preVcards.length) {
+export const toVCard = (preVCards: PreVcardProperty[]): VCardProperty<any> | undefined => {
+    if (!preVCards.length) {
         return;
     }
 
     const types = getAllTypes();
 
-    const { pref, field, type, custom } = preVcards[0];
+    const { pref, field, type, custom } = preVCards[0];
 
     // Need to get the default type if the field has a second dropdown to be displayed
     const defaultType = types[field]?.[0]?.value as VCardKey | undefined;
 
-    return custom
-        ? {
-              pref,
-              field,
-              type: type || defaultType,
-              value: combine.custom(preVcards),
-              display: display.custom(preVcards),
-          }
-        : {
-              pref,
-              field,
-              type: type || defaultType,
-              value: combine[field](preVcards),
-              display: display[field](preVcards),
-          };
+    const params: { [key: string]: string } = {};
+
+    if (type !== undefined || defaultType !== undefined) {
+        params.type = (type || defaultType) as string;
+    }
+    if (pref !== undefined) {
+        params.pref = String(pref);
+    }
+
+    return {
+        field,
+        value: custom ? combine.custom(preVCards) : combine[field](preVCards),
+        params,
+        uid: createContactPropertyUid(),
+    };
 };
 
 /**
@@ -200,31 +196,45 @@ export const toVcard = (preVcards: PreVcardProperty[]): ContactPropertyWithDispl
  * The RFC does not allow the EMAIL property to have multiple values: https://datatracker.ietf.org/doc/html/rfc6350#section-6.4.2
  * Instead, one should use multiple single-valued email properties
  */
-const sanitizeEmailProperties = (contacts: ContactProperties[]): ContactProperties[] => {
+const sanitizeEmailProperties = (contacts: VCardContact[]): VCardContact[] => {
     return contacts.map((contact) => {
-        return contact.reduce<ContactProperties>((acc, property) => {
-            if (property.field !== 'email' || !Array.isArray(property.value)) {
-                return [...acc, property];
-            }
-            // If the property is an email having an array of emails as value
-            return [
-                ...acc,
-                ...property.value.map((value) => {
-                    return {
-                        ...property,
-                        display: value,
-                        value,
-                    };
+        if (!contact.email) {
+            return contact;
+        }
+
+        const existingGroups = contact.email.map(({ group }) => group).filter(isTruthy);
+
+        return {
+            ...contact,
+            email: contact.email
+                .flatMap((property) => {
+                    if (!Array.isArray(property.value)) {
+                        return [property];
+                    }
+                    // If the property is an email having an array of emails as value
+                    return property.value.map((value) => {
+                        return { ...property, value };
+                    });
+                })
+                .map((property) => {
+                    if (property.group) {
+                        return property;
+                    }
+                    const group = generateNewGroupName(existingGroups);
+                    existingGroups.push(group);
+                    return { ...property, group };
                 }),
-            ];
-        }, []);
+        };
     });
 };
 
 /**
  * Transform pre-vCards contacts into vCard contacts
  */
-export const toVcardContacts = (preVcardsContacts: PreVcardsContact[]): ContactProperties[] =>
-    sanitizeEmailProperties(
-        preVcardsContacts.map((preVcardsContact) => preVcardsContact.map(toVcard).filter(isTruthy).sort(sortByPref))
+export const toVCardContacts = (preVcardsContacts: PreVcardsContact[]): VCardContact[] => {
+    return sanitizeEmailProperties(
+        preVcardsContacts.map((preVcardsContact) => {
+            return fromVCardProperties(preVcardsContact.map(toVCard).filter(isTruthy));
+        })
     );
+};

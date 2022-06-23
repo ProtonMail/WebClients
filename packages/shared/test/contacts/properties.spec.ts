@@ -1,15 +1,14 @@
 import Papa from 'papaparse';
-
-import { addGroup, addPref, getContactCategories, getContactEmails } from '../../lib/contacts/properties';
-import { parse, toICAL } from '../../lib/contacts/vcard';
+import { getContactCategories, getContactEmails, getVCardProperties } from '../../lib/contacts/properties';
+import { parseToVCard, vCardPropertiesToICAL } from '../../lib/contacts/vcard';
 import { prepare, readCsv } from '../../lib/contacts/helpers/csv';
 import { toCRLF } from '../../lib/helpers/string';
+import { prepareForSaving } from '../../lib/contacts/surgery';
 
 describe('getContactEmails', () => {
     it('should retrieve contact emails from a vcard contact', () => {
-        const properties = addGroup(
-            addPref(
-                parse(`BEGIN:VCARD
+        const contact = prepareForSaving(
+            parseToVCard(`BEGIN:VCARD
 VERSION:4.0
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
 FN;PID=1.1:J. Doe
@@ -20,18 +19,18 @@ CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556
 CATEGORIES:TRAVEL AGENT
 CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY
 END:VCARD`)
-            )
         );
-        const result = [
+        const expected = [
             { email: 'jdoe@example.com', group: 'item1' },
             { email: 'jdoeeeee@example.com', group: 'item2' },
         ];
-        expect(getContactEmails(properties)).toEqual(result);
+
+        expect(getContactEmails(contact)).toEqual(expected);
     });
 
     it('should not complain if contact emails properties do not contain a group', async () => {
-        const properties = addPref(
-            parse(`BEGIN:VCARD
+        const contact = prepareForSaving(
+            parseToVCard(`BEGIN:VCARD
 VERSION:4.0
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
 FN;PID=1.1:J. Doe
@@ -43,19 +42,20 @@ CATEGORIES:TRAVEL AGENT
 CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY
 END:VCARD`)
         );
-        const result = [
+
+        const expected = [
             { email: 'jdoe@example.com', group: 'item1' },
             { email: 'jdoeeeee@example.com', group: 'item2' },
         ];
-        expect(getContactEmails(properties)).toEqual(result);
+
+        expect(getContactEmails(contact)).toEqual(expected);
     });
 });
 
 describe('getContactCategories', () => {
     it('should retrieve categories from a vcard contact without groups', () => {
-        const properties = addGroup(
-            addPref(
-                parse(`BEGIN:VCARD
+        const contact = prepareForSaving(
+            parseToVCard(`BEGIN:VCARD
 VERSION:4.0
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
 FN;PID=1.1:J. Doe
@@ -66,22 +66,22 @@ CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556
 CATEGORIES:TRAVEL AGENT
 CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY
 END:VCARD`)
-            )
         );
-        const result = [
+
+        const expected = [
             { name: 'TRAVEL AGENT' },
             { name: 'INTERNET' },
             { name: 'IETF' },
             { name: 'INDUSTRY' },
             { name: 'INFORMATION TECHNOLOGY' },
         ];
-        expect(getContactCategories(properties)).toEqual(result);
+
+        expect(getContactCategories(contact)).toEqual(expected);
     });
 
     it('should retrieve categories from a vcard contact with groups', () => {
-        const properties = addGroup(
-            addPref(
-                parse(`BEGIN:VCARD
+        const contact = prepareForSaving(
+            parseToVCard(`BEGIN:VCARD
 VERSION:4.0
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
 FN;PID=1.1:J. Doe
@@ -94,9 +94,9 @@ ITEM1.CATEGORIES:TRAVEL AGENT
 ITEM2.CATEGORIES:INTERNET,IETF,INDUSTRY,INFORMATION TECHNOLOGY
 ITEM3.CATEGORIES:TRAVEL AGENT,IETF
 END:VCARD`)
-            )
         );
-        const result = [
+
+        const expected = [
             { name: 'TRAVEL AGENT', group: 'item1' },
             { name: 'INTERNET', group: 'item2' },
             { name: 'IETF', group: 'item2' },
@@ -105,13 +105,13 @@ END:VCARD`)
             { name: 'TRAVEL AGENT', group: 'item3' },
             { name: 'IETF', group: 'item3' },
         ];
-        expect(getContactCategories(properties)).toEqual(result);
+
+        expect(getContactCategories(contact)).toEqual(expected);
     });
 
     it('should return an empty array when there are no categories in the contact', () => {
-        const properties = addGroup(
-            addPref(
-                parse(`BEGIN:VCARD
+        const contact = prepareForSaving(
+            parseToVCard(`BEGIN:VCARD
 VERSION:4.0
 UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
 FN;PID=1.1:J. Doe
@@ -121,9 +121,9 @@ ITEM2.EMAIL:jdoeeeee@example.com
 ITEM3.EMAIL:jd@example.com
 CLIENTPIDMAP:1;urn:uuid:53e374d9-337e-4727-8803-a1e9c14e0556
 END:VCARD`)
-            )
         );
-        expect(getContactCategories(properties)).toEqual([]);
+
+        expect(getContactCategories(contact)).toEqual([]);
     });
 });
 
@@ -133,8 +133,9 @@ describe('toICAL', () => {
 VERSION:4.0
 BDAY:19691203
 END:VCARD`);
-        const properties = parse(vcard);
-        expect(toICAL(properties).toString()).toEqual(vcard);
+        const contact = parseToVCard(vcard);
+        const properties = getVCardProperties(contact);
+        expect(vCardPropertiesToICAL(properties).toString()).toEqual(vcard);
     });
 });
 

@@ -1,12 +1,5 @@
-import {
-    ContactCard,
-    ContactGroup,
-    ContactMetadata,
-    ContactProperties,
-    ContactProperty,
-    ContactValue,
-} from './Contact';
-import { VCardKey } from './VCard';
+import { ContactCard, ContactGroup, ContactValue } from './Contact';
+import { VCardContact, VCardKey } from './VCard';
 import { ImportContactError } from '../../contacts/errors/ImportContactError';
 import { ImportFatalError } from '../../contacts/errors/ImportFatalError';
 import { ImportFileError } from '../../contacts/errors/ImportFileError';
@@ -19,7 +12,6 @@ export enum IMPORT_STEPS {
     IMPORTING,
     SUMMARY,
     IMPORT_GROUPS,
-    FINISHED,
 }
 
 export enum IMPORT_GROUPS_ACTION {
@@ -40,10 +32,6 @@ export interface ParsedCsvContacts {
     contacts: string[][];
 }
 
-export interface ContactPropertyWithDisplay extends ContactProperty {
-    display: string;
-}
-
 export interface ImportCategories {
     name: string;
     totalContacts: number;
@@ -60,7 +48,7 @@ export interface ImportContactsModel {
     fileAttached?: File;
     extension?: ACCEPTED_EXTENSIONS;
     preVcardsContacts?: PreVcardsContact[];
-    parsedVcardContacts: ContactProperties[];
+    parsedVcardContacts: VCardContact[];
     importedContacts: ImportedContact[];
     totalEncrypted: number;
     totalImported: number;
@@ -87,22 +75,8 @@ export interface ImportedContact {
     categories: { name: string; contactEmailIDs?: string[] }[];
 }
 
-export interface AddContactsApiResponse {
-    Index: number;
-    Response: {
-        Code: number;
-        Contact?: ContactMetadata;
-        Error?: string;
-    };
-}
-
-export interface AddContactsApiResponses {
-    Code: number;
-    Responses: AddContactsApiResponse[];
-}
-
 export interface Combine {
-    [key: string]: (preVcards: PreVcardsProperty) => ContactValue;
+    [key: string]: (preVcards: PreVcardsProperty) => any;
 }
 
 export interface Display {

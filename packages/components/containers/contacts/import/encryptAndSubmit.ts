@@ -3,7 +3,7 @@ import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRe
 import { createContactGroup } from '@proton/shared/lib/api/labels';
 import { API_CODES, HOUR, ACCENT_COLORS } from '@proton/shared/lib/constants';
 import { CATEGORIES, OVERWRITE } from '@proton/shared/lib/contacts/constants';
-import { prepareContact } from '@proton/shared/lib/contacts/encrypt';
+import { prepareVCardContact } from '@proton/shared/lib/contacts/encrypt';
 import { getContactCategories, getContactEmails } from '@proton/shared/lib/contacts/properties';
 import chunk from '@proton/utils/chunk';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -11,32 +11,26 @@ import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 import noop from '@proton/utils/noop';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api, KeyPair, Label, SimpleMap } from '@proton/shared/lib/interfaces';
-import {
-    ContactProperties,
-    IMPORT_GROUPS_ACTION,
-    ImportCategories,
-    ImportedContact,
-} from '@proton/shared/lib/interfaces/contacts';
+import { IMPORT_GROUPS_ACTION, ImportCategories, ImportedContact } from '@proton/shared/lib/interfaces/contacts';
 import { getContactId, splitErrors, extractContactImportCategories } from '@proton/shared/lib/contacts/helpers/import';
-import {
-    AddContactsApiResponse,
-    AddContactsApiResponses,
-    EncryptedContact,
-    ImportContactsModel,
-} from '@proton/shared/lib/interfaces/contacts/Import';
+import { EncryptedContact, ImportContactsModel } from '@proton/shared/lib/interfaces/contacts/Import';
+import { AddContactsApiResponse, AddContactsApiResponses } from '@proton/shared/lib/interfaces/contacts/ContactApi';
 import { IMPORT_CONTACT_ERROR_TYPE, ImportContactError } from '@proton/shared/lib/contacts/errors/ImportContactError';
+import { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
+import { prepareForSaving } from '@proton/shared/lib/contacts/surgery';
 
 const { SINGLE_SUCCESS } = API_CODES;
 const BATCH_SIZE = 10;
 
-const encryptContact = async (contact: ContactProperties, { privateKey, publicKey }: KeyPair) => {
+const encryptContact = async (contact: VCardContact, { privateKey, publicKey }: KeyPair) => {
     try {
-        const contactEncrypted = await prepareContact(contact, { privateKey, publicKey });
+        const prepared = prepareForSaving(contact);
+        const contactEncrypted = await prepareVCardContact(prepared, { privateKey, publicKey });
         return {
             contact: contactEncrypted,
-            contactId: getContactId(contact),
-            contactEmails: getContactEmails(contact),
-            categories: getContactCategories(contact),
+            contactId: getContactId(prepared),
+            contactEmails: getContactEmails(prepared),
+            categories: getContactCategories(prepared),
         };
     } catch (error: any) {
         const contactId = getContactId(contact);
@@ -99,7 +93,7 @@ const submitContacts = async ({
 };
 
 interface ProcessData {
-    contacts: ContactProperties[];
+    contacts: VCardContact[];
     labels: CATEGORIES;
     overwrite: OVERWRITE;
     keyPair: KeyPair;

@@ -10,10 +10,11 @@ import { c } from 'ttag';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import { KeysPair } from '../interfaces';
-import { Contact, ContactCard, ContactProperties } from '../interfaces/contacts';
+import { Contact, ContactCard } from '../interfaces/contacts';
+import { VCardContact } from '../interfaces/contacts/VCard';
 import { CRYPTO_PROCESSING_TYPES } from './constants';
-import { sanitizeProperties } from './properties';
-import { merge, parse } from './vcard';
+import { mergeVCard } from './properties';
+import { parseToVCard } from './vcard';
 
 const { SUCCESS, SIGNATURE_NOT_VERIFIED, FAIL_TO_READ, FAIL_TO_LOAD, FAIL_TO_DECRYPT } = CRYPTO_PROCESSING_TYPES;
 
@@ -129,10 +130,10 @@ const ACTIONS: { [index: number]: (...params: any) => Promise<ProcessedContactDa
     [CLEAR_TEXT]: clearText,
 };
 
-export const prepareContact = async (
+export const decryptContact = async (
     contact: Contact,
     { publicKeys, privateKeys }: KeysPair
-): Promise<{ properties: ContactProperties; errors: (CryptoProcessingError | Error)[]; isVerified: boolean }> => {
+): Promise<{ vcards: string[]; errors: (CryptoProcessingError | Error)[]; isVerified: boolean }> => {
     const { Cards } = contact;
     let isVerified = Cards.some(({ Type }) => [SIGNED, ENCRYPTED_AND_SIGNED].includes(Type));
 
@@ -172,11 +173,23 @@ export const prepareContact = async (
         { vcards: [], errors: [] }
     );
 
+    return { isVerified, vcards, errors };
+};
+
+export const prepareVCardContact = async (
+    contact: Contact,
+    { publicKeys, privateKeys }: KeysPair
+): Promise<{ vCardContact: VCardContact; errors: (CryptoProcessingError | Error)[]; isVerified: boolean }> => {
+    const { isVerified, vcards, errors } = await decryptContact(contact, { publicKeys, privateKeys });
+
     try {
-        const properties = sanitizeProperties(merge(vcards.map(parse)));
-        return { properties, errors, isVerified };
+        const vCardContacts = vcards.map((vcard) => parseToVCard(vcard));
+        const vCardContact = mergeVCard(vCardContacts);
+        return { vCardContact, errors, isVerified };
     } catch (e: any) {
+        // eslint-disable-next-line no-console
+        console.error('Error in prepare vCard', e);
         const error = e instanceof Error ? e : new Error('Corrupted vcard data');
-        return { properties: [], errors: [error], isVerified };
+        return { vCardContact: { fn: [] }, errors: [error], isVerified };
     }
 };

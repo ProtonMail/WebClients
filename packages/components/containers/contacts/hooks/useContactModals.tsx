@@ -1,0 +1,232 @@
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
+import noop from '@proton/utils/noop';
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
+import ContactEditModal, { ContactEditProps, ContactEditModalProps } from '../edit/ContactEditModal';
+import ContactGroupDeleteModal, { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
+import ContactGroupDetailsModal, { ContactGroupDetailsProps } from '../group/ContactGroupDetailsModal';
+import ContactGroupEditModal, { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import ContactDeleteModal, { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import ContactEmailSettingsModal, { ContactEmailSettingsProps } from '../email/ContactEmailSettingsModal';
+import ContactDetailsModal, { ContactDetailsProps } from '../view/ContactDetailsModal';
+import ContactExportingModal, { ContactExportingProps } from '../modals/ContactExportingModal';
+import ContactUpgradeModal from '../modals/ContactUpgradeModal';
+import ContactImageModal, { ContactImageProps } from '../modals/ContactImageModal';
+import ContactSignatureErrorModal, {
+    ContactSignatureErrorModalProps,
+    ContactSignatureErrorProps,
+} from '../modals/ContactSignatureErrorModal';
+import ContactDecryptionErrorModal, {
+    ContactDecryptionErrorModalProps,
+    ContactDecryptionErrorProps,
+} from '../modals/ContactDecryptionErrorModal';
+import ContactResignExecutionModal from '../modals/ContactResignExecutionModal';
+import ContactClearDataConfirmModal, {
+    ContactClearDataConfirmModalProps,
+    ContactClearDataConfirmProps,
+} from '../modals/ContactClearDataConfirmModal';
+import ContactClearDataExecutionModal, {
+    ContactClearDataExecutionProps,
+} from '../modals/ContactClearDataExecutionModal';
+import SelectEmailsModal, { SelectEmailsProps } from '../modals/SelectEmailsModal';
+
+export const useContactModals = ({ onMailTo = noop }: { onMailTo: (email: string) => void }) => {
+    const [contactDetailsModal, handleShowContactDetailsModal] = useModalTwo<ContactDetailsProps, void>(
+        ContactDetailsModal,
+        false
+    );
+
+    const [contactEditModal, handleShowContactEditModal] = useModalTwo<ContactEditProps & ContactEditModalProps, void>(
+        ContactEditModal,
+        false
+    );
+
+    const [contactDeleteModal, handleShowContactDeleteModal] = useModalTwo<ContactDeleteProps, void>(
+        ContactDeleteModal,
+        false
+    );
+
+    const [contactEmailSettingsModal, handleShowContactEmailSettingsModal] = useModalTwo<
+        ContactEmailSettingsProps,
+        void
+    >(ContactEmailSettingsModal, false);
+
+    const [contactExportingModal, handleShowContactExportingModal] = useModalTwo<ContactExportingProps, void>(
+        ContactExportingModal,
+        false
+    );
+
+    const [contactGroupDeleteModal, handleShowContactGroupDeleteModal] = useModalTwo<ContactGroupDeleteProps, void>(
+        ContactGroupDeleteModal,
+        false
+    );
+
+    const [contactGroupEditModal, handleShowContactGroupEditModal] = useModalTwo<ContactGroupEditProps, void>(
+        ContactGroupEditModal,
+        false
+    );
+
+    const [contactGroupDetailsModal, handleShowContactGroupDetailsModal] = useModalTwo<ContactGroupDetailsProps, void>(
+        ContactGroupDetailsModal,
+        false
+    );
+
+    const [contactUpgradeModal, handleShowContactUpgradeModal] = useModalTwo<void, void>(ContactUpgradeModal, false);
+
+    const [contactImageModal, handleShowContactImageModal] = useModalTwo<ContactImageProps, void>(
+        ContactImageModal,
+        false
+    );
+
+    const [contactSignatureErrorModal, handleShowContactSignatureErrorModal] = useModalTwo<
+        ContactSignatureErrorProps & ContactSignatureErrorModalProps,
+        void
+    >(ContactSignatureErrorModal, false);
+
+    const [contactResignExecutionModal, handleShowContactResignExecutionModal] = useModalTwo<void, void>(
+        ContactResignExecutionModal,
+        false
+    );
+
+    const [contactDecryptionErrorModal, handleShowContactDecryptionErrorModal] = useModalTwo<
+        ContactDecryptionErrorProps & ContactDecryptionErrorModalProps,
+        void
+    >(ContactDecryptionErrorModal, false);
+
+    const [contactClearDataConfirmModal, handleShowContactClearDataConfirmModal] = useModalTwo<
+        ContactClearDataConfirmProps & ContactClearDataConfirmModalProps,
+        void
+    >(ContactClearDataConfirmModal, false);
+
+    const [contactClearDataExecutionModal, handleShowContactClearDataExecutionModal] = useModalTwo<
+        ContactClearDataExecutionProps,
+        void
+    >(ContactClearDataExecutionModal, false);
+
+    const [contactSelectEmailsModal, handleShowContactSelectEmailsModal] = useModalTwo<
+        SelectEmailsProps,
+        ContactEmail[]
+    >(SelectEmailsModal);
+
+    const handleUpgrade = () => {
+        void handleShowContactUpgradeModal();
+    };
+
+    const handleSelectImage = (props: ContactImageProps) => {
+        void handleShowContactImageModal(props);
+    };
+
+    const handleResign = () => {
+        void handleShowContactResignExecutionModal();
+    };
+
+    const handleSignatureError = (contactID: string) => {
+        void handleShowContactSignatureErrorModal({ contactID, onResign: handleResign });
+    };
+
+    const handleClearData = (props: ContactClearDataExecutionProps) => {
+        void handleShowContactClearDataExecutionModal(props);
+    };
+
+    const handleClearDataConfirm = (props: ContactClearDataConfirmProps) => {
+        void handleShowContactClearDataConfirmModal({ ...props, onClearData: handleClearData });
+    };
+
+    const handleDecryptionError = (contactID: string) => {
+        void handleShowContactDecryptionErrorModal({ contactID, onClearDataConfirm: handleClearDataConfirm });
+    };
+
+    const handleGroupEdit = (props: ContactGroupEditProps) => {
+        void handleShowContactGroupEditModal(props);
+    };
+
+    const handleEdit = (props: ContactEditProps) => {
+        void handleShowContactEditModal({
+            ...props,
+            onUpgrade: handleUpgrade,
+            onSelectImage: handleSelectImage,
+            onGroupEdit: handleGroupEdit,
+        });
+    };
+
+    const handleDelete = (props: ContactDeleteProps) => {
+        void handleShowContactDeleteModal(props);
+    };
+
+    const handleEmailSettings = (props: ContactEmailSettingsProps) => {
+        void handleShowContactEmailSettingsModal(props);
+    };
+
+    const handleExport = (props: ContactExportingProps = {}) => {
+        void handleShowContactExportingModal(props);
+    };
+
+    const handleGroupDelete = (props: ContactGroupDeleteProps) => {
+        void handleShowContactGroupDeleteModal(props);
+    };
+
+    const handleGroupDetails = (contactGroupID: string) => {
+        void handleShowContactGroupDetailsModal({
+            contactGroupID,
+            onEdit: handleGroupEdit,
+            onDelete: handleGroupDelete,
+            onExport: handleExport,
+            onUpgrade: handleUpgrade,
+        });
+    };
+
+    const handleDetails = (contactID: string) => {
+        void handleShowContactDetailsModal({
+            contactID,
+            onMailTo,
+            onEdit: handleEdit,
+            onDelete: handleDelete,
+            onEmailSettings: handleEmailSettings,
+            onGroupDetails: handleGroupDetails,
+            onGroupEdit: handleGroupEdit,
+            onUpgrade: handleUpgrade,
+            onSignatureError: handleSignatureError,
+            onDecryptionError: handleDecryptionError,
+        });
+    };
+
+    const handleSelectEmails = (props: SelectEmailsProps) => {
+        return handleShowContactSelectEmailsModal(props);
+    };
+
+    const modals = (
+        <>
+            {contactDetailsModal}
+            {contactEditModal}
+            {contactDeleteModal}
+            {contactEmailSettingsModal}
+            {contactExportingModal}
+            {contactGroupDetailsModal}
+            {contactGroupEditModal}
+            {contactGroupDeleteModal}
+            {contactUpgradeModal}
+            {contactImageModal}
+            {contactSignatureErrorModal}
+            {contactResignExecutionModal}
+            {contactDecryptionErrorModal}
+            {contactClearDataConfirmModal}
+            {contactClearDataExecutionModal}
+            {contactSelectEmailsModal}
+        </>
+    );
+
+    return {
+        modals,
+        onEdit: handleEdit,
+        onDetails: handleDetails,
+        onDelete: handleDelete,
+        onEmailSettings: handleEmailSettings,
+        onExport: handleExport,
+        onGroupDetails: handleGroupDetails,
+        onGroupEdit: handleGroupEdit,
+        onGroupDelete: handleGroupDelete,
+        onUpgrade: handleUpgrade,
+        onSignatureError: handleSignatureError,
+        onDecryptionError: handleDecryptionError,
+        onSelectEmails: handleSelectEmails,
+    };
+};

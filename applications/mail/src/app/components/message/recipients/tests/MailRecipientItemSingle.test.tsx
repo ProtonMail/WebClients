@@ -12,6 +12,11 @@ const sender = {
     Address: senderAddress,
 } as Recipient;
 
+const modalsHandlers = {
+    onContactDetails: jest.fn(),
+    onContactEdit: jest.fn(),
+};
+
 describe('MailRecipientItemSingle trust public key item in dropdown', () => {
     let senderKeys: GeneratedKey;
 
@@ -35,7 +40,9 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
     };
 
     it('should not contain the trust key action in the dropdown', async () => {
-        const { queryByText, getByTestId, getByText } = await render(<MailRecipientItemSingle recipient={sender} />);
+        const { queryByText, getByTestId, getByText } = await render(
+            <MailRecipientItemSingle recipient={sender} {...modalsHandlers} />
+        );
 
         await openDropdown(getByTestId, getByText);
 
@@ -46,7 +53,11 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
 
     it('should contain the trust key action in the dropdown if signing key', async () => {
         const { getByTestId, getByText } = await render(
-            <MailRecipientItemSingle recipient={sender} signingPublicKey={senderKeys.publicKeys[0]} />
+            <MailRecipientItemSingle
+                recipient={sender}
+                signingPublicKey={senderKeys.publicKeys[0]}
+                {...modalsHandlers}
+            />
         );
 
         await openDropdown(getByTestId, getByText);
@@ -57,7 +68,11 @@ describe('MailRecipientItemSingle trust public key item in dropdown', () => {
 
     it('should contain the trust key action in the dropdown if attached key', async () => {
         const { getByTestId, getByText } = await render(
-            <MailRecipientItemSingle recipient={sender} attachedPublicKey={senderKeys.publicKeys[0]} />
+            <MailRecipientItemSingle
+                recipient={sender}
+                attachedPublicKey={senderKeys.publicKeys[0]}
+                {...modalsHandlers}
+            />
         );
 
         await openDropdown(getByTestId, getByText);
