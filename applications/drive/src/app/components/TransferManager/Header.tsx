@@ -184,7 +184,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
                 </Button>
             </Tooltip>
             <Tooltip title={closeTitle}>
-                <Button icon type="button" shape="ghost" onClick={onClose}>
+                <Button icon type="button" shape="ghost" data-testid="drive-transfers-manager:close" onClick={onClose}>
                     <Icon className="mauto" name="cross" alt={closeTitle} />
                 </Button>
             </Tooltip>

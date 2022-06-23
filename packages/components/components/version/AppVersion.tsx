@@ -32,7 +32,7 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
     const children = (
         <>
             <span className="app-infos-name mr0-25">{appName}</span>
-            <span className="app-infos-number">
+            <span className="app-infos-number" data-testid="app-infos:release-notes">
                 {appVersion}
                 {currentEnvironment && envMap[currentEnvironment] && ` ${envMap[currentEnvironment]}`}
             </span>
