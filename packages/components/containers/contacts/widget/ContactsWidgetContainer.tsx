@@ -5,34 +5,53 @@ import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';
 import { Recipient } from '@proton/shared/lib/interfaces';
 import { CircleLoader, SearchInput } from '@proton/components';
-import { useApi, useModals, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
-
-import MergeModal from '../merge/MergeModal';
-import ContactsList from '../ContactsList';
-import ContactDetailsModal from '../modals/ContactDetailsModal';
-import useContactList from '../useContactList';
+import { useApi, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
+import ContactsList from '../lists/ContactsList';
+import useContactList from '../hooks/useContactList';
 import ContactsWidgetToolbar from './ContactsWidgetToolbar';
-import ContactDeleteModal from '../modals/ContactDeleteModal';
-import ContactModal from '../modals/ContactModal';
-
+import { ContactDeleteProps } from '../modals/ContactDeleteModal';
+import { ContactEditProps } from '../edit/ContactEditModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
-import MergeContactBanner from './MergeContactBanner';
+import MergeContactBanner from '../widget/MergeContactBanner';
 import { CustomAction } from './types';
+import { ContactMergeProps } from '../merge/ContactMergeModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
+import { SelectEmailsProps } from '../modals/SelectEmailsModal';
 
 interface Props {
     onClose: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
-    onMailTo?: (src: string) => void;
     onLock: (lock: boolean) => void;
     customActions: CustomAction[];
+    onDetails: (contactID: string) => void;
+    onEdit: (props: ContactEditProps) => void;
+    onDelete: (props: ContactDeleteProps) => void;
+    onImport: () => void;
+    onMerge: (props: ContactMergeProps) => void;
+    onGroupDetails: (contactGroupID: string) => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
+    onUpgrade: () => void;
+    onSelectEmails: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
 }
 
-const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customActions }: Props) => {
+const ContactsWidgetContainer = ({
+    onClose,
+    onCompose,
+    onLock,
+    customActions,
+    onDetails,
+    onEdit,
+    onDelete,
+    onImport,
+    onMerge,
+    onGroupDetails,
+    onGroupEdit,
+    onUpgrade,
+    onSelectEmails,
+}: Props) => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
     const [userKeys] = useUserKeys();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const api = useApi();
 
@@ -137,30 +156,28 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customA
         onClose();
     };
 
-    const handleDetails = (contactID: string) => {
-        createModal(<ContactDetailsModal contactID={contactID} onMailTo={onMailTo} />);
-        onClose();
-    };
-
     const handleDelete = () => {
         const deleteAll = selectedIDs.length === contacts.length;
-        createModal(
-            <ContactDeleteModal
-                contactIDs={selectedIDs}
-                deleteAll={deleteAll}
-                onDelete={() => {
-                    if (selectedIDs.length === filteredContacts.length) {
-                        setSearch('');
-                    }
-                    handleCheckAll(false);
-                }}
-            />
-        );
+        onDelete({
+            contactIDs: selectedIDs,
+            deleteAll,
+            onDelete: () => {
+                if (selectedIDs.length === filteredContacts.length) {
+                    setSearch('');
+                }
+                handleCheckAll(false);
+            },
+        });
         onClose();
     };
 
     const handleCreate = () => {
-        createModal(<ContactModal />);
+        onEdit({});
+        onClose();
+    };
+
+    const handleImport = () => {
+        onImport();
         onClose();
     };
 
@@ -168,19 +185,15 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customA
         const selectedContacts = formattedContacts.filter((contact) => selectedIDs.includes(contact.ID));
         const contacts = mergeContactsDetected ? mergeableContacts : [selectedContacts];
 
-        createModal(
-            <MergeModal
-                contacts={contacts}
-                userKeysList={userKeysList}
-                onMerged={() => handleCheckAll(false)} // Unselect all contacts
-            />
-        );
+        const onMerged = () => handleCheckAll(false);
+        onMerge({ contacts, onMerged });
+        onClose();
     };
 
     const contactsCount = formattedContacts.length;
     const contactsLength = contacts ? contacts.length : 0;
 
-    const loading = loadingContacts || loadingUser || loadingUserSettings || loadingUserKeys;
+    const loading = loadingContacts || loadingUser || loadingUserSettings;
     const showPlaceholder = !loading && !contactsCount;
     const showList = !loading && !showPlaceholder;
 
@@ -219,6 +232,9 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customA
                     onMerge={() => handleMerge(false)}
                     onClose={onClose}
                     onLock={onLock}
+                    onGroupEdit={onGroupEdit}
+                    onUpgrade={onUpgrade}
+                    onSelectEmails={onSelectEmails}
                 />
             </div>
             {showList && countMergeableContacts ? <MergeContactBanner onMerge={() => handleMerge(true)} /> : null}
@@ -233,7 +249,7 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customA
                         type={contactsLength ? EmptyType.Search : EmptyType.All}
                         onClearSearch={handleClearSearch}
                         onCreate={handleCreate}
-                        onClose={onClose}
+                        onImport={handleImport}
                     />
                 ) : null}
                 {showList ? (
@@ -246,8 +262,9 @@ const ContactsWidgetContainer = ({ onClose, onCompose, onMailTo, onLock, customA
                         isDesktop={false}
                         checkedIDs={checkedIDs}
                         onCheck={handleCheck}
-                        onClick={handleDetails}
+                        onClick={onDetails}
                         activateDrag={false}
+                        onGroupDetails={onGroupDetails}
                     />
                 ) : null}
             </div>

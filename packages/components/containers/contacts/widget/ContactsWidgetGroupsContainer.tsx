@@ -4,35 +4,38 @@ import { Recipient } from '@proton/shared/lib/interfaces';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { orderContactGroups } from '@proton/shared/lib/helpers/contactGroups';
-
 import { CircleLoader, SearchInput } from '../../../components';
-import {
-    useContactEmails,
-    useContactGroups,
-    useModals,
-    useNotifications,
-    useUser,
-    useUserSettings,
-} from '../../../hooks';
+import { useContactEmails, useContactGroups, useNotifications, useUser, useUserSettings } from '../../../hooks';
 import ContactsWidgetGroupsToolbar from './ContactsWidgetGroupsToolbar';
-import ContactsGroupsList from '../ContactsGroupsList';
+import ContactsGroupsList from '../lists/ContactsGroupsList';
 import { useItemsSelection } from '../../items';
-import ContactGroupModal from '../modals/ContactGroupModal';
-import ContactGroupDetailsModal from '../modals/ContactGroupDetailsModal';
+import { ContactGroupEditProps } from '../group/ContactGroupEditModal';
 import ContactsWidgetPlaceholder, { EmptyType } from './ContactsWidgetPlaceholder';
-import ContactGroupDeleteModal from '../modals/ContactGroupDeleteModal';
-import ContactUpgradeModal from '../ContactUpgradeModal';
+import { ContactGroupDeleteProps } from '../group/ContactGroupDeleteModal';
 import { CustomAction } from './types';
 
 interface Props {
     onClose: () => void;
     onCompose?: (recipients: Recipient[], attachments: File[]) => void;
+    onImport: () => void;
     customActions: CustomAction[];
+    onDetails: (contactGroupID: string) => void;
+    onDelete: (props: ContactGroupDeleteProps) => void;
+    onEdit: (props: ContactGroupEditProps) => void;
+    onUpgrade: () => void;
 }
 
-const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Props) => {
+const ContactsWidgetGroupsContainer = ({
+    onClose,
+    onCompose,
+    onImport,
+    customActions,
+    onDetails,
+    onDelete,
+    onEdit,
+    onUpgrade,
+}: Props) => {
     const [userSettings, loadingUserSettings] = useUserSettings();
-    const { createModal } = useModals();
     const { createNotification } = useNotifications();
     const [user] = useUser();
 
@@ -121,36 +124,37 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
         onClose();
     };
 
-    const showUpgradeModal = () => createModal(<ContactUpgradeModal />);
-
     const handleDetails = (groupID: string) => {
-        createModal(<ContactGroupDetailsModal contactGroupID={groupID} />);
+        onDetails(groupID);
         onClose();
     };
 
     const handleDelete = () => {
-        createModal(
-            <ContactGroupDeleteModal
-                groupIDs={selectedIDs}
-                onDelete={() => {
-                    if (selectedIDs.length === filteredGroups.length) {
-                        setSearch('');
-                    }
-                    handleCheckAll(false);
-                }}
-            />
-        );
+        onDelete({
+            groupIDs: selectedIDs,
+            onDelete: () => {
+                if (selectedIDs.length === filteredGroups.length) {
+                    setSearch('');
+                }
+                handleCheckAll(false);
+            },
+        });
         onClose();
     };
 
     const handleCreate = () => {
         if (!user.hasPaidMail) {
-            showUpgradeModal();
+            onUpgrade();
             onClose();
             return;
         }
 
-        createModal(<ContactGroupModal />);
+        onEdit({});
+        onClose();
+    };
+
+    const handleImport = () => {
+        onImport();
         onClose();
     };
 
@@ -202,6 +206,7 @@ const ContactsWidgetGroupsContainer = ({ onClose, onCompose, customActions }: Pr
                         type={groups.length ? EmptyType.Search : EmptyType.AllGroups}
                         onClearSearch={handleClearSearch}
                         onCreate={handleCreate}
+                        onImport={handleImport}
                     />
                 ) : null}
                 {showList ? (

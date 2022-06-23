@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { getSender } from '@proton/shared/lib/mail/messages';
 import { Recipient } from '@proton/shared/lib/interfaces';
-
+import noop from '@proton/utils/noop';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import ItemDate from '../list/ItemDate';
@@ -25,7 +25,14 @@ const MessagePrintHeader = ({ message, labelID }: Props) => {
                     {getRecipientLabel(sender as Recipient, true)}{' '}
                     <span className="color-weak">&lt;{sender?.Address}&gt;</span>
                 </RecipientType>
-                <RecipientsDetails message={message} isLoading={false} showDropdown={false} isPrintModal />
+                <RecipientsDetails
+                    message={message}
+                    isLoading={false}
+                    showDropdown={false}
+                    isPrintModal
+                    onContactDetails={noop}
+                    onContactEdit={noop}
+                />
                 <RecipientType label={c('Label').t`Date`}>
                     <ItemDate element={message.data} labelID={labelID} mode="full" />
                 </RecipientType>

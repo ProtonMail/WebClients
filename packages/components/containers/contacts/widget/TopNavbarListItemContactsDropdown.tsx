@@ -6,12 +6,17 @@ import { generateUID } from '@proton/components/helpers';
 import TopNavbarListItemButton, {
     TopNavbarListItemButtonProps,
 } from '@proton/components/components/topnavbar/TopNavbarListItemButton';
-
+import noop from '@proton/utils/noop';
 import ContactsWidgetContainer from './ContactsWidgetContainer';
 import ContactsWidgetGroupsContainer from './ContactsWidgetGroupsContainer';
 import ContactsWidgetSettingsContainer from './ContactsWidgetSettingsContainer';
-import './ContactsWidget.scss';
 import { CONTACT_WIDGET_TABS, CustomAction } from './types';
+import { useContactModals } from '../hooks/useContactModals';
+import { useModalTwo } from '../../../components/modalTwo/useModalTwo';
+import ContactImportModal from '../import/ContactImportModal';
+import { useContactMergeModals } from '../hooks/useContactMergeModals';
+
+import './ContactsWidget.scss';
 
 const TopNavbarListItemContactsButton = forwardRef(
     (props: Omit<TopNavbarListItemButtonProps<'button'>, 'icon' | 'text' | 'as'>, ref: typeof props.ref) => {
@@ -36,11 +41,26 @@ interface Props {
     customActions?: CustomAction[];
 }
 
-const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, customActions = [] }: Props) => {
+const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo = noop, customActions = [] }: Props) => {
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const [tabIndex, setTabIndex] = useState(0);
     const [lock, setLock] = useState(false);
+
+    const {
+        modals,
+        onDetails,
+        onEdit,
+        onDelete,
+        onExport,
+        onGroupDetails,
+        onGroupEdit,
+        onGroupDelete,
+        onUpgrade,
+        onSelectEmails,
+    } = useContactModals({ onMailTo });
+    const [importModal, onImport] = useModalTwo<void, void>(ContactImportModal, false);
+    const { modals: mergeModals, onMerge } = useContactMergeModals();
 
     const actionIncludes = (tab: CONTACT_WIDGET_TABS) => (customAction: CustomAction) =>
         customAction.tabs.includes(tab);
@@ -48,6 +68,11 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
     const handleClose = () => {
         setTabIndex(0);
         close();
+    };
+
+    const handleDetails = (contactID: string) => {
+        void onDetails(contactID);
+        handleClose();
     };
 
     const handleClickDropdownButton = () => {
@@ -101,9 +126,17 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                                 <ContactsWidgetContainer
                                     onClose={handleClose}
                                     onCompose={onCompose}
-                                    onMailTo={onMailTo}
                                     onLock={setLock}
                                     customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.CONTACTS))}
+                                    onDetails={handleDetails}
+                                    onEdit={onEdit}
+                                    onDelete={onDelete}
+                                    onImport={onImport}
+                                    onMerge={onMerge}
+                                    onGroupDetails={onGroupDetails}
+                                    onGroupEdit={onGroupEdit}
+                                    onUpgrade={onUpgrade}
+                                    onSelectEmails={onSelectEmails}
                                 />
                             ),
                         },
@@ -113,19 +146,33 @@ const TopNavbarListItemContactsDropdown = ({ className, onCompose, onMailTo, cus
                                 <ContactsWidgetGroupsContainer
                                     onClose={handleClose}
                                     onCompose={onCompose}
+                                    onImport={onImport}
                                     customActions={customActions.filter(actionIncludes(CONTACT_WIDGET_TABS.GROUPS))}
+                                    onDetails={onGroupDetails}
+                                    onEdit={onGroupEdit}
+                                    onDelete={onGroupDelete}
+                                    onUpgrade={onUpgrade}
                                 />
                             ),
                         },
                         {
                             title: c('Title').t`Settings`,
-                            content: <ContactsWidgetSettingsContainer onClose={handleClose} />,
+                            content: (
+                                <ContactsWidgetSettingsContainer
+                                    onImport={onImport}
+                                    onExport={onExport}
+                                    onClose={handleClose}
+                                />
+                            ),
                         },
                     ]}
                     value={tabIndex}
                     onChange={setTabIndex}
                 />
             </Dropdown>
+            {modals}
+            {importModal}
+            {mergeModals}
         </>
     );
 };

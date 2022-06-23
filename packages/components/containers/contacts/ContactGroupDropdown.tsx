@@ -2,8 +2,9 @@ import { useState, useEffect, useMemo, ReactNode, ChangeEvent, FormEvent } from 
 import { c } from 'ttag';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts/Contact';
+import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { usePopperAnchor } from '../../components/popper';
-import { useContactGroups, useModals, useUser } from '../../hooks';
+import { useContactGroups, useUser } from '../../hooks';
 import { classnames, generateUID } from '../../helpers';
 import Dropdown from '../../components/dropdown/Dropdown';
 import Tooltip from '../../components/tooltip/Tooltip';
@@ -13,11 +14,11 @@ import { ButtonProps } from '../../components/button/Button';
 import { Button } from '../../components/button';
 import Mark from '../../components/text/Mark';
 import Checkbox from '../../components/input/Checkbox';
-import ContactGroupModal from './modals/ContactGroupModal';
-import useApplyGroups from './useApplyGroups';
-import ContactUpgradeModal from './ContactUpgradeModal';
+import { ContactGroupEditProps } from './group/ContactGroupEditModal';
+import useApplyGroups from './hooks/useApplyGroups';
 import { DropdownButton } from '../../components';
 import './ContactGroupDropdown.scss';
+import { SelectEmailsProps } from './modals/SelectEmailsModal';
 
 const UNCHECKED = 0;
 const CHECKED = 1;
@@ -26,8 +27,8 @@ const INDETERMINATE = 2;
 /**
  * Build initial dropdown model
  */
-const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmail[] = []) => {
-    if (!contactEmails.length || !contactGroups.length) {
+const getModel = (contactGroups: ContactGroup[] = [], contactEmails: ContactEmail[]) => {
+    if (!contactGroups.length) {
         return Object.create(null);
     }
 
@@ -54,6 +55,10 @@ interface Props extends ButtonProps {
     onDelayedSave?: (changes: { [groupID: string]: boolean }) => void;
     onLock?: (lock: boolean) => void;
     onSuccess?: () => void;
+    onGroupEdit: (props: ContactGroupEditProps) => void;
+    onUpgrade: () => void;
+    // Required when called with more than 1 contactEmail at a time
+    onSelectEmails?: (props: SelectEmailsProps) => Promise<ContactEmail[]>;
 }
 
 const ContactGroupDropdown = ({
@@ -66,19 +71,21 @@ const ContactGroupDropdown = ({
     onDelayedSave,
     onLock: onLockWidget,
     onSuccess,
+    onGroupEdit,
+    onUpgrade,
+    onSelectEmails,
     ...rest
 }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const [keyword, setKeyword] = useState('');
     const [loading, setLoading] = useState(false);
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { createModal } = useModals();
     const [contactGroups = []] = useContactGroups();
     const [initialModel, setInitialModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [model, setModel] = useState<{ [groupID: string]: number }>(Object.create(null));
     const [uid] = useState(generateUID('contactGroupDropdown'));
     const [lock, setLock] = useState(false);
-    const applyGroups = useApplyGroups(setLock, setLoading);
+    const applyGroups = useApplyGroups(setLock, setLoading, onSelectEmails);
 
     useEffect(() => onLockWidget?.(isOpen), [isOpen]);
 
@@ -86,7 +93,7 @@ const ContactGroupDropdown = ({
         if (hasPaidMail) {
             toggle();
         } else {
-            createModal(<ContactUpgradeModal />);
+            onUpgrade();
         }
     };
 
@@ -107,12 +114,10 @@ const ContactGroupDropdown = ({
 
     const handleAdd = () => {
         // Should be handled differently with the delayed save, because we need to add the current email to the new group
-        createModal(
-            <ContactGroupModal
-                selectedContactEmails={contactEmails}
-                onDelayedSave={onDelayedSave ? handleCreateContactGroup : undefined}
-            />
-        );
+        onGroupEdit({
+            selectedContactEmails: contactEmails,
+            onDelayedSave: onDelayedSave ? handleCreateContactGroup : undefined,
+        });
         close();
     };
 
@@ -141,6 +146,10 @@ const ContactGroupDropdown = ({
             setModel(initialModel);
         }
     }, [contactGroups, contactEmails, isOpen]);
+
+    const isPristine = useMemo(() => {
+        return isDeepEqual(initialModel, model);
+    }, [initialModel, model]);
 
     const filteredContactGroups = useMemo(() => {
         if (!Array.isArray(contactGroups)) {
@@ -237,7 +246,7 @@ const ContactGroupDropdown = ({
                                                 <Icon
                                                     name="circle-filled"
                                                     className="ml0-25 mr0-5 flex-item-noshrink"
-                                                    size={12}
+                                                    size={16}
                                                     color={Color}
                                                 />
                                                 <span className="flex-item-fluid text-ellipsis" title={Name}>
@@ -261,7 +270,7 @@ const ContactGroupDropdown = ({
                             color="norm"
                             fullWidth
                             loading={loading}
-                            disabled={!filteredContactGroups.length}
+                            disabled={isPristine || !filteredContactGroups.length}
                             data-prevent-arrow-navigation
                             type="submit"
                         >

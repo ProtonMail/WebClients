@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Recipient, SimpleMap } from '@proton/shared/lib/interfaces/index';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts/index';
 
-import useContactList from '../useContactList';
+import useContactList from '../hooks/useContactList';
 
 export enum CONTACT_WIDGET_TABS {
     CONTACTS,

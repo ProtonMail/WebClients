@@ -62,6 +62,7 @@ interface Props {
     addresses: Address[];
     provider?: NON_OAUTH_PROVIDER;
     onOpenCalendarModal: () => void;
+    onImportContact: () => void;
     canImportCalendars: boolean;
     isLoading: boolean;
     featureMap?: EasySwitchFeatureFlag;
@@ -72,6 +73,7 @@ const EasySwitchDefaultModal = ({
     onClose = noop,
     provider = NON_OAUTH_PROVIDER.DEFAULT,
     onOpenCalendarModal,
+    onImportContact,
     canImportCalendars,
     isLoading,
     featureMap,
@@ -92,6 +94,7 @@ const EasySwitchDefaultModal = ({
                 addresses={addresses}
                 provider={provider}
                 onOpenCalendarModal={onOpenCalendarModal}
+                onImportContact={onImportContact}
             />
         );
         onClose();

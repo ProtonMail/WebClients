@@ -1,7 +1,6 @@
 import { c } from 'ttag';
-
 import { classnames, Icon, Button } from '@proton/components';
-
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { MapStatusIcons } from '../../../models/crypto';
 import RecipientsDetails from './RecipientsDetails';
@@ -16,6 +15,8 @@ interface Props {
     toggleDetails: () => void;
     recipientsOrGroup: RecipientOrGroup[];
     isOutside?: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
 const MailRecipients = ({
@@ -26,6 +27,8 @@ const MailRecipients = ({
     toggleDetails,
     recipientsOrGroup,
     isOutside,
+    onContactDetails,
+    onContactEdit,
 }: Props) => {
     const titleAction = expanded ? c('Action').t`Hide details` : c('Action').t`Show details`;
 
@@ -43,9 +46,17 @@ const MailRecipients = ({
                     isLoading={isLoading}
                     mapStatusIcons={mapStatusIcons}
                     isOutside={isOutside}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
                 />
             ) : (
-                <RecipientSimple isLoading={isLoading} recipientsOrGroup={recipientsOrGroup} isOutside={isOutside} />
+                <RecipientSimple
+                    isLoading={isLoading}
+                    recipientsOrGroup={recipientsOrGroup}
+                    isOutside={isOutside}
+                    onContactDetails={onContactDetails}
+                    onContactEdit={onContactEdit}
+                />
             )}
             {!isLoading && (
                 <div className="flex-item-noshrink flex mlauto">

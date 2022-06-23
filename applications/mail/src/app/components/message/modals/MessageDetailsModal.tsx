@@ -15,7 +15,7 @@ import {
 import { getAttachments } from '@proton/shared/lib/mail/messages';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MailSettings } from '@proton/shared/lib/interfaces';
-
+import { ContactEditProps } from '@proton/components/containers/contacts/edit/ContactEditModal';
 import ItemDate from '../../list/ItemDate';
 import ItemLocation from '../../list/ItemLocation';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
@@ -37,9 +37,20 @@ interface Props extends ModalProps {
     messageViewIcons: MessageViewIcons;
     mailSettings: MailSettings;
     messageLoaded: boolean;
+    onContactDetails: (contactID: string) => void;
+    onContactEdit: (props: ContactEditProps) => void;
 }
 
-const MessageDetailsModal = ({ labelID, message, messageViewIcons, mailSettings, messageLoaded, ...rest }: Props) => {
+const MessageDetailsModal = ({
+    labelID,
+    message,
+    messageViewIcons,
+    mailSettings,
+    messageLoaded,
+    onContactDetails,
+    onContactEdit,
+    ...rest
+}: Props) => {
     const [{ feature: spyTrackerFeature }, { feature: numAttachmentsWithoutEmbeddedFeature }] = useFeatures([
         FeatureCode.SpyTrackerProtection,
         FeatureCode.NumAttachmentsWithoutEmbedded,
@@ -177,11 +188,22 @@ const MessageDetailsModal = ({ labelID, message, messageViewIcons, mailSettings,
                         <div className="mb0-5">
                             <strong>{c('Title').t`Sender`}</strong>
                         </div>
-                        <RecipientItem recipientOrGroup={{ recipient: sender }} isLoading={!messageLoaded} />
+                        <RecipientItem
+                            recipientOrGroup={{ recipient: sender }}
+                            isLoading={!messageLoaded}
+                            onContactDetails={onContactDetails}
+                            onContactEdit={onContactEdit}
+                        />
                     </div>
                 )}
                 <div className="message-detail-modal-container">
-                    <RecipientsDetails message={message} isLoading={!messageLoaded} isDetailsModal={true} />
+                    <RecipientsDetails
+                        message={message}
+                        isLoading={!messageLoaded}
+                        isDetailsModal={true}
+                        onContactDetails={onContactDetails}
+                        onContactEdit={onContactEdit}
+                    />
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>

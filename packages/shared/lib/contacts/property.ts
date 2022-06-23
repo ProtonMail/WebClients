@@ -1,7 +1,4 @@
-import isTruthy from '@proton/utils/isTruthy';
-import range from '@proton/utils/range';
 import { ContactValue } from '../interfaces/contacts';
-import { getStringContactValue } from './properties';
 
 const UNESCAPE_REGEX = /\\\\|\\,|\\;/gi;
 const UNESCAPE_EXTENDED_REGEX = /\\\\|\\:|\\,|\\;/gi;
@@ -17,7 +14,7 @@ const SPECIAL_CHARACTER_REGEX = /🐶 🐱 🐭 🐹 🐰 🦊 🐻 🐼/gi;
 export const unescapeVcardValue = (value = '', extended = false) => {
     // If we do map(unescapeValue) we still want the default unescape
     const reg = extended !== true ? UNESCAPE_REGEX : UNESCAPE_EXTENDED_REGEX;
-    return value.replace(reg, (val) => val.substr(1));
+    return value.replace(reg, (val) => val.substring(1));
 };
 
 /**
@@ -104,6 +101,7 @@ export const getValue = (property: any, field: string): ContactValue => {
         const splitValues = flatValues.map((value) => value.split(','));
         return splitValues.flat();
     }
+
     return values[0];
 };
 
@@ -123,34 +121,4 @@ export const getType = (types: string | string[] = []): string => {
         return types[0];
     }
     return types;
-};
-
-/**
- * Sanitize a string or string-array value for the field 'adr' into an array of strings to be displayed on different lines
- */
-export const formatAdr = (adr: ContactValue): string[] => {
-    let value: string[] = [];
-    try {
-        // Input sanitization
-        value = (Array.isArray(adr) ? adr : [adr]).map((entry) => getStringContactValue(entry));
-        if (value.length < 7) {
-            value.push(...range(0, 7 - value.length).map(() => ''));
-        }
-
-        // According to vCard RFC https://datatracker.ietf.org/doc/html/rfc6350#section-6.3.1
-        // Address is split into 7 strings with different meaning at each position
-        const [postOfficeBox, extendedAddress, streetAddress, locality, region, postalCode, country] = value;
-        const lines = [
-            streetAddress,
-            extendedAddress,
-            [postalCode, locality].filter(isTruthy).join(', '),
-            postOfficeBox,
-            [region, country].filter(isTruthy).join(', '),
-        ].filter(isTruthy);
-        return lines;
-    } catch {
-        // Some addresses, especially imported can be strangely formated
-        // We don't want to break the whole page if the format is corrupted
-        return value;
-    }
 };
