@@ -16,10 +16,15 @@ const getIframeHtml = (
     const bodyStyles = message.messageDocument?.document?.querySelector('body')?.getAttribute('style');
     const bodyClasses = message.messageDocument?.document?.querySelector('body')?.getAttribute('class');
 
+    /**
+     * About this line:
+     * <div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div>
+     * Padding bottom is needed for the scrollbar
+     */
     // Plain text needs content needs to have no spaces in order to be correctly displayed
     if (isPlainText) {
         const emailHead = `<head><style>${themeCSSVariables}</style><style>${cssStyles}</style>${messageHead}</head>`;
-        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text"><div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div>${emailContent}</div></body>`;
+        const emailBody = `<body><div id="${MESSAGE_IFRAME_ROOT_ID}" class="proton-plain-text"><div id="${MESSAGE_IFRAME_PRINT_HEADER_ID}"></div><div style="width: 100% !important;padding-bottom:10px;!important">${emailContent}</div></div></body>`;
 
         return `<html>${emailHead}${emailBody}</html>`;
     }
