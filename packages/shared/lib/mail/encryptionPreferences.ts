@@ -199,6 +199,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
     if (!isPrimaryTrustedAndValid || !sendKey) {
         return {
             ...result,
+            sendKey: primaryKey,
             error: new EncryptionPreferencesError(
                 ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
                 c('Error').t`Trusted keys are not valid for sending`
