@@ -77,6 +77,7 @@ const MainContainer = () => {
         FeatureCode.ReferralProgram,
         FeatureCode.CalendarSubscription,
         FeatureCode.SubscribedCalendarReminder,
+        FeatureCode.DrivePlan,
     ]);
     const [spyTrackerFeature, calendarInviteLocaleFeature, calendarAutoImportInviteFeature, referralProgramFeature] =
         features;
@@ -178,7 +179,12 @@ const MainContainer = () => {
             <ReferralModalContainer />
             <Switch>
                 <Route path={anyAccountAppRoute}>
-                    <AccountSettingsRouter path={prefixPath} accountAppRoutes={routes.account} redirect={redirect} />
+                    <AccountSettingsRouter
+                        app={app}
+                        path={prefixPath}
+                        accountAppRoutes={routes.account}
+                        redirect={redirect}
+                    />
                 </Route>
                 <Route path={anyOrganizationAppRoute}>
                     <OrganizationSettingsRouter

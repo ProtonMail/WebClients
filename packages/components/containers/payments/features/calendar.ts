@@ -26,6 +26,7 @@ export const getNCalendarsFeature = (n: number, audience?: Audience): PlanCardFe
         featureName: c('new_plans: feature').ngettext(msgid`${n} personal calendar`, `${n} personal calendars`, n),
         tooltip: n > 1 ? `${getCreateText(n)} ${getAddText(n, audience)}` : '',
         included: true,
+        icon: 'calendar-checkmark',
     };
 };
 

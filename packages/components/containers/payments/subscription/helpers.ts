@@ -1,8 +1,25 @@
-import { CYCLE, PLAN_SERVICES, PLAN_TYPES, ADDON_NAMES, DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
+import {
+    CYCLE,
+    PLAN_SERVICES,
+    PLAN_TYPES,
+    ADDON_NAMES,
+    DEFAULT_CURRENCY,
+    APP_NAMES,
+    PLANS,
+    APPS,
+} from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getUnixTime } from 'date-fns';
 import { hasVpnBasic, hasVpnPlus } from '@proton/shared/lib/helpers/subscription';
-import { Cycle, LatestSubscription, Plan, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import {
+    Audience,
+    Cycle,
+    LatestSubscription,
+    Plan,
+    PlanIDs,
+    Subscription,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 
 const { PLAN, ADDON } = PLAN_TYPES;
 const { MAIL, VPN } = PLAN_SERVICES;
@@ -146,3 +163,20 @@ export const getCurrency = (
 ) => {
     return user?.Currency || subscription?.Currency || plans?.[0]?.Currency || DEFAULT_CURRENCY;
 };
+
+export const getDefaultSelectedProductPlans = (appName: APP_NAMES, planIDs: PlanIDs) => {
+    let defaultB2CPlan = PLANS.MAIL;
+    if (appName === APPS.PROTONVPN_SETTINGS) {
+        defaultB2CPlan = PLANS.VPN;
+    } else if (appName === APPS.PROTONDRIVE) {
+        defaultB2CPlan = PLANS.DRIVE;
+    }
+    const matchingB2CPlan = [PLANS.MAIL, PLANS.VPN, PLANS.DRIVE].find((x) => planIDs[x]);
+    const matchingB2BPlan = [PLANS.MAIL_PRO, PLANS.DRIVE_PRO].find((x) => planIDs[x]);
+    const defaultB2BPlan = PLANS.MAIL_PRO;
+    return {
+        [Audience.B2C]: matchingB2CPlan || defaultB2CPlan,
+        [Audience.B2B]: matchingB2BPlan || defaultB2BPlan,
+    };
+};
+export type SelectedProductPlans = ReturnType<typeof getDefaultSelectedProductPlans>;

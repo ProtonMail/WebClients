@@ -1,3 +1,5 @@
+import { APP_NAMES } from '@proton/shared/lib/constants';
+import { FeatureCode } from '@proton/components/containers';
 import { Loader } from '../../../components';
 import {
     useAddresses,
@@ -8,6 +10,7 @@ import {
     usePlans,
     useVPNCountriesCount,
     useVPNServersCount,
+    useFeature,
 } from '../../../hooks';
 import MozillaInfoPanel from '../../account/MozillaInfoPanel';
 import UsagePanel from './UsagePanel';
@@ -18,7 +21,11 @@ import UpsellPanel from './UpsellPanel';
 import './YourPlanSection.scss';
 import { getCurrency } from './helpers';
 
-const YourPlanSection = () => {
+interface Props {
+    app: APP_NAMES;
+}
+
+const YourPlanSection = ({ app }: Props) => {
     const [user] = useUser();
     const [plans = [], loadingPlans] = usePlans();
     const [addresses] = useAddresses();
@@ -28,6 +35,9 @@ const YourPlanSection = () => {
     const [vpnCountries] = useVPNCountriesCount();
     const [vpnServers] = useVPNServersCount();
     const [openSubscriptionModal] = useSubscriptionModal();
+
+    const drivePlanFeature = useFeature(FeatureCode.DrivePlan);
+    const drivePlanEnabled = drivePlanFeature.feature?.Value === true;
 
     const loading = loadingSubscription || loadingOrganization || loadingPlans;
 
@@ -46,6 +56,8 @@ const YourPlanSection = () => {
     return (
         <div className="your-plan-section-container flex-gap-2">
             <SubscriptionPanel
+                drivePlanEnabled={drivePlanEnabled}
+                app={app}
                 currency={currency}
                 subscription={subscription}
                 organization={organization}
@@ -56,6 +68,8 @@ const YourPlanSection = () => {
                 openSubscriptionModal={openSubscriptionModal}
             />
             <UpsellPanel
+                drivePlanEnabled={drivePlanEnabled}
+                app={app}
                 currency={currency}
                 subscription={subscription}
                 plans={plans}
