@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import uniqueBy from '@proton/utils/uniqueBy';
 import { vCardPropertiesToICAL } from '../vcard';
 import downloadFile from '../../helpers/downloadFile';
 import { Contact, ContactCard } from '../../interfaces/contacts/Contact';
@@ -81,9 +82,13 @@ export const exportContactsFromLabel = async (
     const results = { success: [] as string[], failures: [] as string[] };
 
     for (let i = 0; i < apiCalls; i++) {
-        const { Contacts: contacts } = (await apiWithAbort(
+        let { Contacts: contacts } = (await apiWithAbort(
             queryContactExport({ LabelID: labelID, Page: i, PageSize: QUERY_EXPORT_MAX_PAGESIZE })
         )) as { Contacts: Contact[] };
+
+        // API will respond one contact per email (unless fixed in the meantime)
+        // We want to export each contact only once
+        contacts = uniqueBy(contacts, (contact) => contact.ID);
 
         for (const { Cards, ID } of contacts) {
             if (signal.aborted) {
