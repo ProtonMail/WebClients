@@ -1,10 +1,9 @@
 import { act } from '@testing-library/react';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { fireEvent } from '@testing-library/dom';
+import { fireEvent, waitFor } from '@testing-library/dom';
 import range from '@proton/utils/range';
-import { wait } from '@proton/shared/lib/helpers/promise';
-import { render, clearAll, addApiMock, assertFocus, tick, mockConsole } from '../../helpers/test/helper';
+import { render, clearAll, addApiMock, assertFocus, tick, mockConsole, addApiKeys } from '../../helpers/test/helper';
 import { Breakpoints } from '../../models/utils';
 import ConversationView from './ConversationView';
 import { Conversation } from '../../models/conversation';
@@ -72,6 +71,10 @@ describe('ConversationView', () => {
 
     beforeEach(clearAll);
 
+    afterEach(() => {
+        jest.useRealTimers();
+    });
+
     describe('Store / State management', () => {
         it('should return store value', async () => {
             store.dispatch(initializeConversation(conversationState));
@@ -127,7 +130,16 @@ describe('ConversationView', () => {
     });
 
     describe('Auto reload', () => {
+        const waitForSpyCalls = (spy: jest.Mock, count: number) =>
+            waitFor(
+                () => {
+                    expect(spy).toBeCalledTimes(count);
+                },
+                { timeout: 20000 }
+            );
+
         it('should reload a conversation if first request failed', async () => {
+            jest.useFakeTimers();
             mockConsole();
 
             const response = { Conversation: conversation, Messages: [message] };
@@ -146,15 +158,19 @@ describe('ConversationView', () => {
             const header = getByTestId('conversation-header') as HTMLHeadingElement;
             expect(header.getAttribute('class')).toContain('is-loading');
 
-            await wait(3000);
+            jest.advanceTimersByTime(5000);
+            await waitForSpyCalls(getSpy, 2);
             await rerender();
 
             expect(header.getAttribute('class')).not.toContain('is-loading');
             getByText(conversation.Subject as string);
             expect(getSpy).toHaveBeenCalledTimes(2);
+
+            jest.runAllTimers();
         });
 
         it('should show error banner after 4 attemps', async () => {
+            jest.useFakeTimers();
             mockConsole();
 
             const getSpy = jest.fn(() => {
@@ -166,14 +182,20 @@ describe('ConversationView', () => {
 
             const { getByText } = await setup();
 
-            // It's long I know but needed to wait for 3 retries with 3s between each
             await act(async () => {
-                await wait(10000);
+                jest.advanceTimersByTime(5000);
+                await waitForSpyCalls(getSpy, 2);
+                jest.advanceTimersByTime(5000);
+                await waitForSpyCalls(getSpy, 3);
+                jest.advanceTimersByTime(5000);
+                await waitForSpyCalls(getSpy, 4);
             });
 
             getByText('Network error', { exact: false });
             getByText('Try again');
             expect(getSpy).toHaveBeenCalledTimes(4);
+
+            jest.runAllTimers();
         });
 
         it('should retry when using the Try again button', async () => {
@@ -261,10 +283,13 @@ describe('ConversationView', () => {
         });
 
         it('should open a message on enter', async () => {
+            const senderEmail = 'sender@email.com';
+            addApiKeys(false, senderEmail, []);
+
             store.dispatch(initializeConversation(conversationState));
 
             const messageMock = jest.fn(() => ({
-                Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: '' } },
+                Message: { ID: message.ID, Attachments: [], Sender: { Name: '', Address: senderEmail } },
             }));
             addApiMock(`mail/v4/messages/${message.ID}`, messageMock);
 

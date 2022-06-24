@@ -173,6 +173,7 @@ describe('Mailbox element list', () => {
             const message = {
                 ID: 'messageID1',
                 AddressID: 'AddressID',
+                Sender: {},
                 ConversationID: element1.ID,
                 Flag: MESSAGE_FLAGS.FLAG_RECEIVED,
                 LabelIDs: [labelID],
