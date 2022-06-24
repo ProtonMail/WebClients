@@ -9,8 +9,9 @@ import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import unary from '@proton/utils/unary';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
-import { APPS, PLANS } from '@proton/shared/lib/constants';
+import { PLANS, PLAN_SERVICES } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import Button, { ButtonProps } from '../../../components/button/Button';
 import {
     useApi,
@@ -22,7 +23,6 @@ import {
     useOrganization,
     usePlans,
     useSubscription,
-    useConfig,
     useVPNCountriesCount,
     useVPNServersCount,
 } from '../../../hooks';
@@ -36,12 +36,13 @@ import FeedbackDowngradeModal, { FeedbackDowngradeData } from './FeedbackDowngra
 import { getShortPlan } from '../features/plan';
 import { formatPlans } from './helpers';
 
+const { MAIL, VPN } = PLAN_SERVICES;
+
 interface Props extends Omit<ButtonProps, 'loading' | 'onClick'> {
     children: ReactNode;
 }
 
 const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
-    const { APP_NAME } = useConfig();
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization] = useOrganization();
@@ -55,9 +56,9 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
     const [loading, withLoading] = useLoading();
 
     const { Plans = [], PeriodEnd = 0 } = subscription || {};
-    const { mailPlan, vpnPlan } = formatPlans(Plans);
+    const { plan } = formatPlans(Plans);
 
-    const currentPlan = APP_NAME === APPS.PROTONVPN_SETTINGS ? vpnPlan || mailPlan : mailPlan || vpnPlan;
+    const currentPlan = plan;
     const plansMap = toMap(plans, 'Name');
 
     const handleUnsubscribe = async (data: FeedbackDowngradeData) => {
@@ -142,9 +143,14 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        await new Promise<void>((resolve, reject) => {
-            createModal(<DowngradeModal user={user} onConfirm={resolve} onClose={reject} />);
-        });
+        const hasMail = hasBit(user.Services, MAIL);
+        const hasVpn = hasBit(user.Services, VPN);
+
+        if (hasMail || hasVpn) {
+            await new Promise<void>((resolve, reject) => {
+                createModal(<DowngradeModal hasMail={hasMail} hasVpn={hasVpn} onConfirm={resolve} onClose={reject} />);
+            });
+        }
 
         const data = await new Promise<FeedbackDowngradeData>((resolve, reject) => {
             createModal(<FeedbackDowngradeModal user={user} onSubmit={resolve} onClose={reject} />);

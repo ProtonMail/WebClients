@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Route } from 'react-router';
 import { useLocation, Redirect, Switch, useHistory } from 'react-router-dom';
+import { APPS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import {
     TopBanners,
@@ -44,6 +45,8 @@ import {
     UserDropdown,
     Unauthenticated,
     ThemesSection,
+    useFeatures,
+    FeatureCode,
 } from '@proton/components';
 import LiveChatZendesk, {
     ZendeskRef,
@@ -61,6 +64,8 @@ import TVContainer from './containers/TVContainer';
 const vpnZendeskKey = '52184d31-aa98-430f-a86c-b5a93235027a';
 
 const MainContainer = () => {
+    useFeatures([FeatureCode.DrivePlan]);
+
     const [user] = useUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [tagsArray, setTagsArray] = useState<string[]>([]);
@@ -172,7 +177,7 @@ const MainContainer = () => {
                         <Switch>
                             {getIsSectionAvailable(routes.dashboard) && (
                                 <Route path={routes.dashboard.to}>
-                                    <SubscriptionModalProvider>
+                                    <SubscriptionModalProvider app={APPS.PROTONVPN_SETTINGS}>
                                         <AutomaticSubscriptionModal />
                                         <PrivateMainSettingsArea
                                             setActiveSection={setActiveSection}
@@ -180,7 +185,7 @@ const MainContainer = () => {
                                             config={routes.dashboard}
                                         >
                                             <PlansSection />
-                                            <YourPlanSection />
+                                            <YourPlanSection app={APPS.PROTONVPN_SETTINGS} />
                                             <BillingSection />
                                             <CreditsSection />
                                             <GiftCodeSection />

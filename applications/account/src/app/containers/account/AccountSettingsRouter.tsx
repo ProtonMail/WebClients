@@ -2,6 +2,7 @@ import { ReactNode, useEffect } from 'react';
 import { Route, Switch, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
+import { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     AccountEasySwitchSection,
     AccountRecoverySection,
@@ -55,10 +56,12 @@ const AccountSettingsRouter = ({
     redirect,
     path,
     accountAppRoutes,
+    app,
 }: {
     redirect: ReactNode;
     path: string;
     accountAppRoutes: ReturnType<typeof getAccountAppRoutes>;
+    app: APP_NAMES;
 }) => {
     const location = useLocation();
 
@@ -70,10 +73,10 @@ const AccountSettingsRouter = ({
         <Switch>
             {getIsSectionAvailable(dashboard) && (
                 <Route path={getSectionPath(path, dashboard)}>
-                    <SubscriptionModalProvider>
+                    <SubscriptionModalProvider app={app}>
                         <AutomaticSubscriptionModal />
                         <PrivateMainSettingsArea location={location} config={dashboard}>
-                            <YourPlanSection />
+                            <YourPlanSection app={app} />
                             <BillingSection />
                             <PaymentMethodsSection />
                             <CreditsSection />
@@ -87,7 +90,7 @@ const AccountSettingsRouter = ({
             )}
             {getIsSectionAvailable(upgrade) && (
                 <Route path={getSectionPath(path, upgrade)}>
-                    <SubscriptionModalProvider>
+                    <SubscriptionModalProvider app={app}>
                         <PrivateMainArea>
                             <div className="container-section-sticky">
                                 <div className="text-center">

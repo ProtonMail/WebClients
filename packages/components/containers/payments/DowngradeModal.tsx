@@ -1,21 +1,16 @@
 import { c } from 'ttag';
 
-import { MAIL_APP_NAME, PLAN_SERVICES, VPN_APP_NAME } from '@proton/shared/lib/constants';
-import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { UserModel } from '@proton/shared/lib/interfaces';
+import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
 import { Alert, AlertModal, Button, ModalProps } from '../../components';
 
 interface Props extends ModalProps {
-    user: UserModel;
+    hasMail: boolean;
+    hasVpn: boolean;
     onConfirm: () => void;
 }
 
-const { MAIL, VPN } = PLAN_SERVICES;
-
-const DowngradeModal = ({ user, onConfirm, onClose, ...rest }: Props) => {
-    const hasMail = hasBit(user.Services, MAIL);
-    const hasVpn = hasBit(user.Services, VPN);
+const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Props) => {
     const hasBundle = hasMail && hasVpn;
 
     return (

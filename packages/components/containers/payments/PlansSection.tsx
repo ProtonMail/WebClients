@@ -12,12 +12,11 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { Button, Icon, Loader } from '../../components';
 import { useApi, useConfig, useLoading, useOrganization, usePlans, useSubscription, useUser } from '../../hooks';
 
-import { getDefaultSelectedProductPlans } from './subscription/SubscriptionModal';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
-import { getCurrency } from './subscription/helpers';
+import { getCurrency, getDefaultSelectedProductPlans } from './subscription/helpers';
 
 const FREE_SUBSCRIPTION = {} as Subscription;
 
@@ -37,10 +36,10 @@ const PlansSection = () => {
     const { APP_NAME } = useConfig();
     const api = useApi();
     const location = useLocation();
-    const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
+    const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const settingsApp = appFromPathname || APP_NAME;
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans(settingsApp, getPlanIDs(subscription));
@@ -69,6 +68,7 @@ const PlansSection = () => {
         );
 
         open({
+            defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
             coupon: Coupon?.Code,
             step: SUBSCRIPTION_STEPS.CUSTOMIZATION,
@@ -125,7 +125,11 @@ const PlansSection = () => {
                 shape="ghost"
                 className="flex center flex-align-items-center mb1"
                 onClick={() => {
-                    open({ step: SUBSCRIPTION_STEPS.PLAN_SELECTION, defaultAudience: audience });
+                    open({
+                        step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
+                        defaultAudience: audience,
+                        defaultSelectedProductPlans: selectedProductPlans,
+                    });
                 }}
             >
                 {c('Action').t`View plans details`}
