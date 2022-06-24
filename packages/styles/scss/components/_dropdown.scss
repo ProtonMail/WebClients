@@ -66,9 +66,9 @@
 	}
 
 	@include respond-to($breakpoint-small, 'min') {
-		inset-block-start: calc(var(--top) * 1px);
 		/* stylelint-disable */
-		inset-inline-start: calc(var(--left) * 1px); // JS provide left value only
+		top: calc(var(--top) * 1px);
+		left: calc(var(--left) * 1px); // JS provide left value only
 		/* stylelint-enable */
 		transform: scale(1);
 		border-radius: var(--border-radius-md);
