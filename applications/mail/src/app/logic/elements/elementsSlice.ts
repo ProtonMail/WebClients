@@ -1,6 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { createSlice } from '@reduxjs/toolkit';
-import { ElementsState, ElementsStateParams, NewStateParams } from './elementsTypes';
+import { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
 import {
     reset,
     updatePage,
@@ -21,6 +21,8 @@ import {
     backendActionFinished,
     retry,
     retryStale,
+    moveAll,
+    pollTaskRunning,
 } from './elementsActions';
 import {
     globalReset as globalResetReducer,
@@ -42,6 +44,8 @@ import {
     backendActionFinished as backendActionFinishedReducer,
     retry as retryReducer,
     retryStale as retryStaleReducer,
+    moveAllFulfilled,
+    pollTaskRunningFulfilled,
 } from './elementsReducers';
 import { globalReset } from '../actions';
 
@@ -50,7 +54,8 @@ export const newState = ({
     params = {},
     retry = { payload: null, count: 0, error: undefined },
     beforeFirstLoad = true,
-}: NewStateParams = {}): ElementsState => {
+    taskRunning = { labelIDs: [], timeoutID: undefined },
+}: NewStateParams & { taskRunning?: TaskRunningInfo } = {}): ElementsState => {
     const defaultParams: ElementsStateParams = {
         labelID: MAILBOX_LABEL_IDS.INBOX,
         conversationMode: true,
@@ -71,6 +76,7 @@ export const newState = ({
         pages: [],
         bypassFilter: [],
         retry,
+        taskRunning,
     };
 };
 
@@ -104,6 +110,9 @@ const elementsSlice = createSlice({
         builder.addCase(optimisticMarkAs, optimisticUpdates);
         builder.addCase(backendActionStarted, backendActionStartedReducer);
         builder.addCase(backendActionFinished, backendActionFinishedReducer);
+
+        builder.addCase(moveAll.fulfilled, moveAllFulfilled);
+        builder.addCase(pollTaskRunning.fulfilled, pollTaskRunningFulfilled);
     },
 });
 
