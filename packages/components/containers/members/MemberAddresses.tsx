@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { msgid, c } from 'ttag';
-import { Address } from '@proton/shared/lib/interfaces';
+import { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 
 import { Button, Icon } from '../../components';
 import { classnames } from '../../helpers';
@@ -8,10 +8,10 @@ import { classnames } from '../../helpers';
 const amountOfDisplayedAddresses = 3;
 
 interface MemberAddressesProps {
-    addresses: Address[];
+    addresses: PartialMemberAddress[] | undefined;
 }
 
-const MemberAddresses = ({ addresses }: MemberAddressesProps) => {
+const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
     const [expanded, setExpanded] = useState(false);
 
     const handleExpandClick = () => {
@@ -22,7 +22,7 @@ const MemberAddresses = ({ addresses }: MemberAddressesProps) => {
 
     const addressesPluralized = `${c('Info').ngettext(msgid`address`, `addresses`, amountOfAddresses)}`;
 
-    const renderListItem = ({ ID, Email }: Address, index: number) => {
+    const renderListItem = ({ ID, Email }: PartialMemberAddress, index: number) => {
         /*
          * By default, the addresses list shows 3 addresses as well as
          * a clickable text saying "x more addresses", which, when clicked,
