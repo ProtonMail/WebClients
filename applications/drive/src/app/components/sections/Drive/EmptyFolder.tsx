@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { c } from 'ttag';
 
-import { EmptyViewContainer, usePopperAnchor } from '@proton/components';
+import { EmptyViewContainer, useActiveBreakpoint, usePopperAnchor } from '@proton/components';
 
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 import { UploadButton } from './UploadButton';
 import FolderContextMenu from './FolderContextMenu';
 
 const EmptyFolder = ({ shareId }: { shareId: string }) => {
+    const { isDesktop } = useActiveBreakpoint();
     const { anchorRef, isOpen, open, close } = usePopperAnchor<HTMLDivElement>();
     const [contextMenuPosition, setContextMenuPosition] = useState<{ top: number; left: number }>();
 
@@ -38,11 +39,17 @@ const EmptyFolder = ({ shareId }: { shareId: string }) => {
         <>
             <div role="presentation" ref={anchorRef} onClick={close} className="flex w100 flex flex-item-fluid">
                 <EmptyViewContainer imageProps={{ src: noContentSvg, title: c('Info').t`There are no files yet` }}>
-                    <h3 className="text-bold">{c('Info').t`There are no files yet`}</h3>
-                    <p>{c('Info').t`Drag and drop a file here or choose to upload.`}</p>
-                    <div className="flex flex-justify-center">
-                        <UploadButton className="w13e" />
-                    </div>
+                    <h3 className="text-bold">{c('Info').t`Secure your documents and data`}</h3>
+                    <p>
+                        {isDesktop
+                            ? c('Info').t`Drag and drop items here or browse for files to upload.`
+                            : c('Info').t`Tap the + button to upload a file or folder.`}
+                    </p>
+                    {isDesktop && (
+                        <div className="flex flex-justify-center">
+                            <UploadButton className="w13e" />
+                        </div>
+                    )}
                 </EmptyViewContainer>
             </div>
             <FolderContextMenu
