@@ -1,15 +1,17 @@
+import { ReactNode } from 'react';
 import { classnames } from '@proton/components';
-
 import UndoButton from './UndoButton';
 
 interface Props {
-    children: React.ReactNode;
+    children: ReactNode;
+    additionalButton?: ReactNode;
     onUndo?: () => void;
 }
 
-const UndoActionNotification = ({ children, onUndo }: Props) => (
+const UndoActionNotification = ({ children, additionalButton = null, onUndo }: Props) => (
     <>
-        <span className={classnames([onUndo && 'mr1'])}>{children}</span>
+        <span className={classnames([(onUndo || additionalButton !== null) && 'mr1'])}>{children}</span>
+        {additionalButton ? additionalButton : null}
         {onUndo ? <UndoButton onUndo={onUndo} /> : null}
     </>
 );

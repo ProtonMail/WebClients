@@ -179,11 +179,7 @@ const MoveButtons = ({
         buttons = [trashButton, archiveButton, spamButton];
     }
 
-    return (
-        <>
-            {buttons}
-        </>
-    ); // TS limitation
+    return <>{buttons}</>; // TS limitation
 };
 
 export default MoveButtons;
