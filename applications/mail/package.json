@@ -16,7 +16,7 @@
         "lint": "eslint src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "start": "proton-pack dev-server --appMode=standalone",
-        "test": "jest --runInBand --ci --logHeapUsage",
+        "test": "jest --runInBand --logHeapUsage --forceExit",
         "test:dev": "jest --watch --coverage=false"
     },
     "dependencies": {
@@ -58,21 +58,23 @@
         "@testing-library/react-hooks": "^7.0.2",
         "@types/dompurify": "^2.3.3",
         "@types/history": "^4.7.11",
-        "@types/jest": "^27.5.0",
+        "@types/jest": "^28.1.1",
         "@types/turndown": "^5.0.1",
         "@typescript-eslint/eslint-plugin": "^5.22.0",
         "@typescript-eslint/parser": "^5.22.0",
-        "babel-jest": "^27.5.1",
+        "babel-jest": "^28.1.1",
         "babel-plugin-transform-require-context": "^0.1.1",
         "eslint": "^8.14.0",
         "eslint-config-airbnb-typescript": "^16.2.0",
         "eslint-config-prettier": "^8.5.0",
-        "jest": "^27.5.1",
+        "jest": "^28.1.1",
+        "jest-environment-jsdom": "^28.1.1",
         "jest-junit": "^13.2.0",
         "loud-rejection": "^2.2.0",
         "prettier": "^2.6.2",
         "redux-logger": "^3.0.6",
         "typescript": "^4.6.4",
+        "weak-napi": "^2.0.2",
         "workbox-webpack-plugin": "^6.5.3"
     }
 }

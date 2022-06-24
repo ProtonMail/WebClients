@@ -69,8 +69,9 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
     const [isAllChecked, setIsAllChecked] = useState(false);
 
     const [filteredContactEmails, setFilteredContactEmails] = useState(contactEmails);
-    const [checkedContactEmailMap, setCheckedContactEmailMap] =
-        useState<{ [key: string]: boolean }>(initialCheckedContactEmailsMap);
+    const [checkedContactEmailMap, setCheckedContactEmailMap] = useState<{ [key: string]: boolean }>(
+        initialCheckedContactEmailsMap
+    );
     const [checkedContactEmails, setCheckedContactEmails] = useState<ContactEmail[]>([]);
     const totalChecked = checkedContactEmails.length;
 

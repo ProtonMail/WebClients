@@ -1,7 +1,7 @@
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { findByText } from '@testing-library/dom';
-import { addApiMock, clearAll } from '../../../helpers/test/helper';
+import { addApiKeys, addApiMock, clearAll } from '../../../helpers/test/helper';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
 import { messageID, addressID, setup, initMessage, getIframeRootDiv } from './Message.test.helpers';
@@ -10,12 +10,15 @@ describe('message state', () => {
     afterEach(clearAll);
 
     it('should initialize message in cache if not existing', async () => {
+        const senderEmail = 'sender@email.com';
+        addApiKeys(false, senderEmail, []);
+
         const Message = {
             ID: messageID,
             AddressID: addressID,
             Attachments: [],
             NumAttachments: 0,
-            Sender: { Name: '', Address: '' },
+            Sender: { Name: '', Address: senderEmail },
         } as any as Message;
 
         addApiMock(`mail/v4/messages/${messageID}`, () => ({ Message }));
@@ -41,6 +44,11 @@ describe('message state', () => {
     it('should handle switching of message', async () => {
         const ID1 = 'ID1';
         const ID2 = 'ID2';
+        const sender1Email = 'sender1@email.com';
+        const sender2Email = 'sender2@email.com';
+
+        addApiKeys(false, sender1Email, []);
+        addApiKeys(false, sender2Email, []);
 
         const message1 = {
             localID: ID1,
@@ -48,7 +56,7 @@ describe('message state', () => {
                 ID: ID1,
                 Body: 'something',
                 MIMEType: MIME_TYPES.PLAINTEXT,
-                Sender: { Name: '', Address: '' },
+                Sender: { Name: '', Address: sender1Email },
             } as Message,
             messageDocument: { initialized: true, plainText: 'Body1' },
         };
@@ -58,7 +66,7 @@ describe('message state', () => {
                 ID: ID2,
                 Body: 'something',
                 MIMEType: MIME_TYPES.PLAINTEXT,
-                Sender: { Name: '', Address: '' },
+                Sender: { Name: '', Address: sender2Email },
             } as Message,
             messageDocument: { initialized: true, plainText: 'Body2' },
         };

@@ -158,6 +158,7 @@ export const updateMessage = async (
         ),
         silence: true,
     });
+
     return restorePasswordFromResults(updatedMessage, message.data);
 };
 
