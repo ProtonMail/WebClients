@@ -4,12 +4,15 @@ import { BasicModal, Button, PrimaryButton } from '@proton/components';
 
 type Props = {
     open?: boolean;
+    type?: FileThresholdModalType;
     onClose?: () => void;
     onSubmit: () => void;
     onCancel: () => void;
 };
 
-export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open }: Props) => {
+export type FileThresholdModalType = 'fileNumberTotal' | 'fileSizeTotal';
+
+export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open, type = 'fileNumberTotal' }: Props) => {
     const handleCancel = () => {
         onCancel();
         onClose?.();
@@ -34,7 +37,12 @@ export const FileThresholdModal = ({ onSubmit, onCancel, onClose, open }: Props)
                 </>
             }
         >
-            <p>{c('Info').t`Uploading hundreds of files at once may have a performance impact.`}</p>
+            <p>
+                {type === 'fileNumberTotal'
+                    ? c('Info').t`Uploading hundreds of files at once may have a performance impact.`
+                    : c('Info')
+                          .t`Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.`}
+            </p>
         </BasicModal>
     );
 };
