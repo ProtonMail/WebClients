@@ -1,7 +1,6 @@
 import { FormEvent, useState } from 'react';
 import { c } from 'ttag';
 import {
-    ADDRESS_STATUS,
     DEFAULT_ENCRYPTION_CONFIG,
     ENCRYPTION_CONFIGS,
     GIGA,
@@ -20,7 +19,7 @@ import {
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
 import { srpVerify } from '@proton/shared/lib/srp';
-import { Domain, Organization, Address, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
+import { Domain, Organization, CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import clamp from '@proton/utils/clamp';
 import { setupMemberKey } from '@proton/shared/lib/keys';
 import { useApi, useNotifications, useEventManager, useGetAddresses, useLoading } from '../../hooks';
@@ -46,10 +45,9 @@ interface Props extends ModalProps {
     organization: Organization;
     organizationKey: CachedOrganizationKey;
     domains: Domain[];
-    domainsAddressesMap: { [domainID: string]: Address[] };
 }
 
-const MemberModal = ({ organization, organizationKey, domains, domainsAddressesMap, ...rest }: Props) => {
+const MemberModal = ({ organization, organizationKey, domains, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
@@ -129,21 +127,6 @@ const MemberModal = ({ organization, organizationKey, domains, domainsAddressesM
     };
 
     const validate = () => {
-        const domain = domains.find(({ DomainName }) => DomainName === model.domain);
-        const nonDisabledCustomAddressExists = domainsAddressesMap[domain?.ID || ''].some?.((address) => {
-            return (
-                address.Email === `${model.address}@${model.domain}` &&
-                address.Status !== ADDRESS_STATUS.STATUS_DISABLED
-            );
-        });
-
-        // A non disabled custom address is validated to not exist because the user and address creation are in 2
-        // different calls. So while the user creation may succeed, the address creation could fail leading to
-        // creating the user in an inconsistent state.
-        if (nonDisabledCustomAddressExists) {
-            return c('Error').t`Address already associated to a user`;
-        }
-
         if (!model.private && !organizationKey) {
             return c('Error').t`The organization key must be activated first.`;
         }
