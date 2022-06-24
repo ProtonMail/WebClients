@@ -92,7 +92,7 @@ const uploadFile = (
     const attachPackets = async () => {
         const result = await upload.resultPromise;
 
-        if (result.Code === UPLOAD_ATTACHMENT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
+        if (result?.Code === UPLOAD_ATTACHMENT_ERROR_CODES.MESSAGE_ALREADY_SENT) {
             throw new Error(MESSAGE_ALREADY_SENT_INTERNAL_ERROR);
         }
 

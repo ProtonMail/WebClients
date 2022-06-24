@@ -106,7 +106,9 @@ const TestProvider = ({ children }: Props) => {
  * Small helper to wait for asynchronous work to be executed
  * Should be avoided as much as possible, but often convenient
  */
-export const tick = () => act(() => wait(0));
+export const tick = () => {
+    return act(() => Promise.resolve());
+};
 
 export const render = async (ui: ReactElement, useMinimalCache = true): Promise<RenderResult> => {
     mockDomApi();
