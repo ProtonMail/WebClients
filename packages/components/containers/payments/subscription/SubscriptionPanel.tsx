@@ -8,6 +8,7 @@ import {
     VPN_CONNECTIONS,
     MAX_CALENDARS_FREE,
     MAX_CALENDARS_PAID,
+    APP_NAMES,
 } from '@proton/shared/lib/constants';
 import { getHasB2BPlan, getPrimaryPlan, hasVPN, isTrial } from '@proton/shared/lib/helpers/subscription';
 import {
@@ -26,7 +27,6 @@ import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeServers, getPlusServers } from '@proton/shared/lib/vpn/features';
 
-import { useConfig } from '../../../hooks';
 import { Price, StripedList, StripedItem, Meter, Button, IconName, Icon } from '../../../components';
 import { OpenSubscriptionModalCallback } from './SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './constants';
@@ -43,6 +43,8 @@ interface Item {
 }
 
 interface Props {
+    drivePlanEnabled: boolean;
+    app: APP_NAMES;
     user: UserModel;
     currency: Currency;
     subscription?: Subscription;
@@ -54,6 +56,8 @@ interface Props {
 }
 
 const SubscriptionPanel = ({
+    drivePlanEnabled,
+    app,
     currency,
     vpnServers,
     vpnCountries,
@@ -63,11 +67,7 @@ const SubscriptionPanel = ({
     addresses,
     openSubscriptionModal,
 }: Props) => {
-    const { APP_NAME } = useConfig();
-
-    const isVpnApp = APP_NAME === APPS.PROTONVPN_SETTINGS;
-
-    const primaryPlan = getPrimaryPlan(subscription, APP_NAME);
+    const primaryPlan = getPrimaryPlan(subscription, app);
     const planTitle = primaryPlan?.Title || PLAN_NAMES[FREE_PLAN.Name as PLANS];
 
     const cycle = subscription?.Cycle ?? CYCLE.MONTHLY;
@@ -115,9 +115,20 @@ const SubscriptionPanel = ({
         return null;
     }
 
+    const storageItem = (
+        <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
+            <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
+            <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
+        </StripedItem>
+    );
+
+    const getDriveAppFree = () => {
+        return <StripedList>{storageItem}</StripedList>;
+    };
+
     const getVpnAppFree = () => {
         return (
-            <StripedList>
+            <StripedList alternate="odd">
                 {(
                     [
                         {
@@ -168,7 +179,7 @@ const SubscriptionPanel = ({
             },
         ];
         return (
-            <StripedList>
+            <StripedList alternate="odd">
                 {items.map((item) => {
                     return (
                         <StripedItem
@@ -216,14 +227,14 @@ const SubscriptionPanel = ({
                 icon: 'calendar-checkmark',
                 text: (() => {
                     if (MaxMembers > 1) {
-                        const n = MAX_CALENDARS_PER_USER;
+                        const n = user.hasPaidMail ? MAX_CALENDARS_PER_USER : MAX_CALENDARS_FREE;
                         return c('Subscription attribute').ngettext(
                             msgid`${n} calendar per user`,
                             `${n} calendars per user`,
                             n
                         );
                     }
-                    const n = user.isFree ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
+                    const n = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
                     return c('Subscription attribute').ngettext(msgid`${n} calendar`, `${n} calendars`, n);
                 })(),
             },
@@ -245,10 +256,7 @@ const SubscriptionPanel = ({
         ];
         return (
             <StripedList>
-                <StripedItem left={<Icon className="color-success" name="storage" size={20} />}>
-                    <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
-                    <Meter className="mt1 mb1" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
-                </StripedItem>
+                {storageItem}
                 {items.filter(isTruthy).map((item) => {
                     return (
                         <StripedItem
@@ -278,8 +286,11 @@ const SubscriptionPanel = ({
                 </Price>
             </div>
             {(() => {
-                if (user.isFree && isVpnApp) {
+                if (user.isFree && app === APPS.PROTONVPN_SETTINGS) {
                     return getVpnAppFree();
+                }
+                if (user.isFree && app === APPS.PROTONDRIVE && drivePlanEnabled) {
+                    return getDriveAppFree();
                 }
                 if (hasVPN(subscription)) {
                     return getVpnPlus();
@@ -287,7 +298,7 @@ const SubscriptionPanel = ({
                 return getDefault();
             })()}
             {user.isPaid && user.canPay ? (
-                <Button onClick={handleEditPayment} className="mb0-5" size="large" color="norm" fullWidth>{c('Action')
+                <Button onClick={handleEditPayment} className="mb0-5" size="large" color="weak" fullWidth>{c('Action')
                     .t`Edit billing details`}</Button>
             ) : null}
             {user.isPaid && user.canPay && getHasB2BPlan(subscription) ? (

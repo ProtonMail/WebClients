@@ -13,7 +13,7 @@ import {
     getNDomainsFeature,
     getNMessagesFeature,
 } from './mail';
-import { getCalendarAppFeature } from './calendar';
+import { getCalendarAppFeature, getNCalendarsFeature } from './calendar';
 import {
     getB2BHighSpeedVPNConnections,
     getCountries,
@@ -67,6 +67,24 @@ export const getBundlePlan = (plan: Plan): ShortPlan => {
             getCalendarAppFeature(),
             getDriveAppFeature(),
             getVPNAppFeature(),
+        ],
+    };
+};
+
+export const getDrivePlan = (plan: Plan): ShortPlan => {
+    return {
+        plan: PLANS.DRIVE,
+        title: plan.Title,
+        label: '',
+        description: c('new_plans: info')
+            .t`Secure cloud storage that lets you store, sync, and share files easily and securely.`,
+        cta: getCTA(plan.Title),
+        features: [
+            getStorageFeature(plan.MaxSpace),
+            getNAddressesFeature({ n: plan.MaxAddresses || 1 }),
+            getNCalendarsFeature(1),
+            getVPNConnections(1),
+            getSupport('priority'),
         ],
     };
 };
@@ -200,6 +218,8 @@ export const getShortPlan = (plan: PLANS, plansMap: PlansMap, vpnCountries: VPNC
             return getMailPlan(planData);
         case PLANS.VPN:
             return getVPNPlan(planData, vpnCountries, vpnServers);
+        case PLANS.DRIVE:
+            return getDrivePlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:
