@@ -10,10 +10,6 @@ export const hasGeneratedPasswordIncluded = (sharedURL?: { Flags?: number }): bo
     return !!sharedURL && hasBit(sharedURL.Flags, SharedURLFlags.GeneratedPasswordIncluded);
 };
 
-export const hasNoCustomPassword = (sharedURL?: { Flags?: number }): boolean => {
-    return !hasCustomPassword(sharedURL) && !hasGeneratedPasswordIncluded(sharedURL);
-};
-
 export const splitGeneratedAndCustomPassword = (password: string, sharedURL?: { Flags?: number }): [string, string] => {
     if (hasCustomPassword(sharedURL)) {
         if (hasGeneratedPasswordIncluded(sharedURL)) {
