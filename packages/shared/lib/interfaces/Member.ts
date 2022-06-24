@@ -1,6 +1,11 @@
 import { Key } from './Key';
 import { MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
 
+export interface PartialMemberAddress {
+    ID: string;
+    Email: string;
+}
+
 export interface Member {
     ID: string;
     Role: MEMBER_ROLE;
@@ -16,4 +21,5 @@ export interface Member {
     Keys: Key[];
     PublicKey: string;
     BrokenSKL: 0 | 1;
+    Addresses?: PartialMemberAddress[];
 }
