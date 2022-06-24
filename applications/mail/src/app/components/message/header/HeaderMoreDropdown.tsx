@@ -89,7 +89,7 @@ const HeaderMoreDropdown = ({
     const star = useStar();
     const { call } = useEventManager();
     const closeDropdown = useRef<() => void>();
-    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveAllModal } = useMoveToFolder();
     const [folders = []] = useFolders();
     const [labels = []] = useLabels();
     const markAs = useMarkAs();
@@ -437,6 +437,7 @@ const HeaderMoreDropdown = ({
             <MessagePhishingModal message={message} onBack={onBack} {...messagePhishingModalProps} />
             <MessagePermanentDeleteModal message={message} {...messagePermanentDeleteModalProps} />
             {moveScheduledModal}
+            {moveAllModal}
         </>
     );
 };

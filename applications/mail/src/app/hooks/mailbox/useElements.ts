@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react';
-import { useApi, useCache, useConversationCounts, useMessageCounts } from '@proton/components';
+import { useApi, useCache, useEventManager, useConversationCounts, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
@@ -65,6 +65,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const dispatch = useDispatch();
 
     const api = useApi();
+    const { call } = useEventManager();
     const abortControllerRef = useRef<AbortController>();
 
     const [conversationCounts = [], loadingConversationCounts] = useConversationCounts() as [
@@ -122,7 +123,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }
         if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
             void dispatch(
-                loadAction({ api, abortController: abortControllerRef.current, conversationMode, page, params })
+                loadAction({ api, call, abortController: abortControllerRef.current, conversationMode, page, params })
             );
         }
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {

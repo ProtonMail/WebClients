@@ -1,4 +1,5 @@
 import { ChangeEvent, Ref, memo, forwardRef } from 'react';
+import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 import {
     classnames,
@@ -37,6 +38,8 @@ import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/c
 import ModalImportEmails from '../checklist/ModalImportEmails';
 import ModalGetMobileApp from '../checklist/ModalGetMobileApp';
 import { ResizeHandle } from './ResizeHandle';
+import TaskRunningBanner from './TaskRunningBanner';
+import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';
 
 const defaultCheckedIDs: string[] = [];
 const defaultElements: Element[] = [];
@@ -128,6 +131,8 @@ const List = (
 
     const { call } = useEventManager();
     const [mnemonicPromptModal, setMnemonicPromptModalOpen, render] = useModalState({ onExit: call });
+    const showTaskRunningBanner = useSelector(showLabelTaskRunningBanner);
+
     const [isMnemonicAvailable] = useIsMnemonicAvailable();
     const canReactivateMnemonic = getCanReactiveMnemonic(user);
     const displayMnemonicPrompt = isMnemonicAvailable && canReactivateMnemonic;
@@ -183,6 +188,7 @@ const List = (
                         labelID={labelID}
                     />
                     {showESSlowToolbar && <ESSlowToolbar />}
+                    {showTaskRunningBanner && <TaskRunningBanner className={showESSlowToolbar ? '' : 'mt1'} />}
                     {elements.length === 0 ? (
                         <EmptyView labelID={labelID} isSearch={isSearch} isUnread={filter.Unread === 1} />
                     ) : (

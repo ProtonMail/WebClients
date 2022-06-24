@@ -5,7 +5,11 @@ import { EventUpdates } from '../../logic/elements/elementsTypes';
 import { ElementEvent, Event, ConversationEvent, MessageEvent } from '../../models/event';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
-import { isLive as isLiveSelector, isES as isESSelector } from '../../logic/elements/elementsSelectors';
+import {
+    isLive as isLiveSelector,
+    isES as isESSelector,
+    taskRunning as taskRunningSelector,
+} from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { RootState } from '../../logic/store';
 import { SearchParameters } from '../../models/tools';
@@ -19,6 +23,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
     const dispatch = useDispatch();
     const isLive = useSelector(isLiveSelector);
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esDBStatus }));
+    const taskRunning = useSelector(taskRunningSelector);
 
     // Listen to event manager and update the cache
     useSubscribeEventManager(async ({ Conversations = [], Messages = [] }: Event) => {
@@ -75,7 +80,9 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
 
                     if (existingElement) {
                         toUpdate.push(element);
-                    } else {
+                    }
+                    // Long tasks trigger too much element update to be able to load them all
+                    else if (taskRunning.labelIDs.length === 0) {
                         toLoad.push(element.ID || '');
                     }
 
