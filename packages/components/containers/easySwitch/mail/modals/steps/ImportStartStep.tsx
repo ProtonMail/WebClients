@@ -223,9 +223,7 @@ const ImportStartStep = ({ modalModel, updateModalModel, currentImport, invalidP
             message = c('Import error').t`Too many recent requests. Please try again in a few moments.`;
         }
 
-        const learnMoreLink = isReconnect
-            ? getKnowledgeBaseUrl('/import-assistant/#reconnection-errors')
-            : getKnowledgeBaseUrl('/import-assistant/#common-questions-and-import-errors');
+        const learnMoreLink = getKnowledgeBaseUrl('/troubleshooting-easy-switch/');
 
         return (
             <Alert className="mb1" type="error" learnMore={isRateLimitError ? undefined : learnMoreLink}>
