@@ -89,6 +89,7 @@ const mockCalendar: VisualCalendar = {
     ID: 'id3',
     Name: 'calendar3',
     Description: 'description3',
+    Email: 'email3',
     Display: 1, // CalendarDisplay.VISIBLE
     Color: '#f00',
     Flags: CALENDAR_FLAGS.ACTIVE,

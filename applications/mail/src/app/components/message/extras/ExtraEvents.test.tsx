@@ -87,13 +87,13 @@ const dummyCalendar = {
     ID: dummyCalendarID,
     Name: dummyCalendarName,
     Description: '',
-    Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Members: [
         {
             ID: dummyMemberID,
             AddressID: dummyUserPrimaryAddressID,
             Permissions: 127,
+            Flags: CALENDAR_FLAGS.ACTIVE,
             Email: dummyUserEmailAddress,
             CalendarID: dummyCalendarID,
             Color: ACCENT_COLORS[1],
@@ -878,7 +878,6 @@ END:VCALENDAR`;
                 ID: dummyCalendarID,
                 Name: dummyCalendarName,
                 Description: '',
-                Flags: CALENDAR_FLAGS.ACTIVE,
                 Type: CALENDAR_TYPE.PERSONAL,
                 Members: [
                     {
@@ -886,6 +885,7 @@ END:VCALENDAR`;
                         AddressID: dummyUserPrimaryAddressID,
                         Permissions: 127,
                         Email: dummyUserEmailAddress,
+                        Flags: CALENDAR_FLAGS.ACTIVE,
                         CalendarID: dummyCalendarID,
                         Color: '#f00',
                         Display: CalendarDisplay.HIDDEN,

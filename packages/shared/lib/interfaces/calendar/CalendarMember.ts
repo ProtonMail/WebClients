@@ -5,6 +5,7 @@ export interface CalendarMember {
     Email: string;
     Permissions: number;
     AddressID: string;
+    Flags: number;
     Color: string;
     Display: CalendarDisplay;
     CalendarID: string;
