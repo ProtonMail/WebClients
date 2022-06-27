@@ -17,6 +17,7 @@ import {
     SideAppHeaderTitle,
     TextLoader,
     TimeZoneSelector,
+    TodayIcon,
     Tooltip,
     TopBanners,
     TopNavbarListItemContactsDropdown,
@@ -157,12 +158,15 @@ const CalendarContainerView = ({
         onChangeDateRange(newDate, numberOfDays, resetRange);
     }, []);
 
-    const handleClickLocalDate = useCallback((newDate) => {
-        if (showIframeMiniCalendar) {
-            setShowIframeMiniCalendar(false);
-        }
-        onChangeDate(localToUtcDate(newDate));
-    }, []);
+    const handleClickLocalDate = useCallback(
+        (newDate) => {
+            if (showIframeMiniCalendar) {
+                setShowIframeMiniCalendar(false);
+            }
+            onChangeDate(localToUtcDate(newDate));
+        },
+        [showIframeMiniCalendar]
+    );
 
     const handleClickNext = useCallback(() => {
         onChangeDate(getDateDiff(utcDate, range, view, 1));
@@ -369,8 +373,8 @@ const CalendarContainerView = ({
             }
             customActions={
                 <Tooltip title={c('Action').t`Today`}>
-                    <Button icon color="norm" shape="ghost" onClick={handleClickTodayIframe} className="mr0-5">
-                        <Icon name="calendar-today" size={14} />
+                    <Button icon color="norm" shape="ghost" onClick={handleClickTodayIframe} className="flex mr0-5">
+                        <TodayIcon todayDate={localNowDate.getDate()} />
                     </Button>
                 </Tooltip>
             }
