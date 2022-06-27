@@ -6,13 +6,14 @@ import MimeIcon, { MimeIconProps, MimeName } from '../icon/MimeIcon';
 const iconsMap: { [mimeType: string]: MimeName } = {
     Folder: 'folder',
 
+    'application/octet-stream': 'unknown', // Default mimetype when the real one cannot be detected.
+
     'application/x-rar-compressed': 'zip',
     'application/x-zip-compressed': 'zip',
     'application/zip': 'zip',
     'application/x-7z-compressed': 'zip', // .7z — 7-Zip compressed file
     'application/x-arj': 'zip', // .arj — ARJ compressed file
     'application/x-debian-package': 'zip', // .deb — Debian software package file
-    'application/octet-stream': 'zip', // .pkg
     'application/x-redhat-package-manager': 'zip', // .rpm
     'application/x-rpm': 'zip', // .rpm
     'application/vnd.rar': 'zip', // .rar – RAR file
