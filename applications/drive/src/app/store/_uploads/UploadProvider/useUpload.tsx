@@ -10,7 +10,7 @@ import {
     useOnline,
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
-import { MAX_SAFE_UPLOADING_FILE_COUNT } from '@proton/shared/lib/drive/constants';
+import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
 import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
 import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
@@ -23,7 +23,7 @@ import useUploadFolder from './useUploadFolder';
 import useUploadQueue, { convertFilterToFunction } from './useUploadQueue';
 import useUploadConflict from './useUploadConflict';
 import useUploadControl from './useUploadControl';
-import { FileThresholdModal } from '../../../components/uploads/FileThresholdModal';
+import { FileThresholdModalType, FileThresholdModal } from '../../../components/uploads/FileThresholdModal';
 
 export default function useUpload(UploadConflictModal: UploadConflictModal) {
     const onlineStatus = useOnline();
@@ -77,10 +77,19 @@ export default function useUpload(UploadConflictModal: UploadConflictModal) {
         }
 
         const fileCount = list.length;
+
+        let fileThresholdModalType: FileThresholdModalType | undefined;
+        if (total >= MAX_SAFE_UPLOADING_FILE_SIZE) {
+            fileThresholdModalType = 'fileSizeTotal';
+        }
         if (fileCount >= MAX_SAFE_UPLOADING_FILE_COUNT) {
+            fileThresholdModalType = 'fileNumberTotal';
+        }
+        if (fileThresholdModalType) {
             await new Promise<void>((resolve, reject) => {
                 createModal(
                     <FileThresholdModal
+                        type={fileThresholdModalType}
                         onSubmit={() => {
                             resolve();
                         }}
