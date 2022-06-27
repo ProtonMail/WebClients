@@ -135,7 +135,7 @@ const ContactEditProperties = (
     }
 
     return (
-        <div className="border-bottom mb1">
+        <div className="border-bottom mb1" data-testid={title}>
             <h3 className="mb1 flex flex-nowrap flex-align-items-center flex-item-noshrink">
                 <Icon className="mr0-25 flex-item-noshrink" name={iconName} />
                 <span className="ml0-1 mr0-5">{title}</span>
