@@ -1,6 +1,7 @@
 import { isSameDay } from '@proton/shared/lib/date-fns-utc';
 import formatUTC from '@proton/shared/lib/date-fns-utc/format';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { classnames } from '@proton/components/helpers';
 
 interface Props {
     days: Date[];
@@ -9,8 +10,19 @@ interface Props {
     onClickDate?: (value: Date) => void;
     weekdays: string[];
     weekdaysSingle: string[];
+    hasSmallLabels?: boolean;
+    hasBoldLabels?: boolean;
 }
-const DayButtons = ({ days, now, date, onClickDate, weekdays, weekdaysSingle }: Props) => {
+const DayButtons = ({
+    days,
+    now,
+    date,
+    onClickDate,
+    weekdays,
+    weekdaysSingle,
+    hasSmallLabels = false,
+    hasBoldLabels = false,
+}: Props) => {
     const result = days.map((day) => {
         return (
             <button
@@ -25,7 +37,14 @@ const DayButtons = ({ days, now, date, onClickDate, weekdays, weekdaysSingle }: 
                 <span className="calendar-grid-heading-day color-weak">
                     <span className="calendar-grid-heading-day-fullname">{weekdays[day.getUTCDay()]}</span>
 
-                    <span className="calendar-grid-heading-day-shortname no-desktop no-tablet" aria-hidden="true">
+                    <span
+                        className={classnames([
+                            'calendar-grid-heading-day-shortname no-desktop no-tablet',
+                            hasSmallLabels && 'text-xs',
+                            hasBoldLabels && 'text-strong',
+                        ])}
+                        aria-hidden="true"
+                    >
                         {weekdaysSingle[day.getUTCDay()]}
                     </span>
                 </span>

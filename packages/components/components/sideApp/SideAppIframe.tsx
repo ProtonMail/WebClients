@@ -9,7 +9,7 @@ const SideAppIframe = () => {
     }
 
     return (
-        <div className={classnames(['side-app shadow-norm bg-norm overflow-hidden', !showSideApp && 'hidden'])}>
+        <div className={classnames(['side-app border-left bg-norm overflow-hidden', !showSideApp && 'hidden'])}>
             <iframe className="side-app-frame h100 w100" src={sideAppUrl} id="side-app" />
         </div>
     );

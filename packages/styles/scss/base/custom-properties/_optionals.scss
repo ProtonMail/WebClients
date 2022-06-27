@@ -109,6 +109,7 @@
 
 		logo-text-proton-color : var(--text-norm),
 		logo-text-product-color: var(--primary),
+		logo-icon-text-color: var(--logo-text-product-color, var(--primary)),
 	) {
 		// --link-norm: var(--optional-link-norm, var(--interaction-norm));
 		--#{$variable}: var(--optional-#{$variable}, #{$default});
