@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { DecryptedLink } from '../../store';
-import { FileBrowserStateProvider } from '../FileBrowser/state';
+import { FileBrowserStateProvider } from '../FileBrowser';
 import SharedPageLayout from './SharedPageLayout';
 import SharedPageHeader from './SharedPageHeader';
 import SharedFileBrowser from './SharedFileBrowser';

@@ -1,4 +1,5 @@
 export { default } from './FileBrowser';
+export * from './interface';
 
 export * as Cells from './ListView/Cells';
 export { ListView } from './ListView/ListView';
