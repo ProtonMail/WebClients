@@ -50,6 +50,7 @@ export const SHARE_GENERATED_PASSWORD_LENGTH = 12;
 export const DEFAULT_SHARE_MAX_ACCESSES = 10000;
 
 export const MAX_SAFE_UPLOADING_FILE_COUNT = 500;
+export const MAX_SAFE_UPLOADING_FILE_SIZE = 5 * 1024 * 1024 * 1024; // GB
 
 export const CUSTOM_DATA_FORMAT = 'pd-custom';
 
