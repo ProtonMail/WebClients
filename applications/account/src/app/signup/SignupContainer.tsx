@@ -126,7 +126,7 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
     const errorHandler = useErrorHandler();
     const cacheRef = useRef<SignupCacheResult | undefined>(undefined);
 
-    const [persistent] = useLocalState(true, defaultPersistentKey);
+    const [persistent] = useLocalState(false, defaultPersistentKey);
 
     const [model, setModel] = useState<SignupModel>(DEFAULT_SIGNUP_MODEL);
 
