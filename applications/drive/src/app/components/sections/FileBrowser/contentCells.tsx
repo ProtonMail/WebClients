@@ -1,3 +1,5 @@
+import { c } from 'ttag';
+
 import { classnames, TableCell, useActiveBreakpoint, FileIcon } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
@@ -92,9 +94,29 @@ export const AccessCountCell = ({ item }: { item: TrashItem }) => {
 };
 
 export const ExpirationCell = ({ item }: { item: TrashItem }) => {
+    const { isDesktop } = useActiveBreakpoint();
+
+    const expiredPart = isDesktop ? (
+        <span className="ml0-25">{c('Label').t`(Expired)`}</span>
+    ) : (
+        <span>{c('Label').t`Expired`}</span>
+    );
+
+    let expiration;
+    if (item.shareUrl) {
+        expiration = item.shareUrl.expireTime ? (
+            <div className="flex flex-nowrap">
+                {(isDesktop || !item.shareUrl.isExpired) && <TimeCell time={item.shareUrl.expireTime} />}
+                {item.shareUrl.isExpired ? expiredPart : null}
+            </div>
+        ) : (
+            c('Label').t`Never`
+        );
+    }
+
     return (
-        <TableCell className="m0 w20" data-testid="column-num-accesses">
-            {formatAccessCount(item.shareUrl?.numAccesses)}
+        <TableCell className="m0 w20" data-testid="column-share-expires">
+            {expiration}
         </TableCell>
     );
 };

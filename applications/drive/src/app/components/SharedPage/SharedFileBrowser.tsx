@@ -3,9 +3,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
 
 import { DecryptedLink, useDownload } from '../../store';
+import { SortField } from '../../store/_views/utils/useSorting';
 import { isTransferActive } from '../../utils/transfer';
-import { FileBrowser } from '../FileBrowser';
-import { BrowserItemId } from '../FileBrowser/interface';
+import FileBrowser, { BrowserItemId, SortParams } from '../FileBrowser';
 import { PublicLink } from './interface';
 import { headerCells, contentCells } from './cells';
 
@@ -13,8 +13,8 @@ interface Props {
     folderName: string;
     items: DecryptedLink[];
     isLoading?: boolean;
-    sortParams?: any; //TODO
-    setSorting?: (params: any) => void; //TODO
+    sortParams?: SortParams<SortField>;
+    setSorting?: (params: SortParams<SortField>) => void;
     onItemOpen?: (item: DecryptedLink) => void;
 }
 

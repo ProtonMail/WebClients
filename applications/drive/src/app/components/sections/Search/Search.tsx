@@ -10,7 +10,6 @@ import { SearchItemContextMenu } from './SearchItemContextMenu';
 import headerItems from '../FileBrowser/headerCells';
 import { LocationCell, ModifiedCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { decryptedLinkToBrowserItem } from './utils';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import { GridViewItem } from '../FileBrowser/GridViewItem';
 import { getSelectedItems } from '../helpers';
@@ -79,7 +78,7 @@ export const Search = ({ shareId, searchView }: Props) => {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const browserItems: SearchItem[] = decryptedLinkToBrowserItem(items);
+    const browserItems: SearchItem[] = items.map((item) => ({ ...item, id: item.linkId }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 
     /* eslint-disable react/display-name */

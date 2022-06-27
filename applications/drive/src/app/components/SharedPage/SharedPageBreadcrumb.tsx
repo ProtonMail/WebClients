@@ -33,7 +33,6 @@ export default function SharedPageBreadcrumb({ token, name, linkId, setLinkId }:
                     const breadcrumb: BreadcrumbInfo = {
                         key: item.linkId,
                         text: item.name,
-                        noShrink: !item.isRoot, // Keep root (name of shared folder) to be always fully visible.
                         collapsedText: item.name,
                         onClick: item.linkId === linkId ? undefined : () => setLinkId(item.linkId),
                     };

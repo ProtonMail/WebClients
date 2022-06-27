@@ -16,7 +16,6 @@ import EmptyFolder from './EmptyFolder';
 import { ItemContextMenu } from './ItemContextMenu';
 import useOpenModal from '../../useOpenModal';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { decryptedLinkToBrowserItem } from './utils';
 import { ModifiedCell, NameCell, SizeCell, ShareOptionsCell } from '../FileBrowser/contentCells';
 import { FolderContextMenu } from './FolderContextMenu';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
@@ -70,7 +69,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [
 const headerItemsMobile: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
 
 type DriveSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
-const SORT_FIELDS: DriveSortFields[] = [SortField.name, SortField.size, SortField.fileModifyTime];
+const SORT_FIELDS: DriveSortFields[] = [SortField.name, SortField.fileModifyTime, SortField.size];
 
 function Drive({ activeFolder, folderView }: Props) {
     const { shareId, linkId } = activeFolder;
@@ -91,7 +90,7 @@ function Drive({ activeFolder, folderView }: Props) {
     );
 
     const { openPreview } = useOpenModal();
-    const browserItems: DriveItem[] = decryptedLinkToBrowserItem(items);
+    const browserItems: DriveItem[] = items.map((item) => ({ ...item, id: item.linkId }));
     const { getDragMoveControls } = useDriveDragMove(shareId, browserItems, selectionControls!.clearSelections);
 
     /* eslint-disable react/display-name */
@@ -116,11 +115,14 @@ function Drive({ activeFolder, folderView }: Props) {
         [sortParams.sortField, sortParams.sortOrder, isLoading]
     );
 
-    const handleItemRender = useCallback((item: DriveItem) => {
-        if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
-            thumbnails.addToDownloadQueue(shareId, item.id, item.activeRevision.id);
-        }
-    }, []);
+    const handleItemRender = useCallback(
+        (item: DriveItem) => {
+            if (item.hasThumbnail && item.activeRevision && !item.cachedThumbnailUrl) {
+                thumbnails.addToDownloadQueue(shareId, item.id, item.activeRevision.id);
+            }
+        },
+        [items]
+    );
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {

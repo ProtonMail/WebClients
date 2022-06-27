@@ -171,18 +171,20 @@ export default function initDownloadBlocks(
 
             let ongoingNumberOfDownloads = 0;
 
-            const retryDownload = async (activeIndex: number) => {
-                abortController = new AbortController();
-                const newBlocks = await getBlocks(abortController.signal, {
-                    FromBlockIndex: fromBlockIndex,
-                    PageSize: BATCH_REQUEST_SIZE,
-                });
-                if (areUint8Arrays(newBlocks)) {
-                    throw new Error('Unexpected Uint8Array block data');
-                }
+            const retryDownload = async (activeIndex: number, refetchBlocks = false) => {
                 revertProgress();
-                blocksOrBuffer = newBlocks;
-                blocks = newBlocks;
+                abortController = new AbortController();
+                if (refetchBlocks) {
+                    const newBlocks = await getBlocks(abortController.signal, {
+                        FromBlockIndex: fromBlockIndex,
+                        PageSize: BATCH_REQUEST_SIZE,
+                    });
+                    if (areUint8Arrays(newBlocks)) {
+                        throw new Error('Unexpected Uint8Array block data');
+                    }
+                    blocksOrBuffer = newBlocks;
+                    blocks = newBlocks;
+                }
 
                 let retryCount = 0;
                 /*
@@ -277,7 +279,9 @@ export default function initDownloadBlocks(
                      */
                     if (e.status === HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
                         console.warn(`Blocks for download might have expired. Retry num: ${numRetries}`);
-                        return retryDownload(activeIndex);
+                        // Wait for all blocks to be finished to have proper activeIndex.
+                        await waitUntil(() => ongoingNumberOfDownloads === 0);
+                        return retryDownload(activeIndex, true);
                     }
 
                     // If we experience some slight issue on server side, lets try
@@ -291,6 +295,11 @@ export default function initDownloadBlocks(
                     // by automatic retry.
                     if (getIsConnectionIssue(e) && numRetries < MAX_RETRIES_BEFORE_FAIL) {
                         console.warn(`Connection issue for block #${activeIndex} download. Retry num: ${numRetries}`);
+                        // Wait for all blocks to be finished to have proper activeIndex.
+                        await waitUntil(() => ongoingNumberOfDownloads === 0);
+                        // Do not refetch blocks. Its not needed at this stage, and
+                        // also getting block information is not protected from
+                        // connection issues for now.
                         return retryDownload(activeIndex);
                     }
 
