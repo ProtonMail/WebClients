@@ -19,7 +19,6 @@ export interface Calendar {
     ID: string;
     Name: string;
     Description: string;
-    Flags: number;
     Type: CALENDAR_TYPE;
 }
 
@@ -28,6 +27,8 @@ export interface CalendarWithMembers extends Calendar {
 }
 
 export interface VisualCalendar extends CalendarWithMembers {
+    Email: string;
+    Flags: number;
     Color: string;
     Display: CalendarDisplay;
 }

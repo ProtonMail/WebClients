@@ -73,6 +73,7 @@ const mockCalendar: VisualCalendar = {
     Description: 'description3',
     Display: 1, // CalendarDisplay.VISIBLE
     Color: '#f00',
+    Email: 'email3',
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Members: [],
@@ -84,6 +85,7 @@ const mockCalendar2: VisualCalendar = {
     Description: 'description2',
     Display: 1,
     Color: '#f00',
+    Email: 'email2',
     Flags: CALENDAR_FLAGS.ACTIVE,
     Type: CALENDAR_TYPE.PERSONAL,
     Members: [],
