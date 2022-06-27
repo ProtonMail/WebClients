@@ -25960,13 +25960,14 @@ fsevents@^1.2.7:
     "@proton/styles": "workspace:packages/styles"
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^12.1.5
-    "@types/jest": ^27.5.0
+    "@types/jest": ^28.1.1
     "@types/react": ^17.0.44
     "@types/react-dom": ^17.0.16
-    babel-jest: ^27.5.1
+    babel-jest: ^28.1.1
     cross-env: ^7.0.3
     eslint: ^8.14.0
-    jest: ^27.5.1
+    jest: ^28.1.1
+    jest-environment-jsdom: ^28.1.1
     jest-junit: ^13.2.0
     prettier: ^2.6.2
     react: ^17.0.2
@@ -25991,13 +25992,14 @@ fsevents@^1.2.7:
     "@testing-library/dom": ^8.13.0
     "@testing-library/jest-dom": ^5.16.4
     "@testing-library/react": ^12.1.5
-    "@types/jest": ^27.5.0
+    "@types/jest": ^28.1.1
     "@types/react": ^17.0.44
     "@types/react-dom": ^17.0.16
-    babel-jest: ^27.5.1
+    babel-jest: ^28.1.1
     cross-env: ^7.0.3
     eslint: ^8.14.0
-    jest: ^27.5.1
+    jest: ^28.1.1
+    jest-environment-jsdom: ^28.1.1
     jest-junit: ^13.2.0
     moment: ^2.29.3
     prettier: ^2.6.2
@@ -26215,10 +26217,11 @@ fsevents@^1.2.7:
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
     "@proton/polyfill": "workspace:packages/polyfill"
-    babel-jest: ^27.5.1
+    babel-jest: ^28.1.1
     cross-env: ^7.0.3
     eslint: ^8.14.0
-    jest: ^27.5.1
+    jest: ^28.1.1
+    jest-environment-jsdom: ^28.1.1
     jest-junit: ^13.2.0
     react: ^17.0.2
     react-dom: ^17.0.2
