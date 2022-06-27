@@ -1,7 +1,7 @@
 @import '~@proton/styles/scss/config';
 
-$calendar-aside-width                : rem(60) !default;
-$calendar-hour-height                : rem(48) !default;
-$calendar-grid-border                : 1px solid var(--border-norm);
-$calendar-gridcell-margin            : rem(10) !default;
-$calendar-gridcell-gutter            : rem(3) !default;
+$calendar-aside-width: rem(60) !default;
+$calendar-hour-height: rem(48) !default;
+$calendar-grid-border: 1px solid var(--border-weak);
+$calendar-gridcell-margin: rem(10) !default;
+$calendar-gridcell-gutter: rem(3) !default;

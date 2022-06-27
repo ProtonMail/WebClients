@@ -1,8 +1,8 @@
 import { ComponentPropsWithoutRef, useState } from 'react';
 
 import { classnames, generateUID } from '@proton/components';
-import { APPS } from '@proton/shared/lib/constants';
 import { getAppName } from '@proton/shared/lib/apps/helper';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { LogoProps } from './Logo';
 
@@ -72,7 +72,7 @@ const CalendarLogo = ({ variant = 'with-wordmark', size, className, hasTitle = t
                     clipRule="evenodd"
                 />
                 <path
-                    fill="#6D4AFF"
+                    fill="var(--logo-icon-text-color)"
                     d="M22.99 24.05h.78a.6.6 0 00.6.46c.36 0 .6-.2.6-.48s-.25-.44-.73-.44h-.3v-.64h.26c.46 0 .65-.17.65-.43 0-.25-.2-.43-.49-.43a.49.49 0 00-.51.45h-.75c.03-.45.38-1.1 1.26-1.1.71 0 1.2.41 1.2.98a.86.86 0 01-.6.82v.01a.86.86 0 01.71.88c0 .61-.56 1.02-1.3 1.02-.77 0-1.32-.44-1.38-1.1zm4.04-2.54h.57v3.59h-.73v-2.76l-.7.48v-.72l.86-.6z"
                 />
             </g>

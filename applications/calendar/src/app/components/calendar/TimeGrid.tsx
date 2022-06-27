@@ -298,6 +298,8 @@ const TimeGrid = ({
             onClickDate={onClickDate}
             weekdays={weekdays}
             weekdaysSingle={weekdaysSingle}
+            hasSmallLabels={isSideApp}
+            hasBoldLabels={isSideApp}
         />
     );
 
@@ -340,7 +342,7 @@ const TimeGrid = ({
                                         shape="ghost"
                                         onClick={handleClickPrevWeek}
                                     >
-                                        <Icon name="chevron-left-filled" />
+                                        <Icon name="chevron-left" />
                                         <span className="sr-only">{previousWeek}</span>
                                     </Button>
                                 </Tooltip>
@@ -356,7 +358,7 @@ const TimeGrid = ({
                                         shape="ghost"
                                         onClick={handleClickNextWeek}
                                     >
-                                        <Icon name="chevron-right-filled" />
+                                        <Icon name="chevron-right" />
                                         <span className="sr-only">{nextWeek}</span>
                                     </Button>
                                 </Tooltip>

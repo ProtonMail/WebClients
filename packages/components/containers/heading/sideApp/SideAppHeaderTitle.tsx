@@ -48,7 +48,7 @@ const SideAppHeaderTitle = ({
                 aria-expanded={dropdownExpanded}
             >
                 {dropdownTitle}
-                <Icon name="chevron-down-filled" className="ml0-25" />
+                <Icon name={dropdownExpanded ? 'chevron-up-filled' : 'chevron-down-filled'} className="ml0-25" />
             </Button>
         </div>
     );
