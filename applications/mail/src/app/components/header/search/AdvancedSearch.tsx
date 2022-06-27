@@ -200,9 +200,9 @@ const AdvancedSearch = ({
                             <Button
                                 className="mb0-5 on-mobile-w100"
                                 onClick={toggleShowMore}
-                                title={c('Action').t`Show less search options`}
+                                title={c('Action').t`Show fewer search options`}
                             >
-                                {c('Action').t`Less search options`}
+                                {c('Action').t`Fewer search options`}
                             </Button>
                         </div>
                         <div className="mb0-5 flex flex-justify-space-between on-mobile-flex-column">
