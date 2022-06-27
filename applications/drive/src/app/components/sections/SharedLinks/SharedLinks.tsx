@@ -9,7 +9,6 @@ import useNavigate from '../../../hooks/drive/useNavigate';
 import EmptyShared from './EmptyShared';
 import { SharedLinksItemContextMenu } from './SharedLinksItemContextMenu';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { decryptedLinkToBrowserItem } from './utils';
 import { GridViewItem } from '../FileBrowser/GridViewItem';
 import { AccessCountCell, CreatedCell, LocationCell, NameCell, ExpirationCell } from '../FileBrowser/contentCells';
 import headerItems from '../FileBrowser/headerCells';
@@ -94,7 +93,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const browserItems: SharedLinkItem[] = decryptedLinkToBrowserItem(items);
+    const browserItems: SharedLinkItem[] = items.map((item) => ({ ...item, id: item.linkId }));
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {

@@ -48,7 +48,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
 
     useEffect(() => {
         onItemRender?.(item);
-    }, []);
+    }, [onItemRender]);
 
     return (
         <div className={classnames(['flex flex-col opacity-on-hover-container', className])} style={style}>

@@ -10,7 +10,6 @@ import FileBrowser, { Cells, useItemContextMenu, useSelection, GridHeader } from
 import EmptyTrash from './EmptyTrash';
 import { DeletedCell, LocationCell, NameCell, SizeCell } from '../FileBrowser/contentCells';
 import { BrowserItemId, FileBrowserBaseItem, ListViewHeaderItem } from '../../FileBrowser/interface';
-import { decryptedLinkToBrowserItem } from './utils';
 import { TrashItemContextMenu } from './TrashItemContextMenu';
 import headerItems from '../FileBrowser/headerCells';
 import { GridViewItem } from '../FileBrowser/GridViewItem';
@@ -67,7 +66,7 @@ const headeItemsMobile: ListViewHeaderItem[] = [
 ];
 
 type TrashSortFields = Extract<SortField, SortField.name | SortField.size | SortField.trashed>;
-const SORT_FIELDS: TrashSortFields[] = [SortField.name, SortField.size, SortField.trashed];
+const SORT_FIELDS: TrashSortFields[] = [SortField.name, SortField.trashed, SortField.size];
 
 function Trash({ shareId, trashView }: Props) {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -85,7 +84,7 @@ function Trash({ shareId, trashView }: Props) {
         [items, selectionControls!.selectedItemIds]
     );
 
-    const browserItems: TrashItem[] = decryptedLinkToBrowserItem(items);
+    const browserItems: TrashItem[] = items.map((item) => ({ ...item, id: item.linkId }));
 
     const handleClick = useCallback(
         (id: BrowserItemId) => {
@@ -95,7 +94,7 @@ function Trash({ shareId, trashView }: Props) {
                 return;
             }
             document.getSelection()?.removeAllRanges();
-            if (item.isFile) {
+            if (!item.isFile) {
                 return;
             }
             navigateToLink(shareId, id, item.isFile);

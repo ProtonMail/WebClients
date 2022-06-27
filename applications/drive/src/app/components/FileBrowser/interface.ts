@@ -13,18 +13,6 @@ export interface DragMoveControls {
     selectedItems: FileBrowserBaseItem[];
 }
 
-// export type FolderSortField = 'name' | 'mimeType' | 'fileModifyTime' | 'size';
-// export type PublicFolderSortField = 'name' | 'size';
-// export type SharedLinkSortField = 'name' | 'linkCreateTime' | 'linkExpireTime' | 'numAccesses';
-// export type TrashedLinksSortField = 'name' | 'size' | 'trashed';
-// export type SearchSortField = 'name' | 'fileModifyTime' | 'size';
-// export type SortField =
-//     | FolderSortField
-//     | PublicFolderSortField
-//     | SharedLinkSortField
-//     | TrashedLinksSortField
-//     | 'metaDataModifyTime';
-
 export interface SortParams<T> {
     sortField: T;
     sortOrder: SORT_DIRECTION;

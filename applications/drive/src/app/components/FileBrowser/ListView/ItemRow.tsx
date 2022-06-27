@@ -1,10 +1,6 @@
 import { memo, useEffect } from 'react';
 
-import {
-    TableRow,
-    classnames,
-    DragMoveContainer,
-} from '@proton/components';
+import { TableRow, classnames, DragMoveContainer } from '@proton/components';
 import { isEquivalent } from '@proton/shared/lib/helpers/object';
 import { shallowEqual } from '@proton/utils/array';
 
@@ -50,7 +46,7 @@ const ItemRow = <T extends FileBrowserBaseItem>({
 
     useEffect(() => {
         onItemRender?.(item);
-    }, []);
+    }, [onItemRender]);
 
     return (
         <>

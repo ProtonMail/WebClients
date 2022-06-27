@@ -150,10 +150,9 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
         getDragMoveControls,
     };
 
-    // TODO heading padding on scrollbar
     return (
         <div
-            className="flex flex-column flex-item-fluid"
+            className="flex flex-column flex-item-fluid-auto flex-nowrap"
             onClick={selectionControls?.clearSelections}
             onContextMenu={onViewContextMenu}
             ref={containerRef}
@@ -177,7 +176,10 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                         itemCount={itemCount}
                         itemSize={itemHeight}
                         // @ts-ignore
-                        // TODO: explanatory comment
+                        // FixedSizeList wraps our ListItemRow which breaks the type safety.
+                        // The reason is that we have generit type for several fields and all
+                        // has to be the same one to make it work. We can ignore it as far as
+                        // we properly state types on all places to gurantee the types.
                         itemData={itemData}
                         onScroll={onScroll}
                         width={rect.width}
