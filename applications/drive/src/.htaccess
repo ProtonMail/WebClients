@@ -6,7 +6,6 @@ RewriteCond %{HTTP:X-Forwarded-Proto} !=https
 RewriteCond %{HTTP_USER_AGENT} !(^kube-probe|^GoogleHC|^curl)
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-
 # Redirect nothing to app
 RewriteRule ^$ /index.html [NC,L]
 
@@ -18,17 +17,24 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 
+# All shared URLs pages use version with noindex meta tag
+RewriteRule ^urls\/(.*)$ /urls.html [NC,L]
+
 RewriteRule ^(.*) /index.html [NC,L]
 
 # Error pages
 ErrorDocument 403   /assets/errors/403.html
 
-<Files ~ "(index.html|version.json)">
+<Files ~ "(index.html|urls.html|version.json)">
     FileETag None
     Header unset ETag
     Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
+</Files>
+
+<Files "urls.html">
+    Header set X-Robots-Tag "noindex"
 </Files>
 
 # The download service worker gets chunk hash appended to the end of the filename
