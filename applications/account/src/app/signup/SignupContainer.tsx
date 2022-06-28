@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import {
@@ -24,7 +24,6 @@ import {
     Plan,
 } from '@proton/shared/lib/interfaces';
 import {
-    ButtonLike,
     FeatureCode,
     HumanVerificationSteps,
     OnLoginCallback,
@@ -583,32 +582,10 @@ const SignupContainer = ({ toApp, toAppName, onBack, onLogin, clientType }: Prop
         </>
     );
 
-    const loginLink = (
-        <ButtonLike
-            as={Link}
-            className="text-semibold text-ellipsis"
-            color="norm"
-            shape="outline"
-            pill
-            key="loginLink"
-            to="/login"
-        >{c('Link').t`Sign in`}</ButtonLike>
-    );
     const hasDecoration = [ACCOUNT_CREATION_USERNAME].includes(step);
+
     return (
-        <Layout
-            hasBackButton={!!handleBackStep}
-            topRight={
-                hasDecoration && (
-                    <div className="flex flex-align-items-center flex-gap-0-5">
-                        <span className="no-mobile">{c('Info').t`Already have an account?`}</span>
-                        {loginLink}
-                    </div>
-                )
-            }
-            bottomRight={<SignupSupportDropdown />}
-            hasDecoration={hasDecoration}
-        >
+        <Layout hasBackButton={!!handleBackStep} bottomRight={<SignupSupportDropdown />} hasDecoration={hasDecoration}>
             {children}
         </Layout>
     );

@@ -372,6 +372,19 @@ const AccountStep = ({
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                         {c('Action').t`Create account`}
                     </Button>
+
+                    <ButtonLike
+                        className="mt1"
+                        fullWidth
+                        color="norm"
+                        shape="outline"
+                        size="large"
+                        as={Link}
+                        to="/login"
+                    >
+                        {c('Link').t`Sign in`}
+                    </ButtonLike>
+
                     <div className="color-weak text-center text-sm mt1 pl2 pr2">
                         {c('new_plans: signup').jt`Creating the account means you accept ${terms}. `}
                     </div>
@@ -380,4 +393,5 @@ const AccountStep = ({
         </Main>
     );
 };
+
 export default AccountStep;
