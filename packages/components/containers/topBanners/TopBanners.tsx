@@ -9,6 +9,7 @@ import DesktopNotificationTopBanner from './DesktopNotificationTopBanner';
 import TimeOutOfSyncTopBanner from './TimeOutOfSyncTopBanner';
 import ReferralTopBanner from './ReferralTopBanner';
 import NudgeTopBanner from './NudgeTopBanner';
+import DriveReleaseTopBanner from './DriveReleaseTopBanner';
 
 interface Props {
     children?: ReactNode;
@@ -26,6 +27,7 @@ const TopBanners = ({ children }: Props) => {
             <SubUserTopBanner />
             <DesktopNotificationTopBanner />
             <ReferralTopBanner />
+            <DriveReleaseTopBanner />
             {children}
         </>
     );
