@@ -1,6 +1,8 @@
+import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { ICAL_ATTENDEE_STATUS, ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/helper';
 import { getAttendeePartstat, getAttendeeToken } from '@proton/shared/lib/calendar/vcalHelper';
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Participant, SavedInviteData } from '@proton/shared/lib/interfaces/calendar';
@@ -36,8 +38,9 @@ interface Props {
     model: RequireSome<InvitationModel, 'invitationIcs'>;
     setModel: Dispatch<SetStateAction<InvitationModel>>;
     message: MessageState;
+    reloadWidget: () => void;
 }
-const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
+const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: Props) => {
     const {
         invitationIcs,
         invitationIcs: { method },
@@ -79,7 +82,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         });
     };
     const handleSuccess = useCallback(
-        ({ savedEvent, savedVevent, savedVcalAttendee }: SavedInviteData, retryReencrypt?: boolean) => {
+        ({ savedEvent, savedVevent, savedVcalAttendee }: SavedInviteData) => {
             if (!attendee) {
                 throw new Error('Missing attendee');
             }
@@ -97,15 +100,13 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
                 organizer,
             };
             const newModel = {
-                ...omit(model, ['error', 'reinviteEventID']),
+                ...omit(model, ['error', 'reinviteEventID', 'reencryptionData']),
                 invitationApi: invitationApiToSave,
                 hideSummary: true,
                 hideLink: false,
                 updateAction: UPDATE_ACTION.NONE,
             };
-            if (!retryReencrypt) {
-                delete newModel.reencryptionData;
-            }
+
             setModel(newModel);
 
             // If the calendar app is opened in the side panel,
@@ -173,6 +174,17 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
             }),
         });
     };
+    const handleReencryptEventError = (error: Error) => {
+        reloadWidget();
+        // A retry should fix this error, so we display to the user a custom message asking to retry
+        createNotification({
+            type: 'error',
+            text: c('Reply to calendar invitation').t`Re-encrypting invitation failed. Please try again`,
+        });
+        // we console.log the real error in case there's a systematic problem
+        const errorMessage = error instanceof ApiError ? getApiErrorMessage(error) : error.message;
+        console.error(errorMessage);
+    };
     const handleEmailError = (error: Error) => {
         if (error instanceof EncryptionPreferencesError) {
             const errorMessage = reformatApiErrorMessage(error.message);
@@ -208,6 +220,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message }: Props) => {
         onEmailError: handleEmailError,
         onCreateEventError: handleCreateEventError,
         onUpdateEventError: handleUpdateEventError,
+        onReencryptEventError: handleReencryptEventError,
         onSuccess: handleSuccess,
         onUnexpectedError: handleUnexpectedError,
         disabled: buttonsDisabled,
