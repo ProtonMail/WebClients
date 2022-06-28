@@ -15,6 +15,7 @@ import generatePackages from '@proton/shared/lib/mail/send/generatePackages';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import { encryptAttachment } from '@proton/shared/lib/mail/send/attachments';
 import { useCallback } from 'react';
+import { SEND_MESSAGE_DIRECT_ACTION } from '@proton/shared/lib/interfaces/message';
 import { useApi, useGetAddressKeys, useGetEncryptionPreferences, useGetMailSettings } from './index';
 
 export interface SendIcsParams {
@@ -126,9 +127,9 @@ const useSendIcs = () => {
                 Packages: Object.values(packages),
             };
             if (parentID) {
-                // we set the action to 0 to tell the API that this is a response to the message with ID = parentID
+                // set the action to tell the API that this is a response to the message with ID = parentID
                 payload.ParentID = parentID;
-                payload.Action = 0;
+                payload.Action = SEND_MESSAGE_DIRECT_ACTION.REPLY;
             }
             await api({ ...sendMessageDirect(payload), silence: true });
         },

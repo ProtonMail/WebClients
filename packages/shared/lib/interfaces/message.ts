@@ -1,0 +1,13 @@
+export enum CREATE_DRAFT_MESSAGE_ACTION {
+    REPLY = 0,
+    REPLY_ALL = 1,
+    FORWARD = 2,
+}
+
+export enum SEND_MESSAGE_DIRECT_ACTION {
+    REPLY = 0,
+    REPLY_ALL = 1,
+    FORWARD = 2,
+    AUTO_RESPONSE = 3,
+    READ_RECEIPT = 4,
+}

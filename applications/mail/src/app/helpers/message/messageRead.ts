@@ -3,9 +3,13 @@ import { getMessage } from '@proton/shared/lib/api/messages';
 import { MessageState, MessageStateWithData } from '../../logic/messages/messagesTypes';
 
 export const loadMessage = async (message: MessageState, api: Api): Promise<MessageStateWithData> => {
-    // If the Body is already there, no need to send a request
-    if (!message.data?.Body) {
-        const { Message } = await api(getMessage(message.data?.ID));
+    const messageID = message.data?.ID;
+    /**
+     * If the Body is already there, no need to send a request
+     * messageID is type guard
+     */
+    if (!message.data?.Body && messageID) {
+        const { Message } = await api(getMessage(messageID));
         return { ...message, data: Message };
     }
 
