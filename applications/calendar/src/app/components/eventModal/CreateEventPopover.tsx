@@ -1,10 +1,12 @@
-import { CSSProperties, Ref, useRef, useState } from 'react';
+import { CSSProperties, MouseEventHandler, Ref, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { WeekStartsOn } from '@proton/shared/lib/date-fns-utc/interface';
 import { Address } from '@proton/shared/lib/interfaces';
 import { Button, PrimaryButton } from '@proton/components';
 import { EventModel } from '@proton/shared/lib/interfaces/calendar';
+import debounce from '@proton/utils/debounce';
+import throttle from '@proton/utils/throttle';
 
 import { INVITE_ACTION_TYPES, InviteActions } from '../../interfaces/Invite';
 import PopoverContainer from '../events/PopoverContainer';
@@ -13,6 +15,7 @@ import PopoverHeader from '../events/PopoverHeader';
 import EventForm from './EventForm';
 import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
+import { useRect } from '../../hooks/useRect';
 
 interface Props {
     isNarrow: boolean;
@@ -26,6 +29,7 @@ interface Props {
     style: CSSProperties;
     popoverRef: Ref<HTMLDivElement>;
     setModel: (value: EventModel) => void;
+    isDraggingDisabled?: boolean;
 }
 
 const CreateEventPopover = ({
@@ -40,6 +44,7 @@ const CreateEventPopover = ({
     weekStartsOn,
     addresses,
     isNarrow,
+    isDraggingDisabled = false,
 }: Props) => {
     const [participantError, setParticipantError] = useState(false);
     const errors = { ...validateEventModel(model), participantError };
@@ -50,6 +55,7 @@ const CreateEventPopover = ({
         errors,
         onSave,
     });
+    const formRect = useRect(formRef.current);
 
     const handleMore = () => {
         onEdit(model);
@@ -61,13 +67,79 @@ const CreateEventPopover = ({
         selfAddress: model.selfAddress,
     };
 
+    const [isDragging, setIsDragging] = useState(false);
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+    const [initialPosition, setInitialPosition] = useState({ clientX: 0, clientY: 0 });
+    const { clientX, clientY } = initialPosition;
+
+    const dragStyle: CSSProperties = {
+        transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
+    };
+    const mergedStyle = isNarrow ? dragStyle : { ...style, ...dragStyle };
+
+    const handleMouseDown: MouseEventHandler<HTMLElement> = (event) => {
+        event.preventDefault();
+        setInitialPosition(event);
+        setIsDragging(true);
+    };
+
+    const handleStopDragging = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseMove = (event: MouseEvent) => {
+        const prevOffset = offset;
+        const cursorMoveXOffset = event.clientX - clientX;
+        const cursorMoveYOffset = event.clientY - clientY;
+
+        setOffset(({ x, y }) => ({
+            x:
+                event.clientX >= 0 && event.clientX <= document.documentElement.clientWidth
+                    ? prevOffset.x + cursorMoveXOffset
+                    : x,
+            y:
+                event.clientY >= 0 && event.clientY <= document.documentElement.clientHeight
+                    ? prevOffset.y + cursorMoveYOffset
+                    : y,
+        }));
+    };
+
+    useEffect(() => {
+        if (!formRect) {
+            return;
+        }
+
+        // When there's an existing offset and added content e.g. a participant group
+        // causes the popover to go off screen, we adjust the offset to stick to the top
+        if (formRect.top < 0 && offset.y && !isDragging) {
+            // Debouncing lets us have a slightly better flicker
+            debounce(() => setOffset((prevState) => ({ ...prevState, y: prevState.y - formRect.top })), 50)();
+        }
+    }, [formRect?.top]);
+
+    useEffect(() => {
+        if (isDraggingDisabled) {
+            return;
+        }
+
+        const throttledMouseMove = throttle(handleMouseMove, 20);
+        const debouncedStopDragging = debounce(handleStopDragging, 50);
+
+        if (isDragging) {
+            document.addEventListener('mousemove', throttledMouseMove);
+            document.addEventListener('mouseup', debouncedStopDragging);
+            document.addEventListener('mouseleave', debouncedStopDragging);
+        }
+
+        return () => {
+            document.removeEventListener('mousemove', throttledMouseMove);
+            document.removeEventListener('mouseup', debouncedStopDragging);
+            document.removeEventListener('mouseleave', debouncedStopDragging);
+        };
+    }, [isDraggingDisabled, isDragging]);
+
     return (
-        <PopoverContainer
-            style={isNarrow ? undefined : style}
-            className="eventpopover pt2 pl1-5 pr1-5 pb1"
-            ref={popoverRef}
-            onClose={onClose}
-        >
+        <PopoverContainer style={mergedStyle} className="eventpopover" ref={popoverRef} onClose={onClose}>
             <form
                 onSubmit={(e) => {
                     e.preventDefault();
@@ -76,7 +148,11 @@ const CreateEventPopover = ({
                 className="form--icon-labels"
                 ref={formRef}
             >
-                <PopoverHeader onClose={onClose} />
+                <PopoverHeader
+                    className={isDraggingDisabled ? '' : 'eventpopover-header--draggable'}
+                    onMouseDown={handleMouseDown}
+                    onClose={onClose}
+                />
                 <EventForm
                     displayWeekNumbers={displayWeekNumbers}
                     addresses={addresses}

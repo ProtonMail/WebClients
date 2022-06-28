@@ -31,7 +31,17 @@
 		outline: none;
 	}
 	// transition: all .25s ease; should be applied only when opened and end of animation <-- this is solved by react-transition-group
+	&-header {
+		&--draggable {
+			padding: rem(24) rem(24) 0;
+			margin: rem(-24) rem(-24) 0;
+			cursor: grab;
 
+			&:active {
+				cursor: grabbing;
+			}
+		}
+	}
 	&-actions {
 		> * + * {
 			margin-inline-start: rem(8);
