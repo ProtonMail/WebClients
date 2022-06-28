@@ -88,10 +88,10 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                     ? 'https://protonvpn.com/support/two-factor-authentication'
                     : getKnowledgeBaseUrl('/two-factor-authentication-2fa');
 
-            // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
+            // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
             const guideButton = (
                 <Href key="0" url={twoFactorAuthLink}>{c('Info')
-                    .t`read our two-factor authentication Guide first`}</Href>
+                    .t`read our two-factor authentication guide first`}</Href>
             );
 
             return {
@@ -103,7 +103,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                         </div>
                         <div className="mb1">
                             {
-                                // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication Guide first</link>.
+                                // translator: complete sentence is: If you have never used two-factor authentication before, we strongly recommend you <link>read our two-factor authentication guide first</link>.
                                 c('Info')
                                     .jt`If you have never used two-factor authentication before, we strongly recommend you ${guideButton}.`
                             }
