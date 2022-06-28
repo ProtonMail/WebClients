@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 import {
     Button,
+    ButtonLike,
     Challenge,
     ChallengeError,
     ChallengeRef,
@@ -203,6 +204,20 @@ const LoginForm = ({
                         loading ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
+
+                <ButtonLike
+                    className="mt1"
+                    fullWidth
+                    size="large"
+                    shape="outline"
+                    color="norm"
+                    as={Link}
+                    to="/signup"
+                    disabled={loading}
+                >
+                    {c('Action').t`Create free account`}
+                </ButtonLike>
+
                 <div className="text-center mt2">{c('Info').jt`${forgotPasswordLink} or ${forgotUsernameLink}?`}</div>
 
                 {showPasswordManagerHint && (
