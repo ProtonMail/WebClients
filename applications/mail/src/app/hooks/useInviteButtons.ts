@@ -12,7 +12,6 @@ import { reencryptCalendarSharedEvent } from '@proton/shared/lib/calendar/sync/r
 import { prodId } from '@proton/shared/lib/calendar/vcalConfig';
 import { withDtstamp } from '@proton/shared/lib/calendar/veventHelper';
 import { SECOND } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {
@@ -62,7 +61,8 @@ interface Args {
         isProtonInvite: boolean,
         error?: any
     ) => void;
-    onSuccess: (savedData: SavedInviteData, retryReencrypt?: boolean) => void;
+    onReencryptEventError: (error: Error) => void;
+    onSuccess: (savedData: SavedInviteData) => void;
     onUnexpectedError: () => void;
     overwrite: boolean;
     reinviteEventID?: string;
@@ -87,6 +87,7 @@ const useInviteButtons = ({
     onSuccess,
     onCreateEventError,
     onUpdateEventError,
+    onReencryptEventError,
     onUnexpectedError,
     overwrite,
     reinviteEventID,
@@ -156,7 +157,7 @@ const useInviteButtons = ({
         [veventApi, veventIcs, attendee, organizer, config, onEmailSuccess, onEmailError]
     );
 
-    // Returns true if the operation is succesful
+    // Returns true if the operation is successful
     const deleteCalendarEvent = useCallback(
         async (reinviteEventID: string) => {
             if (!getHasFullCalendarData(calendarData)) {
@@ -232,32 +233,33 @@ const useInviteButtons = ({
     const answerInvitation = useCallback(
         async (partstat: ICAL_ATTENDEE_STATUS) => {
             let maybeReencryptedEvent: CalendarEvent | undefined = calendarEvent ? { ...calendarEvent } : undefined;
-            let hasReencrypted = false;
             if (reencryptionData) {
                 const { sharedSessionKey } = reencryptionData;
+                const { calendarKeys } = calendarData || {};
+
+                if (!calendarKeys || !calendarEvent) {
+                    throw new Error('Missing data for re-encrypting event');
+                }
+
+                const silentApi = <T>(config: any) =>
+                    api<T>({
+                        ...config,
+                        silence: true,
+                    });
+
                 try {
-                    const { calendarKeys } = calendarData || {};
-                    if (!calendarKeys || !calendarEvent) {
-                        throw new Error('Missing data for re-encrypting event');
-                    }
-                    const silentApi = <T>(config: any) =>
-                        api<T>({
-                            ...config,
-                            silence: true,
-                        });
                     maybeReencryptedEvent = await reencryptCalendarSharedEvent({
                         calendarEvent,
                         sharedSessionKey,
                         calendarKeys,
                         api: silentApi,
                     });
-                    hasReencrypted = true;
-                } catch {
-                    // Not being able to re-encrypt is not a a blocker for the rest of the operations
-                    // as they use the updatePartstat or updatePersonalPart routes
-                    noop();
+                } catch (error: any) {
+                    onReencryptEventError(error);
+                    return;
                 }
             }
+
             if (reinviteEventID) {
                 const deleted = await deleteCalendarEvent(reinviteEventID);
                 if (!deleted) {
@@ -280,7 +282,7 @@ const useInviteButtons = ({
                     throw new Error('Could not retrieve attendee');
                 }
                 await sendReplyEmail(partstat, attendeeApi.UpdateTime * SECOND);
-                onSuccess(result, reencryptionData && !hasReencrypted);
+                onSuccess(result);
                 return;
             }
             // For other invites, we perform the sync operations after sending the email;
