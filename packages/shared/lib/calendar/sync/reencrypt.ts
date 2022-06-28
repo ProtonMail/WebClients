@@ -21,12 +21,9 @@ export const reencryptCalendarSharedEvent = async ({
 
     const SharedKeyPacket = uint8ArrayToBase64String(await getEncryptedSessionKey(sharedSessionKey, publicKey));
 
-    await api(upgradeP2PInvite(calendarEvent.CalendarID, calendarEvent.ID, { SharedKeyPacket }));
+    const { Event } = await api<{ Event: CalendarEvent }>(
+        upgradeP2PInvite(calendarEvent.CalendarID, calendarEvent.ID, { SharedKeyPacket })
+    );
 
-    return {
-        ...calendarEvent,
-        SharedKeyPacket,
-        AddressKeyPacket: null,
-        AddressID: null,
-    };
+    return Event;
 };

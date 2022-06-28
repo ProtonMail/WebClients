@@ -110,8 +110,8 @@ const ExtraEvent = ({
         }
     }, []);
 
-    const handleRetry = () => {
-        refresh();
+    const handleReloadWidget = () => {
+        // set model to clean up error
         setModel(
             getInitialInvitationModel({
                 invitationOrError,
@@ -124,6 +124,7 @@ const ExtraEvent = ({
                 maxUserCalendarsDisabled,
             })
         );
+        refresh();
     };
 
     useCalendarWidgetSideAppEvents({
@@ -329,7 +330,7 @@ const ExtraEvent = ({
                 action={
                     canTryAgain && (
                         <span className="flex-item-noshrink flex">
-                            <InlineLinkButton onClick={handleRetry}>{c('Action').t`Try again`}</InlineLinkButton>
+                            <InlineLinkButton onClick={handleReloadWidget}>{c('Action').t`Try again`}</InlineLinkButton>
                         </span>
                     )
                 }
@@ -351,7 +352,12 @@ const ExtraEvent = ({
                     <ExtraEventSummary model={model} />
                     <ExtraEventHeader model={model} />
                     <ExtraEventWarning model={model} />
-                    <ExtraEventButtons model={model} setModel={setModel} message={message} />
+                    <ExtraEventButtons
+                        model={model}
+                        setModel={setModel}
+                        message={message}
+                        reloadWidget={handleReloadWidget}
+                    />
                 </div>
                 <hr className="m0" />
                 <ExtraEventDetails model={model} weekStartsOn={getWeekStartsOn(userSettings)} />

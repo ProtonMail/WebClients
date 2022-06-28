@@ -3,7 +3,7 @@ import move from '@proton/utils/move';
 import noop from '@proton/utils/noop';
 import { PartstatActions } from '@proton/shared/lib/interfaces/calendar';
 import { c } from 'ttag';
-import { useLoadingMap } from '../../hooks';
+import { useLoading } from '../../hooks';
 import { ButtonGroup, Button, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '../../components';
 
 interface Props {
@@ -18,14 +18,15 @@ const CalendarInviteButtons = ({
     disabled,
     className = '',
 }: Props) => {
-    const [loadingMap, withLoadingMap] = useLoadingMap();
+    const [loadingAccept, withLoadingAccept] = useLoading();
+    const [loadingTentative, withLoadingTentative] = useLoading();
+    const [loadingDecline, withLoadingDecline] = useLoading();
 
     const { accept, acceptTentatively, decline } = actions;
-    const onAccept = async () => withLoadingMap({ accept: accept() });
-    const onTentative = async () => withLoadingMap({ tentative: acceptTentatively() });
-    const onDecline = async () => withLoadingMap({ decline: decline() });
+    const onAccept = () => withLoadingAccept(accept());
+    const onTentative = () => withLoadingTentative(acceptTentatively());
+    const onDecline = () => withLoadingDecline(decline());
 
-    const { accept: loadingAccept, tentative: loadingTentative, decline: loadingDecline } = loadingMap;
     const loadingAnswer = loadingAccept || loadingTentative || loadingDecline;
 
     const acceptText = c('Action').t`Yes, I'll attend`;
