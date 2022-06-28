@@ -230,7 +230,7 @@ const AccountStep = ({
         <Href
             key="terms"
             url={getPrivacyPolicyURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}
-        >{c('new_plans: signup').t`Proton's terms and conditions`}</Href>
+        >{c('new_plans: signup').t`terms and conditions`}</Href>
     );
 
     return (
@@ -386,7 +386,7 @@ const AccountStep = ({
                     </ButtonLike>
 
                     <div className="color-weak text-center text-sm mt1 pl2 pr2">
-                        {c('new_plans: signup').jt`Creating the account means you accept ${terms}. `}
+                        {c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}.`}
                     </div>
                 </form>
             </Content>
