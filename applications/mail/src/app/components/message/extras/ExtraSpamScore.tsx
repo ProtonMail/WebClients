@@ -52,7 +52,11 @@ const ExtraSpamScore = ({ message }: Props) => {
         (!hasBit(Flags, MESSAGE_FLAGS.FLAG_HAM_MANUAL) || LabelIDs.includes(MAILBOX_LABEL_IDS.SPAM))
     ) {
         const markAsLegitimate = async () => {
-            await api(markAsHam(message.data?.ID));
+            const messageID = message.data?.ID;
+            if (!messageID) {
+                return;
+            }
+            await api(markAsHam(messageID));
             await call();
             createNotification({ text: c('Success').t`Message marked as legitimate` });
         };

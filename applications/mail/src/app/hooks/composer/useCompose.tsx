@@ -162,14 +162,13 @@ export const useCompose = (
             const { action, referenceMessage } = composeNew;
             const message = referenceMessage?.data;
 
-            if (isOutbox(message)) {
+            if (isOutbox(message) && message?.ID) {
                 if (isScheduledSend(message)) {
                     createNotification({ text: c('Error').t`Message needs to be sent first`, type: 'error' });
                     return;
                 }
 
                 await handleSendingOriginalMessage({});
-
                 await api(forceSend(message?.ID));
                 await call();
             }

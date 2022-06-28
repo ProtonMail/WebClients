@@ -21,6 +21,9 @@ const ExtraReadReceipt = ({ message }: Props) => {
     }
 
     const handleClick = async () => {
+        if (!ID) {
+            return;
+        }
         await api(readReceipt(ID));
         await call();
         createNotification({ text: c('Success').t`Read receipt sent` });
