@@ -13,7 +13,6 @@ import {
     ChallengeResult,
     Checkbox,
     Href,
-    Info,
     InputFieldTwo,
     Label,
     PasswordInputTwo,
@@ -92,13 +91,12 @@ const LoginForm = ({
     if (challengeError) {
         return <ChallengeError />;
     }
-
-    const learnMore = (
+    const keepMeSignedInLearnMoreLink = (
         <Href
             className="color-inherit"
             key="learn-more"
             url={getKnowledgeBaseUrl('/how-to-access-protonmail-in-private-incognito-mode')}
-        >{c('Info').t`Learn more`}</Href>
+        >{c('Info').t`Why?`}</Href>
     );
 
     return (
@@ -174,16 +172,10 @@ const LoginForm = ({
                         />
                         <div className="flex-item-fluid">
                             <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
-                                <span className="pr0-5">{c('Label').t`Keep me signed in`}</span>
-                                <span className="flex">
-                                    <Info
-                                        title={c('Info').t`You'll stay signed in even after you close the browser.`}
-                                    />
-                                </span>
+                                {c('Label').t`Keep me signed in`}
                             </Label>
                             <div className="color-weak">
-                                {c('Info')
-                                    .jt`Not your device? Use a private browsing window to sign in and close it when done. ${learnMore}`}
+                                {c('Info').jt`Recommended on trusted devices. ${keepMeSignedInLearnMoreLink}`}
                             </div>
                         </div>
                     </div>
