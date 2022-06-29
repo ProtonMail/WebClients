@@ -72,7 +72,7 @@ export type CheckedProductMap = {
 export interface CreateImportPayload {
     TokenID?: string;
     [ImportType.MAIL]?: {
-        Email: string;
+        Account: string;
         ImapHost: string;
         ImapPort: number;
         Sasl: AuthenticationMethod;
