@@ -87,13 +87,19 @@ export const getLevel = (name: string, separator: string, folders: ImportedMailF
     return level;
 };
 
-export const getFolderRelationshipsMap = (folders: ImportedMailFolder[]) =>
-    folders.reduce((acc: FolderRelationshipsMap, folder) => {
-        const currentLevel = getLevel(folder.Source, folder.Separator, folders);
+export const getFolderRelationshipsMap = (folders: ImportedMailFolder[]) => {
+    const levelMap = folders.reduce<{ [source: string]: number }>((acc, folder) => {
+        acc[folder.Source] = getLevel(folder.Source, folder.Separator, folders);
+
+        return acc;
+    }, {});
+
+    return folders.reduce<FolderRelationshipsMap>((acc, folder) => {
+        const currentLevel = levelMap[folder.Source];
 
         acc[folder.Source] = folders
             .filter((f) => {
-                const level = getLevel(f.Source, f.Separator, folders);
+                const level = levelMap[f.Source];
                 return (
                     currentLevel + 1 === level &&
                     f.Source.startsWith(folder.Source) &&
@@ -104,5 +110,6 @@ export const getFolderRelationshipsMap = (folders: ImportedMailFolder[]) =>
 
         return acc;
     }, {});
+};
 
 export const dateToTimestamp = (date: Date) => Math.floor(date.getTime() / 1000);
