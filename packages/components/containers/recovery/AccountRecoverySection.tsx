@@ -8,7 +8,6 @@ import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import SettingsParagraph from '../account/SettingsParagraph';
 import AuthModal from '../password/AuthModal';
 import RecoveryEmail from './email/RecoveryEmail';
 import RecoveryPhone from './phone/RecoveryPhone';
@@ -50,12 +49,8 @@ const AccountRecoverySection = () => {
         await call();
     };
 
-    const text = c('Info')
-        .t`In case you lose your login details, we’ll send you recovery instructions via email or SMS.`;
-
     return (
         <SettingsSection>
-            <SettingsParagraph>{text}</SettingsParagraph>
             <SettingsLayout>
                 <SettingsLayoutLeft>
                     <label className="pt0 on-mobile-mb0-5 text-semibold" htmlFor="recovery-email-input">
