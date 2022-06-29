@@ -37,6 +37,7 @@ describe('upload worker buffer', () => {
         // Set everything to simulated finished job to stop all the running promises.
         buffer.requestingBlockLinks = false;
         buffer.encryptionFinished = true;
+        buffer.uploadingFinished = true;
         buffer.encryptedBlocks.clear();
         // To stop wait in generateUploadingBlocks.
         buffer.uploadingBlocks = [createUploadingBlock(1)];
@@ -140,11 +141,15 @@ describe('upload worker buffer', () => {
         buffer.setBlockLinks([createLink(0), createLink(1)]);
 
         expect(Array.from(buffer.encryptedBlocks.keys())).toMatchObject([2]);
-        expect(buffer.uploadingBlocks).toMatchObject([createUploadingBlock(0), createUploadingBlock(1)]);
+        expect(buffer.uploadingBlocks).toMatchObject([
+            createUploadingBlock(0, buffer.uploadingBlocks[0].isTokenExpired),
+            createUploadingBlock(1, buffer.uploadingBlocks[1].isTokenExpired),
+        ]);
     });
 
-    it('stops generating uploading blocks when buffers are emtpy and encryption finished', async () => {
+    it('stops generating uploading blocks when buffers are emtpy and both encryption and uploading finished', async () => {
         buffer.encryptionFinished = true;
+        buffer.uploadingFinished = true;
 
         const { done } = await buffer.generateUploadingBlocks().next();
         expect(done).toBe(true);
@@ -152,6 +157,7 @@ describe('upload worker buffer', () => {
 
     it('does not stop generating uploading blocks when encrypted blocks are present', async () => {
         buffer.encryptionFinished = true;
+        buffer.uploadingFinished = true;
         buffer.encryptedBlocks.set(1, createBlock(1));
 
         const promise = new Promise((resolve, reject) => {
@@ -163,5 +169,40 @@ describe('upload worker buffer', () => {
                 .catch((err) => reject(err));
         });
         await expect(promise).resolves.toBe('OK');
+    });
+
+    it('finishes uploading block and adds it to the hashes and tokens', async () => {
+        const block = createUploadingBlock(1);
+        buffer.uploadingBlocks.push(block);
+
+        const {
+            value: { finish },
+        } = await buffer.generateUploadingBlocks().next();
+
+        expect(buffer.blockHashes).toMatchObject([]);
+        expect(buffer.blockTokens).toMatchObject([]);
+        finish();
+        expect(buffer.blockHashes).toMatchObject([{ index: 1, hash: block.block.hash }]);
+        expect(buffer.blockTokens).toMatchObject([{ index: 1, token: block.uploadToken }]);
+    });
+
+    it('retries uploading block by adding it back to encrypted buffer', async () => {
+        const block = createUploadingBlock(1);
+        buffer.uploadingBlocks.push(block);
+
+        const {
+            value: { onTokenExpiration },
+        } = await buffer.generateUploadingBlocks().next();
+
+        expect(buffer.encryptedBlocks).toMatchObject(new Map());
+        onTokenExpiration();
+        expect(buffer.encryptedBlocks).toMatchObject(new Map([[1, block.block]]));
+        expect(buffer.blockHashes).toMatchObject([]);
+        expect(buffer.blockTokens).toMatchObject([]);
+    });
+
+    it('gets hash in proper order', () => {
+        buffer.blockHashes = [3, 2, 4, 1].map((index) => ({ index, hash: new Uint8Array([index]) }));
+        expect(buffer.hash).toMatchObject(new Uint8Array([1, 2, 3, 4]));
     });
 });
