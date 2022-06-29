@@ -1,43 +1,58 @@
 import { fireEvent, within } from '@testing-library/dom';
 import { VERIFICATION_STATUS } from '@proton/shared/lib/mail/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+
 import { assertIcon } from '../../../helpers/test/assertion';
-import { clearAll, createEmbeddedImage, createMessageImages, tick } from '../../../helpers/test/helper';
-import { initMessage, setup } from './Message.test.helpers';
+import {
+    addApiKeys,
+    addApiMock,
+    clearAll,
+    createEmbeddedImage,
+    createMessageImages,
+    encryptMessage,
+    GeneratedKey,
+    generateKeys,
+    tick,
+} from '../../../helpers/test/helper';
+import { addressID, body, initMessage, messageID, setup, subject } from './Message.test.helpers';
+import { store } from '../../../logic/store';
+
+const cid = 'cid';
+const attachment1 = {
+    ID: 'id1',
+    Name: 'attachment-name-unknown',
+    Size: 100,
+    Headers: { 'content-id': cid },
+    nameSplitStart: 'attachment-name-unkn',
+    nameSplitEnd: 'own',
+};
+const attachment2 = {
+    ID: 'id2',
+    Name: 'attachment-name-pdf.pdf',
+    Size: 200,
+    MIMEType: 'application/pdf',
+    nameSplitStart: 'attachment-name-p',
+    nameSplitEnd: 'df.pdf',
+};
+const attachment3 = {
+    ID: 'id3',
+    Name: 'attachment-name-png.png',
+    Size: 300,
+    MIMEType: 'image/png',
+    // Allow to skip actual download of the file content
+    Preview: {
+        data: [],
+        filename: 'preview',
+        signatures: [],
+        verified: VERIFICATION_STATUS.NOT_SIGNED,
+    },
+    nameSplitStart: 'attachment-name-p',
+    nameSplitEnd: 'ng.png',
+};
 
 describe('Message attachments', () => {
-    const cid = 'cid';
-    const attachment1 = {
-        ID: 'id1',
-        Name: 'attachment-name-unknown',
-        Size: 100,
-        Headers: { 'content-id': cid },
-        nameSplitStart: 'attachment-name-unkn',
-        nameSplitEnd: 'own',
-    };
-    const attachment2 = {
-        ID: 'id2',
-        Name: 'attachment-name-pdf.pdf',
-        Size: 200,
-        MIMEType: 'application/pdf',
-        nameSplitStart: 'attachment-name-p',
-        nameSplitEnd: 'df.pdf',
-    };
-    const attachment3 = {
-        ID: 'id3',
-        Name: 'attachment-name-png.png',
-        Size: 300,
-        MIMEType: 'image/png',
-        // Allow to skip actual download of the file content
-        Preview: {
-            data: [],
-            filename: 'preview',
-            signatures: [],
-            verified: VERIFICATION_STATUS.NOT_SIGNED,
-        },
-        nameSplitStart: 'attachment-name-p',
-        nameSplitEnd: 'ng.png',
-    };
     const Attachments = [attachment1, attachment2, attachment3];
     const NumAttachments = Attachments.length;
     const icons = ['md-unknown', 'md-pdf', 'md-image'];
@@ -95,5 +110,77 @@ describe('Message attachments', () => {
         expect(preview).toBeDefined();
         expect(preview?.textContent).toMatch(new RegExp(attachment3.Name));
         expect(preview?.textContent).toMatch(/3of3/);
+    });
+});
+
+describe('NumAttachments from message initialization', () => {
+    const toAddress = 'me@home.net';
+    const fromName = 'someone';
+    const fromAddress = 'someone@somewhere.net';
+
+    let toKeys: GeneratedKey;
+    let fromKeys: GeneratedKey;
+
+    beforeAll(async () => {
+        toKeys = await generateKeys('me', toAddress);
+        fromKeys = await generateKeys('someone', fromAddress);
+    });
+
+    it('should have the correct NumAttachments', async () => {
+        const receivedNumAttachment = 1;
+
+        addApiKeys(false, fromAddress, []);
+
+        const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
+
+        addApiMock(`mail/v4/messages/${messageID}`, () => ({
+            Message: {
+                ID: messageID,
+                AddressID: addressID,
+                Subject: subject,
+                Sender: { Name: fromName, Address: fromAddress },
+                Body: encryptedBody,
+                MIMEType: MIME_TYPES.DEFAULT,
+                Attachments: [attachment1] as Attachment[],
+                NumAttachments: receivedNumAttachment,
+            } as Message,
+        }));
+
+        const { open } = await setup({ conversationMode: true });
+        await open();
+
+        const messageFromCache = store.getState().messages[messageID];
+
+        expect(messageFromCache?.data?.NumAttachments).toEqual(receivedNumAttachment);
+    });
+
+    it('should update NumAttachments', async () => {
+        const receivedNumAttachment = 0;
+        const expectedNumAttachments = 1;
+
+        addApiKeys(false, fromAddress, []);
+
+        const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
+
+        addApiMock(`mail/v4/messages/${messageID}`, () => ({
+            Message: {
+                ID: messageID,
+                AddressID: addressID,
+                Subject: subject,
+                Sender: { Name: fromName, Address: fromAddress },
+                Body: encryptedBody,
+                MIMEType: MIME_TYPES.DEFAULT,
+                Attachments: [attachment1] as Attachment[],
+                NumAttachments: receivedNumAttachment,
+            } as Message,
+        }));
+
+        const { open } = await setup({ conversationMode: true });
+        await open();
+
+        const messageFromCache = store.getState().messages[messageID];
+
+        expect(messageFromCache?.data?.NumAttachments).not.toEqual(receivedNumAttachment);
+        expect(messageFromCache?.data?.NumAttachments).toEqual(expectedNumAttachments);
     });
 });
