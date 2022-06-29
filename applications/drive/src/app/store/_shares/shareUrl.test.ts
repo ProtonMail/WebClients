@@ -1,10 +1,5 @@
 import { SharedURLFlags } from '@proton/shared/lib/interfaces/drive/sharing';
-import {
-    splitGeneratedAndCustomPassword,
-    hasCustomPassword,
-    hasGeneratedPasswordIncluded,
-    hasNoCustomPassword,
-} from './shareUrl';
+import { splitGeneratedAndCustomPassword, hasCustomPassword, hasGeneratedPasswordIncluded } from './shareUrl';
 
 describe('Password flags checks', () => {
     describe('Missing data check', () => {
@@ -37,21 +32,6 @@ describe('Password flags checks', () => {
                 })
             ).toEqual(true);
             expect(hasGeneratedPasswordIncluded({ Flags: 0 })).toEqual(false);
-        });
-    });
-
-    describe('hasNoCustomPassword', () => {
-        it('returns true is CustomPassword flag is present', () => {
-            expect(hasNoCustomPassword({ Flags: 0 | 4 })).toEqual(true);
-            expect(hasNoCustomPassword({ Flags: 0 })).toEqual(true);
-            expect(hasNoCustomPassword({ Flags: SharedURLFlags.CustomPassword })).toEqual(false);
-            expect(hasNoCustomPassword({ Flags: SharedURLFlags.GeneratedPasswordIncluded }));
-        });
-        it('returns true if SharedURLInfo is abscent', () => {
-            expect(hasNoCustomPassword()).toEqual(true);
-        });
-        it('returns true if flags are undefined', () => {
-            expect(hasNoCustomPassword({})).toEqual(true);
         });
     });
 });

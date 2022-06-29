@@ -11,7 +11,7 @@ import {
 } from '@proton/shared/lib/helpers/encoding';
 import isTruthy from '@proton/utils/isTruthy';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import getRandomString from "@proton/utils/getRandomString";
+import getRandomString from '@proton/utils/getRandomString';
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { decryptUnsigned, encryptUnsigned } from '@proton/shared/lib/keys/driveKeys';
 import {
@@ -302,25 +302,18 @@ export default function useShareUrl() {
      * - <generated><custom>, flags === 3, contains both generated and custom paswords
      * There are four bit array states that can be used as `flags`:
      * - `0` - legacy shared link without custom password.
-     * - `1` - legacy shared link with custom password. These shares don't
-     *         support password deletion.
+     * - `1` - legacy shared link with custom password.
      * - `2` - shared link with generated password without custom password.
      * - `3` - shared link with both generated and custom passwords.
+     * The legacy shared links are not supported anymore and cannot be modified
+     * anymore (user needs to delete them and share links again), so we can
+     * ignore such cases and focus only on new flags.
      */
-    const getSharedLinkUpdatedFlags = (password: string, flags: number) => {
-        // If generated password is included and the password is of the length
-        // of generated password only, then flag should be just that.
-        if (password.length === SHARE_GENERATED_PASSWORD_LENGTH && flags & SharedURLFlags.GeneratedPasswordIncluded) {
+    const getSharedLinkUpdatedFlags = (password: string) => {
+        if (password.length === SHARE_GENERATED_PASSWORD_LENGTH) {
             return SharedURLFlags.GeneratedPasswordIncluded;
         }
-        // If the share was not legacy one with custom password, we can upgrade
-        // it to new share. If the share is already with new flag, it keeps it.
-        if ((flags & SharedURLFlags.CustomPassword) === 0 || flags & SharedURLFlags.GeneratedPasswordIncluded) {
-            return SharedURLFlags.CustomPassword | SharedURLFlags.GeneratedPasswordIncluded;
-        }
-        // If the share was legacy with custom password, we need to keep it as
-        // is, otherwise links would change due to new logic of gen. password.
-        return SharedURLFlags.CustomPassword;
+        return SharedURLFlags.CustomPassword | SharedURLFlags.GeneratedPasswordIncluded;
     };
 
     const getFieldsToUpdateForPassword = async (
@@ -349,7 +342,7 @@ export default function useShareUrl() {
         ]);
 
         const fieldsToUpdate: Partial<UpdateSharedURL> = {
-            Flags: getSharedLinkUpdatedFlags(newPassword, flags),
+            Flags: getSharedLinkUpdatedFlags(newPassword),
             Password,
             SharePassphraseKeyPacket,
             SRPVerifier,

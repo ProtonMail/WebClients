@@ -9,7 +9,6 @@ import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/consta
 import useConfirm from '../../hooks/util/useConfirm';
 import {
     useShareUrl,
-    hasNoCustomPassword,
     hasCustomPassword,
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
@@ -102,15 +101,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         // Empty string as a newCustomPassword will remove it from the link.
         // `undefined` is to leave the password as it is.
         let newPassword = newCustomPassword;
-        // Generated password has to be used for any new custom password (no
-        // custom password set yet), or when generated password was already
-        // set before.
-        // This can be simplified once legacy custom password without generated
-        // prefix is not used anymore.
-        if (
-            newCustomPassword !== undefined &&
-            (hasNoCustomPassword(shareUrlInfo.ShareURL) || hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL))
-        ) {
+        if (newCustomPassword !== undefined && hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL)) {
             newPassword = password.substring(0, SHARE_GENERATED_PASSWORD_LENGTH) + newCustomPassword;
         }
 
@@ -230,8 +221,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         }
 
         if (modalState === ShareLinkModalState.GeneratedLink) {
-            const isValidForPasswordRemoval =
-                hasCustomPassword(shareUrlInfo.ShareURL) && !hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL);
+            const modificationDisabled = !hasGeneratedPasswordIncluded(shareUrlInfo.ShareURL);
 
             return (
                 <GeneratedLinkState
@@ -249,7 +239,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                     customPassword={customPassword}
                     initialExpiration={initialExpiration}
                     url={url}
-                    isValidForPasswordRemoval={isValidForPasswordRemoval}
+                    modificationDisabled={modificationDisabled}
                     deleting={deleting}
                     saving={saving}
                 />

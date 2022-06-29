@@ -9,7 +9,6 @@ export {
     useLockedVolume,
     useShareUrl,
     // It would be good to make custom type to contain such computed values one day.
-    hasNoCustomPassword,
     hasCustomPassword,
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
