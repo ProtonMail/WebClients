@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { useEncryptedSearch } from '@proton/encrypted-search';
 import { useApi, useUser } from '@proton/components';
 
+import { getES } from '@proton/encrypted-search/lib/esUtils';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useDefaultShare, useShare } from '../_shares';
@@ -65,12 +66,23 @@ export const SearchLibraryProvider = ({ children }: Props) => {
         successMessage: c('Notification').t`Encrypted search activated`,
     });
 
+    const initializeESDrive = async () => {
+        // In case an interrupted indexing process is found, we remove anything ES
+        // has built so far since drive needs to finish indexing in one go
+        const progress = getES.Progress(user.ID);
+        if (!!progress) {
+            await esFunctions.esDelete();
+        }
+
+        await esFunctions.initializeES();
+        setIsInitialize(true);
+    };
+
     useEffect(() => {
         // Feature flags come in asyncronously (false back to `false` initially),
         // thus we need to observe their changes
         if (searchEnabled && !isInitialized) {
-            void esFunctions.initializeES();
-            setIsInitialize(true);
+            void initializeESDrive();
         }
     }, [searchEnabled, isInitialized]);
 
