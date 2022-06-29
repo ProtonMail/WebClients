@@ -1,10 +1,14 @@
+import { ApiError } from '@proton/shared/lib/fetch/ApiError';
+
 import { MAX_RETRIES_BEFORE_FAIL } from '../constants';
-import { UploadingBlock } from './interface';
-import { createUploadingBlock } from './testHelpers';
+import { UploadingBlockControl } from './interface';
+import { createUploadingBlockControl } from './testHelpers';
 import startUploadJobs from './upload';
 import { Pauser } from './pauser';
 
 describe('upload jobs', () => {
+    const mockUploadBlockFinishCallback = jest.fn();
+    const mockUploadBlockExpiredCallback = jest.fn();
     const mockProgressCallback = jest.fn();
     const mockNetworkErrorCallback = jest.fn();
 
@@ -19,9 +23,13 @@ describe('upload jobs', () => {
     it('calls upload for each block', async () => {
         const blocksCount = 10;
         const expectedLinks: string[] = [];
-        async function* generator(): AsyncGenerator<UploadingBlock> {
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
             for (let idx = 0; idx < blocksCount; idx++) {
-                const block = createUploadingBlock(idx);
+                const block = createUploadingBlockControl(
+                    idx,
+                    mockUploadBlockFinishCallback,
+                    mockUploadBlockExpiredCallback
+                );
                 expectedLinks.push(block.uploadLink);
                 yield block;
             }
@@ -38,11 +46,13 @@ describe('upload jobs', () => {
 
         expect(mockUploadBlockCallback).toBeCalledTimes(blocksCount);
         expect(mockUploadBlockCallback.mock.calls.map((call) => call[0])).toMatchObject(expectedLinks);
+        expect(mockUploadBlockFinishCallback).toBeCalledTimes(blocksCount);
+        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
     });
 
     it('retries the same block when paused', async () => {
-        async function* generator(): AsyncGenerator<UploadingBlock> {
-            yield createUploadingBlock(1);
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
+            yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
         }
 
         const mockUploadBlockCallback = jest.fn(() => {
@@ -64,11 +74,13 @@ describe('upload jobs', () => {
         expect(mockUploadBlockCallback).toBeCalledTimes(2); // First call and after resume.
         // @ts-ignore
         expect(mockUploadBlockCallback.mock.calls.map((call) => call[0])).toMatchObject(['link1', 'link1']);
+        expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
+        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
     });
 
     it('retries the same block number times before giving up when error happens', async () => {
-        async function* generator(): AsyncGenerator<UploadingBlock> {
-            yield createUploadingBlock(1);
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
+            yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
         }
 
         const err = new Error('Some not-network error');
@@ -84,11 +96,13 @@ describe('upload jobs', () => {
         );
         await expect(promise).rejects.toBe(err);
         expect(mockUploadBlockCallback).toBeCalledTimes(1 + MAX_RETRIES_BEFORE_FAIL); // First call + retries.
+        expect(mockUploadBlockFinishCallback).not.toBeCalled();
+        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
     });
 
     it('automatically retries after network error once', async () => {
-        async function* generator(): AsyncGenerator<UploadingBlock> {
-            yield createUploadingBlock(1);
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
+            yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
         }
 
         const mockUploadBlockCallback = jest.fn(() => {
@@ -110,11 +124,13 @@ describe('upload jobs', () => {
         // First call + automatic retry.
         expect(mockUploadBlockCallback).toBeCalledTimes(2);
         expect(mockNetworkErrorCallback).toBeCalledTimes(0);
+        expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
+        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
     });
 
     it('pauses and notifies about network error', async () => {
-        async function* generator(): AsyncGenerator<UploadingBlock> {
-            yield createUploadingBlock(1);
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
+            yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
         }
 
         const mockUploadBlockCallback = jest.fn(() => {
@@ -139,5 +155,28 @@ describe('upload jobs', () => {
         expect(mockUploadBlockCallback).toBeCalledTimes(3);
         expect(mockNetworkErrorCallback).toBeCalledTimes(1);
         expect(mockNetworkErrorCallback).toBeCalledWith('network error');
+        expect(mockUploadBlockFinishCallback).toBeCalledTimes(1); // Only one generated block.
+        expect(mockUploadBlockExpiredCallback).not.toBeCalled();
+    });
+
+    it('calls retry when token expires', async () => {
+        async function* generator(): AsyncGenerator<UploadingBlockControl> {
+            yield createUploadingBlockControl(1, mockUploadBlockFinishCallback, mockUploadBlockExpiredCallback);
+        }
+
+        const err = new ApiError('Token expired', 404, 'Token expired');
+        const mockUploadBlockCallback = jest.fn(() => {
+            throw err;
+        });
+        await startUploadJobs(
+            pauser,
+            generator(),
+            mockProgressCallback,
+            mockNetworkErrorCallback,
+            mockUploadBlockCallback
+        );
+        expect(mockUploadBlockCallback).toBeCalledTimes(1);
+        expect(mockUploadBlockFinishCallback).not.toBeCalled();
+        expect(mockUploadBlockExpiredCallback).toBeCalledTimes(1);
     });
 });

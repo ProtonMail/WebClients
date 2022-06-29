@@ -1,8 +1,15 @@
+import { mergeUint8Arrays } from '@proton/utils/array';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { EncryptedBlock, EncryptedThumbnailBlock, Link, BlockToken } from '../interface';
-import { MAX_ENCRYPTED_BLOCKS, MAX_UPLOADING_BLOCKS, MAX_UPLOAD_JOBS, WAIT_TIME } from '../constants';
-import { UploadingBlock } from './interface';
+import {
+    MAX_ENCRYPTED_BLOCKS,
+    MAX_UPLOADING_BLOCKS,
+    MAX_UPLOAD_JOBS,
+    WAIT_TIME,
+    TOKEN_EXPIRATION_TIME,
+} from '../constants';
+import { BlockHash, UploadingBlock, UploadingBlockControl } from './interface';
 import { waitForCondition } from './pauser';
 
 /**
@@ -29,13 +36,15 @@ export default class UploadWorkerBuffer {
 
     uploadingBlocks: UploadingBlock[] = [];
 
-    blockHashes: Uint8Array[] = [];
+    blockHashes: BlockHash[] = [];
 
     blockTokens: BlockToken[] = [];
 
     requestingBlockLinks = false;
 
     encryptionFinished = false;
+
+    uploadingFinished = false;
 
     async feedEncryptedBlocks(encryptedBlocksGenerator: AsyncGenerator<EncryptedBlock | EncryptedThumbnailBlock>) {
         for await (const encryptedBlock of encryptedBlocksGenerator) {
@@ -64,7 +73,10 @@ export default class UploadWorkerBuffer {
                     await waitForCondition(() => !this.requestingBlockLinks);
                 }
             }
-            if (this.encryptionFinished && this.encryptedBlocks.size === 0) {
+            // Even if all blocks are created, it can expire during upload
+            // and thus we need to keep checking until the whole upload is
+            // completed.
+            if (this.uploadingFinished && this.encryptionFinished && this.encryptedBlocks.size === 0) {
                 return;
             }
             setTimeout(() => {
@@ -75,6 +87,7 @@ export default class UploadWorkerBuffer {
     }
 
     setBlockLinks(links: Link[]) {
+        const createTime = Date.now();
         links.forEach((link) => {
             const block = this.encryptedBlocks.get(link.index);
             if (!block) {
@@ -82,32 +95,52 @@ export default class UploadWorkerBuffer {
             }
 
             this.uploadingBlocks.push({
-                index: link.index,
-                encryptedData: block.encryptedData,
+                block,
                 uploadLink: link.url,
                 uploadToken: link.token,
-                originalSize: block.originalSize,
-            });
-            this.blockHashes.push(block.hash);
-            this.blockTokens.push({
-                index: link.index,
-                token: link.token,
+                isTokenExpired: () => Date.now() - createTime > TOKEN_EXPIRATION_TIME,
             });
             this.encryptedBlocks.delete(link.index);
         });
         this.requestingBlockLinks = false;
     }
 
-    async *generateUploadingBlocks() {
+    async *generateUploadingBlocks(): AsyncGenerator<UploadingBlockControl> {
         while (!this.encryptionFinished || this.encryptedBlocks.size > 0 || this.uploadingBlocks.length > 0) {
             await waitForCondition(() => this.encryptionFinished || this.uploadingBlocks.length > 0);
-            const block = this.uploadingBlocks.shift();
-            if (block) {
-                yield block;
+            const uploadingBlock = this.uploadingBlocks.shift();
+            if (uploadingBlock) {
+                const { block, uploadLink, uploadToken, isTokenExpired } = uploadingBlock;
+                yield {
+                    ...block,
+                    uploadLink,
+                    uploadToken,
+                    isTokenExpired,
+                    finish: () => {
+                        this.blockHashes.push({
+                            index: block.index,
+                            hash: block.hash,
+                        });
+                        this.blockTokens.push({
+                            index: block.index,
+                            token: uploadToken,
+                        });
+                    },
+                    onTokenExpiration: () => {
+                        this.encryptedBlocks.set(block.index, block);
+                    },
+                };
             } else {
                 // Wait to not block the thread by infinite loop when encryption is finished.
                 await wait(WAIT_TIME);
             }
         }
+        this.uploadingFinished = true;
+    }
+
+    get hash(): Uint8Array {
+        this.blockHashes.sort((a, b) => a.index - b.index);
+        const hashes = this.blockHashes.map(({ hash }) => hash);
+        return mergeUint8Arrays(hashes);
     }
 }
