@@ -33,7 +33,7 @@ interface Props {
     initialExpiration: number | null;
     url: string;
     passwordToggledOn: boolean;
-    isValidForPasswordRemoval: boolean;
+    modificationDisabled: boolean;
     expirationToggledOn: boolean;
     customPassword: string;
     modalTitleID: string;
@@ -68,7 +68,7 @@ function GeneratedLinkState({
     deleting,
     saving,
     passwordToggledOn,
-    isValidForPasswordRemoval,
+    modificationDisabled,
     expirationToggledOn,
     onSaveLinkClick,
     onDeleteLinkClick,
@@ -105,10 +105,6 @@ function GeneratedLinkState({
     const handleChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPassword(e.target.value);
     };
-
-    const PASSWORD_TOGGLE_DISABLE_REASON = c('Info').t`This link was created in
-        a previous version and can not be modified. Delete this link and create a
-        new one to change the settings.`;
 
     useEffect(() => {
         onFormStateChange({ isFormDirty });
@@ -161,8 +157,6 @@ function GeneratedLinkState({
         </span>
     );
 
-    const passwordTooltipText = isValidForPasswordRemoval ? PASSWORD_TOGGLE_DISABLE_REASON : null;
-
     return (
         <>
             <ModalTwoHeader title={c('Title').t`Share via link`} closeButtonProps={{ disabled: saving || deleting }} />
@@ -202,74 +196,84 @@ function GeneratedLinkState({
                         <Summary tabIndex={0}>
                             <h3>{c('Title').t`Additional settings`}</h3>
                         </Summary>
-                        <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
-                            <Label htmlFor="passwordModeToggle">
-                                <span className="mr0-5">{c('Label').t`Protect with password`}</span>
-                            </Label>
-                            <Tooltip title={passwordTooltipText}>
-                                <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
-                                    <Toggle
-                                        id="passwordModeToggle"
-                                        className="on-mobile-mb0-5"
-                                        disabled={isValidForPasswordRemoval || saving}
-                                        checked={passwordToggledOn}
-                                        onChange={() => {
-                                            onIncludePasswordToggle();
-                                            if (!passwordToggledOn) {
-                                                setPassword(customPassword);
-                                            }
-                                        }}
-                                        data-testid="sharing-modal-passwordModeToggle"
-                                    />
+                        {modificationDisabled ? (
+                            <Alert type="warning">
+                                {c('Info')
+                                    .t`This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.`}
+                            </Alert>
+                        ) : (
+                            <>
+                                <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
+                                    <Label htmlFor="passwordModeToggle">
+                                        <span className="mr0-5">{c('Label').t`Protect with password`}</span>
+                                    </Label>
+                                    <Tooltip>
+                                        <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                            <Toggle
+                                                id="passwordModeToggle"
+                                                className="on-mobile-mb0-5"
+                                                disabled={saving}
+                                                checked={passwordToggledOn}
+                                                onChange={() => {
+                                                    onIncludePasswordToggle();
+                                                    if (!passwordToggledOn) {
+                                                        setPassword(customPassword);
+                                                    }
+                                                }}
+                                                data-testid="sharing-modal-passwordModeToggle"
+                                            />
+                                        </div>
+                                    </Tooltip>
+                                    <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
+                                        {passwordToggledOn && (
+                                            <>
+                                                <InputFieldTwo
+                                                    id="sharing-modal-password"
+                                                    as={PasswordInputTwo}
+                                                    data-testid="sharing-modal-password"
+                                                    labelContainerClassName="sr-only"
+                                                    label={c('Label').t`Password`}
+                                                    disabled={saving}
+                                                    value={password}
+                                                    error={
+                                                        isPasswordInvalid &&
+                                                        c('Info')
+                                                            .t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
+                                                    }
+                                                    assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
+                                                    onInput={handleChangePassword}
+                                                />
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
-                            </Tooltip>
-                            <div className="flex-no-min-children flex-item-fluid on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
-                                {passwordToggledOn && (
-                                    <>
-                                        <InputFieldTwo
-                                            id="sharing-modal-password"
-                                            as={PasswordInputTwo}
-                                            data-testid="sharing-modal-password"
-                                            labelContainerClassName="sr-only"
-                                            label={c('Label').t`Password`}
+                                <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
+                                    <Label htmlFor="expirationTimeModeToggle">
+                                        <span className="mr0-5">{c('Label').t`Set expiration date`}</span>
+                                    </Label>
+                                    <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
+                                        <Toggle
+                                            id="expirationTimeModeToggle"
+                                            className="on-mobile-mb0-5"
                                             disabled={saving}
-                                            value={password}
-                                            error={
-                                                isPasswordInvalid &&
-                                                c('Info').t`Only ${MAX_CUSTOM_PASSWORD_LENGTH} characters is allowed`
-                                            }
-                                            assistiveText={`${password.length}/${MAX_CUSTOM_PASSWORD_LENGTH}`}
-                                            onInput={handleChangePassword}
+                                            checked={expirationToggledOn}
+                                            onChange={onIncludeExpirationTimeToogle}
+                                            data-testid="sharing-modal-expirationTimeModeToggle"
                                         />
-                                    </>
-                                )}
-                            </div>
-                        </div>
-                        <div className="flex-no-min-children flex-nowrap mb1 on-mobile-flex-column on-mobile-mb0-5">
-                            <Label htmlFor="expirationTimeModeToggle">
-                                <span className="mr0-5">{c('Label').t`Set expiration date`}</span>
-                            </Label>
-                            <div className="flex flex-justify-start pt0-5 mr0-5 on-mobile-mr0">
-                                <Toggle
-                                    id="expirationTimeModeToggle"
-                                    className="on-mobile-mb0-5"
-                                    disabled={saving}
-                                    checked={expirationToggledOn}
-                                    onChange={onIncludeExpirationTimeToogle}
-                                    data-testid="sharing-modal-expirationTimeModeToggle"
-                                />
-                            </div>
-                            <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
-                                {expirationToggledOn && (
-                                    <ExpirationTimeDatePicker
-                                        disabled={saving}
-                                        allowTime={false}
-                                        expiration={expiration}
-                                        handleExpirationChange={(exp: number) => setExpiration(exp)}
-                                    />
-                                )}
-                            </div>
-                        </div>
+                                    </div>
+                                    <div className="flex-no-min-children flex-item-fluid flex-align-items-center on-mobile-mb0-5 inputform-icon-container-empty on-mobile-min-h0">
+                                        {expirationToggledOn && (
+                                            <ExpirationTimeDatePicker
+                                                disabled={saving}
+                                                allowTime={false}
+                                                expiration={expiration}
+                                                handleExpirationChange={(exp: number) => setExpiration(exp)}
+                                            />
+                                        )}
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </Details>
                 </div>
             </ModalTwoContent>
