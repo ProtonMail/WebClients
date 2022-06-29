@@ -231,7 +231,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
                 const { ImporterID } = await api({
                     ...createImport({
                         [ImportType.MAIL]: {
-                            Email: modalModel.email,
+                            Account: modalModel.email,
                             ImapHost: modalModel.imap,
                             ImapPort: parseInt(modalModel.port, 10),
                             Sasl: AuthenticationMethod.PLAIN,
@@ -304,7 +304,7 @@ const ImportMailModal = ({ onClose = noop, currentImport, provider, addresses, .
         await api(
             updateImport(modalModel.importID, {
                 [ImportType.MAIL]: {
-                    Email: modalModel.email,
+                    Account: modalModel.email,
                     Code: modalModel.password,
                     ImapHost: modalModel.imap,
                     ImapPort: parseInt(modalModel.port, 10),
