@@ -52,7 +52,7 @@ const LoginForm = ({
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
-    const [persistent, setPersistent] = useLocalState(!!hasRemember, defaultPersistentKey);
+    const [persistent, setPersistent] = useLocalState(false, defaultPersistentKey);
 
     const [showPasswordManagerHint, setShowPasswordManagerHint] = useState(false);
 
