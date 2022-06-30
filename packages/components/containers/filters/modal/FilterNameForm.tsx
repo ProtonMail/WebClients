@@ -61,6 +61,7 @@ const FilterNameForm = ({ isSieveFilter = false, isNarrow, model, errors, onChan
                         onKeyDown={handleKeyDown}
                         autoFocus
                         required
+                        data-testid="filter-modal:name-input"
                     />
                 </Field>
             </div>
