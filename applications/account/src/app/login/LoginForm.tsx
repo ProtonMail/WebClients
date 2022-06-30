@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 import {
     Button,
+    ButtonLike,
     Challenge,
     ChallengeError,
     ChallengeRef,
@@ -20,11 +21,13 @@ import {
 } from '@proton/components';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SECOND } from '@proton/shared/lib/constants';
+import { SECOND, SSO_PATHS } from '@proton/shared/lib/constants';
+import { Icon } from '@proton/components';
 import { Card } from '@proton/atoms';
 
 import Loader from '../signup/Loader';
 import { defaultPersistentKey } from '../public/helper';
+import SupportDropdown from '../public/SupportDropdown';
 
 interface Props {
     signInText?: string;
@@ -49,7 +52,7 @@ const LoginForm = ({
     const [loading, withLoading] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
-    const [persistent, setPersistent] = useLocalState(!!hasRemember, defaultPersistentKey);
+    const [persistent, setPersistent] = useLocalState(false, defaultPersistentKey);
 
     const [showPasswordManagerHint, setShowPasswordManagerHint] = useState(false);
 
@@ -92,15 +95,6 @@ const LoginForm = ({
         return <ChallengeError />;
     }
 
-    const forgotPasswordLink = (
-        <Link key="forgotPasswordLink" to="/reset-password">{c('new_plans: forgot links').t`Forgot password`}</Link>
-    );
-    const forgotUsernameLink = (
-        <Link key="forgotUsernameLink" to="/forgot-username">{
-            // translator: Part of a sentence "Forgot password or username?"
-            c('new_plans: forgot links').t`username`
-        }</Link>
-    );
     const learnMore = (
         <Href
             className="color-inherit"
@@ -203,7 +197,38 @@ const LoginForm = ({
                         loading ? c('Action').t`Signing in` : signInText
                     }
                 </Button>
-                <div className="text-center mt2">{c('Info').jt`${forgotPasswordLink} or ${forgotUsernameLink}?`}</div>
+
+                <ButtonLike
+                    className="mt1"
+                    fullWidth
+                    size="large"
+                    shape="outline"
+                    color="norm"
+                    as={Link}
+                    to={SSO_PATHS.SIGNUP}
+                    disabled={loading}
+                >
+                    {c('Action').t`Create free account`}
+                </ButtonLike>
+
+                <div className="text-center mt2">
+                    <SupportDropdown content={c('Link').t`Trouble signing in?`}>
+                        <Link
+                            to={SSO_PATHS.RESET_PASSWORD}
+                            className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
+                        >
+                            <Icon name="user-circle" className="mr0-5" />
+                            {c('Link').t`Reset password`}
+                        </Link>
+                        <Link
+                            to={SSO_PATHS.FORGOT_USERNAME}
+                            className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
+                        >
+                            <Icon name="key" className="mr0-5" />
+                            {c('Link').t`Forgot username?`}
+                        </Link>
+                    </SupportDropdown>
+                </div>
 
                 {showPasswordManagerHint && (
                     <Card className="text-center mt2" rounded>

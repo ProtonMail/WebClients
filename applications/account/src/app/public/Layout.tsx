@@ -102,14 +102,6 @@ const Footer = ({ className, app, version }: FooterProps) => {
                     |
                 </span>
                 <span className="auto-tiny-mobile">{c('Info').jt`Version ${version}`}</span>
-                <span className="color-border pl0-75 pr0-75 no-tiny-mobile" aria-hidden="true">
-                    |
-                </span>
-                <span className="auto-tiny-mobile">
-                    <div className="inline-block">
-                        <LanguageSelect className="color-primary" locales={locales} />
-                    </div>
-                </span>
             </div>
         </footer>
     );
@@ -118,14 +110,13 @@ const Footer = ({ className, app, version }: FooterProps) => {
 export interface Props {
     children: ReactNode;
     hasFooter?: boolean;
-    topRight?: ReactNode;
     bottomRight?: ReactNode;
     hasDecoration?: boolean;
     hasBackButton?: boolean;
     hasWelcome?: boolean;
 }
 
-const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, hasBackButton }: Props) => {
+const Layout = ({ children, hasWelcome, hasDecoration, bottomRight, hasBackButton }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const { isTinyMobile } = useActiveBreakpoint();
@@ -145,7 +136,7 @@ const Layout = ({ children, hasWelcome, hasDecoration, topRight, bottomRight, ha
                         className={classnames([hasBackButton && 'on-mobile-ml3-5'])}
                     />
                 </Href>
-                {topRight}
+                {hasDecoration && <LanguageSelect outlined globe locales={locales} />}
             </header>
             <div className="sign-layout-container flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between">
                 <div>
