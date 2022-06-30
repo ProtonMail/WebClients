@@ -139,7 +139,10 @@ const FilterActionsFormFolderRow = ({ folders, isNarrow, actions, handleUpdateAc
     };
 
     return (
-        <div className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
+        <div
+            className="border-bottom flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
+            data-testid="filter-modal:folder-row"
+        >
             <button type="button" className={classnames(['w20 text-left', isNarrow && 'mb1'])} onClick={toggleSection}>
                 <Icon name="chevron-down" className={classnames([isOpen && 'rotateX-180'])} />
                 <span className={classnames(['ml0-5', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
