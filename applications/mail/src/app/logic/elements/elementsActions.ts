@@ -105,8 +105,11 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, { api: Api; cal
         const finishedLabels = [];
 
         for (let label of currentLabels) {
-            const result = await api<{ TasksRunning: any }>(queryMessageMetadata({ LabelID: label } as any));
-            if (!result.TasksRunning[label]) {
+            const result = await api<QueryResults>(queryMessageMetadata({ LabelID: label } as any));
+            const isLabelStillRunning =
+                result?.TasksRunning && !Array.isArray(result.TasksRunning) && result.TasksRunning[label];
+
+            if (!isLabelStillRunning) {
                 finishedLabels.push(label);
             }
         }
