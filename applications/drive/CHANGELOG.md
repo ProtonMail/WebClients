@@ -1,3 +1,21 @@
+# Release beta 30 - 2022-07-13
+
+## Added
+
+-   Alerts & suggestions for large uploads that may impact performance
+
+## Improved
+
+-   Folders shared via link now use the file browser
+-   Improved search indexing completion UX
+-   Small adjustments to texts
+
+## Fixed
+
+-   Refresh of upload tokens after a long pause
+-   Progress of interrupted search indexing
+-   Unknown file type icon
+
 # Release beta 29 - 2022-06-22
 
 ## Fixed
