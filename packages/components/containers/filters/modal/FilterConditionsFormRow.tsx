@@ -230,7 +230,10 @@ const FilterConditionsRow = ({
 
     return (
         <div className="border-bottom">
-            <div className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1">
+            <div
+                className="flex flex-nowrap on-mobile-flex-column align-items-center pt1 pb1"
+                data-testid={`filter-modal:condition-${conditionIndex}`}
+            >
                 <button
                     type="button"
                     className={classnames(['w20 text-left', isNarrow && 'mb1'])}
