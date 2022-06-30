@@ -203,6 +203,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                         disabled={buttonDisabled}
                         data-prevent-arrow-navigation
                         type="submit"
+                        data-testid="filter-dropdown:next-button"
                     >
                         {c('CustomFilter').t`Next`}
                     </PrimaryButton>
