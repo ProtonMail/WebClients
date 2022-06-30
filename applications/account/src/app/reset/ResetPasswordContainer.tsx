@@ -52,7 +52,7 @@ const ResetPasswordContainer = ({ onLogin, hasGenerateKeys = true }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
-    const [persistent] = useLocalState(true, defaultPersistentKey);
+    const [persistent] = useLocalState(false, defaultPersistentKey);
 
     const [myLocation] = useMyLocation();
     const defaultCountry = myLocation?.Country?.toUpperCase();

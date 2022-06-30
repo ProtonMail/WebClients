@@ -5,17 +5,29 @@ import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import { setCookie } from '@proton/shared/lib/helpers/cookies';
 import { addDays } from 'date-fns';
-import { useConfig, useForceRefresh, DropdownMenu, DropdownMenuButton, SimpleDropdown } from '@proton/components';
+import {
+    useConfig,
+    useForceRefresh,
+    DropdownMenu,
+    DropdownMenuButton,
+    SimpleDropdown,
+    Icon,
+    ButtonLike,
+} from '@proton/components';
 
 interface Props {
     className?: string;
+    outlined?: boolean;
+    globe?: boolean;
     locales?: TtagLocaleMap;
 }
 
 const cookieDomain = `.${getSecondLevelDomain(window.location.hostname)}`;
-const LanguageSelect = ({ className, locales = {} }: Props) => {
-    const forceRefresh = useForceRefresh();
+
+const LanguageSelect = ({ className, locales = {}, outlined, globe }: Props) => {
     const { LOCALES = {} } = useConfig();
+    const forceRefresh = useForceRefresh();
+
     const handleChange = async (newLocale: string) => {
         const localeCode = getClosestLocaleCode(newLocale, locales);
         await Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, getBrowserLocale())]);
@@ -28,15 +40,43 @@ const LanguageSelect = ({ className, locales = {} }: Props) => {
         forceRefresh();
     };
 
+    const menu = (
+        <DropdownMenu>
+            {Object.keys(LOCALES).map((value) => (
+                <DropdownMenuButton className="text-left" key={value} onClick={() => handleChange(value)}>
+                    {LOCALES[value]}
+                </DropdownMenuButton>
+            ))}
+        </DropdownMenu>
+    );
+
+    const content = globe ? (
+        <>
+            <Icon className="mr0-5" name="globe" /> {LOCALES[localeCode]}
+        </>
+    ) : (
+        LOCALES[localeCode]
+    );
+
+    if (outlined) {
+        return (
+            <SimpleDropdown
+                as={ButtonLike}
+                shape="outline"
+                size="small"
+                color="norm"
+                type="button"
+                content={content}
+                className={className}
+            >
+                {menu}
+            </SimpleDropdown>
+        );
+    }
+
     return (
-        <SimpleDropdown as="button" type="button" content={LOCALES[localeCode]} className={className}>
-            <DropdownMenu>
-                {Object.keys(LOCALES).map((value) => (
-                    <DropdownMenuButton className="text-left" key={value} onClick={() => handleChange(value)}>
-                        {LOCALES[value]}
-                    </DropdownMenuButton>
-                ))}
-            </DropdownMenu>
+        <SimpleDropdown as="button" type="button" content={content} className={className}>
+            {menu}
         </SimpleDropdown>
     );
 };

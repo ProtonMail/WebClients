@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 import noop from '@proton/utils/noop';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -14,14 +13,7 @@ import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { handleCreateInternalAddressAndKey } from '@proton/shared/lib/keys';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-import {
-    AbuseModal,
-    ButtonLike,
-    OnLoginCallback,
-    OnLoginCallbackArguments,
-    useApi,
-    useErrorHandler,
-} from '@proton/components';
+import { AbuseModal, OnLoginCallback, OnLoginCallbackArguments, useApi, useErrorHandler } from '@proton/components';
 import {
     handleLogin,
     handleSetupPassword,
@@ -307,18 +299,6 @@ const LoginContainer = ({
         <Layout
             hasWelcome
             hasBackButton={!!handleBackStep}
-            topRight={
-                <ButtonLike
-                    className="text-semibold text-ellipsis"
-                    shape="outline"
-                    color="norm"
-                    pill
-                    as={Link}
-                    to="/signup"
-                >
-                    {c('Action').t`Create free account`}
-                </ButtonLike>
-            }
             hasDecoration={step === AuthStep.LOGIN}
             bottomRight={<LoginSupportDropdown />}
         >

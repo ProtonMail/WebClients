@@ -1,7 +1,7 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import {
     AlertModal,
     Button,
@@ -230,7 +230,7 @@ const AccountStep = ({
         <Href
             key="terms"
             url={getPrivacyPolicyURL(clientType === CLIENT_TYPES.VPN ? APPS.PROTONVPN_SETTINGS : undefined)}
-        >{c('new_plans: signup').t`Proton's terms and conditions`}</Href>
+        >{c('new_plans: signup').t`terms and conditions`}</Href>
     );
 
     return (
@@ -372,12 +372,26 @@ const AccountStep = ({
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt1-75">
                         {c('Action').t`Create account`}
                     </Button>
+
+                    <ButtonLike
+                        className="mt1"
+                        fullWidth
+                        color="norm"
+                        shape="outline"
+                        size="large"
+                        as={Link}
+                        to={SSO_PATHS.LOGIN}
+                    >
+                        {c('Link').t`Sign in`}
+                    </ButtonLike>
+
                     <div className="color-weak text-center text-sm mt1 pl2 pr2">
-                        {c('new_plans: signup').jt`Creating the account means you accept ${terms}. `}
+                        {c('new_plans: signup').jt`By creating a ${BRAND_NAME} account, you agree to our ${terms}.`}
                     </div>
                 </form>
             </Content>
         </Main>
     );
 };
+
 export default AccountStep;
