@@ -162,7 +162,7 @@ function GeneratedLinkState({
             <ModalTwoHeader title={c('Title').t`Share via link`} closeButtonProps={{ disabled: saving || deleting }} />
             <ModalTwoContent>
                 <div ref={contentRef}>
-                    <p>{c('Info').jt`Your secure, shareable link for ${boldNameText}`}</p>
+                    <p>{c('Info').jt`Shareable link for ${boldNameText}`}</p>
                     <Row className="on-mobile-mb0-5">
                         <div className="flex flex-item-fluid on-mobile-mb0-5">
                             <InputTwo
@@ -194,7 +194,7 @@ function GeneratedLinkState({
                         className="border-none"
                     >
                         <Summary tabIndex={0}>
-                            <h3>{c('Title').t`Additional settings`}</h3>
+                            <h3>{c('Title').t`Privacy settings`}</h3>
                         </Summary>
                         {modificationDisabled ? (
                             <Alert type="warning">
