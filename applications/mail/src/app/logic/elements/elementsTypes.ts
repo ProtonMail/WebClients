@@ -104,7 +104,13 @@ export interface QueryResults {
     Total: number;
     Elements: Element[];
     Stale: number;
-    TasksRunning: { [labelID: string]: any };
+    /**
+     * About TasksRunning:
+     * - Returns an empty array when no results
+     * - Returns a object when results
+     * - TasksRunning key does not exist when LabelID is not present in query params.
+     */
+    TasksRunning?: { [labelID: string]: any } | string[];
 }
 
 export interface NewStateParams {
