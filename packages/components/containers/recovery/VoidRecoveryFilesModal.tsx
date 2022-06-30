@@ -35,7 +35,7 @@ const VoidRecoveryFilesModal = ({ onClose, ...rest }: Props) => {
         >
             <p className="m0">
                 {c('Info')
-                    .t`You won't be able to recover encrypted data after an account reset using your downloaded recovery files.`}
+                    .t`You won’t be able to recover locked data using your downloaded recovery files. This will also delete trusted device-recovery information.`}
             </p>
         </AlertModal>
     );
