@@ -1,7 +1,7 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, CLIENT_TYPES } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
 import {
     AlertModal,
     Button,
@@ -380,7 +380,7 @@ const AccountStep = ({
                         shape="outline"
                         size="large"
                         as={Link}
-                        to="/login"
+                        to={SSO_PATHS.LOGIN}
                     >
                         {c('Link').t`Sign in`}
                     </ButtonLike>

@@ -205,7 +205,7 @@ const LoginForm = ({
                     shape="outline"
                     color="norm"
                     as={Link}
-                    to="/signup"
+                    to={SSO_PATHS.SIGNUP}
                     disabled={loading}
                 >
                     {c('Action').t`Create free account`}
@@ -214,7 +214,7 @@ const LoginForm = ({
                 <div className="text-center mt2">
                     <SupportDropdown content={c('Link').t`Trouble signing in?`}>
                         <Link
-                            to="/reset-password"
+                            to={SSO_PATHS.RESET_PASSWORD}
                             className="dropdown-item-link w100 pr1 pl1 pt0-5 pb0-5 block text-no-decoration text-left"
                         >
                             <Icon name="user-circle" className="mr0-5" />
