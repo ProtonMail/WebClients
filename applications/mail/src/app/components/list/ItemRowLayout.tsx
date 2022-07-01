@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { classnames } from '@proton/components';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -41,31 +42,36 @@ const ItemRowLayout = ({
     displayRecipients,
     loading,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = getESDBStatus();
-    const useES = dbExists && esEnabled && shouldHighlight();
+    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const highlightData = shouldHighlight();
 
     const body = (element as ESMessage).decryptedBody;
     const { Subject, Size } = element;
     const size = humanSize(Size);
 
-    const sendersContent =
-        !loading && displayRecipients && !senders
-            ? c('Info').t`(No Recipient)`
-            : shouldHighlight()
-            ? highlightMetadata(senders, unread, true).resultJSX
-            : senders;
-    const subjectContent = shouldHighlight() && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject;
+    const sendersContent = useMemo(
+        () =>
+            !loading && displayRecipients && !senders
+                ? c('Info').t`(No Recipient)`
+                : highlightData
+                ? highlightMetadata(senders, unread, true).resultJSX
+                : senders,
+        [loading, displayRecipients, senders, highlightData]
+    );
+    const subjectContent = useMemo(
+        () => (highlightData && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject),
+        [Subject, highlightData]
+    );
 
-    let bodyContent: JSX.Element | undefined;
-    let occurrencesInBody = 0;
-    if (body) {
-        ({ resultJSX: bodyContent, numOccurrences: occurrencesInBody } = highlightMetadata(body, unread, true));
-    }
+    const { resultJSX, numOccurrences } = useMemo(
+        () =>
+            body && highlightData ? highlightMetadata(body, unread, true) : { resultJSX: undefined, numOccurrences: 0 },
+        [body, unread]
+    );
     const bodyTitle = c('Info').ngettext(
-        msgid`${occurrencesInBody} occurrence found`,
-        `${occurrencesInBody} occurrences found`,
-        occurrencesInBody
+        msgid`${numOccurrences} occurrence found`,
+        `${numOccurrences} occurrences found`,
+        numOccurrences
     );
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
@@ -105,14 +111,14 @@ const ItemRowLayout = ({
                     >
                         {subjectContent}
                     </span>
-                    {useES && (
+                    {!!resultJSX && highlightData && (
                         <>
                             <span
                                 className={classnames(['max-w100 text-ellipsis mr1', unread && 'text-bold'])}
                                 title={bodyTitle}
                                 aria-hidden="true"
                             >
-                                {bodyContent}
+                                {resultJSX}
                             </span>
                             <span className="sr-only">{bodyTitle}</span>
                         </>

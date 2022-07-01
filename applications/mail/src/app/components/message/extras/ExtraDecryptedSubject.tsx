@@ -1,5 +1,7 @@
+import { useMemo } from 'react';
 import { Icon, Tooltip } from '@proton/components';
 import { c } from 'ttag';
+import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchProvider';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 
 interface Props {
@@ -7,7 +9,20 @@ interface Props {
 }
 
 const ExtraDecryptedSubject = ({ message }: Props) => {
-    if (message.data?.Subject !== '...' || !message.decryption?.decryptedSubject) {
+    const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
+    const highlightSubject = shouldHighlight();
+
+    const subjectElement = useMemo(() => {
+        if (!!message.decryption?.decryptedSubject) {
+            const { decryptedSubject } = message.decryption;
+            if (highlightSubject) {
+                return highlightMetadata(decryptedSubject, true).resultJSX;
+            }
+            return <span>{decryptedSubject}</span>;
+        }
+    }, [message.decryption?.decryptedSubject, highlightSubject]);
+
+    if (message.data?.Subject !== '...' || !subjectElement) {
         return null;
     }
 
@@ -25,7 +40,7 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
                     />
                 </Tooltip>
                 <div className="mr0-5 mt0-2 flex-item-fluid pb0-25">
-                    {c('Info').t`Subject:`} {message.decryption?.decryptedSubject}
+                    {c('Info').t`Subject:`} {subjectElement}
                 </div>
             </div>
         </div>

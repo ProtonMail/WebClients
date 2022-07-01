@@ -50,11 +50,10 @@ const MessageBody = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [theme] = useTheme();
     const isDarkTheme = DARK_THEMES.includes(theme);
-    const { highlightString, getESDBStatus, shouldHighlight } = useEncryptedSearchContext();
+    const { highlightString, shouldHighlight } = useEncryptedSearchContext();
     const onMailTo = useOnMailTo();
     const [mailSettings] = useMailSettings();
-    const { dbExists, esEnabled } = getESDBStatus();
-    const highlightBody = shouldHighlight() && dbExists && esEnabled;
+    const highlightBody = shouldHighlight();
     const plain = isPlainText(message.data);
     const { support: hasDarkStyles, loading: hasDarkStylesLoading } = useMessageDarkStyles(
         message,
@@ -79,11 +78,18 @@ const MessageBody = ({
     const isBlockquote = blockquote !== '';
     const showButton = !forceBlockquote && isBlockquote;
     const showBlockquote = forceBlockquote || originalMessageMode || hasDarkStylesLoading;
-    const highlightedContent = !!content && highlightBody ? highlightString(content, true) : content;
-    const highlightedBlockquote =
-        !!blockquote && highlightBody
-            ? highlightString(blockquote, !highlightedContent.includes('data-auto-scroll'))
-            : blockquote;
+    const highlightedContent = useMemo(
+        () => (!!content && highlightBody ? highlightString(content, true) : content),
+        [content, highlightBody]
+    );
+    const highlightedBlockquote = useMemo(
+        () =>
+            !!blockquote && highlightBody
+                ? highlightString(blockquote, !highlightedContent.includes('data-auto-scroll'))
+                : blockquote,
+        [blockquote, highlightBody]
+    );
+    const showBlockquoteResults = highlightedBlockquote !== blockquote;
 
     useEffect(() => {
         if (!loadingMode && !decryptingMode && onMessageReady) {
@@ -139,7 +145,7 @@ const MessageBody = ({
                         content={highlightedContent}
                         blockquoteContent={highlightedBlockquote}
                         showBlockquoteToggle={showButton}
-                        showBlockquote={showBlockquote}
+                        showBlockquote={showBlockquote || showBlockquoteResults}
                         onBlockquoteToggle={toggleOriginalMessage}
                         onContentLoaded={handleContentLoaded}
                         isPlainText={plain}
