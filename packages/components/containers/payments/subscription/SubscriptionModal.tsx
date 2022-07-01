@@ -1,25 +1,25 @@
-import { getCalendars } from '@proton/shared/lib/models/calendarsModel';
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 import { DEFAULT_CURRENCY, DEFAULT_CYCLE, PLAN_TYPES, PLANS } from '@proton/shared/lib/constants';
 import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
-import { getPublicLinks } from '@proton/shared/lib/api/calendars';
 import { hasBonuses } from '@proton/shared/lib/helpers/organization';
 import { hasPlanIDs, supportAddons } from '@proton/shared/lib/helpers/planIDs';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import isTruthy from '@proton/utils/isTruthy';
 import { Audience, Currency, Cycle, PlanIDs, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
-import { Calendar, CalendarUrlsResponse } from '@proton/shared/lib/interfaces/calendar';
-import { MAX_CALENDARS_PER_FREE_USER } from '@proton/shared/lib/calendar/constants';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
-import unary from '@proton/utils/unary';
-import { getIsPersonalCalendar } from '@proton/shared/lib/calendar/subscribe/helpers';
 import { hasMigrationDiscount, hasNewVisionary } from '@proton/shared/lib/helpers/subscription';
+import {
+    getShouldCalendarPreventSubscripitionChange,
+    willHavePaidMail,
+} from '@proton/shared/lib/calendar/subscription';
+import { hasPaidMail } from '@proton/shared/lib/user/helpers';
 
 import { Button, ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../../components';
 import {
     useApi,
     useEventManager,
+    useGetCalendars,
     useLoading,
     useModals,
     useNotifications,
@@ -107,6 +107,8 @@ const SubscriptionModal = ({
     const { createNotification } = useNotifications();
     const [plans = []] = usePlans();
     const [organization] = useOrganization();
+    const getCalendars = useGetCalendars();
+
     const [loading, withLoading] = useLoading();
     const [loadingCheck, withLoadingCheck] = useLoading();
     const [checkResult, setCheckResult] = useState<SubscriptionCheckResponse>();
@@ -129,18 +131,12 @@ const SubscriptionModal = ({
 
     const handleUnsubscribe = async () => {
         // Start promise early
-        const calendarPromise = (async () => {
-            const calendars: Calendar[] = await getCalendars(api);
-            const personalCalendars = calendars.filter(unary(getIsPersonalCalendar));
-
-            const hasLinks = !!(
-                await Promise.all(
-                    personalCalendars.map((calendar) => api<CalendarUrlsResponse>(getPublicLinks(calendar.ID)))
-                )
-            ).flatMap(({ CalendarUrls }) => CalendarUrls).length;
-
-            return personalCalendars.length > MAX_CALENDARS_PER_FREE_USER || hasLinks;
-        })();
+        const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
+            hasPaidMail: hasPaidMail(user),
+            willHavePaidMail: false,
+            api,
+            getCalendars,
+        });
 
         if (hasMigrationDiscount(subscription)) {
             await new Promise<void>((resolve, reject) => {
@@ -148,13 +144,13 @@ const SubscriptionModal = ({
             });
         }
 
-        if (await calendarPromise) {
+        if (await shouldCalendarPreventDowngradePromise) {
             await new Promise<void>((resolve, reject) => {
                 const handleClose = () => {
                     onClose?.();
                     reject();
                 };
-                createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={handleClose} />);
+                createModal(<CalendarDowngradeModal isDowngrade onConfirm={resolve} onClose={handleClose} />);
             });
         }
 
@@ -203,6 +199,23 @@ const SubscriptionModal = ({
 
         if (!hasPlanIDs(model.planIDs)) {
             return handleUnsubscribe();
+        }
+
+        const shouldCalendarPreventSubscriptionChangePromise = getShouldCalendarPreventSubscripitionChange({
+            hasPaidMail: hasPaidMail(user),
+            willHavePaidMail: willHavePaidMail(model.planIDs, plans),
+            api,
+            getCalendars,
+        });
+
+        if (await shouldCalendarPreventSubscriptionChangePromise) {
+            return new Promise<void>((resolve, reject) => {
+                const handleClose = () => {
+                    onClose?.();
+                    reject();
+                };
+                createModal(<CalendarDowngradeModal onConfirm={resolve} onClose={handleClose} />);
+            });
         }
 
         try {

@@ -1,4 +1,8 @@
-import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, MAX_SUBSCRIBED_CALENDARS_PER_USER } from './constants';
+import {
+    MAX_CALENDARS_FREE,
+    MAX_CALENDARS_PAID,
+    MAX_SUBSCRIBED_CALENDARS,
+} from '@proton/shared/lib/calendar/constants';
 
 const getHasUserReachedCalendarLimit = ({
     calendarsLength,
@@ -10,14 +14,14 @@ const getHasUserReachedCalendarLimit = ({
     isSubscribedCalendar: boolean;
 }) => {
     if (isSubscribedCalendar) {
-        return calendarsLength >= MAX_SUBSCRIBED_CALENDARS_PER_USER;
+        return calendarsLength >= MAX_SUBSCRIBED_CALENDARS;
     }
 
     if (isFreeUser) {
-        return calendarsLength >= MAX_CALENDARS_PER_FREE_USER;
+        return calendarsLength >= MAX_CALENDARS_FREE;
     }
 
-    return calendarsLength >= MAX_CALENDARS_PER_USER;
+    return calendarsLength >= MAX_CALENDARS_PAID;
 };
 
 export default getHasUserReachedCalendarLimit;

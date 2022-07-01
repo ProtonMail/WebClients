@@ -45,7 +45,7 @@ jest.mock('@proton/shared/lib/calendar/calendar', () => ({
 
 jest.mock('@proton/components/hooks/useUser', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ hasNonDelinquentScope: true }, false]),
+    default: jest.fn(() => [{ hasPaidMail: true, hasNonDelinquentScope: true }, false]),
 }));
 
 jest.mock('@proton/components/hooks/useConfig', () => ({
