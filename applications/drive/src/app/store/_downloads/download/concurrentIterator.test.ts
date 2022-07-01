@@ -49,7 +49,7 @@ describe('ConcurrentIterator', () => {
         expect(mockDownloadLinkFile).toBeCalledTimes(callsBeforePause);
         expect(mockStart).toBeCalledTimes(callsBeforePause);
         mockDownloadLinkFile.mock.calls.forEach(([link, { onProgress, onFinish }]) => {
-            onProgress(link.size);
+            onProgress('linkId', link.size);
             onFinish();
         });
 

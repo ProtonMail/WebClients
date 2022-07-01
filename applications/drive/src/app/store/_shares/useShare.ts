@@ -87,6 +87,12 @@ export default function useShare() {
      */
     const getShareSessionKey = async (abortSignal: AbortSignal, shareId: string): Promise<SessionKey> => {
         const keys = await getShareKeys(abortSignal, shareId);
+        if (!keys.sessionKey) {
+            // This should not happen. All shares have session key, only
+            // publicly shared link will not have it, but it is bug if
+            // it is needed.
+            throw new Error('Share is missing session key');
+        }
         return keys.sessionKey;
     };
 

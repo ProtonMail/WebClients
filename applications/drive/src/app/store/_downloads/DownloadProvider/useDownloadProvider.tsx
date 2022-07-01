@@ -2,8 +2,8 @@ import { useCallback, useEffect } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications, usePreventLeave, useModals, useOnline } from '@proton/components';
-import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferState } from '../../../components/TransferManager/transfer';
 import DownloadIsTooBigModal from '../../../components/DownloadIsTooBigModal';
 import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
 import { bufferToStream } from '../../../utils/stream';
@@ -11,14 +11,16 @@ import { logError, reportError } from '../../_utils';
 import { SignatureIssues } from '../../_links';
 import { MAX_DOWNLOADING_BLOCKS_LOAD } from '../constants';
 import FileSaver from '../fileSaver/fileSaver';
-import useDownload from '../useDownload';
-import { LinkDownload, DownloadSignatureIssueModal } from '../interface';
+import { LinkDownload, InitDownloadCallback, DownloadSignatureIssueModal } from '../interface';
 import { UpdateFilter } from './interface';
 import useDownloadQueue from './useDownloadQueue';
 import useDownloadControl from './useDownloadControl';
 import useDownloadSignatureIssue from './useDownloadSignatureIssue';
 
-export default function useDownloadProvider(DownloadSignatureIssueModal: DownloadSignatureIssueModal) {
+export default function useDownloadProvider(
+    initDownload: InitDownloadCallback,
+    DownloadSignatureIssueModal: DownloadSignatureIssueModal
+) {
     const onlineStatus = useOnline();
     const { createNotification } = useNotifications();
     const { preventLeave } = usePreventLeave();
@@ -33,7 +35,6 @@ export default function useDownloadProvider(DownloadSignatureIssueModal: Downloa
         queue.updateWithData,
         control.cancelDownloads
     );
-    const { initDownload } = useDownload();
 
     /**
      * download should be considered as main entry point for download files
@@ -97,16 +98,17 @@ export default function useDownloadProvider(DownloadSignatureIssueModal: Downloa
         queue.updateState(nextDownload.id, TransferState.Progress);
 
         const controls = initDownload(nextDownload.meta.filename, nextDownload.links, {
-            onInit: (size: number) => {
+            onInit: (size: number, linkSizes: { [linkId: string]: number }) => {
                 // Keep the previous state for cases when the download is paused.
                 queue.updateWithData(nextDownload.id, ({ state }) => state, { size });
+                control.updateLinkSizes(nextDownload.id, linkSizes);
 
                 if (FileSaver.isFileTooBig(size)) {
                     createModal(<DownloadIsTooBigModal onCancel={() => control.cancelDownloads(nextDownload.id)} />);
                 }
             },
-            onProgress: (increment: number) => {
-                control.updateProgress(nextDownload.id, increment);
+            onProgress: (linkIds: string[], increment: number) => {
+                control.updateProgress(nextDownload.id, linkIds, increment);
             },
             onNetworkError: (error: any) => {
                 queue.updateWithData(nextDownload.id, TransferState.NetworkError, { error });
@@ -152,6 +154,7 @@ export default function useDownloadProvider(DownloadSignatureIssueModal: Downloa
         hasDownloads: queue.hasDownloads,
         download,
         getProgresses: control.getProgresses,
+        getLinksProgress: control.getLinksProgress,
         pauseDownloads: control.pauseDownloads,
         resumeDownloads: control.resumeDownloads,
         cancelDownloads: control.cancelDownloads,

@@ -1,11 +1,18 @@
 import { useCallback, useRef } from 'react';
 
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
-import { TransferState, TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferProgress, isTransferPending, isTransferFinished } from '../../../utils/transfer';
 import { DownloadControls } from '../interface';
-import { Download, UpdateFilter, UpdateState, UpdateCallback } from './interface';
+import {
+    Download,
+    DownloadProgresses,
+    DownloadLinksProgresses,
+    UpdateFilter,
+    UpdateState,
+    UpdateCallback,
+} from './interface';
 
 export default function useDownloadControl(
     downloads: Download[],
@@ -16,11 +23,11 @@ export default function useDownloadControl(
     // Controls keep references to ongoing downloads to have ability
     // to pause or cancel them.
     const controls = useRef<{ [id: string]: DownloadControls }>({});
-    const progresses = useRef<TransferProgresses>({});
+    const progresses = useRef<DownloadProgresses>({});
 
     const add = (id: string, downloadControls: DownloadControls) => {
         controls.current[id] = downloadControls;
-        progresses.current[id] = 0;
+        progresses.current[id] = { progress: 0, links: {} };
     };
 
     const remove = (id: string) => {
@@ -28,16 +35,43 @@ export default function useDownloadControl(
         delete progresses.current[id];
     };
 
-    const updateProgress = (id: string, increment: number) => {
-        progresses.current[id] += increment;
-        // Because increment can be float, some aritmetic operation can result
-        // in -0.0000000001 which would be then displayed as -0 after rounding.
-        if (progresses.current[id] < 0) {
-            progresses.current[id] = 0;
+    const getLinkProgress = (id: string, linkId: string) => {
+        if (!progresses.current[id].links[linkId]) {
+            progresses.current[id].links[linkId] = {
+                progress: 0,
+            };
         }
+        return progresses.current[id].links[linkId];
     };
 
-    const getProgresses = () => ({ ...progresses.current });
+    const updateLinkSizes = (id: string, linkSizes: { [linkId: string]: number }) => {
+        Object.entries(linkSizes || {}).forEach(([linkId, size]) => {
+            getLinkProgress(id, linkId).total = size;
+        });
+    };
+
+    const updateProgress = (id: string, linkIds: string[], increment: number) => {
+        progresses.current[id].progress += increment;
+        // Because increment can be float, some aritmetic operation can result
+        // in -0.0000000001 which would be then displayed as -0 after rounding.
+        if (progresses.current[id].progress < 0) {
+            progresses.current[id].progress = 0;
+        }
+
+        linkIds.forEach((linkId) => (getLinkProgress(id, linkId).progress += increment));
+    };
+
+    const getProgresses = () =>
+        Object.fromEntries(Object.entries(progresses.current).map(([linkId, { progress }]) => [linkId, progress]));
+
+    const getLinksProgress = (): DownloadLinksProgresses =>
+        Object.values(progresses.current).reduce((aggregatedLinks, { links }) => {
+            // What if some link is downloaded more than once?
+            // Probably very rare case which we can safely ignore. The worst case
+            // scenario is that we show randomly progress of one download, but
+            // thanks to browser caching it will not be that much off.
+            return { ...aggregatedLinks, ...links };
+        }, {});
 
     /**
      * calculateDownloadLoad returns based on progresses of ongoing downloads
@@ -53,7 +87,7 @@ export default function useDownloadControl(
             return undefined;
         }
         return progressingDownloads.reduce((sum: number, download) => {
-            const downloadedSize = progresses.current[download.id] || 0;
+            const downloadedSize = progresses.current[download.id]?.progress || 0;
             return sum + Math.ceil(((download.meta.size as number) - downloadedSize) / FILE_CHUNK_SIZE);
         }, 0);
     };
@@ -116,8 +150,10 @@ export default function useDownloadControl(
     return {
         add,
         remove,
+        updateLinkSizes,
         updateProgress,
         getProgresses,
+        getLinksProgress,
         calculateDownloadBlockLoad,
         pauseDownloads,
         resumeDownloads,

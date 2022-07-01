@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
-
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { useLinkActions, useLinksActions } from '../../_links';
 import { TransferConflictStrategy, UploadFolderControls } from '../interface';

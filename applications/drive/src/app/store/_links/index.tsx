@@ -1,5 +1,5 @@
 import { LinksKeysProvider } from './useLinksKeys';
-import { LinksListingProvider } from './useLinksListing';
+import { LinksListingProvider, PublicLinksListingProvider } from './useLinksListing';
 import { LinksStateProvider } from './useLinksState';
 
 export * from './interface';
@@ -7,15 +7,26 @@ export * from './link';
 export * from './validation';
 export { ecryptFileExtendedAttributes, ecryptFolderExtendedAttributes } from './extendedAttributes';
 export { default as useLink } from './useLink';
+export { default as useLinks } from './useLinks';
 export { default as useLinkActions } from './useLinkActions';
 export { default as useLinksActions } from './useLinksActions';
-export { default as useLinksListing } from './useLinksListing';
+export { useLinksListing, usePublicLinksListing } from './useLinksListing';
 
 export function LinksProvider({ children }: { children: React.ReactNode }) {
     return (
         <LinksStateProvider>
             <LinksKeysProvider>
                 <LinksListingProvider>{children}</LinksListingProvider>
+            </LinksKeysProvider>
+        </LinksStateProvider>
+    );
+}
+
+export function PublicLinksProvider({ children }: { children: React.ReactNode }) {
+    return (
+        <LinksStateProvider>
+            <LinksKeysProvider>
+                <PublicLinksListingProvider>{children}</PublicLinksListingProvider>
             </LinksKeysProvider>
         </LinksStateProvider>
     );

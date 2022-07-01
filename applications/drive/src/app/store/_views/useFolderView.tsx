@@ -1,10 +1,10 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect } from 'react';
 
 import { useLoading } from '@proton/components';
 
 import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useLinkName, useSelection, useControlledSorting } from './utils';
+import { useMemoArrayNoMatterTheOrder, useAbortSignal, useLinkName, useControlledSorting } from './utils';
 
 /**
  * useFolderView provides data for folder view (file browser of folder).
@@ -24,15 +24,6 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
     const { layout, sort, changeSort } = useUserSettings();
     const { sortedList, sortParams, setSorting } = useControlledSorting(cachedChildren, sort, changeSort);
 
-    const sortedListForSelection = useMemo(() => {
-        return sortedList.map((item) => ({
-            id: item.linkId,
-            disabled: item.isLocked,
-            data: item,
-        }));
-    }, [sortedList]);
-    const selectionControls = useSelection(sortedListForSelection);
-
     useEffect(() => {
         const ac = new AbortController();
         void withLoading(linksListing.loadChildren(ac.signal, shareId, linkId));
@@ -47,7 +38,6 @@ export default function useFolderView(folder: { shareId: string; linkId: string 
         items: sortedList,
         sortParams,
         setSorting,
-        selectionControls,
         isLoading: isLoading || isDecrypting,
     };
 }

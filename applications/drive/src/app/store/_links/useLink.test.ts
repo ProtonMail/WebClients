@@ -104,7 +104,7 @@ describe('useLink', () => {
             const link = hook.current.getLink(abortSignal, 'shareId', 'linkId');
             await expect(link).resolves.toMatchObject({
                 linkId: 'linkId',
-                name: 'My files', // We automatically set this to the root link.
+                name: 'dec:name',
             });
         });
         expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');
@@ -168,7 +168,7 @@ describe('useLink', () => {
             const link = hook.current.getLink(abortSignal, 'shareId', 'linkId');
             await expect(link).resolves.toMatchObject({
                 linkId: 'linkId',
-                name: 'My files', // We automatically set this to the root link.
+                name: 'dec:name',
             });
         });
         expect(mockLinksState.getLink).toBeCalledWith('shareId', 'linkId');

@@ -2,28 +2,41 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import {
-    PrivateAppContainer,
-    useToggle,
-    MainLogo,
-    FloatingButton,
-    SidebarPrimaryButton,
-    PrivateMainArea,
     CollapsingBreadcrumbs,
-    ModalsChildren,
+    FloatingButton,
     Icon,
+    MainLogo,
+    ModalsChildren,
+    PrivateAppContainer,
+    PrivateMainArea,
+    SidebarPrimaryButton,
+    useActiveBreakpoint,
+    useToggle,
 } from '@proton/components';
-import noop from '@proton/utils/noop';
+
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 
 import DriveSidebar from '../components/layout/DriveSidebar/DriveSidebar';
 import { DriveHeader } from '../components/layout/DriveHeader';
-import ListView from '../components/FileBrowser/ListView/ListView';
+import { ListView } from '../components/FileBrowser';
+import { DriveItem } from '../components/sections/Drive/Drive';
+import { ModifiedCell, NameCell, SizeCell } from '../components/sections/FileBrowser/contentCells';
+import { ListViewHeaderItem } from '../components/FileBrowser/interface';
+import headerItems from '../components/sections/FileBrowser/headerCells';
+
+const desktopCells: React.FC<{ item: DriveItem }>[] = [NameCell, ModifiedCell, SizeCell];
+const mobileCells = [NameCell];
+
+const headerItemsDesktop: ListViewHeaderItem[] = [headerItems.name, headerItems.modificationDate, headerItems.size];
+
+const headerItemsMobile: ListViewHeaderItem[] = [headerItems.name, headerItems.placeholder];
 
 const DriveContainerBlurred = () => {
     const scrollAreaRef = useRef<HTMLDivElement>(null);
     const { state: expanded, toggle: toggleExpanded } = useToggle();
     const appName = getAppName(APPS.PROTONDRIVE);
+    const { isDesktop } = useActiveBreakpoint();
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
@@ -53,6 +66,35 @@ const DriveContainerBlurred = () => {
         />
     );
 
+    const items: DriveItem[] = [
+        {
+            id: 'dummy-link-1',
+            parentLinkId: '',
+            mimeType: 'text/plain',
+            name: 'Private files',
+            fileModifyTime: Date.now() / 1000,
+            trashed: null,
+            size: 1024 * 1024,
+            isFile: false,
+            hasThumbnail: false,
+        },
+        {
+            id: 'dummy-link-2',
+            parentLinkId: '',
+            mimeType: 'text/plain',
+            name: `Welcome to ${appName}.txt`,
+            fileModifyTime: Date.now() / 1000,
+            trashed: null,
+            size: 1024 * 1024,
+            isFile: true,
+            hasThumbnail: false,
+        },
+    ];
+
+    const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
+
+    const Cells = isDesktop ? desktopCells : mobileCells;
+
     return (
         <>
             <ModalsChildren />
@@ -71,49 +113,12 @@ const DriveContainerBlurred = () => {
                         />
                     </div>
                     <ListView
-                        isPreview
-                        type="drive"
-                        scrollAreaRef={scrollAreaRef}
                         caption={dummyFolderTitle}
-                        shareId="dummy-share"
+                        Cells={Cells}
+                        headerItems={headerItems}
+                        items={items}
                         loading={false}
-                        contents={[
-                            {
-                                LinkID: 'dummy-link-1',
-                                ParentLinkID: '',
-                                MIMEType: 'text/plain',
-                                Name: 'Private files',
-                                CreateTime: Date.now() / 1000,
-                                ModifyTime: Date.now() / 1000,
-                                RealModifyTime: Date.now() / 1000,
-                                Trashed: null,
-                                Size: 1024 * 1024,
-                                IsFile: false,
-                                UrlsExpired: false,
-                                HasThumbnail: false,
-                                SignatureAddress: 'dummy',
-                            },
-                            {
-                                LinkID: 'dummy-link-2',
-                                ParentLinkID: '',
-                                MIMEType: 'text/plain',
-                                Name: `Welcome to ${appName}.txt`,
-                                CreateTime: Date.now() / 1000,
-                                ModifyTime: Date.now() / 1000,
-                                RealModifyTime: Date.now() / 1000,
-                                Trashed: null,
-                                Size: 1024 * 1024,
-                                IsFile: true,
-                                UrlsExpired: false,
-                                HasThumbnail: false,
-                                SignatureAddress: 'dummy',
-                            },
-                        ]}
-                        selectedItems={[]}
-                        onToggleItemSelected={noop}
-                        clearSelections={noop}
-                        onToggleAllSelected={noop}
-                        selectItem={noop}
+                        scrollAreaRef={scrollAreaRef}
                     />
                 </PrivateMainArea>
             </PrivateAppContainer>

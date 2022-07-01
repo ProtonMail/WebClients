@@ -13,7 +13,7 @@ export interface LinkDownload {
     name: string;
     mimeType: string;
     size: number;
-    signatureAddress: string;
+    signatureAddress?: string;
     signatureIssues?: SignatureIssues;
 
     buffer?: Uint8Array[];
@@ -58,8 +58,20 @@ export type DownloadBaseCallbacks = {
 
 export type DownloadCallbacks = DownloadEventCallbacks & DownloadBaseCallbacks;
 
-export type OnInitCallback = (size: number) => void;
-type OnProgressCallback = (bytes: number) => void;
+export type OnInitCallback = (
+    size: number,
+    // linkSizes is map of link ID to its size.
+    // Currently we collect only sizes of top level items, that
+    // is exluding the whole tree of the folder item.
+    linkSizes: { [linkId: string]: number }
+) => void;
+export type OnProgressCallback = (
+    // linkIds for which the progress should be counted.
+    // It should contain link itself and all the parents so the whole directory
+    // tree is properly counted.
+    linkIds: string[],
+    bytes: number
+) => void;
 export type OnSignatureIssueCallback = (
     abortSignal: AbortSignal,
     link: LinkDownload,
@@ -88,9 +100,14 @@ export type Pagination = { FromBlockIndex: number; PageSize: number };
 export type DecryptFileKeys = {
     privateKey: OpenPGPKey;
     sessionKeys?: SessionKey;
-    addressPublicKeys: OpenPGPKey[];
+    addressPublicKeys?: OpenPGPKey[];
 };
 
+export type InitDownloadCallback = (
+    name: string,
+    list: LinkDownload[],
+    eventCallbacks: DownloadEventCallbacks
+) => DownloadControls;
 export type DownloadSignatureIssueModal = React.FunctionComponent<DownloadSignatureIssueModalProps>;
 
 interface DownloadSignatureIssueModalProps {

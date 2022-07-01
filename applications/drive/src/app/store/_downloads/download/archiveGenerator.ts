@@ -2,8 +2,8 @@ import { ReadableStream } from 'web-streams-polyfill';
 import { Writer as ZipWriter } from '@transcend-io/conflux';
 
 import { isWindows } from '@proton/shared/lib/helpers/browser';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { splitLinkName, adjustName, adjustWindowsLinkName } from '../../_links';
 import { StartedNestedLinkDownload } from './interface';
 
@@ -78,7 +78,7 @@ export default class ArchiveGenerator {
         }
         if (!this.canceled) {
             await Promise.all(promises).then(() => {
-                this.writer.close();
+                void this.writer.close();
             });
         }
     }
@@ -133,6 +133,6 @@ export default class ArchiveGenerator {
     cancel() {
         this.canceled = true;
         const error = new TransferCancel({ message: `Transfer canceled` });
-        this.writer.abort(error);
+        void this.writer.abort(error);
     }
 }

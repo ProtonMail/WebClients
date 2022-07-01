@@ -15,7 +15,6 @@ import {
     PrimaryButton,
 } from '@proton/components';
 import noop from '@proton/utils/noop';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import { useActions, validateLinkNameField, formatLinkName, splitLinkName } from '../store';
@@ -23,13 +22,17 @@ import { useActions, validateLinkNameField, formatLinkName, splitLinkName } from
 interface Props {
     shareId: string;
     onClose?: () => void;
-    item: FileBrowserItem;
+    item: {
+        linkId: string;
+        name: string;
+        isFile: boolean;
+    };
     open?: boolean;
 }
 
 const RenameModal = ({ shareId, item, onClose, open }: Props) => {
     const { renameLink } = useActions();
-    const [name, setName] = useState(item.Name);
+    const [name, setName] = useState(item.name);
     const [loading, withLoading] = useLoading();
     const [autofocusDone, setAutofocusDone] = useState(false);
 
@@ -38,8 +41,8 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
             return;
         }
         setAutofocusDone(true);
-        const [namePart] = splitLinkName(item.Name);
-        if (!namePart || !item.IsFile) {
+        const [namePart] = splitLinkName(item.name);
+        if (!namePart || !item.isFile) {
             return e.target.select();
         }
         e.target.setSelectionRange(0, namePart.length);
@@ -59,7 +62,7 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
         const formattedName = formatLinkName(name);
         setName(formattedName);
 
-        await renameLink(new AbortController().signal, shareId, item.LinkID, formattedName);
+        await renameLink(new AbortController().signal, shareId, item.linkId, formattedName);
         onClose?.();
     };
 
@@ -76,11 +79,11 @@ const RenameModal = ({ shareId, item, onClose, open }: Props) => {
         >
             <ModalTwoHeader
                 closeButtonProps={{ disabled: loading }}
-                title={!item.IsFile ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
+                title={!item.isFile ? c('Title').t`Rename a folder` : c('Title').t`Rename a file`}
             />
             <ModalTwoContent>
                 <Row className="mt1 mb1">
-                    <Label>{!item.IsFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
+                    <Label>{!item.isFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                     <Field>
                         <InputTwo
                             id="link-name"

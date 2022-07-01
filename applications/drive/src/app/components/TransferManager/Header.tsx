@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Icon, Tooltip, classnames, Button } from '@proton/components';
-import { Download, TransfersStats, Upload } from '@proton/shared/lib/interfaces/drive/transfer';
+
 import {
     isTransferActive,
     isTransferDone,
@@ -10,6 +10,7 @@ import {
     isTransferCanceled,
     calculateProgress,
 } from '../../utils/transfer';
+import { Download, TransfersStats, Upload } from './transfer';
 
 interface Props {
     downloads: Download[];

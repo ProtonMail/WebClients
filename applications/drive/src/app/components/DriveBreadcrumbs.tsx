@@ -9,7 +9,6 @@ import useNavigate from '../hooks/drive/useNavigate';
 import { useDriveDragMoveTarget } from '../hooks/drive/useDriveDragMove';
 import { useLinkPath } from '../store';
 import SignatureIcon from './SignatureIcon';
-import { mapDecryptedLinksToChildren } from './sections/helpers';
 
 interface Props {
     activeFolder: DriveFolder;
@@ -44,7 +43,11 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         text: name,
                         richText: (
                             <span className="flex flex-align-items-center flex-nowrap flex-item-fluid">
-                                <SignatureIcon item={mapDecryptedLinksToChildren([link])[0]} className="mr0-25" />
+                                <SignatureIcon
+                                    isFile={link.isFile}
+                                    signatureIssues={link.signatureIssues}
+                                    className="mr0-25"
+                                />
                                 <span className="text-pre text-ellipsis">{name}</span>
                             </span>
                         ),

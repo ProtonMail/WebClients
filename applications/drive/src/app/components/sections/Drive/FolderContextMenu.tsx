@@ -5,24 +5,20 @@ import { ContextMenu, ContextSeparator } from '@proton/components';
 
 import useActiveShare from '../../../hooks/drive/useActiveShare';
 import { useFileUploadInput, useFolderUploadInput } from '../../../store';
+import { ContextMenuProps } from '../../FileBrowser/interface';
 import { ShareFileButton } from '../ContextMenu/buttons';
 import { CreateNewFolderButton, UploadFileButton, UploadFolderButton } from './ContextMenuButtons';
 
-interface Props {
+export function FolderContextMenu({
+    shareId,
+    anchorRef,
+    isOpen,
+    position,
+    open,
+    close,
+}: ContextMenuProps & {
     shareId: string;
-    anchorRef: React.RefObject<HTMLElement>;
-    isOpen: boolean;
-    position:
-        | {
-              top: number;
-              left: number;
-          }
-        | undefined;
-    open: () => void;
-    close: () => void;
-}
-
-const FolderContextMenu = ({ shareId, anchorRef, isOpen, position, open, close }: Props) => {
+}) {
     useEffect(() => {
         if (position) {
             open();
@@ -57,6 +53,4 @@ const FolderContextMenu = ({ shareId, anchorRef, isOpen, position, open, close }
             </ContextMenu>
         </>
     );
-};
-
-export default FolderContextMenu;
+}

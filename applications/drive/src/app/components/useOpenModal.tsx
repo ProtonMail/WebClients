@@ -1,6 +1,6 @@
 import { useModals } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../store';
 import useNavigate from '../hooks/drive/useNavigate';
 import { useSpotlight } from './useSpotlight';
 import CreateFolderModal from './CreateFolderModal';
@@ -10,31 +10,30 @@ import MoveToFolderModal from './MoveToFolderModal/MoveToFolderModal';
 import RenameModal from './RenameModal';
 import SelectedFileToShareModal from './SelectedFileToShareModal/SelectedFileToShareModal';
 import ShareLinkModal from './ShareLinkModal/ShareLinkModal';
-import ShareModal from './ShareModal/ShareModal';
 
 export default function useOpenModal() {
     const { navigateToLink } = useNavigate();
     const { createModal } = useModals();
     const spotlight = useSpotlight();
 
-    const openPreview = (shareId: string, item: FileBrowserItem) => {
+    const openPreview = (shareId: string, linkId: string) => {
         spotlight.searchSpotlight.close();
-        navigateToLink(shareId, item.LinkID, item.IsFile);
+        navigateToLink(shareId, linkId, true);
     };
 
     const openCreateFolder = async () => {
         createModal(<CreateFolderModal />);
     };
 
-    const openDetails = (shareId: string, item: FileBrowserItem) => {
-        createModal(<DetailsModal item={item} shareId={shareId} />);
+    const openDetails = (shareId: string, linkId: string) => {
+        createModal(<DetailsModal shareId={shareId} linkId={linkId} />);
     };
 
-    const openFilesDetails = (selectedItems: FileBrowserItem[]) => {
-        createModal(<FilesDetailsModal selectedItems={selectedItems} />);
+    const openFilesDetails = (shareId: string, linkIds: string[]) => {
+        createModal(<FilesDetailsModal shareId={shareId} linkIds={linkIds} />);
     };
 
-    const openMoveToFolder = (shareId: string, itemsToMove: FileBrowserItem[]) => {
+    const openMoveToFolder = (shareId: string, itemsToMove: DecryptedLink[]) => {
         if (!shareId || !itemsToMove.length) {
             return;
         }
@@ -42,7 +41,7 @@ export default function useOpenModal() {
         createModal(<MoveToFolderModal shareId={shareId} selectedItems={itemsToMove} />);
     };
 
-    const openRename = (shareId: string, item: FileBrowserItem) => {
+    const openRename = (shareId: string, item: DecryptedLink) => {
         createModal(<RenameModal shareId={shareId} item={item} />);
     };
 
@@ -50,12 +49,8 @@ export default function useOpenModal() {
         createModal(<SelectedFileToShareModal shareId={shareId} />);
     };
 
-    const openLinkSharing = (shareId: string, itemToShare: FileBrowserItem) => {
-        createModal(<ShareLinkModal shareId={shareId} item={itemToShare} />);
-    };
-
-    const openSharing = (shareId: string, itemToShare: FileBrowserItem) => {
-        createModal(<ShareModal shareId={shareId} item={itemToShare} />);
+    const openLinkSharing = (shareId: string, linkId: string) => {
+        createModal(<ShareLinkModal shareId={shareId} linkId={linkId} />);
     };
 
     return {
@@ -67,6 +62,5 @@ export default function useOpenModal() {
         openRename,
         openFileSharing,
         openLinkSharing,
-        openSharing,
     };
 }

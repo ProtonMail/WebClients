@@ -11,8 +11,8 @@ import {
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { MAX_SAFE_UPLOADING_FILE_COUNT, MAX_SAFE_UPLOADING_FILE_SIZE } from '@proton/shared/lib/drive/constants';
-import { TransferCancel, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel, TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferCancelError, isTransferProgress, isTransferPausedByConnection } from '../../../utils/transfer';
 import { reportError } from '../../_utils';
 import { MAX_UPLOAD_BLOCKS_LOAD, MAX_UPLOAD_FOLDER_LOAD } from '../constants';

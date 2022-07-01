@@ -33,7 +33,7 @@ export const decryptPassphrase = async ({
     validateSignature = true,
 }: {
     armoredPassphrase: string;
-    armoredSignature: string;
+    armoredSignature?: string;
     privateKeys: OpenPGPKey[];
     publicKeys: OpenPGPKey[];
     validateSignature?: boolean;
@@ -45,7 +45,7 @@ export const decryptPassphrase = async ({
 
     const { data: decryptedPassphrase, verified } = await decryptMessage({
         message,
-        signature: await getSignature(armoredSignature),
+        signature: armoredSignature ? await getSignature(armoredSignature) : undefined,
         sessionKeys: sessionKey,
         publicKeys,
     });
