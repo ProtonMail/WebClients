@@ -10,8 +10,9 @@ const useConfirm = () => {
         cancel,
         confirm,
         message,
-        onCancel,
         onConfirm,
+        onCancel,
+        onClose = onCancel,
         title,
         canUndo = false,
         size,
@@ -22,6 +23,7 @@ const useConfirm = () => {
         message: string;
         onConfirm: () => Promise<any>;
         onCancel?: () => any;
+        onClose?: () => any;
         canUndo?: boolean;
         size?: ModalSize;
     }) => {
@@ -40,7 +42,8 @@ const useConfirm = () => {
                 submitText={confirm}
                 size={size}
                 onSubmit={onConfirm}
-                onClose={onCancel}
+                onCancel={onCancel}
+                onClose={onClose}
             >
                 {content}
             </ConfirmationModal>
