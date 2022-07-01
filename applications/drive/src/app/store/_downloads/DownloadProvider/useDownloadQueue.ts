@@ -3,8 +3,8 @@ import { c } from 'ttag';
 
 import { generateUID } from '@proton/components';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { TransferMeta, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
 import { isTransferPending, isTransferFinished } from '../../../utils/transfer';
 import { LinkDownload } from '../interface';
 import {

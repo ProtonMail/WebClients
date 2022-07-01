@@ -1,26 +1,25 @@
 import { useCallback } from 'react';
 import { c } from 'ttag';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
-    items: FileBrowserItem[];
+    linkIds: string[];
     close: () => void;
 }
 
-const DetailsButton = ({ shareId, items, close }: Props) => {
+const DetailsButton = ({ shareId, linkIds, close }: Props) => {
     const { openDetails, openFilesDetails } = useOpenModal();
 
     const action = useCallback(() => {
-        if (items.length === 1) {
-            openDetails(shareId, items[0]);
+        if (linkIds.length === 1) {
+            openDetails(shareId, linkIds[0]);
         } else {
-            openFilesDetails(items);
+            openFilesDetails(shareId, linkIds);
         }
-    }, [shareId, items, openDetails, openFilesDetails]);
+    }, [shareId, linkIds, openDetails, openFilesDetails]);
 
     return (
         <ContextMenuButton

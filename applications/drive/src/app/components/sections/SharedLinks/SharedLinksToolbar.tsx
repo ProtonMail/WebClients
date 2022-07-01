@@ -1,7 +1,11 @@
+import { useMemo } from 'react';
+
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
+import { useSelection } from '../../FileBrowser';
+import { getSelectedItems } from '../helpers';
 import {
     DetailsButton,
     DownloadButton,
@@ -15,10 +19,17 @@ import { StopSharingButton } from './ToolbarButtons';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    items: DecryptedLink[];
 }
 
-const SharedLinksToolbar = ({ shareId, selectedItems }: Props) => {
+const SharedLinksToolbar = ({ shareId, items }: Props) => {
+    const selectionControls = useSelection()!;
+
+    const selectedItems = useMemo(
+        () => getSelectedItems(items, selectionControls!.selectedItemIds),
+        [items, selectionControls!.selectedItemIds]
+    );
+
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return (
@@ -30,14 +41,14 @@ const SharedLinksToolbar = ({ shareId, selectedItems }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
+                <PreviewButton shareId={shareId} selectedLinks={selectedItems} />
+                <DownloadButton shareId={shareId} selectedLinks={selectedItems} />
                 <Vr />
-                <RenameButton shareId={shareId} selectedItems={selectedItems} />
-                <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                <RenameButton shareId={shareId} selectedLinks={selectedItems} />
+                <DetailsButton shareId={shareId} linkIds={selectionControls.selectedItemIds} />
                 <Vr />
-                <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
-                <StopSharingButton shareId={shareId} selectedItems={selectedItems} />
+                <ShareLinkButton shareId={shareId} selectedLinks={selectedItems} />
+                <StopSharingButton shareId={shareId} selectedLinks={selectedItems} />
             </>
         );
     };

@@ -7,9 +7,10 @@ import { areUint8Arrays } from '@proton/utils/array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 import { MAX_THREADS_PER_DOWNLOAD, BATCH_REQUEST_SIZE, RESPONSE_CODE } from '@proton/shared/lib/drive/constants';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
+
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { ObserverStream, untilStreamEnd } from '../../../utils/stream';
 import { waitUntil } from '../../../utils/async';
 import { isTransferCancelError } from '../../../utils/transfer';
@@ -21,7 +22,7 @@ import downloadBlock from './downloadBlock';
 
 export type DownloadBlocksCallbacks = Omit<
     DownloadCallbacks,
-    'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys'
+    'getBlocks' | 'onInit' | 'onSignatureIssue' | 'getChildren' | 'getKeys' | 'onProgress'
 > & {
     checkFileSignatures?: (abortSignal: AbortSignal) => Promise<void>;
     getBlocks: (
@@ -40,6 +41,7 @@ export type DownloadBlocksCallbacks = Omit<
         verifiedPromise: Promise<VERIFICATION_STATUS>;
     }>;
     checkBlockSignature?: (abortSignal: AbortSignal, verifiedPromise: Promise<VERIFICATION_STATUS>) => Promise<void>;
+    onProgress?: (bytes: number) => void;
 };
 
 /**
@@ -169,18 +171,20 @@ export default function initDownloadBlocks(
 
             let ongoingNumberOfDownloads = 0;
 
-            const retryDownload = async (activeIndex: number) => {
-                abortController = new AbortController();
-                const newBlocks = await getBlocks(abortController.signal, {
-                    FromBlockIndex: fromBlockIndex,
-                    PageSize: BATCH_REQUEST_SIZE,
-                });
-                if (areUint8Arrays(newBlocks)) {
-                    throw new Error('Unexpected Uint8Array block data');
-                }
+            const retryDownload = async (activeIndex: number, refetchBlocks = false) => {
                 revertProgress();
-                blocksOrBuffer = newBlocks;
-                blocks = newBlocks;
+                abortController = new AbortController();
+                if (refetchBlocks) {
+                    const newBlocks = await getBlocks(abortController.signal, {
+                        FromBlockIndex: fromBlockIndex,
+                        PageSize: BATCH_REQUEST_SIZE,
+                    });
+                    if (areUint8Arrays(newBlocks)) {
+                        throw new Error('Unexpected Uint8Array block data');
+                    }
+                    blocksOrBuffer = newBlocks;
+                    blocks = newBlocks;
+                }
 
                 let retryCount = 0;
                 /*
@@ -275,7 +279,9 @@ export default function initDownloadBlocks(
                      */
                     if (e.status === HTTP_STATUS_CODE.NOT_FOUND && numRetries < MAX_RETRIES_BEFORE_FAIL) {
                         console.warn(`Blocks for download might have expired. Retry num: ${numRetries}`);
-                        return retryDownload(activeIndex);
+                        // Wait for all blocks to be finished to have proper activeIndex.
+                        await waitUntil(() => ongoingNumberOfDownloads === 0);
+                        return retryDownload(activeIndex, true);
                     }
 
                     // If we experience some slight issue on server side, lets try
@@ -289,6 +295,11 @@ export default function initDownloadBlocks(
                     // by automatic retry.
                     if (getIsConnectionIssue(e) && numRetries < MAX_RETRIES_BEFORE_FAIL) {
                         console.warn(`Connection issue for block #${activeIndex} download. Retry num: ${numRetries}`);
+                        // Wait for all blocks to be finished to have proper activeIndex.
+                        await waitUntil(() => ongoingNumberOfDownloads === 0);
+                        // Do not refetch blocks. Its not needed at this stage, and
+                        // also getting block information is not protected from
+                        // connection issues for now.
                         return retryDownload(activeIndex);
                     }
 

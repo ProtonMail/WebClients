@@ -2,14 +2,6 @@ import { SessionKey } from 'pmcrypto';
 import { AuthVersion } from '../../authentication/interface';
 import { DriveFileBlock } from './file';
 import { LinkType } from './link';
-import { TransferState } from './transfer';
-
-export enum TransferStatePublic {
-    Progress = TransferState.Progress,
-    Done = TransferState.Done,
-    Error = TransferState.Error,
-    Canceled = TransferState.Canceled,
-}
 
 type WithSRPPayload<T extends any> = T & {
     SRPModulusID: string;

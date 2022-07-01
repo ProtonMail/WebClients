@@ -11,28 +11,25 @@ import {
     DropdownMenuButton,
     ToolbarButton,
 } from '@proton/components';
-import { MEMBER_SHARING_ENABLED } from '@proton/shared/lib/drive/constants';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { useActions } from '../../../../store';
+import { DecryptedLink, useActions } from '../../../../store';
 import useToolbarActions from '../../../useOpenModal';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
 }
 
-const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
+const ActionsDropdown = ({ shareId, selectedLinks }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const { openDetails, openFilesDetails, openMoveToFolder, openRename, openSharing, openLinkSharing } =
-        useToolbarActions();
+    const { openDetails, openFilesDetails, openMoveToFolder, openRename, openLinkSharing } = useToolbarActions();
     const { trashLinks } = useActions();
 
-    const hasFoldersSelected = selectedItems.some((item) => !item.IsFile);
-    const isMultiSelect = selectedItems.length > 1;
-    const hasShare = !!selectedItems[0]?.ShareUrlShareID;
-    const hasSharedLink = !!selectedItems[0]?.SharedUrl;
+    const hasFoldersSelected = selectedLinks.some((item) => !item.isFile);
+    const isMultiSelect = selectedLinks.length > 1;
+    const hasSharedLink = !!selectedLinks[0]?.shareUrl;
+    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
     const menuItems: {
         hidden: boolean;
@@ -42,77 +39,53 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
         action: () => void;
     }[] = [
         {
-            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
-            name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
-            icon: 'users',
-            testId: 'actions-dropdown-share',
-            action: () => openSharing(shareId, selectedItems[0]),
-        },
-        {
             hidden: isMultiSelect || hasFoldersSelected,
             name: hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',
-            action: () => openLinkSharing(shareId, selectedItems[0]),
+            action: () => openLinkSharing(shareId, selectedLinkIds[0]),
         },
         {
             hidden: false,
             name: c('Action').t`Move to folder`,
             icon: 'arrows-cross',
             testId: 'actions-dropdown-move',
-            action: () => openMoveToFolder(shareId, selectedItems),
+            action: () => openMoveToFolder(shareId, selectedLinks),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Rename`,
             icon: 'pen-square',
             testId: 'actions-dropdown-rename',
-            action: () => openRename(shareId, selectedItems[0]),
+            action: () => openRename(shareId, selectedLinks[0]),
         },
         {
             hidden: isMultiSelect,
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => openDetails(shareId, selectedItems[0]),
+            action: () => openDetails(shareId, selectedLinkIds[0]),
         },
         {
             hidden: !isMultiSelect || hasFoldersSelected,
             name: c('Action').t`Details`,
             icon: 'info-circle',
             testId: 'actions-dropdown-details',
-            action: () => openFilesDetails(selectedItems),
+            action: () => openFilesDetails(shareId, selectedLinkIds),
         },
         {
             hidden: false,
             name: c('Action').t`Move to trash`,
             icon: 'trash',
             testId: 'actions-dropdown-trash',
-            action: () =>
-                trashLinks(
-                    new AbortController().signal,
-                    shareId,
-                    selectedItems.map((item) => ({
-                        parentLinkId: item.ParentLinkID,
-                        linkId: item.LinkID,
-                        name: item.Name,
-                        isFile: item.IsFile,
-                    }))
-                ),
-        },
-        {
-            hidden: isMultiSelect || !MEMBER_SHARING_ENABLED,
-            name: hasShare ? c('Action').t`Share options` : c('Action').t`Share`,
-            icon: 'users',
-            testId: 'actions-dropdown-share',
-            action: () => openSharing(shareId, selectedItems[0]),
+            action: () => trashLinks(new AbortController().signal, shareId, selectedLinks),
         },
         {
             hidden: isMultiSelect,
             name: hasSharedLink ? c('Action').t`Sharing options` : c('Action').t`Share via link`,
             icon: 'link',
             testId: 'actions-dropdown-share-link',
-            action: () => openLinkSharing(shareId, selectedItems[0]),
+            action: () => openLinkSharing(shareId, selectedLinkIds[0]),
         },
     ];
 
@@ -139,7 +112,7 @@ const ActionsDropdown = ({ shareId, selectedItems }: Props) => {
     return (
         <>
             <ToolbarButton
-                disabled={!selectedItems.length}
+                disabled={!selectedLinks.length}
                 aria-describedby={uid}
                 ref={anchorRef}
                 aria-expanded={isOpen}

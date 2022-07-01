@@ -2,8 +2,8 @@ import { ReactNode } from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
 
 import { ModalsProvider } from '@proton/components';
-import { TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferState } from '../../../components/TransferManager/transfer';
 import { mockGlobalFile, testFile } from '../../../utils/test/file';
 import { TransferConflictStrategy } from '../interface';
 import { FileUpload, FolderUpload } from './interface';

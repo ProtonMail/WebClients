@@ -1,7 +1,6 @@
 import { VERIFICATION_STATUS } from 'pmcrypto';
 
-import { TransferState, TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
-
+import { TransferState, TransferMeta } from '../../../components/TransferManager/transfer';
 import { LinkDownload } from '../interface';
 
 export interface Download {
@@ -21,6 +20,19 @@ export interface Download {
     // exactly has the issue.
     signatureIssueLink?: LinkDownload;
     signatureStatus?: VERIFICATION_STATUS;
+}
+
+export interface DownloadProgresses {
+    [downloadId: string]: {
+        progress: number;
+        links: DownloadLinksProgresses;
+    };
+}
+export interface DownloadLinksProgresses {
+    [linkId: string]: {
+        total?: number;
+        progress: number;
+    };
 }
 
 export type UpdateFilter = string | ((params: UpdateCallbackParams) => boolean);

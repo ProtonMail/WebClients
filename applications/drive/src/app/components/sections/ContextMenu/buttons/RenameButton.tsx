@@ -1,16 +1,16 @@
 import { c } from 'ttag';
 
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { DecryptedLink } from '../../../../store';
 import useOpenModal from '../../../useOpenModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {
     shareId: string;
-    item: FileBrowserItem;
+    link: DecryptedLink;
     close: () => void;
 }
 
-const RenameButton = ({ shareId, item, close }: Props) => {
+const RenameButton = ({ shareId, link, close }: Props) => {
     const { openRename } = useOpenModal();
 
     return (
@@ -18,7 +18,7 @@ const RenameButton = ({ shareId, item, close }: Props) => {
             name={c('Action').t`Rename`}
             icon="pen-square"
             testId="context-menu-rename"
-            action={() => openRename(shareId, item)}
+            action={() => openRename(shareId, link)}
             close={close}
         />
     );

@@ -33,7 +33,12 @@ export default function useLinkPath() {
     const rootDefaultName = c('Title').t`My files`;
 
     const traverseLinksToRoot = useCallback(
-        async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<PathItem[]> => {
+        async (
+            abortSignal: AbortSignal,
+            shareId: string,
+            linkId: string,
+            useDefaultRootName = true
+        ): Promise<PathItem[]> => {
             const currentLinkMeta = await getLink(abortSignal, shareId, linkId);
             const path = [currentLinkMeta];
 
@@ -46,7 +51,7 @@ export default function useLinkPath() {
 
             return path.map((link) => ({
                 linkId: link.linkId,
-                name: link.parentLinkId ? link.name : rootDefaultName,
+                name: !useDefaultRootName || link.parentLinkId ? link.name : rootDefaultName,
                 isRoot: !!link.parentLinkId,
                 link,
             }));

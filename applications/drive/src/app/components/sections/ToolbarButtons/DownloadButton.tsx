@@ -1,36 +1,29 @@
 import { c } from 'ttag';
 
 import { Icon, ToolbarButton } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import { useDownload } from '../../../store';
+import { DecryptedLink, useDownload } from '../../../store';
 import { noSelection, hasFoldersSelected } from './utils';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    selectedLinks: DecryptedLink[];
     disabledFolders?: boolean;
 }
 
-const DownloadButton = ({ shareId, selectedItems, disabledFolders }: Props) => {
+const DownloadButton = ({ shareId, selectedLinks, disabledFolders }: Props) => {
     const { download } = useDownload();
 
     const onClick = () => {
         void download(
-            selectedItems.map((item) => ({
-                isFile: item.IsFile,
+            selectedLinks.map((link) => ({
+                ...link,
                 shareId,
-                linkId: item.LinkID,
-                name: item.Name,
-                mimeType: item.MIMEType,
-                size: item.Size,
-                signatureAddress: item.SignatureAddress,
-                signatureIssues: item.SignatureIssues,
             }))
         );
     };
 
-    if (noSelection(selectedItems) || (disabledFolders && hasFoldersSelected(selectedItems))) {
+    if (noSelection(selectedLinks) || (disabledFolders && hasFoldersSelected(selectedLinks))) {
         return null;
     }
 

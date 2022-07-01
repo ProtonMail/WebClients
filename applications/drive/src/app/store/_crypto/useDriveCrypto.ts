@@ -2,7 +2,7 @@ import { OpenPGPKey } from 'pmcrypto';
 import { useCallback } from 'react';
 import { c } from 'ttag';
 
-import { useGetAddresses, useGetAddressKeys, useNotifications } from '@proton/components';
+import { useGetAddresses, useGetAddressKeys, useNotifications, useAuthentication } from '@proton/components';
 import { Address } from '@proton/shared/lib/interfaces/Address';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { sign as signMessage } from '@proton/shared/lib/keys/driveKeys';
@@ -26,6 +26,7 @@ function useDriveCrypto() {
     const { createNotification } = useNotifications();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
+    const { UID } = useAuthentication();
 
     const getPrimaryAddress = useCallback(async () => {
         return getPrimaryAddressAsync(getAddresses).catch((error) => {
@@ -65,7 +66,13 @@ function useDriveCrypto() {
     );
 
     const getVerificationKey = useCallback(
-        async (email: string) => {
+        async (email?: string) => {
+            // If UID is empty, it means user is not logged in.
+            // We don't support checking signatures for public session yet
+            // so lets simply return no keys instead of firing exceptions.
+            if (!email || !UID) {
+                return [];
+            }
             const result = await getOwnAddressKeysAsync(email, getAddresses, getAddressKeys);
             return result?.publicKeys || [];
         },

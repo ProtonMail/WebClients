@@ -1,9 +1,7 @@
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
-import { Transfer, TransferMeta, TransfersStats, TransferState } from '@proton/shared/lib/interfaces/drive/transfer';
+import { Transfer, TransfersStats, TransferState } from '../components/TransferManager/transfer';
 import { ProgressBarStatus } from '../components/TransferManager/ProgressBar';
 import {
     calculateProgress,
-    getMetaForTransfer,
     getProgressBarStatus,
     isTransferActive,
     isTransferCanceled,
@@ -206,31 +204,6 @@ describe('trasfer utils', () => {
                 expect(isTransferCancelError(error)).toBeFalsy();
             });
         });
-    });
-
-    it(`getMetaForTransfer should map file browser item to trasfer meta`, () => {
-        const trasferMeta: TransferMeta = {
-            filename: 'Picture.png',
-            mimeType: 'image/png',
-            size: 1718133,
-        };
-
-        const fileBrowserItem: FileBrowserItem = {
-            LinkID: 'g5DPgsgSOQhwxfAmy4A-vVIxHd40lH8xRVg_4ulz69pz71x73bSa2QXEbKg151clLRB-CQQTCRNteaIBHL_iUz==',
-            MIMEType: trasferMeta.mimeType,
-            CreateTime: 1313241432,
-            ModifyTime: 1313241432,
-            RealModifyTime: 1313241432,
-            Name: trasferMeta.filename,
-            ParentLinkID: '43wqa2kRVXV1RqnTWI4X9374CLM6D1Pe-f0aletbcMuSZF5sL8L_dcMNgNecuzPO7Tsai08k6SS_ESuZ7vv3d5==',
-            Size: trasferMeta.size || 0,
-            Trashed: null,
-            UrlsExpired: false,
-            IsFile: false,
-            HasThumbnail: false,
-            SignatureAddress: 'address',
-        };
-        expect(getMetaForTransfer(fileBrowserItem)).toEqual(trasferMeta);
     });
 
     describe('getProgressBarStatus', () => {

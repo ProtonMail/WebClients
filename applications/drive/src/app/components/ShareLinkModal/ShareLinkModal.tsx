@@ -3,12 +3,13 @@ import { c } from 'ttag';
 
 import { ModalTwo, useLoading, useNotifications } from '@proton/components';
 import { SharedURLSessionKeyPayload, ShareURL } from '@proton/shared/lib/interfaces/drive/sharing';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '@proton/shared/lib/drive/constants';
 
 import useConfirm from '../../hooks/util/useConfirm';
 import {
+    DecryptedLink,
     useShareUrl,
+    useLinkView,
     hasCustomPassword,
     hasGeneratedPasswordIncluded,
     splitGeneratedAndCustomPassword,
@@ -18,12 +19,12 @@ import ModalContentLoader from '../ModalContentLoader';
 import GeneratedLinkState from './GeneratedLinkState';
 import ErrorState from './ErrorState';
 
-const getLoadingMessage = (item: FileBrowserItem) => {
-    if (item.SharedUrl) {
-        return item.IsFile ? c('Info').t`Preparing link to file` : c('Info').t`Preparing link to folder`;
+const getLoadingMessage = (item: DecryptedLink) => {
+    if (item.shareUrl) {
+        return item.isFile ? c('Info').t`Preparing link to file` : c('Info').t`Preparing link to folder`;
     }
 
-    return item.IsFile ? c('Info').t`Creating link to file` : c('Info').t`Creating link to folder`;
+    return item.isFile ? c('Info').t`Creating link to file` : c('Info').t`Creating link to folder`;
 };
 
 const getConfirmationMessage = (isFile: boolean) => {
@@ -37,8 +38,8 @@ const getConfirmationMessage = (isFile: boolean) => {
 interface Props {
     onClose?: () => void;
     modalTitleID?: string;
-    item: FileBrowserItem;
     shareId: string;
+    linkId: string;
     open?: boolean;
 }
 
@@ -47,7 +48,9 @@ enum ShareLinkModalState {
     GeneratedLink,
 }
 
-function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, item, open }: Props) {
+function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, linkId, open }: Props) {
+    const { link, isLoading: linkIsLoading, error: linkError } = useLinkView(shareId, linkId);
+
     const [modalState, setModalState] = useState(ShareLinkModalState.Loading);
     const [isSharingFormDirty, setIsSharingFormDirty] = useState(false);
     const [deleting, withDeleting] = useLoading(false);
@@ -73,7 +76,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         }
 
         const abortController = new AbortController();
-        loadOrCreateShareUrl(abortController.signal, shareId, item.LinkID)
+        loadOrCreateShareUrl(abortController.signal, shareId, linkId)
             .then((shareUrlInfo) => {
                 setShareUrlInfo(shareUrlInfo);
                 setPasswordToggledOn(hasCustomPassword(shareUrlInfo.ShareURL));
@@ -91,7 +94,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         return () => {
             abortController.abort();
         };
-    }, [shareId, item.LinkID, shareUrlInfo?.ShareURL.ShareID]);
+    }, [shareId, linkId, shareUrlInfo?.ShareURL.ShareID]);
 
     const handleSaveSharedLink = async (newCustomPassword?: string, newDuration?: number | null) => {
         if (!shareUrlInfo) {
@@ -157,7 +160,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
     };
 
     const handleDeleteLinkClick = () => {
-        if (!shareUrlInfo) {
+        if (!link || !shareUrlInfo) {
             return;
         }
 
@@ -173,7 +176,7 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
         openConfirmModal({
             title: c('Title').t`Stop sharing with everyone?`,
             confirm: c('Action').t`Stop sharing`,
-            message: getConfirmationMessage(item.IsFile),
+            message: getConfirmationMessage(link.isFile),
             canUndo: true,
             onConfirm: () =>
                 withDeleting(deleteLink()).catch(() => {
@@ -211,13 +214,30 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
     const url = getSharedLink(shareUrlInfo?.ShareURL);
 
     const renderModalState = () => {
+        if (linkIsLoading) {
+            return <ModalContentLoader>{c('Info').t`Loading link`}</ModalContentLoader>;
+        }
+
+        if (linkError || !link) {
+            return (
+                <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={linkError} isCreationError={!link} />
+            );
+        }
+
         if (loading) {
-            const loadingMessage = getLoadingMessage(item);
+            const loadingMessage = getLoadingMessage(link);
             return <ModalContentLoader>{loadingMessage}</ModalContentLoader>;
         }
 
-        if (error || !shareUrlInfo || !item || !url) {
-            return <ErrorState modalTitleID={modalTitleID} onClose={onClose} error={error} isCreationError={!item} />;
+        if (error || !shareUrlInfo || !url) {
+            return (
+                <ErrorState
+                    modalTitleID={modalTitleID}
+                    onClose={onClose}
+                    error={error}
+                    isCreationError={!shareUrlInfo}
+                />
+            );
         }
 
         if (modalState === ShareLinkModalState.GeneratedLink) {
@@ -228,8 +248,8 @@ function ShareLinkModal({ modalTitleID = 'share-link-modal', onClose, shareId, i
                     modalTitleID={modalTitleID}
                     passwordToggledOn={passwordToggledOn}
                     expirationToggledOn={expirationToggledOn}
-                    itemName={item.Name}
-                    isFile={item.IsFile}
+                    itemName={link.name}
+                    isFile={link.isFile}
                     onClose={handleClose}
                     onIncludePasswordToggle={handleToggleIncludePassword}
                     onIncludeExpirationTimeToogle={handleToggleIncludeExpirationTime}
