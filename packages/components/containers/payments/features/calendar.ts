@@ -1,6 +1,8 @@
 import { c, msgid } from 'ttag';
-import { CALENDAR_APP_NAME, PLANS } from '@proton/shared/lib/constants';
+import { CALENDAR_APP_NAME, PLAN_SERVICES, PLANS } from '@proton/shared/lib/constants';
 import { Audience, PlansMap } from '@proton/shared/lib/interfaces';
+import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
 import { PlanCardFeature, PlanCardFeatureDefinition } from './interface';
 
@@ -38,7 +40,9 @@ const getEndToEndEncryption = (): PlanCardFeatureDefinition => {
     };
 };
 
-const getShareFeature = (included: boolean, audience?: Audience): PlanCardFeatureDefinition => {
+const getShareFeature = (plansMap: PlansMap, plan: PLANS, audience?: Audience): PlanCardFeatureDefinition => {
+    const included = hasBit(plansMap[plan]?.Services, PLAN_SERVICES.MAIL);
+
     return {
         featureName: c('new_plans: feature').t`Share calendar via link`,
         tooltip:
@@ -74,13 +78,19 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
             name: 'calendars',
             plans: {
                 [PLANS.FREE]: getNCalendarsFeature(1),
-                [PLANS.BUNDLE]: getNCalendarsFeature(plansMap[PLANS.BUNDLE]?.MaxCalendars || 20),
-                [PLANS.MAIL]: getNCalendarsFeature(plansMap[PLANS.MAIL]?.MaxCalendars || 20),
-                [PLANS.VPN]: getNCalendarsFeature(plansMap[PLANS.VPN]?.MaxCalendars || 1),
-                [PLANS.DRIVE]: getNCalendarsFeature(plansMap[PLANS.DRIVE]?.MaxCalendars || 1),
+                [PLANS.BUNDLE]: getNCalendarsFeature(plansMap[PLANS.BUNDLE]?.MaxCalendars || MAX_CALENDARS_PAID),
+                [PLANS.MAIL]: getNCalendarsFeature(plansMap[PLANS.MAIL]?.MaxCalendars || MAX_CALENDARS_PAID),
+                [PLANS.VPN]: getNCalendarsFeature(plansMap[PLANS.VPN]?.MaxCalendars || MAX_CALENDARS_FREE),
+                [PLANS.DRIVE]: getNCalendarsFeature(plansMap[PLANS.DRIVE]?.MaxCalendars || MAX_CALENDARS_FREE),
                 [PLANS.FAMILY]: getNCalendarsFeature(plansMap[PLANS.FAMILY]?.MaxCalendars || 100),
-                [PLANS.BUNDLE_PRO]: getNCalendarsFeature(plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars || 20, Audience.B2B),
-                [PLANS.MAIL_PRO]: getNCalendarsFeature(plansMap[PLANS.MAIL_PRO]?.MaxCalendars || 20, Audience.B2B),
+                [PLANS.BUNDLE_PRO]: getNCalendarsFeature(
+                    plansMap[PLANS.BUNDLE_PRO]?.MaxCalendars || MAX_CALENDARS_PAID,
+                    Audience.B2B
+                ),
+                [PLANS.MAIL_PRO]: getNCalendarsFeature(
+                    plansMap[PLANS.MAIL_PRO]?.MaxCalendars || MAX_CALENDARS_PAID,
+                    Audience.B2B
+                ),
             },
         },
         {
@@ -99,14 +109,14 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
         {
             name: 'share',
             plans: {
-                [PLANS.FREE]: getShareFeature(false),
-                [PLANS.BUNDLE]: getShareFeature(true),
-                [PLANS.MAIL]: getShareFeature(true),
-                [PLANS.VPN]: getShareFeature(true),
-                [PLANS.DRIVE]: getShareFeature(true),
-                [PLANS.FAMILY]: getShareFeature(true),
-                [PLANS.BUNDLE_PRO]: getShareFeature(true, Audience.B2B),
-                [PLANS.MAIL_PRO]: getShareFeature(true, Audience.B2B),
+                [PLANS.FREE]: getShareFeature(plansMap, PLANS.FREE),
+                [PLANS.BUNDLE]: getShareFeature(plansMap, PLANS.BUNDLE),
+                [PLANS.MAIL]: getShareFeature(plansMap, PLANS.MAIL),
+                [PLANS.VPN]: getShareFeature(plansMap, PLANS.VPN),
+                [PLANS.DRIVE]: getShareFeature(plansMap, PLANS.DRIVE),
+                [PLANS.FAMILY]: getShareFeature(plansMap, PLANS.FAMILY),
+                [PLANS.BUNDLE_PRO]: getShareFeature(plansMap, PLANS.BUNDLE_PRO, Audience.B2B),
+                [PLANS.MAIL_PRO]: getShareFeature(plansMap, PLANS.MAIL_PRO, Audience.B2B),
             },
         },
         {

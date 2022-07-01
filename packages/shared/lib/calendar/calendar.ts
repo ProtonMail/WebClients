@@ -1,7 +1,7 @@
 import isTruthy from '@proton/utils/isTruthy';
 import unary from '@proton/utils/unary';
 import { hasBit, toggleBit } from '../helpers/bitset';
-import { CALENDAR_FLAGS, MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER, SETTINGS_VIEW } from './constants';
+import { CALENDAR_FLAGS, MAX_CALENDARS_FREE, MAX_CALENDARS_PAID, SETTINGS_VIEW } from './constants';
 import { Calendar, CalendarUserSettings, CalendarWithMembers, VisualCalendar } from '../interfaces/calendar';
 import { getIsPersonalCalendar } from './subscribe/helpers';
 import { Address, Api } from '../interfaces';
@@ -88,23 +88,20 @@ export const getVisualCalendars = <T>(
         .filter(isTruthy);
 };
 
-export const getCanCreateCalendar = (
-    activeCalendars: Calendar[],
-    disabledCalendars: Calendar[],
-    calendars: Calendar[],
-    isFree: boolean
-) => {
+export const getCanCreateCalendar = (calendars: Calendar[], isFreeUser: boolean) => {
+    const activeCalendars = getProbablyActiveCalendars(calendars);
+    const disabledCalendars = calendars.filter(unary(getIsCalendarDisabled));
     const totalActionableCalendars = activeCalendars.length + disabledCalendars.length;
     if (totalActionableCalendars < calendars.length) {
         // calendar keys need to be reactivated before being able to create a calendar
         return false;
     }
-    const calendarLimit = isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+    const calendarLimit = isFreeUser ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
     return totalActionableCalendars < calendarLimit;
 };
 
-export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFree: boolean) => {
-    const calendarLimit = isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+export const getMaxUserCalendarsDisabled = (disabledCalendars: Calendar[], isFreeUser: boolean) => {
+    const calendarLimit = isFreeUser ? MAX_CALENDARS_FREE : MAX_CALENDARS_PAID;
 
     return disabledCalendars.length === calendarLimit;
 };

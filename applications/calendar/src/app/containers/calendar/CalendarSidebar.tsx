@@ -84,12 +84,12 @@ const CalendarSidebar = ({
 
     const canAddPersonalCalendars = !getHasUserReachedCalendarLimit({
         calendarsLength: personalCalendars.length,
-        isFreeUser: user.isFree,
+        isFreeUser: !user.hasPaidMail,
         isSubscribedCalendar: false,
     });
     const canAddSubscribedCalendars = !getHasUserReachedCalendarLimit({
         calendarsLength: otherCalendars.length,
-        isFreeUser: user.isFree,
+        isFreeUser: !user.hasPaidMail,
         isSubscribedCalendar: true,
     });
 

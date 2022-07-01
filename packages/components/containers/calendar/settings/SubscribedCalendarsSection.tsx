@@ -3,7 +3,7 @@ import { c, msgid } from 'ttag';
 
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { MAX_SUBSCRIBED_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
+import { MAX_SUBSCRIBED_CALENDARS } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
@@ -89,9 +89,7 @@ const SubscribedCalendarsSection = ({
     };
 
     const canAddCalendar =
-        user.hasNonDelinquentScope &&
-        activeAddresses.length > 0 &&
-        calendars.length < MAX_SUBSCRIBED_CALENDARS_PER_USER;
+        user.hasNonDelinquentScope && activeAddresses.length > 0 && calendars.length < MAX_SUBSCRIBED_CALENDARS;
 
     const { deleteCalendarModal, calendarModal, subscribeCalendarModal } = modalsMap;
 
@@ -144,9 +142,9 @@ const SubscribedCalendarsSection = ({
                 isFeatureUnavailable={unavailable}
                 add={c('Action').t`Add calendar`}
                 calendarLimitReachedText={c('Calendar limit warning').ngettext(
-                    msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendar.`,
-                    `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS_PER_USER} subscribed calendars.`,
-                    MAX_SUBSCRIBED_CALENDARS_PER_USER
+                    msgid`You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendar.`,
+                    `You have reached the maximum of ${MAX_SUBSCRIBED_CALENDARS} subscribed calendars.`,
+                    MAX_SUBSCRIBED_CALENDARS
                 )}
                 description={
                     <SettingsParagraph>

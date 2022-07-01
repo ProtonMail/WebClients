@@ -5,9 +5,9 @@ import { render, screen } from '@testing-library/react';
 
 import createCache from '@proton/shared/lib/helpers/cache';
 
-import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { CacheProvider } from '../../cache';
 import ModalsProvider from '../../modals/Provider';
 import PersonalCalendarsSection, { PersonalCalendarsSectionProps } from './PersonalCalendarsSection';
@@ -34,7 +34,7 @@ function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {
         calendars: [],
         activeCalendars: [],
         // defaultCalendar?: Calendar;
-        user: { isFree: true, hasNonDelinquentScope: true } as UserModel,
+        user: { isFree: true, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel,
     };
 
     return (
@@ -50,14 +50,14 @@ function renderComponent(props?: Partial<PersonalCalendarsSectionProps>) {
 
 describe('PersonalCalendarsSection', () => {
     it('displays the calendar limit warning when the limit is reached', () => {
-        const calendarsFree = Array(MAX_CALENDARS_PER_FREE_USER)
+        const calendarsFree = Array(MAX_CALENDARS_FREE)
             .fill(1)
             .map((_, index) => ({
                 ID: `${index}`,
                 Name: `calendar${index}`,
                 color: '#f00',
             })) as unknown as VisualCalendar[];
-        const calendarsPaid = Array(MAX_CALENDARS_PER_USER)
+        const calendarsPaid = Array(MAX_CALENDARS_PAID)
             .fill(1)
             .map((_, index) => ({
                 ID: `${index}`,
@@ -80,7 +80,45 @@ describe('PersonalCalendarsSection', () => {
         ).toBeInTheDocument();
         expect(
             screen.getByText(
-                `Upgrade to a paid plan to create up to ${MAX_CALENDARS_PER_USER} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`
+                `Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`
+            )
+        ).toBeInTheDocument();
+        expect(screen.getByText(createCalendarCopy)).toBeDisabled();
+
+        // Free user with extra calendars due to EasySwitch
+        rerender(
+            renderComponent({
+                calendars: calendarsPaid,
+                user: { isFree: true, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel,
+            })
+        );
+        expect(
+            screen.getByText(
+                /You have reached the maximum number of personal calendars you can create within your plan./
+            )
+        ).toBeInTheDocument();
+        expect(
+            screen.getByText(
+                `Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`
+            )
+        ).toBeInTheDocument();
+        expect(screen.getByText(createCalendarCopy)).toBeDisabled();
+
+        // Paid VPN user with no Mail can only create one calendar
+        rerender(
+            renderComponent({
+                calendars: calendarsFree,
+                user: { isFree: false, hasPaidMail: false, hasNonDelinquentScope: true } as UserModel,
+            })
+        );
+        expect(
+            screen.getByText(
+                /You have reached the maximum number of personal calendars you can create within your plan./
+            )
+        ).toBeInTheDocument();
+        expect(
+            screen.getByText(
+                `Upgrade to a Mail paid plan to create up to ${MAX_CALENDARS_PAID} calendars, allowing you to make calendars for work, to share with friends, and just for yourself.`
             )
         ).toBeInTheDocument();
         expect(screen.getByText(createCalendarCopy)).toBeDisabled();
@@ -89,7 +127,7 @@ describe('PersonalCalendarsSection', () => {
         rerender(
             renderComponent({
                 calendars: calendarsPaid,
-                user: { isFree: false, hasNonDelinquentScope: true } as UserModel,
+                user: { isFree: false, hasPaidMail: true, hasNonDelinquentScope: true } as UserModel,
             })
         );
 
@@ -104,7 +142,7 @@ describe('PersonalCalendarsSection', () => {
         rerender(
             renderComponent({
                 calendars: calendarsPaid,
-                user: { isFree: false, hasNonDelinquentScope: false } as UserModel,
+                user: { isFree: false, hasPaidMail: true, hasNonDelinquentScope: false } as UserModel,
             })
         );
 
