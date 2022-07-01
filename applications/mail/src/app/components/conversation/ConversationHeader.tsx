@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { classnames } from '@proton/components';
 
 import NumMessages from './NumMessages';
@@ -13,14 +14,18 @@ interface Props {
 
 const ConversationHeader = ({ className, loading, element }: Props) => {
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
+    const highlightSubject = shouldHighlight();
 
     const isConversation = testIsConversation(element);
-    const subjectElement =
-        !!element?.Subject && shouldHighlight() ? (
-            highlightMetadata(element.Subject, true).resultJSX
-        ) : (
-            <span>{element?.Subject}</span>
-        );
+    const subjectElement = useMemo(
+        () =>
+            !!element?.Subject && highlightSubject ? (
+                highlightMetadata(element.Subject, true).resultJSX
+            ) : (
+                <span>{element?.Subject}</span>
+            ),
+        [element, highlightSubject]
+    );
 
     return (
         <header
