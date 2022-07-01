@@ -1,4 +1,3 @@
-import { useMemo } from 'react';
 import { c } from 'ttag';
 
 import {
@@ -68,17 +67,7 @@ const AccountEasySwitchSection = () => {
     const [calendarUserSettings = DEFAULT_CALENDAR_USER_SETTINGS, loadingCalendarUserSettings] =
         useCalendarUserSettings();
 
-    const memoizedCalendars = useMemo(
-        () => getVisualCalendars(calendars || [], addresses || []),
-        [calendars, addresses]
-    );
-
-    const { activeCalendars } = useMemo(() => {
-        return {
-            calendars: memoizedCalendars,
-            activeCalendars: getProbablyActiveCalendars(memoizedCalendars),
-        };
-    }, [memoizedCalendars]);
+    const activeCalendars = getProbablyActiveCalendars(getVisualCalendars(calendars || [], addresses || []));
 
     const [personalActiveCalendars] = partition<VisualCalendar>(activeCalendars, getIsPersonalCalendar);
 
@@ -118,7 +107,7 @@ const AccountEasySwitchSection = () => {
                     {...importCalendarModal}
                     isOpen={importCalendarModal.open}
                     defaultCalendar={defaultCalendar!}
-                    calendars={activeCalendars}
+                    calendars={personalActiveCalendars}
                 />
             )}
 
