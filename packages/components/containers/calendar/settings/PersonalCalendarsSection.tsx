@@ -3,11 +3,11 @@ import { c } from 'ttag';
 
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getActiveAddresses } from '@proton/shared/lib/helpers/address';
-import { MAX_CALENDARS_PER_FREE_USER, MAX_CALENDARS_PER_USER } from '@proton/shared/lib/calendar/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ModalWithProps } from '@proton/shared/lib/interfaces/Modal';
 
+import { MAX_CALENDARS_FREE, MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { AlertModal, Button, useModalState } from '../../../components';
 import { useApi, useEventManager, useNotifications } from '../../../hooks';
 import { useModalsMap } from '../../../hooks/useModalsMap';
@@ -156,7 +156,7 @@ const PersonalCalendarsSection = ({
         });
     };
 
-    const calendarsLimit = user.isFree ? MAX_CALENDARS_PER_FREE_USER : MAX_CALENDARS_PER_USER;
+    const calendarsLimit = user.hasPaidMail ? MAX_CALENDARS_PAID : MAX_CALENDARS_FREE;
     const calendarLimitReachedText = c('Calendar limit warning')
         .t`You have reached the maximum number of personal calendars you can create within your plan.`;
     const isBelowLimit = calendars.length < calendarsLimit;

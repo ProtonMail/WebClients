@@ -42,7 +42,7 @@ jest.mock('@proton/components/hooks/useNotifications', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useUser', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ isFree: true }, false]),
+    default: jest.fn(() => [{ hasPaidMail: false }, false]),
     useGetUser: jest.fn(),
 }));
 
