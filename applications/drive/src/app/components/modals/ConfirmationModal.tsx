@@ -14,6 +14,7 @@ import {
 
 export interface ConfirmationModalProps {
     onClose?: () => void;
+    onCancel?: () => void;
     onSubmit?: () => Promise<void>;
     title?: string;
     children?: ReactNode;
@@ -31,6 +32,7 @@ export const ConfirmationModal = ({
     loading,
     title,
     onClose,
+    onCancel,
     onSubmit,
     size = 'large',
     children,
@@ -66,7 +68,7 @@ export const ConfirmationModal = ({
                 </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button type="reset" onClick={onClose} disabled={isLoading}>
+                <Button type="reset" onClick={onCancel} disabled={isLoading}>
                     {cancelText}
                 </Button>
                 <ErrorButton type="submit" loading={isLoading}>

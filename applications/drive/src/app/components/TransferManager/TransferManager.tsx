@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useMemo, useState } from 'react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
+
+import noop from '@proton/utils/noop';
 import {
     useToggle,
     classnames,
@@ -15,8 +17,10 @@ import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 import busy from '@proton/shared/lib/busy';
 
 import useConfirm from '../../hooks/util/useConfirm';
+import { isTransferFailed } from '../../utils/transfer';
 import { useTransfersView } from '../../store';
 import { Download, STATE_TO_GROUP_MAP, TransferGroup, TransferType, TransfersStats, Upload } from './transfer';
+import useTransferControls from './useTransferControls';
 import Header from './Header';
 import Transfer from './TransferItem';
 import HeaderButtons from './HeaderButtons';
@@ -69,13 +73,21 @@ const TransferManager = ({
     stats,
     onClear,
     hasActiveTransfer,
+    numberOfFailedTransfer,
 }: {
     downloads: Download[];
     uploads: Upload[];
     stats: TransfersStats;
     onClear: () => void;
     hasActiveTransfer: boolean;
+    numberOfFailedTransfer: {
+        total: number;
+        downloads: number;
+        uploads: number;
+    };
 }) => {
+    const transferManagerControls = useTransferControls();
+
     const containerRef = useRef<HTMLDivElement>(null);
     const headerRef = useRef<HTMLDivElement>(null);
 
@@ -147,9 +159,52 @@ const TransferManager = ({
                 onConfirm: async () => onClear(),
                 canUndo: true,
             });
-        } else {
-            onClear();
+            return;
         }
+
+        if (numberOfFailedTransfer.total) {
+            let title = c('Title').ngettext(
+                msgid`${numberOfFailedTransfer.total} failed transfer`,
+                `${numberOfFailedTransfer.total} failed transfers`,
+                numberOfFailedTransfer.total
+            );
+            let message = c('Info').t`Not all files were transferred. Try uploading or downloading the files again.`;
+            if (numberOfFailedTransfer.uploads && !numberOfFailedTransfer.downloads) {
+                title = c('Title').ngettext(
+                    msgid`${numberOfFailedTransfer.total} failed upload`,
+                    `${numberOfFailedTransfer.total} failed uploads`,
+                    numberOfFailedTransfer.total
+                );
+                message = c('Info').t`Some files failed to upload. Try uploading the files again.`;
+            } else if (!numberOfFailedTransfer.uploads && numberOfFailedTransfer.downloads) {
+                title = c('Title').ngettext(
+                    msgid`${numberOfFailedTransfer.total} failed download`,
+                    `${numberOfFailedTransfer.total} failed downloads`,
+                    numberOfFailedTransfer.total
+                );
+                message = c('Info').t`Some files failed to download. Try downloading the files again.`;
+            }
+
+            openConfirmModal({
+                title,
+                message,
+                cancel: c('Action').t`Retry`,
+                confirm: c('Action').t`Close`,
+                onCancel: () => {
+                    return transferManagerControls.restartTransfers(
+                        entries.filter(({ transfer }) => {
+                            return isTransferFailed(transfer);
+                        })
+                    );
+                },
+                onClose: noop,
+                onConfirm: async () => onClear(),
+                canUndo: true,
+            });
+            return;
+        }
+
+        onClear();
     };
 
     const maxVisibleTransfers = isNarrow ? MAX_VISIBLE_TRANSFERS_MOBILE : MAX_VISIBLE_TRANSFERS;
@@ -268,7 +323,8 @@ const TransferManager = ({
  * width calculation.
  */
 const TransferManagerContainer = () => {
-    const { downloads, uploads, hasActiveTransfer, stats, clearAllTransfers } = useTransfersView();
+    const { downloads, uploads, hasActiveTransfer, numberOfFailedTransfer, stats, clearAllTransfers } =
+        useTransfersView();
 
     if (!downloads.length && !uploads.length) {
         return null;
@@ -281,6 +337,7 @@ const TransferManagerContainer = () => {
             stats={stats}
             onClear={clearAllTransfers}
             hasActiveTransfer={hasActiveTransfer}
+            numberOfFailedTransfer={numberOfFailedTransfer}
         />
     );
 };

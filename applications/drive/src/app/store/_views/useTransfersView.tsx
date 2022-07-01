@@ -9,7 +9,7 @@ import {
     TransferHistoryStats,
     TransfersHistoryStats,
 } from '../../components/TransferManager/transfer';
-import { isTransferProgress, isTransferFinished } from '../../utils/transfer';
+import { isTransferProgress, isTransferFinished, isTransferError } from '../../utils/transfer';
 import { useDownloadProvider } from '../_downloads';
 import { useUpload } from '../_uploads';
 
@@ -25,6 +25,13 @@ export default function useTransfersView() {
 
     const transfers = useMemo(() => [...downloads, ...uploads], [downloads, uploads]);
     const hasActiveTransfer = useMemo(() => !transfers.every(isTransferFinished), [transfers]);
+    const numberOfFailedTransfer = useMemo(() => {
+        return {
+            total: transfers.filter(isTransferError).length,
+            downloads: downloads.filter(isTransferError).length,
+            uploads: uploads.filter(isTransferError).length,
+        };
+    }, [transfers, downloads, uploads]);
 
     const getTransferProgresses = useCallback(() => {
         return {
@@ -43,6 +50,7 @@ export default function useTransfersView() {
         downloads,
         uploads,
         hasActiveTransfer,
+        numberOfFailedTransfer,
         stats,
         clearAllTransfers,
     };
