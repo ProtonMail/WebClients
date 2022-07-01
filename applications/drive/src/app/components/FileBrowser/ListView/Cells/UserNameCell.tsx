@@ -1,6 +1,6 @@
 import { useUser } from '@proton/components';
 
-const UserNameCell = () => {
+export const UserNameCell = () => {
     const [{ Name }] = useUser();
 
     return (
@@ -9,5 +9,3 @@ const UserNameCell = () => {
         </div>
     );
 };
-
-export default UserNameCell;

@@ -1,15 +1,16 @@
+import { useMemo } from 'react';
+
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
 import { Vr } from '@proton/atoms';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
 import {
     DetailsButton,
     DownloadButton,
     LayoutButton,
     PreviewButton,
     RenameButton,
-    ShareButton,
     ShareFileButton,
     ShareLinkButton,
 } from '../ToolbarButtons';
@@ -21,15 +22,24 @@ import {
     UploadFileButton,
     UploadFolderButton,
 } from './ToolbarButtons';
+import { useSelection } from '../../FileBrowser';
+import { getSelectedItems } from '../helpers';
+
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    items: DecryptedLink[];
     showOptionsForNoSelection?: boolean;
 }
 
-const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true }: Props) => {
+const DriveToolbar = ({ shareId, items, showOptionsForNoSelection = true }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { isNarrow } = useActiveBreakpoint();
+    const selectionControls = useSelection()!;
+
+    const selectedItems = useMemo(
+        () => getSelectedItems(items, selectionControls!.selectedItemIds),
+        [items, selectionControls!.selectedItemIds]
+    );
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
@@ -54,20 +64,20 @@ const DriveToolbar = ({ shareId, selectedItems, showOptionsForNoSelection = true
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} />
+                <PreviewButton shareId={shareId} selectedLinks={selectedItems} />
+                <DownloadButton shareId={shareId} selectedLinks={selectedItems} />
                 {isNarrow ? (
-                    <ActionsDropdown shareId={shareId} selectedItems={selectedItems} />
+                    <ActionsDropdown shareId={shareId} selectedLinks={selectedItems} />
                 ) : (
                     <>
-                        <ShareButton shareId={shareId} selectedItems={selectedItems} />
-                        <ShareLinkButton shareId={shareId} selectedItems={selectedItems} />
+                        <ShareLinkButton shareId={shareId} selectedLinks={selectedItems} />
                         <Vr />
-                        <MoveToFolderButton shareId={shareId} selectedItems={selectedItems} />
-                        <RenameButton shareId={shareId} selectedItems={selectedItems} />
-                        <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                        <MoveToFolderButton shareId={shareId} selectedLinks={selectedItems} />
+                        <RenameButton shareId={shareId} selectedLinks={selectedItems} />
+                        <DetailsButton shareId={shareId} linkIds={selectedItems.map(({ linkId }) => linkId)} />
                         <Vr />
-                        <MoveToTrashButton shareId={shareId} selectedItems={selectedItems} />
+                        <MoveToTrashButton shareId={shareId} selectedLinks={selectedItems} />
+
                     </>
                 )}
             </>

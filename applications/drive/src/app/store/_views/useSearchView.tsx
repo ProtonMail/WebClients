@@ -3,16 +3,16 @@ import { c } from 'ttag';
 
 import { useLoading, useNotifications } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { SearchSortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { useUserSettings } from '../_settings';
 import { useLinksListing } from '../_links';
 import { useSearchResults } from '../_search';
 import { reportError } from '../_utils';
-import { useMemoArrayNoMatterTheOrder, useAbortSignal, useSelection, useSorting, useSortingWithDefault } from './utils';
+import { useMemoArrayNoMatterTheOrder, useAbortSignal, useSorting, useSortingWithDefault } from './utils';
+import { SortField } from './utils/useSorting';
 
 const DEFAULT_SORT = {
-    sortField: 'name' as SearchSortField,
+    sortField: 'name' as SortField,
     sortOrder: SORT_DIRECTION.ASC,
 };
 
@@ -73,15 +73,6 @@ export default function useSearchView(shareId: string, query: string) {
     }, [cachedLinks]);
 
     const sortedLinks = useSorting(cachedLinksWithoutTrashedItems, sortParams);
-    const sortedLinksForSelection = useMemo(() => {
-        return sortedLinks.map((item) => ({
-            id: item.linkId,
-            disabled: item.isLocked,
-            data: item,
-        }));
-    }, [sortedLinks]);
-    const selectionControls = useSelection(sortedLinksForSelection);
-
     const [isFetchLoading, withLoading] = useLoading(true);
 
     useEffect(() => {
@@ -116,7 +107,6 @@ export default function useSearchView(shareId: string, query: string) {
         items: sortedLinks,
         sortParams,
         setSorting,
-        selectionControls,
         isLoading: isSearching || isFetchLoading || isDecrypting,
     };
 }

@@ -89,14 +89,16 @@ describe('FolderTreeLoader', () => {
     const linkDownload = { shareId: 'shareId', linkId: 'linkId' } as LinkDownload;
 
     it('calculates size', async () => {
-        const folderTreeLoader = new FolderTreeLoader();
-        const promise = folderTreeLoader.load(linkDownload, stubGetChildren);
-        await expect(promise).resolves.toBe(expectedTotalSize);
+        const folderTreeLoader = new FolderTreeLoader(linkDownload);
+        const promise = folderTreeLoader.load(stubGetChildren);
+        await expect(promise).resolves.toMatchObject({
+            size: expectedTotalSize,
+        });
     });
 
     it('iterates all childs', async () => {
-        const folderTreeLoader = new FolderTreeLoader();
-        void folderTreeLoader.load(linkDownload, stubGetChildren);
+        const folderTreeLoader = new FolderTreeLoader(linkDownload);
+        void folderTreeLoader.load(stubGetChildren);
         const items = [];
         for await (const item of folderTreeLoader.iterateAllChildren()) {
             items.push(item);

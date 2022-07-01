@@ -2,8 +2,8 @@ import { ReadableStream } from 'web-streams-polyfill';
 
 import { mergeUint8Arrays } from '@proton/utils/array';
 import { createApiError, createOfflineError } from '@proton/shared/lib/fetch/ApiError';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import { streamToBuffer } from '../../../utils/stream';
 import * as constants from '../constants';
 import initDownloadBlocks from './downloadBlocks';
@@ -181,10 +181,20 @@ describe('initDownload', () => {
             'url:2', // First attempt.
             'url:3',
             'url:4',
-            'url:2', // First retry.
-            'url:2', // Second retry.
-            'url:2', // Third retry.
-            'url:2', // Second attempt after resume and fixing the issue.
+            // First retry (retry tries again all blocks in the queue).
+            'url:2',
+            'url:3',
+            'url:4',
+            // Second retry.
+            'url:2',
+            'url:3',
+            'url:4',
+            // Third retry.
+            'url:2',
+            'url:3',
+            'url:4',
+            // Second attempt after resume and fixing the issue.
+            'url:2',
         ]);
     });
 

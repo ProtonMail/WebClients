@@ -1,22 +1,28 @@
 import { ContextSeparator } from '@proton/components';
-import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import DriveItemContextMenu from '../Drive/DriveItemContextMenu';
+import { DecryptedLink } from '../../../store';
+import { ContextMenuProps } from '../../FileBrowser/interface';
+import { ItemContextMenu } from '../Drive/ItemContextMenu';
 import { GoToParent } from './ContextMenuButtons';
 
-export default function SearchItemContextMenu(props: ItemContextMenuProps) {
-    const { item, selectedItems, shareId, close } = props;
+export function SearchItemContextMenu(
+    props: ContextMenuProps & {
+        shareId: string;
+        selectedLinks: DecryptedLink[];
+    }
+) {
+    const { shareId, selectedLinks, close } = props;
 
-    const isOnlyOneItem = selectedItems.length === 1;
+    const isOnlyOneItem = selectedLinks.length === 1;
 
     return (
-        <DriveItemContextMenu {...props}>
+        <ItemContextMenu {...props}>
             {isOnlyOneItem && (
                 <>
                     <ContextSeparator />
-                    <GoToParent shareId={shareId} parentLinkId={item.ParentLinkID} close={close} />
+                    <GoToParent shareId={shareId} parentLinkId={selectedLinks[0].parentLinkId} close={close} />
                 </>
             )}
-        </DriveItemContextMenu>
+        </ItemContextMenu>
     );
 }

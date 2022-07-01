@@ -47,10 +47,10 @@ export default function useDownload() {
             throw new Error(`Invalid link metadata, expected file`);
         }
 
-        const { Revision } = await debouncedRequest<DriveFileRevisionResult>({
-            ...queryFileRevision(shareId, linkId, revisionId, pagination),
-            signal: abortSignal,
-        });
+        const { Revision } = await debouncedRequest<DriveFileRevisionResult>(
+            queryFileRevision(shareId, linkId, revisionId, pagination),
+            abortSignal
+        );
         return Revision.Blocks;
     };
 

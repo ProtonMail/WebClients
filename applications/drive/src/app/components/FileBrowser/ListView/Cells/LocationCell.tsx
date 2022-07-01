@@ -10,7 +10,7 @@ interface Props {
     isTrashed?: boolean;
 }
 
-const LocationCell = ({ shareId, parentLinkId, isTrashed }: Props) => {
+export const LocationCell = ({ shareId, parentLinkId, isTrashed }: Props) => {
     const [location, setLocation] = useState<string>();
     const { getPath } = useLinkPath();
 
@@ -41,5 +41,3 @@ const LocationCell = ({ shareId, parentLinkId, isTrashed }: Props) => {
         </div>
     );
 };
-
-export default LocationCell;

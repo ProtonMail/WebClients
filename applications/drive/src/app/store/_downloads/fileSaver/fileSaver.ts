@@ -1,9 +1,9 @@
 import { ReadableStream } from 'web-streams-polyfill';
 
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { TransferMeta } from '@proton/shared/lib/interfaces/drive/transfer';
 import { MEMORY_DOWNLOAD_LIMIT } from '@proton/shared/lib/drive/constants';
 
+import { TransferMeta, TransferCancel } from '../../../components/TransferManager/transfer';
 import { streamToBuffer } from '../../../utils/stream';
 import { isTransferCancelError } from '../../../utils/transfer';
 import { isValidationError } from '../../_utils';
@@ -42,13 +42,20 @@ class FileSaver {
         }
 
         try {
-            const saveStream = await openDownloadStream(meta, { onCancel: () => stream.cancel('user canceled') });
-            await stream.pipeTo(saveStream, { preventCancel: true });
+            const abortController = new AbortController();
+            const saveStream = await openDownloadStream(meta, { onCancel: () => abortController.abort() });
+            await new Promise((resolve, reject) => {
+                abortController.signal.addEventListener('abort', () => {
+                    reject(new TransferCancel({ message: `Transfer canceled` }));
+                });
+                stream.pipeTo(saveStream, { preventCancel: true }).then(resolve);
+            });
         } catch (err: any) {
             if (!isTransferCancelError(err)) {
                 console.warn('Failed to save file via download, falling back to in-memory download:', err);
                 await this.saveViaBuffer(stream, meta);
             }
+            throw err;
         }
     }
 

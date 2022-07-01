@@ -8,8 +8,7 @@ import {
     TransferStats,
     TransferHistoryStats,
     TransfersHistoryStats,
-} from '@proton/shared/lib/interfaces/drive/transfer';
-
+} from '../../components/TransferManager/transfer';
 import { isTransferProgress, isTransferFinished } from '../../utils/transfer';
 import { useDownloadProvider } from '../_downloads';
 import { useUpload } from '../_uploads';

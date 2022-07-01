@@ -1,16 +1,27 @@
+import { useMemo } from 'react';
+
 import { Vr } from '@proton/atoms';
 import { Toolbar } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
+import { DecryptedLink } from '../../../store';
+import { useSelection } from '../../FileBrowser';
+import { getSelectedItems } from '../helpers';
 import { DetailsButton, DownloadButton, LayoutButton, PreviewButton } from '../ToolbarButtons';
 import { DeletePermanentlyButton, RestoreFromTrashButton } from './ToolbarButtons';
 
 interface Props {
     shareId: string;
-    selectedItems: FileBrowserItem[];
+    items: DecryptedLink[];
 }
 
-const TrashToolbar = ({ shareId, selectedItems }: Props) => {
+const TrashToolbar = ({ shareId, items }: Props) => {
+    const selectionControls = useSelection()!;
+
+    const selectedItems = useMemo(
+        () => getSelectedItems(items, selectionControls!.selectedItemIds),
+        [items, selectionControls!.selectedItemIds]
+    );
+
     const renderSelectionActions = () => {
         if (!selectedItems.length) {
             return null;
@@ -18,13 +29,13 @@ const TrashToolbar = ({ shareId, selectedItems }: Props) => {
 
         return (
             <>
-                <PreviewButton shareId={shareId} selectedItems={selectedItems} />
-                <DownloadButton shareId={shareId} selectedItems={selectedItems} disabledFolders />
+                <PreviewButton shareId={shareId} selectedLinks={selectedItems} />
+                <DownloadButton shareId={shareId} selectedLinks={selectedItems} disabledFolders />
                 <Vr />
-                <DetailsButton shareId={shareId} selectedItems={selectedItems} />
+                <DetailsButton shareId={shareId} linkIds={selectionControls.selectedItemIds} />
                 <Vr />
-                <RestoreFromTrashButton shareId={shareId} selectedItems={selectedItems} />
-                <DeletePermanentlyButton shareId={shareId} selectedItems={selectedItems} />
+                <RestoreFromTrashButton shareId={shareId} selectedLinks={selectedItems} />
+                <DeletePermanentlyButton shareId={shareId} selectedLinks={selectedItems} />
             </>
         );
     };

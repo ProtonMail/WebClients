@@ -2,63 +2,62 @@ import * as React from 'react';
 
 import { TableRowSticky, TableHeaderCell, Checkbox } from '@proton/components';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { FileBrowserItem, SortParams, SortField } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
-import SortDropdown, { translateSortField } from '../../sections/SortDropdown';
+import { SortParams } from '../interface';
+import { stopPropagation } from '../../../utils/stopPropagation';
+import SortDropdown from '../../sections/SortDropdown';
+import { useSelection } from '../state/useSelection';
 
-interface Props<T extends SortField> {
+interface Props<T> {
+    activeSortingText: string;
     isLoading?: boolean;
-    sortFields?: T[];
-    sortParams?: SortParams<T>;
-    setSorting?: (sortParams: SortParams<T>) => void;
-    selectedItems: FileBrowserItem[];
+    itemCount: number;
+    onSort?: (sortParams: SortParams<T>) => void;
     onToggleAllSelected: () => void;
-    contents: FileBrowserItem[];
     scrollAreaRef: React.RefObject<HTMLDivElement>;
+    sortField: SortParams<T>['sortField'];
+    sortFields?: T[];
+    sortOrder: SortParams<T>['sortOrder'];
 }
 
-const GridHeader = <T extends SortField>({
+export const GridHeader = <T extends string>({
     isLoading,
     sortFields,
-    setSorting,
-    sortParams,
-    contents,
-    selectedItems,
+    onSort,
     onToggleAllSelected,
+    itemCount,
     scrollAreaRef,
-}: Props<T>) => {
-    const canSort = (fn?: () => void) => (setSorting ? fn : undefined);
+    activeSortingText,
 
-    const handleSort = (key: SortField) => {
-        if (!sortParams || !setSorting) {
+    sortField,
+    sortOrder,
+}: Props<T>) => {
+    const selection = useSelection();
+    const selectedItemIds = selection?.selectedItemIds || [];
+
+    const handleSort = (key: T) => {
+        if (!sortField || !sortOrder || !onSort) {
             return;
         }
 
         const direction =
-            sortParams.sortField === key && sortParams.sortOrder === SORT_DIRECTION.ASC
-                ? SORT_DIRECTION.DESC
-                : SORT_DIRECTION.ASC;
+            sortField === key && sortOrder === SORT_DIRECTION.ASC ? SORT_DIRECTION.DESC : SORT_DIRECTION.ASC;
 
-        setSorting({ sortField: key as T, sortOrder: direction });
+        onSort({ sortField: key as T, sortOrder: direction });
     };
 
-    const getSortDirectionForKey = (key: SortField) =>
-        sortParams?.sortField === key ? sortParams.sortOrder : undefined;
+    const getSortDirectionForKey = (key: T) => (sortField === key ? sortOrder : undefined);
 
-    const allSelected = !!contents.length && contents.length === selectedItems.length;
-
-    if (!sortFields || !sortParams || !setSorting) {
-        return null;
-    }
+    const allSelected = Boolean(itemCount) && itemCount === selectedItemIds.length;
 
     return (
-        <thead onContextMenu={(e) => e.stopPropagation()}>
+        <thead onContextMenu={stopPropagation}>
             <TableRowSticky scrollAreaRef={scrollAreaRef}>
                 <TableHeaderCell>
-                    <div role="presentation" key="select-all" className="flex" onClick={(e) => e.stopPropagation()}>
+                    <div role="presentation" key="select-all" className="flex" onClick={stopPropagation}>
                         <Checkbox
                             className="increase-click-surface"
-                            disabled={!contents.length}
+                            disabled={!itemCount}
                             checked={allSelected}
                             onChange={onToggleAllSelected}
                         />
@@ -66,18 +65,16 @@ const GridHeader = <T extends SortField>({
                 </TableHeaderCell>
                 <TableHeaderCell
                     className="w10e"
-                    onSort={canSort(() => handleSort(sortParams.sortField))}
-                    direction={getSortDirectionForKey(sortParams.sortField)}
+                    onSort={() => handleSort(sortField)}
+                    direction={getSortDirectionForKey(sortField)}
                     isLoading={isLoading}
                 >
-                    {translateSortField(sortParams.sortField)}
+                    {activeSortingText}
                 </TableHeaderCell>
                 <TableHeaderCell>
-                    <SortDropdown sortFields={sortFields} sortParams={sortParams} setSorting={setSorting} />
+                    <SortDropdown sortFields={sortFields} sortField={sortField} onSort={onSort} />
                 </TableHeaderCell>
             </TableRowSticky>
         </thead>
     );
 };
-
-export default GridHeader;

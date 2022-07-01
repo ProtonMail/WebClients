@@ -3,23 +3,32 @@ import { useEffect } from 'react';
 
 import { ContextMenu } from '@proton/components';
 
-import { ItemContextMenuProps } from '@proton/shared/lib/interfaces/drive/fileBrowser';
+import { DecryptedLink } from '../../../store';
+import { ContextMenuProps } from '../../FileBrowser/interface';
 import { DetailsButton, DownloadButton, PreviewButton, RenameButton, ShareLinkButton } from '../ContextMenu';
 import { StopSharingButton } from './ContextMenuButtons';
 
-const SharedLinksItemContextMenu = ({
-    item,
-    selectedItems,
+export function SharedLinksItemContextMenu({
     shareId,
+    selectedLinks,
     anchorRef,
     isOpen,
     position,
     open,
     close,
-}: ItemContextMenuProps) => {
-    const isOnlyOneItem = selectedItems.length === 1;
+}: ContextMenuProps & {
+    shareId: string;
+    selectedLinks: DecryptedLink[];
+}) {
+    const selectedLink = selectedLinks[0];
+    const isOnlyOneItem = selectedLinks.length === 1;
     const hasPreviewAvailable =
-        isOnlyOneItem && item.IsFile && item.MIMEType && isPreviewAvailable(item.MIMEType, item.Size);
+        isOnlyOneItem &&
+        selectedLink.isFile &&
+        selectedLink.mimeType &&
+        isPreviewAvailable(selectedLink.mimeType, selectedLink.size);
+
+    const selectedLinkIds = selectedLinks.map(({ linkId }) => linkId);
 
     useEffect(() => {
         if (position) {
@@ -29,14 +38,12 @@ const SharedLinksItemContextMenu = ({
 
     return (
         <ContextMenu isOpen={isOpen} close={close} position={position} anchorRef={anchorRef}>
-            {hasPreviewAvailable && <PreviewButton shareId={shareId} item={item} close={close} />}
-            <DownloadButton shareId={shareId} items={selectedItems} close={close} />
-            {isOnlyOneItem && <RenameButton shareId={shareId} item={item} close={close} />}
-            <DetailsButton shareId={shareId} items={selectedItems} close={close} />
-            {isOnlyOneItem && <ShareLinkButton shareId={shareId} item={item} close={close} />}
-            <StopSharingButton shareId={shareId} items={selectedItems} close={close} />
+            {hasPreviewAvailable && <PreviewButton shareId={shareId} linkId={selectedLink.linkId} close={close} />}
+            <DownloadButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
+            {isOnlyOneItem && <RenameButton shareId={shareId} link={selectedLink} close={close} />}
+            <DetailsButton shareId={shareId} linkIds={selectedLinkIds} close={close} />
+            {isOnlyOneItem && <ShareLinkButton shareId={shareId} link={selectedLink} close={close} />}
+            <StopSharingButton shareId={shareId} selectedLinks={selectedLinks} close={close} />
         </ContextMenu>
     );
-};
-
-export default SharedLinksItemContextMenu;
+}

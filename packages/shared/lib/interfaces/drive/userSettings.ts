@@ -1,11 +1,9 @@
 export enum SortSetting {
     NameAsc = 1,
     SizeAsc = 2,
-    TypeAsc = 3,
     ModifiedAsc = 4,
     NameDesc = -1,
     SizeDesc = -2,
-    TypeDesc = -3,
     ModifiedDesc = -4,
 }
 

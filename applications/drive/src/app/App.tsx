@@ -9,7 +9,7 @@ import authentication from '@proton/shared/lib/authentication/authentication';
 
 import * as config from './config';
 import PrivateApp from './PrivateApp';
-import DownloadSharedContainer from './components/DownloadShared/DownloadSharedContainer';
+import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
 
 import './app.scss';
 
@@ -28,8 +28,8 @@ const App = () => {
             <Switch>
                 <Route path="/urls">
                     <StandardPublicApp locales={locales}>
-                        <div className="ui-prominent h100v">
-                            <DownloadSharedContainer />
+                        <div className="h100v">
+                            <PublicSharedLinkContainer />
                         </div>
                     </StandardPublicApp>
                 </Route>

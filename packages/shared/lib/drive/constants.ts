@@ -26,7 +26,7 @@ export const HARDWARE_CONCURRENCY = (typeof window !== 'undefined' && window.nav
 export const MAX_THREADS_PER_DOWNLOAD = HARDWARE_CONCURRENCY;
 export const MAX_THREADS_PER_REQUEST = 5;
 export const DEFAULT_SORT_FIELD = 'ModifyTime';
-export const DEFAULT_SORT_ORDER = SORT_DIRECTION.DESC;
+export const DEFAULT_SORT_ORDER: SORT_DIRECTION = SORT_DIRECTION.DESC;
 export const DEFAULT_SORT_PARAMS_DRIVE: SortParams<DriveSectionSortKeys> = {
     sortField: DEFAULT_SORT_FIELD,
     sortOrder: DEFAULT_SORT_ORDER,

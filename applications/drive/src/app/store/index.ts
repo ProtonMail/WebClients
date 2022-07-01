@@ -1,11 +1,13 @@
-export { default as DriveProvider } from './DriveProvider';
+export { DriveProvider, PublicDriveProvider } from './DriveProvider';
 export { useActions } from './_actions';
 
+export { usePublicAuth } from './_api';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
 export { useUserSettings, SettingsProvider } from './_settings';
 export {
     useDefaultShare,
+    usePublicShare,
     useLockedVolume,
     useShareUrl,
     // It would be good to make custom type to contain such computed values one day.

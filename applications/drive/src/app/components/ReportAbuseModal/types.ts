@@ -1,25 +1,18 @@
-import { SharedURLInfoDecrypted } from '../../hooks/drive/usePublicSharing';
-
 export type ReportAbuseRequestPayload = {
+    linkId: string;
     abuseCategory: AbuseCateroryType;
-    shareURL: string;
-    password: string;
-    nodePassphrase: string;
     reporterEmail?: string;
     reporterMessage?: string;
 };
 
 export interface AbuseFormProps {
     onClose?: () => void;
-    linkInfo: SharedURLInfoDecrypted;
-    password: string;
+    linkInfo: LinkInfo;
     onSubmit: (params: {
+        linkId: string;
         abuseCategory: string;
         reporterEmail?: string;
         reporterMessage?: string;
-        password?: string;
-        shareURL: string;
-        nodePassphrase: string;
     }) => Promise<void>;
     open?: boolean;
 }
@@ -29,4 +22,11 @@ export type AbuseCateroryType = 'spam' | 'copyright' | 'child-abuse' | 'stolen-d
 export interface AbuseCategory {
     type: AbuseCateroryType;
     text: string;
+}
+
+export interface LinkInfo {
+    name: string;
+    mimeType: string;
+    size: number;
+    linkId: string;
 }

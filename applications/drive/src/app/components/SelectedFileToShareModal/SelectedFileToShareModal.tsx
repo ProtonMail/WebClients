@@ -11,12 +11,10 @@ import {
     ModalTwoFooter,
     ModalTwo,
 } from '@proton/components';
-import { FileBrowserItem } from '@proton/shared/lib/interfaces/drive/fileBrowser';
 
 import { DecryptedLink, useTree } from '../../store';
 import useOpenModal from '../useOpenModal';
 import FolderTree from '../FolderTree/FolderTree';
-import { mapDecryptedLinksToChildren } from '../sections/helpers';
 import HasNoFilesToShare from './HasNoFilesToShare';
 import ModalContentLoader from '../ModalContentLoader';
 
@@ -30,23 +28,23 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
     const { rootFolder, toggleExpand } = useTree(shareId, { rootExpanded: true });
 
     const [loading, withLoading] = useLoading();
-    const [selectedFile, setSelectedFile] = useState<FileBrowserItem>();
+    const [selectedFile, setSelectedFile] = useState<DecryptedLink>();
     const { openLinkSharing } = useOpenModal();
 
     const onSelect = async (link: DecryptedLink) => {
         if (!loading) {
-            setSelectedFile(mapDecryptedLinksToChildren([link])[0]);
+            setSelectedFile(link);
         }
     };
 
     const handleSubmit = async () => {
         if (selectedFile) {
-            openLinkSharing(shareId, selectedFile);
+            openLinkSharing(shareId, selectedFile.linkId);
             onClose?.();
         }
     };
 
-    const shareIsDisabled = !selectedFile || !selectedFile.ParentLinkID;
+    const shareIsDisabled = !selectedFile || !selectedFile.parentLinkId;
 
     let modalContents = {
         title: c('Action').t`Share item`,
@@ -55,7 +53,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
                 <Alert className="mb1">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
                 <FolderTree
                     rootFolder={rootFolder}
-                    selectedItemId={selectedFile?.LinkID}
+                    selectedItemId={selectedFile?.linkId}
                     onSelect={onSelect}
                     toggleExpand={toggleExpand}
                 />
@@ -67,7 +65,7 @@ const SelectedFileToShareModal = ({ shareId, onClose, open }: Props) => {
                     {c('Action').t`Cancel`}
                 </Button>
                 <PrimaryButton className="ml1 w8e" loading={loading} type="submit" disabled={shareIsDisabled}>
-                    {selectedFile?.SharedUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
+                    {selectedFile?.shareUrl ? c('Action').t`Manage link` : c('Action').t`Create link`}
                 </PrimaryButton>
             </ModalTwoFooter>
         ) as ReactNode,

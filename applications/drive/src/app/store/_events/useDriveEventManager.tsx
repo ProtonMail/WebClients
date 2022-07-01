@@ -191,7 +191,27 @@ export function DriveEventManagerProvider({ children }: { children: React.ReactN
 export const useDriveEventManager = () => {
     const state = useContext(DriveEventManagerContext);
     if (!state) {
-        throw new Error('Trying to use uninitialized DriveEventManagerProvider');
+        // DriveEventManager might be uninitialized in some cases.
+        // For example, public shares do not have this implemented yet.
+        // Better would be to not have event manager as required automatic
+        // dependency, but that requires bigger changes. In the end, this
+        // situation is just because of how React hooks work. One day, once
+        // this all is shifted to worker instead, we can make it nicer.
+        return {
+            subscribeToShare: () => {
+                throw Error('Usage of uninitialized DriveEventManager!');
+            },
+            unsubscribeFromShare: () => Promise.resolve(false),
+            pauseShareSubscription: () => false,
+            registerEventHandler: () => 'id',
+            registerEventHandlerById: (id: string) => id,
+            unregisterEventHandler: () => false,
+            pollAllShareEvents: () => Promise.resolve(undefined),
+            pollShare: () => Promise.resolve(undefined),
+            pollAllDriveEvents: () => Promise.resolve(undefined),
+            getSubscriptionIds: () => [],
+            clear: () => undefined,
+        };
     }
     return state;
 };

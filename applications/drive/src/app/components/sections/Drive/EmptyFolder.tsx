@@ -5,7 +5,7 @@ import { EmptyViewContainer, useActiveBreakpoint, usePopperAnchor } from '@proto
 
 import noContentSvg from '@proton/styles/assets/img/illustrations/empty-folder.svg';
 import { UploadButton } from './UploadButton';
-import FolderContextMenu from './FolderContextMenu';
+import { FolderContextMenu } from './FolderContextMenu';
 
 const EmptyFolder = ({ shareId }: { shareId: string }) => {
     const { isDesktop } = useActiveBreakpoint();

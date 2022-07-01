@@ -1,6 +1,6 @@
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
-import { TransferCancel } from '@proton/shared/lib/interfaces/drive/transfer';
 
+import { TransferCancel } from '../../../components/TransferManager/transfer';
 import fileSaver from '../fileSaver/fileSaver';
 import { LinkDownload, DownloadCallbacks, DownloadControls, DownloadStreamControls } from '../interface';
 import initDownloadLinks from './downloadLinks';
@@ -36,8 +36,8 @@ export default function initDownload(
     const sizePromise = new SizeTimeoutPromise(SIZE_WAIT_TIME);
     const controls = getControls(links, {
         ...callbacks,
-        onInit: (size: number) => {
-            callbacks.onInit?.(size);
+        onInit: (size: number, linkSizes) => {
+            callbacks.onInit?.(size, linkSizes);
             sizePromise.set(size);
         },
         onError: (err: any) => {

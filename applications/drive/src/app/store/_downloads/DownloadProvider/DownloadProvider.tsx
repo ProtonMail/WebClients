@@ -1,10 +1,10 @@
 import { createContext, useContext } from 'react';
 import * as React from 'react';
 
-import { TransferProgresses } from '@proton/shared/lib/interfaces/drive/transfer';
+import { TransferProgresses } from '../../../components/TransferManager/transfer';
 
-import { LinkDownload, DownloadSignatureIssueModal } from '../interface';
-import { Download, UpdateFilter } from './interface';
+import { LinkDownload, InitDownloadCallback, DownloadSignatureIssueModal } from '../interface';
+import { Download, DownloadLinksProgresses, UpdateFilter } from './interface';
 import useDownload from './useDownloadProvider';
 
 interface DownloadProviderState {
@@ -18,14 +18,17 @@ interface DownloadProviderState {
     removeDownloads: (idOrFilter: UpdateFilter) => void;
     clearDownloads: () => void;
     getDownloadsProgresses: () => TransferProgresses;
+    getDownloadsLinksProgresses: () => DownloadLinksProgresses;
 }
 
 const DownloadContext = createContext<DownloadProviderState | null>(null);
 
 export const DownloadProvider = ({
+    initDownload,
     DownloadSignatureIssueModal,
     children,
 }: {
+    initDownload: InitDownloadCallback;
     DownloadSignatureIssueModal: DownloadSignatureIssueModal;
     children: React.ReactNode;
 }) => {
@@ -34,13 +37,14 @@ export const DownloadProvider = ({
         hasDownloads,
         download,
         getProgresses,
+        getLinksProgress,
         pauseDownloads,
         resumeDownloads,
         cancelDownloads,
         restartDownloads,
         removeDownloads,
         clearDownloads,
-    } = useDownload(DownloadSignatureIssueModal);
+    } = useDownload(initDownload, DownloadSignatureIssueModal);
 
     return (
         <DownloadContext.Provider
@@ -55,6 +59,7 @@ export const DownloadProvider = ({
                 removeDownloads,
                 clearDownloads,
                 getDownloadsProgresses: getProgresses,
+                getDownloadsLinksProgresses: getLinksProgress,
             }}
         >
             {children}

@@ -1,0 +1,67 @@
+import { useEffect, useState } from 'react';
+
+import { useLoading } from '@proton/components';
+
+import { useActions } from '../_actions';
+import { DecryptedLink, SignatureIssues, useLink } from '../_links';
+import { useShareUrl } from '../_shares';
+import { reportError } from '../_utils';
+
+/**
+ * useLinkDetailsView loads link if not cached yet with all signature issues
+ * and number of accesses to shared URL.
+ */
+export default function useLinkDetailsView(shareId: string, linkId: string) {
+    const { checkLinkSignatures } = useActions();
+    const { loadShareUrlNumberOfAccesses } = useShareUrl();
+    const { getLink } = useLink();
+
+    const [link, setLink] = useState<DecryptedLink>();
+    const [error, setError] = useState<any>();
+    const [isLinkLoading, withLoadingLink] = useLoading();
+
+    const [signatureIssues, setSignatureIssues] = useState<SignatureIssues>();
+    const [isSignatureIssuesLoading, withLoadingSignatureIssues] = useLoading();
+
+    const [numberOfAccesses, setNumberOfAccesses] = useState<number>();
+    const [isNumberOfAccessesLoading, withLoadingNumberOfAccesses] = useLoading();
+
+    useEffect(() => {
+        const abortController = new AbortController();
+        void withLoadingLink(
+            getLink(abortController.signal, shareId, linkId)
+                .then((link) => {
+                    setLink(link);
+                    void withLoadingSignatureIssues(
+                        checkLinkSignatures(abortController.signal, shareId, linkId)
+                            .then(setSignatureIssues)
+                            .catch(reportError)
+                    );
+                    if (link.shareId) {
+                        void withLoadingNumberOfAccesses(
+                            loadShareUrlNumberOfAccesses(abortController.signal, shareId, linkId)
+                                .then(setNumberOfAccesses)
+                                .catch(reportError)
+                        );
+                    }
+                })
+                .catch((err) => {
+                    setError(err);
+                    reportError(err);
+                })
+        );
+        return () => {
+            abortController.abort();
+        };
+    }, [shareId, linkId]);
+
+    return {
+        isLinkLoading,
+        isSignatureIssuesLoading,
+        isNumberOfAccessesLoading,
+        error,
+        link,
+        signatureIssues,
+        numberOfAccesses,
+    };
+}
