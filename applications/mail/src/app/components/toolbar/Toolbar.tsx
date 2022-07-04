@@ -1,6 +1,7 @@
 import { memo, Ref, useRef } from 'react';
 import { c } from 'ttag';
 import { Icon, ToolbarButton } from '@proton/components';
+import { Vr } from '@proton/atoms';
 import ReadUnreadButtons from './ReadUnreadButtons';
 import MoveButtons from './MoveButtons';
 import MoreDropdown from './MoreDropdown';
@@ -78,13 +79,15 @@ const Toolbar = ({
 
     // Using local breakpoints to be more precise and to deal with sidebar being there or not
     const breakpoint = useElementBreakpoints(toolbarRef, {
-        tiny: 0,
+        extratiny: 0,
+        tiny: 330,
         small: 500,
         medium: 700,
         large: 1100,
     });
 
-    const isNarrow = breakpoint === 'tiny' || breakpoint === 'small';
+    const isTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
+    const isNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
 
     const listInView = columnMode || !elementID;
 
@@ -93,7 +96,7 @@ const Toolbar = ({
             ref={toolbarRef}
             className="toolbar toolbar--heavy flex flex-item-noshrink no-print flex-justify-space-between"
         >
-            <div className="flex">
+            <div className="flex toolbar-inner">
                 {listInView ? (
                     <SelectAll
                         labelID={labelID}
@@ -112,12 +115,13 @@ const Toolbar = ({
                 <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
                 <MoveButtons
                     labelID={labelID}
+                    isExtraTiny={breakpoint === 'extratiny'}
                     isNarrow={isNarrow}
                     selectedIDs={selectedIDs}
                     onMove={onMove}
                     onDelete={onDelete}
                 />
-                {breakpoint !== 'tiny' ? (
+                {!isTiny ? (
                     <LabelsAndFolders
                         labelID={labelID}
                         selectedIDs={selectedIDs}
@@ -135,7 +139,8 @@ const Toolbar = ({
                     selectedIDs={selectedIDs}
                     isSearch={isSearch}
                     isNarrow={isNarrow}
-                    isTiny={breakpoint === 'tiny'}
+                    isTiny={isTiny}
+                    isExtraTiny={breakpoint === 'extratiny'}
                     onMove={onMove}
                     onDelete={onDelete}
                     onBack={onBack}
@@ -143,7 +148,7 @@ const Toolbar = ({
                     conversationMode={conversationMode}
                 />
             </div>
-            <div className="flex">
+            <div className="flex toolbar-inner">
                 {breakpoint !== 'large' ? (
                     <FilterActions icon={breakpoint !== 'large'} filter={filter} onFilter={onFilter} />
                 ) : null}
@@ -158,15 +163,18 @@ const Toolbar = ({
                 {listInView ? (
                     <PagingControls narrowMode={isNarrow} loading={loading} page={page} total={total} onPage={onPage} />
                 ) : (
-                    <NavigationControls
-                        loading={loading}
-                        conversationMode={conversationMode}
-                        elementID={elementID}
-                        messageID={messageID}
-                        elementIDs={elementIDs}
-                        onElement={onElement}
-                        labelID={labelID}
-                    />
+                    <>
+                        {(breakpoint === 'large' || breakpoint === 'medium') && <Vr />}
+                        <NavigationControls
+                            loading={loading}
+                            conversationMode={conversationMode}
+                            elementID={elementID}
+                            messageID={messageID}
+                            elementIDs={elementIDs}
+                            onElement={onElement}
+                            labelID={labelID}
+                        />
+                    </>
                 )}
             </div>
         </nav>

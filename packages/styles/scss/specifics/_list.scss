@@ -45,7 +45,10 @@
 
 $item-container-height: rem(66) !default;
 $item-container-padding-block: em(11) !default;
-$item-container-padding-inline: em(12) !default;
+
+$item-container-padding-inline-start: em(9) !default;
+$item-container-padding-inline-end: em(12) !default;
+$item-container-padding-inline: $item-container-padding-inline-start $item-container-padding-inline-end;
 
 $item-container-margin-inline: em(12) !default;
 
@@ -126,26 +129,28 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 	&.item-is-selected,
 	// alias for Angular
 	&.item-container.active {
-		background-color: var(--email-item-selected-background-color);
-		color: var(--email-item-selected-text-color);
-
-		&:focus::after,
-		&.item-is-focused::after {
-			border-inline-start-color: var(--email-item-selected-focus-marker-color);
-		}
-
-		.item-icon,
-		.item-icon-compact:hover {
-			background-color: var(--email-item-selected-icon-background-color);
-			color: var(--email-item-selected-icon-text-color);
-		}
-
-		.item-firstline {
+		&#{&} {
+			background-color: var(--email-item-selected-background-color);
 			color: var(--email-item-selected-text-color);
-		}
 
-		.item-titlesender {
-			border-block-end-color: transparent;
+			&:focus::after,
+			&.item-is-focused::after {
+				border-inline-start-color: var(--email-item-selected-focus-marker-color);
+			}
+
+			.item-icon,
+			.item-icon-compact:hover {
+				background-color: var(--email-item-selected-icon-background-color);
+				color: var(--email-item-selected-icon-text-color);
+			}
+
+			.item-firstline {
+				color: var(--email-item-selected-text-color);
+			}
+
+			.item-titlesender {
+				border-block-end-color: transparent;
+			}
 		}
 	}
 
@@ -173,6 +178,9 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 	padding-block-end: 0; // design wants ~66 height
 	margin-inline: $item-container-margin-inline;
 	border-radius: var(--border-radius-lg);
+	@include respond-to($breakpoint-small) {
+		margin-inline: em(2);
+	}
 }
 
 .item-container-row {
@@ -238,9 +246,29 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 }
 
 /* Comfortable view */
-// .is-comfortable {
 
-// }
+.is-comfortable {
+	// should apply this background only for comfortable view, NOT on mobile or Row mode
+	.item-container {
+		&.read,
+		&-wrapper.read {
+			@include respond-to($breakpoint-small, 'min') {
+				background-color: var(--email-item-read-comfort-background-color);
+			}
+		}
+
+		// just a 12 margin only for first element, not on mobile
+		&-wrapper:first-child {
+			@include respond-to($breakpoint-small, 'min') {
+				margin-block-start: em(12);
+			}
+		}
+
+		&-row {
+			padding-inline-start: em(21);
+		}
+	}
+}
 
 /* Compact view */
 .item-icon-compact {
@@ -271,9 +299,12 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 		// block-size: $item-container-height-compact-mode;
 		// scroll-margin-block-start: $item-container-height-compact-mode;
 		padding-block: em(8); // put this in a var
-		padding-inline: em(5) em(12); // put this in a var (12 - 7)
+		padding-inline: em(6) em(12);
 		margin-inline: 0;
 		border-radius: 0;
+		@include respond-to($breakpoint-small) {
+			padding-inline-start: em(12);
+		}
 
 		.item-container-inner {
 			padding-block: em(0);
@@ -406,7 +437,7 @@ $item-container-row-padding-block: em(6) !default; // design wants 44px
 		position: absolute;
 		inset-block: calc(-1 * ((#{$item-container-height} - #{rem($conversation-icon-size)}) / 2));
 		inset-inline-start: em(-12);
-		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline} + #{rem(5)});
+		inline-size: calc(#{rem($conversation-icon-size)} + #{$item-container-padding-inline-start} + #{rem(5)});
 		// icon size + padding container + tiny margin for comfort
 	}
 

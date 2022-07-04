@@ -76,7 +76,7 @@ const FilterActions = ({ icon, filter, onFilter }: Props) => {
                 content={
                     <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
                         <Icon
-                            className={classnames(['toolbar-icon mr0-5', !noFilterApply && 'color-primary'])}
+                            className={classnames(['toolbar-icon', !noFilterApply && 'color-primary'])}
                             name="filter"
                         />
                     </span>

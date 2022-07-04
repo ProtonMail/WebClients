@@ -186,7 +186,7 @@ const List = (
                 <h1 className="sr-only">
                     {conversationMode ? c('Title').t`Conversation list` : c('Title').t`Message list`}
                 </h1>
-                <div className="items-column-list-inner opacity-on-hover-supercontainer flex flex-nowrap flex-column relative">
+                <div className="items-column-list-inner opacity-on-hover-supercontainer flex flex-nowrap flex-column relative items-column-list-inner--mail">
                     {/* <ListSettings
                         sort={sort}
                         onSort={onSort}

@@ -230,7 +230,7 @@ const HeaderMoreDropdown = ({
                             onClick={handleUnread}
                             data-testid="message-header-expanded:mark-as-unread"
                         >
-                            <Icon name="eye-slash" alt={c('Title').t`Mark as unread`} />
+                            <Icon name="envelope-dot" alt={c('Title').t`Mark as unread`} />
                         </Button>
                     </Tooltip>
                 )}

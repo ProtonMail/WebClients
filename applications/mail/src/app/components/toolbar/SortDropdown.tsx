@@ -40,7 +40,7 @@ const SortDropdown = ({
         if (icon) {
             return (
                 <Icon
-                    className={classnames(['toolbar-icon mr0-5', (sort !== TIME || !desc) && 'color-primary'])}
+                    className={classnames(['toolbar-icon', (sort !== TIME || !desc) && 'color-primary'])}
                     name="arrow-down-arrow-up"
                 />
             );

@@ -47,7 +47,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
                 >
                     {!loading ? (
                         <>
-                            {isConversation && <NumMessages className="mr0-25" conversation={element} />}
+                            {isConversation && <NumMessages className="mr0-25 text-no-bold" conversation={element} />}
                             {subjectElement}
                         </>
                     ) : (

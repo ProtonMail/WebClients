@@ -1,6 +1,6 @@
 .toolbar {
-	--padding-toolbar-button: #{em(16, $base-font-size)};
-	--padding-toolbar-button-dropdown: #{em(12, $base-font-size)};
+	--padding-toolbar-button: #{em(8, $base-font-size)};
+	--padding-toolbar-button-dropdown: #{em(8, $base-font-size)};
 
 	position: relative;
 	z-index: 1;
@@ -8,81 +8,76 @@
 	border-block-end: 1px solid var(--toolbar-border-bottom-color);
 	background-color: var(--toolbar-background-color);
 	color: var(--toolbar-text-color);
-}
 
-.toolbar-button {
-	@extend .interactive;
+	&-button {
+		@extend .interactive;
 
-	padding-inline: var(--padding-toolbar-button);
-	display: flex; // alignment fix on Chrome
-}
+		padding-inline: var(--padding-toolbar-button);
+		border-radius: var(--border-radius-md);
+		display: flex; // alignment fix on Chrome
+		margin-inline: 0.25em;
 
-.toolbar-button--dropdown {
-	padding-inline: var(--padding-toolbar-button-dropdown);
-}
+		// to avoid double margin on side by side buttons
+		& + & {
+			margin-inline-start: 0;
+		}
 
-.toolbar-separator {
-	inline-size: 1px;
-	background: var(--toolbar-separator-color);
-}
+		&--dropdown {
+			padding-inline: var(--padding-toolbar-button-dropdown);
 
-.toolbar button[aria-disabled='true'],
-.toolbar .toolbar-button[aria-disabled='true'] {
-	opacity: 0.5;
-	pointer-events: none;
-}
-
-// new select
-.toolbar .select {
-	@extend .interactive;
-
-	border: unset;
-	border-radius: unset;
-	background-color: unset;
-	color: currentColor;
-	block-size: auto;
-}
-
-.toolbar--heavy {
-	@include respond-to(1100) {
-		--padding-toolbar-button: #{em(12, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(10, $base-font-size)};
+			// just to make it closer to checkbox
+			&-more-selections {
+				margin-inline-start: em(2);
+				--padding-toolbar-button-dropdown: #{em(6, $base-font-size)};
+			}
+		}
 	}
 
-	// use the forceps Luke ^^
-	@include respond-to(980) {
-		--padding-toolbar-button: #{em(11, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(8, $base-font-size)};
+	&-separator {
+		inline-size: 1px;
+		background: var(--toolbar-separator-color);
 	}
 
-	@include respond-to($breakpoint-medium) {
-		--padding-toolbar-button: #{em(16, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(12, $base-font-size)};
+	button[aria-disabled='true'],
+	.toolbar-button[aria-disabled='true'] {
+		opacity: 0.5;
+		pointer-events: none;
 	}
 
-	@include respond-to(750) {
-		--padding-toolbar-button: #{em(12, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(8, $base-font-size)};
+	&-inner {
+		margin-block: em(5.5); // trick to get square button icons
+	}
+
+	// new select
+	.select {
+		@extend .interactive;
+
+		border: unset;
+		background-color: unset;
+		color: currentColor;
+		block-size: auto;
+		margin-inline: 0.25em;
+		border-radius: var(--border-radius-md);
+	}
+
+	// select all
+	.select-all {
+		.checkbox-fakecheck {
+			margin-inline-end: 0;
+		}
+	}
+
+	// adaptations for compact mode
+	.is-compact & {
+		@include respond-to($breakpoint-small, 'min') {
+			.select-all-container {
+				margin-inline-start: em(12);
+				padding-inline-start: 0;
+			}
+		}
 	}
 
 	@include respond-to($breakpoint-small) {
-		--padding-toolbar-button: #{em(16, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(12, $base-font-size)};
-	}
-
-	@include respond-to($breakpoint-tiny) {
-		--padding-toolbar-button: #{em(14, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(10, $base-font-size)};
-	}
-
-	@include respond-to(320) {
-		--padding-toolbar-button: #{em(12, $base-font-size)};
-		--padding-toolbar-button-dropdown: #{em(6, $base-font-size)};
-	}
-}
-
-@include respond-to($breakpoint-small) {
-	.toolbar {
 		border-radius: 0;
 	}
 }
