@@ -67,7 +67,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                                     <DropdownMenuButton
                                         key={i} // eslint-disable-line react/no-array-index-key
                                         loading={loading}
-                                        disabled={active}
+                                        aria-selected={active}
                                         isSelected={active}
                                         onClick={() => onPage(i + 1)}
                                         aria-label={c('Action').t`Page ${pageNumber}`}
@@ -138,7 +138,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                                     <DropdownMenuButton
                                         key={i} // eslint-disable-line react/no-array-index-key
                                         loading={loading}
-                                        disabled={active}
+                                        aria-selected={active}
                                         isSelected={active}
                                         onClick={() => onPage(i + 1)}
                                         aria-label={c('Action').t`Page ${pageNumber}`}
@@ -146,7 +146,7 @@ const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: i
                                         className={classnames(['flex flex-row'])}
                                     >
                                         <span className="text-left flex-item-fluid">{pageNumber}</span>
-                                        {active ? <Icon name="checkmark" /> : null}
+                                        {active ? <Icon name="checkmark" className="mt0-2" /> : null}
                                     </DropdownMenuButton>
                                 );
                             })}

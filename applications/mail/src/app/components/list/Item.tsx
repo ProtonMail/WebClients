@@ -1,7 +1,7 @@
 import { useState, useRef, ChangeEvent, MouseEvent, DragEvent, memo, useMemo } from 'react';
 import { classnames, ItemCheckbox, useMailSettings, useLabels } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { getRecipients as getMessageRecipients, getSender } from '@proton/shared/lib/mail/messages';
+import { getRecipients as getMessageRecipients, getSender, isDraft, isSent } from '@proton/shared/lib/mail/messages';
 import { MAILBOX_LABEL_IDS, VIEW_MODE } from '@proton/shared/lib/constants';
 import { isUnread, isMessage } from '../../helpers/elements';
 import ItemColumnLayout from './ItemColumnLayout';

@@ -42,7 +42,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
     return (
         <>
             <Tooltip title={checked ? c('Action').t`Deselect all messages` : c('Action').t`Select all messages`}>
-                <span className="flex ml0-5 pl1 ">
+                <span className="select-all-container flex ml2 on-mobile-ml1 on-mobile-pl0-25">
                     <Checkbox
                         className="select-all"
                         checked={checked}
@@ -63,6 +63,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                 loading={loading}
                 title={c('Title').t`More selections`}
                 data-testid="toolbar:select-all-dropdown"
+                className="toolbar-button--dropdown-more-selections"
             >
                 {() => (
                     <DropdownMenu>
@@ -79,7 +80,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleRead(true)}
                             data-testid="toolbar:all-read"
                         >
-                            <Icon name="eye" className="mr0-5" />
+                            <Icon name="envelope-open" className="mr0-5" />
                             {c('Action').t`All Read`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
@@ -87,7 +88,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                             onClick={handleRead(false)}
                             data-testid="toolbar:all-unread"
                         >
-                            <Icon name="eye-slash" className="mr0-5" />
+                            <Icon name="envelope-dot" className="mr0-5" />
                             {c('Action').t`All Unread`}
                         </DropdownMenuButton>
                         <DropdownMenuButton
