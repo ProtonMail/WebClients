@@ -56,7 +56,7 @@ const ItemHoverButtons = ({ element, labelID, elementID, className, onBack, hasS
         }
     };
 
-    const unreadIcon = isUnread ? 'eye' : 'eye-slash';
+    const unreadIcon = isUnread ? 'envelope-open' : 'envelope-dot';
     const unreadAlt = isUnread ? c('Title').t`Mark as read` : c('Title').t`Mark as unread`;
 
     const starIcon = isStarred ? 'star-filled' : 'star';

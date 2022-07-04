@@ -34,6 +34,7 @@ interface Props {
     isSearch: boolean;
     isNarrow: boolean;
     isTiny: boolean;
+    isExtraTiny: boolean;
     onMove: (labelID: string) => void;
     onDelete: () => void;
     onBack: () => void;
@@ -48,13 +49,17 @@ const MoreDropdown = ({
     isSearch,
     isNarrow,
     isTiny,
+    isExtraTiny,
     onMove,
     onDelete,
     onBack,
     breakpoints,
     conversationMode,
 }: Props) => {
-    const [, actions] = useLabelActions(labelID, isNarrow);
+    let [firstActions, actions] = useLabelActions(labelID, isNarrow);
+    if (isExtraTiny) {
+        actions = [...firstActions, ...actions];
+    }
 
     const { emptyLabel, modal: deleteAllModal } = useEmptyLabel();
     const { moveAll, modal: moveAllModal } = useMoveAll();
@@ -151,7 +156,7 @@ const MoreDropdown = ({
             <Vr />
             <ToolbarDropdown
                 title={c('Action').t`More`}
-                content={<Icon className="toolbar-icon" name="three-dots-horizontal" />}
+                content={<Icon className="toolbar-icon" name="three-dots-horizontal" alt={c('Action').t`More`} />}
                 data-testid="toolbar:more-dropdown"
                 hasCaret={false}
                 additionalDropdowns={additionalDropdowns}

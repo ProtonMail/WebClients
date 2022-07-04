@@ -38,46 +38,46 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
             <div className="text-bold w100 pr1 pl1 pt0-5 pb0-5">{c('Sort').t`Sort`}</div>
             <DropdownMenuButton
                 data-testid="toolbar:sort-new-to-old"
-                disabled={isNewToOld}
+                aria-current={isNewToOld}
                 isSelected={isNewToOld}
                 className="flex flex-row"
                 onClick={() => onSort({ sort: TIME, desc: true })}
             >
                 <span className="text-left flex-item-fluid">{SORT_OPTIONS.NEW_TO_OLD}</span>
-                {isNewToOld ? <Icon name="checkmark" /> : null}
+                {isNewToOld ? <Icon name="checkmark" className="flex-item-noshrink mt0-2" /> : null}
             </DropdownMenuButton>
             <DropdownMenuButton
                 data-testid="toolbar:sort-old-to-new"
-                disabled={isOldToNew}
+                aria-current={isOldToNew}
                 isSelected={isOldToNew}
                 className={classnames(['flex flex-row', borderBottom && hideSizeSorting && 'border-bottom'])}
                 onClick={() => onSort({ sort: TIME, desc: false })}
             >
                 <span className="text-left flex-item-fluid">{SORT_OPTIONS.OLD_TO_NEW}</span>
-                {isOldToNew ? <Icon name="checkmark" /> : null}
+                {isOldToNew ? <Icon name="checkmark" className="flex-item-noshrink mt0-2" /> : null}
             </DropdownMenuButton>
             {!hideSizeSorting && (
                 <DropdownMenuButton
                     data-testid="toolbar:sort-desc"
-                    disabled={isLargeToSmall}
+                    aria-current={isLargeToSmall}
                     isSelected={isLargeToSmall}
                     className="flex flex-row"
                     onClick={() => onSort({ sort: SIZE, desc: true })}
                 >
                     <span className="text-left flex-item-fluid">{SORT_OPTIONS.LARGE_TO_SMALL}</span>
-                    {isLargeToSmall ? <Icon name="checkmark" /> : null}
+                    {isLargeToSmall ? <Icon name="checkmark" className="flex-item-noshrink mt0-2" /> : null}
                 </DropdownMenuButton>
             )}
             {!hideSizeSorting && (
                 <DropdownMenuButton
                     data-testid="toolbar:sort-asc"
-                    disabled={isSmallToLarge}
+                    aria-current={isSmallToLarge}
                     isSelected={isSmallToLarge}
                     className={classnames(['flex flex-row', borderBottom && 'border-bottom'])}
                     onClick={() => onSort({ sort: SIZE, desc: false })}
                 >
                     <span className="text-left flex-item-fluid">{SORT_OPTIONS.SMALL_TO_LARGE}</span>
-                    {isSmallToLarge ? <Icon name="checkmark" /> : null}
+                    {isSmallToLarge ? <Icon name="checkmark" className="flex-item-noshrink mt0-2" /> : null}
                 </DropdownMenuButton>
             )}
         </DropdownMenu>

@@ -9,17 +9,21 @@ const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
 interface Props {
     labelID: string;
+    isExtraTiny: boolean;
     isNarrow: boolean;
     selectedIDs: string[];
     onMove: (labelID: string) => Promise<void>;
     onDelete: () => Promise<void>;
 }
 
-const MoveButtons = ({ labelID = '', isNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
+const MoveButtons = ({ labelID = '', isExtraTiny, isNarrow, selectedIDs = [], onMove, onDelete }: Props) => {
     const [{ Shortcuts = 0 } = {}] = useMailSettings();
     const [loading, withLoading] = useLoading();
 
-    const [actions] = useLabelActions(labelID, isNarrow);
+    let [actions] = useLabelActions(labelID, isNarrow);
+    if (isExtraTiny) {
+        actions = [];
+    }
 
     if (!selectedIDs.length) {
         return null;

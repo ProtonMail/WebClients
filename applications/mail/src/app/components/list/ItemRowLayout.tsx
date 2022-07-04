@@ -155,27 +155,26 @@ const ItemRowLayout = ({
                 />
             </span>
 
-            <span className="ml1 flex w15e flex-nowrap flex-align-items-center flex-justify-end">
+            <span className="ml1 flex w13e flex-nowrap flex-align-items-center flex-justify-end">
                 <ItemHoverButtons
-                    className="mr1"
+                    className="mr1fdfsdfds"
                     element={element}
                     labelID={labelID}
                     elementID={elementID}
                     onBack={onBack}
                     hasStar={false}
                 />
-                <span className="opacity-on-hover-hide flex flex-nowrap item-senddate-row w13e ml0-5 flex-justify-end flex-align-items-center">
+                <span className="opacity-on-hover-hide flex flex-nowrap item-senddate-row ml0-5 flex-justify-end flex-align-items-center">
                     <ItemDate
                         element={element}
                         labelID={labelID}
                         className={unread ? 'text-bold' : undefined}
                         useTooltip
                     />
-
-                    <span className="flex w2e ml0-5 text-center flex-align-items-center">
-                        <ItemUnread element={element} labelID={labelID} className="ml0-5" />
-                    </span>
                 </span>
+            </span>
+            <span className="flex w2e ml0-5 text-center flex-align-items-center">
+                <ItemUnread element={element} labelID={labelID} className="ml0-5" />
             </span>
         </div>
     );
