@@ -215,9 +215,6 @@
       "Customize": [
         "Testreszabás"
       ],
-      "Decrypt": [
-        "Visszafejtés"
-      ],
       "Default email application": [
         "Alapértelmezett e-mail alkalmazás"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Külső titkosítás"
+      ],
+      "Fewer search options": [
+        "Kevesebb keresési beállítás"
       ],
       "Filter on...": [
         "Szűrés..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "További információk"
       ],
-      "Less search options": [
-        "Kevesebb keresési beállítás"
-      ],
       "Load": [
         "Betöltés"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "További keresési beállítások"
+      ],
+      "Move": [
+        "Áthelyezés"
+      ],
+      "Move all conversations from this folder": [
+        "Helyezzen át minden beszélgetést ebből a mappából"
+      ],
+      "Move all conversations from this label": [
+        "Helyezzen át minden beszélgetést ebből a címkéből"
+      ],
+      "Move all messages from this folder": [
+        "Helyezzen át minden üzenetet ebből a mappából"
+      ],
+      "Move all messages from this label": [
+        "Helyezzen át minden üzenetet ebből a címkéből"
       ],
       "move emails to": [
         "áthelyezés ide:"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Újra aláírás"
+      ],
+      "Read message": [
+        "Üzenet olvasása"
       ],
       "Read receipt sent": [
         "Olvasási visszaigazolás elküldve"
@@ -803,6 +818,9 @@
       "Show details": [
         "Részletek megjelenítése"
       ],
+      "Show fewer search options": [
+        "Kevesebb keresési beállítás megjelenítése"
+      ],
       "Show folders": [
         "Mappák megjelenítése"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Kevesebb megjelenítése"
-      ],
-      "Show less search options": [
-        "Kevesebb keresési beállítás megjelenítése"
       ],
       "Show messages": [
         "Üzenetek megjelenítése"
@@ -851,9 +866,6 @@
       "Submit": [
         "Küldés"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Téma"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Ez az üzenet \"Távoli tartalmat\" tartalmaz."
+      ],
+      "Trash all": [
+        "Kukába mindet"
       ],
       "Trust": [
         "Megbízható"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Kérjük, állítson be jelszót"
       ],
-      "Preferences could not be saved": [
-        "Beállítások mentése nem sikerült"
-      ],
       "Primary address key is not decrypted": [
         "Az elsődleges cím kulcsa nincs visszafejtve"
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Biztos abban, hogy elveti a módosításokat?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Biztosan áthelyezi az összes üzenetet ebben a Kukába?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Biztos, hogy véglegesen töröl ${ count } kijelölt beszélgetést?",
         "Biztos, hogy véglegesen töröl ${ count } kijelölt beszélgetést?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Nap",
         "Nap"
-      ],
-      "Decrypt message": [
-        "Üzenet visszafejtése"
       ],
       "Default email application": [
         "Alapértelmezett e-mail alkalmazás"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Nagy mennyiségű üzenet áthelyezése. Ez eltarthat egy ideig."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Adjon nevet a mappának és válassza ki a szülő mappát amelyben elhelyezi. Ha nem választ szülő mappát, akkor egy új felső szintű mappát hoz létre."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Az egyik feltöltött kulcs sem érvényes titkosításhoz. A titkosítás automatikusan kikapcsolt."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "havonta."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Telefonszám"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Olvasási visszaigazolás igénylése"
+      ],
+      "Rich text": [
+        ""
       ],
       "Right to Left": [
         "Jobbról balra"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Korlátlan számú üzenet"
+      ],
+      "Unlock message": [
+        "Üzenet feloldása"
       ],
       "Unsupported file": [
         "Ismeretlen file"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nem sikerült a szervező címére küldeni: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Az újra-titkosítási meghívás sikertelen. Kérjük, próbálja újra"
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
+      ],
       "Discover all Proton services": [
         "Fedezze fel a Proton szolgáltatásait"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "A magánszférájának védelme érdekében, a Proton e-mail követőket tiltott le ebben az üzenetben"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ],
       "You can now schedule your messages to be sent later": [
         "Most már ütemezheti is a leveleit későbbi elküldésre"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
-      "Import groups": [
-        "Felhasználói csoportok importálása"
-      ],
       "Insert contacts": [
         "Névjegy beszúrása"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "További kijelölési lehetőségek"
+      ],
+      "Move all messages to Trash": [
+        "Áthelyezi az összes üzenetet a lomtárba"
       ],
       "Move to": [
         "Mozgatás ide"

@@ -191,6 +191,12 @@
       "Download": [
         "下載"
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         "仍要下载"
       ],
@@ -221,9 +227,6 @@
       "enable desktop notifications": [
         "开启推送通知"
       ],
-      "Enable drive search": [
-        "启用网盘搜索"
-      ],
       "Expand": [
         "展开"
       ],
@@ -244,6 +247,9 @@
       ],
       "Get link": [
         "获取链接"
+      ],
+      "Get Proton Drive": [
+        ""
       ],
       "Get started": [
         "开始入门"
@@ -377,11 +383,11 @@
       "Refer a friend": [
         "邀请好友"
       ],
-      "refresh the page": [
-        "刷新页面"
-      ],
       "Refresh the page": [
         "刷新此页"
+      ],
+      "refresh the page": [
+        "刷新页面"
       ],
       "Remove": [
         "移除"
@@ -425,6 +431,9 @@
       "Resume upload": [
         "恢复上传"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "保存"
       ],
@@ -438,22 +447,16 @@
         "全选"
       ],
       "Send feedback": [
-        ""
+        "提交反馈"
       ],
       "Set recovery phrase": [
         "设置恢复密语"
-      ],
-      "Share": [
-        "分享"
       ],
       "Share file": [
         "分享文件"
       ],
       "Share item": [
         "共享项目"
-      ],
-      "Share options": [
-        "共享选项"
       ],
       "Share via link": [
         "通过链接分享"
@@ -775,7 +778,7 @@
     },
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
-        ""
+        "继续使用 ${ MAIL_APP_NAME }。"
       ]
     },
     "Calendar status": {
@@ -1913,9 +1916,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
       ],
-      "Preferences could not be saved": [
-        "设置保存失败"
-      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -2105,12 +2105,12 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        ""
+        "请给出评价"
       ]
     },
     "Feedback Modal Title": {
       "Your feedback": [
-        ""
+        "意见反馈"
       ]
     },
     "file size format": {
@@ -2392,6 +2392,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "请求新的验证码之前，请检查您的垃圾邮件并确认 ${ strong } 地址的正确性。"
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "已取消"
       ],
@@ -2461,9 +2464,6 @@
       "Creating link to folder": [
         "正在创建文件夹链接"
       ],
-      "Creating share": [
-        "正在创建分享"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支持来自 Outlook、Outlook Express、雅虎邮箱、Hotmail、Eudora 和其他一些应用程序的 CSV 文件，以及 vCard 3.1 和 4.0 格式（UTF-8 编码）。"
       ],
@@ -2476,8 +2476,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "数字签名已验证，此文件夹是由 ${ emailAddress } 用户安全上传。"
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } 的下载进程将被中止"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        ""
       ],
       "Downloaded": [
         "已下载"
@@ -2485,11 +2500,8 @@
       "Downloading": [
         "正在下载"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+      "Drag and drop items here or browse for files to upload.": [
         ""
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "拖放文件到这里上传文件."
       ],
       "Drop the file here to upload": [
         "请将文件拖拽至此处进行上传"
@@ -2497,8 +2509,11 @@
       "Duplicate key updated": [
         "重复的密钥已更新"
       ],
-      "Enable drive search": [
-        "启用网盘搜索"
+      "Enabling drive search": [
+        ""
+      ],
+      "Encrypted": [
+        ""
       ],
       "Encrypted search is here": [
         "已推出加密搜索功能"
@@ -2599,6 +2614,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Indexing search results…": [
         "正在索引搜索结果…"
       ],
@@ -2632,8 +2650,11 @@
       "Link copied to clipboard": [
         "链接已复制到剪贴板"
       ],
-      "Link expires: ": [
-        "链接有效期："
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
+        ""
       ],
       "Loading": [
         "加载中"
@@ -2641,11 +2662,14 @@
       "Loading ${ appName }": [
         "正在加载 ${ appName }"
       ],
+      "Loading link": [
+        ""
+      ],
+      "Loading links": [
+        ""
+      ],
       "Loading preview": [
         "正在载入预览"
-      ],
-      "Loading share": [
-        "正在加载分享"
       ],
       "Merged": [
         "已合并"
@@ -2695,6 +2719,9 @@
       "Not a valid URL": [
         "非有效链接"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "请注意：安装过 ${ appName } 的设备上仍可能存在本地数据。"
       ],
@@ -2728,11 +2755,14 @@
       "Permanently delete all files in your drive": [
         "永久删除网盘中的所有文件"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "请注意，分配给此组的地址将不会被删除。"
@@ -2770,6 +2800,9 @@
       "Priority support": [
         "优先客服支持"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        ""
+      ],
       "Queued": [
         "等待中"
       ],
@@ -2787,6 +2820,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "此浏览器无法启用搜索功能"
+      ],
+      "Search Enabled": [
+        ""
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "选择一个已上传的文件（夹）并为其创建链接。"
@@ -2812,11 +2854,20 @@
       "Share files with links": [
         "通过链接共享文件"
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         "将忽略签名校验"
       ],
       "Signature issue": [
         "签名问题"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "您的某些文件无法再访问，请恢复对其的访问权限。${ StartRecoveryButton }"
@@ -2833,6 +2884,12 @@
       "support team": [
         "客服团队"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "该账户可能有一个新密钥，或是以下内容可能已被篡改：${ items }。请务必在信任的情况下打开。"
       ],
@@ -2847,6 +2904,9 @@
       ],
       "There are no files yet": [
         "还没有文件"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帐户因可能违反用户协议而被封禁"
@@ -2866,8 +2926,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此链接可能使用了欺骗性域名，请确认可靠性后再打开。"
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "此链接是通过先前版本创建的，且无法修改。请删除此链接并创建一个新链接以更改设置。"
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "此链接将被永久禁用，无人再能通过此链接访问您的文件。您需要新建一个链接才能重新共享该文件。"
@@ -2883,9 +2943,6 @@
       ],
       "This will overwrite the existing folder": [
         "这将覆盖现有文件夹"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "要启用真正的隐私搜索，${ DRIVE_APP_NAME } 需要在本地索引您的文件。在此期间您仍然可以正常使用 ${ DRIVE_APP_NAME } - 索引完成后我们会立即通知您。"
@@ -2916,9 +2973,6 @@
       ],
       "Trash": [
         "回收站"
-      ],
-      "Try different keywords": [
-        "换个关键字试试"
       ],
       "Unlimited folders, labels, and filters": [
         "文件夹、标签、筛选规则不限量"
@@ -3025,35 +3079,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "从 ${ importedEmailAddressStrong } 到您的 Proton 账户的导入数据已准备就绪。"
       ],
-      "Your download has been canceled.": [
-        "您的下载已取消。"
-      ],
       "Your email will only be used for this one-time verification.": [
         "您的电子邮件将只会用于此一次性验证"
-      ],
-      "Your file failed to download.": [
-        "您的文件下载失败。"
-      ],
-      "Your file has finished downloading.": [
-        "您的文件已完成下载。"
-      ],
-      "Your file is being downloaded.": [
-        "正在下载您的文件。"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "由于密码重置，无法再访问您的文件。请重新上传旧的加密密钥以重新获得访问权限。${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "您的文件将被加密并保存。"
-      ],
-      "Your folder failed to download.": [
-        "您的文件夹下载失败。"
-      ],
-      "Your folder has finished downloading.": [
-        "您的文件夹已完成下载。"
-      ],
-      "Your folder is being downloaded.": [
-        "正在下载您的文件夹。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证"
@@ -3066,9 +3099,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 账户已欠费停用，请先支付逾期账单再继续使用。"
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "${ boldNameText } 的安全、可共享链接"
       ]
     },
     "Info on errors": {
@@ -3165,10 +3195,10 @@
         "自动保存联系人"
       ],
       "Awful": [
-        ""
+        "非常差"
       ],
       "Bad": [
-        ""
+        "很差"
       ],
       "Browser": [
         "浏览器"
@@ -3242,9 +3272,6 @@
       "Enable Beta Access": [
         "启用测试版功能"
       ],
-      "Enabling drive search": [
-        ""
-      ],
       "Encrypt emails": [
         "发送加密邮件"
       ],
@@ -3278,17 +3305,14 @@
       "From: ${ importedEmail }": [
         "来自：${ importedEmail }"
       ],
-      "Get your own ${ appName }": [
-        "获取您的专属 ${ appName }"
-      ],
       "Good": [
-        ""
+        "很好"
       ],
       "Hide password": [
         "隐藏密码"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "您认为新版 Proton 的使用体验如何？"
       ],
       "I understand the risk": [
         ""
@@ -3320,6 +3344,9 @@
       "Last month only": [
         "仅上个月"
       ],
+      "Location": [
+        ""
+      ],
       "Mailbox password": [
         "邮箱密码"
       ],
@@ -3348,7 +3375,7 @@
         "通知"
       ],
       "OK": [
-        ""
+        "还行"
       ],
       "Operating system": [
         "操作系统"
@@ -3477,7 +3504,7 @@
         "发生了什么？"
       ],
       "Wonderful": [
-        ""
+        "非常好"
       ],
       "Yes, I want to permanently delete\nmy old files": [
         "是的，我想永久删除\n我的旧文件"
@@ -3571,7 +3598,7 @@
     },
     "Message": {
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
-        ""
+        "您的免费体验期已结束，账户将于近期停用。${ action }"
       ]
     },
     "Message display when a new app version is available": {
@@ -3600,7 +3627,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        ""
+        "切换或添加账户"
       ]
     },
     "new_plans: info": {
@@ -3610,12 +3637,12 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        ""
+        "您可以详细叙述您的使用体验。（非必填）"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "反馈内容"
       ]
     },
     "new_plans: title": {
@@ -4008,16 +4035,22 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         ""
       ],
       "Get up to 18 months of ${ planName } for free": [
-        ""
+        "免费获得最长 18 个月的 ${ planName } 使用权"
       ],
       "Invite friends and earn rewards!": [
-        ""
+        "邀请好友注册赢取奖励！"
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ]
     },
@@ -4081,7 +4114,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        ""
+        "反馈已提交"
       ]
     },
     "Suffix for price": {
@@ -4119,44 +4152,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "下载次数"
-      ],
       "Actions": [
         "操作"
       ],
       "Address": [
         "地址"
       ],
-      "Created": [
-        "创建时间"
-      ],
       "CSV field": [
         "CSV 字段"
-      ],
-      "Deleted": [
-        "已删除"
-      ],
-      "Expires": [
-        "有效期至"
       ],
       "Import": [
         "导入"
       ],
-      "Location": [
-        "位置"
-      ],
-      "Modified": [
-        "修改"
-      ],
       "Name": [
         "名称"
-      ],
-      "Size": [
-        "大小"
-      ],
-      "Uploaded": [
-        "已上传"
       ],
       "Values": [
         "值"
@@ -4199,6 +4208,15 @@
       "${ emailsCount } member": [
         "${ emailsCount } 位成员"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        ""
+      ],
       "Account suspended": [
         "账号已被冻结"
       ],
@@ -4214,9 +4232,6 @@
       "Add to ${ groupName }": [
         "添加到 ${ groupName }"
       ],
-      "Additional settings": [
-        "其他设置"
-      ],
       "Addresses": [
         "地址"
       ],
@@ -4225,6 +4240,9 @@
       ],
       "Back": [
         "后退"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "测试版功能"
@@ -4277,6 +4295,9 @@
       "Date": [
         "日期"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "删除 ${ count } 个联系人"
       ],
@@ -4298,23 +4319,14 @@
       "Discard changes?": [
         "放弃更改？"
       ],
-      "Download canceled": [
-        "下载已取消"
-      ],
-      "Download completed": [
-        "下载完成"
-      ],
-      "Download failed": [
-        "下载失败"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         "下载未经验证的文件？"
       ],
       "Download unverified folder?": [
         "下载未经验证的文件夹？"
-      ],
-      "Downloading": [
-        "下載中"
       ],
       "Drive": [
         "云盘"
@@ -4349,12 +4361,6 @@
       "Empty trash": [
         "清空回收站"
       ],
-      "Enable drive search": [
-        "启用网盘搜索"
-      ],
-      "Enter password to download": [
-        "请输入密码进行下载"
-      ],
       "Enter your password": [
         "输入您的密码"
       ],
@@ -4388,6 +4394,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "找到${ searchView.numberOfResults }条结果"
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "群组"
       ],
@@ -4397,11 +4406,11 @@
       "Import contacts": [
         "导入联系人"
       ],
-      "Import groups": [
-        "导入分组"
-      ],
       "Invalid verification code": [
         "无效的验证代码"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         "项目详细信息"
@@ -4414,9 +4423,6 @@
       ],
       "Manage secure link": [
         "管理安全链接"
-      ],
-      "Manage share": [
-        "管理共享"
       ],
       "Merge contacts": [
         "合并联系人"
@@ -4438,9 +4444,6 @@
       ],
       "Name": [
         "名称"
-      ],
-      "No results found": [
-        "未找到结果"
       ],
       "Number of files": [
         "文件数"
@@ -4471,6 +4474,9 @@
       ],
       "Phone numbers": [
         "电话号码"
+      ],
+      "Privacy settings": [
+        ""
       ],
       "Re-sign all contacts": [
         "重新签署所有联系人"
@@ -4553,15 +4559,6 @@
       "Stop transfers?": [
         "停止传输？"
       ],
-      "The file or folder failed to be downloaded": [
-        "文件或文件夹下载失败"
-      ],
-      "The internet connection was interrupted": [
-        "网络连接中断"
-      ],
-      "The link does not exist": [
-        "此链接不存在"
-      ],
       "The link either does not exist or has expired": [
         "该链接不存在或已失效"
       ],
@@ -4573,6 +4570,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "此文件夹的签名缺失或无效，请转至菜单 (⋮) → 详细信息以获取相关信息。"
+      ],
+      "This link is password protected": [
+        ""
       ],
       "Total size": [
         "总大小"
@@ -4616,11 +4616,8 @@
       "You have no folders yet": [
         "您尚未添加文件夹"
       ],
-      "Your file is ready to be downloaded": [
-        "您的文件已准备就绪"
-      ],
-      "Your folder is ready to be downloaded": [
-        "您的文件夹已准备就绪"
+      "You've got files": [
+        ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "您的免费试用期即将于 ${ formattedEndDate } 结束"
@@ -4758,7 +4755,7 @@
         "当前的导入设置将无法恢复。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
-        ""
+        "您的免费体验期将于 ${ textDate } 结束。${ action }"
       ]
     }
   }

@@ -2190,9 +2190,6 @@
         "",
         ""
       ],
-      "Preferences could not be saved": [
-        "Ismenyifen gguman ad ttuskelsen"
-      ],
       "Primary address key is not decrypted": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
@@ -3115,11 +3112,11 @@
       "Other options": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
@@ -3995,7 +3992,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4434,6 +4431,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Get up to 18 months of ${ planName } for free": [
         ""
       ],
@@ -4441,6 +4441,9 @@
         ""
       ],
       "No more missed appointments": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
@@ -4902,9 +4905,6 @@
       ],
       "Import failed": [
         ""
-      ],
-      "Import groups": [
-        "Kter igrawen"
       ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"

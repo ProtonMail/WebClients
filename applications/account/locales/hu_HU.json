@@ -2465,7 +2465,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        "Gratulálunk! Megszerezte a maximum ${ rewardsLimit } hónapnyi ingyenes ${ plusPlanName } elérést"
+        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Névjegyek betöltése és titkosítása. Ez eltarthat néhány percig. A folyamat befejezésekor bezárhatja ezt az ablakot."
@@ -4029,9 +4029,6 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } érvénytelen"
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } vagy ${ forgotUsernameLink }?"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "A ${ MAIL_APP_NAME } egy-jelszavas módban is használható, amely leváltja a külön bejelentkezési és e-mail titkosítási jelszavakat. Egy-jelszavas módra váltáshoz, adja meg a kívánt jelszót, majd kattintson a Mentés gombra."
       ],
@@ -4244,9 +4241,6 @@
       ],
       "Already allocated": [
         "Már lefoglalva"
-      ],
-      "Already have an account?": [
-        "Van már fiókja?"
       ],
       "Already used": [
         "Már használatban"
@@ -4488,7 +4482,7 @@
         "Letöltheti a PGP kulcsát más PGP kompatibilis szolgáltatásokban való használathoz."
       ],
       "Drop a file here to upload": [
-        ""
+        "Húzzon ide fájlt a feltöltéshez"
       ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
@@ -5039,8 +5033,8 @@
       "Queued": [
         "Sorba állítva"
       ],
-      "read our two-factor authentication Guide first": [
-        "először elolvasni a kétlépcsős hitelesítésről szóló útmutatót"
+      "read our two-factor authentication guide first": [
+        "először olvassa el a kétlépcsős hitelesítésről szóló útmutatót"
       ],
       "Recovery file downloaded": [
         "Helyreállító fájl letöltve"
@@ -5379,7 +5373,7 @@
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."
+        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Az ellenőrzés néhány percet is igénybe vehet."
@@ -6993,6 +6987,9 @@
       "Learn more": [
         "További információk"
       ],
+      "Need help?": [
+        "Segíthetünk?"
+      ],
       "Not activated": [
         "Nem aktivált"
       ],
@@ -7019,6 +7016,9 @@
       ],
       "Terms and conditions": [
         "Felhasználási feltételek"
+      ],
+      "Trouble signing in?": [
+        "Probléma a bejelentkezéssel?"
       ],
       "Upgrade": [
         "Váltás nagyobb csomagra"
@@ -7347,8 +7347,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "További ${ BRAND_NAME } csomagok megismerése"
       ],
-      "From ${ _price } per user": [
-        "Már felhasználónkénti ${ _price }-tól"
+      "From ${ _price }": [
+        "Már ${ _price }-tól"
+      ],
+      "From ${ _price2 } per user": [
+        "Már felhasználónkénti ${ _price2 }-tól"
       ],
       "From ${ price }": [
         "Már ${ price }-tól"
@@ -7623,14 +7626,6 @@
         "Videós szolgáltatások világszerte"
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Elfelejtett jelszó"
-      ],
-      "username": [
-        "felhasználónév"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Támogatás"
@@ -7640,6 +7635,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Tegye az adatbiztonságot alapértelmezetté biztonsági mentésekhez, tároláshoz, megosztáshoz és visszakereséshez."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Máskülönben a fiókjához való hozzáférése korlátozott lesz, és a fiókja végül letiltásra kerül."
       ],
@@ -7699,6 +7697,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Adatvédelmi és biztonsági csomag cégeknek, beleértve az összes Proton prémium szolgáltatást."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Biztonságos felhőtárolás, mely lehetővé teszi, hogy könnyedén és biztonságosan tároljon, szinkronizáljon és osszon meg fájlokat."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Biztonságos e-mail és naptár, vállalkozóknak és cégeknek."
       ],
@@ -7738,20 +7739,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "A fiók létrehozásával elfogadja a ${ terms }. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "Azzal, hogy létrehoz egy ${ BRAND_NAME } felhasználói fiókot, beleegyezik a ${ terms }einkbe."
       ],
       "Payment details": [
         "Fizetés részletei"
-      ],
-      "Proton's terms and conditions": [
-        "Proton Felhasználási Feltételeit"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Mentse le e-mail címét vagy telefonszámát, hogy a jelszó esetleges visszaállítása esetén ellenőrzéshez használhassa."
       ],
       "Subscription": [
         "Előfizetés"
+      ],
+      "terms and conditions": [
+        "felhasználási feltételek"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "A kezdéshez válasszon egy megjelenítendő nevet. Ezt fogják látni az emberek, ha e-mailt küld nekik, meghívja egy eseményre vagy megoszt egy fájlt."
@@ -7982,6 +7983,9 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Emelje meg tárhelyét felhasználónként ${ businessStorage } méretűre"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Emelje meg tárhelyét ${ driveStorage } méretűre"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
@@ -8695,6 +8699,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Szerezzen akár 18 hónapnyi ${ planName } csomagot ingyen"
       ],
@@ -8703,6 +8710,9 @@
       ],
       "No more missed appointments": [
         "Nincs több lekésett találkozó"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Az email értesítésekkel ön dönti el, mely eseményekről kapjon értesítést és mikor."
@@ -9569,9 +9579,6 @@
       ],
       "Import failed": [
         "Importálás sikertelen"
-      ],
-      "Import groups": [
-        "Csoportok importálása"
       ],
       "Import key": [
         "Kulcs importálása"

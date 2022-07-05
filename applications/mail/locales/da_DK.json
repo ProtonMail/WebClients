@@ -215,9 +215,6 @@
       "Customize": [
         "Tilpas"
       ],
-      "Decrypt": [
-        "Dekryptér"
-      ],
       "Default email application": [
         "Standardprogram til mails"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Ekstern kryptering"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Filtrer efter..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "Få mere at vide"
       ],
-      "Less search options": [
-        "Færre søgemuligheder"
-      ],
       "Load": [
         "Indlæs"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Flere søgemuligheder"
+      ],
+      "Move": [
+        "Flyt"
+      ],
+      "Move all conversations from this folder": [
+        "Flyt alle samtaler fra denne mappe"
+      ],
+      "Move all conversations from this label": [
+        "Flyt alle samtaler fra denne etikette"
+      ],
+      "Move all messages from this folder": [
+        "Flyt alle beskeder fra denne mappe"
+      ],
+      "Move all messages from this label": [
+        "Flyt alle beskeder fra denne etikette"
       ],
       "move emails to": [
         "flyt e-mails til"
@@ -665,6 +677,9 @@
       "Re-sign": [
         "Signér igen"
       ],
+      "Read message": [
+        "Læs besked"
+      ],
       "Read receipt sent": [
         "Læsekvittering sendt"
       ],
@@ -765,7 +780,7 @@
         "send e-mail med auto-svar"
       ],
       "Send feedback": [
-        ""
+        "Send feedback"
       ],
       "Send read receipt": [
         "Send læsekvittering"
@@ -803,6 +818,9 @@
       "Show details": [
         "Vis detaljer"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         "Vis mapper"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Vis mindre"
-      ],
-      "Show less search options": [
-        "Vis færre søgemuligheder"
       ],
       "Show messages": [
         "Vis beskeder"
@@ -851,9 +866,6 @@
       "Submit": [
         "Indsend"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Tema"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
+      ],
+      "Trash all": [
+        "Kassér alt"
       ],
       "Trust": [
         "Hav tillid til"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Opsæt en adgangskode"
       ],
-      "Preferences could not be saved": [
-        "Indstillinger kunne ikke gemmes"
-      ],
       "Primary address key is not decrypted": [
         "Primære adressenøgle er ikke dekrypteret"
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Er du sikker på at du vil kassere dine ændringer?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Er du sikker på, at du vil flytte alle beskeder på denne placeirng til papirkurven?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Er du sikker på, at du vil slette ${ count } samtale permanent?",
         "Er du sikker på, at du vil slette ${ count } samtaler permanent?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Dag",
         "Dage"
-      ],
-      "Decrypt message": [
-        "Dekryptér beskeder"
       ],
       "Default email application": [
         "Standardprogram til mails"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Månedlig ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        ""
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Navngiv din nye mappe og vælg den overordnede mappe, du vil placere den i. Hvis du ikke vælger en overordnet mappe, vil denne nye mappe blive oprettet som en topniveaumappe."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ingen af de uploadede nøgler er gyldige til kryptering. Kryptering er automatisk deaktiveret."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Ugyldig URL"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "pr. måned."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline er kun kompatibelt med simpelt tekstformat. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME sender automatisk beskeden vha. den aktuelle skrivetilstand. Bemærk at ${ MAIL_APP_NAME } altid signerer krypterede beskeder"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Anmod om kvittering for læsning"
+      ],
+      "Rich text": [
+        ""
       ],
       "Right to Left": [
         "Højre mod venstre"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Ubegrænset antal beskeder"
+      ],
+      "Unlock message": [
+        "Lås besked op"
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
@@ -5421,10 +5439,10 @@
         "Gem automatisk kontakter"
       ],
       "Awful": [
-        ""
+        "Forfærdelig"
       ],
       "Bad": [
-        ""
+        "Dårlig"
       ],
       "BCC": [
         "BCC"
@@ -5529,7 +5547,7 @@
         "Fra: ${ importedEmail }"
       ],
       "Good": [
-        ""
+        "God"
       ],
       "Group": [
         "Gruppe"
@@ -5538,7 +5556,7 @@
         "Skjul adgangskode"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "Hvordan vil du beskrive din oplevelse med det nye Proton?"
       ],
       "I understand the risk": [
         "Jeg er indforstået med risikoen"
@@ -5613,7 +5631,7 @@
         "Notifikation"
       ],
       "OK": [
-        ""
+        "OK"
       ],
       "Operating system": [
         "Operativsystem"
@@ -5769,7 +5787,7 @@
         "uden vedhæftninger"
       ],
       "Wonderful": [
-        ""
+        "Vidunderlig"
       ]
     },
     "Label for contact group color": {
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan ikke sende til organisatoradresse: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "Udforsk alle Proton-tjenester"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "For at beskytte dit privatliv har Proton blokeret e-mail-trackere i denne besked"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Du kan nu planlægge dine beskeder til senere afsendelse"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Importér kontakter"
       ],
-      "Import groups": [
-        "Importer grupper"
-      ],
       "Insert contacts": [
         "Indsæt kontakter"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Flere valg"
+      ],
+      "Move all messages to Trash": [
+        "Flyt alle beskeder til papirkurv"
       ],
       "Move to": [
         "Flyt til"

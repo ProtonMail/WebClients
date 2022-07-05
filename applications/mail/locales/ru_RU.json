@@ -215,9 +215,6 @@
       "Customize": [
         "Настроить"
       ],
-      "Decrypt": [
-        "Расшифровать"
-      ],
       "Default email application": [
         "Приложение электронной почты по умолчанию"
       ],
@@ -340,6 +337,9 @@
       ],
       "External encryption": [
         "Внешнее шифрование"
+      ],
+      "Fewer search options": [
+        "Меньше настроек поиска"
       ],
       "Filter on...": [
         "Фильтр по..."
@@ -467,9 +467,6 @@
       "Learn more": [
         "Подробнее"
       ],
-      "Less search options": [
-        "Меньше настроек поиска"
-      ],
       "Load": [
         "Загрузить"
       ],
@@ -547,6 +544,21 @@
       ],
       "More search options": [
         "Больше настроек поиска"
+      ],
+      "Move": [
+        "Переместить"
+      ],
+      "Move all conversations from this folder": [
+        "Переместить все разговоры из этой папки"
+      ],
+      "Move all conversations from this label": [
+        "Переместить все обсуждения с этого ярлыка"
+      ],
+      "Move all messages from this folder": [
+        "Переместить все сообщения из этой папки"
+      ],
+      "Move all messages from this label": [
+        "Переместить все сообщения с этого ярлыка"
       ],
       "move emails to": [
         "переместить письма в"
@@ -670,6 +682,9 @@
       ],
       "Re-sign": [
         "Подписать повторно"
+      ],
+      "Read message": [
+        "Прочитать сообщение"
       ],
       "Read receipt sent": [
         "Уведомление о прочтении отправлено"
@@ -809,6 +824,9 @@
       "Show details": [
         "Показать подробности"
       ],
+      "Show fewer search options": [
+        "Показать меньше настроек поиска"
+      ],
       "Show folders": [
         "Показать папки"
       ],
@@ -817,9 +835,6 @@
       ],
       "Show less": [
         "Показать меньше"
-      ],
-      "Show less search options": [
-        "Показать меньше настроек поиска"
       ],
       "Show messages": [
         "Показать сообщения"
@@ -857,9 +872,6 @@
       "Submit": [
         "Отправить"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Тема"
       ],
@@ -868,6 +880,9 @@
       ],
       "This message contains remote content.": [
         "В этом сообщении есть внешнее содержимое."
+      ],
+      "Trash all": [
+        "Выбросить все"
       ],
       "Trust": [
         "Доверять"
@@ -3160,9 +3175,6 @@
       "Please set a password": [
         "Пожалуйста, задайте пароль"
       ],
-      "Preferences could not be saved": [
-        "Настройки не могут быть сохранены"
-      ],
       "Primary address key is not decrypted": [
         "Ключ первичного адреса не расшифрован"
       ],
@@ -4191,6 +4203,9 @@
       "Are you sure you want to discard your changes?": [
         "Вы уверены, что хотите отменить изменения?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Вы уверены, что хотите переместить все сообщения отсюда в корзину?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Вы уверены, что хотите безвозвратно удалить ${ count } цепочку писем?",
         "Вы уверены, что хотите безвозвратно удалить эти ${ count } цепочки писем?",
@@ -4316,9 +4331,6 @@
         "Дня",
         "Дня",
         "Дня(ей)"
-      ],
-      "Decrypt message": [
-        "Расшифровать сообщение"
       ],
       "Default email application": [
         "Приложение электронной почты по умолчанию"
@@ -4626,6 +4638,9 @@
       "Monthly ${ onDayString }": [
         "Ежемесячно ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Перемещение большого количества сообщений. Это может занять некоторое время."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Назовите новую папку и выберите родительскую папку, в которую вы хотите ее поместить. Если вы не выберете родительскую папку, то эта новая папка будет создана как папка верхнего уровня."
       ],
@@ -4677,9 +4692,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ни один из загруженных ключей не годиться для шифрования. Шифрование автоматически отключено."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Недопустимый URL"
       ],
@@ -4701,11 +4713,11 @@
       "per month.": [
         "в месяц."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Hомер телефона"
@@ -4778,6 +4790,9 @@
       ],
       "Request read receipt": [
         "Запросить уведомление о прочтении"
+      ],
+      "Rich text": [
+        "Форматированный текст"
       ],
       "Right to Left": [
         "Справа налево"
@@ -5039,6 +5054,9 @@
       ],
       "Unlimited messages": [
         "Неограниченное количество сообщений"
+      ],
+      "Unlock message": [
+        "Разблокировать сообщение"
       ],
       "Unsupported file": [
         "Неподдерживаемый файл"
@@ -6798,6 +6816,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Не удается отправить на адрес организатора: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Ошибка повторного шифрования приглашения. Пожалуйста, попробуйте еще раз"
       ]
     },
     "Search - no results": {
@@ -6946,6 +6967,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
+      ],
       "Discover all Proton services": [
         "Откройте для себя все службы Proton"
       ],
@@ -6963,6 +6987,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Чтобы защитить вашу конфиденциальность, Proton заблокировал почтовые трекеры в этом сообщении"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Попробуйте ${DRIVE_APP_NAME}"
       ],
       "You can now schedule your messages to be sent later": [
         "Сейчас вы можете запланировать отправку ваших сообщений на более позднее время"
@@ -7626,9 +7653,6 @@
       "Import contacts": [
         "Импорт контактов"
       ],
-      "Import groups": [
-        "Импорт групп"
-      ],
       "Insert contacts": [
         "Добавить контакты"
       ],
@@ -7682,6 +7706,9 @@
       ],
       "More selections": [
         "Еще варианты выбора"
+      ],
+      "Move all messages to Trash": [
+        "Переместить все сообщения в корзину"
       ],
       "Move to": [
         "Переместить в"

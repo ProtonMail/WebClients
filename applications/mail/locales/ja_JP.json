@@ -215,9 +215,6 @@
       "Customize": [
         "カスタマイズ"
       ],
-      "Decrypt": [
-        "復号"
-      ],
       "Default email application": [
         "既定のメールアプリ"
       ],
@@ -303,7 +300,7 @@
         "メールの設定"
       ],
       "Enable": [
-        "自動返信の有効化"
+        "有効化"
       ],
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
@@ -334,6 +331,9 @@
       ],
       "External encryption": [
         "外部への暗号化"
+      ],
+      "Fewer search options": [
+        "検索オプションを非表示"
       ],
       "Filter on...": [
         "仕分け対象..."
@@ -458,9 +458,6 @@
       "Learn more": [
         "詳細"
       ],
-      "Less search options": [
-        "検索オプションを折りたたむ"
-      ],
       "Load": [
         "読み込む"
       ],
@@ -519,7 +516,7 @@
         "連絡先の統合"
       ],
       "Messages from this sender": [
-        ""
+        "この差出人からのメッセージ"
       ],
       "Messages to this recipient": [
         ""
@@ -537,7 +534,22 @@
         "詳細: ${ safeTitle }"
       ],
       "More search options": [
-        "さらなる検索オプション"
+        "検索オプションを表示"
+      ],
+      "Move": [
+        "移動"
+      ],
+      "Move all conversations from this folder": [
+        "このフォルダーからすべての会話を移動"
+      ],
+      "Move all conversations from this label": [
+        "このラベルからすべての会話を移動"
+      ],
+      "Move all messages from this folder": [
+        "このフォルダーからすべてのメッセージを移動"
+      ],
+      "Move all messages from this label": [
+        "このラベルからすべてのメッセージを移動"
       ],
       "move emails to": [
         "電子メールを移動"
@@ -662,6 +674,9 @@
       "Re-sign": [
         "再署名"
       ],
+      "Read message": [
+        "メッセージを既読にする"
+      ],
       "Read receipt sent": [
         "開封確認が送信されました"
       ],
@@ -741,7 +756,7 @@
         "検索対象: ${ option.text }"
       ],
       "Search message content": [
-        "メッセージ内容を検索"
+        "メッセージ内容の検索"
       ],
       "Select all": [
         "すべて選択"
@@ -800,6 +815,9 @@
       "Show details": [
         "詳細を表示"
       ],
+      "Show fewer search options": [
+        "表示する検索オプションを減らします"
+      ],
       "Show folders": [
         "フォルダーを表示"
       ],
@@ -809,14 +827,11 @@
       "Show less": [
         "詳細を非表示"
       ],
-      "Show less search options": [
-        "検索オプションの詳細を閉じる"
-      ],
       "Show messages": [
         "メッセージを表示"
       ],
       "Show more search options": [
-        "検索オプションをもっと表示"
+        "表示する検索オプションを増やします"
       ],
       "Show preview": [
         "プレビューを表示"
@@ -848,9 +863,6 @@
       "Submit": [
         "送信"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "テーマ"
       ],
@@ -859,6 +871,9 @@
       ],
       "This message contains remote content.": [
         "このメッセージにはリモートコンテンツが含まれています。"
+      ],
+      "Trash all": [
+        "すべてごみ箱へ移動"
       ],
       "Trust": [
         "信頼する"
@@ -992,7 +1007,7 @@
     },
     "action": {
       "Search messages": [
-        "メッセージの検索"
+        "メッセージを検索"
       ]
     },
     "Actions message": {
@@ -1093,13 +1108,13 @@
     },
     "Attachment radio advanced search": {
       "All": [
-        "指定しない"
+        "すべて"
       ],
       "With": [
-        "あり"
+        "含む"
       ],
       "Without": [
-        "なし"
+        "含まない"
       ]
     },
     "Attachment signature verification": {
@@ -1589,19 +1604,19 @@
     },
     "color": {
       "Apple": [
-        ""
+        "グレーな緑"
       ],
       "azureish white": [
-        ""
+        "かなり白い青"
       ],
       "blanched almond": [
-        ""
+        "かなり白い黄"
       ],
       "blue-gray": [
-        ""
+        "ややグレーな青"
       ],
       "caramel": [
-        ""
+        "白い黄"
       ],
       "carrot": [
         "キャロット"
@@ -1610,7 +1625,7 @@
         "セリース"
       ],
       "cinnabar": [
-        ""
+        "朱"
       ],
       "cobalt": [
         "コバルト"
@@ -1619,19 +1634,19 @@
         "コパー"
       ],
       "cyan-blue azure": [
-        ""
+        "グレーな青"
       ],
       "dandelion": [
-        ""
+        "やや白い黄"
       ],
       "dark cerulean": [
-        ""
+        "黒い青"
       ],
       "dark midnight blue": [
-        ""
+        "かなり黒い青"
       ],
       "dim gray": [
-        ""
+        "やや黒いグレー"
       ],
       "enzian": [
         "エンツィアン"
@@ -1640,37 +1655,37 @@
         "ファーン"
       ],
       "field drab": [
-        ""
+        "かなり黒い黄"
       ],
       "forest": [
         "フォレスト"
       ],
       "gainsboro": [
-        ""
+        "かなり白いグレー"
       ],
       "japanese laurel": [
-        ""
+        "黒い緑"
       ],
       "kiwi": [
-        ""
+        "くっきりとした緑"
       ],
       "lemon yellow": [
-        ""
+        "くっきりとした黄"
       ],
       "light carmine pink": [
-        ""
+        "かなり赤いピンク"
       ],
       "light moss green": [
-        ""
+        "白い緑"
       ],
       "light red": [
-        ""
+        "かなり白い赤"
       ],
       "maize": [
-        ""
+        "やや黒い黄"
       ],
       "mughal green": [
-        ""
+        "かなり黒い緑"
       ],
       "ocean": [
         "オーシャン"
@@ -1679,31 +1694,31 @@
         "オリーブ"
       ],
       "outer space": [
-        ""
+        "かなり黒いグレー"
       ],
       "pacific": [
         "パシフィック"
       ],
       "palatinate blue": [
-        ""
+        "くっきりとした青"
       ],
       "pale cerulean": [
-        ""
+        "やや白い青"
       ],
       "pastel gray": [
-        ""
+        "かなり白い緑"
       ],
       "persian plum": [
-        ""
+        "かなり黒い赤"
       ],
       "persian red": [
-        ""
+        "ペルシャ赤"
       ],
       "philippine gray": [
-        ""
+        "グレー"
       ],
       "philippine silver": [
-        ""
+        "やや白いグレー"
       ],
       "pickle": [
         "ピックル"
@@ -1715,7 +1730,7 @@
         "ピンク"
       ],
       "pistachio": [
-        ""
+        "ややグレーな緑"
       ],
       "plum": [
         "プラム"
@@ -1724,19 +1739,19 @@
         "パープル"
       ],
       "raisin black": [
-        ""
+        "黒"
       ],
       "reef": [
         "リーフ"
       ],
       "ruddy pink": [
-        ""
+        "やや赤いピンク"
       ],
       "sahara": [
         "サハラ"
       ],
       "satin sheen gold": [
-        ""
+        "黒い黄"
       ],
       "slateblue": [
         "スレートブルー"
@@ -1748,10 +1763,10 @@
         "ストロベリー"
       ],
       "vivid auburn": [
-        ""
+        "やや黒い赤"
       ],
       "white": [
-        "ホワイト"
+        "白"
       ]
     },
     "Composer email icon": {
@@ -3106,9 +3121,6 @@
       "Please set a password": [
         "パスワードを設定してください"
       ],
-      "Preferences could not be saved": [
-        "設定が保存できませんでした"
-      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -3709,7 +3721,7 @@
         "アプリ"
       ],
       "Custom folders": [
-        "カスタムフォルダー"
+        "独自フォルダー"
       ],
       "Default folders": [
         "既定のフォルダー"
@@ -4014,6 +4026,9 @@
       "Are you sure you want to discard your changes?": [
         "変更を破棄してよろしいですか?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "この場所にあるすべてのメッセージを削除してよろしいですか?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "${ count } 件の会話を完全に削除してよろしいですか？"
       ],
@@ -4042,7 +4057,7 @@
         "スイス拠点で、世界中で利用可能です"
       ],
       "Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.": [
-        ""
+        "一般的なナビゲーションと基本操作はキーボードショートカットの設定に関係なく利用できます。"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
@@ -4124,9 +4139,6 @@
       ],
       "Day": [
         "日"
-      ],
-      "Decrypt message": [
-        "メッセージの復号"
       ],
       "Default email application": [
         "既定のメールアプリ"
@@ -4315,7 +4327,7 @@
         ""
       ],
       "Indexing paused": [
-        "インデックスが一時停止されました"
+        "処理が一時停止されました"
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
@@ -4410,6 +4422,9 @@
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "巨大な量のメッセージを移動しています。これにはしばらくかかります。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "新しいフォルダーの名前と、親フォルダーを選択してください。最上位のフォルダーを作成したい場合は、親フォルダーを選択しないでください。"
       ],
@@ -4461,9 +4476,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "メモ: アップロードされた鍵は暗号化に利用できます。暗号化は自動的に無効化されます。"
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
@@ -4485,11 +4497,11 @@
       "per month.": [
         "毎月。"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "電話番号"
@@ -4559,6 +4571,9 @@
       ],
       "Request read receipt": [
         "開封確認を要求"
+      ],
+      "Rich text": [
+        "リッチテキスト"
       ],
       "Right to Left": [
         "右から左"
@@ -4702,7 +4717,7 @@
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "この動作によりすべてのメッセージがダウンロードされ、ローカルで検索することが可能になります。ブラウザーのデータを削除するとこの機能は無効になります。"
+        "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
         "このアドレスは無効になっています。このアドレス宛に送信するには、まず所有者がアドレスを有効にする必要があります。"
@@ -4807,16 +4822,19 @@
         ""
       ],
       "Turn off content search. Activation progress won't be lost.": [
-        "コンテンツ検索をオフにします。アクティベーション進捗は失われません。"
+        "メッセージ内容の検索をオフにします。アクティベーションの進行状況は失われません。"
       ],
       "Turn on to search the content of your messages": [
-        "メッセージの内容の検索を有効にする"
+        "メッセージ内容の検索をオンにします"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
       ],
       "Unlimited messages": [
         "送信数制限なし"
+      ],
+      "Unlock message": [
+        "メッセージのロックを解除"
       ],
       "Unsupported file": [
         "非対応のファイル"
@@ -4933,7 +4951,7 @@
         ""
       ],
       "You can either update your search query or clear it": [
-        ""
+        "検索内容を変えるか、消去してください"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
@@ -6264,7 +6282,7 @@
     },
     "Option group": {
       "Custom folders": [
-        "カスタムフォルダー"
+        "独自フォルダー"
       ],
       "Default folders": [
         "既定のフォルダー"
@@ -6338,7 +6356,7 @@
         "終了日"
       ],
       "Filter folders": [
-        "絞り込むフォルダー名"
+        "フォルダーとラベルを検索"
       ],
       "Filter groups": [
         "グループをフィルター"
@@ -6522,6 +6540,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "主催者のアドレスに送信できません: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6652,6 +6673,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "すべての Proton サービスがここに"
       ],
@@ -6669,6 +6693,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "あなたのプライバシーを保護するために、Proton はこのメッセージのメールトラッカーをブロックしました"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } を試す"
       ],
       "You can now schedule your messages to be sent later": [
         "あとでメッセージを送信するようスケジュールしました"
@@ -7224,9 +7251,6 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
-      "Import groups": [
-        "グループをインポート"
-      ],
       "Insert contacts": [
         "連絡先を挿入"
       ],
@@ -7280,6 +7304,9 @@
       ],
       "More selections": [
         "選択方法を指定"
+      ],
+      "Move all messages to Trash": [
+        "すべてのメッセージをごみ箱へ移動"
       ],
       "Move to": [
         "移動先"
@@ -7502,7 +7529,7 @@
         "インポートは新しいメッセージから始まります。"
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
-        "この動作によりすべてのメッセージがダウンロードされ、ローカルで検索することが可能になります。ブラウザーのデータを削除するとこの機能は無効になります。"
+        "すべてのメッセージをダウンロードし、ローカルで検索可能にします。ブラウザのデータを削除するとこの機能は無効になります。"
       ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"

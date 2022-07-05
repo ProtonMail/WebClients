@@ -215,9 +215,6 @@
       "Customize": [
         "定制"
       ],
-      "Decrypt": [
-        "解密"
-      ],
       "Default email application": [
         "设为默认邮件应用"
       ],
@@ -334,6 +331,9 @@
       ],
       "External encryption": [
         "外部加密"
+      ],
+      "Fewer search options": [
+        "收起搜索选项"
       ],
       "Filter on...": [
         "筛选依据..."
@@ -458,9 +458,6 @@
       "Learn more": [
         "了解详情"
       ],
-      "Less search options": [
-        "收起搜索选项"
-      ],
       "Load": [
         "加载"
       ],
@@ -519,10 +516,10 @@
         "合并联系人"
       ],
       "Messages from this sender": [
-        ""
+        "查看来自此发件人的所有邮件"
       ],
       "Messages to this recipient": [
-        ""
+        "查看发往此收件人的所有邮件"
       ],
       "Minimize composer": [
         "最小化编辑窗"
@@ -538,6 +535,21 @@
       ],
       "More search options": [
         "展开搜索选项"
+      ],
+      "Move": [
+        "移动"
+      ],
+      "Move all conversations from this folder": [
+        ""
+      ],
+      "Move all conversations from this label": [
+        ""
+      ],
+      "Move all messages from this folder": [
+        ""
+      ],
+      "Move all messages from this label": [
+        ""
       ],
       "move emails to": [
         "将邮件移至"
@@ -661,6 +673,9 @@
       ],
       "Re-sign": [
         "重新签名"
+      ],
+      "Read message": [
+        "阅读邮件"
       ],
       "Read receipt sent": [
         "回执已发送"
@@ -800,6 +815,9 @@
       "Show details": [
         "显示详情"
       ],
+      "Show fewer search options": [
+        "不显示高级搜索选项"
+      ],
       "Show folders": [
         "显示文件夹"
       ],
@@ -808,9 +826,6 @@
       ],
       "Show less": [
         "显示更少"
-      ],
-      "Show less search options": [
-        "不显示下列搜索选项"
       ],
       "Show messages": [
         "显示邮件"
@@ -848,9 +863,6 @@
       "Submit": [
         "提交"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "配色"
       ],
@@ -859,6 +871,9 @@
       ],
       "This message contains remote content.": [
         "此邮件含有外链内容。"
+      ],
+      "Trash all": [
+        "全部移至废件箱"
       ],
       "Trust": [
         "信任"
@@ -3047,7 +3062,7 @@
         "标签名称不能为空。"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
-        ""
+        "最多只能有 ${ attachmentsCountLimit } 个附件"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
         "将至少 ${ calendarToFixCount } 个日历与现有的 Proton 日历合并"
@@ -3106,9 +3121,6 @@
       "Please set a password": [
         "请设置密码"
       ],
-      "Preferences could not be saved": [
-        "设置保存失败"
-      ],
       "Primary address key is not decrypted": [
         "主密钥尚未解密"
       ],
@@ -3116,10 +3128,10 @@
         "主密钥尚未解密。"
       ],
       "Primary key is not valid for sending": [
-        ""
+        "主密钥无法发送邮件"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        ""
+        "内部用户的主密钥无效，无法发送邮件"
       ],
       "Public key could not be trusted": [
         "无法信任公钥"
@@ -3170,7 +3182,7 @@
         "该附件无法解密。\n如果你有相应的私钥，你仍然能够解密\n用GnuPG等程序来处理该文件。"
       ],
       "The folder name is invalid. Please choose a different name.": [
-        ""
+        "文件夹名称无效，请更改。"
       ],
       "The folder name is too long. Please choose a different name.": [
         "文件夹名称过长，请重新填写。"
@@ -3179,7 +3191,7 @@
         "无法提取${ emailAddress } 的密钥属性"
       ],
       "The label name is invalid. Please choose a different name.": [
-        ""
+        "标签名称无效，请更改。"
       ],
       "The label name is too long. Please choose a different name.": [
         "标签名称过长，请重新填写。"
@@ -3442,7 +3454,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        ""
+        "请给出评价"
       ]
     },
     "Error sending calendar invitation": {
@@ -3501,7 +3513,7 @@
     },
     "Feedback Modal Title": {
       "Your feedback": [
-        ""
+        "意见反馈"
       ]
     },
     "file size format": {
@@ -3859,13 +3871,13 @@
         "${ calendarsToBeMergedCount } 个合并日历"
       ],
       "${ contactCount } contact contains multiple email addresses.": [
-        ""
+        "${ contactCount } 名联系人各有多个邮箱地址。"
       ],
       "${ contactEmailsLength } Member": [
         "${ contactEmailsLength } 会员"
       ],
       "${ contactName } contains multiple email addresses.": [
-        ""
+        "${ contactName } 有多个邮箱地址。"
       ],
       "${ contactsCount } contact found": [
         "找到 ${ contactsCount } 位联系人"
@@ -4014,6 +4026,9 @@
       "Are you sure you want to discard your changes?": [
         "确定要放弃修改吗？"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "确定要将此处所有邮件移至废件箱吗？"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "确定要永久删除 ${ count } 条会话吗？"
       ],
@@ -4125,9 +4140,6 @@
       "Day": [
         "天"
       ],
-      "Decrypt message": [
-        "解密邮件"
-      ],
       "Default email application": [
         "设为默认邮件应用"
       ],
@@ -4144,7 +4156,7 @@
         "确定要重新对联系人详细信息签名吗？"
       ],
       "Don't forget to share your password with the recipient": [
-        ""
+        "别忘了把您设定的密码告诉收件人"
       ],
       "Download our mobile application from your favorite app store to communicate securely on-the-go.": [
         "从应用商店下载我们的移动应用即可随时随地安全通信。"
@@ -4231,7 +4243,7 @@
         "即将过期"
       ],
       "Expiring message": [
-        ""
+        "邮件有效期"
       ],
       "file attached": [
         "个附件"
@@ -4410,6 +4422,9 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "正在移动大量邮件，可能需要一段时间。"
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "设置新文件夹的名称和位置，若不选取上层文件夹，则将创建顶层文件夹。"
       ],
@@ -4461,9 +4476,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有上传的密钥都不适用于加密，加密将自动禁用。"
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "URL 无效"
       ],
@@ -4471,7 +4483,7 @@
         "，共"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        ""
+        "您信任的某些密钥已被其所有者标为「已泄露」，建议您不再信任这些密钥。"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
@@ -4485,11 +4497,11 @@
       "per month.": [
         "/月。"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline 只能用于纯文本邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME 可使用编辑器中指定的格式发送邮件。请注意 ${ MAIL_APP_NAME } 会对所有加密邮件予以数字签名。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "电话号码"
@@ -4516,10 +4528,10 @@
         "选择链接类型并填写相关信息。"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        ""
+        "请选择将哪些邮箱地址加入这 ${ groupCount } 个群组。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
-        ""
+        "请选择将哪些邮箱地址加入「${ groupName }」。"
       ],
       "Please wait while we look for contacts that can be re-signed with the primary encryption key.": [
         "请稍候，我们正在寻找可用主密钥重新签名的联系人。"
@@ -4559,6 +4571,9 @@
       ],
       "Request read receipt": [
         "请求已读回执"
+      ],
+      "Rich text": [
+        "富文本"
       ],
       "Right to Left": [
         "从右到左"
@@ -4818,6 +4833,9 @@
       "Unlimited messages": [
         "每日发送邮件不限量"
       ],
+      "Unlock message": [
+        "解锁邮件"
+      ],
       "Unsupported file": [
         "不支持文件"
       ],
@@ -4891,7 +4909,7 @@
         "我们将向 ${ strong } 发送新的验证码"
       ],
       "We're moving! Join us at our new site: ${ link }.": [
-        ""
+        "我们改名了！欢迎造访我们的新域名：${ link }"
       ],
       "Web URL": [
         "网址"
@@ -5055,13 +5073,13 @@
     },
     "Key badge": {
       "Compromised": [
-        ""
+        "已泄露"
       ],
       "Expired": [
         "已过期"
       ],
       "Obsolete": [
-        ""
+        "已作废"
       ],
       "Primary": [
         "首选"
@@ -5336,10 +5354,10 @@
         "自动保存联系人"
       ],
       "Awful": [
-        ""
+        "非常差"
       ],
       "Bad": [
-        ""
+        "很差"
       ],
       "BCC": [
         "密送"
@@ -5444,7 +5462,7 @@
         "来自：${ importedEmail }"
       ],
       "Good": [
-        ""
+        "很好"
       ],
       "Group": [
         "群组"
@@ -5453,7 +5471,7 @@
         "隐藏密码"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "您认为新版 Proton 的使用体验如何？"
       ],
       "I understand the risk": [
         "风险已知悉"
@@ -5528,7 +5546,7 @@
         "通知"
       ],
       "OK": [
-        ""
+        "还行"
       ],
       "Operating system": [
         "操作系统"
@@ -5684,7 +5702,7 @@
         "不含附件"
       ],
       "Wonderful": [
-        ""
+        "非常好"
       ]
     },
     "Label for contact group color": {
@@ -5994,7 +6012,7 @@
         "为了保护您的隐私，图像未被加载。"
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
-        ""
+        "您的浏览器无法验证服务器身份。此图片的传输协议可能为 HTTP。"
       ]
     },
     "Message notification": {
@@ -6172,12 +6190,12 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        ""
+        "您可以详细叙述您的使用体验。（非必填）"
       ]
     },
     "new_plans: placeholder": {
       "Feedback": [
-        ""
+        "反馈内容"
       ]
     },
     "new_plans: title": {
@@ -6307,13 +6325,13 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        ""
+        "此密钥已被 ${ emailAddress } 标为已泄露，不能再用于加密或验证数字签名。"
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
-        ""
+        "此密钥已被 ${ emailAddress } 作废，只能用于验证数字签名。"
       ],
       "We recommend that you \"untrust\" this key.": [
-        ""
+        "建议您不再信任此密钥。"
       ]
     },
     "PGP key warning": {
@@ -6522,6 +6540,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "无法发送到组织者地址：${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6652,6 +6673,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } 现已正式发布！您的文档也可以具备与邮件同等的安全性。"
+      ],
       "Discover all Proton services": [
         "探索所有 Proton 服务"
       ],
@@ -6669,6 +6693,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "为了保护您的隐私，Proton 屏蔽了此邮件中的电子邮件跟踪器"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "体验 ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "您现在可以计划稍后发送邮件"
@@ -7224,9 +7251,6 @@
       "Import contacts": [
         "导入联系人"
       ],
-      "Import groups": [
-        "导入群组"
-      ],
       "Insert contacts": [
         "插入联系人"
       ],
@@ -7280,6 +7304,9 @@
       ],
       "More selections": [
         "更多选择"
+      ],
+      "Move all messages to Trash": [
+        "全部移至废件箱"
       ],
       "Move to": [
         "移动到"
@@ -7496,7 +7523,7 @@
         "选择在向用户签名或加密时要使用的 PGP 方案。请注意, PGP/内嵌强制纯文本消息。"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
-        ""
+        "系统子文件夹在 ${ MAIL_APP_NAME } 中将作为独立的文件夹显示"
       ],
       "The import will start with the most recent messages.": [
         "导入将从最近的信息开始。"
@@ -7566,7 +7593,7 @@
         "如果您忘记了密码，您将无法重新激活密钥。我们可以帮助您关闭警告横幅，但在此过程中，您将永久失去通过该密钥加密的所有数据"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
-        ""
+        "只有付费 ${ VPN_APP_NAME } 账户才能与客服实时交流，请通过表单提交反馈。"
       ],
       "Proton will merge all folders with the same name. To avoid this, change the names before import.": [
         "Proton 将会合并所有同名的文件夹。为了避免这种情况，请在导入前更改名称。"

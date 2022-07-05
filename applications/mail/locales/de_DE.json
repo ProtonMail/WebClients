@@ -215,9 +215,6 @@
       "Customize": [
         "Anpassen"
       ],
-      "Decrypt": [
-        "Entschlüsseln"
-      ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Externe Verschlüsselung"
+      ],
+      "Fewer search options": [
+        "Weniger Suchoptionen"
       ],
       "Filter on...": [
         "Filtern nach …"
@@ -461,9 +461,6 @@
       "Learn more": [
         "Mehr erfahren"
       ],
-      "Less search options": [
-        "Weniger Suchoptionen"
-      ],
       "Load": [
         "Laden"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Mehr Sucheinstellungen"
+      ],
+      "Move": [
+        "Verschieben"
+      ],
+      "Move all conversations from this folder": [
+        "Alle Unterhaltungen dieses Ordners verschieben"
+      ],
+      "Move all conversations from this label": [
+        "Alle Unterhaltungen dieser Kategorie verschieben"
+      ],
+      "Move all messages from this folder": [
+        "Alle Nachrichten dieses Ordners verschieben"
+      ],
+      "Move all messages from this label": [
+        "Alle Nachrichten dieser Kategorie verschieben"
       ],
       "move emails to": [
         "Nachrichten verschieben nach"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Neu signieren"
+      ],
+      "Read message": [
+        "Nachricht lesen"
       ],
       "Read receipt sent": [
         "Lesebestätigung gesendet"
@@ -803,6 +818,9 @@
       "Show details": [
         "Details anzeigen"
       ],
+      "Show fewer search options": [
+        "Weniger Suchoptionen anzeigen"
+      ],
       "Show folders": [
         "Ordner anzeigen"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Weniger anzeigen"
-      ],
-      "Show less search options": [
-        "Weniger Suchoptionen anzeigen"
       ],
       "Show messages": [
         "Nachrichten anzeigen"
@@ -851,9 +866,6 @@
       "Submit": [
         "Senden"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Farbschema"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Diese Nachricht enthält Inhalte aus externen Quellen."
+      ],
+      "Trash all": [
+        "Alle in den Papierkorb"
       ],
       "Trust": [
         "Vertrauen"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Bitte ein Passwort festlegen"
       ],
-      "Preferences could not be saved": [
-        "Die Einstellungen konnten nicht gespeichert werden"
-      ],
       "Primary address key is not decrypted": [
         "Der Schlüssel der primären Adresse wird nicht entschlüsselt"
       ],
@@ -3522,7 +3534,7 @@
     },
     "Feedback Modal Title": {
       "Your feedback": [
-        ""
+        "Dein Feedback"
       ]
     },
     "file size format": {
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Möchten Sie Ihre Änderungen wirklich verwerfen?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Möchtest du wirklich alle hier vorliegenden Nachrichten in den Papierkorb verschieben?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Möchtest du wirklich ${ count } Unterhaltung dauerhaft löschen?",
         "Möchtest du wirklich ${ count } Unterhaltungen dauerhaft löschen?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Tag",
         "Tagen"
-      ],
-      "Decrypt message": [
-        "Nachricht entschlüsseln"
       ],
       "Default email application": [
         "Standard E-Mail-Anwendung"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Monatlich ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Eine große Menge an Nachrichten wird verschoben. Dies kann eine Weile dauern."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benenne deinen neuen Ordner und wähle den übergeordneten Ordner, in den du ihn einfügen möchtest. Wenn du keinen übergeordneten Ordner auswählst, wird dieser neue Ordner auf der obersten Ebene erstellt."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Keiner der hochgeladenen Schlüssel ist für die Verschlüsselung verwendbar. Die Verschlüsselung wird automatisch deaktiviert."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Ungültige URL"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "pro Monat."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline ist nur mit unformatiertem Reintext kompatibel. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus. Bitte beachte, dass ${ MAIL_APP_NAME } verschlüsselte Nachrichten immer signiert."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Telefonnummer"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Lesebestätigung anfordern"
+      ],
+      "Rich text": [
+        "Rich Text"
       ],
       "Right to Left": [
         "Von rechts nach links"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Unbegrenzte Anzahl von Nachrichten"
+      ],
+      "Unlock message": [
+        "Nachricht entsperren"
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
@@ -5538,7 +5556,7 @@
         "Passwort ausblenden"
       ],
       "How would you describe your experience with the new Proton?": [
-        ""
+        "Wie würdest du deine Erfahrungen mit dem neuen Proton beschreiben?"
       ],
       "I understand the risk": [
         "Ich bin mir des Risikos bewusst"
@@ -6262,7 +6280,7 @@
     },
     "new_plans: label": {
       "Tell us about your experience. (Optional)": [
-        ""
+        "Erzähle uns von deinen Erfahrungen. (Optional)"
       ]
     },
     "new_plans: placeholder": {
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "An die E-Mail-Adresse des Organisators konnte nicht gesendet werden: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Das Neuverschlüsseln der Einladung ist fehlgeschlagen. Bitte versuche es erneut"
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
+      ],
       "Discover all Proton services": [
         "Alle Proton Dienste kennenlernen"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Um Ihre Privatsphäre zu schützen, hat Proton E-Mail-Tracker in dieser Nachricht gesperrt."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } ausprobieren"
       ],
       "You can now schedule your messages to be sent later": [
         "Sie können jetzt das Versenden Ihrer Nachrichten zu einem späteren Zeitpunkt planen"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Kontakte importieren"
       ],
-      "Import groups": [
-        "Gruppen importieren"
-      ],
       "Insert contacts": [
         "Kontakte einfügen"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Weitere Auswahlmöglichkeiten"
+      ],
+      "Move all messages to Trash": [
+        "Alle Nachrichten in den Papierkorb verschieben"
       ],
       "Move to": [
         "Verschieben nach"

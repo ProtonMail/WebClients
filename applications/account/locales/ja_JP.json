@@ -1287,19 +1287,19 @@
     },
     "color": {
       "Apple": [
-        ""
+        "グレーな緑"
       ],
       "azureish white": [
-        ""
+        "かなり薄い青"
       ],
       "blanched almond": [
-        ""
+        "かなり薄い黄"
       ],
       "blue-gray": [
-        ""
+        "ややグレーな青"
       ],
       "caramel": [
-        ""
+        "薄い黄"
       ],
       "carrot": [
         "キャロット"
@@ -1308,7 +1308,7 @@
         "セリース"
       ],
       "cinnabar": [
-        ""
+        "朱"
       ],
       "cobalt": [
         "コバルト"
@@ -1317,19 +1317,19 @@
         "コパー"
       ],
       "cyan-blue azure": [
-        ""
+        "グレーな青"
       ],
       "dandelion": [
-        ""
+        "やや薄い黄"
       ],
       "dark cerulean": [
-        ""
+        "黒い青"
       ],
       "dark midnight blue": [
-        ""
+        "かなり黒い青"
       ],
       "dim gray": [
-        ""
+        "やや黒いグレー"
       ],
       "enzian": [
         "エンツィアン"
@@ -1338,37 +1338,37 @@
         "ファーン"
       ],
       "field drab": [
-        ""
+        "かなり黒い黄"
       ],
       "forest": [
         "フォレスト"
       ],
       "gainsboro": [
-        ""
+        "かなり白いグレー"
       ],
       "japanese laurel": [
-        ""
+        "黒い緑"
       ],
       "kiwi": [
-        ""
+        "くっきりとした緑"
       ],
       "lemon yellow": [
-        ""
+        "くっきりとした黄"
       ],
       "light carmine pink": [
-        ""
+        "かなり赤いピンク"
       ],
       "light moss green": [
-        ""
+        "薄い緑"
       ],
       "light red": [
-        ""
+        "かなり白い赤"
       ],
       "maize": [
-        ""
+        "やや黒い黄"
       ],
       "mughal green": [
-        ""
+        "かなり黒い緑"
       ],
       "ocean": [
         "オーシャン"
@@ -1377,31 +1377,31 @@
         "オリーブ"
       ],
       "outer space": [
-        ""
+        "かなり黒いグレー"
       ],
       "pacific": [
         "パシフィック"
       ],
       "palatinate blue": [
-        ""
+        "くっきりとした青"
       ],
       "pale cerulean": [
-        ""
+        "やや薄い青"
       ],
       "pastel gray": [
-        ""
+        "かなり薄い緑"
       ],
       "persian plum": [
-        ""
+        "かなり黒い赤"
       ],
       "persian red": [
-        ""
+        "ペルシャ赤"
       ],
       "philippine gray": [
-        ""
+        "グレー"
       ],
       "philippine silver": [
-        ""
+        "やや白いグレー"
       ],
       "pickle": [
         "ピックル"
@@ -1413,7 +1413,7 @@
         "ピンク"
       ],
       "pistachio": [
-        ""
+        "ややグレーな緑"
       ],
       "plum": [
         "プラム"
@@ -1422,19 +1422,19 @@
         "パープル"
       ],
       "raisin black": [
-        ""
+        "黒"
       ],
       "reef": [
         "リーフ"
       ],
       "ruddy pink": [
-        ""
+        "やや赤いピンク"
       ],
       "sahara": [
         "サハラ"
       ],
       "satin sheen gold": [
-        ""
+        "黒い黄"
       ],
       "slateblue": [
         "スレートブルー"
@@ -1446,10 +1446,10 @@
         "ストロベリー"
       ],
       "vivid auburn": [
-        ""
+        "やや黒い赤"
       ],
       "white": [
-        "ホワイト"
+        "白"
       ]
     },
     "Condition for custom filter": {
@@ -2449,7 +2449,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        ""
+        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の暗号化しインポートしています... これには数分かかることがあります。\n処理が完了すると、このモーダルを閉じることができます。"
@@ -3990,9 +3990,6 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotUsernameLink }または${ forgotPasswordLink }場合"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
       ],
@@ -4187,9 +4184,6 @@
       ],
       "Already allocated": [
         "割り当て済み"
-      ],
-      "Already have an account?": [
-        "すでにアカウントをお持ちですか?"
       ],
       "Already used": [
         "すでに使用されています"
@@ -4977,8 +4971,8 @@
       "Queued": [
         "処理待ち"
       ],
-      "read our two-factor authentication Guide first": [
-        "はじめに 2 要素認証ガイドをお読みください"
+      "read our two-factor authentication guide first": [
+        ""
       ],
       "Recovery file downloaded": [
         "回復用ファイルをダウンロードしました"
@@ -5317,7 +5311,7 @@
         "負荷や所在地を考慮した最適なサーバーを使用: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "macOS で Tunnelblick や GNU/Linux で OpenVPN を使用する場合など、アプリケーションを使用しないで ${ VPN_APP_NAME } に接続するときは、次の認証情報を使用してください。"
+        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "検証に数分かかることがあります。"
@@ -6928,6 +6922,9 @@
       "Learn more": [
         "詳細"
       ],
+      "Need help?": [
+        "問題がある場合"
+      ],
       "Not activated": [
         "有効化されていません"
       ],
@@ -6954,6 +6951,9 @@
       ],
       "Terms and conditions": [
         "利用規約"
+      ],
+      "Trouble signing in?": [
+        "サインインに問題がある場合"
       ],
       "Upgrade": [
         "アップグレード"
@@ -7276,8 +7276,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "すべての ${ BRAND_NAME } プランを表示"
       ],
-      "From ${ _price } per user": [
-        "1 ユーザーあたり ${ _price } から"
+      "From ${ _price }": [
+        "${ _price } から"
+      ],
+      "From ${ _price2 } per user": [
+        "1 ユーザーあたり ${ _price2 } から"
       ],
       "From ${ price }": [
         "${ price } から"
@@ -7538,14 +7541,6 @@
         ""
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "パスワードを忘れた"
-      ],
-      "username": [
-        "ユーザー名"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "サポート"
@@ -7555,6 +7550,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        ""
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
       ],
@@ -7614,6 +7612,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         ""
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        ""
+      ],
       "Secure email and calendar for professionals and businesses.": [
         ""
       ],
@@ -7652,20 +7653,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "アカウントを作成すると ${ terms } に同意したことになります。 "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "${ BRAND_NAME } アカウントを作成すると${ terms }に同意したことになります。"
       ],
       "Payment details": [
         "支払いの詳細"
-      ],
-      "Proton's terms and conditions": [
-        "Proton の利用規約"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "アカウントのリセットが必要になったときの認証用に、メールアドレスまたは電話番号を登録してください"
       ],
       "Subscription": [
         "サブスクリプション"
+      ],
+      "terms and conditions": [
+        "利用規約"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "利用開始の前に、表示名を設定してください。あなたがメール送信した人やイベントに招待した人、ファイルを共有した人に表示されます。"
@@ -7740,7 +7741,7 @@
         "最大 ${ n } 件のカスタムカレンダーを作成します。"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
+        "複数のサーバーを経由してインターネットトラフィックを送受信することで、高度なプライバシー上の脅威からあなたを保護します"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
         ""
@@ -7764,7 +7765,7 @@
         ""
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
+        "誤って VPN サーバーから切断してしまってもネットワーク接続をブロックすることであなたを保護します"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
         ""
@@ -7821,7 +7822,7 @@
         "ユーザーのパスワードとユーザーの 2 段階認証をリセットします"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        ""
+        "あなたのインターネットトラフィックを、簡単な操作で Tor 経由でのルーティングに切り替えることができます"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
         ""
@@ -7836,7 +7837,7 @@
         "安全で共有可能なリンクを使用して、ファイルやフォルダを誰とでも共有できます"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
+        "特別に設計された NetShield は広告、トラッカー、マルウェアをブロックすることでデバイスを保護、ブラウジングを高速化します。"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         ""
@@ -7894,6 +7895,9 @@
         ""
       ],
       "Boost your storage space to ${ businessStorage } per user": [
+        ""
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
         ""
       ],
       "Cover more ground with support for 10 custom email domains": [
@@ -8190,7 +8194,7 @@
     },
     "Option group": {
       "Custom folders": [
-        "カスタムフォルダー"
+        "独自フォルダー"
       ],
       "Default folders": [
         "既定のフォルダー"
@@ -8602,6 +8606,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "${ planName } が最大 18 か月無料"
       ],
@@ -8610,6 +8617,9 @@
       ],
       "No more missed appointments": [
         "予定を通知する"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "メール通知で、予定をいつ通知するかを選択できます。"
@@ -9173,7 +9183,7 @@
         "ブロックリスト"
       ],
       "Bridge for ${ platform }": [
-        "${ platform } 用 Bridge"
+        "${ platform } 版 Bridge"
       ],
       "Card verification": [
         "カードの検証"
@@ -9460,14 +9470,11 @@
       "Import failed": [
         "インポート失敗"
       ],
-      "Import groups": [
-        "グループのインポート"
-      ],
       "Import key": [
         "キーをインポート"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "${ PRODUCT_NAMES.EASY_SWITCH } 経由でインポート"
+        "${ PRODUCT_NAMES.EASY_SWITCH } でインポート"
       ],
       "Import-Export app": [
         "Import-Export アプリ"

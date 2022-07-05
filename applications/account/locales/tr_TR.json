@@ -293,7 +293,7 @@
         "Kurtarma dosyasını indir"
       ],
       "Download the Import-Export app": [
-        "İçe/dışa aktarma uygulamasını indir"
+        "Import-Export uygulamasını indir"
       ],
       "Edit": [
         "Düzenle"
@@ -2465,7 +2465,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        "Tebrikler! En yüksek hediye sınırı olan ${ rewardsLimit } ay ücretsiz ${ plusPlanName } kazandınız"
+        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Kişiler şifreleniyor ve içe aktarılıyor... Bu işlem birkaç dakika sürebilir. İşlem tamamlandığında, bu pencereyi kapatabilirsiniz."
@@ -4029,9 +4029,6 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } veya ${ forgotUsernameLink }?"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, oturum açmak ve posta kutusu şifresini çözmek için tek bir parola kullanabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
@@ -4244,9 +4241,6 @@
       ],
       "Already allocated": [
         "Zaten ayrılmış"
-      ],
-      "Already have an account?": [
-        "Zaten bir hesabınız var mı?"
       ],
       "Already used": [
         "Zaten kullanılmış"
@@ -5039,7 +5033,7 @@
       "Queued": [
         "Sıraya alındı"
       ],
-      "read our two-factor authentication Guide first": [
+      "read our two-factor authentication guide first": [
         "önce iki aşamalı kimlik doğrulama rehberimizi okuyun"
       ],
       "Recovery file downloaded": [
@@ -5190,7 +5184,7 @@
         "Listenin en üstüne çıkardığınız e-posta adresi, varsayılan e-posta adresiniz olur. Adreslerinizin sırasını sürükleyip bırakarak değiştirebilirsiniz."
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "İçe/dışa aktarma uygulaması, iletilerinizin yerel yedek olarak dışa aktarılmasını ve daha önce alınmış yedeklerin geri yüklenmesi için içe aktarılmasını sağlar."
+        "Import-Export uygulaması, iletilerinizin yerel yedek olarak dışa aktarılmasını ve daha önce alınmış yedeklerin geri yüklenmesi için içe aktarılmasını sağlar."
       ],
       "The name will be visible to your users while they are logged in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
@@ -5379,7 +5373,7 @@
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
+        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Doğrulama işlemi birkaç dakika sürebilir."
@@ -6993,6 +6987,9 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "Need help?": [
+        "Yardım gerekiyor mu?"
+      ],
       "Not activated": [
         "Etkinleştirilmemiş"
       ],
@@ -7019,6 +7016,9 @@
       ],
       "Terms and conditions": [
         "Hüküm ve koşullar"
+      ],
+      "Trouble signing in?": [
+        "Otturum açmakta sorun mu yaşıyorsunuz?"
       ],
       "Upgrade": [
         "Yükselt"
@@ -7347,8 +7347,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
       ],
-      "From ${ _price } per user": [
-        "Bir kullanıcı için ${ _price } ile başlar"
+      "From ${ _price }": [
+        "${ _price } ile başlar"
+      ],
+      "From ${ _price2 } per user": [
+        "Bir kullanıcı için ${ _price2 } ile başlar"
       ],
       "From ${ price }": [
         "${ price } ile başlar"
@@ -7623,14 +7626,6 @@
         "Tüm dünyadaki yayın akışı hizmetleri"
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Parolamı unuttum"
-      ],
-      "username": [
-        "kullanıcı adı"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Destek"
@@ -7640,6 +7635,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Dosya yedekleme, depolama, paylaşma ve alma işlemlerinizde kişisel gizliliği standardınız yapın."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız devre dışı bırakılacak."
       ],
@@ -7699,6 +7697,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Tüm ücretli Proton hizmetleri ile birlikte kuruluşlar için kişisel gizlilik ve güvenlik paketi."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Dosyaları kolayca ve güvenle saklama, eşitleme ve paylaşmayı sağlayan güvenli bulut depolaması."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Profesyoneller ve kuruluşlar için güvenli e-posta ve takvim."
       ],
@@ -7738,20 +7739,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "Hesap açarak ${ terms } metinlerini kabul etmiş olursunuz. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "Bir ${ BRAND_NAME } hesabı oluşturarak ${ terms } metnini kabul etmiş olursunuz."
       ],
       "Payment details": [
         "Ödeme ayrıntıları"
-      ],
-      "Proton's terms and conditions": [
-        "Proton hüküm ve koşulları"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Hesabınızı sıfırlamanız gerekirse doğrulama için kullanılacak e-posta adresi ya da telefon numarasını kaydedin."
       ],
       "Subscription": [
         "Abonelik"
+      ],
+      "terms and conditions": [
+        "hüküm ve koşullar"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Başlamak için görüntülenecek bir ad yazın. Bu ad, e-posta ve etkinlik davetleri ile dosya paylaşımı gönderdiğiniz kişilere görüntülenir."
@@ -7893,7 +7894,7 @@
         "İletilere ${ BRAND_NAME } veya üçüncü tarafların erişmesini engeller. İletileri yalnızca göndericisi ve alıcısı okuyabilir."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "Wi-Fi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
+        "WiFi ağınıza bağlı her aygıtı koruyun. Ayrıca doğrudan VPN ayarlarını desteklemeyen aygıtlarınız olduğunda da işe yarar."
       ],
       "Quickly set up out-of-office messages": [
         "Ofis dışında iletilerini hızlıca ayarlayın"
@@ -7982,6 +7983,9 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Her kullanıcı için depolama alanınızı ${ businessStorage } boyutuna kadar artırın"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Toplam depolama alanınızı ${ driveStorage } boyutuna artırın"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "10 özel e-posta etki alanı desteği ile daha geniş bir kullanım sağlayın"
@@ -8695,6 +8699,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "18 aya kadar ücretsiz ${ planName } kazanın"
       ],
@@ -8703,6 +8710,9 @@
       ],
       "No more missed appointments": [
         "Zamanı geçmiş başka bir etkinlik yok"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "E-posta bildirimleri ile hangi etkinliklerin ne zaman bildirileceğini belirleyebilirsiniz."
@@ -9570,9 +9580,6 @@
       "Import failed": [
         "İçe aktarılamadı"
       ],
-      "Import groups": [
-        "Grupları içe aktar"
-      ],
       "Import key": [
         "Anahtarı içe aktar"
       ],
@@ -9580,7 +9587,7 @@
         "${ PRODUCT_NAMES.EASY_SWITCH } ile içe aktar"
       ],
       "Import-Export app": [
-        "İçe/dışa aktarma uygulaması"
+        "Import-Export uygulaması"
       ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"

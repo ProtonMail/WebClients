@@ -215,9 +215,6 @@
       "Customize": [
         ""
       ],
-      "Decrypt": [
-        ""
-      ],
       "Default email application": [
         ""
       ],
@@ -335,6 +332,9 @@
         "Exportar contactos"
       ],
       "External encryption": [
+        ""
+      ],
+      "Fewer search options": [
         ""
       ],
       "Filter on...": [
@@ -461,9 +461,6 @@
       "Learn more": [
         "Saber mais"
       ],
-      "Less search options": [
-        ""
-      ],
       "Load": [
         "Carregar"
       ],
@@ -540,6 +537,21 @@
         "Mais informações: ${ safeTitle }"
       ],
       "More search options": [
+        ""
+      ],
+      "Move": [
+        ""
+      ],
+      "Move all conversations from this folder": [
+        ""
+      ],
+      "Move all conversations from this label": [
+        ""
+      ],
+      "Move all messages from this folder": [
+        ""
+      ],
+      "Move all messages from this label": [
         ""
       ],
       "move emails to": [
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Re-assinar"
+      ],
+      "Read message": [
+        ""
       ],
       "Read receipt sent": [
         ""
@@ -803,6 +818,9 @@
       "Show details": [
         "Mostrar detalhes"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         ""
       ],
@@ -810,9 +828,6 @@
         ""
       ],
       "Show less": [
-        ""
-      ],
-      "Show less search options": [
         ""
       ],
       "Show messages": [
@@ -851,9 +866,6 @@
       "Submit": [
         "Submeter"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         " Tema"
       ],
@@ -861,6 +873,9 @@
         "Esta mensagem contém imagens incorporadas."
       ],
       "This message contains remote content.": [
+        ""
+      ],
+      "Trash all": [
         ""
       ],
       "Trust": [
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         ""
       ],
-      "Preferences could not be saved": [
-        "Impossível gravar as preferências"
-      ],
       "Primary address key is not decrypted": [
         ""
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Tem a certeza de que deseja descartar as alterações?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        ""
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tem a certeza de que pretende eliminar permanentemente esta ${ count } conversa?",
         "Tem a certeza de que pretende eliminar permanentemente estas ${ count } conversas?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Dia",
         "Dias"
-      ],
-      "Decrypt message": [
-        ""
       ],
       "Default email application": [
         ""
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Mensalmente ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        ""
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nomeie a sua nova pasta e seleccione a pasta-mãe onde deseja colocá-la. Se não seleccionar uma pasta-mãe, esta nova pasta será criada como uma pasta de nível superior."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Nenhuma das chaves carregadas é válida para encriptação. A encriptação foi automaticamente desactivada."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Não é um URL válido"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Número de telefone"
@@ -4631,6 +4643,9 @@
         "Reportar uma mensagem como tentativa de phishing, enviará a mensagem para nós, para que possamos analisá-la e melhorar os nossos filtros. Isto significa que poderemos ver o conteúdo da mensagem na íntegra."
       ],
       "Request read receipt": [
+        ""
+      ],
+      "Rich text": [
         ""
       ],
       "Right to Left": [
@@ -4890,6 +4905,9 @@
         ""
       ],
       "Unlimited messages": [
+        ""
+      ],
+      "Unlock message": [
         ""
       ],
       "Unsupported file": [
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossível enviar para o endereço do organizador: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         ""
       ],
@@ -6766,6 +6790,9 @@
         ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Importar contactos"
       ],
-      "Import groups": [
-        "Importar grupos"
-      ],
       "Insert contacts": [
         "Inserir contactos"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Mais selecções"
+      ],
+      "Move all messages to Trash": [
+        ""
       ],
       "Move to": [
         "Mover para"
