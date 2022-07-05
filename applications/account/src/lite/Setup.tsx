@@ -15,13 +15,13 @@ import { User, UserSettings } from '@proton/shared/lib/interfaces';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { pullForkSession, setCookies, setRefreshCookies } from '@proton/shared/lib/api/auth';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
-import getRandomString from "@proton/utils/getRandomString";
+import getRandomString from '@proton/utils/getRandomString';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
 import { getLatestID } from '@proton/shared/lib/api/events';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { loadModels } from '@proton/shared/lib/models/helper';
-import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { loadOpenPGP } from '@proton/shared/lib/openpgp';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -83,9 +83,13 @@ const Setup = ({ onLogin, UID }: Props) => {
                 cache,
             }).then((result: any) => {
                 const [userSettings] = result as [UserSettings, User];
-
+                const searchParams = new URLSearchParams(location.search);
+                const languageParams = searchParams.get('language');
                 const browserLocale = getBrowserLocale();
-                const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
+                const localeCode =
+                    getClosestLocaleMatch(languageParams || '', locales) ||
+                    getClosestLocaleCode(userSettings.Locale, locales);
+
                 return Promise.all([
                     loadLocale(localeCode, locales),
                     loadDateLocale(localeCode, browserLocale, userSettings),
