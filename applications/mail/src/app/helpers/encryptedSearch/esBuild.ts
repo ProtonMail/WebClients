@@ -1,5 +1,6 @@
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { Api } from '@proton/shared/lib/interfaces';
+import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { decryptMessage } from '../message/messageDecrypt';
 import { GetMessageKeys } from '../../hooks/message/useGetMessageKeys';
 import { locateBlockquote } from '../message/messageBlockquote';
@@ -114,11 +115,12 @@ export const fetchMessage = async (
     let decryptedSubject: string | undefined;
     let decryptedBody: string | undefined;
     let decryptionError = true;
+    let mimetype: MIME_TYPES | undefined;
     try {
         const keys = await getMessageKeys(message);
         const decryptionResult = await decryptMessage(message, keys.privateKeys, undefined);
         if (!decryptionResult.errors) {
-            ({ decryptedSubject, decryptedBody } = decryptionResult);
+            ({ decryptedSubject, decryptedBody, mimetype } = decryptionResult);
             decryptionError = false;
         }
     } catch (error: any) {
@@ -129,9 +131,16 @@ export const fetchMessage = async (
     // Quotes are removed for all sent messages, and all other messages apart from forwarded ones
     const removeQuote = message.LabelIDs.includes('2') || !isMessageForwarded(message.Subject);
 
+    const cleanDecryptedBody =
+        typeof decryptedBody === 'string'
+            ? (mimetype || message.MIMEType) === MIME_TYPES.DEFAULT
+                ? cleanText(decryptedBody, removeQuote)
+                : decryptedBody
+            : undefined;
+
     const cachedMessage: ESMessage = {
         ...prepareMessageMetadata(message),
-        decryptedBody: typeof decryptedBody === 'string' ? cleanText(decryptedBody, removeQuote) : undefined,
+        decryptedBody: cleanDecryptedBody,
         decryptedSubject,
         decryptionError,
     };
