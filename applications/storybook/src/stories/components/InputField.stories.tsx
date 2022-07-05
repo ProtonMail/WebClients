@@ -28,39 +28,6 @@ export default {
 };
 
 export const Basic = ({ ...args }) => <InputFieldTwo {...args} />;
-Basic.args = {
-    id: 'basic-input',
-    label: 'Basic input',
-    hint: undefined,
-    assistiveText: undefined,
-    disabled: false,
-    bigger: false,
-    error: undefined,
-    warning: undefined,
-    rootClassName: undefined,
-};
-Basic.argTypes = {
-    label: {
-        type: { name: 'string' },
-    },
-    hint: {
-        type: { name: 'string' },
-    },
-    assistiveText: {
-        type: { name: 'string' },
-    },
-    error: {
-        type: { name: 'string' },
-    },
-    warning: {
-        type: { name: 'string' },
-    },
-    as: {
-        table: {
-            disable: true,
-        },
-    },
-};
 
 const toggles = ['dense', 'bigger', 'disabled'] as const;
 
@@ -143,11 +110,7 @@ export const Sandbox = () => {
             <div className="flex flex-align-items-stretch py2">
                 <div className="mr2">
                     <InputFieldTwo label="Label" value={label} onValue={setLabel} />
-                </div>
-                <div className="mr2">
                     <InputFieldTwo label="Hint" value={hint} onValue={setHint} />
-                </div>
-                <div className="mr2">
                     <InputFieldTwo label="AssistiveText" value={assistiveText} onValue={setAssistiveText} />
                 </div>
                 <div className="mr2">
