@@ -4029,7 +4029,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
     "@proton/utils": "workspace:packages/utils"
-    "@types/jasmine": ^3.10.6
+    "@types/jasmine": ^4.0.3
     eslint: ^8.14.0
     idb: ^7.0.1
     jasmine: ^4.1.0
@@ -4114,7 +4114,7 @@ __metadata:
     "@noble/ed25519": 1.6.0
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/shared": "workspace:packages/shared"
-    "@types/jasmine": ^3.10.6
+    "@types/jasmine": ^4.0.3
     "@types/pkijs": 0.0.13
     eslint: ^8.14.0
     jasmine: 4.1.0
@@ -4225,7 +4225,7 @@ __metadata:
     "@protontech/timezone-support": ^1.0.0
     "@sentry/browser": ^6.19.7
     "@types/dompurify": ^2.3.3
-    "@types/jasmine": ^3.10.6
+    "@types/jasmine": ^4.0.3
     "@types/node": ^16.11.33
     "@types/papaparse": ^5.3.2
     "@types/ua-parser-js": ^0.7.36
@@ -6625,10 +6625,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jasmine@npm:^3.10.6":
-  version: 3.10.6
-  resolution: "@types/jasmine@npm:3.10.6"
-  checksum: dff2c26a9ecbc8198d2f5bf1860275b0b323c80db772c2417d7217afa28bd05fee4b98ab3673dcb18d859f2cd0e084b0dcbd33629fcbe6945b08a72f8e5c36d2
+"@types/jasmine@npm:^4.0.3":
+  version: 4.0.3
+  resolution: "@types/jasmine@npm:4.0.3"
+  checksum: 9d2af9ddb5750667bc9a3b439542fc9457c6eac2ab2c74801f598b03b9bc5cee1338fa8e75e6804dff1856e64539e8b0e3962ed8664a702f362d3db62eb9cd3a
   languageName: node
   linkType: hard
 
