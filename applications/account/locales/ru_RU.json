@@ -2497,7 +2497,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        "Поздравляем! Вы заработали максимальное количество ${ rewardsLimit } бесплатных месяцев ${ plusPlanName }"
+        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Идёт шифрование и импортирование контактов, и это может занять несколько минут. Когда процесс завершится, вы сможете закрыть это сообщение."
@@ -3263,7 +3263,7 @@
         "Событие в ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        ""
+        "Событие с ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -4107,9 +4107,6 @@
       "${ emailAddress } is invalid": [
         "Адрес ${ emailAddress } недопустимый"
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } или ${ forgotUsernameLink }?"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
       ],
@@ -4358,9 +4355,6 @@
       ],
       "Already allocated": [
         "Уже выделено"
-      ],
-      "Already have an account?": [
-        "Уже есть учетная запись?"
       ],
       "Already used": [
         "Уже используется"
@@ -5163,7 +5157,7 @@
       "Queued": [
         "Поставлено в очередь"
       ],
-      "read our two-factor authentication Guide first": [
+      "read our two-factor authentication guide first": [
         "Сначала прочитайте наше Руководство по двухфакторной аутентификации"
       ],
       "Recovery file downloaded": [
@@ -5503,7 +5497,7 @@
         "Использовать лучший сервер в соответствии с текущей нагрузкой и местоположением: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Используйте следующие учетные данные для подключения к серверам ${ VPN_APP_NAME } без приложения, например, Tunnelblick на MacOS или OpenVPN на GNU/Linux."
+        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Проверка может занять несколько минут."
@@ -6447,7 +6441,7 @@
         "Скидка"
       ],
       "Display": [
-        ""
+        "Отображение"
       ],
       "Display name": [
         "Отображаемое имя"
@@ -7123,6 +7117,9 @@
       "Learn more": [
         "Подробнее"
       ],
+      "Need help?": [
+        "Нужна помощь?"
+      ],
       "Not activated": [
         "Не активировано"
       ],
@@ -7149,6 +7146,9 @@
       ],
       "Terms and conditions": [
         "Условия и положения"
+      ],
+      "Trouble signing in?": [
+        "Проблемы со входом?"
       ],
       "Upgrade": [
         "Улучшить тариф"
@@ -7489,8 +7489,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
       ],
-      "From ${ _price } per user": [
-        "От ${ _price } на пользователя"
+      "From ${ _price }": [
+        "От ${_price}"
+      ],
+      "From ${ _price2 } per user": [
+        "От ${ _price2 } за пользователя"
       ],
       "From ${ price }": [
         "От: ${ price }"
@@ -7793,14 +7796,6 @@
         "Стриминговые сервисы со всего мира"
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Забыли пароль"
-      ],
-      "username": [
-        "имя пользователя"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Поддержка"
@@ -7810,6 +7805,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Сделайте резервное копирование, хранение, совместное использование и извлечение файлов конфиденциальным по умолчанию."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "В противном случае доступ к вашему аккаунту будет ограничен, и в конечном итоге ваш аккаунт будет отключен."
       ],
@@ -7869,6 +7867,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Пакет обеспечения конфиденциальности и безопасности для предприятий, включающий все платные услуги Proton."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Безопасное облачное хранилище, позволяющее легко и безопасно хранить, синхронизировать и обмениваться файлами."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Защищенные электронная почта и календарь для отдельных пользователей и предприятий."
       ],
@@ -7910,20 +7911,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "Создание аккаунта означает, что вы принимаете ${ terms }. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "Создавая аккаунт ${ BRAND_NAME }, вы соглашаетесь на наши ${ terms }."
       ],
       "Payment details": [
         "Информация платежа"
-      ],
-      "Proton's terms and conditions": [
-        "Условия использования Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Сохраните адрес электронной почты или номер телефона, чтобы использовать их для проверки при сбросе аккаунта."
       ],
       "Subscription": [
         "Подписка"
+      ],
+      "terms and conditions": [
+        "условия и положения"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Чтобы начать работу, выберите отображаемое имя. Его будут видеть люди, когда вы отправите им электронное сообщение, пригласите их на мероприятие или поделитесь файлом."
@@ -8156,6 +8157,9 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Увеличьте хранилище до ${ businessStorage } на пользователя"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Увеличьте объем хранилища до ${ driveStorage }"
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Расширьте возможности с поддержкой 10 пользовательских доменов электронной почты"
@@ -8881,6 +8885,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Получите до 18 месяцев ${ planName } бесплатно"
       ],
@@ -8889,6 +8896,9 @@
       ],
       "No more missed appointments": [
         "Больше никаких пропущенных встреч"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Попробуйте ${DRIVE_APP_NAME}"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "При использовании уведомлений по электронной почте вы сами решаете, о каких событиях и когда получать уведомления."
@@ -9790,9 +9800,6 @@
       "Import failed": [
         "Импорт не удался"
       ],
-      "Import groups": [
-        "Импортировать группы"
-      ],
       "Import key": [
         "Импортировать ключ"
       ],
@@ -10580,8 +10587,8 @@
         "Каждые ${ interval } недель по ${ multipleDaysString } до ${ timesString }"
       ],
       "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "",
-        "",
+        "Каждую ${ interval } неделю по ${ multipleDaysString } до ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString } до ${ untilString }",
         "",
         "Каждую ${ interval } неделю по ${ multipleDaysString }, по ${ untilString }"
       ],

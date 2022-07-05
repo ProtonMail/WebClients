@@ -193,6 +193,12 @@
       "Download": [
         "Descarregar"
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         ""
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "activar les notificacions d'escriptori"
       ],
-      "Enable drive search": [
-        ""
-      ],
       "Expand": [
         ""
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Obtenir l'enllaç"
+      ],
+      "Get Proton Drive": [
+        ""
       ],
       "Get started": [
         "Començar"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         ""
       ],
-      "refresh the page": [
-        "refresqueu la pàgina"
-      ],
       "Refresh the page": [
         "Refresca la pàgina"
+      ],
+      "refresh the page": [
+        "refresqueu la pàgina"
       ],
       "Remove": [
         "Suprimir"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Reprèn la càrrega"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "Desar"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         ""
       ],
-      "Share": [
-        "Compartir"
-      ],
       "Share file": [
         "Compartir arxius"
       ],
       "Share item": [
         "Compartiu l'element"
-      ],
-      "Share options": [
-        "Opcions per a compartir"
       ],
       "Share via link": [
         "Comparteix via enllaç"
@@ -1922,9 +1925,6 @@
         "",
         ""
       ],
-      "Preferences could not be saved": [
-        "No s'han pogut desar les preferències"
-      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada"
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         ""
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "Cancel·lat"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "S'està creant l'enllaç a la carpeta"
       ],
-      "Creating share": [
-        "Creant la compartició"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -2518,7 +2518,22 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         ""
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
         ""
       ],
       "Downloaded": [
@@ -2527,11 +2542,8 @@
       "Downloading": [
         "Descarregant"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+      "Drag and drop items here or browse for files to upload.": [
         ""
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Arrosega i solta un arxiu aquí o escull per carregar."
       ],
       "Drop the file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo"
@@ -2539,7 +2551,10 @@
       "Duplicate key updated": [
         "Clau duplicada actualitzada"
       ],
-      "Enable drive search": [
+      "Enabling drive search": [
+        ""
+      ],
+      "Encrypted": [
         ""
       ],
       "Encrypted search is here": [
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Indexing search results…": [
         ""
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls"
       ],
-      "Link expires: ": [
-        "L'enllaç caduca el: "
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
+        ""
       ],
       "Loading": [
         "Carregant"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "Carregant ${ appName }"
       ],
+      "Loading link": [
+        ""
+      ],
+      "Loading links": [
+        ""
+      ],
       "Loading preview": [
         "S'està carregant la previsualització"
-      ],
-      "Loading share": [
-        "Carregant la compartició"
       ],
       "Merged": [
         ""
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         ""
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
@@ -2772,10 +2799,13 @@
       "Permanently delete all files in your drive": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
         ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
@@ -2815,6 +2845,9 @@
       "Priority support": [
         ""
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        ""
+      ],
       "Queued": [
         "En cua"
       ],
@@ -2831,6 +2864,15 @@
         ""
       ],
       "Search cannot be enabled in this browser": [
+        ""
+      ],
+      "Search Enabled": [
+        ""
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
         ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
@@ -2857,10 +2899,19 @@
       "Share files with links": [
         "Compartir fitxers amb enllaços"
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         ""
       ],
       "Signature issue": [
+        ""
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
         ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
@@ -2878,6 +2929,12 @@
       "support team": [
         "equip de suport"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "Encara no hi ha arxius"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
@@ -2911,7 +2971,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aquest enllaç pot ser un atac homògraf. Verifiqueu que aquest és l'enllaç que voleu visitar o declineu obrir-lo."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Se sobreescriurà la carpeta existent"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         ""
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Paperera"
-      ],
-      "Try different keywords": [
-        ""
       ],
       "Unlimited folders, labels, and filters": [
         ""
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
-      "Your download has been canceled.": [
-        "La vostra descàrrega s'ha cancel·lat."
-      ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your file failed to download.": [
-        "Ha fallat la descàrrega del vostre fitxer."
-      ],
-      "Your file has finished downloading.": [
-        "L’enllaç no existeix o bé ha caducat."
-      ],
-      "Your file is being downloaded.": [
-        "S'està baixant el fitxer."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         ""
       ],
       "Your files will be encrypted and then saved.": [
         "Els teus arxius serán cifrats i desats."
-      ],
-      "Your folder failed to download.": [
-        ""
-      ],
-      "Your folder has finished downloading.": [
-        ""
-      ],
-      "Your folder is being downloaded.": [
-        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Actualment, el vostre compte Proton està en suspensió. Per continuar utilitzant el vostre compte, pagueu qualsevol factura que hagi pendent."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        ""
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Activar Accés Beta"
       ],
-      "Enabling drive search": [
-        ""
-      ],
       "Encrypt emails": [
         "Xifrar correus electrònics"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         ""
-      ],
-      "Get your own ${ appName }": [
-        "Obteniu el vostre propi ${ appName }"
       ],
       "Good": [
         ""
@@ -3365,6 +3389,9 @@
         ""
       ],
       "Last month only": [
+        ""
+      ],
+      "Location": [
         ""
       ],
       "Mailbox password": [
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         ""
       ],
@@ -4087,6 +4117,9 @@
         ""
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ]
     },
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "# d'accessos"
-      ],
       "Actions": [
         "Accions"
       ],
       "Address": [
         "Adreça"
       ],
-      "Created": [
-        "Creat"
-      ],
       "CSV field": [
         "Camp CSV"
-      ],
-      "Deleted": [
-        "Esborrat"
-      ],
-      "Expires": [
-        "Venç"
       ],
       "Import": [
         "Importar"
       ],
-      "Location": [
-        "Ubicació"
-      ],
-      "Modified": [
-        "Modificat"
-      ],
       "Name": [
         "Nom"
-      ],
-      "Size": [
-        "Mida"
-      ],
-      "Uploaded": [
-        ""
       ],
       "Values": [
         "Valors"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } membre",
         "${ emailsCount } membres"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        ""
+      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "Afegir a ${ groupName }"
       ],
-      "Additional settings": [
-        "Ajustos addicionals"
-      ],
       "Addresses": [
         "Adreces"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Torna"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "Accés Beta"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Cita"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "Suprimir ${ count } contacte",
         "Suprimir ${ count } contactes"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
-      "Download canceled": [
-        "Descàrrega cancel·lada"
-      ],
-      "Download completed": [
-        "Descàrrega completa"
-      ],
-      "Download failed": [
-        "Ha fallat la descàrrega"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         ""
       ],
       "Download unverified folder?": [
         ""
-      ],
-      "Downloading": [
-        "Descarregant"
       ],
       "Drive": [
         "Drive"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Buidar paperera"
-      ],
-      "Enable drive search": [
-        ""
-      ],
-      "Enter password to download": [
-        ""
       ],
       "Enter your password": [
         "Introdueix la teva contrasenya"
@@ -4466,6 +4475,9 @@
         "",
         ""
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "Grups"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Importar contactes"
       ],
-      "Import groups": [
-        "Importar grups"
-      ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         ""
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Gestiona l'enllaç segur"
-      ],
-      "Manage share": [
-        "Gestionar les comparticions"
       ],
       "Merge contacts": [
         "Combinar contactes"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Nom"
-      ],
-      "No results found": [
-        ""
       ],
       "Number of files": [
         "Nombre de fitxers"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Números de telèfon"
+      ],
+      "Privacy settings": [
+        ""
       ],
       "Re-sign all contacts": [
         "Tornar a signar tots els contactes"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         ""
       ],
-      "The file or folder failed to be downloaded": [
-        ""
-      ],
-      "The internet connection was interrupted": [
-        ""
-      ],
-      "The link does not exist": [
-        ""
-      ],
       "The link either does not exist or has expired": [
         "L’enllaç no existeix o bé ha caducat"
       ],
@@ -4650,6 +4650,9 @@
         ""
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This link is password protected": [
         ""
       ],
       "Total size": [
@@ -4694,10 +4697,7 @@
       "You have no folders yet": [
         "Encara no tens cap carpeta"
       ],
-      "Your file is ready to be downloaded": [
-        "El vostre fitxer està preparat per descarregar"
-      ],
-      "Your folder is ready to be downloaded": [
+      "You've got files": [
         ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [

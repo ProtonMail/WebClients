@@ -1819,13 +1819,13 @@
         "${ count } fois"
       ],
       "Daily": [
-        "Quotidiennement"
+        "Chaque jour"
       ],
       "Daily, ${ timesString }": [
-        "Quotidiennement, à ${ timesString }"
+        "Chaque jour, à ${ timesString }"
       ],
       "Daily, ${ untilString }": [
-        "Quotidiennement, ${ untilString }"
+        "Chaque jour, ${ untilString }"
       ],
       "Every ${ interval } day": [
         "Chaque ${ interval } jour",
@@ -2189,9 +2189,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
-      ],
-      "Preferences could not be saved": [
-        "Les préférences n’ont pas pu être enregistrées"
       ],
       "Primary address key is not decrypted": [
         "La clé d’adresse principale n’est pas déchiffrée"
@@ -3115,11 +3112,11 @@
       "Other options": [
         "Autres options"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Veuillez noter que les adresses assignées à ce groupe ne seront PAS supprimées."
@@ -3285,7 +3282,7 @@
         "Semaine"
       ],
       "Which event would you like to delete?": [
-        "Quel événement souhaitez-vous supprimer ?"
+        "Quel événement voulez-vous supprimer ?"
       ],
       "Which event would you like to update?": [
         "Quel événement souhaitez-vous mettre à jour ?"
@@ -3303,7 +3300,7 @@
         "Voulez-vous tout de même supprimer l’événement ?"
       ],
       "Would you like to delete this event?": [
-        "Souhaitez-vous supprimer cet événement ?"
+        "Voulez-vous supprimer cet événement ?"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Souhaitez-vous recevoir un nouveau code de vérification ou utiliser une autre méthode de vérification ?"
@@ -3858,13 +3855,13 @@
         "Tous les ${ interval } mois, ${ onDayString }, ${ untilString }"
       ],
       "Monthly ${ onDayString }": [
-        "Mensuellement, ${ onDayString }"
+        "Chaque mois ${ onDayString }"
       ],
       "Monthly ${ onDayString }, ${ timesString }": [
-        "Mensuellement, ${ onDayString }, à ${ timesString }"
+        "Chaque mois ${ onDayString }, à ${ timesString }"
       ],
       "Monthly ${ onDayString }, ${ untilString }": [
-        "Mensuellement, ${ onDayString }, ${ untilString }"
+        "Chaque mois ${ onDayString }, ${ untilString }"
       ]
     },
     "Monthly recurring event, repeats on": {
@@ -3995,7 +3992,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Voici le nouveau look de Proton.${ br } Plusieurs services, une seule mission. Bienvenue sur un internet où la confidentialité est la règle absolue."
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4434,6 +4431,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } n'est plus en beta ! Donnez à vos fichiers la même sécurité que vos e-mails."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
       ],
@@ -4442,6 +4442,9 @@
       ],
       "No more missed appointments": [
         "Plus de rendez-vous manqués"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Avec les notifications par e-mail, vous décidez pour quels événements vous serez notifié et quand."
@@ -4903,9 +4906,6 @@
       "Import failed": [
         "Échec de l'importation"
       ],
-      "Import groups": [
-        "Importer des groupes"
-      ],
       "Invalid verification code": [
         "Code de vérification non valide"
       ],
@@ -5214,8 +5214,8 @@
         "Toutes les ${ interval } semaines, les ${ multipleDaysString }, ${ untilString }"
       ],
       "Every ${ interval } week on all days": [
-        "Chaque ${ interval } semaine, tous les jours de la semaine",
-        "Toutes les ${ interval } semaines, tous les jours de la semaine"
+        "Chaque ${ interval } semaine, tous les jours",
+        "Toutes les ${ interval } semaines, tous les jours"
       ],
       "Every ${ interval } week on all days, ${ timesString }": [
         "Chaque ${ interval } semaine, tous les jours, à ${ timesString }",
@@ -5310,85 +5310,85 @@
         "Toutes les ${ interval } semaines, le mercredi, ${ untilString }"
       ],
       "Weekly on ${ multipleDaysString }": [
-        "Hebdomadairement, les ${ multipleDaysString }"
+        "Chaque semaine, les ${ multipleDaysString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ timesString }": [
-        "Hebdomadairement, les ${ multipleDaysString }, à ${ timesString }"
+        "Chaque semaine les ${ multipleDaysString }, à ${ timesString }"
       ],
       "Weekly on ${ multipleDaysString }, ${ untilString }": [
-        "Hebdomadairement, les ${ multipleDaysString }, ${ untilString }"
+        "Chaque semaine les ${ multipleDaysString }, ${ untilString }"
       ],
       "Weekly on all days": [
-        "Hebdomadairement, tous les jours de la semaine"
+        "Chaque semaine, tous les jours"
       ],
       "Weekly on all days, ${ timesString }": [
-        "Hebdomadairement, tous les jours de la semaine, à ${ timesString }"
+        "Chaque semaine, tous les jours, à ${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "Hebdomadairement, tous les jours de la semaine, ${ untilString }"
+        "Chaque semaine, tous les jours, ${ untilString }"
       ],
       "Weekly on Friday": [
-        "Hebdomadairement, le vendredi"
+        "Chaque semaine le vendredi"
       ],
       "Weekly on Friday, ${ timesString }": [
-        "Hebdomadairement, chaque vendredi, à ${ timesString }"
+        "Chaque semaine le vendredi à ${ timesString }"
       ],
       "Weekly on Friday, ${ untilString }": [
-        "Hebdomadairement, chaque vendredi, ${ untilString }"
+        "Chaque semaine le vendredi, ${ untilString }"
       ],
       "Weekly on Monday": [
-        "Hebdomadairement, le lundi"
+        "Chaque semaine le lundi"
       ],
       "Weekly on Monday, ${ timesString }": [
-        "Hebdomadairement, chaque lundi, à ${ timesString }"
+        "Chaque semaine le lundi à ${ timesString }"
       ],
       "Weekly on Monday, ${ untilString }": [
-        "Hebdomadairement, chaque lundi, ${ untilString }"
+        "Chaque semaine le lundi, ${ untilString }"
       ],
       "Weekly on Saturday": [
-        "Hebdomadairement, le samedi"
+        "Chaque semaine le samedi"
       ],
       "Weekly on Saturday, ${ timesString }": [
-        "Hebdomadairement, chaque samedi, à ${ timesString }"
+        "Chaque semaine le samedi à ${ timesString }"
       ],
       "Weekly on Saturday, ${ untilString }": [
-        "Hebdomadairement, chaque samedi, ${ untilString }"
+        "Chaque semaine le samedi, ${ untilString }"
       ],
       "Weekly on Sunday": [
-        "Hebdomadairement, le dimanche"
+        "Chaque semaine le dimanche"
       ],
       "Weekly on Sunday, ${ timesString }": [
-        "Hebdomadairement, chaque dimanche, à ${ timesString }"
+        "Chaque semaine le dimanche à ${ timesString }"
       ],
       "Weekly on Sunday, ${ untilString }": [
-        "Hebdomadairement, chaque dimanche, ${ untilString }"
+        "Chaque semaine le dimanche, ${ untilString }"
       ],
       "Weekly on Thursday": [
-        "Hebdomadairement, le jeudi"
+        "Chaque semaine le jeudi"
       ],
       "Weekly on Thursday, ${ timesString }": [
-        "Hebdomadairement, chaque jeudi, à ${ timesString }"
+        "Chaque semaine le jeudi à ${ timesString }"
       ],
       "Weekly on Thursday, ${ untilString }": [
-        "Hebdomadairement, chaque jeudi, ${ untilString }"
+        "Chaque semaine le jeudi, ${ untilString }"
       ],
       "Weekly on Tuesday": [
-        "Hebdomadairement, le mardi"
+        "Chaque semaine le mardi"
       ],
       "Weekly on Tuesday, ${ timesString }": [
-        "Hebdomadairement, chaque mardi, à ${ timesString }"
+        "Chaque semaine le mardi à ${ timesString }"
       ],
       "Weekly on Tuesday, ${ untilString }": [
-        "Hebdomadairement, chaque mardi, ${ untilString }"
+        "Chaque semaine le mardi, ${ untilString }"
       ],
       "Weekly on Wednesday": [
-        "Hebdomadairement, le mercredi"
+        "Chaque semaine le mercredi"
       ],
       "Weekly on Wednesday, ${ timesString }": [
-        "Hebdomadairement, chaque mercredi, à ${ timesString }"
+        "Chaque semaine le mercredi à ${ timesString }"
       ],
       "Weekly on Wednesday, ${ untilString }": [
-        "Hebdomadairement, chaque mercredi, ${ untilString }"
+        "Chaque semaine le mercredi, ${ untilString }"
       ]
     },
     "Weekly recurring event, repeats on (multiple days), frequency": {
@@ -5428,13 +5428,13 @@
         "Tous les ${ interval } ans, ${ untilString }"
       ],
       "Yearly": [
-        "Annuellement"
+        "Chaque année"
       ],
       "Yearly, ${ timesString }": [
-        "Annuellement, à ${ timesString }"
+        "Chaque année à ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Annuellement, ${ untilString }"
+        "Chaque année ${ untilString }"
       ]
     }
   }

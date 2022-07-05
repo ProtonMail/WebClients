@@ -2226,9 +2226,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Preferences could not be saved": [
-        "Настройки не могут быть сохранены"
-      ],
       "Primary address key is not decrypted": [
         "Не расшифрован основной ключ адреса"
       ],
@@ -3215,11 +3212,11 @@
       "Other options": [
         "Другие возможности"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Пожалуйста, обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -4109,7 +4106,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Представляем обновленный вид Proton.${ br } Много служб, одна миссия. Добро пожаловать в Интернет, конфиденциальный по умолчанию."
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4600,6 +4597,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Получите до 18 месяцев ${ planName } бесплатно"
       ],
@@ -4608,6 +4608,9 @@
       ],
       "No more missed appointments": [
         "Больше никаких пропущенных встреч"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "При использовании уведомлений по электронной почте вы сами решаете, о каких событиях и когда получать уведомления."
@@ -5086,9 +5089,6 @@
       ],
       "Import failed": [
         "Импорт не удался"
-      ],
-      "Import groups": [
-        "Импортировать группы"
       ],
       "Invalid verification code": [
         "Неверный проверочный код"
