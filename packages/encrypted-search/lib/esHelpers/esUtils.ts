@@ -2,12 +2,8 @@ import { IDBPDatabase, openDB, deleteDB } from 'idb';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { destroyOpenPGP, loadOpenPGP } from '@proton/shared/lib/openpgp';
-import { Api } from '@proton/shared/lib/interfaces';
-import { sendMetricsReport } from '@proton/shared/lib/helpers/metrics';
-import { METRICS_LOG } from '@proton/shared/lib/constants';
-import { ESIndexMetrics, ESProgressBlob, ESSearchMetrics } from './interfaces';
-import { DIACRITICS_REGEXP, ES_MAX_PARALLEL_ITEMS } from './constants';
-import { indexKeyExists } from './esHelpers';
+import { ESProgressBlob } from '../models';
+import { DIACRITICS_REGEXP, ES_MAX_PARALLEL_ITEMS } from '../constants';
 
 /**
  * Helpers to work with ES blobs in localStorage
@@ -52,6 +48,40 @@ export const removeES = {
     Pause: (userID: string) => removeESItem(userID, 'Pause'),
     Enabled: (userID: string) => removeESItem(userID, 'ESEnabled'),
 };
+
+/**
+ * @returns three helpers to get, set or remove blobs in local storage related to ES.
+ * The accessible blobs are the following.
+ * @var Key the LS blob storing the symmetric index key
+ * @var Event the LS blob storing the last event ID to which the IDB was synced
+ * @var Progress the LS blob storing an object describing the progress of indexing
+ * @var Size the LS blob storing an estimated size in bytes of IDB
+ * @var Pause the LS blob storing whether a paused indexing exists
+ * @var Enabled the LS blob storing whether ES is enabled or disabled
+ */
+export const esStorageHelpers = () => ({
+    getES,
+    setES,
+    removeES,
+});
+
+/**
+ * @param userID the user ID
+ * @return whether the symmetric index key under which IDB is encrypted exists
+ */
+export const indexKeyExists = (userID: string) => !!getES.Key(userID);
+
+/**
+ * @param userID the user ID
+ * @returns whether a previously started indexing process has terminated successfully
+ */
+export const isDBReadyAfterBuilding = (userID: string) => !getES.Progress(userID);
+
+/**
+ * @param userID the user ID
+ * @returns whether a key exists and the corresponding indexing process has terminated successfully
+ */
+export const wasIndexingDone = (userID: string) => indexKeyExists(userID) && isDBReadyAfterBuilding(userID);
 
 /**
  * Open and delete the ES IndexedDB
@@ -116,6 +146,26 @@ export const getOldestTimePoint = async <ESCiphertext>(
 };
 
 /**
+ * Get the time of the oldest item from IDB, eventually corrected by a given factor
+ * @param userID the user ID
+ * @param storeName the name of the object store
+ * @param indexName the name of the temporal index
+ * @param getTimePoint a callback to extract the timepoint from an encrypted item
+ * @param correctionFactor a multiplicative factor
+ * @returns time of the oldest item in IDB, potentially corrected
+ */
+export const getOldestTime = async <ESCiphertext>(
+    userID: string,
+    storeName: string,
+    indexName: string,
+    getTimePoint: (item: ESCiphertext) => [number, number],
+    correctionFactor?: number
+) => {
+    const timePoint = await getOldestTimePoint<ESCiphertext>(userID, storeName, indexName, getTimePoint);
+    return timePoint ? timePoint[0] * (correctionFactor || 1) : 0;
+};
+
+/**
  * Fetch Time of the most recent item from IDB
  */
 export const getMostRecentTime = async <ESCiphertext>(
@@ -139,6 +189,15 @@ export const getNumItemsDB = async (userID: string, storeName: string) => {
     const count = await esDB.count(storeName);
     esDB.close();
     return count;
+};
+
+/**
+ * @param userID the user ID
+ * @returns the number of items in the account when indexing had started, i.e.
+ * excluding those that have changed since then
+ */
+export const getESTotal = (userID: string) => {
+    return getES.Progress(userID)?.totalItems || 0;
 };
 
 /**
@@ -214,6 +273,19 @@ export const setOriginalEstimate = (userID: string, inputEstimate: number) => {
 };
 
 /**
+ * @param userID the user ID
+ * @returns the indexing progress expressed as a number between 0 and 100 from BuildProgress
+ */
+export const getESCurrentProgress = (userID: string) => {
+    const progressBlob = getES.Progress(userID);
+    if (!progressBlob) {
+        return 0;
+    }
+    const { currentItems, totalItems } = progressBlob;
+    return Math.ceil(((currentItems || 0) / totalItems) * 100);
+};
+
+/**
  * Update the rolling estimated size of IDB
  */
 export const updateSizeIDB = (userID: string, addend: number) => {
@@ -261,12 +333,6 @@ export const requestPersistence = async () => {
         await window.navigator.storage.persist();
     }
 };
-
-/**
- * Send metrics about encrypted search
- */
-export const sendESMetrics = async (api: Api, Title: string, Data: ESSearchMetrics | ESIndexMetrics) =>
-    sendMetricsReport(api, METRICS_LOG.ENCRYPTED_SEARCH, Title, Data);
 
 /**
  * Remove diacritics and apply other transforms to the NFKD decomposed string

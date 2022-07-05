@@ -1,11 +1,75 @@
 import { startOfDay, sub } from 'date-fns';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { Api } from '@proton/shared/lib/interfaces/Api';
-import { getES, getMostRecentTime, getNumItemsDB, openESDB, roundMilliseconds, sendESMetrics } from './esUtils';
+import isTruthy from '@proton/utils/isTruthy';
+import { ESCache, ESSearchingHelpers, ESStoredItem, GetUserKeys } from '../models';
+import { AesKeyGenParams, ES_MAX_ITEMS_PER_BATCH, ES_EXTRA_RESULTS_LIMIT } from '../constants';
+import { getMostRecentTime, getOldestTime, normalizeString, openESDB, roundMilliseconds } from './esUtils';
 import { getIndexKey } from './esBuild';
-import { ESCache, ESSearchingHelpers, ESStoredItem, GetUserKeys } from './interfaces';
-import { AesKeyGenParams, ES_MAX_ITEMS_PER_BATCH, ES_EXTRA_RESULTS_LIMIT } from './constants';
-import { getOldestTime } from './esHelpers';
+
+/**
+ * Process the string input by the user in the searchbar by performing the following
+ * transformations:
+ *   - trims whitespaces from the input string;
+ *   - removes diacritics;
+ *   - casts to locale lower case;
+ *   - splits the input string in multiple keywords if separated by whitespace, unless
+ *     it's within quotes
+ * @param keyword the string as input by users in the searchbar
+ * @returns the array of normalised keywords to be searched
+ */
+export const normalizeKeyword = (keyword: string) => {
+    const trimmedKeyword = normalizeString(keyword);
+    const quotesIndexes: number[] = [];
+
+    let index = 0;
+    while (index !== -1) {
+        index = trimmedKeyword.indexOf(`"`, index);
+        if (index !== -1) {
+            quotesIndexes.push(index);
+            index++;
+        }
+    }
+
+    const normalizedKeywords: string[] = [];
+    let previousIndex = -1;
+    for (let index = 0; index < quotesIndexes.length; index++) {
+        const keyword = trimmedKeyword.slice(previousIndex + 1, quotesIndexes[index]);
+
+        if (index % 2 === 1) {
+            // If the user placed quotes, we want to keep everything inside as a single block
+            normalizedKeywords.push(keyword);
+        } else {
+            // Otherwise we split by whitespace
+            normalizedKeywords.push(...keyword.split(' '));
+        }
+
+        previousIndex = quotesIndexes[index];
+    }
+
+    normalizedKeywords.push(...trimmedKeyword.slice(quotesIndexes[quotesIndexes.length - 1] + 1).split(' '));
+
+    return normalizedKeywords.filter(isTruthy);
+};
+
+/**
+ * Check if all given keywords are in any of the given strings. In other words, all given
+ * keywords should be included in at least one of the searched strings
+ * @param normalizedKeywords keywords to search
+ * @param stringsToSearch string to be searched
+ * @returns whether all keywords can be found in at least one given string
+ */
+export const testKeywords = (normalizedKeywords: string[], stringsToSearch: string[]) => {
+    const normalizedStrings = stringsToSearch.map((str) => normalizeString(str));
+    let result = true;
+    let index = 0;
+    while (result && index !== normalizedKeywords.length) {
+        const keyword = normalizedKeywords[index];
+        result = result && normalizedStrings.some((string) => string.includes(keyword));
+        index++;
+    }
+
+    return result;
+};
 
 /**
  * Decrypt encrypted object from IndexedDB
@@ -568,30 +632,4 @@ export const hybridSearch = async <ESItem, ESCiphertext, ESSearchParameters>(
     }
 
     return { searchResults, isSearchPartial, lastTimePoint };
-};
-
-/**
- * Send metrics about a single encrypted search
- */
-export const sendSearchingMetrics = async (
-    api: Api,
-    userID: string,
-    cacheSize: number,
-    searchTime: number,
-    isFirstSearch: boolean,
-    isCacheLimited: boolean,
-    storeName: string
-) => {
-    // Note: the metrics dashboard expects a variable called "numMessagesIndexed" but
-    // it doesn't make too much sense in general to talk about "messages"
-    const numMessagesIndexed = await getNumItemsDB(userID, storeName);
-
-    return sendESMetrics(api, 'search', {
-        indexSize: getES.Size(userID),
-        numMessagesIndexed,
-        cacheSize,
-        searchTime,
-        isFirstSearch,
-        isCacheLimited,
-    });
 };

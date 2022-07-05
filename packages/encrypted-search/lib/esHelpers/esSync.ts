@@ -3,11 +3,11 @@ import isTruthy from '@proton/utils/isTruthy';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { getNumItemsDB, getOldestItem, openESDB, updateSizeIDB } from './esUtils';
 import { decryptFromDB, uncachedSearch } from './esSearch';
-import { ESCache, ESItemEvent, ESSyncingHelpers } from './interfaces';
-import { ES_MAX_PARALLEL_ITEMS } from './constants';
+import { ESCache, ESItemEvent, ESSyncingHelpers } from '../models';
+import { ES_MAX_PARALLEL_ITEMS } from '../constants';
 import { addToESCache, findItemIndex, removeFromESCache, replaceInESCache, sizeOfESItem } from './esCache';
 import { encryptToDB } from './esBuild';
-import { esSentryReport } from './esHelpers';
+import { esSentryReport } from './esAPI';
 
 /**
  * Check whether the DB is limited, either after indexing or if it became so

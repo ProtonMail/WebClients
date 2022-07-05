@@ -1,4 +1,4 @@
-import { EncryptedSearchFunctions } from './interfaces';
+import { EncryptedSearchFunctions } from './models';
 
 /**
  * Number of batches of items to process during indexing before

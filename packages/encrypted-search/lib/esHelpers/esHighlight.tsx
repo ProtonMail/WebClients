@@ -1,4 +1,6 @@
-import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from './constants';
+import { ReactNode } from 'react';
+import { DIACRITICS_REGEXP, ES_MAX_INITIAL_CHARS } from '../constants';
+import { HighlightMetadata } from '../models';
 import { normalizeString } from './esUtils';
 
 /**
@@ -238,4 +240,35 @@ export const highlightJSX = (
             </span>
         ),
     };
+};
+
+/**
+ * Insert highlighting markers only if a ReactNode is a string or can be parsed as such
+ * @param node the react node in which highlight has to be inserted
+ * @param highlightMetadata tha callback to the highlightMetadata function returned by the
+ * ES library
+ * @returns the highlighted node
+ */
+export const highlightNode = (node: ReactNode, highlightMetadata: HighlightMetadata) => {
+    const nodeValue = node?.valueOf();
+    if (typeof nodeValue === 'string') {
+        return highlightMetadata(nodeValue).resultJSX;
+    }
+    if (
+        !!nodeValue &&
+        Object.prototype.isPrototypeOf.call(Object.prototype, nodeValue) &&
+        Object.prototype.hasOwnProperty.call(nodeValue, 'props')
+    ) {
+        const { props } = nodeValue as { props: any };
+        if (
+            Object.prototype.isPrototypeOf.call(Object.prototype, props) &&
+            Object.prototype.hasOwnProperty.call(props, 'children')
+        ) {
+            const { children } = props;
+            if (Array.isArray(props.children) && children.every((child: any) => typeof child === 'string')) {
+                return highlightMetadata(children.join('')).resultJSX;
+            }
+        }
+    }
+    return node;
 };
