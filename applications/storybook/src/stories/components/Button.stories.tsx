@@ -68,58 +68,56 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="p2">
-            <div className="flex flex-align-items-stretch">
-                <div className="mr2">
-                    <strong className="block mb1">Color</strong>
-                    <RadioGroup
-                        name="selected-color"
-                        onChange={(v) => setSelectedColor(v)}
-                        value={selectedColor}
-                        options={colors.map((color) => ({ value: color, label: color }))}
-                    />
-                </div>
-                <div className="mr2">
-                    <strong className="block mb1">Shape</strong>
-                    <RadioGroup
-                        name="selected-shape"
-                        onChange={(v) => setSelectedShape(v)}
-                        value={selectedShape}
-                        options={shapes.map((shape) => ({ value: shape, label: shape }))}
-                    />
-                </div>
-                <div className="mr2">
-                    <strong className="block mb1">Size</strong>
-                    <RadioGroup
-                        name="selected-size"
-                        onChange={(v) => setSelectedSize(v)}
-                        value={selectedSize}
-                        options={sizes.map((size) => ({ value: size, label: size }))}
-                    />
-                </div>
-                <div className="mr2">
-                    <strong className="block mb1">Toggles</strong>
-                    {toggles.map((prop, i) => {
-                        return (
-                            <div className="mb0-5">
-                                <Checkbox
-                                    checked={selectedToggles[i]}
-                                    onChange={({ target: { checked } }) => {
-                                        setSelectedToggles(
-                                            selectedToggles.map((oldValue, otherIndex) =>
-                                                otherIndex === i ? checked : oldValue
-                                            )
-                                        );
-                                    }}
-                                >
-                                    {prop}
-                                </Checkbox>
-                            </div>
-                        );
-                    })}
-                </div>
-                <div className={buttonContainerClassName}>{button}</div>
+        <div className="flex flex-align-items-stretch py2">
+            <div className="mr2">
+                <strong className="block mb1">Color</strong>
+                <RadioGroup
+                    name="selected-color"
+                    onChange={(v) => setSelectedColor(v)}
+                    value={selectedColor}
+                    options={colors.map((color) => ({ value: color, label: color }))}
+                />
             </div>
+            <div className="mr2">
+                <strong className="block mb1">Shape</strong>
+                <RadioGroup
+                    name="selected-shape"
+                    onChange={(v) => setSelectedShape(v)}
+                    value={selectedShape}
+                    options={shapes.map((shape) => ({ value: shape, label: shape }))}
+                />
+            </div>
+            <div className="mr2">
+                <strong className="block mb1">Size</strong>
+                <RadioGroup
+                    name="selected-size"
+                    onChange={(v) => setSelectedSize(v)}
+                    value={selectedSize}
+                    options={sizes.map((size) => ({ value: size, label: size }))}
+                />
+            </div>
+            <div className="mr2">
+                <strong className="block mb1">Toggles</strong>
+                {toggles.map((prop, i) => {
+                    return (
+                        <div className="mb0-5">
+                            <Checkbox
+                                checked={selectedToggles[i]}
+                                onChange={({ target: { checked } }) => {
+                                    setSelectedToggles(
+                                        selectedToggles.map((oldValue, otherIndex) =>
+                                            otherIndex === i ? checked : oldValue
+                                        )
+                                    );
+                                }}
+                            >
+                                {prop}
+                            </Checkbox>
+                        </div>
+                    );
+                })}
+            </div>
+            <div className={buttonContainerClassName}>{button}</div>
         </div>
     );
 };
