@@ -1,9 +1,9 @@
 import { IDBPDatabase } from 'idb';
 import { decryptMessage as pmcryptoDecryptMessage, getMessage as pmcryptoGetMessage, encryptMessage } from 'pmcrypto';
-import { Api } from '@proton/shared/lib/interfaces';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
-import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages, OPENPGP_REFRESH_CUTOFF } from './constants';
-import { AesGcmCiphertext, ESIndexingHelpers, GetUserKeys } from './interfaces';
+import { MINUTE, SECOND } from '@proton/shared/lib/constants';
+import { AesKeyGenParams, ES_MAX_CONCURRENT, KeyUsages, OPENPGP_REFRESH_CUTOFF } from '../constants';
+import { AesGcmCiphertext, ESIndexingHelpers, ESIndexingState, GetUserKeys } from '../models';
 import {
     addESTimestamp,
     createESDB,
@@ -13,11 +13,11 @@ import {
     openESDB,
     refreshOpenpgp,
     removeES,
-    sendESMetrics,
     setES,
+    setOriginalEstimate,
     updateSizeIDB,
 } from './esUtils';
-import { esSentryReport } from './esHelpers';
+import { esSentryReport } from './esAPI';
 import { sizeOfESItem } from './esCache';
 
 /**
@@ -376,7 +376,7 @@ export const initializeDB = async (
 /**
  * Compute the total indexing time based on locally cached timestamps
  */
-const estimateIndexingDuration = (
+export const estimateIndexingDuration = (
     timestamps: {
         type: 'start' | 'step' | 'stop';
         time: number;
@@ -399,30 +399,41 @@ const estimateIndexingDuration = (
 };
 
 /**
- * Send metrics about the indexing process
+ * Compute the estimated time remaining of indexing
+ * @param userID the user ID
+ * @param esProgress the number of items processes so far
+ * @param esTotal the total number of items to be indexed
+ * @param endTime the time when this helper is called
+ * @param esState the indexing state, which is a data structure to keep track of
+ * indexing progress
+ * @returns the number of estimated time to completion and the current progress
+ * expressed as a number between 0 and 100
  */
-export const sendIndexingMetrics = async (api: Api, userID: string) => {
-    addESTimestamp(userID, 'stop');
-    const progressBlob = getES.Progress(userID);
-    if (!progressBlob) {
-        return;
+export const estimateIndexingProgress = (
+    userID: string,
+    esProgress: number,
+    esTotal: number,
+    endTime: number,
+    esState: ESIndexingState
+) => {
+    let estimatedMinutes = 0;
+    let currentProgressValue = 0;
+
+    if (esTotal !== 0 && endTime !== esState.startTime && esProgress !== esState.esPrevProgress) {
+        const remainingMessages = esTotal - esProgress;
+
+        setOriginalEstimate(
+            userID,
+            Math.floor(
+                (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / SECOND
+            )
+        );
+
+        estimatedMinutes = Math.ceil(
+            (((endTime - esState.startTime) / (esProgress - esState.esPrevProgress)) * remainingMessages) / MINUTE
+        );
+        currentProgressValue = Math.ceil((esProgress / esTotal) * 100);
     }
 
-    const { totalItems, isRefreshed, numPauses, timestamps, originalEstimate } = progressBlob;
-    // There have been cases of broken metrics due to change to variables' name. The following is a temporary
-    // change to read the number of total items indexed also in the old (pre-library) format.
-    const { totalMessages } = progressBlob as any;
-    const numMessagesIndexed = totalItems || totalMessages || 0;
-
-    const { indexTime, totalInterruptions } = estimateIndexingDuration(timestamps);
-
-    return sendESMetrics(api, 'index', {
-        numInterruptions: totalInterruptions - numPauses,
-        indexSize: getES.Size(userID),
-        originalEstimate,
-        indexTime,
-        numMessagesIndexed,
-        isRefreshed,
-        numPauses,
-    });
+    return { estimatedMinutes, currentProgressValue };
 };
