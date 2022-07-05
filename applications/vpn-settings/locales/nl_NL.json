@@ -1896,9 +1896,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } of ${ forgotUsernameLink }?"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
       ],
@@ -1965,14 +1962,11 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Na het betalen van uw Bitcoin betaling, volg de onderstaande instructies om te upgraden."
       ],
-      "Already have an account?": [
-        "Heeft u al een account?"
-      ],
       "Amount below minimum (${ amount }).": [
         "Bedrag onder minimum (${ amount })."
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL leest je persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
+        "AOL leest uw persoonlijke gegevens om adverteerders en andere derden toegang te geven. Maak een veilig e-mailadres aan voor betere privacy."
       ],
       "Based in Switzerland, available globally": [
         "Gebaseerd in Zwitserland, wereldwijd beschikbaar"
@@ -1984,7 +1978,7 @@
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
-        "Gefactureerd aan het einde van je huidige factureringscyclus (vernieuwing op ${ renewalDate })"
+        "Gefactureerd aan het einde van uw huidige factureringscyclus (vernieuwing op ${ renewalDate })"
       ],
       "Bitcoin transactions can take some time to be confirmed (up to 24 hours). Once confirmed, we will add credits to your account. After transaction confirmation, you can pay your invoice with the credits.": [
         "Het kan even duren voordat Bitcoin-transacties worden bevestigd (tot 24 uur), waarna wij de credits aan uw account zullen toevoegen. Na de transactiebevestiging kunt u uw factuur met de credits betalen."
@@ -2026,7 +2020,7 @@
         "Aangepaste e-maildomeinen"
       ],
       "Discount applied to your subscription with coupon ${ code }": [
-        "Korting toegepast op je abonnement met coupon ${ code }"
+        "Korting toegepast op uw abonnement met coupon ${ code }"
       ],
       "Do not use the OpenVPN / IKEv2 credentials in ${ VPN_APP_NAME } applications or on the ${ VPN_APP_NAME } dashboard. ${ learnMore }": [
         "Gebruik de OpenVPN / IKEv2 inloggegevens niet in ${ VPN_APP_NAME } applicaties of op het ${ VPN_APP_NAME } dashboard. ${ learnMore }"
@@ -2038,7 +2032,7 @@
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
-        "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar je gaat."
+        "Download uw favoriete app vandaag nog en neem uw privacy mee overal waar u naartoe gaat."
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
         "E-mailhosting is gratis inbegrepen voor 10 eigen domeinnamen. Extra domeinen kunnen toegevoegd worden voor ${ price }."
@@ -2169,6 +2163,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Link copied to clipboard": [
+        ""
+      ],
       "Loading": [
         "Laden"
       ],
@@ -2268,8 +2265,8 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton kan u niet helpen bij het herstellen van verloren wachtwoorden."
       ],
-      "read our two-factor authentication Guide first": [
-        "eerst de instructies over tweestapsverificatie (2FA) te lezen"
+      "read our two-factor authentication guide first": [
+        ""
       ],
       "recovery method": [
         "herstelmethode"
@@ -2350,7 +2347,7 @@
         "Dit zal uw tijdelijke wachtwoord vervangen. U zult het gebruiken om in de toekomst toegang te krijgen tot uw ${ BRAND_NAME } -account."
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "Dit zal je afmelden van alle actieve sessies en de twee-staps authenticatie uitschakelen."
+        "Dit zal u afmelden van alle actieve sessies en de twee-staps authenticatie uitschakelen."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "Deze wizard zal Tweestapsverificatie (2FA) inschakelen voor uw Proton account. Tweestapsverificatie zal uw Proton account veiliger maken en daarom raden we aan om het in te schakelen."
@@ -2443,7 +2440,7 @@
         "Wij raden u aan in plaats daarvan uw herstelzin te gebruiken."
       ],
       "We use 3-D Secure to protect your payments.": [
-        "We gebruiken 3-D Secure om je betalingen te beschermen."
+        "We gebruiken 3-D Secure om uw betalingen te beschermen."
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "We verwijzen u naar PayPal in een nieuw browsertabblad om de transactie te voltooien. Als u een pop-up blocker gebruikt, schakel deze dan uit alvorens door te gaan."
@@ -3026,6 +3023,9 @@
       "Learn more": [
         "Meer informatie"
       ],
+      "Need help?": [
+        "Heeft u hulp nodig?"
+      ],
       "Not activated": [
         "Niet actief"
       ],
@@ -3046,6 +3046,9 @@
       ],
       "Terms": [
         "Voorwaarden"
+      ],
+      "Trouble signing in?": [
+        ""
       ],
       "Upgrade": [
         "Upgraden"
@@ -3094,7 +3097,7 @@
         "Hoogste VPN-snelheid"
       ],
       "Keep your inbox organized with folders": [
-        "Houd je inbox overzichtelijk met mappen"
+        "Houd uw inbox overzichtelijk met mappen"
       ],
       "Medium VPN speed": [
         "Gemiddelde VPN-snelheid"
@@ -3145,8 +3148,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Bekijk alle ${ BRAND_NAME }-abonnementen"
       ],
-      "From ${ _price } per user": [
-        "Vanaf ${ _price } per gebruiker"
+      "From ${ _price }": [
+        ""
+      ],
+      "From ${ _price2 } per user": [
+        ""
       ],
       "From ${ price }": [
         "Vanaf ${ price }"
@@ -3383,14 +3389,6 @@
         "Wereldwijde streamingdiensten"
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Wachtwoord vergeten"
-      ],
-      "username": [
-        "gebruikersnaam"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Ondersteuning"
@@ -3439,6 +3437,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privacy- en beveiligingssuite voor bedrijven, inclusief alle premium Proton-services."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        ""
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Veilige e-mail en agenda voor professionals en bedrijven."
       ],
@@ -3459,6 +3460,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        ""
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
       ],
@@ -3492,14 +3496,11 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "Door een account te maken, gaat u akkoord met ${ terms }. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        ""
       ],
       "Payment details": [
         "Betalingsgegevens"
-      ],
-      "Proton's terms and conditions": [
-        "Algemene voorwaarden van Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Sla uw e-mailadres of telefoonnummer op voor verificatiedoeleinden als u uw account moet resetten."
@@ -3507,8 +3508,11 @@
       "Subscription": [
         "Abonnement"
       ],
+      "terms and conditions": [
+        ""
+      ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Kies eerst een weergavenaam. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een gebeurtenis of een bestand deelt."
+        "Kies eerst een weergavenaam. Dit is de naam die mensen zien als u een e-mail verzendt, ze uitnodigt voor een afspraak of een bestand deelt."
       ],
       "Your ${ planName } subscription is now active.": [
         "Uw ${ planName }-abonnement is nu actief."
@@ -3608,7 +3612,7 @@
         "Labels zijn simpele tags die u kunt toevoegen aan berichten zodat u ze makkelijker kunt vinden of filteren"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        "Beheer uw abonnement en pas het zo nodig aan uw wensen aan. De geaccepteerde betaalmethodes zijn creditcard, PayPal, cryptovaluta en bankoverschrijving."
+        "Beheer uw abonnement en pas het zo nodig aan uw wensen aan. De geaccepteerde betaalmethodes zijn kredietkaart, PayPal, cryptovaluta en bankoverschrijving."
       ],
       "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
         "Ontvang op werkdagen binnen 24 uur na het indienen van uw verzoek ondersteuning van Proton-klantenondersteuning"
@@ -3725,6 +3729,9 @@
       ],
       "Boost your storage space to ${ businessStorage } per user": [
         "Breid uw opslagruimte uit naar ${ businessStorage } per gebruiker"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        ""
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
@@ -3883,11 +3890,11 @@
         "neem contact op"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "Selecteer het aantal gebruikers om op te nemen in je abonnement. Elke extra gebruiker kost ${ price }."
+        "Selecteer het aantal gebruikers om op te nemen in uw abonnement. Elke extra gebruiker kost ${ price }."
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team.",
-        ""
+        "Heeft u meer dan ${ maxUsers } gebruiker nodig, ${ contact } met ons Sales team.",
+        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team."
       ]
     },
     "Price": {
@@ -3944,11 +3951,17 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Krijg tot 18 maanden ${ planName } gratis"
       ],
       "Invite friends and earn rewards!": [
         "Nodig vrienden uit en verdien bonussen!"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ]
     },
     "State": {
@@ -4639,7 +4652,7 @@
         "Live chat is een premium functie alleen beschikbaar voor degenen met betaalde ${ VPN_APP_NAME } abonnementen. Gelieve in plaats daarvan een ticket te openen."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Houd er rekening mee dat door deze betaalmethode te kiezen je account niet onmiddellijk kan worden bijgewerkt. We zullen je account bijwerken zodra de betaling is gewist."
+        "Houd er rekening mee dat door deze betaalmethode te kiezen uw account niet onmiddellijk kan worden bijgewerkt. We zullen uw account bijwerken zodra de betaling is gewist."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Rapporten zijn niet versleuteld met end-to-end-versleuteling, stuur geen gevoelige informatie."

@@ -44,49 +44,49 @@
         "啟動還原"
       ],
       "Add": [
-        "新增"
+        "加入"
       ],
       "Add ${ BRAND_NAME } Account": [
-        "新增 ${ BRAND_NAME } 帳號"
+        "加入 ${ BRAND_NAME } 帳號"
       ],
       "Add address": [
-        "新增電郵位址"
+        "加入電郵位址"
       ],
       "Add calendar": [
-        "新增行事曆"
+        "加入行事曆"
       ],
       "Add condition": [
-        "新增條件"
+        "加入條件"
       ],
       "Add credit / debit card": [
-        "新增信用卡 / 簽帳金融卡"
+        "加入信用卡 / 簽帳金融卡"
       ],
       "Add credits": [
         "儲值"
       ],
       "Add domain": [
-        "新增網域"
+        "加入網域"
       ],
       "Add filter": [
-        "新增篩選器"
+        "加入篩選器"
       ],
       "Add folder": [
-        "新增資料夾"
+        "加入資料夾"
       ],
       "Add label": [
-        "新增標籤"
+        "加入標籤"
       ],
       "Add notification": [
-        "新增通知"
+        "加入通知"
       ],
       "Add PayPal": [
-        "新增 PayPal"
+        "加入 PayPal"
       ],
       "Add sieve filter": [
-        "新增 Sieve 篩選器"
+        "加入 Sieve 篩選器"
       ],
       "Add user": [
-        "新增使用者"
+        "加入使用者"
       ],
       "Align center": [
         "水平置中"
@@ -125,7 +125,7 @@
         "變更組織金鑰"
       ],
       "Change other email subscriptions": [
-        "變更其他電子郵件訂閱"
+        "變更其它電郵訂閱"
       ],
       "Change password": [
         "變更密碼"
@@ -191,7 +191,7 @@
         "複製連結"
       ],
       "Create": [
-        "新增"
+        "加入"
       ],
       "Create a secure ProtonMail address instead": [
         "Create a secure Proton Mail address instead"
@@ -200,7 +200,7 @@
         "創建帳號"
       ],
       "Create address": [
-        "建立電子郵件地址"
+        "建立電郵位址"
       ],
       "Create calendar": [
         "創建行事曆"
@@ -215,7 +215,7 @@
         "建立標籤"
       ],
       "Create link": [
-        "建立連結"
+        "創建連結"
       ],
       "Current plan": [
         "現行方案"
@@ -290,7 +290,7 @@
         "下載所有組態設定"
       ],
       "Download recovery file": [
-        "下載帳戶救援檔案"
+        "下載帳號救援檔案"
       ],
       "Download the Import-Export app": [
         "下載 Import-Export 應用程式"
@@ -302,13 +302,13 @@
         "編輯賬單遞送詳細資訊"
       ],
       "Edit email address": [
-        "編輯電子郵件位址"
+        "編輯電郵位址"
       ],
       "Edit label": [
         "編輯標籤"
       ],
       "Edit phone number": [
-        "編輯電話號碼"
+        "編輯手機號碼"
       ],
       "Edit sieve": [
         "編輯 Sieve"
@@ -392,7 +392,7 @@
         "匯入聯絡人"
       ],
       "Import emails": [
-        "匯入電子郵件"
+        "匯入電郵"
       ],
       "Import from .ics": [
         "從 .ics 匯入"
@@ -407,7 +407,7 @@
         "插入"
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -452,7 +452,7 @@
         "移動到封鎖清單"
       ],
       "Need help?": [
-        "需要幫助嗎？"
+        "需要說明嗎？"
       ],
       "Next": [
         "下一步"
@@ -626,7 +626,7 @@
         "選擇方案 ${ planTitle }"
       ],
       "Select calendar view": [
-        ""
+        "選擇行事曆檢視方式"
       ],
       "Select files": [
         "選取檔案"
@@ -755,7 +755,7 @@
         "升級"
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載圖像"
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 佈景主題"
@@ -767,7 +767,7 @@
         "改用另一個付款方法"
       ],
       "Use recovery code": [
-        "使用備援代碼"
+        "使用復原代碼"
       ],
       "Use two-factor authentication code": [
         "使用兩步驟驗證代碼"
@@ -788,7 +788,7 @@
         "驗證帳號"
       ],
       "Verify email": [
-        "驗證電子郵件"
+        "驗證電郵"
       ],
       "View": [
         "檢視"
@@ -800,10 +800,10 @@
         "檢視方案詳細內容"
       ],
       "Void all recovery files": [
-        "廢止所有帳戶救援檔案"
+        "廢止所有帳號救援檔案"
       ],
       "Void all recovery files?": [
-        "要廢止所有帳戶救援檔案嗎？"
+        "要廢止所有帳號救援檔案嗎？"
       ],
       "Void anyway": [
         "仍然廢止"
@@ -844,7 +844,7 @@
     },
     "Addon unit for subscription": {
       "${ addressAddon.MaxAddresses } address": [
-        "${ addressAddon.MaxAddresses } 個電子郵件地址"
+        "${ addressAddon.MaxAddresses } 個電郵位址"
       ],
       "${ domainAddon.MaxDomains } domain": [
         "${ domainAddon.MaxDomains } 個網域"
@@ -941,7 +941,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "我不在辦公室，可能沒辦法看電子郵件。"
+        "我不在辦公室，可能沒辦法看電郵。"
       ]
     },
     "Badge": {
@@ -1138,7 +1138,7 @@
         "手動設置問題"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Payments problem": [
         "付款問題"
@@ -1173,7 +1173,7 @@
     },
     "Button": {
       "Add link to your email footer": [
-        "將連結新增到您的電子郵件註腳"
+        "將連結加入到您的電郵註腳"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         ""
@@ -1237,19 +1237,19 @@
         "無法解密行事曆"
       ],
       "Calendar is syncing": [
-        "日曆正在同步"
+        "行事曆正在同步"
       ],
       "Calendar is too big": [
-        "日曆太大了"
+        "行事曆太大了"
       ],
       "Calendar link is not accessible": [
-        "日曆無法存取"
+        "行事曆無法存取"
       ],
       "Calendar link is temporarily inaccessible": [
-        "日曆連結暫時無法存取"
+        "行事曆連結暫時無法存取"
       ],
       "Failed to sync calendar": [
-        "同步日曆失敗"
+        "同步行事曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
@@ -1510,7 +1510,7 @@
     },
     "Contact field label": {
       "Address": [
-        "地址"
+        "位址"
       ],
       "Anniversary": [
         "週年紀念日"
@@ -1575,7 +1575,7 @@
         "手機"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Pager": [
         "呼叫器"
@@ -2449,7 +2449,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        "恭喜！您已達到 ${ rewardsLimit } 個月免費 ${ plusPlanName } 的上限。"
+        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "正在加密並匯入聯絡人... 這可能需時數分鐘。當過程完成時，您可以關閉此方塊。"
@@ -2488,7 +2488,7 @@
     },
     "Domain modal": {
       "'www' subdomains are typically not used for email. Are you sure you want to use this domain value?": [
-        "'www' 子網域通常不會用於電子郵件。您確定要使用此子網域數值嗎？"
+        "'www' 子網域通常不會用於電郵。您確定要使用此子網域數值嗎？"
       ]
     },
     "Downgrade account reason": {
@@ -2524,16 +2524,16 @@
     },
     "Duration": {
       "120 minutes": [
-        ""
+        "120 分鐘"
       ],
       "30 minutes": [
-        ""
+        "30 分鐘"
       ],
       "60 minutes": [
-        ""
+        "60 分鐘"
       ],
       "90 minutes": [
-        ""
+        "90 分鐘"
       ]
     },
     "Email body for description (description part)": {
@@ -2604,10 +2604,10 @@
         "您想收到哪些 ${ BRAND_NAME } 的最新消息？"
       ],
       "You resubscribed to ${ categoriesJsx } emails.": [
-        "您已重新訂閱 ${ categoriesJsx } 電子郵件。"
+        "您已重新訂閱 ${ categoriesJsx } 電郵。"
       ],
       "You unsubscribed from ${ categoriesJsx } emails.": [
-        "您已取消訂閱 ${ categoriesJsx } 電子郵件。"
+        "您已取消訂閱 ${ categoriesJsx } 電郵。"
       ]
     },
     "Email Unsubscribe Categories": {
@@ -2617,16 +2617,16 @@
     },
     "Error": {
       "${ Local } is your username. To create ${ Local }@${ Domain }, please go to Settings > Addresses > Short domain (pm.me)": [
-        "${ Local } 是您的使用者名稱。如要建立 ${ Local }@${ Domain }，請前往「設定」 > 「地址」 > 「短域名 (pm.me)」"
+        "${ Local } 是您的使用者名稱。如要建立 ${ Local }@${ Domain }，請前往「設定」 > 「位址」 > 「短域名 (pm.me)」"
       ],
       "A group with this name already exists": [
         "以此為名的群組已存在"
       ],
       "Address already associated to a user": [
-        "電子郵件地址已與某位使用者關聯"
+        "電郵位址已與某位使用者關聯"
       ],
       "Address primary private key not found": [
-        "找不到地址主要金鑰"
+        "找不到位址主要金鑰"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
         "所有儲存空間已被分配。請減少分配給其他使用者的儲存空間。"
@@ -2671,10 +2671,10 @@
         "網域無法使用，請稍後再試"
       ],
       "Email address invalid": [
-        "電子郵件地址無效"
+        "電郵位址無效"
       ],
       "Email is not valid": [
-        "電子郵件無效"
+        "電郵無效"
       ],
       "Empty condition": [
         "條件空白"
@@ -2761,7 +2761,7 @@
         "持卡人姓名必須填寫"
       ],
       "Name required": [
-        "名稱必填。"
+        "名稱為必填"
       ],
       "No active sessions": [
         "無使用中工作階段"
@@ -2770,7 +2770,7 @@
         "沒有匯入任何資料"
       ],
       "No valid address found": [
-        "找不到有效的地址"
+        "找不到有效的位址"
       ],
       "Not a valid number": [
         "號碼無效"
@@ -2797,7 +2797,7 @@
         "付款程序失敗"
       ],
       "Payment process not supported": [
-        "不支持此付款程序"
+        "不支援此付款程序"
       ],
       "Payments are currently not available, please try again later": [
         "付款目前無法使用，請稍後再試"
@@ -2806,10 +2806,10 @@
         "權限被拒，系統管理員權限受限。"
       ],
       "Please configure a custom domain before adding users to your organization.": [
-        "請先設置一個自訂網域，然後才新增使用者到您的組織。"
+        "請先設置一個自訂網域，然後才加入使用者到您的組織。"
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "請先啟用多使用者支援，然後才新增使用者到您的組織。"
+        "請先啟用多使用者支援，然後才加入使用者到您的組織。"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
@@ -2818,13 +2818,13 @@
         "請在您試著改變您的密碼前生成金鑰"
       ],
       "Please set a recovery email first": [
-        "請先設定備援電子郵件"
+        "請先設定復原電郵"
       ],
       "Please set a recovery phone number first": [
-        "請先設定一個備援電話號碼"
+        "請先設定一個復原手機號碼"
       ],
       "Please set a recovery/notification email first": [
-        "請先設定一個備援/通知電子郵件"
+        "請先設定一個復原/通知電郵"
       ],
       "Please try to reauthenticate and make sure the permissions are set correctly.": [
         "請嘗試重新認證並確保權限設定正確。"
@@ -2836,10 +2836,10 @@
         ""
       ],
       "Primary address key is not decrypted": [
-        "主要地址金鑰並未被加密"
+        "主要位址金鑰並未被加密"
       ],
       "Primary address key is not decrypted.": [
-        "主要地址金鑰並未被加密。"
+        "主要位址金鑰並未被加密。"
       ],
       "Process aborted": [
         "處理已中止"
@@ -2875,7 +2875,7 @@
         "分頁已關閉"
       ],
       "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or log in via a computer.": [
-        "您目前使用的瀏覽器無法完成支付認證，請使用其他瀏覽器或透過電腦登入。"
+        "您目前使用的瀏覽器無法完成支付認證，請使用其它瀏覽器或透過電腦登入。"
       ],
       "The folder name is invalid. Please choose a different name.": [
         ""
@@ -2884,10 +2884,10 @@
         "資料夾名稱太長。請換另一個名稱。"
       ],
       "The keys in your recovery file can't be validated. Please contact support.": [
-        "在您帳戶救援檔案內的金鑰無法通過驗證。請聯繫我們。"
+        "在您帳號救援檔案內的金鑰無法通過驗證。請聯繫我們。"
       ],
       "The keys in your recovery files can't be validated. Please upload individually for more information.": [
-        "在您帳戶救援檔案內的金鑰無法通過驗證。請逐一上傳更多資訊。"
+        "在您帳號救援檔案內的金鑰無法通過驗證。請逐一上載更多資訊。"
       ],
       "The label name is invalid. Please choose a different name.": [
         ""
@@ -2905,7 +2905,7 @@
         "最低付款額為 ${ _price2 }"
       ],
       "The organization key must be activated first": [
-        "必須先啟用組織金鑰。"
+        "必須先啟用組織機構的金鑰。"
       ],
       "The organization key must be activated first.": [
         "必須先啟用組織金鑰。"
@@ -2938,10 +2938,10 @@
         "未知的付款權仗狀態"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "上傳的檔案不是有效的私鑰。請驗證並再試一次。"
+        "上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
       "Uploaded files are not valid private keys. Please verify and try again.": [
-        "上傳的檔案不是有效的私鑰。請驗證並再試一次。"
+        "上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
       "Verification did not succeed, please try again in an hour.": [
         "驗證失敗，請在一小時後再試。"
@@ -2953,25 +2953,25 @@
         "我們無法連接到您的服務提供者。"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "錯誤的恢復短語。重試或使用其他復原方法。"
+        "錯誤的恢復短語。重試或使用其它復原方法。"
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "驗證碼錯誤，請確保已正確複製驗證碼後重試。變更或需時最長 24 小時才能生效。"
       ],
       "You have lost access to your organization keys. Without restoration you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您已失去對組織金鑰的存取權限。恢復權限前，您將無法建立新使用者、為現有使用者新增電子郵件地址，又或存取非私有使用者的帳戶。"
+        "您已失去對組織金鑰的存取權限。恢復權限前，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
       ],
       "You have no invoices.": [
         "您沒有任何帳單。"
       ],
       "You have used all addresses in your plan. Please upgrade your plan to add a new address.": [
-        "您已使用您的方案中所有電子郵件地址。請升級您的方案以新增電子郵件地址。"
+        "您已使用您的方案中所有電郵位址。請升級您的方案以加入電郵位址。"
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
-        "您已使用您的方案中所有使用者。請升級您的方案以新增使用者。"
+        "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
       "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您必須啟用您的組織金鑰，否則您將無法建立新使用者、為現有使用者新增電子郵件地址，又或存取非私有使用者的帳號。"
+        "您必須啟用您的組織金鑰，否則您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
       ],
       "You must privatize all users before generating new organization keys": [
         "在產生新的組織金鑰前，必須將所有使用者私有化"
@@ -3037,7 +3037,7 @@
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案。"
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
@@ -3152,7 +3152,7 @@
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們就去處理一下。"
+        "不好意思，這個錯誤有待修正。我們將會處理。"
       ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
@@ -3167,7 +3167,7 @@
         "請${ refresh }或檢查您的連線。"
       ],
       "Please ${ signIn } to update your email subscription preferences.": [
-        "請 ${ signIn } 以升級您的電子郵件訂閱偏好設定。"
+        "請 ${ signIn } 以升級您的電郵訂閱偏好設定。"
       ],
       "There was a problem connecting to Proton.": [
         "連線到 Proton 時發生問題。"
@@ -3192,7 +3192,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "未選取任何影像"
+        "未選取任何圖像"
       ]
     },
     "Error when exporting event from calendar": {
@@ -3217,7 +3217,7 @@
         "無效的回應"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "無法新增此活動到您的行事曆。未傳送回覆"
+        "無法加入此活動到您的行事曆。未傳送回覆"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "無法更新您行事曆中的活動。未傳送回覆"
@@ -3241,7 +3241,7 @@
         "我們無法在您的行事曆更新此事件"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "您的回答已傳送，惟此事件無法新增到您的行事曆中"
+        "您的回答已傳送，惟此事件無法加入到您的行事曆中"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "您的回答已傳送，惟此事件無法在您的行事曆中更新"
@@ -3416,7 +3416,7 @@
         ""
       ],
       "Apply sender-specific spam rules. Messages from addresses or domains on the Allow List always go to your Inbox while messages from addresses or domains on the Block List always go to Spam. Marking a message as spam adds its address to the Block List. Marking a message as not spam adds it to the Allow List.": [
-        "套用視乎寄件人而定的垃圾郵件規則。來自允許清單中電子郵件地址或網域的郵件一律納入收件匣，而來自封鎖清單中電子郵件地址或網域的郵件則一概歸於垃圾郵件中。將郵件標記為垃圾郵件時，其電子郵件地址會新增到封鎖清單中。將郵件標記為非垃圾郵件則會把其新增到允許清單中。"
+        "套用視乎寄件人而定的垃圾郵件規則。來自允許清單中電郵位址或網域的郵件一律納入收件匣，而來自封鎖清單中電郵位址或網域的郵件則一概歸於垃圾郵件中。將郵件標記為垃圾郵件時，其電郵位址會加入到封鎖清單中。將郵件標記為非垃圾郵件則會把其加入到允許清單中。"
       ],
       "Search in Allow List and Block List": [
         "在允許清單與封鎖清單中搜尋"
@@ -3434,13 +3434,13 @@
     },
     "Frequency of news": {
       "(1 email per month)": [
-        "(每月 1 封電子郵件)"
+        "(每月 1 封電郵)"
       ],
       "(1 email per quarter)": [
-        "(每季 1 封電子郵件)"
+        "(每季 1 封電郵)"
       ],
       "(1-2 emails per month)": [
-        "(每月 1-2 封電子郵件)"
+        "(每月 1-2 封電郵)"
       ]
     },
     "Group": {
@@ -3454,7 +3454,7 @@
         "網路"
       ],
       "Other category": [
-        "其他類別"
+        "其它類別"
       ],
       "Services": [
         "服務"
@@ -3506,7 +3506,7 @@
         "動作"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Domain": [
         "網域"
@@ -3548,7 +3548,7 @@
         "CAPTCHA 驗證碼"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Manual": [
         "手動"
@@ -3562,19 +3562,19 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported } 個 (共 ${ totalToImport } 個) 事件已加密並新增到您的行事曆中"
+        "${ totalImported } 個 (共 ${ totalToImport } 個) 事件已加密並加入到您的行事曆中"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "加密及新增您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
+        "加密及加入您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "加密及新增您的事件時發生錯誤。無法匯入任何事件。"
+        "加密及加入您的事件時發生錯誤。無法匯入任何事件。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "正在加密並新增聯絡人：${ totalImported }/${ totalToImport }"
+        "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "正在加密並新增事件到您的行事曆中：第 ${ totalImported } 個，共 ${ totalToImport } 個"
+        "正在加密並加入事件到您的行事曆中：第 ${ totalImported } 個，共 ${ totalToImport } 個"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "事件已成功匯入。已匯入的事件現將顯示於行事曆中。"
@@ -3593,7 +3593,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "已經匯入的邀請作為一個基本活動出現於 ${ CALENDAR_APP_NAME } ，沒有主辦者或參與者資訊。若要取得活動更新並檢視誰會參加，請告訴主辦者以您的 Proton 電子郵件地址發出邀請。"
+        "已經匯入的邀請作為一個基本活動出現於 ${ CALENDAR_APP_NAME } ，沒有主辦者或參與者資訊。若要取得活動更新並檢視誰會參加，請告訴主辦者以您的 Proton 電郵位址發出邀請。"
       ],
       "This file contains an event invitation:": [
         "此檔案包含了活動邀請："
@@ -3607,10 +3607,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增到您的聯絡人清單"
+        "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入到您的聯絡人清單"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密及新增您的聯絡人時發生錯誤。無法匯入任何聯絡人。"
+        "加密及加入您的聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ]
     },
     "Import contact error": {
@@ -3630,7 +3630,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密及新增您的聯絡人時發生錯誤。${ totalToImport } 個聯絡人之中，有 ${ totalImported } 個已成功匯入。"
+        "加密及加入您的聯絡人時發生錯誤。${ totalToImport } 個聯絡人之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "聯絡人已成功匯入。已匯入的聯絡人現將顯示於聯絡人清單中。"
@@ -3646,13 +3646,13 @@
     },
     "Import error": {
       "\"Less secure app access\" is turned on in your Google account security settings.": [
-        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳戶。"
+        "您的 Google 帳號安全設定中已允許「低安全性應用程式」存取帳號。"
       ],
       "2-step verification is enabled in your external account.": [
         ""
       ],
       "2-step verification is enabled in your external email account.": [
-        "您的外部電子郵件帳號已啟用兩步驟驗證."
+        "您的外部電郵帳號已啟用兩步驟驗證."
       ],
       "If ${ bold2StepsDisabled } (default Gmail settings), please make sure that:": [
         "如果 ${ bold2StepsDisabled }（預設的 Gmail 設定），請確保："
@@ -3664,7 +3664,7 @@
         "如果 Gmail ${ bold2StepsEnabled }，請確保您使用您的應用程式密碼，而非您的一般密碼。"
       ],
       "If ${ bold2StepsEnabled }, please make sure that your email address and app password are correct. Do ${ boldNot } use your regular password.": [
-        "如果 ${ bold2StepsEnabled }，請確保您的電子郵件地址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
+        "如果 ${ bold2StepsEnabled }，請確保您的電郵位址和應用程式密碼均正確。${ boldNot } 使用您的一般密碼。"
       ],
       "IMAP access is enabled in your external account.": [
         ""
@@ -3685,13 +3685,13 @@
         "Proton 無法連線到您的帳號。請確保："
       ],
       "Proton can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的外部帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
+        "Proton 無法連線到您的外部帳號。請確保電郵伺服器位置和連接埠號碼正確。"
       ],
       "Proton can't connect to your external account. Please make sure that:": [
         "Proton 無法連線到您的外部帳號。請確保："
       ],
       "Proton can't connect to your Gmail account. Please make sure that the mail server address and port number are correct.": [
-        "Proton 無法連線到您的 Gmail 帳號。請確保電子郵件伺服器位置和連接埠號碼正確。"
+        "Proton 無法連線到您的 Gmail 帳號。請確保電郵伺服器位置和連接埠號碼正確。"
       ],
       "Proton can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
         ""
@@ -3724,7 +3724,7 @@
         ""
       ],
       "Your email address and password are correct.": [
-        "您的電子郵件地址和密碼均為正確."
+        "您的電郵位址和密碼均為正確."
       ],
       "Your password is correct.": [
         "您的密碼正確無誤。"
@@ -3738,7 +3738,7 @@
         "兩步驟驗證已啟用"
       ],
       "all your other Google accounts": [
-        "您所有的其他 Google 帳號"
+        "您所有的其它 Google 帳號"
       ],
       "CAPTCHA": [
         "CAPTCHA"
@@ -3811,10 +3811,10 @@
         ""
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
-        "要匯入電子郵件到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+        "要匯入電郵到 Outlook，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Yahoo. Get it by following these steps:": [
-        "要匯入電子郵件到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
+        "要匯入電郵到 Proton，您需要來自 Yahoo 的 ${ appPasswordLink }。請按照以下步驟取得："
       ]
     },
     "Import instructions emphasis": {
@@ -3900,12 +3900,12 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "你確定你要匯入一把私鑰嗎？匯入不安全或是已洩漏的私鑰將危及您的電子郵件安全。\n\n請知悉，與此私鑰對應的公鑰將被發布到我們的金鑰伺服器。若此金鑰包含您的個人資訊(例如您的全名) 或任何您不想要公開的資訊，請在匯入前修改這些資訊。"
+        "你確定你要匯入一把私鑰嗎？匯入不安全或是已洩漏的私鑰將危及您的電郵安全。\n\n請知悉，與此私鑰對應的公鑰將被發布到我們的金鑰伺服器。若此金鑰包含您的個人資訊(例如您的全名) 或任何您不想要公開的資訊，請在匯入前修改這些資訊。"
       ]
     },
     "Import provider": {
       "Other": [
-        "其他"
+        "其它"
       ]
     },
     "Import status": {
@@ -3979,7 +3979,7 @@
         "${ calendarName } 將設成預設行事曆。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } 個新增行事曆"
+        "${ calendarsToBeCreatedCount } 個加入行事曆"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } 個合併行事曆"
@@ -3990,20 +3990,17 @@
       "${ emailAddress } is invalid": [
         "${ emailAddress } 無效"
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } 或 ${ forgotUsernameLink } ？"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
-        ""
+        "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和郵箱密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
       ],
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "${ MAIL_APP_NAME } 支援自訂網域的 DKIM 簽章。如要使用 DKIM 驗證，請在此網域的 DNS 設定中加入以下的 CNAME 記錄。這通常可以在您的網域名稱註冊商提供的控制面板上完成。"
       ],
       "${ n } address": [
-        "${ n } 個電子郵件地址"
+        "${ n } 個電郵位址"
       ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
-        "${ none } 對電子郵件遞送沒有影響，但我們建議 ${ quarantine } 來提昇安全性。"
+        "${ none } 對電郵遞送沒有影響，但我們建議 ${ quarantine } 來提昇安全性。"
       ],
       "${ number } city": [
         "${ number } 座城市"
@@ -4012,7 +4009,7 @@
         "${ number } 個伺服器"
       ],
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
-        "${ numberOfNonPrivateKeys } 個上傳的檔案不是有效的私鑰。請驗證並再試一次。"
+        "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 個聯絡人群組"
@@ -4051,7 +4048,7 @@
         "${ storageSize } 儲存空間"
       ],
       "${ strongAddressAvailable } You will use this email address to sign into all ${ BRAND_NAME } services.": [
-        "${ strongAddressAvailable }您將會使用此電子郵件地址登入所有 ${ BRAND_NAME } 服務。"
+        "${ strongAddressAvailable }您將會使用此電郵位址登入所有 ${ BRAND_NAME } 服務。"
       ],
       "${ vpnBasic }, ${ vpnPlus } or ${ visionary } required for Country level connection.": [
         "國家級連線需要 ${ vpnBasic }、${ vpnPlus } 或 ${ visionary }。"
@@ -4078,7 +4075,7 @@
         "+${ bonusSpace } 附贈的儲存空間"
       ],
       "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
-        ""
+        "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
       ],
       "1. Invite friends to Proton": [
         "一、邀請好友到 Proton"
@@ -4108,16 +4105,16 @@
         "如果您忘記密碼，復原短語將讓您可以存取您的帳號並復原您的加密訊息。"
       ],
       "A user is an account associated with a single username, mailbox, and person": [
-        "一位使用者意味著一個帳戶與單一使用者名稱、信箱及個人對應"
+        "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單未付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
       "account recovery and data recovery method": [
-        "復原帳戶與資料的手段"
+        "復原帳號與資料的手段"
       ],
       "account recovery method": [
-        "帳戶復原方法"
+        "帳號復原方法"
       ],
       "Account size": [
         "帳號容量"
@@ -4126,31 +4123,31 @@
         "帳號已成功更新"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "新增一個 @pm.me 的電子郵件地址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
+        "加入一個 @pm.me 的電郵位址到您的帳號。此較為簡短的網域代表「${ MAIL_APP_NAME } me」或「私訊我」。"
       ],
       "Add a recovery email address": [
-        "新增備援電子郵件地址"
+        "加入復原電郵位址"
       ],
       "Add a recovery phone number": [
-        "新增備援電話號碼"
+        "加入復原手機號碼"
       ],
       "Add image URL": [
-        "新增圖片 URL"
+        "加入圖像 URL"
       ],
       "Add label": [
-        "新增標籤"
+        "加入標籤"
       ],
       "Additional options": [
         "額外設定"
       ],
       "address": [
-        "個電子郵件地址"
+        "個電郵位址"
       ],
       "Address verification is an advanced security feature. Only turn this on if you know what it does.": [
-        "電子郵件地址驗證是一項進階安全性功能。只建議熟諳箇中原理的人使用。"
+        "電郵位址驗證是一項進階安全性功能。只建議熟諳箇中原理的人使用。"
       ],
       "Admin account allocation": [
-        "管理員帳戶指派"
+        "管理員帳號指派"
       ],
       "After a password reset your data is locked in encrypted form to keep it safe.": [
         "在重設密碼之後，您的資料將上鎖以確保安全。"
@@ -4180,16 +4177,13 @@
         "已分配"
       ],
       "Allow recovery by email": [
-        "允許透過電子郵件復原"
+        "允許透過電郵復原"
       ],
       "Allow recovery by phone": [
         "允許透過電話復原"
       ],
       "Already allocated": [
         "已分配"
-      ],
-      "Already have an account?": [
-        "已經有帳號了嗎？"
       ],
       "Already used": [
         "已使用"
@@ -4210,10 +4204,10 @@
         "將無人可再由此連結同步或更新您未來的行程。 若您想要讓他們能再次與您同步，您需要產生一組新的連。節"
       ],
       "AOL reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "AOL 讀取您的個人資料以供給廣告商及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
+        "AOL 讀取您的個人資料以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
       "Are you sure you want to delete this address?": [
-        "您確定要刪除此電子郵件地址嗎？"
+        "您確定要刪除此電郵位址嗎？"
       ],
       "Are you sure you want to delete this calendar?": [
         "您確定要刪除此行事曆嗎？"
@@ -4270,13 +4264,13 @@
         "需為 Basic、Plus 或 Visionary 訂閱方案"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "請求新的驗證碼前，請先檢查您的垃圾郵件資料夾，並檢查 ${ strong } 的地址是否正確。"
+        "請求新的驗證碼前，請先檢查您的垃圾郵件資料夾，並檢查 ${ strong } 的位址是否正確。"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following MX records to your DNS. This can typically be done in the control panel of your domain name registrar.": [
         ""
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
-        "您的新電子郵件地址還需建立加密金鑰，才可用來傳送和接收電子郵件。"
+        "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
       "Billed at the end of your current billing cycle (renews on ${ renewalDate })": [
         "在您目前的付款週期結束時扣帳 (於 ${ renewalDate } 續期)"
@@ -4318,7 +4312,7 @@
         "選擇應用程式的外觀和感覺。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
+        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Close this screen to exit.": [
         "關閉此螢幕以離開。"
@@ -4330,7 +4324,7 @@
         "繼續使用 ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "建立 ${ calendarsToBeCreated } 個新增行事曆"
+        "建立 ${ calendarsToBeCreated } 個加入行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
@@ -4339,16 +4333,16 @@
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
       "Create a link to your calendar and share it with anyone outside Proton. Only you can add or remove events.": [
-        "為您的行事曆建立連結，並共享給 Proton 外的任何人。只有您可以新增或移除事件。"
+        "為您的行事曆建立連結，並共享給 Proton 外的任何人。只有您可以加入或移除事件。"
       ],
       "Create a new account and share the email address and password with the user.": [
-        ""
+        "創建一組新帳號，並將電郵位址與密碼分配給使用者。"
       ],
       "Create and manage sub-accounts and assign them email addresses on your custom domain.": [
-        "建立並管理子帳號，並為其指派在您的自訂網域下的電子郵件地址。"
+        "建立並管理子帳號，並為其指派在您的自訂網域下的電郵位址。"
       ],
       "Create email addresses for other people, manage ${ MAIL_APP_NAME } for a business, school, or group. Get started by adding your organization name and custom domain (e.g. @yourcompany.com). ": [
-        "為其他人建立電子郵件地址；為企業、學校或小組管理 ${ MAIL_APP_NAME } 。新增您的組織名稱和自訂網域 (例如 @yourcompany.com) 以開始使用。 "
+        "為其他人建立電郵位址；為企業、學校或小組管理 ${ MAIL_APP_NAME } 。加入您的組織名稱和自訂網域 (例如 @yourcompany.com) 以開始使用。 "
       ],
       "Create in": [
         "建立在"
@@ -4363,7 +4357,7 @@
         "目前所有可用的儲存空間已分配給系統管理員帳號。請減少系統管理員帳號的分配，以釋出空間給額外的使用者。您可隨時升級您的帳號，以增加總儲存空間。"
       ],
       "Custom": [
-        ""
+        "自訂"
       ],
       "Custom daily": [
         ""
@@ -4405,7 +4399,7 @@
         "您無法使用 OpenVPN / IKEv2 認證以登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。 ${ learnMore }"
       ],
       "Do you want to revoke all other sessions than the current one?": [
-        "您要撤銷除目前之外所有其他工作階段嗎？"
+        "您要撤銷除目前之外所有其它工作階段嗎？"
       ],
       "domain used": [
         "個網域已使用"
@@ -4420,16 +4414,16 @@
         "降級將中斷任何與付費 ${ VPN_APP_NAME } 伺服器的連線。"
       ],
       "Download recovery file": [
-        "下載帳戶救援檔案"
+        "下載帳號救援檔案"
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "現在就下載您最愛的應用程式，隱私隨身帶著走。"
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "下載您的 PGP 金鑰以用於其他與 PGP 相容的服務。"
+        "下載您的 PGP 金鑰以用於其它與 PGP 相容的服務。"
       ],
       "Drop a file here to upload": [
-        ""
+        "拖放檔案到此處以上載"
       ],
       "Drop the file here to upload": [
         "拖放檔案到此處上載"
@@ -4444,22 +4438,22 @@
         "編輯連結"
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email hosting for 10 custom email domain names is included for free. Additional domains can be added for ${ price }.": [
-        ""
+        "免費提供 10 個自訂電郵網域名稱的託管服務。 亦可加入更多網域，現在只需 ${ price }。"
       ],
       "Email hosting is only available for domains you already own. Domain registration is not currently available through Proton. You can host email for domains registered on any domain registrar.": [
-        ""
+        "電郵網域名稱託管服務，僅適用於您已擁有的網域名稱。Proton 現階段並未提供網域名稱註冊服務。 您的託管服務，可使用任何網域註冊商已註冊的名稱。"
       ],
       "Emailing preference saved": [
         "電子通訊喜好設定已儲存"
       ],
       "Emails stored in this folder will not be deleted and can still be found in the All Mail folder.": [
-        "儲存在此資料夾中的電子郵件不會被刪除，仍可在「所有郵件」資料夾中找到。"
+        "儲存在此資料夾中的電郵不會被刪除，仍可在「所有郵件」資料夾中找到。"
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
-        "帶有此標籤的電子郵件不會被刪除，仍可在對應的資料夾中找到。"
+        "帶有此標籤的電郵不會被刪除，仍可在對應的資料夾中找到。"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "再次啟用短語回復方案將會生成新的短語。"
@@ -4471,13 +4465,13 @@
         "改為手動輸入金鑰"
       ],
       "Enter the code sent to your phone number ${ phone }.": [
-        "輸入傳送到您的電話號碼 ${ phone } 的代碼。"
+        "輸入傳送到您的手機號碼 ${ phone } 的代碼。"
       ],
       "Enter the code that was sent to ${ email }. If you can't find the message in your inbox, please check your spam folder.": [
         "輸入傳送到 ${ email } 的代碼。如果您在您的收件匣中找不到訊息，請檢查您的垃圾郵件資料夾。"
       ],
       "Enter the credentials of the email account you want to import from.": [
-        "請輸入您想匯入的電子郵件帳號所使用的憑證。"
+        "請輸入您想匯入的電郵帳號所使用的憑證。"
       ],
       "Enter the Organization Password to restore administrator privileges. ${ learnMore }": [
         "請輸入組織密碼以恢復系統管理員權限。${ learnMore }"
@@ -4486,7 +4480,7 @@
         "請輸入發送到 ${ destinationText } 的驗證碼。"
       ],
       "Enter your ${ BRAND_NAME } Account details.": [
-        ""
+        "請輸入您的 ${ BRAND_NAME } 帳號詳細資料。"
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         ""
@@ -4498,10 +4492,10 @@
         "輸入您自己的密碼（以組織管理員身份）與此使用者 ${ Name } (${ Email }) 的新密碼。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
-        "請輸入您的備援電子郵件地址，我們將向您發送您的使用者名稱或電子郵件地址。"
+        "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
-        "請輸入您的備援電話號碼，我們將向您發送您的使用者名稱或電子郵件地址。"
+        "請輸入您的復原手機號碼，我們將向您發送您的使用者名稱或電郵位址。"
       ],
       "Event invitations and RSVPs will be sent in this language.": [
         "活動邀請與回函將會以此語言寄送。"
@@ -4516,7 +4510,7 @@
         "擷取紀錄檔失敗。"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
+        "篩選器適用於所有電郵，包括內送及外寄電郵。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
       "For Visa and MasterCard, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
         "對於 Visa 與 MasterCard 信用卡而言，所指的是卡背的 3 位數字。而 American Express 信用卡則是卡面的 4 位數字。"
@@ -4531,16 +4525,16 @@
         "請清空部分空間或聯絡您的系統管理員。"
       ],
       "free up space by deleting older messages or other data": [
-        "刪除較舊的郵件或其他資料，以釋出空間"
+        "刪除較舊的郵件或其它資料，以釋出空間"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "產生新的復原短語並廢棄舊的。"
       ],
       "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "把公開金鑰給您的朋友們，或是發佈在網路上，這樣每個人都可以向您寄送端到端加密電子郵件！"
+        "把公開金鑰給您的朋友們，或是發佈在網路上，這樣每個人都可以向您寄送端到端加密電郵！"
       ],
       "Google records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Google 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
+        "Google 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
       "here": [
         "這裡"
@@ -4555,10 +4549,10 @@
         "若系統時區與目前時區偏好設定不符，將詢問您是否更新 (最多每天一次)。"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
-        "如果此網域目前正在接收電子郵件，請選取 ${ boldAddresses } 分頁並新增所有作用中的電子郵件地址，然後再更動 MX 紀錄以確保平穩過渡。"
+        "如果此網域目前正在接收電郵，請選取 ${ boldAddresses } 分頁並加入所有作用中的電郵位址，然後再更動 MX 紀錄以確保平穩過渡。"
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
-        "如果這是由於舊的密碼重置所造成，您可以停止該消息再次顯示"
+        "如果這是由於舊的密碼重設所造成，您可以停止該消息再次顯示"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
         "若您在建立帳號時遇上問題，請提出邀請要求，我們會在一個工作天內回覆。"
@@ -4567,10 +4561,10 @@
         "若您相信箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
+        "若您在收件匣中找不到該電郵，請查看垃圾郵件資料夾。"
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "若您在 ${ MAIL_APP_NAME } 自訂了一個網域，您可以啟用「全部擷取電子郵件地址」，以接收任何寄到您的網域但收件人不存在(可能是因為拼寫錯誤)的郵件。"
+        "若您在 ${ MAIL_APP_NAME } 自訂了一個網域，您可以啟用「全部擷取電郵位址」，以接收任何寄到您的網域但收件人不存在(可能是因為拼寫錯誤)的郵件。"
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "若您有禮品代碼，請在下方輸入以享用折扣。"
@@ -4579,13 +4573,13 @@
         "如果您先前從未用過兩步驟驗證，我們強烈推薦您閱讀 ${ guideButton }。"
       ],
       "If you have set both SPF and DKIM, DMARC allows you to specify how other email services should deliver email for your domain if both SPF and DKIM checks have failed. This can make it harder for spammers pretending to be you but may also cause delivery issues if not done properly.": [
-        "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其他電子郵件服務該如何遞送屬於您的網域的電子郵件。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
+        "如果您已同時設定 SPF 和 DKIM，DMARC 允許您指定一旦 SPF 和 DKIM 檢查皆失敗時，其它電郵服務該如何遞送屬於您的網域的電郵。這可以增加別人假扮您寄送垃圾郵件的難度，但若設定不當亦可能導致遞送問題。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have an ${ boldAccountRecovery } in place.": [
-        "若你遺失您的登入資訊且需要重設您的帳戶， ${ boldImperative } 擁有一個 ${ boldAccountRecovery } 可供使用。"
+        "若你遺失您的登入資訊且需要重設您的帳號， ${ boldImperative } 擁有一個 ${ boldAccountRecovery } 可供使用。"
       ],
       "If you lose your login details and need to reset your account, ${ boldImperative } that you have both an ${ boldAccountAndRecovery } in place, otherwise you might not be able to access any of your emails, contacts, or files.": [
-        "若你遺失登入帳戶所需的資訊且需要重設你的帳戶。 ${ boldImperative } ：你需要準備 ${ boldAccountAndRecovery } ，不然你將可能會無法存取你的任何郵件、聯絡人或檔案。"
+        "若你遺失登入帳號所需的資訊且需要重設你的帳號。 ${ boldImperative } ：你需要準備 ${ boldAccountAndRecovery } ，不然你將可能會無法存取你的任何郵件、聯絡人或檔案。"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to log into your account. Each code can only be used once.": [
         "如果您遺失了您的兩步驟驗證裝置，這些代碼可以用來代替 6 位數的兩步驟驗證代碼來登入您的帳號。每個代碼都只能使用一次。"
@@ -4600,22 +4594,22 @@
         "若您仍然選擇降級，你將會失去 ${ VPN_APP_NAME } 的付費功能。"
       ],
       "If you recently reset your password, you can use a data recovery method to unlock your data": [
-        "如果您最近重置了您的密碼，您可以使用資料復原方法去解鎖您的資料"
+        "如果您最近重設了您的密碼，您可以使用資料復原方法去解鎖您的資料"
       ],
       "If you want to keep an existing SPF record, you can just add ${ spf } to it after the ${ spfValue }. Do not create multiple SPF records.": [
-        "若您希望保留既有的 SPF 記錄，您可選擇僅在 ${ spfValue } 之後新增 ${ spf } 到其中。不要建立多個 SPF 記錄。"
+        "若您希望保留既有的 SPF 記錄，您可選擇僅在 ${ spfValue } 之後加入 ${ spf } 到其中。不要建立多個 SPF 記錄。"
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "若您想要將此帳號與其他的結合，則請不要刪除它。"
+        "若您想要將此帳號與其它的結合，則請不要刪除它。"
       ],
       "Image description": [
-        "圖片描述"
+        "圖像描述"
       ],
       "Image URL": [
-        "圖片 URL"
+        "圖像 URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "圖片已被移除，因為自動回覆不支援。"
+        "圖像已被移除，因為自動回覆不支援。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -4633,10 +4627,10 @@
         "匯入郵箱"
       ],
       "Import your emails, calendars, and contacts from another service to Proton. We'll guide you each step of the way and encrypt your data as it gets moved. Welcome to the world of privacy.": [
-        "從其他服務匯入您的電子郵件、行事曆或聯絡人到 Proton。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
+        "從其它服務匯入您的電郵、行事曆或聯絡人到 Proton。我們將會指引您完成每一步，並在您的資料移動時進行加密。歡迎來到隱私的世界。"
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "重要：請確定您將復原代碼儲存到其他地方了。否則在您遺失您的兩步驟驗證裝置時，您也會永久失去對您的帳號的存取權。"
+        "重要：請確定您將復原代碼儲存到其它地方了。否則在您遺失您的兩步驟驗證裝置時，您也會永久失去對您的帳號的存取權。"
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "重要提示：一些註冊機構不接受 (相反某些則要求) CNAME 數值以英文句號作結尾。如果您的註冊機構不接受您的 CNAME 記錄，請刪除每個 CNAME 數值結尾的英文句號，然後再試一次。"
@@ -4645,13 +4639,13 @@
         "匯入您的資料自 ${ importedEmailAddress } 至 ${ toEmail }。"
       ],
       "In case you lose your login details, we’ll send you recovery instructions via email or SMS.": [
-        "如果您遺失了您的登入資訊，我們將會透過電子郵件或簡訊傳送救援資訊給您。"
+        "如果您遺失了您的登入資訊，我們將會透過電郵或簡訊傳送救援資訊給您。"
       ],
       "Inherited from parent folder": [
         "繼承自上層資料夾"
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -4693,7 +4687,7 @@
         "有件至關重要的事"
       ],
       "I’ve been using ${ appName } and thought you might like it. It’s a secure email service that protects your privacy. Sign up with this link to get 1 month of premium features for free: ${ referrerLink }": [
-        "我正在用 ${ appName } ，我覺得你也會喜歡它。他是一個主打安全性的電子郵件服務，可以保護你的隱私權。用我的連結註冊的話還可以免費獲得一個月的加值帳戶(普通帳戶是永遠免費的) 哦： ${ referrerLink }"
+        "我正在用 ${ appName } ，我覺得你也會喜歡它。他是一個主打安全性的電郵服務，可以保護你的隱私權。用我的連結註冊的話還可以免費獲得一個月的加值帳號(普通帳號是永遠免費的) 哦： ${ referrerLink }"
       ],
       "Just confirm your selection and we'll do the rest.": [
         "現在只需確認您的選取，我們就會處理餘下一切。"
@@ -4720,7 +4714,7 @@
         "瞭解更多"
       ],
       "learn more about Sieve programming language": [
-        ""
+        "了解更多有關 Sieve 程式語言"
       ],
       "Left to Right": [
         "由左至右"
@@ -4762,10 +4756,10 @@
         "失去對您所有目前已加密資料的存取權"
       ],
       "Mail.ru reads your personal data in order to provide access for advertisers, Russian government agencies and other third parties. For better privacy, create a secure email address.": [
-        "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
+        "Mail.ru 讀取您的個人資料以供給廣告商、俄國政府機構及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
       "Make sure you remember the password to log in and decrypt emails. ${ boldAlert } We recommend adding a ${ recoveryLink } first.": [
-        "確定您記住密碼以登入與解密電子郵件。${ boldAlert } 我們建議您先新增 ${ recoveryLink }。"
+        "確定您記住密碼以登入與解密電郵。${ boldAlert } 我們建議您先加入 ${ recoveryLink }。"
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ _switchButton }.": [
         "請在您的兩步驟驗證裝置手動輸入此資訊，以便設定您的帳號。又或者，${ _switchButton }。"
@@ -4789,16 +4783,16 @@
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
       ],
       "New": [
-        "新增"
+        "加入"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "沒有設定任何帳戶恢復手段，您有可能會無法存取您的資料"
+        "沒有設定任何帳號恢復手段，您有可能會無法存取您的資料"
       ],
       "No action selected": [
         "未選取任何動作"
       ],
       "No addresses exist": [
-        "無任何電子郵件地址"
+        "無任何電郵位址"
       ],
       "No contact encryption keys exist": [
         "聯絡人沒有加密金鑰"
@@ -4846,7 +4840,7 @@
         "，共"
       ],
       "One account for all ${ BRAND_NAME } services.": [
-        "單一帳戶用於所有 ${ BRAND_NAME } 服務。"
+        "單一帳號用於所有 ${ BRAND_NAME } 服務。"
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有當您使用 PGP 寄送給非 ${ BRAND_NAME } 收件人時，才需修改這些設定。"
@@ -4867,13 +4861,13 @@
         "您的組織中還有其他系統管理員，您有責任告知他們新密碼。"
       ],
       "Other options": [
-        "其他選項"
+        "其它選項"
       ],
       "Our new ${ domain } domain is a convenient option for sending and receiving emails. You'll still be able to use your original ${ protonMailAppName } address.": [
-        "我們的新 ${ domain } 網域是傳送與接收電子郵件的便利選項。您仍然可以使用您原來的 ${ protonMailAppName } 地址。"
+        "我們的新 ${ domain } 網域是傳送與接收電郵的便利選項。您仍然可以使用您原來的 ${ protonMailAppName } 位址。"
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "帳戶救援檔案已過時，更新以確保您可以存取您的資料"
+        "帳號救援檔案已過時，更新以確保您可以存取您的資料"
       ],
       "Outdated recovery methods; update to ensure access to your data": [
         "救援手段已過時，更新以確保您可以存取您的資料"
@@ -4900,22 +4894,22 @@
         "若外寄郵件已被簽署，PGP 用戶端很可能會自動偵測您的 PGP 金鑰。"
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Plan upgrade required": [
         "需要升級方案"
       ],
       "Please enter the 12-word recovery phrase associated with your account.": [
-        "請輸入與您的帳戶關連的12字復原短語。"
+        "請輸入與您的帳號關連的12字復原短語。"
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
         "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
-        "請注意：假如您刪除此電子郵件地址，將無法再以此電子郵件地址傳送或接收電子郵件。"
+        "請注意：假如您刪除此電郵位址，將無法再以此電郵位址傳送或接收電郵。"
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "請注意：假如您刪除此域名，所有與其關聯的電子郵件地址都將被停用。"
+        "請注意：假如您刪除此域名，所有與其關聯的電郵位址都將被停用。"
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
         "請注意：假如您刪除此篩選器，其觸發的自動化動作將全部停止處理。"
@@ -4924,7 +4918,7 @@
         "在按一下「確認」按鈕後，您的帳號儲值餘額將為 ${ creditsRemaining }。"
       ],
       "Please provide an email address in case we need to contact you.": [
-        "請提供一個電子郵件地址，萬一有需要時，我們也可以聯絡到您。"
+        "請提供一個電郵位址，萬一有需要時，我們也可以聯絡到您。"
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
@@ -4960,13 +4954,13 @@
         "Proton 無法協助您復原任何遺失的密碼。"
       ],
       "Proton paused an import because it lost the connection with your other email provider. Please reconnect.": [
-        "Proton 暫停了一項匯入，因為與您另一個電子郵件提供者的連線已中斷。請重新連線。"
+        "Proton 暫停了一項匯入，因為與您另一個電郵提供者的連線已中斷。請重新連線。"
       ],
       "Proton paused an import because your account is running low on space. You can:": [
         "Proton 暫停了一項匯入，因為您的帳號空間快要用完了。您可以："
       ],
       "Proton will try to resume the import as soon as your email provider resets your account’s ${ bandwithLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
-        "Proton 將會在電子郵件提供商提供重置您帳號的 ${ bandwithLimitLink } 後嘗試復原匯入。您不需要執行任何動作。如果您取消匯入，將無法復原匯入，而您就必須重新開始。"
+        "Proton 將會在電郵提供商提供重設您帳號的 ${ bandwithLimitLink } 後嘗試復原匯入。您不需要執行任何動作。如果您取消匯入，將無法復原匯入，而您就必須重新開始。"
       ],
       "Public link invite": [
         "公開的連結邀請"
@@ -4977,17 +4971,17 @@
       "Queued": [
         "已佇列"
       ],
-      "read our two-factor authentication Guide first": [
+      "read our two-factor authentication guide first": [
         "先閱讀我們的兩步驟驗證指南"
       ],
       "Recovery file downloaded": [
-        "已下載帳戶救援金鑰"
+        "已下載帳號救援金鑰"
       ],
       "Recovery files have been voided": [
-        "帳戶救援金鑰已被作廢"
+        "帳號救援金鑰已被作廢"
       ],
       "recovery method": [
-        "備援方法"
+        "復原方法"
       ],
       "Recovery phrase copied to clipboard": [
         "復原短語已複製到剪貼簿"
@@ -5044,7 +5038,7 @@
         "選取哪一個行事曆要匯入。我們將建立對應匯入行事曆的新行事曆，直到20個為限。"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "以 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電子郵件送出。"
+        "以 <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> 安全電郵送出。"
       ],
       "Server is currently down": [
         "伺服器目前離線中"
@@ -5071,13 +5065,13 @@
         "透過您的連結註冊"
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
-        "為答謝您的長期支持，您的帳號已啟用額外的功能。"
+        "為答謝您的長期支援，您的帳號已啟用額外的功能。"
       ],
       "Some keys successfully reactivated": [
         "部份金鑰都已成功重新啟用"
       ],
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
-        ""
+        "SPF 是用來指定使用者，已獲授權足以網域身分進行傳送電子郵件。因此，我們強烈建議將 ${ MAIL_APP_NAME } 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在網域名稱註冊商的控制台完成。"
       ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
@@ -5098,7 +5092,7 @@
         "將此密碼以及檔案存放在另一處安全的地方。日後匯入金鑰時，就得派上用場。"
       ],
       "Support for 1 custom email domain": [
-        "支援 1 個自訂電子郵件網域"
+        "支援 1 個自訂電郵網域"
       ],
       "support team": [
         "支援團隊"
@@ -5116,19 +5110,19 @@
         "要顯示的文字"
       ],
       "Thank you for supporting our mission.": [
-        "感謝您支持我們的使命。"
+        "感謝您支援我們的使命。"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "這個 ${ boldDataLocked } 將不會再顯示，但您仍然可以解鎖您的資料在 ${ encryptionAndKeysLink }。"
       ],
       "The calendar will be removed from your account.": [
-        "該日曆將會從您的帳號中移除。"
+        "該行事曆將會從您的帳號中移除。"
       ],
       "The email address you place at the top of the list is your default email address. Drag and drop to reorder your addresses.": [
-        "清單首列為您預設的電子郵件地址。請拖放以重新排序您的電子郵件地址。"
+        "清單首列為您預設的電郵位址。請拖放以重新排序您的電郵位址。"
       ],
       "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Import-Export 應用程式讓您能夠匯出訊息到您本機儲存，也可以讓您匯入先前的備份到您的帳戶。"
+        "Import-Export 應用程式讓您能夠匯出訊息到您本機儲存，也可以讓您匯入先前的備份到您的帳號。"
       ],
       "The name will be visible to your users while they are logged in.": [
         "您的使用者登入後，將可看到此名稱。"
@@ -5140,7 +5134,7 @@
         "這些設定檔讓你可以在第三方 VPN 應用程式或路由器上自由選擇要連線到哪一台 ${ VPN_APP_NAME } 伺服器。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "這些設定檔提供 WireGuard routers 與官方客戶端使用。"
+        "這些設定檔提供 WireGuard routers 與官方用戶端使用。"
       ],
       "This 30-day free trial is not available any other way.": [
         "此 30 天免費試用算是友情份上，千金不換喔。"
@@ -5158,7 +5152,7 @@
         "此一 12字短語是你過去被要求設定的。"
       ],
       "This is a recovery file or encryption key you may have previously saved.": [
-        "這是您先前可能儲存的帳戶救援檔案或加密金鑰。"
+        "這是您先前可能儲存的帳號救援檔案或加密金鑰。"
       ],
       "This is an encryption key you may have previously saved.": [
         "這是您先前可能儲存的加密金鑰。"
@@ -5170,7 +5164,7 @@
         "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
+        "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其它瀏覽器來開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "此連結可能是同形異義詞的偽裝攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
@@ -5182,13 +5176,13 @@
         "這也會停用任何與此帳號相關的兩步驟驗證方式。"
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
-        "這將會取消您目前已付費的訂閱，您也會一併失去您累積的任何答謝長期支持的惠益。您的訂閱餘數將會以帳號餘額退還。"
+        "這將會取消您目前已付費的訂閱，您也會一併失去您累積的任何答謝長期支援的惠益。您的訂閱餘數將會以帳號餘額退還。"
       ],
       "This will create an encryption key for your organization. 4096-bit keys only work on high performance computers, for most users, we recommend using 2048-bit keys.": [
         "這會為您的組織建立一個加密金鑰。4096 位元金鑰只會在高性能電腦上運作。對大部份使用者而言，我們建議使用 2048 位元金鑰。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
-        "這將讓你目前的復原短語被提用。你無法再使用它來存取你的帳戶或是解密你的資料。"
+        "這將讓你目前的復原短語被提用。你無法再使用它來存取你的帳號或是解密你的資料。"
       ],
       "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
         "這將下載一個包含您私鑰的檔案。使用密碼進行加密來保護這個檔案。"
@@ -5197,7 +5191,7 @@
         "這將允許使用 PayPal 來支付您的 Proton 訂閱。我們將在瀏覽器的新索引標籤中重新導向到 PayPal。若您有使用任何彈出式視窗攔截程式，請先停用，然後才繼續。"
       ],
       "This will permanently delete the data and all email addresses associated with this user.": [
-        "這將會永久刪除與此使者相關聯的資料與所有電子郵件地址。"
+        "這將會永久刪除與此使者相關聯的資料與所有電郵位址。"
       ],
       "This will permanently delete your account and all of its data. You will not be able to reactivate this account.": [
         "這將永久刪除您的帳號以及其一切的資料。您將無法重新啟用此帳號。"
@@ -5206,7 +5200,7 @@
         "這將取代您的臨時密碼。日後存取您的 ${ BRAND_NAME } 帳號時，您將會使用此密碼。"
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
-        "這將會使您登出所有裝置並停用雙因素驗證。"
+        "這將會使您登出所有裝置並停用雙重驗證。"
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your Proton account. Two-factor authentication will make your Proton account more secure so we recommend enabling it.": [
         "本精靈將會在您的 Proton 帳號上啟用兩步驟驗證 (2FA)。兩步驟驗證讓您的 Proton 帳號更安全，所以我們建議啟用它。"
@@ -5221,19 +5215,19 @@
         "繼續使用 ${ toAppName }"
       ],
       "To decrypt and view your emails and other data, you need a recovery file.": [
-        "為解密您的郵件與其他資料，需要帳戶救援檔案"
+        "為解密您的郵件與其它資料，需要帳號救援檔案"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase or recovery file.": [
-        "為解密您的郵件與其他資料，需要救援短語或是帳戶救援檔案"
+        "為解密您的郵件與其它資料，需要救援短語或是帳號救援檔案"
       ],
       "To decrypt and view your emails and other data, you need a recovery phrase.": [
-        "為解密您的郵件與其他資料，需要救援短語"
+        "為解密您的郵件與其它資料，需要救援短語"
       ],
       "To decrypt and view your locked data after a password reset, select a recovery method.": [
-        "為了能在密碼重設後存取加密的資料，選擇帳戶復原方法。"
+        "為了能在密碼重設後存取加密的資料，選擇帳號復原方法。"
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "為確保能持續存取您的帳戶，設置一個帳戶復原方法"
+        "為確保能持續存取您的帳號，設置一個帳號復原方法"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "為防止垃圾郵件及濫用，請驗證您是真人。"
@@ -5242,19 +5236,19 @@
         "為了解 Proton 產品的最新開發動態，您可訂閱我們的各份電子通訊，或不時造訪我們的部落格。"
       ],
       "To proceed, select an account recovery method so we can verify the request.": [
-        "為繼續此程序，選擇帳戶復原手段，然後我們將能驗證您的請求。"
+        "為繼續此程序，選擇帳號復原手段，然後我們將能驗證您的請求。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a ${ VPN_APP_NAME } server.": [
         "保護您的網際網路連線安全，請下載並安裝 ${ VPN_APP_NAME } 在您的裝置上，並連接至 ${ VPN_APP_NAME } 伺服器。"
       ],
       "To use ${ toAppName }, please create an address.": [
-        "要使用 ${ toAppName }，請建立地址。"
+        "要使用 ${ toAppName }，請建立位址。"
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        ""
+        "正常運作情況下，每一個篩選器必須包含至少一個名稱及一個有效的 Sieve 程序檔。您可查看 ${ link }。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳戶餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
+        "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳號餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
       ],
       "Tor": [
         "Tor"
@@ -5278,7 +5272,7 @@
         "無法驗證復原檔案的簽章。請聯絡我們。"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
-        "很遺憾，此帳號未有儲存任何備援方法。"
+        "很遺憾，此帳號未有儲存任何復原方法。"
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "除非您登出您的帳號或更改您的密碼，您的工作階段將保持使用。工作階段閒置 60 天後逾期。"
@@ -5293,7 +5287,7 @@
         "不支援的檔案"
       ],
       "Update recovery file": [
-        "更新帳戶救援檔案"
+        "更新帳號救援檔案"
       ],
       "Update recovery phrase": [
         "更新還原短語"
@@ -5305,10 +5299,10 @@
         "現在就升級，以免錯失 ${ planName } 所屬的福利。"
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載圖像"
       ],
       "Uploaded file is not a valid private key. Please verify and try again.": [
-        "上傳的檔案不是有效的私鑰。請驗證並再試一次。"
+        "上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
       "URL link": [
         "URL 連結"
@@ -5317,7 +5311,7 @@
         "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
+        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "驗證或需時數分鐘。"
@@ -5335,7 +5329,7 @@
         "版本 ${ version }"
       ],
       "Want to set ${ addressToCreate } as your default email for sending messages?": [
-        "您想要將 ${ addressToCreate } 設定用來傳送郵件的預設電子郵件嗎？"
+        "您想要將 ${ addressToCreate } 設定用來傳送郵件的預設電郵嗎？"
       ],
       "Warning:": [
         "警告："
@@ -5374,19 +5368,19 @@
         "週和月檢視僅適用於電腦版。"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "我們將會寄出重設代碼到您先前所提供的備援信箱。"
+        "我們將會傳送重設代碼到您先前所提供的電郵位址。"
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
-        "我們將會寄出重設代碼到您先前所提供的備援電話。"
+        "我們將會傳送重設代碼到您先前所提供的手機號碼。"
       ],
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
-        "我們正進行您現有方案升等，晉級方案維持原價外，還提供更多服務。在系統更新階段時，您可能無法做任何變更。稍後作業完成，我們會立即電郵通知您。"
+        "我們正進行您現有方案升等，除了晉級方案維持原價，還提供更多服務。在系統更新階段時，您可能無法做任何變更。稍後作業完成，我們會立即電郵通知您。"
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "停用時，將防止影像檔案在您不經不覺時在您的裝置上載入。\t"
+        "功能停用時，即可防止在您不知情的狀況下，圖像檔案意外載入至您的裝置。"
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳戶中有新訊息，我們將向您的備援/通知電子郵件地址傳送提示。"
+        "啟用通知後，如果您的 ${ MAIL_APP_NAME } 帳號中有新訊息，我們將向您的復原/通知電郵位址傳送提示。"
       ],
       "When they subscribe to a paid plan, 1 to 3 months of ${ planName } will be credited to your account.": [
         "當他們訂閱付費方案時，您的帳號將獲得 1 至 3 個月 ${ planName } $ 儲值。"
@@ -5395,7 +5389,7 @@
         "當您的訂閱續期時，我們會先在可用的餘額中扣除，才會以上面的付款方法扣款。"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "如果沒有啟用，您將無法建立新使用者、為現有使用者新增電子郵件地址，又或存取非私有使用者的帳號。"
+        "如果沒有啟用，您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是換一個驗證方法？"
@@ -5404,10 +5398,10 @@
         "您想要收到新的驗證碼嗎？"
       ],
       "Yahoo reads your personal data in order to provide access for advertisers, US intelligence agencies and other third parties. For better privacy, create a secure email address.": [
-        "Yahoo 讀取您的個人資料以供給廣告商、美國情報機構及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
+        "Yahoo 讀取您的個人資料以供給廣告商、美國情報機構及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
       "Yandex records your online activity and reads your personal data in order to provide access for advertisers and other third parties. For better privacy, create a secure email address.": [
-        "Yandex 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其他第三方。為更好保障隱私，請建立一個安全的電子郵件地址。"
+        "Yandex 記錄您的線上活動並讀取您的個人資料，以供給廣告商及其它第三方。為更好保障隱私，請建立一個安全的電郵位址。"
       ],
       "Yearly": [
         "每年"
@@ -5437,19 +5431,19 @@
         "您可以一次匯入一種資料類型。"
       ],
       "You can now receive messages to your @pm.me address. Upgrade to a paid plan to also send emails using your @pm.me address and create additional @pm.me addresses.": [
-        "現可使用您的 @pm.me 電子郵件地址接收郵件。升級至付費方案後，更可使用您的 @pm.me 電子郵件地址傳送電子郵件並建立額外的 @pm.me 電子郵件地址。"
+        "您的 @pm.me 電郵位址現在可以接收郵件了。升級至付費方案，不但可使用您的 @pm.me 電郵位址傳送郵件外，還可創建更多的 @pm.me 電郵位址。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "您可以開啟通知，以便在新的電子郵件訊息抵達此資料夾時收到提示。"
+        "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        ""
+        "您可在任一電郵用戶端支援 IMAP/SMTP 的系統上，使用 ${ MAIL_APP_NAME }，包括 Outlook、 Apple Mail、Thunderbird 等。"
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
       ],
       "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
-        "您在未來 24 小時內不得傳送超過 ${ emailSendLimitNumber } 個電子郵件邀請"
+        "在接下來的 24 小時內，您最多只能發送 ${ emailSendLimitNumber } 封電郵邀請"
       ],
       "You cannot refer ${ appName } users": [
         "您不能推薦 ${ appName } 使用者"
@@ -5458,7 +5452,7 @@
         "您無法使用 OpenVPN / IKEv2 認證以登入 ${ VPN_APP_NAME } 應用程式或 ${ VPN_APP_NAME } 儀表板。 ${ learnMore }"
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
-        "您沒有設定備援方法，萬一忘記您的密碼，將無從恢復帳號。要在無備援電子郵件的情況下繼續嗎？"
+        "您沒有設定復原方法，萬一忘記您的密碼，將無從恢復帳號。要在無復原電郵的情況下繼續嗎？"
       ],
       "You have no saved payment methods.": [
         "您沒有任何已儲存的付款方法。"
@@ -5467,10 +5461,10 @@
         "您必須使用由您所屬組織的系統管理員提供的備份組織金鑰密碼來啟用您的組織私密金鑰。"
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電子郵件地址及自訂網域，方可降級。"
+        "您必須先停用或移除任何額外的 ${ MAIL_APP_NAME } 使用者、電郵位址及自訂網域，方可降級。"
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
-        "您的 PayPal 帳號須先連結信用卡或銀行賬戶，才能新增為付款方法。"
+        "您的 PayPal 帳號須先連結信用卡或銀行賬戶，才能加入為付款方法。"
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
@@ -5491,13 +5485,13 @@
         "您的儲存空間容量已達到 ${ spaceDisplayed }%。${ freeUpMessage }${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
+        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電郵。${ freeUpMessage }${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        ""
+        "您仍需回覆邀請以便主辦者了解您的回覆。"
       ],
       "You will ${ loseAllData } in your ${ BRAND_NAME } Account. To restore it, you will need to enter your old password.": [
         "您將會 ${ loseAllData } 在您的 ${ BRAND_NAME } 帳號。要復原，您將需要輸入您的舊密碼。"
@@ -5512,16 +5506,16 @@
         "即將重新導向到 PayPal 驗證您的付款。"
       ],
       "You won't be able to recover encrypted data after an account reset using your downloaded recovery files.": [
-        "在你重設帳戶後，你將無法使用先前下載的帳戶救援金鑰復原你的帳戶。"
+        "在你重設帳號後，你將無法使用先前下載的帳號救援金鑰復原你的帳號。"
       ],
       "You'll stay signed in even after you close the browser.": [
         "即使關閉瀏覽器，您仍會維持登入狀態。"
       ],
       "You'll still be able to send and receive mail with your existing email address(es).": [
-        "您仍然可以使用現有的電子郵件地址來傳送與接收電子郵件。"
+        "您仍然可以使用現有的電郵位址來傳送與接收電郵。"
       ],
       "Your ${ BRAND_NAME } Account is associated with ${ externalEmailAddress }. To use ${ toAppName }, please create an address.": [
-        "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。如要使用 ${ toAppName }，請建立一個電子郵件地址。"
+        "您的 ${ BRAND_NAME } 帳號已與 ${ externalEmailAddress } 關聯。如要使用 ${ toAppName }，請建立一個電郵位址。"
       ],
       "Your ${ VPN_APP_NAME } and ${ MAIL_APP_NAME } accounts are linked. To delete them both, please log in at ${ loginLink } and delete your account there.": [
         "您的 ${ VPN_APP_NAME } 和 ${ MAIL_APP_NAME } 帳號是相互連結的。如要一併刪除，請登入 ${ loginLink } 並在那裡刪除您的帳號。"
@@ -5536,7 +5530,7 @@
         "您的帳號正在升級，請稍候最多 30 秒。"
       ],
       "Your account recovery method is set": [
-        "你已設置帳戶復原方法"
+        "你已設置帳號復原方法"
       ],
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
@@ -5551,13 +5545,13 @@
         "您的封鎖清單是空的。"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "你的資料已經準備好從 ${ importedEmailAddressStrong } 匯入你的 Proton 帳戶。"
+        "你的資料已經準備好從 ${ importedEmailAddressStrong } 匯入你的 Proton 帳號。"
       ],
       "Your data recovery method is set": [
         "你的資料復原方法已設置"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次驗證。"
+        "您的電郵只會用於此一次驗證。"
       ],
       "Your existing ${ BRAND_NAME } account can be used to access all ${ BRAND_NAME } services. Please sign in with ${ email }.": [
         "您現有的 ${ BRAND_NAME } 帳號可用來存取所有的 ${ BRAND_NAME } 服務。請以 ${ email } 登入。"
@@ -5572,22 +5566,22 @@
         "匯入完成後不會保存您的登入資訊。"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
-        "您的組織密碼可分享予您欲給予系統管理員權限的其他使用者。萬一您失去您帳號的存取，這亦可憑此作為緊急備援代碼，以取得您組織的存取。請好好儲存並妥為保管此密碼。"
+        "您的組織密碼可分享予您欲給予系統管理員權限的其他使用者。萬一您失去您帳號的存取，這亦可憑此作為緊急復原代碼，以取得您組織的存取。請好好儲存並妥為保管此密碼。"
       ],
       "Your organization's emails are protected with end-to-end encryption using the organization key. This fingerprint can be used to verify that all administrators in your account have the same key.": [
-        "您的組織中所有電子郵件均使用組織金鑰作端對端加密受到保護。此指紋可用來驗證您的帳號中所有系統管理員均擁有相同的金鑰。"
+        "您的組織中所有電郵均使用組織金鑰作端對端加密受到保護。此指紋可用來驗證您的帳號中所有系統管理員均擁有相同的金鑰。"
       ],
       "Your payment details are protected with TLS encryption and Swiss privacy laws.": [
         "您的付款詳情是受 TLS 加密及瑞士隱私法律保護。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼只會用於此一次驗證。"
+        "您的手機號碼只會用於此一次驗證。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
       ],
       "Your recovery email address:": [
-        "您的備援電子郵件地址："
+        "您的復原電郵位址："
       ],
       "Your recovery phrase": [
         "您的復原短語"
@@ -5601,10 +5595,10 @@
     },
     "info": {
       "Additional duplicate keys detected. Please upload individually for more information.": [
-        "偵測到其他重複的金鑰。請單獨上傳以取得更多資訊。"
+        "偵測到其它重複的金鑰。請單獨上載以取得更多資訊。"
       ],
       "Key ${ fingerprint } has already been uploaded": [
-        "金鑰 ${ fingerprint } 已上傳"
+        "金鑰 ${ fingerprint } 已上載"
       ],
       "Track your referral link activities here": [
         "在此追蹤您的推介連結活動"
@@ -5612,38 +5606,38 @@
     },
     "Info - folder colouring feature": {
       "When enabled, sub-folders inherit the color of the parent folder.": [
-        "啟用時，子資料夾繼承頂層資料夾的色彩。"
+        "啟用時，子資料夾繼承上層資料夾的色彩。"
       ]
     },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
-        "請寄送電子郵件到 ${ email } 聯絡我們，以獲得如何將現金支付給我們的相關指引。"
+        "請寄送電郵到 ${ email } 聯絡我們，以獲得如何將現金支付給我們的相關指引。"
       ]
     },
     "Info for domain modal": {
       "Add a new address for any user of your organization.": [
-        "為您組織的任何一個使用者新增地址。"
+        "為您組織的任何一個使用者加入位址。"
       ],
       "Add a new user to your organization and create an address for it.": [
-        "將新使用者加入到您的組織並為其建立地址。"
+        "將新使用者加入到您的組織並為其建立位址。"
       ],
       "For security reasons, we need to verify that you are the owner of ${ domainName }. Please add the following DNS TXT record to your domain. This can typically be done in the control panel of your domain name registrar.": [
-        "基於安全理由，我們需要驗證您是 ${ domainName } 的擁有者。請新增以下的 DNS TXT 記錄到您的網域中。這通常可以在您的網域名稱註冊機構提供的控制台中達成。"
+        "基於安全理由，我們需要驗證您是 ${ domainName } 的擁有者。請加入以下的 DNS TXT 記錄到您的網域中。這通常可以在您的網域名稱註冊機構提供的控制台中達成。"
       ]
     },
     "Info for members section": {
       "Add, remove, and manage users within your organization. Here you can adjust their allocated storage space, grant admin rights, and more. Select a user to manage their email addresses. The email address at the top of the list will automatically be selected as the default email address.": [
-        "新增、移除並管理您的組織中的使用者。您可在此調整各使用者獲分派的儲存空間、授予管理員權限等等。選取一個使用者以管理其電子郵件地址。清單首列的電子郵件地址將自動選為預設電子郵件地址。"
+        "加入、移除並管理您的組織中的使用者。您可在此調整各使用者獲分派的儲存空間、授予管理員權限等等。選取一個使用者以管理其電郵位址。清單首列的電郵位址將自動選為預設電郵位址。"
       ]
     },
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
-        "您可以新增付款方法以便為您的訂閱自動續期。其他付款方法亦可用。"
+        "您可以加入付款方法以便為您的訂閱自動續期。其它付款方法亦可用。"
       ]
     },
     "Info message for custom invoice modal": {
       "Add your name (or company name) and address to your invoices.": [
-        "將您的姓名 (或公司名稱) 及地址新增到您的帳單。"
+        "將您的姓名 (或公司名稱) 及位址加入到您的帳單。"
       ]
     },
     "Info on errors": {
@@ -5693,7 +5687,7 @@
         "修改"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Refund": [
         "退款"
@@ -5707,10 +5701,10 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "有一把使用相同加密算法的金鑰已經存在。生成新的金鑰將導致帳戶載入速度變慢，你要繼續嗎？"
+        "有一把使用相同加密算法的金鑰已經存在。生成新的金鑰將導致帳號載入速度變慢，你要繼續嗎？"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "此電子郵件地址已在使用一個以相同加密演算法產生的金鑰。再產生另一個金鑰將拖慢帳號載入速度，但刪除該金鑰時也可能導致問題。假如您是因為舊金鑰遭到洩漏才要產生新的金鑰，請將舊金鑰標記為已洩漏。您確定要繼續嗎？"
+        "此電郵位址已在使用一個以相同加密演算法產生的金鑰。再產生另一個金鑰將拖慢帳號載入速度，但刪除該金鑰時也可能導致問題。假如您是因為舊金鑰遭到洩漏才要產生新的金鑰，請將舊金鑰標記為已洩漏。您確定要繼續嗎？"
       ],
       "Generate key": [
         "產生金鑰"
@@ -5722,7 +5716,7 @@
         "正在生成加密金鑰。這可能需時數分鐘，其間您的瀏覽器可能會暫時停止回應。"
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "正在為您的電子郵件地址生成加密金鑰。這可能需時數分鐘，您的瀏覽器在此期間可能會暫時停止回應。"
+        "正在為您的電郵位址生成加密金鑰。這可能需時數分鐘，您的瀏覽器在此期間可能會暫時停止回應。"
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "若您認為之前的金鑰已外洩，您可以生成一副全新的加密金鑰"
@@ -5758,10 +5752,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "新增加密"
+        "加入加密"
       ],
       "Add expiration time": [
-        "新增到期時間"
+        "加入到期時間"
       ],
       "Apply / open": [
         "套用 / 開啟"
@@ -5827,7 +5821,7 @@
         "加上標籤..."
       ],
       "Load embedded images": [
-        "載入嵌入的圖片"
+        "載入內崁圖像"
       ],
       "Load remote content": [
         "載入遠端內容"
@@ -5988,7 +5982,7 @@
         "全部有 ${ humanMaxSpace }，已使用 ${ humanUsedSpace }"
       ],
       "${ MAIL_APP_NAME } address": [
-        "${ MAIL_APP_NAME } 個地址"
+        "${ MAIL_APP_NAME } 個位址"
       ],
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 頁尾"
@@ -6000,7 +5994,7 @@
         "${ n } 月"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
-        "最多可有 ${ MaxAddresses } 個電子郵件地址，目前已有 ${ UsedAddresses } 個"
+        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
@@ -6015,16 +6009,16 @@
         "啟用"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Addresses": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "ALL": [
         "全部"
       ],
       "Allow recovery by email": [
-        "允許透過電子郵件復原"
+        "允許透過電郵復原"
       ],
       "Allow recovery by phone": [
         "允許透過電話復原"
@@ -6066,7 +6060,7 @@
         "自動偵測主要時區"
       ],
       "Auto-load embedded images": [
-        "自動載入嵌入圖片"
+        "自動載入嵌入圖像"
       ],
       "Auto-reply": [
         "自動回覆"
@@ -6198,7 +6192,7 @@
         "自訂帳單"
       ],
       "Daily email notifications": [
-        "每日電子郵件通知"
+        "每日電郵通知"
       ],
       "Date": [
         "日期"
@@ -6273,16 +6267,16 @@
         "期間"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email or username": [
-        "電子郵件地址或使用者名稱"
+        "電郵位址或使用者名稱"
       ],
       "Emails": [
-        "電子郵件"
+        "電郵"
       ],
       "End date": [
         "結束日期"
@@ -6336,7 +6330,7 @@
         "禮品代碼"
       ],
       "Here is a basic DMARC record that does nothing except email you reports.": [
-        "這是一個基本的 DMARC 記錄，唯一的作用是以電子郵件發送報告給您。"
+        "這是一個基本的 DMARC 記錄，唯一的作用是以電郵發送報告給您。"
       ],
       "Hide password": [
         "隱藏密碼"
@@ -6357,7 +6351,7 @@
         "匯入間距"
       ],
       "Import to email address": [
-        "匯入到電子郵件地址"
+        "匯入到電郵位址"
       ],
       "Import to:": [
         "匯入："
@@ -6501,7 +6495,7 @@
         "組織密碼"
       ],
       "Other amount": [
-        "其他金額"
+        "其它金額"
       ],
       "Password": [
         "密碼"
@@ -6516,7 +6510,7 @@
         "付款方式"
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Phrase": [
         "短語"
@@ -6525,16 +6519,16 @@
         "短語包含12個獨一無二的單字以特定的順序排列"
       ],
       "Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.": [
-        "請新增下列全部三個 CNAME 記錄。請注意：DNS 記錄可能需時數小時更新。"
+        "請加入下列全部三個 CNAME 記錄。請注意：DNS 記錄可能需時數小時更新。"
       ],
       "Please add the following MX record. Note, DNS records can take several hours to update.": [
-        "請新增以下的 MX 記錄。請注意：DNS 記錄可能需時數小時更新。"
+        "請加入以下的 MX 記錄。請注意：DNS 記錄可能需時數小時更新。"
       ],
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
-        "請新增以下的 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
+        "請加入以下的 TXT 記錄。請注意：DNS 記錄可能需時數小時更新。"
       ],
       "Please select files to upload": [
-        "請選取要上傳的檔案"
+        "請選取要上載的檔案"
       ],
       "Port": [
         "連接埠"
@@ -6561,16 +6555,16 @@
         "已讀"
       ],
       "Recovery code": [
-        "備援代碼"
+        "復原代碼"
       ],
       "Recovery email address": [
-        "備援電子郵件地址"
+        "復原電郵位址"
       ],
       "Recovery file": [
-        "帳戶救援檔案"
+        "帳號救援檔案"
       ],
       "Recovery phone number": [
-        "備援電話號碼"
+        "復原手機號碼"
       ],
       "Recovery phrase": [
         "復原短語"
@@ -6633,16 +6627,16 @@
         "系統資訊"
       ],
       "The email was sent ${ attachment }": [
-        "電子郵件${ attachment }送出"
+        "電郵${ attachment }送出"
       ],
       "the email was sent ${ attachment }": [
-        "電子郵件${ attachment }送出"
+        "電郵${ attachment }送出"
       ],
       "The email was sent ${ attachmentStrong }": [
-        "電子郵件${ attachmentStrong }送出"
+        "電郵${ attachmentStrong }送出"
       ],
       "the email was sent ${ label }": [
-        "電子郵件${ label }送出"
+        "電郵${ label }送出"
       ],
       "Then": [
         "則"
@@ -6678,10 +6672,10 @@
         "取消傳送"
       ],
       "Upload 1 or more encryption keys": [
-        "上傳一個或以上的加密金鑰"
+        "上載一個或以上的加密金鑰"
       ],
       "Upload 1 or more recovery files or encryption keys": [
-        "上傳一個或更多的帳戶救援檔案或是加密金鑰"
+        "上載一個或更多的帳號救援檔案或是加密金鑰"
       ],
       "URL": [
         "網址"
@@ -6708,7 +6702,7 @@
         "正等候訂閱"
       ],
       "Want to add": [
-        "新增類型"
+        "加入類型"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "很抱歉您想離開。請告訴我們原因以讓我們改進。"
@@ -6720,10 +6714,10 @@
         "發生了甚麼問題？"
       ],
       "What is the main reason you are cancelling?": [
-        "您取消的主要原因是什麼？"
+        "請讓我們知道您取消訂購授權的原因。"
       ],
       "What is the main reason you are deleting your account?": [
-        "主要是甚麼原因，讓您要刪除您的帳號？"
+        "請讓我們知道您刪除帳號的原因。"
       ],
       "With attachment": [
         "連同附件"
@@ -6764,7 +6758,7 @@
     },
     "label": {
       "Recovery phone number": [
-        "備援電話號碼"
+        "復原手機號碼"
       ],
       "Recovery phrase": [
         "復原短語"
@@ -6777,7 +6771,7 @@
     },
     "Label for domain modal": {
       "Please add the following TXT record:": [
-        "請新增以下的 TXT 記錄："
+        "請加入以下的 TXT 記錄："
       ]
     },
     "Label for new member": {
@@ -6825,7 +6819,7 @@
     },
     "Label in domain modal": {
       "Addresses": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Domain": [
         "網域"
@@ -6893,7 +6887,7 @@
     },
     "Link": {
       "Add a gift code": [
-        "新增禮品代碼"
+        "加入禮品代碼"
       ],
       "Calendars": [
         "行事曆"
@@ -6928,6 +6922,9 @@
       "Learn more": [
         "瞭解更多"
       ],
+      "Need help?": [
+        "需要幫助嗎？"
+      ],
       "Not activated": [
         "未啟用"
       ],
@@ -6944,7 +6941,7 @@
         "重設密碼"
       ],
       "Set email address": [
-        "設定電子郵件地址"
+        "設定電郵位址"
       ],
       "Sign in": [
         "登入"
@@ -6954,6 +6951,9 @@
       ],
       "Terms and conditions": [
         "條款及細則"
+      ],
+      "Trouble signing in?": [
+        "登入遇到困難嗎？"
       ],
       "Upgrade": [
         "升級"
@@ -6968,7 +6968,7 @@
         "UDP 與 TCP 通訊協定有何分別？"
       ],
       "Why set recovery methods?": [
-        "為什麼要設定備援方法?"
+        "為什麼要設定復原方法?"
       ]
     },
     "Loading info": {
@@ -6979,7 +6979,7 @@
         "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
-        "連結到您的電子郵件提供者"
+        "連結到您的電郵提供者"
       ],
       "Creating new calendars": [
         "建立新行事曆"
@@ -7052,7 +7052,7 @@
     },
     "Modal title": {
       "How to import calendars from another service": [
-        "如何從其他服務匯入行事曆"
+        "如何從其它服務匯入行事曆"
       ],
       "How to import calendars from Outlook": [
         "如何從 Outlook 匯入行事曆"
@@ -7061,7 +7061,7 @@
         "如何從 Yahoo 匯入行事曆"
       ],
       "How to import contacts from another service": [
-        "如何從其他服務匯入聯絡人"
+        "如何從其它服務匯入聯絡人"
       ],
       "How to import contacts from Outlook": [
         "如何從 Outlook 匯入聯絡人"
@@ -7070,13 +7070,13 @@
         "如何從 Yahoo 匯入聯絡人"
       ],
       "How to import emails from another service": [
-        "如何從其他服務匯入電子郵件"
+        "如何從其它服務匯入電郵"
       ],
       "How to import emails from Outlook": [
-        "如何從 Outlook 匯入電子郵件"
+        "如何從 Outlook 匯入電郵"
       ],
       "How to import emails from Yahoo": [
-        "如何從 Yahoo 匯入電子郵件"
+        "如何從 Yahoo 匯入電郵"
       ]
     },
     "Modal title and action": {
@@ -7276,7 +7276,10 @@
       "Explore all ${ BRAND_NAME } plans": [
         ""
       ],
-      "From ${ _price } per user": [
+      "From ${ _price }": [
+        ""
+      ],
+      "From ${ _price2 } per user": [
         ""
       ],
       "From ${ price }": [
@@ -7433,7 +7436,7 @@
         "加密的 VPN 伺服器"
       ],
       "End-to-end encryption": [
-        ""
+        "端對端加密"
       ],
       "Free VPN on a single device": [
         ""
@@ -7538,14 +7541,6 @@
         ""
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        ""
-      ],
-      "username": [
-        ""
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         ""
@@ -7555,6 +7550,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        ""
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
@@ -7594,10 +7592,10 @@
         ""
       ],
       "If you delete your account, you lose all ${ visionary } plan benefits and it won’t be available if you create a new account.": [
-        "若你將帳戶刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新建立帳戶，也不能再次選擇該方案。"
+        "若你將帳號刪除，你將失去所有 ${ visionary } 帶來的福利，且即使你決定重新建立帳號，也不能再次選擇該方案。"
       ],
       "If you downgrade your account, you lose all ${ visionary } plan benefits and it won’t be available if you try to subscribe again.": [
-        "若你將帳戶降級，你將失去所有 ${ visionary } 帶來的福利，且在你決定重新訂閱時，該方案不再可用。"
+        "若你將帳號降級，你將失去所有 ${ visionary } 帶來的福利，且在你決定重新訂閱時，該方案不再可用。"
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
         "如果你切換到不同的計畫，你將失去所有 ${ visionary } 計畫的福利，且無法切換回 ${ visionary } 。"
@@ -7612,6 +7610,9 @@
         ""
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
+        ""
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
         ""
       ],
       "Secure email and calendar for professionals and businesses.": [
@@ -7630,10 +7631,10 @@
         ""
       ],
       "You’re enjoying a promotional price on your current plan. If you delete your account, you will lose your promotional price and it won’t be available if you create a new account.": [
-        "你正在當前的計畫中享受促銷價格。若你刪除你的帳戶，你將會永遠失去此促銷價，即使你決定建立一個新帳戶也是。"
+        "你正在當前的計畫中享受促銷價格。若你刪除你的帳號，你將會永遠失去此促銷價，即使你決定建立一個新帳號也是。"
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
-        "你正在當前的計畫中享受促銷價格。若你將帳戶降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+        "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
       ]
     },
     "new_plans: Label": {
@@ -7652,13 +7653,10 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        ""
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "建立 ${ BRAND_NAME } 帳號，即表示您同意我們的${ terms }。"
       ],
       "Payment details": [
-        ""
-      ],
-      "Proton's terms and conditions": [
         ""
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
@@ -7666,6 +7664,9 @@
       ],
       "Subscription": [
         ""
+      ],
+      "terms and conditions": [
+        "條款及細則"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         ""
@@ -7896,6 +7897,9 @@
       "Boost your storage space to ${ businessStorage } per user": [
         ""
       ],
+      "Boost your storage space to ${ driveStorage } total": [
+        ""
+      ],
       "Cover more ground with support for 10 custom email domains": [
         ""
       ],
@@ -7926,7 +7930,7 @@
         "${ _Filter.Name } 已建立"
       ],
       "A disabled address cannot be primary": [
-        "已停用的電子郵件地址不能成為主要"
+        "已停用的電郵位址不能成為主要"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         ""
@@ -7942,10 +7946,10 @@
     },
     "Notification type": {
       "email": [
-        ""
+        "電郵"
       ],
       "notification": [
-        ""
+        "通知"
       ]
     },
     "Notification when": {
@@ -8078,7 +8082,7 @@
         "每月9日"
       ],
       "Add to existing group": [
-        "新增至現有群組"
+        "加入至現有群組"
       ],
       "Android": [
         "Android"
@@ -8201,7 +8205,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "新增行事曆"
+        "加入行事曆"
       ],
       "Merge with calendar": [
         "與行事曆合併"
@@ -8229,7 +8233,7 @@
         ".rpm（適用於 Fedora/openSUSE）"
       ],
       "PKGBUILD (for other distributions)": [
-        "PKGBUILD（適用於其他散佈版）"
+        "PKGBUILD（適用於其它散佈版）"
       ]
     },
     "Participant name": {
@@ -8245,7 +8249,7 @@
         ""
       ],
       "New credit/debit card": [
-        "新增信用卡/扣帳卡"
+        "加入信用卡/扣帳卡"
       ],
       "PayPal": [
         "PayPal"
@@ -8253,7 +8257,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電郵位址"
       ]
     },
     "Placeholder": {
@@ -8267,10 +8271,10 @@
         ""
       ],
       "Add gift code": [
-        "新增禮品代碼"
+        "加入禮品代碼"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Choose a name": [
         "請選定一個名稱"
@@ -8288,7 +8292,7 @@
         "範例："
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Feedback": [
         "意見回饋"
@@ -8303,13 +8307,13 @@
         "名稱"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Password": [
         "密碼"
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Please describe the problem and include any error messages": [
         "請描述問題並附上相關的錯誤訊息 (如有的話)"
@@ -8350,7 +8354,7 @@
     },
     "Placeholder for custom invoice text": {
       "Add your name (or company name) and address to your invoices": [
-        "將您的姓名 (或公司名稱) 及地址新增到您的帳單"
+        "將您的姓名 (或公司名稱) 及位址加入到您的帳單"
       ]
     },
     "plan customizer, users": {
@@ -8358,10 +8362,10 @@
         "業務聯繫"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
-        "選擇欲加入您授權方案的使用者人數。每一位新增使用者的費用為 ${ price }。"
+        "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
       ],
       "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
-        "若您需求超過 ${ maxUsers } 位使用者帳戶，請 ${ contact } 我們的客戶成功團隊。"
+        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
@@ -8384,7 +8388,7 @@
     },
     "Property type": {
       "Address": [
-        "地址"
+        "位址"
       ],
       "Email": [
         "電郵"
@@ -8402,7 +8406,7 @@
         "手機"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Pager": [
         "呼叫器"
@@ -8422,45 +8426,45 @@
         "取消"
       ],
       "Email address has been verified.": [
-        "電子郵件地址已驗證。"
+        "電郵位址已驗證。"
       ],
       "Email address not yet verified.": [
-        "電子郵件地址尚未驗證。"
+        "電郵位址尚未驗證。"
       ],
       "Please ${ signIn } to resend a recovery email verification request.": [
-        "請 ${ signIn } 以重新傳送還原電子郵件驗證請求。"
+        "請 ${ signIn } 以重新傳送還原電郵驗證請求。"
       ],
       "Send verification email": [
-        "傳送驗證電子郵件"
+        "傳送驗證電郵"
       ],
       "There was a problem verifying your email address.": [
-        "驗證您的電子郵件地址時發生問題。"
+        "驗證您的電郵位址時發生問題。"
       ],
       "Verification email sent to ${ email.Value }": [
-        "驗證電子郵件已傳送至 ${ email.Value }"
+        "驗證電郵已傳送至 ${ email.Value }"
       ],
       "Verify now": [
         "立刻驗證"
       ],
       "Verify recovery email?": [
-        "驗證還原電子郵件？"
+        "驗證還原電郵？"
       ],
       "Verifying your email address increases your account security and allows additional options for recovery.": [
-        "驗證您的電子郵件地址可以增加您帳號的安全性，並提供了額外的還原選項。"
+        "驗證您的電郵位址可以增加您帳號的安全性，並提供了額外的還原選項。"
       ],
       "You can safely close this tab.": [
         "您可以安全地關閉此分頁。"
       ],
       "Your recovery email has been successfully verified.": [
-        "您的還原電子郵件已成功驗證。"
+        "您的還原電郵已成功驗證。"
       ]
     },
     "Recovery method": {
       "Email": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Phrase": [
         "短語"
@@ -8488,7 +8492,7 @@
         "由於密碼變更，您的組織系統管理員權限受到限制。下列動作已不再允許："
       ],
       "Reading emails of non-private users": [
-        "讀取非私密使用者的電子郵件"
+        "讀取非私密使用者的電郵"
       ]
     },
     "Select files": {
@@ -8496,10 +8500,10 @@
         "瀏覽"
       ],
       "Upload": [
-        "上傳"
+        "上載"
       ],
       "Upload additional files": [
-        "上傳額外的檔案"
+        "上載額外的檔案"
       ]
     },
     "Select search results": {
@@ -8565,7 +8569,7 @@
         ""
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Username": [
         "使用者名稱"
@@ -8589,19 +8593,22 @@
     },
     "Spam notification": {
       "${ domain } added": [
-        "${ domain } 已新增"
+        "${ domain } 已加入"
       ],
       "${ domain } updated": [
         "${ domain } 已更新"
       ],
       "${ email } added": [
-        "${ email } 已新增"
+        "${ email } 已加入"
       ],
       "${ email } updated": [
         "${ email } 已更新"
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         ""
       ],
@@ -8610,6 +8617,9 @@
       ],
       "No more missed appointments": [
         ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "試試看 ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         ""
@@ -8699,7 +8709,7 @@
         ""
       ],
       "${ UsedAddresses } address": [
-        "${ UsedAddresses } 個電子郵件地址"
+        "${ UsedAddresses } 個電郵位址"
       ],
       "${ UsedAddresses } of ${ MaxAddresses } email address": [
         ""
@@ -8752,10 +8762,10 @@
         "帳號已刪除。正在登出..."
       ],
       "Address added": [
-        "電子郵件地址已新增"
+        "電郵位址已加入"
       ],
       "Address updated": [
-        "電子郵件地址已更新"
+        "電郵位址已更新"
       ],
       "Auto-reply disabled": [
         "自動回覆已停用"
@@ -8764,10 +8774,10 @@
         "自動回覆已更新"
       ],
       "Bug reported": [
-        "錯誤已報告"
+        "錯誤已回報"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "行事曆已新增。同步或需時幾分鐘。"
+        "行事曆已加入。同步或需時幾分鐘。"
       ],
       "Calendar created": [
         "行事曆已創建"
@@ -8779,7 +8789,7 @@
         "行事曆已更新"
       ],
       "Canceling import": [
-        "匯入取消中…"
+        "正在取消匯入"
       ],
       "Catch-all address updated": [
         "全部擷取電子郵件地址已更新"
@@ -8800,19 +8810,19 @@
         "網域已驗證"
       ],
       "Email address copied to clipboard": [
-        "電子郵件地址已複製到剪貼簿"
+        "電郵位址已複製到剪貼簿"
       ],
       "Email updated": [
-        "電子郵件已更新"
+        "電郵已更新"
       ],
       "Gift code applied": [
         "禮品代碼已套用"
       ],
       "If you entered a valid recovery email we will send you an email with your usernames in the next minute.": [
-        "若您輸入的備援電子郵件正確，使用者名稱將會立即以電子郵件傳送給您 。"
+        "若您輸入的復原電郵正確，使用者名稱將會立即以電郵傳送給您 。"
       ],
       "If you entered a valid recovery phone we will send you an sms with your usernames in the next minute.": [
-        "若您輸入的備援電話號碼正確，使用者名稱將會立即以簡訊傳送給您 。"
+        "若您輸入的復原手機號碼正確，使用者名稱將會立即以簡訊傳送給您 。"
       ],
       "Import record deleted": [
         "匯入記錄已刪除"
@@ -8833,43 +8843,43 @@
         "語言設定已更新"
       ],
       "Organization activated": [
-        "組織已啟用"
+        "組織機構已啟用"
       ],
       "Password updated": [
         "密碼已更新"
       ],
       "Payment method added": [
-        "付款方法已新增"
+        "付款方式已加入"
       ],
       "Payment method deleted": [
         "付款方法已刪除"
       ],
       "Payment method updated": [
-        "付款方法已更新"
+        "付款方式已更新"
       ],
       "Phone number updated": [
-        "電話號碼已更新"
+        "手機號碼已更新"
       ],
       "Preference saved": [
         "偏好設定已儲存"
       ],
       "Premium address created": [
-        "Premium 電子郵件地址已建立"
+        "Premium 電郵位址已建立"
       ],
       "Resuming import": [
-        "回復匯入"
+        "正在恢復匯入"
       ],
       "Session revoked": [
-        "工作階段已撤銷"
+        "作業階段已撤銷"
       ],
       "Sessions revoked": [
-        "工作階段已撤銷"
+        "作業階段已撤銷"
       ],
       "SPF value copied to clipboard": [
         "SFP 字串已複製到剪貼簿"
       ],
       "User created": [
-        "使用者已建立"
+        "使用者已創建"
       ],
       "User updated": [
         "使用者已更新"
@@ -8884,7 +8894,7 @@
         "驗證成功"
       ],
       "You have successfully unsubscribed": [
-        "您已成功取消訂閱"
+        "您已成功取消訂購"
       ]
     },
     "Success message": {
@@ -8913,13 +8923,13 @@
         "已移除 ${ label.Name }"
       ],
       "Address deleted": [
-        "電子郵件地址已刪除"
+        "電郵位址已刪除"
       ],
       "Address disabled": [
-        "電子郵件地址已停用"
+        "電郵位址已停用"
       ],
       "Address enabled": [
-        "電子郵件地址已啟用"
+        "電郵位址已啟用"
       ],
       "Certificate ${ name } revoked": [
         "憑證 ${ name } 已撤銷"
@@ -8963,7 +8973,7 @@
     },
     "Tab in domain modal": {
       "Addresses": [
-        "地址"
+        "位址"
       ]
     },
     "Tab subscription modal": {
@@ -9005,7 +9015,7 @@
     },
     "Time period": {
       "account creation date": [
-        "帳戶建立時間"
+        "帳號建立時間"
       ],
       "the last 12 months": [
         "最近 12 個月"
@@ -9065,10 +9075,10 @@
         "4. 選取要連接的服務器"
       ],
       "Account and password": [
-        "帳戶與密碼"
+        "帳號與密碼"
       ],
       "Account recovery": [
-        "帳戶救援"
+        "帳號救援"
       ],
       "Account suspended": [
         "帳號已停用"
@@ -9080,52 +9090,52 @@
         "啟用組織金鑰"
       ],
       "Add address": [
-        "新增電子郵件地址"
+        "加入電郵位址"
       ],
       "Add another notification to remind you of this event": [
         ""
       ],
       "Add contact group name": [
-        "新增聯絡人群組名稱"
+        "加入聯絡人群組名稱"
       ],
       "Add credit/debit card": [
-        "新增信用卡/扣帳卡"
+        "加入信用卡/扣帳卡"
       ],
       "Add credits": [
         "儲值"
       ],
       "Add domain": [
-        "新增網域"
+        "加入網域"
       ],
       "Add filter": [
-        "新增篩選器"
+        "加入篩選器"
       ],
       "Add invoice details": [
-        "新增帳單詳情"
+        "加入帳單詳情"
       ],
       "Add PayPal payment method": [
-        "新增 PayPal 付款方法"
+        "加入 PayPal 付款方法"
       ],
       "Add Sieve filter": [
-        "新增 Sieve 篩選器"
+        "加入 Sieve 篩選器"
       ],
       "Add to Allow List": [
-        "新增至允許清單"
+        "加入至允許清單"
       ],
       "Add to Block List": [
-        "新增至封鎖清單"
+        "加入至封鎖清單"
       ],
       "Add user": [
-        "新增使用者"
+        "加入使用者"
       ],
       "Address is available": [
-        "郵件地址可用"
+        "郵件位址可用"
       ],
       "Address verification": [
-        "電子郵件地址驗證"
+        "電郵位址驗證"
       ],
       "Addresses": [
-        "地址"
+        "位址"
       ],
       "Allocate storage": [
         "分配儲存空間"
@@ -9182,10 +9192,10 @@
         "信用卡驗證處理中"
       ],
       "Catch-All address": [
-        "全部擷取電子郵件地址"
+        "全部擷取電郵位址"
       ],
       "Catch-all address": [
-        "全部擷取電子郵件地址"
+        "全部擷取電郵位址"
       ],
       "Change login password": [
         "更改登入密碼"
@@ -9227,7 +9237,7 @@
         "確認失去 Proton 贈品"
       ],
       "Confirm phone number": [
-        "確認電話號碼"
+        "確認手機號碼"
       ],
       "Congratulations on choosing privacy!": [
         ""
@@ -9242,13 +9252,13 @@
         "繼續部分匯入？"
       ],
       "Create a ${ mailAppName } address": [
-        "建立 ${ mailAppName } 電子郵件地址"
+        "建立 ${ mailAppName } 電郵位址"
       ],
       "Create calendar": [
-        ""
+        "創建行事曆"
       ],
       "Create your ${ BRAND_NAME } Account": [
-        "創建您的 ${ BRAND_NAME } 帳戶"
+        "創建您的 ${ BRAND_NAME } 帳號"
       ],
       "Credentials": [
         "認證"
@@ -9311,7 +9321,7 @@
         "刪除帳號"
       ],
       "Delete calendar": [
-        ""
+        "刪除行事曆"
       ],
       "Delete key permanently?": [
         "永久刪除金鑰?"
@@ -9353,7 +9363,7 @@
         "編輯封鎖清單"
       ],
       "Edit calendar": [
-        ""
+        "編輯行事曆"
       ],
       "Edit credit/debit card": [
         "編輯信用卡/扣帳卡"
@@ -9374,16 +9384,16 @@
         "電子郵件"
       ],
       "Email composer": [
-        "電子郵件編輯器"
+        "電郵編輯器"
       ],
       "Email encryption keys": [
-        "電子郵件金鑰"
+        "電郵金鑰"
       ],
       "Email privacy": [
-        "電子郵件隱私"
+        "電郵隱私"
       ],
       "Email subscriptions": [
-        "電子郵件訂閱"
+        "電郵訂閱"
       ],
       "Encryption and keys": [
         "加密和金鑰"
@@ -9392,7 +9402,7 @@
         "錯誤"
       ],
       "Export calendar": [
-        ""
+        "匯出行事曆"
       ],
       "Export private key": [
         "匯出私鑰"
@@ -9407,7 +9417,7 @@
         "篩選器"
       ],
       "Find email or username": [
-        "尋找電子郵件地址或使用者名稱"
+        "尋找電郵位址或使用者名稱"
       ],
       "Folders": [
         "資料夾"
@@ -9440,7 +9450,7 @@
         "真人驗證"
       ],
       "Identity and addresses": [
-        "身份和電子郵件地址"
+        "身份和電郵位址"
       ],
       "IMAP/SMTP": [
         "IMAP/SMTP"
@@ -9459,9 +9469,6 @@
       ],
       "Import failed": [
         "匯入失敗"
-      ],
-      "Import groups": [
-        "匯入群組"
       ],
       "Import key": [
         "匯入金鑰"
@@ -9509,7 +9516,7 @@
         "多使用者支援"
       ],
       "My addresses": [
-        "我的電子郵件地址"
+        "我的電郵位址"
       ],
       "My calendars": [
         "我的行事曆"
@@ -9521,7 +9528,7 @@
         "下一頁"
       ],
       "No recovery method": [
-        "沒有備援方法"
+        "沒有復原方法"
       ],
       "Open actions dropdown": [
         "開啟動作下拉選單"
@@ -9596,7 +9603,7 @@
         "復原"
       ],
       "Recovery file": [
-        "帳戶救援檔案"
+        "帳號救援檔案"
       ],
       "Refer a friend": [
         "介紹朋友"
@@ -9605,7 +9612,7 @@
         "推介追蹤"
       ],
       "Remove calendar": [
-        ""
+        "移除行事曆"
       ],
       "Report a problem": [
         "回報問題"
@@ -9632,7 +9639,7 @@
         "儲存聯絡人詳細資訊"
       ],
       "Secure email based in Switzerland": [
-        "總部設於瑞士的安全電子郵件"
+        "總部設於瑞士的安全電郵"
       ],
       "Security": [
         "安全性"
@@ -9716,7 +9723,7 @@
         "狀態"
       ],
       "Subscribed calendars": [
-        "已訂閱日曆"
+        "已訂閱行事曆"
       ],
       "Success": [
         "成功"
@@ -9734,7 +9741,7 @@
         "佈景主題"
       ],
       "This address might compromise your privacy.": [
-        "此電子郵件地址可能會危害您的隱私。"
+        "此電郵位址可能會危害您的隱私。"
       ],
       "Time zone": [
         "時區"
@@ -9761,7 +9768,7 @@
         "使用者名稱"
       ],
       "Users and addresses": [
-        "使用者及電子郵件地址"
+        "使用者及電郵位址"
       ],
       "Verification": [
         "驗證"
@@ -9779,10 +9786,10 @@
         "警告：疑似假冒網站。"
       ],
       "What would you like to import?": [
-        "您想匯入什麼？"
+        "您想要匯入什麼？"
       ],
       "What's new": [
-        "最近更新"
+        "最新功能"
       ],
       "WireGuard": [
         "WireGuard"
@@ -9791,13 +9798,13 @@
         "WireGuard 組態"
       ],
       "You already have a Proton account": [
-        "您已經擁有一個 Proton 帳戶"
+        "您已經擁有一個 Proton 帳號"
       ],
       "Your ${ domain } address is active": [
-        "您的 ${ domain } 地址已啟用"
+        "您的 ${ domain } 位址已啟用"
       ],
       "Your calendar link": [
-        ""
+        "您的行事曆連結"
       ],
       "Your current plan": [
         "您目前的方案"
@@ -9858,7 +9865,7 @@
     },
     "Title header for addresses domain table": {
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Catch-All": [
         "全部擷取"
@@ -9883,7 +9890,7 @@
     },
     "Title header for members table": {
       "Addresses": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Features": [
         "功能"
@@ -9920,7 +9927,7 @@
         "兩年帳單週期已享用折扣"
       ],
       "Each imported email will have this label": [
-        "每一封匯入的電子郵件將加上此標籤"
+        "每一封匯入的電郵將加上此標籤"
       ],
       "Edit folder names": [
         "編輯資料夾名稱"
@@ -9935,7 +9942,7 @@
         "啟用進階日誌記錄安全記錄檔中每項事件的 IP 位址。"
       ],
       "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "將同一會話中的電子郵件在 [收件匣] 分組顯示，還是獨立顯示。"
+        "將同一會話中的電郵在 [收件匣] 分組顯示，還是獨立顯示。"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "若您已購買或從我們的支援團隊收到禮品代碼，您可在此輸入。"
@@ -9953,7 +9960,7 @@
         "設定您的收件匣的預設版面配置。"
       ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
-        "在您傳送的電子郵件中設定以下註腳：${ signature }當中的連結指向您的推介連結。註腳將置於您的簽名之下。您可隨時在設定中個人化您的簽名。"
+        "在您傳送的電郵中設定以下註腳：${ signature }當中的連結指向您的推介連結。註腳將置於您的簽名之下。您可隨時在設定中個人化您的簽名。"
       ],
       "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
         "此金鑰產生的簽章被視作無效，不能用於加密"
@@ -9965,10 +9972,10 @@
         "匯入將由最近的郵件開始。"
       ],
       "This address has been disabled": [
-        "此電子郵件地址已被停用"
+        "此電郵位址已被停用"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "此項功能延遲傳送您的電子郵件，讓您有機會在選定的時間內取消傳送。"
+        "此項功能延遲傳送您的電郵，讓您有機會在選定的時間內取消傳送。"
       ],
       "This feature is only available for paid users": [
         "此功能僅提供給付費使用者"
@@ -9989,7 +9996,7 @@
         "我們已停止 DKIM 簽章，因為您的 DNS 配置發生問題。請遵照下列指示以恢復簽章。"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "當您為會話中的郵件新增標籤，該標籤將自動套用至日後在該會話中傳送或接收的所有郵件。"
+        "當您為會話中的郵件加入標籤，該標籤將自動套用至日後在該會話中傳送或接收的所有郵件。"
       ],
       "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
         "當您按下一則連結時，此防釣魚功能將詢問您以確認網頁的 URL。"
@@ -10124,31 +10131,31 @@
     },
     "Warning": {
       "Are you sure you want to delete the address?": [
-        "您確定要刪除此電子郵件地址嗎？"
+        "您確定要刪除此電郵位址嗎？"
       ],
       "Are you sure you want to delete the phone number?": [
-        "您確定要刪除此電話號碼嗎？"
+        "您確定要刪除此手機號碼嗎？"
       ],
       "Are you sure you want to discard your import?": [
         "您確定要捨棄您的匯入嗎？"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
-        "一旦刪除此電子郵件地址，您日後將不能接收每日電子郵件通知。"
+        "一旦刪除此電郵位址，您日後將不能接收每日電郵通知。"
       ],
       "By deleting this address, you will no longer be able to recover your account or receive daily email notifications.": [
-        "一旦刪除此電子郵件地址，您日後將不能救援您的帳號或接收每日電子郵件通知。"
+        "一旦刪除此電郵位址，您日後將不能救援您的帳號或接收每日電郵通知。"
       ],
       "By deleting this address, you will no longer be able to recover your account.": [
-        "一旦刪除此電子郵件地址，您日後將不能救援您的帳號。"
+        "一旦刪除此電郵位址，您日後將不能救援您的帳號。"
       ],
       "By deleting this phone number, you will no longer be able to recover your account.": [
-        "一旦刪除此電話號碼，您日後將不能救援您的帳號。"
+        "一旦刪除此手機號碼，您日後將不能救援您的帳號。"
       ],
       "By disabling the logs, you will also clear your entire logs history. Are you sure you want to disable the logs?": [
         "停用記錄將一併清除您整個記錄歷程。您確定要停用記錄嗎？"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked Proton products will also be disabled. Are you sure you want to disable this address?": [
-        "停用此電子郵件地址後，您將不能再以此電子郵件地址傳送或接收電子郵件，而且所有已連結的 Proton 產品亦將隨之停用。您確定要停用此電子郵件地址嗎？"
+        "停用此電郵位址後，您將不能再以此電郵位址傳送或接收電郵，而且所有已連結的 Proton 產品亦將隨之停用。您確定要停用此電郵位址嗎？"
       ],
       "If you cancel this import, you won't be able to resume it. Proton saved all progress in your account. Cancel anyway?": [
         "如果您取消此匯入，您將無法復原。Proton 已將所有進度儲存在您的帳號中。無論無何都要取消嗎？"
@@ -10187,7 +10194,7 @@
         "我們偵測到您的 DNS 配置有問題。請確保您的 DNS 記錄符合下列指示。如果問題持續，我們將需要關閉 DKIM 簽章。"
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "您必須${ activateLink }組織金鑰才可新增電子郵件地址到一個非私密成員。"
+        "您必須${ activateLink }組織金鑰才可加入電郵位址到一個非私密成員。"
       ],
       "You will lose any customization you made so far.": [
         "您到目前為止所作的任何自訂，將會消失。"
@@ -10199,10 +10206,10 @@
         "您的免費試用將於 ${ textDate } 結束。${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "您的帳戶救援檔案已過時，若您再次重置您的帳戶，該復原檔案將無法還原新的資料。"
+        "您的帳號救援檔案已過時，若您再次重設您的帳號，該復原檔案將無法還原新的資料。"
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "您的復原短語已過時，若您再次重置您的帳戶，該短語將無法還原新的資料。"
+        "您的復原短語已過時，若您再次重設您的帳號，該短語將無法還原新的資料。"
       ]
     },
     "Warning for domain modal": {

@@ -197,6 +197,12 @@
       "Download": [
         "Завантажити"
       ],
+      "Download (${ count })": [
+        "Завантажити (${ count })"
+      ],
+      "Download all": [
+        "Завантажити все"
+      ],
       "Download anyway": [
         "Усе одно завантажити"
       ],
@@ -227,9 +233,6 @@
       "enable desktop notifications": [
         "увімкнути сповіщення на робочому столі"
       ],
-      "Enable drive search": [
-        "Увімкнути пошук на диску"
-      ],
       "Expand": [
         "Розгорнути"
       ],
@@ -250,6 +253,9 @@
       ],
       "Get link": [
         "Отримати посилання"
+      ],
+      "Get Proton Drive": [
+        "Отримати Proton Drive"
       ],
       "Get started": [
         "Розпочнімо"
@@ -383,11 +389,11 @@
       "Refer a friend": [
         "Запросити друга"
       ],
-      "refresh the page": [
-        "оновити сторінку"
-      ],
       "Refresh the page": [
         "Оновити сторінку"
+      ],
+      "refresh the page": [
+        "оновити сторінку"
       ],
       "Remove": [
         "Вилучити"
@@ -431,6 +437,9 @@
       "Resume upload": [
         "Відновити вивантаження"
       ],
+      "Retry": [
+        "Повторити спробу"
+      ],
       "Save": [
         "Зберегти"
       ],
@@ -449,17 +458,11 @@
       "Set recovery phrase": [
         "Встановити фразу відновлення"
       ],
-      "Share": [
-        "Поділитися"
-      ],
       "Share file": [
         "Спільний доступ до файлу"
       ],
       "Share item": [
         "Спільний доступ до елемента"
-      ],
-      "Share options": [
-        "Параметри надсилання"
       ],
       "Share via link": [
         "Спільний доступ за посиланням"
@@ -879,7 +882,7 @@
         "сахара"
       ],
       "slateblue": [
-        "сизий"
+        "сивий"
       ],
       "soil": [
         "земляний"
@@ -1940,9 +1943,6 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
       ],
-      "Preferences could not be saved": [
-        "Не вдалося зберегти налаштування"
-      ],
       "Primary address key is not decrypted": [
         "Основний ключ адреси не розшифрований"
       ],
@@ -2512,6 +2512,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перш ніж запитувати новий код підтвердження, перевірте теку зі спамом та перевірте, чи правильно вказано адресу ${ strong }."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "Масове завантаження може знизити швидкодію комп’ютера. Спробуйте обмежити дії, які потребують значного обсягу пам’яті, як-от потокове передавання під час завантаження. Або спробуйте завантажувати пакетами."
+      ],
       "Canceled": [
         "Скасовано"
       ],
@@ -2584,9 +2587,6 @@
       "Creating link to folder": [
         "Створення посилання на теку"
       ],
-      "Creating share": [
-        "Створення спільного доступу"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Підтримуються файли CSV з Outlook, Outlook Express, Yahoo! Maіl, Hotmaіl, Eudora і деяких інших додатків, а також формати vCard 3.1 і 4.0 (кодування UTF- 8)."
       ],
@@ -2602,8 +2602,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Цифровий підпис перевірено. Цю теку безпечно вивантажено ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Завантаження скасовано"
+      ],
+      "Download failed": [
+        "Не вдалося завантажити"
+      ],
+      "Download failed due to ${ error }": [
+        "Не вдалося завантажити через ${ error }"
+      ],
+      "Download finished": [
+        "Завантаження завершено"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Завантаження ${ downloadFileName } буде скасовано"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Завантаження призупинено через проблеми зі з'єднанням; воно відновиться автоматично"
       ],
       "Downloaded": [
         "Завантажено"
@@ -2611,11 +2626,8 @@
       "Downloading": [
         "Завантаження"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Завантаження елементів ${ esProgress } з ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Перетягніть файл сюди або виберіть що вивантажити."
+      "Drag and drop items here or browse for files to upload.": [
+        "Перетягніть елементи сюди або виберіть файли для вивантаження."
       ],
       "Drop the file here to upload": [
         "Для завантаження файлу перетягніть його сюди"
@@ -2623,8 +2635,11 @@
       "Duplicate key updated": [
         "Дублікат ключа оновлено"
       ],
-      "Enable drive search": [
-        "Увімкнути пошук на диску"
+      "Enabling drive search": [
+        "Увімкнення пошуку на диску"
+      ],
+      "Encrypted": [
+        "Зашифровано"
       ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
@@ -2731,6 +2746,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпортування ваших даних із ${ importedEmailAddress } до ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Індексування елементів ${ esProgress } з ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "Індексування результатів пошуку…"
       ],
@@ -2764,8 +2782,11 @@
       "Link copied to clipboard": [
         "Посилання скопійовано в буфер обміну"
       ],
-      "Link expires: ": [
-        "Термін дії посилання: "
+      "Link failed to be loaded": [
+        "Не вдалося завантажити посилання"
+      ],
+      "Links failed to be loaded": [
+        "Не вдалося завантажити посилання"
       ],
       "Loading": [
         "Завантаження"
@@ -2773,11 +2794,14 @@
       "Loading ${ appName }": [
         "Завантаження ${ appName }"
       ],
+      "Loading link": [
+        "Завантаження посилання"
+      ],
+      "Loading links": [
+        "Завантаження посилань"
+      ],
       "Loading preview": [
         "Завантаження попереднього перегляду"
-      ],
-      "Loading share": [
-        "Завантаження файлів спільного доступу"
       ],
       "Merged": [
         "Об'єднано"
@@ -2827,6 +2851,9 @@
       "Not a valid URL": [
         "Недійсна URL-адреса"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Не всі файли були передані. Спробуйте вивантажити або завантажити файли ще раз."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Примітка: Дані все ще можуть бути доступними локально на пристроях, де встановлено ${ appName }."
       ],
@@ -2860,11 +2887,14 @@
       "Permanently delete all files in your drive": [
         "Остаточно видалити всі файли у сховищі"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Введіть пароль, щоб розшифрувати та переглянути вміст."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Зауважте, що адреси, призначені цій групі, не будуть видалені."
@@ -2905,6 +2935,9 @@
       "Priority support": [
         "Пріоритетна підтримка"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Приватний пошук увімкнено. Тепер ви можете закрити це діалогове вікно та здійснити пошук файлів і тек."
+      ],
       "Queued": [
         "Поставлено в чергу"
       ],
@@ -2922,6 +2955,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "Неможливо увімкнути пошук у цьому браузері"
+      ],
+      "Search Enabled": [
+        "Пошук увімкнено"
+      ],
+      "Secure sharing": [
+        "Захищене надсилання"
+      ],
+      "Secure your documents and data": [
+        "Захистіть свої документи та дані"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
@@ -2947,11 +2989,20 @@
       "Share files with links": [
         "Поділіться файлами за допомогою посилань"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Посилання спільного доступу для ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Перевіркою підпису буде знехтувано"
       ],
       "Signature issue": [
         "Проблема з підписом"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Не вдалося завантажити деякі файли. Спробуйте завантажити їх ще раз."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Не вдалося вивантажити деякі файли. Спробуйте вивантажити їх ще раз."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Деякі з ваших файлів більше не доступні. Відновіть доступ до файлів. ${ StartRecoveryButton }"
@@ -2968,6 +3019,12 @@
       "support team": [
         "командою підтримки"
       ],
+      "Swiss privacy": [
+        "Швейцарська приватність"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Торкніться кнопки +, щоб вивантажити файли або теку."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Можливо, в обліковому записі є новий ключ або ці елементи підроблено: ${ items }. Відкривайте, лише якщо ви довіряєте їм."
       ],
@@ -2982,6 +3039,9 @@
       ],
       "There are no files yet": [
         "Поки що тут немає файлів"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Ці файли були надіслані наскрізно зашифрованими. Щоб бути впевненими їх безпеці, і безпеці всіх ваших документів, світлин і файлів — зберігайте їх у Proton Drive, хмарному сховищі, якому ви можете довіряти."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
@@ -3001,8 +3061,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Це посилання може бути гомографічною атакою. Впевніться, що це саме те посилання, яке ви хочете відвідати, або не відкривайте його."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Це посилання було створено в\nпопередній версії й не може бути змінене. Видаліть це посилання і створіть\nнове, щоб змінити налаштування."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Це посилання було створено за допомогою старої версії Drive і не може бути змінене. Видаліть це посилання та створіть нове, щоб змінити налаштування."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Це посилання буде вимкнено назавжди. Ніхто не матиме доступ до вашого файлу за цим посиланням. Щоб поділитися файлом, вам знадобиться нове посилання."
@@ -3021,9 +3081,6 @@
       ],
       "This will overwrite the existing folder": [
         "Це перезапише наявну теку"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Щоб увімкнути справді приватний пошук ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Для забезпечення справді приватного пошуку ${ DRIVE_APP_NAME } потрібно індексувати ваші файли локально. Ви, як і раніше, можете використовувати ${ DRIVE_APP_NAME } у звичайному режимі, а ми повідомимо вас, коли індексація буде завершена."
@@ -3054,9 +3111,6 @@
       ],
       "Trash": [
         "Смітник"
-      ],
-      "Try different keywords": [
-        "Спробуйте різні ключові слова"
       ],
       "Unlimited folders, labels, and filters": [
         "Необмежена кількість тек, міток і фільтрів"
@@ -3163,35 +3217,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваші дані для імпорту з ${ importedEmailAddressStrong } до облікового запису Proton готові."
       ],
-      "Your download has been canceled.": [
-        "Завантаження було скасовано."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваша електронна пошта використається лише для цієї одноразової перевірки."
-      ],
-      "Your file failed to download.": [
-        "Не вдалося завантажити файл."
-      ],
-      "Your file has finished downloading.": [
-        "Ваш файл завантажено."
-      ],
-      "Your file is being downloaded.": [
-        "Ваш файл завантажується."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "У зв'язку зі скиданням пароля, ваші файли більше недоступні. Для відновлення доступу повторно вивантажте старий ключ шифрування. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Ваші файли буде зашифровано, а потім збережено."
-      ],
-      "Your folder failed to download.": [
-        "Не вдалося завантажити теку."
-      ],
-      "Your folder has finished downloading.": [
-        "Вашу теку завантажено."
-      ],
-      "Your folder is being downloaded.": [
-        "Ваша тека завантажується."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефону використається лише для цієї одноразової перевірки."
@@ -3204,9 +3237,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Робота вашого облікового запису Proton тимчасово зупинена. Щоб відновити роботу, будь ласка, сплатіть прострочені рахунки."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Ваше захищене поширюване посилання для ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3383,9 +3413,6 @@
       "Enable Beta Access": [
         "Увімкнути бета-доступ"
       ],
-      "Enabling drive search": [
-        "Увімкнення пошуку на диску"
-      ],
       "Encrypt emails": [
         "Шифрувати листи"
       ],
@@ -3418,9 +3445,6 @@
       ],
       "From: ${ importedEmail }": [
         "Від: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Отримайте свій ${ appName }"
       ],
       "Good": [
         "Добре"
@@ -3460,6 +3484,9 @@
       ],
       "Last month only": [
         "Лише останній місяць"
+      ],
+      "Location": [
+        "Розташування"
       ],
       "Mailbox password": [
         "Пароль поштової скриньки"
@@ -4215,6 +4242,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "Завершилося тестування ${ DRIVE_APP_NAME }! Зберігайте свої файли так само безпечно, як і електронні листи."
+      ],
       "Encrypted search is here": [
         "Зашифрований пошук уже тут"
       ],
@@ -4226,6 +4256,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Тепер ви можете легко шукати файли на Drive, зберігаючи безпеку даних."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Спробувати ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -4332,44 +4365,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "# доступів"
-      ],
       "Actions": [
         "Дії"
       ],
       "Address": [
         "Адреса"
       ],
-      "Created": [
-        "Створено"
-      ],
       "CSV field": [
         "Поле CSV"
-      ],
-      "Deleted": [
-        "Видалено"
-      ],
-      "Expires": [
-        "Завершується"
       ],
       "Import": [
         "Імпорт"
       ],
-      "Location": [
-        "Розташування"
-      ],
-      "Modified": [
-        "Змінено"
-      ],
       "Name": [
         "Назва"
-      ],
-      "Size": [
-        "Розмір"
-      ],
-      "Uploaded": [
-        "Вивантажено"
       ],
       "Values": [
         "Значення"
@@ -4421,6 +4430,24 @@
         "${ emailsCount } учасників",
         "${ emailsCount } учасників"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } невдале завантаження",
+        "${ numberOfFailedTransfer.total } невдалі вивантаження",
+        "${ numberOfFailedTransfer.total } невдалих завантажень",
+        "${ numberOfFailedTransfer.total } невдалих завантажень"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } невдале передавання",
+        "${ numberOfFailedTransfer.total } невдалі передавання",
+        "${ numberOfFailedTransfer.total } невдалих передавань",
+        "${ numberOfFailedTransfer.total } невдалих передавань"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } невдале вивантаження",
+        "${ numberOfFailedTransfer.total } невдалі вивантаження",
+        "${ numberOfFailedTransfer.total } невдалих вивантажень",
+        "${ numberOfFailedTransfer.total } невдалих вивантажень"
+      ],
       "Account suspended": [
         "Обліковий запис призупинено"
       ],
@@ -4439,9 +4466,6 @@
       "Add to ${ groupName }": [
         "Додати до ${ groupName }"
       ],
-      "Additional settings": [
-        "Додаткові налаштування"
-      ],
       "Addresses": [
         "Адреси"
       ],
@@ -4450,6 +4474,9 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Based in Switzerland, available globally": [
+        "Розташований у Швейцарії, доступний у всьому світі"
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -4502,6 +4529,9 @@
       "Date": [
         "Дата"
       ],
+      "Decrypting": [
+        "Розшифрування"
+      ],
       "Delete ${ count } contact": [
         "Видалити ${ count } контакт",
         "Видалити ${ count } контакти",
@@ -4529,23 +4559,14 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
-      "Download canceled": [
-        "Завантаження скасовано"
-      ],
-      "Download completed": [
-        "Завантаження завершено"
-      ],
-      "Download failed": [
-        "Не вдалося завантажити"
+      "Download shared file": [
+        "Завантажити надіслані файли"
       ],
       "Download unverified file?": [
         "Завантажити неперевірені файли?"
       ],
       "Download unverified folder?": [
         "Завантажити неперевірену теку?"
-      ],
-      "Downloading": [
-        "Завантаження"
       ],
       "Drive": [
         "Диск"
@@ -4579,12 +4600,6 @@
       ],
       "Empty trash": [
         "Спорожнити смітник"
-      ],
-      "Enable drive search": [
-        "Увімкнути пошук на диску"
-      ],
-      "Enter password to download": [
-        "Введіть пароль для завантаження"
       ],
       "Enter your password": [
         "Введіть свій пароль"
@@ -4622,6 +4637,9 @@
         "Знайдено ${ searchView.numberOfResults } результатів",
         "Знайдено ${ searchView.numberOfResults } результата"
       ],
+      "Getting files": [
+        "Отримання файлів"
+      ],
       "Groups": [
         "Групи"
       ],
@@ -4631,11 +4649,11 @@
       "Import contacts": [
         "Імпортувати контакти"
       ],
-      "Import groups": [
-        "Імпортувати групи"
-      ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
+      ],
+      "Item details": [
+        "Подробиці елемента"
       ],
       "Items details": [
         "Подробиці елемента"
@@ -4648,9 +4666,6 @@
       ],
       "Manage secure link": [
         "Керувати захищеним посиланням"
-      ],
-      "Manage share": [
-        "Керувати спільним доступом"
       ],
       "Merge contacts": [
         "Об'єднати контакти"
@@ -4672,9 +4687,6 @@
       ],
       "Name": [
         "Назва"
-      ],
-      "No results found": [
-        "Результатів не знайдено"
       ],
       "Number of files": [
         "Кількість файлів"
@@ -4705,6 +4717,9 @@
       ],
       "Phone numbers": [
         "Номери телефонів"
+      ],
+      "Privacy settings": [
+        "Налаштування приватності"
       ],
       "Re-sign all contacts": [
         "Повторно підписати всі контакти"
@@ -4787,15 +4802,6 @@
       "Stop transfers?": [
         "Зупинити передавання?"
       ],
-      "The file or folder failed to be downloaded": [
-        "Не вдалося завантажити файл або теку"
-      ],
-      "The internet connection was interrupted": [
-        "З'єднання з Інтернетом було перервано"
-      ],
-      "The link does not exist": [
-        "Такого посилання не існує"
-      ],
       "The link either does not exist or has expired": [
         "Посилання або не існує або не чинне"
       ],
@@ -4807,6 +4813,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У цій теці відсутній або недійсний підпис. Перейдіть до Меню (⋮) → Подробиці для отримання інформації."
+      ],
+      "This link is password protected": [
+        "Це посилання захищене паролем"
       ],
       "Total size": [
         "Загальний розмір"
@@ -4850,11 +4859,8 @@
       "You have no folders yet": [
         "У вас поки немає тек"
       ],
-      "Your file is ready to be downloaded": [
-        "Файл готовий до завантаження"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Ваша тека готова до завантаження"
+      "You've got files": [
+        "Ви отримали файли"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Час безплатної пробної версії добігає завершення ${ formattedEndDate }"

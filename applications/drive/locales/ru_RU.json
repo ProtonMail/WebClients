@@ -197,6 +197,12 @@
       "Download": [
         "Скачать"
       ],
+      "Download (${ count })": [
+        "Скачать (${ count })"
+      ],
+      "Download all": [
+        "Скачать все"
+      ],
       "Download anyway": [
         "Все равно скачать"
       ],
@@ -227,9 +233,6 @@
       "enable desktop notifications": [
         "включить уведомления на рабочем столе"
       ],
-      "Enable drive search": [
-        "Включить поиск по хранилищу"
-      ],
       "Expand": [
         "Развернуть"
       ],
@@ -250,6 +253,9 @@
       ],
       "Get link": [
         "Получить ссылку"
+      ],
+      "Get Proton Drive": [
+        "Получить Proton Drive"
       ],
       "Get started": [
         "Приступить к работе"
@@ -383,11 +389,11 @@
       "Refer a friend": [
         "Порекомендуйте другу"
       ],
-      "refresh the page": [
-        "обновить страницу"
-      ],
       "Refresh the page": [
         "Обновить страницу"
+      ],
+      "refresh the page": [
+        "обновить страницу"
       ],
       "Remove": [
         "Удалить"
@@ -431,6 +437,9 @@
       "Resume upload": [
         "Возобновить загрузку"
       ],
+      "Retry": [
+        "Повторить"
+      ],
       "Save": [
         "Сохранить"
       ],
@@ -449,17 +458,11 @@
       "Set recovery phrase": [
         "Установить фразу для восстановления"
       ],
-      "Share": [
-        "Поделиться"
-      ],
       "Share file": [
         "Поделиться файлом"
       ],
       "Share item": [
         "Поделиться файлом"
-      ],
-      "Share options": [
-        "Параметры совместного доступа"
       ],
       "Share via link": [
         "Поделиться с помощью ссылки"
@@ -1940,9 +1943,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Preferences could not be saved": [
-        "Настройки не могут быть сохранены"
-      ],
       "Primary address key is not decrypted": [
         "Основной ключ адреса не расшифрован"
       ],
@@ -2512,6 +2512,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Прежде чем запросить новый код подтверждения, проверьте свою папку спама и убедитесь, что ${ strong } - это корректный адрес."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "Массовая загрузка может снизить производительность вашего компьютера. Рассмотрите возможность ограничения действий, интенсивно использующих память, таких как потоковая передача во время загрузки. Или попробуйте загружать в пакетном режиме."
+      ],
       "Canceled": [
         "Отменено"
       ],
@@ -2584,9 +2587,6 @@
       "Creating link to folder": [
         "Создание ссылки на папку"
       ],
-      "Creating share": [
-        "Создается совместное содержимое"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Поддерживаются файлы CSV из Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora и некоторых других приложений, а также форматы vCard 3.1 и 4.0 (кодировка UTF-8)."
       ],
@@ -2602,8 +2602,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "ЭЦП проверена. Эта папка была безопасно загружена ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Скачивание отменено"
+      ],
+      "Download failed": [
+        "Сбой скачивания"
+      ],
+      "Download failed due to ${ error }": [
+        "Сбой скачивания: ${ error }"
+      ],
+      "Download finished": [
+        "Скачивание завершено"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Скачивание ${ downloadFileName } будет прервано"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Загрузка приостановлена из-за проблем с подключением; она возобновится автоматически"
       ],
       "Downloaded": [
         "Скачано"
@@ -2611,11 +2626,8 @@
       "Downloading": [
         "Скачивание"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Загрузка элементов ${ esProgress } из ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Для загрузки файлов перетащите их сюда или выберите через диалоговое окно."
+      "Drag and drop items here or browse for files to upload.": [
+        "Перетащите элементы сюда или найдите файлы для загрузки."
       ],
       "Drop the file here to upload": [
         "Для загрузки файла перетащите его сюда"
@@ -2623,8 +2635,11 @@
       "Duplicate key updated": [
         "Дубликат ключа обновлен"
       ],
-      "Enable drive search": [
-        "Включить поиск по хранилищу"
+      "Enabling drive search": [
+        "Включаем поиск по хранилищу"
+      ],
+      "Encrypted": [
+        "Зашифровано"
       ],
       "Encrypted search is here": [
         "Зашифрованный поиск тут"
@@ -2731,6 +2746,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Индексирование элементов: ${ esProgress } из ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "Индексирование результатов поиска…"
       ],
@@ -2764,8 +2782,11 @@
       "Link copied to clipboard": [
         "Ссылка скопирована в буфер обмена"
       ],
-      "Link expires: ": [
-        "Срок действия ссылки: "
+      "Link failed to be loaded": [
+        "Не удалось загрузить ссылку"
+      ],
+      "Links failed to be loaded": [
+        "Не удалось загрузить ссылки"
       ],
       "Loading": [
         "Загружаем"
@@ -2773,11 +2794,14 @@
       "Loading ${ appName }": [
         "Загрузка ${ appName }"
       ],
+      "Loading link": [
+        "Загрузка ссылки"
+      ],
+      "Loading links": [
+        "Загрузка ссылок"
+      ],
       "Loading preview": [
         "Загрузка предпросмотра"
-      ],
-      "Loading share": [
-        "Загружается совместное содержимое"
       ],
       "Merged": [
         "Объединённые"
@@ -2827,6 +2851,9 @@
       "Not a valid URL": [
         "Недействительный URL"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Не все файлы были переданы. Попробуйте загрузить или скачать файлы еще раз."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Примечание: Данные могут быть все еще доступны локально на устройствах, на которых вы установили ${ appName }."
       ],
@@ -2860,11 +2887,14 @@
       "Permanently delete all files in your drive": [
         "Окончательно удалить все файлы в вашем хранилище"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline совместим только с форматом Обычного текста. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматически отправляет сообщение, используя текущий режим редактора писем. Обратите внимание, что ${ MAIL_APP_NAME } всегда подписывает зашифрованные сообщения"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Для расшифровки и просмотра содержимого введите пароль."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Обратите внимание, что адреса, назначенные этой группе, НЕ будут удалены."
@@ -2905,6 +2935,9 @@
       "Priority support": [
         "Приоритетная поддержка"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Конфиденциальный поиск включен. Теперь вы можете закрыть этот диалог и начать поиск файлов и папок."
+      ],
       "Queued": [
         "Поставлено в очередь"
       ],
@@ -2922,6 +2955,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "Поиск не может быть включен в этом браузере"
+      ],
+      "Search Enabled": [
+        "Поиск включен"
+      ],
+      "Secure sharing": [
+        "Безопасный обмен"
+      ],
+      "Secure your documents and data": [
+        "Защитите свои документы и данные"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Выберите загруженный файл или папку и создайте ссылку на них."
@@ -2947,11 +2989,20 @@
       "Share files with links": [
         "Делитесь файлами с помощью ссылок"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Ваша безопасная, доступная для обмена ссылка для ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Проверка подписи будет проигнорирована"
       ],
       "Signature issue": [
         "Проблема с подписью"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Не удалось скачать некоторые файлы. Попробуйте скачать файлы еще раз."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Не удалось загрузить некоторые файлы. Попробуйте загрузить файлы еще раз."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Некоторые из ваших файлов больше недоступны. Восстановите доступ к своим файлам. ${ StartRecoveryButton }"
@@ -2968,6 +3019,12 @@
       "support team": [
         "служба поддержки"
       ],
+      "Swiss privacy": [
+        "Швейцарская конфиденциальность"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Нажмите кнопку +, чтобы загрузить файл или папку."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Учетная запись может иметь новый ключ, или могли быть взломаны следующие элементы: ${ items }. Открывайте только в том случае, если им доверяете."
       ],
@@ -2982,6 +3039,9 @@
       ],
       "There are no files yet": [
         "Пока здесь пусто"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Эти файлы были переданы с использованием сквозного шифрования. Чтобы обеспечить их безопасность — и безопасность всех ваших документов, фотографий и файлов — храните их в Proton Drive, облачном хранилище, которому вы можете доверять."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Этот аккаунт был отключен из-за возможного нарушения политики."
@@ -3001,8 +3061,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Эта ссылка может быть омографической атакой, при которой символы одного алфавита подменяются похожими символами из другого. Пожалуйста, проверьте, что это именно та ссылка, которую вы хотите посетить, или не переходите по ней."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Эта ссылка была создана в\nпредыдущей версии и не может быть изменена. Удалите эту ссылку и создайте\nновую, чтобы изменить настройки."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Эта ссылка была создана в предыдущей версии и не может быть изменена. Удалите эту ссылку и создайте новую, чтобы изменить настройки."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Доступ к файлу по этой ссылке будет закрыт. Чтобы поделиться файлом, нужно будет создать новую ссылку."
@@ -3021,9 +3081,6 @@
       ],
       "This will overwrite the existing folder": [
         "Это перезапишет существующую папку"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен индексировать ваши файлы локально."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Чтобы включить действительно конфиденциальный поиск, ${ DRIVE_APP_NAME } должен проиндексировать ваши файлы локально. Вы по-прежнему можете использовать ${ DRIVE_APP_NAME } в обычном режиме - мы сообщим вам, когда индексирование будет завершено."
@@ -3054,9 +3111,6 @@
       ],
       "Trash": [
         "Корзина"
-      ],
-      "Try different keywords": [
-        "Попробуйте другие ключевые слова"
       ],
       "Unlimited folders, labels, and filters": [
         "Неограниченное количество папок, меток и фильтров"
@@ -3163,35 +3217,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Ваши данные готовы к импорту из ${ importedEmailAddressStrong } в ваш аккаунт Proton."
       ],
-      "Your download has been canceled.": [
-        "Загрузка отменена."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Ваш адрес электронной почты будет использован только для этой разовой проверки."
-      ],
-      "Your file failed to download.": [
-        "Не удалось загрузить файл."
-      ],
-      "Your file has finished downloading.": [
-        "Скачивание файла завершено."
-      ],
-      "Your file is being downloaded.": [
-        "Ваш файл скачивается."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Ваши файлы больше недоступны из-за сброса пароля. Перезагрузите старый ключ шифрования, чтобы восстановить доступ. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Ваши файлы будут зашифрованы, а затем сохранены."
-      ],
-      "Your folder failed to download.": [
-        "Не удалось скачать вашу папку."
-      ],
-      "Your folder has finished downloading.": [
-        "Скачивание вашей папки завершено."
-      ],
-      "Your folder is being downloaded.": [
-        "Ваша папка скачивается."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использован только для этой разовой проверки."
@@ -3204,9 +3237,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Сейчас Ваш аккаунт Proton приостановлен. Чтобы продолжить использование вашего аккаунта, пожалуйста, оплатите просроченные счета."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Ваша безопасная, доступная для обмена ссылка для ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3383,9 +3413,6 @@
       "Enable Beta Access": [
         "Включить доступ к бета-версии"
       ],
-      "Enabling drive search": [
-        "Включаем поиск по хранилищу"
-      ],
       "Encrypt emails": [
         "Шифровать письма"
       ],
@@ -3418,9 +3445,6 @@
       ],
       "From: ${ importedEmail }": [
         "От: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Создайте свой собственный ${ appName }"
       ],
       "Good": [
         "Хорошо"
@@ -3460,6 +3484,9 @@
       ],
       "Last month only": [
         "Только за последний месяц"
+      ],
+      "Location": [
+        "Местоположение"
       ],
       "Mailbox password": [
         "Пароль почтового ящика"
@@ -4215,6 +4242,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "Бета-версия ${DRIVE_APP_NAME} вышла из бета-версии! Обеспечьте своим файлам такую же безопасность, как и электронные письма."
+      ],
       "Encrypted search is here": [
         "Зашифрованный поиск тут"
       ],
@@ -4226,6 +4256,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Теперь вы легко можете искать файлы в хранилище, сохраняя при этом свои данные в безопасности."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Попробуйте ${DRIVE_APP_NAME}"
       ]
     },
     "Storage": {
@@ -4332,44 +4365,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "Количество обращений"
-      ],
       "Actions": [
         "Действия"
       ],
       "Address": [
         "Адрес"
       ],
-      "Created": [
-        "Создан"
-      ],
       "CSV field": [
         "Поле CSV-файла"
-      ],
-      "Deleted": [
-        "Удалено"
-      ],
-      "Expires": [
-        "Истекает"
       ],
       "Import": [
         "Импорт"
       ],
-      "Location": [
-        "Местоположение"
-      ],
-      "Modified": [
-        "Изменено"
-      ],
       "Name": [
         "Имя"
-      ],
-      "Size": [
-        "Размер"
-      ],
-      "Uploaded": [
-        "Загружено"
       ],
       "Values": [
         "Значения"
@@ -4421,6 +4430,24 @@
         "${ emailsCount } участников",
         "${ emailsCount } участника"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "Не удалось скачать: ${ numberOfFailedTransfer.total }",
+        "${ numberOfFailedTransfer.total } не удалось передать\n\n${ numberOfFailedTransfer.total } неудачных переводов",
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "Не удалось передать: ${ numberOfFailedTransfer.total }",
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "Не удалось загрузить: ${ numberOfFailedTransfer.total }",
+        "${ numberOfFailedTransfer.total } не удалось передать\n\n${ numberOfFailedTransfer.total } неудачных переводов",
+        "",
+        ""
+      ],
       "Account suspended": [
         "Аккаунт отключен"
       ],
@@ -4439,9 +4466,6 @@
       "Add to ${ groupName }": [
         "Добавить в ${ groupName }"
       ],
-      "Additional settings": [
-        "Дополнительные параметры"
-      ],
       "Addresses": [
         "Адреса"
       ],
@@ -4450,6 +4474,9 @@
       ],
       "Back": [
         "Назад"
+      ],
+      "Based in Switzerland, available globally": [
+        "Находится в Швейцарии, доступно по всему миру"
       ],
       "Beta Access": [
         "Бета-доступ"
@@ -4502,6 +4529,9 @@
       "Date": [
         "Дата"
       ],
+      "Decrypting": [
+        "Расшифровка"
+      ],
       "Delete ${ count } contact": [
         "Удалить ${ count } контакт",
         "Удалить ${ count } контакта",
@@ -4529,23 +4559,14 @@
       "Discard changes?": [
         "Отменить изменения?"
       ],
-      "Download canceled": [
-        "Скачивание отменено"
-      ],
-      "Download completed": [
-        "Скачивание завершено"
-      ],
-      "Download failed": [
-        "Сбой скачивания"
+      "Download shared file": [
+        "Скачать общий файл"
       ],
       "Download unverified file?": [
         "Скачать непроверенный файл?"
       ],
       "Download unverified folder?": [
         "Скачать непроверенную папку?"
-      ],
-      "Downloading": [
-        "Скачивание"
       ],
       "Drive": [
         "Диск"
@@ -4579,12 +4600,6 @@
       ],
       "Empty trash": [
         "Очистить корзину"
-      ],
-      "Enable drive search": [
-        "Включить поиск по хранилищу"
-      ],
-      "Enter password to download": [
-        "Введите пароль для скачивания"
       ],
       "Enter your password": [
         "Введите свой пароль"
@@ -4622,6 +4637,9 @@
         "Найдено ${ searchView.numberOfResults } результатов",
         "Найдено ${ searchView.numberOfResults } результата"
       ],
+      "Getting files": [
+        "Получение файлов"
+      ],
       "Groups": [
         "Группы"
       ],
@@ -4631,11 +4649,11 @@
       "Import contacts": [
         "Импорт контактов"
       ],
-      "Import groups": [
-        "Импорт групп"
-      ],
       "Invalid verification code": [
         "Неверный проверочный код"
+      ],
+      "Item details": [
+        "Информация об элементе"
       ],
       "Items details": [
         "Информация о папке"
@@ -4648,9 +4666,6 @@
       ],
       "Manage secure link": [
         "Управление безопасной ссылкой"
-      ],
-      "Manage share": [
-        "Управлять совместным содержимым"
       ],
       "Merge contacts": [
         "Объединение контактов"
@@ -4672,9 +4687,6 @@
       ],
       "Name": [
         "Имя"
-      ],
-      "No results found": [
-        "Ничего не найдено"
       ],
       "Number of files": [
         "Количество файлов"
@@ -4705,6 +4717,9 @@
       ],
       "Phone numbers": [
         "Телефонные номера"
+      ],
+      "Privacy settings": [
+        "Настройки конфиденциальности"
       ],
       "Re-sign all contacts": [
         "Переподписать все контакты"
@@ -4787,15 +4802,6 @@
       "Stop transfers?": [
         "Остановить переносы?"
       ],
-      "The file or folder failed to be downloaded": [
-        "Не удалось скачать файл или папку"
-      ],
-      "The internet connection was interrupted": [
-        "Подключение к Интернету было прервано"
-      ],
-      "The link does not exist": [
-        "Ссылка не существует"
-      ],
       "The link either does not exist or has expired": [
         "Ссылка не существует или просрочена"
       ],
@@ -4807,6 +4813,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "У этой папки отсутствует или недействительна подпись. Перейдите в Меню (⋮) → Подробности для получения дополнительной информации."
+      ],
+      "This link is password protected": [
+        "Эта ссылка защищена паролем"
       ],
       "Total size": [
         "Общий размер"
@@ -4850,11 +4859,8 @@
       "You have no folders yet": [
         "У вас пока что нет папок"
       ],
-      "Your file is ready to be downloaded": [
-        "Ваш файл готов к скачиванию"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Ваша папка готова к скачиванию"
+      "You've got files": [
+        "Вы получили файлы"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ваша бесплатная пробная версия скоро заканчивается, ${ formattedEndDate }"

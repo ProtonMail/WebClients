@@ -195,6 +195,12 @@
       "Download": [
         "Preuzmi"
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         ""
       ],
@@ -225,9 +231,6 @@
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
-      "Enable drive search": [
-        ""
-      ],
       "Expand": [
         ""
       ],
@@ -247,6 +250,9 @@
         "Proslijedi kao privitak"
       ],
       "Get link": [
+        ""
+      ],
+      "Get Proton Drive": [
         ""
       ],
       "Get started": [
@@ -381,11 +387,11 @@
       "Refer a friend": [
         ""
       ],
-      "refresh the page": [
-        "osvježi stranicu"
-      ],
       "Refresh the page": [
         "Osvježi stranicu"
+      ],
+      "refresh the page": [
+        "osvježi stranicu"
       ],
       "Remove": [
         "Ukloni"
@@ -429,6 +435,9 @@
       "Resume upload": [
         "Nastavi učitavanje"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "Spremi"
       ],
@@ -447,16 +456,10 @@
       "Set recovery phrase": [
         ""
       ],
-      "Share": [
-        "Podijeli"
-      ],
       "Share file": [
         "Dijeli datoteku"
       ],
       "Share item": [
-        ""
-      ],
-      "Share options": [
         ""
       ],
       "Share via link": [
@@ -1931,9 +1934,6 @@
         "",
         ""
       ],
-      "Preferences could not be saved": [
-        "Postavke nije moguće spremiti"
-      ],
       "Primary address key is not decrypted": [
         ""
       ],
@@ -2472,6 +2472,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         ""
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "Poništeno"
       ],
@@ -2543,9 +2546,6 @@
       "Creating link to folder": [
         ""
       ],
-      "Creating share": [
-        ""
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -2560,7 +2560,22 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         ""
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
         ""
       ],
       "Downloaded": [
@@ -2569,11 +2584,8 @@
       "Downloading": [
         "Preuzimanje"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
+      "Drag and drop items here or browse for files to upload.": [
         ""
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ovdje povucite i ispustite datoteku ili odaberite za učitavanje."
       ],
       "Drop the file here to upload": [
         "Ispustite datoteku ovdje za prijenos"
@@ -2581,7 +2593,10 @@
       "Duplicate key updated": [
         "Ažuriran je duplicirani ključ"
       ],
-      "Enable drive search": [
+      "Enabling drive search": [
+        ""
+      ],
+      "Encrypted": [
         ""
       ],
       "Encrypted search is here": [
@@ -2687,6 +2702,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Indexing search results…": [
         ""
       ],
@@ -2720,8 +2738,11 @@
       "Link copied to clipboard": [
         ""
       ],
-      "Link expires: ": [
-        "Poveznica istječe: "
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
+        ""
       ],
       "Loading": [
         "Učitavanje"
@@ -2729,11 +2750,14 @@
       "Loading ${ appName }": [
         "Učitavanje ${ appName }"
       ],
+      "Loading link": [
+        ""
+      ],
+      "Loading links": [
+        ""
+      ],
       "Loading preview": [
         "Učitavanje pregleda"
-      ],
-      "Loading share": [
-        ""
       ],
       "Merged": [
         ""
@@ -2783,6 +2807,9 @@
       "Not a valid URL": [
         ""
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
@@ -2816,10 +2843,13 @@
       "Permanently delete all files in your drive": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
         ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
@@ -2860,6 +2890,9 @@
       "Priority support": [
         ""
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        ""
+      ],
       "Queued": [
         "Na čekanju"
       ],
@@ -2876,6 +2909,15 @@
         ""
       ],
       "Search cannot be enabled in this browser": [
+        ""
+      ],
+      "Search Enabled": [
+        ""
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
         ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
@@ -2902,10 +2944,19 @@
       "Share files with links": [
         "Dijeli datoteke s poveznicama"
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         ""
       ],
       "Signature issue": [
+        ""
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
         ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
@@ -2923,6 +2974,12 @@
       "support team": [
         "tim za podršku"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
       ],
@@ -2937,6 +2994,9 @@
       ],
       "There are no files yet": [
         "Nema datoteka"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Vaš račun je suspendiran zbog mogućih kršenja pravila."
@@ -2956,7 +3016,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ova poveznica može biti homografski napad. Potvrdite da je ovo poveznica koju želite posjetiti ili je nemojte otvarati."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2974,9 +3034,6 @@
         "Ovo će presnimiti postojeću datoteku"
       ],
       "This will overwrite the existing folder": [
-        ""
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         ""
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
@@ -3008,9 +3065,6 @@
       ],
       "Trash": [
         "Otpad"
-      ],
-      "Try different keywords": [
-        ""
       ],
       "Unlimited folders, labels, and filters": [
         ""
@@ -3117,35 +3171,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
-      "Your download has been canceled.": [
-        "Otkazano je vaše preuzimanje."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Vaša adresa e-pošte koristit će se samo za ovu jednokratnu provjeru."
-      ],
-      "Your file failed to download.": [
-        "Neuspješno preuzimanje datoteke."
-      ],
-      "Your file has finished downloading.": [
-        "Preuzimanje datoteke je dovršeno."
-      ],
-      "Your file is being downloaded.": [
-        "Vaša datoteka se preuzima."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         ""
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše datoteke će biti šifrirane i spremljene."
-      ],
-      "Your folder failed to download.": [
-        ""
-      ],
-      "Your folder has finished downloading.": [
-        ""
-      ],
-      "Your folder is being downloaded.": [
-        ""
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaš broj telefona koristit će se samo za ovu jednokratnu provjeru."
@@ -3158,9 +3191,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Vaš Proton račun je trenutno na čekanju. Da biste nastavili koristiti svoj račun, uplatite sve neplaćene fakture."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        ""
       ]
     },
     "Info on errors": {
@@ -3336,9 +3366,6 @@
       "Enable Beta Access": [
         "Omogući Beta pristup"
       ],
-      "Enabling drive search": [
-        ""
-      ],
       "Encrypt emails": [
         "Šifriraj e-poštu"
       ],
@@ -3371,9 +3398,6 @@
       ],
       "From: ${ importedEmail }": [
         ""
-      ],
-      "Get your own ${ appName }": [
-        "Nabavite vlastiti ${ appName }"
       ],
       "Good": [
         ""
@@ -3412,6 +3436,9 @@
         ""
       ],
       "Last month only": [
+        ""
+      ],
+      "Location": [
         ""
       ],
       "Mailbox password": [
@@ -4146,6 +4173,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         ""
       ],
@@ -4156,6 +4186,9 @@
         ""
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ]
     },
@@ -4261,44 +4294,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "Broj pristupanja"
-      ],
       "Actions": [
         "Radnje"
       ],
       "Address": [
         "Adresa"
       ],
-      "Created": [
-        "Stvoreno"
-      ],
       "CSV field": [
         "CSV polje"
-      ],
-      "Deleted": [
-        "Izbrisano"
-      ],
-      "Expires": [
-        "Ističe"
       ],
       "Import": [
         "Uvoz"
       ],
-      "Location": [
-        "Lokacija"
-      ],
-      "Modified": [
-        "Promijenjeno"
-      ],
       "Name": [
         "Naziv"
-      ],
-      "Size": [
-        "Veličina"
-      ],
-      "Uploaded": [
-        ""
       ],
       "Values": [
         "Vrijednosti"
@@ -4347,6 +4356,21 @@
         "${ emailsCount } člana",
         "${ emailsCount } članova"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        "",
+        ""
+      ],
       "Account suspended": [
         "Račun je suspendiran"
       ],
@@ -4364,9 +4388,6 @@
       "Add to ${ groupName }": [
         "Dodaj u ${ groupName }"
       ],
-      "Additional settings": [
-        "Dodatne postavke"
-      ],
       "Addresses": [
         "Adrese"
       ],
@@ -4375,6 +4396,9 @@
       ],
       "Back": [
         "Natrag"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "Beta pristup"
@@ -4427,6 +4451,9 @@
       "Date": [
         "Datum"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "Izbriši ${ count } kontakt",
         "Izbriši ${ count } kontakta",
@@ -4452,23 +4479,14 @@
       "Discard changes?": [
         "Odbaci promjene?"
       ],
-      "Download canceled": [
-        "Preuzimanje je otkazano"
-      ],
-      "Download completed": [
-        "Preuzimanje je završeno"
-      ],
-      "Download failed": [
-        "Neuspješno preuzimanje"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         ""
       ],
       "Download unverified folder?": [
         ""
-      ],
-      "Downloading": [
-        "Preuzimanje"
       ],
       "Drive": [
         "Drive"
@@ -4502,12 +4520,6 @@
       ],
       "Empty trash": [
         "Isprazni otpad"
-      ],
-      "Enable drive search": [
-        ""
-      ],
-      "Enter password to download": [
-        ""
       ],
       "Enter your password": [
         "Unesite vašu lozinku"
@@ -4544,6 +4556,9 @@
         "",
         ""
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "Grupe"
       ],
@@ -4553,11 +4568,11 @@
       "Import contacts": [
         "Uvezi kontakte"
       ],
-      "Import groups": [
-        "Uvezi grupe"
-      ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         ""
@@ -4570,9 +4585,6 @@
       ],
       "Manage secure link": [
         "Upravljanje sigurnom poveznicom"
-      ],
-      "Manage share": [
-        ""
       ],
       "Merge contacts": [
         "Spoji kontakte"
@@ -4594,9 +4606,6 @@
       ],
       "Name": [
         "Naziv"
-      ],
-      "No results found": [
-        ""
       ],
       "Number of files": [
         "Broj datoteka"
@@ -4627,6 +4636,9 @@
       ],
       "Phone numbers": [
         "Telefonski brojevi"
+      ],
+      "Privacy settings": [
+        ""
       ],
       "Re-sign all contacts": [
         "Ponovno potpiši sve kontakte"
@@ -4709,15 +4721,6 @@
       "Stop transfers?": [
         ""
       ],
-      "The file or folder failed to be downloaded": [
-        ""
-      ],
-      "The internet connection was interrupted": [
-        ""
-      ],
-      "The link does not exist": [
-        ""
-      ],
       "The link either does not exist or has expired": [
         "Poveznica ne postoji ili je istekla"
       ],
@@ -4728,6 +4731,9 @@
         ""
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This link is password protected": [
         ""
       ],
       "Total size": [
@@ -4772,10 +4778,7 @@
       "You have no folders yet": [
         "Nema mapa"
       ],
-      "Your file is ready to be downloaded": [
-        "Vaša datoteka je spremna za preuzimanje"
-      ],
-      "Your folder is ready to be downloaded": [
+      "You've got files": [
         ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [

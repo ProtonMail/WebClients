@@ -215,9 +215,6 @@
       "Customize": [
         "Personalizar"
       ],
-      "Decrypt": [
-        "Descifrar"
-      ],
       "Default email application": [
         "Aplicación de correo por defecto"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Cifrado externo"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Filtrar por..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "Más información"
       ],
-      "Less search options": [
-        "Menos opciones de búsqueda"
-      ],
       "Load": [
         "Cargar"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Más opciones de búsqueda"
+      ],
+      "Move": [
+        ""
+      ],
+      "Move all conversations from this folder": [
+        ""
+      ],
+      "Move all conversations from this label": [
+        ""
+      ],
+      "Move all messages from this folder": [
+        ""
+      ],
+      "Move all messages from this label": [
+        ""
       ],
       "move emails to": [
         "mover correos electrónicos a"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Volver a firmar"
+      ],
+      "Read message": [
+        ""
       ],
       "Read receipt sent": [
         "Confirmación de lectura enviada"
@@ -803,6 +818,9 @@
       "Show details": [
         "Mostrar detalles"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         "Mostrar carpetas"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Mostrar menos"
-      ],
-      "Show less search options": [
-        "Mostrar menos opciones de búsqueda"
       ],
       "Show messages": [
         "Mostrar mensajes"
@@ -851,9 +866,6 @@
       "Submit": [
         "Enviar"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Tema"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Este mensaje contiene contenido remoto."
+      ],
+      "Trash all": [
+        ""
       ],
       "Trust": [
         "Confiar"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Por favor, establezca una contraseña"
       ],
-      "Preferences could not be saved": [
-        "No se han podido guardar las preferencias"
-      ],
       "Primary address key is not decrypted": [
         "La clave principal no está descifrada"
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        ""
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } conversación?",
         "¿Estás seguro de que quieres eliminar permanentemente ${ count } conversaciones?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Día",
         "Días"
-      ],
-      "Decrypt message": [
-        "Descifrar el mensaje"
       ],
       "Default email application": [
         "Aplicación de correo electrónico predeterminada"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        ""
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ponle un nombre a tu nueva carpeta y selecciona la carpeta en la que quieres colocarla. Si no seleccionas una carpeta, esta nueva carpeta se creará como una carpeta de nivel superior."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ninguna de las claves cargadas son validas para el cifrado. El cifrado se desactiva automáticamente."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "No es una URL válida"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "al mes."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline solo es compatible con el formato de texto plano. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME envía automáticamente el mensaje utilizando el modo de composición actual. Tenga en cuenta que ${ MAIL_APP_NAME } siempre firma los mensajes cifrados"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Número de teléfono"
@@ -4633,6 +4645,9 @@
       "Request read receipt": [
         "Solicitar confirmación de lectura"
       ],
+      "Rich text": [
+        "Texto enriquecido"
+      ],
       "Right to Left": [
         "Derecha a Izquierda"
       ],
@@ -4643,7 +4658,7 @@
         "Guardado ${ dateString }"
       ],
       "Saved at ${ dateString }": [
-        "Guardado el ${ dateString }"
+        "Guardado a las ${ dateString }"
       ],
       "Saved on ${ dateString }": [
         "Guardado el ${ dateString }"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Mensajes ilimitados"
+      ],
+      "Unlock message": [
+        ""
       ],
       "Unsupported file": [
         "Fichero no soportado"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "No se puede enviar a la dirección del organizador: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "Descubre todos los servicios de Proton"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Para proteger su privacidad, Proton ha bloqueado los rastreadores de correo electrónico en este mensaje"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Ahora puedes programar tus mensajes para que sean enviados más tarde"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Importar contactos"
       ],
-      "Import groups": [
-        "Importar grupos"
-      ],
       "Insert contacts": [
         "Insertar contactos"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Más selecciones"
+      ],
+      "Move all messages to Trash": [
+        ""
       ],
       "Move to": [
         "Mover a"

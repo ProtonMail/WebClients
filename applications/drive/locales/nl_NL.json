@@ -193,6 +193,12 @@
       "Download": [
         "Downloaden"
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         "Toch downloaden"
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "schakel desktopmeldingen in"
       ],
-      "Enable drive search": [
-        "Drive doorzoeken inschakelen"
-      ],
       "Expand": [
         "Uitklappen"
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Link krijgen"
+      ],
+      "Get Proton Drive": [
+        ""
       ],
       "Get started": [
         "Aan de slag"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
-      "refresh the page": [
-        "vernieuw de pagina"
-      ],
       "Refresh the page": [
         "Pagina vernieuwen"
+      ],
+      "refresh the page": [
+        "vernieuw de pagina"
       ],
       "Remove": [
         "Verwijderen"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Upload hervatten"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "Opslaan"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         "Herstelzin instellen"
       ],
-      "Share": [
-        "Delen"
-      ],
       "Share file": [
         "Deel Bestand"
       ],
       "Share item": [
         "Deel item"
-      ],
-      "Share options": [
-        "Deelopties"
       ],
       "Share via link": [
         "Deel via link"
@@ -1922,9 +1925,6 @@
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
       ],
-      "Preferences could not be saved": [
-        "Voorkeuren konden niet worden opgeslagen"
-      ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Controleer uw spammap en of ${ strong } het correcte e-mailadres is voordat u een nieuwe verificatiecode aanvraagt."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "Geannuleerd"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "Link naar map maken"
       ],
-      "Creating share": [
-        "Maak share"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "CSV bestanden van Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora en enkele andere apps, alsmede vCard 3.1 en 4.0 formaten (UTF-8 encoding) worden ondersteund."
       ],
@@ -2518,8 +2518,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Deze map werd veilig geüpload door ${ emailAddress }."
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Download van ${ downloadFileName } zal afgebroken worden"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        ""
       ],
       "Downloaded": [
         "Gedownload"
@@ -2527,11 +2542,8 @@
       "Downloading": [
         "Downloaden"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Item ${ esProgress } van ${ totalProgressToShow } aan het downloaden"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Sleep een bestand hierheen of kies om te uploaden."
+      "Drag and drop items here or browse for files to upload.": [
+        ""
       ],
       "Drop the file here to upload": [
         "Sleep het bestand om te uploaden"
@@ -2539,8 +2551,11 @@
       "Duplicate key updated": [
         "Dubbele sleutel bijgewerkt"
       ],
-      "Enable drive search": [
-        "Drive doorzoeken inschakelen"
+      "Enabling drive search": [
+        "Drive doorzoeken wordt ingeschakeld"
+      ],
+      "Encrypted": [
+        ""
       ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Het importeren van uw gegevens van ${ importedEmailAddress } naar ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Items ${ esProgress } van ${ totalProgressToShow } aan het indexeren"
+      ],
       "Indexing search results…": [
         "Zoekresultaten indexeren…"
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
       ],
-      "Link expires: ": [
-        "Link verloopt: "
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
+        ""
       ],
       "Loading": [
         "Laden"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "${ appName } aan het laden"
       ],
+      "Loading link": [
+        ""
+      ],
+      "Loading links": [
+        ""
+      ],
       "Loading preview": [
         "Voorbeeld laden"
-      ],
-      "Loading share": [
-        "Share laden"
       ],
       "Merged": [
         "Samengevoegd"
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         "Geen geldige URL"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Opmerking: Gegevens kunnen nog steeds lokaal beschikbaar zijn op apparaten waarop u ${ appName } hebt geïnstalleerd."
       ],
@@ -2749,7 +2776,7 @@
         "Eén van uw versleutelde drives is vergrendeld. Dit is waarschijnlijk het gevolg van een recente wachtwoordwijziging."
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren je deze sleutel niet meer de vertrouwen."
+        "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
       "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters is allowed": [
         ""
@@ -2772,11 +2799,14 @@
       "Permanently delete all files in your drive": [
         "Verwijder permanent alle bestanden op uw schijf"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Houd er rekening mee dat de adressen die aan deze groep zijn toegewezen NIET zullen worden verwijderd."
@@ -2788,8 +2818,8 @@
         "Selecteer de mappen die u wilt importeren:"
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groep.",
-        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groepen."
+        "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
+        "Selecteer welke e-mailadressen u wilt toevoegen aan ${ groupCount } groepen."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
@@ -2815,6 +2845,9 @@
       "Priority support": [
         "Prioriteitsondersteuning"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Privézoeken ingeschakeld. U kunt dit dialoog nu afsluiten, en naar bestanden en folders zoeken."
+      ],
       "Queued": [
         "In wachtrij"
       ],
@@ -2832,6 +2865,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
+      ],
+      "Search Enabled": [
+        "Zoeken Ingeschakeld"
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecteer een geüpload bestand of map en maak er een link naartoe."
@@ -2857,11 +2899,20 @@
       "Share files with links": [
         "Bestanden delen met links"
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         "Handtekeningcontrole zal genegeerd worden"
       ],
       "Signature issue": [
         "Handtekening probleem"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Sommige bestanden zijn niet meer toegankelijk. Herstel de toegang tot uw bestanden. ${ StartRecoveryButton }"
@@ -2878,6 +2929,12 @@
       "support team": [
         "ondersteuningsteam"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Het account heeft mogelijk een nieuwe sleutel of het volgende werd mogelijk onrechtmatig bewerkt: ${ items }. Open alleen als u het vertrouwt."
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "Er zijn nog geen bestanden"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Dit account is opgeschort vanwege een potentiële schending van het beleid."
@@ -2911,8 +2971,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Deze link kan een homografie-aanval zijn. Controleer eerst of de link juist is, of open hem niet."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Deze link is gemaakt in\neen vorige versie en kan niet worden gewijzigd. Verwijder deze koppeling en maak een\nnieuwe om de instellingen te wijzigen."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Deze link wordt permanent uitgeschakeld. Niemand met deze link heeft toegang tot uw bestand. Om het bestand opnieuw in te stellen heeft u een nieuwe link nodig."
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Dit zal de bestaande map overschrijven"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Om echt privé zoeken in te schakelen moet ${ DRIVE_APP_NAME } uw bestanden lokaal indexeren. U kan ${ DRIVE_APP_NAME } normaal blijven gebruiken - we laten u weten wanneer het indexeren klaar is."
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Prullenbak"
-      ],
-      "Try different keywords": [
-        "Probeer verschillende trefwoorden"
       ],
       "Unlimited folders, labels, and filters": [
         "Ongelimiteerde mappen, labels en filters"
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Uw gegevens zijn klaar om te importeren van ${ importedEmailAddressStrong } naar uw Proton account."
       ],
-      "Your download has been canceled.": [
-        "Uw download is geannuleerd."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Uw e-mailadres wordt alleen gebruikt voor deze eenmalige verificatie."
-      ],
-      "Your file failed to download.": [
-        "Uw bestand kon niet worden gedownload."
-      ],
-      "Your file has finished downloading.": [
-        "Uw bestand is klaar met downloaden."
-      ],
-      "Your file is being downloaded.": [
-        "Uw bestand wordt gedownload."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Uw bestanden zijn niet meer toegankelijk vanwege een wachtwoord-reset. Upload de oude versleutelingssleutel om weer toegang te krijgen. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Uw bestanden worden versleuteld en vervolgens opgeslagen."
-      ],
-      "Your folder failed to download.": [
-        "Uw map kon niet worden gedownload."
-      ],
-      "Your folder has finished downloading.": [
-        "Uw map is klaar met downloaden."
-      ],
-      "Your folder is being downloaded.": [
-        "Uw map wordt gedownload."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Uw Proton-account is bevroren. Betaal onbetaalde facturen om uw account weer te gebruiken."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Uw veilige, deelbare link voor ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Bèta-toegang inschakelen"
       ],
-      "Enabling drive search": [
-        "Drive doorzoeken wordt ingeschakeld"
-      ],
       "Encrypt emails": [
         "E-mails versleutelen"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         "Van: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Krijg uw eigen ${ appName }"
       ],
       "Good": [
         "Goed"
@@ -3366,6 +3390,9 @@
       ],
       "Last month only": [
         "Alleen vorige maand"
+      ],
+      "Location": [
+        ""
       ],
       "Mailbox password": [
         "Mailboxwachtwoord"
@@ -3952,7 +3979,7 @@
         "${ emailAddress } heeft deze sleutel gemarkeerd als verouderd. Deze sleutel kan alleen nog gebruikt worden voor de verificatie van handtekeningen."
       ],
       "We recommend that you \"untrust\" this key.": [
-        "We adviseren je deze sleutel niet meer te vertrouwen."
+        "We adviseren u deze sleutel niet meer te vertrouwen."
       ]
     },
     "PGP key warning": {
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         "Versleuteld zoeken is hier"
       ],
@@ -4088,6 +4118,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "U kan nu eenvoudig Drive-bestanden zoeken terwijl u uw gegevens veilig houdt."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ]
     },
     "Storage": {
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "Aantal weergaven"
-      ],
       "Actions": [
         "Acties"
       ],
       "Address": [
         "Adres"
       ],
-      "Created": [
-        "Aangemaakt"
-      ],
       "CSV field": [
         "CSV-veld"
-      ],
-      "Deleted": [
-        "Verwijderd"
-      ],
-      "Expires": [
-        "Verloopt"
       ],
       "Import": [
         "Importeren"
       ],
-      "Location": [
-        "Locatie"
-      ],
-      "Modified": [
-        "Gewijzigd"
-      ],
       "Name": [
         "Naam"
-      ],
-      "Size": [
-        "Grootte"
-      ],
-      "Uploaded": [
-        "Geüpload"
       ],
       "Values": [
         "Waarden"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } lid",
         "${ emailsCount } leden"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        ""
+      ],
       "Account suspended": [
         "Account opgeschort"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "Toevoegen aan ${ groupName }"
       ],
-      "Additional settings": [
-        "Aanvullende instellingen"
-      ],
       "Addresses": [
         "Adressen"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Vorige"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "Bèta toegang"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Date"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "Verwijder ${ count } contact",
         "${ count } contacten verwijderen"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
-      "Download canceled": [
-        "Download geannuleerd"
-      ],
-      "Download completed": [
-        "Download compleet"
-      ],
-      "Download failed": [
-        "Downloaden mislukt"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         "Ongeverifieerd bestand downloaden?"
       ],
       "Download unverified folder?": [
         "Ongeverifieerde map downloaden?"
-      ],
-      "Downloading": [
-        "Downloaden"
       ],
       "Drive": [
         "Drive"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Prullenbak leegmaken"
-      ],
-      "Enable drive search": [
-        "Drive doorzoeken inschakelen"
-      ],
-      "Enter password to download": [
-        "Voer wachtwoord in om te downloaden"
       ],
       "Enter your password": [
         "Voer uw wachtwoord in"
@@ -4466,6 +4475,9 @@
         "${ searchView.numberOfResults } zoekresultaat",
         "${ searchView.numberOfResults } zoekresultaten"
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
-      "Import groups": [
-        "Importeer groepen"
-      ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         "Details items"
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Beveiligde link beheren"
-      ],
-      "Manage share": [
-        "Delen beheren"
       ],
       "Merge contacts": [
         "Contacten samenvoegen"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Naam"
-      ],
-      "No results found": [
-        "Geen resultaten gevonden"
       ],
       "Number of files": [
         "Aantal bestanden"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Telefoonnummers"
+      ],
+      "Privacy settings": [
+        ""
       ],
       "Re-sign all contacts": [
         "Alle contacten opnieuw ondertekenen"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         "Overdrachten stoppen?"
       ],
-      "The file or folder failed to be downloaded": [
-        "Het bestand of de map kon niet worden gedownload"
-      ],
-      "The internet connection was interrupted": [
-        "De internetverbinding werd onderbroken"
-      ],
-      "The link does not exist": [
-        "De link bestaat niet"
-      ],
       "The link either does not exist or has expired": [
         "De link bestaat niet of is verlopen"
       ],
@@ -4651,6 +4651,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "De map heeft een ontbrekende of ongeldige handtekening. Ga naar Menu (⋮) → Details voor info."
+      ],
+      "This link is password protected": [
+        ""
       ],
       "Total size": [
         "Totale grootte"
@@ -4694,11 +4697,8 @@
       "You have no folders yet": [
         "U hebt nog geen mappen"
       ],
-      "Your file is ready to be downloaded": [
-        "Uw bestand is klaar om te worden gedownload"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Uw map is klaar om te worden gedownload"
+      "You've got files": [
+        ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Uw gratis proefversie eindigt weldra, op ${ formattedEndDate }"

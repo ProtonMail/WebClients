@@ -2190,9 +2190,6 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
-      "Preferences could not be saved": [
-        "No s'han pogut desar les preferències"
-      ],
       "Primary address key is not decrypted": [
         "La clau de l'adreça primària no està desxifrada"
       ],
@@ -3115,11 +3112,11 @@
       "Other options": [
         "Altres opcions"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Tingueu en compte que les adreces assignades a aquest grup NO se suprimiran."
@@ -3995,7 +3992,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Presentem el nou aspecte de Proton. ${ br } Molts serveis, una missió. Benvingut/da a l'Internet on tenim la privacitat per defecte."
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4434,6 +4431,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ha super la fase beta! Dóna als teus arxius la mateixa seguretat que als teus correus electrònics."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Aconseguiu fins a 18 mesos de ${ planName } gratuïtament"
       ],
@@ -4442,6 +4442,9 @@
       ],
       "No more missed appointments": [
         "No hi ha més cites perdudes"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prova ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         ""
@@ -4902,9 +4905,6 @@
       ],
       "Import failed": [
         "Error en la importació"
-      ],
-      "Import groups": [
-        "Importar grups"
       ],
       "Invalid verification code": [
         "Codi de verificació no vàlid"

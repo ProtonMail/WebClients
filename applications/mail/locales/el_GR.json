@@ -215,9 +215,6 @@
       "Customize": [
         "Προσαρμογή"
       ],
-      "Decrypt": [
-        "Αποκρυπτογράφηση"
-      ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Εξωτερική κρυπτογράφηση"
+      ],
+      "Fewer search options": [
+        "Λιγότερες επιλογές αναζήτησης"
       ],
       "Filter on...": [
         "Φιλτράρισμα σε..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
-      "Less search options": [
-        "Λιγότερες επιλογές αναζήτησης"
-      ],
       "Load": [
         "Φόρτωση"
       ],
@@ -522,10 +519,10 @@
         "Συγχώνευση Επαφών"
       ],
       "Messages from this sender": [
-        ""
+        "Μηνύματα από αυτόν τον αποστολέα"
       ],
       "Messages to this recipient": [
-        ""
+        "Μηνύματα προς αυτόν τον παραλήπτη"
       ],
       "Minimize composer": [
         "Ελαχιστοποίηση συντάκτη"
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Περισσότερες επιλογές αναζήτησης"
+      ],
+      "Move": [
+        "Μετακίνηση"
+      ],
+      "Move all conversations from this folder": [
+        "Μετακίνηση όλων των συνομιλιών από αυτόν τον φάκελο"
+      ],
+      "Move all conversations from this label": [
+        "Μετακίνηση όλων των συνομιλιών από αυτήν την ετικέτα"
+      ],
+      "Move all messages from this folder": [
+        "Μετακίνηση όλων των μηνυμάτων από αυτόν τον φάκελο"
+      ],
+      "Move all messages from this label": [
+        "Μετακίνηση όλων των μηνυμάτων από αυτήν την ετικέτα"
       ],
       "move emails to": [
         "μεταφέρετε τα email στο"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Επανασυνδεθείτε"
+      ],
+      "Read message": [
+        "Ανάγνωση μηνύματος"
       ],
       "Read receipt sent": [
         "Έγινε αποστολή αποδεικτικού ανάγνωσης"
@@ -803,6 +818,9 @@
       "Show details": [
         "Εμφάνιση λεπτομερειών"
       ],
+      "Show fewer search options": [
+        "Εμφάνιση λιγότερων επιλογών αναζήτησης"
+      ],
       "Show folders": [
         "Εμφάνιση φακέλων"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
-      ],
-      "Show less search options": [
-        "Εμφάνιση λιγότερων επιλογών αναζήτησης"
       ],
       "Show messages": [
         "Εμφάνιση μηνυμάτων"
@@ -851,9 +866,6 @@
       "Submit": [
         "Υποβολή"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Θέμα"
       ],
@@ -863,6 +875,9 @@
       "This message contains remote content.": [
         "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
       ],
+      "Trash all": [
+        "Διαγραφή όλων"
+      ],
       "Trust": [
         "Αξιόπιστο"
       ],
@@ -871,7 +886,7 @@
         "Εμπιστοσύνη στα κλειδιά"
       ],
       "Trust public key": [
-        ""
+        "Εμπιστοσύνη στο δημόσιο κλειδί"
       ],
       "Try again": [
         "Δοκιμάστε ξανά"
@@ -2950,7 +2965,7 @@
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
       ],
       "Authentication error.": [
-        "Σφάλμα ελέγχου ταυτότητας."
+        "Σφάλμα ταυτοποίησης."
       ],
       "Calendar limit reached": [
         "Εξάντληση ορίου ημερολογίων"
@@ -3037,7 +3052,7 @@
         "Το όνομα φακέλου δεν γίνεται να είναι κενό."
       ],
       "Image upload failed": [
-        "Η μεταφόρτωση της εικόνας απέτυχε"
+        "Αποτυχία ανεβάσματος εικόνας"
       ],
       "Incorrect login credentials. Please try again.": [
         "Λανθασμένα διαπιστευτήρια εισόδου. Παρακαλούμε δοκιμάστε ξανά."
@@ -3123,9 +3138,6 @@
       ],
       "Please set a password": [
         "Παρακαλούμε ορίστε έναν κωδικό πρόσβασης"
-      ],
-      "Preferences could not be saved": [
-        "Δεν ήταν δυνατή η αποθήκευση των προτιμήσεων"
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -3561,7 +3573,7 @@
         "Εισερχόμενα"
       ],
       "Inbox - Default": [
-        ""
+        "Εισερχόμενα - Προεπιλογή"
       ],
       "Select a folder": [
         "Επιλέξτε ένα φάκελο"
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Είστε βέβαιοι ότι θέλετε να απορρίψετε τις αλλαγές σας;"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Θέλετε σίγουρα να μετακινήσετε στα Διαγραμμένα όλα τα μηνύματα αυτής της τοποθεσίας;"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } συνομιλία;",
         "Θέλετε σίγουρα να εξαλείψετε οριστικά ${ count } συνομιλίες;"
@@ -4189,9 +4204,6 @@
         "Ημέρα",
         "Ημέρες"
       ],
-      "Decrypt message": [
-        "Αποκρυπτογράφηση μηνύματος"
-      ],
       "Default email application": [
         "Προεπιλεγμένη εφαρμογή αλληλογραφίας"
       ],
@@ -4227,10 +4239,10 @@
         "Το πρόχειρο αποθηκεύτηκε."
       ],
       "Drop a file here to upload": [
-        "Αφήστε ένα αρχείο εδώ για μεταφόρτωση"
+        "Σύρτε ένα αρχείο εδώ για ανέβασμα"
       ],
       "Drop the file here to upload": [
-        "Αφήστε το αρχείο εδώ για μεταφόρτωση"
+        "Σύρτε το αρχείο εδώ για ανέβασμα"
       ],
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Μετακίνηση μεγάλου αριθμού μηνυμάτων. Ίσως πάρει λίγη ώρα."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Ονομάστε το νέο σας φάκελο και επιλέξτε τον γονικό φάκελο στον οποίο θέλετε να τον τοποθετήσετε. Εάν δεν επιλέξετε γονικό φάκελο, αυτός ο νέος φάκελος θα δημιουργηθεί ως φάκελος ανώτατου επιπέδου."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Κανένα από τα ανεβασμένα κλειδιά δεν είναι έγκυρο για κρυπτογράφηση. Η κρυπτογράφηση έχει απενεργοποιηθεί αυτόματα."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "ανά μήνα."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "Το PGP/Inline είναι συμβατό μόνο με τη μορφή Σκέτου Κειμένου. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "Το PGP/MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία συντάκτη. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Αριθμός τηλεφώνου"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Αίτημα αποδεικτικού ανάγνωσης"
+      ],
+      "Rich text": [
+        "Ενισχυμένο κείμενο"
       ],
       "Right to Left": [
         "Δεξιά προς τα αριστερά"
@@ -4794,7 +4809,7 @@
         "Αυτή η συνομιλία περιέχει διαγραμμένα μηνύματα."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου απέτυχε στις απαιτήσεις του ελέγχου ταυτότητας domain. Μπορεί να έχει πλαστογραφηθεί ή να έχει προωθηθεί λάθος!"
+        "Αυτό το μήνυμα απέτυχε στις απαιτήσεις ταυτοποίησης του τομέα του. Ίσως έχει πλαστογραφηθεί ή προωθηθεί ακατάλληλα!"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Αυτή η πρόσκληση είναι αποθηκευμένη σε ένα απενεργοποιημένο ημερολόγιο."
@@ -4892,6 +4907,9 @@
       "Unlimited messages": [
         "Aπεριόριστα μηνύματα"
       ],
+      "Unlock message": [
+        "Ξεκλείδωμα μηνύματος"
+      ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
       ],
@@ -4932,7 +4950,7 @@
         "Αναβαθμίστε σήμερα για να μη χάσετε τα παρακάτω προνόμια ${ planName }."
       ],
       "Upload picture": [
-        "Μεταφόρτωση Εικόνας"
+        "Ανέβασμα εικόνας"
       ],
       "URL link": [
         "Σύνδεσμος URL"
@@ -4986,7 +5004,7 @@
         "Θα θέλατε να λάβετε νέο κωδικό επαλήθευσης;"
       ],
       "Yearly": [
-        "Ετήσια"
+        "Ετησίως"
       ],
       "You are about to open another browser tab and visit:": [
         "Πρόκειται να ανοίξετε μια άλλη καρτέλα προγράμματος περιήγησης και να επισκεφτείτε:"
@@ -5736,7 +5754,7 @@
         "Προς: ${ emailAddress }"
       ],
       "Two-factor authentication code": [
-        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
+        "Κωδικός ταυτοποίησης δύο παραγόντων"
       ],
       "Undisclosed Recipients": [
         "Μη κοινοποιημένοι παραλήπτες"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Αδυναμία αποστολής στη διεύθυνση του διοργανωτή: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Αποτυχία επανακρυπτογράφησης της πρόσκλησης. Παρακαλούμε δοκιμάστε ξανά"
       ]
     },
     "Search - no results": {
@@ -6632,7 +6653,7 @@
     },
     "Select files": {
       "Upload": [
-        "Μεταφόρτωση"
+        "Ανέβασμα"
       ]
     },
     "Send email with changed preferences": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "Ανακαλύψτε όλες τις υπηρεσίες Proton"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Για την προστασία του απορρήτου σας, το Proton απέκλεισε τους ιχνηλάτες εντός αυτού του μηνύματος"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Δοκιμή ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Τώρα μπορείτε να χρονοδιαγραφήσετε την αποστολή των μηνυμάτων σας αργότερα"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Εισαγωγή Επαφών"
       ],
-      "Import groups": [
-        "Εισαγωγή ομάδων"
-      ],
       "Insert contacts": [
         "Εισαγωγή επαφών"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Περισσότερες επιλογές"
+      ],
+      "Move all messages to Trash": [
+        "Μετακίνηση όλων των μηνυμάτων στα Διαγραμμένα"
       ],
       "Move to": [
         "Μετακίνηση σε"
@@ -7978,13 +8005,13 @@
         "Κάθε ${ interval } χρόνια, ${ untilString }"
       ],
       "Yearly": [
-        "Ετήσια"
+        "Ετησίως"
       ],
       "Yearly, ${ timesString }": [
-        "Ετήσια, ${ timesString }"
+        "Ετησίως, ${ timesString }"
       ],
       "Yearly, ${ untilString }": [
-        "Ετήσια, ${ untilString }"
+        "Ετησίως, ${ untilString }"
       ]
     }
   }

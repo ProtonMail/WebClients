@@ -2208,9 +2208,6 @@
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
       ],
-      "Preferences could not be saved": [
-        "Preferințele nu au putut fi salvate."
-      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -3165,11 +3162,11 @@
       "Other options": [
         "Alte opțiuni"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Rețineți că adresele atribuite acestui grup NU vor fi șterse."
@@ -4052,7 +4049,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Vă prezentăm aspectul împrospătat al Proton.${ br }Multe servicii, o singură misiune. Bine ați venit la un internet în care confidențialitatea este implicită."
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4517,6 +4514,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obțineți gratuit până la 18 luni de ${ planName }"
       ],
@@ -4525,6 +4525,9 @@
       ],
       "No more missed appointments": [
         "Gata cu programările ratate"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Încercați ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "În cazul notificărilor prin e-mail, puteți decide despre care evenimente să primiți notificare și când."
@@ -4994,9 +4997,6 @@
       ],
       "Import failed": [
         "Importare eșuată"
-      ],
-      "Import groups": [
-        "Importare grupuri"
       ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
