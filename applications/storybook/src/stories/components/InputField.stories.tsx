@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import {
+    Button,
     Checkbox,
     ColorPicker,
     Icon,
@@ -7,6 +8,7 @@ import {
     Option,
     PasswordInputTwo,
     PhoneInput,
+    RadioGroup,
     SelectTwo,
     TextAreaTwo,
     Toggle,
@@ -58,6 +60,145 @@ Basic.argTypes = {
             disable: true,
         },
     },
+};
+
+const toggles = ['dense', 'bigger', 'disabled'] as const;
+
+const adornmentIds = ['none', 'text', 'select', 'icon', 'icons', 'icon button'] as const;
+
+export const Sandbox = () => {
+    const [label, setLabel] = useState<string>('Label');
+    const [hint, setHint] = useState<string>('Hint');
+    const [assistiveText, setAssistiveText] = useState<string>('');
+    const [error, setError] = useState<string>('');
+    const [warning, setWarning] = useState<string>('');
+    const [selectedSuffixId, setSelectedSuffixId] = useState<string>('none');
+    const [selectedPrefixId, setSelectedPrefixId] = useState<string>('none');
+    const [selectedToggles, setSelectedToggles] = useState(toggles.map(() => false));
+
+    const getAdornment = (id: string) => {
+        if (id === 'text') {
+            return 'text adornment';
+        }
+
+        if (id === 'icon') {
+            return <Icon name="brand-proton" />;
+        }
+
+        if (id === 'icons') {
+            return (
+                <>
+                    <Icon name="brand-proton-mail" />
+                    <Icon name="brand-proton-calendar" />
+                </>
+            );
+        }
+
+        if (id === 'icon button') {
+            return (
+                <Button
+                    onClick={() => {
+                        alert('Clicked!');
+                    }}
+                    shape="ghost"
+                    size="small"
+                    icon
+                >
+                    <Icon name="brand-proton" />
+                </Button>
+            );
+        }
+
+        if (id === 'select') {
+            return (
+                <SelectTwo unstyled value="Item 1">
+                    <Option key="1" value="Item 1" title="Item 1">
+                        Item 1
+                    </Option>
+                    <Option key="2" value="Item 2" title="Item 2">
+                        Item 2
+                    </Option>
+                </SelectTwo>
+            );
+        }
+    };
+
+    return (
+        <>
+            <div className="flex flex-item-fluid flex-align-items-center flex-justify-center border p2">
+                <InputFieldTwo
+                    label={label}
+                    hint={hint}
+                    assistiveText={assistiveText}
+                    error={error}
+                    warning={warning}
+                    prefix={getAdornment(selectedPrefixId)}
+                    suffix={getAdornment(selectedSuffixId)}
+                    {...selectedToggles.reduce<{ [key: string]: boolean }>((acc, value, i) => {
+                        acc[toggles[i]] = value;
+                        return acc;
+                    }, {})}
+                />
+            </div>
+            <div className="flex flex-align-items-stretch py2">
+                <div className="mr2">
+                    <InputFieldTwo label="Label" value={label} onValue={setLabel} />
+                </div>
+                <div className="mr2">
+                    <InputFieldTwo label="Hint" value={hint} onValue={setHint} />
+                </div>
+                <div className="mr2">
+                    <InputFieldTwo label="AssistiveText" value={assistiveText} onValue={setAssistiveText} />
+                </div>
+                <div className="mr2">
+                    <InputFieldTwo label="Error" value={error} onValue={setError} />
+                </div>
+                <div className="mr2">
+                    <InputFieldTwo label="Warning" value={warning} onValue={setWarning} />
+                </div>
+
+                <div className="mr2">
+                    <strong className="block mb1">Prefix</strong>
+                    <RadioGroup
+                        name="selected-prefix"
+                        value={selectedPrefixId}
+                        onChange={setSelectedPrefixId}
+                        options={adornmentIds.map((suffix) => ({ value: suffix, label: suffix }))}
+                    />
+                </div>
+                <div className="mr2">
+                    <strong className="block mb1">Suffix</strong>
+                    <RadioGroup
+                        name="selected-suffix"
+                        value={selectedSuffixId}
+                        onChange={setSelectedSuffixId}
+                        options={adornmentIds.map((suffix) => ({ value: suffix, label: suffix }))}
+                    />
+                </div>
+                <div className="mr2">
+                    <strong className="block mb1">Toggles</strong>
+                    {toggles.map((prop, i) => {
+                        return (
+                            <div className="mb0-5">
+                                <Checkbox
+                                    checked={selectedToggles[i]}
+                                    onChange={({ target: { checked } }) => {
+                                        setSelectedToggles(
+                                            selectedToggles.map((oldValue, otherIndex) =>
+                                                otherIndex === i ? checked : oldValue
+                                            )
+                                        );
+                                    }}
+                                >
+                                    {prop}
+                                </Checkbox>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        </>
+    );
 };
 
 export const Intermediate = () => {
