@@ -16,6 +16,11 @@ module.exports = (config) => {
             mode: 'development',
             resolve: {
                 extensions: ['.js', '.ts', '.tsx'],
+                fallback: {
+                    crypto: false,
+                    buffer: false,
+                    stream: false,
+                },
             },
             module: {
                 rules: [
@@ -32,7 +37,7 @@ module.exports = (config) => {
                                 },
                             },
                         ],
-                        exclude: /node_modules/,
+                        exclude: /node_modules\/(?!.*pmcrypto-v7)/,
                     },
                 ],
             },
