@@ -11,6 +11,7 @@ import {
     useModalState,
 } from '@proton/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { isSent } from '@proton/shared/lib/mail/messages';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { useMessageTrackers } from '../../../hooks/message/useMessageTrackers';
 import SpyTrackerIcon from './SpyTrackerIcon';
@@ -26,6 +27,8 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
 
     const anchorRef = useRef(null);
 
+    const sent = isSent(message.data);
+
     const { hasProtection, hasShowImage, numberOfTrackers, needsMoreProtection, title } = useMessageTrackers({
         message,
     });
@@ -39,11 +42,11 @@ const ItemSpyTrackerIcon = ({ message, className }: Props) => {
     const shouldShowSpotlight = useSpotlightShow(showSpotlight);
 
     /*
-     * Don't display the tracker icon when :
+     * Don't display the tracker icon on sent mails or when :
      * Loading remote images is automatic and email protection is OFF : We consider that the user don't want any protection at all.
      * But the user might have set recently the protection to OFF, so if we find trackers in previous emails, we still display the icon.
      */
-    if (!hasProtection && hasShowImage && numberOfTrackers === 0) {
+    if (sent || (!hasProtection && hasShowImage && numberOfTrackers === 0)) {
         return null;
     }
 
