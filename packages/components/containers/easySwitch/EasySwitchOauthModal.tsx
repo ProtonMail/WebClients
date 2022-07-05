@@ -12,6 +12,7 @@ import {
     getMailImportData,
     startImportTask,
 } from '@proton/shared/lib/api/easySwitch';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getVisualCalendars } from '@proton/shared/lib/calendar/calendar';
 import { MAX_LENGTHS_API } from '@proton/shared/lib/calendar/constants';
 import { setupCalendarKey } from '@proton/shared/lib/calendar/keys/setupCalendarKeys';
@@ -32,9 +33,11 @@ import {
     IAOauthModalModel,
     IAOauthModalModelImportData,
     IAOauthModalModelStep,
+    IMPORT_ERROR,
     ImportToken,
     ImportType,
     ImportedCalendar,
+    ImportedMailFolder,
     LaunchImportPayload,
     MailImportMapping,
     MailImporterPayload,
@@ -71,6 +74,7 @@ import {
     IA_PATHNAME_REGEX,
     IMAPS,
 } from './constants';
+import { getCheckedProducts, hasDataToImport } from './helpers';
 import { dateToTimestamp } from './mail/helpers';
 import ImportStartedStep from './steps/IAImportStartedStep';
 import IALoadingStep from './steps/IALoadingStep';
@@ -96,17 +100,6 @@ const { AUTHENTICATION, SELECT_IMPORT_TYPE, SUCCESS, OAUTH_INSTRUCTIONS } = IAOa
 
 const DEFAULT_IMAP_PORT = 993;
 
-// This function returns an array of ImportType give a checked product map
-// e.g. { [MAIL]: true, [CALENDAR]: false } => [CALENDAR]
-const getCheckedProducts = (checkedTypes: CheckedProductMap): ImportType[] =>
-    (Object.keys(checkedTypes) as ImportType[]).reduce<ImportType[]>((acc, k) => {
-        if (checkedTypes[k]) {
-            return [...acc, k];
-        }
-
-        return acc;
-    }, []);
-
 const EasySwitchOauthModal = ({
     addresses = [],
     onClose = noop,
@@ -122,8 +115,10 @@ const EasySwitchOauthModal = ({
     const isCurrentLocationImportPage = IA_PATHNAME_REGEX.test(location.pathname);
     const settingsLink = useSettingsLink();
     const api = useApi();
+    const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
     const { call } = useEventManager();
     const errorHandler = useErrorHandler();
+    const [importError, setImportError] = useState<[ImportType, IMPORT_ERROR][]>([]);
 
     const [labels = [], loadingLabels] = useLabels();
     const [folders = [], loadingFolders] = useFolders();
@@ -261,6 +256,8 @@ const EasySwitchOauthModal = ({
         }
 
         if (modalModel.step === OAUTH_INSTRUCTIONS) {
+            setImportError([]);
+
             const scopes = [
                 ...G_OAUTH_SCOPE_DEFAULT,
                 checkedTypes[MAIL] &&
@@ -278,6 +275,8 @@ const EasySwitchOauthModal = ({
                 clientID: config['importer.google.client_id'],
                 callback: async (oauthProps: OAuthProps) => {
                     setIsLoadingOAuth(true);
+                    const checkedProducts = getCheckedProducts(checkedTypes);
+
                     try {
                         const { Code, Provider, RedirectUri } = oauthProps;
 
@@ -287,7 +286,7 @@ const EasySwitchOauthModal = ({
                                 Code,
                                 RedirectUri,
                                 Source: source,
-                                Products: getCheckedProducts(checkedTypes),
+                                Products: checkedProducts,
                             })
                         );
 
@@ -317,38 +316,87 @@ const EasySwitchOauthModal = ({
 
                         const { ImporterID } = await api(createImport(createImportPayload));
 
+                        const importErrorsClone = [...importError];
                         const importsRawData = await Promise.all(
-                            tokenScope.map(async (importType) => {
+                            checkedProducts.map(async (importType) => {
                                 if (importType === MAIL) {
-                                    const { Folders } = await api(getMailImportData(ImporterID));
-
-                                    return {
-                                        importType,
-                                        Folders,
-                                    };
+                                    try {
+                                        const { Folders } = await silentApi<{
+                                            Code: number;
+                                            Folders: ImportedMailFolder[];
+                                        }>(getMailImportData(ImporterID));
+                                        return {
+                                            importType,
+                                            Folders,
+                                        };
+                                    } catch (e) {
+                                        const { code, status } = getApiError(e);
+                                        if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                                            importErrorsClone.push([MAIL, IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST]);
+                                            return {
+                                                importType,
+                                                Folders: [],
+                                                error: c('Error')
+                                                    .t`No emails found to import - the account does not have an inbox`,
+                                            };
+                                        } else {
+                                            throw e;
+                                        }
+                                    }
                                 }
 
                                 if (importType === CALENDAR) {
-                                    const { Calendars } = await api<{ Code: number; Calendars: ImportedCalendar[] }>(
-                                        getCalendarImportData(ImporterID)
-                                    );
-
-                                    return {
-                                        importType,
-                                        Calendars,
-                                    };
+                                    try {
+                                        const { Calendars } = await silentApi<{
+                                            Code: number;
+                                            Calendars: ImportedCalendar[];
+                                        }>(getCalendarImportData(ImporterID));
+                                        return {
+                                            importType,
+                                            Calendars,
+                                        };
+                                    } catch (e) {
+                                        const { code, status } = getApiError(e);
+                                        if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                                            importErrorsClone.push([CALENDAR, IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST]);
+                                            return {
+                                                importType,
+                                                Folders: [],
+                                                error: c('Error').t`No calendars found to import`,
+                                            };
+                                        } else {
+                                            throw e;
+                                        }
+                                    }
                                 }
 
                                 if (importType === CONTACTS) {
-                                    const { Contacts } = await api(getContactsImportData(ImporterID));
-
-                                    return {
-                                        importType,
-                                        Contacts,
-                                    };
+                                    try {
+                                        const { Contacts } = await silentApi(getContactsImportData(ImporterID));
+                                        return {
+                                            importType,
+                                            Contacts,
+                                        };
+                                    } catch (e) {
+                                        const { code, status } = getApiError(e);
+                                        if (status === 422 && code === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                                            importErrorsClone.push([CALENDAR, IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST]);
+                                            return {
+                                                importType,
+                                                Folders: [],
+                                                error: c('Error').t`No contacts found to import`,
+                                            };
+                                        } else {
+                                            throw e;
+                                        }
+                                    }
                                 }
                             })
                         );
+
+                        if (importErrorsClone.length) {
+                            setImportError(importErrorsClone);
+                        }
 
                         const data = importsRawData.filter(isTruthy).reduce<IAOauthModalModelImportData>(
                             (acc, currentImport) => {
@@ -367,6 +415,10 @@ const EasySwitchOauthModal = ({
                                     acc[importType].numContactGroups = currentImport.Contacts.NumGroups || 0;
                                 }
 
+                                if (currentImport.error) {
+                                    acc[importType].error = currentImport.error;
+                                }
+
                                 return {
                                     ...acc,
                                     [importType]: {
@@ -379,14 +431,6 @@ const EasySwitchOauthModal = ({
                                 importerID: ImporterID,
                             }
                         );
-
-                        const mailData = data[MAIL].providerFolders.length;
-                        const calendarData = data[CALENDAR].providerCalendars.length;
-                        const contactsData = data[CONTACTS].numContacts || data[CONTACTS].numContactGroups;
-
-                        if (!mailData && !calendarData && !contactsData) {
-                            throw new Error(c('Error').t`No data to import`);
-                        }
 
                         setModalModel({
                             ...modalModel,
@@ -478,6 +522,15 @@ const EasySwitchOauthModal = ({
                     }
                 );
 
+            if (importError.length) {
+                importError.forEach(([type, error]) => {
+                    if (error === IMPORT_ERROR.ACCOUNT_DOES_NOT_EXIST) {
+                        delete apiPayload[type];
+                    }
+                });
+            }
+
+            setImportError([]);
             setIsLoadingStartImportTask(true);
 
             try {
@@ -523,8 +576,16 @@ const EasySwitchOauthModal = ({
 
         if ([SELECT_IMPORT_TYPE, AUTHENTICATION].includes(modalModel.step)) {
             if (modalModel.oauthProps) {
+                const checkedProducts = getCheckedProducts(checkedTypes);
                 return (
-                    <PrimaryButton type="submit" disabled={!selectedImportTypes.length || modalModel.isPayloadInvalid}>
+                    <PrimaryButton
+                        type="submit"
+                        disabled={
+                            !selectedImportTypes.length ||
+                            modalModel.isPayloadInvalid ||
+                            !hasDataToImport(modalModel.data, checkedProducts)
+                        }
+                    >
                         {c('Action').t`Start import`}
                     </PrimaryButton>
                 );
