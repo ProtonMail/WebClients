@@ -215,9 +215,6 @@
       "Customize": [
         "Personaliseer"
       ],
-      "Decrypt": [
-        "Decoderen"
-      ],
       "Default email application": [
         "Standaard e-mailapplicatie"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Externe versleuteling"
+      ],
+      "Fewer search options": [
+        ""
       ],
       "Filter on...": [
         "Filteren op..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "Meer informatie"
       ],
-      "Less search options": [
-        "Minder zoekopties"
-      ],
       "Load": [
         "Laden"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Meer zoekopties"
+      ],
+      "Move": [
+        "Verplaatsen"
+      ],
+      "Move all conversations from this folder": [
+        "Alle gesprekken van deze map verplaatsen"
+      ],
+      "Move all conversations from this label": [
+        "Alle gesprekken van dit label verplaatsen"
+      ],
+      "Move all messages from this folder": [
+        "Alle berichten van deze map verplaatsen"
+      ],
+      "Move all messages from this label": [
+        "Alle berichten van dit label verplaatsen"
       ],
       "move emails to": [
         "e-mails verplaatsen naar"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Opnieuw ondertekenen"
+      ],
+      "Read message": [
+        "Lees bericht"
       ],
       "Read receipt sent": [
         "Ontvangstbewijs verzonden"
@@ -803,6 +818,9 @@
       "Show details": [
         "Details tonen"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         "Mappen weergeven"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Minder weergeven"
-      ],
-      "Show less search options": [
-        "Minder zoekopties weergeven"
       ],
       "Show messages": [
         "Toon berichten"
@@ -851,9 +866,6 @@
       "Submit": [
         "Versturen"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Thema"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Dit bericht bevat externe inhoud."
+      ],
+      "Trash all": [
+        "Alles naar prukkenbak verplaatsen"
       ],
       "Trust": [
         "Vertrouwen"
@@ -1594,7 +1609,7 @@
     },
     "color": {
       "Apple": [
-        "Appeltjesrood"
+        "Apple"
       ],
       "azureish white": [
         "azuurwit"
@@ -1651,7 +1666,7 @@
         "bos"
       ],
       "gainsboro": [
-        ""
+        "gainsboro"
       ],
       "japanese laurel": [
         "japanse laurier"
@@ -1699,16 +1714,16 @@
         "pastelgrijs"
       ],
       "persian plum": [
-        ""
+        "perziche pruim"
       ],
       "persian red": [
         "perzisch rood"
       ],
       "philippine gray": [
-        ""
+        "filippijnsgrijs"
       ],
       "philippine silver": [
-        ""
+        "filippijnszilver"
       ],
       "pickle": [
         "augurk"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Stel een wachtwoord in"
       ],
-      "Preferences could not be saved": [
-        "Voorkeuren konnen niet opgeslagen worden"
-      ],
       "Primary address key is not decrypted": [
         "Primaire adressleutel is niet ontsleuteld"
       ],
@@ -3561,7 +3573,7 @@
         "Inbox"
       ],
       "Inbox - Default": [
-        ""
+        "Inbox - standaard"
       ],
       "Select a folder": [
         "Kies een map"
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Weet u zeker dat u uw wijzigingen ongedaan wilt maken?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Weet u zeker dat u alle berichten in deze locatie wilt verplaatsen naar de prullenbak?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Weet u zeker dat u ${ count } gesprek permanent wilt verwijderen?",
         "Weet u zeker dat u ${ count } gesprekken permanent wilt verwijderen?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Dag",
         "Dagen"
-      ],
-      "Decrypt message": [
-        "Bericht ontsleutelen"
       ],
       "Default email application": [
         "Standaard e-mailapplicatie"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Maandelijks ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Er wordt een grote hoeveelheid berichten verplaatst. Dit kan enkele ogenblikken duren."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Benoem uw nieuwe map en selecteer de bovenliggende map waarin u deze wilt plaatsen. Als u geen bovenliggende map selecteert, wordt deze als hoofdmap gemaakt."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Geen van de geüploade sleutels zijn geldig voor versleuteling. Encryptie wordt automatisch uitgeschakeld."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Ongeldige link"
       ],
@@ -4543,7 +4555,7 @@
         "van"
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
-        "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren je deze sleutel niet meer de vertrouwen."
+        "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Wijzig deze instellingen alleen als u PGP met niet-${ BRAND_NAME }-ontvangers gebruikt."
@@ -4557,11 +4569,11 @@
       "per month.": [
         "per maand."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline is alleen compatibel met tekst zonder opmaak. Houd er rekening mee dat ${ MAIL_APP_NAME } altijd versleutelde berichten tekent."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME stuurt de berichten automatisch aan de hand van de opmaak in het opstelvenster. Denk eraan dat ${ MAIL_APP_NAME } versleutelde berichten ook altijd ondertekent"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Telefoonnummer"
@@ -4589,7 +4601,7 @@
       ],
       "Please select which email address or addresses to add to ${ groupCount } group.": [
         "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
-        "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupCount } groepen."
+        "Selecteer welke e-mailadressen u wilt toevoegen aan ${ groupCount } groepen."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Leesbevestiging vragen"
+      ],
+      "Rich text": [
+        "Rich text"
       ],
       "Right to Left": [
         "Van rechts naar links"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Onbeperkt aantal berichten"
+      ],
+      "Unlock message": [
+        "Bericht ontgrendelen"
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Kan niet verzenden naar organisatieadres: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "Ontdek alle Proton-diensten"
       ],
@@ -6768,6 +6792,9 @@
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Om uw privacy te beschermen, heeft Proton e-mailtrackers in dit bericht geblokkeerd"
       ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
+      ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"
       ],
@@ -6777,7 +6804,7 @@
     },
     "Status": {
       "This message is from a mailing list.": [
-        "Dit bericht komt van een mailinglist."
+        "Dit bericht komt van een mailinglijst."
       ],
       "Unsubscribed": [
         "Opgezegd"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Contactpersonen importeren"
       ],
-      "Import groups": [
-        "Importeer groepen"
-      ],
       "Insert contacts": [
         "Contacten invoegen"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Meer selecties"
+      ],
+      "Move all messages to Trash": [
+        "Alle berichten naar prullenbak verplaatsen"
       ],
       "Move to": [
         "Verplaats naar"

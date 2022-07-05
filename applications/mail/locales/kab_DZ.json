@@ -215,9 +215,6 @@
       "Customize": [
         "Sagen"
       ],
-      "Decrypt": [
-        "Kkes awgelhen"
-      ],
       "Default email application": [
         "Asnas amezwer n imayl"
       ],
@@ -335,6 +332,9 @@
         "Kter inermisen"
       ],
       "External encryption": [
+        ""
+      ],
+      "Fewer search options": [
         ""
       ],
       "Filter on...": [
@@ -461,9 +461,6 @@
       "Learn more": [
         "Issin ugar"
       ],
-      "Less search options": [
-        "Drus n textiṛiyin n unadi"
-      ],
       "Load": [
         "Sali"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Ugar n textiṛiyin n unadi"
+      ],
+      "Move": [
+        ""
+      ],
+      "Move all conversations from this folder": [
+        ""
+      ],
+      "Move all conversations from this label": [
+        ""
+      ],
+      "Move all messages from this folder": [
+        ""
+      ],
+      "Move all messages from this label": [
+        ""
       ],
       "move emails to": [
         "senkez imaylen ɣer"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Ales azmul"
+      ],
+      "Read message": [
+        ""
       ],
       "Read receipt sent": [
         "Asentem n tɣuri yettwazen"
@@ -803,6 +818,9 @@
       "Show details": [
         "Sken ifutas"
       ],
+      "Show fewer search options": [
+        ""
+      ],
       "Show folders": [
         "Sken ikaramen"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Sken-d drus"
-      ],
-      "Show less search options": [
-        "Sken drus n textiṛiyin n unadi"
       ],
       "Show messages": [
         "Sken iznan"
@@ -851,9 +866,6 @@
       "Submit": [
         "Azen"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Asentel"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Izen-agi yesɛa agbur anmeggag."
+      ],
+      "Trash all": [
+        ""
       ],
       "Trust": [
         "Amen"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Ma ulac aɣilif sbadu awal uffir"
       ],
-      "Preferences could not be saved": [
-        "Ismenyifen gguman ad ttuskelsen"
-      ],
       "Primary address key is not decrypted": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "D tidet tebɣiḍ ad tesfesxeḍ ibeddilen-ik m?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        ""
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Tebɣiḍ s tidet ad tekkseḍ i lebda ${ count } n udiwenni?",
         "Tebɣiḍ s tidet ad tekkseḍ ${ count } n yidiwenniyen i lebda?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Ass",
         "Ussan"
-      ],
-      "Decrypt message": [
-        "Kkes awgelhen i yizen"
       ],
       "Default email application": [
         "Asnas amezwer n imayl"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Yal ayyur ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        ""
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Semmi akaram-ik·im amaynut syen fren akaram amaraw ideg tebɣiḍ ad t-terreḍ. Ma yella ur tefrneḍ ara akaram amaraw, akaram-a amaynut ad yettwarnu d akaram n uswir afellay."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Ula d yiwet seg tsura i d-yettwasulin dtameɣtut i uwgelhen. Awgelhen yettusens s wudem awurman."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "deg wayyur."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ${ MAIL_APP_NAME } ittezmil dayem iznan iwgelhanen."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME yettazen izen s wudem awurman s useqdec n uskar amiran n tsuddest. Ttxil-k ẓer d akken ${ MAIL_APP_NAME } yettezmil dayem iznan iwgelhanen"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Uṭṭun n tiliɣri"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Ssuter aɣerwaḍ n tɣuri"
+      ],
+      "Rich text": [
+        ""
       ],
       "Right to Left": [
         "Seg uyeffus s azelmaḍ"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Iznan war talast"
+      ],
+      "Unlock message": [
+        ""
       ],
       "Unsupported file": [
         "Afaylu ur yettwadhel ara"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "D awezɣi ad tettwazen tansa n umsuddes: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "Issin imeẓluyen meṛṛa n Proton"
       ],
@@ -6766,6 +6790,9 @@
         ""
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ],
       "You can now schedule your messages to be sent later": [
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Kter inermisen"
       ],
-      "Import groups": [
-        "Kter igrawen"
-      ],
       "Insert contacts": [
         "Sekcem inermisen"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Ugar n ufran"
+      ],
+      "Move all messages to Trash": [
+        ""
       ],
       "Move to": [
         "Senkez ɣer"

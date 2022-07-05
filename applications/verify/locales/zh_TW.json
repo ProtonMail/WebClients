@@ -18,7 +18,7 @@
         "沒有收到驗證碼嗎？"
       ],
       "Edit email address": [
-        "編輯電子郵件位址"
+        "編輯電郵位址"
       ],
       "Edit phone number": [
         "編輯電話號碼"
@@ -48,7 +48,7 @@
         "驗證帳號"
       ],
       "Verify email": [
-        "驗證電子郵件"
+        "驗證電郵"
       ],
       "View invoice": [
         "查看帳單"
@@ -781,7 +781,7 @@
         "敘利亞"
       ],
       "Taiwan": [
-        "台灣"
+        "臺灣"
       ],
       "Tajikistan": [
         "塔吉克"
@@ -890,7 +890,7 @@
     },
     "Error": {
       "Email is not valid": [
-        "電子郵件無效"
+        "電郵無效"
       ],
       "Enter 6 digits": [
         "請輸入 6 位驗證碼"
@@ -919,7 +919,7 @@
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們將會處理，請耐心等待。"
+        "Something went wrong. Please refresh the page or try again later."
       ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
@@ -928,7 +928,7 @@
         "糟糕，出了一點問題"
       ],
       "Please ${ refresh } or check your connection.": [
-        "請${ refresh }或檢查您的連線。"
+        "請 ${ refresh } 或檢查您的連線。"
       ],
       "There was a problem connecting to Proton.": [
         "連線至 Proton 時發生問題。"
@@ -942,7 +942,7 @@
         "CAPTCHA"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Manual": [
         "手動"
@@ -968,7 +968,7 @@
         "若您在創建帳號時出現問題，可提出邀請需求，我們會在一個工作日內回覆。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "若您在收件匣中找不到該電子郵件，請查看垃圾郵件資料夾。"
+        "若您在收件匣中找不到該電郵，請查看垃圾郵件資料夾。"
       ],
       "Internet connection lost": [
         "網際網路連線中斷"
@@ -992,7 +992,7 @@
         "我們將傳送新的驗證碼至 ${ strong }"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
-        "請問您需要申請新的驗證碼，或使用另一種驗證方法？"
+        "請問您需要申請新的驗證碼，或嘗試另一種驗證方法？"
       ],
       "Would you like to receive a new verification code?": [
         "請問您需要申請新的驗證碼嗎？"
@@ -1009,7 +1009,7 @@
     },
     "Label": {
       "Code is 6 digits without spaces": [
-        "驗證碼為六個數字且無空格"
+        "驗證碼為 6 位數字且無空格"
       ],
       "Email address": [
         "電郵位址"
@@ -1045,7 +1045,7 @@
     },
     "Success": {
       "Code sent to ${ methodTo }": [
-        "驗證碼已發送至 ${ methodTo }"
+        "驗證碼已傳送至 ${ methodTo }"
       ],
       "Verification successful": [
         "驗證成功"
@@ -1059,7 +1059,7 @@
         "無效的驗證碼"
       ],
       "Request new code": [
-        "申請新代碼"
+        "申請新驗證碼"
       ],
       "Sign in again to continue": [
         "請重新登入以繼續"

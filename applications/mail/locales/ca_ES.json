@@ -215,9 +215,6 @@
       "Customize": [
         "Personalitzar"
       ],
-      "Decrypt": [
-        "Desxifra"
-      ],
       "Default email application": [
         "Aplicació de correu electrònic predeterminada"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Xifrat extern"
+      ],
+      "Fewer search options": [
+        "Menys opcions de cerca"
       ],
       "Filter on...": [
         "Filtrar per..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "Saber-ne més"
       ],
-      "Less search options": [
-        "Menys opcions de cerca"
-      ],
       "Load": [
         "Carregar"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Més opcions de cerca"
+      ],
+      "Move": [
+        "Mou"
+      ],
+      "Move all conversations from this folder": [
+        "Moure totes les converses d'aquesta carpeta"
+      ],
+      "Move all conversations from this label": [
+        "Moure totes les converses d'aquesta etiqueta"
+      ],
+      "Move all messages from this folder": [
+        "Moure tots els missatges d'aquesta carpeta"
+      ],
+      "Move all messages from this label": [
+        "Moure tots els missatges d'aquesta etiqueta"
       ],
       "move emails to": [
         "moure correus electrònics a"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Tornar a signar"
+      ],
+      "Read message": [
+        "Llegeix el missatge"
       ],
       "Read receipt sent": [
         "S'ha enviat la confirmació de lectura"
@@ -803,6 +818,9 @@
       "Show details": [
         "Mostrar els detalls"
       ],
+      "Show fewer search options": [
+        "Mostra menys opcions de cerca"
+      ],
       "Show folders": [
         "Mostrar carpetes"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Mostrar menys"
-      ],
-      "Show less search options": [
-        "Mostrar menys opcions de cerca"
       ],
       "Show messages": [
         "Mostrar missatges"
@@ -851,9 +866,6 @@
       "Submit": [
         "Enviar"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Tema"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Aquest missatge conté contingut remot."
+      ],
+      "Trash all": [
+        "Elimina-ho tot"
       ],
       "Trust": [
         "De confiança"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Establiu una contrassenya"
       ],
-      "Preferences could not be saved": [
-        "No s'han pogut desar les preferencies"
-      ],
       "Primary address key is not decrypted": [
         "La clau de la adreça primària no està desxifrada"
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "N'estás segur que desitges descartar els teus canvis?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        ""
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Segur que voleu eliminar permanentment aquesta ${ count } conversa?",
         "Segur que voleu eliminar permanentment aquestes ${ count } converses?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "Dia",
         "Dies"
-      ],
-      "Decrypt message": [
-        "Desxifra el missatge"
       ],
       "Default email application": [
         "Aplicació de correu electrònic predeterminada"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        ""
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Poseu un nom a la vostra nova carpeta i seleccioneu la carpeta principal a la qual vulgueu introduir-la. Si no seleccioneu una carpeta principal, aquesta nova carpeta es crearà com a carpeta de primer nivell."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Cap de les claus carregades és vàlida pel xifratge. S'ha deshabilitat el xifratge automàticament."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "No és una URL vàlida"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "al mes."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Número de telèfon"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Sol·licitar confirmació de lectura"
+      ],
+      "Rich text": [
+        ""
       ],
       "Right to Left": [
         "Dreta a Esquerra"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Missatges il·limitats"
+      ],
+      "Unlock message": [
+        ""
       ],
       "Unsupported file": [
         "Fitxer no compatible"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "No es pot enviar a l'adreça de l'organitzador: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        ""
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Discover all Proton services": [
         "Descobriu tots els serveis de Proton"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Per a protegir la vostra privacitat, Proton ha bloquejat els rastrejadors de correu electrònic en aquest missatge"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ],
       "You can now schedule your messages to be sent later": [
         "Ara podeu programar els vostres missatges per tal que s'enviïn més tard"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Importar contactes"
       ],
-      "Import groups": [
-        "Importar grups"
-      ],
       "Insert contacts": [
         "Afegir contactes"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Més seleccions"
+      ],
+      "Move all messages to Trash": [
+        "Moure tots els missatges a la Paperera"
       ],
       "Move to": [
         "Moure a"

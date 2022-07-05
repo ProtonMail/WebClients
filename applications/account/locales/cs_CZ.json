@@ -491,7 +491,7 @@
         "Zaplatit ${ price }"
       ],
       "Please contact the administrator of the organisation to manage the subscription": [
-        ""
+        "Prosím kontaktujte administrátora organizace pro správu předplatného"
       ],
       "Preview": [
         "Náhled"
@@ -2497,7 +2497,7 @@
     },
     "Description": {
       "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }": [
-        "Blahopřejeme! Získali ste maximálního počtu ${ rewardsLimit } měsíců zdarma ${ plusPlanName }"
+        "Congratulations! You've earned the maximum of ${ rewardsLimit } free months of ${ plusPlanName }."
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Šifrování a import kontaktů... Tato akce může trvat několik minut. Jakmile je proces ukončen, můžete zavřít tento modul."
@@ -3859,43 +3859,43 @@
     },
     "Import instructions": {
       "Click ${ boldManage } to expand the options menu.": [
-        ""
+        "Kliknutím na ${ boldManage } rozbalíte nabídku možností."
       ],
       "Depending on your email service provider, you may need to generate an ${ knowledgeBaseLink } first before you can import to Proton.": [
-        ""
+        "V závislosti na poskytovateli aktuální e-mailové služby bude možná nutné nejprve vygenerovat ${ knowledgeBaseLink } než budete moci provést import do Protonu."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        ""
+        "Rozbalte rozbalovací nabídku kliknutím na 3 tečky (...)."
       ],
       "Generate an ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        ""
+        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by Proton.": [
-        ""
+        "Vygenerujte ${ boldAppPassword } a na výzvu Protonu jej použijte místo běžného hesla."
       ],
       "Go to ${ boldAccountInfo } under your profile in ${ yahooMailLink }.": [
-        ""
+        "Jděte do ${ boldAccountInfo } pod svým profilem v ${ yahooMailLink }."
       ],
       "Go to ${ boldAccountSecurity }.": [
-        ""
+        "Jděte do ${ boldAccountSecurity }."
       ],
       "Go to Outlook ${ securitySettingsLink }.": [
-        ""
+        "Přejít na Outlook ${ securitySettingsLink }."
       ],
       "If 2-step verification is off, turn it on.": [
-        ""
+        "Pokud je dvoufázové ověřování vypnuté, zapněte ho."
       ],
       "Open your ${ yahooMailLink } contacts.": [
-        ""
+        "Otevřít vaše ${ yahooMailLink } kontakty."
       ],
       "Open your Outlook ${ outlookContactsLink }.": [
-        ""
+        "Otevřít Vaše ${ outlookContactsLink } v Outlooku."
       ],
       "Select ${ boldExportContacts } and choose which contacts to export.": [
-        ""
+        "Vyberte ${ boldExportContacts } a zvolte kontakty, které chcete exportovat."
       ],
       "Select ${ boldExportCSV }.": [
-        ""
+        "Vybrat ${ boldExportCSV }."
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z aplikace Outlook ve 3 snadných krocích:"
@@ -3904,7 +3904,7 @@
         "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Stáhněte si ji z Yahoo ve 3 snadných krocích:"
       ],
       "To import a calendar to Proton, you need the ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
+        "Chcete-li importovat kalendář do Protonu, potřebujete ${ knowledgeBaseLink }. Před zahájením procesu importu si jej stáhněte."
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download it from Outlook in 3 easy steps:": [
         "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si ji z aplikace Outlook ve 3 snadných krocích:"
@@ -3913,7 +3913,7 @@
         "Pro import kontaktů do Protonu potřebujete ${ knowledgeBaseLink }. Stáhněte si jej z Yahoo ve 3 snadných krocích:"
       ],
       "To import contacts to Proton, you need a ${ knowledgeBaseLink }. Download this before you start the import process.": [
-        ""
+        "Chcete-li importovat kontakty do Protonu, potřebujete ${ knowledgeBaseLink }. Před zahájením procesu importu si jej stáhněte."
       ],
       "To import emails to Proton, you need an ${ appPasswordLink } from Outlook. Get it by following these steps:": [
         "Chcete-li importovat e-maily do aplikace Proton, potřebujete ${ appPasswordLink } z aplikace Outlook. Získáte jej podle následujících kroků:"
@@ -3985,22 +3985,22 @@
     },
     "Import instructions step": {
       "Click on the ${ boldICS } link and download the file.": [
-        ""
+        "Klikněte na odkaz ${ boldICS } a stáhněte si soubor."
       ],
       "Go to ${ calendarLink } in your Outlook settings.": [
-        ""
+        "Přejít na ${ calendarLink } v nastavení Outlook."
       ],
       "Go to ${ calendarViewLink } in Yahoo.": [
-        ""
+        "Přejít na ${ calendarViewLink } v Yahoo."
       ],
       "Mouse over the calendar you want to import and open the dropdown menu.": [
-        ""
+        "Najeďte myší na kalendář, který chcete importovat, a otevřete rozevírací nabídku."
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
-        ""
+        "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ],
       "Under ${ boldPublish }, select the calendar you want to import. Set the permission to ${ boldCanViewAllDetails } and publish it.": [
-        ""
+        "V části ${ boldPublish } vyberte kalendář, který chcete importovat. Nastavte oprávnění na ${ boldCanViewAllDetails } a zveřejněte jej."
       ]
     },
     "Import key": {
@@ -4106,9 +4106,6 @@
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } není platná e-mailová adresa"
-      ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } nebo ${ forgotUsernameLink }?"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } lze také použít s jedním heslem, což nahrazuje heslo pro přihlášení a poštovní schránku. Pro přechod do režimu jedno hesla, prosím zadejte Vaše \"jedno heslo\", které chcete použít a klikněte Uložit."
@@ -4359,9 +4356,6 @@
       "Already allocated": [
         "Již bylo přiděleno"
       ],
-      "Already have an account?": [
-        "Máte již svůj účet?"
-      ],
       "Already used": [
         "Již použito"
       ],
@@ -4606,7 +4600,7 @@
         "Stáhněte si Vaše PGP klíče pro použití v jiných službách kompatibilních s PGP."
       ],
       "Drop a file here to upload": [
-        ""
+        "Přetáhněte sem soubor pro nahrání"
       ],
       "Drop the file here to upload": [
         "Přetažením sem nahrajte soubor"
@@ -5163,7 +5157,7 @@
       "Queued": [
         "Ve frontě"
       ],
-      "read our two-factor authentication Guide first": [
+      "read our two-factor authentication guide first": [
         "přečtěte si nejprve našeho průvodce dvoufázovým ověřováním"
       ],
       "Recovery file downloaded": [
@@ -5485,7 +5479,7 @@
         "Aktualizovat obnovovací frázi"
       ],
       "Update the URL in your password manager": [
-        ""
+        "Aktualizujte adresu URL ve Vašem správci hesel"
       ],
       "Upgrade today to avoid losing the following ${ planName } benefits.": [
         "Upgradujte ještě dnes, abyste nepřišli o následující výhody ${ planName }."
@@ -5503,7 +5497,7 @@
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Examples use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
-        "Při připojování k serverům ${ VPN_APP_NAME } bez aplikace použijte následující přihlašovací údaje. Příklady použití zahrnují: Tunnelblick na macOS, OpenVPN na GNU/Linux."
+        "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux."
       ],
       "Verification can take a few minutes.": [
         "Ověřování může trvat několik minut."
@@ -7123,6 +7117,9 @@
       "Learn more": [
         "Více informací"
       ],
+      "Need help?": [
+        "Potřebujete pomoc?"
+      ],
       "Not activated": [
         "Neaktivováno"
       ],
@@ -7149,6 +7146,9 @@
       ],
       "Terms and conditions": [
         "Obchodní podmínky"
+      ],
+      "Trouble signing in?": [
+        "Potíže s přihlášením?"
       ],
       "Upgrade": [
         "Rozšířit"
@@ -7489,8 +7489,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Objevte všechny ${ BRAND_NAME } plány"
       ],
-      "From ${ _price } per user": [
-        "Od ${ _price } na uživatele"
+      "From ${ _price }": [
+        "Od ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Od ${ _price2 } na uživatele"
       ],
       "From ${ price }": [
         "Od ${ price }"
@@ -7542,16 +7545,16 @@
     },
     "new_plans: attribute": {
       "Get ${ connections } high-speed VPN connection": [
-        "",
-        "",
-        "",
-        ""
+        "Získejte ${ connections } vysokorychlostní připojení VPN",
+        "Získejte ${ connections } vysokorychlostních připojení VPN",
+        "Získejte ${ connections } vysokorychlostních připojení VPN",
+        "Získejte ${ connections } vysokorychlostních připojení VPN"
       ],
       "Get ${ connections } high-speed VPN connection per user": [
-        "",
-        "",
-        "",
-        ""
+        "Získejte ${ connections } vysokorychlostní připojení VPN na každého uživatele",
+        "Získejte ${ connections } vysokorychlostních připojení VPN na každého uživatele",
+        "Získejte ${ connections } vysokorychlostních připojení VPN na každého uživatele",
+        "Získejte ${ connections } vysokorychlostních připojení VPN na každého uživatele"
       ]
     },
     "new_plans: feature": {
@@ -7559,73 +7562,73 @@
         "${ DRIVE_APP_NAME } (webová beta verze)"
       ],
       "${ n } custom email domain": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } vlastní e-mailová doména",
+        "${ n } vlastní e-mailové domény",
+        "${ n } vlastních e-mailových domén",
+        "${ n } vlastních e-mailových domén"
       ],
       "${ n } email address": [
         "${ n } e-mailová adresa",
-        "",
-        "",
-        ""
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
       ],
       "${ n } email address per user": [
         "${ n } e-mailová adresa na uživatele",
-        "",
-        "",
-        ""
+        "${ n } e-mailových adres na uživatele",
+        "${ n } e-mailových adres na uživatele",
+        "${ n } e-mailových adres na uživatele"
       ],
       "${ n } filter": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } filtr",
+        "${ n } filtry",
+        "${ n } filtrů",
+        "${ n } filtrů"
       ],
       "${ n } folder": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } složka",
+        "${ n } složek",
+        "${ n } složek",
+        "${ n } složek"
       ],
       "${ n } folder and label": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } složka a štítek",
+        "${ n } složky a štítky",
+        "${ n } složek a štítků",
+        "${ n } složek a štítků"
       ],
       "${ n } label": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } štítek",
+        "${ n } štítky",
+        "${ n } štítků",
+        "${ n } štítků"
       ],
       "${ n } message per day": [
-        "",
-        "",
-        "",
-        ""
+        "${ n } zpráva denně",
+        "${ n } zpráv denně",
+        "${ n } zpráv denně",
+        "${ n } zpráv denně"
       ],
       "${ n } personal calendar": [
         "${ n } osobní kalendář",
-        "",
-        "",
-        ""
+        "${ n } osobních kalendářů",
+        "${ n } osobních kalendářů",
+        "${ n } osobních kalendářů"
       ],
       "${ n } VPN connection": [
         "${ n } připojení VPN",
-        "",
-        "",
-        ""
+        "${ n } připojení VPN",
+        "${ n } připojení VPN",
+        "${ n } připojení VPN"
       ],
       "${ n } VPN connection per user": [
         "${ n } připojení VPN na uživatele",
-        "",
-        "",
-        ""
+        "${ n } připojení VPN na uživatele",
+        "${ n } připojení VPN na uživatele",
+        "${ n } připojení VPN na uživatele"
       ],
       "${ size } attachment size": [
-        ""
+        "${ size } velikost přílohy"
       ],
       "${ size } storage per user": [
         "${ size } úložiště na uživatele"
@@ -7646,22 +7649,22 @@
         "Pokročilé zabezpečení sdílení"
       ],
       "Auto-reply": [
-        ""
+        "Automatická odpověď"
       ],
       "Catch-all": [
-        ""
+        "Zachytit vše"
       ],
       "Centralized billing": [
-        ""
+        "Centrální placení"
       ],
       "Contact groups": [
-        ""
+        "Skupiny kontaktů"
       ],
       "Contact groups management": [
-        ""
+        "Správa skupin kontaktů"
       ],
       "Custom email domains": [
-        ""
+        "Vlastní e-mailové domény"
       ],
       "DNS leak prevention": [
         "Prevence úniků DNS"
@@ -7670,16 +7673,16 @@
         "Editory dokumentů (dokumenty, listy, prezentace)"
       ],
       "Easy Switch import assistant": [
-        ""
+        "Easy Switch asistent importu"
       ],
       "Email client support (via IMAP/SMTP)": [
-        ""
+        "Podpora e-mailových klientů (přes IMAP/SMTP)"
       ],
       "Enables HIPAA compliance": [
-        ""
+        "Umožňuje dodržování předpisů HIPAA"
       ],
       "Encrypted contact details": [
-        ""
+        "Šifrované kontaktní údaje"
       ],
       "Encrypted VPN servers": [
         "Šifrované servery VPN"
@@ -7691,19 +7694,19 @@
         "Bezplatná VPN na jednom zařízení"
       ],
       "GDPR data processing agreement": [
-        ""
+        "GDPR dohoda o správě dat"
       ],
       "High-speed VPN on ${ n } device": [
-        "Vysokorychlostní VPN na zařízení ${ n }",
-        "",
-        "",
-        ""
+        "Vysokorychlostní VPN na ${ n } zařízení",
+        "Vysokorychlostní VPN na ${ n } zařízeních",
+        "Vysokorychlostní VPN na ${ n } zařízeních",
+        "Vysokorychlostní VPN na ${ n } zařízeních"
       ],
       "HTML signatures": [
-        ""
+        "HTML podpisy"
       ],
       "Kill switch/always-on VPN": [
-        ""
+        "Kill Switch / vždy-na VPN"
       ],
       "Limited support": [
         "Omezená podpora"
@@ -7718,10 +7721,10 @@
         "P2P/BitTorrent"
       ],
       "Password-protected Emails": [
-        ""
+        "Zprávy chráněné heslem"
       ],
       "Phone support (6+ users)": [
-        ""
+        "Telefonická podpora (6+ uživatelů)"
       ],
       "Priority email support": [
         "Prioritní podpora"
@@ -7751,7 +7754,7 @@
         "Rozdělené tunelování (Android a Windows)"
       ],
       "Strict no-logs policy": [
-        ""
+        "Přísné zásady neukládání záznamů"
       ],
       "Team management": [
         "Řízení týmu"
@@ -7763,16 +7766,16 @@
         "Dvoufaktorová autentizace"
       ],
       "Unlimited filters": [
-        ""
+        "Neomezeně filtrů"
       ],
       "Unlimited folders": [
-        ""
+        "Neomezeně složek"
       ],
       "Unlimited folders, labels and filters": [
-        ""
+        "Neomezený počet složek, štítků a filtrů"
       ],
       "Unlimited labels": [
-        ""
+        "Neomezeně štítků"
       ],
       "Unlimited messages per day": [
         "Neomezený počet zpráv za den"
@@ -7781,24 +7784,16 @@
         "Neomezená šířka pásma"
       ],
       "Up to ${ totalStorageSize } total storage": [
-        ""
+        "Až ${ totalStorageSize } prostoru celkem"
       ],
       "User credential management": [
-        ""
+        "Správa uživatelů"
       ],
       "User session management": [
         "Správa uživatelských relací"
       ],
       "Worldwide streaming services": [
         "Celosvětové streamovací služby"
-      ]
-    },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Zapomenuté heslo"
-      ],
-      "username": [
-        "uživatelské jméno"
       ]
     },
     "new_plans: heading": {
@@ -7810,6 +7805,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Zvolte si soukromí jako standard pro zálohu souborů, úložiště, sdílení a stahování."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "V opačném případě bude přístup k vašemu účtu omezen a váš účet bude nakonec zablokován."
       ],
@@ -7817,10 +7815,10 @@
         "Pro další používání ${ MAIL_APP_NAME } s prémiovými funkcemi si vyberte předplatné a platební metodu."
       ],
       "Upgrade to the business pack with access to all premium Proton services.": [
-        ""
+        "Získejte obchodní balíček s přístupem ke všem prémiovým službám Proton."
       ],
       "Upgrade to the ultimate privacy pack and access all premium Proton services.": [
-        ""
+        "Získejte nejvyšší balíček ochrany soukromí s přístupem ke všem prémiovým službám Proton."
       ],
       "Your trial ends ${ formattedTrialExpirationDate }": [
         "Zkušební verze končí ${ formattedTrialExpirationDate }"
@@ -7828,10 +7826,10 @@
     },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
-        ""
+        "${ brand } končící ${ last4 }"
       ],
       "${ BRAND_NAME } lets you create email addresses and manage accounts for sub-users. Ideal for families and organizations.": [
-        ""
+        "${ BRAND_NAME } vám umožňuje vytvořit e-mailové adresy a spravovat účty pro svěřené uživatele. Vhodné pro rodiny a organizace."
       ],
       "* With 1-month subscription. Other subscription options available at checkout.": [
         "* S 1měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
@@ -7843,7 +7841,7 @@
         "* S 24měsíčním předplatným. Další možnosti předplatného jsou k dispozici u pokladny."
       ],
       "Applicable credits, proration, and coupons are applied in the next step": [
-        ""
+        "V dalším kroku se uplatní příslušné kredity, poměrná část a kupony"
       ],
       "Comprehensive privacy and security with all Proton services combined.": [
         "Komplexní ochrana soukromí a zabezpečení se všemi službami Protonu dohromady."
@@ -7864,10 +7862,13 @@
         "Oblíbené"
       ],
       "Price for future renewal: includes all applicable non-expired coupons saved to your account": [
-        ""
+        "Cena pro budoucí obnovení: zahrnuje všechny související neprošlé kupóny uložené pro váš účet"
       ],
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Soukromí a zabezpečení pro firmy včetně všech prémiových služeb Proton."
+      ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Bezpečné kloudové úložiště, které vám umožňuje uchovávat, synchronizovat a sdílet soubory jednoduše a bezpečně."
       ],
       "Secure email and calendar for professionals and businesses.": [
         "Zabezpečený e-mail a kalendář pro profesionály a firmy."
@@ -7879,7 +7880,7 @@
         "Nastavte automatické odpovědi, které informují kontakty, že jste mimo kancelář nebo nemůžete odpovědět."
       ],
       "The dedicated VPN solution that provides secure, unrestricted, high-speed access to the internet.": [
-        ""
+        "Dedikované VPN řešení, které nabízí bezpečný, neomezený, vysokorychlostní přístup k internetu."
       ],
       "The no-cost starter account designed to empower everyone with privacy by default.": [
         "Bezplatný startovací účet, který ve výchozím nastavení poskytuje soukromí všem."
@@ -7893,7 +7894,7 @@
     },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
-        ""
+        "${ humanUsedSpace } z ${ humanMaxSpace }"
       ]
     },
     "new_plans: Plan frequency": {
@@ -7910,20 +7911,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "Vytvoření účtu znamená, že přijímáte ${ terms }. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "Vytvořením ${ BRAND_NAME } účtu souhlasíte s našimi ${ terms }."
       ],
       "Payment details": [
         "Platební údaje"
-      ],
-      "Proton's terms and conditions": [
-        "Pravidla a podmínky společnosti Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Uložte si svou e-mailovou adresu nebo telefonní číslo, které můžete použít pro ověření, pokud budete potřebovat obnovit svůj účet."
       ],
       "Subscription": [
         "Předplatné"
+      ],
+      "terms and conditions": [
+        "smluvní podmínky užívání"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Chcete-li začít, vyberte si zobrazované jméno. To je to, co lidé uvidí, když jim pošlete e-mail, pozvete je na událost nebo sdílíte soubor."
@@ -7937,10 +7938,10 @@
     },
     "new_plans: Title": {
       "${ mailPlanName } Trial": [
-        ""
+        "${ mailPlanName } Zkušební verze"
       ],
       "Upgrade to ${ planName }": [
-        ""
+        "Aktualizovat na ${ planName }"
       ],
       "Your account's usage": [
         "Využití vašeho účtu"
@@ -7966,141 +7967,141 @@
         "Změnit plán?"
       ],
       "Unlock premium features by upgrading": [
-        "Odemknout prémiové funkce povýšením účtu"
+        "Odemknout prémiové funkce navýšením účtu"
       ]
     },
     "new_plans: tooltip": {
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
-        ""
+        "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
       ],
       "Addresses have full sending and receiving capability. A user can have multiple addresses assigned to them; however, a single address cannot be assigned to multiple users.": [
-        ""
+        "Adresy mají plnou možnost odesílat a přijímat. Uživatel může mít více přiřazených adres; jedna adresa ale nemůže být přiřazena více uživatelům."
       ],
       "Advanced security VPN with global network": [
-        ""
+        "Pokročilá bezpečná VPN na globální síťi"
       ],
       "Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results": [
-        ""
+        "Umožňuje vám přístup k více než jedné síti zároveň, např. streamování filmu z cizí země a zároveň zobrazení lokálních výsledků vyhledávání"
       ],
       "Allows you to set up automatic responses (auto-reply) for your incoming messages": [
-        ""
+        "Umožňuje vám nastavit automatické odpovědi na příchozí zprávy"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        ""
+        "Odesílání hromadných reklamních e-mailů a programovatelných e-mailů momentálně není podporováno. Pro tento případ doporučujeme využít služeb poskytovatele dedikované e-mailové služby."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        ""
+        "Spravujte přístup ke svým sdíleným souborům přidáním ochrany heslem a nebo datem vypršení platnosti"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@proton.me for shopping accounts, JohnNews@proton.me for news subscription": [
-        ""
+        "Vytvořte více e-mailových adres pro své online identity, např. FrantaNakupy@proton.me pro nákupní účty a FrantaZpravy@proton.me pro odběry zpráv"
       ],
       "Create up to ${ n } custom calendar.": [
-        "",
-        "",
-        "",
-        ""
+        "Vytvořte až ${ n } vlastní kalendář.",
+        "Vytvořte až ${ n } vlastní kalendáře.",
+        "Vytvořte až ${ n } vlastních kalendářů.",
+        "Vytvořte až ${ n } vlastních kalendářů."
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
-        ""
+        "Chrání před hrozbami pro soukromí VPN předáváním vašeho internetového provozu přes více serverů"
       ],
       "Easily share your calendars with your colleagues, family, and friends via a link": [
-        ""
+        "Snadno sdílejte své kalendáře s kolegy, rodinou, přáteli pomocí odkazu"
       ],
       "Easily share your calendars with your family, friends, or colleagues via a link": [
-        ""
+        "Snadno sdílejte své kalendáře s rodinou, přáteli nebo kolegy prostřednictvím odkazu"
       ],
       "End-to-end encrypted calendar": [
-        ""
+        "End-to-end plně šifrovaný kalendář"
       ],
       "End-to-end encrypted file storage": [
-        ""
+        "End-to-end plně šifrovaný úložný prostor"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        ""
+        "Zajistí, že dostanete všechny e-maily odeslané na vaší doménu, dokonce i když jsou odeslány na adresu, která neexistuje a nebo má chybu"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        ""
+        "Vynutit odhlášení uživatelských relací pokud existuje důvod se domnívat, že přihlašovací údaje se dostaly do nepovolaných rukou"
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
-        ""
+        "IMAP podpora je omezená na využití v desktop aplikacích (např. Outlook, Apple Mail, Thunderbird) přes ${ MAIL_APP_NAME } Most. Kloudové IMAP integrace momentálně nejsou podporovány."
       ],
       "Keeps you protected by blocking all network connections when you are accidentally disconnected from our VPN server": [
-        ""
+        "Chrání vás blokováním všech síťových připojení když se náhodou odpojíte od našeho VPN serveru"
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        ""
+        "Jmenovky jsou jednoduché štítky, které můžete přidat ke zprávám aby se vám lépe hledaly a používaly filtry"
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
-        ""
+        "Spravujte své předplatné a přizpůsobení vašeho plánu. Podporované platební možnosti jsou kreditní karta, PayPal, kryptoměna a nebo bankovní převod."
       ],
       "On business days, receive support from the Proton Customer Support team within 24 hours of requests": [
-        ""
+        "V pracovní dny, získejte podporu od týmu zákaznické podpory Proton během 24 hodin od žádosti"
       ],
       "On top of that, add up to 5 calendars from colleagues, organizations, family, and friends.": [
-        ""
+        "Kromě toho, přidejte až 5 kalendářů od kolegů, organizací, rodiny, přátel."
       ],
       "On top of that, add up to 5 calendars from friends, family, colleagues, and organizations.": [
-        ""
+        "Kromě toho, přidejte až 5 kalendářů od přátel, rodiny, kolegů, organizací."
       ],
       "One VPN connection allows one device to connect to Proton VPN at any given time. For instance, to connect a phone and a laptop to Proton VPN at the same time, you need two VPN connections": [
-        ""
+        "Jedno VPN připojení umožňuje v jednom okamžiku použít Proton VPN pouze jednomu zařízení. Například pro připojení telefonu a notebooku k Proton VPN v jeden okamžik, budete potřebovat dvě VPN připojení"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        ""
+        "Možnost zobrazit ne-privátní schránky uživatele, včetně zpráv a kontaktních detailů"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        ""
+        "Nástroj pro správu organizace, který umožňuje správcům přidat uživatele, přiřadit úložný prostor, nastavit domény a další úkony"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
-        ""
+        "Naše výkonná infrastruktura zajistí, že budete mít přístup k účtu kdykoliv to bude potřeba"
       ],
       "Our servers’ hard disks are fully encrypted with multiple password layers so your data is protected even if our hardware is compromised": [
-        ""
+        "Pevné disky na našich serverech jsou plně šifrované s několika úrovněmi hesel takže vaše data jsou chráněna i když by se k našemu hardwaru dostal někdo nepovolaný"
       ],
       "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
-        ""
+        "Přizpůsobte svůj podpis logem, obrázky, ikony sociálních médií, odkazem na kontakt atd."
       ],
       "Phone support is available from the Proton Customer Success team during European business hours, for customers with 6 or more users": [
-        ""
+        "Telefonická podpora je dostupná od týmu zákaznické podpory během Evropské pracovní doby, pro zákazníky se 6 a více uživateli"
       ],
       "Prevents messages from being accessed by ${ BRAND_NAME } or third parties. The only people who can read the messages are the sender and the intended recipient.": [
-        ""
+        "Zamezí přístup ke zprávám třetím stranám i ${ BRAND_NAME }. Jediní lidé, kteří mohou číst zprávy, jsou odesílatel a příjemce."
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        ""
+        "Chraňte každé zařízení připojené do vaší WiFi sítě. Je to užitečné pokud některá vaše zařízení nemají VPN nastavení."
       ],
       "Quickly set up out-of-office messages": [
-        ""
+        "Rychle nastavte zprávy mimo kancelář"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
-        ""
+        "Rychle převeďte své e-maily, kalendáře nebo kontakty od jakéhokoliv poskytovatele"
       ],
       "Requires a code sent to a mobile phone to sign in. This ensures even if a password is compromised, the account stays secure.": [
-        ""
+        "Pro přihlášení vyžaduje odeslání kódu na mobilní telefon. Toto zaručí bezpečnost účtu i když se heslo dostane do nepovolaných rukou."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        ""
+        "Resetovat uživatelská hesla a resetovat dvoufázové ověření uživatelů"
       ],
       "Route your internet traffic through the Tor network with a single click": [
-        ""
+        "Směrujte svůj internetový provoz skrz sít Tor jediným kliknutím"
       ],
       "Securely store your contacts’ details, such as phone number, address, birthday, and personal notes. Zero-access encryption ensures even Proton can't access them.": [
-        ""
+        "Bezpečně ukládejte údaje vašich kontaktů, např. telefonní číslo, adresu, narozeniny a osobní poznámky. Šifrování bez přístupu (end-to-end) znamená, že ani Proton si nemůže přečíst tyto údaje."
       ],
       "Send emails to large groups quickly and easily by creating as many contact groups as you need (up to 100 contacts per group)": [
-        ""
+        "Odešlete e-maily velkým skupinám rychle a snadno vytvořením kontaktních skupin (až 100 kontaktů na skupinu)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        ""
+        "Nastavte filtry pro automatickou odpověď, řazení, a/nebo označení vašich e-mailů"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
-        ""
+        "Sdílejte své soubory nebo složky s kýmkoliv za použití bezpečných odkazů ke sdílení"
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        ""
+        "NetShield chrání Vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovače a malware"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
-        ""
+        "Začněte s ${ freeStorageSize } a odemkněte dodatečný prostor jakmile to bude potřeba. Úložný prostor je sdílen napříč ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }"
@@ -8109,33 +8110,33 @@
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }.\nSprávci mohou uživatelům v organizaci přidělovat různé objemy úložišť"
       ],
       "Support for file-sharing protocols like BitTorrent": [
-        ""
+        "Podpora protokolů pro sdílení souborů, jako je BitTorrent"
       ],
       "Use your own custom email domain addresses, e.g., you@yourname.com": [
-        ""
+        "Používejte vlastní e-mailovou doménu, např. vy@vasejmeno.cz"
       ],
       "We keep no session usage logs of what you do online, and we do not log metadata that can compromise your privacy": [
-        ""
+        "Neuchováváme žádné záznamy toho, co děláte na internetu a nezaznamenáváme metadata, která mohou narušit vaše soukromí"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        ""
+        "Snažíme se pomáhat zákazníkům, kteří podléhají HIPAA/HITECH regulacím, chránit zdravotní informace (PHI). Podepsané BAA jsou dostupné v ${ BRAND_NAME } pro obchodní zákazníky."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
-        ""
+        "Při připojení přes naše VPN, vaše DNS požadavky prochází přes šifrovaný VPN tunel, což je výhoda z hlediska soukromí a bezpečnosti"
       ],
       "When sending to other ${ MAIL_APP_NAME } users, encryption is automatic. Sending to non-${ MAIL_APP_NAME } users requires setting a password prior to sending.": [
-        ""
+        "Zprávy ${ MAIL_APP_NAME } uživatelům jsou automaticky zašifrovány. Odeslání mimo ${ MAIL_APP_NAME } vyžaduje nejprve nastavení hesla."
       ],
       "You can have more than one admin. All admins can add and manage users but only the primary admin has control over billing.": [
-        ""
+        "Můžete mít více než jednoho správce. Všichni správci mohou přidávat a spravovat uživatele ale jen hlavní správce může spravovat platby."
       ]
     },
     "new_plans: upgrade": {
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
-        ""
+        "Dostupné v rámci ${ plus }, ${ bundle }, a ${ BRAND_NAME } pro firmy."
       ],
       "Included with all ${ BRAND_NAME } for Business plans.": [
-        ""
+        "Dostupné v rámci všech ${ BRAND_NAME } plánech pro firmy."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -8146,31 +8147,34 @@
         "10 e-mailových adres/aliasů"
       ],
       "Access advanced VPN features": [
-        ""
+        "Odemkněte pokročilé VPN funkce"
       ],
       "Add more personalization with 15 email addresses and support for 3 custom email domains": [
-        ""
+        "Získejte 15 e-mailových adres a podporu pro 3 vlastní e-mailové domény"
       ],
       "Boost your storage space to ${ bundleStorage } total": [
-        ""
+        "Zvyšte úložný prostor na ${ bundleStorage } celkem"
       ],
       "Boost your storage space to ${ businessStorage } per user": [
-        ""
+        "Zvyšte úložný prostor na ${ businessStorage } pro každého uživatele"
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Zvyšte úložný prostor na ${ driveStorage } celkem"
       ],
       "Cover more ground with support for 10 custom email domains": [
-        ""
+        "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
       ],
       "Create up to ${ numberOfPersonalCalendars } personal calendar": [
-        "",
-        "",
-        "",
-        ""
+        "Vytvořte ${ numberOfPersonalCalendars } osobní kalendář",
+        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů",
+        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů",
+        "Vytvořte až ${ numberOfPersonalCalendars } osobních kalendářů"
       ],
       "Everything in ${ vpnPlanName }": [
         "Vše v ${ vpnPlanName }"
       ],
       "Get 5 additional email addresses per user": [
-        ""
+        "Získejte 5 dodatečných e-mailových adres pro každého uživatele"
       ],
       "Priority support": [
         "Prioritní podpora"
@@ -8881,6 +8885,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
@@ -8889,6 +8896,9 @@
       ],
       "No more missed appointments": [
         "Žádné další zmeškané schůzky"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "U e-mailových oznámení rozhodujete o tom, na které události a kdy chcete být upozorněni."
@@ -9789,9 +9799,6 @@
       ],
       "Import failed": [
         "Import selhal"
-      ],
-      "Import groups": [
-        "Importovat skupiny"
       ],
       "Import key": [
         "Importovat klíč"

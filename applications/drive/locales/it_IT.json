@@ -193,6 +193,12 @@
       "Download": [
         "Scarica"
       ],
+      "Download (${ count })": [
+        "Download (${ count })"
+      ],
+      "Download all": [
+        "Scarica tutto"
+      ],
       "Download anyway": [
         "Scarica comunque"
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "abilitare le notifiche desktop"
       ],
-      "Enable drive search": [
-        "Abilita la ricerca di unità"
-      ],
       "Expand": [
         "Espandi"
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Ottieni link"
+      ],
+      "Get Proton Drive": [
+        "Ottieni Proton Drive"
       ],
       "Get started": [
         "Per iniziare"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         "Segnala un amico"
       ],
-      "refresh the page": [
-        "aggiorna la pagina"
-      ],
       "Refresh the page": [
         "Aggiorna la pagina"
+      ],
+      "refresh the page": [
+        "aggiorna la pagina"
       ],
       "Remove": [
         "Rimuovi"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Riprendi il caricamento"
       ],
+      "Retry": [
+        "Riprova"
+      ],
       "Save": [
         "Salva"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         "Imposta frase di recupero"
       ],
-      "Share": [
-        "Condividi"
-      ],
       "Share file": [
         "Condividi file"
       ],
       "Share item": [
         "Condividi elemento"
-      ],
-      "Share options": [
-        "Impostazioni di condivisione"
       ],
       "Share via link": [
         "Condividi via link"
@@ -1922,9 +1925,6 @@
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
       ],
-      "Preferences could not be saved": [
-        "Le preferenze non possono essere salvate"
-      ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Prima di richiedere un nuovo codice di verifica, controlla la tua cartella spam e verifica che ${ strong } sia l'indirizzo corretto."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "Annullato"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "Creazione del collegamento alla cartella"
       ],
-      "Creating share": [
-        "Creazione condivisione"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "File CSV da Outlook, Outlook Express, Yahoo! Sono supportati Mail, Hotmail, Eudora e alcune altre app, nonché i formati vCard 3.1 e 4.0 (codifica UTF-8)."
       ],
@@ -2518,8 +2518,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Firma digitale verificata. Questa cartella è stata caricata in modo sicuro da ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Download annullato"
+      ],
+      "Download failed": [
+        "Download non riuscito"
+      ],
+      "Download failed due to ${ error }": [
+        "Download abortito a causa di ${ error }"
+      ],
+      "Download finished": [
+        "Download terminato"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Il download di ${ downloadFileName } verrà interrotto"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Download in pausa a causa di un problema di connessione; verrà ripreso automaticamente"
       ],
       "Downloaded": [
         "Scaricato"
@@ -2527,11 +2542,8 @@
       "Downloading": [
         "Scaricamento"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Scaricando l'elemento ${ esProgress } di ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Trascina e rilascia un file qui o scegli di caricarlo."
+      "Drag and drop items here or browse for files to upload.": [
+        ""
       ],
       "Drop the file here to upload": [
         "Trascina qui il file per caricare"
@@ -2539,8 +2551,11 @@
       "Duplicate key updated": [
         "Chiave duplicata aggiornata"
       ],
-      "Enable drive search": [
-        "Abilita la ricerca di unità"
+      "Enabling drive search": [
+        "Abilitazione della ricerca di unità"
+      ],
+      "Encrypted": [
+        "Crittografato"
       ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Indicizzazione elemento ${ esProgress } di ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "Indicizzazione dei risultati di ricerca…"
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "Link copiato negli appunti"
       ],
-      "Link expires: ": [
-        "Scadenza link: "
+      "Link failed to be loaded": [
+        "Caricamento fallito del collegamento"
+      ],
+      "Links failed to be loaded": [
+        "Caricamento fallito dei collegamenti"
       ],
       "Loading": [
         "Caricamento"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "Caricamento di ${ appName }"
       ],
+      "Loading link": [
+        "Caricando il collegamento"
+      ],
+      "Loading links": [
+        "Caricando i collegamenti"
+      ],
       "Loading preview": [
         "Caricamento anteprima"
-      ],
-      "Loading share": [
-        "Caricamento condivisione"
       ],
       "Merged": [
         "Unito"
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         "URL non valido"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Non tutti i file sono stati trasferiti. Prova nuovamente a caricare o scaricare i file."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Nota: i dati potrebbero essere ancora disponibili localmente sui dispositivi su cui hai installato ${ appName }."
       ],
@@ -2772,11 +2799,14 @@
       "Permanently delete all files in your drive": [
         "Elimina definitivamente tutti i file nello spazio"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente del compositore. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Prego immettere la password per decrittare e vedere il contenuto."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
@@ -2815,6 +2845,9 @@
       "Priority support": [
         "Assistenza prioritaria"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Ricerca privata abilitata. Ora puoi chiudere questa finestra di dialogo e cercare file e cartelle."
+      ],
       "Queued": [
         "Accodato"
       ],
@@ -2832,6 +2865,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
+      ],
+      "Search Enabled": [
+        "Ricerca Abilitata"
+      ],
+      "Secure sharing": [
+        "Condivisione sicura"
+      ],
+      "Secure your documents and data": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleziona un file o una cartella caricati e crea un link."
@@ -2857,11 +2899,20 @@
       "Share files with links": [
         "File condivisi con link"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Link condivisibile per ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Il controllo della firma verrà ignorato"
       ],
       "Signature issue": [
         "Problema di firma"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Qualche scaricamento non è avvenuto correttamente. Prova a scaricare nuovamente i file."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Qualche caricamento non è avvenuto correttamente. Prova a caricare nuovamente i file."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alcuni dei tuoi file non sono più accessibili. Ripristina l'accesso ai tuoi file. ${ StartRecoveryButton }"
@@ -2878,6 +2929,12 @@
       "support team": [
         "team di supporto"
       ],
+      "Swiss privacy": [
+        "Privacy svizzera"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "File non ancora presenti"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Questi file erano condivisi usando una crittografia end-to-end. Per assicurarne la sicurezza - e la sicurezza di tutti i tuoi documenti, foto e file - memorizzali in Proton Drive, lo spazio di archiviazione su cloud di cui puoi aver fiducia."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
@@ -2911,8 +2971,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Questo link potrebbe essere un attacco omografo. Verifica che questo sia il link che desideri visitare o non aprirlo."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Questo collegamento è stato creato in\nuna versione precedente e non può essere modificata. Elimina questo collegamento e crea un\nnuovo per modificare le impostazioni."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Questo link è stato creato con una vecchia versione di Drive e non può essere modificato. Eliminare questo link e crearne uno nuovo per modificare le impostazioni."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Questo link sarà permanentemente disabilitato. Nessuno con questo link sarà in grado di accedere al file. Per ricondividere il file, avrai bisogno di un nuovo link."
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Questo sovrascriverà la cartella esistente"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Per abilitare la ricerca veramente privata, ${ DRIVE_APP_NAME } deve indicizzare i tuoi file localmente."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Per abilitare la ricerca veramente privata, ${ DRIVE_APP_NAME } deve indicizzare i tuoi file localmente. Puoi comunque utilizzare ${ DRIVE_APP_NAME } normalmente: ti faremo sapere al termine dell'indicizzazione."
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Cestino"
-      ],
-      "Try different keywords": [
-        "Prova parole chiave diverse"
       ],
       "Unlimited folders, labels, and filters": [
         "Cartelle, etichette e filtri illimitati"
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "I tuoi dati sono pronti per essere importati da ${ importedEmailAddressStrong } al tuo account Proton."
       ],
-      "Your download has been canceled.": [
-        "Il download è stato annullato."
-      ],
       "Your email will only be used for this one-time verification.": [
         "La tua email sarà utilizzata solo per questa verifica una tantum."
-      ],
-      "Your file failed to download.": [
-        "Il file non è stato scaricato."
-      ],
-      "Your file has finished downloading.": [
-        "Il tuo file ha finito di scaricarsi."
-      ],
-      "Your file is being downloaded.": [
-        "Il tuo file sta venendo scaricato."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "I tuoi file non sono più accessibili a causa di un reset della password. Ricarica la vecchia chiave di crittografia per recuperare l'accesso. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "I tuoi file verranno crittografati e poi salvati."
-      ],
-      "Your folder failed to download.": [
-        "Impossibile scaricare la cartella."
-      ],
-      "Your folder has finished downloading.": [
-        "La tua cartella ha terminato il download."
-      ],
-      "Your folder is being downloaded.": [
-        "La tua cartella è in fase di download."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Il tuo numero di telefono sarà utilizzato solo per questa verifica una tantum."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Il tuo account Proton è attualmente in attesa. Per continuare a utilizzare il tuo account, paga le fatture scadute."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Il tuo link sicuro e condivisibile per ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Abilita Accesso Beta"
       ],
-      "Enabling drive search": [
-        "Abilitazione della ricerca di unità"
-      ],
       "Encrypt emails": [
         "Email criptate"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         "Da: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Ottieni il tuo ${ appName }"
       ],
       "Good": [
         "Buona"
@@ -3366,6 +3390,9 @@
       ],
       "Last month only": [
         "Solo il mese scorso"
+      ],
+      "Location": [
+        "Posizione"
       ],
       "Mailbox password": [
         "Password della casella email"
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } è uscito dalla fase beta! Garantite ai vostri file la stessa sicurezza delle vostre e-mail."
+      ],
       "Encrypted search is here": [
         "La ricerca crittografata è qui"
       ],
@@ -4088,6 +4118,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Ora puoi cercare facilmente i file di Drive mantenendo i tuoi dati al sicuro."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prova ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "# di accessi"
-      ],
       "Actions": [
         "Azioni"
       ],
       "Address": [
         "Indirizzo"
       ],
-      "Created": [
-        "Creata"
-      ],
       "CSV field": [
         "Campo CSV"
-      ],
-      "Deleted": [
-        "Eliminato"
-      ],
-      "Expires": [
-        "Scadrà"
       ],
       "Import": [
         "Importa"
       ],
-      "Location": [
-        "Località"
-      ],
-      "Modified": [
-        "Modificato"
-      ],
       "Name": [
         "Nome"
-      ],
-      "Size": [
-        "Dimensione"
-      ],
-      "Uploaded": [
-        "Caricato"
       ],
       "Values": [
         "Valori"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } membro",
         "${ emailsCount } membri"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } scaricamento fallito",
+        "${ numberOfFailedTransfer.total } scaricamenti falliti"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } trasferimento fallito",
+        "${ numberOfFailedTransfer.total } trasferimenti falliti"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } caricamento fallito",
+        "${ numberOfFailedTransfer.total } caricamenti falliti"
+      ],
       "Account suspended": [
         "Account sospeso"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "Aggiungi a ${ groupName }"
       ],
-      "Additional settings": [
-        "Impostazioni aggiuntive"
-      ],
       "Addresses": [
         "Indirizzi"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Indietro"
+      ],
+      "Based in Switzerland, available globally": [
+        "Sede in Svizzera, disponibile globalmente"
       ],
       "Beta Access": [
         "Accesso Beta"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Data"
       ],
+      "Decrypting": [
+        "Decrittando"
+      ],
       "Delete ${ count } contact": [
         "Elimina ${ count } contatto",
         "Elimina ${ count } contatti"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Annullare le modifiche?"
       ],
-      "Download canceled": [
-        "Download annullato"
-      ],
-      "Download completed": [
-        "Download completato"
-      ],
-      "Download failed": [
-        "Download non riuscito"
+      "Download shared file": [
+        "Download del file condiviso"
       ],
       "Download unverified file?": [
         "Scaricare file non verificato?"
       ],
       "Download unverified folder?": [
         "Scaricare la cartella non verificata?"
-      ],
-      "Downloading": [
-        "Scaricamento"
       ],
       "Drive": [
         "Drive"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Svuota il cestino"
-      ],
-      "Enable drive search": [
-        "Abilita la ricerca di unità"
-      ],
-      "Enter password to download": [
-        "Inserisci la password per scaricare"
       ],
       "Enter your password": [
         "Inserisci la tua password"
@@ -4466,6 +4475,9 @@
         "Trovato ${ searchView.numberOfResults } risultato",
         "Trovati ${ searchView.numberOfResults } risultati"
       ],
+      "Getting files": [
+        "Ricevendo file"
+      ],
       "Groups": [
         "Gruppi"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Importa i contatti"
       ],
-      "Import groups": [
-        "Importa gruppi"
-      ],
       "Invalid verification code": [
         "Codice di verifica non valido"
+      ],
+      "Item details": [
+        "Dettagli degli elementi"
       ],
       "Items details": [
         "Dettagli elementi"
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Gestisci link sicuri"
-      ],
-      "Manage share": [
-        "Gestione condivisione"
       ],
       "Merge contacts": [
         "Unisci contatti"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Nome"
-      ],
-      "No results found": [
-        "Nessun risultato trovato"
       ],
       "Number of files": [
         "Numero di file"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Numeri di telefono"
+      ],
+      "Privacy settings": [
+        "Impostazioni privacy"
       ],
       "Re-sign all contacts": [
         "Ri-firma tutti i contatti"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         "Interrompere i trasferimenti?"
       ],
-      "The file or folder failed to be downloaded": [
-        "Impossibile scaricare il file o la cartella"
-      ],
-      "The internet connection was interrupted": [
-        "La connessione a Internet è stata interrotta"
-      ],
-      "The link does not exist": [
-        "Il collegamento non esiste"
-      ],
       "The link either does not exist or has expired": [
         "Il link non esiste o è scaduto"
       ],
@@ -4651,6 +4651,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Questa cartella ha una firma mancante o non valida. Vai a Menu (⋮) → Dettagli per info."
+      ],
+      "This link is password protected": [
+        "Questo collegamento è protetto da password"
       ],
       "Total size": [
         "Dimensione totale"
@@ -4694,11 +4697,8 @@
       "You have no folders yet": [
         "Non sono ancora presenti cartelle"
       ],
-      "Your file is ready to be downloaded": [
-        "Il tuo file è pronto per essere scaricato"
-      ],
-      "Your folder is ready to be downloaded": [
-        "La tua cartella è pronta per essere scaricata"
+      "You've got files": [
+        "Hai ricevuto dei file"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "La tua prova gratuita termina presto, il ${ formattedEndDate }"

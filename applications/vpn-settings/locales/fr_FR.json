@@ -1896,9 +1896,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } vous perdrez l'accès à toutes les données chiffrées actuelles de votre compte si vous continuez."
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } ou ${ forgotUsernameLink } ?"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et celui de la boîte de réception. Pour basculer vers le mode à mot de passe simple, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
@@ -1964,9 +1961,6 @@
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Après avoir effectué votre paiement Bitcoin, veuillez suivre les instructions ci-dessous afin d'effectuer votre changement d'offre."
-      ],
-      "Already have an account?": [
-        "Vous avez déjà un compte ?"
       ],
       "Amount below minimum (${ amount }).": [
         "Montant inférieur au minimum requis (${ amount })."
@@ -2169,6 +2163,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Link copied to clipboard": [
+        "Lien copié dans le presse-papier"
+      ],
       "Loading": [
         "Chargement"
       ],
@@ -2268,8 +2265,8 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton ne peut vous aider à récupérer aucun des mots de passe perdus."
       ],
-      "read our two-factor authentication Guide first": [
-        "lire d'abord notre guide de l'authentification à deux facteurs"
+      "read our two-factor authentication guide first": [
+        ""
       ],
       "recovery method": [
         "méthode de récupération"
@@ -3026,6 +3023,9 @@
       "Learn more": [
         "En savoir plus"
       ],
+      "Need help?": [
+        "Besoin d'aide ?"
+      ],
       "Not activated": [
         "Non activé"
       ],
@@ -3046,6 +3046,9 @@
       ],
       "Terms": [
         "Conditions générales d'utilisation"
+      ],
+      "Trouble signing in?": [
+        "Un problème pour se connecter ?"
       ],
       "Upgrade": [
         "Changer d'offre"
@@ -3145,8 +3148,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Découvrir tous les abonnements ${ BRAND_NAME }"
       ],
-      "From ${ _price } per user": [
-        "À partir de ${ _price } par utilisateur"
+      "From ${ _price }": [
+        "À partir de ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "À partir de ${ _price2 } par utilisateur"
       ],
       "From ${ price }": [
         "À partir de ${ price }"
@@ -3383,14 +3389,6 @@
         "Accès aux services de streaming dans le monde entier"
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Mot de passe oublié"
-      ],
-      "username": [
-        "nom d'utilisateur"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Support"
@@ -3439,6 +3437,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Suite de confidentialité et de sécurité pour les entreprises, comprenant tous les services premium de Proton."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Un stockage cloud sécurisé qui vous permet de stocker, synchroniser et partager des fichiers facilement et en toute sécurité."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Une messagerie électronique et un calendrier sécurisés pour les professionnels et les entreprises."
       ],
@@ -3459,6 +3460,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Protégez votre vie privée en matière de sauvegarde, de stockage, de partage et de récupération de fichiers."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Sinon l'accès à votre compte sera limité, et votre compte pourra être désactivé."
       ],
@@ -3492,20 +3496,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "La création du compte signifie que vous acceptez les ${ terms }. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        ""
       ],
       "Payment details": [
         "Informations de paiement"
-      ],
-      "Proton's terms and conditions": [
-        "Conditions générales d'utilisation de Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Enregistrez votre adresse électronique ou numéro de téléphone à utiliser pour la vérification si vous devez réinitialiser votre compte."
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "terms and conditions": [
+        "conditions générales d'utilisation"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Pour commencer, choisissez un nom d'affichage. C'est le nom que les gens verront quand vous leur enverrez un e-mail, quand vous les inviterez à un événement ou quand vous partagerez un fichier avec eux."
@@ -3726,6 +3730,9 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Augmentez votre espace de stockage pour un total de ${ businessStorage } par utilisateur"
       ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Augmentez votre espace de stockage pour un total de ${ driveStorage }"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Bénéficier de plus de possibilités avec la prise en charge de 10 domaines de messagerie personnalisés"
       ],
@@ -3944,11 +3951,17 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } n'est plus en beta ! Donnez à vos fichiers la même sécurité que vos e-mails."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Obtenez jusqu'à 18 mois de ${ planName } gratuitement"
       ],
       "Invite friends and earn rewards!": [
         "Invitez des amis et gagnez des récompenses !"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Essayez ${ DRIVE_APP_NAME }"
       ]
     },
     "State": {
