@@ -19,7 +19,11 @@ export const useSendModifications = () => {
     const auth = useAuthentication();
 
     return useCallback(async (inputMessage: MessageStateWithData) => {
-        const message = getMessage(inputMessage.localID) as MessageStateWithData;
+        const message = {
+            ...(getMessage(inputMessage.localID) as MessageStateWithData),
+            messageDocument: inputMessage.messageDocument,
+        };
+
         const messageKeys = await getMessageKeys(message.data);
         const attachments: Attachment[] = [];
         const images: MessageEmbeddedImage[] = [];
