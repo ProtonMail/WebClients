@@ -35,13 +35,16 @@ export interface IAOauthModalModelImportData {
     [ImportType.MAIL]: {
         selectedPeriod: TIME_PERIOD;
         providerFolders: ImportedMailFolder[];
+        error?: string;
     };
     [ImportType.CALENDAR]: {
         providerCalendars: ImportedCalendar[];
+        error?: string;
     };
     [ImportType.CONTACTS]: {
         numContacts: number;
         numContactGroups: number;
+        error?: string;
     };
     // [ImportType.DRIVE]: {
     // };
@@ -156,6 +159,7 @@ export enum IMPORT_ERROR {
     BANDWIDTH_LIMIT = 2902,
     TEMP_PROVIDER_ERROR = 2902,
     RATE_LIMIT_EXCEEDED = 429,
+    ACCOUNT_DOES_NOT_EXIST = 2011,
 }
 
 export interface ImportedFolder {
