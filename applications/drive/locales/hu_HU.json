@@ -193,6 +193,12 @@
       "Download": [
         "Letöltés"
       ],
+      "Download (${ count })": [
+        "(${ count }) letöltése"
+      ],
+      "Download all": [
+        "Összes letöltése"
+      ],
       "Download anyway": [
         "Letöltés mindenképpen"
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "asztali értesítések engedélyezése"
       ],
-      "Enable drive search": [
-        "Felhőtárban Keresés Engedélyezése"
-      ],
       "Expand": [
         "Kibontás"
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Hivatkozás készítése"
+      ],
+      "Get Proton Drive": [
+        "Proton Drive beszerzése"
       ],
       "Get started": [
         "Kezdés"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         "Ajánljon egy barátot"
       ],
-      "refresh the page": [
-        "oldalfrissítés"
-      ],
       "Refresh the page": [
         "Oldal frissítése"
+      ],
+      "refresh the page": [
+        "oldalfrissítés"
       ],
       "Remove": [
         "Eltávolítás"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Feltöltés folytatása"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "Mentés"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         "Helyreállító jelmondat beállítása"
       ],
-      "Share": [
-        "Megosztás"
-      ],
       "Share file": [
         "Fájl megosztása"
       ],
       "Share item": [
         "Elem megosztása"
-      ],
-      "Share options": [
-        "Megosztási beállítások"
       ],
       "Share via link": [
         "Megosztás hivatkozással"
@@ -1922,9 +1925,6 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
-      "Preferences could not be saved": [
-        "Beállítások mentése nem sikerült"
-      ],
       "Primary address key is not decrypted": [
         "Az elsődleges cím kulcsa nincs visszafejtve"
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Mielőtt új megerősítő kódot igényelne, kérjük tekintse meg a spam mappát illetve bizonyosodjon meg arról, hogy ${ strong } a megfelelő cím."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "A tömeges feltöltések csökkenthetik számítógépének teljesítményét. Fontolja meg az olyan memória-intenzív tevékenységek, mint a videózás, korlátozását feltöltés közben. Vagy próbáljon meg tételekben feltölteni."
+      ],
       "Canceled": [
         "Megszakítva"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "Mappa hivatkozásának előkészítése"
       ],
-      "Creating share": [
-        "Megosztás létrehozása"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Támogatottak az Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora és más alkalmazások CSV fájljai, illetve a vCard 3.1 és 4.0 formátum (UTF-8 kódolással)."
       ],
@@ -2518,8 +2518,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitális aláírás lellenőrizve. Ezt a mappát biztonságosan feltöltötte ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Letöltés megszakítva"
+      ],
+      "Download failed": [
+        "Letöltés sikertelen"
+      ],
+      "Download failed due to ${ error }": [
+        "A letöltés sikeres ${ error } miatt"
+      ],
+      "Download finished": [
+        "Letöltés befejezve"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } letöltése megszakításra kerül"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "A letöltés szünetel kapcsolódási probléma miatt; folytatódni fog automatikusan"
       ],
       "Downloaded": [
         "Letöltve"
@@ -2527,11 +2542,8 @@
       "Downloading": [
         "Letöltés"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ esProgress }-ből ${ totalProgressToShow } elem letöltése folyamatban"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ejtsen ide fájlokat vagy válassza a feltöltést."
+      "Drag and drop items here or browse for files to upload.": [
+        "Húzzon és ejtsen ide elemeket vagy böngésszen a feltöltendő fájlok között."
       ],
       "Drop the file here to upload": [
         "Húzza ide a fájlt a feltöltéshez"
@@ -2539,8 +2551,11 @@
       "Duplicate key updated": [
         "Duplikált kulcs frissítve"
       ],
-      "Enable drive search": [
-        "Felhőtárban Keresés Engedélyezése"
+      "Enabling drive search": [
+        "Felhőtárban keresés engedélyezése"
+      ],
+      "Encrypted": [
+        "Titkosítva"
       ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Adatok importálása a(z) ${ importedEmailAddress } címről a(z) ${ toEmail } címre."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "${ esProgress }-ből ${ totalProgressToShow } elem indexelése folyamatban"
+      ],
       "Indexing search results…": [
         "Keresési eredmények indexelése…"
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "Hivatkozás a vágólapra másolva"
       ],
-      "Link expires: ": [
-        "A link lejár: "
+      "Link failed to be loaded": [
+        "A hivatkozás betöltése nem sikerült"
+      ],
+      "Links failed to be loaded": [
+        "A hivatkozások betöltése nem sikerült"
       ],
       "Loading": [
         "Betöltés"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "${ appName } betöltése"
       ],
+      "Loading link": [
+        "Link betöltése"
+      ],
+      "Loading links": [
+        "Linkek betöltése"
+      ],
       "Loading preview": [
         "Előnézet betöltése"
-      ],
-      "Loading share": [
-        "Megosztás betöltése"
       ],
       "Merged": [
         "Egyesítve"
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         "Érvénytelen URL-cím"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Megjegyzés: az adatok még mindig elérhetők lehetnek helyileg olyan eszközökön, ahol telepítette a ${ appName } alkalmazást."
       ],
@@ -2772,11 +2799,14 @@
       "Permanently delete all files in your drive": [
         "A tárhelyen található összes fájljának végleges törlése"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "A PGP/Inline csak Egyszerű Szöveg formátummal működik. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "A PGP/MIME automatikusan, a szerkesztő mód aktuális beállításainak megfelelően küldi el az üzenetet. A ${ MAIL_APP_NAME } mindig aláírja a titkosított üzeneteket"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Kérjük, írja be a jelszót, hogy visszafejtse és megtekintse a tartalmat."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "A csoporthoz rendelt címek NEM kerülnek törlésre."
@@ -2815,6 +2845,9 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Privát keresés engedélyezve. Bezárhatja ezt a párbeszédet és kereshet fájlokat és mappákat."
+      ],
       "Queued": [
         "Sorba állítva"
       ],
@@ -2832,6 +2865,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "A keresés nem engedélyezhető ebben a böngészőben"
+      ],
+      "Search Enabled": [
+        "Keresés engedélyezve"
+      ],
+      "Secure sharing": [
+        "Biztonságos megosztás"
+      ],
+      "Secure your documents and data": [
+        "Védje dokumentumait és adatait"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Hivatkozás létrehozásához, válasszon ki egy feltöltött fájlt vagy mappát."
@@ -2857,11 +2899,20 @@
       "Share files with links": [
         "Fájlok megosztása linkekkel"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Megosztható hivatkozás ehhez: ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Az aláírás-ellenőrzés figyelmen kívül lesz hagyva"
       ],
       "Signature issue": [
         "Probléma az aláírással"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Néhány fájlja már nem érhető el. Állítsa vissza a fájlok elérését. ${ StartRecoveryButton }"
@@ -2878,6 +2929,12 @@
       "support team": [
         "ügyfélszolgálat"
       ],
+      "Swiss privacy": [
+        "Svájci adatbiztonság"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Bökjön a + gombra, hogy feltöltsön egy fájlt vagy mappát."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "A fióknak lehet, hogy új kulcsa van, vagy babráltak a következőkkel: ${ items }. Csak akkor nyissa meg, ha megbízik benne."
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "Még nincsenek fájlok"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Ezek a fájlok végpontok közti titkosítással lettek megosztva. A biztonságuk - és az összes dokumentumának, fotójának és fájljának biztonsága - garantálása érdekében tárolja őket a Proton Drive-on, a felhőtároló szolgáltatásban, melyben megbízhat."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Ez a fiók felfüggesztésre került a szabályzat valószínűsíthető megsértése miatt."
@@ -2911,8 +2971,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Ez a link egy hamisított címre mutató (homográf) támadásnak néz ki. Ellenőrizze, hogy valóban ezt a linket kívánja-e megnyitni vagy ne nyissa meg."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "A hivatkozás egy korábbi\nváltozatban lett létrehozva és nem módosítható. A beállítások megváltoztatásához törölje a hivatkozást és készítsen egy újat."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "A hivatkozás egy korábbiváltozatban lett létrehozva és nem módosítható. A beállítások megváltoztatásához törölje a hivatkozást és készítsen egy újat."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "A hivatkozás véglegesen letiltásra kerül. Azok, akikkel korábban megosztotta, nem fognak hozzáférni a fájlhoz. A fájl újbóli megosztásához egy új hivatkozásra lesz szükség."
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Felülírja a meglévő mappát"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "A valóban biztonságos kereséshez a ${ DRIVE_APP_NAME }-nak helyben kell indexelnie fájljait. Továbbra is használhatja a ${ DRIVE_APP_NAME }-ot - jelezzük, ha az indexelés befejeződött."
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Lomtár"
-      ],
-      "Try different keywords": [
-        "Próbálkozzon más kulcsszavakkal"
       ],
       "Unlimited folders, labels, and filters": [
         "Korlátlan számú mappák, címkék és filterek"
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Az adatok a Proton fiókjába importálásra készen állnak a(z) ${ importedEmailAddressStrong } címről."
       ],
-      "Your download has been canceled.": [
-        "A letöltés megszakításra került."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Az e-mail csak erre az egyszeri ellenőrzésre lesz felhasználva."
-      ],
-      "Your file failed to download.": [
-        "A fájl letöltése nem sikerült."
-      ],
-      "Your file has finished downloading.": [
-        "A fájl letöltése befejeződött."
-      ],
-      "Your file is being downloaded.": [
-        "A fájl letöltés alatt."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "A jelszó visszaállítása miatt, a fájljai már nem érhetők el. Töltse fel a korábbi titkosítási kulcsát, hogy újra elérhesse a fájljait. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "A fájlok titkosításra majd pedig feltöltésre kerülnek."
-      ],
-      "Your folder failed to download.": [
-        "A mappa letöltése nem sikerült."
-      ],
-      "Your folder has finished downloading.": [
-        "A mappa letöltése befejeződött."
-      ],
-      "Your folder is being downloaded.": [
-        "A mappa letöltés alatt."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "A telefonszám csak erre az egyszeri ellenőrzésre lesz felhasználva."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "A Proton fiók jelenleg fel van függesztve. A további használatához kérjük, egyenlítse ki a számlatartozását."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "A biztonságos, megosztható hivatkozás ehhez: ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Béta hozzáférés engedélyezése"
       ],
-      "Enabling drive search": [
-        "Felhőtárban Keresés Engedélyezése"
-      ],
       "Encrypt emails": [
         "Üzenetek titkosítása"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         "Forrás: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Szerezze be ön is: ${ appName }"
       ],
       "Good": [
         "Jó"
@@ -3366,6 +3390,9 @@
       ],
       "Last month only": [
         "Csak az utolsó hónap"
+      ],
+      "Location": [
+        "Hely"
       ],
       "Mailbox password": [
         "E-mail jelszó"
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "A ${ DRIVE_APP_NAME } kijött a bétából! Adja meg fájljainak ugyanazt a biztonságot, amit az emiljei is kapnak."
+      ],
       "Encrypted search is here": [
         "A titkosított keresés megérkezett"
       ],
@@ -4088,6 +4118,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Most már könnyedén tud Drive fájljai közt keresni adatai biztonságban tartásával."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Próbálja ki a ${ DRIVE_APP_NAME }-ot"
       ]
     },
     "Storage": {
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "Elérések száma"
-      ],
       "Actions": [
         "Műveletek"
       ],
       "Address": [
         "Cím"
       ],
-      "Created": [
-        "Létrehozva"
-      ],
       "CSV field": [
         "CSV mező"
-      ],
-      "Deleted": [
-        "Törölve"
-      ],
-      "Expires": [
-        "Lejárat"
       ],
       "Import": [
         "Importálás"
       ],
-      "Location": [
-        "Hely"
-      ],
-      "Modified": [
-        "Módosítva"
-      ],
       "Name": [
         "Név"
-      ],
-      "Size": [
-        "Méret"
-      ],
-      "Uploaded": [
-        "Feltöltve"
       ],
       "Values": [
         "Értékek"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } tag",
         "${ emailsCount } tag"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        ""
+      ],
       "Account suspended": [
         "Fiók felfüggesztve"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "Hozzáadás a csoporthoz: ${ groupName }"
       ],
-      "Additional settings": [
-        "További beállítások"
-      ],
       "Addresses": [
         "Címek"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Vissza"
+      ],
+      "Based in Switzerland, available globally": [
+        "Svájci székhelyű, világszerte elérhető"
       ],
       "Beta Access": [
         "Béta hozzáférés"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Dátum"
       ],
+      "Decrypting": [
+        "Visszafejtés"
+      ],
       "Delete ${ count } contact": [
         "${ count } névjegy törlése",
         "${ count } névjegy törlése"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Módosítások elvetése?"
       ],
-      "Download canceled": [
-        "Letöltés megszakítva"
-      ],
-      "Download completed": [
-        "Letöltés kész"
-      ],
-      "Download failed": [
-        "Letöltés sikertelen"
+      "Download shared file": [
+        "Megosztott fájl letöltése"
       ],
       "Download unverified file?": [
         "Ellenőrizetlen fájl letöltése?"
       ],
       "Download unverified folder?": [
         "Ellenőrizetlen mappa letöltése?"
-      ],
-      "Downloading": [
-        "Letöltés"
       ],
       "Drive": [
         "Drive"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Lomtár kiürítése"
-      ],
-      "Enable drive search": [
-        "Felhőtárban Keresés Engedélyezése"
-      ],
-      "Enter password to download": [
-        "Írja be a jelszót a letöltéshez"
       ],
       "Enter your password": [
         "Adja meg a jelszavát"
@@ -4466,6 +4475,9 @@
         "${ searchView.numberOfResults } találat",
         "${ searchView.numberOfResults } találat"
       ],
+      "Getting files": [
+        "Fájlok letöltése"
+      ],
       "Groups": [
         "Csoportok"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Névjegyek importálása"
       ],
-      "Import groups": [
-        "Felhasználói csoportok importálása"
-      ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
+      ],
+      "Item details": [
+        "Elem adatai"
       ],
       "Items details": [
         "Elem adatai"
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Biztonságos hivatkozás kezelése"
-      ],
-      "Manage share": [
-        "Megosztás kezelése"
       ],
       "Merge contacts": [
         "Névjegyek egyesítése"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Név"
-      ],
-      "No results found": [
-        "Nincs találat"
       ],
       "Number of files": [
         "Fájlok száma"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Telefonszámok"
+      ],
+      "Privacy settings": [
+        "Adatvédelmi beállítások"
       ],
       "Re-sign all contacts": [
         "Az összes névjegy ismételt aláírása"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         "Le- és feltöltések leállítása?"
       ],
-      "The file or folder failed to be downloaded": [
-        "A fájlt vagy mappát nem sikerült letölteni"
-      ],
-      "The internet connection was interrupted": [
-        "Az internetkapcsolat megszakadt"
-      ],
-      "The link does not exist": [
-        "A hivatkozás nem létezik"
-      ],
       "The link either does not exist or has expired": [
         "A hivatkozás nem létezik vagy leját"
       ],
@@ -4651,6 +4651,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "A mappa aláírása hiányzik vagy hibás. Nyissa meg a Menü (⋮) → Részletek pontot a további információért."
+      ],
+      "This link is password protected": [
+        "Ez a link jelszóval védett"
       ],
       "Total size": [
         "Teljes méret"
@@ -4694,11 +4697,8 @@
       "You have no folders yet": [
         "Még nincsenek mappái"
       ],
-      "Your file is ready to be downloaded": [
-        "A fájl készen áll a letöltésre"
-      ],
-      "Your folder is ready to be downloaded": [
-        "A mappa készen áll a letöltésre"
+      "You've got files": [
+        "Fájljai érkeztek"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Az ingyenes próbaideje hamarosan le fog járni ekkor: ${ formattedEndDate }"

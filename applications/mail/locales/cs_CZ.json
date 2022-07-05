@@ -215,9 +215,6 @@
       "Customize": [
         "Přizpůsobit"
       ],
-      "Decrypt": [
-        "Dešifrovat"
-      ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
       ],
@@ -340,6 +337,9 @@
       ],
       "External encryption": [
         "Externí šifrování"
+      ],
+      "Fewer search options": [
+        "Méně možností vyhledávání"
       ],
       "Filter on...": [
         "Filtrovat…"
@@ -467,9 +467,6 @@
       "Learn more": [
         "Více informací"
       ],
-      "Less search options": [
-        "Méně možností vyhledávaní"
-      ],
       "Load": [
         "Nahrát"
       ],
@@ -547,6 +544,21 @@
       ],
       "More search options": [
         "Více možností vyhledávání"
+      ],
+      "Move": [
+        "Přesun"
+      ],
+      "Move all conversations from this folder": [
+        "Přesun všech konverzací z této složky"
+      ],
+      "Move all conversations from this label": [
+        "Přesun všech konverzací z tohoto štítku"
+      ],
+      "Move all messages from this folder": [
+        "Přesun všech zpráv z této složky"
+      ],
+      "Move all messages from this label": [
+        "Přesun všech zpráv tohoto štítku"
       ],
       "move emails to": [
         "přesunout e-maily do"
@@ -670,6 +682,9 @@
       ],
       "Re-sign": [
         "Znovu podepsat"
+      ],
+      "Read message": [
+        "Přečíst zprávu"
       ],
       "Read receipt sent": [
         "Potvrzení o přečtení odesláno"
@@ -809,6 +824,9 @@
       "Show details": [
         "Zobrazit detaily"
       ],
+      "Show fewer search options": [
+        "Zobrazit méně možností vyhledávání"
+      ],
       "Show folders": [
         "Zobrazit složky"
       ],
@@ -817,9 +835,6 @@
       ],
       "Show less": [
         "Zobrazit méně"
-      ],
-      "Show less search options": [
-        "Skrýt možnosti vyhledávání"
       ],
       "Show messages": [
         "Zobrazit zprávy"
@@ -857,9 +872,6 @@
       "Submit": [
         "Odeslat"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Motiv"
       ],
@@ -868,6 +880,9 @@
       ],
       "This message contains remote content.": [
         "Tato zpráva obsahuje vzdálený obsah."
+      ],
+      "Trash all": [
+        "Hodit vše do koše"
       ],
       "Trust": [
         "Důvěřovat"
@@ -930,13 +945,13 @@
         "Přejít na placený tarif"
       ],
       "Upgrade now": [
-        "Upgradovat nyní"
+        "Navýšit nyní"
       ],
       "Upload picture": [
         "Nahrát obrázek"
       ],
       "Use ${ label } theme": [
-        "Použít ${ label } motiv"
+        "Použít vzhled ${ label }"
       ],
       "Use for sending": [
         "Použít pro odesílání"
@@ -3160,9 +3175,6 @@
       "Please set a password": [
         "Nastavte prosím heslo"
       ],
-      "Preferences could not be saved": [
-        "Preference se nepovedlo uložit"
-      ],
       "Primary address key is not decrypted": [
         "Klíč primární adresy nebyl dešifrován"
       ],
@@ -4159,10 +4171,10 @@
         "Vše (${ totalFoldersCount } složek)"
       ],
       "All (${ totalFoldersCount } label)": [
-        "Vše (${ totalFoldersCount } štítek)",
+        "Všechen (${ totalFoldersCount } štítek)",
         "Všechny (${ totalFoldersCount } štítky)",
-        "Vše (${ totalFoldersCount } štítků)",
-        "Vše (${ totalFoldersCount } štítků)"
+        "Všech (${ totalFoldersCount } štítků)",
+        "Všech (${ totalFoldersCount } štítků)"
       ],
       "All messages stored in this folder will be permanently deleted.": [
         "Všechny zprávy uložené v této složce budou trvale smazány."
@@ -4190,6 +4202,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "Určitě chcete zahodit všechny provedené změny?"
+      ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Jste si jisti, že chcete přesunout všechny zprávy odtud do Koše?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Jste si jistí, že chcete permanentně vymazat ${ count } kontakt konverzace?",
@@ -4316,9 +4331,6 @@
         "Dny",
         "Dny",
         "Dnů"
-      ],
-      "Decrypt message": [
-        "Dešifrovat zprávu"
       ],
       "Default email application": [
         "Výchozí e-mailová aplikace"
@@ -4626,6 +4638,9 @@
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Přesun velkého množství zpráv. Bude to chvíli trvat."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Pojmenujte svou novou složku a vyberte nadřazenou složku, do které ji chcete vložit. Pokud nevyberete nadřazenou složku, bude nová složka vytvořena v kořenové složce."
       ],
@@ -4642,7 +4657,7 @@
         "Žádná e-mailová adresa"
       ],
       "No email trackers found": [
-        "Žádné sledování e-mailů nebylo nalezeno"
+        "Bez sledovacích prvků"
       ],
       "No folder found": [
         "Složka nenalezena"
@@ -4672,13 +4687,10 @@
         "Nebyly nalezeny žádné sledovací prvky, ale některé obrázky nebylo možné načíst s ochranou proti sledování"
       ],
       "non-Proton Mail": [
-        ""
+        "jinou než ProtonMail"
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Žádný z nahraných klíčů není platný pro šifrování. Šifrování bylo automaticky deaktivováno."
-      ],
-      "Normal": [
-        ""
       ],
       "Not a valid URL": [
         "Neplatný odkaz"
@@ -4701,11 +4713,11 @@
       "per month.": [
         "za měsíc."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Telefonní číslo"
@@ -4779,6 +4791,9 @@
       "Request read receipt": [
         "Žádost o potvrzení o přečtení"
       ],
+      "Rich text": [
+        "Rich text"
+      ],
       "Right to Left": [
         "Zprava doleva"
       ],
@@ -4831,7 +4846,7 @@
         "Odesílání zpráv z @pm.me adresy je placená služba. Vaše zpráva bude odeslána z vaší standardní adresy ${ email }"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
-        "Odesláno pomocí zabezpečeného e-mailu <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
+        "Odesláno z <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }u</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Servery jsou nedostupné. Zkuste to prosím znovu za několik minut"
@@ -4915,7 +4930,7 @@
         "Ověření ${ contactNames } se nepovedlo: kontaktů není správně přihlášeno. Můžete to být důvod resetování hesla.\nMusíte znovu přihlásit kontakty, aby bylo možné poslat zprávu k ${ contactAddresses } nebo upravit kontakty."
       ],
       "Themes can give your inbox a new look.": [
-        "Motivy mohou dát Vaší e-mailové schránce novou podobu."
+        "Vzhledy mohou dát Vaší e-mailové schránce novou podobu."
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "Je tam chyba v podpisu používaní pro ověření detailu kontaktu, kdy je to možná důvod pro resetování hesla."
@@ -5039,6 +5054,9 @@
       ],
       "Unlimited messages": [
         "Neomezené zprávy"
+      ],
+      "Unlock message": [
+        "Odemknout zprávu"
       ],
       "Unsupported file": [
         "Nepodporovaný soubor"
@@ -6139,10 +6157,10 @@
         "Koš"
       ],
       "Upgrade": [
-        "Upgradovat"
+        "Navýšení"
       ],
       "Upgrade account": [
-        "Upgradovat účet"
+        "Navýšit účet"
       ],
       "You need to activate your calendar keys to add this event": [
         "Pro přidání této události musíte aktivovat vaše klíče kalendáře"
@@ -6503,7 +6521,7 @@
         "Objevte všechny Proton služby"
       ],
       "Select a theme": [
-        "Vyberte motiv"
+        "Vyberte vzhled"
       ],
       "Set up your organization": [
         "Nastavení organizace"
@@ -6798,6 +6816,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nelze odeslat na adresu organizátora: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Pozvánka znovu-zašifrování selhala. Prosím zkuste to znovu"
       ]
     },
     "Search - no results": {
@@ -6946,6 +6967,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
+      ],
       "Discover all Proton services": [
         "Objevte všechny Proton služby"
       ],
@@ -6963,6 +6987,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Z důvodu ochrany vašeho soukromí společnost Proton v této zprávě zablokovala sledování e-mailů"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Nyní můžete naplánovat odesílání zpráv později"
@@ -7626,9 +7653,6 @@
       "Import contacts": [
         "Importovat kontakty"
       ],
-      "Import groups": [
-        "Importovat skupiny"
-      ],
       "Insert contacts": [
         "Vložte kontakty"
       ],
@@ -7682,6 +7706,9 @@
       ],
       "More selections": [
         "Další výběry"
+      ],
+      "Move all messages to Trash": [
+        "Přesun všech zpráv do Koše"
       ],
       "Move to": [
         "Přesunout do"
@@ -7768,7 +7795,7 @@
         "Naplánovat odeslání"
       ],
       "Select a theme": [
-        "Vyberte motiv"
+        "Vyberte vzhled"
       ],
       "Select action to take on contact group": [
         "Vyberte akci k provedení ve skupině kontaktů"

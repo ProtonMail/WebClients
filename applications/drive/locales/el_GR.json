@@ -193,6 +193,12 @@
       "Download": [
         "Λήψη"
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         "Λήψη οπωσδήποτε"
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "ενεργοποίηση ειδοποιήσεων επιφάνειας εργασίας"
       ],
-      "Enable drive search": [
-        "Ενεργοποίηση τοπικής αναζήτησης"
-      ],
       "Expand": [
         "Ανάπτυξη"
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Λάβετε σύνδεσμο"
+      ],
+      "Get Proton Drive": [
+        ""
       ],
       "Get started": [
         "Ξεκινήστε"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         ""
       ],
-      "refresh the page": [
-        "ανανέωσε τη σελίδα"
-      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
+      ],
+      "refresh the page": [
+        "ανανέωσε τη σελίδα"
       ],
       "Remove": [
         "Αφαίρεση"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Συνέχιση ανεβάσματος"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "Αποθήκευση"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         "Ορισμός φράσης ανάκτησης"
       ],
-      "Share": [
-        "Κοινοποίηση"
-      ],
       "Share file": [
         "Κοινοποίηση αρχείου"
       ],
       "Share item": [
         "Κοινοποίηση αντικειμένου"
-      ],
-      "Share options": [
-        "Κοινοποίηση επιλογών"
       ],
       "Share via link": [
         "Κοινοποίηση με σύνδεσμο"
@@ -1809,7 +1812,7 @@
         "Ο έλεγχος ταυτότητας ακυρώθηκε."
       ],
       "Authentication error.": [
-        "Σφάλμα ελέγχου ταυτότητας."
+        "Σφάλμα ταυτοποίησης."
       ],
       "Calendar limit reached": [
         "Εξάντληση ορίου ημερολογίων"
@@ -1921,9 +1924,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
-      ],
-      "Preferences could not be saved": [
-        "Αδυναμία αποθήκευσης προτιμήσεων"
       ],
       "Primary address key is not decrypted": [
         "Το κύριο κλειδί διεύθυνσης δεν αποκρυπτογραφείται"
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "Ακυρωμένες"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "Δημιουργία συνδέσμου προς το φάκελο"
       ],
-      "Creating share": [
-        "Δημιουργία κοινοποίησης"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Υποστηρίζονται αρχεία CSV από Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora και κάποιες άλλες εφαρμογές, καθώς και μορφές vCard 3.1 και 4.0 (κωδικοποίηση UTF-8)."
       ],
@@ -2518,8 +2518,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Ο φάκελος ανέβηκε διασφαλισμένα από ${ emailAddress }."
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Η λήψη του ${ downloadFileName } θα ματαιωθεί"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        ""
       ],
       "Downloaded": [
         "Ελήφθησαν"
@@ -2527,20 +2542,20 @@
       "Downloading": [
         "Λήψη"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Λήψη στοιχείων ${ esProgress } από ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Σύρετε και αποθέστε ένα αρχείο εδώ ή επιλέξτε να το ανεβάσετε."
+      "Drag and drop items here or browse for files to upload.": [
+        ""
       ],
       "Drop the file here to upload": [
-        "Αφήστε το αρχείο εδώ για μεταφόρτωση"
+        "Σύρτε το αρχείο εδώ για ανέβασμα"
       ],
       "Duplicate key updated": [
         "Το διπλότυπο κλειδί ενημερώθηκε"
       ],
-      "Enable drive search": [
+      "Enabling drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
+      ],
+      "Encrypted": [
+        ""
       ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Δεικτοδότηση στοιχείων: ${ esProgress } από ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "Γίνεται δεικτοδότηση αποτελεσμάτων αναζήτησης…"
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
       ],
-      "Link expires: ": [
-        "Ο σύνδεσμος λήγει: "
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
+        ""
       ],
       "Loading": [
         "Φόρτωση"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "Φόρτωση ${ appName }"
       ],
+      "Loading link": [
+        ""
+      ],
+      "Loading links": [
+        ""
+      ],
       "Loading preview": [
         "Φόρτωση προεπισκόπησης"
-      ],
-      "Loading share": [
-        "Φόρτωση κοινοποίησης"
       ],
       "Merged": [
         "Συγχωνευμένα"
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         "Μη έγκυρο URL"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Σημείωση: Σε συσκευές όπου εγκαταστήσατε το ${ appName }, κάποια δεδομένα ίσως είναι ακόμα διαθέσιμα."
       ],
@@ -2772,11 +2799,14 @@
       "Permanently delete all files in your drive": [
         "Οριστική διαγραφή όλων των αρχείων στην αρχειοθήκη σας"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "Το PGP/Inline είναι συμβατό μόνο με τη μορφή Σκέτου Κειμένου. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "Το PGP/MIME στέλνει αυτόματα το μήνυμα χρησιμοποιώντας την τρέχουσα λειτουργία συντάκτη. Παρακαλούμε σημειώστε ότι το ${ MAIL_APP_NAME } πάντα υπογράφει κρυπτογραφημένα μηνύματα"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Σημειώστε ότι οι διευθύνσεις που έχουν αντιστοιχιστεί σε αυτήν την ομάδα ΔΕ θα διαγραφούν."
@@ -2815,6 +2845,9 @@
       "Priority support": [
         "Υποστήριξη κατά προτεραιότητα"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Η ιδιωτική αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
+      ],
       "Queued": [
         "Σε αναμονή"
       ],
@@ -2832,6 +2865,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
+      ],
+      "Search Enabled": [
+        "Αναζήτηση Ενεργοποιημένη"
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
+        "Διασφαλίστε τα έγγραφα και τα δεδομένα σας"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Επιλέξτε ένα ανεβασμένο αρχείο ή φάκελο και δημιουργήστε έναν σύνδεσμο προς αυτό."
@@ -2857,11 +2899,20 @@
       "Share files with links": [
         "Κοινή χρήση αρχείων με συνδέσμους"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Κοινοποιήσιμος σύνδεσμος για το ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Ο έλεγχος υπογραφής θα αγνοηθεί"
       ],
       "Signature issue": [
         "Πρόβλημα υπογραφής"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Κάποια από τα αρχεία σας δεν είναι πλέον προσβάσιμα. Αποκαταστήστε την πρόσβαση στα αρχεία σας. ${ StartRecoveryButton }"
@@ -2878,6 +2929,12 @@
       "support team": [
         "ομάδα υποστήριξης"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Για ανέβασμα ενός αρχείου ή φακέλου, πιέστε το κουμπί +."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "Δεν υπάρχουν ακόμη αρχεία"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -2911,8 +2971,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Αυτός ο σύνδεσμος μπορεί να είναι επίθεση ομογραφίας. Βεβαιωθείτε ότι πρόκειται για το σύνδεσμο που θέλετε να επισκεφθείτε, ή μην το ανοίξετε."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί,\nεπειδή δημιουργήθηκε σε προηγούμενη έκδοση.\nΓια να αλλάξετε τις ρυθμίσεις, διαγράψτε τον και δημιουργήστε έναν νέο."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Αυτός ο σύνδεσμος δεν μπορεί να τροποποιηθεί, επειδή δημιουργήθηκε σε παρωχημένη έκδοση του Drive. Για να αλλάξετε τη σύνδεση, διαγράψτε τον και δημιουργήστε έναν νέο."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Αυτός ο σύνδεσμος θα απενεργοποιηθεί μόνιμα. Κανείς με αυτόν τον σύνδεσμο δε θα έχει πρόσβαση στο αρχείο. Για επαναδιαμοιρασμό του αρχείου, θα χρειαστείτε έναν νέο σύνδεσμο."
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Αυτή η εγγραφή θα διαγράψει τον φάκελο που ήδη υπάρχει"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Για την ενεργοποίηση αληθινά ιδιωτικής αναζήτησης, το ${ DRIVE_APP_NAME } χρειάζεται να δεικτοδοτήσει τα αρχεία σας τοπικά. Μπορείτε να συνεχίσετε τη χρήση του ${ DRIVE_APP_NAME } κανονικά (θα σας ενημερώσουμε όταν η δεικτοδότηση ολοκληρωθεί)."
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Διαγραμμένα"
-      ],
-      "Try different keywords": [
-        "Δοκιμάστε διαφορετικές λέξεις κλειδιά"
       ],
       "Unlimited folders, labels, and filters": [
         "Απεριόριστοι φάκελοι, ετικέτες και φίλτρα"
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Τα δεδομένα σας είναι έτοιμα για εισαγωγή από ${ importedEmailAddressStrong } στο λογαριασμό σας στο Proton."
       ],
-      "Your download has been canceled.": [
-        "Η λήψη σας έχει ακυρωθεί."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your file failed to download.": [
-        "Το αρχείο σας απέτυχε να ληφθεί."
-      ],
-      "Your file has finished downloading.": [
-        "Η λήψη του αρχείου σας ολοκληρώθηκε."
-      ],
-      "Your file is being downloaded.": [
-        "Γίνεται λήψη του αρχείου σας."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Τα αρχεία σας δεν είναι πλέον προσβάσιμα, λόγω επαναφοράς κωδικού πρόσβασης. Για επαναπόκτηση πρόσβασης, ανεβάστε ξανά το παλιό κλειδί κρυπτογράφησης. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν."
-      ],
-      "Your folder failed to download.": [
-        "Ο φάκελός σας απέτυχε να ληφθεί."
-      ],
-      "Your folder has finished downloading.": [
-        "Η λήψη του φακέλου σας ολοκληρώθηκε."
-      ],
-      "Your folder is being downloaded.": [
-        "Γίνεται λήψη του φακέλου σας."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Ο λογαριασμός Proton βρίσκεται σε αναμονή. Για να συνεχίσετε να χρησιμοποιείτε το λογαριασμό σας, παρακαλούμε να πληρώσετε τυχόν εκπρόθεσμα τιμολόγια."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Ο διασφαλισμένος κοινοποιήσιμος σύνδεσμός σας για το ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Ενεργοποίηση πρόσβασης Beta"
       ],
-      "Enabling drive search": [
-        "Ενεργοποίηση τοπικής αναζήτησης"
-      ],
       "Encrypt emails": [
         "Κρυπτογραφημένα E-mails"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         "Από: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Αποκτήστε το δικό σας ${ appName }"
       ],
       "Good": [
         "Καλή"
@@ -3366,6 +3390,9 @@
       ],
       "Last month only": [
         "Τελευταίο μήνα μόνο"
+      ],
+      "Location": [
+        ""
       ],
       "Mailbox password": [
         "Κωδικός Θυρίδας"
@@ -3488,7 +3515,7 @@
         "Προς: ${ emailAddress }"
       ],
       "Two-factor authentication code": [
-        "Κωδικός ελέγχου ταυτότητας δύο παραγόντων"
+        "Κωδικός ταυτοποίησης δύο παραγόντων"
       ],
       "Type": [
         "Τύπος"
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         "Η κρυπτογραφημένη αναζήτηση έφτασε"
       ],
@@ -4088,6 +4118,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Τώρα είναι δυνατή η αναζήτηση στην Αρχειοθήκη, εύκολα και διατηρώντας τη διασφάλιση των δεδομένων σας."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Δοκιμή ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "# των προσβάσεων"
-      ],
       "Actions": [
         "Ενέργειες"
       ],
       "Address": [
         "Διεύθυνση"
       ],
-      "Created": [
-        "Δημιουργήθηκε"
-      ],
       "CSV field": [
         "CSV πεδίο"
-      ],
-      "Deleted": [
-        "Διαγράφηκαν"
-      ],
-      "Expires": [
-        "Λήγει"
       ],
       "Import": [
         "Εισαγωγή"
       ],
-      "Location": [
-        "Τοποθεσία"
-      ],
-      "Modified": [
-        "Τροποποιήθηκε"
-      ],
       "Name": [
         "Όνομα"
-      ],
-      "Size": [
-        "Μέγεθος"
-      ],
-      "Uploaded": [
-        "Ανέβηκε"
       ],
       "Values": [
         "Τιμές"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } μέλος",
         "${ emailsCount } μέλη"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        ""
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "Προσθέστε στο ${ groupName }"
       ],
-      "Additional settings": [
-        "Επιπλέον ρυθμίσεις"
-      ],
       "Addresses": [
         "Διευθύνσεις"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Πίσω"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "Beta Πρόσβαση"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Ραντεβού"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "Διαγραφή ${ count } επαφής",
         "Διαγραφή ${ count } επαφών"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
-      "Download canceled": [
-        "Η λήψη ακυρώθηκε"
-      ],
-      "Download completed": [
-        "Η λήψη ολοκληρώθηκε"
-      ],
-      "Download failed": [
-        "Η λήψη απέτυχε"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         "Λήψη μη επαληθευμένου αρχείου;"
       ],
       "Download unverified folder?": [
         "Λήψη μη επαληθευμένου φακέλου;"
-      ],
-      "Downloading": [
-        "Λήψη"
       ],
       "Drive": [
         "Αρχειοθήκη"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Εκκαθάριση Διαγραμμένων"
-      ],
-      "Enable drive search": [
-        "Ενεργοποίηση τοπικής αναζήτησης"
-      ],
-      "Enter password to download": [
-        "Εισάγετε τον κωδικό για λήψη"
       ],
       "Enter your password": [
         "Εισάγετε τον κωδικό σας"
@@ -4466,6 +4475,9 @@
         "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
         "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Εισαγωγή Επαφών"
       ],
-      "Import groups": [
-        "Εισαγωγή ομάδων"
-      ],
       "Invalid verification code": [
         "Μη έγκυρος κωδικός επαλήθευσης"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         "Λεπτομέρειες αντικειμένου"
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Διαχείριση ασφαλούς συνδέσμου"
-      ],
-      "Manage share": [
-        "Διαχείριση κοινής χρήσης"
       ],
       "Merge contacts": [
         "Συγχώνευση επαφών"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Όνομα"
-      ],
-      "No results found": [
-        "Κανένα αποτέλεσμα"
       ],
       "Number of files": [
         "Αριθμός αρχείων"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Αριθμοί τηλεφώνου"
+      ],
+      "Privacy settings": [
+        "Ρυθμίσεις ιδιωτικότητας"
       ],
       "Re-sign all contacts": [
         "Επανυπογραφή όλων των επαφών"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         "Διακοπή μεταφορών;"
       ],
-      "The file or folder failed to be downloaded": [
-        "Αποτυχία λήψης του αρχείου ή φακέλου"
-      ],
-      "The internet connection was interrupted": [
-        "Η σύνδεση στο διαδίκτυο διακόπηκε"
-      ],
-      "The link does not exist": [
-        "Ο σύνδεσμος δεν υπάρχει"
-      ],
       "The link either does not exist or has expired": [
         "Ο σύνδεσμος είτε δεν υπάρχει είτε έχει λήξει"
       ],
@@ -4651,6 +4651,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Αυτός ο φάκελος έχει απούσα ή μη έγκυρη υπογραφή. Για πληροφορίες, μεταβείτε στο Μενού (⋮) → Λεπτομέρειες."
+      ],
+      "This link is password protected": [
+        ""
       ],
       "Total size": [
         "Συνολικό μέγεθος"
@@ -4694,11 +4697,8 @@
       "You have no folders yet": [
         "Δεν έχετε ακόμη φακέλους"
       ],
-      "Your file is ready to be downloaded": [
-        "Το αρχείο σας είναι έτοιμο για λήψη"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Ο φάκελός σας είναι έτοιμος για λήψη"
+      "You've got files": [
+        ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         ""

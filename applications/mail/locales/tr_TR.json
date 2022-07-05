@@ -215,9 +215,6 @@
       "Customize": [
         "Özelleştir"
       ],
-      "Decrypt": [
-        "Şifreyi çöz"
-      ],
       "Default email application": [
         "Varsayılan e-posta uygulaması"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Dış şifreleme"
+      ],
+      "Fewer search options": [
+        "Daha fazla arama seçeneği"
       ],
       "Filter on...": [
         "Şuna göre süz..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Less search options": [
-        "Daha az arama seçeneği"
-      ],
       "Load": [
         "Yükle"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Daha fazla arama seçeneği"
+      ],
+      "Move": [
+        "Taşı"
+      ],
+      "Move all conversations from this folder": [
+        "Bu klasördeki tüm yazışmaları taşı"
+      ],
+      "Move all conversations from this label": [
+        "Bu etiketteki tüm yazışmaları taşı"
+      ],
+      "Move all messages from this folder": [
+        "Bu klasördeki tüm iletileri taşı"
+      ],
+      "Move all messages from this label": [
+        "Bu etiketteki tüm iletileri taşı"
       ],
       "move emails to": [
         "e-postaları şuraya taşı"
@@ -664,6 +676,9 @@
       ],
       "Re-sign": [
         "Yeniden imzala"
+      ],
+      "Read message": [
+        "İletiyi oku"
       ],
       "Read receipt sent": [
         "Okundu bilgisi gönderildi"
@@ -803,6 +818,9 @@
       "Show details": [
         "Ayrıntıları göster"
       ],
+      "Show fewer search options": [
+        "Daha az arama seçeneği göster"
+      ],
       "Show folders": [
         "Klasörleri göster"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Daha az göster"
-      ],
-      "Show less search options": [
-        "Daha az arama seçeneği göster"
       ],
       "Show messages": [
         "İletileri göster"
@@ -851,9 +866,6 @@
       "Submit": [
         "Gönder"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Tema"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
+      ],
+      "Trash all": [
+        "Tümünü çöpe at"
       ],
       "Trust": [
         "Güven"
@@ -3124,9 +3139,6 @@
       "Please set a password": [
         "Lütfen bir parola ayarlayın"
       ],
-      "Preferences could not be saved": [
-        "Tercihler kaydedilemedi"
-      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Değişiklikleri silmek istediğinize emin misiniz?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Bu klasördeki tüm iletileri çöpe atmak istediğinize emin misiniz?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "${ count } yazışmayı kalıcı olarak silmek istediğinize emin misiniz?",
         "${ count } yazışmayı kalıcı olarak silmek istediğinize emin misiniz?"
@@ -4188,9 +4203,6 @@
       "Day": [
         "gün",
         "gün"
-      ],
-      "Decrypt message": [
-        "İletinin şifresini çöz"
       ],
       "Default email application": [
         "Varsayılan e-posta uygulaması"
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Ayda bir ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Çok sayıda ileti taşınıyor. Bu işlem biraz zaman alabilir."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Yeni klasörünüzü adlandırın ve içine eklemek istediğiniz üst klasörü seçin. Herhangi bir üst klasör seçmezseniz, yeni klasör bir üst düzey klasör olur."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Yüklenmiş anahtarlardan hiçbiri şifreleme için geçerli değil. Şifreleme otomatik olarak devre dışı bırakıldı."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Adres geçersiz"
       ],
@@ -4557,11 +4569,11 @@
       "per month.": [
         "aylık."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Telefon numarası"
@@ -4632,6 +4644,9 @@
       ],
       "Request read receipt": [
         "Okundu bilgisi istensin"
+      ],
+      "Rich text": [
+        "Zengin metin"
       ],
       "Right to Left": [
         "Sağdan sola"
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Sınırsız ileti"
+      ],
+      "Unlock message": [
+        "İletinin kilidini aç"
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Düzenleyici adresine gönderilemedi: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Yeniden şşifreleme çağrısı yapılamadı. Lütfen yeniden deneyin"
       ]
     },
     "Search - no results": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
+      ],
       "Discover all Proton services": [
         "Tüm Proton hizmetlerini keşfedin"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Kişisel gizliliğinizi korumak için Proton bu iletideki e-posta izleyicilerini engelledi"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ],
       "You can now schedule your messages to be sent later": [
         "Artık iletileri daha sonra gönderilmek üzere zamanlayabilirsiniz"
@@ -7358,9 +7385,6 @@
       "Import contacts": [
         "Kişileri içe aktar"
       ],
-      "Import groups": [
-        "Grupları içe aktar"
-      ],
       "Insert contacts": [
         "Kişi ekle"
       ],
@@ -7414,6 +7438,9 @@
       ],
       "More selections": [
         "Diğer seçimler"
+      ],
+      "Move all messages to Trash": [
+        "Tüm iletileri çöpe at"
       ],
       "Move to": [
         "Şuraya taşı"

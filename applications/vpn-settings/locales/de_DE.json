@@ -1597,7 +1597,7 @@
         "Fehlende Funktion(en)"
       ],
       "My reason isn't listed, please comment": [
-        "Mein Grund ist nicht aufgeführt (bitte beschreiben Sie das Problem)"
+        "Mein Grund ist nicht aufgeführt (bitte beschreibe das Problem)"
       ],
       "Streaming service unsupported": [
         "Streaming-Dienst wird nicht unterstützt"
@@ -1614,7 +1614,7 @@
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Helfen Sie uns, besser zu werden!"
+        "Hilf uns, besser zu werden!"
       ]
     },
     "Error": {
@@ -1625,10 +1625,10 @@
         "Mindestbetrag unterschritten"
       ],
       "Can't check username, try again later": [
-        "Benutzername konnte nicht überprüft werden, bitte versuchen Sie es später erneut"
+        "Benutzername konnte nicht überprüft werden, bitte versuche es später erneut"
       ],
       "Checkout expired, please try again": [
-        "Kaufabwicklung abgelaufen. Bitte versuchen Sie es noch einmal"
+        "Kaufabwicklung abgelaufen. Bitte versuche es noch einmal"
       ],
       "Code wrong or not valid anymore": [
         "Code falsch oder inzwischen verfallen"
@@ -1682,7 +1682,7 @@
         "Keine gültige Zahl"
       ],
       "Organization not recognized. Try again.": [
-        "Organisation nicht erkannt. Bitte versuchen Sie es erneut."
+        "Organisation nicht erkannt. Bitte versuche es erneut."
       ],
       "Passwords do not match": [
         "Passwörter stimmen nicht überein"
@@ -1703,10 +1703,10 @@
         "Zahlungen sind derzeit nicht verfügbar, bitte versuche es später erneut"
       ],
       "Please generate keys before you try to change your password": [
-        "Bitte generieren Sie Schlüssel, bevor Sie versuchen, Ihr Passwort zu ändern"
+        "Bitte generiere Schlüssel, bevor du versuchst, dein Passwort zu ändern"
       ],
       "Please set a recovery email first": [
-        "Bitte legen Sie zunächst eine Wiederherstellungs-E-Mail-Adresse fest"
+        "Bitte lege zunächst eine Wiederherstellungs-E-Mail-Adresse fest"
       ],
       "Please set a recovery phone number first": [
         "Bitte lege zunächst eine Wiederherstellungsrufnummer fest"
@@ -1896,9 +1896,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } Wenn du fortfährst, verlierst du den Zugriff auf alle derzeit verschlüsselten Daten in deinem Konto."
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        "${ forgotPasswordLink } oder ${ forgotUsernameLink }?"
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das Mailbox-Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
       ],
@@ -1965,9 +1962,6 @@
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Nachdem du deine Bitcoin-Zahlung getätigt hast, folge bitte den untenstehenden Anweisungen um das Upgrade vorzunehmen."
       ],
-      "Already have an account?": [
-        "Besitzt du bereits ein Konto?"
-      ],
       "Amount below minimum (${ amount }).": [
         "Mindestbetrag (${ amount }) unterschritten."
       ],
@@ -2002,7 +1996,7 @@
         "Durch das Herabstufen auf das Free-Paket verlieren Sie diese Vorteile dauerhaft, auch wenn Sie in Zukunft erneut zu einem kostenpflichtigen Paket umsteigen sollten."
       ],
       "By downgrading you will lose the following benefits. Are you sure you want to proceed?": [
-        "Durch das Herabstufen verlieren Sie die folgenden Vorteile. Möchten Sie wirklich fortfahren?"
+        "Durch das Herabstufen verlierst du die folgenden Vorteile. Möchtest du wirklich fortfahren?"
       ],
       "By leaving now, changes may not be saved": [
         "Durch das Verlassen werden Änderungen möglicherweise nicht gespeichert."
@@ -2131,7 +2125,7 @@
         "Wenn du mit dem Zurückstufen fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ VPN_APP_NAME }."
       ],
       "If you wish to combine this account with another one, do NOT delete it.": [
-        "Wenn Sie dieses Konto mit einem anderen kombinieren möchten, dürfen Sie es NICHT löschen."
+        "Wenn du dieses Konto mit einem anderen kombinieren möchtest, darfst du es NICHT löschen."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
         "Wichtig: Bitte stelle sicher, dass du deine Wiederherstellungscodes speicherst. Andernfalls kannst du den Zugriff auf dein Konto dauerhaft verlieren, wenn du dein Gerät zur Zwei-Faktor-Authentifizierung verlierst."
@@ -2168,6 +2162,9 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Link copied to clipboard": [
+        "Link in die Zwischenablage kopiert"
       ],
       "Loading": [
         "Lädt"
@@ -2268,7 +2265,7 @@
       "Proton can't help you recover any lost passwords.": [
         "Proton kann dir nicht helfen, verlorene Passwörter wiederherzustellen."
       ],
-      "read our two-factor authentication Guide first": [
+      "read our two-factor authentication guide first": [
         "zuerst unseren Leitfaden zur Zwei-Faktor-Authentifizierung zu lesen"
       ],
       "recovery method": [
@@ -2488,7 +2485,7 @@
         "Du kannst deine Rechnungen für Abrechnungszwecke anpassen und herunterladen."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
-        "Sie können jeweils nur eine Chat-Instanz geöffnet halten. Bitte schließen Sie vorherige Unterhaltungen, bevor Sie eine neue beginnen.\nSie können jeweils nur eine Chat-Instanz geöffnet halten. Bitte schließen Sie vorherige Chats, bevor Sie eine neue beginnen."
+        "Du kannst jeweils nur eine Chat-Instanz geöffnet halten. Bitte schließe vorherige Unterhaltungen, bevor du eine neue beginnst."
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Du kannst die folgenden Anmeldedaten verwenden, um dich mit einem ${ VPN_APP_NAME }-Server zu verbinden, indem du eine Open-Source-VPN-Anwendung eines Drittanbieters verwendest, wie Tunnelblick für macOS oder OpenVPN für GNU/Linux."
@@ -2734,13 +2731,13 @@
         "Kopieren"
       ],
       "Could you please let us know which provider?": [
-        "Könnten Sie uns bitte mitteilen, um welchen Anbieter es sich handelt?"
+        "Könntest du uns bitte mitteilen, um welchen Anbieter es sich handelt?"
       ],
       "Could you please specify which streaming service?": [
-        "Könnten Sie bitte angeben, um welchen Streaming-Dienst es sich handelt?"
+        "Könntest du bitte angeben, um welchen Streaming-Dienst es sich handelt?"
       ],
       "Could you please specify?": [
-        "Könnten Sie dies bitte präzisieren?"
+        "Könntest du dies bitte genauer beschreiben?"
       ],
       "Country": [
         "Land"
@@ -2770,7 +2767,7 @@
         "Rabatt"
       ],
       "Do you have any suggestions for our team?": [
-        "Möchten Sie unserem Team Anregungen geben?"
+        "Möchtest du unserem Team Anregungen geben?"
       ],
       "Email address": [
         "E‐Mail‐Adresse"
@@ -2947,13 +2944,13 @@
         "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
-        "Wir bedauern es sehr, dass Sie ProtonMail nicht mehr nutzen möchten. Bitte teilen Sie uns Ihre Gründe mit, damit wir uns verbessern können."
+        "Wir bedauern es sehr, dass du ProtonMail nicht mehr nutzen möchtest. Bitte teile uns deine Gründe mit, damit wir uns verbessern können."
       ],
       "What happened?": [
         "Problembeschreibung"
       ],
       "What is the main reason you are cancelling?": [
-        "Was ist der Hauptgrund für Ihre Kündigung?"
+        "Was ist der Hauptgrund für deine Kündigung?"
       ],
       "What is the main reason you are deleting your account?": [
         "Welches ist der Hauptgrund, weshalb du dein Konto löschen möchtest?"
@@ -3026,6 +3023,9 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "Need help?": [
+        "Benötigst du Hilfe?"
+      ],
       "Not activated": [
         "Nicht aktiviert"
       ],
@@ -3047,6 +3047,9 @@
       "Terms": [
         "Geschäftsbedingungen"
       ],
+      "Trouble signing in?": [
+        "Probleme beim Anmelden?"
+      ],
       "Upgrade": [
         "Umsteigen"
       ],
@@ -3062,7 +3065,7 @@
     },
     "Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit Ihrer Organisation verknüpft sind, unwiderruflich gelöscht."
+        "Dadurch werden alle Unterbenutzer, Konten und Daten, die mit deiner Organisation verknüpft sind, unwiderruflich gelöscht."
       ]
     },
     "Message": {
@@ -3145,8 +3148,11 @@
       "Explore all ${ BRAND_NAME } plans": [
         "Alle ${ BRAND_NAME }-Abonnements entdecken"
       ],
-      "From ${ _price } per user": [
-        "Ab ${ _price } pro Benutzer"
+      "From ${ _price }": [
+        "Ab ${ _price }"
+      ],
+      "From ${ _price2 } per user": [
+        "Ab ${ _price2 } pro Benutzer"
       ],
       "From ${ price }": [
         "Ab ${ price }"
@@ -3383,14 +3389,6 @@
         "Weltweite Streaming-Dienste"
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        "Passwort vergessen"
-      ],
-      "username": [
-        "Benutzername"
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Support"
@@ -3439,6 +3437,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         "Privatsphäre- und Sicherheitssuite für Unternehmen, einschließlich aller Premiumdienste von Proton."
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        "Sicherer Cloud-Speicher, mit dem du Dateien einfach und sicher speichern, synchronisieren und gemeinsam nutzen kannst."
+      ],
       "Secure email and calendar for professionals and businesses.": [
         "Sichere E-Mails und Kalender für Profis und Unternehmen."
       ],
@@ -3459,6 +3460,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        "Mache Privatsphäre zum Standard für die Sicherung, Speicherung, Freigabe und den Abruf von Dateien."
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         "Andernfalls wird der Zugang zu deinem Konto eingeschränkt, was eventuell dazu führt, dass dein Konto deaktiviert wird."
       ],
@@ -3492,20 +3496,20 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
-        "Durch die Erstellung des Kontos akzeptierst du die ${ terms }. "
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
+        "Mit der Erstellung eines ${ BRAND_NAME }-Kontos erklärst du dich mit unseren ${ terms } einverstanden."
       ],
       "Payment details": [
         "Zahlungsdetails"
-      ],
-      "Proton's terms and conditions": [
-        "allgemeinen Geschäftsbedingungen von Proton"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
         "Speichere deine E-Mail-Adresse oder Telefonnummer, um sie zur Verifizierung zu nutzen, wenn du dein Konto zurücksetzen musst."
       ],
       "Subscription": [
         "Abonnement"
+      ],
+      "terms and conditions": [
+        "Allgemeinen Geschäftsbedingungen"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         "Wähle zunächst einen Anzeigenamen aus. Diesen werden deine Empfänger sehen, wenn du ihnen eine E-Mail sendest, sie zu einem Termin einlädst oder eine Datei mit ihnen teilst."
@@ -3726,6 +3730,9 @@
       "Boost your storage space to ${ businessStorage } per user": [
         "Erhöhe deinen Speicherplatz auf ${ businessStorage } pro Benutzer"
       ],
+      "Boost your storage space to ${ driveStorage } total": [
+        "Erhöhe deinen Speicherplatz auf insgesamt ${ driveStorage }"
+      ],
       "Cover more ground with support for 10 custom email domains": [
         "Erhöhe deine Reichweite mit 10 unterstützen benutzerdefinierten E-Mail-Domains"
       ],
@@ -3944,11 +3951,17 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } ist aus der Beta-Phase heraus! Biete deinen Dateien die gleiche Sicherheit wie deinen E-Mails."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Erhalte bis zu 18 Monate ${ planName } kostenlos"
       ],
       "Invite friends and earn rewards!": [
         "Lade Freunde ein und verdiene Belohnungen!"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } ausprobieren"
       ]
     },
     "State": {
@@ -4518,7 +4531,7 @@
         "WireGuard-Konfiguration"
       ],
       "You already have a Proton account": [
-        "Sie verfügen bereits über ein Proton-Konto"
+        "Du verfügst bereits über ein Proton-Konto"
       ],
       "Your current plan": [
         "Dein aktuelles Abonnement"
@@ -4645,10 +4658,10 @@
         "Berichte sind nicht Ende-zu-Ende-verschlüsselt. Bitte sende daher keine sensiblen Informationen."
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
-        "Die Datums- und Zeiteinstellungen auf Ihrem Gerät sind nicht synchronisiert. ${ learnMore }"
+        "Die Datums- und Zeiteinstellungen auf deinem Gerät sind nicht synchronisiert. ${ learnMore }"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
-        "Leider ist unser Team derzeit nicht online. Bitte füllen Sie das nachstehende Formular aus, um Ihr Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
+        "Leider ist unser Team derzeit nicht online. Bitte fülle das nachstehende Formular aus, um dein Problem zu beschreiben. Wir werden es prüfen und uns melden, sobald wir wieder online sind."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"

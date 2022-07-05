@@ -1908,9 +1908,6 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         ""
       ],
-      "${ forgotPasswordLink } or ${ forgotUsernameLink }?": [
-        ""
-      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         ""
       ],
@@ -1979,9 +1976,6 @@
       ],
       "After making your Bitcoin payment, please follow the instructions below to upgrade.": [
         "Nakon što ste izvršili Bitcoin uplatu, molimo slijedite ove upute ispod za nadogradnju."
-      ],
-      "Already have an account?": [
-        ""
       ],
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
@@ -2184,6 +2178,9 @@
       "Learn more": [
         "Saznajte više"
       ],
+      "Link copied to clipboard": [
+        ""
+      ],
       "Loading": [
         "Učitavanje"
       ],
@@ -2283,7 +2280,7 @@
       "Proton can't help you recover any lost passwords.": [
         ""
       ],
-      "read our two-factor authentication Guide first": [
+      "read our two-factor authentication guide first": [
         ""
       ],
       "recovery method": [
@@ -3042,6 +3039,9 @@
       "Learn more": [
         "Saznajte više"
       ],
+      "Need help?": [
+        "Trebate pomoć?"
+      ],
       "Not activated": [
         "Nije aktivirano"
       ],
@@ -3061,6 +3061,9 @@
         "Prijavite se"
       ],
       "Terms": [
+        ""
+      ],
+      "Trouble signing in?": [
         ""
       ],
       "Upgrade": [
@@ -3161,7 +3164,10 @@
       "Explore all ${ BRAND_NAME } plans": [
         ""
       ],
-      "From ${ _price } per user": [
+      "From ${ _price }": [
+        ""
+      ],
+      "From ${ _price2 } per user": [
         ""
       ],
       "From ${ price }": [
@@ -3413,14 +3419,6 @@
         ""
       ]
     },
-    "new_plans: forgot links": {
-      "Forgot password": [
-        ""
-      ],
-      "username": [
-        ""
-      ]
-    },
     "new_plans: heading": {
       "Support": [
         "Podrška"
@@ -3469,6 +3467,9 @@
       "Privacy and security suite for businesses, including all premium Proton services.": [
         ""
       ],
+      "Secure cloud storage that lets you store, sync, and share files easily and securely.": [
+        ""
+      ],
       "Secure email and calendar for professionals and businesses.": [
         ""
       ],
@@ -3489,6 +3490,9 @@
       ]
     },
     "new_plans: Info": {
+      "Make privacy your default for file backup, storage, sharing, and retrieval.": [
+        ""
+      ],
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
         ""
       ],
@@ -3523,13 +3527,10 @@
       ]
     },
     "new_plans: signup": {
-      "Creating the account means you accept ${ terms }. ": [
+      "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }.": [
         ""
       ],
       "Payment details": [
-        ""
-      ],
-      "Proton's terms and conditions": [
         ""
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
@@ -3537,6 +3538,9 @@
       ],
       "Subscription": [
         "Pretplata"
+      ],
+      "terms and conditions": [
+        ""
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
         ""
@@ -3756,6 +3760,9 @@
         ""
       ],
       "Boost your storage space to ${ businessStorage } per user": [
+        ""
+      ],
+      "Boost your storage space to ${ driveStorage } total": [
         ""
       ],
       "Cover more ground with support for 10 custom email domains": [
@@ -3978,10 +3985,16 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Get up to 18 months of ${ planName } for free": [
         ""
       ],
       "Invite friends and earn rewards!": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ]
     },

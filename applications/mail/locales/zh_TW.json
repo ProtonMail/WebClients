@@ -18,40 +18,40 @@
         "啟動還原"
       ],
       "Add": [
-        "新增"
+        "加入"
       ],
       "Add address": [
-        "新增地址"
+        "加入電郵位址"
       ],
       "Add condition": [
-        "新增條件"
+        "加入條件"
       ],
       "Add contact": [
-        "新增聯絡人"
+        "加入聯絡人"
       ],
       "Add email": [
-        "新增電子郵件"
+        "加入電郵"
       ],
       "Add group": [
-        "新增群組"
+        "加入群組"
       ],
       "Add new contact": [
-        "新增聯絡人"
+        "加入聯絡人"
       ],
       "Add new group": [
         "建立新的群組"
       ],
       "Add participant": [
-        "新增參與者"
+        "加入參與者"
       ],
       "Add phone number": [
-        "新增電話號碼"
+        "加入手機號碼"
       ],
       "Add to ${ CALENDAR_APP_NAME }": [
-        "新增至 ${ CALENDAR_APP_NAME }"
+        "加入至 ${ CALENDAR_APP_NAME }"
       ],
       "Add to group": [
-        "新增至群組"
+        "加入至群組"
       ],
       "Align center": [
         "置中"
@@ -69,13 +69,13 @@
         "所有已讀"
       ],
       "All Starred": [
-        "所有已加星號"
+        "所有標示星號"
       ],
       "All Unread": [
         "所有未讀"
       ],
       "All Unstarred": [
-        "所有未加星號"
+        "所有取消星號"
       ],
       "Apply": [
         "套用"
@@ -159,7 +159,7 @@
         "顏色"
       ],
       "Compose": [
-        "撰寫"
+        "撰寫郵件"
       ],
       "Composer size": [
         "撰寫器大寫"
@@ -177,16 +177,16 @@
         "繼續"
       ],
       "Continue with Google": [
-        "繼續以 Google 帳戶登入"
+        "繼續以 Google 帳號登入"
       ],
       "Contract composer": [
         "縮小撰寫器"
       ],
       "Copy address": [
-        "複製郵件地址"
+        "複製郵件位址"
       ],
       "Copy addresses": [
-        "複製電子郵件地址"
+        "複製電郵位址"
       ],
       "Copy email to clipboard": [
         "複製電郵位址至剪貼簿"
@@ -195,13 +195,13 @@
         "密碼已複製到剪貼簿"
       ],
       "Create a new contact group": [
-        "創建新聯絡人群組"
+        "創建新連絡人群組"
       ],
       "Create folder": [
         "建立資料夾"
       ],
       "Create label": [
-        "建立標籤"
+        "創建標籤"
       ],
       "Create new contact": [
         "建立新聯絡人"
@@ -215,11 +215,8 @@
       "Customize": [
         "自訂"
       ],
-      "Decrypt": [
-        "解密"
-      ],
       "Default email application": [
-        "預設電子郵件程式"
+        "預設電郵程式"
       ],
       "Delete": [
         "刪除"
@@ -261,7 +258,7 @@
         "沒有收到驗證碼嗎？"
       ],
       "Discard": [
-        "捨棄"
+        "放棄"
       ],
       "Dismiss get started checklist": [
         "忽略入門清單"
@@ -279,13 +276,13 @@
         "編輯"
       ],
       "Edit address": [
-        "編輯電子郵件地址"
+        "編輯電郵位址"
       ],
       "Edit draft": [
         "編輯草稿"
       ],
       "Edit email address": [
-        "編輯電子郵件地址"
+        "編輯電郵位址"
       ],
       "Edit encryption": [
         "編譯加密"
@@ -294,13 +291,13 @@
         "編輯標籤"
       ],
       "Edit phone number": [
-        "編輯電話號碼"
+        "編輯手機號碼"
       ],
       "Edit sign-in details": [
         "編輯登入詳細資訊"
       ],
       "Email settings": [
-        "電子郵件設定"
+        "電郵設定"
       ],
       "Enable": [
         "啟用"
@@ -334,6 +331,9 @@
       ],
       "External encryption": [
         "外部加密"
+      ],
+      "Fewer search options": [
+        "較少搜尋選項"
       ],
       "Filter on...": [
         "篩選..."
@@ -402,10 +402,10 @@
         "隱藏郵件"
       ],
       "I have a question": [
-        "我有問題"
+        "我要發問"
       ],
       "Images will be loaded without a proxy": [
-        "圖片不會透過代理伺服器載入"
+        "圖像不會透過代理伺服器載入"
       ],
       "import": [
         "匯入"
@@ -435,7 +435,7 @@
         "插入連絡人"
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -453,22 +453,19 @@
         "標為‧‧‧"
       ],
       "label emails as": [
-        "給電子郵件加上標籤"
+        "給電郵加上標籤"
       ],
       "Learn more": [
-        "了解更多"
-      ],
-      "Less search options": [
-        ""
+        "瞭解詳情"
       ],
       "Load": [
         "載入"
       ],
       "Load embedded images": [
-        ""
+        "載入內崁圖樣"
       ],
       "Load image": [
-        "載入圖片"
+        "載入圖像"
       ],
       "Load more": [
         "載入更多"
@@ -489,13 +486,13 @@
         "信箱配置"
       ],
       "Mark as read": [
-        "標記為已讀"
+        "標示為已讀取"
       ],
       "Mark as unread": [
-        "標記為未讀"
+        "標示為未讀取"
       ],
       "mark emails as": [
-        "將電子郵件標示為"
+        "將電郵標示為"
       ],
       "Mark for deletion": [
         "標記作刪除"
@@ -519,10 +516,10 @@
         "合併聯絡人"
       ],
       "Messages from this sender": [
-        ""
+        "查看來自此發件人的所有訊息"
       ],
       "Messages to this recipient": [
-        ""
+        "查看來自此收件者的所有訊息"
       ],
       "Minimize composer": [
         "最小化撰寫器"
@@ -539,14 +536,29 @@
       "More search options": [
         "更多搜尋選項"
       ],
+      "Move": [
+        "移動"
+      ],
+      "Move all conversations from this folder": [
+        ""
+      ],
+      "Move all conversations from this label": [
+        ""
+      ],
+      "Move all messages from this folder": [
+        ""
+      ],
+      "Move all messages from this label": [
+        ""
+      ],
       "move emails to": [
-        "將電子郵件移動到"
+        "將電郵移動到"
       ],
       "Move to": [
         "移至"
       ],
       "Move to archive": [
-        "移至「封存」"
+        "移至封存"
       ],
       "Move to inbox": [
         "移至收件匣"
@@ -555,7 +567,7 @@
         "移動到收件匣 (非垃圾郵件)"
       ],
       "Move to spam": [
-        "移至「垃圾郵件」資料夾"
+        "移至垃圾郵件"
       ],
       "Move to trash": [
         "移至垃圾桶"
@@ -564,7 +576,7 @@
         "移動至..."
       ],
       "Need help?": [
-        "需要協助？"
+        "需要說明嗎？"
       ],
       "Never show": [
         "永不顯示"
@@ -573,7 +585,7 @@
         "撰寫"
       ],
       "Next": [
-        "下一步"
+        "下一個"
       ],
       "Next conversation": [
         "下一個會話"
@@ -600,7 +612,7 @@
         "尚未儲存"
       ],
       "OK": [
-        "確定"
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -618,7 +630,7 @@
         "開啟商店"
       ],
       "Ordered list": [
-        "編號清單"
+        "有序列表"
       ],
       "Page ${ pageNumber }": [
         "第 ${ pageNumber } 頁"
@@ -636,7 +648,7 @@
         "預覽聯絡人"
       ],
       "Previous": [
-        "上一個"
+        "上一步"
       ],
       "Previous conversation": [
         "上一個會話"
@@ -662,8 +674,11 @@
       "Re-sign": [
         "重新簽署"
       ],
+      "Read message": [
+        "已讀訊息"
+      ],
       "Read receipt sent": [
-        ""
+        "已讀回條已傳送"
       ],
       "Recover data": [
         "恢復資料"
@@ -699,7 +714,7 @@
         "重新命名"
       ],
       "Reply securely": [
-        "私密回覆"
+        "加密回覆"
       ],
       "Report a problem": [
         "回報問題"
@@ -747,25 +762,25 @@
         "全選"
       ],
       "Select All": [
-        "選取所有"
+        "選擇全部"
       ],
       "Select all messages": [
         "選取所有郵件"
       ],
       "Send": [
-        "傳送"
+        "送出"
       ],
       "Send anyway": [
-        "仍要傳送"
+        "仍然傳送"
       ],
       "send auto-reply email": [
-        "傳送自動回覆電子郵件"
+        "傳送自動回覆電郵"
       ],
       "Send feedback": [
-        ""
+        "傳送意見反饋"
       ],
       "Send read receipt": [
-        ""
+        "傳送已讀回條"
       ],
       "Set": [
         "設定"
@@ -800,6 +815,9 @@
       "Show details": [
         "顯示詳細資料"
       ],
+      "Show fewer search options": [
+        "顯示較少搜尋選項"
+      ],
       "Show folders": [
         "顯示資料夾"
       ],
@@ -808,9 +826,6 @@
       ],
       "Show less": [
         "顯示更少"
-      ],
-      "Show less search options": [
-        ""
       ],
       "Show messages": [
         "顯示郵件"
@@ -846,19 +861,19 @@
         "停留"
       ],
       "Submit": [
-        "提交"
-      ],
-      "Switch to rich text": [
-        ""
+        "送出"
       ],
       "Theme": [
         "佈景主題"
       ],
       "This message contains embedded images.": [
-        "此郵件包含內嵌圖片。"
+        "此郵件包含內嵌圖像。"
       ],
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
+      ],
+      "Trash all": [
+        ""
       ],
       "Trust": [
         "信任"
@@ -867,13 +882,13 @@
         "信任金鑰"
       ],
       "Trust public key": [
-        ""
+        "信任公開金鑰"
       ],
       "Try again": [
         "再試一次"
       ],
       "Try another method": [
-        "嘗試其他驗證方式"
+        "嘗試其它驗證方式"
       ],
       "Turn on tracker protection": [
         "開啟追蹤保護"
@@ -891,13 +906,13 @@
         "取消標記作刪除"
       ],
       "Unordered list": [
-        "項目符號清單"
+        "無序列表"
       ],
       "Unstar": [
         "移除星號"
       ],
       "Unsubscribe": [
-        "取消訂閱"
+        "取消訂購"
       ],
       "Unsubscribing": [
         "正在取消訂閱"
@@ -921,7 +936,7 @@
         "立即升級"
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載圖像"
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 佈景主題"
@@ -942,7 +957,7 @@
         "驗證帳號"
       ],
       "Verify email": [
-        "驗證電子郵件"
+        "驗證電郵"
       ],
       "View": [
         "檢視"
@@ -951,10 +966,10 @@
         "檢視聯絡人詳細資料"
       ],
       "View headers": [
-        "檢視標頭"
+        "檢視標頭 "
       ],
       "View HTML": [
-        ""
+        "以 HTML 瀏覽"
       ],
       "View invoice": [
         "查看帳單"
@@ -972,7 +987,7 @@
         "檢視收件者"
       ],
       "View rendered HTML": [
-        "檢視呈現的 HTML"
+        "檢視轉譯的 HTML"
       ],
       "Why not?": [
         "何不呢？"
@@ -1003,7 +1018,7 @@
         "找不到相符的結果。"
       ],
       "Please try another search term.": [
-        "請嘗試其他關鍵字。"
+        "請嘗試其它關鍵字。"
       ],
       "You don't have any contacts.": [
         "您沒有任何聯絡人﹗"
@@ -1014,13 +1029,13 @@
     },
     "Add participant to calendar event": {
       "Failed to add participant": [
-        "無法新增參與者"
+        "無法加入參與者"
       ],
       "Invitation sent and participant added": [
-        "邀請已送出，並且已新增參與者"
+        "邀請已送出，並且已加入參與者"
       ],
       "Participant added": [
-        "已新增參與者"
+        "已加入參與者"
       ]
     },
     "Alert": {
@@ -1247,7 +1262,7 @@
         "手動設置問題"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Payments problem": [
         "付款問題"
@@ -1486,7 +1501,7 @@
         "（出席可選）"
       ],
       "Adding occurrences to an event is not supported for the moment": [
-        "暫未支援新增重複次數到一個事件"
+        "暫未支援加入重複次數到一個事件"
       ],
       "Event refreshing is not supported for the moment": [
         "暫未支援事件重新整理"
@@ -1495,7 +1510,7 @@
         "暫未支援事件重新排程"
       ],
       "This answer cannot be added to ${ calendarAppName } as we only support answers to all events of a series for the moment": [
-        "此回答未能新增至 ${ calendarAppName }，因為我們暫時僅支援回答一系列中的全部事件"
+        "此回答未能加入至 ${ calendarAppName }，因為我們暫時僅支援回答一系列中的全部事件"
       ],
       "This event has been canceled.": [
         "此事件已取消。"
@@ -1534,7 +1549,7 @@
         "您已暫時接受此邀請。"
       ],
       "Your email address is not in the participants list": [
-        "您的電子郵件地址不在參與者清單中。"
+        "您的電郵位址不在參與者清單中。"
       ]
     },
     "Calendar status": {
@@ -1550,19 +1565,19 @@
         "無法解密行事曆"
       ],
       "Calendar is syncing": [
-        "日曆正在同步"
+        "行事曆正在同步"
       ],
       "Calendar is too big": [
-        "日曆太大了"
+        "行事曆太大了"
       ],
       "Calendar link is not accessible": [
-        "日曆無法存取"
+        "行事曆無法存取"
       ],
       "Calendar link is temporarily inaccessible": [
-        "日曆連結暫時無法存取"
+        "行事曆連結暫時無法存取"
       ],
       "Failed to sync calendar": [
-        "同步日曆失敗"
+        "同步行事曆失敗"
       ],
       "More than 12 hours passed since last update": [
         "距離上次更新已經過了12小時以上"
@@ -1604,7 +1619,7 @@
         ""
       ],
       "carrot": [
-        ""
+        "胡蘿蔔"
       ],
       "cerise": [
         ""
@@ -1777,7 +1792,7 @@
         "經 PGP 簽署"
       ],
       "The address might be misspelled": [
-        "地址可能拼錯了"
+        "位址可能拼錯了"
       ]
     },
     "Composer size": {
@@ -1790,13 +1805,13 @@
     },
     "Condition for custom filter": {
       "begins with": [
-        "開首是"
+        "開始於"
       ],
       "contains": [
         "包含"
       ],
       "does not begin with": [
-        "開首不是"
+        "開頭不是"
       ],
       "does not contain": [
         "不包含"
@@ -1805,7 +1820,7 @@
         "結尾不是"
       ],
       "does not match": [
-        "不匹配"
+        "不符合"
       ],
       "ends with": [
         "結尾是"
@@ -1814,10 +1829,10 @@
         "等於"
       ],
       "is not": [
-        "不等於"
+        "並非"
       ],
       "matches": [
-        "匹配"
+        "符合"
       ]
     },
     "Confirm modal title": {
@@ -1833,7 +1848,7 @@
     },
     "Contact field label": {
       "Address": [
-        "地址"
+        "位址"
       ],
       "Anniversary": [
         "週年紀念日"
@@ -1842,7 +1857,7 @@
         "生日"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Gender": [
         "性別"
@@ -1898,7 +1913,7 @@
         "手機"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Pager": [
         "傳呼機"
@@ -2005,7 +2020,7 @@
         "波士尼亞與赫塞哥維納"
       ],
       "Botswana": [
-        ""
+        "波札那"
       ],
       "Bouvet Island": [
         "布威島"
@@ -2780,7 +2795,7 @@
         "拖動以調整聯絡人合併的優先次序。未勾選的聯絡人將不會被合併。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
-        "您可以把您不欲合併、又不欲保留的聯絡人標記作刪除。只有在按下「合併」按鈕時，才會執行刪除"
+        "您可以把既不合併也不保留的聯絡人標記為刪除。唯有在點擊「合併」按鈕時，才會執行刪除"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2803,7 +2818,7 @@
     },
     "Download attachments": {
       "Download all": [
-        "全部下載"
+        "下載全部"
       ]
     },
     "Early Access Disabled": {
@@ -2921,10 +2936,10 @@
     },
     "Error": {
       "${ error.message } for <${ email }>. You can add another key or disable encryption for this contact to resolve the issue.": [
-        "有關<${ email }>的${ error.message }。您可以針對此聯絡人新增另一組金鑰或是停用加密以解決問題。"
+        "有關<${ email }>的${ error.message }。您可以針對此聯絡人加入另一組金鑰或是停用加密以解決問題。"
       ],
       "A group with this name already exists": [
-        "此名稱的群組已存在。"
+        "此名稱的群組已存在"
       ],
       "A problem occurred, please try again": [
         "發生錯誤，請再試一次"
@@ -2969,7 +2984,7 @@
         "請與您的組織管理員聯絡以解決此事"
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
-        "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其他瀏覽器。"
+        "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "解密錯誤：此郵件的加密內容解密失敗。"
@@ -2984,13 +2999,13 @@
         "無法儲存草稿。再試一次。"
       ],
       "Email address disabled": [
-        "電子郵件地址已停用"
+        "電郵位址已停用"
       ],
       "Email address invalid": [
-        "電子郵件地址無效"
+        "電郵位址無效"
       ],
       "Email is not valid": [
-        "電子郵件無效"
+        "電郵無效"
       ],
       "Empty condition": [
         "條件空白"
@@ -3014,13 +3029,13 @@
         "上載附件時發生錯誤。郵件未能傳送。"
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "加密附件失敗，請再試一次。"
+        "無法加密附件。請重試"
       ],
       "Filter with this name already exists": [
         "篩選器名稱重複"
       ],
       "Folder name cannot be empty.": [
-        ""
+        "資料夾名稱不能留空。"
       ],
       "Image upload failed": [
         "影像上載失敗"
@@ -3035,7 +3050,7 @@
         "無效的到期時間"
       ],
       "Invalid name": [
-        "名稱無效"
+        "無效的名稱"
       ],
       "Invalid public key file": [
         "公開金鑰檔案無效"
@@ -3044,7 +3059,7 @@
         "驗證碼無效"
       ],
       "Label name cannot be empty.": [
-        ""
+        "標籤名稱不能留空。"
       ],
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "可容許的附件數量 (${ attachmentsCountLimit }) 已達上限"
@@ -3068,7 +3083,7 @@
         "網路錯誤：請檢查您的連線，然後重試。"
       ],
       "No address with keys available to compose a message": [
-        "無法撰寫郵件，無郵件地址具備可加密郵件之金鑰。"
+        "無法撰寫郵件，無郵件位址具備可加密郵件之金鑰。"
       ],
       "No data to import": [
         "沒有要匯入的資料"
@@ -3077,7 +3092,7 @@
         "未為內部使用者檢索到密鑰"
       ],
       "No valid address found": [
-        "未能找到有效地址"
+        "未能找到有效位址"
       ],
       "No WKD key retrieved for user is valid for sending": [
         "未為內部使用者檢索到有效WKD密鑰"
@@ -3086,13 +3101,13 @@
         "號碼無效"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部份聯絡人無電子郵件地址：${ noEmailsContactNamesList }"
+        "部份聯絡人無電郵位址：${ noEmailsContactNamesList }"
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
       ],
       "Passwords do not match": [
-        "密碼不相符"
+        "密碼不一致"
       ],
       "Please activate your content search again": [
         "請再次啟用您的內容搜尋"
@@ -3106,14 +3121,11 @@
       "Please set a password": [
         "請設置一組密碼"
       ],
-      "Preferences could not be saved": [
-        "無法儲存偏好設定"
-      ],
       "Primary address key is not decrypted": [
-        "主要地址金鑰並未被解密"
+        "主要位址金鑰並未被解密"
       ],
       "Primary address key is not decrypted.": [
-        "主要地址金鑰並未被解密。"
+        "主要位址金鑰並未被解密。"
       ],
       "Primary key is not valid for sending": [
         ""
@@ -3173,7 +3185,7 @@
         "此資料夾名稱無法使用。請換另一個名稱。"
       ],
       "The folder name is too long. Please choose a different name.": [
-        "資料夾名稱太長。請選擇其他名稱。"
+        "資料夾名稱太長。請選擇其它名稱。"
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
         "無法擷取 ${ emailAddress } 的金鑰屬性"
@@ -3182,7 +3194,7 @@
         "此標籤名稱無法使用。請換另一個名稱。"
       ],
       "The label name is too long. Please choose a different name.": [
-        "標籤名稱太長。請選擇其他名稱。"
+        "標籤名稱太長。請選擇其它名稱。"
       ],
       "The maximum expiration is 4 weeks": [
         "最長有效期限為4週"
@@ -3191,7 +3203,7 @@
         "寄送金鑰無效"
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
-        "待匯入帳戶的資料夾過多，請自訂匯入內容並刪除部份資料夾"
+        "待匯入帳號的資料夾過多，請自訂匯入內容並刪除部份資料夾"
       ],
       "There has been an issue with content search. Default search has been used instead.": [
         "內容搜尋發生問題。已改為使用預設搜尋。"
@@ -3236,16 +3248,16 @@
         "密碼錯誤"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "您不能將電子郵件傳送給超過100位收件人"
+        "您無法將電郵傳送給超過100位收件人"
       ],
       "You can't send vCards of more than 10 contacts": [
-        "您不能傳送超過 10 個聯絡人的 vCard"
+        "您無法傳送超過 10 個聯絡人的 vCard"
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "您目前無法同時開啟超過 ${ maxActiveComposer } 個編輯器。"
       ],
       "You did not provide a file.": [
-        "您沒有提供一個檔案。"
+        "您沒有提供檔案。"
       ],
       "You must set a name": [
         "您必須設定名稱"
@@ -3254,7 +3266,7 @@
         "由於您近期重新設定密碼，致使您的電郵無法解密。如果您記得先前的密碼，可透過 ${ reActivateKeyLink } 存取您的信件。相關資訊參考 ${ learnMoreLink }"
       ],
       "Your emails cannot be decrypted. This may be due to a password reset. ${ learnMoreLink }": [
-        "無法解密您的電子郵件。這可能是因為密碼重設。${ learnMoreLink }"
+        "無法解密您的電郵。這可能是因為密碼重設。${ learnMoreLink }"
       ],
       "Your import will not be processed.": [
         "將不會處理您的匯入。"
@@ -3306,7 +3318,7 @@
         "上載您的檔案 ${ formattedFilename } 時發生錯誤。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }。"
       ],
       "An error occurred uploading your file ${ formattedFilename }. No .csv or .vcf file selected": [
-        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案。"
+        "上載您的檔案 ${ formattedFilename } 時發生錯誤。未選取任何 .csv 或 .vcf 檔案"
       ],
       "An error occurred uploading your file. No file has been selected.": [
         "上載您的檔案時發生錯誤。未選取任何檔案。"
@@ -3432,12 +3444,12 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        "姓氏和名字不能同時取消勾選"
+        "姓氏和名字無法同時取消勾選"
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "未選取任何圖片"
+        "沒有選擇圖像"
       ]
     },
     "Error notification when score is missing in user feedback form modal": {
@@ -3464,10 +3476,10 @@
         "無效的回應"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "無法在您的日曆中添加活動。未發送任何答复"
+        "無法在您的行事曆中添加活動。未發送任何答复"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "無法在您的日曆中更新活動。未發送任何答复"
+        "無法在您的行事曆中更新活動。未發送任何答复"
       ],
       "Unexpected error": [
         "未預期的錯誤"
@@ -3488,7 +3500,7 @@
         "我們無法在您的行事曆更新此事件"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "您的回答已傳送，惟此事件無法新增到您的行事曆中"
+        "您的回答已傳送，惟此事件無法加入到您的行事曆中"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "您的回答已傳送，惟此事件無法在您的行事曆中更新"
@@ -3668,7 +3680,7 @@
         "匯入您的通訊錄或郵件"
       ],
       "Quickly transfer your contacts or emails from any provider using our Easy Switch import assistant.": [
-        "使用我們的 Easy Switch 匯入助理從任何提供商快速移轉您的通訊錄或電子郵件。"
+        "使用我們的 Easy Switch 匯入助理從任何提供商快速移轉您的通訊錄或電郵。"
       ],
       "Sign into the mobile app to complete the action": [
         "登入行動APP以完成此操作"
@@ -3688,7 +3700,7 @@
         "傳送郵件"
       ],
       "Set up a recovery method": [
-        "設定備援方法"
+        "設定復原方法"
       ]
     },
     "Get started checklist spotlight": {
@@ -3703,7 +3715,7 @@
     },
     "Group": {
       "Account": [
-        "帳戶"
+        "帳號"
       ],
       "Apps": [
         "應用程式"
@@ -3721,7 +3733,7 @@
         "網路"
       ],
       "Other category": [
-        "其他類別"
+        "其它類別"
       ],
       "Services": [
         "服務"
@@ -3754,7 +3766,7 @@
         "驗證碼"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Manual": [
         "手動"
@@ -3776,7 +3788,7 @@
     },
     "Import calendar": {
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "正在加密並新增聯絡人：${ totalImported }/${ totalToImport }"
+        "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
       ]
     },
     "Import calendar warning": {
@@ -3786,10 +3798,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增至您的通訊錄"
+        "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密及新增聯絡人時發生錯誤。無法匯入任何聯絡人。"
+        "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ]
     },
     "Import contact error": {
@@ -3809,7 +3821,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密及新增聯絡人時發生錯誤。${ totalImported }/${ totalToImport } 聯絡人已成功匯入。"
+        "加密及加入聯絡人時發生錯誤。${ totalImported }/${ totalToImport } 聯絡人已成功匯入。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "聯絡人已成功匯入。已匯入的聯絡人現將顯示於通訊錄中。"
@@ -3841,10 +3853,10 @@
     },
     "Info": {
       "${ activateLink } or ${ learnMoreLink }.": [
-        ""
+        "${ activateLink } 或 ${ learnMoreLink }。"
       ],
       "${ addressCount } email address": [
-        "${ addressCount } 個電子郵件地址"
+        "${ addressCount } 個電郵位址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
@@ -3874,7 +3886,7 @@
         "${ count } 封未讀郵件"
       ],
       "${ embeddedAttachmentsCount } embedded image": [
-        "${ embeddedAttachmentsCount } 個內嵌影像"
+        "${ embeddedAttachmentsCount } 個內嵌圖像"
       ],
       "${ groupCounts } group found": [
         "找到 ${ groupCounts } 個群組"
@@ -3886,7 +3898,7 @@
         "${ messagesNotAuthorizedToMove } 封郵件無法移動。"
       ],
       "${ numberOfTrackers } email tracker blocked": [
-        "已封鎖 ${ numberOfTrackers } 個電子郵件追蹤程式"
+        "已封鎖 ${ numberOfTrackers } 個電郵追蹤程式"
       ],
       "${ numContactGroups } contact group": [
         "${ numContactGroups } 個聯絡人群組"
@@ -3898,7 +3910,7 @@
         "找到 ${ occurrencesInBody } 次"
       ],
       "${ occurrencesInBody } occurrence found in the mail content": [
-        "已在郵件中找到符合「${ occurrencesInBody }」的內容。"
+        "已在郵件中找到符合「${ occurrencesInBody }」的內容"
       ],
       "${ pureAttachmentsCount } file attached": [
         "${ pureAttachmentsCount } 個附件"
@@ -3961,7 +3973,7 @@
         "取消訂閱此郵遞論壇的請求將會被傳送到電子報的傳送者並自動處理。"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
-        "由於有帳單仍未繳付，因此帳戶存取已受限制。請聯絡您的系統管理員。"
+        "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
       "Activation in progress": [
         "啟動中"
@@ -3970,10 +3982,10 @@
         ""
       ],
       "Add image URL": [
-        "新增圖片網址"
+        "附加圖像網址"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要傳送到此電子郵件地址，請首先信任可用於傳送的公開金鑰。"
+        "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
       "Align left": [
         "靠左對齊"
@@ -4000,7 +4012,7 @@
         "您所作的一切變更將會消失。"
       ],
       "An unknown public key has been detected for this recipient.": [
-        "檢測到此收件人的一個未知的公開金鑰。"
+        "已檢測到此收件者的未知公開金鑰。"
       ],
       "and": [
         "和"
@@ -4013,6 +4025,9 @@
       ],
       "Are you sure you want to discard your changes?": [
         "您確定要捨棄所作的變更嗎？"
+      ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        ""
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "您確定要永久刪除 ${ count } 個會話嗎？"
@@ -4051,7 +4066,7 @@
         "內文："
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
-        "忘記密碼？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
+        "忘記密碼？我們可說明您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
       ],
       "Center": [
         "置中"
@@ -4069,7 +4084,7 @@
         "清除關於訊息內容搜尋的瀏覽器資料，其中包含已下載的訊息"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此電話號碼不正確，請按一下「編輯」作出修正。"
+        "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Click to view group details": [
         "點擊以檢視群組詳細資訊"
@@ -4102,7 +4117,7 @@
         "建立在"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
-        "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其他軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
+        "來自 Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora 或其它軟體的 CSV 檔案只要符合 vCard 3.1 或 4.0 ( UTF-8 編碼) 都可以支援。"
       ],
       "Custom": [
         "自訂"
@@ -4124,9 +4139,6 @@
       ],
       "Day": [
         "天"
-      ],
-      "Decrypt message": [
-        "解密訊息"
       ],
       "Default email application": [
         "預設郵件應用程式"
@@ -4162,7 +4174,7 @@
         "草稿已儲存。"
       ],
       "Drop a file here to upload": [
-        "拖放檔案到此處以上載"
+        "拖曳檔案到此處來上載"
       ],
       "Drop the file here to upload": [
         "拖放檔案到此處以上載"
@@ -4177,25 +4189,25 @@
         "編輯到期時間"
       ],
       "Edit link": [
-        ""
+        "編輯連結"
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email tracker protection is disabled": [
-        "電子郵件追蹤保護已停用"
+        "電郵追蹤保護已停用"
       ],
       "Email trackers can violate your privacy. Proton did not find any trackers on this message.": [
-        "電子郵件追蹤器會侵犯您的隱私。 Proton 在此訊息中未找到電子郵件追蹤器"
+        "電郵追蹤器會侵犯您的隱私。 Proton 在此訊息中未找到電郵追蹤器"
       ],
       "Email trackers can violate your privacy. Proton found and blocked ${ numberOfTrackers } tracker.": [
-        "電子郵件追蹤器會侵犯您的隱私。 Proton 找到並阻止了 ${ numberOfTrackers } 個追蹤器。"
+        "電郵追蹤器會侵犯您的隱私。 Proton 找到並阻止了 ${ numberOfTrackers } 個追蹤器。"
       ],
       "Email trackers can violate your privacy. Turn on tracker protection to prevent senders from knowing whether and when you have opened a message.": [
-        "電子郵件追蹤器會侵犯您的隱私。開啟電子郵件追蹤保護防止寄件者得知您是否開啟過此訊息。"
+        "電郵追蹤器會侵犯您的隱私。開啟電郵追蹤保護防止寄件者得知您是否開啟過此訊息。"
       ],
       "embedded image": [
-        "內嵌圖片"
+        "嵌入圖像"
       ],
       "Encrypt message": [
         "加密郵件"
@@ -4234,13 +4246,13 @@
         "到期郵件"
       ],
       "file attached": [
-        "已附加檔案"
+        "檔案已附加"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "篩選器適用於所有電子郵件，包括內送及外寄電子郵件。每一個篩選器起碼必須包含一個名稱、一個條件及一個動作。"
       ],
       "Folder": [
-        ""
+        "資料夾"
       ],
       "For increased security, activate 2FA.": [
         "為增加安全性請啟用兩步驟驗證。"
@@ -4249,10 +4261,10 @@
         "自 ${ oldestDate } 起的郵件"
       ],
       "Free up some space or add more storage space.": [
-        "請釋放部分空間或增加更多儲存空間。"
+        "請釋出部分空間或增加更多儲存空間。"
       ],
       "Free up some space or contact your administrator.": [
-        "請釋放部分空間或聯絡您的系統管理員。"
+        "請釋出部分空間或聯絡您的系統管理員。"
       ],
       "From": [
         "寄件人"
@@ -4279,22 +4291,22 @@
         "我正發送郵件給一位非 Proton Mail 的使用者。"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "若您在建立帳戶時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
+        "若您在建立帳號時遇上問題，請聯絡我們。我們將會於一個工作天內處理您的申請。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "若您認為箇中有誤，請聯絡我們：${ contactLink }。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
-        "若您在收件匣中找不到該電子郵件，請查看「垃圾郵件」資料夾。"
+        "若您在收件匣中找不到該電郵，請查看「垃圾郵件」資料夾。"
       ],
       "Image description": [
-        ""
+        "圖樣描述"
       ],
       "Image URL": [
-        "圖片 URL"
+        "圖像 URL"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "圖片已被移除，因為不允許在自動回覆中使用它們。"
+        "圖像已被移除，因為不允許在自動回覆中使用它們。"
       ],
       "Import ${ contactsFragment } and ${ contactsGroupsFragment }": [
         "匯入 ${ contactsFragment } 和 ${ contactsGroupsFragment }"
@@ -4321,7 +4333,7 @@
         "繼承自上層資料夾"
       ],
       "Insert image": [
-        "插入圖片"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -4345,10 +4357,10 @@
         "大量匯入或需時數天完成。"
       ],
       "Learn more": [
-        "了解更多"
+        "瞭解詳情"
       ],
       "learn more": [
-        ""
+        "了解更多"
       ],
       "Left to Right": [
         "由左至右"
@@ -4410,23 +4422,26 @@
       "Monthly ${ onDayString }": [
         "每月 ${ onDayString } 日"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        ""
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
       ],
       "New": [
-        "新增"
+        "加入"
       ],
       "No action selected": [
         "未選取任何動作"
       ],
       "No contacts added yet": [
-        "未新增任何聯絡人"
+        "仍未加入任何通訊錄"
       ],
       "No email address": [
-        "沒有電子郵件地址"
+        "沒有電郵位址"
       ],
       "No email trackers found": [
-        "未找到電子郵件追蹤器"
+        "未找到電郵追蹤器"
       ],
       "No folder found": [
         "找不到資料夾"
@@ -4461,14 +4476,11 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "所有已上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
-        "非有效的圖片網址"
+        "非有效的圖像網址"
       ],
       "of": [
-        "，共"
+        " / "
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         ""
@@ -4477,7 +4489,7 @@
         ""
       ],
       "Other options": [
-        "其他選項"
+        "其它選項"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "此郵件已被我們的系統標註為帶有網路釣魚的企圖。請檢查這是否正當郵件。"
@@ -4485,14 +4497,14 @@
       "per month.": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Plain text": [
         "純文字"
@@ -4504,7 +4516,7 @@
         "請保存在安全的地方。在重設密碼後你將會需要它來解密你的資料。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "請注意：指派到此群組中的電子郵件地址將不會被刪除。"
+        "請注意：指派到此群組中的電郵位址將不會被刪除。"
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，並會視乎您的通訊錄大小而定。"
@@ -4534,7 +4546,7 @@
         "主要"
       ],
       "Print email": [
-        "列印電子郵件"
+        "列印電郵"
       ],
       "Priority support": [
         "優先支援"
@@ -4559,6 +4571,9 @@
       ],
       "Request read receipt": [
         "要求讀取回條"
+      ],
+      "Rich text": [
+        ""
       ],
       "Right to Left": [
         "由右至左"
@@ -4591,7 +4606,7 @@
         "看來您處理完您所有的信了！"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "請選擇向該電子郵件地址傳送時的預設格式"
+        "請選擇向該電郵位址傳送時的預設格式"
       ],
       "Select what you want to move from Google.": [
         ""
@@ -4603,13 +4618,13 @@
         "傳送一封加密、密碼保護的郵件至 ${ boldText } 電郵位址。"
       ],
       "Sending": [
-        "正在傳送..."
+        "傳送中…"
       ],
       "Sending message...": [
         "傳送郵件中……"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
-        "從 @pm.me 電子郵件地址寄送郵件是付費功能。您的郵件將從您的預設電子郵件地址 ${ email } 傳送"
+        "從 @pm.me 電郵位址寄送郵件是付費功能。您的郵件將從您的預設電郵位址 ${ email } 傳送"
       ],
       "Sent with <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a> secure email.": [
         ""
@@ -4654,10 +4669,10 @@
         "主旨："
       ],
       "Support for 1 custom email domain": [
-        "支援 1 個自訂電子郵件網域"
+        "支援 1 個自訂電郵網域"
       ],
       "Support privacy by upgrading for": [
-        "透過升級支持隱私"
+        "透過升級支援隱私"
       ],
       "support team": [
         "支援團隊"
@@ -4705,7 +4720,7 @@
         "此動作將下載所有郵件，以供本機搜尋。清除您的瀏覽器資料將停用此選項。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此電子郵件地址已停用。若要傳送到此電子郵件地址，請其擁有者首先啟用此電子郵件地址。"
+        "此電郵位址已停用。若要傳送到此電郵位址，請其擁有者首先啟用此電郵位址。"
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "此瀏覽器不支援預覽 PDF 文件。請下載該檔案。"
@@ -4714,13 +4729,13 @@
         "此對話包含了排定傳送的郵件。此郵件的傳送將會被取消。"
       ],
       "This conversation contains non-trashed messages.": [
-        "此會話包含不在垃圾桶中的郵件。"
+        "此對話包含非垃圾訊息。"
       ],
       "This conversation contains trashed messages.": [
-        "此會話包含在垃圾桶中的郵件。"
+        "此對話含有已被移至垃圾桶的訊息。"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "此電子郵件未能通過其網域的認證要求。可能是因為遭人假冒或不當轉寄！"
+        "此電郵未能通過其網域的認證需求。可能是因為遭人假冒或不當轉寄！"
       ],
       "This invitation is saved in a disabled calendar.": [
         "此邀請儲存於一個已停用的行事曆。"
@@ -4729,16 +4744,16 @@
         ""
       ],
       "This link may be a homograph attack and cannot be opened by Internet Explorer and Edge browsers. If you are certain the link is legitimate, please use a different browser to open it.": [
-        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)，且無法以 Internet Explorer 或 Edge 瀏覽器開啟。如果您確定這是一個正當的連結，請使用其他瀏覽器來開啟。"
+        "此連結可能是同形異義字攻擊，且無法在 Internet Explorer 與 Edge 瀏覽器中打開。如果您確定此連結是合法的，請使用其他瀏覽器來開啟。"
       ],
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
-        "此連結可能為同形異字的域名釣魚攻擊 (homograph attack)。請核對這是您欲造訪的連結，否則不要開啟。"
+        "此連結可能是同形異義字攻擊，請核對此連結是否是您想要造訪的連結，否則請不要開啟。"
       ],
       "This message has been adjusted to comply with a dark background.": [
-        "此郵件已針對適合暗黑模式進行調整"
+        "此郵件已針對適合深色模式進行調整。"
       ],
       "This message is automatically generated as a response to a previous message.": [
-        "此郵件乃是回應先前一封郵件的自動回覆。"
+        "此訊息將自動產生以回覆前一個訊息。"
       ],
       "This message is expired!": [
         "此郵件已過期！"
@@ -4780,7 +4795,7 @@
         "此郵件將在明天 ${ formattedTime } 過期"
       ],
       "This public key will be automatically used for encrypting email sent to this address.": [
-        "將自動使用此公開金鑰加密寄送到此電子郵件地址的電子郵件。"
+        "將自動使用此公開金鑰加密寄送到此電郵位址的電郵。"
       ],
       "This sender's public key has not been trusted yet.": [
         "此寄件人的公開金鑰尚未信任。"
@@ -4789,22 +4804,22 @@
         "為防止垃圾郵件及濫用行為，請驗證您是真人。"
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
-        "若要重新簽署您的聯絡人，我們需要依照您的帳戶中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
+        "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一位聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
         "若要恢復您的資料，您需要重新啟用在資料建立時所使用的聯絡人加密金鑰。該過程需提供金鑰產生時所使用的密碼。"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
-        "如要取消訂閱此郵寄清單，將從 ${ boldFrom } 傳送一封電子郵件，並包含下列由電子報傳送者定義的資訊："
+        "如要取消訂閱此郵寄清單，將從 ${ boldFrom } 傳送一封電郵，並包含下列由電子報傳送者定義的資訊："
       ],
       "To unsubscribe from this mailing list, you will be taken to the following URL where instructions will be provided by the sender of the newsletter:": [
         "如要取消訂閱此郵寄清單，您將會被帶到以下 URL，並由電子報的傳送者提供說明："
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "若要使用電子郵件驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電子郵件的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
+        "若要使用電郵驗證，您必須啟用信任金鑰並信任一個或多個可用的公開金鑰，包括此電郵的主要金鑰。這樣可以防止加密金鑰遭到偽造。"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
-        "等待傳送的訊息太多了。請等其他訊息傳送後再安排此訊息。"
+        "等待傳送的訊息太多了。請等其它訊息傳送後再安排此訊息。"
       ],
       "Turn off content search. Activation progress won't be lost.": [
         "關閉內容搜尋。啟用流程不會遺失。"
@@ -4818,6 +4833,9 @@
       "Unlimited messages": [
         "無限制的郵件"
       ],
+      "Unlock message": [
+        ""
+      ],
       "Unsupported file": [
         "不支援的檔案"
       ],
@@ -4825,22 +4843,22 @@
         "正在更新郵件內容搜尋..."
       ],
       "Upgrade to add more addresses to your account.": [
-        "升級以新增更多電子郵件地址到您的帳號。"
+        "升級以加入更多電郵位址到您的帳號。"
       ],
       "Upgrade to configure a vacation auto-responder.": [
         "升級以設定假期自動回覆。"
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "升級以建立更多資料夾、過濾條件與地址。"
+        "升級以建立更多資料夾、過濾條件與位址。"
       ],
       "Upgrade to host emails from your own domain name.": [
-        "升級以使用您自己的網域名稱託管電子郵件。"
+        "升級以使用您自己的網域名稱託管電郵。"
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "升級以從 @pm.me 地址寄送電子郵件。"
+        "升級以從 @pm.me 位址寄送電郵。"
       ],
       "Upgrade to send emails to contact groups easily.": [
-        "升級以輕鬆地向聯絡人群組傳送電子郵件。"
+        "升級以輕鬆地向聯絡人群組傳送電郵。"
       ],
       "Upgrade to support a privacy-first internet.": [
         "升級以支援隱私優先的網際網路。"
@@ -4858,7 +4876,7 @@
         ""
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載圖像"
       ],
       "URL link": [
         "URL 連結"
@@ -4870,7 +4888,7 @@
         ""
       ],
       "Use keyboard shortcuts to manage your email faster.": [
-        "使用鍵盤快捷鍵來更快管理您的電子郵件。"
+        "使用鍵盤快捷鍵來更快管理您的電郵。"
       ],
       "Version ${ appVersion }": [
         "版本 ${ appVersion }"
@@ -4879,7 +4897,7 @@
         "造訪我們的線上商店以取得 Proton 商品。"
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電子郵件？"
+        "不好意思，說不好是我們搞錯了。可否請您確認一下，您想要標記這是一封正當的電郵？"
       ],
       "We could not verify the sender's trusted keys.": [
         "我們無法驗證此寄件人的已信任金鑰。"
@@ -4900,10 +4918,10 @@
         "週"
       ],
       "When do you want your message to be sent?": [
-        "您要何時傳送您的郵件？"
+        "您想在什麼時候傳送郵件？"
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
-        "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會新增到其連絡人詳細資料。"
+        "當您為 ${ senderName } 啟用已信任的金鑰，公開金鑰會加入到其連絡人詳細資料。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "您想要接收新的驗證碼，還是更換驗證方式？"
@@ -4915,7 +4933,7 @@
         "每年"
       ],
       "You are about to open another browser tab and visit:": [
-        "您即將開啟新分頁並造訪："
+        "您將要開啟其他瀏覽器分頁並造訪："
       ],
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
@@ -4936,13 +4954,13 @@
         "您可以更新或清除您的搜尋條件"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "您可以啟用通知功能，以便在新的電子郵件訊息送達此資料夾時收到通知。"
+        "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
       "You can use ${ VPN_APP_NAME } for free today.": [
         ""
       ],
       "You cannot reply from the invited address.": [
-        "您無法從獲邀的電子郵件地址回覆。"
+        "您無法從獲邀的電郵位址回覆。"
       ],
       "You do not have any messages here": [
         "這裡無任何郵件"
@@ -4966,7 +4984,7 @@
         "您選取了有此標籤的 **${ count } 則訊息**"
       ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
-        "您的電子郵件未有加上主旨。無論如何，您仍要傳送郵件嗎？"
+        "您的電郵未有加上主旨。無論如何，您仍要傳送郵件嗎？"
       ],
       "You have reached 100% of your storage capacity. Consider freeing up some space or upgrading your account with additional storage space to compose new messages.": [
         "您的儲存空間容量已達到 100%。請考慮清空部分空間或升級您的帳號以取得額外儲存空間，以便撰寫新郵件。"
@@ -4978,7 +4996,7 @@
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
+        "您的儲存空間容量已達到 100%。您無法傳送或接收新的電郵。${ freeUpMessage }${ upgradeLink }"
       ],
       "You selected **${ count } conversation** from this folder": [
         "您從此資料夾選取了 **${ count } 個對話**"
@@ -4993,19 +5011,19 @@
         "您選取了有此標籤的 **${ count } 則訊息**"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
-        "您編寫了「${ attachmentsFoundKeyword }」，但沒有新增對應的附件。無論如何寄出此封郵件？"
+        "您編寫了「${ attachmentsFoundKeyword }」，但沒有加入對應的附件。無論如何寄出此封郵件？"
       ],
       "Your account has at least one overdue invoice. Your access has been restricted. ${ payInvoiceLink }": [
         "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "您的帳戶至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
+        "您的帳號至少有一張逾期帳單。您的存取將受限制。${ payInvoiceLink }"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
-        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳戶。"
+        "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 Proton 帳號。"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次性驗證。"
+        "您的電郵只會用於此一次性驗證。"
       ],
       "Your message will be deleted from the recipient's inbox and your sent folder on ${ dateString } at ${ formattedTime }": [
         "您的郵件會從收件者信匣以及您的寄件匣一併移除，已訂日期時間為 ${ dateString } 的 ${ formattedTime }"
@@ -5026,7 +5044,7 @@
         "您的郵件將在明天到期。"
       ],
       "Your phone number will only be used for this one-time verification.": [
-        "您的電話號碼只會用於此一次性驗證。"
+        "您的手機號碼只會用於此一次性驗證。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "您的 Proton 帳號目前被凍結。如要繼續使用您的帳號，請先支付逾期帳單。"
@@ -5078,16 +5096,16 @@
     },
     "Key pinning": {
       "Clicking \"Trust Key\" will associate this public key with this sender\nand emails from this address will be automatically cryptographically verified.": [
-        "按一下「信任金鑰」會將此公開金鑰與此寄件人關聯，\n來自此電子郵件地址的郵件將自動進行密碼編譯驗證。"
+        "按一下「信任金鑰」會將此公開金鑰與此寄件人關聯，\n來自此電郵位址的郵件將自動進行密碼編譯驗證。"
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with\nthis sender. Emails from this address will be automatically cryptographically verified.": [
-        "按一下「信任金鑰」將建立一個新的連絡人，並將此公開金鑰與此寄件人關聯。來自此電子郵件地址的郵件將自動以密碼學進行驗證。"
+        "按一下「信任金鑰」將建立一個新的連絡人，並將此公開金鑰與此寄件人關聯。來自此電郵位址的郵件將自動以密碼學進行驗證。"
       ],
       "Do you want to trust the primary public key with the following fingerprint?": [
         "您要信任下列指紋的主要公開金鑰嗎？"
       ],
       "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
-        "你已經在此郵件地址啟用了「以信任的金鑰驗證地址」的功能，\n但您還未將任何有效的加密金鑰設為信任。\n你必須要信任一把有效的金鑰才能寄送郵件到此地址。"
+        "你已經在此郵件位址啟用了「以信任的金鑰驗證位址」的功能，\n但您還未將任何有效的加密金鑰設為信任。\n你必須要信任一把有效的金鑰才能寄送郵件到此位址。"
       ]
     },
     "Key validation warning": {
@@ -5097,10 +5115,10 @@
     },
     "Keyboard shortcut name": {
       "Add encryption": [
-        "新增加密"
+        "加入加密"
       ],
       "Add expiration time": [
-        "新增到期時間"
+        "加入到期時間"
       ],
       "Apply / open": [
         "套用 / 開啟"
@@ -5166,7 +5184,7 @@
         "加上標籤..."
       ],
       "Load embedded images": [
-        "載入嵌入的圖片"
+        "載入內崁圖像"
       ],
       "Load remote content": [
         "載入遠端內容"
@@ -5235,7 +5253,7 @@
         "全選 / 全不選"
       ],
       "Send email": [
-        "發送電子郵件"
+        "發送電郵"
       ],
       "Show all emails": [
         "顯示所有郵件"
@@ -5297,16 +5315,16 @@
         "操作"
       ],
       "Add email address": [
-        "新增電子郵件地址"
+        "加入電郵位址"
       ],
       "Add image URL": [
-        "新增圖片網址"
+        "加入圖像路徑"
       ],
       "Add to group": [
-        "新增至群組"
+        "加入至群組"
       ],
       "Address": [
-        "電郵地址"
+        "電郵位址"
       ],
       "ALL": [
         "全部"
@@ -5369,7 +5387,7 @@
         ""
       ],
       "City": [
-        "城市"
+        "縣市"
       ],
       "Code is 6 digits without spaces": [
         "驗證碼為六位數且無空格"
@@ -5396,34 +5414,34 @@
         "日期："
       ],
       "Delete": [
-        ""
+        "刪除"
       ],
       "Do not ask again": [
         "不要再詢問"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email format": [
-        "電子郵件格式"
+        "電郵格式"
       ],
       "Emails": [
-        "電子郵件"
+        "電郵"
       ],
       "Enable Beta Access": [
         "啟用測試版體驗"
       ],
       "Encrypt emails": [
-        "加密電子郵件"
+        "加密電郵"
       ],
       "Export contacts": [
         "匯出聯絡人"
       ],
       "Extended address": [
-        "詳細地址"
+        "詳細位址"
       ],
       "Filter Name": [
         "篩選器名稱"
@@ -5474,7 +5492,7 @@
         "匯入頻率"
       ],
       "Import to email address": [
-        "匯入至電子郵件地址"
+        "匯入至電郵位址"
       ],
       "Keyboard shortcuts": [
         "鍵盤快捷鍵"
@@ -5501,7 +5519,7 @@
         "位置"
       ],
       "Mailbox password": [
-        "郵箱密碼"
+        "信箱密碼"
       ],
       "Manage folders": [
         "管理資料夾"
@@ -5510,7 +5528,7 @@
         "管理標籤"
       ],
       "Manage my addresses": [
-        "管理我的電子郵件地址"
+        "管理我的電郵位址"
       ],
       "Mark as": [
         "標示為"
@@ -5558,7 +5576,7 @@
         "PGP 方案"
       ],
       "Phone number": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Post office box": [
         "郵政信箱"
@@ -5606,7 +5624,7 @@
         "寄件者"
       ],
       "Sign emails": [
-        "簽署電子郵件"
+        "簽署電郵"
       ],
       "Size:": [
         "大小："
@@ -5618,22 +5636,22 @@
         "陳述式"
       ],
       "Street address": [
-        "街道地址"
+        "街道位址"
       ],
       "System information": [
         "系統資訊"
       ],
       "The email was sent ${ attachment }": [
-        "電子郵件已傳送${ attachment }"
+        "電郵已傳送${ attachment }"
       ],
       "the email was sent ${ attachment }": [
-        "電子郵件${ attachment }送出"
+        "電郵${ attachment }送出"
       ],
       "The email was sent ${ attachmentStrong }": [
-        "電子郵件已傳送${ attachmentStrong }"
+        "電郵已傳送${ attachmentStrong }"
       ],
       "the email was sent ${ label }": [
-        "電子郵件已送出${ label }"
+        "電郵已送出${ label }"
       ],
       "Then": [
         "則"
@@ -5651,13 +5669,13 @@
         "收件者：${ emailAddress }"
       ],
       "Two-factor authentication code": [
-        "兩步驟驗證碼"
+        "雙重驟驗證碼"
       ],
       "Undisclosed Recipients": [
         "非公開收件者"
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載圖像"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
         ""
@@ -5758,13 +5776,13 @@
     },
     "Link": {
       "Activate": [
-        ""
+        "啟用"
       ],
       "Add folder": [
-        "新增資料夾"
+        "加入資料夾"
       ],
       "Add label": [
-        "新增標籤"
+        "加入標籤"
       ],
       "All mail": [
         "所有郵件"
@@ -5776,10 +5794,10 @@
         "清除瀏覽器快取"
       ],
       "Create a calendar linked to an active email address.": [
-        "建立一個連結到一個使用中電子郵件地址的行事曆。"
+        "建立一個連結到一個使用中電郵位址的行事曆。"
       ],
       "Create a new calendar to add this event": [
-        "創建一個新的行事曆以新增此事件"
+        "創建一個新的行事曆以加入此事件"
       ],
       "Create a new calendar to answer this invitation": [
         "建立一個新的行事曆，以回答此邀請"
@@ -5791,19 +5809,19 @@
         "草稿"
       ],
       "Enable an email address linked to one of your calendars.": [
-        "啟用一個連結到您其中一個行事曆的電子郵件地址。"
+        "啟用一個連結到您其中一個行事曆的電郵位址。"
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "啟用連結到此已停用行事曆的電子郵件地址以取消此事件。"
+        "啟用連結到此已停用行事曆的電郵位址以取消此事件。"
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "啟用連結到此已停用行事曆的電子郵件地址以修改您的回答。"
+        "啟用連結到此已停用行事曆的電郵位址以修改您的回答。"
       ],
       "Enable your address again to modify your answer.": [
-        "重新啟用您的電子郵件地址以修改您的回答。"
+        "重新啟用您的電郵位址以修改您的回答。"
       ],
       "Enable your address to answer this invitation.": [
-        "請啟用您的電子郵件地址，以回答此邀請。"
+        "請啟用您的電郵位址，以回答此邀請。"
       ],
       "Folders": [
         "資料夾"
@@ -5818,7 +5836,7 @@
         "標籤"
       ],
       "Learn more": [
-        "了解更多"
+        "瞭解詳情"
       ],
       "Manage your folders": [
         "管理您的資料夾"
@@ -5827,10 +5845,10 @@
         "管理您的標籤"
       ],
       "More": [
-        ""
+        "更多"
       ],
       "More about recovery": [
-        "更多有關於備援部份"
+        "更多有關於復原部份"
       ],
       "Open in ${ calendarAppName }": [
         "開啟在${ calendarAppName }"
@@ -5839,7 +5857,7 @@
         "在 ${ calendarAppName } 中開啟已更新的事件"
       ],
       "Or you can delete one of your calendars and create a new one linked to an active email address.": [
-        "又或者，您可以刪除您的其中一個行事曆，並建立一個連結到使用中電子郵件地址的新行事曆。"
+        "又或者，您可以刪除您的其中一個行事曆，並建立一個連結到使用中電郵位址的新行事曆。"
       ],
       "Outbox": [
         "寄件匣"
@@ -5851,10 +5869,10 @@
         "隱私權政策"
       ],
       "Re-enable the address linked to this calendar to manage your invitation.": [
-        "重新啟用連結至此行事曆的電子郵件地址，以便管理您的邀請。"
+        "重新啟用連結至此行事曆的電郵位址，以便管理您的邀請。"
       ],
       "Re-enable the address linked to this calendar to update your invitation.": [
-        "重新啟用連結至此行事曆的電子郵件地址，以便更新您的邀請。"
+        "重新啟用連結至此行事曆的電郵位址，以便更新您的邀請。"
       ],
       "Request an invite": [
         "請求邀請"
@@ -5887,10 +5905,10 @@
         "升級"
       ],
       "Upgrade account": [
-        "升級帳戶"
+        "升級帳號"
       ],
       "You need to activate your calendar keys to add this event": [
-        "您需要先啟用您的行事曆金鑰，才可以新增此事件"
+        "您需要先啟用您的行事曆金鑰，才可以加入此事件"
       ],
       "You need to activate your calendar keys to answer this invitation": [
         "您需要先啟用您的行事曆金鑰，才可回答此邀請"
@@ -5978,7 +5996,7 @@
         "在 ${ date }，${ name } ${ address } 寫道："
       ],
       "Re:": [
-        "回覆:"
+        "Re:"
       ],
       "Your free trial has ended. Access to your account will soon be disabled. ${ action }": [
         ""
@@ -5991,7 +6009,7 @@
     },
     "Message image": {
       "Image has not been loaded in order to protect your privacy.": [
-        "為了保護您的隱私，不會載入圖片."
+        "為了保護您的隱私，不會載入圖像."
       ],
       "Your browser could not verify the remote server's identity. The image might be hosted using the http protocol.": [
         ""
@@ -6162,7 +6180,7 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "切換或是新增帳號"
+        "切換或是加入帳號"
       ]
     },
     "new_plans: info": {
@@ -6227,7 +6245,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "設置您的組織、連結您的網域名稱，並建立各個帳戶以確保您的組織中所有成員均得到保護。"
+        "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 服務"
@@ -6239,7 +6257,7 @@
         "設定您的組織"
       ],
       "Use the app selector in the top left to access other Proton services, including VPN, Calendar and Drive.": [
-        "請點擊左上方的應用程式選擇器以使用其他 Proton 服務，包括 VPN、行事曆和雲端硬碟。"
+        "請點擊左上方的應用程式選擇器以使用其它 Proton 服務，包括 VPN、行事曆和雲端硬碟。"
       ],
       "You can change this anytime in your settings.": [
         "您隨時都可以在設定中變更。"
@@ -6247,7 +6265,7 @@
     },
     "Option": {
       "Add to existing group": [
-        "新增至現有群組"
+        "加入至現有群組"
       ],
       "All": [
         "全部"
@@ -6292,7 +6310,7 @@
         "傳送郵件"
       ],
       "Set up a recovery method": [
-        "設定備援方法"
+        "設定復原方法"
       ]
     },
     "Participant name": {
@@ -6302,7 +6320,7 @@
     },
     "PGP key encryption warning": {
       "Key cannot be used for encryption": [
-        "此金鑰不能用於加密"
+        "此金鑰無法用於加密"
       ]
     },
     "PGP Key info": {
@@ -6332,7 +6350,7 @@
         "例如： "
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "End date": [
         "結束日期"
@@ -6350,19 +6368,19 @@
         "提示"
       ],
       "Image URL": [
-        "圖片網址"
+        "圖像網址"
       ],
       "Link": [
         "連結"
       ],
       "Mailbox password": [
-        "郵箱密碼"
+        "信箱密碼"
       ],
       "Name": [
         "名稱"
       ],
       "Name or email address": [
-        "名稱或電子郵件地址"
+        "名稱或電郵位址"
       ],
       "Password": [
         "密碼"
@@ -6380,22 +6398,22 @@
         "搜尋群組名稱"
       ],
       "Search for name or email": [
-        "搜尋名稱或電子郵件"
+        "搜尋名稱或電郵"
       ],
       "Search messages": [
         "搜尋訊息"
       ],
       "Search name, email or group": [
-        "搜尋名稱、電子郵件或群組"
+        "搜尋名稱、電郵或群組"
       ],
       "Select": [
-        ""
+        "選取"
       ],
       "Start date": [
         "開始日期"
       ],
       "Start typing an email address": [
-        "在此輸入一個電子郵件地址"
+        "在此輸入一個電郵位址"
       ],
       "Subject": [
         "主旨"
@@ -6437,10 +6455,10 @@
     },
     "Property type": {
       "Address": [
-        "地址"
+        "位址"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Fax": [
         "傳真"
@@ -6455,7 +6473,7 @@
         "手機"
       ],
       "Other": [
-        "其他"
+        "其它"
       ],
       "Pager": [
         "傳呼機"
@@ -6521,7 +6539,10 @@
         "行事曆事件已更新"
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
-        "無法傳送到召集人電子郵件地址：${ errorMessage }"
+        "無法傳送到召集人電郵位址：${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "重新加密邀請失敗。請再試一次"
       ]
     },
     "Search - no results": {
@@ -6545,32 +6566,32 @@
     },
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
-        "下列電子郵件地址所屬的聯絡人已經刪除，因此相應的加密喜好設定亦已更新："
+        "下列電郵位址所屬的聯絡人已經刪除，因此相應的加密喜好設定亦已更新："
       ]
     },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
-        "無論如何，您仍要傳送此電子郵件嗎？"
+        "無論如何，您仍要傳送此電郵嗎？"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "偵測到一些錯誤。您的電子郵件無法傳送到全部所輸入的電子郵件地址，原因如下："
+        "偵測到一些錯誤。您的電郵無法傳送到全部所輸入的電郵位址，原因如下："
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "偵測到一些錯誤。您的電子郵件無法傳送到一或多個所輸入的電子郵件地址，原因如下："
+        "偵測到一些錯誤。您的電郵無法傳送到一或多個所輸入的電郵位址，原因如下："
       ]
     },
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
-        "無論如何，您仍要傳送此電子郵件嗎？"
+        "無論如何，您仍要傳送此電郵嗎？"
       ],
       "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
-        "若您仍然決定要傳送此郵件，下列收件人將不受到期日所限接收此電子郵件："
+        "若您仍然決定要傳送此郵件，下列收件人將不受到期日所限接收此電郵："
       ],
       "The following address is not valid: ${ invalidAddresses }": [
-        "下列電子郵件地址無效：${ invalidAddresses }"
+        "下列電郵位址無效：${ invalidAddresses }"
       ],
       "We have detected some warnings. The following email address may not receive emails:": [
-        "偵測到一些警告。下列電子郵件地址或者無法接收電子郵件："
+        "偵測到一些警告。下列電郵位址或者無法接收電郵："
       ]
     },
     "Sent email icon": {
@@ -6652,6 +6673,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } 現已正式登場！給您的檔案有如您的電子郵件一樣的安全性。"
+      ],
       "Discover all Proton services": [
         "探索所有 Proton 服務"
       ],
@@ -6668,7 +6692,10 @@
         "安全地管理您的行事曆、檔案和線上生活！開啟並探索所有的 Proton 服務。"
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
-        "為確保您的隱私，Proton以封鎖此郵件中的電子郵件追蹤器"
+        "為確保您的隱私，Proton以封鎖此郵件中的電郵追蹤器"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "試試看 ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "您現在可以安排稍後傳送訊息"
@@ -6736,13 +6763,13 @@
         "${ elementsCount } 個會話已標記為未讀。"
       ],
       "${ elementsCount } conversation moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 個會話已移至 ${ folderName }，並將寄件人新增至允許清單。"
+        "${ elementsCount } 個會話已移至 ${ folderName }，並將寄件人加入至允許清單。"
       ],
       "${ elementsCount } conversation moved to ${ folderName }.": [
         "${ elementsCount } 個會話已移至 ${ folderName }。"
       ],
       "${ elementsCount } conversation moved to spam and sender added to Block List.": [
-        "${ elementsCount } 個會話已移至垃圾郵件，並將寄件人新增到封鎖清單中。"
+        "${ elementsCount } 個會話已移至垃圾郵件，並將寄件人加入到封鎖清單中。"
       ],
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } 個會話已移除 ${ labelName } 標籤。"
@@ -6760,22 +6787,22 @@
         "${ elementsCount } 封郵件標記為未讀。"
       ],
       "${ elementsCount } message moved to ${ folderName } and sender added to Allow List.": [
-        "${ elementsCount } 封郵件已移動到 ${ folderName }，並將寄件人新增至允許清單。"
+        "${ elementsCount } 封郵件已移動到 ${ folderName }，並將寄件人加入至允許清單。"
       ],
       "${ elementsCount } message moved to ${ folderName }.": [
         "${ elementsCount } 封郵件已移動到 ${ folderName }。"
       ],
       "${ elementsCount } message moved to spam and sender added to Block List.": [
-        "${ elementsCount } 封郵件已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
+        "${ elementsCount } 封郵件已移動到垃圾郵件，並將寄件人加入到封鎖清單中。"
       ],
       "${ elementsCount } message removed from ${ labelName }.": [
         "${ elementsCount } 封郵件已移除 ${ labelName } 標籤。"
       ],
       "Address copied to clipboard": [
-        "地址已複製到剪貼簿"
+        "位址已複製到剪貼簿"
       ],
       "Address verification disabled": [
-        "地址驗證已停用"
+        "位址驗證已停用"
       ],
       "Bug reported": [
         "錯誤已回報"
@@ -6784,7 +6811,7 @@
         "驗證碼已發送至 ${ methodTo }"
       ],
       "Contact deleted": [
-        "聯絡人已刪除"
+        "已刪除聯絡人"
       ],
       "Contact group deleted": [
         "聯絡人群組已刪除"
@@ -6811,22 +6838,22 @@
         "會話已標記為未讀。"
       ],
       "Conversation moved to ${ folderName } and sender added to Allow List.": [
-        "會話已移至 ${ folderName }，並將寄件人新增至允許清單。"
+        "會話已移至 ${ folderName }，並將寄件人加入至允許清單。"
       ],
       "Conversation moved to ${ folderName }.": [
         "會話已至 ${ folderName }。"
       ],
       "Conversation moved to spam and sender added to Block List.": [
-        "會話已移至垃圾郵件，並將寄件人新增到封鎖清單中。"
+        "會話已移至垃圾郵件，並將寄件人加入到封鎖清單中。"
       ],
       "Conversation removed from ${ labelName }.": [
-        "${ labelName } 標籤已從此會話撕下"
+        "${ labelName } 標籤已從此會話撕下。"
       ],
       "Draft deleted": [
         "草稿已刪除"
       ],
       "Email address copied to clipboard": [
-        "電子郵件地址已複製到剪貼簿"
+        "電郵位址已複製到剪貼簿"
       ],
       "Fingerprint copied to clipboard": [
         "指紋已複製到剪貼簿"
@@ -6868,16 +6895,16 @@
         "郵件標記為未讀。"
       ],
       "Message moved to ${ folderName } and sender added to Allow List.": [
-        "郵件已移動到 ${ folderName }，並將寄件人新增至允許清單。"
+        "郵件已移動到 ${ folderName }，並將寄件人加入至允許清單。"
       ],
       "Message moved to ${ folderName }.": [
         "郵件已移動到 ${ folderName }。"
       ],
       "Message moved to spam and sender added to Block List.": [
-        "郵件已移動到垃圾郵件，並將寄件人新增到封鎖清單中。"
+        "郵件已移動到垃圾郵件，並將寄件人加入到封鎖清單中。"
       ],
       "Message removed from ${ labelName }.": [
-        "${ labelName } 標籤已撕掉"
+        "${ labelName } 標籤已移除。"
       ],
       "Move ${ selectionCount } conversation": [
         "移動 ${ selectionCount } 個會話"
@@ -6892,10 +6919,10 @@
         "網路釣魚已報告"
       ],
       "Phone number copied to clipboard": [
-        "電話號碼已複製到剪貼簿"
+        "手機號碼已複製到剪貼簿"
       ],
       "Preference saved": [
-        "偏好設定已儲存"
+        "設定已儲存"
       ],
       "Preferences saved": [
         "偏好設定已儲存"
@@ -6928,7 +6955,7 @@
         "操作"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Created": [
         "建立日期"
@@ -6954,7 +6981,7 @@
         "操作"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "CSV field": [
         "CSV 欄位"
@@ -6984,7 +7011,7 @@
     },
     "Time period": {
       "account creation date": [
-        "帳戶建立時間"
+        "帳號建立時間"
       ],
       "the last 12 months": [
         "最近 12 個月"
@@ -7024,22 +7051,22 @@
         "${ emailsCount } 位成員"
       ],
       "Account suspended": [
-        "帳戶已被停用"
+        "帳號已被停用"
       ],
       "Add contact group name": [
-        "新增聯絡人群組名稱"
+        "加入聯絡人群組名稱"
       ],
       "Add filter": [
-        "新增篩選器"
+        "加入篩選器"
       ],
       "Add to ${ groupCount } group": [
-        "新增至 ${ groupCount } 個群組"
+        "加入至 ${ groupCount } 個群組"
       ],
       "Add to ${ groupName }": [
-        "新增至 ${ groupName }"
+        "加入至 ${ groupName }"
       ],
       "Addresses": [
-        "地址"
+        "位址"
       ],
       "Are you sure you want to close?": [
         "您確定要關閉嗎？"
@@ -7072,10 +7099,10 @@
         "清除資料中"
       ],
       "Composer mode": [
-        "撰寫器模式"
+        "撰寫模式"
       ],
       "Confirm recipient address?": [
-        "確認收件人電子郵件地址？"
+        "確認收件人電郵位址？"
       ],
       "Contact details": [
         "聯絡人詳細資料"
@@ -7087,7 +7114,7 @@
         "聯絡人群組"
       ],
       "Contacts": [
-        "聯絡人"
+        "通訊錄"
       ],
       "Conversation list": [
         "會話群組清單"
@@ -7138,7 +7165,7 @@
         "刪除 ${ count } 個草稿"
       ],
       "Delete ${ count } message": [
-        "刪除 ${ count } 封電子郵件"
+        "刪除 ${ count } 封電郵"
       ],
       "Delete ${ Name }": [
         "刪除 ${ Name }"
@@ -7168,22 +7195,22 @@
         "編輯篩選器"
       ],
       "Edit image": [
-        "編輯圖片"
+        "編輯圖像"
       ],
       "Email addresses": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email composer": [
         "電郵撰寫器"
       ],
       "Email content": [
-        "電子郵件內容"
+        "電郵內容"
       ],
       "Email settings": [
-        "電子郵件設定"
+        "電郵設定"
       ],
       "Email settings (${ emailAddress })": [
-        "電子郵件設定 (${ emailAddress })"
+        "電郵設定 (${ emailAddress })"
       ],
       "Enable message content search": [
         "啟用郵件內容搜尋"
@@ -7216,16 +7243,13 @@
         "群組"
       ],
       "Human verification": [
-        "真人驗證"
+        "真人身分驗證"
       ],
       "Image": [
-        "影像檔"
+        "圖像"
       ],
       "Import contacts": [
         "匯入聯絡人"
-      ],
-      "Import groups": [
-        "匯入群組"
       ],
       "Insert contacts": [
         "插入聯絡人"
@@ -7237,10 +7261,10 @@
         "標籤為"
       ],
       "Link confirmation": [
-        "確認開啟連結"
+        "外部連結確認"
       ],
       "Load embedded images": [
-        "載入內嵌圖片"
+        "載入嵌入圖像"
       ],
       "Load remote content": [
         "載入遠端內容"
@@ -7255,10 +7279,10 @@
         "標記為未讀"
       ],
       "Mark email as legitimate": [
-        "標記為正當電子郵件"
+        "標記為正當電郵"
       ],
       "Merge contacts": [
-        "合併聯絡人"
+        "合併通訊錄"
       ],
       "Merging contacts": [
         "正在合併聯絡人"
@@ -7281,6 +7305,9 @@
       "More selections": [
         "更多選取"
       ],
+      "Move all messages to Trash": [
+        ""
+      ],
       "Move to": [
         "移動到"
       ],
@@ -7297,7 +7324,7 @@
         "移動已經排程的訊息"
       ],
       "New message": [
-        "新郵件"
+        "新訊息"
       ],
       "Next conversation": [
         "下一個會話"
@@ -7318,13 +7345,13 @@
         "開啟設定選單"
       ],
       "Other information": [
-        "其他資訊"
+        "其它資訊"
       ],
       "Other names": [
-        "其他名稱"
+        "其它名稱"
       ],
       "Phone numbers": [
-        "電話號碼"
+        "手機號碼"
       ],
       "Previous conversation": [
         "上一個會話"
@@ -7345,7 +7372,7 @@
         "收件人遺失"
       ],
       "Recipients": [
-        ""
+        "收件者"
       ],
       "Recover data": [
         "恢復資料"
@@ -7375,10 +7402,10 @@
         "選擇聯絡人群組"
       ],
       "Send email": [
-        "發送電子郵件"
+        "發送電郵"
       ],
       "Send feedback": [
-        ""
+        "傳送意見反饋"
       ],
       "Send with changed preferences?": [
         "要使用已變更的喜好設定傳送嗎？"
@@ -7387,7 +7414,7 @@
         "不設到期日發送嗎？"
       ],
       "Sender": [
-        ""
+        "寄件者"
       ],
       "Sender changed": [
         "寄件者已變更"
@@ -7396,7 +7423,7 @@
         "回報錯誤"
       ],
       "Sending notice": [
-        "寄送需知"
+        "傳送通知"
       ],
       "Sending original message": [
         "原始郵件傳送中"
@@ -7405,7 +7432,7 @@
         "設定"
       ],
       "Sign in again to continue": [
-        "請再次登入以繼續"
+        "請重新登入以繼續"
       ],
       "Sign in and grant access": [
         ""
@@ -7423,7 +7450,7 @@
         "缺少主旨"
       ],
       "To": [
-        "收件人"
+        "收件者"
       ],
       "Trust new key?": [
         "要信任新的金鑰嗎？"
@@ -7450,7 +7477,7 @@
         "警告"
       ],
       "Warning: suspected fake website": [
-        ""
+        "警告：疑似假冒網站"
       ],
       "Welcome": [
         "歡迎"
@@ -7462,7 +7489,7 @@
         ""
       ],
       "What's new": [
-        "最新消息"
+        "最新功能"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         ""
@@ -7478,19 +7505,19 @@
         "「自動」表示傳送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才傳送郵件。"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "經數碼簽署的電子郵件有助驗證郵件真確性"
+        "經數碼簽署的電郵有助驗證郵件真確性"
       ],
       "Each imported email will have this label": [
-        "每一封匯入的電子郵件將加上此標籤"
+        "每一封匯入的電郵將加上此標籤"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "電子郵件加密透過強制加入數碼簽章，以助驗證郵件真確性"
+        "電郵加密透過強制加入數碼簽章，以助驗證郵件真確性"
       ],
       "Encrypted data": [
         "加密數據"
       ],
       "Encrypted data with verified digital signature": [
-        "已加密並驗證數碼簽章"
+        "數位簽署驗證的加密資料"
       ],
       "Select the PGP scheme to be used when signing or encrypting to a user. Note that PGP/Inline forces plain text messages": [
         "請選擇向特定使用者簽署時，所需使用的簽章或PGP 方案。請注意 PGP/inline 模式將強制使用純文字郵件格式。"
@@ -7508,7 +7535,7 @@
         "此功能僅提供給付費使用者"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上載公開金鑰以啟用傳送端對端加密電子郵件到此電子郵件地址"
+        "上載公開金鑰以啟用傳送端對端加密電郵到此電郵位址"
       ],
       "You do not have any contacts to export": [
         "您沒有任何可匯出的聯絡人"
@@ -7563,7 +7590,7 @@
         "無法合併聯絡人"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
-        "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可幫助您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
+        "若您忘記密碼，則沒辦法重新啟用您的金鑰。我們可說明您關閉提示橫幅，然而在此過程中，您將永久失去所有經過該金鑰加密的資料。"
       ],
       "Live chat is a premium feature available only to those with paid ${ VPN_APP_NAME } plans. Please open a ticket instead.": [
         ""
@@ -7599,7 +7626,7 @@
         "此動作無法復原。請在欄位輸入「${ boldDanger }」一詞以繼續。"
       ],
       "This feature requires a paid Proton account": [
-        "此功能僅限付費Proton 帳戶使用"
+        "此功能僅限付費Proton 帳號使用"
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "不幸的是，我們目前不在線上。請填寫下面的表單來描述您的問題，我們將會進行調查並在我們重新上線後與您聯絡。"
@@ -7703,13 +7730,13 @@
         "每星期的${ multipleDaysString }，${ untilString }"
       ],
       "Weekly on all days": [
-        "每星期，週中每一日"
+        "每星期的所有工作日"
       ],
       "Weekly on all days, ${ timesString }": [
-        "每星期，週中每一日，${ timesString }"
+        "每星期的所有工作日，${ timesString }"
       ],
       "Weekly on all days, ${ untilString }": [
-        "每星期，週中每一日，${ untilString }"
+        "每星期的所有工作日，${ untilString }"
       ],
       "Weekly on Friday": [
         "每星期的週五"

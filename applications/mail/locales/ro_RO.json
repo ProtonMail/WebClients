@@ -215,9 +215,6 @@
       "Customize": [
         "Personalizare"
       ],
-      "Decrypt": [
-        "Decriptare"
-      ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
@@ -338,6 +335,9 @@
       ],
       "External encryption": [
         "Criptare externă"
+      ],
+      "Fewer search options": [
+        "Mai puține opțiuni de căutare"
       ],
       "Filter on...": [
         "Filtrare după..."
@@ -464,9 +464,6 @@
       "Learn more": [
         "Detalii"
       ],
-      "Less search options": [
-        "Mai puține opțiuni de căutare"
-      ],
       "Load": [
         "Încărcare"
       ],
@@ -544,6 +541,21 @@
       ],
       "More search options": [
         "Mai multe opțiuni de căutare"
+      ],
+      "Move": [
+        "Mutare"
+      ],
+      "Move all conversations from this folder": [
+        "Mutare toate conversațiile din acest folder"
+      ],
+      "Move all conversations from this label": [
+        "Mutare toate conversațiile cu această etichetă"
+      ],
+      "Move all messages from this folder": [
+        "Mutare toate mesajele din acest folder"
+      ],
+      "Move all messages from this label": [
+        "Mutare toate mesajele cu această etichetă"
       ],
       "move emails to": [
         "mutare mesaje în"
@@ -667,6 +679,9 @@
       ],
       "Re-sign": [
         "Reînregistrare"
+      ],
+      "Read message": [
+        "Citire mesaj"
       ],
       "Read receipt sent": [
         "Confirmare de citire trimisă"
@@ -806,6 +821,9 @@
       "Show details": [
         "Afișare detalii"
       ],
+      "Show fewer search options": [
+        "Afișare mai puține opțiuni de căutare"
+      ],
       "Show folders": [
         "Afișare foldere"
       ],
@@ -814,9 +832,6 @@
       ],
       "Show less": [
         "Afișare mai puțin"
-      ],
-      "Show less search options": [
-        "Afișare mai puține opțiuni de căutare"
       ],
       "Show messages": [
         "Afișare mesaje"
@@ -854,9 +869,6 @@
       "Submit": [
         "Trimite"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Tema"
       ],
@@ -865,6 +877,9 @@
       ],
       "This message contains remote content.": [
         "Acest mesaj conține conținut de la distanță."
+      ],
+      "Trash all": [
+        "Ștergere toate"
       ],
       "Trust": [
         "Aprobare"
@@ -1599,7 +1614,7 @@
     },
     "color": {
       "Apple": [
-        "măr"
+        "verde măr"
       ],
       "azureish white": [
         "alb azuric"
@@ -1632,16 +1647,16 @@
         "azur cian-albastru"
       ],
       "dandelion": [
-        "alb păpădie"
+        "galben păpădie"
       ],
       "dark cerulean": [
-        "cerulean întunecat"
+        "albastru cenușiu închis"
       ],
       "dark midnight blue": [
         "albastru închis nocturn"
       ],
       "dim gray": [
-        "gri deschis"
+        "gri închis"
       ],
       "enzian": [
         "gențiană"
@@ -1650,7 +1665,7 @@
         "ferigă"
       ],
       "field drab": [
-        "câmp cafeniu deschis"
+        "cafeniu închis"
       ],
       "forest": [
         "pădure"
@@ -1662,7 +1677,7 @@
         "laur japonez"
       ],
       "kiwi": [
-        "kiwi"
+        "verde kiwi"
       ],
       "lemon yellow": [
         "galben lămâie"
@@ -1671,7 +1686,7 @@
         "roz carmin deschis"
       ],
       "light moss green": [
-        "verde mușchi deschis"
+        "verzui cenușiu deschis"
       ],
       "light red": [
         "roșu deschis"
@@ -1680,7 +1695,7 @@
         "porumb"
       ],
       "mughal green": [
-        "verde mughal"
+        "verde închis"
       ],
       "ocean": [
         "ocean"
@@ -1698,10 +1713,10 @@
         "albastru palatinat"
       ],
       "pale cerulean": [
-        "cerulean palid"
+        "albastru cenusiu"
       ],
       "pastel gray": [
-        "gri pastel"
+        "verzui deschis"
       ],
       "persian plum": [
         "prune persane"
@@ -1725,7 +1740,7 @@
         "roz"
       ],
       "pistachio": [
-        "fistic"
+        "verde fistic"
       ],
       "plum": [
         "prună"
@@ -1746,7 +1761,7 @@
         "Sahara"
       ],
       "satin sheen gold": [
-        "aur lucios satinat"
+        "maroniu deschis"
       ],
       "slateblue": [
         "ardezie albastră"
@@ -3142,9 +3157,6 @@
       "Please set a password": [
         "Setați o parolă."
       ],
-      "Preferences could not be saved": [
-        "Preferințele nu au putut fi salvate."
-      ],
       "Primary address key is not decrypted": [
         "Cheia primară a adresei nu este decriptată."
       ],
@@ -3647,13 +3659,13 @@
         "Ascundere mesaje mutate"
       ],
       "Read": [
-        "Citit"
+        "Citite"
       ],
       "Show moved message": [
         "Afișare mesaje mutate"
       ],
       "Unread": [
-        "Necitit"
+        "Necitite"
       ]
     },
     "Filter preview": {
@@ -4132,6 +4144,9 @@
       "Are you sure you want to discard your changes?": [
         "Sigur doriți să renunțați la modificări?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Sunteți sigur că doriți să mutați toate mesajele de aici în «Gunoi»?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Sigur doriți să ștergeți definitiv această conversație?",
         "Sigur doriți să ștergeți definitiv aceste ${ count } conversații?",
@@ -4253,9 +4268,6 @@
         "zile",
         "de zile"
       ],
-      "Decrypt message": [
-        "Decriptare mesaj"
-      ],
       "Default email application": [
         "Aplicaţia de e-mail implicită"
       ],
@@ -4375,7 +4387,7 @@
         "fișiere atașate"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
-        "Filtrele funcționează asupra tuturor mesajelor, incluzând atât cele primite cât și cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
+        "Filtrele funcționează asupra tuturor mesajelor, incluzându-le atât pe cele primite cât și pe cele trimise. Fiecare filtru trebuie să conțină cel puțin un nume, o condiție și o acțiune."
       ],
       "Folder": [
         "Folder"
@@ -4554,6 +4566,9 @@
       "Monthly ${ onDayString }": [
         "Lunar, ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Se mută un număr mare de mesaje. Ar putea dura ceva timp."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
@@ -4605,9 +4620,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Niciuna dintre cheile încărcate nu este validă pentru criptare. Criptarea este dezactivată automat."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "URL nevalid"
       ],
@@ -4629,11 +4641,11 @@
       "per month.": [
         "pe lună."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline este compatibil doar cu formatul de text simplu. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME trimite automat mesajele folosind modul actual de compunere. Rețineți că ${ MAIL_APP_NAME } întotdeauna semnează mesajele criptate."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Număr de telefon"
@@ -4705,6 +4717,9 @@
       ],
       "Request read receipt": [
         "Solicitare confirmare citire"
+      ],
+      "Rich text": [
+        "Text formatat"
       ],
       "Right to Left": [
         "De la dreapta la stânga"
@@ -4965,6 +4980,9 @@
       ],
       "Unlimited messages": [
         "Mesaje nelimitate"
+      ],
+      "Unlock message": [
+        "Deblocare mesaj"
       ],
       "Unsupported file": [
         "Fişier nesuportat"
@@ -6706,6 +6724,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Nu se poate trimite la adresa organizatorului: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Recriptarea invitației a eșuat. Mai încercați."
       ]
     },
     "Search - no results": {
@@ -6848,6 +6869,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } nu mai este în stadiu beta! Oferiți fișierelor aceeași securitate pe care o primesc și e-mailurile."
+      ],
       "Discover all Proton services": [
         "Descoperiți toate serviciile Proton"
       ],
@@ -6865,6 +6889,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Pentru a vă proteja confidențialitatea, Proton a blocat urmăritorii din acest mesaj."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Încercați ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Acum puteți să vă programați mesajele pentru a fi trimise mai târziu."
@@ -7492,9 +7519,6 @@
       "Import contacts": [
         "Importare contacte"
       ],
-      "Import groups": [
-        "Importare grupuri"
-      ],
       "Insert contacts": [
         "Inserare contacte"
       ],
@@ -7548,6 +7572,9 @@
       ],
       "More selections": [
         "Mai multe selecții"
+      ],
+      "Move all messages to Trash": [
+        "Mutare toate mesajele în «Gunoi»"
       ],
       "Move to": [
         "Mutare în"

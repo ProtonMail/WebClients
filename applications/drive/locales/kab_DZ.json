@@ -193,6 +193,12 @@
       "Download": [
         "Asader"
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         "Sader akken yebɣu yili"
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "rmed talɣutin n tnarit"
       ],
-      "Enable drive search": [
-        "Rmed anadi deg umeɣri"
-      ],
       "Expand": [
         "Snefli"
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Awi aseɣwen"
+      ],
+      "Get Proton Drive": [
+        ""
       ],
       "Get started": [
         "Bdu"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         "Snubget-d ameddakkel"
       ],
-      "refresh the page": [
-        "smiren asebter"
-      ],
       "Refresh the page": [
         "Smiren asebter"
+      ],
+      "refresh the page": [
+        "smiren asebter"
       ],
       "Remove": [
         "Kkes"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Kemmel asali"
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         "Sekles"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         "Sbadu tafyirt n tririt"
       ],
-      "Share": [
-        "Bḍu"
-      ],
       "Share file": [
         "Bḍu afaylu"
       ],
       "Share item": [
         "Bḍu aferdis"
-      ],
-      "Share options": [
-        "Bḍu tixtiṛiyin"
       ],
       "Share via link": [
         "Bḍu s useɣwen"
@@ -824,13 +827,13 @@
     },
     "color": {
       "carrot": [
-        ""
+        "zṛudyya"
       ],
       "cerise": [
-        ""
+        "areḍli"
       ],
       "cobalt": [
-        ""
+        "kubalt"
       ],
       "copper": [
         ""
@@ -842,13 +845,13 @@
         ""
       ],
       "forest": [
-        ""
+        "tiẓgi"
       ],
       "ocean": [
         ""
       ],
       "olive": [
-        ""
+        "azemmur"
       ],
       "pacific": [
         ""
@@ -860,7 +863,7 @@
         ""
       ],
       "pink": [
-        ""
+        "axuxi"
       ],
       "plum": [
         ""
@@ -1922,9 +1925,6 @@
         "",
         ""
       ],
-      "Preferences could not be saved": [
-        "Ismenyifen gguman ad ttuskelsen"
-      ],
       "Primary address key is not decrypted": [
         "Tasarut n tansa tagejdant ur tettwawgelhen ara"
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         ""
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "Yettwasefsex"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "Asnulfu n useɣwen ɣer ukaram"
       ],
-      "Creating share": [
-        "Timerna n beṭṭu"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Ifuyla CSV seg Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora akked kra n yinasen-nniḍen akked yimasalen vCard 3.1 akked 4.0 (UTF-8 encoding) ttwadehlen."
       ],
@@ -2518,7 +2518,22 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         ""
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
         ""
       ],
       "Downloaded": [
@@ -2527,11 +2542,8 @@
       "Downloading": [
         "Asider"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Asader n yiferdisen ${ esProgress } ɣef ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Ẓuɣer neɣ sers afaylu da neɣ fren asali."
+      "Drag and drop items here or browse for files to upload.": [
+        ""
       ],
       "Drop the file here to upload": [
         "Sers dagi afaylu ara tessaliḍ"
@@ -2539,8 +2551,11 @@
       "Duplicate key updated": [
         "Sisleg tasarut yettwaleqqmen"
       ],
-      "Enable drive search": [
-        "Rmed anadi deg umeɣri"
+      "Enabling drive search": [
+        ""
+      ],
+      "Encrypted": [
+        ""
       ],
       "Encrypted search is here": [
         "Anadi awgelhan ha-t-a da"
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Taktert n yisefka-inek•inem seg ${ importedEmailAddress } ɣer ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Indexing search results…": [
         ""
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "Aseɣwen yettwanɣel ɣer ɣefwafus"
       ],
-      "Link expires: ": [
-        "Aseɣwen ad ifat di: "
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
+        ""
       ],
       "Loading": [
         "Azdam"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "Asali ${ appName }"
       ],
+      "Loading link": [
+        ""
+      ],
+      "Loading links": [
+        ""
+      ],
       "Loading preview": [
         "Asali n teskant"
-      ],
-      "Loading share": [
-        "Asali n beṭṭu"
       ],
       "Merged": [
         "Ttusmezdin"
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         "Mačči d URL ameɣtu"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
@@ -2772,11 +2799,14 @@
       "Permanently delete all files in your drive": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline yemṣada kan akked umasal aḍris. Ttxil-k ẓer d akken ${ MAIL_APP_NAME } ittezmil dayem iznan iwgelhanen."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME yettazen izen s wudem awurman s useqdec n uskar amiran n tsuddest. Ttxil-k ẓer d akken ${ MAIL_APP_NAME } yettezmil dayem iznan iwgelhanen"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Ttxil-k·m ẓer belli tansiwin yettunefken i ugraw-a ur ttwakkasent ara."
@@ -2815,6 +2845,9 @@
       "Priority support": [
         "Tallalt yezwaren"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        ""
+      ],
       "Queued": [
         "Yettwarna ar udras"
       ],
@@ -2831,6 +2864,15 @@
         ""
       ],
       "Search cannot be enabled in this browser": [
+        ""
+      ],
+      "Search Enabled": [
+        ""
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
         ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
@@ -2857,11 +2899,20 @@
       "Share files with links": [
         "Bḍu ifuyla s yisɣewnen"
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         ""
       ],
       "Signature issue": [
         "Ugur n usezmel"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Kra seg yifuyla-inek·inem anekcum ɣur-sen d awezɣi. Err-d anekcum ɣer yifuyla-inek·inem. ${ StartRecoveryButton }"
@@ -2878,6 +2929,12 @@
       "support team": [
         "tarbaɛt n tallalt"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "Ulac ɛad ifuyla"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Amiḍan yettwaseḥbes ssebba n wugur n truẓi n tsertit."
@@ -2911,8 +2971,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Aseɣwen-a yezmer ad yili d aẓdam homograph. Ttxil-k·m senqed ma d aseɣwen-a iwuɣur tebɣiḍ ad terzuḍ, neɣ ur tetteldi ara."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Aseɣwen-a yettwarna deg\nlqem yezrin yerna ur yezmir ara ad yettwasenfel. Kkes aseɣwen-a ternuḍ wayeḍ d amaynut akken ad tbeddleḍ iɣewwaren."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Aseɣwen-a dayen ad yens. Yiwen ur izemmer ad yekcem ɣer ufaylu-inek•inem s useɣwen-a. Akken ad tebḍuḍ afaylu tikkelt-nniḍen, ilaq-ak•am aseɣwen amaynut."
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Aya ad d-yeglu s tira ɣef ukaram yellan"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        ""
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         ""
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Taqecwalt"
-      ],
-      "Try different keywords": [
-        ""
       ],
       "Unlimited folders, labels, and filters": [
         ""
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
-      "Your download has been canceled.": [
-        "Asader-ik·im yettwasefsex."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Imayl-ik ad yettwaseqdec kan tikkelt deg usenqed-agi."
-      ],
-      "Your file failed to download.": [
-        "Afaylu-ik ur d-yudir ara."
-      ],
-      "Your file has finished downloading.": [
-        "Afaylu-inek·inem dayen yemmed walluy-ines."
-      ],
-      "Your file is being downloaded.": [
-        "Afaylu-inek·inem mazal-it ad d-yettali."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Dayen ur tettizmireḍ ara ad tkecmeḍ ɣer yifuyla-inek·inem ssebba n uwenez n wawal uffir. Ales asali n tsarut n uwgelhen taqburt i wakken ad d-terred anekcum. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Ifuyla-k.m ad ttwawgelhen syin ad ttwaskelsen."
-      ],
-      "Your folder failed to download.": [
-        "Akaram-ik ur d-yudir ara."
-      ],
-      "Your folder has finished downloading.": [
-        "Akaram-inek·inem dayen yemmed walluy-ines."
-      ],
-      "Your folder is being downloaded.": [
-        "Akaram-inek·inem mazal-it ad d-yettali."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Amiḍan-inek/m Proton yettwaḥbes akka tura. Akken ad tkemmleḍ aseqdec n umiḍan-inek/m, ttxil-k/m xelleṣ tifaturin yellan."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Aseɣwen-ik•im aɣellsan, yettwabḍawen i ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Sermed anekcum Biṭa"
       ],
-      "Enabling drive search": [
-        ""
-      ],
       "Encrypt emails": [
         "Wgelhen imaylen"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         "Sɣur: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Awi-d ${ appName } inek•m"
       ],
       "Good": [
         ""
@@ -3366,6 +3390,9 @@
       ],
       "Last month only": [
         "Ayyure-nni kan ineggura"
+      ],
+      "Location": [
+        ""
       ],
       "Mailbox password": [
         "Awal n uɛeddi n tenkult imayl"
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         "Anadi awgelhan ha-t-a da"
       ],
@@ -4087,6 +4117,9 @@
         ""
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ]
     },
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "# n yinekcumen"
-      ],
       "Actions": [
         "Tigawin"
       ],
       "Address": [
         "Tansa"
       ],
-      "Created": [
-        "Yettwarna"
-      ],
       "CSV field": [
         "Urti CSV"
-      ],
-      "Deleted": [
-        "Ittwakkes"
-      ],
-      "Expires": [
-        "Azmez n tasewti"
       ],
       "Import": [
         "Kter"
       ],
-      "Location": [
-        "Emplacement"
-      ],
-      "Modified": [
-        "Yettwabeddel"
-      ],
       "Name": [
         "Isem"
-      ],
-      "Size": [
-        "Tiddi"
-      ],
-      "Uploaded": [
-        "Yuli"
       ],
       "Values": [
         "Azalen"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } n uεeggal",
         "${ emailsCount } n yiεeggalen"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        ""
+      ],
       "Account suspended": [
         "Amiḍan yettwaḥebsen"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "Rnu ɣer ${ groupName }"
       ],
-      "Additional settings": [
-        "Iɣewwaren imernan"
-      ],
       "Addresses": [
         "Tansiwin"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Ar deffir"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "Anekcum Biṭa"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Azemz"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "Kkes ${ count } n unermis",
         "Kkes ${ count } n inermisen"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Sefsex ibeddilen?"
       ],
-      "Download canceled": [
-        "Asider yefsex"
-      ],
-      "Download completed": [
-        "Asider yemmed"
-      ],
-      "Download failed": [
-        "Asider yecceḍ"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         ""
       ],
       "Download unverified folder?": [
         ""
-      ],
-      "Downloading": [
-        "Asider"
       ],
       "Drive": [
         "Nehheṛ"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Silem iḍumman"
-      ],
-      "Enable drive search": [
-        "Rmed anadi deg umeɣri"
-      ],
-      "Enter password to download": [
-        "Sekcem awal uffir i usader"
       ],
       "Enter your password": [
         "Sekcem awal-ik.im uffir"
@@ -4466,6 +4475,9 @@
         "",
         ""
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "Igrawen"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Kter inermisen"
       ],
-      "Import groups": [
-        "Kter igrawen"
-      ],
       "Invalid verification code": [
         "Tangalt n usentem mačči d tameɣtut"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         "Talqayt n yiferdisen"
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Sefrek aseɣwen aɣellsan"
-      ],
-      "Manage share": [
-        "Sefrek beṭṭu"
       ],
       "Merge contacts": [
         "Smezdi inermisen"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Isem"
-      ],
-      "No results found": [
-        "Ulac igmaḍ yettwafen"
       ],
       "Number of files": [
         "Amḍan n ifuyla"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Uṭṭunen n tiliɣṛi"
+      ],
+      "Privacy settings": [
+        ""
       ],
       "Re-sign all contacts": [
         "Allus n uzmel n yinermisen meṛṛa"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         "Seḥbes asiweḍ?"
       ],
-      "The file or folder failed to be downloaded": [
-        ""
-      ],
-      "The internet connection was interrupted": [
-        ""
-      ],
-      "The link does not exist": [
-        "Ulac aseɣwen-a"
-      ],
       "The link either does not exist or has expired": [
         "Aseɣwen u ryelli ara neɣ ahat yemmut"
       ],
@@ -4650,6 +4650,9 @@
         ""
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This link is password protected": [
         ""
       ],
       "Total size": [
@@ -4694,11 +4697,8 @@
       "You have no folders yet": [
         "Ur tesεiḍ ara εad ikaramen"
       ],
-      "Your file is ready to be downloaded": [
-        "Afaylu-inek•inem yewjed i usader"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Akaram-inek•inem yewjed i usader"
+      "You've got files": [
+        ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Aneɛruḍ-inek n baṭel ad yekfu deg ${ formattedEndDate }"

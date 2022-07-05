@@ -2190,9 +2190,6 @@
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
       ],
-      "Preferences could not be saved": [
-        "Le preferenze non possono essere salvate"
-      ],
       "Primary address key is not decrypted": [
         "Chiave dell'indirizzo principale non decriptata"
       ],
@@ -3115,11 +3112,11 @@
       "Other options": [
         "Altre opzioni"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline è compatibile solo nel formato Testo Semplice. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME invia automaticamente il messaggio utilizzando la modalità corrente del compositore. Per favore nota che ${ MAIL_APP_NAME } firma sempre i messaggi crittografati"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Nota che gli indirizzi assegnati a questo gruppo NON verranno eliminati."
@@ -3995,7 +3992,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Ti presentiamo il nuovo look di Proton.${ br } Molti servizi, una sola missione: una nuova versione di internet, dove la privacy è la regola."
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4434,6 +4431,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } è uscito dalla fase beta! Garantite ai vostri file la stessa sicurezza delle vostre e-mail."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Ricevi fino a 18 mesi di ${ planName } gratuitamente"
       ],
@@ -4442,6 +4442,9 @@
       ],
       "No more missed appointments": [
         "Niente più appuntamenti mancati"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Prova ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "Con le notifiche email, sei tu a decidere su quali eventi ricevere notifiche e quando."
@@ -4902,9 +4905,6 @@
       ],
       "Import failed": [
         "Importazione non riuscita"
-      ],
-      "Import groups": [
-        "Importa gruppi"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"

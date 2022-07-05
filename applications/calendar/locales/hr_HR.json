@@ -2208,9 +2208,6 @@
         "",
         ""
       ],
-      "Preferences could not be saved": [
-        "Postavke nije moguće spremiti"
-      ],
       "Primary address key is not decrypted": [
         "Primarni ključ adrese e-pošte nije dešifriran"
       ],
@@ -3165,11 +3162,11 @@
       "Other options": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        ""
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Imajte na umu da adrese dodijeljene ovoj grupi NEĆE biti izbrisane."
@@ -4052,7 +4049,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        ""
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4517,6 +4514,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Get up to 18 months of ${ planName } for free": [
         ""
       ],
@@ -4524,6 +4524,9 @@
         ""
       ],
       "No more missed appointments": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ],
       "With email notifications, you decide which events to be notified about and when.": [
@@ -4994,9 +4997,6 @@
       ],
       "Import failed": [
         ""
-      ],
-      "Import groups": [
-        "Uvezi grupe"
       ],
       "Invalid verification code": [
         "Nevažeći kôd za provjeru"
