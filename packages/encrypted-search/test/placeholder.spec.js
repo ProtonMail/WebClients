@@ -1,4 +1,4 @@
-import { roundMilliseconds } from '../lib/esUtils';
+import { roundMilliseconds } from '../lib';
 
 describe('placeholder', () => {
     it('should round milliseconds', async () => {

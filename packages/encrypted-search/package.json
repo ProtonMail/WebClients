@@ -13,6 +13,7 @@
     "dependencies": {
         "@proton/components": "workspace:packages/components",
         "@proton/shared": "workspace:packages/shared",
+        "@proton/utils": "workspace:packages/utils",
         "idb": "^7.0.1",
         "pmcrypto": "npm:@protontech/pmcrypto@^6.7.1"
     },

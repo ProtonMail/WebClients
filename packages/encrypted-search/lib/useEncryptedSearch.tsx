@@ -21,27 +21,42 @@ import {
     HighlightMetadata,
     HighlightString,
     ResumeIndexing,
-} from './interfaces';
+} from './models';
 import { defaultESCache, defaultESHelpers, defaultESStatus, ES_EXTRA_RESULTS_LIMIT } from './constants';
 import {
     addESTimestamp,
+    buildDB,
+    cacheDB,
     canUseES,
+    checkIsDBLimited,
+    correctDecryptionErrors,
+    decryptIndexKey,
     deleteESDB,
+    esSentryReport,
+    findItemIndex,
     getES,
+    getESTotal,
+    getIndexKey,
     getNumItemsDB,
+    highlightJSX,
+    hybridSearch,
     increaseNumPauses,
+    indexKeyExists,
+    initializeDB,
+    insertMarks,
+    isDBReadyAfterBuilding,
+    refreshESCache,
     removeES,
     removeESFlags,
+    requestPersistence,
+    sendIndexingMetrics,
+    sendSearchingMetrics,
     setES,
     setESCurrent,
-} from './esUtils';
-import { buildDB, decryptIndexKey, getIndexKey, initializeDB, sendIndexingMetrics } from './esBuild';
-import { cacheDB, findItemIndex, refreshESCache } from './esCache';
-import { checkIsDBLimited, correctDecryptionErrors, syncMessageEvents } from './esSync';
-import { hybridSearch, sendSearchingMetrics, uncachedSearch } from './esSearch';
-import { highlightJSX, insertMarks } from './esHighlight';
-import { requestPersistence } from './esUtils';
-import { esSentryReport, getESTotal, indexKeyExists, isDBReadyAfterBuilding, wasIndexingDone } from './esHelpers';
+    syncMessageEvents,
+    uncachedSearch,
+    wasIndexingDone,
+} from './esHelpers';
 
 interface Props<ESItemMetadata, ESItem, ESSearchParameters, ESItemChanges, ESCiphertext> {
     storeName: string;

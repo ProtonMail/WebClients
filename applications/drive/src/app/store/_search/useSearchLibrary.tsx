@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useEncryptedSearch } from '@proton/encrypted-search';
 import { useApi, useUser } from '@proton/components';
 
-import { getES } from '@proton/encrypted-search/lib/esUtils';
+import { getES } from '@proton/encrypted-search';
 import { useDriveEventManager } from '../_events';
 import { useLink } from '../_links';
 import { useDefaultShare, useShare } from '../_shares';

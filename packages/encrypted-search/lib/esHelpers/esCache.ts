@@ -1,5 +1,5 @@
-import { ES_MAX_CACHE } from './constants';
-import { ESCache } from './interfaces';
+import { ES_MAX_CACHE } from '../constants';
+import { ESCache } from '../models';
 import { checkEndSearchReverse, decryptFromDB, initializeTimeBounds, updateBatchTimeBound } from './esSearch';
 import { getNumItemsDB, openESDB } from './esUtils';
 
