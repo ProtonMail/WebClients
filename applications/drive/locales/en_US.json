@@ -193,6 +193,12 @@
       "Download": [
         ""
       ],
+      "Download (${ count })": [
+        ""
+      ],
+      "Download all": [
+        ""
+      ],
       "Download anyway": [
         ""
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         ""
       ],
-      "Enable drive search": [
-        ""
-      ],
       "Expand": [
         ""
       ],
@@ -245,6 +248,9 @@
         ""
       ],
       "Get link": [
+        ""
+      ],
+      "Get Proton Drive": [
         ""
       ],
       "Get started": [
@@ -379,10 +385,10 @@
       "Refer a friend": [
         ""
       ],
-      "refresh the page": [
+      "Refresh the page": [
         ""
       ],
-      "Refresh the page": [
+      "refresh the page": [
         ""
       ],
       "Remove": [
@@ -427,6 +433,9 @@
       "Resume upload": [
         ""
       ],
+      "Retry": [
+        ""
+      ],
       "Save": [
         ""
       ],
@@ -445,16 +454,10 @@
       "Set recovery phrase": [
         ""
       ],
-      "Share": [
-        ""
-      ],
       "Share file": [
         ""
       ],
       "Share item": [
-        ""
-      ],
-      "Share options": [
         ""
       ],
       "Share via link": [
@@ -1922,9 +1925,6 @@
         "",
         ""
       ],
-      "Preferences could not be saved": [
-        ""
-      ],
       "Primary address key is not decrypted": [
         ""
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         ""
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         ""
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         ""
       ],
-      "Creating share": [
-        ""
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         ""
       ],
@@ -2518,7 +2518,22 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         ""
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        ""
+      ],
       "Download of ${ downloadFileName } will be aborted": [
+        ""
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
         ""
       ],
       "Downloaded": [
@@ -2527,10 +2542,7 @@
       "Downloading": [
         ""
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        ""
-      ],
-      "Drag and drop a file here or choose to upload.": [
+      "Drag and drop items here or browse for files to upload.": [
         ""
       ],
       "Drop the file here to upload": [
@@ -2539,7 +2551,10 @@
       "Duplicate key updated": [
         ""
       ],
-      "Enable drive search": [
+      "Enabling drive search": [
+        ""
+      ],
+      "Encrypted": [
         ""
       ],
       "Encrypted search is here": [
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         ""
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        ""
+      ],
       "Indexing search results…": [
         ""
       ],
@@ -2676,7 +2694,10 @@
       "Link copied to clipboard": [
         ""
       ],
-      "Link expires: ": [
+      "Link failed to be loaded": [
+        ""
+      ],
+      "Links failed to be loaded": [
         ""
       ],
       "Loading": [
@@ -2685,10 +2706,13 @@
       "Loading ${ appName }": [
         ""
       ],
-      "Loading preview": [
+      "Loading link": [
         ""
       ],
-      "Loading share": [
+      "Loading links": [
+        ""
+      ],
+      "Loading preview": [
         ""
       ],
       "Merged": [
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         ""
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         ""
       ],
@@ -2772,10 +2799,13 @@
       "Permanently delete all files in your drive": [
         ""
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        ""
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
         ""
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
@@ -2815,6 +2845,9 @@
       "Priority support": [
         ""
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        ""
+      ],
       "Queued": [
         ""
       ],
@@ -2831,6 +2864,15 @@
         ""
       ],
       "Search cannot be enabled in this browser": [
+        ""
+      ],
+      "Search Enabled": [
+        ""
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
         ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
@@ -2857,10 +2899,19 @@
       "Share files with links": [
         ""
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         ""
       ],
       "Signature issue": [
+        ""
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
         ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
@@ -2878,6 +2929,12 @@
       "support team": [
         ""
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
       ],
@@ -2891,6 +2948,9 @@
         ""
       ],
       "There are no files yet": [
+        ""
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
         ""
       ],
       "This account has been suspended due to a potential policy violation.": [
@@ -2911,7 +2971,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         ""
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2928,9 +2988,6 @@
         ""
       ],
       "This will overwrite the existing folder": [
-        ""
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
         ""
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
@@ -2961,9 +3018,6 @@
         ""
       ],
       "Trash": [
-        ""
-      ],
-      "Try different keywords": [
         ""
       ],
       "Unlimited folders, labels, and filters": [
@@ -3071,34 +3125,13 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         ""
       ],
-      "Your download has been canceled.": [
-        ""
-      ],
       "Your email will only be used for this one-time verification.": [
-        ""
-      ],
-      "Your file failed to download.": [
-        ""
-      ],
-      "Your file has finished downloading.": [
-        ""
-      ],
-      "Your file is being downloaded.": [
         ""
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         ""
       ],
       "Your files will be encrypted and then saved.": [
-        ""
-      ],
-      "Your folder failed to download.": [
-        ""
-      ],
-      "Your folder has finished downloading.": [
-        ""
-      ],
-      "Your folder is being downloaded.": [
         ""
       ],
       "Your phone number will only be used for this one-time verification.": [
@@ -3111,9 +3144,6 @@
         ""
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        ""
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
         ""
       ]
     },
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         ""
       ],
-      "Enabling drive search": [
-        ""
-      ],
       "Encrypt emails": [
         ""
       ],
@@ -3323,9 +3350,6 @@
         ""
       ],
       "From: ${ importedEmail }": [
-        ""
-      ],
-      "Get your own ${ appName }": [
         ""
       ],
       "Good": [
@@ -3365,6 +3389,9 @@
         ""
       ],
       "Last month only": [
+        ""
+      ],
+      "Location": [
         ""
       ],
       "Mailbox password": [
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         ""
       ],
@@ -4087,6 +4117,9 @@
         ""
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
+        ""
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
         ""
       ]
     },
@@ -4190,43 +4223,19 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        ""
-      ],
       "Actions": [
         ""
       ],
       "Address": [
         ""
       ],
-      "Created": [
-        ""
-      ],
       "CSV field": [
-        ""
-      ],
-      "Deleted": [
-        ""
-      ],
-      "Expires": [
         ""
       ],
       "Import": [
         ""
       ],
-      "Location": [
-        ""
-      ],
-      "Modified": [
-        ""
-      ],
       "Name": [
-        ""
-      ],
-      "Size": [
-        ""
-      ],
-      "Uploaded": [
         ""
       ],
       "Values": [
@@ -4273,6 +4282,18 @@
         "",
         ""
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "",
+        ""
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "",
+        ""
+      ],
       "Account suspended": [
         ""
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         ""
       ],
-      "Additional settings": [
-        ""
-      ],
       "Addresses": [
         ""
       ],
@@ -4299,6 +4317,9 @@
         ""
       ],
       "Back": [
+        ""
+      ],
+      "Based in Switzerland, available globally": [
         ""
       ],
       "Beta Access": [
@@ -4352,6 +4373,9 @@
       "Date": [
         ""
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "",
         ""
@@ -4375,22 +4399,13 @@
       "Discard changes?": [
         ""
       ],
-      "Download canceled": [
-        ""
-      ],
-      "Download completed": [
-        ""
-      ],
-      "Download failed": [
+      "Download shared file": [
         ""
       ],
       "Download unverified file?": [
         ""
       ],
       "Download unverified folder?": [
-        ""
-      ],
-      "Downloading": [
         ""
       ],
       "Drive": [
@@ -4424,12 +4439,6 @@
         ""
       ],
       "Empty trash": [
-        ""
-      ],
-      "Enable drive search": [
-        ""
-      ],
-      "Enter password to download": [
         ""
       ],
       "Enter your password": [
@@ -4466,6 +4475,9 @@
         "",
         ""
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         ""
       ],
@@ -4475,10 +4487,10 @@
       "Import contacts": [
         ""
       ],
-      "Import groups": [
+      "Invalid verification code": [
         ""
       ],
-      "Invalid verification code": [
+      "Item details": [
         ""
       ],
       "Items details": [
@@ -4491,9 +4503,6 @@
         ""
       ],
       "Manage secure link": [
-        ""
-      ],
-      "Manage share": [
         ""
       ],
       "Merge contacts": [
@@ -4515,9 +4524,6 @@
         ""
       ],
       "Name": [
-        ""
-      ],
-      "No results found": [
         ""
       ],
       "Number of files": [
@@ -4548,6 +4554,9 @@
         ""
       ],
       "Phone numbers": [
+        ""
+      ],
+      "Privacy settings": [
         ""
       ],
       "Re-sign all contacts": [
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         ""
       ],
-      "The file or folder failed to be downloaded": [
-        ""
-      ],
-      "The internet connection was interrupted": [
-        ""
-      ],
-      "The link does not exist": [
-        ""
-      ],
       "The link either does not exist or has expired": [
         ""
       ],
@@ -4650,6 +4650,9 @@
         ""
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
+        ""
+      ],
+      "This link is password protected": [
         ""
       ],
       "Total size": [
@@ -4694,10 +4697,7 @@
       "You have no folders yet": [
         ""
       ],
-      "Your file is ready to be downloaded": [
-        ""
-      ],
-      "Your folder is ready to be downloaded": [
+      "You've got files": [
         ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [

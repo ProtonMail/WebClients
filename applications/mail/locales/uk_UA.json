@@ -215,9 +215,6 @@
       "Customize": [
         "Налаштувати"
       ],
-      "Decrypt": [
-        "Розшифрувати"
-      ],
       "Default email application": [
         "Типовий застосунок електронної пошти"
       ],
@@ -340,6 +337,9 @@
       ],
       "External encryption": [
         "Зовнішнє шифрування"
+      ],
+      "Fewer search options": [
+        "Менше варіантів пошуку"
       ],
       "Filter on...": [
         "Фільтр..."
@@ -467,9 +467,6 @@
       "Learn more": [
         "Докладніше"
       ],
-      "Less search options": [
-        "Менше варіантів пошуку"
-      ],
       "Load": [
         "Завантажити"
       ],
@@ -547,6 +544,21 @@
       ],
       "More search options": [
         "Більше варіантів пошуку"
+      ],
+      "Move": [
+        "Перемістити"
+      ],
+      "Move all conversations from this folder": [
+        "Перемістити всі розмови з цієї теки"
+      ],
+      "Move all conversations from this label": [
+        "Перемістити всі розмови з цієї мітки"
+      ],
+      "Move all messages from this folder": [
+        "Перемістити всі повідомлення з цієї теки"
+      ],
+      "Move all messages from this label": [
+        "Перемістити всі повідомлення з цієї мітки"
       ],
       "move emails to": [
         "перемістити листи"
@@ -670,6 +682,9 @@
       ],
       "Re-sign": [
         "Перепідписати"
+      ],
+      "Read message": [
+        "Читати повідомлення"
       ],
       "Read receipt sent": [
         "Підтвердження прочитання надіслано"
@@ -809,6 +824,9 @@
       "Show details": [
         "Показати подробиці"
       ],
+      "Show fewer search options": [
+        "Менше варіантів пошуку"
+      ],
       "Show folders": [
         "Показати теки"
       ],
@@ -817,9 +835,6 @@
       ],
       "Show less": [
         "Згорнути"
-      ],
-      "Show less search options": [
-        "Менше варіантів пошуку"
       ],
       "Show messages": [
         "Показати повідомлення"
@@ -857,9 +872,6 @@
       "Submit": [
         "Відправити"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Тема"
       ],
@@ -868,6 +880,9 @@
       ],
       "This message contains remote content.": [
         "Це повідомлення містить зовнішній вміст."
+      ],
+      "Trash all": [
+        "Перемістити все до смітника"
       ],
       "Trust": [
         "Довіряти"
@@ -1607,10 +1622,10 @@
         "яблуневий"
       ],
       "azureish white": [
-        ""
+        "лазуровий білий"
       ],
       "blanched almond": [
-        ""
+        "білений мигдаль"
       ],
       "blue-gray": [
         "блакитно-сірий"
@@ -1625,7 +1640,7 @@
         "вишневий"
       ],
       "cinnabar": [
-        ""
+        "кіноваровий"
       ],
       "cobalt": [
         "кобальтовий"
@@ -1634,16 +1649,16 @@
         "мідний"
       ],
       "cyan-blue azure": [
-        ""
+        "зеленувато-блакитна лазур"
       ],
       "dandelion": [
-        ""
+        "кульбаба"
       ],
       "dark cerulean": [
-        ""
+        "темно-лазуровий"
       ],
       "dark midnight blue": [
-        ""
+        "темний опівнічний синій"
       ],
       "dim gray": [
         "тьмяно-сірий"
@@ -1655,7 +1670,7 @@
         "папороть"
       ],
       "field drab": [
-        ""
+        "тьмяний польовий"
       ],
       "forest": [
         "лісовий"
@@ -1664,28 +1679,28 @@
         "ґейнсборо"
       ],
       "japanese laurel": [
-        ""
+        "аукуба японська"
       ],
       "kiwi": [
         "ківі"
       ],
       "lemon yellow": [
-        ""
+        "лимоновий жовтий"
       ],
       "light carmine pink": [
-        ""
+        "світлий карміновий рожевий"
       ],
       "light moss green": [
-        ""
+        "світло-зелений мох"
       ],
       "light red": [
         "світло-червоний"
       ],
       "maize": [
-        ""
+        "кукурудзяний"
       ],
       "mughal green": [
-        ""
+        "могольський зелений"
       ],
       "ocean": [
         "океанічний"
@@ -1694,25 +1709,25 @@
         "оливковий"
       ],
       "outer space": [
-        ""
+        "віддалений космос"
       ],
       "pacific": [
         "тихоокеанський"
       ],
       "palatinate blue": [
-        ""
+        "платиновий синій"
       ],
       "pale cerulean": [
-        ""
+        "блідо-лазуровий"
       ],
       "pastel gray": [
-        ""
+        "пастельний сірий"
       ],
       "persian plum": [
-        ""
+        "перська слива"
       ],
       "persian red": [
-        ""
+        "перський червоний"
       ],
       "philippine gray": [
         "філіппінський сірий"
@@ -1730,7 +1745,7 @@
         "рожевий"
       ],
       "pistachio": [
-        ""
+        "фісташковий"
       ],
       "plum": [
         "сливовий"
@@ -1739,22 +1754,22 @@
         "бузковий"
       ],
       "raisin black": [
-        ""
+        "родзинковий чорний"
       ],
       "reef": [
         "рифовий"
       ],
       "ruddy pink": [
-        ""
+        "рум'яно-рожевий"
       ],
       "sahara": [
         "сахара"
       ],
       "satin sheen gold": [
-        ""
+        "золотий з атласним блиском"
       ],
       "slateblue": [
-        "сизий"
+        "сивий"
       ],
       "soil": [
         "земляний"
@@ -1763,7 +1778,7 @@
         "полуничний"
       ],
       "vivid auburn": [
-        ""
+        "яскравий каштановий"
       ],
       "white": [
         "білий"
@@ -3160,9 +3175,6 @@
       "Please set a password": [
         "Будь ласка, встановіть пароль"
       ],
-      "Preferences could not be saved": [
-        "Не вдалося зберегти налаштування"
-      ],
       "Primary address key is not decrypted": [
         "Основний ключ адреси не розшифрований"
       ],
@@ -4191,6 +4203,9 @@
       "Are you sure you want to discard your changes?": [
         "Ви справді хочете відхилити зміни?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Ви справді хочете перемістити всі повідомлення з цього розташування до смітника?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Ви дійсно хочете остаточно видалити ${ count } розмову?",
         "Ви дійсно хочете остаточно видалити ${ count } розмови?",
@@ -4316,9 +4331,6 @@
         "Дні",
         "Днів",
         "Днів"
-      ],
-      "Decrypt message": [
-        "Розшифрувати повідомлення"
       ],
       "Default email application": [
         "Типовий застосунок електронної пошти"
@@ -4626,6 +4638,9 @@
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Переміщення великої кількості повідомлень. Це може тривати деякий час."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Дайте назву своїй новій теці та виберіть теку вищого рівня, в яку ви хочете її вкласти. Якщо ви не виберете теку вищого рівня, цю нову теку буде створено як теку вищого рівня."
       ],
@@ -4677,9 +4692,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Жоден із вивантажених ключів не є дійсним для шифрування. Шифрування автоматично вимкнено."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "Недійсна URL-адреса"
       ],
@@ -4701,11 +4713,11 @@
       "per month.": [
         "на місяць."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline сумісний лише з форматом звичайного тексту. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME автоматично надсилає повідомлення з використанням поточного режиму редактора. Зверніть увагу, що ${ MAIL_APP_NAME } завжди підписує зашифровані повідомлення"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Номер телефону"
@@ -4778,6 +4790,9 @@
       ],
       "Request read receipt": [
         "Запит підтвердження прочитання"
+      ],
+      "Rich text": [
+        "Форматований текст"
       ],
       "Right to Left": [
         "Справа наліво"
@@ -5039,6 +5054,9 @@
       ],
       "Unlimited messages": [
         "Необмежена кількість повідомлень"
+      ],
+      "Unlock message": [
+        "Розблокувати повідомлення"
       ],
       "Unsupported file": [
         "Непідтримуваний файл"
@@ -6798,6 +6816,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Не вдалося надіслати на адресу організатора: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Не вдалося повторно зашифрувати запрошення. Будь ласка, повторіть спробу"
       ]
     },
     "Search - no results": {
@@ -6946,6 +6967,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "Завершилося тестування ${ DRIVE_APP_NAME }! Забезпечте файли таким же захистом, який мають ваші електронні листи."
+      ],
       "Discover all Proton services": [
         "Ознайомтеся з усіма службами Proton"
       ],
@@ -6963,6 +6987,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Щоб захистити вашу приватність, Proton заблокував елементи стеження в цьому повідомленні"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Спробувати ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Тепер ви можете планувати надсилання повідомлень"
@@ -7626,9 +7653,6 @@
       "Import contacts": [
         "Імпортувати контакти"
       ],
-      "Import groups": [
-        "Імпортувати групи"
-      ],
       "Insert contacts": [
         "Вставити контакти"
       ],
@@ -7682,6 +7706,9 @@
       ],
       "More selections": [
         "Інші варіанти вибору"
+      ],
+      "Move all messages to Trash": [
+        "Перемістити всі повідомлення до смітника"
       ],
       "Move to": [
         "Перемістити"

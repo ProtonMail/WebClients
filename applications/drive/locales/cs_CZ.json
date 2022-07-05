@@ -197,6 +197,12 @@
       "Download": [
         "Stáhnout"
       ],
+      "Download (${ count })": [
+        "Stáhnout (${ count })"
+      ],
+      "Download all": [
+        "Stáhnout vše"
+      ],
       "Download anyway": [
         "Přesto stáhnout"
       ],
@@ -227,9 +233,6 @@
       "enable desktop notifications": [
         "povolit oznámení na ploše"
       ],
-      "Enable drive search": [
-        "Povolit hledání na disku"
-      ],
       "Expand": [
         "Rozbalit"
       ],
@@ -250,6 +253,9 @@
       ],
       "Get link": [
         "Získat odkaz"
+      ],
+      "Get Proton Drive": [
+        "Získat Proton Drive"
       ],
       "Get started": [
         "Začínáme"
@@ -383,11 +389,11 @@
       "Refer a friend": [
         "Doporučit přítele"
       ],
-      "refresh the page": [
-        "aktualizovat stránku"
-      ],
       "Refresh the page": [
         "Obnovit stránku"
+      ],
+      "refresh the page": [
+        "aktualizovat stránku"
       ],
       "Remove": [
         "Odstranit"
@@ -431,6 +437,9 @@
       "Resume upload": [
         "Souhrn nahrávání"
       ],
+      "Retry": [
+        "Opakovat"
+      ],
       "Save": [
         "Uložit"
       ],
@@ -449,17 +458,11 @@
       "Set recovery phrase": [
         "Nastavit obnovovací frázi"
       ],
-      "Share": [
-        "Sdílet"
-      ],
       "Share file": [
         "Sdílet odkaz"
       ],
       "Share item": [
         "Sdílet položku"
-      ],
-      "Share options": [
-        "Možnosti sdílení"
       ],
       "Share via link": [
         "Sdílej skrze odkaz"
@@ -1940,9 +1943,6 @@
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
-      "Preferences could not be saved": [
-        "Zvýhodnění Preference nebylo možné uložit"
-      ],
       "Primary address key is not decrypted": [
         "Klíč hlavní adresy není dešifrován"
       ],
@@ -2512,6 +2512,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "Hromadné nahrávání může dočasně snížit dostupný výkon počítače. Během nahrávání zvažte omezit aplikace vyžadující hodně paměti, například streamování. Nebo nahrávejte menší počet souborů najednou."
+      ],
       "Canceled": [
         "Zrušeno"
       ],
@@ -2584,9 +2587,6 @@
       "Creating link to folder": [
         "Vytvoření odkazu pro složku"
       ],
-      "Creating share": [
-        "Vytvářím sdílení"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Jsou podporovány CSV soubory z aplikací Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora a některých dalších aplikací a také formáty vCard 3.1 a 4.0 (kódování UTF-8)."
       ],
@@ -2602,8 +2602,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tato složka byla bezpečně nahrána uživatelem ${ emailAddress }."
       ],
+      "Download canceled": [
+        "Stahování zrušeno"
+      ],
+      "Download failed": [
+        "Stahování selhalo"
+      ],
+      "Download failed due to ${ error }": [
+        "Stahování selhalo kvůli ${ error }"
+      ],
+      "Download finished": [
+        "Stahování dokončeno"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "Stahování ${ downloadFileName } bude zrušeno"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Stahování pozastaveno kvůli potíži s připojením; bude automaticky obnoveno"
       ],
       "Downloaded": [
         "Stažené"
@@ -2611,11 +2626,8 @@
       "Downloading": [
         "Stahování"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Stahování souborů ${ esProgress } z ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Uchopte a přetáhněte soubor sem, nebo vyberte soubor pro nahrání."
+      "Drag and drop items here or browse for files to upload.": [
+        "Položky k nahrání přetáhněte sem nebo soubory vyhledejte."
       ],
       "Drop the file here to upload": [
         "Přetažením sem, nahrajte soubor"
@@ -2623,8 +2635,11 @@
       "Duplicate key updated": [
         "Duplicitní klíč byl aktualizován"
       ],
-      "Enable drive search": [
-        "Povolit hledání na disku"
+      "Enabling drive search": [
+        "Povolování hledání na disku"
+      ],
+      "Encrypted": [
+        "Šifrováno"
       ],
       "Encrypted search is here": [
         "Zašifrované vyhledávání je tady"
@@ -2731,6 +2746,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "Stahování souborů ${ esProgress } z ${ totalProgressToShow }"
+      ],
       "Indexing search results…": [
         "Indexování výsledků vyhledávání…"
       ],
@@ -2764,8 +2782,11 @@
       "Link copied to clipboard": [
         "Odkaz zkopírován do schránky"
       ],
-      "Link expires: ": [
-        "Expirace odkazového řádku: "
+      "Link failed to be loaded": [
+        "Nepodařilo se načíst odkaz"
+      ],
+      "Links failed to be loaded": [
+        "Nepodařilo se načíst odkazy"
       ],
       "Loading": [
         "Načítá se"
@@ -2773,11 +2794,14 @@
       "Loading ${ appName }": [
         "Načtení aplikace ${ appName }"
       ],
+      "Loading link": [
+        "Načítání odkazu"
+      ],
+      "Loading links": [
+        "Načítání odkazů"
+      ],
       "Loading preview": [
         "Načítání náhledu"
-      ],
-      "Loading share": [
-        "Načítání sdílení"
       ],
       "Merged": [
         "Sloučeno"
@@ -2827,6 +2851,9 @@
       "Not a valid URL": [
         "Neplatná adresa URL"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Ne všechny soubory byly přeneseny. Zkuste soubory znovu nahrát nebo stáhnout."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Poznámka: Na zařízeních, kde jste nainstalovali ${ appName }, mohou být data stále dostupná lokálně."
       ],
@@ -2860,11 +2887,14 @@
       "Permanently delete all files in your drive": [
         "Trvalé odstranění všech souborů na disku"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte prosím na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -2905,6 +2935,9 @@
       "Priority support": [
         "Prioritní podpora"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Soukromé vyhledávání zapnuto. Tento dialog můžete zavřít a vyhledávat soubory a složky."
+      ],
       "Queued": [
         "Ve frontě"
       ],
@@ -2922,6 +2955,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze povolit vyhledávání"
+      ],
+      "Search Enabled": [
+        "Vyhledávání Zapnuto"
+      ],
+      "Secure sharing": [
+        "Bezpečné sdílení"
+      ],
+      "Secure your documents and data": [
+        "Zabezpečte své dokumenty a data"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vyberte nahraný soubor nebo složku a vytvořte na ně odkaz."
@@ -2947,11 +2989,20 @@
       "Share files with links": [
         "Sdílejte soubory přes s odkazovými řádky"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "Odkaz ke sdílení ${ boldNameText }"
+      ],
       "Signature check will be ignored": [
         "Kontrola podpisu bude ignorována"
       ],
       "Signature issue": [
         "Problém s podpisem"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Některé soubory nebyly staženy. Zkuste soubory znovu stáhnout."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Některé soubory nebyly nahrány. Zkuste soubory znovu nahrát."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Některé vaše soubory již nejsou přístupné. Obnovte přístup k souborům. ${ StartRecoveryButton }"
@@ -2968,6 +3019,12 @@
       "support team": [
         "tým podpory"
       ],
+      "Swiss privacy": [
+        "Švýcarské soukromí"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Klepnutím na tlačítko + nahrajete soubor nebo složku."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Účet může mít nový klíč nebo mohlo dojít k manipulaci s následujícími položkami: ${ items }. Otevřete pouze v případě, že mu důvěřujete."
       ],
@@ -2982,6 +3039,9 @@
       ],
       "There are no files yet": [
         "Soubory tam ještě nejsou"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Tyto soubory byly sdíleny za pomoci end-to-end šifrování. Pro zajištění jejich bezpečnosti a bezpečnosti všech vašich dokumentů, fotek, souborů je mějte uložené v Proton Drive, kloudovém úložišti, kterému můžete věřit."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -3001,8 +3061,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Tento odkaz může být homografickým útokem. Zkontrolujte, zda se jedná o odkaz, který chcete navštívit, nebo odkaz neotevírejte."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Tento odkaz byl vytvořen v\nv předchozí verzi a nelze jej upravit. Odstraňte tento odkaz a vytvořte nový.\nnový, abyste změnili nastavení."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Odkaz byl vytvořen v předchozí verzi aplikace a nelze jej upravit. Chcete-li změnit jeho nastavení, odkaz smažte a vytvořte nový."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Tento odkazový řádek bude permanentně deaktivován. Nikdo s tímto odkazovým řádkem nebude mít přístup k tvému souboru. Pro opětné sdílení souboru, budete potřebovat nový odkazový řádek."
@@ -3021,9 +3081,6 @@
       ],
       "This will overwrite the existing folder": [
         "Tím se přepíše existující složka"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Aby bylo možné povolit soukromé vyhledávání, musí ${ DRIVE_APP_NAME } indexovat vaše soubory lokálně."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Aby bylo možné povolit soukromé vyhledávání, musí Zadejte své uživatelské jméno nebo e-mailovou adresu ${ DRIVE_APP_NAME }. indexovat vaše soubory lokálně. ${ DRIVE_APP_NAME } můžete stále normálně používat - dáme vám vědět, až bude indexace dokončena."
@@ -3054,9 +3111,6 @@
       ],
       "Trash": [
         "Koš"
-      ],
-      "Try different keywords": [
-        "Vyzkoušejte různá klíčová slova"
       ],
       "Unlimited folders, labels, and filters": [
         "Neomezený počet složek, štítků a filtrů"
@@ -3163,35 +3217,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Vaše data jsou připravena k importu z ${ importedEmailAddressStrong } do vašeho účtu Proton."
       ],
-      "Your download has been canceled.": [
-        "Stahování bylo přerušeno."
-      ],
       "Your email will only be used for this one-time verification.": [
         "Váš e-mail bude použit pouze pro toto jednorázové ověření."
-      ],
-      "Your file failed to download.": [
-        "Stahování souboru se nepodařilo."
-      ],
-      "Your file has finished downloading.": [
-        "Stahování souboru ukončeno."
-      ],
-      "Your file is being downloaded.": [
-        "Soubor se stahuje."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Vaše soubory již nejsou přístupné z důvodu resetování hesla. Pro obnovení přístupu znovu nahrajte starý šifrovací klíč. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Vaše soubory budou zašifrovány a uloženy."
-      ],
-      "Your folder failed to download.": [
-        "Vaši složku se nepodařilo stáhnout."
-      ],
-      "Your folder has finished downloading.": [
-        "Stahování složky bylo dokončeno."
-      ],
-      "Your folder is being downloaded.": [
-        "Právě se stahuje vaše složka."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
@@ -3204,9 +3237,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Váš Proton účet je momentálně pozastaven. Chcete-li Váš účet nadále používat, zaplaťte prosím všechny faktury po splatnosti."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "Váš bezpečný sdílený odkazový řádek pro ${ boldNameText }"
       ]
     },
     "Info on errors": {
@@ -3383,9 +3413,6 @@
       "Enable Beta Access": [
         "Zapnout přístup do beta verze"
       ],
-      "Enabling drive search": [
-        "Povolování hledání na disku"
-      ],
       "Encrypt emails": [
         "Šifrovat e-maily"
       ],
@@ -3418,9 +3445,6 @@
       ],
       "From: ${ importedEmail }": [
         "Od: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Získejte své vlastní ${ appName }"
       ],
       "Good": [
         "Dobré"
@@ -3460,6 +3484,9 @@
       ],
       "Last month only": [
         "Pouze minulý měsíc"
+      ],
+      "Location": [
+        "Umístění"
       ],
       "Mailbox password": [
         "Heslo k e-mailové schránce"
@@ -4215,6 +4242,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
+      ],
       "Encrypted search is here": [
         "Zašifrované vyhledávání je tady"
       ],
@@ -4226,6 +4256,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Nyní můžete jednoduše vyhledávat soubory na Drivu, zatímco jsou vaše data zabezpečena."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ]
     },
     "Storage": {
@@ -4332,44 +4365,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "# přístupů"
-      ],
       "Actions": [
         "Akce"
       ],
       "Address": [
         "Adresa"
       ],
-      "Created": [
-        "Vytvořeno"
-      ],
       "CSV field": [
         "CSV položka"
-      ],
-      "Deleted": [
-        "Odstraněno"
-      ],
-      "Expires": [
-        "Expiruje"
       ],
       "Import": [
         "Importovat"
       ],
-      "Location": [
-        "Umístění"
-      ],
-      "Modified": [
-        "Upraveno"
-      ],
       "Name": [
         "Název"
-      ],
-      "Size": [
-        "Velikost"
-      ],
-      "Uploaded": [
-        "Nahráno"
       ],
       "Values": [
         "Hodnoty"
@@ -4421,6 +4430,24 @@
         "${ emailsCount } členů",
         "${ emailsCount } členů"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } nebyl stažen",
+        "${ numberOfFailedTransfer.total } nebyly staženy",
+        "${ numberOfFailedTransfer.total } nebylo staženo",
+        "${ numberOfFailedTransfer.total } nebylo staženo"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } nebyl přenesen",
+        "${ numberOfFailedTransfer.total } nebyly přeneseny",
+        "${ numberOfFailedTransfer.total } nebylo přeneseno",
+        "${ numberOfFailedTransfer.total } nebylo přeneseno"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } nebyl nahrán",
+        "${ numberOfFailedTransfer.total } nebyly nahrány",
+        "${ numberOfFailedTransfer.total } nebylo nahráno",
+        "${ numberOfFailedTransfer.total } nebylo nahráno"
+      ],
       "Account suspended": [
         "Účet pozastaven"
       ],
@@ -4439,9 +4466,6 @@
       "Add to ${ groupName }": [
         "Přidat do ${ groupName }"
       ],
-      "Additional settings": [
-        "Další funkce"
-      ],
       "Addresses": [
         "Adresy"
       ],
@@ -4450,6 +4474,9 @@
       ],
       "Back": [
         "Zpět"
+      ],
+      "Based in Switzerland, available globally": [
+        "Se sídlem ve Švýcarsku, celosvětově dostupné"
       ],
       "Beta Access": [
         "Beta přístup"
@@ -4502,6 +4529,9 @@
       "Date": [
         "Datum"
       ],
+      "Decrypting": [
+        "Dešifrování"
+      ],
       "Delete ${ count } contact": [
         "Smazat ${ count } kontakty",
         "Smazat ${ count } kontakty",
@@ -4529,23 +4559,14 @@
       "Discard changes?": [
         "Zrušit změny?"
       ],
-      "Download canceled": [
-        "Stahování zrušeno"
-      ],
-      "Download completed": [
-        "Stahování dokončeno"
-      ],
-      "Download failed": [
-        "Soubor se nepodařilo stáhnout"
+      "Download shared file": [
+        "Stáhnout sdílený soubor"
       ],
       "Download unverified file?": [
         "Stáhnout neověřený soubor?"
       ],
       "Download unverified folder?": [
         "Stáhnout neověřenou složku?"
-      ],
-      "Downloading": [
-        "Stahování"
       ],
       "Drive": [
         "Disk"
@@ -4579,12 +4600,6 @@
       ],
       "Empty trash": [
         "Vysypat koš"
-      ],
-      "Enable drive search": [
-        "Povolit hledání na disku"
-      ],
-      "Enter password to download": [
-        "Zadejte heslo pro stažení souboru"
       ],
       "Enter your password": [
         "Zadejte Vaše heslo"
@@ -4622,6 +4637,9 @@
         "Nalezeno ${ searchView.numberOfResults } výsledků",
         "Nalezeno ${ searchView.numberOfResults } výsledků"
       ],
+      "Getting files": [
+        "Získávání souborů"
+      ],
       "Groups": [
         "Skupiny"
       ],
@@ -4631,11 +4649,11 @@
       "Import contacts": [
         "Importovat kontakty"
       ],
-      "Import groups": [
-        "Importovat skupiny"
-      ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"
+      ],
+      "Item details": [
+        "Detaily položky"
       ],
       "Items details": [
         "Detaily položek"
@@ -4648,9 +4666,6 @@
       ],
       "Manage secure link": [
         "Spravovat zabezpečený odkaz"
-      ],
-      "Manage share": [
-        "Spravovat sdílení"
       ],
       "Merge contacts": [
         "Sloučit kontakty"
@@ -4672,9 +4687,6 @@
       ],
       "Name": [
         "Jméno"
-      ],
-      "No results found": [
-        "Nebyly nalezeny žádné výsledky"
       ],
       "Number of files": [
         "Počet souborů"
@@ -4705,6 +4717,9 @@
       ],
       "Phone numbers": [
         "Telefonní čísla"
+      ],
+      "Privacy settings": [
+        "Nastavení ochrany osobních údajů"
       ],
       "Re-sign all contacts": [
         "Znovu podepsat všechny kontakty"
@@ -4787,15 +4802,6 @@
       "Stop transfers?": [
         "Zastavit přenosy?"
       ],
-      "The file or folder failed to be downloaded": [
-        "Soubor nebo složku se nepodařilo stáhnout"
-      ],
-      "The internet connection was interrupted": [
-        "Internetové připojení bylo přerušeno"
-      ],
-      "The link does not exist": [
-        "Odkaz neexistuje"
-      ],
       "The link either does not exist or has expired": [
         "Odkaz buď neexistuje, nebo jeho platnost vypršela"
       ],
@@ -4807,6 +4813,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Tato složka nemá nebo jí chybí podpis. Běžte do Menu (⋮) → Detaily pro info."
+      ],
+      "This link is password protected": [
+        "Odkaz je chráněn heslem"
       ],
       "Total size": [
         "Celková velikost"
@@ -4850,11 +4859,8 @@
       "You have no folders yet": [
         "Zatím nemáte žádné složky"
       ],
-      "Your file is ready to be downloaded": [
-        "Soubor je připraven ke stažení"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Vaše složka je připravena ke stažení"
+      "You've got files": [
+        "Obdrželi jste soubory"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Vaše bezplatná zkušební verze brzy skončí dne ${ formattedEndDate }"

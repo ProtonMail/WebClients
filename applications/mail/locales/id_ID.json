@@ -215,9 +215,6 @@
       "Customize": [
         "Atur"
       ],
-      "Decrypt": [
-        "Dekripsi"
-      ],
       "Default email application": [
         "Aplikasi email default"
       ],
@@ -334,6 +331,9 @@
       ],
       "External encryption": [
         "Enkripsi eksternal"
+      ],
+      "Fewer search options": [
+        "Lebih sedikit opsi pencarian"
       ],
       "Filter on...": [
         "Filter pada..."
@@ -458,9 +458,6 @@
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
-      "Less search options": [
-        "Opsi pencarian lebih sedikit"
-      ],
       "Load": [
         "Muat"
       ],
@@ -538,6 +535,21 @@
       ],
       "More search options": [
         "Opsi pencarian lain"
+      ],
+      "Move": [
+        "Pindahkan"
+      ],
+      "Move all conversations from this folder": [
+        "Pindahkan seluruh percakapan dari folder ini"
+      ],
+      "Move all conversations from this label": [
+        "Pindahkan seluruh percakapan dari label ini"
+      ],
+      "Move all messages from this folder": [
+        "Pindahkan seluruh pesan dari folder ini"
+      ],
+      "Move all messages from this label": [
+        "Pindahkan seluruh pesan dari label ini"
       ],
       "move emails to": [
         "pindahkan email ke"
@@ -661,6 +673,9 @@
       ],
       "Re-sign": [
         "Tanda tangani ulang"
+      ],
+      "Read message": [
+        "Baca pesan"
       ],
       "Read receipt sent": [
         "Bukti baca telah terkirim"
@@ -800,6 +815,9 @@
       "Show details": [
         "Tampilkan rincian"
       ],
+      "Show fewer search options": [
+        "Tampilkan lebih sedikit opsi pencarian"
+      ],
       "Show folders": [
         "Tampilkan folder"
       ],
@@ -808,9 +826,6 @@
       ],
       "Show less": [
         "Tampilkan lebih sedikit"
-      ],
-      "Show less search options": [
-        "Tampilkan lebih sedikit opsi pencarian"
       ],
       "Show messages": [
         "Lihat pesan"
@@ -848,9 +863,6 @@
       "Submit": [
         "Kirim"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Tema"
       ],
@@ -859,6 +871,9 @@
       ],
       "This message contains remote content.": [
         "Pesan ini mengandung remote content."
+      ],
+      "Trash all": [
+        "Pindahkan semua ke Sampah"
       ],
       "Trust": [
         "Percaya"
@@ -1589,7 +1604,7 @@
     },
     "color": {
       "Apple": [
-        "Apple"
+        "hijau apel"
       ],
       "azureish white": [
         "putih kebiruan"
@@ -3106,9 +3121,6 @@
       "Please set a password": [
         "Harap tentukan kata sandi"
       ],
-      "Preferences could not be saved": [
-        "Preferensi tidak dapat disimpan"
-      ],
       "Primary address key is not decrypted": [
         "Kunci alamat utama tidak didekripsi"
       ],
@@ -4014,6 +4026,9 @@
       "Are you sure you want to discard your changes?": [
         "Yakin ingin membuang perubahan?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Apakah Anda yakin untuk memindahkan seluruh pesan yang ada pada lokasi ini ke Sampah?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Yakin ingin menghapus ${ count } percakapan secara permanen?"
       ],
@@ -4124,9 +4139,6 @@
       ],
       "Day": [
         "Hari"
-      ],
-      "Decrypt message": [
-        "Dekripsi pesan"
       ],
       "Default email application": [
         "Aplikasi email default"
@@ -4410,6 +4422,9 @@
       "Monthly ${ onDayString }": [
         "Bulanan ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Memindahkan pesan dalam jumlah yang banyak. Proses ini dapat memakan waktu."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Beri nama folder baru Anda dan pilih folder induk yang Anda ingin masukkan ke dalamnya. Jika Anda tidak memilih folder induk, folder baru ini akan dibuat sebagai folder level paling atas."
       ],
@@ -4461,9 +4476,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Tidak ada satupun dari kunci yang diunggah yang valid untuk enkripsi. Enkripsi secara otomatis dinonaktifkan."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "URL tidak valid"
       ],
@@ -4485,11 +4497,11 @@
       "per month.": [
         "per bulan."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "Enkripsi PGP/Inline hanya dapat dibubuhkan pada pesan yang ditulis dalam format Plain Text. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "Enkripsi PGP/MIME akan mengirim pesan dengan format yang sesuai dengan mode komposer saat ini secara otomatis. Mohon dicatat bahwa ${ MAIL_APP_NAME } akan selalu menandatangani pesan yang terenkripsi"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Nomor telepon"
@@ -4559,6 +4571,9 @@
       ],
       "Request read receipt": [
         "Minta bukti baca"
+      ],
+      "Rich text": [
+        "Rich text"
       ],
       "Right to Left": [
         "Kanan ke Kiri"
@@ -4817,6 +4832,9 @@
       ],
       "Unlimited messages": [
         "Tanpa batasan jumlah pesan"
+      ],
+      "Unlock message": [
+        "Buka kunci pesan"
       ],
       "Unsupported file": [
         "Berkas tidak didukung"
@@ -6522,6 +6540,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Tidak dapat mengirim ke alamat penyelenggara: ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "Proses enkripsi ulang undangan gagal. Silakan coba lagi"
       ]
     },
     "Search - no results": {
@@ -6652,6 +6673,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } telah keluar dari fase beta! Berikan berkas Anda keamanan yang serupa dengan email Anda."
+      ],
       "Discover all Proton services": [
         "Telusuri seluruh layanan yang Proton tawarkan"
       ],
@@ -6669,6 +6693,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Demi melindungi privasi Anda, Proton telah memblokir program-program pelacak email yang terdapat pada pesan ini"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Coba ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Kini Anda dapat menjadwalkan pengiriman pesan"
@@ -7224,9 +7251,6 @@
       "Import contacts": [
         "Impor kontak"
       ],
-      "Import groups": [
-        "Impor grup"
-      ],
       "Insert contacts": [
         "Sisipkan kontak"
       ],
@@ -7280,6 +7304,9 @@
       ],
       "More selections": [
         "Pilihan lainnya"
+      ],
+      "Move all messages to Trash": [
+        "Pindahkan seluruh pesan ke Sampah"
       ],
       "Move to": [
         "Pindahkan ke"

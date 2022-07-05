@@ -191,6 +191,12 @@
       "Download": [
         "ダウンロード"
       ],
+      "Download (${ count })": [
+        "ダウンロード (${ count })"
+      ],
+      "Download all": [
+        "すべてダウンロード"
+      ],
       "Download anyway": [
         "ダウンロード"
       ],
@@ -221,9 +227,6 @@
       "enable desktop notifications": [
         "デスクトップ通知を有効にする"
       ],
-      "Enable drive search": [
-        "ドライブ検索を有効化"
-      ],
       "Expand": [
         "展開"
       ],
@@ -244,6 +247,9 @@
       ],
       "Get link": [
         "リンクを作成"
+      ],
+      "Get Proton Drive": [
+        "Proton Drive を入手"
       ],
       "Get started": [
         "利用開始"
@@ -377,10 +383,10 @@
       "Refer a friend": [
         "友達を招待"
       ],
-      "refresh the page": [
+      "Refresh the page": [
         "ページを更新"
       ],
-      "Refresh the page": [
+      "refresh the page": [
         "ページを更新"
       ],
       "Remove": [
@@ -425,6 +431,9 @@
       "Resume upload": [
         "アップロードを再開"
       ],
+      "Retry": [
+        "再試行"
+      ],
       "Save": [
         "保存"
       ],
@@ -443,17 +452,11 @@
       "Set recovery phrase": [
         "リカバリーフレーズを設定"
       ],
-      "Share": [
-        "共有"
-      ],
       "Share file": [
         "ファイルを共有"
       ],
       "Share item": [
         "アイテムを共有"
-      ],
-      "Share options": [
-        "共有オプション"
       ],
       "Share via link": [
         "リンクで共有"
@@ -1913,9 +1916,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
-      "Preferences could not be saved": [
-        "設定が保存できませんでした。"
-      ],
       "Primary address key is not decrypted": [
         "プライマリーアドレス鍵が復号されていません"
       ],
@@ -2392,6 +2392,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "新しい検証コードを要求する前に、迷惑メールフォルダーを確認し、${ strong } が正しいアドレスなことを確認してください。"
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        ""
+      ],
       "Canceled": [
         "キャンセル"
       ],
@@ -2461,9 +2464,6 @@
       "Creating link to folder": [
         "フォルダーのリンクを作成しています"
       ],
-      "Creating share": [
-        "共有を作成しています"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora の CSV ファイルや vCard 3.1 および 4.0 フォーマット (UTF-8 エンコーディング) 形式をサポートしています。"
       ],
@@ -2476,8 +2476,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "デジタル署名が検証されました。このフォルダーは ${ emailAddress } によって安全にアップロードされました。"
       ],
+      "Download canceled": [
+        ""
+      ],
+      "Download failed": [
+        ""
+      ],
+      "Download failed due to ${ error }": [
+        ""
+      ],
+      "Download finished": [
+        "ダウンロードが完了しました"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } のダウンロードは中断します"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        ""
       ],
       "Downloaded": [
         "ダウンロード完了"
@@ -2485,11 +2500,8 @@
       "Downloading": [
         "ダウンロード中"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "${ totalProgressToShow } のうち ${ esProgress } のアイテムをダウンロードしています"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "ここにファイルをドラッグアンドドロップするか、「新規アップロード」を選択してください。"
+      "Drag and drop items here or browse for files to upload.": [
+        ""
       ],
       "Drop the file here to upload": [
         "アップロードするファイルをここにドロップしてください"
@@ -2497,8 +2509,11 @@
       "Duplicate key updated": [
         "重複したキーはアップデートされました"
       ],
-      "Enable drive search": [
-        "ドライブ検索を有効化"
+      "Enabling drive search": [
+        "ドライブ検索を有効にしています"
+      ],
+      "Encrypted": [
+        "暗号化済み"
       ],
       "Encrypted search is here": [
         "暗号化された検索が利用できます"
@@ -2599,6 +2614,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "データを ${ importedEmailAddress } から ${ toEmail } にインポートしています。"
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "${ totalProgressToShow } のうち ${ esProgress } のアイテムをインデックスしています"
+      ],
       "Indexing search results…": [
         "検索結果をインデックスしています…"
       ],
@@ -2632,8 +2650,11 @@
       "Link copied to clipboard": [
         "リンクをクリップボードにコピーしました"
       ],
-      "Link expires: ": [
-        "リンクの有効期限: "
+      "Link failed to be loaded": [
+        "リンクの読み込みに失敗しました"
+      ],
+      "Links failed to be loaded": [
+        "リンクの読み込みに失敗しました"
       ],
       "Loading": [
         "読み込み中"
@@ -2641,11 +2662,14 @@
       "Loading ${ appName }": [
         "${ appName } を読み込み中"
       ],
+      "Loading link": [
+        "リンクを読み込み中"
+      ],
+      "Loading links": [
+        "リンクを読み込み中"
+      ],
       "Loading preview": [
         "プレビューを読み込み中"
-      ],
-      "Loading share": [
-        "共有を読み込んでいます"
       ],
       "Merged": [
         "結合"
@@ -2695,6 +2719,9 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        ""
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "メモ: まだデータは ${ appName } をインストールしているデバイスで利用可能な場合があります。"
       ],
@@ -2728,11 +2755,14 @@
       "Permanently delete all files in your drive": [
         "ドライブからすべてのファイルを完全に削除"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline はプレーンテキスト形式としか互換性がありません。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIMEは自動的に現在の書式を使用してメッセージを送信します。${ MAIL_APP_NAME } は暗号化されたメッセージに常に署名することに注意してください。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "パスワードを入力して復号しコンテンツを閲覧します。"
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "グループに割り当てられたアドレスは削除されません。"
@@ -2770,6 +2800,9 @@
       "Priority support": [
         "優先的なサポート"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "プライベート検索が有効です。ダイアログを閉じて、ファイルまたはフォルダーを検索できます。"
+      ],
       "Queued": [
         "処理待ち"
       ],
@@ -2787,6 +2820,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "このブラウザーでは検索は有効にすることができません"
+      ],
+      "Search Enabled": [
+        "検索が有効です"
+      ],
+      "Secure sharing": [
+        ""
+      ],
+      "Secure your documents and data": [
+        ""
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "アップロードされたファイルまたはフォルダーを選択してリンクを作成します。"
@@ -2812,11 +2854,20 @@
       "Share files with links": [
         "リンクでファイルを共有"
       ],
+      "Shareable link for ${ boldNameText }": [
+        ""
+      ],
       "Signature check will be ignored": [
         "署名確認は無視されました"
       ],
       "Signature issue": [
         "署名の問題"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        ""
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        ""
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "いくつかのファイルにはアクセスできません。ファイルへのアクセスを復元します。${ StartRecoveryButton }"
@@ -2833,6 +2884,12 @@
       "support team": [
         "サポートチーム"
       ],
+      "Swiss privacy": [
+        ""
+      ],
+      "Tap the + button to upload a file or folder.": [
+        ""
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         ""
       ],
@@ -2847,6 +2904,9 @@
       ],
       "There are no files yet": [
         "まだファイルがありません"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        ""
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -2866,7 +2926,7 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
         ""
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
@@ -2883,9 +2943,6 @@
       ],
       "This will overwrite the existing folder": [
         "存在するフォルダーを上書きします"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "完全なるプライベート検索を有効にするに、${ DRIVE_APP_NAME } はローカルにファイルをインデックスする必要があります。"
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         ""
@@ -2916,9 +2973,6 @@
       ],
       "Trash": [
         "ごみ箱"
-      ],
-      "Try different keywords": [
-        "別のキーワードを試す"
       ],
       "Unlimited folders, labels, and filters": [
         "制限なしのフォルダー、ラベル、フィルター"
@@ -3025,35 +3079,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "データは ${ importedEmailAddressStrong } から Proton アカウントにインポートできる状態です。"
       ],
-      "Your download has been canceled.": [
-        "ダウンロードはキャンセルされました。"
-      ],
       "Your email will only be used for this one-time verification.": [
         "メールアドレスは、この一度限りの認証にのみ使用されます。"
-      ],
-      "Your file failed to download.": [
-        "ファイルのダウンロードに失敗しました。"
-      ],
-      "Your file has finished downloading.": [
-        "ファイルのダウンロードが完了しました。"
-      ],
-      "Your file is being downloaded.": [
-        "ファイルをダウンロード中です。"
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "パスワードをリセットしたためファイルにアクセスできません。古い暗号鍵を再度アップロードすることでアクセス可能になります。${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "あなたのファイルは暗号化して保存されます。"
-      ],
-      "Your folder failed to download.": [
-        "フォルダーのダウンロードに失敗しました。"
-      ],
-      "Your folder has finished downloading.": [
-        "フォルダーのダウンロードが完了しました。"
-      ],
-      "Your folder is being downloaded.": [
-        "フォルダーをダウンロード中です。"
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
@@ -3066,9 +3099,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "あなたの Proton アカウントは現在利用停止中です。引き続きアカウントを使用する場合は、すべての未払いの請求書を精算してください。"
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "${ boldNameText } を安全に共有するためのリンク"
       ]
     },
     "Info on errors": {
@@ -3242,9 +3272,6 @@
       "Enable Beta Access": [
         "ベータ版アクセスを有効にする"
       ],
-      "Enabling drive search": [
-        "ドライブ検索を有効にしています"
-      ],
       "Encrypt emails": [
         "メールを暗号化"
       ],
@@ -3277,9 +3304,6 @@
       ],
       "From: ${ importedEmail }": [
         "移行元: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "${ appName } を入手"
       ],
       "Good": [
         "いい"
@@ -3319,6 +3343,9 @@
       ],
       "Last month only": [
         "過去 1 か月のみ"
+      ],
+      "Location": [
+        "場所"
       ],
       "Mailbox password": [
         "メールボックスのパスワード"
@@ -4008,6 +4035,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        ""
+      ],
       "Encrypted search is here": [
         "暗号化された検索が利用できます"
       ],
@@ -4019,6 +4049,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "データの安全を保ったまま Drive のファイルを検索できるようになりました。"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        ""
       ]
     },
     "Storage": {
@@ -4119,44 +4152,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "アクセス数"
-      ],
       "Actions": [
         "動作"
       ],
       "Address": [
         "メールアドレス"
       ],
-      "Created": [
-        "作成日"
-      ],
       "CSV field": [
         "CSV フィールド"
-      ],
-      "Deleted": [
-        "削除日時"
-      ],
-      "Expires": [
-        "有効期限"
       ],
       "Import": [
         "インポート"
       ],
-      "Location": [
-        "検索対象"
-      ],
-      "Modified": [
-        "更新日時"
-      ],
       "Name": [
         "名前"
-      ],
-      "Size": [
-        "容量"
-      ],
-      "Uploaded": [
-        "アップロード日時"
       ],
       "Values": [
         "値"
@@ -4199,6 +4208,15 @@
       "${ emailsCount } member": [
         "${ emailsCount } メンバー"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } 件のダウンロードに失敗"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } 件の転送に失敗"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } 件のアップロードに失敗"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
       ],
@@ -4214,9 +4232,6 @@
       "Add to ${ groupName }": [
         "${ groupName } に追加"
       ],
-      "Additional settings": [
-        "詳細設定"
-      ],
       "Addresses": [
         "アドレス"
       ],
@@ -4225,6 +4240,9 @@
       ],
       "Back": [
         "戻る"
+      ],
+      "Based in Switzerland, available globally": [
+        ""
       ],
       "Beta Access": [
         "ベータ版アクセス"
@@ -4277,6 +4295,9 @@
       "Date": [
         "日付"
       ],
+      "Decrypting": [
+        ""
+      ],
       "Delete ${ count } contact": [
         "${ count } 件の連絡先を削除"
       ],
@@ -4298,23 +4319,14 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
-      "Download canceled": [
-        "ダウンロードをキャンセルしました"
-      ],
-      "Download completed": [
-        "ダウンロード完了"
-      ],
-      "Download failed": [
-        "ダウンロードに失敗しました"
+      "Download shared file": [
+        ""
       ],
       "Download unverified file?": [
         "未検証のファイルをダウンロードしますか?"
       ],
       "Download unverified folder?": [
         "未検証のフォルダーをダウンロードしますか?"
-      ],
-      "Downloading": [
-        "ダウンロード中"
       ],
       "Drive": [
         "Drive"
@@ -4349,12 +4361,6 @@
       "Empty trash": [
         "ごみ箱を空にする"
       ],
-      "Enable drive search": [
-        "ドライブ検索を有効化"
-      ],
-      "Enter password to download": [
-        "パスワードを入力してダウンロード"
-      ],
       "Enter your password": [
         "パスワードを入力してください"
       ],
@@ -4388,6 +4394,9 @@
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } 件見つかりました"
       ],
+      "Getting files": [
+        ""
+      ],
       "Groups": [
         "グループ"
       ],
@@ -4397,11 +4406,11 @@
       "Import contacts": [
         "連絡先をインポート"
       ],
-      "Import groups": [
-        "グループをインポート"
-      ],
       "Invalid verification code": [
         "無効な検証コードです"
+      ],
+      "Item details": [
+        ""
       ],
       "Items details": [
         "アイテムの詳細"
@@ -4414,9 +4423,6 @@
       ],
       "Manage secure link": [
         "セキュアリンクの管理"
-      ],
-      "Manage share": [
-        "共有を管理"
       ],
       "Merge contacts": [
         "連絡先の統合"
@@ -4438,9 +4444,6 @@
       ],
       "Name": [
         "名前"
-      ],
-      "No results found": [
-        "該当する結果が見つかりませんでした"
       ],
       "Number of files": [
         "ファイル数"
@@ -4471,6 +4474,9 @@
       ],
       "Phone numbers": [
         "電話番号"
+      ],
+      "Privacy settings": [
+        ""
       ],
       "Re-sign all contacts": [
         "すべての連絡先を再署名する"
@@ -4553,15 +4559,6 @@
       "Stop transfers?": [
         "転送を中止しますか?"
       ],
-      "The file or folder failed to be downloaded": [
-        "ファイルまたはフォルダーのダウンロードは失敗しました"
-      ],
-      "The internet connection was interrupted": [
-        "インターネット接続が切れました"
-      ],
-      "The link does not exist": [
-        "このリンクは存在しません"
-      ],
       "The link either does not exist or has expired": [
         "リンクが存在しないか有効期限が切れています"
       ],
@@ -4573,6 +4570,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "フォルダーが利用できないか、無効な署名です。メニュー (⋮) に移動し、詳細の情報を表示します。"
+      ],
+      "This link is password protected": [
+        ""
       ],
       "Total size": [
         "合計サイズ"
@@ -4587,7 +4587,7 @@
         "アップグレードが必要です"
       ],
       "Uploaded": [
-        "アップロード済み"
+        "アップロード日時"
       ],
       "Uploaded by": [
         "アップロードしたユーザー"
@@ -4616,11 +4616,8 @@
       "You have no folders yet": [
         "フォルダーがありません"
       ],
-      "Your file is ready to be downloaded": [
-        "ファイルのダウンロードの準備が完了しました"
-      ],
-      "Your folder is ready to be downloaded": [
-        "フォルダーのダウンロード準備完了"
+      "You've got files": [
+        ""
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "無料トライアルは ${ formattedEndDate } に終了します。"

@@ -193,6 +193,12 @@
       "Download": [
         "İndir"
       ],
+      "Download (${ count })": [
+        "İndir (${ count })"
+      ],
+      "Download all": [
+        "Tümünü indir"
+      ],
       "Download anyway": [
         "Yine de indir"
       ],
@@ -223,9 +229,6 @@
       "enable desktop notifications": [
         "masaüstü bildirimlerini etkinleştir"
       ],
-      "Enable drive search": [
-        "Drive aramasını etkinleştir"
-      ],
       "Expand": [
         "Genişlet"
       ],
@@ -246,6 +249,9 @@
       ],
       "Get link": [
         "Bağlantı oluştur"
+      ],
+      "Get Proton Drive": [
+        "Proton Drive edinin"
       ],
       "Get started": [
         "Başlayalım"
@@ -379,11 +385,11 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
-      "refresh the page": [
-        "sayfayı yenile"
-      ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "refresh the page": [
+        "sayfayı yenile"
       ],
       "Remove": [
         "Kaldır"
@@ -427,6 +433,9 @@
       "Resume upload": [
         "Yüklemeyi sürdür"
       ],
+      "Retry": [
+        "Yeniden dene"
+      ],
       "Save": [
         "Kaydet"
       ],
@@ -445,17 +454,11 @@
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
-      "Share": [
-        "Paylaş"
-      ],
       "Share file": [
         "Dosya paylaş"
       ],
       "Share item": [
         "Ögeyi paylaş"
-      ],
-      "Share options": [
-        "Paylaşım seçenekleri"
       ],
       "Share via link": [
         "Bağlantı ile paylaş"
@@ -1922,9 +1925,6 @@
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
       ],
-      "Preferences could not be saved": [
-        "Tercihler kaydedilemedi"
-      ],
       "Primary address key is not decrypted": [
         "Birincil adres anahtarının şifresi çözülemedi"
       ],
@@ -2432,6 +2432,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Yeni bir doğrulama kodu istemeden önce istenmeyen e-postalar kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
+      "Bulk uploads may reduce your computer’s performance. Consider limiting memory-intensive activities like streaming during upload. Or try uploading in batches.": [
+        "Toplu yüklemeler bilgisayarınızın başarımını düşürebilir. Yükleme sırasında yayın akışı izlemek gibi yoğun bellek kullanan işlemleri sınırlamayı deneyin. Ya da yüklemeleri gruplar halinde yapın."
+      ],
       "Canceled": [
         "İptal edildi"
       ],
@@ -2502,9 +2505,6 @@
       "Creating link to folder": [
         "Klasör bağlantısı oluşturuluyor"
       ],
-      "Creating share": [
-        "Paylaşım oluşturuluyor"
-      ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora ve diğer bazı uygulamaların CSV dosyalarıyla birlikte vCard 3.1 ve 4.0 biçimlerindeki (UTF-8) dosyalar desteklenir."
       ],
@@ -2518,8 +2518,23 @@
       "Digital signature verified. This folder was securely uploaded by ${ emailAddress }.": [
         "Sayısal imza doğrulandı. Bu klasör ${ emailAddress } tarafından güvenli şekilde yüklendi."
       ],
+      "Download canceled": [
+        "İndirme iptal edildi"
+      ],
+      "Download failed": [
+        "İndirilemedi"
+      ],
+      "Download failed due to ${ error }": [
+        "İndirme ${ error } nedeniyle tamamlanamadı"
+      ],
+      "Download finished": [
+        "İndirme tamamlandı"
+      ],
       "Download of ${ downloadFileName } will be aborted": [
         "${ downloadFileName } dosyasının indirilmesinden vazgeçilecek"
+      ],
+      "Download paused due to connection issue; it will resume automatically": [
+        "Bağlantı sorunu nedeniyle indirme duraklatıldı. Otomatik olarak sürdürülecek"
       ],
       "Downloaded": [
         "İndirildi"
@@ -2527,11 +2542,8 @@
       "Downloading": [
         "İndiriliyor"
       ],
-      "Downloading items ${ esProgress } out of ${ totalProgressToShow }": [
-        "Öge indiriliyor ${ esProgress } / ${ totalProgressToShow }"
-      ],
-      "Drag and drop a file here or choose to upload.": [
-        "Bir dosyayı sürükleyip buraya bırakın ya da yüklemeyi seçin."
+      "Drag and drop items here or browse for files to upload.": [
+        "Yüklemek için ögeleri sürükleyip buraya bırakın ya da göz atın."
       ],
       "Drop the file here to upload": [
         "Yüklemek için bir dosyayı sürükleyip buraya bırakın"
@@ -2539,8 +2551,11 @@
       "Duplicate key updated": [
         "Çift anahtar güncellendi"
       ],
-      "Enable drive search": [
-        "Drive aramasını etkinleştir"
+      "Enabling drive search": [
+        "Drive araması etkinleştiriliyor"
+      ],
+      "Encrypted": [
+        "Şifrelenmiş"
       ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
@@ -2643,6 +2658,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
+      "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
+        "${ esProgress } / ${ totalProgressToShow } öge dizine ekleniyor"
+      ],
       "Indexing search results…": [
         "Arama sonuçları dizini oluşturuluyor…"
       ],
@@ -2676,8 +2694,11 @@
       "Link copied to clipboard": [
         "Bağlantı panoya kopyalandı"
       ],
-      "Link expires: ": [
-        "Bağlantının geçerlilik sonu: "
+      "Link failed to be loaded": [
+        "Bağlantı yüklenemedi"
+      ],
+      "Links failed to be loaded": [
+        "Bağlantılar yüklenemedi"
       ],
       "Loading": [
         "Yükleniyor"
@@ -2685,11 +2706,14 @@
       "Loading ${ appName }": [
         "${ appName } yükleniyor"
       ],
+      "Loading link": [
+        "Bağlantı yükleniyor"
+      ],
+      "Loading links": [
+        "Bağlantılar yükleniyor"
+      ],
       "Loading preview": [
         "Ön izleme yükleniyor"
-      ],
-      "Loading share": [
-        "Paylaşım yükleniyor"
       ],
       "Merged": [
         "Birleştirilmiş"
@@ -2739,6 +2763,9 @@
       "Not a valid URL": [
         "Adres geçersiz"
       ],
+      "Not all files were transferred. Try uploading or downloading the files again.": [
+        "Tüm dosyalar aktarılmadı. Dosyaları yeniden yüklemeyi veya indirmeyi deneyin."
+      ],
       "Note: Data may still be available locally on devices where you have installed ${ appName }.": [
         "Not: Veriler, ${ appName } kurulu aygıtlarda yerel olarak bulunmaya devam edebilir."
       ],
@@ -2772,11 +2799,14 @@
       "Permanently delete all files in your drive": [
         "Sürücünüzdeki tüm dosyaları kalıcı olarak silin"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline yalnızca düz metin biçimiyle uyumludur. Lütfen ${ MAIL_APP_NAME } uygulamasının şifrelenmiş iletileri her zaman imzaladığını unutmayın."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME, geçerli oluşturucu kipini kullanarak iletiyi otomatik olarak gönderir. Lütfen şifrelenmiş iletilerin her zaman ${ MAIL_APP_NAME } tarafından imzalandığını unutmayın"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
+      ],
+      "Please enter the password to decrypt and view content.": [
+        "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Lütfen bu gruba atanan adreslerin SİLİNEMEYECEĞİNİ unutmayın."
@@ -2815,6 +2845,9 @@
       "Priority support": [
         "Öncelikli destek"
       ],
+      "Private search enabled. You may now close this dialogue and search for files and folders.": [
+        "Kişisel arama etkinleştirildi. Bu pencereyi kapatarak dosya ve klasörlerde arama yapabilirsiniz."
+      ],
       "Queued": [
         "Sıraya alındı"
       ],
@@ -2832,6 +2865,15 @@
       ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama etkinleştirilemez"
+      ],
+      "Search Enabled": [
+        "Arama etkinleştirildi"
+      ],
+      "Secure sharing": [
+        "Güvenli paylaşım"
+      ],
+      "Secure your documents and data": [
+        "Belgelerinizin ve verilerinizin güvenliğini sağlayın"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Yüklenmiş bir dosyayı ya da klasörü seçin ve bir bağlantı oluşturun."
@@ -2857,11 +2899,20 @@
       "Share files with links": [
         "Dosyaları bağlantı ile paylaş"
       ],
+      "Shareable link for ${ boldNameText }": [
+        "${ boldNameText } için paylaşılabilir bağlantı"
+      ],
       "Signature check will be ignored": [
         "İmza denetimi yok sayılacak"
       ],
       "Signature issue": [
         "İmza sorunu"
+      ],
+      "Some files failed to download. Try downloading the files again.": [
+        "Bazı dosyalar indirilemedi. Dosyaları yeniden indirmeyi deneyin."
+      ],
+      "Some files failed to upload. Try uploading the files again.": [
+        "Bazı dosyalar yüklenemedi. Dosyaları yeniden yüklemeyi deneyin."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Bazı dosyalarınıza artık erişilemiyor. Dosyalara yeniden erişim kazanın. ${ StartRecoveryButton }"
@@ -2878,6 +2929,12 @@
       "support team": [
         "destek ekibi"
       ],
+      "Swiss privacy": [
+        "İsviçre kişisel gizliliği"
+      ],
+      "Tap the + button to upload a file or folder.": [
+        "Bir dosya ya da klasör yüklemek için + düğmesini kullanın."
+      ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Hesabın yeni bir anahtarı olabilir ya da şu ögeler kurcalanmış olabilir: ${ items }. Yalnızca güveniyorsanuz açın."
       ],
@@ -2892,6 +2949,9 @@
       ],
       "There are no files yet": [
         "Henüz bir dosya yok"
+      ],
+      "These files were shared using end-to-end encryption. To ensure their security — and the security of all your documents, photos, and files — store them in Proton Drive, the cloud storage service you can trust.": [
+        "Bu dosyalar uçtan uca şifreleme kullanılarak paylaşıldı. Tüm belgelerinizin, fotoğraflarınızın ve dosyalarınızın güvenliğini sağlamak için bunları güvenebileceğiniz Proton Drive bulut depolama hizmetinde saklayın."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, bir ilke ihlali olasılığı nedeniyle askıya alındı."
@@ -2911,8 +2971,8 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "Bu bağlantı göründüğü gibi olmayan bir sahtecilik girişimi olabilir. Lütfen bu bağlantının gerçekten ziyaret etmek istediğiniz bağlantı olduğunu doğrulayın ya da açmayın."
       ],
-      "This link was created in\na previous version and can not be modified. Delete this link and create a\nnew one to change the settings.": [
-        "Bu bağlantı önceki bir sürüm ile oluşturulmuş ve düzenlenemiyor. Ayarları değiştirmek için bu bağlantıyı silin ve yeni bir tane oluşturun."
+      "This link was created with old Drive version and can not be modified. Delete this link and create a new one to change the settings.": [
+        "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
         "Bu bağlantı kalıcı olarak devre dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
@@ -2929,9 +2989,6 @@
       ],
       "This will overwrite the existing folder": [
         "Bu işlem var olan klasörün üzerine yazacak"
-      ],
-      "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally.": [
-        "Kişisel gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli."
       ],
       "To enable truly private search ${ DRIVE_APP_NAME } needs to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Kişisel gizliliği koruyarak arama yapabilmek için ${ DRIVE_APP_NAME } dosyalarınızı yerel dizine eklemeli. Bu sırada ${ DRIVE_APP_NAME } kullanmayı sürdürebilirsiniz. Dizin oluşturma işlemi tamamlandığında size bilgi vereceğiz."
@@ -2962,9 +3019,6 @@
       ],
       "Trash": [
         "Çöp kutusu"
-      ],
-      "Try different keywords": [
-        "Farklı anahtar sözcükleri deneyin"
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız klasör, etiket, süzgeç"
@@ -3071,35 +3125,14 @@
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden Proton hesabınız içine aktarılmaya hazır."
       ],
-      "Your download has been canceled.": [
-        "İndirme işleminiz iptal edildi."
-      ],
       "Your email will only be used for this one-time verification.": [
         "E-posta adresiniz yalnızca bu tek seferlik doğrulama için kullanılacak."
-      ],
-      "Your file failed to download.": [
-        "Dosyanız indirilemedi."
-      ],
-      "Your file has finished downloading.": [
-        "Dosyanız indirildi."
-      ],
-      "Your file is being downloaded.": [
-        "Dosyanız indiriliyor."
       ],
       "Your files are no longer accessible due to a password reset. Re-upload the old encryption key to regain the access. ${ KeyReactivationButton }": [
         "Bir parola sıfırlama işlemi nedeniyle dosyalarınız erişilebilir değil. Erişimi yeniden sağlamak için eski şifreleme anahtarını yeniden yükleyin. ${ KeyReactivationButton }"
       ],
       "Your files will be encrypted and then saved.": [
         "Dosyalarınız şifrelendikten sonra kaydedilecek."
-      ],
-      "Your folder failed to download.": [
-        "Klasörünüz indirilemedi."
-      ],
-      "Your folder has finished downloading.": [
-        "Klasörünüz indirildi."
-      ],
-      "Your folder is being downloaded.": [
-        "Klasörünüz indiriliyor."
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
@@ -3112,9 +3145,6 @@
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
         "Proton hesabınız şu anda beklemede. Hesabınızı kullanmaya devam etmek için, lütfen gecikmiş faturaları ödeyin."
-      ],
-      "Your secure, shareable link for ${ boldNameText }": [
-        "${ boldNameText } için güvenli, paylaşılabilir bağlantınız"
       ]
     },
     "Info on errors": {
@@ -3289,9 +3319,6 @@
       "Enable Beta Access": [
         "Beta erişimini etkinleştir"
       ],
-      "Enabling drive search": [
-        "Drive araması etkinleştiriliyor"
-      ],
       "Encrypt emails": [
         "E-postaları şifrele"
       ],
@@ -3324,9 +3351,6 @@
       ],
       "From: ${ importedEmail }": [
         "Nereden: ${ importedEmail }"
-      ],
-      "Get your own ${ appName }": [
-        "Kendinize ${ appName } alın"
       ],
       "Good": [
         "İyi"
@@ -3366,6 +3390,9 @@
       ],
       "Last month only": [
         "Yalnızca son ay"
+      ],
+      "Location": [
+        "Konum"
       ],
       "Mailbox password": [
         "Posta kutusu parolası"
@@ -4077,6 +4104,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } beta yayınlandı! Dosyalarınıza da e-postalarınızdaki güvenliği sağlayın."
+      ],
       "Encrypted search is here": [
         "Şifrelenmiş aramayı deneyimleyin"
       ],
@@ -4088,6 +4118,9 @@
       ],
       "Now you can easily search Drive files while keeping your data secure.": [
         "Artık verilerinizi güvende tutmayı sürdürürken Drive dosyalarınızı kolayca arayabilirsiniz."
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME } uygulamasını deneyin"
       ]
     },
     "Storage": {
@@ -4190,44 +4223,20 @@
       ]
     },
     "TableHeader": {
-      "# of accesses": [
-        "erişilme sayısı"
-      ],
       "Actions": [
         "İşlemler"
       ],
       "Address": [
         "Adres"
       ],
-      "Created": [
-        "Oluşturulma"
-      ],
       "CSV field": [
         "CSV alanı"
-      ],
-      "Deleted": [
-        "Silinme"
-      ],
-      "Expires": [
-        "Geçerlilik sonu"
       ],
       "Import": [
         "İçe aktar"
       ],
-      "Location": [
-        "Konum"
-      ],
-      "Modified": [
-        "Değiştirilme"
-      ],
       "Name": [
         "Ad"
-      ],
-      "Size": [
-        "Boyut"
-      ],
-      "Uploaded": [
-        "Yüklenme"
       ],
       "Values": [
         "Değerler"
@@ -4273,6 +4282,18 @@
         "${ emailsCount } üye",
         "${ emailsCount } üye"
       ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } indirme tamamlanamadı",
+        "${ numberOfFailedTransfer.total } indirme tamamlanamadı"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } aktarım tamamlanamadı",
+        "${ numberOfFailedTransfer.total } aktarım tamamlanamadı"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } yükleme tamamlanamadı",
+        "${ numberOfFailedTransfer.total } yükleme tamamlanamadı"
+      ],
       "Account suspended": [
         "Hesap askıya alındı"
       ],
@@ -4289,9 +4310,6 @@
       "Add to ${ groupName }": [
         "${ groupName } grubuna ekle"
       ],
-      "Additional settings": [
-        "Ek ayarlar"
-      ],
       "Addresses": [
         "Adresler"
       ],
@@ -4300,6 +4318,9 @@
       ],
       "Back": [
         "Geri"
+      ],
+      "Based in Switzerland, available globally": [
+        "İsviçre merkezli, küresel olarak erişilebilir"
       ],
       "Beta Access": [
         "Beta erişimi"
@@ -4352,6 +4373,9 @@
       "Date": [
         "Tarih"
       ],
+      "Decrypting": [
+        "Şifre çözülüyor"
+      ],
       "Delete ${ count } contact": [
         "${ count } kişiyi sil",
         "${ count } kişiyi sil"
@@ -4375,23 +4399,14 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
-      "Download canceled": [
-        "İndirme iptal edildi"
-      ],
-      "Download completed": [
-        "İndirme tamamlandı"
-      ],
-      "Download failed": [
-        "İndirilemedi"
+      "Download shared file": [
+        "Paylaşılan dosyayı indir"
       ],
       "Download unverified file?": [
         "Doğrulanmamış dosya indirilsin mi?"
       ],
       "Download unverified folder?": [
         "Doğrulanmamış klasör indirilsin mi?"
-      ],
-      "Downloading": [
-        "İndiriliyor"
       ],
       "Drive": [
         "Drive"
@@ -4425,12 +4440,6 @@
       ],
       "Empty trash": [
         "Çöp kutusunu boşalt"
-      ],
-      "Enable drive search": [
-        "Drive aramasını etkinleştir"
-      ],
-      "Enter password to download": [
-        "İndirmek için parolayı yazın"
       ],
       "Enter your password": [
         "Parolanızı yazın"
@@ -4466,6 +4475,9 @@
         "${ searchView.numberOfResults } sonuç bulundu",
         "${ searchView.numberOfResults } sonuç bulundu"
       ],
+      "Getting files": [
+        "Dosyaları almak"
+      ],
       "Groups": [
         "Gruplar"
       ],
@@ -4475,11 +4487,11 @@
       "Import contacts": [
         "Kişileri içe aktar"
       ],
-      "Import groups": [
-        "Grupları içe aktar"
-      ],
       "Invalid verification code": [
         "Doğrulama kodu geçersiz"
+      ],
+      "Item details": [
+        "Öge ayrıntıları"
       ],
       "Items details": [
         "Öge bilgileri"
@@ -4492,9 +4504,6 @@
       ],
       "Manage secure link": [
         "Güvenli bağlantıyı yönet"
-      ],
-      "Manage share": [
-        "Paylaşımı yönet"
       ],
       "Merge contacts": [
         "Kişileri birleştir"
@@ -4516,9 +4525,6 @@
       ],
       "Name": [
         "Ad"
-      ],
-      "No results found": [
-        "Herhangi bir sonuç bulunamadı"
       ],
       "Number of files": [
         "Dosya sayısı"
@@ -4549,6 +4555,9 @@
       ],
       "Phone numbers": [
         "Telefon numaraları"
+      ],
+      "Privacy settings": [
+        "Kişisel gizlilik ayarları"
       ],
       "Re-sign all contacts": [
         "Tüm kişileri yeniden imzala"
@@ -4631,15 +4640,6 @@
       "Stop transfers?": [
         "Aktarımlar durdurulsun mu?"
       ],
-      "The file or folder failed to be downloaded": [
-        "Dosya ya da klasör indirilemedi"
-      ],
-      "The internet connection was interrupted": [
-        "İnternet bağlantısı kesildi"
-      ],
-      "The link does not exist": [
-        "Bağlantı bulunamadı"
-      ],
       "The link either does not exist or has expired": [
         "Bağlantı bulunamadı ya da geçerlilik süresi geçmiş"
       ],
@@ -4651,6 +4651,9 @@
       ],
       "This folder has a missing or invalid signature. Go to Menu (⋮) → Details for info.": [
         "Bu klasörün imzası eksik ya da geçersiz. Bilgi almak için Menü (⋮) → Ayrıntılar bölümüne gidin."
+      ],
+      "This link is password protected": [
+        "Bu bağlantı parola ile korunmuş"
       ],
       "Total size": [
         "Toplam boyut"
@@ -4694,11 +4697,8 @@
       "You have no folders yet": [
         "Henüz bir klasörünüz yok"
       ],
-      "Your file is ready to be downloaded": [
-        "Dosyanız indirilmeye hazır"
-      ],
-      "Your folder is ready to be downloaded": [
-        "Klasörünüz indirilmeye hazır"
+      "You've got files": [
+        "Dosyalarınız var"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
         "Ücretsiz denemeniz yakında ${ formattedEndDate } tarihinde sona erecek"

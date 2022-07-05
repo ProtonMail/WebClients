@@ -6,7 +6,7 @@
   "contexts": {
     "Action": {
       "${ BRAND_NAME } introduction": [
-        "${ BRAND_NAME } 介紹"
+        "${ BRAND_NAME } 簡介"
       ],
       "${ BRAND_NAME } shop": [
         "${ BRAND_NAME } 商店"
@@ -15,34 +15,34 @@
         "啟動還原"
       ],
       "Add": [
-        "新增"
+        "加入"
       ],
       "Add address": [
-        "新增地址"
+        "加入位址"
       ],
       "Add contact": [
-        "新增聯絡人"
+        "加入聯絡人"
       ],
       "Add email": [
-        "新增電子郵件"
+        "加入電郵"
       ],
       "Add group": [
-        "新增群組"
+        "加入群組"
       ],
       "Add new contact": [
-        "新增聯絡人"
+        "加入聯絡人"
       ],
       "Add new group": [
-        "新增群組"
+        "加入群組"
       ],
       "Add notification": [
-        "新增通知"
+        "加入通知"
       ],
       "Add phone number": [
-        "新增電話號碼"
+        "加入電話號碼"
       ],
       "Add to group": [
-        "新增至群組"
+        "加入至群組"
       ],
       "Apply": [
         "套用"
@@ -114,16 +114,16 @@
         "以 Google 繼續"
       ],
       "Copy email to clipboard": [
-        "複製電子郵件至剪貼簿"
+        "複製電郵至剪貼簿"
       ],
       "Create a new contact group": [
-        "建立新的聯絡人群組"
+        "創建新的聯絡人群組"
       ],
       "Create calendar": [
-        "建立行事曆"
+        "創建行事曆"
       ],
       "Create event": [
-        "建立事件"
+        "創建事件"
       ],
       "Customize": [
         "自訂"
@@ -162,7 +162,7 @@
         "編輯"
       ],
       "Edit email address": [
-        "編輯電子郵件地址"
+        "編輯電郵位址"
       ],
       "Edit label": [
         "編輯標籤"
@@ -174,7 +174,7 @@
         "編輯登入詳細資訊"
       ],
       "Email settings": [
-        "電子郵件設定"
+        "電郵設定"
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
@@ -237,7 +237,7 @@
         "從 .csv 或 vCard 匯入"
       ],
       "Load image": [
-        "載入圖片"
+        "載入圖像"
       ],
       "Log in": [
         "登入"
@@ -270,7 +270,7 @@
         "更多選項"
       ],
       "New event": [
-        "新增事件"
+        "加入事件"
       ],
       "Next": [
         "下一步"
@@ -405,7 +405,7 @@
         "略過"
       ],
       "Start import": [
-        ""
+        "開始匯入"
       ],
       "Start setup": [
         "開始設置"
@@ -432,7 +432,7 @@
         "解鎖資料"
       ],
       "Unmark for deletion": [
-        "取消標記作刪除"
+        "取消標記以刪除"
       ],
       "Untrust": [
         "不信任"
@@ -450,7 +450,7 @@
         "升級"
       ],
       "Upload picture": [
-        "上傳圖片"
+        "上載圖像"
       ],
       "Use ${ label } theme": [
         "使用 ${ label } 佈景主題"
@@ -462,10 +462,10 @@
         "驗證"
       ],
       "Verify account": [
-        "驗證帳戶"
+        "驗證帳號"
       ],
       "Verify email": [
-        "驗證電子郵件"
+        "驗證電郵"
       ],
       "View": [
         "檢視"
@@ -785,7 +785,7 @@
         "${ name } 已接受邀請"
       ],
       "${ name } declined the invitation": [
-        "${ name } 已拒絕邀請"
+        "${ name } 已婉拒邀請"
       ],
       "${ name } hasn't answered the invitation yet": [
         "${ name } 尚未回答邀請"
@@ -800,7 +800,7 @@
         "您已接受此邀請"
       ],
       "You declined the invitation": [
-        "您已拒絕此邀請"
+        "您已婉拒此邀請"
       ],
       "You haven't answered the invitation yet": [
         "您尚未回答此邀請"
@@ -811,7 +811,7 @@
     },
     "Calendar sidebar dropdown item": {
       "Add calendar from URL": [
-        "從 URL 新增行事曆"
+        "從 URL 加入行事曆"
       ],
       "More options": [
         "更多選項"
@@ -949,7 +949,7 @@
     },
     "Contact field label": {
       "Address": [
-        "地址"
+        "位址"
       ],
       "Anniversary": [
         "週年紀念日"
@@ -958,7 +958,7 @@
         "生日"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Gender": [
         "性別"
@@ -1871,7 +1871,7 @@
         "檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_CONTACTS_STRING } 個聯絡人。若您的檔案超出此限，請將其分割為較小的檔案。"
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
-        "拖放各聯絡人以排行合併優次。取消勾選您不欲合併的聯絡人。"
+        "拖放各聯絡人以排行合併優先順序。取消勾選您不要合併的聯絡人。"
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
@@ -1910,7 +1910,7 @@
     },
     "Dropdown action icon tooltip": {
       "Add calendar": [
-        "新增行事曆"
+        "加入行事曆"
       ]
     },
     "Duration": {
@@ -1944,10 +1944,10 @@
     },
     "Email body for invitation": {
       "${ eventTitle } has been canceled.": [
-        "${ eventTitle } 已告取消，特此通知。"
+        "${ eventTitle } 已取消，特此通知。"
       ],
       "${ eventTitle } has been updated.\n${ eventDetailsText }": [
-        "${ eventTitle } 已修訂詳情：\n${ eventDetailsText }"
+        "${ eventTitle } 有最新消息。\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
         "謹邀請閣下出席 ${ eventTitle }，詳情如下：\n${ eventDetailsText }"
@@ -2002,16 +2002,16 @@
     },
     "Error": {
       "${ _list } doesn't have an email address": [
-        "${ _list } 沒有電子郵件地址"
+        "某些聯絡人沒有電郵位址: ${ _list }"
       ],
       "${ _list2 } has no contacts": [
-        "${ _list2 } 沒有聯絡人"
+        "某些群組裡沒有任何聯絡人: ${ _list2 }"
       ],
       "${ list } doesn't have a valid email address": [
-        "${ list } 沒有有效的電子郵件地址"
+        "某些聯絡人不具備有效的電郵位址 ${ list }"
       ],
       "${ list } has invalid emails": [
-        "${ list } 沒有有效的電子郵件"
+        "某些群組包含無效的電郵: ${ list }"
       ],
       "A group with this name already exists": [
         "以此為名的群組已存在"
@@ -2020,7 +2020,7 @@
         "最多可以設定 10 個提醒"
       ],
       "Address primary private key not found": [
-        "找不到地址主要金鑰"
+        "找不到位址主要金鑰"
       ],
       "Answer failed to be sent": [
         "回答傳送失敗"
@@ -2035,7 +2035,7 @@
         "行事曆數目已達上限"
       ],
       "Can't create new calendars for all imported calendars due to the personal calendar limit.": [
-        "鑒於個人行事曆上限，無法為所有已匯入行事曆建立新的行事曆。"
+        "鑒於個人行事曆上限，無法為所有已匯入行事曆創建新的行事曆。"
       ],
       "Cancellation failed to be sent": [
         "取消傳送失敗"
@@ -2059,13 +2059,13 @@
         "請取消選取至少 ${ calendarToFixCount } 個行事曆或"
       ],
       "Email address disabled": [
-        "電子郵件地址已停用"
+        "電郵位址已停用"
       ],
       "Email address invalid": [
-        "電子郵件地址無效"
+        "電郵位址無效"
       ],
       "Email is not valid": [
-        "電子郵件無效"
+        "電郵無效"
       ],
       "Ends on date cannot be empty": [
         "結束日期不能為空"
@@ -2083,13 +2083,13 @@
         "錯誤：${ errorMessage }"
       ],
       "Failed to get original occurrence in series": [
-        "無法取得系列中原本事件。"
+        "無法取得系列中原本事件"
       ],
       "Folder name cannot be empty.": [
         "資料夾名稱不能留空。"
       ],
       "Image upload failed": [
-        "圖片上載失敗"
+        "圖像上載失敗"
       ],
       "Incorrect login credentials. Please try again.": [
         "登入憑證不正確。請再試一次。"
@@ -2101,13 +2101,13 @@
         "間隔不能為空白"
       ],
       "Invalid email address": [
-        "電子郵件地址無效"
+        "電郵位址無效"
       ],
       "Invalid link to the event": [
         "事件的連結無效"
       ],
       "Invalid name": [
-        "名稱無效"
+        "無效的名稱"
       ],
       "Invalid public key file": [
         "公開密鑰檔案無效"
@@ -2143,13 +2143,13 @@
         "無資料可匯入"
       ],
       "No keys retrieved for internal user": [
-        "內部使用者沒有提取到任何金鑰"
+        "內部使用者沒有擷取到任何金鑰"
       ],
       "No valid address found": [
-        "找不到有效的地址"
+        "找不到有效的位址"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "使用者沒有提取到任何用於寄送的有效 WKD 金鑰"
+        "使用者沒有擷取到任何用於寄送的有效 WKD 金鑰"
       ],
       "Not a valid number": [
         "號碼無效"
@@ -2158,7 +2158,7 @@
         "重複次數不能為空"
       ],
       "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "部份聯絡人無電子郵件地址：${ noEmailsContactNamesList }"
+        "部份聯絡人無電郵位址：${ noEmailsContactNamesList }"
       ],
       "One of the groups has no contacts: ${ noContactGroupList }": [
         "部份群組無聯絡人：${ noContactGroupList }"
@@ -2167,25 +2167,22 @@
         "密碼不相符"
       ],
       "Please create an address first.": [
-        "請先建立一個地址。"
+        "請先創建一個位址。"
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
       ],
-      "Preferences could not be saved": [
-        "無法儲存喜好設定"
-      ],
       "Primary address key is not decrypted": [
-        "主要地址金鑰並未被加密"
+        "主要位址金鑰並未被加密"
       ],
       "Primary address key is not decrypted.": [
-        "主要地址金鑰並未被加密。"
+        "主要位址金鑰並未被加密。"
       ],
       "Primary key is not valid for sending": [
         "主要金鑰對傳送無效"
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        "擷取出的內部使用者專屬主金鑰不適用於發送郵件"
+        "擷取出的內部使用者專屬主金鑰不適用於傳送郵件"
       ],
       "Request timed out": [
         "請求逾時"
@@ -2260,7 +2257,7 @@
         "未知的錯誤"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "您不得傳送一封電子郵件給超過 100 個收件人"
+        "您不得傳送一封電郵給超過 100 個收件人"
       ],
       "You can't send vCards of more than 10 contacts": [
         "您不得傳送超過 10 個聯絡人的 vCard"
@@ -2435,7 +2432,7 @@
     },
     "Error message": {
       "Brace yourself till we get the error fixed.": [
-        "不好意思，這個錯誤有待修正。我們就去處理一下。"
+        "不好意思，這個錯誤有待修正。我們將會處理。"
       ],
       "Error: ${ errorMessage }": [
         "錯誤：${ errorMessage }"
@@ -2466,7 +2463,7 @@
     },
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
-        "沒有選擇圖片"
+        "沒有選擇圖像"
       ]
     },
     "Error notification when score is missing in user feedback form modal": {
@@ -2518,7 +2515,7 @@
         "無效的回應"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "無法將活動新增至您的行事曆。未傳送答覆"
+        "無法將活動加入至您的行事曆。未傳送答覆"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
         "無法更新您行事曆中的活動。未傳送答覆"
@@ -2536,13 +2533,13 @@
         "我們無法在您的行事曆取消此事件"
       ],
       "We could not retrieve the event from your calendar": [
-        "我們無法從您的行事曆提取此事件"
+        "我們無法從您的行事曆擷取此事件"
       ],
       "We could not update the event in your calendar": [
         "我們無法在您的行事曆更新此事件"
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "您的回答已傳送，惟此事件無法新增到您的行事曆中"
+        "您的回答已傳送，惟此事件無法加入到您的行事曆中"
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "您的回答已傳送，惟此事件無法在您的行事曆中更新"
@@ -2646,7 +2643,7 @@
         "找到 ${ items.length } 建議，使用鍵盤來選取。"
       ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
-        "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
+        "使用上、下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
     },
     "Human verification method": {
@@ -2654,7 +2651,7 @@
         "CAPTCHA 驗證碼"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Manual": [
         "手動"
@@ -2668,19 +2665,19 @@
     },
     "Import calendar": {
       "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } 個事件已加密並新增到您的行事曆中"
+        "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
       ],
       "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "加密及新增您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
+        "加密及加入您的事件時發生錯誤。${ totalToImport } 個事件之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
-        "加密及新增您的事件時發生錯誤。無法匯入任何事件。"
+        "加密及加入您的事件時發生錯誤。無法匯入任何事件。"
       ],
       "Encrypting and adding contacts: ${ totalImported }/${ totalToImport }": [
-        "正在加密並新增聯絡人：${ totalImported }/${ totalToImport }"
+        "正在加密並加入聯絡人：${ totalImported }/${ totalToImport }"
       ],
       "Encrypting and adding events to your calendar: ${ totalImported }/${ totalToImport }": [
-        "正在加密並新增事件到您的行事曆中：${ totalImported }/${ totalToImport }"
+        "正在加密並加入事件到您的行事曆中：${ totalImported }/${ totalToImport }"
       ],
       "Event successfully imported. The imported event will now appear in your calendar.": [
         "事件已成功匯入。已匯入的事件現將顯示於行事曆中。"
@@ -2699,7 +2696,7 @@
     },
     "Import calendar; import invitation": {
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your Proton email address.": [
-        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，不帶召集人和參與者詳細資料。若要取得事件更新並顯示參與者，請著召集人以您的 Proton 電子郵件地址向您發出邀請。"
+        "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，不帶召集人和參與者詳細資料。若要取得事件更新並顯示參與者，請著召集人以您的 Proton 電郵位址向您發出邀請。"
       ],
       "This file contains an event invitation:": [
         "此檔案包含事件邀請："
@@ -2713,10 +2710,10 @@
     },
     "Import contact": {
       "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } 個聯絡人已加密並新增到您的聯絡人清單"
+        "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入到您的聯絡人清單"
       ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
-        "加密及新增您的聯絡人時發生錯誤。無法匯入任何聯絡人。"
+        "加密及加入您的聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ]
     },
     "Import contact error": {
@@ -2736,7 +2733,7 @@
     },
     "Import contacts": {
       "An error occurred while encrypting and adding your contacts. ${ totalImported } out of ${ totalToImport } contacts successfully imported.": [
-        "加密及新增您的聯絡人時發生錯誤。${ totalToImport } 個聯絡人之中，有 ${ totalImported } 個已成功匯入。"
+        "加密及加入您的聯絡人時發生錯誤。${ totalToImport } 個聯絡人之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "Contact successfully imported. The imported contact will now appear in your contact list.": [
         "聯絡人已成功匯入。已匯入的聯絡人現將顯示於聯絡人清單中。"
@@ -2769,13 +2766,13 @@
     },
     "Info": {
       "${ addressCount } email address": [
-        "${ addressCount } 個電子郵件地址"
+        "${ addressCount } 個電郵位址"
       ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } 個新增行事曆"
+        "${ calendarsToBeCreatedCount } 個加入行事曆"
       ],
       "${ calendarsToBeMerged } merged calendar": [
         "${ calendarsToBeMerged } 個合併行事曆"
@@ -2787,7 +2784,7 @@
         "${ contactCount } 位聯絡人包含多組電郵位址。"
       ],
       "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } 個成員"
+        "${ contactEmailsLength } 位成員"
       ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 包含多組電郵位址。"
@@ -2820,31 +2817,31 @@
         "${ updated } 個聯絡人已成功更新。"
       ],
       "(${ memberCount } member)": [
-        "(${ memberCount } 個成員)"
+        "(${ memberCount } 位成員)"
       ],
       "10 email addresses": [
-        "10 個電子郵件地址"
+        "10 個電郵位址"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "取消函將發送給已移除的參與者。"
+        "取消函將傳送給已移除的參與者。"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
-        "取消函將發送給各事件參與者。您要刪除此一系列中全部事件嗎？"
+        "取消函將傳送給各事件參與者。您要刪除此一系列中全部事件嗎？"
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete this event?": [
-        "取消函即將發送給各事件參與者。您要刪除此事件嗎？"
+        "取消函即將傳送給各事件參與者。您要刪除此事件嗎？"
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於未付款發票，帳號存取受限。請聯絡管理員。"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "已新增及已移除的參與者將獲通知此一系列中的全部事件。"
+        "已加入及已移除的參與者將獲通知此一系列中的全部事件。"
       ],
       "Added and removed participants will be notified.": [
-        "已新增及已移除的參與者將獲通知。"
+        "已加入及已移除的參與者將獲通知。"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "此電子郵件地址已啟用以受信任的金鑰驗證地址。若要寄送到此電子郵件地址，請首先信任可用於寄送的公開金鑰。"
+        "此電郵位址已啟用以受信任的金鑰驗證位址。若要寄送到此電郵位址，請首先信任可用於寄送的公開金鑰。"
       ],
       "All (${ totalFoldersCount } folder)": [
         "全部 (${ totalFoldersCount } 個資料夾)"
@@ -2853,10 +2850,10 @@
         "全部 (${ totalFoldersCount } 個標籤)"
       ],
       "An invitation will be sent to added participants.": [
-        "邀請將發送給已新增參與者。"
+        "邀請將傳送給已加入參與者。"
       ],
       "An invitation will be sent to the event participants.": [
-        "邀請將發送給各事件參與者。"
+        "邀請將傳送給各事件參與者。"
       ],
       "and": [
         "和"
@@ -2865,7 +2862,7 @@
         "每一邀請允許最多 100 個參與者"
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "在要求一個新的驗證碼前，檢查你的垃圾郵件資料夾，然後檢查 ${ strong } 的地址是否正確。"
+        "在申請一個新的驗證碼前，檢查你的垃圾郵件資料夾，然後檢查 ${ strong } 的位址是否正確。"
       ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "記不起您的密碼嗎？我們可幫助您清除所有聯絡人中以此金鑰加密的資料，從而關閉此提示。"
@@ -2874,7 +2871,7 @@
         "正在檢查 ${ progress } 個 (共 ${ max } 個) 聯絡人..."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
-        "按一下「要求新代碼」向 ${ strong } 發送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
+        "按一下「申請新代碼」向 ${ strong } 傳送新的驗證碼。如果此電話號碼不正確，請按一下「編輯」作出修正。"
       ],
       "Close this screen to exit.": [
         "關閉此畫面以離開。"
@@ -2883,19 +2880,19 @@
         "繼續使用 ${ planName }"
       ],
       "Create ${ calendarsToBeCreated } new calendar": [
-        "建立 ${ calendarsToBeCreated } 個新增行事曆"
+        "創建 ${ calendarsToBeCreated } 個加入行事曆"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
-        "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
+        "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
-        "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
+        "為匯入的郵件創建標籤、設定這次匯入的時間範圍以及要匯入的標籤。"
       ],
       "Create a new contact group": [
-        "建立新的聯絡人群組"
+        "創建新的聯絡人群組"
       ],
       "Create in": [
-        "建立在"
+        "創建在"
       ],
       "CSV files from Outlook, Outlook Express, Yahoo! Mail, Hotmail, Eudora and some other apps as well as vCard 3.1 and 4.0 formats (UTF-8 encoding) are supported.": [
         "支援源自 Outlook、Outlook Express、Yahoo! Mail、Hotmail、Eudora 及別的一些軟體的 CSV 檔案，以及 vCard 3.1 和 4.0 格式 (UTF-8 編碼)。"
@@ -2931,13 +2928,13 @@
         "輸入從 ${ destinationText } 接收的驗證碼。"
       ],
       "Existent and added participants will be notified.": [
-        "現有及已新增的參與者將獲通知。"
+        "現有及已加入的參與者將獲通知。"
       ],
       "Existent and removed participants will be notified.": [
         "現有及已移除的參與者將獲通知。"
       ],
       "Existent, added and removed participants will be notified.": [
-        "現有、已新增及已移除的參與者將獲通知。"
+        "現有、已加入及已移除的參與者將獲通知。"
       ],
       "Free up some space or add more storage space.": [
         "請清空部分空間或增加更多儲存空間。"
@@ -2955,7 +2952,7 @@
         "此處"
       ],
       "If you are having trouble creating your account, please request an invitation and we will respond within one business day.": [
-        "如果你無法建立帳戶，請聯絡我們。我們將會於一個工作天內處理你的申請。"
+        "如果你無法創建帳號，請聯絡我們。我們將會於一個工作天內處理你的申請。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如果您相信這是錯的，請聯絡我們 ${ contactLink }。"
@@ -3024,16 +3021,16 @@
         "每月的 ${ onDayString }"
       ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
-        "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾建立。"
+        "請命名您的新資料夾，並選取放置的上層資料夾。若您不選取上層資料夾，將以頂層資料夾創建。"
       ],
       "New": [
-        "新增"
+        "加入"
       ],
       "No contacts added yet": [
-        "未新增任何聯絡人"
+        "未加入任何聯絡人"
       ],
       "No email address": [
-        "沒有電子郵件地址"
+        "沒有電郵位址"
       ],
       "No group found": [
         "未找到群組"
@@ -3045,7 +3042,7 @@
         "參與者無一能知悉您的變更："
       ],
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
-        "所有上傳的金鑰都無法用於加密。加密將會自動停用。"
+        "所有上載的金鑰都無法用於加密。加密將會自動停用。"
       ],
       "Not a valid URL": [
         "不是有效的 URL"
@@ -3065,14 +3062,14 @@
       "Other options": [
         "其他選項"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "「PGP/內嵌」僅與「純文字」格式相容。請注意：${ MAIL_APP_NAME } 一律簽署加密的郵件。"
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "「PGP/MIME」自動使用目前撰寫器模式寄送郵件。請注意：${ MAIL_APP_NAME } 一律簽署加密的郵件。"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
-        "請注意：指派到此群組中的電子郵件地址不會被刪除。"
+        "請注意：指派到此群組中的電郵位址不會被刪除。"
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "請注意：此過程或需時，視乎您的通訊錄大小而定。"
@@ -3111,13 +3108,13 @@
         "已移除的參與者將獲通知。"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
-        "當寄送電子郵件到此電子郵件地址時，預設使用選取的電子郵件格式。"
+        "當寄送電郵到此電郵位址時，預設使用選取的電郵格式。"
       ],
       "Select what you want to move from Google.": [
         "Select what you want to import from Google."
       ],
       "Select which calendars to import. A new calendar will be created for each imported calendar up to the 20 calendars limit.": [
-        "請選取要匯入的行事曆。將為每個匯入的行事曆建立一個新的行事曆，上限為 20 個行事曆。"
+        "請選取要匯入的行事曆。將為每個匯入的行事曆創建一個新的行事曆，上限為 20 個行事曆。"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試一次"
@@ -3126,7 +3123,7 @@
         "工作階段已逾時"
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
-        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ${ BRAND_NAME } 使用者寄送端對端加密的電子郵件。"
+        "設定 PGP 後，您將能夠向使用與 PGP 相容服務的非 ${ BRAND_NAME } 使用者寄送端對端加密的電郵。"
       ],
       "Some of your answers to occurrences previously updated by the organizer will be lost.": [
         "您對召集人先前更新的事件所作的某些回答將會遺失。"
@@ -3135,7 +3132,7 @@
         "儲存空間由 ${ MAIL_APP_NAME }、${ CALENDAR_APP_NAME } 與 ${ DRIVE_APP_NAME } 共享。"
       ],
       "Support for 1 custom email domain": [
-        "支援 1 個自訂電子郵件網域"
+        "支援 1 個自訂電郵網域"
       ],
       "support team": [
         "支援團隊"
@@ -3147,7 +3144,7 @@
         "下列參與者無法知悉您的變更："
       ],
       "The organizer cannot be notified that you decline the invitation:": [
-        "召集人無法知悉您拒絕了此邀請："
+        "召集人無法知悉您婉拒了此邀請："
       ],
       "The organizer cannot be notified that you want to change your answer:": [
         "召集人無法知悉您欲更改您的回答："
@@ -3159,22 +3156,22 @@
         "召集人已更新此一系列事件中的一些事件。可惜，此類型的週期性事件暫時未支援在行事曆變更。"
       ],
       "The organizer of this event will be notified that you decline the invitation. Would you like to delete this event?": [
-        "此事件的召集人將會收到通知，得悉您拒絕邀請。您要刪除此事件嗎？"
+        "此事件的召集人將會收到通知，得悉您婉拒邀請。您要刪除此事件嗎？"
       ],
       "The organizer of this event will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
+        "此事件的召集人將不會收到您婉拒了邀請的通知，因為您獲邀的電郵位址無法傳送電郵。您仍然要刪除此事件嗎？"
       ],
       "The organizer of this series of events will be notified that you decline the invitation. Would you like to delete all the events in this series?": [
-        "此一系列事件的召集人將會收到通知，得悉您拒絕邀請。您要刪除此一系列的全部事件嗎？"
+        "此一系列事件的召集人將會收到通知，得悉您婉拒邀請。您要刪除此一系列的全部事件嗎？"
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
-        "此一系列事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此一系列的全部事件嗎？"
+        "此一系列事件的召集人將不會收到您婉拒了邀請的通知，因為您獲邀的電郵位址無法傳送電郵。您仍然要刪除此一系列的全部事件嗎？"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "因為可能違反政策，因此這個已被暫時停用。"
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "此電子郵件地址已停用。若要寄送到此電子郵件地址，請其擁有者首先啟用此電子郵件地址。"
+        "此電郵位址已停用。若要寄送到此電郵位址，請其擁有者首先啟用此電郵位址。"
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "此事件已由召集人更新。您要在此一系列事件中僅更改此一回的回答嗎？"
@@ -3183,10 +3180,10 @@
         "此事件已由召集人更新。您要刪除此事件嗎？"
       ],
       "This event has been updated. The organizer will be notified that you decline the invitation. Would you like to delete this event?": [
-        "此事件已更新。召集人將收到通知，得悉您拒絕邀請。您要刪除此事件嗎？"
+        "此事件已更新。召集人將收到通知，得悉您婉拒邀請。您要刪除此事件嗎？"
       ],
       "This event has been updated. The organizer will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete this event anyway?": [
-        "此事件已更新。此事件的召集人將不會收到您拒絕了邀請的通知，因為您獲邀的電子郵件地址無法傳送電子郵件。您仍然要刪除此事件嗎？"
+        "此事件已更新。此事件的召集人將不會收到您婉拒了邀請的通知，因為您獲邀的電郵位址無法傳送電郵。您仍然要刪除此事件嗎？"
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "此連結指向一個可能嘗試竊取您資訊（如密碼與信用卡資訊等）的網站。"
@@ -3204,10 +3201,10 @@
         "若要重新簽署您的聯絡人，我們需要依照您的帳號中可用的加密金鑰清單逐一檢查每一聯絡人。若找不到匹配時，您的聯絡人將使用主要加密金鑰重新簽署。"
       ],
       "To recover your data, you need to re-activate the contact encryption key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
-        "若要恢復您的資料，您需要重新啟用在資料建立時所使用的聯絡人加密金鑰。您必須記得該金鑰產生時所使用的密碼。"
+        "若要恢復您的資料，您需要重新啟用在資料創建時所使用的聯絡人加密金鑰。您必須記得該金鑰產生時所使用的密碼。"
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
-        "如要使用地址驗證，您必須信任一或多個可用的公開金鑰，包括您想用於寄送的公開金鑰。這樣做是為了防止加密金鑰遭到偽造。"
+        "如要使用位址驗證，您必須信任一或多個可用的公開金鑰，包括您想用於寄送的公開金鑰。這樣做是為了防止加密金鑰遭到偽造。"
       ],
       "Unlimited folders, labels, and filters": [
         "無限的資料夾、標籤與過濾條件"
@@ -3282,40 +3279,40 @@
         "您可在${ importProgressLink }查看進度。"
       ],
       "You can only modify personal event properties as you can't send emails from the organizer address.": [
-        "您僅可以修改個人事件屬性，因為您無法以召集人電子郵件地址傳送電子郵件。"
+        "您僅可以修改個人事件屬性，因為您無法以召集人電郵位址傳送電郵。"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
-        "您可以開啟通知，以便在新的電子郵件訊息抵達此資料夾時收到提示。"
+        "您可以開啟通知，以便在新的電郵訊息抵達此資料夾時收到提示。"
       ],
       "You have reactivated your keys and events linked to the following calendars can now be decrypted.": [
         "您已重新啟用您的金鑰，因此連結到下列行事曆中的事件現已能解密。"
       ],
       "You have reset your password and events linked to the following calendars couldn't be decrypted.\nAny shared calendar links you created previously will no longer work.\nAny active subscribed calendars will synchronize again after a few minutes.": [
-        "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前建立的已分享行事曆連結將不再運作。\n任何使用中已訂閱的行事曆將於數分鐘後再次同步。"
+        "您已重設您的密碼，因此與下列行事曆連結的事件無法解密。\n任何您先前創建的已分享行事曆連結將不再運作。\n任何使用中已訂購授權的行事曆將於數分鐘後再次同步。"
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您的儲存空間容量已達到 ${ spaceDisplayed }%。${ freeUpMessage }${ upgradeLink }"
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
-        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電子郵件。${ freeUpMessage }${ upgradeLink }"
+        "您的儲存空間容量已達到 100%。您不能傳送或接收新的電郵。${ freeUpMessage }${ upgradeLink }"
       ],
       "You will lose all unsaved changes.": [
         "您所有未儲存的變更將會消失。"
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "您即將更新此一系列中全部事件。已新增及已移除的參與者將獲通知。"
+        "您即將更新此一系列中全部事件。已加入及已移除的參與者將獲通知。"
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
-        "您即將更新此一系列中全部事件。邀請將發送給各事件參與者。"
+        "您即將更新此一系列中全部事件。邀請將傳送給各事件參與者。 "
       ],
       "You will update all the events in this series. Existent and added participants will be notified.": [
-        "您即將更新此一系列中全部事件。現有及已新增的參與者將獲通知。"
+        "您即將更新此一系列中全部事件。現有及已加入的參與者將獲通知。"
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
         "您即將更新此一系列中全部事件。現有及已移除的參與者將獲通知。"
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "您即將更新此一系列中全部事件。現有、已新增及已移除的參與者將獲通知。"
+        "您即將更新此一系列中全部事件。現有、已加入及已移除的參與者將獲通知。"
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
         "您即將更新此一系列中全部事件。已移除的參與者將獲通知。"
@@ -3324,19 +3321,19 @@
         "您的帳號有至少一張逾期帳單。您的存取已受限制。${ payInvoiceLink }"
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
-        "你的帳戶有最少一張有過期的發票。你將會無法存取部份功能。${ payInvoiceLink }"
+        "你的帳號有最少一張有過期的發票。你將會無法存取部份功能。${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "您的電子郵件地址已停用。取消函無法發送給各事件參與者。您仍然要刪除此一系列中全部事件嗎？"
+        "您的電郵位址已停用。取消函無法傳送給各事件參與者。您仍然要刪除此一系列中全部事件嗎？"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "您的電子郵件地址已停用。取消函無法發送給各事件參與者。您仍然要刪除此事件嗎？"
+        "您的電郵位址已停用。取消函無法傳送給各事件參與者。您仍然要刪除此事件嗎？"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your Proton account.": [
         "已準備好將您的資料從 ${ importedEmailAddressStrong } 匯入到您的 Proton 帳號。"
       ],
       "Your email will only be used for this one-time verification.": [
-        "您的電子郵件只會用於此一次驗證。"
+        "您的電郵只會用於此一次驗證。"
       ],
       "Your events will be encrypted and then saved.": [
         "您的事件將經加密後儲存。"
@@ -3345,7 +3342,7 @@
         "您的電話號碼只會用於此一次驗證。"
       ],
       "Your Proton account is currently on hold. To continue using your account, please pay any overdue invoices.": [
-        "你的Proton帳戶已被暫停。請先支付任何逾期的款項，然後繼續使用你的帳戶。"
+        "你的Proton帳號已被暫停。請先支付任何逾期的款項，然後繼續使用你的帳號。"
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "您的系統時區似乎已更改為 ${ timezone }。您要更新您的時區喜好設定嗎？"
@@ -3389,13 +3386,13 @@
         "(暫時無法使用。請稍後再試。)"
       ],
       "Add email address": [
-        "新增電子郵件地址"
+        "加入電郵位址"
       ],
       "Add image URL": [
-        "新增圖片 URL"
+        "加入圖像 URL"
       ],
       "Add to group": [
-        "新增至群組"
+        "加入至群組"
       ],
       "All day": [
         "整天"
@@ -3449,7 +3446,7 @@
         "日期與時間"
       ],
       "Default email address": [
-        "預設電郵地址"
+        "預設電郵位址"
       ],
       "Default event duration": [
         "預設活動持續時間"
@@ -3470,22 +3467,22 @@
         "顯示"
       ],
       "Do not ask again": [
-        "不要再詢問"
+        "下次無需再詢問"
       ],
       "Email address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email format": [
-        "電子郵件格式"
+        "電郵格式"
       ],
       "Emails": [
-        "電子郵件"
+        "電郵"
       ],
       "Enable Beta Access": [
         "啟用測試版體驗"
       ],
       "Encrypt emails": [
-        "加密電子郵件"
+        "加密電郵"
       ],
       "Ends": [
         "結束"
@@ -3497,7 +3494,7 @@
         "匯出聯絡人"
       ],
       "Extended address": [
-        "詳細地址"
+        "詳細位址"
       ],
       "Folder location": [
         "資料夾位置"
@@ -3530,7 +3527,7 @@
         "匯入間距"
       ],
       "Import to email address": [
-        "匯入到電子郵件地址"
+        "匯入到電郵位址"
       ],
       "Import to:": [
         "匯入到："
@@ -3623,10 +3620,10 @@
         "顯示密碼"
       ],
       "Sign emails": [
-        "簽署電子郵件"
+        "簽署電郵"
       ],
       "Street address": [
-        "街道地址"
+        "街道位址"
       ],
       "System information": [
         "系統資訊"
@@ -3635,16 +3632,16 @@
         "收件人：${ emailAddress }"
       ],
       "Two-factor authentication code": [
-        "兩步驟驗證碼"
+        "雙重驟驗證碼"
       ],
       "Upload picture": [
-        "上載圖片"
+        "上載圖像"
       ],
       "URL": [
         "網址"
       ],
       "Username or ${ MAIL_APP_NAME } address": [
-        "使用者名稱或 ${ MAIL_APP_NAME } 地址"
+        "使用者名稱或 ${ MAIL_APP_NAME } 位址"
       ],
       "Verification code": [
         "驗證碼"
@@ -3668,10 +3665,10 @@
     },
     "Label/folder modal": {
       "Create folder": [
-        "建立資料夾"
+        "創建資料夾"
       ],
       "Create label": [
-        "建立標籤"
+        "創建標籤"
       ],
       "Edit folder": [
         "編輯資料夾"
@@ -3682,7 +3679,7 @@
     },
     "label/folder notification": {
       "${ Label.Name } created": [
-        "${ Label.Name } 已建立"
+        "${ Label.Name } 已創建"
       ]
     },
     "Link": {
@@ -3693,7 +3690,7 @@
         "清除瀏覽器快取"
       ],
       "Go to subscription plans": [
-        "前往訂閱方案"
+        "前往訂購授權方案"
       ],
       "Learn more": [
         "了解更多"
@@ -3708,13 +3705,13 @@
         "請求一個邀請"
       ],
       "Subscribed calendars": [
-        "已訂閱的行事曆"
+        "已訂購授權的行事曆"
       ],
       "Upgrade": [
         "升級"
       ],
       "Upgrade account": [
-        "升級帳戶"
+        "升級帳號"
       ]
     },
     "Loading info": {
@@ -3722,10 +3719,10 @@
         "快完成了"
       ],
       "Amount of calendars created: ${ createdCalendars } out of ${ calendarsToBeCreated }": [
-        "已建立行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
+        "已創建行事曆：${ createdCalendars }/${ calendarsToBeCreated }"
       ],
       "Creating new calendars": [
-        "正在建立新的行事曆"
+        "正在創建新的行事曆"
       ],
       "Gathering your data": [
         "正在蒐集您的資料"
@@ -3758,7 +3755,7 @@
     },
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
-        "${ appName } 的新版本可供使用。${ reloadButton }。"
+        "${ appName } 新版本已可供使用。${ reloadButton }。"
       ]
     },
     "MIME type": {
@@ -3782,12 +3779,12 @@
         "時區已變更"
       ],
       "Unable to add more calendars": [
-        "無法新增更多行事曆"
+        "無法加入更多行事曆"
       ]
     },
     "Modal title and action": {
       "Add calendar": [
-        "新增行事曆"
+        "加入行事曆"
       ]
     },
     "Monthly recurring event, frequency": {
@@ -3933,12 +3930,12 @@
     },
     "new_plans: action": {
       "Switch or add account": [
-        "切換或是新增帳號"
+        "切換或是加入帳號"
       ]
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Proton 新樣貌隆重登場！${ br } 多種服務，單一使命。歡迎蒞臨隱私為本的網路世界。"
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -3958,7 +3955,7 @@
     },
     "Notification": {
       "Contact group created": [
-        "聯絡人群組已建立"
+        "聯絡人群組已創建"
       ],
       "Contact group updated": [
         "聯絡人群組已更新"
@@ -3966,7 +3963,7 @@
     },
     "Notification suffix": {
       "by email": [
-        "發送電子郵件"
+        "傳送電郵"
       ]
     },
     "Notification time input": {
@@ -3976,7 +3973,7 @@
     },
     "Notification type": {
       "email": [
-        "電子郵件"
+        "電郵"
       ],
       "notification": [
         "通知"
@@ -4089,7 +4086,7 @@
     },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
-        "設置您的組織、連結您的網域名稱，並建立各個帳號以確保您的組織中所有成員均得到保護。"
+        "設置您的組織、連結您的網域名稱，並創建各個帳號以確保您的組織中所有成員均得到保護。"
       ],
       "Discover all Proton services": [
         "探索所有 Proton 服務"
@@ -4109,13 +4106,13 @@
     },
     "Option": {
       "Add to existing group": [
-        "新增至現有群組"
+        "加入至現有群組"
       ],
       "All events": [
         "所有事件"
       ],
       "Create new group": [
-        "建立新群組"
+        "創建新群組"
       ],
       "Custom": [
         "自訂"
@@ -4162,7 +4159,7 @@
     },
     "Option group label": {
       "Create new calendar": [
-        "建立新的行事曆"
+        "創建新的行事曆"
       ],
       "Merge with calendar": [
         "與行事曆合併"
@@ -4183,7 +4180,7 @@
     },
     "Personal calendar limit reached modal body": {
       "Unable to create more calendars. You have reached the maximum of personal calendars within your plan.": [
-        "無法建立更多行事曆。您已達到您的方案中的個人行事曆上限。"
+        "無法創建更多行事曆。您已達到您的方案中的個人行事曆上限。"
       ]
     },
     "PGP key encryption warning": {
@@ -4193,7 +4190,7 @@
     },
     "PGP Key info": {
       "${ emailAddress } has marked this key as compromised. This key cannot be used neither for encryption nor for signature verification.": [
-        "${ emailAddress } 已將此金鑰標記為已洩漏。此金鑰無法用於加密與簽章驗證。"
+        "${ emailAddress } 已將此金鑰標記為已外洩。此金鑰無法用於加密與簽章驗證。"
       ],
       "${ emailAddress } has marked this key as obsolete. This key can only be used for signature verification.": [
         "${ emailAddress } 已將此金鑰標記為廢棄。此金鑰僅能用於簽章驗證。"
@@ -4204,7 +4201,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電子郵件地址"
+        "寄送金鑰所定義的使用者識別碼 (${ keyUserIds }) 中找不到電郵位址"
       ]
     },
     "Placeholder": {
@@ -4212,22 +4209,22 @@
         "如何聯繫您"
       ],
       "Add a calendar description": [
-        "新增一個行事曆描述"
+        "加入一個行事曆描述"
       ],
       "Add a calendar name": [
-        "新增一個行事曆名稱"
+        "加入一個行事曆名稱"
       ],
       "Add description": [
-        "新增描述"
+        "加入描述"
       ],
       "Add location": [
-        "新增位置"
+        "加入位置"
       ],
       "Add participants": [
-        "新增參與者"
+        "加入參與者"
       ],
       "Add title": [
-        "新增標題"
+        "加入標題"
       ],
       "E.g., ": [
         "範例："
@@ -4236,7 +4233,7 @@
         "篩選群組"
       ],
       "Image URL": [
-        "圖片 URL"
+        "圖像 URL"
       ],
       "Mailbox password": [
         "郵箱密碼"
@@ -4254,13 +4251,13 @@
         "搜尋群組名稱"
       ],
       "Search for name or email": [
-        "搜尋姓名或電子郵件"
+        "搜尋姓名或電郵"
       ],
       "Select": [
         "選取"
       ],
       "Start typing an email address": [
-        "在此輸入一個電子郵件地址"
+        "在此輸入一個電郵位址"
       ]
     },
     "Placeholder for contact group name": {
@@ -4275,7 +4272,7 @@
     },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
-        "${ countContacts } 個聯絡人之中，有 ${ contactsExported.length } 個已成功匯出。"
+        "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
       ],
       "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
         "${ totalBeDeleted } 中的 ${ model.deleted.length } 個聯絡人已成功刪除。"
@@ -4295,10 +4292,10 @@
     },
     "Property type": {
       "Address": [
-        "地址"
+        "位址"
       ],
       "Email": [
-        "電子郵件"
+        "電郵"
       ],
       "Fax": [
         "傳真"
@@ -4351,6 +4348,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } 已完成測試，為您的檔案提供與電郵相同的安全性。"
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "免費取得最多18個月的 ${ planName }"
       ],
@@ -4360,8 +4360,11 @@
       "No more missed appointments": [
         "無其他遺漏的預定"
       ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "試試 ${ DRIVE_APP_NAME }"
+      ],
       "With email notifications, you decide which events to be notified about and when.": [
-        "藉由電子郵件通知，您可以決定何時提醒任何事件。"
+        "藉由電郵通知，您可以決定何時提醒任何事件。"
       ]
     },
     "Storage": {
@@ -4380,7 +4383,7 @@
         "行事曆 URL"
       ],
       "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Subscribed calendars.\n${ kbLink }": [
-        "請輸入 URL 以訂閱外部或公開的行事曆及其後的更新。該行事曆的唯讀版本將會新增到您「已訂閱的行事曆」中。${ kbLink }"
+        "請輸入 URL 以訂購授權外部或公開的行事曆及其後的更新。該行事曆的唯讀版本將會加入到您「已訂購授權的行事曆」中。${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {
@@ -4390,7 +4393,7 @@
     },
     "Subscribed calendar extension warning": {
       "By using this link, Google will make the calendar you are subscribing to public": [
-        "使用此連結的話，Google 將會把您正在訂閱的行事曆設為公開"
+        "使用此連結的話，Google 將會把您訂購授權的行事曆設為公開"
       ],
       "This link might be wrong": [
         "此連結或有誤"
@@ -4398,12 +4401,12 @@
     },
     "Subscribed calendar feature unavailable error": {
       "Subscribing to a calendar is unavailable at the moment": [
-        "訂閱行事曆目前無法使用"
+        "訂購授權行事曆目前無法使用"
       ]
     },
     "Subscribed calendar limit reached modal body": {
       "Unable to add more calendars. You have reached the maximum of subscribed calendars within your plan.": [
-        "無法新增更多行事曆。您已達到您的方案中的已訂閱行事曆上限。"
+        "無法加入更多行事曆。您已達到您的方案中的已訂購授權行事曆上限。"
       ]
     },
     "Subscribed calendar URL length warning": {
@@ -4413,10 +4416,10 @@
     },
     "Success": {
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "取消函將發送給此一系列中全部事件的已移除參與者。"
+        "取消函將傳送給此一系列中全部事件的已移除參與者。"
       ],
       "Address copied to clipboard": [
-        "地址已複製到剪貼簿"
+        "位址已複製到剪貼簿"
       ],
       "All events deleted": [
         "所有活動已刪除"
@@ -4425,7 +4428,7 @@
         "所有活動已更新"
       ],
       "An invitation will be sent to added participants for all the events in this series.": [
-        "邀請將發送給此一系列中全部事件的已新增參與者。"
+        "邀請將傳送給此一系列中全部事件的已加入參與者。"
       ],
       "Answer sent and all events deleted": [
         "回答已送出，所有事件已刪除"
@@ -4437,10 +4440,10 @@
         "錯誤回報"
       ],
       "Calendar added. It might take a few minutes to sync.": [
-        "行事曆已新增。同步或需時幾分鐘。"
+        "行事曆已加入。同步或需時幾分鐘。"
       ],
       "Calendar created": [
-        "行事曆已建立"
+        "行事曆已創建"
       ],
       "Calendar updated": [
         "行事曆已更新"
@@ -4458,7 +4461,7 @@
         "取消已送出，並且已從全部事件中移除參與者"
       ],
       "Code sent to ${ methodTo }": [
-        "已向 ${ methodTo } 發送驗證碼"
+        "已向 ${ methodTo } 傳送驗證碼"
       ],
       "Contact deleted": [
         "聯絡人已刪除"
@@ -4473,10 +4476,10 @@
         "聯絡人已刪除"
       ],
       "Email address copied to clipboard": [
-        "電子郵件地址已複製到剪貼簿"
+        "電郵位址已複製到剪貼簿"
       ],
       "Event created": [
-        "事件已建立"
+        "事件已創建"
       ],
       "Event deleted": [
         "事件已刪除"
@@ -4485,10 +4488,10 @@
         "事件已更新"
       ],
       "Events created": [
-        "已建立活動"
+        "已創建活動"
       ],
       "Fingerprint copied to clipboard": [
-        "指紋已複製到剪貼簿"
+        "指紋檔已複製到剪貼簿"
       ],
       "Future events deleted": [
         "未來的活動已刪除"
@@ -4500,16 +4503,16 @@
         "邀請已送出，並且已更新全部事件"
       ],
       "Invitation sent and event created": [
-        "邀請已送出，並且已建立事件"
+        "邀請已送出，並且已創建事件"
       ],
       "Invitation sent and events created": [
-        "邀請已送出，並且已建立各個事件"
+        "邀請已送出，並且已創建各個事件"
       ],
       "Invitation sent and participants added": [
-        "邀請已送出，並且已新增參與者"
+        "邀請已送出，並且已加入參與者"
       ],
       "Invitation sent and participants added to all events": [
-        "邀請已送出，並且已新增參與者到全部事件"
+        "邀請已送出，並且已加入參與者到全部事件"
       ],
       "Participants notified and all events updated": [
         "參與者已通知，並且已更新全部事件"
@@ -4557,16 +4560,16 @@
         "動作"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Created": [
-        "建立日期"
+        "創建日期"
       ],
       "Expires": [
         "到期日"
       ],
       "Fingerprint": [
-        "指紋"
+        "指紋檔"
       ],
       "Name": [
         "名稱"
@@ -4583,7 +4586,7 @@
         "動作"
       ],
       "Address": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "CSV field": [
         "CSV 欄位"
@@ -4608,7 +4611,7 @@
     },
     "Time period": {
       "account creation date": [
-        "帳號一開始建立時"
+        "帳號一開始創建時"
       ],
       "the last 12 months": [
         "過去 12 個月"
@@ -4641,31 +4644,31 @@
         "帳號被暫停"
       ],
       "Add another notification to remind you of this event": [
-        "新增另一個通知以提醒您此事件"
+        "加入另一個通知以提醒您此事件"
       ],
       "Add contact group name": [
-        "新增聯絡人群組名稱"
+        "加入聯絡人群組名稱"
       ],
       "Add event location": [
-        "新增事件地點"
+        "加入事件地點"
       ],
       "Add event title": [
-        "新增事件標題"
+        "加入事件標題"
       ],
       "Add more information related to this event": [
-        "新增關於此事件的更多資訊"
+        "加入關於此事件的更多資訊"
       ],
       "Add participants": [
-        "新增參與者"
+        "加入參與者"
       ],
       "Add to ${ groupCount } group": [
-        "新增至 ${ groupCount } 個群組"
+        "加入至 ${ groupCount } 個群組"
       ],
       "Add to ${ groupName }": [
-        "新增至 ${ groupName }"
+        "加入至 ${ groupName }"
       ],
       "Addresses": [
-        "地址"
+        "位址"
       ],
       "Back": [
         "返回"
@@ -4707,13 +4710,13 @@
         "要繼續部分匯入嗎？"
       ],
       "Create calendar": [
-        "建立行事曆"
+        "創建行事曆"
       ],
       "Create contact": [
-        "建立聯絡人"
+        "創建聯絡人"
       ],
       "Create new group": [
-        "建立新群組"
+        "創建新群組"
       ],
       "Currency": [
         "貨幣"
@@ -4758,22 +4761,22 @@
         "編輯聯絡人群組"
       ],
       "Edit image": [
-        "編輯圖片"
+        "編輯圖像"
       ],
       "Email addresses": [
-        "電子郵件地址"
+        "電郵位址"
       ],
       "Email settings": [
-        "電子郵件設定"
+        "電郵設定"
       ],
       "Email settings (${ emailAddress })": [
-        "電子郵件設定 (${ emailAddress })"
+        "電郵設定 (${ emailAddress })"
       ],
       "Enter your password": [
         "請輸入您的密碼"
       ],
       "Enter your username or ${ MAIL_APP_NAME } email address": [
-        "輸入您的使用者名稱或 ${ MAIL_APP_NAME } 電子郵件地址"
+        "輸入您的使用者名稱或 ${ MAIL_APP_NAME } 電郵位址"
       ],
       "Error": [
         "錯誤"
@@ -4810,9 +4813,6 @@
       ],
       "Import failed": [
         "匯入失敗"
-      ],
-      "Import groups": [
-        "匯入群組"
       ],
       "Invalid verification code": [
         "無效的驗證碼"
@@ -4869,7 +4869,7 @@
         "回報問題"
       ],
       "Request new code": [
-        "要求新代碼"
+        "申請新代碼"
       ],
       "Reset calendar keys": [
         "重設行事曆金鑰"
@@ -4911,7 +4911,7 @@
         "請選擇事件的最後一日"
       ],
       "Select the time to send this notification": [
-        "請選擇此通知發送的時間"
+        "請選擇此通知傳送的時間"
       ],
       "Select the time zone for the event end time": [
         "請選擇此事件的結束時間以何時區作準"
@@ -4920,16 +4920,16 @@
         "請選擇此事件的開始時間以何時區作準"
       ],
       "Select the way to send this notification": [
-        "請選擇此通知發送的方式"
+        "請選擇此通知傳送的方式"
       ],
       "Select when this event will stop happening": [
         "請選擇此事件發生到何時為止"
       ],
       "Select when you want this notification to be sent": [
-        "請選擇您想此通知何時發送"
+        "請選擇您想此通知何時傳送"
       ],
       "Select which calendar to add this event to": [
-        "請選擇要新增此事件到哪一個行事曆"
+        "請選擇要加入此事件到哪一個行事曆"
       ],
       "Send feedback": [
         "傳送意見回饋"
@@ -4974,10 +4974,10 @@
         "最近更新"
       ],
       "You have invited participants with equivalent emails": [
-        "您已以同等電子郵件邀請參與者"
+        "您已以同等電郵邀請參與者"
       ],
       "Your free trial ends soon, on ${ formattedEndDate }": [
-        "您的免費使用將要結束，將於 ${ formattedEndDate } 結束"
+        "您的免費試用將要結束，將於 ${ formattedEndDate } 結束"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -4995,13 +4995,13 @@
         "「自動」表示寄送給此使用者時將使用撰寫器中的格式。「純文字」表示將一律轉換成純文字才寄送郵件。"
       ],
       "Digitally signing emails helps authenticating that messages are sent by you": [
-        "數碼簽署電子郵件有助驗證郵件真確由您寄送"
+        "數碼簽署電郵有助驗證郵件真確由您寄送"
       ],
       "Each imported email will have this label": [
-        "每一封匯入的電子郵件都將加上此標籤"
+        "每一封匯入的電郵都將加上此標籤"
       ],
       "Email encryption forces email signature to help authenticate your sent messages": [
-        "電子郵件加密強制電子郵件簽章，以助驗證您已寄送郵件的真確性"
+        "電郵加密強制電郵簽章，以助驗證您已寄送郵件的真確性"
       ],
       "Encrypted data": [
         "已加密資料"
@@ -5019,7 +5019,7 @@
         "匯入將自近期的郵件開始。"
       ],
       "Upload a public key to enable sending end-to-end encrypted emails to this email": [
-        "上載公開金鑰以啟用寄送端對端加密電子郵件到此電子郵件地址"
+        "上載公開金鑰以啟用寄送端對端加密電郵到此電郵位址"
       ],
       "You do not have any contacts to export": [
         "您未有任何聯絡人可以匯出"

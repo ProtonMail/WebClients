@@ -2226,9 +2226,6 @@
         "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
         "Chcete-li pokračovat, opravte zvýrazněné konflikty."
       ],
-      "Preferences could not be saved": [
-        "Preference nelze uložit"
-      ],
       "Primary address key is not decrypted": [
         "Klíč hlavní adresy není dešifrován"
       ],
@@ -3215,11 +3212,11 @@
       "Other options": [
         "Další volby"
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline je kompatibilní pouze s formátem prostého textu. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME automaticky odesílá zprávy pomocí aktuálně zvoleného režimu editoru. Vezměte na vědomí, že ${ MAIL_APP_NAME } vždy podepisuje šifrované zprávy"
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Please note that addresses assigned to this group will NOT be deleted.": [
         "Vezměte na vědomí, že adresy přiřazené k této skupině NEBUDOU smazány."
@@ -3928,7 +3925,7 @@
         "Automaticky"
       ],
       "Plain text": [
-        "Obyčejný text"
+        "Prostý text"
       ]
     },
     "Modal action": {
@@ -4109,7 +4106,7 @@
     },
     "new_plans: info": {
       "Introducing Proton’s refreshed look.${ br } Many services, one mission. Welcome to an internet where privacy is the default.": [
-        "Představujeme osvěžený vzhled Protonu.${ br } Mnoho služeb, jedno poslání. Vítejte na internetu, kde je soukromí standardem."
+        "Introducing Proton’s refreshed look.${ br }Many services, one mission. Welcome to an internet where privacy is the default."
       ]
     },
     "new_plans: label": {
@@ -4600,6 +4597,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } již není beta verzí! Zabezpečte své soubory stejně dobře, jako své e-maily."
+      ],
       "Get up to 18 months of ${ planName } for free": [
         "Získejte ${ planName } až na 18 měsíců zdarma"
       ],
@@ -4608,6 +4608,9 @@
       ],
       "No more missed appointments": [
         "Žádné další zmeškané schůzky"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Vyzkoušejte ${ DRIVE_APP_NAME }"
       ],
       "With email notifications, you decide which events to be notified about and when.": [
         "U e-mailových oznámení rozhodujete o tom, na které události a kdy chcete být upozorněni."
@@ -5086,9 +5089,6 @@
       ],
       "Import failed": [
         "Import selhal"
-      ],
-      "Import groups": [
-        "Importovat skupiny"
       ],
       "Invalid verification code": [
         "Neplatný ověřovací kód"

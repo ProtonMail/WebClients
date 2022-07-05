@@ -215,9 +215,6 @@
       "Customize": [
         "Personnaliser"
       ],
-      "Decrypt": [
-        "Déchiffrer"
-      ],
       "Default email application": [
         "Application de messagerie par défaut"
       ],
@@ -336,6 +333,9 @@
       ],
       "External encryption": [
         "Chiffrement externe"
+      ],
+      "Fewer search options": [
+        "Moins d'options de recherche"
       ],
       "Filter on...": [
         "Filtrer sur..."
@@ -461,9 +461,6 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Less search options": [
-        "Moins d'options de recherche"
-      ],
       "Load": [
         "Charger"
       ],
@@ -541,6 +538,21 @@
       ],
       "More search options": [
         "Plus d'options de recherche"
+      ],
+      "Move": [
+        "Déplacer"
+      ],
+      "Move all conversations from this folder": [
+        "Déplacer toutes les conversations de ce dossier"
+      ],
+      "Move all conversations from this label": [
+        "Déplacer toutes les conversations de ce label"
+      ],
+      "Move all messages from this folder": [
+        "Déplacer tous les messages de ce dossier"
+      ],
+      "Move all messages from this label": [
+        "Déplacer tous les messages de ce label"
       ],
       "move emails to": [
         "déplacer les e-mails vers"
@@ -665,6 +677,9 @@
       "Re-sign": [
         "Signer à nouveau"
       ],
+      "Read message": [
+        "Lire le message"
+      ],
       "Read receipt sent": [
         "Confirmation de lecture envoyée"
       ],
@@ -705,7 +720,7 @@
         "Répondre en toute sécurité"
       ],
       "Report a problem": [
-        "Signaler un problème"
+        "Signaler un bug"
       ],
       "Report phishing": [
         "Signaler un hameçonnage"
@@ -803,6 +818,9 @@
       "Show details": [
         "Afficher les détails"
       ],
+      "Show fewer search options": [
+        "Afficher moins d'options de recherche"
+      ],
       "Show folders": [
         "Afficher les dossiers"
       ],
@@ -811,9 +829,6 @@
       ],
       "Show less": [
         "Afficher moins"
-      ],
-      "Show less search options": [
-        "Afficher moins d'options de recherche"
       ],
       "Show messages": [
         "Afficher les messages"
@@ -851,9 +866,6 @@
       "Submit": [
         "Envoyer"
       ],
-      "Switch to rich text": [
-        ""
-      ],
       "Theme": [
         "Thème"
       ],
@@ -862,6 +874,9 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "Trash all": [
+        "Tout supprimer"
       ],
       "Trust": [
         "Approuver"
@@ -1081,13 +1096,13 @@
         "Fichier ICS vide"
       ],
       "Invalid event": [
-        "Événement invalide"
+        "Événement non valide"
       ],
       "Invalid ICS file": [
         "Fichier ICS non valide"
       ],
       "Invalid method": [
-        "Méthode invalide"
+        "Méthode non valide"
       ],
       "Unsupported calendar component": [
         "Composant de calendrier non pris en charge"
@@ -1552,7 +1567,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Le calendrier n'a pas pu être déchiffré"
+        "Le calendrier n'a pas pu être déchiffré."
       ],
       "Calendar is syncing": [
         "Synchronisation du calendrier"
@@ -1561,16 +1576,16 @@
         "Le calendrier est trop gros"
       ],
       "Calendar link is not accessible": [
-        "Le lien du calendrier n’est pas accessible"
+        "Le lien du calendrier n’est pas accessible."
       ],
       "Calendar link is temporarily inaccessible": [
-        "Le lien du calendrier est temporairement inaccessible"
+        "Le lien du calendrier est temporairement inaccessible."
       ],
       "Failed to sync calendar": [
         "Échec de la synchronisation du calendrier"
       ],
       "More than 12 hours passed since last update": [
-        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour"
+        "Plus de 12 heures se sont écoulées depuis la dernière mise à jour."
       ],
       "Unsupported calendar format": [
         "Format de calendrier non pris en charge"
@@ -1636,7 +1651,7 @@
         "bleu nuit sombre"
       ],
       "dim gray": [
-        ""
+        "gris foncé"
       ],
       "enzian": [
         "gentiane"
@@ -1675,7 +1690,7 @@
         "maïs"
       ],
       "mughal green": [
-        ""
+        "vert foncé"
       ],
       "ocean": [
         "océan"
@@ -2894,7 +2909,7 @@
     },
     "Email reminder error": {
       "Event is no longer in your calendar": [
-        "L'événement n'est plus dans votre calendrier"
+        "L'événement n'est plus dans votre calendrier."
       ]
     },
     "Email reminder out of date alert": {
@@ -2935,16 +2950,16 @@
         "${ error.message } pour <${ email }>. Vous pouvez ajouter une autre clé ou désactiver le chiffrement pour ce contact afin de résoudre le problème."
       ],
       "A group with this name already exists": [
-        "Un groupe portant ce nom existe déjà"
+        "Un groupe portant ce nom existe déjà."
       ],
       "A problem occurred, please try again": [
-        "Une erreur est survenue, veuillez réessayer"
+        "Une erreur s'est produite, veuillez réessayer."
       ],
       "Address primary private key not found": [
-        "La clé privée principale de l'adresse n'a pas été trouvée"
+        "La clé privée principale de l'adresse n'a pas été trouvée."
       ],
       "Attachments are limited to 25 MB": [
-        "Les pièces jointes sont limitées à 25 Mo"
+        "Les pièces jointes sont limitées à 25 Mo."
       ],
       "Authentication canceled.": [
         "Authentification annulée."
@@ -2969,16 +2984,16 @@
         "Condition incomplète"
       ],
       "Contact could not be saved": [
-        "Le contact n'a pas pu être enregistré"
+        "Le contact n'a pas pu être enregistré."
       ],
       "Contact signature could not be verified": [
-        "La signature du contact n'a pas pu être vérifiée"
+        "La signature du contact n'a pas pu être vérifiée."
       ],
       "Contact signature not verified": [
         "Signature du contact non vérifiée"
       ],
       "Contact your organization’s administrator to resolve this": [
-        "Contactez l’administrateur de votre organisation pour résoudre ce problème"
+        "Contactez l’administrateur de votre organisation pour résoudre ce problème."
       ],
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La recherche de contenu ne peut pas être activée dans ce navigateur. Veuillez quitter la navigation privée ou essayer avec un autre navigateur."
@@ -2995,16 +3010,16 @@
         "Désélectionnez au moins ${ calendarToFixCount } calendriers ou"
       ],
       "Draft could not be saved. Try again.": [
-        "Le brouillon n'a pas pu être enregistré. Veuillez réessayer."
+        "Le brouillon n'a pas pu être enregistré, veuillez réessayer."
       ],
       "Email address disabled": [
         "Adresse électronique désactivée"
       ],
       "Email address invalid": [
-        "Adresse électronique invalide"
+        "Adresse électronique non valide"
       ],
       "Email is not valid": [
-        "L'adresse électronique n'est pas valide"
+        "L'adresse électronique n'est pas valide."
       ],
       "Empty condition": [
         "Condition vide"
@@ -3028,34 +3043,34 @@
         "Erreur lors du téléchargement des pièces jointes. Le message n'est pas envoyé."
       ],
       "Failed to encrypt attachment. Please try again.": [
-        "Échec du chiffrement de la pièce jointe. Veuillez essayer à nouveau."
+        "Échec du chiffrement de la pièce jointe, veuillez réessayer."
       ],
       "Filter with this name already exists": [
-        "Un filtre portant ce nom existe déjà"
+        "Un filtre portant ce nom existe déjà."
       ],
       "Folder name cannot be empty.": [
-        "Le nom de dossier ne peut pas être vide."
+        "Le nom du dossier ne peut pas être vide."
       ],
       "Image upload failed": [
         "Échec de l'importation de l'image"
       ],
       "Incorrect login credentials. Please try again.": [
-        "Identifiants de connexion incorrects. Veuillez réessayer."
+        "Identifiants de connexion incorrects, veuillez réessayer."
       ],
       "Incorrect mailbox password. Please try again.": [
-        "Mot de passe de la messagerie incorrect. Veuillez réessayer."
+        "Mot de passe de la messagerie incorrect, veuillez réessayer."
       ],
       "Invalid expiration time": [
-        "Délai d'expiration invalide"
+        "Délai d'expiration non valide"
       ],
       "Invalid name": [
-        "Nom invalide"
+        "Nom incorrect"
       ],
       "Invalid public key file": [
         "Fichier de clé publique non valide"
       ],
       "Invalid verification code": [
-        "Code de vérification invalide"
+        "Code de vérification non valide"
       ],
       "Label name cannot be empty.": [
         "Le nom du label ne peut pas être vide."
@@ -3064,11 +3079,11 @@
         "Nombre maximum de pièces jointes (${ attachmentsCountLimit }) dépassé"
       ],
       "Merge at least ${ calendarToFixCount } calendar with an existing Proton calendar": [
-        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant",
-        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants"
+        "Fusionnez au moins ${ calendarToFixCount } calendrier avec un calendrier Proton existant.",
+        "Fusionnez au moins ${ calendarToFixCount } calendriers avec des calendriers Proton existants."
       ],
       "Message needs to be sent first": [
-        "Le message doit d'abord être envoyé"
+        "Le message doit d'abord être envoyé."
       ],
       "Message processing error.": [
         "Erreur de traitement du message."
@@ -3095,7 +3110,7 @@
         "Aucune adresse valide trouvée"
       ],
       "No WKD key retrieved for user is valid for sending": [
-        "Aucune clé WKD récupérée pour l'utilisateur n'est valide pour l'envoi"
+        "Aucune clé WKD récupérée pour l'utilisateur n'est valide pour l'envoi."
       ],
       "Not a valid number": [
         "Numéro non valide"
@@ -3109,38 +3124,35 @@
         "Certains groupes n'ont pas de contacts : ${ noContactGroupList } "
       ],
       "Passwords do not match": [
-        "Les mots de passe ne correspondent pas"
+        "Les mots de passe ne correspondent pas."
       ],
       "Please activate your content search again": [
-        "Veuillez réactiver la recherche de contenu"
+        "Veuillez réactiver la recherche de contenu."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Veuillez corriger le conflit en surbrillance pour continuer.",
         "Veuillez corriger les conflits en surbrillance pour continuer."
       ],
       "Please repeat the password": [
-        "Veuillez répéter le mot de passe"
+        "Veuillez répéter le mot de passe."
       ],
       "Please set a password": [
-        "Veuillez créer un mot de passe"
-      ],
-      "Preferences could not be saved": [
-        "Les préférences n'ont pas pu être enregistrées"
+        "Veuillez créer un mot de passe."
       ],
       "Primary address key is not decrypted": [
-        "La clé d'adresse principale n'est pas déchiffrée"
+        "La clé d'adresse principale n'est pas déchiffrée."
       ],
       "Primary address key is not decrypted.": [
         "La clé d'adresse principale n'est pas déchiffrée."
       ],
       "Primary key is not valid for sending": [
-        "La clé principale n'est pas valide pour l'envoi"
+        "La clé principale n'est pas valide pour l'envoi."
       ],
       "Primary key retrieved for internal user is not valid for sending": [
-        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi"
+        "La clé principale récupérée pour l’utilisateur interne n'est pas valide pour l’envoi."
       ],
       "Public key could not be trusted": [
-        "La clé publique n'a pas pu être approuvée"
+        "La clé publique n'a pas pu être approuvée."
       ],
       "re-activate the previous key": [
         "réactiver la clé précédente"
@@ -3150,7 +3162,7 @@
         "Destinataires dupliqués supprimés : ${ recipents }"
       ],
       "Request timed out": [
-        "La requête a expiré"
+        "La requête a expiré."
       ],
       "Require at least one action": [
         "Nécessite au moins une action"
@@ -3168,10 +3180,10 @@
         "Échec de la vérification de la signature"
       ],
       "Some contacts could not be deleted": [
-        "Certains contacts ne peuvent pas être supprimés"
+        "Certains contacts n'ont pas pu être supprimés."
       ],
       "Some groups could not be deleted": [
-        "Certains groupes n'ont pas pu être supprimés"
+        "Certains groupes n'ont pas pu être supprimés."
       ],
       "Some of your label names are unavailable. Please customize the import to edit these names.": [
         "Certains de vos noms de labels ne sont pas disponibles. Veuillez personnaliser l'importation pour modifier ces noms."
@@ -3190,25 +3202,25 @@
         "Certaines pièces jointes n'ont pas pu être déchiffrées.\nSi vous avez la clé privée correspondante, vous aurez toujours la possibilité de déchiffrer\nles fichiers avec un programme tel que GnuPG."
       ],
       "The folder name is invalid. Please choose a different name.": [
-        "Le nom du dossier n'est pas valide. Veuillez en choisir un autre."
+        "Le nom du dossier n'est pas valide, veuillez en choisir un autre."
       ],
       "The folder name is too long. Please choose a different name.": [
-        "Le nom du dossier est trop long. Veuillez en choisir un autre."
+        "Le nom du dossier est trop long, veuillez en choisir un autre."
       ],
       "The key properties for ${ emailAddress } could not be extracted": [
-        "Les propriétés de la clé pour ${ emailAddress } n'ont pas pu être extraites"
+        "Les propriétés de la clé pour ${ emailAddress } n'ont pas pu être extraites."
       ],
       "The label name is invalid. Please choose a different name.": [
-        "Le nom du label n'est pas valide. Veuillez en choisir un autre."
+        "Le nom du label n'est pas valide, veuillez en choisir un autre."
       ],
       "The label name is too long. Please choose a different name.": [
-        "Le nom du label est trop long. Veuillez en choisir un autre."
+        "Le nom du label est trop long, veuillez en choisir un autre."
       ],
       "The maximum expiration is 4 weeks": [
-        "Le délai d’expiration maximal est de 4 semaines"
+        "Le délai d’expiration maximal est de 4 semaines."
       ],
       "The sending key is not valid": [
-        "La clé d'envoi n'est pas valide"
+        "La clé d'envoi n'est pas valide."
       ],
       "There are too many folders in your external account. Please customize the import to delete some folders.": [
         "Il y a trop de dossiers dans votre compte externe. Veuillez personnaliser l'importation pour supprimer certains dossiers."
@@ -3217,34 +3229,34 @@
         "Un problème est survenu avec la recherche de contenu. La recherche par défaut a été utilisée à la place."
       ],
       "There was an error when exporting the contacts vCards": [
-        "Une erreur s'est produite lors de l'exportation des vCards des contacts"
+        "Une erreur s'est produite lors de l'exportation des vCards des contacts."
       ],
       "This field is required": [
-        "Ce champ est requis"
+        "Ce champ est requis."
       ],
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Ce champ nécessite un minimum de ${ minimumLength } caractères."
       ],
       "This folder name is not available. Please choose a different name.": [
-        "Ce nom de dossier n'est pas disponible. Veuillez choisir un autre nom."
+        "Ce nom de dossier n'est pas disponible, veuillez en choisir un autre."
       ],
       "This label name is not available. Please choose a different name.": [
-        "Ce nom de label n'est pas disponible. Veuillez en choisir un autre."
+        "Ce nom de label n'est pas disponible, veuillez en choisir un autre."
       ],
       "This message has already been sent": [
-        "Ce message a déjà été envoyé"
+        "Ce message a déjà été envoyé."
       ],
       "This message has already been sent. A new draft has been saved.": [
         "Ce message a déjà été envoyé. Un nouveau brouillon a été enregistré."
       ],
       "This message may contain some link's URL that cannot be properly opened by your current browser": [
-        "Il est possible que ce message contienne des liens URL qui pourraient ne pas être ouverts correctement par votre navigateur actuel"
+        "Ce message peut contenir des liens URL que votre navigateur actuel ne peut pas ouvrir correctement."
       ],
       "Too many active filters. Please upgrade to a paid plan to activate more filters.": [
-        "Trop de filtres actifs. Veuillez passer à une offre payante pour activer plus de filtres."
+        "Trop de filtres actifs. Nous vous invitons à passer à un abonnement payant pour activer plus de filtres."
       ],
       "Trusted keys are not valid for sending": [
-        "Les clés approuvées ne sont pas valides pour l'envoi"
+        "Les clés approuvées ne sont pas valides pour l'envoi."
       ],
       "Unknown error": [
         "Erreur inconnue"
@@ -3256,20 +3268,20 @@
         "Mot de passe de messagerie incorrect"
       ],
       "You can't send a mail to more than 100 recipients": [
-        "Vous ne pouvez pas envoyer de courrier à plus de 100 destinataires"
+        "Vous ne pouvez pas envoyer un e-mail à plus de 100 destinataires."
       ],
       "You can't send vCards of more than 10 contacts": [
-        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts"
+        "Vous ne pouvez pas envoyer de vCards de plus de 10 contacts."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois",
-        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois"
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtre de composeur à la fois.",
+        "Vous ne pouvez pas ouvrir plus de ${ maxActiveComposer } fenêtres de composeur à la fois."
       ],
       "You did not provide a file.": [
         "Vous n'avez pas fourni de fichier."
       ],
       "You must set a name": [
-        "Vous devez définir un nom"
+        "Vous devez définir un nom."
       ],
       "Your emails cannot be decrypted due to a recent password reset. If you remember your previous password, you can ${ reActivateKeyLink } in order to access your messages. ${ learnMoreLink }": [
         "Vos e-mails ne peuvent pas être déchiffrés en raison d'une récente réinitialisation du mot de passe. Si vous vous souvenez de votre ancien mot de passe, vous pouvez ${ reActivateKeyLink } afin d'accéder à vos messages. ${ learnMoreLink }"
@@ -3286,21 +3298,21 @@
     },
     "Error adding participants to a calendar event": {
       "At most 100 participants are allowed per invitation": [
-        "Un maximum de 100 participants est autorisé par invitation"
+        "Un maximum de 100 participants est autorisé par invitation."
       ]
     },
     "Error display when performing invalid move on message": {
       "Drafts cannot be moved to Inbox": [
-        "Les brouillons ne peuvent pas être déplacés vers la boîte de réception"
+        "Les brouillons ne peuvent pas être déplacés vers la boîte de réception."
       ],
       "Drafts cannot be moved to Spam": [
-        "Les brouillons ne peuvent pas être déplacés vers les indésirables/spam"
+        "Les brouillons ne peuvent pas être déplacés vers les indésirables/spam."
       ],
       "Sent messages cannot be moved to Inbox": [
-        "Les messages envoyés ne peuvent pas être déplacés vers la boîte de réception"
+        "Les messages envoyés ne peuvent pas être déplacés vers la boîte de réception."
       ],
       "Sent messages cannot be moved to Spam": [
-        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables/spam"
+        "Les messages envoyés ne peuvent pas être déplacés vers les indésirables/spam."
       ],
       "This action cannot be performed": [
         "Impossible d'effectuer cette action"
@@ -3371,7 +3383,7 @@
         "Information de disponibilité"
       ],
       "Invalid event": [
-        "Événement invalide"
+        "Événement non valide"
       ],
       "Journal entry": [
         "Entrée du journal"
@@ -3401,10 +3413,10 @@
         "Notification hors limites"
       ],
       "Original recurring event could not be found": [
-        "L'événement récurrent original n'a pas pu être trouvé"
+        "L'événement récurrent original n'a pas pu être trouvé."
       ],
       "Recurring event has no occurrences": [
-        "L'événement récurrent n'a pas d'occurrence"
+        "L'événement récurrent n'a pas d'occurrences."
       ],
       "Recurring rule not supported": [
         "Récurrence non prise en charge"
@@ -3436,7 +3448,7 @@
         "Aucun résultat trouvé pour « ${ query } »"
       ],
       "Oops, something went wrong": [
-        "Désolé, quelque chose s'est mal passé"
+        "Désolé, quelque chose s'est mal passé."
       ],
       "Please ${ refresh } or check your connection.": [
         "Veuillez ${ refresh } ou vérifier votre connexion."
@@ -3445,7 +3457,7 @@
         "Un problème s'est produit lors de la connexion à Proton."
       ],
       "You do not have any contact yet. Start by creating a new contact": [
-        "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact"
+        "Vous n'avez pas encore de contact. Commencez par créer un nouveau contact."
       ],
       "You may also ${ refresh } or try again later.": [
         "Vous pouvez également ${ refresh } ou réessayer plus tard."
@@ -3453,7 +3465,7 @@
     },
     "Error notification": {
       "First name and last name cannot be unchecked at the same time": [
-        "Le prénom et le nom de famille ne peuvent pas être décochés en même temps"
+        "Le prénom et le nom de famille ne peuvent pas être décochés en même temps."
       ]
     },
     "Error notification in the bug report modal when the user upload file": {
@@ -3463,7 +3475,7 @@
     },
     "Error notification when score is missing in user feedback form modal": {
       "Score is required": [
-        "La note est requise"
+        "La note est requise."
       ]
     },
     "Error sending calendar invitation": {
@@ -3485,10 +3497,10 @@
         "Réponse non valide"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "L'événement ne peut pas être ajouté à votre calendrier. Aucune réponse n'a été envoyée"
+        "L'événement ne peut pas être ajouté à votre calendrier. Aucune réponse n'a été envoyée."
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "L'événement ne peut pas être mis à jour dans votre calendrier. Aucune réponse n'a été envoyée"
+        "L'événement ne peut pas être mis à jour dans votre calendrier. Aucune réponse n'a été envoyée."
       ],
       "Unexpected error": [
         "Erreur inattendue"
@@ -3500,19 +3512,19 @@
         "Réponse non prise en charge"
       ],
       "We could not cancel the event in your calendar": [
-        "Nous n'avons pas pu annuler l'événement dans votre calendrier"
+        "Nous n'avons pas pu annuler l'événement dans votre calendrier."
       ],
       "We could not retrieve the event from your calendar": [
-        "Nous n'avons pas pu récupérer l'événement de votre calendrier"
+        "Nous n'avons pas pu récupérer l'événement de votre calendrier."
       ],
       "We could not update the event in your calendar": [
-        "Nous n'avons pas pu mettre à jour l'événement dans votre calendrier"
+        "Nous n'avons pas pu mettre à jour l'événement dans votre calendrier."
       ],
       "Your answer was sent, but the event could not be added to your calendar": [
-        "Votre réponse a été envoyée, mais l'événement n'a pas pu être ajouté à votre calendrier"
+        "Votre réponse a été envoyée, mais l'événement n'a pas pu être ajouté à votre calendrier."
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
-        "Votre réponse a été envoyée, mais l'évènement n'a pas pu être mis à jour dans votre calendrier"
+        "Votre réponse a été envoyée, mais l'évènement n'a pas pu être mis à jour dans votre calendrier."
       ]
     },
     "Event title": {
@@ -3561,7 +3573,7 @@
         "Boîte de réception"
       ],
       "Inbox - Default": [
-        ""
+        "Boîte de réception, par défaut"
       ],
       "Select a folder": [
         "Sélectionner un dossier"
@@ -3820,7 +3832,7 @@
     },
     "Import contact error": {
       "Contact ${ contactId }: ": [
-        "Contact ${ contactId }: "
+        "Contact ${ contactId } : "
       ]
     },
     "Import contact groups info": {
@@ -4073,6 +4085,9 @@
       "Are you sure you want to discard your changes?": [
         "Êtes-vous sûr de vouloir annuler vos modifications ?"
       ],
+      "Are you sure you want to move all messages in this location to Trash?": [
+        "Voulez-vous vraiment déplacer tous les messages de cet emplacement vers la Corbeille ?"
+      ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Êtes-vous sûr de vouloir supprimer définitivement ${ count } conversation ?",
         "Êtes-vous sûr de vouloir supprimer définitivement ${ count } conversations ?"
@@ -4107,7 +4122,7 @@
         "La navigation de base et les actions restent disponibles indépendamment des raccourcis clavier activés ou non dans les paramètres."
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
-        "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam, ainsi que ${ strong } est la bonne adresse."
+        "Avant de demander un nouveau code de vérification, vérifiez votre dossier indésirables/spam et assurez-vous que ${ strong } est la bonne adresse."
       ],
       "Body: ": [
         "Corps : "
@@ -4188,9 +4203,6 @@
       "Day": [
         "Jour",
         "Jours"
-      ],
-      "Decrypt message": [
-        "Déchiffrer le message"
       ],
       "Default email application": [
         "Application de messagerie par défaut"
@@ -4353,7 +4365,7 @@
         "Si vous rencontrez des difficultés à créer votre compte, veuillez demander une invitation et nous vous répondrons dans un délai d'un jour ouvré."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
-        "Si vous pensez que c'est une erreur, veuillez nous contacter ${ contactLink }."
+        "Si vous pensez qu'il s'agit d'une erreur, nous vous invitons à nous contacter ${ contactLink }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boîte de réception, vérifiez votre dossier indésirables/spam."
@@ -4399,7 +4411,7 @@
         "Insérer un lien"
       ],
       "Internet connection lost": [
-        "Connexion Internet perdue"
+        "Connexion internet perdue"
       ],
       "Internet connection lost. Please check your device's connectivity.": [
         "Connexion internet perdue. Vérifiez que votre appareil est bien connecté."
@@ -4482,6 +4494,9 @@
       "Monthly ${ onDayString }": [
         "Mensuellement, ${ onDayString }"
       ],
+      "Moving a large amount of messages. This may take a while.": [
+        "Transfert de nombreux messages en cours, cela peut prendre un certain temps."
+      ],
       "Name your new folder and select the parent folder you want to put it in. If you do not select a parent folder, this new folder will be created as a top level folder.": [
         "Nommez votre nouveau dossier et sélectionnez le dossier parent dans lequel vous voulez le mettre. Si vous ne sélectionnez pas un dossier parent, ce nouveau dossier sera créé en tant que dossier de premier niveau."
       ],
@@ -4533,9 +4548,6 @@
       "None of the uploaded keys are valid for encryption. Encryption is automatically disabled.": [
         "Aucune des clés téléchargées n'est valide pour le chiffrement. Le chiffrement est automatiquement désactivé."
       ],
-      "Normal": [
-        ""
-      ],
       "Not a valid URL": [
         "URL non valide"
       ],
@@ -4552,16 +4564,16 @@
         "Autres options"
       ],
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
-        "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Veuillez vérifier qu'il est légitime."
+        "Notre système a marqué ce message comme étant une tentative d'hameçonnage. Nous vous invitons à vérifier qu'il est légitime."
       ],
       "per month.": [
         "par mois."
       ],
-      "PGP/Inline is only compatible with Plain Text format. Please note that ${ MAIL_APP_NAME } always signs encrypted messages.": [
-        "PGP/Inline est uniquement compatible avec le format texte brut. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      "PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.": [
+        "PGP/Inline is only compatible with Plain Text format. Please note that Proton Mail always signs encrypted messages."
       ],
-      "PGP/MIME automatically sends the message using the current composer mode. Please note that ${ MAIL_APP_NAME } always signs encrypted messages": [
-        "PGP/MIME envoie automatiquement le message en utilisant le mode actuel du composeur. Veuillez noter que ${ MAIL_APP_NAME } signe toujours les messages chiffrés."
+      "PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages": [
+        "PGP/MIME automatically sends the message using the current composer mode. Please note that Proton Mail always signs encrypted messages."
       ],
       "Phone number": [
         "Numéro de téléphone"
@@ -4633,6 +4645,9 @@
       "Request read receipt": [
         "Demander une confirmation de lecture"
       ],
+      "Rich text": [
+        "Texte enrichi"
+      ],
       "Right to Left": [
         "De droite à gauche"
       ],
@@ -4688,7 +4703,7 @@
         "Envoyé avec la messagerie sécurisée <a href=\"${ link }\" target=\"_blank\">${ APPS_CONFIGURATION[APPS.PROTONMAIL].name }</a>."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Les serveurs sont inaccessibles. Veuillez réessayer dans quelques minutes"
+        "Les serveurs sont inaccessibles, nous vous invitons à réessayer dans quelques minutes."
       ],
       "Session timed out": [
         "Session expirée"
@@ -4733,7 +4748,7 @@
         "Soutenez la vie privée en passant à"
       ],
       "support team": [
-        "équipe d'assistance"
+        "équipe support"
       ],
       "Test link": [
         "Lien test"
@@ -4773,7 +4788,7 @@
         "Il y a eu une erreur avec la signature utilisée pour vérifier les coordonnées qui peut provenir d'une réinitialisation du mot de passe."
       ],
       "This account has been suspended due to a potential policy violation.": [
-        "Ce compte a été suspendu en raison d'une violation potentielle des règles d'utilisation."
+        "Ce compte a été suspendu en raison d'une potentielle infraction aux règles d'utilisation."
       ],
       "This action will download all messages so they can be searched locally. Clearing your browser data will disable this option.": [
         "Cette action téléchargera tous les messages afin qu'ils puissent être recherchés localement. Effacer les données de votre navigateur ou vous déconnecter désactivera cette option."
@@ -4794,7 +4809,7 @@
         "Cette conversation contient des messages déplacés dans la corbeille."
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded!": [
-        "Cet e-mail a échoué aux tests d'authentification de son domaine. Il a peut-être été falsifié ou transféré incorrectement !"
+        "Cet e-mail a échoué aux tests d'authentification de son domaine. Il a peut-être été falsifié ou transféré incorrectement."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -4860,7 +4875,7 @@
         "La clé publique de cet expéditeur n'a pas encore été approuvée."
       ],
       "To fight spam and abuse, please verify you are human.": [
-        "Pour lutter contre les messages indésirables/spam et les abus, veuillez prouver que vous êtes humain."
+        "Pour lutter contre les messages indésirables/spam et les abus, nous vous invitons à prouver que vous êtes humain."
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "Pour signer une nouvelle fois vos contacts, nous devons vérifier chaque contact à l'aide de la liste des clés de chiffrement disponible dans votre compte. Si aucune correspondance n'est trouvée, votre contact sera de nouveau signé avec la clé de chiffrement principale."
@@ -4891,6 +4906,9 @@
       ],
       "Unlimited messages": [
         "Messages illimités"
+      ],
+      "Unlock message": [
+        "Débloquer le message"
       ],
       "Unsupported file": [
         "Fichier non pris en charge"
@@ -4953,7 +4971,7 @@
         "Visitez notre boutique pour obtenir des goodies Proton."
       ],
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
-        "Nous sommes désolés. Ceci pourrait être une erreur de notre part. Pouvez-vous confirmer que vous souhaitez marquer cet e-mail comme étant légitime ?"
+        "Nous nous excusons, il pourrait s'agir d'une erreur de notre part. Pouvez-vous confirmer que vous voulez marquer cet email comme légitime ?"
       ],
       "We could not verify the sender's trusted keys.": [
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur."
@@ -6461,7 +6479,7 @@
         "Numéro de téléphone"
       ],
       "Please describe the problem and include any error messages": [
-        "Veuillez décrire le problème et inclure les messages d'erreur"
+        "Veuillez décrire le problème et inclure les messages d'erreur."
       ],
       "Please insert link first": [
         "Veuillez d'abord insérer un lien"
@@ -6614,6 +6632,9 @@
       ],
       "Cannot send to organizer address: ${ errorMessage }": [
         "Impossible d'envoyer à l'adresse de l'organisateur : ${ errorMessage }"
+      ],
+      "Re-encrypting invitation failed. Please try again": [
+        "L'invitation de re-chiffrement a échoué. Veuillez réessayer"
       ]
     },
     "Search - no results": {
@@ -6645,11 +6666,11 @@
         "Voulez-vous quand même envoyer l'e-mail ?"
       ],
       "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
-        "Nous avons détecté des erreurs. Votre message ne peut pas être envoyé à l'adresse électronique saisie pour la raison suivante :",
+        "Nous avons détecté des erreurs. Votre message ne peut pas être envoyé à l'adresse électronique saisie pour la raison suivante :",
         "Nous avons détecté des erreurs. Votre message ne peut être envoyé à aucune des adresses électroniques saisies pour les raisons suivantes :"
       ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
-        "Nous avons détecté des erreurs. Votre message ne peut pas être envoyé à une ou plusieurs des adresses électroniques saisies pour les raisons suivantes :"
+        "Nous avons détecté des erreurs. Votre message ne peut pas être envoyé à une ou plusieurs des adresses électroniques saisies pour les raisons suivantes :"
       ]
     },
     "Send email with warnings": {
@@ -6750,6 +6771,9 @@
       ]
     },
     "Spotlight": {
+      "${ DRIVE_APP_NAME } is out of beta! Give your files the same security your emails get.": [
+        "${ DRIVE_APP_NAME } n'est plus en beta ! Donnez à vos fichiers la même sécurité que vos e-mails."
+      ],
       "Discover all Proton services": [
         "Découvrez tous les services Proton"
       ],
@@ -6767,6 +6791,9 @@
       ],
       "To protect your privacy, Proton blocked email trackers in this message": [
         "Pour protéger votre vie privée, Proton a bloqué les traqueurs d'e-mail dans ce message"
+      ],
+      "Try ${ DRIVE_APP_NAME }": [
+        "Essayez ${ DRIVE_APP_NAME }"
       ],
       "You can now schedule your messages to be sent later": [
         "Vous pouvez maintenant programmer vos messages pour les envoyer plus tard"
@@ -7358,14 +7385,11 @@
       "Import contacts": [
         "Importer les contacts"
       ],
-      "Import groups": [
-        "Importer des groupes"
-      ],
       "Insert contacts": [
         "Insérer des contacts"
       ],
       "Invalid verification code": [
-        "Code de vérification invalide"
+        "Code de vérification non valide"
       ],
       "Label as": [
         "Labelliser comme"
@@ -7415,6 +7439,9 @@
       "More selections": [
         "Plus de sélections"
       ],
+      "Move all messages to Trash": [
+        "Déplacer tous les messages vers la Corbeille"
+      ],
       "Move to": [
         "Déplacer vers"
       ],
@@ -7440,7 +7467,7 @@
         "Message suivant"
       ],
       "No attachment found": [
-        "Aucune pièce jointe trouvée"
+        "Il n'y a pas de pièce jointe."
       ],
       "Open actions dropdown": [
         "Ouvrir le menu déroulant des actions"
@@ -7491,7 +7518,7 @@
         "Répondre à tous"
       ],
       "Report a problem": [
-        "Signaler un problème"
+        "Signaler un bug"
       ],
       "Request new code": [
         "Demander un nouveau code"
@@ -7698,7 +7725,7 @@
         "Êtes-vous sûr de vouloir supprimer définitivement ce contact ?"
       ],
       "Contacts could not be merged": [
-        "Les contacts n'ont pas pu être fusionnés"
+        "Les contacts n'ont pas pu être fusionnés."
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Si vous ne vous souvenez plus de votre mot de passe, il est impossible de réactiver votre clé. Nous pouvons vous aider à supprimer la bannière d'alerte, mais vous perdrez ainsi définitivement l'accès à toutes les données chiffrées avec cette clé."
@@ -7713,7 +7740,7 @@
         "Les rapports d’erreur ne sont pas chiffrés de bout en bout, merci de ne pas envoyer d'informations sensibles."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
-        "Certains contacts à fusionner affichent des erreurs. Veuillez les examiner individuellement"
+        "Certains contacts à fusionner affichent des erreurs. Veuillez les examiner individuellement."
       ],
       "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
         "La signature de la pièce jointe a échoué à la vérification.\nVous pouvez toujours télécharger cette pièce jointe, mais elle pourrait avoir été altérée.",
