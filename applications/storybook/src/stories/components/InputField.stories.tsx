@@ -36,6 +36,7 @@ const adornmentIds = ['none', 'text', 'select', 'icon', 'icons', 'icon button'] 
 export const Sandbox = () => {
     const [label, setLabel] = useState<string>('Label');
     const [hint, setHint] = useState<string>('Hint');
+    const [placeholder, setPlaceholder] = useState<string>('Placeholder');
     const [assistiveText, setAssistiveText] = useState<string>('');
     const [error, setError] = useState<string>('');
     const [warning, setWarning] = useState<string>('');
@@ -97,6 +98,7 @@ export const Sandbox = () => {
                     label={label}
                     hint={hint}
                     assistiveText={assistiveText}
+                    placeholder={placeholder}
                     error={error}
                     warning={warning}
                     prefix={getAdornment(selectedPrefixId)}
@@ -107,20 +109,18 @@ export const Sandbox = () => {
                     }, {})}
                 />
             </div>
-            <div className="flex flex-align-items-stretch py2">
-                <div className="mr2">
+            <div className="flex flex-nowrap flex-gap-2 py2">
+                <div className="w25">
                     <InputFieldTwo label="Label" value={label} onValue={setLabel} />
                     <InputFieldTwo label="Hint" value={hint} onValue={setHint} />
+                    <InputFieldTwo label="Placeholder" value={placeholder} onValue={setPlaceholder} />
+                </div>
+                <div className="w25">
                     <InputFieldTwo label="AssistiveText" value={assistiveText} onValue={setAssistiveText} />
-                </div>
-                <div className="mr2">
                     <InputFieldTwo label="Error" value={error} onValue={setError} />
-                </div>
-                <div className="mr2">
                     <InputFieldTwo label="Warning" value={warning} onValue={setWarning} />
                 </div>
-
-                <div className="mr2">
+                <div>
                     <strong className="block mb1">Prefix</strong>
                     <RadioGroup
                         name="selected-prefix"
@@ -129,7 +129,7 @@ export const Sandbox = () => {
                         options={adornmentIds.map((suffix) => ({ value: suffix, label: suffix }))}
                     />
                 </div>
-                <div className="mr2">
+                <div>
                     <strong className="block mb1">Suffix</strong>
                     <RadioGroup
                         name="selected-suffix"
@@ -138,7 +138,7 @@ export const Sandbox = () => {
                         options={adornmentIds.map((suffix) => ({ value: suffix, label: suffix }))}
                     />
                 </div>
-                <div className="mr2">
+                <div>
                     <strong className="block mb1">Toggles</strong>
                     {toggles.map((prop, i) => {
                         return (
