@@ -189,6 +189,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
+        event.stopPropagation();
 
         setModel((model) => ({ ...model, loading: true }));
         await submitCategories(model.categories, api);
