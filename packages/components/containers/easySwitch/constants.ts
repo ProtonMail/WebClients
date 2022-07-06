@@ -9,16 +9,20 @@ import {
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
 export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
-
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
 
 export const G_OAUTH_SCOPE_MAIL = ['https://mail.google.com/'];
 export const G_OAUTH_SCOPE_MAIL_NEW_SCOPE = ['https://www.googleapis.com/auth/gmail.readonly'];
 
 export const G_OAUTH_SCOPE_CONTACTS = ['https://www.googleapis.com/auth/contacts.readonly'];
-
 export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
 // export const G_OAUTH_SCOPE_DRIVE = [];
+
+export const O_OAUTH_REDIRECT_PATH = '/oauth/callback';
+export const O_OAUTH_SCOPE_DEFAULT = ['email', 'openid', 'User.Read', 'offline_access'];
+export const O_OAUTH_SCOPE_MAIL = ['Mail.read'];
+export const O_OAUTH_SCOPE_CONTACTS = ['Contacts.read'];
+export const O_OAUTH_SCOPE_CALENDAR = ['Calendars.read'];
 
 export const IA_PATHNAME_REGEX = /\/easy-switch/;
 
@@ -39,12 +43,14 @@ export const IMAPS = {
     [OAUTH_PROVIDER.GOOGLE]: 'imap.gmail.com',
     [NON_OAUTH_PROVIDER.YAHOO]: 'export.imap.mail.yahoo.com',
     [NON_OAUTH_PROVIDER.OUTLOOK]: 'outlook.office365.com',
+    [OAUTH_PROVIDER.OUTLOOK]: 'outlook.office365.com',
 };
 
 export const PORTS = {
     [OAUTH_PROVIDER.GOOGLE]: '993',
     [NON_OAUTH_PROVIDER.YAHOO]: '993',
     [NON_OAUTH_PROVIDER.OUTLOOK]: '993',
+    [OAUTH_PROVIDER.OUTLOOK]: '993',
 };
 
 export const EASY_SWITCH_EMAIL_PLACEHOLDER = {
