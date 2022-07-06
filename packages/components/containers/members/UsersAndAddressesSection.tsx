@@ -115,10 +115,12 @@ const UsersAndAddressesSection = () => {
 
         const normalizedWords = normalize(keywords, true);
 
-        return members.filter(({ ID, Name }) => {
-            const addresses = memberAddressesMap?.[ID];
-            const addressMatch = addresses?.some((address) => normalize(address.Email, true).includes(normalizedWords));
-            const nameMatch = normalize(Name, true).includes(normalizedWords);
+        return members.filter((member) => {
+            const memberAddresses = memberAddressesMap?.[member.ID] || [];
+            const addressMatch = memberAddresses?.some((address) =>
+                normalize(address.Email, true).includes(normalizedWords)
+            );
+            const nameMatch = normalize(member.Name, true).includes(normalizedWords);
 
             return addressMatch || nameMatch;
         });
@@ -261,7 +263,7 @@ const UsersAndAddressesSection = () => {
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
-                <TableBody loading={loadingMembers} colSpan={6}>
+                <TableBody loading={loadingMembers} colSpan={5}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         return (
