@@ -1,3 +1,9 @@
+## Release 5.0.4.0 - July 20, 2022
+
+### improvements
+
+-   Added the ability to move every message from a folder to trash
+
 ## Release 5.0.3.0 - July 6, 2022
 
 ### improvements
