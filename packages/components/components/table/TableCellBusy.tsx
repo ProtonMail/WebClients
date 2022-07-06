@@ -1,7 +1,8 @@
 import { ComponentPropsWithoutRef } from 'react';
 
+import { CircleLoader } from '@proton/atoms';
+
 import { classnames } from '../../helpers';
-import { CircleLoader } from '../loader';
 
 interface Props extends ComponentPropsWithoutRef<'td'> {
     colSpan?: number;

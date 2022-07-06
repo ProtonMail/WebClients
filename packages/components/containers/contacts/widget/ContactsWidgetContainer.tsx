@@ -2,7 +2,8 @@ import { useMemo, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { CircleLoader, SearchInput } from '@proton/components';
+import { CircleLoader } from '@proton/atoms';
+import { SearchInput } from '@proton/components';
 import { useApi, useNotifications, useUser, useUserKeys, useUserSettings } from '@proton/components/hooks';
 import { exportContacts } from '@proton/shared/lib/contacts/helpers/export';
 import { extractMergeable } from '@proton/shared/lib/contacts/helpers/merge';

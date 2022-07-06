@@ -1,23 +1,29 @@
+import { ComponentPropsWithoutRef } from 'react';
+
 import { c } from 'ttag';
 
-import { classnames, generateUID } from '../../helpers';
+import clsx from '@proton/utils/clsx';
 
-export type Size = 'small' | 'medium' | 'large';
+import generateUID from '../generateUID';
 
-interface Props {
-    size?: Size;
-    className?: string;
+import './CircleLoader.scss';
+
+export type CircleLoaderSize = 'small' | 'medium' | 'large';
+
+export interface CircleLoaderProps extends ComponentPropsWithoutRef<'svg'> {
+    size?: CircleLoaderSize;
 }
 
-const CircleLoader = ({ size, className }: Props) => {
+const CircleLoader = ({ size, className, ...rest }: CircleLoaderProps) => {
     const uid = generateUID('circle-loader');
 
     return (
         <>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={classnames(['circle-loader', size && `is-${size}`, className])}
+                className={clsx('circle-loader', size && `is-${size}`, className)}
                 viewBox="0 0 16 16"
+                {...rest}
             >
                 <defs>
                     <circle id={uid} cx="8" cy="8" r="7" />

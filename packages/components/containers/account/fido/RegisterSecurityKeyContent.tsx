@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
-import { CircleLoader } from '../../../components';
 import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner';
 
 interface Props {
