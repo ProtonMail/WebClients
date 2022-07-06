@@ -26,6 +26,8 @@ const SidebarFolders = ({
     handleToggleFolder,
     foldersTreeview,
 }: Props) => {
+    const onlyOneLevel = foldersTreeview.every((folder) => !folder.subfolders?.length);
+
     const treeviewReducer = (acc: ReactNode[], folder: FolderWithSubFolders, level = 0): any[] => {
         acc.push(
             <SidebarFolder
@@ -38,6 +40,7 @@ const SidebarFolders = ({
                 unreadCount={getUnreadCount(counterMap, folder)}
                 id={folder.ID}
                 onFocus={updateFocusItem}
+                treeMode={!onlyOneLevel}
             />
         );
 
