@@ -1,7 +1,7 @@
 import { KeyboardEvent, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { c } from 'ttag';
-import { APPS, BRAND_NAME, CLIENT_TYPES, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, CLIENT_TYPES, MAIL_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import {
     AlertModal,
     Button,
@@ -323,7 +323,7 @@ const AccountStep = ({
                                 }}
                             >
                                 {signupType === SignupType.Email
-                                    ? c('Action').t`Create a secure ProtonMail address instead`
+                                    ? c('Action').t`Create a secure ${MAIL_APP_NAME} address instead`
                                     : c('Action').t`Use your current email address instead`}
                             </UnderlineButton>
                         </div>
