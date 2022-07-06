@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 import { useGetAddressKeys } from '@proton/components/hooks';
 import { Api } from '../../interfaces';
-import { Calendar } from '../../interfaces/calendar';
+import { CalendarWithMembers } from '../../interfaces/calendar';
 import { setupCalendar } from '../../api/calendars';
 import { getPrimaryKey } from '../../keys';
 import { generateCalendarKeyPayload, isCalendarSetupData } from '../../keys/calendarKeys';
@@ -9,15 +9,15 @@ import { generateCalendarKeyPayload, isCalendarSetupData } from '../../keys/cale
 interface SetupCalendarKeysArgumentsShared {
     api: Api;
     getAddressKeys: ReturnType<typeof useGetAddressKeys>;
-    addressID: string;
 }
 
 interface SetupCalendarKeyArguments extends SetupCalendarKeysArgumentsShared {
     calendarID: string;
+    addressID: string;
 }
 
 interface SetupCalendarKeysArguments extends SetupCalendarKeysArgumentsShared {
-    calendars: Calendar[];
+    calendars: CalendarWithMembers[];
 }
 
 export const setupCalendarKey = async ({ calendarID, api, addressID, getAddressKeys }: SetupCalendarKeyArguments) => {
@@ -40,9 +40,13 @@ export const setupCalendarKey = async ({ calendarID, api, addressID, getAddressK
     return api(setupCalendar(calendarID, calendarKeyPayload));
 };
 
-export const setupCalendarKeys = async ({ api, calendars, getAddressKeys, addressID }: SetupCalendarKeysArguments) => {
+export const setupCalendarKeys = async ({ api, calendars, getAddressKeys }: SetupCalendarKeysArguments) => {
     return Promise.all(
-        calendars.map(async ({ ID: calendarID }) => {
+        calendars.map(async ({ ID: calendarID, Members }) => {
+            const addressID = Members[0]?.AddressID;
+            if (!addressID) {
+                return;
+            }
             return setupCalendarKey({ calendarID, api, getAddressKeys, addressID });
         })
     );
