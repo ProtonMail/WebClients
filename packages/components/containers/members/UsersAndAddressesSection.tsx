@@ -24,12 +24,12 @@ import {
 import {
     useMembers,
     useOrganization,
-    useMemberAddresses,
     useDomains,
     useNotifications,
     useOrganizationKey,
     useApi,
     useEventManager,
+    useMemberAddresses,
 } from '../../hooks';
 import MemberActions from './MemberActions';
 import MemberAddresses from './MemberAddresses';
@@ -37,7 +37,6 @@ import MemberFeatures from './MemberFeatures';
 import MemberRole from './MemberRole';
 import RestoreAdministratorPrivileges from '../organization/RestoreAdministratorPrivileges';
 import MemberModal from './MemberModal';
-import useDomainsAddresses from '../../hooks/useDomainsAddresses';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 
 import { AddressModal } from '../addresses';
@@ -86,9 +85,8 @@ const UsersAndAddressesSection = () => {
     const [organization, loadingOrganization] = useOrganization();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [domains, loadingDomains] = useDomains();
-    const [domainsAddressesMap, loadingDomainAddresses] = useDomainsAddresses(domains);
     const [members, loadingMembers] = useMembers();
-    const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
+    const [memberAddressesMap] = useMemberAddresses(members, true);
     const [keywords, setKeywords] = useState('');
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
     const api = useApi();
@@ -117,11 +115,12 @@ const UsersAndAddressesSection = () => {
 
         const normalizedWords = normalize(keywords, true);
 
-        return members.filter(({ Name, ID }) => {
-            const addressMatch = memberAddressesMap?.[ID]?.some((address) =>
+        return members.filter((member) => {
+            const memberAddresses = memberAddressesMap?.[member.ID] || [];
+            const addressMatch = memberAddresses?.some((address) =>
                 normalize(address.Email, true).includes(normalizedWords)
             );
-            const nameMatch = normalize(Name, true).includes(normalizedWords);
+            const nameMatch = normalize(member.Name, true).includes(normalizedWords);
 
             return addressMatch || nameMatch;
         });
@@ -230,13 +229,12 @@ const UsersAndAddressesSection = () => {
                         organization={organization}
                         organizationKey={organizationKey}
                         domains={verifiedDomains}
-                        domainsAddressesMap={domainsAddressesMap}
                         {...memberModalProps}
                     />
                 )}
                 <Button
                     color="norm"
-                    disabled={loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey}
+                    disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
                     onClick={handleAddUser}
                     className="on-mobile-mb0-5 mr1"
                 >
@@ -245,9 +243,7 @@ const UsersAndAddressesSection = () => {
                 <div className="mb1 mr1">
                     <Button
                         shape="outline"
-                        disabled={
-                            loadingOrganization || loadingDomains || loadingDomainAddresses || loadingOrganizationKey
-                        }
+                        disabled={loadingOrganization || loadingDomains || loadingOrganizationKey}
                         onClick={handleAddAddress}
                         className="on-mobile-mb0-5"
                     >
@@ -267,7 +263,7 @@ const UsersAndAddressesSection = () => {
                 <thead>
                     <tr>{headerCells}</tr>
                 </thead>
-                <TableBody loading={loadingMembers || loadingMemberAddresses} colSpan={6}>
+                <TableBody loading={loadingMembers} colSpan={5}>
                     {membersSelected.map((member) => {
                         const memberAddresses = memberAddressesMap?.[member.ID] || [];
                         return (
@@ -313,8 +309,7 @@ const UsersAndAddressesSection = () => {
 
             <div className="no-desktop">
                 {membersSelected.map((member) => {
-                    const memberAddresses = (memberAddressesMap && memberAddressesMap[member.ID]) || [];
-
+                    const memberAddresses = memberAddressesMap?.[member.ID] || [];
                     return (
                         <div key={member.ID} className="py1 border-bottom">
                             <div className="flex-no-min-children flex-nowrap mb1-5 auto-tiny-mobile">

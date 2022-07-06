@@ -5,7 +5,10 @@ import queryPages from './helpers/queryPages';
 export const queryMembers = (params?: PaginationParams) => ({
     method: 'get',
     url: 'members',
-    params,
+    params: {
+        ...params,
+        IncludeAddresses: 1,
+    },
 });
 
 export const getAllMembers = (api: Api) => {

@@ -32,7 +32,6 @@ interface Props {
 
 const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Props) => {
     const [members, loadingMembers] = useMembers();
-    const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(members);
     const [addresses, loadingAddresses] = useAddresses();
     const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
@@ -62,6 +61,8 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
         }
         return [];
     }, [members, memberIndex]);
+
+    const [memberAddressesMap, loadingMemberAddresses] = useMemberAddresses(selectedMembers);
 
     const hasUsernameDisplay = memberIndex === ALL_MEMBERS_ID;
     const isSelfSelected = useMemo(() => {
