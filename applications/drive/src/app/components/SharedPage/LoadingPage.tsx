@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { CircleLoader, Icon } from '@proton/components';
+import { CircleLoader } from '@proton/atoms';
+import { Icon } from '@proton/components';
 
 import SharedPageLayout from './SharedPageLayout';
 

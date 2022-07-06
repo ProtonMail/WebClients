@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '../../../components';
+import { CircleLoader } from '@proton/atoms';
 
 const SubscriptionUpgrade = () => {
     return (
