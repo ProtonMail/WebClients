@@ -28,6 +28,7 @@ const ContactImportWarning = ({ model, setModel, onClose }: Props) => {
 
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
+        event.stopPropagation();
 
         setModel({ ...model, step: IMPORT_STEPS.IMPORTING, errors: [] });
     };

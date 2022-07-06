@@ -34,6 +34,7 @@ const ContactImportSummary = ({ model, setModel, onClose }: Props) => {
 
     const handleSubmit = async (event: FormEvent) => {
         event.preventDefault();
+        event.stopPropagation();
 
         if (canImportGroups) {
             setModel((model) => ({ ...model, loading: true }));

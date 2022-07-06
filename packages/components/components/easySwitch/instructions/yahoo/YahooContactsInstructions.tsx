@@ -5,13 +5,13 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Href } from '../../../link';
 
 const YahooContactsInstructions = () => {
-    // translator: full sentence: "To import contacts to Proton, you need a CSV file. Download it from Yahoo in 3 easy steps:"
+    // translator: full sentence: "To import contacts to Proton, you need a CSV or a VCF (vCard) file. Download it from Yahoo in 3 easy steps:"
     const knowledgeBaseLink = (
         <Href url={getKnowledgeBaseUrl('/exporting-contacts-from-other-mail-providers')} key="knowledgeBaseLink">
-            {c('Import instructions link').t`CSV file`}
+            {c('Import instructions link').t`CSV or a VCF (vCard) file`}
         </Href>
     );
-    // translator: full sentence: "To import contacts to Proton, you need a CSV file. Download it from Yahoo in 3 easy steps:"
+    // translator: full sentence: "To import contacts to Proton, you need a CSV or a VCF (vCard) file. Download it from Yahoo in 3 easy steps:"
     const yahooCalendarMessage = c('Import instructions')
         .jt`To import contacts to Proton, you need a ${knowledgeBaseLink}. Download it from Yahoo in 3 easy steps:`;
 

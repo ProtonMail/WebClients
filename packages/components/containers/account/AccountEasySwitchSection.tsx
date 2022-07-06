@@ -12,6 +12,7 @@ import {
     EasySwitchFeatureFlag,
     ImportType,
     NON_OAUTH_PROVIDER,
+    OAUTH_PROVIDER,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
@@ -41,7 +42,7 @@ const AccountEasySwitchSection = () => {
 
     const isLoading = loadingUser || loadingAddresses || easySwitchFeatureLoading;
 
-    const handleOAuthClick = () => {
+    const handleGoogleOAuthClick = () => {
         if (easySwitchFeatureLoading) {
             return;
         }
@@ -49,6 +50,7 @@ const AccountEasySwitchSection = () => {
         createModal(
             <EasySwitchOauthModal
                 source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
+                provider={OAUTH_PROVIDER.GOOGLE}
                 addresses={addresses}
                 defaultCheckedTypes={[
                     easySwitchFeatureValue?.GoogleMail && ImportType.MAIL,
@@ -95,6 +97,26 @@ const AccountEasySwitchSection = () => {
             />
         );
 
+    const handleOutlookOAuthClick = () => {
+        if (easySwitchFeatureLoading) {
+            return;
+        }
+
+        createModal(
+            <EasySwitchOauthModal
+                source={EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS}
+                addresses={addresses}
+                defaultCheckedTypes={[
+                    easySwitchFeatureValue?.OutlookMail && ImportType.MAIL,
+                    easySwitchFeatureValue?.OutlookCalendar && ImportType.CALENDAR,
+                    easySwitchFeatureValue?.OutlookContacts && ImportType.CONTACTS,
+                ].filter(isTruthy)}
+                featureMap={easySwitchFeatureValue}
+                provider={OAUTH_PROVIDER.OUTLOOK}
+            />
+        );
+    };
+
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
     return (
@@ -118,7 +140,12 @@ const AccountEasySwitchSection = () => {
             <div className="mb1 text-bold">{c('Info').t`Select a service provider to start`}</div>
 
             <div className="mt0-5">
-                <ProviderCard provider={GOOGLE} onClick={handleOAuthClick} disabled={disabled} className="mb1 mr1" />
+                <ProviderCard
+                    provider={GOOGLE}
+                    onClick={handleGoogleOAuthClick}
+                    disabled={disabled}
+                    className="mb1 mr1"
+                />
 
                 <ProviderCard
                     provider={YAHOO}
@@ -129,7 +156,13 @@ const AccountEasySwitchSection = () => {
 
                 <ProviderCard
                     provider={OUTLOOK}
-                    onClick={() => handleIMAPClick(NON_OAUTH_PROVIDER.OUTLOOK)}
+                    onClick={
+                        easySwitchFeatureValue?.OutlookMail === true ||
+                        easySwitchFeatureValue?.OutlookCalendar === true ||
+                        easySwitchFeatureValue?.OutlookContacts === true
+                            ? handleOutlookOAuthClick
+                            : () => handleIMAPClick(NON_OAUTH_PROVIDER.OUTLOOK)
+                    }
                     disabled={disabled}
                     className="mb1 mr1"
                 />
