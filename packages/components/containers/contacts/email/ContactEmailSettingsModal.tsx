@@ -18,7 +18,13 @@ import uniqueBy from '@proton/utils/uniqueBy';
 import { getKeyInfoFromProperties, getMimeTypeVcard, toKeyProperty } from '@proton/shared/lib/contacts/keyProperties';
 import { ContactPublicKeyModel } from '@proton/shared/lib/interfaces';
 import { VCARD_KEY_FIELDS } from '@proton/shared/lib/contacts/constants';
-import { CONTACT_MIME_TYPES, MIME_TYPES, MIME_TYPES_MORE, PGP_SCHEMES } from '@proton/shared/lib/constants';
+import {
+    CONTACT_MIME_TYPES,
+    MAIL_APP_NAME,
+    MIME_TYPES,
+    MIME_TYPES_MORE,
+    PGP_SCHEMES,
+} from '@proton/shared/lib/constants';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
 import ContactMIMETypeSelect from './ContactMIMETypeSelect';
 import { useApi, useEventManager, useNotifications, useLoading, useMailSettings } from '../../../hooks';
@@ -258,13 +264,13 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                 {isMimeTypeFixed && hasPGPInline ? (
                     <Alert className="mb1">
                         {c('Info')
-                            .t`PGP/Inline is only compatible with Plain Text format. Please note that ProtonMail always signs encrypted messages.`}
+                            .t`PGP/Inline is only compatible with Plain Text format. Please note that ${MAIL_APP_NAME} always signs encrypted messages.`}
                     </Alert>
                 ) : null}
                 {isMimeTypeFixed && !hasPGPInline ? (
                     <Alert className="mb1">
                         {c('Info')
-                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ProtonMail always signs encrypted messages`}
+                            .t`PGP/MIME automatically sends the message using the current composer mode. Please note that ${MAIL_APP_NAME} always signs encrypted messages`}
                     </Alert>
                 ) : null}
                 <Row>
