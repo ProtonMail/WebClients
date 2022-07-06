@@ -1,12 +1,12 @@
 ## Release 5.0.2.0 - June 22, 2022
 
-## Improvements
+### Improvements
 
 -   Added the ability add contacts to contact groups in bulk
 -   Added a Quick action menu when right-clicking on an email
 -   Added the ability to insert a link on images in the composer
 
-## Bug fixes
+### Bug fixes
 
 -   Fixed an issue where downloading a single attachment would create a zip file
 -   Fixed an issue where a placeholder was briefly shown when accessing a folder known to be empty
