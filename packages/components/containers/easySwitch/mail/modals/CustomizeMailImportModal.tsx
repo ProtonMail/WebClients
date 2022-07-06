@@ -82,6 +82,8 @@ const CustomizeMailImportModal = ({
         email: importedEmail,
         providerFolders,
         isLabelMapping,
+        folders,
+        labels,
     });
 
     const mappingErrors = useMemo(() => getMailMappingErrors(customizedPayload.Mapping), [customizedPayload.Mapping]);
