@@ -1,3 +1,9 @@
+## Release 5.0.3.0 - July 6, 2022
+
+### improvements
+
+-   Added the ability to view messages from sender
+
 ## Release 5.0.2.0 - June 22, 2022
 
 ### Improvements
