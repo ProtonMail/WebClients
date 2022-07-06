@@ -18,7 +18,6 @@ import {
     Button,
     Checkbox,
     ErrorButton,
-    Info,
     InputFieldTwo,
     ModalProps,
     ModalTwo,
@@ -205,15 +204,9 @@ const DeleteAccountModal = (props: Props) => {
                 <InputFieldTwo
                     id="email"
                     rootClassName="mt0-5"
-                    label={
-                        <>
-                            {c('Label').t`Email address`}&nbsp;
-                            <Info
-                                title={c('Info').t`Please provide an email address in case we need to contact you.`}
-                            />
-                        </>
-                    }
+                    label={c('Label').t`Email address`}
                     placeholder={c('Placeholder').t`Email address`}
+                    assistiveText={c('Info').t`Please provide an email address in case we need to contact you.`}
                     value={model.email}
                     onValue={(value: string) => setModel({ ...model, email: value })}
                     error={validator([requiredValidator(model.email), emailValidator(model.email)])}
@@ -223,13 +216,9 @@ const DeleteAccountModal = (props: Props) => {
                 <InputFieldTwo
                     id="password"
                     rootClassName="mt0-5"
-                    label={
-                        <>
-                            {c('Label').t`Login password`}&nbsp;
-                            <Info title={c('Info').t`Enter your login password to confirm your identity.`} />
-                        </>
-                    }
+                    label={c('Label').t`Login password`}
                     placeholder={c('Placeholder').t`Password`}
+                    assistiveText={c('Info').t`Enter your login password to confirm your identity.`}
                     error={validator([requiredValidator(model.password)])}
                     as={PasswordInputTwo}
                     autoComplete="current-password"
