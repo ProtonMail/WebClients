@@ -97,6 +97,8 @@ const IASelectImportTypeStep = ({
         email: modalModel.importedEmail,
         providerFolders: modalModel.data[MAIL].providerFolders,
         isLabelMapping: true,
+        labels,
+        folders,
     });
 
     const toggleCheckedProduct = (product: ImportType) => {
