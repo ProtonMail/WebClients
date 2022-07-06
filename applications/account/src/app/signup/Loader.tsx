@@ -1,4 +1,4 @@
-import { CircleLoader } from '@proton/components';
+import { CircleLoader } from '@proton/atoms';
 
 const Loader = () => {
     return <CircleLoader className="color-primary" size="large" />;

@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { Address } from '@proton/shared/lib/interfaces';
@@ -15,16 +16,7 @@ import {
     TIME_PERIOD,
 } from '@proton/shared/lib/interfaces/EasySwitch';
 
-import {
-    Alert,
-    Button,
-    CircleLoader,
-    Icon,
-    InlineLinkButton,
-    LabelStack,
-    TextLoader,
-    Tooltip,
-} from '../../../../../components';
+import { Alert, Button, Icon, InlineLinkButton, LabelStack, TextLoader, Tooltip } from '../../../../../components';
 import { useFolders, useLabels, useModals, useUser } from '../../../../../hooks';
 import { IMAPS, getTimeUnitLabels } from '../../../constants';
 import useIAMailPayload from '../../../hooks/useIAMailPayload';

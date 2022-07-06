@@ -1,10 +1,10 @@
 import { ElementType, ReactElement, forwardRef } from 'react';
 
 import { ThemeColorUnion } from '@proton/colors';
+import { CircleLoader } from '@proton/atoms';
 
 import { classnames } from '../../helpers';
 import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
-import { CircleLoader } from '../loader';
 
 export type Shape = 'solid' | 'outline' | 'ghost' | 'underline';
 

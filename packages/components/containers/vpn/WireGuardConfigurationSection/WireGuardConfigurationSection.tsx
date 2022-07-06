@@ -4,6 +4,7 @@ import { flushSync } from 'react-dom';
 import { Point, utils } from '@noble/ed25519';
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import { readableTime } from '@proton/shared/lib/helpers/time';
@@ -11,7 +12,6 @@ import { readableTime } from '@proton/shared/lib/helpers/time';
 import {
     Alert,
     Button,
-    CircleLoader,
     ConfirmModal,
     Details,
     ErrorButton,

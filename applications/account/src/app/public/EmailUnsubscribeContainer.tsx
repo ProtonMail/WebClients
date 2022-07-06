@@ -3,7 +3,8 @@ import { useHistory, useLocation, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { CircleLoader, GenericError, useApi, useLoading, useNotifications } from '@proton/components';
+import { CircleLoader } from '@proton/atoms';
+import { GenericError, useApi, useLoading, useNotifications } from '@proton/components';
 import { authJwt } from '@proton/shared/lib/api/auth';
 import { getNewsExternal, updateNewsExternal } from '@proton/shared/lib/api/settings';
 import { NEWS } from '@proton/shared/lib/constants';

@@ -3,6 +3,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { CircleLoader } from '@proton/atoms';
 import { DEFAULT_CURRENCY } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
@@ -13,7 +14,6 @@ import useOfferFlags from '../../containers/offers/hooks/useOfferFlags';
 import { OfferConfig } from '../../containers/offers/interface';
 import { useUser, useWelcomeFlags } from '../../hooks';
 import Icon from '../icon/Icon';
-import CircleLoader from '../loader/CircleLoader';
 import TopNavbarListItem from './TopNavbarListItem';
 import TopNavbarListItemButton from './TopNavbarListItemButton';
 
