@@ -4239,7 +4239,7 @@ __metadata:
     cross-env: ^7.0.3
     eslint: ^8.14.0
     execa: ^5.1.1
-    gettext-parser: ^4.2.0
+    gettext-parser: ^5.1.2
     glob: ^8.0.3
     prettier: ^2.6.2
     ttag-cli: ^1.9.3
@@ -6909,10 +6909,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0":
-  version: 17.0.5
-  resolution: "@types/node@npm:17.0.5"
-  checksum: 105535e78722515c26cfdc1b0cbf1b19f55fe53b814e2e90d8b1e653bc63136d4760c7efc102eca111c6d124a291e37d60d761d569a3f4afb3fba05bad5d9ade
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^17.0.31":
+  version: 17.0.31
+  resolution: "@types/node@npm:17.0.31"
+  checksum: 704618350f8420d5c47db0f7778398e821b7724369946f5c441a7e6b9343295553936400eb8309f0b07d5e39c240988ab3456b983712ca86265dabc9aee4ad3d
   languageName: node
   linkType: hard
 
@@ -6934,13 +6934,6 @@ __metadata:
   version: 16.11.33
   resolution: "@types/node@npm:16.11.33"
   checksum: 5c86d3f1e3b996607b41405d368d2e19d410eee0054595cef73d230368a609a2863926e75ad19f5091f0fd742cd018b667d54c51292018dd8020a202a5b29fa9
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^17.0.31":
-  version: 17.0.31
-  resolution: "@types/node@npm:17.0.31"
-  checksum: 704618350f8420d5c47db0f7778398e821b7724369946f5c441a7e6b9343295553936400eb8309f0b07d5e39c240988ab3456b983712ca86265dabc9aee4ad3d
   languageName: node
   linkType: hard
 
@@ -16506,7 +16499,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"gettext-parser@npm:^4.0.3, gettext-parser@npm:^4.2.0":
+"gettext-parser@npm:^4.0.3":
   version: 4.2.0
   resolution: "gettext-parser@npm:4.2.0"
   dependencies:
@@ -16515,6 +16508,18 @@ fsevents@^1.2.7:
     readable-stream: ^3.6.0
     safe-buffer: ^5.2.1
   checksum: 60dd208a4cb6c93626dd25ef9ced331becfb11eb9ef4245f085e0925408610dd052f9399a501a3dae53a4664627513898286f36762b193939e478fb8885883cb
+  languageName: node
+  linkType: hard
+
+"gettext-parser@npm:^5.1.2":
+  version: 5.1.2
+  resolution: "gettext-parser@npm:5.1.2"
+  dependencies:
+    content-type: ^1.0.4
+    encoding: ^0.1.13
+    readable-stream: ^3.6.0
+    safe-buffer: ^5.2.1
+  checksum: b586d71f8aef0b47e47034ac088b2294509602775639c8511efa0502de6489cb01d0005ed6316878f3241064a3c7954d747de21e9de4c038277242547d761eff
   languageName: node
   linkType: hard
 
