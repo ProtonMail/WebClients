@@ -1,4 +1,4 @@
-import { useState, FormEvent, useMemo } from 'react';
+import { useState, FormEvent, useMemo, useRef } from 'react';
 import { History } from 'history';
 import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
@@ -111,6 +111,9 @@ const AdvancedSearch = ({
     const [addresses] = useAddresses();
     const [model, updateModel] = useState<SearchModel>(initializeModel(history));
     const [user] = useUser();
+
+    const senderListAnchorRef = useRef<HTMLDivElement>(null);
+    const toListAnchorRef = useRef<HTMLDivElement>(null);
 
     // Get right keyword value depending on the current situation
     const getKeyword = (keyword: string, reset?: boolean) => {
@@ -243,7 +246,7 @@ const AdvancedSearch = ({
                                 />
                             </div>
                         </div>
-                        <div className="mb0-5">
+                        <div className="mb0-5" ref={senderListAnchorRef}>
                             <Label
                                 title={c('Label').t`Sender`}
                                 className="advanced-search-label text-semibold"
@@ -254,9 +257,10 @@ const AdvancedSearch = ({
                                 recipients={model.from}
                                 onChange={(from) => updateModel({ ...model, from })}
                                 placeholder={c('Placeholder').t`Name or email address`}
+                                anchorRef={senderListAnchorRef}
                             />
                         </div>
-                        <div className="mb0-5">
+                        <div className="mb0-5" ref={toListAnchorRef}>
                             <Label
                                 title={c('Label').t`Recipient`}
                                 className="advanced-search-label text-semibold"
@@ -267,6 +271,7 @@ const AdvancedSearch = ({
                                 recipients={model.to}
                                 onChange={(to) => updateModel({ ...model, to })}
                                 placeholder={c('Placeholder').t`Name or email address`}
+                                anchorRef={toListAnchorRef}
                             />
                         </div>
                         <div className="mb0-5">

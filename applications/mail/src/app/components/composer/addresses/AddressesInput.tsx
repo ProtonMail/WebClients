@@ -1,4 +1,4 @@
-import { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment } from 'react';
+import { useState, useEffect, MutableRefObject, useRef, MouseEvent, Fragment, RefObject } from 'react';
 import * as React from 'react';
 import { c, msgid } from 'ttag';
 import {
@@ -37,6 +37,7 @@ interface Props {
     addContactAction?: () => void;
     classname?: string;
     hasLighterFieldDesign?: boolean;
+    anchorRef: RefObject<HTMLElement>;
 }
 
 const AddressesInput = ({
@@ -52,6 +53,7 @@ const AddressesInput = ({
     addContactAction,
     classname,
     hasLighterFieldDesign = false,
+    anchorRef,
 }: Props) => {
     const contactEmailsMap = useContactsMap();
     const groupsWithContactsMap = useGroupsWithContactsMap();
@@ -63,7 +65,6 @@ const AddressesInput = ({
     const { createNotification } = useNotifications();
 
     const inputRef = useRef<HTMLInputElement>(null);
-    const anchorRef = useRef<HTMLDivElement>(null);
 
     const [recipientsOrGroups, setRecipientsOrGroups] = useState(() => getRecipientsOrGroups(recipients));
 
@@ -180,10 +181,7 @@ const AddressesInput = ({
     );
 
     return (
-        <div
-            className={classnames(['composer-addresses-autocomplete w100 flex-item-fluid relative', classname])}
-            ref={anchorRef}
-        >
+        <div className={classnames(['composer-addresses-autocomplete w100 flex-item-fluid relative', classname])}>
             <div
                 className={classnames([
                     'composer-addresses-container flex-no-min-children flex-item-fluid',
