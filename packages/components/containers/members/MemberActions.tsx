@@ -2,7 +2,13 @@ import { c } from 'ttag';
 import { authMember } from '@proton/shared/lib/api/members';
 import { APPS, isSSOMode, isStandaloneMode, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import memberLogin from '@proton/shared/lib/authentication/memberLogin';
-import { Address, CachedOrganizationKey, Member, Organization, User as tsUser } from '@proton/shared/lib/interfaces';
+import {
+    CachedOrganizationKey,
+    Member,
+    Organization,
+    PartialMemberAddress,
+    User as tsUser,
+} from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 import isTruthy from '@proton/utils/isTruthy';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -26,7 +32,7 @@ interface Props {
     onEdit: (member: Member) => void;
     onDelete: (member: Member) => Promise<void>;
     onRevoke: (member: Member) => Promise<void>;
-    addresses: Address[];
+    addresses: PartialMemberAddress[] | undefined;
     organization: Organization;
     organizationKey: CachedOrganizationKey | undefined;
 }
