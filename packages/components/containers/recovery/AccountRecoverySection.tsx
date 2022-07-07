@@ -97,7 +97,7 @@ const AccountRecoverySection = () => {
                     <RecoveryPhone
                         className="mb0 on-mobile-mb1"
                         defaultCountry={defaultCountry}
-                        phone={userSettings.Phone.Value}
+                        phone={userSettings.Phone}
                         hasReset={!!userSettings.Phone.Reset}
                     />
                     <div className="flex flex-align-items-center">
