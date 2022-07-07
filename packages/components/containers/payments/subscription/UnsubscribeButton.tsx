@@ -143,8 +143,8 @@ const UnsubscribeButton = ({ className, children, ...rest }: Props) => {
             });
         }
 
-        const hasMail = hasBit(user.Services, MAIL);
-        const hasVpn = hasBit(user.Services, VPN);
+        const hasMail = hasBit(user.Subscribed, MAIL);
+        const hasVpn = hasBit(user.Subscribed, VPN);
 
         if (hasMail || hasVpn) {
             await new Promise<void>((resolve, reject) => {
