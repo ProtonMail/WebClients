@@ -2,7 +2,8 @@ import { ComponentPropsWithoutRef } from 'react';
 
 import { getVariableFromThemeColor, ThemeColor } from '@proton/colors';
 
-import clsx from '../clsx';
+import clsx from '@proton/utils/clsx';
+
 import './NotificationDot.scss';
 
 export interface NotificationDotProps extends ComponentPropsWithoutRef<'span'> {
