@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { c, msgid } from 'ttag';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { getHasOnlyIcsAttachments } from '@proton/shared/lib/mail/messages';
@@ -41,30 +42,35 @@ const ItemColumnLayout = ({
     breakpoints,
     unread,
 }: Props) => {
-    const { shouldHighlight, highlightMetadata, getESDBStatus } = useEncryptedSearchContext();
-    const { dbExists, esEnabled } = getESDBStatus();
-    const useES = dbExists && esEnabled && shouldHighlight();
+    const { shouldHighlight, highlightMetadata } = useEncryptedSearchContext();
+    const highlightData = shouldHighlight();
 
     const body = (element as ESMessage).decryptedBody;
     const { Subject } = element;
 
-    const sendersContent =
-        !loading && displayRecipients && !senders
-            ? c('Info').t`(No Recipient)`
-            : shouldHighlight()
-            ? highlightMetadata(senders, unread, true).resultJSX
-            : senders;
-    const subjectContent = shouldHighlight() && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject;
+    const sendersContent = useMemo(
+        () =>
+            !loading && displayRecipients && !senders
+                ? c('Info').t`(No Recipient)`
+                : highlightData
+                ? highlightMetadata(senders, unread, true).resultJSX
+                : senders,
+        [loading, displayRecipients, senders, highlightData]
+    );
+    const subjectContent = useMemo(
+        () => (highlightData && Subject ? highlightMetadata(Subject, unread, true).resultJSX : Subject),
+        [Subject, highlightData]
+    );
 
-    let bodyContent: JSX.Element | undefined;
-    let occurrencesInBody = 0;
-    if (body) {
-        ({ resultJSX: bodyContent, numOccurrences: occurrencesInBody } = highlightMetadata(body, unread, true));
-    }
+    const { resultJSX, numOccurrences } = useMemo(
+        () =>
+            body && highlightData ? highlightMetadata(body, unread, true) : { resultJSX: undefined, numOccurrences: 0 },
+        [body, unread]
+    );
     const bodyTitle = c('Info').ngettext(
-        msgid`${occurrencesInBody} occurrence found in the mail content`,
-        `${occurrencesInBody} occurrences found in the mail content`,
-        occurrencesInBody
+        msgid`${numOccurrences} occurrence found in the mail content`,
+        `${numOccurrences} occurrences found in the mail content`,
+        numOccurrences
     );
 
     const hasOnlyIcsAttachments = getHasOnlyIcsAttachments(element?.AttachmentInfo);
@@ -137,7 +143,7 @@ const ItemColumnLayout = ({
                 </div>
             </div>
 
-            {useES && (
+            {!!resultJSX && (
                 <>
                     <div
                         className="flex flex-nowrap flex-align-items-center item-secondline max-w80 no-scroll"
@@ -145,7 +151,7 @@ const ItemColumnLayout = ({
                     >
                         <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
                             <span className="inline-block max-w100 text-ellipsis" title={bodyTitle}>
-                                {bodyContent}
+                                {resultJSX}
                             </span>
                         </div>
                     </div>
