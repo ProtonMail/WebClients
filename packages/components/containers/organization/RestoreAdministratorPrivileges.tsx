@@ -1,9 +1,10 @@
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getOrganizationKeyInfo } from '@proton/shared/lib/organization/helper';
 
-import { Alert, Block, ButtonLike, LearnMore, SettingsLink } from '../../components';
+import { Alert, Block, LearnMore, SettingsLink } from '../../components';
 import { useOrganization, useOrganizationKey } from '../../hooks';
 import { getActivationText } from './helper';
 

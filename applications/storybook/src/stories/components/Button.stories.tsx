@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { ButtonLike } from '@proton/atoms';
 import {
     Button,
-    ButtonLike,
     Checkbox,
     Icon,
     RadioGroup,

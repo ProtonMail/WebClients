@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import {
     AppLink,
-    ButtonLike,
     CalendarLogo,
     DriveLogo,
     Href,

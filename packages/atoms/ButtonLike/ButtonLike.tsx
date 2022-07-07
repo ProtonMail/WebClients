@@ -1,14 +1,16 @@
 import { ElementType, ReactElement, forwardRef } from 'react';
+import { Box, PolymorphicComponentProps } from 'react-polymorphic-box';
 
 import { ThemeColorUnion } from '@proton/colors';
-import { CircleLoader } from '@proton/atoms';
+import clsx from '@proton/utils/clsx';
 
-import { classnames } from '../../helpers';
-import { Box, PolymorphicComponentProps } from '../../helpers/react-polymorphic-box';
+import { CircleLoader } from '../CircleLoader';
 
-export type Shape = 'solid' | 'outline' | 'ghost' | 'underline';
+import './ButtonLike.scss';
 
-export type Size = 'small' | 'medium' | 'large';
+export type ButtonLikeShape = 'solid' | 'outline' | 'ghost' | 'underline';
+
+export type ButtonLikeSize = 'small' | 'medium' | 'large';
 
 interface ButtonLikeOwnProps {
     /**
@@ -23,7 +25,7 @@ interface ButtonLikeOwnProps {
      * - `ghost` for minimalistic button with hover/focus changing
      * - `underline` for underlined text button, with paddings for alignment
      */
-    shape?: Shape;
+    shape?: ButtonLikeShape;
     /**
      * Controls the colors of the button.
      * Exact styles applied depend on the chosen shape as well.
@@ -32,7 +34,7 @@ interface ButtonLikeOwnProps {
     /**
      * Controls how large the button should be.
      */
-    size?: Size;
+    size?: ButtonLikeSize;
     /**
      * Puts the button in a disabled state.
      */
@@ -88,7 +90,7 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
 
     const isUnderlineShape = shape === 'underline';
 
-    const buttonClassName = classnames([
+    const buttonClassName = clsx(
         isUnderlineShape ? 'button-underline' : 'button',
         !isUnderlineShape && pill && 'button-pill',
         !isUnderlineShape && icon && 'button-for-icon',
@@ -98,8 +100,8 @@ const ButtonLikeBase = <E extends ElementType = typeof defaultElement>(
         `button-${shape}-${color}`,
         restProps.as !== 'button' ? 'inline-block text-center' : '',
         !isUnderlineShape && fullWidth && 'w100',
-        className,
-    ]);
+        className
+    );
 
     const roleProps = restProps.onClick && !restProps.type ? { role: 'button' } : undefined;
 

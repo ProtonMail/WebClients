@@ -1,7 +1,8 @@
 import { forwardRef } from 'react';
 
+import { ButtonLike } from '@proton/atoms';
+
 import { Href } from '..';
-import ButtonLike from './ButtonLike';
 
 import './TwitterButton.scss';
 
