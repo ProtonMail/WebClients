@@ -1,7 +1,7 @@
 import { createContext, ReactNode, useState } from 'react';
 
 import arrayRemove from '@proton/utils/remove';
-import { last } from '@proton/utils/array';
+import lastItem from '@proton/utils/lastItem';
 
 interface TooltipExclusiveContextValue {
     last?: string;
@@ -23,7 +23,7 @@ const TooltipExclusive = ({ children }: { children: ReactNode }) => {
     };
 
     return (
-        <TooltipExclusiveContext.Provider value={{ last: last(tooltips), add, remove }}>
+        <TooltipExclusiveContext.Provider value={{ last: lastItem(tooltips), add, remove }}>
             {children}
         </TooltipExclusiveContext.Provider>
     );
