@@ -527,29 +527,29 @@ export enum LABEL_EXCLUSIVE {
 }
 
 export const ACCENT_COLORNAMES = {
-    '#8080FF': () => c('color').t`purple`,
-    '#DB60D6': () => c('color').t`pink`,
-    '#EC3E7C': () => c('color').t`strawberry`,
-    '#F78400': () => c('color').t`carrot`,
-    '#936D58': () => c('color').t`sahara`,
-    '#5252CC': () => c('color').t`enzian`,
-    '#A839A4': () => c('color').t`plum`,
-    '#BA1E55': () => c('color').t`cerise`,
-    '#C44800': () => c('color').t`copper`,
-    '#54473F': () => c('color').t`soil`,
-    '#415DF0': () => c('color').t`slateblue`,
-    '#179FD9': () => c('color').t`pacific`,
-    '#1DA583': () => c('color').t`reef`,
-    '#3CBB3A': () => c('color').t`fern`,
-    '#B4A40E': () => c('color').t`olive`,
-    '#273EB2': () => c('color').t`cobalt`,
-    '#0A77A6': () => c('color').t`ocean`,
-    '#0F735A': () => c('color').t`pine`,
-    '#258723': () => c('color').t`forest`,
-    '#807304': () => c('color').t`pickle`,
-} as const;
+    purple: { color: '#8080FF', getName: () => c('color').t`purple` },
+    pink: { color: '#DB60D6', getName: () => c('color').t`pink` },
+    strawberry: { color: '#EC3E7C', getName: () => c('color').t`strawberry` },
+    carrot: { color: '#F78400', getName: () => c('color').t`carrot` },
+    sahara: { color: '#936D58', getName: () => c('color').t`sahara` },
+    enzian: { color: '#5252CC', getName: () => c('color').t`enzian` },
+    plum: { color: '#A839A4', getName: () => c('color').t`plum` },
+    cerise: { color: '#BA1E55', getName: () => c('color').t`cerise` },
+    copper: { color: '#C44800', getName: () => c('color').t`copper` },
+    soil: { color: '#54473F', getName: () => c('color').t`soil` },
+    slateblue: { color: '#415DF0', getName: () => c('color').t`slateblue` },
+    pacific: { color: '#179FD9', getName: () => c('color').t`pacific` },
+    reef: { color: '#1DA583', getName: () => c('color').t`reef` },
+    fern: { color: '#3CBB3A', getName: () => c('color').t`fern` },
+    olive: { color: '#B4A40E', getName: () => c('color').t`olive` },
+    cobalt: { color: '#273EB2', getName: () => c('color').t`cobalt` },
+    ocean: { color: '#0A77A6', getName: () => c('color').t`ocean` },
+    pine: { color: '#0F735A', getName: () => c('color').t`pine` },
+    forest: { color: '#258723', getName: () => c('color').t`forest` },
+    pickle: { color: '#807304', getName: () => c('color').t`pickle` },
+};
 
-export const ACCENT_COLORS = Object.keys(ACCENT_COLORNAMES) as string[];
+export const ACCENT_COLORS = Object.values(ACCENT_COLORNAMES).map(({ color }) => color);
 
 export const REGEX_IMAGE_EXTENSION = /\.(gif|jpe?g|tiff|png)$/i;
 
@@ -701,8 +701,11 @@ export enum MAILBOX_IDENTIFIERS {
     label = 'label',
 }
 
-export const BLACKLIST_LOCATION = +MAILBOX_IDENTIFIERS.spam;
-export const WHITELIST_LOCATION = +MAILBOX_IDENTIFIERS.inbox;
+export enum INCOMING_DEFAULTS_LOCATION {
+    INBOX = +MAILBOX_IDENTIFIERS.inbox,
+    SPAM = +MAILBOX_IDENTIFIERS.spam,
+    BLOCKED = 14,
+}
 
 /* eslint  no-useless-escape: "off" */
 export const REGEX_EMAIL =
