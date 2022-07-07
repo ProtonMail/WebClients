@@ -1,4 +1,4 @@
-import { ReactNode, RefObject, useRef, MouseEvent } from 'react';
+import { ReactNode, RefObject, useRef, MouseEvent, useMemo } from 'react';
 import { c } from 'ttag';
 import { classnames, useCombinedRefs, useHotkeys } from '@proton/components';
 import { KeyboardKey } from '@proton/shared/lib/interfaces';
@@ -60,10 +60,17 @@ const RecipientItemLayout = ({
     // is mocked. Since highlightMetadata and shouldHighlight are irrelevant in that
     // scenario, the mocked version is enough and prevents the component from crashing
     const { highlightMetadata, shouldHighlight } = useEncryptedSearchContext();
+    const highlightData = shouldHighlight();
 
     const rootRef = useRef<HTMLSpanElement>(null);
-    const highlightedLabel = !!label && shouldHighlight() ? highlightNode(label, highlightMetadata) : label;
-    const highlightedAddress = !!address && shouldHighlight() ? highlightNode(address, highlightMetadata) : address;
+    const highlightedLabel = useMemo(
+        () => (!!label && highlightData ? highlightNode(label, highlightMetadata) : label),
+        [label, highlightData]
+    );
+    const highlightedAddress = useMemo(
+        () => (!!address && highlightData ? highlightNode(address, highlightMetadata) : address),
+        [address, highlightData]
+    );
 
     const combinedRef = useCombinedRefs(dropdrownAnchorRef, rootRef);
 
