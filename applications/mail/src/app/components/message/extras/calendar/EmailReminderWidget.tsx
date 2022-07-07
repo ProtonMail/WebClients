@@ -3,10 +3,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import {
     AppLink,
     Banner,
-    ButtonLike,
     CalendarEventDateHeader,
     Href,
     Icon,

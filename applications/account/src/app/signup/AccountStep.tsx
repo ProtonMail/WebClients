@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import {
     AlertModal,
     Button,
-    ButtonLike,
     Challenge,
     ChallengeError,
     ChallengeRef,

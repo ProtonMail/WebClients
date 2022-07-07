@@ -2,19 +2,11 @@ import { useHistory, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
 import onboardingVPNWelcome from '@proton/styles/assets/img/onboarding/vpn-welcome.svg';
 
-import {
-    Button,
-    ButtonLike,
-    Copy,
-    DropdownMenuLink,
-    Href,
-    ModalProps,
-    ModalTwo,
-    ModalTwoContent,
-} from '../../../components';
+import { Button, Copy, DropdownMenuLink, Href, ModalProps, ModalTwo, ModalTwoContent } from '../../../components';
 import { useWelcomeFlags } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import { OnboardingContent } from '../../onboarding';

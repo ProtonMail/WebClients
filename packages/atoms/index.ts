@@ -1,4 +1,5 @@
 export * from './Avatar';
+export * from './ButtonLike';
 export * from './Card';
 export * from './CircleLoader';
 export * from './Donut';

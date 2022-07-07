@@ -1,10 +1,13 @@
-import {ButtonLike, CollapsingBreadcrumbs, Icon, Option, SimpleDropdown} from "@proton/components/components";
-import {c} from "ttag";
-import SelectOptions from "@proton/components/components/selectTwo/SelectOptions";
-import CalendarSelectIcon from "@proton/components/components/calendarSelect/CalendarSelectIcon";
-import React from "react";
-import {useHistory} from "react-router";
-import {VisualCalendar} from "@proton/shared/lib/interfaces/calendar";
+import React from 'react';
+import { useHistory } from 'react-router';
+
+import { c } from 'ttag';
+
+import { ButtonLike } from '@proton/atoms';
+import { CollapsingBreadcrumbs, Icon, Option, SimpleDropdown } from '@proton/components/components';
+import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
+import SelectOptions from '@proton/components/components/selectTwo/SelectOptions';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 interface Props {
     calendar: VisualCalendar;

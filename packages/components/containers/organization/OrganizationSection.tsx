@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import {
@@ -12,7 +13,7 @@ import {
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Audience, Organization } from '@proton/shared/lib/interfaces';
 
-import { Button, ButtonLike, Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
+import { Button, Field, Label, Loader, PrimaryButton, Row, SettingsLink } from '../../components';
 import { useModals, useNotifications, useSubscription } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';

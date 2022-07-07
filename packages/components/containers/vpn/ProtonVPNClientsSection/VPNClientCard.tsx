@@ -2,12 +2,13 @@ import { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
+
 import {
     Block,
     Bordered,
     Button,
     ButtonGroup,
-    ButtonLike,
     DropdownMenu,
     Href,
     Icon,

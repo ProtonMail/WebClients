@@ -2,9 +2,9 @@ import React from 'react';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import {
     Button,
-    ButtonLike,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,

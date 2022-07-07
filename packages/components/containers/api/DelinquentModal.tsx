@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { getInvoicesPathname } from '@proton/shared/lib/apps/helper';
 
-import { AlertModal, ButtonLike, ModalProps, SettingsLink } from '../../components';
+import { AlertModal, ModalProps, SettingsLink } from '../../components';
 import { useConfig } from '../../hooks';
 
 const DelinquentModal = (props: ModalProps) => {
