@@ -1,6 +1,6 @@
 import { Ref, forwardRef } from 'react';
 
-import ButtonLike, { ButtonLikeProps } from './ButtonLike';
+import { ButtonLike, ButtonLikeProps } from '@proton/atoms';
 
 export interface ButtonProps extends Omit<ButtonLikeProps<'button'>, 'as' | 'ref'> {}
 

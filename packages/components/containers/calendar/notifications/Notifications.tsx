@@ -1,12 +1,13 @@
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import addItem from '@proton/utils/addItem';
 import clsx from '@proton/utils/clsx';
 import removeItem from '@proton/utils/removeIndex';
 import updateItem from '@proton/utils/updateItem';
 
-import { Button, ButtonLike, Icon, IconName, Tooltip } from '../../../components';
+import { Button, Icon, IconName, Tooltip } from '../../../components';
 import { generateUID } from '../../../helpers';
 import NotificationInput from './inputs/NotificationInput';
 

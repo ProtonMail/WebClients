@@ -2,10 +2,11 @@ import { ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { ButtonLike } from '@proton/atoms';
 import { BRAND_NAME, MAIL_APP_NAME, PLANS, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { getBridgeURL, getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { ButtonLike, Icon, IconName, Select } from '../../components';
+import { Icon, IconName, Select } from '../../components';
 import { useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
 
