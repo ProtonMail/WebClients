@@ -14,9 +14,20 @@ interface Props {
     expanded?: boolean;
     onFocus: (id: string) => void;
     id: string;
+    treeMode?: boolean;
 }
 
-const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, expanded, onFocus, id }: Props) => {
+const SidebarFolder = ({
+    currentLabelID,
+    folder,
+    level,
+    onToggle,
+    unreadCount,
+    expanded,
+    onFocus,
+    id,
+    treeMode = true,
+}: Props) => {
     const shortcutHandlers: HotkeyTuple[] = [
         [
             'ArrowRight',
@@ -36,6 +47,8 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
             },
         ],
     ];
+
+    const noChevron = treeMode ? <span className="navigation-icon-empty flex-item-noshrink" /> : null;
 
     return (
         <SidebarItem
@@ -69,7 +82,7 @@ const SidebarFolder = ({ currentLabelID, folder, level, onToggle, unreadCount, e
                             />
                         </button>
                     ) : (
-                        <span className="navigation-icon-empty flex-item-noshrink" />
+                        noChevron
                     )}
                     <FolderIcon
                         className="mr0-5 navigation-icon flex-item-noshrink"
