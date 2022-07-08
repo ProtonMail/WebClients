@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { NotificationModel } from '@proton/shared/lib/interfaces/calendar/Notification';
 import { EventModelErrors } from '@proton/shared/lib/interfaces/calendar';
 import addItem from '@proton/utils/addItem';
-import { updateItem } from '@proton/utils/array';
+import updateItem from '@proton/utils/updateItem';
 import removeItem from '@proton/utils/removeIndex';
 import { classnames, generateUID } from '../../../helpers';
 import { ButtonLike, ErrorZone, Icon, UnderlineButton, Tooltip } from '../../../components';
