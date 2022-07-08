@@ -25,6 +25,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { isUnread } from '../../helpers/elements';
 import { isMessageForwarded } from '../../helpers/encryptedSearch/esBuild';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
 import { useLoadEmbeddedImages, useLoadRemoteImages } from '../../hooks/message/useLoadImages';
 import { useLoadMessage } from '../../hooks/message/useLoadMessage';
@@ -32,7 +33,6 @@ import { useMessage } from '../../hooks/message/useMessage';
 import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';

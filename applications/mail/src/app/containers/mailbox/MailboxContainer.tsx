@@ -36,6 +36,8 @@ import {
     setSortInUrl,
     sortFromUrl,
 } from '../../helpers/mailboxUrl';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
+import { usePermanentDelete } from '../../hooks/actions/usePermanentDelete';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useMailboxFocus } from '../../hooks/mailbox/useMailboxFocus';
@@ -45,8 +47,6 @@ import useNewEmailNotification from '../../hooks/mailbox/useNewEmailNotification
 import usePreLoadElements from '../../hooks/mailbox/usePreLoadElements';
 import { useWelcomeFlag } from '../../hooks/mailbox/useWelcomeFlag';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/useMarkAs';
-import { usePermanentDelete } from '../../hooks/usePermanentDelete';
 import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
@@ -275,7 +275,7 @@ const MailboxContainer = ({
             const folderName = getFolderName(LabelID, folders);
             const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_LABEL_IDS.INBOX : labelID;
             const elements = getElementsFromIDs(selectedIDs);
-            await moveToFolder(elements, LabelID, folderName, fromLabelID);
+            await moveToFolder(elements, LabelID, folderName, fromLabelID, false);
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }

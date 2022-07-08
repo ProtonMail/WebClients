@@ -1,14 +1,14 @@
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 
 import { clearAll, getHistory } from '../../../helpers/test/helper';
-import * as useApplyLabels from '../../../hooks/useApplyLabels';
+import * as useStarModule from '../../../hooks/actions/useStar';
 import { getElements, sendEvent, setup } from './Mailbox.test.helpers';
 
-jest.spyOn(useApplyLabels, 'useStar');
+jest.spyOn(useStarModule, 'useStar');
 
 // Spying useStar is a trick to count the number of renders on the component ItemStar
 // Beware, useStar is also used on the hotkeys management
-const useStar = useApplyLabels.useStar as jest.Mock;
+const useStar = useStarModule.useStar as jest.Mock;
 
 describe('Mailbox performance loss check', () => {
     beforeEach(clearAll);

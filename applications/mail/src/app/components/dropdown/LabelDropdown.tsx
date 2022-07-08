@@ -17,16 +17,15 @@ import {
     useModalState,
 } from '@proton/components';
 import EditLabelModal from '@proton/components/containers/labels/modals/EditLabelModal';
-import { ACCENT_COLORS, LABEL_TYPE, MAILBOX_IDENTIFIERS } from '@proton/shared/lib/constants';
+import { ACCENT_COLORS, LABEL_TYPE } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 import { getLabelIDs } from '../../helpers/elements';
-import { getStandardFolders } from '../../helpers/labels';
+import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useApplyLabels, useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 
@@ -81,16 +80,16 @@ interface Props {
 const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
     const [labels = []] = useLabels();
 
-    const labelIDs = labels.map(({ ID }) => ID);
     const [uid] = useState(generateUID('label-dropdown'));
     const [loading, withLoading] = useLoading();
     const [search, updateSearch] = useState('');
     const [containFocus, setContainFocus] = useState(true);
     const [lastChecked, setLastChecked] = useState(''); // Store ID of the last label ID checked
-    const [alsoArchive, updateAlsoArchive] = useState(false);
+    // const [alsoArchive, updateAlsoArchive] = useState(false);
+    const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
-    const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    // const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
 
     const [editLabelProps, setEditLabelModalOpen] = useModalState();
 
@@ -114,10 +113,12 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
-    const archiveCheckID = `${uid}-archive`;
+    // const archiveCheckID = `${uid}-archive`;
+    const alwaysCheckID = `${uid}-always`;
     const labelCheckID = (ID: string) => `${uid}-${ID}`;
     const areSameLabels = isDeepEqual(initialState, selectedLabelIDs);
-    const applyDisabled = areSameLabels && !alsoArchive;
+    // const applyDisabled = areSameLabels && !alsoArchive;
+    const applyDisabled = areSameLabels;
     const autoFocusSearch = !breakpoints.isNarrow;
     const normSearch = normalize(search, true);
     const list = labels.filter(({ Name = '' }) => {
@@ -145,14 +146,14 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 }
                 return acc;
             }, {} as { [labelID: string]: boolean });
-            promises.push(applyLabels(elements, changes));
+            promises.push(applyLabels(elements, changes, always));
         }
 
-        if (alsoArchive) {
-            const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
-            const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
-            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID));
-        }
+        // if (alsoArchive) {
+        //     const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
+        //     const fromLabelID = labelIDs.includes(labelID) ? MAILBOX_IDENTIFIERS.inbox : labelID;
+        //     promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, fromLabelID, false));
+        // }
 
         await Promise.all(promises);
         onClose();
@@ -237,6 +238,18 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     data-prevent-arrow-navigation
                 />
             </div>
+            <div className="p1 border-bottom">
+                <Checkbox
+                    id={alwaysCheckID}
+                    checked={always}
+                    onChange={({ target }) => setAlways(target.checked)}
+                    data-testid="label-dropdown:always-move"
+                    data-prevent-arrow-navigation
+                />
+                <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                    {c('Label').t`Always move senders emails`}
+                </label>
+            </div>
             <div
                 className="scroll-if-needed scroll-smooth-touch mt1 label-dropdown-list-container"
                 data-testid="label-dropdown-list"
@@ -281,7 +294,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
-            <div className="flex m1 mb0">
+            {/* <div className="flex m1 mb0">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
@@ -292,7 +305,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 <label htmlFor={archiveCheckID} className="flex-item-fluid">
                     {c('Label').t`Also archive`}
                 </label>
-            </div>
+            </div> */}
             <div className="m1">
                 <PrimaryButton
                     className="w100"
@@ -305,9 +318,9 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Action').t`Apply`}
                 </PrimaryButton>
             </div>
-            {moveScheduledModal}
+            {/* {moveScheduledModal}
             {moveAllModal}
-            {moveToSpamModal}
+            {moveToSpamModal} */}
         </form>
     );
 };

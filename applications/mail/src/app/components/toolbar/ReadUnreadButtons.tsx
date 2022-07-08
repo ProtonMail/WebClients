@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { Vr } from '@proton/atoms';
 import { Icon, ToolbarButton, useMailSettings } from '@proton/components';
 
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
 
 const { READ, UNREAD } = MARK_AS_STATUS;

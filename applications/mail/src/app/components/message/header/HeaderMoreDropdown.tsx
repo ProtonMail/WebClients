@@ -31,10 +31,11 @@ import { getCurrentFolderID, getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
+import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/actions/useMarkAs';
+import { useMoveToFolder } from '../../../hooks/actions/useMoveToFolder';
+import { useStar } from '../../../hooks/actions/useStar';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
-import { useMoveToFolder, useStar } from '../../../hooks/useApplyLabels';
 import { useGetAttachment } from '../../../hooks/useAttachment';
-import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/useMarkAs';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 import { Element } from '../../../models/element';
@@ -109,7 +110,7 @@ const HeaderMoreDropdown = ({
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
         const folderName = getFolderName(folderID, folders);
-        await moveToFolder([message.data || ({} as Element)], folderID, folderName, fromFolderID);
+        await moveToFolder([message.data || ({} as Element)], folderID, folderName, fromFolderID, false);
     };
 
     const handleUnread = async () => {
