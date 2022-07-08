@@ -1,5 +1,5 @@
 import getRandomValues from '@proton/get-random-values';
-import getRandomString from "@proton/utils/getRandomString";
+import getRandomString from '@proton/utils/getRandomString';
 import { withAuthHeaders, withUIDHeaders } from '../fetch/headers';
 import { getLocalKey, getLocalSessions, setCookies, setLocalKey } from '../api/auth';
 import { getUser } from '../api/user';
@@ -12,13 +12,16 @@ import {
     setPersistedSession,
     setPersistedSessionWithBlob,
 } from './persistedSessionStorage';
-import { isSSOMode } from '../constants';
+import { isSSOMode, SECOND } from '../constants';
 import { Api, User as tsUser } from '../interfaces';
 import { LocalKeyResponse, LocalSessionResponse } from './interface';
 import { InvalidPersistentSessionError } from './error';
 import { InactiveSessionError } from '../api/helpers/withApiHandlers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '../helpers/encoding';
 import { getKey } from './cryptoHelper';
+import { getAppFromPathnameSafe } from '../apps/slugHelper';
+import { getIsAuthorizedApp, postMessageFromIframe } from '../sideApp/helpers';
+import { SIDE_APP_ACTION, SIDE_APP_EVENTS } from '../sideApp/models';
 
 export type ResumedSessionResult = {
     UID: string;
@@ -27,7 +30,52 @@ export type ResumedSessionResult = {
     User: tsUser;
     persistent: boolean;
 };
+
+const handleSideApp = (localID: number) => {
+    let timeout: ReturnType<typeof setTimeout> | undefined;
+
+    let resolve: (arg: undefined | ResumedSessionResult) => void = () => {};
+    const promise = new Promise<undefined | ResumedSessionResult>((res) => {
+        resolve = res;
+    });
+
+    const isIframe = window.self !== window.top;
+    const parentApp = getAppFromPathnameSafe(window.location.pathname);
+
+    const handler = (event: MessageEvent<SIDE_APP_ACTION>) => {
+        if (event.data.type === SIDE_APP_EVENTS.SIDE_APP_SESSION) {
+            const { UID, keyPassword, User, persistent } = event.data.payload;
+            window.removeEventListener('message', handler);
+
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+
+            resolve({ UID, keyPassword, User, persistent, LocalID: localID });
+        }
+    };
+
+    if (parentApp && getIsAuthorizedApp(parentApp) && isIframe) {
+        postMessageFromIframe({ type: SIDE_APP_EVENTS.SIDE_APP_READY }, parentApp);
+        window.addEventListener('message', handler);
+
+        // Resolve the promise if the parent app does not respond
+        timeout = setTimeout(() => {
+            resolve(undefined);
+        }, SECOND);
+    } else {
+        resolve(undefined);
+    }
+    return promise;
+};
+
 export const resumeSession = async (api: Api, localID: number, User?: tsUser): Promise<ResumedSessionResult> => {
+    const res = await handleSideApp(localID);
+
+    // If we got a res, it means that we are in a side app. We don't need to make the whole resumeSession part
+    if (res) {
+        return res;
+    }
     const persistedSession = getPersistedSession(localID);
     if (!persistedSession) {
         throw new InvalidPersistentSessionError('Missing persisted session or UID');
