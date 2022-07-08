@@ -14,7 +14,6 @@ import {
     Tooltip,
 } from '@proton/components';
 import { APPS, CALENDAR_APP_NAME } from '@proton/shared/lib/constants';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
 import ComposerContainer from './containers/ComposerContainer';
 import PageContainer from './containers/PageContainer';
 import { MAIN_ROUTE_PATH } from './constants';
@@ -71,7 +70,7 @@ const MainContainer = () => {
 
     useCalendarsInfoCoreListener();
 
-    const rightSidebarContent = calendarViewInMailFeature?.Value && !isSafari() && (
+    const rightSidebarContent = calendarViewInMailFeature?.Value && (
         <Tooltip title={CALENDAR_APP_NAME} originalPlacement="left">
             <button
                 className="side-app-link flex border rounded"

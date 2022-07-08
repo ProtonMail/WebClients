@@ -40,10 +40,7 @@ const LoaderPage = ({ text, loaderClassName = '' }: Props) => {
     return (
         <div className="h100">
             <div className="absolute-center text-center">
-                {
-                    // TODO: replace to isSideApp with the Safari fix
-                    isIframe && <CircleLoader className="mauto color-primary" size="medium" />
-                }
+                {isSideApp && <CircleLoader className="mauto color-primary" size="medium" />}
                 {!isIframe && (
                     <div>
                         <img className={classnames(['w10e', loaderClassName])} src={protonSpinner} />
