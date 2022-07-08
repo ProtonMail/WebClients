@@ -35,7 +35,7 @@ export interface InputFieldOwnProps {
 }
 
 export type InputFieldProps<E extends ElementType> = PolymorphicComponentProps<E, InputFieldOwnProps>;
-export const errorClassName = 'inputform-container--invalid';
+export const errorClassName = 'field-two--invalid';
 
 const defaultElement = Input;
 
@@ -65,37 +65,37 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
     const isDense = denseProp || dense;
     const classes = {
         root: classnames([
-            'inputform-container w100',
-            isDense && 'inputform-container--dense',
-            rootClassName,
-            disabled && 'inputform-container--disabled',
+            'field-two-container',
+            isDense && 'field-two--dense',
+            disabled && 'field-two--disabled',
             Boolean(error) && errorClassName,
-            !error && Boolean(warning) && 'inputform-container--warning',
-            bigger && 'inputform-container--bigger',
+            Boolean(warning) && !error && 'field-two--warning',
+            bigger && 'field-two--bigger',
+            rootClassName,
         ]),
         labelContainer: classnames([
-            'flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end',
+            'flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end flex-gap-0-5',
             labelContainerClassName,
         ]),
-        inputContainer: 'inputform-field-container relative',
+        inputContainer: 'field-two-input-container relative',
         assistContainer: classnames([
-            'inputform-assist flex flex-nowrap',
-            assistContainerClassName,
+            'field-two-assist flex flex-nowrap flex-align-items-start',
             isDense && 'sr-only',
+            assistContainerClassName,
         ]),
     };
-    const hintElement = hint && <div className="inputform-label-hint flex-item-noshrink">{hint}</div>;
-    const labelElement = label && <span className="inputform-label-text">{label}</span>;
+    const labelElement = label && <span className="field-two-label">{label}</span>;
+    const hintElement = hint && <span className="field-two-hint mlauto">{hint}</span>;
 
     const errorElement = error && typeof error !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="flex-item-noshrink aligntop mr0-25" />
+            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
             <span>{error}</span>
         </>
     );
     const warningElement = warning && typeof warning !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="flex-item-noshrink aligntop mr0-25" />
+            <Icon name="exclamation-circle-filled" className="flex-item-noshrink mr0-25" />
             <span>{warning}</span>
         </>
     );
@@ -109,7 +109,9 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
 
                 return (
                     <Tooltip title={title} type={tooltipType} isOpen={isFocused && !rest.value}>
-                        <Icon name="exclamation-circle-filled" className={iconClassName} />
+                        <span className="flex flex-item-noshrink p0-25">
+                            <Icon name="exclamation-circle-filled" className={iconClassName} />
+                        </span>
                     </Tooltip>
                 );
             }

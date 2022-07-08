@@ -133,6 +133,15 @@ input::-ms-reveal {
 	display: none;
 }
 
+/* fix for standard select component */
+select {
+	padding: 0; // for Firefox difference
+
+	option {
+		background-color: var(--field-background-color);
+	}
+}
+
 /* avoid ugly line-height */
 sup,
 sub {
