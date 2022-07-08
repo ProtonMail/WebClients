@@ -71,6 +71,8 @@ export const Sandbox = () => {
                     shape="ghost"
                     size="small"
                     icon
+                    className="rounded-sm"
+                    disabled={selectedToggles[toggles.indexOf('disabled')]}
                 >
                     <Icon name="brand-proton" />
                 </Button>
@@ -79,7 +81,7 @@ export const Sandbox = () => {
 
         if (id === 'select') {
             return (
-                <SelectTwo unstyled value="Item 1">
+                <SelectTwo unstyled value="Item 1" disabled={selectedToggles[toggles.indexOf('disabled')]}>
                     <Option key="1" value="Item 1" title="Item 1">
                         Item 1
                     </Option>
@@ -291,7 +293,7 @@ export const CustomElements = () => {
                 onChange={setPhone}
             />
             <InputFieldTwo as={TextAreaTwo} rows={3} label="Text area" placeholder="Placeholder" />
-            <InputFieldTwo as={SelectTwo} label="Select" placeholder="Placeholder">
+            <InputFieldTwo as={SelectTwo} label="Select" placeholder="one">
                 <Option title="one" value="one" />
                 <Option title="two" value="two" />
                 <Option title="three" value="three" />
