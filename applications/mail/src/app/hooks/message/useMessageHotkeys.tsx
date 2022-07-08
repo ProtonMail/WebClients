@@ -13,9 +13,10 @@ import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
+import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
+import { useMoveToFolder } from '../actions/useMoveToFolder';
+import { useStar } from '../actions/useStar';
 import { useFolderNavigationHotkeys } from '../mailbox/useFolderNavigationHotkeys';
-import { useMoveToFolder, useStar } from '../useApplyLabels';
-import { MARK_AS_STATUS, useMarkAs } from '../useMarkAs';
 
 const { TRASH, SPAM, ARCHIVE, INBOX } = MAILBOX_LABEL_IDS;
 
@@ -98,7 +99,7 @@ export const useMessageHotkeys = (
         const folderName = getFolderName(LabelID, folders);
         const fromLabelID = message.data.LabelIDs?.includes(labelID) ? INBOX : labelID;
 
-        await moveToFolder([message.data], LabelID, folderName, fromLabelID);
+        await moveToFolder([message.data], LabelID, folderName, fromLabelID, false);
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {

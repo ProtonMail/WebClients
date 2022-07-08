@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import {
     Button,
+    Checkbox,
     FolderIcon,
     Icon,
     IconName,
@@ -25,8 +26,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
+import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useMoveToFolder } from '../../hooks/useApplyLabels';
 import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
@@ -66,6 +67,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
     const [loading, withLoading] = useLoading();
     const [folders = []] = useFolders();
     const [search, updateSearch] = useState('');
+    const [always, setAlways] = useState(false);
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
@@ -107,7 +109,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
         });
 
     const handleMove = async (folder?: Folder) => {
-        await moveToFolder(elements, folder?.ID || '', folder?.Name || '', labelID);
+        await moveToFolder(elements, folder?.ID || '', folder?.Name || '', labelID, always);
         onClose();
 
         if (!isMessage || !conversationMode) {
@@ -122,6 +124,7 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
 
     // The dropdown is several times in the view, native html ids has to be different each time
     const searchInputID = `${uid}-search`;
+    const alwaysCheckID = `${uid}-always`;
     const folderButtonID = (ID: string) => `${uid}-${ID}`;
     const autoFocusSearch = !breakpoints.isNarrow;
 
@@ -156,6 +159,18 @@ const MoveDropdown = ({ selectedIDs, labelID, conversationMode, onClose, onLock,
                     data-testid="folder-dropdown:search-folder"
                     data-prevent-arrow-navigation
                 />
+            </div>
+            <div className="p1 border-bottom">
+                <Checkbox
+                    id={alwaysCheckID}
+                    checked={always}
+                    onChange={({ target }) => setAlways(target.checked)}
+                    data-testid="label-dropdown:always-move"
+                    data-prevent-arrow-navigation
+                />
+                <label htmlFor={alwaysCheckID} className="flex-item-fluid">
+                    {c('Label').t`Always move senders emails`}
+                </label>
             </div>
             <div
                 className="scroll-if-needed scroll-smooth-touch mt1 move-dropdown-list-container"

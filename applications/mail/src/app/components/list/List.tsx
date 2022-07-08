@@ -27,7 +27,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { useGetStartedChecklist, usePaidUserChecklist } from '../../containers/checklists';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
+import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { usePaging } from '../../hooks/usePaging';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import { showLabelTaskRunningBanner } from '../../logic/elements/elementsSelectors';

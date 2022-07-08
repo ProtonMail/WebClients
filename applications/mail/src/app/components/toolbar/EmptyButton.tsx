@@ -6,7 +6,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { metaKey, shiftKey } from '@proton/shared/lib/helpers/browser';
 
 import { isCustomLabel, labelIncludes } from '../../helpers/labels';
-import { useEmptyLabel } from '../../hooks/useEmptyLabel';
+import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
 import { Breakpoints } from '../../models/utils';
 
 const { DRAFTS, ALL_DRAFTS, ALL_MAIL, INBOX, SENT, ALL_SENT, ARCHIVE, STARRED, TRASH, SPAM } = MAILBOX_LABEL_IDS;
