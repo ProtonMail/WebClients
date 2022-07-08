@@ -139,17 +139,17 @@ export const CalendarModal = ({
     };
 
     const getFakeLabel = (labelText: string) => (
-        <span className="flex inputform-label flex-justify-space-between flex-nowrap flex-align-items-end">
-            <span className="inputform-label-text">{labelText}</span>
+        <span className="flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end">
+            <span className="field-two-label">{labelText}</span>
         </span>
     );
 
     const getFakeInputTwo = ({ content, label }: { content: React.ReactNode; label: string }) => {
         // classes taken from InputFieldTwo
         return (
-            <div className="inputform-container w100">
+            <div className="field-two-container w100">
                 {getFakeLabel(label)}
-                <div className="inputform-field-container relative">{content}</div>
+                <div className="field-two-field-container relative">{content}</div>
             </div>
         );
     };

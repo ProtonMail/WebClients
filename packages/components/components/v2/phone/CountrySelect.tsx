@@ -52,7 +52,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                     pickRef.current = false;
                     setIsOpen(!isOpen);
                 }}
-                className="unstyled inputform-prefix-phone border-right pr0-5"
+                className="unstyled flex-align-self-stretch my0-25 pr0-5 border-right"
                 ref={anchorRef}
                 caretClassName="mtauto mbauto"
                 aria-live="assertive"

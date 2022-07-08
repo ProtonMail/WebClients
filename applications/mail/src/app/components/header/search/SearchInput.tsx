@@ -24,7 +24,7 @@ const SearchInput = ({ searchParams, onOpen }: Props, ref: Ref<HTMLInputElement>
     return (
         <div
             ref={ref}
-            className="searchbox-container flex-item-centered-vert p0 inputform-field flex flex-row cursor-pointer"
+            className="searchbox-container flex-item-centered-vert p0 field-two-input flex flex-row cursor-pointer"
         >
             <Button
                 type="submit"
