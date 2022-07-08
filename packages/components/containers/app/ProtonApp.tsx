@@ -24,6 +24,9 @@ import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
 
 import useInstance from '@proton/hooks/useInstance';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { getIsAuthorizedApp } from '@proton/shared/lib/sideApp/helpers';
+
 import { Icons } from '../../components';
 import Signout from './Signout';
 import CompatibilityCheck from '../compatibilityCheck/CompatibilityCheck';
@@ -31,7 +34,7 @@ import ConfigProvider from '../config/Provider';
 import NotificationsProvider from '../notifications/Provider';
 import NotificationsChildren from '../notifications/Children';
 import ModalsProvider from '../modals/Provider';
-import ApiProvider from '../api/ApiProvider';
+import StandardApiProvider from '../api/ApiProvider';
 import CacheProvider from '../cache/Provider';
 import AuthenticationProvider from '../authentication/Provider';
 import RightToLeftProvider from '../rightToLeft/Provider';
@@ -43,6 +46,7 @@ import { GlobalLoaderProvider, GlobalLoader } from '../../components/globalLoade
 import ThemeProvider from '../themes/ThemeProvider';
 import SpotlightProvider from '../../components/spotlight/Provider';
 import { SideAppUrlProvider } from '../../hooks/useSideApp';
+import SideAppApiProvider from '../api/SideAppApiProvider';
 
 const getIsSSOPath = (pathname: string) => {
     const strippedPathname = `/${stripLeadingAndTrailingSlash(pathname)}`;
@@ -272,6 +276,12 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
     useEffect(() => {
         document.querySelector('.app-root-loader')?.classList.add('hidden');
     }, []);
+
+    const isIframe = window.self !== window.top;
+    const parentApp = getAppFromPathnameSafe(window.location.pathname);
+    const isSideApp = isIframe && parentApp && getIsAuthorizedApp(parentApp);
+
+    const ApiProvider = isSideApp ? SideAppApiProvider : StandardApiProvider;
 
     return (
         <ConfigProvider config={config}>
