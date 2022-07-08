@@ -1,4 +1,4 @@
-import { mergeUint8Arrays } from '@proton/utils/array';
+import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 interface Props {
     contents?: Uint8Array[];
