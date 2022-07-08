@@ -13,16 +13,6 @@ export const shallowEqual = <T>(a: T[], b: T[]) => {
     return true;
 };
 
-export const mergeUint8Arrays = (arrays: Uint8Array[]) => {
-    const length = arrays.reduce((sum, arr) => sum + arr.length, 0);
-    const chunksAll = new Uint8Array(length);
-    arrays.reduce((position, arr) => {
-        chunksAll.set(arr, position);
-        return position + arr.length;
-    }, 0);
-    return chunksAll;
-};
-
 export const partition = <T, K = T>(arr: (T | K)[], predicate: (item: T | K) => item is T): [T[], K[]] =>
     arr.reduce<[T[], K[]]>(
         (accumulator, current) => {
