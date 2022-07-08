@@ -23,10 +23,6 @@ export const mergeUint8Arrays = (arrays: Uint8Array[]) => {
     return chunksAll;
 };
 
-export function areUint8Arrays(arr: any[]): arr is Uint8Array[] {
-    return arr.every((el) => el instanceof Uint8Array);
-}
-
 export const partition = <T, K = T>(arr: (T | K)[], predicate: (item: T | K) => item is T): [T[], K[]] =>
     arr.reduce<[T[], K[]]>(
         (accumulator, current) => {
