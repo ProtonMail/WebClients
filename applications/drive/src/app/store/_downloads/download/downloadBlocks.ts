@@ -3,7 +3,7 @@ import { VERIFICATION_STATUS } from 'pmcrypto';
 import { c } from 'ttag';
 
 import orderBy from '@proton/utils/orderBy';
-import { areUint8Arrays } from '@proton/utils/array';
+import isArrayOfUint8Array from '@proton/utils/isArrayOfUint8Array';
 import runInQueue from '@proton/shared/lib/helpers/runInQueue';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { DriveFileBlock } from '@proton/shared/lib/interfaces/drive/file';
@@ -179,7 +179,7 @@ export default function initDownloadBlocks(
                         FromBlockIndex: fromBlockIndex,
                         PageSize: BATCH_REQUEST_SIZE,
                     });
-                    if (areUint8Arrays(newBlocks)) {
+                    if (isArrayOfUint8Array(newBlocks)) {
                         throw new Error('Unexpected Uint8Array block data');
                     }
                     blocksOrBuffer = newBlocks;
@@ -361,7 +361,7 @@ export default function initDownloadBlocks(
             await fsWriter.ready;
 
             // If initialized with preloaded buffer instead of blocks to download
-            if (areUint8Arrays(blocksOrBuffer)) {
+            if (isArrayOfUint8Array(blocksOrBuffer)) {
                 await preloadBuffer();
                 return;
             }
