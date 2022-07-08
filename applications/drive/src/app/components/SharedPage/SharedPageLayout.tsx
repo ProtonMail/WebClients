@@ -1,7 +1,7 @@
 import React from 'react';
 import { c } from 'ttag';
 
-import { classnames, ButtonLike, Icon, MainLogo } from '@proton/components';
+import { classnames, ButtonLike, Icon, MainLogo, Unauthenticated } from '@proton/components';
 
 import './Layout.scss';
 
@@ -14,25 +14,27 @@ interface Props {
 
 export default function SharedPageLayout({ reportAbuseButton, withSidebar, expand, children }: Props) {
     return (
-        <div className="shared-page-layout-bg flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative">
-            <header className="shared-page-layout-logo">
-                <MainLogo to="/" className="mb1" />
-            </header>
-            <div
-                className={classnames([
-                    'shared-page-layout-container flex flex-no-min-children flex-nowrap on-mobile-flex-column',
-                    !withSidebar && 'shared-page-layout-container-without-sidebar',
-                    expand && 'flex-item-fluid',
-                ])}
-            >
-                <div className="flex-item-fluid on-mobile-mb1 flex flex-column flex-nowrap">{children}</div>
-                {withSidebar && <SharedPageGetDriveSidebar />}
+        <Unauthenticated>
+            <div className="shared-page-layout-bg flex-no-min-children flex-nowrap flex-column h100 scroll-if-needed relative">
+                <header className="shared-page-layout-logo">
+                    <MainLogo to="/" className="mb1" />
+                </header>
+                <div
+                    className={classnames([
+                        'shared-page-layout-container flex flex-no-min-children flex-nowrap on-mobile-flex-column',
+                        !withSidebar && 'shared-page-layout-container-without-sidebar',
+                        expand && 'flex-item-fluid',
+                    ])}
+                >
+                    <div className="flex-item-fluid on-mobile-mb1 flex flex-column flex-nowrap">{children}</div>
+                    {withSidebar && <SharedPageGetDriveSidebar />}
+                </div>
+                <footer className="shared-page-layout-footer text-center">
+                    {reportAbuseButton}
+                    <p>{c('Title').t`Based in Switzerland, available globally`}</p>
+                </footer>
             </div>
-            <footer className="shared-page-layout-footer text-center">
-                {reportAbuseButton}
-                <p>{c('Title').t`Based in Switzerland, available globally`}</p>
-            </footer>
-        </div>
+        </Unauthenticated>
     );
 }
 
