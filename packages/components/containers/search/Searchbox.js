@@ -66,7 +66,7 @@ const Searchbox = ({
                 title={c('Action').t`Search`}
                 disabled={disabled}
             >
-                <Icon name="magnifier" size={22} className="mauto searchbox-search-button-icon" />
+                <Icon name="magnifier" size={16} className="mauto searchbox-search-button-icon" />
                 <span className="sr-only">{c('Action').t`Search`}</span>
             </Button>
             {value.length ? (
