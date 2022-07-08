@@ -2,7 +2,7 @@ import { c } from 'ttag';
 import { arrayToHexString, binaryStringToArray, getKeys, getSignature } from 'pmcrypto';
 import { fromUnixTime } from 'date-fns';
 import unique from '@proton/utils/unique';
-import { partition } from '@proton/utils/array';
+import partition from '@proton/utils/partition';
 import { queryEvents } from '../../api/calendars';
 import { wait } from '../../helpers/promise';
 import { Address, Api, Key } from '../../interfaces';
