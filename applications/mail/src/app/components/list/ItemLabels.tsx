@@ -7,7 +7,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import orderBy from '@proton/utils/orderBy';
 
 import { getLabelIDs } from '../../helpers/elements';
-import { useApplyLabels } from '../../hooks/useApplyLabels';
+import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
 import { Element } from '../../models/element';
 
 interface Props {
@@ -44,7 +44,9 @@ const ItemLabels = ({
 
     const handleGo = (label: Label) => () => history.push(`/${label.ID}`);
 
-    const handleUnlabel = (labelID: string) => () => applyLabels([element || ({} as Element)], { [labelID]: false });
+    const handleUnlabel = (labelID: string) => () =>
+        applyLabels([element || ({} as Element)], { [labelID]: false }, false);
+
     const labelsDescription = labelsSorted.map((label) => ({
         name: label.Name,
         color: label.Color,

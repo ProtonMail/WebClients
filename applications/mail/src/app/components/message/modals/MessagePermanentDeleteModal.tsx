@@ -11,7 +11,7 @@ import {
 } from '@proton/components';
 import { deleteMessages } from '@proton/shared/lib/api/messages';
 
-import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/usePermanentDelete';
+import { getDeleteTitle, getModalText, getNotificationText } from '../../../hooks/actions/usePermanentDelete';
 import { MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
 
 interface Props extends ModalProps {

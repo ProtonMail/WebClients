@@ -4,8 +4,8 @@ import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message'
 import { attachmentsSize } from '@proton/shared/lib/mail/messages';
 import uniqueBy from '@proton/utils/uniqueBy';
 
+import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { MarkAsChanges } from '../../hooks/optimistic/useOptimisticMarkAs';
-import { MARK_AS_STATUS } from '../../hooks/useMarkAs';
 import {
     MessageImages,
     MessageState,

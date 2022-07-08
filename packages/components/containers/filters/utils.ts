@@ -157,4 +157,54 @@ export const newFilter = (): Filter => {
     };
 };
 
+/**
+ * Return a filter name based on baseName but unique in the list of existing filters
+ */
+export const createUniqueName = (baseName: string, filters: Filter[]) => {
+    let filterName = baseName;
+    let counter = 1;
+    const isAlreadyUsed = (name: string) => filters.some((filter) => filter.Name === name);
+    while (isAlreadyUsed(filterName)) {
+        filterName = `${filterName} ${counter++}`;
+    }
+    return filterName;
+};
+
+export const createDefaultLabelsFilter = (
+    senders: string[],
+    labels: { ID: string; Name: string }[],
+    filters: Filter[]
+) => {
+    return senders.map<Filter>((sender) => {
+        const labelNames = labels.map((label) => label.Name).join(', ');
+        const Name = createUniqueName(`${sender} - ${labelNames}`, filters);
+        const filter: Filter = {
+            ID: '',
+            Name,
+            Status: 1,
+            Version: FILTER_VERSION,
+            Simple: {
+                Operator: {
+                    label: OPERATORS[0].label,
+                    value: OPERATORS[0].value,
+                },
+                Conditions: [
+                    {
+                        Values: [sender],
+                        Type: TYPES[2],
+                        Comparator: COMPARATORS[1],
+                    },
+                ],
+                Actions: {
+                    FileInto: labels.map((label) => label.ID),
+                    Vacation: '',
+                    Mark: { Read: false, Starred: false },
+                },
+            },
+        };
+        filter.Tree = computeTree(filter);
+        return filter;
+    }, []);
+};
+
 export default newFilter;
