@@ -6,6 +6,7 @@ import {
     PrivateAuthenticationStore,
     ModalsChildren,
     EventModelListener,
+    ExperimentsProvider,
 } from '@proton/components';
 import { Router, Route } from 'react-router';
 import { createMemoryHistory, MemoryHistory } from 'history';
@@ -74,23 +75,25 @@ const TestProvider = ({ children }: Props) => {
                                 <EventModelListener models={[ConversationCountsModel, MessageCountsModel]} />
                                 <ReduxProvider store={store}>
                                     <FeaturesProvider>
-                                        <MailContentRefProvider mailContentRef={contentRef}>
-                                            <MailboxContainerContextProvider
-                                                isResizing={false}
-                                                containerRef={contentRef}
-                                                elementID={undefined}
-                                            >
-                                                <ComposeProvider onCompose={onCompose}>
-                                                    <Router history={history}>
-                                                        <Route path={MAIN_ROUTE_PATH}>
-                                                            <EncryptedSearchProvider>
-                                                                {children}
-                                                            </EncryptedSearchProvider>
-                                                        </Route>
-                                                    </Router>
-                                                </ComposeProvider>
-                                            </MailboxContainerContextProvider>
-                                        </MailContentRefProvider>
+                                        <ExperimentsProvider>
+                                            <MailContentRefProvider mailContentRef={contentRef}>
+                                                <MailboxContainerContextProvider
+                                                    isResizing={false}
+                                                    containerRef={contentRef}
+                                                    elementID={undefined}
+                                                >
+                                                    <ComposeProvider onCompose={onCompose}>
+                                                        <Router history={history}>
+                                                            <Route path={MAIN_ROUTE_PATH}>
+                                                                <EncryptedSearchProvider>
+                                                                    {children}
+                                                                </EncryptedSearchProvider>
+                                                            </Route>
+                                                        </Router>
+                                                    </ComposeProvider>
+                                                </MailboxContainerContextProvider>
+                                            </MailContentRefProvider>
+                                        </ExperimentsProvider>
                                     </FeaturesProvider>
                                 </ReduxProvider>
                             </CacheProvider>
