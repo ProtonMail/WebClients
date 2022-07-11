@@ -1,4 +1,4 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { BASE_SIZE } from '../constants';
 
@@ -11,9 +11,9 @@ export const sizeUnits = {
 
 export type SizeUnits = keyof typeof sizeUnits;
 
-export const getSizeFormat = (key: SizeUnits) => {
+export const getSizeFormat = (key: SizeUnits, n: number) => {
     if (key === 'B') {
-        return c('file size format').t`bytes`;
+        return c('file size format').ngettext(msgid`byte`, `bytes`, n);
     }
     if (key === 'KB') {
         return c('file size format').t`KB`;
@@ -27,18 +27,18 @@ export const getSizeFormat = (key: SizeUnits) => {
     throw new Error('Unknown unit');
 };
 
-export const getLongSizeFormat = (key: SizeUnits) => {
+export const getLongSizeFormat = (key: SizeUnits, n: number) => {
     if (key === 'B') {
-        return c('file size format, long').t`Bytes`;
+        return c('file size format, long').ngettext(msgid`Byte`, `Bytes`, n);
     }
     if (key === 'KB') {
-        return c('file size format, long').t`Kilobytes`;
+        return c('file size format, long').ngettext(msgid`Kilobyte`, `Kilobytes`, n);
     }
     if (key === 'MB') {
-        return c('file size format, long').t`Megabytes`;
+        return c('file size format, long').ngettext(msgid`Megabyte`, `Megabytes`, n);
     }
     if (key === 'GB') {
-        return c('file size format, long').t`Gigabytes`;
+        return c('file size format, long').ngettext(msgid`Gigabyte`, `Gigabytes`, n);
     }
     throw new Error('Unknown unit');
 };
@@ -61,7 +61,7 @@ export const getUnit = (bytes: number): SizeUnits => {
 
 const transformTo = (bytes: number, unit: SizeUnits, withoutUnit: boolean, fractionDigits = 2) => {
     const value = (bytes / sizeUnits[unit]).toFixed(fractionDigits);
-    const suffix = withoutUnit ? '' : ` ${getSizeFormat(unit)}`;
+    const suffix = withoutUnit ? '' : ` ${getSizeFormat(unit, Number(value))}`;
 
     return value + suffix;
 };
