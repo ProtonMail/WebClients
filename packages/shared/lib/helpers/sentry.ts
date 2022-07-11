@@ -23,7 +23,7 @@ export const setUID = (uid: string | undefined) => {
     };
 };
 
-const getContentTypeHeaders = (input: RequestInfo): HeadersInit => {
+const getContentTypeHeaders = (input: RequestInfo | URL): HeadersInit => {
     const url = input.toString();
     /**
      * The sentry library does not append the content-type header to requests. The documentation states
@@ -42,7 +42,7 @@ const getContentTypeHeaders = (input: RequestInfo): HeadersInit => {
     return {};
 };
 
-const sentryFetch = (input: RequestInfo, init?: RequestInit) => {
+const sentryFetch = (input: RequestInfo | URL, init?: RequestInit) => {
     return window.fetch(input, {
         ...init,
         headers: {

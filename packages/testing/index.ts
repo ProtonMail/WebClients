@@ -5,4 +5,4 @@ export * from './lib/mockApi';
 export * from './lib/mockNotifications';
 export * from './lib/mockModals';
 
-export * from 'msw';
+export { rest } from 'msw';
