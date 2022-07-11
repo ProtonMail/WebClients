@@ -1,23 +1,19 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { c, msgid } from 'ttag';
-import { useApi, useNotifications, useEventManager, useLabels, FilterUtils, useFilters } from '@proton/components';
+import { useApi, useNotifications, useEventManager, useLabels } from '@proton/components';
 import { labelMessages, unlabelMessages } from '@proton/shared/lib/api/messages';
 import { labelConversations, unlabelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
-import unique from '@proton/utils/unique';
-import { canonizeEmail } from '@proton/shared/lib/helpers/email';
-import { addTreeFilter } from '@proton/shared/lib/api/filters';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
-import { getSenders, isMessage as testIsMessage } from '../../helpers/elements';
+import { isMessage as testIsMessage } from '../../helpers/elements';
 import { Element } from '../../models/element';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
-
-const { createDefaultLabelsFilter } = FilterUtils;
+import { useCreateFilters } from './useCreateFilters';
 
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
@@ -85,48 +81,14 @@ const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, lab
     );
 };
 
-const getNotificationTextFilters = (isMessage: boolean, senders: string[], labels: string[]) => {
-    let notificationText: string;
-    const sendersList = senders.join(', ');
-    const labelsList = labels.join(', ');
-
-    if (isMessage) {
-        notificationText = c('Success').t`Messages from ${sendersList} will be labelled as ${labelsList}`;
-    } else {
-        notificationText = c('Success').t`Conversations from ${sendersList} will be labelled as ${labelsList}`;
-    }
-
-    return notificationText;
-};
-
 export const useApplyLabels = () => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
-    const [filters = []] = useFilters();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const dispatch = useDispatch();
-
-    const doCreateFilters = async (elements: Element[], labelIDs: string[]) => {
-        const senders = unique(
-            elements
-                .flatMap((element) => getSenders(element))
-                .map((recipient) => recipient?.Address)
-                .filter(isTruthy)
-                .map((email) => canonizeEmail(email))
-        );
-        const appliedLabels = labelIDs.map((labelID) => labels.find((label) => label.ID === labelID)).filter(isTruthy);
-        const newFilters = createDefaultLabelsFilter(senders, appliedLabels, filters);
-        await Promise.all(newFilters.map((filter) => api(addTreeFilter(filter as any))));
-        createNotification({
-            text: getNotificationTextFilters(
-                testIsMessage(elements[0]),
-                senders,
-                appliedLabels.map((label) => label.Name)
-            ),
-        });
-    };
+    const getCreateFilters = useCreateFilters();
 
     const applyLabels = useCallback(
         async (
@@ -148,31 +110,38 @@ export const useApplyLabels = () => {
             const elementIDs = elements.map((element) => element.ID);
             const rollbacks = {} as { [labelID: string]: () => void };
 
+            const { doCreateFilters, undoCreateFilters } = getCreateFilters();
+
             const handleDo = async () => {
                 let tokens = [];
                 try {
                     // Stop the event manager to prevent race conditions
                     stop();
                     dispatch(backendActionStarted());
-                    tokens = await Promise.all(
-                        changesKeys.map(async (LabelID) => {
-                            rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
-                            try {
-                                const action = changes[LabelID] ? labelAction : unlabelAction;
-                                const { UndoToken } = await api(action({ LabelID, IDs: elementIDs }));
-                                return UndoToken.Token;
-                            } catch (error: any) {
-                                rollbacks[LabelID]();
-                                throw error;
-                            }
-                        })
-                    );
-                    if (createFilters) {
-                        await doCreateFilters(
-                            elements,
-                            changesKeys.filter((labelID) => changes[labelID])
-                        );
-                    }
+                    [tokens] = await Promise.all([
+                        Promise.all(
+                            changesKeys.map(async (LabelID) => {
+                                rollbacks[LabelID] = optimisticApplyLabels(elements, { [LabelID]: changes[LabelID] });
+                                try {
+                                    const action = changes[LabelID] ? labelAction : unlabelAction;
+                                    const { UndoToken } = await api<{ UndoToken: { Token: string } }>(
+                                        action({ LabelID, IDs: elementIDs })
+                                    );
+                                    return UndoToken.Token;
+                                } catch (error: any) {
+                                    rollbacks[LabelID]();
+                                    throw error;
+                                }
+                            })
+                        ),
+                        createFilters
+                            ? doCreateFilters(
+                                  elements,
+                                  changesKeys.filter((labelID) => changes[labelID]),
+                                  false
+                              )
+                            : undefined,
+                    ]);
                 } finally {
                     dispatch(backendActionFinished());
                     if (!undoing) {
@@ -194,7 +163,11 @@ export const useApplyLabels = () => {
                     stop();
                     Object.values(rollbacks).forEach((rollback) => rollback());
                     const filteredTokens = tokens.filter(isTruthy);
-                    await Promise.all(filteredTokens.map((token) => api(undoActions(token))));
+
+                    await Promise.all([
+                        Promise.all(filteredTokens.map((token) => api(undoActions(token)))),
+                        createFilters ? undoCreateFilters() : undefined,
+                    ]);
                 } finally {
                     start();
                     await call();
