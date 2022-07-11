@@ -3870,7 +3870,7 @@ __metadata:
     jasmine-core: ^4.2.0
     karma: ^6.4.0
     karma-chrome-launcher: ^3.1.1
-    karma-jasmine: ^4.0.2
+    karma-jasmine: ^5.1.0
     karma-webpack: ^5.0.0
     pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
     ts-loader: ^9.3.1
@@ -3955,7 +3955,7 @@ __metadata:
     jasmine-core: 4.2.0
     karma: ^6.4.0
     karma-chrome-launcher: ^3.1.1
-    karma-jasmine: ^4.0.2
+    karma-jasmine: ^5.1.0
     karma-webpack: ^5.0.0
     pkijs: ^2.4.0
     pmcrypto: "npm:@protontech/pmcrypto@^6.7.1"
@@ -4076,7 +4076,7 @@ __metadata:
     jsbi: ^4.3.0
     karma: ^6.4.0
     karma-chrome-launcher: ^3.1.1
-    karma-jasmine: ^4.0.2
+    karma-jasmine: ^5.1.0
     karma-webpack: ^5.0.0
     lodash: ^4.17.21
     papaparse: ^5.3.2
@@ -18675,17 +18675,10 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"jasmine-core@npm:4.2.0, jasmine-core@npm:^4.2.0":
+"jasmine-core@npm:4.2.0, jasmine-core@npm:^4.1.0, jasmine-core@npm:^4.2.0":
   version: 4.2.0
   resolution: "jasmine-core@npm:4.2.0"
   checksum: 86c731bb4d3d1f0149ced89f5b5729dccdeda963c6e844e6ec6ac21a76f46086e9aa47bcb1bd65024b48685af3c8c970368665682deaf81bc01203a3ff9ab03f
-  languageName: node
-  linkType: hard
-
-"jasmine-core@npm:^3.6.0":
-  version: 3.99.0
-  resolution: "jasmine-core@npm:3.99.0"
-  checksum: afab2049116105547619b6591a700a137c95b3535ddc83583df666db356d45a7ea5564eeef74321b414d839c796d619e5fa1584096a73f82bd978a2bdad06b1a
   languageName: node
   linkType: hard
 
@@ -19820,14 +19813,14 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"karma-jasmine@npm:^4.0.2":
-  version: 4.0.2
-  resolution: "karma-jasmine@npm:4.0.2"
+"karma-jasmine@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "karma-jasmine@npm:5.1.0"
   dependencies:
-    jasmine-core: ^3.6.0
+    jasmine-core: ^4.1.0
   peerDependencies:
-    karma: "*"
-  checksum: bf884704af1fd19816d9f4e96b25e286ff1a57adcabe1f15e3d2b3e9c1da873c1c843b9eab4274c27e63a99f1c3dea864f1f5eca1a10dc065e6e9d5796c207b4
+    karma: ^6.0.0
+  checksum: ebefd1094e7c2b4c854027621d854908166c79cccaabb5a6ba0ace42cd785a9da0a9aad1aa41937956bd4848287eac04886eebfd7c851b927d2132d3563b7739
   languageName: node
   linkType: hard
 
