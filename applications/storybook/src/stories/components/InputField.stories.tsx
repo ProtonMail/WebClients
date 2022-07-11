@@ -27,7 +27,16 @@ export default {
     },
 };
 
-export const Basic = ({ ...args }) => <InputFieldTwo {...args} />;
+export const Basic = () => (
+    <InputFieldTwo
+        label="What this input field is about"
+        hint="Any hint on filling this input field"
+        assistiveText="Assistive text explaining how to fill this input field…"
+        placeholder="Ex: example of a correct filling…"
+        title="Help displayed on hovering this input field, and read by screen readers too."
+        prefix={<Icon name="robot" />}
+    />
+);
 
 const toggles = ['dense', 'bigger', 'disabled'] as const;
 
