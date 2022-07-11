@@ -168,9 +168,9 @@ const SwitchAccountContainer = ({
                 const maybeEmailInBrackets = PrimaryEmail ? `<${PrimaryEmail}>` : '';
 
                 // translator: This is the tooltip that appears when you hover over an account button in switch account screen. Ex.: Continue with Kung Fury <kung.fury@pm.me>
-                const continueWithText = `${c('Action').t`Continue with`} ${nameToDisplay} ${maybeEmailInBrackets}`;
+                const continueWithText = c('Action').t`Continue with ${nameToDisplay} ${maybeEmailInBrackets}`;
                 // translator: This is the tooltip that appears when you hover over an 'sign out' button in switch account screen. Ex.: Sign out from Kung Fury <kung.fury@pm.me>
-                const signOutText = `${c('Action').t`Sign out from`} ${nameToDisplay} ${maybeEmailInBrackets}`;
+                const signOutText = c('Action').t`Sign out from ${nameToDisplay} ${maybeEmailInBrackets}`;
 
                 return (
                     <Fragment key={LocalID}>
