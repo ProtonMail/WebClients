@@ -23,26 +23,26 @@
         "@proton/polyfill": "workspace:packages/polyfill",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
-        "@types/react": "^17.0.44",
-        "@types/react-dom": "^17.0.16",
+        "@types/react": "^17.0.47",
+        "@types/react-dom": "^17.0.17",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "ttag": "^1.7.24"
     },
     "devDependencies": {
-        "@babel/preset-typescript": "^7.16.7",
+        "@babel/preset-typescript": "^7.18.6",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@testing-library/jest-dom": "^5.16.4",
         "@testing-library/react": "^12.1.5",
-        "@types/jest": "^28.1.1",
-        "babel-jest": "^28.1.1",
+        "@types/jest": "^28.1.4",
+        "babel-jest": "^28.1.2",
         "cross-env": "^7.0.3",
-        "eslint": "^8.14.0",
+        "eslint": "^8.19.0",
         "jest": "^28.1.2",
-        "jest-environment-jsdom": "^28.1.1",
+        "jest-environment-jsdom": "^28.1.2",
         "jest-junit": "^13.2.0",
-        "prettier": "^2.6.2",
-        "typescript": "^4.6.4"
+        "prettier": "^2.7.1",
+        "typescript": "^4.7.4"
     }
 }
