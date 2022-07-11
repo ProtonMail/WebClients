@@ -3428,6 +3428,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@noble/ed25519@patch:@noble/ed25519@npm:1.6.1#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0::locator=root%40workspace%3A.":
+  version: 1.6.1
+  resolution: "@noble/ed25519@patch:@noble/ed25519@npm%3A1.6.1#.yarn/patches/@noble-ed25519-npm-1.6.0-59c82563e0::version=1.6.1&hash=47d349&locator=root%40workspace%3A."
+  checksum: 00a20e99e86900b9609b00758f392932429c31e10468d598ccc47a1a5c5a1891a65cbf304c8cede8c26e608005e4d0e42900b8ec1d7e95681b966e2e5f2d2a66
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
