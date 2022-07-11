@@ -93,6 +93,8 @@ const CalendarsTable = ({
                         },
                     ].filter(isTruthy);
 
+                    const calendarAddress = calendarAddressMap[ID] || '';
+
                     return (
                         <TableRow
                             key={ID}
@@ -109,11 +111,12 @@ const CalendarsTable = ({
                                         <div
                                             className={classnames([
                                                 'text-ellipsis text-sm m0 color-weak',
-                                                !calendarAddressMap[ID] && 'calendar-email',
+                                                !calendarAddress && 'calendar-email',
                                             ])}
                                             style={{ '--index': index }}
+                                            title={calendarAddress}
                                         >
-                                            {calendarAddressMap[ID] || ''}
+                                            {calendarAddress}
                                         </div>
                                     </div>
                                 </div>,
