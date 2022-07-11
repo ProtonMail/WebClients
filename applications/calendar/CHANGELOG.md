@@ -1,3 +1,31 @@
+## Release: 5.0.3 — July 20, 2022
+
+### New features
+
+-   Draggable popover on event creation
+
+[comment]: <> (- Reminders for events in subscribed calendars)
+
+### Improvements
+
+-   Validate calendar subscription links as soon as the URL is entered
+-   Add possibility to disable the setting for time zone auto-detection directly from the pop-up
+
+### Fixes
+
+-   Fix issue where the app would not load because of calendars with a broken setup
+
+## Release: 5.0.3 — July 20, 2022
+
+### Improvements
+
+-   Show calendar subscription error cause as soon as the URL is entered
+-   Disable time zone change update setting directly from the pop-up
+
+### Fixes
+
+-   Minor fixes
+
 ## Release: 5.0.2 — June 22, 2022
 
 ### Improvements
